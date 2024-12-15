@@ -3,14 +3,12 @@ import subprocess
 import threading
 import time
 import pdb
+import logging
 
 import asyncio
 import os
-import threading
-import pdb
-import time
-import asyncio
-loop = asyncio.get_event_loop()
+
+
 
 class ClangdClient:
     def __init__(self, file_path, compile_commands_path):
@@ -55,7 +53,7 @@ class ClangdClient:
         future = loop.create_future()
         self.request_id += 1
         self.response_futures[self.request_id] = future
-        print("request_id", self.request_id)
+        logger.debug("request_id %s", self.request_id)
         request = {
             'jsonrpc': '2.0',
             'id': self.request_id,
@@ -88,14 +86,14 @@ class ClangdClient:
                 self.process.stdout.readline()  # Read the empty line
                 response_json = self.process.stdout.read(content_length)
                 response = json.loads(response_json)
-                print(response_json)
+                logger.debug(response_json)
                 if 'id' in response:
-                    print("pop id", response["id"])
+                    logger.debug("pop id %s", response["id"])
                     future = self.response_futures.pop(response['id'], None)
                     if future:
-                        print("set future for id", response["id"])
+                        logger.debug("set future for id %s", response["id"])
                         loop.call_soon_threadsafe(future.set_result, response)
-                        print("set end")
+                        logger.debug("set end")
 
     async def textDocument_documentSymbol(self, file_path):
         future = self.send_request('textDocument/documentSymbol', {
@@ -127,9 +125,9 @@ class ClangdClient:
                 'character': character
             }
         })
-        print("start await ======================================================")
+        logger.debug("start await")
         response = await future
-        print("got response======================================================")
+        logger.debug("got response")
         if response and 'result' in response:
             signature_help = response['result']
             if 'contents' in signature_help:
@@ -137,9 +135,8 @@ class ClangdClient:
                     return signature_help['contents']['value']
         return None
 
-
-
 async def main():
+
     file_path = os.getcwd()  # 替换为你的文件路径
     compile_commands_path = 'build'  # 替换为你的compile_commands.json路径
     line_number = 14  # 替换为你想要查询的行号
@@ -150,18 +147,22 @@ async def main():
 
     function_signature = await client.textDocument_hover(os.getcwd() + "/test.cpp", 12, 20)
     if function_signature:
-        print(f"函数签名: {function_signature}")
+        logger.info(f"函数签名: {function_signature}")
     else:
-        print("未找到对应的函数签名")
+        logger.info("未找到对应的函数签名")
 
     # 查询文档符号
     symbol_info = await client.textDocument_documentSymbol(os.getcwd() + "/test.cpp")
     if symbol_info:
         pdb.set_trace()
     else:
-        print("未找到对应的符号")
+        logger.info("未找到对应的符号")
 
     await asyncio.sleep(10000)
 
 if __name__ == '__main__':
+    # 配置日志记录
+    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+    logger = logging.getLogger(__name__)
+    loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
