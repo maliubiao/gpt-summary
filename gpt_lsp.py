@@ -4,10 +4,73 @@ import threading
 import time
 import pdb
 import logging
+import subprocess
 
 import asyncio
 import os
 
+class SymbolKind:
+    File = 1
+    Module = 2
+    Namespace = 3
+    Package = 4
+    Class = 5
+    Method = 6
+    Property = 7
+    Field = 8
+    Constructor = 9
+    Enum = 10
+    Interface = 11
+    Function = 12
+    Variable = 13
+    Constant = 14
+    String = 15
+    Number = 16
+    Boolean = 17
+    Array = 18
+    Object = 19
+    Key = 20
+    Null = 21
+    EnumMember = 22
+    Struct = 23
+    Event = 24
+    Operator = 25
+    TypeParameter = 26
+
+    _symbol_names = {
+        1: "文件",
+        2: "模块",
+        3: "命名空间",
+        4: "包",
+        5: "类",
+        6: "方法",
+        7: "属性",
+        8: "字段",
+        9: "构造函数",
+        10: "枚举",
+        11: "接口",
+        12: "函数",
+        13: "变量",
+        14: "常量",
+        15: "字符串",
+        16: "数字",
+        17: "布尔值",
+        18: "数组",
+        19: "对象",
+        20: "键",
+        21: "空值",
+        22: "枚举成员",
+        23: "结构体",
+        24: "事件",
+        25: "操作符",
+        26: "类型参数"
+    }
+
+    @classmethod
+    def get_symbol_name(cls, kind, locale='zh_cn'):
+        # 这里可以根据locale添加翻译逻辑
+        # 目前仅返回中文名称
+        return cls._symbol_names.get(kind, "未知")
 
 
 class ClangdClient:
@@ -109,9 +172,21 @@ class ClangdClient:
                 lines = file.readlines()
                 for symbol in symbols:
                     start_line = symbol['location']['range']['start']['line']
+                    start_character = symbol['location']['range']['start']['character']
                     end_line = symbol['location']['range']['end']['line']
-                    symbol_source = ''.join(lines[start_line:end_line + 1])
-                    symbol_table[symbol['name']] = symbol_source
+                    end_character = symbol['location']['range']['end']['character']
+                    if start_line == end_line:
+                        symbol_source = lines[start_line][start_character:end_character]
+                    else:
+                        symbol_source = lines[start_line][start_character:]
+                        symbol_source += ''.join(lines[start_line + 1:end_line])
+                        symbol_source += lines[end_line][:end_character]
+                    symbol_table[symbol['name']] = {
+                        "source": symbol_source,
+                        "kind": SymbolKind.get_symbol_name(symbol["kind"]),
+                        "start": {"line": start_line, "character": start_character},
+                        "end": {"line": end_line, "character": end_character},
+                        }
             return symbol_table
         return None
 
@@ -135,28 +210,122 @@ class ClangdClient:
                     return signature_help['contents']['value']
         return None
 
+
+    def lookup_symbol_info(self, symbol_table, line_number, source_line_content):
+        for name, info in symbol_table.items():
+            start = info["start"]
+            end = info["end"]
+            if start["line"] <= line_number <= end["line"]:
+                if source_line_content.strip() in info["source"].strip():
+                    return name, info
+        return None
+
+
+def parse_ag_output(ag_output):
+    results = []
+    if '\n\n' in ag_output:
+        files = ag_output.strip().split('\n\n')
+        for file_content in files:
+            lines = file_content.split('\n')
+            filename = lines[0].strip(":")
+            for line in lines[1:]:
+                parts = line.split(':')
+                if len(parts) >= 3:
+                    line_number = int(parts[0])
+                    column_number = int(parts[1])
+                    source_line = ':'.join(parts[2:])
+                    results.append((filename, line_number, column_number, source_line))
+    else:
+        lines = ag_output.strip().split('\n')
+        for line in lines:
+            parts = line.split(':')
+            if len(parts) >= 4:
+                filename = parts[0]
+                line_number = int(parts[1])
+                column_number = int(parts[2])
+                source_line = ':'.join(parts[3:])
+                results.append((filename, line_number, column_number, source_line))
+    return results
+
+
+def subprocess_call_ag(keyword, path):
+    result = subprocess.run(
+        ['ag', '--column', keyword],
+        cwd=path,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True
+    )
+    if result.returncode == 0:
+        return result.stdout
+    else:
+        logger.error(f"Error running ag: {result.stderr}")
+        return None
+
+
+async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
+    # Step 1: 使用 subprocess_call_ag 执行 ag 命令来搜索关键字
+    ag_output = subprocess_call_ag(keyword, os.path.dirname(file_path))
+    if not ag_output:
+        logger.debug("No output from ag command")
+        return None
+
+    # Step 2: 使用 parse_ag_output 解析 ag 命令的输出
+    search_results = parse_ag_output(ag_output)
+    if not search_results:
+        logger.debug("No search results found")
+        return None
+    
+    # Step 3: 使用传入的 ClangdClient 获取符号信息
+    symbol_info = await clangd_client.textDocument_documentSymbol(file_path)
+    if not symbol_info:
+        logger.debug("No symbol information found")
+        return None
+
+    # Step 4: 查找每个搜索结果对应的符号信息
+    located_symbols = []
+    for filename, line_number, column_number, source_line in search_results:
+        if filename == os.path.basename(file_path):
+            symbol = clangd_client.lookup_symbol_info(symbol_info, line_number - 1, source_line)
+            if symbol:
+                located_symbols.append(symbol)
+
+    if not located_symbols:
+        logger.debug("No located symbols found")
+
+    return located_symbols
+
+
 async def main():
 
     file_path = os.getcwd()  # 替换为你的文件路径
     compile_commands_path = 'build'  # 替换为你的compile_commands.json路径
-    line_number = 14  # 替换为你想要查询的行号
+    # line_number = 14  # 替换为你想要查询的行号
 
     client = ClangdClient(file_path, compile_commands_path)
     client.start_clangd()
     # 使用循环全局变量
 
-    function_signature = await client.textDocument_hover(os.getcwd() + "/test.cpp", 12, 20)
-    if function_signature:
-        logger.info(f"函数签名: {function_signature}")
+    ret = await  locate_symbol_of_ag_search_hit("someFeatureE", os.getcwd()+"/test.cpp", client)
+    if ret:
+        for name, symbol in ret:
+            print(f"Symbol Name: {name}, Kind: {symbol['kind']}, Source: {symbol['source']}")
     else:
-        logger.info("未找到对应的函数签名")
+        print("No symbol information found")
+    # function_signature = await client.textDocument_hover(os.getcwd() + "/test.cpp", 12, 20)
+    # if function_signature:
+    #     logger.info(f"函数签名: {function_signature}")
+    # else:
+    #     logger.info("未找到对应的函数签名")
 
     # 查询文档符号
-    symbol_info = await client.textDocument_documentSymbol(os.getcwd() + "/test.cpp")
-    if symbol_info:
-        pdb.set_trace()
-    else:
-        logger.info("未找到对应的符号")
+    # symbol_info = await client.textDocument_documentSymbol(os.getcwd() + "/test.cpp")
+    # if symbol_info:
+    #     for name, source in symbol_info.items():
+    #         logger.debug(f"Symbol Name: {name}, Kind: {source["kind"]}, Source: {source["source"]}")
+    # else:
+    #     logger.info("未找到对应的符号")
+
 
     await asyncio.sleep(10000)
 
