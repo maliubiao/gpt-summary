@@ -82,7 +82,7 @@ class SymbolKind:
 
 class ClangdClient:
     def __init__(self, file_path, compile_commands_path):
-        self.file_path = file_path
+        self.file_path = os.path.abspath(file_path)
         self.compile_commands_path = compile_commands_path
         self.process = None
         self.socket = None
@@ -108,7 +108,8 @@ class ClangdClient:
             ['clangd', '--compile-commands-dir', self.compile_commands_path, '--log=verbose'],
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
-            text=True
+            text=True,
+            cwd=self.file_path
         )
         self.socket = self.process.stdin
         self.send_request('initialize', {
@@ -167,6 +168,14 @@ class ClangdClient:
                         logger.debug("set end")
 
     async def textDocument_documentSymbol(self, file_path):
+        self.send_notification('textDocument/didOpen', {
+            'textDocument': {
+                'uri': f'file://{file_path}',
+                'languageId': 'cpp',
+                'version': 1,
+                'text': open(file_path).read(),
+            }
+        })
         future = self.send_request('textDocument/documentSymbol', {
             'textDocument': {
                 'uri': f'file://{file_path}'
@@ -272,6 +281,7 @@ def subprocess_call_ag(keyword, path):
 
 
 async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
+    file_path = os.path.abspath(file_path)
     # Step 1: 使用 subprocess_call_ag 执行 ag 命令来搜索关键字
     ag_output = subprocess_call_ag(keyword, file_path)
     if not ag_output:
@@ -374,11 +384,28 @@ async def ask_openai_question(question: str, api_base: str = API_BASE, model_nam
 
 
 def prompt_symbol_content(source_array, keyword):
+    """
+    生成包含多个源文件内容的提示信息，确保总字符串大小不超过32KB。
+
+    Args:
+        source_array (list of tuples): 包含文件名和内容的元组列表。
+        keyword (str): 要查找的关键字。
+
+    Returns:
+        str: 生成的提示信息。
+    """
+    header = f"keyword `{keyword}` exists in multiple source files in a large project, read them and analysis the code, teach me what the keyword really means, response in chinese\n"
+    max_size = 24 * 1024  # 32KB
+    current_size = len(header)
     text = []
+
     for filename, content in source_array:
-        text.append(f"In file {filename},  content: {content}")
-    return f"keyword `{keyword}` Exists in multiple source files in a large project, read them and analysis  the code,  teach me what the keyword really means, response in chinese\n{"\n".join(text)
-}"
+        line = f"In file {filename},  content: {content}\n"
+        if current_size + len(line) > max_size:
+            break
+        text.append(line)
+        current_size += len(line)
+    return header + "".join(text)
 
 
 clangd_client = None
@@ -386,6 +413,7 @@ clangd_client = None
 def init_clangd_client(filepath: str = os.getcwd(), compile_commands_path: str = 'build'):
     global clangd_client
     if clangd_client is None:
+
         clangd_client = ClangdClient(filepath, compile_commands_path)
         clangd_client.start_clangd()
 
@@ -396,14 +424,17 @@ async def run(filepath: str = os.getcwd(), keyword: str = "someFeatureE", compil
     ret = await locate_symbol_of_ag_search_hit(keyword, filepath, clangd_client)
     if ret:
         source_array = []
+        s = set()
         for filename, symbols in ret.items():
             for name, symbol in symbols:
                 print(f"FileName: {filename} Symbol Name: {name}, Kind: {symbol['kind']}, Source: {symbol['source']}")
+                if symbol["source"] in s:
+                    continue
+                s.add(symbol["source"])
                 source_array.append((filename, symbol["source"]))
         print(source_array)
         prompt = prompt_symbol_content(source_array, keyword)
-        if len(prompt) > 32000:
-            raise ValueError("Prompt exceeds the maximum token limit of 32k")
+
         print(prompt)
         return await ask_openai_question(prompt, api_base=API_BASE, model_name=MODEL_NAME, api_token=API_TOKEN)
     else:

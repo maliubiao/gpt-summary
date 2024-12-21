@@ -3,9 +3,11 @@ name = "gpt-language-server"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "flask[async]>=3.1.0",
+    "markdown>=3.7",
     "openai==0.28",
     "pip>=24.3.1",
+    "weasyprint>=63.1",
 ]
