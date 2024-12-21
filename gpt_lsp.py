@@ -9,6 +9,8 @@ import argparse
 import asyncio
 import os
 import openai
+from flask import Flask, request, jsonify
+
 
 API_BASE = "https://api.openai.com/v1"
 MODEL_NAME = "gpt-3.5-turbo"
@@ -118,7 +120,7 @@ class ClangdClient:
         threading.Thread(target=self.read_response_async, daemon=True).start()
 
     def send_request(self, method, params):
-        future = loop.create_future()
+        future = asyncio.get_running_loop().create_future()
         self.request_id += 1
         self.response_futures[self.request_id] = future
         logger.debug("request_id %s", self.request_id)
@@ -160,7 +162,8 @@ class ClangdClient:
                     future = self.response_futures.pop(response['id'], None)
                     if future:
                         logger.debug("set future for id %s", response["id"])
-                        loop.call_soon_threadsafe(future.set_result, response)
+
+                        future.get_loop().call_soon_threadsafe(future.set_result, response)
                         logger.debug("set end")
 
     async def textDocument_documentSymbol(self, file_path):
@@ -362,6 +365,7 @@ class AsyncOpenAIClient:
 
 async def ask_openai_question(question: str, api_base: str = API_BASE, model_name: str = MODEL_NAME, api_token: str = API_TOKEN) -> str:
     client = AsyncOpenAIClient(api_base, model_name, api_token)
+    print(question)
     response = await client.ask(question)
     if response:
         print("\n--- Complete Response ---")
@@ -377,45 +381,46 @@ def prompt_symbol_content(source_array, keyword):
 }"
 
 
-async def main():
+clangd_client = None
 
-    file_path = os.getcwd()  # 替换为你的文件路径
-    compile_commands_path = 'build'  # 替换为你的compile_commands.json路径
-    # line_number = 14  # 替换为你想要查询的行号
+def init_clangd_client(filepath: str = os.getcwd(), compile_commands_path: str = 'build'):
+    global clangd_client
+    if clangd_client is None:
+        clangd_client = ClangdClient(filepath, compile_commands_path)
+        clangd_client.start_clangd()
 
-    client = ClangdClient(file_path, compile_commands_path)
-    client.start_clangd()
-    # 使用循环全局变量
-    keyword = "someFeatureE"
-    ret = await  locate_symbol_of_ag_search_hit(keyword, os.getcwd(), client)
+
+async def run(filepath: str = os.getcwd(), keyword: str = "someFeatureE", compile_commands_path: str = 'build'):
+    global clangd_client
+    init_clangd_client(filepath, compile_commands_path)
+    ret = await locate_symbol_of_ag_search_hit(keyword, filepath, clangd_client)
     if ret:
         source_array = []
         for filename, symbols in ret.items():
             for name, symbol in symbols:
-                print(f"FileName: ${filename} Symbol Name: {name}, Kind: {symbol['kind']}, Source: {symbol['source']}")
+                print(f"FileName: {filename} Symbol Name: {name}, Kind: {symbol['kind']}, Source: {symbol['source']}")
                 source_array.append((filename, symbol["source"]))
         print(source_array)
         prompt = prompt_symbol_content(source_array, keyword)
+        if len(prompt) > 32000:
+            raise ValueError("Prompt exceeds the maximum token limit of 32k")
         print(prompt)
-        await ask_openai_question(prompt, api_base=API_BASE, model_name=MODEL_NAME, api_token=API_TOKEN)
+        return await ask_openai_question(prompt, api_base=API_BASE, model_name=MODEL_NAME, api_token=API_TOKEN)
     else:
         print("No symbol information found")
 
-    # function_signature = await client.textDocument_hover(os.getcwd() + "/test.cpp", 12, 20)
-    # if function_signature:
-    #     logger.info(f"函数签名: {function_signature}")
-    # else:
-    #     logger.info("未找到对应的函数签名")
 
-    # 查询文档符号
-    # symbol_info = await client.textDocument_documentSymbol(os.getcwd() + "/test.cpp")
-    # if symbol_info:
-    #     for name, source in symbol_info.items():
-    #         logger.debug(f"Symbol Name: {name}, Kind: {source["kind"]}, Source: {source["source"]}")
-    # else:
-    #     logger.info("未找到对应的符号")
 
-    await asyncio.sleep(10000)
+app = Flask(__name__)
+
+@app.route('/query', methods=['GET'])
+async def query():
+    keyword = request.args.get('keyword')
+    if not keyword:
+        return jsonify({"error": "Keyword is required"}), 400
+    result = await run(args.filepath, keyword, args.compile_commands_path)
+    return jsonify({"result": result})
+
 
 
 if __name__ == '__main__':
@@ -427,12 +432,18 @@ if __name__ == '__main__':
     parser.add_argument("--api-base", required=True, help="OpenAI API base URL")
     parser.add_argument("--model-name", required=True, help="OpenAI model name")
     parser.add_argument("--api-token", required=True, help="OpenAI API token")
+    parser.add_argument("--filepath", default=os.getcwd(), help="File path to search in")
+    parser.add_argument("--compile-commands-path", default='build', help="Path to compile_commands.json")
+    parser.add_argument("--addr", default=":8080", help="Address to run the Flask server")
 
     args = parser.parse_args()
 
+    args = parser.parse_args()
     API_BASE = args.api_base
     MODEL_NAME = args.model_name
     API_TOKEN = args.api_token
-
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())
+    # 设置事件循环
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    addr, port = args.addr.split(':') if ':' in args.addr else ('', args.addr)
+    app.run(host=addr, port=int(port))
