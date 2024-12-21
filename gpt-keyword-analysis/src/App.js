@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // Choose a theme
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import './App.css';
 
 function App() {
@@ -40,30 +40,53 @@ function App() {
   };
 
   const generatePdf = () => {
-    const input = document.getElementById('markdown-container'); // ID of the div containing rendered markdown
+    const input = document.getElementById('markdown-container');
     if (!input) {
       console.error("Markdown container not found.");
       return;
     }
 
-    setIsLoading(true); // Show loading while generating PDF
-    html2canvas(input, { scale: 2 }) // Increase scale for better resolution
+    setIsLoading(true);
+    html2canvas(input, { scale: 2 })
       .then((canvas) => {
         const pdf = new jsPDF('p', 'mm', 'a4');
         const imgData = canvas.toDataURL('image/png');
         const imgProps = pdf.getImageProperties(imgData);
         const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        const pdfHeight = pdf.internal.pageSize.getHeight(); // Use full page height
 
-        let currentPageHeight = 0;
-        let currentYOffset = 10; // Initial Y offset
+        let yOffset = 0;
+        let currentPage = 1;
 
-        while (currentPageHeight < imgProps.height) {
-          pdf.addImage(imgData, 'PNG', 0, currentYOffset, pdfWidth, pdfHeight);
-          currentPageHeight += pdfHeight;
-          if (currentPageHeight < imgProps.height) {
+        while (yOffset < imgProps.height) {
+          const sourceY = yOffset;
+          const sourceHeight = Math.min(pdfHeight * imgProps.width / pdfWidth, imgProps.height - yOffset); // Ensure we don't go beyond the image height
+
+          const canvasForPage = document.createElement('canvas');
+          const context = canvasForPage.getContext('2d');
+          canvasForPage.width = canvas.width;
+          canvasForPage.height = sourceHeight * (canvas.width / imgProps.width);
+
+          context.drawImage(
+            canvas,
+            0,
+            sourceY,
+            imgProps.width,
+            sourceHeight,
+            0,
+            0,
+            canvasForPage.width,
+            canvasForPage.height
+          );
+
+          const pageImgData = canvasForPage.toDataURL('image/png');
+          pdf.addImage(pageImgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+          yOffset += sourceHeight;
+
+          if (yOffset < imgProps.height) {
             pdf.addPage();
-            currentYOffset = 10; // Reset Y offset for new page
+            currentPage++;
           }
         }
 
