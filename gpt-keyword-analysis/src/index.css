@@ -1,0 +1,22 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .app-header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .app-main {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }

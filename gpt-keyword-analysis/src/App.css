@@ -1,0 +1,16 @@
+.markdown-body {
+    padding: 20px;
+    border: 1px solid #eee;
+    margin-top: 10px;
+  }
+  
+  /* You can add more specific styles for markdown elements here */
+  .markdown-body h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+  
+  .markdown-body p {
+    margin-bottom: 1em;
+    line-height: 1.6;
+  }

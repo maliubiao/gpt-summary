@@ -1,0 +1,58 @@
+{
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^9.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "electron-dev": "electron .",
+    "electron-build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^34.0.0-beta.13",
+    "electron-builder": "^26.0.0-alpha.8",
+    "react-scripts": "^5.0.1"
+  },
+  "build": {
+    "appId": "com.maliubiao.gpt_source_analysis",
+    "productName": "GPT Source analysis",
+    "directories": {
+      "output": "dist",
+      "app": "./"
+    },
+    "files": [
+      "electron.js",
+      "build/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
