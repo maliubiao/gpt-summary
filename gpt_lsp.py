@@ -5,9 +5,14 @@ import time
 import pdb
 import logging
 import subprocess
-
+import argparse
 import asyncio
 import os
+import openai
+
+API_BASE = "https://api.openai.com/v1"
+MODEL_NAME = "gpt-3.5-turbo"
+API_TOKEN = "YOUR_OPENAI_API_KEY"
 
 class SymbolKind:
     File = 1
@@ -265,7 +270,7 @@ def subprocess_call_ag(keyword, path):
 
 async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
     # Step 1: 使用 subprocess_call_ag 执行 ag 命令来搜索关键字
-    ag_output = subprocess_call_ag(keyword, os.path.dirname(file_path))
+    ag_output = subprocess_call_ag(keyword, file_path)
     if not ag_output:
         logger.debug("No output from ag command")
         return None
@@ -276,24 +281,100 @@ async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
         logger.debug("No search results found")
         return None
     
-    # Step 3: 使用传入的 ClangdClient 获取符号信息
-    symbol_info = await clangd_client.textDocument_documentSymbol(file_path)
-    if not symbol_info:
-        logger.debug("No symbol information found")
-        return None
-
+    symbol_table = {}
+    for item in search_results:
+        filename, line_number, column_number, source_line = item
+        # Step 3: 使用传入的 ClangdClient 获取符号信息
+        symbol_info = await clangd_client.textDocument_documentSymbol(os.path.join(file_path, filename))
+        if not symbol_info:
+            logger.debug("No symbol information found")
+            continue
+        symbol_table[filename] = symbol_info
     # Step 4: 查找每个搜索结果对应的符号信息
-    located_symbols = []
+    located_symbols = {}    
     for filename, line_number, column_number, source_line in search_results:
-        if filename == os.path.basename(file_path):
-            symbol = clangd_client.lookup_symbol_info(symbol_info, line_number - 1, source_line)
-            if symbol:
-                located_symbols.append(symbol)
+        symbol_info = symbol_table.get(filename)
+        if not symbol_info: continue
+        symbol = clangd_client.lookup_symbol_info(symbol_info, line_number - 1, source_line)
+        if symbol:
+            if filename not in located_symbols:
+                located_symbols[filename] = []
+            located_symbols[filename].append(symbol)
 
     if not located_symbols:
         logger.debug("No located symbols found")
 
     return located_symbols
+
+
+class AsyncOpenAIClient:
+    """
+    An asynchronous class to interact with the OpenAI API.
+
+    Args:
+        api_base (str): The base URL for the OpenAI API (e.g., "https://api.openai.com/v1").
+        model_name (str): The name of the OpenAI model to use (e.g., "gpt-3.5-turbo").
+        token (str): Your OpenAI API key.
+    """
+    def __init__(self, api_base: str, model_name: str, token: str):
+        self.api_base = api_base
+        self.model_name = model_name
+        self.token = token
+        openai.api_base = self.api_base
+        openai.api_key = self.token
+
+    async def ask(self, question: str) -> str:
+        """
+        Asynchronously sends a question to the OpenAI API and displays the response tokens in real-time.
+
+        Args:
+            question (str): The question to ask the model.
+
+        Returns:
+            str: The complete response from the model.
+        """
+        try:
+            response_stream = await openai.ChatCompletion.acreate(
+                model=self.model_name,
+                messages=[
+                    {"role": "user", "content": question}
+                ],
+                stream=True,
+            )
+
+            full_response = ""
+            print("Response:")
+            async for chunk in response_stream:
+                if chunk.choices:
+                    delta = chunk.choices[0].delta
+                    if delta and "content" in delta:
+                        token = delta.content
+                        print(token, end="", flush=True)  # Print token immediately
+                        full_response += token
+            print()  # Add a newline after the response
+            return full_response
+
+        except openai.error.OpenAIError as e:
+            print(f"An error occurred: {e}")
+            return ""
+
+
+
+async def ask_openai_question(question: str, api_base: str = API_BASE, model_name: str = MODEL_NAME, api_token: str = API_TOKEN) -> str:
+    client = AsyncOpenAIClient(api_base, model_name, api_token)
+    response = await client.ask(question)
+    if response:
+        print("\n--- Complete Response ---")
+        print(response)
+    return response
+
+
+def prompt_symbol_content(source_array, keyword):
+    text = []
+    for filename, content in source_array:
+        text.append(f"In file {filename},  content: {content}")
+    return f"keyword `{keyword}` Exists in multiple source files in a large project, read them and analysis  the code,  teach me what the keyword really means, response in chinese\n{"\n".join(text)
+}"
 
 
 async def main():
@@ -305,13 +386,21 @@ async def main():
     client = ClangdClient(file_path, compile_commands_path)
     client.start_clangd()
     # 使用循环全局变量
-
-    ret = await  locate_symbol_of_ag_search_hit("someFeatureE", os.getcwd()+"/test.cpp", client)
+    keyword = "someFeatureE"
+    ret = await  locate_symbol_of_ag_search_hit(keyword, os.getcwd(), client)
     if ret:
-        for name, symbol in ret:
-            print(f"Symbol Name: {name}, Kind: {symbol['kind']}, Source: {symbol['source']}")
+        source_array = []
+        for filename, symbols in ret.items():
+            for name, symbol in symbols:
+                print(f"FileName: ${filename} Symbol Name: {name}, Kind: {symbol['kind']}, Source: {symbol['source']}")
+                source_array.append((filename, symbol["source"]))
+        print(source_array)
+        prompt = prompt_symbol_content(source_array, keyword)
+        print(prompt)
+        await ask_openai_question(prompt, api_base=API_BASE, model_name=MODEL_NAME, api_token=API_TOKEN)
     else:
         print("No symbol information found")
+
     # function_signature = await client.textDocument_hover(os.getcwd() + "/test.cpp", 12, 20)
     # if function_signature:
     #     logger.info(f"函数签名: {function_signature}")
@@ -326,12 +415,24 @@ async def main():
     # else:
     #     logger.info("未找到对应的符号")
 
-
     await asyncio.sleep(10000)
+
 
 if __name__ == '__main__':
     # 配置日志记录
-    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s - %(lineno)d')
     logger = logging.getLogger(__name__)
+
+    parser = argparse.ArgumentParser(description="Run the GPT LSP tool.")
+    parser.add_argument("--api-base", required=True, help="OpenAI API base URL")
+    parser.add_argument("--model-name", required=True, help="OpenAI model name")
+    parser.add_argument("--api-token", required=True, help="OpenAI API token")
+
+    args = parser.parse_args()
+
+    API_BASE = args.api_base
+    MODEL_NAME = args.model_name
+    API_TOKEN = args.api_token
+
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())

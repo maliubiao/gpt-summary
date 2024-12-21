@@ -1,5 +1,5 @@
 import unittest
-from gpt_lsp import parse_ag_output
+from gpt_lsp import parse_ag_output,prompt_symbol_content
 
 
 class TestParseAgOutput(unittest.TestCase):
@@ -68,5 +68,19 @@ src/inspector/v8-deep-serializer.cc
         ]
         results = parse_ag_output(ag_output)
         self.assertEqual(results, expected_results)
+
+
+class TestGPT(unittest.TestCase):
+
+    def test_prompt_symbol_content(self):
+        source_array = [
+            ("file1.cpp", "int main() { return 0; }"),
+            ("file2.cpp", "void foo() { int x = 10; }")
+        ]
+        keyword = "int"
+        expected_output = "keyword `int` Exists in multiple source files in a large project, read them and analysis the code,  teach me what the keyword means\nIn file file1.cpp,  content: int main() { return 0; }\nIn file file2.cpp,  content: void foo() { int x = 10; }"
+        self.assertEqual(prompt_symbol_content(source_array, keyword), expected_output)
+
+
 if __name__ == '__main__':
     unittest.main()
