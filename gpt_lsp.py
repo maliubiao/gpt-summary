@@ -10,6 +10,7 @@ import asyncio
 import os
 import openai
 from flask import Flask, request, jsonify
+from tqdm.asyncio import tqdm  # Import the async version of tqdm
 
 
 API_BASE = "https://api.openai.com/v1"
@@ -280,45 +281,96 @@ def subprocess_call_ag(keyword, path):
         return None
 
 
+# async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
+#     file_path = os.path.abspath(file_path)
+#     # Step 1: 使用 subprocess_call_ag 执行 ag 命令来搜索关键字
+#     ag_output = subprocess_call_ag(keyword, file_path)
+#     if not ag_output:
+#         logger.debug("No output from ag command")
+#         return None
+
+#     # Step 2: 使用 parse_ag_output 解析 ag 命令的输出
+#     search_results = parse_ag_output(ag_output)
+#     if not search_results:
+#         logger.debug("No search results found")
+#         return None
+    
+#     symbol_table = {}
+#     for item in search_results:
+#         filename, line_number, column_number, source_line = item
+#         if filename in symbol_table: continue
+#         # Step 3: 使用传入的 ClangdClient 获取符号信息
+#         symbol_info = await clangd_client.textDocument_documentSymbol(os.path.join(file_path, filename))
+#         if not symbol_info:
+#             logger.debug("No symbol information found")
+#             continue
+#         symbol_table[filename] = symbol_info
+#     # Step 4: 查找每个搜索结果对应的符号信息
+#     located_symbols = {}    
+#     for filename, line_number, column_number, source_line in search_results:
+#         symbol_info = symbol_table.get(filename)
+#         if not symbol_info: continue
+#         symbol = clangd_client.lookup_symbol_info(symbol_info, line_number - 1, source_line)
+#         if symbol:
+#             if filename not in located_symbols:
+#                 located_symbols[filename] = []
+#             located_symbols[filename].append(symbol)
+
+#     if not located_symbols:
+#         logger.debug("No located symbols found")
+
+#     return located_symbols
+
 async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
     file_path = os.path.abspath(file_path)
+
     # Step 1: 使用 subprocess_call_ag 执行 ag 命令来搜索关键字
-    ag_output = subprocess_call_ag(keyword, file_path)
+    with tqdm(total=1, desc="Searching with ag", unit="step") as pbar_ag:
+        ag_output = subprocess_call_ag(keyword, file_path)
+        pbar_ag.update(1)
     if not ag_output:
         logger.debug("No output from ag command")
         return None
 
     # Step 2: 使用 parse_ag_output 解析 ag 命令的输出
-    search_results = parse_ag_output(ag_output)
+    with tqdm(total=1, desc="Parsing ag Output", unit="step") as pbar_parse:
+        search_results = parse_ag_output(ag_output)
+        pbar_parse.update(1)
     if not search_results:
         logger.debug("No search results found")
         return None
-    
+
+    unique_filenames = set(item[0] for item in search_results)
     symbol_table = {}
-    for item in search_results:
-        filename, line_number, column_number, source_line = item
-        # Step 3: 使用传入的 ClangdClient 获取符号信息
-        symbol_info = await clangd_client.textDocument_documentSymbol(os.path.join(file_path, filename))
-        if not symbol_info:
-            logger.debug("No symbol information found")
-            continue
-        symbol_table[filename] = symbol_info
+    with tqdm(total=len(unique_filenames), desc="Fetching Symbol Info", unit="file") as pbar_symbols:
+        for filename in unique_filenames:
+            # Step 3: 使用传入的 ClangdClient 获取符号信息
+            symbol_info = await clangd_client.textDocument_documentSymbol(os.path.join(file_path, filename))
+            if not symbol_info:
+                logger.debug(f"No symbol information found for {filename}")
+                continue
+            symbol_table[filename] = symbol_info
+            pbar_symbols.update(1)
+
     # Step 4: 查找每个搜索结果对应的符号信息
-    located_symbols = {}    
-    for filename, line_number, column_number, source_line in search_results:
-        symbol_info = symbol_table.get(filename)
-        if not symbol_info: continue
-        symbol = clangd_client.lookup_symbol_info(symbol_info, line_number - 1, source_line)
-        if symbol:
-            if filename not in located_symbols:
-                located_symbols[filename] = []
-            located_symbols[filename].append(symbol)
+    located_symbols = {}
+    with tqdm(total=len(search_results), desc="Locating Symbols", unit="hit") as pbar_locate:
+        for filename, line_number, column_number, source_line in search_results:
+            symbol_info = symbol_table.get(filename)
+            if not symbol_info:
+                pbar_locate.update(1)
+                continue
+            symbol = clangd_client.lookup_symbol_info(symbol_info, line_number - 1, source_line)
+            if symbol:
+                if filename not in located_symbols:
+                    located_symbols[filename] = []
+                located_symbols[filename].append(symbol)
+            pbar_locate.update(1)
 
     if not located_symbols:
         logger.debug("No located symbols found")
 
     return located_symbols
-
 
 class AsyncOpenAIClient:
     """
@@ -394,17 +446,24 @@ def prompt_symbol_content(source_array, keyword):
     Returns:
         str: 生成的提示信息。
     """
-    header = f"keyword `{keyword}` exists in multiple source files in a large project, read them and analysis the code, teach me what the keyword really means, response in chinese\n"
-    max_size = 24 * 1024  # 32KB
+    header = f"keyword `{keyword}` exists in multiple source files in a large project, read them and analysis the code, teach me what the keyword really means, explain the logic of source code related , response in chinese\n"
+    max_size = 32 * 1024 - 512# 32KB
     current_size = len(header)
     text = []
 
-    for filename, content in source_array:
+    if len(source_array) == 1:
+        filename, content = source_array[0]
         line = f"In file {filename},  content: {content}\n"
-        if current_size + len(line) > max_size:
-            break
+        if len(line) > max_size:
+            line = line[:max_size - len(header) - 1] + "\n"  # Truncate the line to fit within max_size
         text.append(line)
-        current_size += len(line)
+    else:
+        for filename, content in source_array:
+            line = f"In file {filename},  content: {content}\n"
+            if current_size + len(line) > max_size:
+                break
+            text.append(line)
+            current_size += len(line)
     return header + "".join(text)
 
 
@@ -433,6 +492,8 @@ async def run(filepath: str = os.getcwd(), keyword: str = "someFeatureE", compil
                 s.add(symbol["source"])
                 source_array.append((filename, symbol["source"]))
         print(source_array)
+        if not source_array:
+            return "No result"
         prompt = prompt_symbol_content(source_array, keyword)
 
         print(prompt)
