@@ -9,6 +9,7 @@ import argparse
 import asyncio
 import os
 import openai
+import re
 from flask import Flask, request, jsonify
 from tqdm.asyncio import tqdm  # Import the async version of tqdm
 
@@ -368,10 +369,36 @@ def prompt_symbol_content(source_array, keyword):
 
     if len(source_array) == 1:
         filename, content = source_array[0]
-        line = f"In file {filename},  content: {content}\n"
-        if len(line) > max_size:
-            line = line[:max_size - len(header) - 1] + "\n"  # Truncate the line to fit within max_size
-        text.append(line)
+        match = re.search(keyword, content)
+        if match:
+            start = match.start()
+            end = match.end()
+            line_prefix = f"In file {filename}, content around keyword: ..."
+            line_suffix = "...\n"
+
+            remaining_space_for_content = max_size - current_size - len(line_prefix) - len(line_suffix) - 5 # 预留一些额外空间
+
+            if remaining_space_for_content > 0:
+                len_before = min(remaining_space_for_content // 2, start)
+                len_after = min(remaining_space_for_content - len_before, len(content) - end)
+
+                extract_start = max(0, start - len_before)
+                extract_end = min(len(content), end + len_after)
+                matched_content = content[extract_start:extract_end]
+
+                # 移除首尾的断行
+                if matched_content.startswith('\n'):
+                    matched_content = matched_content[1:]
+                if matched_content.endswith('\n'):
+                    matched_content = matched_content[:-1]
+
+                line = f"{line_prefix}{matched_content}{line_suffix}"
+                text.append(line)
+                current_size += len(line)
+            else:
+                # 即使没有足够空间显示内容，也记录文件名，避免完全忽略
+                text.append(f"In file {filename}, keyword found but content too long to display.\n")
+                current_size += len(f"In file {filename}, keyword found but content too long to display.\n")
     else:
         for filename, content in source_array:
             line = f"In file {filename},  content: {content}\n"
