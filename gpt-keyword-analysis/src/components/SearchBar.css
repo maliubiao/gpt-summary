@@ -1,32 +1,66 @@
+.search-form {
+  display: flex;
+  justify-content: center; /* Center the entire form */
+  margin-bottom: 10px; /* Add some space below the form */
+}
+
 .search-bar-container {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 24px;
-    padding: 5px 10px;
-    width: 400px; /* Adjust width as needed */
-    margin: 0 auto;
-  }
-  
-  .search-input {
-    flex-grow: 1;
-    border: none;
-    padding: 8px;
-    font-size: 16px;
-    outline: none;
-  }
-  
-  .search-button {
-    background-color: #f8f9fa;
-    border: none;
-    color: #3c4043;
-    font-size: 14px;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: 10px;
-  }
-  
-  .search-button:hover {
-    background-color: #f1f1f1;
-  }
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 24px;
+  padding: 2px; /* Further reduced padding */
+  width: auto;
+  overflow: hidden; /* Prevent rounded corners from being clipped */
+}
+
+.filepath-input {
+  border: none;
+  padding: 8px;
+  font-size: 16px;
+  outline: none;
+  border-right: 1px solid #ccc;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.search-input {
+  flex-grow: 1;
+  border: none;
+  padding: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input.invalid {
+  /* Example of highlighting the input when invalid */
+  background-color: #ffe0e0;
+}
+
+.search-button {
+  background-color: #f8f9fa;
+  border: none;
+  color: #3c4043;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.search-button:hover {
+  background-color: #f1f1f1;
+}
+
+.search-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
+  text-align: center; /* Center the feedback message */
+}

@@ -106,7 +106,7 @@ class ClangdClient:
 
     def start_clangd(self):
         self.process = subprocess.Popen(
-            ['clangd', '--compile-commands-dir', self.compile_commands_path, '--log=verbose'],
+            ['clangd', "--index-file", "proj.idx", '--compile-commands-dir', self.compile_commands_path, '--log=verbose'],
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             text=True,
@@ -361,7 +361,7 @@ def prompt_symbol_content(source_array, keyword):
         f"如果你引入了新概念，需要将新概论解释到小学生都懂的水平。\n"
         f"请用中文回复。\n"
     )
-    max_size = 64 * 1024 - 512# 32KB
+    max_size = 32 * 1024 - 512# 32KB
     current_size = len(header)
     text = []
 
@@ -401,6 +401,7 @@ async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
         f"如果你引入了新概念，需要将新概论解释到小学生都懂的水平。\n"
         f"请用中文回复。\n"
     )
+    header_size = len(header)
     current_prompt_size += len(header)
     # Step 1: 使用 subprocess_call_ag 执行 ag 命令来搜索关键字
     with tqdm(total=1, desc="Searching with ag", unit="step") as pbar_ag:
@@ -449,7 +450,7 @@ async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
                 symbol_name, symbol_data = ret
                 source_code = symbol_data['source']
                 line = f"In file {filename},  content: {source_code}\n"
-                if current_prompt_size + len(line) <= max_prompt_size:
+                if current_prompt_size + len(line) <= max_prompt_size or current_prompt_size == header_size:
                     if filename not in located_symbols_with_source:
                         located_symbols_with_source[filename] = []
                     pair = (symbol_name, symbol_data)
@@ -466,8 +467,6 @@ async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
 
 
 async def run(filepath: str = os.getcwd(), keyword: str = "someFeatureE", compile_commands_path: str = 'build'):
-    global clangd_client
-    init_clangd_client(filepath, compile_commands_path)
     ret = await locate_symbol_of_ag_search_hit(keyword, filepath, clangd_client)
     if ret:
         source_array = []
@@ -495,10 +494,13 @@ app = Flask(__name__)
 
 @app.route('/query', methods=['GET'])
 async def query():
+    init_clangd_client(args.filepath, args.compile_commands_path)
     keyword = request.args.get('keyword')
+    filepath = request.args.get('filepath', default=args.filepath)
+    compile_commands_path = request.args.get('compile_commands_path', default=args.compile_commands_path)
     if not keyword:
         return jsonify({"error": "Keyword is required"}), 400
-    result = await run(args.filepath, keyword, args.compile_commands_path)
+    result = await run(filepath, keyword, compile_commands_path)
     return jsonify({"result": result})
 
 
@@ -525,5 +527,6 @@ if __name__ == '__main__':
     # 设置事件循环
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
+
     addr, port = args.addr.split(':') if ':' in args.addr else ('', args.addr)
     app.run(host=addr, port=int(port))

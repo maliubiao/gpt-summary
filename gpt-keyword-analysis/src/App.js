@@ -10,18 +10,25 @@ import './App.css';
 
 function App() {
   const [keyword, setKeyword] = useState('');
+  const [filePath, setFilePath] = useState(''); // Add state for filepath
   const [isLoading, setIsLoading] = useState(false);
   const [markdownContent, setMarkdownContent] = useState('');
   const [error, setError] = useState(null);
 
-  const handleSearch = async (searchKeyword) => {
+  const handleSearch = async (searchKeyword, searchFilePath) => { // Receive filepath here
     setKeyword(searchKeyword);
+    setFilePath(searchFilePath); // Update the filePath state
     setIsLoading(true);
     setMarkdownContent('');
     setError(null);
 
+    let url = `http://localhost:8080/query?keyword=${searchKeyword}`;
+    if (searchFilePath) {
+      url += `&filepath=${searchFilePath}`; // Add filepath to the query
+    }
+
     try {
-      const response = await fetch(`http://localhost:8080/query?keyword=${searchKeyword}`);
+      const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
