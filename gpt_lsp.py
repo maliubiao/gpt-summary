@@ -208,12 +208,14 @@ class ClangdClient:
                         symbol_source = lines[start_line][start_character:]
                         symbol_source += ''.join(lines[start_line + 1:end_line])
                         symbol_source += lines[end_line][:end_character]
-                    symbol_table[symbol['name']] = {
+                    if symbol["name"] not in symbol_table:
+                        symbol_table[symbol["name"]] = []
+                    symbol_table[symbol['name']].append( {
                         "source": symbol_source,
                         "kind": SymbolKind.get_symbol_name(symbol["kind"]),
                         "start": {"line": start_line, "character": start_character},
                         "end": {"line": end_line, "character": end_character},
-                        }
+                        })
             return symbol_table
         return None
 
@@ -240,12 +242,13 @@ class ClangdClient:
 
     def lookup_symbol_info(self, symbol_table, line_number, source_line_content):
         results = []
-        for name, info in symbol_table.items():
-            start = info["start"]
-            end = info["end"]
-            if start["line"] <= line_number <= end["line"]:
-                if source_line_content.strip() in info["source"].strip():      
-                    results.append((name, info))
+        for name, infos in symbol_table.items():
+            for info in infos:
+                start = info["start"]
+                end = info["end"]
+                if start["line"] <= line_number <= end["line"]:
+                    if source_line_content.strip() in info["source"].strip():      
+                        results.append((name, info))
                     # return name, info
         results.sort(key=lambda x: len(x[1]["source"]))
         if len(results) == 0:
