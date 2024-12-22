@@ -298,7 +298,6 @@ def parse_ag_output(ag_output):
     return results
 
 def subprocess_call_ag(keyword, path):
-    # ... (rest of the subprocess_call_ag function remains the same)
     try:
         result = subprocess.run(
             ['ag', '--column', keyword],

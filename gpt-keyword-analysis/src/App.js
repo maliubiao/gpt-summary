@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import SearchBar from './components/SearchBar';
 import LoadingAnimation from './components/LoadingAnimation';
 import ReactMarkdown from 'react-markdown';
-import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -34,7 +33,7 @@ function App() {
 
     ws.onopen = () => {
       console.log("WebSocket connected");
-      const payload = { keyword: searchKeyword };
+      const payload = { keyword: searchKeyword, filepath: searchFilePath };
       ws.send(JSON.stringify(payload));
     };
 
@@ -75,7 +74,7 @@ function App() {
     };
   };
 
-  const generatePdf = () => {
+  const generatePng = () => {
     const input = document.getElementById('markdown-container');
     if (!input) {
       console.error("Markdown container not found.");
@@ -85,27 +84,17 @@ function App() {
     setIsLoading(true);
     html2canvas(input, { scale: 2 })
       .then((canvas) => {
-        const pdf = new jsPDF('p', 'mm', 'a4');
         const imgData = canvas.toDataURL('image/png');
-        const imgProps = pdf.getImageProperties(imgData);
-        const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = pdf.internal.pageSize.getHeight();
-
-        let yOffset = 0;
-        while (yOffset < imgProps.height) {
-          const sHght = pdfHeight * imgProps.width / pdfWidth;
-          const sY = imgProps.height - yOffset > sHght ? yOffset : imgProps.height - sHght;
-          pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST', 0);
-          yOffset += sHght;
-          if (yOffset < imgProps.height) {
-            pdf.addPage();
-          }
-        }
-        pdf.save(`${keyword.replace(/[\\/*?:"<>|]/g, '_')}.pdf`);
+        const link = document.createElement('a');
+        link.href = imgData;
+        link.download = `${keyword.replace(/[\\/*?:"<>|]/g, '_')}.png`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       })
       .catch((error) => {
-        console.error("Error generating PDF:", error);
-        setError("Failed to generate PDF.");
+        console.error("Error generating PNG:", error);
+        setError("Failed to generate PNG.");
       })
       .finally(() => {
         setIsLoading(false);
@@ -122,8 +111,8 @@ function App() {
         {error && <div className="error-message">{error}</div>}
         {markdownContent && (
           <div>
-            <button onClick={generatePdf} disabled={isLoading}>
-              {isLoading ? 'Generating PDF...' : 'Generate PDF'}
+            <button onClick={generatePng} disabled={isLoading}>
+              {isLoading ? 'Generating PNG...' : 'Generate PNG'}
             </button>
             <div id="markdown-container" className="markdown-body" ref={markdownContainerRef} style={{ overflowY: 'auto' }}>
               <ReactMarkdown
