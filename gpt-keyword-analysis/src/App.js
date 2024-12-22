@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import SearchBar from './components/SearchBar';
 import LoadingAnimation from './components/LoadingAnimation';
 import ReactMarkdown from 'react-markdown';
@@ -10,40 +10,69 @@ import './App.css';
 
 function App() {
   const [keyword, setKeyword] = useState('');
-  const [filePath, setFilePath] = useState(''); // Add state for filepath
+  const [filePath, setFilePath] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [markdownContent, setMarkdownContent] = useState('');
   const [error, setError] = useState(null);
+  const markdownContainerRef = useRef(null); // Ref for the markdown container
 
-  const handleSearch = async (searchKeyword, searchFilePath) => { // Receive filepath here
+  useEffect(() => {
+    if (markdownContainerRef.current) {
+      // Scroll to the bottom after the content updates
+      markdownContainerRef.current.scrollTop = markdownContainerRef.current.scrollHeight;
+    }
+  }, [markdownContent]);
+
+  const handleSearch = async (searchKeyword, searchFilePath) => {
     setKeyword(searchKeyword);
-    setFilePath(searchFilePath); // Update the filePath state
+    setFilePath(searchFilePath);
     setIsLoading(true);
     setMarkdownContent('');
     setError(null);
 
-    let url = `http://localhost:8080/query?keyword=${searchKeyword}`;
-    if (searchFilePath) {
-      url += `&filepath=${searchFilePath}`; // Add filepath to the query
-    }
+    const ws = new WebSocket(`ws://localhost:8080/query_ws`);
 
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+    ws.onopen = () => {
+      console.log("WebSocket connected");
+      const payload = { keyword: searchKeyword };
+      ws.send(JSON.stringify(payload));
+    };
+
+    ws.onmessage = (event) => {
+      const message = JSON.parse(event.data);
+      if (message.type === 'stream' && message.content) {
+        setMarkdownContent((prevContent) => prevContent + message.content);
+      } else if (message.type === 'result' && message.content) {
+        setMarkdownContent(message.content);
+      } else if (message.type === 'done') {
+        console.log("WebSocket closed by server");
+        setIsLoading(false);
+        ws.close();
+      } else if (message.type === 'error' && message.content) {
+        setError(message.content);
+        setIsLoading(false);
+        ws.close();
       }
-      const data = await response.json();
-      if (data && data.result) {
-        setMarkdownContent(data.result);
-      } else {
-        setError("No result found.");
-      }
-    } catch (e) {
-      console.error("Error fetching data:", e);
-      setError("Failed to fetch search results.");
-    } finally {
+    };
+
+    ws.onerror = (error) => {
+      console.error("WebSocket error:", error);
+      setError("Failed to connect to the server.");
       setIsLoading(false);
-    }
+    };
+
+    ws.onclose = () => {
+      console.log("WebSocket disconnected");
+      if (isLoading) {
+        setIsLoading(false); // Ensure loading is turned off if connection closes unexpectedly
+      }
+    };
+
+    return () => {
+      if (ws.readyState === WebSocket.OPEN) {
+        ws.close();
+      }
+    };
   };
 
   const generatePdf = () => {
@@ -60,43 +89,18 @@ function App() {
         const imgData = canvas.toDataURL('image/png');
         const imgProps = pdf.getImageProperties(imgData);
         const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = pdf.internal.pageSize.getHeight(); // Use full page height
+        const pdfHeight = pdf.internal.pageSize.getHeight();
 
         let yOffset = 0;
-        let currentPage = 1;
-
         while (yOffset < imgProps.height) {
-          const sourceY = yOffset;
-          const sourceHeight = Math.min(pdfHeight * imgProps.width / pdfWidth, imgProps.height - yOffset); // Ensure we don't go beyond the image height
-
-          const canvasForPage = document.createElement('canvas');
-          const context = canvasForPage.getContext('2d');
-          canvasForPage.width = canvas.width;
-          canvasForPage.height = sourceHeight * (canvas.width / imgProps.width);
-
-          context.drawImage(
-            canvas,
-            0,
-            sourceY,
-            imgProps.width,
-            sourceHeight,
-            0,
-            0,
-            canvasForPage.width,
-            canvasForPage.height
-          );
-
-          const pageImgData = canvasForPage.toDataURL('image/png');
-          pdf.addImage(pageImgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-
-          yOffset += sourceHeight;
-
+          const sHght = pdfHeight * imgProps.width / pdfWidth;
+          const sY = imgProps.height - yOffset > sHght ? yOffset : imgProps.height - sHght;
+          pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST', 0);
+          yOffset += sHght;
           if (yOffset < imgProps.height) {
             pdf.addPage();
-            currentPage++;
           }
         }
-
         pdf.save(`${keyword.replace(/[\\/*?:"<>|]/g, '_')}.pdf`);
       })
       .catch((error) => {
@@ -118,8 +122,10 @@ function App() {
         {error && <div className="error-message">{error}</div>}
         {markdownContent && (
           <div>
-            <button onClick={generatePdf}>Generate PDF</button>
-            <div id="markdown-container" className="markdown-body">
+            <button onClick={generatePdf} disabled={isLoading}>
+              {isLoading ? 'Generating PDF...' : 'Generate PDF'}
+            </button>
+            <div id="markdown-container" className="markdown-body" ref={markdownContainerRef} style={{ overflowY: 'auto' }}>
               <ReactMarkdown
                 components={{
                   code({ node, inline, className, children, ...props }) {

@@ -10,8 +10,10 @@ import asyncio
 import os
 import openai
 import re
-from flask import Flask, request, jsonify
-from tqdm.asyncio import tqdm  # Import the async version of tqdm
+from tqdm.asyncio import tqdm
+import tornado.ioloop
+import tornado.web
+import tornado.websocket
 
 # 配置日志记录
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s - %(lineno)d')
@@ -20,7 +22,6 @@ API_BASE = "https://api.openai.com/v1"
 MODEL_NAME = "gpt-3.5-turbo"
 API_TOKEN = "YOUR_OPENAI_API_KEY"
 CLANGD_PATH="/root/llvm-project/build/bin/clangd"
-
 
 class SymbolKind:
     File = 1
@@ -81,10 +82,7 @@ class SymbolKind:
 
     @classmethod
     def get_symbol_name(cls, kind, locale='zh_cn'):
-        # 这里可以根据locale添加翻译逻辑
-        # 目前仅返回中文名称
         return cls._symbol_names.get(kind, "未知")
-
 
 class ClangdClient:
     def __init__(self, file_path, compile_commands_path):
@@ -97,18 +95,15 @@ class ClangdClient:
         self.response_futures = {}
 
     def read_compile_commands(self):
-
-        with open(self.compile_commands_path + "/compile_commands.json", 'r') as f:
-            compile_commands = json.load(f)
-        # for command in compile_commands:
-        #     self.send_notification('textDocument/didOpen', {
-        #         'textDocument': {
-        #             'uri': f'file://{command["file"]}',
-        #             'languageId': 'cpp',
-        #             'version': 1,
-        #             'text': open(command['file']).read()
-        #         }
-        #     })
+        try:
+            with open(os.path.join(self.compile_commands_path, "compile_commands.json"), 'r') as f:
+                compile_commands = json.load(f)
+        except FileNotFoundError:
+            logger.error(f"compile_commands.json not found in {self.compile_commands_path}")
+            return
+        except json.JSONDecodeError:
+            logger.error(f"Error decoding compile_commands.json")
+            return
 
     def start_clangd(self):
         self.process = subprocess.Popen(
@@ -122,7 +117,7 @@ class ClangdClient:
         self.socket = self.process.stdin
         self.send_request('initialize', {
             'processId': self.process.pid,
-            'rootUri': self.file_path,
+            'rootUri': f'file://{self.file_path}',
             'capabilities': {}
         })
         self.read_compile_commands()
@@ -142,7 +137,6 @@ class ClangdClient:
         request_json = json.dumps(request)
         self.socket.write(f"Content-Length: {len(request_json)}\r\n\r\n{request_json}")
         self.socket.flush()
-
         return future
 
     def send_notification(self, method, params):
@@ -162,22 +156,29 @@ class ClangdClient:
                 break
             if header.startswith('Content-Length:'):
                 content_length = int(header.split(': ')[1])
-                self.process.stdout.readline()  # Read the empty line
+                self.process.stdout.readline()
                 response_json = self.process.stdout.read(content_length)
-                response = json.loads(response_json)
-                logger.debug(response_json)
-                if 'id' in response:
-                    logger.debug("pop id %s", response["id"])
-                    future = self.response_futures.pop(response['id'], None)
-                    if future:
-                        logger.debug("set future for id %s", response["id"])
-
-                        future.get_loop().call_soon_threadsafe(future.set_result, response)
-                        logger.debug("set end")
+                try:
+                    response = json.loads(response_json)
+                    logger.debug(response_json)
+                    if 'id' in response:
+                        logger.debug("pop id %s", response["id"])
+                        future = self.response_futures.pop(response['id'], None)
+                        if future:
+                            logger.debug("set future for id %s", response["id"])
+                            future.get_loop().call_soon_threadsafe(future.set_result, response)
+                            logger.debug("set end")
+                except json.JSONDecodeError:
+                    logger.error(f"Error decoding JSON response: {response_json}")
 
     async def textDocument_documentSymbol(self, file_path):
-        with open(file_path) as f:
-            text = f.read()
+        try:
+            with open(file_path) as f:
+                text = f.read()
+        except FileNotFoundError:
+            logger.error(f"File not found: {file_path}")
+            return None
+
         self.send_notification('textDocument/didOpen', {
             'textDocument': {
                 'uri': f'file://{file_path}',
@@ -195,27 +196,32 @@ class ClangdClient:
         if response and 'result' in response:
             symbols = response['result']
             symbol_table = {}
-            with open(file_path, 'r') as file:
-                lines = file.readlines()
-                for symbol in symbols:
-                    start_line = symbol['location']['range']['start']['line']
-                    start_character = symbol['location']['range']['start']['character']
-                    end_line = symbol['location']['range']['end']['line']
-                    end_character = symbol['location']['range']['end']['character']
-                    if start_line == end_line:
-                        symbol_source = lines[start_line][start_character:end_character]
-                    else:
-                        symbol_source = lines[start_line][start_character:]
-                        symbol_source += ''.join(lines[start_line + 1:end_line])
-                        symbol_source += lines[end_line][:end_character]
-                    if symbol["name"] not in symbol_table:
-                        symbol_table[symbol["name"]] = []
-                    symbol_table[symbol['name']].append( {
-                        "source": symbol_source,
-                        "kind": SymbolKind.get_symbol_name(symbol["kind"]),
-                        "start": {"line": start_line, "character": start_character},
-                        "end": {"line": end_line, "character": end_character},
-                        })
+            try:
+                with open(file_path, 'r') as file:
+                    lines = file.readlines()
+                    for symbol in symbols:
+                        start_line = symbol['location']['range']['start']['line']
+                        start_character = symbol['location']['range']['start']['character']
+                        end_line = symbol['location']['range']['end']['line']
+                        end_character = symbol['location']['range']['end']['character']
+                        if start_line < len(lines) and end_line < len(lines):
+                            if start_line == end_line:
+                                symbol_source = lines[start_line][start_character:end_character]
+                            else:
+                                symbol_source = lines[start_line][start_character:]
+                                symbol_source += ''.join(lines[start_line + 1:end_line])
+                                symbol_source += lines[end_line][:end_character]
+                            if symbol["name"] not in symbol_table:
+                                symbol_table[symbol["name"]] = []
+                            symbol_table[symbol['name']].append( {
+                                "source": symbol_source,
+                                "kind": SymbolKind.get_symbol_name(symbol["kind"]),
+                                "start": {"line": start_line, "character": start_character},
+                                "end": {"line": end_line, "character": end_character},
+                                })
+            except FileNotFoundError:
+                logger.error(f"File not found: {file_path}")
+                return None
             return symbol_table
         return None
 
@@ -239,7 +245,6 @@ class ClangdClient:
                     return signature_help['contents']['value']
         return None
 
-
     def lookup_symbol_info(self, symbol_table, line_number, source_line_content):
         results = []
         for name, infos in symbol_table.items():
@@ -247,16 +252,15 @@ class ClangdClient:
                 start = info["start"]
                 end = info["end"]
                 if start["line"] <= line_number <= end["line"]:
-                    if source_line_content.strip() in info["source"].strip():      
+                    if source_line_content.strip() in info["source"].strip():
                         results.append((name, info))
-                    # return name, info
         results.sort(key=lambda x: len(x[1]["source"]))
-        if len(results) == 0:
+        if not results:
             return None
-        elif len(results) == 1 or len(results) == 2:
+        elif len(results) <= 2:
             return results[0]
         else:
-            return results[int(len(results)/2)]
+            return results[len(results) // 2]
 
 def parse_ag_output(ag_output):
     results = []
@@ -268,48 +272,49 @@ def parse_ag_output(ag_output):
             for line in lines[1:]:
                 parts = line.split(':')
                 if len(parts) >= 3:
-                    line_number = int(parts[0])
-                    column_number = int(parts[1])
-                    source_line = ':'.join(parts[2:])
-                    results.append((filename, line_number, column_number, source_line))
+                    try:
+                        line_number = int(parts[0])
+                        column_number = int(parts[1])
+                        source_line = ':'.join(parts[2:])
+                        results.append((filename, line_number, column_number, source_line))
+                    except ValueError:
+                        logger.warning(f"Skipping malformed ag output line: {line}")
     else:
         lines = ag_output.strip().split('\n')
         for line in lines:
             parts = line.split(':')
             if len(parts) >= 4:
                 filename = parts[0]
-                line_number = int(parts[1])
-                column_number = int(parts[2])
-                source_line = ':'.join(parts[3:])
-                results.append((filename, line_number, column_number, source_line))
+                try:
+                    line_number = int(parts[1])
+                    column_number = int(parts[2])
+                    source_line = ':'.join(parts[3:])
+                    results.append((filename, line_number, column_number, source_line))
+                except ValueError:
+                    logger.warning(f"Skipping malformed ag output line: {line}")
     return results
 
-
 def subprocess_call_ag(keyword, path):
-    result = subprocess.run(
-        ['ag', '--column', keyword],
-        cwd=path,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True
-    )
-    if result.returncode == 0:
+    try:
+        result = subprocess.run(
+            ['ag', '--column', keyword],
+            cwd=path,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=True  # Raise an exception for non-zero return codes
+        )
         return result.stdout
-    else:
-        logger.error(f"Error running ag: {result.stderr}")
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Error running ag: {e}")
+        return None
+    except FileNotFoundError:
+        logger.error(f"ag command not found. Is it installed and in your PATH?")
         return None
 
 
 
 class AsyncOpenAIClient:
-    """
-    An asynchronous class to interact with the OpenAI API.
-
-    Args:
-        api_base (str): The base URL for the OpenAI API (e.g., "https://api.openai.com/v1").
-        model_name (str): The name of the OpenAI model to use (e.g., "gpt-3.5-turbo").
-        token (str): Your OpenAI API key.
-    """
     def __init__(self, api_base: str, model_name: str, token: str):
         self.api_base = api_base
         self.model_name = model_name
@@ -317,16 +322,7 @@ class AsyncOpenAIClient:
         openai.api_base = self.api_base
         openai.api_key = self.token
 
-    async def ask(self, question: str) -> str:
-        """
-        Asynchronously sends a question to the OpenAI API and displays the response tokens in real-time.
-
-        Args:
-            question (str): The question to ask the model.
-
-        Returns:
-            str: The complete response from the model.
-        """
+    async def ask_stream(self, question: str):
         try:
             response_stream = await openai.ChatCompletion.acreate(
                 model=self.model_name,
@@ -335,45 +331,29 @@ class AsyncOpenAIClient:
                 ],
                 stream=True,
             )
-
-            full_response = ""
-            print("Response:")
             async for chunk in response_stream:
                 if chunk.choices:
                     delta = chunk.choices[0].delta
                     if delta and "content" in delta:
-                        token = delta.content
-                        print(token, end="", flush=True)  # Print token immediately
-                        full_response += token
-            print()  # Add a newline after the response
-            return full_response
-
+                        yield delta.content
         except openai.error.OpenAIError as e:
-            print(f"An error occurred: {e}")
-            return ""
+            logger.error(f"OpenAI API error: {e}")
+            yield f"Error: {e}"
 
+    async def ask(self, question: str) -> str:
+        try:
+            response = await openai.ChatCompletion.acreate(
+                model=self.model_name,
+                messages=[
+                    {"role": "user", "content": question}
+                ]
+            )
+            return response.choices[0].message.content
+        except openai.error.OpenAIError as e:
+            logger.error(f"OpenAI API error: {e}")
+            return f"Error: {e}"
 
-
-async def ask_openai_question(question: str, api_base: str = API_BASE, model_name: str = MODEL_NAME, api_token: str = API_TOKEN) -> str:
-    client = AsyncOpenAIClient(api_base, model_name, api_token)
-    response = await client.ask(question)
-    if response:
-        print("\n--- Complete Response ---")
-        print(response)
-    return response
-
-
-def prompt_symbol_content(source_array, keyword):
-    """
-    生成包含多个源文件内容的提示信息，确保总字符串大小不超过32KB。
-
-    Args:
-        source_array (list of tuples): 包含文件名和内容的元组列表。
-        keyword (str): 要查找的关键字。
-
-    Returns:
-        str: 生成的提示信息。
-    """
+async def prompt_symbol_content(source_array, keyword):
     header = (
         f"关键字 `{keyword}` 存在于多个源文件中，这些文件属于一个大型项目。\n"
         f"请阅读并分析这些代码，解释该关键字的真实含义，并使用易于理解的例子来说明相关源代码的逻辑。\n"
@@ -381,7 +361,7 @@ def prompt_symbol_content(source_array, keyword):
         f"如果你引入了新概念，需要将新概论解释到小学生都懂的水平。\n"
         f"请用中文回复。\n"
     )
-    max_size = 64 * 1024 - 512# 64KB
+    max_size = 64 * 1024 - 512
     current_size = len(header)
     text = []
 
@@ -395,7 +375,7 @@ def prompt_symbol_content(source_array, keyword):
             line_prefix = f"In file {filename}, content around keyword: ..."
             line_suffix = "...\n"
 
-            remaining_space_for_content = max_size - current_size - len(line_prefix) - len(line_suffix) - 5 # 预留一些额外空间
+            remaining_space_for_content = max_size - current_size - len(line_prefix) - len(line_suffix) - 5
 
             if remaining_space_for_content > 0:
                 len_before = min(remaining_space_for_content // 2, start)
@@ -405,7 +385,6 @@ def prompt_symbol_content(source_array, keyword):
                 extract_end = min(len(content), end + len_after)
                 matched_content = content[extract_start:extract_end]
 
-                # 移除首尾的断行
                 if matched_content.startswith('\n'):
                     matched_content = matched_content[1:]
                 if matched_content.endswith('\n'):
@@ -415,7 +394,6 @@ def prompt_symbol_content(source_array, keyword):
                 text.append(line)
                 current_size += len(line)
             else:
-                # 即使没有足够空间显示内容，也记录文件名，避免完全忽略
                 text.append(f"In file {filename}, keyword found but content too long to display.\n")
                 current_size += len(f"In file {filename}, keyword found but content too long to display.\n")
         else:
@@ -429,39 +407,34 @@ def prompt_symbol_content(source_array, keyword):
             current_size += len(line)
     return header + "".join(text)
 
-
 clangd_client = None
 
 def init_clangd_client(filepath: str = os.getcwd(), compile_commands_path: str = 'build'):
     global clangd_client
     if clangd_client is None:
-
         clangd_client = ClangdClient(filepath, compile_commands_path)
         clangd_client.start_clangd()
-
 
 async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
     file_path = os.path.abspath(file_path)
     max_prompt_size = 64 * 1024 - 512
     current_prompt_size = 0
-    header = (
+    header_size = len((
         f"关键字 `{keyword}` 存在于多个源文件中，这些文件属于一个大型项目。\n"
         f"请阅读并分析这些代码，解释该关键字的真实含义，并使用易于理解的例子来说明相关源代码的逻辑。\n"
         f"教学方式，假设一个输入，给出这段代码执行后估测输出; 假设不同的输入，给出代码的关键决策导向。\n"
         f"如果你引入了新概念，需要将新概论解释到小学生都懂的水平。\n"
         f"请用中文回复。\n"
-    )
-    header_size = len(header)
-    current_prompt_size += len(header)
-    # Step 1: 使用 subprocess_call_ag 执行 ag 命令来搜索关键字
+    ))
+    current_prompt_size += header_size
+
     with tqdm(total=1, desc="Searching with ag", unit="step") as pbar_ag:
         ag_output =  subprocess_call_ag(keyword, file_path)
         pbar_ag.update(1)
     if not ag_output:
         logger.debug("No output from ag command")
-        return []  # Return an empty list instead of None
+        return []
 
-    # Step 2: 使用 parse_ag_output 解析 ag 命令的输出
     with tqdm(total=1, desc="Parsing ag Output", unit="step") as pbar_parse:
         search_results = parse_ag_output(ag_output)
         pbar_parse.update(1)
@@ -470,17 +443,11 @@ async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
         return []
 
     located_symbols_with_source = {}
-    symbol_table = {}  # Cache for symbol information
-    # processed_files = set()
+    symbol_table = {}
 
     with tqdm(total=len(search_results), desc="Processing Search Hits", unit="hit") as pbar_process:
         for filename, line_number, column_number, source_line in search_results:
             full_filename = os.path.join(file_path, filename)
-            # if full_filename in processed_files:
-            #     pbar_process.update(1)
-            #     continue
-
-            # processed_files.add(full_filename)
 
             if filename not in symbol_table:
                 symbol_info = await clangd_client.textDocument_documentSymbol(full_filename)
@@ -509,71 +476,152 @@ async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
                         current_prompt_size += len(line)
                 else:
                     logger.info(f"Reached max prompt size, stopping symbol lookup, size {current_prompt_size + len(line) }.")
-                    break  # Stop processing if prompt size limit is reached
+                    break
 
             pbar_process.update(1)
 
     return located_symbols_with_source
 
 
-async def run(filepath: str = os.getcwd(), keyword: str = "someFeatureE", compile_commands_path: str = 'build'):
+async def run_query_ws(keyword: str, filepath: str, websocket):
     ret = await locate_symbol_of_ag_search_hit(keyword, filepath, clangd_client)
     if ret:
         source_array = []
-        s = set()
+        seen_sources = set()
         for filename, symbols in ret.items():
             for name, symbol in symbols:
-                print(f"FileName: {filename} Symbol Name: {name}, Kind: {symbol['kind']}, Source: {symbol['source']}")
-                if symbol["source"] in s:
+                logger.debug(f"FileName: {filename} Symbol Name: {name}, Kind: {symbol['kind']}, Source: {symbol['source']}")
+                if symbol["source"] in seen_sources:
                     continue
-                s.add(symbol["source"])
+                seen_sources.add(symbol["source"])
                 source_array.append((filename, symbol["source"]))
-        print(source_array)
+
         if not source_array:
-            return "No result"
-        prompt = prompt_symbol_content(source_array, keyword)
+            await websocket.write_message(json.dumps({"type": "result", "content": "No relevant code found."}))
+            return
 
-        # 转义关键字以确保其作为有效的文件名
+        prompt = await prompt_symbol_content(source_array, keyword)
+
         escaped_keyword = re.sub(r'[\\/*?:"<>|]', '_', keyword)
-        file_path = os.path.join("prompt", f"{escaped_keyword}.txt")
+        prompt_dir = "prompt"
+        os.makedirs(prompt_dir, exist_ok=True)
+        prompt_file_path = os.path.join(prompt_dir, f"{escaped_keyword}.txt")
 
-        # 确保目录存在
-        os.makedirs(os.path.dirname(file_path), exist_ok=True)
-
-        # 将提示内容写入文件
-        with open(file_path, 'w', encoding='utf-8') as file:
+        with open(prompt_file_path, 'w', encoding='utf-8') as file:
             file.write(prompt)
-        return await ask_openai_question(prompt, api_base=API_BASE, model_name=MODEL_NAME, api_token=API_TOKEN)
+
+        openai_client = AsyncOpenAIClient(API_BASE, MODEL_NAME, API_TOKEN)
+        async for token in openai_client.ask_stream(prompt):
+            await websocket.write_message(json.dumps({"type": "stream", "content": token}))
+
+        await websocket.write_message(json.dumps({"type": "done"}))
     else:
-        print("No symbol information found")
+        await websocket.write_message(json.dumps({"type": "result", "content": "No symbol information found."}))
 
 
+async def run_query_http(keyword: str, filepath: str, compile_commands_path: str):
+    ret = await locate_symbol_of_ag_search_hit(keyword, filepath, clangd_client)
+    if ret:
+        source_array = []
+        seen_sources = set()
+        for filename, symbols in ret.items():
+            for name, symbol in symbols:
+                logger.debug(f"FileName: {filename} Symbol Name: {name}, Kind: {symbol['kind']}, Source: {symbol['source']}")
+                if symbol["source"] in seen_sources:
+                    continue
+                seen_sources.add(symbol["source"])
+                source_array.append((filename, symbol["source"]))
 
-app = Flask(__name__)
+        if not source_array:
+            return {"result": "No relevant code found."}
 
-@app.route('/query', methods=['GET'])
-async def query():
-    init_clangd_client(args.filepath, args.compile_commands_path)
-    keyword = request.args.get('keyword')
-    filepath = request.args.get('filepath', default=args.filepath)
-    compile_commands_path = request.args.get('compile_commands_path', default=args.compile_commands_path)
-    if not keyword:
-        return jsonify({"error": "Keyword is required"}), 400
-    result = await run(filepath, keyword, compile_commands_path)
-    return jsonify({"result": result})
+        prompt = await prompt_symbol_content(source_array, keyword)
 
+        escaped_keyword = re.sub(r'[\\/*?:"<>|]', '_', keyword)
+        prompt_dir = "prompt"
+        os.makedirs(prompt_dir, exist_ok=True)
+        prompt_file_path = os.path.join(prompt_dir, f"{escaped_keyword}.txt")
 
+        with open(prompt_file_path, 'w', encoding='utf-8') as file:
+            file.write(prompt)
+
+        openai_client = AsyncOpenAIClient(API_BASE, MODEL_NAME, API_TOKEN)
+        response = await openai_client.ask(prompt)
+        return {"result": response}
+    else:
+        return {"result": "No symbol information found."}
+
+class WebSocketQueryHandler(tornado.websocket.WebSocketHandler):
+    def check_origin(self, origin):
+        return True
+
+    def open(self):
+        logger.info("WebSocket connection opened")
+        self.clangd_initialized = False
+        if clangd_client is None:
+            init_clangd_client(self.settings.get('filepath'), self.settings.get('compile_commands_path'))
+        self.clangd_initialized = True
+
+    async def on_message(self, message):
+        logger.info(f"Received message: {message}")
+        try:
+            data = json.loads(message)
+            keyword = data.get('keyword')
+            filepath = data.get("filepath", self.settings.get("filepath"))
+            compile_commands_path = self.settings.get('compile_commands_path')
+            if keyword:
+                if self.clangd_initialized:
+                    await run_query_ws(keyword, filepath, self)
+                else:
+                    await self.write_message(json.dumps({"type": "error", "content": "Clangd client not initialized."}))
+            else:
+                await self.write_message(json.dumps({"type": "error", "content": "Keyword is required."}))
+        except json.JSONDecodeError:
+            await self.write_message(json.dumps({"type": "error", "content": "Invalid JSON format."}))
+        except Exception as e:
+            logger.error(f"Error processing message: {e}")
+            await self.write_message(json.dumps({"type": "error", "content": f"Internal server error: {e}"}))
+
+    def on_close(self):
+        logger.info("WebSocket connection closed")
+
+class HttpQueryHandler(tornado.web.RequestHandler):
+    async def get(self):
+        keyword = self.get_argument('keyword', None)
+        filepath = self.settings.get('filepath')
+        compile_commands_path = self.settings.get('compile_commands_path')
+        filepath_user = self.get_argument('filepath', filepath)
+
+        if not keyword:
+            self.set_status(400)
+            self.write({"error": "Keyword is required"})
+            return
+
+        if clangd_client is None:
+            init_clangd_client(filepath, compile_commands_path)
+
+        try:
+            result = await run_query_http(keyword, filepath_user, compile_commands_path)
+            self.write(result)
+        except Exception as e:
+            logger.error(f"Error processing HTTP query: {e}")
+            self.set_status(500)
+            self.write({"error": f"Internal server error: {e}"})
+
+def make_app(args):
+    return tornado.web.Application([
+        (r"/query_ws", WebSocketQueryHandler),
+        (r"/query", HttpQueryHandler),
+    ], filepath=args.filepath, compile_commands_path=args.compile_commands_path)
 
 if __name__ == '__main__':
-
-
-    parser = argparse.ArgumentParser(description="Run the GPT LSP tool.")
+    parser = argparse.ArgumentParser(description="Run the GPT LSP tool with Tornado and WebSocket.")
     parser.add_argument("--api-base", required=True, help="OpenAI API base URL")
     parser.add_argument("--model-name", required=True, help="OpenAI model name")
     parser.add_argument("--api-token", required=True, help="OpenAI API token")
     parser.add_argument("--filepath", default=os.getcwd(), help="File path to search in")
     parser.add_argument("--compile-commands-path", default='build', help="Path to compile_commands.json")
-    parser.add_argument("--addr", default=":8080", help="Address to run the Flask server")
+    parser.add_argument("--port", type=int, default=8080, help="Port to listen on")
     parser.add_argument("--clangd-binary-path", default="clangd", help="Path to the clangd binary")
 
     args = parser.parse_args()
@@ -581,8 +629,8 @@ if __name__ == '__main__':
     MODEL_NAME = args.model_name
     API_TOKEN = args.api_token
     CLANGD_PATH = args.clangd_binary_path
-    # 设置事件循环
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    addr, port = args.addr.split(':') if ':' in args.addr else ('', args.addr)
-    app.run(host=addr, port=int(port))
+
+    app = make_app(args)
+    app.listen(args.port)
+    logger.info(f"Listening on port {args.port}")
+    tornado.ioloop.IOLoop.current().start()
