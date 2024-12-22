@@ -15,6 +15,7 @@ import tornado.ioloop
 import tornado.web
 import tornado.websocket
 import google.generativeai as genai
+import traceback
 
 # 配置日志记录
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s - %(lineno)d')
@@ -109,7 +110,7 @@ class ClangdClient:
 
     def start_clangd(self):
         self.process = subprocess.Popen(
-            [CLANGD_PATH, "--background-index", "--index-file=proj.idx", f'--compile-commands-dir={self.compile_commands_path}', '--log=verbose'],
+            [CLANGD_PATH, "--background-index", f"--index-file={os.path.join(self.file_path, "proj.idx")}", f'--compile-commands-dir={self.compile_commands_path}', '--log=verbose'],
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=open('clangd.stderr.log', 'w'),
@@ -120,9 +121,22 @@ class ClangdClient:
         self.send_request('initialize', {
             'processId': self.process.pid,
             'rootUri': f'file://{self.file_path}',
-            'capabilities': {}
+            "capabilities": {},
+            "clientInfo": {
+                "name": "gpt_lsp_client",
+                "version": "0.01"
+            },
+            "workspaceFolders": [
+                {
+                    "name": "my-project",
+                    "uri": f'file://{self.file_path}',
+                }
+            ]
         })
+        # self.send_request('initialized', {})
         self.read_compile_commands()
+        #load clagnd index
+        asyncio.create_task(self.workspace_symbol(""))
         threading.Thread(target=self.read_response_async, daemon=True).start()
 
     def send_request(self, method, params):
@@ -201,31 +215,63 @@ class ClangdClient:
             try:
                 with open(file_path, 'r') as file:
                     lines = file.readlines()
-                    for symbol in symbols:
-                        start_line = symbol['location']['range']['start']['line']
-                        start_character = symbol['location']['range']['start']['character']
-                        end_line = symbol['location']['range']['end']['line']
-                        end_character = symbol['location']['range']['end']['character']
-                        if start_line < len(lines) and end_line < len(lines):
-                            if start_line == end_line:
-                                symbol_source = lines[start_line][start_character:end_character]
-                            else:
-                                symbol_source = lines[start_line][start_character:]
-                                symbol_source += ''.join(lines[start_line + 1:end_line])
-                                symbol_source += lines[end_line][:end_character]
-                            if symbol["name"] not in symbol_table:
-                                symbol_table[symbol["name"]] = []
-                            symbol_table[symbol['name']].append( {
-                                "source": symbol_source,
-                                "kind": SymbolKind.get_symbol_name(symbol["kind"]),
-                                "start": {"line": start_line, "character": start_character},
-                                "end": {"line": end_line, "character": end_character},
-                                })
+                for symbol in symbols:
+                    self.process_symbol(symbol, lines, symbol_table)
             except FileNotFoundError:
                 logger.error(f"File not found: {file_path}")
                 return None
             return symbol_table
         return None
+
+    def process_symbol(self, symbol, lines, symbol_table):
+        if not lines:
+            uri = symbol["location"]["uri"]
+            file_path = uri.replace('file://', '')
+            try:
+                with open(file_path, 'r') as file:
+                    lines = file.readlines()
+            except FileNotFoundError:
+                logger.error(f"File not found: {file_path}")
+                return None
+        start_line = symbol['location']['range']['start']['line']
+        start_character = symbol['location']['range']['start']['character']
+        end_line = symbol['location']['range']['end']['line']
+        end_character = symbol['location']['range']['end']['character']
+        if start_line < len(lines) and end_line < len(lines):
+            if start_line == end_line:
+                symbol_source = lines[start_line][start_character:end_character]
+            else:
+                symbol_source = lines[start_line][start_character:]
+                symbol_source += ''.join(lines[start_line + 1:end_line])
+                symbol_source += lines[end_line][:end_character]
+            if symbol["name"] not in symbol_table:
+                symbol_table[symbol["name"]] = []
+            symbol_table[symbol['name']].append({
+                "source": symbol_source,
+                "kind": SymbolKind.get_symbol_name(symbol["kind"]),
+                "start": {"line": start_line, "character": start_character},
+                "end": {"line": end_line, "character": end_character},
+            })
+
+
+    async def workspace_symbol(self, query):
+        future = self.send_request('workspace/symbol', {
+            'query': query
+        })
+        response = await future
+        if response and 'result' in response:
+            symbols = response['result']
+            symbol_table = {}
+            for symbol in symbols:
+                uri = symbol["location"]["uri"]
+                file_path = uri.replace('file://', '')
+                if file_path not in symbol_table:
+                    symbol_table[file_path] = {}
+                if symbol["name"] == query:
+                    self.process_symbol(symbol, [], symbol_table[file_path])
+            return symbol_table
+        return 
+    
 
     async def textDocument_hover(self, file_path, line_number, character):
         future = self.send_request('textDocument/hover', {
@@ -390,7 +436,7 @@ async def prompt_symbol_content(source_array, keyword):
         f"关键字 `{keyword}` 存在于多个源文件中，这些文件属于一个大型项目。\n"
         f"请阅读并分析这些代码，解释该关键字的真实含义，并使用易于理解的例子来说明相关源代码的逻辑。\n"
         f"教学方式，假设一个输入，给出这段代码执行后估测输出; 假设不同的输入，给出代码的关键决策导向。\n"
-        f"如果你引入了新概念，需要将新概论解释到小学生都懂的水平。\n"
+        f"如果你引入了新概念，需要将新概论解释到初中生都懂的水平。\n"
         f"请用中文回复。\n"
     )
     max_size = 64 * 1024 - 512
@@ -476,7 +522,19 @@ async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client: Asyn
         logger.debug("No search results found")
         return []
 
+
+
     located_symbols_with_source = {}
+    # 使用 workspace_symbol 函数查询关键字，可能返回一些符号
+    ret = await clangd_client.workspace_symbol(keyword)
+    if ret:
+        for filename, symbol_map in ret.items():
+            if filename not in located_symbols_with_source:
+                located_symbols_with_source[filename] = []
+            for symbol_name, symbols in symbol_map.items():
+                for symbol in symbols:
+                    located_symbols_with_source[filename].append((symbol_name, symbol))
+
     symbol_table = {}
     with tqdm(total=len(search_results), desc="Processing Search Hits", unit="hit") as pbar_process:
         for filename, line_number, column_number, source_line in search_results:
@@ -538,10 +596,17 @@ async def run_query_ws(keyword: str, filepath: str, websocket, openai_client: As
         os.makedirs(prompt_dir, exist_ok=True)
         prompt_file_path = os.path.join(prompt_dir, f"{escaped_keyword}.txt")
 
-        with open(prompt_file_path, 'w', encoding='utf-8') as file:
-            file.write(prompt)
+        # with open(prompt_file_path, 'w', encoding='utf-8') as file:
+        #     file.write(prompt)
+
+        response_content = ""
         async for token in openai_client.ask_stream(prompt):
+            response_content += token
             await websocket.write_message(json.dumps({"type": "stream", "content": token}))
+
+        md_file_path = os.path.join(prompt_dir, f"{escaped_keyword}.md")
+        with open(md_file_path, 'w', encoding='utf-8') as md_file:
+            md_file.write(f"## Prompt\n```\n{prompt}\n```\n\n## Response\n{response_content}\n")
 
         await websocket.write_message(json.dumps({"type": "done"}))
     else:
@@ -606,6 +671,7 @@ class WebSocketQueryHandler(tornado.websocket.WebSocketHandler):
         except json.JSONDecodeError:
             await self.write_message(json.dumps({"type": "error", "content": "Invalid JSON format."}))
         except Exception as e:
+            traceback.print_exc()
             logger.error(f"Error processing message: {e}")
             await self.write_message(json.dumps({"type": "error", "content": f"Internal server error: {e}"}))
 
@@ -677,4 +743,5 @@ if __name__ == '__main__':
     app = asyncio.run(make_app(args))
     app.listen(args.port)
     logger.info(f"Listening on port {args.port}")
+    tornado.ioloop.IOLoop.current().call_later(1, init_clangd_client, args.filepath, args.compile_commands_path)
     tornado.ioloop.IOLoop.current().start()
