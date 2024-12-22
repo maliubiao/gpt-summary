@@ -387,8 +387,9 @@ def prompt_symbol_content(source_array, keyword):
 
     if len(source_array) == 1:
         filename, content = source_array[0]
+        line = f"In file {filename},  content: {content}\n"
         match = re.search(keyword, content)
-        if match:
+        if len(line) + len(header) > max_size and match:
             start = match.start()
             end = match.end()
             line_prefix = f"In file {filename}, content around keyword: ..."
@@ -417,6 +418,8 @@ def prompt_symbol_content(source_array, keyword):
                 # 即使没有足够空间显示内容，也记录文件名，避免完全忽略
                 text.append(f"In file {filename}, keyword found but content too long to display.\n")
                 current_size += len(f"In file {filename}, keyword found but content too long to display.\n")
+        else:
+            text.append(line)
     else:
         for filename, content in source_array:
             line = f"In file {filename},  content: {content}\n"
@@ -468,16 +471,16 @@ async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
 
     located_symbols_with_source = {}
     symbol_table = {}  # Cache for symbol information
-    processed_files = set()
+    # processed_files = set()
 
     with tqdm(total=len(search_results), desc="Processing Search Hits", unit="hit") as pbar_process:
         for filename, line_number, column_number, source_line in search_results:
             full_filename = os.path.join(file_path, filename)
-            if full_filename in processed_files:
-                pbar_process.update(1)
-                continue
+            # if full_filename in processed_files:
+            #     pbar_process.update(1)
+            #     continue
 
-            processed_files.add(full_filename)
+            # processed_files.add(full_filename)
 
             if filename not in symbol_table:
                 symbol_info = await clangd_client.textDocument_documentSymbol(full_filename)
