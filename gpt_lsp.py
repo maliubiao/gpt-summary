@@ -14,6 +14,7 @@ from tqdm.asyncio import tqdm
 import tornado.ioloop
 import tornado.web
 import tornado.websocket
+import google.generativeai as genai
 
 # 配置日志记录
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s - %(lineno)d')
@@ -85,6 +86,7 @@ class SymbolKind:
         return cls._symbol_names.get(kind, "未知")
 
 class ClangdClient:
+    # ... (rest of the ClangdClient class remains the same)
     def __init__(self, file_path, compile_commands_path):
         self.file_path = os.path.abspath(file_path)
         self.compile_commands_path = compile_commands_path
@@ -245,9 +247,9 @@ class ClangdClient:
                     return signature_help['contents']['value']
         return None
 
-    def lookup_symbol_info(self, symbol_table, line_number, source_line_content):
+    def lookup_symbol_info(self, symbol_info, line_number, source_line_content):
         results = []
-        for name, infos in symbol_table.items():
+        for name, infos in symbol_info.items():
             for info in infos:
                 start = info["start"]
                 end = info["end"]
@@ -263,6 +265,7 @@ class ClangdClient:
             return results[len(results) // 2]
 
 def parse_ag_output(ag_output):
+    # ... (rest of the parse_ag_output function remains the same)
     results = []
     if '\n\n' in ag_output:
         files = ag_output.strip().split('\n\n')
@@ -295,6 +298,7 @@ def parse_ag_output(ag_output):
     return results
 
 def subprocess_call_ag(keyword, path):
+    # ... (rest of the subprocess_call_ag function remains the same)
     try:
         result = subprocess.run(
             ['ag', '--column', keyword],
@@ -312,48 +316,77 @@ def subprocess_call_ag(keyword, path):
         logger.error(f"ag command not found. Is it installed and in your PATH?")
         return None
 
-
-
 class AsyncOpenAIClient:
-    def __init__(self, api_base: str, model_name: str, token: str):
+    def __init__(self, api_base: str, model_name: str, token: str, use_gemini: bool = False, gemini_token: str = None, gemini_model: str = None):
         self.api_base = api_base
         self.model_name = model_name
         self.token = token
-        openai.api_base = self.api_base
-        openai.api_key = self.token
+        self.use_gemini = use_gemini
+        self.gemini_token = gemini_token
+        self.gemini_model = gemini_model
+
+        if self.use_gemini:
+            if self.gemini_token:
+                genai.configure(api_key=self.gemini_token)
+                self.gmodel = genai.GenerativeModel(self.gemini_model)
+            else:
+                logger.error("Gemini API token is required when using Gemini.")
+                self.gmodel = None
+        else:
+            openai.api_base = self.api_base
+            openai.api_key = self.token
 
     async def ask_stream(self, question: str):
-        try:
-            response_stream = await openai.ChatCompletion.acreate(
-                model=self.model_name,
-                messages=[
-                    {"role": "user", "content": question}
-                ],
-                stream=True,
-            )
-            async for chunk in response_stream:
-                if chunk.choices:
-                    delta = chunk.choices[0].delta
-                    if delta and "content" in delta:
-                        yield delta.content
-        except openai.error.OpenAIError as e:
-            logger.error(f"OpenAI API error: {e}")
-            yield f"Error: {e}"
+        if self.use_gemini and self.gmodel:
+            try:
+                response_stream = self.gmodel.generate_content(question, stream=True)
+                for chunk in response_stream:
+                    if chunk.text:
+                        yield chunk.text
+            except Exception as e:
+                logger.error(f"Gemini API error: {e}")
+                yield f"Error: {e}"
+        else:
+            try:
+                response_stream = await openai.ChatCompletion.acreate(
+                    model=self.model_name,
+                    messages=[
+                        {"role": "user", "content": question}
+                    ],
+                    stream=True,
+                )
+                async for chunk in response_stream:
+                    if chunk.choices:
+                        delta = chunk.choices[0].delta
+                        if delta and "content" in delta:
+                            yield delta.content
+            except openai.error.OpenAIError as e:
+                logger.error(f"OpenAI API error: {e}")
+                yield f"Error: {e}"
 
     async def ask(self, question: str) -> str:
-        try:
-            response = await openai.ChatCompletion.acreate(
-                model=self.model_name,
-                messages=[
-                    {"role": "user", "content": question}
-                ]
-            )
-            return response.choices[0].message.content
-        except openai.error.OpenAIError as e:
-            logger.error(f"OpenAI API error: {e}")
-            return f"Error: {e}"
+        if self.use_gemini and self.gmodel:
+            try:
+                response = self.gmodel.generate_content(question)
+                return response.text
+            except Exception as e:
+                logger.error(f"Gemini API error: {e}")
+                return f"Error: {e}"
+        else:
+            try:
+                response = await openai.ChatCompletion.acreate(
+                    model=self.model_name,
+                    messages=[
+                        {"role": "user", "content": question}
+                    ]
+                )
+                return response.choices[0].message.content
+            except openai.error.OpenAIError as e:
+                logger.error(f"OpenAI API error: {e}")
+                return f"Error: {e}"
 
 async def prompt_symbol_content(source_array, keyword):
+    # ... (rest of the prompt_symbol_content function remains the same)
     header = (
         f"关键字 `{keyword}` 存在于多个源文件中，这些文件属于一个大型项目。\n"
         f"请阅读并分析这些代码，解释该关键字的真实含义，并使用易于理解的例子来说明相关源代码的逻辑。\n"
@@ -410,12 +443,14 @@ async def prompt_symbol_content(source_array, keyword):
 clangd_client = None
 
 def init_clangd_client(filepath: str = os.getcwd(), compile_commands_path: str = 'build'):
+    # ... (rest of the init_clangd_client function remains the same)
     global clangd_client
     if clangd_client is None:
         clangd_client = ClangdClient(filepath, compile_commands_path)
         clangd_client.start_clangd()
 
-async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
+async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client: AsyncOpenAIClient):
+    # ... (rest of the locate_symbol_of_ag_search_hit function remains the same)
     file_path = os.path.abspath(file_path)
     max_prompt_size = 64 * 1024 - 512
     current_prompt_size = 0
@@ -444,7 +479,6 @@ async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
 
     located_symbols_with_source = {}
     symbol_table = {}
-
     with tqdm(total=len(search_results), desc="Processing Search Hits", unit="hit") as pbar_process:
         for filename, line_number, column_number, source_line in search_results:
             full_filename = os.path.join(file_path, filename)
@@ -461,7 +495,6 @@ async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
             if not symbol_info:
                 pbar_process.update(1)
                 continue
-
             ret = clangd_client.lookup_symbol_info(symbol_info, line_number - 1, source_line)
             if ret :
                 symbol_name, symbol_data = ret
@@ -482,8 +515,7 @@ async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
 
     return located_symbols_with_source
 
-
-async def run_query_ws(keyword: str, filepath: str, websocket):
+async def run_query_ws(keyword: str, filepath: str, websocket, openai_client: AsyncOpenAIClient):
     ret = await locate_symbol_of_ag_search_hit(keyword, filepath, clangd_client)
     if ret:
         source_array = []
@@ -509,8 +541,6 @@ async def run_query_ws(keyword: str, filepath: str, websocket):
 
         with open(prompt_file_path, 'w', encoding='utf-8') as file:
             file.write(prompt)
-
-        openai_client = AsyncOpenAIClient(API_BASE, MODEL_NAME, API_TOKEN)
         async for token in openai_client.ask_stream(prompt):
             await websocket.write_message(json.dumps({"type": "stream", "content": token}))
 
@@ -518,8 +548,7 @@ async def run_query_ws(keyword: str, filepath: str, websocket):
     else:
         await websocket.write_message(json.dumps({"type": "result", "content": "No symbol information found."}))
 
-
-async def run_query_http(keyword: str, filepath: str, compile_commands_path: str):
+async def run_query_http(keyword: str, filepath: str, compile_commands_path: str, openai_client: AsyncOpenAIClient):
     ret = await locate_symbol_of_ag_search_hit(keyword, filepath, clangd_client)
     if ret:
         source_array = []
@@ -545,7 +574,6 @@ async def run_query_http(keyword: str, filepath: str, compile_commands_path: str
         with open(prompt_file_path, 'w', encoding='utf-8') as file:
             file.write(prompt)
 
-        openai_client = AsyncOpenAIClient(API_BASE, MODEL_NAME, API_TOKEN)
         response = await openai_client.ask(prompt)
         return {"result": response}
     else:
@@ -568,10 +596,10 @@ class WebSocketQueryHandler(tornado.websocket.WebSocketHandler):
             data = json.loads(message)
             keyword = data.get('keyword')
             filepath = data.get("filepath", self.settings.get("filepath"))
-            compile_commands_path = self.settings.get('compile_commands_path')
+            openai_client = self.settings.get('openai_client')
             if keyword:
                 if self.clangd_initialized:
-                    await run_query_ws(keyword, filepath, self)
+                    await run_query_ws(keyword, filepath, self, openai_client)
                 else:
                     await self.write_message(json.dumps({"type": "error", "content": "Clangd client not initialized."}))
             else:
@@ -591,6 +619,7 @@ class HttpQueryHandler(tornado.web.RequestHandler):
         filepath = self.settings.get('filepath')
         compile_commands_path = self.settings.get('compile_commands_path')
         filepath_user = self.get_argument('filepath', filepath)
+        openai_client = self.settings.get('openai_client')
 
         if not keyword:
             self.set_status(400)
@@ -601,18 +630,31 @@ class HttpQueryHandler(tornado.web.RequestHandler):
             init_clangd_client(filepath, compile_commands_path)
 
         try:
-            result = await run_query_http(keyword, filepath_user, compile_commands_path)
+            result = await run_query_http(keyword, filepath_user, compile_commands_path, openai_client)
             self.write(result)
         except Exception as e:
             logger.error(f"Error processing HTTP query: {e}")
             self.set_status(500)
             self.write({"error": f"Internal server error: {e}"})
 
-def make_app(args):
+async def make_app(args):
+    openai_client = AsyncOpenAIClient(
+        args.api_base,
+        args.model_name,
+        args.api_token,
+        args.gemini,
+        args.gemini_token,
+        args.gemini_model
+    )
+    # # Run a test for llm, ask hello
+    # test_response = await openai_client.ask("hello")
+    # logger.info(f"Test response from LLM: {test_response}")
     return tornado.web.Application([
         (r"/query_ws", WebSocketQueryHandler),
         (r"/query", HttpQueryHandler),
-    ], filepath=args.filepath, compile_commands_path=args.compile_commands_path)
+    ], filepath=args.filepath, compile_commands_path=args.compile_commands_path, openai_client=openai_client)
+
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Run the GPT LSP tool with Tornado and WebSocket.")
@@ -623,6 +665,9 @@ if __name__ == '__main__':
     parser.add_argument("--compile-commands-path", default='build', help="Path to compile_commands.json")
     parser.add_argument("--port", type=int, default=8080, help="Port to listen on")
     parser.add_argument("--clangd-binary-path", default="clangd", help="Path to the clangd binary")
+    parser.add_argument("--gemini", action="store_true", help="Use Google Gemini API")
+    parser.add_argument("--gemini-token", help="Google Gemini API token")
+    parser.add_argument("--gemini-model", default="gemini-1.5-flash", help="Google Gemini model name")
 
     args = parser.parse_args()
     API_BASE = args.api_base
@@ -630,7 +675,7 @@ if __name__ == '__main__':
     API_TOKEN = args.api_token
     CLANGD_PATH = args.clangd_binary_path
 
-    app = make_app(args)
+    app = asyncio.run(make_app(args))
     app.listen(args.port)
     logger.info(f"Listening on port {args.port}")
     tornado.ioloop.IOLoop.current().start()
