@@ -1,6 +1,6 @@
 import unittest
 from gpt_lsp import parse_ag_output,prompt_symbol_content
-
+import pdb
 
 class TestParseAgOutput(unittest.TestCase):
     def test_parse_ag_output(self):
@@ -81,8 +81,31 @@ class TestGPT(unittest.TestCase):
         expected_output = "keyword `int` Exists in multiple source files in a large project, read them and analysis the code,  teach me what the keyword means\nIn file file1.cpp,  content: int main() { return 0; }\nIn file file2.cpp,  content: void foo() { int x = 10; }"
         self.assertEqual(prompt_symbol_content(source_array, keyword), expected_output)
 
+import unittest
+import asyncio
+from gpt_lsp import init_clangd_client, locate_symbol_of_ag_search_hit
+import gpt_lsp
+class TestClangdIntegration(unittest.TestCase):
+
+    def setUp(self):
+        self.filepath = "/root/chromium/src/"
+        self.compile_commands_path = "/root/chromium/src/"
+        self.keyword = "::captureStackTrace"    # 设置事件循环
+        
+        # 手动创建并设置事件循环
+        self.loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(self.loop)
+
+    async def wrapper(self ):
+        init_clangd_client(self.filepath, self.compile_commands_path)
+        return await locate_symbol_of_ag_search_hit(self.keyword, self.filepath+"/v8", gpt_lsp.clangd_client)
 
 
+    def test_locate_symbol(self):
+        # 使用 asyncio.run 来运行异步测试
+        ret = self.loop.run_until_complete(self.wrapper())
+        print(ret)
 
+        # 这里可以添加对ret的断言，以验证结果是否符合预期
 if __name__ == '__main__':
     unittest.main()

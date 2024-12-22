@@ -13,10 +13,14 @@ import re
 from flask import Flask, request, jsonify
 from tqdm.asyncio import tqdm  # Import the async version of tqdm
 
-
+# 配置日志记录
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s - %(lineno)d')
+logger = logging.getLogger(__name__)
 API_BASE = "https://api.openai.com/v1"
 MODEL_NAME = "gpt-3.5-turbo"
 API_TOKEN = "YOUR_OPENAI_API_KEY"
+CLANGD_PATH="/root/llvm-project/build/bin/clangd"
+
 
 class SymbolKind:
     File = 1
@@ -93,23 +97,25 @@ class ClangdClient:
         self.response_futures = {}
 
     def read_compile_commands(self):
+
         with open(self.compile_commands_path + "/compile_commands.json", 'r') as f:
             compile_commands = json.load(f)
-        for command in compile_commands:
-            self.send_notification('textDocument/didOpen', {
-                'textDocument': {
-                    'uri': f'file://{command["file"]}',
-                    'languageId': 'cpp',
-                    'version': 1,
-                    'text': open(command['file']).read()
-                }
-            })
+        # for command in compile_commands:
+        #     self.send_notification('textDocument/didOpen', {
+        #         'textDocument': {
+        #             'uri': f'file://{command["file"]}',
+        #             'languageId': 'cpp',
+        #             'version': 1,
+        #             'text': open(command['file']).read()
+        #         }
+        #     })
 
     def start_clangd(self):
         self.process = subprocess.Popen(
-            ['clangd', "--index-file", "proj.idx", '--compile-commands-dir', self.compile_commands_path, '--log=verbose'],
+            [CLANGD_PATH, "--background-index", "--index-file=proj.idx", f'--compile-commands-dir={self.compile_commands_path}', '--log=verbose'],
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
+            stderr=open('clangd.stderr.log', 'w'),
             text=True,
             cwd=self.file_path
         )
@@ -123,7 +129,7 @@ class ClangdClient:
         threading.Thread(target=self.read_response_async, daemon=True).start()
 
     def send_request(self, method, params):
-        future = asyncio.get_running_loop().create_future()
+        future = asyncio.get_event_loop().create_future()
         self.request_id += 1
         self.response_futures[self.request_id] = future
         logger.debug("request_id %s", self.request_id)
@@ -170,12 +176,14 @@ class ClangdClient:
                         logger.debug("set end")
 
     async def textDocument_documentSymbol(self, file_path):
+        with open(file_path) as f:
+            text = f.read()
         self.send_notification('textDocument/didOpen', {
             'textDocument': {
                 'uri': f'file://{file_path}',
                 'languageId': 'cpp',
                 'version': 1,
-                'text': open(file_path).read(),
+                'text': text
             }
         })
         future = self.send_request('textDocument/documentSymbol', {
@@ -231,14 +239,21 @@ class ClangdClient:
 
 
     def lookup_symbol_info(self, symbol_table, line_number, source_line_content):
+        results = []
         for name, info in symbol_table.items():
             start = info["start"]
             end = info["end"]
             if start["line"] <= line_number <= end["line"]:
-                if source_line_content.strip() in info["source"].strip():
-                    return name, info
-        return None
-
+                if source_line_content.strip() in info["source"].strip():      
+                    results.append((name, info))
+                    # return name, info
+        results.sort(key=lambda x: len(x[1]["source"]))
+        if len(results) == 0:
+            return None
+        elif len(results) == 1 or len(results) == 2:
+            return results[0]
+        else:
+            return results[int(len(results)/2)]
 
 def parse_ag_output(ag_output):
     results = []
@@ -363,7 +378,7 @@ def prompt_symbol_content(source_array, keyword):
         f"如果你引入了新概念，需要将新概论解释到小学生都懂的水平。\n"
         f"请用中文回复。\n"
     )
-    max_size = 32 * 1024 - 512# 32KB
+    max_size = 64 * 1024 - 512# 64KB
     current_size = len(header)
     text = []
 
@@ -421,7 +436,7 @@ def init_clangd_client(filepath: str = os.getcwd(), compile_commands_path: str =
 
 async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client):
     file_path = os.path.abspath(file_path)
-    max_prompt_size = 32 * 1024 - 512
+    max_prompt_size = 64 * 1024 - 512
     current_prompt_size = 0
     header = (
         f"关键字 `{keyword}` 存在于多个源文件中，这些文件属于一个大型项目。\n"
@@ -512,7 +527,16 @@ async def run(filepath: str = os.getcwd(), keyword: str = "someFeatureE", compil
             return "No result"
         prompt = prompt_symbol_content(source_array, keyword)
 
-        print(prompt)
+        # 转义关键字以确保其作为有效的文件名
+        escaped_keyword = re.sub(r'[\\/*?:"<>|]', '_', keyword)
+        file_path = os.path.join("prompt", f"{escaped_keyword}.txt")
+
+        # 确保目录存在
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+        # 将提示内容写入文件
+        with open(file_path, 'w', encoding='utf-8') as file:
+            file.write(prompt)
         return await ask_openai_question(prompt, api_base=API_BASE, model_name=MODEL_NAME, api_token=API_TOKEN)
     else:
         print("No symbol information found")
@@ -535,9 +559,7 @@ async def query():
 
 
 if __name__ == '__main__':
-    # 配置日志记录
-    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s - %(lineno)d')
-    logger = logging.getLogger(__name__)
+
 
     parser = argparse.ArgumentParser(description="Run the GPT LSP tool.")
     parser.add_argument("--api-base", required=True, help="OpenAI API base URL")
@@ -546,16 +568,15 @@ if __name__ == '__main__':
     parser.add_argument("--filepath", default=os.getcwd(), help="File path to search in")
     parser.add_argument("--compile-commands-path", default='build', help="Path to compile_commands.json")
     parser.add_argument("--addr", default=":8080", help="Address to run the Flask server")
-
-    args = parser.parse_args()
+    parser.add_argument("--clangd-binary-path", default="clangd", help="Path to the clangd binary")
 
     args = parser.parse_args()
     API_BASE = args.api_base
     MODEL_NAME = args.model_name
     API_TOKEN = args.api_token
+    CLANGD_PATH = args.clangd_binary_path
     # 设置事件循环
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
-
     addr, port = args.addr.split(':') if ':' in args.addr else ('', args.addr)
     app.run(host=addr, port=int(port))
