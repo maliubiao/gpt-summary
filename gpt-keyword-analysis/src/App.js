@@ -16,6 +16,15 @@ function App() {
   const markdownContainerRef = useRef(null);
   const [renderTrigger, setRenderTrigger] = useState(0); // State to trigger re-render
 
+  // Save to local storage when keyword or filePath changes
+  useEffect(() => {
+    localStorage.setItem('keyword', keyword);
+  }, [keyword]);
+
+  useEffect(() => {
+    localStorage.setItem('filePath', filePath);
+  }, [filePath]);
+
   useEffect(() => {
     if (markdownContainerRef.current) {
       markdownContainerRef.current.scrollTop = markdownContainerRef.current.scrollHeight;

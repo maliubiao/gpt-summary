@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SearchBar.css'; // Import styles for the search bar
 
 function SearchBar({ onSearch }) {
@@ -6,12 +6,31 @@ function SearchBar({ onSearch }) {
   const [filePath, setFilePath] = useState('');
   const [isKeywordValid, setIsKeywordValid] = useState(true); // State for keyword validation
 
+  useEffect(() => {
+    const storedKeyword = localStorage.getItem('keyword');
+    const storedFilePath = localStorage.getItem('filePath');
+    if (storedKeyword) {
+      setSearchText(storedKeyword);
+    }
+    if (storedFilePath) {
+      setFilePath(storedFilePath);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('keyword', searchText);
+  }, [searchText]);
+
+  useEffect(() => {
+    localStorage.setItem('filePath', filePath);
+  }, [filePath]);
+
   const validateKeyword = (text) => {
     // Define your regex for valid "ag search" keywords here
     // For example, this regex requires at least one non-whitespace character:
     try {
       new RegExp(text);
-      return true
+      return true;
     } catch (e) {
       console.error("Regex compilation failed:", e);
       return false; // Test failed if regex compilation fails
@@ -22,6 +41,10 @@ function SearchBar({ onSearch }) {
     const newText = e.target.value;
     setSearchText(newText);
     setIsKeywordValid(validateKeyword(newText)); // Validate on change
+  };
+
+  const handleFilePathChange = (e) => {
+    setFilePath(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -42,7 +65,7 @@ function SearchBar({ onSearch }) {
           className="filepath-input"
           placeholder="Optional Filepath"
           value={filePath}
-          onChange={(e) => setFilePath(e.target.value)}
+          onChange={handleFilePathChange}
         />
         <input
           type="text"
