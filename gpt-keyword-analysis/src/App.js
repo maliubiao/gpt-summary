@@ -13,14 +13,14 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [markdownContent, setMarkdownContent] = useState('');
   const [error, setError] = useState(null);
-  const markdownContainerRef = useRef(null); // Ref for the markdown container
+  const markdownContainerRef = useRef(null);
+  const [renderTrigger, setRenderTrigger] = useState(0); // State to trigger re-render
 
   useEffect(() => {
     if (markdownContainerRef.current) {
-      // Scroll to the bottom after the content updates
       markdownContainerRef.current.scrollTop = markdownContainerRef.current.scrollHeight;
     }
-  }, [markdownContent]);
+  }, [markdownContent, renderTrigger]); // Include renderTrigger
 
   const handleSearch = async (searchKeyword, searchFilePath) => {
     setKeyword(searchKeyword);
@@ -28,6 +28,7 @@ function App() {
     setIsLoading(true);
     setMarkdownContent('');
     setError(null);
+    setRenderTrigger(0); // Reset renderTrigger on new search
 
     const ws = new WebSocket(`ws://localhost:8080/query_ws`);
 
@@ -46,6 +47,7 @@ function App() {
       } else if (message.type === 'done') {
         console.log("WebSocket closed by server");
         setIsLoading(false);
+        setRenderTrigger(prev => prev + 1); // Trigger re-render after stream is done
         ws.close();
       } else if (message.type === 'error' && message.content) {
         setError(message.content);
@@ -63,7 +65,7 @@ function App() {
     ws.onclose = () => {
       console.log("WebSocket disconnected");
       if (isLoading) {
-        setIsLoading(false); // Ensure loading is turned off if connection closes unexpectedly
+        setIsLoading(false);
       }
     };
 
@@ -116,6 +118,7 @@ function App() {
             </button>
             <div id="markdown-container" className="markdown-body" ref={markdownContainerRef} style={{ overflowY: 'auto' }}>
               <ReactMarkdown
+                key={renderTrigger} // Add the key prop
                 components={{
                   code({ node, inline, className, children, ...props }) {
                     const match = /language-(\w+)/.exec(className || '');

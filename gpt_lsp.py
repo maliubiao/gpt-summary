@@ -430,15 +430,18 @@ class AsyncOpenAIClient:
                 logger.error(f"OpenAI API error: {e}")
                 return f"Error: {e}"
 
-async def prompt_symbol_content(source_array, keyword):
-    # ... (rest of the prompt_symbol_content function remains the same)
-    header = (
+def generate_prompt_header(keyword):
+    return (
         f"关键字 `{keyword}` 存在于多个源文件中，这些文件属于一个大型项目。\n"
         f"请阅读并分析这些代码，解释该关键字的真实含义，并使用易于理解的例子来说明相关源代码的逻辑。\n"
         f"教学方式，假设一个输入，给出这段代码执行后估测输出; 假设不同的输入，给出代码的关键决策导向。\n"
+        f"请在响应底部，放一个函数，变量的意译跟源代码token的映射列表，用markdown list实现\n"
         f"如果你引入了新概念，需要将新概论解释到初中生都懂的水平。\n"
         f"请用中文回复。\n"
     )
+
+async def prompt_symbol_content(source_array, keyword):
+    header = generate_prompt_header(keyword)
     max_size = 64 * 1024 - 512
     current_size = len(header)
     text = []
@@ -499,13 +502,7 @@ async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client: Asyn
     file_path = os.path.abspath(file_path)
     max_prompt_size = 64 * 1024 - 512
     current_prompt_size = 0
-    header_size = len((
-        f"关键字 `{keyword}` 存在于多个源文件中，这些文件属于一个大型项目。\n"
-        f"请阅读并分析这些代码，解释该关键字的真实含义，并使用易于理解的例子来说明相关源代码的逻辑。\n"
-        f"教学方式，假设一个输入，给出这段代码执行后估测输出; 假设不同的输入，给出代码的关键决策导向。\n"
-        f"如果你引入了新概念，需要将新概论解释到小学生都懂的水平。\n"
-        f"请用中文回复。\n"
-    ))
+    header_size = len(generate_prompt_header(keyword))
     current_prompt_size += header_size
 
     with tqdm(total=1, desc="Searching with ag", unit="step") as pbar_ag:
@@ -521,8 +518,6 @@ async def locate_symbol_of_ag_search_hit(keyword, file_path, clangd_client: Asyn
     if not search_results:
         logger.debug("No search results found")
         return []
-
-
 
     located_symbols_with_source = {}
     # 使用 workspace_symbol 函数查询关键字，可能返回一些符号
