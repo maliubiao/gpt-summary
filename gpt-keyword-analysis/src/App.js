@@ -31,6 +31,10 @@ function App() {
     }
   }, [markdownContent, renderTrigger]); // Include renderTrigger
 
+  useEffect(() => {
+    document.title = keyword ? `Keyword: ${keyword}` : 'Keyword Search';
+  }, [keyword]);
+
   const handleSearch = async (searchKeyword, searchFilePath) => {
     setKeyword(searchKeyword);
     setFilePath(searchFilePath);
