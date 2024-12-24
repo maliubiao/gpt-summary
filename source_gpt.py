@@ -4,16 +4,14 @@ import pdb
 import asyncio
 from gpt_lsp import AsyncOpenAIClient, add_arguments
 
-
-OUTPUT_DIR = "src"
-
-def generate_file_list_and_content(directory, prompt_template_path):
+def generate_file_list_and_content(directory, prompt_template_path, output_dir, file_suffixes):
     with open(prompt_template_path, 'r', encoding='utf-8') as f:
         prompt_template = f.read()
     for root, _, files in os.walk(directory):
         for file in files:
-            if file.endswith('.cc'):
-                if "gay-" in file: continue
+            if any(file.endswith(suffix) for suffix in file_suffixes):
+                if "gay-" in file: 
+                    continue
                 file_path = os.path.join(root, file)
                 relative_path = os.path.relpath(file_path, directory)
                 # 获取目录的最后一部分
@@ -37,13 +35,13 @@ def generate_file_list_and_content(directory, prompt_template_path):
 
                 for filepath, prefix, file_content, suffix, idx in file_list:
                     prompt = (prompt_template.format(filepath=filepath, prefix=prefix, file_content=file_content, suffix=suffix))
-                    base_output_file_path = os.path.join(OUTPUT_DIR, os.path.splitext(modified_relative_path)[0] + ".md")
+                    base_output_file_path = os.path.join(output_dir, os.path.splitext(modified_relative_path)[0] + ".md")
                     output_file_path = base_output_file_path
                     if idx == 0 and os.path.exists(output_file_path):
                         logger.info(f"已经存在{output_file_path}")
                         continue
                     if idx > 0:
-                        base_output_file_path = os.path.join(OUTPUT_DIR, os.path.splitext(modified_relative_path)[0] + "-%d.md" % idx)
+                        base_output_file_path = os.path.join(output_dir, os.path.splitext(modified_relative_path)[0] + "-%d.md" % idx)
                         output_file_path = base_output_file_path
                         if os.path.exists(output_file_path):
                             logger.info(f"已经存在{output_file_path}")
@@ -67,9 +65,11 @@ if __name__ == "__main__":
     logger = logging.getLogger(__name__)
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s - Line: %(lineno)d')
 
-    parser = argparse.ArgumentParser(description="Generate prompts for C++ files in a directory.")
+    parser = argparse.ArgumentParser(description="Generate prompts for source files in a directory.")
     parser.add_argument('--dir', required=True, help='Directory to walk')
     parser.add_argument('--prompt-template', required=True, help='Path to the prompt template file')
+    parser.add_argument('--output-dir', default="src", help='Output directory for generated files')
+    parser.add_argument('--file-suffixes', nargs='+', default=['.go', ".cc"], help='List of file suffixes to filter source files')
     add_arguments(parser)
     args = parser.parse_args()
 
@@ -84,4 +84,4 @@ if __name__ == "__main__":
     test_response = asyncio.run(openai_client.ask("hello"))
     # logger.info(f"Test response from LLM: {test_response}")
     # pdb.set_trace()
-    generate_file_list_and_content(args.dir, args.prompt_template)
+    generate_file_list_and_content(args.dir, args.prompt_template, args.output_dir, args.file_suffixes)
