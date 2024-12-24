@@ -54,6 +54,7 @@ def generate_file_list_and_content(directory, prompt_template_path, output_dir, 
                         async for chunk in openai_client.ask_stream(prompt):
                             print(chunk)
                             response_text += chunk
+                        
                         markdown_content = f"Response: {response_text}\nPrompt: \n```\n{prompt}\n```"
                         os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
                         with open(output_file_path, 'w', encoding='utf-8') as f:
