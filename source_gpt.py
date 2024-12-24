@@ -5,8 +5,10 @@ import asyncio
 from gpt_lsp import AsyncOpenAIClient, add_arguments
 
 def generate_file_list_and_content(directory, prompt_template_path, output_dir, file_suffixes):
+    
     with open(prompt_template_path, 'r', encoding='utf-8') as f:
         prompt_template = f.read()
+
     for root, _, files in os.walk(directory):
         for file in files:
             if any(file.endswith(suffix) for suffix in file_suffixes):
@@ -34,14 +36,15 @@ def generate_file_list_and_content(directory, prompt_template_path, output_dir, 
                     file_list.append((modified_relative_path, prefix, file_content, suffix, 0))
 
                 for filepath, prefix, file_content, suffix, idx in file_list:
+                    file_suffix = os.path.splitext(filepath)[1].strip(".")
                     prompt = (prompt_template.format(filepath=filepath, prefix=prefix, file_content=file_content, suffix=suffix))
-                    base_output_file_path = os.path.join(output_dir, os.path.splitext(modified_relative_path)[0] + ".md")
+                    base_output_file_path = os.path.join(output_dir, os.path.splitext(modified_relative_path)[0] +"-"+file_suffix+ ".md")
                     output_file_path = base_output_file_path
                     if idx == 0 and os.path.exists(output_file_path):
                         logger.info(f"已经存在{output_file_path}")
                         continue
                     if idx > 0:
-                        base_output_file_path = os.path.join(output_dir, os.path.splitext(modified_relative_path)[0] + "-%d.md" % idx)
+                        base_output_file_path = os.path.join(output_dir, os.path.splitext(modified_relative_path)[0] + "-%s-%d.md" % (file_suffix, idx))
                         output_file_path = base_output_file_path
                         if os.path.exists(output_file_path):
                             logger.info(f"已经存在{output_file_path}")
