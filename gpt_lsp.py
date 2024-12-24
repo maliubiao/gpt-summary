@@ -391,7 +391,7 @@ class AsyncOpenAIClient:
                         yield chunk.text
             except Exception as e:
                 logger.error(f"Gemini API error: {e}")
-                yield f"Error: {e}"
+                # yield f"Error: {e}"
         else:
             try:
                 response_stream = await openai.ChatCompletion.acreate(
@@ -715,10 +715,7 @@ async def make_app(args):
         (r"/query", HttpQueryHandler),
     ], filepath=args.filepath, compile_commands_path=args.compile_commands_path, openai_client=openai_client)
 
-
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Run the GPT LSP tool with Tornado and WebSocket.")
+def add_arguments(parser):
     parser.add_argument("--api-base", required=True, help="OpenAI API base URL")
     parser.add_argument("--model-name", required=True, help="OpenAI model name")
     parser.add_argument("--api-token", required=True, help="OpenAI API token")
@@ -730,6 +727,11 @@ if __name__ == '__main__':
     parser.add_argument("--gemini-token", help="Google Gemini API token")
     parser.add_argument("--gemini-model", default="gemini-1.5-flash", help="Google Gemini model name")
 
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Run the GPT LSP tool with Tornado and WebSocket.")
+    add_arguments(parser)
     args = parser.parse_args()
     API_BASE = args.api_base
     MODEL_NAME = args.model_name
