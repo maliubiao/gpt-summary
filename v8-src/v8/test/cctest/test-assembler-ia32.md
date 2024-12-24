@@ -1,0 +1,1742 @@
+Response: Let's break down the thought process for analyzing this C++ code and relating it to JavaScript.
+
+**1. Initial Skim and Goal Identification:**
+
+* **Keywords:** The filename `test-assembler-ia32.cc` immediately signals testing, assembly language (IA-32), and C++.
+* **Copyright/License:** Standard boilerplate, can largely be ignored for understanding functionality.
+* **Includes:** These provide clues about the code's purpose. We see things like:
+    * `v8-function.h`: Hints at interaction with V8's function representation.
+    * `assembler-inl.h`, `macro-assembler.h`:  Strong indicators of assembly code generation.
+    * `simulator.h`: Suggests execution of generated code.
+    * `heap/factory.h`:  Indicates interaction with V8's memory management.
+    * `test/cctest/cctest.h`:  Confirms this is a testing file within V8.
+* **Namespaces:** `v8::internal` tells us this is an internal V8 component.
+* **Function Types (`F0`, `F1`, `F2`, etc.):** These are type aliases for function pointers. The number indicates the number of integer/float arguments. This is a key clue that the tests involve executing generated code.
+* **`TEST(...)` macros:**  Standard Google Test framework. Each `TEST` block represents an individual test case.
+
+**Goal:**  The overall goal is to understand what this code *does* and how it relates to JavaScript (if at all). It seems to be testing the assembly code generation capabilities of V8 for the IA-32 architecture.
+
+**2. Analyzing Individual Test Cases (Key to understanding):**
+
+* **Structure:** Each test generally follows a pattern:
+    1. `CcTest::InitializeVM();`: Initializes the V8 virtual machine.
+    2. `Isolate* isolate = ...; HandleScope scope(isolate);`:  Sets up V8's context.
+    3. `uint8_t buffer[...]; Assembler assm(...);`: Creates a buffer to hold the generated assembly and an `Assembler` object.
+    4. `__ mov(...)`, `__ add(...)`, `__ ret(...)`, etc.: These are assembly instructions being written into the buffer using the `Assembler` object. The `__` macro is a shorthand for `assm.`.
+    5. `CodeDesc desc; assm.GetCode(isolate, &desc);`:  Retrieves the generated code description.
+    6. `Handle<Code> code = Factory::CodeBuilder(...).Build();`: Creates a V8 `Code` object from the generated assembly. This is crucial – V8 needs to represent the raw machine code in its own structures.
+    7. `auto f = GeneratedCode<Fn>::FromCode(isolate, *code);`: Creates a function pointer (`f`) that can execute the generated code. The `Fn` type (like `F2`, `F1`) determines the expected signature.
+    8. `auto res = f.Call(...);`: Executes the generated assembly code.
+    9. `CHECK_EQ(..., res);`: Asserts that the result of the generated code is as expected.
+
+* **Instruction Breakdown (Examples):**
+    * `__ mov(eax, Operand(esp, 4));`: Move the value from the stack (offset 4 bytes from the stack pointer `esp`) into the `eax` register. This is how function arguments are typically accessed on IA-32.
+    * `__ add(eax, Operand(esp, 8));`: Add the value from the stack (offset 8 bytes) to the `eax` register.
+    * `__ ret(0);`: Return from the function.
+    * `__ jmp(&L);`: Jump to the label `L`.
+    * `__ bind(&L);`: Define the label `L` at the current instruction.
+    * `__ cvttss2si(eax, Operand(esp, 4));`: Convert a single-precision floating-point value from the stack to a signed integer and store it in `eax`.
+    * `__ movsd(xmm0, Operand(esp, 1 * kSystemPointerSize));`: Move a double-precision floating-point value from the stack into the `xmm0` register (used for SSE/SIMD operations).
+
+* **Test Logic:**  Each test verifies a small piece of assembly functionality, often involving:
+    * Basic arithmetic operations.
+    * Control flow (jumps, labels).
+    * Integer and floating-point conversions.
+    * Interaction with memory.
+    * Use of specific CPU instructions (SSE, FMA, BMI).
+
+**3. Connecting to JavaScript:**
+
+* **The Core Relationship:**  V8 is the JavaScript engine. When JavaScript code is executed, V8 *compiles* it (or interprets it, but compilation is key for performance) into machine code. This machine code is what actually runs on the CPU.
+* **The Role of the Assembler:** The `Assembler` class (and `MacroAssembler`) is a fundamental part of V8's compilation process. It provides an interface to generate raw machine code instructions for a specific architecture (in this case, IA-32).
+* **How the Tests Relate:** These tests are directly exercising the `Assembler`'s ability to generate correct IA-32 instructions. If these tests fail, it means V8 might be generating incorrect machine code for certain JavaScript operations on IA-32, leading to bugs or incorrect behavior in JavaScript.
+
+**4. Crafting the JavaScript Examples:**
+
+* **Mirroring the C++ Logic:** The best way to illustrate the connection is to create JavaScript code that would *likely* result in the *same* or *similar* assembly code being generated by V8.
+* **Focusing on Core Operations:**  The C++ tests cover basic arithmetic, control flow, and data type conversions. The JavaScript examples should reflect these concepts.
+* **Considering V8's Optimization:** V8 is a highly optimizing compiler. The exact assembly generated for a given piece of JavaScript can be complex and depend on various factors. The examples are *simplified* representations of what *might* happen.
+* **Example 1 (AssemblerIa320):** The C++ code adds two integers passed on the stack. A simple JavaScript function that adds two numbers directly corresponds to this.
+* **Example 2 (AssemblerIa321):** The C++ code uses a loop to sum numbers. A JavaScript `for` loop performing the same summation is a good match.
+* **Example 3 (AssemblerIa323 and Ia324):** The C++ code converts floats and doubles to integers. JavaScript's `parseInt()` function performs similar conversions.
+* **Example 6 (AssemblerIa326):** The C++ code performs floating-point arithmetic. Basic arithmetic operations in JavaScript on floating-point numbers demonstrate the same underlying operations.
+* **Example involving CPU features (SSE2):** The C++ code uses SSE2 instructions. While JavaScript doesn't directly expose these, libraries or specific coding patterns might lead V8 to utilize them for performance, particularly with typed arrays or graphics operations.
+
+**5. Structuring the Answer:**
+
+* **Start with a high-level summary:**  Clearly state the file's purpose as a test suite for the IA-32 assembler.
+* **Explain the relationship to JavaScript:**  Emphasize that the assembler is used by V8 to generate machine code for JavaScript execution.
+* **Provide concrete JavaScript examples:**  Match the examples to specific C++ test cases, explaining the likely connection in terms of the underlying operations.
+* **Explain the testing methodology:**  Describe how the C++ code generates assembly, executes it, and verifies the results.
+* **Conclude with the importance of these tests:** Highlight their role in ensuring the correctness and reliability of V8 on IA-32.
+
+By following these steps, we can effectively analyze the C++ code and clearly explain its function and relevance to JavaScript. The key is to understand the core purpose of each test case and then find corresponding JavaScript constructs that would likely involve similar machine code generation.
+这个C++源代码文件 `v8/test/cctest/test-assembler-ia32.cc` 的功能是 **测试 V8 JavaScript 引擎在 IA-32 (x86) 架构下的汇编器 (Assembler) 的正确性**。
+
+具体来说，它包含了一系列的单元测试 (`TEST` 宏定义的函数)，每个测试都：
+
+1. **初始化 V8 虚拟机环境** (`CcTest::InitializeVM()`).
+2. **创建一个 IA-32 汇编器对象** (`Assembler` 或 `MacroAssembler`).
+3. **使用汇编器生成一段 IA-32 汇编代码**，这段代码通常执行一些简单的操作，例如：
+    * 算术运算 (加法、减法、乘法、除法)
+    * 位运算
+    * 内存访问
+    * 条件跳转和循环
+    * 函数调用和返回
+    * 浮点运算 (SSE, SSE2, SSE3, FMA)
+    * 特定 CPU 指令集 (BMI, LZCNT, POPCNT)
+    * 跳转表
+4. **将生成的汇编代码编译成可执行的机器码** (`assm.GetCode()`, `Factory::CodeBuilder().Build()`).
+5. **将编译后的机器码转换为可调用的函数指针** (`GeneratedCode<F...>::FromCode()`).
+6. **调用生成的函数**，并传入预期的参数。
+7. **检查函数的返回值是否与预期结果一致** (`CHECK_EQ()`).
+
+**与 JavaScript 的关系：**
+
+这个测试文件与 JavaScript 的功能息息相关。V8 引擎负责将 JavaScript 代码编译成机器码，然后在目标平台上执行。`Assembler` 类是 V8 内部用来生成特定架构机器码的核心组件。
+
+这些测试用例验证了 V8 的 IA-32 汇编器是否能够正确地生成执行各种基本操作的机器码。如果这些测试失败，意味着 V8 在 IA-32 架构上生成的机器码可能存在错误，从而导致 JavaScript 代码执行出错或产生意想不到的结果。
+
+**JavaScript 举例说明：**
+
+以下 JavaScript 代码的执行可能涉及到该测试文件中测试的一些汇编指令：
+
+**例 1 (对应 `TEST(AssemblerIa320)`)：**
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+add(3, 4); // 在 IA-32 上执行时，V8 可能会生成类似于 AssemblerIa320 测试中的汇编代码
+```
+
+V8 在编译 `add` 函数时，会将 `a + b` 这个加法操作转换成相应的 IA-32 汇编指令，例如 `mov` 指令将参数加载到寄存器，然后使用 `add` 指令进行加法运算，最后使用 `ret` 指令返回结果。
+
+**例 2 (对应 `TEST(AssemblerIa321)`)：**
+
+```javascript
+function sum(n) {
+  let result = 0;
+  for (let i = 1; i <= n; i++) {
+    result += i;
+  }
+  return result;
+}
+
+sum(100); // 在 IA-32 上执行时，V8 可能会生成包含循环和条件跳转指令的汇编代码
+```
+
+V8 在编译 `sum` 函数时，会生成 IA-32 汇编代码来实现循环 (例如使用 `jmp` 指令和条件跳转指令) 和累加操作 (`add` 指令)。`AssemblerIa321` 测试就模拟了一个类似的循环求和场景。
+
+**例 3 (对应 `TEST(AssemblerIa323)` 和 `TEST(AssemblerIa324)`)：**
+
+```javascript
+function floatToInt(f) {
+  return parseInt(f);
+}
+
+floatToInt(-3.1415); // 在 IA-32 上执行时，V8 可能会生成类似于 cvttss2si 或 cvttsd2si 的指令
+```
+
+JavaScript 的 `parseInt()` 函数会将浮点数转换为整数。在 IA-32 架构上，V8 可能会使用 `cvttss2si` (单精度浮点数转整数) 或 `cvttsd2si` (双精度浮点数转整数) 等汇编指令来实现这个转换，这与 `AssemblerIa323` 和 `AssemblerIa324` 测试的目标一致。
+
+**例 4 (对应 `TEST(AssemblerIa326)`)：**
+
+```javascript
+function doubleCalc(x, y) {
+  return ((x + y) * y - y) / y;
+}
+
+doubleCalc(2.2, 1.1); // 在 IA-32 上执行时，V8 可能会生成使用 SSE/SSE2 浮点指令的汇编代码
+```
+
+对于浮点数的算术运算，V8 可能会利用 IA-32 的 SSE 或 SSE2 指令集 (例如 `movsd`, `addsd`, `mulsd`, `subsd`, `divsd`) 来提高性能，`AssemblerIa326` 测试就涵盖了这些浮点运算指令。
+
+**总结：**
+
+`v8/test/cctest/test-assembler-ia32.cc` 是 V8 引擎中一个关键的测试文件，它通过生成和执行 IA-32 汇编代码来验证 V8 在该架构下的汇编器是否工作正常。这直接关系到 JavaScript 代码在 IA-32 平台上的执行效率和正确性。每一个测试用例都在模拟 JavaScript 中可能出现的底层操作，确保 V8 能够生成正确的机器码来执行这些操作。
+
+Prompt: 
+```
+这是目录为v8/test/cctest/test-assembler-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+
+"""
+// Copyright 2011 the V8 project authors. All rights reserved.
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are
+// met:
+//
+//     * Redistributions of source code must retain the above copyright
+//       notice, this list of conditions and the following disclaimer.
+//     * Redistributions in binary form must reproduce the above
+//       copyright notice, this list of conditions and the following
+//       disclaimer in the documentation and/or other materials provided
+//       with the distribution.
+//     * Neither the name of Google Inc. nor the names of its
+//       contributors may be used to endorse or promote products derived
+//       from this software without specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+#include <stdlib.h>
+
+#include "include/v8-function.h"
+#include "src/base/platform/platform.h"
+#include "src/base/utils/random-number-generator.h"
+#include "src/codegen/assembler-inl.h"
+#include "src/codegen/macro-assembler.h"
+#include "src/deoptimizer/deoptimizer.h"
+#include "src/execution/simulator.h"
+#include "src/heap/factory.h"
+#include "src/utils/ostreams.h"
+#include "test/cctest/cctest.h"
+
+namespace v8 {
+namespace internal {
+
+using F0 = int();
+using F1 = int(int x);
+using F2 = int(int x, int y);
+
+#define __ assm.
+
+TEST(AssemblerIa320) {
+  CcTest::InitializeVM();
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+
+  uint8_t buffer[256];
+  Assembler assm(AssemblerOptions{},
+                 ExternalAssemblerBuffer(buffer, sizeof buffer));
+
+  __ mov(eax, Operand(esp, 4));
+  __ add(eax, Operand(esp, 8));
+  __ ret(0);
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+  auto f = GeneratedCode<F2>::FromCode(isolate, *code);
+  auto res = f.Call(3, 4);
+  ::printf("f() = %d\n", res);
+  CHECK_EQ(7, res);
+}
+
+
+TEST(AssemblerIa321) {
+  CcTest::InitializeVM();
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+
+  uint8_t buffer[256];
+  Assembler assm(AssemblerOptions{},
+                 ExternalAssemblerBuffer(buffer, sizeof buffer));
+  Label L, C;
+
+  __ mov(edx, Operand(esp, 4));
+  __ xor_(eax, eax);  // clear eax
+  __ jmp(&C);
+
+  __ bind(&L);
+  __ add(eax, edx);
+  __ sub(edx, Immediate(1));
+
+  __ bind(&C);
+  __ test(edx, edx);
+  __ j(not_zero, &L);
+  __ ret(0);
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+  auto f = GeneratedCode<F1>::FromCode(isolate, *code);
+  int res = f.Call(100);
+  ::printf("f() = %d\n", res);
+  CHECK_EQ(5050, res);
+}
+
+
+TEST(AssemblerIa322) {
+  CcTest::InitializeVM();
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+
+  uint8_t buffer[256];
+  Assembler assm(AssemblerOptions{},
+                 ExternalAssemblerBuffer(buffer, sizeof buffer));
+  Label L, C;
+
+  __ mov(edx, Operand(esp, 4));
+  __ mov(eax, 1);
+  __ jmp(&C);
+
+  __ bind(&L);
+  __ imul(eax, edx);
+  __ sub(edx, Immediate(1));
+
+  __ bind(&C);
+  __ test(edx, edx);
+  __ j(not_zero, &L);
+  __ ret(0);
+
+  // some relocated stuff here, not executed
+  __ mov(eax, isolate->factory()->true_value());
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+  auto f = GeneratedCode<F1>::FromCode(isolate, *code);
+  int res = f.Call(10);
+  ::printf("f() = %d\n", res);
+  CHECK_EQ(3628800, res);
+}
+
+using F3 = int(float x);
+
+TEST(AssemblerIa323) {
+  CcTest::InitializeVM();
+
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+
+  uint8_t buffer[256];
+  Assembler assm(AssemblerOptions{},
+                 ExternalAssemblerBuffer(buffer, sizeof buffer));
+
+  __ cvttss2si(eax, Operand(esp, 4));
+  __ ret(0);
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+  auto f = GeneratedCode<F3>::FromCode(isolate, *code);
+  int res = f.Call(-3.1415f);
+  ::printf("f() = %d\n", res);
+  CHECK_EQ(-3, res);
+}
+
+using F4 = int(double x);
+
+TEST(AssemblerIa324) {
+  CcTest::InitializeVM();
+
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+
+  uint8_t buffer[256];
+  Assembler assm(AssemblerOptions{},
+                 ExternalAssemblerBuffer(buffer, sizeof buffer));
+
+  __ cvttsd2si(eax, Operand(esp, 4));
+  __ ret(0);
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+  auto f = GeneratedCode<F4>::FromCode(isolate, *code);
+  int res = f.Call(2.718281828);
+  ::printf("f() = %d\n", res);
+  CHECK_EQ(2, res);
+}
+
+
+static int baz = 42;
+TEST(AssemblerIa325) {
+  CcTest::InitializeVM();
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+
+  uint8_t buffer[256];
+  Assembler assm(AssemblerOptions{},
+                 ExternalAssemblerBuffer(buffer, sizeof buffer));
+
+  __ mov(eax, Operand(reinterpret_cast<intptr_t>(&baz), RelocInfo::NO_INFO));
+  __ ret(0);
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+  auto f = GeneratedCode<F0>::FromCode(isolate, *code);
+  int res = f.Call();
+  CHECK_EQ(42, res);
+}
+
+using F5 = double(double x, double y);
+
+TEST(AssemblerIa326) {
+  CcTest::InitializeVM();
+
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  uint8_t buffer[256];
+  Assembler assm(AssemblerOptions{},
+                 ExternalAssemblerBuffer(buffer, sizeof buffer));
+
+  __ movsd(xmm0, Operand(esp, 1 * kSystemPointerSize));
+  __ movsd(xmm1, Operand(esp, 3 * kSystemPointerSize));
+  __ addsd(xmm0, xmm1);
+  __ mulsd(xmm0, xmm1);
+  __ subsd(xmm0, xmm1);
+  __ divsd(xmm0, xmm1);
+  // Copy xmm0 to st(0) using eight bytes of stack.
+  __ sub(esp, Immediate(8));
+  __ movsd(Operand(esp, 0), xmm0);
+  __ fld_d(Operand(esp, 0));
+  __ add(esp, Immediate(8));
+  __ ret(0);
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+  auto f = GeneratedCode<F5>::FromCode(isolate, *code);
+  double res = f.Call(2.2, 1.1);
+  ::printf("f() = %f\n", res);
+  CHECK(2.29 < res && res < 2.31);
+}
+
+using F6 = double(int x);
+
+TEST(AssemblerIa328) {
+  CcTest::InitializeVM();
+
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  uint8_t buffer[256];
+  Assembler assm(AssemblerOptions{},
+                 ExternalAssemblerBuffer(buffer, sizeof buffer));
+  __ mov(eax, Operand(esp, 4));
+  __ cvtsi2sd(xmm0, eax);
+  // Copy xmm0 to st(0) using eight bytes of stack.
+  __ sub(esp, Immediate(8));
+  __ movsd(Operand(esp, 0), xmm0);
+  __ fld_d(Operand(esp, 0));
+  __ add(esp, Immediate(8));
+  __ ret(0);
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+  auto f = GeneratedCode<F6>::FromCode(isolate, *code);
+  double res = f.Call(12);
+
+  ::printf("f() = %f\n", res);
+  CHECK(11.99 < res && res < 12.001);
+}
+
+TEST(AssemblerIa3210) {
+  // Test chaining of label usages within instructions (issue 1644).
+  CcTest::InitializeVM();
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  Assembler assm(AssemblerOptions{});
+
+  Label target;
+  __ j(equal, &target);
+  __ j(not_equal, &target);
+  __ bind(&target);
+  __ nop();
+}
+
+
+TEST(AssemblerMultiByteNop) {
+  CcTest::InitializeVM();
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  uint8_t buffer[1024];
+  Assembler assm(AssemblerOptions{},
+                 ExternalAssemblerBuffer(buffer, sizeof(buffer)));
+  __ push(ebx);
+  __ push(ecx);
+  __ push(edx);
+  __ push(edi);
+  __ push(esi);
+  __ mov(eax, 1);
+  __ mov(ebx, 2);
+  __ mov(ecx, 3);
+  __ mov(edx, 4);
+  __ mov(edi, 5);
+  __ mov(esi, 6);
+  for (int i = 0; i < 16; i++) {
+    int before = assm.pc_offset();
+    __ Nop(i);
+    CHECK_EQ(assm.pc_offset() - before, i);
+  }
+
+  Label fail;
+  __ cmp(eax, 1);
+  __ j(not_equal, &fail);
+  __ cmp(ebx, 2);
+  __ j(not_equal, &fail);
+  __ cmp(ecx, 3);
+  __ j(not_equal, &fail);
+  __ cmp(edx, 4);
+  __ j(not_equal, &fail);
+  __ cmp(edi, 5);
+  __ j(not_equal, &fail);
+  __ cmp(esi, 6);
+  __ j(not_equal, &fail);
+  __ mov(eax, 42);
+  __ pop(esi);
+  __ pop(edi);
+  __ pop(edx);
+  __ pop(ecx);
+  __ pop(ebx);
+  __ ret(0);
+  __ bind(&fail);
+  __ mov(eax, 13);
+  __ pop(esi);
+  __ pop(edi);
+  __ pop(edx);
+  __ pop(ecx);
+  __ pop(ebx);
+  __ ret(0);
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+  CHECK(IsCode(*code));
+
+  auto f = GeneratedCode<F0>::FromCode(isolate, *code);
+  int res = f.Call();
+  CHECK_EQ(42, res);
+}
+
+
+#ifdef __GNUC__
+#define ELEMENT_COUNT 4u
+
+void DoSSE2(const v8::FunctionCallbackInfo<v8::Value>& info) {
+  CHECK(i::ValidateCallbackInfo(info));
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  v8::Local<v8::Context> context = CcTest::isolate()->GetCurrentContext();
+
+  CHECK(info[0]->IsArray());
+  v8::Local<v8::Array> vec = v8::Local<v8::Array>::Cast(info[0]);
+  CHECK_EQ(ELEMENT_COUNT, vec->Length());
+
+  uint8_t buffer[256];
+  Assembler assm(AssemblerOptions{},
+                 ExternalAssemblerBuffer(buffer, sizeof buffer));
+
+  // Remove return address from the stack for fix stack frame alignment.
+  __ pop(ecx);
+
+  // Store input vector on the stack.
+  for (unsigned i = 0; i < ELEMENT_COUNT; ++i) {
+    __ push(Immediate(
+        vec->Get(context, i).ToLocalChecked()->Int32Value(context).FromJust()));
+  }
+
+  // Read vector into a xmm register.
+  __ pxor(xmm0, xmm0);
+  __ movdqa(xmm0, Operand(esp, 0));
+  // Create mask and store it in the return register.
+  __ movmskps(eax, xmm0);
+
+  // Remove unused data from the stack.
+  __ add(esp, Immediate(ELEMENT_COUNT * sizeof(int32_t)));
+  // Restore return address.
+  __ push(ecx);
+
+  __ ret(0);
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+
+  auto f = GeneratedCode<F0>::FromCode(isolate, *code);
+  int res = f.Call();
+  info.GetReturnValue().Set(v8::Integer::New(CcTest::isolate(), res));
+}
+
+TEST(StackAlignmentForSSE2) {
+  CcTest::InitializeVM();
+  CHECK_EQ(0, v8::base::OS::ActivationFrameAlignment() % 16);
+
+  v8::Isolate* isolate = CcTest::isolate();
+  v8::HandleScope handle_scope(isolate);
+  v8::Local<v8::ObjectTemplate> global_template =
+      v8::ObjectTemplate::New(isolate);
+  global_template->Set(v8_str("do_sse2"),
+                       v8::FunctionTemplate::New(isolate, DoSSE2));
+
+  LocalContext env(nullptr, global_template);
+  CompileRun(
+      "function foo(vec) {"
+      "  return do_sse2(vec);"
+      "}");
+
+  v8::Local<v8::Object> global_object = env->Global();
+  v8::Local<v8::Function> foo = v8::Local<v8::Function>::Cast(
+      global_object->Get(env.local(), v8_str("foo")).ToLocalChecked());
+
+  int32_t vec[ELEMENT_COUNT] = { -1, 1, 1, 1 };
+  v8::Local<v8::Array> v8_vec = v8::Array::New(isolate, ELEMENT_COUNT);
+  for (unsigned i = 0; i < ELEMENT_COUNT; i++) {
+    v8_vec->Set(env.local(), i, v8_num(vec[i])).FromJust();
+  }
+
+  v8::Local<v8::Value> args[] = {v8_vec};
+  v8::Local<v8::Value> result =
+      foo->Call(env.local(), global_object, 1, args).ToLocalChecked();
+
+  // The mask should be 0b1000.
+  CHECK_EQ(8, result->Int32Value(env.local()).FromJust());
+}
+
+#undef ELEMENT_COUNT
+#endif  // __GNUC__
+
+
+TEST(AssemblerIa32Extractps) {
+  CcTest::InitializeVM();
+  if (!CpuFeatures::IsSupported(SSE4_1)) return;
+
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  uint8_t buffer[256];
+  MacroAssembler assm(isolate, v8::internal::CodeObjectRequired::kYes,
+                      ExternalAssemblerBuffer(buffer, sizeof(buffer)));
+  { CpuFeatureScope fscope41(&assm, SSE4_1);
+    __ movsd(xmm1, Operand(esp, 4));
+    __ extractps(eax, xmm1, 0x1);
+    __ ret(0);
+  }
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+
+  auto f = GeneratedCode<F4>::FromCode(isolate, *code);
+  uint64_t value1 = 0x1234'5678'8765'4321;
+  CHECK_EQ(0x12345678, f.Call(base::uint64_to_double(value1)));
+  uint64_t value2 = 0x8765'4321'1234'5678;
+  CHECK_EQ(static_cast<int>(0x87654321),
+           f.Call(base::uint64_to_double(value2)));
+}
+
+using F8 = int(float x, float y);
+TEST(AssemblerIa32SSE) {
+  CcTest::InitializeVM();
+
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  uint8_t buffer[256];
+  MacroAssembler assm(isolate, v8::internal::CodeObjectRequired::kYes,
+                      ExternalAssemblerBuffer(buffer, sizeof(buffer)));
+  {
+    __ movss(xmm0, Operand(esp, kSystemPointerSize));
+    __ movss(xmm1, Operand(esp, 2 * kSystemPointerSize));
+    __ shufps(xmm0, xmm0, 0x0);
+    __ shufps(xmm1, xmm1, 0x0);
+    __ movaps(xmm2, xmm1);
+    __ addps(xmm2, xmm0);
+    __ mulps(xmm2, xmm1);
+    __ subps(xmm2, xmm0);
+    __ divps(xmm2, xmm1);
+    __ cvttss2si(eax, xmm2);
+    __ ret(0);
+  }
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+
+  auto f = GeneratedCode<F8>::FromCode(isolate, *code);
+  CHECK_EQ(2, f.Call(1.0, 2.0));
+}
+
+TEST(AssemblerIa32SSE3) {
+  CcTest::InitializeVM();
+  if (!CpuFeatures::IsSupported(SSE3)) return;
+
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  uint8_t buffer[256];
+  MacroAssembler assm(isolate, v8::internal::CodeObjectRequired::kYes,
+                      ExternalAssemblerBuffer(buffer, sizeof(buffer)));
+  {
+    CpuFeatureScope fscope(&assm, SSE3);
+    __ movss(xmm0, Operand(esp, kSystemPointerSize));
+    __ movss(xmm1, Operand(esp, 2 * kSystemPointerSize));
+    __ shufps(xmm0, xmm0, 0x0);
+    __ shufps(xmm1, xmm1, 0x0);
+    __ haddps(xmm1, xmm0);
+    __ cvttss2si(eax, xmm1);
+    __ ret(0);
+  }
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+
+  auto f = GeneratedCode<F8>::FromCode(isolate, *code);
+  CHECK_EQ(4, f.Call(1.0, 2.0));
+}
+
+using F9 = int(double x, double y, double z);
+TEST(AssemblerX64FMA_sd) {
+  CcTest::InitializeVM();
+  if (!CpuFeatures::IsSupported(FMA3)) return;
+
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  uint8_t buffer[1024];
+  MacroAssembler assm(isolate, v8::internal::CodeObjectRequired::kYes,
+                      ExternalAssemblerBuffer(buffer, sizeof(buffer)));
+  {
+    CpuFeatureScope fscope(&assm, FMA3);
+    Label exit;
+    __ movsd(xmm0, Operand(esp, 1 * kSystemPointerSize));
+    __ movsd(xmm1, Operand(esp, 3 * kSystemPointerSize));
+    __ movsd(xmm2, Operand(esp, 5 * kSystemPointerSize));
+    // argument in xmm0, xmm1 and xmm2
+    // xmm0 * xmm1 + xmm2
+    __ movaps(xmm3, xmm0);
+    __ mulsd(xmm3, xmm1);
+    __ addsd(xmm3, xmm2);  // Expected result in xmm3
+
+    __ AllocateStackSpace(kDoubleSize);  // For memory operand
+    // vfmadd132sd
+    __ mov(eax, Immediate(1));  // Test number
+    __ movaps(xmm4, xmm0);
+    __ vfmadd132sd(xmm4, xmm2, xmm1);
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmadd213sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ vfmadd213sd(xmm4, xmm0, xmm2);
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmadd231sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ vfmadd231sd(xmm4, xmm0, xmm1);
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+    // vfmadd132sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ movsd(Operand(esp, 0), xmm1);
+    __ vfmadd132sd(xmm4, xmm2, Operand(esp, 0));
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmadd213sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ movsd(Operand(esp, 0), xmm2);
+    __ vfmadd213sd(xmm4, xmm0, Operand(esp, 0));
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmadd231sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ movsd(Operand(esp, 0), xmm1);
+    __ vfmadd231sd(xmm4, xmm0, Operand(esp, 0));
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+    // xmm0 * xmm1 - xmm2
+    __ movaps(xmm3, xmm0);
+    __ mulsd(xmm3, xmm1);
+    __ subsd(xmm3, xmm2);  // Expected result in xmm3
+
+    // vfmsub132sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ vfmsub132sd(xmm4, xmm2, xmm1);
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmadd213sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ vfmsub213sd(xmm4, xmm0, xmm2);
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmsub231sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ vfmsub231sd(xmm4, xmm0, xmm1);
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+    // vfmsub132sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ movsd(Operand(esp, 0), xmm1);
+    __ vfmsub132sd(xmm4, xmm2, Operand(esp, 0));
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmsub213sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ movsd(Operand(esp, 0), xmm2);
+    __ vfmsub213sd(xmm4, xmm0, Operand(esp, 0));
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmsub231sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ movsd(Operand(esp, 0), xmm1);
+    __ vfmsub231sd(xmm4, xmm0, Operand(esp, 0));
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+
+    // - xmm0 * xmm1 + xmm2
+    __ movaps(xmm3, xmm0);
+    __ mulsd(xmm3, xmm1);
+    __ Move(xmm4, (uint64_t)1 << 63);
+    __ xorpd(xmm3, xmm4);
+    __ addsd(xmm3, xmm2);  // Expected result in xmm3
+
+    // vfnmadd132sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ vfnmadd132sd(xmm4, xmm2, xmm1);
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmadd213sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ vfnmadd213sd(xmm4, xmm0, xmm2);
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfnmadd231sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ vfnmadd231sd(xmm4, xmm0, xmm1);
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+    // vfnmadd132sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ movsd(Operand(esp, 0), xmm1);
+    __ vfnmadd132sd(xmm4, xmm2, Operand(esp, 0));
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfnmadd213sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ movsd(Operand(esp, 0), xmm2);
+    __ vfnmadd213sd(xmm4, xmm0, Operand(esp, 0));
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfnmadd231sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ movsd(Operand(esp, 0), xmm1);
+    __ vfnmadd231sd(xmm4, xmm0, Operand(esp, 0));
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+
+    // - xmm0 * xmm1 - xmm2
+    __ movaps(xmm3, xmm0);
+    __ mulsd(xmm3, xmm1);
+    __ Move(xmm4, (uint64_t)1 << 63);
+    __ xorpd(xmm3, xmm4);
+    __ subsd(xmm3, xmm2);  // Expected result in xmm3
+
+    // vfnmsub132sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ vfnmsub132sd(xmm4, xmm2, xmm1);
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmsub213sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ vfnmsub213sd(xmm4, xmm0, xmm2);
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfnmsub231sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ vfnmsub231sd(xmm4, xmm0, xmm1);
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+    // vfnmsub132sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ movsd(Operand(esp, 0), xmm1);
+    __ vfnmsub132sd(xmm4, xmm2, Operand(esp, 0));
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfnmsub213sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ movsd(Operand(esp, 0), xmm2);
+    __ vfnmsub213sd(xmm4, xmm0, Operand(esp, 0));
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfnmsub231sd
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ movsd(Operand(esp, 0), xmm1);
+    __ vfnmsub231sd(xmm4, xmm0, Operand(esp, 0));
+    __ ucomisd(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+
+    __ xor_(eax, eax);
+    __ bind(&exit);
+    __ add(esp, Immediate(kDoubleSize));
+    __ ret(0);
+  }
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+
+  auto f = GeneratedCode<F9>::FromCode(isolate, *code);
+  CHECK_EQ(
+      0, f.Call(0.000092662107262076, -2.460774966188315, -1.0958787393627414));
+}
+
+using F10 = int(float x, float y, float z);
+TEST(AssemblerX64FMA_ss) {
+  CcTest::InitializeVM();
+  if (!CpuFeatures::IsSupported(FMA3)) return;
+
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  uint8_t buffer[1024];
+  MacroAssembler assm(isolate, v8::internal::CodeObjectRequired::kYes,
+                      ExternalAssemblerBuffer(buffer, sizeof(buffer)));
+  {
+    CpuFeatureScope fscope(&assm, FMA3);
+    Label exit;
+    __ movss(xmm0, Operand(esp, 1 * kSystemPointerSize));
+    __ movss(xmm1, Operand(esp, 2 * kSystemPointerSize));
+    __ movss(xmm2, Operand(esp, 3 * kSystemPointerSize));
+    // arguments in xmm0, xmm1 and xmm2
+    // xmm0 * xmm1 + xmm2
+    __ movaps(xmm3, xmm0);
+    __ mulss(xmm3, xmm1);
+    __ addss(xmm3, xmm2);  // Expected result in xmm3
+
+    __ AllocateStackSpace(kDoubleSize);  // For memory operand
+    // vfmadd132ss
+    __ mov(eax, Immediate(1));  // Test number
+    __ movaps(xmm4, xmm0);
+    __ vfmadd132ss(xmm4, xmm2, xmm1);
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmadd213ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ vfmadd213ss(xmm4, xmm0, xmm2);
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmadd231ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ vfmadd231ss(xmm4, xmm0, xmm1);
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+    // vfmadd132ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ movss(Operand(esp, 0), xmm1);
+    __ vfmadd132ss(xmm4, xmm2, Operand(esp, 0));
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmadd213ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ movss(Operand(esp, 0), xmm2);
+    __ vfmadd213ss(xmm4, xmm0, Operand(esp, 0));
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmadd231ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ movss(Operand(esp, 0), xmm1);
+    __ vfmadd231ss(xmm4, xmm0, Operand(esp, 0));
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+    // xmm0 * xmm1 - xmm2
+    __ movaps(xmm3, xmm0);
+    __ mulss(xmm3, xmm1);
+    __ subss(xmm3, xmm2);  // Expected result in xmm3
+
+    // vfmsub132ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ vfmsub132ss(xmm4, xmm2, xmm1);
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmadd213ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ vfmsub213ss(xmm4, xmm0, xmm2);
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmsub231ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ vfmsub231ss(xmm4, xmm0, xmm1);
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+    // vfmsub132ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ movss(Operand(esp, 0), xmm1);
+    __ vfmsub132ss(xmm4, xmm2, Operand(esp, 0));
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmsub213ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ movss(Operand(esp, 0), xmm2);
+    __ vfmsub213ss(xmm4, xmm0, Operand(esp, 0));
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmsub231ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ movss(Operand(esp, 0), xmm1);
+    __ vfmsub231ss(xmm4, xmm0, Operand(esp, 0));
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+
+    // - xmm0 * xmm1 + xmm2
+    __ movaps(xmm3, xmm0);
+    __ mulss(xmm3, xmm1);
+    __ Move(xmm4, (uint32_t)1 << 31);
+    __ xorps(xmm3, xmm4);
+    __ addss(xmm3, xmm2);  // Expected result in xmm3
+
+    // vfnmadd132ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ vfnmadd132ss(xmm4, xmm2, xmm1);
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmadd213ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ vfnmadd213ss(xmm4, xmm0, xmm2);
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfnmadd231ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ vfnmadd231ss(xmm4, xmm0, xmm1);
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+    // vfnmadd132ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ movss(Operand(esp, 0), xmm1);
+    __ vfnmadd132ss(xmm4, xmm2, Operand(esp, 0));
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfnmadd213ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ movss(Operand(esp, 0), xmm2);
+    __ vfnmadd213ss(xmm4, xmm0, Operand(esp, 0));
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfnmadd231ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ movss(Operand(esp, 0), xmm1);
+    __ vfnmadd231ss(xmm4, xmm0, Operand(esp, 0));
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+
+    // - xmm0 * xmm1 - xmm2
+    __ movaps(xmm3, xmm0);
+    __ mulss(xmm3, xmm1);
+    __ Move(xmm4, (uint32_t)1 << 31);
+    __ xorps(xmm3, xmm4);
+    __ subss(xmm3, xmm2);  // Expected result in xmm3
+
+    // vfnmsub132ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ vfnmsub132ss(xmm4, xmm2, xmm1);
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfmsub213ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ vfnmsub213ss(xmm4, xmm0, xmm2);
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfnmsub231ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ vfnmsub231ss(xmm4, xmm0, xmm1);
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+    // vfnmsub132ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm0);
+    __ movss(Operand(esp, 0), xmm1);
+    __ vfnmsub132ss(xmm4, xmm2, Operand(esp, 0));
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfnmsub213ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm1);
+    __ movss(Operand(esp, 0), xmm2);
+    __ vfnmsub213ss(xmm4, xmm0, Operand(esp, 0));
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+    // vfnmsub231ss
+    __ inc(eax);
+    __ movaps(xmm4, xmm2);
+    __ movss(Operand(esp, 0), xmm1);
+    __ vfnmsub231ss(xmm4, xmm0, Operand(esp, 0));
+    __ ucomiss(xmm4, xmm3);
+    __ j(not_equal, &exit);
+
+
+    __ xor_(eax, eax);
+    __ bind(&exit);
+    __ add(esp, Immediate(kDoubleSize));
+    __ ret(0);
+  }
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+
+  auto f = GeneratedCode<F10>::FromCode(isolate, *code);
+  CHECK_EQ(0, f.Call(9.26621069e-05f, -2.4607749f, -1.09587872f));
+}
+
+
+TEST(AssemblerIa32BMI1) {
+  CcTest::InitializeVM();
+  if (!CpuFeatures::IsSupported(BMI1)) return;
+
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  uint8_t buffer[1024];
+  MacroAssembler assm(isolate, v8::internal::CodeObjectRequired::kYes,
+                      ExternalAssemblerBuffer(buffer, sizeof(buffer)));
+  {
+    CpuFeatureScope fscope(&assm, BMI1);
+    Label exit;
+
+    __ push(ebx);                         // save ebx
+    __ mov(ecx, Immediate(0x55667788u));  // source operand
+    __ push(ecx);                         // For memory operand
+
+    // andn
+    __ mov(edx, Immediate(0x20000000u));
+
+    __ mov(eax, Immediate(1));  // Test number
+    __ andn(ebx, edx, ecx);
+    __ cmp(ebx, Immediate(0x55667788u));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ andn(ebx, edx, Operand(esp, 0));
+    __ cmp(ebx, Immediate(0x55667788u));  // expected result
+    __ j(not_equal, &exit);
+
+    // bextr
+    __ mov(edx, Immediate(0x00002808u));
+
+    __ inc(eax);
+    __ bextr(ebx, ecx, edx);
+    __ cmp(ebx, Immediate(0x00556677u));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ bextr(ebx, Operand(esp, 0), edx);
+    __ cmp(ebx, Immediate(0x00556677u));  // expected result
+    __ j(not_equal, &exit);
+
+    // blsi
+    __ inc(eax);
+    __ blsi(ebx, ecx);
+    __ cmp(ebx, Immediate(0x00000008u));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ blsi(ebx, Operand(esp, 0));
+    __ cmp(ebx, Immediate(0x00000008u));  // expected result
+    __ j(not_equal, &exit);
+
+    // blsmsk
+    __ inc(eax);
+    __ blsmsk(ebx, ecx);
+    __ cmp(ebx, Immediate(0x0000000Fu));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ blsmsk(ebx, Operand(esp, 0));
+    __ cmp(ebx, Immediate(0x0000000Fu));  // expected result
+    __ j(not_equal, &exit);
+
+    // blsr
+    __ inc(eax);
+    __ blsr(ebx, ecx);
+    __ cmp(ebx, Immediate(0x55667780u));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ blsr(ebx, Operand(esp, 0));
+    __ cmp(ebx, Immediate(0x55667780u));  // expected result
+    __ j(not_equal, &exit);
+
+    // tzcnt
+    __ inc(eax);
+    __ tzcnt(ebx, ecx);
+    __ cmp(ebx, Immediate(3));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ tzcnt(ebx, Operand(esp, 0));
+    __ cmp(ebx, Immediate(3));  // expected result
+    __ j(not_equal, &exit);
+
+    __ xor_(eax, eax);
+    __ bind(&exit);
+    __ pop(ecx);
+    __ pop(ebx);
+    __ ret(0);
+  }
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+
+  auto f = GeneratedCode<F0>::FromCode(isolate, *code);
+  CHECK_EQ(0, f.Call());
+}
+
+
+TEST(AssemblerIa32LZCNT) {
+  CcTest::InitializeVM();
+  if (!CpuFeatures::IsSupported(LZCNT)) return;
+
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  uint8_t buffer[256];
+  MacroAssembler assm(isolate, v8::internal::CodeObjectRequired::kYes,
+                      ExternalAssemblerBuffer(buffer, sizeof(buffer)));
+  {
+    CpuFeatureScope fscope(&assm, LZCNT);
+    Label exit;
+
+    __ push(ebx);                         // save ebx
+    __ mov(ecx, Immediate(0x55667788u));  // source operand
+    __ push(ecx);                         // For memory operand
+
+    __ mov(eax, Immediate(1));  // Test number
+    __ lzcnt(ebx, ecx);
+    __ cmp(ebx, Immediate(1));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ lzcnt(ebx, Operand(esp, 0));
+    __ cmp(ebx, Immediate(1));  // expected result
+    __ j(not_equal, &exit);
+
+    __ xor_(eax, eax);
+    __ bind(&exit);
+    __ pop(ecx);
+    __ pop(ebx);
+    __ ret(0);
+  }
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+
+  auto f = GeneratedCode<F0>::FromCode(isolate, *code);
+  CHECK_EQ(0, f.Call());
+}
+
+
+TEST(AssemblerIa32POPCNT) {
+  CcTest::InitializeVM();
+  if (!CpuFeatures::IsSupported(POPCNT)) return;
+
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  uint8_t buffer[256];
+  MacroAssembler assm(isolate, v8::internal::CodeObjectRequired::kYes,
+                      ExternalAssemblerBuffer(buffer, sizeof(buffer)));
+  {
+    CpuFeatureScope fscope(&assm, POPCNT);
+    Label exit;
+
+    __ push(ebx);                         // save ebx
+    __ mov(ecx, Immediate(0x11111100u));  // source operand
+    __ push(ecx);                         // For memory operand
+
+    __ mov(eax, Immediate(1));  // Test number
+    __ popcnt(ebx, ecx);
+    __ cmp(ebx, Immediate(6));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ popcnt(ebx, Operand(esp, 0));
+    __ cmp(ebx, Immediate(6));  // expected result
+    __ j(not_equal, &exit);
+
+    __ xor_(eax, eax);
+    __ bind(&exit);
+    __ pop(ecx);
+    __ pop(ebx);
+    __ ret(0);
+  }
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+
+  auto f = GeneratedCode<F0>::FromCode(isolate, *code);
+  CHECK_EQ(0, f.Call());
+}
+
+
+TEST(AssemblerIa32BMI2) {
+  CcTest::InitializeVM();
+  if (!CpuFeatures::IsSupported(BMI2)) return;
+
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  uint8_t buffer[2048];
+  MacroAssembler assm(isolate, v8::internal::CodeObjectRequired::kYes,
+                      ExternalAssemblerBuffer(buffer, sizeof(buffer)));
+  {
+    CpuFeatureScope fscope(&assm, BMI2);
+    Label exit;
+
+    __ push(ebx);                         // save ebx
+    __ push(esi);                         // save esi
+    __ mov(ecx, Immediate(0x55667788u));  // source operand
+    __ push(ecx);                         // For memory operand
+
+    // bzhi
+    __ mov(edx, Immediate(9));
+
+    __ mov(eax, Immediate(1));  // Test number
+    __ bzhi(ebx, ecx, edx);
+    __ cmp(ebx, Immediate(0x00000188u));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ bzhi(ebx, Operand(esp, 0), edx);
+    __ cmp(ebx, Immediate(0x00000188u));  // expected result
+    __ j(not_equal, &exit);
+
+    // mulx
+    __ mov(edx, Immediate(0x00001000u));
+
+    __ inc(eax);
+    __ mulx(ebx, esi, ecx);
+    __ cmp(ebx, Immediate(0x00000556u));  // expected result
+    __ j(not_equal, &exit);
+    __ cmp(esi, Immediate(0x67788000u));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ mulx(ebx, esi, Operand(esp, 0));
+    __ cmp(ebx, Immediate(0x00000556u));  // expected result
+    __ j(not_equal, &exit);
+    __ cmp(esi, Immediate(0x67788000u));  // expected result
+    __ j(not_equal, &exit);
+
+    // pdep
+    __ mov(edx, Immediate(0xFFFFFFF0u));
+
+    __ inc(eax);
+    __ pdep(ebx, edx, ecx);
+    __ cmp(ebx, Immediate(0x55667400u));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ pdep(ebx, edx, Operand(esp, 0));
+    __ cmp(ebx, Immediate(0x55667400u));  // expected result
+    __ j(not_equal, &exit);
+
+    // pext
+    __ mov(edx, Immediate(0xFFFFFFF0u));
+
+    __ inc(eax);
+    __ pext(ebx, edx, ecx);
+    __ cmp(ebx, Immediate(0x0000FFFEu));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ pext(ebx, edx, Operand(esp, 0));
+    __ cmp(ebx, Immediate(0x0000FFFEu));  // expected result
+    __ j(not_equal, &exit);
+
+    // sarx
+    __ mov(edx, Immediate(4));
+
+    __ inc(eax);
+    __ sarx(ebx, ecx, edx);
+    __ cmp(ebx, Immediate(0x05566778u));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ sarx(ebx, Operand(esp, 0), edx);
+    __ cmp(ebx, Immediate(0x05566778u));  // expected result
+    __ j(not_equal, &exit);
+
+    // shlx
+    __ mov(edx, Immediate(4));
+
+    __ inc(eax);
+    __ shlx(ebx, ecx, edx);
+    __ cmp(ebx, Immediate(0x56677880u));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ shlx(ebx, Operand(esp, 0), edx);
+    __ cmp(ebx, Immediate(0x56677880u));  // expected result
+    __ j(not_equal, &exit);
+
+    // shrx
+    __ mov(edx, Immediate(4));
+
+    __ inc(eax);
+    __ shrx(ebx, ecx, edx);
+    __ cmp(ebx, Immediate(0x05566778u));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ shrx(ebx, Operand(esp, 0), edx);
+    __ cmp(ebx, Immediate(0x05566778u));  // expected result
+    __ j(not_equal, &exit);
+
+    // rorx
+    __ inc(eax);
+    __ rorx(ebx, ecx, 0x4);
+    __ cmp(ebx, Immediate(0x85566778u));  // expected result
+    __ j(not_equal, &exit);
+
+    __ inc(eax);
+    __ rorx(ebx, Operand(esp, 0), 0x4);
+    __ cmp(ebx, Immediate(0x85566778u));  // expected result
+    __ j(not_equal, &exit);
+
+    __ xor_(eax, eax);
+    __ bind(&exit);
+    __ pop(ecx);
+    __ pop(esi);
+    __ pop(ebx);
+    __ ret(0);
+  }
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+
+  auto f = GeneratedCode<F0>::FromCode(isolate, *code);
+  CHECK_EQ(0, f.Call());
+}
+
+
+TEST(AssemblerIa32JumpTables1) {
+  // Test jump tables with forward jumps.
+  CcTest::InitializeVM();
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  Assembler assm(AssemblerOptions{});
+
+  const int kNumCases = 512;
+  int values[kNumCases];
+  isolate->random_number_generator()->NextBytes(values, sizeof(values));
+  Label labels[kNumCases];
+
+  Label done, table;
+  __ mov(eax, Operand(esp, 4));
+  __ jmp(Operand::JumpTable(eax, times_system_pointer_size, &table));
+  __ ud2();
+  __ bind(&table);
+  for (int i = 0; i < kNumCases; ++i) {
+    __ dd(&labels[i]);
+  }
+
+  for (int i = 0; i < kNumCases; ++i) {
+    __ bind(&labels[i]);
+    __ mov(eax, Immediate(values[i]));
+    __ jmp(&done);
+  }
+
+  __ bind(&done);
+  __ ret(0);
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+  auto f = GeneratedCode<F1>::FromCode(isolate, *code);
+  for (int i = 0; i < kNumCases; ++i) {
+    int res = f.Call(i);
+    ::printf("f(%d) = %d\n", i, res);
+    CHECK_EQ(values[i], res);
+  }
+}
+
+
+TEST(AssemblerIa32JumpTables2) {
+  // Test jump tables with backward jumps.
+  CcTest::InitializeVM();
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  Assembler assm(AssemblerOptions{});
+
+  const int kNumCases = 512;
+  int values[kNumCases];
+  isolate->random_number_generator()->NextBytes(values, sizeof(values));
+  Label labels[kNumCases];
+
+  Label done, table;
+  __ mov(eax, Operand(esp, 4));
+  __ jmp(Operand::JumpTable(eax, times_system_pointer_size, &table));
+  __ ud2();
+
+  for (int i = 0; i < kNumCases; ++i) {
+    __ bind(&labels[i]);
+    __ mov(eax, Immediate(values[i]));
+    __ jmp(&done);
+  }
+
+  __ bind(&table);
+  for (int i = 0; i < kNumCases; ++i) {
+    __ dd(&labels[i]);
+  }
+
+  __ bind(&done);
+  __ ret(0);
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+  auto f = GeneratedCode<F1>::FromCode(isolate, *code);
+  for (int i = 0; i < kNumCases; ++i) {
+    int res = f.Call(i);
+    ::printf("f(%d) = %d\n", i, res);
+    CHECK_EQ(values[i], res);
+  }
+}
+
+TEST(Regress621926) {
+  // Bug description:
+  // The opcodes for cmpw r/m16, r16 and cmpw r16, r/m16 were swapped.
+  // This was causing non-commutative comparisons to produce the wrong result.
+  CcTest::InitializeVM();
+  Isolate* isolate = reinterpret_cast<Isolate*>(CcTest::isolate());
+  HandleScope scope(isolate);
+  Assembler assm(AssemblerOptions{});
+
+  uint16_t a = 42;
+
+  Label fail;
+  __ push(ebx);
+  __ mov(ebx, Immediate(reinterpret_cast<intptr_t>(&a)));
+  __ mov(eax, Immediate(41));
+  __ cmpw(eax, Operand(ebx, 0));
+  __ j(above_equal, &fail);
+  __ cmpw(Operand(ebx, 0), eax);
+  __ j(below_equal, &fail);
+  __ mov(eax, 1);
+  __ pop(ebx);
+  __ ret(0);
+  __ bind(&fail);
+  __ mov(eax, 0);
+  __ pop(ebx);
+  __ ret(0);
+
+  CodeDesc desc;
+  assm.GetCode(isolate, &desc);
+  Handle<Code> code =
+      Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
+
+#ifdef OBJECT_PRINT
+  StdoutStream os;
+  Print(*code, os);
+#endif
+
+  auto f = GeneratedCode<F0>::FromCode(isolate, *code);
+  CHECK_EQ(1, f.Call());
+}
+
+TEST(DeoptExitSizeIsFixed) {
+  Isolate* isolate = CcTest::i_isolate();
+  HandleScope handles(isolate);
+  uint8_t buffer[256];
+  MacroAssembler masm(isolate, v8::internal::CodeObjectRequired::kYes,
+                      ExternalAssemblerBuffer(buffer, sizeof(buffer)));
+
+  static_assert(static_cast<int>(kFirstDeoptimizeKind) == 0);
+  for (int i = 0; i < kDeoptimizeKindCount; i++) {
+    DeoptimizeKind kind = static_cast<DeoptimizeKind>(i);
+    Label before_exit;
+    masm.bind(&before_exit);
+    Builtin target = Deoptimizer::GetDeoptimizationEntry(kind);
+    masm.CallForDeoptimization(target, 42, &before_exit, kind, &before_exit,
+                               nullptr);
+    CHECK_EQ(masm.SizeOfCodeGeneratedSince(&before_exit),
+             kind == DeoptimizeKind::kLazy ? Deoptimizer::kLazyDeoptExitSize
+                                           : Deoptimizer::kEagerDeoptExitSize);
+  }
+}
+
+TEST(CpuFeatures_ProbeImpl) {
+  // Support for a newer extension implies support for the older extensions.
+  CHECK_IMPLIES(CpuFeatures::IsSupported(FMA3), CpuFeatures::IsSupported(AVX));
+  CHECK_IMPLIES(CpuFeatures::IsSupported(AVX2), CpuFeatures::IsSupported(AVX));
+  CHECK_IMPLIES(CpuFeatures::IsSupported(AVX),
+                CpuFeatures::IsSupported(SSE4_2));
+  CHECK_IMPLIES(CpuFeatures::IsSupported(SSE4_2),
+                CpuFeatures::IsSupported(SSE4_1));
+  CHECK_IMPLIES(CpuFeatures::IsSupported(SSE4_1),
+                CpuFeatures::IsSupported(SSSE3));
+  CHECK_IMPLIES(CpuFeatures::IsSupported(SSSE3),
+                CpuFeatures::IsSupported(SSE3));
+
+  // Check the reverse, if an older extension is not supported, a newer
+  // extension cannot be supported.
+  CHECK_IMPLIES(!CpuFeatures::IsSupported(SSE3),
+                !CpuFeatures::IsSupported(SSSE3));
+  CHECK_IMPLIES(!CpuFeatures::IsSupported(SSSE3),
+                !CpuFeatures::IsSupported(SSE4_1));
+  CHECK_IMPLIES(!CpuFeatures::IsSupported(SSE4_1),
+                !CpuFeatures::IsSupported(SSE4_2));
+  CHECK_IMPLIES(!CpuFeatures::IsSupported(SSE4_2),
+                !CpuFeatures::IsSupported(AVX));
+  CHECK_IMPLIES(!CpuFeatures::IsSupported(AVX),
+                !CpuFeatures::IsSupported(AVX2));
+  CHECK_IMPLIES(!CpuFeatures::IsSupported(AVX),
+                !CpuFeatures::IsSupported(FMA3));
+}
+
+#undef __
+
+}  // namespace internal
+}  // namespace v8
+
+"""
+
+```
