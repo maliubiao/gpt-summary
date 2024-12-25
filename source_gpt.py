@@ -12,7 +12,7 @@ def generate_file_list_and_content(directory, prompt_template_path, output_dir, 
     for root, _, files in os.walk(directory):
         for file in files:
             if any(file.endswith(suffix) for suffix in file_suffixes):
-                if "gay-" in file: 
+                if "gay-" in file or "_tests" in root: 
                     continue
                 file_path = os.path.join(root, file)
                 relative_path = os.path.relpath(file_path, directory)
@@ -55,7 +55,7 @@ def generate_file_list_and_content(directory, prompt_template_path, output_dir, 
                             print(chunk)
                             response_text += chunk
                         
-                        markdown_content = f"Response: {response_text}\nPrompt: \n```\n{prompt}\n```"
+                        markdown_content = f"Response:\n{response_text}\nPrompt: \n```\n{prompt}\n```"
                         os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
                         with open(output_file_path, 'w', encoding='utf-8') as f:
                             f.write(markdown_content)
