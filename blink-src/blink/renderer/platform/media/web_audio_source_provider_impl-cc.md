@@ -1,0 +1,592 @@
+Response: Let's break down the thought process for analyzing this C++ code. The goal is to understand the functionality and its interactions with web technologies.
+
+**1. Initial Skim and Keyword Identification:**
+
+The first step is a quick scan of the code, looking for recognizable keywords and structures. I see:
+
+* `#include`:  This tells me about dependencies. I note `web_audio_source_provider_impl.h`, `media/base/...`, and the `blink` namespace. This suggests it's part of the Blink rendering engine and deals with audio.
+* `class WebAudioSourceProviderImpl`: This is the main class we're investigating.
+* `TeeFilter`:  A nested class, likely used for a specific purpose. The name "Tee" suggests it's splitting or copying something.
+* `AudioRendererSink::RenderCallback`:  This interface suggests interaction with an audio rendering pipeline.
+* `SetClient`, `ProvideInput`, `Initialize`, `Start`, `Stop`, `Play`, `Pause`, `SetVolume`:  These look like standard audio control methods.
+* `CopyAudioCB`: This suggests a callback mechanism for copying audio data.
+* `TaintOrigin`: This is intriguing and likely relates to security or privacy.
+* Locks (`base::Lock`, `base::AutoLock`, `base::AutoTryLock`):  Indicates thread safety considerations.
+* `media::AudioBus`, `media::AudioParameters`:  Data structures related to audio.
+* `WebVector<float*>`:  A Blink-specific vector of float pointers, probably representing audio samples.
+
+**2. Analyzing the `TeeFilter` Class:**
+
+This nested class seems important. I focus on its methods:
+
+* `Initialize`: Takes an `AudioRendererSink::RenderCallback`, channels, and sample rate. This confirms its role in the rendering pipeline.
+* `Render`:  This is the core of the filtering logic. It calls the underlying `renderer_->Render`, and then, *conditionally*, copies the audio data using `copy_audio_bus_callback_`. The `copy_required_` and `copy_lock_` variables are key here. The `origin_tainted_` check before copying is also significant.
+* `SetCopyAudioCallback`:  Allows setting a callback to receive copies of the audio.
+* `TaintOrigin`: Sets the `origin_tainted_` flag, which disables audio copying.
+
+**Inference (TeeFilter):** The `TeeFilter` acts as an intermediary in the audio rendering process. It primarily forwards rendering calls. Its key feature is the ability to optionally copy the rendered audio data via a callback. The `TaintOrigin` mechanism suggests it's used to prevent access to audio data from cross-origin sources in certain security contexts.
+
+**3. Analyzing the `WebAudioSourceProviderImpl` Class:**
+
+Now, I examine the main class, focusing on how it uses `TeeFilter` and interacts with other components.
+
+* **Constructor:** Takes a `SwitchableAudioRendererSink`, `MediaLog`, and an optional callback. This suggests it manages an audio sink.
+* **`SetClient`:**  This is a crucial method. It takes a `WebAudioSourceProviderClient`. The code detaches the `sink_` when a client is set and establishes a callback (`set_format_cb_`). This strongly suggests a mode where an external client (likely JavaScript via the Web Audio API) *provides* the audio data.
+* **`ProvideInput`:** This method is called when a client is active. It takes `WebVector<float*>`, representing the audio data. It passes this data through the `tee_filter_->Render`. The logic for handling mismatched channel counts and tainted origins is important.
+* **`Initialize`:**  Initializes the `TeeFilter` and potentially the underlying `sink_`.
+* **`Start`, `Stop`, `Play`, `Pause`, `SetVolume`, `Flush`, `SwitchOutputDevice`:** These methods mostly forward calls to the underlying `sink_` when no client is active. They represent standard audio control operations.
+* **`TaintOrigin`:**  Forwards the taint request to the `TeeFilter`.
+* **`SetCopyAudioCallback`, `ClearCopyAudioCallback`:**  Delegate to the `TeeFilter`.
+* **`IsAudioBeingCaptured`:**  Returns true if there's a copy callback or a client is active.
+
+**Inference (WebAudioSourceProviderImpl):** This class acts as a bridge between different audio sources and the audio rendering pipeline. It supports two primary modes:
+
+    * **Sink-driven:**  When no client is set, it uses a `SwitchableAudioRendererSink` to obtain audio data.
+    * **Client-driven:** When a `WebAudioSourceProviderClient` is set, it receives audio data directly from the client (likely a JavaScript `ScriptProcessorNode` or an `AudioWorkletNode`).
+
+The `TeeFilter` is used in both modes, providing the ability to intercept and copy the audio stream.
+
+**4. Connecting to Web Technologies (JavaScript, HTML, CSS):**
+
+Now, I think about how these C++ components relate to the web platform:
+
+* **JavaScript:** The `WebAudioSourceProviderClient` is the key connection point. This interface is implemented by JavaScript code that uses the Web Audio API (specifically, nodes that generate or process audio like `ScriptProcessorNode` or `AudioWorkletNode`). The `ProvideInput` method receives the audio data generated by these JavaScript nodes. The `SetFormat` callback informs the JavaScript side about the audio format.
+* **HTML:** The audio source being managed could originate from an `<audio>` or `<video>` element in the HTML. The "tainted origin" concept strongly links to CORS, which is a browser security feature related to cross-origin requests initiated by HTML elements.
+* **CSS:**  CSS has no direct functional relationship with this specific C++ code. Audio processing is handled by JavaScript and the underlying rendering engine.
+
+**5. Logical Reasoning and Examples:**
+
+I consider specific scenarios and their inputs/outputs:
+
+* **Scenario 1: Simple Audio Playback (No Client):**
+    * Input: An `<audio>` element with a valid audio source.
+    * Output: Audio is played through the system's audio output. The `WebAudioSourceProviderImpl` uses the `SwitchableAudioRendererSink` to obtain the audio data.
+* **Scenario 2: Using `ScriptProcessorNode` (Client Active):**
+    * Input: JavaScript code creating a `ScriptProcessorNode` that generates sine wave data in its `onaudioprocess` event.
+    * Output: The `onaudioprocess` callback provides audio data to the `WebAudioSourceProviderImpl` via the `ProvideInput` method. This generated sine wave is then played.
+* **Scenario 3: Cross-Origin Audio and `TaintOrigin`:**
+    * Input: An `<audio>` element with a `src` attribute pointing to a cross-origin URL without proper CORS headers. JavaScript attempts to process this audio using a `ScriptProcessorNode`.
+    * Output: The `TaintOrigin` mechanism is triggered. The `TeeFilter`'s `Render` method, when copying is enabled, will provide a zeroed-out audio buffer to the JavaScript callback, preventing access to the cross-origin audio data.
+
+**6. Identifying Common User/Programming Errors:**
+
+I think about common mistakes developers might make:
+
+* **Incorrect Channel Count in `ProvideInput`:**  JavaScript might provide audio data with a different number of channels than expected by the audio rendering pipeline. The code handles this by outputting silence.
+* **Not Handling Asynchronous Operations:**  Setting up the Web Audio API involves asynchronous operations. Developers might make errors in the timing of connecting nodes or providing data.
+* **CORS Issues:**  Failing to configure CORS headers correctly when using cross-origin audio sources will lead to the "tainted origin" scenario and prevent JavaScript from accessing the audio data.
+* **Performance Issues:**  Performing heavy computations in the `ScriptProcessorNode` or `AudioWorkletNode` can cause audio glitches. This C++ code doesn't directly address this, but it's a common issue when using the Web Audio API.
+
+**7. Structuring the Answer:**
+
+Finally, I organize my findings into a clear and structured answer, covering the requested points: functionality, relationship to web technologies (with examples), logical reasoning (with input/output), and common errors. I use the identified keywords and concepts to provide specific details.
+这个 C++ 文件 `web_audio_source_provider_impl.cc` 是 Chromium Blink 引擎中负责为 Web Audio API 提供音频源的核心组件。它主要的功能是管理音频数据的来源，并将这些数据提供给 Web Audio 的处理节点进行进一步处理和渲染。
+
+以下是它的主要功能点：
+
+**1. 音频源管理和抽象:**
+
+* **作为音频数据的提供者:**  `WebAudioSourceProviderImpl` 抽象了不同来源的音频数据，例如 `<audio>` 或 `<video>` 标签的媒体数据，或者由 JavaScript 通过 `ScriptProcessorNode` 或 `AudioWorkletNode` 提供的实时音频数据。
+* **切换音频源:** 它能够处理不同类型的音频源，并根据需要进行切换。
+* **提供统一的接口:**  它为 Web Audio 的后续处理节点提供了一个统一的音频数据访问接口，隐藏了底层音频源的复杂性。
+
+**2. 音频渲染控制和同步:**
+
+* **控制音频渲染流程:** 它可以控制音频的播放、暂停、停止等状态。
+* **与音频渲染管道集成:** 它与 Chromium 的音频渲染管道 (`AudioRendererSink`) 集成，负责将音频数据推送到渲染器进行播放。
+* **时间同步:**  它涉及到音频时间戳的管理，确保音频处理和渲染的同步。
+
+**3. 音频数据的复制和捕获 (TeeFilter):**
+
+* **`TeeFilter` 类:**  这个内部类允许在音频渲染过程中复制一份音频数据。这对于实现诸如音频可视化、音频分析或者将音频流传输到其他地方的功能非常重要。
+* **`SetCopyAudioCallback`:**  允许设置一个回调函数，该函数会在每次渲染时接收到一份音频数据的副本。
+* **防止跨域数据访问 (`TaintOrigin`):**  当音频源来自跨域且没有正确配置 CORS 时，`TaintOrigin` 方法会被调用，阻止 JavaScript 代码访问原始音频数据，增强安全性。
+
+**4. 与 JavaScript, HTML, CSS 的关系和举例:**
+
+* **JavaScript:**
+    * **Web Audio API 的核心桥梁:**  `WebAudioSourceProviderImpl` 是 Web Audio API 实现的关键部分。当你在 JavaScript 中创建一个音频源节点（例如 `MediaElementAudioSourceNode` 或 `ScriptProcessorNode`），这个 C++ 类就在幕后工作，负责提供音频数据。
+    * **`MediaElementAudioSourceNode`:** 当你用 JavaScript 创建一个 `MediaElementAudioSourceNode` 并将其连接到一个 `<audio>` 或 `<video>` 元素时，`WebAudioSourceProviderImpl` 会从该媒体元素中提取音频数据并提供给 Web Audio 图。
+        ```javascript
+        const audioCtx = new AudioContext();
+        const audioElement = document.getElementById('myAudio');
+        const source = audioCtx.createMediaElementSource(audioElement);
+        source.connect(audioCtx.destination); // 直接播放
+        ```
+    * **`ScriptProcessorNode` / `AudioWorkletNode`:**  当使用 `ScriptProcessorNode` 或 `AudioWorkletNode` 时，JavaScript 代码会主动提供音频数据。`WebAudioSourceProviderImpl` 的 `ProvideInput` 方法会被调用，接收来自 JavaScript 的音频数据。
+        ```javascript
+        const audioCtx = new AudioContext();
+        const processor = audioCtx.createScriptProcessor(1024, 1, 1); // 输入和输出都是单声道
+        processor.onaudioprocess = function(audioProcessingEvent) {
+          const outputBuffer = audioProcessingEvent.outputBuffer;
+          const outputData = outputBuffer.getChannelData(0);
+          // 在这里生成或处理音频数据，例如生成正弦波
+          for (let i = 0; i < outputBuffer.length; i++) {
+            outputData[i] = Math.sin(audioCtx.currentTime * 440 * 2 * Math.PI); // 440Hz 正弦波
+          }
+        }
+        processor.connect(audioCtx.destination);
+        ```
+    * **音频数据捕获:**  通过 JavaScript 调用 `getOutputMediaStreamDestination()` 创建一个可以捕获 Web Audio 输出的 `MediaStreamDestinationNode`，间接地使用了 `TeeFilter` 的能力来复制音频数据。
+
+* **HTML:**
+    * **`<audio>` 和 `<video>` 标签:**  `WebAudioSourceProviderImpl` 可以作为 `<audio>` 和 `<video>` 标签的音频源，将媒体元素的音频数据提供给 Web Audio API 进行处理。
+
+* **CSS:**
+    * **无直接功能关系:**  CSS 主要负责样式和布局，与 `WebAudioSourceProviderImpl` 的核心音频数据处理功能没有直接关系。
+
+**5. 逻辑推理和假设输入与输出:**
+
+假设我们有一个通过 `<audio>` 元素加载的音频文件，并且在 JavaScript 中创建了一个 `MediaElementAudioSourceNode` 来使用这个音频源：
+
+* **假设输入:**
+    * HTML: `<audio id="myAudio" src="audio.mp3"></audio>`
+    * JavaScript:
+        ```javascript
+        const audioCtx = new AudioContext();
+        const audioElement = document.getElementById('myAudio');
+        const sourceProvider = new WebAudioSourceProviderImpl(/* ... 内部依赖 ... */); // 假设这是内部创建
+        // 模拟 Web Audio API 创建 MediaElementAudioSourceNode
+        // sourceProvider 会被设置为这个节点的音频提供者
+        ```
+* **逻辑推理过程:**
+    1. 当 JavaScript 创建 `MediaElementAudioSourceNode` 并关联 `<audio>` 元素时，`WebAudioSourceProviderImpl` 会被初始化，并与 `<audio>` 元素的媒体数据源关联。
+    2. 当 Web Audio 图中的后续节点需要音频数据时，它们会向 `WebAudioSourceProviderImpl` 请求数据。
+    3. `WebAudioSourceProviderImpl` 会从 `<audio>` 元素的底层媒体管道中提取音频数据。
+    4. 这些音频数据会以 `media::AudioBus` 的形式提供给 Web Audio 的处理节点。
+* **假设输出:**
+    * 如果 Web Audio 图直接连接到 `audioCtx.destination`，则会播放 `audio.mp3` 的音频。
+    * 如果 Web Audio 图中包含其他处理节点（例如滤波器、增益器），则会播放经过处理后的音频。
+
+假设我们使用 `ScriptProcessorNode` 生成一个简单的正弦波：
+
+* **假设输入:**
+    * JavaScript 代码如上例所示，创建并连接了一个生成 440Hz 正弦波的 `ScriptProcessorNode`。
+* **逻辑推理过程:**
+    1. `ScriptProcessorNode` 的 `onaudioprocess` 事件会周期性触发。
+    2. 在事件处理函数中，JavaScript 代码会生成正弦波数据并写入到 `outputBuffer` 中。
+    3. 这些数据会被传递给 `WebAudioSourceProviderImpl` 的 `ProvideInput` 方法（尽管在这个场景下，`ScriptProcessorNode` 更像是生产者而不是通过 `WebAudioSourceProviderImpl` 提供数据，但概念上数据会进入 Web Audio 管道）。
+    4. Web Audio 管道接收到这些数据后，会将其传递给连接的下游节点。
+* **假设输出:**
+    * 如果 `ScriptProcessorNode` 直接连接到 `audioCtx.destination`，则会听到 440Hz 的正弦波声音。
+
+**6. 涉及用户或者编程常见的使用错误:**
+
+* **跨域音频源未配置 CORS:** 当 `<audio>` 或 `<video>` 标签的 `src` 指向跨域的资源，并且服务器没有返回正确的 CORS 头信息时，`WebAudioSourceProviderImpl` 的 `TaintOrigin` 方法会被调用。如果 JavaScript 尝试通过 `ScriptProcessorNode` 或 `AudioWorkletNode` 读取这个音频源的数据，将会得到静音数据，这可能会导致用户或开发者困惑。
+    * **错误示例 (JavaScript):**
+      ```javascript
+      const audioCtx = new AudioContext();
+      const audioElement = document.getElementById('myCrossDomainAudio'); // 假设这个音频是跨域的
+      const source = audioCtx.createMediaElementSource(audioElement);
+      const processor = audioCtx.createScriptProcessor(1024, 1, 1);
+      processor.onaudioprocess = function(e) {
+        const inputData = e.inputBuffer.getChannelData(0);
+        // 如果跨域未配置 CORS，inputData 将全是 0
+        console.log(inputData);
+      }
+      source.connect(processor);
+      processor.connect(audioCtx.destination);
+      ```
+    * **解决方法:**  确保跨域音频服务器配置了 `Access-Control-Allow-Origin` 等 CORS 头信息。
+
+* **在 `ProvideInput` 中提供错误格式的数据:**  如果 JavaScript 通过 `ScriptProcessorNode` 或 `AudioWorkletNode` 提供的数据格式（例如采样率、声道数）与 Web Audio 上下文的预期不符，可能会导致音频播放错误或崩溃。
+    * **错误示例 (JavaScript):**
+      ```javascript
+      const audioCtx = new AudioContext(); // 假设 audioCtx 的采样率是 44100
+      const processor = audioCtx.createScriptProcessor(1024, 1, 1);
+      processor.onaudioprocess = function(e) {
+        const outputBuffer = e.outputBuffer;
+        // ... 这里生成的数据可能假设是其他采样率，例如 48000
+      }
+      ```
+    * **解决方法:**  确保 JavaScript 代码生成或处理的音频数据格式与 Web Audio 上下文的设置一致。
+
+* **没有正确处理异步操作:**  Web Audio API 的某些操作是异步的，例如加载音频文件。如果在音频数据完全加载之前就开始进行处理，可能会导致错误。
+    * **错误示例 (JavaScript):**
+      ```javascript
+      const audioCtx = new AudioContext();
+      const audioElement = document.getElementById('myAudio');
+      audioElement.src = 'large_audio_file.mp3';
+      const source = audioCtx.createMediaElementSource(audioElement);
+      // 可能会在音频文件加载完成前尝试连接和播放
+      source.connect(audioCtx.destination);
+      audioElement.play();
+      ```
+    * **解决方法:**  使用事件监听器（例如 `loadeddata` 或 `canplaythrough`）来确保音频数据已加载完成再进行后续操作。
+
+总而言之，`web_audio_source_provider_impl.cc` 是 Blink 引擎中一个关键的音频基础设施组件，它负责连接不同来源的音频数据到 Web Audio API 的处理流程中，并提供了诸如音频复制和跨域安全控制等重要功能。理解它的作用有助于深入理解 Web Audio API 的底层实现机制。
+
+Prompt: 
+```
+这是目录为blink/renderer/platform/media/web_audio_source_provider_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
+如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
+如果做了逻辑推理，请给出假设输入与输出,
+如果涉及用户或者编程常见的使用错误，请举例说明
+
+"""
+// Copyright 2013 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+#include "third_party/blink/public/platform/web_audio_source_provider_impl.h"
+
+#include <atomic>
+#include <utility>
+
+#include "base/check_op.h"
+#include "base/functional/bind.h"
+#include "base/logging.h"
+#include "base/memory/raw_ptr.h"
+#include "base/metrics/histogram_macros.h"
+#include "base/notreached.h"
+#include "base/task/bind_post_task.h"
+#include "base/thread_annotations.h"
+#include "media/base/audio_glitch_info.h"
+#include "media/base/audio_timestamp_helper.h"
+#include "media/base/media_log.h"
+#include "third_party/blink/renderer/platform/media/web_audio_source_provider_client.h"
+#include "third_party/blink/renderer/platform/wtf/functional.h"
+
+namespace blink {
+
+// TeeFilter is a RenderCallback implementation that allows for a client to get
+// a copy of the data being rendered by the |renderer_| on Render(). This class
+// also holds on to the necessary audio parameters.
+class WebAudioSourceProviderImpl::TeeFilter
+    : public AudioRendererSink::RenderCallback {
+ public:
+  TeeFilter() : copy_required_(false) {}
+  TeeFilter(const TeeFilter&) = delete;
+  TeeFilter& operator=(const TeeFilter&) = delete;
+  ~TeeFilter() override = default;
+
+  void Initialize(AudioRendererSink::RenderCallback* renderer,
+                  int channels,
+                  int sample_rate) {
+    DCHECK(renderer);
+    renderer_ = renderer;
+    channels_ = channels;
+    sample_rate_ = sample_rate;
+  }
+
+  // AudioRendererSink::RenderCallback implementation.
+  // These are forwarders to |renderer_| and are here to allow for a client to
+  // get a copy of the rendered audio by SetCopyAudioCallback().
+  int Render(base::TimeDelta delay,
+             base::TimeTicks delay_timestamp,
+             const media::AudioGlitchInfo& glitch_info,
+             media::AudioBus* audio_bus) override {
+    DCHECK(initialized());
+    DCHECK_EQ(audio_bus->channels(), channels_);
+
+    const int num_rendered_frames =
+        renderer_->Render(delay, delay_timestamp, glitch_info, audio_bus);
+
+    // Avoid taking the copy lock for the vast majority of cases.
+    if (copy_required_) {
+      base::AutoLock auto_lock(copy_lock_);
+      if (!copy_audio_bus_callback_.is_null()) {
+        const int64_t frames_delayed =
+            media::AudioTimestampHelper::TimeToFrames(delay, sample_rate_);
+        std::unique_ptr<media::AudioBus> bus_copy =
+            media::AudioBus::Create(audio_bus->channels(), audio_bus->frames());
+        // Disable copying when origin is tainted.
+        if (origin_tainted_.IsSet())
+          bus_copy->Zero();
+        else
+          audio_bus->CopyTo(bus_copy.get());
+
+        // TODO(fhernqvist): Propagate glitch info through here if the callback
+        // needs it.
+        copy_audio_bus_callback_.Run(std::move(bus_copy),
+                                     static_cast<uint32_t>(frames_delayed),
+                                     sample_rate_);
+      }
+    }
+
+    return num_rendered_frames;
+  }
+
+  void OnRenderError() override {
+    DCHECK(initialized());
+    renderer_->OnRenderError();
+  }
+
+  bool initialized() const { return !!renderer_; }
+  int channels() const { return channels_; }
+  int sample_rate() const { return sample_rate_; }
+
+  void SetCopyAudioCallback(CopyAudioCB callback) {
+    copy_required_ = !callback.is_null();
+    base::AutoLock auto_lock(copy_lock_);
+    copy_audio_bus_callback_ = std::move(callback);
+  }
+
+  void TaintOrigin() { origin_tainted_.Set(); }
+  bool is_tainted() const { return origin_tainted_.IsSet(); }
+
+ private:
+  raw_ptr<AudioRendererSink::RenderCallback, DanglingUntriaged> renderer_ =
+      nullptr;
+  int channels_ = 0;
+  int sample_rate_ = 0;
+
+  // Indicates whether the audio source is tainted, and output should be muted.
+  // This can happen if the media element source is a cross-origin source which
+  // the page is not allowed to access due to CORS restrictions.
+  base::AtomicFlag origin_tainted_;
+
+  // The vast majority of the time we're operating in passthrough mode. So only
+  // acquire a lock to read |copy_audio_bus_callback_| when necessary.
+  std::atomic<bool> copy_required_;
+  base::Lock copy_lock_;
+  CopyAudioCB copy_audio_bus_callback_ GUARDED_BY(copy_lock_);
+};
+
+WebAudioSourceProviderImpl::WebAudioSourceProviderImpl(
+    scoped_refptr<media::SwitchableAudioRendererSink> sink,
+    media::MediaLog* media_log,
+    base::OnceClosure on_set_client_callback /* = base::OnceClosure()*/)
+    : sink_(std::move(sink)),
+      tee_filter_(std::make_unique<TeeFilter>()),
+      media_log_(media_log),
+      on_set_client_callback_(std::move(on_set_client_callback)) {}
+
+WebAudioSourceProviderImpl::~WebAudioSourceProviderImpl() = default;
+
+void WebAudioSourceProviderImpl::SetClient(
+    WebAudioSourceProviderClient* client) {
+  // Skip taking the lock if unnecessary. This function is the only setter for
+  // |client_| so it's safe to check |client_| outside of the lock.
+  if (client_ == client)
+    return;
+
+  base::AutoLock auto_lock(sink_lock_);
+  if (client) {
+    // Detach the audio renderer from normal playback.
+    if (sink_) {
+      sink_->Stop();
+
+      // It's not possible to resume an element after disconnection, so just
+      // drop the sink entirely for now.
+      sink_ = nullptr;
+    }
+
+    // The client will now take control by calling provideInput() periodically.
+    client_ = client;
+
+    set_format_cb_ = base::BindPostTaskToCurrentDefault(WTF::BindRepeating(
+        &WebAudioSourceProviderImpl::OnSetFormat, weak_factory_.GetWeakPtr()));
+
+    // If |tee_filter_| is Initialize()d - then run |set_format_cb_| to send
+    // |client_| the current format info. Otherwise |set_format_cb_| will get
+    // called when Initialize() is called. Note: Always using |set_format_cb_|
+    // ensures we have the same locking order when calling into |client_|.
+    if (tee_filter_->initialized())
+      set_format_cb_.Run();
+
+    if (on_set_client_callback_)
+      std::move(on_set_client_callback_).Run();
+
+    return;
+  }
+
+  // Drop client, but normal playback can't be restored. This is okay, the only
+  // way to disconnect a client is internally at time of destruction.
+  client_ = nullptr;
+
+  // We need to invalidate WeakPtr references on the renderer thread.
+  set_format_cb_.Reset();
+  weak_factory_.InvalidateWeakPtrs();
+}
+
+void WebAudioSourceProviderImpl::ProvideInput(
+    const WebVector<float*>& audio_data,
+    int number_of_frames) {
+  if (!bus_wrapper_ ||
+      static_cast<size_t>(bus_wrapper_->channels()) != audio_data.size()) {
+    bus_wrapper_ =
+        media::AudioBus::CreateWrapper(static_cast<int>(audio_data.size()));
+  }
+
+  bus_wrapper_->set_frames(number_of_frames);
+  for (size_t i = 0; i < audio_data.size(); ++i)
+    bus_wrapper_->SetChannelData(static_cast<int>(i), audio_data[i]);
+
+  // Use a try lock to avoid contention in the real-time audio thread.
+  base::AutoTryLock auto_try_lock(sink_lock_);
+  if (!auto_try_lock.is_acquired() || state_ != kPlaying) {
+    // Provide silence if we failed to acquire the lock or the source is not
+    // running.
+    bus_wrapper_->Zero();
+    return;
+  }
+
+  DCHECK(client_);
+
+  // It may be the case that the given |audio_data| doesn't have the same number
+  // of channels as we were expecting, due to a race condition. In that case,
+  // simply output silence.
+  if (tee_filter_->channels() != bus_wrapper_->channels()) {
+    DVLOG(2) << "Outputting silence due to mismatched channel count";
+    bus_wrapper_->Zero();
+    return;
+  }
+
+  // TODO(fhernqvist): If we need glitches propagated through WebAudio, plumb
+  // them through here.
+  const int frames = tee_filter_->Render(
+      base::TimeDelta(), base::TimeTicks::Now(), {}, bus_wrapper_.get());
+
+  // Zero out frames after rendering for tainted origins.
+  if (tee_filter_->is_tainted()) {
+    bus_wrapper_->Zero();
+    return;
+  }
+
+  if (frames < number_of_frames)
+    bus_wrapper_->ZeroFramesPartial(frames, number_of_frames - frames);
+
+  bus_wrapper_->Scale(volume_);
+}
+
+void WebAudioSourceProviderImpl::Initialize(
+    const media::AudioParameters& params,
+    RenderCallback* renderer) {
+  base::AutoLock auto_lock(sink_lock_);
+  DCHECK_EQ(state_, kStopped);
+
+  tee_filter_->Initialize(renderer, params.channels(), params.sample_rate());
+
+  if (sink_)
+    sink_->Initialize(params, tee_filter_.get());
+
+  if (set_format_cb_)
+    set_format_cb_.Run();
+}
+
+void WebAudioSourceProviderImpl::Start() {
+  base::AutoLock auto_lock(sink_lock_);
+  DCHECK(tee_filter_);
+  DCHECK_EQ(state_, kStopped);
+  state_ = kStarted;
+  if (!client_ && sink_)
+    sink_->Start();
+}
+
+void WebAudioSourceProviderImpl::Stop() {
+  base::AutoLock auto_lock(sink_lock_);
+  state_ = kStopped;
+  if (!client_ && sink_)
+    sink_->Stop();
+}
+
+void WebAudioSourceProviderImpl::Play() {
+  base::AutoLock auto_lock(sink_lock_);
+  DCHECK_EQ(state_, kStarted);
+  state_ = kPlaying;
+  if (!client_ && sink_)
+    sink_->Play();
+}
+
+void WebAudioSourceProviderImpl::Pause() {
+  base::AutoLock auto_lock(sink_lock_);
+  DCHECK(state_ == kPlaying || state_ == kStarted);
+  state_ = kStarted;
+  if (!client_ && sink_)
+    sink_->Pause();
+}
+
+void WebAudioSourceProviderImpl::Flush() {
+  base::AutoLock auto_lock(sink_lock_);
+  if (!client_ && sink_)
+    sink_->Flush();
+}
+
+bool WebAudioSourceProviderImpl::SetVolume(double volume) {
+  base::AutoLock auto_lock(sink_lock_);
+  volume_ = volume;
+  if (!client_ && sink_)
+    sink_->SetVolume(volume);
+  return true;
+}
+
+media::OutputDeviceInfo WebAudioSourceProviderImpl::GetOutputDeviceInfo() {
+  NOTREACHED();  // The blocking API is intentionally not supported.
+}
+
+void WebAudioSourceProviderImpl::GetOutputDeviceInfoAsync(
+    OutputDeviceInfoCB info_cb) {
+  base::AutoLock auto_lock(sink_lock_);
+  if (sink_) {
+    sink_->GetOutputDeviceInfoAsync(std::move(info_cb));
+    return;
+  }
+
+  // Just return empty hardware parameters. When a |client_| is attached, the
+  // underlying audio renderer will prefer the media parameters. See
+  // IsOptimizedForHardwareParameters() for more details.
+  base::BindPostTaskToCurrentDefault(
+      WTF::BindOnce(std::move(info_cb),
+                    media::OutputDeviceInfo(media::OUTPUT_DEVICE_STATUS_OK)))
+      .Run();
+}
+
+bool WebAudioSourceProviderImpl::IsOptimizedForHardwareParameters() {
+  base::AutoLock auto_lock(sink_lock_);
+  return client_ ? false : true;
+}
+
+bool WebAudioSourceProviderImpl::CurrentThreadIsRenderingThread() {
+  NOTIMPLEMENTED();
+  return false;
+}
+
+void WebAudioSourceProviderImpl::SwitchOutputDevice(
+    const std::string& device_id,
+    media::OutputDeviceStatusCB callback) {
+  base::AutoLock auto_lock(sink_lock_);
+  if (client_ || !sink_)
+    std::move(callback).Run(media::OUTPUT_DEVICE_STATUS_ERROR_INTERNAL);
+  else
+    sink_->SwitchOutputDevice(device_id, std::move(callback));
+}
+
+void WebAudioSourceProviderImpl::TaintOrigin() {
+  tee_filter_->TaintOrigin();
+}
+
+void WebAudioSourceProviderImpl::SetCopyAudioCallback(CopyAudioCB callback) {
+  DCHECK(!callback.is_null());
+  tee_filter_->SetCopyAudioCallback(std::move(callback));
+  has_copy_audio_callback_ = true;
+}
+
+void WebAudioSourceProviderImpl::ClearCopyAudioCallback() {
+  tee_filter_->SetCopyAudioCallback(CopyAudioCB());
+  has_copy_audio_callback_ = false;
+}
+
+int WebAudioSourceProviderImpl::RenderForTesting(media::AudioBus* audio_bus) {
+  return tee_filter_->Render(base::TimeDelta(), base::TimeTicks::Now(), {},
+                             audio_bus);
+}
+
+bool WebAudioSourceProviderImpl::IsAudioBeingCaptured() const {
+  return has_copy_audio_callback_ || client_;
+}
+
+void WebAudioSourceProviderImpl::OnSetFormat() {
+  base::AutoLock auto_lock(sink_lock_);
+  if (!client_)
+    return;
+
+  // Inform Blink about the audio stream format.
+  client_->SetFormat(tee_filter_->channels(), tee_filter_->sample_rate());
+}
+
+}  // namespace blink
+
+"""
+
+```
