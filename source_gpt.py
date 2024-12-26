@@ -4,16 +4,16 @@ import pdb
 import asyncio
 from gpt_lsp import AsyncOpenAIClient, add_arguments
 
-def generate_file_list_and_content(directory, prompt_template_path, output_dir, file_suffixes):
+def generate_file_list_and_content(directory, prompt_template_path, output_dir, file_suffixes, exclude_dirs):
     
     with open(prompt_template_path, 'r', encoding='utf-8') as f:
         prompt_template = f.read()
 
     for root, _, files in os.walk(directory):
+        if any(exclude_dir in root.split(os.sep) for exclude_dir in exclude_dirs):
+            continue
         for file in files:
             if any(file.endswith(suffix) for suffix in file_suffixes):
-                if "gay-" in file: 
-                    continue
                 file_path = os.path.join(root, file)
                 relative_path = os.path.relpath(file_path, directory)
                 # 获取目录的最后一部分
@@ -23,9 +23,10 @@ def generate_file_list_and_content(directory, prompt_template_path, output_dir, 
                 with open(file_path, 'r', encoding='utf-8') as f:
                     file_content = f.read()
                 file_list = []
-                if len(file_content) > 64 * 1024:
-                    # Split the file content into chunks of 64k
-                    chunks = [file_content[i:i + 64 * 1024] for i in range(0, len(file_content), 64 * 1024)]
+                CHUNK_SIZE = 64 * 1024
+                if len(file_content) > CHUNK_SIZE:
+                    # Split the file content into chunks of CHUNK_SIZE
+                    chunks = [file_content[i:i + CHUNK_SIZE] for i in range(0, len(file_content), CHUNK_SIZE)]
                     for i, chunk in enumerate(chunks):
                         prefix = f"这是第{i+1}部分，共{len(chunks)}部分，请归纳一下它的功能\n"
                         suffix = "\n"
@@ -40,6 +41,7 @@ def generate_file_list_and_content(directory, prompt_template_path, output_dir, 
                     prompt = (prompt_template.format(filepath=filepath, prefix=prefix, file_content=file_content, suffix=suffix))
                     base_output_file_path = os.path.join(output_dir, os.path.splitext(modified_relative_path)[0] +"-"+file_suffix+ ".md")
                     output_file_path = base_output_file_path
+                    print(output_file_path)
                     if idx == 0 and os.path.exists(output_file_path):
                         logger.info(f"已经存在{output_file_path}")
                         continue
@@ -74,6 +76,7 @@ if __name__ == "__main__":
     parser.add_argument('--prompt-template', required=True, help='Path to the prompt template file')
     parser.add_argument('--output-dir', default="src", help='Output directory for generated files')
     parser.add_argument('--file-suffixes', nargs='+', default=['.go', ".cc"], help='List of file suffixes to filter source files')
+    parser.add_argument('--exclude', nargs='+', default=[], help='List of directories to exclude')
     add_arguments(parser)
     args = parser.parse_args()
 
@@ -88,4 +91,4 @@ if __name__ == "__main__":
     test_response = asyncio.run(openai_client.ask("hello"))
     # logger.info(f"Test response from LLM: {test_response}")
     # pdb.set_trace()
-    generate_file_list_and_content(args.dir, args.prompt_template, args.output_dir, args.file_suffixes)
+    generate_file_list_and_content(args.dir, args.prompt_template, args.output_dir, args.file_suffixes, args.exclude)
