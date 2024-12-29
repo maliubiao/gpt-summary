@@ -1,0 +1,912 @@
+Response:
+My thought process for analyzing the provided C++ code snippet and generating the response involved the following steps:
+
+1. **Understand the Core Purpose:** I first looked at the file name (`connect_job_params_factory_unittest.cc`) and the included headers. The name immediately suggests this is a unit test file for something related to creating parameters for connection jobs. The included headers like `net/socket/connect_job_params_factory.h`, `net/socket/connect_job_factory.h`, `net/socket/transport_connect_job.h`, `net/socket/ssl_connect_job.h`, and `net/http/http_proxy_connect_job.h` confirm this. The presence of `testing/gtest/include/gtest/gtest.h` reinforces that it's a test file using the Google Test framework.
+
+2. **Identify the Tested Class:**  The primary header `#include "net/socket/connect_job_params_factory.h"` points to the class being tested: `ConnectJobParamsFactory`. While the code doesn't directly instantiate this *factory* class, it tests the *output* of its `ConstructConnectJobParams` function.
+
+3. **Analyze the Test Structure:** I observed the `ConnectJobParamsFactoryTest` class inheriting from `testing::TestWithParam<TestParams>`. This indicates parameterized testing. The `TestParams` struct defines the parameters used for each test case. The `INSTANTIATE_TEST_SUITE_P` macro (which is present in the *next* part of the file, but I anticipate its presence based on common testing patterns) would be used to define the different combinations of `TestParams` to run.
+
+4. **Deconstruct the `TestParams`:** I examined the `TestParams` struct and its `ParamTuple`. This reveals the key factors influencing the connection parameters:
+    * `disable_cert_network_fetches`: Whether to disable fetching certificates from the network.
+    * `privacy_mode`:  The privacy mode of the connection.
+    * `secure_dns_policy`: The policy for secure DNS resolution.
+    * `alpn_mode`: The Application-Layer Protocol Negotiation mode (HTTP/1.1, HTTP/2, or disabled).
+    * `enable_early_data`: Whether to enable TLS early data (for faster connection establishment).
+    * `partition_proxy_chains`: Whether proxy chains should be partitioned.
+
+5. **Understand the Test Cases:**  I went through the individual `TEST_P` functions. Each test case focuses on a specific connection scenario:
+    * `HttpEndpoint`:  Direct HTTP connection.
+    * `UnencryptedEndpointWithoutScheme`: Direct connection without specifying HTTP.
+    * `HttpsEndpoint`: Direct HTTPS connection.
+    * `EncryptedEndpointWithoutScheme`: Direct connection without specifying HTTPS.
+    * `HttpEndpointViaHttpsProxy`, `HttpEndpointViaQuicProxy`: Connections via HTTPS and QUIC proxies.
+    * `HttpsEndpointViaHttpsProxy`, `HttpsEndpointViaQuicProxy`, `HttpsEndpointViaHttpProxy`: HTTPS connections via different proxy types.
+    * `HttpEndpointViaSOCKSProxy`, `HttpsEndpointViaSOCKSProxy`: Connections via SOCKS proxies.
+    * `HttpEndpointViaHttpsProxyViaHttpsProxy`: Connection via a chain of HTTPS proxies.
+
+6. **Focus on the Assertions and Verifications:** Inside each test case, I paid close attention to the `ConstructConnectJobParams` call and the subsequent `Expect...SocketParams` and `Verify...SocketParams` functions. These functions are crucial for understanding the expected output. The `Expect...` functions assert that the correct type of connection parameters is created (e.g., `HttpProxySocketParams`, `SSLSocketParams`, `TransportSocketParams`, `SOCKSSocketParams`). The `Verify...` functions check the specific properties of those parameter objects.
+
+7. **Identify Key Concepts:** I recognized important networking concepts being tested:
+    * **Proxying:** Different types of proxies (HTTP, HTTPS, QUIC, SOCKS).
+    * **TLS/SSL:** Secure connections, including ALPN and early data.
+    * **Transport Layer:** Basic TCP connections.
+    * **Network Anonymization Key (NAK):** Used for privacy and isolation.
+    * **Secure DNS:** Ensuring DNS lookups are secure.
+
+8. **Consider JavaScript Relevance:** I considered how these low-level networking concepts relate to JavaScript. While JavaScript in a browser doesn't directly manipulate these connection parameters, the *effects* are visible. For instance, proxy settings configured in the browser, secure DNS settings, and whether a site uses HTTPS all influence the underlying connection setup that this code is testing.
+
+9. **Think About User/Developer Errors:** I tried to think about common mistakes developers or users might make that would lead to different connection parameter configurations or failures. Incorrect proxy settings, misconfigured HTTPS servers, or issues with certificate validation are examples.
+
+10. **Consider the Debugging Angle:** I thought about how a developer might arrive at this code during debugging. If a network connection is failing, and they suspect the issue lies in how the connection parameters are being created, they might step through this code or look at the logs generated by it.
+
+11. **Synthesize the Information:** Finally, I organized my observations into the requested categories: functionality, JavaScript relevance, logical inference, common errors, and debugging. I focused on providing clear and concise explanations, using examples where appropriate. I also made sure to acknowledge that this was only *part* of the file and anticipated the presence of the parameter instantiation in the next part.
+这是 Chromium 网络栈的源代码文件 `net/socket/connect_job_params_factory_unittest.cc` 的第一部分，它的主要功能是 **测试 `ConnectJobParamsFactory` 类中 `ConstructConnectJobParams` 函数的功能，验证其在不同网络连接场景下，能够正确地创建各种类型的连接参数对象 (`ConnectJobParams`)**。
+
+更具体地说，这个文件通过一系列的单元测试用例，模拟了各种常见的网络连接场景，例如：
+
+* **直接连接 (Direct Connection):**  连接到 HTTP 或 HTTPS 服务器，不使用代理。
+* **通过不同类型的代理连接 (Connection via Proxies):**
+    * HTTP 代理
+    * HTTPS 代理
+    * QUIC 代理
+    * SOCKS 代理
+    * 代理链 (Proxy Chains)
+* **不同的连接协议和配置:**
+    * HTTP 和 HTTPS
+    * 是否启用 TLS Early Data
+    * 不同的 ALPN (Application-Layer Protocol Negotiation) 模式
+    * 是否禁用证书网络抓取
+    * 不同的隐私模式和安全 DNS 策略
+
+每个测试用例都会调用 `ConstructConnectJobParams` 函数，并根据预期的连接类型，断言返回的 `ConnectJobParams` 对象是正确的子类型 (例如 `TransportSocketParams`, `SSLSocketParams`, `HttpProxySocketParams`, `SOCKSSocketParams`)，并且其内部的参数值也符合预期。
+
+**与 JavaScript 的关系举例说明：**
+
+虽然这段 C++ 代码本身不包含 JavaScript，但它所测试的网络栈功能直接影响着浏览器中 JavaScript 发起的网络请求。
+
+例如，当 JavaScript 代码使用 `fetch` API 发起一个 HTTPS 请求，并且浏览器配置了 HTTPS 代理时，`ConnectJobParamsFactory` 就会被调用来创建连接到代理服务器所需的参数。
+
+```javascript
+// JavaScript 代码发起一个 HTTPS 请求，并且假设浏览器配置了 HTTPS 代理 "proxy.example.com:443"
+fetch('https://example.com/data');
+```
+
+在这个场景下，`ConnectJobParamsFactory` (在 C++ 层) 会根据目标 URL (`https://example.com/data`) 和代理配置，创建类似 `SSLSocketParams` 这样的对象，其中包含了连接到 `proxy.example.com:443` 的 TLS 配置信息，以及通过代理隧道连接到 `example.com` 的相关信息。 这些参数随后会被传递给底层的网络连接模块来建立实际的网络连接。
+
+**逻辑推理、假设输入与输出：**
+
+假设输入：
+
+* `kEndpoint`:  `url::SchemeHostPort` 对象，表示目标服务器的 scheme, host 和 port，例如 `https://example.com:443`。
+* `proxy_chain`: `ProxyChain` 对象，表示使用的代理链，例如一个 HTTPS 代理 `https://proxy.example.com:443`。
+* 其他参数，例如 `alpn_mode`, `privacy_mode`, `secure_dns_policy` 等。
+
+逻辑推理：
+
+`ConstructConnectJobParams` 函数会根据输入的 `kEndpoint` 的 scheme 和 `proxy_chain` 的信息，以及其他配置参数，进行逻辑判断，来确定需要创建哪种类型的 `ConnectJobParams` 对象。
+
+例如：
+
+* 如果 `kEndpoint` 是 HTTPS，并且没有代理，则应该创建 `SSLSocketParams` 包裹 `TransportSocketParams`。
+* 如果 `kEndpoint` 是 HTTP，并且有 HTTPS 代理，则应该创建 `HttpProxySocketParams` 包裹 `SSLSocketParams` 包裹 `TransportSocketParams`。
+
+假设输出：
+
+对于 HTTPS 请求，通过 HTTPS 代理，`ConstructConnectJobParams` 应该返回一个 `ConnectJobParams` 对象，当被断言和解包时，会得到如下的嵌套结构：
+
+```
+SSLSocketParams {
+  host_and_port: example.com:443,
+  ssl_config: { /* 目标服务器的 SSL 配置 */ },
+  http_proxy_connection_params: HttpProxySocketParams {
+    endpoint: example.com:443,
+    proxy_chain: https://proxy.example.com:443,
+    tunnel: true,
+    ssl_params: SSLSocketParams {
+      host_and_port: proxy.example.com:443,
+      ssl_config: { /* 代理服务器的 SSL 配置 */ },
+      direct_connection_params: TransportSocketParams {
+        destination: proxy.example.com:443,
+        // ...其他 Transport 参数
+      }
+    }
+  }
+}
+```
+
+**用户或编程常见的使用错误：**
+
+* **代理配置错误:** 用户可能在浏览器或操作系统中配置了错误的代理服务器地址或端口，导致 `ConstructConnectJobParams` 基于错误的代理信息创建连接参数，从而导致连接失败。
+* **ALPN 模式不匹配:**  如果服务器只支持 HTTP/2，但浏览器的 ALPN 模式设置为只支持 HTTP/1.1，则连接可能会失败。这段测试代码通过测试不同的 `AlpnMode` 来确保在这种情况下也能正确处理。
+* **隐私模式冲突:** 某些隐私模式可能会限制某些类型的连接或代理使用，如果用户的隐私设置与网站或代理的要求冲突，可能会导致连接问题。
+* **Secure DNS 配置问题:**  如果用户配置了 Secure DNS，但网络环境不支持或配置错误，可能导致 DNS 解析失败，进而影响连接。
+
+**用户操作如何一步步到达这里，作为调试线索：**
+
+1. **用户在浏览器地址栏输入一个 HTTPS 网址 (例如 `https://example.com`)，或者点击了一个 HTTPS 链接。**
+2. **浏览器首先会检查本地缓存和 HSTS (HTTP Strict Transport Security) 策略。**
+3. **浏览器会查找与该域名相关的代理设置。** 这可能来自系统配置、PAC 文件或浏览器扩展。
+4. **DNS 解析器会尝试解析 `example.com` 的 IP 地址。** 这可能会受到 Secure DNS 设置的影响。
+5. **网络栈开始创建连接。**  `ConnectJobParamsFactory::ConstructConnectJobParams` 函数会被调用，传入目标 URL 和解析到的代理信息等参数。
+6. **`ConstructConnectJobParams` 函数根据输入参数，决定创建哪种类型的连接参数对象。**
+7. **相应的连接 Job (例如 `TransportConnectJob`, `SSLConnectJob`, `HttpProxyConnectJob`) 会被创建，并使用创建的连接参数来建立实际的 TCP 或 TLS 连接。**
+
+作为调试线索，如果用户报告连接问题，开发者可以：
+
+* **检查用户的代理设置。**
+* **使用浏览器的开发者工具查看网络请求的详细信息，包括是否使用了代理。**
+* **检查浏览器的控制台输出，看是否有相关的错误信息。**
+* **如果怀疑是连接参数创建的问题，可以尝试在 Chromium 的网络栈代码中设置断点，查看 `ConstructConnectJobParams` 的输入和输出，以及中间的逻辑判断过程。** 例如，可以在 `net/socket/connect_job_params_factory.cc` 中设置断点，观察不同场景下创建的 `ConnectJobParams` 对象的内容。
+
+**功能归纳 (第 1 部分):**
+
+这段代码的主要功能是 **单元测试 `ConnectJobParamsFactory::ConstructConnectJobParams` 函数，验证其在各种网络连接场景下生成正确的连接参数对象。** 它通过参数化测试覆盖了不同的连接类型、代理配置和网络协议设置，确保网络栈能够根据不同的情况创建合适的连接参数，为后续的网络连接建立奠定基础。
+
+Prompt: 
+```
+这是目录为net/socket/connect_job_params_factory_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
+如果它与javascript的功能有关系，请做出对应的举例说明，
+如果做了逻辑推理，请给出假设输入与输出,
+如果涉及用户或者编程常见的使用错误，请举例说明,
+说明用户操作是如何一步步的到达这里，作为调试线索。
+这是第1部分，共2部分，请归纳一下它的功能
+
+"""
+// Copyright 2024 The Chromium Authors
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+#include "net/socket/connect_job_params_factory.h"
+
+#include <ostream>
+#include <tuple>
+
+#include "base/containers/flat_set.h"
+#include "base/memory/scoped_refptr.h"
+#include "base/strings/strcat.h"
+#include "base/test/scoped_feature_list.h"
+#include "net/base/features.h"
+#include "net/base/host_port_pair.h"
+#include "net/base/network_anonymization_key.h"
+#include "net/base/privacy_mode.h"
+#include "net/base/proxy_chain.h"
+#include "net/base/proxy_server.h"
+#include "net/base/schemeful_site.h"
+#include "net/dns/public/secure_dns_policy.h"
+#include "net/http/http_proxy_connect_job.h"
+#include "net/socket/connect_job_factory.h"
+#include "net/socket/next_proto.h"
+#include "net/socket/socks_connect_job.h"
+#include "net/socket/ssl_connect_job.h"
+#include "net/socket/transport_connect_job.h"
+#include "net/ssl/ssl_config.h"
+#include "net/traffic_annotation/network_traffic_annotation_test_helper.h"
+#include "testing/gtest/include/gtest/gtest.h"
+#include "third_party/abseil-cpp/absl/types/variant.h"
+#include "url/gurl.h"
+#include "url/scheme_host_port.h"
+
+namespace net {
+
+namespace {
+
+struct TestParams {
+  using ParamTuple = std::tuple<bool,
+                                PrivacyMode,
+                                SecureDnsPolicy,
+                                ConnectJobFactory::AlpnMode,
+                                bool,
+                                bool>;
+
+  explicit TestParams(ParamTuple tup)
+      : disable_cert_network_fetches(std::get<0>(tup)),
+        privacy_mode(std::get<1>(tup)),
+        secure_dns_policy(std::get<2>(tup)),
+        alpn_mode(std::get<3>(tup)),
+        enable_early_data(std::get<4>(tup)),
+        partition_proxy_chains(std::get<5>(tup)) {}
+
+  bool disable_cert_network_fetches;
+  PrivacyMode privacy_mode;
+  SecureDnsPolicy secure_dns_policy;
+  ConnectJobFactory::AlpnMode alpn_mode;
+  bool enable_early_data;
+  bool partition_proxy_chains;
+};
+
+std::ostream& operator<<(std::ostream& os, const TestParams& test_params) {
+  os << "TestParams {.disable_cert_network_fetches="
+     << test_params.disable_cert_network_fetches;
+  os << ", .privacy_mode=" << test_params.privacy_mode;
+  os << ", .secure_dns_policy="
+     << (test_params.secure_dns_policy == SecureDnsPolicy::kAllow ? "kAllow"
+                                                                  : "kDisable");
+  os << ", .alpn_mode="
+     << (test_params.alpn_mode == ConnectJobFactory::AlpnMode::kDisabled
+             ? "kDisabled"
+         : test_params.alpn_mode == ConnectJobFactory::AlpnMode::kHttp11Only
+             ? "kHttp11Only"
+             : "kHttpAll");
+  os << ", .enable_early_data=" << test_params.enable_early_data;
+  os << ", .partition_proxy_chains=" << test_params.partition_proxy_chains;
+  os << "}";
+  return os;
+}
+
+// Get a string describing the params variant.
+const char* ParamsName(ConnectJobParams& params) {
+  if (params.is_http_proxy()) {
+    return "HttpProxySocketParams";
+  }
+  if (params.is_socks()) {
+    return "SOCKSSocketParams";
+  }
+  if (params.is_ssl()) {
+    return "SSLSocketParams";
+  }
+  if (params.is_transport()) {
+    return "TransportSocketParams";
+  }
+  return "Unknown";
+}
+
+scoped_refptr<HttpProxySocketParams> ExpectHttpProxySocketParams(
+    ConnectJobParams params) {
+  EXPECT_TRUE(params.is_http_proxy())
+      << "Expected HttpProxySocketParams, got " << ParamsName(params);
+  return params.take_http_proxy();
+}
+
+void VerifyHttpProxySocketParams(
+    scoped_refptr<HttpProxySocketParams> params,
+    const char* description,
+    // Only QUIC proxies have a quic_ssl_config.
+    std::optional<SSLConfig> quic_ssl_config,
+    const HostPortPair& endpoint,
+    const ProxyChain& proxy_chain,
+    size_t proxy_chain_index,
+    bool tunnel,
+    const NetworkAnonymizationKey& network_anonymization_key,
+    const SecureDnsPolicy secure_dns_policy) {
+  SCOPED_TRACE(testing::Message() << "Verifying " << description);
+  if (quic_ssl_config) {
+    // Only examine the values used for QUIC connections.
+    ASSERT_TRUE(params->quic_ssl_config().has_value());
+    EXPECT_EQ(params->quic_ssl_config()->privacy_mode,
+              quic_ssl_config->privacy_mode);
+    EXPECT_EQ(params->quic_ssl_config()->GetCertVerifyFlags(),
+              quic_ssl_config->GetCertVerifyFlags());
+  } else {
+    EXPECT_FALSE(params->quic_ssl_config().has_value());
+  }
+  EXPECT_EQ(params->endpoint(), endpoint);
+  EXPECT_EQ(params->proxy_chain(), proxy_chain);
+  EXPECT_EQ(params->proxy_chain_index(), proxy_chain_index);
+  EXPECT_EQ(params->tunnel(), tunnel);
+  EXPECT_EQ(params->network_anonymization_key(), network_anonymization_key);
+  EXPECT_EQ(params->secure_dns_policy(), secure_dns_policy);
+}
+
+scoped_refptr<SOCKSSocketParams> ExpectSOCKSSocketParams(
+    ConnectJobParams params) {
+  EXPECT_TRUE(params.is_socks())
+      << "Expected SOCKSSocketParams, got " << ParamsName(params);
+  return params.take_socks();
+}
+
+// Verify the properties of SOCKSSocketParams.
+void VerifySOCKSSocketParams(
+    scoped_refptr<SOCKSSocketParams>& params,
+    const char* description,
+    bool is_socks_v5,
+    const HostPortPair& destination,
+    const NetworkAnonymizationKey& network_anonymization_key) {
+  SCOPED_TRACE(testing::Message() << "Verifying " << description);
+  EXPECT_EQ(params->is_socks_v5(), is_socks_v5);
+  EXPECT_EQ(params->destination(), destination);
+  EXPECT_EQ(params->network_anonymization_key(), network_anonymization_key);
+}
+
+// Assert that the params are TransportSocketParams and return them.
+scoped_refptr<TransportSocketParams> ExpectTransportSocketParams(
+    ConnectJobParams params) {
+  EXPECT_TRUE(params.is_transport())
+      << "Expected TransportSocketParams, got " << ParamsName(params);
+  return params.take_transport();
+}
+
+// Verify the properties of TransportSocketParams.
+void VerifyTransportSocketParams(
+    scoped_refptr<TransportSocketParams>& params,
+    const char* description,
+    const TransportSocketParams::Endpoint destination,
+    const SecureDnsPolicy secure_dns_policy,
+    const NetworkAnonymizationKey& network_anonymization_key,
+    const base::flat_set<std::string>& supported_alpns) {
+  SCOPED_TRACE(testing::Message() << "Verifying " << description);
+  EXPECT_EQ(params->destination(), destination);
+  EXPECT_EQ(params->secure_dns_policy(), secure_dns_policy);
+  EXPECT_EQ(params->network_anonymization_key(), network_anonymization_key);
+  EXPECT_EQ(params->supported_alpns(), supported_alpns);
+}
+
+// Assert that the params are SSLSocketParams and return them.
+scoped_refptr<SSLSocketParams> ExpectSSLSocketParams(ConnectJobParams params) {
+  EXPECT_TRUE(params.is_ssl())
+      << "Expected SSLSocketParams, got " << ParamsName(params);
+  return params.take_ssl();
+}
+
+// Verify the properties of SSLSocketParams.
+void VerifySSLSocketParams(
+    scoped_refptr<SSLSocketParams>& params,
+    const char* description,
+    const HostPortPair& host_and_port,
+    const SSLConfig& ssl_config,
+    PrivacyMode privacy_mode,
+    const NetworkAnonymizationKey& network_anonymization_key) {
+  SCOPED_TRACE(testing::Message() << "Verifying " << description);
+  EXPECT_EQ(params->host_and_port(), host_and_port);
+  // SSLConfig doesn't implement operator==, so just check the properties the
+  // factory uses.
+  EXPECT_EQ(params->ssl_config().disable_cert_verification_network_fetches,
+            ssl_config.disable_cert_verification_network_fetches);
+  EXPECT_EQ(params->ssl_config().alpn_protos, ssl_config.alpn_protos);
+  EXPECT_EQ(params->ssl_config().application_settings,
+            ssl_config.application_settings);
+  EXPECT_EQ(params->ssl_config().renego_allowed_default,
+            ssl_config.renego_allowed_default);
+  EXPECT_EQ(params->ssl_config().renego_allowed_for_protos,
+            ssl_config.renego_allowed_for_protos);
+  EXPECT_EQ(params->ssl_config().privacy_mode, privacy_mode);
+  EXPECT_EQ(params->network_anonymization_key(), network_anonymization_key);
+}
+
+// Calculate the ALPN protocols for the given ALPN mode.
+base::flat_set<std::string> AlpnProtoStringsForMode(
+    ConnectJobFactory::AlpnMode alpn_mode) {
+  switch (alpn_mode) {
+    case ConnectJobFactory::AlpnMode::kDisabled:
+      return {};
+    case ConnectJobFactory::AlpnMode::kHttp11Only:
+      return {"http/1.1"};
+    case ConnectJobFactory::AlpnMode::kHttpAll:
+      return {"h2", "http/1.1"};
+  }
+}
+
+class ConnectJobParamsFactoryTest : public testing::TestWithParam<TestParams> {
+ public:
+  ConnectJobParamsFactoryTest() {
+    if (partition_proxy_chains()) {
+      scoped_feature_list_.InitAndEnableFeature(
+          net::features::kPartitionProxyChains);
+    } else {
+      scoped_feature_list_.InitAndDisableFeature(
+          net::features::kPartitionProxyChains);
+    }
+
+    early_data_enabled_ = enable_early_data();
+    switch (alpn_mode()) {
+      case ConnectJobFactory::AlpnMode::kDisabled:
+        alpn_protos_ = {};
+        application_settings_ = {};
+        break;
+      case ConnectJobFactory::AlpnMode::kHttp11Only:
+        alpn_protos_ = {kProtoHTTP11};
+        application_settings_ = {};
+        break;
+      case ConnectJobFactory::AlpnMode::kHttpAll:
+        alpn_protos_ = {kProtoHTTP2, kProtoHTTP11};
+        application_settings_ = {{kProtoHTTP2, {}}};
+        break;
+    }
+  }
+
+ protected:
+  // Parameter accessors.
+  bool disable_cert_network_fetches() const {
+    return GetParam().disable_cert_network_fetches;
+  }
+  PrivacyMode privacy_mode() const { return GetParam().privacy_mode; }
+  SecureDnsPolicy secure_dns_policy() const {
+    return GetParam().secure_dns_policy;
+  }
+  ConnectJobFactory::AlpnMode alpn_mode() const { return GetParam().alpn_mode; }
+  bool enable_early_data() const { return GetParam().enable_early_data; }
+  bool partition_proxy_chains() const {
+    return GetParam().partition_proxy_chains;
+  }
+
+  // Create an SSL config for connection to the endpoint, based on the test
+  // parameters.
+  SSLConfig SSLConfigForEndpoint() const {
+    SSLConfig endpoint_ssl_config;
+    endpoint_ssl_config.disable_cert_verification_network_fetches =
+        disable_cert_network_fetches();
+    endpoint_ssl_config.early_data_enabled = enable_early_data();
+    switch (alpn_mode()) {
+      case ConnectJobFactory::AlpnMode::kDisabled:
+        endpoint_ssl_config.alpn_protos = {};
+        endpoint_ssl_config.application_settings = {};
+        endpoint_ssl_config.renego_allowed_default = false;
+        endpoint_ssl_config.renego_allowed_for_protos = {};
+        break;
+      case ConnectJobFactory::AlpnMode::kHttp11Only:
+        endpoint_ssl_config.alpn_protos = {kProtoHTTP11};
+        endpoint_ssl_config.application_settings = {};
+        endpoint_ssl_config.renego_allowed_default = true;
+        endpoint_ssl_config.renego_allowed_for_protos = {kProtoHTTP11};
+        break;
+      case ConnectJobFactory::AlpnMode::kHttpAll:
+        endpoint_ssl_config.alpn_protos = {kProtoHTTP2, kProtoHTTP11};
+        endpoint_ssl_config.application_settings = {{kProtoHTTP2, {}}};
+        endpoint_ssl_config.renego_allowed_default = true;
+        endpoint_ssl_config.renego_allowed_for_protos = {kProtoHTTP11};
+        break;
+    }
+    return endpoint_ssl_config;
+  }
+
+  // Create an SSL config for connection to an HTTPS proxy, based on the test
+  // parameters.
+  SSLConfig SSLConfigForProxy() const {
+    SSLConfig proxy_ssl_config;
+    proxy_ssl_config.disable_cert_verification_network_fetches = true;
+    proxy_ssl_config.early_data_enabled = true;
+    proxy_ssl_config.renego_allowed_default = false;
+    proxy_ssl_config.renego_allowed_for_protos = {};
+    switch (alpn_mode()) {
+      case ConnectJobFactory::AlpnMode::kDisabled:
+        proxy_ssl_config.alpn_protos = {};
+        proxy_ssl_config.application_settings = {};
+        break;
+      case ConnectJobFactory::AlpnMode::kHttp11Only:
+        proxy_ssl_config.alpn_protos = {kProtoHTTP11};
+        proxy_ssl_config.application_settings = {};
+        break;
+      case ConnectJobFactory::AlpnMode::kHttpAll:
+        proxy_ssl_config.alpn_protos = {kProtoHTTP2, kProtoHTTP11};
+        proxy_ssl_config.application_settings = {{kProtoHTTP2, {}}};
+        break;
+    }
+    return proxy_ssl_config;
+  }
+
+  base::test::ScopedFeatureList scoped_feature_list_;
+  NextProtoVector alpn_protos_;
+  SSLConfig::ApplicationSettings application_settings_;
+  bool early_data_enabled_;
+  const CommonConnectJobParams common_connect_job_params_{
+      /*client_socket_factory=*/nullptr,
+      /*host_resolver=*/nullptr,
+      /*http_auth_cache=*/nullptr,
+      /*http_auth_handler_factory=*/nullptr,
+      /*spdy_session_pool=*/nullptr,
+      /*quic_supported_versions=*/nullptr,
+      /*quic_session_pool=*/nullptr,
+      /*proxy_delegate=*/nullptr,
+      /*http_user_agent_settings=*/nullptr,
+      /*ssl_client_context=*/nullptr,
+      /*socket_performance_watcher_factory=*/nullptr,
+      /*network_quality_estimator=*/nullptr,
+      /*net_log=*/nullptr,
+      /*websocket_endpoint_lock_manager=*/nullptr,
+      /*http_server_properties=*/nullptr,
+      &alpn_protos_,
+      &application_settings_,
+      /*ignore_certificate_errors=*/nullptr,
+      &early_data_enabled_};
+
+  const NetworkAnonymizationKey kEndpointNak =
+      NetworkAnonymizationKey::CreateSameSite(
+          net::SchemefulSite(GURL("http://test")));
+  const NetworkAnonymizationKey kProxyDnsNak =
+      NetworkAnonymizationKey::CreateSameSite(
+          net::SchemefulSite(GURL("http://example-dns.test")));
+};
+
+// A connect to a simple HTTP endpoint produces just transport params.
+TEST_P(ConnectJobParamsFactoryTest, HttpEndpoint) {
+  const url::SchemeHostPort kEndpoint(url::kHttpScheme, "test", 82);
+  ConnectJobParams params = ConstructConnectJobParams(
+      kEndpoint, ProxyChain::Direct(),
+      /*proxy_annotation_tag=*/std::nullopt,
+      /*allowed_bad_certs=*/{}, alpn_mode(),
+      /*force_tunnel=*/false, privacy_mode(), OnHostResolutionCallback(),
+      kEndpointNak, secure_dns_policy(), disable_cert_network_fetches(),
+      &common_connect_job_params_, kProxyDnsNak);
+
+  scoped_refptr<TransportSocketParams> transport_socket_params =
+      ExpectTransportSocketParams(params);
+  VerifyTransportSocketParams(
+      transport_socket_params, "transport_socket_params", kEndpoint,
+      secure_dns_policy(), kEndpointNak, base::flat_set<std::string>());
+}
+
+// A connect to a endpoint without SSL, specified as a `SchemelessEndpoint`,
+// produces just transport params.
+TEST_P(ConnectJobParamsFactoryTest, UnencryptedEndpointWithoutScheme) {
+  const ConnectJobFactory::SchemelessEndpoint kEndpoint{
+      /*using_ssl=*/false, HostPortPair("test", 82)};
+  ConnectJobParams params = ConstructConnectJobParams(
+      kEndpoint, ProxyChain::Direct(),
+      /*proxy_annotation_tag=*/std::nullopt,
+      /*allowed_bad_certs=*/{}, alpn_mode(),
+      /*force_tunnel=*/false, privacy_mode(), OnHostResolutionCallback(),
+      kEndpointNak, secure_dns_policy(), disable_cert_network_fetches(),
+      &common_connect_job_params_, kProxyDnsNak);
+
+  scoped_refptr<TransportSocketParams> transport_socket_params =
+      ExpectTransportSocketParams(params);
+  VerifyTransportSocketParams(transport_socket_params,
+                              "transport_socket_params",
+                              HostPortPair("test", 82), secure_dns_policy(),
+                              kEndpointNak, base::flat_set<std::string>());
+}
+
+// A connect to a simple HTTPS endpoint produces SSL params wrapping transport
+// params.
+TEST_P(ConnectJobParamsFactoryTest, HttpsEndpoint) {
+  // HTTPS endpoints are not supported without ALPN.
+  if (alpn_mode() == ConnectJobFactory::AlpnMode::kDisabled) {
+    return;
+  }
+
+  const url::SchemeHostPort kEndpoint(url::kHttpsScheme, "test", 82);
+  ConnectJobParams params = ConstructConnectJobParams(
+      kEndpoint, ProxyChain::Direct(), TRAFFIC_ANNOTATION_FOR_TESTS,
+      /*allowed_bad_certs=*/{}, alpn_mode(),
+      /*force_tunnel=*/false, privacy_mode(), OnHostResolutionCallback(),
+      kEndpointNak, secure_dns_policy(), disable_cert_network_fetches(),
+      &common_connect_job_params_, kProxyDnsNak);
+
+  scoped_refptr<SSLSocketParams> ssl_socket_params =
+      ExpectSSLSocketParams(params);
+  SSLConfig ssl_config = SSLConfigForEndpoint();
+  VerifySSLSocketParams(ssl_socket_params, "ssl_socket_params",
+                        HostPortPair::FromSchemeHostPort(kEndpoint), ssl_config,
+                        privacy_mode(), kEndpointNak);
+  scoped_refptr<TransportSocketParams> transport_socket_params =
+      ssl_socket_params->GetDirectConnectionParams();
+  VerifyTransportSocketParams(
+      transport_socket_params, "transport_socket_params", kEndpoint,
+      secure_dns_policy(), kEndpointNak, AlpnProtoStringsForMode(alpn_mode()));
+}
+
+// A connect to a endpoint SSL, specified as a `SchemelessEndpoint`,
+// produces just transport params.
+TEST_P(ConnectJobParamsFactoryTest, EncryptedEndpointWithoutScheme) {
+  // Encrypted endpoints without scheme are only supported without ALPN.
+  if (alpn_mode() != ConnectJobFactory::AlpnMode::kDisabled) {
+    return;
+  }
+
+  const ConnectJobFactory::SchemelessEndpoint kEndpoint{
+      /*using_ssl=*/true, HostPortPair("test", 4433)};
+  ConnectJobParams params = ConstructConnectJobParams(
+      kEndpoint, ProxyChain::Direct(), TRAFFIC_ANNOTATION_FOR_TESTS,
+      /*allowed_bad_certs=*/{}, alpn_mode(),
+      /*force_tunnel=*/false, privacy_mode(), OnHostResolutionCallback(),
+      kEndpointNak, secure_dns_policy(), disable_cert_network_fetches(),
+      &common_connect_job_params_, kProxyDnsNak);
+
+  scoped_refptr<SSLSocketParams> ssl_socket_params =
+      ExpectSSLSocketParams(params);
+  SSLConfig ssl_config = SSLConfigForEndpoint();
+  VerifySSLSocketParams(ssl_socket_params, "ssl_socket_params",
+                        HostPortPair("test", 4433), ssl_config, privacy_mode(),
+                        kEndpointNak);
+  scoped_refptr<TransportSocketParams> transport_socket_params =
+      ssl_socket_params->GetDirectConnectionParams();
+  VerifyTransportSocketParams(
+      transport_socket_params, "transport_socket_params",
+      HostPortPair("test", 4433), secure_dns_policy(), kEndpointNak,
+      AlpnProtoStringsForMode(alpn_mode()));
+}
+
+// A connection to an HTTP endpoint via an HTTPS proxy, without forcing a
+// tunnel, sets up an HttpProxySocketParams, wrapping SSLSocketParams wrapping
+// TransportSocketParams, intending to use GET to the proxy. This is not
+// tunneled.
+TEST_P(ConnectJobParamsFactoryTest, HttpEndpointViaHttpsProxy) {
+  const url::SchemeHostPort kEndpoint(url::kHttpScheme, "test", 82);
+  ProxyChain proxy_chain = ProxyChain::FromSchemeHostAndPort(
+      ProxyServer::SCHEME_HTTPS, "proxy", 443);
+  ConnectJobParams params = ConstructConnectJobParams(
+      kEndpoint, proxy_chain, TRAFFIC_ANNOTATION_FOR_TESTS,
+      /*allowed_bad_certs=*/{}, alpn_mode(),
+      /*force_tunnel=*/false, privacy_mode(), OnHostResolutionCallback(),
+      kEndpointNak, secure_dns_policy(), disable_cert_network_fetches(),
+      &common_connect_job_params_, kProxyDnsNak);
+
+  scoped_refptr<HttpProxySocketParams> http_proxy_socket_params =
+      ExpectHttpProxySocketParams(params);
+  VerifyHttpProxySocketParams(
+      http_proxy_socket_params, "http_proxy_socket_params",
+      /*quic_ssl_config=*/std::nullopt,
+      HostPortPair::FromSchemeHostPort(kEndpoint), proxy_chain,
+      /*proxy_chain_index=*/0,
+      /*tunnel=*/false, kEndpointNak, secure_dns_policy());
+
+  scoped_refptr<SSLSocketParams> ssl_socket_params =
+      http_proxy_socket_params->ssl_params();
+  ASSERT_TRUE(ssl_socket_params);
+  SSLConfig ssl_config = SSLConfigForProxy();
+  VerifySSLSocketParams(ssl_socket_params, "ssl_socket_params",
+                        HostPortPair::FromString("proxy:443"), ssl_config,
+                        PrivacyMode::PRIVACY_MODE_DISABLED, kEndpointNak);
+
+  scoped_refptr<TransportSocketParams> transport_socket_params =
+      ssl_socket_params->GetDirectConnectionParams();
+  VerifyTransportSocketParams(
+      transport_socket_params, "transport_socket_params",
+      HostPortPair("proxy", 443), secure_dns_policy(), kProxyDnsNak,
+      AlpnProtoStringsForMode(alpn_mode()));
+}
+
+// A connection to an HTTP endpoint via an QUIC proxy sets up an
+// HttpProxySocketParams, wrapping almost-unused SSLSocketParams, intending to
+// use GET to the proxy. This is not tunneled.
+TEST_P(ConnectJobParamsFactoryTest, HttpEndpointViaQuicProxy) {
+  const url::SchemeHostPort kEndpoint(url::kHttpScheme, "test", 82);
+  ProxyChain proxy_chain = ProxyChain::ForIpProtection({
+      ProxyServer::FromSchemeHostAndPort(ProxyServer::SCHEME_QUIC, "proxy",
+                                         443),
+  });
+  ConnectJobParams params = ConstructConnectJobParams(
+      kEndpoint, proxy_chain, TRAFFIC_ANNOTATION_FOR_TESTS,
+      /*allowed_bad_certs=*/{}, alpn_mode(),
+      /*force_tunnel=*/false, privacy_mode(), OnHostResolutionCallback(),
+      kEndpointNak, secure_dns_policy(), disable_cert_network_fetches(),
+      &common_connect_job_params_, kProxyDnsNak);
+
+  auto http_proxy_socket_params = ExpectHttpProxySocketParams(params);
+  SSLConfig quic_ssl_config = SSLConfigForProxy();
+  // Traffic always tunnels over QUIC proxies.
+  const bool tunnel = true;
+  VerifyHttpProxySocketParams(
+      http_proxy_socket_params, "http_proxy_socket_params", quic_ssl_config,
+      HostPortPair::FromSchemeHostPort(kEndpoint), proxy_chain,
+      /*proxy_chain_index=*/0, tunnel, kEndpointNak, secure_dns_policy());
+}
+
+// A connection to an HTTPS endpoint via an HTTPS proxy,
+// sets up an SSLSocketParams, wrapping HttpProxySocketParams, wrapping
+// SSLSocketParams, wrapping TransportSocketParams. This is always tunneled.
+TEST_P(ConnectJobParamsFactoryTest, HttpsEndpointViaHttpsProxy) {
+  // HTTPS endpoints are not supported without ALPN.
+  if (alpn_mode() == ConnectJobFactory::AlpnMode::kDisabled) {
+    return;
+  }
+
+  const url::SchemeHostPort kEndpoint(url::kHttpsScheme, "test", 82);
+  ProxyChain proxy_chain = ProxyChain::FromSchemeHostAndPort(
+      ProxyServer::SCHEME_HTTPS, "proxy", 443);
+  ConnectJobParams params = ConstructConnectJobParams(
+      kEndpoint, proxy_chain, TRAFFIC_ANNOTATION_FOR_TESTS,
+      /*allowed_bad_certs=*/{}, alpn_mode(),
+      /*force_tunnel=*/false, privacy_mode(), OnHostResolutionCallback(),
+      kEndpointNak, secure_dns_policy(), disable_cert_network_fetches(),
+      &common_connect_job_params_, kProxyDnsNak);
+
+  scoped_refptr<SSLSocketParams> endpoint_ssl_socket_params =
+      ExpectSSLSocketParams(params);
+  SSLConfig endpoint_ssl_config = SSLConfigForEndpoint();
+  VerifySSLSocketParams(endpoint_ssl_socket_params,
+                        "endpoint_ssl_socket_params",
+                        HostPortPair::FromSchemeHostPort(kEndpoint),
+                        endpoint_ssl_config, privacy_mode(), kEndpointNak);
+
+  scoped_refptr<HttpProxySocketParams> http_proxy_socket_params =
+      endpoint_ssl_socket_params->GetHttpProxyConnectionParams();
+  VerifyHttpProxySocketParams(
+      http_proxy_socket_params, "http_proxy_socket_params",
+      /*quic_ssl_config=*/std::nullopt,
+      HostPortPair::FromSchemeHostPort(kEndpoint), proxy_chain,
+      /*proxy_chain_index=*/0,
+      /*tunnel=*/true, kEndpointNak, secure_dns_policy());
+
+  scoped_refptr<SSLSocketParams> proxy_ssl_socket_params =
+      http_proxy_socket_params->ssl_params();
+  ASSERT_TRUE(proxy_ssl_socket_params);
+  SSLConfig proxy_ssl_config = SSLConfigForProxy();
+  VerifySSLSocketParams(proxy_ssl_socket_params, "proxy_ssl_socket_params",
+                        HostPortPair::FromString("proxy:443"), proxy_ssl_config,
+                        PrivacyMode::PRIVACY_MODE_DISABLED, kEndpointNak);
+
+  scoped_refptr<TransportSocketParams> transport_socket_params =
+      proxy_ssl_socket_params->GetDirectConnectionParams();
+  VerifyTransportSocketParams(
+      transport_socket_params, "transport_socket_params",
+      HostPortPair("proxy", 443), secure_dns_policy(), kProxyDnsNak,
+      AlpnProtoStringsForMode(alpn_mode()));
+}
+
+// A connection to an HTTPS endpoint via a QUIC proxy,
+// sets up an SSLSocketParams, wrapping HttpProxySocketParams, wrapping
+// SSLSocketParams. This is always tunneled.
+TEST_P(ConnectJobParamsFactoryTest, HttpsEndpointViaQuicProxy) {
+  // HTTPS endpoints are not supported without ALPN.
+  if (alpn_mode() == ConnectJobFactory::AlpnMode::kDisabled) {
+    return;
+  }
+
+  const url::SchemeHostPort kEndpoint(url::kHttpsScheme, "test", 82);
+  ProxyChain proxy_chain = ProxyChain::ForIpProtection({
+      ProxyServer::FromSchemeHostAndPort(ProxyServer::SCHEME_QUIC, "proxy",
+                                         443),
+  });
+  ConnectJobParams params = ConstructConnectJobParams(
+      kEndpoint, proxy_chain, TRAFFIC_ANNOTATION_FOR_TESTS,
+      /*allowed_bad_certs=*/{}, alpn_mode(),
+      /*force_tunnel=*/false, privacy_mode(), OnHostResolutionCallback(),
+      kEndpointNak, secure_dns_policy(), disable_cert_network_fetches(),
+      &common_connect_job_params_, kProxyDnsNak);
+
+  auto endpoint_ssl_socket_params = ExpectSSLSocketParams(params);
+  SSLConfig endpoint_ssl_config = SSLConfigForEndpoint();
+  VerifySSLSocketParams(endpoint_ssl_socket_params,
+                        "endpoint_ssl_socket_params",
+                        HostPortPair::FromSchemeHostPort(kEndpoint),
+                        endpoint_ssl_config, privacy_mode(), kEndpointNak);
+
+  auto http_proxy_socket_params =
+      endpoint_ssl_socket_params->GetHttpProxyConnectionParams();
+  SSLConfig quic_ssl_config = SSLConfigForProxy();
+  VerifyHttpProxySocketParams(
+      http_proxy_socket_params, "http_proxy_socket_params", quic_ssl_config,
+      HostPortPair::FromSchemeHostPort(kEndpoint), proxy_chain,
+      /*proxy_chain_index=*/0,
+      /*tunnel=*/true, kEndpointNak, secure_dns_policy());
+}
+
+// A connection to an HTTPS endpoint via an HTTP proxy
+// sets up an SSLSocketParams, wrapping HttpProxySocketParams, wrapping
+// TransportSocketParams. This is always tunneled.
+TEST_P(ConnectJobParamsFactoryTest, HttpsEndpointViaHttpProxy) {
+  if (alpn_mode() == ConnectJobFactory::AlpnMode::kDisabled) {
+    return;
+  }
+
+  const url::SchemeHostPort kEndpoint(url::kHttpsScheme, "test", 82);
+  ProxyChain proxy_chain =
+      ProxyChain::FromSchemeHostAndPort(ProxyServer::SCHEME_HTTP, "proxy", 80);
+  ConnectJobParams params = ConstructConnectJobParams(
+      kEndpoint, proxy_chain, TRAFFIC_ANNOTATION_FOR_TESTS,
+      /*allowed_bad_certs=*/{}, alpn_mode(),
+      /*force_tunnel=*/false, privacy_mode(), OnHostResolutionCallback(),
+      kEndpointNak, secure_dns_policy(), disable_cert_network_fetches(),
+      &common_connect_job_params_, kProxyDnsNak);
+
+  scoped_refptr<SSLSocketParams> endpoint_ssl_socket_params =
+      ExpectSSLSocketParams(params);
+  SSLConfig endpoint_ssl_config = SSLConfigForEndpoint();
+  VerifySSLSocketParams(endpoint_ssl_socket_params,
+                        "endpoint_ssl_socket_params",
+                        HostPortPair::FromSchemeHostPort(kEndpoint),
+                        endpoint_ssl_config, privacy_mode(), kEndpointNak);
+
+  scoped_refptr<HttpProxySocketParams> http_proxy_socket_params =
+      endpoint_ssl_socket_params->GetHttpProxyConnectionParams();
+  VerifyHttpProxySocketParams(
+      http_proxy_socket_params, "http_proxy_socket_params",
+      /*quic_ssl_config=*/std::nullopt,
+      HostPortPair::FromSchemeHostPort(kEndpoint), proxy_chain,
+      /*proxy_chain_index=*/0,
+      /*tunnel=*/true, kEndpointNak, secure_dns_policy());
+
+  scoped_refptr<TransportSocketParams> transport_socket_params =
+      http_proxy_socket_params->transport_params();
+  ASSERT_TRUE(transport_socket_params);
+  VerifyTransportSocketParams(transport_socket_params,
+                              "transport_socket_params",
+                              HostPortPair("proxy", 80), secure_dns_policy(),
+                              kProxyDnsNak, base::flat_set<std::string>({}));
+}
+
+// A connection to an HTTP endpoint via a SOCKS proxy,
+// sets up an SOCKSSocketParams wrapping TransportSocketParams.
+TEST_P(ConnectJobParamsFactoryTest, HttpEndpointViaSOCKSProxy) {
+  const url::SchemeHostPort kEndpoint(url::kHttpScheme, "test", 82);
+  ProxyChain proxy_chain = ProxyChain::FromSchemeHostAndPort(
+      ProxyServer::SCHEME_SOCKS4, "proxy", 999);
+  ConnectJobParams params = ConstructConnectJobParams(
+      kEndpoint, proxy_chain, TRAFFIC_ANNOTATION_FOR_TESTS,
+      /*allowed_bad_certs=*/{}, alpn_mode(),
+      /*force_tunnel=*/false, privacy_mode(), OnHostResolutionCallback(),
+      kEndpointNak, secure_dns_policy(), disable_cert_network_fetches(),
+      &common_connect_job_params_, kProxyDnsNak);
+
+  scoped_refptr<SOCKSSocketParams> socks_socket_params =
+      ExpectSOCKSSocketParams(params);
+  VerifySOCKSSocketParams(socks_socket_params, "socks_socket_params",
+                          /*is_socks_v5=*/false,
+                          HostPortPair::FromSchemeHostPort(kEndpoint),
+                          kEndpointNak);
+
+  scoped_refptr<TransportSocketParams> transport_socket_params =
+      socks_socket_params->transport_params();
+  VerifyTransportSocketParams(
+      transport_socket_params, "transport_socket_params",
+      HostPortPair("proxy", 999), secure_dns_policy(), kProxyDnsNak, {});
+}
+
+// A connection to an HTTPS endpoint via a SOCKS proxy,
+// sets up an SSLSocketParams wrapping SOCKSSocketParams wrapping
+// TransportSocketParams.
+TEST_P(ConnectJobParamsFactoryTest, HttpsEndpointViaSOCKSProxy) {
+  // HTTPS endpoints are not supported without ALPN.
+  if (alpn_mode() == ConnectJobFactory::AlpnMode::kDisabled) {
+    return;
+  }
+
+  const url::SchemeHostPort kEndpoint(url::kHttpsScheme, "test", 82);
+  ProxyChain proxy_chain = ProxyChain::FromSchemeHostAndPort(
+      ProxyServer::SCHEME_SOCKS5, "proxy", 999);
+  ConnectJobParams params = ConstructConnectJobParams(
+      kEndpoint, proxy_chain, TRAFFIC_ANNOTATION_FOR_TESTS,
+      /*allowed_bad_certs=*/{}, alpn_mode(),
+      /*force_tunnel=*/false, privacy_mode(), OnHostResolutionCallback(),
+      kEndpointNak, secure_dns_policy(), disable_cert_network_fetches(),
+      &common_connect_job_params_, kProxyDnsNak);
+
+  scoped_refptr<SSLSocketParams> endpoint_ssl_socket_params =
+      ExpectSSLSocketParams(params);
+  SSLConfig endpoint_ssl_config = SSLConfigForEndpoint();
+  VerifySSLSocketParams(endpoint_ssl_socket_params,
+                        "endpoint_ssl_socket_params",
+                        HostPortPair::FromSchemeHostPort(kEndpoint),
+                        endpoint_ssl_config, privacy_mode(), kEndpointNak);
+
+  scoped_refptr<SOCKSSocketParams> socks_socket_params =
+      endpoint_ssl_socket_params->GetSocksProxyConnectionParams();
+  VerifySOCKSSocketParams(socks_socket_params, "socks_socket_params",
+                          /*is_socks_v5=*/true,
+                          HostPortPair::FromSchemeHostPort(kEndpoint),
+                          kEndpointNak);
+
+  scoped_refptr<TransportSocketParams> transport_socket_params =
+      socks_socket_params->transport_params();
+  VerifyTransportSocketParams(
+      transport_socket_params, "transport_socket_params",
+      HostPortPair("proxy", 999), secure_dns_policy(), kProxyDnsNak, {});
+}
+
+// A connection to an HTTP endpoint via a two-proxy HTTPS chain
+// sets up the required parameters.
+TEST_P(ConnectJobParamsFactoryTest, HttpEndpointViaHttpsProxyViaHttpsProxy) {
+  const url::SchemeHostPort kEndpoint(url::kHttpScheme, "test", 82);
+  ProxyChain proxy_chain = ProxyChain::ForIpProtection({
+      ProxyServer::FromSchemeHostAndPort(ProxyServer::SCHEME_HTTPS, "proxya",
+                                         443),
+      ProxyServer::FromSchemeHostAndPort(ProxyServer::SCHEME_HTTPS, "proxyb",
+                                         443),
+  });
+  ConnectJobParams params = ConstructConnectJobParams(
+      kEndpoint, proxy_chain, TRAFFIC_ANNOTATION_FOR_TESTS,
+      /*allowed_bad_certs=*/{}, alpn_mode(),
+      /*force_tunnel=*/false, privacy_mode(), OnHostResolutionCallback(),
+      kEndpointNak, secure_dns_policy(), disable_cert_network_fetches(),
+      &common_connect_job_params_, kProxyDnsNak);
+
+  scoped_refptr<HttpProxySocketParams> http_proxy_socket_params_b =
+      ExpectHttpProxySocketParams(params);
+  VerifyHttpProxySocketParams(
+      http_proxy_socket_params_b, "http_proxy_socket_params_b",
+      /*quic_ssl_config=*/std::nullopt,
+      HostPortPair::FromSchemeHostPort(kEndpoint), proxy_chain,
+      /*proxy_chain_index=*/1,
+      /*tunnel=*/true, kEndpointNak, secure_dns_policy());
+
+  scoped_refptr<SSLSocketParams> proxy_ssl_socket_params_b =
+      http_proxy_socket_params_b->ssl_params();
+  ASSERT_TRUE(proxy_ssl_socket_params_b);
+  SSLConfig proxy_ssl_config = SSLConfigForProxy();
+  VerifySSLSocketParams(proxy_ssl_socket_params_b, "proxy_ssl_socket_params_b",
+      
+"""
+
+
+```
