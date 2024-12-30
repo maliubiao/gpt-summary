@@ -1,0 +1,741 @@
+Response:
+The user is asking for the functionality of a C++ test file in Chromium's network stack, specifically focusing on a section that contains a large array of test cases. Each test case seems to define an input string, the expected parsed output (an `Item` object), and potentially an error condition.
+
+Here's a breakdown of the thought process:
+
+1. **Identify the file's purpose:** The filename `structured_headers_generated_test.cc` strongly suggests this is a test file for parsing "structured headers". The "generated" part likely means these tests are automatically generated or at least follow a specific pattern.
+
+2. **Analyze the data structure:** The provided code snippet is an array of test cases. Each test case is represented by a tuple-like structure (likely a `std::tuple` or a custom struct) containing:
+    * A description string (e.g., `"0x3a in string"`).
+    * The input string to be parsed (e.g., `" : "`).
+    * A number (likely the length of the input string).
+    * The expected parsed output, represented by `{{Item(...)}}`. This structure suggests that the parser is expected to produce a list of `Item` objects. Each `Item` seems to encapsulate a parsed value (either a string or a token) and potentially parameters. The double curly braces might represent a list containing a single item. `nullptr` indicates no error is expected.
+    * Optionally, `std::nullopt` seems to indicate an expected parsing error.
+
+3. **Infer the testing methodology:** The file tests the parser's ability to correctly handle various input strings. The test cases cover:
+    * **Characters within strings:** Testing how different characters (including special characters and Unicode code points represented in hex) are handled inside quoted strings. It tests both literal characters and escaped characters.
+    * **Basic string parsing:** Testing simple strings, empty strings, long strings, and strings with whitespace.
+    * **Edge cases and errors:** Testing invalid string formats (single quotes, unbalanced quotes, bad escaping).
+    * **Token parsing:**  Testing how different characters are treated when forming tokens (unquoted sequences of characters). This includes checking which characters are valid within tokens and which cause errors. It also tests cases where a token is followed by parameters (e.g., `"a;a"`).
+
+4. **Relate to JavaScript (if applicable):**  Structured headers are a fundamental part of HTTP. JavaScript, particularly in browser environments (through APIs like `fetch` or `XMLHttpRequest`) and in server-side Node.js, interacts heavily with HTTP headers. Therefore, the parsing logic tested here is directly relevant to how JavaScript applications handle HTTP responses and make requests.
+
+5. **Formulate input/output examples:**  Based on the structure of the test cases, creating hypothetical examples becomes straightforward. Pick a test case and explain what the parser should do.
+
+6. **Identify common user/programming errors:**  Think about common mistakes developers make when dealing with strings and HTTP headers. Incorrect quoting, forgetting to escape characters, using invalid characters, and misunderstanding the syntax of structured headers are all potential issues.
+
+7. **Trace user operations (debugging context):**  Consider how a user's actions might lead to this parsing code being executed. This involves understanding the flow of an HTTP request/response and where header parsing fits in.
+
+8. **Summarize the functionality of this *part* of the file:**  Since the prompt specifies "Part 2", the summary should focus on the specific types of test cases present in this section, mainly string and token parsing.
+
+By following these steps, we can arrive at a comprehensive and accurate description of the provided code snippet's functionality. The key is to recognize the testing pattern, understand the data structures used, and connect the code to its broader context within HTTP and web development.
+这是名为 `net/third_party/quiche/src/quiche/common/structured_headers_generated_test.cc` 的 Chromium 网络栈源代码文件的第二部分。基于你提供的代码片段，这一部分主要的功能是**测试结构化头部中字符串和 token 的解析**。
+
+具体来说，这一部分包含了大量的测试用例，用于验证结构化头部解析器在遇到各种不同形式的字符串和 token 时是否能够正确解析，并生成预期的结果或报告错误。
+
+**以下是对其功能的详细列举：**
+
+1. **测试字符串解析:**
+   - **不同字符编码的字符串:** 测试字符串中包含各种 ASCII 码字符（十六进制表示），包括控制字符、标点符号、字母、数字等。
+   - **转义字符:** 测试字符串中各种转义字符的处理，例如 `\t` (制表符), `\n` (换行符), `\"` (双引号), `\\` (反斜杠) 以及其他八进制转义字符。
+   - **基本字符串:** 测试基本的双引号括起来的字符串。
+   - **空字符串:** 测试空字符串 `""` 的解析。
+   - **长字符串:** 测试解析较长的字符串。
+   - **包含空白字符的字符串:** 测试字符串中包含空格、制表符等空白字符的情况。
+   - **非 ASCII 字符串:** 测试包含非 ASCII 字符的字符串（虽然这里期望结果是 `std::nullopt`，可能意味着当前测试用例认为这种字符串无效或有特定的处理方式）。
+   - **各种引号:**  测试单引号字符串（期望解析失败）和双引号字符串的各种情况。
+   - **字符串引用:** 测试字符串中包含引号和反斜杠的引用情况。
+   - **错误的字符串引用:** 测试不合法的字符串引用，例如 `\"foo \,`。
+   - **结尾的引号:** 测试字符串末尾有反斜杠的情况。
+   - **突然结尾的引号:** 测试字符串突然结束的情况。
+
+2. **测试 Token 解析:**
+   - **不同字符编码的 Token:** 测试 Token 中包含各种 ASCII 码字符的情况，包括控制字符、标点符号、字母、数字等。
+   - **Token 的起始字符:** 测试不同字符作为 Token 的起始字符时的解析情况。
+   - **带参数的 Token:**  测试以分号 `;` 分隔，带有布尔参数的 Token，例如 `"a;a"`。
+
+**它与 JavaScript 的功能的关系以及举例说明:**
+
+结构化头部是 HTTP 协议的一部分，用于在 HTTP 请求和响应中传递元数据。JavaScript 在 Web 开发中经常需要处理 HTTP 头部。
+
+**举例说明:**
+
+假设一个 HTTP 响应头包含以下结构化头部：
+
+```
+Example-Header: "foo bar", a=1; b, c
+```
+
+JavaScript 代码可以使用 `fetch` API 获取这个头部，并可能需要解析它：
+
+```javascript
+fetch('/data')
+  .then(response => {
+    const exampleHeader = response.headers.get('Example-Header');
+    // 需要解析 exampleHeader 这个字符串
+    console.log(exampleHeader); // 输出: "foo bar", a=1; b, c
+  });
+```
+
+`structured_headers_generated_test.cc` 中测试的解析逻辑，就是为了确保当 Quiche (Chromium 中处理 QUIC 协议的库) 或 Chromium 网络栈的其他部分接收到这样的 HTTP 头部时，能够正确地将其解析成程序可以理解的数据结构。
+
+例如，测试用例 `"basic string", "\"foo bar\"", 9, {{Item("foo bar"), {}}}, nullptr}` 就模拟了解析 `"foo bar"` 这个字符串的过程，期望将其解析为一个 `Item`，其值为 `"foo bar"`。
+
+**逻辑推理、假设输入与输出:**
+
+假设结构化头部解析器接收到以下输入字符串（来自某个 HTTP 头部）：
+
+**假设输入 1:** `"Hello World"`
+**预期输出 1:**  `{{Item("Hello World"), {}}}, nullptr` (表示解析成功，生成一个值为 "Hello World" 的 Item，没有参数)
+
+**假设输入 2:** `"Escaped \\ Quote \""`
+**预期输出 2:** `{{Item("Escaped \\ Quote \""), {}}}, nullptr` (表示解析成功，正确处理了转义字符)
+
+**假设输入 3:** `"Unfinished`
+**预期输出 3:** `std::nullopt, nullptr` (表示解析失败，因为字符串没有正确闭合)
+
+**涉及用户或编程常见的使用错误以及举例说明:**
+
+1. **忘记转义特殊字符:** 用户在设置 HTTP 头部时，可能会忘记对双引号或反斜杠进行转义，导致解析错误。
+   **错误示例 (假设在设置 HTTP 头部):**  `My-Header: "This is a "test""`  （缺少对内部双引号的转义）
+   这会导致解析器遇到未预期的双引号，从而可能抛出错误或解析出错误的结果。测试用例中 `{"string quoting", "\"foo \\\"bar\\\" \\\\ baz\"", ...}` 就是为了验证解析器能够正确处理这种情况。
+
+2. **使用错误的引号:** 结构化头部规范通常使用双引号表示字符串。使用单引号可能会导致解析失败。
+   **错误示例:** `My-Header: 'This is a test'`
+   测试用例 `{"single quoted string", "'foo'", 5, std::nullopt, nullptr}`  模拟了这种情况，预期解析失败。
+
+3. **在 Token 中使用非法字符:**  用户可能会在不应该使用空格或某些特殊字符的地方使用了，导致 Token 解析错误。
+   **错误示例:** `My-Header: my value` (`my value` 应该是一个字符串，或者如果希望是两个 Token，则需要用逗号分隔)
+   测试用例 `{"0x20 in token", "a a", 3, std::nullopt, nullptr}`  展示了在 Token 中包含空格会导致解析失败。
+
+**用户操作是如何一步步的到达这里，作为调试线索:**
+
+1. **用户在浏览器中发起一个 HTTP 请求，或者一个客户端应用程序发送了一个 HTTP 请求。**
+2. **远程服务器响应了这个请求，并返回了包含 HTTP 头的响应。**
+3. **Chromium 的网络栈接收到这个 HTTP 响应。**
+4. **网络栈需要解析响应头中的各个字段，包括结构化头部。**
+5. **负责结构化头部解析的代码（位于 `net/third_party/quiche/src/quiche/common/structured_headers_*`）会被调用来解析特定的头部字段。**
+6. **如果头部字段包含字符串或 token，解析器会按照规范进行解析。**
+7. **如果解析过程中遇到了任何不符合规范的字符或格式，就会触发测试用例中覆盖的各种错误情况。**
+
+**作为调试线索:** 如果在 Chromium 网络栈处理 HTTP 响应时遇到与结构化头部解析相关的错误，开发者可以查看 `net/third_party/quiche/src/quiche/common/structured_headers_generated_test.cc` 中的测试用例，找到类似的错误场景，从而帮助定位问题所在。例如，如果用户报告某个网站的特定功能在使用了包含特殊字符的 HTTP 头部时出现异常，开发者可以查看是否有相关的测试用例覆盖了这种特殊字符的处理。
+
+**功能归纳 (针对第二部分):**
+
+这部分代码主要功能是**通过大量的测试用例，全面验证 Chromium 网络栈中结构化头部解析器对各种合法和非法的字符串以及 token 的解析能力，确保其符合结构化头部规范。**  它涵盖了字符编码、转义、基本格式、边界情况和错误情况的测试，旨在提高解析器的健壮性和可靠性。
+
+Prompt: 
+```
+这是目录为net/third_party/quiche/src/quiche/common/structured_headers_generated_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
+如果它与javascript的功能有关系，请做出对应的举例说明，
+如果做了逻辑推理，请给出假设输入与输出,
+如果涉及用户或者编程常见的使用错误，请举例说明,
+说明用户操作是如何一步步的到达这里，作为调试线索。
+这是第2部分，共5部分，请归纳一下它的功能
+
+"""
+{Item(" 9 "), {}}}, nullptr},
+    {"0x3a in string", "\" : \"", 5, {{Item(" : "), {}}}, nullptr},
+    {"0x3b in string", "\" ; \"", 5, {{Item(" ; "), {}}}, nullptr},
+    {"0x3c in string", "\" < \"", 5, {{Item(" < "), {}}}, nullptr},
+    {"0x3d in string", "\" = \"", 5, {{Item(" = "), {}}}, nullptr},
+    {"0x3e in string", "\" > \"", 5, {{Item(" > "), {}}}, nullptr},
+    {"0x3f in string", "\" ? \"", 5, {{Item(" ? "), {}}}, nullptr},
+    {"0x40 in string", "\" @ \"", 5, {{Item(" @ "), {}}}, nullptr},
+    {"0x41 in string", "\" A \"", 5, {{Item(" A "), {}}}, nullptr},
+    {"0x42 in string", "\" B \"", 5, {{Item(" B "), {}}}, nullptr},
+    {"0x43 in string", "\" C \"", 5, {{Item(" C "), {}}}, nullptr},
+    {"0x44 in string", "\" D \"", 5, {{Item(" D "), {}}}, nullptr},
+    {"0x45 in string", "\" E \"", 5, {{Item(" E "), {}}}, nullptr},
+    {"0x46 in string", "\" F \"", 5, {{Item(" F "), {}}}, nullptr},
+    {"0x47 in string", "\" G \"", 5, {{Item(" G "), {}}}, nullptr},
+    {"0x48 in string", "\" H \"", 5, {{Item(" H "), {}}}, nullptr},
+    {"0x49 in string", "\" I \"", 5, {{Item(" I "), {}}}, nullptr},
+    {"0x4a in string", "\" J \"", 5, {{Item(" J "), {}}}, nullptr},
+    {"0x4b in string", "\" K \"", 5, {{Item(" K "), {}}}, nullptr},
+    {"0x4c in string", "\" L \"", 5, {{Item(" L "), {}}}, nullptr},
+    {"0x4d in string", "\" M \"", 5, {{Item(" M "), {}}}, nullptr},
+    {"0x4e in string", "\" N \"", 5, {{Item(" N "), {}}}, nullptr},
+    {"0x4f in string", "\" O \"", 5, {{Item(" O "), {}}}, nullptr},
+    {"0x50 in string", "\" P \"", 5, {{Item(" P "), {}}}, nullptr},
+    {"0x51 in string", "\" Q \"", 5, {{Item(" Q "), {}}}, nullptr},
+    {"0x52 in string", "\" R \"", 5, {{Item(" R "), {}}}, nullptr},
+    {"0x53 in string", "\" S \"", 5, {{Item(" S "), {}}}, nullptr},
+    {"0x54 in string", "\" T \"", 5, {{Item(" T "), {}}}, nullptr},
+    {"0x55 in string", "\" U \"", 5, {{Item(" U "), {}}}, nullptr},
+    {"0x56 in string", "\" V \"", 5, {{Item(" V "), {}}}, nullptr},
+    {"0x57 in string", "\" W \"", 5, {{Item(" W "), {}}}, nullptr},
+    {"0x58 in string", "\" X \"", 5, {{Item(" X "), {}}}, nullptr},
+    {"0x59 in string", "\" Y \"", 5, {{Item(" Y "), {}}}, nullptr},
+    {"0x5a in string", "\" Z \"", 5, {{Item(" Z "), {}}}, nullptr},
+    {"0x5b in string", "\" [ \"", 5, {{Item(" [ "), {}}}, nullptr},
+    {"0x5c in string", "\" \\ \"", 5, std::nullopt, nullptr},
+    {"0x5d in string", "\" ] \"", 5, {{Item(" ] "), {}}}, nullptr},
+    {"0x5e in string", "\" ^ \"", 5, {{Item(" ^ "), {}}}, nullptr},
+    {"0x5f in string", "\" _ \"", 5, {{Item(" _ "), {}}}, nullptr},
+    {"0x60 in string", "\" ` \"", 5, {{Item(" ` "), {}}}, nullptr},
+    {"0x61 in string", "\" a \"", 5, {{Item(" a "), {}}}, nullptr},
+    {"0x62 in string", "\" b \"", 5, {{Item(" b "), {}}}, nullptr},
+    {"0x63 in string", "\" c \"", 5, {{Item(" c "), {}}}, nullptr},
+    {"0x64 in string", "\" d \"", 5, {{Item(" d "), {}}}, nullptr},
+    {"0x65 in string", "\" e \"", 5, {{Item(" e "), {}}}, nullptr},
+    {"0x66 in string", "\" f \"", 5, {{Item(" f "), {}}}, nullptr},
+    {"0x67 in string", "\" g \"", 5, {{Item(" g "), {}}}, nullptr},
+    {"0x68 in string", "\" h \"", 5, {{Item(" h "), {}}}, nullptr},
+    {"0x69 in string", "\" i \"", 5, {{Item(" i "), {}}}, nullptr},
+    {"0x6a in string", "\" j \"", 5, {{Item(" j "), {}}}, nullptr},
+    {"0x6b in string", "\" k \"", 5, {{Item(" k "), {}}}, nullptr},
+    {"0x6c in string", "\" l \"", 5, {{Item(" l "), {}}}, nullptr},
+    {"0x6d in string", "\" m \"", 5, {{Item(" m "), {}}}, nullptr},
+    {"0x6e in string", "\" n \"", 5, {{Item(" n "), {}}}, nullptr},
+    {"0x6f in string", "\" o \"", 5, {{Item(" o "), {}}}, nullptr},
+    {"0x70 in string", "\" p \"", 5, {{Item(" p "), {}}}, nullptr},
+    {"0x71 in string", "\" q \"", 5, {{Item(" q "), {}}}, nullptr},
+    {"0x72 in string", "\" r \"", 5, {{Item(" r "), {}}}, nullptr},
+    {"0x73 in string", "\" s \"", 5, {{Item(" s "), {}}}, nullptr},
+    {"0x74 in string", "\" t \"", 5, {{Item(" t "), {}}}, nullptr},
+    {"0x75 in string", "\" u \"", 5, {{Item(" u "), {}}}, nullptr},
+    {"0x76 in string", "\" v \"", 5, {{Item(" v "), {}}}, nullptr},
+    {"0x77 in string", "\" w \"", 5, {{Item(" w "), {}}}, nullptr},
+    {"0x78 in string", "\" x \"", 5, {{Item(" x "), {}}}, nullptr},
+    {"0x79 in string", "\" y \"", 5, {{Item(" y "), {}}}, nullptr},
+    {"0x7a in string", "\" z \"", 5, {{Item(" z "), {}}}, nullptr},
+    {"0x7b in string", "\" { \"", 5, {{Item(" { "), {}}}, nullptr},
+    {"0x7c in string", "\" | \"", 5, {{Item(" | "), {}}}, nullptr},
+    {"0x7d in string", "\" } \"", 5, {{Item(" } "), {}}}, nullptr},
+    {"0x7e in string", "\" ~ \"", 5, {{Item(" ~ "), {}}}, nullptr},
+    {"0x7f in string", "\" \177 \"", 5, std::nullopt, nullptr},
+    {"Escaped 0x00 in string", "\"\\\000\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x01 in string", "\"\\\001\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x02 in string", "\"\\\002\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x03 in string", "\"\\\003\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x04 in string", "\"\\\004\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x05 in string", "\"\\\005\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x06 in string", "\"\\\006\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x07 in string", "\"\\\a\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x08 in string", "\"\\\b\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x09 in string", "\"\\\t\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x0a in string", "\"\\\n\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x0b in string", "\"\\\v\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x0c in string", "\"\\\f\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x0d in string", "\"\\\r\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x0e in string", "\"\\\016\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x0f in string", "\"\\\017\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x10 in string", "\"\\\020\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x11 in string", "\"\\\021\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x12 in string", "\"\\\022\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x13 in string", "\"\\\023\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x14 in string", "\"\\\024\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x15 in string", "\"\\\025\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x16 in string", "\"\\\026\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x17 in string", "\"\\\027\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x18 in string", "\"\\\030\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x19 in string", "\"\\\031\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x1a in string", "\"\\\032\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x1b in string", "\"\\\033\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x1c in string", "\"\\\034\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x1d in string", "\"\\\035\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x1e in string", "\"\\\036\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x1f in string", "\"\\\037\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x20 in string", "\"\\ \"", 4, std::nullopt, nullptr},
+    {"Escaped 0x21 in string", "\"\\!\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x22 in string", "\"\\\"\"", 4, {{Item("\""), {}}}, nullptr},
+    {"Escaped 0x23 in string", "\"\\#\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x24 in string", "\"\\$\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x25 in string", "\"\\%\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x26 in string", "\"\\&\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x27 in string", "\"\\'\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x28 in string", "\"\\(\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x29 in string", "\"\\)\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x2a in string", "\"\\*\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x2b in string", "\"\\+\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x2c in string", "\"\\,\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x2d in string", "\"\\-\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x2e in string", "\"\\.\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x2f in string", "\"\\/\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x30 in string", "\"\\0\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x31 in string", "\"\\1\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x32 in string", "\"\\2\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x33 in string", "\"\\3\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x34 in string", "\"\\4\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x35 in string", "\"\\5\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x36 in string", "\"\\6\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x37 in string", "\"\\7\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x38 in string", "\"\\8\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x39 in string", "\"\\9\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x3a in string", "\"\\:\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x3b in string", "\"\\;\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x3c in string", "\"\\<\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x3d in string", "\"\\=\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x3e in string", "\"\\>\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x3f in string", "\"\\?\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x40 in string", "\"\\@\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x41 in string", "\"\\A\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x42 in string", "\"\\B\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x43 in string", "\"\\C\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x44 in string", "\"\\D\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x45 in string", "\"\\E\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x46 in string", "\"\\F\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x47 in string", "\"\\G\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x48 in string", "\"\\H\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x49 in string", "\"\\I\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x4a in string", "\"\\J\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x4b in string", "\"\\K\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x4c in string", "\"\\L\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x4d in string", "\"\\M\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x4e in string", "\"\\N\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x4f in string", "\"\\O\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x50 in string", "\"\\P\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x51 in string", "\"\\Q\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x52 in string", "\"\\R\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x53 in string", "\"\\S\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x54 in string", "\"\\T\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x55 in string", "\"\\U\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x56 in string", "\"\\V\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x57 in string", "\"\\W\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x58 in string", "\"\\X\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x59 in string", "\"\\Y\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x5a in string", "\"\\Z\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x5b in string", "\"\\[\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x5c in string", "\"\\\\\"", 4, {{Item("\\"), {}}}, nullptr},
+    {"Escaped 0x5d in string", "\"\\]\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x5e in string", "\"\\^\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x5f in string", "\"\\_\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x60 in string", "\"\\`\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x61 in string", "\"\\a\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x62 in string", "\"\\b\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x63 in string", "\"\\c\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x64 in string", "\"\\d\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x65 in string", "\"\\e\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x66 in string", "\"\\f\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x67 in string", "\"\\g\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x68 in string", "\"\\h\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x69 in string", "\"\\i\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x6a in string", "\"\\j\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x6b in string", "\"\\k\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x6c in string", "\"\\l\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x6d in string", "\"\\m\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x6e in string", "\"\\n\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x6f in string", "\"\\o\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x70 in string", "\"\\p\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x71 in string", "\"\\q\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x72 in string", "\"\\r\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x73 in string", "\"\\s\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x74 in string", "\"\\t\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x75 in string", "\"\\u\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x76 in string", "\"\\v\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x77 in string", "\"\\w\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x78 in string", "\"\\x\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x79 in string", "\"\\y\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x7a in string", "\"\\z\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x7b in string", "\"\\{\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x7c in string", "\"\\|\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x7d in string", "\"\\}\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x7e in string", "\"\\~\"", 4, std::nullopt, nullptr},
+    {"Escaped 0x7f in string", "\"\\\177\"", 4, std::nullopt, nullptr},
+    // string.json
+    {"basic string", "\"foo bar\"", 9, {{Item("foo bar"), {}}}, nullptr},
+    {"empty string", "\"\"", 2, {{Item(""), {}}}, nullptr},
+    {"long string",
+     "\"foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo "
+     "foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo "
+     "foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo "
+     "foo foo foo foo foo foo foo foo foo foo foo foo \"",
+     262,
+     {{Item("foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo "
+            "foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo "
+            "foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo "
+            "foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo foo "
+            "foo "),
+       {}}},
+     nullptr},
+    {"whitespace string", "\"   \"", 5, {{Item("   "), {}}}, nullptr},
+    {"non-ascii string", "\"f\374\374\"", 5, std::nullopt, nullptr},
+    {"tab in string", "\"\\t\"", 4, std::nullopt, nullptr},
+    {"newline in string", "\" \\n \"", 6, std::nullopt, nullptr},
+    {"single quoted string", "'foo'", 5, std::nullopt, nullptr},
+    {"unbalanced string", "\"foo", 4, std::nullopt, nullptr},
+    {"string quoting",
+     "\"foo \\\"bar\\\" \\\\ baz\"",
+     20,
+     {{Item("foo \"bar\" \\ baz"), {}}},
+     nullptr},
+    {"bad string quoting", "\"foo \\,\"", 8, std::nullopt, nullptr},
+    {"ending string quote", "\"foo \\\"", 7, std::nullopt, nullptr},
+    {"abruptly ending string quote", "\"foo \\", 6, std::nullopt, nullptr},
+    // token-generated.json
+    {"0x00 in token", "a\000a", 3, std::nullopt, nullptr},
+    {"0x01 in token", "a\001a", 3, std::nullopt, nullptr},
+    {"0x02 in token", "a\002a", 3, std::nullopt, nullptr},
+    {"0x03 in token", "a\003a", 3, std::nullopt, nullptr},
+    {"0x04 in token", "a\004a", 3, std::nullopt, nullptr},
+    {"0x05 in token", "a\005a", 3, std::nullopt, nullptr},
+    {"0x06 in token", "a\006a", 3, std::nullopt, nullptr},
+    {"0x07 in token", "a\aa", 3, std::nullopt, nullptr},
+    {"0x08 in token", "a\ba", 3, std::nullopt, nullptr},
+    {"0x09 in token", "a\ta", 3, std::nullopt, nullptr},
+    {"0x0a in token", "a\na", 3, std::nullopt, nullptr},
+    {"0x0b in token", "a\va", 3, std::nullopt, nullptr},
+    {"0x0c in token", "a\fa", 3, std::nullopt, nullptr},
+    {"0x0d in token", "a\ra", 3, std::nullopt, nullptr},
+    {"0x0e in token", "a\016a", 3, std::nullopt, nullptr},
+    {"0x0f in token", "a\017a", 3, std::nullopt, nullptr},
+    {"0x10 in token", "a\020a", 3, std::nullopt, nullptr},
+    {"0x11 in token", "a\021a", 3, std::nullopt, nullptr},
+    {"0x12 in token", "a\022a", 3, std::nullopt, nullptr},
+    {"0x13 in token", "a\023a", 3, std::nullopt, nullptr},
+    {"0x14 in token", "a\024a", 3, std::nullopt, nullptr},
+    {"0x15 in token", "a\025a", 3, std::nullopt, nullptr},
+    {"0x16 in token", "a\026a", 3, std::nullopt, nullptr},
+    {"0x17 in token", "a\027a", 3, std::nullopt, nullptr},
+    {"0x18 in token", "a\030a", 3, std::nullopt, nullptr},
+    {"0x19 in token", "a\031a", 3, std::nullopt, nullptr},
+    {"0x1a in token", "a\032a", 3, std::nullopt, nullptr},
+    {"0x1b in token", "a\033a", 3, std::nullopt, nullptr},
+    {"0x1c in token", "a\034a", 3, std::nullopt, nullptr},
+    {"0x1d in token", "a\035a", 3, std::nullopt, nullptr},
+    {"0x1e in token", "a\036a", 3, std::nullopt, nullptr},
+    {"0x1f in token", "a\037a", 3, std::nullopt, nullptr},
+    {"0x20 in token", "a a", 3, std::nullopt, nullptr},
+    {"0x21 in token", "a!a", 3, {{Item("a!a", Item::kTokenType), {}}}, nullptr},
+    {"0x22 in token", "a\"a", 3, std::nullopt, nullptr},
+    {"0x23 in token", "a#a", 3, {{Item("a#a", Item::kTokenType), {}}}, nullptr},
+    {"0x24 in token", "a$a", 3, {{Item("a$a", Item::kTokenType), {}}}, nullptr},
+    {"0x25 in token", "a%a", 3, {{Item("a%a", Item::kTokenType), {}}}, nullptr},
+    {"0x26 in token", "a&a", 3, {{Item("a&a", Item::kTokenType), {}}}, nullptr},
+    {"0x27 in token", "a'a", 3, {{Item("a'a", Item::kTokenType), {}}}, nullptr},
+    {"0x28 in token", "a(a", 3, std::nullopt, nullptr},
+    {"0x29 in token", "a)a", 3, std::nullopt, nullptr},
+    {"0x2a in token", "a*a", 3, {{Item("a*a", Item::kTokenType), {}}}, nullptr},
+    {"0x2b in token", "a+a", 3, {{Item("a+a", Item::kTokenType), {}}}, nullptr},
+    {"0x2c in token", "a,a", 3, std::nullopt, nullptr},
+    {"0x2d in token", "a-a", 3, {{Item("a-a", Item::kTokenType), {}}}, nullptr},
+    {"0x2e in token", "a.a", 3, {{Item("a.a", Item::kTokenType), {}}}, nullptr},
+    {"0x2f in token", "a/a", 3, {{Item("a/a", Item::kTokenType), {}}}, nullptr},
+    {"0x30 in token", "a0a", 3, {{Item("a0a", Item::kTokenType), {}}}, nullptr},
+    {"0x31 in token", "a1a", 3, {{Item("a1a", Item::kTokenType), {}}}, nullptr},
+    {"0x32 in token", "a2a", 3, {{Item("a2a", Item::kTokenType), {}}}, nullptr},
+    {"0x33 in token", "a3a", 3, {{Item("a3a", Item::kTokenType), {}}}, nullptr},
+    {"0x34 in token", "a4a", 3, {{Item("a4a", Item::kTokenType), {}}}, nullptr},
+    {"0x35 in token", "a5a", 3, {{Item("a5a", Item::kTokenType), {}}}, nullptr},
+    {"0x36 in token", "a6a", 3, {{Item("a6a", Item::kTokenType), {}}}, nullptr},
+    {"0x37 in token", "a7a", 3, {{Item("a7a", Item::kTokenType), {}}}, nullptr},
+    {"0x38 in token", "a8a", 3, {{Item("a8a", Item::kTokenType), {}}}, nullptr},
+    {"0x39 in token", "a9a", 3, {{Item("a9a", Item::kTokenType), {}}}, nullptr},
+    {"0x3a in token", "a:a", 3, {{Item("a:a", Item::kTokenType), {}}}, nullptr},
+    {"0x3b in token",
+     "a;a",
+     3,
+     {{Item("a", Item::kTokenType), {BooleanParam("a", true)}}},
+     nullptr},
+    {"0x3c in token", "a<a", 3, std::nullopt, nullptr},
+    {"0x3d in token", "a=a", 3, std::nullopt, nullptr},
+    {"0x3e in token", "a>a", 3, std::nullopt, nullptr},
+    {"0x3f in token", "a?a", 3, std::nullopt, nullptr},
+    {"0x40 in token", "a@a", 3, std::nullopt, nullptr},
+    {"0x41 in token", "aAa", 3, {{Item("aAa", Item::kTokenType), {}}}, nullptr},
+    {"0x42 in token", "aBa", 3, {{Item("aBa", Item::kTokenType), {}}}, nullptr},
+    {"0x43 in token", "aCa", 3, {{Item("aCa", Item::kTokenType), {}}}, nullptr},
+    {"0x44 in token", "aDa", 3, {{Item("aDa", Item::kTokenType), {}}}, nullptr},
+    {"0x45 in token", "aEa", 3, {{Item("aEa", Item::kTokenType), {}}}, nullptr},
+    {"0x46 in token", "aFa", 3, {{Item("aFa", Item::kTokenType), {}}}, nullptr},
+    {"0x47 in token", "aGa", 3, {{Item("aGa", Item::kTokenType), {}}}, nullptr},
+    {"0x48 in token", "aHa", 3, {{Item("aHa", Item::kTokenType), {}}}, nullptr},
+    {"0x49 in token", "aIa", 3, {{Item("aIa", Item::kTokenType), {}}}, nullptr},
+    {"0x4a in token", "aJa", 3, {{Item("aJa", Item::kTokenType), {}}}, nullptr},
+    {"0x4b in token", "aKa", 3, {{Item("aKa", Item::kTokenType), {}}}, nullptr},
+    {"0x4c in token", "aLa", 3, {{Item("aLa", Item::kTokenType), {}}}, nullptr},
+    {"0x4d in token", "aMa", 3, {{Item("aMa", Item::kTokenType), {}}}, nullptr},
+    {"0x4e in token", "aNa", 3, {{Item("aNa", Item::kTokenType), {}}}, nullptr},
+    {"0x4f in token", "aOa", 3, {{Item("aOa", Item::kTokenType), {}}}, nullptr},
+    {"0x50 in token", "aPa", 3, {{Item("aPa", Item::kTokenType), {}}}, nullptr},
+    {"0x51 in token", "aQa", 3, {{Item("aQa", Item::kTokenType), {}}}, nullptr},
+    {"0x52 in token", "aRa", 3, {{Item("aRa", Item::kTokenType), {}}}, nullptr},
+    {"0x53 in token", "aSa", 3, {{Item("aSa", Item::kTokenType), {}}}, nullptr},
+    {"0x54 in token", "aTa", 3, {{Item("aTa", Item::kTokenType), {}}}, nullptr},
+    {"0x55 in token", "aUa", 3, {{Item("aUa", Item::kTokenType), {}}}, nullptr},
+    {"0x56 in token", "aVa", 3, {{Item("aVa", Item::kTokenType), {}}}, nullptr},
+    {"0x57 in token", "aWa", 3, {{Item("aWa", Item::kTokenType), {}}}, nullptr},
+    {"0x58 in token", "aXa", 3, {{Item("aXa", Item::kTokenType), {}}}, nullptr},
+    {"0x59 in token", "aYa", 3, {{Item("aYa", Item::kTokenType), {}}}, nullptr},
+    {"0x5a in token", "aZa", 3, {{Item("aZa", Item::kTokenType), {}}}, nullptr},
+    {"0x5b in token", "a[a", 3, std::nullopt, nullptr},
+    {"0x5c in token", "a\\a", 3, std::nullopt, nullptr},
+    {"0x5d in token", "a]a", 3, std::nullopt, nullptr},
+    {"0x5e in token", "a^a", 3, {{Item("a^a", Item::kTokenType), {}}}, nullptr},
+    {"0x5f in token", "a_a", 3, {{Item("a_a", Item::kTokenType), {}}}, nullptr},
+    {"0x60 in token", "a`a", 3, {{Item("a`a", Item::kTokenType), {}}}, nullptr},
+    {"0x61 in token", "aaa", 3, {{Item("aaa", Item::kTokenType), {}}}, nullptr},
+    {"0x62 in token", "aba", 3, {{Item("aba", Item::kTokenType), {}}}, nullptr},
+    {"0x63 in token", "aca", 3, {{Item("aca", Item::kTokenType), {}}}, nullptr},
+    {"0x64 in token", "ada", 3, {{Item("ada", Item::kTokenType), {}}}, nullptr},
+    {"0x65 in token", "aea", 3, {{Item("aea", Item::kTokenType), {}}}, nullptr},
+    {"0x66 in token", "afa", 3, {{Item("afa", Item::kTokenType), {}}}, nullptr},
+    {"0x67 in token", "aga", 3, {{Item("aga", Item::kTokenType), {}}}, nullptr},
+    {"0x68 in token", "aha", 3, {{Item("aha", Item::kTokenType), {}}}, nullptr},
+    {"0x69 in token", "aia", 3, {{Item("aia", Item::kTokenType), {}}}, nullptr},
+    {"0x6a in token", "aja", 3, {{Item("aja", Item::kTokenType), {}}}, nullptr},
+    {"0x6b in token", "aka", 3, {{Item("aka", Item::kTokenType), {}}}, nullptr},
+    {"0x6c in token", "ala", 3, {{Item("ala", Item::kTokenType), {}}}, nullptr},
+    {"0x6d in token", "ama", 3, {{Item("ama", Item::kTokenType), {}}}, nullptr},
+    {"0x6e in token", "ana", 3, {{Item("ana", Item::kTokenType), {}}}, nullptr},
+    {"0x6f in token", "aoa", 3, {{Item("aoa", Item::kTokenType), {}}}, nullptr},
+    {"0x70 in token", "apa", 3, {{Item("apa", Item::kTokenType), {}}}, nullptr},
+    {"0x71 in token", "aqa", 3, {{Item("aqa", Item::kTokenType), {}}}, nullptr},
+    {"0x72 in token", "ara", 3, {{Item("ara", Item::kTokenType), {}}}, nullptr},
+    {"0x73 in token", "asa", 3, {{Item("asa", Item::kTokenType), {}}}, nullptr},
+    {"0x74 in token", "ata", 3, {{Item("ata", Item::kTokenType), {}}}, nullptr},
+    {"0x75 in token", "aua", 3, {{Item("aua", Item::kTokenType), {}}}, nullptr},
+    {"0x76 in token", "ava", 3, {{Item("ava", Item::kTokenType), {}}}, nullptr},
+    {"0x77 in token", "awa", 3, {{Item("awa", Item::kTokenType), {}}}, nullptr},
+    {"0x78 in token", "axa", 3, {{Item("axa", Item::kTokenType), {}}}, nullptr},
+    {"0x79 in token", "aya", 3, {{Item("aya", Item::kTokenType), {}}}, nullptr},
+    {"0x7a in token", "aza", 3, {{Item("aza", Item::kTokenType), {}}}, nullptr},
+    {"0x7b in token", "a{a", 3, std::nullopt, nullptr},
+    {"0x7c in token", "a|a", 3, {{Item("a|a", Item::kTokenType), {}}}, nullptr},
+    {"0x7d in token", "a}a", 3, std::nullopt, nullptr},
+    {"0x7e in token", "a~a", 3, {{Item("a~a", Item::kTokenType), {}}}, nullptr},
+    {"0x7f in token", "a\177a", 3, std::nullopt, nullptr},
+    {"0x00 starting an token", "\000a", 2, std::nullopt, nullptr},
+    {"0x01 starting an token", "\001a", 2, std::nullopt, nullptr},
+    {"0x02 starting an token", "\002a", 2, std::nullopt, nullptr},
+    {"0x03 starting an token", "\003a", 2, std::nullopt, nullptr},
+    {"0x04 starting an token", "\004a", 2, std::nullopt, nullptr},
+    {"0x05 starting an token", "\005a", 2, std::nullopt, nullptr},
+    {"0x06 starting an token", "\006a", 2, std::nullopt, nullptr},
+    {"0x07 starting an token", "\aa", 2, std::nullopt, nullptr},
+    {"0x08 starting an token", "\ba", 2, std::nullopt, nullptr},
+    {"0x09 starting an token", "\ta", 2, std::nullopt, nullptr},
+    {"0x0a starting an token", "\na", 2, std::nullopt, nullptr},
+    {"0x0b starting an token", "\va", 2, std::nullopt, nullptr},
+    {"0x0c starting an token", "\fa", 2, std::nullopt, nullptr},
+    {"0x0d starting an token", "\ra", 2, std::nullopt, nullptr},
+    {"0x0e starting an token", "\016a", 2, std::nullopt, nullptr},
+    {"0x0f starting an token", "\017a", 2, std::nullopt, nullptr},
+    {"0x10 starting an token", "\020a", 2, std::nullopt, nullptr},
+    {"0x11 starting an token", "\021a", 2, std::nullopt, nullptr},
+    {"0x12 starting an token", "\022a", 2, std::nullopt, nullptr},
+    {"0x13 starting an token", "\023a", 2, std::nullopt, nullptr},
+    {"0x14 starting an token", "\024a", 2, std::nullopt, nullptr},
+    {"0x15 starting an token", "\025a", 2, std::nullopt, nullptr},
+    {"0x16 starting an token", "\026a", 2, std::nullopt, nullptr},
+    {"0x17 starting an token", "\027a", 2, std::nullopt, nullptr},
+    {"0x18 starting an token", "\030a", 2, std::nullopt, nullptr},
+    {"0x19 starting an token", "\031a", 2, std::nullopt, nullptr},
+    {"0x1a starting an token", "\032a", 2, std::nullopt, nullptr},
+    {"0x1b starting an token", "\033a", 2, std::nullopt, nullptr},
+    {"0x1c starting an token", "\034a", 2, std::nullopt, nullptr},
+    {"0x1d starting an token", "\035a", 2, std::nullopt, nullptr},
+    {"0x1e starting an token", "\036a", 2, std::nullopt, nullptr},
+    {"0x1f starting an token", "\037a", 2, std::nullopt, nullptr},
+    {"0x20 starting an token",
+     " a",
+     2,
+     {{Item("a", Item::kTokenType), {}}},
+     "a"},
+    {"0x21 starting an token", "!a", 2, std::nullopt, nullptr},
+    {"0x22 starting an token", "\"a", 2, std::nullopt, nullptr},
+    {"0x23 starting an token", "#a", 2, std::nullopt, nullptr},
+    {"0x24 starting an token", "$a", 2, std::nullopt, nullptr},
+    {"0x25 starting an token", "%a", 2, std::nullopt, nullptr},
+    {"0x26 starting an token", "&a", 2, std::nullopt, nullptr},
+    {"0x27 starting an token", "'a", 2, std::nullopt, nullptr},
+    {"0x28 starting an token", "(a", 2, std::nullopt, nullptr},
+    {"0x29 starting an token", ")a", 2, std::nullopt, nullptr},
+    {"0x2a starting an token",
+     "*a",
+     2,
+     {{Item("*a", Item::kTokenType), {}}},
+     nullptr},
+    {"0x2b starting an token", "+a", 2, std::nullopt, nullptr},
+    {"0x2c starting an token", ",a", 2, std::nullopt, nullptr},
+    {"0x2d starting an token", "-a", 2, std::nullopt, nullptr},
+    {"0x2e starting an token", ".a", 2, std::nullopt, nullptr},
+    {"0x2f starting an token", "/a", 2, std::nullopt, nullptr},
+    {"0x30 starting an token", "0a", 2, std::nullopt, nullptr},
+    {"0x31 starting an token", "1a", 2, std::nullopt, nullptr},
+    {"0x32 starting an token", "2a", 2, std::nullopt, nullptr},
+    {"0x33 starting an token", "3a", 2, std::nullopt, nullptr},
+    {"0x34 starting an token", "4a", 2, std::nullopt, nullptr},
+    {"0x35 starting an token", "5a", 2, std::nullopt, nullptr},
+    {"0x36 starting an token", "6a", 2, std::nullopt, nullptr},
+    {"0x37 starting an token", "7a", 2, std::nullopt, nullptr},
+    {"0x38 starting an token", "8a", 2, std::nullopt, nullptr},
+    {"0x39 starting an token", "9a", 2, std::nullopt, nullptr},
+    {"0x3a starting an token", ":a", 2, std::nullopt, nullptr},
+    {"0x3b starting an token", ";a", 2, std::nullopt, nullptr},
+    {"0x3c starting an token", "<a", 2, std::nullopt, nullptr},
+    {"0x3d starting an token", "=a", 2, std::nullopt, nullptr},
+    {"0x3e starting an token", ">a", 2, std::nullopt, nullptr},
+    {"0x3f starting an token", "?a", 2, std::nullopt, nullptr},
+    {"0x40 starting an token", "@a", 2, std::nullopt, nullptr},
+    {"0x41 starting an token",
+     "Aa",
+     2,
+     {{Item("Aa", Item::kTokenType), {}}},
+     nullptr},
+    {"0x42 starting an token",
+     "Ba",
+     2,
+     {{Item("Ba", Item::kTokenType), {}}},
+     nullptr},
+    {"0x43 starting an token",
+     "Ca",
+     2,
+     {{Item("Ca", Item::kTokenType), {}}},
+     nullptr},
+    {"0x44 starting an token",
+     "Da",
+     2,
+     {{Item("Da", Item::kTokenType), {}}},
+     nullptr},
+    {"0x45 starting an token",
+     "Ea",
+     2,
+     {{Item("Ea", Item::kTokenType), {}}},
+     nullptr},
+    {"0x46 starting an token",
+     "Fa",
+     2,
+     {{Item("Fa", Item::kTokenType), {}}},
+     nullptr},
+    {"0x47 starting an token",
+     "Ga",
+     2,
+     {{Item("Ga", Item::kTokenType), {}}},
+     nullptr},
+    {"0x48 starting an token",
+     "Ha",
+     2,
+     {{Item("Ha", Item::kTokenType), {}}},
+     nullptr},
+    {"0x49 starting an token",
+     "Ia",
+     2,
+     {{Item("Ia", Item::kTokenType), {}}},
+     nullptr},
+    {"0x4a starting an token",
+     "Ja",
+     2,
+     {{Item("Ja", Item::kTokenType), {}}},
+     nullptr},
+    {"0x4b starting an token",
+     "Ka",
+     2,
+     {{Item("Ka", Item::kTokenType), {}}},
+     nullptr},
+    {"0x4c starting an token",
+     "La",
+     2,
+     {{Item("La", Item::kTokenType), {}}},
+     nullptr},
+    {"0x4d starting an token",
+     "Ma",
+     2,
+     {{Item("Ma", Item::kTokenType), {}}},
+     nullptr},
+    {"0x4e starting an token",
+     "Na",
+     2,
+     {{Item("Na", Item::kTokenType), {}}},
+     nullptr},
+    {"0x4f starting an token",
+     "Oa",
+     2,
+     {{Item("Oa", Item::kTokenType), {}}},
+     nullptr},
+    {"0x50 starting an token",
+     "Pa",
+     2,
+     {{Item("Pa", Item::kTokenType), {}}},
+     nullptr},
+    {"0x51 starting an token",
+     "Qa",
+     2,
+     {{Item("Qa", Item::kTokenType), {}}},
+     nullptr},
+    {"0x52 starting an token",
+     "Ra",
+     2,
+     {{Item("Ra", Item::kTokenType), {}}},
+     nullptr},
+    {"0x53 starting an token",
+     "Sa",
+     2,
+     {{Item("Sa", Item::kTokenType), {}}},
+     nullptr},
+    {"0x54 starting an token",
+     "Ta",
+     2,
+     {{Item("Ta", Item::kTokenType), {}}},
+     nullptr},
+    {"0x55 starting an token",
+     "Ua",
+     2,
+     {{Item("Ua", Item::kTokenType), {}}},
+     nullptr},
+    {"0x56 starting an token",
+     "Va",
+     2,
+     {{Item("Va", Item::kTokenType), {}}},
+     nullptr},
+    {"0x57 starting an token",
+     "Wa",
+     2,
+     {{Item("Wa", Item::kTokenType), {}}},
+     nullptr},
+    {"0x58 starting an token",
+     "Xa",
+     2,
+     {{Item("Xa", Item::kTokenType), {}}},
+     nullptr},
+    {"0x59 starting an token",
+     "Ya",
+     2,
+     {{Item("Ya", Item::kTokenType), {}}},
+     nullptr},
+    {"0x5a starting an token",
+     "Za",
+     2,
+     {{Item("Za", Item::kTokenType), {}}},
+     nullptr},
+    {"0x5b starting an token", "[a", 2, std::nullopt, nullptr},
+    {"0x5c starting an token", "\\a", 2, std::nullopt, nullptr},
+    {"0x5d starting an token", "]a", 2, std::nullopt, nullptr},
+    {"0x5e starting an token", "^a", 2, std::nullopt, nullptr},
+    {"0x5f starting an token", "_a", 2, std::nullopt, nullptr},
+    {"0x60 starting an token", "`a", 2, std::nullopt, nullptr},
+    {"0x61 starting an token",
+     "aa",
+     2,
+     {{Item("aa", Item::kTokenType), {}}},
+     nullptr},
+    {"0x62 starting an token",
+     "ba",
+     2,
+     {{Item("ba", Item::kTokenType), {}}},
+     nullptr},
+    {"0x63 starting an token",
+     "ca",
+     2,
+     {{Item("ca", Item::kTokenType), {}}},
+     nullptr},
+    {"0x64 starting an token",
+     "da",
+     2,
+     {{Item("da", Item::kTokenType), {}}},
+     nullptr},
+    {"0x65 starting an token",
+     "ea",
+     2,
+     {{Item("ea", Item::kTokenType), {}}},
+     nullptr},
+    {"0x66 starting an token",
+     "fa",
+     2,
+     {{Item("fa", Item::kTokenType), {}}},
+    
+"""
+
+
+```
