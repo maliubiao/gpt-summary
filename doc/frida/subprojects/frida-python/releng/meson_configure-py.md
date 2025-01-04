@@ -1,0 +1,684 @@
+Response:
+Let's break down the thought process for analyzing the provided Python script.
+
+**1. Initial Understanding of the Goal:**
+
+The request asks for an explanation of the script `meson_configure.py`, focusing on its functionality, relationship to reverse engineering, low-level aspects (binary, OS kernels), logical reasoning, common user errors, and debugging.
+
+**2. High-Level Overview of the Script:**
+
+The script's name strongly suggests it's related to configuring a build system. The presence of `meson` in the name and imports confirms this. The file path `frida/subprojects/frida-python/releng/` indicates it's part of the Frida project, specifically the Python bindings and likely involved in release engineering (`releng`). This immediately suggests a purpose of preparing the Frida Python bindings for compilation and installation.
+
+**3. Deconstructing the Code - Functional Breakdown:**
+
+I would go through the code section by section, noting the main functions and their apparent purposes:
+
+* **`main()`:**  This is the entry point. It handles command-line arguments using `argparse`, sets up directories, and calls the core `configure()` function. The argument parsing reveals several configurable options like `--prefix`, `--build`, `--host`, `--enable-symbols`, etc., which are standard for build systems.
+* **`configure()`:** This is the heart of the script. It takes the parsed options and environment variables to orchestrate the configuration process. Key actions include:
+    * Detecting default prefixes and project settings.
+    * Handling build and host machine specifications (`MachineSpec`).
+    * Managing prebuilt dependencies (toolchain, SDK).
+    * Generating Meson configuration files (`native-file`, `cross-file`).
+    * Calling the Meson build system.
+    * Creating Makefiles.
+    * Saving configuration data.
+* **Helper functions:**  Functions like `parse_prefix`, `query_supported_bundle_types`, `parse_bundle_type_set`, `raise_toolchain_not_found`, `raise_sdk_not_found`, `generate_out_of_tree_makefile`, `register_meson_options`, `collect_meson_options`, etc., support the main `configure()` function by handling specific tasks like argument parsing, dependency management, and file generation.
+
+**4. Identifying Reverse Engineering Relevance:**
+
+Frida is a dynamic instrumentation toolkit heavily used in reverse engineering. Therefore, this configuration script is *essential* for building the tools used in reverse engineering. Specifically:
+
+* **Dynamic Instrumentation:** Frida's core functionality is to inject code into running processes, inspect memory, and intercept function calls. Building Frida is the prerequisite for using these techniques.
+* **Target Platform Configuration (`--host`):**  Reverse engineers often target different architectures (e.g., ARM Android from an x86 Linux machine). The `--host` option allows configuring the build for such cross-compilation scenarios.
+* **Debug Symbols (`--enable-symbols`):**  When reverse engineering, debug symbols are invaluable for understanding code flow and variable values. This option enables their inclusion during the build process.
+
+**5. Identifying Low-Level Aspects:**
+
+* **Binary Building:** The entire process is about compiling source code into executable binaries (or shared libraries).
+* **Linux, Android Kernel/Framework:** Frida is often used on Linux and Android. The script manages dependencies (like SDKs) and potentially toolchains specific to these platforms, indicating an awareness of their environments. The `--build` and `--host` options directly relate to specifying these operating systems and architectures.
+* **Toolchains:** The script deals with toolchains (compilers, linkers, etc.), which are fundamental for low-level binary generation.
+* **Shared Libraries (`--enable-shared`):** Frida itself can be built as a shared library, which is crucial for its injection mechanism.
+
+**6. Identifying Logical Reasoning:**
+
+* **Conditional Logic:** The script uses `if` statements extensively to handle different scenarios (e.g., whether a build directory exists, whether cross-compiling, presence of prebuilt dependencies).
+* **Dependency Management:** The script logically determines which dependencies (toolchain, SDK) are needed based on the target platform and available prebuilds. The `allowed_prebuilds` set and the logic around `ensure_toolchain` and `ensure_sdk` are good examples.
+* **Machine Specification:** The `MachineSpec` class and its methods (`parse`, `default_missing`, `maybe_adapt_to_host`) represent logical rules for interpreting and adapting machine architecture and OS information.
+
+**7. Identifying Potential User Errors:**
+
+* **Incorrect Arguments:** Providing invalid arguments (e.g., misspelled options, incorrect bundle types) will be caught by `argparse`.
+* **Prebuilt Dependency Issues:** Trying to use prebuilt dependencies without them being available or without network access. The error messages generated by `raise_toolchain_not_found` and `raise_sdk_not_found` guide the user.
+* **Environment Issues:** Incorrectly set environment variables (though less directly handled by this script, Meson relies on them).
+* **Reconfiguring Incorrectly:**  Trying to configure when a build directory already exists without wiping it first.
+
+**8. Tracing User Steps (Debugging):**
+
+Imagine a user wants to build Frida's Python bindings. They would typically:
+
+1. **Clone the Frida repository.**
+2. **Navigate to the `frida/frida-python` directory.**
+3. **Run a command like `./releng/meson_configure.py ..`** (The `..` points to the root source directory).
+
+If something goes wrong, they might:
+
+* **Look at the error messages.** The script provides fairly informative error messages, especially regarding missing dependencies.
+* **Check the command-line arguments:** Did they specify the correct `--prefix`, `--host`, etc.?
+* **Inspect environment variables:** Are necessary environment variables set?
+* **Manually try to download missing dependencies** (though the script aims to automate this).
+
+**Self-Correction/Refinement during the thought process:**
+
+* Initially, I might focus too much on the technical details of Meson. It's important to frame the explanation in the context of Frida and its uses in reverse engineering.
+* I might initially overlook the logical reasoning aspect. Actively looking for `if` statements and dependency management helps to highlight this.
+* The "user steps" part requires thinking from a practical user perspective, not just from the code itself.
+
+By following these steps, I can systematically analyze the script and generate a comprehensive explanation covering all aspects requested in the prompt.
+这个 `meson_configure.py` 文件是 Frida Python 绑定的构建配置脚本，它使用 Meson 构建系统来准备构建环境。其主要功能是根据用户提供的选项和系统环境，生成 Meson 所需的配置文件，以便后续的编译和安装过程能够顺利进行。
+
+**功能列举：**
+
+1. **解析命令行参数：** 使用 `argparse` 模块解析用户在命令行中提供的各种选项，例如安装路径 (`--prefix`)、目标构建平台 (`--build`)、宿主平台（交叉编译时使用，`--host`）、是否包含调试符号 (`--enable-symbols`)、是否构建共享库 (`--enable-shared`) 等。
+2. **检测并设置构建和安装目录：**  根据环境变量 (`MESON_SOURCE_ROOT`, `MESON_BUILD_ROOT`) 和默认规则确定源代码目录和构建目录。
+3. **处理 Meson 项目特定的选项：** 读取 `meson.options` 或 `meson_options.txt` 文件，动态地将 Frida 项目自定义的构建选项添加到命令行参数解析器中。
+4. **检测和管理依赖：** 负责检测和下载所需的依赖项，例如工具链 (toolchain) 和 SDK (software development kit)。它会检查是否允许使用预构建的依赖包 (`--without-prebuilds`)。
+5. **生成 Meson 配置文件：** 根据目标平台和宿主平台的配置（`MachineSpec`），生成 Meson 所需的 `native-file` 和 `cross-file`，这些文件描述了构建环境的详细信息，例如编译器、链接器、目标架构等。
+6. **调用 Meson 构建系统：**  执行 Meson 的 `setup` 命令，使用生成的配置文件来初始化构建环境。
+7. **生成额外的构建文件：**  创建 `BSDmakefile`、`Makefile` (用于在构建目录外执行构建) 和 `make.bat` (Windows 环境)。
+8. **保存构建环境信息：**  将构建配置信息（例如 Meson 版本、构建和宿主配置、允许的预构建类型、依赖目录等）序列化到 `frida-env.dat` 文件中，供后续构建步骤使用。
+
+**与逆向方法的关系及举例：**
+
+Frida 本身就是一个动态插桩工具，广泛应用于软件逆向工程。`meson_configure.py` 是构建 Frida Python 绑定的关键步骤，因此它与逆向方法有着直接的关系。
+
+* **配置目标平台：** 逆向工程师经常需要在不同的平台上运行 Frida，例如在 Linux 上分析 Android 应用。通过 `--host` 参数，可以配置 Frida Python 绑定以支持交叉编译到目标平台。例如，使用 `--host android` 可以配置为构建在 Android 设备上运行的 Frida Python 绑定。
+* **包含调试符号：** 在逆向分析过程中，调试符号对于理解代码逻辑至关重要。通过 `--enable-symbols` 选项，可以将调试符号包含在构建的二进制文件中，方便逆向工程师使用调试器进行分析。
+* **构建共享库：** Frida 的核心功能是代码注入和拦截，这通常通过共享库来实现。`--enable-shared` 选项允许构建共享库版本的 Frida Python 绑定，使其能够被注入到目标进程中进行动态分析。
+
+**涉及二进制底层、Linux、Android 内核及框架的知识及举例：**
+
+这个脚本虽然是 Python 代码，但其目的是配置一个底层的编译过程，因此涉及到不少底层知识：
+
+* **二进制构建：** 脚本最终目的是生成可执行的二进制文件或共享库。它需要处理编译、链接等底层操作。
+* **Linux 系统：**
+    * **工具链：** 脚本需要检测和下载适用于 Linux 的工具链（例如 GCC、Clang）。
+    * **库依赖：**  Frida 依赖于一些系统库，脚本需要配置 Meson 以正确链接这些库。
+    * **文件路径：** 脚本处理各种文件路径，这些路径在 Linux 文件系统中具有特定的含义。
+* **Android 系统：**
+    * **Android SDK：** 当配置目标平台为 Android 时，脚本需要检测和下载 Android SDK，其中包含了编译 Android 代码所需的工具和库。
+    * **交叉编译：**  构建在 Linux 上运行，但目标是 Android 设备上的 Frida Python 绑定，这就是交叉编译。脚本需要配置交叉编译工具链。
+    * **ABI (Application Binary Interface)：** Android 设备有不同的 CPU 架构 (例如 ARM, ARM64)，脚本需要根据目标设备的 ABI 配置构建过程。
+* **内核知识 (间接涉及)：** 虽然脚本本身不直接操作内核，但 Frida 的核心功能是与目标进程交互，这在底层涉及到操作系统内核的机制，例如进程间通信、内存管理等。脚本配置的 Frida 构建需要能够与这些内核机制进行交互。
+
+**逻辑推理的假设输入与输出举例：**
+
+假设用户执行以下命令：
+
+```bash
+python releng/meson_configure.py .. --prefix=/opt/frida --host=android --enable-shared
+```
+
+**假设输入：**
+
+* `sourcedir`:  父目录的路径 (由 `..` 提供)
+* `--prefix`: `/opt/frida`
+* `--host`:  `android` (会被 `MachineSpec.parse` 解析为 Android 平台的配置)
+* `--enable-shared`: `True`
+
+**逻辑推理过程：**
+
+1. **解析参数：** `argparse` 会将这些参数解析为相应的变量。
+2. **检测环境：** 脚本会检测当前运行的操作系统，并尝试获取环境变量。
+3. **处理 `--host`：** `MachineSpec.parse("android")` 会创建一个表示 Android 平台的 `MachineSpec` 对象，其中包含 Android 的架构、操作系统等信息。
+4. **依赖管理：** 由于指定了 `--host=android`，脚本会检查是否允许使用预构建的 Android 工具链和 SDK。如果允许且不存在，它会尝试下载。
+5. **生成配置文件：** 脚本会根据 Android 的 `MachineSpec` 生成 Meson 的交叉编译配置文件，指定使用 Android 的编译器、链接器等。
+6. **调用 Meson：**  使用生成的配置文件调用 Meson 的 `setup` 命令，配置构建环境，指定安装路径为 `/opt/frida`，并构建共享库。
+
+**假设输出：**
+
+* 在构建目录下生成了 Meson 的构建文件 (例如 `build.ninja`)。
+* 生成了针对 Android 平台的 Meson 配置文件 (`native-file` 和 `cross-file`)。
+* `frida-env.dat` 文件中包含了针对 Android 平台的构建配置信息。
+* 后续的构建命令 (例如 `ninja`) 将会编译出可以在 Android 设备上运行的 Frida Python 绑定共享库。
+
+**用户或编程常见的使用错误及举例：**
+
+1. **拼写错误的选项：** 例如，用户可能错误地输入 `--enable-shred` 而不是 `--enable-shared`。`argparse` 会报错提示未知的选项。
+2. **缺少必要的依赖：** 如果用户没有安装必要的系统依赖（例如构建工具），Meson 在配置过程中可能会报错。
+3. **网络问题导致无法下载预构建依赖：** 如果用户网络连接不稳定或防火墙阻止了下载，脚本可能会抛出 `ToolchainNotFoundError` 或 `SDKNotFoundError` 异常。
+4. **交叉编译时未配置正确的环境：**  在进行 Android 交叉编译时，用户可能没有设置正确的 Android SDK 环境变量，导致脚本无法找到必要的工具。
+5. **在已配置的目录下重新配置：** 如果用户在已经配置过的构建目录下再次运行配置脚本，脚本会检测到 `build.ninja` 文件已存在，并提示用户清理构建目录。
+
+**用户操作如何一步步到达这里作为调试线索：**
+
+当用户在构建 Frida Python 绑定时遇到问题，他们通常会执行以下步骤，最终可能会追踪到 `meson_configure.py`：
+
+1. **克隆 Frida 代码仓库：** 用户首先会从 GitHub 或其他来源克隆 Frida 的源代码。
+2. **进入 `frida-python` 目录：** 用户会导航到 `frida/frida-python` 目录，因为他们想要构建 Python 绑定。
+3. **查看构建文档或尝试构建：** 用户会查找 Frida 的构建文档，或者直接尝试运行构建命令，例如 `python setup.py install`。
+4. **`setup.py` 调用 `meson_configure.py`：** `frida-python` 的 `setup.py` 文件会调用 `releng/meson_configure.py` 脚本来配置构建环境。这通常是构建过程的第一步。
+5. **查看配置输出或错误信息：** 用户会查看 `meson_configure.py` 的输出信息，了解配置过程是否成功。如果出现错误，错误信息可能会指向 `meson_configure.py` 中的特定问题，例如无法找到依赖、参数错误等。
+6. **检查 `meson_configure.py` 的代码：** 如果错误信息不够明确，或者用户想要深入了解构建过程，他们可能会查看 `meson_configure.py` 的源代码，分析其逻辑和参数处理方式，以找出问题所在。
+
+因此，当遇到构建问题时，`meson_configure.py` 是一个关键的入口点，通过分析其代码和执行日志，可以帮助开发者和用户理解构建过程，并诊断可能出现的问题。
+
+Prompt: 
+```
+这是目录为frida/subprojects/frida-python/releng/meson_configure.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
+如果它与逆向的方法有关系，请做出对应的举例说明，
+如果涉及到二进制底层，linux, android内核及框架的知识，请做出对应的举例说明，
+如果做了逻辑推理，请给出假设输入与输出,
+如果涉及用户或者编程常见的使用错误，请举例说明,
+说明用户操作是如何一步步的到达这里，作为调试线索。
+
+"""
+import argparse
+import os
+from pathlib import Path
+import pickle
+import platform
+import re
+import shlex
+import shutil
+import subprocess
+import sys
+from typing import Any, Callable, Optional
+
+RELENG_DIR = Path(__file__).resolve().parent
+SCRIPTS_DIR = RELENG_DIR / "meson-scripts"
+
+sys.path.insert(0, str(RELENG_DIR / "meson"))
+import mesonbuild.interpreter
+from mesonbuild.coredata import UserArrayOption, UserBooleanOption, \
+        UserComboOption, UserFeatureOption, UserOption, UserStringOption
+
+from . import deps, env
+from .machine_spec import MachineSpec
+from .progress import ProgressCallback, print_progress
+
+
+def main():
+    default_sourcedir = Path(sys.argv.pop(1))
+    sourcedir = Path(os.environ.get("MESON_SOURCE_ROOT", default_sourcedir)).resolve()
+
+    workdir = Path(os.getcwd())
+    if workdir == sourcedir:
+        default_builddir = sourcedir / "build"
+    else:
+        default_builddir = workdir
+    builddir = Path(os.environ.get("MESON_BUILD_ROOT", default_builddir)).resolve()
+
+    parser = argparse.ArgumentParser(prog="configure",
+                                     add_help=False)
+    opts = parser.add_argument_group(title="generic options")
+    opts.add_argument("-h", "--help",
+                      help="show this help message and exit",
+                      action="help")
+    opts.add_argument("--prefix",
+                      help="install files in PREFIX",
+                      metavar="PREFIX",
+                      type=parse_prefix)
+    opts.add_argument("--build",
+                      help="configure for building on BUILD",
+                      metavar="BUILD",
+                      type=MachineSpec.parse)
+    opts.add_argument("--host",
+                      help="cross-compile to build binaries to run on HOST",
+                      metavar="HOST",
+                      type=MachineSpec.parse)
+    opts.add_argument("--enable-symbols",
+                      help="build binaries with debug symbols included (default: disabled)",
+                      action="store_true")
+    opts.add_argument("--enable-shared",
+                      help="enable building shared libraries (default: disabled)",
+                      action="store_true")
+    opts.add_argument("--with-meson",
+                      help="which Meson implementation to use (default: internal)",
+                      choices=["internal", "system"],
+                      dest="meson",
+                      default="internal")
+    opts.add_argument(f"--without-prebuilds",
+                      help="do not make use of prebuilt bundles",
+                      metavar="{" + ",".join(query_supported_bundle_types(include_wildcards=True)) + "}",
+                      type=parse_bundle_type_set,
+                      default=set())
+    opts.add_argument("extra_meson_options",
+                      nargs="*",
+                      help=argparse.SUPPRESS)
+
+    meson_options_file = sourcedir / "meson.options"
+    if not meson_options_file.exists():
+        meson_options_file = sourcedir / "meson_options.txt"
+    if meson_options_file.exists():
+        meson_group = parser.add_argument_group(title="project-specific options")
+        meson_opts = register_meson_options(meson_options_file, meson_group)
+
+    options = parser.parse_args()
+
+    if builddir.exists():
+        if (builddir / "build.ninja").exists():
+            print(f"Already configured. Wipe .{os.sep}{builddir.relative_to(workdir)} to reconfigure.",
+                  file=sys.stderr)
+            sys.exit(1)
+
+    default_library = "shared" if options.enable_shared else "static"
+
+    allowed_prebuilds = set(query_supported_bundle_types(include_wildcards=False)) - options.without_prebuilds
+
+    try:
+        configure(sourcedir,
+                  builddir,
+                  options.prefix,
+                  options.build,
+                  options.host,
+                  os.environ,
+                  "included" if options.enable_symbols else "stripped",
+                  default_library,
+                  allowed_prebuilds,
+                  options.meson,
+                  collect_meson_options(options))
+    except Exception as e:
+        print(e, file=sys.stderr)
+        if isinstance(e, subprocess.CalledProcessError):
+            for label, data in [("Output", e.output),
+                                ("Stderr", e.stderr)]:
+                if data:
+                    print(f"{label}:\n\t| " + "\n\t| ".join(data.strip().split("\n")), file=sys.stderr)
+        sys.exit(1)
+
+
+def configure(sourcedir: Path,
+              builddir: Path,
+              prefix: Optional[str] = None,
+              build_machine: Optional[MachineSpec] = None,
+              host_machine: Optional[MachineSpec] = None,
+              environ: dict[str, str] = os.environ,
+              debug_symbols: str = "stripped",
+              default_library: str = "static",
+              allowed_prebuilds: set[str] = None,
+              meson: str = "internal",
+              extra_meson_options: list[str] = [],
+              call_meson: Callable = env.call_meson,
+              on_progress: ProgressCallback = print_progress):
+    if prefix is None:
+        prefix = env.detect_default_prefix()
+
+    project_vscrt = detect_project_vscrt(sourcedir)
+
+    if build_machine is None:
+        build_machine = MachineSpec.make_from_local_system()
+    build_machine = build_machine.default_missing(recommended_vscrt=project_vscrt)
+
+    if host_machine is None:
+        host_machine = build_machine
+    else:
+        host_machine = host_machine.default_missing(recommended_vscrt=project_vscrt)
+
+    if host_machine.os == "windows":
+        vs_arch = environ.get("VSCMD_ARG_TGT_ARCH")
+        if vs_arch == "x86":
+            host_machine = host_machine.evolve(arch=vs_arch)
+
+    build_machine = build_machine.maybe_adapt_to_host(host_machine)
+
+    if allowed_prebuilds is None:
+        allowed_prebuilds = set(query_supported_bundle_types(include_wildcards=False))
+
+    call_selected_meson = lambda argv, *args, **kwargs: call_meson(argv,
+                                                                   use_submodule=meson == "internal",
+                                                                   *args,
+                                                                   **kwargs)
+
+    meson_options = [
+        f"-Dprefix={prefix}",
+        f"-Ddefault_library={default_library}",
+        *host_machine.meson_optimization_options,
+    ]
+    if debug_symbols == "stripped" and host_machine.toolchain_can_strip:
+        meson_options += ["-Dstrip=true"]
+
+    deps_dir = deps.detect_cache_dir(sourcedir)
+
+    allow_prebuilt_toolchain = "toolchain" in allowed_prebuilds
+    if allow_prebuilt_toolchain:
+        try:
+            toolchain_prefix, _ = deps.ensure_toolchain(build_machine, deps_dir, on_progress=on_progress)
+        except deps.BundleNotFoundError as e:
+            raise_toolchain_not_found(e)
+    else:
+        if project_depends_on_vala_compiler(sourcedir):
+            toolchain_prefix = deps.query_toolchain_prefix(build_machine, deps_dir)
+            vala_compiler = env.detect_toolchain_vala_compiler(toolchain_prefix, build_machine)
+            if vala_compiler is None:
+                build_vala_compiler(toolchain_prefix, deps_dir, call_selected_meson)
+        else:
+            toolchain_prefix = None
+
+    is_cross_build = host_machine != build_machine
+
+    build_sdk_prefix = None
+    required = {"sdk:build"}
+    if not is_cross_build:
+        required.add("sdk:host")
+    if allowed_prebuilds.issuperset(required):
+        try:
+            build_sdk_prefix, _ = deps.ensure_sdk(build_machine, deps_dir, on_progress=on_progress)
+        except deps.BundleNotFoundError as e:
+            raise_sdk_not_found(e, "build", build_machine)
+
+    host_sdk_prefix = None
+    if is_cross_build and "sdk:host" in allowed_prebuilds:
+        try:
+            host_sdk_prefix, _ = deps.ensure_sdk(host_machine, deps_dir, on_progress=on_progress)
+        except deps.BundleNotFoundError as e:
+            raise_sdk_not_found(e, "host", host_machine)
+
+    build_config, host_config = \
+            env.generate_machine_configs(build_machine,
+                                         host_machine,
+                                         environ,
+                                         toolchain_prefix,
+                                         build_sdk_prefix,
+                                         host_sdk_prefix,
+                                         call_selected_meson,
+                                         default_library,
+                                         builddir)
+
+    meson_options += [f"--native-file={build_config.machine_file}"]
+    if host_config is not build_config:
+        meson_options += [f"--cross-file={host_config.machine_file}"]
+
+    setup_env = host_config.make_merged_environment(environ)
+    setup_env["FRIDA_ALLOWED_PREBUILDS"] = ",".join(allowed_prebuilds)
+
+    call_selected_meson(["setup"] + meson_options + extra_meson_options + [builddir],
+                        cwd=sourcedir,
+                        env=setup_env,
+                        check=True)
+
+    shutil.copy(SCRIPTS_DIR / "BSDmakefile", builddir)
+    (builddir / "Makefile").write_text(generate_out_of_tree_makefile(sourcedir), encoding="utf-8")
+    if platform.system() == "Windows":
+        (builddir / "make.bat").write_text(generate_out_of_tree_make_bat(sourcedir), encoding="utf-8")
+
+    (builddir / "frida-env.dat").write_bytes(pickle.dumps({
+        "meson": meson,
+        "build": build_config,
+        "host": host_config if host_config is not build_config else None,
+        "allowed_prebuilds": allowed_prebuilds,
+        "deps": deps_dir,
+    }))
+
+
+def parse_prefix(raw_prefix: str) -> Path:
+    prefix = Path(raw_prefix)
+    if not prefix.is_absolute():
+        prefix = Path(os.getcwd()) / prefix
+    return prefix
+
+
+def query_supported_bundle_types(include_wildcards: bool) -> list[str]:
+    for e in deps.Bundle:
+        identifier = e.name.lower()
+        if e == deps.Bundle.SDK:
+            if include_wildcards:
+                yield identifier
+            yield identifier + ":build"
+            yield identifier + ":host"
+        else:
+            yield identifier
+
+
+def query_supported_bundle_type_values() -> list[deps.Bundle]:
+    return [e for e in deps.Bundle]
+
+
+def parse_bundle_type_set(raw_array: str) -> list[str]:
+    supported_types = list(query_supported_bundle_types(include_wildcards=True))
+    result = set()
+    for element in raw_array.split(","):
+        bundle_type = element.strip()
+        if bundle_type not in supported_types:
+            pretty_choices = "', '".join(supported_types)
+            raise argparse.ArgumentTypeError(f"invalid bundle type: '{bundle_type}' (choose from '{pretty_choices}')")
+        if bundle_type == "sdk":
+            result.add("sdk:build")
+            result.add("sdk:host")
+        else:
+            result.add(bundle_type)
+    return result
+
+
+def raise_toolchain_not_found(e: Exception):
+    raise ToolchainNotFoundError("\n".join([
+        f"Unable to download toolchain: {e}",
+        "",
+        "Specify --without-prebuilds=toolchain to only use tools on your PATH.",
+        "",
+        "Another option is to do what Frida's CI does:",
+        "",
+        "    ./releng/deps.py build --bundle=toolchain",
+        "",
+        "This produces a tarball in ./deps which gets picked up if you retry `./configure`.",
+        "You may also want to make a backup of it for future reuse.",
+    ]))
+
+
+def raise_sdk_not_found(e: Exception, kind: str, machine: MachineSpec):
+    raise SDKNotFoundError("\n".join([
+        f"Unable to download SDK: {e}",
+        "",
+        f"Specify --without-prebuilds=sdk:{kind} to build dependencies from source code.",
+        "",
+        "Another option is to do what Frida's CI does:",
+        "",
+        f"    ./releng/deps.py build --bundle=sdk --host={machine.identifier}",
+        "",
+        "This produces a tarball in ./deps which gets picked up if you retry `./configure`.",
+        "You may also want to make a backup of it for future reuse.",
+    ]))
+
+
+def generate_out_of_tree_makefile(sourcedir: Path) -> str:
+    m = ((SCRIPTS_DIR / "Makefile").read_text(encoding="utf-8")
+            .replace("sys.argv[1]", "r'" + str(RELENG_DIR.parent) + "'")
+            .replace('"$(shell pwd)"', shlex.quote(str(sourcedir)))
+            .replace("./build", "."))
+    return re.sub(r"git-submodules:.+?(?=\.PHONY:)", "", m, flags=re.MULTILINE | re.DOTALL)
+
+
+def generate_out_of_tree_make_bat(sourcedir: Path) -> str:
+    m = ((SCRIPTS_DIR / "make.bat").read_text(encoding="utf-8")
+            .replace("sys.argv[1]", "r'" + str(RELENG_DIR.parent) + "'")
+            .replace('"%dp0%"', '"' + str(sourcedir) + '"')
+            .replace('.\\build', "\"%dp0%\""))
+    return re.sub(r"if not exist .+?(?=endlocal)", "", m, flags=re.MULTILINE | re.DOTALL)
+
+
+def register_meson_options(meson_option_file: Path, group: argparse._ArgumentGroup):
+    interpreter = mesonbuild.optinterpreter.OptionInterpreter(subproject="")
+    interpreter.process(meson_option_file)
+
+    for key, opt in interpreter.options.items():
+        name = key.name
+        pretty_name = name.replace("_", "-")
+
+        if isinstance(opt, UserFeatureOption):
+            if opt.value != "enabled":
+                action = "enable"
+                value_to_set = "enabled"
+            else:
+                action = "disable"
+                value_to_set = "disabled"
+            group.add_argument(f"--{action}-{pretty_name}",
+                               action="append_const",
+                               const=f"-D{name}={value_to_set}",
+                               dest="main_meson_options",
+                               **parse_option_meta(name, action, opt))
+            if opt.value == "auto":
+                group.add_argument(f"--disable-{pretty_name}",
+                                   action="append_const",
+                                   const=f"-D{name}=disabled",
+                                   dest="main_meson_options",
+                                   **parse_option_meta(name, "disable", opt))
+        elif isinstance(opt, UserBooleanOption):
+            if not opt.value:
+                action = "enable"
+                value_to_set = "true"
+            else:
+                action = "disable"
+                value_to_set = "false"
+            group.add_argument(f"--{action}-{pretty_name}",
+                               action="append_const",
+                               const=f"-D{name}={value_to_set}",
+                               dest="main_meson_options",
+                               **parse_option_meta(name, action, opt))
+        elif isinstance(opt, UserComboOption):
+            group.add_argument(f"--with-{pretty_name}",
+                               choices=opt.choices,
+                               dest="meson_option:" + name,
+                               **parse_option_meta(name, "with", opt))
+        elif isinstance(opt, UserArrayOption):
+            group.add_argument(f"--with-{pretty_name}",
+                               dest="meson_option:" + name,
+                               type=make_array_option_value_parser(opt),
+                               **parse_option_meta(name, "with", opt))
+        else:
+            group.add_argument(f"--with-{pretty_name}",
+                               dest="meson_option:" + name,
+                               **parse_option_meta(name, "with", opt))
+
+
+def parse_option_meta(name: str,
+                      action: str,
+                      opt: UserOption[Any]):
+    params = {}
+
+    if isinstance(opt, UserStringOption):
+        default_value = repr(opt.value)
+        metavar = name.upper()
+    elif isinstance(opt, UserArrayOption):
+        default_value = ",".join(opt.value)
+        metavar = "{" + ",".join(opt.choices) + "}"
+    elif isinstance(opt, UserComboOption):
+        default_value = opt.value
+        metavar = "{" + "|".join(opt.choices) + "}"
+    else:
+        default_value = str(opt.value).lower()
+        metavar = name.upper()
+
+    if not (isinstance(opt, UserFeatureOption) \
+            and opt.value == "auto" \
+            and action == "disable"):
+        text = f"{help_text_from_meson(opt.description)} (default: {default_value})"
+        if action == "disable":
+            text = "do not " + text
+        params["help"] = text
+    params["metavar"] = metavar
+
+    return params
+
+
+def help_text_from_meson(description: str) -> str:
+    if description:
+        return description[0].lower() + description[1:]
+    return description
+
+
+def collect_meson_options(options: argparse.Namespace) -> list[str]:
+    result = []
+
+    for raw_name, raw_val in vars(options).items():
+        if raw_val is None:
+            continue
+        if raw_name == "main_meson_options":
+            result += raw_val
+        if raw_name.startswith("meson_option:"):
+            name = raw_name[13:]
+            val = raw_val if isinstance(raw_val, str) else ",".join(raw_val)
+            result += [f"-D{name}={val}"]
+
+    result += options.extra_meson_options
+
+    return result
+
+
+def make_array_option_value_parser(opt: UserOption[Any]) -> Callable[[str], list[str]]:
+    return lambda v: parse_array_option_value(v, opt)
+
+
+def parse_array_option_value(v: str, opt: UserArrayOption) -> list[str]:
+    vals = [v.strip() for v in v.split(",")]
+
+    choices = opt.choices
+    for v in vals:
+        if v not in choices:
+            pretty_choices = "', '".join(choices)
+            raise argparse.ArgumentTypeError(f"invalid array value: '{v}' (choose from '{pretty_choices}')")
+
+    return vals
+
+
+def detect_project_vscrt(sourcedir: Path) -> Optional[str]:
+    m = next(re.finditer(r"project\(([^)]+\))", read_meson_build(sourcedir)), None)
+    if m is not None:
+        project_args = m.group(1)
+        m = next(re.finditer("'b_vscrt=([^']+)'", project_args), None)
+        if m is not None:
+            return m.group(1)
+    return None
+
+
+def project_depends_on_vala_compiler(sourcedir: Path) -> bool:
+    return "'vala'" in read_meson_build(sourcedir)
+
+
+def read_meson_build(sourcedir: Path) -> str:
+    return (sourcedir / "meson.build").read_text(encoding="utf-8")
+
+
+def build_vala_compiler(toolchain_prefix: Path, deps_dir: Path, call_selected_meson: Callable):
+    print("Building Vala compiler...", flush=True)
+
+    workdir = deps_dir / "src"
+    workdir.mkdir(parents=True, exist_ok=True)
+
+    git = lambda *args, **kwargs: subprocess.run(["git", *args],
+                                                 **kwargs,
+                                                 capture_output=True,
+                                                 encoding="utf-8")
+    vala_checkout = workdir / "vala"
+    if vala_checkout.exists():
+        shutil.rmtree(vala_checkout)
+    vala_pkg = deps.load_dependency_parameters().packages["vala"]
+    deps.clone_shallow(vala_pkg, vala_checkout, git)
+
+    run_kwargs = {
+        "stdout": subprocess.PIPE,
+        "stderr": subprocess.STDOUT,
+        "encoding": "utf-8",
+        "check": True,
+    }
+    call_selected_meson([
+                            "setup",
+                            f"--prefix={toolchain_prefix}",
+                            "-Doptimization=2",
+                            "build",
+                        ],
+                        cwd=vala_checkout,
+                        **run_kwargs)
+    call_selected_meson(["install"],
+                        cwd=vala_checkout / "build",
+                        **run_kwargs)
+
+
+class ToolchainNotFoundError(Exception):
+    pass
+
+
+class SDKNotFoundError(Exception):
+    pass
+
+"""
+
+```
