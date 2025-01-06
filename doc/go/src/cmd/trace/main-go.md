@@ -1,0 +1,630 @@
+Response: Let's break down the thought process for analyzing the provided Go code.
+
+**1. Understanding the Goal:**
+
+The request asks for a functional breakdown of the `main.go` file in the `go/src/cmd/trace` directory. It specifically asks about its purpose, how it's used, and potential pitfalls. The key is recognizing this is the implementation of the `go tool trace` command.
+
+**2. Initial Code Scan - Identifying Key Areas:**
+
+I'd start by quickly scanning the imports and the `main` function. This gives a high-level overview:
+
+* **Imports:**  `cmd/internal/browser`, `cmd/internal/telemetry/counter`, `flag`, `fmt`, `internal/trace`, `net/http`, `os`, etc. These immediately suggest this tool interacts with the file system, potentially the network (for a web UI), and parses trace data. The presence of `flag` indicates command-line arguments are involved. `internal/trace` is a strong clue about its core functionality.
+* **`main` Function Structure:**  I'd look for the overall flow:
+    * Flag parsing (`flag.Parse()`).
+    * Opening the trace file.
+    * Conditional logic based on flags (`-pprof`, `-d`).
+    * Setting up an HTTP server.
+    * Handling different HTTP routes.
+
+**3. Deeper Dive into Functionality - Connecting the Dots:**
+
+Now, I'd go through the `main` function step by step, paying attention to what each section does.
+
+* **Flag Handling:** The `flag` package is used to define and parse command-line arguments. The `usageMessage` constant provides important context. I'd list the available flags and their meanings.
+* **Trace File Handling:** The code opens the trace file specified in the arguments. It handles cases where the binary file is also provided (for older Go versions). This is an important distinction to note.
+* **Pprof Generation (`-pprof`):** This section stands out. It parses the trace data and then calls different `pprofByGoroutine` functions based on the `-pprof` value. This clearly indicates the tool can generate pprof-like profiles. I'd list the supported profile types.
+* **Debug Flags (`-d`):** This offers different debugging options related to the trace data. I'd list these modes.
+* **HTTP Server Setup:** This is a significant part. The code listens on a specified address and sets up various HTTP handlers. This strongly suggests the tool provides a web-based interface for visualizing the trace.
+* **HTTP Handlers:** I'd go through each handler and try to understand its purpose based on the URL path and the function name (e.g., `/`, `/trace`, `/goroutines`, `/mmu`, `/io`, etc.). This reveals the different visualizations and data the tool provides. The inclusion of `traceviewer` package suggests it leverages existing components for this.
+* **`parseTrace` and `parseTraceInteractive`:** These functions are crucial. They read and parse the trace data from the file. The "interactive" version suggests it provides progress updates.
+* **`splitTrace`:** This hints at handling large trace files by splitting them into smaller chunks for the viewer.
+* **`debugProcessedEvents`, `debugRawEvents`, `debugEventsFootprint`:**  These are utility functions for inspecting the trace data in different forms.
+
+**4. Identifying the Core Go Functionality:**
+
+Based on the analysis, it's clear the tool's core function is processing and visualizing Go execution traces. This is enabled by the `runtime/trace` package (implicitly used via `internal/trace`).
+
+**5. Providing Examples and Explanations:**
+
+Now, I'd construct examples based on the identified functionalities.
+
+* **Basic Usage:**  Demonstrate opening the trace viewer.
+* **Pprof Generation:** Show how to generate different pprof profiles.
+* **Older Go Versions:** Illustrate the need for the binary argument in older versions.
+
+For each functionality, I'd explain the purpose and how to use it.
+
+**6. Identifying Potential Pitfalls:**
+
+This requires thinking about common mistakes users might make.
+
+* **Forgetting the binary argument:**  This is a clear issue for older Go versions.
+* **Large trace files and browser performance:**  The code itself acknowledges this by splitting the trace.
+* **Browser compatibility:** The documentation mentions Chrome/Chromium as the primarily tested browser.
+* **Understanding the different pprof types:** Users might not know which profile is relevant for their analysis.
+
+**7. Structuring the Answer:**
+
+Finally, I'd organize the information logically:
+
+* **Overall Functionality:** Start with a concise summary.
+* **Core Go Feature:** Clearly state the underlying Go feature.
+* **Code Examples:** Provide practical usage demonstrations.
+* **Command-Line Arguments:** Detail the flags and their effects.
+* **Potential Pitfalls:**  Highlight common errors.
+
+**Self-Correction/Refinement:**
+
+During the process, I might notice areas that need clarification. For example, I might initially just say "parses the trace file."  Then, I'd refine it to "parses the trace file generated by the `go test -trace` flag," making it more specific. Similarly, I might initially overlook the distinction between Go 1.7+ and older versions regarding the binary argument and would need to add that detail. The iterative process of reading the code, understanding its purpose, and then articulating it is key. Looking at the imports and the structure of the `main` function are good starting points.
+这段代码是 Go 语言 `go tool trace` 命令的 `main` 函数实现。它的主要功能是**分析和可视化 Go 程序的运行时跟踪数据 (execution trace)**。
+
+更具体地说，它实现了以下功能：
+
+1. **打开和解析跟踪文件:**  读取由 `go test -trace=trace.out` 或其他生成跟踪数据的工具创建的 `.out` 格式的跟踪文件。
+2. **启动 HTTP 服务器:** 在本地启动一个 HTTP 服务器，默认地址是 `localhost:0` (会自动分配一个空闲端口)。
+3. **提供 Web 界面:**  通过 HTTP 服务器提供一个 Web 界面，用户可以在浏览器中打开这个界面来查看和分析跟踪数据。
+4. **可视化跟踪数据:** Web 界面会展示各种图表和信息，帮助用户理解程序的执行过程，例如：
+    * **时间轴视图:**  显示 Goroutine 的执行、阻塞、创建和销毁等事件的时间线。
+    * **Goroutine 详情:**  查看特定 Goroutine 的事件序列和状态。
+    * **内存分配 (MMU) 信息:**  分析内存分配和垃圾回收行为。
+    * **用户自定义 Region 和 Task:**  如果程序中使用了 `runtime/trace` 包提供的用户自定义 Region 和 Task 功能，可以在这里查看。
+5. **生成 pprof 类型的性能分析数据:**  支持将跟踪数据转换为类似 pprof 工具输出的格式，用于分析特定的性能问题，例如网络阻塞、同步阻塞、系统调用阻塞和调度延迟。
+6. **提供调试信息:**  允许用户打印原始的跟踪事件、解析后的事件或事件的内存占用情况，用于调试跟踪工具本身。
+
+**它是什么 Go 语言功能的实现：**
+
+`go tool trace` 主要是对 Go 语言的 **运行时跟踪 (runtime tracing)** 功能的实现。Go 语言的 `runtime/trace` 包提供了用于生成和分析程序运行时事件的 API。开发者可以在代码中插入特定的事件点，或者利用 Go 运行时自动生成的事件，然后使用 `go tool trace` 来查看这些事件，从而了解程序的行为。
+
+**Go 代码举例说明 (用户自定义 Region):**
+
+假设你的 Go 程序中使用了 `runtime/trace` 包的用户自定义 Region 功能，用于标记一段重要的代码逻辑：
+
+```go
+package main
+
+import (
+	"fmt"
+	"runtime/trace"
+	"time"
+)
+
+func main() {
+	f, err := trace.Create("trace.out")
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+	trace.Start(f)
+	defer trace.Stop()
+
+	trace.WithRegion(nil, "importantOperation", func() {
+		fmt.Println("Doing something important...")
+		time.Sleep(100 * time.Millisecond)
+		fmt.Println("Done with important operation.")
+	})
+
+	fmt.Println("Program finished.")
+}
+```
+
+**假设输入与输出:**
+
+1. **输入:** 运行上述代码，会生成一个名为 `trace.out` 的跟踪文件。
+2. **输出:**
+   * 命令行输出：
+     ```
+     Doing something important...
+     Done with important operation.
+     Program finished.
+     ```
+   * `trace.out` 文件：包含程序的运行时跟踪数据，包括 "importantOperation" 这个 Region 的开始和结束事件。
+
+现在，你可以使用 `go tool trace trace.out` 命令来打开 Web 界面查看这个跟踪数据。在 Web 界面中，你可以在 "User Regions" 或时间轴视图中看到名为 "importantOperation" 的 Region，并了解它的执行时间和持续时间。
+
+**命令行参数的具体处理:**
+
+`go tool trace` 命令接受以下命令行参数：
+
+* **`[pkg.test]` (可选):**  对于 Go 1.6 及以下版本生成的跟踪文件，需要指定生成跟踪文件的测试二进制文件。Go 1.7 及以上版本生成的跟踪文件不需要这个参数，因为符号信息已经嵌入在跟踪文件中。
+* **`trace.out`:**  要分析的跟踪文件的路径。
+* **`-http=addr`:**  指定 HTTP 服务器监听的地址。例如 `-http=:8080` 将服务器绑定到所有网络接口的 8080 端口。默认值是 `localhost:0`，表示监听本地地址的任意空闲端口。
+* **`-pprof=type`:**  指定要生成的 pprof 类型的性能分析数据。可选的值有：
+    * `net`:  网络阻塞分析。
+    * `sync`:  同步阻塞分析（例如互斥锁、通道等待）。
+    * `syscall`: 系统调用阻塞分析。
+    * `sched`: 调度延迟分析。
+    例如，`go tool trace -pprof=sync trace.out` 会将同步阻塞的分析结果输出到标准输出。
+* **`-d=mode`:**  用于打印调试信息并退出。可选的值有：
+    * `wire`: 打印原始的跟踪事件数据。
+    * `parsed`: 打印解析后的跟踪事件。
+    * `footprint`: 打印各种事件类型的数量和内存占用情况。
+
+**使用者易犯错的点:**
+
+* **忘记指定二进制文件 (针对旧版本 Go):**  对于 Go 1.6 及以下版本生成的跟踪文件，如果忘记在命令行中提供生成该跟踪文件的测试二进制文件，`go tool trace` 将无法正确解析符号信息，导致 Web 界面显示的信息不完整或不准确。
+    * **错误示例:**  假设你使用 Go 1.5 生成了 `trace.out`，然后直接运行 `go tool trace trace.out`，可能会遇到问题。
+    * **正确示例:**  应该运行 `go tool trace your_package.test trace.out`，其中 `your_package.test` 是你的测试二进制文件。
+
+* **处理大型跟踪文件时的浏览器性能问题:**  `go tool trace` 的 Web 界面依赖于浏览器渲染大量的事件数据。对于非常大的跟踪文件，可能会导致浏览器卡顿甚至崩溃。代码中已经意识到了这个问题，并尝试将跟踪数据分割成较小的范围来加载，但这仍然可能是一个问题。
+
+总而言之，`go tool trace` 是一个强大且重要的工具，用于理解 Go 程序的运行时行为和性能瓶颈。通过可视化跟踪数据和生成 pprof 类型的分析报告，它可以帮助开发者更有效地调试和优化 Go 代码。
+
+Prompt: 
+```
+这是路径为go/src/cmd/trace/main.go的go语言实现的一部分， 请列举一下它的功能, 　
+如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
+如果涉及代码推理，需要带上假设的输入与输出，
+如果涉及命令行参数的具体处理，请详细介绍一下，
+如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+
+"""
+// Copyright 2014 The Go Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+package main
+
+import (
+	"cmd/internal/browser"
+	"cmd/internal/telemetry/counter"
+	"cmp"
+	"flag"
+	"fmt"
+	"internal/trace"
+	"internal/trace/event"
+	"internal/trace/raw"
+	"internal/trace/traceviewer"
+	"io"
+	"log"
+	"net"
+	"net/http"
+	_ "net/http/pprof" // Required to use pprof
+	"os"
+	"slices"
+	"sync/atomic"
+	"text/tabwriter"
+	"time"
+)
+
+const usageMessage = "" +
+	`Usage of 'go tool trace':
+Given a trace file produced by 'go test':
+	go test -trace=trace.out pkg
+
+Open a web browser displaying trace:
+	go tool trace [flags] [pkg.test] trace.out
+
+Generate a pprof-like profile from the trace:
+    go tool trace -pprof=TYPE [pkg.test] trace.out
+
+[pkg.test] argument is required for traces produced by Go 1.6 and below.
+Go 1.7 does not require the binary argument.
+
+Supported profile types are:
+    - net: network blocking profile
+    - sync: synchronization blocking profile
+    - syscall: syscall blocking profile
+    - sched: scheduler latency profile
+
+Flags:
+	-http=addr: HTTP service address (e.g., ':6060')
+	-pprof=type: print a pprof-like profile instead
+	-d=mode: print debug info and exit (modes: wire, parsed, footprint)
+
+Note that while the various profiles available when launching
+'go tool trace' work on every browser, the trace viewer itself
+(the 'view trace' page) comes from the Chrome/Chromium project
+and is only actively tested on that browser.
+`
+
+var (
+	httpFlag  = flag.String("http", "localhost:0", "HTTP service address (e.g., ':6060')")
+	pprofFlag = flag.String("pprof", "", "print a pprof-like profile instead")
+	debugFlag = flag.String("d", "", "print debug info and exit (modes: wire, parsed, footprint)")
+
+	// The binary file name, left here for serveSVGProfile.
+	programBinary string
+	traceFile     string
+)
+
+func main() {
+	counter.Open()
+	flag.Usage = func() {
+		fmt.Fprint(os.Stderr, usageMessage)
+		os.Exit(2)
+	}
+	flag.Parse()
+	counter.Inc("trace/invocations")
+	counter.CountFlags("trace/flag:", *flag.CommandLine)
+
+	// Go 1.7 traces embed symbol info and does not require the binary.
+	// But we optionally accept binary as first arg for Go 1.5 traces.
+	switch flag.NArg() {
+	case 1:
+		traceFile = flag.Arg(0)
+	case 2:
+		programBinary = flag.Arg(0)
+		traceFile = flag.Arg(1)
+	default:
+		flag.Usage()
+	}
+
+	tracef, err := os.Open(traceFile)
+	if err != nil {
+		logAndDie(fmt.Errorf("failed to read trace file: %w", err))
+	}
+	defer tracef.Close()
+
+	// Get the size of the trace file.
+	fi, err := tracef.Stat()
+	if err != nil {
+		logAndDie(fmt.Errorf("failed to stat trace file: %v", err))
+	}
+	traceSize := fi.Size()
+
+	// Handle requests for profiles.
+	if *pprofFlag != "" {
+		parsed, err := parseTrace(tracef, traceSize)
+		if err != nil {
+			logAndDie(err)
+		}
+		var f traceviewer.ProfileFunc
+		switch *pprofFlag {
+		case "net":
+			f = pprofByGoroutine(computePprofIO(), parsed)
+		case "sync":
+			f = pprofByGoroutine(computePprofBlock(), parsed)
+		case "syscall":
+			f = pprofByGoroutine(computePprofSyscall(), parsed)
+		case "sched":
+			f = pprofByGoroutine(computePprofSched(), parsed)
+		default:
+			logAndDie(fmt.Errorf("unknown pprof type %s\n", *pprofFlag))
+		}
+		records, err := f(&http.Request{})
+		if err != nil {
+			logAndDie(fmt.Errorf("failed to generate pprof: %v\n", err))
+		}
+		if err := traceviewer.BuildProfile(records).Write(os.Stdout); err != nil {
+			logAndDie(fmt.Errorf("failed to generate pprof: %v\n", err))
+		}
+		logAndDie(nil)
+	}
+
+	// Debug flags.
+	if *debugFlag != "" {
+		switch *debugFlag {
+		case "parsed":
+			logAndDie(debugProcessedEvents(tracef))
+		case "wire":
+			logAndDie(debugRawEvents(tracef))
+		case "footprint":
+			logAndDie(debugEventsFootprint(tracef))
+		default:
+			logAndDie(fmt.Errorf("invalid debug mode %s, want one of: parsed, wire, footprint", *debugFlag))
+		}
+	}
+
+	ln, err := net.Listen("tcp", *httpFlag)
+	if err != nil {
+		logAndDie(fmt.Errorf("failed to create server socket: %w", err))
+	}
+	addr := "http://" + ln.Addr().String()
+
+	log.Print("Preparing trace for viewer...")
+	parsed, err := parseTraceInteractive(tracef, traceSize)
+	if err != nil {
+		logAndDie(err)
+	}
+	// N.B. tracef not needed after this point.
+	// We might double-close, but that's fine; we ignore the error.
+	tracef.Close()
+
+	// Print a nice message for a partial trace.
+	if parsed.err != nil {
+		log.Printf("Encountered error, but able to proceed. Error: %v", parsed.err)
+
+		lost := parsed.size - parsed.valid
+		pct := float64(lost) / float64(parsed.size) * 100
+		log.Printf("Lost %.2f%% of the latest trace data due to error (%s of %s)", pct, byteCount(lost), byteCount(parsed.size))
+	}
+
+	log.Print("Splitting trace for viewer...")
+	ranges, err := splitTrace(parsed)
+	if err != nil {
+		logAndDie(err)
+	}
+
+	log.Printf("Opening browser. Trace viewer is listening on %s", addr)
+	browser.Open(addr)
+
+	mutatorUtil := func(flags trace.UtilFlags) ([][]trace.MutatorUtil, error) {
+		return trace.MutatorUtilizationV2(parsed.events, flags), nil
+	}
+
+	mux := http.NewServeMux()
+
+	// Main endpoint.
+	mux.Handle("/", traceviewer.MainHandler([]traceviewer.View{
+		{Type: traceviewer.ViewProc, Ranges: ranges},
+		// N.B. Use the same ranges for threads. It takes a long time to compute
+		// the split a second time, but the makeup of the events are similar enough
+		// that this is still a good split.
+		{Type: traceviewer.ViewThread, Ranges: ranges},
+	}))
+
+	// Catapult handlers.
+	mux.Handle("/trace", traceviewer.TraceHandler())
+	mux.Handle("/jsontrace", JSONTraceHandler(parsed))
+	mux.Handle("/static/", traceviewer.StaticHandler())
+
+	// Goroutines handlers.
+	mux.HandleFunc("/goroutines", GoroutinesHandlerFunc(parsed.summary.Goroutines))
+	mux.HandleFunc("/goroutine", GoroutineHandler(parsed.summary.Goroutines))
+
+	// MMU handler.
+	mux.HandleFunc("/mmu", traceviewer.MMUHandlerFunc(ranges, mutatorUtil))
+
+	// Basic pprof endpoints.
+	mux.HandleFunc("/io", traceviewer.SVGProfileHandlerFunc(pprofByGoroutine(computePprofIO(), parsed)))
+	mux.HandleFunc("/block", traceviewer.SVGProfileHandlerFunc(pprofByGoroutine(computePprofBlock(), parsed)))
+	mux.HandleFunc("/syscall", traceviewer.SVGProfileHandlerFunc(pprofByGoroutine(computePprofSyscall(), parsed)))
+	mux.HandleFunc("/sched", traceviewer.SVGProfileHandlerFunc(pprofByGoroutine(computePprofSched(), parsed)))
+
+	// Region-based pprof endpoints.
+	mux.HandleFunc("/regionio", traceviewer.SVGProfileHandlerFunc(pprofByRegion(computePprofIO(), parsed)))
+	mux.HandleFunc("/regionblock", traceviewer.SVGProfileHandlerFunc(pprofByRegion(computePprofBlock(), parsed)))
+	mux.HandleFunc("/regionsyscall", traceviewer.SVGProfileHandlerFunc(pprofByRegion(computePprofSyscall(), parsed)))
+	mux.HandleFunc("/regionsched", traceviewer.SVGProfileHandlerFunc(pprofByRegion(computePprofSched(), parsed)))
+
+	// Region endpoints.
+	mux.HandleFunc("/userregions", UserRegionsHandlerFunc(parsed))
+	mux.HandleFunc("/userregion", UserRegionHandlerFunc(parsed))
+
+	// Task endpoints.
+	mux.HandleFunc("/usertasks", UserTasksHandlerFunc(parsed))
+	mux.HandleFunc("/usertask", UserTaskHandlerFunc(parsed))
+
+	err = http.Serve(ln, mux)
+	logAndDie(fmt.Errorf("failed to start http server: %w", err))
+}
+
+func logAndDie(err error) {
+	if err == nil {
+		os.Exit(0)
+	}
+	fmt.Fprintf(os.Stderr, "%s\n", err)
+	os.Exit(1)
+}
+
+func parseTraceInteractive(tr io.Reader, size int64) (parsed *parsedTrace, err error) {
+	done := make(chan struct{})
+	cr := countingReader{r: tr}
+	go func() {
+		parsed, err = parseTrace(&cr, size)
+		done <- struct{}{}
+	}()
+	ticker := time.NewTicker(5 * time.Second)
+progressLoop:
+	for {
+		select {
+		case <-ticker.C:
+		case <-done:
+			ticker.Stop()
+			break progressLoop
+		}
+		progress := cr.bytesRead.Load()
+		pct := float64(progress) / float64(size) * 100
+		log.Printf("%s of %s (%.1f%%) processed...", byteCount(progress), byteCount(size), pct)
+	}
+	return
+}
+
+type parsedTrace struct {
+	events      []trace.Event
+	summary     *trace.Summary
+	size, valid int64
+	err         error
+}
+
+func parseTrace(rr io.Reader, size int64) (*parsedTrace, error) {
+	// Set up the reader.
+	cr := countingReader{r: rr}
+	r, err := trace.NewReader(&cr)
+	if err != nil {
+		return nil, fmt.Errorf("failed to create trace reader: %w", err)
+	}
+
+	// Set up state.
+	s := trace.NewSummarizer()
+	t := new(parsedTrace)
+	var validBytes int64
+	var validEvents int
+	for {
+		ev, err := r.ReadEvent()
+		if err == io.EOF {
+			validBytes = cr.bytesRead.Load()
+			validEvents = len(t.events)
+			break
+		}
+		if err != nil {
+			t.err = err
+			break
+		}
+		t.events = append(t.events, ev)
+		s.Event(&t.events[len(t.events)-1])
+
+		if ev.Kind() == trace.EventSync {
+			validBytes = cr.bytesRead.Load()
+			validEvents = len(t.events)
+		}
+	}
+
+	// Check to make sure we got at least one good generation.
+	if validEvents == 0 {
+		return nil, fmt.Errorf("failed to parse any useful part of the trace: %v", t.err)
+	}
+
+	// Finish off the parsedTrace.
+	t.summary = s.Finalize()
+	t.valid = validBytes
+	t.size = size
+	t.events = t.events[:validEvents]
+	return t, nil
+}
+
+func (t *parsedTrace) startTime() trace.Time {
+	return t.events[0].Time()
+}
+
+func (t *parsedTrace) endTime() trace.Time {
+	return t.events[len(t.events)-1].Time()
+}
+
+// splitTrace splits the trace into a number of ranges, each resulting in approx 100 MiB of
+// json output (the trace viewer can hardly handle more).
+func splitTrace(parsed *parsedTrace) ([]traceviewer.Range, error) {
+	// TODO(mknyszek): Split traces by generation by doing a quick first pass over the
+	// trace to identify all the generation boundaries.
+	s, c := traceviewer.SplittingTraceConsumer(100 << 20) // 100 MiB
+	if err := generateTrace(parsed, defaultGenOpts(), c); err != nil {
+		return nil, err
+	}
+	return s.Ranges, nil
+}
+
+func debugProcessedEvents(trc io.Reader) error {
+	tr, err := trace.NewReader(trc)
+	if err != nil {
+		return err
+	}
+	for {
+		ev, err := tr.ReadEvent()
+		if err == io.EOF {
+			return nil
+		} else if err != nil {
+			return err
+		}
+		fmt.Println(ev.String())
+	}
+}
+
+func debugRawEvents(trc io.Reader) error {
+	rr, err := raw.NewReader(trc)
+	if err != nil {
+		return err
+	}
+	for {
+		ev, err := rr.ReadEvent()
+		if err == io.EOF {
+			return nil
+		} else if err != nil {
+			return err
+		}
+		fmt.Println(ev.String())
+	}
+}
+
+func debugEventsFootprint(trc io.Reader) error {
+	cr := countingReader{r: trc}
+	tr, err := raw.NewReader(&cr)
+	if err != nil {
+		return err
+	}
+	type eventStats struct {
+		typ   event.Type
+		count int
+		bytes int
+	}
+	var stats [256]eventStats
+	for i := range stats {
+		stats[i].typ = event.Type(i)
+	}
+	eventsRead := 0
+	for {
+		e, err := tr.ReadEvent()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return err
+		}
+		s := &stats[e.Ev]
+		s.count++
+		s.bytes += e.EncodedSize()
+		eventsRead++
+	}
+	slices.SortFunc(stats[:], func(a, b eventStats) int {
+		return cmp.Compare(b.bytes, a.bytes)
+	})
+	specs := tr.Version().Specs()
+	w := tabwriter.NewWriter(os.Stdout, 3, 8, 2, ' ', 0)
+	fmt.Fprintf(w, "Event\tBytes\t%%\tCount\t%%\n")
+	fmt.Fprintf(w, "-\t-\t-\t-\t-\n")
+	for i := range stats {
+		stat := &stats[i]
+		name := ""
+		if int(stat.typ) >= len(specs) {
+			name = fmt.Sprintf("<unknown (%d)>", stat.typ)
+		} else {
+			name = specs[stat.typ].Name
+		}
+		bytesPct := float64(stat.bytes) / float64(cr.bytesRead.Load()) * 100
+		countPct := float64(stat.count) / float64(eventsRead) * 100
+		fmt.Fprintf(w, "%s\t%d\t%.2f%%\t%d\t%.2f%%\n", name, stat.bytes, bytesPct, stat.count, countPct)
+	}
+	w.Flush()
+	return nil
+}
+
+type countingReader struct {
+	r         io.Reader
+	bytesRead atomic.Int64
+}
+
+func (c *countingReader) Read(buf []byte) (n int, err error) {
+	n, err = c.r.Read(buf)
+	c.bytesRead.Add(int64(n))
+	return n, err
+}
+
+type byteCount int64
+
+func (b byteCount) String() string {
+	var suffix string
+	var divisor int64
+	switch {
+	case b < 1<<10:
+		suffix = "B"
+		divisor = 1
+	case b < 1<<20:
+		suffix = "KiB"
+		divisor = 1 << 10
+	case b < 1<<30:
+		suffix = "MiB"
+		divisor = 1 << 20
+	case b < 1<<40:
+		suffix = "GiB"
+		divisor = 1 << 30
+	}
+	if divisor == 1 {
+		return fmt.Sprintf("%d %s", b, suffix)
+	}
+	return fmt.Sprintf("%.1f %s", float64(b)/float64(divisor), suffix)
+}
+
+"""
+
+
+
+```
