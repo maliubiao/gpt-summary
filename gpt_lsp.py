@@ -390,12 +390,14 @@ class AsyncOpenAIClient:
                     if chunk.text:
                         yield chunk.text
             except Exception as e:
+                if "response.text" in str(e):
+                    return
                 logger.error(f"Gemini API error: {e}")
                 if "exhausted" in str(e):
                     logger.error(f"Error: {e}")
                     os._exit(1)
-                # else:
-                #     yield f"Error: {e}"
+                else:
+                    raise ValueError(f"Error: {e}")
         else:
             try:
                 response_stream = await openai.ChatCompletion.acreate(
