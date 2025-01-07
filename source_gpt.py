@@ -24,8 +24,7 @@ def process_file_content(file_path, directory, chunk_size=32*1024):
     relative_path = os.path.relpath(file_path, directory)
     dir_last_part = os.path.basename(os.path.normpath(directory))
     modified_relative_path = os.path.join(dir_last_part, relative_path)
-
-    with open(file_path, 'r', encoding='utf-8') as f:
+    with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
         file_content = f.read()
 
     if len(file_content) > chunk_size:
