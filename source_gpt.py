@@ -24,14 +24,13 @@ def process_file_content(file_path, directory, chunk_size=32*1024):
     relative_path = os.path.relpath(file_path, directory)
     dir_last_part = os.path.basename(os.path.normpath(directory))
     modified_relative_path = os.path.join(dir_last_part, relative_path)
-    
     with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
         file_content = f.read()
-    
+
     if len(file_content) > chunk_size:
         chunks = [file_content[i:i + chunk_size] for i in range(0, len(file_content), chunk_size)]
         return [
-            (modified_relative_path, 
+            (modified_relative_path,
              f"这是第{i+1}部分，共{len(chunks)}部分，请归纳一下它的功能\n",
              chunk, "\n", i)
             for i, chunk in enumerate(chunks)
@@ -66,11 +65,11 @@ def process_single_file(file_info, prompt_template, output_dir):
         suffix=suffix
     )
     output_file_path = generate_output_path(output_dir, filepath, idx, file_suffix)
-    
+    print(output_file_path)
     if os.path.exists(output_file_path):
         logger.info(f"已经存在{output_file_path}")
         return
-    
+
     try:
         asyncio.run(stream_response(prompt, output_file_path))
     except ValueError:
@@ -79,13 +78,13 @@ def process_single_file(file_info, prompt_template, output_dir):
 def generate_file_list_and_content(directory, prompt_template_path, output_dir, file_suffixes, exclude_dirs):
     """主函数：生成文件列表并处理内容"""
     prompt_template = read_prompt_template(prompt_template_path)
-    
+
     for root, _, files in os.walk(directory):
         for file in files:
             file_path = os.path.join(root, file)
             if should_skip_file(file_path, exclude_dirs, file_suffixes):
                 continue
-                
+
             file_infos = process_file_content(file_path, directory)
             for file_info in file_infos:
                 process_single_file(file_info, prompt_template, output_dir)
