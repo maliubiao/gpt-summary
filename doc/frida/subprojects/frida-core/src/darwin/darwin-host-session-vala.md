@@ -1,0 +1,1265 @@
+Response:
+### 功能归纳
+
+`darwin-host-session.vala` 是 Frida 工具中用于处理 macOS 和 iOS 系统上动态插桩的核心代码文件。它主要负责与 Darwin 系统（macOS 和 iOS 的内核）进行交互，提供了一系列功能来管理进程、注入代码、捕获崩溃信息等。以下是该文件的主要功能归纳：
+
+1. **DarwinHostSessionBackend**:
+   - 负责启动和停止本地会话提供者（`DarwinHostSessionProvider`）。
+   - 提供 `start` 和 `stop` 方法，用于初始化和管理本地会话提供者的生命周期。
+
+2. **DarwinHostSessionProvider**:
+   - 提供本地系统的会话管理功能。
+   - 负责创建和销毁 `DarwinHostSession` 实例。
+   - 提供 `link_agent_session` 和 `unlink_agent_session` 方法，用于连接和断开与代理会话的链接。
+
+3. **DarwinHostSession**:
+   - 继承自 `BaseDBusHostSession`，负责与 Darwin 系统的底层交互。
+   - 提供进程管理功能，如枚举应用程序、枚举进程、启用/禁用生成门控（spawn gating）等。
+   - 提供进程注入功能，允许将 Frida 的代理代码注入到目标进程中。
+   - 提供崩溃报告功能，能够捕获并处理目标进程的崩溃信息。
+   - 提供与 `Fruitjector` 的集成，用于在目标进程中注入动态库。
+
+4. **FruitController**:
+   - 负责管理与 iOS 系统相关的特定功能，如崩溃报告、进程生成门控等。
+   - 提供 `enable_spawn_gating` 和 `disable_spawn_gating` 方法，用于控制进程生成门控。
+   - 提供 `spawn` 方法，用于在 iOS 系统上生成新的进程。
+   - 提供崩溃报告集成功能，能够捕获并处理 iOS 系统上的崩溃信息。
+
+5. **LaunchdAgent**:
+   - 负责与 macOS 和 iOS 的 `launchd` 守护进程进行交互。
+   - 提供 `prepare_for_launch` 和 `cancel_launch` 方法，用于准备和取消应用程序的启动。
+   - 提供 `enable_spawn_gating` 和 `disable_spawn_gating` 方法，用于控制进程生成门控。
+
+6. **XpcProxyAgent**:
+   - 负责管理与 `xpcproxy` 相关的功能，`xpcproxy` 是 macOS 和 iOS 系统中用于管理进程间通信的代理进程。
+   - 提供 `run_until_exec` 方法，用于在目标进程执行前注入代码。
+
+7. **ReportCrashAgent**:
+   - 负责捕获和处理崩溃报告。
+   - 提供 `crash_detected` 和 `crash_received` 信号，用于通知崩溃事件的发生。
+
+### 涉及二进制底层和 Linux 内核的举例
+
+虽然该文件主要针对 Darwin 系统（macOS 和 iOS），但其中涉及的一些概念和技术与 Linux 内核中的类似功能有相似之处。例如：
+
+- **进程注入**：在 Linux 中，进程注入通常通过 `ptrace` 系统调用来实现，而在 Darwin 系统中，Frida 使用了 `Fruitjector` 来实现类似的功能。
+- **崩溃捕获**：在 Linux 中，崩溃捕获通常通过信号处理（如 `SIGSEGV`）来实现，而在 Darwin 系统中，Frida 通过 `ReportCrashAgent` 来捕获和处理崩溃信息。
+
+### 使用 LLDB 指令或 LLDB Python 脚本复刻调试功能
+
+假设我们想要复刻 `DarwinHostSession` 中的进程注入功能，可以使用 LLDB 的 Python 脚本来实现类似的功能。以下是一个简单的 LLDB Python 脚本示例，用于在目标进程中注入动态库：
+
+```python
+import lldb
+
+def inject_library(pid, library_path):
+    # 获取目标进程
+    target = lldb.debugger.GetSelectedTarget()
+    process = target.GetProcess()
+    
+    # 附加到目标进程
+    error = lldb.SBError()
+    process.AttachToProcessWithID(lldb.SBListener(), pid, error)
+    
+    if error.Success():
+        print(f"成功附加到进程 {pid}")
+        
+        # 加载动态库
+        load_command = f"dlopen {library_path}"
+        result = lldb.SBCommandReturnObject()
+        lldb.debugger.GetCommandInterpreter().HandleCommand(load_command, result)
+        
+        if result.Succeeded():
+            print(f"成功注入动态库 {library_path}")
+        else:
+            print(f"注入动态库失败: {result.GetError()}")
+    else:
+        print(f"附加到进程失败: {error}")
+
+# 使用示例
+inject_library(1234, "/path/to/library.dylib")
+```
+
+### 假设输入与输出
+
+假设我们有一个目标进程，PID 为 `1234`，并且我们想要注入一个名为 `libinject.dylib` 的动态库。
+
+- **输入**:
+  - `pid = 1234`
+  - `library_path = "/path/to/libinject.dylib"`
+
+- **输出**:
+  - 如果成功附加到进程并注入动态库，输出为：
+    ```
+    成功附加到进程 1234
+    成功注入动态库 /path/to/libinject.dylib
+    ```
+  - 如果附加或注入失败，输出为：
+    ```
+    附加到进程失败: <错误信息>
+    ```
+    或
+    ```
+    注入动态库失败: <错误信息>
+    ```
+
+### 用户常见的使用错误
+
+1. **权限不足**：在 macOS 和 iOS 上，注入动态库通常需要 root 权限。如果用户没有足够的权限，注入操作会失败。
+   - **解决方法**：确保以 root 权限运行 Frida 或 LLDB。
+
+2. **目标进程已崩溃**：如果目标进程在注入过程中崩溃，注入操作会失败。
+   - **解决方法**：确保目标进程处于稳定状态，并在注入前进行必要的调试。
+
+3. **动态库路径错误**：如果提供的动态库路径不正确，注入操作会失败。
+   - **解决方法**：确保动态库路径正确，并且动态库文件存在。
+
+### 用户操作如何一步步到达这里
+
+1. **启动 Frida**：用户启动 Frida 并选择目标设备（如本地 macOS 或连接的 iOS 设备）。
+2. **选择目标进程**：用户通过 Frida 的命令行工具或 API 选择要调试的目标进程。
+3. **注入代理**：Frida 调用 `DarwinHostSession` 中的 `inject_agent` 方法，将 Frida 的代理代码注入到目标进程中。
+4. **调试会话**：用户通过 Frida 的 API 或命令行工具与目标进程进行交互，执行动态插桩、捕获崩溃信息等操作。
+
+### 总结
+
+`darwin-host-session.vala` 文件是 Frida 工具中用于处理 macOS 和 iOS 系统上动态插桩的核心代码。它提供了丰富的功能来管理进程、注入代码、捕获崩溃信息等。通过 LLDB 的 Python 脚本，用户可以复刻其中的一些调试功能。用户在使用过程中可能会遇到权限不足、目标进程崩溃等常见问题，需要确保以正确的权限运行工具，并确保目标进程处于稳定状态。
+Prompt: 
+```
+这是目录为frida/subprojects/frida-core/src/darwin/darwin-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
+如果涉及到二进制底层，linux内核，请做出对应的举例说明，
+请给出用lldb指令或者lldb python脚本，用来复刻的源代码所实现调试功能的示例，如果源代码是调试功能的实现。
+如果做了逻辑推理，请给出假设输入与输出,
+如果涉及用户或者编程常见的使用错误，请举例说明,
+说明用户操作是如何一步步的到达这里，作为调试线索，
+请用中文回复。
+这是第1部分，共2部分，请归纳一下它的功能
+
+"""
+namespace Frida {
+	public class DarwinHostSessionBackend : Object, HostSessionBackend {
+		private DarwinHostSessionProvider local_provider;
+
+		public async void start (Cancellable? cancellable) throws IOError {
+			assert (local_provider == null);
+			local_provider = new DarwinHostSessionProvider ();
+			provider_available (local_provider);
+		}
+
+		public async void stop (Cancellable? cancellable) throws IOError {
+			assert (local_provider != null);
+			provider_unavailable (local_provider);
+			yield local_provider.close (cancellable);
+			local_provider = null;
+		}
+	}
+
+	public class DarwinHostSessionProvider : Object, HostSessionProvider {
+		public string id {
+			get { return "local"; }
+		}
+
+		public string name {
+			get { return "Local System"; }
+		}
+
+		public Variant? icon {
+			get { return _icon; }
+		}
+		private Variant? _icon;
+
+		public HostSessionProviderKind kind {
+			get { return HostSessionProviderKind.LOCAL; }
+		}
+
+		private DarwinHostSession host_session;
+
+		construct {
+			_icon = _try_extract_icon ();
+		}
+
+		public async void close (Cancellable? cancellable) throws IOError {
+			if (host_session == null)
+				return;
+			host_session.agent_session_detached.disconnect (on_agent_session_detached);
+			yield host_session.close (cancellable);
+			host_session = null;
+		}
+
+		public async HostSession create (HostSessionOptions? options, Cancellable? cancellable) throws Error, IOError {
+			if (host_session != null)
+				throw new Error.INVALID_OPERATION ("Already created");
+
+			var tempdir = new TemporaryDirectory ();
+
+			host_session = new DarwinHostSession (new DarwinHelperProcess (tempdir), tempdir);
+			host_session.agent_session_detached.connect (on_agent_session_detached);
+
+			return host_session;
+		}
+
+		public async void destroy (HostSession session, Cancellable? cancellable) throws Error, IOError {
+			if (session != host_session)
+				throw new Error.INVALID_ARGUMENT ("Invalid host session");
+
+			host_session.agent_session_detached.disconnect (on_agent_session_detached);
+
+			yield host_session.close (cancellable);
+			host_session = null;
+		}
+
+		public async AgentSession link_agent_session (HostSession host_session, AgentSessionId id, AgentMessageSink sink,
+				Cancellable? cancellable) throws Error, IOError {
+			if (host_session != this.host_session)
+				throw new Error.INVALID_ARGUMENT ("Invalid host session");
+
+			return yield this.host_session.link_agent_session (id, sink, cancellable);
+		}
+
+		public void unlink_agent_session (HostSession host_session, AgentSessionId id) {
+			if (host_session != this.host_session)
+				return;
+
+			this.host_session.unlink_agent_session (id);
+		}
+
+		private void on_agent_session_detached (AgentSessionId id, SessionDetachReason reason, CrashInfo crash) {
+			agent_session_detached (id, reason, crash);
+		}
+
+		public extern static Variant? _try_extract_icon ();
+	}
+
+	public class DarwinHostSession : BaseDBusHostSession {
+		public DarwinHelper helper {
+			get;
+			construct;
+		}
+
+		public TemporaryDirectory tempdir {
+			get;
+			construct;
+		}
+
+		public string? sysroot {
+			get;
+			construct;
+		}
+
+		public bool report_crashes {
+			get;
+			construct;
+		}
+
+		public string? agent_path {
+			owned get {
+#if HAVE_EMBEDDED_ASSETS
+				return null;
+#else
+				unowned string path = Config.FRIDA_AGENT_PATH;
+# if IOS || TVOS
+				unowned string? cryptex_path = Environment.get_variable ("CRYPTEX_MOUNT_PATH");
+				if (cryptex_path != null)
+					return cryptex_path + path;
+# endif
+				unowned string? root_path = sysroot;
+				if (root_path != null)
+					return root_path + path;
+
+				return path;
+#endif
+			}
+		}
+
+		private AgentContainer? system_session_container;
+
+		private Fruitjector fruitjector;
+		private AgentResource? agent;
+#if IOS || TVOS
+		private FruitController fruit_controller;
+#endif
+
+		private ApplicationEnumerator application_enumerator = new ApplicationEnumerator ();
+		private ProcessEnumerator process_enumerator = new ProcessEnumerator ();
+
+		public DarwinHostSession (owned DarwinHelper helper, owned TemporaryDirectory tempdir, owned string? sysroot = null,
+				bool report_crashes = true) {
+			Object (
+				helper: helper,
+				tempdir: tempdir,
+				sysroot: sysroot,
+				report_crashes: report_crashes
+			);
+		}
+
+		construct {
+			helper.output.connect (on_output);
+			helper.spawn_added.connect (on_spawn_added);
+			helper.spawn_removed.connect (on_spawn_removed);
+
+			fruitjector = new Fruitjector (helper, false, tempdir);
+			injector = fruitjector;
+			fruitjector.injected.connect (on_injected);
+			injector.uninjected.connect (on_uninjected);
+
+#if HAVE_EMBEDDED_ASSETS
+			var blob = Frida.Data.Agent.get_frida_agent_dylib_blob ();
+			agent = new AgentResource (blob.name, new Bytes.static (blob.data), tempdir);
+#endif
+
+#if IOS || TVOS
+			fruit_controller = new FruitController (this, io_cancellable);
+			fruit_controller.spawn_added.connect (on_spawn_added);
+			fruit_controller.spawn_removed.connect (on_spawn_removed);
+			fruit_controller.process_crashed.connect (on_process_crashed);
+#endif
+		}
+
+		public override async void close (Cancellable? cancellable) throws IOError {
+			yield base.close (cancellable);
+
+#if IOS || TVOS
+			yield fruit_controller.close (cancellable);
+			fruit_controller.spawn_added.disconnect (on_spawn_added);
+			fruit_controller.spawn_removed.disconnect (on_spawn_removed);
+			fruit_controller.process_crashed.disconnect (on_process_crashed);
+#endif
+
+			var fruitjector = (Fruitjector) injector;
+
+			yield wait_for_uninject (injector, cancellable, () => {
+				return fruitjector.any_still_injected ();
+			});
+
+			fruitjector.injected.disconnect (on_injected);
+			injector.uninjected.disconnect (on_uninjected);
+			yield injector.close (cancellable);
+
+			if (system_session_container != null) {
+				yield system_session_container.destroy (cancellable);
+				system_session_container = null;
+			}
+
+			yield helper.close (cancellable);
+			helper.output.disconnect (on_output);
+			helper.spawn_added.disconnect (on_spawn_added);
+			helper.spawn_removed.disconnect (on_spawn_removed);
+
+			agent = null;
+
+			tempdir.destroy ();
+		}
+
+		protected override async AgentSessionProvider create_system_session_provider (Cancellable? cancellable,
+				out DBusConnection connection) throws Error, IOError {
+#if IOS || TVOS
+			yield helper.preload (cancellable);
+
+			var pid = helper.pid;
+
+			string remote_address;
+			var stream_request = yield helper.open_pipe_stream (pid, cancellable, out remote_address);
+
+			var id = yield inject_agent (pid, remote_address, cancellable);
+			injectee_by_pid[pid] = id;
+
+			IOStream stream = yield stream_request.wait_async (cancellable);
+
+			DBusConnection conn;
+			AgentSessionProvider provider;
+			try {
+				conn = yield new DBusConnection (stream, ServerGuid.HOST_SESSION_SERVICE,
+					AUTHENTICATION_SERVER | AUTHENTICATION_ALLOW_ANONYMOUS, null, cancellable);
+
+				provider = yield conn.get_proxy (null, ObjectPath.AGENT_SESSION_PROVIDER, DO_NOT_LOAD_PROPERTIES,
+					cancellable);
+			} catch (GLib.Error e) {
+				throw_dbus_error (e);
+			}
+
+			connection = conn;
+
+			return provider;
+#else
+			string path;
+#if HAVE_EMBEDDED_ASSETS
+			path = agent.get_file ().path;
+#else
+			path = agent_path;
+#endif
+
+			system_session_container = yield AgentContainer.create (path, cancellable);
+
+			connection = system_session_container.connection;
+
+			return system_session_container;
+#endif
+		}
+
+		public override async HostApplicationInfo get_frontmost_application (HashTable<string, Variant> options,
+				Cancellable? cancellable) throws Error, IOError {
+			return System.get_frontmost_application (FrontmostQueryOptions._deserialize (options));
+		}
+
+		public override async HostApplicationInfo[] enumerate_applications (HashTable<string, Variant> options,
+				Cancellable? cancellable) throws Error, IOError {
+			return yield application_enumerator.enumerate_applications (ApplicationQueryOptions._deserialize (options));
+		}
+
+		public override async HostProcessInfo[] enumerate_processes (HashTable<string, Variant> options,
+				Cancellable? cancellable) throws Error, IOError {
+			return yield process_enumerator.enumerate_processes (ProcessQueryOptions._deserialize (options));
+		}
+
+		public override async void enable_spawn_gating (Cancellable? cancellable) throws Error, IOError {
+#if IOS || TVOS
+			yield fruit_controller.enable_spawn_gating (cancellable);
+#else
+			yield helper.enable_spawn_gating (cancellable);
+#endif
+		}
+
+		public override async void disable_spawn_gating (Cancellable? cancellable) throws Error, IOError {
+#if IOS || TVOS
+			yield fruit_controller.disable_spawn_gating (cancellable);
+#else
+			yield helper.disable_spawn_gating (cancellable);
+#endif
+		}
+
+		public override async HostSpawnInfo[] enumerate_pending_spawn (Cancellable? cancellable) throws Error, IOError {
+#if IOS || TVOS
+			return fruit_controller.enumerate_pending_spawn ();
+#else
+			return yield helper.enumerate_pending_spawn (cancellable);
+#endif
+		}
+
+		public override async uint spawn (string program, HostSpawnOptions options, Cancellable? cancellable)
+				throws Error, IOError {
+#if IOS || TVOS
+			if (!program.has_prefix ("/"))
+				return yield fruit_controller.spawn (program, options, cancellable);
+#endif
+
+			return yield helper.spawn (program, options, cancellable);
+		}
+
+		protected override async void await_exec_transition (uint pid, Cancellable? cancellable) throws Error, IOError {
+			yield helper.wait_until_suspended (pid, cancellable);
+			yield helper.notify_exec_completed (pid, cancellable);
+		}
+
+		protected override async void cancel_exec_transition (uint pid, Cancellable? cancellable) throws Error, IOError {
+			yield helper.cancel_pending_waits (pid, cancellable);
+		}
+
+		protected override bool process_is_alive (uint pid) {
+			return Posix.kill ((Posix.pid_t) pid, 0) == 0 || Posix.errno == Posix.EPERM;
+		}
+
+		public override async void input (uint pid, uint8[] data, Cancellable? cancellable) throws Error, IOError {
+			yield helper.input (pid, data, cancellable);
+		}
+
+		protected override async void perform_resume (uint pid, Cancellable? cancellable) throws Error, IOError {
+#if IOS || TVOS
+			if (yield fruit_controller.try_resume (pid, cancellable))
+				return;
+#endif
+
+			yield helper.resume (pid, cancellable);
+		}
+
+		public override async void kill (uint pid, Cancellable? cancellable) throws Error, IOError {
+			yield helper.kill_process (pid, cancellable);
+		}
+
+		protected override async Future<IOStream> perform_attach_to (uint pid, HashTable<string, Variant> options,
+				Cancellable? cancellable, out Object? transport) throws Error, IOError {
+			transport = null;
+
+			string remote_address;
+			var stream_future = yield helper.open_pipe_stream (pid, cancellable, out remote_address);
+
+			var id = yield inject_agent (pid, make_agent_parameters (pid, remote_address, options), cancellable);
+			injectee_by_pid[pid] = id;
+
+			return stream_future;
+		}
+
+#if IOS || TVOS
+		public void activate_crash_reporter_integration () {
+			fruit_controller.activate_crash_reporter_integration ();
+		}
+
+		protected override async CrashInfo? try_collect_crash (uint pid, Cancellable? cancellable) throws IOError {
+			return yield fruit_controller.try_collect_crash (pid, cancellable);
+		}
+#endif
+
+		private void on_output (uint pid, int fd, uint8[] data) {
+			output (pid, fd, data);
+		}
+
+		private void on_spawn_added (HostSpawnInfo info) {
+			spawn_added (info);
+		}
+
+		private void on_spawn_removed (HostSpawnInfo info) {
+			spawn_removed (info);
+		}
+
+#if IOS || TVOS
+		private void on_process_crashed (CrashInfo info) {
+			process_crashed (info);
+		}
+#endif
+
+		private async uint inject_agent (uint pid, string agent_parameters, Cancellable? cancellable) throws Error, IOError {
+			uint id;
+
+			unowned string entrypoint = "frida_agent_main";
+#if HAVE_EMBEDDED_ASSETS
+			id = yield fruitjector.inject_library_resource (pid, agent, entrypoint, agent_parameters, cancellable);
+#else
+			id = yield fruitjector.inject_library_file (pid, agent_path, entrypoint, agent_parameters, cancellable);
+#endif
+
+			return id;
+		}
+
+		private void on_injected (uint id, uint pid, bool has_mapped_module, DarwinModuleDetails mapped_module) {
+#if IOS || TVOS
+			DarwinModuleDetails? mapped_module_value = null;
+			if (has_mapped_module)
+				mapped_module_value = mapped_module;
+			fruit_controller.on_agent_injected (id, pid, mapped_module_value);
+#endif
+		}
+
+		protected override void on_uninjected (uint id) {
+#if IOS || TVOS
+			fruit_controller.on_agent_uninjected (id);
+#endif
+
+			base.on_uninjected (id);
+		}
+	}
+
+#if IOS || TVOS
+	private class FruitController : Object, MappedAgentContainer {
+		public signal void spawn_added (HostSpawnInfo info);
+		public signal void spawn_removed (HostSpawnInfo info);
+		public signal void process_crashed (CrashInfo crash);
+
+		public weak DarwinHostSession host_session {
+			get;
+			construct;
+		}
+
+		public DarwinHelper helper {
+			get;
+			construct;
+		}
+
+		public Cancellable io_cancellable {
+			get;
+			construct;
+		}
+
+		private LaunchdAgent launchd_agent;
+
+		private bool spawn_gating_enabled = false;
+		private Gee.HashMap<string, Promise<uint>> spawn_requests = new Gee.HashMap<string, Promise<uint>> ();
+		private Gee.HashMap<uint, HostSpawnInfo?> pending_spawn = new Gee.HashMap<uint, HostSpawnInfo?> ();
+
+		private CrashReporterState crash_reporter_state;
+		private Gee.HashMap<uint, ReportCrashAgent> crash_agents = new Gee.HashMap<uint, ReportCrashAgent> ();
+		private Gee.HashMap<uint, OSAnalyticsAgent> osa_agents = new Gee.HashMap<uint, OSAnalyticsAgent> ();
+		private Gee.HashMap<uint, CrashDelivery> crash_deliveries = new Gee.HashMap<uint, CrashDelivery> ();
+		private Gee.HashMap<uint, MappedAgent> mapped_agents = new Gee.HashMap<uint, MappedAgent> ();
+		private Gee.HashMap<MappedAgent, Source> mapped_agents_dying = new Gee.HashMap<MappedAgent, Source> ();
+
+		private Gee.HashSet<uint> xpcproxies = new Gee.HashSet<uint> ();
+
+		private enum CrashReporterState {
+			DISABLED,
+			INACTIVE,
+			ACTIVE,
+		}
+
+		public FruitController (DarwinHostSession host_session, Cancellable io_cancellable) {
+			Object (
+				host_session: host_session,
+				helper: host_session.helper,
+				io_cancellable: io_cancellable
+			);
+		}
+
+		construct {
+			crash_reporter_state = host_session.report_crashes
+				? CrashReporterState.INACTIVE
+				: CrashReporterState.DISABLED;
+
+			launchd_agent = new LaunchdAgent (host_session, io_cancellable);
+			launchd_agent.app_launch_started.connect (on_app_launch_started);
+			launchd_agent.app_launch_completed.connect (on_app_launch_completed);
+			launchd_agent.spawn_preparation_started.connect (on_spawn_preparation_started);
+			launchd_agent.spawn_preparation_aborted.connect (on_spawn_preparation_aborted);
+			launchd_agent.spawn_captured.connect (on_spawn_captured);
+
+			helper.process_resumed.connect (on_process_resumed);
+			helper.process_killed.connect (on_process_killed);
+		}
+
+		~FruitController () {
+			launchd_agent.spawn_captured.disconnect (on_spawn_captured);
+			launchd_agent.spawn_preparation_aborted.disconnect (on_spawn_preparation_aborted);
+			launchd_agent.spawn_preparation_started.disconnect (on_spawn_preparation_started);
+			launchd_agent.app_launch_completed.disconnect (on_app_launch_completed);
+			launchd_agent.app_launch_started.disconnect (on_app_launch_started);
+
+			helper.process_resumed.disconnect (on_process_resumed);
+			helper.process_killed.disconnect (on_process_killed);
+		}
+
+		public async void close (Cancellable? cancellable) throws IOError {
+			if (spawn_gating_enabled) {
+				try {
+					yield disable_spawn_gating (cancellable);
+				} catch (Error e) {
+				}
+			}
+
+			yield launchd_agent.close (cancellable);
+		}
+
+		public async void enable_spawn_gating (Cancellable? cancellable) throws Error, IOError {
+			yield launchd_agent.enable_spawn_gating (cancellable);
+
+			spawn_gating_enabled = true;
+		}
+
+		public async void disable_spawn_gating (Cancellable? cancellable) throws Error, IOError {
+			spawn_gating_enabled = false;
+
+			yield launchd_agent.disable_spawn_gating (cancellable);
+
+			var pending = pending_spawn.values.to_array ();
+			pending_spawn.clear ();
+			foreach (var spawn in pending) {
+				spawn_removed (spawn);
+
+				helper.resume.begin (spawn.pid, io_cancellable);
+			}
+		}
+
+		public HostSpawnInfo[] enumerate_pending_spawn () {
+			var result = new HostSpawnInfo[pending_spawn.size];
+			var index = 0;
+			foreach (var spawn in pending_spawn.values)
+				result[index++] = spawn;
+			return result;
+		}
+
+		public async uint spawn (string identifier, HostSpawnOptions options, Cancellable? cancellable) throws Error, IOError {
+			if (spawn_requests.has_key (identifier))
+				throw new Error.INVALID_OPERATION ("Spawn already in progress for the specified identifier");
+
+			var request = new Promise<uint> ();
+			spawn_requests[identifier] = request;
+
+			uint pid = 0;
+			try {
+				yield launchd_agent.prepare_for_launch (identifier, cancellable);
+
+				yield helper.launch (identifier, options, cancellable);
+
+				var timeout = new TimeoutSource.seconds (20);
+				timeout.set_callback (() => {
+					request.reject (new Error.TIMED_OUT ("Unexpectedly timed out while waiting for app to launch"));
+					return false;
+				});
+				timeout.attach (MainContext.get_thread_default ());
+				try {
+					pid = yield request.future.wait_async (cancellable);
+				} finally {
+					timeout.destroy ();
+				}
+
+				helper.notify_launch_completed.begin (identifier, pid, io_cancellable);
+			} catch (GLib.Error e) {
+				launchd_agent.cancel_launch.begin (identifier, io_cancellable);
+
+				if (!spawn_requests.unset (identifier)) {
+					var pending_pid = request.future.value;
+					if (pending_pid != 0)
+						helper.resume.begin (pending_pid, io_cancellable);
+				}
+
+				throw_api_error (e);
+			}
+
+			return pid;
+		}
+
+		public async bool try_resume (uint pid, Cancellable? cancellable) throws Error, IOError {
+			HostSpawnInfo? info;
+			if (!pending_spawn.unset (pid, out info))
+				return false;
+			spawn_removed (info);
+
+			yield helper.resume (pid, cancellable);
+
+			return true;
+		}
+
+		public void activate_crash_reporter_integration () {
+			if (crash_reporter_state != INACTIVE)
+				return;
+
+			foreach (var process in System.enumerate_processes (new ProcessQueryOptions ())) {
+				if (is_osanalytics_process (process)) {
+					var agent = try_add_osanalytics_agent (process.pid);
+					if (agent != null)
+						try_start_osanalytics_agent.begin (agent);
+				}
+			}
+
+			launchd_agent.activate_crash_reporter_integration ();
+
+			crash_reporter_state = ACTIVE;
+		}
+
+		public async CrashInfo? try_collect_crash (uint pid, Cancellable? cancellable) throws IOError {
+			if (crash_reporter_state == DISABLED)
+				return null;
+
+			if (crash_agents.has_key (pid) || xpcproxies.contains (pid))
+				return null;
+
+			var delivery = get_crash_delivery_for_pid (pid);
+			try {
+				return yield delivery.future.wait_async (cancellable);
+			} catch (Error e) {
+				return null;
+			}
+		}
+
+		public void enumerate_mapped_agents (FoundMappedAgentFunc func) {
+			foreach (var mapped_agent in mapped_agents.values)
+				func (mapped_agent);
+		}
+
+		public void on_agent_injected (uint id, uint pid, DarwinModuleDetails? mapped_module) {
+			if (mapped_module == null)
+				return;
+
+			var dead_agents = new Gee.ArrayList<MappedAgent> ();
+			foreach (var agent in mapped_agents_dying.keys) {
+				if (agent.pid == pid)
+					dead_agents.add (agent);
+			}
+			foreach (var agent in dead_agents) {
+				Source source;
+				mapped_agents_dying.unset (agent, out source);
+				source.destroy ();
+
+				mapped_agents.unset (agent.id);
+			}
+
+			mapped_agents[id] = new MappedAgent (id, pid, mapped_module);
+		}
+
+		public void on_agent_uninjected (uint id) {
+			var agent = mapped_agents[id];
+			if (agent == null)
+				return;
+
+			var timeout = new TimeoutSource.seconds (20);
+			timeout.set_callback (() => {
+				mapped_agents.unset (id);
+				return false;
+			});
+			timeout.attach (MainContext.get_thread_default ());
+			mapped_agents_dying[agent] = timeout;
+		}
+
+		private void on_app_launch_started (string identifier, uint pid) {
+			xpcproxies.add (pid);
+		}
+
+		private void on_app_launch_completed (string identifier, uint pid, GLib.Error? error) {
+			xpcproxies.remove (pid);
+
+			Promise<uint> request;
+			if (spawn_requests.unset (identifier, out request)) {
+				if (error == null)
+					request.resolve (pid);
+				else
+					request.reject (error);
+			} else {
+				if (error == null)
+					helper.resume.begin (pid, io_cancellable);
+			}
+		}
+
+		private void on_spawn_preparation_started (HostSpawnInfo info) {
+			xpcproxies.add (info.pid);
+
+			if (is_reportcrash_spawn (info)) {
+				add_crash_reporter_agent (info.pid);
+				return;
+			}
+
+			if (is_osanalytics_spawn (info)) {
+				try_add_osanalytics_agent (info.pid);
+				return;
+			}
+		}
+
+		private void on_spawn_preparation_aborted (HostSpawnInfo info) {
+			var pid = info.pid;
+			xpcproxies.remove (pid);
+			crash_agents.unset (pid);
+			osa_agents.unset (pid);
+		}
+
+		private void on_spawn_captured (HostSpawnInfo info) {
+			xpcproxies.remove (info.pid);
+			launchd_agent.unclaim_process.begin (info.pid, io_cancellable);
+			handle_spawn.begin (info);
+		}
+
+		private void on_process_resumed (uint pid) {
+			launchd_agent.claim_process.begin (pid, io_cancellable);
+		}
+
+		private void on_process_killed (uint pid) {
+			launchd_agent.claim_process.begin (pid, io_cancellable);
+		}
+
+		private async void handle_spawn (HostSpawnInfo info) {
+			try {
+				var pid = info.pid;
+
+				var crash_agent = crash_agents[pid];
+				if (crash_agent != null)
+					yield try_start_crash_reporter_agent (crash_agent);
+
+				var osa_agent = osa_agents[pid];
+				if (osa_agent != null)
+					yield try_start_osanalytics_agent (osa_agent);
+
+				if (!spawn_gating_enabled) {
+					yield helper.resume (pid, io_cancellable);
+					return;
+				}
+
+				pending_spawn[pid] = info;
+				spawn_added (info);
+			} catch (GLib.Error e) {
+			}
+		}
+
+		private ReportCrashAgent add_crash_reporter_agent (uint pid) {
+			foreach (var delivery in crash_deliveries.values)
+				delivery.extend_timeout (5000);
+
+			var agent = new ReportCrashAgent (host_session, pid, this, io_cancellable);
+			crash_agents[pid] = agent;
+
+			agent.unloaded.connect (on_crash_agent_unloaded);
+			agent.crash_detected.connect (on_crash_detected);
+			agent.crash_received.connect (on_crash_received);
+
+			return agent;
+		}
+
+		private async void try_start_crash_reporter_agent (ReportCrashAgent agent) {
+			try {
+				yield agent.start (io_cancellable);
+			} catch (GLib.Error e) {
+				crash_agents.unset (agent.pid);
+			}
+		}
+
+		private void on_crash_agent_unloaded (InternalAgent agent) {
+			var crash_agent = (ReportCrashAgent) agent;
+			crash_agents.unset (crash_agent.pid);
+		}
+
+		private void on_crash_detected (ReportCrashAgent agent, uint pid) {
+			var delivery = get_crash_delivery_for_pid (pid);
+			delivery.extend_timeout ();
+		}
+
+		private void on_crash_received (ReportCrashAgent agent, CrashInfo crash) {
+			var delivery = get_crash_delivery_for_pid (crash.pid);
+			delivery.complete (crash);
+
+			process_crashed (crash);
+		}
+
+		private OSAnalyticsAgent? try_add_osanalytics_agent (uint pid) {
+			if (osa_agents.has_key (pid))
+				return null;
+
+			var agent = new OSAnalyticsAgent (host_session, pid, io_cancellable);
+			osa_agents[pid] = agent;
+
+			agent.unloaded.connect (on_osa_agent_unloaded);
+
+			return agent;
+		}
+
+		private async void try_start_osanalytics_agent (OSAnalyticsAgent agent) {
+			try {
+				yield agent.start (io_cancellable);
+			} catch (GLib.Error e) {
+				osa_agents.unset (agent.pid);
+			}
+		}
+
+		private void on_osa_agent_unloaded (InternalAgent agent) {
+			var osa_agent = (OSAnalyticsAgent) agent;
+			osa_agents.unset (osa_agent.pid);
+		}
+
+		private static bool is_reportcrash_spawn (HostSpawnInfo info) {
+			return info.identifier == "com.apple.ReportCrash";
+		}
+
+		private static bool is_osanalytics_spawn (HostSpawnInfo info) {
+			return info.identifier == "com.apple.osanalytics.osanalyticshelper";
+		}
+
+		private static bool is_osanalytics_process (HostProcessInfo info) {
+			return info.name == "osanalyticshelper";
+		}
+
+		private CrashDelivery get_crash_delivery_for_pid (uint pid) {
+			var delivery = crash_deliveries[pid];
+			if (delivery == null) {
+				delivery = new CrashDelivery (pid);
+				delivery.expired.connect (on_crash_delivery_expired);
+				crash_deliveries[pid] = delivery;
+			}
+			return delivery;
+		}
+
+		private void on_crash_delivery_expired (CrashDelivery delivery) {
+			crash_deliveries.unset (delivery.pid);
+		}
+
+		private class CrashDelivery : Object {
+			public signal void expired ();
+
+			public uint pid {
+				get;
+				construct;
+			}
+
+			public Future<CrashInfo?> future {
+				get {
+					return promise.future;
+				}
+			}
+
+			private Promise<CrashInfo?> promise = new Promise<CrashInfo?> ();
+			private TimeoutSource expiry_source;
+
+			public CrashDelivery (uint pid) {
+				Object (pid: pid);
+			}
+
+			construct {
+				expiry_source = make_expiry_source (500);
+			}
+
+			private TimeoutSource make_expiry_source (uint timeout) {
+				var source = new TimeoutSource (timeout);
+				source.set_callback (on_timeout);
+				source.attach (MainContext.get_thread_default ());
+				return source;
+			}
+
+			public void extend_timeout (uint timeout = 20000) {
+				if (future.ready)
+					return;
+
+				expiry_source.destroy ();
+				expiry_source = make_expiry_source (timeout);
+			}
+
+			public void complete (CrashInfo? crash) {
+				if (future.ready)
+					return;
+
+				promise.resolve (crash);
+
+				expiry_source.destroy ();
+				expiry_source = make_expiry_source (1000);
+			}
+
+			private bool on_timeout () {
+				if (!future.ready)
+					promise.reject (new Error.TIMED_OUT ("Crash delivery timed out"));
+
+				expired ();
+
+				return false;
+			}
+		}
+	}
+
+	private interface MappedAgentContainer : Object {
+		public abstract void enumerate_mapped_agents (FoundMappedAgentFunc func);
+	}
+
+	private delegate void FoundMappedAgentFunc (MappedAgent agent);
+
+	private class MappedAgent {
+		public uint id {
+			get;
+			private set;
+		}
+
+		public uint pid {
+			get;
+			private set;
+		}
+
+		public DarwinModuleDetails module {
+			get;
+			private set;
+		}
+
+		public MappedAgent (uint id, uint pid, DarwinModuleDetails module) {
+			this.id = id;
+			this.pid = pid;
+			this.module = module;
+		}
+	}
+
+	private class LaunchdAgent : InternalAgent {
+		public signal void app_launch_started (string identifier, uint pid);
+		public signal void app_launch_completed (string identifier, uint pid, GLib.Error? error);
+		public signal void spawn_preparation_started (HostSpawnInfo info);
+		public signal void spawn_preparation_aborted (HostSpawnInfo info);
+		public signal void spawn_captured (HostSpawnInfo info);
+
+		private const string XPC_PROXY_PATH = "/usr/libexec/xpcproxy";
+
+		public Cancellable io_cancellable {
+			get;
+			construct;
+		}
+
+		public LaunchdAgent (DarwinHostSession host_session, Cancellable io_cancellable) {
+			Object (host_session: host_session, io_cancellable: io_cancellable);
+		}
+
+		construct {
+			attach_options["exit-monitor"] = "off";
+			attach_options["thread-suspend-monitor"] = "off";
+		}
+
+		public void activate_crash_reporter_integration () {
+			ensure_loaded.begin (io_cancellable);
+		}
+
+		public async void prepare_for_launch (string identifier, Cancellable? cancellable) throws Error, IOError {
+			yield call ("prepareForLaunch", new Json.Node[] { new Json.Node.alloc ().init_string (identifier) }, null,
+				cancellable);
+		}
+
+		public async void cancel_launch (string identifier, Cancellable? cancellable) throws Error, IOError {
+			yield call ("cancelLaunch", new Json.Node[] { new Json.Node.alloc ().init_string (identifier) }, null, cancellable);
+		}
+
+		public async void enable_spawn_gating (Cancellable? cancellable) throws Error, IOError {
+			yield call ("enableSpawnGating", new Json.Node[] {}, null, cancellable);
+		}
+
+		public async void disable_spawn_gating (Cancellable? cancellable) throws Error, IOError {
+			yield call ("disableSpawnGating", new Json.Node[] {}, null, cancellable);
+		}
+
+		public async void claim_process (uint pid, Cancellable? cancellable) throws Error, IOError {
+			yield call ("claimProcess", new Json.Node[] { new Json.Node.alloc ().init_int (pid) }, null, cancellable);
+		}
+
+		public async void unclaim_process (uint pid, Cancellable? cancellable) throws Error, IOError {
+			yield call ("unclaimProcess", new Json.Node[] { new Json.Node.alloc ().init_int (pid) }, null, cancellable);
+		}
+
+		protected override void on_event (string type, Json.Array event) {
+			var path = event.get_string_element (1);
+			var identifier = event.get_string_element (2);
+			var pid = (uint) event.get_int_element (3);
+
+			switch (type) {
+				case "launch:app":
+					prepare_app.begin (path, identifier, pid);
+					break;
+				case "spawn":
+					prepare_spawn.begin (path, identifier, pid);
+					break;
+				default:
+					assert_not_reached ();
+			}
+		}
+
+		private async void prepare_app (string path, string identifier, uint pid) {
+			app_launch_started (identifier, pid);
+
+			try {
+				if (path == XPC_PROXY_PATH) {
+					var agent = new XpcProxyAgent ((DarwinHostSession) host_session, identifier, pid);
+					yield agent.run_until_exec (io_cancellable);
+				}
+
+				app_launch_completed (identifier, pid, null);
+			} catch (GLib.Error e) {
+				app_launch_completed (identifier, pid, e);
+			}
+		}
+
+		private async void prepare_spawn (string path, string identifier, uint pid) {
+			var info = HostSpawnInfo (pid, identifier);
+			spawn_preparation_started (info);
+
+			try {
+				if (path == XPC_PROXY_PATH) {
+					var agent = new XpcProxyAgent ((DarwinHostSession) host_session, identifier, pid);
+					yield agent.run_until_exec (io_cancellable);
+				}
+
+				spawn_captured (info);
+			} catch (GLib.Error e) {
+				spawn_preparation_aborted (info);
+			}
+		}
+
+		protected override async uint get_target_pid (Cancellable? cancellable) throws Error, IOError {
+			return 1;
+		}
+
+		protected override async string? load_source (Cancellable? cancellable) throws Error, IOError {
+			string * raw_source = Frida.Data.Darwin.get_launchd_js_blob ().data;
+			return raw_source->replace ("@REPORT_CRASHES@", ((DarwinHostSession) host_session).report_crashes.to_string ());
+		}
+	}
+
+	private class XpcProxyAgent : InternalAgent {
+		public string identifier {
+			get;
+			construct;
+		}
+
+		public uint pid {
+			get;
+			construct;
+		}
+
+		public XpcProxyAgent (DarwinHostSession host_session, string identifier, uint pid) {
+			Object (host_session: host_session, identifier: identifier, pid: pid);
+		}
+
+		construct {
+			attach_options["exceptor"] = "off";
+			attach_options["exit-monitor"] = "off";
+			attach_options["thread-suspend-monitor"] = "off";
+		}
+
+		public async void run_until_exec (Cancellable? cancellable) throws Error, IOError {
+			yield ensure_loaded (cancellable);
+
+			var helper = ((DarwinHostSession) host_session).helper;
+			yield helper.resume (pid, cancellable);
+
+			yield wait_for_unload (cancellable);
+
+			yield helper.wait_until_suspended (pid, cancellable);
+			yield helper.notify_exec_completed (pid, cancellable);
+		}
+
+		protected override async uint get_target_pid (Cancellable? cancellable) throws Error, IOError {
+			return pid;
+		}
+
+		protected override async string? load_source (Cancellable? cancellable) throws Error, IOError {
+			return (string) Frida.Data.Darwin.get_xpcproxy_js_blob ().data;
+		}
+	}
+
+	private class ReportCrashAgent : InternalAgent {
+		public signal void crash_detected (uint pid);
+		public signal void crash_received (CrashInfo crash);
+
+		public uint pid {
+			get;
+			construct;
+		}
+
+		public MappedAgentContainer mapped_agent_container {
+			get;
+			construct;
+		}
+
+		public Cancellable io_cancellable {
+			get;
+			construct;
+		}
+
+		public ReportCrashAgent (DarwinHostSession host_session, uint pid, MappedAgentContainer mapped_agent_container,
+				Cancellable io_cancellable) {
+			Object (
+				host_session: host_session,
+				pid: pid,
+				mapped_agent_container: mapped_agent_container,
+				io_cancellable: io_cancellable
+			);
+		}
+
+		construct {
+			attach_options["exceptor"] = "off";
+			attach_options["exit-monitor"] = "off";
+			attach_options["thread-suspend-monitor"] = "off";
+		}
+
+		public async void start (Cancellable? cancellable) throws Error, IOError {
+			yield ensure_loaded (cancellable);
+		}
+
+		protected override void on_event (string type, Json.Array event) {
+			switch (type) {
+				case "crash-detected":
+					var pid = (uint) event.get_int_element (1);
+
+					send_mapped_agents (pid);
+
+					crash_detected (pid);
+
+					break;
+				case "crash-received":
+					var pid = (uint) event.get_int_element (1);
+					var raw_report = event.get_string_element (2);
+
+					var crash = parse_report (pid, raw_report);
+					crash_received (crash);
+
+					break;
+				default:
+					assert_not_reached ();
+			}
+		}
+
+		private static CrashInfo parse_report (uint pid, string raw_report) {
+			var tokens = raw_report.
+"""
+
+
+```

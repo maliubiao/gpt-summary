@@ -1,0 +1,824 @@
+Response:
+`frida-core/src/freebsd/binjector.vala` 是 Frida 动态插桩工具的核心模块之一，主要负责在 FreeBSD 系统上实现进程注入、进程监控、动态库加载等功能。以下是对该文件功能的详细分析：
+
+### 1. **功能概述**
+   - **进程注入**：允许将动态库注入到目标进程中，并执行指定的入口函数。
+   - **进程监控**：监控目标进程的状态，处理进程的输出（stdout/stderr）和输入（stdin）。
+   - **资源管理**：管理临时文件和资源，确保注入的动态库和临时文件能够正确加载和清理。
+   - **进程控制**：支持进程的创建、挂起、恢复、终止等操作。
+   - **符号解析**：解析目标进程中的符号，帮助定位函数地址。
+
+### 2. **二进制底层与 Linux 内核相关**
+   - **进程注入**：通过 `_do_inject` 方法实现动态库的注入。该方法会通过 FreeBSD 的系统调用（如 `ptrace` 或 `procctl`）将动态库加载到目标进程的地址空间中，并执行指定的入口函数。
+   - **进程监控**：通过 `ChildWatch` 监控子进程的状态变化，处理子进程的退出事件。
+   - **符号解析**：通过 `SymbolResolver` 类解析目标进程中的符号，帮助定位动态库中的函数地址。这在调试和动态插桩中非常有用。
+
+### 3. **调试功能复现**
+   如果你想使用 LLDB 复现该文件中的调试功能，可以通过以下步骤：
+
+   - **步骤 1**：启动目标进程并附加 LLDB。
+     ```bash
+     lldb target_process
+     ```
+   - **步骤 2**：在 LLDB 中设置断点，监控目标进程的状态。
+     ```lldb
+     (lldb) breakpoint set --name main
+     (lldb) run
+     ```
+   - **步骤 3**：使用 LLDB 的 Python API 编写脚本，监控目标进程的输出和状态。
+     ```python
+     import lldb
+
+     def monitor_process(debugger, command, result, internal_dict):
+         target = debugger.GetSelectedTarget()
+         process = target.GetProcess()
+         thread = process.GetSelectedThread()
+         frame = thread.GetSelectedFrame()
+         print(f"Process ID: {process.GetProcessID()}")
+         print(f"Thread ID: {thread.GetThreadID()}")
+         print(f"Frame: {frame.GetFunctionName()}")
+
+     def __lldb_init_module(debugger, internal_dict):
+         debugger.HandleCommand('command script add -f lldb_script.monitor_process monitor_process')
+     ```
+   - **步骤 4**：在 LLDB 中加载并执行脚本。
+     ```lldb
+     (lldb) command script import lldb_script.py
+     (lldb) monitor_process
+     ```
+
+### 4. **逻辑推理与输入输出**
+   - **假设输入**：假设用户调用 `spawn` 方法启动一个进程，并传入路径 `/usr/bin/ls` 和一些选项。
+   - **假设输出**：`spawn` 方法会返回新进程的 PID，并监控该进程的输出（stdout/stderr）和输入（stdin）。
+
+### 5. **用户常见错误**
+   - **错误 1**：用户尝试注入一个不存在的动态库文件。
+     - **错误信息**：`Error.EXECUTABLE_NOT_FOUND ("Unable to find executable at '%s'", path)`
+     - **解决方法**：确保动态库文件路径正确，并且文件存在。
+   - **错误 2**：用户尝试注入到一个已经终止的进程。
+     - **错误信息**：`Error.INVALID_ARGUMENT ("Invalid PID")`
+     - **解决方法**：确保目标进程正在运行，并且 PID 有效。
+
+### 6. **用户操作步骤**
+   - **步骤 1**：用户调用 `spawn` 方法启动一个进程。
+   - **步骤 2**：用户调用 `inject_library_file` 方法将动态库注入到目标进程中。
+   - **步骤 3**：用户调用 `resume` 方法恢复目标进程的执行。
+   - **步骤 4**：用户调用 `demonitor` 方法停止监控目标进程。
+
+### 7. **调试线索**
+   - **线索 1**：如果用户遇到进程注入失败的问题，可以通过 `_do_inject` 方法的返回值或日志信息定位问题。
+   - **线索 2**：如果用户遇到进程监控失败的问题，可以通过 `ChildWatch` 的监控日志定位问题。
+
+### 总结
+`binjector.vala` 文件实现了 Frida 在 FreeBSD 系统上的核心功能，包括进程注入、进程监控、资源管理等。通过 LLDB 和 Python 脚本，用户可以复现和调试这些功能。用户在使用过程中需要注意常见的错误，如文件路径错误、进程状态错误等。
+Prompt: 
+```
+这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/freebsd/binjector.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
+如果涉及到二进制底层，linux内核，请做出对应的举例说明，
+请给出用lldb指令或者lldb python脚本，用来复刻的源代码所实现调试功能的示例，如果源代码是调试功能的实现。
+如果做了逻辑推理，请给出假设输入与输出,
+如果涉及用户或者编程常见的使用错误，请举例说明,
+说明用户操作是如何一步步的到达这里，作为调试线索，
+请用中文回复。
+
+"""
+namespace Frida {
+	public class Binjector : Object, Injector {
+		public signal void output (uint pid, int fd, uint8[] data);
+
+		public string temp_directory {
+			owned get {
+				return resource_store.tempdir.path;
+			}
+		}
+
+		public ResourceStore resource_store {
+			get {
+				if (_resource_store == null) {
+					try {
+						_resource_store = new ResourceStore ();
+					} catch (Error e) {
+						assert_not_reached ();
+					}
+				}
+				return _resource_store;
+			}
+		}
+		private ResourceStore _resource_store;
+
+		private Gee.HashMap<uint, uint> pid_by_id = new Gee.HashMap<uint, uint> ();
+		private Gee.HashMap<uint, TemporaryFile> blob_file_by_id = new Gee.HashMap<uint, TemporaryFile> ();
+		private uint next_injectee_id = 1;
+		private uint next_blob_id = 1;
+
+		public Gee.HashMap<uint, void *> spawn_instances = new Gee.HashMap<uint, void *> ();
+		private Gee.HashMap<uint, uint> watch_sources = new Gee.HashMap<uint, uint> ();
+		private Gee.HashMap<uint, OutputStream> stdin_streams = new Gee.HashMap<uint, OutputStream> ();
+
+		public Gee.HashMap<uint, void *> exec_instances = new Gee.HashMap<uint, void *> ();
+		private Gee.HashMap<uint, uint> exec_waiters = new Gee.HashMap<uint, uint> ();
+		private uint next_waiter_id = 1;
+
+		public Gee.HashMap<uint, void *> inject_instances = new Gee.HashMap<uint, void *> ();
+		private Gee.HashMap<uint, RemoteThreadSession> inject_sessions = new Gee.HashMap<uint, RemoteThreadSession> ();
+		private Gee.HashMap<uint, uint> inject_expiry_by_id = new Gee.HashMap<uint, uint> ();
+
+		public uint next_id = 0;
+
+		private Cancellable io_cancellable = new Cancellable ();
+
+		~Binjector () {
+			foreach (var instance in spawn_instances.values)
+				_free_spawn_instance (instance);
+			foreach (var instance in exec_instances.values)
+				_free_exec_instance (instance);
+			foreach (var instance in inject_instances.values)
+				_free_inject_instance (instance, RESIDENT);
+		}
+
+		public async void close (Cancellable? cancellable) throws IOError {
+			io_cancellable.cancel ();
+
+			_resource_store = null;
+		}
+
+		public async uint spawn (string path, HostSpawnOptions options, Cancellable? cancellable) throws Error, IOError {
+			if (!FileUtils.test (path, EXISTS))
+				throw new Error.EXECUTABLE_NOT_FOUND ("Unable to find executable at '%s'", path);
+
+			StdioPipes? pipes;
+			var child_pid = _do_spawn (path, options, out pipes);
+
+			monitor_child (child_pid);
+
+			if (pipes != null) {
+				stdin_streams[child_pid] = new UnixOutputStream (pipes.input, false);
+				process_next_output_from.begin (new UnixInputStream (pipes.output, false), child_pid, 1, pipes);
+				process_next_output_from.begin (new UnixInputStream (pipes.error, false), child_pid, 2, pipes);
+			}
+
+			return child_pid;
+		}
+
+		private void monitor_child (uint pid) {
+			watch_sources[pid] = ChildWatch.add ((Pid) pid, on_child_dead);
+		}
+
+		private void demonitor_child (uint pid) {
+			uint watch_id;
+			if (watch_sources.unset (pid, out watch_id))
+				Source.remove (watch_id);
+		}
+
+		private void on_child_dead (Pid pid, int status) {
+			watch_sources.unset (pid);
+
+			stdin_streams.unset (pid);
+
+			void * instance;
+			if (spawn_instances.unset (pid, out instance))
+				_free_spawn_instance (instance);
+		}
+
+		private async void process_next_output_from (InputStream stream, uint pid, int fd, Object resource) {
+			try {
+				var buf = new uint8[4096];
+				var n = yield stream.read_async (buf, Priority.DEFAULT, io_cancellable);
+
+				var data = buf[0:n];
+				output (pid, fd, data);
+
+				if (n > 0)
+					process_next_output_from.begin (stream, pid, fd, resource);
+			} catch (GLib.Error e) {
+				if (!(e is IOError.CANCELLED))
+					output (pid, fd, new uint8[0]);
+			}
+		}
+
+		public async void prepare_exec_transition (uint pid, Cancellable? cancellable) throws Error, IOError {
+			bool is_child = spawn_instances.has_key (pid);
+			if (is_child)
+				demonitor_child (pid);
+
+			try {
+				_do_prepare_exec_transition (pid);
+			} catch (Error e) {
+				if (is_child)
+					monitor_child (pid);
+				throw e;
+			}
+
+			_notify_exec_pending (pid, true);
+		}
+
+		public async void await_exec_transition (uint pid, Cancellable? cancellable) throws Error, IOError {
+			var instance = exec_instances[pid];
+			if (instance == null)
+				throw new Error.INVALID_ARGUMENT ("Invalid PID");
+
+			if (!_try_transition_exec_instance (instance)) {
+				uint id = next_waiter_id++;
+				Error? pending_error = null;
+
+				exec_waiters[pid] = id;
+
+				Timeout.add (50, () => {
+					var cancelled = !exec_waiters.has (pid, id);
+					if (cancelled) {
+						await_exec_transition.callback ();
+						return false;
+					}
+
+					try {
+						if (_try_transition_exec_instance (instance)) {
+							await_exec_transition.callback ();
+							return false;
+						}
+					} catch (Error e) {
+						pending_error = e;
+						await_exec_transition.callback ();
+						return false;
+					}
+
+					return true;
+				});
+
+				yield;
+
+				var cancelled = !exec_waiters.has (pid, id);
+				if (cancelled)
+					throw new Error.INVALID_OPERATION ("Cancelled");
+				exec_waiters.unset (pid);
+
+				if (pending_error != null) {
+					exec_instances.unset (pid);
+
+					_resume_exec_instance (instance);
+					_free_exec_instance (instance);
+
+					_notify_exec_pending (pid, false);
+
+					throw pending_error;
+				}
+			}
+
+			if (spawn_instances.has_key (pid))
+				monitor_child (pid);
+		}
+
+		public async void cancel_exec_transition (uint pid, Cancellable? cancellable) throws Error, IOError {
+			void * instance;
+			if (!exec_instances.unset (pid, out instance))
+				throw new Error.INVALID_ARGUMENT ("Invalid PID");
+
+			exec_waiters.unset (pid);
+
+			_suspend_exec_instance (instance);
+			_resume_exec_instance (instance);
+			_free_exec_instance (instance);
+
+			if (spawn_instances.has_key (pid))
+				monitor_child (pid);
+			_notify_exec_pending (pid, false);
+		}
+
+		public async void input (uint pid, uint8[] data, Cancellable? cancellable) throws Error, IOError {
+			var stream = stdin_streams[pid];
+			if (stream == null)
+				throw new Error.INVALID_ARGUMENT ("Invalid PID");
+			try {
+				yield stream.write_all_async (data, Priority.DEFAULT, null, null);
+			} catch (GLib.Error e) {
+				throw new Error.TRANSPORT ("%s", e.message);
+			}
+		}
+
+		public async void resume (uint pid, Cancellable? cancellable) throws Error, IOError {
+			void * instance;
+			bool instance_found;
+
+			instance_found = spawn_instances.unset (pid, out instance);
+			if (instance_found) {
+				_resume_spawn_instance (instance);
+				_free_spawn_instance (instance);
+				return;
+			}
+
+			if (exec_waiters.has_key (pid))
+				throw new Error.INVALID_OPERATION ("Invalid operation");
+
+			instance_found = exec_instances.unset (pid, out instance);
+			if (instance_found) {
+				_resume_exec_instance (instance);
+				_free_exec_instance (instance);
+				return;
+			}
+
+			throw new Error.INVALID_ARGUMENT ("Invalid PID");
+		}
+
+		public async uint inject_library_file (uint pid, string path, string entrypoint, string data, Cancellable? cancellable)
+				throws Error, IOError {
+			uint id = next_injectee_id++;
+			_do_inject (pid, path, entrypoint, data, temp_directory, id);
+
+			pid_by_id[id] = pid;
+
+			yield establish_session (id, pid);
+
+			return id;
+		}
+
+		public async uint inject_library_blob (uint pid, Bytes blob, string entrypoint, string data, Cancellable? cancellable)
+				throws Error, IOError {
+			var name = "blob%u.so".printf (next_blob_id++);
+			var file = new TemporaryFile.from_stream (name, new MemoryInputStream.from_bytes (blob), resource_store.tempdir);
+			var path = file.path;
+			FileUtils.chmod (path, 0755);
+
+			var id = yield inject_library_file (pid, path, entrypoint, data, cancellable);
+
+			blob_file_by_id[id] = file;
+
+			return id;
+		}
+
+		public async uint inject_library_resource (uint pid, AgentDescriptor descriptor, string entrypoint, string data,
+				Cancellable? cancellable) throws Error, IOError {
+			return yield inject_library_file (pid, resource_store.ensure_copy_of (descriptor), entrypoint, data, cancellable);
+		}
+
+		public async void demonitor (uint id, Cancellable? cancellable) throws Error, IOError {
+			var instance = inject_instances[id];
+			if (instance == null)
+				throw new Error.INVALID_ARGUMENT ("Invalid ID");
+
+			RemoteThreadSession session;
+			if (inject_sessions.unset (id, out session)) {
+				session.ended.disconnect (on_remote_thread_session_ended);
+				yield session.cancel ();
+			}
+
+			_demonitor (instance);
+
+			schedule_inject_expiry_for_id (id);
+		}
+
+		public async uint demonitor_and_clone_state (uint id, Cancellable? cancellable) throws Error, IOError {
+			var instance = inject_instances[id];
+			if (instance == null)
+				throw new Error.INVALID_ARGUMENT ("Invalid ID");
+
+			RemoteThreadSession session;
+			if (inject_sessions.unset (id, out session)) {
+				session.ended.disconnect (on_remote_thread_session_ended);
+				yield session.cancel ();
+			}
+
+			uint clone_id = next_injectee_id++;
+
+			_demonitor_and_clone_injectee_state (instance, clone_id);
+
+			schedule_inject_expiry_for_id (id);
+			schedule_inject_expiry_for_id (clone_id);
+
+			return clone_id;
+		}
+
+		public async void recreate_thread (uint pid, uint id, Cancellable? cancellable) throws Error, IOError {
+			var instance = inject_instances[id];
+			if (instance == null)
+				throw new Error.INVALID_ARGUMENT ("Invalid ID");
+
+			cancel_inject_expiry_for_id (id);
+
+			_recreate_injectee_thread (instance, pid);
+
+			yield establish_session (id, pid);
+		}
+
+		private async void establish_session (uint id, uint pid) throws Error {
+			var fifo = _get_fifo_for_inject_instance (inject_instances[id]);
+
+			var session = new RemoteThreadSession (id, pid, fifo);
+			try {
+				yield session.establish ();
+			} catch (Error e) {
+				_destroy_inject_instance (id, IMMEDIATE);
+				throw e;
+			}
+
+			inject_sessions[id] = session;
+			session.ended.connect (on_remote_thread_session_ended);
+		}
+
+		private void on_remote_thread_session_ended (RemoteThreadSession session, UnloadPolicy unload_policy) {
+			var id = session.id;
+
+			session.ended.disconnect (on_remote_thread_session_ended);
+			inject_sessions.unset (id);
+
+			Timeout.add (50, () => {
+				_destroy_inject_instance (id, unload_policy);
+				return false;
+			});
+		}
+
+		protected void _destroy_inject_instance (uint id, UnloadPolicy unload_policy) {
+			void * instance;
+			bool found = inject_instances.unset (id, out instance);
+			assert (found);
+
+			_free_inject_instance (instance, unload_policy);
+
+			on_uninjected (id);
+		}
+
+		private void schedule_inject_expiry_for_id (uint id) {
+			uint previous_timer;
+			if (inject_expiry_by_id.unset (id, out previous_timer))
+				Source.remove (previous_timer);
+
+			inject_expiry_by_id[id] = Timeout.add_seconds (20, () => {
+				var removed = inject_expiry_by_id.unset (id);
+				assert (removed);
+
+				_destroy_inject_instance (id, IMMEDIATE);
+
+				return false;
+			});
+		}
+
+		private void cancel_inject_expiry_for_id (uint id) {
+			uint timer;
+			var found = inject_expiry_by_id.unset (id, out timer);
+			assert (found);
+
+			Source.remove (timer);
+		}
+
+		public bool any_still_injected () {
+			return !pid_by_id.is_empty;
+		}
+
+		public bool is_still_injected (uint id) {
+			return pid_by_id.has_key (id);
+		}
+
+		private void on_uninjected (uint id) {
+			pid_by_id.unset (id);
+			blob_file_by_id.unset (id);
+
+			uninjected (id);
+		}
+
+		protected extern uint _do_spawn (string path, HostSpawnOptions options, out StdioPipes? pipes) throws Error;
+		protected extern void _resume_spawn_instance (void * instance);
+		protected extern void _free_spawn_instance (void * instance);
+
+		protected extern void _do_prepare_exec_transition (uint pid) throws Error;
+		protected extern void _notify_exec_pending (uint pid, bool pending);
+		protected extern bool _try_transition_exec_instance (void * instance) throws Error;
+		protected extern void _suspend_exec_instance (void * instance);
+		protected extern void _resume_exec_instance (void * instance);
+		protected extern void _free_exec_instance (void * instance);
+
+		protected extern void _do_inject (uint pid, string path, string entrypoint, string data, string temp_path, uint id)
+			throws Error;
+		protected extern void _demonitor (void * instance);
+		protected extern uint _demonitor_and_clone_injectee_state (void * instance, uint clone_id);
+		protected extern void _recreate_injectee_thread (void * instance, uint pid) throws Error;
+		protected extern InputStream _get_fifo_for_inject_instance (void * instance);
+		protected extern void _free_inject_instance (void * instance, UnloadPolicy unload_policy);
+
+		public class ResourceStore {
+			public TemporaryDirectory tempdir {
+				get;
+				private set;
+			}
+
+			private Gee.HashMap<string, TemporaryFile> agents = new Gee.HashMap<string, TemporaryFile> ();
+
+			public ResourceStore () throws Error {
+				tempdir = new TemporaryDirectory ();
+				FileUtils.chmod (tempdir.path, 0755);
+			}
+
+			~ResourceStore () {
+				foreach (var tempfile in agents.values)
+					tempfile.destroy ();
+				tempdir.destroy ();
+			}
+
+			public string ensure_copy_of (AgentDescriptor desc) throws Error {
+				var temp_agent = agents[desc.name];
+				if (temp_agent == null) {
+					temp_agent = new TemporaryFile.from_stream (desc.name, desc.sofile, tempdir);
+					FileUtils.chmod (temp_agent.path, 0755);
+					agents[desc.name] = temp_agent;
+				}
+				return temp_agent.path;
+			}
+		}
+	}
+
+	public class AgentDescriptor : Object {
+		public string name {
+			get;
+			construct;
+		}
+
+		public InputStream sofile {
+			get {
+				reset_stream (_sofile);
+				return _sofile;
+			}
+
+			construct {
+				_sofile = value;
+			}
+		}
+		private InputStream _sofile;
+
+		public AgentDescriptor (string name, InputStream sofile) {
+			Object (name: name, sofile: sofile);
+
+			assert (sofile is Seekable);
+		}
+
+		private void reset_stream (InputStream stream) {
+			try {
+				((Seekable) stream).seek (0, SeekType.SET);
+			} catch (GLib.Error e) {
+				assert_not_reached ();
+			}
+		}
+	}
+
+	public Gum.Address _find_entrypoint (uint pid) throws Error {
+		string program_path;
+		try {
+			program_path = Gum.Freebsd.query_program_path_for_pid ((Posix.pid_t) pid);
+		} catch (Gum.Error e) {
+			throw new Error.NOT_SUPPORTED ("Unable to detect entrypoint: %s", e.message);
+		}
+
+		Gum.ElfModule? program_module = null;
+		Gum.Address program_base = 0;
+		Gum.Freebsd.enumerate_ranges ((Posix.pid_t) pid, READ, details => {
+			unowned Gum.FileMapping? file = details.file;
+			if (file == null || file.offset != 0 || file.path != program_path)
+				return true;
+
+			try {
+				program_module = new Gum.ElfModule.from_file (file.path);
+				program_base = details.range.base_address;
+			} catch (Gum.Error e) {
+			}
+			return false;
+		});
+		if (program_module == null)
+			throw new Error.NOT_SUPPORTED ("Unable to detect entrypoint: program module not found");
+
+		return program_base + program_module.entrypoint;
+	}
+
+	public string _detect_libthr_name () {
+		string? name = null;
+		Gum.Freebsd.enumerate_ranges (Posix.getpid (), READ, details => {
+			unowned Gum.FileMapping? file = details.file;
+			if (file == null || file.offset != 0)
+				return true;
+
+			if (file.path.has_prefix ("/lib/libthr.so.")) {
+				name = file.path;
+				return false;
+			}
+
+			return true;
+		});
+		assert (name != null);
+		return name;
+	}
+
+	protected class SymbolResolver : Object {
+		private RemoteModule? ld;
+		private RemoteModule? libc;
+
+		public SymbolResolver (uint pid) {
+			Gum.Freebsd.enumerate_ranges ((Posix.pid_t) pid, READ, details => {
+				unowned Gum.FileMapping? file = details.file;
+				if (file == null || file.offset != 0)
+					return true;
+
+				unowned string path = file.path;
+				Gum.Address base_address = details.range.base_address;
+
+				if (path.has_prefix ("/libexec/ld-elf.so."))
+					ld = RemoteModule.try_open (base_address, path);
+				else if (path.has_prefix ("/lib/libc.so."))
+					libc = RemoteModule.try_open (base_address, path);
+
+				return true;
+			});
+		}
+
+		public Gum.Address find_ld_function (string function_name) {
+			if (ld == null)
+				return 0;
+			return ld.resolve (function_name);
+		}
+
+		public Gum.Address find_libc_function (string function_name) {
+			if (libc == null)
+				return 0;
+			return libc.resolve (function_name);
+		}
+	}
+
+	private class RemoteModule {
+		private Gum.Address base_address;
+		private Gum.ElfModule module;
+
+		public static RemoteModule? try_open (Gum.Address base_address, string path) {
+			try {
+				var module = new Gum.ElfModule.from_file (path);
+				return new RemoteModule (base_address, module);
+			} catch (Gum.Error e) {
+				return null;
+			}
+		}
+
+		private RemoteModule (Gum.Address base_address, Gum.ElfModule module) {
+			this.base_address = base_address;
+			this.module = module;
+		}
+
+		public Gum.Address resolve (string function_name) {
+			Gum.Address relative_address = 0;
+			module.enumerate_exports (details => {
+				if (details.name == function_name) {
+					relative_address = details.address;
+					return false;
+				}
+				return true;
+			});
+			if (relative_address == 0)
+				return 0;
+
+			return base_address + relative_address;
+		}
+	}
+
+	private class RemoteThreadSession : Object {
+		public signal void ended (UnloadPolicy unload_policy);
+
+		public uint id {
+			get;
+			construct;
+		}
+
+		public uint pid {
+			get;
+			construct;
+		}
+
+		public InputStream input {
+			get;
+			construct;
+		}
+
+		private Promise<bool> cancel_request = new Promise<bool> ();
+		private Cancellable cancellable = new Cancellable ();
+
+		public RemoteThreadSession (uint id, uint pid, InputStream input) {
+			Object (id: id, pid: pid, input: input);
+		}
+
+		public async void establish () throws Error {
+			var timeout = Timeout.add_seconds (2, () => {
+				cancellable.cancel ();
+				return false;
+			});
+
+			ssize_t size = 0;
+			var byte_buf = new uint8[1];
+			try {
+				size = yield input.read_async (byte_buf, Priority.DEFAULT, cancellable);
+			} catch (IOError e) {
+				if (e is IOError.CANCELLED) {
+					throw new Error.PROCESS_NOT_RESPONDING (
+						"Unexpectedly timed out while waiting for FIFO to establish");
+				} else {
+					Source.remove (timeout);
+
+					throw new Error.PROCESS_NOT_RESPONDING ("%s", e.message);
+				}
+			}
+
+			Source.remove (timeout);
+
+			if (size == 1 && byte_buf[0] != ProgressMessageType.HELLO)
+				throw new Error.PROTOCOL ("Unexpected message received");
+
+			if (size == 0) {
+				cancel_request.resolve (true);
+
+				Idle.add (() => {
+					ended (IMMEDIATE);
+					return false;
+				});
+			} else {
+				monitor.begin ();
+			}
+		}
+
+		public async void cancel () {
+			cancellable.cancel ();
+
+			try {
+				yield cancel_request.future.wait_async (null);
+			} catch (GLib.Error e) {
+				assert_not_reached ();
+			}
+		}
+
+		private async void monitor () {
+			try {
+				var unload_policy = UnloadPolicy.IMMEDIATE;
+
+				var byte_buf = new uint8[1];
+				var size = yield input.read_async (byte_buf, Priority.DEFAULT, cancellable);
+				if (size == 1) {
+					unload_policy = (UnloadPolicy) byte_buf[0];
+
+					var tid_buf = new uint8[4];
+					yield input.read_all_async (tid_buf, Priority.DEFAULT, cancellable, null);
+					var tid = *((uint *) tid_buf);
+
+					yield input.read_async (byte_buf, Priority.DEFAULT, cancellable);
+
+					while (_process_has_thread (pid, tid)) {
+						Timeout.add (50, monitor.callback);
+						yield;
+					}
+				}
+
+				ended (unload_policy);
+			} catch (GLib.Error e) {
+				if (!(e is IOError.CANCELLED))
+					ended (IMMEDIATE);
+			}
+
+			cancel_request.resolve (true);
+		}
+	}
+
+	public extern bool _process_has_thread (uint pid, long tid);
+
+	protected enum ProgressMessageType {
+		HELLO = 0xff
+	}
+
+	protected class StdioPipes : Object {
+		public int input {
+			get;
+			construct;
+		}
+
+		public int output {
+			get;
+			construct;
+		}
+
+		public int error {
+			get;
+			construct;
+		}
+
+		public StdioPipes (int input, int output, int error) {
+			Object (input: input, output: output, error: error);
+		}
+
+		construct {
+			try {
+				Unix.set_fd_nonblocking (input, true);
+				Unix.set_fd_nonblocking (output, true);
+				Unix.set_fd_nonblocking (error, true);
+			} catch (GLib.Error e) {
+				assert_not_reached ();
+			}
+		}
+
+		~StdioPipes () {
+			Posix.close (input);
+			Posix.close (output);
+			Posix.close (error);
+		}
+	}
+}
+
+"""
+
+```
