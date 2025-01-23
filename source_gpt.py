@@ -45,11 +45,15 @@ def generate_output_path(output_dir, filepath, idx, file_suffix):
 
 async def stream_response(prompt, output_file_path):
     """流式处理响应并保存结果"""
+    reasoning = ""
     response_text = ""
-    async for chunk in openai_client.ask_stream(prompt):
-        print(chunk, end="")
-        response_text += chunk
-    markdown_content = f"Response:\n{response_text}\nPrompt: \n```\n{prompt}\n```"
+    async for tp, token in openai_client.ask_stream(prompt):
+        if tp == openai_client.type_reasoning:
+            reasoning += token
+        else:
+            response_text += token
+        logger.info(f"Test response token: {token}")
+    markdown_content = f"Response:\n```\n{reasoning}\n```\n{response_text}\nPrompt: \n```\n{prompt}\n```"
     os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
     with open(output_file_path, 'w', encoding='utf-8') as f:
         f.write(markdown_content)
@@ -89,7 +93,8 @@ def generate_file_list_and_content(directory, prompt_template_path, output_dir, 
             for file_info in file_infos:
                 process_single_file(file_info, prompt_template, output_dir)
 
-if __name__ == "__main__":
+async def main():
+    global openai_client,logger
     import logging
     logger = logging.getLogger(__name__)
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s - Line: %(lineno)d')
@@ -111,5 +116,17 @@ if __name__ == "__main__":
         args.gemini_token,
         args.gemini_model
     )
-    test_response = asyncio.run(openai_client.ask("hello"))
+    reasoning = ""
+    content = ""
+    async for tp, token in openai_client.ask_stream("hello"):
+        if tp == openai_client.type_reasoning:
+            reasoning += token
+        else:
+            content += token
+        logger.info(f"Test response token: {token}")
+    markdown_content = f"Response:\n```\n{reasoning}\n```\n{content}\nPrompt: \n```\nhello\n```"
+    print(markdown_content)
     generate_file_list_and_content(args.dir, args.prompt_template, args.output_dir, args.file_suffixes, args.exclude)
+
+if __name__ == "__main__":
+    asyncio.run(main())

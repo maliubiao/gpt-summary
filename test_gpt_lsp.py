@@ -127,7 +127,7 @@ class TestClangdClient(unittest.TestCase):
 
     def tearDown(self):
         shutil.rmtree(self.temp_dir)
-    
+
     def create_test_compile_commands(self, data):
         with open(os.path.join(self.compile_commands_dir, "compile_commands.json"), 'w') as f:
             json.dump(data, f)
@@ -144,7 +144,7 @@ class TestClangdClient(unittest.TestCase):
             mock_create_task.assert_called_once()
             mock_thread.assert_called_once()
             self.assertIsNotNone(client.socket)
-    
+
     def test_read_compile_commands_success(self):
         client = ClangdClient(self.file_path, self.compile_commands_dir)
         test_data = [{"directory": "/test", "command": "clang++ -c /test/test.cpp", "file": "/test/test.cpp"}]
@@ -203,7 +203,7 @@ class TestClangdClient(unittest.TestCase):
             json.dumps({'jsonrpc': '2.0', 'id': 1, 'result': {}}),
             '',  # Simulate end of stream
         ]
-        
+
         mock_thread_target = mock_thread.call_args[0][0]
         mock_thread_target()
         # response from client
@@ -219,7 +219,7 @@ class TestClangdClient(unittest.TestCase):
         with patch('logging.Logger.error') as mock_error:
              mock_thread_target()
              mock_error.assert_called_once()
-    
+
     @patch('subprocess.Popen')
     @patch('asyncio.create_task')
     @patch('threading.Thread')
@@ -255,7 +255,7 @@ class TestClangdClient(unittest.TestCase):
         self.assertIn("main", symbol_table)
         self.assertEqual(len(symbol_table["main"]), 1)
         self.assertEqual(symbol_table["main"][0]["kind"], "函数")
-    
+
     @patch('subprocess.Popen')
     @patch('asyncio.create_task')
     @patch('threading.Thread')
@@ -278,7 +278,7 @@ class TestClangdClient(unittest.TestCase):
         ]
         symbol_table = await client.textDocument_documentSymbol("non_existent_file.cpp")
         self.assertIsNone(symbol_table)
-        
+
     @patch('subprocess.Popen')
     @patch('asyncio.create_task')
     @patch('threading.Thread')
@@ -335,7 +335,7 @@ class TestClangdClient(unittest.TestCase):
         ]
         symbol_table = await client.workspace_symbol("main")
         self.assertIsNone(symbol_table)
-    
+
     @patch('subprocess.Popen')
     @patch('asyncio.create_task')
     @patch('threading.Thread')
@@ -362,7 +362,7 @@ class TestClangdClient(unittest.TestCase):
         ]
         hover_text = await client.textDocument_hover(self.file_path, 1, 1)
         self.assertEqual(hover_text, "int main()")
-    
+
     @patch('subprocess.Popen')
     @patch('asyncio.create_task')
     @patch('threading.Thread')
@@ -386,7 +386,7 @@ class TestClangdClient(unittest.TestCase):
         hover_text = await client.textDocument_hover(self.file_path, 1, 1)
         self.assertIsNone(hover_text)
 
-    
+
     def test_process_symbol_same_line(self):
         client = ClangdClient(self.file_path, self.compile_commands_dir)
         lines = ["int a = 10;"]
@@ -400,7 +400,7 @@ class TestClangdClient(unittest.TestCase):
         symbol_table = {}
         client.process_symbol(symbol, lines, symbol_table)
         self.assertEqual(symbol_table["a"][0]["source"], "a")
-    
+
     def test_process_symbol_multi_line(self):
          client = ClangdClient(self.file_path, self.compile_commands_dir)
          lines = [
@@ -445,7 +445,7 @@ class TestAgOutputParsing(unittest.TestCase):
             ("file2.cpp", 2, 2, " void func() {}"),
         ]
         self.assertEqual(results, expected)
-    
+
     def test_parse_ag_output_single_line(self):
          output = "file1.cpp:10:5:  int x = 10;\nfile1.cpp:12:8:  return x;"
          results = parse_ag_output(output)
@@ -491,7 +491,7 @@ class TestSubprocessCallAg(unittest.TestCase):
             self.assertIsNone(result)
 
 class TestAsyncOpenAIClient(unittest.TestCase):
-    @patch('openai.ChatCompletion.acreate', new_callable=AsyncMock)
+    @patch('openai.resources.chat.Completions.acreate', new_callable=AsyncMock)
     async def test_ask_stream_openai_success(self, mock_acreate):
         mock_acreate.return_value = AsyncMock().__aiter__.return_value = [
             AsyncMock(choices=[MagicMock(delta=MagicMock(content="hello"))]),
@@ -501,27 +501,27 @@ class TestAsyncOpenAIClient(unittest.TestCase):
         result = [token async for token in client.ask_stream("test_question")]
         self.assertEqual(result, ["hello", " world"])
 
-    @patch('openai.ChatCompletion.acreate', new_callable=AsyncMock)
+    @patch('openai.resources.chat.Completions.acreate', new_callable=AsyncMock)
     async def test_ask_stream_openai_error(self, mock_acreate):
         mock_acreate.side_effect = Exception("API Error")
         client = AsyncOpenAIClient(api_base="test_base", model_name="test_model", token="test_token")
         result = [token async for token in client.ask_stream("test_question")]
         self.assertTrue(result[0].startswith("Error:"))
 
-    @patch('openai.ChatCompletion.acreate', new_callable=AsyncMock)
+    @patch('openai.resources.chat.Completions.acreate', new_callable=AsyncMock)
     async def test_ask_openai_success(self, mock_acreate):
         mock_acreate.return_value = AsyncMock(choices=[MagicMock(message=MagicMock(content="hello world"))])
         client = AsyncOpenAIClient(api_base="test_base", model_name="test_model", token="test_token")
         result = await client.ask("test_question")
         self.assertEqual(result, "hello world")
 
-    @patch('openai.ChatCompletion.acreate', new_callable=AsyncMock)
+    @patch('openai.resources.chat.Completions.acreate', new_callable=AsyncMock)
     async def test_ask_openai_error(self, mock_acreate):
         mock_acreate.side_effect = Exception("API Error")
         client = AsyncOpenAIClient(api_base="test_base", model_name="test_model", token="test_token")
         result = await client.ask("test_question")
         self.assertTrue(result.startswith("Error:"))
-    
+
     @patch('google.generativeai.GenerativeModel')
     async def test_ask_stream_gemini_success(self, mock_gen_model):
         mock_response = MagicMock()
@@ -542,7 +542,7 @@ class TestAsyncOpenAIClient(unittest.TestCase):
 
          result = [token async for token in client.ask_stream("test_question")]
          self.assertTrue(result[0].startswith("Error:"))
-    
+
     @patch('google.generativeai.GenerativeModel')
     async def test_ask_gemini_success(self, mock_gen_model):
          mock_response = MagicMock()
@@ -553,15 +553,15 @@ class TestAsyncOpenAIClient(unittest.TestCase):
          result = await client.ask("test_question")
          self.assertEqual(result, "test gemini response")
          mock_gen_model.return_value.generate_content.assert_called_once()
-    
+
     @patch('google.generativeai.GenerativeModel')
     async def test_ask_gemini_error(self, mock_gen_model):
          mock_gen_model.return_value.generate_content.side_effect = Exception("API Error")
          client = AsyncOpenAIClient(api_base="test_base", model_name="test_model", token="test_token", use_gemini=True, gemini_token="gemini_token", gemini_model="gemini_model")
          result = await client.ask("test_question")
          self.assertTrue(result.startswith("Error:"))
-    
-    
+
+
     def test_gemini_no_token(self):
         with patch('logging.Logger.error') as mock_error:
            client = AsyncOpenAIClient(api_base="test_base", model_name="test_model", token="test_token", use_gemini=True)
@@ -582,7 +582,7 @@ class TestPromptGeneration(unittest.TestCase):
         prompt = await prompt_symbol_content(source_array, keyword)
         self.assertIn("test.cpp", prompt)
         self.assertIn("int main() { int a = 10; return 0; }", prompt)
-    
+
     async def test_prompt_symbol_content_multiple_source(self):
          source_array = [("test1.cpp", "int main() { int a = 10; return 0; }"), ("test2.cpp", "int func() { return 1; }")]
          keyword = "int"
@@ -599,7 +599,7 @@ class TestPromptGeneration(unittest.TestCase):
         prompt = await prompt_symbol_content(source_array, keyword)
         self.assertIn("test.cpp", prompt)
         self.assertIn("keyword found but content too long to display.", prompt)
-    
+
     async def test_prompt_symbol_content_extract_matched_source(self):
         content = "before keyword keyword after"
         source_array = [("test.cpp", content)]
@@ -649,7 +649,7 @@ class TestLocateSymbol(unittest.TestCase):
            mock_ag.return_value = None
            ret = await locate_symbol_of_ag_search_hit("main", self.temp_dir, self.clangd_client)
            self.assertEqual(ret, [])
-      
+
       @patch('gpt_lsp.subprocess_call_ag')
       @patch('gpt_lsp.parse_ag_output')
       async def test_locate_symbol_of_ag_search_hit_no_search_result(self, mock_parse, mock_ag):
@@ -666,7 +666,7 @@ class TestLocateSymbol(unittest.TestCase):
            self.clangd_client.textDocument_documentSymbol = AsyncMock(return_value=None)
            ret = await locate_symbol_of_ag_search_hit("main", self.temp_dir, self.clangd_client)
            self.assertEqual(ret, {})
-      
+
       @patch('gpt_lsp.subprocess_call_ag')
       @patch('gpt_lsp.parse_ag_output')
       async def test_locate_symbol_of_ag_search_hit_skip_long_source(self, mock_parse, mock_ag):
@@ -736,7 +736,7 @@ class TestRunQuery(unittest.TestCase):
         mock_locate.return_value = {"test.cpp": []}
         await run_query_ws("main", self.temp_dir, self.mock_websocket, self.mock_openai_client)
         self.mock_websocket.write_message.assert_called_with(json.dumps({"type": "result", "content": "No relevant code found."}))
-    
+
      @patch('gpt_lsp.locate_symbol_of_ag_search_hit')
      @patch('gpt_lsp.prompt_symbol_content')
      async def test_run_query_http_success(self, mock_prompt_content, mock_locate):
@@ -745,13 +745,13 @@ class TestRunQuery(unittest.TestCase):
         result = await run_query_http("main", self.temp_dir, self.temp_dir, self.mock_openai_client)
         self.assertEqual(result, {"result": "response"})
         self.mock_openai_client.ask.assert_called_once()
-    
+
      @patch('gpt_lsp.locate_symbol_of_ag_search_hit')
      async def test_run_query_http_no_symbol(self, mock_locate):
         mock_locate.return_value = None
         result = await run_query_http("main", self.temp_dir, self.temp_dir, self.mock_openai_client)
         self.assertEqual(result, {"result": "No symbol information found."})
-     
+
      @patch('gpt_lsp.locate_symbol_of_ag_search_hit')
      async def test_run_query_http_no_source(self, mock_locate):
          mock_locate.return_value = {"test.cpp": []}
@@ -765,7 +765,7 @@ class TestWebSocketQueryHandler(AsyncHTTPTestCase):
         return Application([
             (r"/query_ws", WebSocketQueryHandler),
         ],  filepath=self.temp_dir, compile_commands_path=self.temp_dir, openai_client=mock_openai_client)
-    
+
     def setUp(self):
         super().setUp()
         self.temp_dir = tempfile.mkdtemp()
@@ -791,7 +791,7 @@ class TestWebSocketQueryHandler(AsyncHTTPTestCase):
         response = await ws_client.read_message()
         self.assertIn("Keyword is required", response)
         await ws_client.close()
-    
+
     @gen_test
     async def test_websocket_query_invalid_json(self):
         ws_url = f"ws://localhost:{self.get_http_port()}/query_ws"
@@ -800,7 +800,7 @@ class TestWebSocketQueryHandler(AsyncHTTPTestCase):
         response = await ws_client.read_message()
         self.assertIn("Invalid JSON format", response)
         await ws_client.close()
-    
+
     @gen_test
     async def test_websocket_query_error(self):
         with patch('gpt_lsp.run_query_ws') as mock_run_query:
@@ -811,7 +811,7 @@ class TestWebSocketQueryHandler(AsyncHTTPTestCase):
             response = await ws_client.read_message()
             self.assertIn("Internal server error", response)
             await ws_client.close()
-    
+
     @gen_test
     async def test_websocket_query_no_clangd(self):
         # create a client without init
@@ -819,7 +819,7 @@ class TestWebSocketQueryHandler(AsyncHTTPTestCase):
         app = Application([
             (r"/query_ws", WebSocketQueryHandler),
             ],  filepath=self.temp_dir, compile_commands_path=self.temp_dir, openai_client=mock_openai_client)
-        
+
         with patch('gpt_lsp.init_clangd_client') as mock_init:
             server = self.get_new_server(app)
             ws_url = f"ws://localhost:{server.port}/query_ws"
@@ -836,7 +836,7 @@ class TestHttpQueryHandler(AsyncHTTPTestCase):
         return Application([
             (r"/query", HttpQueryHandler),
         ], filepath=self.temp_dir, compile_commands_path=self.temp_dir, openai_client=mock_openai_client)
-    
+
     def setUp(self):
         super().setUp()
         self.temp_dir = tempfile.mkdtemp()
@@ -851,13 +851,13 @@ class TestHttpQueryHandler(AsyncHTTPTestCase):
         response = await self.fetch("/query?keyword=test")
         self.assertEqual(response.code, 200)
         self.assertIn("response", response.body.decode())
-    
+
     @gen_test
     async def test_http_query_no_keyword(self):
         response = await self.fetch("/query")
         self.assertEqual(response.code, 400)
         self.assertIn("Keyword is required", response.body.decode())
-    
+
     @gen_test
     async def test_http_query_error(self):
         with patch('gpt_lsp.run_query_http') as mock_run_query:
@@ -865,7 +865,7 @@ class TestHttpQueryHandler(AsyncHTTPTestCase):
             response = await self.fetch("/query?keyword=test")
             self.assertEqual(response.code, 500)
             self.assertIn("Internal server error", response.body.decode())
-    
+
     @gen_test
     async def test_http_query_no_clangd(self):
         # create a client without init
@@ -879,9 +879,9 @@ class TestHttpQueryHandler(AsyncHTTPTestCase):
             response = await self.fetch(f"/query?keyword=test", server=server)
             self.assertEqual(response.code, 200)
             mock_init.assert_called_once()
-    
+
 class TestMakeApp(unittest.TestCase):
-    
+
     @patch('gpt_lsp.AsyncOpenAIClient')
     async def test_make_app_success(self, mock_openai_client):
         args = MagicMock(api_base="test", model_name="test", api_token="test", filepath=".", compile_commands_path=".", gemini=False)
