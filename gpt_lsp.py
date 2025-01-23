@@ -9,6 +9,8 @@ import argparse
 import asyncio
 import os
 import openai
+from openai import AsyncOpenAI
+
 import re
 from tqdm.asyncio import tqdm
 import tornado.ioloop
@@ -271,7 +273,7 @@ class ClangdClient:
                     self.process_symbol(symbol, [], symbol_table[file_path])
             return symbol_table
         return 
-    
+
 
     async def textDocument_hover(self, file_path, line_number, character):
         future = self.send_request('textDocument/hover', {
@@ -363,6 +365,8 @@ def subprocess_call_ag(keyword, path):
         return None
 
 class AsyncOpenAIClient:
+    type_reasoning = "reasoning"
+    type_content = "content"
     def __init__(self, api_base: str, model_name: str, token: str, use_gemini: bool = False, gemini_token: str = None, gemini_model: str = None):
         self.api_base = api_base
         self.model_name = model_name
@@ -379,8 +383,7 @@ class AsyncOpenAIClient:
                 logger.error("Gemini API token is required when using Gemini.")
                 self.gmodel = None
         else:
-            openai.api_base = self.api_base
-            openai.api_key = self.token
+            self.aclient = AsyncOpenAI(api_key=token, base_url=api_base)
 
     async def ask_stream(self, question: str):
         if self.use_gemini and self.gmodel:
@@ -400,19 +403,19 @@ class AsyncOpenAIClient:
                     raise ValueError(f"Error: {e}")
         else:
             try:
-                response_stream = await openai.ChatCompletion.acreate(
+                response_stream = await self.aclient.chat.completions.create(
                     model=self.model_name,
                     messages=[
                         {"role": "user", "content": question}
                     ],
-                    stream=True,
+                    stream=True
                 )
                 async for chunk in response_stream:
-                    if chunk.choices:
-                        delta = chunk.choices[0].delta
-                        if delta and "content" in delta:
-                            yield delta.content
-            except openai.error.OpenAIError as e:
+                    if chunk.choices and chunk.choices[0].delta and chunk.choices[0].delta.reasoning_content:
+                        yield self.type_reasoning, chunk.choices[0].delta.reasoning_content
+                    if chunk.choices and chunk.choices[0].delta and chunk.choices[0].delta.content:
+                        yield self.type_content, chunk.choices[0].delta.content
+            except openai.OpenAIError as e:
                 logger.error(f"OpenAI API error: {e}")
                 yield f"Error: {e}"
 
@@ -426,14 +429,12 @@ class AsyncOpenAIClient:
                 return f"Error: {e}"
         else:
             try:
-                response = await openai.ChatCompletion.acreate(
-                    model=self.model_name,
-                    messages=[
-                        {"role": "user", "content": question}
-                    ]
-                )
-                return response.choices[0].message.content
-            except openai.error.OpenAIError as e:
+                response = await self.aclient.chat.completions.create(model=self.model_name,
+                messages=[
+                    {"role": "user", "content": question}
+                ])
+                return "```\n%s\n```\n%s" % (response.choices[0].message.reasoning_content, response.choices[0].message.content)
+            except openai.OpenAIError as e:
                 logger.error(f"OpenAI API error: {e}")
                 return f"Error: {e}"
 
@@ -602,7 +603,7 @@ async def run_query_ws(keyword: str, filepath: str, websocket, openai_client: As
         #     file.write(prompt)
 
         response_content = ""
-        async for token in openai_client.ask_stream(prompt):
+        async for tp, token in openai_client.ask_stream(prompt):
             response_content += token
             await websocket.write_message(json.dumps({"type": "stream", "content": token}))
 
