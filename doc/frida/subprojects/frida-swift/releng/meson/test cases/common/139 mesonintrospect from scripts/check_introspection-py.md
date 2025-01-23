@@ -136,7 +136,7 @@ Here's a breakdown of the thinking process to analyze the Python script and answ
 
 总而言之，`check_introspection.py` 是 Frida 构建系统中的一个实用工具，用于确保 Meson 构建的内省信息是可用的。虽然它本身不是逆向工具，但它验证的基础设施对于逆向工程人员理解目标软件的构建过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/139 mesonintrospect from scripts/check_introspection.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -164,7 +166,4 @@ introspect_arr = shlex.split(mesonintrospect)
 buildroot = os.environ['MESON_BUILD_ROOT']
 
 subprocess.check_output([*introspect_arr, '--all', buildroot])
-
-"""
-
 ```

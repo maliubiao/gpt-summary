@@ -175,7 +175,7 @@ func (o tagOptions) Contains(optionName string) bool {
 
 总而言之，`tags.go` 中的代码是 `encoding/json` 包中一个重要的组成部分，它负责解析和处理结构体字段的 `json` 标签，为后续的 JSON 序列化和反序列化逻辑提供了基础。开发者在使用 `json` 标签时需要注意选项的拼写和分隔符，以确保预期的行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/json/tags.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -183,8 +183,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -223,9 +225,4 @@ func (o tagOptions) Contains(optionName string) bool {
 	}
 	return false
 }
-
-"""
-
-
-
 ```

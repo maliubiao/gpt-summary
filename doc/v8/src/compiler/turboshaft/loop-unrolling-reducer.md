@@ -105,11 +105,13 @@ for (let i = 0; i < limit; i++) {
 
 总而言之，`v8/src/compiler/turboshaft/loop-unrolling-reducer.cc` 是 V8 引擎中一个关键的优化组件，它通过分析循环结构来判断是否可以进行循环展开，从而提高 JavaScript 代码的执行效率。它通过模式匹配特定的 `for` 循环结构，并静态计算或估计循环的迭代次数来实现这一目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/loop-unrolling-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -689,7 +691,4 @@ StaticCanonicalForLoopMatcher::InvertComparisonOp(CmpOp op) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

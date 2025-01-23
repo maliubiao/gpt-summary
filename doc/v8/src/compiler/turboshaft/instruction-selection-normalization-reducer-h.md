@@ -155,15 +155,17 @@ ShiftLeftOp(
 
 总结来说，`InstructionSelectionNormalizationReducer` 是 V8 Turboshaft 编译器中一个重要的优化阶段，它通过对编译图进行预处理，为后续的指令选择过程提供便利，并提升最终生成的机器码的效率。它关注的是编译器的内部表示和优化，而不是直接处理用户的 JavaScript 代码错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/instruction-selection-normalization-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/instruction-selection-normalization-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -264,7 +266,4 @@ class InstructionSelectionNormalizationReducer : public Next {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_INSTRUCTION_SELECTION_NORMALIZATION_REDUCER_H_
-
-"""
-
 ```

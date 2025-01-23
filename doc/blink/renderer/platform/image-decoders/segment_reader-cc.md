@@ -138,14 +138,16 @@ Let's consider the `GetSomeData` function as an example for logical reasoning:
 
 In summary, `segment_reader.cc` is a fundamental component in Blink's image decoding pipeline, providing a flexible and efficient way to access image data from various sources, which is essential for rendering images on web pages triggered by HTML, CSS, and JavaScript. Understanding its functionality helps in comprehending how browsers handle image resources.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/segment_reader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -401,7 +403,4 @@ base::span<const uint8_t> SegmentReader::RWBufferGetSomeData(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -110,11 +110,13 @@ console.timeEnd("Execution Time");
 
 总结来说，`v8/src/heap/stress-scavenge-observer.cc` 这个文件定义了一个 V8 内部的组件，用于在内存分配过程中主动增加新生代垃圾回收的压力，目的是为了测试和验证垃圾回收器的性能和稳定性，虽然 JavaScript 代码本身无法直接控制它，但它的行为会间接地影响 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/stress-scavenge-observer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ int StressScavengeObserver::NextLimit(int min) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

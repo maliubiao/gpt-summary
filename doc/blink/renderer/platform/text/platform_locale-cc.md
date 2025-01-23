@@ -136,14 +136,16 @@ By following this structured approach, I can systematically analyze the source c
 
 总而言之，`platform_locale.cc` 是 Blink 引擎中实现本地化功能的基础设施，它使得 Web 内容能够根据用户的语言和文化习惯进行呈现和交互，对于构建国际化的 Web 应用至关重要。开发者应该利用 Blink 提供的本地化 API 和工具，而不是尝试手动处理本地化逻辑，以避免常见的错误并确保良好的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/platform_locale.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011,2012 Google Inc. All rights reserved.
  *
@@ -705,7 +707,4 @@ String Locale::FormatDateTime(const DateComponents& date,
 }
 
 }  // namespace blink
-
-"""
-
 ```

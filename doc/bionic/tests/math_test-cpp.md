@@ -159,7 +159,7 @@ if (Process.arch === "arm64" || Process.arch === "arm") {
 
 `bionic/tests/math_test.cpp` 文件的主要功能是 **作为 Android Bionic 库中数学库 `<math.h>` 的一个全面的测试套件。** 它通过使用 Google Test 框架，对 `<math.h>` 中定义的各种宏和函数进行细致的测试，覆盖了不同的输入值和边界情况，以确保 Bionic 提供的数学功能的正确性和可靠性。它还测试了一些历史遗留的 BSD 数学函数。 虽然该文件本身不涉及 dynamic linker 的直接功能，但它测试的数学函数最终会被 Android 系统和应用程序调用，并通过 dynamic linker 加载到内存中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -171,8 +171,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  *
@@ -1422,8 +1424,5 @@ TEST(math_h, fdiml) {
 
 TEST(math_h, round) {
   auto guard = android::base::make_scope_guard([]() { fesetenv(FE_DFL_ENV); });
-  fesetround(FE_TOWARDZERO); // round ignores the rounding mode and always rounds away from 
-"""
-
-
+  fesetround(FE_TOWARDZERO); // round ignores the rounding mode and always rounds away from
 ```

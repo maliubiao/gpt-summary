@@ -135,7 +135,7 @@ This code is likely executed as an internal step within the Frida tooling. A use
 
 Therefore, while a user doesn't directly call this `agent-warmup.js` file, it's a crucial part of the internal machinery that enables Frida to load and execute user-defined instrumentation logic. If a user encounters issues loading their agent, understanding the steps involved in Frida's compilation process (including potential "warmup" stages) can be helpful for debugging.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/compiler/agent-warmup.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const {
   compilerRoot,
   compilerNodeModules,
@@ -367,7 +369,4 @@ function throwNotImplemented(operation, ...details) {
 }
 
 main();
-
-"""
-
 ```

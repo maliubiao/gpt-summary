@@ -157,15 +157,17 @@ GOARCH=amd64 go test -run Rotate  # 在 amd64 架构上运行名为 Rotate 的�
 
 总而言之，`go/test/codegen/rotate.go` 是 Go 编译器测试套件的一部分，专注于验证位旋转操作的汇编代码生成。普通 Go 开发者不需要直接使用或修改此文件，理解其目的是有助于更好地理解 Go 编译器的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/rotate.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -447,9 +449,4 @@ func checkArithmeticWithRotate(a *[1000]uint64) {
 	}
 
 }
-
-"""
-
-
-
 ```

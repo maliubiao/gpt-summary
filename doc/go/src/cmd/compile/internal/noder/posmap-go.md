@@ -163,15 +163,17 @@ func main() {
 
 `posmap.go` 是 Go 编译器 `noder` 阶段的关键组件，负责将源代码中语法节点的位置信息从 `syntax.Pos` 转换为编译器内部使用的 `src.XPos`。它处理了文件位置和 `#line` 指令带来的位置映射，并通过缓存优化性能。虽然开发者不会直接使用它，但了解其功能有助于理解 Go 编译器的内部工作原理，特别是与源代码位置信息相关的部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/noder/posmap.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -246,9 +248,4 @@ func (m *posMap) makeSrcPosBase(b0 *syntax.PosBase) *src.PosBase {
 
 	return b1
 }
-
-"""
-
-
-
 ```

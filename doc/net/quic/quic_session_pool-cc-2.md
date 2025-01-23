@@ -124,7 +124,7 @@ QUIC 协议本身对提升 Web 应用程序的性能有重要作用，而这段�
 
 在调试网络问题时，可以通过 Chrome 的 `chrome://net-internals/#quic` 页面查看当前的 QUIC 会话状态，以及相关的事件日志，以追踪会话的创建、迁移和关闭过程。  还可以通过抓包工具 (如 Wireshark) 观察 QUIC 握手和数据传输过程。  NetLog (可以在 `chrome://net-internals/#netlog` 中启用和查看) 提供了更详细的 Chromium 网络栈内部事件记录，可以帮助定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 uic::QuicUtils::CreateRandomConnectionId(random_generator_);
   std::unique_ptr<QuicServerInfo> server_info;
   if (params_.max_server_configs_stored_in_properties > 0) {
@@ -627,8 +629,4 @@ bool QuicSessionPool::CryptoConfigCacheIsEmptyForTesting(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

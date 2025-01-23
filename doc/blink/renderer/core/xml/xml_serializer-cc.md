@@ -166,15 +166,17 @@ After brainstorming and outlining, the next step is to organize the information 
 
 `blink/renderer/core/xml/xml_serializer.cc` 文件中的 `XMLSerializer::serializeToString` 函数是 Blink 引擎中用于将 XML 节点树转换为字符串的核心组件。它与 JavaScript 通过 DOM API 操作 XML 文档紧密相关，并且在处理 XHTML 或将 HTML 作为 XML 序列化时也可能被使用。理解其功能和使用场景对于调试与 XML 处理相关的浏览器行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/xml_serializer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  *  Copyright (C) 2003, 2006 Apple Inc. All rights reserved.
  *  Copyright (C) 2006 Samuel Weinig (sam@webkit.org)
@@ -211,7 +213,4 @@ String XMLSerializer::serializeToString(Node* root) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

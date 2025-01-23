@@ -162,15 +162,17 @@ This iterative process of scanning, analyzing, connecting, reasoning, and refini
 
 总之，`insert_incremental_text_command.cc` 是 Blink 引擎中一个重要的优化模块，它通过智能地比较新旧文本，减少了实际需要插入的文本量，从而提高了文本编辑的效率和性能。它与 JavaScript, HTML, CSS 紧密相关，共同构成了 Web 页面的动态编辑能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/insert_incremental_text_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -356,7 +358,4 @@ void InsertIncrementalTextCommand::DoApply(EditingState* editing_state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

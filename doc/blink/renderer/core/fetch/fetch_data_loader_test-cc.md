@@ -222,7 +222,7 @@ By following this systematic approach, I can effectively analyze the C++ test fi
 
 `blink/renderer/core/fetch/fetch_data_loader_test.cc` 是一个关键的单元测试文件，用于确保 `FetchDataLoader` 类在各种数据加载场景下的正确性和稳定性。它覆盖了将网络数据加载为 JavaScript 可以使用的各种数据类型的场景，并测试了成功、失败和取消等不同的结果。这个文件对于理解 Blink 引擎如何处理网络请求的数据至关重要，并且可以作为调试网络加载相关问题的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/fetch_data_loader_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -230,8 +230,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1086,7 +1088,4 @@ TEST_F(FetchDataLoaderTest, LoadAsStringCancel) {
       .WillOnce(DoAll(SetArgReferee<0>(base::span<const char>{}),
                       Return(Result::kShouldWait)));
   EXPECT_CALL
-"""
-
-
 ```

@@ -142,14 +142,16 @@ Trust Token 是一种用于在网络上进行匿名身份验证的机制，旨�
 
 总而言之，`trust_token_params_conversion.cc` 是 Blink 引擎中负责 Trust Token 参数转换的关键组件，它确保了内部表示和网络层表示的一致性，从而支持了 Web 开发者通过 JavaScript 使用 Trust Token 功能。虽然它不直接处理用户在 JavaScript, HTML, CSS 中的错误，但它的正确运行是 Trust Token 功能正常使用的前提。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/trust_token_params_conversion.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -187,7 +189,4 @@ network::OptionalTrustTokenParams ConvertTrustTokenParams(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -112,7 +112,7 @@ session = frida.attach(data.target_program)
 
 总而言之，尽管 `frida/subprojects/frida-python/tests/data/__init__.py` 文件代码量不多，但它在 Frida Python 绑定的测试框架中扮演着重要的角色，体现了 Frida 跨平台的特性以及与底层操作系统和二进制文件的交互。 开发者通过查看这个文件，可以了解测试环境的配置，并将其作为调试测试用例的一个入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/tests/data/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 import platform
 import sys
@@ -139,7 +141,4 @@ else:
 
 
 __all__ = ["target_program"]
-
-"""
-
 ```

@@ -170,15 +170,17 @@ By following these steps and iteratively refining the explanation, we arrive at 
 
 总而言之，`HTMLDataListElement.cc` 是 Blink 渲染引擎中负责处理 `<datalist>` 元素的核心代码，它连接了 HTML 结构、JavaScript 交互以及浏览器如何向用户展示输入建议的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_data_list_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  * Copyright (C) 2010 Apple Inc. All rights reserved.
@@ -269,7 +271,4 @@ void HTMLDataListElement::Prefinalize() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

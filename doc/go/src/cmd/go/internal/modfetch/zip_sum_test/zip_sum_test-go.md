@@ -264,15 +264,17 @@ ok      cmd/go/internal/modfetch/zip_sum_test 0.130s
 
 总而言之，这段代码是 `go` 命令自身测试套件中的一个重要部分，用于确保模块下载功能的可靠性和一致性。它通过对比预期的校验和与实际下载的 zip 文件的校验和及哈希值，来验证模块 zip 文件的稳定性。理解其功能和命令行参数对于维护和理解 `go` 命令的模块管理机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modfetch/zip_sum_test/zip_sum_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -505,9 +507,4 @@ func writeZipSumTests(tests []zipSumTest) (err error) {
 	w.Flush()
 	return nil
 }
-
-"""
-
-
-
 ```

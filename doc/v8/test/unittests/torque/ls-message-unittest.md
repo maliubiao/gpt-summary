@@ -104,11 +104,13 @@ Torque 是一种用于为 V8 生成高效 C++ 代码的语言。Torque 语言服
       "textDocument": {
         "synchronization": {
           "willSave": true,
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/torque/ls-message-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -355,7 +357,4 @@ TEST(LanguageServerMessage, NoSymbolsSendsEmptyResponse) {
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -161,15 +161,17 @@ func main() {
 
 `b.go` 的功能非常简单，它作为一个中间层，将对自身函数的调用转发给 `a` 包。这种结构通常用于测试跨包调用，尤其是涉及到接口类型返回值的情况。它本身不涉及复杂的逻辑或命令行参数处理，但使用者需要注意处理 `interface{}` 返回值时的类型断言。 这个文件存在的目的是为了验证 Go 编译器在处理跨包接口调用时是否正确，这通常与特定的 bug 修复相关。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue32901.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -185,9 +187,4 @@ func F() interface{} {
 func P() interface{} {
 	return a.P()
 }
-
-"""
-
-
-
 ```

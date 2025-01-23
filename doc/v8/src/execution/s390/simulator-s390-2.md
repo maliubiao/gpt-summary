@@ -61,13 +61,15 @@ console.log(sum); // 输出: [6, 8, 10, 12]
 
 这部分 `simulator-s390.cc` 代码的核心功能是 **模拟 s390 架构的指令集，特别是向量指令和常见的通用目的指令**。它作为 V8 引擎的一部分，用于在非 s390 硬件上执行或测试为 s390 架构编译的 JavaScript 代码。虽然 JavaScript 开发者不会直接编写这些 s390 指令，但 V8 引擎在执行 JavaScript 代码时可能会在底层使用它们进行优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/s390/simulator-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
-                                                       \
+### 源代码
+```
+\
       VECTOR_MULTIPLY_EVEN_ODD_TYPE(r1, r2, r3, sign##int32_t, sign##int64_t, \
                                     is_odd)                                   \
       break;                                                                  \
@@ -2359,9 +2361,4 @@ EVALUATE(BXH) {
 
   // update contents of register in r1 with the new incremented value
   set_register(r1, r1_val);
-
-
-"""
-
-
 ```

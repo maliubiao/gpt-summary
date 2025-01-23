@@ -216,7 +216,7 @@ Many parts of this code directly relate to the JavaScript environment d8 provide
 
 This part of `v8/src/d8/d8.cc` is responsible for setting up a foundational runtime environment for the d8 JavaScript shell. It provides core functionalities like exception handling, performance counter tracking, basic string conversion, and the initial structure for simulating a DOM. Crucially, it defines the global object with essential functions and objects that JavaScript code running in d8 can interact with. It also handles low-level tasks like processing V8 messages, managing promise rejections, and preparing the execution context. Essentially, it's a crucial building block that enables d8 to execute JavaScript code and provides tools for monitoring and debugging that execution.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/d8/d8.cc以.tq结尾，那它是个v8 torque源代码，
@@ -224,8 +224,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 f("%s\n", ToCString(stack_trace));
   }
   printf("\n");
@@ -1023,8 +1025,5 @@ void Shell::OnExit(v8::Isolate* isolate, bool dispose) {
           std::cout << "| t:" << std::setw(kNameBoxSize - 4) << std::left << key
                     << " | " << std::setw(kValueBoxSize - 2) << std::right
                     << counter->sample_total() << " |\n";
-        } 
-"""
-
-
+        }
 ```

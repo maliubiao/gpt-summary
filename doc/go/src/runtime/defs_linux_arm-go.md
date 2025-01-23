@@ -199,7 +199,7 @@ ts.setNsec(1500000000)
 
 `go/src/runtime/defs_linux_arm.go` 是 Go 运行时在 Linux ARM 架构上的基石，它定义了与操作系统交互所需的各种常量和数据结构。虽然普通 Go 开发者不需要直接操作这个文件，但了解其功能有助于理解 Go 语言底层的运行机制。对于需要进行底层系统调用的开发者来说，正确理解和使用这些定义至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_linux_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -207,8 +207,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -416,9 +418,4 @@ type sockaddr_un struct {
 	family uint16
 	path   [108]byte
 }
-
-"""
-
-
-
 ```

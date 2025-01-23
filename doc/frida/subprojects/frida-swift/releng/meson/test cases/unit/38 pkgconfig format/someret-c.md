@@ -128,7 +128,7 @@ get_returnvalue 返回值: 0
 
 总而言之，`someret.c` 看起来是一个非常小的辅助文件，主要用于 Frida Swift 集成的单元测试，以验证 Frida 能够正确地与简单的 C 函数交互。它的简洁性使其成为测试 Frida 功能和排除问题的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/38 pkgconfig format/someret.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,12 +136,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int get_returnvalue (void) {
   return 0;
 }
-
-"""
-
 ```

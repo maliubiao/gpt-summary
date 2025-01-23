@@ -177,15 +177,17 @@ fetch('https://example.com/data')
 
 `hpack_varint_decoder.cc` 是 Chromium 网络栈中负责解码 HPACK 变长整数的关键组件。它虽然不直接与 JavaScript 交互，但通过解码 HTTP/2 头部信息，使得 JavaScript 能够获取到正确的网络资源信息，从而影响着用户的浏览体验。理解其功能和可能出现的错误，有助于调试网络相关的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/varint/hpack_varint_decoder.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -332,7 +334,4 @@ DecodeStatus HpackVarintDecoder::ResumeForTest(DecodeBuffer* db) {
 }
 
 }  // namespace http2
-
-"""
-
 ```

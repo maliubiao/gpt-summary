@@ -163,7 +163,7 @@ By following these steps, considering the context, and making logical inferences
 
 尽管 `libB.cpp` 代码本身非常简单，但它在 Frida 的测试框架中扮演着验证对象库处理能力的角色。理解其功能需要结合 Frida 的整体架构、构建系统以及逆向工程的应用场景。通过分析代码、推断依赖关系和考虑使用场景，我们可以更好地理解这段代码在 Frida 生态系统中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/15 object library advanced/subprojects/cmObjLib/libB.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,15 +171,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "libB.hpp"
 #include "libC.hpp"
 
 std::string getZlibVers(void) {
   return getGenStr();
 }
-
-"""
-
 ```

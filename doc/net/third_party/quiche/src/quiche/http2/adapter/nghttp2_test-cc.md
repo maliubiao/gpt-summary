@@ -122,15 +122,17 @@ fetch('https://example.com/api', {
 
 **总结:** `nghttp2_test.cc` 是 Chromium 中至关重要的测试文件，它确保了 HTTP/2 协议的正确实现和与 `nghttp2` 库的良好集成。虽然它不直接涉及 JavaScript 代码，但它保障了 JavaScript 发起的 HTTP/2 网络请求能够在底层被正确处理。通过分析这个文件，开发人员可以理解 HTTP/2 适配器的功能、潜在的错误点以及调试相关问题的方向。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/nghttp2.h"
 
 #include <string>
@@ -398,7 +400,4 @@ TEST_F(Nghttp2ServerTest, MismatchedContentLength) {
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

@@ -176,7 +176,7 @@ input()
 
 总而言之，`cpyTest.cpp` 是 Frida 测试套件中的一个简单但重要的组成部分，用于验证基本的字符串拼接功能和宏定义在特定构建环境下的正确性。 尽管代码本身简单，但它背后的运行机制和测试目的与 Frida 的核心功能和逆向分析密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/cpyTest.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cpyTest.hpp"
 #include "cpyTest2.hpp"
 #include "cpyTest3.hpp"
@@ -195,7 +197,4 @@ Prompt:
 std::string getStrCpyTest() {
   return CPY_TEST_STR_2 CPY_TEST_STR_3 CPY_TEST_STR_4 CPY_TEST_STR_5;
 }
-
-"""
-
 ```

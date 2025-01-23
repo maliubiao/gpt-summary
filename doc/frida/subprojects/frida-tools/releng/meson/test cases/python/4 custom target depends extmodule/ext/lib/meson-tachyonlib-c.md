@@ -160,7 +160,7 @@ Finally, the information needs to be organized logically. The provided structure
 
 `meson-tachyonlib.c` 自身是一个非常简单的 C 文件，其功能是返回一个固定的字符串。在 Frida 的上下文中，它主要扮演一个测试目标的角色，用于验证 Frida 的动态插桩能力以及 Frida 的构建系统处理外部模块依赖的功能。理解这个文件及其上下文有助于理解 Frida 的工作原理，以及如何使用 Frida 进行逆向工程和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/python/4 custom target depends extmodule/ext/lib/meson-tachyonlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _MSC_VER
 __declspec(dllexport)
 #endif
@@ -178,7 +180,4 @@ tachyon_phaser_command (void)
 {
     return "shoot";
 }
-
-"""
-
 ```

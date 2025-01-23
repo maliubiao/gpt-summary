@@ -271,7 +271,7 @@ inet_pton(AF_INET, "192.168.1.100", &filter.imsf_slist[0]);
 
 **重要提示:** 上述 Frida 脚本只是一个基本示例，可能需要根据实际情况进行调整，例如正确处理 IP 地址的字节序转换，以及处理不同 Android 版本或架构的差异。读取结构体成员时需要非常小心，确保偏移量和数据类型正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/ip_msfilter.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -282,8 +282,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -330,7 +332,4 @@ struct ip_msfilter {
   uint32_t imsf_numsrc;
   struct in_addr imsf_slist[1];
 };
-
-"""
-
 ```

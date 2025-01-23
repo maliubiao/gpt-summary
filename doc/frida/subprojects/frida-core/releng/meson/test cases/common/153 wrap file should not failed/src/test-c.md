@@ -129,7 +129,7 @@ collect2: error: ld returned 1 exit status
 
 因此，到达这个 `test.c` 文件的调试线索是： **这是 Frida 为了测试其代码插桩能力而创建的一个故意包含未定义函数的简单程序。  通过 Frida 的 "wrap" 机制，这些未定义的函数可以在运行时被动态地“补上”或者修改行为，以验证 Frida 的功能是否正常。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/153 wrap file should not failed/src/test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int bar_dummy_func(void);
@@ -148,7 +150,4 @@ int main(void) {
     printf("Hello world %d\n", bar_dummy_func() + dummy_func());
     return 0;
 }
-
-"""
-
 ```

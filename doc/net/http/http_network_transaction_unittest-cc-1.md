@@ -176,7 +176,7 @@ While this C++ code directly handles the network communication, it's crucial for
 
 This section of the `http_network_transaction_unittest.cc` file thoroughly tests the fundamental aspects of the `HttpNetworkTransaction` class in Chromium's network stack. It focuses on ensuring the correct handling of basic HTTP request/response cycles, various error conditions, different response formats, connection management, and the interaction of the transaction with callbacks for asynchronous operations. It lays the groundwork for more complex scenarios that will likely be covered in subsequent parts of the test suite. It validates the core logic that underpins how the browser retrieves web resources, a process often initiated by JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 heckNTLMProxyAuth(
     const std::optional<AuthChallengeInfo>& auth_challenge) {
   if (!auth_challenge) {
@@ -1059,7 +1061,4 @@ TEST_P(HttpNetworkTransactionTest, Ignores1xx) {
 
   std::unique_ptr<HttpNetworkSession> session(CreateSession(&session_deps_));
   HttpNetworkTransaction trans(DEFAULT_PRIORITY, session.
-"""
-
-
 ```

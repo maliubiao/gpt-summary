@@ -151,7 +151,7 @@ if (func1Address) {
 
 总而言之，这段简单的 `source.c` 代码虽然功能单一，但在 Frida 的上下文中，它可以作为测试 Frida 基本 Hook 功能、理解目标进程内存布局和符号表概念的基础案例。它的位置表明它很可能是 Frida 测试框架的一部分，用于验证构建流程或 Frida 核心功能的正确性。通过分析这段代码，可以帮助开发者理解 Frida 的工作原理，并为调试更复杂的 Hook 场景提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/216 custom target input extracted objects/libdir/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,12 +159,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

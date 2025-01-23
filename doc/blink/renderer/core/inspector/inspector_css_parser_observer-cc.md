@@ -158,14 +158,16 @@ CSSRuleSourceData {
 
 `InspectorCSSParserObserver` 是 Blink 渲染引擎中一个至关重要的组件，它充当 CSS 解析过程的观察者，负责提取并组织 CSS 规则的结构和源信息。这些信息对于浏览器的开发者工具（特别是 Elements 面板）的功能至关重要，能够帮助开发者理解、调试和优化网页的样式。它与 CSS 直接相关，并通过 HTML 将 CSS 与文档结构联系起来，最终，其收集的数据被 JavaScript 驱动的开发者工具所使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_css_parser_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -753,7 +755,4 @@ const LineEndings* InspectorCSSParserObserver::GetLineEndings() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

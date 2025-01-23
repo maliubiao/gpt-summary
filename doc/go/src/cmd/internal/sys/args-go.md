@@ -134,15 +134,17 @@ func main() {
 
 `go/src/cmd/internal/sys/args.go` 中定义的 `ExecArgLengthLimit` 常量是为了确保使用 `os/exec` 包执行外部命令时，传递的参数长度不会超出操作系统的限制，从而提高程序的跨平台兼容性和稳定性。开发者在使用 `os/exec` 包时，应该意识到这个限制，并在动态生成参数时特别注意，避免构建过长的参数列表。虽然这是一个内部常量，开发者不会直接使用它，但了解它的存在和意义对于编写健壮的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/sys/args.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -156,9 +158,4 @@ package sys
 // that includes spaces or not, just use 30 KB. Darwin's limit is less clear.
 // The OS claims 256KB, but we've seen failures with arglen as small as 50KB.
 const ExecArgLengthLimit = (30 << 10)
-
-"""
-
-
-
 ```

@@ -146,7 +146,7 @@ python script.py file1.txt file2.log config.ini
 
 总而言之，这个 `script.py` 脚本本身的功能很基础，但它在 Frida 的测试框架中扮演着重要的角色，用于准备测试环境，确保后续的 Frida 功能测试可以在一个干净的状态下进行。 它的存在揭示了 Frida 测试流程中对环境可控性的要求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/99 install all targets/script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -163,7 +165,4 @@ import sys
 for f in sys.argv[1:]:
   with open(f, 'w') as f:
       pass
-
-"""
-
 ```

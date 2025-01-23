@@ -187,7 +187,7 @@ bar();
 
 总而言之，`frida/subprojects/frida-gum/bindings/gumjs/runtime/error-handler-v8.js` 文件是 Frida 动态分析能力的重要组成部分，它使得在目标进程中运行的 JavaScript 代码的调试更加高效和便捷，尤其是在处理复杂的、混淆过的代码时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/runtime/error-handler-v8.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 global._setUnhandledExceptionCallback(error => {
   const message = {
     type: 'error',
@@ -381,7 +383,4 @@ function CallSiteToString() {
   }
   return line;
 }
-
-"""
-
 ```

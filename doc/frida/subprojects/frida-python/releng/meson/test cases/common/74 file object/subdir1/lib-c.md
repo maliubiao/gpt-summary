@@ -158,7 +158,7 @@ if __name__ == '__main__':
 
 因此，到达 `lib.c` 文件是测试 Frida 功能的一个步骤，用于验证 Frida 是否能够正确处理文件对象（可能是指共享库文件）并 hook 其中定义的函数。作为调试线索，这个简单的 `lib.c` 文件可以作为验证 Frida 基础 hook 功能是否正常的基准。如果针对这个简单函数的 hook 都失败，那么问题很可能出在 Frida 的配置、目标进程的状态或者 Frida 脚本本身。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/74 file object/subdir1/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,12 +166,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 1;
 }
-
-"""
-
 ```

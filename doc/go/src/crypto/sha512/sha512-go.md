@@ -311,7 +311,7 @@ SHA-512 Hash (length: 64): 847bb313c576ff205768490a299ff68715810c06a1b78a4db3233
 
 因此，在使用这些函数时，务必清楚地知道需要哪种 SHA-512 变种，并使用相应的函数和常量（如 `sha512.Size`, `sha512.Size224` 等）来获取正确的哈希值长度。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/sha512/sha512.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -319,8 +319,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -444,9 +446,4 @@ func Sum512_256(data []byte) [Size256]byte {
 	h.Sum(sum[:0])
 	return sum
 }
-
-"""
-
-
-
 ```

@@ -125,15 +125,17 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 总而言之，`net/android/network_change_notifier_factory_android.cc` 是 Chromium 在 Android 平台上创建网络状态变化通知器的关键组件，它通过工厂模式提供了一种简洁且平台特定的方式来实例化 `NetworkChangeNotifierAndroid`，从而保证了 Chromium 能够及时响应网络状态的变化，并最终影响到 JavaScript 中与网络相关的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/android/network_change_notifier_factory_android.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ NetworkChangeNotifierFactoryAndroid::CreateInstanceWithInitialTypes(
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -165,7 +165,7 @@ func main() {
 
 `go/src/internal/chacha8rand/chacha8_generic.go` 文件实现了 ChaCha8 伪随机数生成算法的核心逻辑。它是一个底层的构建块，很可能被 Go 标准库或其他内部库用于提供更高级的随机数生成功能。开发者应该避免直接使用 `internal` 包的代码，而是使用官方提供的 `rand` 包或其他可靠的第三方库。 理解种子和计数器的重要性以及正确使用它们是避免常见错误的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/chacha8rand/chacha8_generic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -173,8 +173,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -410,9 +412,4 @@ func qr(a, b, c, d uint32) (_a, _b, _c, _d uint32) {
 	b = b<<7 | b>>25
 	return a, b, c, d
 }
-
-"""
-
-
-
 ```

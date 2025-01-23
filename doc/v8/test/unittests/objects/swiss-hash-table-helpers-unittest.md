@@ -93,9 +93,12 @@ myObject.d = 4; // V8 内部会使用类似 SwissTableGroup::MatchEmpty 的操�
 
 `swiss-hash-table-helpers-unittest.cc` 文件是 V8 引擎中至关重要的单元测试，它确保了 Swiss 哈希表辅助工具的正确性和效率。这些工具直接支撑着 JavaScript 对象和 Map 等核心数据结构的实现，并对 JavaScript 代码的性能有着显著的影响。 通过测试 `SwissTableGroup` 的匹配和查找空闲槽位等操作，保证了 JavaScript 对象属性访问和添加的快速可靠。
 
-Prompt: ```这是目录为v8/test/unittests/objects/swiss-hash-table-helpers-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/objects/swiss-hash-table-helpers-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,6 +172,4 @@ TYPED_TEST(SwissTableGroupTest, MatchEmpty) {
 }  // namespace swiss_table
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

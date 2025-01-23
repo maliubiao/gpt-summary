@@ -190,7 +190,7 @@ Based on this understanding, I can now formulate the summary.
 
 这部分代码主要负责 **管理 HTTP/1.x 的持久连接**，包括 **建立连接、发送请求、接收响应、处理各种协议细节（如 100 Continue、gzip 压缩、连接关闭）、错误处理和连接复用**。它定义了 `persistConn` 结构体来表示一个持久连接，并实现了读取响应的 `readLoop`、写入请求的 `writeLoop` 以及协调请求响应流程的 `roundTrip` 函数。 此外，它还包含了一些辅助功能，如连接健康检查、gzip 解压缩、TLS 配置管理和连接缓存等，共同构建了 HTTP/1.x 协议在 `net/http` 包中的核心实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/transport.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 est   // written by roundTrip; read by writeLoop
 	closech   chan struct{}       // closed when conn closed
 	isProxy   bool
@@ -1249,10 +1251,4 @@ func (cl *connLRU) remove(pc *persistConn) {
 func (cl *connLRU) len() int {
 	return len(cl.m)
 }
-
-"""
-
-
-
-
 ```

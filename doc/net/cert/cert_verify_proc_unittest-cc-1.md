@@ -72,7 +72,7 @@ I need to:
 
 作为单元测试的一部分，本代码段主要负责详尽地测试 Chromium 网络栈中 `CertVerifyProc` 类的证书验证逻辑。它涵盖了证书有效性、密钥强度、证书链构建、吊销检查、名称约束以及签名算法等多个关键方面的测试用例，旨在确保在各种复杂场景下证书验证的正确性和安全性。这些测试对于保障用户浏览安全至关重要，因为它们直接验证了浏览器拒绝无效或不安全证书的能力，从而保护用户免受潜在的网络攻击。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/cert_verify_proc_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -80,8 +80,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nFromFile(
       certs_dir, "expired_cert.pem", X509Certificate::FORMAT_AUTO);
   ASSERT_TRUE(cert);
@@ -845,7 +847,4 @@ TEST(CertVerifyProcTest, SymantecCertsRejected) {
   allowlisted_result.public_key_hashes.push_back(HashValue(kGoogleHashValue));
   allowlisted_result.is_issued_by_known_root = true;
   verify_proc = base::MakeRefCounted<MockCertVerifyProc>(allowliste
-"""
-
-
 ```

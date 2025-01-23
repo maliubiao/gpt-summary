@@ -69,11 +69,13 @@ console.log(timestamp2); // 输出与 timestamp1 类似的值
 
 `v8/src/runtime/runtime-date.cc` 文件中的 `Runtime_DateCurrentTime` 函数是 V8 引擎提供给 JavaScript 用来获取当前时间的核心底层实现。 JavaScript 中的 `Date.now()` 和 `new Date()` (不带参数) 等功能最终都依赖于这个 C++ 函数来获取精确的当前时间。  它展示了 JavaScript 引擎如何通过底层的 C++ 代码来实现高级的 JavaScript 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-date.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -94,7 +96,4 @@ RUNTIME_FUNCTION(Runtime_DateCurrentTime) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

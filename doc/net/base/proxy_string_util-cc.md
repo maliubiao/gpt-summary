@@ -179,15 +179,17 @@ Chromium 的网络栈会逐个解析这些元素：
 
 总而言之，`net/base/proxy_string_util.cc` 是 Chromium 网络栈中负责处理代理服务器字符串的关键组件，它将各种格式的代理描述转换为内部表示，以便网络连接模块可以使用正确的代理进行通信。 理解这个文件的功能对于调试代理相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/proxy_string_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -499,7 +501,4 @@ ProxyChain MultiProxyUrisToProxyChain(std::string_view uris,
   return ProxyChain(std::move(proxy_server_list));
 }
 }  // namespace net
-
-"""
-
 ```

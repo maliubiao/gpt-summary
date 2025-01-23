@@ -138,7 +138,7 @@ QUIC协议主要在网络层和传输层工作，其加密握手过程对于Java
 
 总而言之，`net/third_party/quiche/src/quiche/quic/test_tools/crypto_test_utils.cc` 的这部分代码是 QUIC 网络协议栈测试框架的重要组成部分，它提供了一系列工具函数，用于模拟和测试 QUIC 的加密握手过程，帮助开发者验证 QUIC 实现的正确性和健壮性。虽然JavaScript开发者不会直接使用这些C++函数，但理解其功能有助于理解基于QUIC的Web请求背后的加密机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/crypto_test_utils.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -146,9 +146,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  const QuicTag quic_tag = ParseTag(tag.c_str());
+### 源代码
+```cpp
+const QuicTag quic_tag = ParseTag(tag.c_str());
 
     size_t value_len = value.length();
     if (value_len > 0 && value[0] == '#') {
@@ -343,8 +345,4 @@ std::unique_ptr<ProofVerifyContext> ProofVerifyContextForTesting() {
 }  // namespace crypto_test_utils
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

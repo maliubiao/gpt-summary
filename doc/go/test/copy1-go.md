@@ -168,15 +168,17 @@ func main() {
 
 这段代码通过静态检查的方式，确保了 `copy` 函数在编译阶段就能捕获到错误的用法，提高了代码的健壮性。这体现了 Go 语言注重编译时类型检查的特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/copy1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2017 The Go Authors. All rights reserved.
@@ -204,9 +206,4 @@ func main() {
 	_ = copy(si, 2) // ERROR "second argument to copy should be|expects slice arguments"
 
 }
-
-"""
-
-
-
 ```

@@ -148,15 +148,17 @@ Maybe<bool> result = AlwaysSharedSpaceJSObject::DefineOwnProperty(
 
 `v8/src/objects/js-struct.cc` 是 V8 中管理共享结构对象的关键文件。它定义了 `JSSharedStruct` 类，并提供了创建、注册和管理这些共享对象的功能。 虽然 JavaScript 用户不会直接操作这些对象，但理解它们的存在有助于理解 V8 如何在内部优化共享数据的表示，这与共享内存和跨 Isolate 通信等概念间接相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-struct.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-struct.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -684,7 +686,4 @@ void SharedStructTypeRegistry::EnsureCapacity(PtrComprCageBase cage_base,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

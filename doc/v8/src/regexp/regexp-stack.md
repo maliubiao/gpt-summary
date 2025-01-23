@@ -128,11 +128,13 @@ const match = str.match(regex);
 
 `regexp-stack.cc` 文件定义了 V8 引擎中用于正则表达式执行的关键数据结构——正则表达式栈。它负责内存管理、线程隔离以及状态的保存和恢复。当 JavaScript 代码执行正则表达式时，V8 引擎会利用这个栈来存储和管理匹配过程中的临时数据，例如回溯点和捕获组信息，从而实现正则表达式的匹配功能。虽然 JavaScript 开发者通常不需要直接与这个栈交互，但它的存在是 JavaScript 正则表达式能够高效运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-stack.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2009 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ Address RegExpStack::EnsureCapacity(size_t size) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

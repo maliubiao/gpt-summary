@@ -146,7 +146,7 @@ By following these steps, the comprehensive analysis provided earlier can be con
 
 总而言之，尽管 `answer.c` 的代码非常简单，但它在 Frida 的测试和开发流程中扮演着重要的角色。它可以作为验证 Frida 功能的基础单元，也可以作为理解 Frida 如何与二进制代码和操作系统交互的入门示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/44 pkgconfig-gen/answer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,12 +154,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int answer_to_life_the_universe_and_everything(void) {
     return 42;
 }
-
-"""
-
 ```

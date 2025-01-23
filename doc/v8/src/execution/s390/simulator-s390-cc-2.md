@@ -122,7 +122,7 @@ console.log(result);
 
 这段代码片段展示了 `v8/src/execution/s390/simulator-s390.cc` 的核心功能之一：**指令分发和初步的模拟框架**。它定义了如何将 S390 指令映射到相应的 C++ 函数进行模拟执行。  更广泛地说，`simulator-s390.cc` 的完整功能是为 V8 引擎提供一个在非 S390 平台上运行 S390 架构代码的能力，这对于跨平台开发、测试以及某些特定的嵌入式场景至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/s390/simulator-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/s390/simulator-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -130,8 +130,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lTable[MVCLU] = &Simulator::Evaluate_MVCLU;
   EvalTable[CLCLU] = &Simulator::Evaluate_CLCLU;
   EvalTable[STMY] = &Simulator::Evaluate_STMY;
@@ -990,7 +992,4 @@ void Simulator::PrintStopInfo(uint32_t code) {
     const char* state = isEnabledStop(code) ? "Enabled" : "Disabled";
     int32_t count = watched_stops_[code].count & ~kStopDisabledBit;
     // Don
-"""
-
-
 ```

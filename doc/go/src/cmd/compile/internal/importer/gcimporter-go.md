@@ -195,15 +195,17 @@ func TestImportMyPkg(t *testing.T) {
 
 总之，`gcimporter.go` 是 Go 编译器为了方便测试而提供的一个内部工具，它简化了包导入的过程，并允许测试代码在不依赖完整构建流程的情况下模拟包的导入。使用者需要注意提供正确的源代码目录和确保依赖包已经编译，或者正确实现自定义的 `lookup` 函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/importer/gcimporter.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -291,9 +293,4 @@ func Import(packages map[string]*types2.Package, path, srcDir string, lookup fun
 
 	return
 }
-
-"""
-
-
-
 ```

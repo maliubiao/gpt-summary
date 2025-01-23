@@ -182,15 +182,17 @@ go test go/test/funcdup.go
 
 `go/test/funcdup.go` 是 Go 编译器测试套件的一部分，专门用于验证编译器是否能正确地检测出在函数和方法签名中重复使用参数或返回值名称的错误。它通过在特定的代码行上标记预期的错误信息来实现这一点，并通过 `go test` 命令来执行验证。开发者应该避免在函数签名中使用重复的名称，以保证代码的清晰性和避免编译错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/funcdup.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -218,9 +220,4 @@ func (i *R) F3(j int) (j int) {return 0} // ERROR "duplicate argument j|redefini
 func F1(i, i int)      {} // ERROR "duplicate argument i|redefinition|previous|redeclared"
 func F2(i int) (i int) {return 0} // ERROR "duplicate argument i|redefinition|previous|redeclared"
 func F3() (i, i int)   {return 0, 0} // ERROR "duplicate argument i|redefinition|previous|redeclared"
-
-"""
-
-
-
 ```

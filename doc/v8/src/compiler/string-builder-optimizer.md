@@ -125,11 +125,13 @@ function buildStringWithLength(n) {
 
 `string-builder-optimizer.cc` 是 V8 引擎为了提升 JavaScript 字符串操作性能而实现的关键优化器。它通过识别和优化特定的字符串构建模式，减少了临时字符串的创建，提高了代码的执行效率。 它的工作对于运行在 V8 上的 JavaScript 应用的性能至关重要，特别是在处理大量字符串操作的场景下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/string-builder-optimizer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1324,7 +1326,4 @@ StringBuilderOptimizer::StringBuilderOptimizer(JSGraph* jsgraph,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

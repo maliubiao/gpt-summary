@@ -196,15 +196,17 @@ bctr                   // 跳转到 CTR 寄存器指向的地址
 
 总之，`go/src/cmd/link/internal/ppc64/asm.go` 是 Go 链接器中针对 ppc64 架构的核心组件，负责生成和修正与汇编指令相关的代码，处理重定位，并管理动态链接所需的 PLT，确保 Go 程序在 ppc64 架构上能够正确地链接和执行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ppc64/asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/5l/asm.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/5l/asm.c
 //
@@ -1965,9 +1967,4 @@ func ensureglinkresolver(ctxt *ld.Link, ldr *loader.Loader) *loader.SymbolBuilde
 
 	return glink
 }
-
-"""
-
-
-
 ```

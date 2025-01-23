@@ -228,15 +228,17 @@ CSS 本身不直接与 `DataObject` 交互来存储或访问数据。 然而，C
 
 `DataObject` 是 Blink 渲染引擎中处理剪贴板和拖放操作的核心类，负责存储和管理各种类型的数据。理解其功能和与 JavaScript、HTML 的关系，以及可能出现的使用错误，对于开发涉及数据交互的 Web 应用至关重要。  调试时，关注用户操作的步骤，检查 JavaScript 中 `dataTransfer` 对象的使用，以及后端如何处理接收到的数据，可以帮助定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/clipboard/data_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2008, 2009, 2012 Google Inc. All rights reserved.
  *
@@ -718,7 +720,4 @@ WebDragData DataObject::ToWebDragData() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

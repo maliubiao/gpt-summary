@@ -181,14 +181,16 @@ By following these steps, systematically going through the code, and connecting 
 
 理解 `audio_destination.cc` 的功能对于深入了解 Chromium 中 Web Audio API 的实现至关重要。它连接了高层的 JavaScript API 和底层的音频硬件，是音频数据流动的最终关卡。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/audio_destination.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -832,7 +834,4 @@ void AudioDestination::SendLogMessage(const char* const function_name,
 }
 
 }  // namespace blink
-
-"""
-
 ```

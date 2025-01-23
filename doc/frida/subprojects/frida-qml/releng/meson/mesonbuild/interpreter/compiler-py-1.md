@@ -134,7 +134,7 @@ My thinking process to analyze the provided Python code snippet and generate the
 
 总而言之，这部分代码是 Meson 构建系统中非常重要的一部分，它允许构建系统智能地适应不同的编译器环境，确保项目能够跨平台构建并利用目标平台编译器的特性。对于 Frida 这样的动态 instrumentation 工具，了解目标进程的编译环境对于正确地注入代码和进行 hook 操作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,9 +143,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- having it check this seems valuable
+### 源代码
+```python
+having it check this seems valuable
         has_header_kwargs: 'HeaderKW' = {
             'required': required,
             'args': kwargs['header_args'],
@@ -372,8 +374,4 @@ Prompt:
         # other targets, list outputs, etc.
         private_dir = os.path.relpath(self.interpreter.backend.get_target_private_dir(tg), self.interpreter.subdir)
         return [build.CustomTargetIndex(tg, os.path.join(private_dir, o)) for o in tg.outputs]
-
-"""
-
-
 ```

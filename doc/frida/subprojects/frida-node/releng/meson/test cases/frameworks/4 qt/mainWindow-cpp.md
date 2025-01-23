@@ -109,7 +109,7 @@ This step-by-step approach, starting with a basic understanding of the code and 
 
 总而言之，`mainWindow.cpp` 定义了一个 Qt 应用程序的主窗口类，它的主要功能是初始化窗口和加载用户界面。它在逆向工程中是一个重要的目标，可以通过 Frida 等工具进行动态分析和修改。理解其功能和相关的底层知识对于有效地使用 Frida 进行逆向分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/4 qt/mainWindow.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "mainWindow.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
@@ -127,7 +129,4 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
 MainWindow::~MainWindow() {
 }
-
-"""
-
 ```

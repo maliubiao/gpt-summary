@@ -167,7 +167,7 @@ By following this systematic approach, combining code analysis with contextual u
 
 总之，`compare.py` 作为一个简单的文件比较工具，在 Frida 的开发和测试流程中扮演着重要的角色，用于验证各种操作的输出结果是否符合预期，尤其是在需要生成和比较配置文件的场景下。 它的运行通常是自动化测试的一部分，开发者可以通过其输出结果来判断代码修改是否引入了错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/269 configure file output format/compare.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,14 +175,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import sys
 
 with open(sys.argv[1], 'r', encoding='utf-8') as f, open(sys.argv[2], 'r', encoding='utf-8') as g:
     if f.read() != g.read():
         sys.exit('contents are not equal')
-
-"""
-
 ```

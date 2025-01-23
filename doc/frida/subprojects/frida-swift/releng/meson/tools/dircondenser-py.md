@@ -150,7 +150,7 @@ test_directories = ["1 function_b", "2 function_a", "3 function_c"]
 
 这个脚本是 Frida 项目中用于维护测试用例组织结构的一个实用工具，它通过自动化重命名和更新相关文件，简化了测试用例的管理，并确保了测试流程的稳定性和可维护性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/tools/dircondenser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
@@ -240,7 +242,4 @@ if __name__ == '__main__':
         raise SystemExit('This script takes no arguments.')
     for d in glob('test cases/*'):
         condense(d)
-
-"""
-
 ```

@@ -99,21 +99,18 @@ func IsIllumos() bool {
 
 `go/src/cmd/go/internal/imports/testdata/illumos/a_illumos.go` 是 `go` 命令内部测试框架的一部分，用于测试在 `illumos` 操作系统下，包的导入机制，特别是 blank import 的行为。 它通过隐式导入 `a` 包并执行其 `init` 函数来实现测试目的。 理解 blank import 的作用对于避免潜在的错误和编写清晰的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/imports/testdata/illumos/a_illumos.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 package illumos
 
 import _ "a"
-
-"""
-
-
-
 ```

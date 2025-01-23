@@ -158,7 +158,7 @@ frida -f ./cmlib  # 假设编译后的可执行文件名为 cmlib
 
 通过以上步骤，开发者会将 `main.c` 文件作为一个起点，向上追溯构建流程和依赖关系，最终找到导致测试失败的根本原因。  这个简单的 `main.c` 文件在失败的测试用例中，其作用是作为一个被依赖的组件，用于验证 Frida-QML 的构建系统处理外部 CMake 构建的可执行依赖项的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/109 cmake executable dependency/subprojects/cmlib/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,12 +166,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

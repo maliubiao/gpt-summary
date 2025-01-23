@@ -250,7 +250,7 @@ if __name__ == "__main__":
 
 通过理解这个头文件定义的数据结构和常量，以及结合 Frida 这样的动态调试工具，可以深入了解 Android 系统中 `ebtables` 的使用和工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter_bridge/ebtables.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -261,8 +261,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -407,7 +409,4 @@ struct ebt_entry {
 ({ unsigned int __i; int __ret = 0; struct ebt_entry * __entry; for(__i = 0; __i < (size);) { __entry = (void *) (entries) + __i; __ret = fn(__entry, ##args); if(__ret != 0) break; if(__entry->bitmask != 0) __i += __entry->next_offset; else __i += sizeof(struct ebt_entries); } if(__ret == 0) { if(__i != (size)) __ret = - EINVAL; } __ret; \
 })
 #endif
-
-"""
-
 ```

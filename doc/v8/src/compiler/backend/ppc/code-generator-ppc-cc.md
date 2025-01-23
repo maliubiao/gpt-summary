@@ -120,7 +120,7 @@ exit_record_write:
 
 `v8/src/compiler/backend/ppc/code-generator-ppc.cc` 是 V8 引擎中至关重要的一个组成部分，它负责将高级的 JavaScript 代码转化为底层的、可以在PowerPC架构上执行的机器指令。它涉及到对PPC架构的深入理解，以及对V8内部数据结构和运行机制的掌握。其中，记录写入屏障的实现确保了垃圾回收器能够正确地跟踪对象引用，维护内存的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ppc/code-generator-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ppc/code-generator-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -128,8 +128,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -815,7 +817,4 @@ static inline bool is_wasm_on_be(bool IsWasm) {
 void CodeGenerator::AssembleDeconstructFrame() {
   __ LeaveFrame(StackFrame::MANUAL);
   unwinding_info_writer_.MarkFrameDeconstruct
-"""
-
-
 ```

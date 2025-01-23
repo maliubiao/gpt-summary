@@ -112,7 +112,7 @@ By following this thought process, we can create a comprehensive and informative
 
 `blink/renderer/core/dom/range.cc` 的第 1 部分主要定义了 `Range` 类的基本结构和用于创建、设置、查询选区边界的方法。它为后续对选区内容进行操作 (例如删除、提取、克隆) 提供了基础，并且与 JavaScript 的 `Range` API 和浏览器的文本选择功能紧密相关。它也包含了对常见用户错误的预防和处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/range.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999 Lars Knoll (knoll@kde.org)
  * (C) 2000 Gunnstein Lye (gunnstein@netcom.no)
@@ -984,8 +986,5 @@ void Range::insertNode(Node* new_node, ExceptionState& exception_state) {
   if (start_node == new_node) {
     exception_state.ThrowDOMException(
         DOMExceptionCode::kHierarchyRequestError,
-        "Unable to insert a node into a Range starting from the 
-"""
-
-
+        "Unable to insert a node into a Range starting from the
 ```

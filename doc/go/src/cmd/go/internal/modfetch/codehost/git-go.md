@@ -171,15 +171,17 @@ require github.com/someuser/somerepo v1.2.3
 
 总而言之，这段 `git.go` 代码是 `go` 模块系统与 Git 仓库交互的核心组件，负责获取、管理和校验 Git 仓库中的模块依赖。理解其功能有助于理解 `go` 命令如何处理 Git 仓库托管的依赖。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modfetch/codehost/git.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1109,9 +1111,4 @@ func (r *gitRepo) runGit(ctx context.Context, cmdline ...any) ([]byte, error) {
 	}
 	return RunWithArgs(ctx, args)
 }
-
-"""
-
-
-
 ```

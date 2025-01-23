@@ -152,15 +152,17 @@ func main() {
 
 `go/test/typeparam/issue48454.dir/main.go` 是 Go 语言中用于测试泛型功能的代码片段。它通过声明一个使用了泛型类型 `b.Session` 的未使用的变量来触发编译器的类型检查。 实际的泛型类型定义和要测试的特定行为位于 `b` 包中。  这个测试很可能与修复或验证 Go 泛型中的特定问题（issue 48454）有关。 它不接受命令行参数，主要通过编译成功与否来判断测试是否通过。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue48454.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -172,9 +174,4 @@ import "./b"
 func main() {
 	var _ b.Session
 }
-
-"""
-
-
-
 ```

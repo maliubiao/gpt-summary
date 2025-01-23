@@ -152,15 +152,17 @@ While users don't directly call the write barrier functions, incorrect usage of 
 
 In summary, `v8/include/cppgc/heap-consistency.h` is a vital part of V8's memory management system, providing the foundational mechanisms for ensuring the integrity of the garbage collector's heap through write barriers and offering controlled ways to temporarily influence garbage collection behavior. While JavaScript developers don't directly interact with this code, it underpins the automatic memory management that makes JavaScript development significantly easier.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/cppgc/heap-consistency.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/cppgc/heap-consistency.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -470,7 +472,4 @@ class V8_EXPORT V8_NODISCARD NoGarbageCollectionScope final {
 }  // namespace cppgc
 
 #endif  // INCLUDE_CPPGC_HEAP_CONSISTENCY_H_
-
-"""
-
 ```

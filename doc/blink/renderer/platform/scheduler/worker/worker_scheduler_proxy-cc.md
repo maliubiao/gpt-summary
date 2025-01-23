@@ -125,14 +125,16 @@ By following this thought process, combining code analysis with knowledge of web
 
 `WorkerSchedulerProxy` 是 Blink 引擎中一个关键的组件，它负责在父线程和 Worker 线程之间同步调度和生命周期信息。理解它的功能有助于我们更好地理解 Web Worker 的工作原理，并编写出更高效、更节能的 Web 应用。它确保了当主线程的生命周期状态发生变化时，相应的 Worker 线程能够及时得到通知并做出适当的调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/worker/worker_scheduler_proxy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -195,7 +197,4 @@ void WorkerSchedulerProxy::OnLifecycleStateChanged(
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

@@ -129,15 +129,17 @@ console.log(myArray.length);
 
 在这个例子中，程序员可能没有正确地验证 `inputSize` 的值，导致将其传递给了 `Array` 构造函数，从而引发错误。V8 的这个单元测试就是为了确保在 V8 内部能够稳健地处理这种不合法的输入，即使 JavaScript 代码层面没有进行充分的错误处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/regress/regress-crbug-1041240-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/regress/regress-crbug-1041240-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -158,7 +160,4 @@ TEST_F(NewUninitializedFixedArrayTest, ThrowOnNegativeLength) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

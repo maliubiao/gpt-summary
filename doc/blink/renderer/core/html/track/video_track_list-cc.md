@@ -126,15 +126,17 @@ By following this step-by-step analytical process, combining code examination wi
 
 总而言之，`video_track_list.cc` 文件中的 `VideoTrackList` 类在 Blink 渲染引擎中扮演着管理和维护视频轨道状态的关键角色，它连接了 HTML 中声明的视频轨道和 JavaScript 中对这些轨道的访问和操作。用户通过与网页的交互最终会触发对 `VideoTrackList` 状态的改变，从而影响视频的播放行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/video_track_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ void VideoTrackList::TrackSelected(const String& selected_track_id) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -107,7 +107,7 @@ By following this thought process, we can arrive at a comprehensive and informat
 
 总而言之，这部分测试用例专注于确保 `QuicSpdyClientSession` 在复杂的 0-RTT 拒绝和重用场景下能够健壮地运行，这对于提供可靠且高性能的基于 QUIC 的网络连接至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_client_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -115,9 +115,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- aborting because new stream "
+### 源代码
+```cpp
+aborting because new stream "
                         "limit 0 is less than current open streams: 1",
                         _))
         .WillOnce(testing::Invoke(connection_,
@@ -307,8 +309,4 @@ TEST_P(QuicSpdyClientSessionTest, ServerAcceptsZeroRttButOmitSetting) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

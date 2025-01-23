@@ -126,15 +126,17 @@ Since this is an internal V8 component, typical JavaScript developers wouldn't i
 
 In summary, `v8/src/codegen/external-reference-encoder.h` defines a crucial component for V8's code generation process, enabling it to effectively and efficiently interact with external C++ code and APIs necessary for the execution of JavaScript.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/external-reference-encoder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/external-reference-encoder.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ class ExternalReferenceEncoder {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_EXTERNAL_REFERENCE_ENCODER_H_
-
-"""
-
 ```

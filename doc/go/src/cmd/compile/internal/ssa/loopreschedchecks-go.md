@@ -168,15 +168,17 @@ b4 (循环出口):
 
 总而言之，`loopreschedchecks.go` 是 Go 编译器中一个重要的组成部分，它通过在循环回边插入调度检查，实现了协作式抢占调度，保证了长时间运行的 Go 程序在并发环境下的公平性。理解这段代码需要一定的编译器和 SSA 知识。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/loopreschedchecks.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -689,9 +691,4 @@ func backedges(f *Func) []Edge {
 	}
 	return edges
 }
-
-"""
-
-
-
 ```

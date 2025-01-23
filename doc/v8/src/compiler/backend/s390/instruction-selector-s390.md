@@ -61,12 +61,14 @@ V8 引擎在编译这段代码时，会生成相应的中间表示。  `instruct
 
 总而言之，`instruction-selector-s390.cc` 是 V8 引擎中一个高度专业化且与硬件架构紧密相关的组件，它负责将高级的 JavaScript 概念转换为底层的机器指令，使得 JavaScript 代码能够在 s390 架构的计算机上运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/instruction-selector-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1762,8 +1764,4 @@ void InstructionSelectorT<TurboshaftAdapter>::VisitWord64Shr(node_t node) {
                                   sh),
             &mb, &me)) {
       // Adjust the mask such that it doesn't include any rotated bits.
-  
-"""
-
-
 ```

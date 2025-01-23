@@ -169,7 +169,7 @@ const length = combinedStr.length;
 
 总而言之，`v8/src/objects/string.cc` 的这一部分是 V8 引擎中负责字符串表示和操作的核心组件，它体现了 V8 为了优化性能和内存使用而采用的多种字符串表示策略和访问机制。即使文件是 `.cc`，也强烈暗示其结构定义可能来自 Torque (`.tq`) 文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/string.cc以.tq结尾，那它是个v8 torque源代码，
@@ -177,8 +177,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 DataAndPaddingSizes{data_size, padding_size};
 }
 
@@ -480,8 +482,4 @@ static_assert(kInternalizedTag == IsNotInternalizedBit::encode(false));
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

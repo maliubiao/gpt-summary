@@ -150,7 +150,7 @@ Interceptor.attach(funcAddress, {
 
 `frida/subprojects/frida-swift/releng/meson/test cases/unit/95 custominc/prog.c` 这个文件本身是一个非常基础的 C 程序，但它的重要性在于作为 Frida 测试框架中的一个目标程序。它被用来验证 Frida 在与 Swift 代码交互时，对 C 函数进行动态instrumentation的能力。理解这个文件的功能，需要结合 Frida 的上下文，以及动态逆向和底层系统知识。用户通常在开发、测试、调试 Frida 相关功能时会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/95 custominc/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 
 int func(void);
@@ -169,7 +171,4 @@ int main(int argc, char **argv) {
     (void)(argv);
     return func();
 }
-
-"""
-
 ```

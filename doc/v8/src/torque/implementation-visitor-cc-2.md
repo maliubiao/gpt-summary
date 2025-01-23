@@ -204,7 +204,7 @@ p->y = 2;
 
 总而言之，`v8/src/torque/implementation-visitor.cc` (这部分) 的核心职责是将高级的 Torque 语法转换为 V8 能够理解和执行的 C++ 代码，它处理了对象创建、控制流、函数调用、结构体和位域等关键的语言特性，并且在转换过程中进行类型检查和错误报告，帮助开发者避免常见的编程错误。它是 Torque 编译器中至关重要的一个组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/implementation-visitor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/implementation-visitor.cc以.tq结尾，那它是个v8 torque源代码，
@@ -212,8 +212,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lass_type,
                 " cannot be allocated with new (it's used for testing)");
   }
@@ -1019,8 +1021,4 @@ LocationReference ImplementationVisitor::GetLocationReference(
   if (!expr->generic_arguments.empty()) {
     GenericCallable* generic = Declarations::LookupUniqueGeneric(name);
     Callable* specialization =
- 
-"""
-
-
 ```

@@ -136,15 +136,17 @@ By following these steps, we can systematically analyze the C++ test file and ex
 
 总而言之，`performance_observer_test.cc` 是 Blink 引擎中用于验证 `PerformanceObserver` 类核心功能的关键测试文件，它直接关联了 Web Performance API 的 JavaScript 实现，并通过各种测试用例确保了该功能的正确性和健壮性。理解这个测试文件的内容有助于理解 `PerformanceObserver` 的工作原理，并能帮助开发者在遇到相关问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/performance_observer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -316,7 +318,4 @@ TEST_F(PerformanceObserverTest, ObserveAfterContextDetached) {
   observer_->observe(script_state, options, exception_state);
 }
 }  // namespace blink
-
-"""
-
 ```

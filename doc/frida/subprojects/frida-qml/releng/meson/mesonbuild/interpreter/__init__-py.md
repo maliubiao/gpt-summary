@@ -128,7 +128,7 @@ Initially, one might focus too much on the *specific code* in the `__init__.py` 
 
 如果 Frida 的构建过程中出现与 Meson 解释器相关的错误，例如找不到特定的构建目标、依赖项解析失败等，开发者可能会需要深入到 Meson 的代码中进行调试。  `frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/__init__.py` 文件作为解释器包的入口，可以作为一个调试的起点，了解 Meson 解释器是如何组织和工作的。  例如，如果怀疑某个特定的构建目标处理有问题，可以查看 `BuildTargetHolder` 相关的代码；如果怀疑依赖项处理有问题，可以查看 `DependencyHolder` 相关的代码。 通过理解这个文件的结构和它导出的类，可以更好地定位问题所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-license-identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -185,7 +187,4 @@ from .primitives import (
     IntegerHolder,
     StringHolder,
 )
-
-"""
-
 ```

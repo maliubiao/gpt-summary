@@ -121,11 +121,13 @@ ADD r8, r8, r7       // 将结果加到 sum
 
 `instruction-scheduler-arm.cc` 虽然不直接处理 JavaScript 语法，但它通过提供指令特性信息，间接地优化了 V8 生成的机器码，使得 JavaScript 代码在 ARM 架构上能够更快地执行。它是一个幕后英雄，默默地提升着 JavaScript 的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/instruction-scheduler-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -520,7 +522,4 @@ int InstructionScheduler::GetInstructionLatency(const Instruction* instr) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

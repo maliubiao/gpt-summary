@@ -118,15 +118,17 @@ The user wants to understand the functionality of the C++ source code file `obli
 
 总之，`oblivious_http_header_key_config_test.cc` 提供了对 OHTTP 密钥配置相关核心逻辑的详尽测试，是理解和调试 OHTTP 实现的关键部分。开发者在遇到与 OHTTP 请求相关的密钥配置问题时，很可能会查阅或调试这个文件中的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/oblivious_http/common/oblivious_http_header_key_config_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/oblivious_http/common/oblivious_http_header_key_config.h"
 
 #include <cstdint>
@@ -498,7 +500,4 @@ TEST(ObliviousHttpHeaderKeyConfigs, TestHashImplWithObliviousStruct) {
 
 }  // namespace
 }  // namespace quiche
-
-"""
-
 ```

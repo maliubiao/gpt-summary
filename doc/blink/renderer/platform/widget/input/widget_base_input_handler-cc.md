@@ -180,14 +180,16 @@ Let's break down the thought process for analyzing this C++ code.
 
 总而言之，`widget_base_input_handler.cc` 是 Blink 渲染引擎中一个至关重要的组件，它连接了底层的输入事件和高层的 JavaScript、HTML 和 CSS 交互，确保用户输入能够被正确地处理和响应。理解其功能有助于开发者更好地理解浏览器的工作原理，并避免常见的输入事件处理错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/widget_base_input_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -870,7 +872,4 @@ bool WidgetBaseInputHandler::ProcessTouchAction(WebTouchAction touch_action) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -137,14 +137,16 @@ Let's break down the thought process for analyzing the C++ test file.
 
 总而言之，`cached_permission_status_test.cc` 是一个关键的测试文件，用于确保 `CachedPermissionStatus` 类的核心功能（客户端注册、取消注册和 `PermissionObserver` 的管理）能够正常工作，这对于正确高效地处理 Web 权限至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/cached_permission_status_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -327,7 +329,4 @@ TEST_F(CachedPermissionStatusTest, MAYBE_UnregisterClientRemoveObserver) {
   EXPECT_FALSE(HasPermisionObserver(PermissionName::VIDEO_CAPTURE));
 }
 }  // namespace blink
-
-"""
-
 ```

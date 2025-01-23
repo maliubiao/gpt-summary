@@ -199,7 +199,7 @@ moduleX.func1;moduleY.func2;moduleA.func4 3
 
 总而言之，`stackdedupe.py` 是一个在 Frida 动态分析流程中很有用的工具，它可以有效地简化和汇总堆栈信息，帮助逆向工程师更好地理解程序的执行流程。理解其功能、涉及的技术和可能出现的错误，有助于更高效地利用这个工具进行调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tools/stackdedupe.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -261,7 +263,4 @@ def deduplicate_subsequent(l: Iterable[T]) -> list[T]:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

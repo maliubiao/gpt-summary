@@ -197,15 +197,17 @@ add("hello", "world"); // 参数类型变为字符串，可能触发反优化
 
 `v8/src/tracing/perfetto-logger.h` 定义的 `PerfettoLogger` 类是 V8 引擎中一个关键的组件，它负责将引擎内部的各种事件以结构化的方式记录到 Perfetto 性能分析工具中。这为 V8 开发者以及使用 Perfetto 进行系统级性能分析的开发者提供了宝贵的洞察力，帮助他们理解 V8 的运行机制、诊断性能问题和优化代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tracing/perfetto-logger.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/tracing/perfetto-logger.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ class PerfettoLogger : public LogEventListener {
 }  // namespace v8
 
 #endif  // V8_TRACING_PERFETTO_LOGGER_H_
-
-"""
-
 ```

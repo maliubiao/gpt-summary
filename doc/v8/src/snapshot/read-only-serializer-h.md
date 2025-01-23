@@ -142,15 +142,17 @@ try {
 
 `v8/src/snapshot/read-only-serializer.h` 定义的 `ReadOnlySerializer` 类是 V8 引擎中一个关键的组件，它负责高效地序列化那些在运行时不会改变的只读数据，从而加速 V8 引擎的启动过程。虽然开发者通常不会直接与这个类交互，但理解其功能有助于更好地理解 V8 的内部工作原理和快照机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/read-only-serializer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/read-only-serializer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ class V8_EXPORT_PRIVATE ReadOnlySerializer : public RootsSerializer {
 }  // namespace v8
 
 #endif  // V8_SNAPSHOT_READ_ONLY_SERIALIZER_H_
-
-"""
-
 ```

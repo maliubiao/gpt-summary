@@ -197,7 +197,7 @@ By following this systematic approach, combining code analysis with high-level u
 
 这个头文件是 V8 引擎中字符串处理的核心组成部分，其设计目标是在保证性能的前提下，有效地管理各种类型的字符串数据，并支持 JavaScript 语言丰富的字符串操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/string.h以.tq结尾，那它是个v8 torque源代码，
@@ -205,8 +205,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ic constexpr int32_t DataSizeFor(int32_t length);
   V8_INLINE static constexpr int32_t SizeFor(int32_t length);
 
@@ -744,8 +746,4 @@ struct CharTraits<uint16_t> {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_STRING_H_
-
-"""
-
-
 ```

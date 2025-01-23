@@ -151,7 +151,7 @@ By following these steps, I can construct a comprehensive and accurate answer th
 
 作为第一部分，此文件主要负责定义 `PaintLayer` 类的**基本结构和核心功能**。它涵盖了 `PaintLayer` 的创建、销毁、基本属性的维护、与其他渲染引擎组件（如 `LayoutObject`) 的关联，以及处理一些基本的视觉属性（如变换）的功能。  它奠定了后续章节中更复杂的功能实现的基础，例如合成和绘制。 简而言之，**这部分主要关注 `PaintLayer` 的“是什么”和一部分“如何创建和管理”**。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_layer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011, 2012 Apple Inc. All rights
  * reserved.
@@ -1026,7 +1028,4 @@ void PaintLayer::UpdateScrollableArea() {
 void PaintLayer::AppendSingleFragmentForHitTesting(
     PaintLayerFragments& fragments,
     const PaintLayerFrag
-"""
-
-
 ```

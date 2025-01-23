@@ -359,7 +359,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 `bionic/libc/bionic/sys_msg.cpp` 文件提供了 Android Bionic 库中消息队列功能的实现，它直接封装了 Linux 内核的系统调用。理解这些函数的功能和使用场景对于进行底层的 Android 开发和调试至关重要。虽然 Android 主要使用 Binder 进行进程间通信，但消息队列仍然在某些特定场景下发挥作用。通过 Frida 可以方便地 hook 这些函数，进行动态分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/sys_msg.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -370,8 +370,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -424,7 +426,4 @@ ssize_t msgrcv(int id, void* msg, size_t n, long type, int flags) {
 int msgsnd(int id, const void* msg, size_t n, int flags) {
   return syscall(SYS_msgsnd, id, msg, n, flags);
 }
-
-"""
-
 ```

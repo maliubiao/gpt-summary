@@ -204,15 +204,17 @@ int main() {
 
 总而言之，`quic_window_update_frame.cc` 文件是 QUIC 协议中处理流量控制的关键组成部分，虽然普通用户不会直接接触到它，但它在用户使用网络的过程中发挥着重要的作用。 理解其功能有助于理解 QUIC 协议的运作方式，并为网络问题的调试提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/frames/quic_window_update_frame.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ bool QuicWindowUpdateFrame::operator!=(const QuicWindowUpdateFrame& rhs) const {
 }
 
 }  // namespace quic
-
-"""
-
 ```

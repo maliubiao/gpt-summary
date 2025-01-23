@@ -173,15 +173,17 @@ Tagged<HeapObject> retrievedObject = conveyor->GetPersisted(objectId);
 
 `v8/src/handles/shared-object-conveyor-handles.h` 定义的 `SharedObjectConveyorHandles` 类是 V8 内部用于安全地跨 JavaScript 执行上下文传递对象的关键机制。它通过持久化句柄和稳定的 ID 来确保对象在传递过程中的有效性，尤其在像 `postMessage` 这样的异步通信场景中至关重要。理解其生命周期和使用方式对于避免与跨上下文对象传递相关的编程错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/handles/shared-object-conveyor-handles.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/handles/shared-object-conveyor-handles.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ class SharedObjectConveyorHandles {
 }  // namespace v8
 
 #endif  // V8_HANDLES_SHARED_OBJECT_CONVEYOR_HANDLES_H_
-
-"""
-
 ```

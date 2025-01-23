@@ -118,15 +118,17 @@ struct {
 
 `map_noswiss.go` 是 Go 编译器中负责为 **旧的 map 实现** 生成反射数据的关键部分。它定义了 map 的内部结构（bucket、hmap、hiter），并在编译时将这些结构信息编码到目标文件中，供运行时系统使用。虽然现在 Go 主要使用 "Swiss table" 的 map 实现，但了解这部分代码有助于理解 Go map 的历史演变和底层原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/reflectdata/map_noswiss.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -432,9 +434,4 @@ func writeOldMapType(t *types.Type, lsym *obj.LSym, c rttype.Cursor) {
 		lsym.AddRel(base.Ctxt, obj.Reloc{Type: objabi.R_KEEP, Sym: writeType(u)})
 	}
 }
-
-"""
-
-
-
 ```

@@ -158,7 +158,7 @@ func main() {
 
 总而言之，`asm_none.go` 的作用是为 `PtrStaticData` 和 `PtrStaticText` 提供一个在特定构建条件下（非主流架构或 `purego` 模式）的默认空实现，这体现了 Go 语言使用构建标签进行条件编译的特性。使用者需要注意，在这些条件下，这两个函数会返回 `nil`，需要进行相应的处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/check/checktest/asm_none.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -180,9 +182,4 @@ import "unsafe"
 
 func PtrStaticData() *uint32        { return nil }
 func PtrStaticText() unsafe.Pointer { return nil }
-
-"""
-
-
-
 ```

@@ -101,11 +101,13 @@ outerFunction();
 
 `eh-frame-ppc.cc` 文件是 V8 引擎在 PPC 架构上实现 JavaScript 异常处理的关键组成部分。 它定义了相关的常量、提供了生成 eh-frame 数据的工具，并实现了 V8 内部寄存器到 DWARF 代码的映射，从而使得 V8 引擎能够在 PPC 架构上正确处理 JavaScript 异常。  它并不直接执行 JavaScript 代码，而是为 JavaScript 的运行时环境提供了必要的底层基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/ppc/eh-frame-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ const char* EhFrameDisassembler::DwarfRegisterCodeToString(int code) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

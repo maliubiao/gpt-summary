@@ -158,7 +158,7 @@ func main() {
 
 `go/src/net/hook_unix.go` 文件为 Go 语言的 `net` 包在 Unix-like 系统上提供了底层的可插拔机制，主要用于测试和特殊环境下的定制。它通过函数变量的方式暴露了关键的 socket 系统调用，允许在必要时进行替换。普通开发者应该避免在生产环境中随意修改这些钩子，除非他们清楚地知道自己在做什么，并且有充分的理由这样做。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/hook_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -189,9 +191,4 @@ var (
 	listenFunc        func(int, int) error              = syscall.Listen
 	getsockoptIntFunc func(int, int, int) (int, error)  = syscall.GetsockoptInt
 )
-
-"""
-
-
-
 ```

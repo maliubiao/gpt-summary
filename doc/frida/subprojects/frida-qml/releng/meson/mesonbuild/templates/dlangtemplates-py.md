@@ -199,7 +199,7 @@ endif
 
 总而言之，`dlangtemplates.py` 是 Frida 构建过程中一个幕后的工具，它通过提供预定义的 D 语言项目结构模板，简化了用户使用 D 语言扩展 Frida 功能的过程。用户通常不会直接与之交互，但了解其功能有助于理解 Frida 的构建流程以及在开发 D 语言模块时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/templates/dlangtemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -318,7 +320,4 @@ class DlangProject(FileImpl):
         kwargs = super().lib_kwargs()
         kwargs['module_file'] = self.lowercase_token
         return kwargs
-
-"""
-
 ```

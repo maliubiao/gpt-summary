@@ -151,15 +151,17 @@ By following these steps, we can systematically analyze the C++ code and provide
 *   **Blink 内部调试 (更深入):**  如果需要更深入的调试，可以设置断点在 `HandleModelAvailabilityCheckResult` 函数中，查看接收到的 `mojom::blink::ModelAvailabilityCheckResult` 的值，以及 `session_type` 的值，从而了解是哪个 AI 功能的可用性检查出了问题。 还可以检查指标上报，查看是否有相关的错误或异常指标。
 *   **检查 AI Manager 的日志:**  如果怀疑是底层 AI 服务的问题，可能需要查看 `AiManager` 模块的日志，了解其可用性检查的细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ai/ai_capability_availability.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ V8AICapabilityAvailability AICapabilityAvailabilityToV8(
 }
 
 }  // namespace blink
-
-"""
-
 ```

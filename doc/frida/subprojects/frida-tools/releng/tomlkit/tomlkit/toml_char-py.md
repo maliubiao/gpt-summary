@@ -133,7 +133,7 @@ Frida 工具（例如 `frida` 命令行工具或 Python API）在读取这个 TO
 
 总而言之，`toml_char.py` 虽然看起来简单，但它是 `tomlkit` 库中负责最基础的字符级别验证的模块，对于确保 Frida 工具能够正确解析和使用 TOML 配置文件至关重要。它间接地影响了逆向工程师使用 Frida 的体验，并在用户犯错时提供了调试的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tomlkit/toml_char.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import string
 
 
@@ -195,7 +197,4 @@ class TOMLChar(str):
         Whether the character is a space or not
         """
         return self in self.SPACES
-
-"""
-
 ```

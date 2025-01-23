@@ -154,7 +154,7 @@ python3 myinstall.py share/frida-examples my_example_script
 
 通过以上分析，我们可以了解到 `myinstall.py` 虽然代码简单，但在 Frida 的构建和安装流程中扮演着重要的角色，是确保 Frida 能够正确部署到目标系统的基础环节之一。 它的功能虽小，却是整个复杂系统中的一个必要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/53 install script/src/myinstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -178,7 +180,4 @@ if not os.path.exists(dirname):
 
 with open(os.path.join(dirname, sys.argv[2] + '.in'), 'w') as f:
     f.write('')
-
-"""
-
 ```

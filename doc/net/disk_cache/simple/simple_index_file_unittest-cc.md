@@ -140,15 +140,17 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`simple_index_file_unittest.cc` 是保障 Chromium 缓存系统稳定性和可靠性的重要组成部分。通过各种测试用例，它确保了缓存索引文件的正确读写和版本兼容，间接地保障了 JavaScript 及其它网络资源的快速加载。当用户遇到缓存相关问题时，对这个文件的理解和分析是调试过程中的重要一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_index_file_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -807,7 +809,4 @@ TEST_F(SimpleIndexFileTest, OverwritesStaleTempFile) {
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

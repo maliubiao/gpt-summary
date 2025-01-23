@@ -138,7 +138,7 @@ console.log(result);
 
 这部分 `test-api-interceptors.cc` 专注于测试 V8 的 API 拦截器在与函数调用和优化编译器交互时的各种复杂场景。它涵盖了拦截器如何影响函数查找、缓存、失效以及异常处理等关键方面。通过这些测试，V8 开发者可以确保拦截器功能的稳定性和正确性，即使在经过高度优化的代码中也能按预期工作。这些测试对于理解 V8 如何处理动态属性访问和与外部 C++ 代码交互至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-interceptors.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api-interceptors.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t(call_ic_function5_global);
     return v8::Intercepted::kYes;
   }
@@ -1053,7 +1055,4 @@ THREADED_TEST(GetOwnPropertyNamesWithIndexedInterceptorExceptions_regress4026) {
 
   obj_template->Set(isolate, "7", v8::Integer::New(isolate, 7));
   obj_template->
-"""
-
-
 ```

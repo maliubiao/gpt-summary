@@ -209,14 +209,16 @@ Finally, I organized the information into logical sections: Core Functionality, 
 
 总之，`PausableScriptExecutor` 是 Blink 渲染引擎中一个重要的组件，它提供了一种强大且灵活的方式来执行 JavaScript 代码，并处理了各种复杂的执行场景。 理解其功能和使用方法对于开发和调试基于 Blink 的应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/pausable_script_executor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -665,7 +667,4 @@ void PausableScriptExecutor::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

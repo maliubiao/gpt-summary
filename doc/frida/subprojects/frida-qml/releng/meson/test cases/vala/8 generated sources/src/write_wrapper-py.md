@@ -171,7 +171,7 @@ This iterative process of understanding the code, connecting it to the context p
 
 作为调试线索，如果发现测试流程中缺少某个 Vala 源文件，或者该文件的内容不正确，可以检查这个 `write_wrapper.py` 脚本是否正确执行，以及传递给它的命令行参数是否正确。  此外，还可以检查 Frida 的构建配置和测试用例的定义，以了解这个脚本在整个流程中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/vala/8 generated sources/src/write_wrapper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -193,7 +195,4 @@ void print_wrapper(string arg) {
 
 with open(sys.argv[1], 'w') as f:
     f.write(contents)
-
-"""
-
 ```

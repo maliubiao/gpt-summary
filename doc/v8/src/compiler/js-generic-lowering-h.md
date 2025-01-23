@@ -170,15 +170,17 @@ let result3 = add(x, y); // 这里编译器可能无法确定 x 和 y 的类型�
 
 `v8/src/compiler/js-generic-lowering.h` 定义了 `JSGenericLowering` 类，它是 V8 Turbofan 编译器中的一个关键组件。它的作用是将高层次的 JavaScript 操作降低到更底层的运行时调用或内联缓存调用，特别是在编译器无法进行更具体的优化时。这使得 V8 能够处理 JavaScript 的动态特性和一些常见的编程模式，尽管这些模式有时会牺牲一些性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-generic-lowering.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-generic-lowering.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ class JSGenericLowering final : public AdvancedReducer {
 }  // namespace v8
 
 #endif  // V8_COMPILER_JS_GENERIC_LOWERING_H_
-
-"""
-
 ```

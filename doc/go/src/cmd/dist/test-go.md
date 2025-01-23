@@ -293,15 +293,17 @@ func (t *tester) shouldRunTest(name string) bool {
 
 总而言之，`go/src/cmd/dist/test.go` 是 Go 语言自身测试的核心框架，它通过注册和执行各种测试用例，并支持多种配置和模式，来确保 Go 语言的正确性和稳定性。 理解其命令行参数和测试流程对于开发和调试 Go 语言本身至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/dist/test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2146,9 +2148,4 @@ func fipsVersions(short bool) []string {
 	}
 	return versions
 }
-
-"""
-
-
-
 ```

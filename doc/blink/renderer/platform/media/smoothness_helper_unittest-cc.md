@@ -117,14 +117,16 @@ Initially, I might have just focused on the code and the testing framework. Howe
 
 总而言之，`smoothness_helper_unittest.cc` 的作用是确保 `SmoothnessHelper` 能够准确地监控和报告媒体播放的流畅度信息，这对于后续的性能分析和优化至关重要，并最终影响用户在使用 Web 浏览器观看视频时的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/smoothness_helper_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -333,7 +335,4 @@ TEST_F(SmoothnessHelperTest, NNRTaskRecordsMaxNNRs) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

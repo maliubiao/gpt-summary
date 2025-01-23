@@ -80,7 +80,7 @@ Since this is part 2 of 3, I should focus on summarizing the functionality *demo
 
 总而言之，这个代码片段通过大量的测试用例，确保了 blink 引擎在各种复杂的文本布局和编辑场景下，能够准确地计算光标的位置，从而为用户提供流畅和符合预期的编辑体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/local_caret_rect_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -88,8 +88,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ctOfPosition(PositionWithAffinity(
           Position::AfterNode(*first_br), TextAffinity::kDownstream)));
   EXPECT_EQ(
@@ -819,7 +821,4 @@ TEST_F(LocalCaretRectTest, TextCombineTwoTextNodes) {
   const auto& target = *GetElementById("target");
   const auto& text_a = *To<Text>(target.previousSibling());
   const auto& text_012 = *To<Text>(target.firstC
-"""
-
-
 ```

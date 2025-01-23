@@ -206,7 +206,7 @@ int GET_SYSTEM_INFO(void) {
 
 总而言之，`srcgen.py` 是一个简单的代码生成器，主要用于 Frida 项目的内部测试，它可以帮助快速生成基本的 C 代码片段。虽然它本身不执行复杂的逆向操作，但它生成的代码可以作为 Frida 动态插桩的基础，并在逆向分析和动态调试过程中发挥作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/90 gen extra/srcgen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -214,8 +214,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -243,7 +245,4 @@ if options.upper:
 
 with open(options.output, 'w') as f:
     f.write(c_templ % funcname)
-
-"""
-
 ```

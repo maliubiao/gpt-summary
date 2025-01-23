@@ -183,15 +183,17 @@ By following this structured approach, we can effectively analyze the given C++ 
 
 总而言之，`blink/renderer/core/svg/svg_radial_gradient_element.cc` 文件是 Blink 引擎中处理 SVG 径向渐变的关键部分，它负责管理渐变元素的属性、处理继承和默认值，并与布局和渲染流程紧密配合，最终将 SVG 代码转化为用户在浏览器中看到的视觉效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_radial_gradient_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006, 2007 Rob Buis <buis@kde.org>
@@ -407,7 +409,4 @@ void SVGRadialGradientElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

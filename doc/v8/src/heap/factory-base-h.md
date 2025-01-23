@@ -167,15 +167,17 @@ Let's break down the thought process for analyzing this C++ header file.
 
 `v8/src/heap/factory-base.h` 是 V8 引擎中一个至关重要的头文件，它定义了用于创建各种堆对象的工厂类。它封装了对象分配和初始化的细节，并与 Torque 集成以实现高性能的对象创建。 虽然普通 JavaScript 开发者不会直接使用它，但它创建的对象是 JavaScript 运行时环境的基础。理解 `FactoryBase` 的功能有助于更深入地理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/factory-base.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/factory-base.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -621,7 +623,4 @@ extern template class EXPORT_TEMPLATE_DECLARE(V8_EXPORT_PRIVATE)
 }  // namespace v8
 
 #endif  // V8_HEAP_FACTORY_BASE_H_
-
-"""
-
 ```

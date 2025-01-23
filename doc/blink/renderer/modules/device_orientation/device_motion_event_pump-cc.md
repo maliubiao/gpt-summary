@@ -207,15 +207,17 @@ By following these steps, I can break down the complex C++ code and explain its 
 
 总而言之，`device_motion_event_pump.cc` 是连接底层设备传感器和上层 JavaScript API 的关键桥梁，负责获取、处理和传递设备运动数据，使得网页能够感知设备的运动状态并做出相应的响应。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/device_orientation/device_motion_event_pump.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -395,7 +397,4 @@ DeviceMotionData* DeviceMotionEventPump::GetDataFromSharedMemory() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

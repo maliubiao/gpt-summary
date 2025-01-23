@@ -116,11 +116,13 @@ fs.readFileSync('my_file.txt', 'utf8');
 
 `startup-serializer.cc` 是 V8 引擎内部一个关键的组件，它通过将启动所需的关键对象和数据结构序列化到快照文件中，显著提高了 JavaScript 引擎的启动速度。 虽然它本身是 C++ 代码，但其功能直接影响了 JavaScript 代码的执行效率和可用性。  你可以将它理解为 V8 引擎启动时的 "预加载" 或 "缓存" 机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/startup-serializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -364,7 +366,4 @@ bool SerializedHandleChecker::CheckGlobalAndEternalHandles() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

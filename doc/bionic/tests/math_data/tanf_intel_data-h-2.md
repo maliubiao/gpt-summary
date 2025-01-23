@@ -193,7 +193,7 @@ sys.input()
 
 这个 Frida 示例可以帮助你动态地观察 `tanf` 函数的调用情况，验证输入输出，辅助理解其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/tanf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -205,9 +205,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-  0x1.921fb4p0
+### 源代码
+```c
+0x1.921fb4p0
   },
   { // Entry 778
     -0x1.9437b336b6b0c479b2280999b19575c7p23,
@@ -1518,8 +1520,4 @@ Prompt:
     -0.0f
   },
 };
-
-"""
-
-
 ```

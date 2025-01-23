@@ -189,16 +189,17 @@ createCycle();
 
 理解 `marking-worklists.cc` 的功能可以帮助开发者更好地理解 V8 的垃圾回收机制，从而编写出更高效、更少内存泄漏的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/marking-worklists.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/marking-worklists.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
-
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -230,7 +231,4 @@ MarkingWorklists::ExternalMarkingWorklist::~ExternalMarkingWorklist() {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

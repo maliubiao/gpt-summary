@@ -114,11 +114,13 @@ console.log("又分配了一些内存");
 
 `heap-controller-unittest.cc` 文件通过单元测试验证了 V8 引擎中 `HeapController` 组件的正确性，确保了 V8 能够有效地管理 JavaScript 代码运行时的内存，包括动态调整堆的大小和计算内存分配限制。虽然 JavaScript 开发者不直接操作 `HeapController`，但它的功能直接影响 JavaScript 程序的性能和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/heap-controller-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ TEST_F(MemoryControllerTest, OldGenerationAllocationLimit) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

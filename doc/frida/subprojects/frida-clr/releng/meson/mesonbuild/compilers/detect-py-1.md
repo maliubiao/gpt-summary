@@ -80,7 +80,7 @@ compiler = ['gfortran']
 
 这段代码片段是 Frida 构建系统中负责检测和配置 Fortran 编译器的关键部分。它通过尝试执行各种已知的 Fortran 编译器，并解析其输出来识别编译器的类型和版本，并配置相应的链接器。 这使得 Frida 能够在使用 Fortran 代码的项目中正确地进行编译和链接操作。 代码考虑了多种不同的 Fortran 编译器，并针对它们的特性进行了适配，以确保跨平台和多种编译器环境下的兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -89,8 +89,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ':
                     version = _get_lcc_version_from_defines(defines)
                     cls = fortran.ElbrusFortranCompiler
@@ -781,8 +783,4 @@ def _get_clang_compiler_defines(compiler: T.List[str]) -> T.Dict[str, str]:
                                    f'Compiler stderr:\n{error}\n-----\n')
     defines: T.Dict[str, str] = {}
     for line in output.split('\n'):
-    
-"""
-
-
 ```

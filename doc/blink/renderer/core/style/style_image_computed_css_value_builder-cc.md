@@ -102,14 +102,16 @@ By following these steps, I can systematically analyze the provided code and gen
 
 总而言之，`style_image_computed_css_value_builder.cc` 扮演着将 CSS 中描述的图像信息转换为渲染引擎可理解的内部表示的关键角色，它涉及到多种 CSS 图像类型和复杂的计算逻辑。理解其功能有助于理解浏览器如何处理和渲染网页上的图像。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/style_image_computed_css_value_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ CSSValue* StyleImageComputedCSSValueBuilder::Build(CSSValue* value) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

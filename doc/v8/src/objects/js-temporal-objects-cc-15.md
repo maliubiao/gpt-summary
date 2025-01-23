@@ -187,7 +187,7 @@ console.log(Temporal.PlainDate.compare(date1, date2));
 
 总而言之，这个文件是 V8 引擎中实现 JavaScript `Temporal` API 的关键组成部分，它将 JavaScript 中对日期和时区的抽象操作转化为高效的 C++ 代码实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -195,9 +195,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第16部分，共25部分，请归纳一下它的功能
+```
 
-"""
-                    method_name);
+### 源代码
+```cpp
+method_name);
 }
 
 // #sec-temporal.timezone.prototype.tostring
@@ -906,7 +908,4 @@ MaybeHandle<JSTemporalPlainDate> JSTemporalPlainDate::From(
   Handle<JSReceiver> options;
   ASSIGN_RETURN_ON_EXCEPTION(
       isolate, options, GetOptionsO
-"""
-
-
 ```

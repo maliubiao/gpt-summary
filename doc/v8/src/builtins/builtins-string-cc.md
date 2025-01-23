@@ -189,15 +189,17 @@ console.log(String.raw`C:\Users\John`);  // 输出 "C:\\Users\\John" (反斜杠�
 
 总而言之，`v8/src/builtins/builtins-string.cc` 是 V8 引擎中至关重要的文件，它使用 C++ 代码高效地实现了 JavaScript 中常用的字符串操作，并考虑了性能和国际化等方面的因素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-string.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-string.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -690,7 +692,4 @@ BUILTIN(StringRaw) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

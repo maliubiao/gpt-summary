@@ -157,15 +157,17 @@ const segments = segmenter.segment(text);
 
 总而言之，`v8/src/objects/js-segmenter.tq` 定义了 V8 内部表示文本分割器的对象结构，它与 JavaScript 的 `Intl.Segmenter` API 紧密相连，并利用 ICU 库来执行实际的语言敏感的文本分割操作。理解这个文件的内容有助于深入了解 V8 引擎如何实现国际化功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-segmenter.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-segmenter.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ extern class JSSegmenter extends JSObject {
   icu_break_iterator: Foreign;  // Managed<icu::BreakIterator>
   flags: SmiTagged<JSSegmenterFlags>;
 }
-
-"""
-
 ```

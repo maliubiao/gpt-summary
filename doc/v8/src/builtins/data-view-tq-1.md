@@ -91,7 +91,7 @@ dataView.setBigInt64(15, -9007199254740991n); // 在偏移量 15 写入一个 64
 
 总而言之，这段 Torque 代码是 V8 引擎中实现 `DataView` 对象设置数值功能的核心部分，它确保了 JavaScript 能够以高效且精确的方式操作二进制数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/data-view.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/data-view.tq以.tq结尾，那它是个v8 torque源代码，
@@ -99,9 +99,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    context, receiver, offset, value, Undefined, ElementsKind::INT8_ELEMENTS);
+### 源代码
+```
+context, receiver, offset, value, Undefined, ElementsKind::INT8_ELEMENTS);
 }
 
 transitioning javascript builtin DataViewPrototypeSetUint16(
@@ -194,8 +196,4 @@ transitioning javascript builtin DataViewPrototypeSetBigInt64(
       ElementsKind::BIGINT64_ELEMENTS);
 }
 }
-
-"""
-
-
 ```

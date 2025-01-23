@@ -227,15 +227,17 @@ While users of JavaScript don't directly interact with this header file, V8 deve
 
 In summary, `v8/src/ic/ic-stats.h` is a crucial piece of V8's internal infrastructure for understanding and optimizing the performance of JavaScript code by tracking the behavior of Inline Caches. It provides a detailed view into the dynamic nature of JavaScript execution and helps V8 developers ensure the IC system is functioning correctly.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/ic-stats.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ic/ic-stats.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -321,7 +323,4 @@ class ICStats {
 }  // namespace v8
 
 #endif  // V8_IC_IC_STATS_H_
-
-"""
-
 ```

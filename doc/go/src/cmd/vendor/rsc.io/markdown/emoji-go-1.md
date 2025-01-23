@@ -34,7 +34,7 @@ To summarize the functionality of both parts, it is essentially a static databas
 
 这个文件本身并不包含任何实现查找或转换逻辑的代码。它的作用更像是一个静态的数据字典，需要配合其他代码来使用。例如，markdown 解析器可能会使用这个 map 来查找并替换文档中的 emoji 名称。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/rsc.io/markdown/emoji.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -43,9 +43,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                      "\U0001f4f0",
+### 源代码
+```go
+"\U0001f4f0",
 	"newspaper_roll":                       "\U0001f5de\ufe0f",
 	"next_track_button":                    "\u23ed\ufe0f",
 	"ng":                                   "\U0001f196",
@@ -808,10 +810,4 @@ Prompt:
 }
 
 const maxEmojiLen = 36
-
-"""
-
-
-
-
 ```

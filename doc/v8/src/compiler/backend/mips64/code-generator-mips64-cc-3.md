@@ -512,7 +512,7 @@ const product = a.map((v, i) => v * b[i]);
 
 作为第 4 部分，这段代码主要关注于 **实现 MIPS64 架构中与 SIMD 操作相关的代码生成逻辑**。 它涵盖了多种 SIMD 数据类型（包括浮点数和整数），以及各种 SIMD 操作，例如算术运算、比较、位移、数据重排和内存访问。 这部分代码是 V8 引擎将高级 JavaScript SIMD 操作转化为底层硬件指令的关键组成部分。 它的存在使得 JavaScript 能够利用现代处理器的 SIMD 能力，提高特定计算密集型任务的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/code-generator-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/mips64/code-generator-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -520,8 +520,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 128Register(1));
       break;
     }
@@ -1412,7 +1414,4 @@ Prompt:
       CpuFeatureScope msa_scope(masm(), MIPS_SIMD);
       Simd128Register dst = i.OutputSimd128Register(),
                       src0 = i.InputSimd128Re
-"""
-
-
 ```

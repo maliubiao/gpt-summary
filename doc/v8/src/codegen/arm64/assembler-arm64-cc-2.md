@@ -199,7 +199,7 @@ a.shl(d0, d1, 2);
 
 这段代码片段主要提供了用于生成 ARM64 架构下 **NEON (Advanced SIMD) 移位、扩展、加宽/减窄、数据移动、插入、单操作数、规约加法以及表查找** 指令的接口。 它还包含了生成**通用寄存器操作、系统寄存器访问、提示指令以及 NEON 结构体加载和存储指令**的功能。 总体而言，这部分代码是 `Assembler` 类中用于处理 SIMD 和数据处理操作的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/assembler-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/assembler-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -207,8 +207,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Scalar;
   } else {
     q = vd.IsD() ? 0 : NEON_Q;
@@ -1234,7 +1236,4 @@ void Assembler::st1(const VRegister& vt, int lane, const MemOperand& dst) {
 
 void Assembler::dmb(BarrierDomain domain, BarrierType type) {
   Emit(DMB | ImmBarrierDomain(domain) | ImmBarrierType(
-"""
-
-
 ```

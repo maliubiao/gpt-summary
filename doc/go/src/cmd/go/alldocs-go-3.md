@@ -296,7 +296,7 @@ Initially, I might have thought about providing more complex cgo examples. Howev
 
 这部分文档是 `go` 命令的重要组成部分，它详细记录了影响 `go` 命令行为的**环境变量**、`go` 命令能够识别的**文件类型**，以及与依赖管理和身份验证相关的 `GOAUTH`、`go.mod` 和 `GOPATH` 的详细信息。  它为 Go 语言开发者提供了理解和配置 Go 构建环境的关键参考，同时也解释了 Go 语言中包管理和导入机制的核心概念。理解这部分内容对于有效地使用 `go` 命令进行项目构建、依赖管理和代码组织至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/alldocs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -305,8 +305,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 eral-purpose environment variables:
 //
 //	GCCGO
@@ -1109,10 +1111,5 @@ eral-purpose environment variables:
 // denoting remote repositories begin with the path to the code,
 // such as 'github.com/user/repo'. Package patterns should include this prefix.
 // For instance, a package called 'http' residing under 'github.com/user/repo',
-// would be addressed with the fully-qualified 
-"""
-
-
-
-
+// would be addressed with the fully-qualified
 ```

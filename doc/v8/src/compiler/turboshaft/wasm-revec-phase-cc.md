@@ -190,15 +190,17 @@ VectorMultiply(VectorLoad1, VectorLoad2)
 
 总而言之，`v8/src/compiler/turboshaft/wasm-revec-phase.cc` 是 V8 引擎中负责对 WebAssembly 代码进行 "revectoring" 优化的一个关键编译阶段，旨在提升 WebAssembly 代码在现代处理器上的执行效率。它通过分析编译图，识别可以向量化的模式，并使用 `WasmRevecReducer` 将这些模式转换为使用 SIMD 指令的更高效的表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-revec-phase.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/wasm-revec-phase.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ void WasmRevecPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

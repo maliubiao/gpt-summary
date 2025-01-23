@@ -162,15 +162,17 @@ The testing framework would then compare the actual error messages produced by t
 
 In summary, `go/test/varerr.go` is a test file that plays a crucial role in ensuring the robustness of the Go compiler by verifying its ability to detect and report specific errors related to illegal variable declarations and the misuse of built-in functions. It's not a program meant to be run directly by users.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/varerr.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -187,10 +189,4 @@ func main() {
 
 	new = 1	// ERROR "use of builtin new not in function call|invalid left hand side|must be called"
 }
-
-
-"""
-
-
-
 ```

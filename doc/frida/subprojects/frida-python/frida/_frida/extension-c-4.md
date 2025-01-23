@@ -191,7 +191,7 @@ Here's a breakdown of the functionalities exposed in the snippet, along with con
 
 This `extension.c` file is the **cornerstone of the Frida Python bindings.** It acts as a **glue layer**, wrapping Frida's core C/C++ functionalities and making them accessible and usable within the Python environment. It provides Python classes for essential Frida features like authentication, code compilation, file monitoring, inter-process communication (through IO Streams), and managing asynchronous operations (using Cancellable). It also handles the crucial task of translating errors from the C layer to Python exceptions, ensuring a smooth and understandable experience for Python developers using Frida for dynamic instrumentation and reverse engineering tasks.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/frida/_frida/extension.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 gstate = PyGILState_Ensure ();
 
     Py_DecRef (self->callback);
@@ -1007,8 +1009,4 @@ PyInit__frida (void)
 
   return module;
 }
-
-"""
-
-
 ```

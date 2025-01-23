@@ -194,7 +194,7 @@ enable_feature_x = %(is_debug_build)s
 
 总而言之，`frida/subprojects/frida-node/releng/machine_file.py` 是 Frida 构建过程中一个关键的配置文件加载器，它允许根据不同的机器或目标环境灵活地配置构建选项和运行时参数。它与逆向工程紧密相关，因为它配置了用于动态逆向的核心工具 Frida。理解它的功能和潜在的错误有助于开发者和用户更好地构建和使用 Frida。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/machine_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -202,8 +202,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from configparser import ConfigParser
 from pathlib import Path
 from typing import Sequence, Union
@@ -248,7 +250,4 @@ def strv_to_meson(strv: Sequence[str]) -> str:
 
 def str_to_meson(s: str) -> str:
     return "'" + s + "'"
-
-"""
-
 ```

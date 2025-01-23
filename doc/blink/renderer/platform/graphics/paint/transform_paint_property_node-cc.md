@@ -177,14 +177,16 @@ Let's consider the `ComputeTransformChange` method:
 
 In summary, `transform_paint_property_node.cc` is a crucial component in Blink's rendering pipeline, responsible for managing and tracking transform properties of elements. It directly relates to the CSS `transform` and `transform-origin` properties and plays a vital role in optimizing rendering performance, especially for animations and complex layouts involving transformations. Understanding its functionality provides insight into how the browser efficiently renders web pages with transformed elements.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/transform_paint_property_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -410,7 +412,4 @@ std::unique_ptr<JSONObject> TransformPaintPropertyNode::ToJSON() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

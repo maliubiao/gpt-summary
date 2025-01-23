@@ -103,15 +103,17 @@ Similarly, for the `DecodeSVGDesiredSize` test:
 
 By having a comprehensive suite of tests like the ones in `web_image_test.cc`, the Chromium project ensures the robustness and correctness of its image rendering capabilities, leading to a better and more reliable user experience. These tests act as guardrails, preventing regressions and catching bugs early in the development process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_image_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -259,7 +261,4 @@ TEST_F(WebImageTest, DecodeSVGInvalidImage) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -173,7 +173,7 @@ To reach this specific `main.cpp` file as a debugging target, a developer or tes
 
 In essence, this `main.cpp` file serves as a small, isolated example to verify the correct functioning of Qt's resource handling mechanism in the context of Frida's dynamic instrumentation capabilities. It provides a controlled environment for testing and debugging interactions with embedded resources in Qt applications.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/4 qt/subfolder/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <QImage>
 #include <QFile>
 #include <QString>
@@ -212,6 +214,4 @@ int main(int argc, char **argv) {
   }
   return 0;
 }
-"""
-
 ```

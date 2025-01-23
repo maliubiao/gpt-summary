@@ -131,14 +131,16 @@ This systematic approach, starting with a high-level overview and then diving in
 
 总而言之，`FilteringNetworkManager` 是 Blink 引擎中一个重要的组件，它在 WebRTC 的上下文中扮演着保护用户隐私的关键角色，通过媒体权限来控制网络信息的暴露。理解其功能对于开发和调试 WebRTC 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/p2p/filtering_network_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -373,7 +375,4 @@ void FilteringNetworkManager::SendNetworksChangedSignal() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

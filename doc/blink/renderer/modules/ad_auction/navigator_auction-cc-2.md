@@ -112,7 +112,7 @@ Let's take the `ConvertNonPromiseDirectFromSellerSignalsFromV8ToMojo` function a
 
 This section of the code is responsible for **bridging the gap between the JavaScript representation of an ad auction configuration and its internal C++ representation within the Blink rendering engine.** It performs crucial tasks of **transferring data, validating its correctness according to the auction specification, handling asynchronous data (Promises), and reporting errors back to the JavaScript environment.** This ensures that the browser has a valid and consistent understanding of the auction parameters before proceeding with the auction process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ad_auction/navigator_auction.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pleteURL(prefix_string);
   if (!direct_from_seller_signals_prefix.IsValid()) {
     V8ThrowException::ThrowTypeError(
@@ -950,8 +952,4 @@ bool CopyAllSlotsRequestedSizesFromIdlToMojo(
                          unparsed_size->width().Utf8().c_str(),
                          unparsed_size->height().Utf8().c_str()),
           "must be distinct from other sizes in the list."));
-
-"""
-
-
 ```

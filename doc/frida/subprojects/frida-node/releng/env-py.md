@@ -163,7 +163,7 @@ This script is **fundamentally related to reverse engineering** because Frida is
 
 **Therefore, if a developer is encountering issues related to the build process, especially during the configuration phase, looking at the generated machine configuration files and the logic within `env.py` can provide valuable debugging clues.** For instance, if the wrong compiler is being selected or if library paths are incorrect, the generated machine file will reflect these errors, and the logic in `env.py` is the place to investigate how those settings were determined.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/env.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from collections import OrderedDict
 from configparser import ConfigParser
 from dataclasses import dataclass
@@ -593,7 +595,4 @@ QEMU_ARCHS = {
     "armbe8": "armeb",
     "arm64": "aarch64",
 }
-
-"""
-
 ```

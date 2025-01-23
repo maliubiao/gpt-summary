@@ -75,7 +75,7 @@ Here's a breakdown of the functionalities I see:
 - **Meson 的 cross-file 配置 (针对交叉编译):** 检查 cross-file 中指定的编译器路径是否正确。
 - **查看 Meson 的构建日志:**  Meson 的构建日志通常会包含 `detect.py` 脚本的输出，可以查看具体的错误信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -84,8 +84,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 
@@ -768,7 +770,4 @@ def detect_fortran_compiler(env: 'Environment', for_machine: MachineChoice) -> C
                     popen_exceptions[join_args(compiler)] = 'no pre-processor defines'
                     continue
                 if guess_gcc_or_lcc == 'lcc
-"""
-
-
 ```

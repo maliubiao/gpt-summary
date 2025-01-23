@@ -177,7 +177,7 @@ By following this structured approach, combining code analysis with understandin
 
 总而言之，尽管 `source.c` 的代码非常简单，但在 Frida 的上下文中，它作为测试和演示 Frida 功能的一个基本构建块，涉及到从高级的动态插桩概念到低级的二进制和操作系统细节。 理解这种简单的测试用例有助于用户更好地理解 Frida 的工作原理，并能帮助他们诊断在使用 Frida 进行逆向工程时遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/216 custom target input extracted objects/libdir/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,12 +185,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

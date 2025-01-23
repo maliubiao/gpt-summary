@@ -164,15 +164,17 @@ By following this structured thought process, covering the code's purpose, disse
 
 总而言之，`stress_cache.cc` 是一个专注于磁盘缓存崩溃恢复的内部测试工具，它通过模拟真实世界中可能发生的崩溃场景来保障 Chromium 网络栈的稳定性和可靠性，最终提升用户浏览网页的体验。它与 JavaScript 功能的关系是间接的，通过确保底层缓存的稳定运行，来保障 JavaScript 代码能够可靠地加载和使用缓存的资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/stress_cache/stress_cache.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -613,7 +615,4 @@ int main(int argc, const char* argv[]) {
   StressTheCache(iteration);
   return 0;
 }
-
-"""
-
 ```

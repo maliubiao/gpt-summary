@@ -122,11 +122,13 @@ By following these steps, you can effectively analyze the C++ code and relate it
 
 `macro-assembler-ppc-unittest.cc` 文件是 V8 引擎中用于测试底层代码生成功能的关键部分。 它确保了在 PowerPC 架构上，V8 能够正确地生成机器码，从而保证 JavaScript 代码的正确执行。 虽然 JavaScript 开发者通常不会直接接触到这些底层的汇编指令，但这些指令支撑着 JavaScript 的各种高级特性和功能。 这些测试保证了 V8 引擎的健壮性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/macro-assembler-ppc-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -258,7 +260,4 @@ TEST_F(MacroAssemblerTest, ReverseBitsU32) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

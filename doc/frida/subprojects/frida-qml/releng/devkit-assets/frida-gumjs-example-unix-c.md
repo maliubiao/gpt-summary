@@ -168,7 +168,7 @@ By following these steps, including iterative refinement, I can generate a compr
 
 总而言之，`frida-gumjs-example-unix.c` 提供了一个基础但实用的示例，展示了如何使用 Frida 的 C 绑定来动态 hook 函数并与注入的 JavaScript 代码进行通信。它涵盖了动态逆向分析的核心概念，并为更复杂的 Frida 应用提供了基础框架。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/devkit-assets/frida-gumjs-example-unix.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-gumjs.h"
 
 #include <fcntl.h>
@@ -262,7 +264,4 @@ on_message (const gchar * message,
 
   g_object_unref (parser);
 }
-
-"""
-
 ```

@@ -168,7 +168,7 @@ void library_function() {
 
 总而言之， `frida/subprojects/frida-node/releng/meson/test cases/unit/41 rpath order/subprojects/sub1/lib.c` 这个文件很可能是一个用于测试 Frida-Node 在不同运行时库搜索路径 (rpath) 配置下，动态链接库加载行为的单元测试库。理解其功能需要结合动态链接、操作系统底层机制以及 Frida 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/41 rpath order/subprojects/sub1/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,9 +176,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

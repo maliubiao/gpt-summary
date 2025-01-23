@@ -138,7 +138,7 @@ This section of the `http_server_properties_unittest.cc` file specifically tests
 
 In essence, this part is crucial for ensuring the browser intelligently avoids using non-functional connection methods, leading to a more reliable and efficient browsing experience.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_server_properties_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -146,9 +146,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
-           alternative_service_info_vector[0].alternative_service());
+### 源代码
+```cpp
+alternative_service_info_vector[0].alternative_service());
   EXPECT_TRUE(impl_.IsAlternativeServiceBroken(broken_alternative_service,
                                                NetworkAnonymizationKey()));
 }
@@ -763,8 +765,4 @@ TEST_F(AlternateProtocolServerPropertiesTest,
   // GetAlternativeServiceInfos should return those of |canonical_server|.
   AlternativeServiceInfoVector alternative_service_info_vector2 =
       properties.GetAlternativeServiceInfos(test_server,
-                                
-"""
-
-
 ```

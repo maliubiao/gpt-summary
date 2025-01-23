@@ -98,7 +98,7 @@ Imagine a JavaScript application tries to fetch data from `https://example.com`.
 
 This section of the unit tests specifically focuses on verifying the **correct implementation and behavior of timeout mechanisms for HTTPS DNS queries when the `UseDnsHttpsSvcb` feature is enabled.** It thoroughly tests different timeout configurations (min, max, relative) in both secure and insecure DNS contexts to ensure that the `HostResolverManager` handles delays in DNS responses appropriately when fetching SVCB records. This ensures a balance between responsiveness and allowing sufficient time for potentially longer secure DNS resolutions with SVCB.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第18部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 he request to not
   // complete because it is waiting on the transaction, where the mock is
   // delaying completion.
@@ -879,7 +881,4 @@ TEST_F(HostResolverManagerDnsTest,
   ResolveHostResponseHelper response(resolver_->CreateRequest(
       url::SchemeHostPort(url::kHttpsScheme, kName, 443),
       NetworkAnonymizationKey(), NetLogWithSource(), std::nu
-"""
-
-
 ```

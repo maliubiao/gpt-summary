@@ -106,11 +106,13 @@ console.log("应用程序继续运行，不受沙箱代码的影响");
 
 `sandbox-unittest.cc` 文件测试了 V8 引擎中用于创建安全隔离环境的关键组件 `Sandbox` 类。虽然 JavaScript 开发者不能直接操作 `Sandbox` 对象，但它的存在是 V8 实现安全 JavaScript 执行环境的基础，防止恶意代码破坏或访问敏感信息。 上述 JavaScript 示例用概念性的代码展示了这种隔离的思想。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/sandbox/sandbox-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -270,7 +272,4 @@ TEST(SandboxTest, PageAllocation) {
 }  // namespace v8
 
 #endif  // V8_ENABLE_SANDBOX
-
-"""
-
 ```

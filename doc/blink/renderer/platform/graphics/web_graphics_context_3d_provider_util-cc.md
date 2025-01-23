@@ -178,14 +178,16 @@ This structured approach, combined with careful analysis of the code and its sur
 
 总而言之， `web_graphics_context_3d_provider_util.cc` 是 Blink 渲染引擎中一个重要的实用工具文件，它封装了创建 WebGL 和 WebGPU 上下文提供程序的复杂性，特别是处理了跨线程创建的需求，确保了图形操作的正确性和稳定性。理解这个文件的功能对于理解 Blink 内部如何管理 3D 图形上下文至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/web_graphics_context_3d_provider_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -304,7 +306,4 @@ void CreateWebGPUGraphicsContext3DProviderAsync(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -165,15 +165,17 @@ This systematic approach allows for a comprehensive understanding of the test fi
 
 总而言之，`presentation_connection_callbacks_test.cc` 是确保 Blink 引擎中处理 Presentation API 连接建立和错误处理逻辑正确性的关键测试文件。理解其功能和与之相关的 Web 技术有助于开发者更好地理解和调试 Presentation API 的相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/presentation/presentation_connection_callbacks_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +326,4 @@ TEST(PresentationConnectionCallbacksTest, HandleError) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

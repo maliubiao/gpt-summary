@@ -128,7 +128,7 @@ Initially, one might think this code is about runtime behavior. However, recogni
 
 这个错误信息可以作为调试线索，引导用户检查他们的构建配置，确认是否正确设置了相关的全局参数。他们需要查看 Frida 的构建文档，或者检查构建脚本中传递给编译器的宏定义，来解决这个问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/native/2 global arg/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifndef MYTHING
   #error "Global argument not set"
 #endif
@@ -181,7 +183,4 @@ Prompt:
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

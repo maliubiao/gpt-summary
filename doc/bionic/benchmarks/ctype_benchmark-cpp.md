@@ -222,7 +222,7 @@ Section Headers:
 
 总而言之，`bionic/benchmarks/ctype_benchmark.cpp` 是一个用于测试 Android Bionic C 库中字符处理函数性能的基准测试文件，它对于理解和优化 Android 系统的底层字符处理能力具有一定的参考价值。通过分析其代码和运行结果，可以更好地理解这些函数的性能特点，并在开发过程中避免潜在的性能瓶颈。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/ctype_benchmark.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -232,8 +232,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 The Android Open Source Project
  *
@@ -296,7 +298,4 @@ CTYPE_BENCHMARK(BM_ctype, tolower);
 CTYPE_BENCHMARK(BM_ctype, _tolower);
 CTYPE_BENCHMARK(BM_ctype, toupper);
 CTYPE_BENCHMARK(BM_ctype, _toupper);
-
-"""
-
 ```

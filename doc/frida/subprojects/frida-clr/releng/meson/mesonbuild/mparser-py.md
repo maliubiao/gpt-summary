@@ -204,7 +204,7 @@ A developer working on Frida's CLR support might end up examining `mparser.py` i
 
 `mparser.py` is the **parser for the configuration language used by the `frida-clr` subproject within the Meson build system**. It performs **lexical analysis** to break the configuration text into tokens and **syntactic analysis** to build an Abstract Syntax Tree (AST) representing the configuration's structure and meaning. This process involves defining grammar rules, handling different language constructs (assignments, conditionals, loops, function calls, etc.), and reporting errors for invalid syntax. The parsed configuration is then used by other parts of Frida to guide the dynamic instrumentation of .NET/CLR applications.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/mparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -213,8 +213,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2017 The Meson development team
 
@@ -1128,7 +1130,4 @@ class Parser:
             return self.create_node(ArrayNode, lbracket, args, rbracket)
         elif self.accept('lcurl'):
             lcurl = se
-"""
-
-
 ```

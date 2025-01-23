@@ -260,7 +260,7 @@ sys.stdin.read()
 
 要调试更底层的与内核交互的部分，可能需要 Hook 更底层的系统调用，但这会更加复杂。这个头文件定义的数据结构主要用于内核和用户空间之间的信息传递，因此 Hook 用户空间的 Bionic libc 函数是更直接的方式来观察其使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/dns_resolver.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -271,8 +271,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -339,7 +341,4 @@ struct dns_server_list_v1_address {
   __u8 address_type;
 } __attribute__((__packed__));
 #endif
-
-"""
-
 ```

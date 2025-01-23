@@ -73,12 +73,14 @@ console.log(multipliedNumbers); // 输出 [2, 4, 6, 8]
 
 总而言之， `v8/test/cctest/test-assembler-arm.cc` 的第一部分是V8引擎在ARM架构上正确执行JavaScript代码的基石，它通过细致的汇编指令测试，确保了代码生成的正确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -2114,7 +2116,4 @@ TEST(15) {
     __ vst1(Neon8, NeonListOperand(q0), NeonMemOperand(r4));
     __ add(r4, r0, Operand(static_cast<int32_t>(offsetof(T, vzip32b))));
     __ vst1(Neon8,
-"""
-
-
 ```

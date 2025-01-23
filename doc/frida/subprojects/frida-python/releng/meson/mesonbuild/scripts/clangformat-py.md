@@ -153,7 +153,7 @@ File reformatted:  /path/to/frida/source/some_file.cpp
 
 总而言之，`clangformat.py` 是 Frida 项目中一个重要的维护工具，它通过自动化代码格式化，提高了代码库的可读性和一致性，间接地为 Frida 的开发和逆向分析工作提供了便利。用户通常不需要直接操作这个脚本，但了解其功能和工作原理有助于理解 Frida 的构建过程和解决相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/scripts/clangformat.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -218,7 +220,4 @@ def run(args: T.List[str]) -> int:
         cformat_ver = None
 
     return run_tool('clang-format', srcdir, builddir, run_clang_format, exelist, options.check, cformat_ver)
-
-"""
-
 ```

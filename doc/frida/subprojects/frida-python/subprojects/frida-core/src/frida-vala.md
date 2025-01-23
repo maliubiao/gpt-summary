@@ -142,7 +142,7 @@ var pid = device.spawn_sync ("/bin/ls", new SpawnOptions ());
    - 用户通过信号机制处理设备、进程、应用程序的状态变化。
 
 通过这些步骤，用户可以逐步实现对设备的控制、进程的管理以及代码的注入。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/frida.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "Frida", gir_version = "1.0")]
 namespace Frida {
 	public extern void init ();
@@ -1232,8 +1234,4 @@ namespace Frida {
 					throw_dbus_error (e);
 			}
 		}
-
-"""
-
-
 ```

@@ -179,14 +179,16 @@ During the process, I might realize I've missed a crucial detail or haven't expl
 
 总而言之，`test_response_generator.cc` 是 Blink 引擎中一个用于模拟各种网络响应的工具，方便开发者测试与网络请求相关的各种场景，确保引擎在面对不同的服务器行为时能够正确处理。虽然它不直接与前端技术交互，但它生成的响应会直接影响到 JavaScript, HTML 和 CSS 的资源加载和处理行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/testing/test_response_generator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -294,7 +296,4 @@ WebURLResponse TestResponseGenerator::GenerateFileResponse(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -146,7 +146,7 @@ By following this structured thinking and analysis, we arrive at a comprehensive
 
 总而言之，`testenv.py` 是一个非常基础但实用的工具，用于在软件开发和测试过程中验证环境变量的设置，特别是在需要确保环境一致性的场景下，例如逆向工程和自动化测试。它的简洁性使得它易于理解和使用，可以快速排查由于环境变量配置错误导致的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/274 environment/testenv.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -168,7 +170,4 @@ if os.environ.get(key) == expected:
     sys.exit(0)
 
 sys.exit(f'Expected {expected!r}, was {os.environ.get(key)!r}')
-
-"""
-
 ```

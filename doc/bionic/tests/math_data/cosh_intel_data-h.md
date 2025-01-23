@@ -78,7 +78,7 @@ By following this structured thought process, analyzing the code, forming hypoth
 
 `bionic/tests/math_data/cosh_intel_data.handroid` 这个文件是 Android Bionic 库中用于测试双精度浮点数双曲余弦函数 (`cosh`) 实现正确性的**静态测试数据集合**，可能特别关注在 Intel 架构上的表现。它通过预定义的输入和预期输出值对，为单元测试提供了基础，以确保 `cosh` 函数在各种场景下的精度和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/cosh_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -90,8 +90,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1555,7 +1557,4 @@ static data_1_1_t<double, double> g_cosh_intel_data[] = {
   },
   { // Entry 361
     0x1.ffffffffffff9ede67b7a30e671c79e2p51,
-"""
-
-
 ```

@@ -150,7 +150,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 这个简单的 `main.c` 文件虽然功能简单，但在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理子项目依赖、函数 Hook 和返回值修改等方面的能力。它也为逆向工程师提供了一个清晰的示例，展示了如何使用 Frida 来动态分析程序的行为。由于它位于 `failing` 目录下，它很可能被设计用来触发特定的错误或边界情况，以测试 Frida 的健壮性或特定的错误处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/16 extract from subproject/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,14 +158,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int sub_lib_method(void);
 
 int main(void) {
     return 1337 - sub_lib_method();
 }
-
-"""
-
 ```

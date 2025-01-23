@@ -163,15 +163,17 @@ console.log(result);
 
 总而言之，`v8/test/unittests/codegen/code-layout-unittest.cc` 通过测试 `Code` 对象的布局，确保 V8 能够正确地组织和管理编译后的代码，这对于 V8 的正确性和稳定性至关重要。虽然它是内部测试，但它涉及的内存管理和数据布局概念与用户在编写底层代码时需要注意的问题是相关的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/codegen/code-layout-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/codegen/code-layout-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ TEST_F(CodeLayoutTest, CodeLayoutWithUnwindingInfo) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -154,7 +154,7 @@ liftoff::Store(assm, liftoff::GetStackSlot(dst_offset), src_reg, kind);
 
 这个头文件的第1部分主要关注于 **定义Liftoff栈帧结构、提供基本的内存操作抽象（加载、存储、推送）、管理基本的函数调用和栈帧的准备工作**。它为后续更复杂的汇编指令生成和优化奠定了基础。 涉及到了访问实例数据、加载常量以及一些与Tagged指针相关的操作。 此外，初步涉及了栈增长和收缩的机制以及分层编译的检查。  它不包含完整的原子操作或复杂的控制流逻辑，这些很可能会在后续的部分中出现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/loong64/liftoff-assembler-loong64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/loong64/liftoff-assembler-loong64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -162,8 +162,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1054,7 +1056,4 @@ void LiftoffAssembler::AtomicSub(Register dst_addr, Register offset_reg,
 }
 #undef ASSEMBLE_ATOMIC_BINOP
 #un
-"""
-
-
 ```

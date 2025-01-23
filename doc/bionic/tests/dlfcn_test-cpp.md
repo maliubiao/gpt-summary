@@ -86,7 +86,7 @@ By following these steps, I can effectively analyze the C++ test code and produc
 
 总而言之，`dlfcn_test.cpp` 是一个详尽的动态链接功能测试套件，它涵盖了 `dlfcn.h` 中核心函数的各种使用场景和边界情况，旨在确保 Android 系统中动态链接机制的稳定性和正确性。它通过各种断言 (`ASSERT_TRUE`, `ASSERT_EQ`, `ASSERT_SUBSTR` 等) 来验证动态链接操作的预期结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/dlfcn_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -98,8 +98,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 The Android Open Source Project
  *
@@ -1032,7 +1034,4 @@ TEST(dlfcn, dladdr_executable) {
 
   // The filename should be that of this executable.
   char dli_re
-"""
-
-
 ```

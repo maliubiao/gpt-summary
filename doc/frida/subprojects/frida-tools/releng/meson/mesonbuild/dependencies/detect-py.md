@@ -162,7 +162,7 @@ A user would reach this code indirectly during the Frida build process. Here's a
 
 In summary, `detect.py` is a vital part of Frida's build system, acting as a dependency detective. While it doesn't perform reverse engineering directly, its functionality is essential for building the Frida toolkit, which is heavily used in reverse engineering. It utilizes knowledge of underlying binary formats, operating system conventions (like `pkg-config` on Linux, Frameworks on macOS), and potentially Android-specific build systems to locate the necessary components for a successful Frida build.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/dependencies/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -397,7 +399,4 @@ def _build_external_dependency_list(name: str, env: 'Environment', for_machine: 
         candidates.append(functools.partial(CMakeDependency, name, env, kwargs))
 
     return candidates
-
-"""
-
 ```

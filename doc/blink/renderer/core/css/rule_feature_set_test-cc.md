@@ -97,7 +97,7 @@ Here's a breakdown of the thought process to achieve the desired output:
 
 接下来的部分很可能会扩展测试的覆盖范围，包括更复杂的选择器、伪类、伪元素以及与其他 Blink 引擎组件的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/rule_feature_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -929,7 +931,4 @@ TEST_F(RuleFeatureSetTest, repeatedAny) {
 
 TEST_F(RuleFeatureSetTest, anyIdDescendant) {
   EXPECT_EQ(Select
-"""
-
-
 ```

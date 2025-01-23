@@ -189,7 +189,7 @@ By following this process, we can generate a comprehensive and accurate summary 
 
 这段 `v8/src/compiler/js-native-context-specialization.cc` 的代码主要负责 **基于类型反馈信息和静态分析，优化 JavaScript 中各种形式的属性访问操作，包括具名属性和索引属性的读取、写入和定义。**  它针对不同的属性访问场景，例如普通属性访问、原型链访问、字符串元素访问以及 Typed Array 的元素访问，采取不同的优化策略，旨在生成更高效的机器码，提升 JavaScript 的执行性能。 核心是通过构建类型检查和利用反馈信息，避免运行时的通用属性查找，从而加速代码执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-native-context-specialization.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-native-context-specialization.cc以.tq结尾，那它是个v8 torque源代码，
@@ -197,8 +197,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ,
                                   effect);
       }
@@ -928,7 +930,4 @@ Reduction JSNativeContextSpecialization::ReduceElementAccess(
 
   // Do not optimize Float16 typed arrays, since they are not yet supported by
   // the rest o
-"""
-
-
 ```

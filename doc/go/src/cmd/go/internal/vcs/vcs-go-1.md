@@ -122,7 +122,7 @@ Is Custom: true
 
 这段代码的核心功能是 **动态地发现和解析 Go 语言 import 路径对应的版本控制仓库信息**。它处理了无 Scheme 的仓库 URL，提供了测试环境下的 URL 拦截机制，并实现了通过 HTTP/HTTPS 请求解析 HTML `<meta>` 标签来查找自定义域名仓库信息的功能。它还包括了对仓库根路径的验证和对动态获取结果的缓存机制，以提高效率。总的来说，这段代码与 `vcs.go` 的第一部分共同构成了 Go 工具链中解析 import 路径和管理依赖的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/vcs/vcs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -131,8 +131,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 RL string
 		if !srv.schemelessRepo {
 			repoURL = match["repo"]
@@ -623,10 +625,4 @@ func (e *importError) Unwrap() error {
 func (e *importError) ImportPath() string {
 	return e.importPath
 }
-
-"""
-
-
-
-
 ```

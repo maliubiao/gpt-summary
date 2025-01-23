@@ -209,7 +209,7 @@ func main() {
 
 总而言之，`go/src/crypto/aes/aes.go` 中的这段代码是 Go 语言 AES 加密实现的基础，它负责创建 AES 算法的实例，并强制执行密钥长度的正确性。使用者需要理解 AES 算法的特性和 `crypto/cipher` 包的使用方式，以避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/aes/aes.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -217,8 +217,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -267,9 +269,4 @@ func NewCipher(key []byte) (cipher.Block, error) {
 	}
 	return aes.New(key)
 }
-
-"""
-
-
-
 ```

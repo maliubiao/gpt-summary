@@ -59,11 +59,13 @@ console.timeEnd('startup');
 
 **In essence, `embedded-empty.cc` is a fallback mechanism that allows V8 to be built and function in environments where embedding a pre-compiled snapshot is not desired or possible. However, this comes at the cost of increased startup time for JavaScript execution.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/embedded/embedded-empty.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -91,7 +93,4 @@ typedef void (*fun_ptr)();
 FOREACH_LOAD_STORE_INSTR_HANDLER(V)
 #undef V
 #endif  // V8_ENABLE_DRUMBRAKE
-
-"""
-
 ```

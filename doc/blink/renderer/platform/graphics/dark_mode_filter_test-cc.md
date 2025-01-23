@@ -122,14 +122,16 @@ The user wants to understand the functionality of the provided C++ code file. Th
 
 总而言之，`dark_mode_filter_test.cc` 这个文件通过各种测试用例，确保了 `DarkModeFilter` 类能够正确、高效地实现网页的暗黑模式颜色调整功能，并能处理一些常见的颜色处理场景和潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/dark_mode_filter_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -351,7 +353,4 @@ TEST(DarkModeFilterTest, InvertedColorCacheZeroMaxKeys) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

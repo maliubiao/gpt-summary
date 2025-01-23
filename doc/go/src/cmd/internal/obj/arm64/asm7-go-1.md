@@ -136,7 +136,7 @@ TEXT ·add(SB),NOSPLIT,$0-24
 
 这部分 `asm7.go` 代码的核心功能是 **为 ARM64 架构的 Go 汇编器提供操作数分类和指令模板匹配的功能**。它定义了各种函数来识别和分类不同类型的操作数，并根据操作码和操作数类型，从预定义的指令模板表中找到合适的编码方案，为后续的机器码生成阶段提供必要的信息。它还包含了对常量进行特殊处理和编码的逻辑，以及一些基本的错误检查机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/arm64/asm7.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -144,9 +144,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
- immediate into a scaled 12 bit unsigned lo value
+### 源代码
+```go
+immediate into a scaled 12 bit unsigned lo value
 // and an unscaled shifted 12 bit unsigned hi value. These are typically used
 // by adding or subtracting the hi value and using the lo value as the offset
 // for a load or store.
@@ -3129,10 +3131,5 @@ func (c *ctxt7) asmout(p *obj.Prog, out []uint32) (count int) {
 			o1 = c.opbfm(p, AUBFM, 0, 31, rf, rt)
 
 		case ASXTBW:
-			o1 = c.opbfm(p, ASBFMW, 0, 7, 
-"""
-
-
-
-
+			o1 = c.opbfm(p, ASBFMW, 0, 7,
 ```

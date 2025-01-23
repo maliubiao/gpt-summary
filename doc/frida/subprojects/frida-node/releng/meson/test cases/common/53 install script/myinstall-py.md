@@ -189,7 +189,7 @@ DRYRUN: Copying file my_script.py to /home/user/frida_tools/my_scripts
 
 总而言之，`myinstall.py` 是 Frida 构建系统中的一个实用工具脚本，用于执行文件系统的操作，以支持 Frida 组件的安装和部署。 它的功能看似简单，但在确保 Frida 能够正确安装和运行方面发挥着重要作用，这对于进行动态分析和逆向工程是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/53 install script/myinstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -240,7 +242,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

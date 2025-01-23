@@ -107,12 +107,14 @@ function foo() { // 第 1 行，"function foo" 从第 0 列开始，函数体 "{
 
 总结来说，这个 C++ 测试文件是 V8 引擎内部测试框架的一部分，用于确保其 C++ API 的正确性和稳定性，而这些 API 直接支撑着 JavaScript 的各种功能和特性。第 10 部分，共 18 部分，意味着这是 V8 引擎 API 测试的一个模块，涵盖了特定范围的功能测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第10部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ck_trace->GetFrame(CcTest::isolate(), 0)->GetColumn();
         } else {
           promise_reject_line_number = -1;
@@ -1907,7 +1909,4 @@ THREADED_TEST(FunctionGetScriptId) {
   v8::Local<v8::Function> bar = v8::Local<v8::Function>::Cast(
       env->Global()->Get(env.local(), v8_str("bar")).ToLocalChecked());
   CHECK_EQ(script->GetUnboundScri
-"""
-
-
 ```

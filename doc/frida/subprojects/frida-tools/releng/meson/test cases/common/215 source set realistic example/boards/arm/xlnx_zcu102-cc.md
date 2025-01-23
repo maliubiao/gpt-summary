@@ -122,7 +122,7 @@ This methodical approach, starting from basic code understanding and gradually c
 
 总而言之，`xlnx_zcu102.cc` 是 Frida 为了支持特定硬件平台而提供的配置代码，它体现了 Frida 的模块化设计，允许针对不同的目标环境进行定制。理解这个文件的功能有助于理解 Frida 如何与底层硬件和操作系统进行交互，这对于在特定平台上进行有效的逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/215 source set realistic example/boards/arm/xlnx_zcu102.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "arm.h"
@@ -148,7 +150,4 @@ void XlnxZCU102Board::say_hello()
 }
 
 static XlnxZCU102Board xlnx_zcu102;
-
-"""
-
 ```

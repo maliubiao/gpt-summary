@@ -110,7 +110,7 @@ By following these steps, we can systematically analyze the provided code snippe
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/ci/usercustomize.py` 这个文件虽然代码量很少，但在 Frida 项目的持续集成和测试流程中扮演着重要的角色，它负责启用代码覆盖率收集，为开发者提供代码执行情况的反馈，这对于软件的质量保证和逆向分析都具有重要意义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/ci/usercustomize.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,14 +118,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
 import coverage
 coverage.process_startup()
-
-"""
-
 ```

@@ -185,12 +185,14 @@ let largerInt = smallInt; // 内部可能涉及符号扩展
 
 总而言之，`instruction-selector-mips64.cc` (第三部分) 负责将高级的 JavaScript 概念转化为底层的 MIPS64 机器指令，是 V8 引擎执行 JavaScript 代码的关键组成部分。它针对不同的操作和数据类型提供了指令选择的详细规则，并考虑了性能优化，例如针对 `switch` 语句和 SIMD 操作的特殊处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/instruction-selector-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 }
         }
       } else if (value_op.Is<Opmask::kWord32BitwiseAnd>() ||
@@ -1509,8 +1511,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

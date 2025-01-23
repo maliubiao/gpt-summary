@@ -133,14 +133,16 @@ By following these steps, I can systematically analyze the C++ code and produce 
 
 总而言之，`ellipse_shape.cc` 文件是 Blink 引擎中实现 CSS 椭圆形状的关键组成部分，它通过计算和操作椭圆的几何属性，实现了网页上灵活的非矩形布局和内容环绕效果。理解其功能有助于开发者更好地利用 CSS Shapes 规范创建更具吸引力和交互性的网页设计。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/shapes/ellipse_shape.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Adobe Systems Incorporated. All rights reserved.
  *
@@ -238,7 +240,4 @@ void EllipseShape::BuildDisplayPaths(DisplayPaths& paths) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

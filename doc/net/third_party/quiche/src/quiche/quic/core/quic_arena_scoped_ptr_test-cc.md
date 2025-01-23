@@ -161,15 +161,17 @@ processData();
 
 总而言之，`quic_arena_scoped_ptr_test.cc` 是一个至关重要的测试文件，它确保了 `QuicArenaScopedPtr` 这一核心组件的正确性和可靠性，这对于构建健壮的 QUIC 实现至关重要。当出现与内存管理相关的 bug 时，这个测试文件可以作为理解其行为和辅助调试的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_arena_scoped_ptr_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -289,7 +291,4 @@ TEST_P(QuicArenaScopedPtrParamTest, Swap) {
 
 }  // namespace
 }  // namespace quic::test
-
-"""
-
 ```

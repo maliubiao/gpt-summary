@@ -171,7 +171,7 @@ blob1 := []byte{0x01, 0x02, 0x03, 0x04, /* ... 包含函数 Add 的覆盖率相�
 
 `go/src/internal/coverage/encodemeta/encodefile.go` 是 Go 语言代码覆盖率功能的核心组成部分，负责将编译器生成的代码覆盖率元数据编码并写入文件。这个文件对于后续的覆盖率报告生成至关重要，因为它提供了理解覆盖率数据所需的上下文信息。 普通 Go 开发者无需直接操作这个包，但了解其功能有助于理解 Go 代码覆盖率的内部实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/coverage/encodemeta/encodefile.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -179,8 +179,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -315,9 +317,4 @@ func (m *CoverageMetaFileWriter) Write(finalHash [16]byte, blobs [][]byte, mode 
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

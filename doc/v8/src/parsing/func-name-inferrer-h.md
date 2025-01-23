@@ -166,15 +166,17 @@ const calculator = {
 
 `v8/src/parsing/func-name-inferrer.h` 中定义的 `FuncNameInferrer` 类在 V8 引擎的解析阶段扮演着重要的角色，它通过分析代码的上下文来为匿名函数赋予名称，从而提升调试体验和代码可理解性。虽然它不能解决所有匿名函数命名的问题，但它尽力利用静态信息提供尽可能有意义的名称。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/func-name-inferrer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/func-name-inferrer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2006-2009 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -313,7 +315,4 @@ class FuncNameInferrer {
 }  // namespace v8
 
 #endif  // V8_PARSING_FUNC_NAME_INFERRER_H_
-
-"""
-
 ```

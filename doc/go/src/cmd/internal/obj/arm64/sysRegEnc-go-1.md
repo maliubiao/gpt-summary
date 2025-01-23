@@ -98,7 +98,7 @@ By following these steps, considering assumptions, and refining the explanation,
 
 **简而言之，这段代码提供了一个将ARM64系统寄存器ID映射到其名称、编码和访问权限的工具函数。**  这在需要处理或生成与ARM64系统寄存器相关的代码时非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/arm64/sysRegEnc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -107,8 +107,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ,
 	{"PMEVTYPER27_EL0", REG_PMEVTYPER27_EL0, 0x1bef60, SR_READ | SR_WRITE},
 	{"PMEVTYPER28_EL0", REG_PMEVTYPER28_EL0, 0x1bef80, SR_READ | SR_WRITE},
@@ -174,10 +176,4 @@ func SysRegEnc(r int16) (string, uint32, uint8) {
 	v := SystemReg[r-SYSREG_BEGIN-1]
 	return v.Name, v.Enc, v.AccessFlags
 }
-
-"""
-
-
-
-
 ```

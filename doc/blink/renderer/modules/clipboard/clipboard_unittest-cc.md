@@ -125,15 +125,17 @@ This step-by-step breakdown, focusing on the code's structure, dependencies, tes
 
 `clipboard_unittest.cc` 是 Blink 引擎中用于测试异步剪贴板 API 的关键单元测试文件。它通过模拟各种场景（包括权限状态、安全上下文、焦点状态）来验证 API 的行为是否符合预期。理解这个文件的作用和内容，可以帮助开发者更好地理解 Blink 引擎如何实现剪贴板功能，并在遇到相关问题时提供有价值的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/clipboard/clipboard_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ TEST_F(ClipboardTest, ClipboardPromiseReadText) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

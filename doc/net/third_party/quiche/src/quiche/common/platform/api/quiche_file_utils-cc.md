@@ -171,15 +171,17 @@ By following this structured thinking process, including considering context, po
 
 总而言之，`quiche_file_utils.cc` 提供了一组底层的、平台无关的文件操作工具，主要用于 Quiche 库在处理网络请求时可能需要的本地文件访问操作。虽然与浏览器 JavaScript 没有直接的调用关系，但在服务器端，这些工具可以被用来响应由 JavaScript 发起的网络请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/platform/api/quiche_file_utils.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/common/platform/api/quiche_file_utils.h"
 
 #include <optional>
@@ -235,7 +237,4 @@ bool EnumerateDirectoryRecursively(absl::string_view path,
 }
 
 }  // namespace quiche
-
-"""
-
 ```

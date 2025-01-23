@@ -94,14 +94,16 @@ Essentially, the process involves understanding the code's purpose, identifying 
 
 总而言之，`ChildFrameCompositingHelper` 是 Blink 渲染引擎中一个关键的组件，它抽象了子框架合成的复杂性，使得父框架能够无缝地集成子框架的视觉内容，并优雅地处理子框架可能出现的各种状态。它与 HTML 的 `<iframe>` 元素紧密相关，并受到 CSS 样式和 JavaScript 操作的影响。理解其功能有助于开发者更好地理解浏览器如何渲染网页以及如何避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/child_frame_compositing_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ bool ChildFrameCompositingHelper::FillsBoundsCompletely() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

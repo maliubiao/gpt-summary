@@ -109,16 +109,18 @@ By following these steps, we can effectively analyze the test code and provide a
 
 总而言之，这部分代码深入测试了 `WatchTimeReporter` 在各种复杂场景下的行为，确保其能够准确可靠地统计媒体的观看时长，为后续的性能分析和用户行为研究提供数据基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/watch_time_reporter_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    EXPECT_WATCH_TIME_IF_VIDEO(DisplayFullscreen, kWatchTime2 - kWatchTime1);
+### 源代码
+```cpp
+EXPECT_WATCH_TIME_IF_VIDEO(DisplayFullscreen, kWatchTime2 - kWatchTime1);
     EXPECT_WATCH_TIME(Battery, kWatchTime2 - kWatchTime1);
     EXPECT_WATCH_TIME_FINALIZED();
     CycleReportingTimer();
@@ -965,8 +967,4 @@ INSTANTIATE_TEST_SUITE_P(MutedWatchTimeReporterTest,
                          }));
 
 }  // namespace blink
-
-"""
-
-
 ```

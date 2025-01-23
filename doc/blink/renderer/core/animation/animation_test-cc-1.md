@@ -128,15 +128,17 @@ Here's a breakdown of how to arrive at the summary:
 
 这部分代码主要集中测试了 `Animation` 类在非合成场景下的核心功能，包括动画的启动、停止、完成、播放速率控制、动画效果的设置和更新等。同时也包含了一些关于合成动画的测试，主要关注动画在合成器上的运行条件、状态管理以及错误处理。 这些测试覆盖了 `Animation` 对象的关键生命周期和行为，确保了动画功能的正确性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/animation_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e(MakeGarbageCollected<V8CSSNumberish>(40000),
                             ASSERT_NO_EXCEPTION);
   animation->finish(exception_state);
@@ -971,7 +973,4 @@ TEST_P(AnimationAnimationTestCompositing,
   EXPECT_TRUE(animation->HasActiveAnimationsOnCompositor());
 
   // Kick the animati
-"""
-
-
 ```

@@ -155,15 +155,17 @@ By following these steps, we can arrive at a comprehensive and accurate analysis
 
 总而言之，`quic_default_event_loop.cc` 是 QUIC 库中一个关键的组件，它负责灵活地选择和提供底层的事件循环机制，这对于 QUIC 协议的高效异步运行至关重要。理解它的功能和选择逻辑有助于理解和调试 QUIC 相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/io/quic_default_event_loop.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ std::vector<QuicEventLoopFactory*> GetAllSupportedEventLoops() {
 }
 
 }  // namespace quic
-
-"""
-
 ```

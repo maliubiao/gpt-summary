@@ -255,7 +255,7 @@ sys.stdin.read()
 
 **请注意:**  直接 hook 内核级别的操作通常比较复杂，需要对内核机制和相关的系统调用有深入的理解。这个 Frida 示例主要演示了如何 hook 用户空间程序可能与 netfilter 交互的方式。真正的 `LED` 控制可能发生在内核空间，hook 那部分需要更高级的 Frida 技术或者内核调试方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_LED.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,8 +266,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -284,7 +286,4 @@ struct xt_led_info {
   void * internal_data __attribute__((aligned(8)));
 };
 #endif
-
-"""
-
 ```

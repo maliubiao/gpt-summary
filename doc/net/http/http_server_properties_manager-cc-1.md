@@ -153,7 +153,7 @@ server_pref_dict.Set(kAlternativeServiceKey,
 
 这部分 `http_server_properties_manager.cc` 代码的核心职责是将 Chromium 网络栈中关于 HTTP 服务器的各种属性信息，特别是关于备用服务（如 HTTP/3）、QUIC 连接状态、网络统计以及已损坏的服务信息，以结构化的方式持久化存储到浏览器的配置中。这些保存的信息对于后续的网络请求优化至关重要，可以帮助浏览器更快、更可靠地建立连接。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_server_properties_manager.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nativeServiceFieldsToDictionaryValue(alternative_service,
                                                  alternative_service_dict);
     // JSON cannot store int64_t, so expiration is converted to a string.
@@ -341,8 +343,4 @@ void HttpServerPropertiesManager::OnHttpServerPropertiesLoaded() {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

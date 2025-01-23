@@ -179,7 +179,7 @@ sys.stdin.read()
 
 总而言之，这个 `main.c` 文件是一个用于测试 Frida 构建系统和 Native 代码集成功能的简单示例。它依赖于另一个子项目提供的函数，通过条件判断展示了不同执行路径，并为逆向分析和动态插桩提供了基本的实验场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/native/10 native subproject/subprojects/recursive-build-only/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include "recursive-both.h"
 
@@ -202,7 +204,4 @@ int main(void) {
     printf("}\n");
     return 0;
 }
-
-"""
-
 ```

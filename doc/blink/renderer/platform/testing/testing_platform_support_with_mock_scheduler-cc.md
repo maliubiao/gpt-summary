@@ -156,14 +156,16 @@ By following this structured thought process, breaking down the problem, and exp
 
 总而言之，`testing_platform_support_with_mock_scheduler.cc` 提供了一个强大的工具，用于在 Blink 渲染引擎的测试中精确地控制时间和任务调度，这对于测试复杂的异步和时间相关的 Web 功能至关重要。正确使用它可以显著提高测试的可靠性和覆盖率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/testing_platform_support_with_mock_scheduler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ TestingPlatformSupportWithMockScheduler::GetMainThreadScheduler() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

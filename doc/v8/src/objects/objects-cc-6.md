@@ -158,7 +158,7 @@ Here's a breakdown of my thought process:
 
 总而言之，`v8/src/objects/objects.cc` 的这一部分是 V8 引擎中至关重要的基础设施代码，它直接支撑着 JavaScript 中各种对象的创建、属性的访问和操作，以及异步编程模型 Promise 的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -166,9 +166,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
-                               Cast<JSReceiver>(secondary_handler))
+### 源代码
+```cpp
+Cast<JSReceiver>(secondary_handler))
                                 .ToHandle(&handler_context);
     }
     if (!has_handler_context) handler_context = isolate->native_context();
@@ -976,7 +978,4 @@ void RehashObjectHashTableAndGCIfNeeded(Isolate* isolate, Handle<T> table) {
   // If we're out of luck, we didn't get a GC recently, and so rehashing
   // isn't enough to avoid a crash.
   if (!ta
-"""
-
-
 ```

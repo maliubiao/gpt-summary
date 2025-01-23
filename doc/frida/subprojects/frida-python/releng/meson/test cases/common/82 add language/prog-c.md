@@ -130,7 +130,7 @@ Finally, I organize the information logically, starting with the core functional
 
 总而言之，这个简单的 `prog.c` 文件虽然功能单一，但在 Frida 的上下文中扮演着重要的角色，它是用于测试 Frida 功能的基础目标程序，涉及到动态插桩、逆向工程的基本概念，并间接关联到操作系统底层和二进制执行的知识。 调试过程中查看这个文件，通常是因为需要理解一个与 C 代码交互相关的 Frida 功能测试的具体实现和预期行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/82 add language/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,15 +138,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("I am plain C.\n");
     return 0;
 }
-
-"""
-
 ```

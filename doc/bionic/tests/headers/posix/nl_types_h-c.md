@@ -337,7 +337,7 @@ sys.stdin.read()
 
 通过这种方式，你可以观察到 Native 代码何时调用了 `nl_types.h` 中定义的函数，并分析调用时的参数和上下文，从而理解 Android Framework 或 NDK 是如何到达这里的。 请注意，Framework 直接调用这些函数的可能性较小，更多的是通过 NDK 开发的 Native 库来使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/nl_types_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -348,8 +348,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -393,7 +395,4 @@ static void nl_types_h() {
   FUNCTION(catgets, char* (*f)(nl_catd, int, int, const char*));
   FUNCTION(catopen, nl_catd (*f)(const char*, int));
 }
-
-"""
-
 ```

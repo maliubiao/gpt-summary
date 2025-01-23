@@ -133,7 +133,7 @@ By systematically analyzing the test cases, the overall functionality of the `en
 
 这部分单元测试代码的核心功能是**全面测试 Chromium 磁盘缓存中稀疏数据条目的读、写、查询和管理功能**。它涵盖了正常情况下的操作，以及各种边界情况和错误情况，确保了稀疏缓存机制的稳定性和可靠性。这对于优化大型网络资源的缓存效率至关重要，并最终影响用户的浏览体验和JavaScript应用程序的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/entry_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nuous small write, this one at [3072, 3684).
   // This means the cache tracks [1024, 3072) via bitmaps and [3072, 3684)
   // as the last write.
@@ -1057,7 +1059,4 @@ TEST_F(DiskCacheEntryTest, KeySanityCheck3) {
   // Mess up the terminating null in the external key file.
   auto key_file =
       base::MakeRefCounted<dis
-"""
-
-
 ```

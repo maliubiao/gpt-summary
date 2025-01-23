@@ -186,7 +186,7 @@ ctx.fillRect(130, 10, 50, 50);
 
 `blink/renderer/modules/canvas/canvas2d/base_rendering_context_2d.cc` 文件定义了 `BaseRenderingContext2D` 类，它是 HTML5 Canvas 2D 渲染上下文的核心基类。它负责管理 Canvas 的渲染状态（包括变换、样式、裁剪等）、处理状态的保存和恢复、管理图层、并作为 JavaScript Canvas 2D API 和底层图形库 (Skia) 之间的桥梁。该类通过 C++ 代码实现了 JavaScript 中 Canvas 2D API 的核心功能，使得开发者可以通过 JavaScript 在 HTML 的 `<canvas>` 元素上进行 2D 图形绘制。 理解这个类的功能是理解浏览器如何渲染 Canvas 内容的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/base_rendering_context_2d.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -956,7 +958,4 @@ void BaseRenderingContext2D::ResetInternal() {
   // If a WebGPU transfer texture exists, we must destroy it immediately. We
   // can't allow it to continue to exist, as it would be subject to Javascript
   // garbage-collect
-"""
-
-
 ```

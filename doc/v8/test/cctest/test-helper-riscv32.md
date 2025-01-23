@@ -112,11 +112,13 @@ console.log(result);
 
 `v8/test/cctest/test-helper-riscv32.cc` 提供的工具是为了方便在 RISC-V 32位架构上测试 V8 的代码生成能力。它允许开发者编写 C++ 代码来动态生成和执行 RISC-V 汇编指令，这直接关联到 V8 引擎将 JavaScript 代码编译成本地机器码的过程。通过这些测试工具，可以确保 V8 在 RISC-V 架构上的代码生成是正确和高效的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-helper-riscv32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -165,7 +167,4 @@ Handle<Code> AssembleCodeImpl(Isolate* isolate, Func assemble) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

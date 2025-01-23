@@ -156,14 +156,16 @@ This systematic approach, starting from the file's name and gradually delving in
 
 总而言之，`string_impl.cc` 是 Blink 引擎中处理字符串的核心基础设施，它提供了高效、安全、功能丰富的字符串操作，并直接支撑着 JavaScript, HTML, CSS 等 Web 技术中对字符串的处理。理解其功能有助于深入了解浏览器引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/string_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -1996,7 +1998,4 @@ int CodeUnitCompareIgnoringASCIICase(const StringImpl* string1,
 }
 
 }  // namespace WTF
-
-"""
-
 ```

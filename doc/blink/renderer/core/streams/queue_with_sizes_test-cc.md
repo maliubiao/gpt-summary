@@ -165,15 +165,17 @@ fetch('large_image.jpg')
 
 总而言之，`queue_with_sizes_test.cc` 是一个测试 Blink 引擎内部用于实现 Streams API 关键组件的单元测试文件。它虽然不直接与前端开发接触，但其测试的 `QueueWithSizes` 类的功能，对于保证 Web 平台上高效且可靠的数据流处理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/streams/queue_with_sizes_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -338,7 +340,4 @@ TEST(QueueWithSizesTest, TotalSizeIsNonNegative) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

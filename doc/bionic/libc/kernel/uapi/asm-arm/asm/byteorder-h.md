@@ -244,7 +244,7 @@ except Exception as e:
 
 通过这种方式，我们可以验证 Bionic 库在底层是如何使用字节序相关的定义进行数据处理的。 `byteorder.handroid` 虽然只是一个简单的包含头文件，但它是实现这些功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm/asm/byteorder.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -255,8 +255,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -267,7 +269,4 @@ Prompt:
 #define __ASM_ARM_BYTEORDER_H
 #include <linux/byteorder/little_endian.h>
 #endif
-
-"""
-
 ```

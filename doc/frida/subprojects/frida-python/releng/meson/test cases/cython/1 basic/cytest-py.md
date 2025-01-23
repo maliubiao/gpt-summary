@@ -121,7 +121,7 @@ Initially, I might have focused too much on the *direct* binary/kernel implicati
 
 总而言之，`cytest.py` 作为一个单元测试，其目的是确保 Frida 的 Python 绑定能够正确地与底层的 Cython 模块进行交互。它通过模拟基本的操作和错误场景，验证了 `Storer` 类的功能是否符合预期，这对于保证 Frida 工具的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cython/1 basic/cytest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from storer import Storer
@@ -150,7 +152,4 @@ try:
     raise SystemExit('Using wrong argument type did not fail.')
 except TypeError:
     pass
-
-"""
-
 ```

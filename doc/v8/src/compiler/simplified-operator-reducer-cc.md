@@ -178,15 +178,17 @@ The simplifications performed by this reducer often implicitly handle or expose 
 
 **In summary, `v8/src/compiler/simplified-operator-reducer.cc` is a crucial optimization component in V8 that analyzes and simplifies the intermediate representation of JavaScript code, leading to more efficient execution. It achieves this through constant folding, identity elimination, type specialization, and other reduction techniques. While it doesn't directly deal with `.tq` files, its actions are essential for optimizing the execution of JavaScript code, including code within built-in functions that might be implemented in Torque.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-operator-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/simplified-operator-reducer.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -516,7 +518,4 @@ SimplifiedOperatorBuilder* SimplifiedOperatorReducer::simplified() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

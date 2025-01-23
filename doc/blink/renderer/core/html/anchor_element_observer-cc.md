@@ -137,14 +137,16 @@ By following this thought process, one can systematically analyze the given C++ 
 
 `AnchorElementObserver` 是 Blink 渲染引擎中一个关键的组件，负责维护 HTML 元素之间通过 `anchor` 属性建立的隐式关联。它确保当目标元素发生变化时，依赖于这种关联的源元素能够及时地更新其布局和渲染状态，从而保证页面的正确性和一致性。理解其工作原理有助于开发者避免一些常见的 HTML 和 JavaScript 使用错误，并优化页面性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/anchor_element_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -240,7 +242,4 @@ void AnchorElementObserver::ResetIdTargetObserverIfNeeded() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

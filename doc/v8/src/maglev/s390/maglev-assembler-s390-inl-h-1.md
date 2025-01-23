@@ -112,7 +112,7 @@ masm.bind(&equal_label);
 
 总而言之，`v8/src/maglev/s390/maglev-assembler-s390-inl.h` 文件的第二部分继续定义了 `MaglevAssembler` 类在 s390 架构上的指令生成接口。 它提供了用于条件跳转、比较、位运算、数据加载和转换等操作的内联函数，以及用于断言和代码完整性检查的辅助功能。 这些函数是 Maglev 编译器将 JavaScript 代码转化为高效机器码的关键组成部分。 开发者在使用这些接口时需要理解底层的汇编概念，例如条件码的使用和 NaN 值的处理，以避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/s390/maglev-assembler-s390-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/s390/maglev-assembler-s390-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -120,8 +120,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ler::EmitEagerDeoptStress(Label* target) {
   // TODO(olivf): On arm `--deopt-every-n-times` is currently not supported.
   // Supporting it would require to implement this method, additionally handle
@@ -535,8 +537,4 @@ inline void MaglevAssembler::MaybeEmitPlaceHolderForDeopt() {
 }  // namespace v8
 
 #endif  // V8_MAGLEV_S390_MAGLEV_ASSEMBLER_S390_INL_H_
-
-"""
-
-
 ```

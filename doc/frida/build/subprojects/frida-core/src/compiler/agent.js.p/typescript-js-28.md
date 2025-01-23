@@ -91,7 +91,7 @@ function greet(name: string): string {
 
 总的来说，这部分代码是 TypeScript 编译器用于**理解和操作 TypeScript 代码结构的关键组成部分**。它提供了一系列用于**识别、提取和分析 AST 节点信息的工具函数**，为编译器的后续处理（例如类型检查、代码生成等）提供了基础。虽然不直接涉及底层操作，但它是构建 Frida 这样动态 Instrumentation 工具的基础，因为 Frida 需要理解目标程序的代码结构才能进行精确的修改和Hook。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/build/subprojects/frida-core/src/compiler/agent.js.p/typescript.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第29部分，共197部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 sized */) === 0;
     }
     function getParseTreeNode(node, nodeTest) {
@@ -974,8 +976,4 @@ sized */) === 0;
         case 215 /* TypeAssertionExpression */:
           return true;
         default:
-    
-"""
-
-
 ```

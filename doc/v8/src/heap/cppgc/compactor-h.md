@@ -194,15 +194,17 @@ runSimulation();
 
 总结来说，`v8/src/heap/cppgc/compactor.h` 定义的 `Compactor` 类是 V8 垃圾回收器的重要组成部分，负责执行内存压缩以减少碎片，提高内存分配效率，从而提升 JavaScript 程序的性能。虽然 JavaScript 代码不直接调用它，但用户的编程习惯会间接影响其工作频率和效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/compactor.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/compactor.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ class V8_EXPORT_PRIVATE Compactor final {
 }  // namespace cppgc
 
 #endif  // V8_HEAP_CPPGC_COMPACTOR_H_
-
-"""
-
 ```

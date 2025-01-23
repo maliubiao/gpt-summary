@@ -137,7 +137,7 @@ const match = str.test(regex); // true
 
 最后，关于您提到的 `.tq` 结尾，`v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc` 文件是以 `.cc` 结尾的，这意味着它是 **C++ 源代码**，而不是 Torque 源代码。Torque 是 V8 用于生成高效的内置函数和运行时调用的另一种语言，其文件通常以 `.tq` 结尾。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -145,9 +145,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
+### 源代码
+```cpp
 MemOperand RegExpMacroAssemblerARM64::capture_location(int register_index,
                                                      Register scratch) {
   DCHECK(register_index < (1<<30));
@@ -221,8 +222,4 @@ void RegExpMacroAssemblerARM64::LoadCurrentCharacterUnchecked(int cp_offset,
 #undef __
 
 #endif  // V8_TARGET_ARCH_ARM64
-
-"""
-
-
 ```

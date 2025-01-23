@@ -1,5 +1,5 @@
 Response: 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/opGen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -7,9 +7,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第6部分，共18部分，请归纳一下它的功能
+```
 
-"""
-	auxType:     auxSymOff,
+### 源代码
+```go
+auxType:     auxSymOff,
 		argLen:      4,
 		commutative: true,
 		symEffect:   SymWrite,
@@ -2680,9 +2682,4 @@ Prompt:
 				{0, 21503}, // R0 R1 R2 R3 R4 R5 R6 R7 R8 R9 R12 R14
 				{1, 21503}, // R0 R1 R2 R3 R4 R5 R6 R7 R8 R9 R12 R14
 				{2, 21503}, // R0 R1 R2 R3 R4 R5 R6 R7 R8 R9 R12
-"""
-
-
-
-
 ```

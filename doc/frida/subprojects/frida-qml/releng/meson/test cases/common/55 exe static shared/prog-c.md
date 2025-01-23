@@ -159,7 +159,7 @@ By following this structured approach, considering the context provided by the f
 
 通过这样的步骤，开发者可以利用 Frida 的动态 instrumentation 功能，深入程序的内部，观察函数的执行情况和返回值，从而有效地进行调试。这个 `prog.c` 文件作为一个简单的测试用例，可以帮助验证 Frida 在处理静态和共享库混合场景下的 instrumentation 能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/55 exe static shared/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int shlibfunc2(void);
 int statlibfunc(void);
 
@@ -179,7 +181,4 @@ int main(void) {
         return 1;
     return 0;
 }
-
-"""
-
 ```

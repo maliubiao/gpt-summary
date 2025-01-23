@@ -159,7 +159,7 @@ Given that this is "Part 1 of 3," the subsequent parts likely cover:
 
 In summary, `gumprocess-darwin.c` forms a crucial foundation for Frida on Darwin-based systems, providing the essential low-level mechanisms for dynamic instrumentation and reverse engineering.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-darwin/gumprocess-darwin.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2015 Asger Hautop Drewsen <asgerdrewsen@gmail.com>
@@ -1455,8 +1457,4 @@ gum_darwin_query_all_image_infos (mach_port_t task,
   count = TASK_DYLD_INFO_COUNT;
   kr = task_info (task, TASK_DYLD_INFO, (task_info_t) &info, &count);
   if (kr != KERN_SUCCESS)
-    
-"""
-
-
 ```

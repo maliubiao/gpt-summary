@@ -165,7 +165,7 @@ console.log(result); // 输出 8
 
 总的来说，这部分代码更深入地涉及了 V8 内部如何管理和优化 WebAssembly 代码的执行，包括底层的内存管理、代码组织和与其他 V8 组件的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-code-manager.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-code-manager.h以.tq结尾，那它是个v8 torque源代码，
@@ -173,10 +173,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-  // Should only be called via {WasmEngine::FreeDeadCode}, so the engine can do
+### 源代码
+```c
+// Should only be called via {WasmEngine::FreeDeadCode}, so the engine can do
   // its accounting.
   void FreeCode(base::Vector<WasmCode* const>);
 
@@ -618,8 +619,4 @@ class WasmCodeLookupCache final {
 }  // namespace v8
 
 #endif  // V8_WASM_WASM_CODE_MANAGER_H_
-
-"""
-
-
 ```

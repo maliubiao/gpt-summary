@@ -156,15 +156,17 @@ By stepping through the code in a debugger or by examining the logs, a developer
 
 In summary, `pending_link_preload.cc` plays a vital role in optimizing web page loading performance by managing the preloading of resources declared via `<link rel="preload">`. Its functionality is intricately linked with HTML, CSS, and JavaScript and directly impacts the user's perceived loading experience. Understanding this file is crucial for debugging performance issues related to resource loading in Chromium-based browsers.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/pending_link_preload.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -289,7 +291,4 @@ void PendingLinkPreload::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

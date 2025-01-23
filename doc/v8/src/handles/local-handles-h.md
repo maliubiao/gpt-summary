@@ -146,15 +146,17 @@ void process_value(LocalIsolate* isolate) {
 
 总而言之，`v8/src/handles/local-handles.h` 定义了 V8 引擎中用于安全有效地管理指向 JavaScript 对象的局部句柄的核心机制。`LocalHandleScope` 是确保这些句柄在作用域内有效并在不再需要时自动释放的关键工具，这对于 V8 的内存管理和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/handles/local-handles.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/handles/local-handles.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ class V8_NODISCARD LocalHandleScope {
 }  // namespace v8
 
 #endif  // V8_HANDLES_LOCAL_HANDLES_H_
-
-"""
-
 ```

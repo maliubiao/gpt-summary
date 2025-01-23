@@ -170,15 +170,17 @@ sendObliviousRequest("/ohttp-endpoint", "This is a secret message.");
 
 **总而言之，`oblivious_http_integration_test.cc` 文件是验证 Chromium 中 Oblivious HTTP 实现正确性的关键组成部分。 通过模拟真实的请求和响应流程，并使用多种测试用例，它可以帮助开发者确保 OHTTP 功能的稳定性和可靠性。当用户遇到与 OHTTP 相关的问题时，这个文件及其测试用例可以作为重要的调试线索。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/oblivious_http/buffers/oblivious_http_integration_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <stdint.h>
 
 #include <string>
@@ -344,7 +346,4 @@ TEST(ObliviousHttpIntegrationTest, TestWithCustomRequestResponseLabels) {
 }
 
 }  // namespace quiche
-
-"""
-
 ```

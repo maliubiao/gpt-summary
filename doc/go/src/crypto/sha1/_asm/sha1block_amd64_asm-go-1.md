@@ -27,7 +27,7 @@ Therefore, the main function of this code is to implement the core block process
 
 这部分汇编代码实现了 SHA1 算法中核心的数据块处理逻辑，包括标准的循环处理和使用 AVX2 指令集的优化版本。它通过一系列的轮函数对输入数据进行变换，并更新内部的哈希状态。此外，它还负责加载算法所需的常量数据，并可能处理字节序问题。总而言之，这段代码是 Go 语言 `crypto/sha1` 包中高性能 SHA1 实现的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/sha1/_asm/sha1block_amd64_asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -36,8 +36,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 )
 	CALC_98()
 	CALC_99()
@@ -207,10 +209,4 @@ func BSWAP_SHUFB_CTL_DATA() Mem {
 	}
 	return BSWAP_SHUFB_CTL
 }
-
-"""
-
-
-
-
 ```

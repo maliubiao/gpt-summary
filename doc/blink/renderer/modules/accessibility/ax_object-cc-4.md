@@ -147,7 +147,7 @@ Let's break down the code snippet function by function and address each of the u
 
 这段代码主要负责管理 `AXObject` 中缓存的可访问性相关属性值，并提供方法来判断元素是否被辅助技术忽略，以及是否包含在可访问性树中。它涉及了对 HTML 结构、CSS 样式和 ARIA 属性的解析和处理，以确保辅助技术能够正确理解和呈现网页内容。核心目标是维护可访问性信息的准确性和及时性，以便辅助技术能够提供最佳的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -155,10 +155,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共10部分，请归纳一下它的功能
+```
 
-"""
-
-
+### 源代码
+```cpp
 void AXObject::CheckCanAccessCachedValues() const {
   if (!IsDetached() && AXObjectCache().IsFrozen()) {
     DUMP_WILL_BE_CHECK(!NeedsToUpdateCachedValues())
@@ -1040,7 +1040,4 @@ bool AXObject::ComputeIsIgnoredButIncludedInTree() {
       element->HasTagName(html_names::kTbodyTag) ||
       IsA<HTMLTableRowElement>(element) || IsA<HTMLTableCellElement>(element)) {
     return tru
-"""
-
-
 ```

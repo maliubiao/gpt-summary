@@ -199,15 +199,17 @@ mediaSource.addEventListener('sourceopen', () => {
 
 总而言之，`SourceBufferList.cc` 文件中的 `SourceBufferList` 类是 Blink 引擎中管理媒体源扩展中 `SourceBuffer` 的关键组件，它负责维护 `SourceBuffer` 的集合，并在其发生变化时通知 JavaScript 代码。理解它的功能有助于理解 MSE API 的内部工作原理和调试相关的媒体播放问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasource/source_buffer_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -296,7 +298,4 @@ void SourceBufferList::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -135,11 +135,13 @@ console.log(arr.length); // 访问数组 arr 的 length 属性
 
 `access-builder.cc` 是 V8 编译器中一个关键的组件，它通过提供结构化的元数据来指导编译器如何安全有效地访问 JavaScript 对象在内存中的表示。 它将高级的 JavaScript 属性和元素访问操作映射到低级的内存访问细节，是 V8 实现高性能 JavaScript 执行的基础之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/access-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1710,7 +1712,4 @@ FieldAccess AccessBuilder::ForContextSideProperty() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

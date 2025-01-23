@@ -33,7 +33,7 @@ The user wants a summary of the functionality of the Python code provided, speci
 
 在接下来的部分中，代码会进一步展开如何实现这些功能，例如如何生成 `.vcxproj` 文件的 XML 结构，如何处理不同的目标类型，以及如何映射 Meson 的概念到 Visual Studio 的项目设置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -42,8 +42,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -661,7 +663,4 @@ class Vs2010Backend(backends.Backend):
                              target_ext=None,
                              target_platform=None) -> T.Tuple[ET.Element, ET.Element]:
         root = ET.Element('Project', {'DefaultTargets': "Build
-"""
-
-
 ```

@@ -126,11 +126,13 @@ temp = null; // 现在 obj2 没有被任何地方引用，符合垃圾回收的�
 
 总而言之，`v8/src/heap/cppgc/member-storage.cc` 文件是 V8 引擎中 CppGC 的核心组成部分，它负责对象成员的存储和管理，并采用了指针压缩等技术来优化内存使用。虽然 JavaScript 开发者不会直接操作这个文件中的代码，但 JavaScript 对象的内存布局和垃圾回收行为都深受其影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/member-storage.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ _cppgc_internal_Uncompress_Member(void* m) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

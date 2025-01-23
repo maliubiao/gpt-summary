@@ -105,7 +105,7 @@ Strategizing complete. I will now generate the response based on these insights.
 
 这部分测试代码专注于验证 `HostResolverManager` 在处理 HTTPS 地址解析请求时，与 HTTPS DNS 记录交互的各种情况，特别是当启用了或禁用了 `kUseDnsHttpsSvcbEnforceSecureResponse` 功能时，如何处理 HTTPS 记录查询的成功、失败、超时、格式错误等情况。其核心目的是确保在不同的 DNS 响应场景下，`HostResolverManager` 能够正确地进行域名解析，并为上层应用（例如浏览器中的网络请求）提供可靠的 IP 地址信息。同时，也测试了对于 WSS 协议的请求也会查询 HTTPS 记录，而对于没有明确指定协议的请求则不会。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第16部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tnameResults(),
               AnyOf(nullptr, Pointee(IsEmpty())));
   // No results maintained when overall error is ERR_NAME_NOT_RESOLVED (and also
@@ -873,7 +875,4 @@ TEST_F(HostResolverManagerDnsTest, NoHttpsInAddressQueryWithoutScheme) {
   EXPECT_THAT(response.request()->GetHostnameResults(),
               AnyOf(nullptr, Pointee(IsEmpty())));
   EXP
-"""
-
-
 ```

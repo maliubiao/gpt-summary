@@ -153,15 +153,17 @@ console.log({} == "abc");    // 输出: false
 
 `v8/test/unittests/compiler/sloppy-equality-unittest.cc` 是一个至关重要的测试文件，它确保 V8 编译器能够正确地处理 JavaScript 的宽松相等运算符，并进行有效的优化。通过观察编译过程中节点的创建和修改，开发人员可以验证编译器的行为是否符合预期，并防止因宽松相等带来的潜在错误。  它也间接地帮助开发者理解 JavaScript 宽松相等的行为以及可能出现的陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/sloppy-equality-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/sloppy-equality-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -305,7 +307,4 @@ TEST_F(SloppyEqualityTest, SloppyEqualityTest) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

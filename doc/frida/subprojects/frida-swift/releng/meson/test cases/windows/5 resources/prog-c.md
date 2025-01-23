@@ -151,7 +151,7 @@ Interceptor.attach(Module.findExportByName('user32.dll', 'LoadIconW'), { // 或 
 
 总而言之，这个简单的 `prog.c` 文件虽然功能单一，但它展示了 Windows 应用程序加载资源的基本过程，并且是逆向分析和调试的一个常见切入点。通过分析这段代码，可以了解应用程序的资源结构，并通过动态插桩等技术来观察其运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/windows/5 resources/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<windows.h>
 
 // deliberately don't get MY_ICON from resource.h so that depfile generation can
@@ -182,7 +184,4 @@ WinMain(
     ((void)nCmdShow);
     return hIcon ? 0 : 1;
 }
-
-"""
-
 ```

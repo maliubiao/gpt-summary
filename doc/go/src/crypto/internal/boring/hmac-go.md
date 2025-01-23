@@ -206,7 +206,7 @@ boringcrypto HMAC (SHA256) Again: 9a5a72a930069355b2325324915c531735b09f50267b7a
 
 总而言之，这段代码是 Go 语言标准库中为了利用 BoringSSL 提供的性能和安全性优化而实现的 HMAC 功能。使用者需要注意构建约束（`//go:build boringcrypto && linux && (amd64 || arm64) && !android && !msan`），并正确使用 `boring` 包提供的哈希函数来创建 HMAC 对象。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/boring/hmac.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -214,8 +214,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -369,9 +371,4 @@ func (h *boringHMAC) Sum(in []byte) []byte {
 	C._goboringcrypto_HMAC_CTX_cleanup(&h.ctx2)
 	return append(in, h.sum...)
 }
-
-"""
-
-
-
 ```

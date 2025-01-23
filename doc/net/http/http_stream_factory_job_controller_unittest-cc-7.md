@@ -97,7 +97,7 @@ I need to address the following points:
 
 作为整个测试文件的一部分，这第 8 部分专注于 **全面测试 `HttpStreamFactory::JobController` 在 DNS-based HTTPS ALPN 场景下的连接管理逻辑。** 它覆盖了各种关键因素，如 DNS 记录的存在、主机名解析的方式、QUIC 的工作状态以及已存在会话的影响，旨在确保 `JobController` 在这些复杂情况下能够正确地创建、管理和协调不同的连接尝试，从而保证网络连接的稳定性和效率。 这部分特别关注主 TCP 连接和 DNS ALPN H3 连接之间的交互和竞争。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_job_controller_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ckCryptoClientStream* stream =
         crypto_client_stream_factory_.streams()[index].get();
     ASSERT_TRUE(stream);
@@ -906,7 +908,4 @@ TEST_F(HttpStreamFactoryJobControllerDnsHttpsAlpnTest,
       ALTERNATE_PROTOCOL_USAGE_DNS_ALPN_H3_JOB_WON_WITHOUT_RACE, 1);
 
   CheckJobsStatus(/*main_job_exists=*/false, /*alternative_job
-"""
-
-
 ```

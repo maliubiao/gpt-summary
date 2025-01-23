@@ -134,7 +134,7 @@ Interceptor.attach(Module.findExportByName(null, "_ZN5CmMod14asyncIncrementEv"),
 
 总而言之，`cmMod.cpp` 中的 `asyncIncrement` 函数是一个简单的演示异步操作的例子，它涉及到线程的创建、休眠和对共享变量的修改。理解这类代码有助于逆向工程师分析和理解目标程序中的并发行为，并能利用 Frida 等工具进行动态分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/16 threads/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 #include <chrono>
@@ -159,7 +161,4 @@ void CmMod::asyncIncrement() {
 
   t1.join();
 }
-
-"""
-
 ```

@@ -84,13 +84,15 @@ This step-by-step approach, combining code analysis with knowledge of JavaScript
 
 这部分 C++ 代码是 V8 引擎中实现 BigInt 位运算的关键部分。它处理了左移和右移操作的底层逻辑，包括计算结果长度、执行位移以及规范化结果。这直接支撑了 JavaScript 中 `BigInt` 对象的 `<<` 和 `>>` 运算符的功能。理解这部分代码有助于深入了解 JavaScript BigInt 在引擎层面是如何高效实现的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/bigint.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- Cast<MutableBigInt>(Tagged<Object>(result_addr));
+### 源代码
+```
+Cast<MutableBigInt>(Tagged<Object>(result_addr));
 
   bigint::LeftShift(result->rw_digits(), x->digits(), shift);
   MutableBigInt::Canonicalize(result);
@@ -124,8 +126,4 @@ void MutableBigInt_RightShiftAndCanonicalize(Address result_addr,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

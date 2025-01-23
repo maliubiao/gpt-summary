@@ -144,7 +144,7 @@ int main() {
 
 `frida/subprojects/frida-gum/releng/meson/test cases/unit/22 warning location/sub/c.c` 是 Frida-gum 项目的一个单元测试文件，其主要功能是包含一些会触发编译器或 Frida 运行时警告的代码。这个测试用例用于验证 Frida 是否能够正确地捕获和定位这些警告信息，这对于 Frida 作为动态逆向工具来说至关重要，因为它帮助用户发现目标程序中潜在的问题和错误。 虽然普通用户不会直接接触到这个文件，但它是 Frida 开发和测试流程中的一个重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/22 warning location/sub/c.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,9 +152,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

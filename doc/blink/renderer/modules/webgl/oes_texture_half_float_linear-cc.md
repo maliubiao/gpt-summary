@@ -146,15 +146,17 @@ Here's a breakdown of the thought process to arrive at the explanation of the `o
 
 通过这些步骤，开发者可以逐步缩小问题范围，最终可能发现是由于 `OES_texture_half_float_linear` 扩展在某些情况下没有正确启用，或者其线性滤波实现存在 bug。  这个 C++ 文件是理解浏览器如何支持和管理这个 WebGL 扩展的关键入口点之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/oes_texture_half_float_linear.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -207,7 +209,4 @@ const char* OESTextureHalfFloatLinear::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

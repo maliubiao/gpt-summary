@@ -105,7 +105,7 @@ function foo(a) {
 
 总而言之，`v8/src/maglev/maglev-phi-representation-selector.cc` 的第二部分继续致力于 Maglev 编译器的 Phi 节点优化，核心功能是根据 Phi 节点的表示形式变化，动态调整使用该 Phi 节点输出的指令，包括替换指令类型、插入 tagging 操作、处理 store 操作和优化分支操作，以提升代码执行效率。同时，它管理 Phi 节点的 tagging 信息，并专门处理循环中的 Phi 节点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-phi-representation-selector.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-phi-representation-selector.cc以.tq结尾，那它是个v8 torque源代码，
@@ -113,8 +113,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 OverwriteWith<CheckInt32IsSmi>();
         return ProcessResult::kContinue;
       } else {
@@ -498,8 +500,4 @@ void MaglevPhiRepresentationSelector::PreparePhiTaggings(
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -155,7 +155,7 @@ args = [
 
 总而言之，这个代码片段是 Frida 构建系统中用于并行处理和管理多个子项目构建过程的关键部分，它提高了构建效率，并提供了错误报告机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/msubprojects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 er(logger, r, wrap, dirname, options)
         task = loop.run_in_executor(executor, runner.run)
         tasks.append(task)
@@ -181,8 +183,4 @@ er(logger, r, wrap, dirname, options)
         m += ', '.join(failures)
         mlog.warning(m)
     return len(failures)
-
-"""
-
-
 ```

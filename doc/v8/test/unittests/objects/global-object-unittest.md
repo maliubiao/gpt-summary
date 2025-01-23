@@ -102,11 +102,13 @@ C++ 测试文件中的 `KeysGlobalObject_SetPrototype` 测试用例，正是验�
 
 总而言之，`global-object-unittest.cc` 文件是 V8 引擎中用于测试全局对象相关功能的单元测试文件。它确保了 V8 引擎对 JavaScript 全局对象的实现符合规范，并且在各种情况下都能正常工作。这些测试用例直接反映了 JavaScript 中全局对象的行为和特性。
 Error: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 1.
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/global-object-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -240,7 +242,4 @@ TEST_F(GlobalObjectTest, KeysGlobalObject_SetPrototype) {
 END_ALLOW_USE_DEPRECATED()
 
 }  // namespace v8
-
-"""
-
 ```

@@ -146,7 +146,7 @@ let counter = createCounter();
 
 这些测试用例通过验证堆快照的正确性，间接地帮助确保堆分析器能够有效地帮助开发者诊断和解决这些内存管理问题。例如，`TEST(WeakGlobalHandle)` 确保了弱全局句柄不会阻止对象被回收，这与避免内存泄漏相关。 `TEST(NoRefsToNonEssentialEntries)` 帮助减少快照的噪音，使开发者更容易找到关键的内存泄漏或保留问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-heap-profiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-heap-profiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ode->GetChild(i);
     if (handle_edge->GetType() == v8::HeapGraphEdge::kWeak) return true;
   }
@@ -1022,7 +1024,4 @@ void CheckEmbedderGraphWithNamedEdges(v8::Isolate* isolate,
 
   const v8::HeapGraphEdge* b_to_c =
       GetEdgeByChildName(
-"""
-
-
 ```

@@ -88,15 +88,17 @@ This part of the test suite focuses on verifying the correct queuing, coalescing
 
 这部分单元测试主要验证了 `InputHandlerProxy` 在处理各种输入事件时，如何有效地管理和调度事件队列，包括对滚动、捏合等复杂手势事件的合并和 VSync 对齐处理，以及事件追踪和目标归属等功能。这些测试确保了 Blink 引擎能够以高性能和正确的方式响应用户的输入，从而为用户提供流畅的交互体验。这与 JavaScript 事件处理、HTML 结构和 CSS 样式共同构成了 Web 页面的交互基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/input_handler_proxy_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nScrollbarInitiatesGestureScroll) {
   EXPECT_CALL(mock_input_handler_, SetNeedsAnimateInput()).Times(1);
   EXPECT_CALL(mock_input_handler_, FindFrameElementIdAtPoint(_))
@@ -814,8 +816,4 @@ TEST_F(InputHandlerProxyEventQueueTest, TouchEventAttribution) {
   touch.touches[1] =
       CreateWebTouchPoint(WebTouchPoint::State::kStatePressed, 10, 10);
   touch.touches[2] =
- 
-"""
-
-
 ```

@@ -197,15 +197,17 @@ Go 的 `go test` 命令还支持许多其他的参数，例如：
 
 总而言之，`go/test/typeparam/absdiffimp2.go` 作为一个位于 `ignored` 包的测试文件，其主要目的是为了测试 Go 编译器在处理与泛型和绝对差值计算相关的特定场景时的行为。普通 Go 开发者无需直接使用或关心其内部实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/absdiffimp2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -213,9 +215,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

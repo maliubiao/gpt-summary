@@ -225,15 +225,17 @@ By following these steps, including careful reading of the code and making logic
 
 总而言之，`custom_scrollbar_theme.cc` 文件是 Blink 引擎中实现自定义滚动条外观和行为的关键部分，它与 CSS 样式紧密相关，并为用户的滚动操作提供视觉反馈。理解这个文件的功能有助于深入了解浏览器如何渲染和处理滚动条。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/custom_scrollbar_theme.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All Rights Reserved.
  *
@@ -462,7 +464,4 @@ void CustomScrollbarTheme::PaintPart(GraphicsContext& context,
 }
 
 }  // namespace blink
-
-"""
-
 ```

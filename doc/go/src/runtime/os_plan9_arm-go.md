@@ -122,7 +122,7 @@ go tool pprof cpu.prof
 
 `go/src/runtime/os_plan9_arm.go` 中的这段代码主要负责在 Plan 9 操作系统和 ARM 架构下提供一些底层的运行时支持功能，特别是与性能分析相关的 `cputicks` 函数。虽然 `checkgoarm` 目前没有实现，但从命名来看，它原本可能是用来处理与 ARM 架构相关的配置或检查的。  了解这些细节有助于理解 Go 语言在不同平台和架构上的运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_plan9_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -130,8 +130,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -147,9 +149,4 @@ func cputicks() int64 {
 	// runtime·nanotime() is a poor approximation of CPU ticks that is enough for the profiler.
 	return nanotime()
 }
-
-"""
-
-
-
 ```

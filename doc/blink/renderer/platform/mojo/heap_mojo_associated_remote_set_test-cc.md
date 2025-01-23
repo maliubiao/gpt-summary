@@ -150,14 +150,16 @@ By following these steps, you can systematically analyze the C++ test file and d
 
 总而言之，`heap_mojo_associated_remote_set_test.cc` 是一个关键的测试文件，用于确保 `HeapMojoAssociatedRemoteSet` 这个用于管理跨进程通信连接的组件在 Blink 渲染引擎中能够正确、安全地工作，尤其是在与垃圾回收机制交互时。理解其功能有助于开发者编写更健壮的 Blink 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mojo/heap_mojo_associated_remote_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -373,7 +375,4 @@ TEST_F(HeapMojoAssociatedRemoteSetGCWithContextObserverTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -115,11 +115,13 @@ V8 引擎允许创建由外部资源（例如，从 C++ 代码传递到 JavaScri
 
 `StringForwardingTable` 是 V8 引擎为了优化字符串存储和比较而使用的内部机制。它通过维护字符串之间的转发关系，特别是对于共享堆中的字符串和外部字符串，来节省内存并提高性能。虽然 JavaScript 开发者不能直接操作这个表，但它的存在影响着 JavaScript 字符串的比较行为和内存使用。理解 `StringForwardingTable` 的功能有助于理解 V8 引擎是如何高效地处理 JavaScript 字符串的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string-forwarding-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -513,7 +515,4 @@ void StringForwardingTable::UpdateAfterFullEvacuation() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

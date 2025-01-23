@@ -172,7 +172,7 @@ func RegSetValueEx(hKey syscall.Handle, valueName string, reserved uint32, dwTyp
 
 `go/src/internal/syscall/windows/registry/mksyscall.go` 是 Go 语言中用于自动化生成 Windows 系统调用包装代码的关键部分。 它利用 `go generate` 功能，读取 `syscall.go` 中的定义，并生成 `zsyscall_windows.go` 文件，从而简化了 Go 程序与底层 Windows API 的交互。  理解 `go generate` 的工作原理以及不要手动修改生成的文件是避免常见错误的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/windows/registry/mksyscall.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -180,8 +180,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -191,9 +193,4 @@ Prompt:
 package registry
 
 //go:generate go run ../../../../syscall/mksyscall_windows.go -output zsyscall_windows.go syscall.go
-
-"""
-
-
-
 ```

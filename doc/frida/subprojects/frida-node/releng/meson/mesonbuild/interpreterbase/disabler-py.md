@@ -158,7 +158,7 @@ Dependency some_optional_dependency found: NO (tried ...)
 
 此外，在调试 Meson 构建脚本本身时，如果怀疑某个变量可能是一个 `Disabler` 实例，可以使用 Meson 提供的调试工具或简单的打印语句来检查变量的类型。理解 `Disabler` 的行为是理解 Frida 构建过程的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/interpreterbase/disabler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -203,7 +205,4 @@ def is_disabled(args: T.Sequence[T.Any], kwargs: T.Dict[str, T.Any]) -> bool:
         if _is_arg_disabled(i):
             return True
     return False
-
-"""
-
 ```

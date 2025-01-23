@@ -188,7 +188,7 @@ Here's a thinking process to arrive at the detailed analysis of the `lib.c` file
 
 总而言之，虽然 `lib.c` 本身非常简单，但它在 Frida 的上下文中扮演着一个可操作的目标的角色，可以用来演示和测试 Frida 的各种功能，同时也涉及到很多底层的技术细节。理解这样的简单示例有助于我们更好地掌握 Frida 的使用，并为分析更复杂的程序打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/74 file object/subdir1/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -196,12 +196,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 1;
 }
-
-"""
-
 ```

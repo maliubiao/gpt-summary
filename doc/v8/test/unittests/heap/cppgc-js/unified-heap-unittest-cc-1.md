@@ -127,7 +127,7 @@ myWrappable = null;
 
 作为第 2 部分，这段代码主要关注 **在多线程环境下，V8 的 C++ 垃圾回收器 (cppgc) 如何与 V8 的锁机制和隔离协同工作来管理 C++ 对象的生命周期。**  它验证了即使有其他线程持有 V8 锁，垃圾回收器也能够安全地管理可被回收的 C++ 对象。这对于确保 V8 引擎在多线程环境下的稳定性和可靠性至关重要。它测试了当一个 C++ 对象被一个独立线程（使用 V8 的锁）潜在访问时，主线程对其进行清理后的垃圾回收行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc-js/unified-heap-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc-js/unified-heap-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -135,8 +135,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d<Wrappable>(cpp_heap->object_allocator());
   }
 
@@ -154,8 +156,4 @@ d<Wrappable>(cpp_heap->object_allocator());
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

@@ -60,7 +60,7 @@ By following these steps, the comprehensive summary provided in the initial good
 
 这段代码是理解Go程序运行时行为的关键，通过解析trace数据，可以分析goroutine的执行过程、调度情况、阻塞原因以及资源使用情况，从而帮助开发者进行性能分析和问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/internal/oldtrace/parser.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -69,8 +69,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 uint32(g.evCreate.Args[1])
 				g.evCreate = nil
 			}
@@ -446,10 +448,4 @@ const (
 
 	NumSTWReasons = 17
 )
-
-"""
-
-
-
-
 ```

@@ -104,12 +104,14 @@ I'll structure the summary by grouping the identified functionalities and then p
 
 总而言之，这个代码文件的第二部分继续为 RISC-V 32 位架构的 V8 引擎提供了关键的指令选择功能，涵盖了原子操作、双字整数运算和 SIMD 浮点运算，这些都直接支持了 JavaScript 的相关语言特性和性能优化。它将高级的抽象操作转化为具体的 RISC-V 汇编指令，使得 JavaScript 代码可以在 RISC-V 架构上高效运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-selector-riscv32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 atomic_op.memory_rep == MemoryRepresentation::Uint32()) {
       opcode = word32_op;
     } else {
@@ -542,8 +544,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

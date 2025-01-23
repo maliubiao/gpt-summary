@@ -101,7 +101,7 @@ The user wants me to analyze a Python source code file for the Frida dynamic ins
 
 此部分代码定义了 Frida Python 绑定构建过程中使用的核心数据模型和逻辑。它负责表示构建目标、管理依赖关系、处理编译和链接参数、定义安装信息，并支持交叉编译。它是 Meson 构建系统如何理解和执行 Frida Python 绑定构建任务的基础。它为构建过程提供了结构化的表示，使得 Meson 可以有效地生成构建规则并执行实际的编译和链接操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -964,7 +966,4 @@ class BuildTarget(Target):
         self.all_compilers = compilers
         self.compilers: OrderedDict[str, Compiler] = OrderedDict()
         s
-"""
-
-
 ```

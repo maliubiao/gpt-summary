@@ -151,7 +151,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 **总结：**  开发人员很可能是在调试一个关于不同版本子项目之间依赖关系的失败测试用例，而 `b.c` 文件是这个测试用例中涉及到的一个组件。他们查看 `b.c` 的目的是理解其功能，以及它与可能导致测试失败的其他组件 (特别是 `c.c` 的不同版本) 之间的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/62 subproj different versions/subprojects/b/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,14 +159,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "c.h"
 
 int b_fun(){
 return c_fun();
 }
-
-"""
-
 ```

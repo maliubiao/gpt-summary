@@ -174,7 +174,7 @@ Initially, I might have focused too much on the code's simplicity. I needed to e
 
 总而言之，`sideprog.cpp` 是一个用于测试 Frida 对使用了 Google Protocol Buffers 的应用程序进行动态插桩能力的简单示例程序。它展示了如何创建和嵌套 Protobuf 消息，并提供了可以被 Frida hook 和观察的目标。 理解这个程序的结构和功能，结合 Frida 的使用方式，可以帮助逆向工程师分析和调试使用了 Protobuf 的应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/5 protocol buffers/sidedir/sideprog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"com/mesonbuild/simple.pb.h"
 #include"com/mesonbuild/subsite/complex.pb.h"
 
@@ -200,7 +202,4 @@ int main(int argc, char **argv) {
     google::protobuf::ShutdownProtobufLibrary();
     return 0;
 }
-
-"""
-
 ```

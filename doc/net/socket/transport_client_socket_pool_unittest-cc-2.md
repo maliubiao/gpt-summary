@@ -102,7 +102,7 @@ I need to:
 
 希望以上解释能够帮助您理解这段代码的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/transport_client_socket_pool_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ill get an error after creating the SpdyStream.
 
   SpdyTestUtil spdy_util;
@@ -844,7 +846,4 @@ TEST_F(TransportClientSocketPoolTest, Tag) {
   EXPECT_EQ(static_cast<int>(strlen(kRequest)), callback.GetResult(rv));
   EXPECT_GT(GetTaggedBytes(tag_val2), old_traffic);
   // Disconnect socket to pr
-"""
-
-
 ```

@@ -283,7 +283,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言底层 I/O 实现的关键部分，它提供了与操作系统交互的基础能力。开发者通常不会直接使用这些函数，而是通过 Go 标准库中更高级的抽象来间接使用它们。理解这些底层机制有助于更好地理解 Go 的 I/O 模型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/fd_posix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -291,8 +291,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -382,9 +384,4 @@ func ignoringEINTR2[T any](fn func() (T, error)) (T, error) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

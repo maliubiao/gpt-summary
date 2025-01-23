@@ -209,7 +209,7 @@ By following this systematic approach, combining code analysis with an understan
 
 因此，当你在调试 Frida 脚本时，如果遇到了与内存范围、内存保护、异常处理等相关的问题，并且堆栈信息指向了 `gumquickvalue.c` 文件中的这些函数，那么很可能是在 JavaScript 和 C 代码之间进行数据类型转换时出现了问题，例如数据类型不匹配、数据格式错误等。理解 `gumquickvalue.c` 的功能可以帮助你更好地理解 Frida 的内部机制，并更有效地调试你的 Frida 脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickvalue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -218,8 +218,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 x, gum_thread_state_to_string (state));
 }
 
@@ -870,8 +872,4 @@ gum_memory_operation_to_string (GumMemoryOperation operation)
 
   return NULL;
 }
-
-"""
-
-
 ```

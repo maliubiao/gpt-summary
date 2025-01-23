@@ -156,7 +156,7 @@ Frida 是一个动态插桩工具，常用于软件逆向工程。配置文件�
 
 因此，用户很可能是 Frida 的开发者、贡献者，或者正在使用 Frida 并遇到了与 TOML 配置解析相关的问题，从而需要查看和运行 `tomlkit` 的测试代码来进行调试。 这些测试用例就像一个详细的规范，确保 `tomlkit` 库的功能符合预期，并且能够帮助开发者快速定位和修复问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/tomlkit/tests/test_api.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import io
 import json
 import os
@@ -633,7 +635,4 @@ def test_parse_empty_quoted_table_name():
     parsed = loads(content)
     assert parsed == {"": {"x": 1}}
     assert dumps(parsed) == content
-
-"""
-
 ```

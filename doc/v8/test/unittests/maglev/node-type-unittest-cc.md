@@ -156,15 +156,17 @@ compare("abc", 5); // Number("abc") 返回 NaN，导致意外的比较结果
 
 `v8/test/unittests/maglev/node-type-unittest.cc` 是一个关键的测试文件，用于验证 Maglev 编译器中类型推断和类型操作的核心逻辑。它确保了 `NodeType` 相关的运算（如交集和合并）以及类型近似的正确性，这对于 Maglev 优化 JavaScript 代码至关重要。理解这些测试背后的概念有助于理解 V8 引擎如何处理 JavaScript 的动态类型特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/maglev/node-type-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/maglev/node-type-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ TEST_F(MaglevTest, NodeTypeCombineIsConsistent) {
 }  // namespace v8
 
 #endif  // V8_ENABLE_MAGLEV
-
-"""
-
 ```

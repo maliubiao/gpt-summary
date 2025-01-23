@@ -164,7 +164,7 @@ func main() {
 
 总而言之，这段 `cast.go` 代码的核心功能是作为 FIPS 140-2 认证的一部分，对 PBKDF2 算法的实现进行自检，确保其在特定的输入下能产生预期的输出，从而验证算法的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/pbkdf2/cast.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -172,8 +172,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -217,9 +219,4 @@ func init() {
 		return nil
 	})
 }
-
-"""
-
-
-
 ```

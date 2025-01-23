@@ -142,12 +142,14 @@ console.log(generator.next()); // { value: 1, done: false }
 
 `v8/src/builtins/ia32/builtins-ia32.cc` 是 V8 引擎在 IA-32 架构上的核心组成部分，它包含了大量用优化的汇编代码实现的 JavaScript 内置功能，直接支撑着 JavaScript 代码的执行。理解这个文件的功能有助于深入了解 JavaScript 引擎的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ia32/builtins-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1895,7 +1897,4 @@ static void Generate_InterpreterEnterBytecode(MacroAssembler* masm) {
   __ push(scratch);
 
   // Initialize the dispatch
-"""
-
-
 ```

@@ -99,7 +99,7 @@ PAC 脚本本身是用 JavaScript 编写的，用于动态地决定给定 URL �
 
 这部分测试全面地验证了 `ConfiguredProxyResolutionService` 在处理 PAC 脚本的生命周期，特别是其更新和刷新的逻辑方面的正确性和健壮性。它涵盖了成功、失败、内容变更以及由用户活动和网络状态变化触发的多种场景，确保了网络栈能够可靠地使用 PAC 脚本进行代理配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/configured_proxy_resolution_service_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 <MockProxyConfigService>("http://foopy/proxy.pac");
 
   MockAsyncProxyResolver resolver;
@@ -868,8 +870,4 @@ TEST_F(ConfiguredProxyResolutionServiceTest, DnsChangeTriggersPoll) {
   TestCompletionCallback callback3;
   std::unique_ptr<ProxyResolutionRequest> request3;
   rv = service.ResolveProxy(
-    
-"""
-
-
 ```

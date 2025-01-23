@@ -136,7 +136,7 @@ I will now generate the final response based on this thought process.
 
 `compilers.py` 的第二部分延续了第一部分的功能，主要负责定义了 `Compiler` 抽象基类及其核心的编译和链接流程管理机制。它提供了一个通用的接口，用于与各种不同的编译器进行交互，并处理编译参数的构建、编译命令的执行以及编译结果的缓存。这使得 Frida 能够在运行时动态地编译代码片段，是其动态 instrumentation 能力的关键组成部分。该部分还涵盖了与操作系统底层特性（如共享库、RPath）以及构建系统集成的相关功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/compilers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 sion only matters if running results; '.exe' is
         # guaranteed to be executable on every platform.
         if mode == CompileCheckMode.LINK:
@@ -767,8 +769,4 @@ def get_global_options(lang: str,
     opts: 'KeyedOptionDictType' = {argkey: cargs, largkey: largs}
 
     return opts
-
-"""
-
-
 ```

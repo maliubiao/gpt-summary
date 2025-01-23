@@ -158,7 +158,7 @@ By following this structured approach, combining code analysis with logical reas
 
 总而言之，这部分代码是 Chromium 网络栈中负责持久化存储和管理共享字典的关键组件，它通过 SQLite 数据库提供高效的字典存储、检索和清理功能，以支持 Web 平台的共享字典特性，从而优化资源加载性能。 虽然 JavaScript 不能直接调用这些 C++ 代码，但共享字典的功能最终会影响到 JavaScript 发起的网络请求的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/extras/sqlite/sqlite_persistent_shared_dictionary_store.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lDictionaries(
     base::OnceCallback<void(DictionaryMapOrError)> callback) {
   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
@@ -281,8 +283,4 @@ SQLitePersistentSharedDictionaryStore::GetWeakPtr() {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

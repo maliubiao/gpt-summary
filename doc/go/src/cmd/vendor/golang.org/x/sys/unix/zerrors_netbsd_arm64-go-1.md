@@ -140,7 +140,7 @@ func main() {
 
 这部分代码主要负责**定义和维护 NetBSD 操作系统在 ARM64 架构下的系统错误码和信号常量，并提供这些常量到其名称和描述的映射关系**。 它是 Go 语言 `syscall` 包中与特定操作系统和架构相关的底层定义，使得 Go 程序能够以类型安全且具有可读性的方式处理系统调用返回的错误和操作系统的信号。  这部分是平台特定的，确保了 Go 程序在 NetBSD ARM64 系统上能够正确地理解和操作底层的操作系统机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_netbsd_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -148,8 +148,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 )
 	ENOEXEC         = syscall.Errno(0x8)
 	ENOLCK          = syscall.Errno(0x4d)
@@ -379,10 +381,4 @@ var signalList = [...]struct {
 	{31, "SIGUSR2", "user defined signal 2"},
 	{32, "SIGPWR", "power fail/restart"},
 }
-
-"""
-
-
-
-
 ```

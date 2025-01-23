@@ -183,7 +183,7 @@ By following these steps systematically, one can effectively analyze C code like
 
 `gumquickmodule.c` 是 Frida 中用于模块操作的关键 C 代码文件，它通过 JavaScript 绑定暴露了底层的模块信息和操作能力，是实现动态 instrumentation 和逆向分析的重要组成部分。它涉及到了操作系统加载库的机制、模块的二进制格式解析、进程内存管理等底层知识。理解这个文件的功能有助于深入理解 Frida 的工作原理以及如何使用 Frida 进行有效的逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickmodule.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020-2023 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -1015,7 +1017,4 @@ gum_quick_module_filter_matches (const GumModuleDetails * details,
 
   return is_match;
 }
-
-"""
-
 ```

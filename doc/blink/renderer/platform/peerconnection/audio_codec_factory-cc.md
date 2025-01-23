@@ -105,14 +105,16 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 `audio_codec_factory.cc` 是 Blink 引擎中一个关键的组件，它控制了 WebRTC 音频通话中可以使用的音频编解码器。它的配置直接影响了 JavaScript WebRTC API 的行为，并最终影响了用户的音视频体验。理解这个文件的功能对于开发高质量和兼容的 WebRTC 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/audio_codec_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ CreateWebrtcAudioDecoderFactory() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

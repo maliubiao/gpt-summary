@@ -158,7 +158,7 @@ A user (likely a Frida developer or someone deeply debugging Frida internals) mi
 
 In essence, this file serves as a foundational piece for Frida's ability to understand and interact with code compiled using various C and C++ compilers by providing a structured reference to common function attributes.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/c_function_attributes.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # These functions are based on the following code:
 # https://git.savannah.gnu.org/gitweb/?p=autoconf-archive.git;a=blob_plain;f=m4/ax_gcc_func_attribute.m4,
 # which is licensed under the following terms:
@@ -311,7 +313,4 @@ CXX_FUNC_ATTRIBUTES = {
          '}'
          'int foo(void) __attribute__((ifunc("resolve_foo")));'),
 }
-
-"""
-
 ```

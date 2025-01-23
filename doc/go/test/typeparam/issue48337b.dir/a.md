@@ -164,15 +164,17 @@ func NewMetaContainer() *MetaContainer {
 
 这段代码简洁地展示了 Go 语言泛型的基本用法，特别是如何定义泛型结构体和泛型构造函数。`MetaContainer` 的例子则说明了如何在非泛型结构体中使用泛型结构体的特定实例化类型。使用者需要理解泛型的概念，以及如何根据实际需求实例化泛型类型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue48337b.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -198,9 +200,4 @@ func NewMetaContainer() *MetaContainer {
 	// c := &Container[Value]{Value{}} // <-- this works
 	return &MetaContainer{c}
 }
-
-"""
-
-
-
 ```

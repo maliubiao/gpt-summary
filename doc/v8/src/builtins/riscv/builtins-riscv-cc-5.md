@@ -178,7 +178,7 @@ I will now formulate the summary, provide JavaScript examples where applicable, 
 
 如果 `v8/src/builtins/riscv/builtins-riscv.cc` 以 `.tq` 结尾，那么它将是一个 **Torque** 源代码文件。Torque 是 V8 用于定义 built-in 函数的领域特定语言。Torque 代码会被编译成 C++ 代码。由于这里的文件名是 `.cc`，所以它是直接用 C++ 编写的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/riscv/builtins-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/riscv/builtins-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -186,8 +186,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 set));
     __ LoadWord(
         a0, MemOperand(fp, JSToWasmWrapperFrameConstants::kImplicitArgOffset));
@@ -951,8 +953,4 @@ void Builtins::Generate_RestartFrameTrampoline(MacroAssembler* masm) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

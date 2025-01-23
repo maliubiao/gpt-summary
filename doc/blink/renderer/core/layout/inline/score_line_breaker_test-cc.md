@@ -108,14 +108,16 @@ By following these steps, we can systematically dissect the provided C++ test fi
 
 总而言之，`score_line_breaker_test.cc` 这个文件通过各种测试用例，细致地验证了 `ScoreLineBreaker` 类在不同场景下的换行逻辑，确保了 Blink 引擎能够正确且高效地处理文本换行，从而为用户提供良好的网页浏览体验。它与 HTML 结构、CSS 样式以及 JavaScript 的动态操作都有着密切的关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/score_line_breaker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -600,7 +602,4 @@ TEST_F(ScoreLineBreakerTest, UseCountNotCountedForBalance) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

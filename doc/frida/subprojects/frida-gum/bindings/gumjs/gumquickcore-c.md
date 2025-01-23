@@ -214,7 +214,7 @@ malloc called with size: 4096
 
 `gumquickcore.c` 作为 Frida Gum 库 JavaScript 绑定的核心，主要负责搭建和维护 JavaScript 运行环境，并将 Frida Gum 的底层能力以 JavaScript API 的形式暴露出来。 它定义了 JavaScript 中用于操作 Native 数据的类型，处理 JavaScript 和 Native 代码之间的交互，并提供了基本的运行时功能 (如定时器、消息传递等)。 它是 Frida 脚本能够与目标进程进行动态交互的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickcore.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -223,8 +223,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2020-2022 Francesco Tamagni <mrmacete@protonmail.ch>
@@ -1094,7 +1096,4 @@ GUM_DEFINE_CPU_CONTEXT_ACCESSOR_GPR_ALIASED (x23, x[23])
 GUM_DEFINE_CPU_CONTEXT_ACCESSOR_GPR_ALIASED (x24, x[24])
 GUM_DEFINE_CPU_CONTEXT_ACCESSOR_GPR_ALIASED (x25, x[25])
 GUM_DEFINE_CPU_CO
-"""
-
-
 ```

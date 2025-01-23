@@ -116,11 +116,13 @@ runWasm();
 
 `v8/test/cctest/wasm/test-c-wasm-entry.cc` 文件是 V8 引擎的一部分，用于测试 C++ 代码与 WebAssembly 代码之间的互操作性。它确保了 V8 引擎能够正确地编译 C WebAssembly 入口，并能通过这个入口点有效地调用 WebAssembly 函数。这与 JavaScript 调用 WebAssembly 函数的功能是对应的，都涉及到宿主语言（C++ 或 JavaScript）与 WebAssembly 代码的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-c-wasm-entry.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -311,7 +313,4 @@ TEST(TestCWasmEntryArgPassing_AllTypes) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

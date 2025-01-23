@@ -138,7 +138,7 @@ Initially, I might have focused too much on the simplicity of the code. However,
 
 虽然 `frida/subprojects/frida-core/releng/meson/test cases/native/10 native subproject/subprojects/recursive-both/lib.c` 中的 `rcb` 函数非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 对原生代码的动态插桩能力。理解这个文件的上下文可以帮助我们更好地理解 Frida 的工作原理以及它在逆向工程中的应用。 用户通常不会直接操作这个文件，除非他们是 Frida 的开发者或正在进行深入的调试或学习。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/native/10 native subproject/subprojects/recursive-both/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,12 +146,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "recursive-both.h"
 
 int rcb(void) { return 7; }
-
-"""
-
 ```

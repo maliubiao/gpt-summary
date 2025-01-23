@@ -136,15 +136,17 @@ foo();
 
 `v8/src/heap/conservative-stack-visitor.cc` 中的 `ConservativeStackVisitor` 类是 V8 垃圾回收机制中用于保守扫描调用栈以查找潜在堆对象指针的关键组件。它通过检查栈上的值，并根据内存布局信息尝试找到可能指向的堆对象的起始地址，从而确保 GC 能够正确地识别并保留所有活动对象。虽然它的保守性可以避免遗漏，但也可能引入一些性能开销，并可能受到某些编程错误的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/conservative-stack-visitor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/conservative-stack-visitor.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ void ConservativeStackVisitor::VisitConservativelyIfPointer(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

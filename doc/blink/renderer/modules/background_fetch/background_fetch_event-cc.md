@@ -158,15 +158,17 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 总而言之，`background_fetch_event.cc` 文件是实现 Background Fetch API 的关键部分，它定义了表示后台下载事件的类，并负责将底层的 C++ 实现与上层的 JavaScript API 连接起来。理解这个文件有助于深入了解 Background Fetch API 的工作原理和调试相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/background_fetch/background_fetch_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -202,7 +204,4 @@ void BackgroundFetchEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

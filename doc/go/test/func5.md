@@ -276,14 +276,16 @@ Based on the functionality demonstrated in the code, here are some common mistak
 
 In summary, `go/test/func5.go` is a test file designed to exercise core Go language features related to function calls, closures, goroutines, and channels. It doesn't involve command-line argument parsing. Understanding the concepts demonstrated in this file is crucial for writing correct and efficient concurrent Go programs.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/func5.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -375,9 +377,4 @@ func main() {
 	nothing = noresults
 	nothing()
 }
-
-"""
-
-
-
 ```

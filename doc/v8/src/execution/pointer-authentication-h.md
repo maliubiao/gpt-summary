@@ -217,15 +217,17 @@ By following this systematic approach, breaking down the code into its component
 
 `v8/src/execution/pointer-authentication.h` 定义了 V8 引擎用于实现控制流完整性的关键功能。虽然 JavaScript 开发者不会直接使用这些 C++ 函数，但这些底层的安全机制对于保障 JavaScript 代码执行环境的安全性至关重要，可以有效防御多种类型的攻击，例如利用缓冲区溢出篡改返回地址或函数指针。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/pointer-authentication.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/pointer-authentication.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -293,7 +295,4 @@ class PointerAuthentication : public AllStatic {
 #endif
 
 #endif  // V8_EXECUTION_POINTER_AUTHENTICATION_H_
-
-"""
-
 ```

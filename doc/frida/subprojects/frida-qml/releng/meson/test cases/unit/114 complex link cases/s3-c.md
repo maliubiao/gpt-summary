@@ -135,7 +135,7 @@ Let's break down the thought process for analyzing the provided C code snippet i
 
 `s3.c` 文件本身的功能很简单，但它作为 Frida 项目中的一个单元测试用例，其意义在于测试复杂的链接场景。理解其功能和上下文，可以帮助开发者调试与链接相关的错误，并理解 Frida 动态插桩技术在逆向分析中的应用。它涉及到二进制底层、编译链接、操作系统 API 等多方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/114 complex link cases/s3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,14 +143,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int s2(void);
 
 int s3(void) {
     return s2() + 1;
 }
-
-"""
-
 ```

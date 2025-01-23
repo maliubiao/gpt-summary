@@ -150,7 +150,7 @@ By following this detailed thought process, breaking down the code, and connecti
 
 总而言之，`tags.py` 脚本是 Frida 构建系统中的一个辅助工具，它通过调用外部代码索引工具，为 Frida Swift 绑定的源代码生成标签文件，从而方便开发者（包括逆向工程师）进行代码浏览和理解。虽然脚本本身没有直接操作二进制底层，但它服务于一个深入底层技术的项目，并且生成的标签文件对于逆向分析非常有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/scripts/tags.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -204,7 +206,4 @@ def run(args: T.List[str]) -> int:
     res = globals()[tool_name]()
     assert isinstance(res, int)
     return res
-
-"""
-
 ```

@@ -188,15 +188,17 @@ myObject = null; // 断开引用，使其成为垃圾回收的候选者
 
 `v8/test/unittests/heap/cppgc/free-list-unittest.cc` 是一个用于测试 V8 引擎中 `FreeList` 类功能的 C++ 单元测试文件。它验证了 `FreeList` 在创建、添加、删除、分配和管理空闲内存块等方面的正确性。虽然 JavaScript 开发者不直接操作 `FreeList`，但它是 V8 内存管理的核心，直接影响 JavaScript 程序的性能和稳定性。理解这些底层机制有助于更好地理解 JavaScript 的内存管理方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/free-list-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc/free-list-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -393,7 +395,4 @@ TEST(FreeListTest, Allocate) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

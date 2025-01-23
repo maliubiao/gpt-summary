@@ -128,15 +128,17 @@ By following these steps, combining code analysis with an understanding of Blink
 
 总而言之，`record_test.cc` 是 Blink 引擎内部用于测试数据记录处理的核心工具，它帮助开发者确保 JavaScript 和 C++ 之间的数据交换是正确和可靠的。 用户通常不会直接与之交互，但它的存在对于保证 Web 平台的稳定性和功能正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/record_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -223,7 +225,4 @@ void RecordTest::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

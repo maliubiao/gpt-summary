@@ -162,14 +162,16 @@ Initially, I might focus too much on the C++ code details. However, realizing th
 
 总而言之，`dom_timer_test.cc` 是 Blink 引擎中确保 JavaScript 定时器功能正确性和性能的关键测试文件。它直接关系到 Web 开发者使用的 `setTimeout` 和 `setInterval` API 的行为，并帮助识别和防止由于对这些 API 的误解或浏览器限制不了解而导致的常见编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scheduler/dom_timer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -361,7 +363,4 @@ TEST_F(DOMTimerTest, setInterval_NestingResetsForLaterCalls) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

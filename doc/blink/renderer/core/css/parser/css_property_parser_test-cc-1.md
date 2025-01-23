@@ -73,7 +73,7 @@ The user has provided a C++ source code file for testing CSS property parsing in
 
 这部分 `css_property_parser_test.cc` 文件的主要功能是**系统地测试 Blink 引擎中 CSS 属性解析器对于图像和背景相关属性（特别是 `image-set()`, `light-dark()`, `background-repeat`, `mask-*` 等）的解析逻辑的正确性**。它通过定义各种输入场景（包括有效和无效的 CSS 语法），并断言解析器的输出是否符合预期，来确保浏览器能够准确理解和应用这些 CSS 规则，从而保证网页样式的正确渲染。 这些测试覆盖了常见的用户使用场景以及可能出现的错误，有助于提高浏览器的稳定性和兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_property_parser_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -81,8 +81,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tImageSetParsing(
       "image-set(url(foo) calc(1 * clamp(-INFINITY*0dppx, 0dppx, "
       "infiniTY*0dppx)))",
@@ -541,8 +543,4 @@ TEST(CSSPropertyParserTest, MaskFromMaskNoneRepeatY) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

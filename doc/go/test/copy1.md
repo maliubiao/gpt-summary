@@ -140,15 +140,17 @@ _ = copy(si, "hi") // ERROR "have different element types(.*int.*string| int and
 
 这段代码是一个针对 Go 编译器 `copy` 函数参数校验的测试用例。它通过构造错误的 `copy` 函数调用，断言编译器能够正确地识别并报告相应的错误。 学习这段代码可以帮助开发者理解 `copy` 函数的正确使用方式，避免在使用过程中犯类似的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/copy1.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2017 The Go Authors. All rights reserved.
@@ -176,9 +178,4 @@ func main() {
 	_ = copy(si, 2) // ERROR "second argument to copy should be|expects slice arguments"
 
 }
-
-"""
-
-
-
 ```

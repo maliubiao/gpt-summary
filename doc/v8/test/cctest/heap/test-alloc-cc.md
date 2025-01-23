@@ -182,15 +182,17 @@ console.log(result); // 输出 true
 
 `v8/test/cctest/heap/test-alloc.cc` 这类测试文件的存在，正是为了确保 V8 引擎在面对各种内存分配场景时能够稳定可靠地工作，从而避免用户因为引擎自身的内存管理问题而遇到程序崩溃或性能下降。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-alloc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/heap/test-alloc.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -373,7 +375,4 @@ TEST(StressJS) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

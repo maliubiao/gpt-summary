@@ -129,13 +129,15 @@ Here's a breakdown of my thought process:
 
 这个代码片段是V8引擎在编译JavaScript代码时进行**关键性性能优化**的一部分。它针对JavaScript中常用的内置函数调用进行模式匹配和转换，将其替换为更高效的底层操作，从而显著提升JavaScript代码的执行速度。  作为第4部分，可以推测前面的部分可能处理了更通用的函数调用归约，而后续的部分可能涉及更特殊的优化或与代码生成相关的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-  // Check for known builtin functions.
+### 源代码
+```
+// Check for known builtin functions.
 
   Builtin builtin =
       shared.HasBuiltinId() ? shared.builtin_id() : Builtin::kNoBuiltinId;
@@ -1672,8 +1674,5 @@ Reduction JSCallReducer::ReduceArrayPrototypeShift(Node* node) {
                               &effects_to_merge.front());
     values_to_merge.push_back(control);
     value =
-        graph()->NewNode(common()->Phi(MachineRepresentation::kTagged, 
-"""
-
-
+        graph()->NewNode(common()->Phi(MachineRepresentation::kTagged,
 ```

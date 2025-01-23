@@ -132,7 +132,7 @@ b1: // Block kind: BlockARMLTnoov
 
 作为 `rewriteARM.go` 的最后一部分，这段代码主要负责 **ARM 架构 SSA 代码的最终控制流块级别的优化**。 它着重于 **简化和合并比较操作与算术/逻辑操作**，利用 ARM 指令集的特性（例如 `CMN`, `TST`, `TEQ`），并尽可能地 **避免不必要的溢出检查**。  结合整个 `rewriteARM.go` 文件的其他部分，这部分确保了生成的 ARM 机器码既正确又高效。  整个重写过程是一个将高层次的 SSA 代码逐步转化为更接近目标机器码的过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -140,8 +140,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 f l.Op != OpARMADDshiftRLreg {
 				break
 			}
@@ -1768,10 +1770,4 @@ f l.Op != OpARMADDshiftRLreg {
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

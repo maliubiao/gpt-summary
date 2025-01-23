@@ -155,14 +155,16 @@ is_column = false
 
 `FlexItemIterator` 是 Chromium Blink 引擎中用于遍历 flex 项目的关键组件，它不仅需要按顺序访问项目，还需要处理复杂的布局中断和恢复情况。它的正确实现对于 flexbox 布局的准确性和性能至关重要。虽然普通 Web 开发者不会直接接触到这个类，但它的功能直接影响着浏览器如何渲染使用 flexbox 的网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/flex/flex_item_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -327,7 +329,4 @@ void FlexItemIterator::AdjustItemIndexForNewLine() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

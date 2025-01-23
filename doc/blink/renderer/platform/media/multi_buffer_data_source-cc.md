@@ -146,14 +146,16 @@ By following these steps, including the self-correction, I could arrive at a com
 
 总而言之，`multi_buffer_data_source.cc` 是 Blink 引擎中一个复杂且关键的组件，负责高效、可靠地从网络或本地获取和管理媒体数据，以支持 HTML5 媒体元素的播放功能。 它涉及到网络请求、缓存管理、预加载策略、错误处理以及与媒体播放器的协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/multi_buffer_data_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -955,7 +957,4 @@ void MultiBufferDataSource::UpdateBufferSizes() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -91,7 +91,7 @@ By following these steps, one can effectively analyze the provided C++ code and 
 
 `test-assembler-loong64.cc` 的主要功能是 **作为 V8 JavaScript 引擎针对 LoongArch 64 位架构汇编器的单元测试集的第一部分**。它包含了多个独立的测试用例，用于验证各种 LoongArch64 汇编指令（包括算术、逻辑、位移、加载/存储、比较、分支和指针操作指令）的实现是否正确。这些测试通过生成、执行汇编代码并断言其结果来实现验证。该文件是确保 V8 引擎在 LoongArch64 架构上正确执行 JavaScript 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -99,8 +99,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1119,7 +1121,4 @@ TEST(LA9) {
     int64_t result_sll_d_0;
     int64_t result_sll_d_13;
     int64_t result_sll
-"""
-
-
 ```

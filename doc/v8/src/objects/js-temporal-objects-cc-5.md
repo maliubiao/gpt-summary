@@ -138,7 +138,7 @@ console.log(plainDateWithCustomCalendar.calendar.id); // 输出 "islamicc"
 
 总结来说，`v8/src/objects/js-temporal-objects.cc` 的这个部分是 V8 引擎中实现 JavaScript Temporal API 的关键组成部分，负责解析和处理各种与时间和日期相关的字符串，确保 JavaScript 代码能够正确地理解和操作这些数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共25部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nds)
     // from 1.
     //
@@ -918,7 +920,4 @@ int32_t CalendarIndex(Isolate* isolate, Handle<String> id) { return 0; }
 // #sec-isvalidtimezonename
 bool IsValidTimeZoneName(Isolate* isolate, DirectHandle<String> time_zone) {
   return IsUTC(isolate, indirect_handle(time
-"""
-
-
 ```

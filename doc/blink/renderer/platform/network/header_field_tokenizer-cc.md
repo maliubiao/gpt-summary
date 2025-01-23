@@ -126,14 +126,16 @@ By following this structured approach, combining code analysis with knowledge of
 
 5. **假设输入格式总是正确 (Assuming Correct Input Format):**  真实的网络环境中的 HTTP 头部可能存在各种各样的格式问题。依赖 tokenizer 成功解析所有可能的非法格式是不现实的。应该在调用 tokenizer 之前或之后进行适当的错误处理和格式验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/header_field_tokenizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -287,7 +289,4 @@ void HeaderFieldTokenizer::ConsumeBeforeAnyCharMatch(Vector<LChar> chars) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

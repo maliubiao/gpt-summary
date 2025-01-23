@@ -145,14 +145,16 @@ By following these steps, the detailed and comprehensive answer provided in the 
 
 总而言之，`blink/renderer/platform/loader/fetch/resource_load_timing.cc` 是 Blink 引擎中负责收集资源加载性能数据的核心组件，它为浏览器和开发者提供了理解网页加载过程的关键信息，并直接影响了 JavaScript 中可用的性能监控 API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_load_timing.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -297,7 +299,4 @@ double ResourceLoadTiming::CalculateMillisecondDelta(
 }
 
 }  // namespace blink
-
-"""
-
 ```

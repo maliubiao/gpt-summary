@@ -124,7 +124,7 @@ const (
 
 总而言之，这部分代码是 Go 语言与 Windows 系统底层交互的重要桥梁，它提供了标准化的方式来理解和处理 Windows 操作系统返回的错误信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -132,9 +132,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第12部分，共15部分，请归纳一下它的功能
+```
 
-"""
-	STATUS_DEVICE_DOES_NOT_EXIST                                              NTStatus      = 0xC00000C0
+### 源代码
+```go
+STATUS_DEVICE_DOES_NOT_EXIST                                              NTStatus      = 0xC00000C0
 	STATUS_TOO_MANY_COMMANDS                                                  NTStatus      = 0xC00000C1
 	STATUS_ADAPTER_HARDWARE_ERROR                                             NTStatus      = 0xC00000C2
 	STATUS_INVALID_NETWORK_RESPONSE                                           NTStatus      = 0xC00000C3
@@ -776,10 +778,5 @@ Prompt:
 	STATUS_APPX_INTEGRITY_FAILURE_CLR_NGEN                                    NTStatus      = 0xC000047F
 	STATUS_SHARE_UNAVAILABLE                                                  NTStatus      = 0xC0000480
 	STATUS_APISET_NOT_HOSTED                                                  NTStatus      = 0xC0000481
-	STATUS_APISET_NOT_PRESENT                          
-"""
-
-
-
-
+	STATUS_APISET_NOT_PRESENT
 ```

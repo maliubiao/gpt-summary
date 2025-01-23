@@ -136,7 +136,7 @@ By following these steps, I can systematically analyze the provided code and gen
 
 因此， `prog.cpp` 作为一个极其简单的 Windows 应用程序入口点，常常被用作 Frida 测试框架的一部分，或者作为用户调试 Frida 配置和脚本时的起点。它的简单性使得问题排查更加容易。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/windows/4 winmaincpp/prog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<windows.h>
 
 class Foo;
@@ -163,7 +165,4 @@ WinMain(
     ((void)nCmdShow);
     return 0;
 }
-
-"""
-
 ```

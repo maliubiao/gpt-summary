@@ -180,7 +180,7 @@ python3 /path/to/frida/subprojects/frida-swift/releng/meson/mesonbuild/msetup.py
 
 总而言之，`msetup.py` 是 Frida 构建过程的起点，它负责解析用户的配置意图，并将其转化为实际的构建环境。理解它的功能和工作原理，对于调试 Frida 的构建问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/msetup.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2018 The Meson development team
 # Copyright © 2023-2024 Intel Corporation
@@ -555,7 +557,4 @@ def run(options: T.Union[CMDOptions, T.List[str]]) -> int:
         app.generate()
 
     return 0
-
-"""
-
 ```

@@ -34,7 +34,7 @@ Therefore, the primary function of this code is to provide test data for the cos
 
 该文件的核心功能是提供了一系列预定义的输入输出对，用于测试 Android bionic 库中 `cos` 函数在 Intel 架构上的实现是否正确和精确。它是 Android 底层数学库质量保证的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/cos_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -46,8 +46,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1481,8 +1483,5 @@ static data_1_1_t<double, double> g_cos_intel_data[] = {
     -0x1.ff55301d3a780d19c28c22c82c1f5383p-5,
     -0x1.a0d068341a080p1000
   },
-  { // 
-"""
-
-
+  { //
 ```

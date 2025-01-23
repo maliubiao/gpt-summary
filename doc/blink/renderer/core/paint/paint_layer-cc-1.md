@@ -130,7 +130,7 @@ The code heavily revolves around hit testing and fragment management within the 
 
 这部分 `PaintLayer::cc` 代码主要负责 **管理 PaintLayer 的片段信息，以便进行更精细化的绘制和命中测试，并且实现了核心的命中测试逻辑，能够考虑到 CSS 变换、裁剪、层叠顺序等因素，最终确定用户交互的目标元素。**  它连接了渲染引擎的内部表示 (PaintLayer) 和用户的交互行为 (鼠标点击)，是浏览器实现事件处理的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_layer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ment* container_fragment,
     ShouldRespectOverflowClipType respect_overflow_clip) const {
   PaintLayerFragment fragment;
@@ -941,7 +943,4 @@ bool PaintLayer::HitTestFragmentWithPhase(
 
   bool did_hit;
   if (physical_fr
-"""
-
-
 ```

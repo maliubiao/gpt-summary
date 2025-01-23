@@ -105,11 +105,13 @@ eval(codeToExecute); // 输出 "Updated code"
 
 `extension-riscv-zifencei.cc` 文件为 V8 引擎在 RISC-V 架构上提供了生成 `fence.i` 指令的能力。虽然 JavaScript 开发者无法直接操作这个指令，但 V8 引擎会在内部使用它来保证代码执行的正确性，尤其是在动态代码生成、修改和并发等场景下。这个文件是 V8 引擎针对特定硬件架构进行优化的一个例子，确保 JavaScript 代码能够在不同的平台上可靠地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-zifencei.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -126,7 +128,4 @@ void AssemblerRISCVZifencei::fence_i() {
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

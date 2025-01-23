@@ -173,7 +173,7 @@ func rewriteValueARM_OpAdd32(v *Value) bool {
 
 这部分 `rewriteARM.go` 代码的核心功能是将 Go 语言中通用的、架构无关的操作转换为针对 ARM 架构优化的具体指令序列。 这是 Go 编译器后端针对特定架构进行代码优化的关键步骤，旨在提升 Go 程序在 ARM 平台上的性能。 它通过模式匹配和替换的方式，将 SSA 中间表示转换为更底层的、更贴近硬件的指令。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -182,9 +182,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第10部分，共16部分，请归纳一下它的功能
+```
 
-"""
- typ.UInt32))
+### 源代码
+```go
+typ.UInt32))
 		v3 := b.NewValue0(v.Pos, OpARMSUB, typ.UInt32)
 		v4 := b.NewValue0(v.Pos, OpARMXOR, typ.UInt32)
 		v5 := b.NewValue0(v.Pos, OpSignmask, typ.Int32)
@@ -1611,10 +1613,4 @@ func rewriteValueARM_OpNeq32(v *Value) bool {
 		v.AddArg(v0)
 		return true
 	}
-
-"""
-
-
-
-
 ```

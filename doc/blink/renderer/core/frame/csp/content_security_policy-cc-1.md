@@ -119,15 +119,17 @@ CSP 的主要目标是增强 Web 应用的安全性，防止跨站脚本攻击 (
 
 总而言之，这段代码是 Chromium Blink 引擎中实现 CSP 核心功能的重要组成部分，它负责根据配置的策略对各种类型的资源加载和执行进行细致的检查，并在发现违规行为时生成报告，从而有效地提升 Web 应用的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/csp/content_security_policy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::kPolicyAreaStyle;
 
   if (ShouldBypassContentSecurityPolicy(url, area)) {
@@ -942,8 +944,4 @@ void ContentSecurityPolicy::Count(WebFeature feature) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

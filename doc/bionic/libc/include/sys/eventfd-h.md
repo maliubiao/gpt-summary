@@ -340,7 +340,7 @@ if (Process.platform === 'linux') {
 
 这个 hook 脚本可以帮助你观察 Android 系统中哪些组件使用了 `eventfd`，以及它们如何使用。通过分析 Frida 的输出，你可以更深入地理解 Android Framework 和 NDK 中事件通知的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/eventfd.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -351,8 +351,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -432,7 +434,4 @@ int eventfd_read(int __fd, eventfd_t* _Nonnull __value);
 int eventfd_write(int __fd, eventfd_t __value);
 
 __END_DECLS
-
-"""
-
 ```

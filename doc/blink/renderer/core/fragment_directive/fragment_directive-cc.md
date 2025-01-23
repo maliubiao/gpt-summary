@@ -171,14 +171,16 @@ This detailed thought process, moving from general understanding to specific cod
 
 总而言之，`fragment_directive.cc` 文件是 Blink 引擎中实现 Fragment Directives 功能的关键部分，它负责解析、提取和管理 URL 中的额外指令，从而增强了网页链接的表达能力，并提供了 JavaScript API 供开发者使用。理解其功能有助于我们更好地理解浏览器如何处理包含 Fragment Directives 的 URL，以及如何在网页开发中利用这项技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fragment_directive/fragment_directive.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -371,7 +373,4 @@ void FragmentDirective::ParseDirectives(const String& fragment_directive) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

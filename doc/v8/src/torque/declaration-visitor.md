@@ -87,11 +87,13 @@ console.log(newLength); // 输出: 5
 
 `declaration-visitor.cc` 是 Torque 编译过程中的一个关键组件，它负责将 Torque 源代码中的声明转换为 V8 引擎可以理解和使用的内部表示。 这些内部表示最终驱动着 JavaScript 内置功能的实现。  换句话说，Torque 代码定义了 JavaScript 的行为，而 `declaration-visitor.cc` 则负责理解和注册这些定义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/declaration-visitor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -562,7 +564,4 @@ void PredeclarationVisitor::ResolvePredeclarations() {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

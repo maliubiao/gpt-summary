@@ -120,15 +120,17 @@ Here's a breakdown of the thought process to generate the answer:
 
 总之，这部分代码通过大量的单元测试用例，全面验证了 `TrialTokenValidator` 在各种场景下对 Origin Trial Token 的验证逻辑，确保了 Origin Trials 功能的正确性和可靠性。 这些测试覆盖了 token 的基本有效性、与 Origin 的匹配、过期处理、禁用状态以及 Third-Party Token 的特殊情况等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/origin_trials/trial_token_validator_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 arty_origins, Now())
                 .Status());
 }
@@ -713,8 +715,4 @@ TEST_F(TrialTokenValidatorTest, XRWTrialAllowedForAll3POrigins) {
 }
 
 }  // namespace blink::trial_token_validator_unittest
-
-"""
-
-
 ```

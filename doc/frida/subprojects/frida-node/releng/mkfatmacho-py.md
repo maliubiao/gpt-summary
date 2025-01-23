@@ -113,7 +113,7 @@ This methodical approach allows for a comprehensive understanding of the script'
 
 总而言之，`mkfatmacho.py` 是一个专门用于创建 FAT Mach-O 文件的工具，它填补了 `lipo` 工具在某些特定场景下的空白，尤其是在需要合并针对不同 ABI 的 slice 时。它的实现涉及到对 Mach-O 文件格式的深入理解和二进制数据的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/mkfatmacho.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -177,7 +179,4 @@ if __name__ == '__main__':
     output_path = sys.argv[1]
     input_paths = sys.argv[2:]
     make_fat_macho(output_path, input_paths)
-
-"""
-
 ```

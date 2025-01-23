@@ -169,7 +169,7 @@ By following this structured approach, combining code analysis with domain knowl
 
 总而言之，`frida/subprojects/frida-gum/tests/core/interceptor-android.c` 是一个关键的测试文件，用于验证 Frida Gum 在 Android 平台上的拦截功能。它涵盖了多种重要的系统调用和框架函数，并间接反映了用户在使用 Frida 进行逆向工程时可能遇到的场景和潜在问题。 通过分析这个文件，我们可以更深入地理解 Frida 的工作原理以及动态插桩技术在 Android 逆向分析中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/interceptor-android.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017-2020 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -318,7 +320,4 @@ gum_store_runtime_bounds (const GumModuleDetails * details,
 
   return FALSE;
 }
-
-"""
-
 ```

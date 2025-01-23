@@ -342,7 +342,7 @@ sys.stdin.read()
 
 通过这种方式，你可以观察 Android Framework 或 NDK 代码如何调用 libc 函数，以及 Bionic 的 fortification 机制在何时被激活。你可以根据需要 hook 其他 libc 函数，例如 `sprintf`, `memcpy` 等，以进行更深入的调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/fortify_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -353,8 +353,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  *
@@ -1383,7 +1385,4 @@ TEST_F(DEATHTEST, open_O_TMPFILE_without_mode_fortified) {
   int flags = O_TMPFILE; // Fool the compiler.
   ASSERT_FORTIFY(open("", flags));
 }
-
-"""
-
 ```

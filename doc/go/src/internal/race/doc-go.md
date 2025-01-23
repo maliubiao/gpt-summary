@@ -150,7 +150,7 @@ Goroutine ... (running) created at:
 
 `internal/race` 包提供了一种手动插桩的方式来辅助 Go 的竞态检测器。开发者可以使用它来更精确地指定需要监控的代码区域，但必须记住使用 `-race` 编译标志才能真正启用竞态检测功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/race/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -158,8 +158,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -171,9 +173,4 @@ The runtime package intentionally exports these functions only in the race build
 this package exports them unconditionally but without the "race" build tag they are no-ops.
 */
 package race
-
-"""
-
-
-
 ```

@@ -118,7 +118,7 @@ By following these steps, combining code analysis with an understanding of the s
 
 因此，`bar.c` 文件本身是 Vala 代码编译的中间产物，它反映了 Vala 代码的结构和逻辑。开发者最终目的是使用编译后的 `libbar.so` 库，而 Frida 则是在运行时分析和修改这个库行为的强大工具。  调试线索从 Vala 源代码开始，经过编译构建，最终在运行时使用 Frida 进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/vala/11 generated vapi/libbar/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "bar.h"
 #include "foo.h"
 
@@ -157,7 +159,4 @@ int bar_bar_return_success(void)
 {
   return foo_foo_return_success();
 }
-
-"""
-
 ```

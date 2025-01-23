@@ -88,7 +88,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 如果程序加载后崩溃或行为异常，检查架构是否匹配，或者使用 LLDB 调试加载的二进制文件。
 
 通过这些步骤，用户可以逐步排查问题，找到并修复错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/tests/labrats.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -97,8 +97,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida.Test.Labrats {
 	public static string path_to_executable (string name, Arch arch = Arch.CURRENT) {
 		return path_to_file (name + os_arch_suffix (arch) + os_executable_suffix ());
@@ -112,7 +114,4 @@ namespace Frida.Test.Labrats {
 		return Path.build_filename (Path.get_dirname (Process.current.filename), "labrats", name);
 	}
 }
-
-"""
-
 ```

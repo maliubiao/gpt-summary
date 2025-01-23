@@ -147,7 +147,7 @@ Initially, I might have focused too much on the `printf` and thought about gener
 
 总而言之，`dotproc.c` 虽然代码简单，但在 Frida 的开发和测试流程中扮演着重要的角色，它确保了 Frida 的构建系统能够正确地处理自定义的头文件，这对于 Frida 实现函数 hooking 和控制目标进程运行环境至关重要。 它的失败通常指示着 Frida 的构建配置存在问题，需要开发者进行排查和修复。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/149 dotinclude/dotproc.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"stdio.h"
 
 #ifndef WRAPPER_INCLUDED
@@ -167,7 +169,4 @@ int main(void) {
     printf("Eventually I got printed.\n");
     return 0;
 }
-
-"""
-
 ```

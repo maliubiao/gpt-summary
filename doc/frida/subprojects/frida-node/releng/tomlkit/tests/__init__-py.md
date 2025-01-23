@@ -132,7 +132,7 @@ Frida 的核心功能是动态插桩，这涉及到在目标进程的内存空�
 
 总而言之，`frida/subprojects/frida-node/releng/tomlkit/tests/__init__.py` 文件本身的功能很简单，但它是 Python 包结构的基础，对于组织和运行 `tomlkit` 库的测试至关重要。虽然它不直接参与逆向过程或底层操作，但它保证了用于配置 Frida 行为的关键组件能够正常工作，从而间接地支持了 Frida 的核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/tomlkit/tests/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,9 +140,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

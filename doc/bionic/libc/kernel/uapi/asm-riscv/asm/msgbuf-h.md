@@ -248,7 +248,7 @@ if (Process.platform === 'linux') {
 
 虽然 `asm-riscv/asm/msgbuf.h` 文件本身非常简单，但它在 Android 系统中扮演着连接用户空间和内核空间关于消息缓冲区功能的重要角色。理解这个文件的作用需要了解 Linux 内核的消息队列机制、libc 提供的相关函数以及 Android 系统中进程间通信的基本原理。通过 Frida 这样的工具，我们可以动态地观察和调试应用程序与这些底层机制的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-riscv/asm/msgbuf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -259,8 +259,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -268,7 +270,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/msgbuf.h>
-
-"""
-
 ```

@@ -63,7 +63,7 @@ Response:
 
 ### 总结
 此程序通过 eBPF 在 VFS 层拦截读操作，统计延迟分布，适用于分析系统级 I/O 性能瓶颈。关键点包括正确挂载到 `vfs_read`、处理时间单位转换和避免哈希表泄漏。调试时可结合 `bpftrace` 或 `dmesg` 验证挂载点是否生效。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/examples/tracing/vfsreadlat.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -72,8 +72,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * vfsreadlat.c		VFS read latency distribution.
  *			For Linux, uses BCC, eBPF. See .py file.
@@ -118,7 +120,4 @@ int do_return(struct pt_regs *ctx)
 
 	return 0;
 }
-
-"""
-
 ```

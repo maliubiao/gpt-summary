@@ -132,7 +132,7 @@ Finally, the information needs to be presented clearly, following the prompt's s
 
 总而言之，`proj1f3.c` 作为一个简单的 C 语言文件，在 Frida 的测试框架中扮演着验证内部依赖关系的角色。它本身功能简单，但通过 Frida 的动态插桩能力，可以被用作逆向分析的目标，并涉及到二进制底层、操作系统以及可能的框架知识。 理解这类简单的测试用例有助于理解 Frida 的工作原理和内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/78 internal dependency/proj1/proj1f3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,15 +140,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<proj1.h>
 #include<stdio.h>
 
 void proj1_func3(void) {
     printf("In proj1_func3.\n");
 }
-
-"""
-
 ```

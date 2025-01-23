@@ -167,15 +167,17 @@ This detailed breakdown, going from the high-level purpose of the file down to t
 
 总而言之，`paint_controller_paint_test.cc` 是一个至关重要的测试文件，用于确保 Chromium Blink 引擎的绘画功能正确、高效地运行，涵盖了各种与 HTML、CSS 和用户交互相关的渲染场景。开发者可以通过分析这些测试用例来理解 `PaintController` 的工作原理，并作为调试渲染问题的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_controller_paint_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -793,7 +795,4 @@ TEST_P(PaintControllerPaintTest, PaintChunkIsSolidColor) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

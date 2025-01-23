@@ -138,14 +138,16 @@ This step-by-step process, starting from understanding the core goal and progres
 
 `storage_key_string_fuzzer.cc` 通过模糊测试 `blink::StorageKey` 的字符串反序列化过程，旨在提高 Blink 引擎处理存储键相关操作的健壮性和安全性。它可以帮助开发者发现潜在的解析错误、崩溃风险以及可能导致安全漏洞的边界情况。虽然用户不直接接触这些底层的序列化操作，但这个 fuzzer 的工作对于确保 Web 平台的存储机制的可靠性至关重要，直接影响到 JavaScript 存储 API、Cookies 和同源策略等核心 Web 功能的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/storage_key/storage_key_string_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   }
   return 0;
 }
-
-"""
-
 ```

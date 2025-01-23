@@ -167,7 +167,7 @@ To trigger the execution of `mdist.py`, a user would typically perform the follo
 
 **In summary, `mdist.py` is a vital part of the Frida release process for the `frida-clr` component. It automates the creation of source distribution packages, handles version control, allows for customization through scripts, and helps ensure the quality of the released artifacts. These packages are the starting point for many users and, importantly, for reverse engineers who wish to understand the inner workings of Frida.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/mdist.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017 The Meson development team
 # Copyright © 2023 Intel Corporation
@@ -553,7 +555,4 @@ def run(options: argparse.Namespace) -> int:
             create_hash(name)
             print('Created', name)
     return rc
-
-"""
-
 ```

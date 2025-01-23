@@ -250,7 +250,7 @@ sys.stdin.read()
 
 通过 Frida，你可以更深入地理解动态链接的过程，观察 GOT 表的填充，甚至修改 GOT 表的内容来改变函数的执行流程。这对于逆向工程和安全分析非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_asm_x86_64.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -261,8 +261,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: asm.h,v 1.18 2013/09/12 15:36:17 joerg Exp $	*/
 
 /*-
@@ -305,7 +307,4 @@ Prompt:
 #define PIC_GOT(x)	x@GOTPCREL(%rip)
 
 #define __bionic_asm_align 16
-
-"""
-
 ```

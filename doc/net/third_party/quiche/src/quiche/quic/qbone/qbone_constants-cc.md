@@ -135,15 +135,17 @@ By following this structured thought process, breaking down the code, and consid
 
 `qbone_constants.cc` 文件是 Chromium QBONE 实现的核心组成部分，定义了 QBONE 协议的关键常量，包括协议标识、数据包大小限制、路由信息和关键节点的地址。虽然普通用户或 JavaScript 开发者不会直接操作这些常量，但它们在 QBONE 的底层运行中起着至关重要的作用。在调试 QBONE 相关问题时，了解这些常量的定义是理解其行为和排查问题的关键一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/qbone/qbone_constants.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ const QuicIpAddress* QboneConstants::GatewayAddress() {
 }
 
 }  // namespace quic
-
-"""
-
 ```

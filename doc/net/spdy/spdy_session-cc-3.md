@@ -112,7 +112,7 @@ To reach this code during debugging, you might observe the following user action
 
 This portion of `net/spdy/spdy_session.cc` is primarily responsible for **handling incoming HTTP/2 frames, managing session lifecycle events (like GOAWAY), and enforcing flow control for both the overall session and individual streams.** It ensures reliable and efficient data transfer by processing server signals, managing data buffers, and regulating the rate at which data is sent and received. It also plays a role in optimizing connections through Alt-Svc and detecting broken connections.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ors to something sensical.
     //                For now, it doesn't matter much - it is a protocol error.
     CloseActiveStreamIterator(it, ERR_HTTP2_PROTOCOL_ERROR);
@@ -681,8 +683,4 @@ void SpdySession::MaybeDisableBrokenConnectionDetection() {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

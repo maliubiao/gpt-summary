@@ -212,14 +212,16 @@ By following this structured thought process, analyzing the code's components, a
 
 总之，`blink/renderer/platform/text/date_time_format.cc` 文件是 Chromium Blink 引擎中负责解析日期和时间格式字符串的关键组件，它为 JavaScript 的 `Intl.DateTimeFormat` API 提供了底层的支持，使得浏览器能够理解和处理各种日期和时间格式。理解其功能有助于我们更好地理解和使用 Web 平台的日期和时间处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/date_time_format.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -500,7 +502,4 @@ void DateTimeFormat::QuoteAndappend(const String& literal,
 }
 
 }  // namespace blink
-
-"""
-
 ```

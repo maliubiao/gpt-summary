@@ -295,7 +295,7 @@ Interceptor.attach(Module.findExportByName("libnftnl.so", "nftnl_rule_add"), {
 
 理解 `xt_recent` 的关键在于认识到它是一个 Linux 内核模块，用户空间的程序通过 `iptables`/`nftables` 等工具或库来配置和利用它。Frida 可以用来 Hook 这些工具或库的执行，从而观察 Android 系统中 `xt_recent` 的使用情况。直接 Hook 内核函数虽然可行，但更复杂。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_recent.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -306,8 +306,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -349,7 +351,4 @@ struct xt_recent_mtinfo_v1 {
   union nf_inet_addr mask;
 };
 #endif
-
-"""
-
 ```

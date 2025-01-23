@@ -742,7 +742,7 @@ void Heap::ConfigureHeap(const v8::ResourceConstraints& constraints,
   {
     initial_semispace_size_ = DefaultMinSemiSpaceSize();
     if (!v8_flags.optimize_for_size
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap.cc以.tq结尾，那它是个v8 torque源代码，
@@ -750,8 +750,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pIterable();
   CodeStatistics::ResetCodeAndMetadataStatistics(isolate());
   // We do not look for code in new space, or map space.  If code
@@ -1625,7 +1627,4 @@ size_t Heap::OldGenerationSizeOfObjects() const {
   }
   total += trusted_space()->SizeOfObjects();
   total += trusted_lo_
-"""
-
-
 ```

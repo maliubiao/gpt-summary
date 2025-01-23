@@ -190,15 +190,17 @@ StructC: world
 
 总之，`go/test/interface/embed3.go` 的核心功能是作为一个被 Go 构建工具忽略的代码片段存在，它通常用于测试框架中，模拟特定的代码存在或不存在的场景，以验证 Go 语言特性的行为。在这种情况下，它很可能是用来测试接口嵌入的某种边缘情况。开发者需要明确 `ignored` 包的含义，避免将其用于包含实际需要运行的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/interface/embed3.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // rundir
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -206,9 +208,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

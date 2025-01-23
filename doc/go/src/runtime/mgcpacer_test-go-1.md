@@ -106,7 +106,7 @@ Step 14: Allocation Rate = 100.00
 
 总之，这部分代码是 Go 运行时 GC pacer 组件的重要测试基础设施，它通过模拟各种场景来验证 pacer 的正确性和鲁棒性。其核心在于灵活的模拟能力和严格的断言机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mgcpacer_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -115,8 +115,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 rror("cycle numbers out of order")
 		}
 	}
@@ -408,10 +410,4 @@ func TestIdleMarkWorkerCount(t *testing.T) {
 		t.Fatalf("expected to be able to add idle mark workers after capacity set to 1")
 	}
 }
-
-"""
-
-
-
-
 ```

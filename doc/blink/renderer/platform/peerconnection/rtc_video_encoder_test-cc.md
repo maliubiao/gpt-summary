@@ -77,15 +77,17 @@ Finally, I need to identify potential user or programming errors related to the 
 
 这个代码片段主要集中在测试 `RTCVideoEncoder` 类的 **初始化** 和一些基本的 **编码** 功能。 它验证了在不同编解码器下，`RTCVideoEncoder` 是否能够成功创建、初始化，以及在一些简单场景下能否完成基本的视频帧编码。  特别地，它也测试了在某些情况下，例如低分辨率或不支持的硬件加速配置时，`RTCVideoEncoder` 是否能正确地回退到软件编码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_encoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1709,8 +1711,4 @@ TEST_F(RTCVideoEncoderEncodeTest, EncodeSpatialLayer) {
                    &RTCVideoEncoderTest::ReturnSVCLayerFrameWithVp9Metadata),
             [&event]() { event.Signal(); }));
     EXPECT_EQ(WEBRTC_VIDEO_CODEC_OK,
-   
-"""
-
-
 ```

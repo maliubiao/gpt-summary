@@ -134,15 +134,17 @@ hashes3.push_back(HashValue(google_hash_value));
 
 总而言之，`net/cert/symantec_certs_unittest.cc` 文件是 Chromium 确保其处理旧版 Symantec 证书逻辑正确性的重要组成部分。它通过一系列单元测试来验证关键函数 `IsLegacySymantecCert` 的行为，并间接地影响着用户浏览网页时的安全体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/symantec_certs_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ TEST(SymantecCertsTest, AreSortedArrays) {
 }
 
 }  // namespace net
-
-"""
-
 ```

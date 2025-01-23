@@ -121,7 +121,7 @@ This part of the `gnome.py` module within the Meson build system focuses on the 
 
 **In summary, this code snippet is crucial for the internal workings of the `gnome.generate_gir` function in Meson. It focuses on the meticulous task of collecting and organizing compiler and linker flags needed by the `g-ir-scanner` to generate accurate GObject Introspection data, which is invaluable for dynamic analysis and reverse engineering using tools like Frida.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 self._gir_has_option('--extra-library'):
             def fix_ldflags(ldflags: T.Iterable[T.Union[str, T.Tuple[str, str]]]) -> OrderedSet[T.Union[str, T.Tuple[str, str]]]:
                 fixed_ldflags: OrderedSet[T.Union[str, T.Tuple[str, str]]] = OrderedSet()
@@ -756,8 +758,4 @@ self._gir_has_option('--extra-library'):
                         m_file = mesonlib.File.from_source_file(state.environment.source_dir, l_subdir, m)
                     except MesonException:
                         m_file = media_files[i]
-             
-"""
-
-
 ```

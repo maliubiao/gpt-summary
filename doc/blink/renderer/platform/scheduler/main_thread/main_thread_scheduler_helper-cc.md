@@ -167,14 +167,16 @@ This systematic approach helps in understanding the code's purpose, its role in 
 
 总之，`MainThreadSchedulerHelper` 是 Blink 渲染引擎中负责管理主线程任务调度的核心组件。 它的设计目标是高效地执行各种类型的任务，包括 JavaScript 执行、HTML 解析、CSS 样式计算和渲染等，从而保证用户界面的流畅性和响应性。 理解其功能有助于我们理解浏览器的工作原理，并避免编写导致主线程阻塞的低效代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/main_thread_scheduler_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ void MainThreadSchedulerHelper::ShutdownAllQueues() {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

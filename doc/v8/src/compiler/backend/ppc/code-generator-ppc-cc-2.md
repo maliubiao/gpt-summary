@@ -169,7 +169,7 @@ This systematic approach allows me to understand the purpose of the code, connec
 
 总而言之，这部分 `code-generator-ppc.cc` 代码是 V8 引擎将 JavaScript 代码转换为高效的 PowerPC 机器码的关键组成部分，它实现了各种基本的和高级的运算，使得 JavaScript 能够在 PowerPC 架构上高效运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ppc/code-generator-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ppc/code-generator-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -177,9 +177,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
-    case kIeee754Float64Log10:
+### 源代码
+```cpp
+case kIeee754Float64Log10:
       ASSEMBLE_IEEE754_UNOP(log10);
       break;
     case kIeee754Float64Pow:
@@ -1033,8 +1035,5 @@ Prompt:
     Simd128Register dst = i.OutputSimd128Register();                       \
     DCHECK_EQ(dst, i.InputSimd128Register(0));                             \
     AddressingMode mode = kMode_None;                                      \
-    size_t index = 1;                            
-"""
-
-
+    size_t index = 1;
 ```

@@ -179,7 +179,7 @@ kwargs = {
 
 该模块的主要目的是提供一个 Meson 模块，用于生成 `pkg-config` 所需的 `.pc` 文件。它包含 `PkgConfigModule` 类，其中的 `generate` 方法负责接收库的元数据和依赖关系信息，并生成两个 `.pc` 文件，分别对应已安装和未安装的状态。该模块还处理了平台特定的安装路径、依赖管理、以及用户可能遇到的常见错误，确保生成的 `.pc` 文件符合 `pkg-config` 的规范，方便其他项目依赖和使用 Frida 的库。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/modules/pkgconfig.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 tadir(), 'pkgconfig')
 
         subdirs = kwargs['subdirs'] or default_subdirs
@@ -287,8 +289,4 @@ tadir(), 'pkgconfig')
 
 def initialize(interp: Interpreter) -> PkgConfigModule:
     return PkgConfigModule()
-
-"""
-
-
 ```

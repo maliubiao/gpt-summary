@@ -70,12 +70,14 @@ function foo() {
 
 `objects-debug.cc` 的第一部分定义了 V8 引擎中对象堆验证的基础架构和核心实现，确保了 JavaScript 运行时的内部数据结构的完整性和一致性。当启用堆验证时，V8 引擎会定期或在特定事件发生时调用这些 `Verify` 方法，以尽早发现潜在的内存错误或逻辑错误，从而提高引擎的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/objects-debug.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1795,7 +1797,4 @@ void VerifyElementIsShared(Tagged<Object> element) {
   // on, which is fine as the ThinString resides in shared space if the original
   // string was in shared space.
   if (IsThinStrin
-"""
-
-
 ```

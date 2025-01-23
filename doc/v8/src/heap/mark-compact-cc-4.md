@@ -178,7 +178,7 @@ function expensiveFunction() {
 
 这些功能共同作用，保证了 V8 引擎能够高效、稳定地运行 JavaScript 代码，并有效地利用内存资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/mark-compact.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/mark-compact.cc以.tq结尾，那它是个v8 torque源代码，
@@ -186,8 +186,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 outPreparseData::kSize);
     heap_->CreateFillerObjectAt(compiled_data.address() + aligned_filler_offset,
                                 compiled_data_size - aligned_filler_offset);
@@ -984,7 +986,4 @@ static inline void UpdateSlot(PtrComprCageBase cage_base, TSlot slot,
                               Tagged<HeapObject> heap_obj) {
   static_assert(
       std::is_same<TSlot, FullObjectSl
-"""
-
-
 ```

@@ -110,7 +110,7 @@ By following these steps, the comprehensive explanation of the seemingly simple 
 
 尽管 `s2.c` 本身非常简单，但它在 Frida 的测试套件中扮演着一个角色，用于验证 Frida 在处理具有函数调用的代码时的能力。在逆向工程的上下文中，即使是简单的函数也能帮助我们理解程序的基本构建块和依赖关系。理解其涉及的底层概念，进行逻辑推理，并避免常见的编程错误，对于有效地使用和调试这类代码至关重要。用户接触到这个文件通常是因为他们正在与 Frida 的开发、测试或学习过程进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/114 complex link cases/s2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,14 +118,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int s1(void);
 
 int s2(void) {
     return s1() + 1;
 }
-
-"""
-
 ```

@@ -156,7 +156,7 @@ Running clang-tidy in /path/to/frida/src
 
 In summary, `clangtidy.py` is a crucial utility for maintaining the quality and correctness of Frida's Swift codebase by leveraging the `clang-tidy` static analysis tool. While not directly involved in reverse engineering, it contributes to the reliability and security of a tool heavily used in that domain. Its integration within the Meson build system and its use of low-level analysis tools highlight its connection to the underlying aspects of software development and system interaction.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/scripts/clangtidy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -196,7 +198,4 @@ def run(args: T.List[str]) -> int:
 
     run_func = run_clang_tidy_fix if options.fix else run_clang_tidy
     return run_tool('clang-tidy', srcdir, builddir, run_func, builddir)
-
-"""
-
 ```

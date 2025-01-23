@@ -226,7 +226,7 @@ wg/HcAJWY60xZTJDFN+Qfx8ZQvBEin6c2/h+zZi5IVY=
 
 这段代码的主要功能是 **测试 Go 语言 `crypto/x509` 包中关于密钥（主要是 RSA）的解析和序列化功能，以及证书的基本解析和主机名验证功能。** 它涵盖了 PKCS#1 和 PKIX 两种密钥格式的解析，并测试了在格式不匹配时的错误处理。此外，还包括了证书的解析、签名验证以及基于 DNS 名称和 IP 地址的主机名匹配验证的测试。最后，它也包含了创建自签名证书的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/x509_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -235,8 +235,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1073,10 +1075,4 @@ func TestCreateSelfSignedCertificate(t *testing.T) {
 		}
 
 		if cert.SignatureAlgorithm != test.sigAlgo {
-	
-"""
-
-
-
-
 ```

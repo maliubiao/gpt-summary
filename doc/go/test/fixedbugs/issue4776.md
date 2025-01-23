@@ -150,15 +150,17 @@ func main() {
 
 总而言之，`issue4776.go` 这个文件是一个精心设计的测试用例，用于确保 Go 编译器能够严格执行语法规则，特别是关于 `package` 声明的要求，并且能够提供清晰的错误信息。 它不涉及具体的命令行参数处理，但强调了 Go 语言最基本的文件结构要求。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4776.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -168,10 +170,4 @@ Prompt:
 // Issue 4776: missing package declaration error should be fatal.
 
 type MyInt int32 // ERROR "package statement must be first|package clause"
-
-
-"""
-
-
-
 ```

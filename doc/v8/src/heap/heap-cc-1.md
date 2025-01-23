@@ -127,7 +127,7 @@ let obj = { a: 1, b: 'hello' };
 
 总的来说，这部分代码是 V8 引擎堆管理和垃圾回收核心功能的重要组成部分，它提供了监控、控制和执行内存回收的关键机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap.cc以.tq结尾，那它是个v8 torque源代码，
@@ -135,9 +135,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
- UpdateAllocationsHash(HeapObject::FromAddress(addr));
+### 源代码
+```cpp
+UpdateAllocationsHash(HeapObject::FromAddress(addr));
       UpdateAllocationsHash(size);
 
       if (allocations_count_ % v8_flags.dump_allocations_digest_at_alloc == 0) {
@@ -1009,7 +1011,4 @@ void Heap::CollectGarbage(AllocationSpace space,
     }
 
     if (collector == G
-"""
-
-
 ```

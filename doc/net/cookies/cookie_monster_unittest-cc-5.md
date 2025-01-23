@@ -112,7 +112,7 @@ As a developer debugging cookie-related issues, you might reach this test file w
 
 This specific section of `cookie_monster_unittest.cc` primarily focuses on **verifying the accuracy of internal accounting and metric reporting within the `CookieMonster`**. It uses histogram testers to assert that various cookie characteristics (size, partitioning, `SameSite` attribute) are correctly tracked and recorded. Additionally, it tests specific security-related aspects like the handling of secure cookies on localhost and the prevention of insecure overwrites of secure cookies, including scenarios with partitioned cookies and considerations for origin binding (scheme and port).
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_monster_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 terTest, CookieJarSizeHistograms) {
   auto cm = std::make_unique<CookieMonster>(nullptr, net::NetLog::Get());
 
@@ -865,7 +867,4 @@ TEST_F(CookieMonsterTest_MaybeDeleteEquivalentCookieAndUpdateStatus,
        YesSchemeYesPort) {
   scoped_feature_list_.InitWithFeatures(
       {net::features::kEnableSchemeBoun
-"""
-
-
 ```

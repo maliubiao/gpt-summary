@@ -195,15 +195,17 @@ Imagine a user reports that their camera isn't turning on when they click the "S
 
 In essence, `user_media_client.cc` is a vital bridge between the web's JavaScript media APIs and the underlying platform's media capabilities, managing the complex process of obtaining and controlling user media streams within a web page.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/user_media_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -704,7 +706,4 @@ UserMediaClient::RequestQueue* UserMediaClient::GetRequestQueue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -101,7 +101,7 @@ Finally, organize the thoughts into a clear and structured answer, addressing ea
 
 `bobuser.c` 的主要功能是调用一个可能被故意隐藏的函数。它作为一个简单的示例，用于测试构建系统在处理隐藏符号时的行为。在逆向工程中，理解这种隐藏机制对于分析和理解复杂的软件至关重要。这个例子也展示了链接器在软件构建过程中的关键作用，以及用户可能遇到的常见编程错误。通过分析构建错误信息和查看符号表，可以帮助开发者定位和解决这类问题。对于 Frida 这样的动态插桩工具，理解符号的可见性也很重要，因为它可能会影响 Frida 如何 hook 或拦截这些函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing build/1 hidden symbol/bobuser.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,14 +109,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 int main(int argc, char **argv) {
     return hidden_function();
 }
-
-"""
-
 ```

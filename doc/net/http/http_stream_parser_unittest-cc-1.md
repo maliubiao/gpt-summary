@@ -85,7 +85,7 @@ The developer would likely set breakpoints within the `HttpStreamParser` code or
 
 在调试这类问题时，开发者可能会使用网络抓包工具（如 Wireshark）来查看实际的网络数据包，并结合 Chromium 的网络日志（可以使用 `chrome://net-export/` 生成）来分析 `HttpStreamParser` 的行为，从而定位问题所在。 此处的单元测试正是为了在开发阶段尽早发现和修复 `HttpStreamParser` 中可能存在的各种缺陷。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_parser_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -93,8 +93,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pload_stream,
                           read_buffer.get(), NetLogWithSource());
 
@@ -946,8 +948,4 @@ TEST(HttpStreamParser, ReceivedBytesUseReadBuf) {
   get_runner.ReadHeaders();
   EXPECT_EQ(headers_size, get_runner.parser()->received_bytes());
   int body_size = body.size();
- 
-"""
-
-
 ```

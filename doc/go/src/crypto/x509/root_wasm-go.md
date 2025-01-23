@@ -206,7 +206,7 @@ func main() {
 
 总而言之，`root_wasm.go` 这段代码是 `crypto/x509` 包为了在受限的 WebAssembly 环境下提供加载根证书能力而设计的一部分。它通过预定义可能的证书文件和目录路径，为开发者提供了一种在没有标准系统证书存储的情况下也能验证 TLS 连接或其他需要证书的场景的能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/root_wasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -214,8 +214,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -229,9 +231,4 @@ var certFiles = []string{}
 
 // Possible directories with certificate files; all will be read.
 var certDirectories = []string{}
-
-"""
-
-
-
 ```

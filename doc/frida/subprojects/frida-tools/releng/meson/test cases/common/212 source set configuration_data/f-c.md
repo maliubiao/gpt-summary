@@ -183,7 +183,7 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 总而言之，`f.c` 文件虽然简单，但它体现了逆向工程中常见的概念，并作为 Frida 测试框架的一部分，用于验证 Frida 的核心功能，例如在指定内存地址进行操作和 Hook 函数的能力。 理解这样的测试用例有助于理解 Frida 的工作原理和使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/212 source set configuration_data/f.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = (void *)0x12AB34CD;
@@ -200,7 +202,4 @@ void (*p)(void) = (void *)0x12AB34CD;
 void f(void)
 {
 }
-
-"""
-
 ```

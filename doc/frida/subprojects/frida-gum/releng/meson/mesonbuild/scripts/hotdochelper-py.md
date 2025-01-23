@@ -157,7 +157,7 @@ python hotdochelper.py --install api --extra-extension-path /path/to/hotdoc/exte
 
 总而言之，`hotdochelper.py` 是 Frida 构建流程中一个关键的辅助脚本，它通过设置环境、执行文档生成命令和安装生成的文档，为用户提供了关于 Frida 工具的详细说明，这对于理解和使用 Frida 进行逆向分析至关重要。虽然脚本本身不直接进行逆向操作，但它所支持的文档构建过程是 Frida 用户获取知识和技能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/scripts/hotdochelper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import os
@@ -207,7 +209,4 @@ def run(argv: T.List[str]) -> int:
         shutil.rmtree(installdir, ignore_errors=True)
         shutil.copytree(source_dir, installdir)
     return 0
-
-"""
-
 ```

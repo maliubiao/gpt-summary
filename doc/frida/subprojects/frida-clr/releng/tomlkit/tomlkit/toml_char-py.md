@@ -151,7 +151,7 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`toml_char.py` 虽然是一个看似简单的 Python 文件，但它在 Frida 动态 instrumentation 工具中扮演着重要的角色，为解析 TOML 配置文件提供了基础的字符分类功能，这对于逆向工程师理解和操作目标应用程序的配置信息至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/tomlkit/tomlkit/toml_char.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import string
 
 
@@ -213,7 +215,4 @@ class TOMLChar(str):
         Whether the character is a space or not
         """
         return self in self.SPACES
-
-"""
-
 ```

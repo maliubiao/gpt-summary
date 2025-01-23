@@ -146,7 +146,7 @@ This detailed thought process covers the various aspects of the prompt, starting
 
 总而言之，这个简单的 `prog.c` 文件作为 Frida 测试用例的一部分，旨在验证 Frida 对基本程序流程的 Instrumentation 能力，同时也突出了逆向工程中常见的动态分析和代码修改技术。 它的简单性使得它成为演示和学习 Frida 功能的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/167 subproject nested subproject dirs/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,14 +154,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void);
 
 int main(void) {
     return func() == 42 ? 0 : 1;
 }
-
-"""
-
 ```

@@ -135,7 +135,7 @@ A user might arrive at this code while debugging issues related to processing fi
 
 This portion of the `_fix_path_names` function implements the core logic for identifying and reconstructing valid file paths from a list of potentially fragmented strings. It iteratively checks if concatenating strings forms an existing file path and builds a list of these corrected paths. This is crucial for analyzing file system interactions in reverse engineering scenarios where path information might be broken down during data capture or logging.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/cmake/traceparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,9 +144,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- [curr_str]
+### 源代码
+```python
+[curr_str]
                 curr_str = None
                 path_found = False
             elif Path(f'{curr_str} {i}').exists():
@@ -165,8 +167,4 @@ Prompt:
         if curr_str:
             fixed_list += [curr_str]
         return fixed_list
-
-"""
-
-
 ```

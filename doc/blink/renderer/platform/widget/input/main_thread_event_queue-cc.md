@@ -157,14 +157,16 @@ This systematic approach, starting with the high-level purpose and progressively
 
 总而言之，`MainThreadEventQueue.cc` 是 Blink 渲染引擎中一个至关重要的组件，它负责高效、有序地将用户的输入传递到主线程进行处理，并与 JavaScript, HTML, CSS 的功能紧密相关。理解它的工作原理对于编写高性能和响应迅速的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/main_thread_event_queue.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1106,7 +1108,4 @@ MainThreadEventQueue::GetCompositorThreadOnly() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

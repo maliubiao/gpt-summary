@@ -135,7 +135,7 @@ script.load()
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/test cases/osx/5 extra frameworks/stat.c`  是一个用于测试 Frida 在 macOS 环境下处理额外 Framework 依赖能力的简单 C 代码文件。它通过包含 LDAP 头文件模拟了这种场景，并提供了一个可被 Frida 插桩的简单函数 `func`。分析这类测试用例可以帮助开发者理解 Frida 的工作原理，并为解决实际逆向分析中遇到的问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/osx/5 extra frameworks/stat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,13 +143,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // https://github.com/mesonbuild/meson/issues/10002
 #include <ldap.h>
 
 int func(void) { return 933; }
-
-"""
-
 ```

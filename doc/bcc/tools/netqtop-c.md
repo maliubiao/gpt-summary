@@ -73,7 +73,7 @@ RX Queue 2: Packets=500,  TotalSize=2MB,  2K=300,  16K=200
 
 ### 总结
 此工具通过eBPF在内核关键路径埋点，高效统计指定网络接口的队列负载和包大小分布，适用于网络性能调优和瓶颈分析。用户需注意设备名称配置、权限和内核兼容性。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/tools/netqtop.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -82,9 +82,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
-
+### 源代码
+```c
 #include <linux/netdevice.h>
 #include <linux/ethtool.h>
 #if IFNAMSIZ != 16 
@@ -211,7 +212,4 @@ TRACEPOINT_PROBE(net, netif_receive_skb){
     
     return 0;
 }
-
-"""
-
 ```

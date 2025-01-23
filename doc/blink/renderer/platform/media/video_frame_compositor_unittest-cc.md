@@ -135,14 +135,16 @@ By following these steps, and continuously refining the understanding based on t
 
 总而言之，`video_frame_compositor_unittest.cc` 通过详尽的测试用例，确保 `VideoFrameCompositor` 能够正确地管理和提交视频帧，处理各种状态变化，并与 Chromium 的其他组件（如渲染流水线和 JavaScript API 实现）进行良好的交互。 这些测试对于保证视频播放功能的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/video_frame_compositor_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -697,7 +699,4 @@ TEST_F(VideoFrameCompositorTest, OnContextLost) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

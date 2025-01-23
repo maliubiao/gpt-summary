@@ -92,7 +92,7 @@ def __lldb_init_module(debugger, internal_dict):
 3. **线程分析**：使用线程分析工具检查 `ExitMonitor` 中的线程同步是否正确，避免竞态条件或死锁。
 
 通过以上步骤，用户可以逐步调试和验证 `ExitMonitor` 的功能，确保程序在退出时能够正确执行清理和准备操作。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/payload/exit-monitor.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class ExitMonitor : Object, Gum.InvocationListener {
 		public weak ExitHandler handler {
@@ -239,7 +241,4 @@ namespace Frida {
 		public abstract void prepare_to_exit_sync ();
 	}
 }
-
-"""
-
 ```

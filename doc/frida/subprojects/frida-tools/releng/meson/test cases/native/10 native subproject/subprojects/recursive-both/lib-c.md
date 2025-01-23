@@ -126,7 +126,7 @@ if (Process.platform === 'linux' || Process.platform === 'android') {
 
 总而言之，这个 `lib.c` 文件虽然功能简单，但在 Frida 的测试框架中扮演着验证子项目构建和 Frida 与 native 代码交互是否正常运作的角色。它也为学习 Frida 的基本 hook 功能提供了一个简单易懂的例子。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/native/10 native subproject/subprojects/recursive-both/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,12 +134,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "recursive-both.h"
 
 int rcb(void) { return 7; }
-
-"""
-
 ```

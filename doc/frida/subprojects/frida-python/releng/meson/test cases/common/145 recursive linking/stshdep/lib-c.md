@@ -147,7 +147,7 @@ int get_shnodep_value(void) {
 
 总而言之，这个简单的 C 代码文件是 Frida 为了测试其在处理共享库递归链接能力而设计的一个示例。理解它的功能需要一定的共享库、动态链接和 Frida 的知识。对于逆向工程师来说，这种代码是他们经常需要面对和分析的对象，通过 Frida 等工具可以更有效地理解其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/145 recursive linking/stshdep/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "../lib.h"
 
 int get_shnodep_value (void);
@@ -165,7 +167,4 @@ SYMBOL_EXPORT
 int get_stshdep_value (void) {
   return get_shnodep_value ();
 }
-
-"""
-
 ```

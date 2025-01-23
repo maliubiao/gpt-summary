@@ -68,15 +68,17 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 这部分 `LocalFrame` 的代码主要负责管理框架在卸载、打印和捕获等关键生命周期阶段的行为。它与 JavaScript、HTML 和 CSS 紧密相关，通过触发事件、操作 DOM 结构、调整样式和媒体类型等方式进行交互。代码中包含了对线程安全、重入问题以及资源清理的考虑，并提供了一些机制来处理与用户交互和性能优化相关的任务，例如 BackForwardCache 的管理和事件处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 n() ==
           ClientNavigationReason::kAnchorClick) {
     return false;
@@ -950,8 +952,4 @@ void LocalFrame::SetInvalidationForCapture(bool capturing) {
   for (Frame* child = Tree().FirstChild(); child;
        child = child->Tree().NextSibling()) {
     if (auto* child_local_frame = DynamicTo<LocalFrame>(child)) {
-  
-"""
-
-
 ```

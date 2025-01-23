@@ -85,7 +85,7 @@ The user wants a summary of the functionality of the `element_test.cc` file in t
 
 这部分 `element_test.cc` 文件的主要功能是测试 `Element` 类在各种场景下的核心行为，特别是与布局、几何属性计算、样式应用以及部分属性操作相关的特性。它通过创建模拟的 HTML 结构和 CSS 样式，并断言 `Element` 类的方法返回预期的结果，来保证 Blink 引擎在处理这些核心 Web API 时的正确性。 其中重点测试了焦点管理、sticky 元素的行为、以及 SVG 元素的边界计算等关键功能。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -93,8 +93,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -912,7 +914,4 @@ TEST_F(ElementTest, ParseFocusgroupAttrWrapCorrectly) {
 
   FocusgroupFlags fg4_flags = fg4->GetFocusgroupFlags();
   ASSERT_NE(fg4_flag
-"""
-
-
 ```

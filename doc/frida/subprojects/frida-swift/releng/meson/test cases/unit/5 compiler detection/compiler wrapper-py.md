@@ -119,7 +119,7 @@ python3 compiler\ wrapper.py /usr/bin/gcc -v
 
 `compiler wrapper.py` 是一个简单的 Python 脚本，它作为 Frida 构建系统中的一个工具，用于包装和执行编译器命令。它的主要功能是提供一个可控的环境来测试或模拟编译器行为，这对于确保 Frida 在不同平台和编译器配置下的正确构建至关重要。虽然脚本本身较为高层，但它在构建能够进行底层二进制操作的 Frida 工具链中扮演着一个幕后角色。理解它的功能有助于调试 Frida 的构建问题，并更好地理解 Frida 的构建流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/5 compiler detection/compiler wrapper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,15 +127,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 import subprocess
 
 sys.exit(subprocess.call(sys.argv[1:]))
-
-"""
-
 ```

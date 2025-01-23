@@ -119,7 +119,7 @@ By following these steps, breaking down the code, and contextualizing it within 
 
 总结来说，`lib2.c` 作为一个简单的测试用例，旨在验证 Frida 在特定构建配置（例如使用 PCH 和 `linkwhole` 标志）下注入代码和执行函数的能力。开发者通过构建系统生成这个库，并在测试环境中加载和执行它，以便验证 Frida 的正确性。当出现问题时，源代码就成为了调试的重要线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/13 pch/linkwhole/lib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,15 +127,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 void func2() {
     const char *cl = GetCommandLineA();
     printf("Command line was: %s\n", cl);
 }
-
-"""
-
 ```

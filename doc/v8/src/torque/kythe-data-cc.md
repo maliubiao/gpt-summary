@@ -121,15 +121,17 @@ const sub = str.substring(1, 3); // 调用了 String.prototype.substring
 
 总而言之，`v8/src/torque/kythe-data.cc` 是 V8 编译过程中的一个关键组件，它负责提取和组织 Torque 代码中的语义信息，以便构建强大的代码索引，帮助开发者理解 V8 引擎的内部实现。 它通过记录常量、函数、类字段、变量绑定和类型等关键代码元素的定义和使用关系来实现这一目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/kythe-data.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/kythe-data.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ void KytheData::AddTypeUse(SourcePosition use_position,
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

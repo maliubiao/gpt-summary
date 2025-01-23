@@ -134,15 +134,17 @@ By following these steps, you can systematically analyze a C++ source file withi
 
 总而言之，`track_default.cc` 文件定义了 Blink 内部用于管理媒体源扩展中默认轨道信息的关键数据结构和创建逻辑，它通过参数校验来确保数据的有效性，并最终影响浏览器如何处理和呈现媒体内容。 开发者在使用 MSE API 时，需要注意提供合法的轨道类型和种类，否则可能会触发该文件中定义的校验逻辑并导致错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasource/track_default.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -256,7 +258,4 @@ TrackDefault::TrackDefault(const V8TrackDefaultType& type,
       kinds_(kinds) {}
 
 }  // namespace blink
-
-"""
-
 ```

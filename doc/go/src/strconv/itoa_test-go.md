@@ -175,7 +175,7 @@ s := Itoa(12345678) // 假设的输入
 
 总而言之，`go/src/strconv/itoa_test.go` 这部分代码是 `strconv` 包中用于测试整数转换为字符串功能的测试文件，它通过定义一系列的测试用例，验证了 `FormatInt`、`AppendInt`、`FormatUint`、`AppendUint` 和 `Itoa` 等函数的正确性，并包含了对非法输入场景的测试。使用者在使用这些函数时需要注意提供合法的进制参数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strconv/itoa_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -183,8 +183,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -428,9 +430,4 @@ func BenchmarkAppendUintVarlen(b *testing.B) {
 }
 
 var BenchSink int // make sure compiler cannot optimize away benchmarks
-
-"""
-
-
-
 ```

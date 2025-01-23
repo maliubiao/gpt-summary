@@ -155,15 +155,17 @@ Now, let's address the user's specific requests:
 
 这部分代码定义了一个名为 `ColumnLayoutAlgorithmTest` 的测试类，并包含了多个独立的测试用例，用于验证 Blink 引擎的 `ColumnLayoutAlgorithm` 在处理各种基本的多列布局场景时的正确性。这些测试用例涵盖了空元素、块级元素在单列和多列中的分布、以及一些简单的 CSS 属性（如 `width`, `height`, `columns`, `column-gap`）对布局的影响。  它为后续更复杂的测试用例奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/column_layout_algorithm_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1308,8 +1310,4 @@ TEST_F(ColumnLayoutAlgorithmTest, BreakInsideAvoidTallBlock) {
     <style>
       #parent {
         columns: 3;
-        
-"""
-
-
 ```

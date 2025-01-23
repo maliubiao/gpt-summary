@@ -200,14 +200,16 @@ By following these steps and iterating on the approach, we arrive at a comprehen
 
 总而言之，`html_meta_element.cc` 文件在 Blink 渲染引擎中扮演着至关重要的角色，它负责理解和应用 HTML 文档中 `<meta>` 标签提供的各种元数据，从而影响页面的渲染、行为、安全性以及与外部服务的交互。正确理解和使用 `<meta>` 标签对于 Web 开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_meta_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -1023,7 +1025,4 @@ void HTMLMetaElement::FinishParsingChildren() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

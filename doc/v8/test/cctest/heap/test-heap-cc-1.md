@@ -113,7 +113,7 @@ Here's a breakdown of the steps:
 
 这段代码主要针对 V8 堆的底层机制进行测试，涵盖了 `JSArray`、`JSObject`、字符串等对象的内存分配、拷贝、内部化，以及 V8 的关键内存管理特性，如堆迭代、bytecode 刷新、编译缓存和近堆限制回调。这些测试确保了 V8 在进行内存管理和代码优化时的正确性和健壮性。开发者通常不会直接使用这些 C++ API，但理解这些测试背后的概念有助于更好地理解 V8 的工作原理，以及 JavaScript 代码的性能和内存行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/heap/test-heap.cc以.tq结尾，那它是个v8 torque源代码，
@@ -121,8 +121,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ory->InternalizeUtf8String("Array");
   Handle<Object> fun_obj =
       Object::GetProperty(isolate, CcTest::i_isolate()->global_object(), name)
@@ -1024,7 +1026,4 @@ void CompilationCacheRegeneration(bool retain_root_sfi, bool flush_root_sfi,
 
   {
     v8::HandleScope scope(CcTest::is
-"""
-
-
 ```

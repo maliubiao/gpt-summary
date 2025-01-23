@@ -144,7 +144,7 @@ Extracted Long Tag (truncated): 4294967295 (0xFFFFFFFF)
 
 `go/src/runtime/tagptr_32bit.go` 中的代码实现了带标签指针的核心功能，允许 Go 运行时在 32 位架构上高效地将少量元数据与指针关联起来。这通常用于优化内存使用和对象管理，例如在垃圾回收过程中存储对象的状态或类型信息。使用者需要注意标签的位数限制，避免信息丢失。 这段代码是 Go 运行时内部实现的细节，普通 Go 开发者通常不需要直接使用它。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/tagptr_32bit.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -152,8 +152,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -184,9 +186,4 @@ func (tp taggedPointer) pointer() unsafe.Pointer {
 func (tp taggedPointer) tag() uintptr {
 	return uintptr(tp)
 }
-
-"""
-
-
-
 ```

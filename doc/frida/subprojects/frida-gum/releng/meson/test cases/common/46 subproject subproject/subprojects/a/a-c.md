@@ -135,7 +135,7 @@ This systematic approach, combining code understanding with knowledge of Frida a
 
 总而言之，这个简单的 C 代码文件虽然功能单一，但在 Frida 这样的动态 instrumentation 工具的上下文中，它扮演着测试和演示符号导出等重要概念的角色，同时也为逆向工程师提供了可能的 hook 点。理解这样的代码片段有助于深入理解 Frida 的工作原理以及动态链接和符号导出的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/46 subproject subproject/subprojects/a/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2(void);
 
 #if defined _WIN32 || defined __CYGWIN__
@@ -159,7 +161,4 @@ int func2(void);
 #endif
 
 int DLL_PUBLIC func(void) { return func2(); }
-
-"""
-
 ```

@@ -208,15 +208,17 @@ By following these steps, systematically analyzing the code, and considering the
 
 总而言之，`moqt_probe_manager.cc` 是 Chromium 中负责主动进行网络探测以评估 MoQT 连接性能的关键组件，它通过创建和管理特殊的 WebTransport 流来实现这一功能，并与上层的 JavaScript 代码间接交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_probe_manager.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -354,7 +356,4 @@ void MoqtProbeManager::ClosePendingProbe(ProbeStatus status) {
       ProbeResult{probe->id, status, probe->probe_size, now - probe->start});
 }
 }  // namespace moqt
-
-"""
-
 ```

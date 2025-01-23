@@ -164,7 +164,7 @@ func main() {
 
 `shortnames.go` 文件是 `pprof` 工具中一个用于生成简洁名称的关键组件。它通过正则表达式分割文件名和函数名，并返回一个按长度排序的缩略名列表，以便在报告中更清晰地展示信息。这个文件本身不处理命令行参数，但其功能会被 `pprof` 的其他部分调用，以根据用户的配置生成相应的报告。 理解其缩略名生成规则有助于用户更好地理解 `pprof` 的输出。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/report/shortnames.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -172,8 +172,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -233,9 +235,4 @@ func allSuffixes(name string, re *regexp.Regexp) []string {
 	}
 	return result
 }
-
-"""
-
-
-
 ```

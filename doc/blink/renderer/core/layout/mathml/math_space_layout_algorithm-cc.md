@@ -146,14 +146,16 @@ By following this structured approach, one can effectively analyze and explain t
 
 总而言之，`math_space_layout_algorithm.cc` 专注于精确地计算和布局 MathML 中的空白元素，确保数学公式能够正确地呈现。它与 HTML 中 `<mspace>` 元素的使用紧密相关，并受到 CSS 样式的影响，同时也可以通过 JavaScript 进行动态操作。理解其功能有助于开发者更好地控制 MathML 内容的呈现效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/mathml/math_space_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ MinMaxSizesResult MathSpaceLayoutAlgorithm::ComputeMinMaxSizes(
 }
 
 }  // namespace blink
-
-"""
-
 ```

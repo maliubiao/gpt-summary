@@ -147,7 +147,7 @@ First envvar is wrong. wrong-value
 
 如果 `env2vars.c` 测试失败，它提供了一个明确的线索：某些关键的环境变量没有被设置为预期值。 这可以帮助开发者缩小问题范围，集中精力检查环境变量的配置和传递过程，而不是深入到 Frida Swift 的复杂代码中。  例如，如果 "First envvar is wrong"，开发者会首先检查 Meson 的测试配置中 "first" 环境变量的设置是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/41 test args/env2vars.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -180,7 +182,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

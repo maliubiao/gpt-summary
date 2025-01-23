@@ -184,15 +184,17 @@ This systematic approach, breaking down the code, analyzing its components, and 
 
 总而言之，`net/socket/tcp_server_socket.cc` 是 Chromium 网络栈中负责服务器端 TCP 连接的核心组件。虽然普通用户或前端 JavaScript 开发者不会直接操作这个类，但理解它的功能对于理解网络通信的底层原理以及调试网络问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/tcp_server_socket.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -341,7 +343,4 @@ void TCPServerSocket::OnAcceptCompleted(
 }
 
 }  // namespace net
-
-"""
-
 ```

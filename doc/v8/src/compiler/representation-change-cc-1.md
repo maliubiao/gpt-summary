@@ -150,7 +150,7 @@ console.log(-0 == null); // 输出 false
 
 作为系列文章的第二部分，这段代码展示了 V8 编译器中处理值表示形式转换的**核心机制**。它详细说明了如何在不同的机器表示之间进行转换，并考虑了类型信息和使用上下文。这部分代码是 V8 优化管道中的关键环节，确保 JavaScript 代码能够以高效的机器码执行。它集中在**具体的转换逻辑和操作实现**上，为后续的代码生成阶段奠定了基础。  前面（第一部分）可能介绍了 `RepresentationChanger` 的整体架构和调用流程，而后面（第三部分）可能会涉及更高级的优化或与代码生成相关的方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/representation-change.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/representation-change.cc以.tq结尾，那它是个v8 torque源代码，
@@ -158,8 +158,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 graph()->common()->DeadValue(MachineRepresentation::kFloat64),
             unreachable);
       }
@@ -904,7 +906,4 @@ const Operator* RepresentationChanger::Float64OperatorFor(
       return machine()->Float64Add();
     case IrOpcode::kSpeculativeNumberSubtract:
     c
-"""
-
-
 ```

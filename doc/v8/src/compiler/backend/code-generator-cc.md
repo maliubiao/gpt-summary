@@ -191,7 +191,7 @@ multiply("hello"); // 第二次调用，x 是字符串，导致之前优化的�
 
 到目前为止，我们可以总结出 `v8/src/compiler/backend/code-generator.cc` 的主要功能是 **作为 V8 优化编译器的后端核心组件，负责将优化的中间表示转换为目标机器的汇编代码。** 它处理指令块和单个指令，生成架构相关的汇编代码，管理栈帧和寄存器，处理控制流、函数调用、去优化、异常和跳转表，并生成必要的元数据。 它生成的代码直接执行 JavaScript 代码，并且需要处理由于 JavaScript 的动态特性可能导致的类型假设失败等情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/code-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/code-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -199,8 +199,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1062,7 +1064,4 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleInstruction(
       break;
     }
     c
-"""
-
-
 ```

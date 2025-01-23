@@ -133,7 +133,7 @@ Frida 是一个动态插桩工具，常用于逆向工程。这个测试文件�
 
 这部分 `allplatformstests.py` 脚本的主要功能是 **验证 Frida 构建系统（基于 Meson）在处理配置、依赖、代码生成和项目信息内省等关键构建环节的正确性**。它通过模拟各种场景和输入，断言 Meson 的行为是否符合预期，从而确保 Frida 能够在不同的平台上稳定可靠地构建出来。 这对于 Frida 作为一个跨平台动态插桩工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 | .*WARNING: Project targets '!=0.40'.*'0.44.0': disabler")
         # Subproject has a new-enough meson_version, no warning
         self.assertNotRegex(out, "WARNING: Project targets.*Python")
@@ -884,8 +886,5 @@ Prompt:
             i['filename'] = [os.path.relpath(x, self.builddir) for x in i['filename']]
             for k in ('install_filename', 'dependencies', 'win_subsystem'):
                 if k in i:
-                    del 
-"""
-
-
+                    del
 ```

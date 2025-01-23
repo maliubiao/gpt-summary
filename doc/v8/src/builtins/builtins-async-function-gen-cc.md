@@ -186,15 +186,17 @@ This code deals with the underlying implementation, but understanding it can hel
 
 `v8/src/builtins/builtins-async-function-gen.cc` is a crucial C++ file in V8 that implements the fundamental mechanics of JavaScript's `async` and `await`. It handles the creation, suspension, and resumption of asynchronous functions, and manages the interaction with promises. While not a Torque file itself, it leverages the CodeStubAssembler, a framework often associated with Torque in V8's built-in functions. Understanding this code provides insight into how V8 efficiently executes asynchronous JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-async-function-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-async-function-gen.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -419,7 +421,4 @@ TF_BUILTIN(AsyncFunctionAwait, AsyncFunctionBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

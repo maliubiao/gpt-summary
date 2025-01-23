@@ -235,15 +235,17 @@ func main() {
 
 总的来说，这段代码是一个精心设计的最小化用例，用于触发 Go 编译器中的一个特定 Bug。理解其功能需要关注 Go 语言中接口、结构体、方法、goroutine 和多返回值函数的概念。实际使用者在编写类似代码时需要注意通道的方向、初始化以及 goroutine 的同步。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4529.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compile
 
 // Copyright 2012 The Go Authors. All rights reserved.
@@ -277,9 +279,4 @@ func Init(a string, b *A, c interface {
 }
 
 func (a *A) c(b <-chan M, _ chan<- M) {}
-
-"""
-
-
-
 ```

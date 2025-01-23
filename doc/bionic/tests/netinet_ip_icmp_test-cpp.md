@@ -207,7 +207,7 @@ if __name__ == '__main__':
 
 总而言之，`bionic/tests/netinet_ip_icmp_test.cpp` 虽然是一个简单的测试文件，但它验证了 Android 系统网络通信基础结构的关键部分，与 Android 的网络功能息息相关。 通过理解其功能和相关的系统调用，我们可以更好地理解 Android 的底层网络机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/netinet_ip_icmp_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -218,8 +218,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2018 The Android Open Source Project
  *
@@ -250,7 +252,4 @@ TEST(netinet_ip_icmp, struct_icmphdr) {
   ASSERT_EQ(0U, hdr.un.gateway);
   ASSERT_EQ(0, hdr.un.frag.mtu);
 }
-
-"""
-
 ```

@@ -306,7 +306,7 @@ Interceptor.attach(Module.findExportByName(null, "open"), {
 
 **注意:**  Hook 系统调用和设备文件交互可能需要 root 权限。调试 FUSE 涉及内核和用户空间多个组件，可能需要一定的 Linux 系统编程和 FUSE 协议知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/fuse.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -317,8 +317,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -955,7 +957,4 @@ struct fuse_supp_groups {
   uint32_t groups[];
 };
 #endif
-
-"""
-
 ```

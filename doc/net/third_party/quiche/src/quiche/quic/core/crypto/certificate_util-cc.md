@@ -163,15 +163,17 @@ During this process, I might revisit parts of the code if I'm unsure about somet
 
 总而言之，`certificate_util.cc` 提供了一种在 Chromium 的 QUIC 实现中创建自签名证书的方法。虽然普通用户不会直接调用这个文件中的函数，但其生成的结果在网络安全和 Web 开发中扮演着重要的角色，并与 JavaScript 代码的执行环境间接相关。理解这个文件的功能有助于理解 Chromium 网络栈中证书处理的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/certificate_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -455,7 +457,4 @@ std::string CreateSelfSignedCertificate(EVP_PKEY& key,
 }
 
 }  // namespace quic
-
-"""
-
 ```

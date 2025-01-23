@@ -149,15 +149,17 @@ This systematic approach allows you to dissect a complex test file, understand i
 
 总而言之，`module_script_loader_test.cc` 是一个至关重要的测试文件，它确保了 Chromium Blink 引擎能够可靠地加载和处理 JavaScript 和 JSON 模块，这是现代 Web 开发的基础。通过各种测试用例，它覆盖了模块加载的不同场景，帮助开发者避免常见的错误，并为调试模块加载问题提供了重要的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/modulescript/module_script_loader_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -702,7 +704,4 @@ TEST_F(ModuleScriptLoaderTest, FetchURL_OnWorklet) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

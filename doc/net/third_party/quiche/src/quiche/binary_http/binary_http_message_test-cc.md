@@ -146,15 +146,17 @@ request.AddHeaderField({"User-Agent", "MyWebApp/1.0"})
 
 因此，`binary_http_message_test.cc` 文件是开发者理解和调试二进制 HTTP 消息处理逻辑的关键资源。它提供了大量的示例，展示了 `BinaryHttpRequest` 和 `BinaryHttpResponse` 类的正确用法，并可以帮助开发者验证他们的代码是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/binary_http/binary_http_message_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/binary_http/binary_http_message.h"
 
 #include <cstdint>
@@ -946,7 +948,4 @@ TEST(BinaryHttpResponse, Padding) {
 }
 
 }  // namespace quiche
-
-"""
-
 ```

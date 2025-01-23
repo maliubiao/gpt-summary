@@ -216,7 +216,7 @@ sys.stdin.read()
 
 通过运行这个脚本并在 Android 设备上执行挂载操作（例如插入 USB 驱动器），你可以在 Frida 客户端看到 `mount` 系统调用的相关信息，从而了解 Android Framework 或底层服务是如何调用 `mount` 来处理文件系统操作的。要更深入地调试魔数的识别过程，可能需要 hook 更底层的内核函数，但这需要对内核有更深的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/magic.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -227,8 +227,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -324,7 +326,4 @@ Prompt:
 #define SECRETMEM_MAGIC 0x5345434d
 #define PID_FS_MAGIC 0x50494446
 #endif
-
-"""
-
 ```

@@ -177,7 +177,7 @@ Users typically don't interact with these AST files directly. However, their act
 
 The `__init__.py` file in this context is a foundational piece of Frida's build system. It organizes and exposes tools for working with the abstract representation of the build process defined by Meson. While not directly involved in reverse engineering the *target application*, it's crucial for understanding and potentially modifying *Frida itself*, which is a fundamental tool for dynamic analysis and reverse engineering. Understanding these AST tools can be invaluable for anyone wanting to delve deeper into Frida's internals or customize its build process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/ast/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -210,7 +212,4 @@ from .introspection import IntrospectionInterpreter, BUILD_TARGET_FUNCTIONS
 from .visitor import AstVisitor
 from .postprocess import AstConditionLevel, AstIDGenerator, AstIndentationGenerator
 from .printer import AstPrinter, AstJSONPrinter
-
-"""
-
 ```

@@ -127,7 +127,7 @@ By following these steps, we can systematically analyze the code snippet and pro
 
 总而言之，这个简单的 C 代码片段在 Frida 的上下文中，主要用于测试和演示 Frida 与目标进程中的 C 代码以及外部 C 依赖库（如 zlib）的互操作性。它为更复杂的逆向工程任务奠定了基础，例如 hook 库函数、监控程序行为和理解程序内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/rust/13 external c dependencies/c_accessing_zlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <string.h>
 #include <zlib.h>
@@ -147,7 +149,4 @@ void c_accessing_zlib(void) {
     memset(&zstream, 0, sizeof(zstream));
     inflateInit(&zstream);
 }
-
-"""
-
 ```

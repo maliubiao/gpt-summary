@@ -133,7 +133,7 @@ By following these steps, a comprehensive and accurate answer can be generated t
 
 总而言之，这段代码是 Frida 构建系统中关于 D 语言编译器的重要配置部分，它定义了如何使用 DMD 编译器将 D 语言代码编译和链接成最终的二进制文件，并考虑了跨平台和不同架构的需求。理解这段代码对于调试 Frida 的构建过程，特别是当涉及到 D 语言组件时，至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/d.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,9 +142,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-         return ['phobos64.lib']
+### 源代码
+```python
+return ['phobos64.lib']
             elif self.arch == 'x86_mscoff':
                 return ['phobos32mscoff.lib']
             return ['phobos.lib']
@@ -200,8 +202,4 @@ Prompt:
 
     def rsp_file_syntax(self) -> RSPFileSyntax:
         return RSPFileSyntax.MSVC
-
-"""
-
-
 ```

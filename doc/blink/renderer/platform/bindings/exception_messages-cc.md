@@ -155,14 +155,16 @@ This structured approach, moving from a general understanding to specific detail
 
 总而言之，`exception_messages.cc` 是 Blink 引擎中一个关键的模块，它负责生成用户友好的、信息丰富的错误消息，帮助开发者调试 JavaScript 代码，并理解在与浏览器环境交互时可能遇到的问题。它通过提供一系列预定义的错误消息模板和上下文添加机制，使得错误报告更加一致和易于理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/exception_messages.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -531,7 +533,4 @@ String ExceptionMessages::FormatNumber<double>(double number) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

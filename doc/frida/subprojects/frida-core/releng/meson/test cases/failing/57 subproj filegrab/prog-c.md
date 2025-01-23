@@ -116,7 +116,7 @@ This detailed breakdown shows how, even with seemingly trivial code, a deeper un
 
 虽然 `prog.c` 本身是一个非常简单的程序，但在 Frida 的测试环境中，它被用作一个最小化的目标，用于测试 Frida 的特定功能（如文件抓取）在处理简单子进程时的行为。将其放在 "failing" 目录下表明这个测试用例旨在暴露或验证 Frida 在特定场景下的问题。开发者通过分析这个简单的程序以及相关的测试配置和 Frida 脚本，可以定位并修复 Frida Core 中的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/57 subproj filegrab/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,10 +124,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) { return 0; }
-
-"""
-
 ```

@@ -110,11 +110,13 @@ console.log(result2); // 输出 12， 并且是执行了优化后的代码。
 
 `v8/src/codegen/arm64/cpu-arm64.cc` 文件为 V8 引擎在 ARM64 架构上提供了必要的底层 CPU 操作，特别是指令缓存的管理。`FlushICache` 函数是确保 V8 能够正确执行动态生成的机器码的关键，这直接关系到 JavaScript 代码的执行效率和正确性。虽然 JavaScript 开发者无法直接触及这些底层操作，但它们是 V8 引擎高效运行 JavaScript 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/cpu-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ void CpuFeatures::FlushICache(void* address, size_t length) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_ARM64
-
-"""
-
 ```

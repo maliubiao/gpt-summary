@@ -143,7 +143,7 @@ if (a > b) { // 底层可能使用比较指令设置条件码
 
 希望这个详细的分析能够帮助你理解 `v8/src/execution/s390/simulator-s390.cc` 文件的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/s390/simulator-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/s390/simulator-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -151,9 +151,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共10部分，请归纳一下它的功能
+```
 
-"""
-  return length;
+### 源代码
+```cpp
+return length;
 }
 
 EVALUATE(BXLE) {
@@ -1837,7 +1839,4 @@ EVALUATE(MEEBR) {
 
 EVALUATE(KDBR) {
   UNIMPLEMENT
-"""
-
-
 ```

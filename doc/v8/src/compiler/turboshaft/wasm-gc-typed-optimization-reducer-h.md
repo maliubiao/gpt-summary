@@ -225,15 +225,17 @@ block #4:
 
 总而言之，`v8/src/compiler/turboshaft/wasm-gc-typed-optimization-reducer.h` 定义了一个关键的编译器组件，它通过静态分析 WebAssembly 代码的类型信息来优化性能，减少冗余的类型检查和转换，并有助于及早发现潜在的类型错误。 它的工作使得 V8 能够更高效地执行 WebAssembly 代码，特别是那些使用了 GC 特性的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-gc-typed-optimization-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/wasm-gc-typed-optimization-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -675,7 +677,4 @@ class WasmGCTypedOptimizationReducer : public Next {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_WASM_GC_TYPED_OPTIMIZATION_REDUCER_H_
-
-"""
-
 ```

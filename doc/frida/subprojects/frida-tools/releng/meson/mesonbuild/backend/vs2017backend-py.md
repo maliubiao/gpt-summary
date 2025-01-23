@@ -144,7 +144,7 @@ By following these steps, the comprehensive analysis provided in the initial exa
 
 通过分析这些生成的项目文件，结合 Meson 的日志输出，可以帮助定位构建问题的根源，例如是编译器配置错误、链接器配置错误，还是缺少必要的依赖项。`vs2017backend.py` 的代码逻辑直接影响了这些项目文件的内容，因此理解它的功能对于调试 Frida 的构建过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/backend/vs2017backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -213,7 +215,4 @@ class Vs2017Backend(Vs2010Backend):
             optargs = [x for x in file_args['c'] if x.startswith('/std:c')]
             if optargs:
                 ET.SubElement(clconf, 'LanguageStandard_C').text = optargs[0].replace("/std:c", "stdc")
-
-"""
-
 ```

@@ -74,12 +74,14 @@ try {
 
 The `e.stack` property contains a string representation of the call stack at the point the error was thrown. The information to generate this stack trace is gathered by V8 by iterating through the stack frames, a process facilitated by the code in `frames.cc`. It would identify the `inner` and `outer` function calls as distinct frames on the stack.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/frames.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1822,7 +1824,4 @@ void WasmFrame::Iterate(RootVisitor* v) const {
   //  |   Type Marker           |                                        |
   //  |- - - - - - - - - - - - -|                              frame_header_size
   //  |
-"""
-
-
 ```

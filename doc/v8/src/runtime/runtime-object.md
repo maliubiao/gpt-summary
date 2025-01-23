@@ -161,11 +161,13 @@ console.log(obj.g); // 输出 undefined
 
 `v8/src/runtime/runtime-object.cc` 是 V8 引擎中一个至关重要的文件，它实现了 JavaScript 对象模型的底层操作。JavaScript 代码中对对象的各种操作最终都会映射到这个文件中定义的 C++ 运行时函数，从而保证了 JavaScript 语法的正确执行和高效运行。理解这个文件中的代码有助于深入理解 V8 引擎的工作原理以及 JavaScript 对象的内部结构和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-object.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1852,7 +1854,4 @@ RUNTIME_FUNCTION(Runtime_SwissTableDetailsAt) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

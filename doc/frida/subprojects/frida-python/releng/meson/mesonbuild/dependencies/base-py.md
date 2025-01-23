@@ -94,7 +94,7 @@ Frida 是一个动态插桩工具，广泛应用于软件逆向工程。此文�
 
 总而言之，`frida/subprojects/frida-python/releng/meson/mesonbuild/dependencies/base.py` 文件是 Frida 项目构建过程中处理外部依赖项的关键组件，它定义了表示和管理各种类型依赖的类和方法，并负责在构建配置阶段查找和验证这些依赖项。理解这个文件的功能对于调试与依赖项相关的构建问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/dependencies/base.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2018 The Meson development team
 # Copyright © 2024 Intel Corporation
@@ -767,7 +769,4 @@ class BuiltinDependency(ExternalDependency):
     @staticmethod
     def log_tried() -> str:
         return 'builtin'
-
-"""
-
 ```

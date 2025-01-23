@@ -198,15 +198,17 @@ TEST(StatusTest, StatusIsMatcherFailure) {
 
 总之，`v8/third_party/inspector_protocol/crdtp/status_test_support.cc` 这个文件通过提供 Google Test 匹配器，使得 V8 开发者能够编写更健壮、更可靠的测试用例，从而确保 CRDP 相关的代码能够正确处理各种操作结果和错误情况。这对于保证 Chrome 开发者工具的稳定性和功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/status_test_support.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/status_test_support.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ testing::Matcher<Status> StatusIs(Error error, size_t pos) {
   return MakeMatcher(new StatusIsMatcher(Status(error, pos)));
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

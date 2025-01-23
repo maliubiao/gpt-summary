@@ -218,15 +218,17 @@ By following these steps, we can systematically analyze the V8 source code and p
 
 理解 `v8/src/builtins/builtins-function.cc` 的功能有助于深入了解 JavaScript 函数在 V8 引擎中的实现方式，以及与之相关的性能和行为特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-function.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-function.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -501,7 +503,4 @@ BUILTIN(FunctionPrototypeToString) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -184,7 +184,7 @@ By following these steps, combining code analysis with contextual information fr
 
 总而言之，`main_static.cpp` 作为一个简单的 CUDA 程序入口点，在 Frida 的上下文中主要扮演着被分析和调试的角色。通过分析这个文件，结合 Frida 提供的动态 instrumentation 能力，可以深入理解 CUDA 代码的运行机制和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cuda/2 split/static/main_static.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int do_cuda_stuff(void);
@@ -201,7 +203,4 @@ int do_cuda_stuff(void);
 int main(void) {
   return do_cuda_stuff();
 }
-
-"""
-
 ```

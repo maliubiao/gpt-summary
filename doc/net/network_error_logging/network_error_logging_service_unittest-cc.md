@@ -186,7 +186,7 @@ NEL: {"report_to":"my-group","max_age":3600,"include_subdomains":true}
 
 总而言之，`network_error_logging_service_unittest.cc` 的第一部分主要测试了 `NetworkErrorLoggingService` 接收和处理 NEL 策略，以及根据这些策略在发生网络错误时生成基本 NEL 报告的功能。它涵盖了策略的匹配、报告内容的生成，以及与 Reporting Service 的基本交互。 同时也测试了一些边缘情况和配置选项，例如 `includeSubdomains` 指令、非 `NetworkAnonymizationKey` 场景和处理格式错误的头部等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/network_error_logging/network_error_logging_service_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1004,7 +1006,4 @@ TEST_P(NetworkErrorLoggingServiceTest, DNSFailureReportNotDowngraded) {
 
   service()->OnRequest(MakeRequestDetails(kNak_, kUrl_, ERR_NAME_NOT_RESOLVED,
                                           "
-"""
-
-
 ```

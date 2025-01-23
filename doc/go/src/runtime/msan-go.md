@@ -154,7 +154,7 @@ go build main.go
 
 总结来说，`go/src/runtime/msan.go` 是 Go 语言运行时环境中用于集成 Memory Sanitizer 的关键部分，它定义了与底层 MSan 库交互的接口，并提供了供 Go 程序员手动标记内存操作的 API。要使用 MSan 进行内存错误检测，必须在编译时通过 `-gcflags=-msan` 显式启用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/msan.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -162,8 +162,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -231,9 +233,4 @@ func msanmove(dst, src unsafe.Pointer, sz uintptr)
 //go:cgo_import_static __msan_malloc_go
 //go:cgo_import_static __msan_free_go
 //go:cgo_import_static __msan_memmove
-
-"""
-
-
-
 ```

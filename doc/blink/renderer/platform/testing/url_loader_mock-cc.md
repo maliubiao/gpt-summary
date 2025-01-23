@@ -143,14 +143,16 @@ By following these steps and iteratively refining the analysis, we arrive at a c
 
 总之，`url_loader_mock.cc` 提供了一个强大的工具，用于隔离和测试 Blink 渲染引擎中涉及网络请求的代码，避免了实际网络操作带来的不确定性和性能开销。正确使用它可以提高测试的可靠性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/url_loader_mock.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -319,7 +321,4 @@ base::WeakPtr<URLLoaderMock> URLLoaderMock::GetWeakPtr() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

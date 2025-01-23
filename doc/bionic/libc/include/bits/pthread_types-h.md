@@ -229,7 +229,7 @@ setImmediate(hook_pthread_create);
 
 通过运行这个 Frida 脚本，你可以观察到 Android Framework 或 NDK 中创建线程时传递的线程属性，从而了解系统是如何使用这些数据类型的。你可以针对不同的系统服务或应用程序进行 hook，以观察它们的多线程行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/pthread_types.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -240,8 +240,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -340,7 +342,4 @@ typedef struct {
 } pthread_spinlock_t;
 
 typedef long pthread_t;
-
-"""
-
 ```

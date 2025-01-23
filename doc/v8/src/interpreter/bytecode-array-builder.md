@@ -135,11 +135,13 @@ console.log(result);
 
 `bytecode-array-builder.cc` 文件中的 `BytecodeArrayBuilder` 类是 V8 引擎中至关重要的一个组件，它负责将 JavaScript 代码转换成可以直接在解释器中执行的字节码。理解它的功能有助于深入理解 JavaScript 代码的执行过程以及 V8 引擎的内部工作机制。它通过一系列方法来生成和组织字节码指令，管理寄存器和常量，并处理各种 JavaScript 语言结构，最终生成可执行的 `BytecodeArray`。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-array-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1913,7 +1915,4 @@ std::ostream& operator<<(std::ostream& os,
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -204,15 +204,17 @@ waitForValue();
 
 总而言之，`v8/src/builtins/builtins-sharedarraybuffer.cc` 实现了 JavaScript 中用于多线程并发编程的重要特性，它使得在 Web Workers 或 Shared Memory 环境下进行安全高效的数据共享和同步成为可能。理解这些内置函数的行为和限制对于编写正确的并发 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-sharedarraybuffer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-sharedarraybuffer.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -549,7 +551,4 @@ BUILTIN(AtomicsPause) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -143,7 +143,7 @@ EXPECT_EQ(cmp.cond, s[0]->flags_condition());
 
 总而言之，这个代码片段展示了对 ARM64 指令选择器进行细致的单元测试，以确保 V8 能够为 ARM64 架构生成正确且高效的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/arm64/instruction-selector-arm64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/arm64/instruction-selector-arm64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -151,8 +151,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 arameter(0)));
         Stream s = m.Build();
         // Cmp does not support ROR shifts.
@@ -966,7 +968,4 @@ TEST_F(InstructionSelectorTest, Word32SarWithWord32Shl) {
     ASSERT_EQ(1U, s.size());
     EXPECT_EQ(kArm64Sbfx32, s[0]->arch_opcode());
     ASSERT_EQ(3U, s[0]
-"""
-
-
 ```

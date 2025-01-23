@@ -158,15 +158,17 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`blink/renderer/core/svg/svg_polygon_element.cc` 文件是 Blink 引擎中处理 SVG `<polygon>` 元素的核心组件，负责将其定义的顶点信息转换为可供渲染的路径。它与 HTML、JavaScript 和 CSS 都有密切的关系，共同协作实现了网页上 SVG 多边形的显示。 理解这个文件的功能有助于调试与 SVG 多边形渲染相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_polygon_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -203,7 +205,4 @@ Path SVGPolygonElement::AsPath() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

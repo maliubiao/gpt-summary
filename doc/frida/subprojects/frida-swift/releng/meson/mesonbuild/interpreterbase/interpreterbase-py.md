@@ -200,7 +200,7 @@ For example, if a user gets an `InvalidArguments` error, the traceback might sho
 
 In summary, `interpreterbase.py` is the foundational component for interpreting the Meson build language within the Frida project. While it doesn't directly perform reverse engineering, it is essential for building the tools that are used for reverse engineering. It manages the execution of build scripts, handles variables and functions, and provides error reporting, making it a critical piece of Frida's development infrastructure.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/interpreterbase/interpreterbase.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -208,8 +208,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2017 The Meson development team
 
@@ -875,7 +877,4 @@ class InterpreterBase:
 
     def validate_extraction(self, buildtarget: mesonlib.HoldableObject) -> None:
         raise InterpreterException('validate_extraction is not implemented in this context (please file a bug)')
-
-"""
-
 ```

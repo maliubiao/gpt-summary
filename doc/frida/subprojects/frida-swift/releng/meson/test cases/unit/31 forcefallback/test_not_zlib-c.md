@@ -113,7 +113,7 @@ Interceptor.attach(Module.findExportByName(null, "compress_data"), {
 
 简而言之，`test_not_zlib.c` 虽然不是用户直接交互的对象，但它反映了 Frida 在面对错误假设或非预期情况时的内部处理机制。理解这些机制有助于用户更好地调试自己的 Frida 脚本，并避免一些常见的使用错误。 这个测试用例的存在表明 Frida 开发团队考虑到了各种边缘情况，并努力使 Frida 更加健壮和可靠。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/31 forcefallback/test_not_zlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <notzlib.h>
 
 int main (int ac, char **av)
@@ -131,7 +133,4 @@ int main (int ac, char **av)
     return 1;
   return 0;
 }
-
-"""
-
 ```

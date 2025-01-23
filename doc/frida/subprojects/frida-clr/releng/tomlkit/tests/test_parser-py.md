@@ -146,7 +146,7 @@ Frida 是一个动态插桩工具，常用于逆向工程、安全分析和动�
 
 总而言之，`frida/subprojects/frida-clr/releng/tomlkit/tests/test_parser.py` 这个文件虽然小巧，但对于保证 Frida 能够正确处理 TOML 配置文件至关重要。它通过各种测试用例，确保了 TOML 解析器的健壮性和正确性，从而间接地支撑了 Frida 的核心功能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/tomlkit/tests/test_parser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import pytest
 
 from tomlkit.exceptions import EmptyTableNameError
@@ -207,7 +209,4 @@ def test_parse_multiline_string_ignore_the_first_newline():
     content = 'a = """\r\nfoo\n"""'
     parser = Parser(content)
     assert parser.parse() == {"a": "foo\n"}
-
-"""
-
 ```

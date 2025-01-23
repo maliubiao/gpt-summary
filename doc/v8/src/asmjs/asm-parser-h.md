@@ -190,15 +190,17 @@ x = y + z;
 
 In summary, `v8/src/asmjs/asm-parser.h` defines a crucial component of V8 responsible for the specialized task of processing asm.js code, ensuring its validity, and translating it into the more efficient WebAssembly format. It bridges the gap between a specific subset of JavaScript and the world of low-level bytecode.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/asmjs/asm-parser.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/asmjs/asm-parser.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -613,7 +615,4 @@ class AsmJsParser {
 }  // namespace v8
 
 #endif  // V8_ASMJS_ASM_PARSER_H_
-
-"""
-
 ```

@@ -124,14 +124,16 @@ By following these steps, I could dissect the C++ code and generate a comprehens
 
 总而言之，`web_test_web_frame_widget_impl.cc` 是 Blink 渲染引擎测试基础设施的关键组成部分，它允许开发者编写细粒度的、可控的 web 页面行为测试，确保 Chromium 的渲染和交互功能的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/web_test/web_test_web_frame_widget_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -504,7 +506,4 @@ void WebTestWebFrameWidgetImpl::DidAutoResize(const gfx::Size& size) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

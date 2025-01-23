@@ -172,15 +172,17 @@ By following these steps, I could systematically break down the functionality of
 
 总而言之，`HttpRefreshScheduler` 是 Blink 引擎中一个负责处理 HTTP 刷新指令的核心组件，它通过解析 HTML `<meta>` 标签和 HTTP 头部来实现页面的自动刷新或跳转功能。理解其工作原理有助于开发者避免常见的刷新错误，并能更好地调试相关的页面行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/http_refresh_scheduler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2009, 2010 Apple Inc. All rights reserved.
  * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies)
@@ -341,7 +343,4 @@ void HttpRefreshScheduler::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

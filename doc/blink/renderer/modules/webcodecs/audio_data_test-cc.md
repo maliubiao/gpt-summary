@@ -186,7 +186,7 @@ Let's break down the code to understand its functionality and then address each 
 
 总而言之，`blink/renderer/modules/webcodecs/audio_data_test.cc` 的第一部分主要负责测试 `AudioData` 类的基本创建、内存管理和数据复制功能，确保该类在各种参数和使用场景下都能正常工作，为 WebCodecs API 在 JavaScript 中的正确使用提供保障。它涵盖了从不同来源创建 `AudioData` 对象，计算内存分配大小，以及将数据复制到外部缓冲区的各种情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/audio_data_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1054,7 +1056,4 @@ TYPED_TEST_P(AudioDataConversionTest, InterleavedToInterleaved) {
 
   {
     SCOPED_TRACE(Ty
-"""
-
-
 ```

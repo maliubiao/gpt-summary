@@ -156,15 +156,17 @@ func main() {
 
 `go/test/typeparam/issue49536.go` 本身可能不包含任何可执行的代码，它的主要作用是作为 Go 语言泛型功能的一个测试用例，用于验证特定 issue 的修复。  它的存在是 Go 语言开发和测试流程的一部分，普通用户不应该直接使用或引用它。  `package ignored` 的声明也明确了这一点。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue49536.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // compiledir
 
 // Copyright 2022 The Go Authors. All rights reserved.
@@ -172,9 +174,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

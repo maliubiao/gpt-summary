@@ -150,14 +150,16 @@ Uint16Array [ 65530, 500, 200, 10, 1 ]
 
 这段 Torque 代码的核心功能是提供一种非破坏性的排序方式，这对于需要在排序后仍然保留原始数据的场景非常有用。它与 JavaScript 的 `Array.prototype.toSorted()` 提供了相似的功能，增强了 JavaScript 中处理数组的灵活性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-to-sorted.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ transitioning javascript builtin TypedArrayPrototypeToSorted(
   return TypedArraySortCommon(copy, len, comparefn, kIsSort);
 }
 }
-
-"""
-
 ```

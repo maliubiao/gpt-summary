@@ -168,15 +168,17 @@ func main() {
 
 这段代码提供了一种使用 `unsafe` 包在 Go 语言中实现基本函数 Hook 的方法。它依赖于将目标函数的地址存储在全局变量 `HookV` 中，并在 `Hook` 函数中进行类型转换和调用。使用者需要非常小心地确保 `HookV` 始终指向一个有效的、具有正确签名的函数，否则容易导致运行时错误。由于使用了 `unsafe` 包，这段代码牺牲了一定的类型安全性和内存安全性，因此在实际应用中需要谨慎使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue34503.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -192,9 +194,4 @@ var HookV unsafe.Pointer
 func Hook(x uint64) {
 	(*(*HookFunc)(HookV))(x)
 }
-
-"""
-
-
-
 ```

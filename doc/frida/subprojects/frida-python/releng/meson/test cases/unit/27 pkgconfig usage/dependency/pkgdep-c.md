@@ -143,7 +143,7 @@ Finally, structure the answer logically, addressing each point in the user's req
 
 `pkgdep.c` 作为一个简单的测试用例，其核心功能是调用一个外部定义的函数。它在 Frida 的构建和测试流程中扮演着验证依赖管理机制是否正常工作的角色。虽然代码本身不涉及复杂的底层操作或逆向技术，但它所处的上下文环境与这些领域密切相关。 理解这段代码需要了解 `pkg-config` 的工作原理以及软件构建过程中依赖管理的重要性。用户在构建 Frida 或其 Python 绑定时遇到依赖问题，可能会以这种方式深入到代码层面进行分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/27 pkgconfig usage/dependency/pkgdep.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<pkgdep.h>
 
 int internal_thingy();
@@ -160,7 +162,4 @@ int internal_thingy();
 int pkgdep() {
     return internal_thingy();
 }
-
-"""
-
 ```

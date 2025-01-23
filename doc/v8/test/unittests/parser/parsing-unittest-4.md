@@ -173,12 +173,14 @@ myFunction(); // 输出 'Hello'
 
 总而言之，这个 C++ 文件是 V8 引擎解析器功能测试的重要组成部分，它通过大量的测试用例确保了解析器能够准确地识别合法的 JavaScript 代码，并有效地捕获各种语法错误，保证了 JavaScript 代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 "static accessor #['a'] = 0\n #b",
     "static accessor #['a'] = 0\n b(){}",
     "static accessor #['a']\n",
@@ -1906,7 +1908,4 @@ TEST_F(ParsingTest, ModuleParsingInternalsWithImportAttributes) {
     } else if (elem->index() == 3) {
       CHECK(elem->specifier()->IsOneByteEqualTo("m.js"));
       CHECK_EQ(1, elem->import_attributes()->size());
-"""
-
-
 ```

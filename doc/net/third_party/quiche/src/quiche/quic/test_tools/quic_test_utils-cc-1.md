@@ -123,7 +123,7 @@ QUIC是HTTP/3的底层传输协议。当JavaScript通过 `fetch` API 或 WebSock
 
 总而言之，`quic_test_utils.cc` 是 Chromium QUIC 协议开发和维护过程中不可或缺的一部分，它为开发者提供了强大的工具来确保 QUIC 实现的正确性和健壮性。普通用户不会直接接触到这些代码，但其背后的逻辑保证了用户在使用 Chrome 浏览器访问支持 HTTP/3 的网站时的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/quic_test_utils.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -131,9 +131,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  header.reset_flag = reset_flag;
+### 源代码
+```cpp
+header.reset_flag = reset_flag;
   header.packet_number_length = packet_number_length;
   header.packet_number = QuicPacketNumber(packet_number);
   ParsedQuicVersionVector supported_versions = CurrentSupportedVersions();
@@ -748,8 +750,4 @@ bool ParseClientVersionNegotiationProbePacket(
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

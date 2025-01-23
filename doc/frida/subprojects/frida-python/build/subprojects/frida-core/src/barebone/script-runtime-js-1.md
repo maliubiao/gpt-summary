@@ -98,7 +98,7 @@ let d = c.xor(0xFF);   // 0x300 ^ 0xFF = 0x3FF
 3. **调试**：如果用户需要调试这些操作，可以使用LLDB或Frida的调试功能来观察`BUInt64`对象的值和操作结果。
 
 通过以上步骤，用户可以逐步追踪到`BUInt64`类的实现，并理解其在不同场景下的行为。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/build/subprojects/frida-core/src/barebone/script-runtime.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -108,10 +108,9 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 Int(t);e<0n&&(e=r-(-e-1n)),this.$v=e}}add(t){return new BUInt64(this.$v+h(t))}sub(t){return new BUInt64(this.$v-h(t))}and(t){return new BUInt64(this.$v&h(t))}or(t){return new BUInt64(this.$v|h(t))}xor(t){return new BUInt64(this.$v^h(t))}shr(t){return new BUInt64(this.$v>>h(t))}shl(t){return new BUInt64(this.$v<<h(t))}not(){return new BUInt64(~this.$v)}compare(t){const r=this.$v,e=h(t);return r===e?0:r<e?-1:1}equals(t){return 0===this.compare(t)}toNumber(){return Number(this.$v)}toString(t){return this.$v.toString(t)}toJSON(){return this.$v.toString()}valueOf(){return Number(this.$v)}}function h(t){return"object"==typeof t?"$v"in t?t.$v:t.handle.$v:BigInt(t)}function u(){throw new Error("Not yet implemented by the barebone backend")}
-"""
-
-
 ```

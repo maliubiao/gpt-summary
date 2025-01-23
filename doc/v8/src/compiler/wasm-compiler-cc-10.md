@@ -127,7 +127,7 @@ In this scenario:
 
 This code snippet within `v8/src/compiler/wasm-compiler.cc` is responsible for orchestrating the suspension and resumption of WebAssembly execution when a WebAssembly function needs to wait for a JavaScript Promise to resolve. It handles the interaction with the JavaScript Promise mechanism by attaching appropriate handlers and managing the stack switching between the WebAssembly and JavaScript environments. This mechanism is crucial for enabling asynchronous operations and seamless interoperability between WebAssembly and JavaScript.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/wasm-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -135,8 +135,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第11部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eTemplate::kWasmTrapSuspendJSFrames))
             .value());
     BuildCallToRuntimeWithContext(Runtime::kThrowWasmError, native_context,
@@ -916,7 +918,4 @@ wasm::WasmCompilationResult CompileWasmImportCallWrapper(
     //--------------------------------------------------------------------------
     // Create the Graph
     //------------------------------------------------------------------
-"""
-
-
 ```

@@ -197,7 +197,7 @@ python file_contains.py config.txt "application"
 
 总而言之，`file_contains.py` 是 Frida 测试框架中的一个实用工具，用于验证文件内容，帮助开发者确保 Frida 的各个组件在修改后仍然能正确生成和处理配置文件或其他输出文件。用户接触到这个脚本通常是因为他们正在参与 Frida 的开发、调试或者扩展工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/14 configure file/file_contains.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -229,7 +231,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

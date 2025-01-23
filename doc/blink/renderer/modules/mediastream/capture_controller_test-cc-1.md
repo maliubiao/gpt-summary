@@ -153,7 +153,7 @@ Here's a breakdown of the thinking process to generate the response:
 
 总的来说，这部分代码深入测试了 `CaptureController` 如何响应和处理与鼠标滚轮事件相关的操作，确保在屏幕共享场景下，模拟或捕获用户的滚动操作能够正确地传递和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/capture_controller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 oTrack) {
   V8TestingScope v8_scope;
   CaptureController* controller =
@@ -715,8 +717,4 @@ TEST_P(CaptureControllerScrollParametersValidationTest, ValidateCoordinates) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

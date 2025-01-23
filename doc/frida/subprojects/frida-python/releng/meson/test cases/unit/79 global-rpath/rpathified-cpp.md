@@ -129,7 +129,7 @@ This thought process, starting with a basic understanding of the code and gradua
 
 因此，这个文件的存在和执行，是 Frida 项目进行动态链接相关功能测试的一个环节，旨在确保 Frida 在不同环境和配置下都能正确处理动态库的加载。 调试时，如果这个测试用例失败，开发者会重点检查构建系统对 `rpath` 的配置以及动态库的路径是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/79 global-rpath/rpathified.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,15 +137,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <yonder.h>
 #include <string.h>
 int main(int argc, char **argv)
 {
     return strcmp(yonder(), "AB54 6BR");
 }
-
-"""
-
 ```

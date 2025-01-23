@@ -132,7 +132,7 @@ Interceptor.attach(Module.findExportByName(null, "r3"), { // 假设 r3 是一个
 
 总而言之，这个 `main.c` 文件虽然简单，但在 Frida 的上下文中，它扮演着重要的角色，用于验证 Frida 在处理具有传递依赖关系的 C 代码时的正确性。它涉及到逆向分析、二进制底层知识、动态链接等概念，是理解 Frida 工作原理的一个很好的切入点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/rust/21 transitive dependencies/diamond/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,14 +140,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int r3(void);
 
 int main_func(void) {
     return r3() == 246 ? 0 : 1;
 }
-
-"""
-
 ```

@@ -160,15 +160,17 @@ while ((array = regex.exec(str)) !== null) {
 
 总结来说，`v8/src/regexp/riscv/regexp-macro-assembler-riscv.h` 是 V8 引擎中一个关键的底层组件，负责将高级的正则表达式操作转化为可以在 RISC-V 架构上执行的机器码。理解它的功能有助于深入理解 JavaScript 正则表达式的执行原理和潜在的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/riscv/regexp-macro-assembler-riscv.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/riscv/regexp-macro-assembler-riscv.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -428,7 +430,4 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerRISCV
 }  // namespace v8
 
 #endif  // V8_REGEXP_RISCV_REGEXP_MACRO_ASSEMBLER_RISCV_H_
-
-"""
-
 ```

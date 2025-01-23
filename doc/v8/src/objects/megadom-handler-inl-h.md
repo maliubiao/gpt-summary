@@ -152,15 +152,17 @@ document.body.appendChild(newDiv);
 
 `v8/src/objects/megadom-handler-inl.h` 是 V8 引擎内部用于处理 MegaDOM 对象的 C++ 头文件，它定义了相关的内联函数和访问器。它与 JavaScript 的 DOM 操作密切相关，负责高效地管理和操作 DOM 结构。虽然开发者不会直接接触这个文件，但理解其背后的原理有助于编写更高效的 JavaScript 代码。  `RELEASE_ACQUIRE_ACCESSORS` 的使用暗示了对 `MegaDomHandler` 对象的某些成员的访问需要考虑线程安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/megadom-handler-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/megadom-handler-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ RELEASE_ACQUIRE_ACCESSORS(MegaDomHandler, accessor, Tagged<MaybeObject>,
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_MEGADOM_HANDLER_INL_H_
-
-"""
-
 ```

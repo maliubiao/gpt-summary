@@ -270,7 +270,7 @@ if (Process.platform === 'android') {
 
 总而言之，`getprogname.c` 中的 `getprogname()` 函数提供了一个简单但重要的功能，用于获取当前程序的名称。它在 Android 系统中被广泛使用，并且其实现依赖于动态链接器在程序启动时的初始化工作。了解这个函数及其背后的机制对于理解 Android 系统的工作原理以及进行 Native 开发非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/gen/getprogname.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -281,8 +281,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* $OpenBSD: getprogname.c,v 1.4 2016/03/13 18:34:20 guenther Exp $ */
 /*
  * Copyright (c) 2013 Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -307,7 +309,4 @@ getprogname(void)
 {
 	return (__progname);
 }
-
-"""
-
 ```

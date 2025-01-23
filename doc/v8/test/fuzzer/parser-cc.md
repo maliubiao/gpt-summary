@@ -173,15 +173,17 @@ This step-by-step approach, starting with high-level understanding and gradually
 
 `v8/test/fuzzer/parser.cc` 是一个用于模糊测试 V8 JavaScript 解析器的重要工具。它通过生成各种输入并尝试解析它们，来发现解析器中潜在的 bug 和漏洞。虽然它主要关注解析器本身，但其生成的输入也可能反映用户在编写 JavaScript 代码时常见的错误模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/fuzzer/parser.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -282,7 +284,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
       v8::Isolate::kFullGarbageCollection);
   return 0;
 }
-
-"""
-
 ```

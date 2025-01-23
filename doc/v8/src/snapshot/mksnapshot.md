@@ -150,11 +150,13 @@ console.timeEnd("startup_with_snapshot");
 
 总而言之，`mksnapshot.cc` 是一个关键的 V8 工具，它通过将 JavaScript 代码的执行结果保存为快照，实现了 V8 引擎的快速启动和性能优化。它处理 JavaScript 代码，并将处理后的状态以 C++ 代码或二进制数据的形式存储，供 V8 引擎在启动时使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/mksnapshot.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -485,7 +487,4 @@ int main(int argc, char** argv) {
   v8::V8::DisposePlatform();
   return 0;
 }
-
-"""
-
 ```

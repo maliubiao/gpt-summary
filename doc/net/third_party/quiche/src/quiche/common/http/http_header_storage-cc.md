@@ -142,15 +142,17 @@ fetch('https://example.com', {
 
 总而言之，`HttpHeaderStorage` 是 Chromium 网络栈中一个关键的组件，它通过使用内存 arena 提供了一种高效的方式来管理 HTTP 头部信息，这对于提升网络性能至关重要。 理解它的工作原理有助于调试与网络请求和响应相关的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/http/http_header_storage.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/common/http/http_header_storage.h"
 
 #include <cstring>
@@ -209,7 +211,4 @@ size_t Join(char* dst, const Fragments& fragments,
 }
 
 }  // namespace quiche
-
-"""
-
 ```

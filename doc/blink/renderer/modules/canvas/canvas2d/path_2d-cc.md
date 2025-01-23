@@ -193,15 +193,17 @@ path.arc(50, 50, 30, 0, Math.PI * 2);
 
 总而言之，`blink/renderer/modules/canvas/canvas2d/path_2d.cc` 文件是 Blink 引擎中实现 HTML Canvas 2D API 中 `Path2D` 接口的关键部分，负责表示和管理 2D 图形路径的数据，并与 JavaScript 代码紧密协作，最终将这些路径渲染到 HTML 页面上的 `<canvas>` 元素中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/path_2d.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ void Path2D::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -169,11 +169,13 @@ for (let key in arr) {
 
 `debug-property-iterator.cc` 文件中的 `DebugPropertyIterator` 类是 V8 调试器用于深入检查 JavaScript 对象属性的关键组件。它能够遍历对象的属性，包括继承的属性，并提供属性的名称、特性、描述符等详细信息，使得调试器能够准确地反映 JavaScript 对象的内部状态。它与 JavaScript 的属性访问和反射机制 (`for...in` 循环, `Object.keys`, `Object.getOwnPropertyNames`, `Object.getOwnPropertyDescriptor`) 有着直接的对应关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-property-iterator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -431,7 +433,4 @@ void DebugPropertyIterator::CalculateNativeAccessorFlags() {
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

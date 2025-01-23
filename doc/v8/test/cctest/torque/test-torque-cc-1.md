@@ -120,7 +120,7 @@ By following this structured approach, one can effectively analyze and understan
 
 这些测试对于确保 V8 中 Torque builtins 的正确性和性能跟踪机制的准确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/torque/test-torque.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/torque/test-torque.cc以.tq结尾，那它是个v8 torque源代码，
@@ -128,8 +128,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dle<Object> result = ft.Call();
   CHECK(result.is_null());
   CHECK(isolate->has_exception());
@@ -173,8 +175,4 @@ TEST(TestIncrementUseCounterInBuiltin) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

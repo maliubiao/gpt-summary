@@ -115,7 +115,7 @@ func OptimizationOff() bool {
 
 `go/src/internal/testenv/opt.go` 的这段代码片段通过 build tags 提供了一种在编译时控制测试环境中编译器优化是否被禁用的机制。它定义了一个 `OptimizationOff()` 函数，其返回值依赖于编译时是否使用了 `noopt` 构建标签。这允许 Go 核心开发人员在测试某些特定场景时，能够灵活地开启或禁用编译器优化。使用者需要理解 build tags 的工作原理以及 `OptimizationOff()` 函数的含义，避免对其返回值的误解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/testenv/opt.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -123,8 +123,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -137,9 +139,4 @@ package testenv
 func OptimizationOff() bool {
 	return false
 }
-
-"""
-
-
-
 ```

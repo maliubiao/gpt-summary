@@ -96,12 +96,14 @@ To illustrate the JavaScript relationship, I can provide examples for Object Tem
 
 总而言之，这部分 `api.cc` 代码是 V8 引擎与外部 C++ 代码交互的关键桥梁，它提供了创建和操作 JavaScript 对象、执行代码、处理错误以及获取运行时信息的底层机制。这些功能是构建基于 V8 的应用程序和嵌入式 JavaScript 引擎的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 andle(*name),
                                  intrinsic,
                                  static_cast<i::PropertyAttributes>(attribute));
@@ -1692,7 +1694,4 @@ MaybeLocal<String> Message::GetSource(Local<Context> context) const {
   i::Isolate* i_isolate = self->GetIsolate();
   ENTER_V8_NO_SCRIPT_NO_EXCEPTION(i_isolate);
   InternalEscapableScope handle_scope(i_isolate);
-"""
-
-
 ```

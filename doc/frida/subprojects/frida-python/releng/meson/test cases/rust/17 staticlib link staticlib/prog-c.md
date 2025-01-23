@@ -113,7 +113,7 @@ By following this thought process, the comprehensive and informative answer prov
 
 总而言之，`prog.c` 在这个上下文中是一个简单的 C 程序，用于测试 Frida 在处理静态链接库时的功能。它的价值在于它与外部静态库的交互，以及它作为 Frida 动态分析目标的角色。通过分析这个简单的示例，可以验证 Frida 是否能够正确地 hook 和操作静态链接的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/rust/17 staticlib link staticlib/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int what_have_we_here();
@@ -130,7 +132,4 @@ int what_have_we_here();
 int main(void) {
     printf("printing %d\n", what_have_we_here());
 }
-
-"""
-
 ```

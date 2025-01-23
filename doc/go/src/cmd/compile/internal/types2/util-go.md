@@ -307,15 +307,17 @@ func main() {
 
 总结来说，`go/src/cmd/compile/internal/types2/util.go` 是 Go 编译器内部用于桥接 `go/types` 和 `types2` 差异的工具集，它包含了一些用于处理语法节点位置、变参函数、省略长度数组以及字面量常量的底层操作。它提升了代码的复用性，并为 `types2` 提供了必要的辅助功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types2/util.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -384,9 +386,4 @@ var kind2tok = [...]token.Token{
 	syntax.RuneLit:   token.CHAR,
 	syntax.StringLit: token.STRING,
 }
-
-"""
-
-
-
 ```

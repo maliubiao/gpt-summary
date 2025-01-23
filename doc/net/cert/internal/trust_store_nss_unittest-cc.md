@@ -119,7 +119,7 @@ fetch('https://example.com')
 
 总而言之，`net/cert/internal/trust_store_nss_unittest.cc` 文件的主要功能是全面测试 `TrustStoreNSS` 类与 NSS 库的交互，确保它能够正确地管理和查询系统中的证书信任信息。这对于保证 Chromium 浏览器安全地建立 HTTPS 连接至关重要。通过各种测试用例，该文件验证了 `TrustStoreNSS` 在处理不同类型的证书、不同的信任状态以及不同的 NSS 数据库配置时的行为是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/internal/trust_store_nss_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -968,7 +970,4 @@ TEST_F(TrustStoreNSSTestWithoutSlotFilter, ListCertsLooksAtAllSlots) {
     for (const auto& cert_with_trust :
          trust_store_nss_->GetAllUserAddedCerts()) {
       found_oldroot |= x509_util::CryptoBuffe
-"""
-
-
 ```

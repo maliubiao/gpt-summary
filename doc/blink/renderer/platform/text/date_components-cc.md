@@ -127,14 +127,16 @@ Let's break down the thought process to analyze the `date_components.cc` file.
 
 总而言之，`blink/renderer/platform/text/date_components.cc` 是 Blink 引擎中处理日期和时间的核心模块，它确保了浏览器能够正确地理解和操作与日期和时间相关的数据，并与 JavaScript 和 HTML 的相关特性紧密配合。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/date_components.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -696,7 +698,4 @@ String DateComponents::ToString(SecondFormat format) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

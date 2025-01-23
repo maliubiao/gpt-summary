@@ -126,15 +126,17 @@ By following these steps, I can generate a comprehensive and accurate summary of
 
 总而言之，`fullscreen.cc` 文件是 Blink 引擎中处理网页全屏功能的核心组件，它负责管理全屏状态、处理请求、触发事件，并与浏览器的其他组件协同工作，以实现符合 Web 标准的全屏体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fullscreen/fullscreen.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -952,7 +954,4 @@ void Fullscreen::ContinueRequestFullscreenAfterConditionsEnforcement(
     RequestFullscreenError error) {
   CHECK(pending);
   Document& document =
-"""
-
-
 ```

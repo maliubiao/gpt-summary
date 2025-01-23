@@ -163,11 +163,13 @@ Torque 是一种 V8 使用的**领域特定语言 (DSL)**，用于编写 V8 的�
 
 总而言之，`test-torque.tq` 文件是一个用于确保 V8 引擎的 Torque 实现正确无误的测试套件。它涵盖了 Torque 语言的各种特性，这些特性在底层支撑着 JavaScript 的执行。理解 Torque 可以帮助我们更深入地了解 V8 引擎的工作原理以及 JavaScript 的性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/torque/test-torque.tq的一个v8 torque源代码， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1532,7 +1534,4 @@ builtin TestCallNever(implicit context: Context)(a: Smi): Smi {
 builtin TestIncrementArraySpeciesModified(implicit context: Context)(): Smi {
   return 0;
 }
-
-"""
-
 ```

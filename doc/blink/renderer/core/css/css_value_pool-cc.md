@@ -116,15 +116,17 @@ By following these steps, I can break down the code and understand its purpose a
 
 总而言之，`css_value_pool.cc` 是 Blink 渲染引擎中一个重要的基础设施组件，它通过高效地管理和共享 CSS 值对象，在内存优化和性能提升方面发挥着关键作用。虽然开发者通常不会直接操作这个文件，但理解其功能有助于深入理解 Blink 的渲染机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_value_pool.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011, 2012 Apple Inc. All rights reserved.
  *
@@ -211,7 +213,4 @@ void CSSValuePool::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

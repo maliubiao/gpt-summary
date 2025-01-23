@@ -205,7 +205,7 @@ Imagine a reverse engineer wants to analyze how a specific API function in a mac
 
 **In summary, this code file is a crucial part of Frida's dynamic instrumentation engine on macOS and iOS. It handles the low-level details of modifying the target process's memory to insert hooks, allowing Frida to intercept function calls and enable powerful dynamic analysis and modification capabilities.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/gumdarwingrafter.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -214,8 +214,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 bind_off + ic->weak_bind_size ==
                 ic->lazy_bind_off)
               ic->weak_bind_size += ic->lazy_bind_size;
@@ -825,8 +827,4 @@ _gum_grafted_hook_deactivate (GumGraftedHook * self)
 {
   self->flags &= ~1;
 }
-
-"""
-
-
 ```

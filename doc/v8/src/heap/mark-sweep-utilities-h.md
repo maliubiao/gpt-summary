@@ -157,15 +157,17 @@ While this header file doesn't directly expose user-facing APIs, understanding i
 
 In summary, `v8/src/heap/mark-sweep-utilities.h` is a crucial internal header file in V8 that provides the building blocks for the mark-sweep garbage collection algorithm, ensuring efficient memory management for JavaScript execution. It includes tools for verification and cleanup of auxiliary data structures used during this process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/mark-sweep-utilities.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/mark-sweep-utilities.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -285,7 +287,4 @@ template class ExternalStringTableCleanerVisitor<
 }  // namespace v8
 
 #endif  // V8_HEAP_MARK_SWEEP_UTILITIES_H_
-
-"""
-
 ```

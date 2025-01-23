@@ -119,7 +119,7 @@ By following these steps, including the self-correction, we arrive at a comprehe
 
 总而言之，`gen-ico.py` 是 Frida 构建系统中一个很小的辅助工具，用于复制 ICO 文件，主要目的是为 Windows 相关的测试用例准备测试资源。它的存在体现了在软件开发和测试过程中，对资源文件的管理和准备是一个必要的环节，即使是非常简单的复制操作也可能被纳入自动化流程中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/windows/14 resources with custom target depend_files/ico/gen-ico.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,15 +127,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 with open(sys.argv[1], 'rb') as infile, open(sys.argv[2], 'wb') as outfile:
     outfile.write(infile.read())
-
-"""
-
 ```

@@ -122,7 +122,7 @@ Frida 可以捕获程序的退出状态码，从而验证这些假设。
 
 总而言之，`testprog.c` 作为一个简单的测试程序，为 Frida 的开发和测试提供了基础。它允许开发者验证 Frida 框架的核心功能，并确保构建系统能够正确处理各种场景，尤其是在处理生成文件方面。它的简单性使其成为理解 Frida 工作原理和调试相关问题的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/168 preserve gendir/testprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,15 +130,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"base.h"
 #include"com/mesonbuild/subbie.h"
 
 int main(void) {
     return base() + subbie();
 }
-
-"""
-
 ```

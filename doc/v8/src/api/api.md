@@ -169,12 +169,14 @@ This file directly enables the creation and manipulation of JavaScript construct
 
 It's the essential entry point for interacting with V8 from a C++ application and sets the stage for more advanced API functionalities in the subsequent parts of the file.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1820,7 +1822,4 @@ void Template::SetIntrinsicDataProperty(Local<Name> name, Intrinsic intrinsic,
   ENTER_V8_NO_SCRIPT_NO_EXCEPTION(i_isolate);
   i::HandleScope scope(i_isolate);
   i::ApiNatives::AddDataProperty(i_isolate, templ, Utils::OpenH
-"""
-
-
 ```

@@ -208,7 +208,7 @@ fetch('https://example.com');
 
 这部分测试用例主要关注 `HostResolverManager` 在处理 DNS 查询时与 **DNS 客户端的启用/禁用状态、DNS 配置的有效性以及 DNS 响应中的各种情况（包括错误、未找到记录和规范名称）** 相关的行为。它旨在验证 `HostResolverManager` 在这些场景下的正确性和健壮性，确保能够按照预期进行 DNS 解析或处理解析失败的情况。同时，也覆盖了在特定网络条件（Wi-Fi）下禁用 IPv6 检查的逻辑，以及 DNS 缓存机制在存储错误信息和设置 TTL 方面的行为。最后，测试了如何处理 DNS 响应中的规范名称（CNAME 记录）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -216,8 +216,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第11部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ECT_THAT(response0.result_error(), IsOk());
     EXPECT_THAT(response0.request()->GetAddressResults()->endpoints(),
                 testing::ElementsAre(CreateExpected("192.168.0.2", 80)));
@@ -918,7 +920,4 @@ TEST_F(HostResolverManagerDnsTest, CanonicalNameForcesProc) {
 
   EXPECT_THAT(response.request()->GetDnsAliasResults(),
               testing
-"""
-
-
 ```

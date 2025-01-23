@@ -112,15 +112,17 @@ By following this systematic approach, combining code analysis with knowledge of
 
 总而言之，`RTCPeerConnectionController` 在 Blink 引擎中扮演着管理和监控 `RTCPeerConnection` 操作，特别是报告复杂 SDP 信息的角色，它与 JavaScript 的 `RTCPeerConnection` API 紧密相关，并通过 UKM 系统提供遥测数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_peer_connection_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ void RTCPeerConnectionController::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -160,7 +160,7 @@ func main() {
 
 4. **误解 `ASanRead` 和 `ASanWrite` 的用途:**  普通 Go 代码通常不需要手动调用 `ASanRead` 或 `ASanWrite`。ASan 主要通过编译器插桩自动检测内存访问。显式调用这些函数通常用于非常特殊的情况，例如自定义内存分配器或与外部内存交互。不理解其用途而随意使用可能会引入混乱。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/asan.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,8 +168,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -240,9 +242,4 @@ func asanregisterglobals(addr unsafe.Pointer, n uintptr)
 //go:cgo_import_static __asan_unpoison_go
 //go:cgo_import_static __asan_poison_go
 //go:cgo_import_static __asan_register_globals_go
-
-"""
-
-
-
 ```

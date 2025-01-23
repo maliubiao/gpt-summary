@@ -230,14 +230,16 @@ By following this structured approach, combining code understanding with knowled
 
 理解 `blink/common/input/web_gesture_event.cc` 的功能对于理解 Chromium 如何处理用户输入和构建流畅的 Web 体验至关重要。它不仅定义了手势事件的结构，还包含了优化事件处理的关键逻辑，例如事件合并。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/input/web_gesture_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -624,7 +626,4 @@ WebGestureEvent::GenerateInjectedScrollbarGestureScroll(
 }
 
 }  // namespace blink
-
-"""
-
 ```

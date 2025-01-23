@@ -208,7 +208,7 @@ Return
 
 **简而言之，`BytecodeGraphBuilder` 是连接字节码前端和图优化后端的桥梁，它为 V8 执行高效的 JavaScript 代码奠定了基础。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/bytecode-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/bytecode-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -216,8 +216,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mp_targets(), true);
 
       // TODO(leszeks): At this point we know we are executing rather than
@@ -791,8 +793,4 @@ void BuildGraphFromBytecode(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

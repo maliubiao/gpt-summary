@@ -255,7 +255,7 @@ block_end:
 
 总而言之，`go/src/cmd/compile/internal/ssagen/ssa.go` 的第 5 部分专注于将 Go 语言中的**控制流语句（主要是条件分支）**和**赋值语句**转换成底层的 SSA 中间表示形式。它还涉及一些特殊的函数调用处理（如软浮点和内联函数）以及 `defer` 语句的一种优化实现策略。 这部分代码是 Go 编译器将高级 Go 代码转换为可执行机器码的关键步骤之一。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssagen/ssa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -264,8 +264,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 r.LogicalExpr)
 		mid := s.f.NewBlock(ssa.BlockPlain)
 		s.stmtList(cond.Init())
@@ -1201,9 +1203,4 @@ func (s *state) canSSA(n ir.Node) bool {
 		break
 	}
 	if n.Op(
-"""
-
-
-
-
 ```

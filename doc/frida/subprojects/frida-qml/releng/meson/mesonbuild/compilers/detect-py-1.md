@@ -87,7 +87,7 @@ To address the user's request, I need to:
 
 作为第2部分，这段代码的主要功能是 **在 Meson 构建系统中，负责检测并识别系统中可用的 Fortran 编译器及其相关信息，以便后续的编译和链接过程能够顺利进行。** 它通过尝试执行各种已知的 Fortran 编译器，解析它们的输出，并根据输出信息创建相应的编译器对象。这对于 Frida 这样的工具，需要编译本地代码或与目标进程进行交互的场景至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -96,8 +96,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ':
                     version = _get_lcc_version_from_defines(defines)
                     cls = fortran.ElbrusFortranCompiler
@@ -788,8 +790,4 @@ def _get_clang_compiler_defines(compiler: T.List[str]) -> T.Dict[str, str]:
                                    f'Compiler stderr:\n{error}\n-----\n')
     defines: T.Dict[str, str] = {}
     for line in output.split('\n'):
-    
-"""
-
-
 ```

@@ -123,14 +123,16 @@ void Add(const float* a, const float* b, float* output, size_t size) {
 
 总而言之，`vector_math_avx.cc` 是 Chromium 中用于优化音频处理性能的关键组件，它通过利用 AVX 指令集加速向量数学运算，间接地提升了网页上音频相关功能的体验。 开发者在使用相关的底层音频处理代码时，需要注意内存对齐、缓冲区边界、数据类型和平台依赖性等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/cpu/x86/vector_math_avx.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ using MType = __m256;
 #undef VECTOR_MATH_SIMD_NAMESPACE_NAME
 
 #endif  // defined(ARCH_CPU_X86_FAMILY) && !BUILDFLAG(IS_MAC)
-
-"""
-
 ```

@@ -116,15 +116,17 @@ anotherCalculation(); // 在调用 anotherCalculation 之前，浮点寄存器�
 
 总而言之，`v8/src/execution/clobber-registers.cc` 是 V8 引擎中一个用于清除浮点寄存器的底层工具，它在保证代码安全性和可预测性方面发挥着作用。虽然 JavaScript 程序员无法直接与之交互，但理解其功能有助于更好地理解 JavaScript 引擎的内部工作原理，并避免一些潜在的编程陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/clobber-registers.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/clobber-registers.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ double ClobberDoubleRegisters(double x1, double x2, double x3, double x4) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

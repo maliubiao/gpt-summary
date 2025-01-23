@@ -234,7 +234,7 @@ sys.stdin.read()
 
 总结来说，`jffs2.h` 文件定义了 JFFS2 文件系统的底层数据结构，虽然它本身不是 libc 函数的实现，但它对于理解 Android 系统如何与 JFFS2 文件系统交互至关重要。 Android Framework 和 NDK 通过 libc 函数和系统调用最终与内核中的 JFFS2 驱动程序进行交互，而这些驱动程序会使用 `jffs2.h` 中定义的结构来操作文件系统。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/jffs2.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -245,8 +245,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -398,7 +400,4 @@ union jffs2_device_node {
   jint32_t new_id;
 };
 #endif
-
-"""
-
 ```

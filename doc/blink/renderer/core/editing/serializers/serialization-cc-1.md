@@ -115,7 +115,7 @@ The code in `serialization.cc` is often invoked as part of various editing opera
 
 In essence, this part of `serialization.cc` provides critical infrastructure for **safely handling and sanitizing HTML markup** within the Chromium rendering engine. It's a key component in preventing XSS attacks and ensuring the integrity of web pages when users interact with content through editing operations. The iterative sanitization process, the use of a staging document, and the specific removal of potentially harmful elements all contribute to this goal.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/serializers/serialization.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d its contents are
   // already == text.
   if (container_node->HasOneChild()) {
@@ -342,8 +344,4 @@ template class CORE_TEMPLATE_EXPORT
     CreateMarkupAlgorithm<EditingInFlatTreeStrategy>;
 
 }  // namespace blink
-
-"""
-
-
 ```

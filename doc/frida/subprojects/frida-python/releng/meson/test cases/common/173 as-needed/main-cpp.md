@@ -116,7 +116,7 @@ By following this thought process, which involves code analysis, connecting to t
 
 总而言之，这个 `main.cpp` 文件是一个很小的测试程序，用于验证 Frida 项目中关于动态链接 "按需链接" 功能的正确性。它通过构建系统提供的标志来判断库是否被不必要地链接，并以此来决定测试的成败。这对于保证 Frida 在各种动态链接场景下的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/173 as-needed/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <cstdlib>
 
 #include "libA.h"
@@ -133,7 +135,4 @@ Prompt:
 int main(void) {
   return !meson_test_as_needed::linked ? EXIT_SUCCESS : EXIT_FAILURE;
 }
-
-"""
-
 ```

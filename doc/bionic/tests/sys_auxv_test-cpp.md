@@ -244,7 +244,7 @@ sys.stdin.read()
 
 通过 Frida hook，你可以观察到应用在启动或运行过程中何时调用 `getauxval`，以及它请求的是哪些类型的 `auxv` 信息，从而帮助理解 Android Framework 或 NDK 如何利用这些信息。 例如，你可以看到 ART 或其他库在初始化时会调用 `getauxval(AT_HWCAP)` 和 `getauxval(AT_HWCAP2)` 来获取硬件能力信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/sys_auxv_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -255,8 +255,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2020 The Android Open Source Project
  * All rights reserved.
@@ -314,7 +316,4 @@ TEST(sys_auxv, getauxval_HWCAP2) {
   GTEST_SKIP() << "No AT_HWCAP2 for this architecture.";
 #endif
 }
-
-"""
-
 ```

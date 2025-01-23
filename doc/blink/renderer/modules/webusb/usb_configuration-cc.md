@@ -234,15 +234,17 @@ By following this thought process, systematically analyzing the code, and connec
 
 因此，当开发者在 Chrome 开发者工具中调试 WebUSB 相关问题时，如果发现与设备配置信息相关，那么很可能需要查看 `blink/renderer/modules/webusb/usb_configuration.cc` 这个文件中的代码逻辑，以了解 Blink 引擎是如何处理和表示 USB 设备配置的。例如，当 JavaScript 代码抛出关于无效配置值的错误时，开发者可以查看 `USBConfiguration::Create` 方法中关于配置值校验的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webusb/usb_configuration.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -307,7 +309,4 @@ void USBConfiguration::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

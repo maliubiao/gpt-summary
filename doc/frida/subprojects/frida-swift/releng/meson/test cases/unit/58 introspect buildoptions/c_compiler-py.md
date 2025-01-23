@@ -94,7 +94,7 @@ This detailed thought process demonstrates how to analyze even a seemingly insig
 
 尽管 `c_compiler.py` 本身非常简单，但它在 Frida 的构建和测试流程中扮演着一个角色，用于验证 C 编译器的基本可用性。它的存在反映了 Frida 构建过程的复杂性，需要确保 C 编译器等关键工具能够正常工作，这对于 Frida 作为一个强大的动态 instrumentation 工具至关重要。理解这类简单的测试用例有助于理解大型软件项目的构建和测试策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/58 introspect buildoptions/c_compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -102,12 +102,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('c')
-
-"""
-
 ```

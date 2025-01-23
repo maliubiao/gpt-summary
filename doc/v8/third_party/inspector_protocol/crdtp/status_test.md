@@ -104,11 +104,13 @@ CDP(async (client) => {
 
 `status_test.cc` 测试的是 CRDP 中用于表示操作结果（成功或失败）的 `Status` 类。这个类在后端 C++ 代码中被广泛使用，并且其错误信息最终会通过 CRDP 传递到前端 JavaScript，帮助开发者了解操作的执行情况和错误原因。虽然 JavaScript 代码不直接操作 `Status` 对象，但它通过 CRDP 收到的错误信息很可能来源于后端 `Status` 对象的封装。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/status_test.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -138,7 +140,4 @@ TEST(StatusTest, StatusTestSupport) {
   EXPECT_THAT(json_error, StatusIs(Error::JSON_PARSER_COLON_EXPECTED, 42));
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

@@ -178,7 +178,7 @@ result = df_holder.lookup({'version': '>=2.9.0'}, force_fallback=False)
 
 In essence, this `dependencyfallbacks.py` file is a crucial part of Frida's build system, ensuring that all necessary components can be found or built, enabling the creation of the final Frida toolkit. It provides flexibility and robustness in handling varying system configurations and dependency availability.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/dependencyfallbacks.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from .interpreterobjects import extract_required_kwarg
@@ -574,7 +576,4 @@ class DependencyFallbacksHolder(MesonInterpreterObject):
                 # Same as above, but the dependency is not required.
                 return dep
         return self._notfound_dependency()
-
-"""
-
 ```

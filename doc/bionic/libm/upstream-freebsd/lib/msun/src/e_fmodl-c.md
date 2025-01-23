@@ -260,7 +260,7 @@ libm.so:
 
 总而言之，`e_fmodl.c` 是 Android 系统中 `fmodl` 函数的核心实现，它通过高效的移位和减法算法来计算浮点数的余数，并在各种需要浮点数取模运算的场景中被广泛使用。了解其实现原理有助于更深入地理解浮点数运算和 Android 系统的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_fmodl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,8 +270,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -417,7 +419,4 @@ fmodl(long double x, long double y)
 	x = ux.e * one;		/* create necessary signal */
 	return x;		/* exact output */
 }
-
-"""
-
 ```

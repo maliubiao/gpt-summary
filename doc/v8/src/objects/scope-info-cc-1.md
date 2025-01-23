@@ -229,7 +229,7 @@ function example(a) {
 
 这段代码主要负责提供对 `ScopeInfo` 对象内部数据的访问接口。它定义了各种方法来获取关于 JavaScript 代码作用域的详细信息，例如作用域类型、包含的变量、函数名、源代码位置、外部作用域以及模块相关信息。这些方法是 V8 引擎在编译和执行 JavaScript 代码时用来理解和管理作用域的关键组成部分。它们帮助 V8 正确地进行变量查找、闭包管理、模块依赖解析等操作。 此外，还包含了创建和操作与模块相关的元数据结构的方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/scope-info.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/scope-info.cc以.tq结尾，那它是个v8 torque源代码，
@@ -237,8 +237,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ());
 }
 
@@ -733,8 +735,4 @@ Tagged<FixedArray> SourceTextModuleInfo::RegularExportExportNames(int i) const {
 }  // namespace v8
 
 #include "src/objects/object-macros-undef.h"
-
-"""
-
-
 ```

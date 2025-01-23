@@ -102,14 +102,16 @@ By following these steps, we can systematically analyze the source code and prov
 
 这个文件是连接 HTML、CSS 和 JavaScript 与 MathML 渲染的关键桥梁，确保浏览器能够正确地显示网页中嵌入的数学公式。 它通过其方法和逻辑，保证了 MathML 内容在浏览器中的正确解析、布局和渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/mathml/layout_mathml_block.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ void LayoutMathMLBlock::StyleDidChange(StyleDifference diff,
 }
 
 }  // namespace blink
-
-"""
-
 ```

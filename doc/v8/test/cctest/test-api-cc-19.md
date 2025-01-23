@@ -705,7 +705,7 @@ THREADED_TEST(ScriptOrigin) {
       .ToLocalChecked();
   v8::Local<v8::Function> f = v8::Local<v8::Function>::Cast(
       env->Global()->Get(env.local(), v8_str
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -713,9 +713,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第20部分，共36部分，请归纳一下它的功能
+```
 
-"""
- Promise {\n"
+### 源代码
+```cpp
+Promise {\n"
       "  static get [Symbol.species]() {\n"
       "    return Y;\n"
       "  }\n"
@@ -1629,7 +1631,4 @@ THREADED_TEST(FunctionGetScriptId) {
   v8::Local<v8::Function> bar = v8::Local<v8::Function>::Cast(
       env->Global()->Get(env.local(), v8_str("bar")).ToLocalChecked());
   CHECK_EQ(script->GetUnboundScri
-"""
-
-
 ```

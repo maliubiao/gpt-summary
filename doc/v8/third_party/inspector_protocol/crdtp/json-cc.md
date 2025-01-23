@@ -245,15 +245,17 @@ country: France
 
 理解这些功能和潜在的错误可以帮助开发者更有效地使用 V8 的 JSON 处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/json.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/json.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1307,7 +1309,4 @@ Status ConvertJSONToCBOR(span<uint16_t> json, std::vector<uint8_t>* cbor) {
 }
 }  // namespace json
 }  // namespace v8_crdtp
-
-"""
-
 ```

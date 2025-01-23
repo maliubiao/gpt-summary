@@ -146,7 +146,7 @@ By following this structured approach, combining code analysis with a deep under
 
 `main.cpp` 文件虽然简单，但它清晰地展示了 C++ 如何调用 Fortran 代码，并作为 Frida 的一个测试用例，体现了 Frida 在动态分析跨语言程序方面的能力。理解这个文件需要一定的二进制底层、操作系统和编程语言知识。对于逆向工程师来说，这是一个很好的起点，可以用来学习如何使用 Frida 来观察和修改这类程序的运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/fortran/9 cpp/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 
 extern "C" double fortran();
@@ -164,7 +166,4 @@ int main(void) {
     std::cout << "FORTRAN gave us this number: " << fortran() << '\n';
     return 0;
 }
-
-"""
-
 ```

@@ -317,7 +317,7 @@ sys.stdin.read()
 
 这个测试文件是理解 Android 底层内存管理机制的重要入口，通过阅读和分析这些测试用例，可以更深入地了解 `mmap` 等系统调用的行为和使用方法。同时，结合 Frida 这样的动态分析工具，可以更有效地调试和理解 Android 应用程序中内存管理相关的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/sys_mman_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -328,8 +328,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -679,7 +681,4 @@ TEST(sys_mseal, mseal) {
   // We can't munmap() our test mapping if mseal() actually succeeded :-)
 #endif
 }
-
-"""
-
 ```

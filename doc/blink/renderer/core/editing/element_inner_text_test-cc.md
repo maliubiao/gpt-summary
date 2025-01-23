@@ -147,15 +147,17 @@ Finally, I organized the findings into the different sections requested: functio
 
 `element_inner_text_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎中 `innerText` 功能的正确性和可靠性。它通过各种测试用例模拟了 JavaScript, HTML 和 CSS 的交互，帮助开发者发现和修复与文本内容处理相关的 bug。 当用户在使用 Chromium 浏览器时遇到与文本内容显示或提取相关的问题时，这个测试文件中的代码和测试用例可以作为调试的线索和参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/element_inner_text_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -258,7 +260,4 @@ TEST_F(ElementInnerTest, VisitAllChildrenOfSelect) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

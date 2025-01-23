@@ -146,14 +146,16 @@ Let's break down the thought process for analyzing the `memory_cache.cc` file.
 
 总而言之，`memory_cache.cc` 中实现的 `MemoryCache` 是 Blink 引擎中一个关键的性能优化组件，它通过在内存中缓存资源来减少网络请求和提高页面加载速度，直接影响着用户浏览网页的体验。了解其工作原理有助于理解浏览器如何高效地处理网页资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/memory_cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
     Copyright (C) 1998 Lars Knoll (knoll@mpi-hd.mpg.de)
     Copyright (C) 2001 Dirk Mueller (mueller@kde.org)
@@ -615,7 +617,4 @@ void MemoryCache::ClearStrongReferences() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

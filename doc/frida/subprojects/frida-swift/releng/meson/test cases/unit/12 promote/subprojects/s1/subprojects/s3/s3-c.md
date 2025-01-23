@@ -168,7 +168,7 @@ By following these steps, combining code analysis with an understanding of Frida
 
 总而言之，`s3.c` 作为一个简单的 C 源代码文件，其功能就是返回固定的整数值。但在 Frida 的上下文中，它成为了一个用于测试动态插桩功能的典型目标。理解其简单性，以及它在 Frida 测试框架中的位置，有助于理解 Frida 的工作原理和进行相关的开发和调试工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/12 promote/subprojects/s1/subprojects/s3/s3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,12 +176,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2() {
     return -42;
 }
-
-"""
-
 ```

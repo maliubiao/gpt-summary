@@ -195,15 +195,17 @@ By following this structured thought process, combining code analysis with knowl
 
 总而言之，`blink/renderer/core/css/shadow_tree_style_sheet_collection.cc` 是 Blink 引擎中负责管理 Shadow DOM 样式表的核心组件，它连接了 HTML 结构、CSS 规则和 JavaScript 操作，确保 Shadow DOM 能够实现有效的样式隔离和灵活的样式控制。通过理解这个文件的功能，开发者可以更好地理解 Shadow DOM 的样式工作原理，并有效地调试相关的样式问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/shadow_tree_style_sheet_collection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -297,7 +299,4 @@ void ShadowTreeStyleSheetCollection::UpdateActiveStyleSheets(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -137,14 +137,16 @@ StorageKey original = StorageKey::CreateFromStringForTesting("https://example.co
 
 `storage_key_mojom_traits_unittest.cc` 这个文件是 Chromium Blink 引擎中非常重要的一个测试文件，它确保了 `StorageKey` 对象能够在不同的进程之间通过 Mojo 接口进行可靠的传输，这对于浏览器的安全性和功能正确性至关重要。它间接地关系到 Web 开发中存储相关的各种 API 和机制，帮助开发者理解和避免由于 Origin 隔离带来的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/storage_key/storage_key_mojom_traits_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ TEST(StorageKeyMojomTraitsTest, SerializeAndDeserialize) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

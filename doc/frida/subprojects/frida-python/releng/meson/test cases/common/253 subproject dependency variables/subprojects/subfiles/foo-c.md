@@ -121,7 +121,7 @@ Here's a thinking process to arrive at the detailed analysis of the provided C c
 
 总而言之，虽然 `foo.c` 文件本身的功能微不足道，但它在 Frida 的测试和构建框架中扮演着一个基础性的角色，用于验证 Frida 处理子项目依赖关系以及进行基本操作的能力。它的简单性使得它成为一个理想的测试目标，可以帮助开发人员和测试人员隔离和诊断问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/253 subproject dependency variables/subprojects/subfiles/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,10 +129,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0; }
-
-"""
-
 ```

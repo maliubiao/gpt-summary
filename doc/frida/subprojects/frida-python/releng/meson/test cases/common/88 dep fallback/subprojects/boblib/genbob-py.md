@@ -116,7 +116,7 @@ By following these steps and iterating as needed, we arrive at the comprehensive
 
 虽然 `genbob.py` 本身功能简单，但在 Frida 的上下文中，它是构建测试环境、模拟特定场景（例如依赖项缺失）的一个小工具。理解它的作用有助于理解 Frida 测试框架的组织和测试策略，以及 Frida 如何处理与操作系统底层交互相关的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/88 dep fallback/subprojects/boblib/genbob.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,15 +124,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 with open(sys.argv[1], 'w') as f:
     f.write('')
-
-"""
-
 ```

@@ -82,7 +82,7 @@ func main() {
 
 `abi_loong64.go` 定义了 LoongArch 64 位架构下函数调用时参数传递的寄存器使用约定，是 Go 语言运行时实现跨平台能力的关键组成部分。它指导着 Go 编译器如何生成针对特定架构的机器码，确保函数调用能够正确地传递参数。开发者通常不需要直接操作这些定义，但理解它们有助于深入理解 Go 语言的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/abi/abi_loong64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -90,8 +90,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -109,9 +111,4 @@ const (
 
 	EffectiveFloatRegSize = 8
 )
-
-"""
-
-
-
 ```

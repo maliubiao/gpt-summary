@@ -103,11 +103,13 @@ myFunction(5, globalVariable);
 
 `v8/src/execution/ppc/frame-constants-ppc.cc` 文件定义了 V8 引擎在 PPC64 架构上管理函数调用帧的关键细节，包括寄存器使用约定和栈槽位计算方式。 这些定义是 V8 正确执行 JavaScript 代码的基础，它影响着函数调用、变量访问以及常量处理等核心操作的底层实现。虽然 JavaScript 开发者通常不需要直接关心这些细节，但了解这些底层机制可以帮助更好地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/ppc/frame-constants-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -149,7 +151,4 @@ intptr_t MaglevFrame::StackGuardFrameSize(int register_input_count) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_PPC64
-
-"""
-
 ```

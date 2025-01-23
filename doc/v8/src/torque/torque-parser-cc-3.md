@@ -156,7 +156,7 @@ BinaryOperator {
 
 通过定义这些规则，解析器能够理解完整的 Torque 代码，并将其转换成可以被后续步骤处理的 AST。 这部分是整个解析器中最核心和最全面的部分，因为它将所有小的语法元素组合成了有意义的程序结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/torque-parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/torque-parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 arameter, Token(","))}))};
 
   // Result: std::vector<Statement*>
@@ -590,8 +592,4 @@ void ParseTorque(const std::string& input) {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
-
 ```

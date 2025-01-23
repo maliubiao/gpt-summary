@@ -158,7 +158,7 @@ sys.stdin.read()
 
 虽然 `lib.c` 中的 `func` 函数本身非常简单，但它在 Frida 的测试框架中扮演着基础的验证角色。对于逆向工程师和 Frida 开发者来说，理解即使是这样简单的代码片段，也能帮助他们更好地理解 Frida 的工作原理、进行测试和调试。这个简单的例子也说明了在复杂的软件系统中，即使是最简单的组件也可能在整个系统的运行和测试中发挥作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/74 file object/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,12 +166,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 0;
 }
-
-"""
-
 ```

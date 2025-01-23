@@ -119,7 +119,7 @@ By following this kind of detailed analysis, breaking down the code, considering
 
 总而言之，这段代码是 Chromium 网络栈中实现 DoH 功能的重要组成部分，它专注于在实际使用 DoH 之前进行健康检查，确保 DNS 解析的稳定性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -127,15 +127,13 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nFactory()->CreateDohProbeRunner(
       resolve_context);
 }
 
 }  // namespace net
-
-"""
-
-
 ```

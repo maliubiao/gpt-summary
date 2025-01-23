@@ -143,11 +143,13 @@ const jsFunction = new WebAssembly.Function({ parameters: [], results: [] }, fun
 
 总而言之，`wasm-objects.tq` 是 V8 引擎中 WebAssembly 功能的核心定义文件，它定义了用于在 JavaScript 中表示和操作 WebAssembly 代码的各种内部数据结构。理解这个文件的内容有助于深入理解 V8 如何实现 WebAssembly。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-objects.tq的一个v8 torque源代码， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -476,7 +478,4 @@ const kWasmNull: WasmNull = WasmNullConstant();
 extern class WasmSuspendingObject extends JSObject {
   callable: JSReceiver;
 }
-
-"""
-
 ```

@@ -142,7 +142,7 @@ document.addEventListener('securitypolicyviolation', (event) => {
 
 总而言之，`net/reporting/reporting_cache_unittest.cc` 的第 3 部分着重测试了 `ReportingCache` 在处理子域名、根据不同策略删除报告和端点、从持久化存储加载客户端数据，以及获取端点隔离信息方面的功能。这些测试确保了 `ReportingCache` 能够正确有效地管理报告端点，并根据配置的策略和限制运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ASSERT_EQ(0u, candidate_endpoints.size());
 }
 
@@ -876,7 +878,4 @@ TEST_P(ReportingCacheTest, GetIsolationInfoForEndpoint) {
   IsolationInfo isolation_info_for_network =
       cache()->GetIsolationInfoForEndpoint(network_endpoint);
   EXPECT_EQ(i
-"""
-
-
 ```

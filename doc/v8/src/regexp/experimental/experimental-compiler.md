@@ -149,11 +149,13 @@ const regex10 = /tuv/s; // dotAll 模式
 
 `experimental-compiler.cc` 是 V8 引擎中一个正在开发的组件，旨在提供一种新的正则表达式编译方法。它尝试将正则表达式转换为一种更低级的字节码表示，以便 V8 引擎能够执行匹配操作。然而，由于是实验性的，它存在许多限制，并非所有的 JavaScript 正则表达式都能被其处理。它的存在为 V8 引擎的正则表达式性能优化和新特性引入提供了探索的途径。当 V8 执行 JavaScript 代码中的正则表达式时，可能会选择使用这个实验性编译器（如果启用且正则表达式符合条件），或者使用其它的正则表达式编译和执行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/experimental/experimental-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1255,7 +1257,4 @@ ZoneList<RegExpInstruction> ExperimentalRegExpCompiler::Compile(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

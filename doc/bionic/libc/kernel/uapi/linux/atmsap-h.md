@@ -194,7 +194,7 @@ function sizeof(typeName) {
 
 总结来说，`bionic/libc/kernel/uapi/linux/atmsap.h` 定义了与 ATM 网络相关的内核数据结构，虽然在现代 Android 设备中不常用，但作为 Linux 内核的一部分仍然存在。 理解其功能需要了解 ATM 网络协议栈的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/atmsap.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -205,8 +205,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -298,7 +300,4 @@ struct atm_sap {
   struct atm_blli blli[ATM_MAX_BLLI] __ATM_API_ALIGN;
 };
 #endif
-
-"""
-
 ```

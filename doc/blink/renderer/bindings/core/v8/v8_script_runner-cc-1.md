@@ -102,7 +102,7 @@ As a debugging clue, a user action might lead to this code in the following step
 
 **In summary, this part of `v8_script_runner.cc` is heavily involved in the actual execution of JavaScript code, including optimization techniques like code caching and compile hints, robust error handling, and the specific mechanics of calling functions and constructors. It plays a crucial role in bridging the gap between the parsed JavaScript code and its execution within the V8 engine in the Blink renderer.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/v8_script_runner.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -110,9 +110,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-       : true)) {
+### 源代码
+```cpp
+: true)) {
         auto delay =
             base::Milliseconds(features::kCacheCodeOnIdleDelayParam.Get());
         // Workers don't have a concept of idle tasks, so use a default task for
@@ -481,8 +483,4 @@ void V8ScriptRunner::ReportException(v8::Isolate* isolate,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

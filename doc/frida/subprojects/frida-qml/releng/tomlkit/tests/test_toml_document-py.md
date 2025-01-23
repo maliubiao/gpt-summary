@@ -240,7 +240,7 @@ key = "new_value"
 
 总之，`test_toml_document.py` 是 `tomlkit` 库的核心测试文件，它详细地测试了 `TomlDocument` 类的各种功能，这对于确保 `tomlkit` 在 Frida 这样的动态 Instrumentation 工具中正确可靠地处理 TOML 配置文件至关重要。理解这个文件的内容可以帮助开发者和安全研究人员更好地使用 `tomlkit`，并排查与 TOML 处理相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/tomlkit/tests/test_toml_document.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -248,8 +248,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import copy
 import json
 import pickle
@@ -1336,7 +1338,4 @@ table = {a = 1, b = 2}
 age = 42
 """
     assert tomlkit.dumps(doc) == expected
-
-"""
-
 ```

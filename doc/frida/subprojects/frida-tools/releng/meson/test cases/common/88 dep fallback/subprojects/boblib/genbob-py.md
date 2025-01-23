@@ -105,7 +105,7 @@ By following these steps, I can create a comprehensive and accurate answer that 
 
 总而言之，`genbob.py` 是 Frida 构建和测试系统中的一个小工具，用于快速创建空文件，以满足特定测试场景的需求。虽然它自身功能简单，但在复杂的软件构建和测试流程中扮演着必要的角色。理解它的功能可以帮助开发人员更好地理解 Frida 的构建过程和测试用例的组织方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/88 dep fallback/subprojects/boblib/genbob.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,15 +113,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 with open(sys.argv[1], 'w') as f:
     f.write('')
-
-"""
-
 ```

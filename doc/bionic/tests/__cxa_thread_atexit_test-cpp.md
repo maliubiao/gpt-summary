@@ -283,7 +283,7 @@ if (classWithDtorForMainThreadDtor) {
 
 使用这些 Frida 脚本，你可以在目标 Android 进程中观察线程的创建、`__cxa_thread_atexit_impl` 的调用以及相关析构函数的执行，从而理解 Android Framework 或 NDK 如何一步步地使用到这些 Bionic 提供的功能。你需要根据实际的符号名调整 `DebugSymbol.fromName` 的参数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/__cxa_thread_atexit_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -294,8 +294,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -421,9 +423,4 @@ TEST(__cxa_thread_atexit_impl, smoke) {
   ASSERT_EQ(0, pthread_join(t, nullptr));
   ASSERT_EQ("one, two, three, oops, four, five.", atexit_call_sequence);
 }
-
-
-
-"""
-
 ```

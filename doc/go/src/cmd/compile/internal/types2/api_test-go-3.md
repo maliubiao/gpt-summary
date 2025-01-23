@@ -199,7 +199,7 @@ func TestAliasExample(t *testing.T) {
 
 总而言之，`go/src/cmd/compile/internal/types2/api_test.go` 这个文件的这部分主要负责测试 `go/types` 包在处理 Go 语言版本控制和类型别名这两个重要特性时的正确性和鲁棒性。它确保了编译器能够正确地理解和处理与版本相关的构建约束，以及类型别名的定义和使用，从而保证了 Go 语言代码在不同版本之间的兼容性，并为开发者提供了可靠的类型系统支持。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types2/api_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -208,9 +208,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-	{"go1.21", "go1.22", "go1.22"},  // file version specified above 1.21
+### 源代码
+```go
+{"go1.21", "go1.22", "go1.22"},  // file version specified above 1.21
 		{"go1.22", "", "go1.22"},        // no file version specified
 		{"go1.22", "goo1.22", "go1.22"}, // invalid file version specified
 		{"go1.22", "go1.19", "go1.21"},  // file version specified below minimum of 1.21
@@ -392,10 +394,4 @@ func TestVersionWithoutPos(t *testing.T) {
 		t.Errorf("check error was %q, want substring %q", got, want)
 	}
 }
-
-"""
-
-
-
-
 ```

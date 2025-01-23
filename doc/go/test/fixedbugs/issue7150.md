@@ -148,15 +148,17 @@ go test ./fixedbugs/issue7150.go
 
 `go/test/fixedbugs/issue7150.go` 这段代码是一个 Go 语言编译器错误检查的测试用例，专门用于验证编译器能否正确地检测出数组字面量初始化时出现的索引越界错误。 它通过构造各种包含非法索引的数组字面量，并使用 `// ERROR` 注释来断言编译器应该产生的错误信息。 开发者可以通过学习这些测试用例，更好地理解 Go 语言在编译期间对数组操作的边界检查。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7150.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -174,9 +176,4 @@ func main() {
 	_ = [10]int{2: 10, 15: 30}      // ERROR "index 15 out of bounds \[0:10\]|out of range"
 	_ = [10]int{5: 5, 1: 1, 12: 12} // ERROR "index 12 out of bounds \[0:10\]|out of range"
 }
-
-"""
-
-
-
 ```

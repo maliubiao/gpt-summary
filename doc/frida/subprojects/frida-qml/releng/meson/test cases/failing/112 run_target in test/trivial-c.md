@@ -141,7 +141,7 @@ This detailed thought process, even for a simple piece of code, highlights the i
 
 总而言之，即使是一个非常简单的程序，放在 Frida 这样一个强大的动态插桩工具的上下文中，也能成为理解系统底层行为、进行逆向分析和测试框架的良好起点。 `trivial.c` 在这里扮演的是一个被观察和操作的“小白鼠”的角色，用于验证 Frida 的功能或发现潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/112 run_target in test/trivial.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,15 +149,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("Trivial test is working.\n");
     return 0;
 }
-
-"""
-
 ```

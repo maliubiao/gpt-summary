@@ -347,7 +347,7 @@ lseek returned: 150
 
 `bionic/libc/include/bits/seek_constants.handroid` 文件定义了用于文件定位的关键常量，这些常量是任何进行文件 I/O 操作的基础。它们在 Android 系统中被广泛使用，从高级的 Java Framework API 到底层的 NDK 代码，最终都会通过 Bionic libc 调用到内核的 `lseek` 系统调用。理解这些常量的作用对于进行 Android 系统和应用程序的调试和分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/seek_constants.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -358,8 +358,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -423,7 +425,4 @@ Prompt:
 #define SEEK_HOLE 4
 
 #endif
-
-"""
-
 ```

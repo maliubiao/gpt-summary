@@ -183,7 +183,7 @@ By following this structured approach, breaking down the code into manageable pa
 
 通过以上步骤，用户可以一步步地使用该工具进行动态 instrumentation 分析。在调试过程中，了解这些步骤可以帮助开发者定位问题，例如，如果连接失败，可以检查用户是否正确选择了进程，触发端口是否正确，以及 Frida 服务是否在运行。如果无法捕获到预期的函数调用，可以检查用户是否正确地在 `callTableView` 中添加了对应的探针。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/cpushark/MainWindowController.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from Capture import Capture, CaptureState, TargetFunction
 from Cocoa import NSRunCriticalAlertPanel, NSUserDefaults, NSWindowController, objc
 from ProcessList import ProcessList
@@ -324,7 +326,4 @@ class MainWindowController(NSWindowController):
 
     def callItemDidChange_(self, item):
         self.callTableView.reloadItem_reloadChildren_(item, True)
-
-"""
-
 ```

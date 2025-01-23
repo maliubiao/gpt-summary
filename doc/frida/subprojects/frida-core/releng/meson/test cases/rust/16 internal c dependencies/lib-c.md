@@ -114,7 +114,7 @@ Here's a breakdown of the thinking process used to analyze the C code snippet an
 
 **简而言之，最终用户不太可能直接操作或修改这个 `lib.c` 文件。它更像是 Frida 内部测试和开发的基础设施的一部分。当用户使用 Frida 进行插桩时，Frida 的内部机制可能会涉及到对类似这样的 C 代码的处理。**  这个文件作为调试线索，主要针对的是 Frida 的开发人员，帮助他们理解 Frida 如何与 C 代码进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/rust/16 internal c dependencies/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,15 +122,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include "lib.h"
 
 void c_func(void) {
     printf("This is a " MODE " C library\n");
 }
-
-"""
-
 ```

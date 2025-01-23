@@ -139,7 +139,7 @@ v3 = REMV v1 v2
 
 这部分 `rewriteLOONG64.go` 代码是 Go 编译器针对 LOONG64 架构进行 SSA 优化的核心组成部分。它定义了一系列模式匹配和重写规则，旨在将通用的中间表示转换为更高效的 LOONG64 特定指令，从而提升生成代码的性能。这些优化涵盖了逻辑运算、算术运算、位运算和比较操作等多个方面。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteLOONG64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -148,8 +148,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // match: (ORconst [c] (MOVVconst [d]))
 	// result: (MOVVconst [c|d])
 	for {
@@ -1689,10 +1691,4 @@ func rewriteValueLOONG64_OpLoad(v *Value) bool {
 		t := v.Type
 		ptr := v_0
 		mem := v_1
-		
-"""
-
-
-
-
 ```

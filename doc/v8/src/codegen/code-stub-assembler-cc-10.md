@@ -194,7 +194,7 @@ By following these steps, you can systematically analyze a piece of V8 source co
 
 总的来说，这个代码片段是 V8 代码生成器的重要组成部分，它提供了构建高性能 JavaScript 执行代码所需的各种低级工具和抽象。它负责将高级的 JavaScript 操作转化为具体的机器指令序列。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -202,8 +202,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第11部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mber);
         TNode<Uint32T> int_value = TruncateFloat64ToWord32(value);
         return Float64Equal(value, ChangeUint32ToFloat64(int_value));
@@ -1204,8 +1206,4 @@ TNode<String> CodeStubAssembler::ToString_Inline(TNode<Context> context,
 }
 
 TNode<JSReceiver> CodeStubAssembler::ToObject(TNode<Context> context,
-                      
-"""
-
-
 ```

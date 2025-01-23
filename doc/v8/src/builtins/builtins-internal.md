@@ -158,11 +158,13 @@ try {
 
 `builtins-internal.cc` 文件中定义的内置函数是 V8 引擎内部运作的基础构建块。它们处理诸如错误处理、基本值返回以及为更高级的 JavaScript 功能提供底层支持等任务。虽然开发者通常不直接与这些内置函数交互，但它们的存在和行为深刻地影响着 JavaScript 代码的执行方式和错误报告。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-internal.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ BUILTIN(StrictPoisonPillThrower) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

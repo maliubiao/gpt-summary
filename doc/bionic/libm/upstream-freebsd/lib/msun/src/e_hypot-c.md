@@ -370,7 +370,7 @@ int main() {
 
 总而言之，`e_hypot.c` 是 Android 系统中一个基础但至关重要的数学函数实现，它被广泛应用于各种需要计算距离或模的应用场景中。其实现考虑了精度、性能以及各种特殊情况，体现了底层库开发的严谨性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_hypot.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -380,9 +380,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -507,7 +508,4 @@ hypot(double x, double y)
 #if LDBL_MANT_DIG == 53
 __weak_reference(hypot, hypotl);
 #endif
-
-"""
-
 ```

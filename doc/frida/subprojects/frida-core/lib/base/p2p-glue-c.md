@@ -227,7 +227,7 @@ SCTP 作为一个可靠的、面向连接的传输协议，比传统的 TCP 或 
 
 总而言之，`p2p-glue.c` 是 Frida 实现可靠和安全 P2P 通信的关键组件，它利用了用户空间的 SCTP 协议栈和 OpenSSL 库来满足动态 instrumentation 的需求。理解这个文件的功能有助于深入理解 Frida 的内部工作机制，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/base/p2p-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -235,8 +235,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef HAVE_NICE
 
 #define OPENSSL_SUPPRESS_DEPRECATED
@@ -593,7 +595,4 @@ _frida_sctp_timer_source_process_timers (guint32 elapsed_msec)
 }
 
 #endif /* HAVE_NICE */
-
-"""
-
 ```

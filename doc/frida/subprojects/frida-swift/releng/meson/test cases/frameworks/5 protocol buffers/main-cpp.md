@@ -128,7 +128,7 @@ By following this structured thought process, combining direct code analysis wit
 
 尽管 `main.cpp` 代码非常简洁，但它在 Frida 的上下文中扮演着重要的角色，作为一个基本的测试用例，用于验证 Frida 对使用了 Protocol Buffers 的程序进行动态插桩的能力。它可以作为理解 Frida 如何与使用了特定库的程序交互的起点，并为更复杂的逆向分析奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/5 protocol buffers/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "defs.pb.h"
 
 int main(int argc, char **argv) {
@@ -147,7 +149,4 @@ int main(int argc, char **argv) {
     google::protobuf::ShutdownProtobufLibrary();
     return 0;
 }
-
-"""
-
 ```

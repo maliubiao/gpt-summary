@@ -177,7 +177,7 @@ Here's a breakdown of how to approach the prompt's specific requirements:
 
 总而言之，这部分 `linkers.py` 代码的核心功能是为 Frida 构建系统提供一个抽象层，使其能够支持多种不同的动态链接器，并能够根据不同的链接器生成正确的命令行参数，从而实现跨平台和跨编译器的构建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/linkers/linkers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 hineChoice,
                  *, version: str = 'unknown version'):
         super().__init__(['rlink.exe'], for_machine, '', [],
@@ -859,8 +861,4 @@ class MetrowerksLinkerARM(MetrowerksLinker):
 
 class MetrowerksLinkerEmbeddedPowerPC(MetrowerksLinker):
     id = 'mwldeppc'
-
-"""
-
-
 ```

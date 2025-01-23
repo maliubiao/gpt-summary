@@ -169,14 +169,16 @@ JavaScript 中对应的 Promise 将会 resolve，并返回一个 `ArrayBuffer` �
 
 总而言之，`blink/renderer/platform/exported/web_crypto_result.cc` 是 Blink 引擎中 Web Crypto API 实现的关键部分，它负责将 C++ 中执行的加密操作的结果安全且正确地传递回 JavaScript 环境，使得 Web 开发者能够利用浏览器的原生加密能力。理解其功能对于理解 Web Crypto API 的内部工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_crypto_result.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -282,7 +284,4 @@ void WebCryptoResult::Assign(const WebCryptoResult& o) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

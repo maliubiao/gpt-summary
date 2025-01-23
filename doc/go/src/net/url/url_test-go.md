@@ -123,7 +123,7 @@ func main() {
 
 这段代码的主要功能是定义了一系列的测试用例，用于验证 `net/url` 包中的 `Parse` 函数能否正确地将 URL 字符串解析为 `URL` 结构体，并且验证 `URL` 结构体的 `String` 方法能否正确地将解析后的 URL 重新序列化为字符串。 这些测试用例覆盖了 URL 的各种常见和特殊情况，旨在确保 `net/url` 包的 URL 解析和序列化功能的正确性和鲁棒性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/url/url_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -132,8 +132,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1499,9 +1501,4 @@ var parseTests = []parseTest{
 	{
 		query: "a=1&a=2&a=banana",
 		out:   Values{"a": []string{"1"
-"""
-
-
-
-
 ```

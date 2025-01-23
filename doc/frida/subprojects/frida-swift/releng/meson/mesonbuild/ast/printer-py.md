@@ -191,7 +191,7 @@ Let's break down the functionality of each class and their potential relevance:
 
 The `printer.py` file provides different ways to represent the structure of Meson build files. These representations are valuable for understanding the build process, debugging build issues, and potentially for automated analysis or transformation of build configurations. In the context of Frida, these tools are likely used internally to manage and understand the build process of Frida's components, including the Swift bindings. They offer different levels of detail and formatting depending on the specific use case.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/ast/printer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -821,7 +823,4 @@ class AstJSONPrinter(AstVisitor):
             kwargs_list += [{'key': key_res, 'val': val_res}]
         self.current['kwargs'] = kwargs_list
         self.setbase(node)
-
-"""
-
 ```

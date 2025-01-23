@@ -132,11 +132,13 @@ console.timeEnd("allocation");
 
 `v8-heap-profiler-agent-impl.cc` 作为一个底层的 C++ 实现，为开发者提供了强大的 JavaScript 堆分析能力，这些能力通过 Chrome DevTools 的界面暴露出来，帮助开发者理解 JavaScript 代码的内存使用情况、发现内存泄漏等问题。JavaScript 代码本身不能直接调用这个 C++ 文件中的函数，但其运行结果可以通过 DevTools 工具观察和分析，而这些工具的背后就是这个 C++ 文件的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-heap-profiler-agent-impl.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -785,7 +787,4 @@ Response V8HeapProfilerAgentImpl::getSamplingProfile(
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

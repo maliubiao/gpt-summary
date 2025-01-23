@@ -269,7 +269,7 @@ sys.stdin.read()
 
 这个 `elf.handroid` 文件虽然小，但它定义了 Android 系统中 Native 代码能够正确加载和运行的基础。理解其中的定义对于进行底层的 Native 代码调试和安全分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-riscv/asm/elf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -280,8 +280,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -362,7 +364,4 @@ typedef union __riscv_fp_state elf_fpregset_t;
 #define R_RISCV_SET_ULEB128 60
 #define R_RISCV_SUB_ULEB128 61
 #endif
-
-"""
-
 ```

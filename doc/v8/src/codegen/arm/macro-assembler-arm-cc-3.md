@@ -204,7 +204,7 @@ void MacroAssembler::ComputeCodeStartAddress(Register dst) {
 
 总而言之，`v8/src/codegen/arm/macro-assembler-arm.cc` 的这一部分继续构建了在 ARM 架构上高效执行 JavaScript 代码所需的底层基础结构，涵盖了函数调用、内存管理、控制流、优化和与外部 C++ 代码交互等关键方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm/macro-assembler-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm/macro-assembler-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -212,8 +212,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , sp, Operand(stack_passed_arguments * kPointerSize));
   }
 
@@ -676,8 +678,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 #undef __
 
 #endif  // V8_TARGET_ARCH_ARM
-
-"""
-
-
 ```

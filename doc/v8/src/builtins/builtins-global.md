@@ -143,11 +143,13 @@ console.log(result); // 输出: 30
 
 `v8/src/builtins/builtins-global.cc` 文件是 V8 引擎实现 JavaScript 全局对象核心功能的关键部分。它将诸如 URI 处理、旧式编码以及动态代码执行等操作的底层逻辑用 C++ 代码进行了实现，使得 JavaScript 开发者能够在代码中方便地调用这些全局函数。 了解这个文件的内容有助于理解 V8 引擎是如何执行 JavaScript 代码的，以及 JavaScript 全局函数的底层实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-global.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -264,7 +266,4 @@ BUILTIN(GlobalEval) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

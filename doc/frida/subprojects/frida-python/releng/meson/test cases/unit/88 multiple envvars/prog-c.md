@@ -150,7 +150,7 @@ By following this structured approach, considering the context, and iteratively 
 
 总之，`prog.c` 作为一个简单的 C 程序，其核心功能是作为构建系统正确处理环境变量的一个验证点。它的存在和潜在的编译失败为开发者提供了重要的调试线索，以确保 Frida 项目的构建过程按预期进行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/88 multiple envvars/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 #ifndef CPPFLAG
@@ -178,7 +180,4 @@ int main(int argc, char **argv) {
     printf("%d %s\n", argc, argv[0]);
     return 0;
 }
-
-"""
-
 ```

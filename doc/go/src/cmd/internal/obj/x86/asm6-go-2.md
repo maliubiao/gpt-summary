@@ -160,7 +160,7 @@ p := &obj.Prog{
 
 这部分 `asm6.go` 的核心功能是 **将 x86 汇编指令的中间表示翻译成实际的机器码字节流**。它根据指令类型和操作数信息，查找并应用相应的编码规则，处理立即数、前缀、重定位信息，并针对特定的指令 (如分支、调用、TLS 访问) 进行特殊处理。它还包含一定的错误处理和指令修复机制，以应对一些常见的汇编编码错误。  总而言之，它是 Go 语言 x86 汇编器的指令编码引擎。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/x86/asm6.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,8 +168,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 om, &rel)
 				l := int(v >> 32)
 				if l == 0 && rel.Siz != 8 {
@@ -883,10 +885,4 @@ func unpackOps4(p *obj.Prog) (arg0, arg1, arg2, dst *obj.Addr) {
 func unpackOps5(p *obj.Prog) (arg0, arg1, arg2, arg3, dst *obj.Addr) {
 	return &p.From, &p.RestArgs[0].Addr, &p.RestArgs[1].Addr, &p.RestArgs[2].Addr, &p.To
 }
-
-"""
-
-
-
-
 ```

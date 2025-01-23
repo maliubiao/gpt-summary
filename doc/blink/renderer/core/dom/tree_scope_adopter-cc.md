@@ -158,15 +158,17 @@ To reach the code in `tree_scope_adopter.cc` during debugging, a user interactio
 
 If you're debugging an issue related to elements being moved between documents or shadow roots, you might set breakpoints in `tree_scope_adopter.cc`, particularly in the `Execute`, `MoveTreeToNewScope`, and `MoveNodeToNewDocument` methods. You can then trace the execution flow to understand how the node is being adopted into the new tree scope and identify any potential problems with data transfer, event listener handling, or custom element lifecycle management. Examining the values of `OldScope()`, `NewScope()`, and the properties of the `to_adopt_` node during debugging can provide valuable insights.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/tree_scope_adopter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -436,7 +438,4 @@ inline bool TreeScopeAdopter::IsDocumentEligibleForFastAdoption(
 }
 
 }  // namespace blink
-
-"""
-
 ```

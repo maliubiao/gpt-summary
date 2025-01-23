@@ -92,14 +92,16 @@ Here's a breakdown of the thought process to analyze the given C++ test file:
 
 总而言之，`line_ending_test.cc` 文件虽然是一个测试文件，但它揭示了 Chromium 引擎在处理文本数据时需要考虑行尾符规范化的重要性，这对于正确处理来自不同来源和平台的 HTML、JavaScript 和 CSS 代码至关重要。 开发者在处理文本数据时，也需要注意不同行尾符可能带来的问题，并采取相应的措施进行处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/line_ending_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -121,7 +123,4 @@ TEST(LineEndingTest, NormalizeLineEndingsToCRLF) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

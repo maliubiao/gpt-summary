@@ -127,15 +127,17 @@ let sum = add(x, y);
 
 `v8/src/compiler/node-origin-table.cc` 是 V8 编译器中一个关键的组件，它通过记录和管理 IR 图中节点的起源信息，为编译器的调试、优化分析和理解代码转换过程提供了重要的基础。它不直接与用户编写的 JavaScript 代码交互，但其功能是 V8 引擎高效编译和执行 JavaScript 代码的关键支撑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/node-origin-table.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/node-origin-table.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -247,7 +249,4 @@ void NodeOriginTable::PrintJson(std::ostream& os) const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

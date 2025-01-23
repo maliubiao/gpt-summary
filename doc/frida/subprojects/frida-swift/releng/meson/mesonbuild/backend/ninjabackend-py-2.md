@@ -64,7 +64,7 @@ The user is asking for a summary of the functionalities of the Python code provi
 
 这段代码的主要功能是 **为 Frida 的 Swift 组件生成 Ninja 构建系统的构建规则**。它负责处理不同编程语言（C#, Java, Vala, Rust）的编译和链接过程，并管理资源文件的编译和依赖关系。其核心任务是将 Meson 的构建描述转换为 Ninja 可以理解的指令，以便高效地构建 Frida 的 Swift 相关部分。这包括定义如何编译源代码、链接库文件、处理资源以及设置必要的编译选项。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -73,9 +73,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
-         elem.add_item('DESC', f'Compiling resource {rel_sourcefile}')
+### 源代码
+```python
+elem.add_item('DESC', f'Compiling resource {rel_sourcefile}')
                 self.add_build(elem)
                 deps.append(ofilename)
                 a = '-resource:' + ofilename
@@ -706,8 +708,4 @@ Prompt:
                                        self.environment.get_build_dir(),
                                        target_slashname_workaround_dir,
                                        self.determine_rpath_dirs(target),
-                  
-"""
-
-
 ```

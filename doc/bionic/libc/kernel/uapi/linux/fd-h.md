@@ -251,7 +251,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/linux/fd.h` 定义了 Linux 内核中用于控制软盘驱动器的 API。虽然这些定义存在于 Android 的 Bionic 库中，但现代 Android 设备几乎不会直接使用软盘驱动器。理解这个文件有助于理解 Linux 内核设备驱动的交互方式，以及 `ioctl` 系统调用的使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/fd.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -262,8 +262,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -457,7 +459,4 @@ struct floppy_raw_cmd {
 #define FDTWADDLE _IO(2, 0x59)
 #define FDEJECT _IO(2, 0x5a)
 #endif
-
-"""
-
 ```

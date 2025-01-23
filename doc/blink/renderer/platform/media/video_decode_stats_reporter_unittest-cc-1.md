@@ -101,16 +101,18 @@ My thinking process to analyze the provided C++ code snippet and answer the user
 
 这段代码片段专注于测试 `VideoDecodeStatsReporter` 在以下关键场景下的行为：帧率的稳定化和 bucketing、分辨率的 bucketing 以及对小幅和大幅分辨率变化的响应、处理极小分辨率的情况、处理不同的 EME 属性以及清理可能不一致的帧计数。 这些测试确保了 `VideoDecodeStatsReporter` 能够以合理和准确的方式收集和处理视频解码统计信息，为上层（例如 JavaScript）提供有意义的数据，用于监控和分析视频播放性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/video_decode_stats_reporter_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- framerate.
+### 源代码
+```cpp
+framerate.
   StabilizeFramerateAndStartNewRecord(kDefaultProfile, kDefaultSize_,
                                       kDefaultFps * 2, kDefaultKeySystem,
                                       kDefaultUseHwSecureCodecs);
@@ -283,8 +285,4 @@ TEST_F(VideoDecodeStatsReporterTest, SanitizeFrameCounts) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -136,11 +136,13 @@ arr2.push("c"); // 调用 Push<String>(arr2, "c")
 
 `type-oracle.cc` 中的 `TypeOracle` 类是 V8 引擎中 Torque 编译器的关键部分，负责维护和管理类型信息。它处理各种类型定义，包括泛型类型，并为 Torque 代码的编译和执行提供了必要的类型上下文。虽然 JavaScript 是动态类型的，但 V8 内部使用 Torque 和 `TypeOracle` 来进行更精细的类型管理，以便进行优化和确保代码的正确性。用户无法直接在 JavaScript 中访问或操作 `TypeOracle`，但它的工作方式直接影响着 JavaScript 代码的执行效率和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/type-oracle.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ std::optional<const Type*> TypeOracle::MatchReferenceGeneric(
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

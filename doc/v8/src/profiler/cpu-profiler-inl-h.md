@@ -191,15 +191,17 @@ CPU profiler 的核心目标是了解 JavaScript 代码的执行情况，并找�
 
 `v8/src/profiler/cpu-profiler-inl.h` 是 V8 CPU profiler 的核心组成部分，负责记录和管理代码执行的各种事件，并维护代码内存布局的映射。它与 JavaScript 的执行紧密相关，通过分析这些事件，开发者可以了解代码的性能瓶颈，并避免一些常见的编程错误，从而编写出更高效的 JavaScript 代码。 虽然用户不会直接修改此文件，但理解其背后的机制对于理解 V8 的工作原理和进行性能优化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/cpu-profiler-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/cpu-profiler-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -293,7 +295,4 @@ void SamplingEventsProcessor::FinishTickSample() {
 }  // namespace v8
 
 #endif  // V8_PROFILER_CPU_PROFILER_INL_H_
-
-"""
-
 ```

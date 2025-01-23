@@ -159,7 +159,7 @@ A user would likely interact with this code indirectly through Frida's API or co
 
 In summary, `machine_spec.py` plays a crucial role in Frida by providing a standardized way to represent and reason about the characteristics of both the host and target machines, which is fundamental for the correct operation of a dynamic instrumentation tool. It draws upon knowledge of operating systems, CPU architectures, and binary formats.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/machine_spec.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 from dataclasses import dataclass
 import platform
@@ -463,7 +465,4 @@ BIG_ENDIAN_ARCHS = {
 }
 
 TARGET_TRIPLET_ARCH_PATTERN = re.compile(r"^(i.86|x86_64|arm(v\w+)?|aarch64|mips\w*|powerpc|s390x)$")
-
-"""
-
 ```

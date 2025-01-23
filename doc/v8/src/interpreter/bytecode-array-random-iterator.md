@@ -97,11 +97,13 @@ myFunction(7, 8);
 
 `BytecodeArrayRandomIterator` 是 V8 引擎内部用于高效地、非顺序地访问 JavaScript 代码编译后的字节码数组的工具，为 V8 的调试、优化和即时编译等功能提供了基础支持。虽然 JavaScript 开发者无法直接使用这个类，但理解它的作用有助于更深入地了解 V8 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-array-random-iterator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -145,7 +147,4 @@ void BytecodeArrayRandomIterator::UpdateOffsetFromIndex() {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -111,7 +111,7 @@ By following these steps, I could analyze the seemingly simple C code and genera
 
 `frida/subprojects/frida-node/releng/meson/test cases/windows/5 resources/res/dummy.c` 是一个非常简单的 Windows DLL 示例，用于 Frida 项目的测试。它的主要功能是导出一个简单的加法函数。虽然其自身功能简单，但它在 Frida 的测试框架中扮演着重要的角色，并可以作为逆向工程学习和实践的良好起点。理解这样的测试用例有助于开发者更好地理解 Frida 的工作原理以及如何在实际场景中使用它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/windows/5 resources/res/dummy.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,9 +119,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

@@ -153,15 +153,17 @@ func main() {
 
 总而言之，这段代码通过故意引入错误的复合字面量使用方式，来验证 Go 编译器的错误检测能力。它展示了在编写 Go 代码时需要注意的关于复合字面量的类型匹配和语法规则。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/convlit1.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -182,9 +184,4 @@ func f() int
 func main() {
 	if f < 1 { }	// ERROR "conver|incompatible|invalid"
 }
-
-"""
-
-
-
 ```

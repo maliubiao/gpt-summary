@@ -120,7 +120,7 @@ Here's a breakdown of the thinking process to analyze the provided C++ code snip
 
 总而言之，`c_linkage.cpp` 作为一个Frida测试用例，其简洁性恰恰突出了其核心功能：验证Frida处理C语言链接的能力，这对于其在动态逆向工程中与各种目标代码进行交互至关重要。开发者通过编写和维护这样的测试用例，可以确保Frida的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/225 link language/c_linkage.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,14 +128,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 extern "C" {
     int makeInt(void) {
         return 0;
     }
 }
-
-"""
-
 ```

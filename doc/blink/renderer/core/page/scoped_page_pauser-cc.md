@@ -163,15 +163,17 @@ Initially, I might have focused too much on the `ThreadScheduler` details. Howev
 
 `ScopedPagePauser` 是 Blink 渲染引擎中一个重要的工具，用于在特定场景下暂停和恢复页面的活动。理解其工作原理以及与 JavaScript、HTML 和 CSS 的关系，有助于我们理解 Chromium 的内部运作机制，并在调试页面异常行为时提供有价值的线索。它通常不是用户直接操作的对象，而是在引擎内部为了保证数据一致性和控制执行流程而被使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/scoped_page_pauser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2009 Apple Inc. All rights reserved.
  * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies)
@@ -249,7 +251,4 @@ bool ScopedPagePauser::IsActive() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

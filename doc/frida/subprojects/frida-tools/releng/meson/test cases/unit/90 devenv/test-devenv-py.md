@@ -137,7 +137,7 @@ By following these steps, moving from a basic understanding to connecting it to 
 
 总而言之，`test-devenv.py` 虽然代码简洁，但它是 Frida 项目中保证测试环境正确性的一个关键组成部分。它通过简单的断言检查，有效地验证了构建和测试流程所需的关键环境变量，为开发者提供了有价值的调试信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/90 devenv/test-devenv.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #! /usr/bin/python
 
 import os
@@ -156,7 +158,4 @@ assert os.environ['MESON_PROJECT_NAME'] == 'devenv'
 assert os.environ['TEST_A'] == '1'
 assert os.environ['TEST_B'] == '0+1+2+3+4'
 assert os.environ['TEST_C'] == os.pathsep.join(['/prefix', '/suffix'])
-
-"""
-
 ```

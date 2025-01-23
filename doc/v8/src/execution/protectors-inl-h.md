@@ -181,15 +181,17 @@ bool Protectors::IsArrayLengthProtectorIntact(Isolate* isolate) {
 
 总而言之，`v8/src/execution/protectors-inl.h` 定义了一系列用于检查 V8 引擎内部状态完整性的机制，这些机制对于 V8 的优化和性能至关重要。虽然 JavaScript 用户不能直接操作这些保护器，但理解它们的存在和作用有助于理解某些 JavaScript 行为对性能的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/protectors-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/protectors-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ DECLARED_PROTECTORS_ON_ISOLATE(DEFINE_PROTECTOR_ON_ISOLATE_CHECK)
 }  // namespace v8
 
 #endif  // V8_EXECUTION_PROTECTORS_INL_H_
-
-"""
-
 ```

@@ -208,15 +208,17 @@ session_peer.SetHttpStreamFactory(std::move(custom_factory));
 
 `http_network_session_peer.cc` 虽然不是直接处理网络请求的核心逻辑，但它提供了一个重要的控制点，允许 Chromium 的其他组件或测试代码来配置 `HttpNetworkSession` 的内部行为。理解它的作用对于深入理解 Chromium 网络栈的架构以及调试相关的网络问题至关重要。它作为连接高级配置与核心网络会话管理的桥梁，在整个网络请求处理流程中扮演着幕后英雄的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_session_peer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ HttpNetworkSessionParams* HttpNetworkSessionPeer::params() {
 }
 
 }  // namespace net
-
-"""
-
 ```

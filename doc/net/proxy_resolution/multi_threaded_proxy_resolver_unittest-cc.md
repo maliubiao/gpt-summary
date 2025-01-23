@@ -145,15 +145,17 @@ By following these steps, the detailed and comprehensive analysis of the `multi_
 
 通过以上步骤，可以从用户报告的问题逐步深入到 `MultiThreadedProxyResolver` 的相关代码，进行问题定位和修复。单元测试文件是理解代码行为和验证修复方案的重要工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/multi_threaded_proxy_resolver_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1021,7 +1023,4 @@ TEST_F(MultiThreadedProxyResolverTest, DestroyFactoryWithRequestsInProgress) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

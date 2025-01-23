@@ -115,7 +115,7 @@ Initially, I might just see an empty function and think "it does nothing."  Howe
 
 总而言之，尽管 `dummy.c` 代码简单，但在 Frida 的测试框架中，它充当了一个基本的构建块，用于验证 Frida 在链接自定义本地代码方面的核心能力。它涉及到逆向工程中代码注入的概念，并与二进制底层、操作系统和动态链接等知识密切相关。通过分析这个简单的例子，可以更好地理解 Frida 的内部工作机制以及用户在使用 Frida 时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/208 link custom/dummy.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,9 +123,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void inner_lib_func(void) {}
-"""
-
 ```

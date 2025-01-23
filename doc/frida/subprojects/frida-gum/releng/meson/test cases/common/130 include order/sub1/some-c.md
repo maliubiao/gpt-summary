@@ -152,7 +152,7 @@ interceptor.attach(somefunc_address, {
 
 虽然 `some.c` 文件本身功能很简单，但在 Frida 的上下文中，它是一个用于测试的单元，用于验证 Frida 构建系统或特定功能的正确性。 它的存在与 Frida 的核心功能——动态 Instrumentation 和 hook 技术密切相关，并间接涉及到操作系统底层的一些概念。 对于 Frida 的开发者和高级用户来说，理解这些测试用例有助于深入理解 Frida 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/130 include order/sub1/some.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,15 +160,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   __declspec(dllexport)
 #endif
 int somefunc(void) {
   return 1984;
 }
-
-"""
-
 ```

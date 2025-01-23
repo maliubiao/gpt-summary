@@ -87,16 +87,18 @@ Here's a breakdown of the thought process to generate the summary:
 
 总而言之，`main_thread_event_queue_unittest.cc` 的第二部分着重测试了 `MainThreadEventQueue` 对触摸事件、鼠标事件和指针事件的精细化处理，包括未缓冲分发以实现低延迟、事件合并以优化性能、以及对特定类型事件（如带有相对运动修饰符的事件）的特殊处理。此外，它还验证了事件分发完成后通知机制的正确性，确保渲染流程的各个部分能够同步输入事件的状态。 这些测试确保了 Blink 引擎能够以高效且正确的方式响应用户的各种输入操作，为流畅的用户体验奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/main_thread_event_queue_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                       2),
+### 源代码
+```cpp
+2),
           // These callbacks were run just after handling the second
           // touchmove.
           ReceivedCallback(CallbackReceivedState::kCalledAfterHandleEvent,
@@ -559,8 +561,4 @@ TEST_F(MainThreadEventQueueTest, InputEventsDispatchedNotified) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

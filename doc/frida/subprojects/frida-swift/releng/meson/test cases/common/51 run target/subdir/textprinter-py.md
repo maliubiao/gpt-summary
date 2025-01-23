@@ -145,7 +145,7 @@ frida -p $(pidof textprinter.py) my_frida_script.js
 
 总而言之，`textprinter.py` 自身功能简单，但在 Frida 的上下文中，它作为一个重要的测试目标，帮助验证 Frida 的核心功能，并为更复杂的逆向分析场景奠定基础。它的存在与动态分析、进程操作、操作系统底层机制以及 Frida 的工作原理都息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/51 run target/subdir/textprinter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,12 +153,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('I am a script. Being run.')
-
-"""
-
 ```

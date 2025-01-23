@@ -136,14 +136,16 @@ This systematic approach helps break down the complex code into manageable parts
 
 `PictureInPictureInterstitial` 是 Blink 引擎中一个关键的内部组件，负责在 HTML5 视频进入和退出画中画模式时提供一个平滑的过渡 UI。它通过操作 DOM 元素和 CSS 属性来实现其功能，并与 JavaScript 的画中画 API 和 `ResizeObserver` API 紧密配合。理解其工作原理有助于开发者更好地理解浏览器的画中画实现，并避免在使用相关 API 时出现错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/picture_in_picture_interstitial.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -330,7 +332,4 @@ void PictureInPictureInterstitial::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

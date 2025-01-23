@@ -131,7 +131,7 @@ Here's a breakdown of the thinking process to analyze the provided Python script
 
 总而言之，`converter.py` 是一个简单但实用的文件复制工具，在 Frida 的动态分析场景中，它可以作为提取目标程序文件、备份状态等操作的基础组件，帮助逆向工程师更方便地分析目标应用程序的行为和数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/110 allgenerate/converter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -149,7 +151,4 @@ ifile = sys.argv[1]
 ofile = sys.argv[2]
 
 open(ofile, 'w').write(open(ifile).read())
-
-"""
-
 ```

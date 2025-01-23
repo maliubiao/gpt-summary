@@ -215,15 +215,17 @@ int main() {
 
 **In summary, `v8/include/v8-handle-base.h` defines the foundational building blocks for how V8 manages JavaScript objects in its C++ implementation. It provides mechanisms for safe access and manipulation of these objects, considering the complexities of garbage collection. While JavaScript developers don't directly interact with these classes, understanding their purpose is key to understanding the underlying architecture of the V8 engine.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-handle-base.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-handle-base.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -375,7 +377,4 @@ class DirectHandleBase {
 }  // namespace v8::api_internal
 
 #endif  // INCLUDE_V8_HANDLE_BASE_H_
-
-"""
-
 ```

@@ -178,15 +178,17 @@ console.log(calculate(op, 10, 2));
 
 `RequiredOptimizationReducer` 是 V8 Turboshaft 编译管道中一个至关重要的组件，它通过执行必要的简化操作来确保后续编译阶段的正确性和效率。 它专注于消除冗余的 `Phi` 节点，特别是当它们的所有输入都相同时，或者当它们代表相同的常量或特定的内部对象时。 虽然它不直接处理用户的编程错误，但其优化能力与 JavaScript 代码的性能息息相关，尤其是在处理函数调用和 WebAssembly 相关代码时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/required-optimization-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/required-optimization-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ class RequiredOptimizationReducer : public Next {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_REQUIRED_OPTIMIZATION_REDUCER_H_
-
-"""
-
 ```

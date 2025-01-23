@@ -143,7 +143,7 @@ By following this structured thought process, combining code analysis with conte
 
 虽然 `libb.c` 本身非常简单，但它在 Frida 的测试框架中扮演着验证库链接和函数调用功能的重要角色。理解它的功能和上下文有助于理解 Frida 的工作原理，以及在逆向工程中如何利用 Frida 进行动态分析。  用户到达这里通常是出于调试、学习或开发 Frida 相关工具的目的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/32 pkgconfig use libraries/lib/libb.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,14 +151,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void liba_func();
 
 void libb_func() {
     liba_func();
 }
-
-"""
-
 ```

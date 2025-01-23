@@ -137,11 +137,13 @@ loadAndRunWasm('module_without_names.wasm'); // 假设这是没有名称节的�
 
 总而言之，`names-provider.cc` 文件中的 `NamesProvider` 类是 V8 引擎中一个重要的组成部分，它为 WebAssembly 模块提供名称信息，从而提升了 JavaScript 与 WebAssembly 交互的开发者体验和调试能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/names-provider.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -602,7 +604,4 @@ size_t NamesProvider::EstimateCurrentMemoryConsumption() const {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

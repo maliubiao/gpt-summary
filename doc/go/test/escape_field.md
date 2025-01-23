@@ -134,15 +134,17 @@ func field0() {
 
 总而言之，这段代码通过一系列测试用例，深入探讨了Go语言逃逸分析在处理结构体字段赋值时的行为和规则，帮助开发者理解哪些操作会导致局部变量逃逸到堆上，从而编写更高效的Go代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_field.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m -l
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -317,9 +319,4 @@ func field18() {
 	y, _ := iface.(Y)         // Put X, but extracted Y. The cast will fail, so y is zero initialized.
 	sink = y                  // ERROR "y escapes to heap"
 }
-
-"""
-
-
-
 ```

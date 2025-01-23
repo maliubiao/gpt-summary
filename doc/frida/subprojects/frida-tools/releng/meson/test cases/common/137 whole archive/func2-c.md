@@ -111,7 +111,7 @@ Initially, I might focus heavily on the simplicity of the function. However, whe
 
 因此，`func2.c` 虽然本身非常简单，但在 Frida 的上下文中，它成为了一个测试和验证动态 instrumentation 功能的基础案例，也为逆向工程师提供了一个简单易懂的 Hook 目标，用于学习和实践 Frida 的使用。它的存在是 Frida 测试套件的一部分，用于确保 Frida 能够正确地 Hook 和修改函数的行为，即使是最简单的函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/137 whole archive/func2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #define BUILDING_DLL
 
 #include<mylib.h>
@@ -128,7 +130,4 @@ Prompt:
 int func2(void) {
     return 42;
 }
-
-"""
-
 ```

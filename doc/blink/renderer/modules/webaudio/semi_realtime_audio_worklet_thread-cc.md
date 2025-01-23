@@ -188,15 +188,17 @@ Throughout this process, I constantly referred back to the code, ensuring my exp
 
 总而言之，`blink/renderer/modules/webaudio/semi_realtime_audio_worklet_thread.cc` 是 Web Audio API 中至关重要的一个 C++ 文件，它负责管理 AudioWorklet 的执行线程，确保音频处理能够高效且实时地进行，从而支持开发者使用 JavaScript 代码编写复杂的音频处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/semi_realtime_audio_worklet_thread.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -282,7 +284,4 @@ SemiRealtimeAudioWorkletThread::CreateWorkerGlobalScope(
 }
 
 }  // namespace blink
-
-"""
-
 ```

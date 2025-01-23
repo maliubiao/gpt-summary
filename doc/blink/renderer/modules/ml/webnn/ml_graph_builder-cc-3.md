@@ -112,7 +112,7 @@ Here's a breakdown of the steps:
 
 总而言之，这部分代码负责将用户在 JavaScript 中定义的 WebNN 计算图“物化”成浏览器底层可以执行的结构，并处理构建过程中的异步性和潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ml/webnn/ml_graph_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -120,11 +120,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-
-
-  pad->Connect({input}, {output});
+### 源代码
+```cpp
+pad->Connect({input}, {output});
   return output;
 }
 
@@ -863,8 +863,4 @@ void MLGraphBuilder::ReleaseConstantData() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

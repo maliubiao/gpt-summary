@@ -157,11 +157,13 @@ const sharedArray = new Int32Array(sharedBuffer);
 
 `platform-darwin.cc` 是 V8 引擎在 Darwin 系统上运行的关键组成部分，它提供了与操作系统底层交互的必要功能。虽然 JavaScript 开发者通常不需要直接了解这些细节，但这些底层实现直接影响着 JavaScript 代码的性能、安全性和能力。它是一个平台适配层，使得 V8 引擎可以在 macOS 和 iOS 系统上正确高效地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-darwin.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -402,7 +404,4 @@ V8_BASE_EXPORT void SetJitWriteProtected(int enable) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

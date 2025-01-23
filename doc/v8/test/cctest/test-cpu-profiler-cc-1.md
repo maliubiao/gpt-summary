@@ -117,7 +117,7 @@ for (let i = 0; i < 10000; i++) {
 
 总而言之，这部分代码是 V8 引擎中用于严格测试 CPU profiler 功能的单元测试，涵盖了各种 JavaScript 运行场景和与原生代码交互的情况，确保 profiler 能够准确可靠地收集性能数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-cpu-profiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-cpu-profiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -125,9 +125,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
- ++i) foo(1, i);\n"
+### 源代码
+```cpp
+++i) foo(1, i);\n"
     "    var duration = Date.now() - start;\n"
     "  } while (duration < timeout);\n"
     "  return duration;\n"
@@ -1048,7 +1050,4 @@ TEST(CollectSampleAPI) {
   const v8::CpuProfileNode* root = profile->GetTopDownRoot();
   const v8::CpuProfileNode* start_node = GetChild(env, root, "start");
   CHECK_LE(1, start_no
-"""
-
-
 ```

@@ -142,7 +142,7 @@ This systematic approach, starting from the file path and working through the co
 
 总而言之，`frida/subprojects/frida-node/releng/tomlkit/tests/conftest.py` 这个文件是 `tomlkit` 组件测试的核心配置，它负责提供各种测试数据和动态生成测试用例，以确保 `tomlkit` 能够可靠地解析和生成 TOML 文件，这对于 Frida 这样依赖配置文件的动态 instrumentation 工具来说至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/tomlkit/tests/conftest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 
 import pytest
@@ -257,7 +259,4 @@ def pytest_generate_tests(metafunc):
             test_list["invalid_encode"].values(),
             ids=list(test_list["invalid_encode"].keys()),
         )
-
-"""
-
 ```

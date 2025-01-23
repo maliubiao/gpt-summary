@@ -136,7 +136,7 @@ This iterative process of skimming, deeper analysis of specific functions, conne
 
 总而言之，`blink/renderer/core/editing/commands/typing_command.cc` 的第二部分专注于实现复杂且精细的文本删除逻辑，并与 HTML 结构、JavaScript 事件以及 CSS 样式和布局紧密相关。理解这部分代码需要深入了解浏览器渲染引擎的工作原理和 DOM 操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/typing_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pse(Position::FirstPositionInNode(*root))
             .Build();
     frame->Selection().SetSelection(
@@ -559,8 +561,4 @@ bool TypingCommand::IsTypingCommand() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

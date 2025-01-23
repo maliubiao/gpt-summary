@@ -162,7 +162,7 @@ v6 = MOVWconst {10}  // load 操作被 store 的值替换
 
 这段 `rewriteMIPS.go` 代码片段的核心功能是定义了针对 MIPS 架构的 SSA 重写规则，通过模式匹配和替换，对中间表示进行各种优化，包括内存访问优化、寄存器操作优化、算术和逻辑运算优化以及类型转换优化等，最终目标是生成更高效的 MIPS 机器码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteMIPS.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -170,8 +170,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 :(ADDconst [off2] ptr) mem)
 	// cond: (is16Bit(int64(off1+off2)) || x.Uses == 1)
 	// result: (MOVBstorezero [off1+off2] {sym} ptr mem)
@@ -2996,9 +2998,4 @@ func rewriteValueMIPS_OpRotateLeft32(v *Value) bool {
 		v.reset(OpOr32)
 		v0 := b.NewValue0(v.Pos, OpLsh32x32, t)
 		v1 :=
-"""
-
-
-
-
 ```

@@ -186,15 +186,17 @@ if (Math.abs(sum - 0.3) < tolerance) {
 
 In the above example, if JavaScript used a naive string conversion, the output of `sum.toString()` might be something very long and confusing. `fast-dtoa` helps produce a more human-friendly and often shorter representation, making it easier for developers to understand the value.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/fast-dtoa.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/numbers/fast-dtoa.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -939,7 +941,4 @@ bool FastDtoa(double v, FastDtoaMode mode, int requested_digits,
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -165,15 +165,17 @@ Finally, organize the gathered information into a clear and structured answer, c
 
 `pending_invalidations_test.cc` 是一个关键的测试文件，用于验证 Blink 引擎中样式失效机制的正确性和效率。它测试了 `PendingInvalidations` 类如何管理待处理的样式失效，并确保在各种场景下，样式能够正确且高效地更新，这直接关系到用户浏览网页的性能和体验。理解这个文件的功能有助于理解浏览器渲染引擎如何优化样式更新过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/invalidation/pending_invalidations_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ TEST_F(PendingInvalidationsTest, DescendantInvalidationOnDisplayNone) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

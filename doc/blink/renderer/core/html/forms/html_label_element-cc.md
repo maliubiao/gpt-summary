@@ -199,15 +199,17 @@ By following these steps, combining code analysis with an understanding of web t
 
 总而言之，`blink/renderer/core/html/forms/html_label_element.cc` 文件是 Blink 引擎中至关重要的组成部分，它确保了 HTML `<label>` 元素能够正确地与其关联的表单控件协同工作，提供良好的用户交互体验。它处理了用户与标签的各种交互行为，并将这些行为转化为对关联控件的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_label_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -495,7 +497,4 @@ void HTMLLabelElement::AccessKeyAction(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -119,7 +119,7 @@ struct event {
 
 ### 总结
 通过上述分析，`execsnoop` 利用 eBPF 在 `execve` 的入口/出口处捕获进程创建信息，结合用户态过滤逻辑，提供高效的进程监控能力。调试时可通过检查返回值、Map 状态和内核日志定位问题。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/execsnoop.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // Based on execsnoop(8) from BCC by Brendan Gregg and others.
 //
 #include <argp.h>
@@ -510,7 +512,4 @@ cleanup:
 
 	return err != 0;
 }
-
-"""
-
 ```

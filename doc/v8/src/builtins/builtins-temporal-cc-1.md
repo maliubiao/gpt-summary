@@ -230,7 +230,7 @@ console.log(losAngeles.getOffsetStringFor(instant)); // 输出洛杉矶偏移量
 
 这部分代码主要实现了 `Temporal` API 中 `Instant`、`Calendar` 和 `TimeZone` 这三个核心类的内置方法。它涵盖了创建对象、比较、获取属性、进行算术运算、以及转换为不同表示形式等功能。对于 `Calendar` 和 `TimeZone`，还包括了从字符串创建对象以及获取标识符的方法。代码中还包含了对国际化功能的支持（通过 `V8_INTL_SUPPORT` 宏控制）。总而言之，这个文件是 V8 引擎中 `Temporal` API 的核心实现部分，负责提供 JavaScript 可以调用的底层功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-temporal.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-temporal.cc以.tq结尾，那它是个v8 torque源代码，
@@ -238,8 +238,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ETHOD1(Instant, FromEpochSeconds)
 TEMPORAL_METHOD1(Instant, FromEpochMilliseconds)
 TEMPORAL_METHOD1(Instant, FromEpochMicroseconds)
@@ -406,8 +408,4 @@ TEMPORAL_ZONED_DATE_TIME_GET_BY_FORWARD_TIME_ZONE_AND_CALENDAR(EraYear)
 #endif  // V8_INTL_SUPPORT
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -187,7 +187,7 @@ This iterative process of code scanning, analysis, and connecting the code to hi
 
 `EditContext.cc` 文件中的 `EditContext` 类是 Blink 渲染引擎中处理文本编辑和 IME 输入的核心组件，它管理着文本内容、选区状态，并负责与输入法引擎和 JavaScript 环境进行交互，以实现富文本编辑功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ime/edit_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1027,8 +1029,5 @@ bool EditContext::HasValidCompositionBounds() const {
   }
 
   // The number of character bounds provided by the authors has to be the same
-  // as the length of the composition (as we request 
-"""
-
-
+  // as the length of the composition (as we request
 ```

@@ -153,7 +153,7 @@ My thinking process to analyze the provided C++ code and answer the prompt went 
 
 总而言之，`blink/renderer/modules/media/audio/audio_renderer_mixer_manager_test.cc` 这个 C++ 测试文件的主要功能是 **验证 `AudioRendererMixerManager` 类的核心功能，包括混音器的创建、复用、返回，以及它如何根据音频参数、延迟类型和设备信息来管理混音器实例。**  这个测试确保了 Blink 引擎在处理网页音频播放时，能够正确地创建和管理混音器，从而保证音频播放的稳定性和质量。它与 Web 平台的音频功能紧密相关，是确保浏览器音频能力正常运行的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media/audio/audio_renderer_mixer_manager_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1004,7 +1006,4 @@ TEST_F(AudioRendererMixerManagerTest, MixerParamsLatencyPlaybackFakeAudio) {
   // Ignore device buffer size, round up 640 to the power of 2.
   EXPECT_EQ(1024, mixer->get_output_params_for_testing().frames_per_buffer());
 #endif  // BUILDFLAG(IS_W
-"""
-
-
 ```

@@ -76,7 +76,7 @@ By following this thought process, we can extract meaningful information and con
 
 尽管 `prog.c` 本身代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色。它作为一个可控的、行为简单的目标程序，用于验证 Frida 的各种功能，例如进程启动、退出码获取等。它的存在体现了软件开发中单元测试的重要性，即使是最简单的功能也需要进行验证，以确保整个系统的稳定性和正确性。  对于逆向工程师来说，理解这种测试用例的目的是很有帮助的，因为它能揭示工具的某些内部工作原理和测试方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/25 config subdir/src/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -84,14 +84,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "config.h"
 
 int main(void) {
     return RETURN_VALUE;
 }
-
-"""
-
 ```

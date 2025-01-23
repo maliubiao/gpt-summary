@@ -163,7 +163,7 @@ if __name__ == '__main__':
 
 总而言之，`AppDelegate.py` 是一个典型的 macOS 应用程序委托实现，它管理着应用程序的启动和关闭。虽然它本身不包含复杂的逆向分析逻辑，但它是理解目标应用程序行为的关键起点，也是进行动态 instrumentation 的重要目标。理解其功能和生命周期事件对于有效地使用 Frida 进行逆向分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/cpushark/AppDelegate.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from Cocoa import NSApp
 from Foundation import NSObject
 from MainWindowController import MainWindowController
@@ -186,7 +188,4 @@ class AppDelegate(NSObject):
 
     def applicationShouldTerminateAfterLastWindowClosed_(self, sender):
         return True
-
-"""
-
 ```

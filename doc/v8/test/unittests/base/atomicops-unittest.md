@@ -142,11 +142,13 @@ setTimeout(() => {
 
 `atomicops-unittest.cc` 文件是 V8 引擎中用于测试底层原子操作实现的关键部分。虽然 JavaScript 开发者通常不会直接操作这些底层的原子操作，但它们是构建 JavaScript 并发特性的基础，例如 `SharedArrayBuffer` 和 `Atomics`。理解这些概念有助于理解 JavaScript 在处理并发时的机制，以及如何安全地在多个线程之间共享数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/atomicops-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -461,7 +463,4 @@ TEST(Atomicops, Relaxed_Memcmp) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -185,15 +185,17 @@ Initially, I might have focused too much on the C++ details. I then refined my t
 
 总而言之，`installed_app_controller.cc` 负责 Blink 渲染引擎中处理获取和过滤已安装的相关应用的核心逻辑，它连接了 Web App Manifest 和浏览器进程的应用安装信息，最终通过 JavaScript API 将结果暴露给网页开发者。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/installedapp/installed_app_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -317,7 +319,4 @@ void InstalledAppController::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

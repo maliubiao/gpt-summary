@@ -177,7 +177,7 @@ const str2 = "hello";
 
 这段代码片段展示了 `v8/test/cctest/test-shared-strings.cc` 的一个重要功能：**测试在并发的多 Isolate 环境下，V8 引擎创建和管理外部共享字符串的线程安全性**。它通过创建一个客户端 Isolate 并在其线程中（可能）执行字符串操作，同时主 Isolate 也在创建外部字符串，来模拟并发场景，验证 V8 内部机制的正确性，避免数据竞争和资源管理错误。 这对于确保 JavaScript 中字符串处理的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-shared-strings.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-shared-strings.cc以.tq结尾，那它是个v8 torque源代码，
@@ -185,8 +185,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 * client = test.NewClientIsolate();
   ProtectExternalStringTableAddStringClientIsolateThread thread("worker", &test,
                                                                 client);
@@ -217,8 +219,4 @@ Prompt:
 
 #endif  // V8_CAN_CREATE_SHARED_HEAP_BOOL &&
         // !COMPRESS_POINTERS_IN_MULTIPLE_CAGES_BOOL
-
-"""
-
-
 ```

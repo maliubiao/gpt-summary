@@ -52,12 +52,14 @@ During Turboshaft's compilation of this function, it will create an internal rep
 
 So, while you don't see the direct impact of this C++ code in your JavaScript, it is a vital step in the engine that makes your JavaScript code run efficiently. It bridges the gap between Turboshaft's optimized IR and Turbofan's instruction selection and code generation phases.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/recreate-schedule.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1807,7 +1809,4 @@ Node* ScheduleBuilder::ProcessOperation(const Simd128TernaryOp& op) {
 #define HANDLE_KIND(kind)                                                      \
   case Simd128TernaryOp::Kind::k##kind:                                        \
     return AddNode(machine.kind(), {GetNode(op.first()), GetNode(op
-"""
-
-
 ```

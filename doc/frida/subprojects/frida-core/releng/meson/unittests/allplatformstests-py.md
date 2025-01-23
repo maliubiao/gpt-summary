@@ -159,7 +159,7 @@ If a test in this file fails, it provides a **debugging clue** indicating a prob
 
 This first part of the `allplatformstests.py` file focuses on testing the **fundamental configuration, file system interaction, and core utilities** of the Meson build system. It verifies that Meson correctly handles project setup, configuration data, file operations, and basic interactions with compilers and linkers in a platform-independent manner. It also includes tests for handling output encoding and the execution of custom commands. This section lays the groundwork for more complex tests in subsequent parts by ensuring the basic building blocks of Meson are functioning correctly.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -910,8 +912,4 @@ class AllPlatformTests(BasePlatformTests):
                           self._run, self.mtest_command + ['--setup=valgrind'])
         with open(os.path.join(self.logdir, 'testlog-valgrind.txt'), encoding='utf-8') as f:
             vg_log = f.read()
-
-"""
-
-
 ```

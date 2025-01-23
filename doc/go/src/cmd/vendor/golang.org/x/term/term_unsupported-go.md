@@ -147,15 +147,17 @@ Error making raw: terminal: MakeRaw not implemented on plan9/386
 
 总之，`term_unsupported.go` 的核心作用是在不支持特定终端操作的平台上提供一个安全的、会返回错误的占位实现，避免程序因调用不存在的系统调用而崩溃，并清晰地告知用户原因。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/term/term_unsupported.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -194,9 +196,4 @@ func getSize(fd int) (width, height int, err error) {
 func readPassword(fd int) ([]byte, error) {
 	return nil, fmt.Errorf("terminal: ReadPassword not implemented on %s/%s", runtime.GOOS, runtime.GOARCH)
 }
-
-"""
-
-
-
 ```

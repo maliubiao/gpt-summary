@@ -184,7 +184,7 @@ options = {
 
 总而言之，`frida/subprojects/frida-core/releng/meson/mesonbuild/coredata.py` 中的这部分代码是 Meson 构建系统管理配置选项的核心，它直接影响着 Frida 的构建方式和最终产物的特性，与逆向工程、底层二进制、Linux/Android 平台都有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 values
         for key, opt in BUILTIN_OPTIONS.items():
             self.add_builtin_option(self.options, key.evolve(subproject=subproject), opt)
@@ -898,7 +900,4 @@ BUILTIN_CORE_OPTIONS: T.Dict['OptionKey', 'BuiltinOption'] = OrderedDict([
     (OptionKey('layout'),          BuiltinOption(UserComboOption, 'Build directory layout', 'mirror', choices=['mirror', 'flat'])),
     (OptionKey('optimization'),    BuiltinOption(UserComboOption, 'Optimization level', '0', choices=['plain', '0', 'g', '1', '2', '3', 's'])),
     (OptionKey('prefer_static'),   BuiltinO
-"""
-
-
 ```

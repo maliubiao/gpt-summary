@@ -117,15 +117,17 @@ console.log(bigNumber2 === bigNumber3); // 输出 true，因为超出精度后�
 
 总而言之，`v8/test/unittests/numbers/diy-fp-unittest.cc` 是 V8 内部测试 `DiyFp` 浮点数表示的单元测试，其正确性对 V8 引擎执行 JavaScript 数值运算至关重要。虽然开发者不直接操作 `DiyFp`，但了解其原理有助于理解 JavaScript 中常见的浮点数问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/numbers/diy-fp-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/numbers/diy-fp-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -222,7 +224,4 @@ TEST_F(DiyFpTest, Multiply) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

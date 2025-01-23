@@ -227,7 +227,7 @@ if (Process.arch === 'arm64') {
 
 总而言之，`bionic/__set_tls.c` 中的 `__set_tls` 函数是一个底层的关键函数，负责设置 ARM64 架构上线程的 TLS 指针。 它由动态链接器在线程创建时调用，是 Android 多线程编程的基础组成部分。 应用程序开发者通常不需要直接关注或调用此函数，但理解其作用对于深入理解 Android 系统的内部机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/arch-arm64/bionic/__set_tls.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -238,8 +238,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2013 The Android Open Source Project
  * All rights reserved.
@@ -273,7 +275,4 @@ Prompt:
 __LIBC_HIDDEN__ void __set_tls(void* tls) {
   asm("msr tpidr_el0, %0" : : "r" (tls));
 }
-
-"""
-
 ```

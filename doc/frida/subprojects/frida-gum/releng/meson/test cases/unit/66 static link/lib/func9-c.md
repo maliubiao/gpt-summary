@@ -167,7 +167,7 @@ By following this structured approach, which includes understanding the core req
 
 `func9.c` 中的 `func9` 函数虽然简单，但可以作为 Frida 动态插桩学习和逆向分析的切入点。通过分析其功能、与逆向的关联、涉及的底层知识、可能的错误以及调试过程，可以帮助我们更好地理解 Frida 的工作原理和应用场景。理解像 `func9` 这样简单的函数有助于我们理解更复杂的程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/66 static link/lib/func9.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,15 +175,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func8();
 
 int func9()
 {
   return func8() + 1;
 }
-
-"""
-
 ```

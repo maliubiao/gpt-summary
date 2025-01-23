@@ -367,7 +367,7 @@ dynamic linker (在 Android 中通常是 `linker64` 或 `linker`) 的主要任�
 **总结:**
 
 `bionic/benchmarks/malloc_sql_benchmark.cpp` 是一个专门用于测试 Android Bionic libc 中 `malloc` 相关函数在模拟 SQLite 工作负载下的性能的基准测试工具。它不
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/malloc_sql_benchmark.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -377,8 +377,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -511,7 +513,4 @@ static void BM_malloc_sql_trace_decay1(benchmark::State& state) {
 BIONIC_BENCHMARK(BM_malloc_sql_trace_decay1);
 
 #endif
-
-"""
-
 ```

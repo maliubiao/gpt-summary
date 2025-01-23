@@ -157,15 +157,17 @@ Let's break down the thought process to analyze the provided C++ header file `v8
 
 总而言之，`v8/src/inspector/v8-debugger-barrier.h` 定义的 `V8DebuggerBarrier` 类是 V8 调试机制中一个重要的同步工具，它确保了在多调试会话的场景下，JavaScript 代码的执行能够按照预期的方式暂停和恢复，为开发者提供了一致且可靠的调试体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-debugger-barrier.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-debugger-barrier.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ class V8DebuggerBarrier {
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_V8_DEBUGGER_BARRIER_H_
-
-"""
-
 ```

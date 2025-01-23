@@ -93,13 +93,15 @@ console.log(Atomics.load(view, 0)); // 原子地读取 view[0] 的值
 
 总而言之，`instruction-selector-x64.cc` 是 V8 引擎将高级 JavaScript 代码转换为底层机器码的关键桥梁，它负责针对 x64 架构选择最佳的指令序列来实现 JavaScript 的各种功能，包括数值计算、控制流、并发和 SIMD 操作等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/instruction-selector-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-              case IrOpcode::kInt32MulWithOverflow:
+### 源代码
+```
+case IrOpcode::kInt32MulWithOverflow:
                 cont->OverwriteAndNegateIfEqual(kOverflow);
                 return VisitBinop(this, node, kX64Imul32, cont);
               case IrOpcode::kInt64AddWithOverflow:
@@ -1561,7 +1563,4 @@ static bool MatchSimd128Constant(
   if (m.HasResolvedValue()) {
     // If the indices vector is a const, check if they are in range, or if the
     // top bit is set, then we can avoid th
-"""
-
-
 ```

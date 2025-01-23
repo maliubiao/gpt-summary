@@ -146,15 +146,17 @@ This systematic approach, starting with the high-level entry point and progressi
 
 总而言之，`unified.go` 是 Go 编译器中一个核心模块，负责将源代码转换为统一的中间表示，为后续的优化和代码生成阶段奠定基础。它涉及到包的导入导出、函数查找、泛型处理、内联优化等关键编译步骤。理解这段代码对于深入了解 Go 编译器的内部机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/noder/unified.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -730,9 +732,4 @@ func writeUnifiedExport(out io.Writer) {
 
 	base.Ctxt.Fingerprint = l.pw.DumpTo(out)
 }
-
-"""
-
-
-
 ```

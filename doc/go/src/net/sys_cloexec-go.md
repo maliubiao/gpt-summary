@@ -191,7 +191,7 @@ func main() {
 
 总而言之，这段 `sys_cloexec.go` 代码的核心功能是为 AIX 和 Darwin 平台提供一种可靠的方式来创建同时具备非阻塞和 `close-on-exec` 特性的 socket，这是 Go 语言 `net` 包实现跨平台网络编程的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/sys_cloexec.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -237,9 +239,4 @@ func sysSocket(family, sotype, proto int) (int, error) {
 	}
 	return s, nil
 }
-
-"""
-
-
-
 ```

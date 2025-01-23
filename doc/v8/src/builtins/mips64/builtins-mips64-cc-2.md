@@ -188,7 +188,7 @@ By following this process, I can generate a comprehensive and accurate summary t
 
 `v8/src/builtins/mips64/builtins-mips64.cc` 的这一部分定义了 MIPS64 架构下 V8 虚拟机执行各种关键 JavaScript 操作的底层汇编代码生成逻辑。它涵盖了解释器入口、代码优化、函数调用、对象构造以及 `Function.prototype` 和 `Reflect` API 的实现。这些内置函数是 V8 引擎高效执行 JavaScript 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/mips64/builtins-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/mips64/builtins-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -196,9 +196,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
-  __ bind(&enter_bytecode);
+### 源代码
+```cpp
+__ bind(&enter_bytecode);
   // Convert new bytecode offset to a Smi and save in the stackframe.
   __ SmiTag(a2, kInterpreterBytecodeOffsetRegister);
   __ Sd(a2, MemOperand(fp, InterpreterFrameConstants::kBytecodeOffsetFromFp));
@@ -1090,7 +1092,4 @@ void Builtins::Generate_ConstructBoundFunction(MacroAssembler* masm) {
       FrameScope scope(masm, StackFrame::MANUAL);
       __ EnterFrame(StackFrame::INTERNAL);
       __ C
-"""
-
-
 ```

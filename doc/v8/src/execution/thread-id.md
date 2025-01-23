@@ -98,11 +98,13 @@ worker2.postMessage('Hello from main thread to worker2');
 
 `v8/src/execution/thread-id.cc` 是 V8 引擎内部用于管理线程 ID 的核心组件。它为每个线程分配唯一的标识符，这对于 V8 内部的线程管理、日志记录、资源管理和性能分析至关重要。 虽然 Javascript 开发者无法直接访问这些 ID，但 V8 的多线程能力（例如 Web Workers）的实现依赖于这种线程 ID 管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/thread-id.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -138,7 +140,4 @@ int ThreadId::GetCurrentThreadId() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

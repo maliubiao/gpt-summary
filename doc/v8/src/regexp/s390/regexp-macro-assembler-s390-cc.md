@@ -119,7 +119,7 @@ By following these steps, we can generate a comprehensive and informative summar
 
 总而言之，`v8/src/regexp/s390/regexp-macro-assembler-s390.cc` 是 V8 引擎中一个关键的组成部分，它负责为 s390 架构高效地实现 JavaScript 正则表达式的匹配功能。它通过生成底层的机器码指令来执行复杂的模式匹配操作，并遵循特定的架构约定。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/s390/regexp-macro-assembler-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/s390/regexp-macro-assembler-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -127,8 +127,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1010,8 +1012,5 @@ Handle<HeapObject> RegExpMacroAssemblerS390::GetCode(Handle<String> source,
 
     // Global regexp restarts matching here.
     __ bind(&load_char_start_regexp);
-    // 
-"""
-
-
+    //
 ```

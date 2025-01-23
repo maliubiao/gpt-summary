@@ -156,14 +156,16 @@ console.log(array3.copyWithin(-3, -2));
 
 理解这些常见的错误可以帮助开发者更准确地使用 `Array.prototype.copyWithin()` 方法。这段 Torque 代码的分析有助于我们深入了解这个方法在 V8 引擎内部是如何实现的，以及其行为背后的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-copywithin.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -264,7 +266,4 @@ transitioning javascript builtin ArrayPrototypeCopyWithin(
   return object;
 }
 }
-
-"""
-
 ```

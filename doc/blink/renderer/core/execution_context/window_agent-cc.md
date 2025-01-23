@@ -146,14 +146,16 @@ By following these steps, we can analyze the provided C++ code and generate a co
 
 总而言之，`WindowAgent` 是 Blink 渲染引擎中负责管理特定窗口或标签页 JavaScript 执行环境的关键组件，它管理着 V8 Isolate 和微任务队列，并与浏览器的事件循环紧密配合，使得 JavaScript 代码能够正确地执行和与网页内容进行交互。理解 `WindowAgent` 的作用有助于开发者更好地理解 JavaScript 的执行机制和避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/execution_context/window_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ void WindowAgent::PerformMicrotaskCheckpoint() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

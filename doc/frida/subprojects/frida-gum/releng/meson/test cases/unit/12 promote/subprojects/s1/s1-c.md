@@ -189,7 +189,7 @@ By following these steps, combining code analysis with knowledge of Frida's purp
 
 总而言之， `s1.c` 作为一个简单的测试用例，用于验证 Frida 的基本 Hook 功能。它为理解 Frida 如何进行动态 instrumentation 提供了一个清晰的起点。 通过对其进行 Hook 和分析，可以深入了解 Frida 的工作原理以及其在逆向工程中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/12 promote/subprojects/s1/s1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,15 +197,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func();
 int func2();
 
 int main(int argc, char **argv) {
     return func() + func2();
 }
-
-"""
-
 ```

@@ -149,7 +149,7 @@ By following this structured thinking process and incorporating self-correction,
 
 这些测试确保了 Frida Python 绑定能够可靠地构建在各种平台上，并能正确处理各种配置场景，为 Frida 的正常运行奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 | .*WARNING: Project targets '!=0.40'.*'0.44.0': disabler")
         # Subproject has a new-enough meson_version, no warning
         self.assertNotRegex(out, "WARNING: Project targets.*Python")
@@ -900,8 +902,5 @@ Prompt:
             i['filename'] = [os.path.relpath(x, self.builddir) for x in i['filename']]
             for k in ('install_filename', 'dependencies', 'win_subsystem'):
                 if k in i:
-                    del 
-"""
-
-
+                    del
 ```

@@ -247,7 +247,7 @@ go run your_parser.go -file my_program.go
 
 总而言之，这段示例代码清晰地展示了如何使用 `go/parser` 包来提取 Go 源代码中的 import 声明，是理解 Go 语言静态分析基础的良好起点。理解 `parser.Mode` 和进行适当的错误处理是使用该功能时需要特别注意的关键点。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/parser/example_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -255,8 +255,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -300,9 +302,4 @@ func bar() {
 	// "fmt"
 	// "time"
 }
-
-"""
-
-
-
 ```

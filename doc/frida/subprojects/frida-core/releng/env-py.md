@@ -150,7 +150,7 @@ This iterative process of exploring the code, connecting it to the broader conte
 
 总而言之，`frida/subprojects/frida-core/releng/env.py` 扮演着 Frida 构建过程中的关键角色，负责根据目标平台配置构建环境，确保 Frida 能够成功地在各种操作系统和架构上编译和运行。它深入涉及到操作系统、架构、编译工具链以及构建系统的细节，是 Frida 实现跨平台支持的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/env.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from collections import OrderedDict
 from configparser import ConfigParser
 from dataclasses import dataclass
@@ -580,7 +582,4 @@ QEMU_ARCHS = {
     "armbe8": "armeb",
     "arm64": "aarch64",
 }
-
-"""
-
 ```

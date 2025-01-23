@@ -75,7 +75,7 @@ def __lldb_init_module(debugger, internal_dict):
 3. **日志输出**：在解析过程中添加日志输出，记录每个步骤的解析结果，便于调试。
 
 通过以上步骤，用户可以逐步调试 `axml.vala` 文件中的代码，确保 AXML 文件的正确解析。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/droidy/axml.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -84,8 +84,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaAXML", gir_version = "1.0")]
 namespace Frida.AXML {
 	public static ElementTree read (InputStream stream) throws Error {
@@ -422,7 +424,4 @@ namespace Frida.AXML {
 
 	private const uint32 FLAG_UTF8 = 1 << 8;
 }
-
-"""
-
 ```

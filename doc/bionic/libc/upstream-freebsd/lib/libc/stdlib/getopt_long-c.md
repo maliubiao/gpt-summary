@@ -364,7 +364,7 @@ if (Process.platform === 'android') {
 
 这个 Frida 脚本会拦截对 `getopt_long` 的调用，并在控制台上打印出 `argc`、`argv`、`options` 以及返回值。对于 `long_options` 结构体，你需要了解其具体的定义才能更详细地解析其内容。你可以通过分析 `<getopt.h>` 头文件来获取 `option` 结构体的定义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-freebsd/lib/libc/stdlib/getopt_long.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -375,8 +375,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: getopt_long.c,v 1.26 2013/06/08 22:47:56 millert Exp $	*/
 /*	$NetBSD: getopt_long.c,v 1.15 2002/01/31 22:43:40 tv Exp $	*/
 
@@ -991,7 +993,4 @@ getopt_long_only(int nargc, char * const *nargv, const char *options,
 	return (getopt_internal(nargc, nargv, options, long_options, idx,
 	    FLAG_PERMUTE|FLAG_LONGONLY));
 }
-
-"""
-
 ```

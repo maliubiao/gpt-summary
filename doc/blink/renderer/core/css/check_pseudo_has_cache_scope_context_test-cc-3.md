@@ -98,7 +98,7 @@ Here's a breakdown of what each test case seems to be doing:
 
 第 4 部分的测试用例专注于验证 CSS `:has()` 伪类在更复杂的场景下的缓存行为，特别是当 `:has()` 内部的选择器涉及到非主体匹配、相邻兄弟选择器、以及不同的元素查找范围时。这些测试旨在确保 `:has()` 的缓存机制在各种情况下都能正确且有效地工作，从而提升页面渲染的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/check_pseudo_has_cache_scope_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 SiblingsChecked,
         kSameAsCached},
        {"#div2",
@@ -804,7 +806,4 @@ TEST_F(CheckPseudoHasCacheScopeContextTest, QuerySelectorAllCase7) {
       document, "main", ":has(+ .a > .b)", {"div1", "div22"},
       /* expected_result_cache_count */ 0,
       {{"#ma
-"""
-
-
 ```

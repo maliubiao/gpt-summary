@@ -104,15 +104,17 @@ By following these steps, we can effectively analyze the code snippet, understan
 
 总而言之，`encoding_tables_test.cc` 文件虽然是一个测试文件，但它对于保证浏览器正确处理各种字符编码至关重要，直接影响到用户在浏览网页时所看到的内容的正确性。 它与 HTML, JavaScript, CSS 的交互体现在浏览器如何使用这些经过验证的编码表来解析和渲染网页内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/encoding_tables_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第12部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , 0x9624, 0x9625,
      0x9626, 0x9627, 0x9628, 0x9629, 0x962B, 0x962C, 0x962D, 0x962F, 0x9630,
      0x9637, 0x9638, 0x9639, 0x963A, 0x963E, 0x9641, 0x9643, 0x964A, 0x964E,
@@ -614,8 +616,4 @@ TEST(EncodingTables, EnsureGb18030EncodeTable) {
 
 }  // namespace
 }  // namespace WTF
-
-"""
-
-
 ```

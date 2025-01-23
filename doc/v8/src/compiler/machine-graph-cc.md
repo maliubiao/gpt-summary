@@ -183,15 +183,17 @@ console.log(calculateSomethingOptimized());
 
 `v8/src/compiler/machine-graph.cc` 是 V8 编译器中负责构建和管理机器图的关键组件。它通过创建和缓存各种类型的节点来表示底层的机器操作和数据，是 JavaScript 代码高效执行的基础。虽然开发者不会直接操作这个文件，但理解其功能有助于理解 V8 的编译和优化过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-graph.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/machine-graph.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -323,7 +325,4 @@ Node* MachineGraph::ExternalConstant(Runtime::FunctionId function_id) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

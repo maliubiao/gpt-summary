@@ -174,11 +174,13 @@ asyncGenerator.next().then(result => console.log(result)); // { value: 3, done: 
 
 `runtime-generator.cc` 文件是 V8 引擎中实现生成器和异步函数功能的重要组成部分。它定义了一些底层的运行时函数，负责创建、控制和管理生成器和异步函数的执行状态。虽然大部分函数的具体实现位于其他地方 (如 `InterpreterIntrinsics`)，但这个文件定义了这些运行时函数的接口，并在 `Runtime_CreateJSGeneratorObject` 中实现了生成器对象的创建逻辑。 这些运行时函数是 V8 引擎连接 JavaScript 层和底层 C++ 实现的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -300,7 +302,4 @@ RUNTIME_FUNCTION(Runtime_GeneratorGetResumeMode) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

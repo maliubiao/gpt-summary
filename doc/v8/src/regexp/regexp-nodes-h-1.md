@@ -164,7 +164,7 @@ V8 内部的正则表达式处理流程可能会使用类似的访问者模式�
 
 总而言之，`v8/src/regexp/regexp-nodes.h` 是 V8 引擎中用于表示和操作正则表达式内部结构的关键头文件，它为 V8 实现强大的正则表达式功能奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-nodes.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-nodes.h以.tq结尾，那它是个v8 torque源代码，
@@ -172,8 +172,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 erationDecrementer;
   friend class LoopInitializationMarker;
 };
@@ -190,8 +192,4 @@ class NodeVisitor {
 }  // namespace v8
 
 #endif  // V8_REGEXP_REGEXP_NODES_H_
-
-"""
-
-
 ```

@@ -89,7 +89,7 @@ Here's a breakdown of its key responsibilities:
 
 In summary, `vs2010backend.py` is a crucial component in the Frida build process on Windows, responsible for translating Meson's build instructions into the format required by Visual Studio 2010. It plays a significant role in enabling developers and reverse engineers to build, debug, and analyze the Frida Python bindings within the Visual Studio environment.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 , inc_cl)
                         self.add_additional_options(lang, inc_cl, file_args)
                         self.add_preprocessor_defines(lang, inc_cl, file_defines)
@@ -457,8 +459,4 @@ Prompt:
 
     def generate_lang_standard_info(self, file_args: T.Dict[str, CompilerArgs], clconf: ET.Element) -> None:
         pass
-
-"""
-
-
 ```

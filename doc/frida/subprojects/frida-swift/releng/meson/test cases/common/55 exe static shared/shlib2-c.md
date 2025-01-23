@@ -144,7 +144,7 @@ By following this structured thought process, considering the context of Frida a
 
 如果用户在调试过程中发现 Frida 没有按预期工作，例如 hook 没有生效，或者返回值不是预期的，他们可能会回溯到 `shlib2.c` 的源代码，仔细分析其逻辑，检查 Frida 脚本的正确性，以及确认目标程序是否真的执行到了 `shlibfunc2`。这个源代码文件就成为了调试过程中的一个重要参考点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/55 exe static shared/shlib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "subdir/exports.h"
 
 int statlibfunc(void);
@@ -162,7 +164,4 @@ int statlibfunc2(void);
 int DLL_PUBLIC shlibfunc2(void) {
     return statlibfunc() - statlibfunc2();
 }
-
-"""
-
 ```

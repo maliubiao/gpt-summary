@@ -150,15 +150,17 @@ console.log(processedData);
 
 `v8/src/compiler/turboshaft/use-map.h` 中定义的 `UseMap` 和 `SimdUseMap` 是 V8 Turboshaft 编译器的关键组件，用于跟踪操作之间的使用关系。这对于编译器的各种优化至关重要，包括死代码消除、公共子表达式消除以及 SIMD 优化，最终目的是提高 JavaScript 代码的执行效率。它们是编译器内部的工具，与用户编写的 JavaScript 代码没有直接的语法对应关系，但它们的运行机制会影响编译后的代码性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/use-map.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/use-map.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -223,7 +225,4 @@ class SimdUseMap : public UseMap, public NON_EXPORTED_BASE(ZoneObject) {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_USE_MAP_H_
-
-"""
-
 ```

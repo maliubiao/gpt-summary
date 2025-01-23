@@ -96,7 +96,7 @@ Here's a breakdown of the analysis I need to perform:
 
 这部分代码主要对 `net/cert/x509_certificate.cc` 中 `X509Certificate` 类的核心功能进行单元测试，包括证书的创建、序列化、相等性比较、颁发者验证、自签名判断、格式解析以及主机名验证等关键操作。这些测试旨在确保 `X509Certificate` 类能够正确可靠地处理各种类型的 X.509 证书数据，是 Chromium 网络栈安全性的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/x509_certificate_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eFromPickle(&iter);
   ASSERT_TRUE(cert_from_pickle);
   EXPECT_TRUE(x509_util::CryptoBufferEqual(cert->cert_buffer(),
@@ -756,8 +758,4 @@ INSTANTIATE_TEST_SUITE_P(All,
                          testing::ValuesIn(kPublicKeyInfoTestData));
 
 }  // namespace net
-
-"""
-
-
 ```

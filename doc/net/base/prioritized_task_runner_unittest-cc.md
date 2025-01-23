@@ -150,15 +150,17 @@ fetch('/images/background.jpg', { priority: 'low' })
 
 总而言之，`net/base/prioritized_task_runner_unittest.cc` 是确保 `PrioritizedTaskRunner` 这一关键组件正确运行的基石，它通过各种测试用例覆盖了其核心功能和边界情况，帮助开发者避免潜在的错误，并为调试提供了重要的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/prioritized_task_runner_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -544,7 +546,4 @@ TEST_F(PrioritizedTaskRunnerTest, OrderSamePriorityByPostOrder) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

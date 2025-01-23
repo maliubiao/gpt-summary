@@ -241,7 +241,7 @@ int main() {
 
 总而言之，`e_powl.c` 是 Android Bionic 中 `libm` 库提供高精度幂运算功能的核心实现，它通过精巧的算法和对特殊情况的细致处理，确保了在各种场景下都能返回准确的结果。 理解其实现原理有助于我们更好地理解 Android 系统的底层机制以及如何进行高性能的数学计算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/ld128/e_powl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -251,8 +251,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -693,7 +695,4 @@ powl(long double x, long double y)
     }
   return s * z;
 }
-
-"""
-
 ```

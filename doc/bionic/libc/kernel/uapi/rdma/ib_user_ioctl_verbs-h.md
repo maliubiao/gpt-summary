@@ -439,7 +439,7 @@ sys.stdin.read()
 
 通过这种方式，你可以 hook 系统调用，观察哪些进程在调用与 RDMA 相关的 `ioctl` 命令，以及传递了哪些参数，从而了解 Android 系统如何与底层的 RDMA 驱动程序进行交互。请注意，直接在 Android 框架层面使用 RDMA 是非常少见的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/rdma/ib_user_ioctl_verbs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -450,8 +450,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -652,7 +654,4 @@ struct ib_uverbs_gid_entry {
   __u32 netdev_ifindex;
 };
 #endif
-
-"""
-
 ```

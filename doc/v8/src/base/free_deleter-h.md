@@ -157,15 +157,17 @@ std::unique_ptr<int, v8::base::FreeDeleter> my_unique_ptr(static_cast<int*>(mall
 
 总而言之，`v8/src/base/free_deleter.h` 提供了一个简单的但重要的工具，用于在 V8 引擎的 C++ 代码中安全地管理通过 `malloc` 等方式分配的内存，特别是与 `std::unique_ptr` 结合使用时，能够有效地防止多种常见的内存管理错误，从而保证 V8 引擎的稳定性和可靠性，间接地也提升了 JavaScript 代码的运行质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/free_deleter.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/free_deleter.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ struct FreeDeleter {
 }  // namespace v8
 
 #endif  // V8_BASE_FREE_DELETER_H_
-
-"""
-
 ```

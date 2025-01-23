@@ -95,11 +95,13 @@ console.log(result);
 
 `v8/src/codegen/mips64/cpu-mips64.cc` 文件包含了 MIPS64 架构下刷新指令缓存的关键功能。这个功能对于 V8 引擎正确执行动态生成的 JavaScript 代码至关重要。 尽管 JavaScript 开发者不能直接操作指令缓存，但了解其背后的原理有助于理解 V8 引擎如何有效地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/cpu-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -145,7 +147,4 @@ void CpuFeatures::FlushICache(void* start, size_t size) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
 ```

@@ -148,7 +148,7 @@ Debugging this code would involve setting breakpoints within the `DoApply` funct
 
 This part of `replace_selection_command.cc` focuses on **preparing and refining the content to be inserted** and **adjusting the insertion point** within the DOM. It involves cleaning up the content, handling styling considerations, managing paragraph breaks, and strategically modifying the insertion location to ensure proper DOM structure and visual consistency after the paste operation. It also handles merging the inserted content with its surroundings.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/replace_selection_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ed_nodes) {
   GetDocument().UpdateStyleAndLayout(DocumentUpdateReason::kEditing);
 
@@ -935,7 +937,4 @@ void ReplaceSelectionCommand::DoApply(EditingState* editing_state) {
     }
 
     // Merging the the
-"""
-
-
 ```

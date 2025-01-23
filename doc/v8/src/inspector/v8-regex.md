@@ -137,11 +137,13 @@ const multilineRegex = new RegExp("^a", "m"); // 匹配每行的开头
 
 `v8-regex.cc` 文件是 V8 Inspector 内部实现的一部分，它允许 C++ 代码利用 JavaScript 的正则表达式引擎进行字符串匹配。它提供了一个 `V8Regex` 类，该类模拟了 JavaScript 中 `RegExp` 对象的核心功能，例如创建和执行正则表达式。这使得 Inspector 能够有效地处理和分析 JavaScript 代码中的模式匹配需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-regex.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -253,7 +255,4 @@ int V8Regex::match(const String16& string, int startFrom,
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

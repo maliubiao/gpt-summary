@@ -129,7 +129,7 @@ By following these steps, I can systematically analyze the provided C code, conn
 
 总而言之，`prog.c` 是一个用于测试 Frida 动态插桩能力的简单 C 程序，它利用了 GNOME 的 GIR 技术。它可以作为 Frida 的一个目标进程，用于验证 Frida 在处理 GObject 和 GIR 时的功能是否正常。开发者可以通过分析和调试这个程序，来了解 Frida 的工作原理以及如何使用 Frida 来逆向和分析基于 GObject 的应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/7 gnome/gir/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <girepository.h>
 
 #include "meson-sample.h"
@@ -174,7 +176,4 @@ main (gint   argc,
 
   return 0;
 }
-
-"""
-
 ```

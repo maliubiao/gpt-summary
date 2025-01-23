@@ -137,7 +137,7 @@ HDF5 本身不是直接用于逆向的工具，但 Frida 作为动态 instrument
 
 总而言之，`hdf5.py` 文件在 Frida 的构建过程中扮演着关键的角色，它负责确保 Frida 能够找到并正确地链接 HDF5 库，这对于 Frida 的某些数据处理功能是至关重要的。 理解这个文件的功能有助于诊断与 HDF5 相关的构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/dependencies/hdf5.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2019 The Meson development team
 
@@ -315,7 +317,4 @@ def hdf5_factory(env: 'Environment', for_machine: 'MachineChoice',
     return candidates
 
 packages['hdf5'] = hdf5_factory
-
-"""
-
 ```

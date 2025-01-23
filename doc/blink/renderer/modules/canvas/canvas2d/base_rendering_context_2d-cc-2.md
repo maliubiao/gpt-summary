@@ -158,7 +158,7 @@ Here's a breakdown of the code and how to address each point:
 
 这个代码片段实现了 HTML Canvas 2D API 的核心绘图功能，包括填充、描边、矩形绘制、路径操作、裁剪、图像绘制、渐变和图案的创建。它负责接收来自 JavaScript 的绘图指令，进行必要的参数处理和验证，并调用底层的 Skia 图形库来完成实际的渲染工作。同时，它还处理了画布上下文的丢失和恢复事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/base_rendering_context_2d.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _path, CanvasRenderingContext2DState::kFillPaintType,
                    winding_rule, path2d_use_paint_cache_);
 }
@@ -1003,7 +1005,4 @@ CanvasPattern* BaseRenderingContext2D::createPattern(
     return nullptr;
 
   bool origin_clean = !WouldTai
-"""
-
-
 ```

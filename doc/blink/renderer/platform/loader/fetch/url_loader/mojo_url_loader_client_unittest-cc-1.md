@@ -81,15 +81,17 @@ Applying these steps to the provided code snippet leads to the summary provided 
 
 总而言之，`mojo_url_loader_client_unittest.cc` 的这部分专注于测试 `MojoURLLoaderClient` 在处理延迟场景时的正确性和健壮性。它验证了在接收到重定向和传输大小更新等关键网络事件时，客户端是否能够按照预期的行为暂停和恢复处理，尤其是在涉及到延迟消息的刷新时。这对于确保 Blink 引擎能够可靠地处理各种复杂的网络请求场景至关重要，最终保障 Web 页面的正常加载和运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/mojo_url_loader_client_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ts);
   EXPECT_FALSE(context_->received_response);
   EXPECT_FALSE(context_->complete);
@@ -159,8 +161,4 @@ TEST_P(WebMojoURLLoaderClientTest,
 INSTANTIATE_TEST_SUITE_P(All, WebMojoURLLoaderClientTest, ::testing::Bool());
 
 }  // namespace blink
-
-"""
-
-
 ```

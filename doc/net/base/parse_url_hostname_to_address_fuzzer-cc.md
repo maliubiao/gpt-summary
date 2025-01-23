@@ -119,15 +119,17 @@ fetch('https://www.example.com/data');
 
 总而言之，`net/base/parse_url_hostname_to_address_fuzzer.cc` 是 Chromium 网络栈中一个重要的测试工具，它通过生成各种输入来确保主机名解析功能的稳定性和安全性，而这个功能是浏览器处理网络请求的基础，与 JavaScript 的网络操作息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/parse_url_hostname_to_address_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -165,7 +167,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
   return 0;
 }
-
-"""
-
 ```

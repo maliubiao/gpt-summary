@@ -162,7 +162,7 @@ By following these steps, including initial scanning, detailed analysis of the c
 
 总而言之，`frida/subprojects/frida-core/releng/env_generic.py` 是 Frida 构建系统中一个至关重要的组件，它负责根据目标平台的特性配置编译环境，确保 Frida 能够成功构建并在目标平台上运行，从而为逆向工程师提供强大的动态 instrumentation 能力。 理解其工作原理有助于诊断构建问题，并深入了解 Frida 的构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/env_generic.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from collections import OrderedDict
 from configparser import ConfigParser
 import locale
@@ -546,7 +548,4 @@ MSVC_ASSEMBLER_NAMES = {
     "x86_64": "ml64",
     "arm64": "armasm64",
 }
-
-"""
-
 ```

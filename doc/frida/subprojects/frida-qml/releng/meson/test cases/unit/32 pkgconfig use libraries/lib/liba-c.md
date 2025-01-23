@@ -167,7 +167,7 @@ liba_func finished!
 
 总而言之，`liba.c` 作为一个非常简单的 C 源文件，在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 与动态链接库交互的基本功能，特别是与 `pkg-config` 集成相关的部分。它为测试 Frida 的符号解析、模块加载和 hook 机制提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/32 pkgconfig use libraries/lib/liba.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,11 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void liba_func() {
 }
-
-"""
-
 ```

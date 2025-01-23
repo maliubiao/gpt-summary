@@ -146,7 +146,7 @@ mylib_dep = declare_dependency(
 
 `cstemplates.py` 在 Frida 生态系统中扮演着代码生成器的角色，它定义了用于创建 C# 项目的蓝图。虽然它本身不直接进行逆向分析或底层操作，但它生成的项目可以成为逆向分析的目标，并且其生成的代码可能会与底层系统进行交互。理解这个文件的功能有助于理解 Frida 如何与 C# 代码集成，以及在使用 Frida 进行 C# 应用程序的动态分析时，如何构建必要的基础项目。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/templates/cstemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -246,7 +248,4 @@ class CSharpProject(ClassImpl):
     lib_template = lib_cs_template
     lib_test_template = lib_cs_test_template
     lib_meson_template = lib_cs_meson_template
-
-"""
-
 ```

@@ -187,7 +187,7 @@ const name3 = person.name; // 后续访问，可能继续保持 Monomorphic IC H
 
 `v8/src/ic/accessor-assembler.cc` 的第 4 部分主要负责实现 V8 引擎中**高效加载 JavaScript 对象属性和元素**的核心逻辑。它针对不同类型的对象（普通对象、数组、类型化数组、字典对象等）和不同的属性存储方式进行了优化，并利用 Stub Cache 和 LoadIC 等技术来提升属性访问的性能。这部分代码是 JavaScript 引擎性能的关键组成部分，直接影响着 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/accessor-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ic/accessor-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -195,8 +195,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e);
       if (access_mode == LoadAccessMode::kHas) {
         exit_point->Return(TrueConstant());
@@ -1009,8 +1011,4 @@ void AccessorAssembler::LoadIC_Noninlined(const LoadICParameters* p,
   {
     Label try_megamorphic(this), try_megadom(this);
     GotoIf(TaggedEqual(feedback, MegamorphicSymbolConstant()),
-           
-"""
-
-
 ```

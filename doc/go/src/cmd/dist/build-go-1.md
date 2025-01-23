@@ -218,7 +218,7 @@ Mon Jan  1 00:00:01 UTC 0000 +1.0s build cmd/compile
 
 综合来看，这段代码是 Go 语言构建工具 `cmd/dist` 的核心组成部分，**负责执行 Go 语言自身的 bootstrap 构建过程，并提供了一些辅助命令来管理构建环境和查看构建信息。** 它细致地管理构建过程中需要的各种环境变量，确保构建过程的正确性。同时，它也提供了时间日志功能，方便开发者分析构建性能。`cmdbootstrap` 函数是这段代码的灵魂，它通过多阶段的构建过程，使用已有的 Go 环境来构建新的 Go 工具链，体现了 Go 语言强大的自举能力。其他命令如 `cmdinstall`、`cmdclean` 等则提供了构建和维护 Go 环境的常用功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/dist/build.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -227,9 +227,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- "GO111MODULE", "")
+### 源代码
+```go
+"GO111MODULE", "")
 	xprintf(format, "GOARCH", goarch)
 	xprintf(format, "GOBIN", gorootBin)
 	xprintf(format, "GODEBUG", os.Getenv("GODEBUG"))
@@ -977,10 +979,4 @@ func setNoOpt() {
 		}
 	}
 }
-
-"""
-
-
-
-
 ```

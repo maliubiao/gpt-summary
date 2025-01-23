@@ -128,7 +128,7 @@ This iterative process of code reading, understanding the purpose of each compon
 
 总而言之，`linuxcrosstests.py` 是 Frida 项目中至关重要的测试文件，它确保了 Frida 能够在不同的目标平台上正确构建，这对于 Frida 的跨平台特性和在各种逆向工程场景中的应用至关重要。这些测试覆盖了交叉编译的各个方面，从基本的编译器设置到复杂的子项目处理和执行包装器的行为，为 Frida 的稳定性和可靠性提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/unittests/linuxcrosstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -355,7 +357,4 @@ class LinuxCrossMingwTests(BaseLinuxCrossTests):
             '-Dbuild.pkg_config_path=' + os.path.join(testdir, 'build_extra_path'),
             '-Dpkg_config_path=' + os.path.join(testdir, 'host_extra_path'),
         ])
-
-"""
-
 ```

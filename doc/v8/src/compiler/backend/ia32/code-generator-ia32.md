@@ -67,12 +67,14 @@ Cases like `kIA32Movl` (for loading a 32-bit value) with appropriate addressing 
 
 In essence, this `code-generator-ia32.cc` file is the crucial bridge that translates the abstract operations defined by the JavaScript language into the concrete instructions understood by IA-32 processors, allowing your JavaScript code to run.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/code-generator-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1799,7 +1801,4 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleArchInstruction(
           // TODO(bbudge) Use Movaps when slots are aligned.
           __ Movups(Operand(esp, 0), i.InputSimd128Register(1));
         } else if (input->IsSta
-"""
-
-
 ```

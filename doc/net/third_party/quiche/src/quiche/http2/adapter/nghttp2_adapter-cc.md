@@ -185,15 +185,17 @@ By following this structured approach, breaking down the problem, and iterativel
 
 在调试过程中，如果怀疑 HTTP/2 的行为有问题，可以设置断点在 `nghttp2_adapter.cc` 的关键函数 (如 `ProcessBytes`, `SubmitRequest`, `SubmitResponse`, `DataFrameReadCallback`, `DataFrameSendCallback`) 中，来观察 HTTP/2 帧的发送和接收过程，以及数据是如何在 `nghttp2` 库和 Chromium 网络栈之间流动的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_adapter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/nghttp2_adapter.h"
 
 #include <cstring>
@@ -654,7 +656,4 @@ void NgHttp2Adapter::RemovePendingMetadata(Http2StreamId stream_id) {
 
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

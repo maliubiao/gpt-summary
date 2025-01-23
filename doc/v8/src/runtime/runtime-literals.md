@@ -98,11 +98,13 @@ const dynamicRegex = new RegExp('pattern', 'flags'); // 虽然不是字面量，
 
 `v8/src/runtime/runtime-literals.cc` 是 V8 引擎中负责将 JavaScript 字面量语法转换为实际运行时的 JavaScript 对象的核心组件。它通过 boilerplate 和 allocation sites 等机制实现了性能优化，确保了字面量创建的高效性。理解这个文件的功能有助于深入了解 V8 引擎如何高效地处理 JavaScript 代码中的基本数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-literals.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -755,7 +757,4 @@ RUNTIME_FUNCTION(Runtime_CreateRegExpLiteral) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

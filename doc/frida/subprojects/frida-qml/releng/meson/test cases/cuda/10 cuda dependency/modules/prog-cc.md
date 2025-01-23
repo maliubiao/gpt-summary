@@ -118,7 +118,7 @@ Initially, I might have focused too heavily on the specific CUDA functions. Real
 
 总而言之，这个 `prog.cc` 文件虽然功能简单，但它在一个特定的上下文中（Frida 的 CUDA 依赖测试）扮演着重要的角色，用于验证 Frida 是否能够正确地检测和初始化 CUDA 环境，这对于 Frida 正确地插桩和分析 CUDA 应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cuda/10 cuda dependency/modules/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <cuda_runtime.h>
 #include <cublas_v2.h>
 #include <iostream>
@@ -161,7 +163,4 @@ int main(void) {
 
     return 0;
 }
-
-"""
-
 ```

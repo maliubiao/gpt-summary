@@ -152,11 +152,13 @@ obj.b = 3; // V8 可能会创建一个新的 StoreHandler，并可能再次涉�
 
 `handler-configuration.cc` 文件是 V8 引擎中至关重要的组成部分，它定义了用于优化 JavaScript 属性访问的关键数据结构和创建逻辑。  这些处理器通过缓存属性的位置、类型和原型链信息，显著提升了 JavaScript 代码的执行效率。 开发者虽然不能直接操作这些处理器，但理解它们的工作原理有助于理解 V8 的优化机制，从而编写出更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/handler-configuration.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -767,7 +769,4 @@ std::ostream& operator<<(std::ostream& os, WasmValueType type) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

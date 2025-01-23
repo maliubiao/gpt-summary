@@ -185,15 +185,17 @@ go tool trace trace.out
 
 `go/src/cmd/trace/procgen.go` 是 `go tool trace` 命令的核心组件之一，负责处理 trace 数据中与进程和 Goroutine 相关的事件，并将其转换为 trace viewer 可以理解的可视化格式。它使得开发者能够通过 Web 界面分析 Go 程序的运行时行为，识别性能瓶颈和并发问题。理解 `runtime/trace` 的使用方式以及 trace 事件的含义对于有效利用 `procgen.go` (通过 `go tool trace`) 进行性能分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/trace/procgen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -406,9 +408,4 @@ func (g *procGenerator) Finish(ctx *traceContext) {
 		ctx.Resource(i, fmt.Sprintf("Proc %v", i))
 	}
 }
-
-"""
-
-
-
 ```

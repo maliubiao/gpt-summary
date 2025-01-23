@@ -164,7 +164,7 @@ Essentially, I worked from the specific code details outward, inferring the broa
 
 第一部分代码主要关注 `FetchManager` 的基础架构和普通 `fetch()` 请求的处理流程。它定义了 `FetchManager` 类和其内部的 `Loader` 类，以及处理 `fetch()` 调用、构建请求、管理请求生命周期和返回 `Response` 对象的核心逻辑。 此外，它还包含了 `ResponseResolver` 辅助类来处理 Promise 的 resolve 和 reject。初步引入了对 `fetchLater` 的支持，但更详细的 `fetchLater` 逻辑可能在后续部分。  代码中也初步展示了对 SRI 的支持。  总而言之，这部分代码是 Blink 引擎中实现 `fetch` API 及其相关基础功能的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/fetch_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -978,8 +980,4 @@ void FetchManager::Loader::DidReceiveResponse(
   r->headers()->SetGuard(Headers::kImmutableGuard);
   if (GetFetchRequestData()->Integrity().empty()) {
     response_resolver_->Resolve(r);
-   
-"""
-
-
 ```

@@ -75,7 +75,7 @@ Essentially, the process involves moving from a surface-level understanding of t
 
 `nope.c` 文件本身的功能非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于测试 Frida 在遇到未初始化的函数指针这种错误状态时的行为。它与逆向工程中常见的错误场景相关，并间接地涉及到二进制底层、操作系统内核以及编程中的常见错误。通过分析这类简单的测试用例，Frida 的开发者可以确保工具的健壮性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/212 source set configuration_data/nope.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -83,12 +83,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = undefined;
-
-"""
-
 ```

@@ -88,11 +88,13 @@ Torque 的主要目的是编写 V8 引擎的内置函数，这些内置函数是
 
 总而言之，`v8/test/cctest/torque/test-torque.cc` 是 V8 引擎中一个非常重要的测试文件，它确保了 Torque 语言及其生成的代码能够正确地实现 JavaScript 的各种底层功能，从而保证 JavaScript 语言的稳定性和性能。 这些测试覆盖了 Torque 语言的语法和语义，以及它与 V8 引擎内部机制的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/torque/test-torque.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1151,7 +1153,4 @@ TEST(TestIncrementUseCounterInBuiltin) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

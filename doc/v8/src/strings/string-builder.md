@@ -109,11 +109,13 @@ const greeting = `Hello, ${name}!`; // V8 需要构建这个字符串
 
 总之，`v8/src/strings/string-builder.cc` 文件是 V8 引擎中负责高效字符串构建的关键组成部分，它为 JavaScript 中各种字符串操作提供了性能保障。理解这些内部机制有助于我们更好地理解 JavaScript 引擎的工作原理，并编写出更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/string-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -474,7 +476,4 @@ void IncrementalStringBuilder::AppendString(DirectHandle<String> string) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

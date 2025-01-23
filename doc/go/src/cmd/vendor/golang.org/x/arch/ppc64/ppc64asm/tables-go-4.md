@@ -61,7 +61,7 @@ Response:
 
 ### 总结
 该文件是 PowerPC 64 位架构指令集解析器的一部分，定义了指令的编码、操作数类型、指令格式等信息。它用于解析和生成 PowerPC 汇编指令，涵盖了向量运算、浮点运算、整数运算等多种功能。在使用时需要注意操作数字段的位偏移和指令格式的准确性。
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/ppc64/ppc64asm/tables.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -70,8 +70,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 eld{ap_VecReg_6_10, ap_VecReg_11_15, ap_VecReg_16_20, ap_VecReg_21_25}},
 	{VMSUMUHM, 0xfc00003f00000000, 0x1000002600000000, 0x0, // Vector Multiply-Sum Unsigned Halfword Modulo VA-form (vmsumuhm VRT,VRA,VRB,VRC)
 		[6]*argField{ap_VecReg_6_10, ap_VecReg_11_15, ap_VecReg_16_20, ap_VecReg_21_25}},
@@ -807,9 +809,4 @@ eld{ap_VecReg_6_10, ap_VecReg_11_15, ap_VecReg_16_20, ap_VecReg_21_25}},
 		[6]*argField{ap_ImmUnsigned_7_14, ap_FPReg_16_20, ap_ImmUnsigned_6_6, ap_ImmUnsigned_15_15}},
 	{MTFSFCC, 0xfc0007ff00000000, 0xfc00058f00000000, 0x0, // Move To FPSCR Fields XFL-form (mtfsf. FLM,FRB,L,W)
 		[6]*argField{ap_ImmUnsigned_7_14, ap_FPReg_16_20, ap_Im
-"""
-
-
-
-
 ```

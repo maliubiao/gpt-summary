@@ -171,7 +171,7 @@ message := []byte("abcdefghabcdefghabcdefghabcdefghabcdefghabcdefghabcdefghabcde
 
 总而言之，这段汇编代码是 Go 语言 SHA256 实现中性能关键的部分，它利用了特定的 CPU 指令来加速哈希运算。使用者通常不会直接调用这个函数，而是通过 `crypto/sha256` 包提供的更高级别的 API 来使用 SHA256 功能，这些 API 会处理数据分块、padding 和状态管理等细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/sha256/_asm/sha256block_amd64_shani.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -179,8 +179,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -355,9 +357,4 @@ func rounds12to59(m VecPhysical, c int, a, t VecPhysical, sha256msg1, movop VecF
 	SHA256RNDS2(msg, state1, state0)
 	sha256msg1(m, a)
 }
-
-"""
-
-
-
 ```

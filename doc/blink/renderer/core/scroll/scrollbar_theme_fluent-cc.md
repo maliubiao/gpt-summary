@@ -172,15 +172,17 @@ Let's break down the thought process for analyzing this C++ code snippet.
 *   如果需要深入调试 `ScrollbarThemeFluent` 的具体逻辑，可以在相关的方法中设置断点，例如 `ThumbRect` 或 `PaintTrackBackground`，来跟踪滚动条的布局和绘制流程。
 *   检查 `WebThemeEngine` 的实现，了解它是如何获取平台相关的滚动条信息的，可能有助于理解不同平台下滚动条表现的差异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scroll/scrollbar_theme_fluent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -436,7 +438,4 @@ bool ScrollbarThemeFluent::UsesNinePatchTrackAndButtonsResource() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

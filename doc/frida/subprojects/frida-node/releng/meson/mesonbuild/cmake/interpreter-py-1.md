@@ -127,7 +127,7 @@ myapp = executable('myapp', myapp_src, link_with : mylib, include_directories: m
 
 总而言之，这个 Python 模块是 Frida 构建系统中一个关键的组件，它负责将基于 CMake 构建的外部代码集成到 Frida 的 Meson 构建流程中，从而简化了构建过程，并允许 Frida 利用 CMake 生态系统中的各种库和组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/cmake/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 mlog.bold(str(self.conflict_map)))
         mlog.log('  -- working_dir:  ', mlog.bold(str(self.working_dir)))
         mlog.log('  -- depends_raw:  ', mlog.bold(str(self.depends_raw)))
@@ -648,8 +650,4 @@ class CMakeInterpreter:
 
     def target_list(self) -> T.List[str]:
         return list(self.internal_name_map.keys())
-
-"""
-
-
 ```

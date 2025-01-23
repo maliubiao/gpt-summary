@@ -236,7 +236,7 @@ sys.stdin.read()
 
 总结来说，这个代码片段是 Android Bionic 库中用于测试 `cbrtf` 函数的测试数据，它确保了 Android 系统提供的基本数学运算的正确性。 理解这些测试数据有助于理解 `cbrtf` 函数的功能、使用场景以及潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/cbrtf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -248,8 +248,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 6d9fcp-2,
     0x1.000002p-6
   },
@@ -450,8 +452,4 @@ Prompt:
     -0x1.f4p6
   }
 };
-
-"""
-
-
 ```

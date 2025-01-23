@@ -239,15 +239,17 @@ go func() {
 
 在这个没有 `sendproxy` 的假设场景中，如果生成素数的 goroutine 产生的素数速度快于合并倍数的 goroutine 处理 `primes` channel 的速度，那么 `primes <- p` 这行代码可能会阻塞。同时，合并倍数的 goroutine 又在等待从 `primes` channel 接收数据 (`<-primes`)，这就形成了一个互相等待的死锁。 `sendproxy` 通过引入一个带缓冲的 channel 作为代理，解决了这个问题，使得生成素数的 goroutine 可以继续发送数据，即使合并倍数的 goroutine 暂时没有准备好接收。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/chan/sieve2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -436,9 +438,4 @@ func main() {
 		}
 	}
 }
-
-"""
-
-
-
 ```

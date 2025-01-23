@@ -126,15 +126,17 @@ By following these steps, I was able to dissect the C++ code, understand its pur
 
 总而言之，`BackwardGraphemeBoundaryStateMachine` 是 Blink 引擎中一个关键的文本处理组件，它确保了浏览器能够正确地理解和操作用户感知的字符，从而为用户提供一致和符合预期的文本编辑体验。理解其工作原理对于调试与文本相关的渲染和编辑问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/state_machines/backward_grapheme_boundary_state_machine.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -374,7 +376,4 @@ void BackwardGraphemeBoundaryStateMachine::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

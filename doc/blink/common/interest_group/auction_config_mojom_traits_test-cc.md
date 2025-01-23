@@ -114,14 +114,16 @@ AuctionConfig CreateBasicAuctionConfig(const GURL& seller_url = GURL("https://se
 
 总而言之，`auction_config_mojom_traits_test.cc` 是一个重要的测试文件，它确保了 Protected Audience API 的配置信息可以在 Chromium 的不同组件之间可靠地传递，并且验证了配置的正确性，从而避免了因配置错误导致的功能异常或安全问题。它虽然不直接操作 JavaScript, HTML 或 CSS，但其测试结果直接影响着这些 Web 技术在 Protected Audience API 中的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/auction_config_mojom_traits_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1038,7 +1040,4 @@ INSTANTIATE_TEST_SUITE_P(All,
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

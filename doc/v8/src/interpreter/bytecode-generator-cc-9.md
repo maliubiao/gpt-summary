@@ -237,7 +237,7 @@ CallProperty r0, feedback_slot2          // 调用获取到的属性（应该是
 
 希望以上分析能够帮助你理解 `v8/src/interpreter/bytecode-generator.cc` 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -245,8 +245,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第10部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nt load_feedback_index =
           feedback_index(feedback_spec()->AddLoadICSlot());
       int call_feedback_index =
@@ -1099,7 +1101,4 @@ void BytecodeGenerator::VisitForNullishTest(Expression* expr,
   // TODO(joshualitt): We should do this in a TestResultScope.
   TypeHint type_hint = VisitForAccumulatorValue(expr);
   ToBooleanMode mode = ToBooleanModeFromTypeHint(type_hint)
-"""
-
-
 ```

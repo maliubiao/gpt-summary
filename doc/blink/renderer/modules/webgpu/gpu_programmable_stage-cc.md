@@ -202,15 +202,17 @@ By following these steps, I can systematically analyze the code, connect it to t
 
 通过这样的调试，你可以确认 JavaScript 代码中指定的着色器入口点和常量是否被正确地传递和转换，从而帮助定位 WebGPU 应用中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_programmable_stage.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -255,7 +257,4 @@ void GPUProgrammableStageAsWGPUProgrammableStage(
 }
 
 }  // namespace blink
-
-"""
-
 ```

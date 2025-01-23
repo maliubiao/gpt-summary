@@ -227,7 +227,7 @@ func main() {
 
 这段 `go/src/math/log.go` 代码的核心功能是实现浮点数的自然对数计算，并周到地处理了各种特殊情况，确保了数值计算的正确性和健壮性。使用者需要注意输入值的范围，避免传入非正数导致 `NaN` 或 `-Inf` 的结果。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/log.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -235,8 +235,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -366,9 +368,4 @@ func log(x float64) float64 {
 	hfsq := 0.5 * f * f
 	return k*Ln2Hi - ((hfsq - (s*(hfsq+R) + k*Ln2Lo)) - f)
 }
-
-"""
-
-
-
 ```

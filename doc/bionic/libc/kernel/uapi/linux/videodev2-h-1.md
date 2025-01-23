@@ -241,7 +241,7 @@ if __name__ == '__main__':
 
 总结来说，`videodev2.handroid` 头文件是 Android 系统与底层视频设备驱动交互的关键接口定义，为 Android 的多媒体功能提供了基础。虽然它本身不包含代码实现，但其定义的结构体和宏被广泛用于 Android Framework 和 NDK 应用中，以控制和管理视频设备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/videodev2.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -253,8 +253,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 _STD_H (V4L2_STD_PAL_H | V4L2_STD_SECAM_H)
 #define V4L2_STD_L (V4L2_STD_SECAM_L | V4L2_STD_SECAM_LC)
 #define V4L2_STD_GH (V4L2_STD_G | V4L2_STD_H)
@@ -1047,8 +1049,4 @@ struct v4l2_remove_buffers {
 #define V4L2_PIX_FMT_SUNXI_TILED_NV12 V4L2_PIX_FMT_NV12_32L32
 #define V4L2_CAP_ASYNCIO 0x02000000
 #endif
-
-"""
-
-
 ```

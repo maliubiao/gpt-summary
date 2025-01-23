@@ -316,7 +316,7 @@ if __name__ == "__main__":
 
 请注意，直接在标准 Android 系统中 hook 处理 `ebt_stp_info` 的代码可能比较困难，因为相关的逻辑可能在内核空间或者底层的系统服务中。这个示例更多地展示了使用 Frida hook 用户空间程序中操作类似数据结构的基本方法。为了调试内核行为，可能需要使用更底层的调试技术，如 `adb shell` 访问 `/proc` 文件系统或者使用内核调试器。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter_bridge/ebt_stp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -327,8 +327,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -373,7 +375,4 @@ struct ebt_stp_info {
   __u16 invflags;
 };
 #endif
-
-"""
-
 ```

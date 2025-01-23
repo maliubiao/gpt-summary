@@ -118,11 +118,13 @@ const worker2 = new Worker('worker2.js');
 
 `v8/test/cctest/test-sync-primitives-arm.cc` 是 V8 引擎中用于测试底层同步原语在 ARM 架构上的实现的 C++ 文件。它通过模拟器环境测试了原子操作指令的行为，特别是验证了互斥访问的失效机制。这直接关系到 JavaScript 中 `Atomics` 和 `SharedArrayBuffer` 的正确性和可靠性，因为 JavaScript 的原子操作在底层可能依赖于这些硬件指令的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-sync-primitives-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -519,7 +521,4 @@ TEST(simulator_invalidate_exclusive_access_threaded) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

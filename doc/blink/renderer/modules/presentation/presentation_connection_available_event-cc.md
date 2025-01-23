@@ -175,15 +175,17 @@ navigator.presentation.onconnectionavailable = event => {
 
 总而言之，`presentation_connection_available_event.cc` 文件是 Blink 引擎中处理演示连接可用事件的关键组成部分，它连接了浏览器内部的演示连接管理和 JavaScript 的事件处理机制，使得网页能够感知并利用可用的演示设备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/presentation/presentation_connection_available_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ void PresentationConnectionAvailableEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

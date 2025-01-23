@@ -158,7 +158,7 @@ if __name__ == '__main__':
 
 总而言之，虽然 `lib.c` 的代码非常简单，但在 Frida 动态插桩的上下文中，它作为一个基础的测试用例，能够帮助用户理解 Frida 的基本工作原理、排查问题，并为更复杂的逆向分析奠定基础。它涉及到动态链接、内存管理、操作系统 API 以及 Frida 自身的运作机制等多个方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/146 library at root/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,15 +166,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 __declspec(dllexport)
 #endif
 int fn(void) {
     return -1;
 }
-
-"""
-
 ```

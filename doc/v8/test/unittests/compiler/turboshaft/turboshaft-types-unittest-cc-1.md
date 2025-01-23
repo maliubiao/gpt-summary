@@ -132,7 +132,7 @@ let z = maybeGetNumber(true); // z 的类型可能是 5 或 undefined
 
 这部分单元测试代码深入验证了 V8 Turboshaft 编译器中数值类型最小上界计算的正确性。它涵盖了多种数值类型和它们的表示形式，确保编译器能够安全有效地处理不同类型的数值操作，从而优化 JavaScript 代码的执行效率。虽然用户不会直接编写这段 C++ 代码，但理解其背后的原理有助于更好地理解 JavaScript 的类型系统以及避免常见的类型相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/turboshaft/turboshaft-types-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/turboshaft/turboshaft-types-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -140,8 +140,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ge(50, 350, zone()),
                Word32Type::Range(50, 400, zone()));
     CheckLubIs(lhs, Word32Type::Range(150, 600, zone()),
@@ -293,8 +295,4 @@ TEST_F(TurboshaftTypesTest, Float64LeastUpperBound) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
-
 ```

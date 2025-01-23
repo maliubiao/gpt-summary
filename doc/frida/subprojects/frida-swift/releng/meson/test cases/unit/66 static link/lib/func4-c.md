@@ -182,7 +182,7 @@ By following this structured approach, addressing each part of the request, and 
 
 总而言之，`func4.c` 虽然代码简单，但在动态分析和逆向工程中扮演着重要的角色，可以作为理解程序行为和进行调试的切入点。 通过 Frida 这样的工具，用户可以动态地观察和修改 `func4` 的行为，从而深入了解程序的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/66 static link/lib/func4.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,15 +190,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func3();
 
 int func4()
 {
   return func3() + 1;
 }
-
-"""
-
 ```

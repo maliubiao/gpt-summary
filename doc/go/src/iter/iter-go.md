@@ -266,7 +266,7 @@ func main() {
 
 总而言之，`go/src/iter/iter.go` 提供了一套用于定义和操作迭代器的基础框架，它借鉴了函数式编程的一些思想，并通过 `Pull` 函数提供了更灵活的迭代控制方式。理解其核心概念和最佳实践对于有效地使用这个包至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/iter/iter.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -274,8 +274,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -729,9 +731,4 @@ func Pull2[K, V any](seq Seq2[K, V]) (next func() (K, V, bool), stop func()) {
 // goexitPanicValue is a sentinel value indicating that an iterator
 // exited via runtime.Goexit.
 var goexitPanicValue any = new(int)
-
-"""
-
-
-
 ```

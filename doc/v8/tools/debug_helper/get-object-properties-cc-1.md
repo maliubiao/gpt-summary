@@ -194,7 +194,7 @@ myFunction();
 
 这段 C++ 代码定义了 V8 调试助手的一部分，提供了 C API 用于获取 V8 堆中对象的属性信息和堆栈帧信息。这些功能是 JavaScript 调试器实现其功能的关键组成部分，可以帮助开发者理解程序的执行状态，定位错误，并更好地理解 JavaScript 的运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/debug_helper/get-object-properties.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/debug_helper/get-object-properties.cc以.tq结尾，那它是个v8 torque源代码，
@@ -202,8 +202,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eap,
                     scope_info_address - i::kHeapObjectTag +
                         std::get<1>(
@@ -271,8 +273,4 @@ V8_DEBUG_HELPER_EXPORT void _v8_debug_helper_Free_StackFrameResult(
       static_cast<di::StackFrameResultExtended*>(result)->base);
 }
 }
-
-"""
-
-
 ```

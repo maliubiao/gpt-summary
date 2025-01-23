@@ -98,11 +98,13 @@ stopProfiling("my-profile");
 
 **总结一下：** `v8/test/cctest/profiler-extension.cc` 是一个测试工具，它通过定义一些原生函数，使得 V8 引擎的测试代码能够从 JavaScript 的层面控制和验证 CPU 性能分析器的功能。它不是用户在日常 JavaScript 开发中会直接使用的 API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/profiler-extension.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -187,7 +189,4 @@ void ProfilerExtension::CollectSample(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

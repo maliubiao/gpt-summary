@@ -176,15 +176,17 @@ function processArray(arr) {
 
 `v8/src/compiler/turboshaft/recreate-schedule.h` 定义了 Turboshaft 编译器中重新创建执行调度的关键功能。它涉及到编译图的构建和优化，并且可能需要利用之前 Turbofan 编译器的信息。虽然开发者不会直接操作这个文件，但它对于理解 V8 编译器的工作原理和 JavaScript 代码的性能至关重要。 编译器通过执行调度来优化代码的执行顺序，从而提高 JavaScript 代码的运行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/recreate-schedule.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/recreate-schedule.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ RecreateScheduleResult RecreateSchedule(PipelineData* data,
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_RECREATE_SCHEDULE_H_
-
-"""
-
 ```

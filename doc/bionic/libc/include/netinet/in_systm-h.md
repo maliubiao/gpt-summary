@@ -263,7 +263,7 @@ if (Process.platform === 'android') {
 
 通过 Hook 类似的底层网络函数，我们可以观察到 `in_systm.h` 中定义的类型在实际网络操作中的使用情况，以及字节序转换的过程。这个例子展示了 Android Framework 如何通过 JNI 调用到 Bionic 库，并最终涉及到像 `in_port_t` 这样的底层类型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/netinet/in_systm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -274,8 +274,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: in_systm.h,v 1.13 2005/12/10 23:36:23 elad Exp $	*/
 
 /*
@@ -334,7 +336,4 @@ typedef u_int32_t n_long;		/* long as received from the net */
 typedef u_int32_t n_time;		/* ms since 00:00 GMT, byte rev */
 
 #endif /* !_NETINET_IN_SYSTM_H_ */
-
-"""
-
 ```

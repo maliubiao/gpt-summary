@@ -136,11 +136,13 @@ a();
 
 `d8-console.cc` 文件是 V8 引擎中 d8 命令行工具的关键组成部分，它用 C++ 实现了 JavaScript `console` 对象的各种方法，使得在 d8 环境中运行的 JavaScript 代码可以进行日志输出、断言检查、性能分析和时间测量等操作。它充当了 JavaScript `console` 对象和底层系统调用之间的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8-console.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -366,7 +368,4 @@ void D8Console::Trace(const debug::ConsoleCallArguments& args,
 }
 
 }  // namespace v8
-
-"""
-
 ```

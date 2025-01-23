@@ -242,7 +242,7 @@ TOML 格式常用于配置文件的编写。在逆向工程中，你可能会遇
 
 因此，`test_api.py` 文件中的测试用例就像一个参考手册，当用户在使用 `tomlkit` 过程中遇到错误时，可以通过查看这些测试用例来理解 `tomlkit` 的行为和期望，从而帮助定位和解决问题。这些测试用例覆盖了各种有效的和无效的 TOML 语法，为用户提供了丰富的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tests/test_api.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -250,8 +250,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import io
 import json
 import os
@@ -719,7 +721,4 @@ def test_parse_empty_quoted_table_name():
     parsed = loads(content)
     assert parsed == {"": {"x": 1}}
     assert dumps(parsed) == content
-
-"""
-
 ```

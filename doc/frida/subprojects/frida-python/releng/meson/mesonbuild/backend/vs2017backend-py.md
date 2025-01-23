@@ -150,7 +150,7 @@ Frida 是一个强大的动态 Instrumentation 框架，广泛用于逆向工程
 
 总而言之，`vs2017backend.py` 是 Frida Python 绑定构建过程中的一个重要环节，它负责生成适用于 Visual Studio 2017 的构建文件，并根据环境信息进行必要的配置。理解它的功能有助于诊断与 Windows 平台构建相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/backend/vs2017backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -219,7 +221,4 @@ class Vs2017Backend(Vs2010Backend):
             optargs = [x for x in file_args['c'] if x.startswith('/std:c')]
             if optargs:
                 ET.SubElement(clconf, 'LanguageStandard_C').text = optargs[0].replace("/std:c", "stdc")
-
-"""
-
 ```

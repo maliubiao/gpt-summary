@@ -140,7 +140,7 @@ The actual output would be the raw byte encoding of this instruction. The `GenIn
 
 This part of `v8/src/codegen/riscv/extension-riscv-v.cc` defines the low-level interface for generating RISC-V Vector extension instructions within the V8 JavaScript engine. It provides C++ functions that correspond to specific RVV load, store (both contiguous and strided), and mask-based operations. These functions are used by V8's compiler to translate JavaScript code involving array and TypedArray manipulations into efficient RISC-V Vector assembly instructions, enabling parallel processing of data and improving performance for suitable workloads. The code also includes a helper structure for managing parameters related to accessing individual elements (lanes) within vector registers.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-v.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/extension-riscv-v.cc以.tq结尾，那它是个v8 torque源代码，
@@ -148,8 +148,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , mask, 0b11, 0, 0b111);
 }
 void AssemblerRISCVV::vsxseg2(VRegister vd, Register rs1, VRegister rs2,
@@ -222,8 +224,4 @@ LoadStoreLaneParams::LoadStoreLaneParams(MachineRepresentation rep,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

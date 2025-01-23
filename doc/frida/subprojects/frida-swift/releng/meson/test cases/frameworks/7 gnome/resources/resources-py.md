@@ -110,7 +110,7 @@ Let's break down the thought process for analyzing the provided Python script.
 
 总而言之，这个看似简单的 Python 脚本是 Frida 项目中用于测试 GLib 资源加载功能的单元测试。它不仅演示了如何在代码中加载和访问资源，也反映了 Frida 在动态插桩和逆向工程中对理解应用程序资源管理机制的重要性。通过分析这类脚本，可以更好地理解 Frida 的内部工作原理以及如何利用它进行应用程序的逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/7 gnome/resources/resources.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import os
 from gi.repository import Gio
@@ -130,7 +132,4 @@ if __name__ == '__main__':
 
     data = Gio.resources_lookup_data('/com/example/myprog/res1.txt', Gio.ResourceLookupFlags.NONE)
     assert data.get_data() == b'This is a resource.\n'
-
-"""
-
 ```

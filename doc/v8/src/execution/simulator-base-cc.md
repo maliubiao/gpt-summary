@@ -158,15 +158,17 @@ console.log(randomNumber);
 
 总而言之，`v8/src/execution/simulator-base.cc` 是 V8 模拟器模式的关键组成部分，它提供了一种在非原生环境下执行目标架构代码的机制，对于 V8 的开发、测试和跨平台支持至关重要。它通过外部函数重定向和指令缓存模拟等技术，使得 V8 能够在各种环境中运行和测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/simulator-base.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/simulator-base.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,7 +297,4 @@ const EncodedCSignature& SimulatorData::GetSignatureForTarget(Address target) {
 }  // namespace v8
 
 #endif  // defined(USE_SIMULATOR)
-
-"""
-
 ```

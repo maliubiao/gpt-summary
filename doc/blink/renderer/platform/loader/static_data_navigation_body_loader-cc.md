@@ -126,14 +126,16 @@ This systematic approach, combining code analysis, understanding the underlying 
 
 总而言之，`StaticDataNavigationBodyLoader` 提供了一种高效且方便的方式来将内存中的静态数据作为网页内容加载到 Blink 渲染引擎中，常用于处理错误页面、本地生成的页面或者 Service Worker 的响应。理解其生命周期和正确的使用方法对于避免潜在的编程错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/static_data_navigation_body_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ void StaticDataNavigationBodyLoader::Continue() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

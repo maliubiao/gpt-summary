@@ -116,15 +116,17 @@ func main() {
 
 这段 `pairimp.dir/a.go` 文件中的 `Pair` 结构体是 Go 语言泛型特性的一个简单而核心的示例。它允许创建可以存储两个不同类型值的结构，提高了代码的灵活性和类型安全性。理解泛型的基本用法对于编写可复用的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/pairimp.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -135,9 +137,4 @@ type Pair[F1, F2 any] struct {
 	Field1 F1
 	Field2 F2
 }
-
-"""
-
-
-
 ```

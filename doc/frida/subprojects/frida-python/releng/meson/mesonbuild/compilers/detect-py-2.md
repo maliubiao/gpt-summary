@@ -170,7 +170,7 @@ Here's a breakdown of the thinking process used to analyze the provided Python c
 
 这段代码片段是其中的一部分，专注于**解析编译器的预处理器输出，从中提取关键的宏定义，并根据这些宏定义推断出编译器的具体版本** (特别是 GNU GCC 和 LCC)。这是一个细致而重要的步骤，确保了构建过程的正确性和跨平台兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,9 +179,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    if not line:
+### 源代码
+```python
+if not line:
             continue
         d, *rest = line.split(' ', 2)
         if d != '#define':
@@ -206,8 +208,4 @@ def _get_lcc_version_from_defines(defines: T.Dict[str, str]) -> str:
     major = generation_and_major[1:]
     minor = defines.get('__LCC_MINOR__', '0')
     return dot.join((generation, major, minor))
-
-"""
-
-
 ```

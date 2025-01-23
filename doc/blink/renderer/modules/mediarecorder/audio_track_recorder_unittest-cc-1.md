@@ -128,7 +128,7 @@ By following these steps and continuously refining the analysis, I can arrive at
 
 这段单元测试代码模拟了上述步骤中的关键环节，通过直接调用 `AudioTrackRecorder` 的方法并检查其行为，来确保在各种用户操作和场景下，音频录制功能能够正常工作。当开发者在 JavaScript 中使用 `MediaRecorder` API 遇到问题时，可以通过查看 Blink 引擎的日志或进行断点调试，最终定位到 `AudioTrackRecorder` 相关的 C++ 代码进行分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediarecorder/audio_track_recorder_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -136,9 +136,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- can account for it and not receive unexpected outputs.
+### 源代码
+```cpp
+can account for it and not receive unexpected outputs.
   int excess_input_ = 0;
 
   // Decoder for verifying data was properly encoded.
@@ -355,8 +357,4 @@ INSTANTIATE_TEST_SUITE_P(,
                          ParamsToString);
 
 }  // namespace blink
-
-"""
-
-
 ```

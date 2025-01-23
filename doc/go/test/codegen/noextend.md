@@ -167,15 +167,17 @@ func set16(x8 int8, u8 *uint8, y8 int8, z8 uint8) {
 
 当在 `ppc64x` 架构上运行测试时，`asmcheck` 工具会尝试在生成的汇编代码中找到 "一些错误的指令断言" 这个字符串，但这显然是不存在的。 测试将会失败，但错误信息可能不够直观，导致使用者难以理解问题所在。 正确的做法是理解编译器的行为和 `asmcheck` 的语法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/noextend.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -461,9 +463,4 @@ func noIntermediateExtension(a, b, c uint32) uint32 {
 	// arm64:-"MOVWU"
 	return a*b*9 + c
 }
-
-"""
-
-
-
 ```

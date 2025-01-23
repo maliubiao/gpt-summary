@@ -117,7 +117,7 @@ My plan is to:
 
 这段代码是 V8 正则表达式引擎的核心组成部分，它负责将正则表达式的抽象表示转换为底层的执行结构，并进行各种优化以提高匹配效率。它涵盖了选择分支、量词、断言、反向引用、分组和字符集等关键的正则表达式特性，并特别关注了 Unicode 支持和性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler-tonode.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-compiler-tonode.cc以.tq结尾，那它是个v8 torque源代码，
@@ -125,8 +125,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 = alt_atom->data().at(0);
       if (!Equals(ignore_case, canonicalize, new_prefix, common_prefix)) break;
 #endif  // V8_INTL_SUPPORT
@@ -948,8 +950,4 @@ void CharacterRange::Canonicalize(ZoneList<CharacterRange>* character_ranges) {
   if (character_ranges->length() <= 1) return;
   // Check whether ranges are already canonical (increasing, non-overlapping,
   // non-adjacent).
- 
-"""
-
-
 ```

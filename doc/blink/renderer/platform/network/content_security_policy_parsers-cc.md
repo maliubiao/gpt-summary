@@ -97,14 +97,16 @@ CSP 是一种安全机制，旨在减少跨站脚本攻击 (XSS) 等风险。它
 
 `content_security_policy_parsers.cc` 文件在 Chromium Blink 引擎中扮演着至关重要的角色，它确保了开发者提供的 CSP 字符串符合标准语法。  正确的解析是 CSP 能够有效发挥安全作用的基础，直接影响到浏览器如何处理 JavaScript, HTML 和 CSS 等资源，从而保护用户免受 XSS 等攻击。开发者需要仔细遵循 CSP 的语法规则，避免常见的错误，才能充分利用 CSP 提供的安全保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/content_security_policy_parsers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ bool MatchesTheSerializedCSPGrammar(const String& value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

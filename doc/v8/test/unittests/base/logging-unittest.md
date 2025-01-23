@@ -54,11 +54,13 @@ try {
 
 总而言之，`logging-unittest.cc`  测试了 V8 引擎内部使用的日志和断言机制，这些机制对于 V8 的开发、调试和保证 JavaScript 代码的正确执行至关重要。 虽然 JavaScript 代码本身不直接使用这些 C++ 断言，但它们是 V8 引擎稳定运行的基石，并间接地影响着 JavaScript 程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/logging-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -429,7 +431,4 @@ TEST(LoggingDeathTest, Collections) {
 }  // namespace logging_unittest
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

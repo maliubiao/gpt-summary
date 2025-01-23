@@ -126,7 +126,7 @@ By following this structured approach, one can thoroughly analyze even a simple 
 
 总而言之，尽管 `checker.py` 脚本本身非常简单，但在 Frida 的测试环境中，它扮演着重要的角色，用于验证动态插桩的效果，并且与逆向工程中的文件内容分析、二进制数据处理等密切相关。理解其功能和使用场景有助于理解 Frida 的测试流程和进行相关的调试工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/92 test workdir/subdir/checker.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,14 +134,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 data = open(sys.argv[1], 'rb').read()
-
-"""
-
 ```

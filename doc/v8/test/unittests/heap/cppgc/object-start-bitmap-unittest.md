@@ -162,11 +162,13 @@ findObjectHeader(11); // 找不到精确的头部，但实际的 `FindHeader` �
 
 `object-start-bitmap-unittest.cc` 这个 C++ 文件测试了 `ObjectStartBitmap` 类的功能，该类用于在 cppgc 的内存页中高效地跟踪已分配对象的起始位置。  虽然 JavaScript 没有直接对应的实现，但其概念与 JavaScript 引擎为了进行垃圾回收而跟踪对象生命周期的内部机制是相关的。  JavaScript 引擎也需要某种方式来识别和管理堆内存中的对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/object-start-bitmap-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -357,7 +359,4 @@ TEST_F(ObjectStartBitmapTest, FindHeaderSameCell) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

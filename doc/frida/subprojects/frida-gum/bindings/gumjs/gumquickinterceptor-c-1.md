@@ -178,7 +178,7 @@ By systematically analyzing these components, I can address each of the user's q
 
 因此，这段 C 代码是 Frida 实现动态插桩的核心组成部分，用户通过编写和运行 Frida JavaScript 脚本来触发其执行，从而实现对目标进程函数调用的监控和修改。 作为调试线索，理解这段代码的功能有助于分析 Frida hook 的底层行为，排查 hook 失败或行为异常的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickinterceptor.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 _CAST (listener);
   parent = GUM_QUICK_INVOCATION_LISTENER_CAST (listener)->parent;
 
@@ -843,8 +845,4 @@ gum_quick_interceptor_release_invocation_retval (
   else
     gum_quick_invocation_retval_release (retval);
 }
-
-"""
-
-
 ```

@@ -116,15 +116,17 @@ By following these steps, I can systematically analyze the provided code, infer 
 
 希望以上分析能够帮助你理解 `blink/renderer/core/animation/css/css_animations.cc` 文件的功能。作为第 5 部分，它强调了该文件在整个 Blink 渲染引擎中负责 CSS 动画管理的核心地位。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css/css_animations.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nt_animations) {
   return element_animations &&
          element_animations->GetEffectStack().AffectsProperties(
@@ -140,8 +142,4 @@ void CSSAnimations::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

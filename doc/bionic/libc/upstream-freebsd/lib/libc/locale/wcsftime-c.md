@@ -361,7 +361,7 @@ Dynamic linker 的作用是在程序启动时加载和链接必要的共享库�
 
 希望以上详细的解释能够帮助你理解 `bionic/libc/upstream-freebsd/lib/libc/locale/wcsftime.c` 文件的功能和在 Android 系统中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-freebsd/lib/libc/locale/wcsftime.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -372,8 +372,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -498,7 +500,4 @@ wcsftime(wchar_t * __restrict wcs, size_t maxsize,
 {
 	return wcsftime_l(wcs, maxsize, format, timeptr, __get_locale());
 }
-
-"""
-
 ```

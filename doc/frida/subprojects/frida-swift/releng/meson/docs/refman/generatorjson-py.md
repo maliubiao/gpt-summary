@@ -189,7 +189,7 @@ Frida 是一个动态插桩工具，广泛用于软件逆向工程。`generatorj
 
 总之，`generatorjson.py` 是 Frida Swift 文档生成流程中的关键一环，它负责将 API 的结构化信息转换为机器可读的 JSON 格式，为后续生成用户友好的文档奠定基础。 理解其功能有助于我们理解 Frida 的文档生成流程，并在出现问题时进行有效的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/docs/refman/generatorjson.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 from __future__ import annotations
@@ -314,7 +316,4 @@ class GeneratorJSON(GeneratorBase):
         }
 
         self.out.write_text(json.dumps(data), encoding='utf-8')
-
-"""
-
 ```

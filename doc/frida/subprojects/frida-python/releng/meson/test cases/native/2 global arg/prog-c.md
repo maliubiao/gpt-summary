@@ -128,7 +128,7 @@ Finally, I would organize the analysis into logical sections as presented in the
 
 总而言之，这个 `prog.c` 文件虽然代码很简单，但它在 Frida 的构建过程中扮演着重要的角色，用于验证全局编译参数的正确性，这对于确保 Frida 能够正确构建并运行在不同的目标环境至关重要。 它更多的是一个**构建时检查**工具，而不是一个运行时的程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/native/2 global arg/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifndef MYTHING
   #error "Global argument not set"
 #endif
@@ -181,7 +183,4 @@ Prompt:
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

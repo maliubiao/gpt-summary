@@ -142,11 +142,13 @@ function asmModule(stdlib, foreign, heap) {
 
 总而言之，`test-run-wasm-asmjs.cc` 是 V8 引擎中一个重要的测试文件，它确保了当 JavaScript 代码以 asm.js 风格编写并编译为 WebAssembly 时，V8 能够正确地执行这些 WebAssembly 模块，并且其行为与 asm.js 的语义保持一致。这对于维护 JavaScript 和 WebAssembly 之间的兼容性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-asmjs.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -384,7 +386,4 @@ TEST(RunAsmJs_Int32AsmjsRemS_byzero_const) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

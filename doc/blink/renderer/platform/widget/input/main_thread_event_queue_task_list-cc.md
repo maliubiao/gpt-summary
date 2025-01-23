@@ -103,14 +103,16 @@ Let's break down the thought process for analyzing the given C++ code.
 
 `MainThreadEventQueueTaskList` 是 Blink 渲染引擎中一个重要的组件，它负责管理主线程上的事件处理任务。通过合并相似的事件，它可以优化性能，避免主线程被过多的事件处理任务阻塞。理解其功能有助于理解浏览器如何响应用户的交互，并可以帮助开发者避免一些与事件处理相关的潜在问题。虽然开发者通常不会直接操作这个类，但了解其工作原理对于构建高性能的 Web 应用是有益的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/main_thread_event_queue_task_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -165,7 +167,4 @@ std::unique_ptr<MainThreadEventQueueTask> MainThreadEventQueueTaskList::remove(
 }
 
 }  // namespace blink
-
-"""
-
 ```

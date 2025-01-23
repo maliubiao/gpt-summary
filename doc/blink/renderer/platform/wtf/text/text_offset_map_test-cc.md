@@ -142,14 +142,16 @@ By following these steps, we can generate a detailed and accurate explanation of
 
 总而言之，`text_offset_map_test.cc` 通过一系列的测试用例，确保 `TextOffsetMap` 类的 `MergeConstructor` 能够正确地合并两个文本偏移映射，这对于 Blink 引擎处理文本操作和维护文本状态至关重要，并间接地影响了与 JavaScript, HTML, CSS 相关的文本处理功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_offset_map_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ TEST(TextOffsetMapTest, MergeConstructor) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

@@ -107,7 +107,7 @@ By following these steps, the detailed and accurate explanation of the file's fu
 
 这个文件的主要功能是为一部分自定义的CSS简写属性提供**解析CSS语法**的功能，将简写属性的值分解为对应的长属性值，以便Blink引擎理解和应用这些样式。它负责将用户在CSS中书写的简写形式转换为引擎内部更容易处理的多个长属性表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/shorthands/shorthands_custom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -934,8 +936,4 @@ bool BorderLeft::ParseShorthand(
     bool important,
     CSSParserTokenStream& stream,
     const CSSParserContext& context,
-    
-"""
-
-
 ```

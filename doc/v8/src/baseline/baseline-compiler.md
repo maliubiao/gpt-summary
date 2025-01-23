@@ -58,12 +58,14 @@ console.log("Hello"); // 当访问全局变量 'console' 时，可能会涉及�
 
 总而言之，`v8/src/baseline/baseline-compiler.cc` 是 V8 引擎中至关重要的一个组件，它负责将高级的 JavaScript 代码翻译成低级的机器指令，使得 JavaScript 代码能够在计算机上运行。虽然它生成的代码不如优化编译器生成的代码效率高，但它的编译速度很快，是 V8 引擎快速启动和执行代码的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/baseline-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1838,7 +1840,4 @@ void BaselineCompiler::VisitTestTypeOf() {
       // Check if the map is callable but not undetectable.
       Register map_bit_field = kInterpreterAccumulatorRegister;
       __ LoadMap(m
-"""
-
-
 ```

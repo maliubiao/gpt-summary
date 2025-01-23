@@ -149,15 +149,17 @@ By following this iterative process of reading, analyzing, connecting, and refin
 
 通过阅读测试用例，开发者可以更好地理解预期的行为，并对比自己遇到的问题，从而找到问题的根源。例如，如果开发者遇到在 `focus` 事件处理程序中修改样式后，页面没有立即更新的问题，`FocusHandlerRunBeforeRaf` 测试可以提示他们 `requestAnimationFrame` 的作用以及事件的执行顺序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/scrolling/element_fragment_anchor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -517,7 +519,4 @@ TEST_F(ElementFragmentAnchorTest, HasURLEncodedCharacters) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

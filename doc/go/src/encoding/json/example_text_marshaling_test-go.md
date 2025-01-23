@@ -180,7 +180,7 @@ func main() {
 
 总而言之，这段代码的核心作用是展示了如何通过实现 `encoding.TextUnmarshaler` 和 `encoding.TextMarshaler` 接口，来自定义 Go 语言类型在 JSON 文本格式下的序列化和反序列化行为，使得我们可以使用更具可读性的字符串表示而不是默认的数字表示。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/json/example_text_marshaling_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -188,8 +188,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -257,9 +259,4 @@ func Example_textMarshalJSON() {
 	// * Large:        2
 	// * Unrecognized: 3
 }
-
-"""
-
-
-
 ```

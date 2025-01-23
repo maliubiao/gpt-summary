@@ -95,7 +95,7 @@ Here's a breakdown of how to approach this:
 
 这部分测试用例专门用于验证 Blink 引擎在处理具有四层嵌套 `<bdo>` 元素的复杂双向文本布局时，通过鼠标点击进行光标定位的功能是否正确。它覆盖了多种不同的文本方向组合和点击位置，旨在确保在各种复杂的 Bidi 场景下，用户交互能够得到准确的响应。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/hit_testing_bidi_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 v {font: 10px/10px Ahem; width: 300px}");
   SetBodyContent(
       "<div dir=ltr><bdo dir=rtl><bdo dir=ltr>ghi<bdo dir=rtl><bdo "
@@ -847,7 +849,4 @@ TEST_F(HitTestingBidiTest,
       "<div dir=\"rtl\"><bdo dir=\"rtl\"><bdo dir=\"ltr\"><bdo "
       "dir=\"rtl\"><bdo dir=\"ltr\">ghi<bdo dir=\"rtl\"><bdo "
       "dir=\"ltr\">abc</bdo>DEF</bdo></
-"""
-
-
 ```

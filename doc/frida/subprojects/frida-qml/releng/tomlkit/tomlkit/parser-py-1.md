@@ -239,7 +239,7 @@ dc = "eqdc11"
 
 因此，用户从编写 Frida 脚本开始，到需要解析 TOML 配置文件，最终会触发 `tomlkit` 库的解析功能，并可能涉及到 `parser.py` 文件的执行和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/tomlkit/tomlkit/parser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -248,9 +248,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    if is_aot and i == len(name_parts) - 2:
+### 源代码
+```python
+if is_aot and i == len(name_parts) - 2:
                     table.raw_append(_name, AoT([child], name=table.name, parsed=True))
                 else:
                     table.raw_append(_name, child)
@@ -402,8 +404,4 @@ Prompt:
                     value = None
 
             return value, extracted
-
-"""
-
-
 ```

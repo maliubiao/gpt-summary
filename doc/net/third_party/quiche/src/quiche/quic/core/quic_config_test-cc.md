@@ -162,7 +162,7 @@ Strategizing complete. I will now generate the response based on the above analy
 
 总而言之，`net/third_party/quiche/src/quiche/quic/core/quic_config_test.cc` 的第一部分主要功能是 **全面地测试 `QuicConfig` 类的各种功能，包括默认值设置、自动配置、与 QUIC Crypto 握手消息的转换和处理，以及对无效配置的处理。** 这些测试确保了 `QuicConfig` 类能够正确地管理 QUIC 连接的配置参数，并在各种场景下都能正常工作，从而保证 QUIC 连接的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_config_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -959,8 +961,4 @@ TEST_P(QuicConfigTest, ProcessTransportParametersServer) {
             kMinAckDelayUsForTest / kNumMicrosPerMilli);
 
   ASSERT_TRUE(config_.HasReceivedAckDelayExponent());
- 
-"""
-
-
 ```

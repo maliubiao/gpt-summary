@@ -140,15 +140,17 @@ GOOS=linux GOARCH=amd64 go build -o myapp_ppc64
 
 总而言之，`go/src/cmd/link/internal/ppc64/obj.go` 是 Go 语言链接器中至关重要的架构特定代码，它确保了 Go 能够在 PPC64 架构上正确地链接和生成可执行文件，并处理了不同操作系统和文件格式之间的差异。对于 Go 开发者来说，理解其背后的机制有助于更好地进行交叉编译和理解 Go 的平台兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ppc64/obj.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/5l/obj.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/5l/obj.c
 //
@@ -265,9 +267,4 @@ func archinit(ctxt *ld.Link) {
 		ld.Xcoffinit(ctxt)
 	}
 }
-
-"""
-
-
-
 ```

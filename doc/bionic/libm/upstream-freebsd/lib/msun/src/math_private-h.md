@@ -183,7 +183,7 @@ uint32_t ix0, ix1;
 
 总而言之，`bionic/libm/upstream-freebsd/lib/msun/src/math_private.handroid/math_private.h` 是 Android 数学库 libm 的一个内部基础头文件，它定义了用于高效、平台相关的浮点数操作的宏和类型，为 libm 中各种数学函数的实现提供了必要的支持。开发者通常不需要直接使用它，但理解其功能有助于深入理解 Android 数学库的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/math_private.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -1004,7 +1006,4 @@ long double __kernel_cosl(long double, long double);
 long double __kernel_tanl(long double, long double, int);
 
 #endif /* !_MATH_PRIVATE_H_ */
-
-"""
-
 ```

@@ -208,7 +208,7 @@ table.get(0)();
 
 作为 Turboshaft 编译器实现 WebAssembly 功能的一部分，`v8/src/wasm/turboshaft-graph-interface.cc` 的这一部分主要负责将 WebAssembly 的**原子操作、内存操作以及引用类型（结构体和数组）操作**转换为 Turboshaft 图形表示。它是将高级 Wasm 指令转化为底层可执行代码的关键步骤，确保了 Wasm 代码在 V8 中的正确和高效执行。考虑到这是 12 个部分中的第 6 部分，可以推测前面的部分可能涉及了更基础的 Wasm 指令处理和控制流，而后面的部分可能会涉及更高级的优化、代码生成或其他特定的 Wasm 特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/turboshaft-graph-interface.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/turboshaft-graph-interface.cc以.tq结尾，那它是个v8 torque源代码，
@@ -216,8 +216,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 compiler::BoundsCheckResult bounds_check_result;
     std::tie(converted_index, bounds_check_result) = BoundsCheckMem(
         imm.memory, MemoryRepresentation::Int32(), index, imm.offset,
@@ -908,8 +910,4 @@ compiler::BoundsCheckResult bounds_check_result;
           WHILE(__ Word32Constant(1)) {
             V<Any> value = __ ArrayGet(src_array, src_index_loop,
                                        src_imm.array_type, true);
-       
-"""
-
-
 ```

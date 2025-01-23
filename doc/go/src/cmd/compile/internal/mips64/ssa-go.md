@@ -232,15 +232,17 @@ MOVW x, R6  // 将地址 x 处的一个 word (32位) 加载到 R6
 
 这段 `ssa.go` 文件是 Go 语言编译器中 MIPS64 架构代码生成的核心部分。它负责将 Go 语言的 SSA 中间表示转换为可以在 MIPS64 处理器上执行的机器码指令。理解这部分代码有助于深入了解 Go 语言的编译过程和底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/mips64/ssa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1130,9 +1132,4 @@ func ssaGenBlock(s *ssagen.State, b, next *ssa.Block) {
 		b.Fatalf("branch not implemented: %s", b.LongString())
 	}
 }
-
-"""
-
-
-
 ```

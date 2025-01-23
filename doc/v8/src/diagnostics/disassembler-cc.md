@@ -186,15 +186,17 @@ console.log(multiply("5", 3)); // 字符串 "5" 和数字 3 相乘
 
 总而言之，`v8/src/diagnostics/disassembler.cc` 是 V8 引擎中一个至关重要的工具，它提供了将机器码转换成可读形式的能力，帮助开发者深入理解 JavaScript 代码的执行过程和 V8 的内部机制。它本身不直接处理用户编程错误，但通过分析其输出，可以更好地理解这些错误在底层是如何体现的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/disassembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/disassembler.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -698,7 +700,4 @@ int Disassembler::Decode(Isolate* isolate, std::ostream& os, uint8_t* begin,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

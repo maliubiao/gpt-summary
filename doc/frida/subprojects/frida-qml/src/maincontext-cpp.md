@@ -149,7 +149,7 @@ By following this structured thought process, we can thoroughly analyze the prov
 
 总而言之，`maincontext.cpp` 中的 `MainContext` 类是 `frida-qml` 的核心组件之一，它提供了一种安全可靠的方式，使得 Frida 可以在目标进程的 `GMainContext` 中执行代码，这对于实现动态插桩和与图形界面应用程序交互至关重要。理解其功能和实现原理，有助于开发者更好地利用 Frida 进行逆向分析和安全研究。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/src/maincontext.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "maincontext.h"
 
 MainContext::MainContext(GMainContext *mainContext) :
@@ -218,7 +220,4 @@ void MainContext::destroyCallback(gpointer data)
     auto f = static_cast<std::function<void ()> *>(data);
     delete f;
 }
-
-"""
-
 ```

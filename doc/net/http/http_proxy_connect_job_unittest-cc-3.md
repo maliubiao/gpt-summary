@@ -135,7 +135,7 @@ fetch('https://example.com/data')
 
 作为单元测试的最后一部分，`net/http/http_proxy_connect_job_unittest.cc` 文件专注于 **全面验证 `HttpProxyConnectJob` 类在处理基于 QUIC 协议的 HTTP 代理连接时的正确性和健壮性**。它覆盖了单一和多级 QUIC 代理的场景，并确保了在连接到 QUIC 代理时能够强制使用指定的 QUIC 版本。 结合其他部分的测试，可以推断整个 `http_proxy_connect_job_unittest.cc` 文件旨在确保 `HttpProxyConnectJob` 能够可靠地处理各种类型的 HTTP 代理连接，包括传统的 HTTP 代理和基于 QUIC 的 HTTP 代理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_proxy_connect_job_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -143,9 +143,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- must be non-null.
+### 源代码
+```cpp
+must be non-null.
   ProxyChain proxy_chain = ProxyChain::ForIpProtection({ProxyServer(
       ProxyServer::SCHEME_QUIC, HostPortPair(kQuicProxyHost, 443))});
   SSLConfig quic_ssl_config;
@@ -267,8 +269,4 @@ TEST_F(HttpProxyConnectQuicJobTest, RequestMultipleQuicProxies) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

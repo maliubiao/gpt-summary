@@ -109,14 +109,16 @@ ICO 图像解码器是浏览器渲染引擎处理 ICO 图像格式的关键组�
 
 总之，`ico_image_decoder_fuzzer.cc` 的主要目的是通过自动化地生成和输入大量可能存在缺陷的 ICO 数据，来测试 `ICOImageDecoder` 的健壮性和安全性，防止因处理恶意或损坏的 ICO 文件而导致浏览器崩溃、出现安全漏洞或性能问题。这对于确保 Web 平台的稳定性和用户安全至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/ico/ico_image_decoder_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

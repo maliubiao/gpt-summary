@@ -235,7 +235,7 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 总而言之，`gumsanitychecker.c` 是 Frida Gum 库中一个强大的调试工具，它通过动态插桩技术帮助逆向工程师和开发者检测和诊断内存相关的错误，是理解目标程序行为和发现潜在问题的重要手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/libs/gum/heap/gumsanitychecker.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -243,8 +243,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -883,7 +885,4 @@ gum_sanity_checker_print (GumSanityChecker * self,
 {
   self->priv->output (text, self->priv->output_user_data);
 }
-
-"""
-
 ```

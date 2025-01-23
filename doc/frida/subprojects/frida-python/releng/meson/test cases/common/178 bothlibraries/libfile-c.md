@@ -118,7 +118,7 @@ Finally, the key is to organize the information clearly, addressing each point o
 
 总而言之，`libfile.c` 提供了一个非常基础的共享库示例，它很好地演示了共享库的基本概念，并为动态逆向分析提供了一个简单的目标。Frida 这样的工具可以方便地与这样的库进行交互，从而揭示其内部工作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/178 bothlibraries/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "mylib.h"
 
 DO_EXPORT int retval = 42;
@@ -135,7 +137,4 @@ DO_EXPORT int retval = 42;
 DO_EXPORT int func(void) {
     return retval;
 }
-
-"""
-
 ```

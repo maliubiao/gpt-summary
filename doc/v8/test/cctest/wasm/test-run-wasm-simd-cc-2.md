@@ -532,7 +532,7 @@ WASM_EXEC_TEST(I8x16ShiftAdd) {
                                  WASM_LOCAL_GET(zero)))),                   \
          WASM_SIMD_CHECK_LANE_S(I##format, mask, I32, val2, 0),             \
          WASM_SIMD_
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-simd.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-run-wasm-simd.cc以.tq结尾，那它是个v8 torque源代码，
@@ -540,8 +540,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 8GeU) {
   RunI16x8BinOpTest(execution_tier, kExprI16x8GeU, UnsignedGreaterEqual);
 }
@@ -1356,8 +1358,5 @@ struct SwizzleTestArgs {
 };
 
 static constexpr SwizzleTestArgs swizzle_test_args[] = {
-    {{15, 14, 
-"""
-
-
+    {{15, 14,
 ```

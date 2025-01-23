@@ -149,15 +149,17 @@ Bloc("entry",
 
 总而言之，`go/src/cmd/compile/internal/ssa/schedule_test.go` 是 Go 编译器中用于测试指令调度功能的重要文件，它通过构建各种具有依赖关系的 SSA 函数，验证调度器是否能正确地对指令进行排序，并满足特定的约束条件，从而保证编译后代码的正确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/schedule_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -318,9 +320,4 @@ func TestCarryChainOrder(t *testing.T) {
 			fun.values["A2"].ID, fun.values["A2carry"].ID, fun.values["A2Carryvalue"].ID)
 	}
 }
-
-"""
-
-
-
 ```

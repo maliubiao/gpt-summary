@@ -234,7 +234,7 @@ This portion of `macro-assembler-x64.cc` focuses on providing methods for:
 
 In essence, it's a collection of foundational building blocks for generating x64 assembly code within the V8 JavaScript engine, dealing with fundamental operations needed for executing JavaScript and other code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/macro-assembler-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/x64/macro-assembler-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -242,8 +242,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ter, Cast<HeapObject>(source));
     cmp_tagged(dst, kScratchRegister);
   } else if (COMPRESS_POINTERS_BOOL) {
@@ -1191,7 +1193,4 @@ void MacroAssembler::AssertFunction(Register object) {
   ASM_CODE_COMMENT(this);
   testb(object, Immediate(kSmiTagMask));
   Check(not_equal, AbortR
-"""
-
-
 ```

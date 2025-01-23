@@ -143,15 +143,17 @@ By following this iterative process of reading, analyzing, connecting, and refin
 
 `webcodecs_logger.cc` 是一个重要的调试和诊断工具，它通过监控 `VideoFrame` 对象的生命周期，帮助开发者在使用 WebCodecs API 时避免常见的资源管理错误。虽然它不直接参与 HTML 和 CSS 的处理，但它对于构建高性能、稳定的 WebCodecs 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/webcodecs_logger.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ void WebCodecsLogger::Trace(Visitor* visitor) const {
 const char WebCodecsLogger::kSupplementName[] = "WebCodecsLogger";
 
 }  // namespace blink
-
-"""
-
 ```

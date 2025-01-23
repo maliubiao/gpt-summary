@@ -283,7 +283,7 @@ sys.stdin.read()
 
 请注意，直接在用户空间 Hook 系统调用来观察内核行为可能比较复杂，并且需要对 Android 的网络架构和内核有一定的了解。 上述 Frida 示例提供了一个基本的框架，具体的实现需要根据实际情况进行调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/rpl_iptunnel.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -294,8 +294,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -312,7 +314,4 @@ enum {
 #define RPL_IPTUNNEL_MAX (__RPL_IPTUNNEL_MAX - 1)
 #define RPL_IPTUNNEL_SRH_SIZE(srh) (((srh)->hdrlen + 1) << 3)
 #endif
-
-"""
-
 ```

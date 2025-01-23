@@ -123,11 +123,13 @@ By following these steps, I could effectively analyze the C++ unit test file and
 
 `functional-unittest.cc` 文件测试了 V8 引擎中用于实现哈希和按位比较等功能的底层机制。这些机制虽然在 JavaScript 中没有直接的 API 暴露，但其行为逻辑影响着 JavaScript 中对象和值的比较方式，以及诸如 `Set` 和 `Map` 等数据结构的工作原理。 理解这些底层测试有助于理解 JavaScript 引擎在处理数据时的细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/functional-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -347,7 +349,4 @@ TEST(FunctionalTest, BitHashDoubleDifferentForZeroAndMinusZero) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

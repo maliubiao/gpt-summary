@@ -218,7 +218,7 @@ session.then(() => {
 
 `bionic/libc/kernel/uapi/linux/iio/events.h` 是一个定义了与 Linux 内核 IIO 子系统事件交互的 UAPI 头文件。它为用户空间应用程序提供了访问和处理传感器事件的基础。Android 框架和 NDK 都通过不同的方式最终使用到这个头文件中定义的常量和数据结构，与底层的 IIO 驱动程序进行交互，从而实现各种依赖于传感器的功能。 使用 Frida 可以帮助开发者调试和理解 Android 系统中传感器数据流动的过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/iio/events.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -229,8 +229,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -254,7 +256,4 @@ struct iio_event_data {
 #define IIO_EVENT_CODE_EXTRACT_MODIFIER(mask) ((mask >> 40) & 0xFF)
 #define IIO_EVENT_CODE_EXTRACT_DIFF(mask) (((mask) >> 55) & 0x1)
 #endif
-
-"""
-
 ```

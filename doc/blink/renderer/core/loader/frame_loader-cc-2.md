@@ -163,7 +163,7 @@ By following this structured approach, I can thoroughly analyze the code snippet
 
 这部分 `FrameLoader` 代码的核心职责在于管理和协调帧的生命周期中的关键阶段，特别是与用户导航、页面卸载、同文档导航以及与 JavaScript 环境的交互。它确保了在各种导航场景下，`beforeunload` 事件能够正确触发，同文档锚点跳转能够顺利进行，并且在页面卸载时进行必要的清理工作。此外，它还涉及到一些安全策略和调试追踪的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/frame_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Loader::UserAgentMetadata() const {
   return Client()->UserAgentMetadata();
 }
@@ -532,8 +534,4 @@ FrameLoader::CreateWorkerCodeCacheHost() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

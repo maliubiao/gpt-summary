@@ -79,15 +79,17 @@ The task is to:
 
 这部分代码定义了 `HTMLFastPathParser` 类的框架和部分核心功能，用于实现一个针对特定 HTML 子集的快速解析器。它包含了基本的结构定义、构造函数、`Run` 方法的初步逻辑，以及用于跳过空白符、扫描文本、标签名和属性名的辅助方法。代码中还包含了对性能优化的考虑（SIMD 指令），以及错误处理和回退到通用解析器的机制。这部分主要关注于解析器的初始化和开始解析 HTML 代码的流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_document_parser_fastpath.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -962,7 +964,4 @@ class HTMLFastPathParser {
   Span ScanAttrName() {
     // First look for all lower case. This path doesn't require any mapping of
     // input.
-"""
-
-
 ```

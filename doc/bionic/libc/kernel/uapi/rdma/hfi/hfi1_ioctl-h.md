@@ -282,7 +282,7 @@ sys.stdin.read()
 
 Frida 会拦截 `ioctl` 调用，并打印相关的参数信息，帮助你了解应用程序是如何与 HFI1 驱动交互的。你需要根据实际的 `ioctl` 命令码和数据结构来扩展 Frida 脚本以解析更多信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/rdma/hfi/hfi1_ioctl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -293,8 +293,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -355,7 +357,4 @@ struct hfi1_base_info {
   __aligned_u64 subctxt_rcvhdrbuf;
 };
 #endif
-
-"""
-
 ```

@@ -207,15 +207,17 @@ By following this methodical approach, breaking down the code, connecting it to 
 
 总而言之，`CSSURLImageValue.cc` 是 Blink 渲染引擎中处理 CSS URL 引用图像的核心组件，它连接了 CSS 样式、图像加载、缓存管理以及最终的渲染过程，同时也为 JavaScript 操作 CSS 提供了底层支持。理解它的功能有助于我们更好地理解浏览器如何处理网页中的图像资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/css_url_image_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -289,7 +291,4 @@ void CSSURLImageValue::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

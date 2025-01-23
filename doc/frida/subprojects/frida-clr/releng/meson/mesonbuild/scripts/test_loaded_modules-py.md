@@ -139,7 +139,7 @@ By following this systematic approach, breaking down the code, connecting it to 
 
 `test_loaded_modules.py` 是 Frida 构建系统中的一个辅助脚本，用于自动化地监控和验证在执行某些操作时，Python 解释器加载的模块数量是否符合预期。它对于保持 Frida 的性能和稳定性至关重要，并间接地与逆向分析中对模块加载的理解相关联。开发者通常通过运行单元测试来间接地使用和调试这个脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/scripts/test_loaded_modules.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import sys
@@ -163,7 +165,4 @@ def run(args: T.List[str]) -> int:
     meson_exe.run(args)
     print(json.dumps(list(sys.modules.keys())))
     return 0
-
-"""
-
 ```

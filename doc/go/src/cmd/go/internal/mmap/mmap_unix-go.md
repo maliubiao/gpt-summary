@@ -211,15 +211,17 @@ Mapped data: This is a test string for mmap.
 
 总而言之，`go/src/cmd/go/internal/mmap/mmap_unix.go` 提供了一个底层的、高效的文件读取机制，被 `cmd/go` 工具内部用于优化性能。使用者需要理解内存映射的原理，并注意资源管理和潜在的并发问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/mmap/mmap_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -256,9 +258,4 @@ func mmapFile(f *os.File) (Data, error) {
 	}
 	return Data{f, data[:n]}, nil
 }
-
-"""
-
-
-
 ```

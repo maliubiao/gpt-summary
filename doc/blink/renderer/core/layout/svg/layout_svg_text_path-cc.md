@@ -163,14 +163,16 @@ By following these steps, combining code analysis with an understanding of web t
 
 总而言之，`blink/renderer/core/layout/svg/layout_svg_text_path.cc` 文件是 Blink 引擎中实现 SVG `<textPath>` 元素布局的关键组件，它负责解析和处理与文本路径相关的各种属性和数据，确保文本能够按照指定的路径进行渲染。理解其功能有助于开发者更好地使用和调试 SVG 文本路径相关的特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/layout_svg_text_path.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Nikolas Zimmermann <zimmermann@kde.org>
  *
@@ -281,7 +283,4 @@ std::unique_ptr<PathPositionMapper> LayoutSVGTextPath::LayoutPath() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

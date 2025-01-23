@@ -90,12 +90,14 @@ add(1, "2");     // 数字和字符串相加，会触发 C++ 代码中通用对�
 
 总之，这段 C++ 代码是 V8 解释器实现 JavaScript 二元运算的核心部分，它负责根据操作数的动态类型分派到不同的执行逻辑，并收集类型反馈信息用于后续的优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ype_feedback = SmiConstant(BinaryOperationFeedback::kBigInt);
         Goto(&if_done);
       }
@@ -128,8 +130,4 @@ ype_feedback = SmiConstant(BinaryOperationFeedback::kBigInt);
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -129,7 +129,7 @@ Based on these observations, I can structure the answer by addressing each of th
 
 **这部分代码主要负责元素的布局树的脱离和重新连接，以及元素自身及其子元素的样式重计算。它处理了包括伪元素、容器查询、动画、显示锁等复杂的场景，确保渲染引擎能够正确地根据 HTML 结构和 CSS 样式构建和更新渲染树。** 核心关注点在于维护渲染树的正确性和高效性，并响应 DOM 变化和样式变化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mations->RestartAnimationOnCompositor();
     }
 
@@ -946,7 +948,4 @@ StyleRecalcChange Element::RecalcOwnStyle(
     if (ContainerQueryEvaluator* evaluator = GetContainerQueryEvaluator()) {
       if (!NeedsContainerQueryEvaluator(*evaluator, *new_style)) {
         Ensure
-"""
-
-
 ```

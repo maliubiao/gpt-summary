@@ -87,12 +87,14 @@ console.timeEnd("Second call");
 
 In a real browser or Node.js environment, the "Second call" will often be significantly faster than the "First call" because V8 likely reused the compiled code for `expensiveCalculation` from its compilation cache. The C++ tests are designed to rigorously verify the correctness of this caching mechanism under various garbage collection pressures.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 olate());
 
     // The lazy function should still not be compiled.
@@ -1797,7 +1799,4 @@ TEST(ReleaseOverReservedPages) {
   // Triggering a last-resort GC should cause all pages to be released to the
   // OS so that other processes can seize the memory.  If we get a failure here
   // where there are 2 pages left
-"""
-
-
 ```

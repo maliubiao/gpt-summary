@@ -121,7 +121,7 @@ This detailed thought process involves not just reading the code but also levera
 
 作为调试线索，当程序执行到 `main` 函数时，逆向工程师或开发者可以通过 Frida 这样的工具，在这个入口点设置断点或 hook，来观察程序的行为，特别是 `do_cuda_stuff` 函数的执行情况，从而定位问题或理解其功能。  文件路径中的 `test cases` 也暗示了这很可能是开发和测试阶段的一部分，用于验证 CUDA 功能的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cuda/2 split/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int do_cuda_stuff(void);
@@ -138,7 +140,4 @@ int do_cuda_stuff(void);
 int main(void) {
   return do_cuda_stuff();
 }
-
-"""
-
 ```

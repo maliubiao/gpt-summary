@@ -245,7 +245,7 @@ A developer or reverse engineer might arrive at this code in several ways during
 
 This first part of `dlmalloc.c` introduces a highly configurable and widely used implementation of the standard C memory allocation functions (`malloc`, `free`, `realloc`, `calloc`). It outlines the core principles of dynamic memory management, highlights optional security and thread-safety features, and emphasizes the extensive compile-time options for tailoring the allocator to specific needs and environments. It sets the stage for the detailed implementation of the allocation algorithms that will follow in subsequent parts of the code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/dlmalloc.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -254,8 +254,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
   This is a version (aka dlmalloc) of malloc/free/realloc written by
   Doug Lea and released to the public domain, as explained at
@@ -945,7 +947,4 @@ MAX_RELEASE_CHECK_RATE   default: 4095 unless not HAVE_MMAP
 #define DEFAULT_MMAP_THRESHOLD ((size_t)256U * (size_t)1024U)
 #else   /* HAVE_MMAP */
 #define DEFAULT_MMAP_THRESHOLD MAX_S
-"""
-
-
 ```

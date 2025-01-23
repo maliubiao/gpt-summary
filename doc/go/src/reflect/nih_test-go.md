@@ -167,7 +167,7 @@ go test -v reflect
 
 这段测试代码通过各种边界情况的测试，确保了 `reflect` 包在处理涉及 CGO 的类型时能够提供可靠和安全的反射操作。它强调了在与 C 代码交互时需要特别注意内存安全和类型匹配的问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/nih_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -215,9 +217,4 @@ func TestNotInHeapDeref(t *testing.T) {
 	shouldPanic("reflect: reflect.Value.Pointer on an invalid notinheap pointer", func() { v.Pointer() })
 	shouldPanic("reflect: reflect.Value.UnsafePointer on an invalid notinheap pointer", func() { v.UnsafePointer() })
 }
-
-"""
-
-
-
 ```

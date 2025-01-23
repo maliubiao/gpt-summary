@@ -324,7 +324,7 @@ This script is typically executed as part of the Frida's build process or during
 
 In summary, `jsonvalidator.py` is a crucial tool for maintaining the quality and consistency of Frida's API documentation. It uses schema validation and type checking to ensure that the documentation accurately reflects the functionality of the Frida Gum library, which is essential for reverse engineers and developers using Frida for dynamic analysis. The script's connection to low-level concepts comes indirectly through the content of the JSON it validates, which describes the interface to Frida's capabilities for interacting with processes, memory, and the operating system.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/docs/jsonvalidator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -332,8 +332,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # SPDX-License-Identifier: Apache-2.0
@@ -530,7 +532,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     raise SystemExit(main())
-
-"""
-
 ```

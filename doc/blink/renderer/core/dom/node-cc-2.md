@@ -174,7 +174,7 @@ The user wants a summary of the functionalities present in the provided C++ code
 
 这部分 `Node.cc` 文件主要负责处理 DOM 节点在布局树中的生命周期管理（连接和分离）、确定节点在文档中的位置关系、处理文本内容、处理与 Shadow DOM 和 Web Components 相关的操作，以及提供一些用于调试和判断节点状态的方法。它在 Blink 渲染引擎中扮演着至关重要的角色，连接了 DOM 树的结构和最终的页面渲染。许多用户在浏览器中的操作，例如点击、拖拽、输入文本，以及 JavaScript 对 DOM 的操作，都会间接地触发这里定义的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (current);
     if (curr_fragment && curr_fragment->IsTemplateContent())
       current =
@@ -1150,8 +1152,4 @@ static void AppendMarkedTree(const String& base_indent,
               element->GetPseudoElement(kPseudoIdScrollMarkerGroupBefore)) {
         AppendMarkedTree(indent_string, pseudo, marked_node1, marked_label1,
                          marked_node2, marked_label2, builder);
-   
-"""
-
-
 ```

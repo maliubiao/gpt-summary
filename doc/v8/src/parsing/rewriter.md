@@ -149,11 +149,13 @@ return .result;
 
 总而言之，`rewriter.cc` 是 V8 引擎解析管道中的一个关键组件，它通过修改 AST 来显式地管理 JavaScript 语句的完成值，这对于正确理解和执行 JavaScript 代码至关重要。它虽然不是直接暴露给 JavaScript 开发者的功能，但深刻地影响着 JavaScript 代码在 V8 引擎中的执行方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/rewriter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -596,7 +598,4 @@ std::optional<VariableProxy*> Rewriter::RewriteBody(
 #undef VISIT_AND_RETURN_IF_STACK_OVERFLOW
 
 }  // namespace v8::internal
-
-"""
-
 ```

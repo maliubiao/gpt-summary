@@ -120,7 +120,7 @@ fetch('https://www.example.com/data')
 
 通过查看 `NetLog`，开发者可以跟踪这些步骤，了解是哪个 `Job` 对象处理了特定的解析请求，以及该 `Job` 执行了哪些任务，并最终得到了什么样的结果。这对于诊断 DNS 解析问题非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_job.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1059,7 +1061,4 @@ void HostResolverManager::Job::OnMdnsImmediateFailure(int rv) {
 void HostResolverManager::Job::StartNat64Task() {
   DCHECK(!nat64_task_);
   nat64_task_ = std::make_unique<HostResolve
-"""
-
-
 ```

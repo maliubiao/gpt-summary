@@ -124,7 +124,7 @@ Initially, I might have focused too much on the *content* of the C code. However
 
 总而言之，这个简单的 `main.c` 文件是 Frida 构建系统中一个专门用于测试链接器 "linkwhole" 选项和预编译头文件功能的测试用例。它虽然代码量少，但反映了逆向工程中关于符号解析、链接和二进制底层的重要概念，并能帮助开发者理解 Frida 的构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/13 pch/linkwhole/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 void func1();
@@ -143,7 +145,4 @@ int main(int argc, char **argv) {
     func1();
     return 0;
 }
-
-"""
-
 ```

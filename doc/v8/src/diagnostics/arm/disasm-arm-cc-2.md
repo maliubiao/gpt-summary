@@ -60,7 +60,7 @@ Self-Correction/Refinement during the process:
 
 `v8/src/diagnostics/arm/disasm-arm.cc` 是 V8 引擎中专门用于反汇编 ARM 架构机器码指令的关键组件。它提供了详细的指令解码和格式化功能，使得开发者能够理解 V8 生成的底层代码，从而进行调试、性能分析和更深入的 V8 引擎研究。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/arm/disasm-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/arm/disasm-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -68,8 +68,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mat(instr, "vrinta.f32.f32 'Sd, 'Sm");
         }
         break;
@@ -751,8 +753,4 @@ void Disassembler::Disassemble(FILE* f, uint8_t* begin, uint8_t* end,
 }  // namespace disasm
 
 #endif  // V8_TARGET_ARCH_ARM
-
-"""
-
-
 ```

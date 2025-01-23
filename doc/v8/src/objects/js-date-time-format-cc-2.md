@@ -172,7 +172,7 @@ console.log(formattedTime); // 输出类似于 "10:30 AM"
 
 `v8/src/objects/js-date-time-format.cc` 的第三部分主要负责 `Intl.DateTimeFormat` API 底层的核心功能实现，包括：解析和创建 ICU 时区对象，缓存和创建 ICU 日历对象，处理和缓存日期格式化模式，以及为 `JSDateTimeFormat` 对象的初始化提供关键的构建块。它确保了 JavaScript 中日期和时间格式化的正确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-date-time-format.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-date-time-format.cc以.tq结尾，那它是个v8 torque源代码，
@@ -180,8 +180,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 f);
 }
 
@@ -1056,7 +1058,4 @@ MaybeHandle<JSDateTimeFormat> JSDateTimeFormat::CreateDateTimeFormat(
     bool needDefaults = true;
     // b. If required is ~date~ or ~any~, then
     if (required == RequiredOption::kDate || required =
-"""
-
-
 ```

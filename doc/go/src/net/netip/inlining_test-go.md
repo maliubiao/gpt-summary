@@ -181,7 +181,7 @@ func (a Addr) BitLen() int {
 
 这段代码是一个用于测试 `net/netip` 包中函数内联情况的测试用例。它通过执行 Go 编译命令并分析其输出来验证预期的函数是否被成功内联，从而确保该包的关键性能优化没有意外丢失。对于 `net/netip` 包的使用者来说，无需关心这些细节，但对于开发者而言，这个测试是维护性能的重要保障。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/netip/inlining_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -189,8 +189,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -292,9 +294,4 @@ func TestInlining(t *testing.T) {
 
 	}
 }
-
-"""
-
-
-
 ```

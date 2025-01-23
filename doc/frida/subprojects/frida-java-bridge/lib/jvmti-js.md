@@ -87,7 +87,7 @@ def trace_jvmti(frame, bp_loc, dict):
 
 ### 逻辑总结
 该文件通过动态代理模式将 JVMTI 的 C 函数映射到 JavaScript，实现内存管理、类/对象操作等高级功能。核心是通过 `proxy` 延迟绑定原生函数，结合严格的错误检查确保稳定性。典型问题包括未正确启用能力或内存管理错误，需结合 LLDB 断点和参数追踪调试。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/jvmti.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -96,8 +96,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
+```
 
-"""
+### 源代码
+```javascript
 const { checkJniResult } = require('./result');
 
 const jvmtiVersion = {
@@ -160,7 +162,4 @@ module.exports = {
   jvmtiCapabilities,
   EnvJvmti
 };
-
-"""
-
 ```

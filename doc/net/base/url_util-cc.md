@@ -262,15 +262,17 @@ window.location.href = url.toString();
 
 总而言之，`net/base/url_util.cc` 是 Chromium 网络栈中一个核心的实用工具文件，提供了大量用于处理和操作 URL 的功能，这些功能在浏览器的各种操作中被广泛使用，并且与 JavaScript 的 URL 相关 API 有着密切的联系。理解这些功能有助于理解浏览器如何处理 URL，排查网络相关的问题，并编写更健壮的网络应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/url_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -839,7 +841,4 @@ std::string UnescapePercentEncodedUrl(std::string_view input) {
 }
 
 }  // namespace net
-
-"""
-
 ```

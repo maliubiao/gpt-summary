@@ -113,14 +113,16 @@ By following this process, we can effectively analyze the provided code snippet 
 
 总而言之，`fetch_utils_test.cc` 文件通过单元测试确保 `FetchUtils::NormalizeHeaderValue` 函数能够有效地清理和规范化 HTTP 头部值，从而提高了 Blink 引擎处理网络请求的鲁棒性和可靠性，并间接地保障了 JavaScript, HTML, CSS 等技术在浏览器中的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/fetch_utils_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ TEST(FetchUtilsTest, NormalizeHeaderValue) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

@@ -194,15 +194,17 @@ func main() {
 
 总而言之，`gnu.go` 文件中的 `GNUSyntax` 函数是 RISC-V 汇编处理工具链中一个重要的组成部分，它负责生成符合标准 GNU 汇编器语法的汇编代码，方便用户阅读和理解。其内部通过一系列的条件判断和字符串操作，实现了指令的格式化和语法糖的转换。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/riscv64/riscv64asm/gnu.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -531,9 +533,4 @@ func GNUSyntax(inst Inst) string {
 	}
 	return op
 }
-
-"""
-
-
-
 ```

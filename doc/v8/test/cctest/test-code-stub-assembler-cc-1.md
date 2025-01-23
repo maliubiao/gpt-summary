@@ -125,7 +125,7 @@ console.log(arr[0]);
 
 **第 2 部分主要集中在测试 V8 引擎中用于查找对象属性和元素的底层机制的正确性，包括字典查找、转换查找以及直接的属性和元素查找操作。它通过 `CodeStubAssembler` 生成测试代码，并针对不同的对象类型和属性/元素类型进行验证。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -133,8 +133,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ys); i++) {
     InternalIndex entry = dictionary->FindEntry(isolate, non_existing_keys[i]);
     CHECK(entry.is_not_found());
@@ -1067,7 +1069,4 @@ TEST(AllocateJSObjectFromMap) {
 
   const int kNumParams = 3;
   CodeAss
-"""
-
-
 ```

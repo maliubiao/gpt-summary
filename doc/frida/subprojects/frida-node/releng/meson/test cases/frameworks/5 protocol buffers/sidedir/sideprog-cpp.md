@@ -130,7 +130,7 @@ By following this thought process, starting with the basic code structure and pr
 
 总之，这段代码虽然简单，但清晰地展示了 protobuf 的基本用法。对于使用 Frida 进行动态 instrumentation 的用户来说，理解 protobuf 的工作原理是至关重要的，因为很多目标程序都使用 protobuf 进行数据交换和存储。这段代码可以作为一个很好的起点，帮助用户理解如何在代码层面操作 protobuf 消息，并为使用 Frida 进行更深入的动态分析奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/5 protocol buffers/sidedir/sideprog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"com/mesonbuild/simple.pb.h"
 #include"com/mesonbuild/subsite/complex.pb.h"
 
@@ -156,7 +158,4 @@ int main(int argc, char **argv) {
     google::protobuf::ShutdownProtobufLibrary();
     return 0;
 }
-
-"""
-
 ```

@@ -171,15 +171,17 @@ Let's consider the `set_register` and `get_register` functions:
 
 In summary, `v8/src/execution/arm/simulator-arm.h` is a vital piece of V8's infrastructure for supporting ARM architecture development and testing on non-ARM platforms. It provides a detailed software emulation of the ARM processor, enabling the execution and debugging of generated ARM machine code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm/simulator-arm.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm/simulator-arm.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -798,7 +800,4 @@ class Simulator : public SimulatorBase {
 
 #endif  // defined(USE_SIMULATOR)
 #endif  // V8_EXECUTION_ARM_SIMULATOR_ARM_H_
-
-"""
-
 ```

@@ -260,7 +260,7 @@ libc.so:
 
 总而言之，`e_lgamma_r.c` 文件是 Android Bionic libc 中一个重要的数学函数实现，它通过精巧的数学方法提供了计算对数 Gamma 函数及其符号的功能，并被 Android 系统和应用广泛使用。理解其实现细节对于调试和优化相关程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_lgamma_r.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,8 +270,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -571,7 +573,4 @@ lgamma_r(double x, int *signgamp)
 #if (LDBL_MANT_DIG == 53)
 __weak_reference(lgamma_r, lgammal_r);
 #endif
-
-"""
-
 ```

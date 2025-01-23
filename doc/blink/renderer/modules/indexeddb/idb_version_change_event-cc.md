@@ -234,15 +234,17 @@ By following these steps, I can systematically analyze the code, understand its 
 
 总而言之，`blink/renderer/modules/indexeddb/idb_version_change_event.cc` 文件定义了 Chromium Blink 引擎中用于表示 IndexedDB 数据库版本变更事件的核心数据结构，它连接了 Blink 内部的实现和 JavaScript 中暴露的 `versionchange` 事件 API。理解这个文件有助于理解 IndexedDB 版本变更机制的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/idb_version_change_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -318,7 +320,4 @@ void IDBVersionChangeEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

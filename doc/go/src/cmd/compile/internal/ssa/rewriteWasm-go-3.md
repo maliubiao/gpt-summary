@@ -127,7 +127,7 @@ v5 = I64Store <mem> [0] v1 (ConstInt64 <int64> 0) v4
 
 这是 `rewriteWasm.go` 文件中处理 64 位整数和内存操作优化的一个重要部分，通过定义针对特定 WASM 指令的重写规则，提升了 Go 代码编译到 WASM 后的性能和效率。它利用了 SSA 的特性，在中间代码层面进行优化，对最终生成的 WASM 代码质量有显著影响。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteWasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -136,9 +136,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-	}
+### 源代码
+```go
+}
 		y := auxIntToInt64(v_1.AuxInt)
 		v.reset(OpWasmI64Const)
 		v.AuxInt = int64ToAuxInt(int64(uint64(x) >> uint64(y)))
@@ -676,10 +678,4 @@ func rewriteValueWasm_OpZeroExt8to64(v *Value) bool {
 func rewriteBlockWasm(b *Block) bool {
 	return false
 }
-
-"""
-
-
-
-
 ```

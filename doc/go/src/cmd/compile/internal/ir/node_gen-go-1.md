@@ -187,7 +187,7 @@ func examples() {
 
 总而言之，这段代码是 Go 编译器内部表示和操作 Go 语言代码的关键组成部分，它通过提供通用的方法，简化了编译器各个阶段对 AST 的处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ir/node_gen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -196,8 +196,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 )
 	c.Body = copyNodes(c.Body)
 	return &c
@@ -1087,10 +1089,4 @@ func editNodes(list []Node, edit func(Node) Node) {
 		}
 	}
 }
-
-"""
-
-
-
-
 ```

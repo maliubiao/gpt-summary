@@ -154,15 +154,17 @@ By following this systematic process, I can thoroughly analyze the C++ code and 
 
 `svg_tspan_element.cc` 文件在 Blink 渲染引擎中扮演着至关重要的角色，它负责实现 SVG `<tspan>` 元素的行为，包括创建布局对象和决定何时创建布局对象。理解这个文件的功能有助于理解 SVG 文本的渲染过程，并能帮助开发者排查与 `<tspan>` 元素相关的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_tspan_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006, 2010 Rob Buis <buis@kde.org>
@@ -211,7 +213,4 @@ bool SVGTSpanElement::LayoutObjectIsNeeded(const DisplayStyle& style) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

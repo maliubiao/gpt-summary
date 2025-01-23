@@ -166,7 +166,7 @@ sys.stdin.read()
 
 总而言之，`cycler-windows.c` 是一个专门为 Frida 动态 instrumentation 工具设计的简单 Windows 应用程序，用于测试和演示 Frida 的各种功能，特别是在与逆向工程相关的场景中。它的简单性使其成为理解 Frida 工作原理和进行实验的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/labrats/cycler-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <windows.h>
 
 int WINAPI
@@ -198,6 +200,4 @@ wWinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmd
 
   return 0;
 }
-"""
-
 ```

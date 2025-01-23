@@ -197,7 +197,7 @@ Interceptor.attach(Module.findExportByName(null, "static1"), { // 错误：对�
 
 总而言之，`static1.c` 虽然自身功能简单，但在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理特定场景（如静态链接和依赖关系）时的能力。理解这个简单的函数及其上下文，有助于深入理解 Frida 的工作原理和逆向工程中的相关概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/rust/21 transitive dependencies/static1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,14 +205,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int static1(void);
 
 int static1(void){
     return 1;
 }
-
-"""
-
 ```

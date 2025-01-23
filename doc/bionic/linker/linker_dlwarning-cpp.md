@@ -322,7 +322,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 通过这些分析，我们可以了解到 `bionic/linker/linker_dlwarning.cpp` 文件在 Android 系统中扮演着重要的角色，它提供了一种机制来收集和报告动态链接过程中出现的非致命问题，帮助开发者诊断和解决潜在的兼容性或配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_dlwarning.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -333,8 +333,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -394,7 +396,4 @@ void get_dlwarning(void* obj, void (*f)(void*, const char*)) {
     f(obj, msg.c_str());
   }
 }
-
-"""
-
 ```

@@ -152,15 +152,17 @@ This structured approach, combining code reading, keyword identification, deduct
 
 **调试线索:**  如果遇到音频混合问题，开发者可能会使用 Chrome 开发者工具的 "Performance" 或 "Memory" 面板来分析 Web Audio 的活动。 结合断点调试 Blink 引擎的源代码（如果可以访问），可以在 `AudioSummingJunction::ChangedOutputs()` 和 `AudioSummingJunction::UpdateRenderingState()` 方法中设置断点，观察 `outputs_` 和 `rendering_outputs_` 的变化，以及调用堆栈，从而理解音频连接的结构和更新过程。 还可以检查连接到 summing junction 的各个音频节点的参数（例如增益）是否设置正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_summing_junction.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012, Google Inc. All rights reserved.
  *
@@ -229,7 +231,4 @@ void AudioSummingJunction::UpdateRenderingState() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

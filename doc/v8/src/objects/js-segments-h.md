@@ -180,15 +180,17 @@ for (const grapheme of graphemes) {
 
 `v8/src/objects/js-segments.h` 是 V8 引擎中 `Intl.Segmenter` 功能的核心组成部分，它利用 ICU 库提供的能力，实现了对文本进行不同粒度的分段。虽然它是 C++ 代码，但其功能直接影响着 JavaScript 中 `Intl.Segmenter` API 的行为和能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-segments.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-segments.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ class JSSegments : public TorqueGeneratedJSSegments<JSSegments, JSObject> {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_SEGMENTS_H_
-
-"""
-
 ```

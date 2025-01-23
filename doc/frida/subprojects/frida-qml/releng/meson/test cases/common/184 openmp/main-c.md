@@ -153,7 +153,7 @@ By following this systematic thought process, considering the context, and expli
 
 总而言之，尽管这是一个非常小的 C 程序，但它在 Frida 项目中扮演着一个关键的**验证角色**，确保 Frida 的环境能够正确地支持 OpenMP，这对于后续分析和逆向使用了 OpenMP 的目标应用程序至关重要。它涉及到编译原理、操作系统线程管理、库依赖等多个方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/184 openmp/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <omp.h>
 
@@ -179,7 +181,4 @@ int main(void) {
     return 1;
 #endif
 }
-
-"""
-
 ```

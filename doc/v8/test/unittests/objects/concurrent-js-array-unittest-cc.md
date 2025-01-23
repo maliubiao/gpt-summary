@@ -144,15 +144,17 @@ int main() {
 
 `v8/test/unittests/objects/concurrent-js-array-unittest.cc` 是 V8 引擎的一个单元测试，专门用于验证在多线程环境下对 JavaScript 数组进行并发操作时，特别是当数组使用 Copy-on-Write 优化时，V8 的实现是否正确且能保证数据一致性。它模拟了并发读写场景，并使用断言来检查预期行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/concurrent-js-array-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/objects/concurrent-js-array-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -293,7 +295,4 @@ TEST_F(ConcurrentJsArrayTest, ArrayWithCowElements) {
 }  // anonymous namespace
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

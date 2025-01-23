@@ -116,7 +116,7 @@ fetch('https://example.com', {
 
 总而言之，这个测试文件是用来确保 `QpackEncoder` 能够正确地将各种类型的 HTTP 头部列表编码成符合 QPACK 规范的字节流。它覆盖了编码器的核心功能，包括静态表和动态表的使用、霍夫曼编码、流阻塞处理以及错误处理等。通过这些测试用例，可以验证 `QpackEncoder` 在各种场景下的行为是否符合预期，保证了 Chromium 网络栈在 HTTP/3 协议下头部压缩功能的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/qpack/qpack_encoder_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -928,7 +930,4 @@ TEST_P(QpackEncoderTest, EncoderStreamWritesAllowedThenDisallowed) {
   std::string set_dyanamic_table_capacity;
   ASSERT_TRUE(absl::HexStringToBytes("3fe11f", &set_dyanamic_table_capacity));
   // Insert three entries into the dynamic ta
-"""
-
-
 ```

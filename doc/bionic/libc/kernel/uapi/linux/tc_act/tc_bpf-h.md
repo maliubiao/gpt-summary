@@ -232,7 +232,7 @@ if (libnetlink) {
 
 通过以上分析，我们可以了解到 `bionic/libc/kernel/uapi/linux/tc_act/tc_bpf.h` 文件在 Android 系统中扮演着重要的角色，它定义了配置基于 BPF 的流量控制动作所需的内核数据结构，为 Android 的网络功能提供了强大的可编程能力。 虽然普通应用无法直接使用，但 Android Framework 和具有系统权限的组件可以利用它来实现复杂的网络策略。 使用 Frida 可以帮助我们深入理解这些底层的交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tc_act/tc_bpf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -243,8 +243,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -272,7 +274,4 @@ enum {
 };
 #define TCA_ACT_BPF_MAX (__TCA_ACT_BPF_MAX - 1)
 #endif
-
-"""
-
 ```

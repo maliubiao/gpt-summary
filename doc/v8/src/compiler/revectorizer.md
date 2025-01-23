@@ -75,11 +75,13 @@ const sumVec = f64x2_add(vec1, vec2);
 
 总而言之，`revectorizer.cc` 是 V8 引擎中一个关键的优化组件，它通过识别和组合可并行执行的标量操作，将它们转换为更高效的 SIMD 向量操作，从而显著提升 JavaScript 代码在现代 CPU 上的执行效率。虽然 JavaScript 代码本身不直接操作 SIMD 指令，但 V8 引擎通过像 `revectorizer.cc` 这样的组件，在幕后进行了这种优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/revectorizer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1541,7 +1543,4 @@ void Revectorizer::PrintStores(ZoneMap<Node*, StoreNodeSet>* store_chains) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

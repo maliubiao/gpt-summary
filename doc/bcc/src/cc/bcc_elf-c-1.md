@@ -71,7 +71,7 @@ Response:
 
 ### **总结**  
 此部分代码专注于 **BCC 运行时内存优化** 和 **ELF 元数据提取**，通过主动释放编译器内存降低资源占用，同时提供调试所需的符号和构建 ID 信息。核心挑战在于兼容静态/动态链接场景，并精确计算可释放的内存范围。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/src/cc/bcc_elf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -81,8 +81,10 @@ Prompt:
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 -1)
     return -1;
 
@@ -318,8 +320,4 @@ int main(int argc, char *argv[])
   return 0;
 }
 #endif
-
-"""
-
-
 ```

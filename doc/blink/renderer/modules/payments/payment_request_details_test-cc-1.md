@@ -148,7 +148,7 @@ By following these steps and refining the analysis, I can produce a comprehensiv
 
 总而言之，这个测试文件对于确保 Payment Request API 的健壮性和可靠性至关重要，它帮助开发者在早期发现并修复与支付详情数据格式相关的错误，从而提升用户体验和支付的成功率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/payments/payment_request_details_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ue,
                                     ESErrorType::kTypeError),
                     DetailsTestCase(kPaymentTestDetailShippingOption,
@@ -383,8 +385,4 @@ INSTANTIATE_TEST_SUITE_P(
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

@@ -252,7 +252,7 @@ if (logAllocation) {
 
 总结来说，`backtrace_fake.handroid.h` 是一个用于测试 Android Bionic 库中回溯相关功能的工具，它允许模拟各种回溯场景，方便进行单元测试和集成测试。它本身不属于 Android Framework 或 NDK 的核心执行路径，而是作为测试基础设施存在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/tests/backtrace_fake.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -263,8 +263,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  *
@@ -297,7 +299,4 @@ void BacktraceUnwindFakeClearAll();
 void BacktraceUnwindFake(const std::vector<unwindstack::FrameData>& frames);
 
 #endif // MALLOC_DEBUG_TESTS_BACKTRACE_FAKE_H
-
-"""
-
 ```

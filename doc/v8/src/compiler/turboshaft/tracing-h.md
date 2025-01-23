@@ -149,15 +149,17 @@ processArray(numbers2);
 
 `v8/src/compiler/turboshaft/tracing.h` 提供了一个灵活的机制，用于在 V8 的 Turboshaft 编译过程中收集和输出详细的调试信息。这对于 V8 开发者理解编译器的行为、诊断性能问题以及验证优化策略至关重要。虽然普通 JavaScript 开发者不会直接使用这个头文件，但它所支持的追踪功能对于理解 V8 如何执行 JavaScript 代码有着重要的意义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/tracing.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/tracing.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ class Tracing : public base::ContextualClass<Tracing> {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_TRACING_H_
-
-"""
-
 ```

@@ -160,14 +160,16 @@ By following these steps, I could analyze the provided source code, understand i
 
 `dactyloscoper.cc` 是 Chromium 中一个关键的组件，它专注于**监控和记录可能被用于浏览器指纹识别的 Web 平台 API 的使用情况**。 它通过追踪 JavaScript API 调用、记录 Web 功能的使用和字体查找等操作，为 Chromium 的隐私预算计划提供数据支持，并帮助理解和减轻指纹识别对用户隐私的影响。 它与 JavaScript, HTML, CSS 的关系在于，这些技术是使用被追踪的 Web 平台 API 的主要途径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/dactyloscoper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -421,7 +423,4 @@ Dactyloscoper::HighEntropyTracer::~HighEntropyTracer() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

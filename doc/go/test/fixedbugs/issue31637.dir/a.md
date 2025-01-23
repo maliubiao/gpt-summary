@@ -147,15 +147,17 @@ func main() {
 
 总而言之，这段代码定义了一个可以扩展的操作接口或为访问者模式奠定了基础，但其自身提供的 `EDO` 类型默认不执行任何实际操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue31637.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -171,9 +173,4 @@ type EDO struct{}
 func (EDO) Apply(*dO) {}
 
 var X EDO
-
-"""
-
-
-
 ```

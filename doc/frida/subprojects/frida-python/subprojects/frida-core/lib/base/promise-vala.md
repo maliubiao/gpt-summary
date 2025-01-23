@@ -94,7 +94,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 在 `wait_async` 方法中检查 `Cancellable` 对象的状态，确保取消操作被正确处理。
 
 通过这些调试线索，用户可以逐步追踪 Promise 的状态变化和异步操作的执行流程。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/lib/base/promise.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class Promise<T> {
 		private Impl<T> impl;
@@ -249,7 +251,4 @@ namespace Frida {
 		public abstract async T wait_async (Cancellable? cancellable) throws Frida.Error, IOError;
 	}
 }
-
-"""
-
 ```

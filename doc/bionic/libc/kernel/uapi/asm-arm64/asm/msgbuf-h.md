@@ -243,7 +243,7 @@ if __name__ == "__main__":
 
 `msgbuf.handroid` 虽然只是一个简单的包含文件，但它指向了 `msgbuf` 结构体的定义，这个结构体是 Linux 消息队列机制的基础。 消息队列在 Android 系统中用于进程间通信，相关的 libc 函数（如 `msgsnd` 和 `msgrcv`) 通过系统调用与内核交互。  通过 Frida Hook，我们可以动态地观察这些系统调用的执行过程，从而更好地理解 Android 系统底层的通信机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/msgbuf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -254,8 +254,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -263,7 +265,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/msgbuf.h>
-
-"""
-
 ```

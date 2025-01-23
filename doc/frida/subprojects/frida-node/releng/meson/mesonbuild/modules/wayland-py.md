@@ -204,7 +204,7 @@ Let's imagine a scenario where a user is developing a Frida script to interact w
 
 **Debugging Line:**  If a user reports a build error related to Wayland protocols, a developer would investigate the Meson build logs. The stack trace would likely point to a specific line within `wayland.py`, such as the line raising a `MesonException` in either `scan_xml` or `find_protocol`. This would provide a starting point for diagnosing the issue – for example, checking if the required `wayland-scanner` tool is installed, if the protocol XML files exist in the expected locations, or if the user provided correct arguments when invoking Meson (though users typically don't directly interact with this module).
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/modules/wayland.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -212,8 +212,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2022 Mark Bolhuis <mark@bolhuis.dev>
 
@@ -365,7 +367,4 @@ class WaylandModule(ExtensionModule):
 
 def initialize(interpreter: Interpreter) -> WaylandModule:
     return WaylandModule(interpreter)
-
-"""
-
 ```

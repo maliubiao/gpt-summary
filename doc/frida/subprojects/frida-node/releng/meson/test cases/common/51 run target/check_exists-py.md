@@ -140,7 +140,7 @@ By following this systematic thought process, breaking down the request, and ref
 
 **简而言之，用户不太可能直接手动运行这个脚本。它更像是 Frida Node.js 内部自动化测试流程的一部分，用于确保构建和功能的正确性。** 开发者在进行相关模块的开发或调试时，可能会间接地触发这个脚本的运行，并通过测试结果来判断是否有问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/51 run target/check_exists.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -157,7 +159,4 @@ import sys
 
 if not os.path.isfile(sys.argv[1]):
     raise Exception("Couldn't find {!r}".format(sys.argv[1]))
-
-"""
-
 ```

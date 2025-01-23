@@ -142,7 +142,7 @@ if (Process.platform === 'linux' || Process.platform === 'android') {
 
 `prog.c` 作为一个简单的C程序，其核心功能依赖于一个未实现的函数 `func`。这使其成为演示动态分析工具（如 Frida）用途的绝佳例子。逆向工程师可以通过 hook 和观察 `func` 的行为来理解其逻辑。这个例子也涉及到了二进制、操作系统和常见的编程错误等概念，是理解软件运行底层原理的一个很好的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/74 file object/subdir1/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int func(void);
@@ -165,7 +167,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

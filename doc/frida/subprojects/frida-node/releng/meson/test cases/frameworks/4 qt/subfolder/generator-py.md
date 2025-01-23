@@ -119,7 +119,7 @@ Finally, organize the findings into a clear and structured response, addressing 
 
 总而言之，`generator.py` 虽然代码简单，但在 Frida 的测试框架中扮演着辅助角色，用于快速生成简单的测试文件，帮助验证 Frida 对 Qt 应用程序的 hook 功能是否正常。它的存在是为了简化测试环境的搭建，提高测试效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/4 qt/subfolder/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,15 +127,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
 if len(sys.argv) > 1:
     with open(sys.argv[1], "w") as output:
         output.write("Hello World")
-
-"""
-
 ```

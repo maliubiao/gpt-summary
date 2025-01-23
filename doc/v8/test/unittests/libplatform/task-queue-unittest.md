@@ -102,11 +102,13 @@ setTimeout 任务执行
 
 `task-queue-unittest.cc` 文件测试了 V8 引擎内部用于管理任务队列的核心组件 `TaskQueue`。这个组件的功能与 JavaScript 的事件循环机制密切相关，它负责存储和调度异步任务的执行。 虽然 JavaScript 开发者不会直接使用 `TaskQueue` 类，但理解它的工作原理有助于理解 JavaScript 异步编程的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/libplatform/task-queue-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -170,7 +172,4 @@ TEST(TaskQueueTest, TerminateMultipleReaders) {
 }  // namespace task_queue_unittest
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

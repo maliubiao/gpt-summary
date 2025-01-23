@@ -175,7 +175,7 @@ Let's say a user is building Frida and gets the error "DUB not found."  They mig
 
 In summary, `dub.py` plays a critical role in seamlessly integrating D language dependencies into the Frida build process. It leverages the DUB tool to manage these dependencies, ensuring that Frida components written in D can be built correctly with the necessary libraries and compiler settings. Understanding this code is valuable for anyone working on or debugging Frida, especially when dealing with its D language components.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/dependencies/dub.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -609,7 +611,4 @@ class DubDependency(ExternalDependency):
                      '(version %s)' % dubver)
 
         return found
-
-"""
-
 ```

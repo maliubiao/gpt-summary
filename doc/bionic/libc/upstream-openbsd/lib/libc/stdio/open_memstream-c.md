@@ -404,7 +404,7 @@ if (Process.platform === 'android') {
 
 通过 Frida Hook，你可以动态地观察 `open_memstream` 的行为，了解何时被调用，传入了哪些参数，以及内存缓冲区是如何被分配和写入的。这对于理解 Android 系统或应用如何使用这个函数非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/stdio/open_memstream.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -415,8 +415,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: open_memstream.c,v 1.10 2023/07/11 12:14:16 claudio Exp $	*/
 
 /*
@@ -574,7 +576,4 @@ open_memstream(char **pbuf, size_t *psize)
 	return (fp);
 }
 DEF_WEAK(open_memstream);
-
-"""
-
 ```

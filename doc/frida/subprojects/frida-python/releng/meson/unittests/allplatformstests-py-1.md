@@ -114,7 +114,7 @@ Frida 是一个动态插桩工具，常用于逆向工程。虽然这段代码�
 
 这段代码是 Frida 项目中用于测试 `mtest` 命令行工具关于 **测试环境设置和测试套件选择** 功能的单元测试。它通过模拟各种用户场景，例如指定不同的 setup、选择或排除特定的测试套件，来验证 `mtest` 工具的正确性和健壮性。这对于确保 Frida 测试框架的可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,9 +123,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
-        self.assertNotIn('TEST_ENV is set', basic_log)
+### 源代码
+```python
+self.assertNotIn('TEST_ENV is set', basic_log)
         self.assertNotIn('Memcheck', basic_log)
         self.assertIn('TEST_ENV is set', vg_log)
         self.assertIn('Memcheck', vg_log)
@@ -771,8 +773,4 @@ Prompt:
         if cc.get_id() != 'clang':
             raise SkipTest('Only clang currently supports thinLTO')
         if cc.linker.id not in {'ld.lld', 'ld.gold', 'ld64', 'lld-link'}:
-    
-"""
-
-
 ```

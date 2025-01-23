@@ -185,15 +185,17 @@ func returnChannel(data string) chan string {
 
 在 `issue8336.go` 的例子中，由于访问 `nil` 指针会导致 panic，这个 panic 会在 `select` 语句继续评估后续 `case` 之前发生，因此 `foo()` 不会被调用。 这个测试用例正是用来确保 Go 语言的 `select` 语句在这种情况下的行为是符合预期的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue8336.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -223,9 +225,4 @@ func foo() chan int {
 	println("BUG: foo must not be called")
 	return make(chan int)
 }
-
-"""
-
-
-
 ```

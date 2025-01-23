@@ -115,7 +115,7 @@ The `DocumentMarkerController` in Chromium's Blink engine is responsible for man
 
 `DocumentMarkerController` 的主要功能是**管理和维护文档中各种类型的文本标记**。它负责存储、添加、移除和查询这些标记，并与渲染引擎协同工作，确保这些标记能够正确地反映在用户界面上。它是 Blink 引擎中处理文本注释和增强用户编辑体验的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/document_marker_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -1023,7 +1025,4 @@ DocumentMarkerVector DocumentMarkerController::ComputeMarkersToPaint(
   // Note: DocumentMarkerController::MarkersFor() returns markers sorted by
   // start offset.
   const DocumentMarkerVector
-"""
-
-
 ```

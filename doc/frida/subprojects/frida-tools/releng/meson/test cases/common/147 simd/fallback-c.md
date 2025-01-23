@@ -95,7 +95,7 @@ Here's a breakdown of the thinking process to arrive at the explanation of the C
 
 `fallback.c` 中的 `increment_fallback` 函数是一个简单的数组元素递增操作，但它在高性能计算和逆向工程中扮演着重要的角色，尤其是在处理 SIMD 优化时。理解这种 fallback 机制以及相关的底层知识，对于使用 Frida 进行动态分析和调试非常有帮助。通过 Frida，用户可以观察程序在运行时选择执行哪种代码路径，并深入了解程序的内部行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/147 simd/fallback.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdfuncs.h>
 
 void increment_fallback(float arr[4]) {
@@ -113,7 +115,4 @@ void increment_fallback(float arr[4]) {
         arr[i]++;
     }
 }
-
-"""
-
 ```

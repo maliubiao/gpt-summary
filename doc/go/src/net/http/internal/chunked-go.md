@@ -279,7 +279,7 @@ Wrote 26 bytes in chunk 2
 
 总之，这段代码是 `net/http` 包中处理 HTTP chunked 编码的核心部分，它提供了读取和写入 chunked 数据的能力，但通常情况下，开发者无需直接使用这些底层的 API，`net/http` 包会自动处理。理解其工作原理有助于深入理解 HTTP 协议以及 `net/http` 包的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/internal/chunked.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -287,8 +287,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -576,9 +578,4 @@ func parseHexUint(v []byte) (n uint64, err error) {
 	}
 	return
 }
-
-"""
-
-
-
 ```

@@ -130,7 +130,7 @@ By following these steps, breaking down the code into manageable parts, and conn
 
 总而言之，这部分测试确保了 `BidirectionalStream` 能够处理现代网络协议的优化机制 (替代服务) 以及平台特定的网络管理需求 (套接字标记)，从而保证 Chromium 网络栈的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/bidirectional_stream_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -138,9 +138,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-                             alt_svc_header_value.c_str()};
+### 源代码
+```cpp
+alt_svc_header_value.c_str()};
   spdy::SpdySerializedFrame resp(
       spdy_util_.ConstructSpdyGetReply(kExtraResponseHeaders, 1, 1));
   spdy::SpdySerializedFrame body_frame(
@@ -240,8 +242,4 @@ TEST_F(BidirectionalStreamTest, Tagging) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

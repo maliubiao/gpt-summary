@@ -163,7 +163,7 @@ By following these steps, the detailed and informative summary provided earlier 
 
 **总结来说，这部分 `IDBObjectStore.cc` 代码主要负责实现 IndexedDB 对象存储的索引管理功能（创建、获取、删除、重命名）以及提供用于遍历数据的游标操作，并通过这些功能与 JavaScript 的 IndexedDB API 交互，最终服务于网页上使用 IndexedDB 的用户操作。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/idb_object_store.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -171,9 +171,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- IDBDatabase::kIndexNameTakenErrorMessage);
+### 源代码
+```cpp
+IDBDatabase::kIndexNameTakenErrorMessage);
     return nullptr;
   }
   if (!key_path.IsValid()) {
@@ -602,8 +604,4 @@ IDBDatabase& IDBObjectStore::db() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

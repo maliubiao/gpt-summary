@@ -128,14 +128,16 @@ Finally, I'd organize the information logically, starting with the core function
 
 `css_custom_transform_interpolation_type.cc` 是 Blink 渲染引擎中一个关键的组件，它负责处理 CSS 自定义变换属性的动画插值。它连接了 CSS 中定义的变换值和动画引擎内部的表示，确保了变换动画的平滑过渡。虽然它本身是底层 C++ 代码，但它的行为直接影响到 Web 开发者在使用 CSS `transform` 属性和相关动画技术时的效果和预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_custom_transform_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ const CSSValue* CSSCustomTransformInterpolationType::CreateCSSValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

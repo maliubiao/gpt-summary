@@ -109,14 +109,16 @@ This step-by-step thought process, combining code analysis with an understanding
 
 `blink/common/chrome_debug_urls.cc` 文件定义了一套强大的调试工具，允许开发者通过特定的 URL 来触发渲染引擎的各种行为，包括崩溃、内存泄漏等。这些 URL 可以通过 JavaScript 和 HTML 与用户交互产生关联，但普通用户应该避免使用它们，因为它们的主要目的是用于开发和测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/chrome_debug_urls.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -329,7 +331,4 @@ void HandleChromeDebugURL(const GURL& url) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

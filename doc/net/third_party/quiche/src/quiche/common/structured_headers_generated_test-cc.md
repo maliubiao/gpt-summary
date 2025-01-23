@@ -119,7 +119,7 @@ fetch('https://example.com/api')
 * **通过自动化生成，确保测试用例与最新的标准保持同步。**
 * **为开发人员提供调试结构化头部相关问题的参考和线索。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/structured_headers_generated_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1220,7 +1222,4 @@ const struct ParameterizedItemTestCase {
     {"0x37 in string", "\" 7 \"", 5, {{Item(" 7 "), {}}}, nullptr},
     {"0x38 in string", "\" 8 \"", 5, {{Item(" 8 "), {}}}, nullptr},
     {"0x39 in string", "\" 9 \"", 5, {
-"""
-
-
 ```

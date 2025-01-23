@@ -123,7 +123,7 @@ Therefore, the main functionality demonstrated in this part of the code is **tes
 
 总而言之，这部分测试代码主要验证了 `CanvasRenderingContext2D` 接口中与清除和绘制图像相关的核心功能，并考虑了各种影响因素，确保这些功能在不同场景下的行为符合预期。这些测试对于保证 Canvas API 的正确性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Coverage) {
   base::HistogramTester histogram_tester;
   CreateContext(kNonOpaque);
@@ -914,8 +916,5 @@ static void TestDrawHighBitDepthPNGsOnWideGamutCanvas(
   color_setting->setStorageFormat(
       ImageDataStorageFormatName(ImageDataStorageFormat::kFloat32));
   color_setting->setColorSpace(PredefinedColorSpaceName(color_space));
-  for (auto interlace : 
-"""
-
-
+  for (auto interlace :
 ```

@@ -110,7 +110,7 @@ By following this thought process, breaking down the code into its components, a
 
 总而言之，`libfile2.c` 是一个简洁的示例，用于测试 Frida 在处理共享库时的基本功能。它的简单性使其成为理解动态链接、符号导出以及 Frida Hook 机制的良好起点。通过分析这个文件，可以深入了解与逆向工程、底层操作系统机制以及常见的编程错误相关的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/4 shared/libfile2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -142,7 +144,4 @@ Prompt:
 int DLL_PUBLIC libfunc(void) {
     return 3;
 }
-
-"""
-
 ```

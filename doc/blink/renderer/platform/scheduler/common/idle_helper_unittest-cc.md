@@ -174,14 +174,16 @@ By following these steps, analyzing the code structure, test cases, and consider
 
 总而言之，`idle_helper_unittest.cc` 文件全面地测试了 `IdleHelper` 类的各种功能和边界情况，确保它能够正确地管理和调度浏览器的空闲任务，从而在不影响用户体验的前提下，有效地利用空闲时间执行一些后台操作。理解这些测试用例有助于开发者正确地使用 `IdleHelper`，并在涉及 JavaScript、HTML 和 CSS 的异步操作时做出更合理的调度决策。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/idle_helper_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1398,7 +1400,4 @@ TEST_F(MultiThreadedIdleHelperTest,
 }  // namespace idle_helper_unittest
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

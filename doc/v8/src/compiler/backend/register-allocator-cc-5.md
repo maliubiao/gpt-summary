@@ -117,7 +117,7 @@ console.log(result);
 
 请注意，这只是对代码功能的较高层次的解释。实际的 V8 寄存器分配器要复杂得多，涉及更多的细节和优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/register-allocator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -125,9 +125,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
-     if (kFPAliasing != AliasingKind::kCombine || !check_fp_aliasing()) {
+### 源代码
+```cpp
+if (kFPAliasing != AliasingKind::kCombine || !check_fp_aliasing()) {
         positions[cur_reg] = std::min(positions[cur_reg], next_intersection);
         TRACE("Register %s is free until pos %d (2)\n", RegisterName(cur_reg),
               positions[cur_reg].value());
@@ -902,7 +904,4 @@ void ReferenceMapPopulator::PopulateReferenceMaps() {
       bool found = false;
       if (cur == nullptr) {
         cur = range->GetChildCovers(
-"""
-
-
 ```

@@ -95,7 +95,7 @@ resources = gnome.compile_resources(
 
 总结来说，这个 `gnome.py` 模块是 Meson 构建系统中用于处理 GNOME 相关构建任务的关键组件，它通过封装 GNOME 的构建工具，简化了 Frida CLR 项目与 GNOME 技术栈的集成。理解其功能有助于理解 Frida CLR 的构建过程，并在遇到与 GNOME 组件相关的构建问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015-2016 The Meson development team
 
@@ -829,8 +831,5 @@ class GnomeModule(ExtensionModule):
                 mlog.log(f'dependency {dep!r} not handled to build gir files')
                 continue
 
-        if use_gir_args and 
-"""
-
-
+        if use_gir_args and
 ```

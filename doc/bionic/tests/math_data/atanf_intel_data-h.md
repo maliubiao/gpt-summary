@@ -70,7 +70,7 @@ Android 系统中许多应用程序和框架层的功能都依赖于精确的数
 
 总而言之，`atanf_intel_data.handroid` 是 Android Bionic 库中用于测试 `atanf` 函数在 Intel 架构上的准确性的测试数据集。它通过提供一系列预期的输入和输出值，帮助开发者验证 `atanf` 函数的实现是否正确可靠，从而保证 Android 系统和运行在其上的应用程序的稳定性和准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atanf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -82,8 +82,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1620,8 +1622,4 @@ static data_1_1_t<float, float> g_atanf_intel_data[] = {
   { // Entry 379
     0x1.d6e1429159f6f0290cf9f2fb24bc26bdp-4,
     0x1.d8f720p-4
- 
-"""
-
-
 ```

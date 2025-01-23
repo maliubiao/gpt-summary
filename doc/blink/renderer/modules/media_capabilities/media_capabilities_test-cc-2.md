@@ -122,7 +122,7 @@ navigator.mediaCapabilities.encodingInfo({
 
 这部分测试专注于验证 `MediaCapabilities` API 在 WebRTC 编码场景下的正确性，特别关注了 Feature Flag 如何影响 API 对于“流畅”和“节能”的判断。它确保了在不同的设备和配置下，Web 开发者可以通过 `navigator.mediaCapabilities.encodingInfo()` 获取到准确的编码能力信息，从而避免在不支持的平台上尝试使用特定的编码格式，提升 WebRTC 应用的稳定性和用户体验。结合前两部分，整个测试文件覆盖了 `MediaCapabilities` API 在各种媒体场景下的能力查询逻辑，为 Blink 引擎的媒体功能提供了重要的质量保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_capabilities/media_capabilities_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 edia::VP9PROFILE_PROFILE0, gfx::Size(kWidth, kHeight)}}));
 
   const auto* kEncodingConfig = CreateWebrtcEncodingConfig();
@@ -205,8 +207,4 @@ TEST(MediaCapabilitiesTests, WebrtcEncodeOverridePowerEfficientIsSmooth) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

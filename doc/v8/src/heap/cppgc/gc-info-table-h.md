@@ -160,15 +160,17 @@ GCInfoIndex GCInfoTable::RegisterNewGCInfo(std::atomic<uint16_t>& index_slot, co
 
 总而言之，`v8/src/heap/cppgc/gc-info-table.h` 定义了一个核心组件，用于管理 V8 中 cppgc 的垃圾回收元数据，确保能够正确地追踪、标记和回收 C++ 对象，从而支撑 V8 整体的内存管理和 JavaScript 的高效运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/gc-info-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/gc-info-table.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -298,7 +300,4 @@ class V8_EXPORT GlobalGCInfoTable final {
 }  // namespace cppgc
 
 #endif  // V8_HEAP_CPPGC_GC_INFO_TABLE_H_
-
-"""
-
 ```

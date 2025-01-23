@@ -144,15 +144,17 @@ console.log(result);
 
 总而言之，`v8/src/codegen/ia32/register-ia32.h` 是 V8 引擎在 IA-32 架构上进行代码生成和执行的基础，它定义了寄存器的抽象，并为 V8 的各个组件提供了操作硬件寄存器的能力。虽然 JavaScript 开发者通常不需要直接与这些定义打交道，但理解其背后的原理有助于更好地理解 V8 的工作方式和编写更优化的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/register-ia32.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ia32/register-ia32.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ constexpr DoubleRegister kFPReturnRegister0 = xmm1;  // xmm0 isn't allocatable.
 }  // namespace v8
 
 #endif  // V8_CODEGEN_IA32_REGISTER_IA32_H_
-
-"""
-
 ```

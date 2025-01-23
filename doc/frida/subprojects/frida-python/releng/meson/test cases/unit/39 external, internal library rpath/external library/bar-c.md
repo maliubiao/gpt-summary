@@ -155,7 +155,7 @@ gcc main.c -lbar -o my_program  # 缺少 -lfoo
 
 总而言之，`bar.c` 虽然代码很简单，但它在一个复杂的软件项目（Frida）的上下文中扮演着重要的角色，用于测试构建系统和动态插桩工具如何处理外部依赖和链接时的未定义符号问题。它的存在是为了确保 Frida 在面对各种复杂的依赖场景时能够稳定可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/39 external, internal library rpath/external library/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,15 +163,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int some_undefined_func (void);
 
 int bar_system_value (void)
 {
   return some_undefined_func ();
 }
-
-"""
-
 ```

@@ -181,7 +181,7 @@ func main() {
 
 在这个错误的示例中，当 `bytes.Compare(a, b)` 返回 `0` 时，`if` 条件会被评估为 `false`（因为 `0` 在布尔上下文中是 `false`），导致逻辑错误。正确的用法是显式地将返回值与 `0` 进行比较。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/bytes/compare_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -189,8 +189,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -487,9 +489,4 @@ func BenchmarkCompareBytesBigIdentical(b *testing.B) {
 	}
 	b.SetBytes(int64(len(b1)))
 }
-
-"""
-
-
-
 ```

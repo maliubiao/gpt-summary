@@ -146,15 +146,17 @@ During this process, I might revisit my initial assumptions. For example, I migh
 
 总的来说，`animation_test.cc` 是 Blink 渲染引擎中一个关键的测试文件，它确保了 Web 动画功能的正确性、效率和与 Web 标准的兼容性。它通过模拟各种真实场景，帮助开发者避免常见错误，并保证用户获得流畅的动画体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/animation_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 0; }
         to { opacity: 1; }
       }
@@ -279,8 +281,4 @@ TEST_P(AnimationAnimationTestNoCompositing,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

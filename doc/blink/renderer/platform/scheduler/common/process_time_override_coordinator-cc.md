@@ -155,14 +155,16 @@ By following these steps, moving from a general understanding to specific detail
 
 总而言之，`process_time_override_coordinator.cc` 提供了一种强大的机制来模拟时间流逝，这对于测试、动画控制、以及其他需要精细时间控制的场景非常有用。但同时也需要开发者理解其工作原理和潜在的陷阱，避免因不当使用而引入错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/process_time_override_coordinator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -319,7 +321,4 @@ base::TimeTicks ProcessTimeOverrideCoordinator::CurrentTicks() {
 }
 
 }  // namespace blink::scheduler
-
-"""
-
 ```

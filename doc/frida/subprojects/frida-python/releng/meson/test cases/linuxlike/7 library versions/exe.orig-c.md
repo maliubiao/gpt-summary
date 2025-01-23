@@ -163,7 +163,7 @@ This requires imagining a user developing or testing with Frida:
 
 这个 `exe.orig.c` 文件本身是一个非常小的组成部分，它存在的意义是为了配合 Frida 这样的工具进行动态分析和测试。在更复杂的逆向工程场景中，你可能会遇到更庞大、更复杂的代码库，但理解这种基本的程序结构和 Frida 的工作原理是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/linuxlike/7 library versions/exe.orig.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int myFunc (void);
 
 int main(void)
@@ -181,7 +183,4 @@ int main(void)
     return 0;
   return 1;
 }
-
-"""
-
 ```

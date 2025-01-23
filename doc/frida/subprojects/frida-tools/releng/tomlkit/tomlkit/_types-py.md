@@ -190,7 +190,7 @@ session.on('message', on_message)
 
 总而言之，`_types.py` 文件在 `tomlkit` 库中扮演着重要的角色，它通过定义自定义类型和装饰器来增强 TOML 数据的表示和操作，并为静态类型检查提供支持。虽然用户通常不会直接与其交互，但理解其功能对于深入理解 `tomlkit` 的工作原理和调试相关问题非常有帮助，尤其是在像 Frida 这样的动态分析环境中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tomlkit/_types.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,8 +198,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
@@ -283,7 +285,4 @@ def wrap_method(
         return self._new(result)
 
     return wrapper
-
-"""
-
 ```

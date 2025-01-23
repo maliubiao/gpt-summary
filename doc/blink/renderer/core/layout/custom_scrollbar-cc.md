@@ -192,14 +192,16 @@ This structured approach helps in systematically understanding complex source co
 
 总而言之，`custom_scrollbar.cc` 文件是 Chromium Blink 引擎中负责实现自定义滚动条外观和行为的关键组成部分，它与 CSS 样式紧密结合，并通过 HTML 元素和 JavaScript 操作进行交互。理解其功能有助于开发者更好地定制网页的滚动体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/custom_scrollbar.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008, 2009 Apple Inc. All Rights Reserved.
  *
@@ -674,7 +676,4 @@ void CustomScrollbar::Paint(GraphicsContext& context,
 }
 
 }  // namespace blink
-
-"""
-
 ```

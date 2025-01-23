@@ -203,15 +203,17 @@ By following these steps, we can systematically analyze the C++ code and generat
 
 总而言之，`file_ios.cc` 是 Chromium 磁盘缓存机制中负责底层文件 I/O 操作的关键组件，它通过封装平台文件操作并提供异步接口，实现了高效且不阻塞主线程的缓存功能。虽然 JavaScript 不直接调用这个文件中的代码，但其触发的网络请求和资源加载最终会依赖于这里的实现来进行磁盘缓存的管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/blockfile/file_ios.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -522,7 +524,4 @@ bool File::AsyncWrite(const void* buffer, size_t buffer_len, size_t offset,
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

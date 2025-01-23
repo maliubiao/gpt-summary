@@ -117,11 +117,13 @@ By following these steps, systematically analyzing the C++ code, and constantly 
 
 总而言之， `builtins-typed-array-gen.cc` 是 V8 引擎中至关重要的一个文件，它直接支撑了 JavaScript 中 `TypedArray` 对象的实现，使得 JavaScript 能够高效地处理二进制数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-typed-array-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -787,7 +789,4 @@ TF_BUILTIN(TypedArrayPrototypeToStringTag, TypedArrayBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

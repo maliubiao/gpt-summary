@@ -124,7 +124,7 @@ By following this structured approach, we can systematically analyze the C code 
 
 总而言之，这个简单的 `a.c` 文件在 Frida 动态插桩的上下文中，成为了一个用于学习和实验程序控制流、内存操作以及动态分析技术的良好示例。它清晰地展示了如何通过一个简单的条件判断来影响程序的关键行为，并为逆向工程师提供了一个可以操纵和观察的目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/212 source set configuration_data/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdlib.h>
 #include "all.h"
 
@@ -142,7 +144,4 @@ int main(void)
     if (p) abort();
     f();
 }
-
-"""
-
 ```

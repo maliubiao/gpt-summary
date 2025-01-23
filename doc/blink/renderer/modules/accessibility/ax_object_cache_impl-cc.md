@@ -105,7 +105,7 @@ By following these steps, I was able to piece together a detailed understanding 
 
 `ax_object_cache_impl.cc` 的第 1 部分主要关注于 **可访问性对象的创建和管理决策**。它基于 HTML 结构、CSS 样式和一些优化策略，判断哪些 DOM 元素需要创建对应的可访问性对象，以及创建哪种类型的对象。  这部分代码是构建完整可访问性树的基础，直接影响辅助技术如何理解和与网页内容交互。它体现了 Blink 引擎在可访问性方面的核心逻辑和对性能的考虑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object_cache_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014, Google Inc. All rights reserved.
  *
@@ -855,7 +857,4 @@ void LogNodeDataSizeDistribution(
       "Accessibility.Performance.AXObjectCacheImpl.Incremental.ChildIds",
       base::saturated_cast<int>(node_data_size.child_ids_size), 1, kSize10Mb,
       kBucketCount
-"""
-
-
 ```

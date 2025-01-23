@@ -157,14 +157,16 @@ Paint Worklet 是一个强大的 Web 标准，它允许开发者使用 JavaScrip
 
 总而言之，`PlatformPaintWorkletLayerPainter.cc` 是 Blink 渲染引擎中处理 Paint Worklet 调度的核心组件，它连接了由 JavaScript 定义的自定义绘制逻辑和浏览器的渲染流水线，使得开发者可以通过 CSS 触发这些自定义的绘制操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/platform_paint_worklet_layer_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ bool PlatformPaintWorkletLayerPainter::HasOngoingDispatch() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

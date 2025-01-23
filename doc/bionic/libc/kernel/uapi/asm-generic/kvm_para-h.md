@@ -300,7 +300,7 @@ if __name__ == "__main__":
 
 `bionic/libc/kernel/uapi/asm-generic/kvm_para.h` 是一个自动生成的头文件，它定义了与 Linux KVM 相关的常量和类型。它本身不包含函数实现，但其定义的常量被用户空间程序（包括 Android 系统服务和应用程序）通过 `ioctl` 系统调用与内核 KVM 模块进行交互时使用。理解这个文件的作用需要结合 KVM 虚拟化技术在 Android 中的应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-generic/kvm_para.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -311,15 +311,14 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
  * See https://android.googlesource.com/platform/bionic/+/master/libc/kernel/
  * for more information.
  */
-
-"""
-
 ```

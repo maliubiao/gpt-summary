@@ -141,7 +141,7 @@ Frida 是一个动态 instrumentation 工具，常用于逆向工程。这个简
 
 总而言之，`frida/subprojects/frida-core/releng/meson/test cases/failing/76 override exe config/foo.c` 这个文件本身的功能很简单，但它的存在是为了在 Frida 的测试框架中验证 Frida 在覆盖可执行文件配置方面的行为，并且由于它在 `failing` 目录下，很可能是用来测试 Frida 在某些情况下应该 *无法* 成功覆盖的情况。 开发者查看这个文件通常是为了调试 Frida 自身的问题，理解其内部工作原理，或者复现和调试用户报告的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/76 override exe config/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,12 +149,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
   return 0;
 }
-
-"""
-
 ```

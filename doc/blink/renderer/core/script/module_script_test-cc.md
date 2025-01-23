@@ -131,15 +131,17 @@ By following these steps, we can systematically analyze the C++ test file and ex
 
 总而言之，`module_script_test.cc` 是 Blink 引擎中一个非常重要的测试文件，它专注于验证 JavaScript 模块的加载、执行和缓存机制的正确性，这对于保证 Web 应用的性能和稳定性至关重要。通过分析这个文件，我们可以更深入地理解 Blink 引擎的工作原理，并为日常的 Web 开发和调试提供有价值的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/script/module_script_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -579,7 +581,4 @@ TEST_F(ModuleScriptTest, V8CodeCacheWithHashChecking) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

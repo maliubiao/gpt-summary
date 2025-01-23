@@ -159,15 +159,17 @@ If a developer is responsible for configuring sandbox policies (which is less co
 
 `v8/src/sandbox/isolate.h` is a fundamental header file for V8's sandboxing and potential pointer compression mechanisms. It defines classes that provide restricted views of the `Isolate`, enabling security and memory optimization. While not directly written in Torque, it plays a critical role in how V8 executes JavaScript, especially when dealing with untrusted code. Understanding its purpose helps developers be aware of the underlying security and performance considerations when working with JavaScript and embedding the V8 engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/isolate.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/isolate.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ class V8_EXPORT_PRIVATE IsolateForPointerCompression final {
 }  // namespace v8
 
 #endif  // V8_SANDBOX_ISOLATE_H_
-
-"""
-
 ```

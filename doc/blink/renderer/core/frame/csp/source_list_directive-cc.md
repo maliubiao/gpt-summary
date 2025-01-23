@@ -216,14 +216,16 @@ script-src 'self' https://cdn.example.com; style-src 'nonce-xyz123'
 
 总而言之，`source_list_directive.cc` 文件是 Chromium Blink 引擎中负责 CSP 核心逻辑的重要组成部分，它决定了浏览器如何根据开发者设置的 CSP 规则来加载和执行网页中的各种资源，从而提升 Web 应用的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/csp/source_list_directive.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -391,7 +393,4 @@ bool CSPSourceListAllowAllInline(
 }
 
 }  // namespace blink
-
-"""
-
 ```

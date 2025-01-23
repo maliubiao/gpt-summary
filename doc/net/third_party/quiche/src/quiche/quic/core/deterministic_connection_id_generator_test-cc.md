@@ -109,15 +109,17 @@ fetch('https://example.com')
 
 总而言之，`deterministic_connection_id_generator_test.cc` 这个文件是 Chromium QUIC 实现中一个重要的测试组件，它确保了连接 ID 生成的确定性、长度正确性和一定的熵，这对于 QUIC 协议的稳定运行至关重要。 虽然 JavaScript 开发者通常不直接接触这个层面，但了解其背后的机制有助于理解浏览器网络工作的原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/deterministic_connection_id_generator_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2022 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ TEST_P(DeterministicConnectionIdGeneratorTest, ReturnLength) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

@@ -220,7 +220,7 @@ switch (x) {
 
 如果 `v8/src/compiler/backend/riscv/code-generator-riscv.cc` 以 `.tq` 结尾，那么它将是一个 **V8 Torque 源代码文件**。 Torque 是 V8 内部使用的一种领域特定语言，用于定义内置函数和运行时函数的实现。 Torque 代码会被编译成 C++ 代码。  然而，你提供的文件是 `.cc` 结尾，所以它是一个直接用 C++ 编写的源代码文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/code-generator-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/code-generator-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -228,8 +228,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _equal: {
         Register left = zero_reg;
         Operand right = i.InputOperand(0);
@@ -1108,8 +1110,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

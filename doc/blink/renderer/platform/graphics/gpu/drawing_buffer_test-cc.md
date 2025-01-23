@@ -90,14 +90,16 @@ The user wants to understand the functionality of the `drawing_buffer_test.cc` f
 
 总而言之，`drawing_buffer_test.cc` 通过各种测试用例，确保 `DrawingBuffer` 类的功能正确可靠，这对于保证 Chromium 中 WebGL 和 Canvas2D 等图形 API 的稳定运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/drawing_buffer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -815,7 +817,4 @@ TEST_F(DrawingBufferTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -129,7 +129,7 @@ By following this kind of systematic analysis, combined with some background kno
 
 `v8/src/codegen/riscv/base-constants-riscv.h` 是 V8 引擎在 RISC-V 架构上进行代码生成的基石，它提供了必要的常量定义和指令解析工具，使得 V8 能够理解和生成 RISC-V 机器码，从而执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/base-constants-riscv.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/base-constants-riscv.h以.tq结尾，那它是个v8 torque源代码，
@@ -137,8 +137,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ctionBits() & kBaseOpcodeMask) == OP_IMM_32 &&
            (this->Funct3Value() == 0b001 || this->Funct3Value() == 0b101));
 #endif
@@ -423,8 +425,4 @@ bool InstructionGetters<P>::IsTrap() const {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_RISCV_BASE_CONSTANTS_RISCV_H_
-
-"""
-
-
 ```

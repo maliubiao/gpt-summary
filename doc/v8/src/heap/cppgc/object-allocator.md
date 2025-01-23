@@ -97,11 +97,13 @@ const myString = "hello";
 
 `object-allocator.cc` 是 V8 引擎中 cppgc 组件的关键部分，负责管理 C++ 对象的内存分配。 虽然 JavaScript 开发者不需要直接与它交互，但 **每当 JavaScript 代码创建对象、数组、字符串等时，V8 引擎内部都会使用这个文件中的代码来分配相应的内存，从而支撑 JavaScript 代码的运行。**  它是一个幕后英雄，确保 V8 引擎能够有效地管理内存，运行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/object-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -484,7 +486,4 @@ void ObjectAllocator::TriggerGCOnAllocationTimeoutIfNeeded() {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

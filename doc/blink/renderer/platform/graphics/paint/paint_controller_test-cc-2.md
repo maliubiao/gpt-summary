@@ -615,15 +615,17 @@ TEST_P(PaintControllerTest, BeginAndEndFrame) {
   paint_controller.BeginFrame(nullptr);
 
   std::unique
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_controller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ntent2_id, content2, content2_properties);
         DrawRect(context, content2, kBackgroundType,
                  gfx::Rect(100, 200, 50, 200));
@@ -1376,7 +1378,4 @@ TEST_P(PaintControllerTest, RecordRegionCaptureDataEmptyToken) {
     InitRootChunk(paint_controller);
 
 #if DCHECK_IS_ON
-"""
-
-
 ```

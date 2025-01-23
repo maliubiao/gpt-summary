@@ -79,7 +79,7 @@ breakpoint.SetScriptCallbackFunction("control_transfer_breakpoint")
 ### 总结
 
 `frida-core/src/fruity/usb.vala` 文件实现了 Frida 工具中与 USB 设备交互的核心功能，涉及到底层的 USB 协议和设备固件的交互。通过 LLDB 调试工具，用户可以深入分析 USB 传输过程中的问题，并定位错误原因。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/usb.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -88,8 +88,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	internal sealed class UsbDevice : Object {
@@ -423,7 +425,4 @@ namespace Frida.Fruity {
 		}
 	}
 }
-
-"""
-
 ```

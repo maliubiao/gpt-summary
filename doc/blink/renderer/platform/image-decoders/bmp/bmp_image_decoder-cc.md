@@ -129,14 +129,16 @@ By following this structured approach, I can systematically analyze the provided
 
 总之，`bmp_image_decoder.cc` 是 Chromium Blink 引擎中一个至关重要的组件，它负责将 BMP 图像数据转化为浏览器可以理解的格式，从而使得网页能够显示 BMP 图片。理解其功能和潜在的错误情况有助于开发者更好地构建和调试与 BMP 图像相关的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/bmp/bmp_image_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2008 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ bool BMPImageDecoder::GetFileType(const FastSharedBufferReader& fast_reader,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -99,11 +99,13 @@ console.log("主线程代码执行");
 
 `v8/src/execution/microtask-queue.cc` 是 V8 引擎中负责实现和管理 JavaScript 微任务的关键组件。它提供了一种机制，使得某些异步操作可以在 JavaScript 主线程执行完毕后，但在下一次事件循环迭代开始前被执行，从而实现了高效的异步编程模型。 JavaScript 中的 Promise 和 `queueMicrotask` 等特性都依赖于这个 C++ 文件的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/microtask-queue.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -425,7 +427,4 @@ void MicrotaskQueue::ResizeBuffer(intptr_t new_capacity) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -106,7 +106,7 @@ By following this process, I can systematically analyze the code and generate a 
 
 总而言之，`interpreter.py` 是 Frida 中用于理解 Meson 构建文件的关键组件。它通过解释构建文件的 AST 来提取有用的信息，例如编译目标、依赖关系和编译选项，这对于 Frida 进行动态分析和逆向工程至关重要。虽然它本身不直接操作二进制底层或内核，但它处理的信息直接描述了如何构建与底层系统交互的软件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/ast/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -557,7 +559,4 @@ class AstInterpreter(InterpreterBase):
 
     def evaluate_testcase(self, node: TestCaseClauseNode) -> Disabler | None:
         return Disabler(subproject=self.subproject)
-
-"""
-
 ```

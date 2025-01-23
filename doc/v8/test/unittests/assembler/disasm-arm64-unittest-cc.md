@@ -159,7 +159,7 @@ str x2, [sp, #offset_result] // 将结果存储回内存
 
 总而言之，第 1 部分涵盖了 ARM64 指令集中相当一部分核心的数据处理和逻辑运算指令的反汇编测试，旨在确保 V8 引擎能够正确地将这些指令的机器码表示转换回可读的汇编代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-arm64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-arm64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,8 +167,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -881,7 +883,4 @@ TEST_F(DisasmArm64Test, logical_shifted) {
   COMPARE(eon(x18, x19, Operand(x20, LSL, 21)), "eon x18, x19, x20, lsl #21");
   COMPARE(eon(w21, w22, Operand(w23, LSR, 22)), "eon w21, w22, w23, lsr #22");
   COMPARE(eon(x24, x25, Operand(x26, ASR, 23)), "eon x24, x25, x26, asr
-"""
-
-
 ```

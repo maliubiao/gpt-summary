@@ -142,15 +142,17 @@ Function: runtime.goexit, File: /usr/local/go/src/runtime/asm_amd64.s:1696
 
 总而言之，`go/test/inline_callers.go` 是一个测试用例，用于验证 Go 语言的 `runtime.Callers` 和 `runtime.CallersFrames` 函数在不同 `skip` 值下的行为，并确保在没有过度内联的情况下，调用栈信息的获取是准确的。  理解 `skip` 参数和内联优化是正确使用这些功能以及避免潜在错误的 key。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/inline_callers.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run -gcflags=-l=4
 
 // Copyright 2017 The Go Authors. All rights reserved.
@@ -246,9 +248,4 @@ func main() {
 		}
 	}
 }
-
-"""
-
-
-
 ```

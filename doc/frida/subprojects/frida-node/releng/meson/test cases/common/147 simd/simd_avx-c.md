@@ -152,7 +152,7 @@ By following these steps and continually refining the analysis, we arrive at a c
 
 总而言之，`simd_avx.c` 是 Frida 用来测试其对 SIMD 指令支持的内部测试用例，但对于 Frida 用户来说，它也是一个很好的学习资源，可以帮助他们理解如何在动态分析中使用 Frida 处理涉及 SIMD 指令的代码。通过分析这个文件，用户可以更好地理解 SIMD 的基本概念、Frida 的工作原理以及如何利用 Frida 进行逆向分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/147 simd/simd_avx.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdheader.h>
 
 #ifndef I_CAN_HAZ_SIMD
@@ -211,7 +213,4 @@ void increment_avx(float arr[4]) {
     arr[2] = (float)darr[2];
     arr[3] = (float)darr[3];
 }
-
-"""
-
 ```

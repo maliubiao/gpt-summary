@@ -228,7 +228,7 @@ with compiler.compile(code, mode=mode) as result:
 
 总而言之，这部分代码定义了一个抽象的编译器接口，包含了各种编译和链接所需的参数管理和操作，是 Frida 构建系统的核心组件，用于将源代码转换为可执行的二进制文件。理解这部分代码对于调试 Frida 构建过程中的编译和链接问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/compilers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -237,8 +237,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 sion only matters if running results; '.exe' is
         # guaranteed to be executable on every platform.
         if mode == CompileCheckMode.LINK:
@@ -859,8 +861,4 @@ def get_global_options(lang: str,
     opts: 'KeyedOptionDictType' = {argkey: cargs, largkey: largs}
 
     return opts
-
-"""
-
-
 ```

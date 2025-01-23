@@ -90,15 +90,17 @@ Here's a breakdown of the thought process to generate the summary:
 
 总而言之，这部分测试专注于验证 Blink 引擎中 `LayoutObject` 类的核心功能，特别是与 CSS 属性 `display: contents` 相关的布局行为，以及其他重要的渲染特性如调试输出、视觉效果判断、事件处理、背景图处理和坐标转换等。这些测试确保了 Blink 引擎能够正确地解析和渲染 HTML 和 CSS，并处理各种复杂的布局场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_object_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
 
   const auto* layout_object0 =
@@ -964,7 +966,4 @@ TEST_F(LayoutObjectTestWithCompositing,
 
   target->setAttribute(html_names::kStyleAttr,
                        AtomicString(kTransf
-"""
-
-
 ```

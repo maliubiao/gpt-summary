@@ -202,7 +202,7 @@ It extracts structured data from the JSON manifest and converts it into internal
 
 作为调试线索，当开发者发现 Web 应用的某些 Manifest 功能没有按预期工作时 (例如，快捷方式没有显示，分享功能异常)，可以检查浏览器的开发者工具中的 "Console" 选项卡，查看是否有 `AddErrorInfo` 记录的错误信息，这些信息能帮助开发者定位 Manifest 文件中的问题。此外，开发者可以逐步检查 Manifest 文件中相关属性的 JSON 结构是否符合规范，数据类型是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/manifest/manifest_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -210,8 +210,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ue* json_value = object->Get("screenshots");
   if (!json_value) {
     return screenshots;
@@ -1204,7 +1206,4 @@ mojom::blink::ManifestLockScreenPtr ManifestParser::ParseLockScreen(
 
 KURL ManifestParser::ParseNoteTakingNewNoteUrl(const JSONObject* note_taking) {
   if (!note_taking->Get("n
-"""
-
-
 ```

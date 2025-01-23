@@ -220,7 +220,7 @@ output_files/
 
 总而言之，`genprog.py` 是 Frida 构建和测试流程中的一个小工具，用于自动化生成基础的C代码框架。 虽然它本身不涉及复杂的逆向技术或底层知识，但它生成的代码是后续逆向分析和测试的基础。用户通常会在遇到构建或测试问题时，或者在深入了解 Frida 内部机制时，才会接触到这个脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/168 preserve gendir/genprog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -228,8 +228,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, sys, argparse
@@ -276,7 +278,4 @@ for i, ifile_name in enumerate(ifiles):
     os.makedirs(os.path.split(ofile_bases[i])[0], exist_ok=True)
     open(h_out, 'w').write(h_templ % (proto_name))
     open(c_out, 'w').write(c_templ % (proto_name, proto_name))
-
-"""
-
 ```

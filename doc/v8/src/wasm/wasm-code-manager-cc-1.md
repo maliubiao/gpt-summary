@@ -122,7 +122,7 @@ instance.exports.myFunction();
 
 这段 `v8/src/wasm/wasm-code-manager.cc` 的代码片段主要负责 **WebAssembly 代码的内存分配、释放和管理，以及将编译后的代码发布到 `NativeModule` 中并维护代码的活性**。它涉及到代码空间的管理、内存页的提交和取消提交、跳转表的维护、代码指针表的管理，以及对不同执行层级和调试状态的支持。其核心目标是确保 WebAssembly 代码能够被安全有效地加载、执行和卸载。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-code-manager.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-code-manager.cc以.tq结尾，那它是个v8 torque源代码，
@@ -130,9 +130,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
-         oom_detail.PrintToArray().data());
+### 源代码
+```cpp
+oom_detail.PrintToArray().data());
       UNREACHABLE();
     }
 
@@ -880,7 +882,4 @@ NativeModule::SnapshotCodeTable() const {
   }
   std::vector<WellKnownImport> import_statuses(module_->num_imported_functions);
   for (uint32_t i = 0; i < module_->num
-"""
-
-
 ```

@@ -88,7 +88,7 @@ Now I need to address the user's specific requirements:
 
 `ConfiguredProxyResolutionService` 是 Chromium 网络栈中负责根据系统配置（手动代理或 PAC 脚本）为网络请求选择合适的代理服务器的关键组件。它负责下载和管理 PAC 脚本，处理并发请求，确保发送到 PAC 脚本的 URL 是安全的，并在服务生命周期内正确处理请求。同时，它也会根据规则自动绕过某些本地请求的代理。这个单元测试文件全面验证了这些核心功能及其边界情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/configured_proxy_resolution_service_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -96,9 +96,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
-  GURL("http://request3"), std::string(), NetworkAnonymizationKey(), &info3,
+### 源代码
+```cpp
+GURL("http://request3"), std::string(), NetworkAnonymizationKey(), &info3,
       callback3.callback(), &request3, NetLogWithSource());
   ASSERT_THAT(rv, IsError(ERR_IO_PENDING));
   ASSERT_THAT(factory_ptr->pending_requests(), testing::SizeIs(1));
@@ -498,8 +500,4 @@ TEST_F(ConfiguredProxyResolutionServiceTest,
 }
 
 }  // namespace net
-
-"""
-
-
 ```

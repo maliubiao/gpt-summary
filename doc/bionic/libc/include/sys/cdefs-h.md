@@ -277,7 +277,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "_bionic_alloc_aligned"), 
 
 总结来说，`bionic/libc/include/sys/cdefs.handroid` 是一个基础性的头文件，它通过定义各种宏来影响 Bionic C 库和使用它的代码的编译和行为，是理解 Android 底层机制的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/cdefs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -288,8 +288,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: cdefs.h,v 1.58 2004/12/11 05:59:00 christos Exp $	*/
 
 /*
@@ -630,7 +632,4 @@ Prompt:
 #if __has_include(<android/ndk-version.h>)
 #include <android/ndk-version.h>
 #endif
-
-"""
-
 ```

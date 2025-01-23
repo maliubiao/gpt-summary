@@ -99,11 +99,13 @@ performAnalysis();
 
 `v8/src/diagnostics/etw-isolate-capture-state-monitor-win.cc` 文件中的 `EtwIsolateCaptureStateMonitor` 类是 V8 引擎在 Windows 平台上用于同步和监控多个 Isolate 状态捕获过程的关键组件。 它确保在需要收集跨 Isolate 的状态信息时，所有相关的 Isolate 都已完成其任务，避免数据不一致或其他问题。虽然 JavaScript 开发者不会直接操作这个类，但它的存在支撑着 V8 引擎的许多高级功能，例如调试和性能分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/etw-isolate-capture-state-monitor-win.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ void EtwIsolateCaptureStateMonitor::Notify() {
 }  // namespace ETWJITInterface
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

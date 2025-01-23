@@ -161,7 +161,7 @@ TFC(StringSubstring, StringSubstring)
 
 作为第 1 部分，我们可以总结 `v8/src/builtins/builtins-definitions.h` 的核心功能是 **作为 V8 引擎中内置函数的定义和组织中心**。它声明了各种类型的内置函数，并将其组织到不同的层级以优化性能。这个文件是理解 V8 如何实现 JavaScript 核心功能的重要入口点，并且与 JavaScript 的语法和行为有着直接的联系。  如果以 `.tq` 结尾，它将是生成这些定义的 Torque 源代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-definitions.h以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -618,8 +620,5 @@ namespace internal {
   TFC(ArraySingleArgumentConstructor_HoleySmi_DisableAllocationSites,          \
       ArraySingleArgumentConstructor)                                          \
   TFC(ArraySingleArgumentConstructor_Packed_DisableAllocationSites,            \
-      ArraySingleArgumentConstructor)    
-"""
-
-
+      ArraySingleArgumentConstructor)
 ```

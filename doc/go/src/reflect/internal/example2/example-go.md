@@ -157,7 +157,7 @@ Grandchild (via Child1 pointer): main.MyStruct {MyStructs:[] MyStruct:<nil>}
 
 总而言之，`go/src/reflect/internal/example2/example.go` 中定义的 `MyStruct` 结构体展示了 Go 语言构建自引用数据结构的能力，这种能力是构建复杂数据关系的关键。使用时需要注意避免无限循环和空指针引用，并理解深拷贝和浅拷贝的区别。虽然这段代码本身不处理命令行参数，但在实际应用中可以与其他 Go 特性结合使用来处理更复杂的任务。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/internal/example2/example.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -165,8 +165,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -177,9 +179,4 @@ type MyStruct struct {
 	MyStructs []MyStruct
 	MyStruct  *MyStruct
 }
-
-"""
-
-
-
 ```

@@ -32,15 +32,17 @@ Here's a breakdown of the thinking process to address each point:
 5. **Overall Summary:** The core purpose of this code is to implement the enforcement mechanisms for Content Security Policy within the Blink rendering engine. It checks resource loading and script execution against the defined security policy and reports violations.
 
 **(Self-Correction/Refinement):**  Initially, I might focus too narrowly on specific functions. It's important to step back and see the bigger picture: this file is a central hub for handling CSP directive checks and violation reporting within the frame. The helper functions contribute to this overall goal. Also, recognizing the role of `ReportingDisposition` is crucial for differentiating between blocking and reporting-only behavior. I need to ensure the examples provided are clear and directly
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/csp/csp_directive_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -875,8 +877,4 @@ CSPCheckResult CSPDirectiveListAllowFromSource(
   DCHECK(type == CSPDirectiveName::BaseURI ||
          type == CSPDirectiveName::ConnectSrc ||
          type == CSPDirectiveName::DefaultSrc ||
-  
-"""
-
-
 ```

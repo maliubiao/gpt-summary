@@ -168,7 +168,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 这段代码是 V8 引擎测试套件的一部分，专注于测试 V8 C++ API 的各种功能，特别是与 JavaScript 对象的创建、操作、函数调用、类型转换以及异常处理相关的 API。它通过编写 C++ 测试用例，模拟各种 JavaScript 场景，并使用断言来验证 V8 API 的行为是否符合预期，从而确保 V8 引擎的稳定性和正确性。 这些测试覆盖了 V8 API 的常见用法和边界情况，帮助开发者在使用 V8 C++ API 时避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -176,8 +176,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 EQ(0, strcmp("exception", *exception_value));
   CHECK(context->GetIsolate()->HasPendingException());
   try_catch.Reset();
@@ -1041,7 +1043,4 @@ void CThrowCountDown(const v8::FunctionCallbackInfo<v8::Value>& args) {
   v8::Local<v8::Context> context = isolate->GetCurrentContext();
   int count = args[0]->Int32Value(context).FromJust();
   int cInterval = args[2]->Int32Value(
-"""
-
-
 ```

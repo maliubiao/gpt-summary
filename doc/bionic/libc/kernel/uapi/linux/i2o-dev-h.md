@@ -300,7 +300,7 @@ if __name__ == '__main__':
 
 总而言之，`bionic/libc/kernel/uapi/linux/i2o-dev.h` 提供了与 Linux 内核中 I2O 设备驱动交互的接口定义。虽然在现代移动 Android 设备中不常见，但在某些特定的服务器或嵌入式 Android 系统中，仍然可能被底层的硬件驱动或 HAL 使用。使用 Frida 可以帮助开发者调试和理解这些底层的交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/i2o-dev.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -311,8 +311,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -618,7 +620,4 @@ typedef struct _i2o_status_block {
 #define I2O_DPT_FLASH_READ 0x0101
 #define I2O_DPT_FLASH_WRITE 0x0102
 #endif
-
-"""
-
 ```

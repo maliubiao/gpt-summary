@@ -183,15 +183,17 @@ navigator.credentials.get()
 
 `CredentialManagerProxy` 在 Chromium Blink 引擎中扮演着至关重要的角色，它作为 JavaScript 凭据管理 API 和浏览器进程中实际实现之间的桥梁，负责请求的路由和通信。理解其功能有助于我们理解浏览器如何处理用户的凭据，以及 Web 开发者如何利用这些 API 来提供更便捷和安全的身份验证体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/credentialmanagement/credential_manager_proxy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -356,7 +358,4 @@ void CredentialManagerProxy::Trace(Visitor* visitor) const {
 const char CredentialManagerProxy::kSupplementName[] = "CredentialManagerProxy";
 
 }  // namespace blink
-
-"""
-
 ```

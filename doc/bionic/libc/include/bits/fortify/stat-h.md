@@ -206,7 +206,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 通过这个 Frida hook，你可以观察到应用程序中 `umask` 函数的调用情况，验证其参数是否符合预期，并了解 Android Framework 或 NDK 如何使用这个函数。如果你想观察 `__umask_chk` 或 `__umask_real` 的行为，你需要找到它们的导出符号并进行类似的 hook。但是，这些内部函数通常不是导出的，可能需要更高级的 Frida 技术，例如基于地址的 hook 或 inline hook。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/fortify/stat.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -217,8 +217,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -268,7 +270,4 @@ mode_t umask(mode_t mode)
 }
 
 #endif /* defined(__BIONIC_FORTIFY) */
-
-"""
-
 ```

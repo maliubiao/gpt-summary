@@ -425,7 +425,7 @@ setImmediate(main);
 
 这个头文件 `kfd_ioctl.handroid` 是 Android bionic libc 中的一部分，这意味着 Android 系统本身就包含了对 KFD 驱动接口的定义，这进一步说明了 KFD 在 Android 图形和计算领域的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/kfd_ioctl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -436,8 +436,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -1163,7 +1165,4 @@ struct kfd_ioctl_dbg_trap_args {
 #define AMDKFD_COMMAND_START 0x01
 #define AMDKFD_COMMAND_END 0x27
 #endif
-
-"""
-
 ```

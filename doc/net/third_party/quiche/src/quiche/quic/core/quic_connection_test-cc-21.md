@@ -176,7 +176,7 @@ By following these steps, I can systematically analyze the code and construct a 
 
 作为 24 部分中的第 22 部分，可以推测这部分测试涵盖了相对高级或在连接生命周期后期才会触发的功能，例如连接迁移、更细致的拥塞控制交互以及对特定边界情况的处理。它可能依赖于之前部分测试中建立的连接基础功能，并在此基础上进行更深入的测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -184,9 +184,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第22部分，共24部分，请归纳一下它的功能
+```
 
-"""
-   connection_.SetDefaultEncryptionLevel(ENCRYPTION_HANDSHAKE);
+### 源代码
+```cpp
+connection_.SetDefaultEncryptionLevel(ENCRYPTION_HANDSHAKE);
     connection_.SendCryptoDataWithString(std::string(200, 'a'), 0,
                                          ENCRYPTION_HANDSHAKE);
     // Send 1-RTT 3.
@@ -920,7 +922,4 @@ TEST_P(QuicConnectionTest, ClientValidatedServerPreferredAddress2) {
       QuicSocketAddress(QuicIpAddress::Loopback6(), /*port=*/23456);
   TestPacketWriter new_writer(version(), &clock_, Perspective::IS_CLIENT);
   co
-"""
-
-
 ```

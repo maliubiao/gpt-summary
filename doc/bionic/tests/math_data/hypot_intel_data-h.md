@@ -196,7 +196,7 @@ libc.so:
 
 `bionic/tests/math_data/hypot_intel_data.handroid` 文件是 Android Bionic 库中用于测试 `hypot` 函数（特别是 Intel 架构优化版本）的测试数据集合。它包含了大量的输入和预期输出，用于验证 `hypot` 函数实现的正确性。这个文件是 Bionic 库质量保证的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/hypot_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -208,8 +208,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1767,8 +1769,4 @@ static data_1_2_t<double, double, double> g_hypot_intel_data[] = {
     0x1.0p-500,
     0x1.0p-500
   },
- 
-"""
-
-
 ```

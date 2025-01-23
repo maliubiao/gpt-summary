@@ -124,7 +124,7 @@ By following these steps, breaking down the code, and considering the context pr
 
 总而言之，`tester_with_status.c` 是一个精心设计的简单测试用例，用于验证 Frida 或其相关组件在处理目标进程以非零状态退出的情况下的行为是否正确。它的输出格式遵循 TAP 协议，方便自动化测试系统的解析和报告。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing test/5 tap tests/tester_with_status.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -142,7 +144,4 @@ int main(int argc, char **argv) {
     puts("not ok 1 - some test");
     return 2;
 }
-
-"""
-
 ```

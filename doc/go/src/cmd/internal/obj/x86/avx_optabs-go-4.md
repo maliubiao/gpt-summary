@@ -110,7 +110,7 @@ C5 F2 0F 58  // VEX 前缀 + 操作码
 
 作为 `go/src/cmd/internal/obj/x86` 包中 `avx_optabs.go` 文件的最后一部分，这部分代码是 Go 汇编器处理 x86 AVX 指令的关键组成部分。它定义了一个详尽的查找表，将各种 AVX 指令及其不同的编码方式 (基于 VEX 和 EVEX 前缀、向量长度、操作数大小等) 映射到相应的操作码字节序列。这个表使得汇编器能够将 Go 汇编代码中使用的 AVX 指令正确地翻译成机器码，从而充分利用现代 x86 处理器的向量化能力，提升程序的性能。整个 `avx_optabs.go` 文件，以及相关的 `obj` 包，共同构成了 Go 语言对 x86 架构下 AVX 指令集支持的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/x86/avx_optabs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -118,8 +118,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 x0F | vexW0, 0x5C,
 		avxEscape | evex512 | evex0F | evexW0, evexN64 | evexBcstN4 | evexRoundingEnabled | evexZeroingEnabled, 0x5C,
 		avxEscape | evex128 | evex0F | evexW0, evexN16 | evexBcstN4 | evexZeroingEnabled, 0x5C,
@@ -198,10 +200,4 @@ x0F | vexW0, 0x5C,
 		avxEscape | vex128 | vex0F | vexW0, 0x77,
 	}},
 }
-
-"""
-
-
-
-
 ```

@@ -145,7 +145,7 @@ copy(data, data[1:])
 
 总而言之，这段测试代码旨在验证 Go 语言的 `copy` 函数在处理大内存块和重叠内存区域时的正确性和效率，它通过模拟 `memmove` 的场景来进行测试，并利用了底层的系统调用进行内存管理。对于 Go 语言的开发者来说，理解 `copy` 函数在处理重叠内存时的行为至关重要，可以避免手动实现可能出错的内存移动逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/memmove_linux_amd64_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -153,8 +153,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -216,9 +218,4 @@ func TestMemmoveOverflow(t *testing.T) {
 		t.Fatalf("copied %d bytes, expected %d", n, 3<<30-1)
 	}
 }
-
-"""
-
-
-
 ```

@@ -98,11 +98,13 @@ JavaScript 中与这些底层原子操作直接相关的特性是 `SharedArrayBu
 
 `extension-riscv-a.cc` 文件是 V8 引擎在 RISC-V 架构上支持并发和共享内存的关键组成部分。它通过实现 RISC-V 的原子内存操作指令，为 JavaScript 中的 `SharedArrayBuffer` 和 `Atomics` 对象提供了底层的硬件支持，使得 JavaScript 能够在多线程环境中安全地操作共享数据。虽然 JavaScript 开发者不会直接编写类似 `amoadd_w` 的代码，但这些底层的原子操作是实现高级并发特性的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-a.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ void AssemblerRISCVA::amomaxu_d(bool aq, bool rl, Register rd, Register rs1,
 #endif
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

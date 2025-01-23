@@ -128,7 +128,7 @@ By following this thought process, the generated answer addresses all the user's
 
 总而言之，这部分代码是 Frida Stalker 组件在 x86 架构下的功能测试，它涵盖了 Stalker 的核心特性，并提供了丰富的测试用例来验证其正确性和健壮性。这些测试用例也能够帮助用户和开发者理解 Stalker 的工作原理和使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-x86/stalker-x86.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,9 +137,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
-   gpointer user_data)
+### 源代码
+```c
+gpointer user_data)
 {
   const guint8 * func_start = user_data;
   const cs_insn * insn;
@@ -1199,7 +1201,4 @@ TESTCASE (indirect_call_with_register_and_positive_byte_immediate)
   call_template.target_address_offset = 2;
   call_template.target_func_offset = 14;
   call_template.target_func_immediate
-"""
-
-
 ```

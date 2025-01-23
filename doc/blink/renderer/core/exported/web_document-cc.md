@@ -221,15 +221,17 @@ By following these steps, which involve progressively deeper analysis and consid
 
 总而言之，`web_document.cc` 文件是 Blink 渲染引擎中非常核心的一个组件，它连接了内部的文档表示和外部的访问接口，使得 Chromium 的其他部分以及 JavaScript 能够方便地操作和获取文档的信息。 理解这个文件的功能对于理解 Blink 的工作原理以及调试 Web 页面至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -614,7 +616,4 @@ void WebDocument::InitiatePreview(const WebURL& url) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

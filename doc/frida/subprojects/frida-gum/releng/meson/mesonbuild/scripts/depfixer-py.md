@@ -206,7 +206,7 @@ Dynamic section at offset 0x... contains ... entries:
 
 总结来说，`depfixer.py` 是 Frida 构建过程中一个关键的实用工具，它深入到二进制文件的底层，修改其依赖关系信息，确保 Frida 组件能够在目标环境中正确加载和执行。理解其功能和工作原理对于理解 Frida 的构建过程以及进行相关的逆向工程分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/scripts/depfixer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -214,8 +214,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2016 The Meson development team
 
@@ -711,7 +713,4 @@ def fix_rpath(fname: str, rpath_dirs_to_remove: T.Set[bytes], new_rpath: T.Union
         if isinstance(new_rpath, bytes):
             new_rpath = new_rpath.decode('utf8')
         fix_darwin(fname, new_rpath, final_path, install_name_mappings)
-
-"""
-
 ```

@@ -84,7 +84,7 @@ By following these steps, we can arrive at a comprehensive and accurate summary 
 
 总而言之，这段代码的主要功能是 **组织和分配程序运行时所需的各种数据到内存中的不同节和段中，并为这些节和段设定起始地址和大小。它区分了可修改的数据、只读数据以及需要重定位的只读数据，并根据目标平台的特性进行不同的处理。** 这对于链接器的后续步骤，例如地址分配和重定位至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/data.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -93,8 +93,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 me.__stop___sancov_cntrs", 0), sect)
 		ldr.SetSymSect(ldr.LookupOrCreateSym("internal/fuzz._counters", 0), sect)
 		ldr.SetSymSect(ldr.LookupOrCreateSym("internal/fuzz._ecounters", 0), sect)
@@ -1103,10 +1105,4 @@ func (ctxt *Link) address() []*sym.Segment {
 			break
 		}
 		symname := fmt.Sprintf("runtime.text.%d", n)
-		
-"""
-
-
-
-
 ```

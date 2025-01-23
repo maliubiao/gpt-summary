@@ -126,7 +126,7 @@ Let's break down the thought process for analyzing this Python script.
 
 总而言之，这个简单的脚本在一个复杂的软件项目（如 Frida）的测试流程中扮演着特定的角色，它的存在是为了准备特定的测试数据，而它位于 `failing` 目录下则暗示着它参与的测试场景是预期会失败的，目的是为了验证 Frida 的错误处理或特定边界情况的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/89 custom target install data/preproc.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -149,7 +151,4 @@ outf = sys.argv[2]
 with open(outf, 'wb') as o:
     with open(inf, 'rb') as i:
         o.write(i.read())
-
-"""
-
 ```

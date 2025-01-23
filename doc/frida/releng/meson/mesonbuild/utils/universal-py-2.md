@@ -43,7 +43,7 @@ Here's a breakdown of how to approach each part:
 
 总而言之，这部分代码提供了一系列基础但重要的工具，用于管理构建选项、加载序列化数据以及进行简单的查找操作。这些工具是 Meson 构建系统正常运行的关键组成部分，并与构建过程的各个方面息息相关。对于 Frida 这样的动态 instrumentation 工具，其构建过程的稳定性和可配置性至关重要，因此这些通用工具函数发挥着重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -52,8 +52,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 nd(trial)
             else:
                 result[basename] = [trial]
@@ -633,8 +635,4 @@ def first(iter: T.Iterable[_T], predicate: T.Callable[[_T], bool]) -> T.Optional
         if predicate(i):
             return i
     return None
-
-"""
-
-
 ```

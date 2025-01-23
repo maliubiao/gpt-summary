@@ -147,7 +147,7 @@ By following these steps, I arrive at the comprehensive and structured answer pr
 
 `main.cpp` 是一个非常基础的 C++ 程序，用于演示 `cmModClass` 的简单使用。在 Frida 的上下文中，它作为一个被 instrument 的目标，可以用来测试 Frida 的各种功能，例如 hook 函数、修改内存、观察程序行为等。用户查看此文件的目的是为了理解目标程序的结构，以便编写有效的 Frida 脚本。提供的文件路径暗示了这是一个 Frida 项目中的一个特定测试用例，可能用于测试 Frida 在处理特定构建配置或代码结构时的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/18 skip include files/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 
@@ -167,7 +169,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

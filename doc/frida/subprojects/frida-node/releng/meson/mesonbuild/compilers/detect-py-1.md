@@ -100,7 +100,7 @@ Copyright (C) 1985-2021 Intel Corporation. All rights reserved.
 
 这段代码的主要功能是 **自动检测系统中可用的 Fortran 编译器，提取其版本信息，并创建相应的编译器对象供 Frida 构建系统使用。** 它通过尝试执行不同的编译器命令并分析输出来实现这一目标，并针对不同的 Fortran 编译器类型进行了特定的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ':
                     version = _get_lcc_version_from_defines(defines)
                     cls = fortran.ElbrusFortranCompiler
@@ -801,8 +803,4 @@ def _get_clang_compiler_defines(compiler: T.List[str]) -> T.Dict[str, str]:
                                    f'Compiler stderr:\n{error}\n-----\n')
     defines: T.Dict[str, str] = {}
     for line in output.split('\n'):
-    
-"""
-
-
 ```

@@ -105,11 +105,13 @@ This iterative process of scanning, analyzing, connecting, and refining allows f
 
 `StringsStorage` 是 V8 引擎中性能分析器的一个关键组件，它通过字符串去重和引用计数等技术，高效地存储和管理用于性能分析的字符串信息。这与 JavaScript 中字符串的使用方式密切相关，特别是在处理字符串字面量、`Symbol` 描述和对象属性名等方面。它帮助性能分析器生成更紧凑、更易于理解的分析报告。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/strings-storage.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -297,7 +299,4 @@ base::HashMap::Entry* StringsStorage::GetEntry(const char* str, size_t len) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

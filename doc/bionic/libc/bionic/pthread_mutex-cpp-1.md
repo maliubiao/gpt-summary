@@ -65,7 +65,7 @@ By following these steps and iteratively refining the understanding of the code,
 
 这段代码片段是 `pthread_mutex.cpp` 的一部分，它专注于互斥锁的核心锁定和解锁操作，而第一部分可能包含了互斥锁的初始化、属性设置等其他功能。  这两部分共同构成了 Bionic 库中互斥锁的完整实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/pthread_mutex.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -77,8 +77,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
     // Avoid slowing down fast path of normal mutex lock operation.
     if (__predict_true(mtype == MUTEX_TYPE_BITS_NORMAL)) {
@@ -294,8 +296,4 @@ int pthread_mutex_destroy(pthread_mutex_t* mutex_interface) {
     }
     return EBUSY;
 }
-
-"""
-
-
 ```

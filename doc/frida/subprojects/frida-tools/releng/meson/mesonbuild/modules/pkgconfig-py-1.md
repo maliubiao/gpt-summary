@@ -133,7 +133,7 @@ pkgconfig.generate(
 
 总而言之，这个文件的核心职责是为 Frida 构建过程中生成的库提供标准的 `pkgconfig` 支持，使得其他项目或工具能够方便地找到和使用这些库。它涵盖了库的元数据、依赖关系和编译选项的管理，并且考虑了开发和安装的不同阶段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/modules/pkgconfig.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 tadir(), 'pkgconfig')
 
         subdirs = kwargs['subdirs'] or default_subdirs
@@ -241,8 +243,4 @@ tadir(), 'pkgconfig')
 
 def initialize(interp: Interpreter) -> PkgConfigModule:
     return PkgConfigModule()
-
-"""
-
-
 ```

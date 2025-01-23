@@ -193,15 +193,17 @@ console.log(regex4.test(str4)); // 输出: true
 
 `regexp-fuzzer.cc` 通过生成大量的随机正则表达式和输入，旨在覆盖这些常见的错误以及更复杂的、难以预料的情况，从而确保 V8 引擎在各种场景下都能稳定可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/regexp/regexp-fuzzer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/regexp/regexp-fuzzer.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -381,7 +383,4 @@ V8_FUZZ_TEST_F(RegExpTwoByteTest, RunRegExp)
 
 }  // namespace
 }  // namespace v8
-
-"""
-
 ```

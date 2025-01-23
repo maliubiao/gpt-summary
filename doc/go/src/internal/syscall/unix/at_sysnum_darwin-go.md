@@ -182,7 +182,7 @@ func main() {
 
 总而言之，这段代码定义了在 macOS 上进行底层文件系统操作时非常有用的常量，它们允许更精确和灵活地控制系统调用的行为，尤其是在处理相对路径、符号链接和权限检查时。理解这些常量的作用对于编写健壮的、与操作系统底层交互的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/at_sysnum_darwin.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -190,8 +190,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -206,9 +208,4 @@ const (
 
 	UTIME_OMIT = -0x2
 )
-
-"""
-
-
-
 ```

@@ -57,7 +57,7 @@ Here's a breakdown of how to approach this:
 
 这段代码是 V8 引擎中针对 RISC-V 32 位架构汇编器进行全面单元测试的一部分，它通过构造各种汇编代码片段并执行验证，确保了汇编器能够正确地生成 RISC-V 机器码，从而保证了 V8 引擎在 RISC-V 平台上的正常运行和 JavaScript 代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-riscv32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-riscv32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -65,8 +65,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _ add(a1, a7,
            a4);  // 32bit addu result is sign-extended into 64bit reg.
     __ RV_li(t5, 0x80000003);
@@ -1240,7 +1242,4 @@ TEST(li_estimate) {
     CcTest::InitializeVM();                                                  \
     Isolate* isolate = CcTest::i_isolate();                                  \
     Han
-"""
-
-
 ```

@@ -127,7 +127,7 @@ By following this structured thought process, considering the context of Frida a
 
 `frida/subprojects/frida-qml/releng/meson/test cases/frameworks/1 boost/nomod.cpp` 文件是一个用于测试 Frida 对包含 `boost::any` 的 C++ 代码处理能力的简单测试用例。它展示了 `boost::any` 的基本用法，并间接关联到逆向分析中遇到的动态类型和库的使用等概念。虽然代码本身不涉及底层细节，但它作为 Frida 的测试用例，其存在和执行依赖于 Frida 的底层技术，例如进程注入和 Hook。理解这样的测试用例有助于开发者和用户更好地理解 Frida 的工作原理和使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/1 boost/nomod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<boost/any.hpp>
 #include<iostream>
 
@@ -155,7 +157,4 @@ int main(int argc, char **argv) {
         return 1;
     }
 }
-
-"""
-
 ```

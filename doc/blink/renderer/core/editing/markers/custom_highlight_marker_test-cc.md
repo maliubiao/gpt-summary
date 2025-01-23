@@ -186,15 +186,17 @@ During the process, I might refine my understanding. For example, initially, I m
 
 总而言之， `custom_highlight_marker_test.cc` 这个测试文件虽然是 C++ 代码，但它验证了 Blink 引擎中负责处理自定义高亮标记的核心逻辑，这直接关系到网页如何响应 JavaScript 的高亮请求，以及如何应用 CSS 样式来实现自定义的高亮效果。 理解这个测试文件有助于开发者理解浏览器内部如何处理网页的富文本编辑和样式渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/custom_highlight_marker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ TEST_F(CustomHighlightMarkerTest, CreationAndProperties) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

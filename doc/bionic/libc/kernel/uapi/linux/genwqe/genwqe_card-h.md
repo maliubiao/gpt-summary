@@ -283,7 +283,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，你可以在应用与 `genwqe` 驱动交互时，在终端看到 `open` 和 `ioctl` 函数的调用信息，以及传递的参数，从而调试和分析交互过程。你需要替换 `your.app.package.name` 为你要监控的应用的实际包名，并根据实际的 `GENWQE_*` 常量值更新 `ioctl` hook 中的判断条件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/genwqe/genwqe_card.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -294,8 +294,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -554,7 +556,4 @@ struct genwqe_mem {
 #define GENWQE_SLU_UPDATE _IOWR(GENWQE_IOC_CODE, 80, struct genwqe_bitstream)
 #define GENWQE_SLU_READ _IOWR(GENWQE_IOC_CODE, 81, struct genwqe_bitstream)
 #endif
-
-"""
-
 ```

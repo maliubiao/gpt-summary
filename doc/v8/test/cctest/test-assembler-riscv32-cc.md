@@ -130,7 +130,7 @@ console.log(result); // 输出 8
 
 该文件的主要功能是 **测试 V8 JavaScript 引擎中 RISC-V 32 位汇编器的正确性**。它通过大量的单元测试用例，覆盖了各种 RISC-V 指令及其组合，确保 `MacroAssembler` 类能够生成正确的机器码，从而保证 JavaScript 代码在 RISC-V 架构上的可靠执行。它使用了 V8 的测试框架和模拟器来完成这项任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-riscv32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-riscv32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -138,8 +138,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -783,7 +785,4 @@ TEST(RISCV2) {
     __ RV_li(t5, 0x00001234);
     __ bne(t0, t5, &error);
     _
-"""
-
-
 ```

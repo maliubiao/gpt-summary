@@ -171,15 +171,17 @@ This structured approach, starting from the overall purpose and progressively di
 
 总而言之，`AudioScheduledSourceNode.cc` 文件是 Web Audio API 中至关重要的一个组件，它负责音频源节点的调度和生命周期管理，并与 JavaScript 层紧密配合，让开发者能够精确地控制音频的播放。 理解这个文件的功能有助于开发者更好地使用 Web Audio API 并进行问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_scheduled_source_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012, Google Inc. All rights reserved.
  *
@@ -272,7 +274,4 @@ bool AudioScheduledSourceNode::HasPendingActivity() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

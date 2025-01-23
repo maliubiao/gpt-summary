@@ -137,14 +137,16 @@ My thought process to analyze the C++ code and answer the request goes like this
 
 总而言之，`shape_result_perf_test.cc` 是 Blink 引擎中用于保证文本形状功能性能的关键测试文件。它通过模拟不同的场景，帮助开发者了解和优化文本处理的效率，最终提升网页的渲染速度和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/shape_result_perf_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -349,7 +351,4 @@ INSTANTIATE_TEST_SUITE_P(CharacterRange,
                          testing::Values(0, 1, 2, 4, 8));
 
 }  // namespace blink
-
-"""
-
 ```

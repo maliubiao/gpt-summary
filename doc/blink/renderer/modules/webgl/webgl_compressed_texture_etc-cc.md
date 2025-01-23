@@ -206,15 +206,17 @@ if (ext) {
 
 总而言之，`webgl_compressed_texture_etc.cc` 是 Blink 引擎中启用 ETC 纹理压缩的关键部分，它通过注册压缩格式并提供支持检测，使得 Web 开发者能够在 WebGL 应用中使用这些高效的纹理格式。理解这个文件的功能有助于开发者在遇到相关问题时进行调试和故障排除。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_compressed_texture_etc.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -258,7 +260,4 @@ const char* WebGLCompressedTextureETC::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

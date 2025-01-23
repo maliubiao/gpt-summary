@@ -124,7 +124,7 @@ Frida 本身就是一个用于动态逆向工程的工具。`EmscriptenMixin` �
 
 总而言之，`emscripten.py` 文件在 Frida 的构建系统中扮演着关键角色，它专门处理使用 Emscripten 编译的目标，并提供了处理 JavaScript 库、配置线程选项等特定功能，这对于逆向 WebAssembly 应用程序至关重要。理解这个文件有助于开发者在使用 Frida instrument Emscripten 应用时排查构建和配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/compilers/mixins/emscripten.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The meson development team
 
@@ -223,7 +225,4 @@ class EmscriptenMixin(Compiler):
             if os.path.exists(abs_path):
                 return [abs_path]
         return None
-
-"""
-
 ```

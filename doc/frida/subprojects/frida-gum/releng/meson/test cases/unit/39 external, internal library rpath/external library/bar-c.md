@@ -104,7 +104,7 @@ By following these steps, we can generate a comprehensive and accurate analysis 
 
 总而言之，`bar.c` 文件是一个用于测试 Frida 动态 instrumentation 能力的精简示例，它模拟了在运行时需要动态解决依赖关系的情况，常用于验证 Frida 在处理外部库和运行时路径时的正确性。它也为逆向工程师提供了一个方便的 hook 点，以便在运行时观察和修改程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/39 external, internal library rpath/external library/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,15 +112,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int some_undefined_func (void);
 
 int bar_system_value (void)
 {
   return some_undefined_func ();
 }
-
-"""
-
 ```

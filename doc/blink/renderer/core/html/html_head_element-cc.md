@@ -91,14 +91,16 @@ By following these steps, breaking down the problem into smaller parts, and iter
 
 总而言之，`HTMLHeadElement.cc` 文件中的 `HTMLHeadElement` 类是 Blink 渲染引擎中至关重要的组成部分，它负责表示、管理和处理 HTML 文档的 `<head>` 元素及其包含的各种元数据，从而支持网页的基本结构、样式、脚本和各种浏览器行为。它与 HTML、CSS 和 JavaScript 都有着密切的联系，是构建和渲染网页的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_head_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -132,7 +134,4 @@ HTMLHeadElement::HTMLHeadElement(Document& document)
     : HTMLElement(html_names::kHeadTag, document) {}
 
 }  // namespace blink
-
-"""
-
 ```

@@ -78,11 +78,13 @@ const obj = { x: 10, y: "hello" };
 
 `class-debug-reader-generator.cc` 是一个关键的构建时工具，它通过分析 V8 内部类的定义，生成用于调试的 C++ 代码。这些生成的代码使得在 post-mortem 分析或远程调试 V8 进程时，可以方便地检查 JavaScript 对象在内存中的表示，从而帮助开发者理解 V8 的内部工作原理和排查问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/class-debug-reader-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -663,7 +665,4 @@ void ImplementationVisitor::GenerateClassDebugReaders(
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

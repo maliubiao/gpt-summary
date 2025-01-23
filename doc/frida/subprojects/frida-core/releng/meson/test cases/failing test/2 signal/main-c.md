@@ -114,7 +114,7 @@ By following this structured thought process, moving from basic code understandi
 
 因此，这个 `main.c` 文件是 Frida 测试框架的一部分，用于验证 Frida 在遇到程序自身发送 `SIGSEGV` 信号时的行为。开发者可以通过查看这个测试用例的代码和 Frida 的测试日志来理解 Frida 在处理这种特定类型的程序崩溃时的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing test/2 signal/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,15 +122,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <signal.h>
 #include <unistd.h>
 
 int main(void) {
     kill(getpid(), SIGSEGV);
 }
-
-"""
-
 ```

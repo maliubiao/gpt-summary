@@ -99,7 +99,7 @@ Here's a breakdown of the file's functionality:
 
 `video_track_recorder_unittest.cc` 是一个关键的单元测试文件，用于验证 Blink 引擎中 `VideoTrackRecorder` 类的核心视频编码功能。它通过模拟依赖项和设置不同的测试场景，确保 `VideoTrackRecorder` 能够正确地编码各种类型的视频帧，处理关键帧请求，并有效地处理错误情况，从而保障了 Web `MediaRecorder` API 的稳定性和可靠性。  它测试了 C++ 后端如何响应 Javascript `MediaRecorder` API 的调用，并确保编码后的视频数据可以被 HTML 的 `<video>` 元素正确播放。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediarecorder/video_track_recorder_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -940,7 +942,4 @@ TEST_P(VideoTrackRecorderTestParam,
 TEST_P(VideoTrackRecorderTestParam, KeyFramesGeneratedWithIntervalCount) {
   // Configure 3 delta frames for every key frame.
   InitializeRecorder(testing::get<0>(GetParam()), /*keyframe_config=*/
-"""
-
-
 ```

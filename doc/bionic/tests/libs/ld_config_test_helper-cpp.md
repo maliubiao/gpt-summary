@@ -333,7 +333,7 @@ if (Process.platform === 'android') {
 
 总而言之，`ld_config_test_helper.cpp` 是一个用于测试 Android Bionic 动态链接器功能的内部测试程序，它模拟了动态链接器加载和链接共享库的过程，并验证了 VDSO 的工作状态。理解这个文件的功能有助于深入了解 Android 系统底层的动态链接机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/ld_config_test_helper.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -344,8 +344,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -401,7 +403,4 @@ int main() {
 
   return 0;
 }
-
-"""
-
 ```

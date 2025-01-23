@@ -149,7 +149,7 @@ By following these steps, we can comprehensively analyze the provided Python scr
 
 作为调试线索，这个脚本可以帮助 Frida 开发者确认 Frida 的核心功能是否正常工作，特别是在处理用 C++ 编写并通过 Boost.Python 暴露给 Python 的模块时。如果这个测试失败，可能意味着 Frida 在加载或调用这类模块时存在问题，需要进一步调查 Frida 的加载机制、与 Python 解释器的交互等方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/1 boost/test_python_module.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import sys
 sys.path.append(sys.argv[1])
 
@@ -186,7 +188,4 @@ def run():
 
 if __name__ == '__main__':
     run()
-
-"""
-
 ```

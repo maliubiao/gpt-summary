@@ -168,7 +168,7 @@ fetch('https://example.com', {
 
 总而言之，`socket_test_util.cc` 文件是一个用于网络栈单元测试的工具箱，提供了各种 Mock 对象、常量和辅助函数，帮助开发者在隔离的环境中测试网络连接、数据传输和代理交互等功能，而无需依赖真实的外部网络环境。 这部分内容专注于模拟特定的代理协议和提供一些方便的测试辅助功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/socket_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -176,9 +176,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-       common_connect_job_params),
+### 源代码
+```cpp
+common_connect_job_params),
       client_socket_factory_(common_connect_job_params->client_socket_factory) {
 }
 
@@ -460,8 +462,4 @@ uint64_t GetTaggedBytes(int32_t expected_tag) {
 #endif
 
 }  // namespace net
-
-"""
-
-
 ```

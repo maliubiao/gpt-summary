@@ -557,7 +557,7 @@ if (Process.platform === 'android') {
 
 通过 Frida Hook，你可以动态地追踪 `memmem` 函数的调用，从而理解 Android Framework 或 NDK 代码是如何一步步地到达这个 `libc` 函数的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/string/memmem.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -568,8 +568,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: memmem.c,v 1.5 2020/04/16 12:39:28 claudio Exp $ */
 
 /*
@@ -754,7 +756,4 @@ memmem(const void *h0, size_t k, const void *n0, size_t l)
 	return twoway_memmem(h, h+k, n, l);
 }
 DEF_WEAK(memmem);
-
-"""
-
 ```

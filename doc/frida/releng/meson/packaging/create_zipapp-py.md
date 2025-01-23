@@ -186,7 +186,7 @@ python create_zipapp.py --source /path/to/frida/meson --outfile frida_meson.pyz 
 
 总而言之，开发者到达这个脚本通常是因为他们正在进行 Frida 的开发、构建、打包或调试工作，需要理解或定制 Frida 的构建过程。这个脚本是 Frida 构建系统的一部分，用于生成可分发的 Python 包。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/packaging/create_zipapp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -219,7 +221,4 @@ with tempfile.TemporaryDirectory() as d:
     shutil.copy2(source / 'meson.py', Path(d, '__main__.py'))
     shutil.copytree(source / 'mesonbuild', Path(d, 'mesonbuild'))
     zipapp.create_archive(d, interpreter=options.interpreter, target=options.outfile, compressed=options.compress)
-
-"""
-
 ```

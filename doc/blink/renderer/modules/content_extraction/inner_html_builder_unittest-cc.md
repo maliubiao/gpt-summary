@@ -100,15 +100,17 @@ By following these steps, we can systematically analyze the purpose, functionali
 
 总之，`inner_html_builder_unittest.cc` 是一个至关重要的测试文件，它确保了 `InnerHtmlBuilder` 能够按照预期构建 HTML 字符串，并且可以帮助开发者理解该类的行为，并在出现问题时提供调试的起点。  理解其与 HTML 和 JavaScript 的关系，特别是其移除 `<script>` 标签的行为，对于正确使用和调试相关功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/content_extraction/inner_html_builder_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -138,7 +140,4 @@ TEST(InnerHtmlBuilderTest, Basic) {
 }
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

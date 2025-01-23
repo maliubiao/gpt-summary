@@ -181,15 +181,17 @@ Essentially, I approached this by dissecting the code, understanding its purpose
 
 总而言之，`audio_scheduled_source_handler.cc` 文件是 Web Audio API 中负责音频源时间调度的关键 C++ 组件，它响应 JavaScript 的操作，并在音频处理线程中控制音频的播放生命周期和状态，最终驱动音频的产生和 `ended` 事件的触发。理解这个文件有助于深入了解 Web Audio API 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_scheduled_source_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -454,7 +456,4 @@ void AudioScheduledSourceHandler::NotifyEnded() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

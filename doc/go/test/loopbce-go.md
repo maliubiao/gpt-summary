@@ -181,15 +181,17 @@ go test -gcflags="-d=ssa/prove/debug=1" loopbce.go
 
 理解编译器如何进行 BCE 可以帮助开发者编写出更容易被优化的代码。例如，使用 `for i := range a` 这样的标准循环结构通常更容易被编译器分析和优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/loopbce.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -d=ssa/prove/debug=1
 
 //go:build amd64
@@ -670,9 +672,4 @@ func useSlice(a []int) {
 
 func main() {
 }
-
-"""
-
-
-
 ```

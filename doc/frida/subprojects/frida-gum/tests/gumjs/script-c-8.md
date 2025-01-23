@@ -104,7 +104,7 @@ By going through these steps and focusing on the meaning of the code, I can gene
     * **功能:** 尝试读取、写入一个很可能无效的内存地址，以及尝试执行一块新分配但未设置执行权限的内存。
     * **与逆向的关系:**  理解内存保护机制对于安全地进行动态分析至关重要。
     * **操作系统/内核知识:**  
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/gumjs/script.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,10 +113,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共11部分，请归纳一下它的功能
+```
 
-"""
-
-  COMPILE_AND_LOAD_SCRIPT ("send(ptr('0').readUtf16String());", str);
+### 源代码
+```c
+COMPILE_AND_LOAD_SCRIPT ("send(ptr('0').readUtf16String());", str);
   EXPECT_SEND_MESSAGE_WITH ("null");
 
   g_free (str);
@@ -1258,7 +1259,4 @@ TESTCASE (cmodule_should_provide_memory_access_apis)
       "\\n"
       "static gboolean\\n"
       "
-"""
-
-
 ```

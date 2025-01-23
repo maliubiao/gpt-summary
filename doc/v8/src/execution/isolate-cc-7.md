@@ -189,7 +189,7 @@ Considering the provided code snippet, it focuses on:
 
 考虑到这是 Isolate 相关的代码的第 8 部分，这个代码片段主要关注 **Isolate 实例在运行时对性能监控、优化控制、与外部环境交互 (如主机环境和 WebAssembly 引擎) 以及提供调试支持的能力。** 它处理了统计信息的收集、并发优化的管理、各种保护器的更新以确保优化的正确性、与主机环境的回调交互、以及 Promise Hook 和其他调试工具的集成。 这部分代码更侧重于运行时行为的监控和调整，以及与外部环境的集成，而不是 Isolate 的核心创建和初始化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/isolate.cc以.tq结尾，那它是个v8 torque源代码，
@@ -197,8 +197,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 c API for the {WasmEngine} yet. So for now we
   // just dump and reset the engines statistics together with the Isolate.
   if (v8_flags.turbo_stats_wasm) {
@@ -1074,7 +1076,4 @@ void Isolate::OnPromiseBefore(Handle<JSPromise> promise) {
 void Isolate::OnPromiseAfter(Handle<JSPromise> promise) {
   RunPromiseHook(PromiseHookType::kAfter, promise,
                  factory()->undefined_
-"""
-
-
 ```

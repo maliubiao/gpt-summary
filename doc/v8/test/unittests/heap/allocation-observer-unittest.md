@@ -63,11 +63,13 @@ let message = "Hello, " + myObject.name + "!";
 
 `allocation-observer-unittest.cc` 这个文件就是用来确保 V8 的这个核心内存管理机制能够稳定可靠地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/allocation-observer-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ TEST(AllocationObserverTest, RecursiveRemove) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

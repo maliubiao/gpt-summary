@@ -151,12 +151,14 @@ The `ToBigInt` and `ToBigIntConvertNumber` functions in the C++ code handle the 
 
 **In summary, this part of the `code-stub-assembler.cc` file provides essential low-level routines for type conversion and manipulation that are fundamental to how JavaScript operates within the V8 engine.** It demonstrates the close interaction between the C++ implementation of V8 and the behavior of JavaScript at a language level.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 mber);
         TNode<Uint32T> int_value = TruncateFloat64ToWord32(value);
         return Float64Equal(value, ChangeUint32ToFloat64(int_value));
@@ -1953,7 +1955,4 @@ CodeStubAssembler::NameDictionaryLookup<NameDictionary>(TNode<NameDictionary>,
                                                         Label*, LookupMode);
 template V8_EXPORT_PRIVATE void CodeStubAssembler::NameDictionaryLookup<
     GlobalDictionary>(TNode<GlobalDiction
-"""
-
-
 ```

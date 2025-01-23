@@ -134,14 +134,16 @@ Finally, I organize the information into a clear and understandable format, usin
 
 总而言之，`tracked_child_url_loader_factory_bundle.cc` 是 Blink 渲染引擎中一个关键的组件，它负责管理和同步子进程中用于加载各种网络资源的工厂，直接影响了网页内容的加载和渲染过程，与 JavaScript, HTML, CSS 等技术紧密相关。理解其功能对于理解 Chromium 的网络加载机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/tracked_child_url_loader_factory_bundle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -367,7 +369,4 @@ void HostChildURLLoaderFactoryBundle::NotifyUpdateOnMainOrWorkerThread(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -130,7 +130,7 @@ Considering this is the last part of the analysis, the summary should be compreh
 
 总而言之，`dns_response_result_extractor_unittest.cc` 是 Chromium 网络栈中一个至关重要的测试文件，它通过大量的单元测试保障了 DNS 响应解析器的正确性，这是所有网络通信的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_response_result_extractor_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -138,9 +138,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-              {BuildTestCnameRecord(kName, kAlias, kTtl)});
+### 源代码
+```cpp
+{BuildTestCnameRecord(kName, kAlias, kTtl)});
   DnsResponseResultExtractor extractor(response, clock_, tick_clock_);
 
   ResultsOrError results =
@@ -218,8 +220,4 @@ TEST_F(DnsResponseResultExtractorTest, CanonicalizesAliasNames) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
-
 ```

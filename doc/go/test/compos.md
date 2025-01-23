@@ -160,14 +160,16 @@ func main() {
 
 这段测试代码通过比较 `x` 和 `y` 的指针地址是否相等来明确地验证了每次返回 `&T{1}` 都会导致新的内存分配，从而避免了这种潜在的误解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/compos.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -193,9 +195,4 @@ func main() {
 		panic("not allocating & composite literals")
 	}
 }
-
-"""
-
-
-
 ```

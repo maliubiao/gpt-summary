@@ -215,15 +215,17 @@ uint8_t CreateArrayLiteralFlags::Encode(bool use_fast_shallow_clone, int runtime
 
 总而言之，`v8/src/interpreter/bytecode-flags-and-tokens.h` 是 V8 字节码解释器的核心组成部分，它定义了用于编码和解码字节码指令元数据的结构，这些元数据直接反映了 JavaScript 语言的各种特性和行为。理解这些标志和标记有助于深入理解 V8 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-flags-and-tokens.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-flags-and-tokens.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -340,7 +342,4 @@ enum class TryFinallyContinuationToken: int {
 }  // namespace v8
 
 #endif  // V8_INTERPRETER_BYTECODE_FLAGS_AND_TOKENS_H_
-
-"""
-
 ```

@@ -141,15 +141,17 @@ V8 内部也会分配内存来存储函数的代码和元数据。`TypeStats` �
 
 `v8/src/zone/type-stats.cc` 是 V8 引擎中一个重要的调试和性能分析工具。它通过跟踪 C++ 类型的内存分配和释放情况，帮助开发者理解 V8 内部的内存使用模式，并诊断潜在的内存问题。 虽然它是 C++ 代码，但它与 JavaScript 的运行息息相关，因为 V8 使用 C++ 对象来实现 JavaScript 的各种概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/zone/type-stats.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/zone/type-stats.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ void TypeStats::Dump() const {
 }  // namespace v8
 
 #endif  // V8_ENABLE_PRECISE_ZONE_STATS
-
-"""
-
 ```

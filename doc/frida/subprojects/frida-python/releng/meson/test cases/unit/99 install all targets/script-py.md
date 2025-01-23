@@ -122,7 +122,7 @@ python script.py config.ini log.txt temp.dat
 
 总而言之，虽然 `script.py` 本身的功能很简单，但它在 Frida 的测试框架中扮演着验证安装过程完整性的角色，并间接地关联到逆向工程所依赖的底层系统知识。其执行结果可以为开发人员提供重要的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/99 install all targets/script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -139,7 +141,4 @@ import sys
 for f in sys.argv[1:]:
   with open(f, 'w') as f:
       pass
-
-"""
-
 ```

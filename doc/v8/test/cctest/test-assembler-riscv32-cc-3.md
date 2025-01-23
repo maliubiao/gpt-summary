@@ -136,7 +136,7 @@ float result[4]; // 错误：result 数组长度不足
 
 这部分代码主要集中在 **测试 RISC-V 32 位架构中与向量浮点数运算和向量置换相关的 RVV 指令**。它定义了各种宏来方便地生成和运行测试用例，涵盖了融合乘加、规约求和、截断、扩展、合并和滑动等多种操作。通过这些测试，可以确保 V8 引擎在 RISC-V 32 位平台上能够正确地生成和执行这些复杂的向量指令，从而保证 JavaScript 代码的性能和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-riscv32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-riscv32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -144,8 +144,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nt32_t, int32_t>((int32_t)addend_arr,        \
                                           (int32_t)right_mul_arr,     \
                                           (int32_t)left_mul_arr, fn); \
@@ -660,7 +662,4 @@ UTEST_RVV_VP_VSLIDE_VX_FORM_WITH_RES(vslideup_vx, uint8_t, 8, ARRAY(uint8_t),
                                               expect_res)                     \
   TEST(RISCV_UTEST_##instr_name##_##type) {                                   \
     if (!CpuFeatures::IsSupported(
-"""
-
-
 ```

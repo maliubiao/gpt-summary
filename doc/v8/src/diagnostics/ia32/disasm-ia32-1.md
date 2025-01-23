@@ -76,13 +76,15 @@ xxxxxxxx  c3             ret
 
 这部分 `disasm-ia32.cc` 代码是 V8 引擎中用于 IA-32 架构的指令反汇编器的一部分，它负责将机器码指令转换成可读的汇编格式，这对于理解 V8 如何执行 JavaScript 代码、进行性能分析和调试非常重要。 JavaScript 代码最终会被 V8 编译成类似上述示例的机器码，而这个反汇编器就能帮助开发者理解这些底层的指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/ia32/disasm-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                      NameOfCPURegister(regop), static_cast<int>(imm8));
+### 源代码
+```
+NameOfCPURegister(regop), static_cast<int>(imm8));
         } else if (f0byte == 0xAB || f0byte == 0xA5 || f0byte == 0xAD) {
           // shrd_cl, shld_cl, bts
           data += 2;
@@ -997,8 +999,4 @@ void Disassembler::Disassemble(FILE* f, uint8_t* begin, uint8_t* end,
 }  // namespace disasm
 
 #endif  // V8_TARGET_ARCH_IA32
-
-"""
-
-
 ```

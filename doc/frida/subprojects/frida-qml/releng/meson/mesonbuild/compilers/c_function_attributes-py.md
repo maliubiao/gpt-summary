@@ -139,7 +139,7 @@ A user might encounter this file during debugging if they are:
 
 In summary, `c_function_attributes.py` is a crucial component of Frida's build system, enabling it to understand and adapt to the nuances of different C and C++ compilers by providing a standardized way to test for the presence and behavior of function attributes. This knowledge is fundamental for Frida's core functionality of dynamic instrumentation and is highly relevant to reverse engineering, low-level programming, and understanding operating system internals.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/c_function_attributes.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # These functions are based on the following code:
 # https://git.savannah.gnu.org/gitweb/?p=autoconf-archive.git;a=blob_plain;f=m4/ax_gcc_func_attribute.m4,
 # which is licensed under the following terms:
@@ -292,7 +294,4 @@ CXX_FUNC_ATTRIBUTES = {
          '}'
          'int foo(void) __attribute__((ifunc("resolve_foo")));'),
 }
-
-"""
-
 ```

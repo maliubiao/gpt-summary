@@ -85,7 +85,7 @@ The user wants a summary of the `QuicFramer::Append*Frame` methods in the provid
 
 总而言之，这部分代码是 QUIC 协议实现的关键组成部分，负责将高级的帧结构转换为底层的字节流，为可靠的网络数据传输奠定基础。虽然 JavaScript 开发者不直接操作这些代码，但这段代码的正确运行直接影响着基于 QUIC 的网络应用的性能和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -93,8 +93,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 alse;
     }
   }
@@ -1007,7 +1009,4 @@ bool QuicFramer::ProcessIetfResetStreamFrame(QuicDataReader* reader,
 
 bool QuicFramer::ProcessStopSendingFrame(
     QuicDataReader* reader, QuicStopSendingF
-"""
-
-
 ```

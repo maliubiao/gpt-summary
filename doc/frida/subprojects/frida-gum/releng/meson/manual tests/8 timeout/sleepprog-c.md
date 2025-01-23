@@ -123,7 +123,7 @@ By following these steps, we can systematically analyze even a simple piece of c
 
 总之，`sleepprog.c` 虽然是一个非常简单的程序，但它可以作为理解进程休眠行为、系统调用、进程调度以及动态分析工具（如 Frida）如何与目标进程交互的一个基础示例。在逆向工程中，识别和理解类似的休眠机制是分析程序行为的重要一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/manual tests/8 timeout/sleepprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,15 +131,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<unistd.h>
 
 int main(void) {
     sleep(1000);
     return 0;
 }
-
-"""
-
 ```

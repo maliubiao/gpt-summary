@@ -144,14 +144,16 @@ Now I can proceed with generating the detailed explanation.
 
 总而言之，`physical_rect_test.cc` 文件通过各种测试用例，确保 `PhysicalRect` 类在处理矩形相关的操作时能够正确地工作，这对于 Blink 引擎的布局和渲染功能至关重要。这些功能直接影响着网页在浏览器中的呈现效果和用户交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/geometry/physical_rect_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -510,7 +512,4 @@ TEST(PhysicalRectTest, InfiniteIntRect) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

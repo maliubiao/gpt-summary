@@ -135,7 +135,7 @@ Now, let's address the specific requirements in the prompt.
 
 这个代码片段是 Meson 构建系统解释器的核心组成部分，**负责解析 `meson.build` 文件中定义的各种构建目标和操作，并将其转换为内部的构建表示形式**。它提供了定义版本控制标签获取、自定义构建步骤、执行命令、管理依赖、安装文件等多种构建功能的方法，是 Meson 将用户定义的构建逻辑转化为实际构建操作的关键环节。这些函数使得用户可以使用简洁的声明式语法来描述复杂的构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 =True),
         MULTI_OUTPUT_KW,
         # Cannot use the COMMAND_KW because command is allowed to be empty
@@ -825,7 +827,4 @@ Prompt:
             'input',
             ContainerTypeInfo(list, (mesonlib.File, str)),
             listif
-"""
-
-
 ```

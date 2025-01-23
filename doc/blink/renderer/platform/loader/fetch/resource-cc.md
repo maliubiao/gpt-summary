@@ -138,15 +138,17 @@ Therefore, my plan is to summarize the `Resource` class's role in managing fetch
 
 `blink/renderer/platform/loader/fetch/resource.cc` 文件中的 `Resource` 类是 Blink 渲染引擎中负责管理和跟踪单个资源（例如图片、脚本、样式表）加载的核心组件。它维护着资源的状态、数据、请求/响应信息，并负责通知感兴趣的客户端关于资源加载的进度和结果。它还参与了 Blink 的缓存机制和资源完整性检查。该类的设计旨在提供一个统一的接口来处理各种类型的资源加载，并有效地管理资源生命周期和内存占用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
     Copyright (C) 1998 Lars Knoll (knoll@mpi-hd.mpg.de)
     Copyright (C) 2001 Dirk Mueller (mueller@kde.org)
@@ -1054,8 +1056,4 @@ void Resource::OnMemoryDump(WebMemoryDumpLevelOfDetail level_of_detail,
     ResourceClientWalker<ResourceClient> walker3(finished_clients_);
     while (ResourceClient* client = walker3.Next())
       client_names.push_back("(finished) " + client->DebugName());
-   
-"""
-
-
 ```

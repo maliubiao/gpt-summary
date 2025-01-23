@@ -124,7 +124,7 @@ Frida 是一个动态 instrumentation 工具，它允许你在运行时修改进
 
 综合来看，这个简单的 C 代码文件是 Frida 测试框架的一部分，专门用于测试 Frida 在多次 hook 同一个函数时的行为。它帮助 Frida 的开发者识别和修复与重复 hook 相关的 bug。 对于逆向工程师而言，理解这种测试用例有助于更深入地了解 Frida 的工作原理以及可能遇到的限制和错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/17 same target/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,10 +132,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func() { return 0; }
-
-"""
-
 ```

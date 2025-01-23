@@ -119,14 +119,16 @@ My thought process for analyzing the `symbols_iterator_test.cc` file and generat
 
 总而言之，`symbols_iterator_test.cc` 文件通过大量的测试用例，确保了 `SymbolsIterator` 能够正确地将文本分解成具有合适字体回退优先级的 runs，这对于在浏览器中正确渲染各种类型的字符（包括 emoji）至关重要。它的功能是底层渲染机制的一部分，直接影响着开发者使用 JavaScript, HTML, CSS 构建网页时的呈现效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/symbols_iterator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -675,7 +677,4 @@ TEST_P(SymbolsIteratorWithFontVariantEmojiParamTest, Emoji11Additions) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

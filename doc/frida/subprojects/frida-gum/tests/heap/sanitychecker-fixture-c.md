@@ -146,7 +146,7 @@ Let's break down the thought process for analyzing this C code snippet.
 
 总而言之，`sanitychecker-fixture.c` 不是一个普通用户直接操作的文件。它是 Frida 开发和测试流程中的一部分，用于确保 `GumSanityChecker` 功能的正确性和可靠性。开发人员或测试人员通过运行测试、查看测试结果和调试测试用例来间接地与这个文件交互。这个文件中的代码和测试逻辑可以作为理解 `GumSanityChecker` 功能和预期行为的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/heap/sanitychecker-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2018 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -384,7 +386,4 @@ test_sanity_checker_fixture_do_output (const gchar * text,
 }
 
 #endif /* HAVE_WINDOWS */
-
-"""
-
 ```

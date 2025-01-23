@@ -146,11 +146,13 @@ void RegisterMyObjectTypeGCInfo() {
 
 `gc-info.cc` 是 V8 垃圾回收机制的关键组成部分，它负责注册和管理 C++ 对象的垃圾回收信息。虽然 JavaScript 开发者不能直接操作这个文件，但其功能直接影响着 JavaScript 程序的内存管理和性能。 理解它的作用有助于更深入地理解 V8 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/gc-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ GCInfoIndex EnsureGCInfoIndexTrait::EnsureGCInfoIndex(
 }
 
 }  // namespace cppgc::internal
-
-"""
-
 ```

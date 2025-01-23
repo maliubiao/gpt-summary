@@ -103,7 +103,7 @@ Finally, I need to provide a concise summary of the overall functionality as req
 * **分析 C++ 源码 (如本文件)：**  如果怀疑是 Frida 自身的问题，可以查看 `gumv8memory.cpp` 等相关源码，了解 Frida 是如何处理用户请求的。例如，查看参数解析部分 (`_gum_v8_args_parse`) 是否有潜在的错误。
 * **使用 GDB 等 C++ 调试器调试 Frida 服务端：**  可以 attach 到 Frida 的服务端进程，设置断点，查看 C++ 函数的调用堆栈和变量值，从而更深入地了解问题发生的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8memory.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2021 Abdelrahman Eid <hot3eed@gmail.com>
@@ -1336,7 +1338,4 @@ gum_v8_memory_on_access (GumMemoryAccessMonitor * monitor,
   _gum_v8_object_set_pointer (d, "address", details->address, core);
 
   _gum_v8_object_set_uint (d, "rangeIndex"
-"""
-
-
 ```

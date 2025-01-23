@@ -287,7 +287,7 @@ StoreContextSlot [context slot for x] // 将第二个值赋给 x
 
 希望以上分析能够帮助你理解 `v8/src/interpreter/bytecode-generator.cc` 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -295,10 +295,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共11部分，请归纳一下它的功能
+```
 
-"""
-
-    Assignment* default_init = (*target)->AsAssignment();
+### 源代码
+```cpp
+Assignment* default_init = (*target)->AsAssignment();
     DCHECK_EQ(default_init->op(), Token::kAssign);
     default_value = default_init->value();
     *target = default_init->target();
@@ -1142,7 +1143,4 @@ void BytecodeGenerator::VisitYieldStar(YieldStar* expr) {
 
       if (iterator_type == IteratorType::kAsync) {
         // Await the result of the method invocati
-"""
-
-
 ```

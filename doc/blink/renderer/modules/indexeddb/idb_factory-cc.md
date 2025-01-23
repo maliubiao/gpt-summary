@@ -192,15 +192,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`blink/renderer/modules/indexeddb/idb_factory.cc` 是 Chromium Blink 引擎中 IndexedDB 功能的核心实现部分，负责处理来自 JavaScript 的 IndexedDB API 调用，并与浏览器进程协同完成数据库操作和权限管理。理解这个文件的功能对于深入理解 IndexedDB 的工作原理以及调试相关的 bug 非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/idb_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -739,7 +741,4 @@ IDBFactory::CreatePendingRemoteFeatureObserver() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

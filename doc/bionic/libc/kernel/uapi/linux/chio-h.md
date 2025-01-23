@@ -295,7 +295,7 @@ if __name__ == '__main__':
 
 总结来说，`bionic/libc/kernel/uapi/linux/chio.h` 定义了与 Linux 内核中 "changer" 设备驱动交互的接口。虽然在典型的 Android 移动设备中不常见，但在特定的服务器或工业应用场景下可能会被使用。用户空间的程序通过 libc 提供的 `ioctl()` 函数，并结合这个头文件中定义的数据结构和 ioctl 命令，来控制 changer 设备。可以使用 Frida 等工具来 hook 和调试相关的系统调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/chio.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -306,8 +306,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -417,7 +419,4 @@ struct changer_set_voltag {
 #define CHIOSVOLTAG _IOW('c', 18, struct changer_set_voltag)
 #define CHIOGVPARAMS _IOR('c', 19, struct changer_vendor_params)
 #endif
-
-"""
-
 ```

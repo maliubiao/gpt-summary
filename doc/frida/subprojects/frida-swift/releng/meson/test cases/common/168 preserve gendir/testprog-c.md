@@ -111,7 +111,7 @@ By following these steps, we can effectively analyze the given C code snippet wi
 
 `testprog.c` 是 Frida 项目中一个简单的 C 程序，用于作为测试用例。它的主要功能是调用两个外部函数并返回它们的和。虽然代码本身很简单，但它可以作为动态逆向分析的目标，涉及到二进制、操作系统、动态链接等底层知识。理解这类测试用例有助于我们了解 Frida 的工作原理以及如何使用它进行动态分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/168 preserve gendir/testprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,15 +119,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"base.h"
 #include"com/mesonbuild/subbie.h"
 
 int main(void) {
     return base() + subbie();
 }
-
-"""
-
 ```

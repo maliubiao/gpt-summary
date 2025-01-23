@@ -162,7 +162,7 @@ Dependency openssl found in wrap my-openssl-wrapper
 
 总而言之，`wraptool.py` 是 Frida 构建系统中一个重要的辅助工具，它简化了外部依赖项的管理，虽然自身不是逆向工具，但它确保了 Frida 所需的各种库能够正确地被获取和集成，这对于 Frida 的正常运行和进行逆向工程至关重要。理解 `wraptool.py` 的功能有助于开发者和逆向工程师更好地管理 Frida 的构建过程和依赖项。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/wrap/wraptool.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015-2016 The Meson development team
 
@@ -370,7 +372,4 @@ def update_db(options: 'argparse.Namespace') -> None:
 def run(options: 'argparse.Namespace') -> int:
     options.wrap_func(options)
     return 0
-
-"""
-
 ```

@@ -141,14 +141,16 @@ By following this kind of detailed analysis, I can extract the core functionalit
 
 总而言之，`sync_load_context_unittest.cc` 这个文件通过单元测试确保了 `SyncLoadContext` 类在 Blink 引擎中能够正确地执行同步资源加载的任务，这对于保证网页的正常加载和运行至关重要，特别是在处理 JavaScript、HTML 和 CSS 等关键资源时。 尽管开发者通常不会直接使用 `SyncLoadContext`，但理解其功能有助于理解浏览器内部的资源加载机制以及避免在需要同步加载的场景中可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/sync_load_context_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -368,7 +370,4 @@ TEST_F(SyncLoadContextTest, ResponseBodyViaDataPipe) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

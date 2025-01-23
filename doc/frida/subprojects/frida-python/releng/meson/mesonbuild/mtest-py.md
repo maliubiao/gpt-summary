@@ -113,7 +113,7 @@ Here's a breakdown of the tasks:
 
 总的来说，`frida/subprojects/frida-python/releng/meson/mesonbuild/mtest.py` 脚本是 Frida Python 绑定项目的核心测试执行工具。它提供了丰富的功能来管理和控制测试的运行，并生成详细的测试报告。它与逆向工程密切相关，因为测试是验证 Frida 功能的重要手段。同时，它也涉及到操作系统底层的进程管理、信号处理等概念。用户通过 Meson 构建系统来间接调用此脚本，并可以通过多种命令行选项来定制测试行为，以便进行开发、调试和验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/mtest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2017 The Meson development team
 
@@ -957,7 +959,4 @@ class JunitBuilder(TestLogger):
                 failures=str(sum(1 for r in test.results if r.result in
                                  {TestResult.FAIL, TestResult.UNEXPECTEDPASS, TestResult.TIMEOUT})),
                 skipped=str
-"""
-
-
 ```

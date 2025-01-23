@@ -79,12 +79,14 @@ wasmInstance.exports.asyncOperation()
 
 总而言之，这个 C++ 源代码文件的第 3 部分是 V8 引擎中实现 WebAssembly 与 Javascript 互操作性的核心组成部分，它处理了跨语言调用、异步操作以及异常处理等关键任务，使得 WebAssembly 能够与 Javascript 环境无缝集成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/x64/builtins-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 asmContinuationJmpbufTag, kScratchRegister);
   MemOperand GCScanSlotPlace =
       MemOperand(rbp, StackSwitchFrameConstants::kGCScanSlotCountOffset);
@@ -1789,8 +1791,4 @@ namespace {
 
 // Restarts execution either at the current or next (in execution order)
 // bytecode. If there is baseline code on the shared function info, converts an
-
-"""
-
-
 ```

@@ -156,14 +156,16 @@ Finally, organize the findings into a coherent answer, covering the requested po
 
 总而言之，`ax_context_test.cc` 通过测试 `AXContext` 类的核心功能，确保了 Blink 引擎能够正确地创建和管理可访问性信息，这对于构建可访问的 Web 应用至关重要。理解这些测试用例有助于开发者更好地理解 Blink 的可访问性机制，从而避免与可访问性相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/accessibility/ax_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ TEST_F(AXContextTest, AXContextSetsAXMode) {
 
 }  // namespace test
 }  // namespace blink
-
-"""
-
 ```

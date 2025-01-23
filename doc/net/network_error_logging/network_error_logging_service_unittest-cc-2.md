@@ -97,7 +97,7 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 这部分单元测试主要验证了 `NetworkErrorLoggingService` 组件在处理 NEL 策略时与持久化存储的交互逻辑。测试覆盖了策略的加载、添加、更新、删除操作，以及在服务启动、运行和关闭的不同生命周期阶段的行为。重点关注了命令发送的正确性、顺序以及在存储加载成功或失败时的处理方式，确保了 NEL 策略能够被可靠地存储和管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/network_error_logging/network_error_logging_service_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ntNelStore::Command::Type::FLUSH);
   EXPECT_EQ(1, store()->StoredPoliciesCount());
   EXPECT_TRUE(store()->VerifyCommands(expected_commands));
@@ -393,8 +395,4 @@ INSTANTIATE_TEST_SUITE_P(NetworkErrorLoggingServiceStoreTest,
 
 }  // namespace
 }  // namespace net
-
-"""
-
-
 ```

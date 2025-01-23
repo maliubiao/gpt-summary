@@ -232,7 +232,7 @@ func main() {
 
 总而言之，这段代码是 `pprof` 工具链中负责解析特定格式的 Java profiling 数据的核心部分，它通过正则表达式匹配和字符串处理等技术，将文本格式的 profile 数据转换为结构化的 `Profile` 对象，以便后续的分析和可视化。使用者需要确保提供的 Java profile 数据格式正确，并了解不同 profile 类型的差异。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/profile/legacy_java_profile.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -240,8 +240,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -557,9 +559,4 @@ func parseJavaLocations(b []byte, locs map[uint64]*Location, p *Profile) error {
 
 	return nil
 }
-
-"""
-
-
-
 ```

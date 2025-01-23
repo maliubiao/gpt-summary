@@ -251,15 +251,17 @@ func main() {
 
 总而言之，这段代码简洁地实现了一个泛型集合，利用了 Go 语言的泛型特性，并依赖于一个底层的 Map 实现来完成集合的功能。使用者需要注意类型约束，以及理解 `Copy` 和 `Fill` 函数的不同用途。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue48716.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -318,9 +320,4 @@ func main() {
 	x := FromMap[int](a.NewHashMap[int, struct{}](1))
 	Copy[int](x)
 }
-
-"""
-
-
-
 ```

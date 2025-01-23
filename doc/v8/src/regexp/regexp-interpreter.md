@@ -101,11 +101,13 @@ if (match) {
 
 `regexp-interpreter.cc` 文件是 V8 引擎中至关重要的组件，它实现了正则表达式的解释器，使得 JavaScript 能够执行强大的文本模式匹配功能。它通过解释执行预编译的字节码，管理匹配状态，处理各种正则表达式语法和标志，最终得出匹配结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-interpreter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1324,7 +1326,4 @@ int IrregexpInterpreter::MatchForCallFromRuntime(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

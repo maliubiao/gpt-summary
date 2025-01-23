@@ -157,7 +157,7 @@ Frida 是一个用于动态分析和逆向工程的工具，而这些构建目�
 
 `frida/releng/meson/mesonbuild/build.py` 文件的这部分代码定义了 Meson 构建系统中用于描述各种构建目标的关键类，包括静态库、动态库、共享模块和自定义目标。这些类包含了构建目标所需的属性和方法，例如文件名、依赖关系、编译选项、安装路径等。它们抽象了底层的构建细节，使得 Frida 的构建过程能够跨平台且易于管理。 这些类的设计也体现了对操作系统底层特性、二进制文件格式以及逆向工程相关概念的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 get(self):
         return self.is_linkwithable
 
@@ -932,7 +934,4 @@ class CompileTarget(BuildTarget):
 class RunTarget(Target, CommandBase):
 
     typename
-"""
-
-
 ```

@@ -192,12 +192,14 @@ return new C(99).method(); // 创建 C 的实例，调用 method 返回构造函
 
 总而言之，这个C++文件是V8引擎的测试框架的一部分，它通过构造各种JavaScript代码片段并在解释器中执行，来验证解释器在功能上的正确性，确保V8引擎能够准确地执行JavaScript代码。 每一段C++测试代码背后都对应着具体的JavaScript语法和语义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/interpreter-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 a;\n"
                      "} while(a);\n"
                      "return b;\n",
@@ -1982,7 +1984,4 @@ void CheckStringEqual(const char* expected_ptr, const char* actual_ptr) {
   CHECK_NOT_NULL(expected_ptr);
   CHECK_NOT_NULL(actual_ptr);
   std::string expected(ex
-"""
-
-
 ```

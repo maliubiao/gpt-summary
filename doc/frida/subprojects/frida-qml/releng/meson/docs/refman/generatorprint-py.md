@@ -216,7 +216,7 @@ Object System [module]
 
 通过查看源代码，开发者可以了解脚本如何解析数据模型，如何格式化输出，从而判断是否是文档生成过程本身存在问题，还是数据模型存在问题，或者仅仅是文档的描述不够清晰。这有助于他们向 Frida 开发团队报告问题，或者自行修复文档生成过程中的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/docs/refman/generatorprint.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -224,8 +224,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -302,7 +304,4 @@ class GeneratorPrint(GeneratorBase):
             self._generate_object(obj)
             for mod_obj in self.extract_returned_by_module(obj):
                 self._generate_object(mod_obj)
-
-"""
-
 ```

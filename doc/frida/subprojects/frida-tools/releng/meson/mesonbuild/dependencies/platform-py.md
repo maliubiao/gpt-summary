@@ -159,7 +159,7 @@ Meson 构建系统在处理这个依赖时，就会使用 `platform.py` 中的 `
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/mesonbuild/dependencies/platform.py` 文件中的 `AppleFrameworks` 类是 Frida 构建系统中一个关键的组件，它负责处理 Apple 平台特定的 Frameworks 依赖，确保 Frida 能够正确链接必要的系统库，从而实现其动态 Instrumentation 的功能。理解这个文件的功能有助于开发者在构建或调试 Frida 相关项目时更好地理解依赖管理和链接过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/dependencies/platform.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2017 The Meson development team
 
@@ -221,7 +223,4 @@ class AppleFrameworks(ExternalDependency):
         return 'framework'
 
 packages['appleframeworks'] = AppleFrameworks
-
-"""
-
 ```

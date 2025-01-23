@@ -188,7 +188,7 @@ go run -trace=trace.out your_program.go
 
 `go/src/internal/trace/mud.go` 实现了一个用于跟踪和分析 Go 程序 Mutator 利用率分布的关键数据结构。它通过记录在不同利用率区间内的时间来构建分布，并提供近似和精确的查询功能，帮助开发者理解垃圾回收器的行为和对程序性能的影响。使用者需要理解 `add` 方法的参数含义以及近似和精确查询的区别，才能正确地使用和分析 Mutator 利用率数据。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/mud.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -196,8 +196,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -422,9 +424,4 @@ func (d *mud) invCumulativeSum(y float64) (float64, bool) {
 	}
 	return prevX, false
 }
-
-"""
-
-
-
 ```

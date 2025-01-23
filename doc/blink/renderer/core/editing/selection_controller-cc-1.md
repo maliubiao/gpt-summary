@@ -90,7 +90,7 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 这部分代码是 Chromium Blink 引擎中负责处理用户在网页上进行文本选择操作的核心组件。它监听和处理各种鼠标和手势事件，根据事件类型和位置精确地更新浏览器的文本选择状态，并与渲染引擎的其他部分协同工作，以实现符合用户预期的文本选择体验。同时，它也考虑了 HTML 和 CSS 属性对选择行为的影响，并为 JavaScript 提供了操作和获取选择结果的底层支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/selection_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 anularity(TextGranularity::kWord)
             .Build());
     return;
@@ -762,8 +764,4 @@ template void SelectionController::UpdateSelectionForContextMenuEvent<
     MouseEvent>(const MouseEvent*, const HitTestResult&, const PhysicalOffset&);
 
 }  // namespace blink
-
-"""
-
-
 ```

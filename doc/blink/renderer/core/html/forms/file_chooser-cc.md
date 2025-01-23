@@ -167,14 +167,16 @@ This iterative process of skimming, identifying key elements, tracing the flow, 
 
 总而言之，`file_chooser.cc` 是 Blink 渲染引擎中至关重要的一个组件，它负责将网页上的文件选择需求转化为操作系统层面的操作，并最终将用户选择的文件信息安全地传递回网页，使得 JavaScript 能够进一步处理这些文件。它与 HTML 的表单元素紧密相关，并为 JavaScript 提供了访问用户本地文件的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/file_chooser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008 Apple Inc. All rights reserved.
  *
@@ -334,7 +336,4 @@ FileChooserFileInfoPtr CreateFileChooserFileInfoFileSystem(
 }
 
 }  // namespace blink
-
-"""
-
 ```

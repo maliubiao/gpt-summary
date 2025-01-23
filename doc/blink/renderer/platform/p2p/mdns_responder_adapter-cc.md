@@ -140,14 +140,16 @@ By following these steps, one can systematically analyze the C++ code and genera
 
 `mdns_responder_adapter.cc` 是 Blink 渲染引擎中一个关键的组件，它桥接了 Blink 的 P2P 功能和操作系统级别的 mDNS 服务。它通过 Mojo 进行进程间通信，并处理数据转换和异步操作，使得 Blink 可以方便地发布和撤销本地网络服务发现信息，这对于 WebRTC 等需要本地网络通信的技术至关重要。虽然它不直接与 JavaScript, HTML, CSS 代码交互，但它提供的功能是支撑这些 Web 技术特性的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/p2p/mdns_responder_adapter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ void MdnsResponderAdapter::RemoveNameForAddress(const rtc::IPAddress& addr,
 }
 
 }  // namespace blink
-
-"""
-
 ```

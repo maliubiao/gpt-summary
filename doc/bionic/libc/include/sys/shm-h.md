@@ -296,7 +296,7 @@ if (Process.platform === 'android') {
 
 总而言之，`bionic/libc/include/sys/shm.h` 定义了 System V 共享内存的接口，但由于 SELinux 的限制，这些功能在 Android 上通常不可用。Android 提供了更现代和安全的 IPC 机制作为替代。尽管如此，这些函数的声明仍然存在于 bionic 库中，并且可以通过 NDK 访问。使用 Frida 可以方便地观察和调试这些函数的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/shm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -307,8 +307,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -372,7 +374,4 @@ int shmget(key_t __key, size_t __size, int __flags) __INTRODUCED_IN(26);
 
 
 __END_DECLS
-
-"""
-
 ```

@@ -176,7 +176,7 @@ WARNING: Data race
 
 `go/src/internal/msan/nomsan.go` 的核心功能是在 Go 程序编译时没有启用 Memory Sanitizer (MSan) 的情况下，为 `internal/msan` 包提供一组空操作的函数。 它的存在使得依赖 `internal/msan` 包的代码可以在不启用 MSan 的环境中也能正常编译和运行，但代价是放弃了 MSan 提供的内存安全检查功能。 开发者需要理解 `-msan` 编译选项的作用，并在需要进行内存安全检查时显式地启用它。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/msan/nomsan.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -184,8 +184,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -214,9 +216,4 @@ func Free(addr unsafe.Pointer, sz uintptr) {
 
 func Move(dst, src unsafe.Pointer, sz uintptr) {
 }
-
-"""
-
-
-
 ```

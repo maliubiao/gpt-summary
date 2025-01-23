@@ -168,7 +168,7 @@ Interceptor.replace(someTargetFunctionAddress, new NativeCallback(function() {
 
 如果在调试过程中出现问题，例如生成的C代码不符合预期，或者加载动态链接库失败，逆向工程师可能会回到这个 `codegen.py` 脚本，检查参数是否正确，输出的文件内容是否符合预期，以及思考脚本生成的代码是否与后续的编译和Frida脚本使用方式匹配。这个脚本作为一个代码生成工具，是整个动态插桩流程中的一个环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/227 very long command line/codegen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -185,7 +187,4 @@ from pathlib import Path
 
 Path(sys.argv[2]).write_text(
     'int func{n}(void) {{ return {n}; }}'.format(n=sys.argv[1]))
-
-"""
-
 ```

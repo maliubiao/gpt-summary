@@ -143,7 +143,7 @@ By following this structured approach, considering the context of Frida and reve
 
 总而言之，这段简单的代码片段虽然功能不多，但它展示了软件开发中常见的模块化、函数调用、条件判断和错误处理机制。在逆向工程和调试过程中，理解这些基本概念是至关重要的。Frida 这样的动态 instrumentation 工具可以帮助我们深入了解代码的运行时行为，即使在没有源代码的情况下也能进行分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/73 shared subproject 2/subprojects/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 char func_c(void);
 
@@ -173,7 +175,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

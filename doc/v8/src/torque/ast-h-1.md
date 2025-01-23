@@ -217,7 +217,7 @@ macro Add(a: int32, b: int32): int32 {
 
 `v8/src/torque/ast.h` 文件的主要功能是**定义了 Torque 语言的抽象语法树 (AST) 的各种节点类型**。这些节点结构为 Torque 编译器提供了表示和操作 Torque 源代码的蓝图。它详细描述了 Torque 语言中的各种声明 (如宏、内置函数、类型、常量等) 和表达式，以及与 JavaScript 互操作相关的特性。 这个文件是理解 Torque 编译器如何解析和表示 Torque 代码的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/ast.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/ast.h以.tq结尾，那它是个v8 torque源代码，
@@ -225,9 +225,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-          Identifier* name, std::optional<std::string> op,
+### 源代码
+```c
+Identifier* name, std::optional<std::string> op,
                    ParameterList parameters, TypeExpression* return_type,
                    LabelAndTypesVector labels)
       : CallableDeclaration(kind, pos, transitioning, name,
@@ -581,8 +583,4 @@ inline StructExpression* MakeStructExpression(
 }  // namespace v8::internal::torque
 
 #endif  // V8_TORQUE_AST_H_
-
-"""
-
-
 ```

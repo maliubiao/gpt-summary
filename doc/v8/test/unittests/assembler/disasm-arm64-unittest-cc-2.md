@@ -350,7 +350,7 @@ TEST_F(DisasmArm64Test, cond_select) {
 
   COMPARE(csel(w0, w1, w2, eq), "csel w0, w1, w2, eq");
   COMPARE
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-arm64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-arm64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -358,10 +358,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
-
-  COMPARE(ldp(s29, s30, MemOperand(fp, -256, PreIndex)),
+### 源代码
+```cpp
+COMPARE(ldp(s29, s30, MemOperand(fp, -256, PreIndex)),
           "ldp s29, s30, [fp, #-256]!");
   COMPARE(ldp(s31, s0, MemOperand(x1, 252, PostIndex)),
           "ldp s31, s0, [x1], #252");
@@ -1171,7 +1172,4 @@ TEST_F(DisasmArm64Test, logical_immediate_move) {
   COMPARE(Eon(x22, x23, 0xffffffffffffffff), "mov x22, x23");
 
   CLEANUP();
-"""
-
-
 ```

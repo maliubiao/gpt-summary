@@ -64,7 +64,7 @@ Here's a plan:
 
 这部分测试代码继续深入验证了 `BackgroundColorPaintDefinition` 类在处理 `background-color` 动画时的各种场景，包括动画生命周期管理、触发重绘的条件以及对一些潜在错误输入的鲁棒性。这些测试确保了当用户在网页上使用 CSS 动画或通过 JavaScript 控制 `background-color` 动画时，Blink 引擎能够正确、稳定地渲染这些效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/csspaint/nativepaint/background_color_paint_definition_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -72,8 +72,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 >SetCSSPropertyValue(
       property_id, "red", SecureContextMode::kInsecureContext, nullptr);
   Persistent<StringKeyframe> end_keyframe =
@@ -326,8 +328,4 @@ TEST_F(BackgroundColorPaintDefinitionTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

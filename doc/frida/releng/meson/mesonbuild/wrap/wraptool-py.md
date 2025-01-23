@@ -186,7 +186,7 @@ Here's a breakdown of its functionalities:
 
 **In summary, `wraptool.py` is a vital component of the Meson build system for managing external dependencies. Its functionalities directly relate to how software projects integrate and utilize external libraries, which is a significant aspect to understand in software development and, consequently, in reverse engineering.** Understanding how dependencies are managed, the available versions, and the build instructions can provide valuable insights into the structure and functionality of a target application.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/wrap/wraptool.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015-2016 The Meson development team
 
@@ -394,7 +396,4 @@ def update_db(options: 'argparse.Namespace') -> None:
 def run(options: 'argparse.Namespace') -> int:
     options.wrap_func(options)
     return 0
-
-"""
-
 ```

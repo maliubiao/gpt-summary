@@ -223,15 +223,17 @@ go test go/test/escape_field.go
 
 这段测试代码正是通过各种场景来帮助编译器开发者验证逃逸分析的正确性，并间接帮助使用者理解哪些操作会导致变量逃逸。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_field.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -m -l
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -406,9 +408,4 @@ func field18() {
 	y, _ := iface.(Y)         // Put X, but extracted Y. The cast will fail, so y is zero initialized.
 	sink = y                  // ERROR "y escapes to heap"
 }
-
-"""
-
-
-
 ```

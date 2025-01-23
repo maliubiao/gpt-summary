@@ -275,7 +275,7 @@ if (Process.arch === 'arm64') {
 
 通过运行这个 Frida 脚本，你可以在 Android 设备上监控 `__tls_get_addr` 的调用，观察哪些模块的 TLS 变量正在被访问，以及访问的偏移量是多少，从而深入理解 TLS 的工作原理。你还可以扩展这个脚本来检查 DTV 的内容，验证地址解析的过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_elf_tls.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -286,8 +286,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -518,8 +520,4 @@ extern "C" void* TLS_GET_ADDR(const TlsIndex* ti) TLS_GET_ADDR_CALLING_CONVENTIO
 struct bionic_tcb;
 void __free_dynamic_tls(bionic_tcb* tcb);
 void __notify_thread_exit_callbacks();
-
-
-"""
-
 ```

@@ -145,15 +145,17 @@ Finally, it's important to organize the information clearly, addressing each par
 - 使用网络抓包工具 (例如 Wireshark) 可以查看实际的网络延迟，与 `SocketWatcher` 上报的 RTT 进行对比，以排查问题。
 - 使用 Chromium 提供的内部调试工具 (例如 `net-internals`) 可以查看网络连接的详细信息，包括 NQE 模块收集的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/socket_watcher.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ void SocketWatcher::OnConnectionChanged() {
 }
 
 }  // namespace net::nqe::internal
-
-"""
-
 ```

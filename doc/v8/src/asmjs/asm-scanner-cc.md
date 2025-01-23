@@ -190,15 +190,17 @@ asm.js 是 JavaScript 的严格子集，因此一些在普通 JavaScript 中允�
 
 总之，`v8/src/asmjs/asm-scanner.cc` 扮演着将 asm.js 源代码转化为一系列易于处理的词法单元的关键角色，为后续的语法分析和代码生成阶段奠定了基础。它对 asm.js 的严格语法规则进行初步的检查和识别，帮助 V8 引擎高效地处理这种高性能 JavaScript 子集。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/asmjs/asm-scanner.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/asmjs/asm-scanner.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -677,7 +679,4 @@ bool AsmJsScanner::IsNumberStart(base::uc32 ch) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

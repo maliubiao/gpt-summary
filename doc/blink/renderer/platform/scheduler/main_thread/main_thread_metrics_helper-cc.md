@@ -148,14 +148,16 @@ Throughout this process, I reread sections of the code to ensure accuracy and cl
 
 总而言之，`main_thread_metrics_helper.cc` 是一个底层的性能监控工具，它收集的数据能够帮助 Chromium 工程师分析和优化 Blink 引擎的性能。对于 Web 开发者来说，理解这些指标背后的含义，可以帮助他们编写更高效的 JavaScript, HTML 和 CSS 代码，从而提供更好的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/main_thread_metrics_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -451,7 +453,4 @@ void MainThreadMetricsHelper::ReportLowThreadLoadForPageAlmostIdleSignal(
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

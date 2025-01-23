@@ -124,7 +124,7 @@ fmt.Println(constantValue)
 
 `go/src/internal/pkgbits/decoder.go` 提供了解码 Go 语言包导出数据的核心功能。它是 Go 编译器实现独立编译的关键组成部分，负责将包的接口信息从二进制格式转换回程序可以使用的 Go 语言结构。开发者通常不需要直接使用这个包，因为 Go 的构建工具链会处理这些底层细节。直接操作或依赖导出数据的格式是不可靠且容易出错的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/pkgbits/decoder.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -132,8 +132,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -653,9 +655,4 @@ func (pr *PkgDecoder) PeekObj(idx Index) (string, string, CodeObj) {
 
 // Version reports the version of the bitstream.
 func (w *Decoder) Version() Version { return w.common.version }
-
-"""
-
-
-
 ```

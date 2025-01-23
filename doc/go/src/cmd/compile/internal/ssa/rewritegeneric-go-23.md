@@ -192,7 +192,7 @@ v2 = Const8 [2]    // 直接计算出截断后的结果
 
 第 24 部分的 `rewritegeneric.go` 主要定义了针对 Go 语言中不同大小的整数和浮点数的减法运算 (`OpSub`) 以及类型截断运算 (`OpTrunc` 和 `OpTruncXtoY`) 的一系列优化规则。这些规则旨在简化 SSA 中间表示，提高代码执行效率。它通过常量折叠、代数简化和模式匹配等技术，将复杂的运算转化为更简单的等价形式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritegeneric.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,9 +201,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第24部分，共26部分，请归纳一下它的功能
+```
 
-"""
-	if v_1.Op != OpConst16 {
+### 源代码
+```go
+if v_1.Op != OpConst16 {
 			break
 		}
 		t := v_1.Type
@@ -1900,10 +1902,5 @@ func rewriteValuegeneric_OpTrunc32to8(v *Value) bool {
 		return true
 	}
 	// match: (Trunc32to8 (SignExt8to32 x))
-	// 
-"""
-
-
-
-
+	//
 ```

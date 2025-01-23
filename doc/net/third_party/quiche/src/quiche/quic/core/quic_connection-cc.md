@@ -111,7 +111,7 @@ Since this is part 1 of a 10-part series, the focus should be on the initial asp
 
 总而言之，`quic_connection.cc` 的这部分代码是 QUIC 连接管理的基础，涵盖了连接的初始化、版本协商以及初步的数据包处理和错误处理机制。它是理解 Chromium QUIC 实现的关键入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -935,7 +937,4 @@ void QuicConnection::OnVersionNegotiationPacket(
           "}, peer supported versions: {",
           ParsedQuicVersionVectorToString(packet.versions), "}"),
       send_connection_close_for_invalid
-"""
-
-
 ```

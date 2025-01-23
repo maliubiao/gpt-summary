@@ -126,15 +126,17 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`metadata_decoder_test.cc` 是 Chromium QUIC 协议实现中至关重要的一个测试文件，它确保了 HTTP 头部能够被正确地解码，这直接关系到浏览器能否正常地处理网络请求和渲染网页。虽然 JavaScript 开发者不会直接操作它，但它的正确性直接影响着基于 JavaScript 的 Web 应用的功能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/metadata_decoder_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ TEST_F(MetadataDecoderTest, TooLarge) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

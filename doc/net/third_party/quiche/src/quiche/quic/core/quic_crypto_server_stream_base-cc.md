@@ -135,15 +135,17 @@ By following this structured approach, I can systematically analyze the code, ad
 
 总而言之，`quic_crypto_server_stream_base.cc` 是 QUIC 服务器端处理加密握手的核心组件，它根据连接的握手协议版本动态地创建不同的加密流处理器，确保了 QUIC 连接的安全建立。虽然普通用户不直接操作它，但它在用户访问 HTTPS 网站的过程中起着至关重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_crypto_server_stream_base.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ std::unique_ptr<QuicCryptoServerStreamBase> CreateCryptoServerStream(
 }
 
 }  // namespace quic
-
-"""
-
 ```

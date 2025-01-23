@@ -170,15 +170,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`InspectorEmulationAgent` 提供了一套强大的工具，允许开发者在不修改实际浏览器环境的前提下，模拟各种设备特性、用户偏好和浏览器行为，从而高效地进行网页的调试、测试和可访问性检查。它的功能涵盖了影响网页呈现和行为的多个关键方面，与 JavaScript, HTML 和 CSS 都有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_emulation_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 {
     *ua_metadata = ua_metadata_override_;
   }
@@ -240,8 +242,4 @@ void InspectorEmulationAgent::ApplyAutomationOverride(bool& enabled) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -94,14 +94,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 `interpolable_dynamic_range_limit_test.cc` 专注于测试 Blink 引擎中用于动态范围限制插值的核心类。虽然当前 CSS 中没有直接控制动态范围的属性，但可以推断，这个类是为未来可能出现的 HDR 内容渲染和相关动画效果做准备。它确保了在不同的动态范围限制之间进行平滑过渡的能力，并提供了比较动态范围限制状态的功能。开发者在使用与动态范围相关的 API 时，需要注意其特定的行为，尤其是在涉及到类似 `Scale` 和 `Add` 这样的操作时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/interpolable_dynamic_range_limit_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ TEST(InterpolableDynamicRangeLimitTest, InterpolableLimitsNotEqual) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

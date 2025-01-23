@@ -333,7 +333,7 @@ sys.stdin.read()
 
 总而言之，`res_nametoopcode` 和 `res_nametotype` 这两个函数的主要功能是将字符串形式的 DNS 操作码和资源记录类型转换为对应的数值表示。它们通过查找预定义的符号表或者解析以 "opcode" 或 "type" 开头的数字字符串来实现转换。这两个函数是 Android 底层 DNS 解析库的一部分，用于处理用户或程序提供的字符串形式的 DNS 参数。它们依赖于由 dynamic linker 加载的符号表数据，并且在 DNS 查询处理流程中扮演着重要的辅助角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/resolv/res_debug.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -345,9 +345,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- done:
+### 源代码
+```c
+done:
 	if (successp)
 		*successp = success;
 	return (u_int16_t)(result);
@@ -375,8 +377,4 @@ res_nametotype(const char *buf, int *successp) {
 		*successp = success;
 	return (u_int16_t)(result);
 }
-
-"""
-
-
 ```

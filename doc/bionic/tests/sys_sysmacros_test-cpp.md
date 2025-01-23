@@ -292,7 +292,7 @@ Interceptor.attach(Module.findExportByName(null, "mknod"), {
 
 请注意，由于 `makedev` 很可能是一个宏，它会在编译时被展开，直接 Hook 宏本身可能不可行。Hook 调用它的函数，或者在 Hook 点手动实现设备号的解析逻辑，是观察其行为的常用方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/sys_sysmacros_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -303,8 +303,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -336,7 +338,4 @@ TEST(sys_sysmacros, major) {
 TEST(sys_sysmacros, minor) {
   ASSERT_EQ(0xaabbccddUL, minor(0x12345aabbcc678dd));
 }
-
-"""
-
 ```

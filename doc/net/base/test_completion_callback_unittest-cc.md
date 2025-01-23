@@ -191,15 +191,17 @@ console.log("Fetching data...");
 
 总之，`net/base/test_completion_callback_unittest.cc` 不仅测试了 `net::TestCompletionCallback` 的功能，也提供了一个清晰的示例，展示了如何在 Chromium 的单元测试中处理异步操作，这对于理解和调试涉及异步回调的代码非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/test_completion_callback_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -341,7 +343,4 @@ TEST_F(TestCompletionCallbackTest, Closure) {
 // TODO: test deleting ExampleEmployer while work outstanding
 
 }  // namespace net
-
-"""
-
 ```

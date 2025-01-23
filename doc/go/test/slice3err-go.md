@@ -189,15 +189,17 @@ cd src/go/test
 
 5. **在旧版本的 Go 中对字符串使用三索引切片:** 虽然现在字符串支持三索引切片，但在早期版本中是不支持的。  如果你的代码需要在较旧的 Go 版本上运行，需要注意这一点。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/slice3err.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -319,9 +321,4 @@ func f() {
 	_ = slice[11:2:3] // ERROR "invalid slice index|invalid slice indices|inverted slice"
 	_ = slice[11:12:13]
 }
-
-"""
-
-
-
 ```

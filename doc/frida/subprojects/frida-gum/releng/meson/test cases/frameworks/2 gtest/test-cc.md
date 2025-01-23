@@ -131,7 +131,7 @@ TEST(hook_test, correct_argument_passing) {
 
 虽然 `test.cc` 文件本身非常简单，只包含了两个基本的 gtest 断言，但它在 Frida 项目的测试体系中扮演着基础性的角色。 它的主要功能是验证 gtest 框架本身是否工作正常。  在更复杂的 Frida 测试用例中，将会涉及到更深入的动态Instrumentation、二进制底层、操作系统内核和框架等知识。  对于用户而言，这个文件可以作为调试 Frida 内部问题的起点，帮助他们判断问题是否出在 Frida 的核心代码或者测试环境上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/2 gtest/test.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<gtest/gtest.h>
 
 TEST(basic_test, eq_works) {
@@ -150,7 +152,4 @@ TEST(basic_test, eq_works) {
 TEST(basic_test, neq_works) {
     ASSERT_NE(15, 106) << "Inequal is equal. The foundations of space and time are in jeopardy.";
 }
-
-"""
-
 ```

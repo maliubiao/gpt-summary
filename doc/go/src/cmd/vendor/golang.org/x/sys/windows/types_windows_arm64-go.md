@@ -157,15 +157,17 @@ func main() {
 
 总而言之，`go/src/cmd/vendor/golang.org/x/sys/windows/types_windows_arm64.go` 是 Go 语言与 Windows ARM64 系统交互的基础，它定义了关键的数据结构，使得 Go 程序能够进行底层的系统调用，执行诸如网络编程和进程管理等操作。 理解这些结构体的作用和正确使用方式对于开发需要在 Windows ARM64 上运行的底层 Go 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/types_windows_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -200,9 +202,4 @@ type JOBOBJECT_BASIC_LIMIT_INFORMATION struct {
 	PriorityClass           uint32
 	SchedulingClass         uint32
 }
-
-"""
-
-
-
 ```

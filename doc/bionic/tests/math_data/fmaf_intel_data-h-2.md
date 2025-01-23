@@ -156,7 +156,7 @@ By following these steps, I can generate a comprehensive and informative answer 
 
 总而言之，这个代码片段是 Android Bionic 数学库测试套件的一部分，专门用于验证 `fmaf` 函数的正确性，确保 Android 设备上的浮点数计算的准确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/fmaf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -168,10 +168,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
-
-  },
+### 源代码
+```c
+},
   { // Entry 722
     -HUGE_VALF,
     0x1.fffffep127,
@@ -2147,8 +2148,4 @@ Prompt:
     -HUGE_VALF
   },
   { // Entry 1051
-   
-"""
-
-
 ```

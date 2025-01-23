@@ -135,14 +135,16 @@ This iterative process of code scanning, hypothesizing, connecting to broader co
 
 `LayoutSubtreeRootList` 是 Blink 渲染引擎中一个关键的内部机制，用于管理需要重新计算布局的子树的根节点。它帮助引擎高效地跟踪和处理布局失效，避免不必要的全局布局计算，从而提升渲染性能。虽然开发者无法直接操作这个类，但理解其功能可以帮助更好地理解浏览器布局过程，并避免导致过多布局计算的编程模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/layout_subtree_root_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -186,7 +188,4 @@ void LayoutSubtreeRootList::CountObjectsNeedingLayout(
 }
 
 }  // namespace blink
-
-"""
-
 ```

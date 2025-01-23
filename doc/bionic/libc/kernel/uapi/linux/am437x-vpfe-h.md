@@ -270,7 +270,7 @@ Interceptor.attach(Module.findExportByName(null, "ioctl"), {
 
 请注意，`VIDIOC_AM437X_CCDC_CFG` 的实际数值需要根据 `<linux/videodev2.h>` 和该头文件中的定义计算出来。你可以查看预编译的头文件或者在目标设备上运行代码来获取该值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/am437x-vpfe.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -281,8 +281,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -351,7 +353,4 @@ struct vpfe_ccdc_config_params_raw {
 };
 #define VIDIOC_AM437X_CCDC_CFG _IOW('V', BASE_VIDIOC_PRIVATE + 1, void *)
 #endif
-
-"""
-
 ```

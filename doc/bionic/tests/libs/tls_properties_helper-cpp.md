@@ -332,7 +332,7 @@ sys.stdin.read()
 
 这些 Frida 脚本会拦截对 `__libc_get_static_tls_bounds` 和 `__libc_iterate_dynamic_tls` 的调用，并在控制台上打印相关的参数和返回值，帮助你理解 TLS 的分配和管理过程。对于 `__libc_iterate_dynamic_tls`，我们还 hook 了传递给它的回调函数，以便查看每个动态 TLS 块的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/tls_properties_helper.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -343,8 +343,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -473,7 +475,4 @@ int main() {
   return 0;
 }
 #endif  // __BIONIC__
-
-"""
-
 ```

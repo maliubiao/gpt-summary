@@ -108,7 +108,7 @@ By following these steps, I could comprehensively analyze the `deps.py` script, 
 
 总而言之，`deps.py` 是 Frida 构建系统中的一个自动化工具，负责管理外部依赖项，确保构建过程的顺利进行。理解其功能有助于诊断构建问题和了解 Frida 的依赖关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/deps.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,9 +117,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-          ]), flush=True)
+### 源代码
+```python
+]), flush=True)
 
     def _print_status(self, scope: str, *args):
         status = " ".join([str(arg) for arg in args])
@@ -435,8 +437,4 @@ class DependencySpec:
 
 if __name__ == "__main__":
     main()
-
-"""
-
-
 ```

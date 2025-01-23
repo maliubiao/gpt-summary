@@ -298,7 +298,7 @@ if __name__ == '__main__':
 
 通过运行这个 Frida 脚本并在目标应用中执行相关操作，你可以观察到 `ioctl` 系统调用的调用情况，以及传递给 STM 驱动程序的参数，从而了解 Android Framework 或 NDK 应用是如何使用 STM 机制的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/stm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -309,8 +309,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -335,7 +337,4 @@ struct stp_policy_id {
 #define STP_POLICY_ID_GET _IOR('%', 1, struct stp_policy_id)
 #define STP_SET_OPTIONS _IOW('%', 2, __u64)
 #endif
-
-"""
-
 ```

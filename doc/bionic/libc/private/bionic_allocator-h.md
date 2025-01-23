@@ -301,7 +301,7 @@ sys.stdin.read()
 
 总结来说，`bionic_allocator.handroid` 定义了 Android Bionic libc 内存分配器的核心结构，它是 Android 系统内存管理的基础，被 Framework、NDK 和动态链接器等组件广泛使用。理解其工作原理对于深入理解 Android 系统的运行机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_allocator.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -312,8 +312,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -439,7 +441,4 @@ class BionicAllocator {
   BionicSmallObjectAllocator* allocators_;
   uint8_t allocators_buf_[sizeof(BionicSmallObjectAllocator)*kSmallObjectAllocatorsCount];
 };
-
-"""
-
 ```

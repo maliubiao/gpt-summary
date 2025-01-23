@@ -154,14 +154,16 @@ By following these steps and iteratively refining the understanding, we can arri
 
 总而言之，`font_platform_data_cache.cc` 通过缓存机制有效地管理字体平台数据，是 Blink 渲染引擎中字体处理的关键组成部分，直接影响着网页文本的渲染效率和正确性。理解其功能有助于理解浏览器如何处理和显示网页中的文字。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_platform_data_cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2008 Apple Inc. All rights reserved.
  * Copyright (C) 2007 Nicholas Shanks <webkit@nickshanks.com>
@@ -259,7 +261,4 @@ const FontPlatformData* FontPlatformDataCache::GetOrCreateFontPlatformData(
 }
 
 }  // namespace blink
-
-"""
-
 ```

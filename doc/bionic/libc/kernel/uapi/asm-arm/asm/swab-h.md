@@ -240,7 +240,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/asm-arm/asm/swab.handroid` 定义了用于字节交换的宏，这在处理跨平台或网络数据时非常重要。虽然这个头文件本身不涉及动态链接，但其定义的宏会被 Bionic libc 中的其他函数使用，而这些函数会被动态链接到应用程序中。 理解字节交换的原理和可能出现的错误对于开发健壮的 Android 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm/asm/swab.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -251,8 +251,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -270,7 +272,4 @@ Prompt:
 #endif
 #define __arch_swab32 __arch_swab32
 #endif
-
-"""
-
 ```

@@ -163,7 +163,7 @@ By following this systematic process of understanding the context, scanning the 
 
 因此，当排查连接建立问题，尤其是涉及到 QUIC 协议时，理解 `QuicDispatcher` 如何处理连接请求，以及 `BufferedPacketStore` 在其中的作用至关重要。`quic_dispatcher_test.cc` 中的测试用例可以帮助开发者验证这些关键组件的正确性，并定位潜在的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_dispatcher_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 umSessionsToCreate + 1;
        ++conn_id) {
     // Last CHLO will be buffered. Others will create connection right away.
@@ -636,8 +638,4 @@ TEST_P(DualCIDBufferedPacketStoreTest, CIDCollision) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

@@ -165,7 +165,7 @@ By following these steps, combining code analysis with contextual information, a
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/test cases/unit/77 nostdlib/subprojects/mylibc/libc.c` 这个文件是为了测试 Frida 在特定受限环境下的功能而创建的，它提供了一些最基本的 C 库函数实现，以便在没有完整 libc 的情况下进行测试。开发者可能会查看这个文件来理解测试环境的底层细节，并在调试 Frida 与 Swift 集成时作为参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/77 nostdlib/subprojects/mylibc/libc.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Do not use this as the basis of your own libc.
  * The code is probably suboptimal or wonky, as I
  * had no prior experience with this, but instead
@@ -210,7 +212,4 @@ int simple_strlen(const char *str) {
   }
   return len;
 }
-
-"""
-
 ```

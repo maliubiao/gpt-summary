@@ -228,7 +228,7 @@ sys.stdin.read()
 
 这个 Frida 示例可以帮助你调试 Android 应用或系统服务如何使用底层的 CAN 接口，并观察它们设置的过滤器。你可以根据需要修改 Frida 脚本来拦截其他相关的系统调用或函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/can/raw.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -239,8 +239,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -275,7 +277,4 @@ struct can_raw_vcid_options {
 #define CAN_RAW_XL_VCID_TX_PASS 0x02
 #define CAN_RAW_XL_VCID_RX_FILTER 0x04
 #endif
-
-"""
-
 ```

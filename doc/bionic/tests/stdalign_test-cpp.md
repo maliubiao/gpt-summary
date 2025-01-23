@@ -245,7 +245,7 @@ TEST(stdalign, smoke) {
 
 总而言之，`bionic/tests/stdalign_test.cpp` 是一个用于验证 C++ 标准库中内存对齐功能的单元测试。理解其功能有助于理解 Android 系统中内存对齐的重要性以及如何正确使用 `alignof` 和 `alignas`。虽然不能直接 hook 编译器关键字，但可以通过 hook 相关的代码执行路径来间接观察其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/stdalign_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -256,8 +256,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -289,7 +291,4 @@ TEST(stdalign, smoke) {
   struct alignas(128) S128 {};
   ASSERT_EQ(128U, alignof(S128));
 }
-
-"""
-
 ```

@@ -138,15 +138,17 @@ Here's a breakdown of how to approach this:
 
 `resource_loader_test.cc` 的第一部分主要集中在测试 `ResourceLoader` 的**基本资源加载、Data URL 加载、延迟加载以及重定向处理**等核心功能。它通过模拟各种场景，例如不同的 URL 类型、请求方式、响应状态等，来验证 `ResourceLoader` 的行为是否符合预期。此外，还初步涉及了 `ResourceLoader` 与子资源过滤器在 CNAME 别名处理上的交互。 这些测试对于确保 Blink 引擎能够正确、高效、安全地加载各种 Web 资源至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_loader_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -946,7 +948,4 @@ TEST_F(ResourceLoaderSubresourceFilterCnameAliasTest,
   // Create the resource and loader.
   Resource* resource = CreateResource(std::move(request));
   ResourceLoader*
-"""
-
-
 ```

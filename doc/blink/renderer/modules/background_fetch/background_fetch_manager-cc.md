@@ -170,15 +170,17 @@ By following these steps, one can systematically analyze the C++ code and genera
 
 总而言之，`background_fetch_manager.cc` 是 Blink 引擎中 Background Fetch API 的关键实现，负责接收 JavaScript 请求，进行安全和参数校验，协调后台下载任务，并与浏览器进程进行通信。理解这个文件的功能对于调试和理解 Background Fetch API 的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/background_fetch/background_fetch_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -716,7 +718,4 @@ void BackgroundFetchManager::ContextDestroyed() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

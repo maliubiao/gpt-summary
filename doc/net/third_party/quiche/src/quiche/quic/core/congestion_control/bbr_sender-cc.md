@@ -158,15 +158,17 @@ Let's break down the thought process for analyzing this BBR sender code.
 
 总结来说，`bbr_sender.cc` 是 Chromium 网络栈中 QUIC 协议的核心组件之一，负责实现 BBR 拥塞控制算法的发送端逻辑，直接影响着基于 QUIC 的网络连接的性能。虽然 JavaScript 代码无法直接操作它，但其行为对 JavaScript 发起的网络请求至关重要。开发者可以通过浏览器提供的工具来间接观察和分析 BBR 算法的运行情况，以便进行网络性能调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/congestion_control/bbr_sender.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1064,7 +1066,4 @@ std::ostream& operator<<(std::ostream& os, const BbrSender::DebugState& state) {
 }
 
 }  // namespace quic
-
-"""
-
 ```

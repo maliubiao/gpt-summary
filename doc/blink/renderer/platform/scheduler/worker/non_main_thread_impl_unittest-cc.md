@@ -160,14 +160,16 @@ By following these steps, you can systematically analyze the C++ code and derive
 
 总而言之，`non_main_thread_impl_unittest.cc` 文件通过一系列单元测试，确保了 `NonMainThreadImpl` 类作为 Blink 引擎中管理非主线程的关键组件能够可靠地工作，这对于实现高性能和响应式的 Web 应用至关重要。它测试了线程管理、任务调度以及相关的线程安全机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/worker/non_main_thread_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -362,7 +364,4 @@ TEST(NonMainThreadImplRealtimePeriodTest, RealtimePeriodConfiguration) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

@@ -174,15 +174,17 @@ By following this structured approach, breaking down the code into its component
 
 总之，`net/socket/udp_socket_perftest.cc` 虽然是一个测试文件，但它揭示了 Chromium 浏览器底层 UDP 套接字的使用方式和性能特性，对于理解和调试与 UDP 相关的网络问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/udp_socket_perftest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -341,7 +343,4 @@ TEST_F(UDPSocketPerfTest, WriteNonBlocking) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

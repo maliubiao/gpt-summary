@@ -169,14 +169,16 @@ This detailed approach, breaking down the code into smaller, manageable parts an
 
 总而言之，`non_main_thread_impl.cc` 是 Blink 引擎中一个核心的线程管理和调度组件，它为诸如 Web Workers 这样的多线程特性提供了基础架构，对提升 Web 应用的性能和用户体验至关重要。理解其功能有助于开发者更好地理解浏览器的内部工作原理，并避免常见的多线程编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/worker/non_main_thread_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -385,7 +387,4 @@ void NonMainThreadImpl::SimpleThreadImpl::Quit() {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

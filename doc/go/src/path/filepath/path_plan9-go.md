@@ -204,7 +204,7 @@ By following these steps and incorporating self-correction, we can arrive at a c
 
 需要注意的是 `HasPrefix` 函数已被弃用，应该避免使用。在实际开发中，应该使用 `path/filepath` 包提供的其他更健壮的函数来进行路径操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/path/filepath/path_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -212,8 +212,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -256,9 +258,4 @@ func join(elem []string) string {
 func sameWord(a, b string) bool {
 	return a == b
 }
-
-"""
-
-
-
 ```

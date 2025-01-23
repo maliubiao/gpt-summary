@@ -183,7 +183,7 @@ By following this structured approach and considering the context of Frida, we c
 
 总而言之，虽然 `cpplib.cpp` 代码本身非常简单，但它在 Frida 的测试和验证中扮演着重要的角色，并且可以作为理解 Frida 工作原理和调试相关问题的入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/6 linkshared/cpplib.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,15 +191,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define BUILDING_DLL
 #include "cpplib.h"
 
 int DLL_PUBLIC cppfunc(void) {
     return 42;
 }
-
-"""
-
 ```

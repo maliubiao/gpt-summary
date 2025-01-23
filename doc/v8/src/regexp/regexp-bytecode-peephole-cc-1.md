@@ -140,7 +140,7 @@ console.log(match); // 输出: ['abbc', index: 0, input: 'abbc', groups: undefin
 
 第二部分代码的核心功能是**完成正则表达式字节码的 peephole 优化过程**，特别是处理由于指令修改导致的跳转目标失效问题。它通过维护跳转源和目标的修正信息，并在最终生成优化后的字节码时应用这些修正，确保跳转指令的正确性。同时，它提供了将优化后的字节码写入输出缓冲区的工具函数。这部分是整个优化流程中至关重要的步骤，保证了优化后的字节码仍然能够正确地执行正则表达式的匹配逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-bytecode-peephole.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-bytecode-peephole.cc以.tq结尾，那它是个v8 torque源代码，
@@ -148,8 +148,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 from, preserve_from);
     CopyRangeToOutput(bytecode, preserve_from, preserve_length);
   } else {
@@ -395,8 +397,4 @@ Handle<TrustedByteArray> RegExpBytecodePeepholeOptimization::OptimizeBytecode(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

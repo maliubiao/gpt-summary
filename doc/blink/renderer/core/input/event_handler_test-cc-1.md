@@ -153,7 +153,7 @@ This section of the `event_handler_test.cc` file primarily focuses on testing th
 
 总而言之，这部分 `event_handler_test.cc` 代码的主要功能是**验证 Blink 渲染引擎的核心事件处理机制在各种用户交互场景下的正确性，特别是关注光标的显示逻辑、键盘事件处理、上下文菜单事件的派发以及触摸手势在文本编辑区域的行为。** 它通过模拟用户操作和检查预期的状态变化（例如光标类型、文本选择、工具提示显示等）来确保事件处理的稳定性和可靠性。 这一部分深入探讨了用户与网页的交互方式，并针对不同的交互模式进行了细致的测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/input/event_handler_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -161,9 +161,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
-    element->GetLayoutObject()->AbsoluteBoundingBoxRect().bottom_left();
+### 源代码
+```cpp
+element->GetLayoutObject()->AbsoluteBoundingBoxRect().bottom_left();
   point.Offset(5, -5);
   HitTestLocation location(point);
   HitTestResult result =
@@ -999,7 +1001,4 @@ TEST_F(EventHandlerTooltipTest,
   WebMouseEvent mouse_move_event(
       WebInputEvent::Type::kMouseMove, gfx::PointF(51, 50), gfx::PointF(51, 50),
       WebPointerProperties::Button::kNoButton, 0, WebInp
-"""
-
-
 ```

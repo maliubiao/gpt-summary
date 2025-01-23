@@ -155,15 +155,17 @@ By following these steps, we can systematically analyze the C++ test file and pr
 
 总而言之，这个测试文件是 Blink 渲染引擎为了确保 `box-shadow` 动画能够尽可能地在合成器线程上高效运行而编写的，它验证了在不同动画场景下 `BoxShadowPaintDefinition` 的逻辑是否正确。理解这个测试文件有助于开发者理解 CSS 动画的渲染原理，以及如何编写高性能的 CSS 动画。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/csspaint/nativepaint/box_shadow_paint_definition_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -394,7 +396,4 @@ TEST_F(BoxShadowPaintDefinitionTest, MultipleAnimationsFallback) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

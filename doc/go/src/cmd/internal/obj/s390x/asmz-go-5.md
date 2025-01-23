@@ -148,7 +148,7 @@ func main() {
 
 这部分 `asmz.go` 代码是 Go 语言在 s390x 架构上实现向量计算和硬件加速的密码学功能的核心组成部分。 它负责将 Go 的汇编指令翻译成底层的机器码，并强制执行了特定指令的寄存器使用约束。 理解这段代码有助于深入了解 Go 语言在特定硬件架构上的底层实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/s390x/asmz.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -157,9 +157,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
- asm)
+### 源代码
+```go
+asm)
 
 	case 119: // VRR-c SHIFT/ROTATE/DIVIDE/SUB (rhs value on the left, like SLD, DIV etc.)
 		op, m4, m6 := vop(p.As)
@@ -958,10 +960,4 @@ func zVRIe(op, v1, v2, i3, m5, m4 uint32, asm *[]byte) {
 		(uint8(m4)<<4)|rxb(v1, v2, 0, 0),
 		uint8(op))
 }
-
-"""
-
-
-
-
 ```

@@ -126,7 +126,7 @@ Essentially, my process involved a combination of code comprehension, knowledge 
 
 `ReportingCacheImpl` 的第一部分代码主要负责 **本地存储、管理和维护网络报告**。它提供了添加、检索、更新和删除报告的功能，并实现了基本的缓存淘汰策略。虽然不直接与 JavaScript 交互，但它存储的报告通常是由于 JavaScript 代码执行或其他网页行为而产生的。这部分代码还定义了报告的基本生命周期管理和状态转换。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_cache_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -989,7 +991,4 @@ void ReportingCacheImpl::Flush() {
 
 ReportingEndpoint ReportingCacheImpl::GetV1EndpointForTesting(
     const base::Unguess
-"""
-
-
 ```

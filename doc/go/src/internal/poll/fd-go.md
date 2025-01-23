@@ -159,7 +159,7 @@ func main() {
 
 总而言之，`go/src/internal/poll/fd.go` 是 Go 语言底层 I/O 实现的关键部分，它处理了非阻塞 I/O 相关的错误定义和一些辅助功能，为上层网络和操作系统相关的包提供了基础支持。开发者应该避免直接使用 `internal` 包，而是依赖标准库提供的稳定 API。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/fd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -167,8 +167,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -263,9 +265,4 @@ var TestHookDidWritev = func(wrote int) {}
 // in their function signatures to disable the usability of these APIs from
 // external codebase.
 type String string
-
-"""
-
-
-
 ```

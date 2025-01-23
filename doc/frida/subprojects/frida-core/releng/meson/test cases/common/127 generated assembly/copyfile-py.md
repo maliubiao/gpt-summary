@@ -156,7 +156,7 @@ By following these steps and incorporating self-correction, a comprehensive and 
 
 总而言之，虽然这个脚本本身非常简单，但它在 Frida 的构建和测试流程中扮演着一个辅助角色，用于文件复制操作，这在动态分析和逆向工程的上下文中是有实际意义的。 理解它的功能和潜在的错误情况，可以帮助开发者更好地调试和理解 Frida 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/127 generated assembly/copyfile.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,15 +164,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 import shutil
 
 shutil.copyfile(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

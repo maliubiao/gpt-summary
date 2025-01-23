@@ -138,12 +138,14 @@ function squareRoot(x) {
 
 总而言之，`code-generator-mips64.cc` 是 V8 引擎中一个至关重要的组件，它负责将高级的 JavaScript 代码转换为底层硬件可以理解和执行的指令。它处理了许多与 MIPS64 架构相关的细节，以确保生成的代码高效且正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/code-generator-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1807,7 +1809,4 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleArchInstruction(
     }
     case kMips64Lhu:
       __ Lhu(i.OutputRegister(), i.Mem
-"""
-
-
 ```

@@ -167,15 +167,17 @@ By following this structured approach, you can effectively analyze and understan
 
 总而言之，`visible_units_sentence.cc` 是 Blink 引擎中处理句子级别文本操作的关键组件，它为浏览器提供了理解和操作文本句子的能力，这对于富文本编辑器的各种功能至关重要。虽然它本身是 C++ 代码，但其功能直接影响着 JavaScript API 的行为以及用户在 HTML 页面上的编辑体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/visible_units_sentence.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009 Apple Inc. All rights
  * reserved.
@@ -488,7 +490,4 @@ Position StartOfSentencePosition(const Position& position) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

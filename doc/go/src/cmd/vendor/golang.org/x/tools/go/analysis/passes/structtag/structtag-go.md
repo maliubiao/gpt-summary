@@ -180,15 +180,17 @@ type Product struct {
 
 理解这些常见错误可以帮助开发者编写更健壮和符合 Go 语言规范的代码。`structtag` 分析器作为一个静态分析工具，能够在编译阶段提前发现这些潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/structtag/structtag.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -503,9 +505,4 @@ func validateStructTag(tag string) error {
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

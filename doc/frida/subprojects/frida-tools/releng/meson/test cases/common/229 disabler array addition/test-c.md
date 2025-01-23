@@ -85,7 +85,7 @@ Here's a breakdown of the thinking process used to analyze the provided C code s
 
 通过分析这个简单的 `stub` 函数及其所在的上下文，用户可以更好地理解 Frida 是如何测试其禁用功能的，并可能从中找到解决自己问题的线索。例如，他们可能会了解到如何正确地向 "disabler array" 添加元素，或者了解到 "disabler array" 的适用范围。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/229 disabler array addition/test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -93,10 +93,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int stub(void) { return 0; }
-
-"""
-
 ```

@@ -158,7 +158,7 @@ Initially, I might have focused too much on the specific actions of the script w
 
 通过这些步骤，用户可以逐步定位问题，例如环境变量配置错误、依赖工具缺失、权限问题或者构建系统的配置错误等。脚本中的 `assert` 语句也可以帮助开发者快速发现调用脚本时参数错误的问题。 脚本创建临时 C 文件的行为可能是在一个测试场景中模拟编译过程，如果这个步骤失败，也可能提示构建环境存在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/35 dist script/subprojects/sub/dist-script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -187,7 +189,4 @@ subprocess.run([*mesonrewrite, '-s', source_root, *rewrite_cmd], check=True)
 modfile = source_root / 'prog.c'
 with modfile.open('w') as f:
     f.write('int main(){return 0;}')
-
-"""
-
 ```

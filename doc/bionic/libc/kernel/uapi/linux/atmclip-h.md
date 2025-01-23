@@ -198,7 +198,7 @@ function _IO(g, nr) {
 
 `linux/atmclip.h` 是一个定义了 Linux 内核中与 ATM CLIP 协议交互所需的常量和宏的头文件。它主要用于内核驱动程序和底层的网络编程。虽然在典型的 Android 应用开发中不常用，但作为 Android 底层 Linux 内核的一部分，它仍然存在。通过 NDK，开发者可以访问这些底层的内核接口，并使用 Frida 等工具进行调试和监控。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/atmclip.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -209,8 +209,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -227,7 +229,4 @@ Prompt:
 #define CLIP_CHECK_INTERVAL 10
 #define SIOCMKCLIP _IO('a', ATMIOC_CLIP)
 #endif
-
-"""
-
 ```

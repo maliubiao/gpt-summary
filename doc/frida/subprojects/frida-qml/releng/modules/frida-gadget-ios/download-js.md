@@ -168,7 +168,7 @@ This iterative process of code analysis, concept identification, example generat
 
 `download.js` 是 Frida 用于自动化下载 iOS 平台 Gadget 的关键脚本。理解其功能有助于排查 Frida 在 iOS 环境下运行时的相关问题，特别是与 Gadget 文件缺失、版本不匹配或下载失败有关的错误。通过分析其代码逻辑，可以更好地理解 Frida 的工作原理以及其与底层系统和逆向工程技术的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/modules/frida-gadget-ios/download.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const fs = require('fs');
 const gadget = require('.');
 const https = require('https');
@@ -325,7 +327,4 @@ function onError(error) {
   console.error(error.message);
   process.exitCode = 1;
 }
-
-"""
-
 ```

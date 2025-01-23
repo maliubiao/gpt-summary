@@ -130,14 +130,16 @@ By following these steps, we can systematically analyze the provided code snippe
 
 `selector_directive.cc` 文件定义了一个核心的机制，用于在 Blink 渲染引擎中根据 CSS 选择器查找文档中的特定范围。它与 JavaScript 通过 Promise 进行异步通信，并操作 HTML 文档的结构。理解其功能有助于理解浏览器如何将 CSS 选择器转化为对 DOM 的实际操作，并为开发者提供的选择元素和文本的 JavaScript API 提供底层支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/selector_directive.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -229,7 +231,4 @@ void SelectorDirective::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

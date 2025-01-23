@@ -160,15 +160,17 @@ HeapVector<Member<const MLOperator>> toposorted_operators = GetOperatorsInTopolo
 
 总而言之，`ml_graph_utils.cc` 是 WebNN 功能实现的关键组成部分，它通过提供各种实用函数，支持了 WebNN 图的构建、验证和执行，并直接影响了开发者在 JavaScript 中使用 WebNN API 的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ml/webnn/ml_graph_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -461,7 +463,4 @@ void LogConsoleWarning(ScriptState* script_state,
 }
 
 }  // namespace blink
-
-"""
-
 ```

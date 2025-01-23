@@ -136,7 +136,7 @@ By following this detailed breakdown, I arrived at the comprehensive analysis pr
 
 因此，这个 `prog.c` 文件很可能是 Frida 项目中的一个测试用例，用于验证 Frida 在处理具有条件编译和命令行参数检查的程序时的功能。用户（Frida 开发者或使用者）通过编写和运行这样的测试用例，可以确保 Frida 能够正确地 hook 和观察这类程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/233 wrap case/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<up_down.h>
 #include<stdio.h>
 
@@ -159,7 +161,4 @@ int main(int argc, char **argv) {
     return 1;
 #endif
 }
-
-"""
-
 ```

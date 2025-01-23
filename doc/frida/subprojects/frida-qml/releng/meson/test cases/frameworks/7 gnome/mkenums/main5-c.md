@@ -169,7 +169,7 @@ By following this structured approach, combining code analysis with contextual k
 
 总而言之，`main5.c` 是 Frida 项目中一个用于确保枚举和标志功能正确性的测试用例，它间接地保障了 Frida 在动态分析使用了 GLib 对象系统的应用程序时的可靠性。通过分析这个文件，可以深入理解 Frida 如何利用底层的类型信息来进行动态 instrumentation。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/7 gnome/mkenums/main5.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <string.h>
 #include <glib-object.h>
@@ -214,7 +216,4 @@ int main(int argc, char **argv) {
     fprintf(stderr, "All ok.\n");
     return 0;
 }
-
-"""
-
 ```

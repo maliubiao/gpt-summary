@@ -179,7 +179,7 @@ slices.SortFunc(orders, func(a, b Order) int {
 
 总结来说，这段测试代码主要验证了 Go 语言 `cmp` 包中 `Less` 和 `Compare` 函数的基本比较功能，以及 `Or` 函数在链式比较和提供默认值方面的应用，并演示了如何在实际场景中利用这些功能进行排序。 它没有涉及到命令行参数的处理，但在使用 `cmp.Or` 进行复杂排序时，需要注意参数的顺序。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmp/cmp_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -187,8 +187,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -367,9 +369,4 @@ func ExampleOr_sort() {
 	// bar carol 1.00
 	// baz carol 4.00
 }
-
-"""
-
-
-
 ```

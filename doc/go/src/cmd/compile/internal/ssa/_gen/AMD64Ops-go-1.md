@@ -184,7 +184,7 @@ func main() {
 
 这段 `AMD64Ops.go` 文件定义了 Go 编译器在处理 AMD64 架构代码时所使用的底层操作集合和控制流结构。它详细描述了各种数据移动、算术运算、内存访问、原子操作、函数调用等操作，以及用于构建控制流图的基本块类型。这些定义是 Go 编译器进行代码分析、优化和最终生成机器码的基础。开发者一般不需要直接接触这些定义，但理解它们可以帮助更好地理解 Go 编译器的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/_gen/AMD64Ops.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -192,8 +192,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 gn extend arg0 from int8 to int64
 		{name: "MOVBQZX", argLength: 1, reg: gp11, asm: "MOVBLZX"}, // zero extend arg0 from int8 to int64
 		{name: "MOVWQSX", argLength: 1, reg: gp11, asm: "MOVWQSX"}, // sign extend arg0 from int16 to int64
@@ -674,10 +676,4 @@ gn extend arg0 from int8 to int64
 		linkreg:            -1, // not used
 	})
 }
-
-"""
-
-
-
-
 ```

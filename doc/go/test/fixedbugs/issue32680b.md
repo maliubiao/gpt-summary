@@ -199,15 +199,17 @@ func main() {
 
 In this example, a user might expect `result1` and `result2` to be different because `data1[7]` and `data2[7]` have different values. However, since `hashBytesRaw` doesn't use the `b7` parameter, the results will be identical. This highlights the importance of understanding the exact implementation of functions, especially when dealing with low-level operations.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue32680b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compile
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -223,9 +225,4 @@ func hashBytesRaw(b0, b1, b2, b3, b7 byte) uint64 {
 func doStuff(data []byte) uint64 {
 	return hashBytesRaw(data[0], data[1], data[2], data[3], data[7])
 }
-
-"""
-
-
-
 ```

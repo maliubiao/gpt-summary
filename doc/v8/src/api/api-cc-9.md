@@ -195,7 +195,7 @@ const match = regex1.exec('abcdef'); // 对应 RegExp::Exec
 
 作为第 10 部分，这段代码集中展示了 V8 引擎 API 的核心功能，包括上下文管理、对象和函数模板操作、字符串处理、原始值对象的创建以及日期和正则表达式的处理。 它体现了 V8 如何将底层的 C++ 实现暴露给 JavaScript 环境，使得开发者可以通过 C++ 代码来扩展和集成 V8 引擎。 这部分代码是 V8 API 的重要组成部分，为 V8 的嵌入和扩展提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/api/api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -203,8 +203,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第10部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 actory()->undefined_value();
   i::DirectHandle<i::Object> init = undefined;
   i::DirectHandle<i::Object> before = undefined;
@@ -1032,7 +1034,4 @@ MaybeLocal<v8::Object> v8::RegExp::Exec(Local<Context> context,
 }
 
 Local<v8::Ar
-"""
-
-
 ```

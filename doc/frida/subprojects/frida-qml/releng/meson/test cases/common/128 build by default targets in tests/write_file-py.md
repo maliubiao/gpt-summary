@@ -124,7 +124,7 @@ Initially, I might have focused too much on the Frida-QML aspect, but quickly re
 
 总而言之， `write_file.py` 尽管代码简单，但在 Frida 的测试体系中扮演着基础的角色，用于验证基本的文件写入能力，这对于更复杂的逆向测试场景是至关重要的。开发者查看这个脚本通常是为了理解测试流程，排查测试错误，或者了解 Frida 测试框架的基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/128 build by default targets in tests/write_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,15 +132,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 with open(sys.argv[1], 'w') as f:
     f.write('Test')
-
-"""
-
 ```

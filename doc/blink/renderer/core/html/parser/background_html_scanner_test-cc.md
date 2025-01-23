@@ -109,14 +109,16 @@ Let's break down the thought process to analyze the given C++ test file.
 
 总而言之，`background_html_scanner_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎中的 `BackgroundHTMLScanner` 能够可靠地从 HTML 中提取 JavaScript 代码，这是网页正常运行的关键步骤。 这些测试覆盖了各种正常和异常情况，提高了代码的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/background_html_scanner_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -291,7 +293,4 @@ TEST_F(BackgroundHTMLScannerTest, ExtraStartTag) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

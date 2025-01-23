@@ -282,7 +282,7 @@ sys.stdin.read()
 
 总而言之，`tar_h.c` 虽然只是一个简单的测试文件，但它对于确保 Android 系统中 TAR 文件处理的正确性至关重要。它验证了 `tar.h` 中关键的宏定义，这些宏被广泛用于 Android 的 OTA 更新、Recovery 系统以及 NDK 开发中处理 TAR 归档的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/tar_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -293,8 +293,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -356,7 +358,4 @@ static void tar_h() {
   MACRO_VALUE(TOWRITE, 02);
   MACRO_VALUE(TOEXEC, 01);
 }
-
-"""
-
 ```

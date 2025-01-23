@@ -132,15 +132,17 @@ size = ... (足够包含两个 challenge 的长度)
 
 总而言之，`net/http/http_auth_handler_digest_fuzzer.cc` 是 Chromium 确保其网络栈安全性和稳定性的重要工具，它通过自动化地测试 Digest 认证处理代码，帮助发现潜在的问题，从而提升用户的网络浏览体验。虽然用户不直接与之交互，但其运行结果直接影响到用户浏览需要 Digest 认证的网站时的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_auth_handler_digest_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -187,7 +189,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   }
   return 0;
 }
-
-"""
-
 ```

@@ -186,15 +186,17 @@ By following this structured thinking process, I can systematically analyze the 
 
 `v8/src/logging/code-events.h` 定义了一个用于记录 V8 引擎内部代码事件的强大机制。它允许 V8 的各个部分报告代码的创建、移动、优化、去优化和删除等事件，并通过 `Logger` 类将这些事件分发给感兴趣的监听器。虽然这是一个内部 API，但通过理解这些事件，我们可以更好地理解 V8 的工作原理，并间接地诊断 JavaScript 代码中的性能问题。如果该文件以 `.tq` 结尾，则表示它是使用 Torque 语言定义的，用于 V8 的内置功能实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/code-events.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/logging/code-events.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -506,7 +508,4 @@ class Logger {
 }  // namespace v8
 
 #endif  // V8_LOGGING_CODE_EVENTS_H_
-
-"""
-
 ```

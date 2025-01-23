@@ -171,15 +171,17 @@ func main() {
 
 总而言之，这段代码简洁地演示了 Go 语言中接口的相互嵌入特性，这种特性允许定义复杂类型关系，但也需要开发者谨慎处理以避免潜在的无限递归问题。  它更多的是作为类型定义存在，而不是一个独立的可执行程序。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/importer/testdata/issue25596.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -193,9 +195,4 @@ type E interface {
 type T interface {
 	E
 }
-
-"""
-
-
-
 ```

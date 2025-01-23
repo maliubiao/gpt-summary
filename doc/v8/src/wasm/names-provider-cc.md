@@ -130,15 +130,17 @@ console.log(instance.exports.add); // 输出可能包含 "add" 这个名称
 
 `v8/src/wasm/names-provider.cc` 是 V8 中负责为 WebAssembly 模块中的各种实体提供名称的关键组件。它通过解析 name section 和从导入/导出信息中推断来完成这项任务，并确保提供的名称是合法的标识符。理解其功能有助于开发者更好地理解和调试 WebAssembly 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/names-provider.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/names-provider.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -599,7 +601,4 @@ size_t NamesProvider::EstimateCurrentMemoryConsumption() const {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -102,11 +102,13 @@ if (myVariable > 12) {
 
 `v8/src/parsing/token.cc` 文件在 V8 引擎的 JavaScript 解析过程中扮演着至关重要的角色。它通过定义 `Token` 类型和相关数据，为词法分析器提供了识别和分类 JavaScript 代码中各种词法单元的基础。这些 token 是后续语法分析、语义分析和代码生成等编译阶段的基础输入。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/token.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ const uint8_t Token::token_flags[] = {TOKEN_LIST(KT, KK)};
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

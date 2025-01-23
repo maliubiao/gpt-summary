@@ -173,7 +173,7 @@ The fact that this script exists within the Frida project's test suite gives us 
 
 **In summary, `blaster.py` is a simple but essential test case within the Frida project. It validates a basic functional expectation of a (likely placeholder) module, ensuring the fundamental building blocks for more complex dynamic instrumentation scenarios are working as intended. Its location within the test suite provides valuable context for understanding its purpose and how developers interact with it.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/python/8 different python versions/blaster.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python
 
 import sys
@@ -197,7 +199,4 @@ if not isinstance(result, int):
 if result != 1:
     print('Returned result {} is not 1.'.format(result))
     sys.exit(1)
-
-"""
-
 ```

@@ -163,15 +163,17 @@ fetch('https://self-signed.example.com')
 
 总之，`net/cert/test_root_certs_unittest.cc` 是 Chromium 网络栈中一个重要的测试文件，它确保了临时添加测试根证书的功能能够正确工作，从而保障了 HTTPS 连接的安全性。虽然普通用户不会直接接触这个文件，但这个文件所测试的代码直接影响了用户在使用浏览器时的安全体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/test_root_certs_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -472,7 +474,4 @@ INSTANTIATE_TEST_SUITE_P(All, TestRootCertsTest, ::testing::Bool());
 // http://crbug.com/63958
 
 }  // namespace net
-
-"""
-
 ```

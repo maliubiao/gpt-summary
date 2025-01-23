@@ -113,14 +113,16 @@ This iterative process of scanning, deducing, connecting, hypothesizing, and ref
 
 总而言之，`blink/renderer/platform/fonts/font_size_adjust.cc` 文件中的 `FontSizeAdjust` 类是 Chromium 渲染引擎中处理 CSS `font-size-adjust` 属性的核心组件，它负责存储、比较和将该属性的值转换为字符串表示，以便在浏览器内部进行处理和渲染。它与 JavaScript、HTML 和 CSS 都有着密切的联系，是网页样式渲染的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_size_adjust.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ String FontSizeAdjust::ToString() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -111,15 +111,17 @@ Now I can formulate the summary.
 
 这些测试覆盖了 Intersection Observer API 的关键方面，确保了其在 Blink 引擎中的正确性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/intersection_observer/intersection_observer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 fset(
       ScrollOffset(0, 600), mojom::blink::ScrollType::kProgrammatic);
   Compositor().BeginFrame();
@@ -911,7 +913,4 @@ TEST_F(IntersectionObserverTest, MinScrollDeltaToUpdateNotScrollable) {
   WebView().MainFrameViewWidget()->Resize(gfx::Size(800, 600));
   SimRequest main_resource("https://example.com/", "text/html");
   Lo
-"""
-
-
 ```

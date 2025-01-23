@@ -103,15 +103,17 @@ found packages main (build.go) and building_Go_requires_Go_1_22_6_or_later (notg
 
 `notgo122.go` 是一个巧妙的机制，用于强制执行 Go 的构建依赖关系。它利用 Go 的构建标签和包管理机制，在不满足最低构建版本要求时，以清晰的方式告知用户问题所在，避免了更隐蔽或难以理解的构建错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/dist/notgo122.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -133,9 +135,4 @@ Prompt:
 //go:build !go1.22
 
 package building_Go_requires_Go_1_22_6_or_later
-
-"""
-
-
-
 ```

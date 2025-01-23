@@ -208,7 +208,7 @@ except Exception as e:
 
 这个 Frida 示例提供了一个调试动态链接器中 SLEB128 解码过程的思路。实际操作中，你需要先找到目标函数的准确地址，并根据 `sleb128_decoder` 类的结构来访问其成员变量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_sleb128_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -219,8 +219,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -331,7 +333,4 @@ TEST(linker_sleb128, smoke) {
   EXPECT_EQ(static_cast<uint64_t>(-9223372036854775807LL - 1), decoder.pop_front());
 #endif
 }
-
-"""
-
 ```

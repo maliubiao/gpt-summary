@@ -203,15 +203,17 @@ Fetching frida-python...
 
 `ensure-submodules.py` 是 Frida 项目中一个重要的实用工具，用于管理 Git 子模块的依赖关系。虽然它本身不是直接的逆向工具，但对于 Frida 的正确构建和使用至关重要，而 Frida 本身是强大的动态 instrumentation 工具，被广泛应用于逆向工程和安全研究领域。理解这个脚本的功能有助于理解 Frida 的构建流程和依赖关系，这在高级使用场景下可能很有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/tools/ensure-submodules.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import subprocess
@@ -254,7 +256,4 @@ def run(argv: list[str], **kwargs) -> subprocess.CompletedProcess:
 
 if __name__ == "__main__":
     main(sys.argv)
-
-"""
-
 ```

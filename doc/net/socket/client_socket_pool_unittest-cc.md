@@ -143,15 +143,17 @@ fetch('https://example.com/data2');
 
 总之，`net/socket/client_socket_pool_unittest.cc` 是一个关键的测试文件，用于验证 `ClientSocketPool` 及其核心组件 `GroupId` 的正确性。理解这个文件的内容有助于理解 Chromium 网络栈的连接管理机制，以及 JavaScript 发起的网络请求如何在底层被处理。它也为开发者提供了调试网络相关问题的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/client_socket_pool_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -360,7 +362,4 @@ TEST(ClientSocketPool, SplitHostCacheByNetworkIsolationKeyDisabled) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

@@ -399,7 +399,7 @@ if (syscallPtr) {
 
 这个例子展示了如何使用 Frida hook 系统调用，是调试和分析 Android 系统行为的强大工具。通过观察 `ptrace` 的调用，我们可以深入了解 Android 系统的底层运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ptrace.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -410,8 +410,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -524,7 +526,4 @@ struct ptrace_sud_config {
 #define PTRACE_O_MASK (0x000000ff | PTRACE_O_EXITKILL | PTRACE_O_SUSPEND_SECCOMP)
 #include <asm/ptrace.h>
 #endif
-
-"""
-
 ```

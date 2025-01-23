@@ -163,15 +163,17 @@ go run go/test/fixedbugs/issue7023.dir/a.go go/test/fixedbugs/issue7023.dir/b.go
 
 总的来说，这段代码简洁地展示了 Go 语言中基本的包导入和跨包变量访问机制。它很可能是为了测试或验证在特定情况下，这种跨包访问是否按预期工作，尤其是在早期版本的 Go 语言中可能存在一些边界情况或 Bug。 相对路径的使用是理解这段代码的关键，但也可能是使用者容易犯错的地方。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7023.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -183,9 +185,4 @@ import (
 )
 
 var f = a.Foo
-
-"""
-
-
-
 ```

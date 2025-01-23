@@ -197,14 +197,16 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`reference_clip_path_operation.cc` 文件在 Blink 渲染引擎中扮演着关键角色，它负责处理 CSS `clip-path` 属性中对外部资源的引用，确保资源的正确加载和管理，并使得复杂的剪切效果能够在网页上实现。 开发者在使用 `clip-path: url()` 时需要注意 URL 的正确性、资源的可访问性以及潜在的跨域问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/reference_clip_path_operation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ bool ReferenceClipPathOperation::operator==(const ClipPathOperation& o) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

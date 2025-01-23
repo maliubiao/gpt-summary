@@ -140,12 +140,14 @@ For each of the tested `CodeStubAssembler` functionalities, I can provide a corr
 
 总而言之，这个代码文件的第一部分专注于测试 `CodeStubAssembler` 的基础能力，这些能力是 V8 引擎实现各种 JavaScript 核心功能的基础。它涵盖了函数调用、类型转换、内存访问、哈希计算以及对象属性操作等多个方面。理解这些测试用例有助于深入了解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-code-stub-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1992,7 +1994,4 @@ TEST(AllocateJSObjectFromMap) {
 
   const int kNumParams = 3;
   CodeAss
-"""
-
-
 ```

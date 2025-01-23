@@ -134,7 +134,7 @@ By following these steps, we can generate a comprehensive and informative respon
 
 `frida/subprojects/frida-qml/releng/meson/test cases/vala/7 shared library/lib/source.py` 这个文件很可能是 Frida 测试框架的一部分，用于生成一个 Vala 语言编写的共享库，作为 Frida 功能测试的目标。它涉及到 Vala 语言的编译、共享库的生成和管理，与逆向工程的动态插桩方法紧密相关，并涉及一定的底层操作系统和二进制知识。 理解这类测试脚本有助于开发者理解 Frida 的工作原理和测试流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/vala/7 shared library/lib/source.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,9 +142,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

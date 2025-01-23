@@ -72,7 +72,7 @@ To address this, I need to:
 
 总而言之，这部分测试代码专注于验证 Blink 引擎在处理各种复杂的 HTML 和 CSS 布局时，空间导航功能的正确性和健壮性，确保用户能够通过键盘方向键流畅且符合预期地在网页元素之间进行导航。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/spatial_navigation_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -80,9 +80,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-     "</div>");
+### 源代码
+```cpp
+"</div>");
   Element* a = GetDocument().getElementById(AtomicString("a"));
   Element* b = GetDocument().getElementById(AtomicString("b"));
   Element* c = GetDocument().getElementById(AtomicString("c"));
@@ -390,8 +392,4 @@ TEST_F(SpatialNavigationTest, PressEnterKeyActiveElement) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

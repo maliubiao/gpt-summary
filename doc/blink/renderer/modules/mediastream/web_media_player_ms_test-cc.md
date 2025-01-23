@@ -78,7 +78,7 @@ The user wants to understand the functionality of the provided C++ source code f
 
 这部分代码主要定义了用于测试 `WebMediaPlayerMS` 核心功能的框架和基础组件。它创建了各种模拟对象，如媒体流渲染器、委托对象和合成层桥接器，以便在隔离的环境中验证 `WebMediaPlayerMS` 在处理媒体流时的行为，包括状态管理、视频帧处理和与合成层的交互。 重点在于搭建测试环境，为后续的更具体的测试用例提供基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/web_media_player_ms_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -86,8 +86,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -990,7 +992,4 @@ void WebMediaPlayerMSTest::TestRequestFrameCallbackWithVideoFrameMetadata(
   player_->RequestVideoFrameCallback();
 
   EXPECT_CALL(*this, OnReques
-"""
-
-
 ```

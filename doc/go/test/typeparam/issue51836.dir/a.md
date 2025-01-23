@@ -166,15 +166,17 @@ func main() {
 
 这段代码定义了一个简单的泛型结构体 `T`，它可以携带任何类型的信息。它的主要作用是作为 Go 泛型功能的一个基础示例或在某些需要一个可以灵活指定类型的占位符的场景中使用。因为它本身不包含任何字段或逻辑，所以它的功能侧重于类型的抽象和参数化。  考虑到路径 `go/test/typeparam/issue51836.dir/a.go`，很可能这段代码是 Go 语言泛型功能的一个测试用例，用于验证特定场景下的行为，例如处理空结构体的泛型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue51836.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -183,9 +185,4 @@ package a
 
 type T[K any] struct {
 }
-
-"""
-
-
-
 ```

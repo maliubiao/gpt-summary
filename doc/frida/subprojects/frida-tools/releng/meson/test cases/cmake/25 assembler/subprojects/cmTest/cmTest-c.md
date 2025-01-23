@@ -150,7 +150,7 @@ Frida 的作用在于，即使我们不知道 `cmTestArea` 的初始值，也可
 
 总而言之，这个 `cmTest.c` 文件是一个非常基础但重要的测试用例，用于验证 Frida 工具在处理外部变量和简单函数方面的能力，尤其是在与汇编相关的场景下。它为 Frida 的开发和测试提供了基础的验证手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/25 assembler/subprojects/cmTest/cmTest.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdint.h>
 
 extern const int32_t cmTestArea;
@@ -168,7 +170,4 @@ int32_t cmTestFunc(void)
 {
     return cmTestArea;
 }
-
-"""
-
 ```

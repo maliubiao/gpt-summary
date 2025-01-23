@@ -114,11 +114,13 @@ console.log(upperStr); // 输出: HELLO
 
 `builtin-compiler.cc` 是 V8 引擎中一个关键的编译模块，它使用 Turboshaft 编译器将 JavaScript 的内置函数编译成高效的机器码。 这直接影响了 JavaScript 代码的执行速度，因为每次调用内置函数时，执行的都是由这个文件编译生成的优化后的机器码。  Turboshaft 的引入旨在进一步提升这些关键操作的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/builtin-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ Handle<Code> BuildWithTurboshaftAssemblerImpl(
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

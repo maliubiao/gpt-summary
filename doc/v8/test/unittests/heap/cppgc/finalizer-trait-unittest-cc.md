@@ -168,15 +168,17 @@ By following these steps, combining code observation with an understanding of th
 
 总而言之，`v8/test/unittests/heap/cppgc/finalizer-trait-unittest.cc` 这个文件通过一系列单元测试，细致地验证了 `cppgc` 库中 `FinalizerTrait` 组件在处理不同类型的 C++ 类时，如何正确地识别和调用（或不调用）finalizer，从而确保 C++ 垃圾回收的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/finalizer-trait-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc/finalizer-trait-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -297,7 +299,4 @@ TEST(FinalizerTrait, FinalizerForCustomFinalizationMethodInBase) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

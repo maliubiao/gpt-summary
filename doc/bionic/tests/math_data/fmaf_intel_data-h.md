@@ -224,7 +224,7 @@ sys.stdin.read()
 
 这是对 `bionic/tests/math_data/fmaf_intel_data.handroid` 文件功能的归纳，以及它在 Android 系统中的相关性说明。后续部分将深入探讨更多细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/fmaf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -236,8 +236,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -2286,7 +2288,4 @@ static data_1_3_t<float, float, float, float> g_fmaf_intel_data[] = {
   { // Entry 338
     0x1.fffffefffffcp127,
     0x1.ff
-"""
-
-
 ```

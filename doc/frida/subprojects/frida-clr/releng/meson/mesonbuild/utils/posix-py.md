@@ -140,7 +140,7 @@ with BuildDirLock(build_dir): # build_dir 是构建目录的路径
 
 通过理解 `posix.py` 中 `BuildDirLock` 的工作原理，可以帮助用户排查并发构建导致的问题。例如，用户可以先检查是否有遗留的构建进程，或者删除锁文件（不推荐，除非确定没有其他进程在使用）。最佳实践是确保在同一构建目录下，同一时间只有一个 Meson 构建进程在运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/utils/posix.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -182,7 +184,4 @@ class BuildDirLock(BuildDirLockBase):
     def __exit__(self, *args: T.Any) -> None:
         fcntl.flock(self.lockfile, fcntl.LOCK_UN)
         self.lockfile.close()
-
-"""
-
 ```

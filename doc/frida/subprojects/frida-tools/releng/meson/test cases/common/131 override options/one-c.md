@@ -149,7 +149,7 @@ if (Process.platform === 'linux') {
 
 因此，这个简单的 `one.c` 文件虽然自身功能不多，但在 Frida 的测试环境中扮演着重要的角色，用于验证 Frida 处理特定类型函数的能力，并作为开发者学习和调试 Frida 脚本的实践案例。 它也揭示了逆向工程中可能遇到的挑战，例如处理没有符号信息的函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/131 override options/one.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,12 +157,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 static int hidden_func(void) {
     return 0;
 }
-
-"""
-
 ```

@@ -709,7 +709,7 @@ void MacroAssembler::AssertFPCRState(Register fpcr) {
 
   // Settings left to their default values:
   //   - Assert that flush
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/macro-assembler-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/macro-assembler-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -717,10 +717,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
-
-    // Load/stores with immediate offset addressing should have been handled by
+### 源代码
+```cpp
+// Load/stores with immediate offset addressing should have been handled by
     // the caller.
     DCHECK(!IsImmLSScaled(offset, CalcLSDataSizeLog2(op)) && !is_imm_unscaled);
     UseScratchRegisterScope temps(this);
@@ -1717,7 +1718,4 @@ void MacroAssembler::CanonicalizeNaN(const VRegister& dst,
   AssertFPCRState();
 
   // Subtra
-"""
-
-
 ```

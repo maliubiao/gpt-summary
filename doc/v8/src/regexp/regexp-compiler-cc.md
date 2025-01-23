@@ -109,7 +109,7 @@ L2:
 
 `v8/src/regexp/regexp-compiler.cc` 是 V8 引擎中将正则表达式编译成可执行代码的核心组件。它负责构建节点网络、生成代码、管理执行状态、处理回溯和进行优化。它的功能直接影响着 JavaScript 中正则表达式的执行效率和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -117,8 +117,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -972,8 +974,5 @@ inline bool EmitSimpleCharacter(Isolate* isolate, RegExpCompiler* compiler,
   RegExpMacroAssembler* assembler = compiler->macro_assembler();
   bool bound_checked = false;
   if (!preloaded) {
-    assembler->LoadCurrentCharacter(cp_offset, 
-"""
-
-
+    assembler->LoadCurrentCharacter(cp_offset,
 ```

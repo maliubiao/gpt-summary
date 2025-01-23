@@ -322,7 +322,7 @@ Android 的动态链接器 (linker) 负责在应用启动或需要时加载共�
 
 通过以上分析，我们可以对 `bionic/libm/upstream-freebsd/lib/msun/src/s_tanhf.c` 文件的功能、实现细节以及在 Android 系统中的作用有一个全面的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_tanhf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -332,8 +332,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* s_tanhf.c -- float version of s_tanh.c.
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
  */
@@ -388,7 +390,4 @@ tanhf(float x)
 	}
 	return (jx>=0)? z: -z;
 }
-
-"""
-
 ```

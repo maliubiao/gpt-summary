@@ -253,7 +253,7 @@ sys.stdin.read()
 
 总结来说，`arith.handroid` 虽然自身不包含复杂的逻辑，但它通过定义关键的宏，影响着 Android Bionic 库中与算术运算相关的函数的行为，对于确保 Android 平台上的数值计算的一致性和健壮性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/android/include/arith.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -264,8 +264,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -292,7 +294,4 @@ Prompt:
 
 #define INFNAN_CHECK
 #define MULTIPLE_THREADS
-
-"""
-
 ```

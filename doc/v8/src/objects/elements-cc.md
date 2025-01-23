@@ -173,7 +173,7 @@ console.log(typedArray[0]);
 
 总而言之，`v8/src/objects/elements.cc` 的第 1 部分主要定义了 `ElementsAccessor` 的继承结构和一些基础的辅助函数。它为 V8 引擎提供了灵活且高效的机制来管理和操作不同类型的 JavaScript 数组和对象元素。通过使用不同的 `ElementsAccessor` 实现，V8 能够根据对象的特性选择最优的存储和访问方式，从而提升 JavaScript 代码的执行效率。  它奠定了后续各种具体元素访问策略实现的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/elements.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/elements.cc以.tq结尾，那它是个v8 torque源代码，
@@ -181,8 +181,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -931,7 +933,4 @@ class ElementsAccessorBase : public InternalElementsAccessor {
   }
 
   static void ReconfigureImpl(DirectHandle<JSObject> object
-"""
-
-
 ```

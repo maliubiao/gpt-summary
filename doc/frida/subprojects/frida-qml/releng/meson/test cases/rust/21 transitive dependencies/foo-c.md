@@ -105,7 +105,7 @@ By following these steps, we can systematically analyze the code snippet and gen
 
 总而言之，`foo.c` 虽然是一个简单的 C 程序，但它在一个更复杂的上下文中扮演着重要的角色，特别是在动态分析工具的开发和测试中，以及在涉及跨语言编程的应用的逆向工程中。它展示了 C 代码如何调用其他语言编写的函数，并提供了一个可用于测试和调试的简单目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/rust/21 transitive dependencies/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdint.h>
 
 uint32_t foo_rs(void);
@@ -123,7 +125,4 @@ int main(void)
 {
     return foo_rs() == 42 ? 0 : 1;
 }
-
-"""
-
 ```

@@ -182,7 +182,7 @@ const replaced = SIMD.Float32x4.replaceLane(a, 1, 10.0);
 
 作为系列的一部分，`v8/src/compiler/turboshaft/operations.h` 的这一部分主要关注 **定义 Turboshaft 编译器中使用的各种 SIMD (单指令多数据) 操作的抽象表示**。它详细列出了 128 位和 256 位 SIMD 向量的各种操作类型（如算术、逻辑、位操作、内存访问、lane 操作等），并为每种操作定义了其属性，例如输入输出类型和潜在的副作用。这部分是 Turboshaft 编译器理解和优化 SIMD 代码的关键基础。结合上下文，可以推断出系列的其他部分可能涵盖了其他类型的操作、控制流、数据类型等等，共同构成了 Turboshaft 编译器的完整操作集。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/operations.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/operations.h以.tq结尾，那它是个v8 torque源代码，
@@ -190,8 +190,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第10部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 (F16x8Qfms)
 
 #define FOREACH_SIMD_128_TERNARY_OPCODE(V) \
@@ -1154,7 +1156,4 @@ struct Simd256ShufpsOp : FixedArityOperationT<2, Simd256ShufpsOp> {
   void Validate(const Graph& graph) const {}
 
   auto options() const { return std::tuple{control
-"""
-
-
 ```

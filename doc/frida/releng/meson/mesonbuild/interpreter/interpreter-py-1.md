@@ -83,7 +83,7 @@ I need to synthesize these functionalities into a concise summary.
 
 **总结来说，这部分代码主要负责 Frida 构建系统的核心功能，包括管理依赖项、执行外部命令（这与逆向工程密切相关）、处理子项目和管理构建选项。它体现了构建系统如何组织和控制软件的编译和链接过程，而这些信息对于理解和分析目标软件至关重要。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -92,8 +92,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 not v:
                 FeatureNew.single_use('empty variable value in declare_dependency', '1.4.0', self.subproject, location=node)
             try:
@@ -717,7 +719,4 @@ not v:
             # vs backend version we need. But after setting default_options in case
             # the project sets vs backend by default.
             backend = self.coredata.get_option(OptionKey(
-"""
-
-
 ```

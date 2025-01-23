@@ -214,16 +214,18 @@ Now, I can structure the response based on these identified functionalities.
 
 总而言之，这部分代码是 `InspectorPageAgent` 中非常核心的一部分，它提供了丰富的接口，使得开发者工具能够深入了解和操控页面的各种状态和行为，从而实现强大的调试和检查功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_page_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- url,
+### 源代码
+```cpp
+url,
     const String& query,
     bool case_sensitive,
     bool is_regex,
@@ -1049,7 +1051,4 @@ protocol::Response InspectorPageAgent::getLayoutMetrics(
   // both browser ctrl+/- zoom as well as the device scale factor for screen
   // density. Note: we don't account for pinch-zoom, even though it scales a
   // CSS pixel, since "d
-"""
-
-
 ```

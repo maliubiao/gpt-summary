@@ -273,7 +273,7 @@ sys.stdin.read()
 
 请注意，直接 Hook Bionic 内部的 MTE 相关函数可能比较复杂，因为这些函数可能没有公开的符号，并且其实现细节可能会因 Android 版本而异。但通过 Hook 标准的 libc 函数和系统调用，仍然可以有效地理解 MTE 在更高层次上的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/memtag_stack_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -284,8 +284,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2022 The Android Open Source Project
  *
@@ -341,7 +343,4 @@ INSTANTIATE_TEST_SUITE_P(
       if (std::get<1>(info.param)) s += "_static";
       return s;
     });
-
-"""
-
 ```

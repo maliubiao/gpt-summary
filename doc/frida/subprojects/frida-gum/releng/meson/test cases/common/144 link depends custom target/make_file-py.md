@@ -112,7 +112,7 @@ python3 make_file.py output.txt
 
 `make_file.py` 是一个非常简单的辅助脚本，用于在 Frida 的测试环境中创建一个空的占位文件。虽然它本身没有复杂的逻辑或直接的逆向操作，但它在测试 Frida 构建系统中处理链接依赖和自定义目标的能力方面发挥着作用。通过分析其功能和上下文，我们可以更好地理解 Frida 的构建过程和潜在的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/144 link depends custom target/make_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,14 +120,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
 with open(sys.argv[1], 'w') as f:
     print('# this file does nothing', file=f)
-
-"""
-
 ```

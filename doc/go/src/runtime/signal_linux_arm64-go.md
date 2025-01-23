@@ -174,7 +174,7 @@ exit status 1
 
 总而言之，`go/src/runtime/signal_linux_arm64.go` 这部分代码是 Go 语言运行时处理操作系统信号的关键底层实现，它提供了访问和操作信号发生时 CPU 状态的能力，使得 Go 运行时能够实现诸如 panic 处理、goroutine 调度等重要功能。用户代码通常不直接操作这些底层结构，而是通过 `os/signal` 包来注册和处理信号。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_linux_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -182,8 +182,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -255,9 +257,4 @@ func (c *sigctxt) set_r28(x uint64) { c.regs().regs[28] = x }
 func (c *sigctxt) set_sigaddr(x uint64) {
 	*(*uintptr)(add(unsafe.Pointer(c.info), 2*goarch.PtrSize)) = uintptr(x)
 }
-
-"""
-
-
-
 ```

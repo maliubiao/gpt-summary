@@ -129,11 +129,13 @@ largeArray = null;
 
 `memory-reducer.cc` 中实现的 `MemoryReducer` 是 V8 引擎中一个关键的内存管理组件。它通过智能地触发增量标记 GC，在不显著影响 JavaScript 执行性能的前提下，努力保持较低的内存占用，从而提升 JavaScript 应用程序的整体性能和资源利用率。 JavaScript 开发者虽然不能直接控制 `MemoryReducer` 的行为，但他们的代码编写方式（例如：避免内存泄漏，及时释放不再需要的对象）会间接地影响 `MemoryReducer` 的工作效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/memory-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -373,7 +375,4 @@ int MemoryReducer::MaxNumberOfGCs() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

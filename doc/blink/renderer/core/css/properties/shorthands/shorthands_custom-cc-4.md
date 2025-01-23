@@ -121,7 +121,7 @@ By carefully considering each shorthand and its nuances, I can provide a compreh
 
 作为系列文章的最后一部分，该文件 `shorthands_custom.cc` 集中展示了 Blink 引擎中处理自定义 CSS 属性简写的具体实现细节。它通过提供专门的解析和计算值生成逻辑，确保了浏览器能够正确理解和应用这些复杂的 CSS 简写，从而实现了开发者预期的样式效果。该文件是 Blink 引擎 CSS 解析和渲染流程中的重要组成部分，体现了引擎对 CSS 标准的深入理解和高效实现。它弥补了通用简写处理逻辑的不足，为一些需要特殊处理的简写属性提供了灵活的解决方案。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/shorthands/shorthands_custom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ties) const {
   return ParseTimelineShorthand(CSSPropertyID::kScrollTimeline,
                                 scrollTimelineShorthand(), important, stream,
@@ -879,8 +881,4 @@ const CSSValue* WhiteSpace::CSSValueFromComputedStyleInternal(
 
 }  // namespace css_shorthand
 }  // namespace blink
-
-"""
-
-
 ```

@@ -161,7 +161,7 @@ This part of `macro-assembler-mips64.cc` focuses on providing a diverse set of l
 
 Essentially, it lays down fundamental building blocks that higher-level parts of the V8 compiler utilize to generate efficient machine code for executing JavaScript.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/macro-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/macro-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t Runtime::Function* function = Runtime::FunctionForId(fid);
   DCHECK_EQ(1, function->result_size);
   if (function->nargs >= 0) {
@@ -1140,7 +1142,4 @@ void MacroAssembler::CallJSFunction(Register function_object) {
   Call(code);
 #else
   Ld(code, FieldMemOperand(func
-"""
-
-
 ```

@@ -79,11 +79,13 @@ testStreamingCompilationCache();
 
 在上述 JavaScript 示例中，当 `WebAssembly.compile` 或 `WebAssembly.compileStreaming` 被调用多次并传入相同的模块字节码时，V8引擎内部的编译缓存机制（正如 C++ 测试代码所验证的那样）会尝试重用之前编译的结果，从而提高性能。 C++ 测试代码正是用来确保这种缓存机制在各种情况下都能正确工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-compilation-cache.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -398,7 +400,4 @@ UNINITIALIZED_TEST(TwoIsolatesShareNativeModuleWithPku) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -182,15 +182,17 @@ By following this structured thought process, combining code analysis with an un
 
 `idl_types_test.cc` 是 Blink 引擎中一个重要的测试文件，它通过编译时断言来确保 IDL 类型到 C++ 类型的映射是正确的。 这对于保证 JavaScript 与 Blink 内部 C++ 代码的正确交互至关重要，并间接地影响了 HTML 和 CSS 功能的正常运行。 虽然普通用户不会直接接触这个文件，但它的存在有助于防止由类型不匹配引起的各种 Web 平台问题。 当出现与 Web API 交互相关的错误时，开发者可能会将其作为调试的起点之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/idl_types_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -360,7 +362,4 @@ static_assert(std::is_same<IDLNullable<V8UnionStringOrStringSequence>::ImplType,
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

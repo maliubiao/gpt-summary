@@ -188,11 +188,13 @@ generator.next(); // 输出: After yield
 
 总而言之，`builtins-generator-gen.cc` 文件是 V8 引擎中实现 JavaScript Generator 功能的核心组成部分，它通过 C++ 代码和 CodeStubAssembler 框架高效地实现了生成器的方法和状态管理，使得 JavaScript 中的生成器能够正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-generator-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -508,7 +510,4 @@ TF_BUILTIN(ResumeGeneratorBaseline, GeneratorBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

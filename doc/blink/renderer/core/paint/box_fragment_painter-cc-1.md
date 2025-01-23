@@ -176,7 +176,7 @@ This part of the `BoxFragmentPainter` focuses on:
 
 这部分 `BoxFragmentPainter` 的代码专注于 **绘制 `BoxFragment` 的内容和装饰**。它根据元素的类型（内联、块级、浮动）、布局模式（分页、多列）和 CSS 样式，精细地控制着各种视觉元素的渲染过程，包括文本、背景、边框、阴影、遮罩以及多列布局中的分隔线。 这部分代码是 Blink 渲染引擎核心绘制流程的关键组成部分，确保了网页内容的正确呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/box_fragment_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 gment with inline children, without a paint fragment. See:
   // http://crbug.com/1022545
   if (!items_ || layout_object->NeedsLayout()) {
@@ -950,8 +952,4 @@ void BoxFragmentPainter::PaintColumnRules(const PaintInfo& paint_info,
                                               box_fragment_.Borders().right -
                                               box_fragment_.Padding().right -
                                               box_fragment_.OwnerLayoutBox()
-                
-"""
-
-
 ```

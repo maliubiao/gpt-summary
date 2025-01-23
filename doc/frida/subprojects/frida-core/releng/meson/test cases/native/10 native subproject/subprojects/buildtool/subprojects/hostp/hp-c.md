@@ -99,7 +99,7 @@ By following these steps, we can analyze even a seemingly trivial piece of code 
 
 `hp.c` 作为一个极其简单的 C 源文件，其直接功能有限，主要是作为 Frida 构建系统中的一个基本测试用例和占位符。它的存在意义在于验证构建环境的正确性，并为更复杂的 Frida 功能构建奠定基础。用户通常不会直接操作它，但在调试 Frida 构建过程或理解 Frida 代码结构时可能会遇到它。理解 `hp.c` 的作用，需要结合 Frida 的整体架构和构建流程来看待。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/native/10 native subproject/subprojects/buildtool/subprojects/hostp/hp.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,12 +107,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

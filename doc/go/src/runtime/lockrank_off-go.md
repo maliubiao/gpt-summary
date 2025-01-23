@@ -229,7 +229,7 @@ func main() {
 
 `go/src/runtime/lockrank_off.go` 提供了在 **静态锁排序功能被禁用时** Go 运行时的锁相关操作的实现。它通过定义空的结构体和提供无实际操作的函数，使得当锁排序功能不启用时，不会引入额外的性能开销。 开发者需要注意，默认情况下静态锁排序是禁用的，需要显式地通过构建标签启用才能享受其提供的死锁预防能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/lockrank_off.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -237,8 +237,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -312,9 +314,4 @@ func assertWorldStopped() {
 //go:nosplit
 func assertWorldStoppedOrLockHeld(l *mutex) {
 }
-
-"""
-
-
-
 ```

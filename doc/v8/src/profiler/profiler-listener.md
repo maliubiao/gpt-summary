@@ -106,11 +106,13 @@ polymorphicFunction("hello");
 
 `profiler-listener.cc` 是 V8 引擎中一个至关重要的组件，它像一个忠实的记录员，捕捉着 JavaScript 代码在执行过程中发生的各种关键事件。 这些事件信息对于理解 JavaScript 代码的执行行为、进行性能瓶颈分析和优化至关重要。 通过 JavaScript 的执行，我们可以间接地触发 `ProfilerListener` 中定义的各种事件处理逻辑，从而生成用于性能分析的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/profiler-listener.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -557,7 +559,4 @@ void ProfilerListener::AttachDeoptInlinedFrames(DirectHandle<Code> code,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -428,7 +428,7 @@ sys.stdin.read()
 
 这个 Frida 示例可以帮助你追踪哪些 Android 组件正在使用这个协议，以及它们是如何与内核驱动进行交互的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/hsi/cs-protocol.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -439,8 +439,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -504,7 +506,4 @@ struct cs_mmap_config_block {
 #define CS_GET_IF_VERSION CS_IOR(30, unsigned int)
 #define CS_CONFIG_BUFS CS_IOW(31, struct cs_buffer_config)
 #endif
-
-"""
-
 ```

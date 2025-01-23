@@ -185,7 +185,7 @@ By following this structured approach, combining code analysis with knowledge of
 
 `frida/subprojects/frida-gum/tests/core/apiresolver.c` 是 Frida 框架中一个非常重要的测试文件，它详细测试了 `GumApiResolver` 组件的各种 API 解析功能。理解这个文件的内容，可以帮助我们更好地理解 Frida 的工作原理，以及如何在逆向工程中利用 Frida 来获取目标进程的内部信息。它也为 Frida 的开发者提供了一个确保代码质量和功能正确性的重要手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/apiresolver.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016-2023 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2023 Håvard Sørbø <havard@hsorbo.no>
@@ -598,7 +600,4 @@ check_linker_export (const GumApiDetails * details,
 }
 
 #endif
-
-"""
-
 ```

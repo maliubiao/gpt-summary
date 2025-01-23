@@ -95,7 +95,7 @@ This file being part of the test suite means a user would likely encounter it wh
 
 In summary, while the `some.c` file itself is incredibly basic, its context within Frida's test suite makes it a crucial element for verifying the core functionalities that reverse engineers rely on when using Frida to interact with dynamic libraries. It serves as a simple, controlled environment to ensure Frida's ability to find, hook, and potentially modify functions in target processes.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/130 include order/sub1/some.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,15 +103,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   __declspec(dllexport)
 #endif
 int somefunc(void) {
   return 1984;
 }
-
-"""
-
 ```

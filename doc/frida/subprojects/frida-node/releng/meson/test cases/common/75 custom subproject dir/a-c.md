@@ -138,7 +138,7 @@ char func_c(void) {
 
 因此，到达 `a.c` 这个源代码文件的过程，通常是因为一个更高层次的测试或集成测试失败了，需要开发者深入到具体的代码层面进行分析和调试。文件路径 `frida/subprojects/frida-node/releng/meson/test cases/common/` 明确表明了这是一个测试用例，其目的是验证 Frida 相关组件的功能是否正常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/75 custom subproject dir/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<assert.h>
 char func_b(void);
 char func_c(void);
@@ -161,7 +163,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

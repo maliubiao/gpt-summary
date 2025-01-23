@@ -184,15 +184,17 @@ Finally, organize the gathered information into a clear and structured answer, c
 
 通过这样的调试过程，开发者可以确认浏览器是否因为检测到无效的头部格式而导致了问题，并进一步定位是服务端生成了错误的头部，还是浏览器在解析头部时出现了问题。 `header_properties_test.cc` 作为测试文件，确保了这些头部验证函数的正确性，是保证浏览器网络功能稳定性的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/balsa/header_properties_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/balsa/header_properties.h"
 
 #include "quiche/common/platform/api/quiche_test.h"
@@ -316,7 +318,4 @@ TEST(HeaderPropertiesTest, HasInvalidPathChar) {
 
 }  // namespace
 }  // namespace quiche::header_properties::test
-
-"""
-
 ```

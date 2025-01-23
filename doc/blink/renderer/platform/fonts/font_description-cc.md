@@ -135,14 +135,16 @@ Let's break down the thought process for analyzing the `font_description.cc` fil
 
 总而言之，`font_description.cc` 文件中定义的 `FontDescription` 类是 Blink 引擎处理字体信息的核心，它连接了 CSS 样式、HTML 结构和 JavaScript 操作，并为最终的文本渲染提供了必要的数据基础。理解 `FontDescription` 的功能有助于理解浏览器如何处理网页中的字体样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_description.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Nicholas Shanks <contact@nickshanks.com>
  * Copyright (C) 2008 Apple Inc. All rights reserved.
@@ -923,7 +925,4 @@ String FontDescription::ToString() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -127,14 +127,16 @@ While web developers don't directly interact with the C++ code, understanding it
 
 **In summary, `PickerIndicatorElement` is a crucial internal component in Blink responsible for bridging the gap between HTML date/time input elements and the browser's native date/time picker UI, handling user interactions, and ensuring accessibility.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/picker_indicator_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -320,7 +322,4 @@ void PickerIndicatorElement::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

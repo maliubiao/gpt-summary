@@ -114,11 +114,13 @@ onmessage = function(e) {
 
 总而言之，`page-allocator.cc` 虽然不直接暴露给 JavaScript 开发者，但它是 V8 引擎高效执行 JavaScript 代码的基石之一，特别是在内存管理和 JIT 编译方面发挥着关键作用。它通过提供一个抽象层，屏蔽了底层操作系统内存管理的复杂性，使得 V8 的其他组件可以更专注于实现 JavaScript 引擎的核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/page-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -289,7 +291,4 @@ bool PageAllocator::SealPages(void* address, size_t size) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

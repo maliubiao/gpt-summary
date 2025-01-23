@@ -117,7 +117,7 @@ If the image was not in the cache initially:
 
 The `simple_synchronous_entry.cc` file provides the core logic for performing synchronous read, write, open, create, delete, and doom operations on individual entries within Chromium's simple disk cache. It directly interacts with the file system through the `BackendFileOperations` interface and handles metadata management, checksum calculations, and prefetching. This file is a fundamental building block for the browser's caching mechanism, enabling efficient retrieval of web resources.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_synchronous_entry.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -980,7 +982,4 @@ void SimpleSynchronousEntry::WriteSparseData(const SparseRequest& in_entry_op,
   DCHECK(initialized_);
   BackendFileOperations* file_operations = nullptr;
   ScopedFileOperationsBinding binding(this, &
-"""
-
-
 ```

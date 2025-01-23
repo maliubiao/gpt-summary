@@ -93,12 +93,14 @@ console.log(arr[0]); // 触发数组元素访问的优化
 
 总而言之，`js-native-context-specialization.cc` 的第 2 部分在 V8 引擎中扮演着关键的角色，它通过分析和利用类型反馈信息，使得 JavaScript 代码在运行时能够以更高效的方式访问对象属性，从而显著提升整体性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-native-context-specialization.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ,
                                   effect);
       }
@@ -1578,7 +1580,4 @@ JSNativeContextSpecialization::BuildPropertyLoad(
 JSNativeContextSpecialization::ValueEffectControl
 JSNativeContextSpecialization::BuildPropertyTest(
     Node* effect,
-"""
-
-
 ```

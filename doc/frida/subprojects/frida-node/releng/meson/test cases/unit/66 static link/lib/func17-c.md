@@ -153,7 +153,7 @@ This detailed thought process demonstrates how to analyze even a simple piece of
 
 通过查看源代码，用户可以确认函数名是否正确，了解函数的基本功能，从而帮助他们排除 Frida 脚本中的错误，例如拼写错误或模块定位错误。这个简单的例子也说明了即使是测试用例中的代码，在调试过程中也可能作为重要的信息来源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/66 static link/lib/func17.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,13 +161,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func17()
 {
   return 1;
 }
-
-"""
-
 ```

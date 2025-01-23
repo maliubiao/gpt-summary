@@ -170,7 +170,7 @@ else:
 
 总而言之，`interpreter.py` 是 Meson 构建系统的核心组件，负责解释构建定义文件，管理构建过程中的各种任务，包括语言支持、依赖管理、外部程序查找和构建目标定义。对于 Frida 这样的复杂项目，它确保了项目能够正确地构建出可执行的工具和库，而这些工具和库正是逆向工程师进行动态插桩和分析的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 'backend'))
             vsenv = self.coredata.get_option(OptionKey('vsenv'))
             force_vsenv = vsenv or backend.startswith('vs')
@@ -804,7 +806,4 @@ Prompt:
     @typed_kwargs(
         'vcs_tag',
         CT_INPUT_KW.evolve(required
-"""
-
-
 ```

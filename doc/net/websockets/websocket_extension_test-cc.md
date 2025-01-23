@@ -143,15 +143,17 @@ WebSocketExtension extension2("mux");
 
 总而言之，`net/websockets/websocket_extension_test.cc` 文件通过各种测试用例，确保了 `WebSocketExtension` 类能够正确地表示和比较 WebSocket 扩展，并且能够生成正确的字符串表示，这对于保证 WebSocket 扩展协商的正确性至关重要。它与 JavaScript 的 WebSocket API 密切相关，因为 JavaScript 代码中指定的扩展最终会在底层的 C++ 代码中被解析和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_extension_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -223,7 +225,4 @@ TEST(WebSocketExtensionTest, ToString) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

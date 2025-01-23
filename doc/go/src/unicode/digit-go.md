@@ -157,7 +157,7 @@ func main() {
 
 在这个例子中，你可以看到分数 `½` 和罗马数字 `Ⅷ` 都被 `unicode.IsNumber` 认为是数字，但 `unicode.IsDigit` 认为它们不是十进制数字。  因此，在使用时需要根据具体的需求选择合适的判断函数。 如果只需要判断是否为我们通常理解的 0-9 这样的数字，那么 `IsDigit` 是合适的。 如果需要判断更广泛意义上的数字，则应该使用 `IsNumber`。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/unicode/digit.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -165,8 +165,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -180,9 +182,4 @@ func IsDigit(r rune) bool {
 	}
 	return isExcludingLatin(Digit, r)
 }
-
-"""
-
-
-
 ```

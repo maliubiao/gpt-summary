@@ -179,15 +179,17 @@ By following these steps, including the self-correction, we can arrive at a comp
 
 总而言之，`v8/src/compiler/backend/s390/instruction-codes-s390.h` 是 V8 编译器后端在 s390 架构上生成机器码的关键组成部分，它定义了用于表示各种机器指令的符号化操作码，这些操作码直接关系到 JavaScript 代码的执行效率和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/instruction-codes-s390.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/s390/instruction-codes-s390.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -618,7 +620,4 @@ namespace compiler {
 }  // namespace v8
 
 #endif  // V8_COMPILER_BACKEND_S390_INSTRUCTION_CODES_S390_H_
-
-"""
-
 ```

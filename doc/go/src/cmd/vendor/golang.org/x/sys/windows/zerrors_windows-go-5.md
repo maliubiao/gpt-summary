@@ -163,7 +163,7 @@ func main() {
 
 作为 `go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go` 文件的第 6 部分，这段代码的主要功能是 **定义了与 OLE (Object Linking and Embedding), 剪贴板, Moniker, COM (Component Object Model), 事件, 触摸笔输入 (TPC), 事务 (XACT), 上下文 (CONTEXT), 以及一些 OLE 相关的成功状态码的常量**。这些常量用于表示在 Windows 系统中执行相关操作时可能遇到的特定错误和状态。考虑到这是一个大型错误码定义文件的分段，可以推测整个 `zerrors_windows.go` 文件的目标是为 Go 语言在 Windows 平台上进行系统编程提供详尽的错误码支持，方便开发者进行精确的错误识别和处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -171,8 +171,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第6部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 BJ_E_FIRST                                                            syscall.Errno = 0x80040180
 	OLEOBJ_E_LAST                                                             syscall.Errno = 0x8004018F
 	OLEOBJ_S_FIRST                                                            syscall.Errno = 0x00040180
@@ -815,10 +817,5 @@ BJ_E_FIRST                                                            syscall.Er
 	SEC_E_INVALID_PARAMETER                                                   Handle        = 0x8009035D
 	SEC_E_DELEGATION_POLICY                                                   Handle        = 0x8009035E
 	SEC_E_POLICY_NLTM_ONLY                                                    Handle        = 0x8009035F
-	SEC_I_NO_RENEGOTIATION                                  
-"""
-
-
-
-
+	SEC_I_NO_RENEGOTIATION
 ```

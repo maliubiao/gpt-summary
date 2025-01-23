@@ -96,15 +96,17 @@ Response: My thinking process to analyze the provided C++ unittest file for the 
 
 总而言之，这个 `frame_scheduler_impl_unittest.cc` 文件的第一部分主要侧重于 **`FrameSchedulerImpl` 的基础功能测试，包括任务队列管理、页面可见性相关的节流、暂停/恢复、以及与时间相关的操作**。它通过模拟不同的场景和状态，验证 `FrameSchedulerImpl` 是否按照预期的方式调度和执行任务，为 Blink 引擎的稳定运行提供了保障。它也涵盖了一些与 JavaScript 定时器和页面生命周期相关的关键功能测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/frame_scheduler_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1769,7 +1771,4 @@ class FrameSchedulerImplLowPriorityAsyncScriptExecutionTest
 INSTANTIATE_TEST_SUITE_P(All,
                          FrameSchedulerImplLowPriorityAsyncScriptExecutionTest,
                          testing::Valu
-"""
-
-
 ```

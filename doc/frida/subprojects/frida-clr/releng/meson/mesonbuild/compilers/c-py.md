@@ -182,7 +182,7 @@ add_executable('myprogram', 'main.c')
 
 这个 Python 源代码文件的主要功能是**定义和管理 Meson 构建系统中支持的各种 C 语言编译器**。它为不同的 C 编译器提供了统一的接口，并处理了每个编译器特定的选项、参数和行为，使得 Meson 能够以一致的方式与各种 C 编译器进行交互，从而实现 C 语言项目的跨平台构建。它还涉及到 C 语言标准的处理和编译器警告级别的配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/c.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 
@@ -956,7 +958,4 @@ class MetrowerksCCompilerARM(MetrowerksCompiler, CCompiler):
         return args
 
 class MetrowerksCCompilerEmbeddedPowerPC(Metrower
-"""
-
-
 ```

@@ -143,7 +143,7 @@ If you're debugging Frida itself or a custom Frida gadget and suspect issues wit
 
 In summary, `gumx86relocator.c` is a low-level, but vital, component of Frida that empowers its dynamic instrumentation capabilities by ensuring that code moved around in memory continues to execute correctly. It embodies core reverse engineering principles and interacts with fundamental aspects of the target architecture and operating system.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/arch-x86/gumx86relocator.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -907,7 +909,4 @@ gum_x86_call_try_parse_get_pc_thunk (cs_insn * insn,
     *pc_reg = (GumX86Reg) ((p[1] & 0x38) >> 3);
   return TRUE;
 }
-
-"""
-
 ```

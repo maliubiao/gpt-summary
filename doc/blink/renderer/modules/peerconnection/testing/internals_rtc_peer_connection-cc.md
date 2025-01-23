@@ -123,15 +123,17 @@ Initially, I might have focused too much on the direct implementation details. H
 
 总而言之，`internals_rtc_peer_connection.cc` 是一个测试工具箱，它提供了一些特殊的接口，让测试代码能够更好地探索和验证 `RTCPeerConnection` 的内部运作机制。它与 JavaScript、HTML 的关系在于，它所测试的功能是 WebRTC 的核心组成部分，最终会被 JavaScript 代码在网页上使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/testing/internals_rtc_peer_connection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ InternalsRTCPeerConnection::waitForPeerConnectionDispatchEventsTaskCreated(
 }
 
 }  // namespace blink
-
-"""
-
 ```

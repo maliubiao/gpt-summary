@@ -132,14 +132,16 @@ This iterative process of understanding the code's purpose, dissecting its compo
 
 总之，`css_grid_template_property_interpolation_type.cc` 文件在 Chromium Blink 引擎中扮演着关键角色，它确保了 CSS Grid 布局的 `grid-template-columns` 和 `grid-template-rows` 属性在动画过程中能够平滑过渡，但同时也需要开发者理解其内部的插值逻辑，特别是对于命名网格线的处理方式，以避免产生不符合预期的动画效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_grid_template_property_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -463,7 +465,4 @@ void CSSGridTemplatePropertyInterpolationType::Composite(
 }
 
 }  // namespace blink
-
-"""
-
 ```

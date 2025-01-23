@@ -162,7 +162,7 @@ assignment_node = builder.assign(string_node, variable_name)
 
 总而言之，`frida/releng/meson/mesonbuild/cargo/builder.py` 是 Frida 项目中用于辅助生成 Meson 构建系统 AST 的工具，它简化了从程序中创建 Meson 代码结构的过程，这在需要动态构建逻辑的场景下非常有用，尤其是在与像 Cargo 这样的外部构建工具集成时。虽然它不直接执行逆向操作，但它是支持 Frida 功能实现的构建基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/cargo/builder.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2022-2023 Intel Corporation
 
@@ -410,7 +412,4 @@ class Builder:
         varids = [self.identifier(i) for i in varnames]
         commas = [self._symbol(',') for i in range(len(varnames) - 1)]
         return mparser.ForeachClauseNode(self._symbol('foreach'), varids, commas, self._symbol(':'), items, block, self._symbol('endforeach'))
-
-"""
-
 ```

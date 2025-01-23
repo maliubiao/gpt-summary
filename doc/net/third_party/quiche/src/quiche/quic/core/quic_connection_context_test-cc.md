@@ -184,15 +184,17 @@ logAction("Background task"); // 没有用户上下文
 
 总而言之，`quic_connection_context_test.cc` 这个文件通过一系列测试用例，验证了 QUIC 协议中用于管理连接上下文的关键机制的正确性，这对于确保日志记录和其他依赖于连接上下文的操作能够正常工作至关重要。开发者在调试相关问题时，可以通过阅读和理解这个测试文件，更好地理解上下文切换的原理，并作为线索来定位实际代码中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_context_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -370,7 +372,4 @@ TEST_F(QuicConnectionContextTest, TestAlternatingSwitch) {
 
 }  // namespace
 }  // namespace quic::test
-
-"""
-
 ```

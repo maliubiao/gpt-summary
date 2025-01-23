@@ -100,7 +100,7 @@ func main() {
 
 总而言之，`go/src/math/exp_asm.go` 这段代码为 `amd64`、`arm64` 和 `s390x` 架构提供了性能优化的指数函数实现，并通过 `math.Exp` 函数对外提供服务，开发者无需关心底层的具体实现细节。它的存在是为了提高在这些常见服务器和桌面架构上的数学运算效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/exp_asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -108,8 +108,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -121,9 +123,4 @@ package math
 const haveArchExp = true
 
 func archExp(x float64) float64
-
-"""
-
-
-
 ```

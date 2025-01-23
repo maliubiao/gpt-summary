@@ -188,14 +188,16 @@ console.log(str.startsWith(" ", 11)); // 输出: false
 
 总而言之，这段 Torque 代码精确地实现了 JavaScript 中 `String.prototype.startsWith()` 方法的功能，包括参数校验、类型转换和核心的子字符串比较逻辑。理解这段代码有助于深入理解 V8 引擎是如何实现 JavaScript 内置方法的，并能帮助开发者避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/string-startswith.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ transitioning javascript builtin StringPrototypeStartsWith(
   return Convert<Boolean>(IsSubstringAt(string, searchStr, Signed(start)));
 }
 }
-
-"""
-
 ```

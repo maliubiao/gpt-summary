@@ -147,15 +147,17 @@ func main() {
 
 `go/test/fixedbugs/issue6703a.go` 是 Go 编译器用来测试其初始化循环检测功能的代码。它通过一个简单的例子展示了当一个全局变量的初始化依赖于一个调用自身（直接或间接）的函数时会发生什么。Go 编译器能够有效地捕获这类错误，防止程序在运行时出现未定义的行为。开发者需要注意避免在全局变量初始化时引入循环依赖，以确保代码的正确性和可预测性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6703a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -172,9 +174,4 @@ func fx() int {
 }
 
 var x = fx // ERROR "initialization cycle|depends upon itself"
-
-"""
-
-
-
 ```

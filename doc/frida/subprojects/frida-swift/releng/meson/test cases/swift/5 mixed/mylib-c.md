@@ -182,7 +182,7 @@ Frida 的逻辑推理更多体现在其 hook 机制上：
 
 总而言之，这个简单的 `mylib.c` 文件虽然自身功能简单，但在 Frida 的上下文中，成为了一个用于测试和演示 Frida 功能的重要组成部分，特别是在跨语言的动态分析和逆向场景中。它帮助验证 Frida 是否能够正确地 hook 和操作 C 代码，以及与 Swift 代码的交互是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/swift/5 mixed/mylib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,14 +190,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"mylib.h"
 
 int getNumber() {
     return 42;
 }
-
-"""
-
 ```

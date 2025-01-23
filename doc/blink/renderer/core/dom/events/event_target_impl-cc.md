@@ -181,15 +181,17 @@ By following this structured thought process, combining code analysis with an un
 
 `event_target_impl.cc` 文件虽然代码量不大，但它在 Blink 渲染引擎的事件处理机制中扮演着至关重要的基础角色。它为所有能够接收事件的对象提供了共享的基础功能，使得 JavaScript 事件处理能够顺利进行。理解这个文件有助于深入理解浏览器事件机制的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/events/event_target_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ EventTargetImpl::EventTargetImpl(ScriptState* script_state)
     : ExecutionContextClient(ExecutionContext::From(script_state)) {}
 
 }  // namespace blink
-
-"""
-
 ```

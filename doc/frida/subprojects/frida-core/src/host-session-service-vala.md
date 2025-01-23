@@ -121,7 +121,7 @@ inject_library(1234, "/path/to/library.so")
    - Frida 处理会话提供者的可用性、会话的断开、子进程的状态变化等信号和事件。
 
 通过以上步骤，用户可以逐步使用 Frida 进行动态插桩和调试。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/host-session-service.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class HostSessionService : Object {
 		private Gee.ArrayList<HostSessionBackend> backends = new Gee.ArrayList<HostSessionBackend> ();
@@ -1210,7 +1212,4 @@ namespace Frida {
 			private Promise<bool> close_request = new Promise<bool> ();
 
 			public AgentEntry (uint pid, Object? transport, DBusConnection? connection, AgentSessionPro
-"""
-
-
 ```

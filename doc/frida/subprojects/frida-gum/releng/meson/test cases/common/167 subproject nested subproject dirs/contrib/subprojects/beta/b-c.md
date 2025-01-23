@@ -178,7 +178,7 @@ if (func2Address) {
 
 总而言之，这个 `b.c` 文件本身是一个非常简单的示例，但在 Frida 的上下文中，它代表了可以被动态 instrumentation 的基本单元。理解这样的简单示例有助于理解 Frida 如何在更复杂的场景下工作，以及逆向工程师如何利用 Frida 来分析和修改程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/167 subproject nested subproject dirs/contrib/subprojects/beta/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -202,7 +204,4 @@ Prompt:
 int DLL_PUBLIC func2(void) {
     return 42;
 }
-
-"""
-
 ```

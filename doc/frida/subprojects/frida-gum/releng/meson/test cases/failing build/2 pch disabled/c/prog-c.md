@@ -103,7 +103,7 @@ Here's a breakdown of the thinking process to arrive at the analysis of `prog.c`
 
 总而言之，`prog.c` 并非一个功能复杂的程序，它的核心价值在于作为一个测试用例，用于验证 Frida 的构建系统在特定条件下的行为，并帮助开发者发现和修复构建系统中的潜在问题。它通过故意引入一个常见的编程错误来模拟实际开发中可能出现的情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing build/2 pch disabled/c/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // No includes here, they need to come from the PCH
 
 void func() {
@@ -122,7 +124,4 @@ void func() {
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

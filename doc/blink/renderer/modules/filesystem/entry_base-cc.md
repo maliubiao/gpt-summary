@@ -129,15 +129,17 @@ During the process, I might realize that some initial assumptions are incorrect 
 
 总而言之，`entry_base.cc` 中定义的 `EntryBase` 类是 Blink 文件系统 API 的基础，它负责表示文件系统中的条目，并提供获取条目 URL 等基本功能。它通过 JavaScript File API 与网页进行交互，并在文件拖放等用户操作中发挥作用。理解 `EntryBase` 的功能对于调试与文件系统相关的 Web 应用问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/filesystem/entry_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -201,7 +203,4 @@ void EntryBase::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

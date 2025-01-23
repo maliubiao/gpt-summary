@@ -136,7 +136,7 @@ I need to:
 
 总而言之，这部分代码主要关注 V8 引擎中关于 Turboshaft 和 WebAssembly 这两个重要组成部分的配置选项。通过这些标志，开发者可以精细地控制 V8 如何编译和执行 JavaScript 以及 WebAssembly 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/flags/flag-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/flags/flag-definitions.h以.tq结尾，那它是个v8 torque源代码，
@@ -144,8 +144,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 .
 DEFINE_NEG_NEG_IMPLICATION(turboshaft, turbofan)
 
@@ -776,7 +778,4 @@ DEFINE_IMPLICATION(cppgc_young_generation, minor_ms)
 DEFINE_NEG_IMPLICATION(cppgc_young_generation, reclaim_unmodified_wrappers)
 DEFINE_BOOL(optimize_gc_for_battery, false, "optimize GC for battery")
 #if defined(V8_ATOMIC_OBJECT_
-"""
-
-
 ```

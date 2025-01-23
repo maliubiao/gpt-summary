@@ -207,7 +207,7 @@ func main() {
 
 总而言之，`go/src/internal/fuzz/mem.go` 中的 `sharedMem` 结构体是 Go 语言模糊测试中用于高效地在协调器和工作进程之间传递测试输入数据的关键基础设施。使用者需要理解共享内存的特性，并注意潜在的并发问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/fuzz/mem.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -215,8 +215,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -355,9 +357,4 @@ func (m *sharedMem) setValueLen(n int) {
 // mutator can increase input length. Only the coordinator will be able to
 // do it, since we'll need to send a message to the worker telling it to
 // remap the file.
-
-"""
-
-
-
 ```

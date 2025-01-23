@@ -148,14 +148,16 @@ This detailed thought process, going from the general purpose of the file to the
 
 总而言之，`layout_svg_resource_linear_gradient.cc` 是 Blink 引擎中一个关键的组件，负责将 SVG 中定义的线性渐变信息转化为实际的渲染指令，它直接关联到 HTML、CSS 和 JavaScript，共同实现了网页上丰富的视觉效果。理解其功能有助于开发者更好地理解和调试 SVG 渐变相关的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/layout_svg_resource_linear_gradient.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) Research In Motion Limited 2010. All rights reserved.
@@ -230,7 +232,4 @@ scoped_refptr<Gradient> LayoutSVGResourceLinearGradient::BuildGradient() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

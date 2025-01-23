@@ -169,7 +169,7 @@ By following these steps, I can analyze the code and generate a comprehensive an
 
 `blink/renderer/core/css/rule_set_test.cc` 的主要功能是 **对 `RuleSet` 类进行全面的单元测试**。它覆盖了规则的添加、查找、复杂选择器的处理、特殊伪类的处理、性能测试以及错误处理等方面。 这些测试确保了 `RuleSet` 类作为 Blink 引擎中关键的 CSS 规则管理组件能够正确、高效地工作，从而保证网页样式的正确渲染和良好的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/rule_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2014, Google Inc. All rights reserved.
  *
@@ -1114,7 +1116,4 @@ class RuleSetCascadeLayerTest : public SimTest {
             ->sheet()
             ->Contents()
             ->Ensur
-"""
-
-
 ```

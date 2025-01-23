@@ -105,7 +105,7 @@ By following this structured approach, breaking down the problem into smaller pa
 
 这部分代码主要关注于定义与内核交互的接口，而不是实现具体的 libc 函数或动态链接逻辑。在 Android 系统中，更上层的组件（例如，Android 运行时 ART 或 Native 代码）会使用这些定义来通过系统调用与 KVM 模块通信，从而实现虚拟化的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/kvm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -117,8 +117,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 TY_LOG_INITIALLY_SET (1 << 1)
 #ifndef KVM_DIRTY_LOG_PAGE_OFFSET
 #define KVM_DIRTY_LOG_PAGE_OFFSET 0
@@ -199,8 +201,4 @@ struct kvm_pre_fault_memory {
   __u64 padding[5];
 };
 #endif
-
-"""
-
-
 ```

@@ -192,14 +192,16 @@ console.log(Object.isExtensible(target)); // 输出: false
 
 总而言之，这段 Torque 代码精确地实现了 ES 规范中关于 Proxy `preventExtensions` 行为的定义，确保了 JavaScript 中 Proxy 行为的正确性和一致性，并帮助开发者避免了与 Proxy 使用相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/proxy-prevent-extensions.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ transitioning builtin ProxyPreventExtensions(
   }
 }
 }  // namespace proxy
-
-"""
-
 ```

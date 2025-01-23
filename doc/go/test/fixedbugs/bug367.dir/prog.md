@@ -190,15 +190,17 @@ func main() {
 
 这段代码会因为 `panic("should satisfy main.I")` 而崩溃。这是因为即使 `T` 定义了自己的 `get()` 方法，这只会让 `T` 类型的值可以调用该方法。  **接口的实现是基于类型是否满足接口定义的方法签名，而不仅仅是方法名称相同。  同时，接口的匹配是在其定义的包的上下文中进行的。**  `T` 结构体嵌入 `*p.S` 并因此满足 `p.I`，与 `T` 自身定义了一个名为 `get` 的方法并不能使其自动满足 `main.I`。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug367.dir/prog.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file
@@ -227,9 +229,4 @@ func main() {
 		panic("should satisfy p.I")
 	}
 }
-
-"""
-
-
-
 ```

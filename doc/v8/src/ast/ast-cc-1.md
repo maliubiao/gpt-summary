@@ -239,7 +239,7 @@ This code directly relates to how V8 parses and understands JavaScript code. Her
 
 This part of `v8/src/ast/ast.cc` focuses on defining the structure and behavior of specific AST node types related to **comparisons, function calls, switch case clauses, and literal values**. It provides mechanisms for classifying these nodes, extracting relevant information from them, and converting literal representations into their corresponding JavaScript runtime values. This detailed representation is crucial for V8 to understand the semantics of JavaScript code and perform optimizations during compilation and execution.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/ast.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/ast.cc以.tq结尾，那它是个v8 torque源代码，
@@ -247,8 +247,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 turn MatchLiteralCompareUndefined(left_, op(), right_, expr) ||
          MatchLiteralCompareUndefined(right_, op(), left_, expr);
 }
@@ -478,8 +480,4 @@ Literal* AstNodeFactory::NewNumberLiteral(double number, int pos) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

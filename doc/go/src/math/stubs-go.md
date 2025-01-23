@@ -87,7 +87,7 @@ panic: not implemented
 
 `go/src/math/stubs.go` 扮演着在特定架构下提供 `math` 包中部分数学函数默认实现的兜底角色。它通过 `panic` 明确指示这些函数尚未针对该架构进行优化或实现，并依赖 Go 语言的构建标签机制来实现条件编译。使用者需要注意，并非所有架构都对 `math` 包中的所有函数提供了高效的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/stubs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -95,8 +95,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -257,9 +259,4 @@ const haveArchTanh = false
 func archTanh(x float64) float64 {
 	panic("not implemented")
 }
-
-"""
-
-
-
 ```

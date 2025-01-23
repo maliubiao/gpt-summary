@@ -138,7 +138,7 @@ By following these steps, including a process of analysis, connection to the pro
 
 `genMain.cpp` 是 Frida 构建系统中的一个辅助工具，用于生成简单的 C++ 代码框架。它本身不直接参与动态插桩，但生成的代码可能被用于构建 Frida 的模块或工具，与逆向分析、二进制底层、操作系统框架等概念都有间接的联系。理解这类代码生成工具可以帮助开发者更好地理解 Frida 的构建过程和扩展方式，并在遇到构建或运行时问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/genMain.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -188,7 +190,4 @@ std::string getStr() {
 
   return 0;
 }
-
-"""
-
 ```

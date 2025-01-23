@@ -405,7 +405,7 @@ Interceptor.attach(Module.findExportByName(null, "dladdr"), {
 
 通过使用 Frida hook，你可以深入了解 Android 系统或应用程序如何使用动态链接，并帮助你调试相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/dlfcn.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -416,8 +416,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -626,7 +628,4 @@ int dladdr(const void* _Nonnull __addr, Dl_info* _Nonnull __info);
 __END_DECLS
 
 /** @} */
-
-"""
-
 ```

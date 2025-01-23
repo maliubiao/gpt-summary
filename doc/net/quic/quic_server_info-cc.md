@@ -154,15 +154,17 @@ state_->certs = {"cert1"}
 
 因此，当您在调试 QUIC 连接问题时，检查 `QuicServerInfo` 的缓存状态以及 `Parse()` 和 `Serialize()` 的执行情况可以帮助您理解浏览器是如何尝试复用之前的连接信息的，以及在哪些环节可能出现了问题。例如，您可以检查缓存文件是否存在，文件内容是否看起来有效，或者在网络日志中查看是否有解析错误的提示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_server_info.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -312,7 +314,4 @@ string QuicServerInfo::SerializeInner() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -186,15 +186,17 @@ By following this detailed thought process, even with limited prior knowledge of
 
 总而言之，`blink/renderer/core/css/css_page_rule_test.cc` 是一个非常重要的测试文件，它确保了 Blink 引擎能够正确地解析、表示和处理 CSS 的 `@page` 规则，这对于实现可靠的打印样式功能至关重要。开发者可以通过阅读和运行这些测试用例来理解 `@page` 规则在 Blink 中的工作原理，并在遇到相关问题时作为调试的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_page_rule_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -342,7 +344,4 @@ TEST_F(CSSPageRuleTest, NoUseCounter) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

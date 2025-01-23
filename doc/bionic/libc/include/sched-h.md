@@ -226,7 +226,7 @@ if (Process.platform === 'linux') {
 
 总结来说，`bionic/libc/include/sched.handroid/sched.h` 文件定义了 Android 系统中线程调度的核心接口，它与 Android 的性能管理、实时性需求和进程隔离等功能密切相关。理解这些接口的功能和使用方式对于开发高性能的 Android 应用和进行系统级别的调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sched.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -237,8 +237,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -629,7 +631,4 @@ void __sched_cpufree(cpu_set_t* _Nonnull __set);
 #endif /* __USE_GNU */
 
 __END_DECLS
-
-"""
-
 ```

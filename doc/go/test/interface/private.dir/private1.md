@@ -149,15 +149,17 @@ func main() {
 
 这段代码的核心作用是演示 Go 语言中接口私有方法的访问限制。它强调了接口中声明的私有方法只能在定义该接口的包内被 "实现" 而不能被外部包通过接口变量直接调用。这种机制有助于封装和隐藏内部实现细节，提高代码的模块化和可维护性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/interface/private.dir/private1.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -175,10 +177,4 @@ type Implementation struct{}
 func (p *Implementation) private() {}
 
 var X = new(Implementation)
-
-
-"""
-
-
-
 ```

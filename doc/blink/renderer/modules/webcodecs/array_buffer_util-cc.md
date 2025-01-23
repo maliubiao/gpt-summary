@@ -170,15 +170,17 @@ By following these steps, combining code analysis with an understanding of web t
 
 `array_buffer_util.cc` 文件是 Blink 引擎中处理 `ArrayBuffer` 的关键组件，特别是在 WebCodecs API 和 `postMessage` 机制中。它提供了确保 `ArrayBuffer` 内容稳定和正确转移的实用工具函数。理解这个文件的功能有助于理解 Blink 如何处理 JavaScript 中 `ArrayBuffer` 的底层操作，并为调试与 `ArrayBuffer` 相关的 Web API 问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/array_buffer_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -287,7 +289,4 @@ ArrayBufferContents TransferArrayBufferForSpan(
 }
 
 }  // namespace blink
-
-"""
-
 ```

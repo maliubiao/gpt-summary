@@ -182,15 +182,17 @@ WellKnownImportsList::UpdateResult WellKnownImportsList::Update(base::Vector<Wel
 
 总结来说，`v8/src/wasm/well-known-imports.h` 是 V8 中一个关键的头文件，它定义了 WebAssembly 与 JavaScript 互操作的基础接口，并为 V8 引擎优化这些交互提供了便利。理解其内容有助于深入了解 V8 如何执行 WebAssembly 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/well-known-imports.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/well-known-imports.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -348,7 +350,4 @@ class WellKnownImportsList {
 }  // namespace v8::internal::wasm
 
 #endif  // V8_WASM_WELL_KNOWN_IMPORTS_H_
-
-"""
-
 ```

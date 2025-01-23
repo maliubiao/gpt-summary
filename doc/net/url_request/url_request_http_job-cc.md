@@ -123,7 +123,7 @@ The user wants a summary of the functionality of the `url_request_http_job.cc` f
 
 `URLRequestHttpJob` 是 Chromium 网络栈中负责处理 HTTP 和 HTTPS 请求的核心组件。它从 `URLRequest` 获取请求信息，管理底层的 `HttpTransaction`，处理 Cookie、HSTS 等安全相关的头部，并与 `NetworkDelegate` 交互。它直接处理由用户在地址栏输入、点击链接或由 JavaScript 代码发起的网络请求，是连接浏览器上层应用和底层网络通信的关键桥梁。其主要职责包括创建和执行 HTTP 事务，管理请求和响应头，处理 Cookie，执行 HSTS 策略，并记录网络事件以供调试。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_http_job.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -988,7 +990,4 @@ void URLRequestHttpJob::SetCookieHeaderAndStart(
       bool request_is_secure = request_->url().SchemeIsCryptographic();
       net::CookieSourceScheme cookie_scheme = c.cookie.SourceScheme();
       CookieRequestSche
-"""
-
-
 ```

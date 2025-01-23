@@ -155,7 +155,7 @@ A user would typically not directly interact with this specific Python file. Ins
 
 **In summary, this `misc.py` file is a critical part of Frida's build system, responsible for automatically finding and configuring the external libraries that Frida relies on. It leverages various techniques to locate these dependencies and gather the necessary build flags, enabling a successful compilation and linking of the Frida dynamic instrumentation toolkit.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/dependencies/misc.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2019 The Meson development team
 
@@ -783,7 +785,4 @@ packages['libssl'] = libssl_factory = DependencyFactory(
     system_class=OpensslSystemDependency,
     cmake_class=CMakeDependencyFactory('OpenSSL', modules=['OpenSSL::SSL']),
 )
-
-"""
-
 ```

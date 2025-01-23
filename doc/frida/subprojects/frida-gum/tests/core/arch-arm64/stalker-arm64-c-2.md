@@ -98,7 +98,7 @@ Now, let's address each of the user's points:
 
 总而言之，这个代码文件是 `frida-gum` 库中关于 ARM64 架构下 Stalker 功能的单元测试集合。它主要测试了 Stalker 的性能开销、代码块预取功能以及在指定线程上执行代码的能力。这些测试用例通过模拟实际场景，验证了 Stalker 在 ARM64 平台上的正确性和有效性，同时也为开发者提供了 Stalker 功能的使用示例。对于用户来说，理解这些测试用例可以帮助他们更好地理解和使用 Frida 的 Stalker 功能，从而更有效地进行动态程序分析和逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm64/stalker-arm64.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 lapsed (timer, NULL);
 
   gum_stalker_unfollow_me (fixture->stalker);
@@ -615,8 +617,4 @@ sleeping_dummy (gpointer data)
 
   return NULL;
 }
-
-"""
-
-
 ```

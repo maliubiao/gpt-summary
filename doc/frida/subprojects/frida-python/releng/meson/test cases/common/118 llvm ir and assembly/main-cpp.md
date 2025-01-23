@@ -172,7 +172,7 @@ Interceptor.attach(Module.findExportByName(null, "square_unsigned"), {
 
 因此，这个 `main.cpp` 文件本身是一个简单的测试用例，用于验证一个外部函数的行为。在 Frida 的上下文中，它很可能是作为 Frida 测试套件的一部分，用于验证 Frida 在处理包含外部 C 函数调用的代码时的能力，特别是在涉及 LLVM IR 和汇编代码的场景下。用户逐步操作的过程包括编写、编译、运行代码，以及可能使用 Frida 进行动态分析和测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/118 llvm ir and assembly/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <stdio.h>
 
 extern "C" {
@@ -197,7 +199,4 @@ int main (void)
   }
   return 0;
 }
-
-"""
-
 ```

@@ -245,7 +245,7 @@ Therefore, if a debugger breaks within this file, it indicates that a thread bei
 
 This section of `gumstalker-x86.c` is responsible for managing the execution contexts of stalked threads. It handles the creation, destruction, and lifecycle of `GumExecCtx` objects. A key function is managing the transition between different code blocks during the stalking process, ensuring that as the target thread executes, Frida can intercept and instrument the code in a controlled and efficient manner. It also handles low-level memory management for the instrumented code and provides mechanisms for user-defined transformations and observations of the execution flow.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-x86/gumstalker-x86.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -254,8 +254,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 (cpu_context) = ctx->infect_body;
 }
 
@@ -1425,7 +1427,4 @@ gum_exec_ctx_write_prolog (GumExecCtx * ctx,
 
       gum_x86_writer_put_push_reg (cw, GUM_X86_XAX);
       gum_x86_writer_put_
-"""
-
-
 ```

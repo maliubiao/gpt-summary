@@ -204,7 +204,7 @@ By following these steps, systematically analyzing the code snippet and its cont
 
 总而言之，这个简单的 `main.c` 文件是 Frida 进行动态分析和测试的一个基础目标，它为理解 Frida 的工作原理和实践提供了便利的入口点。通过对这个简单程序的分析，可以逐步深入了解 Frida 在更复杂场景下的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/218 include_dir dot/src/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -212,14 +212,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "rone.h"
 
 int main(void) {
     return rOne();
 }
-
-"""
-
 ```

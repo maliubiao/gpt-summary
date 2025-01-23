@@ -199,7 +199,7 @@ setImmediate(main);
 
 请注意，上述 Frida 示例只是一个起点。具体的 Hook 策略需要根据目标进程的实现方式进行调整。分析目标进程的代码和使用的库可以帮助确定最佳的 Hook 点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter_arp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -210,8 +210,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -227,7 +229,4 @@ Prompt:
 #define NF_ARP_FORWARD 2
 #define NF_ARP_NUMHOOKS 3
 #endif
-
-"""
-
 ```

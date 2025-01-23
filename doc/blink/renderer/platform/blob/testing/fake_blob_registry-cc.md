@@ -168,14 +168,16 @@ Blob 对象在 Web 开发中扮演着重要的角色，与 JavaScript 的 `Blob`
 
 总而言之，`fake_blob_registry.cc` 是一个用于测试目的的关键组件，它通过模拟真实 Blob Registry 的核心功能，使得 Blink 引擎的各个部分可以在隔离的环境下进行测试，而无需依赖复杂的真实 Blob 管理机制。它可以帮助开发者验证与 Blob 相关的 JavaScript API 和内部逻辑的正确性，并发现潜在的使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/blob/testing/fake_blob_registry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ void FakeBlobRegistry::RegisterFromStream(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -197,15 +197,17 @@ Finally, organize the findings logically, using clear headings and bullet points
 
 `blink/renderer/modules/mediasession/media_session_utils.cc` 中的 `ProcessArtworkVector` 函数是 Blink 引擎处理媒体会话艺术作品 URL 的关键部分。它确保了这些 URL 的有效性，并通过抛出 JavaScript 异常来通知开发者潜在的错误，从而保证了媒体会话功能的正常运行和用户体验。理解这个文件的功能有助于开发者在处理 Media Session API 时避免常见的 URL 相关错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasession/media_session_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ HeapVector<Member<MediaImage>> ProcessArtworkVector(
 }
 
 }  // namespace blink::media_session_utils
-
-"""
-
 ```

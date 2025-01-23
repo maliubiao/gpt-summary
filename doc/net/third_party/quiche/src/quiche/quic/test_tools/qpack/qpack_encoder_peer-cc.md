@@ -137,15 +137,17 @@ QpackEncoder encoder;
 
 `net/third_party/quiche/src/quiche/quic/test_tools/qpack/qpack_encoder_peer.cc` 是一个专门用于测试 `QpackEncoder` 类的辅助工具，它允许测试代码访问和检查 `QpackEncoder` 的内部状态。虽然它不直接与 JavaScript 交互，但它对于确保 HTTP/3 头部压缩功能的正确性至关重要，而这又直接影响到用户浏览网页的体验。 开发者在调试与 QPACK 编码相关的问题时，可能会用到这类测试辅助工具来深入了解代码的运行情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/qpack/qpack_encoder_peer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ uint64_t QpackEncoderPeer::smallest_blocking_index(
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

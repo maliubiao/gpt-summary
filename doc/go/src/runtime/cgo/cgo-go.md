@@ -252,7 +252,7 @@ Sum from C: 15
 
 总结来说， `runtime/cgo/cgo.go` 是 Go 语言实现 C 语言互操作性的基石，它定义了与 C 代码交互的运行时约定和必要的数据结构。开发者在使用 `cgo` 时需要特别注意内存管理、类型转换和并发安全等问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/cgo/cgo.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -260,8 +260,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -302,9 +304,4 @@ import "internal/runtime/sys"
 type Incomplete struct {
 	_ sys.NotInHeap
 }
-
-"""
-
-
-
 ```

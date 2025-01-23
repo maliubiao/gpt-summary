@@ -193,14 +193,16 @@ Similarly, for the `LogicalToPhysicalVlrLtr` test:
 
 In summary, `writing_mode_utils_test.cc` plays a crucial role in ensuring the Chromium rendering engine correctly handles the complexities of different writing modes and text directions, which are fundamental for supporting internationalization and diverse layout options on the web. The tests verify the core logic that translates between physical and logical dimensions based on these properties.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/writing_mode_utils_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -464,7 +466,4 @@ TEST(WritingModeUtilsTest, LogicalToPhysicalGetter) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

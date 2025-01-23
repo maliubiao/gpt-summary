@@ -88,11 +88,13 @@ loadAndRunWasm();
 
 **总结来说，`test-wasm-metrics.cc` 是一个单元测试文件，用于验证 V8 引擎在处理 WebAssembly 模块时是否正确地收集和报告了相关的性能指标。它间接地保证了当 JavaScript 代码使用 WebAssembly 时，V8 引擎的性能监控机制能够正常工作。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-wasm-metrics.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -437,7 +439,4 @@ COMPILE_TEST(TestEventMetrics) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

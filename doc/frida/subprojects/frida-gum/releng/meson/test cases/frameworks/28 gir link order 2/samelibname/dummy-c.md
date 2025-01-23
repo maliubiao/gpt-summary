@@ -111,7 +111,7 @@ Based on the file path analysis, I can hypothesize that `dummy.c` is likely a mi
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/test cases/frameworks/28 gir link order 2/samelibname/dummy.c` 这个文件本身可能只是一个简单的 C 源代码文件，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理具有相同名称的动态链接库，特别是涉及到 GIR 库时的链接顺序和符号解析能力。这对于确保 Frida 在复杂的逆向场景中能够准确可靠地工作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/28 gir link order 2/samelibname/dummy.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,9 +119,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

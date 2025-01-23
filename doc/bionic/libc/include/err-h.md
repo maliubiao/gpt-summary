@@ -386,7 +386,7 @@ except Exception as e:
 
 总结来说，`bionic/libc/include/err.h` 定义了一组重要的错误报告函数，它们在 Android 的底层系统编程和 NDK 开发中被广泛使用，用于生成格式化的错误和警告信息，并可选择终止程序。了解这些函数的功能和使用方式对于理解和调试 Android 系统至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/err.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -397,8 +397,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -517,7 +519,4 @@ void warnx(const char* _Nullable __fmt, ...) __printflike(1, 2);
 void vwarnx(const char* _Nullable __fmt, va_list __args) __printflike(1, 0);
 
 __END_DECLS
-
-"""
-
 ```

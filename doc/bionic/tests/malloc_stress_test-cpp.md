@@ -302,7 +302,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "mallopt"), {
 
 通过这些 Frida hook，你可以观察到 Android Framework 或 NDK 应用在运行时如何调用 Bionic 的内存管理函数，以及内存分配器是如何工作的，从而更深入地理解这个压力测试的意义和作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/malloc_stress_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -313,8 +313,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 The Android Open Source Project
  *
@@ -491,7 +493,4 @@ TEST(malloc_stress, multiple_threads_forever) {
 #endif
   }
 }
-
-"""
-
 ```

@@ -154,14 +154,16 @@ ctx.fillRect(10, 10, 50, 30);
 
 总而言之，`blink/renderer/platform/graphics/canvas_2d_layer_bridge.cc` 文件是 Chromium Blink 引擎中一个关键的组件，它负责连接高级的 Canvas 2D API 和底层的图形渲染机制，并管理相关的资源和图层，使得开发者可以通过 JavaScript 在 HTML 页面上进行高效的 2D 图形绘制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/canvas_2d_layer_bridge.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -197,7 +199,4 @@ Canvas2DLayerBridge::Canvas2DLayerBridge(CanvasResourceHost& resource_host)
 Canvas2DLayerBridge::~Canvas2DLayerBridge() = default;
 
 }  // namespace blink
-
-"""
-
 ```

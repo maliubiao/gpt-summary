@@ -202,7 +202,7 @@ configure("sort", "average") // 假设这是交互式设置配置的函数
 
 总而言之，这段代码是 `pprof` 工具配置管理的核心部分，它定义了配置结构、管理配置状态、提供了动态操作配置的能力，并为命令行参数和 URL 参数的处理奠定了基础。 理解这段代码有助于深入了解 `pprof` 工具的配置机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/driver/config.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -210,8 +210,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 package driver
 
 import (
@@ -585,9 +587,4 @@ func (cfg *config) makeURL(initialURL url.URL) (url.URL, bool) {
 	}
 	return initialURL, changed
 }
-
-"""
-
-
-
 ```

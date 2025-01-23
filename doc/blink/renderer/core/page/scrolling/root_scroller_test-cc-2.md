@@ -111,7 +111,7 @@ Let's break down the code snippet:
 
 总而言之，`root_scroller_test.cc` 的这部分内容专注于验证 Blink 引擎在各种复杂的网页场景下，能否正确地识别和管理隐式根滚动器，确保页面的滚动行为符合预期。这对于提供流畅且符合用户期望的网页浏览体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/scrolling/root_scroller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 oot scroller but later gets one.
 TEST_F(ImplicitRootScrollerSimTest, UseCounterPositiveAfterLoad) {
   WebView().MainFrameViewWidget()->Resize(gfx::Size(800, 600));
@@ -1061,7 +1063,4 @@ TEST_F(ImplicitRootScrollerSimTest, OverflowHiddenDoesntRestrictImplicit) {
   Compositor().BeginFrame();
 
   EXPECT_EQ
-"""
-
-
 ```

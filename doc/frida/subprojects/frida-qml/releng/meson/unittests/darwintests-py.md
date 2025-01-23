@@ -173,7 +173,7 @@ The core function of this file is to verify that the Frida build system (using M
 
 **In summary, `darwintests.py` is a crucial part of Frida's macOS build verification process. It ensures that the build system correctly handles macOS-specific features, compiler/linker options, and binary formats, which are all relevant to reverse engineering and understanding the low-level aspects of macOS software.** It helps catch potential errors in the build configuration or code that could lead to incorrect or broken Frida builds on macOS.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/darwintests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -327,7 +329,4 @@ class DarwinTests(BasePlatformTests):
         from mesonbuild.mesonlib import darwin_get_object_archs
         archs = darwin_get_object_archs('/bin/cat')
         self.assertEqual(archs, ['x86_64', 'aarch64'])
-
-"""
-
 ```

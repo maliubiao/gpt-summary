@@ -182,7 +182,7 @@ wrd.w $msa_w0, $msa_w1, $msa_w2  // 执行 MSA 的向量加法指令
 
 `v8/src/wasm/baseline/mips64/liftoff-assembler-mips64-inl.h` 是 V8 引擎 Liftoff 编译器在 MIPS64 架构下生成 WebAssembly 代码的关键组成部分。它提供了一组内联函数，用于便捷地生成 MIPS64 汇编指令，特别是针对 WebAssembly SIMD 操作，以及一些通用的代码生成需求，例如函数调用、栈管理等。这个文件是连接 WebAssembly 的高级语义和底层机器指令的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/mips64/liftoff-assembler-mips64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/mips64/liftoff-assembler-mips64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -190,8 +190,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 cratchReg, 32);
   srai_d(dst.fp().toW(), dst.fp().toW(), 32);
 }
@@ -843,8 +845,4 @@ void LiftoffStackSlots::Construct(int param_slots) {
 }  // namespace v8::internal::wasm
 
 #endif  // V8_WASM_BASELINE_MIPS64_LIFTOFF_ASSEMBLER_MIPS64_INL_H_
-
-"""
-
-
 ```

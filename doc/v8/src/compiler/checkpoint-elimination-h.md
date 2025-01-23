@@ -131,15 +131,17 @@ process("test");
 
 `v8/src/compiler/checkpoint-elimination.h` 定义的 `CheckpointElimination` 类是 V8 编译器中的一个重要的优化 Pass，它通过消除 IR 图中冗余的检查点，来简化编译器的中间表示，提高编译效率，并有可能带来最终代码的性能提升。它不直接对应用户编写的 JavaScript 代码的特定功能，而是作为编译器内部优化机制的一部分发挥作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/checkpoint-elimination.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/checkpoint-elimination.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ class V8_EXPORT_PRIVATE CheckpointElimination final
 }  // namespace v8
 
 #endif  // V8_COMPILER_CHECKPOINT_ELIMINATION_H_
-
-"""
-
 ```

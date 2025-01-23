@@ -172,14 +172,16 @@ By following this structured approach of reading, identifying key components, tr
 
 `observable_array.cc` 文件在 Blink 引擎中扮演着关键角色，它通过 JavaScript `Proxy` 技术实现了可观察的数组，为构建动态和响应式的 Web 应用提供了基础。这种机制使得当数组数据发生变化时，Blink 引擎可以及时地通知相关的组件或逻辑，从而实现数据的双向绑定和自动更新。理解这个文件的工作原理有助于开发者更好地理解 Chromium 内部的数据绑定机制以及如何与 JavaScript 进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/observable_array.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -335,7 +337,4 @@ v8::Local<v8::Object> ObservableArrayExoticObject::AssociateWithWrapper(
 }
 
 }  // namespace blink
-
-"""
-
 ```

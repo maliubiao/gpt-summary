@@ -168,14 +168,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`font_description_test.cc` 文件是 Blink 引擎中保证字体描述功能正确性的重要组成部分。它通过各种测试用例，验证了 `FontDescription` 类的核心功能，并间接地关联到 Web 开发中使用的 HTML、CSS 和 JavaScript 相关的字体样式设置。 理解这些测试用例可以帮助开发者更好地理解浏览器内部如何处理字体，并避免常见的字体使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_description_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -806,7 +808,4 @@ TEST_F(FontDescriptionTest, NegativeZeroEmFontSize) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

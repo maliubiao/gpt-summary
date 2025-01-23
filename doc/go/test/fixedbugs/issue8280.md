@@ -172,15 +172,17 @@ Another developer might look at the type of `GetValue` and wonder how to access 
 
 **Important Note:**  Using `_` as a named return value is generally discouraged. While syntactically valid, it doesn't offer any practical benefit and can be confusing. The standard practice is to either omit the return value name or use a meaningful name. The bug in Issue 8280 was about the compiler's handling of this less common syntax.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue8280.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compiledir
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -190,9 +192,4 @@ Prompt:
 // Issue 8280: cannot import package exporting a func var returning a result named _
 
 package ignored
-
-"""
-
-
-
 ```

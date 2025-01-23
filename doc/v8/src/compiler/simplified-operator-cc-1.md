@@ -156,7 +156,7 @@ Here's a breakdown of the thought process to answer the request:
 
 这部分 `simplified-operator.cc` 文件详细定义了 V8 编译器在代码简化阶段所能识别和操作的各种基本运算。它通过宏定义和结构体的方式，为每种操作赋予了特定的属性 (如是否纯函数、是否有副作用、输入输出数量等)，为后续的优化和代码生成提供了基础。 这些操作符直接映射到 JavaScript 语言的各种特性和运行时行为，并且包含了用于保障代码安全性和进行性能优化的检查机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/simplified-operator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t, Operator::kNoProperties, 1, 0)           \
   V(ChangeUint64ToBigInt, Operator::kNoProperties, 1, 0)          \
   V(TruncateTaggedToBit, Operator::kNoProperties, 1, 0)           \
@@ -852,7 +854,4 @@ const Operator* SimplifiedOperatorBuilder::WasmTypeCastAbstract(
   return zone_->New<Operator1<WasmTypeCheckConfig>>(
       IrOpcode::kWasmTypeCastAbstract,
       Operator::kNoW
-"""
-
-
 ```

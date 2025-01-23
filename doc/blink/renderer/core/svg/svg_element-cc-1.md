@@ -154,7 +154,7 @@ I need to connect these functionalities to JavaScript, HTML, and CSS where appli
 
 总而言之，这部分代码是 Chromium 中处理 SVG 元素动态行为的关键组成部分，它连接了 HTML 结构、CSS 样式和 JavaScript 交互，确保 SVG 内容能够正确地渲染和响应用户的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ngAttr)) {
     MapLanguageAttributeToLocale(value, style);
   } else if (name == svg_names::kLangAttr) {
@@ -799,8 +801,4 @@ SMILTimeContainer* SVGElement::GetTimeContainer() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

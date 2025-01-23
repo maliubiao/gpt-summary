@@ -121,7 +121,7 @@ Here's a breakdown of the thinking process to analyze the C code and provide the
 
 总而言之，用户到达这个文件很可能是出于 Frida 开发、测试或理解的目的。`prog.c` 作为一个简单的单元测试用例，用于验证在特定条件下（`FOO` 和 `BAR` 宏已定义）程序的编译和运行是否符合预期。 编译失败则表明测试环境或配置存在问题，为调试提供了明确的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/9 d dedup/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 #ifndef FOO
@@ -145,7 +147,4 @@ int main(int argc, char **argv) {
     printf("All is well.\n");
     return 0;
 }
-
-"""
-
 ```

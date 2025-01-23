@@ -251,7 +251,7 @@ sys.stdin.read()
 
 这个测试文件虽然小，但它触及了 Android 系统中非常重要的内存安全特性 MTE，并验证了 Bionic 库在支持这一特性时的正确性。通过理解其功能和相关概念，可以更深入地了解 Android 底层机制以及如何确保应用程序的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/memtag_stack_abi_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -262,8 +262,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -366,7 +368,4 @@ TEST(MemtagStackAbiTest, DetachedThread) {
   GTEST_SKIP() << "requires bionic arm64";
 #endif
 }
-
-"""
-
 ```

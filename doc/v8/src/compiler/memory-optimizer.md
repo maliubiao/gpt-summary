@@ -136,11 +136,13 @@ processObject(myObj);
 
 `memory-optimizer.cc` 是 V8 引擎中负责提升 JavaScript 代码内存操作效率的关键模块。它通过分析编译后的代码，执行各种优化转换，例如分配折叠、消除冗余写屏障和加载优化，从而减少内存分配开销，提高内存访问速度，最终提升 JavaScript 代码的整体执行性能。虽然 JavaScript 开发者不需要直接编写或修改这个文件，但理解其背后的优化原理有助于编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/memory-optimizer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -677,7 +679,4 @@ Graph* MemoryOptimizer::graph() const { return jsgraph()->graph(); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

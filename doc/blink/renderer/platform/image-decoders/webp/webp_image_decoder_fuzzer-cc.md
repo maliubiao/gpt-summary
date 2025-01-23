@@ -103,14 +103,16 @@ Let's break down the thought process for analyzing the given C++ code snippet.
 
 `webp_image_decoder_fuzzer.cc` 是一个用于测试 Chromium Blink 引擎中 WebP 图像解码器健壮性的关键工具。它通过提供各种各样的输入数据来发现潜在的 bug 和安全漏洞，从而提高浏览器处理 WebP 图像的可靠性和安全性。虽然它不直接涉及 JavaScript, HTML 或 CSS 的代码，但它所测试的组件是这些 Web 技术正常运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/webp/webp_image_decoder_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -123,7 +123,7 @@ By following these steps, I can systematically analyze the C++ code and generate
    // 假设存在一个异步操作，例如 setTimeout
    setTimeout(function() {
      
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/inspector/inspector-test.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/inspector/inspector-test.cc以.tq结尾，那它是个v8 torque源代码，
@@ -131,8 +131,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 omStrings(allow).");
     }
     info.GetIsolate()->GetCurrentContext()->AllowCodeGenerationFromStrings(
@@ -279,8 +281,4 @@ int InspectorTestMain(int argc, char* argv[]) {
 int main(int argc, char* argv[]) {
   return v8::internal::InspectorTestMain(argc, argv);
 }
-
-"""
-
-
 ```

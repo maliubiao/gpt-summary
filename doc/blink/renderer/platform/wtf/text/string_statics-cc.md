@@ -160,14 +160,16 @@ This systematic approach, combining code analysis with domain knowledge of web t
 
 `string_statics.cc` 文件通过定义和管理常用的静态字符串常量，为 Blink 渲染引擎提供了高效的字符串处理机制。这些常量在解析和处理 HTML、CSS 和执行 JavaScript 代码时被广泛使用，有助于提高性能、减少内存占用并简化代码。 虽然用户或开发者不会直接编辑或使用这个文件中的内容，但它背后的原理和优化对于构建高性能的 Web 浏览器至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/string_statics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Apple Inc. All Rights Reserved.
  *
@@ -340,7 +342,4 @@ void StringStatics::Init() {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

@@ -76,7 +76,7 @@ example.com/yourmodule/yourpkg loaded from example.com/some/dependency v1.2.3,
 
 这个错误提示你，虽然当前 Go 版本加载了 `example.com/yourmodule/yourpkg`，但在 Go 1.16 下可能无法找到，因为模块依赖图可能不同。这时，你需要运行 `go mod tidy` 来同步 `go.mod` 文件，或者使用 `-compat` 参数来指定兼容的 Go 版本。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modload/load.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -85,10 +85,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-	}
+### 源代码
+```go
+}
 
 	toAdd := make([]module.Version, 0, len(need))
 	for m := range need {
@@ -685,10 +686,4 @@ func WhyDepth(path string) int {
 	}
 	return n
 }
-
-"""
-
-
-
-
 ```

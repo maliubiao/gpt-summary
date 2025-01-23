@@ -112,15 +112,17 @@ func FromToolchain(toolchain string) string {
 
 总而言之，这段测试代码旨在验证 `gover` 包中 `FromToolchain` 函数的正确性，该函数负责从字符串中提取标准的 Go 语言版本号，并且有一定的规则来识别和处理不同的工具链标识。 理解这些规则对于正确使用 `gover` 包的相关功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/gover/toolchain_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -140,9 +142,4 @@ var fromToolchainTests = []testCase1[string, string]{
 	{"gccgo-go1.23rc4", ""},
 	{"gccgo-go1.23rc4-bigdwarf", ""},
 }
-
-"""
-
-
-
 ```

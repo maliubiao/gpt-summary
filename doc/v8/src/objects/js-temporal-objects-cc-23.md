@@ -168,7 +168,7 @@ console.log(Temporal.Instant.compare(instant1, instant2)); // 输出 -1 (instant
 
 作为 25 个部分中的第 24 部分，这个代码片段几乎涵盖了 `Temporal.ZonedDateTime` 和 `Temporal.Instant` 对象的核心功能，包括创建、算术运算、比较、属性获取、以及与其他 Temporal 类型之间的转换。考虑到这是倒数第二部分，可以推测最后一部分可能包含一些不太常用的功能、内部辅助函数或者与其他 Temporal 类型的集成。总体而言，这个文件在 V8 的 Temporal API 实现中扮演着至关重要的角色，负责处理带有时区信息的日期时间和瞬时时间的各种操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -176,8 +176,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第24部分，共25部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 on.[[Years]], sign x duration.[[Months]], sign x
   // duration.[[Weeks]], sign x duration.[[Days]], sign x duration.[[Hours]],
   // sign x duration.[[Minutes]], sign x duration.[[Seconds]], sign x
@@ -915,7 +917,4 @@ Handle<BigInt> RoundTemporalInstant(Isolate* isolate, Handle<BigInt> ns,
   // 8. Return ! RoundNumberToIncrementAsIfPositive(ℝ(ns), incrementNs,
   // roundingMode).
   return RoundNumberToIncrementAsIfPositive(isol
-"""
-
-
 ```

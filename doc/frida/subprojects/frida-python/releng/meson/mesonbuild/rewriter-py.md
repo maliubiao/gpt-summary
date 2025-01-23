@@ -151,7 +151,7 @@ python rewriter.py kwargs target target_app add dependencies mylib
 
 `rewriter.py` 作为一个 Meson 构建定义文件的修改工具，其主要功能是**允许用户通过命令行操作，自动化地添加、删除和修改构建目标、目标的关键字参数以及项目的默认选项**。 它提供了一种比手动编辑 `meson.build` 文件更方便和可脚本化的方式来调整 Frida 项目的构建配置。这在逆向工程中非常有用，可以方便地集成自定义代码或修改编译行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/rewriter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -970,7 +972,4 @@ class Rewriter:
                     self.modified_nodes += [root]
 
         elif cmd
-"""
-
-
 ```

@@ -179,7 +179,7 @@ By following these steps, I can break down the complex code into understandable 
 
 `RuleSet` 的第二部分代码主要负责 **扩展 `RuleSet` 管理的 CSS 规则类型**，使其能够处理各种现代和实验性的 CSS 功能，例如媒体查询、字体、动画、自定义属性、计数器样式、视图过渡、容器查询、作用域、mixin 等。此外，它还关注 **性能优化**，例如通过 `RuleMap` 进行规则的组织和压缩，以及针对属性选择器的优化。代码还包含了处理 `@import` 规则和管理 CSS 级联层的逻辑。总而言之，这部分代码深化了 `RuleSet` 在 Blink 渲染引擎中作为核心 CSS 规则容器和管理器的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/rule_set.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -187,9 +187,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- rule) {
+### 源代码
+```cpp
+rule) {
   need_compaction_ = true;
   view_transition_rules_.push_back(rule);
 }
@@ -949,8 +951,4 @@ void RuleSet::Show() const {
 #endif  // DCHECK_IS_ON()
 
 }  // namespace blink
-
-"""
-
-
 ```

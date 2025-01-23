@@ -127,7 +127,7 @@ By following these steps, breaking down the problem, and iteratively refining th
 
 总而言之，`gdbusprog.c` 是 Frida 测试框架中的一个简单而重要的测试用例，用于验证 Frida 对 D-Bus 服务端对象的操作能力。 逆向工程师可以通过分析这个程序，了解 Frida 如何与 D-Bus 和 GLib 库进行交互，并利用它来测试和调试更复杂的 D-Bus 应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/7 gnome/gdbus/gdbusprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"generated-gdbus.h"
 
 int main(int argc, char **argv) {
@@ -145,7 +147,4 @@ int main(int argc, char **argv) {
     g_object_unref(s);
     return 0;
 }
-
-"""
-
 ```

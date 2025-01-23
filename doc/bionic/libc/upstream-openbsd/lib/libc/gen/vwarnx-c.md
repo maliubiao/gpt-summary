@@ -240,7 +240,7 @@ if (Process.platform === 'android') {
 
 通过这个 Frida Hook 示例，你可以实时监控哪些代码路径调用了 `vwarnx`，以及它们输出了什么样的警告信息，这对于调试和理解 Android 系统的行为非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/gen/vwarnx.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -251,8 +251,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: vwarnx.c,v 1.11 2016/03/13 18:34:20 guenther Exp $ */
 /*-
  * Copyright (c) 1993
@@ -297,7 +299,4 @@ vwarnx(const char *fmt, va_list ap)
 	(void)fprintf(stderr, "\n");
 }
 DEF_WEAK(vwarnx);
-
-"""
-
 ```

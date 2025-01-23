@@ -189,7 +189,7 @@ By following these steps, I can systematically analyze the code and address all 
 
 `frida/subprojects/frida-core/releng/meson/mesonbuild/environment.py` 文件的主要功能是**为 Frida 的构建过程设置和配置环境**。它负责检测和定位必要的构建工具，识别构建和目标机器的操作系统和架构，并处理来自命令行、配置文件和环境变量的构建选项。这个过程是 Frida 构建的基础，确保后续的编译和链接步骤能够正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/environment.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,8 +198,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 # Copyright © 2023 Intel Corporation
@@ -951,8 +953,4 @@ class Environment:
                         key = OptionKey('env_args', machine=for_machine, lang='c')
                         for lang in compilers.compilers.LANGUAGES_USING_CPPFLAGS:
                             key = key.evolve(lang=lang)
-     
-"""
-
-
 ```

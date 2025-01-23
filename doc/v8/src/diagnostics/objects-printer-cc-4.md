@@ -125,7 +125,7 @@ for (let i = 0; i < 10; i++) {
 
 总而言之，`v8/src/diagnostics/objects-printer.cc` 提供了一组 C++ 函数，用于在调试和诊断 V8 引擎时，以人类可读的方式打印出 V8 堆中各种对象的内部结构和状态。这对于理解 V8 如何表示 JavaScript 对象、分析对象布局、跟踪对象转换以及诊断性能问题至关重要。它通过输出 Map 对象、DescriptorArray 对象、转换信息等，揭示了 JavaScript 代码在 V8 内部的表示形式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/objects-printer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/objects-printer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -133,8 +133,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 os << "\n - enum length: ";
   if (EnumLength() == kInvalidEnumCacheSentinel) {
     os << "invalid";
@@ -677,8 +679,4 @@ V8_EXPORT_PRIVATE void _v8_internal_Print_PropertyCallbackInfo(
   i::PrintPropertyCallbackInfo(property_callback_info);
 #endif
 }
-
-"""
-
-
 ```

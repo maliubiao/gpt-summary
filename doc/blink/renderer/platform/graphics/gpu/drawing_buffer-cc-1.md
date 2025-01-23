@@ -97,15 +97,17 @@ This section of `drawing_buffer.cc` focuses on the management and manipulation o
 
 这部分 `drawing_buffer.cc` 的代码主要负责将 `DrawingBuffer` 中渲染的内容（存储在 `ColorBuffer` 中）以 `ExternalCanvasResource` 的形式导出，以便其他 Chromium 组件（特别是 Compositor）能够使用这些渲染结果进行后续的合成显示。它还详细管理了 `ColorBuffer` 的生命周期、访问控制和资源清理，并提供了将渲染结果导出为可用于 GPU 合成的资源的能力。核心在于提供了一种安全且高效的方式来共享和同步 GPU 上的渲染纹理资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/drawing_buffer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rce resource;
 
   resource.set_mailbox(color_buffer->shared_image->mailbox());
@@ -949,8 +951,4 @@ void DrawingBuffer::ResolveIfNeeded(DiscardBehavior discardBehavior) {
       // memory.
       const GLenum kAttachments[2] = {GL_DEPTH_ATTACHMENT,
                                       GL_STENCIL_ATTACHMENT};
-
-"""
-
-
 ```

@@ -175,15 +175,17 @@ hash.Sum16():   b10a8db164e0754105b7a99be72e3fe5
 
 `go/src/cmd/internal/hash/hash.go` 提供了一组定制化的哈希函数，供 Go 编译器工具链内部使用。它特别之处在于对 SHA256 算法进行了微小的修改，这可能是为了确保内部生成的哈希值的唯一性或避免与其他标准 SHA256 哈希值冲突。使用者需要注意 `hash.Sum32` 与标准 SHA256 的区别，避免在需要标准 SHA256 的场景下错误使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/hash/hash.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -240,9 +242,4 @@ func Sum20(data []byte) [Size20]byte {
 func Sum16(data []byte) [Size16]byte {
 	return md5.Sum(data)
 }
-
-"""
-
-
-
 ```

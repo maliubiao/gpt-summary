@@ -173,12 +173,14 @@ These low-level operations are fundamental to how the V8 JavaScript engine execu
 
 **In summary, this section of the code provides a comprehensive set of low-level primitives for handling numerical computations, type conversions, conditional execution, and SIMD operations on the MIPS64 architecture, which are essential for the efficient execution of JavaScript code within the V8 engine.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/macro-assembler-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 block_trampoline_pool(this);
   mfc1(t8, fs);
   Cvt_d_uw(fd, t8);
@@ -2301,8 +2303,4 @@ MemOperand MacroAssembler::ExternalReferenceAsOperand(
         // Otherwise, do a memory load from the external reference table.
         DCHECK(scratch.is_valid());
         Ld(scratch, MemOperand(kRootRegister,
-              
-"""
-
-
 ```

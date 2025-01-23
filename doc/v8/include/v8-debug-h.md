@@ -211,15 +211,17 @@ JavaScript 引擎会将这些 C++ 对象转换为 JavaScript 可访问的表示�
 
 理解和利用堆栈跟踪是调试 JavaScript 代码的关键技能。 `v8/include/v8-debug.h` 中定义的类为 V8 引擎提供了构建和管理这些堆栈跟踪信息的基础，使得开发者能够有效地诊断和修复代码中的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-debug.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-debug.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -393,7 +395,4 @@ class V8_EXPORT StackTrace {
 }  // namespace v8
 
 #endif  // INCLUDE_V8_DEBUG_H_
-
-"""
-
 ```

@@ -120,14 +120,16 @@ Response: Let's break down the thought process for analyzing this seemingly simp
 
 总而言之，`MockWebAssociatedURLLoader` 是一个用于测试的模拟对象，它允许开发者在不依赖真实网络环境的情况下测试与 URL 关联的资源加载逻辑，这对于保证 Web 引擎的稳定性和可靠性至关重要。使用时需要仔细配置模拟响应，以确保测试的准确性和有效性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/testing/mock_web_associated_url_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -146,7 +148,4 @@ MockWebAssociatedURLLoader::MockWebAssociatedURLLoader() = default;
 MockWebAssociatedURLLoader::~MockWebAssociatedURLLoader() = default;
 
 }  // namespace blink
-
-"""
-
 ```

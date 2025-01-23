@@ -135,7 +135,7 @@ console.log(sum.x, sum.y, sum.z, sum.w); // 输出 6, 8, 10, 12
 
 希望以上分析能够帮助你理解这段代码的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/code-generator-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/code-generator-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -143,8 +143,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _decrement
       // contains any extra padding and adjust the stack before the pushq.
       if (HasAddressingMode(instr)) {
@@ -1135,7 +1137,4 @@ _decrement
       break;
     }
     case kX64F6
-"""
-
-
 ```

@@ -143,11 +143,13 @@ let counter = createCounter(); // 闭包中的 count 变量会驻留在堆上
 
 `memory-allocator.cc` 是 V8 引擎的核心内存管理模块，它负责为 JavaScript 运行时环境提供必要的内存支持。无论是创建简单的对象，还是执行复杂的代码，其底层的内存分配和管理都由这个文件中的代码负责处理。 理解这个文件的功能有助于深入理解 V8 引擎的内存管理机制和 JavaScript 的性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/memory-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -800,7 +802,4 @@ void MemoryAllocator::ReleaseQueuedPages() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

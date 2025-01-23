@@ -197,14 +197,16 @@ By following this systematic approach, you can effectively analyze and explain t
 
 总而言之，`fe_displacement_map.cc` 文件是 Blink 渲染引擎中实现 SVG 位移图滤镜的核心组件，它负责处理滤镜的属性、计算输出边界以及生成底层的 Skia 图像滤镜来实现具体的位移效果。理解这个文件有助于深入了解浏览器如何渲染 SVG 滤镜以及如何与 HTML、CSS 和 JavaScript 协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/fe_displacement_map.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005 Rob Buis <buis@kde.org>
@@ -371,7 +373,4 @@ StringBuilder& FEDisplacementMap::ExternalRepresentation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -97,11 +97,13 @@ let result = add(5, 10);
 
 总而言之，`constants-s390.cc` 是 V8 在 s390 架构上进行代码生成的基础设施的一部分，它提供了必要的常量和工具函数，使得 V8 能够将高级的 JavaScript 代码转换为能够在 s390 处理器上高效运行的机器码。它隐藏了底层的硬件细节，让 V8 的其他部分能够以一种更抽象的方式处理代码生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/constants-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -422,7 +424,4 @@ int Registers::Number(const char* name) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_S390X
-
-"""
-
 ```

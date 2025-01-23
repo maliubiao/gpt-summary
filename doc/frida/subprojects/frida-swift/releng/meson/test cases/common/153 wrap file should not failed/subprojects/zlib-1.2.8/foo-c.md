@@ -112,7 +112,7 @@ By following these steps, iteratively analyzing the code and the prompt, and con
 
 虽然 `foo.c` 中的 `dummy_func` 代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证动态代码替换（"wrapping"）的基本功能。它的存在揭示了 Frida 与底层二进制、操作系统内核和目标应用程序框架的交互。理解这类简单的测试用例有助于开发者更好地理解 Frida 的核心机制和潜在的使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/153 wrap file should not failed/subprojects/zlib-1.2.8/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,12 +120,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int dummy_func(void) {
     return 42;
 }
-
-"""
-
 ```

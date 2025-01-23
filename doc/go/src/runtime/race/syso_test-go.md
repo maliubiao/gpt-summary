@@ -167,7 +167,7 @@ cmd := exec.Command(filepath.Join(runtime.GOROOT(), "bin", "go"), "tool", "nm", 
 
 总而言之，`go/src/runtime/race/syso_test.go` 中的 `TestIssue37485` 函数是一个用于验证在启用 race detector 的情况下，生成的 `.syso` 文件是否不包含 `getauxval` 符号的测试，以确保 race detector 的正确性和避免潜在的冲突。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/race/syso_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -210,9 +212,4 @@ func TestIssue37485(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

@@ -223,7 +223,7 @@ TCP 监听器已创建，backlog 默认为系统最大值。
 
 总而言之，这段 `sock_bsd.go` 代码的核心作用是提供一个平台相关的机制，用于获取 BSD 类操作系统中 TCP 监听队列的最大长度，从而确保 Go 语言的 `net` 包在创建监听器时能够合理地设置 `backlog` 参数，避免因设置过大的值而超出操作系统限制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/sock_bsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -231,8 +231,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -272,9 +274,4 @@ func maxListenerBacklog() int {
 	}
 	return int(n)
 }
-
-"""
-
-
-
 ```

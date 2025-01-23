@@ -161,15 +161,17 @@ By following this structured approach, we can systematically analyze the code an
 
 总而言之，`transfer_test_utils.cc` 是 Blink 引擎中用于测试媒体流轨道转移功能的重要工具集，它允许开发者在隔离的环境下模拟和验证 `MediaStreamTrack` 的转移行为，从而确保 WebRTC 和屏幕共享等功能的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/test/transfer_test_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -270,7 +272,4 @@ MediaStreamComponent* MakeTabCaptureAudioComponentForTest(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -323,7 +323,7 @@ sys.stdin.read()
 
 通过这些步骤和 Frida hook，你可以跟踪 NDK 应用如何使用 RDMA 库，以及这些库如何最终与内核的 RDMA CM 子系统进行交互，并观察传递的具体数据结构和参数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/rdma/rdma_user_cm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -334,8 +334,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -597,7 +599,4 @@ struct rdma_ucm_migrate_resp {
   __u32 events_reported;
 };
 #endif
-
-"""
-
 ```

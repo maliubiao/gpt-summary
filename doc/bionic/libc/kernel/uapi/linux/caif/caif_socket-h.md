@@ -334,7 +334,7 @@ if __name__ == "__main__":
 
 通过运行这个 Frida 脚本，你可以在 RIL 进程调用 `socket` 和 `connect` 函数时拦截并打印相关信息，从而调试 CAIF socket 的使用情况。请注意，实际的基带通信可能发生在特权进程中，你可能需要 root 权限才能 hook 这些进程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/caif/caif_socket.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -345,8 +345,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -419,7 +421,4 @@ enum caif_socket_opts {
   CAIFSO_RSP_PARAM = 129,
 };
 #endif
-
-"""
-
 ```

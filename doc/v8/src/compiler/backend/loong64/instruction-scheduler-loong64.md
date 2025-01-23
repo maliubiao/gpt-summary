@@ -101,11 +101,13 @@ ADD R7, R3, R6  ; 计算 sum + product
 
 虽然 `instruction-scheduler-loong64.cc` 目前的功能是声明尚未实现针对 LOONG64 架构的指令调度器，但它的目标是在未来优化生成的机器码的执行顺序，从而提高 JavaScript 代码的运行效率。  JavaScript 开发者通常不需要直接了解指令调度器的细节，但指令调度器的优化工作是 V8 引擎提高 JavaScript 性能的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/instruction-scheduler-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -132,7 +134,4 @@ int InstructionScheduler::GetInstructionLatency(const Instruction* instr) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

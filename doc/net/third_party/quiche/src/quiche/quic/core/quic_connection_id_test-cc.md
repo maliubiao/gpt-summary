@@ -184,15 +184,17 @@ fetch('https://example.com/data')
 
 总而言之，`net/third_party/quiche/src/quiche/quic/core/quic_connection_id_test.cc` 是 QUIC 协议实现中一个非常基础但重要的测试文件，它确保了连接标识符这一关键概念的正确实现和行为。虽然普通用户不会直接接触到它，但它对于保证基于 QUIC 的网络连接的稳定性和可靠性至关重要。开发者通过运行和分析这些测试，能够有效地验证和调试 QUIC 连接相关的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_id_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -374,7 +376,4 @@ TEST_F(QuicConnectionIdTest, ChangeLength) {
 }  // namespace
 
 }  // namespace quic::test
-
-"""
-
 ```

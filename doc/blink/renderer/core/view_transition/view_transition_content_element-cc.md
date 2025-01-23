@@ -168,14 +168,16 @@ This iterative process of code scanning, deconstruction, connection to higher-le
 
 总而言之，`ViewTransitionContentElement.cc` 中定义的 `ViewTransitionContentElement` 类是 Blink 渲染引擎实现视图过渡功能的核心数据结构，它桥接了 JavaScript, HTML 和 CSS，使得浏览器能够理解和执行平滑的页面元素过渡动画。理解它的功能有助于开发者更好地利用 View Transitions API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/view_transition/view_transition_content_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -226,7 +228,4 @@ LayoutObject* ViewTransitionContentElement::CreateLayoutObject(
 }
 
 }  // namespace blink
-
-"""
-
 ```

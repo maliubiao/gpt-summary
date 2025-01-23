@@ -122,15 +122,17 @@ By following this structured approach, we can systematically analyze the provide
 
 在调试与框架间通信、渲染优化或可见性相关的 bug 时，开发者可能会设置断点在与 `RemoteFrameHost` 交互的代码中。如果测试覆盖了这些场景，那么开发者在查看测试代码时，会看到 `FakeRemoteFrameHost` 是如何被使用来模拟这些浏览器行为的。  如果一个 bug 是由于浏览器进程没有正确地通知渲染进程某些状态变化（例如，`VisibilityChanged` 没有被调用），那么使用 `FakeRemoteFrameHost` 的单元测试可以帮助发现这类问题，因为测试会验证这些通知是否按预期发生。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/fake_remote_frame_host.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ void FakeRemoteFrameHost::SynchronizeVisualProperties(
 void FakeRemoteFrameHost::OpenURL(mojom::blink::OpenURLParamsPtr params) {}
 
 }  // namespace blink
-
-"""
-
 ```

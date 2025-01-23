@@ -171,15 +171,17 @@ IdentifiableToken{value_: "some_unique_hash_value_for_this_configuration"}
 
 总而言之，`media_capabilities_identifiability_metrics.cc` 是 Chromium 隐私保护机制的一部分，它默默地收集关于 Media Capabilities API 使用情况的匿名化数据，帮助 Chromium 团队更好地理解和保护用户的隐私，同时为开发者提供有用的浏览器能力信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_capabilities/media_capabilities_identifiability_metrics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -467,7 +469,4 @@ std::optional<IdentifiableToken> ComputeDecodingInfoInputToken(
 
 }  // namespace media_capabilities_identifiability_metrics
 }  // namespace blink
-
-"""
-
 ```

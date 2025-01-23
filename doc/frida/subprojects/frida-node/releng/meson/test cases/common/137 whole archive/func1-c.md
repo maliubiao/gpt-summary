@@ -140,7 +140,7 @@ By following this structured thought process, addressing each part of the prompt
 
 总而言之，`func1.c` 提供了一个非常基础的 C 函数示例，尽管简单，它仍然可以用来演示和学习逆向工程、二进制底层原理以及动态插桩技术（如 Frida）的应用。 理解这类简单的构建块是深入理解更复杂软件系统的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/137 whole archive/func1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #define BUILDING_DLL
 
 #include<mylib.h>
@@ -157,7 +159,4 @@ Prompt:
 int func1(void) {
     return 42;
 }
-
-"""
-
 ```

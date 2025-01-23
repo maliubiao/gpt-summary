@@ -172,7 +172,7 @@ By following this systematic approach, we can thoroughly analyze the code and ad
 
 总而言之，这个 `main.c` 文件是一个简单的文件复制工具，它通过解析一个基本的脚本文件来执行操作。理解其功能和潜在的错误场景对于调试和理解更复杂的程序（特别是涉及动态执行和脚本解析的程序）非常有帮助，并且与 Frida 等动态分析工具的使用场景有一定的关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/native/8 external program shebang parsing/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -254,7 +256,4 @@ err:
   fclose (f);
   return 1;
 }
-
-"""
-
 ```

@@ -143,15 +143,17 @@ By following these steps, I can systematically analyze the C++ test file and pro
 
 `net/third_party/quiche/overrides/quiche_platform_impl/quiche_command_line_flags_test.cc` 是一个专注于测试 Quiche 库命令行标志功能的 C++ 单元测试文件。它验证了标志的定义、解析和使用是否正确。虽然它本身不直接与 JavaScript 交互，但命令行标志可以间接地影响运行在 Chromium 中的 JavaScript 代码的行为。理解这个文件可以帮助开发者调试与 QUIC 相关的配置问题，并避免常见的命令行参数使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/overrides/quiche_platform_impl/quiche_command_line_flags_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ TEST_F(QuicheCommandLineFlagTest, PrintHelp) {
 }
 
 }  // namespace quiche::test
-
-"""
-
 ```

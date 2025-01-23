@@ -154,7 +154,7 @@ func MyInt_Double_fm(this MyInt) int {
 
 总而言之，`go/src/cmd/compile/internal/noder/reader.go` 的这部分代码是 Go 编译器进行函数内联优化和方法调用处理的关键组成部分，它负责将编译中间表示转换为可操作的 IR 节点，并生成必要的辅助函数来支持不同的语言特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/noder/reader.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -163,9 +163,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- caller function.
+### 源代码
+```go
+caller function.
 	for _, name := range r.curfn.Dcl {
 		name.Curfn = callerfn
 
@@ -655,10 +657,4 @@ func shapeSig(fn *ir.Func, dict *readerDict) *types.Type {
 
 	return types.NewSignature(recv, params, results)
 }
-
-"""
-
-
-
-
 ```

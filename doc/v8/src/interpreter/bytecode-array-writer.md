@@ -129,11 +129,13 @@ Return
 
 `bytecode-array-writer.cc` 是 V8 引擎中负责将高级字节码表示转换为可执行的底层字节码数组的关键组件。虽然 JavaScript 开发者不直接使用它，但它直接影响着 JavaScript 代码的执行效率和行为。理解它的功能有助于更深入地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-array-writer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -684,7 +686,4 @@ void BytecodeArrayWriter::EmitSwitch(BytecodeNode* node,
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -174,15 +174,17 @@ Let's break down the thought process for analyzing the `SVGLength.cc` file.
 
 `SVGLength.cc` 文件是 Blink 引擎中处理 SVG 长度值的核心组件，它连接了 HTML 中声明的 SVG 属性、CSS 中定义的样式以及 JavaScript 对 SVG 元素的动态操作。理解 `SVGLength` 的功能和工作原理，可以帮助开发者更好地理解和调试与 SVG 长度相关的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_length.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006, 2007 Rob Buis <buis@kde.org>
@@ -533,7 +535,4 @@ bool SVGLength::IsNegativeNumericLiteral() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

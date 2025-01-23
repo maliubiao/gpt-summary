@@ -93,7 +93,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 总而言之，`runtime.c` 是 Frida 测试框架中的一个简化示例，用于验证 Frida 与动态链接库交互的能力。它展示了符号导出、动态链接等概念，这些都是逆向工程和理解程序底层行为的重要方面。用户在调试使用 Frida 与共享库交互的过程中，可能会因为需要理解目标函数的来源和结构而接触到这样的源代码文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/21 shared module/runtime.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -122,7 +124,4 @@ Prompt:
 int DLL_PUBLIC func_from_language_runtime(void) {
     return 86;
 }
-
-"""
-
 ```

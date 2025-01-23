@@ -106,7 +106,7 @@ The code defines several functions responsible for:
 
 这部分代码主要负责将 WebNN JavaScript API 中用于定义模型构建的各种选项对象转换为引擎内部使用的属性结构体，并根据这些选项和输入操作数构建 WebNN 图中的各种基本操作 (operators)，例如卷积、池化、元素级运算等。同时，它还负责一些基本的输入验证和图的约束确定，为后续的图编译和执行做准备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ml/webnn/ml_graph_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -114,9 +114,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
-  if (options->hasBias()) {
+### 源代码
+```cpp
+if (options->hasBias()) {
     attributes.bias = options->bias()->Descriptor();
   }
   attributes.label = options->label().Utf8();
@@ -908,8 +910,4 @@ MLOperand* MLGraphBuilder::convTranspose2d(
 MLOperand* MLGraphBuilder::cumulativeSum(MLOperand* input,
                                          const uint32_t axis,
                                          const MLCumulativeSumOptions* options,
-                                        
-"""
-
-
 ```

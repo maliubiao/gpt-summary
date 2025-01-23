@@ -130,11 +130,13 @@ myMap.set({ key: "obj" }, "value2");
 
 `v8-deep-serializer.cc` 文件是 V8 引擎中负责将 JavaScript 值转换为结构化数据的关键组件，它为 V8 Inspector 和其他需要检查 JavaScript 运行时状态的工具提供了基础。它通过识别不同的 JavaScript 类型并采用相应的序列化策略来实现这一目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-deep-serializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -505,7 +507,4 @@ Response V8DeepSerializer::serializeV8Value(
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

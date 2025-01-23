@@ -129,7 +129,7 @@ This structured approach, starting from the high-level context and gradually div
 
 `sampleimpl.py` 文件在 Frida 的构建系统中扮演着代码生成器的角色。它定义了创建不同类型项目模板的蓝图，这些模板用于快速搭建 Frida 组件或示例的初始结构。虽然这个文件本身不直接执行逆向操作或与底层系统交互，但它生成的代码和构建配置是构建 Frida 工具链的关键部分，而 Frida 正是用于动态分析和逆向工程的强大工具。理解这个文件有助于理解 Frida 项目的构建流程，并在开发自定义 Frida 组件时提供指导。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/templates/sampleimpl.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -299,7 +301,4 @@ class FileHeaderImpl(FileImpl):
         kwargs = self.lib_kwargs()
         with open(kwargs['header_file'], 'w', encoding='utf-8') as f:
             f.write(self.lib_header_template.format_map(kwargs))
-
-"""
-
 ```

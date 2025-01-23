@@ -131,14 +131,16 @@ This systematic breakdown of the code and its context allows for a comprehensive
 
 总而言之，`navigation_params.cc` 文件在 Chromium Blink 引擎中扮演着关键角色，它负责为网页导航过程中的各种阶段准备必要的参数信息，这些信息直接关系到网页的加载、渲染、历史记录管理以及安全策略的执行，从而与 JavaScript, HTML, CSS 的功能紧密相连。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/navigation/navigation_params.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ mojom::RendererContentSettingsPtr CreateDefaultRendererContentSettings() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

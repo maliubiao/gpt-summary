@@ -211,7 +211,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 `v8/src/numbers/conversions.cc` 文件的主要功能是提供高效且准确的 C++ 代码来实现字符串和各种数字类型（包括双精度浮点数、整数和大整数）之间的相互转换。这些转换是 V8 引擎处理 JavaScript 中数字类型转换的基础，直接影响 `parseInt()`, `parseFloat()`, `Number()`, `BigInt()` 构造函数以及数字的 `toString()` 方法的行为。 该文件还包含一些内部辅助函数来支持这些转换过程，例如处理不同进制的字符串解析和安全的字符串构建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/numbers/conversions.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/numbers/conversions.cc以.tq结尾，那它是个v8 torque源代码，
@@ -219,8 +219,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1194,7 +1196,4 @@ const char* DoubleToCString(double v, base::Vector<char> buffer) {
       } else if (0 < decimal_point && decimal_point <= 21) {
         // ECMA-262 section 9.8.1 step 7.
         builder.AddSubstring(decimal_re
-"""
-
-
 ```

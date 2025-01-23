@@ -119,7 +119,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 它专注于模块的结构和声明，为开发者提供关于模块组成部分的详细文本表示。对于函数体内部的指令，它会调用 `FunctionBodyDisassembler` 来处理。总而言之，它是 V8 中用于将编译后的 WebAssembly 模块的静态结构信息转换成人类可读文本的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-disassembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-disassembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -127,8 +127,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 intExportName(kExternalTable, i);
     PrintTable(table);
     out_ << ")";
@@ -432,8 +434,4 @@ void ModuleDisassembler::LineBreakOrSpace(bool break_lines,
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

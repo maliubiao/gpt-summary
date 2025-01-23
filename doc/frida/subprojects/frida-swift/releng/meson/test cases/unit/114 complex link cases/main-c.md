@@ -155,7 +155,7 @@ int s3(void) {
 
 总而言之，虽然 `main.c` 代码本身非常简单，但其在 Frida 项目中的位置和 "complex link cases" 的描述表明，它是用于测试 Frida 在处理复杂函数链接时的动态 Hook 能力的关键组成部分，这与逆向工程的实践密切相关。 理解这类测试用例有助于理解 Frida 的工作原理，排查 Hook 过程中的问题，并验证 Frida 的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/114 complex link cases/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,15 +163,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int s3(void);
 
 int main(int argc, char *argv[])
 {
     return s3();
 }
-
-"""
-
 ```

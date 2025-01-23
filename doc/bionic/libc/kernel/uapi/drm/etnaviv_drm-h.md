@@ -290,7 +290,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，并让目标 Android 应用程序执行一些图形操作，你就可以在 Frida 的输出中看到应用程序是如何通过 ioctl 与 Etnaviv GPU 驱动进行交互的，包括调用的 ioctl 命令和传递的参数。记得将 `com.example.myapp` 替换为你想要分析的应用程序的包名，并将示例中的 request 代码替换为实际的宏定义值（可以通过查看 `bionic/libc/kernel/uapi/drm/etnaviv_drm.handroid` 中的定义计算出来）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/drm/etnaviv_drm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -301,8 +301,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -495,7 +497,4 @@ struct drm_etnaviv_pm_signal {
 }
 #endif
 #endif
-
-"""
-
 ```

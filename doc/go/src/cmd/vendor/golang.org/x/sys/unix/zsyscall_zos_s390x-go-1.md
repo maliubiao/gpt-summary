@@ -114,7 +114,7 @@ By following these steps, we can systematically analyze the code snippet and add
 
 总而言之，`zsyscall_zos_s390x.go` 的主要功能是 **为 Go 语言在 z/OS s390x 平台上提供低级别的操作系统接口，允许 Go 程序执行底层的系统调用。** 它的设计包含了对系统调用可用性的检查和回退机制，以提高兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_zos_s390x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -122,10 +122,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-	return (*funcref)(dirfd, path, mode, dev)
+### 源代码
+```go
+return (*funcref)(dirfd, path, mode, dev)
 }
 
 func error_Mknodat(dirfd int, path string, mode uint32, dev int) (err error) {
@@ -1066,10 +1067,4 @@ func Unlockpt(fildes int) (rc int, err error) {
 	}
 	return
 }
-
-"""
-
-
-
-
 ```

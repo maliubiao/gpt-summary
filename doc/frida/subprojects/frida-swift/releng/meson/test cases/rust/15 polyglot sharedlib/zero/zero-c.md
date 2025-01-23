@@ -100,7 +100,7 @@ By following these steps, the comprehensive and informative analysis provided in
 
 因此，到达 `zero.c` 文件通常是因为有人在进行与共享库相关的开发、测试或者逆向工程，并使用 Frida 作为动态分析工具。 `zero.c` 作为一个非常简单的示例，可以用来验证构建流程、Frida 的基本功能，或者作为更复杂插桩的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/rust/15 polyglot sharedlib/zero/zero.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define EXPORT __declspec(dllexport)
 #else
@@ -121,7 +123,4 @@ EXPORT int zero(void);
 int zero(void) {
     return 0;
 }
-
-"""
-
 ```

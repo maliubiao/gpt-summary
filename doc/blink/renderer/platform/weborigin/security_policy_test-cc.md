@@ -135,14 +135,16 @@ By following this systematic approach, we can effectively analyze the C++ test f
 
 总而言之，`security_policy_test.cc` 是一个非常重要的测试文件，它确保了 Blink 引擎在处理各种安全策略时行为正确，从而保障用户的浏览安全和网站的功能正常运行。它涵盖了 Referrer 控制、跨域访问控制以及安全上下文等方面，这些都与 JavaScript, HTML, CSS 的行为息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/security_policy_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -827,7 +829,4 @@ TEST(SecurityPolicyTest, ReferrerForCustomScheme) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

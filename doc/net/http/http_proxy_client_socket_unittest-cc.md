@@ -149,15 +149,17 @@ fetch('https://example.com')
 
 因此，虽然用户本身不会直接操作到这个 C++ 文件，但是用户遇到的与代理相关的问题可能会促使开发者去研究这个文件的测试代码，以便更好地理解和调试 `HttpProxyClientSocket` 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_proxy_client_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ TEST(HttpProxyClientSocketTest, Tag) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

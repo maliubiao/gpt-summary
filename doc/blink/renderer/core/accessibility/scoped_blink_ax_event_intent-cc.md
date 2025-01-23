@@ -169,14 +169,16 @@ This detailed thought process allows us to dissect the code, understand its purp
 
 总而言之，`scoped_blink_ax_event_intent.cc` 文件通过 RAII 技术，提供了一种方便且安全的方式来管理 Blink 渲染引擎中的可访问性事件意图，确保这些意图在需要时被激活，并在不再需要时被自动停用，从而维护了可访问性功能的正确性和效率。理解其功能有助于开发者更好地理解 Blink 引擎如何处理网页的可访问性，并有助于排查相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/accessibility/scoped_blink_ax_event_intent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ ScopedBlinkAXEventIntent::~ScopedBlinkAXEventIntent() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

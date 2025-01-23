@@ -143,15 +143,17 @@ Finally, I organized the information into the requested sections: Functionality,
 
 总而言之，`balsa_enums.cc` 文件虽然小巧，但它定义了 `balsa` 库中用于描述 HTTP 解析状态和错误的关键信息，这些信息对于 Chromium 网络栈正确处理网络通信至关重要，并且在调试网络问题时提供了重要的线索。它间接地影响着 JavaScript 通过浏览器进行的网络操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/balsa/balsa_enums.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ const char* BalsaFrameEnums::ErrorCodeToString(
 }
 
 }  // namespace quiche
-
-"""
-
 ```

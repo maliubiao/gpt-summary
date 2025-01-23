@@ -90,7 +90,7 @@ The user wants to understand the functionality of the `media_query_exp.cc` file 
 
 这个代码文件的主要功能是 **定义和实现了用于表示、解析、验证和操作 CSS 媒体查询表达式的底层数据结构和逻辑**。它负责将 CSS 媒体查询表达式的文本表示转换为 Blink 引擎内部可以理解和处理的对象，并提供了一些工具函数来检查媒体特性的有效性以及其依赖关系。这部分代码是 Blink 引擎处理 CSS 媒体查询的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/media_query_exp.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * CSS Media Query
  *
@@ -961,7 +963,4 @@ void MediaQueryUnknownExpNode::SerializeTo(StringBuilder& builder) const {
 }
 
 v
-"""
-
-
 ```

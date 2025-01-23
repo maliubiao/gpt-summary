@@ -124,7 +124,7 @@ JavaScript 通过 `fetch` API 或 `XMLHttpRequest` 对象发起网络请求，�
 
 作为整个 `http_cache_unittest.cc` 测试套件的一部分，第 12 部分 `HttpCacheRangeGetTest` 的主要贡献是 **全面地验证了 HTTP 缓存对于各种 Range GET 请求场景的正确性和健壮性**。它确保了缓存能够有效地处理部分内容请求，从而优化网络性能，支持断点续传、流媒体等功能，并能正确处理各种异常情况，保证用户体验。这部分测试是确保 Chromium 网络栈缓存功能可靠性的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第12部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s 120-.
   MockTransaction transaction(kRangeGET_TransactionOK);
   transaction.request_headers = "Range: bytes = 120-\r\n" EXTRA_HEADER;
@@ -1046,7 +1048,4 @@ TEST_F(HttpCacheGetTest, IncompleteResourceCancel) {
   // Now make a regular request.
   ScopedMockTransaction transaction(kRangeGET_TransactionOK);
   transaction.request_heade
-"""
-
-
 ```

@@ -214,15 +214,17 @@ ProfilerTrace {
 
 因此，当开发者在 Chrome 开发者工具中进行 JavaScript CPU 性能分析时，背后的 `profiler_trace_builder.cc` 代码就在默默地工作，将 V8 引擎的原始数据转换为开发者能够理解和分析的结构化信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/profiler_trace_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -432,7 +434,4 @@ bool ProfilerTraceBuilder::ShouldIncludeStackFrame(
 }
 
 }  // namespace blink
-
-"""
-
 ```

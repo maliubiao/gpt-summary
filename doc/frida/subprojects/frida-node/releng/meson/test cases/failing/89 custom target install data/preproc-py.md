@@ -117,7 +117,7 @@ Let's break down the thought process for analyzing this Python script and genera
 
 `preproc.py` 是一个简单的文件复制脚本，在 Frida 的构建过程中可能被用作一个辅助工具，用于准备或部署自定义数据。  它本身并不涉及复杂的逆向分析，但其功能对于将必要的文件和数据放置到正确的位置以供 Frida 使用至关重要。理解其功能和潜在的错误有助于理解 Frida 的构建流程和排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/89 custom target install data/preproc.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -140,7 +142,4 @@ outf = sys.argv[2]
 with open(outf, 'wb') as o:
     with open(inf, 'rb') as i:
         o.write(i.read())
-
-"""
-
 ```

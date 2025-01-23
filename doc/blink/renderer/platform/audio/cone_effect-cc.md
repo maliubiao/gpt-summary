@@ -207,14 +207,16 @@ By following this kind of detailed analysis and thinking process, we can arrive 
 
 总而言之，`cone_effect.cc` 文件实现了 Web Audio API 中用于空间化音频的关键功能，它通过定义锥形区域来模拟声音的方向性和衰减，为用户提供更沉浸式的音频体验。理解其背后的数学原理和参数含义对于正确使用 Web Audio API 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/cone_effect.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -292,7 +294,4 @@ double ConeEffect::Gain(gfx::Point3F source_position,
 }
 
 }  // namespace blink
-
-"""
-
 ```

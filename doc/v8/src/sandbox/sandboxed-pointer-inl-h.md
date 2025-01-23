@@ -145,15 +145,17 @@ Address read_address = ReadSandboxedPointerField(field_address, PtrComprCageBase
 
 总结来说，`v8/src/sandbox/sandboxed-pointer-inl.h` 通过提供内联函数，实现了在 V8 沙箱环境中安全地操作指针的关键机制，将指针表示为相对于沙箱基地址的偏移量，从而增强了 V8 的安全性。虽然 JavaScript 开发者不直接操作这些底层的沙箱指针，但这种机制是 V8 实现安全可靠的 JavaScript 执行环境的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/sandboxed-pointer-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/sandboxed-pointer-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -203,7 +205,4 @@ V8_INLINE void WriteSandboxedPointerField(Address field_address,
 }  // namespace v8
 
 #endif  // V8_SANDBOX_SANDBOXED_POINTER_INL_H_
-
-"""
-
 ```

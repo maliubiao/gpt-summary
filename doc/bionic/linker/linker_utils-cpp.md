@@ -319,7 +319,7 @@ if (resolve_path_addr) {
 
 这个 Frida 示例可以帮助你深入了解 Android 系统如何加载和管理动态库，以及 `linker_utils.cpp` 中提供的工具函数在其中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_utils.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -330,8 +330,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -581,7 +583,4 @@ bool is_first_stage_init() {
   static bool ret = (getpid() == 1 && access("/proc/self/exe", F_OK) == -1);
   return ret;
 }
-
-"""
-
 ```

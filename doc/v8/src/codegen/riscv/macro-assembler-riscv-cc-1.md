@@ -61,7 +61,7 @@ V8 编译这段 JavaScript 代码时，`MacroAssembler::AddWord` 或 `MacroAssem
 
 这部分代码主要专注于实现 RISC-V 架构的基本算术、逻辑、比较和移位运算的宏指令。它提供了用于生成这些指令的 C++ 接口，并考虑了代码大小优化（通过 RISC-V C 扩展）和不同操作数类型的处理。此外，还包含了加载立即数、移动寄存器以及字节序转换等辅助功能。 这些宏指令是构建更高级抽象的基础，用于在 V8 引擎中生成执行 JavaScript 代码所需的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/macro-assembler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -69,8 +69,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 cratch);
       }
     }
@@ -1156,8 +1158,4 @@ void MacroAssembler::ByteSwap(Register rd, Register rs, int operand_size,
     or_(x0, rd, x0);   // x0 <- x0 << 16 | x0 >> 16
     and_(x2, x0, x1);  // x2 <- x0 & 0x00FF00FF
     slli(x2, x2, 8);   // x2 <- (x0 & x1) << 8
- 
-"""
-
-
 ```

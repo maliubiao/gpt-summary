@@ -191,7 +191,7 @@ pprof 的主程序会解析这些参数，然后调用 `addLabelNodes` 函数，
 
 总而言之，这段代码是 pprof 工具链中一个强大的功能，它允许用户通过标签维度更灵活地分析性能数据。理解其工作原理和可能的错误用法对于有效地利用 pprof 进行性能分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/driver/tagroot.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 package driver
 
 import (
@@ -334,9 +336,4 @@ func formatLabelValues(s *profile.Sample, k string, outputUnit string) []string 
 	}
 	return values
 }
-
-"""
-
-
-
 ```

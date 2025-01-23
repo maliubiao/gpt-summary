@@ -446,7 +446,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "__recvmmsg"), {
 
 通过这些步骤，你可以详细了解 Android Framework 或 NDK 是如何一步步调用到 Bionic libc 中的 socket 相关函数的，并使用 Frida 进行动态调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/sys_socket_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -457,8 +457,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -690,7 +692,4 @@ TEST(sys_socket, sendmmsg_error) {
   ASSERT_ERRNO(EBADF);
 #pragma clang diagnostic pop
 }
-
-"""
-
 ```

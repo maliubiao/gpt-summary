@@ -273,7 +273,7 @@ if __name__ == '__main__':
 
 这个示例演示了如何使用 Frida hook libc 中的函数，从而观察 Android Framework 或 NDK 代码的底层行为，包括与浮点环境相关的操作。通过类似的 hook 方法，你可以调试其他与浮点异常处理相关的函数，例如 `feenableexcept()`, `feraiseexcept()`, `fetestexcept()` 等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/fenv_x86_64.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -284,8 +284,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 2004-2005 David Schultz <das (at) FreeBSD.ORG>
  * All rights reserved.
@@ -378,7 +380,4 @@ typedef struct {
 typedef __uint32_t fexcept_t;
 
 __END_DECLS
-
-"""
-
 ```

@@ -184,15 +184,17 @@ func main() {
 
 这段测试代码的主要目的是确保 `go fix` 命令能够正确地应用预定义的修复规则，并将代码格式化为符合 `gofmt` 规范。通过大量的测试用例，可以验证 `go fix` 命令在不同场景下的行为是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/fix/main_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -359,9 +361,4 @@ func TestRewrite(t *testing.T) {
 func tdiff(t *testing.T, aname, a, bname, b string) {
 	t.Errorf("%s", diff.Diff(aname, []byte(a), bname, []byte(b)))
 }
-
-"""
-
-
-
 ```

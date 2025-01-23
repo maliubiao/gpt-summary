@@ -164,15 +164,17 @@ processArguments(1, 2, 3);
 
 `v8/src/codegen/interface-descriptors-inl.h` 是 V8 代码生成器的核心组件，它定义了描述函数调用约定的数据结构和方法，为 V8 将 JavaScript 代码转化为高效的机器码提供了基础。虽然普通 JavaScript 开发者不会直接修改这个文件，但理解其背后的概念有助于编写更符合 V8 优化原则的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/interface-descriptors-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/interface-descriptors-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -996,7 +998,4 @@ BUILTIN_LIST_TFS(DEFINE_STATIC_BUILTIN_DESCRIPTOR_GETTER)
 }  // namespace v8
 
 #endif  // V8_CODEGEN_INTERFACE_DESCRIPTORS_INL_H_
-
-"""
-
 ```

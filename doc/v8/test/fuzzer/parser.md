@@ -113,11 +113,13 @@ Response: Let's break down the thought process for analyzing this C++ fuzzer cod
 
 `v8/test/fuzzer/parser.cc` 是一个用于自动化测试 V8 JavaScript 引擎解析器的工具。它通过生成和提供各种各样的输入，包括合法的和非法的 JavaScript 代码，来检验解析器的健壮性和错误处理能力，从而帮助发现并修复 V8 引擎中的潜在 bug。 `IsValidInput` 函数作为一个预过滤器，帮助提高模糊测试的效率，而 `LLVMFuzzerTestOneInput` 则是实际执行解析测试的核心函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
       v8::Isolate::kFullGarbageCollection);
   return 0;
 }
-
-"""
-
 ```

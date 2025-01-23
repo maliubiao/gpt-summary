@@ -199,15 +199,17 @@ func main() {
 
 总而言之，`go/src/cmd/compile/internal/dwarfgen/dwarf.go` 是 Go 编译器中至关重要的组成部分，它负责生成 DWARF 调试信息，使得开发者可以使用调试器来理解和诊断他们的 Go 程序。理解其功能有助于开发者更好地利用调试工具，并了解编译选项如何影响调试体验。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/dwarfgen/dwarf.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -836,9 +838,4 @@ func RecordPackageName() {
 func closureOffset(n *ir.Name, closureVars map[*ir.Name]int64) int64 {
 	return closureVars[n]
 }
-
-"""
-
-
-
 ```

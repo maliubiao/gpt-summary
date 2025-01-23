@@ -142,15 +142,17 @@ func main() {
 
 这段代码虽然简单，但它是 Go 语言跨平台能力的一个体现。通过针对不同操作系统提供特定的实现，Go 能够提供统一的 API，让开发者编写的程序可以在不同的平台上运行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/plan9/pwd_go15_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -172,9 +174,4 @@ func Getwd() (wd string, err error) {
 func Chdir(path string) error {
 	return syscall.Chdir(path)
 }
-
-"""
-
-
-
 ```

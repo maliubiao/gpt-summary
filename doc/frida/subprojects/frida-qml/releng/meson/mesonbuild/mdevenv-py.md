@@ -149,7 +149,7 @@ By following these steps, we can systematically analyze the Python script and pr
 
 因此，`mdevenv.py` 是 Frida 开发流程中一个重要的环节，它为开发者提供了一个一致且配置好的环境，方便他们进行构建、测试和调试工作，特别是在涉及到逆向工程和底层系统交互时，其提供的环境配置和工具集成尤为重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/mdevenv.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import os, subprocess
@@ -393,7 +395,4 @@ def run(options: argparse.Namespace) -> int:
         return e.returncode
     except FileNotFoundError:
         raise MesonException(f'Command not found: {args[0]}')
-
-"""
-
 ```

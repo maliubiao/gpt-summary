@@ -137,7 +137,7 @@ This systematic approach helps to analyze even a seemingly trivial piece of code
 
 总而言之，虽然 `rOne` 函数本身非常简单，但它可以作为理解 Frida 动态 instrumentation 机制和进行逆向分析的一个很好的起点和测试用例。它的简单性使得更容易隔离和理解各个步骤和潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/218 include_dir dot/src/rone.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,11 +145,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int rOne(void) {
     return 1;
 }
-"""
-
 ```

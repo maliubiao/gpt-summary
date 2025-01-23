@@ -134,15 +134,17 @@ Essentially, I approached the problem by dissecting the code, understanding its 
 
 通过在 `web_printing_type_converters.cc` 中设置断点，可以观察各种打印属性在不同类型之间转换的过程，从而帮助定位问题。 例如，可以观察某个特定的 `TypeConverter` 是否被调用，以及输入和输出的值是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/printing/web_printing_type_converters.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -712,7 +714,4 @@ V8JobState::Enum TypeConverter<V8JobState::Enum, MojomJobState>::Convert(
 }
 
 }  // namespace mojo
-
-"""
-
 ```

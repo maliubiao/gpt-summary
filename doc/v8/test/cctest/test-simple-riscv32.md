@@ -91,11 +91,13 @@ console.log(result); // 输出 15
 
 总而言之，`test-simple-riscv32.cc` 是 V8 引擎针对 RISC-V 32位架构进行底层代码生成和执行正确性验证的关键组成部分，它确保了 V8 能够在该架构上正确地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-simple-riscv32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -325,7 +327,4 @@ TEST(LI_CONST) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

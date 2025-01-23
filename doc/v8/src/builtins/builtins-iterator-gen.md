@@ -117,11 +117,13 @@ while (!result.done) {
 
 `v8/src/builtins/builtins-iterator-gen.cc` 文件是 V8 引擎中实现 JavaScript 迭代器机制的关键组成部分。它定义了获取迭代器、执行迭代步骤、将可迭代对象转换为其他数据结构等核心操作的底层实现，直接支持了 JavaScript 中各种与迭代器相关的语法和 API。理解这个文件的功能有助于深入理解 JavaScript 迭代器的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-iterator-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -665,7 +667,4 @@ TF_BUILTIN(IterableToFixedArrayWithSymbolLookupSlow,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -128,13 +128,15 @@ console.log(Math.floor(c));
 
 这个代码片段是 RISC-V 架构下 V8 引擎的核心组成部分，它提供了构建高效机器码的基础指令和助手函数，用于处理内存访问、数据操作和控制流，从而使得 JavaScript 代码能够在 RISC-V 处理器上高效执行。它专注于底层的指令生成，屏蔽了许多 RISC-V 汇编的细节，为 V8 的其他组件提供了更高级别的抽象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
-   slli(x1, x1, 8);   // x1 <- 0xFF00FF00
+### 源代码
+```
+slli(x1, x1, 8);   // x1 <- 0xFF00FF00
     and_(rd, x0, x1);  // x0 & 0xFF00FF00
     srli(rd, rd, 8);
     or_(rd, rd, x2);  // (((x0 & x1) << 8)  | ((x0 & (x1 << 8)) >> 8))
@@ -2043,7 +2045,4 @@ void MacroAssembler::InsertHighWordF64(FPURegister dst, Register src_high) {
 #elif V8_TARGET_ARCH_RISCV32
   BlockTrampolinePoolScope block_trampoline_pool(this);
   Add32(sp, sp,
-"""
-
-
 ```

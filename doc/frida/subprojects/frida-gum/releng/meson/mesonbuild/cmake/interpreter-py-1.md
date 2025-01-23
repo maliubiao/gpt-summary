@@ -118,7 +118,7 @@ By following this process, I can create a comprehensive and accurate summary of 
 
 `CMakeInterpreter` 的核心功能是作为 Frida 构建系统中连接 CMake 和 Meson 的桥梁。它负责解析 CMake 项目的配置和结构信息，并将其转换为 Meson 构建系统能够理解的形式。这使得 Frida 能够方便地集成和操作使用 CMake 构建的目标应用程序。它涉及到对 CMake 构建流程、目标类型、依赖关系、编译和链接选项的深入理解，以及将这些概念映射到 Meson 构建系统的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/cmake/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 mlog.bold(str(self.conflict_map)))
         mlog.log('  -- working_dir:  ', mlog.bold(str(self.working_dir)))
         mlog.log('  -- depends_raw:  ', mlog.bold(str(self.depends_raw)))
@@ -639,8 +641,4 @@ class CMakeInterpreter:
 
     def target_list(self) -> T.List[str]:
         return list(self.internal_name_map.keys())
-
-"""
-
-
 ```

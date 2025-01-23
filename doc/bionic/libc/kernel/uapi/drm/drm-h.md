@@ -263,7 +263,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，你可以观察到 `com.android.systemui`（或其他目标进程）在与 DRM 驱动交互时调用的 `ioctl` 函数，以及传递的请求码。你可以根据输出的请求码进一步分析 Android Framework 如何使用 DRM API 来完成其图形任务。如果需要更深入的调试，可以在 Frida 脚本中解析 `args[2]` 指向的数据结构的内容，但这需要对具体的 `DRM_IOCTL_*` 命令和对应的数据结构有更深入的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/drm/drm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -274,8 +274,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -921,7 +923,4 @@ typedef struct drm_set_version drm_set_version_t;
 }
 #endif
 #endif
-
-"""
-
 ```

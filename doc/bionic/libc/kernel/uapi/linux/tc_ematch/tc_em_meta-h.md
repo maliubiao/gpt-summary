@@ -262,7 +262,7 @@ sys.stdin.read()
 
 `tc_em_meta.h` 是 Android 底层网络流量控制的关键组成部分，定义了用于扩展匹配器的元数据结构和标识符。理解这个头文件有助于深入了解 Android 的网络策略管理和 QoS 实现机制。虽然它本身不包含 libc 函数或直接涉及 dynamic linker，但与用户空间程序和内核的交互密切相关，并通过动态链接的共享库来实现功能。 通过 Frida Hook 我们可以动态地观察 Android 系统如何利用这些底层的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tc_ematch/tc_em_meta.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -273,8 +273,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -365,7 +367,4 @@ struct tcf_meta_hdr {
   struct tcf_meta_val right;
 };
 #endif
-
-"""
-
 ```

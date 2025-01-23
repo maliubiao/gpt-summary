@@ -173,14 +173,16 @@ Computed Offsets:
 
 理解 `keyframe_effect_model.cc` 的功能对于深入了解浏览器如何处理动画以及如何优化动画性能至关重要。 它涉及到 CSS 动画、Web Animations API 以及浏览器渲染流水线的多个方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/keyframe_effect_model.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -869,7 +871,4 @@ bool KeyframeEffectModelBase::PropertySpecificKeyframeGroup::
 }
 
 }  // namespace blink
-
-"""
-
 ```

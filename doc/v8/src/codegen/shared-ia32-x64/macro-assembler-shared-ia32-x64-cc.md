@@ -144,7 +144,7 @@ const sum = Float32Array.from(a, (val, i) => val + b[i]);
 
 `v8/src/codegen/shared-ia32-x64/macro-assembler-shared-ia32-x64.cc` 的第一部分主要定义了一个 **共享的宏汇编器基类**，它为 V8 编译器的代码生成阶段提供了一组 **高级的 C++ 接口**，用于生成针对 IA32 和 x64 架构的 **基本寄存器操作、浮点数和 SIMD 指令**。 这个类的设计目标是 **抽象掉不同架构的指令差异**，并 **利用 CPU 的特性 (如 AVX)** 来优化生成的代码。 它在 V8 将 JavaScript 代码转化为可执行的机器码的过程中扮演着至关重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/shared-ia32-x64/macro-assembler-shared-ia32-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/shared-ia32-x64/macro-assembler-shared-ia32-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -152,8 +152,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1218,7 +1220,4 @@ void SharedMacroAssemblerBase::I64x2ShrS(XMMRegister dst, XMMRegister src,
   DCHECK_NE(xmm_shift, dst);
   DCHECK_NE(xmm_shift, src);
   // tmp_shift can alias shift since we don't use shif
-"""
-
-
 ```

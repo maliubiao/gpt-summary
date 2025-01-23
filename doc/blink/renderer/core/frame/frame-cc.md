@@ -88,15 +88,17 @@ Here's a breakdown of how to approach this:
 
 这份代码是 Chromium Blink 引擎中 `Frame` 类的实现，它负责表示和管理浏览器的帧结构。 这部分代码主要关注 `Frame` 的基本生命周期管理（创建、分离、交换）、帧树的维护、与页面和所有者元素的关联、用户激活状态的传递、表单提交的管理、窗口代理的管理以及一些基础的属性处理。 它体现了 `Frame` 类作为 Blink 核心组件在连接 HTML 结构、JavaScript 交互和 CSS 渲染方面的关键作用。代码中还包含了一些与实验性特性（如 fenced frame）相关的逻辑。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1998, 1999 Torben Weis <weis@kde.org>
  *                     1999 Lars Knoll <knoll@kde.org>
@@ -948,7 +950,4 @@ bool Frame::SwapImpl(
   if (parent_) {
     if (parent_->first_child_ == this) {
       pare
-"""
-
-
 ```

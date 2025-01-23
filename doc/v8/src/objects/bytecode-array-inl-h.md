@@ -205,15 +205,17 @@ function simple() {
 
 总而言之，`v8/src/objects/bytecode-array-inl.h` 定义了用于操作 JavaScript 函数字节码表示的关键数据结构的内联方法，是 V8 引擎核心组件之一。 理解其功能有助于深入了解 JavaScript 的执行原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/bytecode-array-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/bytecode-array-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -407,7 +409,4 @@ TRUSTED_POINTER_ACCESSORS(BytecodeWrapper, bytecode, BytecodeArray,
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_BYTECODE_ARRAY_INL_H_
-
-"""
-
 ```

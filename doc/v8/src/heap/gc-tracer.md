@@ -657,12 +657,14 @@ void GCTracer::SampleAllocation(base::TimeTicks current,
   int64_t new_space_allocated_bytes = std::max<int64_t>(
       new_space_counter_bytes - new_space_allocation_counter_bytes_, 0);
   int64_t old_generation_allocated_bytes
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/gc-tracer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2222,7 +2224,4 @@ void GCTracer::ReportFullCycleToRecorder() {
     DCHECK_NE(-1, cppgc_event.main_thread_efficiency_in_bytes_per_us);
     event.main_thread_efficiency_cpp_in_bytes_per_us =
         cppgc_event.main_thread_efficiency_in_bytes_per
-"""
-
-
 ```

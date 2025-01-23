@@ -222,15 +222,17 @@ BackoffEntry entry(&policy);
 
 总而言之，`net/base/backoff_entry.cc` 提供了一个通用的、可配置的退避机制，用于处理网络请求失败，提高系统的健壮性。虽然它本身是 C++ 代码，但退避的概念在前端 JavaScript 开发中同样重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/backoff_entry.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -418,7 +420,4 @@ base::TimeTicks BackoffEntry::BackoffDurationToReleaseTime(
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -164,14 +164,16 @@ By following these steps, systematically analyzing the code, and considering its
 
 `blink/renderer/platform/mojo/browser_interface_broker_proxy_impl.cc` 文件实现了 Blink 渲染引擎与浏览器进程进行 Mojo 通信的关键组件，它充当了一个接口代理，负责请求和获取浏览器提供的各种服务，这些服务是实现 Web 页面功能的基础。理解其功能有助于理解 Blink 如何与浏览器进行交互，以及在进行 Blink 开发时如何正确使用 Mojo 接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mojo/browser_interface_broker_proxy_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -310,7 +312,4 @@ void BrowserInterfaceBrokerProxyImpl::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

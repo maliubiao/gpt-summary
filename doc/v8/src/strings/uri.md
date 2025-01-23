@@ -148,11 +148,13 @@ This step-by-step approach, starting with high-level observation and gradually d
 
 `v8/src/strings/uri.cc` 文件是 V8 引擎中处理 URI 编码和解码的核心 C++ 代码。它实现了 JavaScript 中 `decodeURI`, `decodeURIComponent`, `encodeURI`, `encodeURIComponent`, 以及已废弃的 `escape` 和 `unescape` 函数的基础逻辑。通过操作 V8 内部的字符串对象，它使得 JavaScript 能够安全可靠地处理和表示 URI 数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/uri.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -677,7 +679,4 @@ MaybeHandle<String> Uri::Unescape(Isolate* isolate, Handle<String> string) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

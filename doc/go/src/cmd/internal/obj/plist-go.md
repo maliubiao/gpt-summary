@@ -139,15 +139,17 @@ TEXT ·BadFunc(SB), ABIInternal, $8-0
 
 总而言之，`go/src/cmd/internal/obj/plist.go` 是 Go 工具链中负责处理和组织底层指令的关键部分，它连接了编译器前端的抽象表示和链接器的最终机器码生成，并负责生成运行时所需的各种元数据。理解它的功能对于深入理解 Go 编译过程和进行底层编程非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/plist.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -551,9 +553,4 @@ func MarkUnsafePoints(ctxt *Link, p0 *Prog, newprog ProgAlloc, isUnsafePoint, is
 		}
 	}
 }
-
-"""
-
-
-
 ```

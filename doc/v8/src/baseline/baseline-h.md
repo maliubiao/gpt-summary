@@ -145,15 +145,17 @@ function sumArrayOptimized(arr) {
 
 `v8/src/baseline/baseline.h` 定义了 V8 中 Baseline 编译器的核心接口，允许 V8 的其他部分检查函数是否可以被 Baseline 编译并生成相应的机器代码。 Baseline 编译器是 V8 执行 JavaScript 代码的一个重要组成部分，它提供了比解释器更快的执行速度，并且为后续的优化编译奠定了基础。 虽然普通开发者不会直接使用这个头文件，但了解其功能有助于理解 V8 的内部工作原理和性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/baseline.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/baseline/baseline.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -182,7 +184,4 @@ void EmitReturnBaseline(MacroAssembler* masm);
 }  // namespace v8
 
 #endif  // V8_BASELINE_BASELINE_H_
-
-"""
-
 ```

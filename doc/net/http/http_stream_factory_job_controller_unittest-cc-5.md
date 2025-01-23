@@ -112,7 +112,7 @@ By following these steps and thinking through the scenarios, a comprehensive and
 
 这是 `HttpStreamFactory::JobController` 单元测试的第六部分，主要关注以下功能：主连接任务的恢复机制（延迟恢复、备用连接失败时立即恢复、存在可用 SPDY 会话时不延迟），预连接功能及其对 HTTP/2 和 `NetworkIsolationKey` 的处理，SPDY 会话对预连接的影响，预连接任务对后续请求的影响（特别是基于 IP 池化的情况），以及对 HTTP/2 服务器的并发请求限制（包括对 `NetworkIsolationKey` 的尊重）。这些测试确保了 `JobController` 在各种场景下能够正确、高效地管理 HTTP 连接的建立。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_job_controller_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 main_job_is_resumed(job_controller_));
 
   // Task to resume main job in 3 seconds should be posted.
@@ -843,7 +845,4 @@ TEST_F(JobControllerLimitMultipleH2Requests, MultipleRequestsFirstRequestHang) {
   MockRead reads[] = {MockRead(SYNCHRONOUS, ERR_IO_PENDING)};
   std::list<SequencedSocketData> socket_data;
   std::list<SSLSocketDataPr
-"""
-
-
 ```

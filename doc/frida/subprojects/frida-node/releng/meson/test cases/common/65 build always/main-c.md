@@ -113,7 +113,7 @@ Initially, one might focus too much on the simplicity of the C code itself. The 
 
 尽管 `main.c` 本身的功能非常简单，但它在 Frida 项目中扮演着重要的角色，用于验证构建系统是否能够正确处理版本信息。理解这个简单的程序及其上下文，有助于理解 Frida 的构建流程、测试框架，甚至可以作为逆向分析 Frida 或其相关组件的起点。它也体现了在大型软件项目中，即使是最简单的代码片段，也有其特定的目的和意义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/65 build always/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include"version.h"
 
@@ -130,7 +132,4 @@ int main(void) {
     printf("Version is %s.\n", version_string);
     return 0;
 }
-
-"""
-
 ```

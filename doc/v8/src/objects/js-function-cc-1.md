@@ -675,7 +675,7 @@ int JSFunction::CalculateExpectedNofProperties(Isolate* isolate,
                                                Handle<JSFunction> function) {
   int expected_nof_properties = 0;
   for (PrototypeIterator iter(isolate, function,
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-function.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-function.cc以.tq结尾，那它是个v8 torque源代码，
@@ -683,10 +683,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-         IsGeneratorFunction(function->shared()->kind()));
+### 源代码
+```cpp
+IsGeneratorFunction(function->shared()->kind()));
   Isolate* isolate = function->GetIsolate();
   Handle<JSReceiver> construct_prototype;
 
@@ -1404,8 +1405,4 @@ void JSFunction::ClearAllTypeFeedbackInfoForTesting() {
 }  // namespace v8::internal
 
 #include "src/objects/object-macros-undef.h"
-
-"""
-
-
 ```

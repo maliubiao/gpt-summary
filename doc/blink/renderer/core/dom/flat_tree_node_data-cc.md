@@ -189,15 +189,17 @@ Let's break down the thought process for analyzing the `flat_tree_node_data.cc` 
 
 `FlatTreeNodeData` 是 Blink 渲染引擎中一个重要的内部数据结构，它负责维护 DOM 节点在扁平树中的状态，特别是与 Shadow DOM 和 `<slot>` 元素相关的分配信息。理解它的作用有助于理解 Shadow DOM 的工作原理，并能帮助开发者在遇到相关问题时进行更有效的调试。虽然前端开发者通常不会直接操作这个类，但了解其背后的机制对于深入理解浏览器渲染过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/flat_tree_node_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ void FlatTreeNodeData::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

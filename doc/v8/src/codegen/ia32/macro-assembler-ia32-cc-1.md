@@ -95,7 +95,7 @@ add(5, 10);
 
 这段 `v8/src/codegen/ia32/macro-assembler-ia32.cc` 代码片段是 V8 引擎在 IA-32 架构上生成高效汇编代码的关键组成部分，它封装了底层的汇编指令，提供了高层次的抽象，用于实现 JavaScript 的各种语言特性和运行时功能。它通过提供各种宏指令，简化了代码生成过程，并包含了必要的调试和错误处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/macro-assembler-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ia32/macro-assembler-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -103,8 +103,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 orObject);
 
   {
@@ -1097,8 +1099,5 @@ int MacroAssembler::CallCFunction(Register function, int num_arguments,
     if (function == ecx) scratch = edx;
     LoadLabelAddress(pc_scratch, &get_pc);
 
-    // The root 
-"""
-
-
+    // The root
 ```

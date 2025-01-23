@@ -220,15 +220,17 @@ Animation Worklet 允许开发者使用 JavaScript 创建高性能的自定义�
 
 总而言之，`Animator.cc` 文件是 Animation Worklet 功能在 Blink 渲染引擎中的一个关键组成部分，它负责连接 JavaScript 定义的动画逻辑和底层的渲染机制，驱动自定义动画的执行并管理其状态。 理解它的功能和与 Web 技术的关系，对于开发和调试高性能的自定义 Web 动画至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/animationworklet/animator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -345,7 +347,4 @@ v8::Local<v8::Value> Animator::State(v8::Isolate* isolate,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -187,7 +187,7 @@ func main() {
 * **忘记恢复默认的 Resolver:**  在上面的例子中，我们临时替换了 `net.DefaultResolver` 以便 `socktest` 可以拦截网络操作。  必须使用 `defer` 语句在测试结束后将其恢复，否则可能会影响后续的测试或程序的行为。
 * **忽略了不同操作的上下文:**  不同的 socket 操作（如 `Connect`, `Accept`, `Send`, `Recv`）有不同的上下文和参数。在编写过滤器时，需要根据 `Operation` 类型正确地解析和处理这些参数，例如 `so.RemoteAddr()` 获取远程地址只在连接相关的操作中有意义。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/internal/socktest/sys_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -386,9 +388,4 @@ func (sw *Switch) AcceptEx(ls syscall.Handle, as syscall.Handle, b *byte, rxdata
 	sw.stats.getLocked(nso.Cookie).Accepted++
 	return nil
 }
-
-"""
-
-
-
 ```

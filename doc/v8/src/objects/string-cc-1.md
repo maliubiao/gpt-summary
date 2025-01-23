@@ -208,7 +208,7 @@ By following these steps, you can systematically analyze the provided C++ code s
 
 总而言之，这段 `v8/src/objects/string.cc` 代码片段是 V8 引擎中处理字符串的核心组成部分，它提供了各种底层的、高性能的操作，支撑着 JavaScript 中常用的字符串方法和操作。理解这些底层实现有助于更深入地理解 JavaScript 字符串的工作原理以及如何避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/string.cc以.tq结尾，那它是个v8 torque源代码，
@@ -216,9 +216,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-           } else {
+### 源代码
+```cpp
+} else {
               WriteToFlat(second, sink + second_start, 0, second_length,
                           access_guard);
             }
@@ -1159,8 +1161,5 @@ SeqString::DataAndPaddingSizes SeqOneByteString::GetDataAndPaddingSizes()
     const {
   int data_size = sizeof(SeqOneByteString) + length() * kOneByteSize;
   int padding_size = SizeFor(length()) - data_size;
-  return 
-"""
-
-
+  return
 ```

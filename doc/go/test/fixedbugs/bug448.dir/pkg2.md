@@ -93,15 +93,17 @@ func main() {
 
 `pkg2.go` 的功能是作为一个简单的桥梁，调用另一个包的函数。它的主要目的是作为 Go 编译器的一个回归测试用例，用于确保在处理跨包函数调用和内联优化时不会出现之前修复过的 bug。使用者需要理解其作为测试代码的上下文，并注意 Go 的包导入机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug448.dir/pkg2.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -115,10 +117,4 @@ import "./pkg1"
 func F() {
 	pkg1.Do()
 }
-
-
-"""
-
-
-
 ```

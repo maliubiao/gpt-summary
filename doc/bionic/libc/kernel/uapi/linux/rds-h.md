@@ -261,7 +261,7 @@ session.detach()
 
 这个 Frida 脚本可以帮助你观察 Android 应用程序或系统服务是否以及如何使用 RDS 功能。请注意，`AF_RDS` 和 `SOL_RDS` 的实际数值可能因 Android 版本和内核配置而异，你需要根据目标环境进行确认。 你可以通过在目标设备的 shell 中查看 `/usr/include/linux/socket.h` 和 `/usr/include/linux/rds.h` 来获取确切的数值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/rds.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -272,8 +272,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -546,7 +548,4 @@ struct rds_zcopy_cookies {
 #define RDS_RDMA_NOTIFY_ME 0x0020
 #define RDS_RDMA_SILENT 0x0040
 #endif
-
-"""
-
 ```

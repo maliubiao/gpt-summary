@@ -183,15 +183,17 @@ if (navigator.connection) {
 
 总而言之，`effective_connection_type.cc` 文件在 Chromium 中扮演着关键的角色，它定义了有效连接类型的标准表示形式，并为 C++ 代码和 JavaScript 代码之间传递网络质量信息提供了基础。理解这个文件的功能有助于理解 Chromium 如何感知用户的网络连接质量，以及网页如何利用这些信息来优化用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/effective_connection_type.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ const char* DeprecatedGetNameForEffectiveConnectionType(
 }
 
 }  // namespace net
-
-"""
-
 ```

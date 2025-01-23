@@ -252,15 +252,17 @@ If you don't provide a custom `hash_value` for your class, the default hashing m
 
 In summary, `v8/src/base/functional.h` provides a fundamental hashing infrastructure for V8, enabling efficient implementation of core JavaScript features and data structures. It offers tools for defining custom hash functions and combining hash values effectively. Understanding its purpose is crucial for anyone working on the internals of the V8 engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/functional.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/functional.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -621,7 +623,4 @@ V8_BASE_BIT_SPECIALIZE_BIT_CAST(double, uint64_t)
 }  // namespace v8::base
 
 #endif  // V8_BASE_FUNCTIONAL_H_
-
-"""
-
 ```

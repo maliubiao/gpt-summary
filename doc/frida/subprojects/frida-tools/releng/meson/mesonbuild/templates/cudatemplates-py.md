@@ -216,7 +216,7 @@ If the user encounters issues with the generated CUDA project (e.g., compilation
 * **Examine the generated source and header files.** They might find that the placeholders were not correctly substituted or that the basic structure doesn't meet their needs.
 * **Potentially, for advanced users or developers contributing to Frida, they might even look at the `cudatemplates.py` file itself** to understand how the templates are structured and whether any modifications are needed to the template generation logic. This would happen if they suspect a bug in the template generation process or need to add support for more complex CUDA project structures.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/templates/cudatemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -224,8 +224,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -369,7 +371,4 @@ class CudaProject(FileHeaderImpl):
     lib_header_template = lib_h_template
     lib_test_template = lib_cuda_test_template
     lib_meson_template = lib_cuda_meson_template
-
-"""
-
 ```

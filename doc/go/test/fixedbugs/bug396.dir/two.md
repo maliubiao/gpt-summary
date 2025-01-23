@@ -164,15 +164,17 @@ func New(v int) T {
 
 总而言之，`two.go` 是一个用于测试 Go 编译器内联和类型检查机制的示例代码，它本身的功能很简洁，但对于理解 Go 编译器的内部工作原理很有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug396.dir/two.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -187,8 +189,4 @@ import "./one"
 func use() {
 	_ = one.New(1)
 }
-"""
-
-
-
 ```

@@ -83,15 +83,17 @@ Here's a breakdown of the tasks:
 
 `WidgetBase` 的这部分代码主要负责管理与渲染过程密切相关的底层信息和机制，包括动画帧调度、屏幕和渲染表面信息同步、窗口几何管理以及坐标转换。这些功能对于确保网页在不同设备和窗口状态下正确渲染和交互至关重要。它通过与浏览器 compositor 和客户端的交互，以及提供坐标转换等工具，连接了 Blink 引擎的内部机制和上层 JavaScript, HTML, CSS 的表现。理解这些功能对于开发和调试 Blink 渲染引擎至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/widget_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nce finished handling the
   // ime event.
   UpdateSelectionBounds();
@@ -348,8 +350,4 @@ std::optional<int> WidgetBase::GetMaxRenderBufferBounds() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

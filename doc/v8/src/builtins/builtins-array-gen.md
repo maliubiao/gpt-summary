@@ -74,12 +74,14 @@ arr.indexOf(NaN); // -1
 
 总而言之，`builtins-array-gen.cc` 是 V8 引擎中实现 JavaScript 数组核心功能的关键部分，它通过高效的 C++ 代码和代码生成技术，显著提升了 JavaScript 数组操作的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-array-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1759,7 +1761,4 @@ void ArrayBuiltinsAssembler::CreateArrayDispatchSingleArgument(
       // Make elements kind holey and update elements kind in the type info.
       var_elements_kind = Word32Or(var_elements_kind.value(), Int32Constant(1));
       StoreOb
-"""
-
-
 ```

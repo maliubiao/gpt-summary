@@ -292,7 +292,7 @@ Interceptor.attach(Module.findExportByName(null, "read"), {
 
 这个测试文件是 Bionic 库中用于确保 `signalfd` 和 `signalfd64` 这两个重要系统调用在 Android 环境下正常工作的关键组成部分。理解其功能有助于深入理解 Android 底层的信号处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/sys_signalfd_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -303,8 +303,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -379,7 +381,4 @@ TEST(sys_signalfd, signalfd64) {
   TestSignalFd(signalfd64(-1, &mask, SFD_CLOEXEC), SIGRTMIN);
 #endif
 }
-
-"""
-
 ```

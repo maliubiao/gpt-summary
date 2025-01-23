@@ -110,11 +110,13 @@ console.log(result);
 
 `build-graph-phase.cc` 文件是 Turboshaft 编译器中至关重要的一个部分，它负责将 JavaScript 代码 (以及可能的 WebAssembly 代码) 转换成一个优化的中间表示图。这个图是后续编译器优化和最终生成机器码的基础。虽然开发者不会直接操作这个图，但它的存在和高效构建直接影响着 JavaScript 代码的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/build-graph-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -164,7 +166,4 @@ std::optional<BailoutReason> BuildGraphPhase::Run(
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

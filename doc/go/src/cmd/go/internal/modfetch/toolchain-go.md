@@ -205,15 +205,17 @@ Latest Toolchain version: &{go1.21 {2023-08-03 14:30:00 +0000 UTC}}
 
 这段 `toolchain.go` 代码在 Go 工具链中扮演着关键角色，它通过创建虚拟仓库的方式，统一了 Go 语言版本和工具链版本的管理和查询，使得用户可以使用熟悉的模块依赖管理方式来声明所需的 Go 版本。虽然它不负责实际的下载，但它是 `go get` 命令处理 `go@<version>` 和 `toolchain@<version>` 的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modfetch/toolchain.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -395,9 +397,4 @@ func dlToGo(v string) (string, bool) {
 	}
 	return strings.TrimPrefix(v[:i], "go"), true
 }
-
-"""
-
-
-
 ```

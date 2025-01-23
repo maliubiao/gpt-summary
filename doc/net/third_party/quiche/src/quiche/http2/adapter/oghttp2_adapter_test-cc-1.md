@@ -115,7 +115,7 @@ I will now summarize these functionalities in a concise manner.
 
 因此，当用户在浏览器中遇到网络请求错误或页面显示异常时，可以查看浏览器的开发者工具 (Network 选项卡) 来检查 HTTP 请求和响应的详细信息，包括状态码、头部、内容等，从而帮助定位问题是否与 HTTP/2 协议的实现有关。这段测试代码就是为了确保 Chromium 的 HTTP/2 实现能够正确处理各种边界情况，避免将错误传递到上层的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -123,9 +123,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共12部分，请归纳一下它的功能
+```
 
-"""
-      ToHeaders({{":method", "GET"},
+### 源代码
+```cpp
+ToHeaders({{":method", "GET"},
                  {":scheme", "http"},
                  {":authority", "example.com"},
                  {":path", "/this/is/request/one"}});
@@ -940,8 +942,5 @@ TEST(OgHttp2AdapterTest, ClientHandles304WithContentLength) {
   EXPECT_EQ(stream_frames.size(), static_cast<size_t>(stream_result));
 
   EXPECT_CALL(visitor, OnBeforeFrameSent(SETTINGS, 0, _, ACK_FLAG));
-  EXPECT_CALL(visitor, OnFrameSent(SETTINGS, 0, 
-"""
-
-
+  EXPECT_CALL(visitor, OnFrameSent(SETTINGS, 0,
 ```

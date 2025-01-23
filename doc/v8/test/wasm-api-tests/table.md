@@ -112,11 +112,13 @@ try {
 
 总而言之， `v8/test/wasm-api-tests/table.cc` 这个 C++ 测试文件详细验证了 WebAssembly Table 的各种核心功能，这些功能在 JavaScript 中通过 `WebAssembly.Table` API 暴露出来，允许 JavaScript 代码与 WebAssembly 模块中的表格进行交互，实现动态函数分发和插件机制等高级功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -240,7 +242,4 @@ TEST_F(WasmCapiTest, Table) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

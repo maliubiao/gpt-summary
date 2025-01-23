@@ -139,7 +139,7 @@ Let's break down the thought process for analyzing this C code snippet and gener
 
 总而言之，`prog6.c` 作为一个 Frida 的测试用例，其目的是确保 Frida 能够正确处理包含配置文件的 C 代码，特别是在字符串处理和替换方面。它涉及到基本的 C 语言知识、字符串操作、预处理机制，并与逆向工程中常见的配置文件分析场景密切相关。当测试失败时，开发者会通过查看源代码和配置文件来定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/14 configure file/prog6.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <string.h>
 #include <config6.h>
 
@@ -160,7 +162,4 @@ int main(void) {
         || strcmp(MESSAGE5, "@var1bar")
         || strcmp(MESSAGE6, "\\ @ @ \\@ \\@");
 }
-
-"""
-
 ```

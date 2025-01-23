@@ -150,15 +150,17 @@ By following these steps, I can systematically analyze the header file and gener
 
 总结来说，`v8/src/heap/read-only-promotion.h` 定义了 V8 内部将堆中的对象或内存区域提升为只读状态的机制。这与 JavaScript 的不可变性概念紧密相关，例如 `const` 声明和 `Object.freeze()` 方法。理解这种内部机制有助于更好地理解 V8 如何优化 JavaScript 代码的执行和保证数据的一致性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/read-only-promotion.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/read-only-promotion.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -186,7 +188,4 @@ class ReadOnlyPromotion final : public AllStatic {
 }  // namespace v8
 
 #endif  // V8_HEAP_READ_ONLY_PROMOTION_H_
-
-"""
-
 ```

@@ -149,15 +149,17 @@ While this header file aims to optimize power-of-ten handling, common errors rel
 
 In summary, `v8/src/base/numbers/cached-powers.h` is a performance optimization within V8, providing quick access to common powers of ten needed for number-to-string and string-to-number conversions in JavaScript. It avoids redundant calculations and contributes to the overall efficiency of the JavaScript engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/cached-powers.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/numbers/cached-powers.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ class PowersOfTenCache {
 }  // namespace v8
 
 #endif  // V8_BASE_NUMBERS_CACHED_POWERS_H_
-
-"""
-
 ```

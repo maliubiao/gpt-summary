@@ -100,11 +100,13 @@ add("hello", "world");
 
 总结来说，`v8/src/codegen/ia32/cpu-ia32.cc` 文件是 V8 引擎中特定于 IA-32 架构的 CPU 相关代码，其核心功能是提供指令缓存刷新的接口。虽然在 IA-32 架构下，由于硬件的特性，这个函数在大部分情况下是空操作，但它的存在是为了支持 V8 的动态代码生成和优化，这是 JavaScript 能够高效执行的关键。它也体现了 V8 对跨平台和与其他工具（如 Valgrind）集成的考虑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/cpu-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ void CpuFeatures::FlushICache(void* start, size_t size) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_IA32
-
-"""
-
 ```

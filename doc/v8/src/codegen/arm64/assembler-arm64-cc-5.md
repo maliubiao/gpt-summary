@@ -101,7 +101,7 @@ pop   {fp, pc}
 
 `v8/src/codegen/arm64/assembler-arm64.cc` 是 V8 JavaScript 引擎中至关重要的组件，它充当了将高级代码表示（例如，字节码或中间表示）转换为实际可执行的 ARM64 机器码的桥梁。它不仅提供了生成基本汇编指令的能力，还负责处理更复杂的任务，例如重定位、常量池管理和远距离跳转处理（通过 veneer 池）。该文件的核心 `Assembler` 类封装了 ARM64 指令集的细节，使得 V8 的代码生成器可以高效且可靠地生成目标平台的机器码，从而驱动 JavaScript 代码的执行。其功能涵盖了代码生成过程中的关键环节，确保了生成的代码的正确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/assembler-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/assembler-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -109,8 +109,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 turn;
       }
     } else {
@@ -439,8 +441,4 @@ void PatchingAssembler::PatchSubSp(uint32_t immediate) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_ARM64
-
-"""
-
-
 ```

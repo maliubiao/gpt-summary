@@ -153,12 +153,14 @@ Here's how it relates and some JavaScript examples:
 
 **In essence, this code provides the low-level building blocks that V8 uses to translate JavaScript code into executable RISC-V machine code, optimizing for efficiency in instruction encoding and constant handling.** The constant pool helps avoid embedding large constant values directly within the instruction stream, and the immediate materialization logic ensures that loading constants is done with the fewest possible instructions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/assembler-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ) {
   if (!is_buffer_growth_blocked()) {
     CheckBuffer();
@@ -637,8 +639,4 @@ RegList Assembler::DefaultTmpList() { return {t3, t5}; }
 DoubleRegList Assembler::DefaultFPTmpList() { return {kScratchDoubleReg}; }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

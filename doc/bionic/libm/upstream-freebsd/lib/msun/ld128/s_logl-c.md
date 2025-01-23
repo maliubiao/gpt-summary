@@ -236,7 +236,7 @@ Here's a step-by-step illustration of how execution can reach `s_logl.c`:
 
 In summary, `s_logl.c` is a crucial low-level component providing a fundamental mathematical function in Android. It's a good example of how native libraries underpin higher-level APIs and frameworks in the Android ecosystem.
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/ld128/s_logl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -246,8 +246,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -979,7 +981,4 @@ log2l(long double x)
 }
 
 #endif /* STRUCT_RETURN */
-
-"""
-
 ```

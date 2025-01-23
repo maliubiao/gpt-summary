@@ -102,11 +102,13 @@ map.set(objA, { value: 2 }); // WeakMap 弱引用 objA 作为键
 
 `reference-summarizer.cc` 提供了一种在 V8 引擎内部分析 JavaScript 对象引用关系的机制。它可以帮助理解对象的内存布局和依赖关系，这对于内存泄漏分析、对象图构建以及调试和性能优化都非常有用。虽然它是 C++ 代码，但它的功能直接服务于理解和调试 JavaScript 代码的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/reference-summarizer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ ReferenceSummary ReferenceSummary::SummarizeReferencesFrom(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

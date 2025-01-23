@@ -49,12 +49,14 @@ foo(myArray);
 
 在这个 JavaScript 示例中，当你在调试器中设置断点在 `x = arr[i];` 这一行，并使用“单步执行”（Step Over 或 Step Into）时，调试器应该会在每次循环迭代到这一行时暂停，允许你查看 `arr[i]` 的值。 这段 C++ 代码的目的就是验证 V8 引擎的调试器在这种情况下是否能正确工作。 C++ 代码模拟了设置断点、执行代码并检查断点被命中的次数，以此来确保单步执行的逻辑正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-debug.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 a function for testing stepping of keyed load. The statement 'y=1'
   // is there to have more than one breakable statement in the loop, TODO(315).
   v8::Local<v8::Function> foo = CompileFunction(
@@ -1962,7 +1964,4 @@ static void TestDebugBreakInLoop(const char* loop_head,
 }
 
 static const char* loop_bodies_1[] =
-"""
-
-
 ```

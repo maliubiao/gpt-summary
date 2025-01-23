@@ -160,7 +160,7 @@ This systematic approach, combining code reading, keyword analysis, understandin
 
 总而言之，`simd_mmx.c` 是 Frida Gum 中一个用于测试 MMX SIMD 指令功能的代码文件，它涵盖了 MMX 的可用性检测和基本的使用方法，并反映了在实际开发中可能遇到的平台兼容性和编译器优化问题。它对于理解 Frida Gum 的 SIMD 支持以及逆向分析使用了 MMX 指令的程序都非常有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/147 simd/simd_mmx.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -239,7 +241,4 @@ void increment_mmx(float arr[4]) {
 }
 
 #endif
-
-"""
-
 ```

@@ -220,15 +220,17 @@ typeWordNode := reflectdata.ConvIfaceTypeWord(pos, convNode.(*ir.ConvExpr))
 
 `helpers.go` 文件中的函数是 Go 编译器生成反射元数据的关键组成部分。它们针对不同的 Go 语言构造（如 map、slice、channel、接口、类型转换等）生成相应的运行时类型信息。这些信息对于 `reflect` 包在运行时进行类型检查、方法调用等操作至关重要。这段代码是 Go 编译器内部实现细节的一部分，普通 Go 程序员无需直接与之交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/reflectdata/helpers.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -445,9 +447,4 @@ func UnsafeSliceElemRType(pos src.XPos, n *ir.BinaryExpr) ir.Node {
 	}
 	return sliceElemRType(pos, n.Type())
 }
-
-"""
-
-
-
 ```

@@ -112,11 +112,13 @@ let potentially_a_pointer = /* 获取 obj2 的内存地址 (在 JavaScript 中�
 
 `v8/src/heap/cppgc/visitor.cc` 文件定义了用于遍历和处理 `cppgc` 管理的 C++ 对象的访问者模式，特别是实现了保守的垃圾回收标记功能。这种保守的扫描方法在无法获得精确类型信息的情况下，可以帮助识别可能指向其他对象的指针，确保垃圾回收的完整性，并间接地影响着 JavaScript 程序的内存管理和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/visitor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ void ConservativeTracingVisitor::VisitFullyConstructedConservatively(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

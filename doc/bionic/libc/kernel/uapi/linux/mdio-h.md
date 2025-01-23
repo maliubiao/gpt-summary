@@ -223,7 +223,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/linux/mdio.h` 是一个底层的头文件，定义了用于访问和控制以太网 PHY 芯片的常量。它在 Android 的网络连接功能中扮演着关键角色，被底层的内核驱动程序和 HAL 模块使用。虽然它本身不包含 libc 函数的实现或直接涉及 dynamic linker，但它为这些组件提供了必要的定义，使得它们能够与硬件进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/mdio.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -234,8 +234,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -599,7 +601,4 @@ Prompt:
 #define MDIO_USXGMII_5000FULL 0x1a00
 #define MDIO_USXGMII_LINK 0x8000
 #endif
-
-"""
-
 ```

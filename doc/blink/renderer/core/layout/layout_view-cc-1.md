@@ -109,16 +109,18 @@ By following these steps, I was able to dissect the code, understand its purpose
 
 `LayoutView` 的第二部分代码继续体现了它作为布局根节点的关键职责，专注于处理与视口相关的尺寸信息、背景属性、样式更新、特定场景下的复合处理、计数器和列表标记的更新，以及处理文本匹配标记等功能。这些功能共同确保了浏览器能够正确地渲染和展示网页内容，并响应用户的交互和样式变化。结合第一部分，我们可以看到 `LayoutView` 是 blink 渲染引擎中一个核心且复杂的组件，负责协调整个页面的布局和渲染流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_view.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                     const PhysicalOffset& point) const {
+### 源代码
+```cpp
+const PhysicalOffset& point) const {
   NOT_DESTROYED();
   if (result.InnerNode())
     return;
@@ -294,8 +296,4 @@ bool LayoutView::IsFragmentationContextRoot() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

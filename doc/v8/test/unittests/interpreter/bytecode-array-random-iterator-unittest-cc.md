@@ -124,7 +124,7 @@ add(5, 10);
 
 `v8/test/unittests/interpreter/bytecode-array-random-iterator-unittest.cc` 这个单元测试文件的主要功能是全面测试 `BytecodeArrayRandomIterator` 类的各种操作，包括边界检查、首尾访问、随机访问以及正向和反向迭代，以确保该类能够正确可靠地在字节码数组中移动和访问字节码信息。这对于 V8 引擎的解释器正确执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/bytecode-array-random-iterator-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/interpreter/bytecode-array-random-iterator-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -132,8 +132,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -884,7 +886,4 @@ TEST_F(BytecodeArrayRandomIteratorTest, IteratesBytecodeArrayBackwards) {
   EXPECT_EQ(iterator.current_index(), 18);
   EXPECT_EQ(iterator.current_offset(), offset);
   EXPECT_EQ(iterator.current_op
-"""
-
-
 ```

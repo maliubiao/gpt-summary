@@ -200,7 +200,7 @@ except Exception as e:
 
 总结来说，`nf_conntrack_ftp.h` 这个头文件虽然简单，但它定义了 Netfilter 连接跟踪模块处理 FTP 协议的关键信息，对于理解 Android 系统如何处理 FTP 网络连接至关重要。它位于内核 UAPI 层面，与 Android Framework 和 NDK 的交互是通过底层的网络协议栈和内核模块实现的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/nf_conntrack_ftp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -211,8 +211,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -228,7 +230,4 @@ enum nf_ct_ftp_type {
   NF_CT_FTP_EPSV,
 };
 #endif
-
-"""
-
 ```

@@ -197,15 +197,17 @@ runWasm();
 
 这些错误通常需要在调试过程中仔细检查偏移量、索引和缓冲区大小，并理解 WebAssembly 的内存模型和调用栈结构。`wasm-module-debug.cc` 提供的功能正是为了帮助开发者有效地进行这种检查和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/wasm-module-debug.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/wasm/gdb-server/wasm-module-debug.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -626,7 +628,4 @@ bool WasmModuleDebug::GetWasmValue(const wasm::WasmValue& wasm_value,
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

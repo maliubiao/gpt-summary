@@ -180,14 +180,16 @@ The goal of the explanation is to be clear, concise, and informative to someone 
 
 总而言之，`drawing_buffer_software_rendering_test.cc` 通过一系列单元测试，确保了 `DrawingBuffer` 类在软件渲染模式下的各项关键功能（如位图管理和帧缓冲绑定）的正确性和稳定性，这对于保证 Web 内容在各种环境下的正确渲染至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/drawing_buffer_software_rendering_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -300,7 +302,4 @@ TEST_F(DrawingBufferSoftwareCompositingTest, FramebufferBinding) {
 
 }  // unnamed namespace
 }  // blink
-
-"""
-
 ```

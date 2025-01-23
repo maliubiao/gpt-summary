@@ -323,7 +323,7 @@ sys.stdin.read()
 
 希望这个详细的解释能够帮助你理解 `bionic/libc/upstream-netbsd/common/lib/libc/hash/sha1/sha1.c` 文件的功能和在 Android 中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/common/lib/libc/hash/sha1/sha1.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -334,8 +334,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: sha1.c,v 1.6 2009/11/06 20:31:18 joerg Exp $	*/
 /*	$OpenBSD: sha1.c,v 1.9 1997/07/23 21:12:32 kstailey Exp $	*/
 
@@ -625,7 +627,4 @@ void SHA1Final(uint8_t digest[20], SHA1_CTX *context)
 }
 
 #endif /* HAVE_SHA1_H */
-
-"""
-
 ```

@@ -158,15 +158,17 @@ VTuneDomain::getDomain("GarbageCollection")->endTask();
 
 总而言之，`v8/src/third_party/vtune/vtuneapi.h` 提供了一个用于在 V8 代码中标记性能关键区域的接口，以便可以使用 Intel VTune Amplifier 进行详细的性能分析。它涉及到创建域来组织事件，以及在域内标记任务的开始和结束。虽然 JavaScript 代码不能直接使用这个 API，但 V8 的 C++ 代码会使用它来追踪 JavaScript 执行相关的事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/vtune/vtuneapi.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/third_party/vtune/vtuneapi.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 #ifndef __VTUNE_API_H__
 #define __VTUNE_API_H__
 
@@ -215,7 +217,4 @@ class VTuneDomain {
 };
 
 #endif
-
-"""
-
 ```

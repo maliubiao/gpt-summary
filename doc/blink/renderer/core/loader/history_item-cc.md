@@ -183,15 +183,17 @@ Finally, organize the information logically with clear headings and examples, en
 
 总而言之，`history_item.cc` 是 Blink 渲染引擎中一个核心的文件，它负责管理浏览器导航历史中的页面状态。理解其功能对于调试与“前进”、“后退”、`history.pushState` 等功能相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/history_item.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2006, 2008, 2011 Apple Inc. All rights reserved.
  *
@@ -563,7 +565,4 @@ HistoryItem::GetReferencedFilePathsForSerialization() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

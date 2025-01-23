@@ -187,7 +187,7 @@ func main() {
 
 `go/src/runtime/defs_linux_loong64.go` 是 Go 运行时环境的重要组成部分，它为 Linux/loong64 架构定义了与操作系统交互所需的常量和数据结构，是 Go 实现其底层功能（如内存管理、信号处理、定时器、文件 I/O 等）的基础。 普通 Go 开发者通常无需直接接触这些定义，但理解它们有助于深入理解 Go 语言的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_linux_loong64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Generated using cgo, then manually converted into appropriate naming and code
 // for the Go runtime.
 // go tool cgo -godefs defs_linux.go defs1_linux.go defs2_linux.go
@@ -396,9 +398,4 @@ type ucontext struct {
 	uc_pad_cgo_0 [8]byte
 	uc_mcontext  sigcontext
 }
-
-"""
-
-
-
 ```

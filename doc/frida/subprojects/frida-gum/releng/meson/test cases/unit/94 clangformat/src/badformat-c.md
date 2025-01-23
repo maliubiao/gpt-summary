@@ -146,7 +146,7 @@ struct {
 
 总而言之，`badformat.c` 作为一个简单的负面测试用例，其核心功能是测试代码格式化工具 `clang-format` 的健壮性。虽然它本身不执行复杂的逻辑或直接涉及底层操作，但它是保证 Frida 代码质量和可维护性的重要组成部分，间接地服务于逆向工程师和依赖 Frida 进行底层开发的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/94 clangformat/src/badformat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,11 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 struct {
 };
-
-"""
-
 ```

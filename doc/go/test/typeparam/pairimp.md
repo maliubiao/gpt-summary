@@ -189,15 +189,17 @@ func TestPairDifferentTypes(t *testing.T) {
 
 虽然我们没有看到 `pairimp.go` 的完整代码，但可以推断出它是一个位于 Go 语言测试目录下的文件，用于测试关于类型参数的特性，特别是如何使用类型参数来实现类似 `Pair` 这样的泛型结构。该文件很可能包含一些测试用例，用于验证 `Pair` 结构体的创建和使用是否符合预期。 `// rundir` 注释指示测试命令应在源文件目录下运行。使用者在使用泛型 `Pair` 时，需要注意指定类型参数，并了解潜在的类型约束问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/pairimp.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -205,9 +207,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

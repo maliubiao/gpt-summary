@@ -148,7 +148,7 @@ Here's a breakdown of the content in this part:
 
 因此，在调试网络连接问题时，特别是与 QUIC 相关的连接问题，这个文件中的代码是检查数据包加密/解密、帧结构以及连接状态的关键位置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ation nonce.
   if (IsLongHeader(type_byte) && header_type == ZERO_RTT_PROTECTED &&
       perspective_ == Perspective::IS_SERVER &&
@@ -1034,7 +1036,4 @@ bool QuicFramer::AppendIetfStreamFrame(const QuicStreamFrame& frame,
     if (!writer->WriteVarInt62(static_cast<uint64_t>(frame.offset))) {
       set_detailed_error("Writing data offset failed.");
       return f
-"""
-
-
 ```

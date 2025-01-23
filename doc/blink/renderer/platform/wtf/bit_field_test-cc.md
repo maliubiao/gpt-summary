@@ -141,14 +141,16 @@ By following these steps, I can thoroughly analyze the provided C++ test file an
 
 总而言之，`bit_field_test.cc` 文件通过一系列测试用例，确保了 `BitField` 类作为 Blink 引擎中用于高效管理位信息的底层工具的正确性和可靠性。虽然开发者不会直接在 JavaScript、HTML 或 CSS 中使用它，但它的正确运行对于整个渲染引擎的性能和功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/bit_field_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ TEST_F(BitFieldTest, ConcurrentBitFieldSetValue) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

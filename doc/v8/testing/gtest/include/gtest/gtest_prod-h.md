@@ -171,15 +171,17 @@ TEST_F(MyClassTest, TestSecretMethod) {
 
 总而言之，`v8/testing/gtest/include/gtest/gtest_prod.h` 是一个关键的头文件，用于支持 V8 引擎的 C++ 代码单元测试，允许测试代码有限地访问生产代码的内部实现，从而提高测试的覆盖率和有效性。 它本身不直接是 Torque 代码，也不直接执行 JavaScript，但对于确保 JavaScript 引擎的正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/testing/gtest/include/gtest/gtest_prod.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/testing/gtest/include/gtest/gtest_prod.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,6 +194,4 @@ Prompt:
 #if !defined(GOOGLE3)
 #include "third_party/googletest/src/googletest/include/gtest/gtest_prod.h"
 #endif
-"""
-
 ```

@@ -187,11 +187,13 @@ async function runWasmModule() {
 
 总的来说，`threads.cc` 这个 C++ 文件通过测试 WebAssembly C API 在多线程环境下的行为，验证了 V8 引擎对 WebAssembly 多线程的支持。这与 JavaScript 中使用 Web Workers 和 SharedArrayBuffer 来实现并发执行和共享内存的概念是相对应的，体现了 WebAssembly 在 Web 平台上实现高性能并发计算的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/threads.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -297,7 +299,4 @@ TEST_F(WasmCapiTest, MultiStoresOneThread) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

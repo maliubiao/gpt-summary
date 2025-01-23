@@ -149,11 +149,13 @@ int main() {
 
 `v8/src/handles/traced-handles.cc` 是 V8 引擎内部管理 JavaScript 对象引用的关键组件。它通过高效的内存管理和与垃圾回收器的紧密集成，确保了对象的正确生命周期管理。虽然 JavaScript 开发者不直接接触它，但它的存在是 JavaScript 能够自动进行内存管理并避免悬挂指针等问题的基础。 `v8::TracedReference` 提供了一个在 C++ Embedder API 中类似的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/handles/traced-handles.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -764,7 +766,4 @@ bool TracedHandles::IsValidInUseNode(const Address* location) {
 bool TracedHandles::HasYoung() const { return !young_blocks_.empty(); }
 
 }  // namespace v8::internal
-
-"""
-
 ```

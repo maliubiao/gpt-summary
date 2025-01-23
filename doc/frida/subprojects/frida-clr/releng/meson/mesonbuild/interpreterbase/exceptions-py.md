@@ -113,7 +113,7 @@ meson.build:10:0: ERROR: Argument of type 'int' is not callable.
 
 `exceptions.py` 文件定义了 Meson 构建系统解释器在 Frida 构建过程中可能遇到的各种错误和控制流状态。虽然它不直接参与 Frida 的运行时插桩，但对于理解 Frida 的构建过程、调试构建错误以及进行定制化开发都至关重要。这些异常类帮助 Meson 清晰地表达构建过程中遇到的问题，引导用户进行修复。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreterbase/exceptions.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -145,7 +147,4 @@ class ContinueRequest(BaseException):
 
 class BreakRequest(BaseException):
     pass
-
-"""
-
 ```

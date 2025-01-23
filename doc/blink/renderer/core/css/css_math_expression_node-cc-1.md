@@ -93,7 +93,7 @@ To address this, I need to:
 
 **总结来说，这个代码片段定义了用于表示和处理 CSS `calc()` 表达式中数值、标识符、关键字以及各种数学运算的类，并提供了进行单位转换、类型推断和表达式简化的功能。 它是 Blink 引擎解析和计算 CSS `calc()` 函数的核心组成部分。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_math_expression_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 >GetType()),
                             false /* has_comparisons*/,
                             false /* has_anchor_functions*/,
@@ -1073,9 +1075,4 @@ CSSMathExpressionOperation::CreateArithmeticOperationSimplified(
     CSSMathOperator op) {
   DCHECK(op == CSSMathOperator::kAdd || op == CSSMathOperator::kSubtract ||
          op == CSSMathOperator::kMultiply || op == CSSMathOperator::kDivide);
-
-
-"""
-
-
 ```

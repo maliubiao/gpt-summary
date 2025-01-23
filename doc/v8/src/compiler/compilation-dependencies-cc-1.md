@@ -144,7 +144,7 @@ sum(arr); // 之前的优化可能不再适用，需要重新编译
 
 总而言之，`compilation-dependencies.cc` 是 V8 编译器实现高效且正确代码生成的核心组件之一，它处理了 JavaScript 动态性带来的挑战，允许 V8 在保证正确性的前提下进行积极的优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/compilation-dependencies.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/compilation-dependencies.cc以.tq结尾，那它是个v8 torque源代码，
@@ -152,9 +152,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                 script_context_.object(), index_, property_, isolate),
+### 源代码
+```cpp
+script_context_.object(), index_, property_, isolate),
                isolate),
         DependentCode::kScriptContextSlotPropertyChangedGroup);
   }
@@ -869,8 +871,4 @@ bool CompilationDependencies::IsFieldRepresentationDependencyOnMap(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

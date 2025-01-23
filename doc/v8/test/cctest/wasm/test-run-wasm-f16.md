@@ -130,11 +130,13 @@ runWasmSimd();
 
 `v8/test/cctest/wasm/test-run-wasm-f16.cc` 文件是 V8 引擎中用于测试 WebAssembly 对 `f16` 类型支持的关键部分。它通过各种测试用例验证了 `f16` 值的加载、存储以及 `f16x8` SIMD 操作的正确性。  这些测试确保了当 JavaScript 代码与使用 `f16` 的 WebAssembly 模块交互时，能够得到预期的结果。 JavaScript 通过 WebAssembly API 与这些功能进行交互，虽然目前 JavaScript 对 `f16` 的原生支持可能还处于发展阶段，但最终的目标是实现 JavaScript 和 WebAssembly 之间 `f16` 数据的无缝传递和操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-f16.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -586,7 +588,4 @@ WASM_EXEC_TEST(F16x8Qfms) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

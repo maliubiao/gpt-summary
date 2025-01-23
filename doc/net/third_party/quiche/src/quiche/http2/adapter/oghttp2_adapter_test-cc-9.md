@@ -112,7 +112,7 @@ Here's a breakdown of the thought process to generate the response:
 
 作为第 10 部分，这个文件 `oghttp2_adapter_test.cc` 的主要功能是**通过大量的单元测试，详细验证 `OgHttp2Adapter` 组件在各种正常的和异常的 HTTP/2 通信场景下的行为是否符合预期。**  它深入测试了帧的发送和接收、连接状态管理、错误处理、特定 HTTP/2 特性的支持以及服务器发起的关闭流程。  考虑到这是系列测试的后期部分，它可能侧重于更复杂或边界情况的测试，确保 `OgHttp2Adapter` 的健壮性和可靠性。 它的存在是保证 Chromium 网络栈中 HTTP/2 实现正确性的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tream(_))
       .WillRepeatedly([&client_adapter,
                        &client_visitor](Http2StreamId stream_id) {
@@ -934,7 +936,4 @@ TEST(OgHttp2AdapterTest, ConnectionErrorWithBlackholingData) {
 
   // Client preface (empty SETTINGS)
   E
-"""
-
-
 ```

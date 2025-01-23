@@ -191,14 +191,16 @@ Tone played: #
 
 总而言之，`rtc_dtmf_sender_handler.cc` 在 Blink 渲染引擎中扮演着连接 WebRTC 底层 DTMF 功能和上层 JavaScript API 的关键角色，负责管理 DTMF 发送过程并通知相关的事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_dtmf_sender_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,7 +297,4 @@ void RtcDtmfSenderHandler::OnToneChange(const String& tone) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

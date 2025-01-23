@@ -67,12 +67,14 @@ main();
 
 The C++ test file you provided ensures that the V8 CPU profiler correctly captures and represents this kind of performance data from JavaScript execution. It verifies that the profiler can track the execution flow through `main()`, `slowFunction()`, and `fastFunction()`, and correctly attribute the execution time to these functions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-cpu-profiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1855,7 +1857,4 @@ TEST(CollectSampleAPI) {
   const v8::CpuProfileNode* root = profile->GetTopDownRoot();
   const v8::CpuProfileNode* start_node = GetChild(env, root, "start");
   CHECK_LE(1, start_no
-"""
-
-
 ```

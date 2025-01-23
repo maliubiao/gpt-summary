@@ -206,7 +206,7 @@ func MyCheck(value int) {
 
 `go/src/internal/pkgbits/support.go` 文件定义了两个内部辅助函数 `assert` 和 `panicf`，用于在处理包的二进制表示时进行错误检查和报告。`assert` 用于验证内部假设，而 `panicf` 用于创建带有格式化信息的panic。 这个包很可能被 Go 编译器或链接器等工具内部使用，用于处理包的元数据和依赖关系。 普通 Go 开发者不应该直接使用 `internal` 包中的这些函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/pkgbits/support.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -214,8 +214,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -233,9 +235,4 @@ func assert(b bool) {
 func panicf(format string, args ...any) {
 	panic(fmt.Errorf(format, args...))
 }
-
-"""
-
-
-
 ```

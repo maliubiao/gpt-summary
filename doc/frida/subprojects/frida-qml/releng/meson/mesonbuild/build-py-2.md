@@ -151,7 +151,7 @@ Let's say you have two internal libraries, `libA` (a static library) and `libB` 
 
 This specific part of the Frida build system (`frida/subprojects/frida-qml/releng/meson/mesonbuild/build.py`) is primarily responsible for **managing the linking process of build targets**. It defines how different components of Frida (libraries, executables) are connected, ensuring that dependencies are handled correctly and preventing common linking errors. It incorporates logic for handling different programming languages, platform-specific requirements, and code generation during the build. Its role is crucial in ensuring that the final Frida binaries are correctly assembled and can function as intended.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,9 +160,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
- raise MesonException(textwrap.dedent('''\
+### 源代码
+```python
+raise MesonException(textwrap.dedent('''\
                         An external library was used in link_with keyword argument, which
                         is reserved for libraries built as part of this project. External
                         libraries must be passed using the dependencies keyword argument
@@ -836,7 +838,4 @@ class Executable(BuildTarget):
         return self.debug_filename
 
     def is_linkable_tar
-"""
-
-
 ```

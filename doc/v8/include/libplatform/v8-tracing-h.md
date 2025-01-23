@@ -229,15 +229,17 @@ performance.measure("myMeasurement", "startMark", "endMark");
 
 总而言之，`v8/include/libplatform/v8-tracing.h` 定义了 V8 引擎内部强大的跟踪机制，用于收集和输出运行时事件，这对于理解引擎行为、进行性能分析和调试至关重要。理解这些类的功能可以帮助开发者更好地利用 V8 的跟踪能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/libplatform/v8-tracing.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/libplatform/v8-tracing.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -571,7 +573,4 @@ class V8_PLATFORM_EXPORT TracingController
 }  // namespace v8
 
 #endif  // V8_LIBPLATFORM_V8_TRACING_H_
-
-"""
-
 ```

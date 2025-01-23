@@ -123,15 +123,17 @@ Let's break down the thought process for analyzing this C++ test utility file.
 
 `net/device_bound_sessions/test_util.cc` 是一个典型的测试工具文件，主要功能是提供 Mock 对象和预定义的测试数据，以支持 `device_bound_sessions` 组件的单元测试。虽然它不直接与 Javascript 交互，但其提供的测试数据在 Web 安全和身份验证领域与 Javascript 有着重要的关联。理解这个文件的功能对于理解和调试 `device_bound_sessions` 组件的测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/device_bound_sessions/test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -195,7 +197,4 @@ GetRS256SpkiAndJwkForTesting() {
 }
 
 }  // namespace net::device_bound_sessions
-
-"""
-
 ```

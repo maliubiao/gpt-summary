@@ -141,7 +141,7 @@ multiply("2", 3); // 现在是字符串和数字的乘法，可能导致去优�
 
 该文件定义并实现了 V8 引擎中用于收集 JavaScript 代码运行时反馈信息的关键数据结构和方法。 这些反馈信息存储在 `FeedbackVector` 中，并通过 `FeedbackMetadata` 进行描述。  这些信息对于 V8 的优化编译至关重要，帮助引擎根据实际的运行时行为来优化代码，从而提高 JavaScript 的执行效率。 `FeedbackNexus` 提供了一种安全且结构化的方式来访问和修改这些反馈信息。 用户编写的 JavaScript 代码的行为直接影响着 `FeedbackVector` 中收集的信息，不一致的类型使用等编程模式可能导致优化失效。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/feedback-vector.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/feedback-vector.cc以.tq结尾，那它是个v8 torque源代码，
@@ -149,8 +149,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1059,8 +1061,4 @@ InlineCacheState FeedbackNexus::ic_state() const {
       }
       if (feedback == MegamorphicSentinel()) {
         return InlineCacheState::MEGAMORPHIC;
-  
-"""
-
-
 ```

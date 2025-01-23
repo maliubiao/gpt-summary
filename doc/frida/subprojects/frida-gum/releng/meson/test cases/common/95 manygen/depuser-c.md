@@ -225,7 +225,7 @@ collect2: 错误：ld 返回 1
 
 总而言之，`depuser.c` 虽然代码简单，但它作为一个测试用例，涵盖了软件构建、链接、动态分析等多个重要的概念，也反映了逆向工程中需要关注的一些关键方面。对于 `frida-gum` 这样的动态插桩工具，确保能够正确加载和调用来自不同来源的代码是非常重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/95 manygen/depuser.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -233,8 +233,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"gen_func.h"
 
 int main(void) {
@@ -243,7 +245,4 @@ int main(void) {
     unsigned int k = (unsigned int) gen_func_in_src();
     return (int)(i + j + k);
 }
-
-"""
-
 ```

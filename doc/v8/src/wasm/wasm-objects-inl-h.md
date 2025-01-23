@@ -192,15 +192,17 @@ int32_t WasmGlobalObject::GetI32() {
 
 总而言之，`v8/src/wasm/wasm-objects-inl.h` 是 V8 引擎中 WebAssembly 功能实现的关键组成部分，它提供了高效的方式来操作 WebAssembly 的各种对象，并且与 JavaScript 中暴露的 WebAssembly API 有着直接的对应关系。 了解这个文件的功能有助于深入理解 V8 如何执行 WebAssembly 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-objects-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-objects-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1008,7 +1010,4 @@ EXTERNAL_POINTER_ACCESSORS(WasmContinuationObject, stack, Address, kStackOffset,
 }  // namespace v8::internal
 
 #endif  // V8_WASM_WASM_OBJECTS_INL_H_
-
-"""
-
 ```

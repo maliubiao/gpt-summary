@@ -223,14 +223,16 @@ RRRRR
 
 总而言之，`static_bitmap_image_transform.cc` 文件是 Blink 引擎中处理静态位图图像变换的核心组件，它支撑着 Web 平台上各种图像相关的特性。理解其功能有助于我们更好地理解浏览器如何渲染和处理网页上的图像。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/static_bitmap_image_transform.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -628,7 +630,4 @@ StaticBitmapImageTransform::ConvertToColorSpace(
 }
 
 }  // namespace blink
-
-"""
-
 ```

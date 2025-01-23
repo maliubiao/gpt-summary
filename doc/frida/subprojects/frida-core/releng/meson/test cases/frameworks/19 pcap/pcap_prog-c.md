@@ -162,7 +162,7 @@ Here's a breakdown of the thinking process to analyze the C code and generate th
 
 总而言之，`pcap_prog.c` 是一个非常基础的 `libpcap` 使用示例，用于测试 Frida 的网络捕获基础设施是否能够正常初始化。它简洁地展示了如何创建一个数据包捕获会话，并为 Frida 更复杂的网络hook功能奠定了基础。理解这个简单的程序有助于理解 Frida 如何与底层的网络机制交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/19 pcap/pcap_prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <pcap/pcap.h>
 
 int
@@ -187,7 +189,4 @@ main()
     pcap_t *p = pcap_create(source, errbuf);
     return p == NULL;
 }
-
-"""
-
 ```

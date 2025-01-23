@@ -137,15 +137,17 @@ This iterative process of scanning, categorizing, inferring, illustrating, and r
 
 `dwarf_test.go` 是一个非常重要的测试文件，它深入地测试了 Go 链接器生成 DWARF 调试信息的各个方面。通过编译包含各种 Go 语言特性的代码，并检查生成 DWARF 信息的结构和内容，它确保了 Go 程序的调试体验。该文件涵盖了类型信息、结构体布局、函数和变量的声明信息、内联信息、行号表等关键的 DWARF 功能。理解这个文件的内容对于理解 Go 调试信息的生成机制以及如何编写可靠的调试工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/dwarf_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2184,9 +2186,4 @@ func TestConsistentGoKindAndRuntimeType(t *testing.T) {
 		t.Logf("%d types checked\n", typesChecked)
 	}
 }
-
-"""
-
-
-
 ```

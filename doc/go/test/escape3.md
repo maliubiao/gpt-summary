@@ -205,15 +205,17 @@ While this code is quite simple, common errors related to escape analysis and si
 
 In summary, the `escape3.go` code is a basic example likely used to test the Go compiler's escape analysis capabilities, particularly around returning structs from functions. It demonstrates simple struct initialization and manipulation within a slice.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape3.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2011 The Go Authors. All rights reserved.
@@ -250,9 +252,4 @@ func check1(pass int) T1 {
 	v[0].Y = pass
 	return v[0]
 }
-
-"""
-
-
-
 ```

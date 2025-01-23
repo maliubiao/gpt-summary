@@ -98,11 +98,13 @@ Here's a breakdown of how to generate the summary:
 
 `v8/src/builtins/builtins-array.cc` 是 V8 引擎中一个关键的文件，它使用高效的 C++ 代码实现了 JavaScript 中常用的数组操作。 通过区分快速路径和通用路径，并针对不同的数组类型进行优化，V8 能够显著提升 JavaScript 数组操作的性能。 该文件中的代码直接影响着我们在 JavaScript 中使用数组时的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-array.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1700,7 +1702,4 @@ BUILTIN(ArrayConcat) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

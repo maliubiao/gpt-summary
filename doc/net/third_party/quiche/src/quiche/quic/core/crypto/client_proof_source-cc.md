@@ -148,15 +148,17 @@ By following these steps and constantly refining my understanding of the code an
 
 总而言之，`client_proof_source.cc` 是 Chromium 中管理客户端证书的关键组件，它使得浏览器能够在使用 QUIC 协议时安全地进行客户端身份验证，这对于访问需要高安全性的服务至关重要。虽然 JavaScript 代码本身不直接操作这个类，但它的行为直接影响了通过 JavaScript 发起的网络请求能否成功完成需要客户端证书认证的过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/client_proof_source.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2021 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -226,7 +228,4 @@ DefaultClientProofSource::LookupExact(absl::string_view map_key) const {
 }
 
 }  // namespace quic
-
-"""
-
 ```

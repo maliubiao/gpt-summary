@@ -115,14 +115,16 @@ IgExpectNotEqualsForTesting(ig1, ig3); // 测试将会通过，因为 name 不�
 
 总而言之，`interest_group_test_utils.cc` 提供了一组强大的工具，用于在 Chromium Blink 引擎中测试 Interest Group 功能的正确性，它通过细致的字段比较和便捷的断言函数，帮助开发者编写可靠的单元测试。它间接地与 JavaScript, HTML 和 CSS 相关联，因为它测试了这些 Web 技术所依赖的底层 Interest Group 实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/test/interest_group_test_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -395,7 +397,4 @@ void IgExpectNotEqualsForTesting(const blink::InterestGroup& actual,
 }
 
 }  // namespace blink
-
-"""
-
 ```

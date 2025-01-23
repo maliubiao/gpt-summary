@@ -148,7 +148,7 @@ func main() {
 
 这段代码是针对 `wasip1` 平台的 `fcntl` 系统调用的一个简化实现，目前只支持获取文件描述符的标志位。开发者在使用时需要注意，不要假设它实现了 `fcntl` 的所有功能，否则会遇到 `ENOSYS` 错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/fcntl_wasip1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -156,8 +156,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -175,9 +177,4 @@ func Fcntl(fd int, cmd int, arg int) (int, error) {
 	}
 	return 0, syscall.ENOSYS
 }
-
-"""
-
-
-
 ```

@@ -240,7 +240,7 @@ sys.stdin.read()
 
 希望这个详细的解释能够帮助你理解 `bionic/tests/libs/versioned_lib_v3.cpp` 的功能以及它在 Android 中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/versioned_lib_v3.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -251,8 +251,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  *
@@ -295,7 +297,4 @@ int version_zero_function() {
 __asm__(".symver versioned_function_v1,versioned_function@TESTLIB_V1");
 __asm__(".symver versioned_function_v2,versioned_function@TESTLIB_V2");
 __asm__(".symver versioned_function_v3,versioned_function@@TESTLIB_V3");
-
-"""
-
 ```

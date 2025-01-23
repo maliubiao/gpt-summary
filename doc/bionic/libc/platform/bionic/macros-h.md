@@ -278,7 +278,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/platform/bionic/macros.handroid` 文件定义了一些在 Android Bionic 库中使用的通用宏，涵盖了代码规范、内存管理、异常处理、编译优化和内存安全等多个方面。理解这些宏的功能有助于深入理解 Android 系统底层的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/platform/bionic/macros.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -289,8 +289,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010 The Android Open Source Project
  *
@@ -396,7 +398,4 @@ static inline T* _Nonnull untag_address(T* _Nonnull p) {
 #else  // __has_feature(memtag_globals)
 #define BIONIC_USED_BEFORE_LINKER_RELOCATES
 #endif  // __has_feature(memtag_globals)
-
-"""
-
 ```

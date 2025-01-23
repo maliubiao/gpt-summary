@@ -129,7 +129,7 @@ Let's focus on the Intel compiler detection logic:
 
 In summary, `vs2013backend.py` is a vital component of Frida's build process on Windows using Visual Studio 2013. It handles the translation of Meson's build description into the specific format required by the Visual Studio build system, including handling different compiler toolsets. While it doesn't directly perform reverse engineering or interact with kernels, it's essential for building the tools that do.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/vs2013backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -173,7 +175,4 @@ class Vs2013Backend(Vs2010Backend):
                     raise MesonException('There is currently no support for ICL before 19, patches welcome.')
             if self.platform_toolset is None:
                 self.platform_toolset = 'v120'
-
-"""
-
 ```

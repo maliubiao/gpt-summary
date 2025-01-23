@@ -137,15 +137,17 @@ Finally, organize the thoughts into a clear and structured explanation, covering
 
 `webgl_debug_renderer_info.cc` 是 Chromium Blink 引擎中实现 `WEBGL_debug_renderer_info` 扩展的关键文件。它使得 JavaScript 能够查询底层图形渲染器的信息，这对于 WebGL 应用的调试和性能分析非常有用。开发者应该注意检查扩展是否可用，并在不可用时提供合理的处理。用户与该文件的交互是间接的，通过他们访问的网页和网页中执行的 JavaScript 代码触发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_debug_renderer_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -192,7 +194,4 @@ const char* WebGLDebugRendererInfo::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

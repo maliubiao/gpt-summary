@@ -241,7 +241,7 @@ By following these steps, I can systematically analyze the code and generate a c
 
 总而言之，这部分代码通过各种细致的测试用例，确保了 bionic 库中与基本文件操作、格式化输出以及相关的边界情况处理的 stdio 函数的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/stdio_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -253,8 +253,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 The Android Open Source Project
  *
@@ -1301,7 +1303,4 @@ TEST(STDIO_TEST, popen_return_value_0) {
 }
 
 TEST(STDIO_TEST, popen_return_valu
-"""
-
-
 ```

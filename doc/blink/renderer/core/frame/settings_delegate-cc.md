@@ -112,14 +112,16 @@ By following these steps, moving from the concrete code to abstract concepts and
 
 `blink::SettingsDelegate` 的核心功能是作为 `blink::Settings` 对象的委托，并负责管理其生命周期。虽然这段代码本身没有直接处理 JavaScript, HTML, CSS 的逻辑，但它管理的 `Settings` 对象包含了大量的配置选项，这些选项直接影响着网页的渲染和行为，包括 JavaScript 的执行、HTML 的解析和 CSS 的应用。 理解 `SettingsDelegate` 的作用有助于理解 Blink 引擎如何管理和配置各种渲染行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/settings_delegate.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -169,7 +171,4 @@ SettingsDelegate::~SettingsDelegate() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

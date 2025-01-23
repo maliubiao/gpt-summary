@@ -115,14 +115,16 @@ Finally, I organized the findings into the requested categories: functionality, 
 
 总而言之，`worker_pool_unittest.cc` 通过一个简单的测试用例验证了 `worker_pool` 组件的核心功能，即在后台线程安全地执行任务。理解其背后的原理有助于理解 Blink 引擎如何处理并发任务，以及避免在 JavaScript 和其他 Web 技术中使用异步编程时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/worker_pool_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ TEST(BackgroundSchedulerTest, RunOnBackgroundThread) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

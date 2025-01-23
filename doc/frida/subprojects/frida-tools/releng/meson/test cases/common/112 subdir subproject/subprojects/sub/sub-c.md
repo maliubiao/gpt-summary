@@ -160,7 +160,7 @@ if (Process.platform === 'linux' || Process.platform === 'android') {
 
 总而言之，`sub.c` 文件虽然自身功能简单，但它作为 Frida 测试用例的一部分，体现了 Frida 作为动态插桩工具在逆向工程和安全研究中的应用，并涉及到二进制、操作系统、以及用户在使用 Frida 时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/112 subdir subproject/subprojects/sub/sub.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,14 +168,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "sub.h"
 
 int sub(void) {
     return 0;
 }
-
-"""
-
 ```

@@ -103,7 +103,7 @@ By following these steps, the detailed and nuanced answer provided earlier can b
 
 你提供的只是一个空的头文件 `foo.h`，我们无法从中直接判断 `foo.c` 的具体功能。但是，根据文件名、目录结构以及 Frida 项目的上下文，我们可以推测 `foo.c` 是一个用于测试用例 `257` 的源文件，而 `foo.h` 是一个自动生成的头文件，用于声明 `foo.c` 中定义的内容。  理解 `foo.c` 的实际功能需要查看其源代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/257 generated header dep/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,10 +111,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "foo.h"
-
-"""
-
 ```

@@ -151,15 +151,17 @@ example.go:26:5: suspect and: b == 5 && b == 6
 
 `go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/bools/bools.go` 实现了一个用于检测Go语言代码中常见布尔运算符使用错误的静态分析器。它可以帮助开发者避免编写冗余或逻辑上存在问题的布尔表达式，提高代码质量和可读性。它通过分析代码的抽象语法树，查找特定的模式来实现其功能。这个分析器是 `go vet` 工具链的一部分，无需用户显式配置命令行参数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/bools/bools.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -342,9 +344,4 @@ func (op boolOp) split(e ast.Expr, seen map[*ast.BinaryExpr]bool) (exprs []ast.E
 	}
 	return
 }
-
-"""
-
-
-
 ```

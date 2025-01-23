@@ -430,7 +430,7 @@ This detailed thought process, involving code scanning, inference, example gener
 
 总而言之，这部分测试代码覆盖了 `strings` 包中一些核心的字符串操作功能，并通过各种测试用例验证了这些功能的正确性和健壮性，包括边界情况和错误处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strings/strings_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -439,8 +439,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 upper, t) {
 			t.Error("ToUpper(lower) consistency fail");
 		}
@@ -1426,10 +1428,4 @@ func BenchmarkReplaceAll(b *testing.B) {
 		stringSink = ReplaceAll("banana", "a", "<>")
 	}
 }
-
-"""
-
-
-
-
 ```

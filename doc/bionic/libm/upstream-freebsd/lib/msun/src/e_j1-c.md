@@ -315,7 +315,7 @@ The path to reaching `e_j1.c` typically involves:
 
 By understanding the functionality of `e_j1.c`, its role in Android's `libm`, and the dynamic linking process, you can effectively debug issues related to Bessel function calculations on the Android platform.
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_j1.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -325,8 +325,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -706,7 +708,4 @@ qone(double x)
 	s = one+z*(q[0]+z*(q[1]+z*(q[2]+z*(q[3]+z*(q[4]+z*q[5])))));
 	return (.375 + r/s)/x;
 }
-
-"""
-
 ```

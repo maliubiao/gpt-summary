@@ -140,15 +140,17 @@ func main() {
 
 总而言之，这段代码片段是一个精心设计的测试用例，旨在确保 Go 编译器能够正确地对 `make` 函数创建 channel 时的缓冲区大小参数进行类型和取值范围的校验，从而帮助开发者避免在实际编程中犯类似的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/makechan.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2017 The Go Authors. All rights reserved.
@@ -177,9 +179,4 @@ func main() {
 	sink = make(T, complex64(1+0i))  // ERROR "non-integer buffer argument in make.*|must be integer"
 	sink = make(T, complex128(1+0i)) // ERROR "non-integer buffer argument in make.*|must be integer"
 }
-
-"""
-
-
-
 ```

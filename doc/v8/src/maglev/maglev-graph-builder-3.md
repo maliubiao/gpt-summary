@@ -97,12 +97,14 @@ const element = arr[2];    // Would involve BuildLoadFixedArrayElement and poten
 
 **In summary, this file is a core component of V8's Maglev compiler, responsible for generating the low-level instructions needed to efficiently interact with JavaScript arrays and array-like objects.** It handles various array types, optimizations, and safety checks to ensure correct and performant execution of JavaScript code. The "part 4 of 9" suggests it's a specific module within the larger graph-building process, focusing on array/element manipulation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 de<StoreFixedArrayElementNoWriteBarrier>({elements, index, value});
   } else {
     AddNewNode<StoreFixedArrayElementWithWriteBarrier>(
@@ -1687,8 +1689,4 @@ ReduceResult MaglevGraphBuilder::TryBuildPolymorphicPropertyAccess(
     ReduceResult result;
     if (is_any_store) {
       result = TryBuildPropertyStore(receiver, lookup_start_object,
-                                    
-"""
-
-
 ```

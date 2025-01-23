@@ -246,7 +246,7 @@ Section Headers:     # 描述各个段的详细信息
 
 总而言之，`bionic/benchmarks/semaphore_benchmark.cpp` 这个文件虽然只是一个性能测试工具，但它反映了 Android 系统中信号量这一重要同步机制的底层实现。理解它的功能和相关的 libc 以及动态链接知识，有助于我们更好地理解 Android 系统的运行机制，并为开发高效稳定的 Android 应用打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/semaphore_benchmark.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -256,8 +256,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -304,7 +306,4 @@ static void BM_semaphore_sem_wait_sem_post(benchmark::State& state) {
   }
 }
 BIONIC_BENCHMARK(BM_semaphore_sem_wait_sem_post);
-
-"""
-
 ```

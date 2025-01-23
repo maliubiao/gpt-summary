@@ -156,15 +156,17 @@ By following these steps, including self-correction, we can arrive at a comprehe
 
 通过以上步骤，我们可以看到用户与网页的交互以及 JavaScript 代码的操作是如何最终涉及到 `HighlightPseudoMarkerListImpl` 这个底层的 Blink 引擎组件的。在调试与文本选择和高亮相关的问题时，理解这个类的功能和它所管理的标记类型是非常有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/highlight_pseudo_marker_list_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -237,7 +239,4 @@ void HighlightPseudoMarkerListImpl::Trace(blink::Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

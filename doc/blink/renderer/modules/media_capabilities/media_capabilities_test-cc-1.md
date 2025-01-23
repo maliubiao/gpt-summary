@@ -112,7 +112,7 @@ This part of the `media_capabilities_test.cc` file primarily focuses on:
 
 **总而言之，这部分测试代码专注于验证 `MediaCapabilities` 接口在处理解码能力判断时的核心逻辑，特别是与 GPU 加速、性能历史数据库以及机器学习服务的集成，并确保异步操作的正确性，同时也涵盖了 WebRTC 相关的能力判断。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_capabilities/media_capabilities_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pportKnown())
         .Times(2)
         .WillRepeatedly(Return(true));
@@ -842,7 +844,4 @@ TEST(MediaCapabilitiesTests, WebrtcEncodePowerEfficientIsSmooth) {
   EXPECT_CALL(mock_gpu_factories, GetVideoEncodeAcceleratorSupportedProfiles())
       .WillOnce(Return(media::VideoEncodeAccelerator::SupportedProfiles{
           {m
-"""
-
-
 ```

@@ -101,16 +101,18 @@ My thought process for analyzing the provided code snippet and generating the su
 
 这部分代码的核心功能是构建了一个高效的查找机制，用于识别和记录特定的 HTML 属性，尤其是 ARIA 属性和 `autocapitalize` 属性。 它为 Blink 引擎处理这些属性奠定了基础，虽然自身不包含复杂的逻辑，但对于正确支持 Web 标准和提供可访问性至关重要。 它通过将属性名称映射到 `WebFeature` 枚举值来支持属性使用情况的统计，以便 Chrome 团队了解 Web 平台的采用情况。  对于这里列出的属性，目前没有定义特定的事件触发或解析函数，意味着这些属性的通用处理逻辑在 `HTMLElement` 类的其他部分实现。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
-      {html_names::kAriaBusyAttr, WebFeature::kARIABusyAttribute, kNoEvent,
+### 源代码
+```cpp
+{html_names::kAriaBusyAttr, WebFeature::kARIABusyAttribute, kNoEvent,
        nullptr},
       {html_names::kAriaCheckedAttr, WebFeature::kARIACheckedAttribute,
        kNoEvent, nullptr},
@@ -937,7 +939,4 @@ void HTMLElement::ShowPopoverInternal(Element* invoker,
   // changing its type, removing it from the document, moving it to another
   // document, or calling showPopover().
   if (!IsPopoverReady(PopoverTriggerAction
-"""
-
-
 ```

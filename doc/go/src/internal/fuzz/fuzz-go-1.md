@@ -190,7 +190,7 @@ GODEBUG=fuzzdebug=1 go test -fuzz=FuzzTarget
 
 总而言之，这段代码片段是 Go 语言模糊测试框架中负责 **语料库管理和类型安全** 的关键组成部分。 它提供了读取、写入和验证语料库条目的功能，确保模糊测试能够使用符合预期的输入数据进行有效的测试。 通过使用 SHA256 哈希值来命名语料库文件，它也实现了简单的去重机制。 此外，它还提供了一个基于环境变量的简单调试日志功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/fuzz/fuzz.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 rr != nil {
 		return nil, fmt.Errorf("unmarshal: %v", err)
 	}
@@ -288,10 +290,4 @@ func (c *coordinator) debugLogf(format string, args ...any) {
 	t := time.Now().Format("2006-01-02 15:04:05.999999999")
 	fmt.Fprintf(c.opts.Log, t+" DEBUG "+format+"\n", args...)
 }
-
-"""
-
-
-
-
 ```

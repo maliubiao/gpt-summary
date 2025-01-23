@@ -155,14 +155,16 @@ Let's break down the thought process to analyze the provided C++ code for `Layou
 
 总而言之，`blink/renderer/core/layout/list/layout_list_marker_image.cc` 文件是 Chromium Blink 引擎中负责处理图像列表 marker 渲染的关键组件，它与 HTML 结构和 CSS 样式紧密相连，确保列表项的 marker 图像能够正确显示。 理解其功能有助于开发者更好地掌握列表样式的渲染机制，并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/list/layout_list_marker_image.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ void LayoutListMarkerImage::ComputeIntrinsicSizingInfo(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -235,15 +235,17 @@ Actual request URL: https://localhost:8080/data
 
 总而言之，`go/src/cmd/go/internal/web/intercept/intercept.go` 提供了一种在 Go 语言的 `cmd/go` 工具内部进行 HTTP 请求拦截和重定向的机制，主要用于测试目的。它通过配置 `Interceptor` 来定义拦截规则，并在发送 HTTP 请求前修改请求的目标地址。使用者需要注意正确地启用和禁用拦截，并仔细配置拦截规则以避免错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/web/intercept/intercept.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -320,9 +322,4 @@ func Request(req *http.Request) {
 		req.URL.Host = t.ToHost
 	}
 }
-
-"""
-
-
-
 ```

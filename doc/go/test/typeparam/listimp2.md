@@ -91,15 +91,17 @@ func (l *List[T]) Get(index int) (T, bool) {
 
 `go/test/typeparam/listimp2.go` 的主要作用是作为 Go 编译器测试套件中的一个占位符或用于特定测试场景，其 `ignored` 的包名表明它在正常的编译和运行过程中会被忽略。它本身不实现任何具体的 Go 语言功能，也没有代码逻辑或命令行参数处理。使用者不应该尝试直接使用或运行这段代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/listimp2.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -107,9 +109,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

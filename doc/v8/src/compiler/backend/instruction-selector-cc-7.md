@@ -151,7 +151,7 @@ const value = SIMD.extractLane(vec, 4); // 这将导致错误
 
 作为编译过程的最后阶段，`v8/src/compiler/backend/instruction-selector.cc` 扮演着至关重要的角色。它接收编译器前端和优化的结果（IR），并将其精确地转换为目标机器可以理解和执行的指令。该文件尤其关注 SIMD 指令的处理，这直接支持了 JavaScript 中高性能的并行计算能力。通过选择正确的指令并进行必要的优化，`instruction-selector.cc` 直接影响着 V8 引擎生成的代码的执行效率和性能。它确保了 JavaScript 代码能够高效地运行在各种不同的硬件架构之上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/instruction-selector.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/instruction-selector.cc以.tq结尾，那它是个v8 torque源代码，
@@ -159,8 +159,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 x4ReplaceLane(node);
         case Simd128ReplaceLaneOp::Kind::kF64x2:
           return VisitF64x2ReplaceLane(node);
@@ -634,8 +636,4 @@ const std::map<NodeId, int> InstructionSelector::GetVirtualRegistersForTesting()
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

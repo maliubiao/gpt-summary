@@ -198,15 +198,17 @@ func main() {
 
 总而言之， `types_alias.go` 这个文件的核心作用是作为 `golang.org/x/telemetry` 包的公共 API 的一部分，通过类型别名将内部实现的类型安全且方便地暴露给外部使用者。这有助于维护代码的组织结构，并为未来的更改提供一定的灵活性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/telemetry/types_alias.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -228,9 +230,4 @@ type CounterConfig = telemetry.CounterConfig
 type Report = telemetry.Report
 
 type ProgramReport = telemetry.ProgramReport
-
-"""
-
-
-
 ```

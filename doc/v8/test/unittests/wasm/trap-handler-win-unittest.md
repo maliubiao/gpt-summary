@@ -73,9 +73,12 @@ This methodical approach, breaking down the code into its components and underst
 
 总而言之，这个单元测试验证了 V8 在 Windows 上启用 WebAssembly 陷阱处理时，其异常处理机制的健壮性和与其他异常处理机制的兼容性。
 
-Prompt: ```这是目录为v8/test/unittests/wasm/trap-handler-win-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/wasm/trap-handler-win-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,6 +174,4 @@ TEST_F(ExceptionHandlerFallbackTest, DoTest) {
 #endif
 
 }  //  namespace
-
-"""
 ```

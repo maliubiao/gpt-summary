@@ -206,7 +206,7 @@ item2 = 2
 
 **作为调试线索：**  当用户在使用 Frida 时遇到与配置文件相关的错误时，错误堆栈信息很可能会指向 `parser.py` 文件以及出错的具体行号。这可以帮助用户定位配置文件中的问题所在，例如拼写错误的键名、错误的语法结构等。通过理解 `parser.py` 的工作原理，可以更好地理解 Frida 是如何读取和解释配置文件的，从而更有效地调试配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/tomlkit/tomlkit/parser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -215,9 +215,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    if is_aot and i == len(name_parts) - 2:
+### 源代码
+```python
+if is_aot and i == len(name_parts) - 2:
                     table.raw_append(_name, AoT([child], name=table.name, parsed=True))
                 else:
                     table.raw_append(_name, child)
@@ -369,8 +371,4 @@ Prompt:
                     value = None
 
             return value, extracted
-
-"""
-
-
 ```

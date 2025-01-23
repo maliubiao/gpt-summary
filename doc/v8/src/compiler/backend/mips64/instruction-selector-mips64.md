@@ -102,12 +102,14 @@ function bitwiseAnd(x, y) {
 
 总而言之，这部分代码是 V8 引擎在 MIPS64 架构上将 JavaScript 代码转化为高效机器码的关键组成部分，它负责指令的选择和操作数的生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/instruction-selector-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1880,7 +1882,4 @@ void InstructionSelectorT<Adapter>::VisitTruncateFloat32ToUint32(node_t node) {
     const Operation& op = this->Get(node);
     InstructionCode opcode = kMips64TruncUwS;
     if (op.Is<Opmask::kTruncateFloat32ToUint32Ov
-"""
-
-
 ```

@@ -153,14 +153,16 @@ This methodical approach, moving from the general purpose to specific details, a
 
 `FontFallbackIterator` 是 Blink 渲染引擎中一个至关重要的组件，它负责在复杂的字体环境中找到最佳的字体来渲染文本。它涉及到 CSS 字体声明的解析、系统字体的查询、自定义字体的加载管理，以及一系列的优化策略来避免不必要的查找和加载。理解其工作原理有助于开发者更好地控制网页的字体渲染效果，并避免常见的字体显示问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_fallback_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -477,7 +479,4 @@ bool FontFallbackIterator::operator==(const FontFallbackIterator& other) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

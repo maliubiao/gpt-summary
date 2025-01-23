@@ -229,7 +229,7 @@ The `Rows` struct represents the result set of a query. The `Scan` method iterat
 
 总的来说，这部分 `go/src/database/sql/sql.go` 代码是 `database/sql` 包中处理数据库查询结果的核心部分。它定义了如何扫描和访问查询返回的数据（包括多行和单行），如何管理与结果集相关的资源（通过 `Close` 方法），以及如何获取执行命令的结果信息。此外，它还包含一个用于高效管理数据库连接请求的自定义数据结构。这段代码的设计注重安全性和效率，通过使用锁来保证并发安全，并提供机制来处理特殊的 `RawBytes` 类型。它为用户提供了方便且强大的接口来与数据库交互并获取数据。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/database/sql/sql.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -238,8 +238,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 gnRows(dest[i], sv, rs)
 		if err != nil {
 			rs.closemuRUnlockIfHeldByScan()
@@ -518,10 +520,4 @@ func (s *connRequestSet) TakeRandom() (v chan connRequest, ok bool) {
 	s.deleteIndex(pick)
 	return e.req, true
 }
-
-"""
-
-
-
-
 ```

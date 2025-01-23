@@ -110,7 +110,7 @@ Based on this understanding, I can now formulate the summary and address the spe
 
 在这个代码片段中，**核心功能是监听和响应 DOM 树的结构性变化（节点连接和子节点变更），并以此来维护和更新 Chromium 的辅助功能 (AX) 树。** 它包含处理这些事件的逻辑，以及管理 AX 树更新的延迟和最终提交过程。 这部分代码确保了当网页的 DOM 结构发生变化时，辅助功能 API 能够及时获取到准确的信息，从而为使用辅助技术的用户提供更好的体验。  它也包含了用于调试和验证 AX 树完整性的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object_cache_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ut_parent->GetNode());
       }
     }
@@ -981,7 +983,4 @@ bool AXObjectCacheImpl::SerializeUpdatesAndEvents() {
   }
 
   // upd
-"""
-
-
 ```

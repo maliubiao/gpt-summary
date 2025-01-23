@@ -106,7 +106,7 @@ By following these steps, I could systematically analyze the code snippet and pr
 
 总而言之，这段代码是为了更方便、更清晰地处理 `go build` 命令的各种选项，特别是那些涉及到构建环境和代码分析的选项。它通过定义自定义的 flag 类型，增强了代码的可读性和可维护性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/work/build.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -115,8 +115,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ctly.
 // If cross-compiling and running on a remote system or
 // simulator, it is typically go_GOOS_GOARCH_exec, with
@@ -190,10 +192,4 @@ func (f stringFlag) Set(value string) error {
 	*f.val = value
 	return nil
 }
-
-"""
-
-
-
-
 ```

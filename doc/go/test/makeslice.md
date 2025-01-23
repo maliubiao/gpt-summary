@@ -155,15 +155,17 @@ s := make([]int, 0, int(^uint(0)>>1)+1) // 可能会导致 "cap out of range" �
 
 总而言之，这段代码通过大量的测试用例，深入验证了 Go 语言在创建切片时对非法长度和容量参数的处理机制，确保了程序的稳定性和安全性。 开发者在使用 `make` 函数创建切片时，应该始终注意提供的长度和容量参数的合法性，避免出现运行时 panic。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/makeslice.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -313,9 +315,4 @@ func testMakeInAppendBytes(n uint64) {
 		shouldPanic("cap out of range", func() { _ = append(t, make(T, 0, uint64(n))...) })
 	}
 }
-
-"""
-
-
-
 ```

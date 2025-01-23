@@ -151,15 +151,17 @@ This specific code does not process any command-line arguments. It's a self-cont
 
 4. **Not understanding the difference between nil comparisons and value comparisons for non-comparable types:** Comparing two `nil` maps, `nil` slices, or `nil` functions is allowed. The panic occurs when you try to compare two non-nil instances of these types. The original test code exploits this by initially testing `nil` values which *don't* panic in the `cmp` function, causing the `shouldPanic` to panic itself because it expected a panic from `cmp`. Then, when a struct with a nil slice is used, the comparison *does* panic as expected.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/interface/noeq.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2011 The Go Authors. All rights reserved.
@@ -200,9 +202,4 @@ func shouldPanic(f func()) {
 	}()
 	f()
 }
-
-"""
-
-
-
 ```

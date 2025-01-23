@@ -174,7 +174,7 @@ Initially, I might have focused too much on the low-level details of each functi
 
 总而言之，`BaseAudioContext.cc` 实现了 Web Audio API 的核心逻辑，负责管理音频处理流程、与底层系统交互以及提供 JavaScript 接口所需的功能。它在浏览器中扮演着音频引擎的关键角色，使得网页能够进行复杂的音频合成、处理和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/base_audio_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 BackingWorkerThread();
   }
 
@@ -281,8 +283,4 @@ bool BaseAudioContext::CheckExecutionContextAndThrowIfNecessary(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

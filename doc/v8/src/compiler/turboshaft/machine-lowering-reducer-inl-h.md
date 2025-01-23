@@ -186,7 +186,7 @@ console.log(example(-1));    // 输出 0
 
 `v8/src/compiler/turboshaft/machine-lowering-reducer-inl.h` 是 Turboshaft 编译器中一个至关重要的组成部分，它负责将高级的 JavaScript 操作转换为底层的机器指令，并处理类型转换、反优化以及各种特殊情况。它直接影响 JavaScript 代码的执行性能和正确性，并与用户常见的编程错误密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/machine-lowering-reducer-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/machine-lowering-reducer-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1046,9 +1048,4 @@ class MachineLoweringReducer : public Next {
                   outside_smi_range);
             }
           }
-
-        
-"""
-
-
 ```

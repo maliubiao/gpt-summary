@@ -123,15 +123,17 @@ func movesmall256() { // 错误的假设，认为所有小拷贝都优化
 
 总而言之，`go/test/codegen/copy.go` 是一个用于测试 Go 编译器代码生成质量的重要文件，它专注于验证 `copy` 内建函数在各种场景下的优化情况。通过阅读和理解这个文件，可以更深入地了解 Go 编译器的优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/copy.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -294,9 +296,4 @@ func noMaskOnCopy(a []int, s string, x int) int {
 	// ppc64x:-"MOVD\t$-1", -"AND"
 	return a[x&^copy([]byte{}, s)]
 }
-
-"""
-
-
-
 ```

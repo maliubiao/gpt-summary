@@ -140,15 +140,17 @@ Essentially, I approached the code like solving a puzzle. I looked at the pieces
 
 总而言之，`style_containment_scope.cc` 文件定义了 Blink 引擎中用于管理样式包含范围的关键类，它在提高渲染性能、隔离样式和布局方面发挥着重要作用，并与 HTML、CSS 以及 JavaScript 的动态操作密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_containment_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -298,7 +300,4 @@ void StyleContainmentScope::UpdateQuotes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

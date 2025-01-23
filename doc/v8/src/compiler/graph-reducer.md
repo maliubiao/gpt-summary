@@ -119,11 +119,13 @@ function calculate(y) {
 
 `v8/src/compiler/graph-reducer.cc` 是 V8 编译器中一个核心的优化组件。它通过遍历和修改代码的图表示，应用各种优化规则，最终生成更高效的机器码，从而提升 JavaScript 代码的执行速度。虽然 JavaScript 开发者不能直接控制它的行为，但理解它的作用有助于理解 V8 如何优化我们的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/graph-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -443,7 +445,4 @@ void GraphReducer::Revisit(Node* node) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -166,15 +166,17 @@ fips_module_2.zip fedcba9876543210fedcba9876543210fedcba9876543210fedcba98765432
 
 总而言之，这个测试脚本是 Go 语言构建过程中的一个重要组成部分，它通过维护和验证校验和来确保特定文件的完整性。正确理解和使用 `-update` 标志对于保持系统的健康至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/fips140/fips_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -277,9 +279,4 @@ func TestSums(t *testing.T) {
 		t.Errorf("GOROOT/lib/fips140/fips140.sum out of date. changes needed:\n%s", strings.Join(diff, ""))
 	}
 }
-
-"""
-
-
-
 ```

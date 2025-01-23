@@ -211,15 +211,17 @@ func main() {
 
 总结来说，`go/src/cmd/internal/bio/buf_nommap.go` 这段代码在非 Unix 系统上为 `bio.Reader` 提供了一个空的 `sliceOS` 实现，表明在这些系统上，获取操作系统层面的内存切片可能采用不同的策略或者不适用内存映射。使用者需要注意区分不同操作系统下的行为，避免做出错误的假设。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/bio/buf_nommap.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -231,9 +233,4 @@ package bio
 func (r *Reader) sliceOS(length uint64) ([]byte, bool) {
 	return nil, false
 }
-
-"""
-
-
-
 ```

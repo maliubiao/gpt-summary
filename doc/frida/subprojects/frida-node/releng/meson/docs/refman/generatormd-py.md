@@ -167,7 +167,7 @@ A user would typically not interact with this script directly. The path to this 
 
 **In summary, `generatormd.py` is a critical component in the Frida ecosystem, responsible for creating the essential reference manual that empowers users to effectively utilize Frida for dynamic instrumentation and, consequently, reverse engineering. Its connection to low-level concepts is indirect but significant, as the documented API provides the interface to interact with these underlying systems.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/docs/refman/generatormd.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -567,7 +569,4 @@ class GeneratorMD(GeneratorBase):
             data[fn.name] = f'{funcs_file}#{fn.name}'
 
         self.link_def_out.write_text(json.dumps(data, indent=2), encoding='utf-8')
-
-"""
-
 ```

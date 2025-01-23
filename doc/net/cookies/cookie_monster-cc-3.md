@@ -164,7 +164,7 @@ net/cookies/cookie_monster.cc
 
 总而言之，这段代码展示了 `CookieMonster` 类中一些关键的辅助功能，用于管理 Cookie 的存储、检索、匹配和统计，并确保 Cookie 的安全性和合规性。它在浏览器的 Cookie 处理流程中扮演着核心角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_monster.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 and in FindCookiesForRegistryControlledHost() are the only
 // two places where we need to conditionalize based on key type.
 //
@@ -496,8 +498,4 @@ std::optional<bool> CookieMonster::SiteHasCookieInOtherPartition(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

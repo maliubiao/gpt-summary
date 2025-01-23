@@ -74,11 +74,13 @@ let obj2 = { age: 30 };
 
 `v8/src/heap/cppgc/process-heap.cc` 中的 `HeapRegistry` 是 V8 引擎中 `cppgc` 垃圾回收机制的关键组件，负责管理和跟踪所有 `cppgc` 堆。 虽然 JavaScript 开发者无法直接操作它，但它的存在和功能对于 V8 引擎有效地管理其内部 C++ 对象的生命周期至关重要，并间接地影响了 JavaScript 的性能和内存回收。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/process-heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ const HeapRegistry::Storage& HeapRegistry::GetRegisteredHeapsForTesting() {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

@@ -168,15 +168,17 @@ go/test/fixedbugs/issue8183.go:23: array bound must be non-negative
 
 总而言之，这个测试文件 `issue8183.go` 的目的是确保Go编译器能够准确地定位并报告与 `iota` 相关的常量溢出和无效数组长度错误，从而提高编译器的可靠性和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue8183.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -200,9 +202,4 @@ const (
 	e // ERROR "array bound must be non-negative|negative array bound|invalid array length"
 	f // ERROR "array bound must be non-negative|negative array bound|invalid array length"
 )
-
-"""
-
-
-
 ```

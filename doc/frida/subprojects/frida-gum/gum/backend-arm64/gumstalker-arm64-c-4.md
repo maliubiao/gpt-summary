@@ -151,7 +151,7 @@ This code file is a crucial part of Frida's Stalker component on ARM64 architect
 
 This specific part of `gumstalker-arm64.c` focuses on the **core logic of intercepting and rewriting control flow instructions (branches, calls, returns, and system calls) on ARM64**. It generates the necessary ARM64 code to redirect execution to Frida's instrumentation runtime, enabling dynamic analysis and manipulation of the target process. It leverages knowledge of the ARM64 architecture, binary code structure, and operating system calling conventions to achieve this. The concepts of "fast" and "slow" paths (slabs) suggest an optimization strategy for handling frequently and infrequently instrumented code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-arm64/gumstalker-arm64.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ) ||
       (id == ARM64_INS_TBZ) || (id == ARM64_INS_TBNZ);
 
@@ -1156,7 +1158,4 @@ gum_exec_block_propagate_exclusive_access_state (GumExecBlock * block)
     return;
 
   if ((block->flags & GUM_EXEC_BLOCK_HAS_EXCLUSIVE_STORE) == 0
-"""
-
-
 ```

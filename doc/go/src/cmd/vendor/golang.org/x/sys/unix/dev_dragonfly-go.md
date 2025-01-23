@@ -154,15 +154,17 @@ func main() {
 
 总而言之，这段代码提供了一组特定于 DragonFlyBSD 系统的设备号处理工具，使用时需要仔细理解其注释和实现细节，尤其要注意次设备号的特殊编码方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/dev_dragonfly.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -193,9 +195,4 @@ func Minor(dev uint64) uint32 {
 func Mkdev(major, minor uint32) uint64 {
 	return (uint64(major) << 8) | uint64(minor)
 }
-
-"""
-
-
-
 ```

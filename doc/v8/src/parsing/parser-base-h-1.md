@@ -289,7 +289,7 @@ By following these steps, we can arrive at a comprehensive and accurate summary 
 
 `v8/src/parsing/parser-base.h` 是 V8 JavaScript 解析器的核心基础，它定义了通用的解析框架和工具，用于将 JavaScript 源代码转换为抽象语法树 (AST)，为后续的编译和执行阶段做准备。它涵盖了词法单元处理、表达式和语句的解析、错误报告、作用域管理以及对现代 JavaScript 语法特性的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser-base.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/parser-base.h以.tq结尾，那它是个v8 torque源代码，
@@ -297,10 +297,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
-
-  }
+### 源代码
+```c
+}
 
   V8_INLINE Token::Value peek() { return scanner()->peek(); }
 
@@ -1054,7 +1055,4 @@ Prompt:
   class V8_NODISCARD ParameterParsingScope {
    public:
     ParameterPa
-"""
-
-
 ```

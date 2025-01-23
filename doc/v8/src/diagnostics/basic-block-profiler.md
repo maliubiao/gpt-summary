@@ -147,11 +147,13 @@ block B4 : 2
 
 `basic-block-profiler.cc` 文件实现了 V8 引擎内部用于性能分析和优化的关键组件。它通过跟踪和统计代码的基本执行路径和分支信息，帮助 V8 团队理解 JavaScript 代码的运行时行为，并为诸如即时编译 (JIT) 优化等功能提供数据支持。虽然 JavaScript 代码本身不能直接操作这个分析器，但它的运行行为会被分析器记录下来，从而影响 V8 引擎的优化决策。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/basic-block-profiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -453,7 +455,4 @@ const BuiltinCallees* BuiltinsCallGraph::GetBuiltinCallees(Builtin builtin) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

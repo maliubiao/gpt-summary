@@ -85,15 +85,14 @@ V8 的测试框架（包括 gtest）会包含各种各样的测试用例，用�
 
 `empty.cc` 是 V8 测试框架中的一个基础文件，它自身不包含具体的测试逻辑，但作为占位符或基础设施的一部分，间接地支持了对 V8 执行 JavaScript 功能的各种测试。它的存在是为了满足构建系统或测试框架的要求，确保整个测试流程能够正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/testing/gtest/empty.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-
-"""
-
 ```

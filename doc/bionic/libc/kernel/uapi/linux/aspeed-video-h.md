@@ -275,7 +275,7 @@ except KeyboardInterrupt:
 
 通过这种方式，你可以逐步跟踪 Android Framework 是如何调用底层的 `ioctl` 函数来与 ASPEED 视频设备进行交互的，并验证这个头文件中定义的常量是如何被使用的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/aspeed-video.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -286,8 +286,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -300,7 +302,4 @@ Prompt:
 #define V4L2_CID_ASPEED_HQ_MODE (V4L2_CID_USER_ASPEED_BASE + 1)
 #define V4L2_CID_ASPEED_HQ_JPEG_QUALITY (V4L2_CID_USER_ASPEED_BASE + 2)
 #endif
-
-"""
-
 ```

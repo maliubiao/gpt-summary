@@ -191,7 +191,7 @@ Current number: 5
 
 通过以上步骤，用户就可以利用 Frida 来观察和调试 `shared.cpp` 中定义的 `SharedClass` 的行为，从而定位应用程序中的问题。`shared.cpp` 文件本身虽然简单，但它是 Frida 进行底层动态插桩的一个很好的测试用例，能够帮助开发者验证 Frida 的核心功能是否正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/56 introspection/sharedlib/shared.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "shared.hpp"
 
 void SharedClass::doStuff() {
@@ -210,7 +212,4 @@ void SharedClass::doStuff() {
 int SharedClass::getNumber() const {
   return number;
 }
-
-"""
-
 ```

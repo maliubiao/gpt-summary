@@ -200,15 +200,17 @@ requestAnimationFrame(animate);
 
 总而言之，`animation_frame_timing_info.cc` 文件是 Blink 渲染引擎内部用于收集动画帧相关脚本执行定时信息的关键组成部分。它记录的数据对于性能分析和优化至关重要，虽然开发者不会直接操作这个文件，但可以通过开发者工具观察到其记录的数据，并以此为线索来调试和优化前端代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/animation_frame_timing_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ uint64_t AnimationFrameTimingInfo::GetTraceId() const {
   return trace_id_;
 }
 }  // namespace blink
-
-"""
-
 ```

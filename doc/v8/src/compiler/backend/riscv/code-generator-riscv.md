@@ -97,12 +97,14 @@ The call to `greet("World")` would be translated into a RISC-V call instruction.
 
 In summary, `code-generator-riscv.cc` is the bridge between JavaScript's high-level concepts and the low-level execution capabilities of RISC-V processors. It ensures that JavaScript code can be run efficiently on these architectures by generating optimized machine code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/code-generator-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1688,8 +1690,5 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleArchInstruction(
       } else {
         uint32_t imm = i.InputOperand(2).immediate();
         __ ShrPair(i.OutputRegister(0), second_output, i.InputRegister(0),
-                   i.InputRegister(1), 
-"""
-
-
+                   i.InputRegister(1),
 ```

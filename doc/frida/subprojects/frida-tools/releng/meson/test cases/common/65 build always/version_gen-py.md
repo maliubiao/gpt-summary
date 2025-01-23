@@ -136,7 +136,7 @@ By following this structured thought process, breaking down the code, and explic
 
 总而言之，`version_gen.py` 是 Frida 构建系统中的一个实用工具，用于在构建过程中自动生成带有版本信息的文件。它依赖于 Git 版本控制系统，并利用 Python 的文件操作和子进程管理能力来实现其功能。理解这个脚本有助于理解 Frida 的构建流程以及如何在构建过程中嵌入版本信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/65 build always/version_gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os, subprocess
@@ -175,7 +177,4 @@ if __name__ == '__main__':
     outfile = sys.argv[2]
     fallback = sys.argv[3]
     generate(infile, outfile, fallback)
-
-"""
-
 ```

@@ -166,7 +166,7 @@ I need to summarize these functionalities and highlight any relationships with J
 
 总之，这部分代码是 `XRSession` 类的核心功能实现，负责管理 XR 会话的生命周期、渲染循环、用户输入、空间定位以及与底层 XR 设备的通信。它连接了 JavaScript API 和底层的 XR 实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_session.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 0;
 
   int id = callback_collection_->RegisterCallback(callback);
@@ -1043,7 +1045,4 @@ void XRSession::ApplyPendingRenderState() {
               MakeGarbageCollected<XRSessionResizeObserverDelegate>(this));
         }
         resize_observer_->observe
-"""
-
-
 ```

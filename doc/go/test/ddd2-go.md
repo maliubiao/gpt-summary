@@ -213,15 +213,17 @@ go test ./ddd2
 
 In summary, `go/test/ddd2.go` is a small but important piece of the Go standard library's testing infrastructure. Its primary function is to help verify the correct implementation of variadic functions across package boundaries. The `// rundir` directive influences how the test is executed, and understanding the purpose of the `ignored` package is key to interpreting its role.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/ddd2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // rundir
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -231,9 +233,4 @@ Prompt:
 // Test that variadic functions work across package boundaries.
 
 package ignored
-
-"""
-
-
-
 ```

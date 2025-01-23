@@ -148,7 +148,7 @@ longhands_custom.cc
 
 作为 `longhands_custom.cc` 的一部分，这个代码片段的核心功能是 **处理特定CSS长属性的解析和计算**。 它定义了如何将CSS文本值转换为内部表示，以及如何根据元素的当前样式计算出这些属性的最终生效值。  这个部分特别涵盖了 **背景颜色、背景图片、背景原点、背景位置、背景尺寸、背景重复、基线偏移、块大小、各种边框属性（颜色、宽度、样式、圆角）、边框图片属性、以及盒模型相关的 `bottom`、`box-decoration-break`、`box-shadow` 和 `box-sizing` 属性** 的处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/longhands/longhands_custom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 roundColor::ColorIncludingFallback(
     bool visited_link,
     const ComputedStyle& style,
@@ -1043,7 +1045,4 @@ const CSSValue* BreakAfter::CSSValueFromComputedStyleInternal(
     const LayoutObject*,
     bool allow_visited_style,
     CSSValuePhase value_phase) const
-"""
-
-
 ```

@@ -160,7 +160,7 @@ By following these steps and iteratively refining the analysis, we arrive at a c
 
 `genh.py` 是一个简单的辅助脚本，用于生成包含特定 C 宏定义的头文件。它在 Frida 的开发和测试过程中扮演着角色，可以帮助模拟或修改目标程序的行为，这与逆向工程中的动态分析密切相关。虽然脚本本身很简单，但它在更大的 Frida 工具链中发挥着作用，并且涉及到一些底层的概念和 Linux 的基本操作。 常见的用户错误主要集中在缺少命令行参数或文件写入权限问题上。作为调试线索，这个脚本的存在表明 Frida 的构建或测试流程可能需要生成特定的配置头文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/95 custominc/easytogrepfor/genh.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -177,7 +179,4 @@ import sys
 f = open(sys.argv[1], 'w')
 f.write('#define RETURN_VALUE 0')
 f.close()
-
-"""
-
 ```

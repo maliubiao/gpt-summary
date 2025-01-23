@@ -86,11 +86,13 @@ console.log(jsonString);
 
 `v8/src/torque/ls/json.cc` 中的代码实现了将内部的 JSON 数据结构转换为符合 JSON 规范的字符串的功能，这与 JavaScript 中 `JSON.stringify()` 的功能完全一致。该文件是 V8 引擎中处理 JSON 序列化的一部分，可能用于 V8 的内部工具或语言服务 (Language Server) 中，以便将结构化数据以 JSON 格式输出。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/ls/json.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ std::string SerializeToString(const JsonValue& value) {
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

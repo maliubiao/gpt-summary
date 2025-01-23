@@ -524,15 +524,17 @@ double BiquadDSPKernel::LatencyTime() const {
 - **Web Audio Inspector:** 使用 Chrome 或 Edge 浏览器的开发者工具中的 "Web Audio" 面板，可以可视化音频图的结构，查看各个节点的属性，以及实时监听音频流，帮助理解音频数据是如何流经 `BiquadFilterNode` 的。
 - **检查 JavaScript 代码:** 检查网页的 JavaScript 代码，确认 `BiquadFilterNode` 是否被正确创建、配置和连接。查看是否使用了 Sample-Accurate 自动化，以及参数是如何被设置和更新的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/biquad_dsp_kernel.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010, Google Inc. All rights reserved.
  *
@@ -833,7 +835,4 @@ double BiquadDSPKernel::LatencyTime() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

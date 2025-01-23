@@ -136,7 +136,7 @@ func main() {
 
 总而言之，`go/src/internal/coverage/slicewriter/slicewriter.go` 中的 `WriteSeeker` 提供了一个方便的、基于内存的 `io.WriteSeeker` 实现，主要用于在内存中构建和操作字节数据。在代码覆盖率工具的上下文中，它可能被用于临时存储和操作覆盖率数据，然后再进行进一步处理或写入到最终的输出中。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/coverage/slicewriter/slicewriter.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -144,8 +144,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -226,9 +228,4 @@ func (sws *WriteSeeker) Read(p []byte) (n int, err error) {
 	sws.off += int64(amt)
 	return amt, nil
 }
-
-"""
-
-
-
 ```

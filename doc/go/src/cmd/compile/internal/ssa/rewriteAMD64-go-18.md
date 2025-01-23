@@ -144,7 +144,7 @@ v3 = SETLE v4   // 根据比较结果设置标志位 (0 或 1)
 
 这段 `rewriteAMD64.go` 的代码是 Go 编译器将 Go 语言代码转换为高效 AMD64 机器码的关键组成部分。它通过模式匹配和代码替换，将高层抽象操作映射到具体的硬件指令，是 Go 语言性能的重要保障。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteAMD64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -153,8 +153,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第19部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 or {
 		idx := v_0
 		len := v_1
@@ -1700,9 +1702,4 @@ func rewriteValueAMD64_OpMove(v *Value) bool {
 		v0.AddArg2(src, mem)
 		v1 := b.NewValue0(v.Pos, OpAMD64MOVWstore, types.TypeMem)
 		v2 := b.NewValue0(v
-"""
-
-
-
-
 ```

@@ -122,7 +122,7 @@ frida -n main
 
 总而言之，这个 `main.c` 文件虽然自身功能简单，但在 Frida 项目的上下文中，它扮演着验证构建系统、提供最小可注入目标以及作为测试用例的重要角色。它也间接地涉及到逆向工程所需的底层知识和技术。用户到达这里通常是出于调试 Frida 本身或理解其工作原理的目的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/99 install all targets/subdir/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,12 +130,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char *argv[]) {
   return 0;
 }
-
-"""
-
 ```

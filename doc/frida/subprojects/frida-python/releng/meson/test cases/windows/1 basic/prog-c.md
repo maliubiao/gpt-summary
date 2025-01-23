@@ -114,7 +114,7 @@ By following this systematic breakdown, considering the context, and using examp
 
 总而言之，`prog.c` 作为一个极其简单的 Windows 程序，其主要价值在于作为 Frida 动态分析工具的一个基础测试目标，用于验证 Frida 的核心功能，并提供一个可控的环境来学习和调试 Frida 的使用。它本身的功能非常有限，但其在 Frida 的测试框架中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/windows/1 basic/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,14 +122,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <windows.h>
 
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

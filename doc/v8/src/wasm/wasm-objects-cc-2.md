@@ -152,7 +152,7 @@ const table = new WebAssembly.Table({ initial: 10, element: 'funcref' });
 
 **这段代码是第 3 部分，共 4 部分，其功能是管理和操作 WebAssembly 实例的各种运行时数据结构，为 WebAssembly 代码的执行提供必要的支持。它连接了 WebAssembly 的底层表示和 V8 的 JavaScript 环境，实现了互操作性。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -160,8 +160,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::Vector<const uint8_t> wire_bytes = native_module->wire_bytes();
   uint32_t num_data_segments = module->num_declared_data_segments;
   // The number of declared data segments will be zero if there is no DataCount
@@ -975,7 +977,4 @@ Handle<WasmDispatchTable> WasmDispatchTable::Grow(
 
 bool WasmCapiFunction::MatchesSignature(
     wasm::CanonicalTypeIndex other_c
-"""
-
-
 ```

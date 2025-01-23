@@ -103,14 +103,16 @@ The final step is to organize these thoughts into a clear and structured explana
 
 `ThreadScheduler::Current()` 提供了一个简单但关键的入口点，用于访问当前线程的调度器。它在 Blink 的多线程架构中扮演着核心角色，协调着 JavaScript 执行、HTML 解析、CSS 处理和渲染等关键任务。理解 `ThreadScheduler` 的作用对于开发高性能和稳定的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/thread_scheduler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -126,7 +128,4 @@ ThreadScheduler* ThreadScheduler::Current() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

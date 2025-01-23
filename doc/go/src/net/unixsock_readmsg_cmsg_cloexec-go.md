@@ -231,7 +231,7 @@ Received file descriptor: 3  // 文件描述符的值可能不同
 
 `go/src/net/unixsock_readmsg_cmsg_cloexec.go` 这段代码是 Go 标准库为了在特定 Unix-like 系统上安全地接收通过 Unix 域套接字传递的文件描述符而做的底层实现。它通过使用 `MSG_CMSG_CLOEXEC` 标志，确保接收到的文件描述符默认带有 close-on-exec 属性，从而提高了程序的安全性。开发者在使用 Go 的 `net` 包进行相关的操作时，无需直接关注这个文件的内容，`net` 包会自动处理这些细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/unixsock_readmsg_cmsg_cloexec.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -239,8 +239,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -254,9 +256,4 @@ import "syscall"
 const readMsgFlags = syscall.MSG_CMSG_CLOEXEC
 
 func setReadMsgCloseOnExec(oob []byte) {}
-
-"""
-
-
-
 ```

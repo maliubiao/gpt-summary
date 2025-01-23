@@ -149,7 +149,7 @@ By following these steps, we can systematically analyze the code and provide a c
 
 总而言之，`main5.c` 是 Frida 项目中一个用于验证枚举和标志处理功能的测试用例，它与逆向分析息息相关，并涉及到一定的底层知识和构建系统的使用。通过分析这个文件，可以了解 Frida 如何确保其能够正确地与目标进程中的枚举和标志信息进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/7 gnome/mkenums/main5.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <string.h>
 #include <glib-object.h>
@@ -194,7 +196,4 @@ int main(int argc, char **argv) {
     fprintf(stderr, "All ok.\n");
     return 0;
 }
-
-"""
-
 ```

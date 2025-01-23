@@ -203,15 +203,17 @@ func main() {
 
 总而言之，`go/src/cmd/compile/internal/base/flag.go` 是 Go 编译器 `compile` 命令中至关重要的组成部分，它负责定义、解析和管理编译器的各种命令行选项，使得用户可以灵活地配置编译过程。虽然普通 Go 开发者不会直接与其交互，但了解其功能有助于更好地理解和使用 `go build` 等构建工具。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/base/flag.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -802,9 +804,4 @@ func parseSpectre(s string) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

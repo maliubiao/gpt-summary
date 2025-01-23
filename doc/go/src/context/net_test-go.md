@@ -179,7 +179,7 @@ func main() {
 
 总而言之，这段测试代码验证了 Go 语言中 `context` 包的 `DeadlineExceeded` 错误类型被设计成符合网络超时的错误特性，这使得开发者在处理使用了 `context` 的网络操作时，可以统一地使用 `net.Error` 接口来判断是否发生了超时。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/context/net_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -187,8 +187,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -210,9 +212,4 @@ func TestDeadlineExceededIsNetError(t *testing.T) {
 		t.Fatalf("Timeout() = %v, Temporary() = %v, want true, true", err.Timeout(), err.Temporary())
 	}
 }
-
-"""
-
-
-
 ```

@@ -195,7 +195,7 @@ WARNING: mlog: Please check logs above as command failed in some subprojects whi
 
 `frida/subprojects/frida-qml/releng/meson/mesonbuild/msubprojects.py` 脚本是 Frida 构建系统的一部分，其核心功能是**高效地并行构建或测试 `frida-qml` 项目的多个子模块，并提供汇总的构建结果和错误报告。** 它通过异步并发执行子项目的构建任务来提高构建效率，并在构建完成后提供失败子项目的提示，帮助开发者快速定位问题。虽然它本身不直接进行逆向操作，但它确保了 Frida 的各个组件能够正确构建和测试，为用户进行后续的逆向分析工作奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/msubprojects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 er(logger, r, wrap, dirname, options)
         task = loop.run_in_executor(executor, runner.run)
         tasks.append(task)
@@ -221,8 +223,4 @@ er(logger, r, wrap, dirname, options)
         m += ', '.join(failures)
         mlog.warning(m)
     return len(failures)
-
-"""
-
-
 ```

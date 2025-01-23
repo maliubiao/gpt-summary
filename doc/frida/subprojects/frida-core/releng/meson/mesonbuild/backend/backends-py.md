@@ -68,7 +68,7 @@ Now, let's address the user's specific questions based on these functionalities.
 
 该文件的主要功能是 **定义和管理 Frida 构建过程中的后端抽象**。它提供了一种通用的方式来描述不同构建系统的行为，使得 Frida 能够支持多种构建工具而无需修改核心构建逻辑。它负责 **选择合适的后端**，并为具体的后端实现提供 **必要的接口和数据结构**，以便它们能够生成特定于该构建系统的构建文件和命令。该文件还涉及 **目标管理、编译链接、依赖处理、安装管理和测试框架集成** 等构建过程的关键方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -77,8 +77,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2016 The Meson development team
 
@@ -828,8 +830,4 @@ class Backend:
             if runpath_match:
                 for dir in runpath_match.group(1).split(':'):
                     # The symbols arg is an rpath if the path is a directory
-                   
-"""
-
-
 ```

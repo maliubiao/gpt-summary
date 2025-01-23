@@ -152,15 +152,17 @@ Initially, one might simply state the file "tests CSS parsing performance." Howe
 
 总而言之，`css_parser_fast_paths_perftest.cc` 是 Blink 引擎中用于保障和提升 CSS 解析器性能的关键工具。虽然普通用户不会直接接触到这个文件，但其运行结果直接影响着用户浏览网页的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_parser_fast_paths_perftest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -527,7 +529,4 @@ TEST(StyleFastPathPerfTest, MotionMarkMultiply) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

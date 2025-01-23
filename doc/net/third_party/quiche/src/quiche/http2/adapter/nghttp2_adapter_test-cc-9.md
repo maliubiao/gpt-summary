@@ -132,7 +132,7 @@ fetch('https://example.com/data', {
 
 作为单元测试套件的一部分，这个特定的文件 (`nghttp2_adapter_test.cc`) 的功能是**对 `NgHttp2Adapter` 类进行全面的功能测试，涵盖了其在作为 HTTP/2 服务器处理各种复杂场景的能力**。由于是接近尾声的部分，它可能侧重于测试一些更精细或特定的边缘情况，以及确保在集成更多功能后，核心的 HTTP/2 协议处理逻辑依然正确。它与其他测试文件一起，共同确保 `NgHttp2Adapter` 的稳定性和可靠性，为 Chromium 网络栈的 HTTP/2 功能提供保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Stream(1, Http2ErrorCode::CANCEL));
   adapter->ProcessBytes(reset_frame);
 
@@ -912,7 +914,4 @@ TEST(OgHttp2AdapterTest, ServerConsumesDataWithPadding) {
   EXPECT_CALL(visitor, OnBeforeFrameSent(SETTINGS, 0, 0, ACK_FLAG));
   EXPECT_CALL(visitor, OnFrameSent(SETTINGS, 0, 0, ACK_FLAG, 0));
   // Sin
-"""
-
-
 ```

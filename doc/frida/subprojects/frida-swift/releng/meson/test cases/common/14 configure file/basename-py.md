@@ -125,7 +125,7 @@ Let's break down the thought process for analyzing this Python script and genera
 
 总而言之，`basename.py` 是一个简单但实用的工具，在逆向工程、系统管理和软件开发等领域都有其应用价值，尤其是在需要处理和分析文件路径的场景中。它作为 Frida 项目测试用例的一部分，体现了 Frida 对基础工具和测试的重视。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/14 configure file/basename.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -163,7 +165,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

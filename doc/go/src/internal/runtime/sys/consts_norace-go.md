@@ -143,7 +143,7 @@ func main() {
 
 `consts_norace.go` 文件通过定义 `isRace` 常量，并结合 Go 的构建标签机制，为 Go 语言的竞态检测功能提供了一个编译时的开关。开发者应该养成使用 `-race` 标签进行并发代码测试的习惯，以便尽早发现并修复潜在的数据竞争问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/sys/consts_norace.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -151,8 +151,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -162,9 +164,4 @@ Prompt:
 package sys
 
 const isRace = 0
-
-"""
-
-
-
 ```

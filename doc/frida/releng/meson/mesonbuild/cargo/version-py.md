@@ -141,7 +141,7 @@ Cargo 的 `~1.2.0` 含义是版本 `>= 1.2.0` 且 `< 1.3.0`。  `version.py` 的
 
 总而言之，`frida/releng/meson/mesonbuild/cargo/version.py` 虽然代码量不大，但在 Frida 的构建过程中扮演着重要的角色，确保了 Rust 依赖项的版本能够被 Meson 构建系统正确理解，从而保证了 Frida 的顺利构建和运行。它体现了软件开发中版本管理的重要性，而版本管理对于像 Frida 这样需要与底层系统交互的复杂工具来说尤为关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/cargo/version.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2022-2023 Intel Corporation
 
@@ -246,7 +248,4 @@ def convert(cargo_ver: str) -> T.List[str]:
                 out.append('< 1')
 
     return out
-
-"""
-
 ```

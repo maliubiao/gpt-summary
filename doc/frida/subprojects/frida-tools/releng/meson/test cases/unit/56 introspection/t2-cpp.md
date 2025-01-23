@@ -112,7 +112,7 @@ By following these steps, a comprehensive and insightful analysis of the provide
 
 总而言之，`t2.cpp` 是一个非常基础的单元测试用例，它验证了一个简单的加法函数的功能。 虽然它自身没有直接进行逆向操作，但作为 Frida 项目的一部分，它对于确保 Frida 工具链中基础组件的正确性至关重要，并为更复杂的动态 instrumentation 功能提供了可靠的基础。 开发者或逆向工程师可能会在构建、测试或研究 Frida 源代码时接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/56 introspection/t2.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "staticlib/static.h"
 
 int main(void) {
@@ -130,7 +132,4 @@ int main(void) {
   }
   return 0;
 }
-
-"""
-
 ```

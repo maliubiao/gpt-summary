@@ -157,7 +157,7 @@ main.main()
 
 总而言之，`go/src/runtime/traceback_test.go` 是一组重要的测试，用于确保 Go 语言的堆栈跟踪功能能够准确、可靠地提供程序执行过程中的调用信息，这对于调试和问题定位至关重要。理解这些测试所涵盖的场景，可以帮助 Go 开发者更好地理解和利用堆栈跟踪信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/traceback_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -165,8 +165,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1036,9 +1038,4 @@ func TestTracebackGeneric(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

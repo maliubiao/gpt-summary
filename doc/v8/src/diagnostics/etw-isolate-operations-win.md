@@ -121,11 +121,13 @@ Response: Let's break down the thought process for analyzing the C++ code and co
 
 总而言之，`v8/src/diagnostics/etw-isolate-operations-win.cc` 文件是 V8 引擎在 Windows 平台上与 ETW 系统集成的关键组件。它不直接执行 JavaScript 代码，但它提供的功能允许外部工具通过 ETW 监控和分析 V8 引擎的运行状态和行为，这与 JavaScript 代码的执行息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/etw-isolate-operations-win.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ void EtwIsolateOperations::SetInstanceForTesting(
 }  // namespace ETWJITInterface
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

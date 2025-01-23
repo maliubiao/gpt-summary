@@ -119,11 +119,13 @@ console.log(subString); // 输出: is is
 
 `v8/src/base/strings.cc` 文件提供了底层的、与平台相关的字符串处理工具函数，用于在 V8 引擎内部执行基本的字符串操作，例如格式化输出和安全复制。这些功能是 V8 实现更高级的 JavaScript 字符串特性的基础，但 JavaScript 开发者并不会直接与这些 C++ 函数交互。 JavaScript 通过其内置的字符串方法和语法糖，抽象了这些底层的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/strings.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ void StrNCpy(base::Vector<char> dest, const char* src, size_t n) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

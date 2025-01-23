@@ -104,7 +104,7 @@ if __name__ == "__main__":
    - 如果数据类型不匹配或格式错误，`fruity-host-session` 模块会抛出异常，用户会收到相应的错误信息。
 
 通过以上步骤，用户可以逐步追踪到 `fruity-host-session.vala` 文件中的代码执行路径，作为调试线索。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/fruity-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 of_type (VariantType.VARDICT)) {
 						builder.begin_dictionary ();
 						add_vardict_values (val, builder);
@@ -196,8 +198,4 @@ of_type (VariantType.VARDICT)) {
 		}
 	}
 }
-
-"""
-
-
 ```

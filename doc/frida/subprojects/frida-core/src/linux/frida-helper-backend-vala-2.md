@@ -107,7 +107,7 @@ write_memory(process, address, data)
    - 操作完成后，用户恢复目标进程的执行，继续观察其行为。
 
 通过这些步骤，用户可以逐步调试和操作目标进程的内存，实现动态插桩的功能。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/linux/frida-helper-backend.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ffset += chunk_size;
 			}
 
@@ -1354,8 +1356,4 @@ ffset += chunk_size;
 		return (size + page_size - 1) & ~(page_size - 1);
 	}
 }
-
-"""
-
-
 ```

@@ -147,7 +147,7 @@ By following these steps, I can systematically analyze the code and provide a co
 
 总而言之，`gumbusycyclesampler-freebsd.c` 提供了一种在 FreeBSD 系统上使用 Frida 动态监控目标线程 CPU 使用情况的方法，这对于性能分析、恶意代码分析和理解程序行为至关重要。理解其底层实现和潜在的使用陷阱对于有效地利用该工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/libs/gum/prof/gumbusycyclesampler-freebsd.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -229,7 +231,4 @@ gum_busy_cycle_sampler_sample (GumSampler * sampler)
 
   return ((u->tv_sec + s->tv_sec) * G_USEC_PER_SEC) + u->tv_usec + s->tv_usec;
 }
-
-"""
-
 ```

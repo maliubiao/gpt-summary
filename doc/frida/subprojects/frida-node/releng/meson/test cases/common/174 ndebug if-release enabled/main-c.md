@@ -130,7 +130,7 @@ void some_function() {
 
 总而言之，这个 `main.c` 文件是一个非常小但重要的测试用例，用于验证 Frida 构建系统在处理 `assert` 宏时的正确性，尤其是在发布版本中 `assert` 应该被禁用的情况下。它体现了软件开发中测试驱动开发和构建系统配置管理的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/174 ndebug if-release enabled/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include <stdlib.h>
 
@@ -155,7 +157,4 @@ int main(void) {
     assert(meson_test_set_side_effect());
     return meson_test_side_effect;
 }
-
-"""
-
 ```

@@ -271,7 +271,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/linux/netfilter/xt_time.h` 定义了 Linux 内核 netfilter 框架中 `xt_time` 模块使用的数据结构，用于根据时间范围过滤网络数据包。虽然它本身不是 libc 的一部分，但它是 Android 系统网络功能的重要组成部分，通过 `iptables` 等工具和系统调用与用户空间交互。 理解这个头文件有助于理解 Android 系统如何进行基于时间的网络策略控制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_time.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -282,8 +282,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -312,7 +314,4 @@ enum {
 };
 #define XT_TIME_ALL_FLAGS (XT_TIME_LOCAL_TZ | XT_TIME_CONTIGUOUS)
 #endif
-
-"""
-
 ```

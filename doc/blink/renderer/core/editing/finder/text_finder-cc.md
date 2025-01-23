@@ -177,7 +177,7 @@ This first part of `text_finder.cc` focuses on the core logic of finding text wi
 
 `blink/renderer/core/editing/finder/text_finder.cc` 的第一部分主要实现了查找页面内文本的核心功能，包括启动和管理查找会话、执行实际的文本查找、管理和高亮匹配结果、以及滚动到匹配项。它还涉及到跨 Frame 查找的支持，并与 HTML、CSS 以及 JavaScript 驱动的用户交互密切相关。这段代码是浏览器查找功能的基础，为用户在网页上快速定位信息提供了支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/finder/text_finder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -1004,7 +1006,4 @@ int TextFinder::SelectFindMatch(unsigned index, gfx::Rect* selection_rect) {
     active_match_rect = OwnerFrame().GetFrameView()->ConvertToRootFrame(
         active_match_bounding_box);
     OwnerFrame().LocalRoo
-"""
-
-
 ```

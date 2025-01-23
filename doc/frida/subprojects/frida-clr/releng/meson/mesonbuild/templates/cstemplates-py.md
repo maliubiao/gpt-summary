@@ -184,7 +184,7 @@ test('basic', exe)
 
 因此，`cstemplates.py` 文件是幕后工作者，它为用户创建 Frida-CLR 模块提供了脚手架。 当用户遇到与新创建的 C# 模块结构相关的问题时，了解这个文件的作用可以帮助他们理解 Frida-CLR 是如何组织 C# 项目的，从而更好地进行调试。 例如，如果用户发现新创建的 C# 文件的基本结构与预期不符，他们可能会怀疑模板文件存在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/templates/cstemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -284,7 +286,4 @@ class CSharpProject(ClassImpl):
     lib_template = lib_cs_template
     lib_test_template = lib_cs_test_template
     lib_meson_template = lib_cs_meson_template
-
-"""
-
 ```

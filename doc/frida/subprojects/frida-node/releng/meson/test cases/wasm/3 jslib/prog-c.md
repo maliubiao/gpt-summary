@@ -159,7 +159,7 @@ Hello World
 
 总而言之，这个简单的 `prog.c` 文件是 Frida 中用于测试 WebAssembly 动态插桩和 C/JavaScript 互操作性的一个基础示例。开发者和逆向工程师可以通过分析这个文件，结合 Frida 的使用，来理解 Frida 的工作原理以及 WebAssembly 相关的技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/wasm/3 jslib/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <emscripten.h>
 
@@ -179,7 +181,4 @@ int main() {
   // sampleFunction(); ????
   return 0;
 }
-
-"""
-
 ```

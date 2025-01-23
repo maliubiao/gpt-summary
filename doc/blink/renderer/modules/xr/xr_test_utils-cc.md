@@ -120,15 +120,17 @@ std::unique_ptr<DOMPointInit> test_point = MakePointForTest(1, 2, 3, 1);
 
 总而言之，`blink/renderer/modules/xr/xr_test_utils.cc` 虽然不是用户直接交互的代码，但它在保证 WebXR 功能的正确性和稳定性方面发挥着重要作用。 当用户遇到 WebXR 相关的问题时，Blink 开发者可能会通过分析和调试涉及到这个文件的测试代码来定位和修复 Bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_test_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ DOMPointInit* MakePointForTest(double x, double y, double z, double w) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

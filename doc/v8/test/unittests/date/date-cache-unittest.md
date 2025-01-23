@@ -99,11 +99,13 @@ C++ 代码中 `AdoptDefaultThread` 的存在揭示了一个重要的内部实现
 
 `date-cache-unittest.cc` 文件通过一系列的单元测试，专注于验证 V8 引擎内部的 `DateCache` 类在处理日期和时间信息，特别是时区信息时的正确性和线程安全性。它直接关联到 JavaScript 中 `Date` 对象的时区相关功能，确保 JavaScript 开发者能够获得可靠和一致的日期和时间信息，即使在复杂的、多线程的 JavaScript 应用中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/date/date-cache-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ TEST(DateCache, AdoptDefaultMixed) {
 }  // namespace v8
 
 #endif  // V8_INTL_SUPPORT
-
-"""
-
 ```

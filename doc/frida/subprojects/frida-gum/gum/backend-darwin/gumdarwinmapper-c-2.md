@@ -108,7 +108,7 @@ Now, let's structure the response according to the user's requirements.
 
 总而言之，`gumdarwinmapper.c` 的这部分代码是 Frida 在 Darwin 系统上实现动态插桩的关键组成部分，它负责理解和操作目标进程的二进制结构，以便在运行时修改其行为。理解这部分代码的功能有助于深入理解 Frida 的工作原理，并能更好地进行逆向分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-darwin/gumdarwinmapper.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 lr_reg_no_auth (aw, ARM64_REG_X5);
 
   gum_arm64_writer_put_add_reg_reg_imm (aw, ARM64_REG_X19, ARM64_REG_X19, 4);
@@ -1029,8 +1031,4 @@ gum_find_tlv_get_addr (const GumDarwinSectionDetails * details,
 }
 
 #endif
-
-"""
-
-
 ```

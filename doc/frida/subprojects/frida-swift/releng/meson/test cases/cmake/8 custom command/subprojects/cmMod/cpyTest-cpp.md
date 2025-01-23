@@ -109,7 +109,7 @@ By following this structured approach, combining code analysis with contextual i
 
 `cpyTest.cpp` 作为一个测试用例，其核心功能是验证 Frida 构建系统中 CMake 对自定义命令和复杂头文件包含路径的处理能力。虽然它本身不直接执行动态 Instrumentation，但它对于确保 Frida 核心功能的正确构建至关重要，这间接地支持了 Frida 的逆向分析能力。 理解这类测试用例有助于理解 Frida 的构建过程和测试框架，对于开发人员和遇到构建问题的用户来说都是有价值的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/cpyTest.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cpyTest.hpp"
 #include "cpyTest2.hpp"
 #include "cpyTest3.hpp"
@@ -128,7 +130,4 @@ Prompt:
 std::string getStrCpyTest() {
   return CPY_TEST_STR_2 CPY_TEST_STR_3 CPY_TEST_STR_4 CPY_TEST_STR_5;
 }
-
-"""
-
 ```

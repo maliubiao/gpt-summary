@@ -164,15 +164,17 @@ Initially, I might just say "this file interacts with the Android KeyStore."  Ho
 
 通过以上分析，我们可以了解到 `net/android/keystore.cc` 文件在 Chromium 网络栈中扮演着连接 Android 系统安全密钥存储的关键角色，并解释了它如何与 JavaScript 驱动的网络行为相关联，以及在开发过程中可能遇到的问题和调试方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/android/keystore.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -287,7 +289,4 @@ bool EncryptWithPrivateKey(const JavaRef<jobject>& private_key_ref,
 }
 
 }  // namespace net::android
-
-"""
-
 ```

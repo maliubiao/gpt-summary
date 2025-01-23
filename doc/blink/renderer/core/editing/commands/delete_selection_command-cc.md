@@ -161,7 +161,7 @@ By following these steps, I could generate a comprehensive understanding of the 
 
 `delete_selection_command.cc` 的第一部分主要负责 **初始化和准备删除选区**。它定义了命令的构造方式，确定了要删除的精确范围，处理了选区边界的特殊情况（如 `<hr>`），识别了选区周围的空白字符，并初始化了后续删除操作所需的位置数据。 此外，它还包含了智能删除的初步逻辑以及保存排版样式状态的功能，为后续的实际删除操作奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/delete_selection_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005 Apple Computer, Inc.  All rights reserved.
  *
@@ -935,7 +937,4 @@ void DeleteSelectionCommand::HandleGeneralDelete(EditingState* editing_state) {
     if (text->length() > static_cast<unsigned>(CaretMaxOffset(start_node))) {
       DeleteTextFromNode(text, CaretMaxOffset(start_node),
                          text->length() - CaretMaxOffset(start_node
-"""
-
-
 ```

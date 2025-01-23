@@ -96,7 +96,7 @@ This C++ source code file, `gumv8stalker.cpp`, is a crucial component of Frida's
 
 In essence, this file acts as the bridge between the JavaScript API that Frida users interact with and the underlying C++ implementation of the Stalker. When debugging issues related to code tracing or call probes, examining this file and the related core Stalker implementation would be necessary.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8stalker.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010-2023 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -1265,8 +1267,4 @@ GUMJS_DEFINE_DIRECT_SUBCLASS_METHOD (gumjs_stalker_default_iterator_next,
 }
 
 GUMJS_DEFINE_DIRECT_SUBCLASS_METHOD (gumjs_stalker_default_iterator_keep,
-                              
-"""
-
-
 ```

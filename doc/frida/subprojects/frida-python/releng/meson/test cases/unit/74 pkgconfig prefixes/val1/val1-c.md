@@ -124,7 +124,7 @@ By following these steps, we can systematically analyze even a trivial piece of 
 
 总而言之，尽管 `val1.c` 的代码非常简单，但它作为 Frida 测试框架的一部分，可以用于验证 Frida 的核心功能，例如模块加载、符号查找和函数 hook。通过分析这个简单的例子，可以帮助理解 Frida 在二进制底层、操作系统层面以及与构建系统的交互。 它的存在也为调试 Frida 相关的问题提供了一个起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/74 pkgconfig prefixes/val1/val1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,12 +132,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "val1.h"
 
 int val1(void) { return 1; }
-
-"""
-
 ```

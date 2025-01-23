@@ -156,15 +156,17 @@ By following these steps, we can systematically analyze the code, understand its
 
 总而言之，`blink/renderer/core/svg/svg_length_list.cc` 文件在 Blink 引擎中扮演着关键角色，负责处理 SVG 中表示长度列表的属性值，包括解析、存储和支持动画等核心功能。理解这个文件的作用对于调试 SVG 相关的渲染和动画问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_length_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -307,7 +309,4 @@ float SVGLengthList::CalculateDistance(const SVGPropertyBase* to,
   return -1;
 }
 }  // namespace blink
-
-"""
-
 ```

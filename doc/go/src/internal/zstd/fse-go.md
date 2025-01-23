@@ -162,7 +162,7 @@ func main() {
 
 总而言之，这段 Go 代码实现了 zstd 解压缩过程中至关重要的 FSE 解码功能，包括读取压缩的 FSE 表、构建解码表以及处理不同类型的基线 FSE 表。理解这段代码有助于深入了解 zstd 压缩算法的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/zstd/fse.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -170,8 +170,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -609,9 +611,4 @@ var predefinedMatchTable = [...]fseBaselineEntry{
 	{8195, 13, 6, 0}, {4099, 12, 6, 0}, {2051, 11, 6, 0},
 	{1027, 10, 6, 0},
 }
-
-"""
-
-
-
 ```

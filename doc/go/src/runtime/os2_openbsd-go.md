@@ -168,7 +168,7 @@ func main() {
 
 这段 `go/src/runtime/os2_openbsd.go` 代码片段定义了在 OpenBSD 操作系统上实现 Go 语言运行时信号处理功能所需的一些关键常量。这些常量是 Go 语言与操作系统底层交互的基础，使得 Go 程序能够捕获和处理系统信号。开发者通常不需要直接操作这些常量，而是通过 `os/signal` 包来间接使用它们。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os2_openbsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -176,8 +176,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -192,9 +194,4 @@ const (
 	_NSIG        = 33
 	_SI_USER     = 0
 )
-
-"""
-
-
-
 ```

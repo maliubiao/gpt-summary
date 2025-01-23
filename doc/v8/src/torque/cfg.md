@@ -132,11 +132,13 @@ builtin ArrayPush<T>(implicit context: Context, receiver: Object, ...elements: T
 
 `cfg.cc` 是 V8 中 Torque 编译器的核心组成部分，它负责构建控制流图，这是将 Torque 代码转换为可执行机器码的关键步骤。虽然它不直接操作 JavaScript 代码，但它处理的是定义 JavaScript 内置行为的 Torque 代码，因此与 JavaScript 的功能有着深远的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/cfg.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -377,7 +379,4 @@ void CfgAssembler::ComputeInputDefinitions() {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

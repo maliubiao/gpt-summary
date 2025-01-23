@@ -147,14 +147,16 @@ By following this systematic approach, combining code analysis with knowledge of
 
 总而言之，`network_utils.cc` 文件提供了一系列底层的、与网络相关的实用工具函数，这些函数在 Blink 渲染引擎处理各种网络操作时被广泛使用，从而间接地影响着网页的加载、渲染以及与用户的交互。它处理了诸如 URL 解析、MIME 类型处理、HTTP 头处理等关键任务，这些都与 JavaScript、HTML 和 CSS 的功能息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/network_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -350,7 +352,4 @@ Vector<char> ParseMultipartBoundary(const AtomicString& content_type_header) {
 }  // namespace network_utils
 
 }  // namespace blink
-
-"""
-
 ```

@@ -298,7 +298,7 @@ Let's break down each test function:
 
 总而言之，这段代码是 `go` 命令功能的重要集成测试，旨在确保 `go` 命令的各个方面都能够按预期工作，并且修复的 Bug 不会再次出现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/go_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -306,9 +306,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- with error %s", err)
+### 源代码
+```go
+with error %s", err)
 	}
 	if string(out) != "hello upx" {
 		t.Fatalf("bad output from compressed go binary:\ngot %q; want %q", out, "hello upx")
@@ -883,10 +885,4 @@ func TestExecInDeletedDir(t *testing.T) {
 	// `go version` should not fail
 	tg.run("version")
 }
-
-"""
-
-
-
-
 ```

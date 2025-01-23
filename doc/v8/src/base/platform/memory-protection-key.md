@@ -98,11 +98,13 @@ console.log(result2); // 输出 12
 
 总结来说，`memory-protection-key.cc` 文件通过利用操作系统底层的内存保护机制，增强了 V8 引擎的安全性，特别是保护了 JIT 编译器生成的代码，从而间接地提高了 JavaScript 代码的执行安全性和可靠性。JavaScript 开发者虽然不能直接操作这些功能，但他们编写的代码会受益于这些底层的安全保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/memory-protection-key.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ MemoryProtectionKey::Permission MemoryProtectionKey::GetKeyPermission(int key) {
 }  // namespace v8
 
 #endif  // V8_HAS_PKU_JIT_WRITE_PROTECT
-
-"""
-
 ```

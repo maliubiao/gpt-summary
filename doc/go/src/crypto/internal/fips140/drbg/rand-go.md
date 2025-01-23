@@ -186,7 +186,7 @@ func main() {
 
 这段代码的核心是提供一种在 Go 语言中生成安全随机数的方式，并特别关注了在启用 FIPS 140 模式下的合规性。它通过内部使用确定性随机位生成器 (DRBG) 并定期混入来自操作系统的额外熵来实现这一目标。同时，它也提供了使用自定义随机源的接口，但在 FIPS 模式下会进行相应的记录和处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/drbg/rand.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -291,9 +293,4 @@ func ReadWithReaderDeterministic(r io.Reader, b []byte) error {
 	_, err := io.ReadFull(r, b)
 	return err
 }
-
-"""
-
-
-
 ```

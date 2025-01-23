@@ -225,15 +225,17 @@ blockB2.AddEdgeTo(blockB4)
 
 总而言之，`block.go` 中的代码是 Go 语言编译器构建和操作程序控制流图的核心组成部分，为后续的静态分析和代码优化提供了基础数据结构和操作方法。使用者需要仔细理解其设计和接口，才能正确地进行 CFG 的修改和分析。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/block.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -688,9 +690,4 @@ const (
 	HotPgoInitial          = HotPgo | HotInitial                // special case; single block loop, initial block is header block has a flow-in entry, but PGO says it is hot
 	HotPgoInitialNotFLowIn = HotPgo | HotInitial | HotNotFlowIn // PGO says it is hot, and the loop is rotated so flow enters loop with a branch
 )
-
-"""
-
-
-
 ```

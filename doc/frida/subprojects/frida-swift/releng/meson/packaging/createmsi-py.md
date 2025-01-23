@@ -179,7 +179,7 @@ By following these steps, we can thoroughly analyze the provided Python script a
 
 总而言之，`createmsi.py` 是 Frida 项目中负责将 Frida 打包成 Windows MSI 安装包的关键脚本。它利用了 `pyinstaller` 和 WiX Toolset 等工具，并涉及到 Windows 安装程序、文件系统、环境变量等方面的知识。理解此脚本的功能有助于理解 Frida 在 Windows 上的安装过程，并能为解决安装问题提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/packaging/createmsi.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017-2021 The Meson development team
@@ -521,7 +523,4 @@ if __name__ == '__main__':
     p.build_dist()
     p.generate_files()
     p.build_package()
-
-"""
-
 ```

@@ -264,15 +264,17 @@ Pipe file descriptors: 3 4
 
 总而言之，`go/src/cmd/vendor/golang.org/x/sys/unix/syscall_netbsd.go` 是 Go 语言连接 NetBSD 操作系统内核的桥梁，提供了访问底层操作系统功能的接口。使用者需要理解系统调用的工作原理和 NetBSD 平台的特性，才能正确且安全地使用这些接口。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_netbsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009,2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -644,9 +646,4 @@ const (
 func mremap(oldaddr uintptr, oldlength uintptr, newlength uintptr, flags int, newaddr uintptr) (uintptr, error) {
 	return mremapNetBSD(oldaddr, oldlength, newaddr, newlength, flags)
 }
-
-"""
-
-
-
 ```

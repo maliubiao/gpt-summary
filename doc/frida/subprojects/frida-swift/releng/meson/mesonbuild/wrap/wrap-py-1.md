@@ -133,7 +133,7 @@ By following this structured approach, I can systematically analyze the code, un
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/mesonbuild/wrap/wrap.py` 文件的主要职责是 **管理和应用 Frida Swift 构建过程中的外部依赖项的补丁和差异**。它提供了一种标准化的方式来下载、验证和修改外部库的源代码，以确保 Frida Swift 能够正确地构建和运行。这包括从 URL 下载文件、校验文件哈希值以保证完整性、应用预先定义的补丁或 diff 文件来修改源代码。这个脚本是 Frida 构建系统的重要组成部分，确保了依赖项的正确集成和定制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/wrap/wrap.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,9 +142,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- bool = True) -> None:
+### 源代码
+```python
+bool = True) -> None:
         if what + '_hash' not in self.wrap.values and not hash_required:
             return
         expected = self.wrap.get(what + '_hash').lower()
@@ -269,8 +271,4 @@ Prompt:
                         os.chmod(dst_file, stat.S_IWUSR)
                         os.remove(dst_file)
                 shutil.copy2(src_file, dst_dir)
-
-"""
-
-
 ```

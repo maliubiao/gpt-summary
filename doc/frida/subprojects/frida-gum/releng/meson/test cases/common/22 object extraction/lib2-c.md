@@ -140,7 +140,7 @@ This systematic approach ensures all aspects of the request are addressed compre
 
 总而言之，`lib2.c` 虽然是一个非常简单的示例，但在Frida的测试框架中，它用于验证和演示Frida的基本hook功能，对于理解Frida的工作原理以及如何使用Frida进行逆向工程具有一定的教育意义。用户可能会在学习或调试Frida时接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/22 object extraction/lib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,12 +148,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int retval(void) {
   return 43;
 }
-
-"""
-
 ```

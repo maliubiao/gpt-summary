@@ -137,12 +137,14 @@ Many of these features directly support JavaScript functionality. For example, t
 
 总而言之，这个代码文件的最后部分涵盖了 `Isolate` 对象生命周期中一些关键的收尾工作和优化，以及与 JavaScript 异步编程模型、内置函数执行和作用域管理等核心功能紧密相关的实现细节。这些功能共同确保了 V8 引擎能够高效、稳定地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 value());
   if (HasAsyncEventDelegate()) {
     if (promise->has_async_task_id()) {
@@ -865,8 +867,4 @@ void Isolate::InitializeBuiltinJSDispatchTable() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

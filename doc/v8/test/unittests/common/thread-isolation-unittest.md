@@ -71,9 +71,12 @@ This systematic approach, analyzing the includes, individual tests, and looking 
 
 这些测试用例对于确保 V8 引擎在多线程环境下能够安全可靠地管理 JIT 编译的代码至关重要。
 
-Prompt: ```这是目录为v8/test/unittests/common/thread-isolation-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/common/thread-isolation-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,6 +244,4 @@ TEST(ThreadIsolation, InvalidFreeRange) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

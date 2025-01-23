@@ -206,15 +206,17 @@ V8HeapObject {
 
 `v8/tools/v8windbg/src/v8-debug-helper-interop.cc` 是一个关键的桥梁文件，它使得 Windbg 能够理解和展示 V8 引擎的内部状态，特别是堆对象和栈帧的信息。这对于调试复杂的 JavaScript 应用、开发 Native Node.js 模块以及深入理解 V8 引擎的工作原理都非常有帮助。它通过利用 V8 的调试助手库和 Windows 调试接口，提供了强大的内存读取和数据结构转换功能，使得开发者能够在 Windbg 中更有效地分析 V8 运行时的状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/v8windbg/src/v8-debug-helper-interop.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/v8windbg/src/v8-debug-helper-interop.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -404,7 +406,4 @@ std::vector<Property> GetStackFrame(WRL::ComPtr<IDebugHostContext> sp_context,
                                 reader_scope.GetReader());
   return GetPropertiesAsVector(props->num_properties, props->properties);
 }
-
-"""
-
 ```

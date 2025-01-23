@@ -181,15 +181,17 @@ result[0]->lineContent() == "line.two";
 
 总而言之，`v8/src/inspector/search-util.cc` 提供了一组底层的、高效的工具函数，用于在源代码文本中进行搜索，这是 V8 Inspector 调试功能的核心组成部分。它考虑了正则表达式的匹配、字面字符串搜索、大小写敏感性以及特定格式的注释查找。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/search-util.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/search-util.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -358,7 +360,4 @@ String16 findSourceMapURL(const String16& content, bool multiline) {
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

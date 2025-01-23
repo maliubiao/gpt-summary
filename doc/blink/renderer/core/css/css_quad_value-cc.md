@@ -162,15 +162,17 @@ By following these steps and iteratively refining the understanding, we arrive a
 
 总而言之，`blink/renderer/core/css/css_quad_value.cc` 文件中的 `CSSQuadValue` 类是 Blink 渲染引擎中一个核心的组件，它专门用于处理需要四个值的 CSS 属性，并在 CSS 解析、JavaScript 操作和最终渲染过程中发挥着关键作用。理解它的功能有助于理解浏览器如何处理和应用 CSS 样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_quad_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ void CSSQuadValue::TraceAfterDispatch(blink::Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

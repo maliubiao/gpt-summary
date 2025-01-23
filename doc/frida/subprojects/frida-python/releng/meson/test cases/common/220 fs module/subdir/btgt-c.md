@@ -128,7 +128,7 @@ By following these steps, we can dissect even a minimal piece of code and provid
 
 总而言之，`btgt.c` 作为一个非常简单的 C 程序，其主要作用是作为 Frida 文件系统模块测试用例中的一个基本目标。它的简单性使得测试环境更加可控，便于验证 Frida 的核心功能，例如进程 attach、代码注入和函数 hook。开发者通过构建和运行测试套件，可以确保 Frida 在处理文件系统操作时的正确性。如果测试失败，开发者会从 Frida 脚本、Frida 本身以及测试目标（虽然 `btgt.c` 很简单）等多个方面进行排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/220 fs module/subdir/btgt.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,14 +136,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int
 main(void)
 {
     return 0;
 }
-
-"""
-
 ```

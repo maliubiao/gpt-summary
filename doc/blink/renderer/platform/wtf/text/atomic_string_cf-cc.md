@@ -105,14 +105,16 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
 `atomic_string_cf.cc` 负责在 Apple 平台上利用 CoreFoundation 来高效地创建和管理原子字符串。这些原子字符串是 Blink 引擎中用于存储和比较关键标识符和字符串的重要组成部分，与 HTML、CSS 和 JavaScript 的处理息息相关，有助于提高性能和节省内存。理解其工作原理有助于理解 Blink 引擎的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/atomic_string_cf.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Apple Inc. All rights reserved.
  *
@@ -175,7 +177,4 @@ scoped_refptr<StringImpl> AtomicString::Add(CFStringRef string) {
 }  // namespace WTF
 
 #endif  // BUILDFLAG(IS_APPLE)
-
-"""
-
 ```

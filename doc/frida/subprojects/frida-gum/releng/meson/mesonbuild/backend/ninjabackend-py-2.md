@@ -115,7 +115,7 @@ build frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/build/MyCSharp
 
 这段代码片段是 Frida 构建系统中 `NinjaBackend` 的一部分，主要负责生成用于编译和链接多种编程语言（C#, Java, Vala, Cython, Rust）的 `ninja` 构建规则。它处理了不同语言的特性和依赖关系，并考虑了操作系统底层的链接细节。这段代码的目标是自动化构建过程，确保 Frida 项目的不同组件能够被正确地编译和链接在一起。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,9 +124,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
-         elem.add_item('DESC', f'Compiling resource {rel_sourcefile}')
+### 源代码
+```python
+elem.add_item('DESC', f'Compiling resource {rel_sourcefile}')
                 self.add_build(elem)
                 deps.append(ofilename)
                 a = '-resource:' + ofilename
@@ -757,8 +759,4 @@ Prompt:
                                        self.environment.get_build_dir(),
                                        target_slashname_workaround_dir,
                                        self.determine_rpath_dirs(target),
-                  
-"""
-
-
 ```

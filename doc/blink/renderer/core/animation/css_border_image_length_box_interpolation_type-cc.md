@@ -172,14 +172,16 @@ By following this systematic approach, combining code analysis with domain knowl
 
 `CSSBorderImageLengthBoxInterpolationType` 的核心职责是确保与 `border-image-outset`, `border-image-width`, `-webkit-mask-box-image-outset`, `-webkit-mask-box-image-width` 相关的动画能够平滑自然地进行，同时处理各种可能的输入情况和潜在的错误用法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_border_image_length_box_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -601,7 +603,4 @@ void CSSBorderImageLengthBoxInterpolationType::ApplyStandardPropertyValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -152,11 +152,13 @@ function createLocalObject() {
 
 `csa-optimize-phase.cc` 文件定义了 Turboshaft 编译器中关键的优化阶段，这些阶段通过应用各种 reducer 来改进生成的机器码，从而显著提升 JavaScript 代码的执行效率。 这些优化对开发者是透明的，但在幕后默默地提升了 V8 引擎的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/csa-optimize-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ void CsaOptimizePhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

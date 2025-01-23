@@ -164,7 +164,7 @@ Frida 会拦截到 `WinMain` 的调用，并打印出其参数和返回值。
 
 通过分析这样的简单程序，用户可以逐步理解 Frida 的核心概念和使用方法，为后续分析更复杂的程序打下基础。这个 `prog.c` 文件作为一个 Frida 测试用例，其主要价值在于提供了一个干净且可控的环境来验证 Frida 的基本功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/windows/2 winmain/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<windows.h>
 
 int APIENTRY
@@ -189,7 +191,4 @@ WinMain(
     ((void)nCmdShow);
     return 0;
 }
-
-"""
-
 ```

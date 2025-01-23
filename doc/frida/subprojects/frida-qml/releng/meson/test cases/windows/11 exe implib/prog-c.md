@@ -102,7 +102,7 @@ By following these steps, combining code analysis with contextual understanding 
 
 虽然 `prog.c` 的代码非常简单，但结合其在 Frida 项目中的上下文，它扮演着一个测试用例的角色，用于验证 Frida 在 Windows 平台上处理 DLL 和导入库的能力。 理解其背后的目的和相关的 Windows DLL 概念对于进行 Frida 的开发、测试或使用都是非常有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/windows/11 exe implib/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,15 +110,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <windows.h>
 
 int  __declspec(dllexport)
 main(void) {
     return 0;
 }
-
-"""
-
 ```

@@ -90,11 +90,13 @@ try {
 
 `test-run-stackcheck.cc` 的 `TerminateAtMethodEntry` 测试用例验证了 V8 引擎能够在请求时，即使在 JavaScript 函数即将开始执行时也能将其终止，并抛出异常。这与 JavaScript 中由于超时、无限循环等原因导致脚本被引擎强制停止的场景相对应。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-stackcheck.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -117,7 +119,4 @@ TEST(TerminateAtMethodEntry) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

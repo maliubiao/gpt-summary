@@ -128,7 +128,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 尽管 `func2` 是一个非常简单的函数，但它在逆向工程、底层知识学习和 Frida 的使用中都有着重要的意义。它可以作为学习动态插桩、理解函数调用约定和探索二进制世界的起点。提供的文件路径也暗示了其作为测试用例的身份，这在理解和调试 Frida 的功能时非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/47 same file name/d2/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,10 +136,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2(void) { return 42; }
-
-"""
-
 ```

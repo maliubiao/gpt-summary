@@ -260,7 +260,7 @@ In essence, this part of the test suite delves into more complex and edge-case s
 
 总而言之，`net/third_party/quiche/src/quiche/quic/core/http/end_to_end_test.cc` 文件的第 7 部分是一个深入的测试集，用于验证 QUIC 协议在处理各种复杂场景下的正确性和健壮性，特别是关注错误处理、大数据传输、连接管理以及一些高级特性如多路连接和连接迁移。 这些测试确保了 Chromium 的网络栈在实际用户使用中能够可靠地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/end_to_end_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -268,8 +268,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 headers processing to trigger the error response
   // before the request FIN is processed but receive the request FIN before the
   // response is sent completely.
@@ -1129,7 +1131,4 @@ TEST_P(EndToEndTest, ClientLimitPortMigrationOnPathDegrading) {
             GetClientConnection()->GetStats().num_path_response_received);
 
   //
-"""
-
-
 ```

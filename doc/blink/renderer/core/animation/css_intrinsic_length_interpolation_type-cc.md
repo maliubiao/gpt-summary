@@ -146,14 +146,16 @@ Let's break down the thought process for analyzing the given C++ code.
 
 总而言之，`css_intrinsic_length_interpolation_type.cc` 负责处理 CSS `contain-intrinsic-width` 和 `contain-intrinsic-height` 属性在动画和过渡时的关键逻辑，特别是涉及到 `auto` 关键字和长度值的平滑过渡。它确保了 Web 开发者可以通过 CSS 或 JavaScript 创建流畅的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_intrinsic_length_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -381,7 +383,4 @@ void CSSIntrinsicLengthInterpolationType::Composite(
 }
 
 }  // namespace blink
-
-"""
-
 ```

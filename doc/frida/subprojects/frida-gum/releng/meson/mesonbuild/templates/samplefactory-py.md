@@ -90,7 +90,7 @@ By following these steps, I can construct a comprehensive and accurate answer th
 
 总而言之，`samplefactory.py` 在 Frida 的构建过程中扮演着一个关键的角色，它简化了用户创建针对不同编程语言的 Frida 项目的过程，为后续的逆向分析、安全研究等工作奠定了基础。虽然它本身是用 Python 编写的高级脚本，但它生成的项目结构和代码示例会深入到二进制底层、操作系统内核和框架的层面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/templates/samplefactory.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -141,7 +143,4 @@ _IMPL: T.Mapping[str, T.Union[T.Type[ClassImpl], T.Type[FileHeaderImpl], T.Type[
 
 def sample_generator(options: Arguments) -> SampleImpl:
     return _IMPL[options.language](options)
-
-"""
-
 ```

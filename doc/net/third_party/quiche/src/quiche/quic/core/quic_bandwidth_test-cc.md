@@ -100,15 +100,17 @@ Let's break down the thought process for analyzing the provided C++ test file.
 
 总而言之，`net/third_party/quiche/src/quiche/quic/core/quic_bandwidth_test.cc` 是一个至关重要的测试文件，用于确保 QUIC 协议中带宽计算的正确性，这直接影响着基于 QUIC 的网络连接的性能和稳定性，最终也会影响到用户在使用 Web 应用时的体验。虽然 JavaScript 开发者不会直接接触到这个文件，但他们编写的 Web 应用的性能会受到其底层 QUIC 实现的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_bandwidth_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ TEST_F(QuicBandwidthTest, SpecialValues) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

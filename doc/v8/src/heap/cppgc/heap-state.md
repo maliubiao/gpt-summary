@@ -126,11 +126,13 @@ JavaScript 代码本身无法直接调用这些 C++ 的 `HeapState` 方法。 �
 
 `v8/src/heap/cppgc/heap-state.cc` 中的代码提供了 V8 内部 C++ 组件用于监控和了解 C++ 垃圾回收器状态的关键信息。虽然 JavaScript 代码无法直接访问这些状态，但垃圾回收器的运行状态会直接影响 JavaScript 的性能和行为，例如导致程序执行的停顿或性能波动。 理解这些内部状态有助于我们更好地理解 V8 的工作原理以及如何编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap-state.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ bool HeapState::PreviousGCWasConservative(const HeapHandle& heap_handle) {
 
 }  // namespace subtle
 }  // namespace cppgc
-
-"""
-
 ```

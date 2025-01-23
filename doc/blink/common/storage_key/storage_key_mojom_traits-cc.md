@@ -109,14 +109,16 @@ Mojo 是 Chromium 中用于跨进程通信 (IPC) 的机制。当需要在不同�
 
 `blink/common/storage_key/storage_key_mojom_traits.cc` 文件是 Chromium Blink 引擎中一个基础但关键的组件，负责将 `StorageKey` 对象在不同进程之间安全地传递。它不直接与 JavaScript、HTML 或 CSS 代码交互，但它的功能是 Web 存储隔离和安全策略的基础，直接影响着这些 Web 技术的行为和用户体验。理解 `StorageKey` 的概念对于开发 Web 应用和理解浏览器的行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/storage_key/storage_key_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ bool StructTraits<blink::mojom::StorageKeyDataView, blink::StorageKey>::Read(
 }
 
 }  // namespace mojo
-
-"""
-
 ```

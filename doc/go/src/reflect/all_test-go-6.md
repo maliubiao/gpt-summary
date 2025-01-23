@@ -321,7 +321,7 @@ Now, let's start drafting the answer.
 
 这段代码是 `reflect` 包测试套件的一部分，其主要功能是 **验证 `reflect` 包提供的各种类型反射和操作功能是否按预期工作**。它涵盖了 map 的创建和操作、channel 的发送和接收、类型信息的获取（名称、导出状态、字符串表示）、切片元素交换、访问控制、别名类型、map 迭代、类型转换、方法调用、泛型类型、值的比较和属性获取等多个方面。这些测试用例旨在确保 `reflect` 包的稳定性和正确性，并且可以作为理解和使用 `reflect` 包的参考示例。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/all_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -330,8 +330,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 .AllocsPerRun(100, func() {
 		mv := MakeMapWithSize(TypeOf(map[int]int{}), size)
 		// Only adding half of the capacity to not trigger re-allocations due too many overloaded buckets.
@@ -1614,10 +1616,4 @@ func TestMapOfKeyPanic(t *testing.T) {
 	var slice []int
 	m.MapIndex(ValueOf(slice))
 }
-
-"""
-
-
-
-
 ```

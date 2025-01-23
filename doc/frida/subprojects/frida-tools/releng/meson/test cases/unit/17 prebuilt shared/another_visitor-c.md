@@ -173,7 +173,7 @@ Interceptor.attach(Module.findExportByName(null, "alexandria_visit"), {
 
 因此，这个 `another_visitor.c` 文件本身只是一个非常简单的入口点，它的主要作用是作为一个 Frida 动态分析的**目标**，而真正的“有趣”之处在于 `alexandria_visit()` 的实现以及如何使用 Frida 去探索和修改它的行为。这个文件在 Frida 的测试框架中，很可能是为了验证 Frida 对预构建共享库中的函数进行 hook 和操作的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/17 prebuilt shared/another_visitor.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<alexandria.h>
 #include<stdio.h>
 
@@ -193,7 +195,4 @@ int main(int argc, char **argv) {
     printf("\nYou decided not to stay forever.\n");
     return 0;
 }
-
-"""
-
 ```

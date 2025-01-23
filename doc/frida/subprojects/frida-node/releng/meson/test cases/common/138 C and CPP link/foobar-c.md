@@ -160,7 +160,7 @@ This structured approach, starting with understanding the context and then drill
 
 总而言之，`foobar.c` 虽然代码简单，但它作为 Frida 的测试用例，体现了动态 instrumentation 的基本概念，涉及了二进制、操作系统、编程语言等多个层面的知识，并且可以作为调试和理解 Frida 工作原理的入口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/138 C and CPP link/foobar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2017 Dylan Baker
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -197,7 +199,4 @@ void mynumbers(int nums[]) {
     nums[0] = forty_two();
     nums[1] = six_one();
 }
-
-"""
-
 ```

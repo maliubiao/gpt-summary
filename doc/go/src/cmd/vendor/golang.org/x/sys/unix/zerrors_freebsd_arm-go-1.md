@@ -96,7 +96,7 @@ func main() {
 
 总而言之，这个 `zerrors_freebsd_arm.go` 文件在 Go 语言的 `syscall` 包中扮演着**为 FreeBSD ARM 架构提供底层系统调用接口定义**的关键角色。它通过定义一系列常量，使得 Go 程序能够以平台特定的方式与操作系统内核进行交互，进行诸如网络配置、终端控制、进程管理等底层操作。这些常量是构建更高级抽象的基础，使得 Go 语言能够跨平台运行的同时，也能充分利用底层操作系统的特定功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_freebsd_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -104,9 +104,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-      = 0x446
+### 源代码
+```go
+= 0x446
 	TCP_RACK_IDLE_REDUCE_HIGH      = 0x444
 	TCP_RACK_MIN_PACE              = 0x445
 	TCP_RACK_MIN_PACE_SEG          = 0x446
@@ -511,10 +513,4 @@ var signalList = [...]struct {
 	{32, "SIGTHR", "unknown signal"},
 	{33, "SIGLIBRT", "unknown signal"},
 }
-
-"""
-
-
-
-
 ```

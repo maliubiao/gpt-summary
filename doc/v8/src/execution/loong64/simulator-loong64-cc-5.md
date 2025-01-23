@@ -114,7 +114,7 @@ let intNum = Math.trunc(floatNum); // 对应 FTINTRZ_W_D 或 FTINTRZ_W_S
 
 这部分 `simulator-loong64.cc` 的代码专注于 **模拟 LoongArch64 架构中与原子内存操作、位操作和浮点运算相关的指令**。它涵盖了在多线程编程中保证数据一致性的原子操作，对数据进行位级处理的指令，以及执行各种浮点数运算和转换的指令。这部分还涉及了浮点控制状态寄存器的操作以及浮点寄存器和通用寄存器之间的数据传输。 这对于 V8 引擎在 LoongArch64 平台上的正确执行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/loong64/simulator-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/loong64/simulator-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -122,9 +122,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
-    static_cast<int32_t>(rd())),
+### 源代码
+```cpp
+static_cast<int32_t>(rd())),
                           instr_.instr(), &success);
       } while (!success);
     } break;
@@ -1016,7 +1018,4 @@ void Simulator::DecodeTypeOp22() {
             temp_result = upper / 2;
             double reminder = std::modf(temp_result, &temp);
             if (reminder == 0)
-"""
-
-
 ```

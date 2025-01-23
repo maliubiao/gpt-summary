@@ -208,7 +208,7 @@ func TestSkipBadConfigs(t *testing.T) {
 
 总而言之，这段测试代码验证了 `crypto/tls` 包中关于 ECH 配置的解析和选择逻辑的正确性，确保了在处理不同格式的 ECH 配置列表时，程序能够按照预期工作，包括能够正确解析有效配置和跳过无效配置。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/ech_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -216,8 +216,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -266,9 +268,4 @@ func TestSkipBadConfigs(t *testing.T) {
 		t.Fatal("pickECHConfig picked an invalid config")
 	}
 }
-
-"""
-
-
-
 ```

@@ -162,15 +162,17 @@ scrollContainer.addEventListener('snapchanged', (event) => {
 
 总而言之，`snap_event.cc` 定义了用于表示滚动捕捉事件的核心数据结构，它连接了 CSS 滚动捕捉的声明式定义和 JavaScript 的事件处理机制，使得开发者可以在滚动捕捉发生时进行自定义操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scroll/snap_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ SnapEvent::SnapEvent(const AtomicString& type,
       snap_target_inline_(inline_target) {}
 
 }  // namespace blink
-
-"""
-
 ```

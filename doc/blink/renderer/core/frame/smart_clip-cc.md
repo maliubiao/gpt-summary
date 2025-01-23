@@ -147,14 +147,16 @@ Finally, organize the findings into the requested categories: functionalities, r
 
 总而言之，`smart_clip.cc` 文件实现了 Chromium Blink 引擎的智能剪贴核心功能，它深入理解 HTML 结构和 CSS 样式，以便在用户选择一个区域时，能够智能地提取出有意义的内容。它与 JavaScript、HTML 和 CSS 都有着密切的联系，是 Web 浏览器实现用户交互功能的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/smart_clip.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -433,7 +435,4 @@ String SmartClip::ExtractTextFromNode(Node* node) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

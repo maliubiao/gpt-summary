@@ -139,7 +139,7 @@ Parse error
 
 总而言之，`frida/subprojects/frida-node/releng/meson/test cases/frameworks/8 flex/prog.c`  是一个用于测试 Frida 框架中脚本解析功能的简单程序。它使用 `flex` 和 `yacc` (或类似的工具) 来实现对输入文件的语法分析，这在逆向工程中是分析协议、数据格式或脚本语言的关键技术。  理解它的工作方式有助于理解 Frida 如何处理用户提供的 instrumentation 指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/8 flex/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"parser.tab.h"
 #include<unistd.h>
 #include<sys/types.h>
@@ -179,7 +181,4 @@ int yyerror(void) {
      printf("Parse error\n");
      exit(1);
 }
-
-"""
-
 ```

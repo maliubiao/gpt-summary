@@ -178,15 +178,17 @@ Entry at 0x1000:
 
 `dump_cache.cc` 是一个非常有用的低级工具，用于深入了解 Chromium 的磁盘缓存机制。虽然它与 JavaScript 没有直接的代码联系，但它可以帮助开发者诊断与缓存相关的 JavaScript 代码问题，例如旧版本 JavaScript 文件被缓存导致的行为异常等。理解这个工具的功能和使用方法，对于进行 Chromium 网络栈的调试和性能分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/dump_cache/dump_cache.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -301,7 +303,4 @@ int main(int argc, const char* argv[]) {
 
   return Help();
 }
-
-"""
-
 ```

@@ -231,15 +231,17 @@ func main() {
 
 总而言之，这段代码是 Go 语言与 Darwin/AMD64 操作系统底层交互的桥梁，它提供了访问各种系统调用的能力，是构建更高级抽象和功能的基础。使用这些功能需要对操作系统原理和 Go 语言的底层机制有一定的了解，并小心处理潜在的错误和平台差异性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -290,9 +292,4 @@ func Syscall9(num, a1, a2, a3, a4, a5, a6, a7, a8, a9 uintptr) (r1, r2 uintptr, 
 //sys	ptrace1(request int, pid int, addr uintptr, data uintptr) (err error) = SYS_ptrace
 //sys	Stat(path string, stat *Stat_t) (err error) = SYS_STAT64
 //sys	Statfs(path string, stat *Statfs_t) (err error) = SYS_STATFS64
-
-"""
-
-
-
 ```

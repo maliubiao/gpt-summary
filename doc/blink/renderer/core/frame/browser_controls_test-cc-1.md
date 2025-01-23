@@ -75,15 +75,17 @@ Plan for the summary:
 
 这段代码是 Chromium Blink 引擎中用于测试浏览器控件核心功能的关键部分。它通过模拟各种用户交互和页面状态，验证了浏览器控件在不同场景下的行为是否符合预期，包括显示/隐藏、与页面滚动的协同、与可滚动子区域的交互、以及对页面布局和视口单位的影响。这些测试确保了浏览器控件能够正确地工作，为用户提供一致且良好的浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/browser_controls_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 vent::Type::kGestureScrollBegin));
   EXPECT_FLOAT_EQ(0.f, web_view->GetBrowserControls().ContentOffset());
   EXPECT_EQ(ScrollOffset(0, 20),
@@ -827,7 +829,4 @@ TEST_P(BrowserControlsViewportUnitTest, MAYBE(DontAffectStaticUnits)) {
             GetFrame()->View()->LargeViewportSizeForViewportUnits().height());
 
   // Static *vw uni
-"""
-
-
 ```

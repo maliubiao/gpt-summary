@@ -132,7 +132,7 @@ This is UTF-8 encoded é
 
 总而言之，`utf8.c` 虽然是一个非常简单的程序，但它触及了字符编码这一在软件开发和逆向工程中都非常重要的基础概念。理解和正确处理字符编码是确保程序行为符合预期，以及成功进行逆向分析的关键。这个测试用例帮助确保 Frida 在处理涉及 UTF-8 编码的场景时能够正常工作，从而为使用 Frida 的开发者和逆向工程师提供可靠的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/windows/18 msvc charset/utf8.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main(int argc, char *argcv[])
@@ -149,7 +151,4 @@ int main(int argc, char *argcv[])
   printf("This is UTF-8 encoded é\n");
   return 0;
 }
-
-"""
-
 ```

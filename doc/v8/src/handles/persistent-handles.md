@@ -137,11 +137,13 @@ console.log(getObjectFromPersistentHandle(handleToPersistentObject).data); // �
 
 `persistent-handles.cc` 文件定义了 V8 引擎中用于创建和管理持久化句柄的核心机制。这些句柄允许 V8 长期保持对 JavaScript 对象的引用，即使在常规的 `HandleScope` 结束之后。虽然 JavaScript 开发者不能直接使用这个 API，但它是 V8 实现诸如全局对象、宿主对象以及某些内部优化等功能的关键基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/handles/persistent-handles.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -317,7 +319,4 @@ bool PersistentHandlesScope::IsActive(Isolate* isolate) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

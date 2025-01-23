@@ -124,7 +124,7 @@ let myObject = {};
 
 这段代码片段专注于测试 V8 中 C++ 对象在生成堆快照时提供动态名称的功能。这对于在堆快照中提供更具描述性的对象信息非常重要，有助于开发者更好地理解内存结构和进行性能分析。它验证了当生成快照时，对象可以根据其内部状态或上下文信息生成定制化的名称，而不是依赖于静态的、预先定义的名称。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc-js/unified-heap-snapshot-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc-js/unified-heap-snapshot-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -132,8 +132,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ntry.detachedness());
       });
 }
@@ -186,8 +188,4 @@ TEST_F(UnifiedHeapSnapshotTest, DynamicName) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

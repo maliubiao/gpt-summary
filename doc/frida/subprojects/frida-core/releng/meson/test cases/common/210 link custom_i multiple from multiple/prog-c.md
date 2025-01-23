@@ -198,7 +198,7 @@ Address of flob_2: 0x... (实际内存地址)
 
 总而言之，这个简单的 `prog.c` 文件虽然功能简单，但它构成了一个典型的动态链接和模块化编程的场景，非常适合使用 Frida 这样的工具进行逆向分析和动态调试。它也展示了在实际开发中，代码被拆分成多个模块，并通过链接器组合在一起的常见做法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/210 link custom_i multiple from multiple/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -206,8 +206,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void flob_1(void);
 void flob_2(void);
 
@@ -216,7 +218,4 @@ int main(void) {
     flob_2();
     return 0;
 }
-
-"""
-
 ```

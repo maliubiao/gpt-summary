@@ -108,7 +108,7 @@ However, you *might* encounter this file or its concepts indirectly in these sce
 
 **In summary, this `_typing.py` file is a crucial piece of Frida's development infrastructure for the Swift bindings. It leverages Python's type hinting system to improve code quality, maintainability, and reduce errors, particularly by defining protocols for commonly used data structures like immutable lists. While users don't directly interact with this file, its presence contributes to the robustness and reliability of the Frida tool they use for reverse engineering.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/_typing.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2020 The Meson development team
 # Copyright © 2020-2023 Intel Corporation
@@ -187,7 +189,4 @@ class ImmutableListProtocol(Protocol[T]):
     def index(self, item: T) -> int: ...
 
     def copy(self) -> typing.List[T]: ...
-
-"""
-
 ```

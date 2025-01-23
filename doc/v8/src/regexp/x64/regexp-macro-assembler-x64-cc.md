@@ -131,7 +131,7 @@ if (matchResult) {
 
 `v8/src/regexp/x64/regexp-macro-assembler-x64.cc` 的主要功能是 **作为 V8 JavaScript 引擎的一部分，为 x64 架构生成高效的机器码，用于执行 JavaScript 中的正则表达式匹配**。 它定义了寄存器使用约定、栈帧布局，并提供了一系列宏指令来简化生成机器码的过程，涵盖了字符匹配、位置管理、回溯、捕获组处理等核心的正则表达式操作。 虽然用户不直接操作此代码，但其实现直接影响了 JavaScript 正则表达式的执行效率和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/x64/regexp-macro-assembler-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/x64/regexp-macro-assembler-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -139,8 +139,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1034,7 +1036,4 @@ void RegExpMacroAssemblerX64::PopRegExpBasePointer(Register stack_pointer_out,
                                                    Register scratch) {
   ExternalReference ref =
       ExternalReference::address_of_regexp_stack_memory
-"""
-
-
 ```

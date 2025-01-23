@@ -104,7 +104,7 @@ My thinking process to answer the request goes through these stages:
 
 结合之前的分析 (第一部分，虽然未提供)，可以推断 `EditContext` 是 Blink 引擎中处理文本编辑和 IME 输入的核心组件之一，它连接了用户操作、浏览器内部逻辑和最终的页面渲染。它维护着编辑状态的关键信息，并与其他 Blink 组件协同工作，以实现流畅和准确的文本输入体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ime/edit_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 in
   // CompositionCharacterBoundsUpdate event).
   return (base::saturated_cast<int>(character_bounds_.size()) ==
@@ -134,8 +136,4 @@ void EditContext::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

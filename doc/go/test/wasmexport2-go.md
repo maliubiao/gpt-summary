@@ -174,15 +174,17 @@ WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then((resu
 
 总而言之，这段代码片段通过一系列正反示例，清晰地展示了 `//go:wasmexport` 指令对于导出 Go 函数到 WebAssembly 模块时所支持和限制的类型。开发者在使用 `//go:wasmexport` 时，需要特别注意参数和返回值的类型约束，以避免编译错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/wasmexport2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2024 The Go Authors. All rights reserved.
@@ -275,9 +277,4 @@ func toomanyresults() (int32, int32) { return 0, 0 } // ERROR "go:wasmexport: to
 
 //go:wasmexport bad10
 func bad10() string { return "" } // ERROR "go:wasmexport: unsupported result type" // string cannot be a result
-
-"""
-
-
-
 ```

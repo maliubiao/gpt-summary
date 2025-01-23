@@ -163,15 +163,17 @@ theObject = null; // 断开引用，使对象成为垃圾回收的候选者
 
 总结来说，`v8/src/heap/finalization-registry-cleanup-task.cc` 是 V8 内部负责执行 JavaScript `FinalizationRegistry` 清理工作的核心组件。它确保当注册的对象被垃圾回收后，相关的清理回调能够被正确地执行，并处理执行过程中可能出现的异常。理解其功能有助于开发者更好地理解 `FinalizationRegistry` 的工作原理和潜在的限制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/finalization-registry-cleanup-task.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/finalization-registry-cleanup-task.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ void FinalizationRegistryCleanupTask::RunInternal() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

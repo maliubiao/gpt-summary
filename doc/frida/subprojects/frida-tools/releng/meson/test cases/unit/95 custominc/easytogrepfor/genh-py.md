@@ -126,7 +126,7 @@ This detailed thought process demonstrates how to systematically analyze even a 
 
 总而言之，这个简单的 Python 脚本在 Frida 的开发和测试流程中扮演着一个辅助角色，用于快速生成包含特定宏定义的头文件，以便于进行单元测试和模拟特定的程序行为。理解它的功能可以帮助我们更好地理解 Frida 的内部构建和测试机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/95 custominc/easytogrepfor/genh.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -143,7 +145,4 @@ import sys
 f = open(sys.argv[1], 'w')
 f.write('#define RETURN_VALUE 0')
 f.close()
-
-"""
-
 ```

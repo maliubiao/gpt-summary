@@ -111,11 +111,13 @@ c_add s0, s1   // 将寄存器 s1 的值加到寄存器 s0 上
 
 `extension-riscv-c.cc` 文件是 V8 引擎针对 RISC-V 架构进行优化的重要组成部分，它实现了 RISC-V C 扩展指令的生成，使得 V8 能够生成更紧凑、更高效的 RISC-V 机器码来执行 JavaScript 代码，从而提升 JavaScript 在 RISC-V 平台上的性能。虽然 JavaScript 开发者无法直接操作这些底层指令，但 V8 引擎会在幕后利用它们来优化代码执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-c.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -392,7 +394,4 @@ int AssemblerRISCVC::CJumpOffset(Instr instr) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

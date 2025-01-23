@@ -169,7 +169,7 @@ Frida Node.js v16.15.0 -- 1.2.11
 
 通过这种方式，用户可以逐步深入到 Frida 的代码库中，查看相关的测试用例，并尝试理解其功能，从而帮助他们定位和解决在使用 Frida 进行逆向分析时遇到的问题。  这个 `main.cpp` 文件作为一个简单的版本信息输出工具，可以作为调试的起点，帮助用户验证 Frida 的基本依赖是否正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/5 object library/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <stdlib.h>
 #include <iostream>
 #include "libA.hpp"
@@ -190,7 +192,4 @@ int main(void) {
   cout << getLibStr() << " -- " << getZlibVers() << endl;
   return EXIT_SUCCESS;
 }
-
-"""
-
 ```

@@ -304,7 +304,7 @@ except KeyboardInterrupt:
 
 通过这个 Frida Hook 示例，你可以观察 `MapData::find` 函数的输入和输出，从而更好地理解其工作原理以及 Android Framework 或 NDK 如何使用它。 请注意，Hook 系统库函数可能需要 root 权限或在 debuggable 的应用上进行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/MapData.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -315,8 +315,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 The Android Open Source Project
  * All rights reserved.
@@ -519,7 +521,4 @@ const MapEntry* MapData::find(uintptr_t pc, uintptr_t* rel_pc) {
   }
   return entry;
 }
-
-"""
-
 ```

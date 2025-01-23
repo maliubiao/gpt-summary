@@ -154,14 +154,16 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`timeline_offset.cc` 文件在 Blink 引擎中扮演着关键的角色，它负责将开发者在 CSS 和 JavaScript 中声明的时间线偏移量信息转化为引擎可以理解和使用的内部表示，从而驱动动画和滚动效果的执行。 理解这个文件的功能有助于我们更深入地理解浏览器如何处理现代 Web 的动画和滚动特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/timeline_offset.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -414,7 +416,4 @@ CSSValue* TimelineOffset::ParseOffset(Document* document, String css_text) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

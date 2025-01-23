@@ -99,7 +99,7 @@ The user wants to understand the functionality of a specific Python file within 
 
 该文件 `interpreter.py` 的一部分主要负责解释和执行 `meson.build` 文件中用于配置构建过程的函数调用。它处理了文件生成、头文件包含、测试环境设置、编译和链接参数添加、依赖管理、环境变量配置、路径处理以及源文件对象转换等关键任务。 这些功能是 Frida 构建系统的重要组成部分，确保了 Frida 能够在不同的平台上正确地构建和测试。 其中很多功能都与逆向工程实践紧密相关，例如配置生成、指定依赖、设置编译选项等，这些都影响着最终生成的 Frida 工具的行为和特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 y=True,
             default=[],
         ),
@@ -690,7 +692,4 @@ y=True,
             raise InterpreterException('Target name must not consist only of whitespace.')
         if has_path_sep(name):
             pathseg = os.path.join(self
-"""
-
-
 ```

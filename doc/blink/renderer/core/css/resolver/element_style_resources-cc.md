@@ -135,15 +135,17 @@ By following this systematic approach, considering the code's purpose, its inter
 
 总而言之，`element_style_resources.cc` 是 Blink 引擎中一个核心的 CSS 资源管理模块，它负责连接 CSS 样式定义和实际的资源加载，是理解和调试网页样式相关问题的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/element_style_resources.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  * Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011 Apple Inc.
@@ -681,7 +683,4 @@ void ElementStyleResources::UpdateLengthConversionData(
 }
 
 }  // namespace blink
-
-"""
-
 ```

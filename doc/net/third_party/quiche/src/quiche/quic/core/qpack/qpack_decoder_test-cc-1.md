@@ -91,7 +91,7 @@ By following these steps, I can construct a comprehensive summary of the code's 
 
 这些测试对于保证 Chromium 浏览器在 HTTP/3 连接中能够正确、安全地处理 QPACK 压缩的头部至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/qpack/qpack_decoder_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (handler_,
               OnDecodingErrorDetected(QUIC_QPACK_DECOMPRESSION_FAILED,
                                       Eq("Required Insert Count too large.")));
@@ -448,8 +450,4 @@ TEST_P(QpackDecoderTest, InsertCountIncrement) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

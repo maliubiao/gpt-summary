@@ -59,7 +59,7 @@ Response:
 1. **确认Hook点存在**：通过`/proc/kallsyms`查找`finish_task_switch`地址。
 2. **检查返回值**：使用`bpf_trace_printk()`调试PID提取逻辑。
 3. **用户态工具验证**：通过`bpftool map dump`查看哈希表内容。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/examples/tracing/task_switch.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -68,8 +68,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 #include <uapi/linux/ptrace.h>
 #include <linux/sched.h>
 
@@ -93,7 +95,4 @@ int count_sched(struct pt_regs *ctx, struct task_struct *prev) {
     }
     return 0;
 }
-
-"""
-
 ```

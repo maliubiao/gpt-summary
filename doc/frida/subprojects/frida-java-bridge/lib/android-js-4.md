@@ -118,7 +118,7 @@ Response:
 ---
 
 以上为第5部分的核心功能与关键路径分析，涵盖动态插桩、内存管理及调试线索。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/android.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -128,9 +128,11 @@ Prompt:
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
-  do {
+### 源代码
+```javascript
+do {
       const offset = relocator.readOne();
       if (offset === 0) {
         throw new Error('Unexpected end of block');
@@ -979,8 +981,4 @@ module.exports = {
   makeObjectVisitorPredicate,
   DVM_JNI_ENV_OFFSET_SELF
 };
-
-"""
-
-
 ```

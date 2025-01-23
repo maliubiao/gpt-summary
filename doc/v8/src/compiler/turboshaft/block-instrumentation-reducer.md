@@ -96,11 +96,13 @@ myFunction(5);
 
 `block-instrumentation-reducer.cc` 中的 `CreateCountersArray` 函数是 V8 引擎为了实现基本块插桩而设计的。它创建了一个数组，用于在 JavaScript 代码执行过程中记录每个基本块的执行次数。这些计数信息可以用于性能分析、代码覆盖率分析等目的，帮助 V8 团队更好地理解和优化 JavaScript 代码的执行。 虽然 JavaScript 开发者无法直接操作这个数组，但它的存在是 V8 引擎内部运行机制的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/block-instrumentation-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -122,7 +124,4 @@ Handle<HeapObject> CreateCountersArray(Isolate* isolate) {
 }  // namespace detail
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

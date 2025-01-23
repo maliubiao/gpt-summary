@@ -71,15 +71,17 @@ This C++ 代码文件 `layout_text_test.cc` 是 Chromium Blink 引擎中 `Layout
 
 作为测试套件的一部分，`layout_text_test.cc` 的主要功能是**全面地验证 `LayoutText` 类的正确性和健壮性**。它通过创建各种复杂的文本布局场景，并针对 `LayoutText` 类的核心功能进行细致的测试，确保该类能够准确地处理各种文本布局需求，并为 Chromium 浏览器的正确渲染提供基础保障。这些测试覆盖了文本的定位、选区、换行、不同书写模式以及动态修改等多个关键方面，旨在尽早发现并修复潜在的 bug，从而提升浏览器的稳定性和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_text_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 xt node
   SetBasicBody("foo<span id=space> </span>bar");
   EXPECT_EQ("BC-", GetSnapCode("space", "| "));
@@ -879,8 +881,4 @@ TEST_F(LayoutTextTest, SetTextWithOffsetToEmpty) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

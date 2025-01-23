@@ -109,7 +109,7 @@ By following this iterative and analytical approach, I was able to understand th
 
 总而言之，`blink/renderer/core/paint/box_border_painter.cc` 是 Blink 渲染引擎中负责将 CSS 边框样式转化为屏幕上可见像素的关键组件。 理解其工作原理有助于理解浏览器如何渲染网页，并为调试边框相关的渲染问题提供重要的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/box_border_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 f (edge_quad[1].y() > inner_points[2].y()) {
           FindIntersection(edge_quad[0], edge_quad[1], inner_points[3],
                            inner_points[2], edge_quad[1]);
@@ -487,8 +489,4 @@ void BoxBorderPainter::DrawBoxSide(GraphicsContext& context,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

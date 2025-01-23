@@ -180,7 +180,7 @@ console.log(result); // 输出 8
 
 这段代码确保了当 JavaScript 调用 C++ 代码时，V8 的内部状态（例如垃圾回收机制）能够得到维护，并且任何可能发生的错误（例如 C++ 异常）能够被正确地处理和传播回 JavaScript 环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/macro-assembler-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/macro-assembler-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -188,8 +188,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 he fast call).
 void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
                               Register function_address,
@@ -363,8 +365,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 #undef __
 
 #endif  // V8_TARGET_ARCH_PPC64
-
-"""
-
-
 ```

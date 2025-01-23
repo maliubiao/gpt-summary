@@ -189,14 +189,16 @@ By following this step-by-step approach, focusing on understanding the code's pu
 
 总而言之，`HTMLTableSectionElement.cc` 文件在 Blink 渲染引擎中扮演着关键角色，它负责管理 HTML 表格分节元素的内部状态和行为，并提供了 JavaScript 可以与之交互的接口，从而实现了动态操作 HTML 表格结构的功能。它还参与了表格样式的处理。理解这个类的功能有助于开发者更好地理解浏览器如何解析和渲染 HTML 表格，以及如何使用 JavaScript 来操作表格。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_table_section_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1997 Martin Jones (mjones@kde.org)
  *           (C) 1997 Torben Weis (weis@kde.org)
@@ -292,7 +294,4 @@ HTMLCollection* HTMLTableSectionElement::rows() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

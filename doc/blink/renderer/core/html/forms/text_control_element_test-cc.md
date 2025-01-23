@@ -130,15 +130,17 @@ Let's break down the thought process to analyze the C++ test file.
 
 总而言之，`text_control_element_test.cc` 是 Blink 引擎中一个关键的测试文件，它细致地测试了文本输入框的核心功能，确保了这些功能与 HTML 规范一致，并能正确地与 JavaScript 和 CSS 进行交互。这些测试对于保证 Chromium 浏览器的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/text_control_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -316,7 +318,4 @@ TEST_F(TextControlElementTest, TextAreaPlaceholderElementNewlineBehavior) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

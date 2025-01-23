@@ -233,7 +233,7 @@ libm.so:
 
 总结来说，`e_gammaf_r.c` 文件虽然代码量很少，但它代表了 Android 系统中基础数学库的一部分，对于各种应用和系统组件的正常运行至关重要。理解其功能、与 Android 的关系、以及如何通过动态链接被加载和调用，对于 Android 开发和调试都是很有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_gammaf_r.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -243,8 +243,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* e_gammaf_r.c -- float version of e_gamma_r.c.
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
  */
@@ -275,7 +277,4 @@ gammaf_r(float x, int *signgamp)
 {
 	return lgammaf_r(x,signgamp);
 }
-
-"""
-
 ```

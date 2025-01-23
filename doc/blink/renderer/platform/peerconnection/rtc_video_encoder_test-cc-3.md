@@ -97,16 +97,18 @@ Common user errors might involve incorrect encoder settings, providing unsupport
 
 这部分测试代码全面地验证了 `RTCVideoEncoder` 在各种编码场景下的核心功能，包括错误报告、指标收集、帧处理、缓冲区管理、码流修复以及动态帧大小调整等关键特性。这些测试确保了 WebRTC 的视频编码模块能够稳定可靠地工作，为 Web 开发者提供高质量的实时视频通信能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_encoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
- = 1;
+### 源代码
+```cpp
+= 1;
   tl_codec.simulcastStream[2].numberOfTemporalLayers = 3;
   CreateEncoder(tl_codec.codecType);
 
@@ -895,8 +897,4 @@ TEST_F(RTCVideoEncoderFrameSizeChangeTest, FrameSizeChangeFlushFailure) {
   EXPECT_EQ(WEBRTC_VIDEO_CODEC_OK, rtc_encoder_->Release());
 
     std::vector<webrtc::VideoFrameType> frame_types;
-    
-"""
-
-
 ```

@@ -135,14 +135,16 @@ Let's break down the thought process to analyze the `inline_break_token.cc` file
 
 总而言之，`InlineBreakToken` 是 Blink 渲染引擎中处理内联布局换行的核心组件，它受到 HTML 结构和 CSS 样式的驱动，并在底层的布局算法中发挥着关键作用。虽然前端开发者不能直接操作它，但理解其功能有助于更好地理解浏览器的渲染行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_break_token.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ void InlineBreakToken::RareData::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

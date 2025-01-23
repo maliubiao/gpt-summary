@@ -142,7 +142,7 @@ func main() {
 
 作为 `go/src/cmd/compile/internal/noder/reader.go` 的一部分，这段代码的核心功能是**从编译后的包数据中读取信息，并负责重建 Go 语言程序的表达式节点，特别是处理与泛型、方法、类型转换和内联相关的表达式**。 它在 Go 语言编译器的前端扮演着关键的角色，将编译后的中间表示转换成编译器可以进一步处理的抽象语法树。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/noder/reader.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -150,8 +150,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 eld(r.Len())
 			offset += field.Offset
 			typ = field.Type
@@ -1763,10 +1765,4 @@ func shapeSig(fn *ir.Func, dict *readerDict) *types.Type {
 
 	return types.NewSignature(recv, params, results)
 }
-
-"""
-
-
-
-
 ```

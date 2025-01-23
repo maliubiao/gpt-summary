@@ -119,7 +119,7 @@ This part of the `backends.py` file in Frida's Meson build system is primarily r
 
 In essence, this code acts as a crucial bridge between the declarative build definitions in `meson.build` files and the concrete actions performed during the build and installation phases. It ensures that the right files are built, processed correctly, and installed in the appropriate locations.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 = arg
             for dep in t.depends:
                 assert isinstance(dep, (build.CustomTarget, build.BuildTarget))
@@ -741,7 +743,4 @@ Prompt:
         '''
         Some backends don't support custom compilers. This is a convenience
         method to conve
-"""
-
-
 ```

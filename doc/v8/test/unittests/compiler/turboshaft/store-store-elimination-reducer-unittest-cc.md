@@ -125,15 +125,17 @@ x = 5; // 这里的赋值是冗余的
 
 `v8/test/unittests/compiler/turboshaft/store-store-elimination-reducer-unittest.cc`  是一个用于测试 V8 Turboshaft 编译器中 Store-Store Elimination 优化 Pass 的 C++ 单元测试文件。它通过构建模拟对象初始化场景的编译器 IR 图，并验证优化 Pass 是否正确地移除了冗余的存储操作，从而确保编译器的正确性和性能。它与 JavaScript 的关系在于它优化了 JavaScript 代码的底层执行逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/turboshaft/store-store-elimination-reducer-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/turboshaft/store-store-elimination-reducer-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ TEST_F(StoreStoreEliminationReducerTest, MergeObjectInitialzationStore) {
 #include "src/compiler/turboshaft/undef-assembler-macros.inc"
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

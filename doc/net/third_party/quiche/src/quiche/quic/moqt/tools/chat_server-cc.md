@@ -153,15 +153,17 @@ moqtTransport.sendObject(recipientNamespace, messagePayload);
 
 通过这些步骤，开发者可以逐步追踪客户端注册流程，找到问题所在，例如客户端发送了错误的命名空间格式，或者服务器端的解析逻辑存在问题。  类似地，调试消息发送和接收问题时，可以在 `RemoteTrackVisitor::OnObjectFragment` 设置断点，检查接收到的消息内容和转发逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/tools/chat_server.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -360,7 +362,4 @@ absl::StatusOr<MoqtConfigureSessionCallback> ChatServer::IncomingSessionHandler(
 }
 
 }  // namespace moqt
-
-"""
-
 ```

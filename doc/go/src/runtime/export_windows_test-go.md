@@ -170,7 +170,7 @@ func main() {
 
 `go/src/runtime/export_windows_test.go` 的主要目的是为了方便对 Go 运行时在 Windows 平台上的行为进行测试。它导出了运行时内部的一些常量、变量、函数和结构体，以便测试代码能够访问和验证这些内部状态。普通 Go 开发者应该避免直接使用这些导出的接口，以免引入不必要的依赖和潜在的兼容性问题。 应该使用 Go 语言提供的公共 API 来完成相应的任务。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/export_windows_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -178,8 +178,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -221,9 +223,4 @@ func NewContextStub() *ContextStub {
 	ctx.set_fp(getcallerfp())
 	return &ContextStub{ctx}
 }
-
-"""
-
-
-
 ```

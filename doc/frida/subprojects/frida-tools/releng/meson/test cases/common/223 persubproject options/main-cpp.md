@@ -169,7 +169,7 @@ Initially, I might focus too much on the C++ code itself. However, the file path
 
 总而言之，这个 `main.cpp` 文件本身的功能非常基础，但它的价值在于作为 Frida 测试框架中的一个目标，用于验证 Frida 在处理外部符号和动态 instrumentation 方面的能力。它的存在是为了配合 Frida 的运行时修改和监控功能，而不是作为一个独立的应用程序来运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/223 persubproject options/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,12 +177,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 int foo();
 
 int main(void) { return foo(); }
-
-"""
-
 ```

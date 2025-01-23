@@ -174,7 +174,7 @@ fuzz: elapsed: 0s, gathering baseline coverage: 0 adds, 0 files, 0/0 pcs
 
 正确的做法是在测试文件顶部添加构建标签，确保 `runtime/libfuzzer.go` 中的代码被启用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/libfuzzer.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -182,8 +182,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -344,9 +346,4 @@ var __sanitizer_cov_pcs_init byte
 //go:linkname __sanitizer_weak_hook_strcmp __sanitizer_weak_hook_strcmp
 //go:cgo_import_static __sanitizer_weak_hook_strcmp
 var __sanitizer_weak_hook_strcmp byte
-
-"""
-
-
-
 ```

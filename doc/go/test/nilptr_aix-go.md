@@ -196,15 +196,17 @@ While this code is primarily for testing the Go runtime, understanding its princ
 
 This test code is a valuable piece of the Go project, ensuring the robustness and safety of the language on different platforms, particularly in scenarios involving large address spaces where relying solely on hardware memory protection might be insufficient.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/nilptr_aix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -390,9 +392,4 @@ func p16() {
 		_ = i + v
 	}
 }
-
-"""
-
-
-
 ```

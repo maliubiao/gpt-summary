@@ -140,14 +140,16 @@ By following this thought process, breaking down the problem, identifying key el
 
 `cloneable_message_mojom_traits.cc` 是 Blink 引擎中一个关键的底层组件，负责 `blink::CloneableMessage` 类型的序列化和反序列化，这对于实现诸如 JavaScript `postMessage`、Web Workers 通信以及 File System Access API 等跨进程通信机制至关重要。虽然开发者不会直接与这个文件交互，但理解其功能有助于理解浏览器内部如何处理跨域和跨进程的消息传递。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/messaging/cloneable_message_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ bool StructTraits<blink::mojom::CloneableMessage::DataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

@@ -128,7 +128,7 @@ int get_shnodep_value (void) {
 
 `frida/subprojects/frida-qml/releng/meson/test cases/common/145 recursive linking/stshdep/lib.c` 这个文件虽然功能简单，但它是一个很好的用于演示 Frida 动态分析能力的例子。它展示了如何通过 hook 导出的函数来观察程序的运行时行为，而无需修改程序的二进制代码。它也涉及了共享库、动态链接、符号表等底层概念，是理解 Frida 工作原理的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/145 recursive linking/stshdep/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "../lib.h"
 
 int get_shnodep_value (void);
@@ -146,7 +148,4 @@ SYMBOL_EXPORT
 int get_stshdep_value (void) {
   return get_shnodep_value ();
 }
-
-"""
-
 ```

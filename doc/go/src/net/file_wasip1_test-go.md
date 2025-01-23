@@ -157,7 +157,7 @@ func fileConnNetInternal(filetype syscall.Filetype) (string, error) {
 
 总而言之，这段代码通过单元测试确保了 `net` 包在 WASI 环境下能够正确地将文件描述符识别为 TCP 或 UDP 套接字，并创建相应的 `net.Conn` 和 `net.Listener` 对象，同时验证了错误处理机制。它突出了 WASI 环境下网络编程的一些特殊性，例如对 UDP 监听器的处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/file_wasip1_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -165,8 +165,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -279,9 +281,4 @@ func testIsUDPAddr(t *testing.T, method string, addr Addr) {
 		t.Errorf("%s: returned address is not a *UDPAddr: %T", method, addr)
 	}
 }
-
-"""
-
-
-
 ```

@@ -125,11 +125,13 @@ By following this structured approach—identifying key elements, analyzing func
 
 `v8/src/heap/cppgc/testing.cc` 文件是 V8 内部用于测试 `cppgc` 垃圾回收器的关键组件。它提供了一系列用于控制和观察垃圾回收行为的接口，这对于确保 V8 引擎的内存管理正确性和效率至关重要。虽然 JavaScript 代码不能直接使用这些接口，但这些测试工具所验证的功能直接影响着 JavaScript 程序的性能和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/testing.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ bool IsHeapObjectOld(void* object) {
 
 }  // namespace testing
 }  // namespace cppgc
-
-"""
-
 ```

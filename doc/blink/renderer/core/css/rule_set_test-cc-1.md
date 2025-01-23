@@ -101,7 +101,7 @@ A developer debugging CSS layering issues might step through the code that parse
 
 总而言之，这部分 `rule_set_test.cc` 代码是 Blink 引擎中用于验证 CSS 层叠层功能正确性的单元测试。它可以帮助开发者理解层叠层的工作原理，并作为调试 CSS 相关问题的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/rule_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eRuleSet(MediaQueryEvaluator(GetDocument().GetFrame()));
     rule_set.CompactRulesIfNeeded();
     return rule_set;
@@ -340,8 +342,4 @@ TEST_F(RuleSetCascadeLayerTest, LayerStatementsBeforeAndAfterImport) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

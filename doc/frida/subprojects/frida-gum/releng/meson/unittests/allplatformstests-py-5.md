@@ -133,7 +133,7 @@ Initially, I might have focused too narrowly on the "frida" part of the path. Wh
 
 作为 Frida 构建系统测试套件的第 6 部分，`allplatformstests.py` **全面地测试了 Frida 使用的 Meson 构建系统在各个平台上的核心功能和特性。它通过大量的单元测试用例，验证了源代码处理、目标构建、依赖管理、代码生成、编译链接、自定义命令、内省、代码覆盖率、Wrap 依赖管理以及与 CMake 的互操作性等关键方面的正确性。这个文件对于确保 Frida 构建过程的稳定性和可靠性至关重要，并且为开发者提供了调试构建问题的详细线索。** 它的存在确保了 Frida 能够在不同的操作系统和架构上正确地构建出来，为最终用户提供一致的动态 instrumentation 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 i[k]
 
             sources = []
@@ -901,7 +903,4 @@ i[k]
         envs = {'CPPFLAGS': '-DCPPFLAG',
                 'CFLAGS': '-DCFLAG',
                 'CXXFLAGS': '-
-"""
-
-
 ```

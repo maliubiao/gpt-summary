@@ -179,7 +179,7 @@ void setup_hooks() {
 
 总而言之，这个 `postconf.py` 脚本是 Frida 构建过程中的一个小的配置生成工具，它通过读取一个简单的输入文件，生成一个包含宏定义的 C/C++ 头文件，为 Frida 的其他组件提供配置信息。 虽然它本身很简单，但它在 Frida 的整体架构中扮演着连接配置和代码的重要角色，尤其在需要根据不同环境或配置进行动态调整时非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/99 postconf/postconf.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -205,7 +207,4 @@ with open(input_file, encoding='utf-8') as f:
     data = f.readline().strip()
 with open(output_file, 'w', encoding='utf-8') as f:
     f.write(template.format(data))
-
-"""
-
 ```

@@ -132,14 +132,16 @@ Essentially, I started with the code itself, inferred its purpose within the lar
 
 总之，`blink/renderer/core/layout/svg/svg_character_data.cc` 中定义的 `SvgCharacterData` 结构体是 Blink 渲染引擎中用于存储和表示 SVG 文本字符级别布局信息的关键数据结构。 它在处理 HTML 中定义的 SVG 文本元素时被创建和使用，并间接受到 CSS 样式和 JavaScript 操作的影响。 理解其功能有助于开发者更好地理解 SVG 文本的渲染过程和潜在的布局问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/svg_character_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ std::ostream& operator<<(std::ostream& ostream, const SvgCharacterData& data) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

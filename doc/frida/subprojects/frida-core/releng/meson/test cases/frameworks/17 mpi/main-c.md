@@ -207,7 +207,7 @@ By following this structured approach, analyzing the code thoroughly, and system
 
 这个简单的测试用例就像一个“Hello, World!” 级别的 MPI 程序，用于快速验证 MPI 环境是否可用。如果这个最基本的程序都不能正常运行，那么更复杂的 MPI 应用程序出现问题也就不足为奇了，这可以帮助用户快速定位问题的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/17 mpi/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -215,8 +215,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <mpi.h>
 
@@ -244,7 +246,4 @@ int main(int argc, char **argv)
     }
     return 0;
 }
-
-"""
-
 ```

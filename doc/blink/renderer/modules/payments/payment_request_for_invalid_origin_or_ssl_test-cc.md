@@ -202,15 +202,17 @@ By following these steps, we can effectively dissect the provided C++ test file 
 
 总而言之，`payment_request_for_invalid_origin_or_ssl_test.cc` 这个文件通过单元测试确保了 Chromium Blink 引擎在遇到不安全的支付请求时能够正确地处理并拒绝，从而保障用户的支付安全。 它模拟了 JavaScript 调用 Payment Request API 的场景，并验证了在无效的源或 SSL 环境下，API 的行为符合预期，即抛出错误或返回表示不可用的结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/payments/payment_request_for_invalid_origin_or_ssl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -412,7 +414,4 @@ TEST_F(PaymentRequestForInvalidOriginOrSslTest,
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

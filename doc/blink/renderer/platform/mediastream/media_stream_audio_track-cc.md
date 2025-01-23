@@ -169,14 +169,16 @@ This iterative process of scanning, deducing, connecting, exemplifying, and refi
 
 总而言之，`media_stream_audio_track.cc` 文件中的 `MediaStreamAudioTrack` 类是 Blink 引擎中音频媒体流的核心，负责管理音频数据的流动、控制和生命周期，并与上层的 JavaScript API 和 HTML 元素紧密协作。理解其功能有助于理解 Web Media Streams API 的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/media_stream_audio_track.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -392,7 +394,4 @@ void MediaStreamAudioTrack::UpdateFrameStats(
 }
 
 }  // namespace blink
-
-"""
-
 ```

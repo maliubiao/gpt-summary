@@ -77,12 +77,14 @@ console.log(resolvedOptions);
 
 总而言之，`v8/src/objects/js-date-time-format.cc` 是 `Intl.DateTimeFormat` 在 V8 引擎中的幕后功臣，它提供了将 JavaScript 的国际化日期和时间格式化需求转化为实际操作的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-date-time-format.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1722,7 +1724,4 @@ MaybeHandle<JSDateTimeFormat> JSDateTimeFormat::UnwrapDateTimeFormat(
   }
   // 3. Return dtf.
   return Cast<JSDateTimeFormat>(dt
-"""
-
-
 ```

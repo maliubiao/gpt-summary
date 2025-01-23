@@ -200,7 +200,7 @@ Interceptor.attach(Module.getExportByName(null, "ioctl"), {
 
 总结来说，`bionic/libc/kernel/uapi/asm-riscv/asm/sockios.handroid` 虽然只是一个包含宏定义的头文件，但它是 Android 网络编程基础设施的关键组成部分，确保了用户空间程序能够正确地与内核进行套接字相关的控制交互。 它本身不涉及动态链接或直接的函数实现，但它定义的常量被 libc 的函数和内核所使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-riscv/asm/sockios.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -211,8 +211,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -220,7 +222,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/sockios.h>
-
-"""
-
 ```

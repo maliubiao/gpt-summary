@@ -141,7 +141,7 @@ Hello from goroutine!
 
 `go/src/runtime/os_nonopenbsd.go` 中的这段代码表明，在非 OpenBSD 操作系统上，Go 运行时对于 Goroutine 栈的分配和释放采取了一种相对简单的策略，即不需要进行额外的操作系统级别的初始化或清理。这可能是因为这些系统提供的默认机制已经足够满足 Go 的需求。这段代码是 Go 运行时为了实现跨平台兼容性而进行平台特定处理的一个很好的例子。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_nonopenbsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -149,8 +149,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -168,9 +170,4 @@ func osStackAlloc(s *mspan) {
 // to the heap.
 func osStackFree(s *mspan) {
 }
-
-"""
-
-
-
 ```

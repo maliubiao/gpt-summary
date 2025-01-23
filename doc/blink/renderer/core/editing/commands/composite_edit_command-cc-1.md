@@ -122,7 +122,7 @@ Confidence Score: 5/5
 
 总而言之，这个代码块 (`composite_edit_command.cc` 的第二部分) 提供了构建复杂编辑操作的更细粒度的构建块。它专注于处理文本内容中的空格、管理占位符元素、执行段落级别的移动和克隆操作，以及在删除操作后进行清理。这些功能是实现富文本编辑器的核心，确保用户在进行各种编辑操作时，内容能够正确地呈现和组织。它与 HTML 结构、CSS 渲染以及 JavaScript 通过 DOM API 进行的编辑操作都密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/composite_edit_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 he
   // current text node. However, if the next sibling node is a text node
   // (not empty, see http://crbug.com/632300), we should use a plain space.
@@ -957,7 +959,4 @@ void CompositeEditCommand::MoveParagraphs(
   }
   SetEndingSelection(
       SelectionForUndoSt
-"""
-
-
 ```

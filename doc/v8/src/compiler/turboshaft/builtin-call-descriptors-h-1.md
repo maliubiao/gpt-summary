@@ -129,7 +129,7 @@ Atomics.wait(int32Array, 0, 0, 1000); // 等待 int32Array[0] 的值变为非 0�
 
 `v8/src/compiler/turboshaft/builtin-call-descriptors.h` 的第二部分主要定义了 Turboshaft 编译器在处理 WebAssembly 代码时需要调用的各种 built-in 函数的描述符。这些描述符详细说明了每个 built-in 函数的参数、返回值、属性和副作用，为编译器的优化和代码生成提供了必要的元信息。 它也包含了一些与 JavaScript 异常处理相关的 built-in 函数描述符。 这个文件是 V8 内部实现细节的一部分，开发者通常不需要直接修改或理解其内容，但了解其功能有助于理解 V8 如何执行 JavaScript 和 WebAssembly 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/builtin-call-descriptors.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/builtin-call-descriptors.h以.tq结尾，那它是个v8 torque源代码，
@@ -137,8 +137,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ();
   };
 
@@ -715,8 +717,4 @@ Prompt:
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_BUILTIN_CALL_DESCRIPTORS_H_
-
-"""
-
-
 ```

@@ -365,7 +365,7 @@ root.functions.Memory.readBytes: 'ByteArray'
 
 因此，当开发者在构建 Frida 时遇到与 `jsonvalidator.py` 相关的错误，这通常意味着他们在更新 Frida 的 API 文档时引入了格式或类型错误。`jsonvalidator.py` 的输出为他们提供了调试的线索，帮助他们定位并修复文档中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/docs/jsonvalidator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -373,8 +373,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # SPDX-License-Identifier: Apache-2.0
@@ -571,7 +573,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     raise SystemExit(main())
-
-"""
-
 ```

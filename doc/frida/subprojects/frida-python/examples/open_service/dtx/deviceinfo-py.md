@@ -197,7 +197,7 @@ Finally, the information needs to be organized clearly, addressing each part of 
 
 总而言之，这个简单的 Frida 脚本展示了如何利用 Frida 与目标设备上的特定服务进行交互，获取有价值的运行时信息，这对于动态分析和逆向工程非常有帮助。它涉及到对 Frida 框架、目标设备操作系统底层以及特定平台框架的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/open_service/dtx/deviceinfo.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import pprint
 
 import frida
@@ -216,7 +218,4 @@ device = frida.get_usb_device()
 deviceinfo = device.open_service("dtx:com.apple.instruments.server.services.deviceinfo")
 response = deviceinfo.request({"method": "runningProcesses"})
 pprint.pp(response)
-
-"""
-
 ```

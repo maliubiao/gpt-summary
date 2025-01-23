@@ -130,11 +130,13 @@ for (let i = 0; i < largeArray.length; i++) {
 
 `heap-page.cc` 是 V8 `cppgc` 的核心组成部分，它负责管理堆内存的物理组织，并为垃圾回收器提供了必要的抽象和工具来跟踪、管理和回收 JavaScript 对象使用的内存。 虽然 JavaScript 开发者不能直接访问这些 C++ 类，但他们创建的每一个对象都依赖于这些底层的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap-page.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -465,7 +467,4 @@ ConstAddress LargePage::PayloadEnd() const {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

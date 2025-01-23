@@ -49,7 +49,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 总而言之，`tcp_client_socket_unittest.cc` 的主要目的是验证 `TCPClientSocket` 类的连接超时逻辑是否按照预期工作，并且能够处理各种边缘情况和网络条件。它通过模拟不同的场景和时间流逝，确保了网络连接的稳定性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/tcp_client_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -57,9 +57,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-          base::TimeDelta min_timeout,
+### 源代码
+```cpp
+base::TimeDelta min_timeout,
                                    base::TimeDelta max_timeout) {
     base::FieldTrialParams params;
     params[features::kTimeoutTcpConnectAttemptRTTMultiplier.name] =
@@ -301,8 +303,4 @@ TEST_F(TCPClientSocketMockTimeTest, ConnectAttemptTimeoutIndependent) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

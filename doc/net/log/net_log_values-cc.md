@@ -198,15 +198,17 @@ By following these steps,  breaking down the code into manageable parts, and con
 
 总而言之，`net/log/net_log_values.cc` 是 Chromium 网络日志系统中一个关键的组成部分，它负责将各种数据类型安全且易于理解地转换为日志参数，这些参数最终会被开发者用于调试和分析网络行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/log/net_log_values.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -314,7 +316,4 @@ base::Value::Dict NetLogParamsWithString(std::string_view name,
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -101,7 +101,7 @@ Interceptor.attach(Module.findExportByName("共享模块名称", "func"), {
 
 `prog.c` 文件作为一个失败的测试用例，其目的是为了验证 Frida 在 macOS 上处理依赖共享模块的程序时可能遇到的问题。它涉及到操作系统底层的共享库加载和链接机制，与逆向工程中对动态链接库的分析密切相关。理解这个测试用例有助于理解 Frida 在处理复杂程序时的内部工作原理和可能存在的局限性。  它也提醒用户在使用 Frida 时需要注意目标程序的依赖关系和运行环境配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/71 link with shared module on osx/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,13 +109,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
+### 源代码
+```c
 int main(int argc, char **argv) {
     return func();
 }
-
-"""
-
 ```

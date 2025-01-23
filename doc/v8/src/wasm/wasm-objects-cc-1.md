@@ -118,7 +118,7 @@ Considering the request's structure, I will focus on summarizing the functionali
 
 这段代码是 V8 引擎中处理 WebAssembly 运行时对象的核心部分。它定义了用于表示 WebAssembly 内存、全局变量和函数调用的对象，并提供了创建、管理和操作这些对象的方法。`WasmTrustedInstanceData` 则作为 WebAssembly 实例的受信任数据容器，管理实例的运行时状态。这段代码确保了 WebAssembly 代码在 V8 中的正确执行和内存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -126,8 +126,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 PLIES(use_trap_handler, is_wasm_module);
   // ArrayBuffers allocated for Wasm do always have a BackingStore.
   std::shared_ptr<BackingStore> backing_store = buffer->GetBackingStore();
@@ -880,7 +882,4 @@ void WasmTrustedInstanceData::InitDataSegmentArrays(
     const wasm::NativeModule* native_module) {
   const WasmModule* module = native_module->module();
   base
-"""
-
-
 ```

@@ -84,7 +84,7 @@ def __lldb_init_module(debugger, internal_dict):
 3. **函数调用拦截**：如果用户发现特定函数调用未被拦截或替换，可以检查 `Interceptor` 模块的配置是否正确。
 
 通过这些调试线索，用户可以逐步排查和解决问题，确保脚本按预期工作。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/darwin/agent/xpcproxy.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -93,8 +93,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```javascript
 const POSIX_SPAWN_START_SUSPENDED = 0x0080;
 
 applyJailbreakQuirks();
@@ -212,7 +214,4 @@ function resolveSubstrateExec(base, size) {
   }
   return matches[0].address;
 }
-
-"""
-
 ```

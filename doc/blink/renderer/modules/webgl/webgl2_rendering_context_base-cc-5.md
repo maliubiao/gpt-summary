@@ -196,7 +196,7 @@ By following these steps, I can generate a comprehensive and informative analysi
 
 这部分 `webgl2_rendering_context_base.cc` 的核心功能是实现了 WebGL 2 API 中与 **Uniform Buffer Objects (UBOs)**, **Vertex Array Objects (VAOs)**, 和 **Framebuffers (FBOs)** 的创建、绑定、删除以及信息查询等关键操作。此外，它还包含了大量的参数验证逻辑，确保 WebGL API 的正确使用，并提供必要的错误提示。这些功能是构建复杂 WebGL 2 应用的基础，例如管理着色器中的 uniform 数据，高效地切换顶点数据配置，以及实现离屏渲染和后处理效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl2_rendering_context_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ");
     return false;
   }
@@ -1102,7 +1104,4 @@ ScriptValue WebGL2RenderingContextBase::getFramebufferAttachmentParameter(
         SynthesizeGLError(GL_INVALID_ENUM, kFunctionName,
                           "invalid parameter name, OVR_multiview2 not enabled");
         return Sc
-"""
-
-
 ```

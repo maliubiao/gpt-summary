@@ -120,15 +120,17 @@ fetch('http://mylaptop.local:8080/');
 
 `net/dns/mock_mdns_client.cc` 文件定义了一个用于测试的 mDNS 客户端模拟实现。它允许开发者在不依赖真实网络环境的情况下测试 Chromium 网络栈中与 mDNS 相关的组件。虽然它不直接与 JavaScript 交互，但它在确保浏览器正确处理 JavaScript 发起的与 mDNS 相关的网络请求方面发挥着重要作用。 理解这个 mock 类的功能对于理解 Chromium 网络栈的测试机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/mock_mdns_client.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -146,7 +148,4 @@ MockMDnsClient::MockMDnsClient() = default;
 MockMDnsClient::~MockMDnsClient() = default;
 
 }  // namespace net
-
-"""
-
 ```

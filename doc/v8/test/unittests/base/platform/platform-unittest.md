@@ -121,11 +121,13 @@ function checkStackAlignment() {
 
 总而言之，`platform-unittest.cc` 是一个重要的单元测试文件，用于确保 V8 引擎的平台抽象层能够正确地与底层操作系统交互，从而保证 JavaScript 代码在不同平台上能够可靠且高效地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/platform/platform-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -444,7 +446,4 @@ TEST_F(PlatformTest, StackAlignment) {
 }  // namespace
 
 }  // namespace v8
-
-"""
-
 ```

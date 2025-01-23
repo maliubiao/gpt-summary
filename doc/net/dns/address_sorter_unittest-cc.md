@@ -169,15 +169,17 @@ This systematic approach allows for a thorough understanding and explanation of 
 
 总而言之，`net/dns/address_sorter_unittest.cc` 文件通过单元测试确保了 `AddressSorter` 类的核心功能——对 IP 地址进行排序——能够正常工作，这对于浏览器选择最佳的网络连接路径至关重要，最终影响用户的上网体验。 虽然 JavaScript 不直接调用这个 C++ 代码，但 JavaScript 发起的网络请求会依赖于 `AddressSorter` 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/address_sorter_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ TEST(AddressSorterTest, Sort) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

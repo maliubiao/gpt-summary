@@ -286,7 +286,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，你可以观察到 Android 应用程序何时尝试创建 DCCP 套接字以及发送和接收 DCCP 数据包，从而调试与 DCCP 相关的操作。你需要将 `com.example.dccpapp` 替换为你想要调试的 Android 应用的包名。 如果没有指定 PID，Frida 会尝试启动该应用。 确保你的 Android 设备上运行了 Frida 服务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/dccp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -297,8 +297,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -447,7 +449,4 @@ enum dccp_packet_dequeueing_policy {
 #define DCCP_SOCKOPT_CCID_TX_INFO 192
 #define DCCP_SERVICE_LIST_MAX_LEN 32
 #endif
-
-"""
-
 ```

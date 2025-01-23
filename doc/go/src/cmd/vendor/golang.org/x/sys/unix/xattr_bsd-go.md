@@ -275,15 +275,17 @@ func main() {
 
 总而言之，这段代码为 Go 语言程序提供了在 FreeBSD 和 NetBSD 系统上操作扩展属性的能力，涵盖了获取、设置、删除和列出扩展属性等核心功能。使用者需要注意属性名的格式、缓冲区大小以及权限问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/xattr_bsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -564,9 +566,4 @@ func LlistxattrNS(link string, nsid int, dest []byte) (sz int, err error) {
 
 	return s, nil
 }
-
-"""
-
-
-
 ```

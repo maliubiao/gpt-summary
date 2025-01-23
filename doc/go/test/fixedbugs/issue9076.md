@@ -110,15 +110,17 @@ func main() {
 
 `issue9076.go` 这个测试用例的核心目的是验证 Go 编译器在报告类型错误时，能够准确地显示包含 `unsafe.Sizeof` 调用的原始表达式，从而帮助开发者更清晰地理解错误原因。它强调了编译器错误信息准确性的重要性，尤其是在处理与底层内存布局相关的操作时。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue9076.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -134,9 +136,4 @@ import "unsafe"
 const Hundred = 100
 var _ int32 = 100/unsafe.Sizeof(int(0)) + 1 // ERROR "100 \/ unsafe.Sizeof\(int\(0\)\) \+ 1|incompatible type"
 var _ int32 = Hundred/unsafe.Sizeof(int(0)) + 1 // ERROR "Hundred \/ unsafe.Sizeof\(int\(0\)\) \+ 1|incompatible type"
-
-"""
-
-
-
 ```

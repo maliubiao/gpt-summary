@@ -150,7 +150,7 @@ setTimeout(function() {
 
 总而言之，这个 `main.cpp` 文件是 Frida 项目中一个用于验证其动态插桩能力（特别是针对异步操作）的测试用例。用户接触到这个文件通常是因为他们是 Frida 的开发者、遇到了相关的问题需要调试，或者正在学习 Frida 的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/16 threads/subprojects/cmMod/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 #include <cstdlib>
@@ -169,7 +171,4 @@ int main() {
   cc.asyncIncrement();
   return cc.getNum() == 1 ? EXIT_SUCCESS : EXIT_FAILURE;
 }
-
-"""
-
 ```

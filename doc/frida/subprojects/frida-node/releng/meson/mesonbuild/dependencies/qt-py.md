@@ -198,7 +198,7 @@ Imagine you want to use Frida to intercept a signal emitted by a `QPushButton` i
 
 In summary, `qt.py` is a crucial component for building Frida's Node.js bindings, responsible for locating and configuring the Qt framework, which is often a dependency for applications that Frida aims to instrument. Its functionality directly relates to reverse engineering by providing the necessary information to interact with Qt-based applications at runtime.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/dependencies/qt.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -206,8 +206,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2017 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -692,7 +694,4 @@ packages['qt6'] = qt6_factory = DependencyFactory(
     pkgconfig_class=Qt6PkgConfigDependency,
     configtool_class=Qt6ConfigToolDependency,
 )
-
-"""
-
 ```

@@ -167,15 +167,17 @@ const largeObject = new Array(100000).fill({ x: 0, y: 0 });
 
 总而言之，`v8/src/heap/cppgc/raw-heap.h` 定义了 V8 中底层堆内存管理的关键组件，负责组织和管理不同类型的内存空间，这直接影响着 JavaScript 程序的内存分配和垃圾回收效率。理解其功能有助于开发者更好地理解 V8 的内部工作原理，并避免一些潜在的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/raw-heap.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/raw-heap.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -287,7 +289,4 @@ class V8_EXPORT_PRIVATE RawHeap final {
 }  // namespace cppgc
 
 #endif  // V8_HEAP_CPPGC_RAW_HEAP_H_
-
-"""
-
 ```

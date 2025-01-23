@@ -138,14 +138,16 @@ Let's break down the thought process for analyzing the `cull_rect.cc` file and g
 
 总之，`cull_rect.cc` 中定义的 `CullRect` 类是 Blink 渲染引擎中一个核心的优化机制，它通过跟踪和操作裁剪矩形，有效地减少了不必要的绘制操作，从而提升了网页的渲染性能和用户体验。理解其工作原理有助于开发者编写更高效的网页代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/cull_rect.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -616,7 +618,4 @@ bool CullRect::HasScrolledEnough(
 }
 
 }  // namespace blink
-
-"""
-
 ```

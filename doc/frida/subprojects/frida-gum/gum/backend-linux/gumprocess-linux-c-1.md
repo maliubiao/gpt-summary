@@ -115,7 +115,7 @@ Since this is part 2 of a 3-part series, the user specifically asks for a summar
 
 总而言之，提供的代码片段是 Frida 在 Linux 平台上实现动态 instrumentation 的关键组成部分，它提供了对目标进程线程、模块和内存进行底层操作的能力，包括线程的挂起/恢复、硬件断点/观察点的设置、模块的加载/卸载/枚举、以及内存区域的枚举。这些功能是 Frida 实现 hook、代码注入、动态跟踪等核心特性的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-linux/gumprocess-linux.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 , GUM_ACK_FAILED_TO_STOP);
     goto beach;
   }
@@ -1509,7 +1511,4 @@ gum_linux_parse_ucontext (const ucontext_t * uc,
   const greg_t * gr = uc->uc_mcontext.gregs;
 
   ctx->rip = gr[R
-"""
-
-
 ```

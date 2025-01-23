@@ -106,14 +106,16 @@ This structured approach, starting with high-level understanding and drilling do
 
 `InternetDisconnectedURLLoader` 是 Blink 引擎中一个关键组件，它确保了当互联网连接断开时，浏览器能够快速且正确地处理新的资源加载请求，避免无限制地尝试连接。这对于提供良好的用户体验至关重要，同时也提醒开发者在编写 Web 应用时要充分考虑网络不可用的情况，并进行相应的错误处理和离线支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/internet_disconnected_url_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ InternetDisconnectedURLLoader::GetTaskRunnerForBodyLoader() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

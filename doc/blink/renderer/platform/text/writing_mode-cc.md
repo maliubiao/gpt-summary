@@ -135,14 +135,16 @@ By following these steps, the detailed and comprehensive explanation provided ea
 
 `blink/renderer/platform/text/writing_mode.cc` 文件在 Chromium Blink 渲染引擎中扮演着基础的角色，它定义了表示文本书写模式的枚举类型，并提供了将其转换为对应 CSS 属性值的字符串表示的能力。这为浏览器引擎处理和渲染不同书写方向的文本奠定了基础，并与 CSS 的 `writing-mode` 属性紧密相关，同时也能通过 JavaScript 进行交互。理解这个文件有助于理解浏览器如何处理国际化文本和不同的排版需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/writing_mode.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -170,7 +172,4 @@ std::ostream& operator<<(std::ostream& ostream, WritingMode writing_mode) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -106,14 +106,16 @@ This iterative process of understanding the code, connecting it to broader conce
 
 `region_capture_crop_id.cc` 文件提供了一对关键的转换函数，用于在 Chromium 内部表示和处理 Region Capture 功能中的裁剪区域 ID。虽然它本身是 C++ 代码，但其功能与 Web API (特别是 Region Capture API) 密切相关，并最终会影响到 JavaScript 的行为。理解这些转换机制有助于理解浏览器如何管理和识别屏幕共享中的特定区域。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/region_capture_crop_id.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ base::Uuid TokenToGUID(const base::Token& token) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

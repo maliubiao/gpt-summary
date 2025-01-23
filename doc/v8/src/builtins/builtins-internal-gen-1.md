@@ -136,12 +136,14 @@ I will create examples that demonstrate the purpose of each built-in where it's 
 
 总而言之，`builtins-internal-gen.cc` 文件的这一部分定义了 V8 引擎内部实现 JavaScript 核心功能所需的底层操作，这些操作对于 JavaScript 代码的正常执行至关重要。虽然开发者通常不需要直接与这些 built-in 交互，但它们构成了 JavaScript 语言运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-internal-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 atch_handle);
 }
 
@@ -198,8 +200,4 @@ TF_BUILTIN(GetOwnPropertyDescriptor, CodeStubAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

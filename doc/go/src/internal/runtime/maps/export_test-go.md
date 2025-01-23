@@ -171,7 +171,7 @@ func Insert[K comparable, V any](mt *abi.SwissMapType, key unsafe.Pointer, val u
 
 总而言之，这个 `export_test.go` 文件暴露了 `maps` 包的内部细节，以便进行更深入的单元测试。理解这些导出的功能和潜在的陷阱对于编写健壮的 `maps` 包测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/maps/export_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -179,8 +179,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -305,9 +307,4 @@ func (t *table) GroupsStart() unsafe.Pointer {
 func (t *table) GroupsLength() uintptr {
 	return uintptr(t.groups.lengthMask + 1)
 }
-
-"""
-
-
-
 ```

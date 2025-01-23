@@ -124,11 +124,13 @@ try {
 
 总而言之，`traps.cc` 这个 C++ 测试文件是 V8 引擎为了确保 WebAssembly 陷阱机制能够正确工作而编写的。它通过各种测试用例来验证陷阱的产生、捕获以及相关信息的报告是否符合预期，这对于保证 WebAssembly 的健壮性和与 JavaScript 的互操作性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/traps.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ TEST_F(WasmCapiTest, Traps) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

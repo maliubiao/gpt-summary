@@ -91,15 +91,17 @@ By following these steps, I could systematically analyze the header file and pro
 
 `v8/src/compiler/backend/code-generator-impl.h` 定义了一些关键的辅助类，用于 V8 编译器后端代码生成的实现。`InstructionOperandConverter` 负责将抽象操作数转换为具体的硬件资源，`DeoptimizationExit` 处理反优化过程，而 `OutOfLineCode` 用于生成不在主代码路径中的代码。这些组件共同协作，将 JavaScript 代码高效地编译成机器码，并处理运行时可能出现的动态行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/code-generator-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/code-generator-impl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -417,7 +419,4 @@ class OutOfLineCode : public ZoneObject {
 }  // namespace v8
 
 #endif  // V8_COMPILER_BACKEND_CODE_GENERATOR_IMPL_H_
-
-"""
-
 ```

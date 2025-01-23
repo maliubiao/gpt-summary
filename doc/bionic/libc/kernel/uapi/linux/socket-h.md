@@ -258,7 +258,7 @@ sys.stdin.read()
 
 通过观察 Frida 的输出，你可以看到 `setsockopt` 函数被调用时的参数，从而理解 Android Framework 或 NDK 是如何一步步地使用底层的 socket API 的。虽然这个 hook 示例主要关注 `setsockopt` 和常见的 socket 选项，但你可以根据需要修改 hook 代码来探索其他相关的函数和场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/socket.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -269,8 +269,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -289,7 +291,4 @@ typedef unsigned short __kernel_sa_family_t;
 #define SOCK_TXREHASH_DISABLED 0
 #define SOCK_TXREHASH_ENABLED 1
 #endif
-
-"""
-
 ```

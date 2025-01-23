@@ -146,7 +146,7 @@ func main() {
 
 总而言之，`pprof_rusage.go` 中的 `addMaxRSS` 函数是一个用于在 Go 程序的性能分析数据中添加最大常驻内存集大小的实用工具，它可以帮助开发者更好地理解程序的内存使用情况。 理解其工作原理和与其他 pprof 功能的联系，有助于更有效地利用 Go 的性能分析工具。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/pprof/pprof_rusage.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -154,8 +154,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -191,9 +193,4 @@ func addMaxRSS(w io.Writer) {
 		fmt.Fprintf(w, "# MaxRSS = %d\n", uintptr(rusage.Maxrss)*rssToBytes)
 	}
 }
-
-"""
-
-
-
 ```

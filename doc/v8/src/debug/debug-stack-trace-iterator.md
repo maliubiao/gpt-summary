@@ -134,11 +134,13 @@ while (!stackTraceIterator.Done()) {
 
 `debug-stack-trace-iterator.cc` 是 V8 调试功能的核心组件，它提供了访问和操作 JavaScript 代码执行期间调用栈信息的关键能力，使得调试器能够提供诸如查看调用栈、检查变量、执行代码等基本调试功能。它充当了 V8 内部执行机制和外部调试工具之间的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-stack-trace-iterator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -421,7 +423,4 @@ void DebugStackTraceIterator::PrepareRestart() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

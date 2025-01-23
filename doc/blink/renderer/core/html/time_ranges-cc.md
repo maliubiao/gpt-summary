@@ -137,14 +137,16 @@ Initially, I might have overlooked the `Copy()` method. Upon closer inspection, 
 
 总而言之，`time_ranges.cc` 文件定义了 Blink 引擎中用于管理和操作时间范围的核心数据结构，它在处理 HTML5 媒体元素的缓冲和 seek 操作中扮演着至关重要的角色，并通过 JavaScript API 暴露给 Web 开发者使用。理解其功能和使用场景对于开发涉及媒体播放的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/time_ranges.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2009, 2010 Apple Inc.  All rights reserved.
  *
@@ -242,7 +244,4 @@ double TimeRanges::Nearest(double new_playback_position,
 }
 
 }  // namespace blink
-
-"""
-
 ```

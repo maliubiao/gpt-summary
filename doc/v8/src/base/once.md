@@ -101,11 +101,13 @@ console.log(db1 === db2); // 输出: true (返回的是同一个结果)
 
 `v8/src/base/once.cc` 提供了一个底层的线程安全机制，用于确保代码只被执行一次。虽然 JavaScript 语言本身没有直接对应的语法结构，但其核心思想在 JavaScript 开发中也很重要，特别是在需要进行一次性初始化或管理状态的场景下。在单线程的 JavaScript 环境中，我们可以通过闭包等方式模拟 `once` 的行为。而在 Node.js 的多线程环境中，可能需要更复杂的设计模式来确保跨线程的单次初始化。 `once.cc` 这样的底层实现为 V8 引擎和基于 V8 的环境 (如 Node.js) 的稳定性和性能提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/once.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ void CallOnceImpl(OnceType* once, std::function<void()> init_func) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

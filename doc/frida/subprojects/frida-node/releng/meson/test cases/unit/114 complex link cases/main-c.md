@@ -127,7 +127,7 @@ By following these steps, combining code analysis with contextual knowledge of F
 
 总而言之，这个 `main.c` 文件虽然简单，但它在 Frida 项目的上下文中扮演着重要的角色，用于测试在复杂的链接场景下，程序能否正确地调用外部函数。理解它的功能和背后的技术细节有助于理解 Frida 的工作原理和进行相关的逆向分析或调试工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/114 complex link cases/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,15 +135,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int s3(void);
 
 int main(int argc, char *argv[])
 {
     return s3();
 }
-
-"""
-
 ```

@@ -150,15 +150,17 @@ func main() {
 
 `go/test/fixedbugs/issue4932.go` 并不是一个可执行的 Go 程序，而是一个测试用例标记文件，用于追踪和验证与复合字面量导出相关的 bug (Issue 4932) 的修复情况。它依赖于 Go 的测试框架来执行实际的测试逻辑，这些逻辑可能分布在其他相关的文件中。  理解它的意义需要了解 Go 的测试机制以及复合字面量和导出的概念。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4932.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compiledir
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -168,9 +170,4 @@ Prompt:
 // Issue 4932: regression in export of composite literals.
 
 package ignored
-
-"""
-
-
-
 ```

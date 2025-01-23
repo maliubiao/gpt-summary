@@ -147,7 +147,7 @@ By following these steps, considering the context of Frida, and iterating throug
 
 总而言之，`env2vars.c` 虽然是一个简单的 C 程序，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 处理环境变量的能力，这对于逆向工程、安全分析等领域使用 Frida 的用户来说至关重要。它也间接地涉及到操作系统底层、内核以及应用程序框架的相关知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/41 test args/env2vars.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -180,7 +182,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

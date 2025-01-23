@@ -84,7 +84,7 @@ Based on this understanding, I can now provide a summary of the functionality in
 
 总而言之，这部分测试代码集中验证了 `SpeculationRuleSet` 核心的解析和传播功能，以及对各种异常情况的处理机制，确保了推测规则能够正确地被识别、处理并传递给浏览器，从而实现预加载和预渲染等优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/speculation_rules/speculation_rule_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -92,8 +92,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 "SpEcUlAtIoNrUlEs"));
   script->setText(
       R"({"prefetch": [
@@ -960,7 +962,4 @@ TEST_F(DocumentRulesTest, ParseHref_AllUrlPatternKeys) {
 TEST_F(DocumentRulesTest, HrefMatchesWithBaseURL) {
   auto* without_base_specified = CreatePredicate(
       R"("href_matches": {"pathname": "/hello"}
-"""
-
-
 ```

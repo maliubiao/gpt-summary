@@ -108,7 +108,7 @@ JavaScript 代码在浏览器中发起网络请求（例如通过 `fetch` 或 `X
 
 总而言之，这部分代码的核心职责是 **高效地管理和复用 QUIC 客户端会话，以支持基于 QUIC 协议的网络连接**。它负责接收会话请求、查找现有会话、创建新会话、并维护会话的生命周期。它在浏览器的网络栈中扮演着关键角色，直接影响着 QUIC 连接的性能和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -988,8 +990,4 @@ void QuicSessionPool::ClearCachedStatesInCryptoConfig(
 
 void QuicSessionPool::ConnectAndConfigureSocket(CompletionOnceCallback callback,
                                                 DatagramClientSocket* socket,
-      
-"""
-
-
 ```

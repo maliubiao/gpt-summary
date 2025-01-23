@@ -266,7 +266,7 @@ except Exception as e:
 
 这个 Frida 示例提供了一个基本的框架，你可以根据需要修改和扩展它，以 hook 其他 AMDGPU 相关的 IOCTL 命令，并分析传递的数据。请注意，直接读取栈上的参数可能不稳定，更可靠的方法是分析汇编代码，确定参数传递的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/drm/amdgpu_drm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -277,8 +277,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -1042,7 +1044,4 @@ struct drm_color_ctm_3x4 {
 }
 #endif
 #endif
-
-"""
-
 ```

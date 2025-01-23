@@ -136,7 +136,7 @@ CMake TRACE: CMakeLists.txt:9 endif()
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/mesonbuild/cmake/traceparser.py` 脚本的第一部分的主要功能是 **将 CMake 构建过程的文本或 JSON 格式的跟踪日志解析成结构化的 Python 对象**。它识别并处理各种 CMake 命令，提取构建过程中的关键信息，例如变量定义、目标创建、库依赖、编译选项等，为后续 Meson 构建系统或其他工具（如 Frida 的 `frida-swift` 组件）理解和利用 CMake 构建过程提供了基础。这对于逆向工程来说，能够深入了解目标软件的构建方式，从而辅助进行更有效的分析和操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/cmake/traceparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -943,7 +945,4 @@ class CMakeTraceParser:
                 # File detected
                 curr_str = f'{curr_str} {i}'
                 fixed_list +=
-"""
-
-
 ```

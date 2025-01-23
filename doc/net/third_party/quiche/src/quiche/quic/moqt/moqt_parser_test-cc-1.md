@@ -106,7 +106,7 @@ MoQT 协议是为在 WebTransport 上进行媒体传输而设计的。虽然这�
 
 总而言之，这部分测试代码是确保 MoQT 协议解析器健壮性和正确性的重要组成部分，它模拟了各种可能出现的错误场景，帮助开发者在早期发现并修复潜在的协议解析问题，从而提高基于 MoQT 协议的应用的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_parser_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 view(subscribe_ok, sizeof(subscribe_ok)),
                      false);
   EXPECT_EQ(visitor_.messages_received_, 0);
@@ -666,8 +668,4 @@ TEST_F(MoqtMessageSpecificTest, PaddingStream) {
 }
 
 }  // namespace moqt::test
-
-"""
-
-
 ```

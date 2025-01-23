@@ -157,15 +157,17 @@ By following this structured approach, combining keyword analysis, understanding
 
 `v8/src/codegen/cpu-features.h` 是 V8 引擎的核心组件之一，它负责检测和管理 CPU 特性，从而使 V8 能够生成针对不同 CPU 架构优化的代码，最终提升 JavaScript 的执行性能。对于一般的 JavaScript 开发者来说，这是透明的，但对于 V8 的开发者来说，理解和正确使用它是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/cpu-features.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/cpu-features.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -336,7 +338,4 @@ class V8_EXPORT_PRIVATE CpuFeatures : public AllStatic {
 }  // namespace internal
 }  // namespace v8
 #endif  // V8_CODEGEN_CPU_FEATURES_H_
-
-"""
-
 ```

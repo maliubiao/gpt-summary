@@ -103,7 +103,7 @@ Here's a breakdown of the thinking process to analyze the provided Python code s
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/mesonbuild/utils/win32.py` 中的 `BuildDirLock` 类是一个简单的但至关重要的组件，用于确保 Frida 在 Windows 平台上的构建过程的并发安全性，避免多个构建进程之间的冲突，从而保障最终构建产物的可靠性。虽然它本身不直接实现 Frida 的逆向功能，但为逆向工作的稳定进行提供了基础保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/utils/win32.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -142,7 +144,4 @@ class BuildDirLock(BuildDirLockBase):
     def __exit__(self, *args: T.Any) -> None:
         msvcrt.locking(self.lockfile.fileno(), msvcrt.LK_UNLCK, 1)
         self.lockfile.close()
-
-"""
-
 ```

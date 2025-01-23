@@ -158,11 +158,13 @@ function example() {
 
 `v8/src/objects/contexts.cc` 是 V8 引擎中负责管理 JavaScript 执行上下文的核心文件。它定义了各种上下文对象，实现了作用域链的查找机制，并处理了 `with` 语句、模块、闭包以及 `let` 和 `const` 等关键的 JavaScript 语言特性。  理解这个文件的功能对于深入理解 JavaScript 的执行原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/contexts.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -996,7 +998,4 @@ void NativeContext::RunPromiseHook(PromiseHookType type,
 #endif
 
 }  // namespace v8::internal
-
-"""
-
 ```

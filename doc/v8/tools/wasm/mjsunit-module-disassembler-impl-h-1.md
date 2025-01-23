@@ -119,7 +119,7 @@ builder.addFunction(undefined, $sig0)
 
 `v8/tools/wasm/mjsunit-module-disassembler-impl.h` 的主要功能是提供一种机制，将编译后的 WebAssembly 模块转换回人类可读且可执行的 JavaScript 代码。这个过程对于理解 WebAssembly 模块的结构和行为，以及进行 V8 内部的 WebAssembly 相关测试和调试至关重要。 它自动化了将 WebAssembly 模块表示为 `WasmModuleBuilder` 指令的过程，使得开发者可以方便地查看 WebAssembly 模块的等效 JavaScript 表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/wasm/mjsunit-module-disassembler-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/wasm/mjsunit-module-disassembler-impl.h以.tq结尾，那它是个v8 torque源代码，
@@ -127,8 +127,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 t_, imm);
     out_ << ",";
   }
@@ -881,8 +883,4 @@ class MjsunitModuleDis {
 }  // namespace v8::internal::wasm
 
 #endif  // V8_TOOLS_WASM_MJSUNIT_MODULE_DISASSEMBLER_IMPL_H_
-
-"""
-
-
 ```

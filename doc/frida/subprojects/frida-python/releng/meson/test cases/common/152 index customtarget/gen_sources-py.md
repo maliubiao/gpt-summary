@@ -156,7 +156,7 @@ Initially, I might have focused too much on the *specific C code* within `HEADER
 
 总而言之，`gen_sources.py` 是 Frida 项目构建过程中的一个辅助脚本，用于生成测试用的 C 语言源文件。它本身不执行逆向操作，但为测试 Frida 的核心功能（例如 hook C 代码）提供了基础。理解这个脚本的功能有助于理解 Frida 的构建过程和测试机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/152 index customtarget/gen_sources.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2017-2023 Intel Corporation
 
@@ -204,7 +206,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

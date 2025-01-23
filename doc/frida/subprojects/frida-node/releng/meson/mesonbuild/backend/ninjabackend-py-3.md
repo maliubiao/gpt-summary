@@ -150,7 +150,7 @@ Let's consider the `generate_rust_target` function:
 
 This part of the `NinjaBackend` focuses on generating the necessary Ninja build rules for compiling and linking Rust and Swift code within the Frida Node.js project. It handles language-specific compiler options, dependencies between targets, and platform-specific details like rpath settings. This ensures that the native components of Frida Node.js, often written in Rust or Swift for performance and system-level access, are built correctly as part of the overall build process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,9 +159,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                     target.build_rpath,
+### 源代码
+```python
+target.build_rpath,
                                        target.install_rpath))
             # ... but then add rustc's sysroot to account for rustup
             # installations
@@ -825,8 +827,5 @@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=47485'''))
         #
         # PDB files also lead to filename collisions. A target foo.exe
         # has a corresponding foo.pdb. A shared library foo.dll _also_
-        # has pdb 
-"""
-
-
+        # has pdb
 ```

@@ -167,7 +167,7 @@ func main() {
 
 总而言之，这段代码是 Go 运行时环境用于在 AIX 平台上检测 PowerPC 处理器架构的关键部分，为后续的优化和特性支持提供了基础信息。由于它是 `internal` 包的一部分，普通开发者不需要直接关心或使用它。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/cpu/cpu_ppc64x_aix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -202,9 +204,4 @@ func osinit() {
 
 // getsystemcfg is defined in runtime/os2_aix.go
 func getsystemcfg(label uint) uint
-
-"""
-
-
-
 ```

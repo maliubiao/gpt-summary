@@ -173,7 +173,7 @@ exec.Command("go", "run", "cmd/vendor/golang.org/x/tools/cmd/bisect", "GODEBUG=b
 
 总而言之，这段测试代码揭示了 `internal/godebug` 包是一个用于在运行时通过环境变量控制程序行为的机制，它被 Go 语言自身用于管理一些内部特性和调试选项。 使用者需要仔细阅读文档，确保 `GODEBUG` 环境变量的格式正确，并且了解可用的选项及其含义，才能有效地利用这个功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/godebug/godebug_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -181,8 +181,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -344,9 +346,4 @@ func TestBisectTestCase(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

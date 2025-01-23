@@ -225,7 +225,7 @@ By following these steps, a comprehensive and accurate answer can be generated t
 
 `v8/src/builtins/arm/builtins-arm.cc` 的这部分代码是 V8 引擎在 ARM 架构下实现核心 JavaScript 语义的关键组成部分。它涵盖了解释器调度、优化过程中的栈替换、以及各种重要的内置函数（如 `Function.prototype.call/apply` 和 `Reflect` API）。这些内置函数直接支撑着 JavaScript 代码的执行，并处理了一些常见的运行时错误。理解这部分代码有助于深入了解 V8 引擎的工作原理和 JavaScript 的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/arm/builtins-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/arm/builtins-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -233,8 +233,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nd(kInterpreterDispatchTableRegister, scratch, LSL,
                     kPointerSizeLog2));
   __ Jump(kJavaScriptCallCodeStartRegister);
@@ -1148,7 +1150,4 @@ void Builtins::Generate_ConstructBoundFunction(MacroAssembler* masm) {
   //  -- r0 : the number of arguments
   //  -- r1 : the function to call (checked to be a JSBoundFunction)
   //  -- r3 : the new target (checked to be a construc
-"""
-
-
 ```

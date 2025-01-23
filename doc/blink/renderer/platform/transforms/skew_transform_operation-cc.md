@@ -135,14 +135,16 @@ This detailed breakdown, starting from a basic understanding of the code and pro
 
 总而言之，`skew_transform_operation.cc` 文件是 Blink 渲染引擎中处理 skew 变换的核心组件，它通过 `Accumulate` 和 `Blend` 方法实现了 skew 变换的合并和动画过渡功能，直接支撑了 CSS `transform` 属性中 `skewX()` 和 `skewY()` 的实现。用户和开发者在使用相关的 CSS 和 JavaScript 功能时，需要注意单位、性能和逻辑的正确性，以确保预期的渲染效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/transforms/skew_transform_operation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Antti Koivisto (koivisto@kde.org)
  * Copyright (C) 2004, 2005, 2006, 2007, 2008 Apple Inc. All rights reserved.
@@ -200,7 +202,4 @@ TransformOperation* SkewTransformOperation::Blend(
 }
 
 }  // namespace blink
-
-"""
-
 ```

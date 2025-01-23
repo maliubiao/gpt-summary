@@ -284,15 +284,17 @@ Paths: [path1 path with spaces1 path with spaces2 path3]
 
 总结来说，这段代码是 `go` 命令处理命令行参数的核心部分，它定义了特殊的 flag 类型来满足特定的需求，并提供了一些便捷的函数来添加常用的构建标志。理解这些代码有助于深入了解 `go` 命令的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/base/flag.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -378,9 +380,4 @@ func ChdirFlag(s string) error {
 	// If we see one during flag parsing, that's an error.
 	return fmt.Errorf("-C flag must be first flag on command line")
 }
-
-"""
-
-
-
 ```

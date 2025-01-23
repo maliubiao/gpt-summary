@@ -116,7 +116,7 @@ Finally, organize the answers logically and provide clear explanations. Use bold
 
 通过这个简单的测试用例及其可能的失败情况，开发者可以有效地调试 Frida 的构建过程，确保其 Wayland 客户端协议支持的相关功能能够正确编译和运行。这是一个自动化测试的典型应用，帮助开发者尽早发现并解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/wayland/1 client/local.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "test-client-protocol.h"
 
 int main() {
@@ -135,7 +137,4 @@ int main() {
     return 1;
 #endif
 }
-
-"""
-
 ```

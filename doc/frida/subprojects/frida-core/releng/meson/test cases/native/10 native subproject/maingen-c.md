@@ -104,7 +104,7 @@ By following these steps, we can transform the analysis of a simple C program in
 
 总而言之，`maingen.c` 是一个在 Frida 项目中用于生成简单 C 代码片段的小工具，它体现了 Frida 中动态代码生成的思想，并且与逆向工程、二进制底层、Linux/Android 系统等概念都有一定的关联。理解这类工具的功能和作用有助于深入理解 Frida 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/native/10 native subproject/maingen.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main(void) {
@@ -122,7 +124,4 @@ int main(void) {
     printf("}\n");
     return 0;
 }
-
-"""
-
 ```

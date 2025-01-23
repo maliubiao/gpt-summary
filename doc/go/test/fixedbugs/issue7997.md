@@ -174,15 +174,17 @@ func main() {
 
 总而言之，`go/test/fixedbugs/issue7997.go` 这段代码是一个精心设计的测试用例，用于验证 Go 编译器在处理 `select` 语句中局部变量地址返回时的正确性，防止出现悬挂指针等问题。  它提醒 Go 开发者要谨慎处理局部变量的生命周期，避免返回局部变量的地址。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7997.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compile
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -236,9 +238,4 @@ func f(ch chan int) *int {
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

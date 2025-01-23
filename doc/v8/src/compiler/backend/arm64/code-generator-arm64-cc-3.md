@@ -202,7 +202,7 @@ case kArm64FAdd: {
 
 这段代码是 V8 引擎中非常核心的部分，它直接影响了 JavaScript 在 ARM64 架构上的 SIMD 性能。通过使用宏和仔细处理每种 SIMD 指令，V8 能够生成高效的本地机器码，从而加速 JavaScript 应用的执行速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm64/code-generator-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm64/code-generator-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -210,8 +210,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 LaneSizeField::decode(opcode)); \
     DCHECK_EQ(instr->InputCount(), 1);                                 \
     __ Cm##ImmOp(i.OutputSimd128Register().Format(f),                  \
@@ -1050,7 +1052,4 @@ LaneSizeField::decode(opcode)); \
       RecordTrapInfoIfNeeded(zone(), this, opcode, instr, __ pc_offset());
       __ Ldr(i.OutputSimd128Register().V2S(), i.MemoryOperand(0));
       __ Uxtl(i.OutputSimd128Register().V2D()
-"""
-
-
 ```

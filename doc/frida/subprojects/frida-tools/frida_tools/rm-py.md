@@ -148,7 +148,7 @@ frida -p <pid> -l _ rm.py -r b/ c/d/ not_exist.txt -f
 
 总而言之，`frida/subprojects/frida-tools/frida_tools/rm.py` 是一个利用 Frida 框架在目标进程中执行文件删除操作的工具，它与逆向分析紧密相关，涉及到操作系统底层知识，并需要用户正确理解 Frida 的工作原理和目标进程的上下文。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/frida_tools/rm.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import argparse
 import codecs
 import os
@@ -234,7 +236,4 @@ if __name__ == "__main__":
         main()
     except KeyboardInterrupt:
         pass
-
-"""
-
 ```

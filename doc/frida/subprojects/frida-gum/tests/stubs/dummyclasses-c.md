@@ -133,7 +133,7 @@ This systematic approach, starting with basic code understanding and progressive
 
 总而言之，`dummyclasses.c` 虽然代码简单，但在 Frida Gum 的测试和开发中扮演着重要的角色。它通过提供简单的虚拟类，帮助开发者隔离和测试 Frida Gum 的各种功能，并为理解 Frida Gum 的内部机制提供了一个入口点。对于 Frida 用户而言，理解这些虚拟类的作用，可以帮助更好地理解 Frida 的工作原理，并避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/stubs/dummyclasses.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2018 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -183,7 +185,4 @@ static void
 zoo_zebra_init (ZooZebra * self)
 {
 }
-
-"""
-
 ```

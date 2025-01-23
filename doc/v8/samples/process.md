@@ -123,11 +123,13 @@ function Process(request) {
 
 `v8/samples/process.cc` 演示了如何利用 V8 引擎，在 C++ 应用程序中嵌入 JavaScript 脚本来处理特定的任务（在这个例子中是 HTTP 请求）。它通过定义接口、包装 C++ 对象、提供全局函数等方式，实现了 C++ 和 JavaScript 之间的双向通信和协作，使得开发者可以使用 JavaScript 的灵活性来扩展 C++ 应用程序的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/samples/process.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -855,7 +857,4 @@ int main(int argc, char* argv[]) {
   }
   PrintMap(&output);
 }
-
-"""
-
 ```

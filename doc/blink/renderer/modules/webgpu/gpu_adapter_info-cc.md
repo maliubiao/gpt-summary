@@ -172,15 +172,17 @@ adapterInfo.vkDriverVersion() => std::nullopt
 
 总而言之，`gpu_adapter_info.cc` 文件定义的 `GPUAdapterInfo` 类是 WebGPU 实现中非常核心的数据结构，它承载着关于图形适配器的关键信息，并将这些信息传递给 JavaScript，从而影响 WebGPU 应用的行为和性能。理解这个类的作用对于调试 WebGPU 相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_adapter_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ void GPUAdapterInfo::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

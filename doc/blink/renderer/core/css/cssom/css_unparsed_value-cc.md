@@ -227,15 +227,17 @@ By following this structured approach, I can systematically analyze the code and
 
 `css_unparsed_value.cc` 文件在 Chromium Blink 引擎中扮演着重要的角色，它负责存储和管理尚未完全解析的 CSS 属性值，特别是那些涉及到自定义属性和 `var()`/`env()` 函数的值。它与 JavaScript 的 CSS Typed OM 紧密相关，使得 JavaScript 可以访问和操作这些未解析的值。理解 `CSSUnparsedValue` 的工作原理对于理解 Blink 的 CSS 解析流程以及调试涉及自定义属性的样式问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/css_unparsed_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -449,7 +451,4 @@ bool CSSUnparsedValue::AppendUnparsedString(
 }
 
 }  // namespace blink
-
-"""
-
 ```

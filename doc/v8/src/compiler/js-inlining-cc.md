@@ -16,7 +16,7 @@ My thinking process to answer the request goes through these stages:
     * **`ReduceJSCall`:** It checks for inlineability based on `SharedFunctionInfo`, optimization status, constructability, and nesting level. This suggests it's the decision-making stage before actual inlining.
     * **`DetermineCallTarget`:** It checks for constant function objects and `JSCreateClosure` nodes, indicating it's identifying statically known call targets.
     * **`DetermineCallContext`:** It retrieves the context of the inlined
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-inlining.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-inlining.cc以.tq结尾，那它是个v8 torque源代码，
@@ -24,8 +24,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -791,8 +793,4 @@ Reduction JSInliner::ReduceJSCall(Node* node) {
 
   TRACE("Inlining " << *shared_info << " into " << outer_shared_info
                     << ((exception_target != nullptr) ? " (inside try-block)"
-                                          
-"""
-
-
 ```

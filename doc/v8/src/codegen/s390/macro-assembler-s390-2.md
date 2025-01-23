@@ -133,12 +133,14 @@ Plan:
 
 总而言之，`macro-assembler-s390.cc` 文件的这一部分为 V8 JavaScript 引擎在 s390 架构上提供了执行 JavaScript 代码所需的各种底层操作指令的封装，涵盖了内存访问、算术运算、位操作、控制流、原子操作以及 SIMD 指令，是 V8 引擎高效运行的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/macro-assembler-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 oadS32(dst, dst);
 }
 
@@ -1983,8 +1985,4 @@ void MacroAssembler::I32x4SConvertF32x4(Simd128Register dst,
 void MacroAssembler::I32x4UConvertF32x4(Simd128Register dst,
                                         Simd128Register src,
                                         Simd128Register scratch1,
-                      
-"""
-
-
 ```

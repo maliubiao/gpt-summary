@@ -209,7 +209,7 @@ By following these steps, combining code analysis with domain knowledge, and foc
 
 总而言之，`helpers.py` 文件提供了一组用于增强 `frida-qml` 单元测试的实用工具，特别是用于管理测试环境和跳过不满足前提条件的测试。它在确保测试的可靠性和减少不必要的错误方面发挥着重要作用。 其中部分功能与逆向工程中对二进制文件的分析和理解程序运行环境的需求紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/helpers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -217,8 +217,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import subprocess
 import os
 import shutil
@@ -433,7 +435,4 @@ def xfail_if_jobname(name: str):
     def wrapper(func):
         return func
     return wrapper
-
-"""
-
 ```

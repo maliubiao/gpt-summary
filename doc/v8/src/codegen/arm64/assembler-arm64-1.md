@@ -651,12 +651,14 @@ void Assembler::tbx(const VRegister& vd, const VRegister& vn,
 }
 
 void Assembler::tbx(
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/assembler-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 Scalar;
   } else {
     q = vd.IsD() ? 0 : NEON_Q;
@@ -2554,7 +2556,4 @@ void Assembler::uqxtn2(const VRegister& vd, const VRegister& vn) {
 void Assembler::not_(const VRegister& vd, const VRegister& vn) {
   DCHECK(AreSameFormat(vd, vn));
   DCHECK(vd.Is8B(
-"""
-
-
 ```

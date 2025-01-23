@@ -174,7 +174,7 @@ go test -bench=BenchmarkFastrand ./runtime
 
 `go/src/runtime/rand_test.go` 文件专注于测试 `runtime` 包提供的快速随机数生成功能。它通过单元测试确保基本功能的正确性，并通过基准测试评估性能。这些快速随机数生成器在 Go 运行时内部被广泛使用，用于一些非安全敏感的随机化场景。开发者在使用标准库提供的 `math/rand` 包时，通常不需要直接关注这些底层的 `runtime` 函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/rand_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -182,8 +182,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -281,9 +283,4 @@ func TestLegacyFastrand(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

@@ -83,14 +83,16 @@ This iterative process, starting from code inspection, inferring purpose, connec
 
 `BfcOffset` 类是 Chromium Blink 引擎内部用于表示和计算元素在 Block Formatting Context 中偏移量的一个核心概念。它直接参与了 CSS 布局的实现，并间接地影响了 JavaScript 可以获取到的元素布局信息。虽然 Web 开发者不会直接操作这个类，但理解其背后的概念有助于更好地理解 CSS 布局和避免常见的布局错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/geometry/bfc_offset.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -110,7 +112,4 @@ std::ostream& operator<<(std::ostream& os, const BfcOffset& value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

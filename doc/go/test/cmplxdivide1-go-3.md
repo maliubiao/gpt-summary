@@ -161,7 +161,7 @@ This is crucial when writing tests like the one shown earlier, as the expected r
 
 This final part of the `go/test/cmplxdivide1.go` file provides a comprehensive set of test cases specifically designed to validate the behavior of complex number division in Go, paying particular attention to edge cases involving infinity, negative zero, and NaN. It serves as a data source for automated testing, ensuring the robustness and correctness of the complex division operation.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/cmplxdivide1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -169,8 +169,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ex(inf, -1), complex(zero, -1), complex(nan, inf)},
 	{complex(inf, -1), complex(zero, 2), complex(nan, -inf)},
 	{complex(inf, -1), complex(nan, nan), complex(nan, nan)},
@@ -1001,10 +1003,4 @@ ex(inf, -1), complex(zero, -1), complex(nan, inf)},
 	{complex(nan, -inf), complex(nan, inf), complex(nan, nan)},
 	{complex(nan, -inf), complex(nan, -inf), complex(nan, nan)},
 }
-
-"""
-
-
-
-
 ```

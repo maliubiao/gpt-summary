@@ -217,15 +217,17 @@ Finally, organize the information into a clear and structured answer, addressing
 
 总而言之，`handwriting_recognition_service.cc` 是 Blink 渲染引擎中实现 Web 手写识别 API 的关键 C++ 组件，它负责连接 JavaScript 前端和浏览器进程的后端手写识别功能，并处理异步操作和错误情况。理解这个文件的工作原理对于调试手写识别相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/handwriting/handwriting_recognition_service.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -417,7 +419,4 @@ void HandwritingRecognitionService::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

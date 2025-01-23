@@ -651,12 +651,14 @@ class FastCApiObject {
       sum += info[1]->Int32Value(isolate->GetCurrentContext()).FromJust();
     }
     if (info.Length() > 2 && info[2]->Is
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8-test.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2335,7 +2337,4 @@ Local<FunctionTemplate> Shell::CreateTestFastCApiTemplate(Isolate* isolate) {
             .Arg<3, v8::CTypeInfo::Flags::kClampBit>()
 #ifdef V8_USE_SIMULATOR_WITH_GENERIC_C_CALLS
             .Patc
-"""
-
-
 ```

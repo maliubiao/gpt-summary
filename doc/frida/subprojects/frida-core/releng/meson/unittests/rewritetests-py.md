@@ -166,7 +166,7 @@ By following this structured approach, we can systematically analyze the code an
 
 总而言之，`rewritetests.py` 是 Frida 动态 instrumentation 工具中用于验证 Meson 构建系统配置重写功能的关键测试文件。它测试了添加、删除和修改构建目标、源文件以及其他构建参数的各种场景，对于理解 Frida 如何与构建系统交互以及如何进行调试至关重要。其功能与逆向工程密切相关，因为它允许在构建阶段为动态分析和修改做准备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/unittests/rewritetests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -585,7 +587,4 @@ class RewriterTests(BasePlatformTests):
         # Do it line per line because it is easier to debug like that
         for orig_line, new_line in zip_longest(original_contents.splitlines(), new_contents.splitlines()):
             self.assertEqual(orig_line, new_line)
-
-"""
-
 ```

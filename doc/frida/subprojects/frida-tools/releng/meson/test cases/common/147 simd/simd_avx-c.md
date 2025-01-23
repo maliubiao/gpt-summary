@@ -193,7 +193,7 @@ vmovupd [rbx], ymm1      ; 将 ymm1 寄存器中的值存储到 rbx 指向的内
 
 总而言之，`simd_avx.c` 是 Frida 用来测试其对 AVX 指令集支持的一个小的但重要的示例。它涵盖了 AVX 的基本使用，并反映了在逆向工程、底层编程以及动态插桩中需要理解 SIMD 指令的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/147 simd/simd_avx.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -201,8 +201,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdheader.h>
 
 #ifndef I_CAN_HAZ_SIMD
@@ -252,7 +254,4 @@ void increment_avx(float arr[4]) {
     arr[2] = (float)darr[2];
     arr[3] = (float)darr[3];
 }
-
-"""
-
 ```

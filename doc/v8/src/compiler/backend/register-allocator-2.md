@@ -139,12 +139,14 @@ function foo(a, b, c) {
 
 **总结来说，这部分代码实现了线性扫描寄存器分配算法中的关键环节，特别是处理控制流合并点和 deferred 代码块的寄存器分配，旨在提高 V8 生成的机器码的执行效率。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 s[RegisterConfiguration::kMaxRegisters];
     explicit Vote(int reg) : count(1), used_registers{0} {
       used_registers[reg] = 1;
@@ -1702,7 +1704,4 @@ void ReferenceMapPopulator::PopulateReferenceMaps() {
       bool found = false;
       if (cur == nullptr) {
         cur = range->GetChildCovers(
-"""
-
-
 ```

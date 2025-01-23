@@ -183,7 +183,7 @@ By following these steps, the analysis becomes more comprehensive and accurately
 
 通过这个步骤，我们理解了 `main.cpp` 文件在 Frida 项目中的作用：它是一个用于测试 C++ 模块的简单用例，可以作为 Frida 进行动态分析和逆向的目标。文件路径中的 `test cases/unit` 也印证了这一点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/85 cpp modules/gcc/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 import M0;
 #include<cstdio>
 
@@ -200,7 +202,4 @@ int main() {
     printf("The value is %d", func0());
     return 0;
 }
-
-"""
-
 ```

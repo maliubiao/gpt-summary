@@ -128,7 +128,7 @@ Here's a breakdown of the thought process:
 
 总而言之，这部分代码专注于测试 `PaintPropertyTreeBuilder` 在处理各种复杂的布局场景，特别是涉及到滚动、定位、多列布局、滤镜和反射等特性时，是否能够正确地构建 Paint Property Tree。这是确保渲染引擎正确渲染页面的关键一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_property_tree_builder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s the forceScroll element plus the height of the overflow scroll child
   // (overflowB).
   EXPECT_EQ(gfx::Rect(0, 0, 9, 107), overflow_a_scroll_node->ContentsRect());
@@ -954,7 +956,4 @@ TEST_P(PaintPropertyTreeBuilderTest, FilterReparentClips) {
   EXPECT_EQ(filter_properties->Filter()->OutputClip(),
             &child_paint_state.Clip());
   EXPECT_EQ(filter_properties->Filter(), &chil
-"""
-
-
 ```

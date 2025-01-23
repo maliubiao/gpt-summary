@@ -140,14 +140,16 @@ By following this systematic approach, analyzing the code, and connecting it to 
 
 总而言之，`fe_lighting.cc` 是 Blink 渲染引擎中实现 SVG 光照滤镜的核心代码，它负责将 SVG 中的光照定义转换为 Skia 的渲染指令，从而在网页上呈现出逼真的光照效果。理解这个文件的功能有助于开发者更好地理解和使用 SVG 光照滤镜。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/fe_lighting.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 University of Szeged
  * Copyright (C) 2010 Zoltan Herczeg
@@ -299,7 +301,4 @@ float FELighting::GetFilterConstant() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

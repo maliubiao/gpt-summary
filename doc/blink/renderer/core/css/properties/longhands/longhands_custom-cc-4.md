@@ -127,7 +127,7 @@ Here's a breakdown of the request and a plan to address each point:
 
 作为 13 个部分中的第 5 部分，这个文件 (`longhands_custom.cc`) 专注于处理那些需要自定义逻辑的 CSS 长属性。它定义了如何解析这些属性的 CSS 文本值，如何从计算样式中生成相应的 CSS 值，以及如何在样式应用阶段将这些值传递给渲染引擎。 它的作用是桥接 CSS 语法和 Blink 内部的样式表示，确保浏览器能够正确理解和应用这些复杂的 CSS 属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/longhands/longhands_custom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e::Create(CSSValueID::kConstrainedHigh);
   }
   float high_mix = 1.f - limit.standard_mix - limit.constrained_high_mix;
@@ -1092,7 +1094,4 @@ const CSSValue* GridTemplateAreas::ParseSingleValue(
             stream.ConsumeIncludingWhitespace().Value().ToString(),
             grid_area_map, row_count, column_count)) {
       return nullp
-"""
-
-
 ```

@@ -179,7 +179,7 @@ Saved message was: Hello, world!
 
 **因此，到达这个代码文件的路径是：对目标应用程序进行逆向分析 -> 识别关键的 GObject 类 ->  为了更深入的理解或修改，查找该类的源代码。**  这个文件作为 Frida 测试用例的一部分，很可能被 Frida 的开发者用于验证 Frida 在处理基于 GObject 的代码时的功能。用户研究这个文件，可以更好地理解 Frida 的工作原理，以及如何有效地使用 Frida 对 GNOME 应用程序进行动态 instrumentation。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/7 gnome/gir/dep1/dep3/dep3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "dep3.h"
 
 struct _MesonDep3
@@ -313,7 +315,4 @@ meson_dep3_return_message (MesonDep3 *self)
 
   return (const gchar*) self->msg;
 }
-
-"""
-
 ```

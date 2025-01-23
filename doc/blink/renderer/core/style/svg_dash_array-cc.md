@@ -95,14 +95,16 @@ Let's break down the thought process for analyzing the provided `svg_dash_array.
 
 总而言之，`svg_dash_array.cc` 文件通过提供一个共享的、静态的空 dash array对象，优化了 Blink 渲染引擎处理 SVG 样式时的内存使用和性能。它与 CSS 中 `stroke-dasharray` 的 `none` 值，以及 JavaScript 操作该属性时的空值状态密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/svg_dash_array.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
     Copyright (C) 2004, 2005, 2007 Nikolas Zimmermann <zimmermann@kde.org>
                   2004, 2005, 2010 Rob Buis <buis@kde.org>
@@ -143,7 +145,4 @@ SVGDashArray* EmptyDashArray() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

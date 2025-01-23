@@ -121,7 +121,7 @@ By analyzing these test cases and their respective helper functions, I can build
 
 作为 Frida Stalker ARM 架构测试的第四部分，这部分代码主要关注 **Stalker 的高级功能和在复杂场景下的行为**。它深入测试了 Stalker 的 **代码预取优化能力** 以及在 **多线程环境中指定线程执行代码的能力**。这些测试确保了 Stalker 在性能优化和精细化控制方面能够稳定可靠地工作，为 Frida 用户提供了更强大和灵活的动态 instrumentation 工具。这部分内容相对于之前的部分，更加侧重于性能和多线程协作方面的测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm/stalker-arm.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,9 +130,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```c
+{
         gum_thumb_writer_put_mov_reg_u8 (output->writer.thumb, ARM_REG_R0,
             TRUE);
       }
@@ -936,8 +938,4 @@ sleeping_dummy (gpointer data)
 
   return NULL;
 }
-
-"""
-
-
 ```

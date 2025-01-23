@@ -79,7 +79,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `thread-suspend-monitor.vala` 是 Frida 中一个重要的调试工具，主要用于监控和管理线程的挂起和恢复操作。它通过拦截系统调用和锁定机制，确保在多线程环境中线程状态的一致性，并防止错误地挂起或恢复关键线程。通过 LLDB 和 Python 脚本，用户可以复刻该文件中的调试功能，进一步理解线程状态的管理。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/lib/payload/thread-suspend-monitor.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -88,8 +88,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 #if DARWIN
 	public class ThreadSuspendMonitor : Object {
@@ -234,7 +236,4 @@ namespace Frida {
 	}
 #endif
 }
-
-"""
-
 ```

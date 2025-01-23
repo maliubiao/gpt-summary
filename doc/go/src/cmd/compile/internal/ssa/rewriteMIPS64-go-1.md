@@ -106,7 +106,7 @@ v3 = Println v2
 
 这部分 `rewriteMIPS64.go` 文件的主要功能是定义了大量的针对 MIPS64 架构的 SSA 值重写规则。这些规则通过模式匹配和替换，实现了对 SSA 图的各种优化和简化，包括常量折叠、身份变换、指令选择优化以及地址计算优化等，最终目的是生成更高效的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteMIPS64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -114,8 +114,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 is32Bit(c)
 	// result: (ANDconst [c] x)
 	for {
@@ -2788,9 +2790,4 @@ func rewriteValueMIPS64_OpMIPS64SRLVconst(v *Value) bool {
 	return false
 }
 f
-"""
-
-
-
-
 ```

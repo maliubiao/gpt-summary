@@ -167,7 +167,7 @@ add(5, 10);
 
 作为 `v8/src/execution/frames.cc` 的一部分，这段代码专注于管理和操作 V8 虚拟机中的各种栈帧，特别是与 WebAssembly 执行相关的栈帧。它提供了访问、修改和打印栈帧数据的方法，并支持垃圾回收。虽然是 C++ 代码，但其功能直接支撑着 JavaScript 和 WebAssembly 的执行，对于理解 V8 的执行模型、调试和性能分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/frames.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/frames.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,8 +175,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 InterpreterFrameConstants::kBytecodeOffsetFromFp,
             InterpreterFrameConstants::kExpressionsOffset -
                 index * kSystemPointerSize);
@@ -980,7 +982,4 @@ void JavaScriptFrame::Iterate(RootVisitor* v) const {
   const int last_object_offset = StandardFrameConstants::kLastObjectOffset;
   FullObjectSlot base(&Memory<Address>(sp()));
   FullObjectSlot limit(&Memory<Addres
-"""
-
-
 ```

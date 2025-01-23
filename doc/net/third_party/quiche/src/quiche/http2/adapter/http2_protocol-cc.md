@@ -150,15 +150,17 @@ This detailed breakdown covers the various aspects requested in the prompt, focu
 
 因此，尽管用户没有直接与 `http2_protocol.cc` 交互，但他们发起网络请求的操作会触发浏览器网络栈的一系列处理流程，其中就包括使用这个文件中的代码来理解和表示 HTTP/2 协议相关的概念和错误。当出现网络问题时，检查开发者工具中的网络请求详情和错误信息，可以帮助开发者追溯到类似 `REFUSED_STREAM` 这样的底层 HTTP/2 错误码，从而有助于诊断问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/http2_protocol.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/http2_protocol.h"
 
 #include <string>
@@ -237,7 +239,4 @@ absl::string_view Http2ErrorCodeToString(Http2ErrorCode error_code) {
 
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

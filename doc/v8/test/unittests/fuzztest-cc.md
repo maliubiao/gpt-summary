@@ -191,15 +191,17 @@ let largeArray = new Array(10**9); // 尝试分配大量内存
 
 总而言之，`v8/test/unittests/fuzztest.cc` 是一个用于测试 V8 模糊测试框架功能的 C++ 文件，它通过模拟各种错误场景来验证框架的有效性，并间接帮助发现 V8 引擎在处理各种输入时可能存在的 bug。虽然它是 C++ 代码，但它与 JavaScript 的执行息息相关，因为它旨在确保 V8 能够安全可靠地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/fuzztest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/fuzztest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -273,7 +275,4 @@ V8_FUZZ_TEST(SmokeTest, SingleString);
 
 #endif  // V8_ENABLE_FUZZTEST
 }  // namespace v8::internal
-
-"""
-
 ```

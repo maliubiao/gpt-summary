@@ -155,14 +155,16 @@ By following these steps, combining code analysis with domain knowledge (browser
 
 总而言之，`FastSharedBufferReader` 是 Blink 渲染引擎中一个用于高效读取共享内存缓冲区的底层工具，它通过缓存机制优化了连续数据的读取，特别适用于图像解码等需要按需读取大量数据的场景。它与 JavaScript, HTML, CSS 的联系是间接的，主要体现在作为渲染引擎基础设施的一部分，支持这些上层技术的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/fast_shared_buffer_reader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -247,7 +249,4 @@ void FastSharedBufferReader::GetSomeDataInternal(size_t data_position) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

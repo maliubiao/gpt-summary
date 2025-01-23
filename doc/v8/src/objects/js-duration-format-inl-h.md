@@ -151,15 +151,17 @@ inline void JSDurationFormat::set_fractional_digits(int32_t digits) {
 
 总而言之，`v8/src/objects/js-duration-format-inl.h` 是 V8 引擎内部用于管理和操作时间段格式化对象的核心组成部分，它通过内联函数和宏提供了高效且结构化的访问方式，并与 ICU 库紧密集成以支持国际化。虽然 JavaScript 目前没有 `Intl.DurationFormat`，但理解这类内部结构有助于理解 JavaScript 引擎是如何处理潜在的相关功能的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-duration-format-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-duration-format-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ ACCESSORS(JSDurationFormat, icu_number_formatter,
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_DURATION_FORMAT_INL_H_
-
-"""
-
 ```

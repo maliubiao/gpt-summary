@@ -226,7 +226,7 @@ Interceptor.attach(Module.findExportByName(null, "ioctl"), {
 
 通过运行这个 Frida 脚本，你可以在 Android 设备上观察到 `ioctl` 系统调用的发生，并尝试解码与 Hyper-V 相关的交互数据，从而理解 Android Framework 如何逐步到达这个底层的内核接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/hyperv.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -237,8 +237,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -421,7 +423,4 @@ struct hv_kvp_ip_msg {
   struct hv_kvp_ipaddr_value kvp_ip_val;
 } __attribute__((packed));
 #endif
-
-"""
-
 ```

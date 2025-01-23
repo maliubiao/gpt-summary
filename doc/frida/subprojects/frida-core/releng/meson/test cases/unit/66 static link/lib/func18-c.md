@@ -143,7 +143,7 @@ console.log("Address of func17:", func17Address);
 
 总而言之，虽然 `func18.c` 的代码非常简单，但在 Frida 这样的动态插桩工具的上下文中，它可以作为理解程序行为、进行逆向分析以及调试问题的关键入口点。其简单的结构也使其成为测试 Frida 功能（例如静态链接库的 hook）的良好用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/66 static link/lib/func18.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,15 +151,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func17();
 
 int func18()
 {
   return func17() + 1;
 }
-
-"""
-
 ```

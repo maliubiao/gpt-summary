@@ -355,7 +355,7 @@ if __name__ == '__main__':
 
 通过 Frida Hook，你可以清晰地观察到 Android 应用如何通过 NDK 库，最终调用到 `ioctl` 系统调用，并查看传递给 `ioctl` 的具体参数，从而理解 Android Framework 或 NDK 如何一步步地到达这个底层的内核接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/rdma/mlx5_user_ioctl_cmds.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -366,8 +366,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -644,7 +646,4 @@ enum mlx5_ib_get_data_direct_sysfs_path_attrs {
   MLX5_IB_ATTR_GET_DATA_DIRECT_SYSFS_PATH = (1U << UVERBS_ID_NS_SHIFT),
 };
 #endif
-
-"""
-
 ```

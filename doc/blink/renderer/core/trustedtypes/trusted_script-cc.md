@@ -134,14 +134,16 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 `trusted_script.cc` 文件定义了 `TrustedScript` 类，它是 Blink 渲染引擎中用于处理受信任 JavaScript 代码的关键组件。它通过封装字面量的脚本字符串并进行类型检查，帮助开发者编写更安全的代码，防止跨站脚本攻击。正确理解和使用 `TrustedScript` 及其相关的 Trusted Types API 对于开发安全的 Web 应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/trustedtypes/trusted_script.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ TrustedScript* TrustedScript::fromLiteral(ScriptState* script_state,
 }
 
 }  // namespace blink
-
-"""
-
 ```

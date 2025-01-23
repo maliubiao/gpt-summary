@@ -163,7 +163,7 @@ By following these steps, I can systematically analyze the code and generate a c
 
 `prog.c` 是一个简单的但关键的测试程序，用于验证 Frida Core 构建环境的字节序配置是否正确。它通过动态检测机器的字节序，并与编译时预设的字节序进行比较，确保在不同架构的系统上，Frida Core 能够正确运行。这对于像 Frida 这样的跨平台动态分析工具至关重要，因为它需要在各种不同的目标系统上可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/23 endian/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdint.h>
 
 int is_big_endian(void) {
@@ -197,7 +199,4 @@ int main(void) {
         return 0;
     return 1;
 }
-
-"""
-
 ```

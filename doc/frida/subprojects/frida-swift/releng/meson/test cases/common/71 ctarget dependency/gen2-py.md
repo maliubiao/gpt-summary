@@ -161,7 +161,7 @@ By following these steps, we can arrive at a comprehensive and accurate explanat
 
 总而言之，`gen2.py` 是一个简单的文件复制工具，但在 Frida 的自动化测试流程中，它可以扮演一个关键的角色，用于移动或重命名由其他步骤生成的临时文件，以便后续的测试步骤能够找到并使用这些文件。它的存在暗示了 Frida 测试流程中可能存在一些临时的代码生成或数据准备步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/71 ctarget dependency/gen2.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -181,7 +183,4 @@ assert len(files) == 1
 
 with open(files[0]) as ifile, open(sys.argv[2], 'w') as ofile:
     ofile.write(ifile.read())
-
-"""
-
 ```

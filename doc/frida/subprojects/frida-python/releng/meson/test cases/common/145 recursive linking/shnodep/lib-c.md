@@ -152,7 +152,7 @@ By following these steps, the detailed and informative answer provided in the pr
 
 `frida/subprojects/frida-python/releng/meson/test cases/common/145 recursive linking/shnodep/lib.c` 是一个非常简单的共享库源代码文件，其主要功能是导出一个返回固定值的函数。它的存在主要是为了作为 Frida 递归链接功能测试用例的一部分。理解这个文件的功能和相关知识点，有助于理解 Frida 的工作原理以及共享库在操作系统中的加载和链接机制，这对于进行动态分析和逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/145 recursive linking/shnodep/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,15 +160,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "../lib.h"
 
 SYMBOL_EXPORT
 int get_shnodep_value (void) {
   return 1;
 }
-
-"""
-
 ```

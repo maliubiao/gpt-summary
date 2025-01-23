@@ -146,15 +146,17 @@ func main() {
 
 `ggen.go` 文件中的 `zerorange` 和 `ginsnop` 函数是 Go 编译器后端的重要组成部分，它们负责生成用于内存置零和插入空操作的 PowerPC 64 位汇编指令。这两个函数体现了编译器在生成高效机器码方面的优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ppc64/ggen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -209,9 +211,4 @@ func ginsnop(pp *objw.Progs) *obj.Prog {
 	p.To = obj.Addr{Type: obj.TYPE_REG, Reg: ppc64.REG_R0}
 	return p
 }
-
-"""
-
-
-
 ```

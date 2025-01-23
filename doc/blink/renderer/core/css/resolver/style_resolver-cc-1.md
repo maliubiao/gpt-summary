@@ -125,7 +125,7 @@ Now, I can formulate the summary, providing examples and considering potential e
 
 总而言之，这部分代码是 Blink 渲染引擎中至关重要的一个环节，它负责理解和应用各种来源和作用域的 CSS 规则，最终确定元素的视觉呈现。理解这部分代码的功能有助于深入理解浏览器的样式计算机制，并能更有效地调试 CSS 相关的问题，特别是涉及到 Shadow DOM 和自定义元素时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_resolver.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 InlineStyle() &&
       collector.GetPseudoId() == kPseudoIdNone) {
     // Do not add styles depending on style attributes to the
@@ -912,7 +914,4 @@ bool CanApplyInlineStyleIncrementally(Element* element,
 
   // Links have special handling of visited/not-visited colors (they are
   // represe
-"""
-
-
 ```

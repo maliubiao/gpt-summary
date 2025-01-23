@@ -223,7 +223,7 @@ Java.perform(function () {
 
 `bionic/libc/kernel/uapi/linux/pkt_sched.h` 是理解 Linux 内核流量控制机制的关键。虽然它本身不是 libc 的一部分，但 Android 系统和应用程序通过 libc 提供的系统调用接口，并利用这个头文件中定义的数据结构，与内核的流量控制子系统进行交互，从而实现各种网络流量管理的功能。 使用 Frida 可以帮助我们观察和调试 Android 系统与内核流量控制子系统的交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/pkt_sched.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -234,8 +234,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -1126,7 +1128,4 @@ enum {
 };
 #define TCA_ETS_MAX (__TCA_ETS_MAX - 1)
 #endif
-
-"""
-
 ```

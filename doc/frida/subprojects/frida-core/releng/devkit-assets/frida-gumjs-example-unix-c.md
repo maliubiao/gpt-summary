@@ -183,7 +183,7 @@ This iterative process of understanding the code's purpose, analyzing its compon
 
 总而言之，这个示例代码提供了一个简洁但实用的方式来理解如何在 C 代码中集成 Frida 的 GumJS 引擎，并利用 JavaScript 代码进行动态 instrumentation，这对于逆向工程、安全分析和软件调试等领域都具有重要的意义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/devkit-assets/frida-gumjs-example-unix.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-gumjs.h"
 
 #include <fcntl.h>
@@ -277,7 +279,4 @@ on_message (const gchar * message,
 
   g_object_unref (parser);
 }
-
-"""
-
 ```

@@ -178,14 +178,16 @@ By following this structured approach, breaking down the code into manageable pa
 
 `fieldset_layout_algorithm.cc` 是 Blink 渲染引擎中一个关键的文件，专门负责 `<fieldset>` 及其 `<legend>` 元素的布局。它处理了这些元素特有的布局规则，包括 `<legend>` 的定位、匿名内容盒子的创建以及块级分块的支持。理解此文件的功能有助于开发者更好地理解和调试涉及 `<fieldset>` 的网页布局问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/forms/fieldset_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -736,7 +738,4 @@ FieldsetLayoutAlgorithm::CreateConstraintSpaceForFieldsetContent(
 }
 
 }  // namespace blink
-
-"""
-
 ```

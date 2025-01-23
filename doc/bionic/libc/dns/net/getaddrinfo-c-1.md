@@ -347,7 +347,7 @@ session.detach()
 
 这个 Frida 示例可以帮助你验证 Android 应用是如何调用到 `_dns_getaddrinfo` 的，并可以观察传递给该函数的主机名。你可以进一步 Hook 其他相关函数，例如 `res_searchN` 或 `res_queryN`，以更深入地了解 DNS 查询的细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/net/getaddrinfo.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -359,8 +359,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 id == lscopeid)
 		return 0;
 	else
@@ -1545,8 +1547,4 @@ res_querydomainN(const char *name, const char *domain,
 	}
 	return res_queryN(longname, target, res);
 }
-
-"""
-
-
 ```

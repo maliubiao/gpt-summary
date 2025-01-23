@@ -217,7 +217,7 @@ By following this structured approach, combining surface-level analysis with con
 
 通过理解 `generate_main.py` 的功能，结合 Frida 的构建和测试流程，开发人员可以更好地定位和解决与配置文件生成相关的错误。这个脚本虽然简单，但在自动化测试和动态配置环境中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/271 env in generator.process/generate_main.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -225,8 +225,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import os
 import sys
@@ -238,7 +240,4 @@ with open(sys.argv[1], 'r') as infile, \
      open(sys.argv[2], 'w') as outfile:
     
     outfile.write(infile.read().replace('ENV_VAR_VALUE', ENV_VAR_VALUE))
-
-"""
-
 ```

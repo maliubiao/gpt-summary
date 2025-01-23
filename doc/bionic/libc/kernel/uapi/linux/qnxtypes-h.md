@@ -315,7 +315,7 @@ except KeyboardInterrupt:
 
 总而言之，`qnxtypes.handroid` 虽然只是一个定义数据类型的头文件，但它暗示着 Android 内部可能存在与 QNX 4 文件系统进行交互的需求。理解其定义和潜在用途，有助于我们更好地理解 Android 的底层机制和兼容性策略。 通过 Frida 等工具，我们可以间接地观察到这些类型在系统调用过程中的潜在使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/qnxtypes.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -326,8 +326,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -349,7 +351,4 @@ typedef __le16 qnx4_mgid_t;
 typedef __le32 qnx4_off_t;
 typedef __le16 qnx4_nlink_t;
 #endif
-
-"""
-
 ```

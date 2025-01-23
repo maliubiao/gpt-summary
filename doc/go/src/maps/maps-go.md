@@ -216,15 +216,17 @@ func main() {
 
 4. **在 `DeleteFunc` 中修改 map 的其他部分:** 虽然代码没有直接展示，但在 `DeleteFunc` 提供的回调函数 `del` 中，使用者可能会尝试修改 map 的其他部分（添加或修改其他键值对）。虽然 Go 允许这样做，但这可能会导致意想不到的行为，因为迭代 map 的顺序是不确定的，并且在迭代过程中修改 map 可能会导致跳过某些元素或重复处理某些元素。 最佳实践是在 `DeleteFunc` 的回调中只进行删除操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/maps/maps.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -300,9 +302,4 @@ func DeleteFunc[M ~map[K]V, K comparable, V any](m M, del func(K, V) bool) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

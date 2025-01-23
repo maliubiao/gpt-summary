@@ -118,7 +118,7 @@ Here's a breakdown of its functionality:
 
    The primary function of `v8/src/diagnostics/x64/disasm-x64.cc` is to provide the capability to **disassemble x64 machine code** within the V8 JavaScript engine. This involves taking raw byte sequences representing x64 instructions and converting them into a human-readable assembly language format. This functionality is crucial for debugging, performance analysis, and gaining a deeper understanding of how V8 executes JavaScript code at the machine code level. It defines how different x64 registers are named and provides the core logic to decode and present individual instructions and blocks of code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/x64/disasm-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/x64/disasm-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -126,8 +126,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r(int reg) const {
   if (0 <= reg && reg < 16) return cpu_regs[reg];
   return "noreg";
@@ -189,8 +191,4 @@ void Disassembler::Disassemble(FILE* f, uint8_t* begin, uint8_t* end,
 }  // namespace disasm
 
 #endif  // V8_TARGET_ARCH_X64
-
-"""
-
-
 ```

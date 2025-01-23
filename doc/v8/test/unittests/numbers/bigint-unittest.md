@@ -101,11 +101,13 @@ console.log(2n**52n === 4503599627370496); // true  (2^52)
 
 总而言之，`bigint-unittest.cc` 文件是 V8 引擎中保证 `BigInt` 类型与 `Number` 类型进行正确比较的关键组成部分，它直接影响着 JavaScript 中相关比较操作的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/numbers/bigint-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ TEST_F(BigIntWithIsolate, CompareToDouble) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

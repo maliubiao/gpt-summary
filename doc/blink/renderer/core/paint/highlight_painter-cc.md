@@ -614,7 +614,7 @@ void HighlightPainter::PaintOneSpellingGrammarDecoration(
 
 `highlight_painter.cc` 文件的核心功能是**负责在 Chromium Blink 引擎中渲染各种文本高亮效果**。 它与 HTML 结构、CSS 样式以及 JavaScript 的交互密切相关，根据不同的触发条件和样式规则，绘制用户选择、拼写/语法错误、查找结果以及自定义的高亮，并努力优化绘制性能。理解其工作原理对于调试网页高亮显示问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/highlight_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -622,8 +622,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1367,8 +1369,5 @@ void HighlightPainter::PaintOneSpellingGrammarDecoration(
   // TODO(crbug.com/1147859) is SVG spec ready for highlight decorations?
   // TODO(crbug.com/1147859) https://github.com/w3c/svgwg/issues/894
   const AppliedTextDecoration synthesised{
-      LineFor(type), {}, ColorFor(type), 
-"""
-
-
+      LineFor(type), {}, ColorFor(type),
 ```

@@ -368,15 +368,17 @@ void AddScrollbarFreeze(const BoxStrut& scrollbars_before,
 
 总而言之，这部分 `length_utils.cc` 文件提供了一组底层的、精细的工具函数，用于在 blink 渲染引擎的布局阶段准确计算各种元素的尺寸和相关属性。这些函数考虑了 CSS 盒模型、各种 CSS 尺寸属性、HTML 元素特性以及浏览器兼容性（quirks 模式）等因素，是浏览器正确渲染网页的关键组成部分。它们确保了无论 CSS 如何设置，浏览器都能按照规范计算出元素的最终大小，并为 JavaScript 获取元素尺寸提供了底层的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/length_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 llbar_padding = border_padding + scrollbar;
 
   if (node.IsReplaced()) {
@@ -643,8 +645,4 @@ void AddScrollbarFreeze(const BoxStrut& scrollbars_before,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

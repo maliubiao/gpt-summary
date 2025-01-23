@@ -94,7 +94,7 @@ Let's address the specific requirements of the prompt:
 
 这段代码专注于提供高效的 CSS 颜色值解析和特定 CSS 属性关键字值验证。它通过直接操作字符和使用快速路径来优化解析性能，是浏览器渲染引擎中处理 CSS 样式的重要组成部分。它与 CSS, HTML 和 JavaScript 都有着密切的关系，保证了网页样式的正确解析和应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_parser_fast_paths.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 the same syntax.
   if (MightBeRGBOrRGBA(characters, length)) {
     int length_to_add = (characters[3] == 'a') ? 5 : 4;
@@ -814,7 +816,4 @@ bool CSSParserFastPaths::IsValidKeywordPropertyAndValue(
       if (RuntimeEnabledFeatures::SidewaysWritingModesEnabled()) {
         if (value_id == CSSValueID::kSidewaysRl ||
             value_id =
-"""
-
-
 ```

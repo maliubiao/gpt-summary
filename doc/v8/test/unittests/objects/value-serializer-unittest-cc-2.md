@@ -152,7 +152,7 @@ console.log(deserializedMap.get(1)); // 'one'
 
 总的来说，这部分深入测试了 `ValueSerializer` 和 `ValueDeserializer` 处理更复杂数据结构的能力，并开始关注一些 V8 的新特性（例如可调整大小的 ArrayBuffer 和新的正则表达式标志）。这些测试确保了 V8 能够正确地序列化和反序列化这些重要的 JavaScript 数据类型，保证了引擎状态的正确保存和恢复。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/value-serializer-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/objects/value-serializer-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -160,10 +160,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
-
-        ASSERT_TRUE(value->IsRegExp());
+### 源代码
+```cpp
+ASSERT_TRUE(value->IsRegExp());
         ExpectScriptTrue("result.toString() === '/Qu\\xe9bec/i'");
       });
 }
@@ -950,7 +951,4 @@ TEST_F(ValueSerializerTest, DecodeTypedArrayBackwardsCompatiblity) {
 
   // Array buffer views sharing a buffer should do so on the other side.
   // Similarly, multiple r
-"""
-
-
 ```

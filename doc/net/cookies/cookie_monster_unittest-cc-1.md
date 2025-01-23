@@ -77,7 +77,7 @@ Now, let's organize this information into a concise summary addressing the user'
 
 这段代码主要测试了 `CookieMonster` 类在 cookie 数量达到上限时，如何根据 cookie 的优先级和安全性进行智能的删除，以及在 cookie 存储未加载完成时，如何正确地处理和延迟异步的 cookie 操作。这是为了保证浏览器能够有效地管理 cookie，避免因 cookie 数量过多而导致的问题，并确保异步操作的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_monster_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -85,8 +85,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 EQ(180U, CookieMonster::kDomainMaxCookies);
     DCHECK_EQ(150U, CookieMonster::kDomainMaxCookies -
                         CookieMonster::kDomainPurgeCookies);
@@ -843,7 +845,4 @@ TEST_F(CookieMonsterTest, TestCookieDeleteAllCreatedInTimeRangeTimestamps) {
   // Try to delete yesterday, also make sure that delete_end is not
   // inclusive.
   EXPECT_EQ(1u, DeleteAllCreatedIn
-"""
-
-
 ```

@@ -281,7 +281,7 @@ This part of the `CertBuilder` class focuses on:
 
 总而言之，这部分 `CertBuilder` 的代码主要负责完成证书构建的最后阶段，包括设置签名算法、序列号、SCT 配置，并提供各种方法来获取构建好的证书的二进制数据 (`CRYPTO_BUFFER`, DER, PEM)、结构化对象 (`X509Certificate`) 及其组成部分（主题、有效期、密钥等）。它还提供了从现有证书初始化以及生成不同类型密钥的能力，是 Chromium 网络栈测试中生成和管理测试证书的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/test/cert_builder.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -289,8 +289,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rithmTLV(
     std::string_view signature_algorithm_tlv) {
   outer_signature_algorithm_tlv_ = std::string(signature_algorithm_tlv);
@@ -776,8 +778,4 @@ void CertBuilder::GenerateCertificate() {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

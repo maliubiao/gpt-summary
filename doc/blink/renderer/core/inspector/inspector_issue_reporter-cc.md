@@ -101,14 +101,16 @@ This detailed thought process allows me to systematically analyze the code and p
 
 `inspector_issue_reporter.cc` 文件中的 `InspectorIssueReporter` 类是 Blink 引擎中负责向开发者工具报告问题的核心组件之一。它监听特定的事件（例如资源加载失败，DOMContentLoaded），并根据这些事件的状态和信息，判断是否需要向开发者报告问题。这些问题通常与网页的性能、安全性和兼容性有关，帮助开发者识别和解决潜在的问题。它直接与 HTML（通过 Quirks 模式检测）、CSS（通过 Quirks 模式影响）、和 JavaScript（通过资源加载失败影响）的功能相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_issue_reporter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ void InspectorIssueReporter::DomContentLoadedEventFired(LocalFrame* frame) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

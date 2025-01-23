@@ -576,7 +576,7 @@ gum_exec_block_write_call_event_code (GumExecBlock * block,
 
 static void
 gum_exec_block_write_ret_event_code (Gum
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-x86/gumstalker-x86.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -585,8 +585,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ;
 
     gum_exec_block_open_prolog (block, GUM_PROLOG_IC, gc, gc->code_writer);
@@ -1607,7 +1609,4 @@ gum_x86_reg_from_capstone (x86_reg reg)
     case X86_REG_EBX: return GUM_X86_EBX;
     case X86_REG_ESP: return GUM_X86_ESP;
     case X86_REG_EBP: return GUM_X86_
-"""
-
-
 ```

@@ -114,15 +114,17 @@ By following these steps and iteratively refining the analysis, a comprehensive 
 
 `net/nqe/socket_watcher_unittest.cc` 是一个重要的测试文件，用于确保 `SocketWatcher` 类的核心功能正常工作，包括 RTT 通知的节流、QUIC 连接的特殊处理、私有地址的过滤以及 IP 哈希计算。虽然 JavaScript 不能直接访问 `SocketWatcher`，但 `SocketWatcher` 收集的信息对浏览器的网络性能优化至关重要，并间接影响 JavaScript Web 应用的网络体验。开发者可以通过浏览器提供的工具观察到这些间接影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/socket_watcher_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -379,7 +381,4 @@ TEST_F(NetworkQualitySocketWatcherTest, RemoteHostIPHashComputedCorrectly) {
 }  // namespace
 
 }  // namespace net::nqe::internal
-
-"""
-
 ```

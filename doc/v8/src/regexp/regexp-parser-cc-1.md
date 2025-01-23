@@ -151,7 +151,7 @@ const regex20 = /a+?/g; // 非贪婪
 
 这段代码主要负责解析正则表达式字符串中表示 **项 (Term)** 的部分，包括分组、选择、锚点、任意字符、字符类和转义序列。它识别这些结构，并创建相应的内部表示对象，以便后续的正则表达式编译过程能够理解和使用。 这部分代码是构建正则表达式抽象语法树的核心组成部分，负责将文本形式的正则表达式转换为结构化的数据表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -159,8 +159,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 {
           body = zone()->template New<RegExpGroup>(body, builder->flags());
         } else {
@@ -1158,7 +1160,4 @@ bool IsExactPropertyValueAlias(const char* property_value_name,
         static_cast<UPropertyNameChoice>(U_LONG_PROPERTY_NAME + i));
     if (long_name == nullptr) break;
     if (strcmp(
-"""
-
-
 ```

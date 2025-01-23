@@ -162,11 +162,13 @@ console.log(!!true);      // true
 
 `constant-folding-reducer-unittest.cc` 通过大量的单元测试，确保 V8 引擎的常量折叠优化器能够正确地识别和处理各种常量情况，并在编译时进行有效的优化，从而提升 JavaScript 代码的执行性能。 这些测试直接关系到 JavaScript 中变量的类型推断和表达式的静态求值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/constant-folding-reducer-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -424,7 +426,4 @@ TEST_F(ConstantFoldingReducerTest, ToBooleanWithNonZeroPlainNumber) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -122,11 +122,13 @@ resource = null;
 
 总而言之，`explicit-management.cc` 提供了一种机制，允许在 V8 的 C++ 堆中手动管理对象的生命周期，这在处理外部资源或需要更高性能控制的场景下非常有用，尽管 JavaScript 开发者通常不会直接使用这些功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/explicit-management.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -319,7 +321,4 @@ bool ExplicitManagementImpl::Resize(void* object, size_t new_object_size) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

@@ -201,15 +201,17 @@ XSLT 主要用于将 XML 数据转换为其他格式，通常是 HTML 或其他 
 
 总而言之，`blink/renderer/core/xml/xslt_extensions.cc` 文件通过注册 `exsl:node-set` 扩展函数，增强了 Blink 引擎处理 XSLT 的能力，特别是使得 XSLT 能够更灵活地处理来自 JavaScript 的字符串数据，并将其转换为 HTML 或其他 XML 结构。理解其功能和使用场景有助于开发者更好地利用 XSLT 进行 Web 开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/xslt_extensions.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /**
  * Copyright (C) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard.
  * Copyright (C) 2007 Alexey Proskuryakov <ap@webkit.org>
@@ -293,7 +295,4 @@ void RegisterXSLTExtensions(xsltTransformContextPtr ctxt) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

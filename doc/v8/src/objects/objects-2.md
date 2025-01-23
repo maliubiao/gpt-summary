@@ -148,12 +148,14 @@ promise.then((value) => {
 
 这部分 `objects.cc` 文件主要实现了 V8 引擎中一些核心对象和功能的底层逻辑，直接关系到 JavaScript 中 `Proxy`、数组操作、字符串连接优化、Promise 的状态管理以及脚本的元数据信息处理。理解这部分代码有助于深入了解 V8 引擎如何执行和优化 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 eneric name, this can only add private data properties.
   if (!PropertyDescriptor::IsDataDescriptor(desc) ||
       desc->ToAttributes() != DONT_ENUM) {
@@ -1905,8 +1907,4 @@ Handle<Object> JSPromise::TriggerPromiseReactions(
     }
     if (!has_handler_context && IsJSReceiver(*secondary_handler)) {
       has_handler_context = JSReceiver::GetContextForMicrotask(
- 
-"""
-
-
 ```

@@ -114,7 +114,7 @@ By following these steps, one can move from a superficial understanding of a sim
 
 总而言之，即使 `libfile3.c` 中的 `func3` 函数非常简单，它在 Frida 的测试和学习过程中扮演着重要的角色，可以用来理解动态分析、hooking 以及与底层二进制和链接相关的概念。它的简单性使其成为排除问题和验证工具行为的理想目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/5 linkstatic/libfile3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,12 +122,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func3(void) {
     return 3;
 }
-
-"""
-
 ```

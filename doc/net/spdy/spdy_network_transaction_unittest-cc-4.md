@@ -136,7 +136,7 @@ Here's a breakdown of the thought process to generate the response:
 
 作为整个 `spdy_network_transaction_unittest.cc` 测试套件的第 5 部分，这段代码专注于 **深入测试 `SpdyNetworkTransaction` 在处理复杂和异常 SPDY 协议交互时的正确性和健壮性**。它涵盖了连接管理（socket tagging 和 session 重用）、头部解析的细节、多种错误处理场景以及数据缓冲机制的各种情况。这些测试确保了 `SpdyNetworkTransaction` 能够可靠地处理 SPDY/HTTP2 通信，为用户提供稳定和高性能的网络体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s()->ClearRules();
   trans2.reset();
 
@@ -1004,7 +1006,4 @@ TEST_P(SpdyNetworkTransactionTest, BufferedCancelled) {
 
   // Read Data
   TestCompletionCallback read_callb
-"""
-
-
 ```

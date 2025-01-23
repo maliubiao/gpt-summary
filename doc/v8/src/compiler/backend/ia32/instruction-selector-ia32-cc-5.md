@@ -149,7 +149,7 @@ minps xmm2, xmm0, xmm1 ; 假设第一个输入在 xmm0，第二个输入在 xmm1
 
 作为系列的一部分，这第 6 部分主要关注的是 **V8 引擎在 IA-32 架构上进行指令选择的具体实现细节，特别是针对 SIMD 和浮点数运算相关的操作**。它展示了如何将高级的中间表示操作映射到特定的 IA-32 汇编指令，并且考虑了不同的 CPU 特性 (如 AVX, SSE4.1, SSE4.2, POPCNT) 以选择最优的指令序列。这段代码是 V8 引擎将 JavaScript 和 WebAssembly 代码高效地编译为 IA-32 机器码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/instruction-selector-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ia32/instruction-selector-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -157,8 +157,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Due to the way minps/minpd work, we want the dst to be same as the second
     // input: b = pmin(a, b) directly maps to minps b a.
     selector->Emit(opcode, dst, g.UseRegister(selector->input_at(node, 1)),
@@ -534,8 +536,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

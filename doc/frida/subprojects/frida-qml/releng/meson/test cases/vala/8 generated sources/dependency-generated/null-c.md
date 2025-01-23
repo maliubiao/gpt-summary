@@ -106,7 +106,7 @@ Finally, the answer should be structured clearly, addressing each point of the p
 
 `null.c` 文件作为一个自动生成的、空的 C 文件，其主要功能是在 Frida 的构建系统中作为一个占位符或满足依赖关系。它本身不执行任何实际的代码逻辑，因此与逆向方法、二进制底层、内核框架等概念的关联是间接的，主要体现在它作为 Frida 构建的一部分，支持了 Frida 的核心功能。用户通常不会直接操作这个文件，但可能会在深入研究 Frida 的构建过程或解决编译问题时遇到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/vala/8 generated sources/dependency-generated/null.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,10 +114,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 //
-
-"""
-
 ```

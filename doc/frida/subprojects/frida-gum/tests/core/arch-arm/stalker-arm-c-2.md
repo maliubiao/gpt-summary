@@ -87,7 +87,7 @@ Here's a plan:
 
 总而言之，这个代码片段是 Frida Stalker 在 ARM 架构上的一个综合性测试文件，涵盖了 Stalker 的核心功能和各种使用场景，对于理解 Stalker 的工作原理和正确使用它进行动态分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm/stalker-arm.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -96,9 +96,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-  .base_address = GUM_ADDRESS (func) + 28,
+### 源代码
+```c
+.base_address = GUM_ADDRESS (func) + 28,
       .size = 6
     };
 
@@ -1301,8 +1303,4 @@ modify_to_return_true_on_subsequent_transform (GumStalkerIterator * iterator,
     if (insn->id == ARM_INS_BX && in_target_function && ctx->n > 1)
     {
       if (output->encoding == GUM_INSTRUCTION_SPECIAL)
-     
-"""
-
-
 ```

@@ -270,7 +270,7 @@ session.detach()
 
 总而言之，`bionic/libc/include/sys/signal.handroid` 作为一个历史别名，其核心作用是引入 `<signal.h>`，而 `<signal.h>` 中定义的信号处理机制是 Android 系统中至关重要的一部分，用于进程通信、错误处理、程序控制和调试等多个方面。理解信号处理对于开发健壮和可靠的 Android 应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/signal.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -281,8 +281,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #pragma once
 
 /**
@@ -293,7 +295,4 @@ Prompt:
  */
 
 #include <signal.h>
-
-"""
-
 ```

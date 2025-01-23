@@ -131,7 +131,7 @@ This step-by-step, iterative process of scanning, identifying patterns, understa
 
 这部分代码主要负责 **实现 `NetworkChangeNotifier` 类向其观察者广播网络状态变化的功能**。它定义了各种 `NotifyObserversOf...` 方法，这些方法在接收到网络变化事件后，会遍历相应的观察者列表并调用观察者的回调函数。此外，它还包含停止 DNS 配置监听的功能以及用于测试的辅助类。 结合第一部分，`NetworkChangeNotifier` 完成了从接收底层网络事件到通知上层模块的完整流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/network_change_notifier.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 erversOfNetworkChangeImpl(type);
   }
 }
@@ -282,8 +284,4 @@ NetworkChangeNotifier::ObserverList& NetworkChangeNotifier::GetObserverList() {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

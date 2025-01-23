@@ -182,15 +182,17 @@ func main() {
 - 使用具有描述性的参数名，提高代码的可读性。
 - 代码编辑器和 IDE 通常会提供语法高亮和错误检查功能，帮助开发者尽早发现这类错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/funcdup2.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -208,9 +210,4 @@ var T interface {
 var T1 func(i, i int) // ERROR "duplicate argument i|redefinition|previous|redeclared"
 var T2 func(i int) (i int) // ERROR "duplicate argument i|redefinition|previous|redeclared"
 var T3 func() (i, i int) // ERROR "duplicate argument i|redefinition|previous|redeclared"
-
-"""
-
-
-
 ```

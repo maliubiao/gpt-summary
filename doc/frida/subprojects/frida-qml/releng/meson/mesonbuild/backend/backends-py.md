@@ -139,7 +139,7 @@ Let's break down the thought process for analyzing this Python code snippet.
 
 总而言之，`backends.py` 是 Frida 项目构建流程的关键组成部分，它抽象了不同构建系统的差异，并提供了一种统一的方式来管理和执行构建过程。理解它的功能有助于理解 Frida 的构建流程以及排查相关的构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2016 The Meson development team
 
@@ -899,8 +901,4 @@ class Backend:
             if runpath_match:
                 for dir in runpath_match.group(1).split(':'):
                     # The symbols arg is an rpath if the path is a directory
-                   
-"""
-
-
 ```

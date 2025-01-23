@@ -204,7 +204,7 @@ func main() {
 
 总而言之，这段代码通过一系列的测试用例，覆盖了 `net/http.Client` 的核心功能，确保其在各种场景下能够按照预期工作，并帮助开发者理解和正确使用 HTTP 客户端。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/client_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -213,8 +213,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1343,9 +1345,4 @@ func TestBasicAuthHeadersPreserved(t *testing.T) {
 
 func TestStripPasswordFromError(t *testing.T) {
 	client := &Client{Transpor
-"""
-
-
-
-
 ```

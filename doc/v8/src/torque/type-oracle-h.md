@@ -205,15 +205,17 @@ const result = add(5, "hello"); // JavaScript 不会立即报错，会将 "hello
 
 `v8/src/torque/type-oracle.h` 是 Torque 类型系统的核心，负责管理和维护 Torque 中所有类型的定义和关系。它对于 Torque 编译器的正确运行至关重要，并间接地影响着 V8 生成的代码的正确性和性能，最终体现在 JavaScript 的执行行为上。 虽然开发者不会直接操作 `TypeOracle`，但理解其功能有助于理解 Torque 的工作原理以及 V8 如何实现 JavaScript 的语义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/type-oracle.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/type-oracle.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -642,7 +644,4 @@ class TypeOracle : public base::ContextualClass<TypeOracle> {
 }  // namespace v8::internal::torque
 
 #endif  // V8_TORQUE_TYPE_ORACLE_H_
-
-"""
-
 ```

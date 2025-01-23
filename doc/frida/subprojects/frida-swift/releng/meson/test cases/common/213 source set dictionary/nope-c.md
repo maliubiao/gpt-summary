@@ -149,7 +149,7 @@ script.load()
 
 总而言之，`nope.c` 虽然代码非常简单，但它在 Frida 的测试体系中扮演着重要的角色，用于验证 Frida 对错误情况的处理能力，确保其在面对无效或未定义的操作时能够表现得足够健壮和可靠。它也反映了逆向工程中常见的挑战，例如处理无效的内存地址和未初始化的状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/213 source set dictionary/nope.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,12 +157,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = undefined;
-
-"""
-
 ```

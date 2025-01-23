@@ -111,7 +111,7 @@ Let's consider the `FocusVisibleStateChanged` function:
 
 This portion of `blink/renderer/core/dom/element.cc` focuses on the **dynamic behavior and manipulation of individual DOM elements**. It manages how elements react to state changes (like focus and view transitions), how their styles are updated in response, and how their content and structure can be modified through JavaScript APIs. It also handles more advanced features like display locks and pointer capture. Essentially, it's responsible for a significant part of the element's lifecycle and its interaction with the rendering engine and JavaScript.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ange_type,
                       StyleChangeReasonForTracing::CreateWithExtraData(
                           style_change_reason::kPseudoClass,
@@ -1084,7 +1086,4 @@ const ComputedStyle* Element::EnsureComputedStyle(
 
   // Prepare the selector filter to fast reject rules.
   Element* filter_root = FlatTree
-"""
-
-
 ```

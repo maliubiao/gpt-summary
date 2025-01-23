@@ -188,7 +188,7 @@ This systematic approach, focusing on understanding the code's purpose, identify
 
 由于这段代码是 Go 编译器内部的一部分，普通 Go 语言使用者不会直接接触到它，因此不存在普通使用者易犯错的点。只有编译器开发者在修改或扩展编译器时才需要深入理解这部分代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/arm64/ssa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -197,8 +197,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 rgs[0].Reg()
 		p.To.Type = obj.TYPE_CONST
 		p.To.Offset = v.AuxInt
@@ -446,10 +448,4 @@ func spillArgReg(pp *objw.Progs, p *obj.Prog, f *ssa.Func, t *types.Type, reg in
 	p.Pos = p.Pos.WithNotStmt()
 	return p
 }
-
-"""
-
-
-
-
 ```

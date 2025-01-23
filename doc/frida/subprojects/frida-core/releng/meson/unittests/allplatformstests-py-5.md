@@ -608,7 +608,7 @@ i[k]
                 raise SkipTest('llvm-cov not found')
         if cc.get_id() == 'msvc':
             raise SkipTest('Test only applies to non
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -617,8 +617,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 i[k]
 
             sources = []
@@ -1376,7 +1378,4 @@ i[k]
         envs = {'CPPFLAGS': '-DCPPFLAG',
                 'CFLAGS': '-DCFLAG',
                 'CXXFLAGS': '-
-"""
-
-
 ```

@@ -102,7 +102,7 @@ By following this detailed thought process, breaking down the code, connecting i
 
 由于这是第三部分，并且我们已经分析了该文件的各个方面，这个总结是对前面分析的整合和提炼。它强调了 `coredata.py` 作为配置数据中心的关键作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ption(UserBooleanOption, 'Whether to try static linking before shared linking', False)),
     (OptionKey('stdsplit'),        BuiltinOption(UserBooleanOption, 'Split stdout and stderr in test logs', True)),
     (OptionKey('strip'),           BuiltinOption(UserBooleanOption, 'Strip targets on install', False)),
@@ -180,8 +182,4 @@ FORBIDDEN_TARGET_NAMES = frozenset({
     'dist',
     'distcheck',
 })
-
-"""
-
-
 ```

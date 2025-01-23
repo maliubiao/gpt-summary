@@ -309,7 +309,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "memcpy"), {
 
 通过这些 Frida hook 示例，你可以跟踪 Android Framework 或 NDK 代码中 `unistd` 函数的调用，并观察其参数和返回值，从而更好地理解代码的执行流程。记住，hook 系统级别的函数可能需要 root 权限。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/unistd_nofortify_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -320,9 +320,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
-
+### 源代码
+```cpp
 #ifdef _FORTIFY_SOURCE
 #undef _FORTIFY_SOURCE
 #endif
@@ -334,7 +335,4 @@ Prompt:
 #if defined(_FORTIFY_SOURCE)
 #error "_FORTIFY_SOURCE has been redefined, fix the code to remove this redefinition."
 #endif
-
-"""
-
 ```

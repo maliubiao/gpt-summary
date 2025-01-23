@@ -134,15 +134,17 @@ This structured approach of examining the file structure, includes, class defini
 
 总而言之，`push_promise_payload_decoder_test.cc` 通过各种测试用例，确保 Chromium 的 HTTP/2 PUSH_PROMISE 帧解码器能够正确、可靠地工作，这对于保证基于 HTTP/2 的网站能够高效地推送资源，提升用户体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/decoder/payload_decoders/push_promise_payload_decoder_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -281,7 +283,4 @@ TEST_P(PushPromisePayloadDecoderTest, PaddingTooLong) {
 }  // namespace
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

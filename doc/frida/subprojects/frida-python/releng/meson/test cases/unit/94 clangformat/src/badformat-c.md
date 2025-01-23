@@ -136,7 +136,7 @@ By following these steps, combining code analysis with contextual understanding,
 
 总的来说，`badformat.c` 的核心功能是定义一个空的匿名结构体，它主要用于测试 `clangformat` 工具是否能正确处理或标记这种格式的代码。它在实际的 Frida 动态 instrumentation 过程中没有直接的功能，但理解结构体在逆向工程中的作用是很重要的。 涉及到 Frida 的使用场景，理解其底层的二进制、操作系统和框架知识是深入分析和调试的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/94 clangformat/src/badformat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,11 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 struct {
 };
-
-"""
-
 ```

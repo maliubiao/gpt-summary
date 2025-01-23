@@ -175,7 +175,7 @@ asm->addq(rax, rbx);           // 将 rbx 的值加到 rax
 
 `v8/src/codegen/x64/assembler-x64.h` 的主要功能是定义了一个 C++ 的 x64 汇编器，用于在 V8 引擎中动态生成 x64 架构的机器码。它提供了操作数类型、各种汇编指令的封装、条件码、标签、内存寻址等功能，是 V8 将 JavaScript 代码转化为可执行机器码的关键组成部分。这个头文件是 C++ 源代码，与 JavaScript 的执行息息相关，但也容易因不当使用导致编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/assembler-x64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/x64/assembler-x64.h以.tq结尾，那它是个v8 torque源代码，
@@ -183,8 +183,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -1093,7 +1095,4 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void mulq(Operand src);
 
 #define DECLARE_SHIFT_INSTRUCTION(instruction, subco
-"""
-
-
 ```

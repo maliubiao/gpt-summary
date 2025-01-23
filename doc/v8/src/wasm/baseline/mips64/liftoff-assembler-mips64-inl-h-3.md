@@ -581,7 +581,7 @@ bool LiftoffAssembler::emit_f64x2_nearest_int(LiftoffRegister dst,
 void LiftoffAssembler::emit_f64x2_add(LiftoffRegister dst, LiftoffRegister lhs,
                                       LiftoffRegister rhs) {
   fadd_d(dst.fp().toW(), lhs.fp().toW(), rhs.fp().to
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/mips64/liftoff-assembler-mips64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/mips64/liftoff-assembler-mips64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -589,9 +589,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-      LiftoffRegister lhs, int32_t rhs) {
+### 源代码
+```c
+LiftoffRegister lhs, int32_t rhs) {
   srli_b(dst.fp().toW(), lhs.fp().toW(), rhs & 7);
 }
 
@@ -1393,7 +1395,4 @@ void LiftoffAssembler::emit_i64x2_sconvert_i32x4_low(LiftoffRegister dst,
                                                      LiftoffRegister src) {
   ilvr_w(kSimd128ScratchReg, src.fp().toW(), src.fp().toW());
   slli_d(dst.fp().toW(), kSimd128S
-"""
-
-
 ```

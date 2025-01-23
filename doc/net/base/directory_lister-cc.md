@@ -188,15 +188,17 @@ By following this structured thought process, analyzing the code, and connecting
 
 总而言之，`net/base/directory_lister.cc` 提供了一个高效且非阻塞的方式来列出目录内容，是 Chromium 网络栈中处理本地文件系统交互的重要组成部分，并间接地为 Web 应用的一些功能提供底层支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/directory_lister.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -403,7 +405,4 @@ void DirectoryLister::OnListDone(int error) {
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -121,7 +121,7 @@ python gen_sources.py --header my_header.h --code my_code.c
 
 总而言之，`gen_sources.py` 是 Frida 项目中用于生成测试用例所需 C 源代码的辅助脚本。它利用 Python 的文件操作和 `argparse` 模块，并结合 C 语言的预处理指令，为后续的 Frida 功能测试提供了基础。理解这个脚本的功能有助于理解 Frida 项目的测试流程和其与底层二进制代码的交互方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/152 index customtarget/gen_sources.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2017-2023 Intel Corporation
 
@@ -169,7 +171,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

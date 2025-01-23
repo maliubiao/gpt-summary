@@ -184,14 +184,16 @@ This systematic approach, moving from high-level understanding to detailed analy
 
 总而言之，`InspectorPreloadAgent` 是连接 Blink 渲染引擎的预加载机制和 Chrome DevTools 的桥梁，它提供必要的监控和调试信息，帮助开发者更好地理解和优化其网站的预加载策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_preload_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -514,7 +516,4 @@ void InspectorPreloadAgent::ReportRuleSetsAndSources() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

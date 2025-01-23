@@ -192,7 +192,7 @@ Derived key: 29d712d43d3b0f1a5c8e6b7a9f2c1e3d4b5f6a8c9d1e2f3a4b5c6d7e8f9a0b1c
 
 总而言之，这段测试代码主要用于验证 `crypto/pbkdf2` 包中 `Key` 函数的正确性和性能，并测试其在 FIPS 140 模式下的行为。 理解这段代码有助于我们更好地理解和使用 Go 语言中的 PBKDF2 功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/pbkdf2/pbkdf2_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -200,8 +200,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -425,9 +427,4 @@ func TestPBKDF2ServiceIndicator(t *testing.T) {
 		t.Error("FIPS service indicator should not be set")
 	}
 }
-
-"""
-
-
-
 ```

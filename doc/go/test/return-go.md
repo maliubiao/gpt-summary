@@ -259,15 +259,17 @@ This specific code snippet doesn't process any command-line arguments. It's mean
 
 The `go/test/return.go` file serves as a comprehensive set of examples to ensure the Go compiler correctly enforces the rule about returning values from functions that declare them. It helps prevent a common source of errors in Go programs.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/return.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -3089,9 +3091,4 @@ var _ = func() int {
 }
 
 /**/
-
-"""
-
-
-
 ```

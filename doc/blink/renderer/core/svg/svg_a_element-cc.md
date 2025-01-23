@@ -213,15 +213,17 @@ By following these steps, we can comprehensively analyze the `SVGAElement.cc` fi
 
 总而言之，`blink/renderer/core/svg/svg_a_element.cc` 文件是 Blink 引擎中实现 SVG 超链接功能的核心部分，它连接了 SVG 元素与浏览器导航机制，并与 HTML、CSS 和 JavaScript 紧密相关，共同构成了网页的交互体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_a_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2007 Rob Buis <buis@kde.org>
@@ -487,7 +489,4 @@ void SVGAElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

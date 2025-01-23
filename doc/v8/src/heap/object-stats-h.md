@@ -219,15 +219,17 @@ const handlers = createHandlers(); // 创建了 1000 个闭包，每个闭包都
 
 **总结:**  尽管用户不直接编写或修改 `v8/src/heap/object-stats.h`，但通过 V8 提供的工具（如 Chrome 开发者工具的 Memory 面板，其底层就使用了类似的统计信息）来分析 `ObjectStats` 中记录的数据，可以帮助开发者识别和解决常见的 JavaScript 编程错误，特别是与内存管理和性能相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/object-stats.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/object-stats.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -426,7 +428,4 @@ class ObjectStatsCollector {
 }  // namespace v8
 
 #endif  // V8_HEAP_OBJECT_STATS_H_
-
-"""
-
 ```

@@ -161,7 +161,7 @@ output\ file.h: input\ file.txt
 
 总而言之，`srcgen.c` 是 Frida 构建系统中的一个小工具，用于生成代码或配置信息，并管理文件之间的依赖关系，这对于维护和构建大型软件项目至关重要。虽然它不直接执行逆向操作，但理解其功能有助于理解 Frida 的构建过程和内部结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/native/3 pipeline/srcgen.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<assert.h>
 #include<string.h>
@@ -240,7 +242,4 @@ int main(int argc, char **argv) {
     fclose(depfile);
     return 0;
 }
-
-"""
-
 ```

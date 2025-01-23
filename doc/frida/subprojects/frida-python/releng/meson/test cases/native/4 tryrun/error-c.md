@@ -123,7 +123,7 @@ Initially, one might focus solely on the C code itself. However, the directory p
 
 总而言之，虽然 `error.c` 的代码极其简单，但在 Frida 的测试框架中，它扮演着验证 Frida 能否正确捕获和报告目标进程错误退出状态的重要角色。这对于确保 Frida 在实际逆向分析场景中的准确性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/native/4 tryrun/error.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,12 +131,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
   return 1;
 }
-
-"""
-
 ```

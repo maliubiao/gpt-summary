@@ -124,14 +124,16 @@ This systematic approach, starting with high-level understanding and gradually d
 
 `InterpolableGridTrackRepeater.cc` 是 Blink 引擎中处理 CSS Grid 布局 `repeat()` 函数动画的关键组件。它负责存储和插值重复的 Grid 轨道信息，使得在不同的 `repeat()` 状态之间进行平滑过渡成为可能。理解这个类的工作原理有助于开发者更好地利用 CSS Grid 布局的动画特性，并避免一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/interpolable_grid_track_repeater.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ void InterpolableGridTrackRepeater::Interpolate(
 }
 
 }  // namespace blink
-
-"""
-
 ```

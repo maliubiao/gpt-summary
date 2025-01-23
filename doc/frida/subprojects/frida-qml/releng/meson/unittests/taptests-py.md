@@ -237,7 +237,7 @@ TAP 是一种相对简单的协议，但用户或程序在生成 TAP 输出时�
 
 总之，`taptests.py` 文件是 Frida 项目中用于确保其 TAP 解析器正确性的关键组成部分。理解它的功能和测试场景有助于用户诊断与 TAP 输出相关的错误，并更好地理解 Frida 内部的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/taptests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -245,8 +245,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -530,7 +532,4 @@ class TAPParserTests(unittest.TestCase):
         self.assert_error(events)
         self.assert_test(events, number=2, name='', result=TestResult.FAIL)
         self.assert_last(events)
-
-"""
-
 ```

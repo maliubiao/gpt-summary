@@ -109,7 +109,7 @@ Both tests involve creating HTML structures with iframes and a canvas, setting s
 
 这段代码通过两个具体的测试用例，深入验证了 `DelegatedInkTrailPresenter` 在处理包含 iframe 的复杂页面结构时，对于墨迹轨迹起始点坐标计算和呈现区域确定的正确性。它覆盖了 iframe 偏移和裁剪两种关键场景，确保了墨迹效果在各种网页布局下都能准确呈现。 这些测试与 HTML 结构、CSS 样式以及 JavaScript 事件处理逻辑紧密相关，反映了实际 Web 开发中可能遇到的复杂情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/delegated_ink/delegated_ink_trail_presenter_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Id(AtomicString("canvas")),
       iframe_document->GetFrame());
   DCHECK(presenter);
@@ -266,8 +268,4 @@ TEST_F(DelegatedInkTrailPresenterUnitTest, OuterIframeClipsInnerIframe) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -92,11 +92,13 @@ console.log(instance.exports.add(3, 4));
 
 `hello-world.cc` 演示了如何使用 V8 引擎的 C++ API 来执行 JavaScript 代码，包括基本的字符串操作和更高级的 WebAssembly 集成。  这表明 V8 不仅仅是浏览器或 Node.js 的一部分，还可以被嵌入到其他的 C++ 应用程序中，使其具备动态脚本执行的能力。 这个示例展示了 V8 的核心功能：作为一个独立的 JavaScript 和 WebAssembly 运行时环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/samples/hello-world.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ int main(int argc, char* argv[]) {
   delete create_params.array_buffer_allocator;
   return 0;
 }
-
-"""
-
 ```

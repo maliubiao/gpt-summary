@@ -154,7 +154,7 @@ As part 7 of 15, this file likely focuses on a specific subset of ARM64 instruct
 
 The tests are designed to be comprehensive, covering various edge cases and combinations of operands to ensure the ARM64 assembler in V8 is robust and generates correct machine code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -162,8 +162,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 9AABBCCDDEEFFUL, x7);
   CHECK_EQUAL_64(0xFFEEDDCCBBAA9988UL, dst[2]);
   CHECK_EQUAL_64(0x8899AABBCCDDEEFFUL, dst[3]);
@@ -1169,7 +1171,4 @@ TEST(adcs_sbcs_w) {
 
   static const Expected expected_adcs_w[input_count][input_count] = {
       {{0x00000000,
-"""
-
-
 ```

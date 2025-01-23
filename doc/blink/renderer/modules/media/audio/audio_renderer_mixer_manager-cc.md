@@ -196,15 +196,17 @@ This systematic approach, combining code analysis with knowledge of web technolo
 
 总而言之，`audio_renderer_mixer_manager.cc` 文件是 Blink 引擎音频处理的核心组件之一，负责有效地管理和复用音频混音器，确保来自不同来源的音频能够正确地混合并输出到用户的音频设备。理解其功能对于调试和优化 Web 平台的音频功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media/audio/audio_renderer_mixer_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -480,7 +482,4 @@ AudioRendererMixerManager::MixerKey::MixerKey(const MixerKey& other) = default;
 AudioRendererMixerManager::MixerKey::~MixerKey() = default;
 
 }  // namespace blink
-
-"""
-
 ```

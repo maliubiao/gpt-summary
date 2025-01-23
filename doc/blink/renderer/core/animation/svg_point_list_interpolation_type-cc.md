@@ -140,14 +140,16 @@ This systematic approach allows for a comprehensive understanding of the code's 
 
 总而言之，`svg_point_list_interpolation_type.cc` 是 Blink 渲染引擎中处理 SVG `points` 属性动画的关键组件，它确保了在 CSS 动画或 JavaScript 驱动下，SVG 图形的形状变化能够平滑过渡，提供了良好的用户体验。理解其工作原理有助于开发者避免常见的动画错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/svg_point_list_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ SVGPropertyBase* SVGPointListInterpolationType::AppliedSVGValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

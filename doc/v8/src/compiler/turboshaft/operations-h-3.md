@@ -226,7 +226,7 @@ This structured approach allows us to systematically dissect the code and gain a
 
 这些操作是构建更复杂编译器优化的基础，它们在将 JavaScript 代码转换为高效机器码的过程中发挥着关键作用。它们也反映了 V8 对 WebAssembly 和并发 JavaScript 特性的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/operations.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/operations.h以.tq结尾，那它是个v8 torque源代码，
@@ -234,8 +234,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 stedHeapObject,
     kRelocatableWasmCall,
     kRelocatableWasmStubCall,
@@ -1114,7 +1116,4 @@ struct StoreOp : OperationT<StoreOp> {
       IndirectPointerTag maybe_indirect_pointer_tag = kIndirectPointerNullTag) {
     return Base::New(graph, 2 + index.valid(), base, index, value, kind,
                      stored_rep, write_barrier, offset, element_s
-"""
-
-
 ```

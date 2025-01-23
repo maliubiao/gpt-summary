@@ -120,15 +120,17 @@ By following these steps, I can generate a comprehensive and accurate answer tha
 
 `layout_theme.cc` 的主要职责是定义和管理 Chromium Blink 引擎中用户界面控件的默认视觉主题。它通过识别 HTML 元素类型、处理 CSS 的 `appearance` 属性，并提供平台相关的颜色和样式，来确保控件在不同操作系统和浏览器设置下具有一致且符合平台规范的外观。  它充当了 HTML 结构和最终渲染样式之间的桥梁，尤其在处理表单控件的默认样式方面起着核心作用。这个文件是 Blink 引擎渲染表单控件的基础，并允许开发者通过 CSS 进行定制。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_theme.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /**
  * This file is part of the theme implementation for form controls in WebCore.
  *
@@ -972,7 +974,4 @@ bool LayoutTheme::SupportsCalendarPicker(InputType::Type type) const {
 }
 
 void LayoutTheme
-"""
-
-
 ```

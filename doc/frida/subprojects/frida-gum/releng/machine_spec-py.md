@@ -183,7 +183,7 @@ By following these steps, we can systematically analyze the code and understand 
 *   **交叉编译问题:**  在为特定目标架构编译 Frida 组件时，确保配置中指定的目标 `MachineSpec` 是正确的，这可以通过查看构建系统的配置或相关的环境变量来确认。
 *   **处理不同设备类型:** 当 Frida 需要处理多种不同架构或操作系统的设备时，`MachineSpec` 可以作为识别设备类型并采取相应处理的关键依据。在调试针对特定设备的代码时，理解该设备对应的 `MachineSpec` 是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/machine_spec.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 from dataclasses import dataclass
 import platform
@@ -487,7 +489,4 @@ BIG_ENDIAN_ARCHS = {
 }
 
 TARGET_TRIPLET_ARCH_PATTERN = re.compile(r"^(i.86|x86_64|arm(v\w+)?|aarch64|mips\w*|powerpc|s390x)$")
-
-"""
-
 ```

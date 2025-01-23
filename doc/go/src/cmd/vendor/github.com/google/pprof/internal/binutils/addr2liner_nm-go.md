@@ -191,7 +191,7 @@ nm --numeric-sort --print-size --format=posix <file>
 
 总而言之，这段代码提供了一种利用 `nm` 命令来实现地址到符号名映射功能的方法，常用于性能分析工具中，以帮助开发者理解程序运行时的内存布局和函数调用关系。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/binutils/addr2liner_nm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -345,9 +347,4 @@ func (a *addr2LinerNM) addrInfo(addr uint64) ([]plugin.Frame, error) {
 	}
 	return []plugin.Frame{{Func: a.m[low].name}}, nil
 }
-
-"""
-
-
-
 ```

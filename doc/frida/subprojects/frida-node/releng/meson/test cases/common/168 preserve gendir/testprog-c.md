@@ -149,7 +149,7 @@ Let's break down the thought process for analyzing this C code snippet in the co
 
 因此，到达这个源代码文件的步骤通常是：**项目开发/测试 -> 使用构建系统 -> 执行测试用例 -> 发现问题 -> 查看相关代码进行调试。**  `testprog.c` 作为一个简单的测试用例，其目的是提供一个可控的环境来验证 Frida 的特定功能，例如在有生成目录的情况下进行插桩。  调试的重点可能是 Frida 如何处理与这个测试程序相关的生成文件和目录。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/168 preserve gendir/testprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,15 +157,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"base.h"
 #include"com/mesonbuild/subbie.h"
 
 int main(void) {
     return base() + subbie();
 }
-
-"""
-
 ```

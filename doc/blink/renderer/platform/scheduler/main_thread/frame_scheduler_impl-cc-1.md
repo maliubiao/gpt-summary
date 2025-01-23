@@ -98,16 +98,18 @@ Now, I'll elaborate on each point and its relevance to the user's requirements.
 
 希望这个更全面的归纳能够帮助您理解 `FrameSchedulerImpl` 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/frame_scheduler_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                     : "Subframe");
+### 源代码
+```cpp
+: "Subframe");
   dict.Add("is_visible_area_large", is_visible_area_large_);
   dict.Add("had_user_activation", had_user_activation_);
   dict.Add("disable_background_timer_throttling",
@@ -795,8 +797,4 @@ FrameSchedulerImpl::InputBlockingQueueTraits() {
 }
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
-
 ```

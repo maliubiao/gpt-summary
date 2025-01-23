@@ -280,7 +280,7 @@ if (Process.platform === 'android') {
 
 请注意，由于 `private.h` 是私有头文件，其内部定义的宏和类型可能在 Android 的不同版本之间发生变化。因此，直接依赖这些私有定义进行开发是不可取的。开发者应该使用 Android SDK 提供的公共 API 来处理时间和时区信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/tzcode/private.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -291,8 +291,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* Private header for tzdb code.  */
 
 #ifndef PRIVATE_H
@@ -1299,7 +1301,4 @@ enum {
 #define isleap_sum(a, b)	isleap((a) % 400 + (b) % 400)
 
 #endif /* !defined PRIVATE_H */
-
-"""
-
 ```

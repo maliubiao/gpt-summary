@@ -123,15 +123,17 @@ If a developer is encountering an error where `createMediaElementSource` is fail
 
 In summary, `media_element_audio_source_node.cc` plays a vital role in the Web Audio API by providing a mechanism to incorporate audio from HTML media elements into the audio processing graph, ensuring proper management and preventing common usage errors.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/media_element_audio_source_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011, Google Inc. All rights reserved.
  *
@@ -268,7 +270,4 @@ void MediaElementAudioSourceNode::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -239,7 +239,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/upstream-freebsd/android/include/machine/endian.handroid` 文件虽然很小，但它在 Android 系统中扮演着重要的角色，作为字节序处理的入口点，确保了不同架构之间的数据交换能够正确进行。 它通过包含标准的 `<endian.h>`，使得 Android 代码能够使用标准的字节序转换函数，这些函数的实际实现位于 Bionic libc 的底层。 理解这个文件及其背后的机制，对于进行网络编程、处理跨平台数据以及进行底层系统调试都非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-freebsd/android/include/machine/endian.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -250,10 +250,9 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #include <endian.h>
-
-"""
-
 ```

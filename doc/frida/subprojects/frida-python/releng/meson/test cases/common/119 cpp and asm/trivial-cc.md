@@ -157,7 +157,7 @@ By following this kind of structured analysis, considering the different facets 
 
 总而言之，`trivial.cc` 是一个简洁但重要的测试用例，用于验证 Frida 在处理 C++ 和汇编代码交互时的能力。它突出了动态分析、代码流程分析和理解程序接口在逆向工程中的重要性，并涉及到一些底层的二进制和系统知识。 开发者通过编译、运行和使用 Frida 插桩这个简单的程序，可以有效地调试和验证 Frida 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/119 cpp and asm/trivial.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 extern "C" {
@@ -183,7 +185,4 @@ int main(void) {
   #error "Forgot to pass asm define"
 #endif
 }
-
-"""
-
 ```

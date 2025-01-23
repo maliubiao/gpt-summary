@@ -110,15 +110,17 @@ This part of the `grid_layout_algorithm.cc` file focuses on the core logic for d
 
 总而言之，这部分代码确保了 Grid 布局能够根据内容和可用空间，正确地计算和设置每个 Track 的最终大小，从而实现灵活且强大的布局功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/grid/grid_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ' until it reaches the limit specified as the 'fit-content'
       // argument, after which it is treated as having a fixed sizing function
       // of that argument (with a growth potential of zero).
@@ -851,7 +853,4 @@ void GridLayoutAlgorithm::ExpandFlexibleTracks(
   float fr_size = 0;
   if (free_space != kIndefiniteSize) {
     // Otherwise, if the
-"""
-
-
 ```

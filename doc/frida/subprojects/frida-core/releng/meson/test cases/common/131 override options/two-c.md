@@ -153,7 +153,7 @@ By following this structured approach, considering the context, and iteratively 
 
 总而言之，这个简单的 `two.c` 文件虽然自身功能不多，但在 Frida 动态分析的上下文中，它可以作为一个很好的测试用例或者调试的起点，帮助理解 Frida 的基本用法以及程序内部的函数调用关系。其简洁性也使得更容易理解和演示一些逆向分析和动态调试的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/131 override options/two.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,15 +161,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Requires a Unity build. Otherwise hidden_func is not specified.
  */
 int main(void) {
     return hidden_func();
 }
-
-"""
-
 ```

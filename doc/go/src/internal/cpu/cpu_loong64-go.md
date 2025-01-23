@@ -161,7 +161,7 @@ func main() {
 
 因此，**开发者不能仅仅依赖 `internal/cpu` 包提供的硬件特性检测结果，还需要考虑操作系统内核的支持情况。**  对于像 LSX 这样的功能，可能需要查阅操作系统文档或者使用其他方式来确认内核是否提供了相应的支持。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/cpu/cpu_loong64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -169,8 +169,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -225,9 +227,4 @@ func doinit() {
 func cfgIsSet(cfg uint32, val uint32) bool {
 	return cfg&val != 0
 }
-
-"""
-
-
-
 ```

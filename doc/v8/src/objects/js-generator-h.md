@@ -76,15 +76,17 @@ Essentially, the process involves: understanding the C++ code, relating it to Ja
 是的，如果 `v8/src/objects/js-generator.h` 文件以 `.tq` 结尾，那么它将是一个 **V8 Torque 源代码文件**。
 
 Torque 是 V8 团队开发的一种领域特定语言（DSL），用于生成 V8 内部的 C++ 代码，特别是对象布局、访问器和一些核心操作。`.tq` 文件包含了用 Torque 编写的类型定义和函数声明，V8 的构建系统会将其编译成对应的 C++ 代码（通常是 `.inc` 文件，例如这里
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-generator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-generator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ class AsyncGeneratorRequest
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_GENERATOR_H_
-
-"""
-
 ```

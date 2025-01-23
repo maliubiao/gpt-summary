@@ -166,15 +166,17 @@ By following these steps, breaking down the code, and making reasoned connection
 
 `blink/renderer/core/exported/web_heap.cc` 文件提供了一种在测试环境中手动触发 Blink 引擎垃圾回收的机制。它与 JavaScript, HTML, 和 CSS 的关系在于，它影响着这些技术产生的对象在内存中的生命周期。理解这个文件的功能有助于理解 Blink 引擎的内存管理机制，尤其是在进行底层开发和调试时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_heap.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -221,7 +223,4 @@ void WebHeap::CollectAllGarbageForTesting() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

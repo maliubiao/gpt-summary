@@ -187,7 +187,7 @@ This first part of the `gumv8value.cpp` file primarily focuses on:
 
 The code lays the groundwork for more complex value handling and interaction between JavaScript and the native world within the Frida framework. The functions and structures defined here are crucial for enabling Frida's dynamic instrumentation capabilities.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8value.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016-2023 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2021 Abdelrahman Eid <hot3eed@gmail.com>
@@ -1599,7 +1601,4 @@ _gum_v8_cpu_context_new_immutable (const GumCpuContext * cpu_context,
   auto cpu_context_value (Local<Object>::New (isolate,
       *core->cpu_context_value));
   auto cpu_context_objec
-"""
-
-
 ```

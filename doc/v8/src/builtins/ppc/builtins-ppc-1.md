@@ -267,13 +267,15 @@ const intValue = Math.floor(floatValue); // Math.floor 的底层实现可能调�
 
 总而言之，这段代码是 V8 引擎在 PowerPC 架构上实现 JavaScript 核心功能的关键部分，它连接了 JavaScript 代码的高层语义和底层机器指令的执行。它展示了 JavaScript 引擎在执行函数和构造函数时所涉及的复杂步骤和优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ppc/builtins-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- StandardFrameConstants::kCallerFPOffset),
+### 源代码
+```
+StandardFrameConstants::kCallerFPOffset),
                  r0);
       break;
   }
@@ -2117,7 +2119,4 @@ void Builtins::Generate_DoubleToI(MacroAssembler* masm) {
   __ subi(scratch, scratch, Operand(HeapNumber::kExponentBias + 1));
   // If exponent is greater than or equal to 84, the 32 less significant
   // bits are 0s (2^84 = 1, 52 significant
-"""
-
-
 ```

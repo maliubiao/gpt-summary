@@ -239,7 +239,7 @@ func main() {
 
 总而言之，这段代码为 Go 语言的 SMTP 客户端提供了身份验证的基础框架和一些常见的认证机制，强调了在处理敏感信息（如用户名和密码）时进行加密的重要性。开发者在使用这些认证机制时需要注意安全性和配置的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/smtp/auth.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -247,8 +247,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -358,9 +360,4 @@ func (a *cramMD5Auth) Next(fromServer []byte, more bool) ([]byte, error) {
 	}
 	return nil, nil
 }
-
-"""
-
-
-
 ```

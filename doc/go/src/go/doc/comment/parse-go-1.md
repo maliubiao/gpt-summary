@@ -178,7 +178,7 @@ func someFunction() {
 
 总而言之，这部分代码是 Go 语言工具链中负责进行语法校验的关键组成部分，确保了标识符和导入路径的规范性，从而保证了 Go 代码的正确性和可维护性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/doc/comment/parse.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -187,8 +187,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 , then 1<<c and 1<<(c-64) will both be zero,
 	// and this function will return false.
 	const mask = 0 |
@@ -261,10 +263,4 @@ func importPathOK(c byte) bool {
 	return ((uint64(1)<<c)&(mask&(1<<64-1)) |
 		(uint64(1)<<(c-64))&(mask>>64)) != 0
 }
-
-"""
-
-
-
-
 ```

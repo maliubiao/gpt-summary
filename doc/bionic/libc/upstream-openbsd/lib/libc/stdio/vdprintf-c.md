@@ -355,7 +355,7 @@ if (Process.platform === 'android') {
 
 希望以上详细的解释能够帮助你理解 `vdprintf.c` 文件的功能以及它在 Android 中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/stdio/vdprintf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -366,8 +366,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: vdprintf.c,v 1.3 2019/03/03 16:41:41 semarie Exp $	*/
 /*	$FreeBSD: src/lib/libc/stdio/vdprintf.c,v 1.4 2012/11/17 01:49:40 svnexp Exp $ */
 
@@ -442,7 +444,4 @@ vdprintf(int fd, const char * __restrict fmt, va_list ap)
 	return __sflush(&f) ? EOF : ret;
 }
 DEF_WEAK(vdprintf);
-
-"""
-
 ```

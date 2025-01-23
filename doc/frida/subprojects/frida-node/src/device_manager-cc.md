@@ -184,7 +184,7 @@ Here's how a user operation in JavaScript would eventually reach this C++ code:
 
 Therefore, by tracing the function calls from the user's JavaScript code down through the Node.js addon layer, you can see how the execution reaches the specific methods in `device_manager.cc`. This understanding is crucial for debugging issues or understanding the flow of Frida's operations.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/src/device_manager.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "device_manager.h"
 
 #include "device.h"
@@ -556,7 +558,4 @@ bool DeviceManager::ShouldStayAliveToEmit(const gchar* name) {
 }
 
 }
-
-"""
-
 ```

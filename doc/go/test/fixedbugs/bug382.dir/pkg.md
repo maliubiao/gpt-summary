@@ -162,15 +162,17 @@ func main() {
 
 这段代码很可能用于实现一个简单的单例模式，或者仅仅是为了定义一个可以用作类型标识符的空结构体。  由于它位于 `go/test/fixedbugs` 路径下，更倾向于认为是用于测试某种特定行为或作为 bug 复现的最小示例。 在这种上下文中，`pkg.E` 提供了一个方便的、唯一的 `pkg.T` 类型的实例，以便在测试用例中使用。 空结构体在 Go 语言中常被用作信号、占位符或者作为 map 的 value 类型来表示集合等。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug382.dir/pkg.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -178,9 +180,4 @@ Prompt:
 package pkg
 type T struct {}
 var E T
-
-"""
-
-
-
 ```

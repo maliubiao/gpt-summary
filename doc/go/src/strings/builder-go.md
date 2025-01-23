@@ -199,7 +199,7 @@ sb.Cap()    // 输出: 可能为 16 或更大
 
 总而言之，`strings.Builder` 是 Go 语言中一个非常实用的工具，用于高效地构建字符串。理解其内部原理和注意事项可以帮助我们编写出更高效、更健壮的 Go 代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strings/builder.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -207,8 +207,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -319,9 +321,4 @@ func (b *Builder) WriteString(s string) (int, error) {
 	b.buf = append(b.buf, s...)
 	return len(s), nil
 }
-
-"""
-
-
-
 ```

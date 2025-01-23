@@ -181,15 +181,17 @@ This structured approach allows for a thorough understanding of the code and the
 
 总之，`v8/src/wasm/value-type.cc` 文件提供了 V8 内部处理 WebAssembly 值类型和函数签名的基础工具，这些工具对于确保 JavaScript 和 WebAssembly 之间的正确互操作至关重要。 开发者在使用 WebAssembly 时需要注意类型匹配和数据范围，以避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/value-type.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/value-type.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -278,7 +280,4 @@ const wasm::FunctionSig* GetI32Sig(Zone* zone, const wasm::FunctionSig* sig) {
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

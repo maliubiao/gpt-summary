@@ -155,12 +155,14 @@ function notAClassFunction() {
 
 **总结:**  这个C++文件是V8引擎解析器的一个重要测试组件，它专注于验证类相关的JavaScript语法解析是否正确，为V8引擎的健壮性和符合JavaScript标准提供了保障。它通过大量的测试用例覆盖了各种合法的和非法的类语法，确保解析器能够准确地识别和处理这些情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ompile_state;
     i::ReusableUnoptimizedCompileState reusable_state(isolate);
     i::UnoptimizedCompileFlags flags =
@@ -2222,8 +2224,4 @@ TEST_F(ParsingTest, PrivateStaticAutoAccessorsErrors) {
     // ASI
     "static accessor #['a'] = 0\n",
     "static accessor #['a'] = 0\n b",
-    
-"""
-
-
 ```

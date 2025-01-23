@@ -115,11 +115,13 @@ call_log_node.bytecode_ = Bytecodes::kCallFunction;
 
 `bytecode-node.cc` 中定义的 `BytecodeNode` 类是 V8 解释器执行 JavaScript 代码的基础构建块。它代表了被编译后的 JavaScript 代码的一个个操作步骤。通过观察和理解 `BytecodeNode` 的结构和功能，可以更深入地了解 V8 引擎的内部工作原理，特别是其解释执行 JavaScript 代码的过程。  JavaScript 代码最终会被转化为一系列这样的 `BytecodeNode` 对象，由解释器按顺序执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-node.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ std::ostream& operator<<(std::ostream& os, const BytecodeNode& node) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

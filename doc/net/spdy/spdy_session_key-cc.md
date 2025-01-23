@@ -182,15 +182,17 @@ By following this thought process, we can dissect the code, understand its purpo
 
 通过分析 `SpdySessionKey` 的内容，可以更好地理解 Chromium 如何管理网络连接，并定位连接问题的原因。开发者可以使用 Chromium 提供的网络日志工具 (例如 `chrome://net-export/`) 来查看连接的详细信息，包括与 `SpdySessionKey` 相关的参数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session_key.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -291,7 +293,4 @@ SpdySessionKey::CompareForAliasingResult SpdySessionKey::CompareForAliasing(
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -110,7 +110,7 @@ This test case serves as a crucial reference point and a way to verify that the 
 
 `cmMod.cpp` 看起来是一个用于测试 Frida 构建系统在处理包含文件时特定场景的模块。它通过模拟包含一些“假的”头文件，来验证构建系统是否能够正确地跳过或处理这些文件，从而确保最终构建的 Frida 工具的完整性和可靠性。虽然它不直接涉及逆向操作或底层内核，但它是保证 Frida 能够正常工作的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/18 skip include files/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -130,7 +132,4 @@ using namespace std;
 #include "fakeInc/cmModInc3.cpp"
 #include "fakeInc/cmModInc4.cpp"
 #undef MESON_INCLUDE_IMPL
-
-"""
-
 ```

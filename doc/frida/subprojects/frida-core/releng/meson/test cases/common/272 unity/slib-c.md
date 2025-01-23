@@ -221,7 +221,7 @@ By following this structured thought process, considering the specific requireme
 
 总而言之，到达这个源代码文件的路径，作为调试线索，通常意味着用户（开发者或逆向工程师）正在使用 Frida 对使用了这个静态库的应用程序进行动态分析，并且可能遇到了需要深入理解 `static_lib_func` 行为的情况。拥有源代码使得调试过程大大简化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/272 unity/slib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -229,15 +229,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1(void);
 int func2(void);
 
 int static_lib_func(void) {
     return func1() + func2();
 }
-
-"""
-
 ```

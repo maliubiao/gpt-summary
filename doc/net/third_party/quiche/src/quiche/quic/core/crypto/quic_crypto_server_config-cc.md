@@ -142,7 +142,7 @@ This iterative process of scanning, identifying, deducing, and organizing helped
 
 `net/third_party/quiche/src/quiche/quic/core/crypto/quic_crypto_server_config.cc` 的第一部分主要定义了 `QuicCryptoServerConfig` 类的基本结构和核心功能，包括服务器加密配置的生成、存储和管理，以及对客户端 `ClientHello` 消息的初步验证和处理框架。它为后续的加密协商和连接建立奠定了基础。  核心是围绕 `ValidateClientHello` 展开，初步判断客户端的请求是否可以接受，并为后续的 `ProcessClientHello` 做好准备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/quic_crypto_server_config.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1011,7 +1013,4 @@ void QuicCryptoServerConfig::ProcessClientHelloAfterGetProof(
                   &public_value);
 
   const Asynchrono
-"""
-
-
 ```

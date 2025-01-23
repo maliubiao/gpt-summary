@@ -178,15 +178,17 @@ Received inspector message: {"method":"Debugger.paused","params":{"reason":"brea
 
 总而言之，`v8/test/inspector/frontend-channel.h` 是 V8 测试框架中一个关键的组件，它允许测试代码模拟 Inspector 前端的行为，并通过 JavaScript 函数来验证 Inspector 后端发送的消息，从而确保 V8 调试功能的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/inspector/frontend-channel.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/inspector/frontend-channel.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ class FrontendChannelImpl : public v8_inspector::V8Inspector::Channel {
 }  // namespace v8
 
 #endif  //  V8_TEST_INSPECTOR_FRONTEND_CHANNEL_H_
-
-"""
-
 ```

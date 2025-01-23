@@ -135,7 +135,7 @@ Users typically won't interact with this specific Python file directly during no
 
 A developer is trying to cross-compile Frida for a specific embedded Linux target. They are modifying the Meson build configuration to specify a custom installation prefix. If the installation process is not placing files in the expected locations, they might start debugging the build scripts. They might add print statements or use a debugger within the Meson scripts to see how the installation paths are being constructed. This debugging process could lead them to examine the `destdir_join` function to understand how the destination directory and file paths are being combined. They might realize that their custom prefix is not being handled correctly by this function, or that their understanding of how the destination directory is used is flawed.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/scripts/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -155,7 +157,4 @@ def destdir_join(d1: str, d2: str) -> str:
         return d2
     # c:\destdir + c:\prefix must produce c:\destdir\prefix
     return str(PurePath(d1, *PurePath(d2).parts[1:]))
-
-"""
-
 ```

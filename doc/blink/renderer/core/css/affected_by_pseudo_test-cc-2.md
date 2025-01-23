@@ -96,7 +96,7 @@ Here's a plan to generate the summary:
 
 这段代码是 `blink/renderer/core/css/affected_by_pseudo_test.cc` 文件中用于测试 CSS `:has()` 伪类作为选择器主体时，元素“受影响”状态的一部分。它通过创建不同的 HTML 结构和 CSS 规则，并使用 `CheckAffectedByFlagsForHas` 函数来验证各种元素是否被正确地标记为受到 `:has()` 规则的影响。这有助于确保 Blink 引擎能够正确地解析和应用包含 `:has()` 伪类的 CSS 规则。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/affected_by_pseudo_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -104,10 +104,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
-
-                              {kSiblingsAffectedByHas, false}});
+### 源代码
+```cpp
+{kSiblingsAffectedByHas, false}});
 }
 
 TEST_F(AffectedByPseudoTest, AffectedBySubjectHasComplexCase4) {
@@ -796,7 +797,4 @@ TEST_F(AffectedByPseudoTest, AffectedByNonSubjectHasComplexCase2) {
                {kSiblingsAffectedByHas, false}});
   CheckAffectedByFlagsForHas(
       "div6", {{kAffect
-"""
-
-
 ```

@@ -102,11 +102,13 @@ console.log(even);
 
 `v8/src/snapshot/sort-builtins.cc` 是 V8 引擎中一个重要的优化组件，它通过分析内置函数的调用关系和执行频率，对它们进行智能排序，从而优化快照的内存布局，最终提升 JavaScript 的执行性能和 V8 的启动速度。它直接关系到 JavaScript 代码的底层执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/sort-builtins.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -440,7 +442,4 @@ std::vector<Builtin> BuiltinsSorter::SortBuiltins(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

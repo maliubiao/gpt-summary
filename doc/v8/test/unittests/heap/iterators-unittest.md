@@ -117,11 +117,13 @@ const func1 = () => {};
 
 因此，`iterators-unittest.cc` 这个文件虽然是测试 V8 引擎的底层实现，但它所测试的功能对于 Javascript 运行时环境的正常运行至关重要，因为它验证了 V8 引擎管理和访问 Javascript 对象的核心机制的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/iterators-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ TEST_F(IteratorsTest, SpaceIterator) {
 }
 
 }  // namespace v8::internal::heap
-
-"""
-
 ```

@@ -113,7 +113,7 @@ By following these steps, we can construct a comprehensive and accurate explanat
 
 总而言之，`source3.c` 中的 `func3_in_obj` 是一个非常基础的 C 函数，它在 Frida 的测试框架中可能作为一个简单的构建块存在。虽然它自身的功能很简单，但在动态分析和逆向工程的上下文中，它可以作为目标进行 hook 和观察，并涉及到与二进制、操作系统底层以及特定框架的交互。用户查看这个文件的目的通常是为了理解 Frida 的测试机制或作为调试他们 Frida 脚本的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/52 object generator/source3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,12 +121,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func3_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

@@ -145,14 +145,16 @@ video.addEventListener('progress', () => {
 
 总而言之，`time_ranges_test.cc` 文件通过一系列单元测试，确保 `TimeRanges` 类能够正确地表示和操作时间范围，这对于实现 HTML5 媒体元素的相关功能至关重要。开发者在使用与媒体缓冲相关的 JavaScript API 时，理解 `TimeRanges` 的概念和行为是非常重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/time_ranges_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Google Inc. All rights reserved.
  *
@@ -479,7 +481,4 @@ TEST(TimeRangesTest, Nearest) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

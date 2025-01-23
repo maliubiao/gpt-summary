@@ -110,11 +110,13 @@ console.log(objA.refToB.value); // 仍然输出 10，因为引用已被更新
 
 `v8/src/heap/cppgc/compactor.cc` 文件中的代码是 V8 引擎中负责堆内存压缩的关键部分。 它通过移动存活对象和更新引用来整理内存，减少碎片，从而提高 JavaScript 程序的内存利用率和执行效率。  虽然 JavaScript 代码本身无法直接操作这些底层的压缩过程，但内存压缩的结果会直接影响 JavaScript 程序的性能和内存行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/compactor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -653,7 +655,4 @@ void Compactor::EnableForNextGCForTesting() {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

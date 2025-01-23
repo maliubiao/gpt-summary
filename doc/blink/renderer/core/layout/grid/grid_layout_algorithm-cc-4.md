@@ -177,16 +177,18 @@ By following these steps, I can effectively analyze and summarize even complex c
 
 这部分 `grid_layout_algorithm.cc` 代码是 Chromium Blink 引擎中 CSS Grid 布局算法的关键组成部分，负责**处理弹性轨道的大小计算、网格项的对齐以及初步的布局放置**。它还深入处理了**网格在分页时的复杂布局逻辑**。 这部分代码的功能直接对应了 CSS Grid 规范中的核心概念和属性，确保浏览器能够正确地渲染和显示使用 Grid 布局的网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/grid/grid_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
- free space is a definite length, the used flex fraction
+### 源代码
+```cpp
+free space is a definite length, the used flex fraction
     // is the result of finding the size of an fr using all of the grid tracks
     // and a space to fill of the available grid space.
     fr_size = FindFrSize(track_collection.GetSetIterator(),
@@ -980,7 +982,4 @@ void GridLayoutAlgorithm::PlaceGridItemsForFragmentation(
       LayoutUnit unavailable_block_size;
       if (IsBreakInside(GetBreakToken()) && IsBreakInside(break_token)) {
         // If a sibling grid item
-"""
-
-
 ```

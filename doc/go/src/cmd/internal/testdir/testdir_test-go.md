@@ -170,15 +170,17 @@ func main() {
 
 总而言之，`testdir_test.go` 是一个复杂的测试框架，用于确保 Go 语言的各种功能（编译器、链接器、运行时等）能够正常工作。它通过解析测试文件中的特殊注释来驱动不同类型的测试，并使用命令行参数来灵活地控制测试的执行。理解其工作原理对于 Go 语言的开发者来说是非常重要的，尤其是在进行标准库开发或贡献时。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/testdir/testdir_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2158,9 +2160,4 @@ func replacePrefix(s, old, new string) string {
 	}
 	return s
 }
-
-"""
-
-
-
 ```

@@ -106,14 +106,16 @@ This structured approach, starting with understanding the core purpose and then 
 
 总而言之，`WebCoalescedInputEvent` 是 Blink 引擎中一个关键的优化机制，它通过合并相关的输入事件，提高了事件处理的效率，减少了 JavaScript 需要处理的事件数量，从而提升了网页的响应速度和性能。它在用户与网页交互的底层默默地工作，确保用户体验的流畅性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/input/web_coalesced_input_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ void WebCoalescedInputEvent::CoalesceWith(
 }
 
 }  // namespace blink
-
-"""
-
 ```

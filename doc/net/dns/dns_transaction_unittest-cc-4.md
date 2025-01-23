@@ -136,7 +136,7 @@ fetch('https://www.example.com/data.json')
 
 这部分主要集中在 **`DnsTransaction` 类在 TCP 传输场景下的错误处理和重试机制，以及 DoH 探测功能的测试**。 它验证了在各种 TCP 连接异常情况（服务器错误、格式错误、连接关闭、超时）下 `DnsTransaction` 的行为，以及在 DoH 场景下如何探测服务器的可用性，并在探测过程中处理各种网络错误和响应状态。  这部分测试对于确保 `DnsTransaction` 在复杂和不可靠的网络环境下能够正确地解析域名至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 helper0.StartTransaction(transaction_factory_.get(), kT0HostName, kT0Qtype,
                            false /* secure */, resolve_context_.get());
   helper0.RunUntilComplete();
@@ -853,7 +855,4 @@ TEST_F(DnsTransactionTestWithMockTime, CancelDohProbeOnContextDestruction) {
 
   std::unique_ptr<DnsProbeRunner> runner =
       transaction_factory_->CreateDohProbeRu
-"""
-
-
 ```

@@ -309,7 +309,7 @@ sys.stdin.read()
 
 通过使用 Frida hook 这些步骤，你可以观察 Android Framework 如何通过 NDK 调用到 Bionic libc，最终调用 `ioctl` 与 virtio GPIO 设备进行交互，从而调试和理解整个流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/virtio_gpio.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -320,8 +320,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -376,7 +378,4 @@ struct virtio_gpio_irq_response {
 #define VIRTIO_GPIO_IRQ_STATUS_INVALID 0x0
 #define VIRTIO_GPIO_IRQ_STATUS_VALID 0x1
 #endif
-
-"""
-
 ```

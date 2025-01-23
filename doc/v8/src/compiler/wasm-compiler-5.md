@@ -98,12 +98,14 @@ const wasmInstance = await WebAssembly.instantiateStreaming(fetch('module.wasm')
 
 总而言之，`v8/src/compiler/wasm-compiler.cc` 是 V8 引擎中连接 WebAssembly 和 JavaScript 世界的关键组件，负责生成高性能的桥接代码，使得这两种技术能够无缝地协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 eTemplate::kWasmTrapSuspendJSFrames))
             .value());
     BuildCallToRuntimeWithContext(Runtime::kThrowWasmError, native_context,
@@ -1198,8 +1200,4 @@ AssemblerOptions WasmStubAssemblerOptions() {
 #undef LOAD_MUTABLE_ROOT
 
 }  // namespace v8::internal::compiler
-
-"""
-
-
 ```

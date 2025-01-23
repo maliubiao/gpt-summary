@@ -132,16 +132,17 @@ double ClobberDoubleRegisters(double x1, double x2, double x3, double x4) {
 
 `v8/src/execution/clobber-registers.h` 声明了一个名为 `ClobberDoubleRegisters` 的函数，它很可能在 V8 内部用于执行涉及修改或覆盖双精度浮点数寄存器的操作。这与 JavaScript 的数值计算功能息息相关。理解这类底层机制有助于更好地理解 JavaScript 的执行原理以及避免与浮点数相关的常见编程错误。如果文件以 `.tq` 结尾，则意味着该函数的实现是用 V8 的 Torque 语言编写的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/clobber-registers.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/clobber-registers.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
-
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +160,4 @@ double ClobberDoubleRegisters(double x1, double x2, double x3, double x4);
 }  // namespace v8
 
 #endif  // V8_EXECUTION_CLOBBER_REGISTERS_H_
-
-"""
-
 ```

@@ -140,15 +140,17 @@ var leakedFunction = createLeakyClosure();
 
 V8 的内存测量机制可以帮助开发者和 V8 团队更好地理解内存使用情况，从而发现和修复这类内存泄漏问题。`test-memory-measurement.cc` 中的测试确保了 V8 的内存测量工具能够准确地反映各种场景下的内存占用，包括由于编程错误可能导致的内存分配。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-memory-measurement.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/heap/test-memory-measurement.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -438,7 +440,4 @@ TEST(PartiallyInitializedContext) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

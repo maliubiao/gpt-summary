@@ -204,7 +204,7 @@ GOOS=windows GOARCH=386 go build  # 构建 Windows 386 平台的二进制文件
 
 总而言之，`go/src/internal/syslist/syslist.go` 提供了一个核心的、不可或缺的数据结构，用于支持 Go 语言的跨平台编译能力，它定义了 Go 语言能够识别和支持的操作系统和架构，并被构建约束和平台特定文件机制所使用。 维护这些列表的准确性和完整性对于 Go 语言的生态系统至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syslist/syslist.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -212,8 +212,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -297,9 +299,4 @@ var KnownArch = map[string]bool{
 	"sparc64":     true,
 	"wasm":        true,
 }
-
-"""
-
-
-
 ```

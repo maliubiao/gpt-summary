@@ -238,15 +238,17 @@ These tests implicitly help prevent errors related to using `apply` and the spre
 
 `v8/test/cctest/compiler/test-calls-with-arraylike-or-spread.cc` is a crucial part of V8's testing infrastructure. It rigorously checks that the optimizing compiler correctly handles and optimizes JavaScript function calls involving `apply` with array-like objects and the spread syntax. This ensures that these common JavaScript features are performant and work as expected after V8's optimization passes.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-calls-with-arraylike-or-spread.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-calls-with-arraylike-or-spread.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -431,7 +433,4 @@ TEST(ReduceCAPICallWithArrayLike) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

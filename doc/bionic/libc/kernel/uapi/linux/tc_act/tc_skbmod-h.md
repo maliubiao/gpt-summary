@@ -184,7 +184,7 @@ console.log(`已 Hook ${processName} 的 execve 系统调用，监控 tc 命令.
 
 总结来说，`tc_skbmod.handroid` 定义了内核中用于修改网络数据包以太网头部的结构和常量。Android 通过用户空间工具（如 `tc` 命令）与内核交互，配置和使用 `tc_skbmod` 来实现各种网络功能。通过 Frida Hook 可以监控这些交互过程，理解数据包修改的流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tc_act/tc_skbmod.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -195,8 +195,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -227,7 +229,4 @@ enum {
 };
 #define TCA_SKBMOD_MAX (__TCA_SKBMOD_MAX - 1)
 #endif
-
-"""
-
 ```

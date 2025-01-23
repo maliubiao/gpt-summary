@@ -206,15 +206,17 @@ In essence, this part of the test file thoroughly exercises the more advanced fe
 
 总的来说，这部分测试用例更深入地测试了 `NetworkStateNotifier` 类的核心功能和边界情况，确保其在各种场景下都能正确地管理和通知网络状态信息。这些功能对于浏览器优化资源加载、提升用户体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/network_state_notifier_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pe3G, notifier_.EffectiveType());
   EXPECT_EQ(kEthernetHttpRtt, notifier_.HttpRtt());
   EXPECT_EQ(kEthernetThroughputMbps, notifier_.DownlinkThroughputMbps());
@@ -616,8 +618,4 @@ TEST_F(NetworkStateNotifierTest, RemoveObserverWhileNotifying) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

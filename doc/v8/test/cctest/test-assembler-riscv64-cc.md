@@ -442,7 +442,7 @@ UTEST_I_FORM_WITH_OP(srliw, int32_t, 0x82345678U, 12, >>)
 UTEST_I_FORM_WITH_OP(sraiw, int32_t, -123, 12, >>)
 
 UTEST_R2_FORM_WITH_OP(
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-riscv64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-riscv64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -450,8 +450,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1035,7 +1037,4 @@ UTEST_R3_FORM_WITH_RES_F(fnmadd_s, float, 67.56f, -1012.01f, 3456.13f,
                          -std::fma(67.56f, -1012.01f, 3456.13f))
 UTEST_COMPARE_WITH_OP_F(feq_s, float, -3456.56, -3456.56, ==)
 UTEST_COMPARE
-"""
-
-
 ```

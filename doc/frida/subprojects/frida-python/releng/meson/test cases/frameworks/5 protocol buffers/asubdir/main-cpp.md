@@ -110,7 +110,7 @@ By following this structured thinking process, one can systematically analyze th
 
 因此，用户（开发者）通过编写和运行 Frida 的测试用例来确保 Frida 能够正确地处理使用了 Protocol Buffers 的目标程序，这对于 Frida 作为一个动态分析工具的健壮性至关重要。这个简单的 `main.cpp` 就是这个测试过程中的一个基本组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/5 protocol buffers/asubdir/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "defs.pb.h"
 
 int main(int argc, char **argv) {
@@ -129,7 +131,4 @@ int main(int argc, char **argv) {
     google::protobuf::ShutdownProtobufLibrary();
     return 0;
 }
-
-"""
-
 ```

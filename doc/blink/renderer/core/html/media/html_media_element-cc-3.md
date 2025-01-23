@@ -152,17 +152,17 @@ By following these steps, I can systematically analyze the C++ code and generate
 
 总而言之，这个代码片段是 HTMLMediaElement 实现的核心部分，负责管理媒体的播放状态、时间控制、属性设置以及媒体轨道。它与 JavaScript、HTML 紧密相关，是实现 Web 页面媒体功能的基础。理解这部分代码的功能有助于开发者更好地理解和使用 HTML5 的媒体 API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/html_media_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-
-
+### 源代码
+```cpp
 bool HTMLMediaElement::HasAudio() const {
   return web_media_player_ && web_media_player_->HasAudio();
 }
@@ -1139,7 +1139,4 @@ KURL HTMLMediaElement::SelectNextSourceChild(
     // 3. If candidate has a media attribute whose value does not match the
     // environment, then end the synchronous section, and jump down to the
     // failed with elemen
-"""
-
-
 ```

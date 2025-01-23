@@ -162,7 +162,7 @@ Inner class is working.
 
 `Simple.java` 文件虽然功能简单，但它作为一个 Frida 的测试用例，体现了动态 instrumentation 工具需要处理的常见 Java 语言特性，例如非静态内部类。通过这个例子，可以验证 Frida 是否能够正确地识别、访问和修改这类结构，这对于逆向工程、安全分析和动态调试 Java 应用非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/java/4 inner class/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class Simple {
@@ -187,7 +189,4 @@ class Simple {
         System.out.println(ic.getString());
     }
 }
-
-"""
-
 ```

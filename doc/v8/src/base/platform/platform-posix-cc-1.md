@@ -108,7 +108,7 @@ This systematic approach of scanning, deconstructing, connecting, and identifyin
 
 `v8/src/base/platform/platform-posix.cc` 文件（基于提供的第二部分代码）实现了 V8 引擎在 POSIX 系统上的核心平台功能，特别是针对地址空间管理和线程管理进行了封装。它提供了对虚拟内存的精细控制，以及创建和管理操作系统线程的能力，这些都是 V8 引擎高效运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-posix.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/platform/platform-posix.cc以.tq结尾，那它是个v8 torque源代码，
@@ -116,8 +116,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 vation reservation) {
   // Nothing to do.
   // Pages allocated inside the reservation must've already been freed.
@@ -473,8 +475,4 @@ Stack::StackSlot Stack::GetCurrentStackPosition() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
-
 ```

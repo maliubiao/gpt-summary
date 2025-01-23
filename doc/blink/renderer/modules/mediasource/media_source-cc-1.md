@@ -178,7 +178,7 @@ Here's a breakdown of its functionalities:
 
 This section of the `media_source.cc` file is crucial for the core functionality of the Media Source Extensions API. It manages the temporal aspects of the media stream (buffered and seekable ranges, duration), the operational state of the `MediaSource`, and the connection between the `MediaSource` and the HTMLMediaElement. It also lays the groundwork for more advanced features like MSE-in-Workers by handling cross-thread attachment and handle management. The code prioritizes consistency, error handling, and adherence to the MSE specification.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasource/media_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -186,9 +186,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- pass_key);
+### 源代码
+```cpp
+pass_key);
   }
 
   WebTimeRanges intersection_ranges;
@@ -965,7 +967,4 @@ void MediaSource::DetachWorkerOnContextDestruction_Locked(
       // In this case, not only is our context shutting down, but the media
       // element is also at least tearing down the WebMediaPlayer (and the
       // underlying demuxer owned by it) already. W
-"""
-
-
 ```

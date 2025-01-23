@@ -152,7 +152,7 @@ int rOne(void) {
 
 总而言之，`rone.c` 中的 `rOne` 函数是一个非常基础的测试辅助函数。它的价值在于其简单性，这使得它成为测试框架、基本功能验证以及 Frida 初学者学习 hook 技术的理想目标。 在实际的调试过程中，开发者通常会通过错误信息、测试日志等线索逐步定位到这类简单的辅助文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/218 include_dir dot/src/rone.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,11 +160,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int rOne(void) {
     return 1;
 }
-"""
-
 ```

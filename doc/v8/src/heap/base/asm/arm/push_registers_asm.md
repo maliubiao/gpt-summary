@@ -96,11 +96,13 @@ myFunction();
 
 `push_registers_asm.cc` 是 V8 引擎中一个底层的、架构相关的代码文件，它通过汇编指令将关键寄存器推入栈中，为保守的栈扫描提供必要的信息，确保垃圾回收器能够准确识别活动对象，从而保证 JavaScript 程序的正确性和稳定性。它虽然不能直接从 JavaScript 调用，但其行为直接影响着 JavaScript 程序的内存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/asm/arm/push_registers_asm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -146,7 +148,4 @@ asm(".globl PushAllRegistersAndIterateStack             \n"
     ".Lfunc_end0-PushAllRegistersAndIterateStack\n"
 #endif  // !defined(__APPLE__)
     );
-
-"""
-
 ```

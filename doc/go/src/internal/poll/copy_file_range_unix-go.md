@@ -147,7 +147,7 @@ func main() {
 
 总而言之，这段 Go 代码是文件复制功能在特定 Unix 系统上的高效实现，通过直接利用内核提供的 `copy_file_range` 系统调用来提升性能。理解这段代码有助于深入了解 Go 语言标准库在底层是如何进行优化的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/copy_file_range_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -155,8 +155,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -227,9 +229,4 @@ func copyFileRange(dst, src *FD, max int) (written int64, err error) {
 		return int64(n), err
 	})
 }
-
-"""
-
-
-
 ```

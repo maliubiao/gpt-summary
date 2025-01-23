@@ -135,7 +135,7 @@ func main() {
 
 `go/src/runtime/runtime_boring.go` 文件提供了一个内部机制，允许特定的 `crypto` 包获取程序的名称。这利用了 `go:linkname` 指令实现了跨包的函数链接，而无需显式的包导入。 普通的 Go 开发者无需关注或直接使用这些函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/runtime_boring.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -143,8 +143,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -164,9 +166,4 @@ func boring_runtime_arg0() string {
 
 //go:linkname fipstls_runtime_arg0 crypto/internal/boring/fipstls.runtime_arg0
 func fipstls_runtime_arg0() string { return boring_runtime_arg0() }
-
-"""
-
-
-
 ```

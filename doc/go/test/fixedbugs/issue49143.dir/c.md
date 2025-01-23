@@ -144,15 +144,17 @@ And `c.go` has `import "./b"`. This would be incorrect because `b` is a sibling 
 
 **In summary, this code snippet defines a `todoResolver` that, when its `F` method is called, triggers a data loading process implemented in a separate package `b`. It hints at a dependency injection or service locator pattern where different resolvers might exist, and `todoResolver` is a specific type focused on loading data.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue49143.dir/c.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -168,9 +170,4 @@ type todoResolver struct{ *Resolver }
 func (r *todoResolver) F() {
 	b.NewLoaders().Loader.Load()
 }
-
-"""
-
-
-
 ```

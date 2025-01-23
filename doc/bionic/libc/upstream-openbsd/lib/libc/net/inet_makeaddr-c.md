@@ -254,7 +254,7 @@ sys.stdin.read()
 
 总结来说，`inet_makeaddr` 是一个底层的网络地址构造函数，在 Android 系统中被广泛使用，尽管开发者通常不会直接调用它。理解其功能和实现原理有助于深入理解 Android 的网络栈。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/net/inet_makeaddr.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -265,8 +265,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: inet_makeaddr.c,v 1.7 2015/01/16 16:48:51 deraadt Exp $ */
 /*
  * Copyright (c) 1983, 1993
@@ -320,7 +322,4 @@ inet_makeaddr(in_addr_t net, in_addr_t host)
 	addr = htonl(addr);
 	return (*(struct in_addr *)&addr);
 }
-
-"""
-
 ```

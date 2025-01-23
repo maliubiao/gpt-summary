@@ -213,7 +213,7 @@ if (Process.platform === 'linux') {
 
 总结第 1 部分，该头文件主要定义了 **用户空间程序与 Linux KVM 内核模块交互所需的接口，用于创建、配置和控制虚拟机。** 它通过定义一系列数据结构和 ioctl 命令，涵盖了虚拟机管理、VCPU 控制、中断处理、内存管理和设备模拟等关键功能。这些功能是 Android 模拟器和一些容器化技术实现硬件加速虚拟化的基础。虽然动态链接器本身不直接与此文件交互，但客户机操作系统内部的动态链接过程在 KVM 提供的虚拟化环境中正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/kvm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -225,8 +225,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -1271,7 +1273,4 @@ struct kvm_enc_region {
 #define KVM_SET_SREGS2 _IOW(KVMIO, 0xcd, struct kvm_sregs2)
 #define KVM_DIRTY_LOG_MANUAL_PROTECT_ENABLE (1 << 0)
 #define KVM_DIR
-"""
-
-
 ```

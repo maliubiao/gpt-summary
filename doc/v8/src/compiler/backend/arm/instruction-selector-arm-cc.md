@@ -169,7 +169,7 @@ let firstElement = arr[0];
 
 `v8/src/compiler/backend/arm/instruction-selector-arm.cc` 的这部分代码定义了 V8 编译器后端中针对 ARM 架构的指令选择逻辑。它负责将中间表示的运算和操作转换为具体的 ARM 机器指令，并进行了一些针对 ARM 架构的优化，例如利用立即数和移位操作。它包含了处理各种操作的 `Visit...` 函数，以及用于生成 ARM 操作数的辅助类 `ArmOperandGeneratorT`。这部分代码是 V8 将 JavaScript 代码高效地编译为 ARM 机器码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/instruction-selector-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm/instruction-selector-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -177,8 +177,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -989,7 +991,4 @@ void InstructionSelectorT<TurbofanAdapter>::VisitStoreLane(Node* node) {
   inputs[2] = g.UseRegister(node->InputAt(0));
   inputs[3] = g.UseRegister(node->InputAt(1));
   EmitAddBeforeS128LoadStore(this, &opcode, &input_count, &
-"""
-
-
 ```

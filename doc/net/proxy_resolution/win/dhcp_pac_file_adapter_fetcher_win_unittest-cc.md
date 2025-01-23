@@ -130,15 +130,17 @@ PAC 文件本身就是一段 JavaScript 代码，浏览器会执行这段代码�
 
 总而言之，`dhcp_pac_file_adapter_fetcher_win_unittest.cc` 是一个至关重要的单元测试文件，用于确保 Chrome 浏览器在 Windows 平台上通过 DHCP 获取 PAC 文件的功能的正确性和稳定性。它通过模拟各种场景，有效地验证了核心逻辑，并为开发者提供了调试和排查问题的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/win/dhcp_pac_file_adapter_fetcher_win_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -497,7 +499,4 @@ TEST(DhcpPacFileAdapterFetcher, SanitizeDhcpApiString) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

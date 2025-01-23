@@ -232,15 +232,17 @@ go run your_program.go --name="Alice" --age=30
 
 总而言之，这段 `go/test/print.go` 代码是一个针对 Go 语言内置 `println` 函数的单元测试，用于验证其在处理不同数据类型时的输出是否符合预期。它并不涉及复杂的命令行参数处理，但可以帮助我们理解 `println` 的基本用法和一些潜在的误用场景。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/print.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -295,9 +297,4 @@ func main() {
 	defer println("hello")
 	defer println("one", "two")
 }
-
-"""
-
-
-
 ```

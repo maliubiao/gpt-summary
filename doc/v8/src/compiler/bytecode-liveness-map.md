@@ -100,11 +100,13 @@ example();
 
 `bytecode-liveness-map.cc` 文件中的 `ToString` 函数是 V8 内部用于调试和理解字节码执行过程中寄存器和累加器活跃状态的工具。虽然 JavaScript 开发者不需要直接使用它，但它反映了 V8 引擎为了高效执行 JavaScript 代码所做的底层优化工作，例如了解哪些变量的值仍然需要被保留在寄存器中，哪些可以被释放。 这直接影响了 JavaScript 代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/bytecode-liveness-map.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -136,7 +138,4 @@ std::string ToString(const BytecodeLivenessState& liveness) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

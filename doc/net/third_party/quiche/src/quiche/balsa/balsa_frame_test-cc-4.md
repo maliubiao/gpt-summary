@@ -128,7 +128,7 @@ Content-Length: 25
 
 总而言之，这部分代码着重于测试 `BalsaFrame` 对各种 HTTP 头部格式、Trailer 以及错误情况的鲁棒性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/balsa/balsa_frame_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lidation_policy);
 
   std::string header =
@@ -1061,8 +1063,4 @@ TEST_F(HTTPBalsaFrameTest, Support100Continue401Unauthorized) {
 
   InSequence s;
   EXPECT_CALL(visitor_mock_, OnInterimHeaders(Pointee(Property(
-           
-"""
-
-
 ```

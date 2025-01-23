@@ -137,7 +137,7 @@ This iterative process of skimming, focusing, connecting, refining, and reviewin
 
 总而言之，`vs2022backend.py` 是 Frida 项目中 Meson 构建系统的一个关键组件，它负责生成用于 Visual Studio 2022 的构建文件，并对构建过程中的编译器选择、SDK 配置、调试信息生成和语言标准设置进行管理。理解这个文件的功能对于理解 Frida 的构建过程以及解决与 Visual Studio 构建相关的问题至关重要，尤其对于需要进行逆向分析、了解底层机制的开发者和研究人员而言。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/backend/vs2022backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2021 The Meson development team
 
@@ -201,7 +203,4 @@ class Vs2022Backend(Vs2010Backend):
             optargs = [x for x in file_args['c'] if x.startswith('/std:c')]
             if optargs:
                 ET.SubElement(clconf, 'LanguageStandard_C').text = optargs[0].replace("/std:c", "stdc")
-
-"""
-
 ```

@@ -178,7 +178,7 @@ By following this structured approach, considering the different facets of the r
 
 总而言之，`message-dispatcher.js` 是 Frida Gum 中 JavaScript 运行时环境的核心组件，负责处理与 Frida 核心和其他组件之间的消息通信，并提供了远程调用 JavaScript 函数的能力。理解其功能对于编写有效的 Frida 脚本进行动态分析、逆向工程和安全研究至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/runtime/message-dispatcher.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const engine = global;
 
 module.exports = MessageDispatcher;
@@ -314,8 +316,4 @@ function MessageRecvOperation(callback) {
 
   return [this, complete];
 }
-
-
-"""
-
 ```

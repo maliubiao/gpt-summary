@@ -121,7 +121,7 @@ Let's break down the thought process for analyzing this Python code.
 
 `loaderbase.py` 文件在 Frida Python 绑定的构建过程中扮演着关键角色，它定义了加载和验证 API 参考手册数据的框架。虽然它不直接参与动态 instrumentation，但它确保了 Frida Python API 文档的准确性和完整性，这对于逆向工程师有效地使用 Frida 至关重要。文件中包含的验证逻辑有助于提前发现文档编写中的错误，提升文档质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/docs/refman/loaderbase.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -336,7 +338,4 @@ class LoaderBase(metaclass=ABCMeta):
         resolver = _Resolver()
         with mlog.nested():
             return resolver.validate_and_resolve(manual)
-
-"""
-
 ```

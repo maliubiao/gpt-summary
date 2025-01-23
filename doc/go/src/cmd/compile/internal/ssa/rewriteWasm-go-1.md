@@ -129,7 +129,7 @@ Args: [Value{Op: ... (与输入相同)}, Value{Op: OpZeroExt16to64, Args: [Value
 
 作为 `rewriteWasm.go` 文件的一部分，这部分代码的核心功能是在 Go 编译器的 SSA 阶段，将 Go 语言的中间表示转换为更贴近 WebAssembly 平台的表示。它针对特定的 Go 语言操作符，通过模式匹配和转换规则，生成等效的 WebAssembly 操作序列，并进行一些平台相关的优化。这确保了最终生成的 WebAssembly 代码能够高效地执行 Go 程序。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteWasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -137,8 +137,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 writeValueWasm_OpRsh64x16(v *Value) bool {
 	v_1 := v.Args[1]
 	v_0 := v.Args[0]
@@ -2158,10 +2160,4 @@ func rewriteValueWasm_OpZeroExt8to64(v *Value) bool {
 func rewriteBlockWasm(b *Block) bool {
 	return false
 }
-
-"""
-
-
-
-
 ```

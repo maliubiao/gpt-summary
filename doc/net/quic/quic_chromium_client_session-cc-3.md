@@ -409,7 +409,7 @@ For each method, I need to:
 
 总而言之，这部分代码是 QUIC 客户端会话管理的核心，它确保了连接的稳定性和可靠性，并在网络环境变化时尝试进行智能的迁移，以提供最佳的网络体验。虽然与 JavaScript 没有直接的接口，但它所做的工作直接影响了 JavaScript 发起的网络请求的成功率和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_chromium_client_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -417,8 +417,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 iately.
     MigrateNetworkImmediately(network);
   } else {
@@ -1276,7 +1278,4 @@ void QuicChromiumClientSession::LogMetricsOnNetworkMadeDefault() {
   if (most_recent_path_degrading_timestamp_ != base::TimeTicks()) {
     if (most_recent_network_disconnected_timestamp_ != base::TimeTicks()) {
       // NetworkDiscconected happens before NetworkMadeD
-"""
-
-
 ```

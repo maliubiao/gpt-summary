@@ -155,15 +155,17 @@ Let's break down the thought process for analyzing this code. The request asks f
 
 总而言之， `RTCEncodedAudioUnderlyingSink` 是 WebRTC 音频接收管线中的一个关键组件，负责接收和初步处理来自 JavaScript 的编码音频数据，并将其传递给后续的处理模块。它与 JavaScript 的 WebRTC API 紧密相关，但不直接涉及 HTML 或 CSS。理解其功能有助于调试 WebRTC 音频接收相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_encoded_audio_underlying_sink.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -283,7 +285,4 @@ void RTCEncodedAudioUnderlyingSink::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

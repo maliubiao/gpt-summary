@@ -117,11 +117,13 @@ console.log(weakRef.deref()); // 如果对象被回收，输出 undefined
 
 `liveness-broker.cc` 中的 `LivenessBroker` 类是 V8 引擎中用于判断堆对象是否存活的关键组件。虽然 JavaScript 开发者不能直接操作它，但其功能是 JavaScript 垃圾回收机制的基础，确保了不再使用的 JavaScript 对象能够被有效地回收，从而避免内存泄漏。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/liveness-broker.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -146,7 +148,4 @@ cppgc::LivenessBroker LivenessBrokerFactory::Create() {
 }  // namespace internal
 
 }  // namespace cppgc
-
-"""
-
 ```

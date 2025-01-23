@@ -159,7 +159,7 @@ Hello from D! Value: 1
 
 总而言之，`cppmain.cpp` 是 Frida 用于与 Swift 代码交互的一个小型但关键的组件，它负责初始化和终止 Swift 运行时环境，并允许 C++ 代码调用 Swift 函数，这为 Frida 动态 instrumentation Swift 应用提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/d/10 d cpp/cppmain.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 extern "C" int rt_init();
 extern "C" int rt_term();
 extern void print_hello(int i);
@@ -187,7 +189,4 @@ int main(int, char**) {
 
     return 0;
 }
-
-"""
-
 ```

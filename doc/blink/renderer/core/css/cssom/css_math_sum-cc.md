@@ -186,15 +186,17 @@ CSSMathSum* sum = CSSMathSum::Create(std::move(values), exception_state);
 
 总而言之，`css_math_sum.cc` 文件在 Blink 渲染引擎中扮演着处理 CSS 加法运算的关键角色，它连接了 CSS 文本、CSSOM 和最终的计算结果，使得浏览器能够正确地解析和应用包含 `calc()` 函数的 CSS 样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/css_math_sum.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -340,7 +342,4 @@ void CSSMathSum::BuildCSSText(Nested nested,
 }
 
 }  // namespace blink
-
-"""
-
 ```

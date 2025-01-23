@@ -171,7 +171,7 @@ find_program('adb', dirs: ['/usr/bin', '/opt/android-sdk/platform-tools'])
 
 当构建过程中出现问题时，例如找不到编译器或依赖项，查看 Meson 的输出日志可以帮助定位问题。日志中会显示调用了哪些 `interpreter.py` 中的函数，以及这些函数的参数和执行结果。例如，如果看到类似 "Compiler for language c not found" 的错误信息，就可以知道问题出在 `add_languages` 函数中，可能是系统缺少 C 编译器，或者配置不正确。类似地，如果看到 "Program 'my_custom_tool' not found" 的错误，则表明 `func_find_program` 没有找到该程序，需要检查程序是否存在或者是否在正确的搜索路径中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 'backend'))
             vsenv = self.coredata.get_option(OptionKey('vsenv'))
             force_vsenv = vsenv or backend.startswith('vs')
@@ -805,7 +807,4 @@ Prompt:
     @typed_kwargs(
         'vcs_tag',
         CT_INPUT_KW.evolve(required
-"""
-
-
 ```

@@ -177,7 +177,7 @@ class TorqueGeneratedPoint : public P {
 
 As part 6 of 7, this code segment within `v8/src/torque/implementation-visitor.cc` is responsible for **generating the C++ class definitions and associated accessor methods that represent the structure and behavior of classes defined in Torque (.tq) files.** This is a crucial step in the Torque compilation process, translating the high-level Torque definitions into the low-level C++ code that V8 uses internally to represent JavaScript objects and implement built-in functionality. It ensures type safety, manages memory correctly (especially for heap objects), and provides a C++ interface for interacting with Torque-defined data structures.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/implementation-visitor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/implementation-visitor.cc以.tq结尾，那它是个v8 torque源代码，
@@ -185,8 +185,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d::ostream& header,
                     std::ostream& inl_header, std::ostream& impl)
       : type_(type),
@@ -1036,8 +1038,4 @@ void ImplementationVisitor::GenerateClassDefinitions(
           if (f.name_and_type.name == "map") continue;
           if (f.name_and_type.name == "self_indirect_pointer") {
             factory_impl << "  "
-                    
-"""
-
-
 ```

@@ -315,7 +315,7 @@ if __name__ == "__main__":
 
 这个 Frida 脚本会在目标进程调用 `ioctl` 且请求码为 `RDMA_VERBS_IOCTL` 时，打印出相关的调试信息，帮助你了解 Android Framework 或 NDK 如何一步步到达这里，以及传递给内核的具体参数。请注意，你需要根据实际的 Android 系统和 RDMA 驱动来调整 Frida 脚本中的一些假设，例如 `RDMA_VERBS_IOCTL` 的具体值和结构体的大小。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/rdma/rdma_user_ioctl_cmds.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -326,8 +326,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -371,7 +373,4 @@ struct ib_uverbs_ioctl_hdr {
   struct ib_uverbs_attr attrs[];
 };
 #endif
-
-"""
-
 ```

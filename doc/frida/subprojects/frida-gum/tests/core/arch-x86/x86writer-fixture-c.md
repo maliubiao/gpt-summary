@@ -144,7 +144,7 @@ By following this structured approach—understanding the basic building blocks,
 
 总而言之，`x86writer-fixture.c` 是 Frida `frida-gum` 库中一个至关重要的测试文件，它确保了 `GumX86Writer` 能够正确地生成 x86/x64 机器码，这对于 Frida 实现其动态插桩功能至关重要，并与逆向分析的很多场景紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-x86/x86writer-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2010 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -247,7 +249,4 @@ static void gum_test_native_function (const gchar * arg1, const gchar * arg2,
 
 #define assert_output_equals(e) \
     test_code_writer_fixture_assert_output_equals (fixture, e, sizeof (e))
-
-"""
-
 ```

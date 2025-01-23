@@ -144,15 +144,17 @@ If runtime call statistics are enabled, running this code might show a very high
 
 **In summary, `v8/src/logging/runtime-call-stats.cc` is a vital piece of V8's internal instrumentation. It helps developers understand the performance characteristics of the engine by tracking the execution of its internal functions, which are directly triggered by the execution of JavaScript code.** It's not Torque code, but it works in conjunction with Torque-generated code by measuring its runtime behavior. While JavaScript developers don't directly interact with this file, the data it provides can be invaluable for performance analysis and optimization.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/runtime-call-stats.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/logging/runtime-call-stats.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -510,7 +512,4 @@ WorkerThreadRuntimeCallStatsScope::~WorkerThreadRuntimeCallStatsScope() {
 }  // namespace v8
 
 #endif  // V8_RUNTIME_CALL_STATS
-
-"""
-
 ```

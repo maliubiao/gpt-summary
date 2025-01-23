@@ -170,7 +170,7 @@ rpc.exports = {
 
 因此，用户到达这个文件的目的是为了理解为什么这个特定的绑定生成测试用例会失败，以及相关的 C 代码是如何参与到这个失败过程中的。他们可能正在检查 `header.h` 的内容，查看 Frida 如何处理这个简单的 `add` 函数的绑定生成，以及生成的绑定在 JavaScript 中使用时是否会引发问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/111 nonsensical bindgen/src/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // SPDX-license-identifer: Apache-2.0
 // Copyright © 2021 Intel Corporation
 
@@ -188,7 +190,4 @@ Prompt:
 int32_t add(const int32_t first, const int32_t second) {
     return first + second;
 }
-
-"""
-
 ```

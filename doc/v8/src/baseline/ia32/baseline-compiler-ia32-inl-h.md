@@ -220,15 +220,17 @@ This demonstrates how the prologue sets up the initial state of the function's r
 
 In summary, `v8/src/baseline/ia32/baseline-compiler-ia32-inl.h` is a vital piece of V8's Baseline compiler for the IA-32 architecture. It defines the initial setup steps (the prologue) for Baseline-compiled JavaScript functions, ensuring the correct execution environment is established before the function's main code runs.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/ia32/baseline-compiler-ia32-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/baseline/ia32/baseline-compiler-ia32-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Use of this source code is governed by a BSD-style license that can be
 // Copyright 2021 the V8 project authors. All rights reserved.
 // found in the LICENSE file.
@@ -330,7 +332,4 @@ void BaselineCompiler::VerifyFrameSize() {
 }  // namespace v8
 
 #endif  // V8_BASELINE_IA32_BASELINE_COMPILER_IA32_INL_H_
-
-"""
-
 ```

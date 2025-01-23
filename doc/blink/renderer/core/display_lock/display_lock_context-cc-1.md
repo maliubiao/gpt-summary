@@ -122,16 +122,18 @@ By going through each method and considering its purpose and interaction with ot
 
 `DisplayLockContext` 的这部分代码负责管理与 `content-visibility: auto` 元素相关的锁定和解锁行为。它监听文档和元素的生命周期事件，检查影响渲染的各种状态（如焦点、选择、顶层元素、锚点定位），并根据这些状态决定是否应该锁定元素以优化渲染性能。如果元素不满足锁定的前提条件，它还会提供强制解锁的机制。这部分代码是 Blink 渲染引擎中实现 `content-visibility` 功能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/display_lock/display_lock_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-        PrePaintTreeWalk::ObjectRequiresTreeBuilderContext(*layout_object) ||
+### 源代码
+```cpp
+PrePaintTreeWalk::ObjectRequiresTreeBuilderContext(*layout_object) ||
            needs_prepaint_subtree_walk_ ||
            needs_effective_allowed_touch_action_update_ ||
            needs_blocking_wheel_event_handler_update_;
@@ -736,8 +738,4 @@ void DisplayLockContext::SetAffectedByAnchorPositioning(bool val) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

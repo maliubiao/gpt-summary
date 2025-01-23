@@ -145,15 +145,17 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`idleness_detector_test.cc` 通过模拟各种场景来确保 `IdlenessDetector` 能够准确地检测网络空闲状态，这对于 Chromium 优化页面加载和资源管理至关重要。其行为与 JavaScript, HTML, CSS 息息相关，因为这些技术是网络活动和任务处理的主要来源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/idleness_detector_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ TEST_F(IdlenessDetectorTest, NetworkQuietWatchdogTimerFired) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -163,14 +163,16 @@ paddingStart: 2,
 
 总而言之，`internal_popup_menu.cc` 是 Chromium Blink 引擎中一个关键的组成部分，它专注于 `<select>` 元素下拉列表的内部实现，涉及到 HTML 结构生成、CSS 样式应用、与 JavaScript 的数据交互以及辅助功能等多个方面。理解这个文件的功能有助于深入了解浏览器如何渲染和管理表单控件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/internal_popup_menu.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -931,7 +933,4 @@ void InternalPopupMenu::SetMenuListOptionsBoundsInAXTree(
 }
 
 }  // namespace blink
-
-"""
-
 ```

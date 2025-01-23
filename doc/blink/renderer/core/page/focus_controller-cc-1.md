@@ -82,7 +82,7 @@ Here's a breakdown of the code's main responsibilities:
 
 通过调试器，开发者可以设置断点在 `ScopedFocusNavigation` 的方法或相关的辅助函数中，观察变量的值，例如当前的元素、`tabindex` 值、Shadow Host 的状态等，从而理解焦点导航的流程和定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/focus_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -90,9 +90,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- It is a scroller with focusable children
+### 源代码
+```cpp
+It is a scroller with focusable children
   // When tabindex is negative, we should not visit the host.
   return !(element.GetIntegralAttribute(html_names::kTabindexAttr, 0) < 0);
 }
@@ -949,7 +951,4 @@ Element* FocusController::NextFocusableElementForImeAndAutofill(
       if (form_owner) {
         if (next_element->IsDescendantOf(form_owner)) {
           // |eleme
-"""
-
-
 ```

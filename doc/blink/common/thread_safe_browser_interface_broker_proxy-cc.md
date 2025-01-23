@@ -101,14 +101,16 @@ Initially, I might be tempted to oversimplify the connection to JavaScript/HTML/
 
 `ThreadSafeBrowserInterfaceBrokerProxy` 是 Blink 引擎中一个重要的基础设施组件，负责安全、高效地获取浏览器进程提供的各种功能接口。 它本身不直接处理前端代码，但它是实现许多前端功能的基础，其稳定性和效率直接影响着用户的浏览体验。  `SetBinderForTesting` 机制主要用于内部测试，允许模拟浏览器行为，保证了Blink引擎各个组件可以独立地进行测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/thread_safe_browser_interface_broker_proxy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ bool ThreadSafeBrowserInterfaceBrokerProxy::SetBinderForTesting(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -96,7 +96,7 @@ int main(int argc, char *argv[]) { return 0; }
 
 尽管这个 `main.c` 文件本身功能简单，但它在一个专门设计的测试用例中扮演着重要的角色。它的存在是为了验证 Frida 在缺少必要编译工具时的行为是否符合预期，从而确保 Frida 的健壮性和错误处理能力。 对于开发者来说，分析这个测试用例可以帮助理解 Frida 构建过程中的依赖关系和潜在的错误场景。对于用户来说，遇到与此类似的错误提示，应该检查其系统是否安装了必要的编译工具链。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/118 missing compiler/subprojects/sub/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,10 +104,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char *argv[]) { return 0; }
-
-"""
-
 ```

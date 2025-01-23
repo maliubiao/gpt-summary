@@ -105,14 +105,16 @@ By following this thought process, we can systematically analyze the code and pr
 
 总而言之，`icu_fold_case_util.cc` 提供了一个关键的工具，用于在 Blink 引擎内部处理需要进行不区分大小写比较的字符串，尤其是在涉及到国际化和 Unicode 字符的情况下，它比简单的字符串大小写转换方法更加准确和可靠。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/font_unique_name_lookup/icu_fold_case_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -132,7 +134,4 @@ std::string IcuFoldCase(const std::string& name_request) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

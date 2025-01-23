@@ -134,7 +134,7 @@ Here's a breakdown of the tasks:
 
 总而言之，这部分测试代码专注于验证当 Canvas 2D API 中的阴影效果与其他功能（如变换、合成、图案和图层）结合使用时，Blink 渲染引擎的底层绘制逻辑是否正确无误。这些测试对于保证 Web 开发者在使用 Canvas API 时，能够获得预期且一致的渲染结果至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/base_rendering_context_2d_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -142,9 +142,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
-                       0, 1, 0, 5,  //
+### 源代码
+```cpp
+0, 1, 0, 5,  //
                                                           0, 0, 1, 0,  //
                                                           0, 0, 0, 1)),
                              PaintOpEq<DrawRectOp>(SkRect::MakeXYWH(1, 1, 5, 5),
@@ -887,7 +889,4 @@ TEST(BaseRenderingContextLayerGlobalStateTests, GlobalAlphaAndBlending) {
   ScopedCanvas2dLayersForTest layer_feature(/*enabled=*/true);
   V8TestingScope scope;
   auto
-"""
-
-
 ```

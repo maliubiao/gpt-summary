@@ -79,7 +79,7 @@ Let's address the specific questions:
 
 `v8/src/diagnostics/riscv/disasm-riscv.cc` 的第三部分主要负责 **解码和格式化 RISC-V 架构的向量扩展 (RVV) 指令，并将其与之前实现的非 RVV 指令解码功能结合起来，提供了一个完整的 RISC-V 指令反汇编器**。这个反汇编器是 V8 引擎进行调试和分析的重要组成部分，帮助开发者理解 JavaScript 代码在底层是如何执行的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/riscv/disasm-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/riscv/disasm-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -87,8 +87,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 vs1");
       } else {
         UNREACHABLE();
@@ -1079,8 +1081,4 @@ void Disassembler::Disassemble(FILE* f, uint8_t* begin, uint8_t* end,
 #undef STRING_STARTS_WITH
 
 }  // namespace disasm
-
-"""
-
-
 ```

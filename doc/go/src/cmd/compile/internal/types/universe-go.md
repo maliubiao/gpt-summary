@@ -147,15 +147,17 @@ func main() {
 
 `go/src/cmd/compile/internal/types/universe.go` 是 Go 语言编译器的核心组成部分，负责初始化和管理内置类型。它为编译器的后续阶段提供了必要的类型信息，确保了 Go 语言的类型安全和正确性。 理解这段代码的功能有助于更深入地理解 Go 语言的类型系统和编译过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types/universe.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -310,9 +312,4 @@ func makeErrorInterface() *Type {
 func makeComparableInterface() *Type {
 	return NewInterface(nil)
 }
-
-"""
-
-
-
 ```

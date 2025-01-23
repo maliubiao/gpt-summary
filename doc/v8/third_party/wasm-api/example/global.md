@@ -156,11 +156,13 @@ runWasm();
 
 `global.cc` 这个 C++ 文件是一个使用 WebAssembly C++ API 的示例，它演示了如何加载、实例化一个包含全局变量的 WebAssembly 模块，并与这些全局变量进行交互，包括读取和修改它们的值。  它的功能与 JavaScript 中使用 WebAssembly JavaScript API 完成相同任务的方式非常相似，都涉及到加载模块、提供导入、访问导出以及与导出的全局变量和函数进行交互。这个 C++ 代码可以看作是 JavaScript 与 WebAssembly 交互原理的一个低级别实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/example/global.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -356,8 +358,4 @@ int main(int argc, const char* argv[]) {
   std::cout << "Done." << std::endl;
   return 0;
 }
-
-
-"""
-
 ```

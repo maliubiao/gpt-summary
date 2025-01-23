@@ -124,7 +124,7 @@ Finally, I organized the information into logical sections, addressing each part
 * 尝试 hook `sleep` 函数，观察线程的睡眠行为。
 * 在更复杂的程序中，hook 共享变量的访问，以检测潜在的竞争条件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/wasm/2 threads/threads.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <unistd.h>
 #include <pthread.h>
@@ -155,7 +157,4 @@ int main() {
 # error "threads not enabled\n"
 #endif
 }
-
-"""
-
 ```

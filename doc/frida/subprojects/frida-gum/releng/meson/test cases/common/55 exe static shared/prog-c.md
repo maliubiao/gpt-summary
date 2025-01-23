@@ -173,7 +173,7 @@ By following this systematic breakdown, combining understanding of the code, Fri
 
 总结来说，这段简单的 C 代码片段虽然功能不多，但它作为一个测试用例，很好地展示了在实际开发和逆向工程中会遇到的关于静态库、共享库以及动态插桩技术 (如 Frida) 的概念和应用。通过分析这段代码，我们可以了解 Frida 如何用于动态地观察和修改程序行为，从而进行调试和逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/55 exe static shared/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int shlibfunc2(void);
 int statlibfunc(void);
 
@@ -193,7 +195,4 @@ int main(void) {
         return 1;
     return 0;
 }
-
-"""
-
 ```

@@ -181,14 +181,16 @@ By following these steps, I can decompose the code, understand its purpose, and 
 
 `svg_length_interpolation_type.cc` 是 Blink 引擎中一个重要的组成部分，它确保了 SVG 长度属性的动画能够平滑且正确地进行。它处理了类型转换、单位管理、中性值和负值限制等关键方面，使得开发者可以通过 CSS 和 JavaScript 创建丰富的 SVG 动画效果。理解其功能有助于开发者避免常见的动画错误，并更好地利用 SVG 的动画能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/svg_length_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ SVGPropertyBase* SVGLengthInterpolationType::AppliedSVGValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

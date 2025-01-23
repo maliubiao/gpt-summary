@@ -177,7 +177,7 @@ This systematic approach, starting with a high-level overview and gradually dril
 
 总而言之，这部分代码是 Frida 构建系统的关键组成部分，它将高层次的构建描述转换为底层构建工具能够理解的指令，特别是在处理共享库依赖方面扮演着至关重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,9 +186,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
- if Path(dir).is_dir():
+### 源代码
+```python
+if Path(dir).is_dir():
                         dirs.add(dir)
             symbols_match = symbols_regex.match(arg)
             if symbols_match:
@@ -852,8 +854,5 @@ Prompt:
             for arg in t.cmd_args:
                 if not isinstance(arg, (build.CustomTarget, build.BuildTarget)):
                     continue
-                result[arg.get_id()] 
-"""
-
-
+                result[arg.get_id()]
 ```

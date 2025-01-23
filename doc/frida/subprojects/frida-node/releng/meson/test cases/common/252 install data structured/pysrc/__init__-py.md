@@ -146,7 +146,7 @@ By following these steps, I arrived at the detailed answer provided previously, 
 
 总而言之，尽管这个 `__init__.py` 文件本身非常简单，但它在 Python 的模块化系统中扮演着至关重要的角色，并且对于理解 Frida 项目中 Python 组件的组织结构和潜在的导入问题至关重要。在调试与 Frida Node.js 绑定相关的 Python 代码时，检查 `__init__.py` 文件是常见的排错步骤之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/252 install data structured/pysrc/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,10 +154,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''init for mod'''
-
-"""
-
 ```

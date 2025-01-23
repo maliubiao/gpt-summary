@@ -185,7 +185,7 @@ python file_contains.py /path/to/config.ini "license_key=ABCDEFG12345"
 
 总而言之，`file_contains.py` 虽然是一个简单的脚本，但在 Frida 的开发、测试以及逆向分析的流程中，可以作为一个有用的工具，帮助开发者或逆向工程师快速检查配置文件的内容，从而辅助调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/14 configure file/file_contains.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -217,7 +219,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

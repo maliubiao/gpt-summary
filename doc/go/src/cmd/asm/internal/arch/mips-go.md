@@ -198,15 +198,17 @@ FMOV F40, F1
 
 总而言之，`mips.go` 文件在 Go 汇编器中扮演着 MIPS 架构指令集特性的“翻译器”角色，帮助汇编器理解和正确处理 MIPS 汇编代码。它通过一系列函数，识别特定的指令类型和寄存器，并将它们转换为汇编器内部易于处理的表示形式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/asm/internal/arch/mips.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -279,9 +281,4 @@ func mipsRegisterNumber(name string, n int16) (int16, bool) {
 	}
 	return 0, false
 }
-
-"""
-
-
-
 ```

@@ -169,7 +169,7 @@ func main() {
 
 总而言之，这段代码片段是 `archive/tar` 包中用于提取文件访问时间和状态更改时间的底层实现，它依赖于操作系统提供的 `stat` 系统调用。开发者在使用 `archive/tar` 包时，需要注意区分不同类型的时间戳的含义。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/archive/tar/stat_actime1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -177,8 +177,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -199,9 +201,4 @@ func statAtime(st *syscall.Stat_t) time.Time {
 func statCtime(st *syscall.Stat_t) time.Time {
 	return time.Unix(st.Ctim.Unix())
 }
-
-"""
-
-
-
 ```

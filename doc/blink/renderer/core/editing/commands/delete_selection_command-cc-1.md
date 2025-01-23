@@ -92,7 +92,7 @@ The user wants a summary of the functionality of the provided C++ code, which is
 
 在调试时，可以通过在 `DoApply` 方法的各个阶段设置断点，观察变量的值和 DOM 结构的变化，来理解删除操作的具体执行过程，以及定位可能出现的问题。 例如，可以检查 `ending_position_` 的值，查看删除操作后光标停留的位置是否正确，或者检查 DOM 树，确认是否产生了预期的节点增删。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/delete_selection_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -100,8 +100,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ));
     }
   }
@@ -780,8 +782,4 @@ void DeleteSelectionCommand::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

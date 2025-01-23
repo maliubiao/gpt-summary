@@ -171,14 +171,16 @@ By following these steps, a comprehensive and accurate answer can be generated, 
 
 `font_performance.cc` 是 Blink 引擎中一个重要的性能监控模块，它专注于记录字体加载的关键时间点。虽然它不直接操作 JavaScript、HTML 或 CSS，但它度量的指标反映了这些技术在字体使用和加载方面的性能表现。开发者可以通过分析这些指标，发现并解决与字体加载相关的性能问题，从而提升用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_performance.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ void FontPerformance::MarkDomContentLoaded() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

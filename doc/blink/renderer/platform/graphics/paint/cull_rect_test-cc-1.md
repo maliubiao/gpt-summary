@@ -89,16 +89,18 @@ I'll focus on summarizing the purpose of each test and its relevance to web tech
 
 总而言之，这部分测试主要验证了 `CullRect` 在各种复杂的裁剪和滚动场景下的正确性和有效性，包括合成滚动带来的影响，以及多个裁剪的合并处理。这些测试确保了渲染引擎能够准确地计算出需要绘制的区域，从而提高渲染性能并避免绘制不必要的内容。测试还覆盖了一些边界情况，例如非整数的裁剪值和零尺寸的裁剪区域，以及与单轴滚动的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/cull_rect_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- CullRect cull_rect4;
+### 源代码
+```cpp
+CullRect cull_rect4;
   EXPECT_FALSE(ApplyPaintProperties(cull_rect4, root, root, state1));
   EXPECT_EQ(gfx::Rect(), cull_rect4.Rect());
 }
@@ -307,8 +309,4 @@ TEST_F(CullRectTest, TransferExpansionOutsetBlocked) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

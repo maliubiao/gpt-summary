@@ -321,7 +321,7 @@ Android 的动态链接器通常采用延迟绑定技术来优化启动时间。
 
 总而言之，`s_lroundl.c` 虽然代码简洁，但它在 Android 系统中扮演着重要的角色，为需要进行高精度浮点数舍入的场景提供了基础功能。理解其背后的实现原理以及与动态链接器的关系，对于进行 Android 底层开发和问题排查都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_lroundl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -331,8 +331,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #define type		long double
 #define	roundit		roundl
 #define dtype		long
@@ -341,7 +343,4 @@ Prompt:
 #define	fn		lroundl
 
 #include "s_lround.c"
-
-"""
-
 ```

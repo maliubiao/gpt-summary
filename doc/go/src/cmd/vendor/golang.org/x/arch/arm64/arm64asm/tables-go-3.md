@@ -175,7 +175,7 @@ go tool asm -o output.o input.s  # 汇编 input.s 文件，生成 output.o 目�
 
 总而言之，`tables.go` 文件定义了一个关键的查找表，用于在ARM64汇编指令的机器码表示和汇编助记符表示之间进行转换，是实现ARM64汇编器或反汇编器等工具的基础数据。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/arm64/arm64asm/tables.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -183,8 +183,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 .<t>, #<fbits>
 	{0xbf80fc00, 0x2f00e400, UCVTF, instArgs{arg_Vd_arrangement_immh_Q___SEEAdvancedSIMDmodifiedimmediate_00__2S_40__4S_41__2D_81, arg_Vn_arrangement_immh_Q___SEEAdvancedSIMDmodifiedimmediate_00__2S_40__4S_41__2D_81, arg_immediate_fbits_min_1_max_0_sub_0_immh_immb__SEEAdvancedSIMDmodifiedimmediate_0__64UIntimmhimmb_4__128UIntimmhimmb_8}, ucvtf_asimdshf_c_cond},
 	// UCVTF <V><d>, <V><n>
@@ -332,10 +334,4 @@ Prompt:
 	// ZIP2 <Vd>.<t>, <Vn>.<t>, <Vm>.<t>
 	{0xbf20fc00, 0x0e007800, ZIP2, instArgs{arg_Vd_arrangement_size_Q___8B_00__16B_01__4H_10__8H_11__2S_20__4S_21__2D_31, arg_Vn_arrangement_size_Q___8B_00__16B_01__4H_10__8H_11__2S_20__4S_21__2D_31, arg_Vm_arrangement_size_Q___8B_00__16B_01__4H_10__8H_11__2S_20__4S_21__2D_31}, nil},
 }
-
-"""
-
-
-
-
 ```

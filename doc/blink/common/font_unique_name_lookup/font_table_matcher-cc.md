@@ -147,14 +147,16 @@ By following this structured approach, one can systematically analyze the code a
 
 总而言之，`blink/common/font_unique_name_lookup/font_table_matcher.cc` 是 Blink 渲染引擎中一个关键的字体查找组件，它通过预先构建的字体数据表，高效地将字体唯一名称映射到实际的字体文件资源，为网页的字体渲染提供基础支持。它的设计考虑了性能和跨进程共享的需求，并提供了大小写不敏感的匹配功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/font_unique_name_lookup/font_table_matcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ void FontTableMatcher::SortUniqueNameTableForSearch(
 }
 
 }  // namespace blink
-
-"""
-
 ```

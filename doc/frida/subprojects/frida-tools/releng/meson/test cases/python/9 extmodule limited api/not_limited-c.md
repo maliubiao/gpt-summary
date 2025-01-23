@@ -149,7 +149,7 @@ not_limited_api_test.not_limited(my_list)
 
 `not_limited.c` 是 Frida 工具的一个测试用例，用于验证在没有定义 `Py_LIMITED_API` 的情况下，C扩展模块可以正常工作。它展示了如何调用在有限API中被排除的Python C API函数来操作Python对象。理解这类测试用例有助于深入了解 Python C 扩展的工作原理，这对于逆向分析使用 Python 扩展的应用程序，以及开发和调试 Frida 工具本身都非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/python/9 extmodule limited api/not_limited.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <Python.h>
 #include <stdio.h>
 
@@ -218,7 +220,4 @@ static struct PyModuleDef not_limited_module = {
 PyMODINIT_FUNC PyInit_not_limited(void) {
     return PyModule_Create(&not_limited_module);
 }
-
-"""
-
 ```

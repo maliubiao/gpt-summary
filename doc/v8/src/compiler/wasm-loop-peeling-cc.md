@@ -202,15 +202,17 @@ Merge_7 (合并控制流)
 
 `v8/src/compiler/wasm-loop-peeling.cc` 是 V8 编译器的重要组成部分，专注于优化 WebAssembly 代码中的循环结构。通过复制并提前执行循环的初始迭代，它可以减少循环内部的开销，提高执行效率。虽然用户不能直接控制这种优化，但理解其原理有助于理解 V8 如何提升 WebAssembly 的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-loop-peeling.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/wasm-loop-peeling.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -341,7 +343,4 @@ void PeelWasmLoop(Node* loop_node, ZoneUnorderedSet<Node*>* loop, Graph* graph,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -236,15 +236,17 @@ console.log(counter()); // 1
 
 总结来说，`MemoryChunkMetadata` 是 V8 引擎管理堆内存的关键内部组件，它存储了内存块的各种元数据，为高效的内存分配和垃圾回收提供了基础。虽然 JavaScript 开发者不能直接操作它，但理解其背后的原理有助于编写更高效的 JavaScript 代码，避免常见的内存相关的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/memory-chunk-metadata.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/memory-chunk-metadata.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -456,7 +458,4 @@ struct hash<i::MemoryChunkMetadata*> {
 }  // namespace v8
 
 #endif  // V8_HEAP_MEMORY_CHUNK_METADATA_H_
-
-"""
-
 ```

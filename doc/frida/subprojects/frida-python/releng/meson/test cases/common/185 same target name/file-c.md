@@ -125,7 +125,7 @@ Initially, I might focus too much on what the *code* itself does. However, the f
 
 虽然 `file.c` 的代码非常简单，但它在 Frida 的构建系统中扮演着重要的角色，用于测试 Meson 构建系统在处理具有相同目标名称的文件时的行为。这对于确保 Frida 构建过程的健壮性和可靠性至关重要，间接地也影响了逆向工程师在使用 Frida 进行工作时的体验。用户通常不会直接操作这个文件，但当遇到与构建系统相关的问题时，理解这类测试用例有助于他们定位和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/185 same target name/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,12 +133,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 0;
 }
-
-"""
-
 ```

@@ -160,7 +160,7 @@ func main() {
 
 这段 `ssa.go` 代码的第 4 部分是 Go 编译器中负责将 SSA 中间表示转换为机器代码的关键部分，它详细实现了类型断言的 SSA 代码生成，并涉及了临时变量管理、控制流转换、函数序言尾声、内联和调试信息生成等功能。理解这部分代码有助于深入了解 Go 语言的编译过程以及类型断言的实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssagen/ssa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,8 +168,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 sa.OpLoad, typs.Uintptr, cache, s.mem())
 				// Jump to loop head.
 				b := s.endBlock()
@@ -1833,10 +1835,4 @@ var (
 	BoundsCheckFunc [ssa.BoundsKindCount]*obj.LSym
 	ExtendCheckFunc [ssa.BoundsKindCount]*obj.LSym
 )
-
-"""
-
-
-
-
 ```

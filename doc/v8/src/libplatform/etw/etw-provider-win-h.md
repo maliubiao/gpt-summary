@@ -114,15 +114,17 @@ By following this structured analysis and refinement process, we can generate a 
 
 总而言之，`v8/src/libplatform/etw/etw-provider-win.h` 是 V8 在 Windows 平台上实现事件跟踪的关键组成部分，它定义了 V8 如何向操作系统报告其内部活动，这对于性能分析、故障排除和监控 V8 引擎的运行状况至关重要。虽然 JavaScript 开发者不直接操作它，但理解其背后的概念可以帮助他们更深入地了解 V8 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/etw/etw-provider-win.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/libplatform/etw/etw-provider-win.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ Prompt:
   TRACELOGGING_DEFINE_PROVIDER(v8Provider, "V8.js", (V8_ETW_GUID));
 
 #endif  // V8_LIBPLATFORM_ETW_ETW_PROVIDER_WIN_H_
-
-"""
-
 ```

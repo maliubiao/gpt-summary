@@ -111,15 +111,17 @@ By following these steps, I can arrive at a comprehensive summary of the `HTMLFr
 
 `HTMLFrameOwnerElement` 类的第一部分主要关注**内嵌 frame 的创建、生命周期管理、基本属性控制以及与渲染和插件系统的交互**。它奠定了管理和控制内嵌浏览上下文的基础，并处理了一些核心的 HTML 属性。后续的部分可能会涉及更具体的 frame 类型或更高级的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_frame_owner_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2009 Apple Inc. All rights reserved.
  *
@@ -966,7 +968,4 @@ void HTMLFrameOwnerElement::Trace(Visitor* visitor) const {
 
 // static
 ParsedPermissionsPolicy HTMLFrame
-"""
-
-
 ```

@@ -134,14 +134,16 @@ By following these steps, the goal is to provide a comprehensive and well-struct
 
 `PageSchedulerImpl` 是 Blink 渲染引擎中一个至关重要的组件，它负责在页面级别协调和优化资源的使用，确保用户体验的流畅和高效。它与 JavaScript, HTML, CSS 的功能息息相关，通过管理页面的生命周期和资源分配，直接影响着这些 Web 技术在不同页面状态下的行为。理解 `PageSchedulerImpl` 的功能对于编写高性能、资源友好的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/page_scheduler_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1038,7 +1040,4 @@ PageSchedulerImpl::AllWakeUpBudgetPools() {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

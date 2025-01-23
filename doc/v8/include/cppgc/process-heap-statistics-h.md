@@ -180,15 +180,17 @@ let longString = "This is a long string.";
 
 总之，`v8/include/cppgc/process-heap-statistics.h` 提供了一种观察 V8 引擎底层内存分配情况的机制。虽然 JavaScript 开发者不能直接使用它，但理解其背后的原理有助于更好地理解 JavaScript 的内存模型和潜在的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/cppgc/process-heap-statistics.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/cppgc/process-heap-statistics.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ class V8_EXPORT ProcessHeapStatistics final {
 }  // namespace cppgc
 
 #endif  // INCLUDE_CPPGC_PROCESS_HEAP_STATISTICS_H_
-
-"""
-
 ```

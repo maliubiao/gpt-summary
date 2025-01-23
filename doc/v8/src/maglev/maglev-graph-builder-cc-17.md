@@ -146,7 +146,7 @@ By following this systematic approach, combining code analysis with understandin
 
 总而言之，`maglev-graph-builder.cc` 是 Maglev 编译器的“翻译器”，负责将字节码“翻译”成 Maglev 图，为后续的优化和代码生成奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第18部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ator() {
   // GetIterator <object>
   ValueNode* receiver = LoadRegister(0);
@@ -195,8 +197,4 @@ DEBUG_BREAK_BYTECODE_LIST(DEBUG_BREAK)
 void MaglevGraphBuilder::VisitIllegal() { UNREACHABLE(); }
 
 }  // namespace v8::internal::maglev
-
-"""
-
-
 ```

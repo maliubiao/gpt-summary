@@ -201,7 +201,7 @@ if __name__ == "__main__":
 
 通过这种方式，你可以间接地观察到 BPF 性能事件的创建，并理解 `bpf_user_pt_regs_t` 在性能分析和系统跟踪中的作用。虽然我们 hook 的是系统调用，而不是直接 hook 头文件，但这能帮助我们理解 Android framework 或 NDK 如何利用底层的 BPF 机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/bpf_perf_event.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -212,8 +212,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -225,7 +227,4 @@ Prompt:
 #include <asm/ptrace.h>
 typedef struct user_pt_regs bpf_user_pt_regs_t;
 #endif
-
-"""
-
 ```

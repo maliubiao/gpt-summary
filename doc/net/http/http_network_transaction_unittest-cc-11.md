@@ -95,7 +95,7 @@ Here's a breakdown of the thought process to answer the request:
 
 作为 `http_network_transaction_unittest.cc` 的第 12 部分，这段代码专注于验证 `HttpNetworkTransaction` 在涉及多层 HTTPS 代理和 SPDY 时的连接管理和复用逻辑的正确性。它通过模拟不同的代理配置和网络交互，测试了连接复用的边界条件，确保了网络栈在复杂代理场景下的稳定性和性能。这部分测试是更大范围的网络栈测试的一部分，旨在覆盖各种可能的网络场景，保证 Chromium 浏览器网络功能的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第12部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 hain2.length(); ++proxy_index) {
     ssl_socket_data_providers.emplace_back(ASYNC, OK);
     session_deps_.socket_factory->AddSSLSocketDataProvider(
@@ -870,7 +872,4 @@ TEST_P(HttpNetworkTransactionTest, ProxiedH2SessionAppearsDuringAuth) {
           std::make_unique<ProxyConfigServiceFixed>(ProxyConfigWithAnnotation(
               proxy_config, TRAFFIC_ANNOTATION_FOR_TESTS)),
           std::make_unique<Captur
-"""
-
-
 ```

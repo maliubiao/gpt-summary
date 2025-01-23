@@ -143,7 +143,7 @@ fetch('https://example.com/data')
 
 这部分代码定义了用于模拟客户端 socket 的关键 C++ 类，主要包括 `MockSSLClientSocket` 和 `MockUDPClientSocket`。这些 mock 类允许 Chromium 的开发者在测试环境中独立地验证网络栈的各个组件，模拟各种网络连接场景和数据传输行为，而无需依赖真实的物理网络。 此外，还包含用于辅助 socket pool 测试的类，如 `TestSocketRequest`, `ClientSocketPoolTest`, `MockTransportClientSocketPool`, 和 `MockConnectJob`。 这些 mock 工具是保证 Chromium 网络功能正确性和稳定性的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/socket_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 cert.get()));
     }
   }
@@ -1282,8 +1284,4 @@ MockTransportClientSocketPool::MockTransportClientSocketPool(
           base::Seconds(10) /* unused_idle_socket_timeout */,
           ProxyChain::Direct(),
           false /* is_for_websockets */,
-   
-"""
-
-
 ```

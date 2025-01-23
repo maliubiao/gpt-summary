@@ -182,15 +182,17 @@ add(5, 3); // V8 可能会将 add 函数编译成机器码
 
 `v8/src/base/bounded-page-allocator.h` 定义了一个关键的 V8 内部组件，它负责在预定义的虚拟地址空间范围内分配内存页。这对于 V8 的性能优化（如堆指针压缩）至关重要。虽然 JavaScript 开发者不会直接操作它，但理解其功能有助于理解 V8 的内存管理机制和潜在的内存相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/bounded-page-allocator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/bounded-page-allocator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -333,7 +335,4 @@ class V8_BASE_EXPORT BoundedPageAllocator : public v8::PageAllocator {
 }  // namespace v8
 
 #endif  // V8_BASE_BOUNDED_PAGE_ALLOCATOR_H_
-
-"""
-
 ```

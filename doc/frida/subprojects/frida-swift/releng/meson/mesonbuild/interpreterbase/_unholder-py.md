@@ -152,7 +152,7 @@ print(unwrapped_method_info.name) # 输出: myMethod
 
 `_unholder.py` 是 Frida 构建系统中的一个关键辅助模块，负责确保在构建过程中，各种需要被解包的对象能够被正确处理。它通过强制类型检查和解包操作，帮助维护 Frida 内部对象处理的一致性和正确性。普通用户不会直接接触到这个文件，但构建失败时，错误信息可能会将其作为调试线索提供给开发者。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/interpreterbase/_unholder.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -187,7 +189,4 @@ def _unholder(obj: InterpreterObject) -> TYPE_var:
     elif isinstance(obj, InterpreterObject):
         raise InvalidArguments(f'Argument {obj} of type {type(obj).__name__} cannot be passed to a method or function')
     raise MesonBugException(f'Unknown object {obj} of type {type(obj).__name__} in the parameters.')
-
-"""
-
 ```

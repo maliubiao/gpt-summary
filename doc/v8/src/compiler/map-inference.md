@@ -150,11 +150,13 @@ console.log(getStableX(stablePoint));
 
 总而言之，`v8/src/compiler/map-inference.cc` 是 V8 编译器中一个至关重要的组成部分，它负责理解和利用 JavaScript 对象的结构信息，从而实现高效的代码生成和优化。它通过推断 Map、管理 Map 的可靠性以及生成必要的运行时检查来平衡性能和动态语言的灵活性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/map-inference.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -304,7 +306,4 @@ Reduction MapInference::NoChange() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

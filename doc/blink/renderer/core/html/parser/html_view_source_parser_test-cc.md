@@ -82,14 +82,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 `html_view_source_parser_test.cc` 这个文件通过一个简单的测试案例，验证了 `HTMLViewSourceParser` 在特定生命周期场景下的稳定性，特别是 `Detach()` 和 `Finish()` 方法的配合使用。 这确保了在浏览器处理“查看源代码”功能时，即使在某些特殊情况下（例如，解析器在完成前被分离），也不会发生崩溃。 这个测试与 HTML 密切相关，因为它处理的是 HTML 源代码，但明确地与 JavaScript 和 CSS 的执行逻辑无关，只关注其文本表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_view_source_parser_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -126,7 +128,4 @@ TEST(HTMLViewSourceParserTest, DetachThenFinish_ShouldNotCrash) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -142,11 +142,13 @@ setTimeout(cleanup, 1000); // 模拟一段时间后的检查
 
 `v8/src/heap/cppgc/marking-visitor.cc` 中的代码是 V8 引擎实现 JavaScript 自动内存管理的关键部分。它负责在垃圾回收的标记阶段遍历对象图，识别存活对象，为后续的垃圾回收工作奠定基础。JavaScript 开发者虽然不直接操作这些代码，但他们的代码行为（创建对象、建立引用关系）最终会触发这些底层的 C++ 代码的执行，从而实现内存的自动管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/marking-visitor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -306,7 +308,4 @@ bool ConcurrentMarkingVisitor::DeferTraceToMutatorThreadIfConcurrent(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

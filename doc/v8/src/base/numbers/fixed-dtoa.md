@@ -118,11 +118,13 @@ function fixedDtoaLike(number, fractionDigits) {
 
 `v8/src/base/numbers/fixed-dtoa.cc` 文件中的代码是 V8 JavaScript 引擎中用于实现高效且精确的固定精度浮点数到字符串转换的核心组件。 它与 JavaScript 的 `Number.prototype.toFixed()` 方法的功能直接相关，并且很可能被 V8 引擎在内部使用来实现该方法。  该代码利用了高精度整数运算（通过 `UInt128` 类）和精细的字符串操作来确保转换的正确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/fixed-dtoa.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -494,7 +496,4 @@ bool FastFixedDtoa(double v, int fractional_count, Vector<char> buffer,
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

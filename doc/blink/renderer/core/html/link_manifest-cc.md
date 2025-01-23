@@ -144,14 +144,16 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 总而言之，`LinkManifest` 在 Blink 引擎中扮演着连接 HTML `<link rel="manifest">` 元素和 Web App Manifest 处理流程的关键角色，负责在相关事件发生时通知内核，从而触发 Manifest 的加载、解析和应用，最终影响 Web 应用的行为和展示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/link_manifest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ void LinkManifest::OwnerRemoved() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

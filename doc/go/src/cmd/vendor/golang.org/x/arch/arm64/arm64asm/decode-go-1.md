@@ -145,7 +145,7 @@ func main() {
 
 这段Go代码是ARM64汇编指令解码器中至关重要的一部分，其核心功能是**根据给定的操作数类型和指令编码，精确地解析出操作数的具体信息，并将其表示为结构化的Go数据**。  它是理解和处理ARM64指令的基础，为后续的指令分析、模拟或执行提供了必要的数据。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/arm64/arm64asm/decode.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -153,8 +153,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 = 3 && Q == 1 */ {
 			return RegisterWithArrangement{V0 + Reg(Rt), Arrangement2D, 2}
 		}
@@ -587,10 +589,4 @@ func handle_bitmasks(x uint32, datasize uint8) Arg {
 	}
 	return Imm64{wmask, false}
 }
-
-"""
-
-
-
-
 ```

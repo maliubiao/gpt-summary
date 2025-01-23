@@ -74,12 +74,14 @@ This specific snippet likely handles the decoding and formatting of more complex
 
 In essence, this part of the disassembler allows developers and V8 engineers to peek under the hood and see exactly how JavaScript code is being translated and executed at the machine code level, especially when dealing with performance-sensitive operations that might utilize SIMD instructions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/x64/disasm-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 endToBuffer("movmskpd %s,", NameOfCPURegister(regop));
       current += PrintRightXMMOperand(current);
     } else if (opcode == 0x70) {
@@ -1074,8 +1076,4 @@ void Disassembler::Disassemble(FILE* f, uint8_t* begin, uint8_t* end,
 }  // namespace disasm
 
 #endif  // V8_TARGET_ARCH_X64
-
-"""
-
-
 ```

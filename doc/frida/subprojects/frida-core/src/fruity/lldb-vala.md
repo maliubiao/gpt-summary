@@ -81,7 +81,7 @@ Response:
 
 ### 总结
 `frida-core/src/fruity/lldb.vala` 文件实现了 Frida 与 LLDB 调试器的交互逻辑，提供了丰富的调试功能。通过 LLDB 指令或 Python 脚本，用户可以复刻源代码中的调试功能。用户在使用过程中需要注意常见的错误，如无效的进程 PID 或内存地址，并通过调试线索逐步排查问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/lldb.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -90,8 +90,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaLLDB", gir_version = "1.0")]
 namespace Frida.LLDB {
 	public class Client : GDB.Client {
@@ -1022,7 +1024,4 @@ namespace Frida.LLDB {
 		}
 	}
 }
-
-"""
-
 ```

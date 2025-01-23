@@ -145,15 +145,17 @@ By following these steps – understanding the core functionality, systematicall
 
 总而言之，`net/disk_cache/blockfile/mapped_file_posix.cc` 提供了一个在 POSIX 系统上高效访问磁盘缓存文件的底层机制，它通过内存映射实现了高性能的读写操作，并且与 JavaScript 的资源加载和缓存有着重要的联系。 理解其功能有助于理解 Chromium 网络栈的缓存机制和排查相关的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/blockfile/mapped_file_posix.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ MappedFile::~MappedFile() {
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

@@ -399,7 +399,7 @@ if (Process.platform === 'android') {
 
 通过这种方式，可以观察 Android 应用或 Framework 如何使用 System V 信号量，以及可能出现的错误。你可以根据需要修改 Frida 脚本来 hook 其他信号量相关的函数，或者添加更详细的日志信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/sys_sem_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -410,8 +410,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -534,7 +536,4 @@ TEST(sys_sem, union_semun) {
   // glibc already mostly removed this cruft (although it's still in <linux/sem.h>).
 #endif
 }
-
-"""
-
 ```

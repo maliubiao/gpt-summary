@@ -136,7 +136,7 @@ fetch('https://example.com')
 
 这部分代码专注于测试 `quiche::common::structured_headers` 库对于 HTTP 结构化头部中 **Token 和 List 类型** 的解析能力。它通过大量的测试用例，覆盖了合法的和非法的 Token 字符，各种 List 的格式，以及 List 中参数 Key 的字符限制。这些测试确保了 Chromium 能够正确地解析符合规范的结构化头部，并且能够有效地处理不符合规范的情况，避免潜在的安全问题和解析错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/structured_headers_generated_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -144,9 +144,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
- nullptr},
+### 源代码
+```cpp
+nullptr},
     {"0x67 starting an token",
      "ga",
      2,
@@ -1029,8 +1031,4 @@ const struct ListTestCase {
     // listlist.json
     {"basic list of lists",
      "(1 2), (42 43)",
- 
-"""
-
-
 ```

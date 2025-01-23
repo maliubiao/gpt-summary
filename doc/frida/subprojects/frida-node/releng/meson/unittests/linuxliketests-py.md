@@ -93,7 +93,7 @@ Based on the code, it seems like this script contains integration tests for Meso
 
 总而言之，`frida/subprojects/frida-node/releng/meson/unittests/linuxliketests.py` 的主要功能是**通过执行一系列单元测试，来验证 Frida 在 Linux 和类 Unix 系统上使用 Meson 构建系统时的各种核心功能是否正常工作，包括共享库处理、静态库编译、pkg-config 集成、Qt 依赖检测、编译器标志处理以及安装过程中的文件权限管理等。** 它的存在是为了确保 Frida 在这些平台上的构建质量和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2022 The Meson development team
 
@@ -839,9 +841,4 @@ class LinuxlikeTests(BasePlatformTests):
             self.assertEqual(want_mode, found_mode,
                              msg=('Expected file %s to have mode %s but found %s instead.' %
                                   (datafile, want_mode, found_mode)))
-
-
-"""
-
-
 ```

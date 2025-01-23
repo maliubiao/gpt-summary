@@ -215,15 +215,17 @@ By following these steps, combining code analysis with an understanding of the u
 
 总而言之，`presentation_connection.cc` 文件是 Blink 引擎中实现 Web Presentation API 的核心组件，负责建立、管理和维护 presenting 页面和 receiver 页面之间的双向通信连接，并处理相关的事件和消息传递。 它与 JavaScript API 紧密关联，使得 Web 开发者能够构建跨设备的 presentation 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/presentation/presentation_connection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -874,7 +876,4 @@ void PresentationConnection::TearDown() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

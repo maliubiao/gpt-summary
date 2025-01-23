@@ -122,7 +122,7 @@ func Alloc(size int) unsafe.Pointer {
 
 `loader.go` 的这一部分是 Go 链接器中至关重要的组成部分，它负责从编译后的目标文件中加载和组织符号信息，并对 `//go:linkname` 指令进行管理和校验。它为后续的链接阶段（如符号解析、重定位、代码布局）提供了必要的数据基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/loader/loader.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -130,8 +130,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 name reference is allowed. Here we haven't loaded all
 			// symbol definitions, so we don't yet know all the push linknames. So we add to a
 			// list and check later after all symbol defs are loaded. Linknamed vars are rare,
@@ -724,10 +726,4 @@ func (l *Loader) Dump() {
 		fmt.Println(i, pp.name, pp.ver, pp.kind)
 	}
 }
-
-"""
-
-
-
-
 ```

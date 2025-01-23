@@ -161,15 +161,17 @@ var x = []interface{}{
 
 总而言之，`go/test/float_lit3.go` 这段代码片段是 Go 编译器测试套件的一部分，用于验证编译器在处理超出 `float32` 和 `float64` 表示范围的常量时的错误检测能力。理解这段代码有助于开发者更好地理解 Go 语言中浮点数的限制以及编译器如何进行静态类型检查。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/float_lit3.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Check flagging of invalid conversion of constant to float32/float64 near min/max boundaries.
@@ -217,9 +219,4 @@ var x = []interface{}{
 	float64(-max64 - ulp64/2 + 1),              // ok
 	float64(-max64 - ulp64/2),                  // ERROR "constant -1\.79769e\+308 overflows float64|cannot convert.*to type float64"
 }
-
-"""
-
-
-
 ```

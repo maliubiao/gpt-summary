@@ -121,15 +121,17 @@ I need to:
 
 总而言之，这段代码负责实现 Blink 引擎中表格布局的核心逻辑，它深入地处理了 HTML 表格结构和 CSS 样式，并考虑了复杂的分页和分栏场景。理解这段代码有助于深入了解浏览器如何渲染和布局 HTML 表格。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/table/table_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 return MinMaxSizesResult{min_max,
                            /* depends_on_block_constraints */ false};
 }
@@ -859,8 +861,4 @@ const LayoutResult* TableLayoutAlgorithm::GenerateFragment(
     // though, also insert break tokens for the sections that we didn't get to
     // (if any), so that things will be resumed correctly when laying out the
     // next table fragment (inserting a break token for the repeated footer
-  
-"""
-
-
 ```

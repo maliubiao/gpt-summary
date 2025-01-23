@@ -146,7 +146,7 @@ console.log(result); // 输出 3
 
 `v8/test/cctest/compiler/test-run-calls-to-external-references.cc` 是一个关键的测试文件，用于验证 V8 编译器在处理外部 C/C++ 函数调用时的正确性。它通过一系列精心设计的测试用例，覆盖了不同类型的外部函数和调用签名，特别是与 WebAssembly 相关的函数。这个文件的存在有助于确保 V8 能够正确高效地执行涉及外部函数调用的代码，包括 WebAssembly 模块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-calls-to-external-references.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-run-calls-to-external-references.cc以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved. Use of this
 // source code is governed by a BSD-style license that can be found in the
 // LICENSE file.
@@ -947,7 +949,4 @@ SIGNATURE_TEST(RunCallWithMixedSignatureIntDoubleAlt,
 #define SIGNATURE_ONLY_DOUBLE(V)                                              \
   V(double, 0, 0.5), V(double, 1, 1.5), V(double, 2, 2.5), V(double, 3, 3.5), \
       V(double, 4, 4.5), V(double, 5, 5.5),
-"""
-
-
 ```

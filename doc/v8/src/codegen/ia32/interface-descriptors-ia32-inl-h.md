@@ -181,15 +181,17 @@ const propertyValue = getProperty(myObject, "name");
 
 `v8/src/codegen/ia32/interface-descriptors-ia32-inl.h` 是 V8 引擎中一个非常底层的关键文件，它定义了 JavaScript 代码在 IA-32 架构上执行时的接口规范。它通过指定各种操作所使用的寄存器，使得 V8 能够生成高效的机器代码来执行 JavaScript。虽然普通开发者不需要直接修改它，但理解其背后的原理有助于深入理解 JavaScript 的执行机制和性能特点。 如果它是 `.tq` 文件，那么它就是用 V8 的 Torque 语言编写的，用于生成这里的 C++ 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/interface-descriptors-ia32-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ia32/interface-descriptors-ia32-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -580,7 +582,4 @@ constexpr auto WasmJSToWasmWrapperDescriptor::registers() {
 #endif  // V8_TARGET_ARCH_IA32
 
 #endif  // V8_CODEGEN_IA32_INTERFACE_DESCRIPTORS_IA32_INL_H_
-
-"""
-
 ```

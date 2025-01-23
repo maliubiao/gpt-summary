@@ -151,7 +151,7 @@ This is a broad overview. I need to synthesize this information into a concise s
 
 由于代码是底层系统调用的封装，直接使用这些函数需要非常小心，并且需要对 Windows API 有深入的理解。更常见的是使用 Go 标准库或者其他封装了这些系统调用的更高级别的库。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/zsyscall_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -159,8 +159,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 Dacl.Addr(), 4, uintptr(unsafe.Pointer(sd)), uintptr(unsafe.Pointer(&_p0)), uintptr(unsafe.Pointer(dacl)), uintptr(unsafe.Pointer(&_p1)), 0, 0)
 	*daclPresent = _p0 != 0
 	*daclDefaulted = _p1 != 0
@@ -1921,9 +1923,4 @@ func GetSystemTimeAsFileTime(time *Filetime) {
 
 func GetSystemTimePreciseAsFileTime(time *Filetime) {
 	syscall.Syscall(procGetSystemTimePreciseAsFileTime.Addr(), 1, uintptr(unsa
-"""
-
-
-
-
 ```

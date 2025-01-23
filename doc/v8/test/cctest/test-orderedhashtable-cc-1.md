@@ -98,7 +98,7 @@ console.log(orderedSet.has(2)); // 输出: true
 
 这部分代码是 V8 针对其有序哈希表实现进行的单元测试，重点验证了各种哈希表类型的**删除操作**的正确性，包括删除已存在和不存在的元素，以及处理具有相同哈希码的元素的情况。此外，还测试了 `OrderedNameDictionary` 的**插入、查找和修改功能**。这些测试确保了 V8 的哈希表能够在各种场景下正确地管理键值对和元素，并保持预期的内部状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-orderedhashtable.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-orderedhashtable.cc以.tq结尾，那它是个v8 torque源代码，
@@ -106,8 +106,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 te the key!
   CHECK(!OrderedHashMap::Delete(isolate, *map, *key2));
   Verify(isolate, map);
@@ -978,7 +980,4 @@ TEST(SmallOrderedNameDictionaryDetailsAtAndDetailsAtPut) {
   CHECK_EQ(InternalIndex(0), dict->FindEntry(isolate, *key1));
 
   InternalIndex entry =
-"""
-
-
 ```

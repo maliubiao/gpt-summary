@@ -77,12 +77,14 @@ function add(a, b) {
 
 `v8/src/maglev/maglev-code-generator.cc` 是 Maglev 编译器的核心，负责将抽象的 Maglev IR 转换为具体的、可执行的机器指令，从而提升 JavaScript 代码的执行效率。它涉及到寄存器管理、数据移动优化、异常处理和反优化支持等关键的编译技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-code-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1741,8 +1743,4 @@ class MaglevFrameTranslationBuilder {
             while (i < reg.index()) {
               translation_array_builder_->StoreOptimizedOut();
               i++;
-          
-"""
-
-
 ```

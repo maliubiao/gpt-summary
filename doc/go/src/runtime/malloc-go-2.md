@@ -290,7 +290,7 @@ By systematically breaking down the code, identifying key components, and then p
 
 这些功能共同构成了 Go 运行时内存管理系统的重要组成部分，旨在提供高效、可靠的内存分配服务，并辅助开发者进行性能分析和错误排查。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/malloc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -299,8 +299,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 iency
 	const randomBitCount = 26
 	q := cheaprandn(1<<randomBitCount) + 1
@@ -531,10 +533,4 @@ func redZoneSize(userSize uintptr) uintptr {
 		return 16 << 7
 	}
 }
-
-"""
-
-
-
-
 ```

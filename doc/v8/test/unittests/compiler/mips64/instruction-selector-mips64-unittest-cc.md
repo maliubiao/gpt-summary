@@ -143,7 +143,7 @@ let result = x & y; // 位与运算
 
 这段 `v8/test/unittests/compiler/mips64/instruction-selector-mips64-unittest.cc` 文件的主要功能是 **测试 V8 引擎中 MIPS64 架构的指令选择器是否能够正确地将中间代码转换为对应的 MIPS64 机器指令**。 它通过一系列的单元测试用例，针对不同的操作和场景，验证生成的指令的操作码、操作数和标志位设置是否符合预期，从而保证 V8 引擎在 MIPS64 架构上的代码生成质量和正确性。 它与 JavaScript 的关系在于，它测试的代码最终会被用来执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/mips64/instruction-selector-mips64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/mips64/instruction-selector-mips64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -151,8 +151,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file
@@ -1006,7 +1008,4 @@ INSTANTIATE_TEST_SUITE_P(InstructionSelectorTest, InstructionSelectorModTest,
 // ----------------------------------------------------------------------------
 // Floating point instructions.
 // ------------------------------------------------------
-"""
-
-
 ```

@@ -289,7 +289,7 @@ if __name__ == '__main__':
 
 `bionic/libc/kernel/uapi/linux/netfilter/xt_CLASSIFY.handroid` 这个头文件定义了 Netfilter `CLASSIFY` 目标所需的配置信息，即网络包的优先级。它在 Android 中用于 QoS 和网络策略管理。虽然这个文件本身不涉及 `libc` 或动态链接，但使用它的用户空间工具（如 `iptables`) 是动态链接的，并且会使用 `libc` 提供的接口与内核交互。通过 Frida 可以 hook 用户空间的进程来观察它们如何使用 Netfilter 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_CLASSIFY.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -300,8 +300,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -315,7 +317,4 @@ struct xt_classify_target_info {
   __u32 priority;
 };
 #endif
-
-"""
-
 ```

@@ -87,15 +87,17 @@ The user wants a summary of the functionality of the provided C++ code snippet. 
 
 该代码文件的第一部分主要专注于测试 `OffsetMapping` 类在处理不同类型的空白符（空格、制表符、换行符、零宽空格）以及在不同的 `white-space` CSS 属性下的折叠行为。它验证了 `OffsetMapping` 能够正确地建立 DOM 结构和最终渲染的文本内容之间的映射关系，包括那些被 CSS 规则折叠或移除的空白符。此外，它还初步测试了 `OffsetMapping` 对象的存储和获取，以及获取内联格式化上下文的功能。 这部分测试是确保 Blink 引擎正确渲染和处理文本的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/offset_mapping_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -845,7 +847,4 @@ TEST_F(OffsetMappingTest, FullyCollapsedWhiteSpaceNode) {
   EXPECT_EQ(Position(bar_node, 0), GetLastPosition(4));
 
   EXPECT_TRUE(EndOfLastNonCollapsed
-"""
-
-
 ```

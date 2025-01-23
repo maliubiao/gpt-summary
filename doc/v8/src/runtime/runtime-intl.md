@@ -123,11 +123,13 @@ console.log(mixedCase.toLocaleLowerCase()); // 输出: "ﬃ"
 
 `runtime-intl.cc` 文件是V8引擎中实现国际化功能的核心部分，它提供了JavaScript `Intl` API 和字符串本地化方法所需的底层C++支持。它处理了诸如列表格式化和字符串大小写转换等与特定语言环境相关的操作，使得JavaScript能够更好地处理全球化应用的需求。  这个文件的存在依赖于编译V8时启用了国际化支持 (`#ifndef V8_INTL_SUPPORT`)。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-intl.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ RUNTIME_FUNCTION(Runtime_StringToLocaleLowerCase) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

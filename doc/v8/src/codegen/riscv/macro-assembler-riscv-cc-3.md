@@ -167,7 +167,7 @@ console.log(isNaN(nanValue)); // 对应 CompareIsNan
 
 这部分 `macro-assembler-riscv.cc` 代码为 V8 引擎在 RISC-V 架构上提供了底层的汇编指令生成能力，专注于 64 位整数的移位操作、基本的位操作以及各种浮点数运算和比较操作。它提供了方便的宏来执行这些操作，并帮助开发者避免一些常见的编程错误，确保生成的代码能够正确高效地执行 JavaScript 的相关功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/macro-assembler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,8 +175,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 If the shift amount is < 32, we're done
   // Note: the shift amount is always < 64, so we can just test if the 6th bit
   // is set
@@ -1128,7 +1130,4 @@ void MacroAssembler::InsertHighWordF64(FPURegister dst, Register src_high) {
 #elif V8_TARGET_ARCH_RISCV32
   BlockTrampolinePoolScope block_trampoline_pool(this);
   Add32(sp, sp,
-"""
-
-
 ```

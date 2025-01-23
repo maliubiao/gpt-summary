@@ -193,15 +193,17 @@ By following these steps, including the iterative refinement, you can arrive at 
 
 `QuicIdleNetworkDetector` 是 QUIC 协议中一个重要的组成部分，负责管理连接的生命周期，防止资源浪费。理解其功能和工作原理对于调试 QUIC 连接问题至关重要。虽然 JavaScript 代码不直接调用它，但它的行为直接影响着基于 Web 的应用程序的网络连接状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_idle_network_detector.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2020 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ QuicTime QuicIdleNetworkDetector::GetIdleNetworkDeadline() const {
 }
 
 }  // namespace quic
-
-"""
-
 ```

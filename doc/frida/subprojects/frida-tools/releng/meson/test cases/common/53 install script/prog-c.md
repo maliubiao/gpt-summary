@@ -173,7 +173,7 @@ This is text.
 
 总而言之，这个 `prog.c` 文件是一个简洁而有效的测试用例，用于演示动态链接和外部函数调用，并且是动态 instrumentation 工具（如 Frida）进行功能验证和学习的理想起点。它涵盖了逆向工程、二进制底层、操作系统机制等多个方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/53 install script/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 #ifdef _WIN32
@@ -197,7 +199,4 @@ int main(void) {
     printf("This is text.\n");
     return foo();
 }
-
-"""
-
 ```

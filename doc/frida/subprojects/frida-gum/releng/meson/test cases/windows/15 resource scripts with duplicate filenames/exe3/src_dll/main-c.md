@@ -135,7 +135,7 @@ if (Process.platform === 'windows') {
 
 总而言之，这个简单的 `main.c` 文件虽然功能单一，但在 Windows DLL 的上下文中扮演着基础性的角色。对于逆向工程师来说，理解 DLL 的入口点是进行动态分析和理解程序行为的关键一步。而作为 Frida 的测试用例，它可能用于验证 Frida 在特定场景下的行为，例如处理具有重复文件名的资源脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/windows/15 resource scripts with duplicate filenames/exe3/src_dll/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <windows.h>
 
 BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
@@ -155,7 +157,4 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
     ((void)lpvReserved);
   return TRUE;
 }
-
-"""
-
 ```

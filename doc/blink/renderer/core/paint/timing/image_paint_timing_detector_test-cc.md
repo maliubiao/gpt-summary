@@ -81,7 +81,7 @@ This part of the `image_paint_timing_detector_test.cc` file focuses on verifying
 
 这些测试用例通过模拟各种场景，例如添加不同大小的图片，应用不同的 CSS 样式，动态修改 DOM 结构等，来确保 `ImagePaintTimingDetector` 能够准确可靠地工作，为浏览器正确计算 LCP 指标提供保障。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/timing/image_paint_timing_detector_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -89,8 +89,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1000,7 +1002,4 @@ TEST_P(ImagePaintTimingDetectorTest, OnePresentationPromiseForOneFrame) {
 }
 
 TEST_P(ImagePaintTimingDetectorTest, VideoImage)
-"""
-
-
 ```

@@ -138,7 +138,7 @@ By following these steps, breaking down the code, and actively looking for conne
 
 `deps.py` 是 Frida CLR 项目中用于管理预构建依赖项的关键脚本。它提供了一组命令行工具，用于同步、构建和管理不同目标平台的依赖包（如 SDK 和工具链）。这确保了 Frida CLR 能够正确地构建和运行在各种操作系统和架构上，这对于动态插桩和逆向工程至关重要。该脚本涉及对不同平台构建工具链和 SDK 的管理，并利用 Meson 构建系统进行配置和编译。用户可以通过命令行操作来管理这些依赖，但常见的错误包括输入错误的参数或遇到网络问题。作为调试线索，理解 `deps.py` 的工作流程有助于诊断 Frida CLR 构建过程中遇到的依赖问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/deps.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 from __future__ import annotations
 import argparse
@@ -968,8 +970,4 @@ class Builder:
             print("\n".join([
                 "",
                 f"# Done",
-  
-"""
-
-
 ```

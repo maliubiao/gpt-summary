@@ -267,7 +267,7 @@ com.example.myapp.MyClass.someMethod(MyClass.java:20)
 
 这个输出显示了 `setlocale` 被调用的类别 (`6` 代表 `LC_ALL`)，设置的区域设置字符串 (`en_US.UTF-8`)，以及调用 `setlocale` 的函数调用栈，可以帮助你追踪代码的执行路径，了解 Android Framework 或 NDK 如何使用区域设置相关的功能。 你也可以 hook `localeconv` 等其他函数来进一步分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/locale_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -278,8 +278,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -366,7 +368,4 @@ static void locale_h() {
   FUNCTION(setlocale, char* (*f)(int, const char*));
   FUNCTION(uselocale, locale_t (*f)(locale_t));
 }
-
-"""
-
 ```

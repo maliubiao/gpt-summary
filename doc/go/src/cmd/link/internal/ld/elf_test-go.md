@@ -213,15 +213,17 @@ func main() {
 
 总而言之，`elf_test.go` 中的这部分代码专注于测试 Go 语言链接器在生成符合 ELF 规范的可执行文件时，关于动态链接、节头表、程序段以及安全特性 (如 RELRO) 的实现是否正确。这些测试覆盖了链接器的关键功能，确保生成的二进制文件能够被操作系统正确加载和执行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/elf_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -824,9 +826,4 @@ func TestRelroSectionOverlapIssue67261(t *testing.T) {
 	}
 
 }
-
-"""
-
-
-
 ```

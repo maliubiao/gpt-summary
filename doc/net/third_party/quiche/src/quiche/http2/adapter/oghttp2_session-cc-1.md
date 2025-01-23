@@ -152,7 +152,7 @@ I'll structure the response by addressing each of the user's points individually
 
 总而言之，这段代码是 Chromium 网络栈中处理 HTTP/2 协议的核心部分，负责管理 HTTP/2 连接的生命周期，包括发送和接收各种帧，以及处理流量控制、错误等细节。它与 JavaScript 的交互是通过更高层次的网络 API 来实现的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -160,9 +160,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-     GetDataFrameInfo(stream_id, available_window, state);
+### 源代码
+```cpp
+GetDataFrameInfo(stream_id, available_window, state);
     QUICHE_VLOG(2) << "WriteForStream | length: " << info.payload_length
                    << " end_data: " << info.end_data
                    << " end_stream: " << info.end_stream
@@ -1001,7 +1003,4 @@ std::vector<Http2Setting> OgHttp2Session::GetInitialSettings() const {
     settings.push_back({Http2KnownSettingsId::ENABLE_CONNECT_PROTOCOL, 1u});
   }
   return setting
-"""
-
-
 ```

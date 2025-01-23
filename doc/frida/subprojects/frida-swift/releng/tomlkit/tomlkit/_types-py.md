@@ -107,7 +107,7 @@ By following these steps, including the process of understanding the context, br
 
 总而言之，`_types.py` 文件通过定义自定义类型和工具函数，增强了 `tomlkit` 库的类型安全性和内部一致性，这对于 `tomlkit` 正确解析和操作 TOML 数据至关重要。由于 `tomlkit` 是 Frida 项目的一部分，理解这个文件有助于理解 Frida 如何处理基于 TOML 的配置数据，这在逆向分析依赖 TOML 配置的应用时非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/tomlkit/tomlkit/_types.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
@@ -200,7 +202,4 @@ def wrap_method(
         return self._new(result)
 
     return wrapper
-
-"""
-
 ```

@@ -154,7 +154,7 @@ Initially, I might have focused too much on the individual parsing functions wit
 
 因此，用户的任何网络操作，例如浏览网页、发送表单、下载文件等，都可能间接地导致 `net/http/http_util.cc` 中的代码被执行，因为它负责处理 HTTP 协议中非常基础的头部解析工作。 在调试网络相关问题时，如果怀疑是头部解析错误，就可以将断点设置在这个文件中，追踪头部信息的处理过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 hether `valid` is
   // true or not, since any populated data is no longer valid.
   name_ = std::string_view();
@@ -361,8 +363,4 @@ bool HttpUtil::HeadersContainMultipleCopiesOfField(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

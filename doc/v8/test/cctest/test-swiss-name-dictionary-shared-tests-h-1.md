@@ -129,7 +129,7 @@ delete obj.key1; // 删除属性可能会触发 SwissNameDictionary 的删除或
 
 `v8/test/cctest/test-swiss-name-dictionary-shared-tests.h` 头文件定义了一组**共享的 C++ 测试用例**，用于验证 **V8 引擎内部 `SwissNameDictionary` 数据结构的各种实现**。这些测试覆盖了添加、删除、收缩、复制和枚举等核心功能，旨在确保 `SwissNameDictionary` 的正确性和性能。  虽然它本身不是 JavaScript 代码，但它所测试的数据结构是 V8 引擎实现 JavaScript 对象和 Map 的关键组成部分，因此其正确性直接影响 JavaScript 代码的执行效率。 该文件通过模板化的 `SwissNameDictionarySharedTest` 类，允许针对不同的 `SwissNameDictionary` 实现运行相同的测试逻辑，从而确保不同实现的一致性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-swiss-name-dictionary-shared-tests.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-swiss-name-dictionary-shared-tests.h以.tq结尾，那它是个v8 torque源代码，
@@ -137,8 +137,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 the capacity.
         int expected_capacity = s.initial_capacity / 2;
         s.CheckCounts(expected_capacity, 4, 0);
@@ -234,8 +236,4 @@ the capacity.
 }  // namespace v8
 
 #endif  // V8_TEST_CCTEST_TEST_SWISS_HASH_TABLE_SHARED_TESTS_H_
-
-"""
-
-
 ```

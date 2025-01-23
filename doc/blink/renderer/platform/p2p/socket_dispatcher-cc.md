@@ -163,14 +163,16 @@ This systematic approach, starting with a high-level overview and progressively 
 
 总而言之，`blink/renderer/platform/p2p/socket_dispatcher.cc` 是 Blink 引擎中一个关键的底层组件，负责管理 P2P socket 连接，并作为 WebRTC 功能的基础设施。理解其功能有助于深入了解浏览器如何处理实时的网络通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/p2p/socket_dispatcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -334,7 +336,4 @@ void P2PSocketDispatcher::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

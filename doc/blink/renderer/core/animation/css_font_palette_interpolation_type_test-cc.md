@@ -227,14 +227,16 @@ div {
 
 总而言之，`css_font_palette_interpolation_type_test.cc` 是 Blink 渲染引擎中一个重要的测试文件，它确保了 `font-palette` CSS 属性的动画和过渡功能按照规范正确实现，为开发者使用这个强大的排版特性提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_font_palette_interpolation_type_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +326,4 @@ TEST_F(CSSFontPaletteInterpolationTypeTest, MaybeConvertValue) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

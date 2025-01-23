@@ -251,7 +251,7 @@ tv_sec: 1, tv_nsec: 500
 
 总而言之，`go/src/runtime/defs_linux_arm64.go` 是 Go 运行时与 Linux ARM64 操作系统交互的基石，它定义了各种常量和数据结构，使得 Go 程序能够执行系统调用、处理信号、管理内存等底层操作。 一般的 Go 开发者不需要直接接触这个文件，但理解其作用有助于更深入地了解 Go 的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_linux_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -259,8 +259,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Created by cgo -cdefs and converted (by hand) to Go
 // ../cmd/cgo/cgo -cdefs defs_linux.go defs1_linux.go defs2_linux.go
 
@@ -472,9 +474,4 @@ type ucontext struct {
 	_pad2       [8]byte // sigcontext must be aligned to 16-byte
 	uc_mcontext sigcontext
 }
-
-"""
-
-
-
 ```

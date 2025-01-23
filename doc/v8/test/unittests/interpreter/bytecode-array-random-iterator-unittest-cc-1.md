@@ -115,7 +115,7 @@ function example(obj) {
 
 这段代码片段是 `BytecodeArrayRandomIterator` 单元测试的一部分，专注于验证迭代器 **反向遍历** `BytecodeArray` 并准确解析每个字节码指令及其操作数的功能。它通过一系列断言来确保迭代器的行为符合预期。虽然是内部测试代码，但它涉及的字节码指令反映了 JavaScript 代码的执行逻辑，并与用户可能遇到的编程错误有间接联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/bytecode-array-random-iterator-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/interpreter/bytecode-array-random-iterator-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -123,8 +123,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 erand_scale(), OperandScale::kSingle);
   EXPECT_EQ(iterator.GetRuntimeIdOperand(0), Runtime::kLoadIC_Miss);
   EXPECT_EQ(iterator.GetRegisterOperand(1).index(), reg_0.index());
@@ -314,8 +316,4 @@ erand_scale(), OperandScale::kSingle);
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

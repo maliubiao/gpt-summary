@@ -175,15 +175,17 @@ iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHx
 
 总而言之，`web_frame_serializer.cc` 在 Chromium 中扮演着重要的角色，负责将网页的状态转换为可持久化或传输的格式，是浏览器 "保存网页" 功能的核心组成部分。理解其功能和与 HTML, CSS, JavaScript 的交互方式，有助于我们更好地理解浏览器的工作原理和排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_frame_serializer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -358,7 +360,4 @@ WebString WebFrameSerializer::GenerateMarkOfTheWebDeclaration(
 }
 
 }  // namespace blink
-
-"""
-
 ```

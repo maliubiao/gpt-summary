@@ -142,11 +142,13 @@ myInstance.method(); // 输出 5
 
 `v8/src/ast/ast-function-literal-id-reindexer.cc` 文件中的 `AstFunctionLiteralIdReindexer` 类是 V8 引擎内部的一个组件，负责在抽象语法树中重新编号函数字面量的 ID。这通常是为了支持作用域管理、代码转换、优化或调试等内部操作。虽然我们无法直接在 JavaScript 中观察到这些 ID 的变化，但理解其背后的机制有助于理解 V8 如何管理 JavaScript 代码中的函数和作用域。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/ast-function-literal-id-reindexer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ void AstFunctionLiteralIdReindexer::CheckVisited(Expression* expr) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

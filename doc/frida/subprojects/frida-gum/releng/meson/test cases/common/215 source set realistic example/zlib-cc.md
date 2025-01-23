@@ -110,7 +110,7 @@ Finally, the information gathered above is organized into the requested sections
 
 如果用户在调试 Frida 的依赖项管理机制时遇到问题，例如某个依赖项没有被正确加载或初始化，查看类似 `zlib.cc` 这样的测试用例可以帮助理解 Frida 内部是如何处理依赖项的。例如，如果用户在自己的 Frida 模块中定义了一个类似的依赖项，但其 `initialize()` 方法没有被调用，那么对比 `zlib.cc` 的实现方式，特别是全局对象的创建，可能会提供一些线索。此外，查看构建系统中如何定义 `ZLIB` 和 `ANOTHER` 宏，也能帮助理解依赖项的启用条件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/215 source set realistic example/zlib.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 
@@ -135,7 +137,4 @@ void ZLibDependency::initialize() {
 }
 
 ZLibDependency zlib;
-
-"""
-
 ```

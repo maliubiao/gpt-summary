@@ -282,7 +282,7 @@ sys.stdin.read()
 
 通过这种方式，你可以观察 Android 系统或应用在尝试创建位图 `ipset` 集合时是否遇到了错误，并查看 `ipset_create` 的返回值。这可以帮助你理解 Android Framework 或 NDK 应用如何与底层的 `ipset` 功能交互，以及可能遇到的错误情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/ipset/ip_set_bitmap.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -293,8 +293,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -309,7 +311,4 @@ enum {
   IPSET_ERR_BITMAP_RANGE_SIZE,
 };
 #endif
-
-"""
-
 ```

@@ -132,15 +132,17 @@ My thought process to analyze the given code snippet and generate the summary wo
 
 这部分 `web_frame_test.cc` 主要负责测试 `WebFrame` 在处理文本选择和智能剪贴板功能时的各种场景。它涵盖了基于坐标的选择范围移动、智能剪贴板的内容提取、光标移动的对齐、以及在硬件加速合成下的选择边界计算。这些测试确保了 Blink 引擎在文本处理方面的核心功能能够正确稳定地工作，并能与 HTML、CSS 和 JavaScript 进行正确的交互。 它是整个 `WebFrame` 功能测试的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第9部分，共19部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ase_url_ + "move_range_selection_extent.html",
                                  &web_view_helper);
   frame = web_view_helper.LocalMainFrame();
@@ -910,7 +912,4 @@ TEST_F(WebFrameTest, ReplaceMisspelledRange) {
   frame->SetTextCheckClient(&textcheck);
 
   Document* document = frame->GetFrame()->
-"""
-
-
 ```

@@ -346,7 +346,7 @@ Sections:
 
 总而言之，`s_log1p.c` 文件是 Android 系统中提供自然对数 `ln(1 + x)` 功能的关键组成部分，它通过精心的算法设计保证了在各种输入情况下的精度和正确性。理解其功能和实现原理对于进行底层开发和问题排查非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_log1p.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -356,8 +356,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -534,7 +536,4 @@ log1p(double x)
 #if (LDBL_MANT_DIG == 53)
 __weak_reference(log1p, log1pl);
 #endif
-
-"""
-
 ```

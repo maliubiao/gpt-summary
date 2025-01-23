@@ -222,15 +222,17 @@ func main() {
 
 这段代码通过使用 `uintptr` 和 `unsafe` 包，演示了如何在 Go 语言中进行底层的内存操作。`//go:uintptrescapes` 指令表明了代码的目的是探索或测试 Go 编译器在处理 `uintptr` 类型参数时的特定行为。 使用者需要特别注意 `unsafe` 操作的风险，并确保传递的 `uintptr` 值是有效的内存地址。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/uintptrescapes.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -285,9 +287,4 @@ func (*t) M2(a ...uintptr) {
 	recurse(4096, s[:])
 	*(*int)(unsafe.Pointer(a[0])) = 42
 }
-
-"""
-
-
-
 ```

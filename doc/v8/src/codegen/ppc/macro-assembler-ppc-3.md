@@ -88,12 +88,14 @@ NODE_MODULE(NODE_GYP_MODULE_NAME, Initialize)
 
 `CallApiFunctionAndReturn` 是 V8 引擎中一个关键的底层函数，它负责安全有效地桥接 JavaScript 和 C++ 代码，确保在跨语言调用时内存管理、性能和异常处理的正确性。它隐藏了许多复杂的细节，使得 JavaScript 开发者可以方便地调用原生功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/macro-assembler-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 he fast call).
 void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
                               Register function_address,
@@ -267,8 +269,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 #undef __
 
 #endif  // V8_TARGET_ARCH_PPC64
-
-"""
-
-
 ```

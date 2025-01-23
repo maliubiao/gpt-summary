@@ -213,7 +213,7 @@ go run main.go 0.000001
 
 总之，`go/src/math/expm1.go` 中的代码实现了 `math.Expm1` 函数，提供了一种高精度计算 `e^x - 1` 的方法，尤其适用于 `x` 接近零的情况，并妥善处理了各种特殊输入。使用者需要理解其功能和适用场景，避免常见的错误用法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/expm1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -221,8 +221,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -467,9 +469,4 @@ func expm1(x float64) float64 {
 	y = Float64frombits(Float64bits(y) + uint64(k)<<52) // add k to y's exponent
 	return y
 }
-
-"""
-
-
-
 ```

@@ -164,7 +164,7 @@ another_crate = "~0.5"
 
 总而言之，`version.py` 脚本虽然看似简单，但在 Frida 的构建过程中扮演着桥梁的角色，负责将 Cargo 的版本管理方式适配到 Meson 构建系统，确保了 Frida 能够正确地构建和管理其 Rust 依赖项。 这对于像 Frida 这样涉及到多种编程语言和底层操作的复杂工具来说至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/cargo/version.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2022-2023 Intel Corporation
 
@@ -269,7 +271,4 @@ def convert(cargo_ver: str) -> T.List[str]:
                 out.append('< 1')
 
     return out
-
-"""
-
 ```

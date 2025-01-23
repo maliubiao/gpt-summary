@@ -122,14 +122,16 @@ During this process, I might realize I haven't explained a concept clearly enoug
 
 `task_priority.cc` 文件在 Blink 渲染引擎中扮演着至关重要的角色，它定义了任务优先级的标准，并提供了在不同表示形式之间进行转换的功能。理解任务优先级对于优化 Web 应用程序的性能至关重要，因为它直接影响浏览器处理 JavaScript、HTML 和 CSS 的顺序和效率，最终影响用户体验。虽然开发者通常不会直接修改这个文件，但了解其背后的原理有助于编写更高效、更流畅的 Web 应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/task_priority.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ const char* TaskPriorityToString(TaskPriority priority) {
 }
 
 }  // namespace blink::scheduler
-
-"""
-
 ```

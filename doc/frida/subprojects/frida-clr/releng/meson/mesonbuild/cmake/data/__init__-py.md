@@ -105,7 +105,7 @@ By following this detailed thought process, I can arrive at a comprehensive and 
 
 尽管 `frida/subprojects/frida-clr/releng/meson/mesonbuild/cmake/data/__init__.py` 文件本身是一个空的 Python 初始化文件，它的存在表明 `data` 目录被视为一个 Python 包，这在 Frida-CLR 的构建和模块化组织中是必要的。虽然该文件没有直接的逆向功能或底层知识，但它所处的上下文是与 .NET 逆向、底层系统交互以及 Frida 的构建过程紧密相关的。用户到达这里通常是因为他们正在探索 Frida 的源代码、调试构建问题或者了解项目结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/cmake/data/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,9 +113,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

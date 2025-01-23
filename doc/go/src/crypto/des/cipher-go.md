@@ -200,7 +200,7 @@ func main() {
 
 这段代码是实现 DES 和 Triple DES 算法的核心逻辑，为 Go 语言提供了基础的对称加密能力。使用者需要注意密钥和数据块的正确大小，以及避免缓冲区重叠等问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/des/cipher.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -208,8 +208,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -375,9 +377,4 @@ func (c *tripleDESCipher) Decrypt(dst, src []byte) {
 	preOutput := (uint64(right) << 32) | uint64(left)
 	byteorder.BEPutUint64(dst, permuteFinalBlock(preOutput))
 }
-
-"""
-
-
-
 ```

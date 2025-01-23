@@ -97,7 +97,7 @@ This detailed thinking process, even for a simple piece of code, ensures that al
 
 总而言之，尽管 `foo.c` 文件本身非常简单，但在 Frida 这个动态 Instrumentation 工具的上下文中，它可以作为测试 Frida 基本功能的基石，并帮助开发者理解和验证 Frida 的工作原理。它的简单性也使得它成为一个理想的调试目标，用于排除更复杂场景下的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/93 new subproject in configured project/subprojects/sub/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,15 +105,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* SPDX-license-identifier: Apache-2.0 */
 /* Copyright © 2021 Intel Corporation */
 
 int func(void) {
     return 1;
 }
-
-"""
-
 ```

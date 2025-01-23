@@ -166,15 +166,17 @@ node1->ReplaceInput(0, node3);
 
 总之，`v8/src/compiler/node.h` 是 V8 编译器中至关重要的头文件，它定义了表示计算图的基本结构，并提供了管理和操作这些节点的方法，为 JavaScript 代码的编译优化奠定了基础。 理解 `Node` 类的功能对于深入了解 V8 编译器的内部机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/node.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/node.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -895,7 +897,4 @@ inline Node::Uses::const_iterator end(const Node::Uses& uses) {
 }  // namespace v8
 
 #endif  // V8_COMPILER_NODE_H_
-
-"""
-
 ```

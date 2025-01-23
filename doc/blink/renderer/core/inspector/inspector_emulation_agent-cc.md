@@ -144,15 +144,17 @@ By following these steps, systematically analyzing the code, and refining the un
 
 `InspectorEmulationAgent.cc` 是 Blink 渲染引擎中一个非常重要的组成部分，它提供了强大的网页模拟功能，极大地便利了前端开发和测试工作。开发者可以通过它模拟各种不同的用户环境，提前发现和解决兼容性、性能和可访问性等问题。理解其功能和正确使用方式对于保证网页质量至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_emulation_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -964,8 +966,5 @@ void InspectorEmulationAgent::ApplyUserAgentOverride(String* user_agent) {
 void InspectorEmulationAgent::ApplyUserAgentMetadataOverride(
     std::optional<blink::UserAgentMetadata>* ua_metadata) {
   // This applies when UA override is set.
-  if (!user_agent_override_.Get().empty()) 
-"""
-
-
+  if (!user_agent_override_.Get().empty())
 ```

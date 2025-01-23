@@ -127,15 +127,17 @@ func bfi1(x, y uint64) uint64 {
 
 总而言之，`go/test/codegen/bitfield.go` 是一个底层的测试文件，用于确保 Go 编译器能够正确且高效地处理位字段相关的操作，这对于生成高性能的代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/bitfield.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -508,9 +510,4 @@ func shift(x uint32, y uint16, z uint8) uint64 {
 	// loong64:`MOVV\t[$]0`,-`ADDVU`
 	return a + b + c
 }
-
-"""
-
-
-
 ```

@@ -206,7 +206,7 @@ Interceptor.attach(ptr("0x12345678"), { // 假设的目标函数地址
 
 尽管 `frida/subprojects/frida-python/releng/meson/mesonbuild/cargo/__init__.py` 文件本身很小，但它在 Frida 的 Python 绑定中扮演着重要的角色，定义了 `cargo` 包的接口，并暴露了很可能用于解析和执行 Frida 脚本的 `interpret` 函数。这个函数与逆向工程紧密相关，需要深入理解二进制底层、操作系统内核和目标平台的运行时环境。用户通常不会直接与此文件交互，它更多的是 Frida 内部构建和执行流程的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/cargo/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -214,14 +214,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 __all__ = [
     'interpret'
 ]
 
 from .interpreter import interpret
-
-"""
-
 ```

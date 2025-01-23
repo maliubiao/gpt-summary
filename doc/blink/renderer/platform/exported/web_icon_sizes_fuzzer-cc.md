@@ -107,14 +107,16 @@ By following these steps, we can systematically analyze the provided code snippe
 
 `web_icon_sizes_fuzzer.cc` 是 Blink 引擎中一个重要的安全工具，它通过模糊测试来确保 `WebIconSizesParser::ParseIconSizes` 函数能够安全可靠地解析 HTML 中 `<link rel="icon"` 标签的 `sizes` 属性。这对于保证网页的正确渲染和防止潜在的安全漏洞至关重要。它直接关联到 HTML 中图标的定义，并间接地影响 JavaScript 对图标信息的访问以及最终的页面呈现效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_icon_sizes_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -144,7 +146,4 @@ int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   return blink::LLVMFuzzerTestOneInput(data, size);
 }
-
-"""
-
 ```

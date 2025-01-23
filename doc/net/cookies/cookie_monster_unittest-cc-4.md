@@ -135,7 +135,7 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 作为系列测试的第 5 部分，这段代码专注于 `CookieMonster` 的核心功能之一：**在资源受限的情况下（Cookie 数量过多）如何维持一个合理有效的 Cookie 集合，并通过测试确保在复杂的异步操作场景下，Cookie 的管理依然是可靠的。** 它深入测试了垃圾回收的边界条件和在加载期间进行操作的并发安全性，这对于保证浏览器 Cookie 功能的稳定性和用户体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_monster_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ("g", cookies[i++].Name());
     EXPECT_EQ("b", cookies[i++].Name());
     EXPECT_EQ("c", cookies[i++].Name());
@@ -887,7 +889,4 @@ TEST_F(CookieMonsterTest, CookieCount2Histogram) {
 }
 
 TEST_F(CookieMons
-"""
-
-
 ```

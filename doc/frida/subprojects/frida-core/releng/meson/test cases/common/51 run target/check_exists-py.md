@@ -123,7 +123,7 @@ By following these steps, systematically analyzing the code and connecting it to
 
 `check_exists.py` 虽然功能简单，但在 Frida 的构建和测试流程中扮演着验证文件存在性的角色。这在确保 Frida 工具链的稳定性和正确性方面是必要的。在逆向工程实践中，这种基本的文件检查也是一个常见的预处理步骤。它涉及对操作系统文件系统的基本操作，并能帮助开发者尽早发现因文件缺失或路径错误导致的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/51 run target/check_exists.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -140,7 +142,4 @@ import sys
 
 if not os.path.isfile(sys.argv[1]):
     raise Exception("Couldn't find {!r}".format(sys.argv[1]))
-
-"""
-
 ```

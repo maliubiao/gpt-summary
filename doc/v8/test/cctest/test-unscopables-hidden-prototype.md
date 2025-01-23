@@ -145,11 +145,13 @@ with (obj) {
 
 `test-unscopables-hidden-prototype.cc` 这个 C++ 测试文件验证了 V8 引擎中 `Symbol.unscopables` 特性的正确实现，特别是它如何影响 `with` 语句在原型链上的作用域查找行为。通过设置在对象自身或原型上的 `Symbol.unscopables` 属性，可以控制 `with` 语句是否能够访问特定的属性，这对于代码的健壮性和避免潜在的错误非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-unscopables-hidden-prototype.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ TEST(Unscopables) {
 }
 
 }  // namespace
-
-"""
-
 ```

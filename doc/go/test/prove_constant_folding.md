@@ -116,15 +116,17 @@ func getB() int {
 
 总而言之，`go/test/prove_constant_folding.go` 是一个底层的编译器测试，用于验证 Go 编译器在 SSA 证明阶段正确识别常量值的能力，这是常量折叠优化的基础。理解它的作用有助于我们更好地理解 Go 编译器的优化机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/prove_constant_folding.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -d=ssa/prove/debug=2
 
 //go:build amd64
@@ -158,9 +160,4 @@ func f0u(x uint) uint {
 
   return x / 2
 }
-
-"""
-
-
-
 ```

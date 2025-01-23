@@ -134,7 +134,7 @@ Let's break down the thought process for analyzing this seemingly simple C++ fil
 
 总而言之，`cmMod.cpp` 虽然代码简单，但在 Frida 的上下文中，它作为一个测试用例，用于验证构建系统的配置，特别是头文件的包含路径顺序。它也为我们提供了一个可以进行动态 hook 和分析的简单目标，帮助我们理解 Frida 的工作原理和在逆向工程中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/17 include path order/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -155,7 +157,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

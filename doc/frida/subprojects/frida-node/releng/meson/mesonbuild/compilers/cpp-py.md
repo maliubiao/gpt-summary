@@ -125,7 +125,7 @@ This part of the `cpp.py` file defines the base `CPPCompiler` class and several 
 
 `frida/subprojects/frida-node/releng/meson/mesonbuild/compilers/cpp.py` 的第一部分定义了 Meson 构建系统中处理 C++ 编译器的核心框架和基础类。它通过抽象和封装不同 C++ 编译器的特性，使得 Meson 能够以一种统一的方式管理和配置各种 C++ 编译器的行为，生成正确的编译和链接命令，从而为 Frida 这样的复杂 C++ 项目的构建奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/compilers/cpp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -888,7 +890,4 @@ class VisualStudioLikeCPPCompilerMixin(CompilerMixinBase):
             args.append('/GR-')
 
         permissive, ver = self.VC_VERSION_MAP[
-"""
-
-
 ```

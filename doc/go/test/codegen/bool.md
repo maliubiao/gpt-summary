@@ -227,15 +227,17 @@ func convertNeq0B(x uint8, c bool) bool {
 
 总而言之，这段 `go/test/codegen/bool.go` 文件是 Go 编译器代码生成测试套件的一部分，用于验证编译器在处理布尔表达式时的优化行为在各种目标架构上是否符合预期。它通过预期的汇编指令断言来确保编译器的正确性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/bool.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -525,9 +527,4 @@ func constantWrite(b bool, p *bool) {
 		*p = b
 	}
 }
-
-"""
-
-
-
 ```

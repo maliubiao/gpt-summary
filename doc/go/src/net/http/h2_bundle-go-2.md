@@ -266,7 +266,7 @@ func main() {
 
 4. **没有正确处理 HEADERS 和 CONTINUATION 帧的顺序:**  HEADERS 帧可能很大，需要通过多个 CONTINUATION 帧传输。使用者需要确保在读取到 HEADERS 帧后，后续接收到的都是属于该 HEADERS 帧的 CONTINUATION 帧，直到 END_HEADERS 标志位被设置。`Framer` 内部会进行检查，但使用者在自定义处理时需要注意。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/h2_bundle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -275,8 +275,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 "A sender MUST NOT allow a flow-control window to exceed 2^31-1 octets."
 	// RFC 7540 Section 6.9.1.
 	const maxWindow = 1<<31 - 1
@@ -1331,9 +1333,4 @@ func http2parseWindowUpdateFrame(_ *http2frameCache, fh http2FrameHeader, countE
 func (f *http2Framer) WriteWindowUpdate(streamID, incr uint32) error {
 	// "The legal range for the increment to the flow control window is 1 to 2^31-1 (2,147,483,647) octets."
 	if (incr < 1 || incr > 2147483647) && !f.AllowIllegalW
-"""
-
-
-
-
 ```

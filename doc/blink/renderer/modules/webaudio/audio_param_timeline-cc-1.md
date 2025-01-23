@@ -99,7 +99,7 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 总而言之，这段代码负责管理和计算音频参数随时间变化的值，并处理取消操作，是 Web Audio API 中动态控制音频效果的关键组成部分。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_param_timeline.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r SetValueCurve, we're done.
     return;
   }
@@ -925,7 +927,4 @@ std::tuple<size_t, float, unsigned> AudioParamTimeline::ProcessSetTarget(
   auto value1 = current_state.value1;
   auto sample_rate = current_state.sample_rate;
   auto control_rate = current_state.control_ra
-"""
-
-
 ```

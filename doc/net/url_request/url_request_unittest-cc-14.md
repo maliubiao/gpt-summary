@@ -120,7 +120,7 @@ Based on the analysis of the code, the main functionalities covered in this part
 
 这部分代码主要测试了 `URLRequest` 在处理 **服务器证书错误与 HSTS 策略的交互、主机名解析失败、请求取消（尤其是涉及重定向时）、请求和响应头回调、Upgrade-Insecure-Requests 功能、Android 平台的 Socket Tagging 以及 TLS 1.3 的 Early Data (0-RTT)** 等方面的功能。这些测试确保了 `URLRequest` 能够正确处理各种网络场景，并为 Chromium 的网络安全性、性能和可靠性提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第15部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ASSERT_TRUE(filler_hash.FromString(
       "sha256/3333333333333333333333333333333333333333333="));
 
@@ -995,7 +997,4 @@ std::unique_ptr<test_server::HttpResponse> HandleTooEarly(
     *sent_425 = true;
   return std::make_unique<ZeroRTTResponse>(
       request.ssl_info->early_data_
-"""
-
-
 ```

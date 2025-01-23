@@ -207,7 +207,7 @@ This systematic approach, moving from high-level understanding to detailed analy
 
 这部分代码主要负责实现 PPC64 架构下 JavaScript 引擎的核心内置函数，特别是与函数调用、构造函数、代码优化执行 (基线代码和 OSR) 相关的底层机制。它体现了 V8 引擎为了提高性能而进行的架构特定优化，并展示了 C++ 代码如何与 JavaScript 运行时环境紧密结合。 其中 `Generate_BaselineOrInterpreterEntry` 负责决定代码执行的入口点，根据是否存在基线代码选择进入解释器还是基线代码执行。 `Generate_JSConstructStubGeneric` 实现了 `new` 关键字的基本行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ppc/builtins-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/ppc/builtins-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -215,8 +215,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1151,7 +1153,4 @@ void Generate_JSEntryVariant(MacroAssembler* masm, StackFrame::Type type,
   // If this is the outermost JS call, set js_entry_sp value.
   Label non_outermost_js;
   ExternalReference js
-"""
-
-
 ```

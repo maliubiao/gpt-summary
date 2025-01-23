@@ -110,15 +110,17 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 总而言之，`blink/renderer/core/layout/inline/inline_layout_algorithm.cc` 的核心功能是**将 HTML 中的内联内容按照 CSS 规则格式化成可见的文本行**，并处理各种与内联布局相关的复杂情况，例如浮动、相对定位、文本溢出、特殊的换行需求以及 `text-box-trim` 等高级特性。它是 Blink 引擎渲染引擎中至关重要的一个组成部分，负责将文档的逻辑结构转化为可视化的布局。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -871,7 +873,4 @@ void InlineLayoutAlgorithm::PlaceOutOfFlowObjects(
        GetConstraintSpace().GetBfcOffset().line_offset);
 
   // To correctly determine which "
-"""
-
-
 ```

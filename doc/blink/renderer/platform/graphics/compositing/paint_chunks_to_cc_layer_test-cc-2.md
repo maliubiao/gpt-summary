@@ -124,15 +124,17 @@ In essence, it's verifying the core logic of translating the results of the pain
 
 总而言之，这部分测试着重于验证 `PaintChunksToCcLayer` 在处理复杂合成场景时的正确性，确保渲染引擎能够准确地将 paint chunks 转换为合成器能够理解的绘图指令，从而保证网页的正确渲染和交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/paint_chunks_to_cc_layer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d by
   // the scroller is under an effect under the scroller.
   auto* effect_under_scroll =
@@ -589,8 +591,4 @@ TEST_P(PaintChunksToCcLayerTest, NonCompositedBackdropFilter) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

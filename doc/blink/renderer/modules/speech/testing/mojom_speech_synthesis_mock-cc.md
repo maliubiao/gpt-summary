@@ -163,15 +163,17 @@ By following this systematic approach, analyzing the code step by step, and conn
 
 总而言之，`mojom_speech_synthesis_mock.cc` 是 Blink 引擎中用于测试语音合成功能的一个关键组件。它通过模拟真实的语音合成服务，允许开发者在可控的环境下验证相关代码的正确性和健壮性。它与 JavaScript, HTML, CSS 的关系主要体现在它模拟了 JavaScript Web Speech API 的行为，而该 API 通常被 HTML 页面中的 JavaScript 代码调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/speech/testing/mojom_speech_synthesis_mock.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Apple Computer, Inc.  All rights reserved.
  *
@@ -352,7 +354,4 @@ void MojomSpeechSynthesisMock::Resume() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

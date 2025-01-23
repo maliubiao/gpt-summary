@@ -122,7 +122,7 @@ In essence, this code manages the lifecycle and data access of individual cache 
 
 总之，这段代码是 Chromium 磁盘缓存实现的核心部分，负责管理缓存条目的生命周期和数据访问，是理解 Chromium 缓存机制的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_entry_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s approximation.
   last_used_ = last_modified_ = base::Time::Now();
 
@@ -959,7 +961,4 @@ int64_t SimpleEntryImpl::GetDiskUsage() const {
   int64_t file_size = 0;
   for (int data_size : data_size_) {
     file_size += simple_util::GetFileSizeFromDataSize(key
-"""
-
-
 ```

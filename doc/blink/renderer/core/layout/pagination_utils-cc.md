@@ -196,14 +196,16 @@ By following this iterative process of scanning, categorizing, connecting, exemp
 
 总而言之，`blink/renderer/core/layout/pagination_utils.cc` 文件是 Blink 渲染引擎中负责将网页内容转化为可打印页面的核心组件之一。它深入理解 CSS 的分页特性，并进行复杂的布局和几何计算，以确保内容能够正确地分割和呈现在目标页面上。理解这个文件的工作原理有助于开发者更好地控制网页的打印效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/pagination_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -683,7 +685,4 @@ WebPrintPageDescription GetPageDescriptionFromLayout(const Document& document,
 }
 
 }  // namespace blink
-
-"""
-
 ```

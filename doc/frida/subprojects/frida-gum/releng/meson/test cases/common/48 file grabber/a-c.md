@@ -205,7 +205,7 @@ int funca(void) { return 0; }
 
 总而言之，尽管 `a.c` 文件中的 `funca` 函数本身非常简单，但它作为 Frida 测试用例的一部分，可以帮助我们理解 Frida 的工作原理、测试方法以及在逆向工程中的应用场景。通过分析其上下文和相关的 Frida 功能，我们可以更好地利用 Frida 进行动态分析和代码插桩。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/48 file grabber/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -213,10 +213,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int funca(void) { return 0; }
-
-"""
-
 ```

@@ -205,7 +205,7 @@ try {
 
 总而言之，这段代码是 V8 引擎中实现 WebAssembly 支持的关键部分，它在保证功能正确性的前提下，尽可能快速地将 WebAssembly 代码转换为可执行的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/liftoff-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -213,8 +213,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Check;
     // We never want to blow the entire budget at once.
     const int max_budget_use = std::max(1, v8_flags.wasm_tiering_budget / 4);
@@ -1002,7 +1004,4 @@ Check;
       // Only perform this check if the tag signature is the same as
       // the JSTag signature, i.e. a single externref, otherwise we know
       // statically that it cannot be the
-"""
-
-
 ```

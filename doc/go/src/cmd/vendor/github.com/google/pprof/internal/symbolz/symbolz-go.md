@@ -265,7 +265,7 @@ func main() {
 
 总而言之，`go/src/cmd/vendor/github.com/google/pprof/internal/symbolz/symbolz.go` 这部分代码在 `pprof` 工具中扮演着至关重要的角色，它负责连接远程符号服务，为性能剖析数据提供关键的符号信息，使得开发者能够更容易地理解和分析程序的性能瓶颈。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/symbolz/symbolz.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -273,8 +273,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -471,9 +473,4 @@ func adjust(addr uint64, offset int64) (uint64, bool) {
 	}
 	return adj, false
 }
-
-"""
-
-
-
 ```

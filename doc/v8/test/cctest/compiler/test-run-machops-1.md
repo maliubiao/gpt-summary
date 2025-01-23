@@ -74,12 +74,14 @@ function testFloatSub(a, b) {
 
 总而言之，这个代码文件的第2部分通过大量的测试用例，确保 V8 引擎能够正确地执行各种基本的数值和位运算，这是 JavaScript 代码能够正确运行的关键保证。  它关注的是这些操作在机器层面的行为和结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-machops.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 rn(m.Word32Equal(m.Int32Add(m.Int32Constant(i), m.Parameter(0)),
                          m.Int32Constant(0)));
   FOR_UINT32_INPUTS(j) {
@@ -2320,7 +2322,4 @@ TEST(RunFloat32SubImm1) {
 TEST(RunFloat32SubImm2) {
   FOR_FLOAT32_INPUTS(i) {
     BufferedRawMachineAssemblerTester<float> m
-"""
-
-
 ```

@@ -94,7 +94,7 @@ By following this structured approach, I can systematically analyze the code and
 
 这段代码通过定义各种测试用例和结构体，模拟不同的 ASN.1 数据结构和编码场景，然后使用 `encoding/asn1` 包的 `Marshal` 和 `Unmarshal` 函数进行编码和解码操作，并验证结果是否符合预期。这有助于确保 `encoding/asn1` 包的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/asn1/asn1_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -103,8 +103,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 0x64, 0x20, 0x62, 0x79, 0x20, 0x68,
 	0x74, 0x74, 0x70, 0x73, 0x3a, 0x2f, 0x2f, 0x77, 0x77, 0x77, 0x2e, 0x69, 0x70,
 	0x73, 0x63, 0x61, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x30, 0x2f, 0x06, 0x09, 0x60,
@@ -445,10 +447,4 @@ func BenchmarkObjectIdentifierString(b *testing.B) {
 		_ = oidPublicKeyRSA.String()
 	}
 }
-
-"""
-
-
-
-
 ```

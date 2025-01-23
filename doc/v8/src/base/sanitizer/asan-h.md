@@ -189,15 +189,17 @@ ASan 主要帮助 V8 开发者检测 V8 引擎自身的 C++ 代码中的错误�
 
 `v8/src/base/sanitizer/asan.h` 是 V8 中用于集成 AddressSanitizer 的关键头文件。它通过条件编译、宏定义和 RAII 类来方便地启用、禁用和管理 ASan 对内存的保护，帮助 V8 开发者检测和修复底层的 C++ 内存错误，从而提高 V8 引擎的稳定性和安全性。虽然它不直接涉及 JavaScript 语法，但对于理解 V8 内部如何保证内存安全至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/sanitizer/asan.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/sanitizer/asan.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ class AsanUnpoisonScope final {
 #endif  // !V8_USE_HWADDRESS_SANITIZER
 
 #endif  // V8_BASE_SANITIZER_ASAN_H_
-
-"""
-
 ```

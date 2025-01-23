@@ -108,7 +108,7 @@ Imagine a user clicks a link in a web page that initiates a request to a server 
 
 This section of the `quic_connection_test.cc` file primarily focuses on verifying the robustness and correctness of the `QuicConnection` class in handling fundamental aspects of connection management, including acknowledgement processing, client connection ID validation and updates, handling connection closure, managing coalesced packets, and ensuring proper behavior during retransmissions and timeouts, especially when the write queue is blocked. It also tests the anti-amplification mechanism designed to protect servers during the handshake phase. These tests are crucial for ensuring the stability and security of QUIC connections.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第13部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ECT_TRUE(connection_.HasPendingAcks());
 
   writer_->SetWriteBlocked();
@@ -870,7 +872,4 @@ TEST_P(QuicConnectionTest, 10AntiAmplificationLimit) {
 
   const size_t anti_amplification_factor = 10;
   // Verify
-"""
-
-
 ```

@@ -260,15 +260,17 @@ By following this structured approach, I could systematically analyze the code a
 
 理解 `oblivious_http_request.cc` 的功能以及它在网络请求生命周期中的位置，对于调试和理解 OHTTP 的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/oblivious_http/buffers/oblivious_http_request.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/oblivious_http/buffers/oblivious_http_request.h"
 
 #include <stddef.h>
@@ -483,7 +485,4 @@ absl::string_view ObliviousHttpRequest::GetPlaintextData() const {
 }
 
 }  // namespace quiche
-
-"""
-
 ```

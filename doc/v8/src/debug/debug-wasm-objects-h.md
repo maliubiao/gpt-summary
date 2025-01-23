@@ -151,15 +151,17 @@ While developers don't directly interact with this header file, understanding it
 
 In summary, `v8/src/debug/debug-wasm-objects.h` is a foundational piece for enabling a rich debugging experience for WebAssembly within the V8 engine. It provides the necessary data structures and functions to represent and inspect Wasm-specific information in a way that is accessible and understandable to developers through debugging tools.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-wasm-objects.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/debug-wasm-objects.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ Handle<ArrayList> AddWasmTableObjectInternalProperties(
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_DEBUG_DEBUG_WASM_OBJECTS_H_
-
-"""
-
 ```

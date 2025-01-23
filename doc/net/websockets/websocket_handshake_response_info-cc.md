@@ -155,15 +155,17 @@ Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
 
 总而言之，`WebSocketHandshakeResponseInfo` 虽然是一个底层的 C++ 类，但它在 WebSocket 连接建立过程中扮演着至关重要的角色，负责存储关键的握手响应信息，这些信息最终会影响到 JavaScript 中 `WebSocket` API 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_handshake_response_info.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ WebSocketHandshakeResponseInfo::WebSocketHandshakeResponseInfo(
 WebSocketHandshakeResponseInfo::~WebSocketHandshakeResponseInfo() = default;
 
 }  // namespace net
-
-"""
-
 ```

@@ -164,7 +164,7 @@ By following this structured thought process, combining code analysis with under
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/test cases/common/213 source set dictionary/f.c` 这个文件本身是一个非常简单的C代码片段，但它在Frida的测试框架中扮演着重要的角色，用于测试Frida-gum引擎处理函数指针的能力。理解这个文件的功能有助于理解Frida在动态逆向工程中的应用，以及它如何与底层系统交互来分析和修改程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/213 source set dictionary/f.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = (void *)0x1234ABCD;
@@ -181,7 +183,4 @@ void (*p)(void) = (void *)0x1234ABCD;
 void f(void)
 {
 }
-
-"""
-
 ```

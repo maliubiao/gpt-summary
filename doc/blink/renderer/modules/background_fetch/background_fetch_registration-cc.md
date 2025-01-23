@@ -251,15 +251,17 @@ CSS 也不会直接与 `BackgroundFetchRegistration.cc` 交互。但是，如果
 
 总而言之，`BackgroundFetchRegistration.cc` 是 Blink 引擎中实现后台获取 API 核心功能的关键组件，它负责管理后台获取操作的状态、与浏览器进程通信，并为 JavaScript 提供交互接口。理解这个文件有助于开发者更好地理解和调试后台获取功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/background_fetch/background_fetch_registration.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -685,7 +687,4 @@ void BackgroundFetchRegistration::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

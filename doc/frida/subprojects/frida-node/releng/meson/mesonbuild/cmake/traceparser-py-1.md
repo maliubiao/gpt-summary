@@ -154,7 +154,7 @@ By following this structured thought process, moving from a general understandin
 
 `traceparser.py` 脚本的主要功能是从给定的字符串列表中识别并提取出完整有效的文件系统路径。它通过迭代地组合相邻的字符串片段，并利用文件系统的 `exists()` 方法来验证路径的完整性。这个脚本在 Frida 动态 instrumentation 工具中扮演着解析 trace 信息中路径的重要角色，帮助用户从大量的日志输出中提取出关键的文件路径信息，从而辅助逆向分析、安全研究等工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/cmake/traceparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,9 +163,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- [curr_str]
+### 源代码
+```python
+[curr_str]
                 curr_str = None
                 path_found = False
             elif Path(f'{curr_str} {i}').exists():
@@ -184,8 +186,4 @@ Prompt:
         if curr_str:
             fixed_list += [curr_str]
         return fixed_list
-
-"""
-
-
 ```

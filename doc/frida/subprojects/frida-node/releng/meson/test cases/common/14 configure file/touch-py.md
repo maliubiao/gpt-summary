@@ -120,7 +120,7 @@ By following these steps, we can systematically analyze the script, connect it t
 
 总而言之，`touch.py` 是一个非常基础的文件操作工具，但在软件的构建和测试流程中，它可以用来管理文件的存在性和时间戳，从而辅助测试环境的搭建和维护。在 Frida 这样的复杂项目中，它可以作为自动化测试的一部分，确保某些与文件配置相关的场景能够正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/14 configure file/touch.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -146,7 +148,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

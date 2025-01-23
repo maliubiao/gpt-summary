@@ -161,7 +161,7 @@ MyCustomError: Test Error
 
 总而言之，这段代码是 V8 内部用于增强 JavaScript 错误对象堆栈信息的一个机制，它允许在错误发生时添加额外的上下文信息，从而提高调试效率。这通常涉及到 V8 的内置函数在执行过程中接收到错误对象和相关信息，并利用这些信息来完善错误报告。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/accessors.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/accessors.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 enHandle(*info.This());
   if (IsJSObject(*maybe_error_object)) {
     v8::Local<v8::Value> value = info[0];
@@ -181,8 +183,4 @@ enHandle(*info.This());
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

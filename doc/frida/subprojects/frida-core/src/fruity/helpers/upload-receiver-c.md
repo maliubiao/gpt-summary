@@ -167,7 +167,7 @@ The byte at memory address `0x12345678` in the target process will be changed to
 
 In summary, `upload-receiver.c` is a fundamental piece of Frida's architecture, enabling powerful dynamic instrumentation capabilities by allowing a client to remotely control and manipulate the memory and execution environment of a target process. Its functionality is deeply rooted in low-level operating system concepts and binary formats, making it a crucial component for reverse engineering and dynamic analysis tasks.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/helpers/upload-receiver.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "upload-api.h"
 
 #include <ptrauth.h>
@@ -1255,7 +1257,4 @@ frida_emulate_client (void * user_data)
 }
 
 #endif
-
-"""
-
 ```

@@ -137,7 +137,7 @@ websocket.onclose = () => {
 
 总而言之，`websocket_basic_stream_adapters_test.cc` 的第一部分主要负责测试 `WebSocketClientSocketHandleAdapter` 和 `WebSocketSpdyStreamAdapter` 这两个关键的 WebSocket 流适配器的基本功能，包括连接管理、数据读写以及与代理的交互。这些测试确保了 Chromium 网络栈能够正确地处理不同类型的 WebSocket 连接，并为上层的 JavaScript WebSocket API 提供可靠的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_basic_stream_adapters_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -984,8 +986,5 @@ TEST_F(WebSocketSpdyStreamAdapterTest, CallDelegateOnCloseShouldNotCrash) {
   EXPECT_CALL(mock_delegate_, OnHeadersReceived(_));
 
   base::WeakPtr<SpdySession> session = CreateSpdySession();
-  base::WeakPtr<SpdyStream> 
-"""
-
-
+  base::WeakPtr<SpdyStream>
 ```

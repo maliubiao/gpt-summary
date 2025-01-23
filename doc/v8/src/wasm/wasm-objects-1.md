@@ -124,12 +124,14 @@ wasmInstance.exports.call_from_table(1); // 调用 f2
 
 总而言之，`v8/src/wasm/wasm-objects.cc` 的第二部分是 V8 引擎中 WebAssembly 对象模型的核心实现，它定义了各种 WebAssembly 对象的结构和行为，并提供了与 JavaScript 互操作的关键机制。这些 C++ 代码使得 JavaScript 能够加载、实例化和执行 WebAssembly 模块，并与 WebAssembly 代码进行函数调用和数据共享。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ::Vector<const uint8_t> wire_bytes = native_module->wire_bytes();
   uint32_t num_data_segments = module->num_declared_data_segments;
   // The number of declared data segments will be zero if there is no DataCount
@@ -1755,8 +1757,4 @@ Handle<Object> WasmToJSObject(Isolate* isolate, Handle<Object> value) {
 
 #include "src/objects/object-macros-undef.h"
 #undef TRACE_IFT
-
-"""
-
-
 ```

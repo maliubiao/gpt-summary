@@ -222,15 +222,17 @@ function example() {
 
 `v8/src/parsing/preparser.cc` 中的预解析器是 V8 引擎优化的重要组成部分。 它通过快速扫描代码并收集关键信息，为后续的完整解析提供了基础，实现了诸如惰性解析和更有效的错误检测等优化。 理解预解析器的工作原理有助于更深入地了解 JavaScript 引擎的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/preparser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/preparser.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -633,7 +635,4 @@ bool PreParser::IdentifierEquals(const PreParserIdentifier& identifier,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

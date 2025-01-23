@@ -208,7 +208,7 @@ func main() {
 
 `maxEmojiLen` 常量则定义了 emoji Unicode 字符串的最大长度，这可能用于性能优化或数据校验。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/rsc.io/markdown/emoji.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -217,9 +217,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-                "\U0001f1f9\U0001f1f7",
+### 源代码
+```go
+"\U0001f1f9\U0001f1f7",
 	"trackball":                            "\U0001f5b2\ufe0f",
 	"tractor":                              "\U0001f69c",
 	"traffic_light":                        "\U0001f6a5",
@@ -421,10 +423,4 @@ Prompt:
 }
 
 const maxEmojiLen = 36
-
-"""
-
-
-
-
 ```

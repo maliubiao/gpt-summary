@@ -223,15 +223,17 @@ WasmInitExpr expr = WasmInitExpr::Binop(
 
 In summary, `v8/src/wasm/wasm-init-expr.h` plays a crucial role in representing and evaluating constant initialization expressions for WebAssembly within V8, ensuring the correct initial state of WebAssembly modules when they are loaded and executed in JavaScript environments. It helps bridge the gap between the static definition of WebAssembly modules and their dynamic instantiation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-init-expr.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-init-expr.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -503,7 +505,4 @@ ASSERT_TRIVIALLY_COPYABLE(WasmInitExpr);
 }  // namespace v8
 
 #endif  // V8_WASM_WASM_INIT_EXPR_H_
-
-"""
-
 ```

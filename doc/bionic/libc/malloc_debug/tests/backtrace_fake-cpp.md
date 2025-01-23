@@ -266,7 +266,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/malloc_debug/tests/backtrace_fake.cpp` 是一个用于测试的辅助文件，它通过模拟 backtrace 的生成，使得开发者可以更方便地编写和验证与 backtrace 相关的代码，特别是针对内存调试功能。它本身不参与 Android 系统的实际运行，而是为单元测试提供了可控的 backtrace 数据源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/tests/backtrace_fake.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -277,8 +277,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  *
@@ -367,7 +369,4 @@ bool Unwind(std::vector<uintptr_t>* frames, std::vector<unwindstack::FrameData>*
 }
 
 void UnwindLog(const std::vector<unwindstack::FrameData>& /*frame_info*/) {}
-
-"""
-
 ```

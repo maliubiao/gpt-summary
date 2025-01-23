@@ -155,7 +155,7 @@ By following this systematic approach, I can effectively analyze the C++ unittes
 
 总的来说，第 11 部分重点验证了 `HttpNetworkTransaction` 在涉及 QUIC 代理认证和网络隔离时的正确行为，特别强调了网络隔离功能在 QUIC 连接和 QUIC 隧道中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第11部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 k callback;
   int rv = trans.Start(&request_, callback.callback(), net_log_with_source_);
   EXPECT_EQ(ERR_IO_PENDING, rv);
@@ -918,7 +920,4 @@ TEST_P(QuicNetworkTransactionTest, NetworkIsolationTunnel) {
   }
 
   socket_factory_.AddSSLSocketD
-"""
-
-
 ```

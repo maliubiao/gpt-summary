@@ -168,7 +168,7 @@ Stalker 是一个强大的逆向工程工具，因为它允许逆向工程师动
 
 希望以上分析能够帮助你理解 `stalker-arm64.c` 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm64/stalker-arm64.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2017 Antonio Ken Iannillo <ak.iannillo@gmail.com>
@@ -1304,7 +1306,4 @@ TESTCASE (exclude_blr)
   gum_arm64_writer_put_b_label (&cw, start_lbl);
 
   func_a = gum_a
-"""
-
-
 ```

@@ -162,15 +162,17 @@ In this scenario, the output might be unpredictable because the order of initial
 
 **In summary, this `main.go` file serves as a test case to verify a specific behavior of the Go compiler related to package initialization order with blank imports. It highlights that in Go versions up to 1.13, the initialization order followed the source code order of the blank imports.** The comment within the code explicitly points out an upcoming change in Go 1.14, where the initialization order would shift to a lexicographical approach, necessitating an update to the test's expected output.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue31636.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -191,9 +193,4 @@ import (
 
 func main() {
 }
-
-"""
-
-
-
 ```

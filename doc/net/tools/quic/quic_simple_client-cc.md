@@ -206,15 +206,17 @@ Content-Length: ...
 
 `quic_simple_client.cc` 提供了一个 QUIC 客户端的基础实现，对于理解 QUIC 协议的工作原理、进行 QUIC 相关的测试和开发都很有价值。虽然 JavaScript 代码不会直接调用它，但它是浏览器网络栈中处理 QUIC 连接的关键组成部分，直接影响着基于 QUIC 的网络请求的性能和可靠性。 理解这个文件的功能可以帮助开发者诊断和解决与 QUIC 相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/quic/quic_simple_client.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -294,7 +296,4 @@ QuicChromiumAlarmFactory* QuicSimpleClient::CreateQuicAlarmFactory() {
 }
 
 }  // namespace net
-
-"""
-
 ```

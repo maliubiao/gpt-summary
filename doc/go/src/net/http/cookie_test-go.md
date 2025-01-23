@@ -459,7 +459,7 @@ go test -run TestWriteSetCookies
 
 `go/src/net/http/cookie_test.go` 文件通过大量的测试用例，全面地验证了 Go 语言 `net/http` 包中处理 HTTP Cookie 的各种功能，包括 Cookie 对象的创建、序列化、反序列化，以及在 HTTP 请求和响应中设置和读取 Cookie 的操作。它确保了 `net/http` 包提供的 Cookie 功能的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/cookie_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -467,8 +467,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1363,9 +1365,4 @@ func TestParseSetCookie(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

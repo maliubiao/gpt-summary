@@ -114,11 +114,13 @@ V8 引擎是 Chrome 和 Node.js 等 JavaScript 运行环境的核心。这个 C+
 
 `platform-posix-time.cc` 文件是 V8 引擎在 POSIX 系统上处理时区信息的重要组成部分。它提供了获取本地时区名称和偏移量的底层能力，这些能力最终被 JavaScript 的 `Date` 对象和 `Intl` API 所使用，使得 JavaScript 开发者能够在他们的代码中处理本地化的时间和日期信息。这个 C++ 文件是 JavaScript 运行时环境幕后工作的一个例子。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-posix-time.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ double PosixDefaultTimezoneCache::LocalTimeOffset(double time_ms, bool is_utc) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

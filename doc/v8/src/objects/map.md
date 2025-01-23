@@ -75,12 +75,14 @@ const person1 = new Person('Charlie');
 
 总而言之，`v8/src/objects/map.cc` 是 V8 引擎中负责管理 JavaScript 对象结构的关键组件，它定义了 `Map` 对象的结构和行为，并提供了创建、修改和查询 `Map` 对象的功能，这直接影响了 JavaScript 对象的创建、属性访问和原型链查找等核心行为的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/map.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1826,7 +1828,4 @@ Handle<Map> Map::AsLanguageMode(Isolate* isolate, Handle<Map> initial_map,
       isolate->factory()->strict_function_transition_symbol();
   MaybeHandle<Map> maybe_transition = TransitionsAccessor::SearchSpecial(
       isolate, initial_map, *tran
-"""
-
-
 ```

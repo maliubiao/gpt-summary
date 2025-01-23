@@ -219,7 +219,7 @@ This iterative process of reading, analyzing, connecting, and refining helps cre
 
 总而言之，这部分单元测试覆盖了网络栈中用于判断特定类型主机名的关键函数，这些函数在浏览器的 URL 处理、安全策略和网络连接管理中扮演着重要的角色，并间接地影响着 JavaScript 代码的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/url_util_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -227,8 +227,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 L("http://oggole.com"), false},
   };
 
@@ -273,8 +275,4 @@ TEST(UrlUtilTest, GoogleHostWithAlpnH3) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
-
 ```

@@ -174,14 +174,16 @@ By following this thought process, we can effectively analyze even a seemingly s
 
 总而言之，`web_content_decryption_module_session.cc` 定义了 Blink 渲染引擎与 CDM 会话交互的桥梁，是实现 Web 内容解密功能的核心组件之一。它通过定义接口和回调机制，使得 JavaScript 能够控制和响应 CDM 的行为，从而实现加密媒体的播放。虽然开发者不直接操作这个 C++ 文件，但理解其作用有助于更好地理解和调试与 EME 相关的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_content_decryption_module_session.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013, Google Inc. All rights reserved.
  *
@@ -218,7 +220,4 @@ WebContentDecryptionModuleSession::~WebContentDecryptionModuleSession() =
 WebContentDecryptionModuleSession::Client::~Client() = default;
 
 }  // namespace blink
-
-"""
-
 ```

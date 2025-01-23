@@ -236,14 +236,16 @@ By following this thought process, combining code analysis with an understanding
 
 总而言之，`canvas_resource.cc` 是 Blink 引擎中一个关键的文件，它抽象并管理了 `<canvas>` 元素渲染所需的各种底层资源，并处理了复杂的资源生命周期管理、同步和跨进程通信等问题，是实现 Canvas 功能的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/canvas_resource.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1410,7 +1412,4 @@ CanvasResourceSwapChain::CanvasResourceSwapChain(
 }
 
 }  // namespace blink
-
-"""
-
 ```

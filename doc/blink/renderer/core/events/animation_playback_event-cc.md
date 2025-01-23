@@ -132,14 +132,16 @@ By following these steps, we can systematically analyze the provided code snippe
 
 总而言之，`animation_playback_event.cc` 文件定义了 Blink 引擎中用于传递动画播放状态变化信息的关键事件类型，它连接了 CSS 动画的执行和 JavaScript 的监听与控制，是实现动态和交互式 Web 动画的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/animation_playback_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ void AnimationPlaybackEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

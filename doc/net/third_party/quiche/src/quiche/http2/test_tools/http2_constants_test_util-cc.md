@@ -143,15 +143,17 @@ By following this systematic analysis, considering the context of the file withi
 
 `net/third_party/quiche/src/quiche/http2/test_tools/http2_constants_test_util.cc` 是一个专门为 HTTP/2 测试提供便利的工具文件。它定义了各种 HTTP/2 相关的常量列表和辅助函数，帮助开发者编写更全面、更可靠的单元测试，从而保障 Chromium 浏览器 HTTP/2 实现的正确性和稳定性。虽然普通用户不会直接操作到这个文件，但其背后的逻辑保证了用户能够顺畅地使用基于 HTTP/2 的网络服务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/test_tools/http2_constants_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ uint8_t InvalidFlagMaskForFrameType(Http2FrameType type) {
 
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

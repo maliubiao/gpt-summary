@@ -177,15 +177,17 @@ paragraphs.forEach(p => {
 
 希望以上分析能够帮助你理解 `v8/src/objects/megadom-handler.h` 的功能以及它与 JavaScript 的潜在联系。记住，由于我们只能看到头文件，一些结论是基于推测和经验得出的。要了解其更具体的实现细节，需要查看对应的 `.cc` 和 `.tq` 文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/megadom-handler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/megadom-handler.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ class MegaDomHandler
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_MEGADOM_HANDLER_H_
-
-"""
-
 ```

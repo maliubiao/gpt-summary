@@ -94,11 +94,13 @@ regex.test(text); // true
 
 虽然 JavaScript 开发者不能直接控制或看到这些字节码优化过程，但 `regexp-bytecode-peephole.cc` 的工作直接影响了 JavaScript 正则表达式的执行效率。 通过识别和替换常见的低效字节码序列，V8 引擎能够更快地执行正则表达式，从而提高 JavaScript 应用的性能。  这个优化过程是 V8 引擎内部的优化策略，对 JavaScript 开发者是透明的，但在幕后默默地提升了正则表达式的执行速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-bytecode-peephole.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1135,7 +1137,4 @@ Handle<TrustedByteArray> RegExpBytecodePeepholeOptimization::OptimizeBytecode(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

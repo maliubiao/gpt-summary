@@ -152,7 +152,7 @@ WebAssembly.instantiate(wasmModuleBytes, importObject)
 
 `v8/src/wasm/module-instantiate.cc` 代码负责 WebAssembly 模块实例化的核心流程，包括处理导入、初始化全局变量、处理导出以及初始化表和内存。它确保了 JavaScript 代码提供的导入与 WebAssembly 模块的定义一致，并将 WebAssembly 的各种元素与 JavaScript 环境连接起来，使得 JavaScript 可以与 WebAssembly 代码进行交互。用户在编写 JavaScript 代码来实例化 WebAssembly 模块时，需要注意提供正确类型的导入值，特别是对于可变的全局变量，必须使用 `WebAssembly.Global` 对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-instantiate.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-instantiate.cc以.tq结尾，那它是个v8 torque源代码，
@@ -160,8 +160,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 his case in the JS API, but the module should should
   // be allowed to declare such a global (no validation error).
   if (global.type == kWasmS128 && !IsWasmGlobalObject(*value)) {
@@ -947,7 +949,4 @@ void InstanceBuilder::LoadTableSegments(
         ValueOrError computed_element = ConsumeElementSegmentEntry(
             &init_expr_zone_, isolate_, trusted_instance_data,
             shared_trusted_instance_data, elem_segment, decoder,
-"""
-
-
 ```

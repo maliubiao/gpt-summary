@@ -152,7 +152,7 @@ if __name__ == '__main__':
 
 总而言之， `main2.c` 是一个简单的 C 程序，其目的是作为一个测试用例，用于验证动态instrumentation工具（如 Frida）是否能够正确地拦截并修改另一个函数的行为。它虽然简单，但其背后的思想和应用场景与逆向工程、二进制底层知识以及操作系统内核密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/182 find override/otherdir/main2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,14 +160,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int number_returner(void);
 
 int main(void) {
     return number_returner() == 100 ? 0 : 1;
 }
-
-"""
-
 ```

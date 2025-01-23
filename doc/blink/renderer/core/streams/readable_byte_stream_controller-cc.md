@@ -151,7 +151,7 @@ The user wants to understand the functionality of the `readable_byte_stream_cont
 
 这是 `ReadableByteStreamController` 的第一部分功能归纳，后续部分可能会涉及更多细节，例如与错误处理、取消操作以及更复杂的背压控制相关的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/streams/readable_byte_stream_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -942,7 +944,4 @@ void ReadableByteStreamController::InvalidateBYOBRequest(
   controller->byob_request_->controller_ = nullptr;
   // 3. Set controller.[[byobRequest]].[[view]] to null.
   controller->byob_request_->view_ = NotShared<DOMArra
-"""
-
-
 ```

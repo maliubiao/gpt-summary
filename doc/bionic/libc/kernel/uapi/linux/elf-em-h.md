@@ -232,7 +232,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/linux/elf-em.h` 虽然只是一个简单的头文件，但它定义了 Android 系统中用于识别不同 CPU 架构的关键常量，这些常量在应用的安装、加载、以及动态链接过程中都发挥着至关重要的作用。通过 Frida 等工具，我们可以深入观察这些常量在系统底层的运作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/elf-em.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -243,8 +243,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -303,7 +305,4 @@ Prompt:
 #define EM_S390_OLD 0xA390
 #define EM_CYGNUS_MN10300 0xbeef
 #endif
-
-"""
-
 ```

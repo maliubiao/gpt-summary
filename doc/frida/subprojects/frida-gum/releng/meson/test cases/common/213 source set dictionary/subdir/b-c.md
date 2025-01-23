@@ -261,7 +261,7 @@ void g(void) {
 
 总而言之，这个简单的 `b.c` 文件在 Frida 的测试环境中，主要用于测试 Frida 的基本功能，例如内存读写、函数 Hook 等，并为更复杂的动态分析场景提供了一个基础的测试用例。通过分析这个文件，我们可以理解 Frida 如何与目标进程交互，以及如何利用 Frida 进行逆向分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/213 source set dictionary/subdir/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -269,8 +269,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdlib.h>
 #include "all.h"
 
@@ -284,7 +286,4 @@ int main(void)
     f();
     g();
 }
-
-"""
-
 ```

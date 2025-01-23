@@ -212,7 +212,7 @@ Decoded Person: {Name:Alice Age:30}
 
 这段 `decoder.go` 的代码是 Go 语言 `encoding/gob` 包中至关重要的部分，它负责将 GOB 编码的数据转换回 Go 语言的数据结构，是实现数据持久化和跨进程通信的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/gob/decoder.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -220,8 +220,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -461,9 +463,4 @@ func (dec *Decoder) DecodeValue(v reflect.Value) error {
 // representation of the gob data read from r by calling that file's Debug function.
 // Otherwise it is nil.
 var debugFunc func(io.Reader)
-
-"""
-
-
-
 ```

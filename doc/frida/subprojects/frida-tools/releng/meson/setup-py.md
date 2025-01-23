@@ -132,7 +132,7 @@ Meson requires Python 3.7.0 or greater
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/setup.py` 是 Frida 工具安装过程中的一个关键文件，它负责将 Frida 的命令行工具打包并安装到用户的系统中。虽然它本身不直接执行逆向操作，但它是使用 Frida 进行逆向工程的必要前提。理解其功能有助于排查安装过程中的问题，并更深入地了解 Frida 工具的部署方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/setup.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
@@ -162,7 +164,4 @@ if sys.platform != 'win32':
                   ('share/polkit-1/actions', ['data/com.mesonbuild.install.policy'])]
 
 setup(data_files=data_files,)
-
-"""
-
 ```

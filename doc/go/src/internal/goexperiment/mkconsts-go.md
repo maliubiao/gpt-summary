@@ -145,7 +145,7 @@ type Flags struct {
 
 `mkconsts.go` 是一个内部工具，用于自动化管理 Go 实验性特性的常量定义。它利用 Go 的构建标签机制，使得代码可以根据不同的实验性特性启用状态进行条件编译，方便开发者测试和使用实验性功能。  它通过反射读取实验性特性的配置，并生成相应的常量定义文件，确保这些文件与当前的实验性特性配置保持同步。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/goexperiment/mkconsts.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -153,8 +153,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -227,9 +229,4 @@ func pick(v bool, f, t string) string {
 	}
 	return f
 }
-
-"""
-
-
-
 ```

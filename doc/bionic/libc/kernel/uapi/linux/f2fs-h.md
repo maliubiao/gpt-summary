@@ -297,7 +297,7 @@ if __name__ == '__main__':
 
 这个例子展示了如何通过 Frida 监控 Android 系统中与 F2FS 相关的底层操作，帮助理解 Android Framework 和 NDK 如何与文件系统进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/f2fs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -308,8 +308,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -384,7 +386,4 @@ struct f2fs_comp_option {
   __u8 log_cluster_size;
 };
 #endif
-
-"""
-
 ```

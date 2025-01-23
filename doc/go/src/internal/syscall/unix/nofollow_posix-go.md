@@ -145,7 +145,7 @@ func main() {
 
 `go/src/internal/syscall/unix/nofollow_posix.go` 这个文件虽然很小，但它在 Go 语言的底层 `syscall` 包中扮演着重要的角色。它定义了在特定 Unix 系统上，当使用 `O_NOFOLLOW` 标志遇到符号链接时，系统调用应该返回的错误码 `syscall.ELOOP`。这使得 Go 语言能够正确地处理这种平台相关的细节，并为上层应用提供一致的行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/nofollow_posix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -153,8 +153,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -177,9 +179,4 @@ import "syscall"
 //   - openbsd: https://man.openbsd.org/open.2
 //   - solaris: https://docs.oracle.com/cd/E23824_01/html/821-1463/open-2.html
 const noFollowErrno = syscall.ELOOP
-
-"""
-
-
-
 ```

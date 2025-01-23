@@ -134,7 +134,7 @@ By following this kind of structured thought process, including anticipating the
 
 总而言之，虽然 `Resources.java` 是一个简单的 Java 程序，但它在 Frida 的测试框架中扮演着验证资源加载的重要角色，并为理解 Java 应用程序的资源访问方式提供了基础。对于逆向工程师来说，理解这种资源加载机制是进行动态分析和潜在修改的关键一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/java/10 resources/src/com/mesonbuild/Resources.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 import java.io.BufferedReader;
@@ -170,7 +172,4 @@ public class Resources {
         }
     }
 }
-
-"""
-
 ```

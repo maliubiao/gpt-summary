@@ -168,7 +168,7 @@ Therefore, the primary function of this part of the file is to **rigorously test
 **总结第2部分的功能:**
 
 这部分 `manifest_parser_unittest.cc` 文件的主要功能是**细致地验证 Manifest 解析器对于 `display` 及其覆盖属性、屏幕方向、图标和屏幕截图相关属性的解析逻辑是否正确**。它通过大量的单元测试覆盖了各种可能的输入情况，包括有效值、无效值、类型错误以及边界情况，确保 Manifest 文件中的这些关键属性能够被准确地解析和使用，从而保证 Web App 的行为符合预期。
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/manifest/manifest_parser_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ature_list;
     feature_list.InitAndDisableFeature(blink::features::kWebAppBorderless);
     auto& manifest = ParseManifest(R"({ "display": "borderless" })");
@@ -1134,7 +1136,4 @@ TEST_F(ManifestParserTest, ShortcutsParseRules) {
     EXPECT_TRUE(manifest->icons.empty());
     EXPECT_EQ(1u, GetErrorCount());
     EXPECT_EQ("property 'url' of 'shortcut' not present.", errors()[0]
-"""
-
-
 ```

@@ -198,7 +198,7 @@ This is the content of the file.
 
 总而言之，这段代码是 Go 语言 `net/http` 包中关于 HTTP 请求的核心实现，它定义了请求的结构、提供了创建和操作请求的方法，并处理了一些底层的 HTTP 协议细节。理解这段代码对于开发 HTTP 客户端和服务器端应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/request.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -207,8 +207,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1182,10 +1184,4 @@ func NewRequestWithContext(ctx context.Context, method, url string, body io.Read
 // Authorization header, if the request uses HTTP Basic Authentication.
 // See RFC 2617, Section 2.
 func (r *Request) BasicAuth() (username, password string, ok bool) {
-
-"""
-
-
-
-
 ```

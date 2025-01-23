@@ -156,7 +156,7 @@ case MachineRepresentation::kWord16:
 
 这部分代码主要负责 **将 IR 图中的加载、类型转换、浮点运算、函数调用参数准备、非对齐内存访问以及原子操作节点转换为 RISC-V 64位架构的机器指令**。它根据操作的类型和涉及的数据类型选择最合适的 RISC-V 指令，并处理一些特殊的优化场景，例如零扩展。 这段代码是 V8 编译器后端代码生成阶段的核心组成部分，直接影响 JavaScript 代码在 RISC-V 架构上的执行效率和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-selector-riscv64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/instruction-selector-riscv64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 chineRepresentation::kWord8:
           opcode = load_rep.IsUnsigned() ? kRiscvLbu : kRiscvLb;
           break;
@@ -1013,7 +1015,4 @@ void VisitAtomicStore(InstructionSelectorT<Adapter>* selector,
       case MachineRepresentation::kTaggedPointer:  // Fall through.
       case MachineRepresentation::kTagged:
         DCHECK_EQ(AtomicWidthSize(width), kTaggedSi
-"""
-
-
 ```

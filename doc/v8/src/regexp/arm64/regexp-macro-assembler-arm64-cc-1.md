@@ -145,7 +145,7 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 这部分 `RegExpMacroAssemblerARM64.cc` 代码是 V8 引擎中用于在 ARM64 架构上实现高效正则表达式匹配的关键组成部分。它提供了管理正则表达式栈、控制程序流程、操作寄存器和内存、处理回溯以及进行栈溢出和抢占检查等底层功能，为 JavaScript 中正则表达式的执行提供了基础支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/arm64/regexp-macro-assembler-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -153,8 +153,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ) {
   ExternalReference ref =
       ExternalReference::address_of_regexp_stack_stack_pointer(isolate());
@@ -1099,8 +1101,4 @@ MemOperand RegExpMacroAssemblerARM64::register_location(int register_index) {
   int offset = kFirstRegisterOnStackOffset - register_index * kWRegSize;
   return MemOperand(frame_pointer(), offset);
 }
-
-"""
-
-
 ```

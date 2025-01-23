@@ -125,7 +125,7 @@ func main() {
 
 总而言之，这段 `signal_openbsd.go` 代码定义了 Go 语言在 OpenBSD 操作系统上处理各种系统信号的默认行为。理解 `sigtable` 的内容有助于开发者更好地理解程序的默认信号处理方式，并在需要时编写自定义的信号处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_openbsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -133,8 +133,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -176,9 +178,4 @@ var sigtable = [...]sigTabT{
 	/* 31 */ {_SigNotify, "SIGUSR2: user-defined signal 2"},
 	/* 32 */ {0, "SIGTHR: reserved"}, // thread AST - cannot be registered.
 }
-
-"""
-
-
-
 ```

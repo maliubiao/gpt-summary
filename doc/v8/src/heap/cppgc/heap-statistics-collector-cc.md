@@ -226,15 +226,17 @@ This code is part of V8's internal workings, so users don't directly interact wi
 
 **In summary, while developers don't directly interact with `heap-statistics-collector.cc`, the statistics it gathers are a direct consequence of JavaScript code execution and can be used to diagnose and understand memory-related performance issues stemming from common programming errors.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap-statistics-collector.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/heap-statistics-collector.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -427,7 +429,4 @@ bool HeapStatisticsCollector::VisitHeapObjectHeader(HeapObjectHeader& header) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

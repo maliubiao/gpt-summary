@@ -113,7 +113,7 @@ The user wants me to analyze the provided C++ code snippet from the Chromium Bli
 
 作为第三部分，这段代码的核心功能是 **具体实现了 `RuleInvalidationDataVisitor` 中用于创建和管理各种类型 `InvalidationSet` 对象的逻辑**。它涵盖了处理不同类型的 CSS 选择器（类、ID、属性、伪类）以及结构化伪类和通用兄弟选择器的机制。此外，它还负责将从选择器中提取的特征信息添加到相应的 `InvalidationSet` 中，并使用 Bloom Filter 进行性能优化。简单来说，这部分代码是 `RuleInvalidationDataVisitor` 中构建 CSS 规则失效信息的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/invalidation/rule_invalidation_data_visitor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -121,10 +121,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-      case CSSSelector::kPseudoWebkitAnyLink:
+### 源代码
+```cpp
+case CSSSelector::kPseudoWebkitAnyLink:
       case CSSSelector::kPseudoAnyLink:
       case CSSSelector::kPseudoAutofill:
       case CSSSelector::kPseudoWebKitAutofill:
@@ -585,8 +586,4 @@ template class RuleInvalidationDataVisitor<
     RuleInvalidationDataVisitorType::kTracer>;
 
 }  // namespace blink
-
-"""
-
-
 ```

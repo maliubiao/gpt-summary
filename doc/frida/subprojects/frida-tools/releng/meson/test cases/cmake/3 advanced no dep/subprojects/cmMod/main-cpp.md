@@ -193,7 +193,7 @@ Hello (LIB TEST)
 
 `frida/subprojects/frida-tools/releng/meson/test cases/cmake/3 advanced no dep/subprojects/cmMod/main.cpp` 这个文件是一个用于测试自定义库 `cmMod` 的简单 C++ 程序。它主要用于验证库的编译和链接是否正确。虽然它本身不直接涉及复杂的逆向工程技术或底层内核编程，但理解其功能和背后的构建过程对于理解 Frida 项目的结构和依赖关系是有帮助的。当构建系统出现问题或需要修改相关库时，开发者可能会需要查看这个文件作为调试的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/3 advanced no dep/subprojects/cmMod/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -201,8 +201,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "lib/cmMod.hpp"
 
@@ -213,7 +215,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

@@ -82,7 +82,7 @@ This systematic approach allows us to extract meaningful information even from a
 
 `fake-gthread.c` 是 Frida 为了进行自动化测试而创建的一个非常简单的 C 源文件。它提供了一个虚假的 `gthread` 函数实现，用于模拟和隔离与线程相关的行为，以便更好地测试 Frida 的功能，特别是其与 QML 和 GIR 的集成。用户通常不会直接使用或修改这个文件，但了解其功能有助于理解 Frida 的测试策略和内部工作原理，尤其是在调试 Frida 相关问题时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/22 gir link order/fake-gthread/fake-gthread.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -90,15 +90,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "fake-gthread.h"
 
 int fake_gthread_fake_function (void)
 {
   return 7;
 }
-
-"""
-
 ```

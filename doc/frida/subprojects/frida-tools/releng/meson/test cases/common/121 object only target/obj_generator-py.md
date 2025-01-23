@@ -160,7 +160,7 @@ Here's a breakdown of the thinking process to analyze the Python script:
 
 总而言之，`obj_generator.py` 是 Frida 测试基础设施的一部分，用于模拟目标代码的生成过程，方便进行自动化测试。用户通常是在 Frida 的开发或调试过程中，通过分析测试失败的原因，才会接触到这个脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/121 object only target/obj_generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # Mimic a binary that generates an object file (e.g. windres).
@@ -190,7 +192,4 @@ if __name__ == '__main__':
     else:
         cmd = [compiler, '-c', ifile, '-o', ofile]
     sys.exit(subprocess.call(cmd))
-
-"""
-
 ```

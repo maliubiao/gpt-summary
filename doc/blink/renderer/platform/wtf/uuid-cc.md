@@ -142,14 +142,16 @@ Let's break down the thought process for analyzing the `uuid.cc` file.
 
 `blink/renderer/platform/wtf/uuid.cc` 提供了一组核心的 UUID 生成和验证功能，这些功能虽然不直接暴露给前端开发者，但支撑着 Blink 引擎的内部运作，并且其生成的 UUID 可以间接地与 JavaScript、HTML 和 CSS 产生关联。理解这些基础功能有助于更好地理解浏览器引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/uuid.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ bool IsValidUUID(const String& uuid) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

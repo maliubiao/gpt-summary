@@ -122,7 +122,7 @@ Here's a plan:
 
    `v8/src/compiler/js-native-context-specialization.cc` 的第一部分主要负责在编译时对一些基础的 JavaScript 操作（如加法、类型转换到字符串、异步函数入口等）进行基于上下文的优化。它通过检查操作数的类型和值，特别是针对常量的情况，来执行常量折叠、类型特化等优化，以提升代码执行效率。它还处理了异步函数的初始化，并为后续的异步操作做准备。总而言之，这一部分是 V8 编译器中一个重要的优化阶段，旨在提高特定 JavaScript 代码模式的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-native-context-specialization.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-native-context-specialization.cc以.tq结尾，那它是个v8 torque源代码，
@@ -130,8 +130,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -920,8 +922,4 @@ Reduction JSNativeContextSpecialization::ReduceJSInstanceOf(Node* node) {
     // state that will ensure that deopts that happen after this point will not
     // fallback to the last Checkpoint--which would completely re-execute the
     // instanceof logic--but rather create an activation of a version of the
-   
-"""
-
-
 ```

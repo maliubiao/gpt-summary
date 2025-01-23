@@ -295,15 +295,17 @@ list.onWriterUnblocked(); // 输出 "Writer 1 can write!" 和 "Writer 2 can writ
 
 通过以上分析，开发人员可以更深入地理解网络栈中数据发送的阻塞机制，并找到导致用户报告问题的根本原因。 `quic_blocked_writer_list_test.cc` 文件作为测试代码，能够帮助开发人员验证 `QuicBlockedWriterList` 类的行为是否符合预期，从而辅助调试过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_blocked_writer_list_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -431,7 +433,4 @@ TEST(QuicBlockedWriterList, OnWriterUnblockedThenBlocked) {
 }
 
 }  // namespace quic
-
-"""
-
 ```

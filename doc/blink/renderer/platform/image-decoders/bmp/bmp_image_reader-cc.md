@@ -148,15 +148,17 @@ BMPImageReader 类的主要功能是**解析和解码 BMP (Bitmap) 图像文件�
 
 总而言之，这段代码是 `BMPImageReader` 类的核心组成部分，负责 BMP 文件格式的初步解析和元数据提取，为后续的像素数据解码奠定基础。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/bmp/bmp_image_reader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2008 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1026,7 +1028,4 @@ BMPImageReader::ProcessingResult BMPImageReader::ProcessRLEData() {
     // the image.
     const uint8_t count = ReadUint8(0);
     const uint8_t code = Read
-"""
-
-
 ```

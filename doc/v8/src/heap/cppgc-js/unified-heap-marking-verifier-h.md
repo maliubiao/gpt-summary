@@ -150,15 +150,17 @@ console.log(obj2.ref.data); // 正常情况下应该能访问到 "important data
 
 `v8/src/heap/cppgc-js/unified-heap-marking-verifier.h` 定义了用于验证 V8 统一堆标记阶段正确性的工具。它对于确保垃圾回收器的可靠性至关重要，间接地影响着 JavaScript 程序的稳定性和性能。虽然 JavaScript 开发者不能直接使用它，但理解其背后的原理有助于更好地理解 JavaScript 的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/unified-heap-marking-verifier.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc-js/unified-heap-marking-verifier.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ class V8_EXPORT_PRIVATE UnifiedHeapMarkingVerifier final
 }  // namespace v8
 
 #endif  // V8_HEAP_CPPGC_JS_UNIFIED_HEAP_MARKING_VERIFIER_H_
-
-"""
-
 ```

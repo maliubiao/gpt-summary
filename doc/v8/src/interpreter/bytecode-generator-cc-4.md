@@ -235,7 +235,7 @@ const instance = new MyClass(5);
 
 作为整个字节码生成过程的第 5 部分，这段代码专注于将 JavaScript 中关于 **类、条件逻辑、字面量 (包括对象和数组字面量)** 的抽象语法树节点转换为解释器可以理解的字节码指令。  它负责处理这些关键的语言构造，并确保生成的字节码能够正确地表达这些结构的语义。 考虑到这是一个更大的过程的一部分，可以推断前面的部分可能处理了更基础的语法元素或设置了上下文，而后面的部分可能会处理更复杂的控制流、函数调用或其他高级特性。 这部分的功能是构建 JavaScript 程序的核心组件的字节码表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -243,8 +243,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rty(initializer, args,
                       feedback_index(feedback_spec()->AddCallICSlot()));
   }
@@ -1031,7 +1033,4 @@ void BytecodeGenerator::BuildCreateArrayLiteral(
     if (current != end) {
       // If there are remaining elements, prepare the index register
       // to store the nex
-"""
-
-
 ```

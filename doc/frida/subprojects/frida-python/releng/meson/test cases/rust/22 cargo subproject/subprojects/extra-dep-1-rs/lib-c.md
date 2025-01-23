@@ -174,7 +174,7 @@ script.load()
 
 因此，查看这个 `lib.c` 文件通常是动态分析和调试过程中的一个环节，用于理解目标程序的内部工作机制。这个文件本身是一个简单的测试用例，用于验证 Frida 在特定场景下的功能，但它也反映了 Frida 在逆向工程中的实际应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/rust/22 cargo subproject/subprojects/extra-dep-1-rs/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,13 +182,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int extra_func(void)
 {
     return 0;
 }
-
-"""
-
 ```

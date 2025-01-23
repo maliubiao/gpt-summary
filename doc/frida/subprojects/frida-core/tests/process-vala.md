@@ -129,7 +129,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 用户调用 `ResourceUsageSnapshot.print_comparison` 方法，比较不同时间点的资源使用情况。
 
 通过这些操作，用户可以有效地管理和监控进程，确保程序的正确执行和资源的合理使用。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/process.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida.Test {
 	public class Process : Object {
 		public void * handle {
@@ -305,7 +307,4 @@ namespace Frida.Test {
 		private extern void kill (void * handle);
 	}
 }
-
-"""
-
 ```

@@ -144,15 +144,17 @@ func main() {
 
 `issue8158.go` 代码片段是一个精心构造的测试用例，用于揭示 Go 运行时中一个关于 goroutine panic 后栈清理和垃圾回收的 bug。 它展示了在特定时间窗口内，后继的操作可能会覆盖之前 panic 的 goroutine 遗留的栈数据，从而导致垃圾回收器崩溃。  这个 bug 已经修复，但这个测试用例作为 Go 运行时测试套件的一部分保留了下来，用于防止该问题再次出现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue8158.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -194,9 +196,4 @@ func f2(done chan bool) {
 	runtime.GC()                      // walked gp->panic list, found mangled Panic struct, crashed
 	panic("p")
 }
-
-"""
-
-
-
 ```

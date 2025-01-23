@@ -105,7 +105,7 @@ By following these steps, breaking down the request, and systematically analyzin
 
 总而言之，`foo.c` 作为一个简单的测试用例，其核心功能是演示条件编译，并用于验证 Frida 工具链在处理静态链接库时的构建配置和行为。虽然代码本身不复杂，但它涉及了逆向工程中重要的静态链接与动态链接的概念，以及底层二进制结构和构建系统的知识。理解这类测试用例有助于开发者确保 Frida 工具的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/18 pkgconfig static/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int power_level (void)
 {
 #ifdef FOO_STATIC
@@ -123,7 +125,4 @@ int power_level (void)
     return 8999;
 #endif
 }
-
-"""
-
 ```

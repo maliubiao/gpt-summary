@@ -126,7 +126,7 @@ By following this structured thought process, moving from high-level understandi
 
 总而言之，`frida/subprojects/frida-core/releng/meson/mesonbuild/compilers/cuda.py` 文件的主要功能是 **为 Frida 项目提供了一个 Meson 构建系统可以理解和使用的 CUDA 编译器接口。** 它负责处理 NVCC 编译器的特定命令行选项，将通用的编译器标志转换为 NVCC 理解的格式，执行编译器的健全性检查，并与主机编译器集成，从而使得 Frida 能够顺利地编译和构建包含 CUDA 代码的组件。 这对于 Frida 动态插桩工具来说至关重要，因为它可能需要与目标进程中运行的 CUDA 代码进行交互或监控。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/compilers/cuda.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -760,7 +762,4 @@ class CudaCompiler(Compiler):
         #include <{header}>
         using {symbol};
         int main(vo
-"""
-
-
 ```

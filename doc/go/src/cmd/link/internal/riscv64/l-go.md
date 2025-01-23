@@ -175,15 +175,17 @@ func main() {
 
 总而言之，`go/src/cmd/link/internal/riscv64/l.go` 中的这段代码定义了 RISC-V 64 位架构链接过程中的一些关键常量，用于控制内存对齐和调试信息的生成。它属于 Go 工具链的内部实现，对一般的 Go 开发者来说是透明的，但其定义的概念对于理解程序在特定架构上的内存布局和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/riscv64/l.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -198,9 +200,4 @@ const (
 	dwarfRegLR = 1
 	dwarfRegSP = 2
 )
-
-"""
-
-
-
 ```

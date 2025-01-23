@@ -151,15 +151,17 @@ Let's break down the thought process for analyzing this fuzzer code.
 
 如果怀疑是解析器本身的问题，Chromium 开发者可能会使用 fuzzer 生成的导致崩溃的输入来复现问题，并通过调试器跟踪 `DocumentPolicyParser::Parse` 的执行过程，找出导致崩溃的具体代码位置和原因。fuzzer 发现的崩溃输入可以直接作为测试用例，帮助开发者修复漏洞并防止类似问题再次发生。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/permissions_policy/document_policy_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
       WTF::String(UNSAFE_BUFFERS(base::span(data, size))), logger);
   return 0;
 }
-
-"""
-
 ```

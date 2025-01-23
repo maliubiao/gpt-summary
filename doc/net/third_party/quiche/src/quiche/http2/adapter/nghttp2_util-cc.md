@@ -215,15 +215,17 @@ InvalidFrameError::kRefusedStream
 
 因此，当你在调试 Chrome 浏览器网络问题，特别是与 HTTP/2 相关的错误时，看到调用栈中包含 `nghttp2_util.cc` 中的函数，这意味着问题很可能涉及到 Chromium 的 HTTP/2 适配器与 `nghttp2` 库的交互，例如头部格式错误、协议违规、连接管理问题等。 这时，可以重点关注传递给这些函数的参数和返回值，以及 `nghttp2` 库本身可能返回的错误码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/nghttp2_util.h"
 
 #include <cstdint>
@@ -532,7 +534,4 @@ void LogBeforeSend(const nghttp2_frame& frame) {
 
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

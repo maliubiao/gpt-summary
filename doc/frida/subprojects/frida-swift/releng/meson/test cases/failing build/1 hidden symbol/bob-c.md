@@ -120,7 +120,7 @@ int main() {
 
 `bob.c` 作为一个 "failing build" 测试用例，其核心功能是定义一个故意隐藏的函数 `hidden_function`。 它的目的是测试 Frida 在遇到这种隐藏符号时的行为，例如是否能够正确识别并报告错误，或者是否可以通过其他方式（如内存地址）进行 Hook。 这个测试用例与逆向工程中分析隐藏符号的技术、二进制底层（符号表、链接器）、常见的编程错误以及 Frida 的内部工作原理密切相关。 用户到达这里的路径通常是开发和测试 Frida 框架的一部分，旨在确保 Frida 的健壮性和错误处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing build/1 hidden symbol/bob.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,14 +128,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 int hidden_function() {
     return 7;
 }
-
-"""
-
 ```

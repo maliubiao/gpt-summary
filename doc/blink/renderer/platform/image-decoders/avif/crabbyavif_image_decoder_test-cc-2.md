@@ -93,15 +93,17 @@ By following these steps, I could effectively analyze the code snippet and gener
 
 总而言之，这部分测试用例进一步巩固了 `CrabbyavifImageDecoder` 的功能，确保其能够可靠地解码各种类型的静态 AVIF 图片，并为后续的渲染和处理流程提供正确的数据基础。 通过参数化测试，也提高了测试的覆盖率和效率，能够针对不同的图片进行细致的颜色校验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/avif/crabbyavif_image_decoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 "/images/resources/avif/peach_900000.avif",
                        "Blink.DecodedImage.AvifDensity.Count.0.9MP", kSample);
 }
@@ -197,8 +199,4 @@ TEST_P(CrabbyStaticAVIFColorTests, InspectImageHalfFloat) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
-
 ```

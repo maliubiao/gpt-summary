@@ -122,7 +122,7 @@ Let's consider the `CreateArithmeticOperationSimplified` function with some hypo
 
 This specific part of the `css_math_expression_node.cc` file is responsible for the **core logic of simplifying CSS arithmetic operations within `calc()` expressions**. It handles various scenarios, including operations between numbers, length units, percentages, and combinations thereof. The code attempts to perform immediate evaluation when possible (e.g., adding pixels to pixels) and creates operation nodes for expressions that require further context or cannot be immediately simplified (e.g., subtracting pixels from percentages). This simplification process is crucial for the browser to ultimately determine the concrete values of CSS properties for rendering HTML elements.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_math_expression_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -130,9 +130,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
-  if (CSSMathExpressionNode* result =
+### 源代码
+```cpp
+if (CSSMathExpressionNode* result =
           MaybeDistributeArithmeticOperation(left_side, right_side, op)) {
     return result;
   }
@@ -984,7 +986,4 @@ String CSSMathExpressionOperation::CustomCSSText() const {
         result.Append('(');
       }
       result.Append(ope
-"""
-
-
 ```

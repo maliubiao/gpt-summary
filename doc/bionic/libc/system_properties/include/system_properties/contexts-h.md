@@ -245,7 +245,7 @@ sys.stdin.read()
 
 总结来说，`contexts.handroid` 定义了管理 Android 系统属性上下文的抽象接口，而具体的实现类负责从不同的来源加载和管理这些属性，供 Android Framework 和 Native 代码使用。了解其功能有助于理解 Android 系统配置的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/system_properties/include/system_properties/contexts.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -256,8 +256,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -304,7 +306,4 @@ class Contexts {
   virtual void ResetAccess() = 0;
   virtual void FreeAndUnmap() = 0;
 };
-
-"""
-
 ```

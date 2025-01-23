@@ -150,12 +150,14 @@ console.log(Symbol.iterator in obj); // V8 内部会判断 Symbol.iterator 是�
 
 **总结来说，这个代码文件是 V8 引擎中负责对象属性管理和查找的核心组件之一，它为执行 JavaScript 代码中涉及对象属性的操作提供了底层的、高性能的实现。**  它使用了多种优化技术，例如不同类型的字典和查找算法，来确保属性访问的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第7部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ary>, TNode<Name>, Label*,
                       TVariable<IntPtrT>*, Label*, LookupMode);
 
@@ -1820,7 +1822,4 @@ TNode<Object> CodeStubAssembler::GetInterestingProperty(
       CSA_DCHECK(this, IsPropertyDictionary(CAST(properties)));
       // TODO(pthier): Support swiss dictionaries.
       if constexpr (!V8_ENABL
-"""
-
-
 ```

@@ -131,7 +131,7 @@ By following these steps, focusing on understanding the script's core function a
 
 总而言之，`docgen.py` 自身是一个非常简单的文件生成脚本，但它在 Frida 的测试流程中扮演着重要的角色，用于验证 Frida 在处理文件输出和自定义目标目录安装时的正确性。它的存在可以帮助开发者确保 Frida 的相关功能能够按照预期工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/123 custom target directory install/docgen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -156,7 +158,4 @@ except FileExistsError:
 for name in ('a', 'b', 'c'):
     with open(os.path.join(out, name + '.html'), 'w') as f:
         f.write(name)
-
-"""
-
 ```

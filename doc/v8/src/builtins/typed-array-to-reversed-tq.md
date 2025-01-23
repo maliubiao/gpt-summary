@@ -126,14 +126,16 @@ console.log(reversedArray); // 输出: Int32Array [ 5, 4, 3, 2, 1 ] (新的反�
 
 总而言之，这段 Torque 代码精确地实现了 `TypedArray.prototype.toReversed()` 方法的功能，为 JavaScript 开发者提供了一种创建反向排序的类型化数组的便捷方式，同时保持了原始数组的不变性。理解其与 `Array.prototype.reverse()` 的区别是避免常见错误的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-to-reversed.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ transitioning javascript builtin TypedArrayPrototypeToReversed(
   return copy;
 }
 }
-
-"""
-
 ```

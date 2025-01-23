@@ -180,15 +180,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`PreferenceManager` 在 Blink 渲染引擎中扮演着重要的角色，它充当了用户偏好信息的中心枢纽，使得网页能够以符合用户期望的方式呈现。虽然它本身是 C++ 代码，但其影响深远，直接关系到前端开发者如何利用 CSS 媒体查询和 JavaScript API 来创建更具可访问性和用户友好的 Web 体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/preferences/preference_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ void PreferenceManager::PreferenceMaybeChanged() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

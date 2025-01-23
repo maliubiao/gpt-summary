@@ -76,15 +76,17 @@ Here's a breakdown of the code's functionality:
 
 第 5 部分的测试用例主要关注 `MainThreadSchedulerImpl` 中关于 **任务优先级管理** 和 **任务队列控制** 的功能。它涵盖了非唤醒任务、Find-in-Page 任务、合成器任务的优先级策略，以及任务队列的节流机制。这些测试旨在确保主线程调度器能够合理地分配资源，优先执行关键任务，保证页面的响应性和流畅性。 这些功能都与 Web 浏览器的核心性能息息相关，直接影响用户与网页的交互体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/main_thread_scheduler_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 kMicrotaskTime,
             observer.result().front().second);
 }
@@ -895,8 +897,4 @@ INSTANTIATE_TEST_SUITE_P(
 class DiscreteInputMatchesResponsivenessMetricsTest
     : public MainThreadSchedulerImplTest,
       public ::testing::WithParamInterface<bool> {
-
-"""
-
-
 ```

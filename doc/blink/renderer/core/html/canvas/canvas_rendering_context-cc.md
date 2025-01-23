@@ -186,15 +186,17 @@ ctx.fillRect(0, 0, 50, 50);
 
 总而言之，`blink/renderer/core/html/canvas/canvas_rendering_context.cc` 文件是 Blink 渲染引擎中 Canvas 功能的核心组成部分，它负责管理 Canvas 渲染上下文的生命周期、处理绘制事件、并与 JavaScript 和 HTML 紧密协作，最终将用户的绘图指令转化为屏幕上的像素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/canvas/canvas_rendering_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Apple Inc. All rights reserved.
  *
@@ -441,7 +443,4 @@ CanvasRenderingContext::GetCanvasPerformanceMonitor() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

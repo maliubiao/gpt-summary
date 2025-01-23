@@ -164,7 +164,7 @@ dummy(kwarg1=123); // 这在 JavaScript 中不是标准的函数调用方式，�
 
 总而言之，`dummy.c` 在这个特定的上下文中，是一个极简的测试目标，用于验证 Frida 在处理特定类型的函数调用（特别是涉及到关键字参数赋值）时的行为。它位于一个 "failing" 测试用例目录中，表明它被用来暴露 Frida 的一个已知问题或需要改进的地方。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/39 kwarg assign/dummy.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,12 +172,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 const char* dummy() {
     return "I do nothing.";
 }
-
-"""
-
 ```

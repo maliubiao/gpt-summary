@@ -210,15 +210,17 @@ By following this detailed thought process, starting with a general understandin
 
 通过这样的步骤，开发者可以从用户反馈的问题出发，逐步深入到代码的各个层次，最终可能需要查看 Blink 引擎的源代码来诊断和解决问题。 `gain_node.cc` 就是在这样一个调试过程中可能会被查阅到的文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/gain_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010, Google Inc. All rights reserved.
  *
@@ -314,7 +316,4 @@ void GainNode::ReportWillBeDestroyed() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -160,14 +160,16 @@ By following this kind of detailed examination of the code structure, includes, 
 
 总而言之，`origin_trial_context_test.cc` 是一个非常重要的测试文件，它确保了 Origin Trial 机制的核心组件 `OriginTrialContext` 的正确性，这对于 Chromium 能够安全可靠地进行实验性功能部署至关重要。它通过模拟各种场景，包括不同的 token 状态、Origin 类型、HTTP 头信息等，来验证 `OriginTrialContext` 的行为是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/origin_trials/origin_trial_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -947,7 +949,4 @@ TEST_F(OriginTrialContextDevtoolsTest, InsecureOrigin) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

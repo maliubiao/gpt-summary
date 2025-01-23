@@ -216,7 +216,7 @@ The primary Go features being tested here are:
 
 作为第 4 部分，它延续了对 `net/http` 服务器功能的测试，更深入地探讨了连接生命周期管理、高级特性（如 Hijack）以及在各种复杂场景下的行为。之前的部分可能已经涵盖了基本的请求处理和响应生成，而这部分则着重于更精细的控制和异常情况的处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/serve_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -225,8 +225,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 d CloseNotify")
 		case <-time.After(100 * time.Millisecond):
 		}
@@ -1385,9 +1387,4 @@ func testServerKeepAliveAfterWriteError(t *testing.T, mode testMode) {
 	addrc := make(chan string, numReq)
 	ts := newClientServerTest(t, mode, HandlerFunc(func(w ResponseWriter, r *Request) {
 		addrc <- r.Rem
-"""
-
-
-
-
 ```

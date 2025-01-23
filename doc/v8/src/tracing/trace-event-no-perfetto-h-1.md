@@ -169,7 +169,7 @@ void processData() {
 
 总而言之，`v8/src/tracing/trace-event-no-perfetto.h` 的第二部分继续定义了用于在 V8 中生成和记录各种跟踪事件的宏，特别是关注异步和嵌套异步操作的跟踪，以及对象生命周期和元数据的记录。这些宏为 V8 的性能分析和调试提供了重要的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tracing/trace-event-no-perfetto.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/tracing/trace-event-no-perfetto.h以.tq结尾，那它是个v8 torque源代码，
@@ -177,8 +177,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 2_name, arg2_val)       \
   INTERNAL_TRACE_EVENT_ADD_WITH_ID(                                      \
       TRACE_EVENT_PHASE_ASYNC_END, category_group, name, id,             \
@@ -547,8 +549,4 @@ Prompt:
 #define TRACE_EVENT_SCOPE_NAME_THREAD ('t')
 
 #endif  // V8_TRACING_TRACE_EVENT_NO_PERFETTO_H_
-
-"""
-
-
 ```

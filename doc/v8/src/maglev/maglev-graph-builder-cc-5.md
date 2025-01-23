@@ -116,7 +116,7 @@ This part of `maglev-graph-builder.cc` is responsible for **implementing the typ
 
 In essence, it's a crucial component for ensuring type safety and enabling performance optimizations within the Maglev compiler by making type information explicit in the generated graph.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -124,8 +124,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 static_type = StaticTypeForNode(broker(), local_isolate(), node);
   if (current_type) *current_type = static_type;
   return NodeTypeIs(static_type, type);
@@ -928,7 +930,4 @@ void MaglevGraphBuilder::BuildStoreFixedArrayElement(ValueNode* elements,
   // to the new elements array.
   if (CanElideWriteBarrier(elements, value)) {
     AddNewNo
-"""
-
-
 ```

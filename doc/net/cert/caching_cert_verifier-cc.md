@@ -137,15 +137,17 @@ Here's how a user action can lead the browser to execute code within `caching_ce
 
 In summary, `caching_cert_verifier.cc` is a critical component for optimizing HTTPS performance in Chromium by intelligently caching certificate verification results, thereby reducing latency and improving the user experience. Understanding its functionality is essential for debugging network-related issues and appreciating the complexities of secure web communication.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/caching_cert_verifier.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -349,7 +351,4 @@ size_t CachingCertVerifier::GetCacheSize() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

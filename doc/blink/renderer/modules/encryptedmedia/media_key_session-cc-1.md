@@ -188,7 +188,7 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 通过查看浏览器开发者工具中的 Network 面板（检查许可证请求等）、Console 面板（查看 JavaScript 日志和错误）、以及 Media 面板（查看 EME 相关信息），可以帮助开发者追踪用户操作并定位到相关代码的执行。 设置断点在 `MediaKeySession` 的相关方法中可以进行更深入的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/encryptedmedia/media_key_session.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ySession::close(
     ScriptState* script_state,
     ExceptionState& exception_state) {
@@ -549,8 +551,4 @@ void MediaKeySession::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -189,15 +189,17 @@ go build
 
 总而言之，这段代码是 Go 工具链中一个非常重要的组成部分，它通过分析错误信息和参考环境变量，实现了在必要时自动切换 Go 版本的强大功能，提升了开发体验和项目兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/toolchain/switch.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -433,9 +435,4 @@ func HasPath() bool {
 	env := cfg.Getenv("GOTOOLCHAIN")
 	return env == "path" || strings.HasSuffix(env, "+path")
 }
-
-"""
-
-
-
 ```

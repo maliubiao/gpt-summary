@@ -187,15 +187,17 @@ func main() {
 
 总而言之，`go/test/typeparam/issue51367.go` 这个文件本身的代码很简洁，但它的存在是为了测试 Go 语言在处理包含泛型代码的被忽略包时的行为，确保编译器和工具链能够正确地处理这种情况，避免不必要的错误或链接。这种类型的测试是 Go 语言测试套件中用于保证语言特性实现正确性的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue51367.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // rundir
 
 // Copyright 2022 The Go Authors. All rights reserved.
@@ -203,9 +205,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

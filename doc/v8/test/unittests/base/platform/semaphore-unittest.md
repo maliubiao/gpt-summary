@@ -109,11 +109,13 @@ main();
 
 总而言之，`semaphore-unittest.cc` 文件测试的是 V8 引擎中用于线程同步的关键机制。虽然 JavaScript 开发者通常不会直接使用 `Semaphore`，但理解其背后的原理有助于理解 JavaScript 运行时环境是如何处理并发和异步操作的。JavaScript 通过其自身的异步模型和 API 提供了类似的同步和资源管理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/platform/semaphore-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -256,7 +258,4 @@ TEST(Semaphore, WaitFor) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

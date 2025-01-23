@@ -201,15 +201,17 @@ console.log(formattedDate);
 
 理解 `v8/src/objects/js-date-time-format.tq` 这样的内部结构，可以帮助我们更好地理解 JavaScript 国际化功能的底层实现，以及如何避免在使用 `Intl.DateTimeFormat` 时出现常见的错误。虽然开发者通常不需要直接操作这些底层的 Torque 代码，但了解其功能有助于进行性能分析和问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-date-time-format.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-date-time-format.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ extern class JSDateTimeFormat extends JSObject {
   bound_format: JSFunction|Undefined;
   flags: SmiTagged<JSDateTimeFormatFlags>;
 }
-
-"""
-
 ```

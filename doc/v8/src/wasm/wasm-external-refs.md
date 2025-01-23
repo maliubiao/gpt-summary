@@ -135,11 +135,13 @@ console.log(copiedData); // 输出 Uint8Array [1, 2, 3, 4, 5]
 
 总而言之，`wasm-external-refs.cc` 是V8引擎中连接WebAssembly和底层C++实现的桥梁，它提供了一组关键的外部引用，使得WebAssembly代码能够执行各种必要的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-external-refs.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1263,7 +1265,4 @@ Address load_old_fp(Isolate* isolate) {
 
 #undef V8_WITH_SANITIZER
 #undef RESET_THREAD_IN_WASM_FLAG_FOR_ASAN_ON_WINDOWS
-
-"""
-
 ```

@@ -124,7 +124,7 @@ Here's a breakdown of the functionalities within this part:
 
 这部分 `XMLHttpRequest.cc` 源代码的核心功能是**处理发送 XMLHttpRequest 请求的各个阶段**，包括准备请求数据、配置请求参数、实际发起网络请求，以及接收和初步处理网络响应（主要是响应头）。它定义了如何将 JavaScript 中对 `XMLHttpRequest` 对象的调用转化为底层的网络操作，并处理了请求过程中的各种错误情况。 这部分代码是 JavaScript `XMLHttpRequest` API 在 Chromium Blink 引擎中的具体实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xmlhttprequest/xml_http_request.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 y;
 
   if (!body.IsNull() && AreMethodAndURLValidForSend()) {
@@ -1108,7 +1110,4 @@ void XMLHttpRequest::DidSendData(uint64_t bytes_sent,
 void XMLHttpRequest::DidReceiveResponse(uint64_t identifier,
                                         const ResourceResponse& response) {
   // TODO(yhirano): Remove this CHECK: see https://crbug.
-"""
-
-
 ```

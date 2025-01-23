@@ -179,14 +179,16 @@ By following this structured thought process, combining code analysis with domai
 
 总而言之，`AudioDSPKernelProcessor` 是 Blink 渲染引擎中一个关键的音频处理组件，它封装了对多个 DSP 内核的管理和音频数据的处理流程，为 Web Audio API 提供了底层的强大支持。 理解其功能和正确使用方式对于开发高性能的 Web 音频应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/audio_dsp_kernel_processor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -354,7 +356,4 @@ double AudioDSPKernelProcessor::LatencyTime() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

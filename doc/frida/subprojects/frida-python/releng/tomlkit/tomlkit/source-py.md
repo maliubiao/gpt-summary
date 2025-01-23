@@ -186,7 +186,7 @@ By following this structured approach, you can systematically analyze the code a
 
 总而言之，`frida/subprojects/frida-python/releng/tomlkit/tomlkit/source.py` 文件是 `tomlkit` 库的核心组成部分，负责管理 TOML 文本的读取和状态，为后续的解析过程提供基础。虽然它不直接涉及底层的二进制或内核操作，但在逆向工程中，它对于理解和分析目标程序使用的 TOML 配置文件至关重要。用户通过 Frida 脚本使用 `tomlkit` 解析 TOML 数据时，相关的操作最终都会涉及到这个文件中的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/tomlkit/tomlkit/source.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from copy import copy
@@ -376,7 +378,4 @@ class Source(str):
             cur += len(line) + 1
 
         return len(self.splitlines()), 0
-
-"""
-
 ```

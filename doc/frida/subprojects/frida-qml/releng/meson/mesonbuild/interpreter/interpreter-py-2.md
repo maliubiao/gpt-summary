@@ -85,7 +85,7 @@ This section of the `interpreter.py` file in Frida's build system defines core f
 
 These functionalities are crucial for orchestrating the complex build process of Frida and its components, ensuring that all necessary tools and dependencies are in place and that the final binaries are generated correctly.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -94,8 +94,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 'backend'))
             vsenv = self.coredata.get_option(OptionKey('vsenv'))
             force_vsenv = vsenv or backend.startswith('vs')
@@ -719,7 +721,4 @@ Prompt:
     @typed_kwargs(
         'vcs_tag',
         CT_INPUT_KW.evolve(required
-"""
-
-
 ```

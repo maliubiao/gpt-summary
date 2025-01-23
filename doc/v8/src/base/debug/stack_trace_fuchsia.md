@@ -131,11 +131,13 @@ Error: Something went wrong!
 
 `stack_trace_fuchsia.cc` 为 V8 引擎在 Fuchsia 操作系统上处理堆栈跟踪提供了基础结构。它选择依赖 Fuchsia 自身的堆栈跟踪机制，而不是在进程内部进行捕获。 它定义了一个 `StackTrace` 类来表示堆栈信息，并提供了打印和输出堆栈信息的方法，尽管具体的堆栈捕获和字符串格式化可能在 V8 的其他部分或平台特定的代码中实现。  它确保了当 JavaScript 代码运行时发生错误时，开发者仍然能够获得有用的堆栈跟踪信息来进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/debug/stack_trace_fuchsia.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ void StackTrace::OutputToStream(std::ostream* os) const {
 }  // namespace debug
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

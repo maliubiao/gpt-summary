@@ -209,7 +209,7 @@ const obj = { u8: u8, f32: f32, u8_2: u8 };
 
 总而言之，这部分单元测试旨在确保 `ValueSerializer` 能够正确、健壮地处理各种与二进制数据相关的 JavaScript 对象，并且能够通过自定义委托来支持更复杂的数据类型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/value-serializer-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/objects/value-serializer-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -217,8 +217,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eferences to the same typed array should be resolved.
   DecodeTestUpToVersion(
       13,
@@ -1049,7 +1051,4 @@ class ValueSerializerTestWithWasm : public ValueSerializerTest {
     auto enabled_features =
         i::wasm::WasmEnabledFeatures::FromIsolate(i_isolate());
     i::MaybeHandle<i::J
-"""
-
-
 ```

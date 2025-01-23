@@ -127,15 +127,17 @@ fetch('https://example.com/data')
 
 总之，`quic_simple_crypto_server_stream_helper.cc` 提供了一个非常基础的 QUIC 服务器端加密握手助手，它简化了握手过程，主要用于测试和示例目的，但在生产环境中需要更复杂的实现来确保安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/tools/quic_simple_crypto_server_stream_helper.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -164,7 +166,4 @@ bool QuicSimpleCryptoServerStreamHelper::CanAcceptClientHello(
 }
 
 }  // namespace quic
-
-"""
-
 ```

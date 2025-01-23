@@ -187,7 +187,7 @@ func main() {
 
 总结来说，这部分代码是 `net/http` 包中关于 HTTP/2 协议帧处理的核心实现，定义了各种帧的结构、解析和写入逻辑，并提供了一些辅助功能来简化操作。理解这部分代码对于深入学习和使用 Go 语言的 HTTP/2 功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/h2_bundle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -196,8 +196,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 rites {
 		return errors.New("illegal window increment value")
 	}
@@ -1383,9 +1385,4 @@ func http2newBufferedWriter(group http2synctestGroupInterface, conn net.Conn, ti
 
 // bufWriterPoolBufferSize is the size of bufio.Writer's
 // buffers cre
-"""
-
-
-
-
 ```

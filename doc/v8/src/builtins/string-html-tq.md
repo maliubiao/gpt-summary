@@ -236,14 +236,16 @@ By following these steps, combining code analysis with knowledge of JavaScript s
 
 总而言之，这个 Torque 代码文件是 V8 引擎中实现 `String.prototype` 上一系列用于生成 HTML 标签的方法的关键部分。它通过一个通用的 `CreateHTML` 函数和针对每个 JavaScript 方法的特定封装，实现了将字符串转换为 HTML 元素的功能。理解这段代码有助于深入了解 JavaScript 引擎的工作原理以及 JavaScript 语言的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/string-html.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -371,7 +373,4 @@ transitioning javascript builtin StringPrototypeSup(
       receiver, 'String.prototype.sup', 'sup', kEmptyString, kEmptyString);
 }
 }
-
-"""
-
 ```

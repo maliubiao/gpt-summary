@@ -346,7 +346,7 @@ sys.stdin.read()
 
 通过使用 Frida 这样的动态调试工具，可以深入了解 Android 动态链接器的内部工作原理，并对配置文件解析和命名空间配置等关键步骤进行调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_config.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -357,8 +357,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -978,7 +980,4 @@ void Config::clear() {
   namespace_configs_.clear();
   namespace_configs_map_.clear();
 }
-
-"""
-
 ```

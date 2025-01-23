@@ -158,15 +158,17 @@ By following these steps, we can arrive at a comprehensive and informative summa
 
 这段代码是 Chromium 浏览器中 EME 功能的核心组成部分，负责根据 JavaScript 代码提供的候选配置，结合浏览器和底层密钥系统的能力，选择一个最合适的加密媒体配置。它涉及到复杂的逻辑判断，包括对持久化状态、会话类型、音视频能力以及用户权限的管理。 它的目标是安全且有效地为 Web 上的加密媒体内容提供播放能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/key_system_config_selector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 AccessSync(
           WebContentSettingsClient::StorageType::kIndexedDB)) {
     if (persistent_state_support == EmeFeatureSupport::ALWAYS_ENABLED)
@@ -602,8 +604,4 @@ void KeySystemConfigSelector::OnHardwareSecureDecryptionAllowedResult(
 #endif  // BUILDFLAG(IS_WIN)
 
 }  // namespace blink
-
-"""
-
-
 ```

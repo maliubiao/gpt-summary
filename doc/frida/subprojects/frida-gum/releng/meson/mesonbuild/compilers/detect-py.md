@@ -131,7 +131,7 @@ I will structure the response by first giving a high-level summary of the code's
 
 该 Python 代码文件的主要功能是 **自动化地在系统中检测并配置构建 Frida 所需的各种编译器和链接器**，包括定义默认编译器列表、根据语言选择检测函数、执行编译器并解析版本信息、识别编译器类型、创建编译器对象以及检测静态链接器。它为 Meson 构建系统提供了一个关键的组件，使其能够根据当前环境自动找到合适的工具来编译项目。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 
@@ -824,7 +826,4 @@ def detect_fortran_compiler(env: 'Environment', for_machine: MachineChoice) -> C
                     popen_exceptions[join_args(compiler)] = 'no pre-processor defines'
                     continue
                 if guess_gcc_or_lcc == 'lcc
-"""
-
-
 ```

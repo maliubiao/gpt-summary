@@ -136,7 +136,7 @@ VERSION = "16.0.19"
 
 总而言之，`vcstagger.py` 是一个在 Frida 构建过程中自动嵌入版本信息的小工具，它依赖于操作系统提供的命令行执行能力和版本控制系统。虽然不直接用于逆向，但其生成的结果可以为逆向分析提供有价值的信息。理解其功能和使用方式有助于排查与 Frida 版本相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/scripts/vcstagger.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015-2016 The Meson development team
 
@@ -181,7 +183,4 @@ def run(args: T.List[str]) -> int:
 
 if __name__ == '__main__':
     sys.exit(run(sys.argv[1:]))
-
-"""
-
 ```

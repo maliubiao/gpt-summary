@@ -158,7 +158,7 @@ By following these steps, combining code analysis with contextual understanding,
 
 `touch.py` 是一个简单的实用工具，用于在 Frida Python 组件的测试环境中创建或更新文件的时间戳。虽然它本身不涉及复杂的逆向工程操作，但它在搭建测试环境和确保测试的可靠性方面发挥着重要的作用。理解这个脚本的功能有助于理解 Frida 的构建和测试流程，并能帮助开发者在遇到相关问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/14 configure file/touch.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -184,7 +186,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

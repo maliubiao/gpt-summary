@@ -199,14 +199,16 @@ Let's break down the thought process for analyzing this `HTMLBaseElement.cc` fil
 
 总而言之，`HTMLBaseElement.cc` 负责实现 `<base>` 元素的核心功能，确保浏览器能够正确解析和应用其属性，从而影响整个文档中相对 URL 的解析行为。理解这个文件的功能对于深入了解浏览器如何处理 HTML 文档至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_base_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -302,7 +304,4 @@ void HTMLBaseElement::setHref(const AtomicString& url_string) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

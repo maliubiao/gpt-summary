@@ -130,7 +130,7 @@ Initially, one might focus too much on the *content* of `prog.c`. The key is to 
 
 总而言之，这个看似简单的 `prog.c` 文件在 Frida 的测试框架中扮演着一个重要的角色，它提供了一个干净、可控的目标，用于验证 Frida 在特定条件下的行为，特别是在缺少构建时头文件信息的情况下。  它帮助开发者确保 Frida 的鲁棒性，并为用户提供了一个参考，了解 Frida 在类似场景下的预期表现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/122 no buildincdir/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,14 +138,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"header.h"
 
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

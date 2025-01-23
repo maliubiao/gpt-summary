@@ -167,15 +167,17 @@ By following these steps, we can systematically analyze the C++ unit test file a
 
 `v8/test/unittests/heap/cppgc/stack-unittest.cc` 是 V8 引擎中一个关键的测试文件，它详细地测试了 cppgc 模块中栈扫描功能的正确性。 栈扫描是垃圾回收的关键步骤，确保了垃圾回收器能够准确地识别存活对象，避免悬挂指针和内存泄漏，从而保证 JavaScript 代码的稳定运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/stack-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc/stack-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -650,7 +652,4 @@ TEST_F(GCStackTest, StackAlignment) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

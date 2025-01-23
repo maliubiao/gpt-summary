@@ -126,15 +126,17 @@ Let's break down the thought process for analyzing the provided `ads.cc` file an
 
 总而言之，`blink/renderer/modules/ad_auction/ads.cc` 文件中定义的 `Ads` 类是 Blink 渲染引擎中用于表示和管理广告相关信息的关键数据结构，它在广告竞价和展示流程中扮演着重要的角色，并与 JavaScript、HTML 和 CSS 等前端技术间接地相互作用。理解这个类的功能对于理解浏览器如何处理网页上的广告至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ad_auction/ads.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ WTF::String Ads::GetGuid() const {
   return guid_;
 }
 }  // namespace blink
-
-"""
-
 ```

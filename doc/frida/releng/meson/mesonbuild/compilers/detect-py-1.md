@@ -145,7 +145,7 @@ Strategizing complete. I will now generate the response based on these insights.
 
 在调试构建问题时，如果遇到与编译器相关的错误，可以检查 Meson 的配置输出，查看编译器检测的结果是否正确。也可以手动执行脚本中尝试执行的编译器命令，查看输出是否符合预期，从而定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ':
                     version = _get_lcc_version_from_defines(defines)
                     cls = fortran.ElbrusFortranCompiler
@@ -846,8 +848,4 @@ def _get_clang_compiler_defines(compiler: T.List[str]) -> T.Dict[str, str]:
                                    f'Compiler stderr:\n{error}\n-----\n')
     defines: T.Dict[str, str] = {}
     for line in output.split('\n'):
-    
-"""
-
-
 ```

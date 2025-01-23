@@ -117,7 +117,7 @@ Imagine a reverse engineer is analyzing a scientific application on Linux and en
 
 If the build fails with errors related to linking against Scalapack or finding Scalapack libraries, a developer debugging the build process might delve into Meson's dependency handling logic and eventually find their way to this `scalapack.py` file to understand how Frida is attempting to locate and configure Scalapack. They might inspect the generated `build.ninja` file to see the actual linker commands and flags that were generated based on the logic in this file.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/dependencies/scalapack.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2020 The Meson development team
 
@@ -269,7 +271,4 @@ class MKLPkgConfigDependency(PkgConfigDependency):
             allow_system = True
         cflags = self.pkgconfig.cflags(self.name, allow_system, define_variable=(('prefix', self.__mklroot.as_posix()),))
         self.compile_args = self._convert_mingw_paths(cflags)
-
-"""
-
 ```

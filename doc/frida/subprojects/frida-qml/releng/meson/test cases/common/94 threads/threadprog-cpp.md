@@ -108,7 +108,7 @@ Let's break down the thought process for analyzing this C++ code snippet within 
 
 `threadprog.cpp` 虽然是一个非常简单的多线程程序，但它清晰地展示了跨平台线程创建的基本方法。它在 Frida 的上下文中扮演着重要的角色，作为测试 Frida 线程注入和监控功能的基石。理解这个程序的功能和实现细节，有助于理解 Frida 如何应用于更复杂的逆向工程场景，以及如何利用 Frida 来分析和调试多线程应用程序。它也涉及到操作系统底层的线程管理机制，是学习相关知识的一个很好的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/94 threads/threadprog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /* On Windows not all versions of VS support C++11 and
  * some (most?) versions of mingw don't support std::thread,
  * even though they do support c++11. Since we only care about
@@ -161,7 +163,4 @@ int main(void) {
 }
 
 #endif
-
-"""
-
 ```

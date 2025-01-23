@@ -246,7 +246,7 @@ By following these steps, we can systematically analyze the C++ code snippet and
 
 如果整个 `interpreter-generator.cc` 文件都以这种方式组织，那么它的核心功能就是将高级的字节码指令转换为可以在 V8 虚拟机上执行的低级操作。它负责将 JavaScript 的语义映射到底层的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/interpreter-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -254,8 +254,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ateObject, context, shared_info,
                   description, slot, maybe_feedback_vector);
   SetAccumulator(result);
@@ -974,8 +976,4 @@ Handle<Code> GenerateBytecodeHandler(Isolate* isolate, const char* debug_name,
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

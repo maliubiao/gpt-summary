@@ -140,7 +140,7 @@ By following these steps of understanding the code, its context, its relationshi
 
 总而言之，这个 `main.c` 文件是一个用于测试 Frida 构建系统依赖项管理的关键组件，通过检查 `pkg-config` 是否能正确提供编译选项，确保 Frida 在编译时能够正确链接和使用其依赖库。这对于保证 Frida 的正常功能和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/44 pkgconfig-gen/dependencies/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <simple.h>
 
 #ifndef LIBFOO
@@ -160,7 +162,4 @@ int main(int argc, char *argv[])
 {
   return simple_function() == 42 ? 0 : 1;
 }
-
-"""
-
 ```

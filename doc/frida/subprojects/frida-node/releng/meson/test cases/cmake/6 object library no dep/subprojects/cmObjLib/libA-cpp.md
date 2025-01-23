@@ -164,7 +164,7 @@ By following this structured approach, I can generate a comprehensive and inform
 
 总而言之，`libA.cpp` 虽然是一个非常简单的 C++ 文件，但在 Frida 的测试框架中扮演着验证构建系统和基本功能的角色。 它可以作为逆向分析的简单目标，并涉及到编译、链接、内存管理等底层概念。 理解其上下文可以帮助开发者和研究人员更好地理解 Frida 的工作原理和测试流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/6 object library no dep/subprojects/cmObjLib/libA.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,14 +172,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "libA.hpp"
 
 std::string getLibStr(void) {
   return "Hello World";
 }
-
-"""
-
 ```

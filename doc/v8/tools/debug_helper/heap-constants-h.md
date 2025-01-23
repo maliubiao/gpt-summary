@@ -191,15 +191,17 @@ if (known_object_name == "GlobalPrototype") {
 
 By using the functions in `heap-constants.h`, the debugger can expose the developer's incorrect assumption about the fixed memory location, highlighting a potential source of bugs and instability. This emphasizes that relying on hardcoded memory addresses within V8 is generally unsafe and prone to breaking between V8 versions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/debug_helper/heap-constants.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/debug_helper/heap-constants.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ KnownInstanceType FindKnownMapInstanceTypes(
 }  // namespace v8
 
 #endif
-
-"""
-
 ```

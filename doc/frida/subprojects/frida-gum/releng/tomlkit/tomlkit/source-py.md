@@ -184,7 +184,7 @@ How does a user end up interacting with this code?
 
 **作为调试线索:** 当 Frida 报告 TOML 解析错误时，错误信息中包含的行号和列号正是由 `source.py` 的 `_to_linecol()` 和 `parse_error()` 方法生成的。这可以帮助用户快速定位到 TOML 文件中出错的具体位置，从而进行修正。例如，如果 Frida 报错 "Line 3 column 5 - Unexpected character: '='", 用户可以直接打开 `config.toml` 文件，查看第 3 行第 5 列附近的字符，找出语法错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/tomlkit/source.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from copy import copy
@@ -374,7 +376,4 @@ class Source(str):
             cur += len(line) + 1
 
         return len(self.splitlines()), 0
-
-"""
-
 ```

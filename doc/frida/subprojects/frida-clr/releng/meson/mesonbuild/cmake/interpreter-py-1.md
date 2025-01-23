@@ -91,7 +91,7 @@ Now, let's structure the answer based on the user's requirements.
 
 这个 `interpreter.py` 文件的主要功能可以概括为：**作为 Frida 的一个桥梁，它负责理解基于 CMake 构建的项目的结构和配置，并将这些信息转换成 Frida 构建系统 (Meson) 可以理解的形式，从而使得 Frida 能够对这些项目进行后续的动态插桩操作。**  它通过执行 CMake 配置，解析 CMake 生成的文件 API 数据，并进行一系列的逻辑分析和转换，最终生成一个 Meson 构建描述，为 Frida 的目标代码分析和插桩奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/cmake/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,8 +100,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 mlog.bold(str(self.conflict_map)))
         mlog.log('  -- working_dir:  ', mlog.bold(str(self.working_dir)))
         mlog.log('  -- depends_raw:  ', mlog.bold(str(self.depends_raw)))
@@ -612,8 +614,4 @@ class CMakeInterpreter:
 
     def target_list(self) -> T.List[str]:
         return list(self.internal_name_map.keys())
-
-"""
-
-
 ```

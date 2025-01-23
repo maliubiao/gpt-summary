@@ -110,15 +110,17 @@ web_pointer_event.button = WebPointerProperties::Button::kLeftButton;
 
 这段代码是 `PointerEventFactory` 类的单元测试的第一部分，主要关注于测试创建和管理各种基本类型的 `PointerEvent` 对象，以及跟踪活跃指针和处理简单的事件生命周期。它验证了 `PointerEventFactory` 能够正确地将底层的输入事件转化为符合 Web 标准的 `PointerEvent` 对象，为后续的事件分发和 JavaScript 处理奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/pointer_event_factory_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -801,7 +803,4 @@ class PointerEventFactoryDeviceIdTest : public SimTest {
 
     LocalDOMWindow* window = GetDocument().domWindow();
     return pointer_event_factory_.Create(web_poin
-"""
-
-
 ```

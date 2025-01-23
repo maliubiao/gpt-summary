@@ -147,14 +147,16 @@ This structured approach, starting from the code itself and gradually building u
 
 总而言之，`render_widget_signals_unittest.cc` 这个文件通过单元测试验证了 `RenderWidgetSignals` 类正确地管理和跟踪渲染 Widget 的可见性状态，并在全局状态发生变化时及时通知观察者。这对于 Chromium 渲染引擎的正常运作至关重要，因为它关系到何时进行渲染、资源分配以及用户界面的更新。虽然开发者不直接操作这个类，但理解其功能有助于理解浏览器渲染机制和优化前端性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/render_widget_signals_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -303,7 +305,4 @@ TEST_F(RenderWidgetSignalsTest, MultipleRenderWidgetsBecomeHiddenThenVisible) {
 }  // namespace render_widget_signals_unittest
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

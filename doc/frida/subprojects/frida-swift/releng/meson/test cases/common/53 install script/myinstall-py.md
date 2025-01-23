@@ -161,7 +161,7 @@ DRYRUN: Writing file hook2.js
 
 总而言之，`myinstall.py` 是 Frida Swift 构建过程中一个辅助脚本，用于简化文件安装操作，特别是在测试环境中。 它的功能虽然简单，但在确保 Frida 组件能够正确部署和测试方面发挥着作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/53 install script/myinstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -212,7 +214,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

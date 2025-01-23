@@ -175,7 +175,7 @@ Finally, synthesize the key functionalities described in the code snippet:
 
 提供的代码片段侧重于选择器匹配过程中的一些特定方面，例如处理 `:scope` 伪类、索引相关的伪类以及选择器关系的转换，并提供了用于调试和内部优化的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_selector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 isitor* visitor) const {
   if (Match() == kPseudoClass && GetPseudoType() == kPseudoParent) {
     visitor->Trace(data_.parent_rule_);
@@ -280,8 +282,4 @@ static_assert(IsPseudoMapSorted(kPseudoTypeWithArgumentsMap,
               "kPseudoTypeWithArgumentsMap must be sorted.");
 
 }  // namespace blink
-
-"""
-
-
 ```

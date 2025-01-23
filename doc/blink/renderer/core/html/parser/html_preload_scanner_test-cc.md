@@ -109,15 +109,17 @@ Here's a breakdown of its functionalities:
 
 In summary, this first part of the `html_preload_scanner_test.cc` file focuses on rigorously testing the `HTMLPreloadScanner`'s ability to correctly identify and generate preload requests for images based on the `src`, `srcset`, and `sizes` attributes, taking into account the influence of the viewport meta tag and different viewport configurations. It ensures that the preloading mechanism behaves as expected for various responsive image scenarios.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_preload_scanner_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -902,7 +904,4 @@ TEST_F(HTMLPreloadScannerTest, testMetaAcceptCH) {
   ClientHintsPreferences viewport_width_DEPRECATED;
   ClientHintsPreferences viewport_width;
   dpr_DEPRECATED.SetShoul
-"""
-
-
 ```

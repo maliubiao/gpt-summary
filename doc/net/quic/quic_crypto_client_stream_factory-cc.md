@@ -155,15 +155,17 @@ By following this thought process, I can generate a comprehensive and accurate a
 
 总而言之，`quic_crypto_client_stream_factory.cc` 是 Chromium 网络栈中负责创建 QUIC 客户端加密流的关键组件，它在用户发起 HTTPS 请求并选择使用 QUIC 协议时发挥作用。虽然用户和 JavaScript 代码不会直接操作它，但理解它的功能有助于理解浏览器如何建立安全的 QUIC 连接。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_crypto_client_stream_factory.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ QuicCryptoClientStreamFactory::GetDefaultFactory() {
 }
 
 }  // namespace net
-
-"""
-
 ```

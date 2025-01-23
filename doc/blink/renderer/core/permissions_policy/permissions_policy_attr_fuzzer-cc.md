@@ -131,15 +131,17 @@ data = "unknown-feature 'self'"
 
 总而言之，`permissions_policy_attr_fuzzer.cc` 是一个用于测试 Blink 引擎中 Permissions Policy 属性解析器的工具，它的目标是发现潜在的错误和漏洞，确保浏览器能够安全可靠地处理各种形式的 Permissions Policy 声明。 它与 HTML 的 `allow` 属性紧密相关，并间接影响 JavaScript API 和 CSS 功能的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/permissions_policy/permissions_policy_attr_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
       child_origin.get(), logger);
   return 0;
 }
-
-"""
-
 ```

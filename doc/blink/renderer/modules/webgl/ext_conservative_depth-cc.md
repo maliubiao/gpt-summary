@@ -144,15 +144,17 @@ Let's break down the thought process for analyzing the `ext_conservative_depth.c
 
 总而言之，`ext_conservative_depth.cc` 虽然是一个相对简单的文件，但它是 Blink 引擎中连接 WebGL API 和底层图形驱动的关键部分，负责管理和暴露 `EXT_conservative_depth` 扩展。  它的功能确保了 JavaScript 开发者能够正确地查询和使用这个有用的 WebGL 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/ext_conservative_depth.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ const char* EXTConservativeDepth::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -135,7 +135,7 @@ Imagine Frida depends on a specific version of `libusb` for interacting with USB
 
 If a user is encountering issues with dependency resolution during the Frida build, they might investigate the `--wrap-mode` argument. Looking at the Frida project's build instructions or Meson's documentation would lead them to understand the different wrap modes. Examining this `__init__.py` file would reveal the available options and their intended behavior, helping the user diagnose if they have selected the correct mode for their specific build environment and needs. For instance, if the build fails because a dependency isn't found and the user has used `--wrap-mode=nofallback`, they might realize that this mode is preventing the fallback download and might try building again without this option or with a different mode.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/wrap/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from enum import Enum
 
 # Used for the --wrap-mode command-line argument
@@ -204,7 +206,4 @@ class WrapMode(Enum):
     def from_string(mode_name: str) -> 'WrapMode':
         g = string_to_value[mode_name]
         return WrapMode(g)
-
-"""
-
 ```

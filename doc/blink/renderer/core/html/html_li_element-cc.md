@@ -116,14 +116,16 @@ This detailed process allows for a thorough understanding of the code's function
 
 总而言之，`html_li_element.cc` 文件是 Blink 引擎中处理 `<li>` 元素的核心，它连接了 HTML 结构、CSS 样式和 JavaScript 交互，确保 `<li>` 元素能够按照预期的方式渲染和工作。理解这个文件的功能有助于深入理解浏览器如何解析和呈现列表。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_li_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -242,7 +244,4 @@ void HTMLLIElement::ParseValue(const AtomicString& value,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -190,15 +190,17 @@ During the process, I might have initially focused too much on low-level impleme
 
 总而言之，`IDBValue.cc` 中定义的 `IDBValue` 类是 Chromium Blink 引擎中 IndexedDB 功能的核心数据载体，它负责存储和管理 IndexedDB 中存储的值和相关的元数据信息，并在 JavaScript 与底层存储之间架起桥梁。 虽然用户和开发者不会直接编写 C++ 代码来操作 `IDBValue`，但理解它的功能有助于理解 IndexedDB 的内部工作原理，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/idb_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -288,7 +290,4 @@ std::unique_ptr<IDBValue> IDBValue::ConvertReturnValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

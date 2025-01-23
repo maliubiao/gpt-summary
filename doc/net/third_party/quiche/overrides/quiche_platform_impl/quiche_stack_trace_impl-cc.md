@@ -175,15 +175,17 @@ Organize the information logically, covering each aspect of the user's request:
 
 通过查看堆栈跟踪，开发人员可以了解到在发生网络错误时，程序执行到了 QUIC 代码的哪个部分，从而更好地理解错误的成因并进行修复。例如，堆栈跟踪可能会显示错误发生在 QUIC 的拥塞控制模块、连接管理模块或数据处理模块中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/overrides/quiche_platform_impl/quiche_stack_trace_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ bool QuicheShouldRunStackTraceTestImpl() {
 }
 
 }  // namespace quiche
-
-"""
-
 ```

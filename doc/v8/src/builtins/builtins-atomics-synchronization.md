@@ -138,11 +138,13 @@ asyncExample();
 
 `builtins-atomics-synchronization.cc` 文件是 V8 引擎中实现 JavaScript `Atomics.Mutex` 和 `Atomics.Condition` 功能的关键部分。它提供了底层的 C++ 实现，使得 JavaScript 开发者可以使用这些同步原语来编写更健壮的并发代码，尤其是在使用共享内存的场景下。这些内置函数确保了在多线程环境中对共享资源的访问是安全和可控的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-atomics-synchronization.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -543,7 +545,4 @@ BUILTIN(AtomicsConditionAcquireLock) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

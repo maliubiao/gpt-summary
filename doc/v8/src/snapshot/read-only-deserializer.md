@@ -108,11 +108,13 @@ By following these steps, including the self-correction, you can arrive at a com
 
 `read-only-deserializer.cc` 是 V8 引擎启动过程中至关重要的一个文件。 它负责将预先序列化的只读堆数据加载到内存中，这使得 V8 引擎可以快速地拥有运行 JavaScript 所需的基础设施，包括内置对象、函数、原型等。  如果没有这个过程，V8 引擎的启动速度将会显著下降。  这个文件的工作是幕后的，但它直接支撑了 JavaScript 代码的运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/read-only-deserializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -455,7 +457,4 @@ void ReadOnlyDeserializer::PostProcessNewObjects() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

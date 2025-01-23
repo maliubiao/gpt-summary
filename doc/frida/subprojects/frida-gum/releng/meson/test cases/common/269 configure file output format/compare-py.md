@@ -176,7 +176,7 @@ By following these steps, we can systematically analyze the code and connect it 
 
 总而言之，`compare.py` 脚本虽然简单，但在软件开发和测试流程中扮演着重要的角色，尤其是在确保配置文件的稳定性和正确性方面。在 Frida 这样的动态分析工具的开发中，保证配置的正确性对于工具的稳定运行和逆向分析的准确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/269 configure file output format/compare.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,14 +184,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import sys
 
 with open(sys.argv[1], 'r', encoding='utf-8') as f, open(sys.argv[2], 'r', encoding='utf-8') as g:
     if f.read() != g.read():
         sys.exit('contents are not equal')
-
-"""
-
 ```

@@ -155,7 +155,7 @@ This iterative process of understanding, analyzing, structuring, and refining he
 
 这部分 `v8/include/v8-primitive.h` 代码定义了 V8 引擎内部处理外部字符串资源和基本原始类型（`undefined`, `null`, `boolean`）的关键机制。它提供了访问外部字符串数据的方法，并优化了对常用原始值的获取。这对于理解 V8 如何高效地管理内存和执行 JavaScript 代码至关重要。这些底层机制虽然通常对 JavaScript 开发者透明，但它们影响着 JavaScript 字符串和基本类型在 V8 引擎中的性能和内存占用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-primitive.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-primitive.h以.tq结尾，那它是个v8 torque源代码，
@@ -163,8 +163,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 else {
     result = GetExternalStringResourceSlow();
   }
@@ -260,8 +262,4 @@ Local<Boolean> Boolean::New(Isolate* isolate, bool value) {
 }  // namespace v8
 
 #endif  // INCLUDE_V8_PRIMITIVE_H_
-
-"""
-
-
 ```

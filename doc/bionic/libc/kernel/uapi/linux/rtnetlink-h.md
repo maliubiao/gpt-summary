@@ -270,7 +270,7 @@ if __name__ == '__main__':
 
 通过 Frida Hook，你可以动态地观察 Android 系统或应用是如何使用 `rtnetlink.h` 中定义的接口与内核进行通信的，从而深入理解 Android 网络功能的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/rtnetlink.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -281,8 +281,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -882,7 +884,4 @@ enum {
 #define RTEXT_FILTER_CFM_STATUS (1 << 6)
 #define RTEXT_FILTER_MST (1 << 7)
 #endif
-
-"""
-
 ```

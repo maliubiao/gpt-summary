@@ -124,7 +124,7 @@ fetch('module.wasm')
 
 作为第 11 部分，`v8/src/wasm/interpreter/wasm-interpreter.cc` 的主要功能是 **将 WebAssembly 的高级指令转换为解释器能够执行的低级字节码，并处理执行过程中可能出现的运行时错误，如内存越界**。它处于 WebAssembly 解释器实现的核心位置，负责指令的翻译和初步的执行控制。考虑到这是 15 部分中的一部分，可以推断出这个文件专注于解释执行流程中的核心指令处理环节，其他部分可能负责加载、验证、优化或其他辅助功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter.cc以.tq结尾，那它是个v8 torque源代码，
@@ -132,9 +132,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第11部分，共15部分，请归纳一下它的功能
+```
 
-"""
- ctype, type, op_ctype, op_type, operation) \
+### 源代码
+```cpp
+ctype, type, op_ctype, op_type, operation) \
   case kExpr##name: {                                                       \
     MachineType memtype = MachineType::Type();                              \
     MemoryAccessImmediate imm(decoder, code->at(pc + *len),                 \
@@ -975,7 +977,4 @@ RegMode WasmBytecodeGenerator::EncodeInstruction(const WasmInstruction& instr,
           EmitI32Const(WasmBytecode::ArgsSizeInSlots(sig) * kSlotSize);
           EmitI32Const(WasmBytecode::RefRetsCount(sig));
           EmitI32Const(WasmBytecode::RefArgsCount(sig)
-"""
-
-
 ```

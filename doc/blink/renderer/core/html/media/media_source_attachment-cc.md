@@ -134,14 +134,16 @@ Here's a breakdown of the thinking process used to analyze the C++ code and gene
 
 总而言之，`media_source_attachment.cc` 在 Blink 引擎中扮演着连接 JavaScript MSE API 和 HTML 媒体元素的关键角色，负责维护和查找媒体源的“地址”，确保浏览器能够正确地将通过 MSE 构建的流式媒体数据渲染到页面上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/media_source_attachment.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ MediaSourceAttachment::MediaSourceAttachment() = default;
 MediaSourceAttachment::~MediaSourceAttachment() = default;
 
 }  // namespace blink
-
-"""
-
 ```

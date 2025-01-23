@@ -101,7 +101,7 @@ Here's a thinking process to arrive at the detailed analysis of the `_compat.py`
 
 总而言之，`_compat.py` 文件在 `frida-tools` 的上下文中，主要负责提供Python版本兼容性和字符串解码的功能。尤其是在需要处理来自不同来源、可能使用不同编码的字符串数据时，`decode` 函数提供了一种健壮的解决方案。这在逆向工程中处理目标程序的内存数据或解析各种数据格式时非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tomlkit/_compat.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import contextlib
@@ -133,7 +135,4 @@ def decode(string: Any, encodings: list[str] | None = None):
             return string.decode(encoding)
 
     return string.decode(encodings[0], errors="ignore")
-
-"""
-
 ```

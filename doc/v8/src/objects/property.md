@@ -160,11 +160,13 @@ console.log(obj.y); // 输出 10
 
 `v8/src/objects/property.cc` 文件定义了 V8 引擎如何在其内部表示和管理 JavaScript 对象的属性。 它定义了描述属性各种特征（如可写性、可枚举性、类型、存储位置等）的数据结构。 这些内部表示直接影响了 JavaScript 中属性的行为，例如如何读取和修改属性，如何枚举属性，以及如何定义访问器属性。 理解这些底层的概念有助于更深入地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/property.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ void PropertyDetails::Print(bool dictionary_mode) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

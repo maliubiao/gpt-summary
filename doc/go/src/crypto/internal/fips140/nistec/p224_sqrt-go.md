@@ -148,7 +148,7 @@ func main() {
 
 总而言之，这段代码的核心功能是为 P224 椭圆曲线实现一个计算平方根候选值的算法，这是椭圆曲线密码学中一个基础但重要的操作。理解其参数约束对于正确使用这个函数至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/nistec/p224_sqrt.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -156,8 +156,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -290,9 +292,4 @@ func p224SqrtCandidate(r, x *fiat.P224Element) {
 		r.Select(t0.Mul(r, &p224GG[96-i-1]), r, cond)
 	}
 }
-
-"""
-
-
-
 ```

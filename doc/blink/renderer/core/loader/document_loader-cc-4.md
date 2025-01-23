@@ -104,7 +104,7 @@ The user wants a summary of the functionality of the provided C++ code snippet, 
 
 总而言之，这段代码是 Blink 渲染引擎中至关重要的部分，它将网络资源转化为浏览器可以理解和渲染的文档对象，并在此过程中处理各种安全、性能和状态管理相关的任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/document_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 DocumentPolicyReportOnly));
   }
 
@@ -902,7 +904,4 @@ void DocumentLoader::MaybeStartLoadingBodyInBackground(
       std::move(decoder),
       // The network inspector needs the raw data.
       probe::ToCoreProbeSink(frame)->HasInspectorNetworkAgents(
-"""
-
-
 ```

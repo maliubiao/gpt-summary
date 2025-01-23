@@ -139,7 +139,7 @@ By piecing these observations together, the core functionality of the code emerg
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/c.py` 文件的核心功能是**作为 Meson 构建系统中 C 语言编译器的抽象层和配置管理器**。它定义了处理各种 C 编译器的通用接口和特定逻辑，负责管理编译器选项、检测编译器特性，并生成用于编译和链接的命令行参数，为 Frida 项目的 C 代码构建提供基础支持。 这使得 Meson 能够以统一的方式处理不同的 C 编译器，提高了构建系统的灵活性和可移植性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/c.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 
@@ -913,7 +915,4 @@ class MetrowerksCCompilerARM(MetrowerksCompiler, CCompiler):
         return args
 
 class MetrowerksCCompilerEmbeddedPowerPC(Metrower
-"""
-
-
 ```

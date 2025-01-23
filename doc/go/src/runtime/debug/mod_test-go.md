@@ -186,7 +186,7 @@ gcflags: all=-N -l
 
 总而言之，`go/src/runtime/debug/mod_test.go` 的这段代码主要用于测试 `debug.ParseBuildInfo` 函数解析 Go 程序构建信息字符串的正确性，确保它能够准确地将字符串转换为结构化的数据，并且能够将结构化的数据还原回原始的字符串形式（或等价的形式）。这对于理解 Go 程序的构建环境和进行一些高级的调试或分析非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/debug/mod_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -271,9 +273,4 @@ func FuzzParseBuildInfoRoundTrip(f *testing.F) {
 		}
 	})
 }
-
-"""
-
-
-
 ```

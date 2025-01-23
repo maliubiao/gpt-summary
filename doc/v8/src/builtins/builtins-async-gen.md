@@ -77,11 +77,13 @@ main();
 
 `v8/src/builtins/builtins-async-gen.cc` 文件是 V8 引擎中实现 JavaScript 异步生成器功能的关键部分。它通过 `Await` 函数处理 `await` 表达式，并使用 `CreateUnwrapClosure` 和 `AsyncIteratorValueUnwrap` 函数来处理 `yield` 表达式，最终使得 JavaScript 能够高效地执行异步生成器代码。 简而言之，这个 C++ 文件为 JavaScript 的 `async`/`await` 和生成器 (`function*`) 的结合提供了底层的实现支撑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-async-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ TF_BUILTIN(AsyncIteratorValueUnwrap, AsyncBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

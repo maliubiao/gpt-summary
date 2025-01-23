@@ -129,7 +129,7 @@ Here's a breakdown of the code's functionality:
 
 这部分 `quic_stream_test.cc` 的主要功能是**详尽地测试 QUIC 协议中流（QuicStream）的各种行为和状态转换，涵盖了流的生命周期管理、数据发送和接收、流量控制、错误处理和重传机制等方面，旨在确保 QUIC 流的实现是正确、健壮和可靠的。**  这些测试直接保障了基于 QUIC 协议的网络连接的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tal_bytes_read_ to
   // avoid flow control violation.
   QuicStreamPeer::SetReceiveWindowOffset(stream_, kMaxStreamLength + 5u);
@@ -891,7 +893,4 @@ TEST_P(QuicStreamTest, MarkConnectionLevelWriteBlockedOnWindowUpdateFrame) {
   EXPECT_CALL(*session_, SendBlocked(_, _)).Times(1);
   std::string data(1024, '.');
   stream->Wri
-"""
-
-
 ```

@@ -111,15 +111,17 @@ By following these steps, we can generate a comprehensive answer that addresses 
 
 总而言之，这部分测试旨在确保 `CanvasResourceProvider` 能够可靠地管理 Canvas 相关的图形资源，并与其他 Blink 渲染引擎的组件 (如 CC 图像缓存) 正确协作，从而保证 Web 页面中 Canvas 的正确渲染和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/canvas_resource_provider_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 p_left*/);
   // The CanvasResourceProvider for PassThrough should not be created or valid
   // if the texture size is greater than the maximum value
@@ -351,8 +353,4 @@ TEST_F(CanvasResourceProviderTest, FlushCanvasReleasesAllOpsOutsideLayers) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

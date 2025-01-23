@@ -120,7 +120,7 @@ console.log(javaScriptFunction(5, 3));
 
 第二部分的代码继续定义了 `WasmInJSInliningReducer` 类中用于处理各种 WebAssembly 操作的方法。关键的观察是，所有这些方法目前都调用了 `Bailout(decoder)`，这表明 **当前的实现选择不内联这些特定的 WebAssembly 操作**。 `TryInlineWasmCall` 函数通过两阶段解码过程来尝试内联，但由于 `Bailout` 的存在，对于任何包含已定义操作的 WebAssembly 函数，内联都会被阻止。 这部分代码展示了 V8 正在构建 WebAssembly 内联功能，但目前仍处于一个限制较多的阶段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-in-js-inlining-reducer-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/wasm-in-js-inlining-reducer-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -128,8 +128,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ,353475584): Support non-leaf functions as the inlinee (i.e.,
   // calls).
 
@@ -485,8 +487,4 @@ V<Any> WasmInJSInliningReducer<Next>::TryInlineWasmCall(
 #include "src/compiler/turboshaft/undef-assembler-macros.inc"
 
 #endif  // V8_COMPILER_TURBOSHAFT_WASM_IN_JS_INLINING_REDUCER_INL_H_
-
-"""
-
-
 ```

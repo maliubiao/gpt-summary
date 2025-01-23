@@ -161,14 +161,16 @@ builder.Add(kTestSurface, IdentifiableToken(kAbcd));
 
 总而言之，`identifiability_metric_builder_unittest.cc` 通过各种测试用例，确保 `IdentifiabilityMetricBuilder` 能够正确地收集和记录关于浏览器功能使用情况的指标，这些指标对于理解和管理用户的隐私预算至关重要。它虽然不直接操作 JavaScript, HTML, CSS，但其功能是为了度量这些技术的使用对用户隐私的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/identifiability_metric_builder_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -454,7 +456,4 @@ TEST(IdentifiabilityMetricBuilderTest, SetParameterPack) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

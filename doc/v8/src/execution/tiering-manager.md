@@ -108,11 +108,13 @@ for (let i = 0; i < 100000; i++) {
 
 `tiering-manager.cc` 是 V8 引擎中一个关键的性能优化组件，它通过动态地管理 JavaScript 函数的编译层级，确保代码在运行时能够尽可能高效地执行。 虽然 JavaScript 代码本身无法直接控制它，但 `TieringManager` 的决策直接影响着 JavaScript 应用的整体性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/tiering-manager.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -746,7 +748,4 @@ void TieringManager::OnInterruptTick(DirectHandle<JSFunction> function,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

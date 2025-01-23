@@ -173,14 +173,16 @@ By following these steps, iteratively analyzing the code, and refining the under
 
 总而言之，`blink/renderer/core/html/forms/form_controller.cc` 文件是 Chromium 浏览器引擎中负责核心表单状态管理的关键组件，它在幕后默默地工作，为用户提供更好的浏览体验。理解其功能有助于开发者更好地理解浏览器的行为，并避免在开发过程中犯一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/form_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2008, 2009, 2010 Apple Inc. All rights reserved.
  * Copyright (C) 2010, 2011, 2012 Google Inc. All rights reserved.
@@ -827,7 +829,4 @@ void FormController::InvalidateStatefulFormControlList() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

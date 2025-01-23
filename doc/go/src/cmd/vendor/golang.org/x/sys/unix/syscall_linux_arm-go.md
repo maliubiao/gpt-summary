@@ -261,15 +261,17 @@ func main() {
 
 这段代码是 Go 语言与 Linux ARM 操作系统底层交互的桥梁，理解其功能和潜在的陷阱对于进行底层的系统编程至关重要。 开发者通常不会直接使用这些 `syscall` 函数，而是使用 Go 标准库中更高级别的抽象，这些抽象在内部会调用这些底层的系统调用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_linux_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -486,9 +488,4 @@ func KexecFileLoad(kernelFd int, initrdFd int, cmdline string, flags int) error 
 	}
 	return kexecFileLoad(kernelFd, initrdFd, cmdlineLen, cmdline, flags)
 }
-
-"""
-
-
-
 ```

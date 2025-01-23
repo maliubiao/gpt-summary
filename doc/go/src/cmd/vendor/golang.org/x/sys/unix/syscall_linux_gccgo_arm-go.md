@@ -164,15 +164,17 @@ All content after syscall seek: Hello, World!
 
 总而言之，这段代码是 Go 语言在特定平台和架构下实现文件 `seek` 操作的关键部分，它通过调用底层的 Linux 系统调用 `_llseek` 来完成文件偏移量的调整。理解其工作原理有助于深入理解 Go 语言的文件 I/O 操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_linux_gccgo_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -193,9 +195,4 @@ func seek(fd int, offset int64, whence int) (int64, syscall.Errno) {
 	_, _, err := Syscall6(SYS__LLSEEK, uintptr(fd), uintptr(offsetHigh), uintptr(offsetLow), uintptr(unsafe.Pointer(&newoffset)), uintptr(whence), 0)
 	return newoffset, err
 }
-
-"""
-
-
-
 ```

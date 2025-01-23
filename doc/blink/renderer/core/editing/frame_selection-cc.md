@@ -103,7 +103,7 @@ I will now elaborate on each of these aspects and connect them to JavaScript, HT
 
 总而言之，`blink/renderer/core/editing/frame_selection.cc` 文件的核心职责在于**管理和维护一个 `LocalFrame` 内的文本和元素的选中状态**。它负责响应用户的选择操作，控制光标的行为，并与编辑功能、渲染引擎和无障碍功能进行协作，以确保用户能够正确地进行文本选择和编辑。它是浏览器渲染引擎中处理用户交互和文本编辑的关键组件之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/frame_selection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2008, 2009, 2010 Apple Inc. All rights reserved.
  *
@@ -890,7 +892,4 @@ void FrameSelection::SelectFrameElementInParentIfFullySelected() {
   if (!IsStartOfDocument(ComputeVisibleSelectionInDOMTree().VisibleStart()))
     return;
   if (!IsEndOfDocument(ComputeVisibleSelectionInDOMTree().VisibleEn
-"""
-
-
 ```

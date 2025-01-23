@@ -243,7 +243,7 @@ except frida.ProcessNotFoundError:
 
 通过 Frida hook，你可以观察到 Android Framework 的组件是如何通过 `ioctl` 系统调用，使用 `hdreg.h` 中定义的常量与底层的硬盘驱动程序进行交互的。 这有助于理解 Android 存储子系统的运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/hdreg.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -254,8 +254,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -634,7 +636,4 @@ struct hd_driveid {
 #define IDE_NICE_0 (2)
 #define IDE_NICE_2 (4)
 #endif
-
-"""
-
 ```

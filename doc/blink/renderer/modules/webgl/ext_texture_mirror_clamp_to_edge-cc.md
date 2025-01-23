@@ -136,15 +136,17 @@ By following these steps, iteratively analyzing the code and its context, and co
 
 总而言之，`ext_texture_mirror_clamp_to_edge.cc` 文件是 Blink 引擎中实现 WebGL `EXT_texture_mirror_clamp_to_edge` 扩展的关键组成部分，它使得开发者能够在 WebGL 中使用 `MIRROR_CLAMP_TO_EDGE` 纹理环绕模式，从而实现更灵活和丰富的纹理采样效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/ext_texture_mirror_clamp_to_edge.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ const char* EXTTextureMirrorClampToEdge::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

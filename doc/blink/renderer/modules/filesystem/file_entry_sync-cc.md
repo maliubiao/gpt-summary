@@ -174,15 +174,17 @@ Based on the code structure and included headers, the core functionalities are:
 
 理解 `file_entry_sync.cc` 的功能对于调试涉及同步 File System API 的 Chromium 相关应用至关重要。 通过跟踪 JavaScript 调用和分析 C++ 代码的执行流程，可以有效地定位和解决文件系统操作中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/filesystem/file_entry_sync.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -238,7 +240,4 @@ void FileEntrySync::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

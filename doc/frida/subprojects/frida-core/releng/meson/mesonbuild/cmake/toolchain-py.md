@@ -123,7 +123,7 @@ set(CMAKE_C_COMPILER "/path/to/android-ndk/toolchains/llvm/prebuilt/linux-x86_64
 
 总而言之，`toolchain.py` 是 Frida 项目中连接 Meson 构建系统和 CMake 构建系统的桥梁，它负责将 Meson 的高级配置转换为 CMake 可以理解的底层构建指令，尤其在交叉编译场景下至关重要，这与 Frida 的跨平台动态 instrumentation 特性紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/cmake/toolchain.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2020 The Meson development team
 
@@ -381,7 +383,4 @@ class CMakeToolchain:
             vars = vars_by_file.setdefault(file_name, {})
             vars[f'CMAKE_{lang_cmake}_COMPILER_FORCED'] = ['1']
             self.cmakestate.update(lang, vars)
-
-"""
-
 ```

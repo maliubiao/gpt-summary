@@ -195,15 +195,17 @@ To reach this code during debugging, a developer would typically:
 
 A developer might be debugging why a texture is not appearing correctly. They could set a breakpoint in the `WebGLTexture::SetTarget` method to see when and how the texture's target is being set. They could also set a breakpoint in the constructor to ensure the texture is being created successfully. By stepping through the code, they can understand the flow of execution and identify potential issues like incorrect target binding or failures during texture creation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_texture.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Apple Inc. All rights reserved.
  *
@@ -317,7 +319,4 @@ GLint WebGLTexture::ComputeLevelCount(GLsizei width,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -189,14 +189,16 @@ This methodical breakdown, focusing on understanding the code's purpose, its ind
 
 总而言之，`draw_looper_builder.cc` 文件中的 `DrawLooperBuilder` 类是 Blink 渲染引擎中一个关键的构建器，它负责将高级的图形描述（如 CSS 阴影）转换为底层的、可高效执行的绘制指令 `cc::DrawLooper`。理解它的功能有助于理解浏览器如何渲染网页上的视觉效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/draw_looper_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -281,7 +283,4 @@ void DrawLooperBuilder::AddShadow(const gfx::Vector2dF& offset,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -162,15 +162,17 @@ func main() {
 
 `go/test/fixedbugs/issue7921.go` 是 Go 语言中关于 `bytes.Buffer` 逃逸分析和内联优化的一个测试用例。它通过预期的编译器行为（通过 `// ERROR` 注释断言）来验证编译器在这些方面的正确性。虽然它不是用户直接编写的应用程序代码，但它反映了 Go 编译器在优化 `bytes.Buffer` 方面的努力，并间接提醒开发者在使用 `bytes.Buffer` 时需要考虑逃逸和内联对性能的影响。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7921.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m
 
 //go:build !gcflags_noopt && !goexperiment.newinliner
@@ -229,9 +231,4 @@ func bufferNoEscape5() { // ERROR "can inline bufferNoEscape5$"
 func useBuffer(b *bytes.Buffer) { // ERROR "b does not escape$"
 	b.WriteString("1234")
 }
-
-"""
-
-
-
 ```

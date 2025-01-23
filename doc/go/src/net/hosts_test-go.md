@@ -288,7 +288,7 @@ By following these steps, I could thoroughly analyze the provided code snippet a
 
 总而言之，`go/src/net/hosts_test.go` 文件的核心功能是确保 `net` 包能够正确地解析和处理静态主机名配置文件，包括正向查找、反向查找、别名处理以及保护内部数据结构不被外部修改。它通过大量的测试用例覆盖了各种可能的场景和边界条件。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/hosts_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -296,8 +296,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -512,9 +514,4 @@ func testLookupStaticHostAliases(t *testing.T, lookup, lookupRes string) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

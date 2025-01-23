@@ -183,15 +183,17 @@ Let's break down the thought process for analyzing the `SVGTitleElement.cc` file
 
 通过以上步骤，开发者可以逐步追踪 SVG 标题的生命周期，从解析到更新，最终定位问题可能发生在 `SVGTitleElement` 的哪个环节。  理解 `SVGTitleElement.cc` 的功能对于调试 SVG 相关的标题问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_title_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -266,7 +268,4 @@ void SVGTitleElement::SetText(const String& value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

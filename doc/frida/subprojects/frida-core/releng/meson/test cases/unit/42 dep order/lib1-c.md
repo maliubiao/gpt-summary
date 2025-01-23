@@ -168,7 +168,7 @@ void lib2_function() {
 
 总而言之，`lib1.c` 很可能是一个为了测试 Frida 构建系统中库的依赖顺序而创建的简单 C 语言库。理解其功能和上下文有助于理解 Frida 的构建流程和动态链接的基本概念，这些概念也与逆向分析和底层系统知识密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/42 dep order/lib1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,9 +176,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

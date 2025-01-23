@@ -143,15 +143,17 @@ console.log(value2); // 输出:  (根据 evaluation_steps 的实现而定)
 
 `v8/src/objects/synthetic-module.tq` 定义了 V8 内部表示合成模块的数据结构。合成模块是 V8 处理非文件加载模块的一种方式，例如模块命名空间对象或程序化创建的模块。虽然开发者不直接创建 `SyntheticModule` 实例，但理解其概念有助于理解 V8 的模块加载机制以及避免与模块相关的常见编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/synthetic-module.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/synthetic-module.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ extern class SyntheticModule extends Module {
   export_names: FixedArray;
   evaluation_steps: Foreign;
 }
-
-"""
-
 ```

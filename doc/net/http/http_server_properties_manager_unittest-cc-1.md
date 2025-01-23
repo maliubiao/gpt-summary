@@ -126,7 +126,7 @@ Based on this, the core functionality of this part of the file appears to be tes
 
 总而言之，这段代码主要测试了 `HttpServerPropertiesManager` 中负责管理和持久化 HTTP 服务器属性的核心功能，特别是关于备用服务、QUIC 相关信息和服务器网络统计信息的管理，以及偏好设置的更新机制。这些功能对于提升浏览器网络连接的性能和用户体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_server_properties_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -134,9 +134,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
- EXPECT_FALSE(http_server_props_->IsAlternativeServiceBroken(
+### 源代码
+```cpp
+EXPECT_FALSE(http_server_props_->IsAlternativeServiceBroken(
       alternative_service, NetworkAnonymizationKey()));
   EXPECT_FALSE(http_server_props_->WasAlternativeServiceRecentlyBroken(
       alternative_service, NetworkAnonymizationKey()));
@@ -860,7 +862,4 @@ TEST_F(HttpServerPropertiesManagerTest, PersistAdvertisedVersionsToPref) {
 
   // Set another QUIC alternative service with a single advertised QUIC version.
   AlternativeService mail_alternative_service(kProtoQUIC, "foo.google.
-"""
-
-
 ```

@@ -169,14 +169,16 @@ GridSizingTree {
 3. **过度复杂的嵌套网格:**  虽然 `GridSizingTree` 支持子网格，但过度复杂的嵌套网格结构可能会增加布局计算的复杂性，并可能导致性能问题。
 
 4. **动态修改 CSS 导致频繁的布局重计算:**  频繁地使用 JavaScript 修改与
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/grid/grid_sizing_tree.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be found
 // in the LICENSE file.
@@ -269,7 +271,4 @@ wtf_size_t GridSizingTree::LookupSubgridIndex(
 }
 
 }  // namespace blink
-
-"""
-
 ```

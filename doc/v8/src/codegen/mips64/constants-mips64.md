@@ -125,11 +125,13 @@ generateLoadInstruction("a0", "variable_address");
 
 `constants-mips64.cc` 文件是 V8 引擎在 MIPS64 平台上进行代码生成的基础，它定义了关键的寄存器名称和编号，使得 V8 能够有效地将 JavaScript 代码转换为可在 MIPS64 处理器上执行的机器码。这些常量是连接高级 JavaScript 代码和底层硬件指令的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/constants-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -287,7 +289,4 @@ int MSARegisters::Number(const char* name) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
 ```

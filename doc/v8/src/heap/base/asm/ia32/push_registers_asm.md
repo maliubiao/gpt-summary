@@ -100,11 +100,13 @@ callNative(5);
 
 `push_registers_asm.cc` 中的代码是一个底层的、平台相关的实现细节，用于支持 V8 的垃圾回收机制。它确保了在进行栈扫描时，所有可能包含指向 JavaScript 堆对象的指针的寄存器值都被考虑在内，从而保证了垃圾回收的正确性和安全性。 JavaScript 开发者通常不需要直接关心这些底层细节，但理解它们有助于深入理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/asm/ia32/push_registers_asm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -165,7 +167,4 @@ asm(
     ".Lfunc_end0-PushAllRegistersAndIterateStack\n"
 #endif  // !defined(__APPLE__) && !defined(_WIN32)
     );
-
-"""
-
 ```

@@ -202,7 +202,7 @@ This structured thought process allowed me to anticipate the different aspects o
 
 总而言之，`ef.cpp` 是一个简单的 C++ 源代码文件，用于 Frida 的测试框架中，旨在验证 Frida 与包含基本类的动态链接库的交互能力。理解它的功能有助于逆向工程师学习如何使用 Frida 来观察、修改和 hook 目标程序中的 C++ 对象和函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/89 default library/ef.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -210,8 +210,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"ef.h"
 
 DLL_PUBLIC Ef::Ef() : x(99) {
@@ -220,7 +222,4 @@ DLL_PUBLIC Ef::Ef() : x(99) {
 int DLL_PUBLIC Ef::get_x() const {
     return x;
 }
-
-"""
-
 ```

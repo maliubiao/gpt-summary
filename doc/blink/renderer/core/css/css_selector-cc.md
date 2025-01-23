@@ -99,7 +99,7 @@ The user wants a summary of the functionality of the `css_selector.cc` file in t
 
 该文件 `css_selector.cc` 的核心功能是定义了 `CSSSelector` 类，用于在 Blink 渲染引擎中 **表示和操作 CSS 选择器**。这包括创建各种类型的选择器，存储其属性（匹配类型、值、伪类/伪元素类型等），以及计算选择器的特异性。它是 CSS 样式处理流程中的关键组成部分，负责将 CSS 选择器转化为内部表示，以便后续与 HTML 元素进行匹配和应用样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_selector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999-2003 Lars Knoll (knoll@kde.org)
  *               1999 Waldo Bastian (bastian@kde.org)
@@ -983,8 +985,4 @@ void CSSSelector::UpdatePseudoType(const AtomicString& value,
       }
       [[fallthrough]];
     // For pseudo elements
-
-"""
-
-
 ```

@@ -153,7 +153,7 @@ This script resides within the Frida project's build system, specifically for Fr
 
 Therefore, the user wouldn't manually navigate to this script and run it directly for normal usage. It's an internal utility used by the build system for testing and development purposes. If a developer is debugging a failure related to handling custom object files in Frida-QML, they might investigate the execution of this script and the arguments passed to it by the Meson test suite.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/135 custom target object output/obj_generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # Mimic a binary that generates an object file (e.g. windres).
@@ -181,7 +183,4 @@ if __name__ == '__main__':
     else:
         cmd = [compiler, '-c', ifile, '-o', ofile]
     sys.exit(subprocess.call(cmd))
-
-"""
-
 ```

@@ -107,11 +107,13 @@ console.log(int32Array); // 输出: Int32Array [ 5130, 0, 0, 0 ]  (10 + 20 * 256
 
 总而言之，`v8/src/utils/detachable-vector.cc` 中的 `DetachableVectorBase` 类是 V8 引擎内部用于管理可分离的动态数组的一种机制，它与 JavaScript 中的 `ArrayBuffer` 和 `TypedArray` 的底层内存管理密切相关，并支持高效的数据共享和转移。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/detachable-vector.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -131,7 +133,4 @@ const size_t DetachableVectorBase::kSizeOffset =
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

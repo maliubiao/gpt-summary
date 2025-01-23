@@ -219,7 +219,7 @@ Finally, organize the information logically and clearly. Use headings, bullet po
 
 总而言之，`authentication.cc` 文件定义了 Frida Node.js 模块中处理身份验证的关键逻辑，它将身份验证决策权委托给 JavaScript 代码，并通过异步 Promise 机制与 C++ 代码进行交互。理解这段代码有助于理解 Frida 的安全模型以及如何处理身份验证相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/src/authentication.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -227,8 +227,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "authentication.h"
 
 using frida::Runtime;
@@ -403,7 +405,4 @@ static gchar* frida_node_authentication_service_authenticate_finish(
     FridaAuthenticationService* service, GAsyncResult* result, GError** error) {
   return static_cast<gchar*>(g_task_propagate_pointer(G_TASK(result), error));
 }
-
-"""
-
 ```

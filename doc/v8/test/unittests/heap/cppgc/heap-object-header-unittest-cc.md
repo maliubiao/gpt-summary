@@ -153,15 +153,17 @@ int val = obj->value; // 可能在构造完成前读取到未初始化的值
 
 如果没有适当的同步机制（如 `IsInConstruction` 提供的隐式保护），线程 2 可能会在线程 1 的构造函数完成之前读取 `obj->value`，导致读取到未初始化的值，从而引发难以调试的问题。 `HeapObjectHeader` 的相关机制确保在对象完全构造之前，其他线程不会意外地访问其内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/heap-object-header-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc/heap-object-header-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -346,7 +348,4 @@ TEST(HeapObjectHeaderDeathTest, ConstructorTooLargeGCInfoIndex) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

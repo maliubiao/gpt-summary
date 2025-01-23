@@ -161,7 +161,7 @@ const PP = 1 + 1i
 
 总而言之， `go/src/go/internal/gccgoimporter/importer_test.go` 是一个关键的测试文件，用于验证 `gccgoimporter` 包的正确性，确保它可以可靠地将使用 `gccgo` 编译的 Go 包的类型信息导入到 Go 的类型系统中。这对于构建能够理解和处理 `gccgo` 编译代码的 Go 工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/internal/gccgoimporter/importer_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -169,8 +169,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -374,9 +376,4 @@ func TestObjImporter(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

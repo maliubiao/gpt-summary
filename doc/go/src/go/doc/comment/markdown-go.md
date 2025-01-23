@@ -233,7 +233,7 @@ func main() {
 
 总结来说，这段代码是 Go 文档工具链中负责将 Go 注释转换为 Markdown 的核心部分，它处理了多种文档元素的转换，并且输出格式可以通过 `Printer` 进行定制。理解 `Printer` 的作用是正确使用这个包的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/doc/comment/markdown.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -241,8 +241,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -431,9 +433,4 @@ func (p *mdPrinter) escape(out *bytes.Buffer, s string) {
 	}
 	out.WriteString(s[start:])
 }
-
-"""
-
-
-
 ```

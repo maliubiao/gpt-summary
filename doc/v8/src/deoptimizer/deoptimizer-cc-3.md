@@ -175,7 +175,7 @@ processPoint(point); // 可能会触发反优化
 
 `v8/src/deoptimizer/deoptimizer.cc` 文件的主要功能是实现 V8 JavaScript 引擎中的反优化机制。它负责在优化后的代码执行遇到问题时，安全地将程序的执行状态回退到解释器或非优化代码，并构建相应的栈帧，确保程序能够继续正确执行。这段代码是 V8 引擎保证性能和正确性的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/deoptimizer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/deoptimizer/deoptimizer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -183,8 +183,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 erator = value_iterator;
   value_iterator++;
 
@@ -896,8 +898,4 @@ Deoptimizer::DeoptInfo Deoptimizer::GetDeoptInfo(Tagged<Code> code,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

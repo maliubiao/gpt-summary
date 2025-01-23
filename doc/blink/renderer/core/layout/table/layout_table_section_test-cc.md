@@ -147,14 +147,16 @@ By following these steps, I can effectively analyze the C++ test file and provid
 
 总而言之，`layout_table_section_test.cc` 通过一系列单元测试，细致地验证了 `LayoutTableSection` 类在处理不同 HTML 结构和 CSS 样式时的布局行为，包括背景不透明度判断和视觉溢出计算等关键方面，同时也旨在防止一些已知的 bug 和崩溃问题。 这有助于确保 Blink 引擎能够正确地渲染表格，并帮助开发者避免一些常见的布局错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/table/layout_table_section_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ TEST_F(LayoutTableSectionTest, RowCollapseNegativeHeightCrash) {
 }  // anonymous namespace
 
 }  // namespace blink
-
-"""
-
 ```

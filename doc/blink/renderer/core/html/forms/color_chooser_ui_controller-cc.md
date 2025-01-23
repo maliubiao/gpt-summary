@@ -100,14 +100,16 @@ Essentially, I started with a broad understanding, drilled down into the specifi
 
 总而言之，`color_chooser_ui_controller.cc` 是 Blink 引擎中一个关键的组件，它负责连接 HTML 颜色输入元素和平台原生的颜色选择器，使得网页能够方便地获取用户选择的颜色。理解其平台依赖性和异步特性对于开发者正确使用 `<input type="color">` 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/color_chooser_ui_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -212,7 +214,4 @@ void ColorChooserUIController::OpenColorChooser() {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

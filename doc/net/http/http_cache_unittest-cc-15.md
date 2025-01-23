@@ -154,7 +154,7 @@ fetch('https://example.com/data.json')
 
 作为系列测试的倒数第二部分，这部分 `http_cache_unittest.cc` 的功能主要集中在对 HTTP 缓存的 **高级特性、边缘情况和并发安全性** 进行详尽的测试。具体来说，它深入测试了 SSL 信息的缓存与更新、各种细致的缓存条目状态报告、从缓存键中恢复 URL 的能力，以及在并发异步操作下缓存的稳定性和错误处理能力。此外，它还关注了 DNS 别名与缓存机制的交互。  考虑到这是倒数第二部分，它可能涵盖了之前测试中未覆盖的更复杂或更细致的场景，为整个 HTTP 缓存的功能提供更全面的验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第16部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 er()->transaction_count());
   EXPECT_EQ(1, cache.disk_cache()->open_count());
   EXPECT_EQ(1, cache.disk_cache()->create_count());
@@ -1064,7 +1066,4 @@ TEST_F(HttpCacheTest, DnsAliasesRevalidation) {
   RunTransactionTestWithResponseInfo(cache.http_cache(), transaction,
                                      &response);
   EXPECT_F
-"""
-
-
 ```

@@ -113,7 +113,7 @@ Self-Correction during the process: Initially, I might focus too much on individ
 
 作为第五部分，我们可以总结 `input_method_controller_test.cc` 文件全面地测试了 `InputMethodController` 类的核心功能，涵盖了基本的文本输入、复杂的 IME composition 过程、与 JavaScript 和 HTML 的交互、各种边界情况以及特定语言的输入处理。 这些测试用例不仅验证了 `InputMethodController` 的正确性，也为开发者提供了宝贵的调试线索，帮助他们理解用户操作如何触发 IME 相关逻辑，并定位潜在的错误。 它们确保了 Blink 引擎在处理各种输入场景下的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ime/input_method_controller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -121,9 +121,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
-       .ComputeOffsetInContainerNode());
+### 源代码
+```cpp
+.ComputeOffsetInContainerNode());
 }
 
 TEST_F(InputMethodControllerTest,
@@ -822,8 +824,4 @@ TEST_F(InputMethodControllerTest, EditContextCanvasHasEditableType) {
   EXPECT_EQ(kWebTextInputTypeContentEditable, Controller().TextInputType());
 }
 }  // namespace blink
-
-"""
-
-
 ```

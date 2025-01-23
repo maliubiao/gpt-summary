@@ -209,7 +209,7 @@ By following this structured thinking process, combining code analysis with cont
 
 **调试线索:**  当遇到问题时，这个简单的 `mylib.c` 可以作为一个基础的测试用例。用户可以先确保 Frida 能够正确 hook 到这个简单的函数，然后再尝试更复杂的场景。如果 hook 这个简单的函数都失败了，那么问题很可能出在 Frida 的安装、权限配置、或者目标进程的加载方式上。成功 hook 这个函数可以作为 Frida 工作正常的初步验证，然后再去排查更复杂的集成问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/swift/6 modulemap/mylib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -217,14 +217,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"mylib.h"
 
 int getNumber() {
     return 42;
 }
-
-"""
-
 ```

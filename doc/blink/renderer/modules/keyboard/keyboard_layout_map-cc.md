@@ -175,15 +175,17 @@ This iterative thought process, moving from understanding the code's core functi
 
 总而言之，`blink/renderer/modules/keyboard/keyboard_layout_map.cc` 文件是 Blink 引擎中实现访问用户键盘布局信息的关键部分，它通过 `KeyboardLayoutMap` 类为 JavaScript 提供了与底层操作系统键盘布局交互的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/keyboard/keyboard_layout_map.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ bool KeyboardLayoutMap::GetMapEntry(ScriptState*,
 }
 
 }  // namespace blink
-
-"""
-
 ```

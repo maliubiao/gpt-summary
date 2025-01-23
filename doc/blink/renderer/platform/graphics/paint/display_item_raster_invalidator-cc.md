@@ -171,14 +171,16 @@ I organize the information logically with clear headings and explanations to ens
 
 总而言之，`DisplayItemRasterInvalidator` 是 Blink 渲染引擎中负责优化绘制过程的关键组件。它通过精确地识别需要重绘的区域，避免了不必要的渲染操作，提高了页面的渲染效率和性能。它的工作与 JavaScript、HTML 和 CSS 的变化息息相关，反映了前端技术的每一次视觉更新。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/display_item_raster_invalidator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -432,7 +434,4 @@ void DisplayItemRasterInvalidator::GenerateFullRasterInvalidation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -188,15 +188,17 @@ go 1.20 // 或者其他你的 Go 版本
 
 `go mod init` 是 Go Modules 功能的入口，它的主要任务是创建一个新的 `go.mod` 文件，标志着一个 Go 模块的开始。它可以接受一个可选的模块路径参数，并能尝试在未提供参数时进行推断。理解其功能和限制对于正确使用 Go Modules 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modcmd/init.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -246,9 +248,4 @@ func runInit(ctx context.Context, cmd *base.Command, args []string) {
 	modload.ForceUseModules = true
 	modload.CreateModFile(ctx, modPath) // does all the hard work
 }
-
-"""
-
-
-
 ```

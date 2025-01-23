@@ -215,7 +215,7 @@ Interceptor.attach(nativeFunc, {
 
 这是 Frida 实现动态插桩和与 native 代码交互的关键步骤之一，它确保了 JavaScript 脚本能够方便地处理 native 函数的返回值，从而实现对目标进程的监控、分析和修改。 这部分代码专注于将各种 native 数据类型（基本类型、指针、结构体等）映射到对应的 JavaScript 类型，是 Frida 桥接 native 代码和 JavaScript 代码的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8core.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -224,8 +224,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 return FALSE;
   }
 }
@@ -372,8 +374,4 @@ gum_v8_value_from_ffi_type (GumV8Core * core,
 
   return TRUE;
 }
-
-"""
-
-
 ```

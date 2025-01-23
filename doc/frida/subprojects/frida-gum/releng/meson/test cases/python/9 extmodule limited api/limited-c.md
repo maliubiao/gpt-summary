@@ -157,7 +157,7 @@ gcc -shared -o limited.so -I/usr/include/python3.7m -DPy_LIMITED_API=0x03070000 
 
 总而言之，`limited.c` 虽然代码量很少，但在 Frida 项目中扮演着测试和验证 Python Limited API 支持的重要角色，同时也为理解 Frida 的内部机制提供了一个简单的示例。用户通常不需要直接操作这个文件，但在特定场景下，理解它的作用有助于调试问题或深入了解 Frida 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/python/9 extmodule limited api/limited.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <Python.h>
 
 #ifndef Py_LIMITED_API
@@ -186,7 +188,4 @@ static struct PyModuleDef limited_module = {
 PyMODINIT_FUNC PyInit_limited(void) {
     return PyModule_Create(&limited_module);
 }
-
-"""
-
 ```

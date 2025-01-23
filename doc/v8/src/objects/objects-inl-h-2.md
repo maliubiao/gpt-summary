@@ -205,7 +205,7 @@ By following this systematic approach, focusing on the key functionalities, conn
 
 作为 `objects-inl.h` 的一部分，这段代码延续了其定义对象操作内联函数的职责，专注于与对象哈希、共享和弱引用相关的核心功能。它提供了高效的机制来计算不同类型 V8 对象的哈希值，判断和管理对象的共享状态，以及确定对象是否可以被弱引用。这些功能是 V8 引擎实现 JavaScript 中对象的核心行为和高级特性的基础，例如哈希表的高效查找、跨线程数据共享以及避免内存泄漏的弱引用机制。这段代码是 V8 引擎内部实现细节的关键组成部分，直接影响着 JavaScript 代码的执行效率和内存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/objects-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -213,9 +213,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- num <= kMaxInt && FastI2D(FastD2I(num)) == num) {
+### 源代码
+```c
+num <= kMaxInt && FastI2D(FastD2I(num)) == num) {
       hash = ComputeUnseededHash(FastD2I(num));
     } else {
       hash = ComputeLongHash(base::double_to_uint64(num));
@@ -380,8 +382,4 @@ static inline Handle<Object> MakeEntryPair(Isolate* isolate,
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_OBJECTS_INL_H_
-
-"""
-
-
 ```

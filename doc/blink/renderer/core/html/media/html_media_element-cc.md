@@ -383,15 +383,17 @@ void HTMLMediaElement::ParseAttribute(
 
 总而言之，这部分 `html_media_element.cc` 代码定义了 `HTMLMediaElement` 类的基本结构和行为，包括对象的创建、关键状态的初始化、与 HTML 属性的关联、以及一些核心的辅助功能。它是实现 HTML 媒体元素功能的基础部分，为后续的媒体加载、播放控制、事件处理等功能提供了必要的支撑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/html_media_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008, 2009, 2010, 2011, 2012, 2013 Apple Inc. All rights
  * reserved.
@@ -1150,7 +1152,4 @@ void HTMLMediaElement::ParseAttribute(
       muted_ = true;
     }
   } else
-"""
-
-
 ```

@@ -188,15 +188,17 @@ This header directly addresses common programming errors related to numeric conv
 
 In summary, `v8/src/base/safe_conversions_impl.h` is a crucial infrastructure component in V8 that promotes robust and predictable behavior of numeric operations by providing tools to detect and potentially prevent common errors during conversions and arithmetic. It leverages C++ templates for compile-time checks and provides runtime checks for scenarios where safety cannot be guaranteed statically.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/safe_conversions_impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/safe_conversions_impl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -995,7 +997,4 @@ constexpr Dst CommonMaxOrMin(bool is_min) {
 }  // namespace v8::base::internal
 
 #endif  // V8_BASE_SAFE_CONVERSIONS_IMPL_H_
-
-"""
-
 ```

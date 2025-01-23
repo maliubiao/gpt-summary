@@ -116,11 +116,13 @@ function add(a, b) {
 
 `v8/src/compiler/schedule.cc` 文件实现了 V8 引擎中构建和管理控制流图的核心功能。它是将 JavaScript 代码转换为高效机器码的关键步骤，通过将 JavaScript 代码的操作和控制流结构映射到 `BasicBlock` 和 `Schedule` 数据结构，为后续的编译器优化和代码生成奠定基础。理解这个文件有助于深入了解 V8 引擎的编译原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/schedule.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -631,7 +633,4 @@ std::ostream& operator<<(std::ostream& os, const Schedule& s) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

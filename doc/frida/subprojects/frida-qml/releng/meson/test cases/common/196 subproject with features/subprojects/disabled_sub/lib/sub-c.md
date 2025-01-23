@@ -154,7 +154,7 @@ Interceptor.attach(Module.findExportByName("目标进程名称", "_ZN相关命�
 
 尽管 `frida/subprojects/frida-qml/releng/meson/test cases/common/196 subproject with features/subprojects/disabled_sub/lib/sub.c` 中的 `sub` 函数本身非常简单，但它在 Frida 的测试和逆向分析的上下文中仍然具有一定的意义。它可以作为 hook 的目标、测试 Frida 的基础功能，并且其存在也反映了 Frida 项目的模块化结构和测试策略。理解这样的简单代码可以帮助用户更好地理解 Frida 的工作原理和测试框架。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/196 subproject with features/subprojects/disabled_sub/lib/sub.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,14 +162,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "sub.h"
 
 int sub(void) {
     return 0;
 }
-
-"""
-
 ```

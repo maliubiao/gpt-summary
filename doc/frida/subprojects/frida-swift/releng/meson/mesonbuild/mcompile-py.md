@@ -179,7 +179,7 @@ meson compile my-tool
 
 因此，用户到达 `mcompile.py` 通常是通过执行 `meson compile` 命令触发的。理解 `mcompile.py` 的功能和逻辑，可以帮助用户更有效地构建 Frida，并解决构建过程中遇到的问题。当出现构建错误时，查看 `mcompile.py` 的输出来理解目标解析、后端命令等信息，可以作为调试的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/mcompile.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2020 The Meson development team
 
@@ -569,7 +571,4 @@ def run(options: 'argparse.Namespace') -> int:
     p, *_ = mesonlib.Popen_safe(cmd, stdout=sys.stdout.buffer, stderr=sys.stderr.buffer, env=env)
 
     return p.returncode
-
-"""
-
 ```

@@ -106,14 +106,16 @@ console.log(iterator.next()); // 输出: { value: undefined, done: true }
 
 这段 Torque 代码实现了 `TypedArray.prototype.keys()` 方法，它负责进行类型检查（确保 `this` 是一个 TypedArray）和分离状态检查（确保 TypedArray 没有被分离），然后创建一个迭代器来按顺序产生 TypedArray 的索引。常见的编程错误包括在非 TypedArray 对象或已分离的 TypedArray 对象上调用此方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-keys.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -141,7 +143,4 @@ transitioning javascript builtin TypedArrayPrototypeKeys(
   }
 }
 }
-
-"""
-
 ```

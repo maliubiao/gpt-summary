@@ -115,15 +115,17 @@ My thinking process to answer the request goes like this:
 
 总而言之，这部分和前两部分共同构成了对 `AvifImageDecoder` 功能的全面测试，确保其在各种场景下都能正确、高效地工作，从而保证了 Chromium 浏览器能够可靠地渲染网页上的 AVIF 图像。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/avif/avif_image_decoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 FileSize * 100 * 8 + kImageArea / 2) / kImageArea;  // = 6
   TestAvifBppHistogram("/images/resources/avif/bee.avif",
                        "Blink.DecodedImage.AvifDensity.Count.13MP", kSample);
@@ -210,8 +212,4 @@ TEST_P(StaticAVIFColorTests, InspectImageHalfFloat) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
-
 ```

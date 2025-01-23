@@ -145,7 +145,7 @@ void CodeGenerator::AssembleMove(InstructionOperand* source,
 
 作为V8编译器的最后阶段之一，`v8/src/compiler/backend/loong64/code-generator-loong64.cc` 的主要功能是 **将高级的、平台无关的中间表示（IR）指令翻译成可以在 LoongArch64 架构上执行的本地机器代码**。它负责处理函数调用约定、栈帧管理、数据移动、控制流以及其他与目标架构相关的细节。这个代码生成器是 V8 引擎将 JavaScript 代码高效地运行在 LoongArch64 硬件上的关键组成部分。它确保了生成的机器码能够正确地执行 JavaScript 语义，并尽可能地优化性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/code-generator-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/loong64/code-generator-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -153,9 +153,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- __ slli_w(scratch, input, 0);
+### 源代码
+```cpp
+__ slli_w(scratch, input, 0);
   __ Branch(GetLabel(i.InputRpo(1)), hs, scratch, Operand(case_count));
   __ GenerateSwitchTable(scratch, case_count, [&i, this](size_t index) {
     return GetLabel(i.InputRpo(index + 2));
@@ -880,8 +882,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

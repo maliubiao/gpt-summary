@@ -155,15 +155,17 @@ fetch('https://www.example.com/data.json')
 
 总而言之，`net/dns/dns_config_service_posix_unittest.cc` 是为了确保 `DnsConfigServicePosix` 能够正确可靠地从 POSIX 系统读取和解析 DNS 配置信息，这对于浏览器正确解析域名、建立网络连接至关重要，并直接影响到浏览器中运行的 JavaScript 代码的网络功能。 当出现 DNS 相关问题时，理解这个类的功能和测试覆盖范围可以帮助开发者定位问题根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_config_service_posix_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -397,7 +399,4 @@ TEST(DnsConfigServicePosixTest, DestroyOnDifferentThread) {
 
 
 }  // namespace net
-
-"""
-
 ```

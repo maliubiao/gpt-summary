@@ -99,7 +99,7 @@ I will structure the response by first listing the functionalities tested in thi
 
 这部分测试主要集中在 `NgHttp2Adapter` 作为 HTTP/2 客户端时，对各种服务器响应场景的处理，包括对错误格式响应（如带有内容的 304）、尾部、元数据以及 HPACK 设置的处理。此外，还测试了客户端主动断开连接以及在处理头部时遇到错误的情况，确保了客户端在各种异常和正常情况下的健壮性和符合 HTTP/2 规范的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 visitor,
               OnFrameSent(RST_STREAM, 1, _, 0x0,
                           static_cast<int>(Http2ErrorCode::PROTOCOL_ERROR)));
@@ -942,8 +944,4 @@ TEST(NgHttp2AdapterTest, ClientRejectsHeaders) {
 
   const std::vector<Header> headers1 =
       ToHeaders({{":method", "GET"},
-               
-"""
-
-
 ```

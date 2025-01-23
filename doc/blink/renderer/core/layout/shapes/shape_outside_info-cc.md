@@ -200,14 +200,16 @@ Essentially, my process is to dissect the code, understand its role in the brows
 
 总而言之，`shape_outside_info.cc` 是 Blink 引擎中实现 CSS `shape-outside` 属性的关键部分，负责计算和管理形状信息，使得网页能够呈现出更加灵活和美观的文本环绕效果。 它与 CSS 样式声明紧密相关，并在 HTML 结构的基础上发挥作用。JavaScript 可以动态地影响其行为，但核心的计算逻辑由 C++ 代码实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/shapes/shape_outside_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Adobe Systems Incorporated. All rights reserved.
  *
@@ -615,7 +617,4 @@ void ShapeOutsideInfo::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

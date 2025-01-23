@@ -157,7 +157,7 @@ MacroDeclaration {
 
 `v8/src/torque/torque-parser.cc` 的主要功能是作为 V8 JavaScript 引擎中 Torque 语言的**语法解析器**。它负责读取 `.tq` 结尾的 Torque 源代码，并将其转换成抽象语法树 (AST)，为后续的 Torque 编译过程提供结构化的表示。它还会进行初步的语义检查和命名规范的验证，帮助开发者尽早发现潜在的错误。该解析器理解 Torque 语言的各种声明、表达式、语句和类型，并能处理泛型和注解等特性。 它的工作是 V8 理解和执行 JavaScript 代码的关键步骤之一，因为 Torque 用于编写 V8 的核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/torque-parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/torque-parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -165,8 +165,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1014,7 +1016,4 @@ class AnnotationSet {
           .Position(it->second.second);
     }
     return it->second
-"""
-
-
 ```

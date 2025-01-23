@@ -93,7 +93,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 总而言之，`someret.c` 尽管代码极其简单，但在 Frida 的测试体系中扮演着一个验证基础功能的重要角色，这些基础功能是 Frida 进行动态 instrumentation 和逆向分析的基石。它提供了一个可预测的、简单的测试目标，帮助开发者验证 Frida 的核心机制是否正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/38 pkgconfig format/someret.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,12 +101,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int get_returnvalue (void) {
   return 0;
 }
-
-"""
-
 ```

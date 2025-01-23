@@ -174,15 +174,17 @@ This specific code snippet does not involve processing any command-line argument
 
 In summary, this code demonstrates a powerful way to use generics and type switches together to achieve type-safe conditional behavior based on the methods implemented by a type, specifically focusing on the method's return type matching the generic type parameter. The key takeaway is the importance of the full method signature (including the return type) when using this type of interface check in a type switch.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/typeswitch5.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -211,9 +213,4 @@ func main() {
 	f[float64](myint(8))
 	f[float64](myfloat(9))
 }
-
-"""
-
-
-
 ```

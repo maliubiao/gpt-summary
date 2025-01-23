@@ -134,7 +134,7 @@ By following these steps, and through iterative refinement, a comprehensive and 
 
 总而言之，这部分代码进一步完善了 Stalker 的核心基础设施，使其更加健壮和可配置，为后续的线程跟踪、代码注入和插桩操作奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-x86/gumstalker-x86.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 )
       {
         self->user32_start = mbi.BaseAddress;
@@ -1399,8 +1401,5 @@ _gum_stalker_modify_to_run_on_thread (GumStalker * self,
 
   gum_spinlock_release (&ctx->code_lock);
 
-  GUM_CPU_CONTEXT_XIP 
-"""
-
-
+  GUM_CPU_CONTEXT_XIP
 ```

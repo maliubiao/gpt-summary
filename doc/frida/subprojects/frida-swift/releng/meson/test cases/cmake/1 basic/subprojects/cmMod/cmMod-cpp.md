@@ -128,7 +128,7 @@ By following these steps of code examination, contextualization within Frida, an
 
 作为调试线索，如果用户遇到与 Frida Swift 相关的问题，例如构建错误或运行时行为异常，查看这个测试用例可以帮助理解 Frida Swift 组件的基本结构和预期行为。例如，如果用户在自己构建 Frida 时遇到 `Invalid MESON_MAGIC_FLAG` 错误，就需要检查 Meson 的配置是否正确。如果用户在使用 Frida Hook Swift 代码时遇到问题，查看这个简单的测试用例可能会提供一些线索，了解 Frida 是如何与 Swift 代码进行交互的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/1 basic/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -153,7 +155,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

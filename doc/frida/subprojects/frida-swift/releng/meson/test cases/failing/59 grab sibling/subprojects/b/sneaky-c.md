@@ -131,7 +131,7 @@ By following this thought process, combining code analysis with contextual under
 
 总而言之，`sneaky.c` 自身的功能很简单，但它在 Frida 测试框架中的位置表明它是用于测试 Frida 特定能力的一个受控环境，特别是在与可能存在交互限制的“兄弟”进程进行交互时。 分析这个文件需要结合 Frida 的工作原理、操作系统底层知识以及逆向工程的常见场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing/59 grab sibling/subprojects/b/sneaky.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,15 +139,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
     printf("I can only come into existence via trickery.\n");
     return 0;
 }
-
-"""
-
 ```

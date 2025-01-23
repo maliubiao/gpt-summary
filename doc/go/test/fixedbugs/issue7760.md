@@ -122,15 +122,17 @@ func main() {
 
 `go/test/fixedbugs/issue7760.go` 的作用是作为一个**回归测试用例**，确保 Go 语言编译器能够正确地阻止将指针类型（包括 `unsafe.Pointer` 和自定义的指针类型）以及某些复合类型（如切片）的值声明为常量。它验证了 Go 语言常量声明的语义约束。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7760.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -156,9 +158,4 @@ const _ = uintptr(myPointer(uintptr(1))) // ERROR "is not (a )?constant|expressi
 
 const _ = []byte("") // ERROR "is not (a )?constant|invalid constant type"
 const _ = []rune("") // ERROR "is not (a )?constant|invalid constant type"
-
-"""
-
-
-
 ```

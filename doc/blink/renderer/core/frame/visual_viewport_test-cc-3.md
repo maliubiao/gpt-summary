@@ -119,16 +119,18 @@ While these are unit tests and not directly testing user errors, they implicitly
 
 The `visual_viewport_test.cc` file comprehensively tests the behavior and internal logic of the `VisualViewport` class in the Chromium Blink engine. It covers various aspects, including how the visual viewport interacts with device emulation, renders scrollbars, optimizes for direct manipulations like pinch-zoom, manages internal property trees related to scaling, and responds to CSS styling for scrollbars. These tests are crucial for ensuring the correct and efficient rendering of web pages across different devices and user interactions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/visual_viewport_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-                ->effect_tree()
+### 源代码
+```cpp
+->effect_tree()
                 .FindNodeFromElementId((visual_viewport.GetScrollbarElementId(
                     ScrollbarOrientation::kVerticalScrollbar)))
                 ->id);
@@ -680,8 +682,4 @@ TEST_F(VisualViewportSimTest, PreferredOverlayScrollbarColorTheme) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

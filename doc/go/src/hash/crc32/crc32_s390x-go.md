@@ -198,7 +198,7 @@ s390x IEEE CRC32 is likely using vector instructions.
 
 总而言之，`crc32_s390x.go` 是 Go 语言为了在 `s390x` 架构上提供高性能 CRC32 计算而进行的特定优化实现，它利用了向量扩展指令集，并根据数据长度动态选择合适的计算方法。用户应该使用 `hash/crc32` 包提供的标准 API，而无需直接操作这些底层的架构特定代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/hash/crc32/crc32_s390x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -206,8 +206,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -299,9 +301,4 @@ func archUpdateIEEE(crc uint32, p []byte) uint32 {
 	}
 	return slicingUpdate(crc, archIeeeTable8, p)
 }
-
-"""
-
-
-
 ```

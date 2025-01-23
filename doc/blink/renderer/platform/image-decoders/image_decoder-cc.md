@@ -163,15 +163,17 @@ This file plays a crucial role in how images are rendered in web pages, directly
 
 In essence, `blink/renderer/platform/image-decoders/image_decoder.cc` is the foundational component in Blink for **identifying, creating, and managing the decoding process for various image formats.** It provides a common interface and infrastructure for format-specific decoders, handles basic image information extraction, and incorporates mechanisms for memory management and error handling. It is a crucial bridge between the raw image data fetched by the browser and the rendering engine's ability to display those images on the screen.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/image_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) Research In Motion Limited 2009-2010. All rights reserved.
  *
@@ -1078,7 +1080,4 @@ void ImageDecoder::UpdateAggressivePurging(wtf_size_t index) {
 
   // This condition never fails in the current code. Our existing image decoders
   // parse for the image size and SetFailed
-"""
-
-
 ```

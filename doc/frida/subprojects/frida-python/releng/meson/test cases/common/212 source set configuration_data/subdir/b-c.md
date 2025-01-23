@@ -191,7 +191,7 @@ By following these steps, moving from a basic understanding of the code to conne
 
 通过以上分析，我们可以看到即使是一个非常简单的 C 文件，在不同的上下文中，特别是在与 Frida 这样的动态分析工具结合时，也能展现出丰富的分析价值和调试可能性。它作为测试用例，可以用来验证 Frida 在处理包含特定配置的源文件时的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/212 source set configuration_data/subdir/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdlib.h>
 #include "all.h"
 
@@ -214,7 +216,4 @@ int main(void)
     f();
     g();
 }
-
-"""
-
 ```

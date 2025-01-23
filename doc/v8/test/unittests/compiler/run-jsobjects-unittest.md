@@ -128,11 +128,13 @@ baz(19, 23, 42, 65);
 
 `v8/test/unittests/compiler/run-jsobjects-unittest.cc` 这个 C++ 文件通过单元测试来验证 V8 编译器在处理涉及到 JavaScript `arguments` 对象的代码时，是否按照 JavaScript 规范正确地处理了不同场景下的行为，包括映射、非映射以及与剩余参数的交互。 这些测试确保了 V8 引擎能够正确地编译和执行使用 `arguments` 对象的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/run-jsobjects-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -195,7 +197,4 @@ TEST_F(RunJSObjectsTest, ArgumentsRest) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

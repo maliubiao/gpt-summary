@@ -176,7 +176,7 @@ func (h *MyHash) BlockSize() int { return 1 }
 
 在这种情况下，`cryptotest.TestHash` 中的 `ResetState` 测试将会失败。因为在 `Reset` 后，`h.sum` 被重置为 0，但是 `h.count` 仍然保留着之前写入的数据的长度。后续的 `Write` 操作会继续累加 `h.count`，导致哈希状态与一个全新的 `MyHash` 对象不同。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/cryptotest/hash.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -184,8 +184,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -375,9 +377,4 @@ func newRandReader(t *testing.T) io.Reader {
 	t.Logf("Deterministic RNG seed: 0x%x", seed)
 	return rand.New(rand.NewSource(seed))
 }
-
-"""
-
-
-
 ```

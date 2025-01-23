@@ -162,7 +162,7 @@ By following this iterative process of analyzing each function, considering its 
 
 `Marshal.cpp` 是 `frida-clr` 子项目中的关键组件，它通过提供一系列数据类型转换功能，使得 Frida 能够无缝地与运行在 .NET CLR 上的代码进行交互。这对于逆向分析、安全研究和动态调试 .NET 应用程序至关重要。理解这个文件的功能有助于更深入地了解 Frida 的工作原理，并能更有效地使用 Frida 进行 .NET 程序的分析和操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/src/Marshal.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "Marshal.hpp"
 
 #include <msclr/marshal.h>
@@ -411,7 +413,4 @@ namespace Frida
     throw gcnew Exception (message);
   }
 }
-
-"""
-
 ```

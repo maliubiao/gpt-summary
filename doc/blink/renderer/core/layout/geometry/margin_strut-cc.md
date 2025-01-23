@@ -148,14 +148,16 @@ By following these steps, iteratively analyzing the code, and connecting it to t
 
 `MarginStrut` 是 Blink 渲染引擎中一个重要的工具类，它负责存储和管理布局计算中遇到的边距信息，并区分了标准模式和怪异模式下的边距处理。虽然开发者不会直接操作它，但理解其背后的原理有助于更好地理解 CSS 边距的工作方式以及如何避免常见的布局错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/geometry/margin_strut.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ bool MarginStrut::operator==(const MarginStrut& other) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

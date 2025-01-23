@@ -130,7 +130,7 @@ SharedLibrary(
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/build.py` 文件的主要功能是**定义 Frida 构建系统中各种构建目标的结构和行为，包括可执行文件、静态库、动态库、共享模块和自定义构建步骤。它负责管理这些目标的属性，处理平台特定的构建细节，支持多种编程语言，并管理构建目标之间的依赖关系，是 Meson 构建系统核心的一部分，确保 Frida 能够正确地构建出各种平台上的二进制文件。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 get(self):
         return self.is_linkwithable
 
@@ -905,7 +907,4 @@ class CompileTarget(BuildTarget):
 class RunTarget(Target, CommandBase):
 
     typename
-"""
-
-
 ```

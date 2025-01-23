@@ -165,14 +165,16 @@ This methodical process, combining code analysis, keyword extraction, logical de
 
 `sanitizer_api.cc` 文件是 Blink 引擎中用于 HTML 内容清理的关键组件。它提供了两种级别的清理操作，允许开发者根据不同的安全需求来处理不受信任的 HTML 内容。理解其功能和潜在的使用错误对于开发安全的 Web 应用程序至关重要。开发者应该仔细选择合适的清理级别，并在必要时进行自定义配置，以确保既能防止安全漏洞，又能满足功能需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/sanitizer/sanitizer_api.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ void SanitizerAPI::SanitizeUnsafeInternal(ContainerNode* element,
 }
 
 }  // namespace blink
-
-"""
-
 ```

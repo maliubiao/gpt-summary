@@ -170,7 +170,7 @@ func main() {
 
 总而言之，`go/src/runtime/cgo_ppc64x.go` 是 Go 语言在 PowerPC 64 位架构上支持 CGo 功能的关键底层实现，它负责在 Go 调用 C 函数之前进行必要的寄存器初始化，确保跨语言调用的正确性。 理解其功能有助于开发者更好地理解 Go 语言的底层机制以及如何进行 CGo 编程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/cgo_ppc64x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -178,8 +178,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -193,9 +195,4 @@ package runtime
 // for external linking to work.
 //
 //go:cgo_export_static _cgo_reginit
-
-"""
-
-
-
 ```

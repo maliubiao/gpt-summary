@@ -133,15 +133,17 @@ By following these steps, I can thoroughly analyze the provided code and generat
 
 总之，`resource_loader_code_cache_test.cc` 是一个关键的测试文件，用于确保 Blink 引擎的代码缓存功能按预期工作，从而提高 JavaScript 代码的加载性能和用户体验。它可以作为开发者理解代码缓存机制和排查相关问题的宝贵资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/resource/resource_loader_code_cache_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -488,7 +490,4 @@ TEST_F(ResourceLoaderCodeCacheTest, WebUICodeCachePlatformOverride) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

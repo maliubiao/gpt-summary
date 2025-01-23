@@ -177,15 +177,17 @@ Process ID: 12345
 
 `go/src/cmd/vendor/golang.org/x/sys/unix/syscall_unix_gc.go` 文件是 Go 语言在特定 Unix-like 系统上实现系统调用的底层支撑。它定义了执行系统调用的基本函数，并受到平台和垃圾回收机制的限制。 虽然普通 Go 开发者不需要直接使用这些函数，但了解它们有助于理解 Go 如何与操作系统进行交互。直接使用这些底层接口容易出错，需要谨慎处理系统调用号、参数和错误。 通常，应该优先使用 `syscall` 包中更高级别的封装函数，以提高代码的可移植性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_unix_gc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -200,9 +202,4 @@ func Syscall(trap, a1, a2, a3 uintptr) (r1, r2 uintptr, err syscall.Errno)
 func Syscall6(trap, a1, a2, a3, a4, a5, a6 uintptr) (r1, r2 uintptr, err syscall.Errno)
 func RawSyscall(trap, a1, a2, a3 uintptr) (r1, r2 uintptr, err syscall.Errno)
 func RawSyscall6(trap, a1, a2, a3, a4, a5, a6 uintptr) (r1, r2 uintptr, err syscall.Errno)
-
-"""
-
-
-
 ```

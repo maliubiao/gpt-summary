@@ -155,7 +155,7 @@ The functions check for specific patterns in the SSA representation and, if a ma
 
 总的来说，这段代码通过识别常见的指令模式并将其替换为更优化的形式，旨在提升Go语言在AMD64架构上的性能。 它是Go编译器进行底层代码优化的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteAMD64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -164,8 +164,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第16部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 / result: (SHRQ x (NEGQ <t> y))
 	for {
 		x := v_0
@@ -1601,10 +1603,4 @@ func rewriteValueAMD64_OpAMD64TESTW(v *Value) bool {
 			return true
 		}
 		break
-	
-"""
-
-
-
-
 ```

@@ -235,7 +235,7 @@ Frida可以用来hook Android 系统框架中的函数，例如 `android.os.Syst
 
 总而言之，`jsonvalidator.py` 在 Frida 项目的开发流程中扮演着质量保证的角色，确保了 API 文档的准确性和一致性，这对于 Frida 的使用者来说至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/docs/jsonvalidator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -243,8 +243,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # SPDX-License-Identifier: Apache-2.0
@@ -441,7 +443,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     raise SystemExit(main())
-
-"""
-
 ```

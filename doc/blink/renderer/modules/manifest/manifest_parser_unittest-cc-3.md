@@ -154,7 +154,7 @@ ASSERT_EQ("http://foo.com/compose?to=%s", protocol_handlers[0]->url); // 假设 
 
 考虑到这是第 4 部分，并且之前的测试用例可能涵盖了 Manifest 文件的基本结构和更简单的字段，这部分代码主要专注于测试 **Web App Manifest 中与操作系统和外部内容交互的高级特性** 的解析，包括文件处理、协议处理、跨域 URL 处理和作用域扩展。它验证了 Blink 引擎对于这些复杂且重要的 PWA 功能的解析逻辑的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/manifest/manifest_parser_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ]->name);
     EXPECT_EQ(1u, file_handlers[0]->accept.find("text/csv")->value.size());
 
@@ -1261,7 +1263,4 @@ TEST_F(ManifestParserTest, ScopeExtensionParseRules) {
     ASSERT_EQ(1u, scope_extensions.size());
     ASSERT_TRUE(blink::SecurityOrigin::CreateFromString("https://foo.com")
                     ->IsSameOriginWith(scope_extensions[0]->origin.g
-"""
-
-
 ```

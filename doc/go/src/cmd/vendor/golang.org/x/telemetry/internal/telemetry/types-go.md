@@ -304,15 +304,17 @@ func main() {
 
 总而言之，这段 `types.go` 文件定义了遥测系统中使用的数据结构，为后续的数据收集、聚合和上传提供了基础的数据模型。它并没有直接涉及命令行参数的处理，但其定义的数据结构会被其他处理配置和上报数据的模块使用。理解这些数据结构的含义对于理解 Go 官方遥测系统的运作方式至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/telemetry/internal/telemetry/types.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -364,9 +366,4 @@ type ProgramReport struct {
 	Counters  map[string]int64
 	Stacks    map[string]int64
 }
-
-"""
-
-
-
 ```

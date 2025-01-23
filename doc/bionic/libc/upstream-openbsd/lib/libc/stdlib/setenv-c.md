@@ -345,7 +345,7 @@ Java.perform(function() {
 
 通过 Frida hook，你可以动态地观察 Android 系统或特定应用程序是如何使用这些环境变量操作函数的，从而更好地理解系统的行为和调试问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/stdlib/setenv.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -356,8 +356,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: setenv.c,v 1.20 2022/08/08 22:40:03 millert Exp $ */
 /*
  * Copyright (c) 1987 Regents of the University of California.
@@ -543,7 +545,4 @@ unsetenv(const char *name)
 	return (0);
 }
 DEF_WEAK(unsetenv);
-
-"""
-
 ```

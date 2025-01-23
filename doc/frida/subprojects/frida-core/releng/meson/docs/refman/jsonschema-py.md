@@ -143,7 +143,7 @@ By following this structured approach, breaking down the code, and explicitly ad
 
 `jsonschema.py` 文件在 Frida 项目中扮演着至关重要的角色，它通过定义 JSON Schema 规范了 Frida API 文档的结构，确保了文档的一致性和可解析性。理解这个文件有助于开发者更好地理解 Frida 的 API，为 Frida 开发工具或进行逆向分析提供重要的信息基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/docs/refman/jsonschema.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -244,7 +246,4 @@ if T.TYPE_CHECKING:
         functions:       T.Dict[str, Function]  # A mapping of <name> to a `Function` object for *all* Meson functions
         objects:         T.Dict[str, Object]    # A mapping of <name> to a `Object`   object for *all* Meson objects (including modules, elementary, etc.)
         objects_by_type: ObjectsByType
-
-"""
-
 ```

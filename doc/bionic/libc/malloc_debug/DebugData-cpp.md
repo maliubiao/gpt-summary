@@ -300,7 +300,7 @@ rpc.exports = {
 
 `DebugData.cpp` 是 Android Bionic 库中至关重要的组成部分，负责管理和协调各种内存调试功能。它通过配置不同的选项，可以在内存分配的关键环节插入检查机制，帮助开发者有效地发现和解决内存相关的错误，从而提高 Android 系统的稳定性和应用质量。理解其工作原理对于深入了解 Android 的内存管理和调试机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/DebugData.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -311,8 +311,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -418,7 +420,4 @@ void DebugData::PostForkChild() {
     pointer->PostForkChild();
   }
 }
-
-"""
-
 ```

@@ -105,7 +105,7 @@ Essentially, my process was a combination of code reading, functional decomposit
 
 `TransportClientSocketPool::Group` 类的核心功能是作为特定网络目的地的客户端 socket 连接请求和连接作业的管理器。它通过维护请求队列和连接作业列表，实现了连接请求的调度、连接作业的分配和跟踪，以及连接的优化复用。这对于提高网络请求效率和用户体验至关重要。虽然这段代码没有直接涉及 socket 的创建和连接的复用逻辑，但它是连接池管理的关键组成部分，负责连接请求和连接作业的组织和协调。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/transport_client_socket_pool.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -113,9 +113,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-  std::unique_ptr<Request> owned_request = PopNextUnboundRequest();
+### 源代码
+```cpp
+std::unique_ptr<Request> owned_request = PopNextUnboundRequest();
   DCHECK_EQ(owned_request.get(), request);
   std::unique_ptr<ConnectJob> owned_connect_job = RemoveUnboundJob(connect_job);
   LogBoundConnectJobToRequest(owned_connect_job->net_log().source(), *request);
@@ -307,8 +309,4 @@ void TransportClientSocketPool::Group::TransferJobBetweenRequests(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

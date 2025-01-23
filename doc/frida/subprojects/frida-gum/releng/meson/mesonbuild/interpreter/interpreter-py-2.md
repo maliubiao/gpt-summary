@@ -151,7 +151,7 @@ This iterative process of scanning, inferring, analyzing specific aspects, and t
 
 总之，这个文件是 Meson 构建系统的关键组成部分，它将用户定义的构建规则转化为实际的构建操作，并负责管理构建过程中的各种资源和依赖。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 'backend'))
             vsenv = self.coredata.get_option(OptionKey('vsenv'))
             force_vsenv = vsenv or backend.startswith('vs')
@@ -785,7 +787,4 @@ Prompt:
     @typed_kwargs(
         'vcs_tag',
         CT_INPUT_KW.evolve(required
-"""
-
-
 ```

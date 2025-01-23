@@ -181,15 +181,17 @@ testFinalization();
 
 这段测试代码通过模拟对象的创建和销毁，并验证终结器的调用，确保了 WebAssembly C API 中对象生命周期管理的关键部分能够正常工作。这对于保证 WebAssembly 功能的正确性和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/finalize.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/wasm-api-tests/finalize.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -380,7 +382,4 @@ TEST_F(WasmCapiTest, CapiFunctionLifetimes) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -106,7 +106,7 @@ This code helps avoid common errors that would arise from manually writing assem
 
 This section of `instruction-selector-loong64.cc` is responsible for the core task of **translating high-level intermediate representation (IR) nodes representing arithmetic and type conversion operations into concrete LoongArch64 machine instructions**. It incorporates architecture-specific knowledge and optimizations to generate efficient code for the LoongArch64 platform within the V8 JavaScript engine. It also adapts its behavior based on the specific compilation pipeline being used.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/instruction-selector-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/loong64/instruction-selector-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -114,8 +114,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 atcher leftInput(left), rightInput(right);
       if (leftInput.right().Is(32) && rightInput.right().Is(32)) {
         // Combine untagging shifts with Mulh_d.
@@ -1077,7 +1079,4 @@ void InstructionSelectorT<Adapter>::EmitMoveFPRToParam(
 template <typename Adapter>
 void InstructionSelectorT<Adapter>::EmitPrepareArguments(
     ZoneVector<
-"""
-
-
 ```

@@ -192,15 +192,17 @@ var _Ctype_union_AnonUnion _Ctype_union_AnonUnion
 
 总而言之，这段测试代码通过模拟 `cgo -godefs` 工具的典型用法，验证了其生成 Go 定义的功能是否正常工作，并且关注了生成注释的正确性。  它涵盖了多种包含不同 C 结构定义的 Go 文件，以确保 `cgo -godefs` 的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/internal/testgodefs/testgodefs_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -317,9 +319,4 @@ func TestGoDefs(t *testing.T) {
 		t.Fatalf("%s [%s]: %v\n%s", strings.Join(cmd.Args, " "), dir, err, out)
 	}
 }
-
-"""
-
-
-
 ```

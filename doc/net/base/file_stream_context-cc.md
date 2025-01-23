@@ -180,15 +180,17 @@ This systematic approach allows for a thorough understanding of the code and its
 
 在调试这些场景时，可以使用 Chromium 的开发者工具 (特别是 Network 面板) 来观察网络请求和响应，以及使用 Chrome 的 `chrome://tracing` 工具来捕获和分析更底层的系统事件和函数调用，以便更精确地定位到 `FileStream::Context` 的使用。 设置断点在 `FileStream::Context` 的关键方法中，并观察调用栈和变量值，可以帮助理解代码的执行流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/file_stream_context.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -456,7 +458,4 @@ void FileStream::Context::OnAsyncCompleted(Int64CompletionOnceCallback callback,
 }
 
 }  // namespace net
-
-"""
-
 ```

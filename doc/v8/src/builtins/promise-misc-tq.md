@@ -201,14 +201,16 @@ This iterative process of scanning, grouping, understanding, connecting, and ref
 
 总而言之，这个 Torque 文件是 V8 引擎中实现 JavaScript Promise 机制的关键组成部分，它定义了 Promise 的内部结构、状态管理、reaction 处理和异步调度的核心逻辑。理解这些底层的实现有助于更深入地理解和使用 JavaScript Promise。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/promise-misc.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -684,7 +686,4 @@ transitioning javascript builtin SetContinuationPreservedEmbedderData(
 }
 
 }
-
-"""
-
 ```

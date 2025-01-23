@@ -153,15 +153,17 @@ obj.dispose(); // 显式释放底层的 C++ 对象
 
 总而言之，`v8/test/unittests/heap/cppgc/explicit-management-unittest.cc` 详细测试了 `cppgc` 提供的底层显式内存管理机制的正确性，这些机制对于 V8 内部高效地管理 C++ 对象的生命周期至关重要。虽然 JavaScript 开发者不直接使用这些 API，但这些机制的稳定性和正确性直接影响着 JavaScript 运行时的性能和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/explicit-management-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc/explicit-management-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -370,7 +372,4 @@ TEST_F(ExplicitManagementTest, ResizeBailsOutDuringGC) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

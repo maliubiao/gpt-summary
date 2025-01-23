@@ -172,15 +172,17 @@ onmessage = function(event) {
 
 `v8/src/execution/local-isolate.cc` 是 V8 引擎中一个关键的内部组件，负责为不同的执行线程提供隔离的执行环境。它管理着线程本地的堆、日志记录、栈限制等资源，是 V8 支持并发和隔离执行 JavaScript 代码的基础。虽然 JavaScript 开发者不会直接操作 `LocalIsolate`，但其背后的机制直接影响着 JavaScript 代码的运行方式，尤其是在多线程场景下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/local-isolate.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/local-isolate.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ const std::string& LocalIsolate::DefaultLocale() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

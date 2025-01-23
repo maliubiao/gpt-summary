@@ -95,11 +95,13 @@ function testIfElse(y) {
 
 `node-matchers.cc` 文件中的Matcher类是V8编译器进行代码分析和优化的重要工具。 它们通过识别IR图中的特定模式（如分支和条件选择）来帮助编译器理解JavaScript代码的控制流，并为后续的优化和代码生成提供基础。  `BranchMatcher` 对应于 JavaScript 的 `if` 语句，而 `DiamondMatcher` 对应于 JavaScript 的 `if-else` 语句。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/node-matchers.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ DiamondMatcher::DiamondMatcher(Node* merge)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

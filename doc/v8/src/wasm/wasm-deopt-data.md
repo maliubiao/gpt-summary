@@ -139,11 +139,13 @@ runWasm();
 
 `wasm-deopt-data.cc` 是 V8 引擎中负责管理 WebAssembly 代码去优化关键数据的模块。它确保在需要进行去优化时，引擎能够获取到必要的信息，以便安全地回退到未优化的状态，保证程序的正确执行。这与 JavaScript 的动态特性和 V8 的优化策略紧密相关，因为去优化是 V8 保持高性能和正确性的重要机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-deopt-data.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ base::OwnedVector<uint8_t> WasmDeoptDataProcessor::Serialize(
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

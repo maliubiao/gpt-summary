@@ -106,11 +106,13 @@ try {
 
 `status.cc` 文件定义了 CRDP 通信中可能出现的各种底层错误，这些错误最终会影响到与 V8 引擎交互的 JavaScript 代码。当 JavaScript 代码通过 CRDP 发送不合规范的命令或接收到格式错误的数据时，V8 引擎内部就会使用这个文件定义的错误类型来表示操作状态，并将相应的错误信息传递给上层（例如 Chrome 开发者工具的 JavaScript 代码）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/status.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ std::string Status::ToASCIIString() const {
   return Message() + " at position " + std::to_string(pos);
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

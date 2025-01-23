@@ -218,15 +218,17 @@ Finally, organize the analysis into logical sections as requested by the prompt:
 
 总而言之，`at_rule_font_palette_values_descriptor_parser.cc` 文件在浏览器解析和应用 CSS `@font-palette-values` 规则的过程中扮演着至关重要的角色。它确保了浏览器能够正确理解开发者定义的字体调色板，并将这些调色板应用于网页元素的渲染。理解这个文件的功能有助于理解浏览器如何处理现代 CSS 特性，并在遇到相关问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/at_rule_font_palette_values_descriptor_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -322,7 +324,4 @@ CSSValue* AtRuleDescriptorParser::ParseAtFontPaletteValuesDescriptor(
 }
 
 }  // namespace blink
-
-"""
-
 ```

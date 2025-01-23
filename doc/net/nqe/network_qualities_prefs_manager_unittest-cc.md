@@ -148,15 +148,17 @@ By following this structured approach, and by constantly asking "why" and "how,"
 
 总之，`network_qualities_prefs_manager_unittest.cc` 通过模拟各种网络场景和操作，来确保 `NetworkQualitiesPrefsManager` 能够可靠地管理和持久化网络质量信息，这对于 Chromium 优化网络性能和为用户提供更好的浏览体验至关重要。虽然用户不直接与这个模块交互，但它的正确运行直接影响到用户感知到的网络速度和网页加载效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/network_qualities_prefs_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -462,7 +464,4 @@ TEST_F(NetworkQualitiesPrefManager, ClearPrefs) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

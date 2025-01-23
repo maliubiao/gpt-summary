@@ -97,7 +97,7 @@ Let's break down the thought process to analyze the provided Java code snippet a
 
 总而言之，`SimpleLib.java` 虽然代码简单，但它在 Frida 动态插桩的上下文中扮演着重要的角色，用于验证 Frida 与 Java 虚拟机的连接和代码执行能力，是 Frida 功能测试和用户调试的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/java/7 linking/sub/com/mesonbuild/SimpleLib.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 public class SimpleLib {
@@ -114,7 +116,4 @@ public class SimpleLib {
         System.out.println("Java linking is working.\n");
     }
 }
-
-"""
-
 ```

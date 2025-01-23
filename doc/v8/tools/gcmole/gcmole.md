@@ -221,7 +221,7 @@ void UseGlobalObject() {
 
 `v8/tools/gcmole/gcmole.cc` 的主要功能是作为一个 Clang 插件，对 V8 的 C++ 源代码进行静态分析，特别是关注与垃圾回收相关的代码。它通过构建函数调用图、识别已知的和疑似的 GC 触发函数、跟踪变量的活跃状态以及分析表达式的 GC 副作用，来检测潜在的 GC 安全问题，例如在可能发生 GC 的操作后继续使用本地持有的指向堆对象的原始指针，从而帮助 V8 开发者编写更健壮和可靠的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/gcmole/gcmole.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/gcmole/gcmole.cc以.tq结尾，那它是个v8 torque源代码，
@@ -229,8 +229,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1242,7 +1244,4 @@ class FunctionAnalyzer {
     clang::CXXMethodDecl* method =
         llvm::dyn_cast_or_null<clang::CXXMethodDecl>(callee);
     if (method == nullptr) r
-"""
-
-
 ```

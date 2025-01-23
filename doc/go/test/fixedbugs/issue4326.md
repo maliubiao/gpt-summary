@@ -187,15 +187,17 @@ While end-users don't directly interact with this test file, understanding the u
 
 In summary, `go/test/fixedbugs/issue4326.go` is a test case within the Go compiler's test suite, specifically designed to verify that the compiler correctly handles local variables that shadow global variables after function inlining. It ensures that debugging and variable inspection in such scenarios work as expected, providing the value of the local variable.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4326.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compiledir
 
 // Copyright 2012 The Go Authors. All rights reserved.
@@ -205,9 +207,4 @@ Prompt:
 // Printing local variables in inliner shadows global names.
 
 package ignored
-
-"""
-
-
-
 ```

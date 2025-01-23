@@ -172,15 +172,17 @@ By following these steps, we can systematically analyze the provided C++ code an
 
 总而言之，`ml_operand.cc` 中 `MLOperand` 类的核心作用是作为 WebNN 图中的基本数据单元，负责存储和管理操作数的相关信息，并在图构建过程中进行必要的验证。它通过 WebNN API 与 JavaScript 代码交互，使得开发者可以使用 JavaScript 来定义和执行机器学习模型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ml/webnn/ml_operand.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ void MLOperand::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

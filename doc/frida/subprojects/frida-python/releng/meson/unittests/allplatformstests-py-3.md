@@ -114,7 +114,7 @@ Let's take the `test_options_with_choices_changing` function as an example:
 
 In essence, `allplatformstests.py` acts as a comprehensive suite of tests to ensure the robust and correct behavior of the Meson build system when building the Frida Python bindings across various platforms and configurations. It covers a wide range of scenarios, from basic option handling to complex interactions with compilers and subprojects, safeguarding the integrity and reliability of the Frida build process. This file is crucial for developers to verify that changes to the build system or the project itself do not introduce regressions or unexpected behavior.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,9 +123,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
-      if x.get('name') == 'list':
+### 源代码
+```python
+if x.get('name') == 'list':
                     return x
             raise Exception(opts)
 
@@ -804,7 +806,4 @@ Prompt:
         # Subprojects warn correctly
         self.assertRegex(out, r"foo\| .*WARNING: Project targets '>=0.40'.*'0.44.0': disabler")
         self.assertRegex(out, r"baz\
-"""
-
-
 ```

@@ -101,12 +101,14 @@ OSR is also an internal optimization. V8 will automatically try to upgrade "hot"
 
 In summary, this code snippet provides the low-level building blocks within the V8 engine for the s390 architecture that enable key JavaScript functionalities like type conversions, interaction with native code, and dynamic optimization through deoptimization and on-stack replacement.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/s390/builtins-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 pe hard_abort(masm);  // Avoid calls to Abort.
 
   // Immediate values for this stub fit in instructions, so it's safe to use ip.
@@ -764,8 +766,4 @@ void Builtins::Generate_RestartFrameTrampoline(MacroAssembler* masm) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_S390X
-
-"""
-
-
 ```

@@ -209,14 +209,16 @@ This iterative process of reading the code, understanding its purpose, connectin
 
 总而言之，`InspectorLayerTreeAgent` 是 Chrome DevTools 中 "Layers" 面板背后的关键组件，它将渲染引擎内部复杂的分层渲染信息以易于理解的方式呈现给开发者，帮助他们诊断渲染问题、理解性能瓶颈以及优化页面渲染效率。 理解其功能和与 Web 技术的关系对于前端开发和性能优化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_layer_tree_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Apple Inc. All rights reserved.
  * Copyright (C) 2013 Google Inc. All rights reserved.
@@ -758,7 +760,4 @@ protocol::Response InspectorLayerTreeAgent::snapshotCommandLog(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -140,14 +140,16 @@ This iterative process of reading, understanding the context, making connections
 
 总而言之，`blink/renderer/platform/weborigin/referrer.cc` 文件是 Blink 引擎处理 HTTP Referer 的核心组件，它定义的逻辑直接影响着 Web 开发者如何通过 HTML 和 JavaScript 控制 Referer 信息的发送，对于理解 Web 安全和隐私至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/referrer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -194,7 +196,4 @@ const AtomicString& Referrer::ClientReferrerString() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

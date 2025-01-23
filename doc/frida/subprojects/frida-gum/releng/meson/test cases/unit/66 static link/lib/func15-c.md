@@ -153,7 +153,7 @@ This systematic approach ensures all aspects of the prompt are addressed and the
 
 总而言之，`func15.c` 提供了一个简单的函数，但它在 Frida 动态插桩的背景下，可以作为理解程序行为、进行逆向分析和调试的切入点。分析这类简单的代码有助于理解 Frida 的基本工作原理和使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/66 static link/lib/func15.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,15 +161,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func14();
 
 int func15()
 {
   return func14() + 1;
 }
-
-"""
-
 ```

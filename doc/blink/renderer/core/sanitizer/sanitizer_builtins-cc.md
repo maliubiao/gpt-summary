@@ -135,14 +135,16 @@ This iterative process of code analysis, contextual understanding, connecting to
 
 `sanitizer_builtins.cc` 文件提供了一些预定义的 `Sanitizer` 配置，用于在 Chromium 浏览器中安全地处理 HTML 内容。理解这些配置的功能和区别，并根据不同的安全需求选择合适的配置，对于防止 XSS 攻击至关重要。 开发者需要意识到 `Sanitizer` 的作用和局限性，并将其与其他安全措施结合使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/sanitizer/sanitizer_builtins.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file
@@ -183,7 +185,4 @@ const Sanitizer* SanitizerBuiltins::GetBaseline() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

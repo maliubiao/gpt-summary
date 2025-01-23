@@ -130,7 +130,7 @@ By following these steps, the detailed and comprehensive answer provided earlier
 
 **作为调试线索:** `foo.c` 在这个上下文中很可能是一个非常基础的测试用例，用于验证 Frida CLR 组件在构建目录升级过程中的基本功能是否正常。 如果在构建目录升级后，这个简单的程序无法正常运行，那可能意味着升级过程存在问题，需要进一步排查。例如，可能是构建系统配置错误，导致可执行文件没有正确生成或者运行时环境出现问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/manual tests/13 builddir upgrade/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,15 +138,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main() {
     printf("Hello world!\n");
     return 0;
 }
-
-"""
-
 ```

@@ -127,7 +127,7 @@ if (staticLibFunctionAddress) {
 
 通过以上步骤，开发者可以逐步缩小问题范围，最终找到导致构建失败的原因。 这个 `static_lib_source.c` 文件成为了调试过程中的一个关键线索，因为它明确地展示了对外部生成代码的依赖。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/windows/20 vs install static lib with generated obj deps/static_lib_source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,15 +135,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern int generated_function(void);
 
 int static_lib_function(void)
 {
     return generated_function();
 }
-
-"""
-
 ```

@@ -135,7 +135,7 @@ By following this detailed analysis, we can generate a comprehensive answer that
 
 总而言之，`cmMod.cpp` 文件本身的功能是模拟一种特定的包含场景，用于测试 Frida 构建系统的正确性。它的存在体现了构建系统在软件开发和逆向工程中的重要性，以及 Frida 开发团队对代码质量和构建流程的重视。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/18 skip include files/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -155,7 +157,4 @@ using namespace std;
 #include "fakeInc/cmModInc3.cpp"
 #include "fakeInc/cmModInc4.cpp"
 #undef MESON_INCLUDE_IMPL
-
-"""
-
 ```

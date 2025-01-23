@@ -119,15 +119,17 @@ document.body.appendChild(img);
 
 `web_savable_resources_test_support.cc` 提供了一个专门用于测试的辅助函数，帮助验证 Blink 引擎在处理网页资源保存时能否正确识别和提取各种类型元素的子资源链接。这对于确保“保存网页为…”功能的正确性和完整性至关重要。它与 HTML（定义资源链接的结构）、CSS（通过 URL 引用资源）和 JavaScript（动态操作和引用资源）都有着密切的关系。  在调试资源保存相关的问题时，了解这个文件及其提供的功能可以帮助开发人员更好地理解 Blink 引擎的内部工作原理并编写有效的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_savable_resources_test_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ WebString GetSubResourceLinkFromElementForTesting(const WebElement& element) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -179,7 +179,7 @@ I will now formulate the detailed explanation and examples.
 
 总而言之，第 2 部分的代码主要负责处理与国际化相关的字符串操作（大小写转换、比较）以及数字的本地化格式化，并包含了为了提升性能的快速比较优化逻辑和缓存机制。它紧密地服务于 JavaScript 的 `Intl` API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/intl-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/intl-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -187,8 +187,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 okupIterator it(isolate, o, k);
     Maybe<bool> maybe_found = JSReceiver::HasProperty(&it);
     MAYBE_RETURN(maybe_found, Nothing<std::vector<std::string>>());
@@ -1040,7 +1042,4 @@ Maybe<Intl::NumberFormatDigitOptions> Intl::SetNumberFormatDigitOptions(
   // 21. Let needSd be true.
   bool need_sd = true;
   // 22. Let needFd be
-"""
-
-
 ```

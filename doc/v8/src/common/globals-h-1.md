@@ -183,7 +183,7 @@ constexpr intptr_t kObjectAlignmentMask = 0x7; // 假设
 
 总而言之，这部分代码是 V8 引擎的基础设施，为 V8 如何管理内存、表示对象和执行 JavaScript 代码提供了底层的定义和配置。虽然 JavaScript 开发者通常不直接操作这些值，但理解它们有助于更深入地理解 V8 的工作原理和性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/common/globals.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/common/globals.h以.tq结尾，那它是个v8 torque源代码，
@@ -191,8 +191,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ointers.
 constexpr int kObjectAlignmentBits = kTaggedSizeLog2;
 constexpr intptr_t kObjectAlignment = 1 << kObjectAlignmentBits;
@@ -1143,8 +1145,5 @@ inline std::ostream& operator<<(std::ostream& os, ScopeType type) {
     case ScopeType::BLOCK_SCOPE:
       return os << "BLOCK_SCOPE";
     case ScopeType::CLASS_SCOPE:
-      return os << 
-"""
-
-
+      return os <<
 ```

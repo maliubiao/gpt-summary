@@ -175,15 +175,17 @@ Difference found: arr1[2...3] vs arr2[2...3]
 
 `v8/src/debug/liveedit-diff.h` 定义了一个用于比较两个数组的通用框架，它通过抽象的输入和输出接口，使得不同的比较算法和结果处理方式可以被灵活地组合使用。在 V8 中，这个框架很可能被用于支持代码的热重载和调试功能，通过比较旧版本和新版本代码的结构差异，来实现高效的代码更新。虽然开发者不会直接使用这个头文件，但理解其功能有助于更好地理解 V8 的内部工作原理以及热重载的机制和局限性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/liveedit-diff.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/liveedit-diff.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ class Comparator {
 }  // namespace v8
 
 #endif  // V8_DEBUG_LIVEEDIT_DIFF_H_
-
-"""
-
 ```

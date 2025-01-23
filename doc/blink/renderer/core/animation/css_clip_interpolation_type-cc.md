@@ -163,14 +163,16 @@ This systematic approach helps to dissect the code and understand its functional
 
 `css_clip_interpolation_type.cc` 文件是 Blink 引擎中实现 CSS `clip` 属性动画的关键部分。它负责处理 `clip` 属性值的转换、插值计算和应用，并特别关注了 `auto` 关键字的处理，确保在可能的情况下提供平滑的动画效果，并在 `auto` 状态变化时做出合理的处理。理解这个文件有助于开发者更好地理解 CSS 动画的内部机制以及如何有效地使用 `clip` 属性进行动画设计。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_clip_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -475,7 +477,4 @@ void CSSClipInterpolationType::ApplyStandardPropertyValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

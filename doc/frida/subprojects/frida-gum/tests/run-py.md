@@ -111,7 +111,7 @@ Initially, I might have focused too narrowly on the technical details of the cod
 
 `run.py` 是 Frida Gum 测试套件的关键组成部分，它负责执行测试用例并管理测试运行时的环境。它与逆向方法紧密相关，因为它直接测试了 Frida Gum 的核心动态分析功能。它涉及到二进制底层、操作系统原理以及一些常见的编程实践。理解这个脚本的功能有助于理解 Frida Gum 的测试流程，并在进行 Frida 开发或调试时提供有价值的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/run.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 from pathlib import Path
 import platform
@@ -144,7 +146,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

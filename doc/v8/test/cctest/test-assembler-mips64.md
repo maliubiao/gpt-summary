@@ -599,7 +599,7 @@ TEST(MIPS6) {
       Factory::CodeBuilder(isolate, desc, CodeKind::FOR_TESTING).Build();
   auto f = GeneratedCode<F3>::FromCode(isolate, *code);
   t.ui = 0x
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -607,8 +607,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1695,7 +1697,4 @@ TEST(MIPS12) {
   __ subu(t0, a4, a7);
   __ nop();
   __ push(a4);  // These instructions dis
-"""
-
-
 ```

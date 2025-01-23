@@ -146,7 +146,7 @@ python manygen.py my_function ./output -g gcc
 
 总而言之，`manygen.py` 是 Frida 测试框架中的一个辅助工具，用于生成测试所需的编译产物。它与逆向工程相关，因为它生成的正是逆向工程师经常分析的目标文件类型。理解这个脚本的功能有助于理解 Frida 的测试流程和构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/95 manygen/subdir/manygen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 
@@ -238,7 +240,4 @@ else:
 
 os.unlink(tmpo)
 os.unlink(tmpc)
-
-"""
-
 ```

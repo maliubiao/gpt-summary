@@ -109,14 +109,16 @@ By following these steps, we can systematically analyze the C++ test file and ex
 
 总而言之，`pod_interval_tree_test.cc` 这个文件通过一系列的单元测试，细致地检验了 `PODIntervalTree` 类的各项功能和边界情况，确保了这个关键数据结构在 Blink 渲染引擎中的稳定性和可靠性。这些测试覆盖了插入、查询、删除等基本操作，以及对复杂数据和随机操作的鲁棒性测试。理解这些测试用例有助于开发者正确地使用和维护 `PODIntervalTree`，并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/pod_interval_tree_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -473,7 +475,4 @@ TEST(PODIntervalTreeTest, RandomDeletionAndInsertionRegressionTest4) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

@@ -210,15 +210,17 @@ By following this systematic approach, we can thoroughly analyze the provided C+
 
 通过这些调试步骤，开发者可以逐步定位字体加载问题的原因，并理解 `remote_font_face_source.cc` 在整个过程中的作用。他们可以根据分析结果调整 CSS 中的 `font-display` 属性，优化字体文件的加载策略，或者解决网络配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/remote_font_face_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -750,7 +752,4 @@ RemoteFontFaceSource::FontLoadHistograms::DataSourceMetricsValue() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

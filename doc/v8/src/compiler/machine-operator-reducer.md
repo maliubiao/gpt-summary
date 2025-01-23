@@ -66,12 +66,14 @@ function shiftRight(b) {
 在 `shiftRight(b)` 中，如果比较操作是基于移位后的值，例如 `(b >> K) < C`，`MachineOperatorReducer` 会尝试将其转换为更直接的比较 `b < (C << K)`，前提是移位没有丢失重要的信息，这在 `ReduceWord32Comparisons` 函数中有所体现。
 
 总而言之，`v8/src/compiler/machine-operator-reducer.cc`  是 V8 优化 JavaScript 代码执行效率的关键组件之一，它通过对底层的机器操作进行智能的分析和转换，显著提升了 JavaScript 程序的性能。
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1760,7 +1762,4 @@ Reduction MachineOperatorReducer::ReduceWord32Comparisons(Node* node) {
     uint32_t left = m.left().ResolvedValue();
     Int32BinopMatcher mright(m.right().node());
     if (mright.right().Ha
-"""
-
-
 ```

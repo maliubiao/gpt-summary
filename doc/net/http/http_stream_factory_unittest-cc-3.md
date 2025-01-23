@@ -661,7 +661,7 @@ TEST_P(HttpStreamFactoryBidirectionalQuicTest,
   bidi_request_info.method = "GET";
   bidi_request_info.url = default_url_;
   bidi_request_info.end_stream_on
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -669,9 +669,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                                              &spdy_headers_frame_len);
+### 源代码
+```cpp
+&spdy_headers_frame_len);
   }
 
   std::unique_ptr<quic::QuicEncryptedPacket>
@@ -1427,7 +1429,4 @@ TEST_P(HttpStreamFactoryTest, Tag) {
       MutableNetworkTrafficAnnotationTag(TRAFFIC_ANNOTATION_FOR_TESTS);
 
   // Verify on
-"""
-
-
 ```

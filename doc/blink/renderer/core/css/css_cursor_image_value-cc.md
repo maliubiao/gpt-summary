@@ -257,15 +257,17 @@ element.style.cursor = 'url("animated-cursor.gif") 15 3, auto';
 
 总而言之，`css_cursor_image_value.cc` 定义了表示 CSS 自定义光标图像值的核心数据结构，它在浏览器解析 CSS、渲染光标以及进行样式计算等过程中起着关键作用。理解这个文件的功能有助于理解 Blink 引擎如何处理和显示自定义光标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_cursor_image_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Rob Buis <buis@kde.org>
  *           (C) 2008 Nikolas Zimmermann <zimmermann@kde.org>
@@ -333,7 +335,4 @@ void CSSCursorImageValue::TraceAfterDispatch(blink::Visitor* visitor) const {
 }  // namespace cssvalue
 
 }  // namespace blink
-
-"""
-
 ```

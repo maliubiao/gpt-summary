@@ -100,11 +100,13 @@ console.timeEnd("myFunction");
 
 `recorder-mac.cc` 是 V8 引擎在 macOS 平台上进行性能追踪的关键组件。它通过 macOS 的系统 API 记录 V8 内部的事件，这些记录的数据最终可以帮助开发者理解和优化 JavaScript 代码的性能。虽然 JavaScript 代码本身不直接调用这个 C++ 文件中的函数，但这个文件是 V8 引擎提供性能分析能力的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/tracing/recorder-mac.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -148,7 +150,4 @@ void Recorder::AddEvent(TraceObject* trace_event) {
 #pragma clang diagnostic pop
 
 #endif  // V8_LIBPLATFORM_TRACING_RECORDER_MAC_H_
-
-"""
-
 ```

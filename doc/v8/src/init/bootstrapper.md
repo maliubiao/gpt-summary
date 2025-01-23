@@ -80,12 +80,14 @@ Here's how the C++ code in this file relates to these examples:
 
 In essence, this part of the `bootstrapper.cc` file is responsible for the **"Big Bang"** of the JavaScript environment. It creates the initial primordial objects and functions that make JavaScript execution possible. Without this foundational setup, no JavaScript code could run.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1584,8 +1586,5 @@ void Genesis::HookUpGlobalObject(Handle<JSGlobalObject> global_object) {
 
 // See https://tc39.es/ecma262/#sec-ordinarycreatefromconstructor for details
 // about intrinsicDefaultProto concept. In short it's about using proper
-// prototype object from constructor's realm when 
-"""
-
-
+// prototype object from constructor's realm when
 ```

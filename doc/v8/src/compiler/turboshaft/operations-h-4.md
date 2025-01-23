@@ -136,7 +136,7 @@ This section of `operations.h` defines a wide array of fundamental operations fo
 
 The prompt mentions checking if the file ends in `.tq` to identify Torque source code. Since `v8/src/compiler/turboshaft/operations.h` ends in `.h`, it is a standard C++ header file, **not** a Torque file. Torque files are used for generating C++ code in V8, and it's possible that Torque was used to generate parts of this file or related code, but this specific file is C++.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/operations.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/operations.h以.tq结尾，那它是个v8 torque源代码，
@@ -144,8 +144,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ize_log2,
                      maybe_initializing_or_transitioning,
                      maybe_indirect_pointer_tag);
@@ -1016,7 +1018,4 @@ struct ReturnOp : OperationT<ReturnOp> {
 
   // Number of additional stack slots to be removed.
   V<Word32> pop_cou
-"""
-
-
 ```

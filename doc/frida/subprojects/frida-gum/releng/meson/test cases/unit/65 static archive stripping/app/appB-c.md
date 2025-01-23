@@ -129,7 +129,7 @@ Here's a breakdown of the thinking process to arrive at the comprehensive analys
 
 总而言之，`appB.c` 是一个简单的 C 程序，其主要目的是作为 Frida 动态 instrumentation 工具的测试目标。它通过调用一个外部库的函数并打印结果，提供了一个可以被 Frida hook 和观察的简单场景，用于验证 Frida 的功能，尤其是在处理静态链接库时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/65 static archive stripping/app/appB.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,13 +137,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <libB.h>
 
 int main(void) { printf("The answer is: %d\n", libB_func()); }
-
-"""
-
 ```

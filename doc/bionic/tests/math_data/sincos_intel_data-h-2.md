@@ -112,7 +112,7 @@ if (sinPtr) {
 
 这部分代码定义了一个用于测试 `sin` 和 `cos` 函数的**静态数据集**。它包含了大量的输入角度以及对应的预期 sine 和 cosine 值，用于验证 Android 系统 bionic 库中这些数学函数的正确性和精度。开发者会编写测试程序来加载这些数据，调用 bionic 的 `sin` 和 `cos` 函数，并将计算结果与数据集中的期望值进行比较，从而确保数学运算的准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sincos_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -124,8 +124,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 .dbfbbc70254bcp1,
   },
   { // Entry 474
@@ -1320,7 +1322,4 @@ Prompt:
   },
   { // Entry 712
     -0x1.34f272993d1414a2
-"""
-
-
 ```

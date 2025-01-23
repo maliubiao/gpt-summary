@@ -105,13 +105,15 @@ const sum = SIMD.float32x4.add(simdA, simdB);
 
 In reality, the interaction is more complex, with V8's optimizing compiler deciding when and how to utilize SIMD instructions based on the JavaScript code. However, the functions in this C++ file provide the necessary building blocks for those optimizations to occur on the PowerPC architecture. For example, array operations or computationally intensive tasks in JavaScript can benefit from the SIMD capabilities implemented here.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/macro-assembler-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-                  Register scratch) {
+### 源代码
+```
+Register scratch) {
 #ifdef V8_TARGET_BIG_ENDIAN
   LoadU16LE(dst, mem, scratch);
   extsh(dst, dst);
@@ -1829,7 +1831,4 @@ void MacroAssembler::ReverseBitsInSingleByteU64(Register dst, Register src,
 //   (*argc_operand + slots_to_drop_on_return) * kSystemPointerSize
 // (GCed, includes the call JS arguments space and the additional space
 // allocated for t
-"""
-
-
 ```

@@ -289,7 +289,7 @@ sys.stdin.read()
 
 通过这种方式，你可以监控 Android 应用如何使用 `<wctype.h>` 中定义的函数，从而进行更深入的调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/wctype_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -300,8 +300,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -379,7 +381,4 @@ static void wctype_h() {
   FUNCTION(wctype, wctype_t (*f)(const char*));
   FUNCTION(wctype_l, wctype_t (*f)(const char*, locale_t));
 }
-
-"""
-
 ```

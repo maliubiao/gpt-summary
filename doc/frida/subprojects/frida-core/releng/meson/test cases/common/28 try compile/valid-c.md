@@ -125,7 +125,7 @@ This detailed thinking process allows us to extract significant meaning and rele
 
 尽管 `valid.c` 本身非常简单，但它在 Frida 的构建和测试流程中扮演着重要的角色。它的成功编译是 Frida 正常运行的基础，也是确保 Frida 能够编译用户编写的 C/C++ 代码以进行动态 instrumentation 的前提。 当构建 Frida 过程中出现问题，并且涉及到 C 代码编译时，这个简单的 `valid.c` 文件反而成为了一个关键的调试线索，帮助开发者快速定位是基础的编译环境出了问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/28 try compile/valid.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,11 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 void func(void) { printf("Something.\n"); }
-
-"""
-
 ```

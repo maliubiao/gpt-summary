@@ -153,7 +153,7 @@ WebAssembly.instantiateStreaming(fetch('module.wasm'), {
 
 作为编译过程的第 5 部分，`v8/src/compiler/wasm-compiler.cc` 的主要功能是 **将 WebAssembly 的抽象语法树或中间表示转换为 V8 内部的图表示 (Sea of Nodes)，并为各种 WebAssembly 操作生成相应的低级操作节点。**  在这个阶段，会进行初步的类型推断、安全检查（如边界检查），并为后续的优化和代码生成奠定基础。  它处于解析和验证之后，但在更高级的优化和机器码生成之前。这个阶段的关键是将高级的 WebAssembly 语义转换为更接近机器指令的、可优化的图结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/wasm-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -161,8 +161,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 offset));
 }
 
@@ -930,7 +932,4 @@ Signature<MachineRepresentation>* CreateMachineSignature(
 
   for (auto param : sig->parameters()) {
     if (origin == wasm::kCalledFromJ
-"""
-
-
 ```

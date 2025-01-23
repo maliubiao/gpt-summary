@@ -162,7 +162,7 @@ const char* message_format = GetMessageString(template_id);
 
 总而言之，`v8/src/common/message-template.h`  就像是 V8 错误消息的“词典”，它定义了 V8 与 JavaScript 开发者沟通错误信息的“语言”。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/common/message-template.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/common/message-template.h以.tq结尾，那它是个v8 torque源代码，
@@ -170,8 +170,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 tiple of %")            \
   T(InvalidTypedArrayIndex, "Invalid typed array index")                       \
   T(InvalidTypedArrayLength, "Invalid typed array length: %")                  \
@@ -532,8 +534,4 @@ inline MessageTemplate MessageTemplateFromInt(int message_id) {
 }  // namespace v8
 
 #endif  // V8_COMMON_MESSAGE_TEMPLATE_H_
-
-"""
-
-
 ```

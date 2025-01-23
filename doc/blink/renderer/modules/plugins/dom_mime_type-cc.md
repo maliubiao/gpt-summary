@@ -163,15 +163,17 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`DOMMimeType.cc` 是 Blink 引擎中一个关键的文件，它负责管理和提供关于浏览器支持的 MIME 类型信息，并将这些信息与相关的插件关联起来。这对于正确处理网页中的嵌入内容至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/plugins/dom_mime_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  *  Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies)
  *
@@ -248,7 +250,4 @@ DOMPlugin* DOMMimeType::enabledPlugin() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -109,7 +109,7 @@ Initially, I might have overemphasized the role of `argc` and `argv` in this sim
 
 总而言之，这个 `prog.c` 文件虽然简单，但在 Frida 的开发环境中，它很可能是一个精心设计的单元测试用例，用于测试链接器在特定情况下的行为，特别是与动态链接和链接器标志相关的场景。 逆向工程师可以从这个简单的例子中学习到如何分析调用未定义函数的程序，以及如何使用动态分析工具来理解其运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/51 ldflagdedup/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<gmodule.h>
 
 int func();
@@ -126,7 +128,4 @@ int func();
 int main(int argc, char **argv) {
     return func();
 }
-
-"""
-
 ```

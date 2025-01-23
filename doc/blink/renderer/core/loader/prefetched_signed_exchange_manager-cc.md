@@ -148,15 +148,17 @@ Let's break down the thought process to analyze this C++ file and answer the pro
 
 总而言之，`PrefetchedSignedExchangeManager` 是 Blink 渲染引擎中一个关键的组件，它负责管理预取的 Signed Exchange 资源，并通过智能地匹配和替换 `URLLoader`，来优化页面加载性能并提升用户体验。理解其工作原理对于调试预取相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/prefetched_signed_exchange_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -545,7 +547,4 @@ void PrefetchedSignedExchangeManager::TriggerLoad() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

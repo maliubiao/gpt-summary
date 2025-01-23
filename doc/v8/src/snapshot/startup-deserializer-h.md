@@ -125,15 +125,17 @@ console.log(arr.length); // console.log 也是内置的，可以直接使用
 
 `v8/src/snapshot/startup-deserializer.h` 定义了 V8 引擎中负责快速启动的关键组件。它通过反序列化预先生成的快照数据来初始化 `Isolate`，从而显著提升了 JavaScript 的启动性能。虽然用户不会直接操作这个类，但它的功能对于 JavaScript 代码的快速执行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/startup-deserializer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/startup-deserializer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ class StartupDeserializer final : public Deserializer<Isolate> {
 }  // namespace v8
 
 #endif  // V8_SNAPSHOT_STARTUP_DESERIALIZER_H_
-
-"""
-
 ```

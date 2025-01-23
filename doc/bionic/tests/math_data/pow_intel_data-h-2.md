@@ -158,7 +158,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 总而言之，这个 `pow_intel_data.handroid` 文件是 Android `bionic` 库中 `pow` 函数的关键测试数据，用于确保该函数在各种场景下的正确性和鲁棒性。它是 Android 系统稳定性和功能正确性的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/pow_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -170,8 +170,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 0p0, -0x1.ffffffffffffep-1023
   },
   { // Entry 686
@@ -691,8 +693,4 @@ Prompt:
     0x1.4p3, 0x1.4p3
   },
 };
-
-"""
-
-
 ```

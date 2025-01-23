@@ -119,14 +119,16 @@ By following these steps, we can arrive at the well-structured and informative e
 
 总而言之，`rtc_video_decoder_factory_test.cc` 是一个关键的测试文件，它确保了 Blink 引擎中的视频解码器工厂能够正确地工作，从而保证了 WebRTC 视频通话功能的稳定性和可靠性。虽然它不直接涉及 JavaScript, HTML, CSS 代码，但它是支撑这些 Web 技术实现视频功能的幕后功臣。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_decoder_factory_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -412,7 +414,4 @@ TEST_F(RTCVideoDecoderFactoryTest,
 }
 #endif  // BUILDFLAG(RTC_USE_H265)
 }  // namespace blink
-
-"""
-
 ```

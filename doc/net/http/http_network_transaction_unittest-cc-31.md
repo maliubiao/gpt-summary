@@ -121,7 +121,7 @@ Now, I can generate the detailed response based on this analysis.
 
 这部分主要集中在测试 `HttpNetworkTransaction` 在处理复杂认证流程（客户端证书和代理/服务器的 HTTP 认证混合使用）以及网络隔离功能时的正确性。它验证了在这些复杂场景下，`HttpNetworkTransaction` 能够正确地发起连接、处理认证挑战、重用连接，并遵循网络隔离的策略。 这些测试确保了 Chromium 在面对需要客户端证书、代理认证以及启用网络隔离的情况下，能够安全且高效地处理网络请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -129,9 +129,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第32部分，共34部分，请归纳一下它的功能
+```
 
-"""
- StaticSocketDataProvider data3(mock_reads3, mock_writes3);
+### 源代码
+```cpp
+StaticSocketDataProvider data3(mock_reads3, mock_writes3);
   session_deps_.socket_factory->AddSocketDataProvider(&data3);
   session_deps_.socket_factory->AddSSLSocketDataProvider(&ssl_proxy3);
   session_deps_.socket_factory->AddSSLSocketDataProvider(&ssl_origin3);
@@ -888,7 +890,4 @@ TEST_P(HttpNetworkTransactionTest, NetworkIsolationH2) {
 TEST_P(HttpNetworkTransactionTest, NetworkIsolationPreconnect) {
   base::test::ScopedFeatureList feature_list;
   feature_list.InitAndEn
-"""
-
-
 ```

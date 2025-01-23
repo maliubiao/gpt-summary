@@ -130,7 +130,7 @@ navigator.mediaDevices.getUserMedia({
 
 总之，这个测试文件是确保 Chromium Blink 引擎能够正确、有效地处理视频媒体流约束的关键组成部分，它保证了 Web 开发者通过 `getUserMedia()` 设置的视频需求能够被合理地转化为底层的媒体流配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_video_content_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 c().frame_rate.SetMin(kMinFrameRate);
     auto result = SelectSettings();
     EXPECT_TRUE(result.HasValue());
@@ -865,8 +867,4 @@ TEST_F(MediaStreamConstraintsUtilVideoContentTest, ResolutionChangePolicy) {
 
 }  // namespace media_stream_constraints_util_video_content_test
 }  // namespace blink
-
-"""
-
-
 ```

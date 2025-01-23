@@ -189,15 +189,17 @@ Let's say a user reports that an image on a webpage appears blurry on their high
 
 By following these steps, developers can trace the execution flow and understand how the browser arrived at a particular image choice based on the `image-set()` definition and the user's device characteristics. The `css_image_set_value.cc` file is a crucial component in this process, responsible for the core decision-making of which image to use.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_image_set_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Apple Inc. All rights reserved.
  *
@@ -356,7 +358,4 @@ void CSSImageSetValue::TraceAfterDispatch(blink::Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

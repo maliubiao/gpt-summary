@@ -128,14 +128,16 @@ By following these steps, I can systematically analyze the code, understand its 
 
 总而言之，`blink/renderer/platform/p2p/host_address_request.cc`  是 Chromium 中处理 P2P 连接中主机名到 IP 地址转换的关键底层组件。它与 JavaScript WebRTC API 的使用密切相关，尽管 Web 开发人员通常不会直接操作这个 C++ 类。 理解它的功能有助于理解 WebRTC 连接建立过程中的网络细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/p2p/host_address_request.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ void P2PAsyncAddressResolver::OnResponse(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -206,7 +206,7 @@ func main() {
 
 总而言之，这段代码提供了一套强大且高效的正则表达式处理工具，涵盖了匹配、查找、替换和模板扩展等核心功能。理解其不同的匹配语义和子匹配的处理方式是正确使用它的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/regexp/regexp.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -215,8 +215,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1284,9 +1286,4 @@ func (re *Regexp) FindStringSubmatchIndex(s string) []int {
 // by the 'Submatch' and 'Index' descriptions in the package comment. A
 // return value of nil indicates no match.
 fu
-"""
-
-
-
-
 ```

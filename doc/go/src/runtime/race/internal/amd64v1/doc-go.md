@@ -176,7 +176,7 @@ go run main.go
 
 总而言之，`go/src/runtime/race/internal/amd64v1/doc.go` 及其所在的包是 Go 语言竞争检测器针对特定旧版 AMD64 架构的底层实现，它通过预编译的目标文件提供核心的竞争检测逻辑，并在构建时根据目标平台的特性被选择性地包含。开发者通过使用 `-race` 命令行参数来启用竞争检测器，从而间接地使用到这个包提供的功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/race/internal/amd64v1/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -184,8 +184,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -196,9 +198,4 @@ Prompt:
 //go:build amd64 && ((linux && !amd64.v3) || darwin || freebsd || netbsd || openbsd || windows)
 
 package amd64v1
-
-"""
-
-
-
 ```

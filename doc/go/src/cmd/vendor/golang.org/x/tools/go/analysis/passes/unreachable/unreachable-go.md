@@ -177,15 +177,17 @@ go vet yourfile.go
 
 总而言之，`unreachable` 分析器是一个有用的工具，可以帮助开发者发现代码中的潜在问题，提高代码质量。但需要理解其局限性，并结合实际的运行时行为进行判断。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/unreachable/unreachable.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -510,9 +512,4 @@ func (d *deadState) findDead(stmt ast.Stmt) {
 		d.reachable = anyReachable || d.hasBreak[x] || !hasDefault
 	}
 }
-
-"""
-
-
-
 ```

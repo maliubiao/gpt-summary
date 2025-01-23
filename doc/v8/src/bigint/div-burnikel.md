@@ -78,11 +78,13 @@ console.log("余数:", remainder); // 输出一个 BigInt
 
 `v8/src/bigint/div-burnikel.cc` 文件是 V8 引擎中实现高性能 `BigInt` 除法运算的关键组成部分。它实现了 Burnikel-Ziegler 算法，使得 JavaScript 能够高效地处理任意精度的整数除法，这对于需要处理大数据或高精度计算的 JavaScript 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/div-burnikel.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -362,7 +364,4 @@ void ProcessorImpl::DivideBurnikelZiegler(RWDigits Q, RWDigits R, Digits A,
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

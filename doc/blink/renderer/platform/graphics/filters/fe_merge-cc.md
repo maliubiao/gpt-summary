@@ -167,14 +167,16 @@ By following these steps, including the self-correction, we arrive at a comprehe
 
 总而言之，`fe_merge.cc` 是 Blink 渲染引擎中实现 SVG `<feMerge>` 滤镜的关键部分，它负责将多个滤镜效果的输出组合在一起，从而实现更复杂的视觉效果。理解其功能有助于开发者更好地利用 CSS 和 SVG 滤镜创建丰富的用户界面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/fe_merge.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005 Rob Buis <buis@kde.org>
@@ -236,7 +238,4 @@ StringBuilder& FEMerge::ExternalRepresentation(StringBuilder& ts,
 }
 
 }  // namespace blink
-
-"""
-
 ```

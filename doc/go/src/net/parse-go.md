@@ -193,7 +193,7 @@ IP: 192.168.1.10, Hostnames: [server1 server-alias]
 
 总而言之，`go/src/net/parse.go` 提供了一组轻量级的、用于解析文本数据的底层工具函数，这些函数在 `net` 包内部被广泛使用，用于处理各种网络相关的配置和数据格式。理解这些工具函数的功能有助于深入理解 Go 语言网络编程的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/parse.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,8 +201,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -475,9 +477,4 @@ func stringsEqualFold(s, t string) bool {
 	}
 	return true
 }
-
-"""
-
-
-
 ```

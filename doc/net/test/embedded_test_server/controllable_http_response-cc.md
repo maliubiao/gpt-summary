@@ -234,15 +234,17 @@ JavaScript 代码应该能够在响应头中找到 `Set-Cookie` 并解析出 `te
 
 总之，`controllable_http_response.cc` 中定义的 `ControllableHttpResponse` 类是 Chromium 网络栈测试框架中的一个重要工具，它允许开发者在测试环境中精确地模拟和控制服务器的 HTTP 响应，从而有效地测试涉及网络交互的功能，特别是与 JavaScript 代码相关的部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/test/embedded_test_server/controllable_http_response.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -401,7 +403,4 @@ std::unique_ptr<HttpResponse> ControllableHttpResponse::RequestHandler(
 }
 
 }  // namespace net::test_server
-
-"""
-
 ```

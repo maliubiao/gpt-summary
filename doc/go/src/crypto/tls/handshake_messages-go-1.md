@@ -58,7 +58,7 @@ Applying this process to the provided code leads to the summary provided in the 
 
 这段代码是实现 TLS 协议的关键组成部分，它确保了握手消息能够被正确地构造、发送和解析，从而建立安全的连接。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/handshake_messages.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -67,8 +67,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 e endOfEarlyDataMsg struct{}
 
 func (m *endOfEarlyDataMsg) marshal() ([]byte, error) {
@@ -912,10 +914,4 @@ func transcriptMsg(msg handshakeMessage, h transcriptHash) error {
 	h.Write(data)
 	return nil
 }
-
-"""
-
-
-
-
 ```

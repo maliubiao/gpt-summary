@@ -82,11 +82,13 @@ console.log(value); // 输出: { value: 10 }
 
 `v8/src/parsing/import-attributes.cc` 定义了一个专门用于比较 import 属性键的工具，这对于 V8 引擎正确解析和处理带有属性的 JavaScript import 语句至关重要。它通过提供基于 `AstRawString` 的词法比较，使得 V8 内部可以有效地管理和操作 import 属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/import-attributes.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -105,7 +107,4 @@ bool ImportAttributesKeyComparer::operator()(const AstRawString* lhs,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

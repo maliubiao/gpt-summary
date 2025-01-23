@@ -137,7 +137,7 @@ Here's a plan to address each point:
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/detect.py` 的主要功能是**自动化地识别构建系统所在平台上可用的各种编程语言的编译器和相关工具，并提取其关键信息（如路径、版本等），以便 `frida` 的构建系统能够选择合适的工具链来编译项目。** 它通过预定义的默认列表、执行编译器并解析输出来实现这一目标，并能处理用户自定义的编译器配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 
@@ -830,7 +832,4 @@ def detect_fortran_compiler(env: 'Environment', for_machine: MachineChoice) -> C
                     popen_exceptions[join_args(compiler)] = 'no pre-processor defines'
                     continue
                 if guess_gcc_or_lcc == 'lcc
-"""
-
-
 ```

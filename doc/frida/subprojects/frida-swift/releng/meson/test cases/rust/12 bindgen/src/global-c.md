@@ -148,7 +148,7 @@ Finally, I organize the information into the requested categories (functionality
 
 尽管 `global.c` 文件非常简单，但它作为 Frida Swift 绑定的一个测试用例，在动态分析、理解底层交互和调试绑定生成过程等方面都扮演着一定的角色。它展示了如何用 C 定义一个简单的函数，并为 Frida 提供了可用于测试 Hook 功能的基础。通过分析这个简单的文件，我们可以更好地理解 Frida 的工作原理以及如何在逆向工程中使用它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/rust/12 bindgen/src/global.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,14 +156,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "src/global-project.h"
 
 int success(void) {
     return 0;
 }
-
-"""
-
 ```

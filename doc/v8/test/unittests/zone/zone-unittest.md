@@ -70,9 +70,12 @@ Response: Let's break down the thought process for analyzing this C++ code snipp
 
 **总结来说，这个文件的主要功能是编写一个单元测试，用于验证 V8 引擎的 `Zone` 类在分配内存时是否能保证 8 字节对齐。** 这对于某些需要特定内存对齐要求的场景（例如 SIMD 指令）是非常重要的。
 
-Prompt: ```这是目录为v8/test/unittests/zone/zone-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/zone/zone-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -102,6 +105,4 @@ TEST_F(ZoneTest, 8ByteAlignment) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

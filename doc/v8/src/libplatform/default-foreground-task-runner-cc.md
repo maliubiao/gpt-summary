@@ -220,15 +220,17 @@ While developers don't directly interact with this C++ code, understanding its p
 
 In summary, `default-foreground-task-runner.cc` is a fundamental component of V8, responsible for managing and executing tasks on the main thread. It directly underpins how JavaScript's asynchronous features like `setTimeout`, Promises, and event handling are implemented within the engine. Understanding its role helps in diagnosing and preventing common performance and concurrency-related issues in JavaScript applications.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/default-foreground-task-runner.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/libplatform/default-foreground-task-runner.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -443,7 +445,4 @@ void DefaultForegroundTaskRunner::WaitForTaskLocked() {
 
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

@@ -164,7 +164,7 @@ By following these steps, and being willing to adjust my understanding as I anal
 
 总而言之，`genMain.cpp` 作为一个代码生成器，在 Frida 的构建和测试流程中扮演着辅助角色。它本身不执行逆向操作，但生成的代码可以用于构建测试用例，模拟目标环境，从而辅助逆向工程师的工作。 理解其功能需要一定的构建系统和 C++ 编程知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/genMain.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -214,7 +216,4 @@ std::string getStr() {
 
   return 0;
 }
-
-"""
-
 ```

@@ -164,7 +164,7 @@ By following this structured approach, considering the provided context and maki
 
 总而言之，`main_static.cpp` 虽然代码很简单，但它在 Frida 项目的上下文中扮演着重要的角色，作为一个专门用于测试 Frida 对静态链接 CUDA 代码动态 instrumentation 能力的示例。它的存在是为了验证 Frida 在这种特定场景下的功能是否正常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cuda/2 split/static/main_static.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int do_cuda_stuff(void);
@@ -181,7 +183,4 @@ int do_cuda_stuff(void);
 int main(void) {
   return do_cuda_stuff();
 }
-
-"""
-
 ```

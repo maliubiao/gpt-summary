@@ -242,7 +242,7 @@ go run your_script.go -input encrypted.pem -password mysecretpassword
 
 因此，虽然这些函数仍然可用，但不建议在新项目中使用。应该优先考虑使用更安全的加密方案，例如 TLS 或其他提供认证加密的库。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/pem_decrypt.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -250,8 +250,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -504,9 +506,4 @@ func cipherByKey(key PEMCipher) *rfc1423Algo {
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

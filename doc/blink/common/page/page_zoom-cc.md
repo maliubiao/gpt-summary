@@ -118,14 +118,16 @@ By following these steps, I can systematically analyze the code and explain its 
 
 总而言之，`page_zoom.cc` 文件是 Blink 引擎中处理页面缩放的核心逻辑所在，它定义了缩放的规则、限制和转换方法，并被浏览器的其他组件（包括处理 JavaScript 和 CSS 的部分）所使用。理解这个文件的功能有助于理解浏览器如何处理页面缩放以及如何避免相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/page/page_zoom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ bool ZoomValuesEqual(double value_a, double value_b) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

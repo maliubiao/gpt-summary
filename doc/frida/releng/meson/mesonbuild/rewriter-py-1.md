@@ -262,7 +262,7 @@ my_new_tool_exe = executable('my_new_tool', my_new_tool_sources)
 
 总而言之，这部分代码负责将用户在命令行中指定的意图转换为对 `Rewriter` 对象的具体操作，从而实现对 `meson.build` 文件的自动化修改。它提供了多种命令类型，以支持添加、删除和修改构建目标、源文件、链接库、编译选项等各种构建配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/rewriter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -271,8 +271,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ['operation'] == 'target_add':
             if target is not None:
                 mlog.error('Can not add target', mlog.bold(cmd['target']), 'because it already exists', *self.on_error())
@@ -541,8 +543,4 @@ def run(options):
         raise e
     finally:
         mlog.set_verbose()
-
-"""
-
-
 ```

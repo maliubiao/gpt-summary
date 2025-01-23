@@ -136,11 +136,13 @@ console.log(sharedBuffer.byteLength); // 输出 32
 
 `builtins-arraybuffer.cc` 是 V8 引擎中至关重要的一个文件，它实现了 JavaScript 中 `ArrayBuffer` 和 `SharedArrayBuffer` 对象的底层行为。它处理了对象的创建、内存管理、数据拷贝以及各种原型方法的实现，确保了 JavaScript 中这些核心数据结构的正确性和性能。理解这个文件的功能有助于深入理解 JavaScript 内存模型和并发编程的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-arraybuffer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -850,7 +852,4 @@ BUILTIN(SharedArrayBufferPrototypeGrow) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

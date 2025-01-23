@@ -181,7 +181,7 @@ By following these steps and iteratively refining my understanding, I can arrive
 
 总结来说，`adder.c` 虽然是一个简单的 C 文件，但在 Frida 的上下文中，它展示了跨语言调用的基本模式，并为动态分析提供了Hook点。理解其功能和潜在的错误，结合 Frida 的使用场景，可以帮助我们更好地进行程序的调试和逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/rust/15 polyglot sharedlib/adder.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<adder.h>
 #include<stdlib.h>
 
@@ -215,7 +217,4 @@ int adder_add(adder *a, int number)
 void adder_destroy(adder *a) {
     free(a);
 }
-
-"""
-
 ```

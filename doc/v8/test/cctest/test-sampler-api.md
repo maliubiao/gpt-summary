@@ -140,11 +140,13 @@ recurse(10);
 
 `v8/test/cctest/test-sampler-api.cc` 是一个 C++ 测试文件，它通过 V8 引擎的 C++ API 来测试 JavaScript 的运行时采样功能。它定义了一个 JavaScript 函数 `CollectSample`，JavaScript 代码可以调用它来触发 C++ 代码捕获当前的 JavaScript 执行堆栈信息。这对于验证 V8 引擎的性能分析和调试工具的正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-sampler-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -375,7 +377,4 @@ TEST(StackFramesConsistent) {
   CHECK(entry);
   CHECK(std::string::npos != entry->name.find("test_sampler_api_outer"));
 }
-
-"""
-
 ```

@@ -246,7 +246,7 @@ go test -v -all
 
 总而言之，这段测试代码覆盖了 `crypto/rsa` 包中 RSA 算法的各种关键功能，并通过各种测试用例确保其正确性和安全性。它也暗示了使用者在使用 RSA 算法时需要注意的一些关键点，例如密钥大小和正确的签名流程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/rsa/rsa_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -254,8 +254,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1312,9 +1314,4 @@ v/Ow5T0q5gIJAiEAyS4RaI9YG8EWx/2w0T67ZUVAw8eOMB6BIUg0Xcu+3okCIBOs
 	}
 	testEverything(t, k)
 }
-
-"""
-
-
-
 ```

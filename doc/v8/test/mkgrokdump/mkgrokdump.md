@@ -100,11 +100,13 @@ new function MyConstructor() {
 
 `mkgrokdump.cc` 是一个 V8 内部的工具，用于生成描述 V8 运行时内部状态的 Python 代码。它通过直接访问 V8 的数据结构来实现这一点。生成的这些常量和数据结构信息可以帮助开发者和研究人员更好地理解 V8 引擎的工作原理，并用于调试、分析和测试 V8。 它与 JavaScript 的功能息息相关，因为它揭示了 JavaScript 代码在 V8 内部是如何被表示和执行的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/mkgrokdump/mkgrokdump.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -347,7 +349,4 @@ int main(int argc, char* argv[]) {
   }
   return v8::DumpHeapConstants(out, argv[0]);
 }
-
-"""
-
 ```

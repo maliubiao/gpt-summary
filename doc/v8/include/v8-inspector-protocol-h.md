@@ -168,15 +168,17 @@ While `v8-inspector-protocol.h` itself doesn't *cause* programming errors, it fa
 
 In summary, `v8/include/v8-inspector-protocol.h` is a vital header file that defines the communication blueprint for debugging and inspecting JavaScript code running in V8. It's the foundation upon which tools like Chrome DevTools and Node.js Inspector are built, enabling developers to understand and fix issues in their JavaScript applications.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-inspector-protocol.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-inspector-protocol.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ Prompt:
 #include "v8-inspector.h"        // NOLINT(build/include_directory)
 
 #endif  // V8_V8_INSPECTOR_PROTOCOL_H_
-
-"""
-
 ```

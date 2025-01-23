@@ -206,15 +206,17 @@ Let's assume we have a `CancelableTaskManager` and a few `CancelableTask` instan
 
 In summary, `v8/src/tasks/cancelable-task.h` provides a fundamental mechanism within V8 for managing and canceling asynchronous tasks, enabling features like aborting long-running operations initiated from JavaScript. It uses standard C++ concurrency primitives to ensure thread safety.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tasks/cancelable-task.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/tasks/cancelable-task.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -398,7 +400,4 @@ class CancelableIdleTask : public Cancelable, public IdleTask {
 }  // namespace v8
 
 #endif  // V8_TASKS_CANCELABLE_TASK_H_
-
-"""
-
 ```

@@ -199,7 +199,7 @@ TypeError: expected 'list'
 
 总而言之，`not_limited.c` 文件作为一个测试用例，展示了如何创建一个不使用 Python Limited API 的扩展模块，并演示了其基本功能。理解这个文件的代码和背后的概念对于进行 Python 扩展模块的逆向分析和调试是非常有帮助的，特别是在使用 Frida 这样的动态分析工具时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/python/9 extmodule limited api/not_limited.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <Python.h>
 #include <stdio.h>
 
@@ -268,7 +270,4 @@ static struct PyModuleDef not_limited_module = {
 PyMODINIT_FUNC PyInit_not_limited(void) {
     return PyModule_Create(&not_limited_module);
 }
-
-"""
-
 ```

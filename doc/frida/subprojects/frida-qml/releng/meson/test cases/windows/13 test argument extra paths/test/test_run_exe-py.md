@@ -108,7 +108,7 @@ This detailed breakdown covers the functionality, its connection to reverse engi
 
 总而言之，`test_run_exe.py` 是 Frida 测试框架中的一个小的但重要的组成部分，用于验证 Frida 在 Windows 环境下正确启动和管理进程，特别是在涉及到非标准路径的情况下。它通过执行一个简单的外部程序并检查其修改后的返回码来提供测试结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/windows/13 test argument extra paths/test/test_run_exe.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import subprocess
 import argparse
 import sys
@@ -130,7 +132,4 @@ if __name__ == '__main__':
     res = subprocess.run(args.prog)
 
     sys.exit(res.returncode - 42)
-
-"""
-
 ```

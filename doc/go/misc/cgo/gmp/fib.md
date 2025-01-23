@@ -115,11 +115,13 @@ func main() {
 
 简化版的代码更常见，它展示了 Go 中使用 goroutine 和 channel 进行并发编程的典型模式：一个 goroutine 生产数据，另一个或多个 goroutine 消费数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为go/misc/cgo/gmp/fib.go的go语言实现的一部分， 请归纳一下它的功能, 　如果你能推理出它是什么go语言功能的实现，请用go代码举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -165,9 +167,4 @@ func main() {
 		println(<-out)
 	}
 }
-
-"""
-
-
-
 ```

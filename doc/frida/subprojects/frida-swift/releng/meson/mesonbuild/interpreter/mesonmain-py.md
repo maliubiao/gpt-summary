@@ -207,7 +207,7 @@ A user would interact with this code by writing a `meson.build` file in their pr
 
 By examining the `meson.build` file and the arguments passed to the Meson functions, and by understanding how these functions are implemented in `mesonmain.py`, developers can effectively debug their Frida and other Meson-based projects.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/interpreter/mesonmain.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -215,8 +215,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021-2024 Intel Corporation
@@ -704,7 +706,4 @@ class MesonMain(MesonInterpreterObject):
         if options is None:
             return ''
         return coredata.format_cmd_line_options(options)
-
-"""
-
 ```

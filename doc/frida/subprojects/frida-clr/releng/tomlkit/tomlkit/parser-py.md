@@ -188,7 +188,7 @@ hook_functions = ["func1", "func2"]
 
 `frida/subprojects/frida-clr/releng/tomlkit/tomlkit/parser.py` 的核心功能是 **实现了一个用于解析 TOML 格式文本的分析器**。它负责将 TOML 文本转换为结构化的 Python 对象，是 Frida 框架中处理配置文件的关键组成部分。虽然它本身不直接参与底层操作或逆向过程，但为 Frida 提供了读取和理解配置信息的能力，这在 Frida 的使用和分析中至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/tomlkit/tomlkit/parser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import datetime
@@ -1187,9 +1189,4 @@ class Parser:
                         else None,
                     ),
                 )
-
-            
-"""
-
-
 ```

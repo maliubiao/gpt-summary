@@ -124,7 +124,7 @@ Now I can start structuring the response based on these identified functionaliti
 
 这段代码主要负责实现 V8 引擎中与函数调用、对象构造以及 WebAssembly 互操作相关的核心内置功能。 它包含了处理普通 JavaScript 函数和绑定函数的调用和构造逻辑，定义了从 JavaScript 进入 C++ 内置函数的入口点，并提供了支持 WebAssembly 模块与 JavaScript 代码相互调用的机制。 此外，还包含了一个用于双精度浮点数到整数转换的优化实现。 总体而言，这部分代码是 V8 引擎执行 JavaScript 代码和与外部 (C++ 和 WebAssembly) 代码交互的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ppc/builtins-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/ppc/builtins-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -132,8 +132,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ieldMemOperand(r5, SharedFunctionInfo::kFormalParameterCountOffset));
   __ InvokeFunctionCode(r4, no_reg, r5, r3, InvokeType::kJump);
 }
@@ -1066,7 +1068,4 @@ void Builtins::Generate_DoubleToI(MacroAssembler* masm) {
   __ subi(scratch, scratch, Operand(HeapNumber::kExponentBias + 1));
   // If exponent is greater than or equal to 84, the 32 less significant
   // bits are 0s (2^84 = 1, 52 significant
-"""
-
-
 ```

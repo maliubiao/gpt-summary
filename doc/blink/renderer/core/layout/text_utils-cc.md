@@ -164,14 +164,16 @@ By following this structured approach, combining code analysis with understandin
 
 `blink/renderer/core/layout/text_utils.cc` 中的 `ComputeTextWidth` 函数是 Blink 引擎中一个核心的文本宽度计算工具。它依赖于 CSS 样式信息，并为 Blink 引擎正确渲染和布局文本提供了基础。虽然开发者不会直接使用它，但理解其功能有助于理解浏览器如何处理文本布局，并避免在更高层次上犯相关的错误。 `TODO` 注释表明这个函数的实现可能还在演进中，未来可能会有更优化的实现方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/text_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ float ComputeTextWidth(const StringView& text, const ComputedStyle& style) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

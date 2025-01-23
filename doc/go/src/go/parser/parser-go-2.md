@@ -112,7 +112,7 @@ func main() {
 
 这段代码是 Go 语言解析器中负责解析类型声明的关键部分。它能够处理各种类型的定义，包括对 Go 1.18 引入的泛型类型提供了强大的支持。它通过识别关键字、标识符和特定的语法结构，将源代码中的类型声明转换为抽象语法树，为后续的编译或静态分析等步骤奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/parser/parser.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -121,8 +121,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 t case, simply parsing
 			// an expression would lead to an error: P[] is invalid.
 			// But since index or slice expressions are never constant
@@ -459,10 +461,4 @@ func packIndexExpr(x ast.Expr, lbrack token.Pos, exprs []ast.Expr, rbrack token.
 		}
 	}
 }
-
-"""
-
-
-
-
 ```

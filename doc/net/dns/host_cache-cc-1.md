@@ -150,7 +150,7 @@ By following these steps, I could systematically analyze the code snippet, under
 
 总而言之，`net/dns/host_cache.cc` 的这部分代码主要负责 DNS 缓存的持久化恢复、管理缓存的大小和容量、以及在需要时驱逐旧的缓存条目，同时记录相关的操作用于性能分析。它对于提升浏览器网络请求的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_cache.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -158,9 +158,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- fails for transient NAKs, since they should never be
+### 源代码
+```cpp
+fails for transient NAKs, since they should never be
       // serialized to disk in a restorable format, so use ToDebugString() when
       // serializing for debugging instead of for restoring from disk.
       network_anonymization_key_value =
@@ -504,8 +506,4 @@ std::ostream& operator<<(std::ostream& out,
   return out << "EntryStaleness{" << s.expired_by << ", " << s.network_changes
              << ", " << s.stale_hits << "}";
 }
-
-"""
-
-
 ```

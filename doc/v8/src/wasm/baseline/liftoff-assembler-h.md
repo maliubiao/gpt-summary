@@ -133,7 +133,7 @@ WebAssembly.instantiate(wasmCode).then(instance => {
 
 `v8/src/wasm/baseline/liftoff-assembler.h` 定义了 V8 JavaScript 引擎中 Liftoff WebAssembly 基线编译器的核心组件：`LiftoffAssembler` 类。 该类负责生成目标架构的机器码来执行 WebAssembly 代码，并管理执行期间的寄存器和栈状态。 它提供了用于实现各种 WebAssembly 操作、控制流、函数调用和内存访问的方法。 虽然不是 Torque 代码，但它是 V8 执行 WebAssembly 功能的关键部分，与 JavaScript 通过 `WebAssembly` API 执行 Wasm 代码的能力息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/liftoff-assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -141,8 +141,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -949,7 +951,4 @@ class LiftoffAssembler : public MacroAssembler {
   inline void emit_i32_sub(Register dst, Register lhs, Register rhs);
   inline void emit_i32_subi(Register dst, Register lhs, int32_t imm);
   inline void emit_i32_mul(Register dst, Register lhs,
-"""
-
-
 ```

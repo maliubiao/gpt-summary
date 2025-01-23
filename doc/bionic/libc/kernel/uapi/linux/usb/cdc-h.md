@@ -380,7 +380,7 @@ except Exception as e:
 
 请注意，具体的 Hook 方式和要 Hook 的函数可能会根据你使用的 USB 库和 Android 版本有所不同。这个示例是针对使用 `libusb` 的情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/usb/cdc.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -391,8 +391,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -701,7 +703,4 @@ struct usb_cdc_ncm_ndp_input_size {
 #define USB_CDC_NCM_CRC_NOT_APPENDED 0x00
 #define USB_CDC_NCM_CRC_APPENDED 0x01
 #endif
-
-"""
-
 ```

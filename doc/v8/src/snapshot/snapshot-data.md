@@ -110,11 +110,13 @@ console.log("Hello from Node.js!");
 
 `v8/src/snapshot/snapshot-data.cc` 中的 `SnapshotData` 类是 V8 快照机制的核心组成部分，它负责存储和管理 V8 引擎的序列化状态。 这个机制极大地提升了 JavaScript，尤其是 Node.js 的启动速度，因为它避免了重复的解析和编译过程。  虽然我们不能直接在 JavaScript 中操作 `SnapshotData` 对象，但可以通过观察 Node.js 的启动行为来理解其背后的原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/snapshot-data.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -168,7 +170,4 @@ base::Vector<const uint8_t> SnapshotData::Payload() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

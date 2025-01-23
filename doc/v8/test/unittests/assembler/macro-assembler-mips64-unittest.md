@@ -100,11 +100,13 @@ try {
 
 `macro-assembler-mips64-unittest.cc` 文件是 V8 引擎针对 MIPS64 架构的底层汇编代码生成和测试的组成部分。它验证了 `MacroAssembler` 类生成关键汇编指令（如 `Abort` 和 `Check`）的正确性，这些指令在 JavaScript 运行时的错误处理和安全检查中发挥着重要作用。虽然 JavaScript 开发者不会直接接触这些汇编指令，但理解它们的功能有助于理解 V8 如何在底层执行和保护 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/macro-assembler-mips64-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ TEST_F(MacroAssemblerTest, TestCheck) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

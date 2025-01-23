@@ -341,7 +341,7 @@ func main() {
 
 这段 `debug.go` 中的代码提供了多种用于监控和控制 Go 运行时行为的工具。`GOMAXPROCS` 控制并行度，`NumCPU` 获取 CPU 信息，`NumGoroutine` 监控并发活动，`NumCgoCall` 跟踪 CGO 调用，`totalMutexWaitTimeNanos` 用于性能分析，`debug_modinfo` 提供构建信息，而 `mayMoreStackPreempt`、`mayMoreStackMove` 和 `debugPinnerV1` 则是更底层的运行时调试工具。理解这些功能可以帮助 Go 开发者更好地理解程序的运行状态和进行性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/debug.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -349,8 +349,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -496,9 +498,4 @@ func debugPinnerV1() *Pinner {
 	}
 	return p
 }
-
-"""
-
-
-
 ```

@@ -159,15 +159,17 @@ __ lb(a0, sp, -4); // 从栈上加载 8 位到 a0，并进行符号扩展
 
 总而言之，`v8/test/cctest/test-simple-riscv32.cc` 是 V8 针对 RISC-V 32 位架构进行单元测试的重要组成部分，它确保了 V8 能够正确地将内部操作和 JavaScript 代码编译成有效的 RISC-V 机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-simple-riscv32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-simple-riscv32.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -397,7 +399,4 @@ TEST(LI_CONST) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -108,14 +108,16 @@ By following this structured approach, combining code analysis with domain knowl
 
 `RendererResourceCoordinator` 是 Blink 渲染引擎中一个重要的组件，它负责监控和协调渲染器进程中的资源使用情况。 虽然前端开发者不会直接操作这个类，但他们的代码行为（例如，JavaScript 代码、HTML 结构）会影响其工作，并且资源协调器的决策最终会影响页面的性能和资源消耗。它通过观察关键事件（如脚本上下文和 Frame 的生命周期）以及主线程的负载情况，来动态调整资源管理策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/instrumentation/resource_coordinator/renderer_resource_coordinator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ RendererResourceCoordinator* RendererResourceCoordinator::Get() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

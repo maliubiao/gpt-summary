@@ -155,7 +155,7 @@ Frida 本身就是一个强大的逆向工程工具，而这个测试文件验�
 
 总而言之，`frida/subprojects/frida-gum/tests/gumjs/script.c` 文件的主要功能是 **作为 Frida 中 GumJS (JavaScript 引擎) 的集成测试套件**。它通过编写和执行各种 JavaScript 代码片段，并断言其行为和输出，来确保 GumJS 组件的正确性、稳定性和与 Frida Core 功能的兼容性。  这个文件对于 Frida 的开发和维护至关重要，它提供了一种系统化的方法来验证 JavaScript 插桩功能的各个方面，并帮助开发者发现和修复潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/gumjs/script.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第11部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 { type: 'ping' });\n"
       "\n"
       "✄\n"
@@ -948,8 +950,4 @@ target_function_nested_c (int arg)
 
   return result;
 }
-
-"""
-
-
 ```

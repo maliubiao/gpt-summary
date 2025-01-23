@@ -182,15 +182,17 @@ By following this thought process, I can generate a comprehensive and informativ
 
 `CSSStartingStyleRule.cc` 是 Blink 渲染引擎中用于表示和处理 CSS `@starting-style` 规则的关键组成部分。它负责将 CSS 语法结构化为 C++ 对象，并在渲染过程中发挥作用。理解这个类的功能有助于深入理解浏览器如何解析和应用 CSS 样式，特别是对于像 `@starting-style` 这样的新特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_starting_style_rule.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -219,7 +221,4 @@ String CSSStartingStyleRule::cssText() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

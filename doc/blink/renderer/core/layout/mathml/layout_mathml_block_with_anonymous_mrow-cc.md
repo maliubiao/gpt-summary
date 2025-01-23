@@ -144,14 +144,16 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 `LayoutMathMLBlockWithAnonymousMrow` 是 Blink 渲染引擎中一个重要的内部类，专门用于处理特定 MathML 块级元素的布局，通过在必要时动态创建和管理匿名的 `<mrow>` 元素，确保 MathML 内容能够按照规范正确渲染。它与 HTML 中 MathML 元素的使用、CSS 中与 MathML 相关的显示属性以及 JavaScript 动态操作 MathML DOM 都有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/mathml/layout_mathml_block_with_anonymous_mrow.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -178,7 +180,4 @@ void LayoutMathMLBlockWithAnonymousMrow::AddChild(LayoutObject* new_child,
 }
 
 }  // namespace blink
-
-"""
-
 ```

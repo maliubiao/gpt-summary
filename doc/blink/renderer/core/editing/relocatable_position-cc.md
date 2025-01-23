@@ -171,15 +171,17 @@ console.log(range.startContainer, range.startOffset); // 输出的可能是调�
 
 总而言之，`RelocatablePosition` 是 Blink 引擎中一个底层的工具类，用于在 DOM 结构发生变化时保持文档逻辑位置的有效性，这对于支持诸如文本编辑、选择和光标管理等核心浏览器功能至关重要。 开发者通常不会直接接触它，但理解其作用有助于更好地理解浏览器如何处理动态变化的 Web 页面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/relocatable_position.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ void RelocatablePosition::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

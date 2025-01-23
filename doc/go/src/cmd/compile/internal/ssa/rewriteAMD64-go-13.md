@@ -159,7 +159,7 @@ v5 = Store result_addr v4 mem // 将 v4 的值存储到 result_addr
 
 这段代码是AMD64架构下，针对“大于等于”比较操作 (`>=`) 的SSA重写规则的一部分。它通过匹配特定的SSA操作模式，并将其转换为更高效的等价操作，例如直接生成常量值或优化存储操作。这有助于提高最终生成机器码的效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteAMD64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,9 +168,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第14部分，共23部分，请归纳一下它的功能
+```
 
-"""
-	}
+### 源代码
+```go
+}
 	// match: (SETGE (FlagLT_ULT))
 	// result: (MOVLconst [0])
 	for {
@@ -1542,9 +1544,4 @@ func rewriteValueAMD64_OpAMD64SETNEstore(v *Value) bool {
 		break
 	}
 	// matc
-"""
-
-
-
-
 ```

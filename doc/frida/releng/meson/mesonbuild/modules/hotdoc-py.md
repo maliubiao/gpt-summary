@@ -211,7 +211,7 @@ hotdoc_module.generate_doc(
 
 总而言之，开发者查看 `hotdoc.py` 源代码通常是为了调试文档生成过程中的问题，理解 Hotdoc 模块的具体实现，以及确认 `meson.build` 文件中的配置是否正确。这个文件是连接 Frida 项目构建系统和 Hotdoc 文档生成工具的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/modules/hotdoc.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -219,8 +219,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -708,7 +710,4 @@ def initialize(interpreter: Interpreter) -> HotDocModule:
     mod = HotDocModule(interpreter)
     mod.interpreter.append_holder_map(HotdocTarget, HotdocTargetHolder)
     return mod
-
-"""
-
 ```

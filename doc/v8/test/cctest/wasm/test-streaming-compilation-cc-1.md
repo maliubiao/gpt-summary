@@ -140,7 +140,7 @@ loadWasm('my-wasm-module.wasm').then(exports => {
 
 总而言之，提供的 `v8/test/cctest/wasm/test-streaming-compilation.cc` 的第二部分代码专注于**测试 WebAssembly 流式编译过程中的中断机制以及一些成功的编译和缓存场景**。它通过模拟各种接收字节流的状态和人为触发中断，来验证 V8 引擎在处理这些情况时的正确性和健壮性。同时，它也涵盖了基本的流式编译成功场景和增量缓存的测试。这些测试确保了 V8 引擎能够可靠地处理各种可能在实际应用中发生的流式编译情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-streaming-compilation.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-streaming-compilation.cc以.tq结尾，那它是个v8 torque源代码，
@@ -148,8 +148,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dy
   };
 
@@ -949,7 +951,4 @@ STREAM_TEST(TestHardCachingThreshold) {
       testing::GetExportedFunction(i_isolate, instance, "a").ToHandleChecked();
   Handle<Object> receiver = ReadOnlyRoots{i_isolate}.undefined_value_handle();
   fo
-"""
-
-
 ```

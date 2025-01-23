@@ -172,7 +172,7 @@ True
 
 总而言之，`check-env.py` 扮演着 Frida 构建系统中一个重要的健康检查角色，确保构建环境的一致性，为后续的编译、链接和测试步骤奠定基础。它的失败通常意味着构建环境存在根本性的问题，需要开发者仔细排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/51 run target/check-env.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, sys
@@ -210,7 +212,4 @@ print(f'{build_root} == {env_build_root}')
 assert build_root == env_build_root
 print(f'{current_source_dir} == {env_current_source_dir}')
 assert current_source_dir == env_current_source_dir
-
-"""
-
 ```

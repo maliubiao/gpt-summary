@@ -162,7 +162,7 @@ This section of the `vs2010backend.py` file primarily focuses on **generating th
 
 **In summary, this section of the code is responsible for the crucial task of translating Meson's build descriptions into the format understood by Visual Studio, enabling the building of Frida on Windows using either a simplified Makefile-based approach or the full MSBuild system.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ngs')
         ET.SubElement(root, 'ImportGroup', Label='Shared')
         prop_sheets_grp = ET.SubElement(root, 'ImportGroup', Label='PropertySheets')
@@ -698,7 +700,4 @@ ngs')
                     else:
                         lang = Vs2010Backend.lang_from_source_file(s)
                         self.add_pch(pch_sources, lang
-"""
-
-
 ```

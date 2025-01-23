@@ -191,15 +191,17 @@ int main() {
 
 总而言之，`v8/src/execution/thread-id.h` 提供了一个在 V8 内部用于管理线程标识符的基础工具。虽然 JavaScript 开发者不会直接操作这个类，但理解其功能有助于理解 V8 如何实现并发和多线程特性，并有助于避免与多线程编程相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/thread-id.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/thread-id.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ class ThreadId {
 }  // namespace v8
 
 #endif  // V8_EXECUTION_THREAD_ID_H_
-
-"""
-
 ```

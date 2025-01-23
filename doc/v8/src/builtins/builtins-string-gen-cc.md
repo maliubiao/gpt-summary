@@ -150,7 +150,7 @@ const sub = longString.substring(10, 16); // "a long"
 
 总而言之，`v8/src/builtins/builtins-string-gen.cc` 实现了 V8 引擎中用于高效处理 JavaScript 字符串的核心底层操作。它包含了获取字符串数据、搜索子串、比较字符串、创建和连接字符串以及处理不同内部字符串表示形式的关键逻辑。 这些功能直接支撑着 JavaScript 中各种常用的字符串操作，并力求在性能和正确性之间取得平衡。它通过使用底层的 `CodeStubAssembler` 和针对不同字符串类型和编码的优化策略来实现高性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-string-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-string-gen.cc以.tq结尾，那它是个v8 torque源代码，
@@ -158,8 +158,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -946,7 +948,4 @@ void StringBuiltinsAssembler::GenerateStringRelationalComparison(
       }
 
       var_offset = IntPtrAdd(var_offset.value(), IntPtrConstant(kChunkSize)
-"""
-
-
 ```

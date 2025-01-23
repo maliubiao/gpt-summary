@@ -210,7 +210,7 @@ console.log(result); // 输出 15
 
 这段代码是 V8 JavaScript 引擎中 Liftoff WebAssembly 编译器的核心组成部分，负责将 WebAssembly 指令翻译成高效的 ARM 汇编代码，涵盖了各种算术、逻辑、位运算、类型转换和控制流操作。它确保了在 ARM 架构的设备上能够正确执行 WebAssembly 代码。虽然用户不会直接接触这段代码，但其正确性对于 WebAssembly 应用的稳定运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/arm/liftoff-assembler-arm-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/arm/liftoff-assembler-arm-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -218,8 +218,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 sterScope temps(this);
   Register scratch = temps.Acquire();
   and_(scratch, amount, Operand(0x1f));
@@ -1114,8 +1116,4 @@ void LiftoffAssembler::LoadTransform(LiftoffRegister dst, Register src_addr,
       vmovl(NeonS32, liftoff::GetSimd128Register(dst), dst.low_fp());
     } else if (memtype == MachineType::Uint32()) {
       vld1(Neon32, NeonListOperand(dst.low_fp()),
-       
-"""
-
-
 ```

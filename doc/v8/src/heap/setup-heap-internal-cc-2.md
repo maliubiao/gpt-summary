@@ -174,7 +174,7 @@ main();
 
 总而言之，`v8/src/heap/setup-heap-internal.cc` 的这一部分是 V8 引擎启动和初始化过程中的关键环节，它为 JavaScript 的许多核心功能奠定了基础，并与用户在使用 JavaScript 时可能遇到的各种运行时错误直接相关。它创建的内部对象使得 V8 能够高效地执行和管理 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/setup-heap-internal.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/setup-heap-internal.cc以.tq结尾，那它是个v8 torque源代码，
@@ -182,8 +182,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ared_fun(*info);
   }
 
@@ -300,8 +302,4 @@ void Heap::CreateInternalAccessorInfoObjects() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -104,11 +104,13 @@ console.log(product); // 输出 18014398509481984 (预期可能是 1801439850948
 
 `v8/src/base/numbers/diy-fp.cc` 文件定义了一个自定义的浮点数结构 `DiyFp`，并实现了其乘法运算。这种实现侧重于高精度计算，通过模拟 128 位乘法和进行舍入来保证结果的准确性。虽然 JavaScript 直接使用双精度浮点数，但 V8 引擎内部可能会利用类似 `DiyFp` 的机制来优化和确保 JavaScript 数字运算的正确性和性能。这体现了 JavaScript 引擎在底层处理数字运算的复杂性和对精度的追求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/diy-fp.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -145,7 +147,4 @@ void DiyFp::Multiply(const DiyFp& other) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

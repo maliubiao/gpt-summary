@@ -206,7 +206,7 @@ Confidence Score: 5/5
 
 总而言之，`v8/src/ast/scopes.h` 定义了 V8 引擎中用于表示和管理 JavaScript 代码作用域的核心数据结构和算法。它涵盖了从基本的变量声明和查找，到处理复杂的语言特性（如 `eval`、`super`、模块、类和私有成员）的各个方面。这部分代码延续了第一部分的内容，进一步细化了 `Scope` 类的功能，并定义了模块作用域和类作用域等更具体的作用域类型，以及处理私有类成员的机制。理解这些概念对于深入了解 V8 引擎如何编译和执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/scopes.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/scopes.h以.tq结尾，那它是个v8 torque源代码，
@@ -214,8 +214,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 onding code uses "super".
   void RecordSuperPropertyUsage() {
     DCHECK(IsConciseMethod(function_kind()) ||
@@ -916,8 +918,4 @@ class PrivateNameScopeIterator {
 }  // namespace v8
 
 #endif  // V8_AST_SCOPES_H_
-
-"""
-
-
 ```

@@ -188,7 +188,7 @@ By following this structured approach, focusing on the context of Frida, and add
 
 `frida/subprojects/frida-python/releng/meson/test cases/common/46 subproject subproject/subprojects/b/b.c` 这个文件虽然代码量很少，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 的基本 hook 功能。对于学习 Frida 和进行相关的逆向工程活动来说，理解这个简单的例子是很有帮助的。它涉及到动态链接、符号导出、进程注入等底层概念，同时也展示了 Frida 如何通过拦截函数调用来实现动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/46 subproject subproject/subprojects/b/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -212,7 +214,4 @@ Prompt:
 int DLL_PUBLIC func2(void) {
     return 42;
 }
-
-"""
-
 ```

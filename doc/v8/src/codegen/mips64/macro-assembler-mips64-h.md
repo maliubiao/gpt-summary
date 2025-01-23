@@ -216,7 +216,7 @@ void Push(Register src) { push(src); }
 
 The `v8/src/codegen/mips64/macro-assembler-mips64.h` header file defines the `MacroAssembler` class for the MIPS64 architecture in V8. It provides a high-level C++ interface for generating MIPS64 assembly instructions, abstracting away low-level details. This includes functionalities for stack management, function calls, register handling, constant loading, debugging, floating-point operations, Smi handling, object access, and interfacing with C++. It is a crucial component for V8's code generation process, enabling the engine to execute JavaScript code efficiently on MIPS64 systems.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/macro-assembler-mips64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/macro-assembler-mips64.h以.tq结尾，那它是个v8 torque源代码，
@@ -224,8 +224,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1062,7 +1064,4 @@ class V8_EXPORT_PRIVATE MacroAssembler : public MacroAssemblerBase {
                           Label* fbv_undef);
 
   // If the value is a NaN, canonical
-"""
-
-
 ```

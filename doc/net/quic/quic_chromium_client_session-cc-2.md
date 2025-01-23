@@ -481,7 +481,7 @@ fetch('https://example.com/data')
 
 这段代码片段是 `QuicChromiumClientSession::OnConnectionClosed` 方法的一部分，其核心功能是在 QUIC 连接关闭时进行详细的统计信息记录、错误处理和资源清理。它收集了连接关闭的各种指标，用于性能分析和问题排查，并通知相关的观察者和工厂类。同时，它也处理了特定类型的连接关闭错误，例如 `PUBLIC_RESET` 和网络空闲超时，并尝试识别网络黑洞等异常情况。这段代码是 QUIC 连接生命周期结束的关键环节，确保了连接关闭时的信息完整性和资源的正确释放。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_chromium_client_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -489,8 +489,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 {
     UMA_HISTOGRAM_COUNTS_1000(
         "Net.QuicSession.NumForwardProgressMadeAfterPathDegrading",
@@ -1286,7 +1288,4 @@ void QuicChromiumClientSession::OnNetworkConnected(
     }
     // |wait_for_new_network_| is true, there was no working network previously.
     // |network| is now the only possible candidate, migrate immed
-"""
-
-
 ```

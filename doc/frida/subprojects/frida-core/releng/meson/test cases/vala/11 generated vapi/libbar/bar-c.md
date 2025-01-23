@@ -134,7 +134,7 @@ By following this structured approach, breaking down the problem into smaller pa
 
 因此，这个 C 文件是 Vala 编译过程的中间产物，它作为调试线索，可以帮助开发者理解 Vala 代码的生成结果，也可以帮助逆向工程师理解目标程序的行为。 目录结构也暗示了这是一个自动化测试的一部分，用于验证 Vala 编译器生成 C 代码的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/vala/11 generated vapi/libbar/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "bar.h"
 #include "foo.h"
 
@@ -173,7 +175,4 @@ int bar_bar_return_success(void)
 {
   return foo_foo_return_success();
 }
-
-"""
-
 ```

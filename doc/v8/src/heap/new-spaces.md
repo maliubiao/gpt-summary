@@ -110,11 +110,13 @@ for (let i = 0; i < 10000; i++) {
 
 `v8/src/heap/new-spaces.cc` 是 V8 引擎中负责管理新生代内存的核心组件。它提供了两种不同的实现方式，并处理了新生代内存的分配、垃圾回收和空间管理等关键任务。它的功能直接影响着 JavaScript 对象的生命周期和内存管理效率。JavaScript 中频繁的对象创建会直接触发这个文件中定义的 C++ 代码的执行，从而影响程序的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/new-spaces.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1145,7 +1147,4 @@ AllocatorPolicy* PagedNewSpace::CreateAllocatorPolicy(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

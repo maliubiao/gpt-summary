@@ -852,7 +852,7 @@ class BinaryOperation final : public Expression {
   Expression* right() const { return right_; }
 
   
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/ast.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/ast.h以.tq结尾，那它是个v8 torque源代码，
@@ -860,8 +860,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 return pattern_->string(); }
   const AstRawString* raw_pattern() const { return pattern_; }
   int flags() const { return flags_; }
@@ -1857,7 +1859,4 @@ class ConditionalChain : public Expression {
 
   // Conditional Chain Expression stores the conditional chain entries out of
   // line, along with their operation's position. The else exp
-"""
-
-
 ```

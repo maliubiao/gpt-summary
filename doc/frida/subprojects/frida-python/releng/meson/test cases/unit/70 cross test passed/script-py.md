@@ -132,7 +132,7 @@ By following this systematic approach, combining code analysis with contextual u
 
 总而言之，尽管 `script.py` 本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于执行和验证各种测试程序，并确保 Frida 在不同平台上的功能正常运行。它的简洁性也使得测试流程更加清晰和易于调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/70 cross test passed/script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import subprocess
@@ -149,7 +151,4 @@ import sys
 
 if __name__ == "__main__":
     sys.exit(subprocess.run(sys.argv[1:]).returncode)
-
-"""
-
 ```

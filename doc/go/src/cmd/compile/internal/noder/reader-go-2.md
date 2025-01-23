@@ -87,7 +87,7 @@ iface = x // 隐式转换
 
 这段 `reader.go` 的代码片段是 Go 编译器中将序列化的中间表示数据转换回内存中 `ir.Node` 结构的关键部分。它涵盖了表达式、函数、复合字面量和类型信息的读取和重建，是连接编译器前端和后端的重要桥梁，为后续的类型检查、优化和代码生成提供基础。它精细地处理了各种 Go 语言特性，包括泛型、接口和类型转换等。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/noder/reader.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -96,8 +96,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 eld(r.Len())
 			offset += field.Offset
 			typ = field.Type
@@ -1220,9 +1222,4 @@ func unifiedInlineCall(callerfn *ir.Func, call *ir.CallExpr, fn *ir.Func, inlInd
 	body := ir.Nodes(r.curfn.Body)
 
 	// Reparent any declarations into the
-"""
-
-
-
-
 ```

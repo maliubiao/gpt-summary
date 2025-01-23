@@ -148,7 +148,7 @@ Let's break down the thought process for analyzing this C code and connecting it
 
 总而言之，`a.c` 作为一个简单的测试用例，其目的是为了验证 Frida 在处理特定场景下的正确性，尤其是在存在命名冲突的情况下。它的存在是 Frida 质量保证过程中的重要一环，确保 Frida 在复杂的软件环境中能够可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/155 subproject dir name collision/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<assert.h>
 char func_b(void);
 char func_c(void);
@@ -171,7 +173,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

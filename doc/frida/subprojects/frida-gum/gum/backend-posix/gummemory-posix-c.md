@@ -164,7 +164,7 @@ Initially, I might focus too much on the individual system calls without explici
 
 总而言之，`gummemory-posix.c` 是 Frida 在 POSIX 系统上进行动态 instrumentation 的基石，它提供的内存管理功能支撑了 Frida 的核心能力，理解这个文件的功能对于深入理解 Frida 的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-posix/gummemory-posix.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -591,8 +593,4 @@ _gum_page_protection_to_posix (GumPageProtection prot)
 
   return posix_prot;
 }
-
-
-"""
-
 ```

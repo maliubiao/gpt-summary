@@ -131,15 +131,17 @@ QuicNewTokenFrame new_token_frame(frame_id, token_data);
 
 总而言之，`quic_new_token_frame.cc` 虽是底层的 C++ 代码，但它处理的 `NEW_TOKEN` 帧在 QUIC 协议中至关重要，直接影响着连接的稳定性和性能，并间接地影响着用户使用基于 QUIC 的网络应用的体验。开发者在调试相关问题时，理解这个文件的功能和作用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/frames/quic_new_token_frame.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -165,7 +167,4 @@ std::ostream& operator<<(std::ostream& os, const QuicNewTokenFrame& s) {
 }
 
 }  // namespace quic
-
-"""
-
 ```

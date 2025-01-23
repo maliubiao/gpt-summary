@@ -190,15 +190,17 @@ This systematic approach ensures that all relevant information is extracted from
 
 总而言之，`FileSystemDispatcher` 是 Blink 渲染引擎中处理文件系统操作的核心组件，它连接了 JavaScript 等 Web 技术与底层的操作系统文件系统，并负责管理异步操作和错误处理。理解它的功能对于理解浏览器如何处理网页的文件系统访问至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/filesystem/file_system_dispatcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -817,7 +819,4 @@ void FileSystemDispatcher::RemoveOperationRemote(int operation_id) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -217,7 +217,7 @@ go test -v -run TestNoContentLengthIfTransferEncoding ./serve_test.go
 
 总而言之，这部分代码覆盖了 `net/http` 服务器的很多核心功能，并通过详尽的测试用例确保了其行为的正确性和健壮性。理解这些测试用例可以帮助开发者更好地理解和使用 Go 语言的 HTTP 服务器功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/serve_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -226,8 +226,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 oteAddr
 		time.Sleep(500 * time.Millisecond)
 		w.(Flusher).Flush()
@@ -1400,9 +1402,4 @@ func testServerShutdown(t *testing.T, mode testMode) {
 		t.Fatalf("Shutdown: %v", err)
 	}
 	<-gotOnShutdown // Will hang if RegisterOnShu
-"""
-
-
-
-
 ```

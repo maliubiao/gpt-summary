@@ -107,7 +107,7 @@ This is the first part of a two-part request, so the summary should focus on the
 
 总而言之，`mobile_friendliness_checker_test.cc` 文件通过一系列单元测试，验证了 `MobileFriendlinessChecker` 类能够准确地评估网页的各种移动设备友好性特征，并将结果记录到 UKM 中，为 Chrome 的性能分析和网页开发者提供有价值的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/mobile_metrics/mobile_friendliness_checker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1132,7 +1134,4 @@ TEST_F(MobileFriendlinessCheckerTest, ImageTooWideAbsolutePosition) {
   </head>
   <body>
     <img style="width:480px; height:800px; position:absolute; left:2000px">
-"""
-
-
 ```

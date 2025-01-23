@@ -192,7 +192,7 @@ My thought process for analyzing the provided C++ code snippet for `blink/render
 
 总而言之，`blink/renderer/modules/cache_storage/cache.cc` 文件（的第一部分）定义了 `Cache` 类，负责实现 JavaScript Cache API 的核心功能，包括存储、检索和删除缓存的 HTTP 请求和响应。它处理与 JavaScript 的交互，与网络层通信以获取资源，并与底层的 Cache Storage 服务进行数据交互。该文件还初步涉及了 V8 代码缓存的生成和存储。其核心目标是为 Web 开发者提供一种在浏览器端高效存储和访问网络资源的机制，从而提高 Web 应用的性能和离线能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/cache_storage/cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1071,7 +1073,4 @@ void Cache::Trace(Visitor* visitor) const {
   visitor->Trace(scoped_fetcher_);
   visitor->Trace(blob_client_list_);
   visitor-
-"""
-
-
 ```

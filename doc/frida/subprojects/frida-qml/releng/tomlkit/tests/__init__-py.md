@@ -98,7 +98,7 @@ By following these steps, we can arrive at a comprehensive and accurate answer t
 
 总而言之，尽管 `__init__.py` 文件本身很简单，但它在 Python 包结构中扮演着关键角色。在 Frida 这样的复杂项目中，它确保了测试代码能够被正确地组织和执行，这对于保证 Frida 的稳定性和功能正确性至关重要，并间接地与逆向分析的各个方面相关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/tomlkit/tests/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -106,9 +106,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

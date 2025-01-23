@@ -62,7 +62,7 @@ v2 = Trunc16to8 v1
 ### 总结
 
 这段代码是 Go 编译器 SSA 优化阶段的一部分，主要功能是通过模式匹配和重写规则来优化 SSA 中间表示。它处理了多种操作符的优化规则，包括常量折叠、代数简化、消除冗余操作、位操作优化和浮点数优化。使用者在编写代码时需要注意常量溢出、位操作掩码错误和类型不匹配等问题。
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritegeneric.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -70,8 +70,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第12部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 on := auxToSym(v_1.Aux)
 		v_1_0 := v_1.Args[0]
 		if v_1_0.Op != OpSB {
@@ -2958,10 +2960,5 @@ func rewriteValuegeneric_OpTrunc32to8(v *Value) bool {
 		return true
 	}
 	// match: (Trunc32to8 (SignExt8to32 x))
-	// 
-"""
-
-
-
-
+	//
 ```

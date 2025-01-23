@@ -170,7 +170,7 @@ By following this structured approach, combining code analysis with contextual u
 
 总而言之，这个小小的C文件在一个特定的测试场景下，演示了 Frida 如何处理包含依赖于生成对象的静态库。对于理解 Frida 的内部工作原理以及如何有效地使用 Frida 进行逆向工程，特别是在涉及静态链接库的情况下，这是一个很有价值的例子。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/windows/20 vs install static lib with generated obj deps/static_lib_source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,15 +178,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern int generated_function(void);
 
 int static_lib_function(void)
 {
     return generated_function();
 }
-
-"""
-
 ```

@@ -111,11 +111,13 @@ console.log(person); // 在 Chrome DevTools 的控制台中查看预览
 
 总而言之，`custom-preview.cc` 是 V8 Inspector 中实现自定义对象预览的关键 C++ 代码，它通过执行开发者提供的 JavaScript 代码来动态生成对象的预览信息，从而增强了调试体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/custom-preview.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -523,7 +525,4 @@ void generateCustomPreview(v8::Isolate* isolate, int sessionId,
   }
 }
 }  // namespace v8_inspector
-
-"""
-
 ```

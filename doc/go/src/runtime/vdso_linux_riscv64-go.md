@@ -157,7 +157,7 @@ VDSO clock_gettime not available.
 
 这段代码是 Go 运行时为了提升在 Linux RISC-V 64 位架构上获取时间的性能而进行的一项优化。它通过检查和使用 VDSO 提供的 `clock_gettime` 函数，避免了不必要的内核态切换。对于 Go 开发者来说，这个过程是透明的，他们只需要正常使用 Go 的 `time` 包即可受益于这种优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/vdso_linux_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -165,8 +165,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -188,9 +190,4 @@ var vdsoSymbolKeys = []vdsoSymbolKey{
 
 // initialize to fall back to syscall
 var vdsoClockgettimeSym uintptr = 0
-
-"""
-
-
-
 ```

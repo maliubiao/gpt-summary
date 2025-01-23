@@ -225,7 +225,7 @@ The `bindgen` tool will be executed, parsing `my_native.h` and generating a Rust
 
 By understanding these steps, a developer encountering an error during the Meson configuration related to Rust targets can look at the error message, trace back to the specific `rust.bindgen` or `rust.test` call in their `meson.build` file, and then examine the arguments passed to those functions to identify the root cause of the problem. They might then need to investigate file paths, dependencies, or `bindgen` options to resolve the issue.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/modules/rust.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -233,8 +233,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2020-2024 Intel Corporation
 
@@ -590,7 +592,4 @@ class RustModule(ExtensionModule):
 
 def initialize(interp: Interpreter) -> RustModule:
     return RustModule(interp)
-
-"""
-
 ```

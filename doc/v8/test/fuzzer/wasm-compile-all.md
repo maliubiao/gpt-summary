@@ -90,11 +90,13 @@ WebAssembly.instantiateStreaming(Promise.resolve(new Response(wasmBytes)), {})
 
 **这个模糊测试工具的目的就是为了触发 `.catch()` 中的错误，从而发现 V8 WebAssembly 编译器中的潜在问题。**  通过生成各种各样的、包含所有特性的 WebAssembly 模块，`wasm-compile-all.cc` 能够有效地测试 V8 在面对复杂和潜在边缘情况时的处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/wasm-compile-all.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -128,7 +130,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
 ```

@@ -104,7 +104,7 @@ Let's break down the thought process for analyzing the given C code and fulfilli
 
 这个简单的 C 代码片段是 Frida 构建系统中的一个测试用例，用于验证在特定 Wayland 环境下，Frida 的构建依赖是否正确。它通过检查特定头文件的存在与否来判断环境配置，并返回相应的状态码。虽然它本身不执行逆向操作，但作为 Frida 的一部分，它对于确保 Frida 能够在各种 Wayland 环境下工作至关重要，从而支持逆向工程师在这些环境下的分析工作。理解这类测试用例有助于我们深入了解 Frida 的构建过程和其对不同系统环境的适应性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/wayland/2 core only/core.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <xdg-shell-client-protocol.h>
 
 int main() {
@@ -123,7 +125,4 @@ int main() {
     return 1;
 #endif
 }
-
-"""
-
 ```

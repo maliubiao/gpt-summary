@@ -82,7 +82,7 @@ def check_jni_result(frame, bp_loc, dict):
 
 ### 总结
 `result.js` 是 Frida 实现 **JNI 操作安全验证** 的关键模块，通过强制检查 JNI 返回码避免隐蔽错误。结合 LLDB 可监控原生层 JNI 调用，而用户需确保每次 JNI 操作后调用 `checkJniResult` 并妥善处理异常。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/result.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -91,8 +91,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
+```
 
-"""
+### 源代码
+```javascript
 const JNI_OK = 0;
 
 function checkJniResult (name, result) {
@@ -105,7 +107,4 @@ module.exports = {
   checkJniResult,
   JNI_OK: 0
 };
-
-"""
-
 ```

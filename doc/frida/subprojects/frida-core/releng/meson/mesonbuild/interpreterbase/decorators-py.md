@@ -187,7 +187,7 @@ def my_function(self, node, args, kwargs):
 
 这些功能对于确保 Frida 构建过程的健壮性和可靠性至关重要，能够帮助开发者在构建阶段尽早发现参数错误，避免构建出不正确或不稳定的 Frida 工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/interpreterbase/decorators.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -885,7 +887,4 @@ class FeatureNew(FeatureCheckBase):
     @staticmethod
     def get_warning_str_prefix(tv: str) -> str:
         retur
-"""
-
-
 ```

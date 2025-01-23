@@ -118,11 +118,13 @@ processArray(data); // 输出 arr[11] (120)
 
 `v8/src/compiler/loop-variable-optimizer.cc` 文件实现了 V8 引擎中一个重要的优化步骤，它通过分析循环中的归纳变量及其边界，为后续的编译器优化提供了关键信息，从而提升了 JavaScript 代码的执行效率，尤其是在处理循环结构的代码时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/loop-variable-optimizer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -478,7 +480,4 @@ void LoopVariableOptimizer::ChangeToPhisAndInsertGuards() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -150,15 +150,17 @@ void MyImportantFunction() {
 
 总结来说，`v8/src/diagnostics/etw-debug-win.h` 提供了一个简单但有效的机制，用于在 V8 的调试版本中进行条件性的调试追踪，这对于 V8 开发者理解和调试引擎的内部行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/etw-debug-win.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/etw-debug-win.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ std::ostream& operator<<(std::ostream& os, const EtwTraceDebug&);
 }  // namespace v8
 
 #endif  // V8_DIAGNOSTICS_ETW_DEBUG_WIN_H_
-
-"""
-
 ```

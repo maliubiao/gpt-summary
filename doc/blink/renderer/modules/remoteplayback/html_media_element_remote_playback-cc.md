@@ -179,15 +179,17 @@ Finally, the information gathered needs to be organized into a clear and structu
 
 通过查看浏览器的开发者工具（Elements 面板），可以检查特定 `<video>` 或 `<audio>` 元素是否具有 `disableremoteplayback` 属性。在 Sources 面板中设置断点，可以跟踪 JavaScript 代码的执行，观察何时以及如何设置或移除该属性。此外，在 Blink 渲染引擎的源代码中设置断点，可以深入了解 `HTMLMediaElementRemotePlayback` 中方法的调用时机和内部逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/remoteplayback/html_media_element_remote_playback.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ RemotePlayback* HTMLMediaElementRemotePlayback::remote(
 }
 
 }  // namespace blink
-
-"""
-
 ```

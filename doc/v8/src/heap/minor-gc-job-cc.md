@@ -152,15 +152,17 @@ console.timeEnd("createObjects");
 
 你提供的提示是正确的。如果 `v8/src/heap/minor-gc-job.cc` 以 `.tq` 结尾，那它将是一个 **V8 Torque 源代码**文件。Torque 是一种用于编写 V8 内部函数的领域特定语言，它允许以更类型安全和高效的方式生成 C++ 代码。然而，根据你提供的代码内容，这个文件实际上是以 `.cc` 结尾的，因此是 **C++ 源代码**文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/minor-gc-job.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/minor-gc-job.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ void MinorGCJob::Task::RunInternal() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

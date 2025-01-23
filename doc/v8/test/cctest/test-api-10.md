@@ -226,12 +226,14 @@ My plan is to go through each `TEST` and `THREADED_TEST` block, determine the V8
 
 总而言之，这部分代码主要关注 V8 引擎中关于函数、对象属性（包括原生属性和拦截器）、垃圾回收、隔离环境、上下文、字符串处理、正则表达式以及代码生成控制等方面的 C++ API 测试。这些测试确保了 V8 引擎的各项核心功能能够按照预期工作，并且在各种复杂场景下保持稳定和安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第11部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 pt()->GetId(), foo->ScriptId());
   CHECK_EQ(script->GetUnboundScript()->GetId(), bar->ScriptId());
 }
@@ -2062,7 +2064,4 @@ THREADED_TEST(AllowCodeGenFromStrings) {
   context->AllowCodeGenerationFromStrings(false);
   context->GetIsolate()->SetModifyCodeGenerationFromStringsCallback(
       &CodeGenerationAllo
-"""
-
-
 ```

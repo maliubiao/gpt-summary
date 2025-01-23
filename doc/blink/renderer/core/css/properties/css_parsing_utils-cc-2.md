@@ -160,7 +160,7 @@ I'll structure the response to address each of the user's requests:
 
 总而言之，`blink/renderer/core/css/properties/css_parsing_utils.cc` 文件的第三部分主要负责 **解析 CSS 中关于颜色（包括各种颜色表示法和颜色混合、对比度函数）、位置信息以及一些特殊的视觉效果（如边框和渐变）的语法**，并将这些语法转换为 Blink 引擎可以理解和使用的内部数据结构。它是 CSS 引擎处理视觉样式规则的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/css_parsing_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (stream)) {
         read_hue = Color::HueInterpolationMethod::kLonger;
       } else if (ConsumeIdent<CSSValueID::kDecreasing>(stream)) {
@@ -1110,7 +1112,4 @@ static CSSValue* ConsumeDeprecatedRadialGradient(
     CSSParserTokenStream& stream,
     const CSSParserContext& context,
     cssvalue::C
-"""
-
-
 ```

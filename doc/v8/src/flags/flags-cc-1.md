@@ -158,7 +158,7 @@ console.timeEnd("new_algorithm"); // 输出时间取决于新算法的性能，�
 
 这部分 `v8/src/flags/flags.cc` 代码负责在 V8 中管理和协调各种命令行标志，特别关注在模糊测试期间处理标志间的冲突和依赖关系。它通过定义冲突规则、强制执行依赖、以及管理标志哈希值，确保 V8 在不同配置下的稳定性和可预测性。对于用户而言，理解这些标志及其相互作用对于优化 JavaScript 代码的性能、调试问题以及使用 V8 的实验性特性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/flags/flags.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/flags/flags.cc以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 g2)) \
       : std::make_tuple(nullptr, nullptr)
 
@@ -278,8 +280,4 @@ void FlagList::ResetFlagHash() {
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

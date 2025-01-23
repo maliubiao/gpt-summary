@@ -212,15 +212,17 @@ function simpleLoop(n) {
 
 总而言之，`v8/src/compiler/bytecode-analysis.h` 定义的类是 V8 编译器进行字节码分析的关键组成部分，为代码优化和生成高效机器码提供了基础信息。它与 JavaScript 的循环、生成器函数等特性紧密相关，并间接地与用户可能犯的编程错误有关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/bytecode-analysis.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/bytecode-analysis.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -412,7 +414,4 @@ class V8_EXPORT_PRIVATE BytecodeAnalysis : public ZoneObject {
 }  // namespace v8
 
 #endif  // V8_COMPILER_BYTECODE_ANALYSIS_H_
-
-"""
-
 ```

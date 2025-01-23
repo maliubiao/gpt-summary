@@ -90,12 +90,14 @@ console.log(calculate(10));
 
 总而言之，此部分代码是 V8 JavaScript 引擎在 s390 架构上进行代码生成和优化的核心组成部分，它直接影响着 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/macro-assembler-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 );
   beq(done);
 }
@@ -2204,7 +2206,4 @@ void MacroAssembler::LoadS32LE(Register dst, const MemOperand& opnd,
                                Register scratch) {
   lrv(dst, opnd);
   L
-"""
-
-
 ```

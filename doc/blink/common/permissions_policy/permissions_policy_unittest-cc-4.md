@@ -81,15 +81,17 @@ Permissions Policy 是一个 Web 平台的功能，它通过 HTTP 头部或 HTML
 
 总而言之，这个测试文件全面地验证了 Permissions Policy 功能在各种场景下的行为，特别是针对新的策略模型和 Fenced Frame 等新特性，同时也覆盖了一些常见的配置和使用情况，并指出了潜在的错误使用方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/permissions_policy/permissions_policy_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 EST_F(PermissionsPolicyTest, ProposedTestAllowedCrossOriginChildPolicy) {
   // +---------------------------------------------------+
   // |(1)Origin A                                        |
@@ -771,8 +773,4 @@ TEST_F(PermissionsPolicyTest,
   }
 }
 }  // namespace blink
-
-"""
-
-
 ```

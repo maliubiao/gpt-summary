@@ -171,7 +171,7 @@ By following these steps, we move from a basic understanding of the code's funct
 
 总而言之，这个看似简单的 C 程序是 Frida 测试框架中的一个组成部分，用于验证 Frida 的功能，特别是与 Swift 代码和文件操作相关的能力。理解其功能可以帮助开发者更好地理解 Frida 的工作原理以及如何进行测试和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/native/5 install script/src/exe.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -208,7 +210,4 @@ int main(int argc, char * argv[]) {
 
     return 0;
 }
-
-"""
-
 ```

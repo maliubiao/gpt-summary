@@ -111,7 +111,7 @@ This systematic approach, starting with understanding the context and gradually 
 
 `boolean.py` 文件是 Frida-QML 构建系统 Meson 实现中的一个基础组件，负责管理和操作布尔类型。虽然它不直接执行逆向操作，也不直接涉及底层内核，但它在构建过程中扮演着关键角色，其行为影响着最终生成的可执行文件的特性。理解这个文件有助于理解 Frida 的构建过程，并为逆向工程师提供关于目标二进制文件构建方式的线索。用户在配置和执行 Frida-QML 的构建过程时，会间接地使用到这个文件中定义的布尔类型处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/primitives/boolean.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # Copyright 2021 The Meson development team
 # SPDX-license-identifier: Apache-2.0
 from __future__ import annotations
@@ -173,7 +175,4 @@ class BooleanHolder(ObjectHolder[bool]):
         if any(x is not None for x in args) and not all(x is not None for x in args):
             raise InvalidArguments('bool.to_string() must have either no arguments or exactly two string arguments that signify what values to return for true and false.')
         return true_str if self.held_object else false_str
-
-"""
-
 ```

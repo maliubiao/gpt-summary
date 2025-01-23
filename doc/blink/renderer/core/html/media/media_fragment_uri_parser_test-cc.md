@@ -133,14 +133,16 @@ By following this thought process, breaking down the code structure, analyzing t
 
 `media_fragment_uri_parser_test.cc` 通过详尽的测试用例，确保了 `MediaFragmentURIParser` 类能够准确地解析媒体片段 URI 中的 NPT 时间信息。这对于浏览器正确播放指定时间段的媒体资源至关重要，并且间接地影响了开发者在使用 HTML 和 JavaScript 操作媒体元素时的体验。 测试用例也揭示了用户和开发者在构建媒体片段 URI 时可能犯的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/media_fragment_uri_parser_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ INSTANTIATE_TEST_SUITE_P(
       return info.param.test_name;
     });
 }  // namespace blink
-
-"""
-
 ```

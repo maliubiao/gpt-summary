@@ -230,7 +230,7 @@ Let's go through the functions:
 
 总而言之，`ChromeClientImpl` 的这部分代码是 Blink 渲染引擎与 Chromium 浏览器进行深度集成的关键桥梁，它处理了大量的浏览器行为，并将这些行为与底层的渲染机制连接起来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/chrome_client_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -238,8 +238,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 hooser(FileChooser& chooser) {
   if (!file_chooser_queue_.empty() &&
       file_chooser_queue_.front().get() != &chooser) {
@@ -926,8 +928,4 @@ void ChromeClientImpl::OnFirstContentfulPaint() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

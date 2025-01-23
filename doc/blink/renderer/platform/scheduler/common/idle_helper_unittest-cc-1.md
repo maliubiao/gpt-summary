@@ -137,15 +137,17 @@ Now, I can synthesize the answer based on this analysis.
 
 总而言之，这部分测试用例进一步强调了 `IdleHelper` 在 Blink 引擎中用于优化任务调度，利用浏览器空闲时间执行非关键任务，从而提升整体性能和用户体验的关键作用。理解其工作原理，特别是静默期、空闲期和延迟任务的概念，对于正确使用 `IdleHelper` 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/idle_helper_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 HERE, base::BindOnce(&RepostingIdleTestTask,
                                 base::RetainedRef(idle_task_runner_),
                                 &run_count, &actual_deadline));
@@ -508,8 +510,4 @@ TEST_F(MultiThreadedIdleHelperTest,
 }  // namespace idle_helper_unittest
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
-
 ```

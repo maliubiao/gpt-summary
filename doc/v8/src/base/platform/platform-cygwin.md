@@ -131,11 +131,13 @@ console.log(myAddon.hello('World'));
 
 `platform-cygwin.cc` 文件是 V8 引擎在 Cygwin 平台上的“适配器”，它将操作系统提供的底层功能抽象成 V8 可以使用的接口。这使得 V8 能够跨平台运行，而开发者编写的 JavaScript 代码无需关心底层操作系统的细节。它通过调用 Windows API 来实现很多功能，体现了 Cygwin 作为 Windows 上 POSIX 兼容层的特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-cygwin.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -425,7 +427,4 @@ std::optional<OS::MemoryRange> OS::GetFirstFreeMemoryRangeWithin(
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

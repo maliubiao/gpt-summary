@@ -123,7 +123,7 @@ MOVQ (R15), AX              // 通过 R15 访问全局变量 globalVar
 
 这两部分功能共同确保了 Go 程序在 x86 架构下的正确执行，特别是在涉及到函数调用和动态链接时。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/x86/obj6.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -132,8 +132,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ed to fix the
 	// SP data and PCDATA.
 	spfix := obj.Appendp(last, newprog)
@@ -485,10 +487,4 @@ var Link386 = obj.LinkArch{
 	UnaryDst:       unaryDst,
 	DWARFRegisters: X86DWARFRegisters,
 }
-
-"""
-
-
-
-
 ```

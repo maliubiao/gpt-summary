@@ -148,14 +148,16 @@ This iterative process of scanning, inferring, connecting concepts, and providin
 
 `rtc_rtp_transceiver_platform.cc` 是 Chromium Blink 引擎中实现 WebRTC RTP 收发器平台特定逻辑的关键组成部分。它作为平台抽象层，负责处理与媒体流发送和接收相关的底层操作，并与 JavaScript WebRTC API 提供的功能紧密关联。虽然开发者不会直接修改这个文件，但理解其功能有助于更好地理解 WebRTC 的工作原理以及如何避免在使用 WebRTC API 时出现错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_rtp_transceiver_platform.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ namespace blink {
 RTCRtpTransceiverPlatform::~RTCRtpTransceiverPlatform() = default;
 
 }  // namespace blink
-
-"""
-
 ```

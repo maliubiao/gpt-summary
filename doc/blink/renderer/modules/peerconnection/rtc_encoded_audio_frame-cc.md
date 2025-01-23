@@ -186,15 +186,17 @@ encodedAudioFrame.getMetadata().then(metadata => {
 
 总而言之，`RTCEncodedAudioFrame.cc` 文件定义了 Blink 渲染引擎中用于表示和操作编码后音频帧的关键类，它在 WebRTC 的音频处理流程中扮演着重要的角色，尤其是在 Encoded Transform API 的上下文中，允许 JavaScript 开发者对编码后的音频数据进行自定义处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_encoded_audio_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -437,7 +439,4 @@ void RTCEncodedAudioFrame::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

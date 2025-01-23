@@ -149,7 +149,7 @@ This systematic approach, starting with the code's basic function and progressiv
 
 总而言之，`catter.py` 是 Frida 构建系统中一个用于合并头文件的小工具，它简化了头文件的管理，并在测试和编译过程中发挥作用。用户通常不会直接调用它，而是通过 Frida 的构建系统间接地使用它。理解它的功能可以帮助开发人员理解 Frida 的构建流程和头文件结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/105 generatorcustom/catter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -173,7 +175,4 @@ with open(output, 'w') as ofile:
             content = ifile.read()
         ofile.write(content)
         ofile.write('\n')
-
-"""
-
 ```

@@ -130,14 +130,16 @@ By following these steps, we can effectively analyze the provided C++ code snipp
 
 总之，`signed_exchange_consts.cc` 虽然只是定义了一些常量，但这些常量在浏览器处理 Signed Exchanges 的过程中起着至关重要的作用，直接影响着如何识别、解析和使用 Signed Exchange 资源，进而影响到 JavaScript 的执行、HTML 页面的渲染和 CSS 样式的应用。理解这些常量及其作用有助于开发者更好地理解和使用 Signed Exchange 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/web_package/signed_exchange_consts.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -154,7 +156,4 @@ const char kSignedExchangeVariantsHeader[] = "variants-04";
 const char kSignedExchangeVariantKeyHeader[] = "variant-key-04";
 
 }  // namespace blink
-
-"""
-
 ```

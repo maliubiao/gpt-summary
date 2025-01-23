@@ -132,7 +132,7 @@ Here's a thinking process to arrive at the explanation of the Python script:
 
 **总而言之，`catfiles.py` 是一个简单的文件连接工具，它在 Frida 的测试环境中被用来创建或组合测试文件。虽然它本身不是逆向工具，但可以作为逆向分析过程中的一个实用辅助工具来合并二进制或文本文件片段。** 它的存在也反映了 Frida 项目需要对构建过程和各种场景进行测试，确保软件的质量和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/40 custom target plainname many inputs/catfiles.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -151,7 +153,4 @@ with open(out, 'wb') as o:
     for infile in sys.argv[1:-1]:
         with open(infile, 'rb') as f:
             o.write(f.read())
-
-"""
-
 ```

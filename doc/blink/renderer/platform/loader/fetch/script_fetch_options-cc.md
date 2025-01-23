@@ -151,14 +151,16 @@ Essentially, my approach was to start with the code itself, understand its struc
 
 总而言之，`script_fetch_options.cc` 这个文件在 Blink 引擎中扮演着关键的角色，它负责管理和传递加载 JavaScript 脚本所需的各种配置信息，确保脚本能够安全、高效地加载和执行，并与 HTML 规范中定义的 `<script>` 标签属性紧密相关。 理解这个类的功能有助于深入理解浏览器如何处理 JavaScript 资源的加载过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/script_fetch_options.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ FetchParameters ScriptFetchOptions::CreateFetchParameters(
 }
 
 }  // namespace blink
-
-"""
-
 ```

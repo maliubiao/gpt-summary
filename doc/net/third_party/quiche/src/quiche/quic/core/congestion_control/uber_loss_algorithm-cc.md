@@ -129,15 +129,17 @@ By following these steps, combining code analysis with an understanding of the u
 
 总而言之，`uber_loss_algorithm.cc` 文件是 Chromium QUIC 协议栈中负责核心丢包检测逻辑的关键组件，它通过管理多个针对不同数据包编号空间的子算法，实现了更精细和灵活的丢包检测机制，对 QUIC 连接的可靠性和性能至关重要。虽然 JavaScript 代码本身不直接操作这个类，但这个类的行为会显著影响到基于 QUIC 的 Web 应用的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/congestion_control/uber_loss_algorithm.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -350,7 +352,4 @@ void UberLossAlgorithm::ResetLossDetection(PacketNumberSpace space) {
 }
 
 }  // namespace quic
-
-"""
-
 ```

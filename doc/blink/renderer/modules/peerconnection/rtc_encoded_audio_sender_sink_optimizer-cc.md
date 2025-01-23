@@ -127,15 +127,17 @@ By following these steps, combining code analysis with knowledge of WebRTC conce
 
 `RtcEncodedAudioSenderSinkOptimizer` 是 Chromium Blink 引擎中负责优化 WebRTC 音频发送流程的关键组件。它通过插入一个中间层 `RTCEncodedAudioUnderlyingSink` 来实现，这个中间层可以进行音频转换等优化操作。虽然普通 Web 开发者不会直接接触到这个 C++ 代码，但理解其功能有助于理解 WebRTC 音频处理的内部机制，并能更好地理解与 WebRTC 相关的性能问题和潜在的错误来源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_encoded_audio_sender_sink_optimizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -166,7 +168,4 @@ RtcEncodedAudioSenderSinkOptimizer::PerformInProcessOptimization(
 }
 
 }  // namespace blink
-
-"""
-
 ```

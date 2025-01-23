@@ -176,15 +176,17 @@ go build -pgo=profile.pprof your_package
 
 总而言之，`go tool preprofile` 是 Go 语言 PGO 功能中用于预处理 pprof profile 的一个重要工具，它的主要作用是将原始的 pprof 文件转换为一种更适合编译器使用的中间表示形式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/preprofile/main.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -272,9 +274,4 @@ func main() {
 		log.Fatal(err)
 	}
 }
-
-"""
-
-
-
 ```

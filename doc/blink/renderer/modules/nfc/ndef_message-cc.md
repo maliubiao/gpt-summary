@@ -204,15 +204,17 @@ const buffer = new Uint8Array([0xD1, 0x01, 0x0B, 0x55, 0x04, 0x65, 0x78, 0x61, 0
 
 总而言之，`ndef_message.cc` 是 Blink 引擎中处理 NDEF 消息的核心，负责将来自 JavaScript 的各种数据格式转换为内部的 `NDEFMessage` 对象，并对特定类型的 NDEF 消息（如 Smart Poster）进行验证和处理。理解这个文件的功能对于调试 Web NFC 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/nfc/ndef_message.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -435,7 +437,4 @@ void NDEFMessage::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

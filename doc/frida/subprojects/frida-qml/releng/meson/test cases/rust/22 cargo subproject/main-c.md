@@ -135,7 +135,7 @@ pub extern "C" fn rust_func() -> i32 {
 
 通过分析文件路径，我们可以推断出这个文件的目的是为了测试 Frida 如何与一个简单的、由 Cargo 管理的 Rust 项目进行交互。这对于理解 Frida 的 Rust 集成能力以及排查相关问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/rust/22 cargo subproject/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,14 +143,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int rust_func(void);
 
 int main(int argc, char *argv[]) {
     return rust_func();
 }
-
-"""
-
 ```

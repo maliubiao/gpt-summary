@@ -63,12 +63,14 @@ runWasm();
 
 总而言之，这个 C++ 文件的功能是为 V8 引擎的模糊测试框架 **生成具有随机结构的 WebAssembly 模块**，这些模块旨在测试 V8 在处理各种 WebAssembly 代码时的正确性和健壮性。它通过定义各种约束和使用随机数据来生成这些模块，并且生成的模块最终会在 JavaScript 环境中运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/fuzzing/random-module-generation.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1840,7 +1842,4 @@ class BodyGen {
         struct_get_helper(ValueType::Primitive(wanted_kind), data);
     if (!got_struct_value) {
       Gene
-"""
-
-
 ```

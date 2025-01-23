@@ -132,14 +132,16 @@ Inspector 的核心功能是帮助开发者调试和检查网页的 JavaScript�
 
 总而言之，`inspector_history.cc` 文件是 Blink 引擎中 Inspector 工具的核心组件之一，它通过管理操作历史，为开发者提供了强大的撤销和重做功能，方便他们调试和修改网页的 JavaScript、HTML 和 CSS 代码。正确理解和使用这个组件对于开发出健壮的 Inspector 功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_history.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -290,7 +292,4 @@ void InspectorHistory::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

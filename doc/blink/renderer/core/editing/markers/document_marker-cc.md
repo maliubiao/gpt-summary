@@ -197,15 +197,17 @@ During the process, I might have revisited certain parts of the code or my expla
 
 总而言之，`document_marker.cc` 中定义的 `DocumentMarker` 类是 Blink 引擎中一个基础但重要的组件，用于管理文档中特定文本范围的标记，这些标记支撑着许多与编辑、查找和内容处理相关的功能。理解其工作原理有助于深入了解 Blink 引擎的内部机制，并能更好地调试与文档标记相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/document_marker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -303,7 +305,4 @@ void DocumentMarker::ShiftOffsets(int delta) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

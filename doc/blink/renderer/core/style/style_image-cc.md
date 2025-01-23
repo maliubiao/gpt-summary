@@ -123,14 +123,16 @@ This systematic approach allows for a comprehensive and accurate explanation of 
 
 总而言之，`blink/renderer/core/style/style_image.cc` 中的 `ApplyZoom` 函数是一个细节的但重要的组成部分，它确保了图片在应用 CSS 缩放时，其渲染尺寸的合理性，并避免出现极端情况下尺寸变为负数或零的情况，提升了用户体验和页面稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/style_image.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ gfx::SizeF StyleImage::ApplyZoom(const gfx::SizeF& size, float multiplier) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

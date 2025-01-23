@@ -132,11 +132,13 @@ console.log(Atomics.load(view32, 0).toString(2)); // 查看二进制表示
 
 `atomic-utils-unittest.cc` 文件通过单元测试确保了 V8 引擎底层原子操作工具的正确性和可靠性。这些原子操作是 V8 实现多线程安全的关键，并且直接支撑着 JavaScript 中 `SharedArrayBuffer` 和 `Atomics` API 的功能，使得 JavaScript 能够在共享内存的场景下进行并发编程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/atomic-utils-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -334,7 +336,4 @@ TEST(AsAtomicWord, SetBits_Concurrent) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -196,7 +196,7 @@ By following these steps, considering different angles (reverse engineering, sys
 
 因此，这个简单的 `main.cpp` 文件是 Frida 测试框架的一部分，用于验证 Frida 对使用 NetCDF 库的程序的动态 instrumentation 能力。开发人员通过编写和运行这样的测试用例，可以确保 Frida 的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/26 netcdf/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "netcdf.h"
 
@@ -221,7 +223,4 @@ if ((ret = nc_close(ncid)))
 
 return EXIT_SUCCESS;
 }
-
-"""
-
 ```

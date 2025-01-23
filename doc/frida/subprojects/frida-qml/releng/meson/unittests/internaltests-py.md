@@ -63,7 +63,7 @@ Here's a plan:
 
 总而言之，`internaltests.py` 文件是 Frida 项目中用于验证构建系统内部实用工具和基础功能的单元测试集合。它测试了诸如版本号解析、文件权限处理、编译器参数管理、库查找机制以及字符串模板替换等功能。这些测试对于确保 Frida 构建过程的正确性和可靠性至关重要。虽然它不直接测试 Frida 的动态插桩核心功能，但它验证了支撑这些核心功能的基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/internaltests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -72,8 +72,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -736,7 +738,4 @@ class InternalTests(unittest.TestCase):
                     for link_arg in link_args:
                         for lib in ('pthread', 'm', 'c', 'dl', 'rt'):
                             self.assertNotIn(f'lib{lib}.a', link_arg, msg=lin
-"""
-
-
 ```

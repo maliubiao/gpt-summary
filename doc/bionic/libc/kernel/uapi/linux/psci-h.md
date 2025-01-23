@@ -324,7 +324,7 @@ except Exception as e:
 
 总而言之，`bionic/libc/kernel/uapi/linux/psci.h` 定义了与电源管理相关的底层接口常量，Android 系统通过多个层次最终使用这些常量与固件或监控程序进行通信，实现对 CPU 和系统电源状态的控制。理解这些常量和其背后的机制对于深入理解 Android 的电源管理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/psci.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -335,8 +335,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -423,7 +425,4 @@ Prompt:
 #define PSCI_RET_DISABLED - 8
 #define PSCI_RET_INVALID_ADDRESS - 9
 #endif
-
-"""
-
 ```

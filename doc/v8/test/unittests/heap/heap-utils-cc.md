@@ -183,15 +183,17 @@ TEST_F(MyHeapTest, AllocationNearFullNewSpace) {
 
 `v8/test/unittests/heap/heap-utils.cc` 是一个用于 V8 堆单元测试的关键工具集，它提供了模拟各种堆状态和 GC 行为的功能，帮助开发者测试 V8 引擎的内存管理机制是否正确可靠。虽然它是 C++ 代码，但其功能直接关系到 JavaScript 程序的内存管理和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/heap-utils.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/heap-utils.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -537,7 +539,4 @@ ManualGCScope::~ManualGCScope() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

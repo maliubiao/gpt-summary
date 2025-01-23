@@ -54,15 +54,17 @@ Based on the code, it appears this file is responsible for managing resources us
 
 总而言之，`blink/renderer/platform/graphics/canvas_resource_provider.cc` 的核心职责是为 HTML Canvas 元素提供底层的图形资源管理和渲染支持，它根据不同的渲染需求和硬件环境，负责创建和维护合适的渲染目标，并处理资源同步和与 Chromium 合成器的集成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/canvas_resource_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -879,7 +881,4 @@ class CanvasResourceProviderPassThrough final : public CanvasResourceProvider {
       cc::PaintFlags::FilterQuality filter_quality,
       base::WeakPtr<WebGraphicsContext3DProviderWrapper>
           context_provi
-"""
-
-
 ```

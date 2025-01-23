@@ -133,7 +133,7 @@ python gen.py /path/to/sources/target.so /path/to/test/working_dir/target.so
 
 总结来说，`gen.py` 脚本虽然简单，但在 Frida 的开发和测试流程中扮演着重要的角色，它确保了测试环境的正确配置，使得 Frida 能够顺利地进行动态 instrumentation 和验证。 它虽然不直接进行逆向操作，但为逆向测试提供了必要的文件准备工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/143 list of file sources/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import shutil
 import sys
 
@@ -150,7 +152,4 @@ if __name__ == '__main__':
     if len(sys.argv) != 3:
         raise Exception('Requires exactly 2 args')
     shutil.copy2(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

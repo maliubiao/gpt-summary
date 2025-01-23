@@ -205,7 +205,7 @@ value = my_dict['b']
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/primitives/dict.py` 这个文件是 Frida 构建系统中处理字典类型的核心组件，它使得可以在 Meson 的构建脚本中使用和操作字典，并且提供了必要的类型检查和错误处理。理解这个文件有助于理解 Frida 的构建过程，以及在构建过程中可能出现的与字典操作相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/primitives/dict.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -213,8 +213,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 from __future__ import annotations
@@ -303,7 +305,4 @@ class DictHolder(ObjectHolder[T.Dict[str, TYPE_var]], IterableObject):
         if other not in self.held_object:
             raise InvalidArguments(f'Key {other} is not in the dictionary.')
         return self.held_object[other]
-
-"""
-
 ```

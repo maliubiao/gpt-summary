@@ -68,7 +68,7 @@ The user has provided the last part of a C++ test file for the Chromium Blink en
 
 这部分测试用例进一步验证了 Blink 引擎在处理更复杂情况下的本地光标矩形计算能力，包括非可编辑内容、不同字体大小、SVG 文本以及双向文本。这些测试确保了光标在各种渲染场景下都能被准确地定位和绘制，这对于用户编辑网页内容至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/local_caret_rect_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -76,8 +76,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 hild());
   const auto& text_34 = *To<Text>(target.lastChild());
   const auto& text_b = *To<Text>(target.nextSibling());
@@ -248,8 +250,4 @@ TEST_F(LocalCaretRectTest, AbsoluteCaretAtStartOrEndOfNonEditableBidiCulled) {
                 .ToString());
 }
 }  // namespace blink
-
-"""
-
-
 ```

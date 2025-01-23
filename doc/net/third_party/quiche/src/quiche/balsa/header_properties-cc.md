@@ -214,15 +214,17 @@ A developer might end up examining this code during debugging in several scenari
 
 In essence, this file is a foundational piece of the Chromium network stack, ensuring that HTTP headers conform to the specifications and are handled correctly. Any issue related to the structure, validity, or interpretation of HTTP headers can potentially lead a developer to investigate this code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/balsa/header_properties.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/balsa/header_properties.h"
 
 #include <array>
@@ -374,7 +376,4 @@ bool HasInvalidPathChar(absl::string_view value) {
 }
 
 }  // namespace quiche::header_properties
-
-"""
-
 ```

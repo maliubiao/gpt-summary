@@ -354,7 +354,7 @@ func checkLinkMode(supportedModes uint64) {
 
 这部分 `ztypes_linux.go` 文件的主要功能是定义了大量的 **常量** 和 **数据结构 (struct)**，这些定义是 Go 语言程序与 Linux 内核进行底层交互的基础。它涵盖了网络设备配置 (`ethtool`), 硬件时间戳, 精确时间协议 (PTP), 人机接口设备 (HID), 文件描述符管理, Netlink 消息, 闪存设备 (MTD), 近场通信 (NFC), 进程安全 (Landlock), 进程间通信 (IPC), 文件系统挂载, VPN (WireGuard), 网络配置 (Netlink), CAN 总线通信以及 Wi-Fi 设备管理 (`nl80211`) 等多个 Linux 子系统和硬件接口的定义。 这些定义使得 Go 程序能够以类型安全的方式访问和操作 Linux 底层的各项功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -362,8 +362,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ETHTOOL_LINK_MODE_40000baseCR4_Full_BIT                                 = 0x18
 	ETHTOOL_LINK_MODE_40000baseSR4_Full_BIT                                 = 0x19
 	ETHTOOL_LINK_MODE_40000baseLR4_Full_BIT                                 = 0x1a
@@ -1767,10 +1769,5 @@ const (
 	NL80211_CMD_GET_BEACON                                  = 0xd
 	NL80211_CMD_GET_COALESCE                                = 0x64
 	NL80211_CMD_GET_FTM_RESPONDER_STATS                     = 0x82
-	NL80211_CMD_GET_INTERFACE            
-"""
-
-
-
-
+	NL80211_CMD_GET_INTERFACE
 ```

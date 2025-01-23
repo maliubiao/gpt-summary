@@ -162,7 +162,7 @@ Line 3
 
 总而言之，`srcgen3.py` 自身是一个简单的文本读取和打印工具，但它在 Frida 项目中扮演着支持构建和测试的角色。用户通常不会直接运行它，而是通过执行 Frida 的构建或测试命令间接地触发它的执行。 调试时，如果发现构建或测试过程中涉及到文件处理，并且看到了 `srcgen3.py` 的执行记录，那么可以推断它是用来读取相关输入文件的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/90 gen extra/srcgen3.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -187,7 +189,4 @@ with open(options.input) as f:
     content = f.read().strip()
 
 print(content)
-
-"""
-
 ```

@@ -359,7 +359,7 @@ int main() {
 
 总而言之，`s_ceilf.c` 文件实现了向上取整的浮点数版本，它是 Android 基础数学库的重要组成部分，被 Framework 和 NDK 开发广泛使用。理解其实现细节和动态链接过程对于深入理解 Android 运行机制和进行性能优化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_ceilf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -369,8 +369,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* s_ceilf.c -- float version of s_ceil.c.
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
  */
@@ -420,7 +422,4 @@ ceilf(float x)
 	SET_FLOAT_WORD(x,i0);
 	return x;
 }
-
-"""
-
 ```

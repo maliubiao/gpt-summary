@@ -120,7 +120,7 @@ Here's a breakdown of the thought process used to analyze the Python code and ad
 
 总而言之，`generatorpickle.py` 扮演着将 Frida Swift 的 API 元数据序列化存储的关键角色，它是文档生成流水线中的一个重要环节，为最终用户提供关于 Frida Swift 功能的参考。虽然它本身不涉及复杂的逆向或底层操作，但它处理的数据与这些领域息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/docs/refman/generatorpickle.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -145,7 +147,4 @@ class GeneratorPickle(GeneratorBase):
 
     def generate(self) -> None:
         self.out.write_bytes(pickle.dumps(self.manual))
-
-"""
-
 ```

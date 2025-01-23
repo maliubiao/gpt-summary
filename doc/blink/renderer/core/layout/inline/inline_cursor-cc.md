@@ -59,15 +59,17 @@ span { color: blue; }
 
 `blink/renderer/core/layout/inline/inline_cursor.cc` 文件（第一部分）主要定义了 `InlineCursor` 类，它提供了一种在 Blink 引擎的内联布局物理片段层级结构中进行高效遍历和定位的机制。这个类可以访问内联元素的布局信息，例如位置、大小、文本内容等，并为实现诸如文本选择、光标定位等更高级的功能奠定了基础。它与 HTML 的结构、CSS 的样式以及 JavaScript 的动态操作都有着紧密的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_cursor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -922,8 +924,4 @@ PositionWithAffinity InlineCursor::PositionForPointInChild(
               point_in_container - child_item.OffsetInContainerFragment());
         }
       } else {
-  
-"""
-
-
 ```

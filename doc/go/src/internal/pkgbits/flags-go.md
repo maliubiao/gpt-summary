@@ -166,7 +166,7 @@ func main() {
 
 `go/src/internal/pkgbits/flags.go` 文件中的 `flagSyncMarkers` 常量是一个位标志，用于指示 Go 编译器或相关工具生成的包元数据文件是否包含同步标记。这有助于在读取这些文件时进行正确的同步处理，确保数据的完整性和正确性。使用者在使用与 `pkgbits` 相关的低级 API 时，需要注意同步标记的存在与否，以避免解析错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/pkgbits/flags.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -174,8 +174,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -185,9 +187,4 @@ package pkgbits
 const (
 	flagSyncMarkers = 1 << iota // file format contains sync markers
 )
-
-"""
-
-
-
 ```

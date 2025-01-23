@@ -178,7 +178,7 @@ func main() {
 
 `sysnum_linux_ppc64x.go` 文件是 Go 语言在 Linux/PPC64 架构上进行系统调用的基础设施的一部分。它定义了关键系统调用的编号，使得 Go 能够利用这些底层的操作系统功能来实现更高级别的特性，例如安全的随机数生成、高效的文件操作和可靠的进程管理。 普通 Go 开发者应该使用标准库提供的抽象，而不是直接操作这些底层的常量。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/sysnum_linux_ppc64x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -186,8 +186,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -203,9 +205,4 @@ const (
 	pidfdOpenTrap       uintptr = 434
 	openat2Trap         uintptr = 437
 )
-
-"""
-
-
-
 ```

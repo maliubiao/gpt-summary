@@ -127,13 +127,15 @@ Maglev might optimize `getX` assuming that the object passed to it always has pr
 
 **In summary, this part of `maglev-code-generator.cc` is crucial for the reliability and performance of V8's Maglev compiler. It ensures that optimized code can be safely abandoned when necessary, allowing the JavaScript engine to fall back to the interpreter and maintain correctness even in dynamically typed scenarios.** The generated deoptimization data acts as a blueprint for this fallback process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-code-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  }
+### 源代码
+```
+}
             DCHECK_EQ(i, reg.index());
             BuildDeoptFrameSingleValue(value, input_location, virtual_objects);
             i++;
@@ -596,8 +598,4 @@ Handle<DeoptimizationData> MaglevCodeGenerator::GenerateDeoptimizationData(
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -209,7 +209,7 @@ Initially, I might have focused too much on the *direct* application of this scr
 
 总之，`delwithsuffix.py` 是一个简单的文件清理工具，但在构建系统中扮演着重要的角色，帮助管理和清理构建产物。理解其功能和使用场景有助于理解 Frida 的构建过程和排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/scripts/delwithsuffix.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -217,8 +217,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013 The Meson development team
 
@@ -246,7 +248,4 @@ def run(args: T.List[str]) -> int:
 
 if __name__ == '__main__':
     run(sys.argv[1:])
-
-"""
-
 ```

@@ -129,7 +129,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 因此，当用户使用 Frida Stalker 功能对 ARM 进程进行动态插桩时，目标进程执行的每一条被监控的指令都会经过 `gumstalker-arm.c` 中的代码处理。这个文件是 Frida Stalker 在 ARM 平台上实现动态插桩的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-arm/gumstalker-arm.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ->observer, &p, sizeof (p));
   }
 }
@@ -1054,7 +1056,4 @@ gum_exec_block_write_thumb_handle_not_taken (GumExecBlock * block,
       g_assert_not_reached ();
 
     gum_thumb_writer_put
-"""
-
-
 ```

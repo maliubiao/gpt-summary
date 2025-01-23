@@ -168,15 +168,17 @@ const capabilities = {
 
 总而言之，`identifiability_metrics.cc` 是 Chromium 浏览器为了保护用户隐私，在 WebRTC 功能中收集和分析用户设备 RTP 能力信息的一个关键组成部分。 它通过提取编解码器和报头扩展的特征，并将其转化为隐私预算系统可以使用的 token，来帮助评估和限制用户追踪的风险。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/identifiability_metrics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -237,7 +239,4 @@ void IdentifiabilityAddRTCRtpCapabilitiesToBuilder(
 }
 
 }  // namespace blink
-
-"""
-
 ```

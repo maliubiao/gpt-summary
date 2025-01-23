@@ -117,7 +117,7 @@ Based on these observations, I can formulate the overall functionality and addre
 * **检查 `ProofSource` 的实现:**  确认 `ProofSource` 能够正确地为请求的 SNI 提供证书。
 * **分析网络抓包:**  使用 Wireshark 等工具抓取网络包，可以查看客户端和服务器之间交换的 TLS 握手消息，包括 ClientHello 和 ServerHello，从而诊断握手失败的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/tls_server_handshaker.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 cket_stats =
       std::move(decrypt_ticket_stats);
 
@@ -559,8 +561,4 @@ EncryptionLevel TlsServerHandshaker::GetEncryptionLevelToSendCryptoDataOfSpace(
 }
 
 }  // namespace quic
-
-"""
-
-
 ```

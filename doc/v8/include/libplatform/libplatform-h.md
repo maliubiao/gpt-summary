@@ -231,15 +231,17 @@ Imagine you're embedding V8 in a Node.js-like environment. You might use the pla
 
 In summary, `v8/include/libplatform/libplatform.h` defines the crucial interface for V8 to interact with the underlying operating system. It's a fundamental part of embedding V8 and managing its execution environment. While you don't directly use these functions in JavaScript code, understanding their purpose is essential for developers who are integrating the V8 engine into larger applications.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/libplatform/libplatform.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/libplatform/libplatform.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -352,7 +354,4 @@ V8_PLATFORM_EXPORT void NotifyIsolateShutdown(v8::Platform* platform,
 }  // namespace v8
 
 #endif  // V8_LIBPLATFORM_LIBPLATFORM_H_
-
-"""
-
 ```

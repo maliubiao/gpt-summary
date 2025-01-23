@@ -145,7 +145,7 @@ func main() {
 
 总而言之，`go/src/runtime/fds_nonunix.go` 文件在非 Unix 系统上提供了一个空的 `checkfds` 函数实现，这暗示着在 Unix 系统上可能存在一个用于检查或管理文件描述符的相应实现。理解文件描述符的概念以及如何在程序中正确管理它们对于编写可靠的 Unix 系统程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/fds_nonunix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -153,8 +153,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -166,9 +168,4 @@ package runtime
 func checkfds() {
 	// Nothing to do on non-Unix platforms.
 }
-
-"""
-
-
-
 ```

@@ -279,7 +279,7 @@ except Exception as e:
 
 `bionic/libc/kernel/uapi/linux/nvram.h` 是一个定义了与 NVRAM 设备交互所需的 `ioctl` 命令代码的头文件。它在 Android 系统中用于持久化存储一些关键的设备配置信息。用户空间程序通过 libc 提供的 `ioctl` 函数，结合这个头文件中定义的宏，与内核中的 NVRAM 驱动程序进行通信。理解这个文件以及相关的系统调用，对于理解 Android 底层的硬件交互至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/nvram.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -290,8 +290,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -306,7 +308,4 @@ Prompt:
 #define NVRAM_FIRST_BYTE 14
 #define NVRAM_OFFSET(x) ((x) - NVRAM_FIRST_BYTE)
 #endif
-
-"""
-
 ```

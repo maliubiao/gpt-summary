@@ -112,11 +112,13 @@ console.timeEnd('Second Run');
 
 `code-serializer.cc` 是 V8 引擎中负责持久化和恢复编译后 JavaScript 代码的核心组件。 它通过序列化和反序列化 `SharedFunctionInfo` 对象，实现了代码缓存机制，从而显著提升了 JavaScript 代码的执行效率。 它的存在对于构建高性能的 JavaScript 运行时环境至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/code-serializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1005,7 +1007,4 @@ SerializedCodeData SerializedCodeData::FromPartiallySanityCheckedCachedData(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

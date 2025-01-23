@@ -71,7 +71,7 @@ func main() {
 
 ### 总结
 这部分代码主要用于解析和处理 ELF 和 Mach-O 文件格式，提供了对文件结构、符号表、重定位信息等的操作支持。它是 Go 语言标准库中用于调试和二进制文件分析的重要工具。
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/internal/stdlib/manifest.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -80,8 +80,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ,
 		{"TypedefType.CommonType", Field, 0},
 		{"TypedefType.Type", Field, 0},
@@ -2059,9 +2061,4 @@ Prompt:
 		{"FlagHasTLVDescriptors", Const, 10},
 		{"FlagIncrLink", Const, 10},
 		{"FlagLazyInit", C
-"""
-
-
-
-
 ```

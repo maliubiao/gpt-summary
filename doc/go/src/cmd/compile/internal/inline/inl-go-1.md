@@ -219,7 +219,7 @@ The overall goal of this file is to implement the inlining optimization in the G
 
 总而言之，`inl.go` 是 Go 编译器进行函数内联优化的关键实现，旨在提升程序的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/inline/inl.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -228,8 +228,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 , "inline", ir.FuncName(callerfn),
 				fmt.Sprintf("%s cannot be inlined", ir.PkgFuncName(callee)))
 		}
@@ -531,10 +533,4 @@ func analyzeFuncProps(fn *ir.Func, p *pgoir.Profile) {
 	}
 	inlheur.AnalyzeFunc(fn, canInline, budgetForFunc, inlineMaxBudget)
 }
-
-"""
-
-
-
-
 ```

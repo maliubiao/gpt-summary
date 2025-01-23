@@ -138,14 +138,16 @@ By following this thought process, combining code analysis with knowledge of web
 
 `abstract_worker.cc` 文件中的 `AbstractWorker` 类是 Blink 引擎中处理 Web Worker 的核心组件之一。它通过 `ResolveURL` 方法强制执行关键的安全策略（同源策略和 CSP）并验证 Worker 脚本的 URL，确保了 Web Workers 在安全可靠的环境中运行。这直接关系到 JavaScript 中 Worker API 的使用，并受到 HTML 中 CSP 配置的影响。 理解这个文件有助于理解浏览器如何处理 Worker 的创建和加载过程，以及如何避免常见的安全和编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/abstract_worker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -231,7 +233,4 @@ void AbstractWorker::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

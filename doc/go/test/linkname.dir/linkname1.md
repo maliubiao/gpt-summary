@@ -167,15 +167,17 @@ func main() {
 
 总而言之，这段代码本身是一个简单的字节切片查找函数，但其存在的路径名强烈暗示了它可能与 Go 语言的 `//go:linkname` 指令有关，用于在测试或其他特殊场景下链接到内部实现。 使用者需要谨慎对待 `//go:linkname`，避免滥用并理解其潜在的风险。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/linkname.dir/linkname1.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 package x
 
 func indexByte(xs []byte, b byte) int { // ERROR "xs does not escape" "can inline indexByte"
@@ -186,9 +188,4 @@ func indexByte(xs []byte, b byte) int { // ERROR "xs does not escape" "can inlin
 	}
 	return -1
 }
-
-"""
-
-
-
 ```

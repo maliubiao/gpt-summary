@@ -122,11 +122,13 @@ add("hello", "world");
 
 `FrameTranslationBuilder` 是 V8 引擎中一个关键的内部组件，它负责记录和编码优化代码执行时的状态信息，以便在需要进行反优化时能够正确地恢复程序的执行环境。虽然 JavaScript 开发者不能直接访问或操作这个类，但它的工作直接影响着 JavaScript 代码的性能和执行的稳定性。理解其功能有助于更好地理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/frame-translation-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -667,7 +669,4 @@ void FrameTranslationBuilder::StoreJSFrameFunction() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

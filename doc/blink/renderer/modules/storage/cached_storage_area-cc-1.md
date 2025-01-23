@@ -141,7 +141,7 @@ This structured approach ensures that all aspects of the request are addressed c
 
 这段 `cached_storage_area.cc` 代码定义了 `CachedStorageArea` 类，它提供了一个用于缓存本地存储 (`localStorage`) 和会话存储 (`sessionStorage`) 数据的机制。`Create` 方法负责创建和初始化缓存，而 `EvictCachedData` 方法则负责清空缓存。这个组件在 Blink 引擎的存储管理中扮演着重要的角色，通过缓存来提升存储操作的性能。 开发者可以通过在相关代码处设置断点并执行触发存储操作的网页行为来调试和分析 `CachedStorageArea` 的工作流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/storage/cached_storage_area.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 UChar));
       return result;
     }
@@ -163,8 +165,4 @@ void CachedStorageArea::EvictCachedData() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

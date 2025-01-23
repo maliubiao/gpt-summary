@@ -239,7 +239,7 @@ This iterative process of scanning, inferring, elaborating, and refining helped 
 
 总而言之，这段代码是 `PreParser` 类的蓝图，它定义了预解析器在扫描 JavaScript 代码时需要执行的各种操作和维护的状态。预解析是 V8 引擎中一个重要的性能优化环节，它在不进行完整解析的前提下，提取关键信息，为后续的编译和优化奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/preparser.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/preparser.h以.tq结尾，那它是个v8 torque源代码，
@@ -247,8 +247,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 }
 
  private:
@@ -963,8 +965,4 @@ Prompt:
 }  // namespace v8
 
 #endif  // V8_PARSING_PREPARSER_H_
-
-"""
-
-
 ```

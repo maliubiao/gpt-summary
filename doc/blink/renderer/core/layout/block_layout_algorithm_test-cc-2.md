@@ -96,15 +96,17 @@ The user wants a summary of the functionality of the given C++ code snippet, whi
 
 这部分测试用例集中验证了 Blink 引擎的块布局算法在处理内容溢出、浮动元素以及新的 Formatting Context 时的布局计算逻辑，特别是关于元素分片和定位的正确性。这些测试覆盖了多种复杂的布局场景，确保了浏览器在渲染各种 HTML 和 CSS 结构时的行为符合预期，并能有效地预防由不合理的 CSS 样式或动态 DOM 操作导致的布局错误和崩溃问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/block_layout_algorithm_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ayoutUnit(1000), kIndefiniteSize),
       /* stretch_inline_size_if_auto */ true,
       node.CreatesNewFormattingContext(), kFragmentainerSpaceAvailable);
@@ -625,8 +627,4 @@ input::first-line {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

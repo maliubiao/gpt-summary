@@ -107,7 +107,7 @@ Therefore, the overall function of this code snippet is to **test various scenar
 
 这部分 `spdy_session_unittest.cc` 的代码主要功能是 **验证 `SpdySession` 类在处理连接生命周期中的各种事件和状态变化时的正确性**。 它通过模拟不同的网络场景和协议帧交互，测试了 `SpdySession` 对 `GOAWAY` 帧、网络变化、PING 帧、流 ID 耗尽、最大并发流设置等关键特性的处理逻辑，确保了 HTTP/2 连接管理的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 spdy_stream =
       CreateStreamSynchronously(SPDY_REQUEST_RESPONSE_STREAM, session_,
                                 test_url_, MEDIUM, NetLogWithSource());
@@ -1028,7 +1030,4 @@ TEST_F(SpdySessionTest, CancelPendingCreateStream) {
       request.StartRequest(SPDY_BIDIRECTIONAL_STREAM, session_, test_url_,
                            false, MEDIUM, SocketTag(), NetLogWithSource(),
                            callback->callback(), TRAFFIC_ANNOTAT
-"""
-
-
 ```

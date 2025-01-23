@@ -224,15 +224,17 @@ console.log(result); // 输出 30
 
 总而言之，`maglev-compilation-info.cc` 中定义的 `MaglevCompilationInfo` 类是 V8 中 Maglev 编译器的关键组成部分，它负责存储和管理编译过程中的各种信息，并参与决策如何对 JavaScript 代码进行优化。虽然 JavaScript 开发者不会直接操作这个类，但理解其背后的原理有助于编写更易于 V8 优化的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-compilation-info.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-compilation-info.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -432,7 +434,4 @@ MaglevCompilationInfo::DetachCanonicalHandles() {
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

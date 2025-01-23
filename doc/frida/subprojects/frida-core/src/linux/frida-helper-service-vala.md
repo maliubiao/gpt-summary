@@ -144,7 +144,7 @@ inject_library_debug(1234, "/path/to/library.so")
    - 用户调用 `stop` 时，`LinuxHelperService` 会执行 `shutdown` 操作，清理资源并退出主循环。
 
 通过这些步骤，用户可以逐步跟踪 Frida 服务的执行过程，并在需要时进行调试。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/linux/frida-helper-service.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public int main (string[] args) {
 		Posix.setsid ();
@@ -346,7 +348,4 @@ namespace Frida {
 		}
 	}
 }
-
-"""
-
 ```

@@ -117,7 +117,7 @@ This systematic approach, starting with a high-level overview and then drilling 
 
 这第 11 部分的 `url_request_unittest.cc` 文件主要集中在测试 `URLRequest` 类在 **HTTP 重定向处理** 和 **HTTP 头部管理** 方面的功能。 它通过大量的单元测试用例，覆盖了各种重定向场景（不同的状态码、HTTP 方法、跨域与同域、Cookie 处理、头部设置等），以及各种 HTTP 头部（默认头部、覆盖头部、特定头部）。 这部分测试确保了 `URLRequest` 能够按照 HTTP 规范正确地处理重定向和管理 HTTP 头部，从而保证了 Chromium 浏览器网络请求的正确性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第11部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tOriginHeaderTest(https_redirect_url, "OPTIONS", "GET",
                                std::string());
   HTTPRedirectOriginHeaderTest(url, "POST", "GET", std::string());
@@ -975,7 +977,4 @@ TEST_F(URLRequestTestReferrerPolicy, HTTPToSameOriginHTTP) {
   VerifyReferrerAfterRedirect(
       ReferrerPolicy::ORIGIN_ONLY_ON_TRANSITION_CROSS_ORIGIN, referrer,
       r
-"""
-
-
 ```

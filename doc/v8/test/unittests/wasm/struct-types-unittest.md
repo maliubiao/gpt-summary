@@ -21,9 +21,12 @@ Based on this analysis, I can summarize the file's purpose.
 
 总而言之，这个单元测试文件用于确保 `StructType` 类的正确实现，特别是关于结构体的大小计算、字段的偏移量以及字段布局的逻辑。它通过一系列独立的测试用例来验证这些核心功能是否按预期工作。
 
-Prompt: ```这是目录为v8/test/unittests/wasm/struct-types-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/wasm/struct-types-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -94,6 +97,4 @@ TEST_F(StructTypesTest, CopyingOffsets) {
 
 }  // namespace struct_types_unittest
 }  // namespace v8::internal::wasm
-
-"""
 ```

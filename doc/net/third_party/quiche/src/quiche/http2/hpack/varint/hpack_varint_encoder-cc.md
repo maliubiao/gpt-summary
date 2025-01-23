@@ -193,15 +193,17 @@ JavaScript 在收到 HTTP/2 响应后，浏览器会解码这些 HPACK 压缩的
 
 总而言之，`hpack_varint_encoder.cc` 文件中的代码是 Chromium 网络栈中实现 HTTP/2 HPACK 头部压缩的关键组成部分，负责将整数值高效地编码成变长格式，从而减少网络传输的开销。理解其功能和潜在的错误使用场景对于开发和调试网络应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/varint/hpack_varint_encoder.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ void HpackVarintEncoder::Encode(uint8_t high_bits, uint8_t prefix_length,
 }
 
 }  // namespace http2
-
-"""
-
 ```

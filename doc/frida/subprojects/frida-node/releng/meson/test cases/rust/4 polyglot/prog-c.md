@@ -149,7 +149,7 @@ Java.perform(function() {
 
 总而言之，这个简单的 `prog.c` 文件在一个更大的 Frida 测试框架中扮演着一个角色，用于验证 Frida 在多语言环境下动态 instrumentation 的能力。它通过故意调用一个未定义的函数，提供了一个清晰的 hook 点，方便测试 Frida 的拦截和代码注入功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/rust/4 polyglot/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 void f();
@@ -167,7 +169,4 @@ int main(void) {
     printf("Hello from C!\n");
     f();
 }
-
-"""
-
 ```

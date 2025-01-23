@@ -164,7 +164,7 @@ By following this detailed breakdown, I can systematically analyze the script an
 
 通过以上步骤，用户可以定位构建过程中的问题，例如缺少依赖、配置错误或网络问题，并采取相应的措施进行修复。 这个脚本本身也提供了一些清理和创建目录的步骤，可以帮助用户从一个干净的状态开始构建，减少环境干扰带来的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/manual tests/4 standalone binaries/build_windows_package.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, urllib.request, shutil, subprocess
@@ -206,7 +208,4 @@ subprocess.check_call([r'\Program Files\Inno Setup 5\ISCC.exe', 'myapp.iss'],
                       cwd='build')
 shutil.copy('build/setup.exe', 'myapp 1.0.exe')
 shutil.rmtree('build')
-
-"""
-
 ```

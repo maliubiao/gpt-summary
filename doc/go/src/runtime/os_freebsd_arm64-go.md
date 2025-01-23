@@ -132,7 +132,7 @@ func main() {
 
 总而言之，`go/src/runtime/os_freebsd_arm64.go` 中的 `cputicks()` 函数在 FreeBSD ARM64 平台上提供了一个 CPU 时间片的近似值，主要用于 Go 语言的性能分析器进行粗略的时间度量。使用者应该意识到其近似性，并在需要高精度测量时选择更合适的方法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_freebsd_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -140,8 +140,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -153,9 +155,4 @@ func cputicks() int64 {
 	// nanotime() is a poor approximation of CPU ticks that is enough for the profiler.
 	return nanotime()
 }
-
-"""
-
-
-
 ```

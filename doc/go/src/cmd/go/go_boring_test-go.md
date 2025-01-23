@@ -126,15 +126,17 @@ go build -tags boringcrypto -ldflags="-extld=false" main.go   # 第二次构建
 
 总之，这段测试代码验证了在特定的构建配置 (`boringcrypto` 标签和内部链接器) 下，Go 工具链能够正确处理 `crypto` 标准库的链接。这对于确保 `boringcrypto` 构建的可靠性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/go_boring_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -157,9 +159,4 @@ func TestBoringInternalLink(t *testing.T) {
 	tg.run("build", "-ldflags=-w -extld=false", tg.path("main.go"))
 	tg.run("build", "-ldflags=-extld=false", tg.path("main.go"))
 }
-
-"""
-
-
-
 ```

@@ -137,7 +137,7 @@ Strategizing complete. I will now generate the response based on these insights.
 
 这部分代码主要负责 **解释和执行 `meson.build` 文件中关于构建目标定义、自定义命令执行、版本控制信息获取、安装规则设定以及测试和基准测试配置的指令。**  它将用户在 `meson.build` 文件中声明的意图转换为 Meson 能够理解和处理的内部表示，为后续的构建过程奠定了基础。  它涵盖了从执行任意脚本到管理各种文件类型的安装，以及定义软件质量保证流程的关键方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 =True),
         MULTI_OUTPUT_KW,
         # Cannot use the COMMAND_KW because command is allowed to be empty
@@ -827,7 +829,4 @@ Prompt:
             'input',
             ContainerTypeInfo(list, (mesonlib.File, str)),
             listif
-"""
-
-
 ```

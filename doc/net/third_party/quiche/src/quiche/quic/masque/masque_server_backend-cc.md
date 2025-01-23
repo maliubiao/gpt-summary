@@ -174,15 +174,17 @@ By following these steps, you can systematically analyze the code and derive a c
 
 总而言之，`masque_server_backend.cc` 文件是 Chromium QUIC 协议中处理 MASQUE 服务器端逻辑的关键组件，它负责识别、管理和处理通过 MASQUE 隧道转发的请求。理解其功能和可能的错误场景对于调试 MASQUE 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/masque/masque_server_backend.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -406,7 +408,4 @@ bool MasqueServerBackend::GetConcealedAuthKeyForId(
 }
 
 }  // namespace quic
-
-"""
-
 ```

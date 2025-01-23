@@ -216,15 +216,17 @@ let db2 = window.openDatabase('mydb1', '1.0', 'My First DB', 2 * 1024 * 1024);
 
 总而言之，`blink/renderer/modules/webdatabase/database_context.cc` 文件是 Blink 引擎中负责管理 Web SQL 数据库上下文的核心组件，它连接了 JavaScript 的 API 调用和底层的数据库操作，并负责处理安全、生命周期管理和错误处理等关键任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/database_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All Rights Reserved.
  * Copyright (C) 2011 Google, Inc. All Rights Reserved.
@@ -505,7 +507,4 @@ void DatabaseContext::LogErrorMessage(ExecutionContext* context,
 }
 
 }  // namespace blink
-
-"""
-
 ```

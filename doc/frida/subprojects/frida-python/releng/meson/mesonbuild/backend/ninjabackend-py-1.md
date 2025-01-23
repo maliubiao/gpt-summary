@@ -115,7 +115,7 @@ I will summarize the main functionalities of the code, providing examples where 
 
 这段代码片段是 Frida 构建系统 Ninja 后端的核心部分，负责收集构建目标的元数据（源代码和链接器信息），并根据这些信息以及目标的类型和依赖关系，生成用于驱动 Ninja 构建工具的构建规则。它涵盖了编译、链接、自定义命令执行、依赖关系管理以及特定语言（如 Java 和 C#）的构建过程。其主要目的是将高级的构建描述转化为 Ninja 可以理解和执行的低级构建指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,9 +124,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
-      Adds the source file introspection information for a language of a target
+### 源代码
+```python
+Adds the source file introspection information for a language of a target
 
         Internal introspection storage format:
         self.introspection_data = {
@@ -802,8 +804,4 @@ Prompt:
                 ofilename = os.path.join(self.get_target_private_dir(target), ofilebase)
                 elem = NinjaBuildElement(self.all_outputs, ofilename, "CUSTOM_COMMAND", rel_sourcefile)
                 elem.add_item('COMMAND', ['resgen', rel_sourcefile, ofilename])
-       
-"""
-
-
 ```

@@ -164,15 +164,17 @@ A
 
 总的来说，这部分代码是 Blink 渲染引擎核心布局功能的重要组成部分，它为布局计算、渲染层管理和布局更新提供了必要的底层支持。理解这些功能有助于理解浏览器是如何将 HTML、CSS 和 JavaScript 代码转化为用户可见的页面的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 utObject::NextInPreOrder() const {
   NOT_DESTROYED();
   if (LayoutObject* o = SlowFirstChild())
@@ -1147,7 +1149,4 @@ LayoutObject* LayoutObject::ContainerForFixedPosition(
   NOT_DESTROYED();
   DCHECK(!IsText());
   return FindAncestorByPredicate(this, skip_info, [](LayoutObjec
-"""
-
-
 ```

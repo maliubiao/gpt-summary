@@ -158,7 +158,7 @@ func main() {
 
 总而言之，`go/src/runtime/debug/stubs.go` 定义的这些函数提供了一种与 Go 运行时系统进行交互的方式，主要用于调试、性能分析和一些高级的运行时配置。使用者需要理解每个函数的作用和潜在影响，避免不当使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/debug/stubs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -186,9 +188,4 @@ func setGCPercent(int32) int32
 func setPanicOnFault(bool) bool
 func setMaxThreads(int) int
 func setMemoryLimit(int64) int64
-
-"""
-
-
-
 ```

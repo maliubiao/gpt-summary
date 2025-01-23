@@ -287,7 +287,7 @@ session.detach()
 
 虽然 `asm/vm86.h` 定义了与 VM86 模式交互的接口，但在现代 Android 应用开发中直接使用的情况非常罕见。 它主要与内核底层的操作或虚拟化技术相关。  理解其定义的数据结构和常量有助于理解 Linux 内核中 VM86 功能的实现。 使用 Frida 可以帮助我们动态地观察系统调用，从而了解应用程序与内核的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/vm86.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -298,8 +298,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -384,7 +386,4 @@ struct vm86plus_struct {
   struct vm86plus_info_struct vm86plus;
 };
 #endif
-
-"""
-
 ```

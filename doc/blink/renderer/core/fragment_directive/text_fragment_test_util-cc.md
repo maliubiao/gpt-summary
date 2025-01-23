@@ -112,14 +112,16 @@ By following these steps, a comprehensive understanding of the C++ test utility 
 
 总而言之， `text_fragment_test_util.cc` 提供了一个测试框架，帮助 Chromium 开发者可靠地测试文本片段功能的各个方面，确保浏览器能够正确处理和呈现包含文本片段的 URL，并与 HTML, CSS, 和 JavaScript 协同工作。它通过提供虚拟时间控制和异步任务管理等功能，简化了复杂场景的测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fragment_directive/text_fragment_test_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -227,7 +229,4 @@ void TextFragmentAnchorTestBase::DisableVirtualTimeIfSet() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -155,7 +155,7 @@ Let's break down the thought process for analyzing this C++ disassembler code.
 
 作为 V8 诊断工具链的一部分，`v8/src/diagnostics/arm64/disasm-arm64.cc` 提供了在 ARM64 架构上反汇编机器码指令的核心功能。它能够解析 ARM64 和 NEON 指令的编码，提取关键信息，并将其转换为可读的汇编语言表示。这个反汇编器是 V8 内部调试、性能分析以及开发者理解 JavaScript 代码执行细节的重要工具。它通过精细的指令解码和格式化逻辑，为开发者提供了深入了解 V8 生成的底层机器码的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/arm64/disasm-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/arm64/disasm-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -163,8 +163,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 others undefined.
   static const NEONFormatMap map_shift_tb = {
       {22, 21, 20, 19, 30},
@@ -1214,8 +1216,4 @@ void Disassembler::Disassemble(FILE* file, uint8_t* start, uint8_t* end,
 }  // namespace disasm
 
 #endif  // V8_TARGET_ARCH_ARM64
-
-"""
-
-
 ```

@@ -195,7 +195,7 @@ console.log("Has file descriptor after removal:", Cloak.hasFileDescriptor(fdToCl
 
 总而言之，`gumquickcloak.c` 是 Frida 将其核心的 cloak 功能暴露给 JavaScript 开发者的桥梁，使得用户可以通过编写脚本来动态地控制 Frida 在运行时忽略某些特定的系统资源，从而实现更精细化的动态分析和逆向工程。理解这个文件的功能和实现方式，有助于更有效地使用 Frida 进行高级的系统分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickcloak.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2024 Francesco Tamagni <mrmacete@protonmail.ch>
  *
@@ -420,7 +422,4 @@ GUMJS_DEFINE_FUNCTION (gumjs_cloak_has_file_descriptor)
 
   return JS_NewBool (ctx, gum_cloak_has_file_descriptor (fd));
 }
-
-"""
-
 ```

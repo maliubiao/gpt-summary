@@ -127,7 +127,7 @@ console.log(regex3.test(text5)); // 输出: false
 
 `v8/src/regexp/regexp-compiler.cc` 的这一部分主要负责 V8 引擎中 **正则表达式的编译优化和代码生成**。它通过实现 **快速检查机制** 和 **单字节字符串过滤** 等技术，以及对 **循环节点** 和 **断言节点** 的特殊处理，来提升正则表达式的匹配性能。最终，它会将正则表达式转化为高效的机器码指令，供 V8 引擎执行。 这段代码是 JavaScript 正则表达式功能高效运行的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -135,9 +135,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
- quarks = elm.atom()->data();
+### 源代码
+```cpp
+quarks = elm.atom()->data();
       for (int i = 0; i < characters && i < quarks.length(); i++) {
         QuickCheckDetails::Position* pos =
             details->positions(characters_filled_in);
@@ -934,7 +936,4 @@ void TextNode::TextEmitPass(RegExpCompiler* compiler, TextEmitPassType pass,
             bounds_checked =
                 EmitAtomNonLetter(isolate, compiler, quark, backtrack,
                                   cp_offset + j, ne
-"""
-
-
 ```

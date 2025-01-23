@@ -118,7 +118,7 @@ By following these steps, systematically analyzing the code, considering the con
 
 总而言之，虽然 `main.cpp` 的代码非常简洁，但它在 MPI 编程和动态 instrumentation 的上下文中扮演着重要的角色。它是理解 MPI 程序生命周期、测试 Frida 功能、以及作为逆向分析的起点的一个基础构建块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/17 mpi/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <mpi.h>
 #include <stdio.h>
 
@@ -140,7 +142,4 @@ int main(int argc, char **argv)
     }
     MPI::Finalize();
 }
-
-"""
-
 ```

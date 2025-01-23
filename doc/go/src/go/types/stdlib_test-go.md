@@ -201,7 +201,7 @@ go test -run TestStdlib
 
 总而言之，这段代码是 `go/types` 包自身功能的一个重要测试，它通过对标准库的大量代码进行类型检查，确保了 `go/types.Check` 函数的正确性和健壮性。理解这段代码有助于我们更好地理解 `go/types` 包的工作原理以及如何使用它来进行 Go 代码的静态分析。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/types/stdlib_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -209,8 +209,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -705,9 +707,4 @@ func (w *walker) walk(dir string) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

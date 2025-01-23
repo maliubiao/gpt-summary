@@ -140,7 +140,7 @@ Some data which gets processed before installation
 
 总而言之，`frida/subprojects/frida-node/releng/meson/test cases/failing/89 custom target install data/Info.plist.cpp` 文件本身只是一个简单的标记，但它指向的是 Frida 在安装过程中处理 `Info.plist` 文件的逻辑，这涉及到构建系统配置、数据处理脚本、以及最终生成的应用程序元数据。 开发者通过分析这个文件及其相关的构建日志和脚本，可以定位安装过程中数据处理环节出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/89 custom target install data/Info.plist.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,10 +148,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 Some data which gets processed before installation
-
-"""
-
 ```

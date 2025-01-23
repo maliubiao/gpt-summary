@@ -106,14 +106,16 @@ Finally, the information is organized into logical sections (Functionality, Rela
 
 `media_stream_source_test.cc` 是一个关键的单元测试文件，用于确保 `MediaStreamSource` 类作为 WebRTC 和 Media Capture and Streams API 的底层组件，能够正确地管理音频数据的生产和消费。它通过模拟和断言验证了各种场景下的预期行为，间接地保障了 Web 平台上音频流功能的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/media_stream_source_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ TEST_F(MediaStreamSourceTest, RemoveEmptyAudioConsumer) {
   EXPECT_FALSE(source->RemoveAudioConsumer());
 }
 }  // namespace blink
-
-"""
-
 ```

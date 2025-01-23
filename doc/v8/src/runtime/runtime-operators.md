@@ -135,11 +135,13 @@ if (obj1 === obj3) {
 
 `v8/src/runtime/runtime-operators.cc` 文件是 V8 引擎中至关重要的组成部分，它实现了 JavaScript 各种运算符的底层逻辑。JavaScript 代码通过这些底层的 C++ 函数才能执行相应的运算和比较操作。开发者虽然不会直接与这些 C++ 代码交互，但理解其作用有助于更深入地理解 JavaScript 的执行原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-operators.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ RUNTIME_FUNCTION(Runtime_GreaterThanOrEqual) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

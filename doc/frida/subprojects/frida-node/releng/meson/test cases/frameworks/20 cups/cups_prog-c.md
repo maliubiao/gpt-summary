@@ -117,7 +117,7 @@ By following these steps, I could systematically analyze the code and provide a 
 
 总而言之，`cups_prog.c` 是一个非常简单的 C 程序，其核心功能是调用 `cupsGetDefault()` 来获取默认打印机。它的存在主要是为了作为 Frida 动态 instrumentation 工具的测试目标，用于验证 Frida 是否能够有效地 hook 和操作 CUPS 库中的函数。 对于逆向工程师来说，理解这样的简单示例是构建更复杂 Frida 脚本分析实际应用程序的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/20 cups/cups_prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <cups/cups.h>
 
 int
@@ -135,7 +137,4 @@ main()
     cupsGetDefault();
     return 0;
 }
-
-"""
-
 ```

@@ -188,7 +188,7 @@ Hello processed
 
 总而言之，`copyrunner.py` 虽小但作用关键，它在 Frida 的测试流程中扮演着运行其他测试程序的重要角色，确保 Frida 的各项功能能够正确执行。理解其功能和可能出现的错误，有助于开发者进行 Frida 的开发和调试工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/native/3 pipeline/depends/copyrunner.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, subprocess
@@ -205,7 +207,4 @@ import sys, subprocess
 prog, infile, outfile = sys.argv[1:]
 
 subprocess.check_call([prog, infile, outfile])
-
-"""
-
 ```

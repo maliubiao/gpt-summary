@@ -94,7 +94,7 @@ Here's a breakdown of the thought process to achieve that:
 
 总而言之，`v8/src/objects/js-temporal-objects.h` 是 V8 引擎中至关重要的一个头文件，它定义了 JavaScript Temporal API 的核心数据结构和操作，使得 JavaScript 能够以规范且高效的方式处理日期和时间。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.h以.tq结尾，那它是个v8 torque源代码，
@@ -102,9 +102,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
+### 源代码
+```c
 class JSTemporalPlainYearMonth
     : public TorqueGeneratedJSTemporalPlainYearMonth<JSTemporalPlainYearMonth,
                                                      JSObject> {
@@ -568,8 +569,4 @@ bool IsValidDuration(Isolate* isolate, const DurationRecord& dur);
 }  // namespace v8
 #include "src/objects/object-macros-undef.h"
 #endif  // V8_OBJECTS_JS_TEMPORAL_OBJECTS_H_
-
-"""
-
-
 ```

@@ -136,7 +136,7 @@ Finally, I organized the information into logical sections (Functionality, Relat
 
 总而言之，`sync_from_upstream.py` 是 Frida 项目中一个关键的维护工具，它确保了 Frida 能够依赖于最新且经过适当修改的外部库，这对于保证 Frida 的功能和稳定性至关重要，并且间接地支持了使用 Frida 进行逆向分析的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/sync-from-upstream.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 from pathlib import Path
 import re
@@ -331,7 +333,4 @@ class UnknownUpstreamError(Exception):
 
 if __name__ == '__main__':
     sync(os.path.abspath(sys.argv[1]))
-
-"""
-
 ```

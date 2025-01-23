@@ -234,7 +234,7 @@ if __name__ == '__main__':
 
 通过以上分析和 Frida Hook 示例，你可以更深入地了解 Android Framework 如何逐步调用到与 `cycx_cfm.handroid` 中定义的结构和常量相关的内核驱动程序进行交互，从而实现对 CYCX 硬件的控制和管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/cycx_cfm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -245,8 +245,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -298,7 +300,4 @@ struct cycx_fw_header {
   unsigned long code_size;
 };
 #endif
-
-"""
-
 ```

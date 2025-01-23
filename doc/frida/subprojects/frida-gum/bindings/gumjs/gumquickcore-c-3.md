@@ -795,7 +795,7 @@ gum_quick_ffi_function_invoke (GumQuickFFIFunction * self,
         if (traps != GUM_QUICK_CODE_TRAPS_NONE && interceptor != NULL)
         {
           interceptor_
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickcore.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -804,8 +804,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ", &rhs_ptr)) \
         return JS_EXCEPTION; \
       \
@@ -2099,7 +2101,4 @@ GUMJS_DEFINE_FINALIZER (gumjs_native_callback_finalize)
     return;
 
   gum_quick_native_c
-"""
-
-
 ```

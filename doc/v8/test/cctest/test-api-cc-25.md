@@ -222,7 +222,7 @@ console.log(obj.myProp); // 现在输出 20
 
 作为 `v8/test/cctest/test-api.cc` 的一部分，这段代码主要用于**测试 V8 引擎 C++ API 中关于事件记录、属性描述符、Promise、JavaScript 执行控制以及脚本信息处理等核心功能的正确性和稳定性**。它通过编写各种测试用例，模拟不同的使用场景，并使用断言来验证 API 的行为是否符合预期。这有助于确保 V8 引擎的这些关键功能能够可靠地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -230,8 +230,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第26部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 vent_count);
       i::NestedTimedHistogramScope scope0(&histogram);
       CHECK_EQ(0, strcmp("V8.Test", last_event_message));
@@ -1129,9 +1131,4 @@ void SourceURLHelper(v8::Isolate* isolate, const char* source_text,
                             false,                // is WASM
                             true);                // is ES Module
     v8::ScriptCompiler::Source source(source_str, origin, nullptr);
-
- 
-"""
-
-
 ```

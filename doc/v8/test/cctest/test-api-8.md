@@ -209,13 +209,15 @@ window.addEventListener('unhandledrejection', (event) => {
 
 总而言之，这个代码片段是 V8 引擎 API 的一个测试套件的一部分，它细致地测试了引擎的各种功能，从基本的 JavaScript 语法和对象操作，到更高级的特性如 Promise、Proxy 以及引擎内部的优化机制。 通过这些测试，可以确保 V8 引擎的正确性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第9部分，共18部分，请归纳一下它的功能
+```
 
-"""
- = context->GetIsolate();
+### 源代码
+```
+= context->GetIsolate();
   v8::HandleScope scope(isolate);
   v8::Local<v8::String> source = v8_str(
       "function Foo() {\n"
@@ -1885,7 +1887,4 @@ void PromiseRejectCallback(v8::PromiseRejectMessage reject_message) {
               stack_trace->GetFrame(CcTest::isolate(), 0)->GetLineNumber();
           promise_reject_column_number =
               sta
-"""
-
-
 ```

@@ -685,7 +685,7 @@ Reduction JSCallReducer::ReduceTypedArrayPrototypeLength(Node* node) {
   std::set<ElementsKind> elements_kinds;
   bool maybe_rab_gsab = false;
   for (MapRef map : inference.GetMaps
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-call-reducer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -693,9 +693,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第10部分，共12部分，请归纳一下它的功能
+```
 
-"""
- Control control = n.control();
+### 源代码
+```cpp
+Control control = n.control();
   Node* receiver = effect = graph()->NewNode(
       simplified()->CheckString(p.feedback()), n.receiver(), effect, control);
 
@@ -1520,7 +1522,4 @@ Reduction JSCallReducer::ReduceCollectionIteration(
   Control control{NodeProperties::GetControlInput(node)};
 
   InstanceType type = InstanceType
-"""
-
-
 ```

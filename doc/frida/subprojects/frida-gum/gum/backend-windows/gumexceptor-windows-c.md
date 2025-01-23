@@ -136,7 +136,7 @@ My thinking process to analyze the C code and generate the response went through
 
 总而言之，`gumexceptor-windows.c` 是 Frida 在 Windows 平台上实现动态插桩和逆向分析的关键组件，它利用 Windows 的异常处理机制，为用户提供了在运行时拦截和分析目标进程异常的能力。理解这个文件的功能对于深入理解 Frida 的工作原理以及进行高级的逆向分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-windows/gumexceptor-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -345,7 +347,4 @@ gum_windows_get_active_exceptor_context (void)
 }
 
 #endif
-
-"""
-
 ```

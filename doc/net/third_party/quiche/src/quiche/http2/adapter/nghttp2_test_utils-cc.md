@@ -117,15 +117,17 @@ EXPECT_THAT(&frame, http2::adapter::test::IsHeaders(3, NGHTTP2_FLAG_END_HEADERS,
 
 总而言之，`net/third_party/quiche/src/quiche/http2/adapter/nghttp2_test_utils.cc` 是 Chromium 网络栈中一个关键的测试辅助文件，它通过提供自定义的 gMock 匹配器，极大地简化了对 HTTP/2 帧的断言，确保了底层 HTTP/2 实现的正确性，从而间接地保障了用户 JavaScript 代码发起的网络请求的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_test_utils.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/nghttp2_test_utils.h"
 
 #include <cstring>
@@ -593,7 +595,4 @@ testing::Matcher<const nghttp2_frame*> IsWindowUpdate(
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

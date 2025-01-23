@@ -167,7 +167,7 @@ By following these steps,  we can systematically analyze the provided code snipp
 
 总而言之，这个 `Resources.java` 文件虽然简单，但它是 `frida-gum` 测试套件中的一个重要组成部分，用于确保 Frida 能够正确地与目标 Java 应用程序交互，并访问其资源。  它的存在帮助开发者验证 Frida 的功能，并在出现问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/java/10 resources/src/com/mesonbuild/Resources.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 import java.io.BufferedReader;
@@ -203,7 +205,4 @@ public class Resources {
         }
     }
 }
-
-"""
-
 ```

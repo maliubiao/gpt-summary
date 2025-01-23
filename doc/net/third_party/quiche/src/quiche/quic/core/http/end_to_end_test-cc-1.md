@@ -152,7 +152,7 @@ transport.incomingUnidirectionalStreams.addEventListener('datareadable', async (
 
 这部分代码（作为整个 `end_to_end_test.cc` 文件的一部分）的主要功能是 **为 WebTransport 功能提供测试支持**。它定义了用于创建、管理和检查 WebTransport 会话和流的辅助函数。这些函数帮助编写测试用例，以验证 Chromium 网络栈中 WebTransport 协议的实现是否正确，包括连接建立、数据传输等关键环节。 它是整个端到端测试框架中专注于 WebTransport 功能测试的一个重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/end_to_end_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ession()->SupportsWebTransport(); });
     if (!GetClientSession()->SupportsWebTransport()) {
       return nullptr;
@@ -1003,7 +1005,4 @@ TEST_P(EndToEndTest, ForcedVersionNegotiationAndBadConnectionIdLength) {
                                                 ->client_session()
                                                 ->connection()
                                                 ->connect
-"""
-
-
 ```

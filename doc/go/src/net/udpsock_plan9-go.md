@@ -217,7 +217,7 @@ func main() {
 
 **因此，使用者容易犯的错误是：**  在 Plan 9 上进行 UDP 通信时，如果没有意识到 Go 的 `net` 包在底层处理了自定义的 UDP 报头，直接进行底层的 socket 操作可能会导致数据格式不匹配，无法正确解析地址信息或数据内容。应该始终使用 Go 的 `net` 包来进行跨平台的 UDP 通信，让 Go 的实现来处理平台特定的细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/udpsock_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -225,8 +225,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -409,9 +411,4 @@ func (sl *sysListener) listenMulticastUDP(ctx context.Context, ifi *Interface, g
 	}
 	return newUDPConn(fd), nil
 }
-
-"""
-
-
-
 ```

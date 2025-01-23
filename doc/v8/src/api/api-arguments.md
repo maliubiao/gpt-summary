@@ -178,11 +178,13 @@ console.log(myObj.customProperty); // 触发 C++ 的 MyGetterCallback
 
 总结来说，`api-arguments.cc` 中定义的类是 V8 引擎连接 JavaScript 和 C++ 代码的桥梁，它们确保了在回调函数执行时，C++ 代码能够安全且方便地访问 JavaScript 提供的信息，并能够将结果返回给 JavaScript。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api-arguments.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -243,7 +245,4 @@ FunctionCallbackArguments::FunctionCallbackArguments(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

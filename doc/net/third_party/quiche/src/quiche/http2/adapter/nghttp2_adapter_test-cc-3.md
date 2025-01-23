@@ -106,7 +106,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 总而言之，本部分代码主要关注 `NgHttp2Adapter` 在客户端模式下处理各种 HTTP/2 交互场景的正确性，包括流的控制、数据发送、并发管理以及对服务器设置的遵守。 这些测试确保了 Chromium 网络栈能够可靠地处理 HTTP/2 通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 EXPECT_TRUE(adapter->ResumeStream(stream_id));
   EXPECT_TRUE(adapter->want_write());
 
@@ -935,7 +937,4 @@ TEST_P(NgHttp2AdapterDataTest,
 
   const std::string initial_frames =
       TestFrame
-"""
-
-
 ```

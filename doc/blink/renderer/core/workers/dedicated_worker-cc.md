@@ -101,15 +101,17 @@ The user wants to understand the functionality of the `dedicated_worker.cc` file
 
 `dedicated_worker.cc` 是 Chromium Blink 中负责创建、启动、管理和终止专用 worker 的核心组件。 它处理 worker 脚本的加载、消息的传递，并与浏览器的其他部分（如网络栈、DevTools）进行集成。 这个文件对于理解专用 worker 的内部工作原理至关重要，因为它连接了 JavaScript API 和底层的 C++ 实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/dedicated_worker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -807,8 +809,5 @@ DedicatedWorker::CreateWebWorkerFetchContext() {
     return web_worker_fetch_context;
   }
 
-  // This worker is being created by an existing worker 
-"""
-
-
+  // This worker is being created by an existing worker
 ```

@@ -67,11 +67,13 @@ V8 的事件循环会不断地从 `DefaultForegroundTaskRunner` 中取出任务�
 
 总而言之，`DefaultForegroundTaskRunner` 是 V8 引擎中负责管理和调度前台任务的核心组件，它使得 JavaScript 的异步操作得以实现，保证了代码的有序执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/default-foreground-task-runner.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ void DefaultForegroundTaskRunner::WaitForTaskLocked() {
 
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

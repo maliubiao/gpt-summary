@@ -175,15 +175,17 @@ Let's focus on the `Get(OpIndex idx)` method:
 
 In summary, `SparseOpIndexSnapshotTable` is a specialized data structure within the Turboshaft compiler that efficiently maps operation indices to values, particularly when only a subset of operations have associated data. Understanding its purpose and how to interact with it is crucial for developers working on the V8 compiler.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/snapshot-table-opindex.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/snapshot-table-opindex.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ class SparseOpIndexSnapshotTable : public SnapshotTable<Value, KeyData> {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_SNAPSHOT_TABLE_OPINDEX_H_
-
-"""
-
 ```

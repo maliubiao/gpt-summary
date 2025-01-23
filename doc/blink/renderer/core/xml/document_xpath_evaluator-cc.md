@@ -189,15 +189,17 @@ By following these steps, we can systematically analyze the code and generate a 
 
 总而言之，`blink/renderer/core/xml/document_xpath_evaluator.cc` 是 Blink 引擎中负责处理 XML (以及 HTML) 文档 XPath 查询的核心组件，它通过 JavaScript 的 `document.evaluate()` 方法与网页进行交互。理解它的功能和潜在的使用错误对于开发和调试涉及到 XPath 查询的网页应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/document_xpath_evaluator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google, Inc.
  *
@@ -289,7 +291,4 @@ void DocumentXPathEvaluator::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -71,12 +71,14 @@ console.log(add(5, 3));
 
 这部分 `compiler.cc` 代码的核心在于 **优化 JavaScript 代码的编译过程**，特别是通过利用后台线程来执行耗时的编译任务，并有效地合并编译结果，尤其是当涉及到代码缓存时。这直接影响了 JavaScript 代码的加载速度和执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 -most function.
   if (!IterativelyExecuteAndFinalizeUnoptimizedCompilationJobs(
           isolate, script, parse_info, isolate->allocator(), is_compiled_scope,
@@ -1675,8 +1677,4 @@ MaybeHandle<SharedFunctionInfo> Compiler::CompileForLiveEdit(
     MaybeHandle<ScopeInfo> outer_scope_info, Isolate* isolate) {
   IsCompiledScope is_compiled_scope;
   return v8::internal::CompileToplevel(parse_info, script, outer_scope_info,
-         
-"""
-
-
 ```

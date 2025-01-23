@@ -131,7 +131,7 @@ My thinking process to analyze the Python code and fulfill the request goes like
 
 因此，**第 3 部分的功能可以归纳为：专注于测试 Frida 构建系统 (基于 Meson) 的高级特性和跨平台兼容性，包括构建选项、分发包生成、依赖管理工具集成、以及确保构建产物在不同平台上能够正确运行的关键特性 (例如 RPATH)。**  它比前两部分更深入地测试了构建系统的复杂性和与外部工具的集成。接下来的部分可能会继续测试 Frida 的具体功能模块和更复杂的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,9 +140,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
-        raise SkipTest('thinLTO requires ld.lld, ld.gold, ld64, or lld-link')
+### 源代码
+```python
+raise SkipTest('thinLTO requires ld.lld, ld.gold, ld64, or lld-link')
         elif is_windows():
             raise SkipTest('LTO not (yet) supported by windows clang')
 
@@ -860,8 +862,4 @@ Prompt:
         def get_opt():
             opts = self.introspect('--buildoptions')
             for x in opts:
-          
-"""
-
-
 ```

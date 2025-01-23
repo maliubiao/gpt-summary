@@ -248,7 +248,7 @@ sys.stdin.read()
 
 **注意:**  直接 hook 内核模块 (如 `xt_length`) 通常需要更底层的技术，例如内核模块注入或使用内核调试器。Frida 主要用于用户空间 hook。 观察用户空间的网络函数调用是了解 Netfilter 工作方式的一种间接方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_length.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -259,8 +259,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -275,7 +277,4 @@ struct xt_length_info {
   __u8 invert;
 };
 #endif
-
-"""
-
 ```

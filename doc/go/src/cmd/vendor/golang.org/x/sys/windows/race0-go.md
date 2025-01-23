@@ -140,15 +140,17 @@ Goroutine ... (running) created at:
 
 因此，开发者**必须显式地使用 `-race` 标志**来启用竞态检测器，才能利用 Go 语言提供的竞态检测功能来发现并发编程中的问题。如果仅仅包含了 `golang.org/x/sys` 库，而没有使用 `-race` 标志，程序将不会进行任何竞态检测。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/race0.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -174,9 +176,4 @@ func raceReadRange(addr unsafe.Pointer, len int) {
 
 func raceWriteRange(addr unsafe.Pointer, len int) {
 }
-
-"""
-
-
-
 ```

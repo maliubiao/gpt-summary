@@ -169,15 +169,17 @@ TEST(DivideTest, DivideByZero) {
 
 `v8/testing/gtest/include/gtest/gtest-death-test.h` 本身是一个转发头文件，它使得 V8 项目能够方便地使用 Google Test 提供的死亡测试功能。死亡测试在 V8 的测试中扮演着重要的角色，用于验证引擎在遇到错误情况时能够按照预期的方式处理，这对于确保 V8 的健壮性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/testing/gtest/include/gtest/gtest-death-test.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/testing/gtest/include/gtest/gtest-death-test.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ Prompt:
 // third_party/googletest.
 
 #include "third_party/googletest/src/googletest/include/gtest/gtest-death-test.h"
-
-"""
-
 ```

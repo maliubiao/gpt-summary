@@ -143,7 +143,7 @@ TNode<Int32T> result = SelectInt32Constant(condition, true_value, false_value);
 
 `v8/src/codegen/code-stub-assembler.cc` 的第一部分定义了 `CodeStubAssembler` 类，它是 V8 引擎用于生成高效机器代码的基础工具。 它提供了一组用于构建代码桩的抽象，包括控制流、常量处理、数值运算、类型转换和断言机制。 虽然不是 Torque 源代码，但它是 Torque 生成的代码所依赖的关键组件，并且直接服务于 V8 引擎的 JavaScript 执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -151,8 +151,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1061,8 +1063,4 @@ TNode<Smi> CodeStubAssembler::SmiFromUint32(TNode<Uint32T> value) {
 TNode<BoolT> CodeStubAssembler::IsValidPositiveSmi(TNode<IntPtrT> value) {
   intptr_t constant_value;
   if (TryToIntPtrConstant(value, &constant_value)) {
-
-"""
-
-
 ```

@@ -179,7 +179,7 @@ case ADD: {
 
 这部分代码是 V8 引擎在 ARM 架构上运行 JavaScript 代码的核心组成部分，它通过软件模拟硬件的行为，使得 V8 能够在非 ARM 硬件上进行测试和开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm/simulator-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm/simulator-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -187,8 +187,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 2, arg13, arg14,
               arg15, arg16, arg17, arg18, arg19);
           if (!stack_aligned) {
@@ -1151,8 +1153,4 @@ void Simulator::DecodeType3(Instruction* instr) {
                         break;
                       case 3:
                         rm_val = (rm_val >> 24) | (rm_val << 8);
-    
-"""
-
-
 ```

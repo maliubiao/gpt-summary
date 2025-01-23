@@ -258,15 +258,17 @@ func processSlice(s []int, index int) {
 
 总结来说，`go/test/bounds.go` 是一个底层的测试文件，用于验证 Go 编译器的边界检查消除优化是否正确。理解其背后的原理可以帮助开发者写出更高效且安全的代码，但一般开发者不会直接使用或修改此文件。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/bounds.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m -l
 
 // Copyright 2012 The Go Authors. All rights reserved.
@@ -551,9 +553,4 @@ var sum int
 func use(x int) {
 	sum += x
 }
-
-"""
-
-
-
 ```

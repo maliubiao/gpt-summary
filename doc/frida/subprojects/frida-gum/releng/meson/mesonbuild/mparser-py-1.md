@@ -302,7 +302,7 @@ my_function(my_dict, arg2='hello')
 
 这部分 `mparser.py` 文件的主要功能是 **对 Meson 构建定义语言进行语法分析**。它接收词法分析器生成的 token 流，并根据 Meson 的语法规则，将其转换成一个结构化的抽象语法树 (AST)。这个 AST 随后可以被 Frida 构建系统的其他部分使用，例如进行语义分析、代码生成等，最终驱动 Frida 的构建过程。它涵盖了对基本数据类型、复合数据结构（如字典）、函数调用、控制流语句（如 `if` 和 `foreach`）的解析，并具备一定的错误处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/mparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -311,8 +311,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 lf.create_node(SymbolNode, block_start)
             key_values = self.key_values()
             self.block_expect('rcurl', block_start)
@@ -515,8 +517,4 @@ lf.create_node(SymbolNode, block_start)
         self.current_ws = []
 
         return block
-
-"""
-
-
 ```

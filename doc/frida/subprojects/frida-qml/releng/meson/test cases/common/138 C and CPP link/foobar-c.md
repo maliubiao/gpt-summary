@@ -143,7 +143,7 @@ Finally, the gathered information needs to be organized logically into the secti
 
 总而言之，`foobar.c` 作为一个简单的测试用例，旨在验证 Frida 在处理 C 和 C++ 代码链接时的能力。对于逆向工程师来说，它可以作为一个小的目标，用于学习和练习 Frida 的基本 hook 功能，以及理解底层的一些概念。  在调试过程中，这个文件的源代码可以帮助用户理解目标函数的行为，从而更好地编写和调试 Frida 脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/138 C and CPP link/foobar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2017 Dylan Baker
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -180,7 +182,4 @@ void mynumbers(int nums[]) {
     nums[0] = forty_two();
     nums[1] = six_one();
 }
-
-"""
-
 ```

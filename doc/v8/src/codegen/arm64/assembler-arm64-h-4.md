@@ -109,7 +109,7 @@ PatchingAssembler assembler(&zone, options, buffer, 20); // 假设每个指令 4
 
 `v8/src/codegen/arm64/assembler-arm64.h` 定义了 V8 引擎在 ARM64 架构上生成机器码的核心工具 `Assembler`。它提供了一组接口，允许将高级指令转化为机器码，并管理代码缓冲区、标签、重定位、常量池和分支偏移等关键方面。 `Assembler` 是将 JavaScript 代码转化为可执行机器码的关键组成部分，直接影响着 JavaScript 代码的执行效率。`PatchingAssembler` 则提供了在已知代码大小的情况下进行代码修补的能力。该头文件是 V8 代码生成器实现架构特定优化的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/assembler-arm64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/assembler-arm64.h以.tq结尾，那它是个v8 torque源代码，
@@ -117,8 +117,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 irs) should
   // always be positive but has the same type as the return value for
   // pc_offset() for convenience.
@@ -225,8 +227,4 @@ class EnsureSpace {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_ARM64_ASSEMBLER_ARM64_H_
-
-"""
-
-
 ```

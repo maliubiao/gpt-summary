@@ -239,7 +239,7 @@ if (android_timetravel_control) {
 
 总结，`bionic/libc/kernel/uapi/linux/um_timetravel.handroid` 定义了一个用于用户空间与内核空间进行时间旅行功能通信的接口。虽然普通 Android 应用程序不会直接使用它，但 Android 内部的机制可能会利用它来实现调试、测试或其他系统级功能。 理解这个文件需要结合对 Linux 内核和 Android 系统架构的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/um_timetravel.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -250,8 +250,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -318,7 +320,4 @@ struct um_timetravel_schedshm {
   union um_timetravel_schedshm_client clients[];
 };
 #endif
-
-"""
-
 ```

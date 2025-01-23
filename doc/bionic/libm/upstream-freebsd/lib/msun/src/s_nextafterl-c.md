@@ -242,7 +242,7 @@ Section Headers: (描述文件的各个 section)
 
 总而言之，`s_nextafterl.c` 文件实现了标准 C 库中的 `nextafterl` 函数，为 Android 上的应用程序提供了精确控制浮点数运算的能力，尤其在需要逐步逼近或查找特定浮点数值的场景下非常有用。其实现依赖于对浮点数底层二进制表示的直接操作，并需要处理各种特殊情况。了解其功能和实现原理有助于开发者更有效地使用这个函数，并避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_nextafterl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -252,8 +252,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -330,7 +332,4 @@ nextafterl(long double x, long double y)
 }
 
 __strong_reference(nextafterl, nexttowardl);
-
-"""
-
 ```

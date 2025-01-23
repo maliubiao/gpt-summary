@@ -201,7 +201,7 @@ libmylib.so: src/module_a.o src/module_b.o
 
 **In summary, `frida/subprojects/frida-core/releng/meson/mesonbuild/depfile.py` plays a critical role in Frida's build process by parsing dependency files, which are essential for incremental builds and ensuring that the project is compiled correctly based on file dependencies. This is indirectly related to reverse engineering by enabling the building of the Frida toolkit itself and highlighting the importance of dependency management in software development.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/depfile.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -209,8 +209,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 Red Hat, Inc.
 
@@ -293,7 +295,4 @@ class DepFile:
         for dep in target.deps:
             deps.update(self.get_all_dependencies(dep, visited))
         return sorted(deps)
-
-"""
-
 ```

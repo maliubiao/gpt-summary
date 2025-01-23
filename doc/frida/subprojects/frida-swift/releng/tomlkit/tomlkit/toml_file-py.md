@@ -290,7 +290,7 @@ print(data["owner"]["name"])      # 输出: Tom Preston-Werner
 
 在这个过程中，如果用户在读取或写入 TOML 文件时遇到问题，他们可能会查看 `toml_file.py` 的源代码，了解其内部实现，例如行尾符的处理逻辑、异常处理等，以便更好地排查问题。 因此，`toml_file.py` 成为了调试配置相关问题的关键线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/tomlkit/tomlkit/toml_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -298,8 +298,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 import re
 
@@ -358,7 +360,4 @@ class TOMLFile:
 
         with open(self._path, "w", encoding="utf-8", newline="") as f:
             f.write(content)
-
-"""
-
 ```

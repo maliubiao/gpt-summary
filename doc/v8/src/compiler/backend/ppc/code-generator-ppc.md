@@ -66,12 +66,14 @@ console.log(result);
 
 **总结来说，`v8/src/compiler/backend/ppc/code-generator-ppc.cc` 的第一部分主要负责定义代码生成器的基础结构和核心功能，用于将高级的中间表示指令翻译成底层的PowerPC汇编指令，这是V8引擎将JavaScript代码转化为可执行机器码的关键步骤。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ppc/code-generator-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1608,8 +1610,4 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleArchInstruction(
     case kIeee754Float64Log2:
       ASSEMBLE_IEEE754_UNOP(log2);
       break;
-
-"""
-
-
 ```

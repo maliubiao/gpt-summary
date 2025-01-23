@@ -213,15 +213,17 @@ Value<uintptr_t> TqPoint::GetXValue(d::MemoryAccessor accessor) const {
 
 总而言之，`v8/src/torque/class-debug-reader-generator.cc` 是一个非常重要的代码生成器，它为 V8 的调试提供了强大的支持，允许开发者在无法直接访问对象内存的情况下，仍然能够理解和分析 V8 内部对象的状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/class-debug-reader-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/class-debug-reader-generator.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -802,7 +804,4 @@ void ImplementationVisitor::GenerateClassDebugReaders(
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

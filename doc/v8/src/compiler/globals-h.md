@@ -280,15 +280,17 @@ By following this structured approach, I can systematically analyze the C++ head
 
 由于提供的代码片段的扩展名是 `.h`，它是一个标准的 C++ 头文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/globals.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/globals.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -479,7 +481,4 @@ constexpr int64_t kMinusZeroBits =
     (static_cast<uint64_t>(kMinusZeroHiBits) << 32) | kMinusZeroLoBits;
 
 #endif  // V8_COMPILER_GLOBALS_H_
-
-"""
-
 ```

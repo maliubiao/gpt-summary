@@ -159,7 +159,7 @@ Here's a thinking process to arrive at the comprehensive analysis of the Python 
 
 因此，`cytest.py` 作为一个单元测试，是 Frida 开发流程中保证代码质量的重要一环。开发者通过运行这些测试用例，能够及时发现和修复代码中的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cython/1 basic/cytest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from storer import Storer
@@ -188,7 +190,4 @@ try:
     raise SystemExit('Using wrong argument type did not fail.')
 except TypeError:
     pass
-
-"""
-
 ```

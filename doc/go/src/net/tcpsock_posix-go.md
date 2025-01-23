@@ -252,7 +252,7 @@ func handleConnection(conn *net.TCPConn) {
 
 理解这段代码有助于深入理解 Go 语言中 TCP 网络编程的底层机制。它展示了如何与操作系统进行交互，创建和管理网络连接。在实际应用中，通常会使用 `net` 包提供的更高级别的 API，例如 `http` 包，但理解底层的实现原理对于调试和优化网络应用程序非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/tcpsock_posix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -260,8 +260,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -456,9 +458,4 @@ func (sl *sysListener) listenTCPProto(ctx context.Context, laddr *TCPAddr, proto
 	}
 	return &TCPListener{fd: fd, lc: sl.ListenConfig}, nil
 }
-
-"""
-
-
-
 ```

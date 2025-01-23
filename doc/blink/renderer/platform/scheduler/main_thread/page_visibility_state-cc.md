@@ -110,14 +110,16 @@ This structured approach, even for a small file, ensures comprehensive analysis 
 
 `page_visibility_state.cc` 文件虽然简单，但在 Blink 引擎中扮演着重要的角色，它定义了页面可见性状态的统一表示方式，为其他模块（包括实现 Page Visibility API 的 JavaScript 绑定）提供了一个基础。它的正确使用对于确保网页行为与用户期望一致至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/page_visibility_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -140,7 +142,4 @@ const char* PageVisibilityStateToString(PageVisibilityState visibility) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

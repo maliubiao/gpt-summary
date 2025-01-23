@@ -164,11 +164,13 @@ const Operator* JSOperatorBuilder::CreateLiteralArray(
 
 `v8/src/compiler/js-operator.cc` 是 V8 编译器中一个至关重要的文件，它定义了编译器用来理解和操作 JavaScript 代码的内部语言。它将各种 JavaScript 语法结构和操作抽象成了一组操作符，为编译器的后续优化和代码生成阶段提供了基础。理解这个文件有助于深入了解 V8 引擎是如何将 JavaScript 代码转化为高效的机器码的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-operator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1715,7 +1717,4 @@ std::ostream& operator<<(std::ostream& os, ScopeInfoRef ref) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

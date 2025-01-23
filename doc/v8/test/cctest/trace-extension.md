@@ -98,11 +98,13 @@ js_entry_sp_level2();
 
 `v8/test/cctest/trace-extension.cc` 文件是 V8 引擎测试框架的一部分，它提供了一组底层的原生函数，允许开发者从 JavaScript 层面触发和检查 V8 引擎的追踪和性能分析机制。这些函数对于测试 V8 引擎的正确性、理解其内部工作原理以及进行性能优化非常有价值。在一般的 JavaScript 开发中，开发者不会直接使用这些原生函数，它们主要用于 V8 引擎的内部测试和开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/trace-extension.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -258,7 +260,4 @@ void TraceExtension::JSEntrySPLevel2(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

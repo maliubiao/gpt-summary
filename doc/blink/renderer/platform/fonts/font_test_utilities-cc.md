@@ -84,14 +84,16 @@ Let's break down the thought process to analyze the provided C++ code snippet an
 
 `font_test_utilities.cc` 文件目前包含了一个简单的 `To16Bit` 函数，用于将 UTF-8 字符串转换为 Blink 内部的 16 位编码字符串。这个函数主要用于测试与字体相关的文本处理，确保 Blink 引擎在处理来自 JavaScript、HTML 和 CSS 的文本时，能够正确地进行编码转换和存储。 理解 Blink 内部的字符串表示以及正确的编码转换方式对于编写有效的测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_test_utilities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -107,7 +109,4 @@ String To16Bit(std::string_view text) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

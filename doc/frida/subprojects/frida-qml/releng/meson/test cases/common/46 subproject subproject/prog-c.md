@@ -153,7 +153,7 @@ Here's a breakdown of the thinking process used to analyze the provided C code s
 
 通过以上步骤，开发者可以理解 `prog.c` 的行为，并使用 Frida 来调试和验证其功能，确保 Frida 的动态 instrumentation 功能能够正常工作。这个 `prog.c` 文件作为一个简单的起点，可以用于测试 Frida 的基本 Hook 功能和返回值修改能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/46 subproject subproject/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,14 +161,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void);
 
 int main(void) {
     return func() == 42 ? 0 : 1;
 }
-
-"""
-
 ```

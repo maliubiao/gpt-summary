@@ -162,15 +162,17 @@ This specific code snippet does not involve explicit command-line argument proce
 
 This `issue6572.go` test case is a fundamental example of how Go ensures type safety during compilation, preventing many common errors before runtime.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6572.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -193,9 +195,4 @@ func main() {
 	x, y, z = bar() // ERROR "cannot (use type|assign|use.*type) string|"
 	_, _, _ = x, y, z
 }
-
-"""
-
-
-
 ```

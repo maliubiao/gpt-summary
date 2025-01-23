@@ -141,11 +141,13 @@ WebAssembly.instantiate(wasmBytes)
 
 总之，`module-decoder.cc` 是 JavaScript 引擎理解和执行 WebAssembly 代码的关键组件，它负责将二进制的 WebAssembly 模块转化为引擎可以操作的内部结构，从而使得 JavaScript 可以加载和调用 WebAssembly 模块的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-decoder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -795,7 +797,4 @@ DecodedNameSection::DecodedNameSection(base::Vector<const uint8_t> wire_bytes,
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

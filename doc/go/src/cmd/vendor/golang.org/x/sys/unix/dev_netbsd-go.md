@@ -137,15 +137,17 @@ func main() {
 
 这段 Go 代码提供了一组用于在 NetBSD 系统上操作设备号的底层工具函数。理解 NetBSD 设备号的编码方式以及主设备号和次设备号的含义是正确使用这些函数的关键。使用者需要意识到这是平台相关的代码，不应在其他操作系统上直接使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/dev_netbsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -175,9 +177,4 @@ func Mkdev(major, minor uint32) uint64 {
 	dev |= (uint64(minor) << 0) & 0x000000ff
 	return dev
 }
-
-"""
-
-
-
 ```

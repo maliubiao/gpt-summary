@@ -136,7 +136,7 @@ script.load()
 
 这个文件的存在及其路径本身就是一个调试线索，帮助开发者定位和解决 Frida 构建系统在处理特定场景下的问题。 重点在于 "failing build" 和 "cmake subproject isolation"，这表明这个文件是故意设计用来测试构建系统在隔离不同 CMake 子项目时的行为，可能涉及到宏定义、头文件包含、库链接等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing build/3 cmake subproject isolation/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include "fileA.hpp"
 
@@ -158,7 +160,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

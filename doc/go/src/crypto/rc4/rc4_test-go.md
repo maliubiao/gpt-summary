@@ -151,7 +151,7 @@ func main() {
 
 这段 `rc4_test.go` 代码的功能是全面地测试 Go 语言标准库中 `crypto/rc4` 包对 RC4 流密码算法的实现是否正确，包括使用黄金测试向量验证密钥流生成，测试不同数据块大小的处理，以及验证是否符合 `cipher.Stream` 接口。它不涉及命令行参数处理，但提醒了使用者在使用 RC4 时需要注意密钥管理和正确理解加密解密过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/rc4/rc4_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -159,8 +159,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -332,9 +334,4 @@ func BenchmarkRC4_1K(b *testing.B) {
 func BenchmarkRC4_8K(b *testing.B) {
 	benchmark(b, 8096)
 }
-
-"""
-
-
-
 ```

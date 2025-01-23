@@ -152,7 +152,7 @@ Frida 的自定义头文件生成器可能会根据目标进程的信息生成 `
 
 `prog.c` 作为一个独立的源代码文件看起来很简单，但它在 Frida 项目中扮演着重要的角色，用于测试自定义头文件生成功能的正确性。 这个功能对于 Frida 在逆向工程中理解目标进程的内部结构至关重要。通过运行这个简单的程序并验证其返回值，Frida 的开发者可以确保其动态生成头文件的能力是可靠的。 调试此类测试用例的失败可以帮助开发者定位与底层操作系统机制、二进制格式理解以及目标进程信息获取相关的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/57 custom header generator/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,14 +160,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"myheader.lh"
 
 int main(void) {
     return RET_VAL;
 }
-
-"""
-
 ```

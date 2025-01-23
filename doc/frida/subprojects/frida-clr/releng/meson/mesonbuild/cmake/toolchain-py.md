@@ -195,7 +195,7 @@ If the user encounters errors during the CMake configuration step for `frida-clr
 
 In summary, `toolchain.py` plays a vital role in enabling Frida's cross-platform capabilities by generating the necessary CMake configuration for building components like `frida-clr` on various target operating systems and architectures. It bridges the gap between Meson's high-level build configuration and CMake's detailed build process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/cmake/toolchain.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2020 The Meson development team
 
@@ -453,7 +455,4 @@ class CMakeToolchain:
             vars = vars_by_file.setdefault(file_name, {})
             vars[f'CMAKE_{lang_cmake}_COMPILER_FORCED'] = ['1']
             self.cmakestate.update(lang, vars)
-
-"""
-
 ```

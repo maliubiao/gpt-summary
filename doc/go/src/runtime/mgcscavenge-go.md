@@ -191,7 +191,7 @@ Alloc = RRR MiB	TotalAlloc = YYY MiB	Sys = SSS MiB	HeapAlloc = TTT MiB	HeapSys =
 
 这段代码实现了Go语言运行时环境中用于回收空闲堆内存页的 Scavenging 机制，包括后台异步和分配时同步两种方式。其目标是降低内存占用，应对内存碎片，并受到 `GOMEMLIMIT` 环境变量的影响。理解 Scavenging 的工作方式对于优化Go应用程序的内存使用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mgcscavenge.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -200,8 +200,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1060,9 +1062,4 @@ func fillAligned(x uint64, m uint) uint64 {
 		x = apply(x, 0x7fffffff7fffffff)
 	case 64: // == maxPagesPerPhysPage
 		x = appl
-"""
-
-
-
-
 ```

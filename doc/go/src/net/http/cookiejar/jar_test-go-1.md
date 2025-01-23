@@ -163,7 +163,7 @@ URL: http://other.test, Got Cookie: , Expected:
 
 总而言之，这段测试代码深入验证了 `net/http/cookiejar` 包在处理各种域名场景下的 Cookie 管理逻辑，确保了 HTTP Cookie 规范的正确实现和安全性。它重点关注了 Domain 属性的匹配规则、IDNA 域名的支持以及对公共后缀列表的尊重。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/cookiejar/jar_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -172,8 +172,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ,
 	{
 		"Domain cookie on IDNA domain #2",
@@ -264,10 +266,4 @@ func TestIssue19384(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
-
 ```

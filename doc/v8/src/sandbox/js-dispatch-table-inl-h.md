@@ -138,15 +138,17 @@ While developers don't directly interact with this C++ code, understanding its p
 
 In summary, `v8/src/sandbox/js-dispatch-table-inl.h` is a crucial part of V8's sandboxing mechanism, providing a dynamic way to manage and dispatch JavaScript function calls within a restricted environment. It ensures that the correct code is executed when a sandboxed function is called.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/js-dispatch-table-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/js-dispatch-table-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -475,7 +477,4 @@ bool JSDispatchTable::IsCompatibleCode(Tagged<Code> code,
 #endif  // V8_ENABLE_SANDBOX
 
 #endif  // V8_SANDBOX_JS_DISPATCH_TABLE_INL_H_
-
-"""
-
 ```

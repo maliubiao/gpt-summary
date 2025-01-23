@@ -253,7 +253,7 @@ rpc.exports = {
 
 这样，当目标进程调用 `fcntl()` 时，Frida 会拦截该调用并打印出文件描述符、命令以及参数的值。你可以根据 `cmd` 的值来判断使用了哪个 `F_*` 宏，从而了解 Android Framework 或 NDK 如何使用这些文件控制机制。  你需要根据具体的 `cmd` 值来解析 `arg` 参数，因为 `arg` 的类型和含义取决于 `cmd` 的值。 这个头文件中的常量可以帮助你理解 `cmd` 的具体含义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/fcntl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -264,8 +264,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -329,7 +331,4 @@ Prompt:
 #define AT_HANDLE_FID 0x200
 #define AT_HANDLE_MNT_ID_UNIQUE 0x001
 #endif
-
-"""
-
 ```

@@ -138,7 +138,7 @@ This iterative process of reading, analyzing, connecting, structuring, and revie
 
 总而言之，`ccrx.py` 是 Frida 项目中 Meson 构建系统的重要组成部分，它封装了 Renesas CC-RX 编译器的特定配置，使得 Frida 能够为基于 Renesas 架构的目标系统构建代码。理解这个文件的功能对于进行 Frida 相关的交叉编译和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/mixins/ccrx.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2019 The Meson development team
 
@@ -261,7 +263,4 @@ class CcrxCompiler(Compiler):
                 parameter_list[idx] = i[:9] + os.path.normpath(os.path.join(build_dir, i[9:]))
 
         return parameter_list
-
-"""
-
 ```

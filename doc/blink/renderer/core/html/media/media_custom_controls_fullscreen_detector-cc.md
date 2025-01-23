@@ -173,14 +173,16 @@ By following these steps, iterating, and refining, we arrive at a comprehensive 
 
 总而言之，`media_custom_controls_fullscreen_detector.cc` 文件实现了一个复杂的逻辑，用于在没有使用浏览器原生全屏 API 的情况下，判断视频元素是否看起来像是在全屏播放，这主要是为了提供更好的自定义媒体控件体验。 理解其工作原理以及与 Web 技术的关系，可以帮助开发者更有效地使用和调试相关的 Web 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/media_custom_controls_fullscreen_detector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -451,7 +453,4 @@ bool MediaCustomControlsFullscreenDetector::
 }
 
 }  // namespace blink
-
-"""
-
 ```

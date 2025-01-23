@@ -173,7 +173,7 @@ This iterative process of scanning, categorizing, analyzing, inferring, and stru
 
 作为 X.509 证书验证测试的第三部分，这段代码片段主要关注**复杂证书链场景的验证**。它深入测试了路径构建算法，包括处理包含循环、无效 EKU、名称约束等情况的证书链。此外，它还针对 macOS 平台上的特定证书处理问题进行了测试。  与前一部分可能关注基础的证书解析和验证不同，这一部分着重于验证在更复杂的、贴近实际应用场景下的证书链验证逻辑的正确性和健壮性。 结合后续部分，可以更全面地了解整个证书验证测试的覆盖范围。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/verify_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -182,8 +182,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 wMDAw
 MDBaMB0xDDAKBgNVBAoTA09yZzENMAsGA1UEAxMEUm9vdDBZMBMGByqGSM49AgEG
 CCqGSM49AwEHA0IABJGp9joiG2QSQA+1FczEDAsWo84rFiP3GTL+n+ugcS6TyNib
@@ -1270,9 +1272,4 @@ func TestEKUEnforcement(t *testing.T) {
 			leaf := genCertEdge(t, "leaf", k, func(c *Certificate) {
 				c.ExtKeyUsage = tc.leaf.EKUs
 				c.UnknownExtKeyUs
-"""
-
-
-
-
 ```

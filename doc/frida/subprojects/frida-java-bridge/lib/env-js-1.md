@@ -129,7 +129,7 @@ breakpoint.SetScriptCallbackFunction("breakpoint_handler")
 
 10. **返回结果**  
     最终将类型签名或字符串返回给用户脚本。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/env.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -139,8 +139,10 @@ Prompt:
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 'java.lang.Object';
   } else {
     return 'java.lang.Object';
@@ -180,8 +182,4 @@ Env.prototype.stringFromJni = function (str) {
 };
 
 module.exports = Env;
-
-"""
-
-
 ```

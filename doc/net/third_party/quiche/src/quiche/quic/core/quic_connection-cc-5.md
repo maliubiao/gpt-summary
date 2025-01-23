@@ -122,7 +122,7 @@ Here's a plan:
 * **分析报警状态:**  检查各种报警是否被正确设置和取消，例如 `ack_alarm().IsSet()`、`retransmission_alarm().IsSet()`。
 * **查看统计信息:**  `stats_` 成员变量包含了很多连接的统计信息，例如发送和接收的数据包数量、重传次数、丢包率等，可以帮助分析连接状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -130,9 +130,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共10部分，请归纳一下它的功能
+```
 
-"""
-    QUICHE_DCHECK_EQ(Perspective::IS_CLIENT, perspective_);
+### 源代码
+```cpp
+QUICHE_DCHECK_EQ(Perspective::IS_CLIENT, perspective_);
     visitor_->OnServerPreferredAddressAvailable(
         received_server_preferred_address_);
   }
@@ -988,7 +990,4 @@ QuicConnection::ScopedPacketFlusher::~ScopedPacketFlusher() {
 
     // Once all transmissions are done, check if there is any outstanding data
     // to send and notify th
-"""
-
-
 ```

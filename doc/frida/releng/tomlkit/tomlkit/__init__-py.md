@@ -278,7 +278,7 @@ Maximum Connections: 5000
 
 In essence, this `__init__.py` file is a foundational component for enabling Frida users to interact with TOML configuration files within the context of dynamic analysis and reverse engineering. It provides the necessary tools to read, manipulate, and write TOML data programmatically.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/tomlkit/tomlkit/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -286,8 +286,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit.api import TOMLDocument
 from tomlkit.api import aot
 from tomlkit.api import array
@@ -347,7 +349,4 @@ __all__ = [
     "register_encoder",
     "unregister_encoder",
 ]
-
-"""
-
 ```

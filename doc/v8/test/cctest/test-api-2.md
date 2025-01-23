@@ -104,12 +104,14 @@ console.log(instance.getPrivateField()); // 输出: 10
 
 这个 JavaScript 示例展示了符号作为对象属性的用法，其不可枚举性，以及全局符号的特性。同时也展示了 JavaScript 中私有属性的用法（虽然语法上与 C++ 的 `Private` 不同，但在概念上是对应的）。 C++ 代码中的测试确保了 V8 引擎正确地实现了这些 JavaScript 特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 andleScope scope(isolate);
 
   Local<v8::String> str = v8_str("str1");
@@ -1964,7 +1966,4 @@ THREADED_TEST(PropertyAttributes) {
   String::Utf8Value exception_value(context->GetIsolate(),
                                     try_catch.Exception());
   CHECK_
-"""
-
-
 ```

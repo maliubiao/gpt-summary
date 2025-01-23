@@ -95,7 +95,7 @@ The final step is to organize these thoughts into a clear and concise explanatio
 
 总而言之，虽然这个 `main.c` 文件本身非常简单，但它在 Frida 项目的上下文中扮演着一个重要的角色，特别是用于测试框架的基础设施和测试用例的选择机制。 它的简单性正是为了验证在最基本的情况下，测试框架能否正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/14 testsetup selection/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,12 +103,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

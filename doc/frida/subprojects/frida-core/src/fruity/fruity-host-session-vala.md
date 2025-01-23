@@ -155,7 +155,7 @@ attach_and_break("example_app")
 ### 总结
 
 `fruity-host-session.vala` 是 Frida 工具中用于与 iOS 设备进行交互的核心模块，提供了设备管理、会话管理、进程调试与控制等功能。通过 LLDB，用户可以深入调试 iOS 应用程序的二进制代码，查看寄存器状态、设置断点等。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/fruity-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class FruityHostSessionBackend : Object, HostSessionBackend {
 		private Fruity.DeviceMonitor device_monitor = new Fruity.DeviceMonitor ();
@@ -1129,7 +1131,4 @@ namespace Frida {
 				remote_session_id = yield server.session.attach (pid, options, cancellable);
 			} catch (GLib.Error e) {
 				throw_dbus
-"""
-
-
 ```

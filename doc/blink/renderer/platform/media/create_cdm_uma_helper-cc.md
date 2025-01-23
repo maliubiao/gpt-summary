@@ -150,14 +150,16 @@ ReportCreateCdmTimeUMA(prefix, time);
 
 总之，`create_cdm_uma_helper.cc` 是 Chromium 引擎中一个重要的组成部分，它通过记录 CDM 创建过程的关键指标，帮助开发者和 Chromium 团队了解 EME 功能的性能和可靠性，并有助于诊断和解决相关问题。虽然 Web 开发者不直接操作这个文件，但其功能直接影响着他们使用 EME API 的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/create_cdm_uma_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ void ReportCreateCdmTimeUMA(const std::string& uma_prefix,
 }
 
 }  // namespace blink
-
-"""
-
 ```

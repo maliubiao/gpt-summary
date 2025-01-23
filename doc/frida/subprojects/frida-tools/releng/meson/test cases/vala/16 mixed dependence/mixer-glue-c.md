@@ -115,7 +115,7 @@ By following these steps, combining code analysis with contextual understanding,
 
 总而言之，虽然 `mixer-glue.c` 本身非常简单，但它在 Frida 工具的测试框架中扮演着重要的角色，可以帮助开发者和逆向工程师理解 Frida 的功能、跨语言调用机制以及可能的错误场景。它是一个很好的起点，可以进一步探索 Frida 如何在运行时动态修改程序行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/vala/16 mixed dependence/mixer-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,14 +123,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "mixer.h"
 
 guint mixer_get_volume(Mixer *mixer) {
     return 11;
 }
-
-"""
-
 ```

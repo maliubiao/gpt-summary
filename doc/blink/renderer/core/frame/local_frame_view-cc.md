@@ -88,15 +88,17 @@ The user wants me to analyze the provided C++ code snippet from the `local_frame
 
 `LocalFrameView` 的第一部分代码主要关注其生命周期管理、子视图和插件的组织、核心的布局机制（包括触发、执行和优化）、滚动条的管理、插件的更新协调以及与渲染和样式相关的基本属性维护。它奠定了 `LocalFrameView` 作为页面内容可视化呈现和管理中心的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_frame_view.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1998, 1999 Torben Weis <weis@kde.org>
  *                     1999 Lars Knoll <knoll@kde.org>
@@ -844,7 +846,4 @@ void LocalFrameView::PerformLayout() {
       for (auto& root : layout_subtree_root_list_.Ordered()) {
         bool should_rebuild_fragments = false;
         L
-"""
-
-
 ```

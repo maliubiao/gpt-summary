@@ -102,15 +102,17 @@ By following these steps, we can systematically analyze the C++ test file and pr
 
 总之，`xml_document_parser_test.cc` 通过一系列单元测试，确保了 Blink 引擎能够正确地解析和处理 XML 文档和片段，尤其是在命名空间处理和错误处理方面。这对于浏览器正确渲染和处理包含 XML 内容的网页至关重要，并且直接影响到 JavaScript 代码与 DOM 的交互。 当用户遇到与命名空间相关的渲染或脚本错误时，或者当开发者在开发过程中遇到类似问题时，对这个测试文件的理解可以提供宝贵的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/parser/xml_document_parser_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ TEST(XMLDocumentParserTest, ParseFragmentWithUnboundNamespacePrefix) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

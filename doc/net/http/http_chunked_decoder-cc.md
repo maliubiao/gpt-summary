@@ -195,15 +195,17 @@ abcdefghijkl\r\n
 
 总而言之，`net/http/http_chunked_decoder.cc` 是 Chromium 处理 HTTP chunked 编码的关键组件，它在用户访问网页、下载资源等网络操作中默默地工作，确保浏览器能够正确解析服务器发送的数据。了解其功能和可能出现的错误有助于开发者理解网络通信的底层机制，并排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_chunked_decoder.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -415,7 +417,4 @@ bool HttpChunkedDecoder::ParseChunkSize(base::span<const uint8_t> buf,
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -142,7 +142,7 @@ By following this structured thought process, combining the code analysis with t
 
 `prog.c` 虽然代码简单，但在 Frida 的测试环境中扮演着重要的角色，作为一个被测试的目标进程。它的简单性使得测试可以专注于 Frida 核心功能的验证，例如进程附加和代码注入，以及处理依赖缺失的情况。这个文件本身不是用户直接使用的程序，而是 Frida 内部测试框架的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/9 missing extra file/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,12 +150,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

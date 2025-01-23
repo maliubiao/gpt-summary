@@ -96,14 +96,16 @@ By following these steps, we can systematically analyze the code snippet and pro
 
 `bluetooth_mojom_traits.cc` 是 Blink 引擎中一个重要的幕后组件，负责处理蓝牙 UUID 在 Mojo 接口和 Blink 内部表示之间的转换。 它虽然不直接与前端技术交互，但为 Web Bluetooth API 的正确实现提供了必要的支持，确保了 JavaScript 代码能够可靠地与蓝牙设备进行交互。 理解这类底层代码有助于理解浏览器如何处理硬件交互，并能帮助开发者更好地调试与 Web Bluetooth 相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mojo/bluetooth_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -131,7 +133,4 @@ void StructTraits<bluetooth::mojom::UUIDDataView, WTF::String>::SetToNull(
 }
 
 }  // namespace mojo
-
-"""
-
 ```

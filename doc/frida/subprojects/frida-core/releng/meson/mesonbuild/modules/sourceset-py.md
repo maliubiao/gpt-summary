@@ -250,7 +250,7 @@ Frida 是一个动态插桩工具，常用于逆向工程。`sourceset.py` 模�
 
 总而言之，`frida/subprojects/frida-core/releng/meson/mesonbuild/modules/sourceset.py` 是 Frida 构建系统中一个至关重要的组件，它通过提供灵活的条件化源文件管理，使得 Frida 能够适应不同的目标平台、构建配置和功能需求。理解这个模块的功能有助于理解 Frida 的构建过程，并在遇到构建问题时提供重要的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/modules/sourceset.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -258,8 +258,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -551,7 +553,4 @@ class SourceSetModule(ExtensionModule):
 
 def initialize(interp: Interpreter) -> SourceSetModule:
     return SourceSetModule(interp)
-
-"""
-
 ```

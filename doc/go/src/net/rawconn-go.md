@@ -261,7 +261,7 @@ func calculateChecksum(data []byte) uint16 {
 
 5. **平台差异:** 像代码注释中提到的，某些平台对 `syscall.RawConn` 的支持可能不完整（例如 Windows 的 `Write` 方法的限制）。开发者需要注意这些平台差异，并可能需要编写平台特定的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/rawconn.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -269,8 +269,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -378,9 +380,4 @@ func (l *rawListener) Write(func(uintptr) bool) error {
 func newRawListener(fd *netFD) *rawListener {
 	return &rawListener{rawConn{fd: fd}}
 }
-
-"""
-
-
-
 ```

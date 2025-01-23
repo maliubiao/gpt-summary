@@ -247,7 +247,7 @@ A user would typically reach this file's location if they are:
 
 **In summary, `frida/subprojects/frida-qml/releng/meson/docs/refman/jsonschema.py` is a crucial file for defining the structure and format of the Frida QML API documentation. It enables the generation of consistent and machine-readable documentation, which is invaluable for reverse engineers and developers using the Frida QML bindings.** While this file itself doesn't directly interact with low-level system components, the API it describes certainly does, providing a high-level interface to powerful reverse engineering capabilities.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/docs/refman/jsonschema.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -255,8 +255,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -348,7 +350,4 @@ if T.TYPE_CHECKING:
         functions:       T.Dict[str, Function]  # A mapping of <name> to a `Function` object for *all* Meson functions
         objects:         T.Dict[str, Object]    # A mapping of <name> to a `Object`   object for *all* Meson objects (including modules, elementary, etc.)
         objects_by_type: ObjectsByType
-
-"""
-
 ```

@@ -317,7 +317,7 @@ if (Process.platform === 'linux') {
 
 你可以使用类似的 Frida Hook 技术来拦截其他相关的系统调用，例如 `socket()`, `setsockopt()`, `sendmsg()`, `recvmsg()`，以更详细地了解数据如何通过 AF_ALG 接口进行传输和处理。你还可以 Hook 更高层次的 Java 或 Native 加密 API 函数，来追踪调用链，看看是否最终会走到 AF_ALG。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_alg.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -328,8 +328,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -367,7 +369,4 @@ struct af_alg_iv {
 #define ALG_OP_DECRYPT 0
 #define ALG_OP_ENCRYPT 1
 #endif
-
-"""
-
 ```

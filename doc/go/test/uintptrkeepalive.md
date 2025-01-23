@@ -141,15 +141,17 @@ func wrongUsage(ptr uintptr) {
 
 `go/test/uintptrkeepalive.go` 的这个代码片段是一个编译器测试用例，用于验证 `go:uintptrkeepalive` 指令必须与 `go:nosplit` 指令同时使用。 它通过故意省略 `go:nosplit` 指令来触发预期的编译错误，从而确保了 Go 语言的这一特性能够正确地被编译器强制执行。  理解这个测试用例有助于开发者正确地使用 `go:uintptrkeepalive`，避免潜在的运行时错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/uintptrkeepalive.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -std
 
 // Copyright 2022 The Go Authors. All rights reserved.
@@ -161,9 +163,4 @@ package p
 //go:uintptrkeepalive
 func missingNosplit(uintptr) { // ERROR "go:uintptrkeepalive requires go:nosplit"
 }
-
-"""
-
-
-
 ```

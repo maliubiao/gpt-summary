@@ -188,7 +188,7 @@ console.log(match[1]); // 输出 "bbb"
 
 总的来说，这部分代码负责处理正则表达式匹配的最终结果、错误情况，以及提供一些底层的操作来辅助匹配过程。它确保了在 PPC64 架构上高效且安全地执行正则表达式匹配。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/ppc/regexp-macro-assembler-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/ppc/regexp-macro-assembler-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -196,8 +196,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ue = start offset - 1
       if (num_saved_registers_ > 8) {
         // One slot beyond address of register 0.
@@ -821,8 +823,4 @@ void RegExpMacroAssemblerPPC::LoadCurrentCharacterUnchecked(int cp_offset,
 }  // namespace v8
 
 #endif  //  V8_TARGET_ARCH_PPC64
-
-"""
-
-
 ```

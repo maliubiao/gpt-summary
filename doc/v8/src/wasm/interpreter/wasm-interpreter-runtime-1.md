@@ -105,12 +105,14 @@ While direct interaction with reference types from raw JavaScript is limited, Ja
 
 In summary, this code snippet is a crucial part of the V8 engine's ability to execute WebAssembly code, bridging the gap between the low-level bytecode and the high-level JavaScript environment. It handles the complexities of function calls, stack management, and type safety within the interpreted execution model.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter-runtime.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 e reset it every time we get to a backward jump in a loop.
   HandleScope handle_scope(GetIsolate());
 
@@ -1540,8 +1542,4 @@ void InterpreterHandle::SetTrapFunctionIndex(int32_t func_index) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

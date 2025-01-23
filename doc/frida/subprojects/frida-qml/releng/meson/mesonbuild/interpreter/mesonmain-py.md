@@ -154,7 +154,7 @@ If `my_install_script.sh` is not in the current source directory or any of the d
 
 In essence, `mesonmain.py` is a fundamental part of the Meson build system's internal workings, especially for projects like Frida that leverage Meson's features for complex build processes, cross-compilation, and custom scripting. Understanding its functions is crucial for anyone developing or debugging the build system of such projects.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/mesonmain.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021-2024 Intel Corporation
@@ -651,7 +653,4 @@ class MesonMain(MesonInterpreterObject):
         if options is None:
             return ''
         return coredata.format_cmd_line_options(options)
-
-"""
-
 ```

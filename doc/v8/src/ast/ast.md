@@ -154,11 +154,13 @@ if (person.age > 18) {
 
 `v8/src/ast/ast.cc` 文件是 V8 引擎中至关重要的组成部分，它定义了 JavaScript 代码的内部表示形式，为后续的编译、优化和执行提供了基础。理解 AST 的结构对于深入了解 JavaScript 引擎的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/ast.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1306,7 +1308,4 @@ Literal* AstNodeFactory::NewNumberLiteral(double number, int pos) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

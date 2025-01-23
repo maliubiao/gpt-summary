@@ -193,7 +193,7 @@ func doSomethingSafely(data []byte) {
 
 总结来说，`go/src/internal/asan/noasan.go` 的核心作用是在 ASan 未启用时，提供一套空操作的 ASan 接口，使得即使在没有 ASan 的情况下，依赖 ASan 相关代码的程序也能正常编译和运行。 这体现了 Go 在设计上的一种考虑，即在提供高级特性的同时，也要保证基础功能的可用性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/asan/noasan.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,8 +201,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -220,9 +222,4 @@ const Enabled = false
 func Read(addr unsafe.Pointer, len uintptr) {}
 
 func Write(addr unsafe.Pointer, len uintptr) {}
-
-"""
-
-
-
 ```

@@ -145,7 +145,7 @@ Here's a plan:
 
 这段代码的核心功能是**执行软件测试并生成 JUnit XML 格式的测试报告**。它通过定义不同的类来处理各种测试场景和协议，包括管理测试子进程、解析测试输出以及记录测试结果。它是 Frida 测试框架的关键组成部分，确保 Frida 功能的正确性和稳定性。这段代码的设计考虑了多种测试协议和执行环境，使其能够灵活地运行和报告各种类型的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/mtest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 (sum(1 for r in test.results if r.result is TestResult.SKIP)),
                 time=str(test.duration),
             )
@@ -931,7 +933,4 @@ class TestHarness:
 
         self.prepare_build()
         self.load_
-"""
-
-
 ```

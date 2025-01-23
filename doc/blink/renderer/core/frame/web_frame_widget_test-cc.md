@@ -95,15 +95,17 @@ The user wants to understand the functionality of the `web_frame_widget_test.cc`
 
 总而言之，`web_frame_widget_test.cc` 的第一部分主要集中在测试 `WebFrameWidgetImpl` 的以下核心功能： **渲染表面的管理 (通过 `LocalSurfaceId` 和 `FrameSinkId`)、自动调整大小、输入事件处理 (包括触摸事件、鼠标事件、手势事件和手写笔事件)、以及与合成线程的交互 (例如同步 Pinch 手势状态和发送弹性滚动信息)。** 这些功能直接关系到网页的渲染、用户交互和性能表现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_widget_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -903,7 +905,4 @@ TEST_F(WebFrameWidgetProximateBoundsCollectionSimTestF,
   const Element& target_editable = *GetElementById("target_editable");
   StartStylusWritingOnElementCenter(target_editable);
   EXPECT_EQ(GetDocument().FocusedElement(), ta
-"""
-
-
 ```

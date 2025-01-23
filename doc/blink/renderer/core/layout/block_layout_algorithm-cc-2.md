@@ -124,16 +124,18 @@ By following these steps, I can effectively analyze the code snippets and genera
 
 这段代码是浏览器渲染引擎核心功能的一部分，确保网页能够按照 CSS 规则正确地呈现给用户。 它的正确性直接影响到用户看到的网页布局是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/block_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
- wtf_size_t children_before = children.size();
+### 源代码
+```cpp
+wtf_size_t children_before = children.size();
   FragmentItemsBuilder* items_builder = container_builder_.ItemsBuilder();
   const auto& space = GetConstraintSpace();
   DCHECK_EQ(items_builder->GetWritingDirection(), space.GetWritingDirection());
@@ -846,7 +848,4 @@ LayoutResult::EStatus BlockLayoutAlgorithm::HandleInflow(
   InflowChildData child_data =
       ComputeChildData(*previous_inflow_position, child, child_break_token,
                        /*
-"""
-
-
 ```

@@ -352,7 +352,7 @@ By following this systematic approach, we can effectively analyze the given code
 
 这部分 `net/url/url.go` 代码的核心在于提供了操作和访问 `URL` 结构体内部各个组成部分的实用方法。它允许开发者方便地获取查询参数、生成请求 URI、提取主机名和端口、进行路径拼接以及实现序列化和反序列化。此外，内部的辅助函数提供了更底层的校验和处理能力。 这些功能是构建网络应用中处理 URL 的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/url/url.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -361,8 +361,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 errors use [ParseQuery].
 func (u *URL) Query() Values {
 	v, _ := ParseQuery(u.RawQuery)
@@ -520,10 +522,4 @@ func JoinPath(base string, elem ...string) (result string, err error) {
 	result = url.JoinPath(elem...).String()
 	return
 }
-
-"""
-
-
-
-
 ```

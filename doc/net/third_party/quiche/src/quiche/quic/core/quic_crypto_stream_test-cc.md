@@ -132,7 +132,7 @@ fetch('https://example.com/api/data', {
 
 总结来说，`net/third_party/quiche/src/quiche/quic/core/quic_crypto_stream_test.cc` 是一个关键的测试文件，用于确保 QUIC 协议中负责安全连接建立的 `QuicCryptoStream` 组件的正确性，这直接关系到基于 QUIC 的网络连接的安全性、可靠性和性能，并间接影响到 JavaScript 中发起的网络请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_crypto_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -916,8 +918,4 @@ TEST_F(QuicCryptoStreamTest, RetransmitCryptoFramesAndPartialWrite) {
   }
 
   EXPECT_CALL(*connection_, SendCryptoData(_, _, _)).Times(0);
- 
-"""
-
-
 ```

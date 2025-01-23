@@ -169,7 +169,7 @@ I will now process the code to extract these functional aspects and structure th
 
 总而言之，`GPUCanvasContext` 是 WebGPU API 在 Blink 渲染引擎中的关键连接点，它负责将 JavaScript 的 WebGPU 调用转化为底层的图形操作，并与 HTML Canvas 元素和 Chromium 的合成器紧密协作，最终将渲染结果呈现给用户。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_canvas_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1010,7 +1012,4 @@ bool GPUCanvasContext::CopyTextureToResourceProvider(
   auto* ri = shared_context_wrapper->ContextProvider()->RasterInterface();
 
   if (!GetContextProviderWeakPtr(
-"""
-
-
 ```

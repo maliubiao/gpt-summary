@@ -120,15 +120,17 @@ This code snippet is a collection of unit tests for the `LayoutBox` class in the
 
 总而言之，这部分测试延续了对 `LayoutBox` 类的细致测试，涵盖了滚动、布局更新、特殊 CSS 属性（如 `content-visibility`, `-webkit-box-reflect`, 锚点）、用户可滚动性以及复杂的背景绘制场景。它旨在确保 Blink 引擎在处理各种 HTML 和 CSS 组合时都能提供稳定和符合预期的布局行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_box_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 l->OriginAdjustmentForScrollbars());
   EXPECT_EQ(gfx::Vector2d(), scrollable_area->ScrollOffsetInt());
   // Same as "vlr" except for flipping.
@@ -827,8 +829,4 @@ TEST_P(LayoutBoxBackgroundPaintLocationTest, BorderImage) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

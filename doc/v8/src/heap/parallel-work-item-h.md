@@ -145,15 +145,17 @@ While JavaScript developers don't directly use this class, understanding its pur
 
 In summary, `v8/src/heap/parallel-work-item.h` defines a fundamental building block for managing parallel tasks within the V8 JavaScript engine. It provides a lightweight, non-blocking mechanism for threads to coordinate access to shared work or resources, enhancing the engine's performance through concurrency. While JavaScript developers don't directly interact with it, understanding its purpose sheds light on the internal workings of V8 and the challenges of concurrent programming.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/parallel-work-item.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/parallel-work-item.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ class ParallelWorkItem {
 }  // namespace v8
 
 #endif  // V8_HEAP_PARALLEL_WORK_ITEM_H_
-
-"""
-
 ```

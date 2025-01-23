@@ -109,7 +109,7 @@ By following these steps, we can arrive at a comprehensive and accurate understa
 
 总而言之，这部分测试用例通过验证媒体特性评估的可识别性，确保了 Blink 引擎能够准确地追踪和理解媒体查询的评估过程，这对于性能分析、调试以及最终正确地渲染网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/media_query_evaluator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -117,9 +117,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- and (min-aspect-ratio: 8/5) {
+### 源代码
+```cpp
+and (min-aspect-ratio: 8/5) {
         div { color: green }
       }
     </style>
@@ -223,8 +225,4 @@ TEST_F(MediaQueryEvaluatorIdentifiabilityTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -127,15 +127,17 @@ func main() {
 
 这段代码的核心功能是读取系统的 `umask` 值，并根据 `umask` 的设置，返回需要额外添加到目录权限上的位，以确保新创建的目录对于创建者来说是可写的。它反映了 Go 语言在处理文件系统操作时对系统默认权限设置的考虑。 理解 `umask` 的工作原理以及 `sysWriteBits` 的目的对于正确使用 Go 语言进行文件系统操作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/toolchain/umask_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -164,9 +166,4 @@ func sysWriteBits() fs.FileMode {
 	}
 	return 0o777 // everything is writable by default
 }
-
-"""
-
-
-
 ```

@@ -97,15 +97,17 @@ Here's a breakdown of the functionalities evident in the provided code:
 
 `InspectorCSSAgent` 是 Chromium Blink 引擎中负责为开发者工具提供 CSS 检查和编辑功能的核心组件。它能够表示和操作网页中的各种 CSS 结构，包括样式表、规则和属性。它允许用户通过 DevTools 修改 CSS 样式，并与 HTML 元素关联起来。该组件还支持操作历史记录，以便用户可以撤销和重做 CSS 修改操作。它通过 DevTools 协议与前端 JavaScript 代码通信，实现开发者工具的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_css_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010, Google Inc. All rights reserved.
  *
@@ -926,7 +928,4 @@ protocol::Response InspectorCSSAgent::disable() {
   coverage_enabled_.Set(false);
   local_fonts_enabled_.Set(true);
   SetCoverageEnable
-"""
-
-
 ```

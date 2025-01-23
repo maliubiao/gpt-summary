@@ -131,14 +131,16 @@ By following these steps, including the iterative refinement, I could arrive at 
 
 `inspector_issue_storage.cc` 是 Blink 渲染引擎中一个关键的内部组件，负责管理浏览器检查器中展示的问题报告。它作为一个有限大小的缓冲区，收集与 JavaScript, HTML, CSS 执行和解析相关的错误、警告和其他潜在问题，并将这些信息传递给开发者工具，帮助开发者诊断和修复网页问题。 它通过 `kMaxIssueCount` 限制了存储容量，并通过 Probe 系统进行监控。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_issue_storage.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ protocol::Audits::InspectorIssue* InspectorIssueStorage::at(
 }
 
 }  // namespace blink
-
-"""
-
 ```

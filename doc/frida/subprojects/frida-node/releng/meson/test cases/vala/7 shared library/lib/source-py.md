@@ -152,7 +152,7 @@ main();
 
 总而言之，这个 `source.py` 文件虽然功能简单，但它是 Frida 集成测试流程中的一个关键组成部分，用于验证 Frida 的 Node.js 绑定与使用 Vala 编写的共享库之间的互操作性。 对于 Frida 的开发者来说，它是调试和确保代码质量的重要工具。对于逆向工程师来说，理解这类测试用例有助于更深入地理解 Frida 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/vala/7 shared library/lib/source.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,9 +160,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

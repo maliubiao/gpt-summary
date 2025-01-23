@@ -41,12 +41,14 @@ console.log(Math.atan2(1, 0)); // 计算反正切值
 
 `v8/src/base/ieee754.cc` 文件是 V8 引擎中负责提供精确且高效的 IEEE 754 浮点数运算的核心组成部分。它定义的宏和实现的数学函数是 JavaScript 中进行数值计算的基础。  JavaScript 的 `Math` 对象提供的许多方法在底层都依赖于这个文件（或类似的低级实现）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/ieee754.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // The following is adapted from fdlibm (http://www.netlib.org/fdlibm).
 //
 // ====================================================
@@ -1968,7 +1970,4 @@ double log1p(double x) {
  *      Here ln2 is split into two floating point number:
  *          ln2_hi + ln2_lo,
  *      where n*ln2_h
-"""
-
-
 ```

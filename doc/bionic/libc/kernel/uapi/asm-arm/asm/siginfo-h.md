@@ -255,7 +255,7 @@ if (Process.platform === 'android') {
 
 这个 Frida 示例可以帮助你观察 Android 系统或应用如何使用 `sigaction` 函数，而 `siginfo_t` 结构体的信息通常会在信号处理函数被调用时传递。虽然我们没有直接 hook `siginfo_t` 的填充过程，但通过观察 `sigaction` 的调用，我们可以了解哪些信号会被处理，以及可能的处理方式，从而间接理解 `siginfo_t` 的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm/asm/siginfo.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,8 +266,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -275,7 +277,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/siginfo.h>
-
-"""
-
 ```

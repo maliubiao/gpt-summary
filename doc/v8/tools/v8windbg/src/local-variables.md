@@ -60,9 +60,12 @@ Here's a breakdown of the code's functionality:
 
 **总结来说， `local-variables.cc` 文件的目的是在 Windbg 中调试 V8 时，当程序停在 V8 的内置函数中时，能够以更贴近 V8 内部结构的方式显示本地变量，从而帮助开发者更好地理解和调试 JavaScript 代码的执行过程。** 它通过自定义 Windbg 的属性访问机制，并在特定的执行上下文中提供自定义的视图来实现这一功能。
 
-Prompt: ```这是目录为v8/tools/v8windbg/src/local-variables.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/tools/v8windbg/src/local-variables.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,6 +209,4 @@ IFACEMETHODIMP V8LocalVariables::SetValue(PCWSTR key, IModelObject* context,
                                           IModelObject* value) noexcept {
   return E_NOTIMPL;
 }
-
-"""
 ```

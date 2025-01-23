@@ -201,15 +201,17 @@ By following this thought process, we can systematically analyze the code and ad
 
 总而言之，`audio_decoder_broker.cc` 是 WebCodecs 音频解码功能的核心组件，它充当 JavaScript API 和底层音频解码器之间的桥梁，负责管理解码器的生命周期和跨线程操作。理解其功能有助于理解 WebCodecs API 的内部工作原理以及排查音频解码相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/audio_decoder_broker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -624,7 +626,4 @@ void AudioDecoderBroker::OnDecodeOutput(
 }
 
 }  // namespace blink
-
-"""
-
 ```

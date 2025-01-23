@@ -93,11 +93,13 @@ V8 每次启动都需要：
 
 `object-deserializer.cc` 是 V8 引擎中负责将快照数据转换回活动对象的关键组件。它直接影响着 JavaScript 的启动速度和执行环境，虽然 JavaScript 代码不能直接调用它，但它的工作是 JavaScript 能够快速运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/object-deserializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -234,7 +236,4 @@ MaybeDirectHandle<HeapObject> OffThreadObjectDeserializer::Deserialize(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

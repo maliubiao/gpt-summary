@@ -140,15 +140,17 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
 总而言之，`FrameResourceFetcherProperties` 是 Blink 引擎中一个关键的内部组件，它收集并提供了影响资源加载决策的重要信息，间接地控制着网页内容的呈现和交互行为。 理解它的功能有助于深入理解浏览器的工作原理，并为调试资源加载问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/frame_resource_fetcher_properties.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -296,7 +298,4 @@ int FrameResourceFetcherProperties::GetOutstandingThrottledLimit() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

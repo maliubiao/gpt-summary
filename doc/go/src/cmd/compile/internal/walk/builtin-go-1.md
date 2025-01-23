@@ -151,7 +151,7 @@ func main() {
 
 这段代码主要负责 Go 语言编译器 `walk` 阶段中对 `unsafe.String` 内置函数的处理，实现了在编译时进行安全检查和直接构造字符串两种策略。同时，它还包含了对类型错误、写屏障以及特定长度计算模式的优化处理。通过对 `unsafe.String` 的编译时处理，编译器能够在保证一定安全性的前提下，对这个底层的操作进行优化，提高性能。然而，使用 `unsafe.String` 需要格外小心，开发者需要确保指针的有效性和长度的正确性，避免潜在的内存安全问题。 此外，代码片段中还展示了编译器在处理内置函数时进行的各种优化，例如将 `len([]rune(string))` 转换为更高效的运行时函数调用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/walk/builtin.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -160,8 +160,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 Func, 1) {
 		fnname := "unsafestringcheckptr"
 		fn := typecheck.LookupRuntime(fnname)
@@ -253,10 +255,4 @@ func isByteCount(n ir.Node) bool {
 func isChanLenCap(n ir.Node) bool {
 	return (n.Op() == ir.OLEN || n.Op() == ir.OCAP) && n.(*ir.UnaryExpr).X.Type().IsChan()
 }
-
-"""
-
-
-
-
 ```

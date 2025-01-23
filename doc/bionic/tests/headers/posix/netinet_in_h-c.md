@@ -281,7 +281,7 @@ function ntohs(n) {
 
 通过这种方式，你可以动态地观察应用程序在进行网络操作时传递给底层系统调用的参数，从而理解 Android framework 或 NDK 如何使用 `netinet/in.h` 中定义的结构体。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/netinet_in_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -292,8 +292,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -428,7 +430,4 @@ static void netinet_in_h() {
 #error IN6_IS_ADDR_MC_GLOBAL
 #endif
 }
-
-"""
-
 ```

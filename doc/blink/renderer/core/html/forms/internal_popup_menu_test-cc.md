@@ -127,14 +127,16 @@ By following these steps, we can systematically analyze the C++ code and extract
 
 `internal_popup_menu_test.cc` 文件通过一个具体的测试用例，验证了当关联的 HTML `select` 元素被 CSS 隐藏时，Blink 渲染引擎中的 `InternalPopupMenu` 类能够安全地执行其 `Show()` 方法。这有助于确保浏览器的稳定性和健壮性，即使在面对一些不太常见的或潜在错误的网页代码时也能正常运行。它体现了对底层渲染机制的严格测试，以确保与 HTML、CSS 交互的各个环节都能可靠工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/internal_popup_menu_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ TEST_F(InternalPopupMenuTest, ShowSelectDisplayNone) {
 #endif  // !BUILDFLAG(IS_ANDROID)
 
 }  // namespace blink
-
-"""
-
 ```

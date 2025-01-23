@@ -185,15 +185,17 @@ Finally, I organize the information into a clear and comprehensive answer, cover
 
 因此，当你在浏览器中访问一个使用 Server-Sent Events 的网页时，你发送的请求和服务器的响应数据会经过 `EventSourceParser` 的处理。如果出现问题，对 `EventSourceParser` 的单元测试可以帮助开发者理解和调试问题所在。 例如，如果 JavaScript 代码没有收到预期的消息，可能是因为服务器发送的数据格式不符合 SSE 规范，而 `event_source_parser_test.cc` 中相关的测试用例（例如测试不同换行符或错误格式的 `retry`）可以帮助定位这类问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/eventsource/event_source_parser_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -613,7 +615,4 @@ TEST_F(EventSourceParserTest, IgnoreIdHavingNullCharacter) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

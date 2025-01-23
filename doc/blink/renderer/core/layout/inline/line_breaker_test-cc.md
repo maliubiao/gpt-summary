@@ -65,15 +65,17 @@ The user wants a summary of the functionality of the `line_breaker_test.cc` file
 
 这个文件的主要功能是 **全面测试 Blink 渲染引擎中 `LineBreaker` 类的各种分行逻辑**。它通过创建不同 HTML 结构和 CSS 样式的内联内容，并调用 `LineBreaker` 的方法进行分行，然后断言分行结果是否符合预期。测试覆盖了基本的文本分行、各种空白符的处理、内联元素的处理、特殊 CSS 属性的影响以及一些边界情况。 这些测试用例确保了 `LineBreaker` 能够在各种复杂的场景下正确地将内联内容分割成多行，从而保证网页的正确渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/line_breaker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1071,7 +1073,4 @@ body { margin: 0; padding: 0; font: 10px/10px Ahem; }
 TEST_F(LineBreakerTest, BreakAt) {
   LoadAhem();
   SetBodyInnerHTML(R"HT
-"""
-
-
 ```

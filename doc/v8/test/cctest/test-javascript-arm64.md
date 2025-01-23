@@ -190,11 +190,13 @@ Response: Let's break down the thought process for analyzing the C++ test file a
 
 总而言之，`v8/test/cctest/test-javascript-arm64.cc` 文件是 V8 引擎质量保证的重要组成部分，它通过编写针对特定架构的单元测试来验证 JavaScript 功能的正确性，确保 V8 引擎在 ARM64 平台上能够按照 JavaScript 规范的要求执行代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-javascript-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -433,7 +435,4 @@ TEST(unary_not) {
 }  // namespace test_javascript_arm64
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

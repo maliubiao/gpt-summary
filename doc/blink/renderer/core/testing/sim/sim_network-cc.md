@@ -159,15 +159,17 @@ fetch('http://example.com/data.json')
 
 总而言之，`SimNetwork` 是 Blink 引擎中一个关键的测试工具，它通过模拟网络行为，使得开发者可以在可控的环境下测试网页的加载和渲染过程，而无需依赖实际的网络连接。这对于保证 Blink 引擎的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/sim/sim_network.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -312,7 +314,4 @@ bool SimNetwork::FillNavigationParamsResponse(WebNavigationParams* params) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

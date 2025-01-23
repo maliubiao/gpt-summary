@@ -137,15 +137,17 @@ This step-by-step approach, starting from a broad overview and progressively foc
 
 `RemoteFrame.cc` 中定义的 `RemoteFrame` 类是 Blink 渲染引擎中实现跨进程 iframe 或 fenced frame 的关键组件。它充当本地进程中远程 frame 的代理，负责处理导航、渲染合成、事件转发以及与其他进程的通信。理解 `RemoteFrame` 的功能对于理解 Chromium 中跨进程页面的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/remote_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -940,7 +942,4 @@ gfx::Size RemoteFrame::GetOutermostMainFrameSize() const {
   HTMLFrameOwnerElement* owner = DeprecatedLocalOwner();
   DCHECK(owner);
   DCHECK(owner->GetDocume
-"""
-
-
 ```

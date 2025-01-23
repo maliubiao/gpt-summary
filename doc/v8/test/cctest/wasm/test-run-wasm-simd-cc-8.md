@@ -141,7 +141,7 @@ RunExtendIntToF32x4RevecTest(I8x16, _U, kExprF32UConvertI32, U, uint8_t,
 
 作为第 9 部分，并且是最后一部分，这段代码很可能是该测试文件中的最后一部分测试用例。它的主要功能是 **专门测试 WebAssembly SIMD 指令中，将不同大小的有符号和无符号整数 SIMD 向量扩展并转换为 `f32x4` 浮点数 SIMD 向量的正确性。**  它使用宏来组织和参数化这些测试，并针对前几个通道进行验证。整个文件（所有 9 部分）共同构建了一个全面的测试套件，用于确保 V8 引擎对 WebAssembly SIMD 功能的支持是正确且可靠的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-simd.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-run-wasm-simd.cc以.tq结尾，那它是个v8 torque源代码，
@@ -149,9 +149,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共9部分，请归纳一下它的功能
+```
 
-"""
-                 \
+### 源代码
+```cpp
+\
       /* Only lane0 to lane7 are processed*/                                   \
       for (uint32_t j = 0; j < 7; j++) {                                       \
         float expected = static_cast<float>(static_cast<convert_type>(         \
@@ -243,8 +245,4 @@ RunExtendIntToF32x4RevecTest(I16x8, , kExprF32SConvertI32, S, int16_t,
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

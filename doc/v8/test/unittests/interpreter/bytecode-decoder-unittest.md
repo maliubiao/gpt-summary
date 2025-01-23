@@ -94,11 +94,13 @@ const result = add(5, 10);
 
 `bytecode-decoder-unittest.cc` 文件是 V8 引擎测试套件的一部分，专门用于验证字节码解码器的正确性。 字节码解码器是理解 V8 如何执行 JavaScript 代码的关键工具，因为它能够将底层的字节码指令转换成人类可读的形式，从而帮助开发者和研究人员深入了解 JavaScript 的执行过程。 不同的 JavaScript 语法和操作会被编译成不同的字节码指令，而这个测试文件就是用来确保这些指令能够被正确地解析和展示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/bytecode-decoder-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ TEST(BytecodeDecoder, DecodeBytecodeAndOperands) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

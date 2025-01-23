@@ -330,7 +330,7 @@ console.log(obj.slow_call_count);
 
 这部分代码主要集中在 **`FastCApiObject` 类的定义及其与 JavaScript 的绑定**。它详细展示了如何通过 V8 的 C++ API 将 C++ 函数暴露给 JavaScript 环境，并涵盖了多种参数类型、返回值、类型注解、函数重载以及与 WebAssembly 和指针的互操作。  核心目的是为了测试和演示 V8 引擎的 Fast C-API 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8-test.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/d8/d8-test.cc以.tq结尾，那它是个v8 torque源代码，
@@ -338,11 +338,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-
-  template <typename IntegerT>
+### 源代码
+```cpp
+template <typename IntegerT>
   static double ClampCompare(Local<Object> receiver, bool in_range,
                              double real_arg, IntegerT checked_arg,
                              FastApiCallbackOptions& options) {
@@ -1190,7 +1190,4 @@ Local<FunctionTemplate> Shell::CreateTestFastCApiTemplate(Isolate* isolate) {
             .Arg<3, v8::CTypeInfo::Flags::kClampBit>()
 #ifdef V8_USE_SIMULATOR_WITH_GENERIC_C_CALLS
             .Patc
-"""
-
-
 ```

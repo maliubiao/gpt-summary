@@ -157,15 +157,17 @@ try {
 
 `v8/src/trap-handler/trap-handler-internal.h` 定义了 V8 引擎内部用于处理代码执行过程中陷阱或错误的机制，尤其关注 WebAssembly 的内存安全。它定义了用于描述受保护代码区域、管理相关元数据以及检查内存访问是否合法的内部数据结构和函数。虽然开发者不能直接在 JavaScript 中操作这些内容，但 trap handler 的存在对于保证 JavaScript 和 WebAssembly 代码的安全可靠执行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/trap-handler-internal.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/trap-handler/trap-handler-internal.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ bool IsAccessedMemoryCovered(uintptr_t accessed_addr);
 }  // namespace v8
 
 #endif  // V8_TRAP_HANDLER_TRAP_HANDLER_INTERNAL_H_
-
-"""
-
 ```

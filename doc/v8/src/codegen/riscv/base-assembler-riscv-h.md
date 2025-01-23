@@ -180,15 +180,17 @@ funct7   rs2   rs1  funct3   rd   opcode
 
 理解 `v8/src/codegen/riscv/base-assembler-riscv.h` 的功能对于理解 V8 如何在 RISC-V 架构上执行 JavaScript 代码至关重要。它提供了一个低级别的接口，用于生成构成 V8 运行时核心的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/base-assembler-riscv.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/base-assembler-riscv.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -384,7 +386,4 @@ class AssemblerRiscvBase {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_RISCV_BASE_ASSEMBLER_RISCV_H_
-
-"""
-
 ```

@@ -131,14 +131,16 @@ By following this thought process, combining code analysis with understanding th
 
 总而言之，`web_video_frame_submitter.cc` 是 Blink 渲染引擎中一个关键的组件，它充当了视频解码器和渲染器之间的桥梁，确保视频帧能够正确且高效地显示在用户的屏幕上。它通过定义清晰的接口和利用 Chromium 的渲染架构，实现了 Web 上视频播放的核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_video_frame_submitter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ std::unique_ptr<WebVideoFrameSubmitter> WebVideoFrameSubmitter::Create(
 }
 
 }  // namespace blink
-
-"""
-
 ```

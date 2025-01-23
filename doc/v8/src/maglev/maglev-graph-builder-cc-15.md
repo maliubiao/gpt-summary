@@ -259,7 +259,7 @@ By following this iterative process of scanning, focusing, analyzing, connecting
 
 `v8/src/maglev/maglev-graph-builder.cc` 的这一部分是 Maglev 编译器构建执行图的关键组件，它负责将 JavaScript 的对象创建、函数调用、上下文管理和参数处理等操作转换为图中的节点表示，并针对常见的字面量创建和 `arguments` 对象进行了优化。理解这部分代码有助于深入了解 V8 编译器的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -267,8 +267,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第16部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 parameter_count_without_receiver() == 0) {
         // If there is no aliasing, the arguments object elements are not
         // special in any way, we can just return an unmapped backing store.
@@ -1074,7 +1076,4 @@ MaglevGraphBuilder::BranchResult MaglevGraphBuilder::BuildBranchIfRootConstant(
   // with the checked value. Cache whether we want to swap, since after we've
   // swapped the accumulator isn't the original node anymore.
   BranchBuilder::PatchAccumulatorInBranchScope scope(builder, node, root_index
-"""
-
-
 ```

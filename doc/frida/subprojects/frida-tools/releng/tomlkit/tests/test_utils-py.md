@@ -112,7 +112,7 @@ By following these steps, moving from a surface-level understanding to deeper co
 
 总而言之，`test_utils.py` 这个文件是 `tomlkit` 库测试套件的一部分，专门用于测试日期时间解析功能。虽然它本身不直接进行动态 instrumentation 操作，但它确保了 `tomlkit` 库能够正确处理配置文件中的日期时间信息，这对于 Frida 的正常运行至关重要。在逆向工程中，理解和处理各种时间戳格式是常见的任务，这个测试文件所测试的功能就服务于这一需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tests/test_utils.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from datetime import date
 from datetime import datetime as dt
 from datetime import time
@@ -173,7 +175,4 @@ def test_parse_rfc3339_date(string, expected):
 )
 def test_parse_rfc3339_time(string, expected):
     assert parse_rfc3339(string) == expected
-
-"""
-
 ```

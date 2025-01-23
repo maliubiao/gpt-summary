@@ -174,15 +174,17 @@ assigned->Contains(4) == false
 
 总而言之，`v8/test/unittests/wasm/loop-assignment-analysis-unittest.cc` 通过一系列精心的测试用例，确保 V8 引擎能够准确地分析 WebAssembly 循环内的局部变量赋值情况，这对于 WebAssembly 代码的正确执行和优化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/wasm/loop-assignment-analysis-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/wasm/loop-assignment-analysis-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -412,7 +414,4 @@ TEST_F(WasmLoopAssignmentAnalyzerTest, regress_642867) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

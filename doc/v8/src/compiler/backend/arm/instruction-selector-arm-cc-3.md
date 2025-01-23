@@ -100,7 +100,7 @@ VMLA.F64 Dreg_result, Dreg_operand3, Dreg_operand1, Dreg_operand2
 
 这部分代码主要关注 **浮点数加法和减法运算的指令选择和优化**，特别是针对 ARM 架构的融合乘法累加/减法指令的使用。它还初步涉及了函数调用的参数准备以及比较操作的框架。 此外，它开始展现对 V8 新编译器 **Turboshaft** 的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/instruction-selector-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm/instruction-selector-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -108,8 +108,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Mul>() && CanCover(node, add.right())) {
       const FloatBinopOp& mul = rhs.Cast<FloatBinopOp>();
       Emit(kArmVmlaF32, g.DefineSameAsFirst(node), g.UseRegister(add.left()),
@@ -894,7 +896,4 @@ void InstructionSelectorT<TurboshaftAdapter>::VisitWordCompareZero(
   InstructionCode const opcode =
       kArmTst | AddressingModeField::encode(kMode_Operand2_R);
   InstructionOperand const value_o
-"""
-
-
 ```

@@ -130,14 +130,16 @@ Based on the above analysis, we can structure the answer to address the prompt's
 
 总而言之，`blink/common/messaging/message_port_descriptor_unittest.cc` 通过各种测试用例，确保 `MessagePortDescriptor` 类能够正确地管理消息端口的状态、进行监控，并支持可靠的序列化和反序列化，从而保证了 Blink 引擎中消息传递机制的稳定性和可靠性。这对于实现 Web 平台的跨文档和跨上下文通信至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/messaging/message_port_descriptor_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -379,7 +381,4 @@ TEST(MessagePortDescriptorTestDeathTest, InvalidUsageForEntangling) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

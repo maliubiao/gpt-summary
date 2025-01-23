@@ -252,7 +252,7 @@ if __name__ == "__main__":
 
 请注意，上述 Frida 脚本只是一个基本示例，实际解析 `ptrace` 参数以获取硬件断点信息的代码会更复杂，并且依赖于具体的 `ptrace` 请求类型和目标架构。你需要查阅 Linux 内核文档以了解 `ptrace` 的详细用法和参数含义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/hw_breakpoint.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -263,8 +263,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -292,7 +294,4 @@ enum {
   HW_BREAKPOINT_INVALID = HW_BREAKPOINT_RW | HW_BREAKPOINT_X,
 };
 #endif
-
-"""
-
 ```

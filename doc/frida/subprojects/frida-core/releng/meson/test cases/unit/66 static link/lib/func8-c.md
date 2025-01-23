@@ -163,7 +163,7 @@ int func7() {
 
 总结来说，即使是非常简单的代码片段，也能体现逆向工程、动态分析以及底层系统知识的许多核心概念。Frida 这样的工具为我们提供了一种强大的方式来观察和操纵程序的运行时行为，从而更深入地理解程序的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/66 static link/lib/func8.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,15 +171,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func7();
 
 int func8()
 {
   return func7() + 1;
 }
-
-"""
-
 ```

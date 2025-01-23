@@ -160,14 +160,16 @@ Finally, I'd organize the information into the requested categories: functionali
 
 总而言之，`cached_metadata.cc` 中定义的 `CachedMetadata` 类是 Blink 渲染引擎中用于管理和操作缓存元数据的重要组成部分，它通过序列化和反序列化机制，有效地存储和检索与网页资源相关的辅助信息，从而优化页面加载和渲染性能。正确理解和使用这个类对于理解 Blink 的缓存机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/cached_metadata.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ CachedMetadata::DrainSerializedData() && {
 }
 
 }  // namespace blink
-
-"""
-
 ```

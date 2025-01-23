@@ -397,7 +397,7 @@ go run your_app.go -dbdriver postgres -dbsource "user=postgres password=secret h
 
 这段代码是一个很好的示例，展示了如何在 Go 中构建一个基本的、与数据库交互的 HTTP 服务，并涵盖了一些重要的最佳实践，例如使用上下文、处理错误和使用事务。理解这些概念对于开发健壮的 Go Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/database/sql/example_service_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -405,8 +405,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -569,9 +571,4 @@ where
 		return
 	}
 }
-
-"""
-
-
-
 ```

@@ -123,14 +123,16 @@ Let's break down the thought process for analyzing this C++ file and answering t
 
 `animation_translation_util.cc` 是 Blink 引擎中一个关键的组件，它负责将高级的 CSS 变换概念转换为底层的图形操作，使得浏览器能够正确渲染带有 `transform` 属性的元素。  它位于前端技术栈的底层，对前端开发者来说是透明的，但其正确性对于保证网页视觉效果至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/animation/animation_translation_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -277,7 +279,4 @@ void ToGfxTransformOperations(
 }
 
 }  // namespace blink
-
-"""
-
 ```

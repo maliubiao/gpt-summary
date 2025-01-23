@@ -178,7 +178,7 @@ func main() {
 
 `encgen.go` 是一个代码生成工具，用于为 `encoding/gob` 包生成针对基本数据类型的优化编码函数。它通过读取预定义的类型信息，并根据模板生成 Go 源代码，从而提高 Gob 编码的效率。使用者不应直接修改生成的 `enc_helpers.go` 文件。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/gob/encgen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -186,8 +186,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -411,9 +413,4 @@ func enc%[2]sSlice(state *encoderState, v reflect.Value) bool {
 	return true
 }
 `
-
-"""
-
-
-
 ```

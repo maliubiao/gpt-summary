@@ -98,7 +98,7 @@ fetch('https://example.com/data.json')
 
 这段代码（第 3 部分）主要涵盖了 `SpdyNetworkTransaction` 类在处理各种 HTTP 方法 (GET, PUT, HEAD, POST) 以及不同类型的请求体 (包括分块上传和空请求体) 时的单元测试。它验证了请求的构建、响应的解析、错误处理以及在特定场景下的行为，例如在上传完成前收到响应和处理底层 socket 写入失败的情况。  此外，还包括了取消请求、在回调中操作 session 和处理重定向等更复杂场景的测试。 这些测试确保了 `SpdyNetworkTransaction` 能够可靠地处理各种常见的和异常的网络请求，为基于 SPDY 协议的网络通信提供稳定的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ionCallback callback2;
   KillerCallback callback3(std::move(trans3));
 
@@ -993,7 +995,4 @@ TEST_P(SpdyNetworkTransactionTest, NoConnectionPoolingOverTunnel) {
       HostPortPair("www.example.org", 443), PRIVACY_MODE_DISABLED,
       PacResultElementToProxyChain(kPacString), SessionUsage::kDestination,
       SocketTag(), NetworkAnony
-"""
-
-
 ```

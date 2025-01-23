@@ -301,15 +301,17 @@ The provided code snippet from `text_autosizer.cc` implements the core logic for
 
 **总结来说，这部分代码是 Chromium Blink 引擎中实现文本自动调整大小功能的核心组成部分，负责将文本内容组织成逻辑单元，计算调整倍数，并将其应用到渲染的文本上，从而提升用户在不同设备和场景下的阅读体验。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/text_autosizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 k(block);
   if (!(flags & POTENTIAL_ROOT))
     return nullptr;
@@ -1041,8 +1043,4 @@ void TextAutosizer::FingerprintMapper::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -274,7 +274,7 @@ If a user encounters an error in their Frida script involving kernel operations,
 
 By understanding the functionality of `gumv8kernel.cpp` and how user actions trigger the execution of its functions, developers can effectively debug issues related to kernel interaction in their Frida scripts. They can examine the input parameters passed to these C++ functions and analyze the error conditions within the code to pinpoint the root cause of the problem.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8kernel.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -282,8 +282,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2021 Abdelrahman Eid <hot3eed@gmail.com>
@@ -1168,7 +1170,4 @@ gum_v8_kernel_check_api_available (Isolate * isolate)
 
   return TRUE;
 }
-
-"""
-
 ```

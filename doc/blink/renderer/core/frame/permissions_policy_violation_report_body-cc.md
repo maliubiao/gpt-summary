@@ -156,14 +156,16 @@ This systematic approach, combining code analysis, knowledge of web technologies
 
 总而言之，`permissions_policy_violation_report_body.cc` 文件在 Chromium Blink 引擎中扮演着关键的角色，负责结构化地报告 Permissions Policy 的违规行为，为开发者提供必要的错误信息，以便他们能够更好地理解和管理网站的安全策略。它间接地与 JavaScript、HTML 和 CSS 交互，共同维护 Web 平台的安全性和功能性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/permissions_policy_violation_report_body.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -181,7 +183,4 @@ void PermissionsPolicyViolationReportBody::BuildJSONValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

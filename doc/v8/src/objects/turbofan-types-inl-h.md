@@ -187,15 +187,17 @@ inline int TurbofanType::GetFieldA() const {
 
 `v8/src/objects/turbofan-types-inl.h` 是 V8 引擎中一个关键的头文件，它为 Turbofan 优化编译器使用的类型系统提供了内联实现。它与 Torque 语言紧密结合，涉及到 V8 的堆管理和对象表示。虽然普通 JavaScript 开发者无法直接与之交互，但理解其背后的概念有助于编写更易于优化的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/turbofan-types-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/turbofan-types-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ namespace internal {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_TURBOFAN_TYPES_INL_H_
-
-"""
-
 ```

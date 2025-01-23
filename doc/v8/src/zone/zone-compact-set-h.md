@@ -178,15 +178,17 @@ void ZoneCompactSetExample(Isolate* isolate) {
 
 总而言之，`v8/src/zone/zone-compact-set.h` 提供了一个轻量级、高效的集合实现，专门用于在 V8 内部存储少量 Handle-like 对象，并利用 Zone 分配器进行内存管理。它的设计权衡使其在特定场景下非常有用，但在其他场景下可能需要考虑其他数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/zone/zone-compact-set.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/zone/zone-compact-set.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -558,7 +560,4 @@ using ZoneHandleSet = ZoneCompactSet<Handle<T>>;
 }  // namespace v8
 
 #endif  // V8_ZONE_ZONE_COMPACT_SET_H_
-
-"""
-
 ```

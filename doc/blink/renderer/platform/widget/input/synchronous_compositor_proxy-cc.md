@@ -124,14 +124,16 @@ By following these steps, we can systematically analyze the C++ code and provide
 
 总而言之，`SynchronousCompositorProxy` 是 Blink 渲染引擎中一个负责连接渲染器进程和浏览器进程合成器的关键组件，它处理绘制请求、同步状态，并与网页技术（HTML, CSS, JavaScript）的功能紧密相关，以确保网页内容能够正确且及时地渲染到屏幕上。开发者在使用相关 API 时需要注意正确的初始化、资源管理以及流程控制，以避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/synchronous_compositor_proxy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -555,7 +557,4 @@ void SynchronousCompositorProxy::HostDisconnected() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

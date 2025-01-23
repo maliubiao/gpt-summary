@@ -105,7 +105,7 @@ This detailed thought process allows for a comprehensive analysis even of a seem
 
 总而言之，这个看似简单的 `main.cpp` 文件在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理具有特定依赖关系的程序时的能力。开发者在遇到与依赖关系相关的测试失败时，可能会通过上述步骤来到这个文件进行分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/219 include_type dependency/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <boost/graph/filtered_graph.hpp>
 
@@ -123,7 +125,4 @@ using namespace std;
 int main(void) {
   return 0;
 }
-
-"""
-
 ```

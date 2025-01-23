@@ -88,14 +88,16 @@ Let's break down the thought process for analyzing this code snippet and generat
 
 `custom_spaces.cc` 文件是 Blink 引擎内存管理的关键组成部分，它通过定义和管理不同的自定义内存空间，为高效地存储和回收各种与 HTML, CSS 和 JavaScript 相关的对象提供了基础。它更偏向底层实现，用户或普通开发者不会直接与之交互，相关的错误更多会出现在 Blink 引擎的开发过程中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/custom_spaces.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -134,7 +136,4 @@ CustomSpaces::CreateCustomSpaces() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

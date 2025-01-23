@@ -205,7 +205,7 @@ sys.stdin.read()
 
 请注意，实际的调用栈可能非常复杂，涉及到多个 Framework 层和 Native 层的调用。这个 Frida 示例只是一个起点，你可以根据需要 hook 不同的函数来跟踪更详细的调用过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/posix_acl_xattr.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -216,8 +216,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -238,7 +240,4 @@ struct posix_acl_xattr_header {
   __le32 a_version;
 };
 #endif
-
-"""
-
 ```

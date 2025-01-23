@@ -180,16 +180,18 @@ Here's a breakdown of the code's functionalities:
 
 总而言之，这个代码片段是 Chromium 渲染引擎中用于测试 `ComputedStyle` 类的关键部分，它确保了浏览器能够正确地处理各种 CSS 特性，包括 CSS 变量、颜色主题以及特定属性的计算和比较，从而保证网页的正确渲染和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/computed_style_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-  // Removed variable value
+### 源代码
+```cpp
+// Removed variable value
   // Old styles with variable reference force style recalc
   old_builder = CreateComputedStyleBuilder();
   old_builder.SetHasVariableReference();
@@ -994,7 +996,4 @@ TEST_F(ComputedStyleTest, ShouldApplyAnyContainment) {
   ASSERT_TRUE(body);
 
   std::vector display_types = {CSSValueID::k
-"""
-
-
 ```

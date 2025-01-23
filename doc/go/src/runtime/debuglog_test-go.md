@@ -156,7 +156,7 @@ func main() {
 
 `go/src/runtime/debuglog_test.go` 是用来测试 Go 运行时内部 `debuglog` 功能的测试文件。`debuglog` 是一种用于底层调试的日志机制，它的启用依赖于编译时的 `-tags debuglog` 标签。使用者容易犯的错误是忘记添加这个编译标签，导致调试信息无法输出。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/debuglog_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -164,8 +164,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -357,9 +359,4 @@ func TestDebugLogLongString(t *testing.T) {
 		t.Fatalf("want %q, got %q", want, got)
 	}
 }
-
-"""
-
-
-
 ```

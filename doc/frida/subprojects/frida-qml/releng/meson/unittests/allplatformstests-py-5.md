@@ -168,7 +168,7 @@ By following these steps, I can systematically analyze the code and provide a co
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/unittests/allplatformstests.py` 这个文件的主要功能是 **全面地测试 Frida QML 子项目在使用 Meson 构建系统时的各种功能和场景**。它涵盖了构建配置的解析、依赖管理、目标构建、代码覆盖率、与外部构建工具（如 CMake）的集成、以及各种 Meson 命令的正确性。这些测试确保了 Frida QML 子项目能够可靠地构建和运行，并且其构建过程符合预期。这个文件是 Frida 项目质量保证的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 i[k]
 
             sources = []
@@ -936,7 +938,4 @@ i[k]
         envs = {'CPPFLAGS': '-DCPPFLAG',
                 'CFLAGS': '-DCFLAG',
                 'CXXFLAGS': '-
-"""
-
-
 ```

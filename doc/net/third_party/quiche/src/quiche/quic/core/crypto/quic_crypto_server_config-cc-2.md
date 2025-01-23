@@ -253,7 +253,7 @@ QuicSignedServerConfig::~QuicSignedServerConfig() {}
 
 结合前两部分的分析，`quic_crypto_server_config.cc` 文件总体上负责管理 QUIC 服务器的加密配置，包括密钥的管理、证书的处理、会话票据的处理、源地址令牌的处理以及服务器 Nonce 的生成和验证。它确保了 QUIC 连接的安全性和效率，是 QUIC 协议服务器端实现的核心组件之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/quic_crypto_server_config.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -261,8 +261,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 fig->key_exchanges.push_back(std::move(ka));
   }
 
@@ -479,8 +481,4 @@ QuicSignedServerConfig::QuicSignedServerConfig() {}
 QuicSignedServerConfig::~QuicSignedServerConfig() {}
 
 }  // namespace quic
-
-"""
-
-
 ```

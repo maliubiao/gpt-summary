@@ -131,15 +131,17 @@ By following these steps, a comprehensive analysis of the C++ test file can be a
 
 总而言之，`base_fetch_context_test.cc` 是 Blink 渲染引擎中负责资源加载安全和策略执行的核心组件 `BaseFetchContext` 的单元测试，它直接关系到 JavaScript, HTML, CSS 资源的加载和安全，并为开发者提供了理解和调试相关问题的依据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/base_fetch_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2015, Google Inc. All rights reserved.
  *
@@ -511,7 +513,4 @@ TEST_F(BaseFetchContextTest, CanRequestSVGImage) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

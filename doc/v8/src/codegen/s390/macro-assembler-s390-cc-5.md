@@ -503,7 +503,7 @@ SIMD_BINOP_LIST_VRR_B(EMIT_SIMD_BINOP_VRR_B)
 
 #define EMIT_SIMD_BINOP_VRR_C(name, op, c1, c2, c3)                    \
   void MacroAssembler::name(Simd128Register dst, Sim
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/macro-assembler-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/s390/macro-assembler-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -511,8 +511,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rand(end),
                          Operand(shift_amount), false);
   RotateInsertSelectBits(temp1, new_value, Operand(start), Operand(end),
@@ -1276,8 +1278,4 @@ void MacroAssembler::I32x4SConvertF32x4(Simd128Register dst,
 void MacroAssembler::I32x4UConvertF32x4(Simd128Register dst,
                                         Simd128Register src,
                                         Simd128Register scratch1,
-                      
-"""
-
-
 ```

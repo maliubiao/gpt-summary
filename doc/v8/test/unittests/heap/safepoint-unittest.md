@@ -121,11 +121,13 @@ console.log('计算完成，总和为:', sum);
 
 `safepoint-unittest.cc` 是 V8 引擎中用于测试其安全点机制的关键测试文件。安全点是 V8 实现高效垃圾回收和并发控制的基础，尽管 JavaScript 开发者不直接操作它，但它的运行机制直接影响了 JavaScript 程序的性能和执行特性，尤其是在内存管理方面。 上述 JavaScript 示例展示了在内存压力下，V8 如何利用安全点机制进行垃圾回收，这可能会导致 JavaScript 代码执行过程中出现短暂的停顿。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/safepoint-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ TEST_F(SafepointTest, StopRunningThreads) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

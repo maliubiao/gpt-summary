@@ -101,14 +101,16 @@ By following these steps, and including the self-correction, we arrive at a comp
 
 总而言之，`scrollbar_theme_settings.cc` 提供了一个中心化的配置点，用于控制 Blink 引擎中不同滚动条类型的启用状态，这直接影响了网页在浏览器中的视觉呈现和用户交互，并与 CSS 样式、HTML 结构和 JavaScript 行为紧密相关。理解其功能有助于深入了解浏览器渲染机制，尤其是在进行浏览器内核开发或测试时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/scrollbar_theme_settings.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -146,7 +148,4 @@ bool ScrollbarThemeSettings::FluentScrollbarsEnabled() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

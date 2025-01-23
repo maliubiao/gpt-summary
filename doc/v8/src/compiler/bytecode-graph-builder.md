@@ -60,12 +60,14 @@ Response: The user wants a summary of the provided C++ code file, `bytecode-grap
 
 `v8/src/compiler/bytecode-graph-builder.cc` 中的 `BytecodeGraphBuilder` 类是 V8 编译流程中的核心组件，它负责将 JavaScript 编译产生的字节码转换为图这种更适合优化的中间表示。  它直接关联着各种 JavaScript 语言特性，通过分析字节码并生成相应的图节点，为后续的优化和最终机器码生成奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/bytecode-graph-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1662,7 +1664,4 @@ void BytecodeGraphBuilder::VisitLdaGlobal() {
   uint32_t feedback_slot_index = bytecode_iterator().GetIndexOperand(1);
   Node* node =
       BuildLo
-"""
-
-
 ```

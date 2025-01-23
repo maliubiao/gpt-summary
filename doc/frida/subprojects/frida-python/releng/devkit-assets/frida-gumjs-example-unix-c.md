@@ -174,7 +174,7 @@ By following this structured approach, you can effectively analyze and explain t
 
 总而言之，这个示例代码是一个学习 Frida 动态 instrumentation 的良好起点，它简洁地展示了如何使用 C 代码和嵌入的 JavaScript 代码来拦截和分析 Unix 系统调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/devkit-assets/frida-gumjs-example-unix.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-gumjs.h"
 
 #include <fcntl.h>
@@ -268,7 +270,4 @@ on_message (const gchar * message,
 
   g_object_unref (parser);
 }
-
-"""
-
 ```

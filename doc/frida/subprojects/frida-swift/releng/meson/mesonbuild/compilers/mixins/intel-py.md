@@ -135,7 +135,7 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/mixins/intel.py` 文件是 Frida 构建系统中用于处理 Intel 编译器的关键组成部分，它定义了构建 Frida 组件所需的编译器选项，这些选项直接影响生成的可执行文件和库的行为，与逆向工程、二进制底层知识、操作系统特性以及编译器的使用方式紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/mixins/intel.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The meson development team
 
@@ -312,7 +314,4 @@ class IntelVisualStudioLikeCompiler(VisualStudioLikeCompiler):
 
     def get_pch_base_name(self, header: str) -> str:
         return os.path.basename(header)
-
-"""
-
 ```

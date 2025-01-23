@@ -177,15 +177,17 @@ Data URLs 是 Web 标准的一部分，广泛应用于 JavaScript 中。以下�
 
 通过跟踪代码执行流程，你可以了解 Data URL 是如何被解析和处理的，从而定位问题的原因。 例如，你可以检查在解析过程中，哪些步骤失败了，或者在构建响应时，哪些信息被错误地设置了。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/data_url_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -554,7 +556,4 @@ TEST(DataURLRemoveWhitespaceTest, Parse) {
 }
 
 }  // namespace net
-
-"""
-
 ```

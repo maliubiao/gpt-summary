@@ -171,7 +171,7 @@ By following this structured thinking process, I can generate a comprehensive an
 
 `frida/subprojects/frida-tools/releng/meson/test cases/common/208 link custom/lib.c` 这个文件是一个简单的 C 语言源代码，用于 Frida 工具的测试用例。 它主要演示了 Frida 在处理未定义函数调用时的行为，这与逆向分析中动态插桩的需求密切相关。  通过这个简单的例子，可以测试 Frida 在处理动态链接、符号解析以及修改程序执行流程方面的能力。  开发者查看这个文件通常是为了理解 Frida 的工作原理、开发和测试 Frida 本身，或者调试与 Frida 相关的特定问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/208 link custom/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void flob(void);
 
 int foo(void)
@@ -188,7 +190,4 @@ int foo(void)
   flob();
   return 0;
 }
-
-"""
-
 ```

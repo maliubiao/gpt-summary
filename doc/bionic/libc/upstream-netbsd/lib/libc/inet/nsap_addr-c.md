@@ -264,7 +264,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 `bionic/libc/upstream-netbsd/lib/libc/inet/nsap_addr.c` 文件提供了处理 NSAP 地址的函数。虽然 NSAP 地址在现代 Android 开发中不常用，但这些函数作为 Bionic libc 的一部分被继承下来。了解这些函数的功能和实现可以帮助我们更深入地理解 Android 底层的网络处理能力，即使它们的直接应用场景有限。 使用 Frida 可以帮助我们动态地观察和调试这些底层函数的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/lib/libc/inet/nsap_addr.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: nsap_addr.c,v 1.6 2009/04/12 17:07:17 christos Exp $	*/
 
 /*
@@ -407,7 +409,4 @@ inet_nsap_ntoa(int binlen, const u_char *binary, char *ascii) {
 }
 
 /*! \file */
-
-"""
-
 ```

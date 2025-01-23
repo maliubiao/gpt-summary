@@ -165,15 +165,17 @@ newline
 
 因此，虽然用户操作不会直接执行这个测试工具文件，但用户的网络活动会触发 Chromium 网络栈中的代码，而这个测试工具文件是用来验证网络栈中关键组件（如 HTTP 头部解析器）的功能是否正常的。当网络行为出现异常时，开发人员可能会通过运行相关的测试用例，并查看像 `HttpResponseHeadersToSimpleString` 这样的工具的输出，来辅助诊断问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_response_headers_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ std::string HttpResponseHeadersToSimpleString(
 }
 
 }  // namespace net::test
-
-"""
-
 ```

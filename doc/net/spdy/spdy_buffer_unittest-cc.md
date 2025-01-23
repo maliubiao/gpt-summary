@@ -190,15 +190,17 @@ fetch('https://example.com/data.json')
 
 总而言之，`net/spdy/spdy_buffer_unittest.cc` 是确保 `SpdyBuffer` 类正确运行的关键，它通过各种测试用例覆盖了该类的主要功能和边界情况，为 Chromium 网络栈的稳定性和可靠性提供了保障。虽然用户不会直接接触到这个类，但它的正确性直接影响着用户通过浏览器进行网络访问的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_buffer_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -341,7 +343,4 @@ TEST_F(SpdyBufferTest, IOBufferForRemainingDataOutlivesBuffer) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

@@ -127,14 +127,16 @@ This systematic approach—from initial scanning and keyword recognition to deta
 
 `known_ports.cc` 文件是 Blink 引擎中一个重要的安全组件，它帮助浏览器判断网络请求的目标端口是否合法，防止潜在的安全风险。理解其功能对于前端开发者来说也很重要，可以避免由于端口配置不当而导致的网络请求失败或其他问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/known_ports.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2007, 2008, 2011, 2012 Apple Inc. All rights reserved.
  * Copyright (C) 2012 Research In Motion Limited. All rights reserved.
@@ -232,7 +234,4 @@ void SetExplicitlyAllowedPorts(base::span<const uint16_t> allowed_ports) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

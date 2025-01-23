@@ -164,15 +164,17 @@ func main() {
 
 `go/test/float_lit2.go` 是 Go 语言标准库中的一个测试文件，用于确保 Go 编译器正确处理浮点数常量字面量的转换，特别是在接近 `float32` 和 `float64` 的边界值时。它通过一系列精心设计的测试用例来验证转换的精度和正确性。使用者需要理解浮点数的特性和限制，避免在精度方面做出错误的假设。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/float_lit2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Check conversion of constant to float32/float64 near min/max boundaries.
@@ -337,9 +339,4 @@ func fromBits(b uint64, x interface{}) interface{} {
 	}
 	return "?"
 }
-
-"""
-
-
-
 ```

@@ -95,15 +95,17 @@ Let's structure the answer according to the user's requirements.
 
 这段代码主要测试了在滚动条消失的情况下，视口单位 `dvw` 的表现是否符合预期，即宽度不应该发生变化。它创建了包含绝对定位和固定定位元素的 HTML 结构，并通过移除一个占据宽度的 `spacer` 元素来模拟滚动条消失的场景。测试验证了在滚动条消失前后，绝对定位和固定定位元素的宽度是否保持不变。这确保了动态视口宽度单位在滚动条出现/消失时行为的稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/browser_controls_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ts should not change when scrollbar disappears.
   EXPECT_FLOAT_EQ(param.width, abs_pos->GetBoundingClientRect()->width());
   EXPECT_FLOAT_EQ(param.width, fixed_pos->GetBoundingClientRect()->width());
@@ -820,7 +822,4 @@ TEST_F(BrowserControlsSimTest, HideAnimated) {
   SimRequest request("https://example.com/test.html", "text/html");
   LoadURL("https://example.com/test.html");
   request.Comple
-"""
-
-
 ```

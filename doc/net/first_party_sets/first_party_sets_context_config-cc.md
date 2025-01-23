@@ -161,15 +161,17 @@ customizations_ = {
 
 总而言之，`net/first_party_sets/first_party_sets_context_config.cc` 文件定义了一个核心的数据结构，用于存储和管理特定浏览器上下文中的 First-Party Sets 配置信息，这些配置直接影响浏览器如何处理与 FPS 相关的网络请求、Cookie 和存储访问等行为。开发者在调试与 FPS 相关的问题时，可能需要深入到这个层面来理解问题的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/first_party_sets/first_party_sets_context_config.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ bool FirstPartySetsContextConfig::ForEachCustomizationEntry(
 }
 
 }  // namespace net
-
-"""
-
 ```

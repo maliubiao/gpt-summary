@@ -150,15 +150,17 @@ HeapObject* value = ...; // 指向另一个 JavaScript 对象的指针
 
 总而言之，`v8/src/heap/marking-barrier-inl.h` 定义了 V8 垃圾回收机制中至关重要的写屏障逻辑，确保在对象引用关系发生变化时，垃圾回收器能够维护正确的对象可达性信息，是 V8 引擎实现高效可靠内存管理的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/marking-barrier-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/marking-barrier-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -304,7 +306,4 @@ bool MarkingBarrier::IsCompacting(Tagged<HeapObject> object) const {
 }  // namespace v8
 
 #endif  // V8_HEAP_MARKING_BARRIER_INL_H_
-
-"""
-
 ```

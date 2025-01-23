@@ -55,9 +55,12 @@ This systematic approach, starting with the big picture and drilling down into t
 
 总而言之，`register-configuration-unittest.cc` 文件的主要功能是**测试 `RegisterConfiguration` 类是否正确地管理和报告了目标架构的寄存器配置，特别是针对寄存器别名机制的正确性进行了详细的测试**。这对于 V8 编译器的代码生成阶段至关重要，因为它需要准确地了解寄存器的布局和别名关系才能进行正确的寄存器分配和指令生成。
 
-Prompt: ```这是目录为v8/test/unittests/codegen/register-configuration-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/codegen/register-configuration-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,6 +228,4 @@ TEST_F(RegisterConfigurationUnitTest, CombineAliasing) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

@@ -139,11 +139,13 @@ console.timeEnd("intensiveTask");
 
 `v8-inspector-impl.cc` 是 V8 引擎 Inspector 模块的核心，它不直接编写 JavaScript 代码，而是作为 JavaScript 调试和性能分析的基础设施，通过与 V8 引擎的深度集成，实现了远程控制 JavaScript 执行、获取程序状态、捕获异常和记录控制台输出等关键功能，最终使得开发者能够使用诸如 Chrome DevTools 这样的工具来有效地调试和优化 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-inspector-impl.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 /*
  * Copyright (c) 2010-2011 Google Inc. All rights reserved.
  *
@@ -703,7 +705,4 @@ V8InspectorImpl::getAssociatedExceptionDataForProtocol(
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

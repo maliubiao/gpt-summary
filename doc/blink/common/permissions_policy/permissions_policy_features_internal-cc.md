@@ -112,14 +112,16 @@ By following these steps, we can effectively analyze the C++ code and provide a 
 
 总而言之， `permissions_policy_features_internal.cc` 这个文件是 Blink 引擎中实现细粒度权限控制的重要组成部分，它通过特性标志和渐进式推广机制来管理某些 Web API 的可用性，特别是针对已被标记为需要弃用的特性，例如 `unload` 事件。理解它的功能有助于开发者更好地理解浏览器行为，并避免因 API 变更而引入的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/permissions_policy/permissions_policy_features_internal.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ bool UnloadDeprecationAllowedForOrigin(const url::Origin& origin) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

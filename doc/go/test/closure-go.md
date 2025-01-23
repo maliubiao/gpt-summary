@@ -233,15 +233,17 @@ This specific code snippet **does not process any command-line arguments**. It's
 
 3. **Scope and Lifetime of Captured Variables:**  The captured variables persist as long as the closure itself exists. This means if a closure is returned from a function and continues to be used, the variables it captured from that function's scope will remain in memory even after the outer function has finished executing. This can lead to unexpected memory usage if not managed carefully.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/closure.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -370,9 +372,4 @@ func ff(x int) {
 
 func call(func()) {
 }
-
-"""
-
-
-
 ```

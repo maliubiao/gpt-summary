@@ -168,15 +168,17 @@ TEST_F(StyleScopeFrameTest, HasSeenImplicitScope) {
 
 `blink/renderer/core/css/style_scope_frame_test.cc` 是一个关键的测试文件，用于验证 Blink 引擎中 `StyleScopeFrame` 类在处理 CSS `@scope` 规则时的正确性。它通过模拟不同的 HTML 结构和 `@scope` 规则，测试 `HasSeenImplicitScope` 方法的行为，帮助开发者理解 CSS Scoping 的工作原理，并为 Blink 引擎的稳定性和正确性提供了保障。 理解这个测试文件有助于理解浏览器如何处理现代 CSS 特性，并能帮助开发者避免在使用 `@scope` 时可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_scope_frame_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -443,7 +445,4 @@ TEST_F(StyleScopeFrameTest, HasSeenImplicitScope_Multi) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -242,7 +242,7 @@ Here's a breakdown of the thought process to address the request:
 
 总而言之，这部分代码是 V8 引擎构建其核心 JavaScript 环境的重要组成部分，为错误处理和现代日期时间操作提供了必要的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/init/bootstrapper.cc以.tq结尾，那它是个v8 torque源代码，
@@ -250,8 +250,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 the constructor has
 // non-instance prototype.
 static void InstallWithIntrinsicDefaultProto(Isolate* isolate,
@@ -1029,8 +1031,4 @@ void Genesis::InitializeGlobal(Handle<JSGlobalObject> global_object,
 
     DirectHandle<Map> map = factory->NewMapWithMetaMap(
         meta_map, FUNCTION_CONTEXT_TYPE, kVariableSizeSentinel);
-   
-"""
-
-
 ```

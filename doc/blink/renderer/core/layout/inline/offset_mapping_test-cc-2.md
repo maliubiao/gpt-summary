@@ -151,15 +151,17 @@ This detailed thought process, involving code analysis, concept identification, 
 
 总而言之，`blink/renderer/core/layout/inline/offset_mapping_test.cc` 文件通过一系列单元测试，细致地检验了 Blink 引擎在处理 inline 布局时，如何准确地映射和转换文本偏移量。这对于确保浏览器能够正确渲染和交互网页上的文本内容至关重要，直接影响到用户的文本选择、光标定位以及 JavaScript 文本操作等功能。该测试还特别关注了 CSS 中空格折叠这一特性，保证了偏移量映射能够正确反映 CSS 的渲染规则。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/offset_mapping_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t crash.
 }
 
@@ -216,8 +218,4 @@ TEST_F(OffsetMappingTest, LayoutObjectConverter) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

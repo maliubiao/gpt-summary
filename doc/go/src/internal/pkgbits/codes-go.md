@@ -166,7 +166,7 @@ const (
 
 `go/src/internal/pkgbits/codes.go` 定义了一组用于编码 Go 语言类型、常量和对象的枚举类型。它很可能是 Go 编译器或相关工具在进行包信息序列化和持久化时使用的核心组件，用于确保类型信息在不同编译阶段或不同工具之间能够正确地传递和解析。使用者需要特别注意不要随意修改这些枚举常量的值，因为这会破坏编码的兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/pkgbits/codes.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -174,8 +174,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -253,9 +255,4 @@ const (
 	ObjVar
 	ObjStub
 )
-
-"""
-
-
-
 ```

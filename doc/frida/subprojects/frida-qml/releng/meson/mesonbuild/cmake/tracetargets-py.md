@@ -167,7 +167,7 @@ By following these steps, combining code analysis with contextual knowledge abou
 
 总而言之，`tracetargets.py` 是 Frida 与 CMake 构建系统交互的关键组件，它负责从 CMake 的构建信息中提取出 Frida 进行动态插桩所需的关键信息，对于理解目标程序的构建方式和依赖关系至关重要。这使得 Frida 能够更有效地与目标程序进行交互，为逆向工程提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/cmake/tracetargets.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 from __future__ import annotations
@@ -338,7 +340,4 @@ def resolve_cmake_trace_targets(target_name: str,
     # see eg. #11113
 
     return res
-
-"""
-
 ```

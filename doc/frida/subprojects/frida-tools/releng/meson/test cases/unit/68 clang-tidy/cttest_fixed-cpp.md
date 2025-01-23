@@ -126,7 +126,7 @@ By following this structured approach and iteratively refining the explanation, 
 
 虽然 `cttest_fixed.cpp` 代码非常简单，但它涵盖了 C++ 编程的基础概念，并与逆向工程、操作系统底层机制以及软件开发过程中的测试和静态分析环节存在关联。它作为一个单元测试用例，主要用于验证 clang-tidy 工具对特定代码模式的处理是否正确。理解这样的简单示例有助于理解更复杂程序的行为和底层原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/68 clang-tidy/cttest_fixed.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<cstdio>
 
 int main(int, char**) {
@@ -143,7 +145,4 @@ int main(int, char**) {
   printf("Intbool is %d\n", (int)intbool);
   return 0;
 }
-
-"""
-
 ```

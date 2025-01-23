@@ -117,15 +117,17 @@ func main() {
 
 总结来说，`go/test/strcopy.go` 是一个重要的测试用例，它确保了 Go 语言中字符串和字节切片之间转换的关键行为符合预期，即创建副本，从而保证了字符串的不可变性。这对于理解和正确使用 Go 语言中的字符串至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/strcopy.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -155,9 +157,4 @@ func main() {
 		panic("sub and subcopy have the same underlying array")
 	}
 }
-
-"""
-
-
-
 ```

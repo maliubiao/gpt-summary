@@ -213,15 +213,17 @@ bool StackMemory::Contains(Address addr) {
 
 总结来说，`v8/src/wasm/stacks.h` 定义了 V8 中 WebAssembly 执行栈管理的关键数据结构和类，它直接关系到 WebAssembly 代码的执行、挂起、恢复以及与 JavaScript 的互操作。理解这个文件的内容有助于深入了解 V8 是如何运行 WebAssembly 代码的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/stacks.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/stacks.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -428,7 +430,4 @@ class StackPool {
 }  // namespace v8::internal::wasm
 
 #endif  // V8_WASM_STACKS_H_
-
-"""
-
 ```

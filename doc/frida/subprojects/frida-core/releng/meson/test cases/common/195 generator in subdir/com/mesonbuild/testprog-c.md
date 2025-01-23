@@ -153,7 +153,7 @@ input()
 
 总而言之，这个简单的 C 代码片段本身的功能是调用另一个函数。它在 Frida 的上下文中扮演着一个被测试对象的角色，用于验证 Frida 的动态 instrumentation 能力。通过分析这个文件，结合 Frida 的知识和可能的 `subbie()` 函数的实现，我们可以推断出其在逆向、底层知识和逻辑推理方面的潜在联系。 常见的使用错误通常与 C 语言的编译和链接过程相关。而到达这个文件的过程通常是 Frida 开发者进行测试用例开发和调试的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/195 generator in subdir/com/mesonbuild/testprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,14 +161,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"subbie.h"
 
 int main(void) {
     return subbie();
 }
-
-"""
-
 ```

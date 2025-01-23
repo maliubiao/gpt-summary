@@ -69,12 +69,14 @@ function checkType(obj) {
 
 `simplified-operator.cc` 文件是 V8 编译器中非常核心的一部分，它定义了在编译优化过程中用于表示和操作 JavaScript 代码的各种基本构建块。理解这个文件有助于深入了解 V8 如何将 JavaScript 代码转换成高效的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-operator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1609,7 +1611,4 @@ const Operator* SimplifiedOperatorBuilder::WasmTypeCastAbstract(
   return zone_->New<Operator1<WasmTypeCheckConfig>>(
       IrOpcode::kWasmTypeCastAbstract,
       Operator::kNoW
-"""
-
-
 ```

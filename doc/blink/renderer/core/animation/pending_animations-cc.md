@@ -149,14 +149,16 @@ This iterative process of reading, analyzing, connecting to web concepts, and co
 
 `pending_animations.cc` 是 Blink 渲染引擎中一个关键的模块，它负责管理和协调待处理的动画，确保动画能够平滑地启动、更新并与浏览器的渲染流程同步。它与 CSS 动画、CSS 过渡和 JavaScript Web Animations API 紧密相关，是实现动态网页效果的基础。理解其功能有助于开发者更好地理解浏览器如何处理动画，并避免一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/pending_animations.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -410,7 +412,4 @@ void PendingAnimations::TimerFired(TimerBase*) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

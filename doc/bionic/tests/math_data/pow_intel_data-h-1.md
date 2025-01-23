@@ -22,7 +22,7 @@ The user has provided a C source code file containing a large array of data. The
 
 在后续的部分，如果需要更深入的分析，我们可以根据具体的需求进行展开。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/pow_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -34,8 +34,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ,
     0x1.004p0, 0x1.0p2
   },
@@ -1502,7 +1504,4 @@ Prompt:
   { // Entry 685
     0x1.p0,
     0x1.
-"""
-
-
 ```

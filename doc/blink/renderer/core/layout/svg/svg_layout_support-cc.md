@@ -137,14 +137,16 @@ The `transform_state` object will be updated to contain the combined transformat
 
 In summary, `svg_layout_support.cc` is a foundational piece of the Blink rendering engine responsible for the correct layout and rendering of SVG content. It handles the complexities of SVG coordinate systems, transformations, clipping, masking, and styling, ensuring that SVG elements are displayed accurately within web pages. Its functionalities are essential for the seamless integration of SVG with HTML, CSS, and JavaScript.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/svg_layout_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008 Rob Buis <buis@kde.org>
  * Copyright (C) 2007 Nikolas Zimmermann <zimmermann@kde.org>
@@ -608,7 +610,4 @@ LayoutObject* SVGLayoutSupport::FindClosestLayoutSVGText(
 }  // namespace blink
 
 WTF_ALLOW_CLEAR_UNUSED_SLOTS_WITH_MEM_FUNCTIONS(blink::SearchCandidate)
-
-"""
-
 ```

@@ -147,7 +147,7 @@ Finally, organize the information clearly with headings and bullet points to mak
 
 通过这样的调试过程，用户可以逐步定位到配置错误，例如某个宏没有被定义，或者其值不符合预期。`prog9.c` 作为一个简单的配置验证程序，能够帮助开发者快速发现这些配置问题，确保 Frida-Swift 在正确的环境下构建和运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/14 configure file/prog9.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <string.h>
 #include <config9a.h>
 #include <config9b.h>
@@ -175,7 +177,4 @@ int main(void) {
         || A_INT != 42
         || B_INT != 42;
 }
-
-"""
-
 ```

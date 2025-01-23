@@ -77,7 +77,7 @@ Response:
 
 ### 总结
 这个文件主要实现了Frida工具中与网络通信相关的功能，包括Socket地址解析、UDP/TCP通信、WebSocket通信以及Web服务的实现。通过LLDB调试工具，用户可以调试这些网络通信的实现，排查连接问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/base/socket.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -86,8 +86,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public const uint16 DEFAULT_CONTROL_PORT = 27042;
 	public const uint16 DEFAULT_CLUSTER_PORT = 27052;
@@ -1288,7 +1290,4 @@ namespace Frida {
 		}
 	}
 }
-
-"""
-
 ```

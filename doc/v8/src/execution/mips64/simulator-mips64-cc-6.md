@@ -130,7 +130,7 @@ let intFromFloat = parseInt(float1);
 
 希望这个详细的解答能够帮助您理解 `v8/src/execution/mips64/simulator-mips64.cc` 文件的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/simulator-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/mips64/simulator-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -138,8 +138,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 >::min()) >>
           1U;
       const T_int_dbl max_fix_dbl = std::numeric_limits<T_int_dbl>::max() >> 1U;
@@ -1034,7 +1036,4 @@ void Simulator::DecodeTypeImmediate() {
       next_pc = current_pc + offset + kInstrSize;
     } else {
       next_pc = current_pc + 2 * kIn
-"""
-
-
 ```

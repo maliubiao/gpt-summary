@@ -240,7 +240,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言文件系统抽象的核心部分，它定义了获取文件元数据的标准方式，并通过接口实现了多态性，使得可以以统一的方式处理不同类型的文件系统。理解 `StatFS` 接口和 `Stat` 函数的工作原理对于编写处理文件系统操作的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/io/fs/stat.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -248,8 +248,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -281,9 +283,4 @@ func Stat(fsys FS, name string) (FileInfo, error) {
 	defer file.Close()
 	return file.Stat()
 }
-
-"""
-
-
-
 ```

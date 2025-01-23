@@ -139,15 +139,17 @@ By following these steps, combining code analysis with an understanding of the b
 
 总而言之，`transport_security_persister_unittest.cc` 通过各种测试用例，确保 `TransportSecurityPersister` 能够可靠地将关键的安全策略信息持久化和加载，从而保障用户的网络安全。这对于浏览器记住网站的 HTTPS 配置至关重要，即使在浏览器重启后也能有效防止降级攻击。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/transport_security_persister_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -532,7 +534,4 @@ TEST_P(TransportSecurityPersisterCommitTest, WriteAtCommitInterval) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

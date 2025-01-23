@@ -116,7 +116,7 @@ My plan is to:
 
 这部分 `css_parsing_utils.cc` 的主要功能是**解析 CSS 中与图像和渐变相关的复杂属性值**，包括各种类型的渐变 (`linear-gradient`, `radial-gradient`, `conic-gradient`)、`image-set()` 函数、`cross-fade()` 函数以及 `paint()` 函数。它负责将这些 CSS 字符串转换为 Blink 引擎可以理解和使用的 `CSSValue` 对象，是 CSS 样式解析的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/css_parsing_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 SSGradientRepeat repeating) {
   CSSValue* center_x = nullptr;
   CSSValue* center_y = nullptr;
@@ -993,8 +995,4 @@ void CountKeywordOnlyPropertyUsage(CSSPropertyID property,
           feature = WebFeature::kCSSValueAppearanceTextarea;
         } else if (value_id == CSSValueID::kTextfield) {
           feature = WebFeature::kCSSValueAppearanceTextField;
-     
-"""
-
-
 ```

@@ -147,7 +147,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 检查异步操作的返回值，确保正确处理了异步操作的完成和错误情况。
 
 通过以上步骤和调试线索，用户可以逐步排查和解决问题，确保 QUIC 连接和数据传输的正常运行。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/xpc.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ack, local_keypair, remote_pubkey);
 
 			try {
@@ -1378,7 +1380,4 @@ ack, local_keypair, remote_pubkey);
 
 				if (op.state == CANCELLED && current_submission != op)
 					submissions.remove (op);
-"""
-
-
 ```

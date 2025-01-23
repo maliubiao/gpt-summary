@@ -135,11 +135,13 @@ const obj2 = {}; // obj2 可能分配在 CagedHeap 的另一个地址，例如 0
 
 `caged-heap.cc` 文件实现了 V8 引擎中一个关键的内存管理机制，它为 JavaScript 对象的分配和垃圾回收提供了底层的内存支持。  笼式堆的设计目标是提高安全性和效率，并且为指针压缩等优化技术提供了基础。JavaScript 开发者虽然不会直接与 `CagedHeap` 交互，但其行为直接影响着 JavaScript 程序的性能和内存使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/caged-heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -297,7 +299,4 @@ void CagedHeap::CommitAgeTable(PageAllocator& platform_allocator) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

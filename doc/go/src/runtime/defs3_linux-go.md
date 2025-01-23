@@ -160,7 +160,7 @@ GOARCH=ppc64 cgo -cdefs defs_linux.go defs3_linux.go > defs_linux_ppc64.h
 
 总而言之，`go/src/runtime/defs3_linux.go` 是 Go 运行时与 Linux 操作系统底层交互的关键部分，它定义了与系统调用和底层数据结构相关的常量和类型，为 Go 语言的信号处理、上下文管理等核心功能提供了基础。开发者在使用 Go 进行底层编程时需要了解这些定义，并注意平台和架构的差异。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs3_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,8 +168,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -213,9 +215,4 @@ type StackT C.stack_t
 // see https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/tree/arch/powerpc/include/uapi/asm/ucontext.h
 type Sigcontext C.struct_sigcontext
 type Ucontext C.struct_ucontext
-
-"""
-
-
-
 ```

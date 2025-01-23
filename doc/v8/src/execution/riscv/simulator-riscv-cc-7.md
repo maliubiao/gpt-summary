@@ -125,7 +125,7 @@ RVV_VI_VV_LOOP({ vd = vs2 + vs1; }) // 假设 vd 对应 v1，vs2 对应 v2，vs1
 
 作为 RISC-V 模拟器的第 8 部分，这个代码片段专注于 **RISC-V 向量扩展 (RVV) 指令的解码和执行**。它涵盖了多种 RVV 指令类型，包括整数和浮点向量运算，并处理了不同的操作数类型、向量长度、掩码等关键特性。这部分是实现完整 RISC-V 向量指令集模拟的关键组成部分，使得 V8 引擎能够在不支持硬件 RVV 的平台上正确执行相关的代码。考虑到这是第 8 部分，可以推测之前的部分可能涉及基础的 RISC-V 指令模拟框架、寄存器管理等，而后续的部分可能会涉及更复杂的 RVV 指令或与 V8 其他组件的集成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/riscv/simulator-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/riscv/simulator-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -133,8 +133,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 beddedVector<char, 256> buffer;
       // SNPrintF(trace_buf_, " ");
       // disasm::NameConverter converter;
@@ -1203,8 +1205,4 @@ void Simulator::DecodeRvvFVV() {
                 int64_t& vd_i = Rvvelt<int64_t>(rvv_vd_reg(), i, true);
                 vd_i = FclassHelper(vs2);
                 USE(fs1);
-                
-"""
-
-
 ```

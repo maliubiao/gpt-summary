@@ -171,7 +171,7 @@ A user interacting with the Frida Node.js API would reach this code through the 
 
 In summary, `session.cc` is a critical component of the Frida Node.js binding, responsible for exposing the core functionality of Frida sessions to JavaScript users, enabling a wide range of dynamic analysis and reverse engineering tasks. It interacts with low-level operating system concepts and performs logical validation to prevent common user errors.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/src/session.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "session.h"
 
 #include "crash.h"
@@ -1041,7 +1043,4 @@ static void UnrefGBytes(char* data, void* hint) {
 }
 
 }
-
-"""
-
 ```

@@ -258,7 +258,7 @@ libm.so:
 
 `sinhf_intel_data.handroid` 文件是 Android Bionic 库中用于测试 `sinhf` 函数在 Intel 架构上正确性的测试数据。它包含了各种输入值及其对应的预期输出，用于验证 `sinhf` 函数的实现是否符合标准，并能处理各种边界情况和特殊值。理解这个文件的功能，有助于我们了解 Android 系统底层数学库的测试机制，以及如何在 Android 应用开发中正确使用和调试数学函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sinhf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,9 +270,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    -0x1.62eb4acd2304a7e543238ca64b8cd689p-6,
+### 源代码
+```c
+-0x1.62eb4acd2304a7e543238ca64b8cd689p-6,
     -0x1.62e430p-6
   },
   { // Entry 382
@@ -1224,8 +1226,4 @@ Prompt:
     -0x1.65a9fap6
   }
 };
-
-"""
-
-
 ```

@@ -125,7 +125,7 @@ By following this systematic approach, breaking down the code into smaller parts
 
 总而言之，`test_write.py` 是 `tomlkit` 库中用于保障其序列化功能正确性的关键测试文件，它间接地服务于 `frida` 这样的动态插桩工具，帮助其正确处理配置文件，这对于逆向分析等任务至关重要。理解这些测试用例可以帮助开发者理解 `tomlkit` 的工作原理，并在遇到 TOML 处理问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/tests/test_write.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit import dumps
 from tomlkit import loads
 
@@ -172,7 +174,4 @@ c = 1
 """
     assert dumps(doc) == expected
     assert loads(expected) == doc
-
-"""
-
 ```

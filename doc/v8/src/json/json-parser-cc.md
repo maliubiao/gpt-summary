@@ -175,7 +175,7 @@ console.log(parsedObjectWithDate.birthDate instanceof Date); // 输出: true
 
 `v8/src/json/json-parser.cc` 的主要功能是 **实现 V8 引擎中 JSON 字符串的解析**。它负责将输入的 JSON 文本进行词法和语法分析，将其转换为 V8 可以操作的 JavaScript 对象。该文件还包含了处理解析错误和实现 `JSON.parse()` 方法可选的 `reviver` 功能的代码。此外，它还包含了一些性能优化的机制，例如 `JSDataObjectBuilder` 用于加速对象创建。 简而言之，它是 V8 中 `JSON.parse()` 功能的核心实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/json/json-parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/json/json-parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -183,8 +183,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1051,7 +1053,4 @@ class JSDataObjectBuilder {
     MaybeHandle<Map> maybe_map = Map::CopyWithField(
         isolate_, map_, key, type, NONE, PropertyConstness::kConst,
         representation, INSERT_TRANSITIO
-"""
-
-
 ```

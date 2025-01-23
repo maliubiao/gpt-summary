@@ -185,7 +185,7 @@ console.log(plainDate.month); // 输出: 11
 
 `v8/src/temporal/temporal-parser.cc` (第一部分) 的主要功能是定义了一组底层的 C++ 函数，用于扫描和解析符合特定规则的日期和时间字符串的各个组成部分。这些函数是 V8 引擎实现 `Temporal` API 的关键部分，使得 JavaScript 能够理解和操作日期和时间数据。它通过一系列的 `Scan...` 函数，按照预定义的语法规则，从字符串中提取出年、月、日、时、分、秒、时区等信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/temporal/temporal-parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/temporal/temporal-parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -193,8 +193,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1230,8 +1232,4 @@ int32_t ScanCalendarDateTimeTimeRequired(base::Vector<Char> str, int32_t s,
 //   Date [TimeSpecSeparator] TimeZoneNameRequired [Calendar]
 template <typename Char>
 int32_t ScanTemporalZonedDateTimeString(base::Vector<Char> str, int32_t s,
- 
-"""
-
-
 ```

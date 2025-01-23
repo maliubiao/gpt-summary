@@ -178,7 +178,7 @@ console.log(result); // 输出 15
 
 总而言之，`v8/src/wasm/turboshaft-graph-interface.cc` 是 Turboshaft 编译器将高级的 Wasm 指令转换为底层的、可优化的图形表示的关键步骤，为后续的优化和代码生成奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/turboshaft-graph-interface.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/turboshaft-graph-interface.cc以.tq结尾，那它是个v8 torque源代码，
@@ -186,8 +186,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nrepresentable);
         return result;
       }
@@ -1030,7 +1032,4 @@ nrepresentable);
             GOTO(done, __ Word32Sub(0, lhs));
           } ELSE {
             GOTO(done, __ Int3
-"""
-
-
 ```

@@ -150,15 +150,17 @@ Chunk 2: StartIndex 2, EndIndex 4, Id(client_b, TypeA), Properties{background: b
 
 这个名为 `paint_chunker_test.cc` 的文件是 Chromium Blink 引擎中用于测试 `PaintChunker` 类功能的单元测试文件。`PaintChunker` 负责将绘制操作 (Display Items) 根据其绘制属性和其他规则分组到不同的 `PaintChunk` 中，以实现渲染优化。测试涵盖了各种场景，包括基本分块、属性变化、强制分块以及处理特殊类型的 Display Item。虽然与前端技术没有直接的代码关联，但 `PaintChunker` 的功能是浏览器正确高效渲染 HTML, CSS 和 JavaScript 生成的视觉效果的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_chunker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -868,7 +870,4 @@ TEST_F(PaintChunkerTest, ChunkBoundsAndKnownToBeOpaqueAllOpaqueItems) {
                                             gfx::Rect(0, 0, 100, 100)));
   chunker.IncrementDisplayItemIndex(
       c
-"""
-
-
 ```

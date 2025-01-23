@@ -127,15 +127,17 @@ func G(a, b interface{}) {
 
 这段代码是一个简洁的例子，用于测试或演示 Go 语言中全局变量和条件执行的特定行为，特别是涉及到本地包导入的情况。它的核心在于通过外部机制（例如链接器标志）来改变全局变量 `G` 的值，从而控制程序的执行流程，调用另一个包中的函数。 理解这种模式有助于理解 Go 语言的初始化机制和包之间的交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue22941.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -151,9 +153,4 @@ func main() {
 		p.G(nil, nil)
 	}
 }
-
-"""
-
-
-
 ```

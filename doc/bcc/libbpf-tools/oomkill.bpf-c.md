@@ -69,7 +69,7 @@ Response:
 
 ### 总结
 该程序通过捕获 `oom_kill_process` 的调用，记录 OOM 事件的关键信息，帮助诊断内存泄漏或资源竞争问题。需注意内核版本兼容性和权限配置。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/oomkill.bpf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -78,8 +78,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // SPDX-License-Identifier: GPL-2.0
 // Copyright (c) 2022 Jingxiang Zeng
 // Copyright (c) 2022 Krisztian Fekete
@@ -109,7 +111,4 @@ int BPF_KPROBE(oom_kill_process, struct oom_control *oc, const char *message)
 }
 
 char LICENSE[] SEC("license") = "GPL";
-
-"""
-
 ```

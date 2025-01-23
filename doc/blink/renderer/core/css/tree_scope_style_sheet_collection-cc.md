@@ -157,15 +157,17 @@ By following these steps, I could systematically analyze the code, understand it
 
 `TreeScopeStyleSheetCollection.cc` 中的 `TreeScopeStyleSheetCollection` 类是 Blink 渲染引擎中负责管理特定作用域内 CSS 样式表的关键组件。它与 HTML 的 `<link>` 和 `<style>` 标签密切相关，管理着由 CSS 解析器生成的 `CSSStyleSheet` 对象，并受到 JavaScript 动态操作的影响。理解这个类的功能有助于深入理解浏览器如何加载、解析和应用 CSS 样式，以及如何进行相关的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/tree_scope_style_sheet_collection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -253,7 +255,4 @@ void TreeScopeStyleSheetCollection::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

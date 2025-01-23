@@ -158,15 +158,17 @@ Let's break down the thought process for analyzing the given C++ unittest file a
 
 **调试线索:** 如果在网络请求和缓存相关的代码中发现问题，例如缓存数据损坏、缓存无法写入、或者出现文件描述符泄漏等，开发者可能会查看 `SimpleFileTracker` 相关的代码和日志，并通过运行像 `simple_file_tracker_unittest.cc` 这样的单元测试来验证 `SimpleFileTracker` 自身的行为是否符合预期。如果单元测试失败，则表明 `SimpleFileTracker` 的实现存在 bug。如果单元测试通过，则需要进一步调查其他缓存相关的组件或调用流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_file_tracker_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -560,7 +562,4 @@ TEST_F(SimpleFileTrackerTest, OverLimit) {
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

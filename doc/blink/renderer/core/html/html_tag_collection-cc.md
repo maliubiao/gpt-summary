@@ -109,14 +109,16 @@ Let's break down the thought process to analyze the provided C++ code snippet fo
 
 总而言之，`html_tag_collection.cc` 文件定义了 Blink 引擎中用于高效管理和访问具有相同标签名的 HTML 元素集合的核心数据结构，它直接支持了 JavaScript 中常用的 DOM 操作 API，并在 CSS 选择器的实现中扮演着基础性的角色。理解其“live”的特性对于避免编程错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_tag_collection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -161,7 +163,4 @@ HTMLTagCollection::HTMLTagCollection(ContainerNode& root_node,
 }
 
 }  // namespace blink
-
-"""
-
 ```

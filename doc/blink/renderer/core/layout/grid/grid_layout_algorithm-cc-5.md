@@ -126,16 +126,18 @@ My thinking process to analyze the provided C++ code snippet goes like this:
 
 作为第 6 部分，这段代码主要关注 `GridLayoutAlgorithm` 中 **布局网格项目** 的核心逻辑，特别是处理在存在 **分片** 情况下的项目放置。它迭代处理每个网格项目，计算其在片段中的偏移量，处理行分隔和断点，以及可能的行扩展。此外，它还涉及处理流外项目和设置阅读顺序元素。 这部分代码是网格布局算法的关键组成部分，确保了网格项目在各种布局场景下都能被正确渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/grid/grid_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
- has overflowed the fragmentainer (in a
+### 源代码
+```cpp
+has overflowed the fragmentainer (in a
         // previous fragment) due to monolithic content, the grid container has
         // been stretched to encompass it, but the other grid items (like this
         // one) have not (we still want the non-overflowed items to fragment
@@ -823,8 +825,4 @@ LogicalRect GridLayoutAlgorithm::ComputeOutOfFlowItemContainingRect(
 }  // namespace blink
 
 WTF_ALLOW_CLEAR_UNUSED_SLOTS_WITH_MEM_FUNCTIONS(blink::ResultAndOffsets)
-
-"""
-
-
 ```

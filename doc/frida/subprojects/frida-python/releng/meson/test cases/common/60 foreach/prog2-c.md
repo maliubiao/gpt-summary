@@ -125,7 +125,7 @@ Let's break down the thought process for analyzing this simple C program in the 
 
 总而言之，`prog2.c` 作为一个极其简单的测试用例，其存在主要是为了验证 Frida 在基本场景下的功能，并为更复杂的逆向分析提供一个可控的起点。  它本身的功能很简单，但其背后的调试和测试过程涉及到了不少与逆向工程相关的概念和技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/60 foreach/prog2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,15 +133,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("This is test #2.\n");
     return 0;
 }
-
-"""
-
 ```

@@ -274,7 +274,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 总而言之，`s_cargl.c` 文件定义了计算复数辐角的关键函数 `cargl`，它是 Android 数学库的一部分，并通过 dynamic linker 与应用程序和系统服务链接在一起。理解其功能和使用方式对于进行涉及复数运算的 Android 开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_cargl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -285,8 +285,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例作为调试线索。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -324,7 +326,4 @@ cargl(long double complex z)
 
 	return (atan2l(cimagl(z), creall(z)));
 }
-
-"""
-
 ```

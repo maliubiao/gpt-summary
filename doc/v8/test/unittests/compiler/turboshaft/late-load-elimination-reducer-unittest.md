@@ -100,11 +100,13 @@ function foo(arr) {
 
 `late-load-elimination-reducer-unittest.cc` 这个 C++ 文件通过构造各种场景，详细测试了 `LateLoadEliminationReducer` 优化器在处理 tagged 值加载后进行 Int32 截断时的行为。 这些测试确保了 V8 引擎在实际运行 JavaScript 代码时，能够正确地进行这种优化，从而提升性能。  虽然测试是用 C++ 编写的，但它直接关系到 V8 引擎如何高效地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/turboshaft/late-load-elimination-reducer-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -457,7 +459,4 @@ TEST_F(LateLoadEliminationReducerTest,
 #include "src/compiler/turboshaft/undef-assembler-macros.inc"
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

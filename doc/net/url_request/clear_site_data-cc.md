@@ -140,15 +140,17 @@ Clear-Site-Data: "cookies", "storage"
 
 总而言之，`net/url_request/clear_site_data.cc` 是 Chromium 网络栈中负责解析和处理 "Clear-Site-Data" HTTP 响应头的关键组件，它为服务器提供了一种机制来指示浏览器清除与特定网站关联的数据，从而影响到 JavaScript 可访问的数据。理解其功能和潜在的错误情况有助于开发人员更好地利用和调试相关功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/clear_site_data.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ std::vector<std::string> ClearSiteDataHeaderContents(std::string header) {
 }
 
 }  // namespace net
-
-"""
-
 ```

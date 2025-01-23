@@ -124,7 +124,7 @@ Meson 构建系统会根据 `libraries` 字典中 `boost_filesystem` 的定义�
 
 作为 `frida/subprojects/frida-core/releng/meson/mesonbuild/dependencies/boost.py` 文件的第二部分，这段代码的核心功能是**声明和配置 Frida 构建系统需要使用的各种 Boost C++ 库**。它通过定义一个 Python 字典，为每个 Boost 库指定了在动态链接和静态链接场景下需要使用的编译器标志。这使得 Meson 构建系统能够正确地找到并链接所需的 Boost 库，从而成功构建 Frida 动态插桩工具。 这部分代码是 Frida 构建过程中管理和集成 Boost 依赖的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/dependencies/boost.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,9 +133,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-        name='boost_exception',
+### 源代码
+```python
+name='boost_exception',
         shared=[],
         static=[],
         single=[],
@@ -390,8 +392,4 @@ Prompt:
 
 #                                           #
 ####       ---- END GENERATED ----       ####
-
-"""
-
-
 ```

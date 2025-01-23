@@ -132,7 +132,7 @@ if (module) {
 
 因此，`zero.c` 文件的存在是 Frida 开发和测试流程中的一个环节，用于确保 Frida 能够正确处理简单的跨语言共享库交互。在调试过程中，如果涉及到 Frida 加载共享库或调用函数失败的问题，这个简单的 `zero.c` 文件可以作为一个基础的测试用例来排除问题，验证 Frida 的基本功能是否正常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/rust/15 polyglot sharedlib/zero/zero.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define EXPORT __declspec(dllexport)
 #else
@@ -153,7 +155,4 @@ EXPORT int zero(void);
 int zero(void) {
     return 0;
 }
-
-"""
-
 ```

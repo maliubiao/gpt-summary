@@ -151,7 +151,7 @@ WebAssembly.instantiate(wasmBytes)
 
 这部分代码主要负责 **解码 WebAssembly 模块的结构和内容**。 核心的 `DecodeModule` 方法驱动整个解码过程，遍历模块的各个 section 并调用相应的解码逻辑。 此外，它还提供了用于解码单个函数、函数签名和初始化表达式的方法，以及一系列辅助的 `consume_*` 方法来解析 WebAssembly 的各种基本构成元素（如类型、索引、标志等）。  这部分代码还涉及到模块的验证，尤其是在函数体验证方面。 总体而言，这部分代码是 V8 理解和处理 WebAssembly 模块的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-decoder-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-decoder-impl.h以.tq结尾，那它是个v8 torque源代码，
@@ -159,8 +159,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ateGlobalOffsets(module_.get());
     }
 
@@ -1038,7 +1040,4 @@ ateGlobalOffsets(module_.get());
     const uint8_t* initial_pc = pc();
     uint32_t index = consume_func_index(module, &func);
     if (tracer_) trace
-"""
-
-
 ```

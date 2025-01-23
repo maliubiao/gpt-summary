@@ -117,7 +117,7 @@ Here's a breakdown of the code's functionality:
 
 作为调试线索，当用户遇到与滚动相关的 bug 时，例如滚动不流畅、滚动位置错误、触摸操作失效等，开发者可以参考这些测试用例，理解 Compositor 的工作原理，并利用浏览器的开发者工具来检查 Compositor 的层树结构、滚动节点状态、以及事件处理流程，从而定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/scrolling/scrolling_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 OMElementId("composited_container");
   if (RuntimeEnabledFeatures::FastNonCompositedScrollHitTestEnabled()) {
     // The non-scrolling layer should have a NonCompositedScrollHitTestRect
@@ -1030,8 +1032,4 @@ TEST_F(ScrollingSimTest, ScrollTimelineActiveAtBoundary) {
       GetDocument().getElementById(AtomicString("align"))->getAnimations()[0];
   cc::Animation* cc_animation =
       animation->GetCompositorAnimation()->CcAnimation();
-  
-"""
-
-
 ```

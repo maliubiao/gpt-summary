@@ -105,7 +105,7 @@ This detailed thought process, starting from basic code analysis and expanding o
 
 `comparer.c` 是 Frida 测试套件中的一个重要组成部分，它专门用于验证 Frida 在处理包含空格和反斜杠的字符串时的正确性。这对于确保 Frida 在逆向分析过程中能够准确地解析和操作各种类型的字符串至关重要，避免因字符串处理错误而导致的分析失败。开发者通过运行这个测试用例，可以确保 Frida 的字符串处理逻辑符合预期，特别是对于可能引起歧义的反斜杠字符。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/107 spaces backslash/comparer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "comparer.h"
 
 #ifndef COMPARER_INCLUDED
@@ -131,7 +133,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

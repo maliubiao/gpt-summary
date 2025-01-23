@@ -120,7 +120,7 @@ Initially, I might have focused too much on the simplicity of the script itself.
 
 尽管 `version.py` 脚本非常简单，但它在 Frida 的构建和测试流程中扮演着一个角色，用于提供一个可能的版本标识。理解其功能需要结合其所在的目录结构和 Frida 的整体架构。对于逆向工程师、Frida 开发者以及进行相关调试的人员来说，理解这类看似简单的脚本在大型项目中的作用，有助于更深入地理解软件的构建、测试和版本管理流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/66 vcstag/version.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,12 +128,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('3.14')
-
-"""
-
 ```

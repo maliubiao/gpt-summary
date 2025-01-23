@@ -191,7 +191,7 @@ Similarly, a user might investigate `wayland.py` if they are working with standa
 
 In summary, the `wayland.py` module in Frida's tooling provides essential build-time support for handling Wayland protocols, which is directly relevant to reverse engineering, analysis, and manipulation of Wayland-based applications and compositors. Understanding its functionalities and potential issues is crucial for developers and reverse engineers working in this domain.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/modules/wayland.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2022 Mark Bolhuis <mark@bolhuis.dev>
 
@@ -352,7 +354,4 @@ class WaylandModule(ExtensionModule):
 
 def initialize(interpreter: Interpreter) -> WaylandModule:
     return WaylandModule(interpreter)
-
-"""
-
 ```

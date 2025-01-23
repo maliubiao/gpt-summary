@@ -164,11 +164,13 @@ console.log(rawTemplate);  // 输出: Hello\nBob!
 
 `builtins-string.cc` 文件是 V8 引擎中非常重要的一个组成部分，它直接负责实现 JavaScript 中 `String` 对象的核心功能。理解这个文件中的代码，可以更深入地了解 JavaScript 字符串操作的底层实现机制。需要注意的是，一些与国际化相关的方法 (如 `localeCompare` 和 `normalize`) 在没有国际化支持的情况下会提供简化的实现，真正的国际化支持通常由 V8 引擎的其他部分（例如与 ICU 库的集成）来完成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-string.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -661,7 +663,4 @@ BUILTIN(StringRaw) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

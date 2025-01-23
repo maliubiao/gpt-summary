@@ -126,14 +126,16 @@ The user wants to understand the functionality of the `resource_load_scheduler_t
 
 总而言之，`resource_load_scheduler_test.cc` 通过各种测试用例，详细地验证了 `ResourceLoadScheduler` 在不同场景下的行为，确保它能够有效地管理和调度资源加载请求，从而保障网页的正常加载和性能优化。这些测试也间接地反映了开发者在使用资源加载相关 API 时可能遇到的问题和需要注意的地方。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_load_scheduler_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -907,7 +909,4 @@ TEST_F(ResourceLoadSchedulerTest, ConsoleMessage) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

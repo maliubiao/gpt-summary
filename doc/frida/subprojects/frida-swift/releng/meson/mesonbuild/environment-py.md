@@ -90,7 +90,7 @@ The user wants a summary of the functionality of the provided Python code. I nee
 
 这个 Python 文件的主要功能是 **负责 Meson 构建系统初始化阶段的环境检测和配置**。它通过检测操作系统、硬件信息、构建工具、处理环境变量和配置文件，为后续的构建过程提供必要的环境信息。这个过程对于确保 frida 能够正确地在目标平台上构建至关重要，特别是当涉及到交叉编译等复杂场景时。它还涉及到对底层操作系统和硬件的理解，以及对常见构建工具和其工作方式的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/environment.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 # Copyright © 2023 Intel Corporation
@@ -852,8 +854,4 @@ class Environment:
                         key = OptionKey('env_args', machine=for_machine, lang='c')
                         for lang in compilers.compilers.LANGUAGES_USING_CPPFLAGS:
                             key = key.evolve(lang=lang)
-     
-"""
-
-
 ```

@@ -181,7 +181,7 @@ By following these steps, I can create a comprehensive and informative answer th
 
 总而言之，`v8/test/unittests/parser/decls-unittest.cc` 的主要功能是 **全面测试 V8 JavaScript 引擎解析器对于各种声明语句的正确解析和语义处理**，涵盖了基本声明、作用域规则、与属性拦截器的交互以及跨脚本引用的情况。它通过 C++ 代码编写的单元测试用例，确保 V8 引擎能够准确地理解和执行 JavaScript 中的声明逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/decls-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/decls-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -189,8 +189,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2007-2008 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1184,7 +1186,4 @@ TEST_F(DeclsTest, Regress3941) {
 
   {
     S
-"""
-
-
 ```

@@ -167,15 +167,17 @@ Let's consider the `SendPacket` and `GetPacket` methods with acknowledgments.
 
 In summary, `v8/src/debug/wasm/gdb-server/session.h` defines the core logic for managing a GDB remote debugging session for WebAssembly within V8. It handles the low-level communication with a GDB client and provides mechanisms for synchronizing with the V8 runtime's execution of WebAssembly code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/session.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/wasm/gdb-server/session.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ class V8_EXPORT_PRIVATE Session {
 }  // namespace v8
 
 #endif  // V8_DEBUG_WASM_GDB_SERVER_SESSION_H_
-
-"""
-
 ```

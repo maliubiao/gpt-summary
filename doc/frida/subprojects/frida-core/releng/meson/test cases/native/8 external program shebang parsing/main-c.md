@@ -196,7 +196,7 @@ Finally, organize the information logically, using clear headings and bullet poi
 
 总而言之，这个 `main.c` 文件虽然简单，但它触及了操作系统中关于进程执行、文件操作和脚本处理的关键概念，并且作为一个测试用例，它为 Frida 的开发者提供了一种验证和调试相关功能的手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/native/8 external program shebang parsing/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -278,7 +280,4 @@ err:
   fclose (f);
   return 1;
 }
-
-"""
-
 ```

@@ -116,14 +116,16 @@ element.animate(
 
 `InertEffect` 在 Blink 渲染引擎中扮演着一个重要的角色，它作为一个抽象的动画效果，依赖于其他模型来提供具体的动画值。它的“惰性”特点意味着它主要负责管理动画的时间状态，并在需要时从关联的模型中采样。理解这种内部机制有助于更深入地理解 Web 动画的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/inert_effect.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -219,7 +221,4 @@ void InertEffect::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -101,11 +101,13 @@ compileWasmAsync(wasmBinary);
 
 `wasm-async.cc` 这个 C++ 文件是一个模糊测试工具，它通过生成各种各样的 WebAssembly 二进制数据，并使用 V8 引擎的异步编译 API 进行编译，来测试 V8 引擎在处理异步 WebAssembly 编译时的稳定性和安全性。它与 JavaScript 的 `WebAssembly.compileStreaming()` 等 API 功能密切相关，目标是发现 V8 引擎在异步编译 WebAssembly 模块时可能存在的 bug 或漏洞。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/wasm-async.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
 ```

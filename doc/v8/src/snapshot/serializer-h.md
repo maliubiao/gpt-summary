@@ -178,15 +178,17 @@ const obj = {
 
 `v8/src/snapshot/serializer.h` 是 V8 引擎中至关重要的一个头文件，它定义了将 V8 堆状态序列化为二进制格式的核心机制。理解其功能有助于深入了解 V8 的启动过程和性能优化策略。虽然普通 JavaScript 开发者不会直接操作这个文件，但其背后的原理影响着 JavaScript 应用的启动速度和内存使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/serializer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/serializer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -718,7 +720,4 @@ class Serializer::ObjectSerializer : public ObjectVisitor {
 }  // namespace v8
 
 #endif  // V8_SNAPSHOT_SERIALIZER_H_
-
-"""
-
 ```

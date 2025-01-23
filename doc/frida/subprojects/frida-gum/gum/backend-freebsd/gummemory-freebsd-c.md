@@ -195,7 +195,7 @@ A Frida user, interacting with a target process, would indirectly trigger these 
 
 In summary, `gummemory-freebsd.c` provides the low-level memory manipulation primitives that Frida relies upon to perform dynamic instrumentation on FreeBSD systems. Understanding its functionality is crucial for comprehending how Frida interacts with target processes at a fundamental level.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-freebsd/gummemory-freebsd.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -434,7 +436,4 @@ gum_store_protection_if_containing_address (const GumRangeDetails * details,
 
   return proceed;
 }
-
-"""
-
 ```

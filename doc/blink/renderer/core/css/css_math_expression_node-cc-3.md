@@ -99,7 +99,7 @@ To address this, I will:
 
 总而言之，这部分代码的核心职责是将 CSS 数学表达式在 Blink 引擎内部的表示形式与外部的 CSS 文本形式之间进行转换，并负责执行实际的数学计算，同时处理新的锚点定位功能。它是 CSS 引擎的重要组成部分，确保浏览器能够正确理解和应用包含数学表达式的 CSS 样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_math_expression_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rands[0]->CustomCSSText());
       if (left_side_needs_parentheses) {
         result.Append(')');
@@ -1065,8 +1067,4 @@ class CSSMathExpressionNodeParser {
         value = css_parsing_utils::ConsumeIdent<
             CSSValueID::kInside, CSSValueID::kOutside, CSSValueID::kTop,
             CSSValueID::kLeft, CSSValueID::kRight, CSSValueID::kBottom,
-
-"""
-
-
 ```

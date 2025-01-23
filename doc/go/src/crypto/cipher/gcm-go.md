@@ -251,7 +251,7 @@ func main() {
 
 这段代码通过提供多种创建 GCM cipher 对象的方式，并区分了需要开发者管理 nonce 和自动管理 nonce 的场景，为 Go 开发者提供了灵活且安全的认证加密工具。理解这些不同的方法以及它们的适用场景和潜在的陷阱对于正确使用 GCM 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/cipher/gcm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -259,8 +259,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -638,9 +640,4 @@ func sliceForAppend(in []byte, n int) (head, tail []byte) {
 	tail = head[len(in):]
 	return
 }
-
-"""
-
-
-
 ```

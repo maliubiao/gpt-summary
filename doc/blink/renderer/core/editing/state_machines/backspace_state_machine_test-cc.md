@@ -183,7 +183,7 @@ This iterative process of scanning, identifying components, inferring functional
 
 该文件是 `BackspaceStateMachine` 类的单元测试套件，旨在全面测试该类在处理各种 Unicode 字符和组合时的退格行为。它通过模拟字符输入并验证计算出的删除边界偏移量，确保 `BackspaceStateMachine` 能够正确识别和删除逻辑上的字符单元，包括单字符、代理对、组合字符序列（如 Keycap、Emoji Modifier、Regional Indicator、Variation Sequence 和 ZWJ Sequence）以及相关的边缘情况。这些测试对于保证 Web 浏览器在处理用户退格操作时的文本一致性和用户体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/state_machines/backspace_state_machine_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -944,7 +946,4 @@ TEST(BackspaceStateMachineTest, ZWJSequence) {
   EXPECT_EQ(kNeedMoreCodeUnit, machine.FeedPrecedingCodeUnit(kManTrail));
   EXPECT_EQ(kNeedMoreCodeUnit, machine.FeedPrecedingCodeUnit(kManLead));
   EXPECT_EQ(kNeedMoreCodeUnit, machine.Fe
-"""
-
-
 ```

@@ -185,7 +185,7 @@ By following these steps, deconstructing the code, and considering the context o
 
 通过以上步骤，用户可以利用 Frida 作为调试线索，深入了解使用了 SSE4.2 指令的代码的行为。这个 `simd_sse42.c` 文件作为 Frida 的一个测试用例，正是为了验证 Frida 在处理这类代码时的正确性和能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/147 simd/simd_sse42.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 #include<stdint.h>
@@ -238,7 +240,4 @@ void increment_sse42(float arr[4]) {
     arr[2] = (float)darr[3];
     arr[3] = (float)darr[2];
 }
-
-"""
-
 ```

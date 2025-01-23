@@ -156,7 +156,7 @@ By following these steps systematically, you can effectively analyze and underst
 
 这段 `UDPSocketPosix` 的代码片段负责 UDP 套接字的关键配置，特别是与服务质量、协议族限制和线程管理相关的操作。它允许 Chromium 网络栈根据需要精细地控制 UDP 套接字的行为，以满足不同应用场景的需求，例如为实时通信提供更好的网络优先级，或者强制使用特定的 IP 协议版本。虽然 JavaScript 代码不直接操作这些底层函数，但用户的网络行为会触发 Chromium 网络栈的相应逻辑，最终调用这些 C++ 代码来配置底层的 UDP 套接字。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/udp_socket_posix.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 p, EcnCodePoint ecn) {
   if (dscp == DSCP_NO_CHANGE && ecn == ECN_NO_CHANGE) {
     return OK;
@@ -238,8 +240,4 @@ int UDPSocketPosix::SetIOSNetworkServiceType(int ios_network_service_type) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

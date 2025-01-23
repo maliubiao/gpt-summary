@@ -111,7 +111,7 @@ v6 = MOVWstore v3 v5 v1
 
 总而言之，这段代码是MIPS架构代码生成过程中的关键优化步骤，它将中间表示的 `OpZero` 和控制流结构转换为高效的MIPS机器指令序列。通过这些重写规则，编译器能够生成更紧凑、执行效率更高的MIPS汇编代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteMIPS.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -120,8 +120,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 .AddArg3(ptr, v0, mem)
 		v.AddArg3(ptr, v0, v1)
 		return true
@@ -796,10 +798,4 @@ func rewriteBlockMIPS(b *Block) bool {
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

@@ -150,15 +150,17 @@ Let's consider a simplified scenario with the `RequestInterrupt` and `HandleInte
 
 In summary, `v8/src/execution/stack-guard.cc` plays a vital role in ensuring the stability and proper execution of JavaScript code within the V8 engine by managing stack limits and handling various internal interrupt requests. Developers indirectly interact with its functionality through the behavior of their JavaScript code, particularly concerning recursion and potential stack overflow errors.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/stack-guard.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/stack-guard.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -555,7 +557,4 @@ Tagged<Object> StackGuard::HandleInterrupts(InterruptLevel level) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

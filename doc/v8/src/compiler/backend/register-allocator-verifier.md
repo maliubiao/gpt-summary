@@ -103,11 +103,13 @@ console.log(result);
 
 总而言之，`register-allocator-verifier.cc` 是 V8 引擎中一个至关重要的组件，它通过严格的验证确保了 JavaScript 代码编译过程中寄存器分配的正确性，从而保证了程序的正确执行和性能。虽然我们不能直接用 JavaScript 代码来演示其功能，但理解其在编译流程中的作用有助于我们更好地理解 JavaScript 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocator-verifier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -740,7 +742,4 @@ void RegisterAllocatorVerifier::VerifyGapMoves() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

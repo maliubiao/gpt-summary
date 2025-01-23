@@ -235,7 +235,7 @@ Incorrect number of arguments, got 1
 
 总而言之，`cat.c` 文件作为一个简单但实用的测试程序，在 Frida 的开发、测试、构建以及用户学习和问题排查等多个环节都可能被涉及到。用户通常不会直接手动编辑或运行这个文件（除非是为了特定的测试目的），而是通过 Frida 工具或者构建系统间接地与它交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/206 tap tests/cat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -243,8 +243,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <errno.h>
 #include <stdio.h>
 
@@ -271,7 +273,4 @@ int main(int argc, char **argv) {
     fclose(fh);
     return 0;
 }
-
-"""
-
 ```

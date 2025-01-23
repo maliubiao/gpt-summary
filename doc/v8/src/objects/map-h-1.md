@@ -210,7 +210,7 @@ if (maybeMapB.is_just()) {
 
 `v8/src/objects/map.h` 定义了 V8 引擎中用于表示对象结构和布局的核心数据结构 `Map`。 它负责管理对象的属性、原型和元素类型，并支持对象形状的动态转换。 `Map` 对象是 V8 引擎进行性能优化的关键，例如内联缓存和隐藏类。 开发者虽然不直接操作 `Map` 对象，但编写的 JavaScript 代码会直接影响 `Map` 对象的创建和转换，从而影响程序的性能。 理解 `Map` 的概念有助于开发者编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/map.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/map.h以.tq结尾，那它是个v8 torque源代码，
@@ -218,9 +218,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- other_map's meta map.
+### 源代码
+```c
+other_map's meta map.
   // Returns false if this map is contextless (in case of JSObject map this
   // means that the object is remote).
   inline bool BelongsToSameNativeContextAs(Tagged<Map> other_map) const;
@@ -643,8 +645,4 @@ void Map::set_instance_type(InstanceType value) {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_MAP_H_
-
-"""
-
-
 ```

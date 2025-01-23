@@ -149,7 +149,7 @@ func main() {
 
 总而言之，`go/src/runtime/signal_solaris_amd64.go` 是 Go 运行时处理底层信号的关键部分，它使得 Go 程序能够在接收到操作系统信号时进行处理，例如捕获由内存访问错误引起的 panic，并提供一定的恢复机制。 普通开发者不需要直接操作这段代码，但理解其功能有助于更好地理解 Go 程序的错误处理和运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_solaris_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -157,8 +157,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -212,9 +214,4 @@ func (c *sigctxt) set_sigcode(x uint64) { c.info.si_code = int32(x) }
 func (c *sigctxt) set_sigaddr(x uint64) {
 	*(*uintptr)(unsafe.Pointer(&c.info.__data[0])) = uintptr(x)
 }
-
-"""
-
-
-
 ```

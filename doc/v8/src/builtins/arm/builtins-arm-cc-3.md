@@ -165,7 +165,7 @@ try {
 
 这个代码片段是 V8 引擎在 ARM 架构上实现 JavaScript 构造函数调用和 WebAssembly 支持的关键组成部分。它包含了处理对象创建、类型检查、方法分发以及与 WebAssembly 运行时交互的底层汇编代码逻辑。这些内置函数对于保证 JavaScript 语言的正确性和 WebAssembly 代码的高效执行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/arm/builtins-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/arm/builtins-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -173,8 +173,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tor)
   // -----------------------------------
   __ AssertConstructor(r1);
@@ -1065,7 +1067,4 @@ void SwitchToAllocatedStack(MacroAssembler* masm, RegisterAllocator& regs,
   // Push the loaded fp. We know it is null, because there is no frame yet,
   // so we could also push 0 directly. In any case we need to push it,
   // because this marks the bas
-"""
-
-
 ```

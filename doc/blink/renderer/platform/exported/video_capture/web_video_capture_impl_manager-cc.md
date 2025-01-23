@@ -148,14 +148,16 @@ By following these steps, you can systematically analyze even complex source cod
 
 `WebVideoCaptureImplManager` 是 Blink 渲染引擎中视频捕获功能的核心组件，它负责管理 `VideoCaptureImpl` 实例的生命周期、线程交互以及请求转发。理解它的功能和它与 JavaScript/HTML 的关系对于开发涉及摄像头访问的 Web 应用至关重要。同时，开发者需要注意避免常见的资源泄漏和线程安全问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/video_capture/web_video_capture_impl_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -474,7 +476,4 @@ void WebVideoCaptureImplManager::ProcessFeedbackInternal(
 }
 
 }  // namespace blink
-
-"""
-
 ```

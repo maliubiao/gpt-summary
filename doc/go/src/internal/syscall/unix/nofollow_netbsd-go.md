@@ -167,7 +167,7 @@ go run your_program.go mylink
 
 总而言之，`nofollow_netbsd.go` 这个文件片段虽然很小，但它明确了在 NetBSD 系统上使用 `O_NOFOLLOW` 标志时，系统调用返回的错误码，这对于编写跨平台或者需要针对特定平台处理文件操作的 Go 程序来说是很重要的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/nofollow_netbsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -187,9 +189,4 @@ import "syscall"
 
 // Reference: https://man.netbsd.org/open.2
 const noFollowErrno = syscall.EFTYPE
-
-"""
-
-
-
 ```

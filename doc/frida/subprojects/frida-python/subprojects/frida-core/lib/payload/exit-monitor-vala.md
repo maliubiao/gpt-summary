@@ -109,7 +109,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `exit-monitor.vala` 是 Frida 中用于监控进程退出的关键模块，通过拦截退出函数并在进程退出前执行自定义操作，确保资源的正确释放和状态的保存。用户在使用过程中需要注意线程安全和异步操作的完成情况，避免常见的错误。通过 LLDB 等调试工具，用户可以复刻 `ExitMonitor` 的功能，进一步理解和排查问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/lib/payload/exit-monitor.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class ExitMonitor : Object, Gum.InvocationListener {
 		public weak ExitHandler handler {
@@ -256,7 +258,4 @@ namespace Frida {
 		public abstract void prepare_to_exit_sync ();
 	}
 }
-
-"""
-
 ```

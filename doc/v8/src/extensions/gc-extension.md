@@ -110,11 +110,13 @@ gc({ type: 'major', flavor: 'last-resort' });
 
 `v8/src/extensions/gc-extension.cc` 提供了一个强大的 V8 扩展，使得 JavaScript 开发者能够在必要时主动触发和控制垃圾回收过程，这对于内存管理、性能分析和调试非常有帮助。但需要注意的是，这种能力通常仅限于 V8 的开发者或嵌入 V8 的环境中使用，标准的 Web 浏览器环境通常不会暴露这样的 API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/extensions/gc-extension.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -419,7 +421,4 @@ void GCExtension::GC(const v8::FunctionCallbackInfo<v8::Value>& info) {
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

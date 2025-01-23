@@ -92,11 +92,13 @@ while ((match = regex.exec(text)) !== null) {
 
 `regexp-macro-assembler-mips64.cc` 是 V8 引擎中一个关键的组成部分，它负责将高级的正则表达式模式转换为底层的机器码指令，从而使得 JavaScript 能够高效地执行正则表达式匹配操作。它直接关系到 JavaScript 中 `RegExp` 对象的性能和功能实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/mips64/regexp-macro-assembler-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1500,7 +1502,4 @@ void RegExpMacroAssemblerMIPS::LoadCurrentCharacterUnchecked(int cp_offset,
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
 ```

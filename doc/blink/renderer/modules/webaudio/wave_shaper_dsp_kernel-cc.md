@@ -191,15 +191,17 @@ Let's say a user is experiencing unexpected behavior with a `WaveShaperNode` and
 
 This detailed breakdown provides a comprehensive understanding of the `wave_shaper_dsp_kernel.cc` file's functionality, its connections to web technologies, potential usage errors, and how a developer might arrive at this code during a debugging session.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/wave_shaper_dsp_kernel.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011, Google Inc. All rights reserved.
  *
@@ -593,7 +595,4 @@ double WaveShaperDSPKernel::LatencyTime() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

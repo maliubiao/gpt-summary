@@ -114,15 +114,17 @@ a.G5: 500
 
 总而言之，`go/test/fixedbugs/issue33020.dir/a.go` 这个文件本身的功能很简单，就是声明了一些全局变量。它的主要目的是作为测试用例的一部分，用于验证 Go 语言在处理全局变量时的行为，特别是在 issue 33020 所关注的场景下。开发者在使用全局变量时需要注意其潜在的风险，并谨慎使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue33020.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -139,9 +141,4 @@ var G7 int
 var G8 int
 var G9 int
 var G10 int
-
-"""
-
-
-
 ```

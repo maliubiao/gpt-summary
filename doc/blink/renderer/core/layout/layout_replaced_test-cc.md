@@ -91,14 +91,16 @@ Let's break down the thought process for analyzing the provided C++ test file.
 
 `layout_replaced_test.cc` 中的 `InvalidateAfterAddingBorderRadius` 测试用例验证了 Blink 渲染引擎在处理被替换元素动态添加 `border-radius` 样式时的正确行为。它确保了布局引擎能够识别出这种样式变化需要更新绘制属性，从而保证了页面能够正确渲染。 这与 HTML 元素的结构、CSS 样式的应用以及 JavaScript 动态修改样式的方式都密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_replaced_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -134,7 +136,4 @@ TEST_F(LayoutReplacedTest, InvalidateAfterAddingBorderRadius) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

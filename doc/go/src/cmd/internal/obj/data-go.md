@@ -160,15 +160,17 @@ Symbol: main.globalFloat, Data: [206 151 221 65 163 148 64 64]
 
 总而言之，`go/src/cmd/internal/obj/data.go` 提供了一组底层的功能，用于在 Go 编译过程中操作目标文件中的数据符号。理解这些功能有助于深入了解 Go 语言的编译和链接过程。但由于它是内部包，普通 Go 开发者通常不需要直接与之交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/data.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Derived from Inferno utils/6l/obj.c and utils/6l/span.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/obj.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/span.c
@@ -381,9 +383,4 @@ func (s *LSym) AddRel(ctxt *Link, rel Reloc) {
 	}
 	s.R = append(s.R, rel)
 }
-
-"""
-
-
-
 ```

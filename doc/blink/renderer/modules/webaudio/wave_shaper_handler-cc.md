@@ -185,15 +185,17 @@ Finally, review the generated answer to ensure clarity, accuracy, and completene
 
 总而言之，`wave_shaper_handler.cc` 是 Web Audio API 中 `WaveShaperNode` 功能实现的关键部分，它连接了 JavaScript 接口和底层的音频处理逻辑。理解它的功能和与 Web 技术的关系，对于开发和调试 Web Audio 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/wave_shaper_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ scoped_refptr<WaveShaperHandler> WaveShaperHandler::Create(AudioNode& node,
 }
 
 }  // namespace blink
-
-"""
-
 ```

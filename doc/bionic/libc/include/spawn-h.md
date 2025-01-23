@@ -384,7 +384,7 @@ sys.stdin.read()
 
 这个 Frida 脚本会 hook `libc.so` 中的 `posix_spawn` 和 `posix_spawnp` 函数。当这些函数被调用时，`onEnter` 函数会被执行，它会读取并打印出被执行的程序路径和参数。`onLeave` 函数会在函数执行完毕后被调用，并打印返回值。通过这种方式，你可以观察到 Android Framework 或 NDK 在哪些场景下使用了这些函数来创建新的进程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/spawn.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -395,8 +395,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -503,7 +505,4 @@ int posix_spawn_file_actions_addfchdir_np(posix_spawn_file_actions_t _Nonnull * 
 __END_DECLS
 
 #endif
-
-"""
-
 ```

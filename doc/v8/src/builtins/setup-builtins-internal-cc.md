@@ -149,15 +149,17 @@ arr.myPush(3); // 可能导致问题
 
 `v8/src/builtins/setup-builtins-internal.cc` 是 V8 引擎中至关重要的一个文件，它负责搭建 JavaScript 运行时的基石，通过注册和初始化各种实现方式的内置函数，使得 JavaScript 代码能够正常执行并拥有丰富的功能。它处理了复杂的初始化流程和多种代码生成方式，是理解 V8 引擎内部工作原理的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/setup-builtins-internal.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/setup-builtins-internal.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -623,7 +625,4 @@ void SetupIsolateDelegate::SetupBuiltinsInternal(Isolate* isolate) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -224,15 +224,17 @@ console.log(obj2.intrusiveIndex.value); // 输出: 0 (如果 obj2 是最后一�
 
 总而言之，`v8/src/base/intrusive-set.h` 提供了一个专门用途的高效集合实现，它通过侵入式的方式来达到 O(1) 的插入和删除，这在 V8 引擎内部需要高性能数据结构的场景中非常有用。  理解其侵入式的特性和迭代器的限制对于正确使用它是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/intrusive-set.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/intrusive-set.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -359,7 +361,4 @@ class IntrusiveSet {
 }  // namespace v8::base
 
 #endif  // V8_BASE_INTRUSIVE_SET_H_
-
-"""
-
 ```

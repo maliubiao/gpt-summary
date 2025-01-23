@@ -189,15 +189,17 @@ ADD  R0, R1, R2 // 将 R1 和 R2 的值相加，结果存到 R0
 
 总而言之，`go/src/cmd/internal/obj/arm64/a.out.go` 是 Go 语言工具链中关于 ARM64 架构的核心定义文件，它为 Go 编译器生成正确的 ARM64 机器码提供了基础。普通 Go 开发者无需关心这个文件，但它是理解 Go 编译过程的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/arm64/a.out.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // cmd/7c/7.out.h  from Vita Nuova.
 // https://bitbucket.org/plan9-from-bell-labs/9-cc/src/master/src/cmd/7c/7.out.h
 //
@@ -1410,9 +1412,4 @@ const (
 
 	SPOP_END
 )
-
-"""
-
-
-
 ```

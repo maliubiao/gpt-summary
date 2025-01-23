@@ -178,15 +178,17 @@ console.log("Result:", result); // 可以在调试器中查看 result 的值
 
 `TaskRunner` 的设计者需要仔细考虑这些问题，并使用适当的同步机制（例如互斥锁、信号量、原子操作等）来确保线程安全和数据一致性。开发者在使用类似 `TaskRunner` 的多线程框架时，也需要理解这些潜在的陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/inspector/task-runner.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/inspector/task-runner.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ class TaskRunner : public v8::base::Thread {
 }  // namespace v8
 
 #endif  //  V8_TEST_INSPECTOR_PROTOCOL_TASK_RUNNER_H_
-
-"""
-
 ```

@@ -127,7 +127,7 @@ By following this structured approach, I can systematically analyze the code and
 
 总而言之，`windowstests.py` 是 Frida 在 Windows 平台上构建质量的保证。它通过一系列细致的测试用例，覆盖了构建过程中的关键环节，并与逆向工程的许多核心概念紧密相关。测试失败可以作为重要的调试线索，帮助开发者发现和修复潜在的问题，确保 Frida 在 Windows 上的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/unittests/windowstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -613,7 +615,4 @@ class WindowsTests(BasePlatformTests):
         with mock.patch.object(self, 'install_command', self.meson_command + ['install']):
             out = self.install(override_envvars=env)
             self.assertIn('Activating VS', out)
-
-"""
-
 ```

@@ -361,7 +361,7 @@ except KeyboardInterrupt:
 
 请注意，这个 Frida 脚本只是一个基本的示例。根据你想要调试的具体场景，你可能需要修改脚本来 hook 不同的函数或提取更详细的信息。  你可能还需要 root 权限才能 hook 系统进程或某些受保护的应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/input.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -372,8 +372,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -581,7 +583,4 @@ struct ff_effect {
 #define FF_MAX 0x7f
 #define FF_CNT (FF_MAX + 1)
 #endif
-
-"""
-
 ```

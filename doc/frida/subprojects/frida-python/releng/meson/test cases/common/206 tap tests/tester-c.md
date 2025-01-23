@@ -125,7 +125,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 `tester.c` 是一个非常简单的程序，但它在 Frida 的测试框架中扮演着重要的角色。它作为一个轻量级的测试目标，用于验证 Frida 的基本功能，例如进程注入、Hook 和参数传递。虽然程序本身不涉及复杂的逆向工程技术，但它为理解 Frida 如何与目标进程交互提供了基础。  它也体现了软件开发中测试驱动开发和持续集成的理念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/206 tap tests/tester.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main(int argc, char **argv) {
@@ -145,7 +147,4 @@ int main(int argc, char **argv) {
     puts(argv[1]);
     return 0;
 }
-
-"""
-
 ```

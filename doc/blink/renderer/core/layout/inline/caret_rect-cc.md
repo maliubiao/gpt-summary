@@ -154,14 +154,16 @@ LocalCaretRect {
 
 总而言之，`caret_rect.cc` 是 Blink 渲染引擎中一个至关重要的文件，它负责准确计算文本插入光标的视觉位置，这直接影响着用户的文本编辑体验。它的工作涉及到对 HTML 结构、CSS 样式和 JavaScript 操作的深入理解和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/caret_rect.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -406,7 +408,4 @@ LocalCaretRect ComputeLocalSelectionRect(
 }
 
 }  // namespace blink
-
-"""
-
 ```

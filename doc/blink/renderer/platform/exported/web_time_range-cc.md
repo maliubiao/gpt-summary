@@ -146,14 +146,16 @@ Essentially, my process involved a combination of code analysis, domain knowledg
 
 `web_time_range.cc` 中定义的 `WebTimeRanges` 类是 Blink 渲染引擎中一个基础且重要的组件，用于管理和操作时间范围。它在处理多媒体内容时发挥着关键作用，并通过 JavaScript 的 `TimeRanges` 接口暴露给 web 开发者，使得他们能够获取和理解媒体资源的缓冲和可跳转状态。理解其功能和潜在的使用错误对于进行相关的 Web 开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_time_range.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 Google Inc. All rights reserved.
  *
@@ -315,7 +317,4 @@ double WebTimeRanges::Nearest(double new_playback_position,
 }
 
 }  // namespace blink
-
-"""
-
 ```

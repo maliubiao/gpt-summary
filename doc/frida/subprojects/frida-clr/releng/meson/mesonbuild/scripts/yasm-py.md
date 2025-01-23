@@ -100,7 +100,7 @@ By following these steps, the comprehensive analysis provided earlier can be con
 
 总而言之，`yasm.py` 是 Frida 构建流程中一个关键的组成部分，负责将汇编语言代码转换为机器码，并管理编译依赖关系。虽然用户不会直接操作它，但理解其功能对于理解 Frida 的构建过程和排查相关构建错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/scripts/yasm.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import argparse
@@ -134,7 +136,4 @@ def run(args: T.List[str]) -> int:
         f.write(ret.stdout)
 
     return 0
-
-"""
-
 ```

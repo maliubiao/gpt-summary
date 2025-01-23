@@ -187,7 +187,7 @@ def on_message(message, data):
 
 总而言之，`basename.py` 是一个简单但实用的工具，用于提取文件名。在逆向工程的上下文中，它可以帮助简化路径信息，使分析更加聚焦。它也体现了操作系统中文件路径处理的基本概念，并作为 Frida 测试框架的一部分，在开发和调试过程中发挥作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/14 configure file/basename.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -225,7 +227,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

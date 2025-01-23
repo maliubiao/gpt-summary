@@ -129,7 +129,7 @@ By following these steps, including anticipating potential issues and connecting
 
 总而言之，这个 `main.c` 文件是一个非常基础的测试用例，用于验证动态链接的功能。在 Frida 的上下文中，它充当一个简单的目标程序，用于测试 Frida 对共享库函数的插桩能力。理解这个文件的功能和背后的机制，对于理解 Frida 的工作原理以及进行逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/6 linkshared/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_IMPORT __declspec(dllimport)
 #else
@@ -150,7 +152,4 @@ int DLL_IMPORT func(void);
 int main(void) {
     return func();
 }
-
-"""
-
 ```

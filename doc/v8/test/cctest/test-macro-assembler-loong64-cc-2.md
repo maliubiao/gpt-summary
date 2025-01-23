@@ -75,7 +75,7 @@ let shiftedNum = num >> 1; // 在底层可能使用位移指令
 
 这部分 `test-macro-assembler-loong64.cc` 代码是 V8 引擎针对 LoongArch64 架构的宏汇编器单元测试集的一部分。它专注于验证各种算术、逻辑、位操作和浮点数相关的宏指令的正确生成和执行，确保 V8 引擎能够在 LoongArch64 平台上正确高效地执行 JavaScript 代码。这些测试覆盖了底层的指令行为，并间接反映了 JavaScript 中可能遇到的数值计算和位操作相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-macro-assembler-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-macro-assembler-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -83,9 +83,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
- use ori.
+### 源代码
+```cpp
+use ori.
       {0xFFFFFFFFFFFFF7FF,              0x801,         2},  // min_int12 - 1
       // Generates ori + add_d
       {             0x801, 0xFFFFFFFFFFFFF7FF,         2},  // max_int12 + 2
@@ -1051,7 +1053,4 @@ uint64_t run_InsertBits(uint64_t dest, uint64_t source, int pos, int size) {
   masm->GetCode(isolate, &desc);
   Handle<Code> code =
       Factory::CodeBui
-"""
-
-
 ```

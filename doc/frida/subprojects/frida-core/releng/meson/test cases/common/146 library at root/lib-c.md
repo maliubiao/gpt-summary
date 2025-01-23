@@ -155,7 +155,7 @@ sys.stdin.read()
 
 总而言之，用户查看这个文件 `lib.c` 通常是作为调试过程的一部分，用于理解目标库的结构和功能，以便更有效地使用 Frida 进行动态分析。由于这是一个非常简单的测试用例，用户可能会在学习 Frida 或排查 Frida 基础功能问题时遇到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/146 library at root/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,15 +163,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 __declspec(dllexport)
 #endif
 int fn(void) {
     return -1;
 }
-
-"""
-
 ```

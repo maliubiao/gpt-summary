@@ -166,15 +166,17 @@ Go 语言的构建标签主要通过 `go` 命令的 `-tags` 参数进行设置�
 
 总而言之，`go/src/cmd/vet/testdata/buildtag/buildtag4.go` 的主要作用是作为 `go vet` 工具测试构建标签功能的一个用例，它本身展示了如何使用逻辑非操作符来排除特定的构建标签。理解 Go 的构建标签机制对于编写跨平台或者需要根据不同条件编译代码的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vet/testdata/buildtag/buildtag4.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -186,9 +188,4 @@ Prompt:
 // +build !worse
 
 package testdata
-
-"""
-
-
-
 ```

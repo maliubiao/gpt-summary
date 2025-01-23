@@ -168,7 +168,7 @@ fetch('my-module.wasm')
 
 总而言之，这部分代码是 V8 WebAssembly 引擎中负责高效、异步地将 WebAssembly 字节码转换为可执行代码的关键组成部分，它利用流式处理和后台编译来提升性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -176,9 +176,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
- (cached_native_module_) {
+### 源代码
+```cpp
+(cached_native_module_) {
       job->native_module_ = cached_native_module_;
     }
     // Then finalize and publish the generated module.
@@ -942,7 +944,4 @@ void CompilationStateImpl::AddCallback(
   constexpr base::EnumSet<CompilationEvent> kFinalEvents{
       CompilationEvent::kFailedCompilation};
   if (!finished_events_.contains_any(kFina
-"""
-
-
 ```

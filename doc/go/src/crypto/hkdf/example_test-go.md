@@ -144,7 +144,7 @@ func deriveKey(secret, salt, info []byte, keyLen int) []byte {
 
 这段代码是一个清晰的 `crypto/hkdf` 包的使用示例，展示了如何从一个主密钥派生出多个安全的子密钥。理解 HKDF 的原理以及正确使用盐是避免常见错误的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/hkdf/example_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -152,8 +152,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -207,9 +209,4 @@ func Example_usage() {
 	// Key #2: true
 	// Key #3: true
 }
-
-"""
-
-
-
 ```

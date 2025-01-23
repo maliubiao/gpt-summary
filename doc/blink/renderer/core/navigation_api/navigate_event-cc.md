@@ -244,14 +244,16 @@ This structured approach, moving from the general purpose to specific details an
 
 总而言之，`navigate_event.cc` 文件定义了 Blink 引擎中处理页面导航的核心事件和机制，它与 JavaScript 紧密结合，为开发者提供了强大的自定义导航行为的能力，但也需要开发者理解其生命周期和使用限制，以避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/navigation_api/navigate_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -782,7 +784,4 @@ void NavigateEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

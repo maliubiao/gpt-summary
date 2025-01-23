@@ -214,7 +214,7 @@ func main() {
 
 这部分 `mgcmark.go` 的主要功能是 **实现 Go 语言垃圾回收器标记阶段的核心逻辑，负责识别和标记所有在程序执行过程中仍然活跃的对象。** 它通过扫描各种类型的根对象（全局变量、Goroutine 栈、特殊 Span 等）并递归地遍历对象图来实现这一目标。此外，它还包含了 GC 辅助机制，允许 Goroutine 在分配内存时分担一部分标记工作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mgcmark.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -223,8 +223,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1227,9 +1229,4 @@ func scanstack(gp *g, gcw *gcWork) int64 {
 //go:nowritebarrier
 func scanframeworker(frame *stkframe, state *stackScanState, gcw *gcWork) {
 	if _DebugGC > 1 && frame
-"""
-
-
-
-
 ```

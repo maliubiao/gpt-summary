@@ -120,14 +120,16 @@ Here's a breakdown of its functionalities:
 
 In summary, `email_input_type.cc` is a vital component of the Blink rendering engine responsible for the correct and secure handling of email address inputs in web forms. It manages validation, sanitization, and interaction with other web technologies to provide a consistent user experience.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/email_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * This file is part of the WebKit project.
  *
@@ -451,7 +453,4 @@ void EmailInputType::MultipleAttributeChanged() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

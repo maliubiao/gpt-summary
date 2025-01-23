@@ -169,11 +169,13 @@ simulateAllocation({ another: "对象 B" }, 70); // 不会再有观察者通知
 
 `allocation-observer.cc` 文件实现了 V8 引擎中用于观察内存分配的关键机制。它允许 V8 内部的组件（如垃圾回收器）以及潜在的性能分析工具，在内存分配发生时获得通知并执行相应的操作。虽然 JavaScript 代码无法直接访问这些底层的 C++ API，但理解其功能有助于理解 V8 如何管理内存和进行性能监控。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/allocation-observer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -348,7 +350,4 @@ PauseAllocationObserversScope::~PauseAllocationObserversScope() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -148,7 +148,7 @@ Here's a breakdown of the request and my plan:
 
 这段 `v8/src/builtins/ppc/builtins-ppc.cc` 代码的核心功能是定义了 PowerPC 架构下 V8 引擎进入和执行 JavaScript 代码的关键入口点和跳板。它负责设置执行环境，包括栈帧管理、参数传递和异常处理，并区分了不同类型的 JavaScript 调用（普通函数、构造函数、微任务、解释执行）。这些内置函数对于 V8 引擎高效执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ppc/builtins-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/ppc/builtins-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -156,8 +156,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _entry_sp =
       ExternalReference::Create(IsolateAddressId::kJSEntrySPAddress,
                                 masm->isolate());
@@ -1034,7 +1036,4 @@ void Builtins::Generate_ConstructForwardAllArgsImpl(
       break;
     case ForwardWhichFrame::kParentFrame:
       __ LoadU64(r7, MemOperand(fp,
-"""
-
-
 ```

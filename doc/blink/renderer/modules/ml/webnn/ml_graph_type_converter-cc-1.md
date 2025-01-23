@@ -93,7 +93,7 @@ By following these steps, we can arrive at the detailed and accurate description
 
 这段代码片段的核心功能是 **将一部分 WebNN API 中定义的机器学习操作符 (`MLOperator`) 转换为用于进程间通信的 Mojo 消息 (`blink_mojom::Operation`)**。它涵盖了反量化线性、元素级二元和一元运算、各种 Gather 操作、Gelu、Gemm、Gru、GruCell、HardSwish、各种归一化操作、Lstm、LstmCell、Matmul、Pad、Pool2d、Prelu、量化线性、Reduce、Resample2d、Relu、Reshape、Reverse 和各种 Scatter 操作的转换逻辑。 这使得 Blink 渲染引擎可以将高层的 WebNN 操作描述传递给下层实现进行执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ml/webnn/ml_graph_type_converter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nputId(dequantize_linear, operand_to_id_map, 2);
   dequantize_linear_mojo->output_operand_id =
       GetOperatorOutputId(dequantize_linear, operand_to_id_map);
@@ -887,7 +889,4 @@ OperationPtr CreateSigmoidOperation(const OperandToIdMap& operand_to_id_map,
       GetOperatorOutputId(sigmoid, operand_to_id_map);
   sigmoid_mojo->label = sigmoid->Options()->label();
   return blink_mojom::Operation::New
-"""
-
-
 ```

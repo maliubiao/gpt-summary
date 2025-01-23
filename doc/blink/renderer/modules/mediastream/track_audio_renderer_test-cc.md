@@ -172,15 +172,17 @@ By following this structured approach, analyzing the includes, classes, methods,
 
 总而言之，`track_audio_renderer_test.cc` 是确保 Chromium Blink 引擎中音频渲染功能正常工作的重要组成部分，它通过模拟各种场景来验证 `TrackAudioRenderer` 类的正确性和健壮性，这直接影响了用户在使用网页音频功能时的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/track_audio_renderer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -484,7 +486,4 @@ INSTANTIATE_TEST_SUITE_P(,
                          testing::ValuesIn({true, false}));
 
 }  // namespace blink
-
-"""
-
 ```

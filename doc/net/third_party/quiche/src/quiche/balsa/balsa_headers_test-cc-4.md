@@ -83,7 +83,7 @@ HTTP 头部信息在 Web 开发中扮演着至关重要的角色，Javascript �
 
 这部分测试主要集中在 **验证 `BalsaHeaders` 类判断 HTTP 响应是否应该包含消息体的能力**。这对于网络栈正确处理各种 HTTP 响应至关重要，避免在不应该有 body 的情况下尝试读取，从而提高健壮性和符合 HTTP 规范。 结合前面的部分，整个 `balsa_headers_test.cc` 文件旨在全面测试 `BalsaHeaders` 类在 HTTP 头部解析、格式化、操作等方面的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/balsa/balsa_headers_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -91,8 +91,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tion::kNoCoalesce);
   EXPECT_EQ(simple_buffer.GetReadableRegion(), expected_proper_case_with_end);
 }
@@ -306,8 +308,4 @@ TEST(BalsaHeadersTest, ResponseCanHaveBody) {
 }  // namespace test
 
 }  // namespace quiche
-
-"""
-
-
 ```

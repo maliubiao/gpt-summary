@@ -119,14 +119,16 @@ This systematic approach, starting with a high-level overview and gradually divi
 
 `dtoa.cc` 文件在 Chromium Blink 引擎中扮演着至关重要的角色，它提供了高性能且符合标准的浮点数与字符串之间的转换功能，是实现网页上数字处理的基础。理解其功能和潜在的使用错误对于开发高质量的 Web 应用至关重要。 它通过与 `double-conversion` 库的集成，确保了转换的效率和精度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/dtoa.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /****************************************************************
  *
  * The author of this software is David M. Gay.
@@ -326,7 +328,4 @@ void InitializeDoubleConverter() {
 }  // namespace internal
 
 }  // namespace WTF
-
-"""
-
 ```

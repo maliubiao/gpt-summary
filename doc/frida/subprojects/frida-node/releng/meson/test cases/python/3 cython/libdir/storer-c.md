@@ -198,7 +198,7 @@ Finally, I organized the information into the sections requested by the user: Fu
 
 因此，用户到达 `storer.c` 代码的路径通常是：编写 Frida 脚本 -> 目标 Node.js 应用执行到使用该 C 模块的代码 -> Frida 拦截执行或开发人员使用调试器逐步跟踪代码。这个文件作为 Frida 测试套件的一部分，也可能在 Frida 的自动化测试过程中被执行到。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/python/3 cython/libdir/storer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -206,8 +206,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"storer.h"
 #include<stdlib.h>
 
@@ -232,7 +234,4 @@ int storer_get_value(Storer *s) {
 void storer_set_value(Storer *s, int v) {
     s->value = v;
 }
-
-"""
-
 ```

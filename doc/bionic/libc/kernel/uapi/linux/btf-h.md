@@ -269,7 +269,7 @@ if (simpleperf_parse_btf) {
 
 `bionic/libc/kernel/uapi/linux/btf.handroid` 定义了 Linux 内核 BTF 元数据格式，用于描述二进制程序中的类型信息。它在 Android 中被用于性能分析、调试等场景，使得工具能够理解内核和用户空间程序的数据结构。虽然这个头文件本身不包含可执行代码，但它定义的结构被用于描述共享库的信息，与 dynamic linker 的功能密切相关。通过 Frida，我们可以 hook 那些读取和使用 BTF 信息的函数，从而观察和调试相关过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/btf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -280,8 +280,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -394,7 +396,4 @@ struct btf_enum64 {
   __u32 val_hi32;
 };
 #endif
-
-"""
-
 ```

@@ -264,7 +264,7 @@ gum_exec_ctx_write_epilog_helper (GumExecCtx * ctx,
     0xc4, 0xc3, 0x75, 0x38, 0x4c, 0x24, 0x10, 0x01,
     0xc4, 0xc3, 0x6d, 0x38, 0x54, 0x24, 0x20, 0x01,
     0xc4, 0xc3, 0x65, 0x38, 0x5c, 0x24, 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-x86/gumstalker-x86.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -273,8 +273,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 lahf (cw);
       gum_x86_writer_put_push_reg (cw, GUM_X86_XAX);
 
@@ -1268,8 +1270,4 @@ gum_exec_block_backpatch_conditional_jmp (GumExecBlock * block,
    * the original Jcc instruction to take control flow direct to the
    * instrumented block and hence avoid taking two branches in quick succession.
    * This also means that since the `code to handle taken branch` is no longer
-   
-"""
-
-
 ```

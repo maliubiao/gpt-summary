@@ -100,7 +100,7 @@ test.c:2:2: error: "_FILE_OFFSET_BITS should not be set"
 
 这个小小的 `test.c` 文件虽然自身功能简单，但它在 Frida 的构建过程中扮演着重要的角色，用于确保关键的编译环境配置正确。它的存在可以帮助开发者尽早发现潜在的 ABI 不兼容问题，保证 Frida Swift 绑定在目标平台上能够正常工作。  对于逆向工程师来说，理解这类构建时的检查有助于更好地理解 Frida 内部的构建逻辑和对底层系统特性的依赖。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/33 cross file overrides always args/test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _FILE_OFFSET_BITS
   #error "_FILE_OFFSET_BITS should not be set"
 #endif
@@ -118,7 +120,4 @@ int main(int argc, char *argv[])
 {
   return 0;
 }
-
-"""
-
 ```

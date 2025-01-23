@@ -200,7 +200,7 @@ This output will be used by Meson to tell the linker how to link the Frida gadge
 
 **As a debugging clue:** If a user encounters issues related to CUDA during the Frida build process, examining the output of the `meson setup build` command will often provide clues. Error messages related to missing CUDA, incorrect paths, or missing libraries can point directly to problems within the logic of this `cuda.py` script or the user's CUDA installation. Developers might also add logging statements within this script to further diagnose issues during the detection process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/dependencies/cuda.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -208,8 +208,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2019 The Meson development team
 
@@ -505,7 +507,4 @@ class CudaDependency(SystemDependency):
         return args
 
 packages['cuda'] = CudaDependency
-
-"""
-
 ```

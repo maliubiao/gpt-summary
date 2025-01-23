@@ -71,14 +71,16 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 `html_tokenizer_test.cc` 是确保 Chromium Blink 引擎中 `HTMLTokenizer` 组件正确性和健壮性的关键部分。它通过编写各种测试用例，特别是针对边界情况和潜在错误的回归测试，来保证 HTML 解析的准确性，这直接影响着浏览器对网页的渲染和 JavaScript/CSS 的执行。虽然它是一个底层的 C++ 测试文件，但其目标是确保用户最终能够正确地浏览和使用网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_tokenizer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -109,7 +111,4 @@ TEST(HTMLTokenizerTest, ZeroOffsetAttributeNameRange) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

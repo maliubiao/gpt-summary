@@ -158,7 +158,7 @@ promise.then(value => console.log(value));
 
 `v8/src/logging/runtime-call-stats.h` 的主要功能是为 V8 引擎提供了一个内部的统计框架，用于追踪各种运行时函数调用的次数和耗时。这对于性能分析、调试以及理解 V8 引擎的内部行为至关重要。它通过定义计数器类、计时器类以及一系列宏来实现对不同类型调用的精细化统计。虽然用户通常不会直接操作这些底层的统计机制，但理解其原理有助于理解 V8 引擎的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/runtime-call-stats.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/logging/runtime-call-stats.h以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -780,7 +782,4 @@ enum RuntimeCallCounterId {
                   FOR_EACH_API_COUNTER(CALL_BUILTIN_COUNTER)
 #undef CALL_BUILTIN_COUNTER
 #define CALL_BUILTIN_COUNTER(name) kHandler_#
-"""
-
-
 ```

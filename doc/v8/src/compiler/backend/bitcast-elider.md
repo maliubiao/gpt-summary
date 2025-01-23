@@ -126,11 +126,13 @@ let result = compare(num);
 
 虽然我们不能直接从 JavaScript 代码中看到 `BitcastElider` 的工作，但它是 V8 优化管道中的一个重要环节，通过消除不必要的位转换操作，提高了 JavaScript 代码在底层执行的效率。它专注于特定的位转换模式和它们的使用方式，以确保优化的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/bitcast-elider.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ void BitcastElider::Reduce() { ProcessGraph(); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

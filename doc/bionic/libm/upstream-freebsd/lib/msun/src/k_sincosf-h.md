@@ -243,7 +243,7 @@ Let's say you suspect an issue with the `sinf` function in your Android applicat
 
 **In summary, `k_sincosf.handroid` provides a fundamental, optimized building block for trigonometric calculations in Android. Understanding its function and how it fits into the larger `libc` and Android ecosystem is crucial for developers working on performance-sensitive applications or those needing to debug math-related issues.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/k_sincosf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -253,8 +253,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -295,7 +297,4 @@ __kernel_sincosdf(double x, float *sn, float *cs)
 	r = C2 + z * C3;
 	*cs = ((1 + z * C0) + w * C1) + (w * z) * r;
 }
-
-"""
-
 ```

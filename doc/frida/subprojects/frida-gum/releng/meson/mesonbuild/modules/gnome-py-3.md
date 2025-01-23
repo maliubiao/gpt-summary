@@ -162,7 +162,7 @@ libfoo_vapi = gnome_mod.generate_vapi(
 
 `frida/subprojects/frida-gum/releng/meson/mesonbuild/modules/gnome.py` 文件的最后一部分专注于提供 Meson 构建功能，以便根据 GObject Introspection 数据生成 Vala API 定义文件。这对于使用 Vala 语言与基于 GObject 的库进行交互至关重要。在逆向工程的背景下，它可以帮助理解目标应用使用的库的接口，为动态分析和插桩提供基础。该模块涉及到与二进制链接、操作系统底层机制以及特定框架（如 GNOME）的知识。理解用户如何配置和运行 Meson 构建系统是调试与此模块相关问题的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 cy, str]],
                                ) -> T.Tuple[T.List[str], T.List[VapiTarget], T.List[str], T.List[str], T.List[str]]:
         '''
@@ -316,8 +318,4 @@ def initialize(interp: 'Interpreter') -> GnomeModule:
     mod.interpreter.append_holder_map(TypelibTarget, interpreter.CustomTargetHolder)
     mod.interpreter.append_holder_map(VapiTarget, interpreter.CustomTargetHolder)
     return mod
-
-"""
-
-
 ```

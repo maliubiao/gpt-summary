@@ -159,7 +159,7 @@ let reversedBytes = 0xAABBCCDD;
 
 `v8/src/execution/arm/simulator-arm.cc` 的这个代码片段是 V8 引擎中 ARM 架构模拟器的核心，负责**解码和执行 ARM 指令集中的各种指令，包括数据处理、块数据传输、分支、以及协处理器（特别是 VFP）指令**。它的存在使得 V8 能够在非 ARM 平台上进行开发、测试和调试，并且可以作为一种备选的执行路径。它模拟了底层硬件的行为，对于理解 JavaScript 代码在 ARM 架构上的执行过程至关重要。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm/simulator-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm/simulator-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,9 +167,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
-                    break;
+### 源代码
+```cpp
+break;
                     }
                     set_register(rd, rn_val + static_cast<int16_t>(rm_val));
                   }
@@ -1060,7 +1062,4 @@ int32_t Simulator::ConvertDoubleToInt(double val, bool unsigned_integer,
 
   if (inv_op_vfp_flag_) {
     result = VFPConv
-"""
-
-
 ```

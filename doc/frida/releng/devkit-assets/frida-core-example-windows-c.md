@@ -186,7 +186,7 @@ By following this structured thought process, I could comprehensively analyze th
 
 通过理解以上步骤和代码逻辑，开发者可以更好地调试和扩展这个示例，以满足更复杂的动态分析需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/devkit-assets/frida-core-example-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * To build, set up your Release configuration like this:
  *
@@ -393,7 +395,4 @@ stop (gpointer user_data)
 
   return FALSE;
 }
-
-"""
-
 ```

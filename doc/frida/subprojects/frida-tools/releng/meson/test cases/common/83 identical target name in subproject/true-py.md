@@ -108,7 +108,7 @@ Frida 是一个用于动态 instrumentation 的强大工具，广泛应用于逆
 
 总而言之，`true.py` 脚本本身是一个简单的测试用例，用于验证 Frida 的构建系统 (Meson) 能够正确处理子项目中同名目标的情况。它间接地关系到逆向工程，并涉及到构建系统和潜在的开发者错误处理。普通用户通常不会直接接触到这个文件，但它是 Frida 开发和维护的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/83 identical target name in subproject/true.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,13 +116,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 if __name__ == '__main__':
     pass
-
-"""
-
 ```

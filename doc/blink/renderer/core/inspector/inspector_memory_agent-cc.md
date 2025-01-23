@@ -128,14 +128,16 @@ Let's break down the thought process for analyzing this code and generating the 
 
 `InspectorMemoryAgent.cc` 扮演着桥梁的角色，将 Blink 渲染引擎底层的内存信息暴露给开发者工具，帮助开发者理解和调试与内存相关的问题，包括 DOM 对象的数量、JavaScript 内存的使用情况以及原生内存的分配模式。它通过提供计数器和内存采样 профиль 等功能，使开发者能够更好地分析和优化 Web 页面的性能和内存占用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_memory_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -373,7 +375,4 @@ Vector<String> InspectorMemoryAgent::Symbolize(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -176,15 +176,17 @@ try {
 
 虽然上面的 JavaScript 例子是概念性的，它说明了在 V8 内部正确管理对象所属的 `Isolate` 的重要性，而 `isolate-utils-inl.h` 中的函数正是帮助 V8 实现这一点的工具。如果在 V8 内部的开发中，错误地使用了这些函数，例如尝试获取不属于当前 `Isolate` 的可写对象的 `Heap`，可能会导致程序崩溃或其他不可预测的行为。`DCHECK` 的使用就是为了在开发阶段尽早发现这类错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate-utils-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/isolate-utils-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -258,7 +260,4 @@ V8_INLINE static IsolateForSandbox GetIsolateForSandbox(
 }  // namespace v8
 
 #endif  // V8_EXECUTION_ISOLATE_UTILS_INL_H_
-
-"""
-
 ```

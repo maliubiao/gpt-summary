@@ -114,7 +114,7 @@ Strategizing complete. I will now proceed with generating the response.
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/unittests/machinefiletests.py` 文件的第一部分主要用于测试 Meson 构建系统处理原生配置文件的能力，包括解析配置文件、查找程序、切换编译器、处理构建选项等。这些测试确保了 Frida 的构建系统能够灵活地适应不同的构建环境和工具链，这对于 Frida 跨平台支持和功能的正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/unittests/machinefiletests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -875,8 +877,4 @@ class CrossFileTests(BasePlatformTests):
             os.makedirs(dir_)
             with tempfile.NamedTemporaryFile('w', dir=dir_, delete=False, encoding='utf-8') as f:
                 f.write(cross_content)
-   
-"""
-
-
 ```

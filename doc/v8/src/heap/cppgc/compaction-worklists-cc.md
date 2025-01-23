@@ -131,16 +131,17 @@ movable_slots_worklist_ = {} // 空
 
 虽然 V8 的垃圾回收机制减轻了 JavaScript 开发者手动管理内存的负担，但理解底层内存管理的概念，以及避免在 C++ 扩展中出现这些错误，对于开发高性能和稳定的应用仍然非常重要。`v8/src/heap/cppgc/compaction-worklists.cc` 这样的文件正是 V8 团队努力保障 JavaScript 内存安全和效率的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/compaction-worklists.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/compaction-worklists.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
-
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -154,7 +155,4 @@ void CompactionWorklists::ClearForTesting() { movable_slots_worklist_.Clear(); }
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

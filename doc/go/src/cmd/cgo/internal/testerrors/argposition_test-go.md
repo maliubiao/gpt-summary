@@ -180,15 +180,17 @@ cmd := exec.Command("go", "tool", "cgo",
 
 总而言之，这段测试代码的核心在于验证 `cmd/cgo` 工具在处理包含 C 代码的 Go 文件时，能够正确地维护 Go 语言元素的源文件位置信息，这对于错误报告、调试和代码分析等场景至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/internal/testerrors/argposition_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -326,9 +328,4 @@ func TestArgumentsPositions(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

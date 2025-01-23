@@ -148,14 +148,16 @@ By following these steps, we can dissect the C++ test file, understand its purpo
 
 总而言之，`geometry_mapper_transform_cache_test.cc` 文件通过一系列的单元测试，确保了 Blink 引擎的 `GeometryMapperTransformCache` 类能够正确、高效地缓存和管理图形变换信息，这对于流畅的网页渲染至关重要。虽然开发者不会直接操作这个类，但其正确性直接影响了使用 CSS `transform` 属性的网页的表现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/geometry_mapper_transform_cache_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -441,7 +443,4 @@ TEST_F(GeometryMapperTransformCacheTest, TransformUpdate) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -143,15 +143,17 @@ func modifyT(t *bug0.T, newValue int) {
 
 `bug2.go` 这段代码是一个用于测试Go语言包级私有性规则的示例。它通过尝试访问另一个包中未导出的结构体字段，预期触发编译错误，从而验证Go语言的访问控制机制。 `bug1` 的导入可能是为了提供某些测试环境或副作用，但其具体作用需要查看 `bug1.go` 的内容。这段代码不涉及命令行参数的处理，但提醒开发者注意Go语言中未导出标识符的访问限制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug133.dir/bug2.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -168,9 +170,4 @@ func fn(p *T2) int {
 	// to package bug0 and should not be visible in package bug1.
 	return p.t.i;	// ERROR "field|undef"
 }
-
-"""
-
-
-
 ```

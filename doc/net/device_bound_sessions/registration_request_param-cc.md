@@ -186,15 +186,17 @@ RegistrationRequestParam{
 
 总而言之，`RegistrationRequestParam` 是 Chromium 网络栈中用于组织和传递设备绑定会话注册请求参数的关键数据结构，它在幕后支持着用户可能在网页上触发的设备绑定会话相关的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/device_bound_sessions/registration_request_param.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ RegistrationRequestParam::RegistrationRequestParam(
       authorization_(std::move(authorization)) {}
 
 }  // namespace net::device_bound_sessions
-
-"""
-
 ```

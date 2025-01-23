@@ -117,7 +117,7 @@ func main() {
 
 `go/src/runtime/abi_test.go` 的这段代码主要用于测试 Go 语言实验性的基于寄存器的函数调用 ABI 在与 finalizer 机制结合使用时的正确性。它通过创建一个子进程来隔离测试环境，并使用 `//go:registerparams` 指令来标记需要使用寄存器 ABI 的 finalizer 函数，最后通过断言来验证 finalizer 是否被正确执行以及参数是否正确传递。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/abi_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -125,8 +125,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -244,9 +246,4 @@ func TestFinalizerRegisterABI(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

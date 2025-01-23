@@ -95,11 +95,13 @@ console.log(result);
 
 `frame-constants-mips64.cc` 文件虽然不是直接编写 JavaScript 代码，但它是 V8 引擎在 MIPS64 架构上执行 JavaScript 代码的基础。 它定义的常量决定了 JavaScript 函数调用时的栈帧结构，从而影响着参数传递、局部变量访问、上下文管理等核心功能。 这些常量确保了 V8 引擎能够正确高效地在 MIPS64 平台上运行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/frame-constants-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -138,7 +140,4 @@ intptr_t MaglevFrame::StackGuardFrameSize(int register_input_count) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
 ```

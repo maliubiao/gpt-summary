@@ -137,15 +137,17 @@ int main() {
 
 总而言之，`v8/src/base/sanitizer/lsan-page-allocator.h` 定义了一个装饰器类，用于在 V8 的页面分配过程中集成 Leak Sanitizer，帮助 V8 开发者检测引擎自身的内存泄漏问题，从而提升 V8 的稳定性和可靠性，最终间接地保障 JavaScript 代码的正常执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/sanitizer/lsan-page-allocator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/sanitizer/lsan-page-allocator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ class V8_BASE_EXPORT LsanPageAllocator : public v8::PageAllocator {
 }  // namespace base
 }  // namespace v8
 #endif  // V8_BASE_SANITIZER_LSAN_PAGE_ALLOCATOR_H_
-
-"""
-
 ```

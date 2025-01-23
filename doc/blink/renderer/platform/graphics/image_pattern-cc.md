@@ -180,14 +180,16 @@ By following these steps, we can systematically analyze the code and generate a 
 
 总而言之，`ImagePattern.cc` 中定义的 `ImagePattern` 类是 Blink 渲染引擎中处理图像平铺的关键基础设施，它连接了 CSS 样式和 Canvas API 的请求，最终通过 Skia 图形库来实现图像的重复绘制。理解它的功能有助于理解浏览器如何渲染网页上的背景、遮罩以及 Canvas 图形。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/image_pattern.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ bool ImagePattern::IsTextureBacked() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

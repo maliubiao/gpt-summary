@@ -152,15 +152,17 @@ This detailed thought process covers identifying the purpose, dissecting the cod
 
 总而言之，`digital_identity_credential_test.cc` 是一个确保 Blink 引擎中数字身份凭据功能正确实现的单元测试，它通过模拟 JavaScript API 的调用和 Mojo 接口的交互，验证了引擎内部逻辑和 Web Feature 使用计数器的正确性。 了解这个测试文件可以帮助开发者理解数字身份凭据在 Chromium 中的工作原理，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/credentialmanagement/digital_identity_credential_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -291,7 +293,4 @@ TEST_F(DigitalIdentityCredentialTest, IdentityDigitalCredentialUseCounter) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

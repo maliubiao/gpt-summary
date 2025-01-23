@@ -111,7 +111,7 @@ This structured approach allows for a comprehensive analysis of even a very simp
 
 这个简单的 Python 脚本的主要功能是**故意失败**，用于 Frida 的测试框架中验证错误处理机制。它的存在可以帮助开发人员确保 Frida 在遇到各种预期或非预期的错误时能够正确地处理，而文件名本身也提供了重要的上下文信息，帮助理解测试用例的目的和可能涉及的场景。用户通常不会直接运行这个脚本，它更多的是 Frida 内部测试流程的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing build/4 failed pickled/false.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,13 +119,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 sys.exit(1)
-
-"""
-
 ```

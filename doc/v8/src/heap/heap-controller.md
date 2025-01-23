@@ -111,11 +111,13 @@ runForAWhile();
 
 `v8/src/heap/heap-controller.cc` 是 V8 引擎中负责动态管理 JavaScript 堆内存的关键组件。它通过监控垃圾回收和 JavaScript 代码的执行情况，智能地调整堆大小和分配限制，以优化 JavaScript 应用程序的性能和内存使用。虽然 JavaScript 开发者不能直接控制它，但它的工作方式深深影响着 JavaScript 程序的运行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-controller.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -282,7 +284,4 @@ template class V8_EXPORT_PRIVATE MemoryController<GlobalMemoryTrait>;
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

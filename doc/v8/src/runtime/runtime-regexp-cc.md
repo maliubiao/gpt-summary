@@ -157,7 +157,7 @@ console.log(numbers); // 输出: [ '1', '2', '3' ]
 
 这部分 `v8/src/runtime/runtime-regexp.cc` 代码主要实现了 JavaScript 中 `String.prototype.replace` 方法的全局替换功能（包括解析替换模式）以及 `String.prototype.split` 方法的初步功能（使用字符串作为分隔符）。它包含了用于解析替换字符串、查找匹配项和构建新字符串的关键逻辑，并初步实现了字符串分割的运行时支持，并带有简单的缓存机制来优化性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-regexp.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/runtime/runtime-regexp.cc以.tq结尾，那它是个v8 torque源代码，
@@ -165,8 +165,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1071,7 +1073,4 @@ RUNTIME_FUNCTION(Runtime_StringSplit) {
       RegExpResultsCache::Enter(isolate, subject, pattern, elements,
                                 isolate->factory()->empty_fixed_array(),
                                 RegExpResultsCache:
-"""
-
-
 ```

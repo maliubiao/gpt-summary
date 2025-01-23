@@ -102,11 +102,13 @@ try {
 
 `v8/src/wasm/stacks.cc` 是 V8 引擎中管理 WebAssembly 实例调用栈的关键组件。它负责栈内存的分配、增长、收缩和重用，并与 JavaScript 环境通过 Wasm 实例的执行和可能的错误传播进行交互。虽然 JavaScript 代码不能直接操作这些栈对象，但 Wasm 栈的行为直接影响着 JavaScript 代码的执行，尤其是在资源限制和错误处理方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/stacks.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ size_t StackPool::Size() const {
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

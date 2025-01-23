@@ -387,7 +387,7 @@ sys.stdin.read()
 
 总结来说，`bionic/tests/headers/posix/sys_msg_h.c` 是一个测试文件，用于确保 Android Bionic 库中 `sys/msg.h` 头文件的定义正确，从而保证 NDK 开发者可以使用标准的 POSIX 消息队列 API 进行进程间通信。理解这个文件的作用有助于理解 Android 系统中本地代码与系统库的交互方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/sys_msg_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -398,8 +398,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -468,7 +470,4 @@ static void sys_msg_h() {
   FUNCTION(msgsnd, int (*f)(int, const void*, size_t, int));
 }
 #endif
-
-"""
-
 ```

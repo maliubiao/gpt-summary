@@ -106,14 +106,16 @@ Essentially, my process involved: understanding the code's purpose, dissecting i
 
 `mixed_content.cc` 文件在 Chromium Blink 引擎中扮演着至关重要的角色，它通过判断请求的上下文来决定如何处理混合内容，从而保护用户免受 HTTPS 页面加载 HTTP 资源可能带来的安全风险。理解这个文件的功能有助于开发者构建更安全可靠的 Web 应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/mixed_content.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 Google Inc. All rights reserved.
  *
@@ -217,7 +219,4 @@ MixedContent::ContextTypeFromRequestContext(
 }
 
 }  // namespace blink
-
-"""
-
 ```

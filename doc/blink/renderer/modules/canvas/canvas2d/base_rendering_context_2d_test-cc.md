@@ -127,7 +127,7 @@ The user is asking for a summary of the functionality of the provided C++ source
 
 当需要深入调试 Blink 引擎的 Canvas 2D 实现时，开发者可能会查看 `base_rendering_context_2d_test.cc` 这样的测试文件，来理解特定 API 的预期行为和内部实现逻辑。测试用例可以作为理解代码功能和调试问题的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/base_rendering_context_2d_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -906,8 +908,4 @@ TEST(BaseRenderingContextCompositingTests, ShadowMultiplyTransform) {
                                                           0, 0, 0, 1)),
                              PaintOpEq<SaveLayerOp>(composite_flags),
                              PaintOpEq<SetMatrixOp>(SkM44(1, 0, 0, 4,  //
-                                   
-"""
-
-
 ```

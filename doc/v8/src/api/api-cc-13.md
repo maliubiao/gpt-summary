@@ -260,7 +260,7 @@ By following these steps and making adjustments along the way, the aim is to pro
 
 考虑到这是 `v8/src/api/api.cc` 的倒数第二部分，可以推断出整个 `api.cc` 文件定义了 V8 引擎提供给外部嵌入器的核心 C++ API。 这第14部分主要关注于 `v8::Isolate` 实例的管理和与其相关的核心功能，涵盖了内存管理、JavaScript 执行控制、错误处理、WebAssembly 集成、微任务、字符串处理、异常处理、性能分析等方面。 结合上下文来看，`Isolate` 类是 V8 提供的最核心的抽象之一，它代表了一个独立的 JavaScript 虚拟机实例，这段代码展示了如何管理和配置这个实例的各种行为和资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/api/api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -268,9 +268,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第14部分，共15部分，请归纳一下它的功能
+```
 
-"""
- = reinterpret_cast<i::Isolate*>(this);
+### 源代码
+```cpp
+= reinterpret_cast<i::Isolate*>(this);
   const base::AddressRegion& code_region = i_isolate->heap()->code_region();
   *start = reinterpret_cast<void*>(code_region.begin());
   *length_in_bytes = code_region.size();
@@ -1108,8 +1110,5 @@ const char* CodeEvent::GetComment() {
 }
 
 uintptr_t CodeEvent::GetPreviousCodeStartAddress() {
-  return 
-"""
-
-
+  return
 ```

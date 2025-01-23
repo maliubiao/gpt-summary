@@ -67,12 +67,14 @@ interleave();
 
 总而言之，这个C++代码文件是V8引擎将JavaScript代码（尤其是涉及到SIMD操作、控制流以及函数调用的部分）翻译成MIPS64架构可执行机器码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/code-generator-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 gister(0),
                       src1 = i.InputSimd128Register(1);
       // src1 = [7, 6, 5, 4], src0 = [3, 2, 1, 0]
@@ -1425,8 +1427,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

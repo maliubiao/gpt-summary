@@ -90,7 +90,7 @@ Here's a breakdown of the thinking process to arrive at the answer:
 
 这部分代码的主要功能是 **实现 ARM 指令集的反汇编过程中的一部分，负责解码和格式化特定的 ARM 指令类型 (Type 0 到 Type 7 的部分指令)**。 它接收表示机器指令的二进制数据，解析其中的各个字段，并将其转换为人类可读的汇编代码字符串。 这是 V8 引擎的诊断工具链中不可或缺的一部分，用于理解和调试生成的机器代码。  它专注于将二进制指令映射到其对应的汇编助记符和操作数，为进一步的分析和理解提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/arm/disasm-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/arm/disasm-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -98,8 +98,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 'rn, 'shift_op");
         break;
       }
@@ -1112,7 +1114,4 @@ void Decoder::DecodeFloatingPointDataProcessing(Instruction* instr) {
           Format(instr, "vrinta.f64.f64 'Dd, 'Dm");
         } else {
           For
-"""
-
-
 ```

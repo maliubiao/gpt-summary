@@ -157,7 +157,7 @@ Here's a breakdown of the thought process to analyze the C code and answer the p
 
 总而言之，`meson-sample.c` 作为一个简单的 GObject 示例，其主要目的是服务于 Frida 的测试框架，特别是用于测试与 GObject Introspection 和链接顺序相关的场景。用户通常不会直接操作这个文件，而是通过 Frida 的使用或开发过程间接地接触到它，尤其是在遇到相关问题需要调试时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/28 gir link order 2/meson-sample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample.h"
 
 struct _MesonSample {
@@ -209,7 +211,4 @@ meson_sample_print_message (MesonSample *self)
 {
   g_return_if_fail (MESON_IS_SAMPLE (self));
 }
-
-"""
-
 ```

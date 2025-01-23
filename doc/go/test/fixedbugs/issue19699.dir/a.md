@@ -172,15 +172,17 @@ After calling F
 
 这段代码的主要目的是展示或测试 Go 语言中 `goto` 语句在特定场景下的行为，特别是当它位于一个永远不会被执行的代码块中时。它侧重于编译器和运行时的行为，而不是实际的业务逻辑。 虽然 `goto` 在某些特定情况下有用（例如跳出多层循环），但开发者应该谨慎使用，避免过度依赖它来组织代码逻辑，以保持代码的清晰性和可维护性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue19699.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -193,9 +195,4 @@ l1:
 		goto l1
 	}
 }
-
-"""
-
-
-
 ```

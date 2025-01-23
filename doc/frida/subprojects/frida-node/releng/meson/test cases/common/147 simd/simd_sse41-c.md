@@ -138,7 +138,7 @@ movapd  [rsp+offset], xmm0 ; Store result to temporary location
 
 总而言之，这个文件是 Frida 中一个用于测试 SSE4.1 指令集支持的简单用例，它可以帮助开发者理解 SIMD 技术，并在逆向分析、性能优化和调试过程中提供参考。 开发者可能会在调试与 SIMD 相关的 Frida 功能或分析目标程序时接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/147 simd/simd_sse41.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -188,7 +190,4 @@ void increment_sse41(float arr[4]) {
     arr[2] = (float)darr[3];
     arr[3] = (float)darr[2];
 }
-
-"""
-
 ```

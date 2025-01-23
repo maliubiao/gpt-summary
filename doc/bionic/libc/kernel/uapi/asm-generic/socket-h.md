@@ -383,7 +383,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，你可以观察到目标应用程序在执行网络操作时，具体调用了 `setsockopt` 函数来设置哪些 socket 选项，以及传递了什么值。这有助于理解 Android framework 或 NDK 如何使用这些底层的 socket 常量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-generic/socket.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -394,8 +394,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -512,7 +514,4 @@ Prompt:
 #define SCM_TIMESTAMPNS SO_TIMESTAMPNS
 #define SCM_TIMESTAMPING SO_TIMESTAMPING
 #endif
-
-"""
-
 ```

@@ -216,7 +216,7 @@ By following these steps, including a bit of trial-and-error and refinement, we 
 
 总而言之，`obj_generator.py` 是 Frida 构建过程中的一个关键辅助工具，它封装了调用不同平台编译器的细节，使得 Frida 的构建过程更加平台无关化。 当构建出错时，理解这个脚本的功能和它接收的参数，以及查看编译器的输出，是解决问题的有效途径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/135 custom target object output/obj_generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -224,8 +224,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # Mimic a binary that generates an object file (e.g. windres).
@@ -244,7 +246,4 @@ if __name__ == '__main__':
     else:
         cmd = [compiler, '-c', ifile, '-o', ofile]
     sys.exit(subprocess.call(cmd))
-
-"""
-
 ```

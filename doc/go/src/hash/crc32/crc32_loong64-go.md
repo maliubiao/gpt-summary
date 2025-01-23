@@ -167,7 +167,7 @@ panic: arch-specific crc32 instruction for Castagnoli not available
 
 `crc32_loong64.go` 是 Go 语言 `hash/crc32` 包为了在 LoongArch64 架构上获得更好的性能而提供的硬件加速实现。它封装了对 LoongArch64 硬件 CRC32 指令的调用，并提供了与通用 `hash/crc32` 包相同的接口，使得开发者可以在支持该特性的平台上获得性能提升，而无需修改现有的代码。使用者需要注意的是，硬件加速只有在支持该指令的 LoongArch64 处理器上才能生效，否则会回退到通用的软件实现，或者在初始化阶段就可能发生 panic。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/hash/crc32/crc32_loong64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -227,9 +229,4 @@ func archUpdateIEEE(crc uint32, p []byte) uint32 {
 
 	return ^ieeeUpdate(^crc, p)
 }
-
-"""
-
-
-
 ```

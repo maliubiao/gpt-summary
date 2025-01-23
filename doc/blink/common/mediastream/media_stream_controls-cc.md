@@ -165,14 +165,16 @@ navigator.mediaDevices.getUserMedia({ audio: true, video: false });
 
 总之，`media_stream_controls.cc` 中定义的类和常量是 Blink 引擎处理媒体流请求的基础，它将来自 JavaScript 的高级媒体流约束转换为内部表示，以便后续的媒体设备选择、权限检查和流的创建。 理解这个文件的作用有助于理解 WebRTC API 在浏览器引擎底层的实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/mediastream/media_stream_controls.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ StreamControls::StreamControls(bool request_audio, bool request_video)
 StreamControls::~StreamControls() {}
 
 }  // namespace blink
-
-"""
-
 ```

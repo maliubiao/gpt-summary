@@ -178,15 +178,17 @@ This systematic approach, starting with the high-level purpose and diving into t
 
 总而言之，`blink/renderer/core/xml/xpath_result.cc` 文件是 Blink 引擎中处理 XPath 查询结果的核心组件，它将 C++ 层的 XPath 求值结果桥接到 JavaScript 的 `XPathResult` 接口，使得 JavaScript 能够方便地访问和操作这些结果，从而实现动态的网页内容操作。 理解这个文件的功能有助于理解浏览器如何处理 XPath 查询以及如何调试相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/xpath_result.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005 Frerich Raabe <raabe@kde.org>
  * Copyright (C) 2006, 2009 Apple Inc. All rights reserved.
@@ -405,7 +407,4 @@ Node* XPathResult::snapshotItem(unsigned index,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -122,7 +122,7 @@ Initially, I might have focused too much on the Qt aspects. However, I corrected
 
 总而言之，`manualinclude.cpp` 是一个精心设计的测试用例，旨在验证 Frida 与 Qt 框架的交互能力，它涵盖了 Qt 的核心概念，并为 Frida 提供了测试信号和槽机制的场景。逆向工程师可以通过分析这个文件和相关的 Frida 测试脚本，深入理解 Frida 如何工作以及 Qt 的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/4 qt/manualinclude.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"manualinclude.h"
 #include <mocdep.h>
 #include<QCoreApplication>
@@ -159,7 +161,4 @@ int main(int argc, char **argv) {
 }
 
 #include"manualinclude.moc"
-
-"""
-
 ```

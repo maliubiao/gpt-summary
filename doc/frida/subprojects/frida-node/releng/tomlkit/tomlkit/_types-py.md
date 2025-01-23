@@ -172,7 +172,7 @@ A user interacting with Frida and potentially ending up involving this `_types.p
 
 If a user is debugging a Frida script that interacts with TOML data and encounters unexpected behavior or type errors, they might need to investigate how the TOML data is being represented. This could lead them to look into the `tomlkit` library and eventually to files like `_types.py` to understand the specific behavior and structure of the TOML data within the Frida environment. For example, if they try to use a standard dictionary method that's not available on `_CustomDict`, understanding that `_CustomDict` is used and what methods it provides would be crucial for debugging.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/tomlkit/tomlkit/_types.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
@@ -265,7 +267,4 @@ def wrap_method(
         return self._new(result)
 
     return wrapper
-
-"""
-
 ```

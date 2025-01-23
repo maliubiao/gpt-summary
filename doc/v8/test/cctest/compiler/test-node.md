@@ -187,15 +187,17 @@ console.log(result);
 
 `v8/test/cctest/compiler/test-node.cc` 是一个关键的单元测试文件，用于验证 V8 Turbofan 编译器中 `Node` 类的核心功能。它确保了计算图的正确构建和操作，这对于生成高效的 JavaScript 机器码至关重要。虽然直接面向编译器开发者，但理解其测试的概念有助于理解 JavaScript 引擎的内部工作原理，并避免编写可能导致性能瓶颈的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-node.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-node.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1095,7 +1097,4 @@ TEST(AppendAndTrim) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

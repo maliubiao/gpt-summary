@@ -143,14 +143,16 @@ Finally, I organize the gathered information into a clear and structured answer,
 
 `png_decoder_factory.cc` 是 Blink 引擎中一个关键的组件，它负责根据环境选择合适的 PNG 解码器实现，为浏览器正确渲染网页中的 PNG 图片奠定了基础。它与 HTML、CSS 和 JavaScript 操作图片的功能紧密相关，当网页加载 PNG 图片时，这个工厂类会在幕后默默工作。理解其功能有助于理解浏览器如何处理图片资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/png/png_decoder_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ std::unique_ptr<ImageDecoder> CreatePngImageDecoder(
 }
 
 }  // namespace blink
-
-"""
-
 ```

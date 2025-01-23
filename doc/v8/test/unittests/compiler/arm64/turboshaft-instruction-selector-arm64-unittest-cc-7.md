@@ -113,7 +113,7 @@ console.log(andResult);
 
 作为整个测试套件的第八部分，`v8/test/unittests/compiler/arm64/turboshaft-instruction-selector-arm64-unittest.cc` 的功能是 **专门针对 ARM64 架构，详细测试 Turboshaft 编译器的指令选择器在处理 SIMD 操作和常量操作数时的正确性**。它通过构造各种中间表示的场景，并断言生成的 ARM64 机器码指令是否符合预期，来确保编译器能够为 JavaScript SIMD 代码生成高效且正确的机器码。 这部分测试是保证 V8 引擎在 ARM64 平台上运行 WebAssembly 和使用 SIMD API 的 JavaScript 代码时性能和可靠性的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/arm64/turboshaft-instruction-selector-arm64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/arm64/turboshaft-instruction-selector-arm64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -121,9 +121,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
-   {false, 16, TSBinop::kI16x8Ne, kArm64INe, kArm64INe, 2},
+### 源代码
+```cpp
+{false, 16, TSBinop::kI16x8Ne, kArm64INe, kArm64INe, 2},
     {false, 16, TSBinop::kI16x8GeS, kArm64IGeS, kArm64IGeS, 2},
     {false, 16, TSBinop::kI16x8GtS, kArm64IGtS, kArm64IGtS, 2},
     {true, 32, TSBinop::kI32x4Eq, kArm64IEq, kArm64IEq, 1},
@@ -420,8 +422,4 @@ INSTANTIATE_TEST_SUITE_P(TurboshaftInstructionSelectorTest,
 #endif  // V8_ENABLE_WEBASSEMBLY
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
-
 ```

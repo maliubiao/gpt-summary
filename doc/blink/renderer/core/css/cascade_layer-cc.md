@@ -269,15 +269,17 @@ framework.base,framework.components
 
 总而言之，`cascade_layer.cc` 文件是 Blink 渲染引擎中实现 CSS 层叠层功能的核心组件，它负责管理层叠层的树状结构，支持层叠层的创建、查找、合并，并提供调试支持。它与 CSS 的 `@layer` 规则紧密相关，并在 HTML 和 JavaScript 操作 CSS 时发挥作用。理解 `CascadeLayer` 的工作原理对于深入理解 CSS 层叠和调试样式问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cascade_layer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -347,7 +349,4 @@ void CascadeLayer::Trace(blink::Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

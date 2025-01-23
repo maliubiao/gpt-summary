@@ -46,7 +46,7 @@ Therefore, the thought process leads to the following summary: 该文件是 Andr
 
 总而言之，`tanh_intel_data.handroid` 文件是 Android Bionic 库中一个关键的测试数据文件，它通过提供一系列预先计算好的输入输出对，用于验证和确保在 Intel 架构的 Android 设备上 `tanh` 函数的实现是准确可靠的。 这对于保证 Android 系统的稳定性和为开发者提供正确的数学运算能力至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/tanh_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -58,8 +58,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1491,7 +1493,4 @@ static data_1_1_t<double, double> g_tanh_intel_data[] = {
   },
   { // Entry 353
     0x1.ffffffffffffffffffffffffffffffffp-1
-"""
-
-
 ```

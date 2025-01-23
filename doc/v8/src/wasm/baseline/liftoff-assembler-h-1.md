@@ -138,7 +138,7 @@ console.log(add(5, 10)); // 输出 15
 
 总之，这部分 `liftoff-assembler.h` 定义了 Liftoff 编译器生成底层机器码的核心指令集，覆盖了 WebAssembly 中各种基本和高级的运算类型，为高效执行 WebAssembly 代码提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/liftoff-assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -146,9 +146,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- Register rhs);
+### 源代码
+```c
+Register rhs);
   inline void emit_i32_muli(Register dst, Register lhs, int32_t imm);
   inline void emit_i32_divs(Register dst, Register lhs, Register rhs,
                             Label* trap_div_by_zero,
@@ -678,7 +680,4 @@ Prompt:
   inline void emit_f32x4_add(LiftoffRegister dst, LiftoffRegister lhs,
                              LiftoffRegister rhs);
   inline void emit_f32x4_sub(LiftoffRegister dst, LiftoffRegi
-"""
-
-
 ```

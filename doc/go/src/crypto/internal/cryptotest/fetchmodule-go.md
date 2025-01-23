@@ -211,7 +211,7 @@ go mod download -json <module>@<version>
 
 总而言之，`FetchModule` 函数封装了下载 Go 模块的功能，方便在测试环境中获取指定版本的模块源代码，并处理了一些常见的环境问题，例如 `GOMODCACHE` 的不存在。使用者需要确保网络连接正常，并提供正确的模块名称和版本号。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/cryptotest/fetchmodule.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -219,8 +219,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -275,9 +277,4 @@ func FetchModule(t *testing.T, module, version string) string {
 
 	return j.Dir
 }
-
-"""
-
-
-
 ```

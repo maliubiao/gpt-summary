@@ -130,7 +130,7 @@ setInterval(createLeakedObject, 100); // 每 100 毫秒创建一个可能泄漏�
 
 `v8/include/v8-profiler.h`  是 V8 引擎提供的一组强大的 C++ 接口，用于对 JavaScript 代码的执行和内存使用情况进行深入分析。它涵盖了堆快照、堆对象跟踪、采样堆分析、代码事件监听等关键的性能分析领域，为开发者提供了诊断内存泄漏、性能瓶颈以及理解 V8 引擎内部行为的重要工具。虽然 JavaScript 代码不能直接使用这些接口，但它们是构建诸如 Chrome DevTools 和 Node.js profiler 等高级性能分析工具的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-profiler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-profiler.h以.tq结尾，那它是个v8 torque源代码，
@@ -138,8 +138,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 he new objects
    * will not be added into it unless a heap snapshot is taken or heap object
    * tracking is kicked off.
@@ -467,8 +469,4 @@ class V8_EXPORT CodeEventHandler {
 
 
 #endif  // V8_V8_PROFILER_H_
-
-"""
-
-
 ```

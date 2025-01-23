@@ -101,7 +101,7 @@ console.log(truncatedInt); // 输出可能不是期望的精确整数值
 
 作为指令选择过程的第三部分，这个代码片段专注于**处理各种数据类型转换操作 (尤其是浮点数和整数之间的转换) 以及一些基本的算术和逻辑运算**，并将其转换为 MIPS64 架构特定的机器指令。它还涉及到一些针对特定操作组合的优化。这部分的功能是确保 V8 能够有效地将 JavaScript 中涉及数值类型转换和基本运算的部分翻译成能在 MIPS64 架构上执行的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/instruction-selector-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/mips64/instruction-selector-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -109,8 +109,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 erflowToMin>()) {
       opcode |= MiscField::encode(true);
     }
@@ -1072,7 +1074,4 @@ static Instruction* VisitCompare(InstructionSelectorT<Adapter>* selector,
 
 // Shared routine for multiple float32 compare operations.
 tem
-"""
-
-
 ```

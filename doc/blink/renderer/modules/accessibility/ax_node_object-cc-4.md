@@ -173,7 +173,7 @@ By following this detailed analysis, I can generate a comprehensive and accurate
 
 该部分代码的核心功能是**为 Blink 渲染引擎中的 `AXNodeObject` 类提供获取各种可访问性相关属性的方法**。这些方法从 HTML 结构、ARIA 属性和 CSS 样式中提取信息，并将其转换为辅助功能 API 可以理解的格式。这使得辅助技术能够理解网页的内容和结构，并将其呈现给有视觉障碍或其他障碍的用户。 简而言之，这部分代码是浏览器将网页信息“翻译”成辅助技术可以理解的语言的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_node_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 m::blink::WritingDirection::kLtr;
     case PhysicalDirection::kLeft:
       return ax::mojom::blink::WritingDirection::kRtl;
@@ -1143,7 +1145,4 @@ bool AXNodeObject::HasContentEditableAttributeSet() const {
 // Returns the nearest block-level LayoutBlockFlow ancestor
 static LayoutBlockFlow* GetNearestBlockFlow(LayoutObject* object) {
   LayoutObject
-"""
-
-
 ```

@@ -174,7 +174,7 @@ By following these steps, I can systematically analyze the script and provide a 
 
 通过以上步骤，开发者可以逐步追踪问题，最终定位到 `hotdochelper.py` 脚本，并分析其执行过程中的潜在问题。这个脚本作为构建过程中的一个环节，它的任何错误都可能导致整个构建失败，因此理解它的功能对于调试 Frida-Swift 的构建过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/scripts/hotdochelper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import os
@@ -224,7 +226,4 @@ def run(argv: T.List[str]) -> int:
         shutil.rmtree(installdir, ignore_errors=True)
         shutil.copytree(source_dir, installdir)
     return 0
-
-"""
-
 ```

@@ -169,7 +169,7 @@ pub extern "C" fn hello_from_rust(a: i32, b: i32) -> i32 {
 
 通过以上步骤，用户最终可能会定位到 `clib.c` 文件中的代码，并使用 Frida 来分析和调试 C 和 Rust 代码之间的交互问题。 `clib.c` 文件在这种场景下成为了一个重要的调试线索，帮助用户理解跨语言调用的机制和潜在的错误来源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/rust/5 polyglot static/clib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdint.h>
 
@@ -193,7 +195,4 @@ void hello_from_both(void) {
     if (hello_from_rust(2, 3) == 5)
         printf("Hello from Rust!\n");
 }
-
-"""
-
 ```

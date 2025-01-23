@@ -133,14 +133,16 @@ By following these steps, you can systematically analyze the C++ test file and u
 
 总而言之，`weakness_marking_test.cc` 是一个关键的测试文件，它确保了 Blink 引擎的弱引用机制能够正确工作，这对于实现高效且健壮的 JavaScript 内存管理和 DOM 操作至关重要。理解这个文件的功能有助于理解 Blink 引擎如何避免内存泄漏，以及 JavaScript 中 `WeakMap` 和 `WeakSet` 的底层实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/test/weakness_marking_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -374,7 +376,4 @@ TEST_F(WeaknessMarkingTest, StrongifyAlreadyMarkedOnBackingDuringIteration) {
 }  // namespace weakness_marking_test
 
 }  // namespace blink
-
-"""
-
 ```

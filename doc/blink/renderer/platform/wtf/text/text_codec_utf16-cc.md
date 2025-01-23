@@ -129,14 +129,16 @@ This methodical approach, breaking down the code into smaller pieces, understand
 
 总而言之，`text_codec_utf16.cc` 文件是 Blink 引擎处理 UTF-16 编码文本的关键组成部分，它确保了浏览器能够正确地解析和显示使用这种编码的网页内容，并为 JavaScript 代码操作 UTF-16 字符串提供了基础。理解其功能对于调试网页字符编码问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_codec_utf16.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2006, 2008, 2010 Apple Inc. All rights reserved.
  *
@@ -346,7 +348,4 @@ std::string TextCodecUTF16::Encode(base::span<const LChar> characters,
 }
 
 }  // namespace WTF
-
-"""
-
 ```

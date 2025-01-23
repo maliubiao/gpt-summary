@@ -107,7 +107,7 @@ Frida 本身就是一个动态插桩工具，广泛用于逆向工程、安全�
 
 总而言之，`vs2013backend.py` 是 Frida Python 绑定构建过程中的一个关键组件，它负责处理 Windows 平台上使用 Visual Studio 2013 进行构建的特定细节，确保构建过程能够顺利进行。它与逆向方法的联系在于它是构建 Frida 工具链的一部分，而 Frida 广泛应用于逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/backend/vs2013backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -151,7 +153,4 @@ class Vs2013Backend(Vs2010Backend):
                     raise MesonException('There is currently no support for ICL before 19, patches welcome.')
             if self.platform_toolset is None:
                 self.platform_toolset = 'v120'
-
-"""
-
 ```

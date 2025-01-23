@@ -97,9 +97,12 @@ testCOW();
 
 总而言之，`concurrent-js-array-unittest.cc` 通过 C++ 代码深入测试了 V8 引擎在并发场景下处理 JavaScript 数组的机制，特别是验证了 Copy-on-Write 优化的正确性和线程安全性。这确保了 JavaScript 开发者在编写并发代码时，依赖 V8 引擎能够正确地处理数组操作。
 
-Prompt: ```这是目录为v8/test/unittests/objects/concurrent-js-array-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/objects/concurrent-js-array-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -240,6 +243,4 @@ TEST_F(ConcurrentJsArrayTest, ArrayWithCowElements) {
 }  // anonymous namespace
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

@@ -137,7 +137,7 @@ Interceptor.attach(Module.findExportByName("fake-gthread", "fake_gthread_fake_fu
 
 总而言之，`fake-gthread.c` 尽管代码量很小，但它在 Frida 的测试框架中扮演着重要的角色，通过模拟 `gthread` 的行为，使得 Frida 团队能够在隔离的环境中测试其功能，特别是与外部库交互的部分。 这也体现了软件开发中常用的 mocking 和 stubbing 的技术思想。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/22 gir link order/fake-gthread/fake-gthread.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,15 +145,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "fake-gthread.h"
 
 int fake_gthread_fake_function (void)
 {
   return 7;
 }
-
-"""
-
 ```

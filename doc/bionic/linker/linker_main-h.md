@@ -311,7 +311,7 @@ except KeyboardInterrupt:
 
 请注意，调试动态链接器需要 root 权限或在可调试的应用上进行。同时，直接 hook 系统库可能会影响系统的稳定性，请谨慎操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_main.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -322,8 +322,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -398,7 +400,4 @@ soinfo* solist_get_somain();
 soinfo* solist_get_vdso();
 
 void linker_memcpy(void* dst, const void* src, size_t n);
-
-"""
-
 ```

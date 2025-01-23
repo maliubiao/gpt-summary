@@ -118,7 +118,7 @@ Frida 的构建过程使用 Meson 构建系统。当用户执行 `meson build` �
 
 总之，`universal.py` 作为一个工具库，在 Frida 的构建过程的各个阶段都可能被用到。理解其功能有助于定位和解决构建过程中出现的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 
@@ -1108,7 +1110,4 @@ def search_version(text: str) -> str:
     # Limiting major version number to two digits seems to work
     # thus far. When we get to GCC 100, this will break, but
     # if we are still relevant whe
-"""
-
-
 ```

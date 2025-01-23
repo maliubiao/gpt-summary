@@ -234,7 +234,7 @@ sys.stdin.read()
 
 请注意，由于提供的代码只是头文件，我们无法完全确定 `OptionData` 类的所有功能和实现细节。以上分析是基于其名称、路径和上下文进行的推断。要获得更精确的理解，需要查看 `malloc_debug` 组件的其他源文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/OptionData.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -245,8 +245,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -290,7 +292,4 @@ class OptionData {
 
   BIONIC_DISALLOW_COPY_AND_ASSIGN(OptionData);
 };
-
-"""
-
 ```

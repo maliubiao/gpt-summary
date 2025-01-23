@@ -134,15 +134,17 @@ console.log("查看对象：", myObject);
 
 总而言之，`v8-console-agent-impl.cc` 是 V8 Inspector 中一个关键的组件，负责将 JavaScript 中的控制台操作转化为开发者工具中可见的消息，为 JavaScript 开发者提供了重要的调试能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-console-agent-impl.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-console-agent-impl.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ bool V8ConsoleAgentImpl::reportMessage(V8ConsoleMessage* message,
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

@@ -128,7 +128,7 @@ By following these steps, the goal is to create a comprehensive and user-friendl
 
 总而言之，这部分测试代码覆盖了 `QuicChromiumClientSession` 在连接生命周期管理和流请求处理的关键方面，特别是关注了错误处理、资源限制和连接复用等重要场景。这些测试对于确保 QUIC 客户端的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_chromium_client_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
 
   Initialize();
@@ -917,7 +919,4 @@ TEST_P(QuicChromiumClientSessionTest, ConnectionNotPooledWithDifferentPin) {
 
 TEST_P(QuicChromiumClientSessionTest, ConnectionPooledWithMatchingPin) {
   ScopedTransportSecurityStateSource scoped_secur
-"""
-
-
 ```

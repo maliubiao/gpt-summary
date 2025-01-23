@@ -117,15 +117,17 @@ This final part of `html_media_element.cc` focuses on **integrating with various
 
 `HTMLMediaElement.cc` 的第 6 部分主要负责将 `HTMLMediaElement` 连接到浏览器的其他核心组件和外部系统，例如底层的媒体播放器、远程播放设备和 Web Audio API。它处理高级的媒体控制、状态同步、错误报告以及与用户交互和浏览器策略相关的逻辑。这部分代码是 `HTMLMediaElement` 实现完整媒体功能不可或缺的一部分，确保了 Web 开发者可以通过 JavaScript 和 HTML 方便地控制和操作媒体元素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/html_media_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eateAudioTrack(
         "audio", media::MediaTrack::AudioKind::kMain, "Audio Track", "", true));
   }
@@ -649,8 +651,4 @@ STATIC_ASSERT_ENUM(WebMediaPlayer::kReadyStateHaveEnoughData,
                    HTMLMediaElement::kHaveEnoughData);
 
 }  // namespace blink
-
-"""
-
-
 ```

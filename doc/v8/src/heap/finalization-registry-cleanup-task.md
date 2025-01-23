@@ -103,11 +103,13 @@ if (global.gc) {
 
 `v8/src/heap/finalization-registry-cleanup-task.cc` 这个 C++ 文件是 V8 引擎中用于实现 JavaScript `FinalizationRegistry` 功能的关键组件。它负责在后台异步地执行与已回收对象关联的清理回调函数，从而允许 JavaScript 开发者在对象被垃圾回收后执行一些必要的清理操作，例如释放外部资源。这个任务确保了 finalization registry 的清理工作能够顺利进行，并处理可能出现的异常情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/finalization-registry-cleanup-task.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ void FinalizationRegistryCleanupTask::RunInternal() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

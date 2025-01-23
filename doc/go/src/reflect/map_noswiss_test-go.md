@@ -97,7 +97,7 @@ verifyMapBucket(t,
 
 总而言之，`go/src/reflect/map_noswiss_test.go` 是 Go 语言内部为了保证 map 在非 `swissmap` 优化下的正确性和稳定性而编写的测试代码，它深入到了 map 的内存布局和垃圾回收机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/map_noswiss_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -105,8 +105,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -167,9 +169,4 @@ func testGCBitsMap(t *testing.T) {
 		map[[64/goarch.PtrSize + 1]Xscalarptr][64/goarch.PtrSize + 1]Xptrscalar(nil),
 		join(hdr, rep(bucketCount, lit(1)), rep(bucketCount, lit(1)), lit(1)))
 }
-
-"""
-
-
-
 ```

@@ -205,15 +205,17 @@ const angle = transform.angle;
 
 总而言之，`blink/renderer/core/svg/svg_angle_tear_off.cc` 文件中的 `SVGAngleTearOff` 类是 Blink 渲染引擎中处理 SVG 角度属性的关键组件，它连接了 JavaScript 代码对 SVG 角度的动态操作和底层的 SVG 数据模型，并负责进行必要的验证和更新。理解它的功能有助于我们更好地理解 Blink 如何处理 SVG，以及如何调试与 SVG 角度相关的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_angle_tear_off.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -352,7 +354,4 @@ SVGAngleTearOff* SVGAngleTearOff::CreateDetached() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

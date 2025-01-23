@@ -138,7 +138,7 @@ Users typically don't directly interact with this Python script. Instead, it's u
 
 The `msubprojects.py` file provides a command-line tool for managing the lifecycle of external dependencies (subprojects) for the Frida project, particularly those related to Swift. It handles downloading, updating (supporting various version control systems), checking out specific versions, executing commands within subproject directories, purging artifacts, and managing patch files. This is crucial for building and maintaining Frida's functionalities, which are heavily used in reverse engineering.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/msubprojects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from dataclasses import dataclass, InitVar
@@ -899,7 +901,4 @@ def run(options: 'Arguments') -> int:
     for wrap in wraps:
         dirname = Path(source_dir, subproject_dir, wrap.directory).as_posix()
         runner = Runn
-"""
-
-
 ```

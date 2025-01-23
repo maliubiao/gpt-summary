@@ -162,7 +162,7 @@ point.z = 3; // 添加了一个新的属性
 
 `v8/src/compiler/compilation-dependencies.cc` 是 V8 编译器中至关重要的一个组成部分，它负责记录和管理编译代码的运行时依赖关系。通过跟踪这些依赖关系，V8 能够确保优化后的代码在运行时仍然正确，并在依赖失效时进行必要的 deoptimization，从而在性能和正确性之间取得平衡。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/compilation-dependencies.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/compilation-dependencies.cc以.tq结尾，那它是个v8 torque源代码，
@@ -170,8 +170,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1102,8 +1104,4 @@ class ScriptContextSlotPropertyDependency final : public CompilationDependency {
     Isolate* isolate = broker->isolate();
     deps->Register(
         handle(Context::GetOrCreateContextSidePropertyCell(
-  
-"""
-
-
 ```

@@ -210,14 +210,16 @@ const iterableWithError = [promiseC, promiseD];
 
 总而言之，这段 Torque 代码是 V8 引擎中实现 `Promise.all` 和 `Promise.allSettled` 核心逻辑的关键部分，它负责创建上下文、管理 Promise 状态以及处理异步操作的最终结果。 理解这段代码有助于更深入地理解 JavaScript Promise 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/promise-all.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -614,7 +616,4 @@ transitioning javascript builtin PromiseAllSettled(
 
 extern macro MakeFixedArrayCOW(FixedArray): void;
 }
-
-"""
-
 ```

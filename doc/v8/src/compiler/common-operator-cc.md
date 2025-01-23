@@ -163,7 +163,7 @@ By following this thought process, which involves code analysis, keyword identif
 
 `v8/src/compiler/common-operator.cc` 是 V8 编译器中至关重要的一个文件，它定义了编译器内部表示 JavaScript 代码的**通用操作符**集合。这些操作符是编译器进行代码转换、优化和最终生成机器码的基础 building block。该文件不仅定义了操作符的结构，还包括了操作符的参数定义、访问方法、比较和哈希机制，以及一个用于缓存常用操作符实例的机制，以提高编译效率。它与 JavaScript 功能紧密相关，因为编译器需要将 JavaScript 代码转换为这些内部操作符进行处理。理解这个文件是理解 V8 编译器工作原理的关键一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/common-operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/common-operator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -171,8 +171,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1129,8 +1131,4 @@ struct CommonOperatorGlobalCache final {
               Operator::kPure,              // flags
               "StateValues",                // name
               kInputCount, 0, 0, 1, 0, 0,   // counts
-   
-"""
-
-
 ```

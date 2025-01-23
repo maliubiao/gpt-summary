@@ -173,7 +173,7 @@ script.load() # 这里可能会抛出异常，因为找不到该函数
 
 这个 `trivial.c` 文件本身非常简单，但它的存在和所在的目录结构为我们提供了关于 Frida 如何处理依赖项缺失情况的重要线索。它是一个在受控环境中模拟错误场景的工具，帮助开发者确保 Frida 的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/161 not-found dependency/subprojects/trivial/trivial.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,12 +181,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int subfunc(void) {
     return 42;
 }
-
-"""
-
 ```

@@ -102,7 +102,7 @@ Here's a thinking process to arrive at the analysis of the empty `__init__.py` f
 
 总结来说，虽然 `frida/subprojects/frida-core/releng/meson/mesonbuild/dependencies/data/__init__.py` 文件内容为空，但它的存在是至关重要的，它定义了 `data` 目录作为一个 Python 包，使得该目录下的数据能够被 Frida 的其他组件访问和使用，从而支持了 Frida 的各种逆向功能。用户遇到的与该目录相关的导入错误，通常可以通过检查 `__init__.py` 文件的存在来排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/dependencies/data/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,9 +110,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

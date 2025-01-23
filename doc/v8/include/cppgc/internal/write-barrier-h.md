@@ -181,15 +181,17 @@ obj2.ref = obj3; // 第二次写入引用
 
 `v8/include/cppgc/internal/write-barrier.h` 是 cppgc 内部用于管理内存写入时所需屏障的关键头文件。它定义了写屏障的类型、确定何时需要写屏障以及如何执行这些屏障操作，确保垃圾回收器能够正确地追踪对象引用，维护内存管理的正确性。用户通常不需要直接操作这些底层机制，但理解其作用有助于理解 V8 引擎的内存管理方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/cppgc/internal/write-barrier.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/cppgc/internal/write-barrier.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -677,7 +679,4 @@ void WriteBarrier::GenerationalBarrier(const Params& params, const void* slot) {
 }  // namespace cppgc
 
 #endif  // INCLUDE_CPPGC_INTERNAL_WRITE_BARRIER_H_
-
-"""
-
 ```

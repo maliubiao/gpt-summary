@@ -200,7 +200,7 @@ Edges in the graph:
 
 总而言之，`go/src/cmd/vendor/github.com/google/pprof/internal/graph/graph.go` 文件是 `pprof` 工具中至关重要的组成部分，它负责将原始的性能剖析数据转换为易于分析和理解的图结构，为性能分析提供了基础的数据表示。 理解其功能和使用方式对于有效地使用 `pprof` 工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/graph/graph.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -208,8 +208,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -1387,9 +1389,4 @@ func abs64(i int64) int64 {
 	}
 	return i
 }
-
-"""
-
-
-
 ```

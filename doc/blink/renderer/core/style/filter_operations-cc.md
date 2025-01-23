@@ -154,14 +154,16 @@ This systematic approach allows for a thorough understanding of the code and its
 
 `filter_operations.cc` 是 Blink 渲染引擎中处理 CSS 滤镜的核心组件。它负责存储、比较、判断插值能力以及映射滤镜效果对元素几何形状的影响。它与 CSS 属性直接相关，并通过 JavaScript 和 HTML 与网页内容交互。理解这个文件的功能有助于我们更好地理解浏览器如何实现和优化 CSS 滤镜效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/filter_operations.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Apple Inc. All rights reserved.
  *
@@ -285,7 +287,4 @@ void FilterOperations::RemoveClient(SVGResourceClient& client) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

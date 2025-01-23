@@ -124,7 +124,7 @@ By following these steps, we can thoroughly analyze the Python script and provid
 
 `lld-test.py` 是 Frida 项目的一个测试用例，用于验证 `ldd` 命令在特定环境下能否正确找到预期的共享库。它与逆向工程密切相关，因为它测试了逆向分析人员常用的工具 `ldd` 的基本功能。脚本涉及到二进制底层、Linux/Android 的共享库加载机制等知识，并通过简单的逻辑推理来验证测试结果。虽然用户通常不会直接运行这个脚本，但它是 Frida 项目自动化测试流程中的重要组成部分，为保证软件质量提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/d/3 shared library/lld-test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -154,7 +156,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

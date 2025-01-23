@@ -101,7 +101,7 @@ Here's a breakdown of the thinking process used to analyze the Python script and
 
 总而言之，虽然 `gen_custom.py` 本身的功能非常简单，但它在 Frida 的构建和测试流程中扮演着重要的角色，通过动态生成配置文件来支持更复杂的测试场景，特别是涉及到条件编译和预编译头文件等与二进制代码生成相关的方面。这对于确保 Frida 能够正确地 hook 和分析各种不同的 Swift 代码配置至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/13 pch/generated/gen_custom.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,14 +109,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
 with open(sys.argv[1], 'w') as f:
     f.write("#define FOO 0")
-
-"""
-
 ```

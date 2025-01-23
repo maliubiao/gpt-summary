@@ -348,7 +348,7 @@ session.detach()
 
 请注意，Frida 需要 root 权限或在可调试的应用上运行。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/wchar.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -359,8 +359,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*	$OpenBSD: citrus_utf8.c,v 1.6 2012/12/05 23:19:59 deraadt Exp $ */
 
 /*-
@@ -575,7 +577,4 @@ size_t wcsrtombs(char* dst, const wchar_t** src, size_t len, mbstate_t* ps) {
   return wcsnrtombs(dst, src, SIZE_MAX, len, ps);
 }
 __strong_alias(wcsrtombs_l, wcsrtombs);
-
-"""
-
 ```

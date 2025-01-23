@@ -119,7 +119,7 @@ let o = m >> n; // BigInt 的右移运算
 
 这段代码片段是 `v8/src/ic/binary-op-assembler.cc` 文件的一部分，专门负责实现 JavaScript 中位运算符的底层逻辑。它根据操作数的类型（Smi, Number, BigInt）采取不同的处理策略，包括直接进行位运算、调用内置的 BigInt 运算函数，以及处理类型错误。此外，它还负责更新反馈信息，这些信息用于 V8 的优化机制，以便在后续执行相似代码时能够更快地生成更高效的机器码。总而言之，这段代码是 V8 引擎实现高性能 JavaScript 位运算的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/binary-op-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ic/binary-op-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -127,8 +127,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t64, &var_right_bigint,
                      slot ? &var_right_feedback : nullptr);
 
@@ -371,8 +373,4 @@ BinaryOpAssembler::Generate_BitwiseBinaryOpWithSmiOperandAndOptionalFeedback(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

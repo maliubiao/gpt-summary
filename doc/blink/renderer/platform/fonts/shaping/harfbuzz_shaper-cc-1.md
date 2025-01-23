@@ -91,15 +91,17 @@ The user wants a summary of the functionality of the provided C++ code snippet, 
 
 这段代码是 Chromium Blink 引擎中负责文本整形的关键部分，它利用 HarfBuzz 库将字符转换为可渲染的字形，并考虑了复杂的字体特性、字体回退、大小写处理和排版规则。它的正确运行对于在网页上准确且美观地显示文本至关重要，并且直接受到 HTML 结构和 CSS 样式的控制，也可能受到 JavaScript 动态修改的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/harfbuzz_shaper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 sScopedOverlay::OverlayCapsFeatures(
     FontDescription::FontVariantCaps variant_caps) {
   static constexpr hb_feature_t smcp = CreateFeature('s', 'm', 'c', 'p', 1);
@@ -489,8 +491,4 @@ void HarfBuzzShaper::GetGlyphData(const SimpleFontData& font_data,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

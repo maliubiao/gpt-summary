@@ -168,14 +168,16 @@ By following these steps, breaking down the code, and connecting it to the broad
 
 总而言之，`pending_user_input.cc` 是 Blink 渲染引擎中一个重要的组成部分，它负责管理用户输入事件的调度，直接影响着网页的交互性能和用户体验。理解其功能有助于开发者更好地理解浏览器的工作原理，并编写出更高效、响应更快的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/pending_user_input.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ bool PendingUserInput::IsContinuousEventType(WebInputEvent::Type type) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

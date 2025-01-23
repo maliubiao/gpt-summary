@@ -173,15 +173,17 @@ let result = maybeReturnNumberOrString(Math.random() > 0.5);
 
 `v8/src/objects/union.h` 是 V8 内部用于表示类型联合的重要组成部分。理解其功能有助于理解 V8 如何处理 JavaScript 的动态类型。虽然用户不会直接操作这个头文件中的代码，但了解其背后的概念可以帮助避免一些与类型相关的编程错误，尤其是在编写 V8 扩展或进行 V8 内部开发时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/union.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/union.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -285,7 +287,4 @@ static_assert(std::is_same_v<Union<Smi, HeapObject>, UnionOf<HeapObject, Smi>>);
 }  // namespace v8::internal
 
 #endif  // V8_OBJECTS_UNION_H_
-
-"""
-
 ```

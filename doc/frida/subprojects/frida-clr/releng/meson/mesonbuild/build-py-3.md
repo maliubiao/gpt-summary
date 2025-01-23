@@ -143,7 +143,7 @@ This part of `build.py` in the Frida project defines several classes that repres
 
 这部分 `build.py` 文件的主要功能是定义了用于描述软件构建过程中各种目标的 Python 类。这些类封装了不同类型构建目标（如可执行文件、静态库、共享库、自定义目标等）的特定属性和行为，包括命名约定、版本管理、依赖关系处理以及安装路径配置。这些定义是 Meson 构建系统理解和执行构建指令的关键组成部分，并直接关联到软件构建的底层细节，例如二进制文件的命名和链接方式。对于 Frida 这样的工具，正确定义和管理这些构建目标是成功构建和部署其各个组件的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 get(self):
         return self.is_linkwithable
 
@@ -918,7 +920,4 @@ class CompileTarget(BuildTarget):
 class RunTarget(Target, CommandBase):
 
     typename
-"""
-
-
 ```

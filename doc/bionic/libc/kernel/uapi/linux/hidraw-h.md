@@ -395,7 +395,7 @@ if __name__ == '__main__':
 
 请注意，直接使用 `hidraw` 通常需要较高的权限，并且绕过了 Android 的输入管理框架，因此在正常的 Android 应用程序开发中并不常见。更常见的是使用 Android 提供的 `InputDevice` 和相关的 API 来处理用户输入。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/hidraw.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -406,8 +406,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -444,7 +446,4 @@ struct hidraw_devinfo {
 #define HIDRAW_MAX_DEVICES 64
 #define HIDRAW_BUFFER_SIZE 64
 #endif
-
-"""
-
 ```

@@ -128,15 +128,17 @@ Linked Function: 20
 
 总的来说，`go/test/linkname.go` 这个测试文件的目的是验证 Go 编译器是否正确地处理了 `//go:linkname` 指令，确保使用该指令链接的符号信息能够正确地被导出，从而在链接阶段能够被正确地解析。这个测试主要面向 Go 编译器开发者，用于确保编译器的正确性。 普通 Go 开发者应该避免过度使用 `//go:linkname`，因为它会带来很多潜在的风险和维护问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/linkname.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheckandrundir -0 -m -l=4
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -152,9 +154,4 @@ Without CL 33911, this test would fail with the following error:
 main.main: relocation target linkname2.byteIndex not defined
 main.main: undefined: "linkname2.byteIndex"
 */
-
-"""
-
-
-
 ```

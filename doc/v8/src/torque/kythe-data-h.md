@@ -222,15 +222,17 @@ fun AnotherFunction(): void {
 
 `v8/src/torque/kythe-data.h` 是 V8 中用于支持 Torque 代码 Kythe 集成的关键头文件。它定义了记录 Torque 代码结构、定义、使用和调用关系的数据结构和接口。虽然它不直接处理 JavaScript 或用户编程错误，但它收集的信息可以被 Kythe 系统用于代码分析、理解和潜在问题检测，从而间接地帮助开发者提高代码质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/kythe-data.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/kythe-data.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -339,7 +341,4 @@ class KytheData : public base::ContextualClass<KytheData> {
 }  // namespace v8
 
 #endif  // V8_TORQUE_KYTHE_DATA_H_
-
-"""
-
 ```

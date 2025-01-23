@@ -113,15 +113,17 @@ Based on this analysis, the primary function of this code seems to be **processi
 
 总而言之，`blink/renderer/core/animation/effect_input.cc` 的第一部分专注于 **将 JavaScript 中定义的关键帧动画数据转换成 Blink 引擎可以理解和处理的内部数据结构**。 它负责解析关键帧的各种属性，处理不同的输入格式，并进行基本的验证。 这为后续的动画计算、合成和渲染奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/effect_input.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -887,8 +889,4 @@ StringKeyframeVector ConvertObjectForm(Element* element,
   // TODO(crbug.com/777971): Fix parsing of property values to adhere to spec.
 
   // 9. Parse each of the values in unused easings using the CSS syntax defined
-  
-"""
-
-
 ```

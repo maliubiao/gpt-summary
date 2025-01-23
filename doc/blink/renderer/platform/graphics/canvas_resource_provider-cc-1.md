@@ -60,15 +60,17 @@ My plan is to:
 这些 Provider 的创建通过一系列工厂方法进行，这些方法会根据系统环境（例如，是否启用 GPU 合成，GPU 的能力）选择合适的 Provider 类型。`CanvasImageProvider` 作为辅助类，负责提供绘制所需的图像数据，并进行缓存优化。
 
 这段代码是 Blink 引擎中 Canvas 渲染管线的重要组成部分，它抽象了不同渲染方式下的资源管理，为上层的 Canvas API 提供了统一的接口。
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/canvas_resource_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 der_wrapper,
       base::WeakPtr<CanvasResourceDispatcher> resource_dispatcher,
       bool is_origin_top_left,
@@ -897,8 +899,5 @@ cc::PaintImage CanvasResourceProvider::MakeImageSnapshot(FlushReason reason) {
   if (!sk_image)
     return cc::PaintImage();
 
-  auto 
-"""
-
-
+  auto
 ```

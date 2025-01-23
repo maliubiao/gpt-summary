@@ -225,7 +225,7 @@ chunkedWriter.Close()
 
 总而言之，这段测试代码展示了 Go 语言中如何实现和测试 HTTP 分块传输编码的功能，这对于构建 HTTP 客户端和服务器至关重要，特别是处理大文件或动态生成的内容时。使用者应该理解 `NewChunkedWriter` 和 `NewChunkedReader` 的作用，并注意正确处理其生命周期和返回值。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/internal/chunked_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -233,8 +233,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -536,9 +538,4 @@ func (r *funcReader) Read(p []byte) (n int, err error) {
 	}
 	return n, r.err
 }
-
-"""
-
-
-
 ```

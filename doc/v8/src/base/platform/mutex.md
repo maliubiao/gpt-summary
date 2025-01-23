@@ -118,11 +118,13 @@ void IncrementCounter() {
 
 `mutex.cc` 文件对于 V8 引擎的稳定性和正确性至关重要。它提供了底层的同步原语，使得 V8 的多线程组件能够安全地共享数据，从而支持 JavaScript 的高效执行，包括垃圾回收、代码优化以及 Web Workers 和原生模块等并发特性。 虽然 JavaScript 开发者通常不会直接接触到这些互斥锁，但它们在幕后默默地保障着 JavaScript 代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/mutex.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -615,7 +617,4 @@ bool SharedMutex::TryLockExclusive() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

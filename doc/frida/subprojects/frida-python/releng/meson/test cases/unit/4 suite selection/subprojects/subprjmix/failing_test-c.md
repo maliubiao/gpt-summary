@@ -80,7 +80,7 @@ The user wouldn't directly interact with this file in normal Frida usage. Howeve
 
 **In summary, `failing_test.c` is a simple but important component of Frida's testing infrastructure. It serves as a controlled negative case to verify that Frida's test runner can correctly identify and report failing test executions, which is crucial for the reliability of the tool in its primary function of dynamic instrumentation for reverse engineering.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/4 suite selection/subprojects/subprjmix/failing_test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -88,10 +88,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return -1 ; }
-
-"""
-
 ```

@@ -294,7 +294,7 @@ setImmediate(main);
 
 你可以用类似的方法 Hook `dirname` 函数。通过观察 Frida 的输出，你可以了解 Android Framework 或 NDK 应用在哪些地方调用了这些函数，以及传递了哪些参数。 这有助于理解路径处理的流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/libgen.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -305,8 +305,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -384,7 +386,4 @@ int basename_r(const char* _Nullable __path, char* _Nullable __buf, size_t __n);
 #endif
 
 __END_DECLS
-
-"""
-
 ```

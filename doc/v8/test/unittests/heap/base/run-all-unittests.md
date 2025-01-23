@@ -82,11 +82,13 @@ myObject = null; // 使 myObject 可以被垃圾回收
 
 `run-all-unittests.cc` 是一个 C++ 文件，它作为 V8 引擎的一部分，用于自动化测试其内部 `heap/base` 组件的功能。 这个组件负责管理 JavaScript 对象在内存中的分配和回收。 虽然这个文件本身不是 JavaScript 代码，但它对于确保 V8 引擎的正确运行以及所有基于 V8 的 JavaScript 代码的稳定性和性能至关重要。  它确保了像 JavaScript 对象创建和垃圾回收这样的基本操作能够正确地执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/base/run-all-unittests.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -104,7 +106,4 @@ int main(int argc, char** argv) {
   testing::InitGoogleMock(&argc, argv);
   return RUN_ALL_TESTS();
 }
-
-"""
-
 ```

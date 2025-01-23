@@ -275,7 +275,7 @@ Interceptor.attach(Module.getExportByName(null, "ioctl"), {
 
 `bionic/libc/kernel/uapi/asm-x86/asm/mtrr.h` 定义了用户空间程序与 Linux 内核交互，管理 x86 架构上内存类型范围寄存器的接口。虽然普通 Android 应用程序不直接使用这些接口，但 Android 系统的底层组件和驱动程序可能会利用它们来优化性能和管理硬件设备的缓存行为。通过 hook `ioctl` 系统调用，可以使用 Frida 来调试和理解这些底层操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/mtrr.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -286,8 +286,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -355,7 +357,4 @@ typedef __u8 mtrr_type;
 #define MTRR_NUM_TYPES 7
 #define MTRR_TYPE_INVALID 0xff
 #endif
-
-"""
-
 ```

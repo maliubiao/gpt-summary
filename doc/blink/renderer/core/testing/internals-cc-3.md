@@ -39,7 +39,7 @@ Therefore, the main function of this part is to provide access to information ab
 
 这部分 `Internals` 接口的核心功能是为测试提供了一种方式，来获取当前渲染上下文中暴露给 Web 的 CSS 长属性和短属性的名称列表。这对于验证 CSS 属性处理的正确性非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/internals.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -47,8 +47,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Vector<String> Internals::allIconURLs(Document* document) const {
   int icon_types_mask =
       1 << static_cast<int>(mojom::blink::FaviconIconType::kFavicon) |
@@ -998,8 +1000,4 @@ Vector<String> Internals::getCSSPropertyShorthands() const {
     const CSSProperty& property_class = CSSProperty::Get(property);
     if (property_class.IsWebExposed(document_->GetExecutionContext()) &&
         property_class.IsShorthand()) {
-  
-"""
-
-
 ```

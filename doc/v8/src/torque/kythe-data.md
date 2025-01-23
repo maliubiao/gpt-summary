@@ -106,11 +106,13 @@ counter = counter + 1;
 
 `v8/src/torque/kythe-data.cc` 是 V8 编译管道中一个关键的组件，它负责收集 Torque 代码的元数据并将其导出到 Kythe 代码理解系统中。这使得开发者能够更好地理解 V8 内部的实现，包括那些用 Torque 编写的内置 JavaScript 功能。虽然它不直接处理 JavaScript 代码，但它处理的是生成这些 JavaScript 功能的 Torque 代码的元数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/kythe-data.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -296,7 +298,4 @@ void KytheData::AddTypeUse(SourcePosition use_position,
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -244,7 +244,7 @@ if (Process.platform === 'linux') {
 
 你可以根据需要修改脚本来 Hook 其他 Landlock 相关的系统调用，例如 `__NR_landlock_add_rule` 和 `__NR_landlock_restrict_self`，以便更全面地了解 Landlock 的使用情况。 这可以帮助你调试应用程序中与 Landlock 相关的行为，例如查看创建了哪些规则，以及何时应用了规则集。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/landlock.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -255,8 +255,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -305,7 +307,4 @@ struct landlock_net_port_attr {
 #define LANDLOCK_SCOPE_ABSTRACT_UNIX_SOCKET (1ULL << 0)
 #define LANDLOCK_SCOPE_SIGNAL (1ULL << 1)
 #endif
-
-"""
-
 ```

@@ -173,7 +173,7 @@ console.log(captures);
 
 总而言之，`v8/src/regexp/arm/regexp-macro-assembler-arm.cc` 的这部分代码负责处理正则表达式匹配成功后的关键步骤，包括存储捕获信息、处理全局匹配、错误处理和控制流管理，是 V8 引擎正则表达式功能在 ARM 架构上的核心实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/arm/regexp-macro-assembler-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/arm/regexp-macro-assembler-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -181,9 +181,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-     if (mode_ == UC16) {
+### 源代码
+```cpp
+if (mode_ == UC16) {
           __ add(r2, r1, Operand(r2, ASR, 1));
           __ add(r3, r1, Operand(r3, ASR, 1));
         } else {
@@ -701,8 +703,4 @@ void RegExpMacroAssemblerARM::LoadCurrentCharacterUnchecked(int cp_offset,
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_ARM
-
-"""
-
-
 ```

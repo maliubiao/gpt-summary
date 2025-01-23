@@ -100,11 +100,13 @@ Uncaught Error: Something went wrong!
 
 `source-position-table.cc` 定义了 V8 引擎内部用于管理源代码位置信息的关键数据结构和算法。它通过高效的编码和解码机制，实现了字节码指令位置到原始 JavaScript 代码位置的映射，这对于错误报告、调试和性能分析等 JavaScript 功能至关重要。 简而言之，它是 V8 引擎理解和定位 JavaScript 代码的 "地图"。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/source-position-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -395,7 +397,4 @@ void SourcePositionTableIterator::Advance() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

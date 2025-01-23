@@ -34,9 +34,12 @@ Based on these observations, I can formulate a concise summary of the file's fun
 
 总而言之，这个单元测试文件的目的是确保 `AlignedSlotAllocator` 类能够正确地分配和管理内存槽位，并能处理对齐和非对齐的分配请求，以及维护正确的分配器大小信息。这对于V8引擎的内存管理和代码生成过程中的资源分配至关重要。
 
-Prompt: ```这是目录为v8/test/unittests/codegen/aligned-slot-allocator-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/codegen/aligned-slot-allocator-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,6 +215,4 @@ TEST_F(AlignedSlotAllocatorUnitTest, Align) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

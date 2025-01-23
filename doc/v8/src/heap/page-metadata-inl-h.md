@@ -146,15 +146,17 @@ const obj = {};
 
 总而言之，`v8/src/heap/page-metadata-inl.h` 定义了用于管理 V8 堆内存页元数据的关键结构和方法，它在 V8 的内存管理和垃圾回收机制中扮演着核心角色。 虽然 JavaScript 开发者不直接接触这些代码，但理解其背后的原理有助于更好地理解 V8 引擎的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/page-metadata-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/page-metadata-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ void PageMetadata::ClearEvacuationCandidate() {
 }  // namespace v8
 
 #endif  // V8_HEAP_PAGE_METADATA_INL_H_
-
-"""
-
 ```

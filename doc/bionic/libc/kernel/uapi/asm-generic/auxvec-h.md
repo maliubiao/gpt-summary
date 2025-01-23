@@ -268,7 +268,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/asm-generic/auxvec.h` 虽然本身只是一个包含宏定义的头文件，但它定义了辅助向量的“词汇表”，对于理解 Android 进程启动、动态链接以及获取系统和硬件信息至关重要。动态链接器和用户空间程序都依赖于这些常量来解析内核传递的关键信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-generic/auxvec.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -279,8 +279,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -290,7 +292,4 @@ Prompt:
 #ifndef __ASM_GENERIC_AUXVEC_H
 #define __ASM_GENERIC_AUXVEC_H
 #endif
-
-"""
-
 ```

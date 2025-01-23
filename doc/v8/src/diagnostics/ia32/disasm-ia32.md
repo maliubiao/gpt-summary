@@ -77,12 +77,14 @@ add(1, 2);
 
 总结来说，`v8/src/diagnostics/ia32/disasm-ia32.cc` 是 V8 引擎中一个重要的组成部分，它负责将 IA-32 机器码转换成易于理解的汇编代码，这对于调试、性能分析和 V8 的内部开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/ia32/disasm-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2101,8 +2103,4 @@ int DisassemblerIA32::InstructionDecode(v8::base::Vector<char> out_buffer,
           int8_t imm8 = static_cast<int8_t>(data[1]);
           data += 2;
           AppendToBuffer("%s,%s,%d", NameOfCPURegister(rm),
-   
-"""
-
-
 ```

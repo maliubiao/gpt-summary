@@ -98,7 +98,7 @@ Self-Correction/Refinement during the process:
 
 这是一个功能强大的组件，使得 V8 能够在更广泛的硬件平台上运行，并为开发者提供了在非目标架构上调试代码的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/loong64/simulator-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/loong64/simulator-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -106,8 +106,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1019,7 +1021,4 @@ void Simulator::set_dw_register(int reg, const int* dbl) {
 
 void Simulator::set_fpu_register(int fpureg, int64_t value) {
   DCHECK((fpureg >= 0) && (fpureg < kNumFPURegi
-"""
-
-
 ```

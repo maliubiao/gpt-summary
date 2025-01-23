@@ -243,7 +243,7 @@ sys.stdin.read()
 
 总结来说，`bionic_config.handroid` 是 Bionic 库中一个重要的配置文件，它根据目标架构决定是否启用一些过时的内存分配函数，主要目的是为了保持与旧的 32 位二进制文件的兼容性。了解这个文件有助于理解 Android 系统底层的构建和兼容性策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_config.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -254,8 +254,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -282,7 +284,4 @@ Prompt:
 #endif
 
 #endif // _BIONIC_CONFIG_H_
-
-"""
-
 ```

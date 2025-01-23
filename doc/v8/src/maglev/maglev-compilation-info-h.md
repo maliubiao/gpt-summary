@@ -145,15 +145,17 @@ Since `MaglevCompilationInfo` manages the lifecycle of important resources like 
 
 In summary, `v8/src/maglev/maglev-compilation-info.h` defines a crucial data structure that orchestrates the Maglev compilation process, holding all the necessary information and managing the different stages involved in optimizing JavaScript code. Its correct implementation and usage are vital for the performance and stability of the V8 engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-compilation-info.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-compilation-info.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -364,7 +366,4 @@ class MaglevCompilationInfo final {
 }  // namespace v8
 
 #endif  // V8_MAGLEV_MAGLEV_COMPILATION_INFO_H_
-
-"""
-
 ```

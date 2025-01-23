@@ -102,11 +102,13 @@ loadWasmModule('my-wasm-module.wasm')
 
 **总结来说，`streaming-decoder.cc` 是 V8 引擎实现 WebAssembly 流式编译的核心组件，它使得 JavaScript 能够更高效地加载和执行大型 Wasm 模块，提升了 Web 应用的性能和用户体验。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/streaming-decoder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -885,7 +887,4 @@ std::unique_ptr<StreamingDecoder> StreamingDecoder::CreateAsyncStreamingDecoder(
 }  // namespace v8::internal::wasm
 
 #undef TRACE_STREAMING
-
-"""
-
 ```

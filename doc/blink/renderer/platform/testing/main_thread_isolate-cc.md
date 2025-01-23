@@ -150,14 +150,16 @@ function testDomManipulation() {
 
 总而言之，`main_thread_isolate.cc` 提供了一个重要的测试基础设施，通过创建和清理隔离的 V8 Isolate，确保 Blink 渲染引擎的测试可以可靠地进行，并避免测试之间的相互干扰，这对于开发一个复杂且庞大的项目如 Chromium 是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/main_thread_isolate.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ MainThreadIsolate::~MainThreadIsolate() {
 }
 
 }  // namespace blink::test
-
-"""
-
 ```

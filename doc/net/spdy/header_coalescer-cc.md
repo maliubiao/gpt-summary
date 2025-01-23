@@ -193,15 +193,17 @@ fetch('https://example.com/data', {
 
 总而言之，`net/spdy/header_coalescer.cc` 文件中的 `HeaderCoalescer` 类是 Chromium 网络栈中处理 HTTP/2 头部的一个关键组件，负责接收、合并和验证接收到的头部信息，确保其符合协议规范，并为上层应用提供可靠的头部数据。它与 JavaScript 的交互体现在处理由 JavaScript 发起或接收的网络请求的头部信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/header_coalescer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -328,7 +330,4 @@ bool HeaderCoalescer::AddHeader(std::string_view key, std::string_view value) {
 }
 
 }  // namespace net
-
-"""
-
 ```

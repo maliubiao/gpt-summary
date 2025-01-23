@@ -175,14 +175,16 @@ Here's a breakdown of the thinking process to analyze the C++ code snippet:
 
 总而言之，`distant_light_source.cc` 文件定义了 Blink 渲染引擎中表示远距离光源的核心逻辑，它通过 CSS `filter` 属性和 SVG 滤镜等技术，间接地影响着网页的视觉效果，并由浏览器内部机制进行管理和使用。普通 Web 开发者无需直接操作这个 C++ 类，但需要理解其背后的原理，以便更好地使用相关的 Web 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/distant_light_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005 Rob Buis <buis@kde.org>
@@ -242,7 +244,4 @@ StringBuilder& DistantLightSource::ExternalRepresentation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

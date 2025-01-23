@@ -168,14 +168,16 @@ const float64ArrayFromArrayLike = new Float64Array(arrayLike);
 
 这段 Torque 代码详细地实现了 TypedArray 的各种创建场景，并包含了必要的错误处理逻辑，确保了 JavaScript 中 TypedArray 的行为符合规范。理解这段代码有助于深入理解 V8 引擎如何处理底层的内存分配和类型转换，以及如何防止用户在 JavaScript 中创建和操作 TypedArray 时出现错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-createtypedarray.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -706,7 +708,4 @@ transitioning macro TypedArrayCreateSameType(
   return typedArray;
 }
 }
-
-"""
-
 ```

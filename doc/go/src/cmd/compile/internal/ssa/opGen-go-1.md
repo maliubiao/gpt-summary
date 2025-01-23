@@ -160,7 +160,7 @@ During the compilation process, when the Go compiler encounters the `ADDL` SSA o
 
 This part of `opGen.go` systematically enumerates and defines the properties of low-level x86 instructions as they are utilized within the Go compiler's SSA intermediate representation. It acts as a crucial bridge between the architecture-independent SSA form and the target-specific x86 assembly language. This detailed specification enables the compiler to perform tasks like register allocation, instruction selection, and optimization in a machine-aware manner.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/opGen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,8 +168,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 791}, // AX CX DX BX SP BP SI DI SB
 			},
 		},
@@ -3422,9 +3424,4 @@ Prompt:
 				{0, 4295016447}, // AX CX DX BX SP BP SI DI R8 R9 R10 R11 R12 R13 R15 SB
 			},
 			outputs: []output
-"""
-
-
-
-
 ```

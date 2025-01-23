@@ -161,14 +161,16 @@ By following these steps, you can effectively analyze and understand the functio
 
 **总结来说，`skia_utils.cc` 是一个关键的桥梁文件，它封装了 Skia 的底层 API，并提供了 Blink 更易于使用的接口。它直接参与了网页内容的渲染过程，包括图像绘制、变换、混合模式、色彩管理以及焦点反馈等，与 JavaScript、HTML 和 CSS 的功能都有着紧密的联系。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/skia/skia_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2006,2007,2008, Google Inc. All rights reserved.
  *
@@ -602,7 +604,4 @@ sk_sp<SkData> TryAllocateSkData(size_t size) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

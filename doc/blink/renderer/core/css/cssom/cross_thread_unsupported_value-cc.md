@@ -178,15 +178,17 @@ By following this thought process, breaking down the request, analyzing the code
 
 总结来说，`cross_thread_unsupported_value.cc` 中的 `CrossThreadUnsupportedValue` 类是 Blink 渲染引擎处理不支持的 CSS 样式值的一个重要机制，它允许引擎在多线程环境下安全地传递和延迟处理这些值，最终通过 `CSSUnsupportedStyleValue` 向外暴露其不支持的状态。理解它的作用有助于开发者更好地理解浏览器如何处理无效或未知的 CSS，并帮助进行更有效的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/cross_thread_unsupported_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ CrossThreadUnsupportedValue::IsolatedCopy() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

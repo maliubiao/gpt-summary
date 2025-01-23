@@ -167,15 +167,17 @@ func unreachable() {
 
 这段Go代码片段是一个用于测试返回地址跳转功能的测试用例。它通过空函数和全局布尔变量来验证在执行特定空函数后，预期的“标记”函数是否被调用。 这通常涉及到编译器或链接器的特殊处理，用于测试其在特定场景下对函数返回地址的处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/retjmp.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -214,9 +216,4 @@ func f4() { f4called = true }
 func unreachable() {
 	panic("unreachable function called")
 }
-
-"""
-
-
-
 ```

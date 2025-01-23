@@ -140,15 +140,17 @@ This specific code snippet does **not** take any command-line arguments. It's a 
 
 This `stackobj3.go` test is a good example of how Go's internal testing suite verifies the correctness of complex features like garbage collection and liveness analysis. It highlights the subtle ways in which object lifetimes can be affected by control flow and function calls.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/stackobj3.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -242,9 +244,4 @@ func main() {
 	fTrue()
 	fFalse()
 }
-
-"""
-
-
-
 ```

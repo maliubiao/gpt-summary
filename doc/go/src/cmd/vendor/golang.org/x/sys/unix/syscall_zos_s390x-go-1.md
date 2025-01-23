@@ -217,7 +217,7 @@ func main() {
 
 这段 Go 代码是 Go 语言 `syscall` 包在 z/OS (s390x) 平台上的底层实现。它提供了访问 z/OS 系统调用的接口，包括文件 I/O、网络编程、进程控制、目录操作等核心功能。此外，它还包含了一些 z/OS 特有的功能，如 `errno2` 处理和字符编码转换，以及为了在 z/OS 上更好地支持这些系统调用所做的特定实现和兼容性处理。 这部分代码是操作系统接口的关键组成部分，使得 Go 程序能够在 z/OS 环境下运行并利用底层的操作系统功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_zos_s390x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -225,9 +225,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
+### 源代码
+```go
 var (
 	Stdin  = 0
 	Stdout = 1
@@ -1157,10 +1158,4 @@ func sendfile(outfd int, infd int, offset *int64, count int) (written int, err e
 	}
 	return n2, nil
 }
-
-"""
-
-
-
-
 ```

@@ -204,7 +204,7 @@ Function: MyOtherFunc, Package Synopsis Method:
 
 总而言之，这段代码的核心功能是帮助 Go 工具链提取和展示 Go 代码的文档注释概要，并提供了一些机制来过滤掉不应被视为文档注释的内容。理解其工作原理和限制可以帮助开发者更有效地编写和使用 Go 文档。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/doc/synopsis.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -212,8 +212,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -292,9 +294,4 @@ func (p *Package) Synopsis(text string) string {
 	d.Content = d.Content[:1] // might be blank lines, code blocks, etc in “first sentence”
 	return strings.TrimSpace(string(pr.Text(d)))
 }
-
-"""
-
-
-
 ```

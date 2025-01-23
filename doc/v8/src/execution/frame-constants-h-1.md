@@ -77,7 +77,7 @@ bar();
 
 `v8/src/execution/frame-constants.h` 是 V8 引擎中至关重要的头文件，它定义了执行帧的布局和关键信息的偏移量。这些常量是 V8 管理函数调用栈、访问参数和局部变量、执行字节码以及进行性能优化的基础。虽然 JavaScript 开发者通常不需要直接操作这些常量，但理解其背后的概念有助于深入理解 JavaScript 的执行机制和一些常见的运行时错误。它不是 Torque 代码，因为它以 `.h` 结尾，是标准的 C++ 头文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/frame-constants.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/frame-constants.h以.tq结尾，那它是个v8 torque源代码，
@@ -85,8 +85,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 turnValueIndex * kSystemPointerSize;
   static constexpr int kReceiverOffset =
       kArgsArrayOffset +
@@ -229,8 +231,4 @@ inline static int FrameSlotToFPOffset(int slot) {
 #endif
 
 #endif  // V8_EXECUTION_FRAME_CONSTANTS_H_
-
-"""
-
-
 ```

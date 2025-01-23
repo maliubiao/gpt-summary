@@ -107,7 +107,7 @@ UpdateAllLifecyclePhasesForTest();
 
 总而言之，这段代码是 Chromium Blink 引擎中用于测试 CSS `:has()` 伪类选择器行为的单元测试。它通过构建各种复杂的 HTML 结构和 CSS 规则，并模拟 JavaScript 的 DOM 操作，来验证引擎是否能够正确地识别和标记因 `:has()` 选择器而受到影响的元素，确保浏览器的样式计算逻辑的正确性。 它是保证浏览器正确渲染使用了 `:has()` 伪类的网页的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/affected_by_pseudo_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 edBySubjectHas, false},
                {kAffectedByNonSubjectHas, false},
                {kAncestorsOrAncestorSiblingsAffectedByHas, false},
@@ -826,8 +828,4 @@ TEST_F(AffectedByPseudoTest, AffectedByHasAfterInsertion2) {
           </div>
         </div>
         <div id=div212></div>
-      
-"""
-
-
 ```

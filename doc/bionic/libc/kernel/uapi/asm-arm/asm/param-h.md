@@ -256,7 +256,7 @@ except Exception as e:
 
 `bionic/libc/kernel/uapi/asm-arm/asm/param.handroid` 本身是一个简单的包含文件，但它在 Android 系统中扮演着重要的角色，通过引入 `asm-generic/param.h` 中定义的内核参数，为 libc 库和更上层的 Android Framework 提供了基础支持。理解这类底层文件的作用有助于我们更深入地理解 Android 系统的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm/asm/param.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -267,8 +267,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -276,7 +278,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/param.h>
-
-"""
-
 ```

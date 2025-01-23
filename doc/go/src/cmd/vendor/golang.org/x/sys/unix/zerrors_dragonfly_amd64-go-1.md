@@ -32,7 +32,7 @@ Based on the file path `go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_dragonfl
 
 **为 Go 语言的 `syscall` 包在 DragonFly BSD 操作系统上的 AMD64 架构提供平台特定的错误码和信号量定义，使得 Go 程序可以在该平台上正确地处理系统调用相关的错误和信号。** 换句话说，它 bridge 了 Go 语言通用的系统调用抽象和特定操作系统的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_dragonfly_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -40,9 +40,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
+### 源代码
+```go
 const (
 	SIGABRT     = syscall.Signal(0x6)
 	SIGALRM     = syscall.Signal(0xe)
@@ -224,10 +225,4 @@ var signalList = [...]struct {
 	{33, "SIGCKPT", "checkPoint"},
 	{34, "SIGCKPTEXIT", "checkPointExit"},
 }
-
-"""
-
-
-
-
 ```

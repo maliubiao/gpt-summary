@@ -202,7 +202,7 @@ By following these steps, I can construct a detailed and informative answer that
 
 作为编译器优化的中间阶段，`SimplifiedLowering` 的主要功能是：**基于类型信息和操作符语义，将抽象的、高级的中间表示 (Simplified IR) 中的操作转换为更具体、更接近底层硬件的机器操作。**  这个过程为后续的机器代码生成阶段奠定了基础，通过选择合适的机器指令和数据表示，提高了代码的执行效率。 这段代码片段展示了 `SimplifiedLowering` 如何处理各种 JavaScript 运算符，包括逻辑运算、比较运算和算术运算，并根据操作数的类型进行不同的降低策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/simplified-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -210,8 +210,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 isitInputs<T>(node);
           SetOutput<T>(node, MachineRepresentation::kTaggedPointer);
         }
@@ -924,7 +926,4 @@ isitInputs<T>(node);
             // observed), we can do a simple floating point comparison here.
             if (lhs_type.Is(Type::OrderedNumber()) &&
                 rhs_type.Is(truncation.Ide
-"""
-
-
 ```

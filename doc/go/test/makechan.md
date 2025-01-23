@@ -114,15 +114,17 @@ func main() {
 
 `go/test/makechan.go` 文件是一个测试用例，用于验证 Go 编译器在处理 `make(chan Type, size)` 时，能够正确地检测和报告无效的缓冲区大小 `size`。  它通过编写包含预期错误的代码来确保编译器的健壮性。 用户在实际编写 Go 代码时应该避免使用负数、非整数或过大的数值作为 channel 的缓冲区大小。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/makechan.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2017 The Go Authors. All rights reserved.
@@ -151,9 +153,4 @@ func main() {
 	sink = make(T, complex64(1+0i))  // ERROR "non-integer buffer argument in make.*|must be integer"
 	sink = make(T, complex128(1+0i)) // ERROR "non-integer buffer argument in make.*|must be integer"
 }
-
-"""
-
-
-
 ```

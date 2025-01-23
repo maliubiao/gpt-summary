@@ -128,7 +128,7 @@ By following this detailed thought process, we can fully understand the purpose 
 
 总而言之，`cttest_fixed.cpp` 是一个很小的单元测试，它专注于验证 clang-tidy 工具在处理布尔值到整数的显式转换时的行为。它体现了 Frida 项目对代码质量和使用静态分析工具的重视。 虽然代码本身很简单，但它与逆向工程、底层知识以及代码质量控制都有一定的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/68 clang-tidy/cttest_fixed.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<cstdio>
 
 int main(int, char**) {
@@ -145,7 +147,4 @@ int main(int, char**) {
   printf("Intbool is %d\n", (int)intbool);
   return 0;
 }
-
-"""
-
 ```

@@ -175,15 +175,17 @@ Initially, I might have just described `AutoAppearance()` as "sets the visual ap
 
 总而言之，`checkbox_input_type.cc` 文件是浏览器引擎中处理复选框核心逻辑的关键部分，它连接了 HTML 结构、CSS 样式和 JavaScript 交互，确保了复选框在网页上的正确行为和功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/checkbox_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  * Copyright (C) 2011 Apple Inc. All rights reserved.
@@ -296,7 +298,4 @@ bool CheckboxInputType::ShouldAppearIndeterminate() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

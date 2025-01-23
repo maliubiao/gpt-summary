@@ -192,7 +192,7 @@ inline MemOperand GetMemOp(LiftoffAssembler* assm, Register addr,
 
 `v8/src/wasm/baseline/mips64/liftoff-assembler-mips64-inl.h` 是 V8 引擎中用于 MIPS64 架构的 Liftoff WebAssembly 编译器的关键组成部分。它定义了栈帧结构，并提供了一系列内联函数，用于简化和优化生成 MIPS64 汇编代码的过程。这些函数涵盖了栈操作、内存访问（加载、存储，包括原子操作和大小端处理）、常量加载、实例数据访问以及与编译优化相关的辅助功能。其主要目的是提供高效且类型安全的接口，以便 Liftoff 编译器能够快速生成执行 WebAssembly 代码所需的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/mips64/liftoff-assembler-mips64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/mips64/liftoff-assembler-mips64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -200,8 +200,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1104,8 +1106,5 @@ ATOMIC_BINOP_CASE(Xor, Xor, Xor)
     sync();                                                                  \
     bind(&exchange);                                                         \
     load_linked(temp2, MemOperand(temp0, 0));                                \
-    ExtractBits(result.gp(), temp2, temp1, size, false);           
-"""
-
-
+    ExtractBits(result.gp(), temp2, temp1, size, false);
 ```

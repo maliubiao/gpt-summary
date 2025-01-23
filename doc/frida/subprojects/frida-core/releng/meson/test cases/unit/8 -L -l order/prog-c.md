@@ -108,7 +108,7 @@ By following these steps, we can analyze even a seemingly trivial piece of code 
 
 总而言之，虽然 `prog.c` 代码本身很简单，但它在 Frida 项目中的位置和上下文赋予了它重要的意义，它是 Frida 确保自身能够正确处理库链接行为的一个关键单元测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/8 -L -l order/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,14 +116,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
   return 0;
 }
-
-"""
-
 ```

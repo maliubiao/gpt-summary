@@ -115,15 +115,17 @@ This systematic approach, combining code analysis with knowledge of rendering en
 
 总而言之，`fragment_data_iterator.cc` 中的 `AccompaniedFragmentIterator` 是 Chromium Blink 渲染引擎中一个核心的组件，它负责以一种结构化的方式访问和处理布局对象的分片数据，这是将网页内容渲染到屏幕上的关键步骤。理解它的工作原理对于调试渲染问题和深入了解 Blink 的渲染流程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/fragment_data_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -209,7 +211,4 @@ bool AccompaniedFragmentIterator::Advance() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

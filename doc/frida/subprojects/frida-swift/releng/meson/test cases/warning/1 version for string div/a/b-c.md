@@ -103,7 +103,7 @@ Finally, the information needs to be organized logically, starting with the most
 
 虽然 `b.c` 文件本身非常简单，没有实际的功能，但它在 Frida 的测试框架中扮演着重要的角色。它很可能被用作一个基础目标，来测试 Frida 在处理特定情况（特别是与字符串处理相关的潜在错误或警告）时的行为。它的存在是 Frida 质量保证流程的一部分，确保 Frida 在各种场景下都能稳定可靠地工作。 路径中的 "string div" 是一个关键的线索，表明测试的重点可能在于如何处理非法的字符串操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/warning/1 version for string div/a/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,12 +111,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void)
 {
 }
-
-"""
-
 ```

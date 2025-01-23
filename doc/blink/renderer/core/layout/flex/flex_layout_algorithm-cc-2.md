@@ -97,15 +97,17 @@ Let's break down the provided code snippet:
 
 总而言之，这段代码是 Chromium Blink 引擎中负责处理复杂 flex 布局场景的关键部分，特别是在需要考虑内容分片和各种断点规则的情况下。它确保了在不同分片中 flex 项目的正确排列和尺寸计算，并与 CSS 的 flexbox 和分片特性紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/flex/flex_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ator(Style());
   bool broke_before_row =
       *break_before_row != FlexBreakTokenData::kNotBreakBeforeRow;
@@ -823,7 +825,4 @@ MinMaxSizesResult FlexLayoutAlgorithm::ComputeMinMaxSizes(
         sizes.min_size = std::max(sizes.min_size, child_result.sizes.min_size);
       } else {
         sizes.min_size += child_result.
-"""
-
-
 ```

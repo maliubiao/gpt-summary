@@ -450,7 +450,7 @@ if (Process.platform === 'android') {
 
 `bionic/libc/include/malloc.h` 定义了 Android 系统中进行堆内存管理的关键函数。理解这些函数的功能和使用方式对于 Android 开发至关重要，特别是在进行 Native 开发时。使用 Frida 等工具可以帮助开发者深入了解 Android Framework 和 NDK 如何与底层的内存管理机制交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/malloc.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -461,8 +461,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 The Android Open Source Project
  *
@@ -892,7 +894,4 @@ extern void* _Nonnull (*volatile _Nonnull __memalign_hook)(size_t __alignment, s
 
 
 __END_DECLS
-
-"""
-
 ```

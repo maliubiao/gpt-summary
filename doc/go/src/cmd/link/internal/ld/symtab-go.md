@@ -171,15 +171,17 @@ putelfsyment(ctxt.Out, offset, 0x1000, 8, elf.ST_INFO(elf.STB_GLOBAL, elf.STT_OB
 
 总而言之，`symtab.go` 是 Go 链接器中负责生成符号表的关键部分，它理解 Go 语言的各种符号类型和属性，并将其转换为目标平台所需的符号表格式，为链接过程和后续的调试、分析等奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/symtab.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/6l/span.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/span.c
 //
@@ -1086,9 +1088,4 @@ func mangleABIName(ctxt *Link, ldr *loader.Loader, x loader.Sym, name string) st
 
 	return name
 }
-
-"""
-
-
-
 ```

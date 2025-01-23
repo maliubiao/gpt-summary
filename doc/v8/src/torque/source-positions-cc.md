@@ -184,15 +184,17 @@ arr[10] = 5; // 访问越界，可能会触发 V8 内部的错误处理机制，
 
 总而言之，`v8/src/torque/source-positions.cc` 是 V8 内部管理 Torque 源代码文件信息的重要组成部分，它为 Torque 工具链提供了必要的基础设施，间接地支持了 V8 引擎中 JavaScript 功能的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/source-positions.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/source-positions.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ bool SourceFileMap::FileRelativeToV8RootExists(const std::string& path) {
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

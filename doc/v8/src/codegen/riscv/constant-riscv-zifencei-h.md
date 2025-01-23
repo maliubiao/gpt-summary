@@ -115,15 +115,17 @@ console.log(result); // 期望输出 2，但如果指令缓存不同步，可能
 
 `v8/src/codegen/riscv/constant-riscv-zifencei.h` 是 V8 引擎中一个定义 RISC-V 架构 `fence.i` 指令操作码的 C++ 头文件。它不属于 Torque 代码，但对于 V8 将 JavaScript 代码编译成 RISC-V 机器码至关重要，确保了指令缓存的一致性，从而保证 JavaScript 代码执行的正确性。虽然普通 JavaScript 开发者不会直接操作这个文件，但了解其作用有助于理解底层原理以及并发编程中的一些概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/constant-riscv-zifencei.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/constant-riscv-zifencei.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -137,7 +139,4 @@ constexpr Opcode RO_FENCE_I = MISC_MEM | (0b001 << kFunct3Shift);
 }
 }  // namespace v8
 #endif  // V8_CODEGEN_RISCV_CONSTANT_RISCV_ZIFENCEI_H_
-
-"""
-
 ```

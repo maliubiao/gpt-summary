@@ -127,7 +127,7 @@ Now, let's address each of the user's specific requests.
 **总结：**
 
 `websocket_end_to_end_test.cc` 是一个关键的测试文件，用于全面验证 Chromium 网络栈中 WebSocket 功能的正确性和鲁棒性。它通过模拟各种客户端和服务端行为，以及不同的网络环境（如代理、HSTS），来确保 WebSocket 功能在各种场景下都能正常工作，为开发者提供调试和排错的依据。
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_end_to_end_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -985,7 +987,4 @@ TEST_F(WebSocketEndToEndTest, DnsSchemeUpgradeSupported) {
 TEST_F(WebSocketEndToEndTest, HostResolverEndpointResult) {
   base::test::ScopedFeatureList features;
   features.In
-"""
-
-
 ```

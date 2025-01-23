@@ -182,7 +182,7 @@ Let's imagine a developer is trying to build a Wayland application using Meson a
 
 In summary, the `wayland.py` module in Frida's releng directory (likely used for building Frida itself or related tools in a Wayland environment) provides essential functionality for integrating Wayland protocol handling into the Meson build process. It's directly relevant to reverse engineering Wayland applications by providing access to the protocol definitions and is used during the build configuration phase, often triggered by a developer running `meson setup`. Understanding this module helps in debugging build issues related to Wayland integration.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/modules/wayland.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2022 Mark Bolhuis <mark@bolhuis.dev>
 
@@ -343,7 +345,4 @@ class WaylandModule(ExtensionModule):
 
 def initialize(interpreter: Interpreter) -> WaylandModule:
     return WaylandModule(interpreter)
-
-"""
-
 ```

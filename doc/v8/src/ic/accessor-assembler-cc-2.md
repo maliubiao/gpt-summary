@@ -165,7 +165,7 @@ arr[0] = 3.3; // EmitElementLoad 会被调用
 
 总而言之，这部分代码是 V8 引擎中实现高性能属性写入的关键组成部分，它通过生成高度优化的机器码来加速 JavaScript 代码的执行。它通过细致的类型检查和对不同属性类型的处理，保证了 JavaScript 语义的正确性，并尽可能地利用快速路径来提升性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/accessor-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ic/accessor-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -173,9 +173,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
- = FieldType::Any().ptr();
+### 源代码
+```cpp
+= FieldType::Any().ptr();
     // FieldType::Any can hold any value.
     GotoIf(
         TaggedEqual(field_type, BitcastWordToTagged(IntPtrConstant(kAnyType))),
@@ -1027,7 +1029,4 @@ void AccessorAssembler::EmitElementLoad(
       Comment("holey double elements");
       TNode<Float64T> value =
           LoadFixedDoubleArrayElement(CAST(elements), intptr_index, if_hol
-"""
-
-
 ```

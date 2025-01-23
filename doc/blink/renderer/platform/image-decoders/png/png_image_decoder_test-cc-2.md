@@ -88,15 +88,17 @@ This implies the user has provided previous parts, which likely contained the be
 
 总而言之，`png_image_decoder_test.cc` 的第三部分深入测试了 `PNGImageDecoder` 在处理复杂场景和错误情况下的表现，特别是针对增量解码、APNG 动画、元数据提取以及各种非法 PNG 格式的处理能力进行了细致的验证，确保 Blink 引擎能够健壮且正确地解码 PNG 图片，为用户提供良好的网页浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/png/png_image_decoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ImageFrame::kFrameComplete, frame->GetStatus());
     EXPECT_FALSE(decoder->FrameIsReceivedAtIndex(0));
 
@@ -331,8 +333,4 @@ INSTANTIATE_TEST_SUITE_P(RustDisabled,
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

@@ -159,7 +159,7 @@ console.log(y); // 输出 1，小数部分被截断
 
 作为第 6 部分，这段代码集中体现了 ARM 架构后端代码生成器的核心职责：将高级的、平台无关的中间表示转化为可以在 ARM 处理器上执行的低级汇编指令，特别是针对数据移动和交换操作。它考虑了不同的数据类型、存储位置以及可能的优化策略（例如使用暂存寄存器）。这段代码是 V8 引擎将 JavaScript 代码高效执行的关键组成部分。它与之前的编译和中间表示生成阶段紧密配合，并为后续的指令调度和最终的机器码生成奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/code-generator-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm/code-generator-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,8 +167,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 as_value());
   if (scratch_reg_code != -1) {
     if (IsFloatingPoint(rep)) {
@@ -362,8 +364,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

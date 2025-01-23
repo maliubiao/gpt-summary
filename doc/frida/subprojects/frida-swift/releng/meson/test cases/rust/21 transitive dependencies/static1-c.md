@@ -177,7 +177,7 @@ The final step is to organize the information logically, using clear language an
 
 总而言之，尽管 `static1.c` 中的代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理静态链接依赖时的功能。开发者可能会在调试与 Frida 如何与这类底层二进制结构交互相关的问题时，深入到这个简单的测试用例中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/rust/21 transitive dependencies/static1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,14 +185,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int static1(void);
 
 int static1(void){
     return 1;
 }
-
-"""
-
 ```

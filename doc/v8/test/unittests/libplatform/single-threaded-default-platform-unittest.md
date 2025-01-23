@@ -90,11 +90,13 @@ f();
 
 `single-threaded-default-platform-unittest.cc` 的作用是确保 V8 JavaScript 引擎在单线程默认平台下能够可靠地执行 JavaScript 代码，并正确地进行内存管理。它是一个基础性的单元测试，验证了 V8 核心功能的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/libplatform/single-threaded-default-platform-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -166,7 +168,4 @@ TEST_F(SingleThreadedDefaultPlatformTest, SingleThreadedDefaultPlatform) {
 }
 
 }  // namespace v8
-
-"""
-
 ```

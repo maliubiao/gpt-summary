@@ -32,7 +32,7 @@ Here's a breakdown of the thought process to answer the user's request for a sum
 
 在后续的部分中，很可能会有代码使用这个数组，遍历其中的每个条目，将第一个值作为 `sincos` 函数的输入，然后将函数的实际输出与数组中存储的第二和第三个值进行比较，以判断 `sincos` 函数的实现是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sincos_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -44,8 +44,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1238,8 +1240,4 @@ static data_2_1_t<double, double, double> g_sincos_intel_data[] = {
     0x1.e1960261829858391645bbe12019e58ap-1,
     0x1.62b9586ad0a20p-2,
   },
- 
-"""
-
-
 ```

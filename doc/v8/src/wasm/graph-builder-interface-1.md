@@ -106,12 +106,14 @@ console.log(content); // 输出可能需要将 WebAssembly 的字符串表示转
 
 这部分 `graph-builder-interface.cc` 文件定义了用于在 TurboFan 编译器中构建 WebAssembly 引用类型和字符串类型操作图的接口。它通过提供一系列方法，使得 WebAssembly 解码器能够有效地将 WebAssembly 指令转换为 TurboFan 图节点。这些操作直接对应于 WebAssembly 规范中的特性，并且在 JavaScript 中执行 WebAssembly 代码时会被间接地使用。JavaScript 代码通过 WebAssembly 的 API 与这些底层操作进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/graph-builder-interface.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 mmediate& field, bool is_signed, Value* result) {
     SetAndTypeNode(result, builder_->StructGet(struct_object.node,
                                                field.struct_imm.struct_type,
@@ -1371,8 +1373,4 @@ void BuildTFGraph(AccountingAllocator* allocator, WasmEnabledFeatures enabled,
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
-
 ```

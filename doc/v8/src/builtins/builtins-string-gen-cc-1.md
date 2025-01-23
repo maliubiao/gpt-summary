@@ -128,7 +128,7 @@ Here's a plan to break down the analysis:
 
 该文件包含了使用 V8 的 TurboFan 编译器框架生成的 C++ 代码，用于实现各种 JavaScript 内置的字符串操作，例如比较、从字符码创建字符串、`replace`、`matchAll` 和 `split`。它旨在提供高效的字符串操作实现，并处理了各种边界情况和优化策略，例如对单字节字符串的快速路径处理。该文件还包括辅助函数，用于处理 Symbol 方法的调用和字符串替换的特殊逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-string-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-string-gen.cc以.tq结尾，那它是个v8 torque源代码，
@@ -136,8 +136,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
       Goto(&chunk_loop);
     }
@@ -994,7 +996,4 @@ TF_BUILTIN(StringPrototypeSplit, StringBuiltinsAssembler) {
 TF_BUILTIN(StringSubstring, StringBuiltinsAssembler) {
   auto string = Parameter<String>(Descriptor::kString);
   auto from = UncheckedParameter<IntPtrT>(Desc
-"""
-
-
 ```

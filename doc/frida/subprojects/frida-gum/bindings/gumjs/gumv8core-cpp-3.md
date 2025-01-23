@@ -108,7 +108,7 @@ The user wants a summary of the functionalities present in the provided C++ code
 
 这部分代码主要负责在 Frida 的 JavaScript 环境中提供与本地代码交互的能力。它允许用户创建可以调用本地函数的 JavaScript 对象 (`NativeCallback`)，并提供了访问和修改本地代码执行上下文信息 (`CallbackContext` 和 `CpuContext`) 的能力。这些功能是 Frida 动态插桩的核心，为逆向工程师提供了强大的工具来分析和操纵目标进程的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8core.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,9 +117,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
- Local<String>::New (isolate,
+### 源代码
+```cpp
+Local<String>::New (isolate,
           *core->traps_key)).ToLocal (&v))
         return FALSE;
       if (!v->IsUndefined ())
@@ -1344,8 +1346,4 @@ error_expected_number:
 error_unsupported_type:
   {
     _gum_v8_throw_ascii_literal (isolate, "unsupported type");
-    
-"""
-
-
 ```

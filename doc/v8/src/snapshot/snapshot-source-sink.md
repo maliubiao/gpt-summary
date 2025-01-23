@@ -117,11 +117,13 @@ console.timeEnd("加载快照后启动");
 
 `snapshot-source-sink.cc` 文件定义了用于 V8 快照机制的字节流写入和读取工具。它不直接暴露给 JavaScript，但它是 V8 优化 JavaScript 启动和执行速度的关键基础设施。通过序列化和反序列化引擎的状态，快照机制使得 JavaScript 应用可以更快地启动，提供更好的用户体验。  `PutUint30` 这样的优化措施进一步提升了快照的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/snapshot-source-sink.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ int SnapshotByteSource::GetBlob(const uint8_t** data) {
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

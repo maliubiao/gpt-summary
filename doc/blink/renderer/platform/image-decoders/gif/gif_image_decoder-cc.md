@@ -139,14 +139,16 @@ By following these steps, we can effectively analyze the provided code snippet a
 
 总而言之，`blink/renderer/platform/image-decoders/gif/gif_image_decoder.cc` 是 Blink 引擎中负责将 GIF 图像文件转化为可渲染数据的关键组件，它在浏览器显示网页上的 GIF 图像（无论是通过 `<img>` 标签还是 CSS 背景）的过程中扮演着核心角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/gif/gif_image_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Apple Computer, Inc.  All rights reserved.
  *
@@ -203,7 +205,4 @@ std::unique_ptr<SkCodec> GIFImageDecoder::OnCreateSkCodec(
 }
 
 }  // namespace blink
-
-"""
-
 ```

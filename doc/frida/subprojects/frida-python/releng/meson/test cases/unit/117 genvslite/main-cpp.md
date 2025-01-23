@@ -143,7 +143,7 @@ By following these steps, including the self-correction, we can arrive at a comp
 
 虽然 `main.cpp` 的代码非常简单，但它有效地演示了 Debug 和 Release 构建之间的差异，这对于理解程序的行为以及进行逆向分析至关重要。在 Frida 的上下文中，这个小型的 C++ 文件很可能作为一个单元测试用例存在，用于验证 Frida 在不同构建类型目标上的工作能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/117 genvslite/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<stdio.h>
 
 int main() {
@@ -163,7 +165,4 @@ int main() {
 #endif
     return 0;
 }
-
-"""
-
 ```

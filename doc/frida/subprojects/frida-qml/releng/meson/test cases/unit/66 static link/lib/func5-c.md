@@ -122,7 +122,7 @@ int func5()
 
 总而言之，虽然 `func5.c` 本身的代码非常简单，但在 Frida 的开发和测试环境中，它可能作为一个基本的构建块或测试目标，帮助开发者理解和验证更复杂的系统行为。逆向工程师也可以利用 Frida 对其进行动态分析，以理解程序行为或进行漏洞挖掘。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/66 static link/lib/func5.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,13 +130,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func5()
 {
   return 1;
 }
-
-"""
-
 ```

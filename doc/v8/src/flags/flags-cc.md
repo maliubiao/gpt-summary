@@ -181,7 +181,7 @@ node --v8-options --turbo-fast-math my_script.js
 
 综上所述，`v8/src/flags/flags.cc` 的主要功能是 **定义、解析、管理和控制 V8 JavaScript 引擎的命令行配置选项（标志）**。它为用户提供了一种在引擎启动时调整其行为和特性的方式，对于性能调优、功能测试和实验性特性的启用至关重要。它确保了标志的正确解析、避免冲突，并提供了一种机制来管理标志之间的隐含关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/flags/flags.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/flags/flags.cc以.tq结尾，那它是个v8 torque源代码，
@@ -189,8 +189,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1161,7 +1163,4 @@ class ImplicationProcessor {
   (v8_flags.flag1 || v8_flags.flag2)                        \
       ? std::make_tuple(FindFlagByPointer(&v8_flags.flag1), \
                         FindFlagByPointer(&v8_flags.fla
-"""
-
-
 ```

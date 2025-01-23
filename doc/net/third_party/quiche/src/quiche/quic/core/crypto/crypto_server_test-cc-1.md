@@ -81,7 +81,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 总而言之，这个文件中的测试旨在全面验证 `CryptoServer` 在各种正常和异常情况下的握手处理逻辑，确保其安全性和可靠性。 这些测试覆盖了协议的各个方面，包括版本协商、重放保护、SNI 处理、证书验证以及服务器配置的生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/crypto_server_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -89,8 +89,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t, cached_certs, &certs));
 
   // Check that the proof in the REJ message is valid.
@@ -462,8 +464,4 @@ TEST_P(CryptoServerTestOldVersion, XlctNotRequired) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

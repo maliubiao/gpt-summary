@@ -216,7 +216,7 @@ listener, err := net.Listen("tcp", ":8080", &net.ListenConfig{Backlog: 128}) // 
 
 `go/src/net/sock_linux_test.go` 中的 `TestMaxAckBacklog` 函数是一个内部测试，用于验证 `net` 包在 Linux 系统上计算 TCP 监听队列最大长度的逻辑是否正确，并且会根据 Linux 内核版本进行不同的校验。  理解 backlog 的概念对于编写健壮的网络应用至关重要，避免因 backlog 设置不当而导致连接拒绝。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/sock_linux_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -224,8 +224,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -249,9 +251,4 @@ func TestMaxAckBacklog(t *testing.T) {
 		t.Fatalf(`Kernel version: "%d.%d", sk_max_ack_backlog mismatch, got %d, want %d`, major, minor, backlog, expected)
 	}
 }
-
-"""
-
-
-
 ```

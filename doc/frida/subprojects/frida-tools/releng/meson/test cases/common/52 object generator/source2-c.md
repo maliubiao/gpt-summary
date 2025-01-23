@@ -187,7 +187,7 @@ int func2_in_obj(void) {
 
 总而言之，`source2.c` 中的 `func2_in_obj` 函数虽然简单，但在 Frida 的测试和逆向分析场景中扮演着基础的角色，可以作为动态分析的测试目标，并帮助理解 Frida 与底层二进制和操作系统概念的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/52 object generator/source2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,12 +195,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

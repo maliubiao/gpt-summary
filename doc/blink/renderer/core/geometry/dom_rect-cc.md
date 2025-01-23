@@ -244,15 +244,17 @@ CSS 属性，例如 `margin`, `padding`, `border`, `transform` 等都会影响�
 5. **注意滚动:**  `getBoundingClientRect()` 返回的是相对于视口的坐标。如果页面有滚动，需要考虑滚动偏移量。 可以使用 `window.scrollX` 和 `window.scrollY` 获取滚动偏移量。
 6. **断点调试 Blink 代码 (高级):** 如果怀疑是 Blink 引擎内部的计算错误，可以使用 Chromium 的调试工具进行断点调试，定位到 `dom_rect.cc` 或相关的布局代码，查看计算过程中的中间值。 这需要一定的 Chromium 源码阅读和调试经验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/geometry/dom_rect.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -291,7 +293,4 @@ gfx::Rect DOMRect::ToEnclosingRect() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

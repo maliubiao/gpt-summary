@@ -112,7 +112,7 @@ console.log(isNaN(x));     // 输出: true
 
 这个 C++ 测试文件中针对 NaN 的测试（例如 `CHECK_MINMAX(0.0f, nan_a, nan_a, nan_a);`）反映了 JavaScript 中处理 NaN 的特殊性。 开发者容易犯的错误是使用 `==` 或 `===` 来判断一个值是否为 NaN，这是不正确的。应该使用全局函数 `isNaN()` 来进行判断。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-macro-assembler-riscv32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-macro-assembler-riscv32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -120,8 +120,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 .0f);
   CHECK_MINMAX(0.0f, -1.0f, -1.0f, 0.0f);
   CHECK_MINMAX(-1.0f, 0.0f, -1.0f, 0.0f);
@@ -543,8 +545,4 @@ TEST(AddWithImm) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

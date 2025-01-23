@@ -131,15 +131,17 @@ func f1() {
 
 `live_regabi.go` 是 Go 编译器测试套件中的一部分，专门用于测试在启用 register-based ABI 时，编译器进行活跃性分析的正确性。它通过一系列精心设计的测试用例，验证编译器能否准确地判断出在程序执行的每个关键点，哪些变量是活跃的。理解活跃性分析对于编译器开发者至关重要，对于普通 Go 开发者来说，理解变量的生命周期也有助于编写更高效和健壮的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/live_regabi.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheckwithauto -0 -l -live -wb=0 -d=ssa/insert_resched_checks/off
 
 //go:build (amd64 && goexperiment.regabiargs) || (arm64 && goexperiment.regabiargs)
@@ -883,9 +885,4 @@ func f45(a, b, c, d, e, f, g, h, i, j, k, l *byte) { // ERROR "live at entry to 
 //go:noinline
 func f46(a, b, c, d, e, f, g, h, i, j, k, l *byte) {
 }
-
-"""
-
-
-
 ```

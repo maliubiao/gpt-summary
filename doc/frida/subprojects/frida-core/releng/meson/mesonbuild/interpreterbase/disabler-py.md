@@ -129,7 +129,7 @@ print(disabled_obj.method_call('some_other_method', [], {})) # 输出: <frida.su
 
 总而言之，`disabler.py` 提供了一种在 Frida 构建过程中优雅地处理可选依赖项或功能的机制，确保在各种构建环境下都能成功构建出可用的 Frida 版本，即使某些功能由于依赖项缺失而无法启用。  它对于维护 Frida 的跨平台兼容性和构建灵活性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/interpreterbase/disabler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -174,7 +176,4 @@ def is_disabled(args: T.Sequence[T.Any], kwargs: T.Dict[str, T.Any]) -> bool:
         if _is_arg_disabled(i):
             return True
     return False
-
-"""
-
 ```

@@ -98,11 +98,13 @@ console.log(counter()); // 2
 
 `allocation-unittest.cc` 文件通过单元测试确保了 V8 引擎底层内存分配和权限管理功能的正确性。这些底层功能是 JavaScript 代码运行的基础，虽然 JavaScript 开发者不直接接触这些细节，但 V8 引擎的稳定性和安全性直接影响着 JavaScript 代码的执行效果。  如果这些底层的内存管理功能出现问题，JavaScript 代码可能会出现各种不可预测的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/utils/allocation-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ TEST_F(AllocationTest, ReserveMemory) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -108,14 +108,16 @@ This iterative process of understanding, connecting concepts, generating example
 
 总而言之，`cooperative_scheduling_manager.cc` 文件实现了 Blink 渲染引擎中重要的合作式调度机制，它允许长时间运行的任务主动让出执行权，从而提升浏览器的交互性和渲染性能，尤其在处理复杂的 JavaScript 代码时发挥着关键作用。开发者虽然不能直接控制它，但理解其工作原理有助于编写更高效、更友好的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/cooperative_scheduling_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -209,7 +211,4 @@ void CooperativeSchedulingManager::SetTickClockForTesting(
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

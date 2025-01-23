@@ -162,15 +162,17 @@ The `Hole::Initialize` function suggests that a `Hole` can be associated with th
 
 In summary, `v8/src/objects/hole-inl.h` provides the low-level implementation details for the `Hole` object in V8, a mechanism used to represent the absence of values, particularly in sparse arrays and uninitialized object properties. Understanding the concept of holes is crucial for writing correct and efficient JavaScript code, especially when dealing with arrays and object properties dynamically.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/hole-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/hole-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ void Hole::Initialize(Isolate* isolate, DirectHandle<Hole> hole,
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_HOLE_INL_H_
-
-"""
-
 ```

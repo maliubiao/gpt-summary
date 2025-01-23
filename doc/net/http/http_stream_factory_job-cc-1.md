@@ -136,7 +136,7 @@ Initially, I might focus too much on the low-level details of each method. Then,
 
 在调试网络请求问题时，如果断点设置在 `DoInitConnectionComplete` 或 `DoCreateStream` 中，可以观察连接建立的结果、协议协商的过程以及最终创建的流类型，从而定位问题所在。例如，如果发现连接建立失败，需要检查 DNS 解析和代理配置；如果协议协商失败，可能是服务器不支持请求的协议。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_job.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ailedOnDefaultNetwork(this);
 }
 
@@ -546,8 +548,4 @@ void HttpStreamFactory::Job::RecordPreconnectHistograms(int result) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

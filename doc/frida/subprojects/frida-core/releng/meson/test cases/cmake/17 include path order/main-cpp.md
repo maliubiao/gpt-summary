@@ -114,7 +114,7 @@ Let's break down the thought process for analyzing this simple C++ file in the c
 
 总而言之，这个 `main.cpp` 文件虽然代码很简单，但在 Frida 的构建体系中扮演着重要的角色，它通过一个简单的测试用例，确保了头文件包含路径的正确性，这是保证 Frida 能够正确编译和运行的关键环节。它也为开发者提供了一个很好的调试线索，当遇到与头文件相关的构建问题时，可以参考这个测试用例来理解和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/17 include path order/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 
@@ -134,7 +136,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

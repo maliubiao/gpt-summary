@@ -135,7 +135,7 @@ By following these steps, combining code analysis with knowledge of the underlyi
 
 总而言之，`lsd.py` 是 Frida 工具链中一个简单但重要的工具，它为用户提供了一个查看可用 Frida 连接目标的基础入口，是进行后续动态分析和 instrumentation 的前提。理解其功能和潜在问题对于有效地使用 Frida 进行逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/frida_tools/lsd.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 def main() -> None:
     import functools
     import threading
@@ -307,7 +309,4 @@ if __name__ == "__main__":
         main()
     except KeyboardInterrupt:
         pass
-
-"""
-
 ```

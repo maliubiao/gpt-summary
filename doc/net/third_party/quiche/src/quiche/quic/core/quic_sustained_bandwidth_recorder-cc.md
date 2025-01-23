@@ -127,15 +127,17 @@ By following these steps, we can systematically analyze the C++ code and generat
 
 通过以上步骤，我们可以看到用户的简单操作最终会导致 `quic_sustained_bandwidth_recorder.cc` 中的代码被执行，并影响着网络连接的性能。  调试时，关注连接的状态变化（是否进入恢复期）、SRTT 的值以及带宽估计值的变化趋势，可以帮助理解持续带宽估计的逻辑和可能存在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_sustained_bandwidth_recorder.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -195,7 +197,4 @@ void QuicSustainedBandwidthRecorder::RecordEstimate(
 }
 
 }  // namespace quic
-
-"""
-
 ```

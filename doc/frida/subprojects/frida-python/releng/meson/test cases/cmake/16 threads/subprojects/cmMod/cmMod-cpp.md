@@ -223,7 +223,7 @@ std::cout << "num after asyncIncrement (potentially incorrect): " << mod.num << 
 
 总而言之，`cmMod.cpp` 中的代码片段展示了一个简单的异步递增操作，其在 Frida 的上下文中可以用于测试多线程功能，并作为动态逆向分析的目标。理解其功能和潜在问题，结合文件路径提供的上下文，可以帮助开发者更好地进行调试和维护工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cmake/16 threads/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -231,8 +231,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 #include <chrono>
@@ -248,7 +250,4 @@ void CmMod::asyncIncrement() {
 
   t1.join();
 }
-
-"""
-
 ```

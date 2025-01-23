@@ -148,7 +148,7 @@ recursiveFunction(); // 这将导致栈溢出
 
 `v8/src/execution/frames.h` 定义了用于描述和管理 V8 引擎中不同类型函数调用栈帧的关键数据结构。它通过提供不同的类来区分不同执行阶段的帧，并支持精确和保守的帧信息表示。这些信息对于 V8 正确执行 JavaScript 代码、管理内存和支持调试至关重要。虽然 JavaScript 开发者不会直接操作这些类，但理解栈帧的概念有助于理解一些常见的运行时错误，如栈溢出。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/frames.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/frames.h以.tq结尾，那它是个v8 torque源代码，
@@ -156,8 +156,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 receiver,
                                       int translation_height, bool is_topmost,
                                       bool pad_arguments) {
@@ -304,8 +306,4 @@ class BuiltinContinuationFrameInfo {
 }  // namespace v8
 
 #endif  // V8_EXECUTION_FRAMES_H_
-
-"""
-
-
 ```

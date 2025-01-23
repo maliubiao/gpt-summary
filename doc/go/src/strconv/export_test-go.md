@@ -146,7 +146,7 @@ func TestParseIntInternalError(t *testing.T) {
 
 `go/src/strconv/export_test.go` 的核心作用是辅助 `strconv` 包的内部测试，通过暴露内部的错误变量，使得测试代码能够精确地断言解析函数在特定错误情况下返回的错误类型。 它不直接涉及命令行参数处理，但体现了 Go 语言中良好的代码组织和测试实践。外部使用者无需关心 `export_test.go` 文件，只需要专注于正确使用 `strconv` 包提供的导出函数并妥善处理可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strconv/export_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -154,8 +154,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -166,9 +168,4 @@ var (
 	BitSizeError = bitSizeError
 	BaseError    = baseError
 )
-
-"""
-
-
-
 ```

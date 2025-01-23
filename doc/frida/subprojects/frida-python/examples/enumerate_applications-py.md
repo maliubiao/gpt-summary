@@ -144,7 +144,7 @@ Application(identifier="com.example.app2", name="App Two", pid=1001, parameters=
 
 总而言之，`enumerate_applications.py` 是一个 Frida 工具的入门级但非常实用的示例，它展示了如何使用 Frida 获取目标设备上的应用程序信息，这对于移动安全研究和逆向工程来说是一个重要的基础步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/enumerate_applications.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from pprint import pformat
 
 from pygments import highlight
@@ -178,7 +180,4 @@ for app in apps:
         params["icons"] = [trim_icon(icon) for icon in params["icons"]]
     parameters = highlight(pformat(params), PythonLexer(), Terminal256Formatter()).rstrip()
     print(f'Application(identifier="{app.identifier}", name="{app.name}", pid={app.pid}, parameters={parameters})')
-
-"""
-
 ```

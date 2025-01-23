@@ -114,11 +114,13 @@ const instance2 = new MyClass(instance1); // 模拟拷贝构造
 
 总而言之，`macros-unittest.cc` 这个 C++ 文件通过测试底层的宏来保证 V8 引擎在内存管理、对象复制和类型处理等方面的正确性和效率，而这些底层的机制直接影响着 JavaScript 代码的执行性能和行为。虽然 JavaScript 开发者看不到这些宏的直接使用，但它们是 V8 实现高性能 JavaScript 的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/macros-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ ASSERT_NOT_TRIVIALLY_COPYABLE(NonTrivialMoveAssignment);
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

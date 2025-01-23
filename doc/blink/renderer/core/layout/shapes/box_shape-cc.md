@@ -143,14 +143,16 @@ Let's break down the thought process for analyzing the given C++ code snippet.
 
 总而言之，`blink/renderer/core/layout/shapes/box_shape.cc` 文件是 Blink 渲染引擎中实现 CSS `shape-outside` 属性关于盒状图形的核心组件，负责计算形状的几何属性以及内容应该如何围绕这些形状进行布局。它与 HTML、CSS 和 JavaScript 都有密切关系，共同构建了我们看到的网页布局效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/shapes/box_shape.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Adobe Systems Incorporated. All rights reserved.
  *
@@ -293,7 +295,4 @@ FloatRoundedRect BoxShape::ToLogical(const FloatRoundedRect& rect,
 }
 
 }  // namespace blink
-
-"""
-
 ```

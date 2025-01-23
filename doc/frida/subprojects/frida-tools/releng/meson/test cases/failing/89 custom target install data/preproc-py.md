@@ -147,7 +147,7 @@ Initially, I might have focused too much on the low-level file I/O without consi
 
 总而言之，这个简单的 `preproc.py` 脚本虽然功能单一，但在特定的逆向工程和 Frida 工具开发场景中，可以作为一个方便的文件复制工具，用于准备分析所需的文件，或是作为构建和测试流程中的一个环节。其简洁性也降低了引入错误的风险。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/89 custom target install data/preproc.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -170,7 +172,4 @@ outf = sys.argv[2]
 with open(outf, 'wb') as o:
     with open(inf, 'rb') as i:
         o.write(i.read())
-
-"""
-
 ```

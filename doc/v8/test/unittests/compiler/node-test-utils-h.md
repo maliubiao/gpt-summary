@@ -164,7 +164,7 @@ Matchers 本身并不包含复杂的代码逻辑推理，它们主要是进行�
 
 `v8/test/unittests/compiler/node-test-utils.h` 是一个 V8 源代码头文件，其核心功能是提供了一组基于 Google Mock 的 Matchers，用于在编译器单元测试中方便且清晰地断言 V8 编译器生成的节点图的结构、类型、操作和属性是否符合预期。 它帮助 V8 开发人员验证编译器在处理各种 JavaScript 代码构造时是否正确地生成了中间表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/node-test-utils.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/node-test-utils.h以.tq结尾，那它是个v8 torque源代码，
@@ -172,8 +172,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -718,8 +720,4 @@ static inline Matcher<Node*> IsIntPtrDiv(const Matcher<Node*>& lhs_matcher,
 }
 
 static inline Matcher<Node*> IsWordShl(const Matcher<Node*>& lhs_matcher,
-                  
-"""
-
-
 ```

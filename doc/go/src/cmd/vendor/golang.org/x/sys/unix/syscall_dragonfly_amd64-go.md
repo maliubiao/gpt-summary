@@ -364,15 +364,17 @@ By following these steps – understanding the context, examining individual com
 
 总的来说，这个文件提供了一组用于在 Dragonfly BSD (amd64) 系统上执行底层操作的工具，包括时间管理、事件通知、以及原始的系统调用能力。开发者在使用这些函数时需要理解其背后的系统调用语义，并正确处理可能出现的错误情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_dragonfly_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -429,9 +431,4 @@ func sendfile(outfd int, infd int, offset *int64, count int) (written int, err e
 }
 
 func Syscall9(num, a1, a2, a3, a4, a5, a6, a7, a8, a9 uintptr) (r1, r2 uintptr, err syscall.Errno)
-
-"""
-
-
-
 ```

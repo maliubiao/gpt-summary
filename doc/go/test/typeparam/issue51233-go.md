@@ -133,15 +133,17 @@ go/test/typeparam/issue51233.go:26:26: not enough type arguments for type Fn: ha
 
 `go/test/typeparam/issue51233.go` 的核心功能是**测试 Go 编译器在处理泛型类型时，对于缺少类型参数的情况能否正确地报错**。它强调了在某些情况下，开发者必须显式提供泛型类型的类型参数，即使在逻辑上似乎可以推断出来。这与 Go 语言规范中关于类型推断的限制有关。开发者在编写涉及泛型的代码时，需要仔细检查类型参数是否完整，避免出现类似 “not enough type arguments” 的编译错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue51233.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2022 The Go Authors. All rights reserved.
@@ -170,9 +172,4 @@ type concreteF[RCT RC[RG], RG any] struct {
 func (c *concreteF[RCT, RG]) Fn() Fn[RCT] { // ERROR "not enough type arguments for type Fn: have 1, want 2"
 	return c.makeFn()
 }
-
-"""
-
-
-
 ```

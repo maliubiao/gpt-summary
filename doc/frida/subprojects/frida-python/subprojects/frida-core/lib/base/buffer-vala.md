@@ -118,7 +118,7 @@ append_int32(builder, 1234)
 - **调试线索**：如果用户在构建或读取二进制数据流时遇到问题，可以通过检查 `BufferBuilder` 的 `buffer` 属性和 `Buffer` 的 `data` 属性来查看当前的数据状态。此外，可以使用 LLDB 或 GDB 等调试工具来单步执行代码，查看每一步操作后的数据变化。
 
 通过以上分析，我们可以更好地理解 `buffer.vala` 文件的功能和使用方法，并在实际开发中避免常见的错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/lib/base/buffer.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class BufferBuilder : Object {
 		public ByteOrder byte_order {
@@ -716,7 +718,4 @@ namespace Frida {
 		}
 	}
 }
-
-"""
-
 ```

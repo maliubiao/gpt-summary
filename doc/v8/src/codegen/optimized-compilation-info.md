@@ -97,11 +97,13 @@ for (let i = 0; i < 10000; i++) {
 
 总之，`OptimizedCompilationInfo` 是 V8 优化编译流程中的一个关键数据结构，它承载了优化编译器所需的所有关键信息，并参与了优化过程的各个阶段，从而使得 V8 能够高效地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/optimized-compilation-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -369,7 +371,4 @@ OptimizedCompilationInfo::InlinedFunctionHolder::InlinedFunctionHolder(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

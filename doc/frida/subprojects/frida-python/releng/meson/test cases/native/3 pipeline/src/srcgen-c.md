@@ -140,7 +140,7 @@ By following this structured approach, combining code understanding with the spe
 
 `srcgen.c` 是一个简单的文件复制工具，在 Frida 项目中作为测试用例存在。它的功能虽基础，但涉及到文件 I/O 操作、错误处理和断言检查等编程基本概念。理解它的功能可以帮助开发者在调试与 Frida 构建或测试相关的错误时，更好地理解问题的根源。用户通常不会直接与之交互，但当 Frida 内部流程依赖于它时，它的行为可能会影响到最终的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/native/3 pipeline/src/srcgen.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<assert.h>
 
@@ -190,7 +192,4 @@ int main(int argc, char **argv) {
     fclose(ofile);
     return 0;
 }
-
-"""
-
 ```

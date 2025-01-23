@@ -136,14 +136,16 @@ By following this structured approach, and being willing to refine initial assum
 
 总而言之，`bridge_ice_controller_test.cc` 通过大量的单元测试，确保了 `BridgeIceController` 作为 Blink 和底层 WebRTC ICE 控制器之间的桥梁能够正确地工作，处理各种 ICE 协商和连接管理相关的逻辑，并且能够与 Blink 的其他组件（例如观察者）进行有效的通信。这对于保证 WebRTC 功能在 Chromium 浏览器中的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/bridge_ice_controller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1096,7 +1098,4 @@ TEST_F(BridgeIceControllerTest, HandlesPruneRequest) {
 }
 
 }  // unnamed namespace
-
-"""
-
 ```

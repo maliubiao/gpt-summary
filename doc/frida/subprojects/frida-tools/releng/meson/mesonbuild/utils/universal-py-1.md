@@ -92,7 +92,7 @@ By following these steps, I aimed to provide a comprehensive and informative ans
 
 总的来说，这部分 `universal.py` 文件提供了一系列底层的、与操作系统和文件系统紧密相关的工具函数，用于辅助 Meson 构建系统处理各种通用任务，例如获取系统路径、处理命令行参数、管理配置文件、生成代码等。 这些功能对于构建 Frida 这样的跨平台动态 instrumentation 工具至关重要，因为它需要能在不同的操作系统上正确地配置、编译和安装。 这些函数的设计考虑了不同操作系统的特性和潜在的问题，提高了构建过程的健壮性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 n that happens, it can be
     # considered an achievement in itself.
     #
@@ -992,7 +994,4 @@ def detect_subprojects(spdir_name: str, current_dir: str = '',
         if append_this:
             if basename in result:
                 result[basename].appe
-"""
-
-
 ```

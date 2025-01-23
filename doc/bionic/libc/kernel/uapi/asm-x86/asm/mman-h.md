@@ -199,7 +199,7 @@ if (Process.arch === 'x64') {
 
 总而言之，`bionic/libc/kernel/uapi/asm-x86/asm/mman.handroid` 文件虽然很小，但它定义了影响 Android 系统内存管理行为的重要常量，这些常量被 `libc` 中的内存管理函数使用，最终影响应用程序的内存分配和安全特性。 理解这些底层的定义对于深入理解 Android 系统的运行机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/mman.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -210,8 +210,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -225,7 +227,4 @@ Prompt:
 #define SHADOW_STACK_SET_TOKEN (1ULL << 0)
 #include <asm-generic/mman.h>
 #endif
-
-"""
-
 ```

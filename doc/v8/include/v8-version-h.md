@@ -146,15 +146,17 @@ New feature is supported.
 
 总而言之，`v8/include/v8-version.h` 是一个至关重要的头文件，它提供了 V8 引擎的版本信息，这些信息被 V8 内部以及外部工具和程序使用。 理解其作用有助于更好地理解 V8 的构建和版本管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-version.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-version.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ Prompt:
 #define V8_IS_CANDIDATE_VERSION 0
 
 #endif  // V8_INCLUDE_VERSION_H_
-
-"""
-
 ```

@@ -109,12 +109,14 @@ object.method(); // 假设 object 有一个名为 method 的方法
 
 这部分 `bytecode-graph-builder.cc` 代码是连接 JavaScript 字节码和 TurboFan 优化器的桥梁。 它将各种 JavaScript 操作转化为图节点，为后续的类型推断、内联优化等高级优化奠定了基础。 理解这部分代码有助于深入了解 V8 引擎是如何将 JavaScript 代码编译和优化的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/bytecode-graph-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 adGlobal(name, feedback_slot_index, TypeofMode::kNotInside);
   environment()->BindAccumulator(node, Environment::kAttachFrameState);
 }
@@ -1729,7 +1731,4 @@ void BytecodeGraphBuilder::VisitShiftRight() {
   FeedbackSource feedback = CreateFeedbackSource(
       bytecode_iterator().GetSlotOperand(kBinaryOperationHintIndex));
   BuildBinaryOp(javas
-"""
-
-
 ```

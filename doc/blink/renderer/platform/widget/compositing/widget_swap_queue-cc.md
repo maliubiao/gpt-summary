@@ -128,14 +128,16 @@ By following this thought process, starting with understanding the code itself a
 
 总而言之，`WidgetSwapQueue` 是 Blink 渲染引擎中一个重要的同步机制，它确保与 Widget 视觉状态更新相关的回调能够在正确的时机被执行，从而保证了网页渲染的正确性和一致性。 理解其工作原理对于理解 Blink 引擎的渲染流程以及如何处理 JavaScript、HTML 和 CSS 引起的视觉变化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/compositing/widget_swap_queue.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ void WidgetSwapQueue::GetCallbacks(
 }
 
 }  // namespace blink
-
-"""
-
 ```

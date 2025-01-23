@@ -259,7 +259,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 这些内置函数是 V8 引擎执行 JavaScript 代码的关键组成部分，它们直接影响着 JavaScript 代码的性能和与原生代码的交互能力。作为架构特定的实现，它们充分利用了 ARM 架构的特性来提供高效的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/arm/builtins-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/arm/builtins-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -267,9 +267,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
-         StackFrame::API_CALLBACK_EXIT);
+### 源代码
+```cpp
+StackFrame::API_CALLBACK_EXIT);
 
   MemOperand argc_operand = MemOperand(fp, FC::kFCIArgcOffset);
   {
@@ -894,8 +896,4 @@ void Builtins::Generate_RestartFrameTrampoline(MacroAssembler* masm) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_ARM
-
-"""
-
-
 ```

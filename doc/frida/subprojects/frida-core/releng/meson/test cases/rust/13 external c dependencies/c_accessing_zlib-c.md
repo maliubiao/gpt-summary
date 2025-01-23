@@ -114,7 +114,7 @@ After generating the initial ideas, I would organize the information logically, 
 
 总而言之，`c_accessing_zlib.c` 是一个用于演示 Frida 如何在注入的 C 代码中访问外部 C 库（zlib）功能的简单示例。它在逆向工程中作为理解和操作压缩数据的工具，涉及到对二进制底层、操作系统框架以及 C 语言编程的理解。用户在调试与 zlib 相关的逆向问题时，可能会创建或使用类似的 C 代码片段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/rust/13 external c dependencies/c_accessing_zlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <string.h>
 #include <zlib.h>
@@ -134,7 +136,4 @@ void c_accessing_zlib(void) {
     memset(&zstream, 0, sizeof(zstream));
     inflateInit(&zstream);
 }
-
-"""
-
 ```

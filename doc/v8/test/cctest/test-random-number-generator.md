@@ -134,11 +134,13 @@ console.log(seededRandom2()); // 第二次调用，与 seededRandom1 的第二�
 
 `v8/test/cctest/test-random-number-generator.cc` 是 V8 引擎中用于测试其内部随机数生成器质量的关键测试文件。它确保了 `Math.random()` 在 JavaScript 中的行为符合预期，能够生成足够随机且均匀分布的数字，并且可以通过命令行标志设置初始种子（用于调试和测试）。这些测试对于保障 JavaScript 应用中依赖随机数的功能的正确性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-random-number-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -316,7 +318,4 @@ TEST_RANDOM_BIT(31)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

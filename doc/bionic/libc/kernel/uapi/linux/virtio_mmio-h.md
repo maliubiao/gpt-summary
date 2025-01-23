@@ -293,7 +293,7 @@ setImmediate(hook_virtio_mmio_access);
 
 这个 `virtio_mmio.h` 头文件虽然简单，却是理解 Android 虚拟化底层硬件交互的关键。通过它可以了解到 Android 如何与虚拟机环境中的虚拟硬件进行通信，从而实现各种功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/virtio_mmio.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -304,8 +304,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -353,7 +355,4 @@ Prompt:
 #define VIRTIO_MMIO_INT_VRING (1 << 0)
 #define VIRTIO_MMIO_INT_CONFIG (1 << 1)
 #endif
-
-"""
-
 ```

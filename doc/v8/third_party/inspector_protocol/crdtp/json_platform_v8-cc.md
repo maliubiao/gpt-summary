@@ -209,15 +209,17 @@ This systematic approach, breaking down the code into smaller parts, understandi
 
 总之，`v8/third_party/inspector_protocol/crdtp/json_platform_v8.cc` 提供了一组底层的、平台特定的工具函数，用于在 V8 内部处理 JSON 相关的字符串和数字转换。理解这些函数的功能和潜在的错误情况对于开发和调试涉及到 V8 内部机制的代码非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/json_platform_v8.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/json_platform_v8.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The V8 Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ std::string DToStr(double value) {
 }  // namespace platform
 }  // namespace json
 }  // namespace v8_crdtp
-
-"""
-
 ```

@@ -331,7 +331,7 @@ sys.stdin.read()
 
 通过这个 Frida 脚本，你可以观察到哪个组件（Framework 或 NDK 应用）调用了 `statfs`，以及传递的路径参数和返回的文件系统统计信息，从而理解 Android 系统如何一步步地使用到这个底层的系统调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/statfs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -342,8 +342,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -355,7 +357,4 @@ Prompt:
 #define ARCH_PACK_COMPAT_STATFS64 __attribute__((packed, aligned(4)))
 #include <asm-generic/statfs.h>
 #endif
-
-"""
-
 ```

@@ -583,7 +583,7 @@ Let's prepare the response by addressing each of the user's points.
         }
         Value struct_obj = Pop(ValueType::RefNull(field.struct_imm.index));
         Value*
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/function-body-decoder-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/function-body-decoder-impl.h以.tq结尾，那它是个v8 torque源代码，
@@ -591,9 +591,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
- control_.back().stack_depth;
+### 源代码
+```c
+control_.back().stack_depth;
     if (!VALIDATE(control_.back().unreachable())) {
       NotEnoughArgumentsError(count, stack_.size() - limit);
     }
@@ -1319,7 +1321,4 @@ Prompt:
                                            data_segment, array, array_index,
                                            data_offset, length);
         retur
-"""
-
-
 ```

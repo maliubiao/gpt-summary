@@ -86,12 +86,14 @@ console.log(replaced); // 输出: Int32x4(6, 100, 10, 12)
 
 总而言之，`recreate-schedule.cc` 的第二部分专注于将JavaScript中与SIMD相关的操作以及底层的堆栈操作转换为Turboshaft编译器内部的执行计划节点，是连接高级JavaScript代码和底层机器指令的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/recreate-schedule.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 .second()), \
                                     GetNode(op.third())});
     FOREACH_SIMD_128_TERNARY_OPCODE(HANDLE_KIND);
@@ -343,8 +345,4 @@ RecreateScheduleResult RecreateSchedule(PipelineData* data,
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
-
 ```

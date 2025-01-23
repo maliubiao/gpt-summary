@@ -140,14 +140,16 @@ This systematic approach, starting with a high-level overview and gradually divi
 
 `paint_property_node.cc` 文件定义了 Blink 渲染引擎中用于管理绘制属性节点的核心类，它是实现高效渲染的关键组件。它与 CSS 属性、HTML 结构以及 JavaScript 的样式操作紧密相关，通过构建和维护绘制属性树来优化渲染流程。理解其功能有助于开发者编写更高效的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_property_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ const PaintPropertyNode& PropertyTreePrinter::RootNode() {
 #endif  // DCHECK_IS_ON()
 
 }  // namespace blink
-
-"""
-
 ```

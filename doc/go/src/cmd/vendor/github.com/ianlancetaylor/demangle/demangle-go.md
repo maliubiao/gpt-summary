@@ -191,7 +191,7 @@ func main() {
 
 总结来说，这段代码是 Go 语言编写的一个用于反编译 C++ 和 Rust 符号名的库，它提供了灵活的选项和将符号解析为 AST 的能力，方便其他程序集成和使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/ianlancetaylor/demangle/demangle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -200,8 +200,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2752,10 +2754,5 @@ func (st *state) expression() AST {
 			index := st.compactNumber()
 			return &FunctionParam{Index: index + 1}
 		}
-	} else if st.str[0] == 'f' && len(st.str) > 2 && st.str[1] == 'L' && 
-"""
-
-
-
-
+	} else if st.str[0] == 'f' && len(st.str) > 2 && st.str[1] == 'L' &&
 ```

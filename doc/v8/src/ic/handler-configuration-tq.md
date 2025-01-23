@@ -127,14 +127,16 @@ V8 会根据对象的类型、属性的特性（例如，是否是原型链上�
 
 总而言之，`handler-configuration.tq` 定义了 V8 内部用于处理 JavaScript 对象属性访问的关键抽象，它是 V8 优化属性访问的核心机制——内联缓存的基础。虽然用户不会直接编写与这些处理程序交互的代码，但了解它们的存在有助于理解 JavaScript 引擎如何高效地执行属性读取和写入操作，以及某些常见的 JavaScript 错误是如何产生的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/handler-configuration.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -143,7 +145,4 @@ Prompt:
 
 extern class LoadHandler extends DataHandler;
 extern class StoreHandler extends DataHandler;
-
-"""
-
 ```

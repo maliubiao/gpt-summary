@@ -241,7 +241,7 @@ return a || b;
 
 这段代码通过编写针对特定 JavaScript 代码片段的测试用例，并断言解释器的执行结果与预期一致，来确保 V8 解释器的功能正确可靠。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/interpreter-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/interpreter/interpreter-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -249,8 +249,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , InterpreterConstructWithArgument) {
   std::string source(
       "function counter(arg0) { this.count = 17; this.x = arg0; }\n"
@@ -983,7 +985,4 @@ TEST_F(InterpreterTest, InterpreterBasicLoops) {
                      "do {\n"
                      "  b = b * 2;\n"
                      "  --
-"""
-
-
 ```

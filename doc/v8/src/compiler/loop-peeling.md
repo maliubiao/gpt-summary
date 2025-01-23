@@ -168,11 +168,13 @@ console.log(calculateSumOptimized([10, 20, 30]));
 
 `loop-peeling.cc` 文件实现了 V8 引擎中的循环剥离优化，通过复制循环体的第一次迭代并进行特殊处理，能够提高 JavaScript 代码在特定场景下的执行效率。这种优化对于包含初始化逻辑或第一次迭代有特殊性质的循环尤其有效。虽然开发者无法直接控制 V8 是否对特定循环进行剥离，但了解这种优化机制有助于理解 JavaScript 引擎是如何提升代码性能的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/loop-peeling.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -472,7 +474,4 @@ void LoopPeeler::EliminateLoopExits(Graph* graph, Zone* tmp_zone) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

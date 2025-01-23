@@ -153,11 +153,13 @@ This systematic approach – from initial reading to detailed analysis and then 
 
 `v8/src/base/bits.cc` 文件中的函数提供了 V8 引擎底层进行高效、安全的位操作和算术运算的基础工具。虽然 JavaScript 开发者通常不需要直接调用这些函数，但理解它们的功能可以帮助我们更好地理解 V8 引擎的内部工作原理，以及 JavaScript 在处理整数运算时的一些限制和行为。在 JavaScript 中，我们可以通过手动实现或使用 `BigInt` 等特性来模拟或处理类似的需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/bits.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ int64_t SignedSaturatedSub64(int64_t lhs, int64_t rhs) {
 }  // namespace bits
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -98,7 +98,7 @@ Review the explanation for clarity and accuracy. Ensure the language is precise 
 
 总而言之，这个简单的 `main.c` 文件是Frida测试框架中一个精心设计的组成部分，用于验证Frida处理程序错误退出的能力，确保Frida在面对各种程序行为时都能稳定可靠地工作。它看似简单，但在软件开发和测试流程中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/failing test/4 hard error/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -106,12 +106,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 99;
 }
-
-"""
-
 ```

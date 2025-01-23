@@ -113,7 +113,7 @@ Finally, organize the analysis into clear sections as requested by the prompt: f
 
 总结来说，`invalid.c` 文件是一个刻意构造的错误示例，用于测试 Frida 构建系统处理编译失败情况的能力。它突出了包含不存在的头文件这一常见的编程错误，并间接关联到逆向工程中对构建过程和错误处理的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/28 try compile/invalid.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,11 +121,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<nonexisting.h>
 void func(void) { printf("This won't work.\n"); }
-
-"""
-
 ```

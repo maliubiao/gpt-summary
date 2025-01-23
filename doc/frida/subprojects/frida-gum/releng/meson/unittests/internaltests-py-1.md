@@ -114,7 +114,7 @@ Finally, I need to summarize these functionalities concisely.
 
 这部分 `internaltests.py` 文件主要对 Frida 构建系统 Meson 集成中的一些内部工具函数进行了全面的单元测试。 这些测试覆盖了版本比较、命令行参数处理、依赖文件解析、日志记录以及参数类型检查等关键功能。  通过这些测试，可以确保 Frida 构建系统的稳定性和可靠性，并帮助开发者避免常见的配置和编程错误。 这些功能虽然看似底层，但对于 Frida 的正常构建和运行至关重要，尤其是在需要处理不同操作系统和复杂依赖关系的情况下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/unittests/internaltests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 k_args)
 
     def test_version_compare(self):
@@ -784,7 +786,4 @@ k_args)
         )
         def _(obj, node, args: T.Tuple, kwargs: T.Dict[str, T.List[str]]) -> None:
             self.asse
-"""
-
-
 ```

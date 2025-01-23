@@ -91,7 +91,7 @@ Therefore, the main functionalities revolve around dynamic stack management (gro
 
 这段代码是 Go 运行时系统中非常核心和底层的部分，它保证了 goroutine 能够根据需要动态地调整其栈大小，既避免了栈溢出的风险，又尽可能地减少了内存占用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/stack.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -100,8 +100,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ldsize := gp.stack.hi - gp.stack.lo
 	newsize := oldsize * 2
 
@@ -381,10 +383,4 @@ func gcComputeStartingStackSize() {
 	// Note: maxstacksize fits in 30 bits, so avg also does.
 	startingStackSize = uint32(round2(int32(avg)))
 }
-
-"""
-
-
-
-
 ```

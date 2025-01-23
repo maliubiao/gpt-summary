@@ -153,15 +153,17 @@ Property {
 
 总而言之，`v8-debug-helper-interop.h` 是一个用于增强 WinDbg 调试 V8 能力的关键组件，它使得开发者能够深入了解 V8 引擎的内部工作机制，从而更好地理解和调试 JavaScript 代码的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/v8windbg/src/v8-debug-helper-interop.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/v8windbg/src/v8-debug-helper-interop.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -285,7 +287,4 @@ std::vector<Property> GetStackFrame(WRL::ComPtr<IDebugHostContext> sp_context,
                                     uint64_t frame_pointer);
 
 #endif  // V8_TOOLS_V8WINDBG_SRC_V8_DEBUG_HELPER_INTEROP_H_
-
-"""
-
 ```

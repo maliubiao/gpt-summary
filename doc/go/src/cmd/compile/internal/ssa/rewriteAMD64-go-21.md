@@ -135,7 +135,7 @@ v3 = OpAMD64MOVQstoreconst [valAndOffToAuxInt(makeValAndOff(0, 5))] destptr v2
 
 这是 `rewriteAMD64.go` 文件的一部分，专门负责优化 `OpZero` 操作。它根据要清零的内存大小和编译器的配置，选择最合适的 AMD64 汇编指令序列来高效地将内存填充为零。优化的策略包括使用 `MOVQstoreconst` 处理小尺寸，使用 `MOVOstoreconst` 处理 16 字节的倍数，使用 Duff's device 优化中等大小的内存块，以及使用 `REPSTOSQ` 处理大尺寸的内存块。这些优化旨在提高 Go 程序在 AMD64 架构上的性能，特别是在涉及大量内存初始化的场景中。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteAMD64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -144,8 +144,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第22部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 = b.NewValue0(v.Pos, OpAMD64MOVQstoreconst, types.TypeMem)
 		v0.AuxInt = valAndOffToAuxInt(makeValAndOff(0, 0))
 		v0.AddArg2(destptr, mem)
@@ -1343,10 +1345,5 @@ func rewriteBlockAMD64(b *Block) bool {
 			v_0_0 := v_0.Args[0]
 			v_0_1 := v_0.Args[1]
 			for _i0 := 0; _i0 <= 1; _i0, v_0_0, v_0_1 = _i0+1, v_0_1, v_0_0 {
-				z1 := 
-"""
-
-
-
-
+				z1 :=
 ```

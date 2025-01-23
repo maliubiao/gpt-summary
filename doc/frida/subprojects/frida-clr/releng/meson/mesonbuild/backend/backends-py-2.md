@@ -145,7 +145,7 @@ command = [
 
 这个 `backends.py` 文件的这部分主要负责 **详细处理构建目标的属性和命令，并生成用于安装和自省的数据**。它深入到每个构建目标的细节，例如源文件、输出文件、依赖关系、执行命令和安装位置，并将这些信息转换为后端构建系统可以理解的形式。  特别是，`eval_custom_target_command` 是一个关键功能，它负责将用户定义的抽象命令转换为实际的命令行操作。此外，它还开始构建安装所需的数据结构，为后续的安装过程做准备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 = arg
             for dep in t.depends:
                 assert isinstance(dep, (build.CustomTarget, build.BuildTarget))
@@ -767,7 +769,4 @@ Prompt:
         '''
         Some backends don't support custom compilers. This is a convenience
         method to conve
-"""
-
-
 ```

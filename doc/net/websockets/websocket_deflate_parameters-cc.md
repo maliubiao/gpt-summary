@@ -166,15 +166,17 @@ params.client_max_window_bits() == 12;
 
 总而言之，`websocket_deflate_parameters.cc` 文件在 Chromium 的 WebSocket 实现中扮演着关键的角色，它负责处理 `permessage-deflate` 扩展的参数，确保客户端和服务器能够成功协商并使用压缩功能，从而优化 WebSocket 通信的效率。理解这个文件的功能对于调试 WebSocket 相关的连接和性能问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_deflate_parameters.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -357,7 +359,4 @@ bool WebSocketDeflateParameters::IsCompatibleWith(
 }
 
 }  // namespace net
-
-"""
-
 ```

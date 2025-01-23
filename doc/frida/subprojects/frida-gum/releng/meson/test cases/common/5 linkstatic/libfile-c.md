@@ -147,7 +147,7 @@ By following this structured thinking process, even for a very simple code snipp
 
 虽然 `libfile.c` 中的 `func` 函数本身功能非常简单，但在 Frida 的测试用例中，它作为一个基础的、可控的目标，用于验证 Frida 的核心 hook 功能，特别是针对静态链接库的 hook 能力。 它的简单性使得它可以作为测试框架中的一个基本构建块，确保 Frida 在处理各种场景时的正确性。对于逆向工程师来说，它也可以作为一个简单的例子来学习如何使用 Frida 进行代码覆盖率分析或基础的函数 hook。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/5 linkstatic/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,12 +155,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 0;
 }
-
-"""
-
 ```

@@ -161,15 +161,17 @@ Go 编译器在构建过程中，会读取 `-pgo` 参数指定的 profile 文件
 
 总而言之，`go/src/cmd/internal/pgo/pgo.go` 这部分代码定义了 Go 语言 PGO 功能的核心数据结构，用于存储和组织从性能 profile 中提取的调用边信息，为后续的编译优化提供依据。开发者通过 `go build -pgo` 等命令来触发 PGO 流程，并需要注意 profile 数据的时效性和代表性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/pgo/pgo.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -224,10 +226,4 @@ func emptyProfile() *Profile {
 func WeightInPercentage(value int64, total int64) float64 {
 	return (float64(value) / float64(total)) * 100
 }
-
-
-"""
-
-
-
 ```

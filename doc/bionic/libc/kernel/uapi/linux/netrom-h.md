@@ -292,7 +292,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/linux/netrom.h` 定义了 Linux 内核中与 NetROM 协议相关的接口。虽然它不是 Android 核心功能，但在理论上可以通过 NDK 进行访问，尤其是在开发涉及业余无线电通信的应用时。理解这些定义有助于开发者进行底层的网络编程和调试。使用 Frida 可以帮助我们动态地观察和分析相关的系统调用过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netrom.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -303,8 +303,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -335,7 +337,4 @@ struct nr_route_struct {
   ax25_address digipeaters[AX25_MAX_DIGIS];
 };
 #endif
-
-"""
-
 ```

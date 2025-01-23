@@ -118,7 +118,7 @@ Initially, I might have focused too much on the simplicity of the Python script 
 
 尽管 `make_file.py` 本身非常简单，但它在 Frida 的构建和测试流程中扮演着一个角色，用于模拟文件创建，以验证构建系统的依赖管理功能。它的存在表明了 Frida 开发过程中对构建流程和依赖关系正确性的重视。 理解这类看似简单的脚本，结合其上下文，可以帮助我们更好地理解大型软件项目的构建和测试策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/144 link depends custom target/make_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,14 +126,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
 with open(sys.argv[1], 'w') as f:
     print('# this file does nothing', file=f)
-
-"""
-
 ```

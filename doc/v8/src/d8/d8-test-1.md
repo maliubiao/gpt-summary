@@ -98,12 +98,14 @@ console.log("Result with range enforcement:", resultWithRange);
 
 **总结来说，这段 C++ 代码的功能是为 V8 的测试环境提供一个与 C++ 代码交互的桥梁，允许 JavaScript 代码直接调用特定的 C++ 函数，用于测试 V8 引擎在处理不同数据类型、内存操作以及 C++/JavaScript 互操作性方面的功能。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8-test.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 h(FastCApiObject::ClampCompareI32Patch)
 #endif  // V8_USE_SIMULATOR_WITH_GENERIC_C_CALLS
             .Build();
@@ -309,8 +311,4 @@ Local<FunctionTemplate> Shell::CreateLeafInterfaceTypeTemplate(
 }
 
 }  // namespace v8
-
-"""
-
-
 ```

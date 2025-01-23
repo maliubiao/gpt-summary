@@ -86,15 +86,15 @@ WebAssembly.instantiateStreaming(fetch('my_wasm_module.wasm'), importObject)
 
 **总结来说，`v8/src/wasm/module-compiler.cc` 的这部分代码负责 WebAssembly 模块编译的核心逻辑，包括分层编译、后台处理、特性检测、与 JavaScript 的集成（通过内置导入），以及异步和流式编译的支持，这些都直接影响了 WebAssembly 在 JavaScript 环境中的性能和可用性。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-
-  // Before adding the tier-up unit or increasing priority, process type
+### 源代码
+```
+// Before adding the tier-up unit or increasing priority, process type
   // feedback for best code generation.
   if (v8_flags.wasm_inlining) {
     // TODO(jkummerow): we could have collisions here if different instances
@@ -1608,7 +1608,4 @@ class AsyncCompileJob::FinishCompilation : public CompileStep {
   void RunInForeground(AsyncCompileJob* job) override {
     TRACE_COMPILE("(3) Compilation finished\n");
     if
-"""
-
-
 ```

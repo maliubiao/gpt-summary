@@ -171,7 +171,7 @@ const processed = processData(largeData);
 
 希望以上分析对您有所帮助！ 如果有后续部分，我们可以继续深入探讨 `factory.cc` 的其他细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/factory.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/factory.cc以.tq结尾，那它是个v8 torque源代码，
@@ -179,8 +179,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -999,7 +1001,4 @@ MaybeHandle<String> Factory::NewStringFromUtf8SubString(
   if (length == 1) {
     uint16_t t;
     // Decode even in the case of length 1 since it can be
-"""
-
-
 ```

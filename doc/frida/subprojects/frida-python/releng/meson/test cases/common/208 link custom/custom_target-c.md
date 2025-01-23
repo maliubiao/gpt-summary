@@ -225,7 +225,7 @@ Interceptor.attach(Module.findExportByName(null, "outer_lib_function"), {
 
 `custom_target.c` 虽然代码简单，但它代表了一个常见的软件架构模式：程序调用外部库函数。在 Frida 的上下文中，这个文件被用作测试 Frida 动态插桩能力的简单目标。理解这个文件的功能和它所代表的场景，有助于理解 Frida 在逆向分析、安全研究等领域的作用。用户查看这个文件通常是为了理解 Frida 的内部工作原理或调试相关的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/208 link custom/custom_target.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -233,15 +233,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void outer_lib_func(void);
 
 int main(void) {
     outer_lib_func();
     return 0;
 }
-
-"""
-
 ```

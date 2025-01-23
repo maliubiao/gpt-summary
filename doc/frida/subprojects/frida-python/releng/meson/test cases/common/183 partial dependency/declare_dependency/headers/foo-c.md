@@ -77,7 +77,7 @@ By following these steps, I can generate a comprehensive answer that addresses t
 
 `foo.c` 文件本身并没有实际的功能代码，它的作用更像是一个构建时的“警报器”。它的存在是为了确保 Frida 的构建系统能够正确处理依赖关系，避免将不应该被编译的源文件纳入编译过程。这对于保证 Frida 工具的正确性和稳定性至关重要，而一个稳定且正确的 Frida 是进行有效逆向分析的基础。  用户不太可能直接与这个文件交互，但当构建 Frida 或其相关项目时遇到错误，这个文件的错误信息可以作为调试的重要线索，帮助开发者定位构建配置或依赖项声明方面的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/183 partial dependency/declare_dependency/headers/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -85,8 +85,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2018 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -103,7 +105,4 @@ Prompt:
  */
 
 #error "Included C sources that shouldn't be."
-
-"""
-
 ```

@@ -195,7 +195,7 @@ console.log(foo(10.5));   // 输出 10
 
 总的来说，这段代码片段定义了 Turboshaft 编译器中用于 **降低 (Lowering)**  JavaScript 操作到机器指令级别的关键步骤。它专注于处理 JavaScript 值在不同表示形式之间的转换，包括原始类型和未标记的底层表示。同时，它也处理了诸如创建新字符串和数组等基本对象操作。  代码中大量出现的 `DeoptimizeIf` 和 `DeoptimizeIfNot` 表明，这是在优化编译的上下文中，需要在运行时根据实际情况进行类型检查和可能的反优化。这段代码是 V8 引擎将高级 JavaScript 代码高效地转换为机器码的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/machine-lowering-reducer-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/machine-lowering-reducer-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -203,9 +203,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
-  if constexpr (SmiValuesAre32Bits()) {
+### 源代码
+```c
+if constexpr (SmiValuesAre32Bits()) {
             GOTO(done, __ TagSmi(v32));
           } else {
             TagSmiOrOverflow(v32, &outside_smi_range, &done);
@@ -967,9 +969,4 @@ Prompt:
     // TODO(nicohartmann@): Should finish initialization only after all elements
     // have been initialized.
     auto array = __ FinishInitialization(std::move(uninitialized_array));
-
-   
-"""
-
-
 ```

@@ -171,7 +171,7 @@ By following this structured thought process, considering the context of Frida, 
 
 总而言之，`copy_files.py` 是 Frida 构建系统中的一个实用工具，用于执行基本的文件和目录复制操作，这在准备逆向分析环境和构建工具链的过程中是必要的。理解其功能和使用方法有助于理解 Frida 的构建过程和进行相关的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/tools/copy_files.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # Copyright 2018 The Meson development team
 
@@ -222,7 +224,4 @@ if __name__ == '__main__':
     copy_files(files=args.files,
                input_dir=args.input_dir,
                output_dir=args.output_dir)
-
-"""
-
 ```

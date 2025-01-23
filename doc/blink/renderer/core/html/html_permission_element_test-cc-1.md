@@ -98,15 +98,17 @@ Here's a breakdown of how to summarize the code:
 
 总而言之，这段代码主要测试了 `HTMLPermissionElement` 在权限状态变化时的 UI 更新、生命周期管理（注册、点击启用时机）、与权限策略的交互以及受 CSS 样式影响的行为。它确保了这个自定义元素能够按照预期的方式工作，并能正确地反映当前的权限状态和用户交互能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_permission_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t().body()->RemoveChild(permission_element);
   }
 }
@@ -833,7 +835,4 @@ TEST_F(HTMLPemissionElementSimTest, BlockedByMissingFrameAncestorsCSP) {
     CreatePermissionElement(*first_child_frame->GetFrame()->GetDocument(),
                             permission);
     permission_service()->set_pepc_registe
-"""
-
-
 ```

@@ -165,7 +165,7 @@ Hooked bobMcBob returned: 42
 
 `frida/subprojects/frida-gum/releng/meson/test cases/linuxlike/3 linker script/prog.c` 是 Frida 测试套件中的一个简单但重要的测试用例。它用于验证 Frida 在处理不同链接器脚本生成的程序时的动态插桩能力。虽然代码本身很简单，但它背后的目的是测试 Frida 的核心功能，并涉及到了二进制底层、操作系统、以及逆向工程中的关键概念。理解这样的测试用例有助于开发者确保 Frida 的稳定性和可靠性，也有助于用户理解 Frida 的工作原理和使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/linuxlike/3 linker script/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,14 +173,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 int main(void) {
     return bobMcBob() != 42;
 }
-
-"""
-
 ```

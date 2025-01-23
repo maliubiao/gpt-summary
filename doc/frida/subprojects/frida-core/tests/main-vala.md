@@ -70,7 +70,7 @@ if __name__ == "__main__":
 ### 总结
 
 `main.vala` 文件是 Frida 测试框架的入口，它负责启动并运行所有相关的测试用例。Frida 依赖于 Linux 内核的 `ptrace` 系统调用来实现动态插桩和进程控制。用户可以通过 LLDB 复刻 Frida 的调试功能，但需要注意权限和目标进程的稳定性。常见的用户错误包括权限不足和目标进程崩溃。用户操作从启动测试框架到执行测试用例，最终通过调试器定位问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/main.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -79,12 +79,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 public static void main (string[] args) {
 	Frida.Test.run (args);
 }
-
-"""
-
 ```

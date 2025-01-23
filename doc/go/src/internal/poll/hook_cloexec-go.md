@@ -181,7 +181,7 @@ func main() {
 
 总之，`hook_cloexec.go` 通过定义一个可替换的函数变量，为 Go 的网络库提供了一种灵活的方式来控制底层的 `accept4` 系统调用，主要用于测试、调试和特殊场景下的定制。 使用者需要注意在使用自定义实现后及时恢复原始行为，并充分理解修改此钩子的潜在影响。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/hook_cloexec.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -189,8 +189,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -203,9 +205,4 @@ import "syscall"
 
 // Accept4Func is used to hook the accept4 call.
 var Accept4Func func(int, int) (int, syscall.Sockaddr, error) = syscall.Accept4
-
-"""
-
-
-
 ```

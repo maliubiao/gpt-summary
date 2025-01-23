@@ -161,7 +161,7 @@ This iterative process of understanding the code, connecting it to the broader c
 
 总而言之，`manualinclude.cpp` 是一个用于测试 Frida 对 Qt 信号和槽机制支持的简单示例。它强调了在某些特定场景下手动包含 moc 文件的必要性，并为理解 Qt 应用程序的事件处理机制提供了一个基础。对于进行 Qt 应用程序逆向分析的工程师来说，理解信号和槽的工作原理至关重要，而这个文件可以作为一个很好的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/4 qt/manualinclude.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"manualinclude.h"
 #include <mocdep.h>
 #include<QCoreApplication>
@@ -198,7 +200,4 @@ int main(int argc, char **argv) {
 }
 
 #include"manualinclude.moc"
-
-"""
-
 ```

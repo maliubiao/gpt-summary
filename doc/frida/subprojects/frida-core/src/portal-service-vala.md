@@ -98,7 +98,7 @@ attach_to_process(1234)  # 1234 是目标进程的 PID
    - 用户断开连接，Frida 会触发 `node_disconnected` 信号并清理相关资源。
 
 通过以上步骤，用户可以逐步使用 Frida 的动态插桩功能进行调试和分析。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/portal-service.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class PortalService : Object {
 		public signal void node_connected (uint connection_id, SocketAddress remote_address);
@@ -1171,7 +1173,4 @@ namespace Frida {
 			public DBusConnection connection {
 				get;
 				construc
-"""
-
-
 ```

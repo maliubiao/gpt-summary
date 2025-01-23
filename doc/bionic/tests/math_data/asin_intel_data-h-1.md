@@ -72,7 +72,7 @@ By following this structured thought process, breaking down the request into sma
 
 **总而言之，这个文件就像一个详尽的测试计划，针对 `asin` 函数在特定条件下的行为进行了细致的验证，是保证 Android 系统底层数学库稳定性和可靠性的重要基石。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/asin_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -84,8 +84,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 cbe0b41389bc82e9f12e67c7p0,
     -0x1.ed2p-1
   },
@@ -1422,8 +1424,4 @@ cbe0b41389bc82e9f12e67c7p0,
     -0.0
   }
 };
-
-"""
-
-
 ```

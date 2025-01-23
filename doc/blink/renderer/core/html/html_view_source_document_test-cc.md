@@ -124,14 +124,16 @@ By following these steps, I could systematically analyze the provided C++ code a
 
 `html_view_source_document_test.cc` 是一个关键的测试文件，它确保了 Blink 引擎的“查看源代码”功能能够正确地格式化和呈现各种 HTML 结构，帮助开发者理解网页的原始代码，并辅助调试 HTML 相关的错误。它虽然不直接测试 Javascript 或 CSS 的执行，但通过验证 HTML 结构中 CSS 类的存在以及对 `<script>` 标签的处理，间接地与它们相关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_view_source_document_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -710,7 +712,4 @@ TEST_F(HTMLViewSourceDocumentTest, DOMParts) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

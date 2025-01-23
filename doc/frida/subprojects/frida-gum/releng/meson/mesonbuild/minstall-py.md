@@ -154,7 +154,7 @@ By following these steps, I can create a comprehensive and informative summary o
 
 总而言之，`minstall.py` 是 Frida 安装过程的关键组件，负责将构建的产物部署到最终的用户系统中。它涉及到文件操作、权限管理、符号链接处理以及与操作系统底层的交互。理解其功能有助于理解 Frida 的安装方式，并在遇到安装问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/minstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2014 The Meson development team
 
@@ -896,7 +898,4 @@ class Installer:
             fname = check_for_stampfile(t.fname)
             outdir = get_destdir_path(destdir, fullprefix, t.outdir)
             ou
-"""
-
-
 ```

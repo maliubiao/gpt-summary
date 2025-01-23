@@ -162,15 +162,17 @@ This section of `OutOfFlowLayoutPart::Layout` focuses on the core logic of calcu
 
 作为 `blink/renderer/core/layout/out_of_flow_layout_part.cc` 文件的第 4 部分，此代码段的核心功能是 **在分片容器的上下文中，负责对 out-of-flow (绝对定位和固定定位) 的元素进行布局计算和片段生成**。它处理了跨分片容器的布局，并确保 out-of-flow 元素能够按照 CSS 规则正确地定位和渲染在页面上。 它利用之前步骤计算的信息，并生成最终的布局结果，为后续的渲染和合成阶段做准备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/out_of_flow_layout_part.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tatic_position = static_position
                         .ConvertToPhysical({node_info.default_writing_direction,
                                             container_physical_content_size})
@@ -872,7 +874,4 @@ void OutOfFlowLayoutPart::ComputeStartFragmentIndexAndRelativeOffset(
       container_builder_->Node().IsPaginatedRoot()) {
     // If we're printing, and we have an OOF inside a clipped container, prevent
     // the start fragmentainer from precedin
-"""
-
-
 ```

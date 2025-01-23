@@ -164,7 +164,7 @@ void Verifier::Check(Node* node) {
 
 作为第 3 部分，你提供的代码片段集中展示了 `v8/src/compiler/verifier.cc`  在**操作码层面**的验证能力。 它通过一个庞大的 `switch` 语句，覆盖了 V8 编译器 IR 中大量的算术、逻辑、位运算、类型转换等操作码。 这部分代码负责检查这些基本操作的 IR 节点是否符合预期，包括操作数的类型、数量以及潜在的副作用等。  这体现了 `verifier.cc` 在确保编译器生成低级操作的正确性方面所起的重要作用。  结合前两部分（如果提供了），可以更全面地理解 `verifier.cc` 在整个编译流程中的验证职责。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/verifier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/verifier.cc以.tq结尾，那它是个v8 torque源代码，
@@ -172,8 +172,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Word32And:
     case IrOpcode::kWord32Or:
     case IrOpcode::kWord32Xor:
@@ -733,8 +735,4 @@ void Verifier::VerifyEdgeInputReplacement(const Edge& edge,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

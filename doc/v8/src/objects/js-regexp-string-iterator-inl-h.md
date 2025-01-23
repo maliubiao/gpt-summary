@@ -180,15 +180,17 @@ console.log(iterator.next()); // 输出 { value: undefined, done: true }
 
 总而言之，`v8/src/objects/js-regexp-string-iterator-inl.h` 文件是 V8 引擎中用于高效管理正则表达式字符串迭代器的关键部分，它通过内联函数提供了对迭代器内部状态的快速访问，并且其实现与 Torque 代码生成密切相关。理解这个文件有助于深入了解 JavaScript 正则表达式在 V8 引擎中的底层实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-regexp-string-iterator-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-regexp-string-iterator-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ BOOL_ACCESSORS(JSRegExpStringIterator, flags, unicode, UnicodeBit::kShift)
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_REGEXP_STRING_ITERATOR_INL_H_
-
-"""
-
 ```

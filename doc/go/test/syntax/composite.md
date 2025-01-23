@@ -152,15 +152,17 @@ func main() {
 
 在上面的错误示例中，`"Alice"` 后面缺少了逗号，这会导致编译器报错。添加逗号后，代码就能正确编译。  这种错误在初始化结构体、切片和映射时都可能发生。  Go编译器会提示 `possibly missing comma or }` ，帮助开发者定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/syntax/composite.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2012 The Go Authors. All rights reserved.
@@ -172,9 +174,4 @@ package main
 var a = []int{
 	3 // ERROR "need trailing comma before newline in composite literal|possibly missing comma or }"
 }
-
-"""
-
-
-
 ```

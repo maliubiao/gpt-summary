@@ -99,7 +99,7 @@ By following these steps, focusing on the context, analyzing the code, and conne
 
 因此，用户不会直接操作或编写这个 `c_test_one.c` 文件，它更像是 Frida 内部测试流程的一部分，用于确保 Frida 的 Vala 集成功能的正确性。  如果测试失败，开发者可能会查看这个文件来理解测试的预期行为，并排查 Vala 和 C 代码之间的互操作性问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/vala/20 genie multiple mixed sources/c_test_one.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,14 +107,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <glib.h>
 
 gboolean c_test_one_is_true (void) {
     return TRUE;
 }
-
-"""
-
 ```

@@ -159,15 +159,17 @@ func main() {
 
 总而言之，`go/test/closure3.go` 是 Go 编译器测试套件的一部分，专门用于验证编译器在处理包含闭包的函数时进行内联优化的正确性。它通过特定的编译指令来控制编译器的行为，并期望编译器能够在指定条件下内联闭包，从而提高性能。开发者可以通过分析 `-m` 标志的输出来理解编译器的内联决策。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/closure3.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheckandrundir -0 -m -d=inlfuncswithclosures=1
 
 //go:build !goexperiment.newinliner
@@ -180,9 +182,4 @@ Prompt:
 // that are expected to be inlined
 
 package ignored
-
-"""
-
-
-
 ```

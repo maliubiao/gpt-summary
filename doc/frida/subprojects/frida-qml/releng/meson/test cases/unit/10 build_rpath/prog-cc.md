@@ -130,7 +130,7 @@ By following these steps, we can systematically analyze the code and connect it 
 
 总而言之，这个简单的 `prog.cc` 文件虽然功能单一，但可以作为理解动态内存管理、逆向分析技术、底层系统知识以及常见编程错误的一个很好的起点和测试用例，尤其在结合 Frida 这样的动态 instrumentation 工具时，可以更直观地观察程序的运行时行为。其所处路径 `build_rpath` 也暗示了它在测试动态链接库加载路径方面的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/10 build_rpath/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <string>
 #include <iostream>
 
@@ -148,7 +150,4 @@ int main(int argc, char **argv) {
     delete s;
     return 0;
 }
-
-"""
-
 ```

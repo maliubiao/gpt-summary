@@ -116,7 +116,7 @@ inject_library(1234, "/path/to/library.so")
 ### 总结
 
 `session.vala` 文件实现了 Frida 的核心功能，包括进程管理、脚本注入、调试、信号处理等。它涉及到底层的系统调用和内核功能，特别是在进程注入和调试方面。通过 LLDB 或类似的调试工具，可以复刻部分功能，但需要注意权限和目标进程的状态。用户在使用时可能会遇到权限不足、目标进程不存在等常见错误，需要仔细检查操作步骤和权限设置。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/base/session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	[DBus (name = "re.frida.HostSession16")]
 	public interface HostSession : Object {
@@ -1142,7 +1144,4 @@ namespace Frida {
 		PROCESS_NOT_RESPONDING,
 		INVALID_ARGUMENT,
 		INVALI
-"""
-
-
 ```

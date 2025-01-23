@@ -269,7 +269,7 @@ To trace how execution reaches `s_erf.c`, you can use various debugging techniqu
 
 By understanding the structure of Android's libraries and the dynamic linking process, you can follow the chain of calls from your application code or framework components down to the specific implementations in `s_erf.c`.
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_erf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -279,8 +279,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -586,7 +588,4 @@ erfc(double x)
 #if (LDBL_MANT_DIG == 53)
 __weak_reference(erfc, erfcl);
 #endif
-
-"""
-
 ```

@@ -160,7 +160,7 @@ By following this thought process, we can generate a comprehensive answer that a
 
 总而言之，虽然 `file.c` 本身的代码非常简单，但它在 Frida 的测试和逆向工程的上下文中扮演着重要的角色。它可以作为理解 Frida 如何与目标程序交互、以及测试 Frida 核心功能的基石。其简单的结构也方便了开发者进行调试和验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/47 same file name/d1/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,10 +168,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1(void) { return 42; }
-
-"""
-
 ```

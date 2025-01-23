@@ -185,15 +185,17 @@ By following these steps, you can systematically analyze a source code file and 
 
 总而言之，`constant_source_handler.cc` 是 Web Audio API 中 `ConstantSourceNode` 功能的核心实现，负责生成恒定值的音频信号，并与 JavaScript API 紧密关联。理解其内部逻辑对于调试和深入理解 Web Audio API 的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/constant_source_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -332,7 +334,4 @@ base::WeakPtr<AudioScheduledSourceHandler> ConstantSourceHandler::AsWeakPtr() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

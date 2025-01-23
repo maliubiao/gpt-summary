@@ -66,7 +66,7 @@ Therefore, the main function of this part of the `pthread_test.cpp` file is to r
 
 总而言之，这部分代码是 `bionic/tests/pthread_test.cpp` 中专门用于测试 pthread 库中互斥锁和屏障功能的单元测试，旨在确保这些并发原语在 Android 系统中能够正确可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/pthread_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -78,8 +78,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 * main_stack_base;
   size_t main_stack_size;
   ASSERT_EQ(0, pthread_attr_getstack(&attr, &main_stack_base, &main_stack_size));
@@ -1043,7 +1045,4 @@ TEST(pthread, pthread_barrier_check_ordering) {
   }
   for (size_t i = 0; i < THREAD_COUNT; ++i) {
     ASSERT_EQ(0, pthread_join(threa
-"""
-
-
 ```

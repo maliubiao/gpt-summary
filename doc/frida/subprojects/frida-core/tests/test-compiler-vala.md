@@ -72,7 +72,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 如果测试在 iOS 设备上被跳过，用户可以检查是否启用了慢速模式。
 
 通过这些步骤和线索，用户可以逐步定位和解决测试过程中遇到的问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/test-compiler.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -81,8 +81,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida.CompilerTest {
 	public static void add_tests () {
 		GLib.Test.add_func ("/Compiler/Performance/build-simple-agent", () => {
@@ -230,7 +232,4 @@ namespace Frida.CompilerTest {
 		}
 	}
 }
-
-"""
-
 ```

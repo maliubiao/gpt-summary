@@ -87,9 +87,12 @@ This detailed thought process, starting with the obvious core goal and drilling 
 
 `kIsolateOffset` 和 `kIsolate` 很可能是定义在头文件中的常量字符串，分别代表 Isolate 对象地址偏移的符号名称和 Isolate 类型名称。
 
-Prompt: ```这是目录为v8/tools/v8windbg/src/cur-isolate.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/tools/v8windbg/src/cur-isolate.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -149,6 +152,4 @@ IFACEMETHODIMP CurrIsolateAlias::Call(IModelObject* p_context_object,
   *pp_result = sp_result.Detach();
   return S_OK;
 }
-
-"""
 ```

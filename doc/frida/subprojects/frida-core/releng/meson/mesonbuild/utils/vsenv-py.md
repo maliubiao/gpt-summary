@@ -145,7 +145,7 @@ This script has indirect but important connections to reverse engineering, parti
 
 Therefore, if a user encounters errors related to the Visual Studio environment during a Frida build on Windows, the `vsenv.py` script is a crucial point to investigate to understand how the environment was detected and configured. Debugging would involve checking if `vswhere.exe` is present, if Visual Studio is installed with the correct components, and if there are any conflicting environment variables.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/utils/vsenv.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import os
@@ -281,7 +283,4 @@ def setup_vsenv(force: bool = False) -> bool:
             raise
         mlog.warning('Failed to activate VS environment:', str(e))
         return False
-
-"""
-
 ```

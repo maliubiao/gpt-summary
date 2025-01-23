@@ -284,7 +284,7 @@ sys.stdin.read()
 
 通过 Frida hook，你可以动态地观察 Android 系统在处理音频请求时，是否以及如何使用了 `snd_ar_tokens.handroid` 中定义的常量，从而深入理解 Android 音频系统的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/sound/snd_ar_tokens.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -295,8 +295,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -389,7 +391,4 @@ enum ar_event_types {
 #define AR_TKN_U32_MODULE_LOG_TAP_POINT_ID 260
 #define AR_TKN_U32_MODULE_LOG_MODE 261
 #endif
-
-"""
-
 ```

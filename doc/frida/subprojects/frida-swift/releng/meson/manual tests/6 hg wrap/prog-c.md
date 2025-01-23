@@ -100,7 +100,7 @@ By following these steps, we can systematically analyze the provided code snippe
 
 总而言之，`prog.c` 是一个非常基础的 C 程序，其主要作用是作为 Frida 动态分析的一个测试目标。它展示了如何通过调用外部函数来组织代码，同时也引出了逆向工程中常见的需要动态分析的场景。通过分析这个简单的例子，可以学习如何使用 Frida 来理解和调试程序行为，即使在没有完整源代码的情况下也能进行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/manual tests/6 hg wrap/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,15 +108,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"subproj.h"
 
 int main(void) {
     subproj_function();
     return 0;
 }
-
-"""
-
 ```

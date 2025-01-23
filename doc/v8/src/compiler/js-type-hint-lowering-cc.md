@@ -147,15 +147,17 @@ flexibleAdd(true, false);  // 又变成了布尔值到数字的转换
 
 `v8/src/compiler/js-type-hint-lowering.cc` 是 V8 编译器中一个关键的组成部分，它通过利用 JavaScript 运行时的类型反馈信息，对代码进行投机性的优化，以提高执行效率。但这种优化依赖于类型使用的稳定性，不稳定的类型使用模式可能会导致性能下降。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-type-hint-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-type-hint-lowering.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -841,7 +843,4 @@ Node* JSTypeHintLowering::BuildDeoptIfFeedbackIsInsufficient(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

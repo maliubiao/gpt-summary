@@ -209,15 +209,17 @@ By following this structured approach, incorporating relevant details from the c
 
 `serial.cc` 中的代码是理解 Web Serial API 工作原理的关键入口点，可以帮助开发者理解权限管理、与浏览器进程的通信以及 `SerialPort` 对象的生命周期。通过查看这里的代码，结合浏览器提供的开发者工具，可以更深入地排查 Web Serial API 的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/serial/serial.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -604,7 +606,4 @@ void Serial::OnRequestPort(ScriptPromiseResolver<SerialPort>* resolver,
 }
 
 }  // namespace blink
-
-"""
-
 ```

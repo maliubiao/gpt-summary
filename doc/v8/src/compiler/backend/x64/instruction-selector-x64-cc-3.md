@@ -138,7 +138,7 @@ V8 的编译器可能会针对这种移位操作生成指令，但其行为在 C
 
 总的来说，这段代码是 V8 编译器后端的重要组成部分，它负责将高级的 IR 操作转化为底层的机器指令，并在此过程中进行各种优化，以提高 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/instruction-selector-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/instruction-selector-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r->MatchIntegralWord32Constant(shift.right(), 32)) {
     DCHECK_EQ(selector->GetEffectLevel(node),
               selector->GetEffectLevel(shift.left()));
@@ -1007,8 +1009,4 @@ bool InstructionSelectorT<TurbofanAdapter>::ZeroExtendsWord32ToWord64NoPhis(
     case IrOpcode::kWord32Rol:
     case IrOpcode::kWord32Ror:
     case IrOpcode::kWord32Equal:
-  
-"""
-
-
 ```

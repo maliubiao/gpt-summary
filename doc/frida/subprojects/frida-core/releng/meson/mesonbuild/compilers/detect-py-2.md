@@ -176,7 +176,7 @@ By following these steps, I can provide a comprehensive and informative answer t
 
 这段代码片段是 Frida 构建系统中负责 **检测目标系统所用编译器及其版本** 的关键部分。它通过解析编译器预定义的宏来获取版本信息，这对于 Frida 后续的动态插桩操作至关重要，因为它需要了解目标应用的 ABI、标准库实现以及编译器优化策略，以确保插桩的正确性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,9 +185,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    if not line:
+### 源代码
+```python
+if not line:
             continue
         d, *rest = line.split(' ', 2)
         if d != '#define':
@@ -212,8 +214,4 @@ def _get_lcc_version_from_defines(defines: T.Dict[str, str]) -> str:
     major = generation_and_major[1:]
     minor = defines.get('__LCC_MINOR__', '0')
     return dot.join((generation, major, minor))
-
-"""
-
-
 ```

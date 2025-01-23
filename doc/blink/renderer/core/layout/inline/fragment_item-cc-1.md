@@ -170,16 +170,18 @@ By following these steps, we can systematically analyze the code and generate a 
 
 总而言之，`blink/renderer/core/layout/inline/fragment_item.cc` 文件（特别是这部分代码）定义了 Blink 渲染引擎中处理内联布局的关键组件 `FragmentItem`，并实现了其核心功能，包括计算墨水溢出、获取光标位置、获取文本范围边界、获取局部矩形以及进行命中测试等。这些功能直接关系到网页上文本和内联元素的正确渲染和交互，并受到 HTML 结构和 CSS 样式的直接影响。理解 `FragmentItem` 的工作原理对于深入理解 Blink 渲染引擎的内联布局机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/fragment_item.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    // supported for SVG.
+### 源代码
+```cpp
+// supported for SVG.
       InlinePaintContext::ScopedInlineItem scoped_inline_item(*this,
                                                               inline_context);
       ink_overflow_type_ =
@@ -559,8 +561,4 @@ std::ostream& operator<<(std::ostream& ostream, const FragmentItem* item) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

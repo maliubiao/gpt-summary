@@ -93,11 +93,13 @@ myFunction(1, 2);
 
 `v8/src/maglev/x64/maglev-assembler-x64.cc` 文件是 Maglev 编译器在 x64 架构上的代码生成器，它提供了一组底层的汇编指令封装，用于实现 JavaScript 语言的各种功能，例如内存管理、字符串操作、类型转换和函数调用等。理解这个文件的功能有助于深入理解 V8 引擎的内部工作原理以及 JavaScript 代码是如何被高效执行的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/x64/maglev-assembler-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -689,7 +691,4 @@ void MaglevAssembler::MaybeEmitDeoptBuiltinsCall(size_t eager_deopt_count,
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

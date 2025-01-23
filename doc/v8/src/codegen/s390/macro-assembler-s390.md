@@ -138,12 +138,14 @@ done:
 
 总而言之，该文件是 V8 引擎在 S390 架构上执行 JavaScript 代码的关键组成部分，它负责将高级的 JavaScript 操作转化为底层的机器指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/macro-assembler-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2162,7 +2164,4 @@ void MacroAssembler::TryInlineTruncateDoubleToI(Register result,
 
   // Test for overflow
   TestIfInt32(result
-"""
-
-
 ```

@@ -138,7 +138,7 @@ console.log(myCounter()); // 输出 1
 
 这段代码主要针对 cppgc 中各种持久化指针的细节行为进行单元测试，涵盖了移动语义、元数据追踪、与垃圾回收的交互、线程安全性以及弱引用的特性。  它确保了 V8 内部的内存管理机制的正确性和健壮性，从而间接地保障了 JavaScript 程序的稳定运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/persistent-family-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc/persistent-family-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _loc.Function(), p2.Location().Function());
     EXPECT_STREQ(expected_loc.FileName(), p2.Location().FileName());
     EXPECT_EQ(expected_loc.Line(), p2.Location().Line());
@@ -339,8 +341,4 @@ TEST_F(PersistentDeathTest, CheckCreationThread) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
-
 ```

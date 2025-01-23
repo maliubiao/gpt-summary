@@ -161,7 +161,7 @@ In this `processDataBad` example, if `fetchDataAsync` throws an error or returns
 
 This specific part of `v8/src/execution/isolate.cc` focuses on **statically analyzing JavaScript bytecode within a stack frame to detect calls to the `.catch()` method of promises**. This analysis is likely part of V8's internal mechanisms for understanding promise handling, potentially for optimizing execution, improving error reporting for unhandled rejections, or debugging purposes. It allows V8 to introspect the code's structure and anticipate how promise rejections are being handled.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/isolate.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 alse;
     }
     // The register it stores to will be assumed to be our promise
@@ -1045,7 +1047,4 @@ void Isolate::CheckIsolateLayout() {
            Internals::kIsolateFastCCallCallerPcOffset);
   CHECK_EQ(static_cast<int>(OFFSET_OF(Isolate, isolate_data_.cage_base_)),
            Internals:
-"""
-
-
 ```

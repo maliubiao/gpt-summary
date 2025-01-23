@@ -136,7 +136,7 @@ Here's a breakdown of the thinking process to arrive at the comprehensive analys
 
 总而言之，这个 `main.cpp` 文件虽然简单，但它是 Frida 测试框架中一个关键的组成部分，用于验证 Frida 与使用了 Protocol Buffers 的程序的基本兼容性，并为更复杂的逆向和调试工作奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/5 protocol buffers/asubdir/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "defs.pb.h"
 
 int main(int argc, char **argv) {
@@ -155,7 +157,4 @@ int main(int argc, char **argv) {
     google::protobuf::ShutdownProtobufLibrary();
     return 0;
 }
-
-"""
-
 ```

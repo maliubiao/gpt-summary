@@ -171,14 +171,14 @@ let area = pi * radius * radius;
 
 总而言之，这部分 `assembler-x64.cc` 代码是 V8 引擎将 JavaScript 代码转化为可执行机器码的关键组成部分，提供了丰富的指令支持，涵盖了各种常见的计算、内存操作和控制流需求，并且针对性能优化，集成了 SIMD 和 FPU 指令的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/assembler-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-
+### 源代码
+```
 void Assembler::pushq(Operand src) {
   EnsureSpace ensure_space(this);
   emit_optional_rex_32(src);
@@ -2676,8 +2676,4 @@ bool RelocInfo::IsInConstantPool() { return false; }
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_X64
-
-"""
-
-
 ```

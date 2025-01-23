@@ -165,7 +165,7 @@ GOMEMLIMIT=2GiB go run myprogram.go
 
 `go/src/runtime/mem.go` 中的这部分代码是 Go 运行时内存管理的核心抽象层，它定义了一组用于在不同的内存状态之间转换的函数，并为 Go 的内存分配器提供了与操作系统交互的统一接口。普通 Go 开发者无需直接关心这些底层细节，但理解其功能有助于更深入地了解 Go 的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mem.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -173,8 +173,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -331,9 +333,4 @@ func sysMap(v unsafe.Pointer, n uintptr, sysStat *sysMemStat) {
 	sysStat.add(int64(n))
 	sysMapOS(v, n)
 }
-
-"""
-
-
-
 ```

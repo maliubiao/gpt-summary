@@ -138,11 +138,13 @@ Finally, I'll organize the information clearly, starting with the summary of the
 
 `bytecode-node-unittest.cc` 这个文件是 V8 引擎内部测试代码，用于确保 `BytecodeNode` 类能够正确地表示和处理字节码指令。虽然 JavaScript 开发者不需要直接了解这些细节，但理解字节码的概念有助于理解 JavaScript 代码是如何在底层被执行的。 每个 `BytecodeNode` 对象都对应着 JavaScript 代码编译后的一个基本操作步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/bytecode-node-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ TEST_F(BytecodeNodeTest, NoEqualityWithDifferentSourceInfo) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -116,7 +116,7 @@ By following these steps, constantly connecting the code back to the broader con
 
 总而言之，这个简单的 C 文件在一个更大的 Frida 项目的测试环境中，用于验证特定场景下的代码行为，特别关注动态链接、错误处理以及与外部函数的交互。对于逆向工程师来说，理解这类代码结构是分析和操控目标程序的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/155 subproject dir name collision/custom_subproject_dir/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 char func_c(void);
 
@@ -146,7 +148,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

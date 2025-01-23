@@ -98,12 +98,14 @@ When V8 executes this on a system using the LOONG64 simulator, the following hap
 
 In essence, the `simulator-loong64.cc` file (and the broader simulator framework) acts as a **software-based LOONG64 processor** that V8 can use to run JavaScript code compiled for that architecture, even when the underlying hardware is different. This is crucial for cross-platform compatibility and development workflows.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/loong64/simulator-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1968,7 +1970,4 @@ int16_t Simulator::ReadH(int64_t addr, Instruction* instr) {
   int16_t* ptr = reinterpret_cast<int16_t*>(addr);
   TraceMemRd(addr, static_cast<int64_t>(*ptr));
   return *p
-"""
-
-
 ```

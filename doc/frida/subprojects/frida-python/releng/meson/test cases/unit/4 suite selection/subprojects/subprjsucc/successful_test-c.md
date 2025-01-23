@@ -128,7 +128,7 @@ Frida 的 hook 机制可能需要在上述任何一个环节进行干预。例�
 
 总之，`successful_test.c` 虽然代码极其简单，但在 Frida 的测试体系中扮演着重要的角色，用于验证基础环境和测试框架的正确性。通过分析这个简单的文件，可以帮助理解 Frida 测试流程、涉及的底层概念以及可能出现的错误场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/4 suite selection/subprojects/subprjsucc/successful_test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,10 +136,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0 ; }
-
-"""
-
 ```

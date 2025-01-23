@@ -139,15 +139,17 @@ By following this detailed thinking process, which involves code analysis, conte
 
 总而言之，`EventLoopSocketFactory` 是 Chromium QUIC 库中一个关键的组件，负责创建与事件循环集成的客户端网络套接字，为基于 QUIC 的网络连接提供基础。虽然 JavaScript 代码不会直接调用它，但它在幕后支撑着浏览器中许多基于 QUIC 的网络操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/io/event_loop_socket_factory.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -195,7 +197,4 @@ EventLoopSocketFactory::CreateConnectingUdpClientSocket(
 }
 
 }  // namespace quic
-
-"""
-
 ```

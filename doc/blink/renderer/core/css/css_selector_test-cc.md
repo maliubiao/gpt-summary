@@ -161,15 +161,17 @@ By following this systematic process of reading the code, inferring purpose, con
 
 `css_selector_test.cc` 文件中测试的各种边界情况和复杂选择器，可以帮助开发者理解 CSS 选择器的内部工作原理，从而更好地进行调试。如果 Blink 引擎的这些测试都通过了，那么在正常情况下，浏览器对 CSS 选择器的处理应该是符合预期的。反之，如果这些测试失败，就意味着浏览器的 CSS 选择器实现存在 bug，可能会导致网页样式显示异常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_selector_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -610,7 +612,4 @@ TEST(CSSSelector, CheckHasArgumentMatchInShadowTreeFlag) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

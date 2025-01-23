@@ -213,15 +213,17 @@ By following this structured thought process and incorporating self-correction, 
 
 通过跟踪 `SimpleEntryOperation` 的生命周期和状态，可以帮助理解缓存系统的行为，并定位潜在的错误来源。 例如，如果在读取缓存时遇到了问题，可以检查是否正确创建了 `SimpleEntryOperation::ReadOperation`，其 `offset_` 和 `length_` 是否正确，以及读取到的数据是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_entry_operation.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -391,7 +393,4 @@ SimpleEntryOperation::SimpleEntryOperation(SimpleEntryImpl* entry,
       optimistic_(optimistic) {}
 
 }  // namespace disk_cache
-
-"""
-
 ```

@@ -226,7 +226,7 @@ if (Process.platform === 'android') {
 
 总结来说，`ns_hidden_child_internal.cpp` 虽然代码简单，但其存在是为了验证 Android Bionic 中关于命名空间隔离和隐藏符号的重要机制。理解它的作用需要了解 Android 的动态链接过程以及相关的 libc 函数。通过 Frida 等工具，可以深入观察这些底层机制的运行情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/ns_hidden_child_internal.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -237,8 +237,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2020 The Android Open Source Project
  * All rights reserved.
@@ -268,7 +270,4 @@ Prompt:
  */
 
 extern "C" void internal_function() {}
-
-"""
-
 ```

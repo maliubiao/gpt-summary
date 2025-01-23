@@ -125,14 +125,16 @@ This iterative process of scanning, analyzing key parts, identifying relationshi
 
 `overlay_interstitial_ad_detector.cc` 是 Blink 引擎中一个重要的组件，用于识别并阻止网页中侵入式的覆盖式广告，提升用户浏览体验。它依赖于对 HTML 结构和 CSS 样式的分析，并结合一些启发式规则来判断元素是否为广告。 理解其工作原理有助于开发者避免因误用 CSS 或 JavaScript 而导致非广告内容被误判，也有助于浏览器更准确地识别真正的恶意广告。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/overlay_interstitial_ad_detector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -369,7 +371,4 @@ void OverlayInterstitialAdDetector::OnPopupDetected(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -128,7 +128,7 @@ Initially, I might have focused too much on the simple printing aspect. However,
 
 总之，这个简单的 `main.c` 文件是 Frida 项目中一个用于测试链接器行为的用例，特别是关于强制链接的场景。它虽然代码简单，但触及了逆向工程中关于理解程序结构和依赖关系的关键概念，并与二进制底层和构建过程紧密相关。 作为调试线索，它可以帮助开发者验证 Frida 在处理不同链接场景下的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/13 pch/linkwhole/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 void func1();
@@ -147,7 +149,4 @@ int main(int argc, char **argv) {
     func1();
     return 0;
 }
-
-"""
-
 ```

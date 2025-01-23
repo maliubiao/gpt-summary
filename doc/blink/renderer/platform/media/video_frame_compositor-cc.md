@@ -130,14 +130,16 @@ This iterative process of examining the code, understanding its context within t
 
 总而言之，`VideoFrameCompositor` 是 Blink 渲染引擎中一个核心的视频处理组件，它隐藏了许多复杂的底层操作，确保视频帧能够高效、正确地渲染到屏幕上。虽然开发者通常不需要直接与此类交互，但理解其功能有助于理解 Web 浏览器如何处理视频内容，并可以帮助诊断与视频渲染相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/video_frame_compositor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -641,7 +643,4 @@ void VideoFrameCompositor::OnContextLost() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

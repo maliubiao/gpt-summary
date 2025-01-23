@@ -154,7 +154,7 @@ A user would interact with this code indirectly through Frida's build system. He
 
 If a developer encounters an error related to D code generation within the Frida CLR build, examining this file and the Meson build scripts that use it would be a crucial step in understanding and resolving the problem. They might need to verify if the correct template is being used, if the necessary variables are being passed correctly, or if there are any errors in the templates themselves.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/templates/dlangtemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -273,7 +275,4 @@ class DlangProject(FileImpl):
         kwargs = super().lib_kwargs()
         kwargs['module_file'] = self.lowercase_token
         return kwargs
-
-"""
-
 ```

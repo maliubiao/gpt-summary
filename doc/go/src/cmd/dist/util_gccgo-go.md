@@ -123,15 +123,17 @@ func main() {
 
 `go/src/cmd/dist/util_gccgo.go` 中的这些空函数是构建系统用来配置 `gccgo` 编译器的标志。 它们的存在与否，取决于构建目标架构和需要支持的特性。  普通 Go 开发者无需关心这些细节，但对于 Go 工具链的维护者来说，理解它们的作用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/dist/util_gccgo.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -145,9 +147,4 @@ func useVFPv1() {}
 func useVFPv3() {}
 
 func useARMv6K() {}
-
-"""
-
-
-
 ```

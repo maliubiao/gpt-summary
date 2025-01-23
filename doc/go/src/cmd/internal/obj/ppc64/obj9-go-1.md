@@ -98,7 +98,7 @@ func main() {
 
 简而言之，`obj9.go` 是 Go 编译器中负责将 Go 代码翻译成 PPC64 机器码的关键组成部分，它深入到了目标架构的细节，并实现了 Go 运行时的核心特性，例如自动栈扩容。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/ppc64/obj9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -107,10 +107,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-			// See the call to morestack for why these are
+### 源代码
+```go
+// See the call to morestack for why these are
 			// complicated to support.
 			c.ctxt.Diag("maymorestack with -shared or -dynlink is not supported")
 		}
@@ -452,10 +453,4 @@ var Linkppc64le = obj.LinkArch{
 	UnaryDst:       unaryDst,
 	DWARFRegisters: PPC64DWARFRegisters,
 }
-
-"""
-
-
-
-
 ```

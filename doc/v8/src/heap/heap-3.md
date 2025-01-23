@@ -133,12 +133,14 @@ registry.register(obj2, "obj2");
 
 **总结来说，这个代码片段是 V8 引擎核心的内存管理和垃圾回收机制的重要组成部分，它负责监控堆的状态，做出关键的内存分配和 GC 决策，并直接影响着 JavaScript 代码的内存使用和性能。** 这部分代码偏向于 **查询状态和决策判断**，而不是实际的内存分配或垃圾回收的具体执行过程，那些部分可能在其他文件中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 space()->SizeOfObjects();
   return total;
 }
@@ -2001,7 +2003,4 @@ std::vector<Tagged<WeakArrayList>> Heap::FindAllRetainedMaps() {
   Tagged<Object> context = native_contexts_list();
   while (!IsUndefined(context, isolate())) {
     Tagged<NativeContext> native_context = Cast<NativeC
-"""
-
-
 ```

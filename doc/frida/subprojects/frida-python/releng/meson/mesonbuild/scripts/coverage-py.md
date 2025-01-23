@@ -187,7 +187,7 @@ python coverage.py --html /path/to/frida /path/to/frida/subprojects/frida-python
 
 总而言之，`coverage.py` 是 Frida 项目中一个用于生成代码覆盖率报告的关键脚本，它通过集成各种覆盖率工具，帮助开发者和逆向工程师理解代码的执行情况，发现潜在问题，并验证分析结果。理解其功能和工作原理，有助于排查与代码覆盖率相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/scripts/coverage.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017 The Meson development team
 
@@ -411,7 +413,4 @@ def run(args: T.List[str]) -> int:
 
 if __name__ == '__main__':
     sys.exit(run(sys.argv[1:]))
-
-"""
-
 ```

@@ -132,7 +132,7 @@ Here's a breakdown of the thought process:
 
 总而言之，`net/url_request/url_request_unittest.cc` 是一个至关重要的测试文件，它确保了 `URLRequest` 类的各种功能正常运行，这对于保障 Chromium 浏览器的网络功能的稳定性和可靠性至关重要，并且间接地影响着 JavaScript 网络 API 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1015,7 +1017,4 @@ TEST_F(URLRequestTest, RecordsReferrerHistogramAgainOnRedirect) {
       context->CreateRequest(GURL("http://google.com/"), DEFAULT_PRIORITY, &d,
                              TRAFFIC_ANNOTATION_FOR_TESTS));
   req->SetReferrer("http://
-"""
-
-
 ```

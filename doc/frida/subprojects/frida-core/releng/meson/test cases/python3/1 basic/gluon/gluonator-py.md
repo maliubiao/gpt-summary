@@ -104,7 +104,7 @@ By following this process, we move from a superficial understanding of the code 
 
 总而言之，`gluonator.py` 本身是一个非常简单的函数，它的价值在于作为 Frida 核心功能测试的一个基础单元。它的简单性使得测试框架能够专注于验证 Frida 的进程注入、远程调用和返回值接收等核心机制是否正常工作。尽管用户通常不会直接与之交互，但它可以作为 Frida 内部调试和理解其工作原理的一个切入点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/python3/1 basic/gluon/gluonator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,11 +112,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 def gluoninate():
     return 42
-
-"""
-
 ```

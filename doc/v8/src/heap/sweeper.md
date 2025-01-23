@@ -117,11 +117,13 @@ objects.obj1 = null;
 
 `sweeper.cc` 中实现的 `Sweeper` 类是 V8 引擎垃圾回收机制中负责回收不再使用的内存的关键组件。它通过并发的方式，高效地管理堆内存，使得 JavaScript 开发者无需手动管理内存，从而专注于业务逻辑的开发。垃圾回收机制保证了 JavaScript 程序的稳定运行，避免了内存泄漏等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/sweeper.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1683,7 +1685,4 @@ bool Sweeper::HasUnsweptPagesForMajorSweeping() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

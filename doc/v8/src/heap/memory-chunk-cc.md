@@ -224,15 +224,17 @@ void MemoryChunk::SetOldGenerationPageFlags(MarkingMode marking_mode,
 
 `v8/src/heap/memory-chunk.cc` 是 V8 堆内存管理的核心，它定义了 `MemoryChunk` 类，负责表示、管理内存块及其元数据和状态，并与垃圾回收器紧密协作。理解这个文件的功能有助于深入理解 V8 的内存管理机制，并帮助开发者编写更高效、更健壮的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/memory-chunk.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/memory-chunk.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -527,7 +529,4 @@ bool MemoryChunk::SandboxSafeInReadOnlySpace() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

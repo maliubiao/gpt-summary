@@ -86,12 +86,14 @@ run();
 
 总而言之，`gc-tracer.cc` 是 V8 内部用于详细记录垃圾回收行为的关键组件，它与 JavaScript 的性能息息相关，通过监控 GC 指标，可以帮助我们更好地理解和优化 JavaScript 代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/gc-tracer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 _us;
 
     if (total_duration_since_last_mark_compact_.IsZero()) {
@@ -423,8 +425,4 @@ bool GCTracer::IsSweepingInProgress() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

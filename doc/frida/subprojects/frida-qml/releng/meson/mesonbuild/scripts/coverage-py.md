@@ -194,7 +194,7 @@ python coverage.py --html --use-llvm-cov source_root subproject_root build_root 
 
 总而言之，`coverage.py` 是 Frida 构建系统中一个重要的工具，它利用成熟的覆盖率分析工具链，为开发者提供代码覆盖率信息，这对于代码质量保证、测试和逆向分析都非常有价值。 了解其功能和背后的原理，有助于理解 Frida 的构建过程，并在遇到问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/scripts/coverage.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -202,8 +202,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017 The Meson development team
 
@@ -418,7 +420,4 @@ def run(args: T.List[str]) -> int:
 
 if __name__ == '__main__':
     sys.exit(run(sys.argv[1:]))
-
-"""
-
 ```

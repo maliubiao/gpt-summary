@@ -168,7 +168,7 @@ Interceptor.attach(Module.findExportByName(null, "func12"), {
 
 总而言之，这个简单的 `func12.c` 文件在一个精心设计的 Frida 测试环境中扮演着一个基本的测试单元的角色，用于验证 Frida 在处理静态链接代码时的动态插桩能力。开发者或逆向工程师可能会因为需要理解或调试 Frida 的相关功能而接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/66 static link/lib/func12.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func10();
 int func11();
 
@@ -185,7 +187,4 @@ int func12()
 {
   return func10() + func11();
 }
-
-"""
-
 ```

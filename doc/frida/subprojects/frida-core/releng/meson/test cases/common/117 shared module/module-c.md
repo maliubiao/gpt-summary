@@ -106,7 +106,7 @@ Organize the analysis into clear sections (Functionality, Reverse Engineering, B
 
 总而言之，这个 C 源代码文件是一个用于测试 Frida 功能的共享库，它演示了如何在运行时动态查找和调用函数，并处理了跨平台差异。对于逆向工程师来说，理解这种动态符号解析机制以及如何使用 Frida 与之交互是非常重要的。同时，它也展示了一些底层的操作系统概念和潜在的用户错误，这些都是在进行动态 instrumentation 和逆向分析时需要考虑的因素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/117 shared module/module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -212,7 +214,4 @@ int DLL_PUBLIC func(void) {
     return func_from_language_runtime();
 }
 #endif
-
-"""
-
 ```

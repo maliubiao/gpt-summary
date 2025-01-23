@@ -128,7 +128,7 @@ This iterative process of scanning, analyzing, connecting, and organizing allowe
 
 总而言之，`frida/subprojects/frida-clr/releng/meson/mesonbuild/cmake/traceparser.py` 的第一部分主要负责从 CMake 的跟踪日志中提取关键的构建信息，包括变量、目标、缓存和自定义命令等，为 Frida 进一步分析和利用目标进程的构建上下文提供了基础。它支持不同的 CMake 跟踪格式，并具备一定的错误处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/cmake/traceparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -935,7 +937,4 @@ class CMakeTraceParser:
                 # File detected
                 curr_str = f'{curr_str} {i}'
                 fixed_list +=
-"""
-
-
 ```

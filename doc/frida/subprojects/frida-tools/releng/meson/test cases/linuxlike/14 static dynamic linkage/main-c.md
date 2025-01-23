@@ -149,7 +149,7 @@ By following these steps, we can comprehensively analyze the simple C code snipp
 
 这个简单的 `main.c` 文件虽然代码量很少，但它很好地展示了程序对外部库的依赖以及静态和动态链接的概念，这些都是逆向分析、二进制安全和系统编程中的重要基础知识。在 Frida 的上下文中，这个文件作为一个测试用例，用于验证 Frida 工具在处理不同链接方式程序时的正确性。理解这个文件的功能和背后的概念，有助于理解 Frida 的工作原理和应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/linuxlike/14 static dynamic linkage/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "stdio.h"
 #include "zlib.h"
 
@@ -166,7 +168,4 @@ int main(void) {
     printf("%s\n", zlibVersion());
     return 0;
 }
-
-"""
-
 ```

@@ -155,15 +155,17 @@ Initially, I might focus too much on the low-level details of offsets and conver
 
 这段 `FragmentBuilder` 的代码主要负责处理布局过程中与 Out-of-Flow 定位元素相关的复杂逻辑，包括确定它们的包含块、计算偏移量，以及处理与分栏布局和裁剪相关的场景。它确保了这些元素能够在最终渲染时被放置在正确的位置。理解 `FragmentBuilder` 的工作原理有助于开发者更好地理解浏览器如何处理复杂的 CSS 布局，并避免常见的布局错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/fragment_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (
                   fixedpos_containing_block_offset,
                   fixedpos_containing_block_rel_offset,
@@ -429,8 +431,4 @@ String FragmentBuilder::ToString() const {
 #endif
 
 }  // namespace blink
-
-"""
-
-
 ```

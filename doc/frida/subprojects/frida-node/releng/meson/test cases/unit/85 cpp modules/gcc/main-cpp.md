@@ -112,7 +112,7 @@ extern "C" int func0() {
 
 总而言之，这个 `main.cpp` 文件虽然简单，但它可以作为理解 Frida 如何处理 C++ 模块、以及如何进行基本的逆向分析和调试的一个起点。它也暴露了一些常见的编程和使用错误，以及与底层操作系统概念的联系。用户查看此类测试用例通常是为了诊断和解决在使用 Frida 进行动态分析时遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/85 cpp modules/gcc/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 import M0;
 #include<cstdio>
 
@@ -129,7 +131,4 @@ int main() {
     printf("The value is %d", func0());
     return 0;
 }
-
-"""
-
 ```

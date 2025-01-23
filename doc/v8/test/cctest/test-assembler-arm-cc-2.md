@@ -136,7 +136,7 @@ __ vzip(Neon8, d0, d1);
 
 总而言之，这部分代码（第 3 部分）专注于测试 V8 引擎在 ARM 架构下对 **NEON 数据重排指令** 的汇编代码生成和执行的正确性。它涵盖了 `vzip`、`vuzp`、`vtrn`、`vrev` 以及查表指令 `vtbl` 和 `vtbx`。 这些指令对于优化涉及数据重新排列和查找的算法至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -144,9 +144,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
- NeonListOperand(q1), NeonMemOperand(r4));
+### 源代码
+```cpp
+NeonListOperand(q1), NeonMemOperand(r4));
 
     // vzip (d-register).
     __ vldr(d2, r0, offsetof(T, lane_test));
@@ -1095,7 +1097,4 @@ TEST(code_relative_offset) {
   __ add(r0, r0, Operand(11));
 
   __ ldm
-"""
-
-
 ```

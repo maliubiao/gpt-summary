@@ -159,7 +159,7 @@ if (c === 0.3) {
 
 总而言之，`v8/test/cctest/test-assembler-arm.cc` 的第 1 部分是一个针对 V8 引擎 ARM 汇编器的综合性测试套件的开始。它通过一系列独立的测试用例，覆盖了 ARM 架构中常见的指令和特性，旨在确保 V8 能够生成正确且高效的 ARM 机器码，从而保证 JavaScript 代码在 ARM 平台上能够正确执行。它不涉及 Torque 源代码，而是直接使用 C++ 和汇编器 API 进行测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,8 +167,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1375,7 +1377,4 @@ TEST(14) {
   CHECK_EQ(ex, t.field[1]);       \
   CHECK_EQ(ex, t.field[2]);       \
   CHECK_EQ(ex
-"""
-
-
 ```

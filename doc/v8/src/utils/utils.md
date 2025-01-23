@@ -138,11 +138,13 @@ V8 引擎在执行 JavaScript 代码时，当遇到需要将数字转换为布�
 
 `v8/src/utils/utils.cc` 文件是一个包含各种底层实用工具函数的集合，服务于 V8 引擎的内部实现。虽然大部分功能对 JavaScript 开发者是不可见的，但像 `DoubleToBoolean` 这样的函数体现了 V8 如何在 C++ 层面上实现与 JavaScript 语言特性相符的行为，确保了 JavaScript 引擎的正确性和一致性。该文件是 V8 引擎幕后工作的基石之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -423,7 +425,4 @@ bool PassesFilter(base::Vector<const char> name,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

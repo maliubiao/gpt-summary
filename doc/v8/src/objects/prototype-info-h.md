@@ -199,15 +199,17 @@ This header file, `v8/src/objects/prototype-info.h`, defines data structures and
 
 **In summary, `v8/src/objects/prototype-info.h` defines crucial data structures and functions for managing prototype-related metadata within the V8 JavaScript engine. It plays a vital role in optimizing object creation, property lookups, and the overall performance of JavaScript code by efficiently handling prototype inheritance.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/prototype-info.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/prototype-info.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -310,7 +312,4 @@ class V8_EXPORT_PRIVATE PrototypeUsers : public WeakArrayList {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_PROTOTYPE_INFO_H_
-
-"""
-
 ```

@@ -115,7 +115,7 @@ console.log(result === maxInt + 1); // 可能会输出 false，因为精度问�
 
 `v8/src/codegen/arm64/assembler-arm64-inl.h` 的这一部分定义了一组底层的内联函数，用于将 ARM64 指令的操作数编码到指令的二进制表示中。这些函数是 V8 引擎将 JavaScript 代码转换为高效机器码的关键组成部分。 它们通过位操作和类型检查来确保生成的指令符合 ARM64 架构规范。 用户虽然不会直接调用这些函数，但 V8 的正确性直接影响到 JavaScript 代码的执行结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/assembler-arm64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/assembler-arm64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -123,8 +123,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 4);
   return left_shift << ImmExtendShift_offset;
 }
@@ -226,8 +228,4 @@ EnsureSpace::EnsureSpace(Assembler* assembler) : block_pools_scope_(assembler) {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_ARM64_ASSEMBLER_ARM64_INL_H_
-
-"""
-
-
 ```

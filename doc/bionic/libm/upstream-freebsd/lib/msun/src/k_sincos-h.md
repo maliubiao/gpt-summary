@@ -344,7 +344,7 @@ Here's a possible call stack showing how a call to `sin` or `cos` from the Andro
 
 In summary, `k_sincos.handroid` is a crucial low-level component of Android's math library, providing highly optimized calculations for sine and cosine of small angles. It's indirectly used by a vast range of Android functionalities and applications through higher-level `sin` and `cos` functions. Understanding its role is important for both performance optimization and debugging within the Android ecosystem.
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/k_sincos.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -354,8 +354,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -405,7 +407,4 @@ __kernel_sincos(double x, double y, int iy, double *sn, double *cs)
 	w = 1 - hz;
 	*cs = w + (((1 - w) - hz) + (z * r - x * y));
 }
-
-"""
-
 ```

@@ -96,7 +96,7 @@ int main() {
 
 `cmModInc1.cpp` 作为一个测试用例文件，其功能看似简单，但它在确保 Frida 能够正确处理 C++ 代码的构建和交互方面起着重要作用。通过分析这类测试用例，开发者可以更好地理解 Frida 的内部工作原理，并排查在使用过程中可能遇到的问题。它与逆向分析的关联在于，它测试了用于逆向分析的工具（Frida）的核心功能。 它也间接涉及了二进制底层、操作系统和构建系统的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/18 skip include files/subprojects/cmMod/fakeInc/cmModInc1.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifndef MESON_INCLUDE_IMPL
 #error "MESON_INCLUDE_IMPL is not defined"
 #endif // !MESON_INCLUDE_IMPL
@@ -113,7 +115,4 @@ Prompt:
 cmModClass::cmModClass(string foo) {
   str = foo + " World";
 }
-
-"""
-
 ```

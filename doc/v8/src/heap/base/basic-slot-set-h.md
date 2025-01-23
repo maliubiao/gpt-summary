@@ -149,15 +149,17 @@ obj2.ref = null; // 解除引用
 
 `v8/src/heap/base/basic-slot-set.h` 定义了一个用于高效管理内存槽位的数据结构，它是 V8 垃圾回收机制的关键组成部分。虽然 JavaScript 开发者不直接操作它，但理解其功能有助于理解 V8 的内存管理方式以及如何编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/basic-slot-set.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/base/basic-slot-set.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -638,7 +640,4 @@ class BasicSlotSet {
 }  // namespace heap
 
 #endif  // V8_HEAP_BASE_BASIC_SLOT_SET_H_
-
-"""
-
 ```

@@ -182,7 +182,7 @@ python generator.py my_utils /tmp/output_dir
 
 总而言之，`generator.py` 是 Frida 构建系统中的一个辅助工具，用于自动化生成一些基础代码文件，简化开发和测试流程。它本身不直接进行逆向分析，但为 Frida 框架的构建和使用提供了支持，而 Frida 则是逆向工程中不可或缺的工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/140 custom target multiple outputs/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -206,7 +208,4 @@ with open(os.path.join(odir, name + '.h'), 'w') as f:
     f.write('int func();\n')
 with open(os.path.join(odir, name + '.sh'), 'w') as f:
     f.write('#!/bin/bash')
-
-"""
-
 ```

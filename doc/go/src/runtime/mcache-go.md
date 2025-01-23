@@ -144,7 +144,7 @@ func main() {
 
 `mcache` 是 Go 语言运行时中一个关键的优化组件，它通过为每个 P 提供本地的小对象缓存，极大地提升了小对象分配的效率，降低了锁竞争，是 Go 并发性能的重要保障。 开发者无需直接操作它，但理解其原理有助于更好地理解 Go 的内存管理和性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mcache.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -152,8 +152,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -486,9 +488,4 @@ func (c *mcache) prepareForSweep() {
 	stackcache_clear(c)
 	c.flushGen.Store(mheap_.sweepgen) // Synchronizes with gcStart
 }
-
-"""
-
-
-
 ```

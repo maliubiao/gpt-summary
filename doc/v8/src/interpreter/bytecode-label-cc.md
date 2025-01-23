@@ -138,15 +138,17 @@ L2:  // 标签 L2：else 块
 
 `v8/src/interpreter/bytecode-label.cc` 是 V8 解释器中用于管理字节码标签的关键组件。它提供了一种创建和绑定标签的机制，这些标签对于在生成的字节码中实现各种控制流至关重要。虽然开发者不会直接修改这个文件，但理解它的作用有助于理解 V8 如何执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-label.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-label.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ void BytecodeLabels::Bind(BytecodeArrayBuilder* builder) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -118,7 +118,7 @@ To fulfill this request, I need to:
 
 此时，开发者可以使用 Chromium 的开发者工具，例如 "Layers" 面板，来查看 PaintLayer 的结构和裁剪矩形，并结合断点调试 `blink/renderer/core/paint/cull_rect_updater.cc` 文件中的代码，来分析裁剪矩形是如何计算和更新的，从而找到问题的根源。这些测试用例正是为了确保这些核心逻辑的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/cull_rect_updater_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lementId("clip");
   auto& scroller = *GetPaintLayerByElementId("scroller");
   EXPECT_EQ(gfx::Rect(0, 0, 800, 600), GetCullRect(clip).Rect());
@@ -469,8 +471,4 @@ TEST_F(CullRectUpdateOnPaintPropertyChangeTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

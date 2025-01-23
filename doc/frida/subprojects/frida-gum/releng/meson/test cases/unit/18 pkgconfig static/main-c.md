@@ -206,7 +206,7 @@ Frida 提供了 API 来完成这些操作，例如 `Process.findModuleByName("li
 
 通过以上步骤，开发者可以利用这个简单的 `main.c` 文件作为起点，学习和测试 Frida 的基本功能，为更复杂的逆向工程任务打下基础。这个简单的例子可以帮助他们理解 Hook 的原理、如何定位目标函数、以及如何修改函数的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/18 pkgconfig static/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -214,8 +214,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <foo.h>
 #include <stdio.h>
 
@@ -230,7 +232,4 @@ main (int argc, char * argv[])
     printf ("IT'S OVER 9000!!!\n");
     return 0;
 }
-
-"""
-
 ```

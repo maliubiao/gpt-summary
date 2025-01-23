@@ -99,14 +99,16 @@ Essentially, it's a process of understanding the context, dissecting the code st
 
 总而言之，`blink_storage_key_test.cc` 是一个关键的测试文件，它确保了 Blink 引擎中用于管理存储隔离的核心概念 `BlinkStorageKey` 的正确性和一致性，这对于维护 Web 平台的安全性和功能性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/storage/blink_storage_key_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -677,7 +679,4 @@ TEST(BlinkStorageKeyTest, WithOrigin) {
   }
 }
 }  // namespace blink
-
-"""
-
 ```

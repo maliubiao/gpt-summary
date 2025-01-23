@@ -132,7 +132,7 @@ Finally, the information is organized into logical sections with clear headings 
 
 总而言之，`best.c` 作为一个极其简单的 C 文件，在 Frida 的项目中扮演着重要的测试角色。它简洁明了，方便开发者验证 Frida 处理静态链接库和基本代码执行的能力，同时也为理解 Frida 的内部机制提供了一个清晰的入口点。对于最终用户而言，他们通常不会直接接触这个文件，而是通过 Frida 提供的更高级的 API 和工具来间接利用其功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/16 prebuilt static/libdir/best.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,12 +140,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 const char *msg() {
     return "I am the best.";
 }
-
-"""
-
 ```

@@ -53,7 +53,7 @@ Based on this analysis, the primary focus of this code snippet is to provide fun
 
 总的来说，这段代码是 Go 语言 `reflect` 包中关于类型反射的核心组成部分，它提供了检查和动态创建类型的功能，特别是针对结构体类型的字段访问和操作。它依赖于底层的运行时类型信息 (`abi.Type`)，并使用了缓存来提高性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/type.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -62,8 +62,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ponding to index.
 func (t *structType) FieldByIndex(index []int) (f StructField) {
 	f.Type = toType(&t.Type)
@@ -1215,9 +1217,4 @@ func StructOf(fields []StructField) Type {
 						panic("reflect: embedded type with methods not implemented if type is not first field")
 					}
 					if len(fields) > 1 && ft.
-"""
-
-
-
-
 ```

@@ -95,7 +95,7 @@ By following this thought process, the generated answer accurately describes the
 
 第 1 部分主要定义了 `QuicFramer` 类的基础结构和用于处理 QUIC 帧和数据包头部的基本常量和辅助函数。 它为后续的帧的序列化、反序列化和错误处理奠定了基础。  简单来说，它定义了 QUIC 协议数据包的基本组成元素和解析规则。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -987,8 +989,5 @@ size_t QuicFramer::BuildDataPacket(const QuicPacketHeader& header,
   size_t length_field_offset = 0;
   if (!AppendIetfPacketHeader(header, &writer, &length_field_offset)) {
     QUIC_BUG(quic_bug_10850_16) << "AppendPacketHeader failed";
-    return 
-"""
-
-
+    return
 ```

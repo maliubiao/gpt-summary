@@ -149,7 +149,7 @@ console.log(rightShiftResult); // 输出: 2251799813685247n
 
 `v8/src/objects/bigint.cc` 的这一部分代码实现了 BigInt 对象的左移和右移操作。`LeftShift` 函数执行左移，`RightShiftResultLength` 负责计算右移结果的长度，而 `MutableBigInt_RightShiftAndCanonicalize` 执行右移并进行规范化。这些功能直接对应于 JavaScript 中 `BigInt` 类型的 `<<` 和 `>>` 操作符。理解这部分代码有助于理解 JavaScript 中 BigInt 位运算的底层实现和潜在的性能考虑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/bigint.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/bigint.cc以.tq结尾，那它是个v8 torque源代码，
@@ -157,9 +157,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- Cast<MutableBigInt>(Tagged<Object>(result_addr));
+### 源代码
+```cpp
+Cast<MutableBigInt>(Tagged<Object>(result_addr));
 
   bigint::LeftShift(result->rw_digits(), x->digits(), shift);
   MutableBigInt::Canonicalize(result);
@@ -193,8 +195,4 @@ void MutableBigInt_RightShiftAndCanonicalize(Address result_addr,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

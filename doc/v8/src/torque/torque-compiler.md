@@ -133,11 +133,13 @@ namespace runtime {
 
 `torque-compiler.cc` 是 V8 引擎中至关重要的一个组件，它负责将用于定义引擎内部行为的 Torque 语言编译成 C++ 代码，从而使得 V8 能够高效地执行 JavaScript 代码。它连接了高级的 JavaScript 语法和底层的 C++ 实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/torque-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -339,7 +341,4 @@ TorqueCompilerResult CompileTorqueForKythe(
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

@@ -97,12 +97,14 @@ console.log(result.toString(2)); // 输出: 10001000
 
 总而言之，这部分 C++ 代码通过编写测试用例来验证 V8 引擎在生成 MIPS64 机器码时，能够正确地使用 MSA 指令来实现各种浮点和向量操作，从而确保 JavaScript 代码在 MIPS64 架构上高效且正确地执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 alizeVM();
 
   const float inf_float = std::numeric_limits<float>::infinity();
@@ -1737,8 +1739,5 @@ TEST(MSA_3R_instructions) {
       T ws_op = static_cast<T>((ws[i] >> shift) & mask);                     \
       T wd_op = static_cast<T>((wd[i] >> shift) & mask);                     \
       T shift_op = static_cast<T>(((wt[i] >> shift) & mask) % size_in_bits); \
-      int64_t bits = shift_op + 1;           
-"""
-
-
+      int64_t bits = shift_op + 1;
 ```

@@ -102,7 +102,7 @@ console.log(locale.getNumberingSystem()); // 输出 "arab"
 
 `v8/src/objects/intl-objects.cc` 文件是 V8 引擎中实现 JavaScript 国际化 (Intl) API 核心功能的 C++ 源代码。它负责处理字符串大小写转换、语言标签规范化、区域设置管理以及与 ICU 库的交互，为 JavaScript 开发者提供了强大的国际化能力。该文件不是 Torque 源代码。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/intl-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/intl-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -110,8 +110,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -961,7 +963,4 @@ Maybe<std::vector<std::string>> Intl::CanonicalizeLocaleList(
     // 7a. Let Pk be ToString(k).
     // 7b. Let kPresent be ? HasProperty(O, Pk).
     Lo
-"""
-
-
 ```

@@ -105,7 +105,7 @@ Here's a thinking process to arrive at the analysis of the `baz.py` file:
 
 总而言之，`baz.py` 文件本身功能简单，主要是作为 Frida 安装测试的一部分，验证模块结构的正确性。它的存在对于确保 Frida 的核心功能能够正常运行至关重要，虽然用户通常不会直接操作它，但在安装、测试或开发 Frida 时，它可能会成为调试过程中的一个线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/252 install data structured/pysrc/submod/baz.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,10 +113,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''mod.submod.baz module'''
-
-"""
-
 ```

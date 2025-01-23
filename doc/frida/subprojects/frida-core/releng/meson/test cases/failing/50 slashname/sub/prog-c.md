@@ -136,7 +136,7 @@ With these points in mind, I can structure the answer to address each part of th
 
 `prog.c` 作为一个简单的、故意失败的测试用例，其核心功能是打印一条消息并返回一个错误码。它的存在是为了验证Frida在特定情况下的行为，例如当代码不应该被执行或者程序返回错误时，Frida能否正确地处理和报告这些情况。它体现了Frida作为动态插桩工具在二进制层面、进程管理和系统调用方面的能力，并能帮助开发者避免在Frida开发过程中出现与错误处理相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/50 slashname/sub/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,15 +144,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
     printf("I should not be run ever.\n");
     return 1;
 }
-
-"""
-
 ```

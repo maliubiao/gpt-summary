@@ -286,7 +286,7 @@ if __name__ == "__main__":
 
 总结来说，`bionic/libc/kernel/uapi/linux/pkt_cls.handroid` 是一个非常底层的头文件，定义了 Linux 内核网络流量控制的基础结构。理解它的内容对于深入理解 Android 的网络功能至关重要。通过 Frida hook，我们可以观察到用户空间程序如何与内核交互，配置和管理这些底层的流量控制机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/pkt_cls.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -297,8 +297,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -885,7 +887,4 @@ enum {
   TCF_EM_OPND_LT
 };
 #endif
-
-"""
-
 ```

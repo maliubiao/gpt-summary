@@ -211,7 +211,7 @@ console.log(w);
 
 `v8/src/maglev/maglev-interpreter-frame-state.h` 的主要功能是定义了在 V8 Maglev 优化编译层中用于表示和管理 JavaScript 代码执行期间解释器帧状态的关键数据结构。它提供了跟踪寄存器值、节点类型信息、可能的对象形状以及控制流合并点状态的机制。这些信息对于 Maglev 构建高效的中间表示 (IR) 和进行各种代码优化至关重要。该文件定义了 `InterpreterFrameState`、`CompactInterpreterFrameState` 和 `MergePointInterpreterFrameState` 等核心类，以及用于存储节点附加信息的 `KnownNodeAspects` 和 `NodeInfo`。这些组件协同工作，为 Maglev 提供了理解和操作 JavaScript 程序状态所需的基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-interpreter-frame-state.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-interpreter-frame-state.h以.tq结尾，那它是个v8 torque源代码，
@@ -219,8 +219,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1093,8 +1095,5 @@ class MergePointInterpreterFrameState {
   }
 
   // Returns and clears the known node aspects on this state. Expects to only
-  // ever be called once, when starting a 
-"""
-
-
+  // ever be called once, when starting a
 ```

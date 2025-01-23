@@ -148,11 +148,13 @@ console.log(byteValue); // 输出: 26
 
 `gdb-remote-util.cc` 文件是 V8 引擎中用于支持 WebAssembly GDB 远程调试的关键组件。它提供了一组用于在字节数据和十六进制字符串之间进行转换以及进行字符串操作的实用工具，这些工具使得 GDB 能够理解和操作 WebAssembly 运行时的内部状态，从而帮助开发者进行 WebAssembly 代码的底层调试。 虽然 JavaScript 本身不直接包含这些功能，但理解这些功能背后的原理有助于理解 WebAssembly 调试的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/gdb-remote-util.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ std::string Mem2Hex(const std::string& str) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

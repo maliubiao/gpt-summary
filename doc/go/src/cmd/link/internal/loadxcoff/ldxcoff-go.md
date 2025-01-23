@@ -203,15 +203,17 @@ main.main
 
 总而言之，`ldxcoff.go` 是 Go 链接器中一个关键的组件，它使得 Go 能够在支持 XCOFF 格式的系统上进行编译和链接。它负责将 XCOFF 文件的结构和内容转换为链接器内部的数据结构，以便进行后续的符号解析、重定位和最终的可执行文件生成。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/loadxcoff/ldxcoff.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -439,9 +441,4 @@ func getSymbolType(f *xcoff.File, s *xcoff.Symbol) (stype sym.SymKind, err strin
 		}
 	}
 }
-
-"""
-
-
-
 ```

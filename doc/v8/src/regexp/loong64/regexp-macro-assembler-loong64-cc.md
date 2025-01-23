@@ -142,7 +142,7 @@ While developers don't directly interact with this C++ code, common errors in *w
 
 The primary function of this first part of `v8/src/regexp/loong64/regexp-macro-assembler-loong64.cc` is to **lay the groundwork for generating architecture-specific machine code for regular expression matching on LOONG64 processors within the V8 engine.**  It defines the core structure, register conventions, stack layout, and provides the basic building blocks (methods) for implementing fundamental regular expression operations. This code sets the stage for the subsequent parts of the assembler, which will likely contain the more complex logic for handling various regex features and optimizations.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/loong64/regexp-macro-assembler-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/loong64/regexp-macro-assembler-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -150,8 +150,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -975,7 +977,4 @@ Handle<HeapObject> RegExpMacroAssemblerLOONG64::GetCode(Handle<String> source,
       if (num_saved_registers_ > 0) {
         // Copy captures to output.
         __ Ld_d
-"""
-
-
 ```

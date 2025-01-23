@@ -294,7 +294,7 @@ sys.stdin.read()
 
 总结来说，`bionic_allocator_test.cpp` 是一个用于验证 Android Bionic 库中内存分配器 `BionicAllocator` 功能的测试文件。它展示了分配、释放、重新分配和对齐分配等基本内存管理操作的测试用例。`BionicAllocator` 是 Android 系统底层内存管理的关键组成部分，被应用程序、NDK 开发和 Android Framework 所使用。通过 Frida 可以动态地 hook 相关的内存分配函数，以观察其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/bionic_allocator_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -305,8 +305,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  * All rights reserved.
@@ -571,7 +573,4 @@ TEST(bionic_allocator, test_memalign_large) {
   ASSERT_EQ(0U, reinterpret_cast<uintptr_t>(ptr) % kPageSize);
   allocator.free(ptr);
 }
-
-"""
-
 ```

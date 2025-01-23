@@ -65,11 +65,13 @@ console.log(dynamicallyCreatedFunction(5, 3)); // V8 编译执行 dynamicallyCre
 
 `cpu-arm.cc` 提供的 `FlushICache` 函数是 V8 在 ARM 架构上进行代码生成时的一个关键底层操作。它确保了动态生成的机器码能够被 CPU 正确地执行，这对于 JavaScript 引擎的性能和正确性至关重要，尤其是在使用 `eval()` 或其他动态代码生成机制时。 虽然 JavaScript 开发者不会直接接触到这个函数，但它在幕后默默地支撑着 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm/cpu-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2006-2009 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -135,7 +137,4 @@ V8_NOINLINE void CpuFeatures::FlushICache(void* start, size_t size) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_ARM
-
-"""
-
 ```

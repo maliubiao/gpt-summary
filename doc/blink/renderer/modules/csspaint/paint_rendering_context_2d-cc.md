@@ -185,15 +185,17 @@ By following these steps, the comprehensive analysis provided in the initial exa
 
 总而言之，`PaintRenderingContext2D.cc` 中定义的 `PaintRenderingContext2D` 类是 Blink 渲染引擎中实现 CSS Paint API 的关键部分，它使得开发者可以使用 JavaScript 代码自定义 CSS 图像的绘制逻辑。 理解它的功能和与 Web 技术的关系对于开发和调试 CSS Paint Worklet 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/csspaint/paint_rendering_context_2d.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -342,7 +344,4 @@ PaintRecord PaintRenderingContext2D::GetRecord() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

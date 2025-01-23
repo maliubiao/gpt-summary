@@ -192,14 +192,16 @@ Status::kUnsupportedConfigs // 表示没有支持的配置
 
 总而言之，`key_system_config_selector.cc` 文件在 Blink 引擎中扮演着至关重要的角色，它负责在复杂的加密媒体环境中，根据应用的需求和浏览器的能力，协商出一个可行的配置方案，从而使得受保护的内容能够安全播放。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/key_system_config_selector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1375,7 +1377,4 @@ void KeySystemConfigSelector::OnHardwareSecureDecryptionAllowedResult(
 #endif  // BUILDFLAG(IS_WIN)
 
 }  // namespace blink
-
-"""
-
 ```

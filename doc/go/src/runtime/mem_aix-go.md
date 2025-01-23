@@ -137,7 +137,7 @@ func main() {
 
 总结来说，`go/src/runtime/mem_aix.go` 定义了 Go 运行时在 AIX 操作系统上进行底层内存操作的接口，是 Go 语言内存管理功能的基础组成部分。普通 Go 开发者无需直接操作这些函数，但理解它们的功能有助于深入了解 Go 的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mem_aix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -145,8 +145,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -228,9 +230,4 @@ func sysMapOS(v unsafe.Pointer, n uintptr) {
 		throw("runtime: cannot map pages in arena address space")
 	}
 }
-
-"""
-
-
-
 ```

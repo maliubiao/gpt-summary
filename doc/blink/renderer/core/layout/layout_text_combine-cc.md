@@ -149,14 +149,16 @@ By following this structured analysis, focusing on key elements, and drawing con
 
 总而言之，`layout_text_combine.cc` 文件是 Blink 引擎中实现 `text-combine-upright` CSS 属性的关键部分，它负责创建和管理用于组合文本的布局对象，并处理相关的样式调整、缩放变换和绘制逻辑，以实现将多个字符紧凑显示为一个单元的效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_text_combine.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -454,7 +456,4 @@ bool LayoutTextCombine::UsingSyntheticOblique() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

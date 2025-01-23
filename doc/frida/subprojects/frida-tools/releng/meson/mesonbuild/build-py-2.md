@@ -126,7 +126,7 @@ This step-by-step breakdown allows me to understand the purpose and functionalit
 
 本部分 `frida/subprojects/frida-tools/releng/meson/mesonbuild/build.py` 的核心功能是**定义了 Meson 构建系统中用于描述和处理各种构建目标的关键类和方法**。它负责处理构建目标的链接、依赖管理、语言特性、平台特定配置以及文件生成等核心构建逻辑，为 Frida 这样的复杂项目提供了结构化的构建管理能力。理解这部分代码对于理解 Frida 的构建过程和排查构建问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,9 +135,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
- raise MesonException(textwrap.dedent('''\
+### 源代码
+```python
+raise MesonException(textwrap.dedent('''\
                         An external library was used in link_with keyword argument, which
                         is reserved for libraries built as part of this project. External
                         libraries must be passed using the dependencies keyword argument
@@ -811,7 +813,4 @@ class Executable(BuildTarget):
         return self.debug_filename
 
     def is_linkable_tar
-"""
-
-
 ```

@@ -148,7 +148,7 @@ border-left-color: black;
 
 `blink/renderer/core/css/resolver/style_resolver.cc` 文件的这一部分定义了 `StyleResolver` 类的核心功能，即负责 CSS 样式的解析和计算。 它接收 HTML 元素作为输入，结合 CSS 规则，根据 CSS 的层叠规则计算出元素最终的渲染样式 (ComputedStyle)。这个过程是网页渲染的关键步骤，涉及到 HTML 结构、CSS 样式和可能的 JavaScript 交互。 理解 `StyleResolver` 的工作原理对于理解浏览器如何呈现网页至关重要，并且可以帮助开发者调试 CSS 相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_resolver.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 2004-2005 Allan Sandfeld Jensen (kde@carewolf.com)
@@ -931,7 +933,4 @@ void MatchStyleAttribute(const Element& element,
                          ElementRuleCollector& collector,
                          StyleRuleUsageTracker* tracker) {
   if (element.IsStyledElement() && element.
-"""
-
-
 ```

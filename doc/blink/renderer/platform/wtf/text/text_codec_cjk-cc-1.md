@@ -124,15 +124,17 @@ My thinking process to analyze the provided code snippet and generate the answer
 
 基于提供的第二部分代码，`text_codec_cjk.cc` 的核心功能是为Blink渲染引擎提供了一套完整的机制来处理各种CJK字符编码的解码和编码。 它定义了支持的编码类型，注册了编码名称，并提供了创建和使用特定编码解码器的接口。 代码片段中展示了处理字节流、进行错误检测和替换的逻辑。 结合第一部分的代码，它将实现将不同 CJK 编码的字节流转换为 Unicode 字符串，以及将 Unicode 字符串编码为特定 CJK 编码的字节流，这对于正确显示和处理使用这些编码的网页内容至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_codec_cjk.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 && byte <= 0xFE) {
       first_ = byte;
       return SawError::kNo;
@@ -364,8 +366,4 @@ bool TextCodecCJK::IsSupported(StringView name) {
 }
 
 }  // namespace WTF
-
-"""
-
-
 ```

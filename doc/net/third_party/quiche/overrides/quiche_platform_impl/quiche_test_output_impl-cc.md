@@ -167,15 +167,17 @@ This iterative process of scanning, deconstructing, identifying relationships, a
 
 总而言之，`quiche_test_output_impl.cc` 提供了一种在 Quiche 测试过程中持久化数据的机制，这对于调试和验证复杂的网络协议行为至关重要。开发者可以通过设置环境变量来启用和控制这一功能，并利用保存的测试输出来辅助问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/overrides/quiche_platform_impl/quiche_test_output_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ void QuicheRecordTraceImpl(std::string_view identifier, std::string_view data) {
 }
 
 }  // namespace quiche
-
-"""
-
 ```

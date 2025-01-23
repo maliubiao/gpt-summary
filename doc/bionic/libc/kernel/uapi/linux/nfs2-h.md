@@ -245,7 +245,7 @@ if __name__ == '__main__':
 
 请注意，现代 Android 系统更倾向于使用 NFSv4 或更高版本。要观察到 NFSv2 的使用，可能需要连接到仅支持 NFSv2 的旧服务器或者在特定的测试环境中进行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/nfs2.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -256,8 +256,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -316,7 +318,4 @@ struct nfs2_fh {
 #define NFSPROC_READDIR 16
 #define NFSPROC_STATFS 17
 #endif
-
-"""
-
 ```

@@ -176,11 +176,13 @@ void ProcessSetBreakpointRequest(const nlohmann::json& request) { // 假设使�
 
 总结来说，`error_support.cc` 中的 `ErrorSupport` 类提供了一种结构化的方式来记录和报告错误，特别是在处理与 JavaScript 交互的复杂数据结构时，能够生成清晰且包含上下文信息的错误消息，方便开发者定位问题。这在 Chrome DevTools Protocol 的实现中尤为重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/error_support.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -240,7 +242,4 @@ span<uint8_t> ErrorSupport::Errors() const {
 }
 
 }  // namespace v8_crdtp
-
-"""
-
 ```

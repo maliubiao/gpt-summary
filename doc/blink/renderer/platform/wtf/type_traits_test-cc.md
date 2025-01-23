@@ -138,14 +138,16 @@ By following these steps, I can generate a comprehensive explanation of the file
 
 总而言之，`blink/renderer/platform/wtf/type_traits_test.cc` 这个文件通过编译时断言来确保 Blink 引擎中类型特性的定义是正确的，这对于保证引擎的性能、稳定性和代码的正确性至关重要，并间接地影响着 JavaScript, HTML, CSS 的执行和渲染。 它可以帮助开发者在早期发现与类型相关的错误，避免一些常见的编程陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/type_traits_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008 Apple Inc. All rights reserved.
  * Copyright (C) 2009, 2010 Google Inc. All rights reserved.
@@ -443,7 +445,4 @@ static_assert(!std::is_convertible<Wrapper<TestBaseClass<int>>,
 }  // anonymous namespace
 
 }  // namespace WTF
-
-"""
-
 ```

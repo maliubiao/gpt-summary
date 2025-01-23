@@ -226,15 +226,17 @@ func4 := c.Fun("entry",
 
 总而言之，`func_test.go` 是 Go 编译器 SSA 测试框架的重要组成部分，它提供了一组方便的工具来定义、构建和比较 SSA 函数，从而帮助开发者验证编译器优化和转换的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/func_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -717,9 +719,4 @@ func checkOpcodeCounts(t *testing.T, f *Func, m map[Op]int) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

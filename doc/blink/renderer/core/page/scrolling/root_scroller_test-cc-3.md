@@ -124,7 +124,7 @@ This is the *final* part of a multi-part request, so the summary should be cumul
 
 总而言之，`root_scroller_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎在各种复杂的 Web 页面结构和样式下，能够正确地确定和管理根滚动器，从而保证用户获得一致且正确的滚动体验。这部分尤其关注了与用户交互相关的场景，例如命中测试和浏览器控件的显示状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/scrolling/root_scroller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (GetDocument(),
             GetDocument().GetRootScrollerController().EffectiveRootScroller())
       << "iframe should now be demoted since main document scrolls overflow.";
@@ -511,8 +513,4 @@ TEST_F(RootScrollerHitTest, HitTestInAreaRevealedByURLBarDifferentLayer) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
-
 ```

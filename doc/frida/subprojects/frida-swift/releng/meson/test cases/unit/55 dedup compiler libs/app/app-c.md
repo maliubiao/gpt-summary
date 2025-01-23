@@ -183,7 +183,7 @@ By following this thought process, moving from simple code understanding to its 
 
 总而言之，这个 `app.c` 文件是一个用于演示动态链接和简单程序逻辑的例子，非常适合作为 Frida 动态分析和逆向工程的入门或测试用例。其简洁性使得用户能够更容易地理解和调试与 Frida 相关的概念和技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/55 dedup compiler libs/app/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <liba.h>
 #include <libb.h>
@@ -206,7 +208,4 @@ main(void)
   printf("end value = %d\n", liba_get());
   return 0;
 }
-
-"""
-
 ```

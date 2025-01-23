@@ -141,15 +141,17 @@ By combining the code analysis with an understanding of the Chromium architectur
 
 总而言之，`network_binding_client_socket_factory.cc` 提供了一种创建绑定到特定网络接口的 socket 的机制，这在需要精细控制网络连接的场景下非常有用。虽然 JavaScript 代码不直接操作这个工厂，但它是浏览器网络通信的基础设施之一。理解它的功能和使用场景，对于调试网络问题和理解 Chromium 的网络架构至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/network_binding_client_socket_factory.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ NetworkBindingClientSocketFactory::CreateSSLClientSocket(
 }
 
 }  // namespace net
-
-"""
-
 ```

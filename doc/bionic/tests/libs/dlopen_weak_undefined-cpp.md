@@ -215,7 +215,7 @@ if (Process.arch === 'arm64') {
 
 通过以上分析，可以看出 `dlopen_weak_undefined.cpp` 虽然是一个简单的测试文件，但它直接关系到 Android 系统中动态链接的关键机制，特别是对可选功能和插件的支持。理解其功能有助于开发者更好地利用弱符号，并避免潜在的运行时错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlopen_weak_undefined.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -226,8 +226,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -253,7 +255,4 @@ extern "C" int use_weak_undefined_func() {
     return 6551;
   }
 }
-
-"""
-
 ```

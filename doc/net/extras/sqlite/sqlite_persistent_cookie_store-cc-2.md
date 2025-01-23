@@ -163,7 +163,7 @@ std::list<CookieOrigin> cookies_to_delete = {
 
 总而言之，这部分代码专注于将内存中的 Cookie 数据持久化到 SQLite 数据库，并提供加载、删除等操作接口，保证用户关闭浏览器后 Cookie 数据不会丢失。它是 Chromium 网络栈中处理持久化 Cookie 的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/extras/sqlite/sqlite_persistent_cookie_store.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ask runner.
     PostBackgroundTask(
         FROM_HERE,
@@ -344,8 +346,4 @@ void SQLitePersistentCookieStore::CompleteKeyedLoad(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

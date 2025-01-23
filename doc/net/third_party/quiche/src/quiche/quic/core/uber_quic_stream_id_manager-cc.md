@@ -141,15 +141,17 @@ Promise.all(imageUrls.map(url => fetch(url)))
 
 总而言之，`UberQuicStreamIdManager` 是 Chromium QUIC 协议栈中一个核心的组件，负责管理 QUIC 连接中的流 ID 和并发流数量，它对于保证 QUIC 连接的正常运行和性能至关重要，并间接地影响了基于浏览器的网络应用的性能表现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/uber_quic_stream_id_manager.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -332,7 +334,4 @@ QuicStreamCount UberQuicStreamIdManager::outgoing_unidirectional_stream_count()
 }
 
 }  // namespace quic
-
-"""
-
 ```

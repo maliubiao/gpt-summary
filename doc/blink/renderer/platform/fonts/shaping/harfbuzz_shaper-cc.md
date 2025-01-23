@@ -87,15 +87,17 @@ void CapsFeatureSetting
 
 这部分代码定义了 `HarfBuzzShaper` 类，它是 Blink 引擎中使用 HarfBuzz 库进行文本 shaping 的核心组件。它负责将文本、字体信息和样式信息转换为可用于渲染的字形及其位置，并处理字体回退、文本方向、垂直排版、Emoji 以及 OpenType 特性等复杂情况。它与 JavaScript、HTML 和 CSS 紧密关联，是浏览器正确渲染网页文本的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/harfbuzz_shaper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2012 Google Inc. All rights reserved.
  * Copyright (C) 2013 BlackBerry Limited. All rights reserved.
@@ -926,7 +928,4 @@ CapsFeatureSettingsScopedOverlay::CapsFeatureSettingsScopedOverlay(
 }
 
 void CapsFeatureSetting
-"""
-
-
 ```

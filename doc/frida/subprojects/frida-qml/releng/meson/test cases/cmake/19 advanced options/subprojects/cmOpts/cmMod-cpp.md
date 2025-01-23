@@ -150,7 +150,7 @@ Here's a thinking process to arrive at the detailed analysis of the provided C++
 
 通过这样的步骤，用户可以定位到 `cmMod.cpp` 文件，并理解其在 Frida 构建系统中的作用，以及编译标志的重要性。这个文件作为一个测试用例，其主要价值在于验证构建系统的正确性，确保 Frida 能够处理复杂的构建场景，并能与外部代码正确集成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/19 advanced options/subprojects/cmOpts/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -191,7 +193,4 @@ string cmModClass::getStr() const {
 int cmModClass::getInt() const {
   return MESON_MAGIC_INT;
 }
-
-"""
-
 ```

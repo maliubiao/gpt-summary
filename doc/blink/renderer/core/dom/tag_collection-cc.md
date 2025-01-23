@@ -125,15 +125,17 @@ By following this thought process, combining code analysis with understanding of
 
 **作为调试线索:**  如果开发者发现通过 `getElementsByTagName` 或 `getElementsByTagNameNS` 获取到的元素集合不符合预期，可以断点调试 `tag_collection.cc` 中的 `ElementMatches` 方法，查看哪些元素被包含或排除在集合之外，从而帮助理解 DOM 树的结构以及标签名和命名空间的匹配规则。还可以检查传入 `TagCollection` 构造函数的参数，例如 `qualified_name_` 或 `namespace_uri_` 和 `local_name_`，以确定集合创建时的目标标签是什么。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/tag_collection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -201,7 +203,4 @@ bool TagCollectionNS::ElementMatches(const Element& test_node) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

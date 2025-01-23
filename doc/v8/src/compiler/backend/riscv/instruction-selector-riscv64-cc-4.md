@@ -158,7 +158,7 @@ amoadd.w.aq rl, rs2, (rs1)  // 原子加法指令
 
 作为系列的一部分，`v8/src/compiler/backend/riscv/instruction-selector-riscv64.cc` 的主要功能是 **V8 编译器后端针对 RISC-V 64 位架构进行指令选择的关键组件**。它负责将中间表示的抽象操作转换为具体的、高效的 RISC-V 机器指令。这包括处理各种类型的操作，例如原子操作、SIMD 运算、符号扩展等，并确保生成的代码能够在 RISC-V 64 位处理器上正确、高效地执行 JavaScript 代码。该文件是 V8 引擎支持 RISC-V 64 位架构的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-selector-riscv64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/instruction-selector-riscv64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 int8;
   } else if (params.type() == MachineType::Uint16()) {
     opcode = kAtomicExchangeUint16;
@@ -511,8 +513,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

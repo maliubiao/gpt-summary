@@ -159,15 +159,17 @@ fetch('https://example.com/data', {
 
 `hpack_decoder_tables.cc` 文件是 Chromium 中负责 HPACK 头部解码的核心组件。它管理静态表和动态表，提供高效的头部查找机制，并直接影响着浏览器处理 HTTP/2 网络请求的性能和正确性。虽然 JavaScript 开发者不会直接操作这个文件，但它的功能对于基于 HTTP/2 的 Web 应用的正常运行至关重要。理解这个文件的功能有助于开发者诊断和理解与 HTTP/2 头部相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/decoder/hpack_decoder_tables.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -321,7 +323,4 @@ const HpackStringPair* HpackDecoderTables::Lookup(size_t index) const {
 }
 
 }  // namespace http2
-
-"""
-
 ```

@@ -132,11 +132,13 @@ Object.defineProperty(myObject, 'city', {
 
 `test-swiss-name-dictionary.cc` 这个 C++ 文件是 V8 引擎中 `SwissNameDictionary` 数据结构的单元测试。 `SwissNameDictionary` 负责高效地存储和管理 JavaScript 对象的属性，是 V8 引擎实现 JavaScript 对象功能的核心组成部分。  测试代码覆盖了字典的增删改查、容量管理以及内部状态检查等关键功能，确保了这种关键数据结构的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-swiss-name-dictionary.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -371,7 +373,4 @@ SharedSwissTableTests<RuntimeTestRunner, kRuntimeTestFileName>
 }  // namespace test_swiss_hash_table
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -148,14 +148,16 @@ Essentially, I tried to understand the code's purpose within the larger context 
 
 总而言之，`generated_image.cc` 文件是 Blink 引擎中一个核心组件，它为各种程序生成的图像提供了基础架构和绘制机制，直接支撑着许多重要的 Web 功能。 理解其功能有助于深入了解浏览器如何渲染动态内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/generated_image.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -246,7 +248,4 @@ PaintImage GeneratedImage::PaintImageForCurrentFrame() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -98,7 +98,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 如果用户遇到设备无法识别的问题，可以检查 `/sys/class/net/eth0` 目录是否存在，符号链接目标是否正确，以及 `interface` 和 `serial` 文件内容是否符合预期。
 
 通过以上分析，我们可以更好地理解该源代码的功能、调试方法以及用户可能遇到的常见问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/device-monitor-linux.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class LinuxFruitFinder : Object, FruitFinder {
@@ -533,7 +535,4 @@ namespace Frida.Fruity {
 		}
 	}
 }
-
-"""
-
 ```

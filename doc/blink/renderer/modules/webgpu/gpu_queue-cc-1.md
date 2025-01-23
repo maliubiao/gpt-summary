@@ -108,7 +108,7 @@ I will organize the explanation by summarizing the main function's purpose and t
 
 这段代码是 WebGPU 实现中至关重要的一部分，它桥接了 HTML Canvas 和 WebGPU 纹理，使得开发者能够将 Canvas 上渲染的内容高效地用于 GPU 加速的图形处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_queue.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Mode::Premultiplied
                           : wgpu::AlphaMode::Unpremultiplied,
   };
@@ -380,8 +382,4 @@ bool GPUQueue::CopyFromCanvasSourceImage(
   return true;
 }
 }  // namespace blink
-
-"""
-
-
 ```

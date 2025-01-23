@@ -152,7 +152,7 @@ Let's break down each point with more detail and examples where applicable.
 **总结**:
 
 `v8/src/builtins/riscv/builtins-riscv.cc` 的这一部分定义了在 RISC-V 架构上执行 JavaScript 代码的核心内置函数。它涵盖了函数调用、对象构造、WebAssembly 集成、异常处理以及底层的栈管理和类型检查等关键功能。这些内置函数是 V8 引擎将 JavaScript 代码转换为可在 RISC-V 处理器上执行的机器码的关键组成部分。它们提供了执行 JavaScript 语义所需的底层操作和错误处理机制。
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/riscv/builtins-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/riscv/builtins-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -160,8 +160,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 a1, no_reg, a2, a0, InvokeType::kJump);
 }
 
@@ -1035,7 +1037,4 @@ void SwitchStackState(MacroAssembler* masm, Register jmpbuf, Register tmp,
 // simulator's stack limit can cause stack access check failures.
 void SwitchStackPointerAndSimulatorStackLimit(MacroAssembler* masm,
                                               Re
-"""
-
-
 ```

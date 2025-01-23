@@ -121,7 +121,7 @@ By following this structured thought process, including contextualization and re
 
 总而言之，尽管 `func14.c` 中的代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 对静态链接二进制文件的处理能力，并可以作为逆向工程学习和实践的基本示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/66 static link/lib/func14.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,13 +129,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func14()
 {
   return 1;
 }
-
-"""
-
 ```

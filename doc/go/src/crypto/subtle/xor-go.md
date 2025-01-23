@@ -202,7 +202,7 @@ go run main.go -x 01020304 -y 050607
 
 总而言之，`crypto/subtle/xor.go` 中的 `XORBytes` 函数提供了一个高效且底层的字节级别异或操作，它是构建更高级密码学功能的基础。使用时需要特别注意目标切片的长度和切片重叠的问题，以避免程序崩溃或产生错误的结果。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/subtle/xor.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -210,8 +210,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -231,9 +233,4 @@ import "crypto/internal/fips140/subtle"
 func XORBytes(dst, x, y []byte) int {
 	return subtle.XORBytes(dst, x, y)
 }
-
-"""
-
-
-
 ```

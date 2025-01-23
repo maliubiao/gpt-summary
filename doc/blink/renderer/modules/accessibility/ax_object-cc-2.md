@@ -118,7 +118,7 @@ By following these steps, I can systematically analyze the code snippet and prov
 
 这段代码片段是 `AXObject` 类中负责将其各种与 HTML 元素属性相关的可访问性信息序列化到 `ui::AXNodeData` 结构的关键部分。它涵盖了 ARIA 角色、HTML 标签和属性、非标准属性以及其他与屏幕阅读器相关的属性。它的主要目标是将网页的结构和语义信息以辅助技术能够理解的方式表达出来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 es object
   // attribute. Prefer the raw ARIA role attribute value, otherwise, the ARIA
   // equivalent role is used, if it is a role that is exposed in xml-roles.
@@ -975,8 +977,4 @@ void AXObject::SerializeUnignoredAttributes(ui::AXNodeData* node_data,
   }
 
   TruncateAndAddStringAttribute(
-      
-"""
-
-
 ```

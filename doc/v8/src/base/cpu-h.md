@@ -118,15 +118,17 @@ console.log(result); // 输出 36
 
 总而言之，`v8/src/base/cpu.h` 是 V8 引擎中一个非常基础且重要的模块，它负责检测和提供关于底层 CPU 硬件的信息，这些信息被 V8 用于进行各种性能优化和架构特定的决策，从而更高效地执行 JavaScript 代码。 尽管 JavaScript 开发者通常不会直接接触这个文件，但它所提供的功能是 V8 高效运行的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/cpu.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/cpu.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2006-2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ class V8_BASE_EXPORT CPU final {
 }  // namespace v8
 
 #endif  // V8_BASE_CPU_H_
-
-"""
-
 ```

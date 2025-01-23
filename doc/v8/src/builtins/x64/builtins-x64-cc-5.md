@@ -180,7 +180,7 @@ Based on the request, I need to:
 
 `v8/src/builtins/x64/builtins-x64.cc` 的这一部分定义了 x64 架构下 V8 引擎的关键底层操作的实现，包括与 C++ 运行时函数的交互、WebAssembly 栈溢出处理、数据类型转换（如浮点数转整数）、以及处理 JavaScript API 回调和代码反优化。这些内置函数是 V8 引擎高效执行 JavaScript 和 WebAssembly 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/x64/builtins-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/x64/builtins-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -188,8 +188,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 isterResultSize = 1;
   const int kReservedStackSlots = kSwitchToTheCentralStackSlots +
       (result_size <= kMaxRegisterResultSize ? 0 : result_size);
@@ -1038,8 +1040,4 @@ namespace {
 
 // Restarts execution either at the current or next (in execution order)
 // bytecode. If there is baseline code on the shared function info, converts an
-
-"""
-
-
 ```

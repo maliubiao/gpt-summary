@@ -188,14 +188,16 @@ function processOrder(order) {
 
 总而言之，`v8/src/builtins/internal-coverage.tq` 文件中定义的宏和内置函数是 V8 引擎内部用于实现代码覆盖率收集的关键组成部分，它们通过在代码执行过程中记录特定代码块的执行次数，为开发者提供了一种衡量代码测试完整性和发现潜在错误的有效手段。 虽然开发者不能直接调用这些函数，但了解其功能有助于理解代码覆盖率工具的运作方式及其在软件开发中的价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/internal-coverage.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ builtin IncBlockCounter(
 }
 
 }  // namespace internal_coverage
-
-"""
-
 ```

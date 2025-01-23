@@ -203,15 +203,17 @@ let obj4 = obj1;
 
 总而言之，`v8/src/heap/cppgc/marking-visitor.cc` 中的代码是 V8 引擎垃圾回收机制的关键部分，它通过遍历对象图并标记存活对象，为后续的垃圾回收清理阶段奠定基础。理解其功能有助于理解 V8 如何管理 JavaScript 程序的内存。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/marking-visitor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/marking-visitor.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -371,7 +373,4 @@ bool ConcurrentMarkingVisitor::DeferTraceToMutatorThreadIfConcurrent(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

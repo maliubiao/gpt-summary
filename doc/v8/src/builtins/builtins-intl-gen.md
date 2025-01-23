@@ -75,11 +75,13 @@ console.log(formatter4.formatToParts(list));
 
 总而言之，`v8/src/builtins/builtins-intl-gen.cc` 是 V8 引擎中实现国际化相关 JavaScript 内置功能的重要组成部分，它通过高效的 C++ 代码和 CSA 框架，为 JavaScript 开发者提供了强大的国际化支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-intl-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -377,7 +379,4 @@ TF_BUILTIN(ListFormatPrototypeFormatToParts, IntlBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

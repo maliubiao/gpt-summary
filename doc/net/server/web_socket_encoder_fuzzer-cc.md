@@ -120,15 +120,17 @@ socket.onopen = () => {
 
 总而言之，`web_socket_encoder_fuzzer.cc` 通过模拟接收各种各样的 WebSocket 数据帧，来确保 Chromium 的 WebSocket 解码器能够安全可靠地处理各种情况，从而保障使用 WebSocket 的 Web 应用的稳定性和安全性。它是一个重要的安全测试工具，用于在软件发布前发现潜在的漏洞。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/server/web_socket_encoder_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <stddef.h>
 #include <stdint.h>
 
@@ -152,6 +154,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   }
   return 0;
 }
-"""
-
 ```

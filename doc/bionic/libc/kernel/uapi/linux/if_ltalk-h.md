@@ -197,7 +197,7 @@ if (sendtoPtr) {
 
 `bionic/libc/kernel/uapi/linux/if_ltalk.h` 定义了 `ltalk` 网络协议的常量。尽管它存在于 Android 的 Bionic 库中，但在现代 Android 应用开发中几乎没有直接的应用。它的存在更多是由于 Android 内核继承自 Linux 内核。理解这个文件有助于理解 Android 系统底层对各种网络协议的支持，即使某些协议并不常用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_ltalk.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -208,8 +208,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -222,7 +224,4 @@ Prompt:
 #define LTALK_MTU 600
 #define LTALK_ALEN 1
 #endif
-
-"""
-
 ```

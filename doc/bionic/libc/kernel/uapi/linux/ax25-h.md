@@ -287,7 +287,7 @@ if (Process.platform === 'linux') {
 
 这个 Frida Hook 示例可以帮助我们观察哪些应用程序 (如果有的话) 正在调用与 AX.25 相关的 `ioctl` 命令，以及传递的请求码是什么。要更详细地调试，可能需要更深入地了解 AX.25 结构体的内存布局，并在 Frida 中进行更精细的内存读取。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ax25.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -298,8 +298,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -397,7 +399,4 @@ struct ax25_fwd_struct {
   ax25_address port_to;
 };
 #endif
-
-"""
-
 ```

@@ -133,14 +133,16 @@ CSS 本身并不直接与 `MediaStreamAudioSource` 交互。CSS 主要负责样�
 
 总而言之，`MediaStreamAudioSource` 是 Blink 引擎中一个关键的音频处理模块，它连接了底层的音频设备和上层的 JavaScript API，使得网页能够访问和处理用户的音频输入。 理解其功能和与 Web 技术的关系对于开发涉及音频功能的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/media_stream_audio_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -419,7 +421,4 @@ void MediaStreamAudioSource::LogMessage(const std::string& message) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -174,7 +174,7 @@ By following these steps, I can systematically analyze the code and generate a c
 
 总而言之，`process-resource-usage.c` 文件是 Frida 用于收集目标进程资源使用情况的关键组成部分，它通过跨平台的抽象和平台特定的 API 调用，为逆向工程师提供了宝贵的进程运行时信息。 理解其功能和实现细节对于深入使用 Frida 进行动态分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/process-resource-usage.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-tests.h"
 
 #ifdef HAVE_WINDOWS
@@ -462,7 +464,4 @@ frida_test_resource_usage_snapshot_create_for_pid (guint pid)
 
   return snapshot;
 }
-
-"""
-
 ```

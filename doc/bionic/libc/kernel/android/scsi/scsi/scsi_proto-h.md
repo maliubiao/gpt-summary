@@ -179,7 +179,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/android/scsi/scsi/scsi_proto.h` 是一个关键的头文件，它为 Android 系统与 SCSI 设备交互提供了基础的常量定义。虽然开发者通常不会直接使用这些常量，但它们是 Android 底层存储和设备驱动程序的核心组成部分。理解这些常量的作用有助于深入理解 Android 的存储架构和硬件交互机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/android/scsi/scsi/scsi_proto.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -190,8 +190,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -403,7 +405,4 @@ enum scsi_support_opcode {
 #define SCSI_CONTROL_MASK 0
 #define SCSI_GROUP_NUMBER_MASK 0
 #endif
-
-"""
-
 ```

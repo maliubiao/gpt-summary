@@ -250,15 +250,17 @@ func main() {
 
 这段代码提供了一组非常有用的并发编程模式，展示了 Go 语言中泛型和通道的强大功能。理解这些模式及其潜在的陷阱对于编写健壮的并发 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/chansimp.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -491,9 +493,4 @@ func (r *Receiver[Elem]) Next(ctx context.Context) (v Elem, ok bool) {
 func (r *Receiver[Elem]) finalize() {
 	close(r.done)
 }
-
-"""
-
-
-
 ```

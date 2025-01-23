@@ -251,7 +251,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 `ceil_intel_data.handroid` 是 Android Bionic 库中用于测试 `ceil` 函数在 Intel 架构上正确性的数据文件。它不直接参与程序运行时的 `ceil` 函数调用，而是作为自动化测试的一部分，确保 `libc.so` 中 `ceil` 函数的实现符合预期。 通过 Frida hook，我们可以动态地观察 `ceil` 函数的执行情况，帮助理解其行为和调试相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/ceil_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -262,8 +262,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1602,7 +1604,4 @@ static data_1_1_t<double, double> g_ceil_intel_data[] = {
     -0x1.7ffffp0
   }
 };
-
-"""
-
 ```

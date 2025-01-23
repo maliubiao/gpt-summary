@@ -181,7 +181,7 @@ myFunction(); // 这将抛出一个 ReferenceError
 
 作为第 8 部分（共 8 部分），这个代码片段（`v8/src/objects/js-objects.cc` 中的一部分）专注于 **JavaScript 消息对象的创建和管理，特别是提取和提供与错误发生位置相关的详细信息**。它定义了 `JSMessageObject` 类及其相关方法，用于存储和访问错误消息的源代码位置（行号、列号、源代码行等）。这些信息对于 JavaScript 引擎的错误报告和开发者调试至关重要，使得开发者能够快速定位并修复代码中的问题。  这段代码是 V8 引擎中错误处理和调试机制的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -189,8 +189,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 set_weekday(Smi::FromInt(weekday), SKIP_WRITE_BARRIER);
   set_hour(Smi::FromInt(hour), SKIP_WRITE_BARRIER);
   set_min(Smi::FromInt(min), SKIP_WRITE_BARRIER);
@@ -284,8 +286,4 @@ Handle<String> JSMessageObject::GetSourceLine() const {
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

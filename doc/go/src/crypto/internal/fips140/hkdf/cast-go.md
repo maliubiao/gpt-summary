@@ -137,7 +137,7 @@ func main() {
 
 这段 `cast.go` 代码的主要功能是在符合 FIPS 140 标准的环境下，对 HKDF-SHA2-256 算法的实现进行自我验证，确保其输出与预期的已知答案一致。这是一种保证密码模块正确性的重要手段。 作为开发者，应该理解其作用，避免直接使用 `internal` 包，并根据实际需求选择合适的加密库。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/hkdf/cast.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -145,8 +145,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -180,9 +182,4 @@ func init() {
 		return nil
 	})
 }
-
-"""
-
-
-
 ```

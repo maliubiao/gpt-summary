@@ -152,7 +152,7 @@ By following this systematic approach, breaking down the code, and connecting it
 
 总而言之，`frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/mixins/clang.py` 文件是 Frida 项目中用于处理 Clang 编译器的核心组件，它抽象了 Clang 的各种功能和选项，使得 Frida 的构建系统能够灵活地配置 Clang，并能进行一些特性检测。这对于构建不同配置的 Frida 以及在动态插桩过程中了解目标环境至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/mixins/clang.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019-2022 The meson development team
 
@@ -332,7 +334,4 @@ class ClangCompiler(GnuLikeCompiler):
                 raise mesonlib.MesonException('clang support for LTO threads requires clang >=4.0')
             args.append(f'-flto-jobs={threads}')
         return args
-
-"""
-
 ```

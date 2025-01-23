@@ -167,7 +167,7 @@ iovec2: Base=0xc000010085, Len=5
 
 总而言之，`go/src/internal/poll/iovec_unix.go` 中的 `newIovecWithBase` 函数是 Go 语言底层网络和 I/O 操作实现中用于构建 `syscall.Iovec` 结构体的基础工具，它简化了 `syscall.Iovec` 的创建，但使用者需要注意正确设置 `Len` 字段和确保 `Base` 指针的有效性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/iovec_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -190,9 +192,4 @@ import "syscall"
 func newIovecWithBase(base *byte) syscall.Iovec {
 	return syscall.Iovec{Base: base}
 }
-
-"""
-
-
-
 ```

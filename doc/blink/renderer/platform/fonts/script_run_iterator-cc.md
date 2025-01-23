@@ -114,14 +114,16 @@ By following this structured approach, starting from the high-level purpose and 
 
 总而言之，`script_run_iterator.cc` 是 Blink 引擎中一个关键的底层组件，它负责将文本分解成逻辑上的脚本单元，为后续的字体选择、排版和渲染奠定基础。它处理了 Unicode 规范中关于脚本的复杂性，确保了 Web 内容能够以正确的方式呈现在用户面前，支持各种不同的语言和书写系统。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/script_run_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -623,7 +625,4 @@ UScriptCode ScriptRunIterator::ResolveCurrentScript() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

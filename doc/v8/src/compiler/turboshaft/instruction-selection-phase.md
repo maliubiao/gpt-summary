@@ -123,11 +123,13 @@ function example(x) {
 
 `v8/src/compiler/turboshaft/instruction-selection-phase.cc` 文件实现了 Turboshaft 编译器的核心功能之一，负责将中间表示转换为目标机器的指令。它与后续的指令调度和寄存器分配阶段紧密合作，共同将 JavaScript 代码高效地编译成可执行的机器码，从而提升 JavaScript 的运行性能。虽然开发者通常不会直接与这些 C++ 代码交互，但理解其背后的原理有助于理解 V8 引擎是如何优化 JavaScript 代码的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/instruction-selection-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -495,7 +497,4 @@ std::optional<BailoutReason> InstructionSelectionPhase::Run(
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

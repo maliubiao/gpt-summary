@@ -170,7 +170,7 @@ Main finished
 
 总而言之，这段代码是 Go 运行时实现线程本地存储的关键部分，它依赖于操作系统提供的 POSIX 线程 API。理解这段代码有助于深入理解 Go 语言的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/sys_darwin_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -178,8 +178,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -245,9 +247,4 @@ func tlsinit(tlsg *uintptr, tlsbase *[_PTHREAD_KEYS_MAX]uintptr) {
 	}
 	abort()
 }
-
-"""
-
-
-
 ```

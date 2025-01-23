@@ -53,12 +53,14 @@ function compare(a) {
 
 **总结来说，`v8/test/unittests/compiler/machine-operator-reducer-unittest.cc` 这个文件测试了V8引擎中一个关键的优化组件，它通过简化底层的机器指令来提升JavaScript代码的执行效率。  JavaScript开发者通常不需要直接了解这些底层的优化，但这些优化在幕后默默地提升了JavaScript应用的性能。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/machine-operator-reducer-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1682,7 +1684,4 @@ TEST_F(MachineOperatorReducerTest, Int32DivWithConstant) {
       if (base::bits::IsPowerOfTwo(divisor)) continue;
       Reduction const r = Reduce(graph()->NewNode(
           machine()->Int32Div(), p0, Int32Constant(divisor), gra
-"""
-
-
 ```

@@ -89,11 +89,13 @@ if (privilegedObject) {
 
 `trusted-pointer-table.cc` 文件实现了 V8 沙箱机制的关键部分，用于管理和验证沙箱内代码对外部资源的访问。虽然 JavaScript 代码本身无法直接操作它，但 `TrustedPointerTable` 的存在保证了 JavaScript 代码在沙箱环境中的安全性和隔离性。它通过维护一个可信指针列表，并在垃圾回收过程中进行清理，确保了沙箱的边界不会被轻易突破。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/trusted-pointer-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -119,7 +121,4 @@ uint32_t TrustedPointerTable::Sweep(Space* space, Counters* counters) {
 }  // namespace v8
 
 #endif  // V8_ENABLE_SANDBOX
-
-"""
-
 ```

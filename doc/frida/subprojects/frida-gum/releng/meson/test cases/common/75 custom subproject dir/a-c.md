@@ -188,7 +188,7 @@ By following this thought process, we can arrive at a comprehensive and accurate
 
 总而言之，这个简单的 `a.c` 文件是 Frida 测试框架中的一个基础用例，用于验证 Frida 的核心 hook 功能。用户到达这个代码的路径通常是通过编写测试、构建项目、运行测试并使用 Frida 进行动态调试来理解程序行为或验证 Frida 工具本身的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/75 custom subproject dir/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<assert.h>
 char func_b(void);
 char func_c(void);
@@ -211,7 +213,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

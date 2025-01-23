@@ -156,7 +156,7 @@ pthread_attr_destroy(&attr); // 销毁线程属性
 
 因此，用户并没有直接操作 `lib1.c` 文件。这个文件是 Frida 内部实现的一部分，当用户使用 Frida 进行动态分析，并且 Frida 需要处理目标进程的线程创建时，这段代码会在幕后被执行。  如果用户在调试 Frida 本身，或者在查看 Frida 的源代码，他们可能会看到这个文件，作为理解 Frida 如何处理平台差异和获取关键系统 API 的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/194 static threads/lib1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32
 #include<windows.h>
 #else
@@ -179,7 +181,4 @@ void *f(void) {
   return pthread_create;
 #endif
 }
-
-"""
-
 ```

@@ -266,7 +266,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，你可以观察目标进程何时调用了与持久预留相关的 `ioctl` 命令，从而了解 Android 系统在哪些场景下使用了这些功能。你需要根据实际情况修改目标进程和 Frida 脚本来捕获你感兴趣的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/pr.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -277,8 +277,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -334,7 +336,4 @@ struct pr_clear {
 #define IOC_PR_PREEMPT_ABORT _IOW('p', 204, struct pr_preempt)
 #define IOC_PR_CLEAR _IOW('p', 205, struct pr_clear)
 #endif
-
-"""
-
 ```

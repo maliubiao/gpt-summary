@@ -67,7 +67,7 @@ Response:
 4. **调试器处理**：调试器根据 `ForkHandler` 的处理结果，决定如何继续调试父子进程。
 
 通过以上步骤，用户可以确保在进程分叉时，调试器能够正确地处理父子进程的状态，从而保证调试的连续性。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/lib/payload/fork-monitor.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -76,8 +76,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 #if WINDOWS
 	public class ForkMonitor : Object {
@@ -265,7 +267,4 @@ namespace Frida {
 		public abstract void recover_from_specialization (string identifier);
 	}
 }
-
-"""
-
 ```

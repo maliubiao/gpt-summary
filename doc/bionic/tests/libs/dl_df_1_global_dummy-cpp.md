@@ -287,7 +287,7 @@ libc.so!__start_thread
 
 这个输出显示了 `foo` 函数被成功 Hook，并打印了调用栈，以及 `foo` 函数的返回值 `1`。通过 Frida，你可以动态地观察和修改程序的行为，这对于调试动态链接和理解程序执行流程非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dl_df_1_global_dummy.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -298,8 +298,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -319,7 +321,4 @@ Prompt:
 extern "C" int foo() {
   return 1;
 }
-
-"""
-
 ```

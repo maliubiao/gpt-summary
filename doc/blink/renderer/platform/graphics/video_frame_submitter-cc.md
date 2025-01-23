@@ -100,15 +100,17 @@ My thought process for analyzing the provided code snippet goes like this:
 
 总而言之，`blink/renderer/platform/graphics/video_frame_submitter.cc` (第一部分) 的核心功能是作为 Blink 渲染引擎中视频渲染管道的关键环节，负责接收解码后的视频帧，将其转换为合成器可以处理的格式，并通过与合成器的通信机制，确保视频内容能够高效、正确地渲染到屏幕上。它还涉及资源管理、帧同步和一些性能优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/video_frame_submitter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -977,7 +979,4 @@ bool VideoFrameSubmitter::SubmitFrame(
 
 void VideoFrameSubmitter::SubmitEmptyFrame() {
   DCHECK_CALLED_ON_VALID_THREAD(thre
-"""
-
-
 ```

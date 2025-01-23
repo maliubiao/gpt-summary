@@ -152,7 +152,7 @@ Here's a plan to address the request:
 
 这段 `net/url` 包的 Go 代码主要负责 URL 字符串的 **解析** 和 **编码/解码**。它定义了表示 URL 及其组成部分的结构体，并提供了一系列函数用于将原始 URL 字符串解析成结构化的数据，以及将字符串安全地编码到 URL 的不同组成部分中（如查询参数和路径），同时也提供了反向操作，将 URL 编码的字符串解码回原始形式。其核心目标是帮助开发者方便且正确地处理 URL 相关的操作，遵循 RFC 3986 等相关规范。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/url/url.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -161,8 +161,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1315,10 +1317,5 @@ func (u *URL) ResolveReference(ref *URL) *URL {
 
 // Query parses RawQuery and returns the corresponding values.
 // It silently discards malformed value pairs.
-// To check 
-"""
-
-
-
-
+// To check
 ```

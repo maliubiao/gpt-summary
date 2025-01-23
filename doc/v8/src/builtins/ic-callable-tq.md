@@ -258,14 +258,16 @@ ic.callable.TryInitializeAsMonomorphic(globalContext, otherContextMyFunction, fe
 
 总结来说，`ic-callable.tq` 文件是 V8 引擎内联缓存机制的核心，它通过 Torque 宏定义了收集、分析和利用函数调用和对象构造反馈信息的逻辑，从而实现 JavaScript 代码的动态优化。理解其功能有助于开发者编写更易于 V8 优化的代码，避免常见的性能陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ic-callable.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -550,7 +552,4 @@ macro CollectConstructFeedback(
 
 }  // namespace callable
 }  // namespace ic
-
-"""
-
 ```

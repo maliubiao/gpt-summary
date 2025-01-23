@@ -127,7 +127,7 @@ By following these steps, I can systematically analyze the code and generate a c
 
 这部分 `element.cc` 代码主要负责实现 `Element` 类中与 CSS 选择器匹配、类名操作、数据集操作、URL 和数值型属性处理、全屏和指针锁定控制、属性修改回调、文档移动处理、命名项注册、焦点组管理、属性节点管理、样式重计算回调、自定义样式调整和内联样式管理等密切相关的核心功能。这些功能直接支撑了 JavaScript 操作 DOM 元素，以及 CSS 样式规则的应用，是 Blink 渲染引擎中至关重要的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第11部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 electors,
                       ExceptionState& exception_state) {
   SelectorQuery* selector_query = GetDocument().GetSelectorQueryCache().Add(
@@ -1115,7 +1117,4 @@ bool Element::SetInlineStyleProperty(CSSPropertyID property_id,
   bool did_change =
       EnsureMutableInlineStyle().ParseAndSetProperty(
           property_id, v
-"""
-
-
 ```

@@ -80,7 +80,7 @@ The user wants a summary of the functionality of the `css_parser_fast_paths.cc` 
 
 总而言之，`blink/renderer/core/css/parser/css_parser_fast_paths.cc` 文件的主要功能是**提供一组优化的函数，用于快速解析常见的简单 CSS 属性值，例如长度、颜色和角度等。** 它的目的是提高 Blink 引擎在解析 CSS 时的性能，从而提升网页加载和渲染速度。它与 CSS 直接相关，并间接地影响着 HTML 元素的样式呈现，也为 JavaScript 动态修改样式提供了高效的解析支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_parser_fast_paths.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -88,8 +88,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1026,8 +1028,5 @@ static bool FastParseColorInternal(Color& color,
     }
   }
 
-  // rgb() and rgba() have 
-"""
-
-
+  // rgb() and rgba() have
 ```

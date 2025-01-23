@@ -53,13 +53,15 @@ Similarly, more complex JavaScript operations would be translated into sequences
 
 **In summary, this part of the `simulator-s390.cc` file provides the core instruction execution engine for the V8 JavaScript engine's s390 simulator, enabling it to run JavaScript code on s390 platforms even when direct hardware execution is not possible or desired.** The extensive list of `EVALUATE` macros in this snippet highlights the breadth of s390 instructions that this part of the simulator can handle.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/s390/simulator-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-  return length;
+### 源代码
+```
+return length;
 }
 
 EVALUATE(BXLE) {
@@ -3475,7 +3477,4 @@ EVALUATE(XGRK) {
 EVALUATE(AGRK) {
   DCHECK_OPCODE(AGRK);
   DE
-"""
-
-
 ```

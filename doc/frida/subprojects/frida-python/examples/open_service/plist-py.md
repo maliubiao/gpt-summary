@@ -161,7 +161,7 @@ By following this thought process, breaking down the code, applying relevant kno
 
 总而言之，这个 `plist.py` 脚本是一个简洁但实用的示例，展示了如何使用 Frida 与 iOS 设备的系统服务进行交互。它涉及到动态分析、理解操作系统服务、以及基本的进程间通信概念。对于逆向工程师和安全研究人员来说，掌握这类工具和技术是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/open_service/plist.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import frida
 
 device = frida.get_usb_device()
@@ -178,7 +180,4 @@ device = frida.get_usb_device()
 diag = device.open_service("plist:com.apple.mobile.diagnostics_relay")
 diag.request({"type": "query", "payload": {"Request": "Sleep", "WaitForDisconnect": True}})
 diag.request({"type": "query", "payload": {"Request": "Goodbye"}})
-
-"""
-
 ```

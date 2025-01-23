@@ -237,7 +237,7 @@ type _C_uchar = C.uchar
 
 总之，`go/src/net/cgo_unix_cgo_resn.go` 文件是Go标准库在特定条件下利用系统底层DNS解析能力的一个桥梁，通过CGO封装了C语言的 `res_nsearch` 函数。 开发者通常不需要直接与这个文件交互，而是应该使用 `net` 包提供的更高级别的API。 理解其背后的机制有助于更深入地理解Go的网络编程模型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/cgo_unix_cgo_resn.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -245,8 +245,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -286,9 +288,4 @@ func _C_res_nsearch(state *_C_struct___res_state, dname *_C_char, class, typ int
 	x := C.res_nsearch(state, dname, C.int(class), C.int(typ), ans, C.int(anslen))
 	return int(x)
 }
-
-"""
-
-
-
 ```

@@ -155,7 +155,7 @@ By following these steps and continually refining the analysis based on the cont
 
 作为调试线索，如果用户遇到了与 Frida 构建或使用对象库相关的问题，这个测试用例的代码可以作为一个参考和调试的起点。例如，如果用户在自己的 Frida 模块中链接第三方库时遇到困难，可以参考这个测试用例的 CMake 配置和代码结构。此外，如果 Frida 的构建过程出现问题，开发者可能会查看这些测试用例来定位问题所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/15 object library advanced/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "libA.hpp"
 #include "libB.hpp"
@@ -176,7 +178,4 @@ int main(void) {
   cout << getZlibVers() << endl;
   return EXIT_SUCCESS;
 }
-
-"""
-
 ```

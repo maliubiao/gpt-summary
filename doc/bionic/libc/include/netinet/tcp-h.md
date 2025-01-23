@@ -279,7 +279,7 @@ sys.stdin.read()
 
 要更进一步 Hook TCP 状态或标志位的设置，你可能需要 Hook 内核中的 TCP 相关函数，这通常需要 root 权限和更深入的内核调试知识。 对于用户态的 Hook，可以尝试 Hook `setsockopt` 函数来观察 TCP 选项的设置，或者 Hook `send` 和 `recv` 等函数来分析数据包的内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/netinet/tcp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -290,8 +290,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -369,7 +371,4 @@ enum {
 __END_DECLS
 
 #endif /* _NETINET_TCP_H */
-
-"""
-
 ```

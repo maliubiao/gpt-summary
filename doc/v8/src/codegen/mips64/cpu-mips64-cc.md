@@ -145,15 +145,17 @@ for (let i = 0; i < 100000; i++) {
 
 总而言之，`v8/src/codegen/mips64/cpu-mips64.cc` 文件虽然是底层 C++ 代码，但它对于 V8 引擎在 MIPS64 架构上正确、高效地执行 JavaScript 代码至关重要。它通过提供指令缓存刷新的功能，确保 CPU 能够执行最新的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/cpu-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/cpu-mips64.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ void CpuFeatures::FlushICache(void* start, size_t size) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
 ```

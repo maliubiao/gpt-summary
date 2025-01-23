@@ -164,7 +164,7 @@ g++ -shared -o libB.so libB.o
 
 总而言之，`libB.cpp` 虽然代码简单，但它在一个受控的环境下演示了动态链接的 "as-needed" 特性，这对于理解动态库加载和依赖关系，尤其是在进行逆向工程和动态分析时，是非常有价值的。它也揭示了底层操作系统和链接器的一些工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/173 as-needed/libB.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "libA.h"
 
 #undef DLL_PUBLIC
@@ -193,7 +195,4 @@ namespace meson_test_as_needed {
     return 0;
   }
 }
-
-"""
-
 ```

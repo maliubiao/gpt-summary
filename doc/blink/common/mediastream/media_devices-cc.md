@@ -159,14 +159,16 @@ By following this thought process, which involves understanding the code's struc
 
 总而言之，`blink/common/mediastream/media_devices.cc` 中定义的 `WebMediaDeviceInfo` 类是 Blink 引擎中表示媒体设备的关键数据结构，它通过 Web API 影响着 JavaScript 对媒体设备的访问和控制，从而间接地影响 HTML 和 CSS 的行为。理解其内部结构和设计决策（例如相等性比较的实现）对于避免常见的编程错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/mediastream/media_devices.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -223,7 +225,4 @@ bool operator==(const WebMediaDeviceInfo& first,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -180,7 +180,7 @@ console.log(resultVector); // 输出类似: I32x4 {0: 6, 1: 8, 2: 10, 3: 12}
 
 总而言之，这段 `wasm-interpreter.cc` 的代码片段是 V8 的 WebAssembly 解释器的核心组成部分，负责将 WebAssembly 的高级指令转换为可以在 V8 内部执行的操作。第 14 部分尤其关注表操作、保证线程安全的原子操作以及利用硬件并行性的 SIMD 指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter.cc以.tq结尾，那它是个v8 torque源代码，
@@ -188,9 +188,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第14部分，共15部分，请归纳一下它的功能
+```
 
-"""
-      EmitI32Const(instr.optional.table_init.element_segment_index);
+### 源代码
+```cpp
+EmitI32Const(instr.optional.table_init.element_segment_index);
       I32Pop();
       I32Pop();
       I32Pop();
@@ -885,8 +887,5 @@ Prompt:
     /* emit 8 bits ? */                                      \
     EmitI16Const(instr.optional.simd_loadstore_lane.lane);   \
     S128Push();                                              \
-    return RegMode::kNoReg;                           
-"""
-
-
+    return RegMode::kNoReg;
 ```

@@ -84,7 +84,7 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 这部分代码的核心作用是**维护一个包含了所有 Blink 引擎支持的编辑命令的注册表**。它将命令名称映射到具体的执行函数、启用条件、状态查询等信息，为浏览器的文本编辑功能提供了基础框架。当用户进行编辑操作时，浏览器会根据这个注册表来确定应该执行哪个命令以及如何执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/editor_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -92,8 +92,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 alueStateOrNull,
        kNotTextInsertion, CanNotExecuteWhenDisabled},
       {EditingCommandType::kMakeTextWritingDirectionLeftToRight,
@@ -719,8 +721,4 @@ const StaticRangeVector* EditorCommand::GetTargetRanges() const {
       return RangesFromCurrentSelectionOrExtendCaret(
           *frame_, SelectionModifyDirection::kForward,
           TextGranularity::kCharacter);
-   
-"""
-
-
 ```

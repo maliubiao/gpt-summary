@@ -181,15 +181,17 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`ax_inline_text_box_test.cc` 是一个关键的测试文件，它确保了 Blink 引擎能够正确地表示和处理渲染后的文本行的辅助功能信息，这对于确保所有用户都能访问和理解 Web 内容至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_inline_text_box_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -958,7 +960,4 @@ TEST_F(AccessibilityTest, AXBlockFlowIteratorAPI_CharacterOffsets_Ligature) {
 }  // namespace test
 
 }  // namespace blink
-
-"""
-
 ```

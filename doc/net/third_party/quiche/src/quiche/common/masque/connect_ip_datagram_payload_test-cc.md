@@ -110,15 +110,17 @@ By following this systematic process of analysis, synthesis, and refinement, I c
 
 如果在上述任何一个环节出现问题，例如数据包格式错误、上下文 ID 不匹配等，开发人员可能会通过查看网络日志、断点调试 C++ 代码等方式，最终定位到 `connect_ip_datagram_payload_test.cc` 中相关的测试用例，以便验证 `ConnectIpDatagramPayload` 类的功能是否正常。 该测试文件提供的测试用例覆盖了常见的解析和序列化场景，有助于开发者确保 MASQUE 协议在 Chromium 中的正确实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/masque/connect_ip_datagram_payload_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -181,7 +183,4 @@ TEST(ConnectIpDatagramPayloadTest, SerializeUnknownPacket) {
 
 }  // namespace
 }  // namespace quiche::test
-
-"""
-
 ```

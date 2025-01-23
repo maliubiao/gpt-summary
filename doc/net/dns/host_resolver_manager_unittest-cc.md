@@ -119,7 +119,7 @@ By following these steps, I could analyze the C++ code, understand its purpose w
 
 这个代码文件是 `HostResolverManager` 类的单元测试，它通过模拟不同的网络场景和 DNS 响应，来验证 `HostResolverManager` 在异步主机名解析、DNS 查询类型处理、错误处理、并发控制以及与缓存相关的各个方面的功能是否正常。  它是确保 Chromium 网络栈中 DNS 解析功能稳定可靠的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -969,8 +971,4 @@ void HostResolverManagerTest::LocalhostIPV4IPV6LookupTest(bool is_async) {
   EXPECT_THAT(v4_unsp_response.result_error(), IsOk());
   EXPECT_THAT(v4_unsp_response.request()->GetAddressResults()->endpoints(),
               testing::UnorderedElementsAre(CreateExpected("127.0.0.1", 80),
-                                      
-"""
-
-
 ```

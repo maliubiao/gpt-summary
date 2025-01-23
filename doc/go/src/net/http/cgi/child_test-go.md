@@ -221,7 +221,7 @@ ContentLength: 0
 
 总而言之，这段测试代码的核心在于验证 `net/http/cgi` 包中将 CGI 子进程的环境变量转换为 Go 语言中 `http.Request` 对象的功能，以及初步的 CGI 响应处理机制。它通过各种测试用例覆盖了不同的环境变量组合和场景，确保转换的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/cgi/child_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -229,8 +229,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -439,9 +441,4 @@ func TestResponse(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

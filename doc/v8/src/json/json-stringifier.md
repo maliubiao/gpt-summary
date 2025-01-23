@@ -155,11 +155,13 @@ C++ 代码中的 `StackPush` 方法会检测到循环引用，并通过 `Constru
 
 总而言之，`v8/src/json/json-stringifier.cc` 是 V8 引擎中负责实现 `JSON.stringify()` 功能的关键 C++ 代码，它处理了 JSON 序列化的各种细节，包括参数处理、数据类型转换、循环引用检测和字符串转义等，确保 JavaScript 的 `JSON.stringify()` 方法能够按照规范正确地将 JavaScript 对象转换为 JSON 字符串。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/json/json-stringifier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1880,7 +1882,4 @@ void JsonStringifier::ChangeEncoding() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

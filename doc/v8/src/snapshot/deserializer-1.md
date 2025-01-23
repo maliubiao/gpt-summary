@@ -112,12 +112,14 @@ greet("World");
 
 这部分代码主要完成了 `Deserializer` 模板类的实例化，它是 V8 引擎中负责加载快照数据的关键组件。虽然 JavaScript 代码本身不直接操作 `Deserializer`，但 `Deserializer` 的工作直接影响着 JavaScript 代码的启动速度和执行效率。 通过反序列化预编译的代码和运行时状态，`Deserializer` 极大地提升了 V8 引擎的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/deserializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 Deserializer<Isolate>;
 template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
     Deserializer<LocalIsolate>;
@@ -125,8 +127,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace v8::internal
 
 #include "src/objects/object-macros-undef.h"
-
-"""
-
-
 ```

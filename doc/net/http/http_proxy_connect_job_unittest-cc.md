@@ -137,7 +137,7 @@ fetch('https://www.example.com')
 
 总而言之，`net/http/http_proxy_connect_job_unittest.cc` 的主要功能是提供一套全面的单元测试，用于验证 `HttpProxyConnectJob` 类在各种 HTTP 代理场景下的正确行为，包括不同协议、连接模式、错误处理以及与 `ProxyDelegate` 的交互。这些测试对于确保 Chromium 网络栈在处理 HTTP 代理连接时的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_proxy_connect_job_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -949,7 +951,4 @@ TEST_P(HttpProxyConnectJobTest, NestedProxyProxyDelegateExtraHeaders) {
   };
 
   spdy::S
-"""
-
-
 ```

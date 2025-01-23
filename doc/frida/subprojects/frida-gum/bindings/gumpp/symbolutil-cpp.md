@@ -201,7 +201,7 @@ By following this structured thought process, breaking down the code into its co
 
 总而言之，`symbolutil.cpp` 文件在 Frida 的符号查找机制中扮演着重要的角色，它提供了一层 C++ 接口，方便 Gum 库进行符号查找操作，而符号查找是动态插桩和逆向工程中的关键步骤。理解其功能和背后的原理，有助于更好地使用 Frida 进行分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumpp/symbolutil.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -209,8 +209,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "gumpp.hpp"
 
 #include "podwrapper.hpp"
@@ -260,6 +262,4 @@ namespace Gum
     return new SymbolPtrArray (gum_find_functions_matching (str));
   }
 }
-"""
-
 ```

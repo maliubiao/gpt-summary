@@ -125,11 +125,13 @@ End
 
 `linear-scheduler-unittest.cc` 文件通过单元测试验证了 V8 引擎中 `LinearScheduler` 类的功能，该类负责将编译器的中间表示划分为基本块。这个过程对于后续的代码优化和机器码生成至关重要，因此与 JavaScript 的执行效率密切相关。测试用例覆盖了简单顺序执行、条件分支和循环等常见的代码结构，确保 `LinearScheduler` 能够正确处理各种情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/linear-scheduler-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -310,7 +312,4 @@ TARGET_TEST_F(LinearSchedulerTest, LoopedFloatingDiamond) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

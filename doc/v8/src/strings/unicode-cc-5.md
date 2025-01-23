@@ -140,7 +140,7 @@ This C++ code directly underpins many of JavaScript's string manipulation featur
 
 This final part of the `v8/src/strings/unicode.cc` file focuses on **calculating the total memory allocation needed for a comprehensive set of Unicode lookup tables**. These tables are crucial for V8's internal implementation of various JavaScript string operations related to character identification, case conversion, whitespace handling, and Unicode canonicalization. This calculation ensures that sufficient memory is reserved to efficiently manage Unicode strings within the V8 engine. The presence of multiple tables with different suffixes suggests a sophisticated internal organization for optimizing Unicode processing.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/unicode.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/strings/unicode.cc以.tq结尾，那它是个v8 torque源代码，
@@ -148,9 +148,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
-        kID_StartTable2Size * sizeof(int32_t) +
+### 源代码
+```cpp
+kID_StartTable2Size * sizeof(int32_t) +
          kID_StartTable3Size * sizeof(int32_t) +
          kID_StartTable4Size * sizeof(int32_t) +
          kID_StartTable5Size * sizeof(int32_t) +
@@ -197,8 +199,4 @@ Prompt:
 #endif  // !V8_INTL_SUPPORT
 
 }  // namespace unibrow
-
-"""
-
-
 ```

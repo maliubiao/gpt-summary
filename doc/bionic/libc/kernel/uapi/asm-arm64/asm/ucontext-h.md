@@ -260,7 +260,7 @@ if __name__ == "__main__":
 
 这个 Frida 示例展示了如何 hook libc 函数来观察其行为，这对于理解 Android 底层机制以及调试问题非常有帮助。 通过 hook 与 `ucontext` 相关的函数，你可以深入了解 Android 如何管理进程和线程的上下文。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/ucontext.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -271,8 +271,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -291,7 +293,4 @@ struct ucontext {
   struct sigcontext uc_mcontext;
 };
 #endif
-
-"""
-
 ```

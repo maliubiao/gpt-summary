@@ -156,7 +156,7 @@ add_subdirectory(subprojects/cmMod)
 
 `cmMod.cpp` 虽然是一个非常简单的 C++ 文件，但它在 Frida 项目中扮演着测试构建系统集成的重要角色。它可以作为逆向分析的目标，也涉及到二进制底层、操作系统和框架的知识。理解这个文件的功能和上下文，可以帮助开发者更好地理解 Frida 的工作原理和构建过程，并有助于排查构建和集成方面的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/1 basic/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -181,7 +183,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

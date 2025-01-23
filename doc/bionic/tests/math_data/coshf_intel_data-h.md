@@ -145,7 +145,7 @@ sys.stdin.read()
 
 `coshf_intel_data.handroid` 文件是 Android Bionic 库中用于测试 `coshf` 函数正确性的重要组成部分。它提供了一组预定义的输入和期望输出，用于验证 `coshf` 函数在不同输入下的计算结果是否符合预期。这对于确保 Android 系统底层数学运算的准确性和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/coshf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -157,8 +157,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1718,7 +1720,4 @@ static data_1_1_t<float, float> g_coshf_intel_data[] = {
   },
   { // Entry 385
     0x1.0000f04181beb2dc0da3230e
-"""
-
-
 ```

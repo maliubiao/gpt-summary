@@ -210,7 +210,7 @@ By following this systematic approach, combining code analysis with an understan
 
 总而言之，`gummipswriter.c` 是 Frida 在 MIPS 架构上进行动态插桩的关键基础设施，理解它的功能对于深入理解 Frida 的工作原理以及调试 Frida 脚本至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/arch-mips/gummipswriter.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -218,8 +218,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C)      2019 Jon Wilson <jonwilson@zepler.net>
@@ -1162,7 +1164,4 @@ gum_mips_writer_describe_reg (GumMipsWriter * self,
     g_assert_not_reached ();
   }
 }
-
-"""
-
 ```

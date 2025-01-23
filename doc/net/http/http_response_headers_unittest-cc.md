@@ -124,7 +124,7 @@ By following these steps, I could systematically analyze the code and generate a
 
 这个单元测试文件全面地测试了 `net::HttpResponseHeaders` 类的各项功能，包括 HTTP 响应头的解析、规范化、特定头部信息的提取（如缓存控制、日期、内容类型等）以及持久化能力。这些测试确保了 Chromium 浏览器能够正确地理解和处理服务器返回的 HTTP 响应头，从而保证了网络功能的正常运行，并对 JavaScript 在浏览器环境中的行为产生直接影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_response_headers_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1189,8 +1191,4 @@ const struct RequiresValidationTestData requires_validation_tests[] = {
      VALIDATION_NONE},
     // Cache-control: max-age=N overrides expires: date in the past.
     {"HTTP/1.1 200 OK\n"
-  
-"""
-
-
 ```

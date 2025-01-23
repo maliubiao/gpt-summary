@@ -101,15 +101,17 @@ func main() {
 
 `go/test/typeparam/stringerimp.go` 中声明的 `ignored` 包很可能是一个用于 Go 语言测试框架的特殊包，它的主要目的是为了在特定的测试场景中被 Go 工具链有意地忽略。这允许测试在排除特定代码影响或处理特定错误情况下的行为，并且可能与泛型和 `stringer` 工具的测试有关。开发者应该避免在生产代码中依赖或使用这类包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/stringerimp.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -117,9 +119,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

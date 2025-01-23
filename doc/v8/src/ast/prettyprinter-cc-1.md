@@ -524,7 +524,7 @@ OBJ LITERAL
 
 总的来说，`v8/src/ast/prettyprinter.cc` 的这一部分延续了其核心功能：**提供一种结构化的、易于理解的方式来打印 V8 引擎抽象语法树 (AST) 的节点信息**。它涵盖了更多的 AST 节点类型，包括类相关的元素（属性、静态块）、原生函数字面量、更复杂的条件语句（`ConditionalChain`）、字面量、正则表达式、对象和数组字面量、变量代理、各种操作符（赋值、算术、比较）、`yield` 和 `await` 表达式、异常处理、可选链、属性访问、函数调用、模板字面量和动态导入等。 这些输出对于 V8 引擎的开发者来说，是调试和理解代码解析过程、优化代码生成以及进行代码分析的重要工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/prettyprinter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/prettyprinter.cc以.tq结尾，那它是个v8 torque源代码，
@@ -532,8 +532,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 prop_kind = "AUTO ACCESSOR";
       break;
   }
@@ -905,8 +907,4 @@ void AstPrinter::VisitSuperCallForwardArgs(SuperCallForwardArgs* node) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

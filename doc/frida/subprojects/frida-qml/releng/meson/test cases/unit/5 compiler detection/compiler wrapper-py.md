@@ -116,7 +116,7 @@ python compiler\ wrapper.py gcc -c test.c -o test.o
 
 如果在测试过程中，`compiler wrapper.py` 报错或者返回了不期望的结果，开发者可以通过查看 CI/CD 的日志，或者本地运行相应的测试命令，找到 `compiler wrapper.py` 的调用链和参数，从而定位问题。例如，可以查看 Meson 的日志来确定传递给 `compiler wrapper.py` 的具体命令，以及编译器的输出信息，从而帮助调试编译器配置或测试脚本的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/5 compiler detection/compiler wrapper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,15 +124,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 import subprocess
 
 sys.exit(subprocess.call(sys.argv[1:]))
-
-"""
-
 ```

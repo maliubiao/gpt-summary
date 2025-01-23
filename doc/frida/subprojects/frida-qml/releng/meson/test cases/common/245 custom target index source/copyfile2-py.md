@@ -165,7 +165,7 @@ By following these steps, considering the context, and making connections to the
 
 `copyfile2.py` 是一个简单的文件复制脚本，它在 Frida 的测试框架中可能用于准备测试环境、模拟文件操作或者验证构建系统的自定义目标功能。尽管脚本本身功能简单，但其应用场景可以涉及到逆向工程的常见任务和底层的操作系统知识。 理解这种看似简单的脚本在复杂系统中的作用，有助于我们更好地理解整个系统的运作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/245 custom target index source/copyfile2.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -182,7 +184,4 @@ import shutil
 
 shutil.copyfile(sys.argv[1], sys.argv[2])
 shutil.copyfile(sys.argv[3], sys.argv[4])
-
-"""
-
 ```

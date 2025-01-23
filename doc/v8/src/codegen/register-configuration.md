@@ -113,11 +113,13 @@ console.log(totalDistance);
 
 `register-configuration.cc` 虽然是一个底层的 C++ 文件，但它对于 V8 引擎生成高效的 JavaScript 代码至关重要。它定义了代码生成器可以使用的“工作空间”（寄存器），并影响着最终生成的机器码的性能。JavaScript 开发者虽然不能直接控制这些配置，但 V8 引擎会根据这些配置来优化 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/register-configuration.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -499,7 +501,4 @@ bool RegisterConfiguration::AreAliases(MachineRepresentation rep, int index,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

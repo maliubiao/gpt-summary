@@ -132,7 +132,7 @@ Here's a plan:
 
 从代码来看，还有一个 `VideoTrackRecorderPassthrough` 类。它与 `VideoTrackRecorderImpl` 的主要区别在于，`VideoTrackRecorderPassthrough` 假设接收到的视频帧已经是编码过的，它主要负责处理关键帧的请求和传递已经编码的视频帧，而不需要进行实际的编码操作。这通常用于直接处理来自某些来源的已编码视频流。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediarecorder/video_track_recorder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 kRecorderImpl");
   DCHECK_CALLED_ON_VALID_SEQUENCE(main_sequence_checker_);
   DCHECK(track_);
@@ -565,8 +567,4 @@ void VideoTrackRecorderPassthrough::HandleEncodedVideoFrame(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

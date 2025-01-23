@@ -186,7 +186,7 @@ if (globalThis.ShadowRealm) {
 
 希望这个详细的分析能够帮助你理解这段代码的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/init/bootstrapper.cc以.tq结尾，那它是个v8 torque源代码，
@@ -194,9 +194,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共11部分，请归纳一下它的功能
+```
 
-"""
-      wrap_for_valid_iterator_prototype);
+### 源代码
+```cpp
+wrap_for_valid_iterator_prototype);
   valid_iterator_wrapper_map->SetConstructor(*iterator_function);
   native_context()->set_valid_iterator_wrapper_map(*valid_iterator_wrapper_map);
   LOG(isolate(), MapDetails(*valid_iterator_wrapper_map));
@@ -897,7 +899,4 @@ bool Genesis::InstallABunchOfRandomThings() {
                                 JSDataPropertyDescriptor::kValueIndex, NONE,
                                 Representation::Tagged());
       map->A
-"""
-
-
 ```

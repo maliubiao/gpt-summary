@@ -124,11 +124,13 @@ if (Math.random() > 0.5) {
 
 `v8-profiler-agent-impl.cc` 是 V8 引擎中负责实现开发者工具性能分析器和代码覆盖率功能的关键组件。它接收来自前端的指令，与 V8 引擎的 Profiler 和 Coverage API 交互，收集性能和覆盖率数据，并将结果格式化后发送回前端，最终在浏览器的开发者工具中呈现给开发者，帮助他们分析 JavaScript 代码的性能瓶颈和代码覆盖情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-profiler-agent-impl.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -617,7 +619,4 @@ std::unique_ptr<protocol::Profiler::Profile> V8ProfilerAgentImpl::stopProfiling(
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

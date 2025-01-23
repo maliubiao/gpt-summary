@@ -126,7 +126,7 @@ This iterative process of understanding, connecting, and illustrating helps in g
 
 总而言之，`skip_ci.py` 是 Frida 项目为了优化 CI 流程而设计的一个实用脚本，它通过分析 Git 提交内容来智能地决定是否需要执行完整的 CI 构建，从而提高开发效率。它虽然不直接进行逆向操作，但作为逆向工具 Frida 的一部分，体现了对开发流程的优化和对底层系统工具的运用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/skip_ci.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
@@ -200,7 +202,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

@@ -128,15 +128,17 @@ The `fragment_item.cc` file defines the `FragmentItem` class, a fundamental buil
 
 总而言之，`fragment_item.cc` 的第一部分定义了 `FragmentItem` 类的基本结构和构造方式，为表示和管理内联布局中的视觉片段提供了基础。它是 Blink 渲染引擎连接 HTML 结构、CSS 样式和最终屏幕渲染的关键数据结构之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/fragment_item.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1055,8 +1057,4 @@ void FragmentItem::RecalcInkOverflow(const InlineCursor& cursor,
         return;
       }
       // Create |ScopedInlineItem| here because the decoration box is not
-  
-"""
-
-
 ```

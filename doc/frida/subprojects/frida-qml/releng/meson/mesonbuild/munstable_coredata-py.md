@@ -205,7 +205,7 @@ Cached dependencies for host machine
 
 `munstable_coredata.py` 是 Frida 构建系统中的一个有用的调试工具，它允许开发者和高级用户查看 Meson 缓存的内部构建数据。 尽管其输出格式不稳定，不适合自动化解析，但它为理解 Frida 的构建环境、依赖关系和底层配置提供了宝贵的洞察力，这对于逆向工程、问题排查和深入理解 Frida 的工作原理都很有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/munstable_coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -213,8 +213,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -322,7 +324,4 @@ def run(options):
         else:
             print(k + ':')
             print(textwrap.indent(pprint.pformat(v), '  '))
-
-"""
-
 ```

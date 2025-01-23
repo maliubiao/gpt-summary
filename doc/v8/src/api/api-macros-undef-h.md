@@ -149,15 +149,17 @@ void some_function_in_b() {
 
 总而言之，`v8/src/api/api-macros-undef.h` 的作用是至关重要的，它帮助 V8 控制宏定义的作用域，避免命名冲突，并确保代码的清晰性和可维护性。 它标志着一组特定 API 宏定义作用域的结束。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api-macros-undef.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/api/api-macros-undef.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ Prompt:
 #undef RETURN_ON_FAILED_EXECUTION
 #undef RETURN_ON_FAILED_EXECUTION_PRIMITIVE
 #undef RETURN_ESCAPED
-
-"""
-
 ```

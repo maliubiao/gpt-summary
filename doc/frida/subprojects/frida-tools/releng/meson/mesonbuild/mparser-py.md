@@ -180,7 +180,7 @@ my_variable = 'some_value'
 
 `mparser.py` 文件的主要功能是**解析 Meson 构建描述语言**，它通过 `Lexer` 进行**词法分析**，将源代码分解成 Token，然后通过 `Parser` 进行**语法分析**，将 Token 流转换成**抽象语法树 (AST)**。这个过程会进行错误检查，并在遇到语法错误时抛出异常。`mparser.py` 是 Frida 工具链中理解和处理构建配置的核心组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/mparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2017 The Meson development team
 
@@ -1104,7 +1106,4 @@ class Parser:
             return self.create_node(ArrayNode, lbracket, args, rbracket)
         elif self.accept('lcurl'):
             lcurl = se
-"""
-
-
 ```

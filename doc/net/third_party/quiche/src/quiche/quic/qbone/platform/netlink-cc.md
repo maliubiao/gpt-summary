@@ -208,15 +208,17 @@ addresses[1].scope:  // 例如，0
 
 总而言之，`netlink.cc` 是 Chromium QUIC 协议中一个关键的底层组件，负责与 Linux 内核的网络子系统交互，实现对网络接口、地址和路由的配置和监控。虽然 JavaScript 无法直接调用它，但它影响着浏览器发起的网络连接，并在特定的网络场景或测试环境中发挥着重要作用。理解其功能对于调试网络连接问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/qbone/platform/netlink.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1047,7 +1049,4 @@ bool Netlink::Recv(uint32_t seq, NetlinkParserInterface* parser) {
 }
 
 }  // namespace quic
-
-"""
-
 ```

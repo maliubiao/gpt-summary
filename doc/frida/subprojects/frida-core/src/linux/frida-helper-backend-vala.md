@@ -138,7 +138,7 @@ while True:
    - 用户通过 LLDB 或其他调试工具附加到目标进程，查看寄存器和内存状态，分析进程的执行流程。
 
 通过这些步骤，用户可以逐步实现动态插桩和调试功能，并分析目标进程的行为。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/linux/frida-helper-backend.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class LinuxHelperBackend : Object, LinuxHelper {
 		public signal void idle ();
@@ -1213,7 +1215,4 @@ namespace Frida {
 			} catch (IOError e) {
 				cancellable.set_error_if_cancelled ();
 				throw new Error.PROCESS_NOT_RESPONDING ("Unexpectedly timed out trying to sync u
-"""
-
-
 ```

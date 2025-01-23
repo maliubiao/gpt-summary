@@ -211,15 +211,17 @@ console.log(index); // 6
 
 `v8/src/objects/string.tq` 文件是 V8 引擎中定义字符串对象内部结构和行为的关键文件。它定义了各种字符串的表示形式，以及用于创建、转换和操作字符串的底层机制。理解这个文件有助于深入了解 JavaScript 字符串的性能特性以及 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/string.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -621,7 +623,4 @@ macro AbstractStringIndexOf(
 builtin StringIndexOf(s: String, searchString: String, start: Smi): Smi {
   return AbstractStringIndexOf(s, searchString, SmiMax(start, 0));
 }
-
-"""
-
 ```

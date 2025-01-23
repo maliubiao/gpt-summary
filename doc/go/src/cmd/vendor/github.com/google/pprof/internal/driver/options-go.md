@@ -212,7 +212,7 @@ go tool pprof -output=profile.pb -seconds=30 http://localhost:8080/debug/pprof/p
 
 总而言之，`options.go` 文件在 `pprof` 工具中扮演着重要的初始化和配置角色，为工具的正常运行奠定了基础。它通过定义默认值和提供基本的 I/O 功能，使得 `pprof` 能够处理各种性能分析任务。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/driver/options.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -220,8 +220,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -322,9 +324,4 @@ func (oswriter) Open(name string) (io.WriteCloser, error) {
 	f, err := os.Create(name)
 	return f, err
 }
-
-"""
-
-
-
 ```

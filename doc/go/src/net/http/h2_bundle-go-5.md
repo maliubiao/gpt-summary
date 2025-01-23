@@ -211,7 +211,7 @@ func (sc *http2serverConn) processHeaders(frame *http2MetaHeadersFrame) error {
 
 这段代码主要实现了 Go 语言 `net/http` 包中 HTTP/2 服务器连接的核心管理和处理逻辑。它负责接收和发送 HTTP/2 帧，管理连接和流的状态，处理连接生命周期，以及提供错误处理和日志记录等功能。它是 HTTP/2 服务器实现的关键组成部分，为上层 `net/http` 包提供了底层的 HTTP/2 连接处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/h2_bundle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -220,8 +220,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第6部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 dler ending nils out the
 // responseWriter's state field.
 type http2stream struct {
@@ -1253,10 +1255,5 @@ func (sc *http2serverConn) processResetStream(f *http2RSTStreamFrame) error {
 	sc.serveG.check()
 
 	state, st := sc.state(f.StreamID)
-	if state 
-"""
-
-
-
-
+	if state
 ```

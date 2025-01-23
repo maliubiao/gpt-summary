@@ -145,7 +145,7 @@ A user would typically *not* directly interact with `mesonlib.py`. They interact
 
 **Therefore, the user reaches this code indirectly through the execution of the Meson build system, and they would only likely see it in a debugging context when something goes wrong during the build process.** The error messages and stack traces provide the "debugging线索" (debugging clues) pointing to this file.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/mesonlib.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-license-identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -178,7 +180,4 @@ elif os.name == 'nt':
     from .utils.win32 import *
 else:
     from .utils.platform import *
-
-"""
-
 ```

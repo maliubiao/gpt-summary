@@ -149,15 +149,17 @@ func main() {
 
 总而言之，这段代码的核心在于展示 Go 语言接口的定义和类型是否满足接口约束的概念。`WrongWrite` 的命名方式可能暗示了它用于某种特定的测试或边缘情况处理，而非标准的写入操作。`SR` 函数目前为空，但可能预示着未来会与 `SectionReader` 类型关联的操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug345.dir/io.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -173,9 +175,4 @@ type SectionReader struct {
 }
 
 func SR(*SectionReader) {}
-
-"""
-
-
-
 ```

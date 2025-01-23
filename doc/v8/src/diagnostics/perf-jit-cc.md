@@ -177,15 +177,17 @@ multiply(5, 10);
 
 总而言之，`v8/src/diagnostics/perf-jit.cc` 是 V8 引擎中一个关键的组件，它为使用 Linux `perf` 工具进行 JavaScript 和 WebAssembly 代码的性能分析提供了必要的基础设施。理解它的功能有助于开发者更有效地诊断和优化他们的 V8 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/perf-jit.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/perf-jit.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -748,7 +750,4 @@ void LinuxPerfJitLogger::LogWriteHeader() {
 }  // namespace v8
 
 #endif  // V8_OS_LINUX
-
-"""
-
 ```

@@ -213,7 +213,7 @@ if (symbol) {
 
 总之，`frida/subprojects/frida-swift/releng/meson/test cases/frameworks/28 gir link order 2/samelibname/dummy.c` 是 Frida 工具链中一个用于测试特定场景的简单 C 文件，其存在是为了验证 Frida 在处理同名共享库时的正确性。对于用户而言，理解这类测试用例可以帮助他们更好地理解 Frida 的工作原理，避免常见的错误，并更有效地使用 Frida 进行逆向和动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/28 gir link order 2/samelibname/dummy.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -221,9 +221,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

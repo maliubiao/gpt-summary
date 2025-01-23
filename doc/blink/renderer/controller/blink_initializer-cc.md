@@ -139,15 +139,17 @@ By following these steps, including the self-correction, a comprehensive and acc
 
 `blink_initializer.cc` 是 Blink 渲染引擎启动的基石，它负责初始化各种核心组件和服务，为网页的加载、渲染和交互提供了必要的支持。理解它的功能对于调试渲染引擎的问题至关重要。通过分析其代码和关联的接口，我们可以更好地理解 Blink 的内部运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/controller/blink_initializer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -514,7 +516,4 @@ void OnProcessBackgrounded() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

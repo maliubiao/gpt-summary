@@ -176,15 +176,17 @@ This is a low-level internal API, so typical JavaScript developers wouldn't inte
 
 `v8/src/sandbox/code-pointer-table-inl.h` provides the low-level implementation for managing a table of code pointers within V8's sandbox. It's a crucial component for secure and efficient execution of sandboxed JavaScript code, especially when pointer compression is enabled. It handles allocation, access, modification, and liveness tracking of these code pointers using handles for safety and abstraction. While not directly exposed to JavaScript developers, it underpins the sandboxing mechanisms that are vital for security in web browsers and other JavaScript environments.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/code-pointer-table-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/code-pointer-table-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -363,7 +365,4 @@ CodePointerHandle CodePointerTable::IndexToHandle(uint32_t index) const {
 #endif  // V8_COMPRESS_POINTERS
 
 #endif  // V8_SANDBOX_CODE_POINTER_TABLE_INL_H_
-
-"""
-
 ```

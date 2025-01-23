@@ -187,15 +187,17 @@ async function incrementCounterHandler() {
 
 总而言之，`shared_storage_operation_definition.cc` 文件在 Blink 引擎中扮演着关键的角色，它连接了 JavaScript 和 C++，定义了 Shared Storage API 中操作的结构和执行方式。理解这个文件对于理解 Shared Storage API 的内部工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/shared_storage/shared_storage_operation_definition.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ SharedStorageOperationDefinition::GetInstance() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

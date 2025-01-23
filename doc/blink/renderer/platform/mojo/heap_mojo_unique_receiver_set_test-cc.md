@@ -95,14 +95,16 @@ This detailed thought process helps in systematically understanding the code and
 
 `heap_mojo_unique_receiver_set_test.cc` 文件通过测试用例验证了 `HeapMojoUniqueReceiverSet` 类在管理 Mojo 服务接收器生命周期方面的功能，特别是它如何与 Blink 的上下文生命周期管理集成，以确保在上下文销毁时正确清理资源。这对于构建稳定和高效的 Chromium 渲染引擎至关重要。虽然它不直接操作前端技术，但它为浏览器内部服务的实现提供了关键的基础设施，而这些服务最终会被 JavaScript 等前端技术所使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mojo/heap_mojo_unique_receiver_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -247,7 +249,4 @@ TEST_F(HeapMojoUniqueReceiverSetWithoutContextObserverTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

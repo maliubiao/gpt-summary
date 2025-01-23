@@ -168,14 +168,16 @@ Blink 会调用 `config` 的 `ToV8` 方法，最终在 JavaScript 端会得到�
 
 总而言之，`dictionary_base.cc` 中的 `DictionaryBase` 类是 Blink 引擎中一个关键的桥梁，它使得 C++ 数据结构能够以 JavaScript 对象的形式呈现，从而实现了 C++ 和 JavaScript 之间的有效通信，这对于构建动态的 Web 页面至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/dictionary_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ v8::Local<v8::Value> DictionaryBase::ToV8(ScriptState* script_state) const {
 }  // namespace bindings
 
 }  // namespace blink
-
-"""
-
 ```

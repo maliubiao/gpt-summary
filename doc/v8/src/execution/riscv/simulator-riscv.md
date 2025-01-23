@@ -87,12 +87,14 @@ vadd.vv v1, v2, v3  // 将向量寄存器 v2 和 v3 的对应元素相加，结�
 
 总而言之，`simulator-riscv.cc` 是 V8 引擎在非 RISC-V 平台上运行 RISC-V 代码的桥梁，它使得开发者可以在各种环境下测试和运行为 RISC-V 架构设计的 Javascript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/riscv/simulator-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1444,7 +1446,4 @@ struct type_sew_t<128> {
     RVV_VI_CHECK_SDS(false);                                                  \
   }                                                                           \
   CHECK(eew
-"""
-
-
 ```

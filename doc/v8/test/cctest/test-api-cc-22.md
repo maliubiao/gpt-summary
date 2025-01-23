@@ -207,7 +207,7 @@ Strategizing complete. I will now generate the response by summarizing the funct
 
 作为测试套件的第 23 部分，这个文件主要集中在 **V8 C++ API 中与代码动态生成、跨上下文调用以及异步操作（通过微任务）相关的核心功能测试**。它验证了 V8 提供的用于控制代码执行环境、处理不同执行上下文以及管理异步任务的机制的正确性和健壮性。这部分测试对于确保 V8 引擎的安全性和可靠性至关重要，特别是涉及到动态代码执行和复杂的 JavaScript 特性时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -215,8 +215,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第23部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 wed);
   CHECK(!context->IsCodeGenerationFromStringsAllowed());
   CheckCodeGenerationAllowed();
@@ -1098,7 +1100,4 @@ TEST(ScopedMicrotasks) {
     CompileRun(
         "var ext1Calls = 0;"
         "var ext2Cal
-"""
-
-
 ```

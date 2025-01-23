@@ -78,15 +78,17 @@ Since this is part 2 of a 3-part request, the goal is to summarize the functiona
 
 这部分代码主要测试了 `CrabbyAVIFImageDecoder` 对动画和静态 AVIF 图像的基本解码能力，包括帧数、循环次数、是否包含多个子图像、时间信息等。此外，重点测试了 Gain Map 功能的解析和提取，涵盖了不同类型的 Gain Map (SDR/HDR base)，以及在启用和禁用 Gain Map 功能时的行为。这部分测试旨在确保解码器能够正确处理各种合法的 AVIF 文件，并能优雅地处理一些非法的或有特殊属性的 AVIF 文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/avif/crabbyavif_image_decoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /resources/avif/star-animated-10bpc.avif", 5u, 0},
     {"/images/resources/avif/star-animated-10bpc-with-alpha.avif", 5u,
      kAnimationLoopInfinite},
@@ -847,7 +849,4 @@ TEST(CrabbyStaticAVIFTests, BppHistogramSmall900000) {
   constexpr int kSample =
       (kFileSize * 100 * 8 + kImageArea / 2) / kImageArea;  // = 7
   TestAvifBppHistogram(
-"""
-
-
 ```

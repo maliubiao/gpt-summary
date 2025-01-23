@@ -84,12 +84,14 @@ const value = obj.x; // 访问对象属性
 
 总而言之，这部分代码是 V8 引擎在 LoongArch64 架构上运行的关键组成部分，它充当了一个桥梁，使得 V8 能够在没有真实硬件的情况下执行 JavaScript 代码，并与 V8 的底层运行时环境进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/loong64/simulator-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 tr;
 }
 
@@ -1806,7 +1808,4 @@ void Simulator::DecodeTypeOp17() {
     case ADD_W: {
       printf_instr("ADD_W\t %s: %016lx, %s, %016lx, %s, %016lx\n",
                    Registers::Nam
-"""
-
-
 ```

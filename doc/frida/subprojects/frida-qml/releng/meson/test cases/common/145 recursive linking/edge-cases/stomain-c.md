@@ -138,7 +138,7 @@ By following this systematic approach, combining code analysis with contextual u
 
 通过分析 `stomain.c` 这个简单的测试用例，用户可以更好地理解 Frida 如何处理具有递归依赖关系的库，以及动态链接器在背后的工作原理，从而为解决实际的逆向工程问题提供思路和线索。这个测试用例本身也提供了一个可控的环境，用于验证用户对动态链接机制的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/145 recursive linking/edge-cases/stomain.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 #include "../lib.h"
@@ -164,7 +166,4 @@ int main(void) {
   }
   return 0;
 }
-
-"""
-
 ```

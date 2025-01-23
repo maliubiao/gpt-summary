@@ -141,15 +141,17 @@ By following these steps, including iterative analysis and self-correction, we c
 
 `ScopedBrowsingContextGroupPauser` 是 Chromium 中一个重要的内部机制，用于管理浏览上下文组的暂停和恢复。它与 JavaScript, HTML, 和 CSS 的执行和渲染息息相关，理解它的工作原理有助于我们理解 Chromium 的资源管理和页面生命周期。在调试相关问题时，需要考虑到浏览上下文组的概念以及可能触发暂停的各种场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/scoped_browsing_context_group_pauser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ void ScopedBrowsingContextGroupPauser::SetPaused(bool paused) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

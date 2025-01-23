@@ -196,11 +196,13 @@ Now, I can proceed with generating the response based on these considerations.
 
 `v8/src/debug/debug-interface.cc` 是 V8 引擎调试功能的基石，它提供了 C++ 接口，使得调试器能够与 V8 引擎进行深入的交互，从而实现 JavaScript 代码的调试和分析。这些 C++ 函数虽然不能直接在 JavaScript 中调用，但它们是构建强大 JavaScript 调试工具的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-interface.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1656,7 +1658,4 @@ Maybe<bool> DebugPropertyIterator::Advance() {
 }  // namespace v8
 
 #include "src/api/api-macros-undef.h"
-
-"""
-
 ```

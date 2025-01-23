@@ -162,15 +162,17 @@ Package a initialized (init function)
 
 `b.go` 的核心功能是通过导入和引用 `a` 包的成员，来确保 `a` 包在 `b` 包之前完成初始化。这体现了 Go 语言包管理的依赖管理和初始化机制。即使使用了空标识符，这种引用仍然会触发包的初始化过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/mdempsky/7.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -180,9 +182,4 @@ package b
 import "./a"
 
 var _ = a.X
-
-"""
-
-
-
 ```

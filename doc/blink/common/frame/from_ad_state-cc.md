@@ -93,14 +93,16 @@ By following these steps, I can generate a comprehensive and accurate answer tha
 
 总而言之，`blink/common/frame/from_ad_state.cc` 提供了一个基础的、底层的机制来判断当前执行上下文的广告属性，为浏览器实现更复杂的广告管理和安全策略提供了关键信息。其正确性依赖于更高层次的逻辑对 `is_ad_frame` 和 `is_ad_script_in_stack` 值的准确设置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/frame/from_ad_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -120,7 +122,4 @@ FromAdState GetFromAdState(bool is_ad_frame, bool is_ad_script_in_stack) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

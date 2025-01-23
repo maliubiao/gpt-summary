@@ -210,7 +210,7 @@ if __name__ == '__main__':
 
 `kernel-page-flags.handroid` 文件定义了内核内存页的各种状态标志。虽然用户空间程序不能直接操作这些标志，但它们是Android内存管理的基础。通过理解这些标志，可以更好地理解Android系统的内存行为和性能特征。虽然不能直接 hook 到这些标志的设置，但可以通过 hook 相关的系统调用（如 `mmap`）来间接观察它们的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/kernel-page-flags.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -221,8 +221,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -259,7 +261,4 @@ Prompt:
 #define KPF_IDLE 25
 #define KPF_PGTABLE 26
 #endif
-
-"""
-
 ```

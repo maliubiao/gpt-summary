@@ -124,7 +124,7 @@ A user would typically interact with this `__init__.py` file implicitly by:
 
 In summary, while the `__init__.py` file itself is simple, it's a crucial entry point for the `tomlkit` library. Its functionality directly supports tasks relevant to reverse engineering, particularly in analyzing and manipulating application configurations. Understanding how to use `tomlkit` can significantly enhance a reverse engineer's ability to interact with and understand software.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/tomlkit/tomlkit/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit.api import TOMLDocument
 from tomlkit.api import aot
 from tomlkit.api import array
@@ -193,7 +195,4 @@ __all__ = [
     "register_encoder",
     "unregister_encoder",
 ]
-
-"""
-
 ```

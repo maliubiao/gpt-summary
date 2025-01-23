@@ -120,14 +120,16 @@ By following these steps and engaging in self-correction, we arrive at a compreh
 
 `blink/renderer/platform/wtf/allocator/partition_allocator.cc` 文件定义了一个简单的内存分配接口，它包装了更底层的 `Partitions` 模块。虽然它不直接与 JavaScript, HTML, CSS 交互，但它是 Blink 渲染引擎运行的基础，为构建 DOM 树、存储 CSS 样式和 JavaScript 对象等提供了必要的内存管理功能。 正确使用 `PartitionAllocator`（或者其更高级的封装）对于避免内存泄漏和其它内存相关的错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/allocator/partition_allocator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -154,7 +156,4 @@ char* PartitionAllocator::AllocateVectorBacking<char>(size_t size) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

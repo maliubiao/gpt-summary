@@ -141,7 +141,7 @@ The final step is to organize the thoughts into a clear and structured answer, u
 
 总之，`cpplib.cpp` 虽然简单，但它是一个很好的例子，展示了如何在 C++ 中创建一个可以被 Frida 动态插桩的简单函数，并涉及了动态链接、符号导出等底层概念，对于理解 Frida 的工作原理和进行逆向分析具有一定的参考价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/256 subproject extracted objects/subprojects/myobjects/cpplib.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,15 +149,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define BUILDING_DLL
 #include "cpplib.h"
 
 extern "C" int DLL_PUBLIC cppfunc(void) {
     return 42;
 }
-
-"""
-
 ```

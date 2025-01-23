@@ -88,7 +88,7 @@ Based on these individual functionalities, the overall purpose of the file is to
 
 总而言之，`style_engine_test.cc` 是 Blink 引擎中至关重要的组成部分，它通过大量的单元测试用例，系统地验证了样式引擎的各种功能，确保了浏览器能够正确地解析和应用 CSS 样式，从而为用户提供一致且符合预期的网页浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_engine_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -96,8 +96,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 econd);
   EXPECT_EQ(
       Color::FromRGB(0, 0, 0),
@@ -548,8 +550,4 @@ TEST_F(StyleEngineTest, UseCountMediaQueryRangeSyntax) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

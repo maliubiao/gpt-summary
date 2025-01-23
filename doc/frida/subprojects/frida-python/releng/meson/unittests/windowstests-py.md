@@ -156,7 +156,7 @@ These tests are typically run by developers working on Frida itself or by contri
 
 In essence, `windowstests.py` is a crucial part of ensuring the robustness and correctness of the Frida build process on Windows. It covers a wide range of Windows-specific features and potential pitfalls, making sure that Frida can be built reliably across different Windows environments and compiler configurations. The tests also provide valuable insights into the underlying build process and how various tools and settings interact.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/unittests/windowstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -642,7 +644,4 @@ class WindowsTests(BasePlatformTests):
         with mock.patch.object(self, 'install_command', self.meson_command + ['install']):
             out = self.install(override_envvars=env)
             self.assertIn('Activating VS', out)
-
-"""
-
 ```

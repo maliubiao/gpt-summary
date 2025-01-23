@@ -192,15 +192,17 @@ if (ext) {
 
 总而言之，`blink/renderer/modules/webgl/ext_texture_compression_bptc.cc` 是实现 WebGL 中 BPTC 纹理压缩扩展的关键 C++ 代码，它通过注册支持的格式和提供查询接口，使得 JavaScript 能够利用这种高效的纹理压缩技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/ext_texture_compression_bptc.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -237,7 +239,4 @@ const char* EXTTextureCompressionBPTC::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

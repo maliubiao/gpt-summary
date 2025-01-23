@@ -167,15 +167,17 @@ By combining the code analysis with an understanding of web technologies and pot
 
 总而言之，`TextAnnotationSelector` 是 Blink 引擎中一个核心的文本查找组件，它连接了用户操作、JavaScript 代码和底层的 HTML 文档结构，使得在网页上查找和定位特定文本片段成为可能。理解其功能和工作原理对于调试相关的网页功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/annotation/text_annotation_selector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -240,7 +242,4 @@ bool TextAnnotationSelector::WasMatchUnique() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

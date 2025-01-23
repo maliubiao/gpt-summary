@@ -129,7 +129,7 @@ This systematic approach, combining code analysis with an understanding of web d
 
 这段代码主要关注 `AudioContext` 对象在处理音频输出设备选择 (`setSinkId`) 以及应对系统级音频中断时的状态管理和行为正确性。它详细测试了不同状态转换和操作顺序下的预期结果，确保了 Web Audio API 在这些关键功能上的稳定性和可靠性。这部分测试对于保证 Web 开发者能够按照预期使用 `AudioContext` 的相关功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 etRealtimeAudioDestinationNode()
                    ->GetOwnHandler()
                    .get_platform_destination_is_playing_for_testing());
@@ -612,8 +614,4 @@ INSTANTIATE_TEST_SUITE_P(AudioContextInterruptedStateTests,
                          testing::Bool());
 
 }  // namespace blink
-
-"""
-
-
 ```

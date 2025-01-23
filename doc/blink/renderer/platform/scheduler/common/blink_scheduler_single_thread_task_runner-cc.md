@@ -118,14 +118,16 @@ Blink 渲染引擎负责解析 HTML、CSS 并执行 JavaScript 代码，最终�
 
 `blink_scheduler_single_thread_task_runner.cc` 中定义的 `BlinkSchedulerSingleThreadTaskRunner` 类是 Blink 渲染引擎中一个关键的组件，用于安全地在单线程上管理对象的生命周期，特别是处理跨线程的删除或释放操作。它通过封装 `base::SingleThreadTaskRunner` 和提供延迟删除机制，帮助开发者避免常见的线程安全和内存管理错误，确保 Blink 引擎的稳定性和可靠性。这与 JavaScript、HTML 和 CSS 的处理密切相关，因为在渲染网页的过程中会创建和销毁大量的 C++ 对象，这些操作通常需要在特定的线程上进行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/blink_scheduler_single_thread_task_runner.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ bool BlinkSchedulerSingleThreadTaskRunner::DeleteOrReleaseSoonInternal(
 }
 
 }  // namespace blink::scheduler
-
-"""
-
 ```

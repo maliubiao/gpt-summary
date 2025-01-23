@@ -177,14 +177,16 @@ p {
 
 总而言之，`hyphenation_minikin.cc` 是 Blink 引擎中一个关键的组件，它负责实现 CSS 的 `hyphens` 属性，使得浏览器能够根据语言规则自动对文本进行连字符处理，从而提高排版的美观性和可读性。它的正确运行依赖于加载正确的连字符字典和准确的语言设置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/hyphenation/hyphenation_minikin.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -503,7 +505,4 @@ scoped_refptr<HyphenationMinikin> HyphenationMinikin::FromFileForTesting(
 }
 
 }  // namespace blink
-
-"""
-
 ```

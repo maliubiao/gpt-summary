@@ -137,7 +137,7 @@ Now I can organize these functionalities and address the user's specific questio
 
 这部分 `ninjabackend.py` 代码的主要功能是**生成 Ninja 构建系统的最后阶段所需的构建规则和目标**，包括共享库别名、自定义目标清理、代码覆盖率清理、分发包生成、静态代码分析工具集成、代码标签生成以及最终的 `all` 和 `clean` 目标。它负责将 Meson 的高层构建描述转换为 Ninja 可以理解的底层指令，以完成整个软件的构建过程。它涉及到与操作系统底层、编译链接过程以及各种开发工具的集成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 [:]
         cmd += prelinker.get_prelink_args(prelink_name, obj_list)
 
@@ -600,8 +602,4 @@ def _scan_fortran_file_deps(src: Path, srcdir: Path, dirname: Path, tdeps, compi
                     mod_name = compiler.module_name_to_filename(ancestor_child)
                     mod_files.append(str(dirname / mod_name))
     return mod_files
-
-"""
-
-
 ```

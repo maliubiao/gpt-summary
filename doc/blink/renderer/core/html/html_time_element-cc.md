@@ -143,14 +143,16 @@ By following these steps, we can dissect the code snippet and provide a comprehe
 
 `html_time_element.cc` 文件是 Blink 引擎中至关重要的组成部分，它负责 `<time>` 元素在浏览器内部的表示和管理，并与 HTML、JavaScript 和 CSS 协同工作，共同构建丰富的网页内容。同时，它也承担着统计该元素使用情况的任务，为浏览器的发展提供数据支持。理解这个文件的功能有助于我们更好地理解浏览器的工作原理以及如何正确地使用 HTML 元素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_time_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ HTMLTimeElement::HTMLTimeElement(Document& document)
 }
 
 }  // namespace blink
-
-"""
-
 ```

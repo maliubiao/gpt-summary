@@ -210,14 +210,16 @@ specialDiv.style.counterSet = 'myCounter 20'; // 使用 JavaScript 设置 counte
 
 总之，`blink/renderer/core/style/counter_directives.cc` 虽然代码量不多，但在 Blink 引擎中扮演着关键角色，负责存储和管理 CSS 计数器的指令信息，为浏览器正确渲染带有计数器的网页提供支持。它直接关联到 CSS 的计数器属性，并通过 Blink 引擎与 HTML 和 JavaScript 产生间接的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/counter_directives.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Antti Koivisto (koivisto@kde.org)
  * Copyright (C) 2004, 2005, 2006, 2007, 2008 Apple Inc. All rights reserved.
@@ -252,7 +254,4 @@ bool operator==(const CounterDirectives& a, const CounterDirectives& b) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -174,7 +174,7 @@ By following this structured approach, breaking down the request into its core c
 
 总而言之，这个简单的 Frida 脚本展示了如何使用 Frida 监听进程断开连接事件，这在动态逆向分析中是一个非常有用的功能，可以帮助我们理解目标进程的生命周期和潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/detached.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import sys
 
 import frida
@@ -207,7 +209,4 @@ session.on("detached", on_detached)
 session.on("detached", on_detached_with_reason)
 session.on("detached", on_detached_with_varargs)
 sys.stdin.read()
-
-"""
-
 ```

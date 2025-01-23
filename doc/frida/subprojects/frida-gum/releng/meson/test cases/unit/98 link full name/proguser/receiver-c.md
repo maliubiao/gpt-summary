@@ -158,7 +158,7 @@ int get_checked(void) {
 
 通过这些步骤，用户可以利用 Frida 动态地观察和修改程序的行为，从而理解其工作原理，尤其是在没有源代码或源代码不完整的情况下。 `receiver.c` 作为一个简单的例子，展示了 Frida 在逆向分析中的基本应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/98 link full name/proguser/receiver.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 int  __attribute__((weak)) get_checked(void) {
     return -1;
@@ -186,7 +188,4 @@ int main(void) {
     fprintf(stdout,"bad\n");
     return TEST_FAILURE;
 }
-
-"""
-
 ```

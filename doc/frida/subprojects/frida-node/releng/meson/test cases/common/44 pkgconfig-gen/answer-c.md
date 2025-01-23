@@ -117,7 +117,7 @@ By following these steps, we arrive at a comprehensive and accurate answer that 
 
 尽管 `answer.c` 中的函数非常简单，但它在 Frida 和 `frida-node` 的上下文中扮演着重要的角色，特别是在测试和验证构建系统的功能方面。它的简单性使得它可以作为一个清晰的测试目标，用于验证 Frida 的核心机制。对于逆向工程师来说，理解这种简单的测试用例有助于他们更好地理解 Frida 的工作原理，并为更复杂的逆向任务打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/44 pkgconfig-gen/answer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,12 +125,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int answer_to_life_the_universe_and_everything(void) {
     return 42;
 }
-
-"""
-
 ```

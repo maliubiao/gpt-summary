@@ -142,15 +142,17 @@ fetch('https://example.com/data')
 
 总结来说，`decode_status.cc` 定义了 HTTP/2 解码过程中的关键状态，用于内部跟踪解码的进度和结果。虽然 JavaScript 代码不直接操作这些状态，但这些状态反映了底层网络层的处理结果，并间接地影响着 JavaScript 网络 API 的行为和错误处理。 理解这些状态对于调试网络问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/decoder/decode_status.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -181,7 +183,4 @@ std::ostream& operator<<(std::ostream& out, DecodeStatus v) {
 }
 
 }  // namespace http2
-
-"""
-
 ```

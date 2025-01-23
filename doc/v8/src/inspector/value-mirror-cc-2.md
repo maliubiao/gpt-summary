@@ -126,7 +126,7 @@ By following this thought process of breaking down the code, analyzing each part
 
 `v8/src/inspector/value-mirror.cc` 是 V8 调试器基础设施的关键组成部分。它的核心职责是将 V8 引擎内部的 JavaScript 值转换为结构化的“镜像”表示，以便调试器能够有效地检查和展示这些值。它能够处理各种 JavaScript 数据类型，包括原始类型、对象以及 V8 内部的特殊对象。 特别地，它能够获取和表示 JavaScript 对象的私有属性（字段和访问器）。通过为不同类型的对象提供特定的描述信息，它极大地提升了调试体验，帮助开发者理解 JavaScript 代码的运行时状态。该文件不是 Torque 源代码，而是使用 C++ 和 V8 的 C++ API 实现的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/value-mirror.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/value-mirror.cc以.tq结尾，那它是个v8 torque源代码，
@@ -134,8 +134,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 8::Value> values(isolate);
   int filter =
       static_cast<int>(v8::debug::PrivateMemberFilter::kPrivateAccessors) |
@@ -390,8 +392,4 @@ std::unique_ptr<ValueMirror> ValueMirror::create(v8::Local<v8::Context> context,
 }
 
 }  // namespace v8_inspector
-
-"""
-
-
 ```

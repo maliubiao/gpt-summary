@@ -156,7 +156,7 @@ psubw xmm1, xmm2     // 从清零的寄存器中减去源寄存器的值，相�
 * **第1-4部分:**  `LiftoffAssembler` 类的其他核心功能，例如非 SIMD 指令的生成、内存操作、控制流等。
 * **第6部分:**  可能包含与浮点数转换、比较运算或其他未在此部分涵盖的 SIMD 指令相关的实现，或者是一些辅助函数和类的定义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/ia32/liftoff-assembler-ia32-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/ia32/liftoff-assembler-ia32-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -164,9 +164,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                 LiftoffRegister rhs) {
+### 源代码
+```c
+LiftoffRegister rhs) {
   liftoff::EmitSimdCommutativeBinOp<&Assembler::vpminsb, &Assembler::pminsb>(
       this, dst, lhs, rhs, SSE4_1);
 }
@@ -939,8 +941,4 @@ void LiftoffAssembler::emit_f64x2_promote_low_f32x4(LiftoffRegister dst,
 }
 
 void LiftoffAssembler::emit_i32x4_sconvert_f32x4(LiftoffRegister dst,
-                     
-"""
-
-
 ```

@@ -136,14 +136,16 @@ This iterative process of reading, analyzing, connecting, and illustrating helps
 
 总而言之，`paint_filter_builder.cc` 是 Blink 渲染引擎中处理图形滤镜的关键组件，它将 CSS 中声明的视觉效果转化为实际的图形操作，直接影响着网页的最终渲染结果。理解其功能有助于深入了解浏览器如何呈现丰富的视觉效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/paint_filter_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -316,7 +318,4 @@ sk_sp<PaintFilter> BuildBoxReflectFilter(const BoxReflection& reflection,
 
 }  // namespace paint_filter_builder
 }  // namespace blink
-
-"""
-
 ```

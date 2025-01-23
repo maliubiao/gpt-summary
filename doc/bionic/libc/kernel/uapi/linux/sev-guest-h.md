@@ -249,7 +249,7 @@ if (Process.platform === 'linux') {
 
 总结来说，`bionic/libc/kernel/uapi/linux/sev-guest.handroid` 定义了与 Linux 内核中 SEV/SNP guest 组件交互的底层接口，主要用于增强虚拟化环境的安全性。虽然应用开发者通常不会直接使用这些接口，但 Android Framework 或 NDK 的某些安全相关功能可能会在底层利用这些机制。 使用 Frida 可以帮助我们观察和理解这些底层的交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/sev-guest.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -260,8 +260,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -320,7 +322,4 @@ struct snp_ext_report_req {
 #define SNP_GUEST_VMM_ERR_INVALID_LEN 1
 #define SNP_GUEST_VMM_ERR_BUSY 2
 #endif
-
-"""
-
 ```

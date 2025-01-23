@@ -157,7 +157,7 @@ By following this detailed thought process, which involves understanding the cod
 
 `main.cpp` 作为一个简单的入口点，其功能看似简单，但它在 Frida 的 CUDA 功能测试中扮演着关键角色。通过对它的动态插桩，开发者和逆向工程师可以深入了解 CUDA 代码的执行细节，从而进行测试、调试和分析。理解其背后的 Frida 框架、操作系统原理和 CUDA 知识是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cuda/2 split/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int do_cuda_stuff(void);
@@ -174,7 +176,4 @@ int do_cuda_stuff(void);
 int main(void) {
   return do_cuda_stuff();
 }
-
-"""
-
 ```

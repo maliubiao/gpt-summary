@@ -156,15 +156,17 @@ prove_invert_loop_with_unused_iterators.go:9:6: // ERROR "(Inverted loop iterati
 
 总而言之，这段代码片段是 Go 编译器测试基础设施的一部分，它通过 `errorcheck` 工具来验证编译器在遇到未使用的循环迭代器时能否成功应用循环反转优化。`// ERROR` 注释是关键，它定义了预期的编译器输出，用于判断优化是否按预期进行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/prove_invert_loop_with_unused_iterators.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -d=ssa/prove/debug=1
 
 //go:build amd64
@@ -176,9 +178,4 @@ func invert(b func(), n int) {
 		b()
 	}
 }
-
-"""
-
-
-
 ```

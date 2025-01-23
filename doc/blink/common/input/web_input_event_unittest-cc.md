@@ -105,14 +105,16 @@ By following this systematic approach, we can effectively analyze the C++ unit t
 
 总之，`web_input_event_unittest.cc` 通过一系列的单元测试，确保了 Blink 引擎在处理各种 Web 输入事件时的正确性和效率，特别是事件合并的逻辑。理解这些测试用例有助于开发者更好地理解浏览器如何处理用户输入，并避免在开发过程中犯一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/input/web_input_event_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -365,7 +367,4 @@ TEST(WebInputEventTest, PointerEventCoalescing) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

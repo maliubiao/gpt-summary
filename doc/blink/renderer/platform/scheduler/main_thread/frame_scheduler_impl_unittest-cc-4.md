@@ -103,15 +103,17 @@ By following these steps, I could systematically analyze the code snippet and pr
 
 总而言之，`blink/renderer/platform/scheduler/main_thread/frame_scheduler_impl_unittest.cc` 是一个关键的测试文件，用于确保 `FrameSchedulerImpl` 的正确性和稳定性。它涵盖了帧调度器的核心功能，特别是围绕任务节流的各种复杂场景，并验证了其与页面可见性、跨域状态和 Agent Cluster ID 的交互。这些测试对于维护 Chromium 的性能和用户体验至关重要，因为 `FrameSchedulerImpl` 直接影响了网页中 JavaScript 定时器、动画以及其他需要调度的任务的执行。 通过 `DeleteSoon` 相关的测试，也保证了资源清理和对象生命周期管理的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/frame_scheduler_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ();
     EXPECT_TRUE(page_scheduler_->IsPageVisible());
     EXPECT_TRUE(frame_scheduler_->IsFrameVisible());
@@ -539,8 +541,4 @@ TEST_F(FrameSchedulerImplTest, DeleteSoonAfterShutdown) {
 }  // namespace frame_scheduler_impl_unittest
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
-
 ```

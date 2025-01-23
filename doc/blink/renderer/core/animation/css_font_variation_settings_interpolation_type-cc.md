@@ -188,14 +188,16 @@ This structured approach, moving from a high-level understanding to detailed cod
 
 总而言之，`css_font_variation_settings_interpolation_type.cc` 文件在 Chromium Blink 引擎中扮演着至关重要的角色，它确保了 CSS `font-variation-settings` 属性在动画和过渡过程中能够平滑地变化，为用户提供更流畅的视觉体验。理解其工作原理有助于开发者更好地利用可变字体技术，并避免一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_font_variation_settings_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -407,7 +409,4 @@ void CSSFontVariationSettingsInterpolationType::ApplyStandardPropertyValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

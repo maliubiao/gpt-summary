@@ -108,14 +108,16 @@ enum DataResourceId {
 
 `data_resource_helper.cc` 提供了一组工具函数，用于安全且方便地访问 Blink 引擎内部预先存储的各种数据资源。这些资源可能包含默认样式、内置脚本、HTML 片段以及其他文本或二进制数据。正确使用这些函数并理解它们对资源类型的假设对于 Blink 引擎的正常运行至关重要。虽然普通网页开发者不会直接调用这些函数，但它们是 Blink 内部机制的关键组成部分，确保了浏览器能够加载和处理网页内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/data_resource_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ Vector<char> UncompressResourceAsBinary(int resource_id) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

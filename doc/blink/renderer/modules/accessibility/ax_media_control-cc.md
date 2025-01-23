@@ -124,15 +124,17 @@ By following these steps, combining code analysis with an understanding of web t
 
 总而言之，`ax_media_control.cc` 是 Blink 引擎中至关重要的组成部分，它连接了媒体控件的内部实现和辅助功能 API，使得使用辅助技术的用户也能够有效地操作网页上的媒体内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_media_control.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ bool AccessibilityMediaControl::OnNativeSetValueAction(const String& value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

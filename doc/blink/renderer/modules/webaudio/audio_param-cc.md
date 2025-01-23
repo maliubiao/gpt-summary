@@ -185,15 +185,17 @@ By following these steps, I can create a comprehensive and informative answer th
 
 总而言之，`blink/renderer/modules/webaudio/audio_param.cc` 是 Web Audio API 中至关重要的一个文件，它实现了音频参数的表示、控制和自动化机制，是连接 JavaScript 代码和底层音频处理逻辑的关键桥梁。 理解这个文件的功能有助于理解 Web Audio API 的工作原理，并能更好地进行开发和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_param.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -451,7 +453,4 @@ AudioParam* AudioParam::cancelAndHoldAtTime(double start_time,
 }
 
 }  // namespace blink
-
-"""
-
 ```

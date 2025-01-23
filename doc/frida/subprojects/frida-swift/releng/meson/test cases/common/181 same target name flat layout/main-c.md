@@ -152,7 +152,7 @@ Interceptor.attach(Module.findExportByName(null, 'meson_test_subproj_foo'), {
 
 总而言之，这个 `main.c` 文件是一个简单的测试程序，用于验证 Frida 在处理特定项目布局时的功能。它本身展示了程序的基本执行流程和返回值检查，但其更重要的意义在于作为 Frida 功能测试的一部分，帮助开发者确保 Frida 的稳定性和正确性。对于逆向工程师来说，理解这类测试用例可以帮助他们更好地理解 Frida 的工作原理和适用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/181 same target name flat layout/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int meson_test_main_foo(void);
@@ -178,7 +180,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

@@ -145,15 +145,17 @@ V8 引擎会进行类型检查，并在这些情况下抛出 `TypeError` 或其�
 
 `v8/test/common/wasm/test-signatures.h` 是一个用于 WebAssembly 测试的关键辅助文件，它提供了一组方便使用的预定义函数签名，帮助 V8 开发者编写和验证 WebAssembly 功能的正确性，包括与 JavaScript 的互操作性。它通过简洁的宏定义和灵活的动态创建方法，覆盖了多种常见的 WebAssembly 函数签名模式，并能用于测试用户在与 WebAssembly 交互时可能犯的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/common/wasm/test-signatures.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/common/wasm/test-signatures.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ class TestSignatures {
 }  // namespace v8::internal::wasm
 
 #endif  // TEST_SIGNATURES_H
-
-"""
-
 ```

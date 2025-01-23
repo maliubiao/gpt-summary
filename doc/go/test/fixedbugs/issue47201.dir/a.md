@@ -119,15 +119,17 @@ foo
 
 这段代码非常简单，其主要目的是作为 Go 语言测试套件的一部分，用于测试或演示特定的语言行为或修复的 bug。`fixedbugs/issue47201` 的路径暗示了它可能与某个特定的 issue (bug) 的修复有关。通常，这类文件会与其他文件（例如包含 `main` 函数的驱动文件）一起构成一个完整的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue47201.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -141,9 +143,4 @@ import (
 func test() {
 	Println("foo")
 }
-
-"""
-
-
-
 ```

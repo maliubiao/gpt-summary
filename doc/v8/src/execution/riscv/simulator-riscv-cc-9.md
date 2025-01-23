@@ -169,7 +169,7 @@ uintptr_t result = simulator->Call(/* simulated_add 的地址 */, 2, (const intp
 
 **该文件是 V8 JavaScript 引擎中用于在非 RISC-V 硬件平台上执行 RISC-V 代码的关键组件。它实现了一个 RISC-V 指令集架构的软件模拟器，负责模拟 RISC-V 寄存器、函数调用、栈操作和原子操作等底层行为。这使得 V8 能够在各种平台上运行为 RISC-V 架构编译的 JavaScript 代码，对于 V8 的跨平台能力至关重要，并且在 RISC-V 架构的开发和测试过程中扮演着重要的角色。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/riscv/simulator-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/riscv/simulator-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -177,9 +177,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第10部分，共10部分，请归纳一下它的功能
+```
 
-"""
-                     const intptr_t* arguments) {
+### 源代码
+```cpp
+const intptr_t* arguments) {
   constexpr int kRegisterPassedArguments = 8;
   // Set up arguments.
   // RISC-V 64G ISA has a0-a7 for passing arguments
@@ -439,8 +441,4 @@ void Simulator::DoSwitchStackLimit(Instruction* instr) {
 }  // namespace v8
 
 #endif  // USE_SIMULATOR
-
-"""
-
-
 ```

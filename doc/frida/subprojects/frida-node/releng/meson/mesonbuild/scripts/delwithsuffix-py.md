@@ -186,7 +186,7 @@ python delwithsuffix.py /tmp/test_dir .log
 
 `delwithsuffix.py` 是一个简单的但实用的脚本，用于在指定目录下批量删除特定后缀的文件。在 Frida 的上下文中，它很可能被用于构建过程中的清理工作。理解其功能和潜在的使用错误，以及它与底层系统和二进制文件的关系，有助于更好地理解 Frida 的构建流程和进行相关的逆向分析工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/scripts/delwithsuffix.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013 The Meson development team
 
@@ -223,7 +225,4 @@ def run(args: T.List[str]) -> int:
 
 if __name__ == '__main__':
     run(sys.argv[1:])
-
-"""
-
 ```

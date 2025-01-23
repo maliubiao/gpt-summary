@@ -185,15 +185,17 @@ function foo(x) {
 
 `v8/src/compiler/schedule.cc` 是 V8 TurboFan 编译器中至关重要的一个文件，负责将程序的中间表示转换为可分析和优化的控制流图。它定义了表示基本块和控制流图的结构，并提供了构建、分析和修改 CFG 的功能。虽然它本身不是 Torque 代码，但它处理的是从 JavaScript 代码编译而来的逻辑结构。理解 `schedule.cc` 的功能有助于理解 V8 编译器如何理解和优化 JavaScript 代码的执行流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/schedule.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/schedule.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -704,7 +706,4 @@ std::ostream& operator<<(std::ostream& os, const Schedule& s) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

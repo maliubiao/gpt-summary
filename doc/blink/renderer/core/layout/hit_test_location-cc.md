@@ -161,14 +161,16 @@ By following this structured analysis, we can thoroughly understand the function
 
 总而言之，`blink/renderer/core/layout/hit_test_location.cc` 文件中的 `HitTestLocation` 类是 Blink 渲染引擎处理用户交互的关键组成部分，它负责确定用户在屏幕上的点击或触摸操作对应于哪个网页元素，并且能够处理各种 CSS 样式和变换带来的复杂性。理解其功能有助于开发者更好地理解浏览器的工作原理，并避免一些常见的交互问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/hit_test_location.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2008, 2011 Apple Inc. All rights reserved.
  * Copyright (C) 2012 Nokia Corporation and/or its subsidiary(-ies)
@@ -476,7 +478,4 @@ bool HitTestLocation::IntersectsCircleStroke(const gfx::PointF& center,
 }
 
 }  // namespace blink
-
-"""
-
 ```

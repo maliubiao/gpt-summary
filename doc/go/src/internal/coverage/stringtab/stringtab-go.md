@@ -197,7 +197,7 @@ go test -coverprofile=coverage.out -coverpkg=./...
 
 总而言之，`go/src/internal/coverage/stringtab/stringtab.go` 实现了一个用于高效存储和检索字符串的字符串表，它是 Go 语言代码覆盖率功能的基础组件之一，用于存储覆盖率元数据，例如文件名和函数名。 它提供了序列化和反序列化的能力，以便将字符串表持久化或在不同组件之间传递。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/coverage/stringtab/stringtab.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,8 +205,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -346,9 +348,4 @@ func (str *Reader) Entries() int {
 func (str *Reader) Get(idx uint32) string {
 	return str.strs[idx]
 }
-
-"""
-
-
-
 ```

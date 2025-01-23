@@ -149,7 +149,7 @@ private:
 4. **运行测试:**  在开发过程中或持续集成 (CI) 系统中，会运行 Frida 的测试套件。运行测试时，构建系统会编译 `main.cpp` 和 `CmMod.cpp` (假设 `CmMod` 的实现在单独的 `.cpp` 文件中)，并执行生成的可执行文件。
 5. **测试结果分析:** 如果测试失败 (程序返回 `EXIT_FAILURE`)，开发人员会检查测试日志，查看程序的输出，或者使用调试器来分析 `CmMod` 类的行为，找出问题所在。他们可能会使用 Frida 自身来 instrument 这个测试程序，观察异步操作的执行情况和变量的值。
 6. **定位到源代码:**  当测试失败时，错误信息或调试器的输出可能会指向 `main.cpp` 文件，特别是 `return cc.getNum
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/16 threads/subprojects/cmMod/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 #include <cstdlib>
@@ -168,7 +170,4 @@ int main() {
   cc.asyncIncrement();
   return cc.getNum() == 1 ? EXIT_SUCCESS : EXIT_FAILURE;
 }
-
-"""
-
 ```

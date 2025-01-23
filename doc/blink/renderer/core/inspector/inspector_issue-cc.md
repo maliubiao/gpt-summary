@@ -117,14 +117,16 @@ Let's break down the thought process to analyze the given C++ code snippet and a
 
 `inspector_issue.cc` 文件定义了 `InspectorIssue` 类，它是 Blink 引擎中用于统一表示浏览器检查器中显示问题的核心数据结构。 它不负责检测问题本身，而是接收来自其他模块的报告，并存储问题的代码和详细信息。 这些问题通常与用户编写的 JavaScript, HTML 和 CSS 代码中的错误或潜在问题有关，帮助开发者定位和修复网页中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_issue.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ const mojom::blink::InspectorIssueDetailsPtr& InspectorIssue::Details() const {
 void InspectorIssue::Trace(blink::Visitor* visitor) const {}
 
 }  // namespace blink
-
-"""
-
 ```

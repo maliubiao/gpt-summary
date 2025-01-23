@@ -197,15 +197,17 @@ By following this thought process, we can effectively analyze the code snippet a
 
 总之，`net/base/load_timing_info_test_util.cc` 虽然是一个测试工具，但它在保证 Chromium 网络栈正确记录网络请求性能数据方面起着关键作用，而这些数据最终也会影响到 JavaScript 开发者和用户的网页加载体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/load_timing_info_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ void ExpectLoadTimingHasOnlyConnectionTimes(
 }
 
 }  // namespace net
-
-"""
-
 ```

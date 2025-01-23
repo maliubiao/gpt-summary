@@ -163,15 +163,17 @@ Let's consider a simplified scenario of allocating and freeing entries within a 
 
 The `SegmentedTable` class aims to provide a robust and efficient way to manage memory, but it's crucial that the underlying implementation and the way it's used correctly handle these potential pitfalls.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/common/segmented-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/common/segmented-table.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -397,7 +399,4 @@ class V8_EXPORT_PRIVATE SegmentedTable {
 }  // namespace v8
 
 #endif  // V8_COMMON_SEGMENTED_TABLE_H_
-
-"""
-
 ```

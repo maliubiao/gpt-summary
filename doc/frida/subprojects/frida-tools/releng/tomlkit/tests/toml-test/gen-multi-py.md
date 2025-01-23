@@ -138,7 +138,7 @@ key = "another value"
 
 如果测试失败，开发者可能会检查生成的 `.toml` 文件内容是否正确，或者修改 `gen-multi.py` 脚本以适应新的测试用例格式，或者修改 `tomlkit` 的代码来修复解析错误。  `gen-multi.py` 在这个过程中作为一个辅助工具，帮助组织和生成测试用例。 通过查看 `gen-multi.py` 的代码，可以了解测试用例的生成逻辑，有助于理解测试的覆盖范围和测试数据的组织方式，从而更好地调试 `tomlkit` 或 Frida 本身的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tests/toml-test/gen-multi.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import glob
@@ -162,7 +164,4 @@ for f in glob.glob('tests/invalid/*/*.multi'):
         path = base + "/" + name + '.toml'
         with open(path, 'wb+') as fp:
             fp.write(l)
-
-"""
-
 ```

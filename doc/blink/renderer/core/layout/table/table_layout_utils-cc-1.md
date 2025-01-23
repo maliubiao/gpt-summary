@@ -106,16 +106,18 @@ I will go through each function and summarize its role, noting any connections t
 
 总而言之，这段代码是 Chromium Blink 引擎中负责表格布局计算的关键部分，它实现了复杂的逻辑来确定表格中列的宽度和行的高度，以符合 HTML 结构和 CSS 样式规则。它在浏览器渲染表格时起着至关重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/table/table_layout_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    DCHECK(last_computed_size);
+### 源代码
+```cpp
+DCHECK(last_computed_size);
           *last_computed_size += remaining_deficit;
         }
       } else if (percent_columns_count > 0) {
@@ -959,7 +961,4 @@ void ComputeSectionMinimumRowBlockSizes(
     if (section_fixed_block_size > section_block_size) {
       DistributeSectionFixedBlockSizeToRows(
           start_row, current_row - start_row, section_fixed_blo
-"""
-
-
 ```

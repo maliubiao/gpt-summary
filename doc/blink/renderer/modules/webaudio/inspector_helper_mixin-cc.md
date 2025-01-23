@@ -171,15 +171,17 @@ Finally, I organized the information into the requested categories: functionalit
 
 总而言之，`InspectorHelperMixin` 作为一个底层的 C++ 混合类，其核心功能是为 Web Audio 模块的 C++ 对象提供在开发者工具中进行调试和检查的能力，通过提供唯一的标识符和维护父子关系，帮助开发者理解和排查 Web Audio 应用中的问题。虽然普通用户不会直接接触到这个文件，但它对于 Web Audio API 的正常运行和开发者的调试工作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/inspector_helper_mixin.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -202,7 +204,4 @@ void InspectorHelperMixin::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

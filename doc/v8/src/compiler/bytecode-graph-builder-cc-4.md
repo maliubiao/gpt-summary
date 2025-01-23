@@ -137,7 +137,7 @@ Let's go through each point.
 
 这部分代码主要负责将 **各种 JavaScript 的二元和一元运算、类型转换、类型判断、属性删除、比较运算、`in` 和 `instanceof` 运算符、`super` 关键字相关操作，以及部分控制流跳转** 的字节码指令转换为对应的中间表示 (IR) 图节点。它涵盖了 JavaScript 语言中很多基础的操作和运算符，是构建程序逻辑图的关键部分。特别需要注意的是，这段代码还处理了与 Smi (小整数) 相关的优化版本指令，例如 `VisitAddSmi` 等，这体现了 V8 对常见数据类型的优化处理。此外，还涉及到与生成器函数和 `for...in` 循环相关的字节码处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/bytecode-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/bytecode-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -145,8 +145,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 cript()->ShiftRight(feedback));
 }
 
@@ -1011,7 +1013,4 @@ void BytecodeGraphBuilder::BuildLoopHeaderEnvironment(int current_offset) {
     // for those resumes.
     if (generate_suspend_switch) {
       BuildSwitchOnGeneratorState(loop_info.resume_ju
-"""
-
-
 ```

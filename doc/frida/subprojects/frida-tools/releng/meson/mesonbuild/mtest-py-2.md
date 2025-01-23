@@ -242,7 +242,7 @@ Finally, I need to summarize the overall function of this code segment as the th
 
 作为测试框架的最后一部分，这段代码主要负责**执行准备好的测试用例并汇总最终的测试结果**。它接收经过筛选和配置的测试用例，利用 `SingleTestRunner` 并发地运行它们，收集每个测试的结果状态、运行时间等信息，并最终生成测试报告，总结测试的成功、失败、跳过和超时情况。它还处理测试执行过程中的各种事件，例如日志记录、信号处理和错误处理，确保测试过程的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/mtest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -251,8 +251,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 metadata()
 
         ss = set()
@@ -848,8 +850,4 @@ def run_with_args(args: T.List[str]) -> int:
     add_arguments(parser)
     options = parser.parse_args(args)
     return run(options)
-
-"""
-
-
 ```

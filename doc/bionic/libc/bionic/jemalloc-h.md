@@ -382,7 +382,7 @@ sys.stdin.read()
 
 运行这个 Frida 脚本后，当目标应用程序执行内存分配和释放操作时，Frida 会打印出调用 `malloc` 和 `free` 的线程 ID、分配的大小（对于 `malloc`）以及调用栈信息，从而帮助你追踪内存分配的来源，了解 Android Framework 或 NDK 代码是如何一步步调用到 jemalloc 的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/jemalloc.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -393,8 +393,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 The Android Open Source Project
  *
@@ -437,7 +439,4 @@ void* je_memalign_round_up_boundary(size_t, size_t);
 void* je_pvalloc(size_t);
 
 __END_DECLS
-
-"""
-
 ```

@@ -170,7 +170,7 @@ func main() {
 
 这个 `zerrors_openbsd_riscv64.go` 文件是 Go 语言 `syscall` 包在 OpenBSD RISC-V 64 位架构下的底层基础，它定义了与操作系统交互所需的各种常量、错误码和信号量，并提供了它们的描述信息，使得 Go 程序能够安全且方便地进行系统调用。 它是 Go 语言实现跨平台能力的重要组成部分，通过针对不同平台提供特定的定义，实现了与底层操作系统的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_openbsd_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -178,9 +178,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-            = 0x10
+### 源代码
+```go
+= 0x10
 	TIOCFLAG_SOFTCAR                  = 0x1
 	TIOCFLUSH                         = 0x80047410
 	TIOCGETA                          = 0x402c7413
@@ -561,10 +563,4 @@ var signalList = [...]struct {
 	{31, "SIGUSR2", "user defined signal 2"},
 	{32, "SIGTHR", "thread AST"},
 }
-
-"""
-
-
-
-
 ```

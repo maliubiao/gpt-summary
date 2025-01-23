@@ -132,14 +132,16 @@ This systematic approach, moving from a high-level understanding to specific det
 
 `PaintFilterEffect.cc` 是 Blink 渲染引擎中一个关键的组成部分，负责将高级的图形过滤需求（通常源自 CSS `filter` 属性）转化为底层的 Skia 图形操作。 它通过封装 `cc::PaintFlags` 并根据其内容创建合适的 `PaintFilter` 对象来实现这一目标。 理解其功能有助于我们更好地理解浏览器如何渲染带有滤镜效果的网页，并有助于避免与滤镜使用相关的性能和视觉问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/paint_filter_effect.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -187,7 +189,4 @@ StringBuilder& PaintFilterEffect::ExternalRepresentation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

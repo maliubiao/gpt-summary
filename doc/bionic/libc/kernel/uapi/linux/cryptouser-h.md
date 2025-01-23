@@ -278,7 +278,7 @@ sys.stdin.read()
 
 总而言之，`cryptouser.h` 是一个定义了 Linux 内核加密子系统用户空间接口的重要头文件，它定义了用户空间程序与内核进行加密操作交互的规范。虽然它本身不包含 libc 函数的实现或动态链接器的功能，但它是 Android 安全框架的基础组成部分，并被底层的加密库所使用。通过 Frida 可以 hook 相关的系统调用来调试和分析这些交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/cryptouser.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -289,8 +289,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -452,7 +454,4 @@ struct crypto_report_acomp {
 };
 #define CRYPTO_REPORT_MAXSIZE (sizeof(struct crypto_user_alg) + sizeof(struct crypto_report_blkcipher))
 #endif
-
-"""
-
 ```

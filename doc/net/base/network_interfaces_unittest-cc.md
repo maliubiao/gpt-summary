@@ -195,15 +195,17 @@ By following these steps, combining code analysis with an understanding of the p
 
 总之，`net/base/network_interfaces_unittest.cc` 这个文件对于保证 Chromium 网络栈获取网络接口信息功能的正确性至关重要。 虽然它本身不包含 JavaScript 代码，但它测试的 C++ 功能是许多浏览器特性（包括暴露给 JavaScript 的 API）的基础。 理解这个文件的作用有助于理解 Chromium 网络栈的内部工作原理，并为调试网络相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/network_interfaces_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -288,7 +290,4 @@ TEST(NetworkInterfacesTest, GetHostName) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

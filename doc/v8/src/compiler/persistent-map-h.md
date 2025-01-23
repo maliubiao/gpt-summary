@@ -219,15 +219,17 @@ console.log(map4.get("a")); // 输出: undefined
 
 总而言之，`v8/src/compiler/persistent-map.h` 定义了一个用于 V8 编译器内部的持久化哈希 Map 数据结构，它基于哈希树实现，提供了高效的访问和更新操作，并且保持了数据的不可变性。虽然 JavaScript 开发者不会直接使用它，但理解其原理有助于理解 V8 编译器的工作方式以及持久化数据结构的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/persistent-map.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/persistent-map.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -787,7 +789,4 @@ std::ostream& operator<<(std::ostream& os,
 }  // namespace v8
 
 #endif  // V8_COMPILER_PERSISTENT_MAP_H_
-
-"""
-
 ```

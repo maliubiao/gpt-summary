@@ -154,15 +154,17 @@ exampleWithError(false); // 返回 20 (数字乘法)
 
 正如您所说，如果 `v8/test/cctest/compiler/test-verify-type.cc` 以 `.tq` 结尾，那它会是一个 V8 Torque 源代码文件。Torque 是一种用于定义 V8 内部运行时函数的领域特定语言，它具有更强的类型系统。然而，当前的文件以 `.cc` 结尾，因此它是 C++ 源代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-verify-type.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-verify-type.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ TEST(TestVerifyType) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

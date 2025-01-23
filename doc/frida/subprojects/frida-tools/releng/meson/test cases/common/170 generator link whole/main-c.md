@@ -136,7 +136,7 @@ By following this process of analysis, deconstruction, connection to the context
 
 总而言之，这个简单的 `main.c` 文件虽然代码量不多，但在 Frida 项目中扮演着重要的角色，用于验证构建系统的关键功能，确保 Frida 能够正确地链接其组件，为动态插桩等核心功能提供稳固的基础。 它的存在直接关系到逆向工程师能否成功使用 Frida 进行目标软件的分析和修改。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/170 generator link whole/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson_test_function.h"
 
 #include <stdio.h>
@@ -157,7 +159,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

@@ -265,7 +265,7 @@ Token { type: NUMBER, value: "1", start_position: 4, end_position: 5 }
 
 `v8/src/parsing/parser.h` 的第二部分（结合第一部分）定义了 V8 引擎 `Parser` 类的核心接口，负责将 JavaScript 源代码转换为抽象语法树。它与 `Scanner` 协同工作，处理各种 JavaScript 语法结构，并提供了创建 AST 节点、管理作用域、记录源码位置等关键功能。理解 `Parser` 的工作原理对于深入了解 V8 引擎的编译和执行过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/parser.h以.tq结尾，那它是个v8 torque源代码，
@@ -273,8 +273,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 sIterationStatement() != nullptr;
   }
 
@@ -660,8 +662,4 @@ sIterationStatement() != nullptr;
 }  // namespace v8
 
 #endif  // V8_PARSING_PARSER_H_
-
-"""
-
-
 ```

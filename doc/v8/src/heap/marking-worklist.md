@@ -134,11 +134,13 @@ iframe2.remove();
 
 `v8/src/heap/marking-worklist.cc` 文件实现了垃圾回收标记阶段的核心数据结构，用于高效地管理待标记的堆对象。它支持并发标记和按上下文划分工作队列，这对于 V8 引擎高效且可靠地进行内存管理至关重要，并间接地支持了 JavaScript 的自动垃圾回收功能，使得开发者无需手动管理内存。 虽然 JavaScript 开发者不能直接操作它，但它的存在是 JavaScript 内存管理的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/marking-worklist.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -353,7 +355,4 @@ Address MarkingWorklists::Local::SwitchToSharedForTesting() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

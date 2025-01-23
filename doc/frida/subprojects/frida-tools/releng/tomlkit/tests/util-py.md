@@ -193,7 +193,7 @@ This iterative process of code scanning, hypothesizing, contextualizing, experim
 
 总而言之，`frida/subprojects/frida-tools/releng/tomlkit/tests/util.py` 文件是 `tomlkit` 库的内部测试工具，用于辅助验证 `tomlkit` 功能的正确性。虽然普通用户不会直接操作它，但理解其功能有助于理解 `tomlkit` 的工作原理，以及在使用 `tomlkit` 解析 TOML 配置时可能遇到的问题。在逆向工程的上下文中，理解配置文件解析工具的工作方式是至关重要的，因为配置文件往往包含了程序行为的关键信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tests/util.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -201,8 +201,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit.items import AoT
 from tomlkit.items import Array
 from tomlkit.items import Bool
@@ -260,7 +262,4 @@ def assert_is_ppo(v_unwrapped, unwrapped_type):
 def elementary_test(v, unwrapped_type):
     v_unwrapped = v.unwrap()
     assert_is_ppo(v_unwrapped, unwrapped_type)
-
-"""
-
 ```

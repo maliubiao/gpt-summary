@@ -118,7 +118,7 @@ const atomicValue = Atomics.load(sharedArray, 0); // 底层会使用 Word32Atomi
 
 这部分 `machine-operator.h` 文件定义了 V8 编译器在生成机器码时可以使用的各种底层操作符，特别是针对 SIMD 指令和内存访问以及原子操作。这些操作符是连接高级 JavaScript 代码和底层硬件指令的关键桥梁，使得 V8 能够高效地执行 JavaScript 代码，特别是涉及到数值计算、多媒体处理和并发编程的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/machine-operator.h以.tq结尾，那它是个v8 torque源代码，
@@ -126,10 +126,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-  const Operator* I64x2Add();
+### 源代码
+```c
+const Operator* I64x2Add();
   const Operator* I64x2Sub();
   const Operator* I64x2Mul();
   const Operator* I64x2Eq();
@@ -642,8 +643,4 @@ DEFINE_OPERATORS_FOR_FLAGS(MachineOperatorBuilder::Flags)
 }  // namespace v8
 
 #endif  // V8_COMPILER_MACHINE_OPERATOR_H_
-
-"""
-
-
 ```

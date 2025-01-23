@@ -97,7 +97,7 @@ Finally, I review and refine the language to be clear, concise, and informative.
 
 总结来说，`bad.py` 是 Frida 测试框架中的一个重要组成部分，它通过验证构建系统排除特定文件的能力，来保障最终发布给用户的 Frida 版本的 чистота 和可靠性。用户通常不会直接与之交互，但它的存在对于确保 Frida 的质量至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/252 install data structured/pysrc/bad.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,10 +105,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''mod.bad should not be installed'''
-
-"""
-
 ```

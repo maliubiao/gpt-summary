@@ -172,15 +172,17 @@ func main() {
 
 这段 `galign.go` 文件中的 `Init` 函数是 Go 编译器针对 MIPS 架构进行代码生成的重要组成部分，它根据构建配置信息初始化了许多架构相关的参数和函数，从而保证了 Go 代码能够被正确地编译成可在 MIPS 架构上执行的机器码。用户在使用 Go 编译器为 MIPS 架构构建程序时，需要关注 `GOARCH` 和 `GOMIPS` 等环境变量的设置，以确保生成的目标文件与目标硬件兼容。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/mips/galign.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -208,9 +210,4 @@ func Init(arch *ssagen.ArchInfo) {
 	arch.SSAGenValue = ssaGenValue
 	arch.SSAGenBlock = ssaGenBlock
 }
-
-"""
-
-
-
 ```

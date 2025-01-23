@@ -102,15 +102,17 @@ func main() {
 
 `go/test/codegen/memops_bigoffset.go` 是一个用于测试 Go 编译器代码生成能力的重要文件，特别是针对 ppc64 架构下处理大型数据结构和巨大内存偏移量的情况。 它通过 `// asmcheck` 指令来验证生成的汇编代码是否符合预期，确保编译器能够正确高效地处理这类内存操作。  对于开发 Go 编译器的人员来说，理解 `asmcheck` 指令和目标架构的汇编指令至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/memops_bigoffset.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2023 The Go Authors. All rights reserved.
@@ -182,9 +184,4 @@ func storeLargeOffset(sw *big1, sd *big2) {
 	// ppc64x:`MOVD\s+R[0-9]+,\s\(R[0-9]+\)`
 	sd.d[1<<28] = uint64(70)
 }
-
-"""
-
-
-
 ```

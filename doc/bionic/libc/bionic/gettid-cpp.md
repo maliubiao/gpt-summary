@@ -299,7 +299,7 @@ if (gettidPtr) {
 
 `gettid()` 是 Android 系统中一个基础但至关重要的函数，它提供了获取当前线程 ID 的能力。它的实现利用了线程本地存储和系统调用，以保证高效性。了解 `gettid()` 的工作原理以及如何在 Android Framework 和 NDK 中使用它，对于理解 Android 的多线程机制和进行底层调试非常有帮助。 通过 Frida 这样的动态分析工具，我们可以方便地监控和调试 `gettid()` 的调用过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/gettid.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -310,8 +310,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  * All rights reserved.
@@ -357,7 +359,4 @@ pid_t gettid() {
   }
   return syscall(__NR_gettid);
 }
-
-"""
-
 ```

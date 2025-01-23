@@ -121,7 +121,7 @@ By following this structured thought process, considering the context, and refin
 
 总而言之，`lib1.c` 在 Frida 这样的动态插桩工具中扮演着一个小的但关键的角色，它通过简单的条件编译，实现了跨平台获取系统线程创建函数指针的功能，这对于后续的 hook 和监控操作至关重要。理解这个文件的功能有助于理解 Frida 如何在不同操作系统上进行一致的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/194 static threads/lib1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32
 #include<windows.h>
 #else
@@ -144,7 +146,4 @@ void *f(void) {
   return pthread_create;
 #endif
 }
-
-"""
-
 ```

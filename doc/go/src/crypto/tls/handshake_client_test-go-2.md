@@ -80,7 +80,7 @@ By following these steps, we can systematically analyze the code and generate a 
 
 总而言之，这部分代码深入测试了 TLS 客户端握手过程中的各种边界情况、错误处理、安全特性和协议细节，确保 `crypto/tls` 包的客户端实现是健壮和安全的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/handshake_client_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -89,8 +89,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 rsa.PrivateKey{PublicKey: testRSAPrivateKey.PublicKey}
 	brokenKey.D = big.NewInt(42)
 	serverConfig.Certificates = []Certificate{{
@@ -822,10 +824,4 @@ func TestECHTLS12Server(t *testing.T) {
 		t.Fatalf("unexpected handshake error: got %q, want %q", err, expectedErr)
 	}
 }
-
-"""
-
-
-
-
 ```

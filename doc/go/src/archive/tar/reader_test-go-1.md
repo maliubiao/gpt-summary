@@ -83,7 +83,7 @@ Let's break down the thought process for analyzing this Go code snippet.
 
 这段代码的核心目的是确保 `archive/tar` 包能够正确、安全地解析和读取各种格式的 tar 归档文件。通过大量的测试用例，覆盖了正常情况和各种异常情况，保证了代码的健壮性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/archive/tar/reader_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -92,8 +92,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 map[string]string
 		wantMap   sparseDatas
 		wantSize  int64
@@ -613,10 +615,4 @@ func TestDisableInsecurePathCheck(t *testing.T) {
 		t.Fatalf("tr.Next with tarinsecurepath=1: got name %q, want %q", h.Name, name)
 	}
 }
-
-"""
-
-
-
-
 ```

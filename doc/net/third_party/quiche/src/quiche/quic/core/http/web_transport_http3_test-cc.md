@@ -130,15 +130,17 @@ WebTransport 是一种浏览器 API，允许 JavaScript 代码通过 HTTP/3 建�
 
 总而言之，`web_transport_http3_test.cc` 这个文件虽然是一个测试文件，但它揭示了 WebTransport over HTTP/3 实现中一个关键的机制：错误码的转换。对于开发者来说，理解这种转换关系对于调试 WebTransport 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/web_transport_http3_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ TEST(WebTransportHttp3Test, ErrorCodeRoundTrip) {
 
 }  // namespace
 }  // namespace quic
-
-"""
-
 ```

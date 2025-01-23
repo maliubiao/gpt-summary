@@ -186,7 +186,7 @@ fmt.Println(username) // 输出: "" (空字符串)，因为表单未被解析
 
 总的来说，这段代码专注于 `net/http.Request` 类型的各种功能测试，涵盖了构建 multipart 请求、处理 Cookie、性能测试以及路径参数和状态码相关的测试。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/request_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,10 +195,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-		t.Fatal("NewRequest:", err)
+### 源代码
+```go
+t.Fatal("NewRequest:", err)
 	}
 	ctype := fmt.Sprintf(`multipart/form-data; boundary="%s"`, boundary)
 	req.Header.Set("Content-type", ctype)
@@ -703,10 +704,4 @@ func TestStatus(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
-
 ```

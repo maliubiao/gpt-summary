@@ -148,15 +148,17 @@ func DoSomething[T any]() {
 
 总而言之，这段简单的代码片段主要用于演示 Go 语言的泛型特性，通过实例化一个泛型函数来展示类型参数的使用。使用者需要注意正确的包路径和被调用包中泛型函数的定义。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue51367.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -170,9 +172,4 @@ import (
 func main() {
 	a.DoSomething[byte]()
 }
-
-"""
-
-
-
 ```

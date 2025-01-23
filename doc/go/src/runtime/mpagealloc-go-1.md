@@ -129,7 +129,7 @@ func main() {
 
 这个分配器是 Go 动态内存分配的基础，为 `make`、`new` 等语言结构以及各种数据结构的内存需求提供支撑。它需要高效、线程安全，并与垃圾回收机制良好集成。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mpagealloc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -138,9 +138,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- allocation and the amount of scavenged memory in bytes
+### 源代码
+```go
+allocation and the amount of scavenged memory in bytes
 // contained in the region [base address, base address + npages*pageSize).
 //
 // Returns a 0 base address on failure, in which case other returned values
@@ -353,10 +355,4 @@ func mergeSummaries(sums []pallocSum, logMaxPagesPerSum uint) pallocSum {
 	}
 	return packPallocSum(start, most, end)
 }
-
-"""
-
-
-
-
 ```

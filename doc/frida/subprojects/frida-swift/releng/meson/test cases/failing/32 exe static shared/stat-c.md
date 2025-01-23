@@ -155,7 +155,7 @@ By following this thought process, we can systematically analyze even a very sim
 
 总而言之，虽然 `stat.c` 代码本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于检验 Frida 在处理特定类型的二进制文件 (32 位静态链接可执行文件) 中的能力，并帮助开发者识别和修复相关的问题。它的存在更多是为了 Frida 的内部测试和开发，而不是最终用户直接交互的对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing/32 exe static shared/stat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,12 +163,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int statlibfunc() {
     return 42;
 }
-
-"""
-
 ```

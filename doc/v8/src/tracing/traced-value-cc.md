@@ -198,15 +198,17 @@ traced_value->AppendAsTraceFormat(&output);
 
 总而言之，`v8/src/tracing/traced-value.cc` 提供了一个方便且类型安全的方式来构建用于 V8 跟踪系统的结构化数据，其设计目标是生成符合 JSON 格式的输出。了解其功能和正确的使用方式对于理解 V8 的内部工作机制和进行性能分析非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tracing/traced-value.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/tracing/traced-value.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -433,7 +435,4 @@ void TracedValue::Add(
 
 }  // namespace tracing
 }  // namespace v8
-
-"""
-
 ```

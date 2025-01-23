@@ -151,7 +151,7 @@ By following this structured approach, you can effectively analyze the code and 
 
 通过分析 `helpers.py`，开发者可以更好地理解测试用例的上下文、依赖关系和预期行为，从而更有效地定位和解决测试失败的问题。 例如，如果一个关于动态链接的测试失败了，开发者可能会查看 `get_soname` 和 `get_rpath` 的实现，以确保这些函数能够正确地从目标二进制文件中提取相关信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/unittests/helpers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import subprocess
 import os
 import shutil
@@ -375,7 +377,4 @@ def xfail_if_jobname(name: str):
     def wrapper(func):
         return func
     return wrapper
-
-"""
-
 ```

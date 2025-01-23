@@ -171,7 +171,7 @@ native_library_path = /data/app/com.example.target/lib/arm64-v8a/libtarget.so
 
 因此，当在 Frida 的持续集成或本地开发环境中看到 `compare.py` 失败时，开发人员会查看相关的构建日志，检查配置生成步骤，并对比实际生成的文件和预期的文件，以找出问题所在。这个脚本虽然简单，但在确保 Frida 构建的正确性和一致性方面起着重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/269 configure file output format/compare.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,14 +179,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import sys
 
 with open(sys.argv[1], 'r', encoding='utf-8') as f, open(sys.argv[2], 'r', encoding='utf-8') as g:
     if f.read() != g.read():
         sys.exit('contents are not equal')
-
-"""
-
 ```

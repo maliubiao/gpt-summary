@@ -98,14 +98,16 @@ Let's break down the thought process for analyzing the provided C++ test file.
 
 总之，`text_codec_utf8_test.cc` 文件通过细致的测试用例，确保 blink 引擎能够正确且安全地处理 UTF-8 编码的文本数据，这对于 Web 浏览器的正常运行和正确显示各种语言的网页内容至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_codec_utf8_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -220,7 +222,4 @@ TEST(TextCodecUTF8, DecodeOverflow) {
 }  // namespace
 
 }  // namespace WTF
-
-"""
-
 ```

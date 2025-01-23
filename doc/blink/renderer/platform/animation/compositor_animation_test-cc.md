@@ -145,14 +145,16 @@ Finally, I organize the information into a clear and structured format, covering
 
 总而言之，`compositor_animation_test.cc` 文件通过各种测试用例，确保 `CompositorAnimation` 类的功能正确且健壮，这是实现流畅高效 Web 动画的基础。这些测试覆盖了动画的核心生命周期、与其他组件的交互以及错误处理，有助于防止潜在的 bug 和提高 Blink 引擎的稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/animation/compositor_animation_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -305,7 +307,4 @@ TEST_F(CompositorAnimationTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

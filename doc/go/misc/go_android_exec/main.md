@@ -102,11 +102,13 @@ func main() {
 
 总结来说，`go/misc/go_android_exec/main.go` 是 Go 语言针对 Android 平台进行测试和执行二进制文件的关键组件，它利用 `adb` 命令在 Android 设备上模拟 Go 程序的运行环境。这展示了 Go 语言强大的自定义构建和测试能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为go/misc/go_android_exec/main.go的go语言实现的一部分， 请归纳一下它的功能, 　如果你能推理出它是什么go语言功能的实现，请用go代码举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -634,9 +636,4 @@ var (
 	gorootPath string
 	gorootErr  error
 )
-
-"""
-
-
-
 ```

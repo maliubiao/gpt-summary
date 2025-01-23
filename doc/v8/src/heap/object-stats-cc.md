@@ -137,7 +137,7 @@ const result = parts.join('');
 
 `v8/src/heap/object-stats.cc` 的主要功能是作为 V8 引擎的一部分，**收集和维护关于堆中对象数量、大小和内部结构的详细统计信息**。它通过遍历堆中的对象，并利用 `FieldStatsCollector` 来分析对象的字段类型，从而生成各种统计数据，包括对象计数、大小总和、过度分配的内存、大小直方图以及字段类型分布。这些统计信息可以以 JSON 格式导出，用于性能分析、内存泄漏检测和垃圾回收优化。该文件处理了多种 V8 堆对象的统计，并支持跟踪一些虚拟对象的统计信息。虽然不直接处理用户代码错误，但其提供的统计数据可以帮助开发者识别潜在的内存使用问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/object-stats.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/object-stats.cc以.tq结尾，那它是个v8 torque源代码，
@@ -145,8 +145,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 //
 // Use of this source code is governed by a BSD-style license that can be
@@ -951,7 +953,4 @@ void ObjectStatsCollectorImpl::CollectStatistics(
       RecordObjectStats(obj, instance_type, obj->Size(cage_base()),
                         over_allocated);
       if (collect_field_stats == CollectFieldSt
-"""
-
-
 ```

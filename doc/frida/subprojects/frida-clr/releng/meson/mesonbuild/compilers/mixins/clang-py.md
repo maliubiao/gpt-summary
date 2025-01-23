@@ -99,7 +99,7 @@ By following this systematic approach and constantly relating the code back to t
     * **优化级别参数映射 (`get_optimization_args`)**: 将通用的优化级别 (如 '0', '1', '2', '3', 's') 映射到 Clang 特定的优化参数 (`-O0`, `-O1`, 等)。
     * **预编译头文件处理 (`get_pch_suffix`, `get_pch_use_args`)**: 定义了预编译头文件的后缀名 (`.pch`) 和使用预编译头文件的参数 (`-include-pch`)，并包含了一个针对 Clang bug 的 workaround。
     * **编译检查参数 (`get_compiler_check_args`)**:  添加了 Clang 特定的编译检查参数，例如 `-Werror=implicit-function-declaration`, `-Werror=unknown-warning-option`, `-W
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/mixins/clang.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019-2022 The meson development team
 
@@ -279,7 +281,4 @@ class ClangCompiler(GnuLikeCompiler):
                 raise mesonlib.MesonException('clang support for LTO threads requires clang >=4.0')
             args.append(f'-flto-jobs={threads}')
         return args
-
-"""
-
 ```

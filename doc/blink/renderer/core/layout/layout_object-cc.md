@@ -99,15 +99,17 @@ By following these steps, I could systematically analyze the code snippet and pr
 
 这部分代码是 Blink 渲染引擎布局过程的基础，它将 HTML 结构和 CSS 样式信息转化为可用于布局和绘制的渲染对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -913,7 +915,4 @@ void LayoutObject::HandleSubtreeModifications() {
 }
 
 LayoutObject* Layo
-"""
-
-
 ```

@@ -92,13 +92,15 @@ function simdOperation(arr1, arr2) {
 
 总而言之，这部分代码是 V8 引擎将 JavaScript 代码转换为可执行的机器码的关键组成部分，它负责将高级操作映射到具体的 PowerPC 汇编指令，从而保证 JavaScript 代码能够在 PowerPC 架构的处理器上高效运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ppc/code-generator-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    case kIeee754Float64Log10:
+### 源代码
+```
+case kIeee754Float64Log10:
       ASSEMBLE_IEEE754_UNOP(log10);
       break;
     case kIeee754Float64Pow:
@@ -1854,7 +1856,4 @@ AllocatedOperand CodeGenerator::Push(InstructionOperand* source) {
   PPCOperandConverter g(this, nullptr);
   int last_frame_slot_id =
       frame
-"""
-
-
 ```

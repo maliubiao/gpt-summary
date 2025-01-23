@@ -111,7 +111,7 @@ Here's a breakdown of the thinking process to arrive at the explanation of the C
 
 虽然 `somelib.c` 本身的代码非常简单，但它在 Frida 的上下文中具有重要的意义。它展示了动态插桩的基本概念：声明一个未定义的函数，然后在运行时通过 Frida 注入行为。这为理解 Frida 的核心功能以及它在逆向工程、安全研究和动态分析中的应用提供了一个清晰的入口点。用户查看这个文件的原因通常与学习、开发、调试 Frida 或理解其特定功能有关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/38 pkgconfig format/somelib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int get_returnvalue (void);
@@ -128,7 +130,4 @@ int get_returnvalue (void);
 int some_func() {
     return get_returnvalue();
 }
-
-"""
-
 ```

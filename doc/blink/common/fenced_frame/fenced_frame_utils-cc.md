@@ -137,14 +137,16 @@ Response: My thinking process to analyze the `fenced_frame_utils.cc` file went s
 
 总而言之，`fenced_frame_utils.cc` 提供了一系列关键的辅助功能，用于确保 Fenced Frame 的正确加载、安全性和行为符合规范，并为性能监控提供数据支持。理解这些工具函数的功能对于开发和调试涉及 Fenced Frame 的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/fenced_frame/fenced_frame_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ bool CanNotifyEventTypeAcrossFence(const std::string& event_type) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

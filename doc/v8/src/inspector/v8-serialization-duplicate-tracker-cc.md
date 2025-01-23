@@ -138,15 +138,17 @@ console.log(serialized); // 输出类似 {"b":{"a":"[Circular]"}}
 
 总而言之，`v8/src/inspector/v8-serialization-duplicate-tracker.cc` 是 V8 引擎内部用于高效且正确地序列化 JavaScript 对象的关键组件，特别是在处理包含重复引用或循环引用的复杂对象结构时。它主要服务于 V8 的调试和检查功能，确保对象状态能够被准确地传递和重建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-serialization-duplicate-tracker.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-serialization-duplicate-tracker.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ V8SerializationDuplicateTracker::V8SerializationDuplicateTracker(
       m_counter(1),
       m_v8ObjectToSerializedDictionary(v8::Map::New(context->GetIsolate())) {}
 }  // namespace v8_inspector
-
-"""
-
 ```

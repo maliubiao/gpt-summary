@@ -166,7 +166,7 @@ Consider `StringLength`.
 
 总而言之，这部分 `v8/src/maglev/maglev-ir.cc` 文件定义了 Maglev 编译器可以执行的各种操作，并提供了将这些操作转换为机器码的指令。它是 Maglev 编译器的核心组成部分，负责将 JavaScript 代码转换为高效的机器码执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-ir.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-ir.cc以.tq结尾，那它是个v8 torque源代码，
@@ -174,8 +174,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 array);
     snapshot.live_tagged_registers.set(object);
     snapshot.live_tagged_registers.set(old_property_array);
@@ -1009,7 +1011,4 @@ void ToNumberOrNumeric::GenerateCode(MaglevAssembler* masm,
   __ Move(result_reg, object);
 
   __ bind(*don
-"""
-
-
 ```

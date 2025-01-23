@@ -98,14 +98,16 @@ By following these steps, including careful reading, deduction, connection to re
 
 `CSSInterpolationEnvironment` 是 Blink 渲染引擎中一个关键的组件，它负责在 CSS 动画和过渡期间解析和确定属性的中间值。它依赖于 CSS 的层叠解析机制，并与 JavaScript 和 HTML 共同协作，为用户提供流畅的动画体验。虽然开发者通常不会直接操作这个类，但理解其背后的工作原理有助于更好地理解和使用 CSS 动画和过渡。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_interpolation_environment.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -131,7 +133,4 @@ const CSSValue* CSSInterpolationEnvironment::Resolve(
 }
 
 }  // namespace blink
-
-"""
-
 ```

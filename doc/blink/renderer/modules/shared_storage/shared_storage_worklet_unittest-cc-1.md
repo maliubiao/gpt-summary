@@ -107,7 +107,7 @@ I need to:
 
 总而言之，这部分测试着重于验证 `SharedStorageWorklet` 中操作注册、执行以及全局作用域访问的正确性和健壮性，涵盖了各种正常和异常情况，为开发者在使用 Shared Storage Worklet API 时提供了保障。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/shared_storage/shared_storage_worklet_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ule().");
   EXPECT_EQ(test_client_->observed_console_log_messages_[2],
             "Expected async error: Failed to execute 'interestGroups' on "
@@ -1174,7 +1176,4 @@ TEST_F(SharedStorageWorkletTest, InterestGroups) {
 
   std::vector<blink::mojom::StorageInterestGroupPtr> groups;
   groups.
-"""
-
-
 ```

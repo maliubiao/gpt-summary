@@ -178,14 +178,16 @@ func main() {
 
 总而言之，`escape_iface.go` 是一个测试用例，旨在验证 Go 编译器在处理接口转换时的逃逸分析行为是否正确。理解这段代码有助于开发者更深入地理解 Go 语言的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_iface.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m -l
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -451,9 +453,4 @@ func issue42279() {
 	var i I = T{} // ERROR "T\{\} does not escape"
 	i.M()         // ERROR "partially devirtualizing i.M to T"
 }
-
-"""
-
-
-
 ```

@@ -101,7 +101,7 @@ Shared Dictionary API 允许网页加载和使用由服务器提供的共享压�
 
 这个代码片段主要测试了 `SQLitePersistentSharedDictionaryStore` 组件中关于 **清理、删除和驱逐** 共享字典的功能。它涵盖了基于时间范围、隔离键、过期时间和存储限制等多种清理策略，并验证了这些策略的正确性。此外，还测试了获取和根据磁盘缓存键令牌删除特定字典的功能，以及更新字典元数据（如最后获取和使用时间）的功能。 这些测试确保了共享字典的本地持久化存储能够有效地管理字典的生命周期，并在必要时进行清理和驱逐，以保持存储空间的有效利用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/extras/sqlite/sqlite_persistent_shared_dictionary_store_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tion*/ base::Seconds(100), "/pattern*", /*match_dest_string=*/"",
       /*id=*/"",
       /*last_used_time*/ base::Time::Now(),
@@ -814,7 +816,4 @@ TEST_F(SQLitePersistentSharedDictionaryStoreTest,
   auto register_dictionary_result =
       RegisterDictionary(isolation_key_, dictionary_info_);
   base::Time up
-"""
-
-
 ```

@@ -152,7 +152,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/linux/nubus.h` 是一个定义了古老 NuBus 总线相关常量的头文件。 它与现代 Android 设备的直接功能关系不大，更多的是 Linux 内核继承性和兼容性的体现。  直接通过 Frida Hook 观察到对这些常量的使用会比较困难，需要深入到内核层面进行分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/nubus.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -311,7 +313,4 @@ enum nubus_display_res_id {
   NUBUS_RESID_SIXTHMODE = 0x0085
 };
 #endif
-
-"""
-
 ```

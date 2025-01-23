@@ -96,14 +96,16 @@ By following these steps, I could systematically analyze the code and generate a
 
 `FindInPageBudgetPoolController` 是 Blink 引擎中一个重要的组件，它通过管理 CPU 时间预算来平衡 "在页面中查找" 功能的性能和主线程的整体响应性。虽然它不直接操作 JavaScript, HTML 或 CSS 代码，但它所管理的功能与这些核心 Web 技术息息相关。理解其工作原理有助于开发者编写更高效的网页，并帮助用户理解为何在某些情况下 "在页面中查找" 的速度可能会有所变化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/find_in_page_budget_pool_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ void FindInPageBudgetPoolController::OnTaskCompleted(
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

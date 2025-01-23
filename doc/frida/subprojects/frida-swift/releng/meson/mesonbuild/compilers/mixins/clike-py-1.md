@@ -165,7 +165,7 @@ By following this systematic approach, combining code analysis with domain knowl
 
 总而言之，`clike.py` 的这部分代码是 Meson 构建系统与 C-like 编译器交互的关键组成部分，它通过一系列细致的检查，确保构建过程能够适应不同平台和编译器的差异，从而为 Frida 这样的跨平台工具提供可靠的构建基础。理解这些功能对于调试与 Frida 构建相关的复杂问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/mixins/clike.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,9 +174,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    }}'''
+### 源代码
+```python
+}}'''
         return head, main
 
     @staticmethod
@@ -779,8 +781,4 @@ Prompt:
             self.preprocessor.mode = 'PREPROCESSOR'
             self.modes.append(self.preprocessor)
         return self.preprocessor
-
-"""
-
-
 ```

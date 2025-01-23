@@ -264,7 +264,7 @@ sys.stdin.read()
 
 **注意:**  这只是一个简单的示例。实际的 VirtIO 加密设备交互可能更复杂，你需要根据具体的 Android 版本和硬件实现进行更深入的分析。你需要根据实际的请求码和结构体布局来调整 Frida 脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/virtio_crypto.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -622,7 +624,4 @@ struct virtio_crypto_inhdr {
   __u8 status;
 };
 #endif
-
-"""
-
 ```

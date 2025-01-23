@@ -119,11 +119,13 @@ let newValue = obj.increment(5);
 
 **总结来说，`linkage.cc` 是 V8 编译器中负责规范和描述函数调用方式的关键组件。它定义了 `CallDescriptor` 类来表示调用的各种属性，并提供了创建不同类型调用描述符的方法，其中与 JavaScript 最直接相关的是 `GetJSCallDescriptor`，它确保了 JavaScript 函数能够被正确地调用和执行。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/linkage.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -923,7 +925,4 @@ LinkageLocation Linkage::GetParameterSecondaryLocation(int index) const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

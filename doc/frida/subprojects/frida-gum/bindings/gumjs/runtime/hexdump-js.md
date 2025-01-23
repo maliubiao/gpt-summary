@@ -236,7 +236,7 @@ B
 
 总而言之，`hexdump.js` 是 Frida 中一个功能强大且常用的模块，它为动态分析和逆向工程提供了直接观察内存数据的能力。理解其工作原理和使用方法，可以帮助用户更有效地分析目标程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/runtime/hexdump.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -244,8 +244,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 module.exports = hexdump;
 
 function hexdump(target, options) {
@@ -369,7 +371,4 @@ function pad(str, width, fill) {
   }
   return result.join('') + str;
 }
-
-"""
-
 ```

@@ -135,11 +135,13 @@ console.log(jsString.charCodeAt(1).toString(16)); // 输出 "597d" ("好" 的 Un
 
 `v8/src/strings/unicode-decoder.cc` 文件是 V8 引擎中负责将 UTF-8 编码的字节流转换为 JavaScript 可以使用的 UTF-16 字符串的关键组件。它使用了高效的 DFA 和模板技术来支持不同的解码策略，并处理各种 UTF-8 编码场景，包括多字节字符、代理对以及可能存在的不完整序列。  JavaScript 的 `TextDecoder` API 提供了在 JavaScript 代码中执行类似解码操作的能力，而其底层实现很可能就依赖于像 `unicode-decoder.cc` 这样的 C++ 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/unicode-decoder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -341,7 +343,4 @@ DEFINE_UNICODE_DECODER(StrictUtf8Decoder);
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

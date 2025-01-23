@@ -134,7 +134,7 @@ By following these steps, moving from a basic understanding to a more nuanced an
 
 因此，这个简单的 `opener.c` 文件是 Frida 测试框架中的一个基本组件，用于验证文件访问的基本功能，并且它的存在和行为可以作为调试构建和测试环境的线索。 开发者通过查看这个文件和它的执行结果，可以判断测试环境是否配置正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/92 test workdir/opener.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // This test only succeeds if run in the source root dir.
 
 #include<stdio.h>
@@ -156,7 +158,4 @@ int main(void) {
     }
     return 1;
 }
-
-"""
-
 ```

@@ -217,7 +217,7 @@ CHECK_EQ(static_cast<int>(t.trunc_small_out), static_cast<int>(t.cvt_small_in));
 
 总而言之，这段代码是 V8 保证其在 MIPS64 架构上正确运行的关键组成部分，它细致地测试了汇编器的各种功能，确保生成的机器码能够按照预期执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -225,8 +225,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 appear after opt.
   __ Pop();
   __ addu(a4, a4, a4);
@@ -1149,7 +1151,4 @@ TEST(mina_maxa) {
         5.3,  4.8, 6.1,  9.8, 9.8,  9.8,  -10.0, -8.9, -9.8,  -10.0, -8.9, -9.8,
         dnan, 3.0, -0.0, 0.0, dinf, dnan, 42.0,  dinf, dminf, dinf,  dnan};
     doub
-"""
-
-
 ```

@@ -250,7 +250,7 @@ The path to this file involves the *development* of Frida itself:
 
 `frida/releng/meson/docs/refman/jsonschema.py` 文件是 Frida 项目中至关重要的组成部分，它定义了 Frida API 文档的 JSON 模式。虽然普通用户不会直接操作这个文件，但它确保了 Frida API 文档的规范性和准确性，从而极大地帮助了逆向工程师理解和使用 Frida 工具进行动态分析和逆向工程。对于 Frida 的开发者来说，这个文件是维护和更新 API 文档的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/docs/refman/jsonschema.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -258,8 +258,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -351,7 +353,4 @@ if T.TYPE_CHECKING:
         functions:       T.Dict[str, Function]  # A mapping of <name> to a `Function` object for *all* Meson functions
         objects:         T.Dict[str, Object]    # A mapping of <name> to a `Object`   object for *all* Meson objects (including modules, elementary, etc.)
         objects_by_type: ObjectsByType
-
-"""
-
 ```

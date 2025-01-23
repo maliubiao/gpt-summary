@@ -176,14 +176,16 @@ console.log(withUndefined); // 输出: [1, 3, 4, undefined]
 
 总而言之，`array-sort.tq` 文件是 V8 引擎中实现高效且稳定的数组排序功能的核心代码，它直接影响着 JavaScript 中 `Array.prototype.sort` 方法的行为。理解其内部逻辑有助于开发者更好地理解 JavaScript 的排序机制，并避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/v8/builtins/array-sort.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
 // 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018 Python Software Foundation;
 // All Rights Reserved
@@ -1625,7 +1627,4 @@ transitioning javascript builtin ArrayPrototypeSort(
   return obj;
 }
 }
-
-"""
-
 ```

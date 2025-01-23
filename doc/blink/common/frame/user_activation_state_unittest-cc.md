@@ -190,14 +190,16 @@ By systematically analyzing the code structure, individual tests, and the contex
 
 `user_activation_state_unittest.cc` 文件是 Blink 引擎中用于测试用户激活状态管理的重要组成部分。它确保了 `UserActivationState` 类的行为符合预期，这对于维护浏览器的安全性和用户体验至关重要。理解 `UserActivationState` 的工作原理对于前端开发者来说也很重要，可以帮助他们避免因用户激活限制而导致的功能失效。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/frame/user_activation_state_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -332,7 +334,4 @@ TEST_F(UserActivationStateTest, ConsumptionPlusExpirationTest) {
 #endif  // !MEMORY_SANITIZER
 
 }  // namespace blink
-
-"""
-
 ```

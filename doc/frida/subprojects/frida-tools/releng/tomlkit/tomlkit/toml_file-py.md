@@ -266,7 +266,7 @@ name = "Frida User"
 
 总而言之，`frida/subprojects/frida-tools/releng/tomlkit/tomlkit/toml_file.py` 是 `tomlkit` 库中用于处理 TOML 文件的核心组件，它提供了读取和写入 TOML 文件的功能，这在 Frida 动态分析和修改应用程序配置的场景中非常有用。理解这个文件的功能和可能出现的错误，有助于用户编写更健壮的 Frida 脚本并进行有效的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tomlkit/toml_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -274,8 +274,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 import re
 
@@ -334,7 +336,4 @@ class TOMLFile:
 
         with open(self._path, "w", encoding="utf-8", newline="") as f:
             f.write(content)
-
-"""
-
 ```

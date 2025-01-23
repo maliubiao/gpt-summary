@@ -104,7 +104,7 @@ By following these steps, the detailed and informative response can be generated
 
 这段代码（作为第 10 部分）主要专注于测试 `URLRequest` 在处理 **Cookie 设置和发送** 时的行为，特别是在受到 **用户偏好阻止** 的情况下。它还测试了 **NetLog** 是否正确记录了 Cookie 的包含状态。此外，它还初步涉及了 **身份验证** 场景下 Cookie 的处理。  这部分是整个 `URLRequest` 测试套件中关于 Cookie 处理逻辑的一个重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -112,9 +112,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共17部分，请归纳一下它的功能
+```
 
-"""
-     std::make_unique<FilteringTestNetworkDelegate>());
+### 源代码
+```cpp
+std::make_unique<FilteringTestNetworkDelegate>());
   network_delegate.SetCookieFilter("not_stored_cookie");
   network_delegate.set_block_annotate_cookies();
   context_builder->set_net_log(net::NetLog::Get());
@@ -836,7 +838,4 @@ TEST_F(URLRequestTestHTTP, Redirect303Tests) {
   HTTPRedirectOriginHeaderTest(https_redirect_url, "HEAD", "HEAD", "null");
   HTTPRedirectOriginHeaderTest(url, "OPTIONS", "GET", std::string());
   HTTPRedirec
-"""
-
-
 ```

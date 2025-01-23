@@ -156,15 +156,17 @@ The `for...of` loop can sometimes give the compiler more opportunities to keep t
 
 **Important Note:**  The V8 compiler is highly sophisticated and performs many optimizations. These are just illustrative examples. Modern JavaScript engines are very good at optimizing code, but understanding the underlying principles of register allocation can help in writing more performant JavaScript.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocation.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/register-allocation.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ inline int ByteWidthForStackSlot(MachineRepresentation rep) {
 }  // namespace v8
 
 #endif  // V8_COMPILER_BACKEND_REGISTER_ALLOCATION_H_
-
-"""
-
 ```

@@ -132,7 +132,7 @@ My thinking process to analyze the Python code and fulfill the request goes like
 
 因此，这里的单元测试代码是 Frida 开发流程中非常重要的一部分，它帮助开发者确保代码的质量和功能的正确性。当用户遇到问题时，这些测试也能作为调试的线索，帮助开发者重现问题并找到修复方案。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,9 +141,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
-        self.assertNotIn('TEST_ENV is set', basic_log)
+### 源代码
+```python
+self.assertNotIn('TEST_ENV is set', basic_log)
         self.assertNotIn('Memcheck', basic_log)
         self.assertIn('TEST_ENV is set', vg_log)
         self.assertIn('Memcheck', vg_log)
@@ -789,8 +791,4 @@ Prompt:
         if cc.get_id() != 'clang':
             raise SkipTest('Only clang currently supports thinLTO')
         if cc.linker.id not in {'ld.lld', 'ld.gold', 'ld64', 'lld-link'}:
-    
-"""
-
-
 ```

@@ -195,7 +195,7 @@ executable('my_tool', 'src/main.cpp', ...)
 
 总而言之，`frida/subprojects/frida-node/releng/meson/mesonbuild/backend/vs2010backend.py` 文件的主要功能是将 Frida 项目的 Meson 构建描述转换为 Visual Studio 2010 可以理解的项目文件，从而使得用户可以使用 Visual Studio 2010 来编译和构建 Frida 的组件。它处理了源代码、编译选项、链接选项、依赖关系，并生成了用于测试、安装和重新生成项目的辅助项目，也支持一个轻量级的 `gen_lite` 构建模式。这个文件是 Frida 跨平台构建能力的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 , inc_cl)
                         self.add_additional_options(lang, inc_cl, file_args)
                         self.add_preprocessor_defines(lang, inc_cl, file_defines)
@@ -563,8 +565,4 @@ Prompt:
 
     def generate_lang_standard_info(self, file_args: T.Dict[str, CompilerArgs], clconf: ET.Element) -> None:
         pass
-
-"""
-
-
 ```

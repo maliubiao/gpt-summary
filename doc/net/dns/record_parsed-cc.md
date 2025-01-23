@@ -200,15 +200,17 @@ RDATA: ... (一些数据)
 
 总之，`net/dns/record_parsed.cc` 文件在 Chromium 的 DNS 解析流程中扮演着关键角色，负责将原始的 DNS 数据转换为易于理解和使用的结构化对象，为后续的网络连接奠定基础。它虽然不直接与 JavaScript 交互，但却是支撑浏览器网络功能的重要底层组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/record_parsed.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -313,7 +315,4 @@ bool RecordParsed::IsEqual(const RecordParsed* other, bool is_mdns) const {
 }
 
 }  // namespace net
-
-"""
-
 ```

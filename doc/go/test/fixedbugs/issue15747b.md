@@ -156,15 +156,17 @@ In this example, the user might expect `data.Value` to be updated to 10 after ca
 
 **In summary, `go/test/fixedbugs/issue15747b.go` is a compiler test case designed to ensure that the Go compiler's liveness analysis correctly handles scenarios where inlining might lead to uninitialized pseudo-variables when taking the address of a value receiver within a method.** It highlights the importance of the compiler's internal checks and optimizations for code correctness.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue15747b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compile
 
 // Copyright 2016 The Go Authors.  All rights reserved.
@@ -184,9 +186,4 @@ type R [100]byte
 func (x R) New() *R {
 	return &x
 }
-
-"""
-
-
-
 ```

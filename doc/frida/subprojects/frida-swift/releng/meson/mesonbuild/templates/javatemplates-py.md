@@ -185,7 +185,7 @@ test('basic', exe)
 
 `javatemplates.py` 文件是 Frida 构建系统中用于生成 Java 项目和库模板的核心组件。它简化了创建基本的 Java 应用和库的过程，这些应用和库可以作为 Frida 进行动态插桩分析的目标。虽然它本身不直接进行逆向操作，但它为逆向工程提供了重要的基础。理解这个文件的功能有助于理解 Frida 的构建流程，并为开发或调试 Frida 的 Java 相关功能提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/templates/javatemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -289,7 +291,4 @@ class JavaProject(ClassImpl):
     lib_template = lib_java_template
     lib_test_template = lib_java_test_template
     lib_meson_template = lib_java_meson_template
-
-"""
-
 ```

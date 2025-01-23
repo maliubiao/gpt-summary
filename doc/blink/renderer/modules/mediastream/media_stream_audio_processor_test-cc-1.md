@@ -108,7 +108,7 @@ By following these steps, moving from specific code elements to broader context 
 
 在调试过程中，开发者可能会查看浏览器的控制台输出、使用 WebRTC 内部工具（例如 `chrome://webrtc-internals`）来检查音频轨道的配置和处理状态，从而定位问题并可能最终追溯到 `MediaStreamAudioProcessor` 的行为。 这些测试代码就为理解 `MediaStreamAudioProcessor` 的工作原理提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_audio_processor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 areEchoCancellationIsEnabled \
   TrueWhenSoftwareEchoCancellationIsEnabled
 #endif  // BUILDFLAG(IS_IOS)
@@ -181,8 +183,4 @@ TEST(MediaStreamAudioProcessorWouldModifyAudioTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

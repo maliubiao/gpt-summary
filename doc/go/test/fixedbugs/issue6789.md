@@ -133,15 +133,17 @@ func main() {
 
 `go/test/fixedbugs/issue6789.go` 是一个针对 Go 语言 `gccgo` 编译器的回归测试用例，用于验证其是否正确处理了包含未导出结构体嵌入的导出结构体的哈希操作。 它通过创建一个最小化的场景来确保该 Bug 在修复后不会再次出现。虽然提供的代码片段本身很简单，但它的存在和相关的注释提供了关于所测试的 Go 语言功能的关键信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6789.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -152,9 +154,4 @@ Prompt:
 // unexported struct embedded in an exported struct.
 
 package ignored
-
-"""
-
-
-
 ```

@@ -135,12 +135,14 @@ console.log(result);
 
 作为5个部分中的第2部分，这段代码主要集中在测试 **小整数类型 (i8, i16) 的 SIMD 操作**。它构建了针对这些数据类型的大量基本算术、比较和位运算的测试用例，以及一些更复杂的操作如扩展乘法、选择和重排。这为确保 V8 引擎正确地执行 WebAssembly 中针对这些常见 SIMD 数据类型的指令奠定了基础。后续的部分可能会涵盖更大的整数类型 (i32, i64)、浮点数、以及更高级的 SIMD 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-simd.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 8GeU) {
   RunI16x8BinOpTest(execution_tier, kExprI16x8GeU, UnsignedGreaterEqual);
 }
@@ -1721,8 +1723,5 @@ void RunLoadZeroTest(TestExecutionTier execution_tier, WasmOpcode op) {
     // Only first lane is set to sentinel.
     CHECK_EQ(sentinel, LANE(global, 0));
     // The other lanes are zero.
-    for 
-"""
-
-
+    for
 ```

@@ -119,7 +119,7 @@ The user wants me to summarize the functionality of the provided C++ code snippe
 
 这部分代码是 `blink` 引擎中关于推测规则功能的一组测试用例，专门用于验证当页面元素的 CSS 样式（特别是与可见性相关的样式）发生变化时，推测规则能否正确地识别和更新预取/预渲染的候选对象。这些测试覆盖了各种场景，包括修改元素的 `display` 和 `content-visibility` 属性，以及在不同的时间点添加、删除推测规则。通过这些测试，可以确保浏览器在处理推测规则时能够考虑到动态的页面变化，从而提供更智能的预加载策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/speculation_rules/speculation_rule_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tant_section =
       document.getElementById(AtomicString("important-section"));
   AddAnchor(*important_section, "https://foo.com/bar");
@@ -968,7 +970,4 @@ TEST_F(SpeculationRuleSetTest, ConsoleWarningForNoVarySearchHintNotAString) {
 
   EXPECT_TRUE(base::ranges::any_of(
       chrome_client->ConsoleMessages(), [](const String& me
-"""
-
-
 ```

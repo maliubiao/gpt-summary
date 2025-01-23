@@ -149,14 +149,16 @@ container.style.textAlign = 'justify'; // 应用两端对齐
 
 总而言之，`shape_result_spacing_test.cc` 这个文件通过测试 `ShapeResultSpacing` 类对不同字符的空格扩展机会的判断，确保了 Blink 引擎在处理文本对齐（特别是 `text-align: justify;`）时的准确性和合理性，尤其是在处理包含特殊字符（如零宽度空格和双向控制字符）的复杂文本时。理解这些测试用例有助于开发者更好地理解浏览器如何进行文本排版，并避免一些常见的与文本对齐相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/shape_result_spacing_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ TEST(ShapeResultSpacingTest, ExpansionOppotunityCountBidiControlAndCjk) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

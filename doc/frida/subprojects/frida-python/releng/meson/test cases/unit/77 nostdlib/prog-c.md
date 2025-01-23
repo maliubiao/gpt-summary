@@ -140,7 +140,7 @@ Let's break down the thought process to analyze this C code snippet and generate
 
 总而言之，`frida/subprojects/frida-python/releng/meson/test cases/unit/77 nostdlib/prog.c` 这个简单的 C 文件虽然功能单一，但它作为一个测试用例，清晰地展示了在不依赖标准库的情况下进行基本操作的方法，并且与逆向工程、底层系统知识以及 Frida 工具的应用紧密相关。理解这个例子有助于更深入地理解 Frida 的工作原理以及在处理更复杂的、不依赖标准库的目标程序时可能遇到的情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/77 nostdlib/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,16 +148,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
   const char *message = "Hello without stdlib.\n";
   return simple_print(message, simple_strlen(message));
 }
-
-"""
-
 ```

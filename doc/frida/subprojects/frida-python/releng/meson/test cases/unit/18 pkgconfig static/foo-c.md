@@ -167,7 +167,7 @@ By following this structured thought process, considering the context, and conne
 
 总而言之，这个简单的 `foo.c` 文件及其中的 `power_level` 函数，虽然功能简单，但却可以作为理解动态分析与静态分析差异、底层编译机制以及调试过程中可能遇到的问题的良好示例。在 Frida 的测试用例中，它很可能是用于验证在不同编译配置下，Frida 能否正确地观察到函数的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/18 pkgconfig static/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int power_level (void)
 {
 #ifdef FOO_STATIC
@@ -185,7 +187,4 @@ int power_level (void)
     return 8999;
 #endif
 }
-
-"""
-
 ```

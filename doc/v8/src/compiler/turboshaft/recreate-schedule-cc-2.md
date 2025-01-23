@@ -114,7 +114,7 @@ Node* ScheduleBuilder::ProcessOperation(const Simd128BinopOp& op) {
 
 这是 `v8/src/compiler/turboshaft/recreate-schedule.cc` 文件的最后一部分，专注于实现 `ScheduleBuilder` 类的 `ProcessOperation` 方法，特别是针对各种 **SIMD 操作**。它负责将这些高层次的 SIMD 操作转换为 Turboshaft 编译器可以理解的低层次 `Node` 对象和机器指令，是 Turboshaft 编译器支持高效 SIMD 执行的关键组成部分。此外，它也处理一些非 SIMD 的栈指针操作。 总而言之，这部分代码完成了 **Turboshaft 编译器操作调度重建过程中的核心 SIMD 指令处理部分**。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/recreate-schedule.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/recreate-schedule.cc以.tq结尾，那它是个v8 torque源代码，
@@ -122,8 +122,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 .second()), \
                                     GetNode(op.third())});
     FOREACH_SIMD_128_TERNARY_OPCODE(HANDLE_KIND);
@@ -375,8 +377,4 @@ RecreateScheduleResult RecreateSchedule(PipelineData* data,
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
-
 ```

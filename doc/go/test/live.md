@@ -768,15 +768,17 @@ func f44(f func() [2]*int) interface{} { // ERROR "live at entry to f44: f"
 这段 Go 代码的主要功能是 **测试 Go 编译器在禁用内联优化的情况下，对变量活跃性分析的准确性**。
 
 更具体地说，它通过一系列精心设计的测试函数 (`f1`, `f2`, `f3`, ...) 来验证编译器是否能在不同的代码场景下，正确地判断哪些变量在程序的特定执行点是“活跃”的（即它们的值可能会
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/live.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheckwithauto -0 -l -live -wb=0 -d=ssa/insert_resched_checks/off
 
 //go:build !ppc64 && !ppc64le && !goexperiment.regabiargs
@@ -1502,9 +1504,4 @@ func f44(f func() [2]*int) interface{} { // ERROR "live at entry to f44: f"
 	ret.s[0] = f()
 	return ret
 }
-
-"""
-
-
-
 ```

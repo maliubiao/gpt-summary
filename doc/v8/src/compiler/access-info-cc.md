@@ -210,7 +210,7 @@ getProperty(myObj);
 
 `v8/src/compiler/access-info.cc` 的主要功能是为 V8 编译器提供关于 JavaScript 对象属性和元素访问的详细信息。它定义了用于表示这些信息的类 (`PropertyAccessInfo`, `ElementAccessInfo`) 和创建这些信息实例的工厂 (`AccessInfoFactory`)。 这些信息包括访问类型、属性位置、数据表示、类型以及原型链查找路径等，为编译器的后续优化决策提供基础。 该文件不属于 Torque 源代码，因为它的扩展名是 `.cc`。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/access-info.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/access-info.cc以.tq结尾，那它是个v8 torque源代码，
@@ -218,9 +218,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1039,7 +1040,4 @@ PropertyAccessInfo AccessInfoFactory::ComputePropertyAccessInfo(
 
         // TryLoadPropertyDetails only succeeds if we know the holder.
         return ComputeDictionaryProtoAcce
-"""
-
-
 ```

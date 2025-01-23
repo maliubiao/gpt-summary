@@ -182,15 +182,17 @@ Essentially, I approached this like a detective examining a piece of evidence. I
 
 通过查看 `LocalWindowProxy` 的源代码，开发者可以理解 Blink 如何将 JavaScript 的 `window` 对象映射到内部的 `DOMWindow` 对象，以及如何处理属性和方法的访问。这有助于理解错误发生的根本原因，并找到相应的解决方案。例如，如果在 `NamedItemAdded` 中存在 bug，可能导致通过 `name` 访问 iframe 失败。 理解 `LocalWindowProxy` 的工作原理对于调试涉及 JavaScript 和浏览器内部交互的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/local_window_proxy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008, 2009, 2011 Google Inc. All rights reserved.
  *
@@ -811,7 +813,4 @@ LocalWindowProxy::LocalWindowProxy(v8::Isolate* isolate,
     : WindowProxy(isolate, frame, world) {}
 
 }  // namespace blink
-
-"""
-
 ```

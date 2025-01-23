@@ -124,7 +124,7 @@ Based on this analysis, I can summarize the functionality of this code snippet.
 
 总而言之，这部分单元测试确保了 `CanonicalCookie` 类能够正确地创建、解析和管理 Cookie 的各种属性，这是浏览器处理 Cookie 的核心逻辑，直接影响着 Web 应用的功能和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/canonical_cookie_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r.html");
   base::Time creation_time = base::Time::Now();
   std::optional<base::Time> server_time = std::nullopt;
@@ -838,7 +840,4 @@ TEST(CanonicalCookieTest, IsEquivalentForOriginBoundCookies) {
     // Different ports are equivalent for domain cookies.
     other_cookie = create_cookie(domain, http_scheme, -1);
     EXPECT_TRUE(domain_cookie->IsEquivalent(*ot
-"""
-
-
 ```

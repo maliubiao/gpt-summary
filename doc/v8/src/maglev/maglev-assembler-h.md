@@ -246,7 +246,7 @@ masm->LoadTaggedField(result_reg, obj_reg, property_offset);
 
 `v8/src/maglev/maglev-assembler.h` 定义了 Maglev 编译器用于生成高效机器代码的关键接口。它提供了丰富的指令集，用于操作寄存器、内存、JavaScript 对象、执行控制流和处理各种数据类型。 虽然 JavaScript 开发者不会直接使用这个头文件，但理解其功能有助于了解 V8 引擎如何将 JavaScript 代码转换为可执行的机器指令，并如何处理运行时发生的各种情况，包括错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -254,8 +254,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -919,7 +921,4 @@ class V8_EXPORT_PRIVATE MaglevAssembler : public MacroAssembler {
                                     Label::Distance false_distance,
                                     bool fallthrough_when_false);
   inl
-"""
-
-
 ```

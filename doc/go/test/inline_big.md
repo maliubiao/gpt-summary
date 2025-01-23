@@ -170,15 +170,17 @@ func main() {
 
 `go/test/inline_big.go` 是 Go 编译器测试套件的一部分，专门用于验证编译器对于大型函数的内联限制。它通过定义不同大小的函数，并使用特定的编译器参数来检查编译器的内联决策输出，确保了 Go 编译器在处理大型函数时能够做出合理的优化选择，避免因过度内联导致性能下降。理解这个测试背后的原理有助于 Go 开发者更好地理解编译器的优化行为，从而编写出更高效的 Go 代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/inline_big.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m=2
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -1208,9 +1210,4 @@ func f(a []int) int { // ERROR "cannot inline f:.*" "a does not escape" "functio
 	y := medium(a) // The crux of this test: medium is not inlined.
 	return x + y
 }
-
-"""
-
-
-
 ```

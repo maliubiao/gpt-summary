@@ -238,7 +238,7 @@ sys.stdin.read()
 
 总而言之，`bionic/tests/wctype_test.cpp` 是 Android 系统中一个至关重要的测试文件，它确保了 Bionic 库提供的宽字符处理功能的正确性，这些功能是 Android 系统处理多语言文本的基础。 通过各种单元测试用例，它验证了字符分类和转换函数的行为是否符合预期，从而保障了 Android 系统的稳定性和国际化支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/wctype_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -249,8 +249,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -540,7 +542,4 @@ TEST(wctype, towctrans_l) {
   EXPECT_ERRNO(EINVAL);
   #endif
 }
-
-"""
-
 ```

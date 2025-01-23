@@ -74,11 +74,13 @@ BinaryOperator: expression '+' expression {
 
 `v8/src/torque/earley-parser.cc` 是 V8 引擎中用于解析 Torque 语言的关键组件。Torque 是一种 DSL，用于定义 V8 内部的运行时逻辑。因此，这个解析器虽然不直接处理 JavaScript 代码，但它通过解析 Torque 代码，间接地影响着 V8 如何理解和执行 JavaScript 代码，例如 JavaScript 中的加法、减法等基本操作的实现逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/earley-parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -398,7 +400,4 @@ bool Grammar::MatchAnyChar(InputPosition* pos) {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

@@ -166,7 +166,7 @@ go tool pprof ./myprogram profile.pb.gz
 
 `peBuildID` 函数是 Go `pprof` 包中用于为可执行文件生成一个基于文件名和最后修改时间的标识符的实用工具。它的主要目的是帮助区分不同构建版本的程序，以便在性能分析时能够准确地追踪到特定版本的性能数据。虽然它不是一个绝对唯一的标识符，但在大多数情况下，它能够提供足够的信息来区分不同的构建。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/pprof/pe.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -174,8 +174,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -195,9 +197,4 @@ func peBuildID(file string) string {
 	}
 	return file + s.ModTime().String()
 }
-
-"""
-
-
-
 ```

@@ -208,15 +208,17 @@ This iterative process of scanning, deducing, connecting, exemplifying, and trac
 
 通过以上步骤，开发者可能会直接进入 `css_math_invert.cc` 文件，以理解反转操作是如何实现的，或者排查与反转运算相关的错误。例如，如果开发者发现某个元素的宽度异常大，可能会怀疑是由于反转了一个非常小的数值导致的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/css_math_invert.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ CSSMathExpressionNode* CSSMathInvert::ToCalcExpressionNode() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

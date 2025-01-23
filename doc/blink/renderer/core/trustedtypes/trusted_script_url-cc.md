@@ -117,14 +117,16 @@ Similarly, for the "Logical Reasoning" section, just saying "it validates input"
 
 总而言之，`trusted_script_url.cc` 文件是 Blink 引擎中实现 Trusted Types 安全机制的关键部分，它定义了表示受信任脚本 URL 的类，并提供了从 JavaScript 安全创建这些对象的方法，从而帮助开发者避免潜在的 DOM XSS 漏洞。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/trustedtypes/trusted_script_url.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -155,7 +157,4 @@ TrustedScriptURL* TrustedScriptURL::fromLiteral(
 }
 
 }  // namespace blink
-
-"""
-
 ```

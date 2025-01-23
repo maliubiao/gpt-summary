@@ -106,7 +106,7 @@ By following these steps, including self-correction and refinement, a comprehens
 
 尽管 `main.cpp` 代码非常简单，但它在 MPI 程序的开发、测试和逆向分析中扮演着重要的角色，特别是在验证基本 MPI 环境和 Frida 的 MPI Instrumentation 能力方面。对于理解涉及并行计算的软件行为以及调试相关的工具链问题，这样的基础测试用例是必不可少的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/17 mpi/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <mpi.h>
 #include <stdio.h>
 
@@ -128,7 +130,4 @@ int main(int argc, char **argv)
     }
     MPI::Finalize();
 }
-
-"""
-
 ```

@@ -85,15 +85,17 @@ By following these steps, I can generate a comprehensive and accurate summary of
 
 这部分单元测试主要集中验证 `FrameSchedulerImpl` 在各种与帧和页面可见性、同源性以及代理关系相关的场景下的节流行为是否符合预期。 特别强调了当存在可见的同源代理帧时，被测帧的节流策略会发生怎样的变化。此外，还测试了 `DeleteSoon` 方法在对象销毁过程中的行为。这些测试对于确保 Blink 引擎能够有效地管理资源，避免不必要的后台活动，并优化性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/frame_scheduler_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ();
     EXPECT_TRUE(page_scheduler_->IsPageVisible());
     EXPECT_TRUE(frame_scheduler_->IsFrameVisible());
@@ -521,8 +523,4 @@ TEST_F(FrameSchedulerImplTest, DeleteSoonAfterShutdown) {
 }  // namespace frame_scheduler_impl_unittest
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
-
 ```

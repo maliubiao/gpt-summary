@@ -140,11 +140,13 @@ This systematic approach allows for a thorough understanding of the C++ code and
 
 `test-usecounters.cc` 文件是 V8 引擎测试套件的一部分，它专注于验证 V8 的内部使用计数器机制是否能够准确地追踪各种 JavaScript 特性的使用情况。这对于 V8 团队了解 JavaScript 语言的实际使用模式至关重要，从而指导引擎的优化和演进。文件中每个 `TEST` 用例都对应着特定的 JavaScript 语法或行为，并通过执行相应的 JavaScript 代码来检查计数器的状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-usecounters.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -278,7 +280,4 @@ TEST(ArrayPrototypeHasElements) {
 }  // namespace test_usecounters
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

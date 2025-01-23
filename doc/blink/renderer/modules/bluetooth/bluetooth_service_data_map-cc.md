@@ -226,15 +226,17 @@ if (serviceDataMap.has('0000180f-0000-1000-8000-00805f9b34fb')) {
 
 总而言之，`blink/renderer/modules/bluetooth/bluetooth_service_data_map.cc` 文件是 Web Bluetooth API 在 Blink 引擎中的一个关键组成部分，负责管理和提供蓝牙广播数据中的 Service Data 给 JavaScript 代码使用。它连接了底层的蓝牙通信和上层的 Web API，使得网页能够与蓝牙设备进行更丰富的数据交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/bluetooth/bluetooth_service_data_map.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -304,7 +306,4 @@ bool BluetoothServiceDataMap::GetMapEntry(ScriptState*,
 }
 
 }  // namespace blink
-
-"""
-
 ```

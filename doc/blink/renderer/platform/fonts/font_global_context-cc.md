@@ -147,14 +147,16 @@ By following these steps, I can systematically analyze the code, understand its 
 
 总而言之，`blink/renderer/platform/fonts/font_global_context.cc` 是 Blink 引擎中一个关键的底层组件，它集中管理字体相关的全局信息，为上层的字体查找、缓存和渲染提供了基础支持，直接影响着网页中字体相关的 CSS 样式和 JavaScript 操作的执行效果和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_global_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ void FontGlobalContext::Init() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

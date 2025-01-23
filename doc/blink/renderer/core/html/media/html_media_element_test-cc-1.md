@@ -81,16 +81,18 @@ Based on these observations, I can now formulate a concise summary of the functi
 
 这部分测试主要关注 `HTMLMediaElement` 的**核心媒体行为控制和状态管理**，以及其与**浏览器渲染引擎的交互**，特别是围绕**自动播放策略**、**播放器生命周期管理（尤其是在跨文档场景下）**、**事件通知**和**控制条显示**等方面进行了深入的测试。它验证了在不同配置和用户交互下，媒体元素是否能按照预期的方式工作，并涵盖了一些可能导致用户或开发者困惑的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/html_media_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-       AutoplayInitiated_DocumentActivation_High_NoGesture) {
+### 源代码
+```cpp
+AutoplayInitiated_DocumentActivation_High_NoGesture) {
   // Setup is the following:
   // - Policy: DocumentUserActivation (aka. unified autoplay)
   // - MEI: high;
@@ -956,7 +958,4 @@ TEST_P(HTMLMediaElementTest, MoveToAnotherDocument) {
   second_document->body()->AppendChild(Media());
 
   // Destroying the first document should
-"""
-
-
 ```

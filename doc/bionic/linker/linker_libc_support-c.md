@@ -247,7 +247,7 @@ sys.stdin.read()
 
 `linker_libc_support.c` 是 Android Bionic 动态链接器中的一个辅助文件，它提供了一些在动态链接器早期启动阶段所需的 libc 函数的简化实现。  目前，它只包含了总是返回失败的 `atexit` 函数。  理解这个文件有助于深入了解 Android 操作系统启动和运行应用程序的底层机制。 通过 Frida 等工具，我们可以动态地观察和调试这些底层行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_libc_support.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -258,8 +258,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  * All rights reserved.
@@ -294,8 +296,4 @@ Prompt:
 int atexit(void (*function)(void) __attribute__((__unused__))) {
   return -1;
 }
-
-
-"""
-
 ```

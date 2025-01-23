@@ -215,15 +215,17 @@ After this initial analysis, I'd reread the code to catch any nuances. For examp
 
 总而言之，`speech_recognition_event.cc` 文件在 Chromium Blink 引擎中扮演着关键的角色，它定义了语音识别事件的结构，并在语音识别流程的不同阶段创建相应的事件对象，最终将这些事件传递给 JavaScript 代码，使得网页开发者能够利用语音识别功能构建交互式的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/speech/speech_recognition_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -312,7 +314,4 @@ void SpeechRecognitionEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

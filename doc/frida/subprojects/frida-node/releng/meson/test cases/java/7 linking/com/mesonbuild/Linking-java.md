@@ -145,7 +145,7 @@ Frida: SimpleLib.func() call finished.
 
 **总而言之，`Linking.java` 是 Frida 工具集中一个非常小的但重要的测试用例，用于验证 Frida 在处理 Java 类之间方法调用时的能力。它直接关系到动态逆向分析技术，并间接涉及到一些底层的系统概念。理解这个文件的作用有助于理解 Frida 的工作原理和在逆向工程中的应用。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/java/7 linking/com/mesonbuild/Linking.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 import com.mesonbuild.SimpleLib;
@@ -164,7 +166,4 @@ class Linking {
         SimpleLib.func();
     }
 }
-
-"""
-
 ```

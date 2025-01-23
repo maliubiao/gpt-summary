@@ -194,7 +194,7 @@ Initially, I might have focused too much on the direct reverse engineering of *t
 
 总而言之，`postconf.py` 脚本是 Frida 构建系统中的一个辅助工具，用于生成测试所需的配置文件。它通过读取输入文件和命令行参数来动态地生成 C 头文件，这些头文件包含了用于测试 Frida 功能的常量定义。理解这个脚本的功能有助于理解 Frida 的测试流程和构建过程，并在出现问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/100 postconf with args/postconf.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -202,8 +202,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -222,7 +224,4 @@ with open(input_file, encoding='utf-8') as f:
     data = f.readline().strip()
 with open(output_file, 'w', encoding='utf-8') as f:
     f.write(template.format(data, sys.argv[1], sys.argv[2]))
-
-"""
-
 ```

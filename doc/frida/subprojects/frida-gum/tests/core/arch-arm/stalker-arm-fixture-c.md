@@ -187,7 +187,7 @@ Frida 本身就是一个强大的动态逆向工具，而 Stalker 是 Frida 中�
 
 总而言之，`stalker-arm-fixture.c` 是 Frida-gum 中用于测试 Stalker 组件在 ARM 架构上功能的关键文件。它提供了模拟代码注入、执行、跟踪和事件捕获的框架，帮助开发者验证 Stalker 的正确性，并为用户理解和调试 Frida Stalker 的行为提供了参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm/stalker-arm-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2017 Antonio Ken Iannillo <ak.iannillo@gmail.com>
@@ -499,7 +501,4 @@ test_arm_stalker_fixture_follow_and_invoke (TestArmStalkerFixture * fixture,
 
   return retval;
 }
-
-"""
-
 ```

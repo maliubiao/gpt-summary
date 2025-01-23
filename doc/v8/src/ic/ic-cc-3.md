@@ -130,7 +130,7 @@ obj.undeclaredVar = 5; // 在非严格模式下会创建一个全局变量，但
 
 这部分 `v8/src/ic/ic.cc` 代码是 V8 引擎中负责优化 JavaScript 对象属性的键值存储操作的关键组件。它通过内联缓存技术，根据对象类型和属性特征，采取不同的优化策略，以提高属性赋值的性能。 这段代码涵盖了对象和数组的存储，并考虑了原型链、元素类型转换以及错误处理等场景，是 V8 引擎实现高效 JavaScript 执行的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/ic.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ic/ic.cc以.tq结尾，那它是个v8 torque源代码，
@@ -138,8 +138,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 or (auto& [map, handler] : *receiver_maps_and_handlers) {
     receiver_maps.push_back(map);
     USE(handler);
@@ -967,7 +969,4 @@ FastCloneObjectMode GetCloneModeForMapPreCheck(DirectHandle<Map> map,
 }
 
 FastCloneObjectMode GetCloneModeForMap(DirectHandle<M
-"""
-
-
 ```

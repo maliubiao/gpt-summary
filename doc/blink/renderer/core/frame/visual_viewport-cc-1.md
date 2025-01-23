@@ -166,15 +166,17 @@ In essence, it's responsible for the dynamic and interactive aspects of the visu
 
 这段 `visual_viewport.cc` 代码是 Chromium Blink 引擎中实现视觉视口功能的核心部分，它负责管理视觉视口的位置、大小、缩放，处理用户输入和渲染，并与浏览器的其他组件（如渲染引擎、合成器）以及 Web 技术（JavaScript, HTML, CSS）进行交互，以确保用户能够正确地查看和操作网页内容。它是构建响应式和跨设备兼容网页的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/visual_viewport.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pDocumentOffsetAtScale(const gfx::Point& offset,
                                                       float scale) {
   DCHECK(IsActiveViewport());
@@ -544,8 +546,4 @@ void VisualViewport::UpdateScrollbarColor(cc::SolidColorScrollbarLayer& layer) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

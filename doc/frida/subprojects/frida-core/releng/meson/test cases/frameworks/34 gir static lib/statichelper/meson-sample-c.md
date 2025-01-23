@@ -184,7 +184,7 @@ Message: Hello, world!
 
 总的来说，`meson-sample.c` 虽然是一个简单的示例，但它包含了 GLib 对象的基本结构和操作，可以作为理解更复杂程序的基础，并且在 Frida 的开发和测试过程中扮演着重要的角色。对于逆向工程师来说，理解这种代码有助于他们更好地使用 Frida 等工具来分析目标程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/34 gir static lib/statichelper/meson-sample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample.h"
 
 typedef struct _MesonSamplePrivate
@@ -320,7 +322,4 @@ meson_sample_print_message (MesonSample *self)
 
   g_print ("Message: %s\n", priv->msg);
 }
-
-"""
-
 ```

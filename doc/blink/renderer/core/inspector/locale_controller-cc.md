@@ -133,14 +133,16 @@ By following this systematic approach, breaking down the code into smaller parts
 
 `locale_controller.cc` 提供了一种在 Blink 渲染引擎中模拟不同区域设置的机制，主要用于开发和调试与国际化相关的网页功能。它通过影响 JavaScript 的 `Intl` 对象，间接地影响 HTML 的渲染和 CSS 的解释，使得开发者可以方便地测试网页在不同语言环境下的表现。理解其工作原理和潜在的使用错误对于开发高质量的国际化网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/locale_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ LocaleController& LocaleController::instance() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

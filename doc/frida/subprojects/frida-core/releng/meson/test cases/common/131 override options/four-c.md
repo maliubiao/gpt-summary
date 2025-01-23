@@ -102,7 +102,7 @@ This systematic approach—analyzing the code, connecting it to Frida's purpose,
 
 `four.c` 文件虽然代码很简单，但它清晰地展示了 Frida 函数覆盖的核心概念。它作为一个测试用例，帮助 Frida 的开发者验证其功能的正确性，同时也为用户提供了一个学习和理解 Frida 函数覆盖技术的实例。通过分析这个文件，我们可以深入了解动态 Instrumentation 技术在逆向工程、安全分析以及软件调试等领域的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/131 override options/four.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void);
 
 static int duplicate_func(void) {
@@ -121,7 +123,4 @@ static int duplicate_func(void) {
 int main(void) {
     return duplicate_func() + func();
 }
-
-"""
-
 ```

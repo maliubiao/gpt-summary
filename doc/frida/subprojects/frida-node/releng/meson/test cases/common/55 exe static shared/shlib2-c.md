@@ -163,7 +163,7 @@ Interceptor.attach(shlibfunc2Address, {
 
 **总结:** 用户到达这里通常是因为他们正在调试一个使用了包含这段代码的共享库的程序，并且希望通过查看源代码来理解特定函数的行为，以便定位和解决问题。动态插桩工具如 Frida 在这个过程中扮演着重要的角色，允许用户在运行时观察和修改程序的行为，从而辅助理解和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/55 exe static shared/shlib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "subdir/exports.h"
 
 int statlibfunc(void);
@@ -181,7 +183,4 @@ int statlibfunc2(void);
 int DLL_PUBLIC shlibfunc2(void) {
     return statlibfunc() - statlibfunc2();
 }
-
-"""
-
 ```

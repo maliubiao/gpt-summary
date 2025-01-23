@@ -192,7 +192,7 @@ ebtables -t broute -A FORWARD -i eth0 -j mark --mark-set 0x00000001
 
 总结来说，`bionic/libc/kernel/uapi/linux/netfilter_bridge/ebt_mark_t.h` 定义了内核中用于桥接网络数据包标记的数据结构和宏。Android 通过 `ebtables` 等工具利用这些功能进行网络配置。理解这个头文件的内容有助于理解 Android 底层的网络桥接机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter_bridge/ebt_mark_t.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -203,8 +203,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -223,7 +225,4 @@ struct ebt_mark_t_info {
 };
 #define EBT_MARK_TARGET "mark"
 #endif
-
-"""
-
 ```

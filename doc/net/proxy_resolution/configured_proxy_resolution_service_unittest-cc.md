@@ -153,7 +153,7 @@ const char16_t kValidPacScript216[] = u"pac-script-v2-FindProxyForURL";
 
 这个文件的第一部分主要建立了 `ConfiguredProxyResolutionService` 的单元测试框架，并测试了服务在基本场景下的行为，例如直接连接以及与 `ProxyDelegate` 的交互。它还开始探索了异步代理解析请求的管理以及在回调函数中删除请求的场景。通过使用 mock 对象，这些测试能够隔离地验证 `ConfiguredProxyResolutionService` 的逻辑，确保其在不同的代理配置下都能正确工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/configured_proxy_resolution_service_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1036,7 +1038,4 @@ TEST_F(ConfiguredProxyResolutionServiceTest, ProxyServiceDeletedBeforeRequest) {
     EXPECT_THAT(rv, IsError(ERR_IO_PENDING));
 
     E
-"""
-
-
 ```

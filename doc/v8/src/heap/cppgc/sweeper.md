@@ -130,11 +130,13 @@ testGarbageCollection();
 
 `sweeper.cc` 是 V8 引擎中 cppgc 的核心组件，负责垃圾回收的清扫阶段，它直接影响着 JavaScript 程序的内存管理和性能。通过回收不再使用的 C++ 对象内存，`sweeper` 确保了 JavaScript 应用程序不会因为内存泄漏而耗尽资源。虽然 JavaScript 本身没有直接的 finalizer 概念，但 C++ 层的 finalizer 机制在 V8 内部被广泛使用，以确保资源的正确释放和清理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/sweeper.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1823,7 +1825,4 @@ Sweeper::SweepingOnMutatorThreadObserver::~SweepingOnMutatorThreadObserver() {
 }
 
 }  // namespace cppgc::internal
-
-"""
-
 ```

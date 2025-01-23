@@ -149,21 +149,20 @@ int32View[0] = 42;
 
 `v8/src/objects/js-shared-array.tq` 是 V8 内部定义 `SharedArrayBuffer` 对象结构的 Torque 源代码文件。它与 JavaScript 的 `SharedArrayBuffer` 功能紧密相关。虽然该文件本身不包含可执行的逻辑，但它定义了 V8 如何表示这种共享内存的结构，为后续的 C++ 实现提供了基础。 理解 `SharedArrayBuffer` 的使用场景和潜在的并发问题对于 JavaScript 开发者来说非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-shared-array.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-shared-array.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 extern class JSSharedArray extends AlwaysSharedSpaceJSObject {}
-
-"""
-
 ```

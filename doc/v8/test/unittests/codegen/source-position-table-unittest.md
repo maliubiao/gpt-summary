@@ -77,9 +77,12 @@ This thought process goes from high-level understanding (the file name) to detai
 
 **总结来说，该文件的目的是确保 `SourcePositionTableBuilder` 能够正确地构建 `SourcePositionTable`，并能够处理各种不同的代码位置编码场景，为 V8 引擎在调试和错误报告等功能中提供准确的源代码位置信息。**
 
-Prompt: ```这是目录为v8/test/unittests/codegen/source-position-table-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/codegen/source-position-table-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,6 +180,4 @@ TEST_F(SourcePositionTableTest, EncodeAscendingNegative) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

@@ -181,7 +181,7 @@ By grouping and understanding these functionalities, I can construct a comprehen
 
 `v8/src/codegen/code-stub-assembler.cc` 的这一部分主要提供了用于操作 Smi、进行带溢出检查的整数运算、处理通用数字类型、进行内存分配以及执行类型检查和条件分支的底层汇编器指令和辅助函数。这些功能是 V8 执行 JavaScript 代码的关键构建块，确保了高效的数值运算、内存管理和类型处理。理解这些底层机制有助于更深入地了解 V8 的工作原理以及 JavaScript 的一些行为特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -189,9 +189,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共23部分，请归纳一下它的功能
+```
 
-"""
-    return (static_cast<uintptr_t>(constant_value) <=
+### 源代码
+```cpp
+return (static_cast<uintptr_t>(constant_value) <=
             static_cast<uintptr_t>(Smi::kMaxValue))
                ? Int32TrueConstant()
                : Int32FalseConstant();
@@ -1054,7 +1056,4 @@ TNode<RawPtrT> CodeStubAssembler::EmptyBackingStoreBufferConstant() {
 
 TNode<UintPtrT> CodeStubAssembler::LoadBoundedSizeFromObject(
     TNode<Hea
-"""
-
-
 ```

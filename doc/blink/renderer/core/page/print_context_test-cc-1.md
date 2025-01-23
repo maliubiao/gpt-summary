@@ -105,7 +105,7 @@ By following this systematic approach, one can effectively analyze and summarize
 
 **总而言之，`blink/renderer/core/page/print_context_test.cc` 文件的主要功能是全面测试 Blink 渲染引擎中 `PrintContext` 类的各种功能，特别是涉及到 Canvas 元素、子框架以及与 JavaScript 和 CSS 交互的打印场景，以确保打印功能的正确性和稳定性。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/print_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 "userSpaceOnUse" overflow="visible">
         <rect width="100" height="75" transform="translate(1,0)"/>
       </marker>
@@ -661,8 +663,4 @@ TEST_P(PrintContextTest, WhiteRootBackgroundWithShouldPrintBackgroundEnabled) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

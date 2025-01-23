@@ -89,7 +89,7 @@ Now, let's address each of the user's points.
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/mesonbuild/backend/xcodebackend.py` 文件的这一部分主要负责将 Meson 构建系统的配置信息转换为 Xcode 项目文件的格式，包括构建目标的配置、依赖关系以及项目元数据。它使得开发者可以使用 Xcode 这一强大的 IDE 来构建、调试和研究 Frida 工具。虽然它本身不执行逆向操作，但它生成的 Xcode 项目是进行 Frida 代码逆向分析和修改的重要基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/backend/xcodebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ldPhase')
             phase_dict.add_item('buildActionMask', 2147483647)
             file_arr = PbxArray()
@@ -543,8 +545,4 @@ ldPhase')
 
     def generate_suffix(self, pbxdict: PbxDict) -> None:
         pbxdict.add_item('rootObject', self.project_uid, 'Project object')
-
-"""
-
-
 ```

@@ -132,14 +132,16 @@ By following these steps, with iterations and refinements, you can generate a co
 
 总而言之，`frame_widget_input_handler_impl.cc` 是 Blink 渲染引擎中一个至关重要的组件，它负责协调和处理用户输入，确保这些操作能够安全有效地影响网页的内容和交互。它通过线程安全的机制将输入事件传递到主线程，最终驱动 JavaScript 的执行、HTML 的修改和 CSS 样式的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/frame_widget_input_handler_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -627,7 +629,4 @@ FrameWidgetInputHandlerImpl::HandlingState::~HandlingState() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

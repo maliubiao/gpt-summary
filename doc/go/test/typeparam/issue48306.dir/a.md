@@ -172,15 +172,17 @@ func main() {
 
 **错误说明:** 在 `process` 函数中，我们无法直接对 `val.F()` 的返回值 `result` 进行加法运算，因为我们不知道类型 `T` 是否支持这种操作。 要进行特定类型的操作，需要进行类型断言或使用类型约束来限制 `T` 的类型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue48306.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -190,9 +192,4 @@ package a
 type I[T any] interface {
 	F() T
 }
-
-"""
-
-
-
 ```

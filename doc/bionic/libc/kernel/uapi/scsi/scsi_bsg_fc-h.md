@@ -293,7 +293,7 @@ sys.stdin.read()
 
 **请注意:**  这个 Frida Hook 示例只是一个起点，你需要根据你要调试的具体场景和目标进程来调整代码，包括确定正确的进程名、`ioctl` 命令码以及如何解析结构体。 实际的系统服务可能会使用更复杂的逻辑和多层调用，你需要进行逐步分析和 Hook 才能定位到与 Fibre Channel BSG 相关的调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/scsi/scsi_bsg_fc.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -304,8 +304,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -396,7 +398,4 @@ struct fc_bsg_reply {
   } reply_data;
 };
 #endif
-
-"""
-
 ```

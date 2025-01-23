@@ -317,7 +317,7 @@ if (Process.platform === 'android') {
 
 这个 Frida 示例可以帮助你追踪动态链接器加载共享库的过程，验证依赖库的加载顺序，并调试与动态链接相关的问题。 通过修改 hook 脚本，你还可以观察其他与动态链接相关的函数，例如 `dlsym` (符号查找) 和 `dlclose` (卸载库)。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlopen_testlib_relo_check_dt_needed_order.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -328,8 +328,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -351,7 +353,4 @@ extern "C" int relo_test_get_answer_lib();
 extern "C" int relo_test_get_answer() {
   return relo_test_get_answer_lib();
 }
-
-"""
-
 ```

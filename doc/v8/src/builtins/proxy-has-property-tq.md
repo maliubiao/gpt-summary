@@ -189,14 +189,16 @@ console.log(Reflect.has(proxy, 'b')); // 输出: "拦截到 has 操作，检查�
 
 总而言之，`v8/src/builtins/proxy-has-property.tq` 这段 Torque 代码是 V8 引擎中实现 Proxy 对象 `in` 操作符和相关方法的核心逻辑，它负责调用用户自定义的 "has" 陷阱，并处理各种边界情况，确保 Proxy 行为符合 JavaScript 规范。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/proxy-has-property.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ transitioning builtin ProxyHasProperty(
   }
 }
 }
-
-"""
-
 ```

@@ -99,15 +99,17 @@ By following these steps, I can systematically analyze the provided C++ test fil
 
 `cull_rect_test.cc` 的第一部分定义了一系列的单元测试，用于验证 `CullRect` 类的核心功能，包括几何运算、变换应用、属性处理和变化检测。这些测试确保了 `CullRect` 能够正确地表示和操作用于渲染剔除的矩形区域，这对于 Blink 引擎的渲染性能至关重要。虽然普通用户不直接接触 `CullRect`，但其正确性直接影响到网页的渲染效果和性能，与 JavaScript, HTML, CSS 的渲染结果息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/cull_rect_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -870,9 +872,4 @@ TEST_F(CullRectTest, CompositedTransformUnderClipWithoutExpansion) {
   CullRect cull_rect3 = CullRect::Infinite();
   EXPECT_FALSE(ApplyPaintProperties(cull_rect3, root, root, state1));
   EXPECT_EQ(gfx::Rect(90, 180, 300, 400), cull_rect3.Rect());
-
- 
-"""
-
-
 ```

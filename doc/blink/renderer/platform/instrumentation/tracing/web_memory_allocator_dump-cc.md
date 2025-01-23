@@ -91,14 +91,16 @@ This step-by-step process, starting with the basic understanding of the code and
 
 总而言之，`web_memory_allocator_dump.cc` 提供了一个结构化的方式，让 Blink 内部的各个组件能够报告它们管理的内存分配情况，这对于理解浏览器的内存使用模式、诊断内存泄漏和优化性能至关重要。虽然它不直接操作 JavaScript, HTML 或 CSS 代码，但它记录了这些技术运行时所产生的内存消耗。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/instrumentation/tracing/web_memory_allocator_dump.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -132,7 +134,4 @@ WebMemoryAllocatorDumpGuid WebMemoryAllocatorDump::Guid() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

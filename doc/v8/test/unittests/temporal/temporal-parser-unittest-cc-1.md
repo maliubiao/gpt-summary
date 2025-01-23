@@ -197,7 +197,7 @@ console.log(ym3.year, ym3.month, ym3.day); // 2021 11 undefined
 
 这些测试用例帮助开发者确保 Temporal API 的解析器能够有效地捕获这些常见的用户输入错误，并给出相应的错误提示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/temporal/temporal-parser-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/temporal/temporal-parser-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -205,8 +205,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rTest, TemporalTimeStringIllegal) {
   VERIFY_PARSE_FAIL_ON_DATE(TemporalTimeString);
   VERIFY_PARSE_FAIL(TemporalTimeString, "");
@@ -701,7 +703,4 @@ TEST_F(TemporalParserTest, TemporalYearMonthStringSuccess) {
   VerifyParseTemporalYearMonthStringSuccess("2021-11-09 01:23Z", 2021, 11, 9,
                                             "");
   Verify
-"""
-
-
 ```

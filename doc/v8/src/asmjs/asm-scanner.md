@@ -135,11 +135,13 @@ function add(x, y) {
 
 `asm-scanner.cc` 专注于 asm.js 的词法分析，确保只有符合 asm.js 严格语法的代码才能被后续的 asm.js 编译器处理，从而实现性能优化。它与 JavaScript 的关系在于它是 V8 引擎处理特定 JavaScript 子集 (asm.js) 的一个关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/asmjs/asm-scanner.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -618,7 +620,4 @@ bool AsmJsScanner::IsNumberStart(base::uc32 ch) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

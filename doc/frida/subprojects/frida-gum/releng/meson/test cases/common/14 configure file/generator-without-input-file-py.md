@@ -160,7 +160,7 @@ By following this structured thought process, I can systematically analyze the s
 
 总而言之，这个脚本是 Frida 构建过程中的一个辅助工具，用于生成简单的配置文件。它本身不执行逆向操作，但其生成的配置可能会影响 Frida Gum 的构建和行为，而 Frida Gum 是一个核心的逆向工具。理解这个脚本的功能和它在构建过程中的位置，有助于理解 Frida 的构建流程和潜在的调试问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/14 configure file/generator-without-input-file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -184,7 +186,4 @@ outputf = Path(sys.argv[1])
 
 with outputf.open('w') as ofile:
     ofile.write("#define ZERO_RESULT 0\n")
-
-"""
-
 ```

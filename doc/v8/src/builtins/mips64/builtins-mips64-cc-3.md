@@ -169,7 +169,7 @@ V8 可能会使用 `Generate_DoubleToI` 中生成的代码来完成这个转换�
 
 这个文件是 V8 引擎在 MIPS64 架构上运行的基础，它将高级的 JavaScript 语义转化为底层的机器指令，使得 JavaScript 代码能够在该架构上高效执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/mips64/builtins-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/mips64/builtins-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -177,8 +177,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 allRuntime(Runtime::kThrowStackOverflow);
     }
     __ bind(&done);
@@ -1068,7 +1070,4 @@ void Builtins::Generate_DirectCEntry(MacroAssembler* masm) {
   // making the call GC safe. The irregexp backend relies on this.
 
   // Make place for arguments to fit C c
-"""
-
-
 ```

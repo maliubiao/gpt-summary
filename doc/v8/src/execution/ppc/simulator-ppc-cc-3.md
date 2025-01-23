@@ -94,7 +94,7 @@ console.log(product); // 输出 4294967294
 
 总而言之，作为第 4 部分，这段 `v8/src/execution/ppc/simulator-ppc.cc` 代码的主要功能是 **V8 引擎在 PowerPC 架构上的指令级模拟器的一部分，负责模拟各种 PowerPC 指令的执行，包括算术运算、逻辑运算、寄存器操作、内存访问和浮点运算。**  它使得 V8 可以在 PowerPC 架构上运行 JavaScript 代码，即使实际的硬件可能不是 PowerPC，这对于开发、测试和调试 V8 在该架构上的行为至关重要。  它也展示了在底层 CPU 指令级别进行操作时需要考虑的细节，例如数据类型、溢出和寄存器使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/ppc/simulator-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/ppc/simulator-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -102,8 +102,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
       if (instr->Bit(0)) {  // RC bit set
         SetCR0(alu_out);
@@ -1162,8 +1164,4 @@ Prompt:
       condition_reg_ &= ~(0x0F << cr_shift);
       condition_reg_ |= (field_val << cr_shift);
       // Clear copied exception bits
- 
-"""
-
-
 ```

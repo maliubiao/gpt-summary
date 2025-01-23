@@ -153,7 +153,7 @@ build obj/module_b.o | obj/module_a.mod : dyndep | obj/module_a.mod
 
 总而言之，`depscan.py` 是 Frida 构建过程中的一个关键工具，它负责提取源代码中的模块依赖信息，并将这些信息转化为 Ninja 构建系统可以理解的动态依赖规则，从而确保模块化的代码能够正确地编译和链接。理解它的功能和工作原理对于调试 Frida 的构建问题以及理解 Frida 的代码结构都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/scripts/depscan.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2020 The Meson development team
 
@@ -361,7 +363,4 @@ def run(args: T.List[str]) -> int:
         sources = json.load(f)
     scanner = DependencyScanner(pickle_file, outfile, sources)
     return scanner.scan()
-
-"""
-
 ```

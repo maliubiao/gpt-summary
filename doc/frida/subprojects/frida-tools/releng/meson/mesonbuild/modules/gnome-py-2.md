@@ -116,7 +116,7 @@ The user wants to understand the functionality of the `gnome.py` file within the
 
 总而言之，这段代码是 Frida 构建系统中用于处理 GNOME 项目特定构建任务的关键部分，它通过 Meson 框架集成了一系列 GNOME 开发工具，自动化了文档生成、代码生成等过程。理解这些功能有助于理解 Frida 工具自身的构建过程，以及它如何与使用了 GNOME 技术的目标应用程序进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,9 +125,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-       l_data = build.Data([m_file], m_install_dir, m_install_dir,
+### 源代码
+```python
+l_data = build.Data([m_file], m_install_dir, m_install_dir,
                                         mesonlib.FileMode(), state.subproject, install_tag='doc')
                 targets.append(l_data)
 
@@ -853,7 +855,4 @@ Prompt:
         return ModuleReturnValue(rv, rv)
 
     def _extract_vapi_packages(self, state: 'ModuleState', packages: T.List[T.Union[InternalDependen
-"""
-
-
 ```

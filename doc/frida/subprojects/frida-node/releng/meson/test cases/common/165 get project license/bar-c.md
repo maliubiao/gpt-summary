@@ -164,7 +164,7 @@ By following this structured thinking process, moving from basic understanding t
 
 总而言之，`bar.c` 作为一个非常基础的 C 程序，其主要作用是作为 Frida 动态 instrumentation 工具的测试目标，用于验证 Frida 的核心功能和在不同平台上的兼容性。它的简单性使得开发者可以更容易地理解 Frida 的工作原理和排除潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/165 get project license/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,15 +172,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("I'm a main project bar.\n");
     return 0;
 }
-
-"""
-
 ```

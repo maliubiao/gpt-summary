@@ -115,7 +115,7 @@ By following this thought process, deconstructing the request, and connecting th
 
 虽然 `create-source.py` 本身是一个非常简单的脚本，但它在 Frida 动态分析的上下文中扮演着一个实用的小工具的角色，帮助用户快速生成包含所需头文件的 C/C++ 代码片段，从而方便地在 Frida 脚本中利用已有的类型信息，这与逆向工程中理解和操作目标程序的内存结构息息相关。它简化了在 Frida 环境中使用自定义或系统头文件的过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/22 object extraction/create-source.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,12 +123,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #! /usr/bin/env python3
 import sys
 print(f'#include "{sys.argv[1]}"')
-
-"""
-
 ```

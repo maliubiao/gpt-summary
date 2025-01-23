@@ -210,7 +210,7 @@ go run main.go --name=alice --name=bob
 
 **正确的处理方式（如果需要收集多个值）通常是使用标准的 `flag` 包多次调用同一个 flag，然后在代码中手动收集这些值。或者使用第三方库来处理更复杂的参数解析需求。** `pprof` 的其他部分可能会有针对这种情况的特殊处理，但这部分代码本身并没有实现直接收集多个字符串的功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/driver/flags.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -218,8 +218,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 //  Copyright 2018 Google Inc. All Rights Reserved.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
@@ -291,9 +293,4 @@ func (*GoFlags) Parse(usage func()) []string {
 	}
 	return args
 }
-
-"""
-
-
-
 ```

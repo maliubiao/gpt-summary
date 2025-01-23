@@ -47,7 +47,7 @@ Here's a breakdown of the file's content and how to address each point:
 `readable_stream.cc` 文件直接实现了 Web Streams API 的一部分，该 API 是 JavaScript 中用于处理流式数据的标准。
 
 *   **JavaScript:**  JavaScript 代码可以直接使用 `ReadableStream` 构造函数创建可读流，并调用其上的方法，例如 `
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/streams/readable_stream.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -55,8 +55,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -872,7 +874,4 @@ ReadableStreamBYOBReader* ReadableStream::AcquireBYOBReader(
 
 void ReadableStream::Initialize(ReadableStream* stream) {
   // Fields are initialised by the constructor, so we only check that they were
-"""
-
-
 ```

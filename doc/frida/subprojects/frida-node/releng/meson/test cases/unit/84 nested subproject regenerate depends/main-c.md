@@ -106,7 +106,7 @@ Here's a breakdown of the thinking process to arrive at the comprehensive analys
 
 尽管 `main.c` 的代码本身极其简单，但结合其在 Frida 项目中的位置和上下文，我们可以推断出它在构建系统测试中扮演着重要的角色，用于验证嵌套子项目依赖关系的处理。它本身不涉及复杂的逆向工程逻辑或底层内核操作，但它是支撑 Frida 这样强大的逆向工具的基础设施的一部分。开发者可能会在调试构建问题、理解测试流程或学习 Frida 构建系统的过程中接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/84 nested subproject regenerate depends/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,12 +114,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

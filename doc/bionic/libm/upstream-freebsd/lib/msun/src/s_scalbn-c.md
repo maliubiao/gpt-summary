@@ -268,7 +268,7 @@ Android 的 dynamic linker 主要处理以下类型的符号：
 
 总而言之，`s_scalbn.c` 中的 `scalbn` 函数是 Android 系统中进行快速浮点数缩放的重要基础函数，被广泛应用于各种需要进行精确数值计算的场景中。理解其实现原理和潜在的使用风险对于开发高质量的 Android 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_scalbn.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -278,8 +278,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (c) 2005-2020 Rich Felker, et al.
  *
@@ -327,7 +329,4 @@ double scalbn(double x, int n)
 __weak_reference(scalbn, ldexpl);
 __weak_reference(scalbn, scalbnl);
 #endif
-
-"""
-
 ```

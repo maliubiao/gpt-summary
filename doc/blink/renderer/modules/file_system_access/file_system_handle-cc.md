@@ -262,15 +262,17 @@ CSS 与此文件的功能没有直接关系，因为它主要处理文件系统�
 
 总而言之，`FileSystemHandle.cc` 是 File System Access API 在 Blink 渲染引擎中的核心组成部分，负责管理文件和目录句柄的通用操作，并与浏览器进程协作完成实际的文件系统操作和权限管理。 它架起了 JavaScript API 和底层操作系统文件系统之间的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/file_system_access/file_system_handle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -548,7 +550,4 @@ void FileSystemHandle::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

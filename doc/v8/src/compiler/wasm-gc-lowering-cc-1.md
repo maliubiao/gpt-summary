@@ -117,7 +117,7 @@ const charCode = jsString.charCodeAt(0); // 类似 StringPrepareForGetCodeunit �
 
 总而言之，`v8/src/compiler/wasm-gc-lowering.cc` 的功能是将 WebAssembly 垃圾回收相关的抽象操作转化为 V8 虚拟机可以更高效执行的底层操作。 它负责处理诸如创建数组、获取数组长度、访问数组元素以及处理字符串等操作的降低。  这个过程是 WebAssembly GC 功能在 V8 中正确且高效实现的关键步骤。代码片段展示了如何针对不同的 WebAssembly 指令，通过加载、计算和条件分支等操作，将其转化为更具体的内存操作或对 V8 内置函数的调用。这个文件是编译器优化管道中的重要一环，确保了 WebAssembly GC 代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-gc-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/wasm-gc-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -125,8 +125,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e_null_trap) {
     UpdateSourcePosition(length, node);
   }
@@ -361,8 +363,4 @@ void WasmGCLowering::UpdateSourcePosition(Node* new_node, Node* old_node) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

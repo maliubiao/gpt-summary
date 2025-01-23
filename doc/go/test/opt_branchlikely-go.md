@@ -120,15 +120,17 @@ func example(x int) {
 
 `go/test/opt_branchlikely.go` 是 Go 编译器测试套件的一部分，专门用于验证编译器在处理各种控制流结构时，是否按照预期的规则进行分支预测优化。它使用了 `errorcheck` 机制来断言编译器的行为，并针对特定的 `amd64` 架构。理解这段代码需要对 Go 编译器的优化过程和 `errorcheck` 工具的工作方式有一定的了解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/opt_branchlikely.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -d=ssa/likelyadjust/debug=1,ssa/insert_resched_checks/off
 // rescheduling check insertion is turned off because the inserted conditional branches perturb the errorcheck
 
@@ -216,9 +218,4 @@ func h(x, y, z int) int {
 	}
 	return a
 }
-
-"""
-
-
-
 ```

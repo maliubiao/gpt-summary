@@ -152,14 +152,16 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`flex_offset.cc` 中定义的 `FlexOffset` 结构体是 Blink 渲染引擎内部处理弹性布局的关键组成部分，它存储了弹性子项相对于其容器的偏移信息，并能够将其转换为考虑书写模式的逻辑偏移量。理解其功能有助于更好地理解和调试 CSS 弹性布局。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/geometry/flex_offset.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -187,7 +189,4 @@ std::ostream& operator<<(std::ostream& os, const FlexOffset& value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

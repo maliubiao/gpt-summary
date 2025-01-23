@@ -202,14 +202,16 @@ By following this structured thought process, I can systematically analyze the c
 
 总而言之，`blink/renderer/core/inspector/inspector_media_context_impl.cc` 是 Blink 引擎中一个关键的组件，它负责收集和管理媒体播放器的调试信息，为开发者提供了一个强大的工具来理解和解决网页中媒体相关的问题。它与 JavaScript 和 HTML 的交互最为紧密，通过监听 JavaScript 的操作和追踪 HTML 媒体元素的状态来实现其功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_media_context_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -439,7 +441,4 @@ MediaInspectorContextImpl::GetPlayersForTesting() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

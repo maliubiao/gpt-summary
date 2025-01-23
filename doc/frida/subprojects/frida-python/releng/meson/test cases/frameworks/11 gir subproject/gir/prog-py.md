@@ -141,7 +141,7 @@ Hello, sub/meson/py!
 
 总而言之，这个 `prog.py` 文件虽然简单，但它是 Frida 测试框架中用于验证其与 GObject Introspection 子项目集成的重要组成部分。通过分析这个文件，我们可以了解 Frida 如何与基于 GObject 的库进行交互，这对于理解和使用 Frida 进行动态逆向分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/11 gir subproject/gir/prog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,15 +149,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 from gi.repository import MesonSub
 
 if __name__ == "__main__":
     s = MesonSub.Sample.new("Hello, sub/meson/py!")
     s.print_message()
-
-"""
-
 ```

@@ -175,7 +175,7 @@ endif
 
 总而言之，`cmake2meson.py` 是一个用于 CMake 到 Meson 构建系统转换的实用工具，它通过词法分析、语法分析和转换三个主要阶段，将 CMake 的构建描述转换为 Meson 的构建描述。虽然它本身不是逆向工具，但理解构建系统对于逆向工程是有帮助的。用户通过执行脚本并提供 CMake 项目根目录作为参数来使用它，如果出现问题，可以通过分析错误信息和生成的输出来进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/tools/cmake2meson.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014 Jussi Pakkanen
@@ -503,7 +505,4 @@ if __name__ == '__main__':
     P = p.parse_args()
 
     Converter(P.cmake_root).convert()
-
-"""
-
 ```

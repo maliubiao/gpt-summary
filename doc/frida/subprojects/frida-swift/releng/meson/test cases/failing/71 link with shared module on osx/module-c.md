@@ -92,7 +92,7 @@ Here's a thinking process to arrive at the analysis of the C code snippet:
 
 总而言之，这个简单的 `module.c` 文件在 Frida 的测试框架中，很可能是作为一个刻意构造的、用于触发特定链接失败场景的测试用例存在。用户到达这里是为了理解这个失败的测试用例的目的和失败的原因，从而帮助调试 Frida 本身或其与操作系统底层交互的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing/71 link with shared module on osx/module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,12 +100,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 1496;
 }
-
-"""
-
 ```

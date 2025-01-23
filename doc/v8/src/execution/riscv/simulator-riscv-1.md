@@ -118,12 +118,14 @@ The provided C++ code in the simulator would then be responsible for executing t
 
 In essence, this code allows V8 to **test and verify the correctness of its code generation for RISC-V vector instructions** on platforms where a real RISC-V processor with vector extensions might not be available. It also provides a powerful tool for understanding the low-level details of how these instructions operate.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/riscv/simulator-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 _check);                                                           \
   switch (rvv_vsew()) {                                                       \
     case E8: {                                                                \
@@ -1883,8 +1885,5 @@ void Simulator::Format(Instruction* instr, const char* format) {
   UNIMPLEMENTED_RISCV();
 }
 
-// Calls 
-"""
-
-
+// Calls
 ```

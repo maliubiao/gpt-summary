@@ -160,15 +160,17 @@ By following these steps, I can generate a comprehensive and informative answer 
 
 要更精确地追踪用户操作如何到达这里，需要更深入地了解具体的网络场景和 Chromium 的代码结构。可以使用调试器（如 gdb 或 lldb）并设置断点，逐步跟踪函数调用堆栈，以确定调用 `ServerSocket` 相关方法的代码路径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/server_socket.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ int ServerSocket::Accept(std::unique_ptr<StreamSocket>* socket,
 }
 
 }  // namespace net
-
-"""
-
 ```

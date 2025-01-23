@@ -107,11 +107,13 @@ console.log(-1 / 0);     // 输出: -Infinity
 
 `instructions-arm64-constants.cc` 文件为 V8 引擎在 ARM64 架构上处理 JavaScript 的浮点数运算提供了底层的常量定义。它确保了 JavaScript 中的 `Infinity`, `-Infinity`, 和 `NaN` 等特殊值能够被正确地表示和操作在 ARM64 硬件上。  这个文件是 V8 引擎实现跨平台兼容性的一个重要组成部分，因为它为特定的硬件架构提供了必要的常量定义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/instructions-arm64-constants.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ extern const float16 kFP16DefaultNaN =
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

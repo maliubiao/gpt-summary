@@ -113,7 +113,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 作为整个测试套件的最后一部分，这个文件专注于对 `URLRequest` 的一些关键但相对独立的特性进行最后的验证，特别是围绕缓存控制和新的网络特性 (`Activate-Storage-Access` 头)。它确保了这些特性在各种场景下都能按预期工作，并且与其他网络功能能够正确地协同。 这部分测试可能涵盖了之前测试中没有完全覆盖的边界情况或特定的交互逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第17部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Builder();
   context_builder->set_network_delegate(
       std::make_unique<PatternedExpectBypassCacheNetworkDelegate>(
@@ -674,8 +676,4 @@ TEST_F(StorageAccessHeaderURLRequestTest,
 }
 
 }  // namespace net
-
-"""
-
-
 ```

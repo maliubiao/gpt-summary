@@ -150,15 +150,17 @@ main
 
 总而言之，这段 `b.go` 代码片段简洁地展示了 Go 语言中 `init` 函数的基本用法，即在包被导入时执行初始化操作。理解 `init` 函数的执行机制对于编写正确的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue31636.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -168,9 +170,4 @@ package b
 func init() {
 	println("b")
 }
-
-"""
-
-
-
 ```

@@ -249,7 +249,7 @@ Imagine a developer working on Frida or a Frida module that interacts with appli
 
 In essence, `printer.py` is a utility within the Frida (and Meson) ecosystem that facilitates the understanding and manipulation of Meson build configurations. Developers working on Frida or with applications built by Meson might need to understand its functionality for debugging, extending Frida's capabilities, or gaining deeper insights into the build process of a target application.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/ast/printer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -257,8 +257,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -879,7 +881,4 @@ class AstJSONPrinter(AstVisitor):
             kwargs_list += [{'key': key_res, 'val': val_res}]
         self.current['kwargs'] = kwargs_list
         self.setbase(node)
-
-"""
-
 ```

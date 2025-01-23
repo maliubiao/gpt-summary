@@ -235,7 +235,7 @@ This file provides the assembly code implementations for various built-in JavaSc
 
 The first part of `v8/src/builtins/loong64/builtins-loong64.cc` lays the foundation for executing JavaScript code on the LoongArch 64-bit architecture. It provides essential low-level mechanisms for function calls (both regular and constructor calls), generator management, stack safety, and entry points into the JavaScript runtime. It's a crucial component for bridging the gap between the V8 engine's C++ core and the execution of JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/loong64/builtins-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/loong64/builtins-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -243,8 +243,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1146,7 +1148,4 @@ static void AdvanceBytecodeOffsetOrReturn(MacroAssembler* masm,
   __ Branch(if_return, eq, bytecode, \
             Operand(static_cast<int>(interpreter::Bytecode::k##NAME)));
   RETURN_BYTECODE_LIST(JU
-"""
-
-
 ```

@@ -164,7 +164,7 @@ func main() {
 
 这段 `go/src/runtime/time.go` 的代码是 Go 语言运行时环境中负责时间管理的基础设施。它实现了获取当前时间、管理计时器（包括单次触发和周期性触发）、支持与 Channel 关联的计时器，并为 `time.Sleep` 等上层时间相关功能提供了底层支撑。它使用了锁和原子操作来保证并发安全性，并与网络轮询器集成以实现高效的事件处理。此外，它还支持 fake time 用于测试目的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/time.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -173,8 +173,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1266,9 +1268,4 @@ func (t *timer) unlockAndRun(now int64) {
 		// Leave in heap but adjust next time to fire.
 		next = t.when + t.period*(1+delay/t.period)
 		if next < 0 { /
-"""
-
-
-
-
 ```

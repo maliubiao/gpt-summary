@@ -122,14 +122,16 @@ This step-by-step process allows for a thorough understanding of the code's purp
 
 总而言之，`rtc_video_encoder_factory.cc` 是 Chromium 中 WebRTC 视频编码功能的核心组件，它负责管理和创建视频编码器，并根据系统能力和配置提供支持的编解码器信息。理解它的功能有助于理解 WebRTC 视频通信的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_encoder_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -664,7 +666,4 @@ RTCVideoEncoderFactory::QueryCodecSupport(
 }
 
 }  // namespace blink
-
-"""
-
 ```

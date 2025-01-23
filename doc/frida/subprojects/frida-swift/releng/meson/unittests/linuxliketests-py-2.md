@@ -98,7 +98,7 @@ Finally, I need to summarize the overall functionality of the code.
 
 总而言之，这个文件是 Frida 项目质量保证的关键部分，它通过自动化测试来确保 Meson 构建系统在 Linux 类环境下的行为符合预期，覆盖了编译链接的多个重要方面，并间接地反映了底层二进制、操作系统以及用户可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 lf):
         testdir = os.path.join(self.unit_test_dir, '51 ldflagdedup')
         if is_cygwin() or is_osx():
@@ -487,8 +489,4 @@ lf):
         self.assertIn('build t9-e1: c_LINKER t9-e1.p/main.c.o | libt9-s1.a libt9-s2.a libt9-s3.a\n', content)
         self.assertIn('build t12-e1: c_LINKER t12-e1.p/main.c.o | libt12-s1.a libt12-s2.a libt12-s3.a\n', content)
         self.assertIn('build t13-e1: c_LINKER t13-e1.p/main.c.o | libt12-s1.a libt13-s3.a\n', content)
-
-"""
-
-
 ```

@@ -107,15 +107,17 @@ Now, I need to connect these features to JavaScript, HTML, and CSS and identify 
 
 `blink/renderer/core/workers/worker_global_scope.cc` (第一部分) 的主要功能是定义了 Web Worker 的全局作用域，负责 Worker 线程的初始化、脚本的加载和执行、消息的接收和分发、错误处理以及提供 Worker 特有的全局对象和 API。它在 Worker 的生命周期中扮演着核心角色，确保 Worker 能够安全有效地执行 JavaScript 代码并与外界进行通信。同时，它也集成了浏览器的一些核心功能，例如缓存管理和开发者工具支持，并遵循 Web 标准进行安全策略的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/worker_global_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All Rights Reserved.
  * Copyright (C) 2009, 2011 Google Inc. All Rights Reserved.
@@ -866,7 +868,4 @@ NOINLINE void WorkerGlobalScope::InitializeURL(const KURL& url) {
 
 void WorkerGlobalScope::SetWorkerMainScriptLoadingParametersForModules(
     std::unique_ptr<
-"""
-
-
 ```

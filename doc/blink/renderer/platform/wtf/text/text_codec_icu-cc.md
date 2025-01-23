@@ -137,14 +137,16 @@ By following these steps and continually refining the understanding, a comprehen
 
 总而言之，`blink/renderer/platform/wtf/text/text_codec_icu.cc` 是 Blink 引擎中处理字符编码的关键组件，它依赖于强大的 ICU 库，确保了网页内容在各种字符编码下都能被正确地加载、解析和显示，是构建全球化 Web 体验的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_codec_icu.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2006, 2007, 2008, 2011 Apple Inc. All rights reserved.
  * Copyright (C) 2006 Alexey Proskuryakov <ap@nypop.com>
@@ -914,7 +916,4 @@ std::string TextCodecICU::Encode(base::span<const LChar> characters,
 }
 
 }  // namespace WTF
-
-"""
-
 ```

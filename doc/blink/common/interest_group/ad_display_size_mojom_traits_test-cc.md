@@ -132,14 +132,16 @@ By following these steps, the detailed and informative answer can be generated.
 
 总而言之，`ad_display_size_mojom_traits_test.cc` 这个文件虽然是 C++ 代码，但它对于确保网页广告的正确显示至关重要，因为它验证了广告尺寸信息在 Blink 引擎内部不同组件之间传递的正确性，这直接影响了 JavaScript, HTML, 和 CSS 如何协同工作来呈现广告。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/ad_display_size_mojom_traits_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ TEST(AdDisplaySizeStructTraitsTest, SerializeAndDeserializeAdDescriptor) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

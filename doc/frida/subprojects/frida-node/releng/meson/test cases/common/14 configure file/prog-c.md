@@ -129,7 +129,7 @@ Here's a thinking process to arrive at the explanation of the C code:
 
 总而言之，`prog.c` 是 Frida 构建系统中的一个小而重要的测试程序，用于验证构建配置的正确性。 它通过条件编译和宏定义来检查预期的配置状态，并帮助开发者在构建过程中尽早发现配置错误。 理解这类测试程序对于理解软件的构建过程和进行相关的调试工作非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/14 configure file/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <string.h>
 /* config.h must not be in quotes:
  * https://gcc.gnu.org/onlinedocs/cpp/Search-Path.html
@@ -156,7 +158,4 @@ int main(void) {
     return strcmp(MESSAGE, "mystring");
 #endif
 }
-
-"""
-
 ```

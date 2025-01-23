@@ -147,15 +147,17 @@ moqt::PublishedObject published_object_empty_payload =
 
 总而言之，`moqt_cached_object.cc` 中定义的 `CachedObjectToPublishedObject` 函数是 MoQT 对象处理流程中的一个关键环节，它负责将缓存的对象转换为适合发布的形式，为后续的数据传递和处理做准备。理解这个函数的功能及其与 JavaScript 的联系，以及潜在的使用错误，对于开发和调试基于 MoQT 的应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_cached_object.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -182,7 +184,4 @@ moqt::PublishedObject CachedObjectToPublishedObject(
 }
 
 }  // namespace moqt
-
-"""
-
 ```

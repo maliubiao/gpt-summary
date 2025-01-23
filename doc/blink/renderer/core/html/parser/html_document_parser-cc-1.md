@@ -83,15 +83,17 @@ The code snippet primarily deals with the `PumpTokenizer` function and the sched
 
 请注意，这只是 `HTMLDocumentParser.cc` 文件的一部分功能，更完整的功能还包括错误处理、字符编码处理、各种 HTML 语法规则的实现等等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_document_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 timer occasionally.
           if (ShouldCheckTimeBudget(next_token_status,
                                     atomic_html_token.GetHTMLTag(),
@@ -937,7 +939,4 @@ void HTMLDocumentParser::ScanInBackground(const String& source) {
           },
           background_scanner_->AsWeakPtr(),
           GetPreloadSca
-"""
-
-
 ```

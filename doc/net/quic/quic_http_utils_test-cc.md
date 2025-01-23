@@ -136,15 +136,17 @@ Let's break down the thought process for analyzing this C++ test file.
 
 `net/quic/quic_http_utils_test.cc` 虽然是一个测试文件，但它对于保证 Chromium 网络栈中 QUIC 协议的正确性和性能至关重要。它通过测试 HTTP 请求优先级和 QUIC 协议优先级之间的转换逻辑，间接地影响着用户浏览网页时的体验。当出现与 QUIC 相关的性能问题时，这个测试文件以及它所测试的代码是开发者进行调试的重要入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_http_utils_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ TEST(QuicHttpUtilsTest, ConvertQuicPriorityToRequestPriority) {
 }
 
 }  // namespace net::test
-
-"""
-
 ```

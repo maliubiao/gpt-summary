@@ -118,7 +118,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 这部分 `TlsServerHandshakerTest` 代码专注于测试 TLS 服务器握手器在更细致和异常情况下的行为。它涵盖了会话恢复过程中解密失败的处理、证书提供失败时的容错、对不安全的 0-RTT 恢复的拒绝、以及对客户端证书请求和不同配置的处理。此外，还测试了在握手过程中连接被提前关闭的情况，以及对自定义传输参数的处理能力。最后，针对较新版本的 BoringSSL，还包含了对 Kyber 密钥交换算法和 ALPS 新代码点支持的测试。 这些测试确保了 `TlsServerHandshaker` 的健壮性、安全性和对各种配置的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/tls_server_handshaker_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -126,10 +126,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-      /*compute_signature_action=*/FakeProofSourceHandle::Action::
+### 源代码
+```cpp
+/*compute_signature_action=*/FakeProofSourceHandle::Action::
           DELEGATE_SYNC);
   InitializeFakeClient();
 
@@ -573,8 +574,4 @@ TEST_P(TlsServerHandshakerTest, AlpsUseNewCodepoint) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

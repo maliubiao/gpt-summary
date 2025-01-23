@@ -181,14 +181,16 @@ Throughout this process, I might need to revisit earlier steps. For example, if 
 
 总而言之，`html_element_test.cc` 文件通过各种单元测试用例，详细地验证了 `HTMLElement` 类的功能，涵盖了与 JavaScript、HTML 和 CSS 的交互，并揭示了开发者在使用这些 Web 技术时可能遇到的常见误解和错误。这些测试对于确保 Blink 引擎的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -634,7 +636,4 @@ TEST_F(HTMLElementTest, DialogTopLayerRemovalTiming) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

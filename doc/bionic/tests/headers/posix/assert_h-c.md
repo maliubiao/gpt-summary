@@ -260,7 +260,7 @@ Java.perform(function() {
 
 这个 Frida Hook 示例可以帮助你调试 Android Framework 或 NDK 代码中与断言相关的行为，即使断言最终会导致程序终止。通过拦截底层的 `__assert2` 函数，你可以获取断言发生时的文件名、行号、函数名和断言表达式等信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/assert_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -271,8 +271,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -314,7 +316,4 @@ Prompt:
 #if !defined(assert)
 #error
 #endif
-
-"""
-
 ```

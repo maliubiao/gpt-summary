@@ -97,12 +97,14 @@ function getObjectAndNumber() {
 
 In essence, this code acts as a bridge, carefully handling the potentially complex task of transferring data, especially reference types, from the JavaScript world back to the WebAssembly environment within the V8 engine. The re-copying of references is a key optimization to handle potential garbage collection issues that could arise during the transfer.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/arm64/interpreter-builtins-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 Ldr(cp, MemOperand(sp, 0));
   __ Ldr(fixed_array, MemOperand(sp, kSystemPointerSize));
   __ Ldr(valuetypes_array_ptr, MemOperand(fp, kValueTypesArrayStartOffset));
@@ -219,8 +221,4 @@ Ldr(cp, MemOperand(sp, 0));
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

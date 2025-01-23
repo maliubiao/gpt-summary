@@ -164,7 +164,7 @@ A user would typically interact with this code indirectly through the Meson buil
 
 This specific part of the `frida/subprojects/frida-python/releng/meson/mesonbuild/build.py` file defines the core data structures (Python classes) that represent different types of build targets within the Meson build system. These classes (`RunTarget`, `AliasTarget`, `Jar`, `CustomTargetIndex`, `ConfigurationData`, `Data`, `SymlinkData`) encapsulate the information needed to execute various build steps, from running arbitrary commands to compiling Java code and installing files. It's a foundational component for defining the build process of the Frida Python bindings and related components. The code also provides helper functions for managing build data and extracting information from build targets. Its functionalities are relevant to reverse engineering, low-level binary manipulation, and interaction with operating system concepts like file paths and installation directories.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,9 +173,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
- = 'run'
+### 源代码
+```python
+= 'run'
 
     def __init__(self, name: str,
                  command: T.Sequence[T.Union[str, File, BuildTargetTypes, programs.ExternalProgram]],
@@ -475,8 +477,4 @@ def save(obj: Build, filename: str) -> None:
             pickle.dump(obj, f)
     finally:
         obj.environment.coredata = cdata
-
-"""
-
-
 ```

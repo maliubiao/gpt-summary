@@ -222,7 +222,7 @@ if __name__ == '__main__':
 
 这个简单的 `main.cpp` 文件虽然代码量不多，但它涉及了异步编程、多线程、以及程序执行结果的验证。对于逆向工程师来说，它提供了一个很好的目标来练习动态分析技术，观察异步操作的行为。对于开发者来说，它也展示了异步编程中需要注意的关键点，例如线程同步和错误处理。理解这个程序的行为需要一定的 C++ 编程基础，以及对操作系统底层概念的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/16 threads/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -230,8 +230,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 #include <cstdlib>
@@ -241,7 +243,4 @@ int main() {
   cc.asyncIncrement();
   return cc.getNum() == 1 ? EXIT_SUCCESS : EXIT_FAILURE;
 }
-
-"""
-
 ```

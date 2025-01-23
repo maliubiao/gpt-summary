@@ -170,15 +170,17 @@ By following this systematic process, we can effectively analyze complex source 
 
 总而言之，`image_paint_timing_detector.cc` 是 Blink 渲染引擎中一个关键的性能监控模块，专注于图片元素的绘制时间，特别是为了识别和测量 Largest Contentful Paint (LCP)，从而帮助评估和优化网页的加载体验。它与 HTML、CSS 和 JavaScript 都有密切的关系，因为这些技术共同决定了页面中图片的呈现方式和加载过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/timing/image_paint_timing_detector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -793,7 +795,4 @@ void ImagePaintTimingDetector::Trace(Visitor* visitor) const {
   visitor->Trace(callback_manager_);
 }
 }  // namespace blink
-
-"""
-
 ```

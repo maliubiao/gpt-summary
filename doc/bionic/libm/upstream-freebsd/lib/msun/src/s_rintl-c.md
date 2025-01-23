@@ -251,7 +251,7 @@ long double rounded_ld = rintl(d_val); // 类型不匹配，可能需要显式�
 
 通过以上分析，我们对 Android Bionic 中 `s_rintl.c` 文件的功能、实现、与 Android 的关系、以及调试方法有了深入的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_rintl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -261,8 +261,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -352,7 +354,4 @@ rintl(long double x)
 
 	return (x);
 }
-
-"""
-
 ```

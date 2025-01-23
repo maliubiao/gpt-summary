@@ -149,7 +149,7 @@ Let's break down the code section by section to identify its purpose and feature
 
 `blink/renderer/core/timing/performance.cc` (第一部分) 的核心功能是 **初始化和管理 Performance API 的底层数据结构和逻辑，负责收集和存储各种类型的性能条目**。它定义了用于存储不同性能指标的缓冲区，并提供了添加和查询这些条目的基本机制。 它是实现 Web 开发者可以通过 JavaScript `window.performance` 对象访问的性能监控能力的关键组成部分。 这部分代码主要关注数据的存储和基本的获取操作，为后续部分实现更复杂的功能（如 `mark`, `measure` 的具体实现，以及 `PerformanceObserver` 的通知机制）奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/performance.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  * Copyright (C) 2012 Intel Inc. All rights reserved.
@@ -995,7 +997,4 @@ void Performance::AddLargestContentfulPaint(LargestContentfulPaint* entry) {
 }
 
 void Performance::AddSoftNavigationToPer
-"""
-
-
 ```

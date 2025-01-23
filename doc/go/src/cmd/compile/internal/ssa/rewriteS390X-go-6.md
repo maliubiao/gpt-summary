@@ -196,7 +196,7 @@ b1: // BlockS390XCLIJ
 
 总体而言，`rewriteS390X.go` 文件通过一系列的重写规则，将SSA中间表示逐步转换为更接近目标机器代码的形式，提高生成代码的效率和性能。这段代码片段作为最后一部分，可能处理的是一些更细致的优化或指令选择的收尾工作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteS390X.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -204,8 +204,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ) y yes no)
 		// cond: !isU8Bit(x) && isU32Bit(x)
 		// result: (BRC {c.ReverseComparison()} (CMPUconst y [int32(x)]) yes no)
@@ -612,10 +614,4 @@ Prompt:
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

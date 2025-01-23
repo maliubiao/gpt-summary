@@ -134,7 +134,7 @@ Applying this process to the provided code snippet:
 
 总而言之，这个测试文件的第二部分继续深入测试了 `WebPluginContainer` 在处理各种用户交互和页面布局变化时的正确行为，确保插件能够正确地接收和响应用户的操作，并正确地渲染其内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_plugin_container_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tainer_one_element =
       web_view->MainFrameImpl()->GetDocument().GetElementById(
           WebString::FromUTF8("translated-plugin"));
@@ -903,7 +905,4 @@ TEST_F(WebPluginContainerTest, CompositedPlugin) {
   CustomPluginWebFrameClient<CompositedPlugin> web_frame_client;
   frame_test_helpers::WebViewHelper web_view_helper;
   WebViewImpl* web_view = web_view_helper.
-"""
-
-
 ```

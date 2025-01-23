@@ -108,7 +108,7 @@ By following this kind of structured thought process, including analysis, consid
 
 `val1.c` 定义了一个非常基础的函数，其主要功能是返回整数 `1`。尽管简单，它在逆向工程（作为基本代码块的例子）、理解底层二进制和操作系统概念（通过编译和运行）以及作为单元测试的一部分都有其意义。用户直接使用 `val1` 出错的可能性不大，更多是在理解或假设上的偏差。通常，开发者在进行 Frida 内部的单元测试或代码审查时会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/74 pkgconfig prefixes/val1/val1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,12 +116,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "val1.h"
 
 int val1(void) { return 1; }
-
-"""
-
 ```

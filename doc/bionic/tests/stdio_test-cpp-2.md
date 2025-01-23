@@ -147,7 +147,7 @@ To summarize effectively, I will iterate through the `TEST` blocks and identify 
 
 总而言之，这部分代码着重测试了 C 标准库中与文件 I/O 操作相关的各种函数的正确性、错误处理、边界情况和性能表现，确保在 Android Bionic 库中的实现符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/stdio_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -159,8 +159,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 LE* fp = fdopen(fd, "re");
   ASSERT_TRUE(CloseOnExec(fileno(fp)));
   fclose(fp);
@@ -1304,7 +1306,4 @@ TEST(STDIO_TEST, scanf_i_octal) {
   int i;
   EXPECT_EQ(1, sscanf("<01234567>", "<%i>", &i));
   EXP
-"""
-
-
 ```

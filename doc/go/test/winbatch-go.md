@@ -220,15 +220,17 @@ func enforceBatchStrictCRLFExample(path string) {
 
 总而言之，`go/test/winbatch.go` 是一个重要的代码质量检查工具，它确保了 Go 源代码仓库中的批处理文件在不同操作系统上具有一致的行为，避免了由于行尾符差异引起的问题。它通过遍历源代码目录并检查 `.bat` 文件的行尾符来实现这一目标。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/winbatch.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -297,9 +299,4 @@ func enforceBatchStrictCRLF(path string) {
 		os.Exit(1)
 	}
 }
-
-"""
-
-
-
 ```

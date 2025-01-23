@@ -139,15 +139,17 @@ console.log(obj2.ref); // 可能导致程序崩溃或返回错误的数据
 
 总结来说，`v8/src/heap/evacuation-verifier.cc` 是 V8 引擎中一个关键的调试和验证工具，用于确保堆疏散过程的正确性，防止因指针错误导致的内存损坏和程序崩溃，保障 JavaScript 代码的稳定运行。它通过遍历堆内存，检查对象和指针的有效性来实现这一目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/evacuation-verifier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/evacuation-verifier.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ void EvacuationVerifier::VerifyEvacuation(PagedSpaceBase* space) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -160,15 +160,17 @@ Report-To: {"group":"endpoint-1","max_age":86400,"endpoints":[{"url":"https://ex
 
 `reporting_context_unittest.cc` 是一个关键的单元测试文件，用于验证 `ReportingContext` 类的核心功能，特别是其在不同 Feature Flag 状态下对企业报告端点的处理。它使用 Mock 对象和参数化测试来提高测试的可靠性和覆盖率。虽然用户不会直接触发这些测试，但这些测试对于确保 Reporting API 的正确运行至关重要，并且在调试相关问题时为开发人员提供了重要的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_context_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ INSTANTIATE_TEST_SUITE_P(ReportingContextStoreTest,
                          ::testing::Bool());
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

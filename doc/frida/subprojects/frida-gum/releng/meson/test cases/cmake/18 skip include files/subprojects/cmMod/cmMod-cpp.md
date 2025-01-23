@@ -114,7 +114,7 @@ By following these steps and constantly relating the code snippet back to the pr
 
 `cmMod.cpp` 是 Frida 构建系统的一个测试用例，用于验证构建系统在处理特定包含场景时的行为。它通过模拟包含 "伪造" 的头文件，并利用条件编译来测试构建系统是否能够正确地包含或跳过这些文件。虽然它不直接涉及逆向操作或底层知识，但它测试的构建系统功能是 Frida 作为动态 instrumentation 工具正常工作的基础。用户通常不会直接操作这个文件，但它对于 Frida 的开发和维护至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/18 skip include files/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -134,7 +136,4 @@ using namespace std;
 #include "fakeInc/cmModInc3.cpp"
 #include "fakeInc/cmModInc4.cpp"
 #undef MESON_INCLUDE_IMPL
-
-"""
-
 ```

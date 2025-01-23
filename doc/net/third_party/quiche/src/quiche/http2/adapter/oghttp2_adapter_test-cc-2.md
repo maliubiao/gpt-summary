@@ -161,7 +161,7 @@ fetch('https://example.com/resource')
 
 总而言之，这部分 `oghttp2_adapter_test.cc` 代码主要关注客户端 `OgHttp2Adapter` 对服务器各种行为的健壮性和正确性，特别是针对尾部 header 的处理、错误处理（如 `RST_STREAM` 和连接错误）、HPACK 头部表大小的协商以及连接关闭流程的测试。它确保了客户端在各种复杂场景下能够按照 HTTP/2 协议规范正确地与服务器进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _, ACK_FLAG, 0));
 
   EXPECT_TRUE(adapter->want_write());
@@ -1002,7 +1004,4 @@ TEST(OgHttp2AdapterTest, ClientReceivesGoAway) {
   EXPECT_CALL(visitor, OnFrameSent(SETTINGS, 0, _, 0x0, 0));
   EXPECT_CALL(visitor, OnBeforeFrameSent(HEADERS, stream_id1, _,
                                          END_STREAM_FLAG | EN
-"""
-
-
 ```

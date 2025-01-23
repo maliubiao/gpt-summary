@@ -300,7 +300,7 @@ By following this thought process, breaking down the request, and systematically
 
 这个分析涵盖了 `bionic/tests/sys_timex_test.cpp` 文件的功能、它与 Android 的关系、涉及的 libc 函数和动态链接器的实现、常见错误以及如何使用 Frida 进行调试。希望这些信息对您有所帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/sys_timex_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -311,8 +311,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -346,7 +348,4 @@ TEST(sys_timex, clock_adjtime_smoke) {
   // adjtimex/clock_adjtime return the clock state on success, -1 on failure.
   ASSERT_NE(-1, clock_adjtime(CLOCK_REALTIME, &t));
 }
-
-"""
-
 ```

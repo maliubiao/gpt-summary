@@ -151,14 +151,16 @@ This systematic approach of analyzing the code, connecting it to broader concept
 
 总而言之，`css_custom_transform_function_interpolation_type.cc` 负责处理 CSS 中单个自定义变换函数的平滑动画过渡，是 Blink 渲染引擎动画系统的一个重要组成部分。它确保了当自定义变换函数参与动画或过渡时，能够产生流畅自然的视觉效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_custom_transform_function_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ CSSCustomTransformFunctionInterpolationType::PreInterpolationCompositeIfNeeded(
 }
 
 }  // namespace blink
-
-"""
-
 ```

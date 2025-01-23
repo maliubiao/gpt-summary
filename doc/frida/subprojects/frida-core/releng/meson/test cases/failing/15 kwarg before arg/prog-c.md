@@ -147,7 +147,7 @@ Frida 在执行这段脚本时，可能会因为参数顺序错误而报错。
 
 虽然 `prog.c` 自身功能简单，但它在 Frida 的测试框架中扮演着重要的角色，用于测试 Frida 处理特定类型错误（如函数调用参数顺序错误）的能力。这个测试用例的设计旨在模拟用户在使用 Frida 时可能犯的错误，并验证 Frida 的健壮性和错误处理机制。其存在提醒开发者和用户，理解目标函数的参数签名和正确的调用方式至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/15 kwarg before arg/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,10 +155,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) { return 0; }
-
-"""
-
 ```

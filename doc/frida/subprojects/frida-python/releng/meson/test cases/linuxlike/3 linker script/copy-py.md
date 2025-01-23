@@ -115,7 +115,7 @@ Let's break down the thought process for analyzing this Python script in the con
 
 总而言之，虽然 `copy.py` 脚本本身功能简单，但它在 Frida 项目的构建、测试以及逆向工程的辅助流程中都可能扮演着重要的角色。理解其功能和可能的错误场景有助于进行问题排查和深入理解 Frida 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/linuxlike/3 linker script/copy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,14 +123,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import shutil
 import sys
 
 if __name__ == '__main__':
     shutil.copy(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

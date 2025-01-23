@@ -143,14 +143,16 @@ This step-by-step process, combining code analysis with a broader understanding 
 
 总而言之，`budget_pool_unittest.cc`  专注于测试 Blink 引擎中用于资源控制的两种关键机制：`CPUTimeBudgetPool` (控制 CPU 时间消耗) 和 `WakeUpBudgetPool` (控制任务队列的唤醒频率)，以确保它们能够按照预期工作，从而提高页面性能和响应速度。这些机制与 JavaScript, HTML, CSS 的执行和渲染过程都有间接或直接的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/throttling/budget_pool_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ TEST_F(BudgetPoolTest, WakeUpBudgetPool) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

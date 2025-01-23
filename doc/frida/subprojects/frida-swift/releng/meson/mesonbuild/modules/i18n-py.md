@@ -129,7 +129,7 @@ Finally, organize the extracted information into a clear and structured answer, 
 
 `frida/subprojects/frida-swift/releng/meson/mesonbuild/modules/i18n.py` 是 Frida 项目构建系统中负责处理国际化和本地化的关键模块。它封装了 gettext 和 itstool 等工具的使用，为开发者提供了一个方便的接口来管理翻译流程。理解这个模块的功能对于逆向分析已本地化的 Frida 组件、为其添加新的语言支持，以及调试构建过程中的翻译相关问题都非常有帮助。 它涉及到对二进制文件格式、操作系统文件系统结构以及底层编译工具链的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/modules/i18n.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -544,7 +546,4 @@ class I18nModule(ExtensionModule):
 
 def initialize(interp: 'Interpreter') -> I18nModule:
     return I18nModule(interp)
-
-"""
-
 ```

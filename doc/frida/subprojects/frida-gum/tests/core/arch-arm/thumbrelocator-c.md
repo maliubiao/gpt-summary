@@ -172,7 +172,7 @@ GUINT16_TO_LE (0xffff), /*  goes here>      */
 
 这个 `thumbrelocator.c` 文件的第 1 部分主要定义了 **针对 ARM 架构下 Thumb 指令重定位功能的各种单元测试用例**。这些测试用例覆盖了多种 Thumb 指令类型，包括 PC 相对加载、地址加载、分支指令、条件分支指令以及 IT 块指令。其目的是验证 `gum_thumb_relocator` 组件能够正确地识别需要重定位的指令，并将其重写为在代码移动后仍然能够正确执行的指令序列。这些测试是确保 Frida 动态插桩功能在 ARM Thumb 代码上正确运行的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm/thumbrelocator.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2020 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -1035,8 +1037,5 @@ TESTCASE (it_block_should_be_rewritten_as_a_whole)
 TESTCASE (it_block_with_eoi_insn_should_be_rewritten)
 {
   const guint16 input[] = {
-    GUINT16_TO_LE (0x2800),         
-"""
-
-
+    GUINT16_TO_LE (0x2800),
 ```

@@ -85,12 +85,14 @@ let roundedDown = Math.floor(num);
 
 In essence, this code acts as a translator, bridging the gap between the high-level semantics of JavaScript numerical operations and the low-level instructions that the MIPS64 processor can understand and execute. It optimizes this translation process by recognizing patterns in the IR and selecting the most efficient corresponding machine instructions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/instruction-selector-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 erflowToMin>()) {
       opcode |= MiscField::encode(true);
     }
@@ -1821,8 +1823,4 @@ void InstructionSelectorT<TurboshaftAdapter>::VisitWordCompareZero(
                       this, node, is64 ? kMips64DMulOvf : kMips64MulOvf, cont);
               }
             }
-          
-"""
-
-
 ```

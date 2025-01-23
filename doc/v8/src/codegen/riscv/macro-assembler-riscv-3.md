@@ -176,12 +176,14 @@ Here's a breakdown of the thought process to summarize the code:
 
 总而言之，这个代码文件的第四部分包含了 V8 引擎在 RISC-V 架构上执行 JavaScript 代码的关键底层实现，涵盖了 SIMD 指令、算术运算、运行时调用、类型检查、函数调用等核心功能。它将高级的 JavaScript 语义转换为底层的机器指令，使得 JavaScript 代码能够在 RISC-V 处理器上高效运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 eg, 1);
   li(kScratchReg, vals[0]);
   vmv_sx(dst, kScratchReg);
@@ -1958,7 +1960,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
     // {argc_operand} was loaded into {argc_reg} above.
     if (slots_to_drop_on_return != 0) {
       __ AddWord(sp, sp, Operand(slots_t
-"""
-
-
 ```

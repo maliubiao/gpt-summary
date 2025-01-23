@@ -185,7 +185,7 @@ func TestCallDLL(t *testing.T) {
 
 这部分 `syscall_windows_test.go` 的代码主要用于全面测试 Go 语言在 Windows 平台上与操作系统底层交互的能力，特别是通过 `syscall` 包调用 Windows API 和处理回调函数的机制。它涵盖了 DLL 的加载、函数调用（包括不同调用约定）、Go 语言回调的各种场景、特定 Windows API 的功能测试、异常处理以及一些底层的内存和栈管理测试，确保 Go 语言在 Windows 环境下能够可靠地进行系统编程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/syscall_windows_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1513,9 +1515,4 @@ func BenchmarkRunningGoProgram(b *testing.B) {
 	tmpdir := b.TempDir()
 
 	src :=
-"""
-
-
-
-
 ```

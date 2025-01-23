@@ -125,9 +125,12 @@ C++ 测试创建了一个 `ConcurrentSearchThread`，该线程会并发地执行
 
 `concurrent-descriptor-array-unittest.cc` 通过创建并发线程来模拟在多线程环境下访问和操作 JavaScript 对象描述符数组的情况，以验证 V8 引擎在处理这些并发操作时的线程安全性和正确性。这对于确保 JavaScript 引擎的稳定运行至关重要，即使在开发者看不到的内部操作中也是如此。
 
-Prompt: ```这是目录为v8/test/unittests/objects/concurrent-descriptor-array-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/objects/concurrent-descriptor-array-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -313,6 +316,4 @@ TEST_F(ConcurrentDescriptorArrayTest, LinearSearchFlatObject_ManyElements) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

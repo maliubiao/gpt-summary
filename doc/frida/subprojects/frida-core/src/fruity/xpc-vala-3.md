@@ -116,7 +116,7 @@ var message = builder.build();
    - 调试线索：可以在 `Stream.on_data_frame_recv_end` 方法中设置断点，查看接收到的消息内容。
 
 通过这些步骤，用户可以逐步跟踪XPC消息的构建、发送和接收过程，定位可能的问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/xpc.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -126,11 +126,11 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-
-
-				cancellable.set_error_if_cancelled ();
+### 源代码
+```
+cancellable.set_error_if_cancelled ();
 
 				if (op.state == ERROR)
 					throw new Error.TRANSPORT ("%s", NGHttp2.strerror (op.error_code));
@@ -876,8 +876,4 @@ Prompt:
 		return uuid;
 	}
 }
-
-"""
-
-
 ```

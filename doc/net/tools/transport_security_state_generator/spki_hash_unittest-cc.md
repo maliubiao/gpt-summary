@@ -150,15 +150,17 @@ Finally, I organized the information into the requested sections: Functionality,
 
 总而言之，`spki_hash_unittest.cc` 是为了确保 `SPKIHash` 类能够正确解析和验证 SPKI 哈希值而存在的，这对于 Chromium 网络栈的安全功能至关重要。虽然 JavaScript 不直接执行这段 C++ 代码，但 SPKI 哈希的概念和应用与 Web 前端的安全机制密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/transport_security_state_generator/spki_hash_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ TEST(SPKIHashTest, FromString) {
 }  // namespace
 
 }  // namespace net::transport_security_state
-
-"""
-
 ```

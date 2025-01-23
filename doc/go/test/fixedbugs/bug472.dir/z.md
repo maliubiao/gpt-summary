@@ -159,15 +159,17 @@ main function executed
 
 这段 `z.go` 代码虽然简单，但清晰地展示了 Go 语言中空白导入的用途，这在某些场景下非常有用，例如注册数据库驱动、加载配置文件等，这些操作只需要在程序启动时执行一次即可。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug472.dir/z.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -181,9 +183,4 @@ import (
 
 func main() {
 }
-
-"""
-
-
-
 ```

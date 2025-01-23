@@ -114,7 +114,7 @@ Initially, I might have considered that `two.py` had some code related to module
 
 总而言之，虽然 `two.py` 本身是一个空文件，但它的存在和位置是 Frida 测试框架验证其在特定场景下模块加载能力的关键组成部分。它反映了 Frida 对复杂模块安装和加载场景的支持，这对于动态逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/python/7 install path/structured/two.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,9 +122,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

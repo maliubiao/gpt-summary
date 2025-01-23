@@ -106,7 +106,7 @@ By following these steps, I can arrive at the comprehensive explanation of the `
 
 这部分 `manifest_parser_unittest.cc` 文件的主要功能是**验证 Blink 引擎的 Manifest 解析器在处理 `background_color`、`gcm_sender_id`、`permissions_policy`、`launch_handler`、`translations` 和 `tab_strip` 属性时的正确性**。它通过编写各种测试用例，包括有效的和无效的 Manifest 配置，来确保解析器能够按照规范解析这些属性，并在遇到错误时进行合理的处理和报告。这对于保证 Web App Manifest 功能的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/manifest/manifest_parser_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -114,9 +114,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
- ignored, "
+### 源代码
+```cpp
+ignored, "
         "'#ABC #DEF' is not a valid color.",
         errors()[0]);
   }
@@ -1032,7 +1034,4 @@ TEST_F(ManifestParserTest, TabStripHomeTabScopeParseRules) {
         manifest->tab_strip->home_tab->get_params()->scope_patterns[0], 1, 0, 0,
         1, 0, 1, 0, 0);
     VerifySafeUrlPatter
-"""
-
-
 ```

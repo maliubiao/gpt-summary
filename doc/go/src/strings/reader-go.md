@@ -279,7 +279,7 @@ func main() {
 
 总而言之，`strings.Reader` 提供了一种灵活的方式来将字符串作为数据流进行处理，它实现了多个标准的 `io` 接口，使得字符串可以无缝地与 Go 语言中处理输入输出的各种函数和类型进行交互。理解每个接口方法的作用和限制是正确使用 `strings.Reader` 的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strings/reader.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -287,8 +287,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -449,9 +451,4 @@ func (r *Reader) Reset(s string) { *r = Reader{s, 0, -1} }
 // NewReader returns a new [Reader] reading from s.
 // It is similar to [bytes.NewBufferString] but more efficient and non-writable.
 func NewReader(s string) *Reader { return &Reader{s, 0, -1} }
-
-"""
-
-
-
 ```

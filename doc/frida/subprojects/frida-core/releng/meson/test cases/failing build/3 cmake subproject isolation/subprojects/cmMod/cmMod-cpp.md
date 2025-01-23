@@ -148,7 +148,7 @@ By following these steps, combining code analysis with the context provided by t
 
 总而言之，这个 `cmMod.cpp` 文件虽然简单，但它在一个测试用例中存在，旨在验证 Frida 构建系统中的一个重要特性：CMake 子项目的隔离。构建失败通常意味着在定义或使用构建变量（如宏定义）时，跨子项目出现了意外的相互影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing build/3 cmake subproject isolation/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include "fileA.hpp"
 
@@ -170,7 +172,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

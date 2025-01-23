@@ -198,15 +198,17 @@ ret
 
 `v8/src/builtins/builtins-ic-gen.cc` 是 V8 引擎中一个至关重要的代码生成文件，它负责生成用于优化 JavaScript 对象属性访问和方法调用的内联缓存 (ICs) 的内置函数。 这些生成的 builtins 直接影响着 JavaScript 代码的执行效率。理解这个文件的作用有助于我们更好地理解 V8 的内部工作原理和性能优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-ic-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-ic-gen.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -557,7 +559,4 @@ void Builtins::Generate_LookupScriptContextInsideTypeofBaseline(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

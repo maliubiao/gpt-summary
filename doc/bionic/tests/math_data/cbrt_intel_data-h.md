@@ -38,7 +38,7 @@ Android 系统中的各种应用程序和服务在执行数学运算时可能会
 
 该文件是一个测试数据集合，用于确保 Android 系统核心库 Bionic 中的 `cbrt` 函数在 Intel 架构上能够准确地计算立方根。它是 Android 质量保证体系的一部分，通过提供精确的预期结果来验证底层数学函数的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/cbrt_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -50,8 +50,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1484,7 +1486,4 @@ static data_1_1_t<double, double> g_cbrt_intel_data[] = {
   { // Entry 353
     -0x1.ab91deaee6e7398a4db8d908e1d20b42p0,
     -0x1.
-"""
-
-
 ```

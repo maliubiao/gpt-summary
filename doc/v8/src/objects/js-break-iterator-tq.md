@@ -140,15 +140,17 @@ for (const segment of segments) {
 
 总而言之，`v8/src/objects/js-break-iterator.tq` 是 V8 引擎中一个关键的内部组件，它使得 JavaScript 能够利用 ICU 强大的文本分割功能，从而实现国际化的文本处理。理解这个文件的作用有助于深入理解 JavaScript 国际化 API 的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-break-iterator.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-break-iterator.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -165,7 +167,4 @@ extern class JSV8BreakIterator extends JSObject {
   bound_current: Undefined|JSFunction;
   bound_break_type: Undefined|JSFunction;
 }
-
-"""
-
 ```

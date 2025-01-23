@@ -153,11 +153,13 @@ runWasm();
 
 `hostref.cc` 这个 C++ 示例的核心是演示 WebAssembly 如何与宿主环境交互，特别是如何使用和传递宿主创建的引用。这对于理解 WebAssembly 如何与 JavaScript 进行互操作至关重要，因为它允许 WebAssembly 代码访问和操作 JavaScript 对象，而无需直接管理 JavaScript 的内存模型。JavaScript 代码可以通过导入和导出机制与 WebAssembly 模块进行交互，从而实现跨语言的功能组合。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/example/hostref.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -389,8 +391,4 @@ int main(int argc, const char* argv[]) {
   std::cout << "Done." << std::endl;
   return 0;
 }
-
-
-"""
-
 ```

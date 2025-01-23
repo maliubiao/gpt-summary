@@ -119,7 +119,7 @@ Essentially, I adopted a top-down approach, starting with the overall goal of th
 
 `blink/renderer/core/css/parser/css_parser_impl.cc` 的第一部分主要定义了 `CSSParserImpl` 类及其一些核心方法，这些方法负责将 CSS 字符串片段（值、声明、规则等）解析成 Blink 引擎可以理解的内部表示。 它涵盖了基本的 CSS 语法解析功能，并提供了与 HTML 和 JavaScript 交互的基础。 这一部分为后续更复杂的 CSS 特性解析奠定了基础。  它还包含了一些辅助函数，例如用于过滤和创建 `ImmutableCSSPropertyValueSet` 的函数，以及用于处理特定 At-Rules 的初步逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_parser_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -955,7 +957,4 @@ StyleRuleBase* CSSParserImpl::ConsumeAtRule(CSSParserTokenStream& stream,
       stream.ConsumeIncludingWhitespace();  // Must live until CssAtRuleID().
   const StringView name = name_token.Value();
   const CSSAtRuleID id = CssAtRule
-"""
-
-
 ```

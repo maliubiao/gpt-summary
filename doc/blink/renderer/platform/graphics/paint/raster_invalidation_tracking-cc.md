@@ -172,14 +172,16 @@ This iterative process of scanning, analyzing, connecting, and refining helps to
 
 `raster_invalidation_tracking.cc` 是 Blink 引擎中一个重要的组成部分，负责高效地追踪和管理渲染过程中的无效化，并能检测潜在的渲染错误。理解其工作原理有助于开发者编写出更高效、性能更好的 Web 应用程序。 虽然开发者不直接操作这个文件，但其背后的概念与日常的 JavaScript、HTML 和 CSS 开发密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/raster_invalidation_tracking.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -436,7 +438,4 @@ void RasterInvalidationTracking::CheckUnderInvalidations(
 }
 
 }  // namespace blink
-
-"""
-
 ```

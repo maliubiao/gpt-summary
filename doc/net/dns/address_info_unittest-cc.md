@@ -118,15 +118,17 @@ Let's consider the `Canonical` test case:
 
 If a user reports that a website is not loading, and you suspect a DNS resolution issue, you might look at the browser's network internals (e.g., in Chrome's `chrome://net-internals/#dns`). You might see error messages related to DNS resolution failures. The code in `address_info_unittest.cc` helps ensure that the `AddressInfo` class correctly handles these failure scenarios and other aspects of DNS resolution within the browser's core networking logic.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/address_info_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -454,7 +456,4 @@ TEST(AddressInfoTest, CreateAddressList) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

@@ -156,7 +156,7 @@ if (ObjC.available) {
 
 总而言之，这个简单的 C 代码文件作为 Frida 的一个测试用例，展示了动态库中函数调用的基本场景，为 Frida 验证其 hook 功能提供了基础。开发者可以通过分析这个代码来了解 Frida 如何处理动态库中的函数调用，并将其应用于实际的逆向分析和调试工作中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/55 exe static shared/stat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "subdir/exports.h"
 
 int shlibfunc(void);
@@ -173,7 +175,4 @@ int shlibfunc(void);
 int DLL_PUBLIC statlibfunc(void) {
     return shlibfunc();
 }
-
-"""
-
 ```

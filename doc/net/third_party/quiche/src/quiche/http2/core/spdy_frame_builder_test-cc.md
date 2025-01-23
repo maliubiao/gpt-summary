@@ -126,15 +126,17 @@ This step-by-step approach, starting with a general understanding and then divin
 
 总而言之，`spdy_frame_builder_test.cc` 是确保 Chromium 网络栈中 SPDY 帧构建功能正确性的重要组成部分。虽然普通用户不会直接接触到这个文件或其测试的类，但其正确性直接影响到浏览器与服务器之间通信的稳定性和可靠性。 当出现网络请求相关的问题时，理解这些底层的构建模块的工作原理对于调试和解决问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/core/spdy_frame_builder_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ TEST(SpdyFrameBuilderTest, GetWritableOutputNegative) {
 
 }  // namespace test
 }  // namespace spdy
-
-"""
-
 ```

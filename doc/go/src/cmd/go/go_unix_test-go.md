@@ -192,15 +192,17 @@ func main() {
 
 总而言之，这段代码是 `go` 命令自身测试的一部分，专门针对 Unix-like 系统上与文件权限 (`umask`) 和信号处理 (`SIGINT` 对 `go test`) 相关的特定功能进行验证。它使用了 Go 语言的系统调用 (`syscall`) 和 `os/exec` 包来模拟和测试这些场景。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/go_unix_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -338,9 +340,4 @@ func TestTestInterrupt(t *testing.T) {
 
 	t.Logf("interrupted tests without deadlocking")
 }
-
-"""
-
-
-
 ```

@@ -175,15 +175,17 @@ Here's a breakdown of the thought process to analyze the C++ code and generate t
 
 总而言之，`linear_acceleration_sensor.cc` 文件是实现 Web 线性加速度传感器 API 的核心组件，它与 JavaScript、HTML 和 CSS 通过 Blink 引擎连接，为 Web 开发者提供了访问设备线性加速度数据的能力。理解这个文件的功能和相关流程有助于诊断和解决与线性加速度传感器相关的 Web 开发问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/sensor/linear_acceleration_sensor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -227,7 +229,4 @@ void LinearAccelerationSensor::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

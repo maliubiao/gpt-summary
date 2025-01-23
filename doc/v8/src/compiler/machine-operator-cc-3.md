@@ -125,7 +125,7 @@ console.log(data); // 可能输出 0，因为 dataReady 的更新可能先于 da
 
 总而言之，这段代码是 V8 编译器中用于构建和表示底层机器操作的关键组成部分，特别是针对原子操作、内存管理、类型转换、调试和 WebAssembly 支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/machine-operator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -133,9 +133,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-  Word32SeqCstPairStoreOperator()
+### 源代码
+```cpp
+Word32SeqCstPairStoreOperator()
         : Operator1<AtomicMemoryOrder>(IrOpcode::kWord32AtomicPairStore,
                                        Operator::kNoDeopt | Operator::kNoThrow,
                                        "Word32AtomicPairStore", 4, 1, 1, 0, 1,
@@ -998,7 +1000,4 @@ const Operator* MachineOperatorBuilder::Word64AtomicExchange(
     AtomicOpParameters params) {
 #define OP_WITH_KIND(kType, Kind)                           \
   if (params.type() == MachineType::kType()                 \
-"""
-
-
 ```

@@ -222,7 +222,7 @@ libm.so:
 
 总而言之，`s_cpowf.c` 是 Android 系统中用于执行复数幂运算的关键组成部分，它通过调用底层的数学函数来实现其功能，并被 Android 的 NDK 和 Framework 层广泛使用。理解其功能和实现细节对于进行相关的开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_cpowf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -232,8 +232,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 2008 Stephen L. Moshier <steve@moshier.net>
  *
@@ -305,7 +307,4 @@ cpowf(float complex a, float complex z)
 	w = CMPLXF(r * cosf (theta), r * sinf (theta));
 	return (w);
 }
-
-"""
-
 ```

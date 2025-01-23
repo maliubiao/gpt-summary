@@ -664,15 +664,17 @@ void WidgetBase::OnDeferMainFrameUpdatesChanged(bool defer) {
   // until it gets a LocalSurfaceId. That's before the
   // |widget_input_handler_manager_| is created, so it can be null here.
   // TODO(rendering-core): To avoid ping-ponging between defer
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/widget_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2293,7 +2295,4 @@ void WidgetBase::OnImeEventGuardFinish(ImeEventGuard* guard) {
 
   // While handling an ime event, text input state and selection bounds updates
   // are ignored. These must explicitly be updated o
-"""
-
-
 ```

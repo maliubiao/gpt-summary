@@ -102,11 +102,13 @@ function example() {
 
 `v8/src/compiler/turboshaft/store-store-elimination-phase.cc` 这个文件定义了 V8 引擎 Turboshaft 编译器中一个重要的优化阶段，它通过消除冗余的存储操作以及执行其他相关优化，来提高 JavaScript 代码的执行效率。  虽然 JavaScript 开发者不会直接操作这个文件，但该阶段的优化直接影响着他们编写的 JavaScript 代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/store-store-elimination-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -134,7 +136,4 @@ void StoreStoreEliminationPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

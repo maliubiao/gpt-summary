@@ -171,7 +171,7 @@ func main() {
 
 总而言之，`go/src/runtime/stubs_arm64.go` 中定义的这些函数都是 Go 语言运行时环境的底层构建块，它们为了实现 Goroutine 的管理、CGo 的支持以及反射等高级特性而存在。普通 Go 开发者通常不需要直接与这些函数打交道，理解它们的功能有助于更深入地理解 Go 语言的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/stubs_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -179,8 +179,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -208,9 +210,4 @@ func unspillArgs()
 // getfp returns the frame pointer register of its caller or 0 if not implemented.
 // TODO: Make this a compiler intrinsic
 func getfp() uintptr
-
-"""
-
-
-
 ```

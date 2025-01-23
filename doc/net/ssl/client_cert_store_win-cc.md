@@ -172,15 +172,17 @@ By following this structured approach, combining code analysis with an understan
 
 通过跟踪这些步骤，开发者可以理解在客户端证书认证过程中 `client_cert_store_win.cc` 文件扮演的角色，并利用断点调试来排查与客户端证书相关的连接问题。例如，可以检查服务器发送的 `CertificateRequest` 是否正确，Windows 证书存储中是否存在符合条件的证书，以及 `ClientCertFindCallback` 的过滤逻辑是否按预期工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ssl/client_cert_store_win.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -493,7 +495,4 @@ bool ClientCertStoreWin::SelectClientCertsForTesting(
 }
 
 }  // namespace net
-
-"""
-
 ```

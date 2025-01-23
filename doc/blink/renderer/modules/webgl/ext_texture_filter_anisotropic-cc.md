@@ -182,15 +182,17 @@ By following these steps and refining the answer as I go, I can create a compreh
 
 总而言之，`ext_texture_filter_anisotropic.cc` 文件在 Chromium Blink 引擎中扮演着关键角色，它将底层的 OpenGL 各向异性过滤功能桥接到 WebGL API，使得 Web 开发者能够利用这项技术提升网页图形的渲染质量。理解其功能和与 Web 技术的关系对于开发高质量的 WebGL 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/ext_texture_filter_anisotropic.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -244,7 +246,4 @@ const char* EXTTextureFilterAnisotropic::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

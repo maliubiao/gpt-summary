@@ -163,7 +163,7 @@ func main() {
 
 总而言之，`go/src/internal/abi/stack.go` 中定义的常量是 Go 语言运行时栈管理的重要参数，它们影响着栈的分配、增长以及栈溢出检查的效率和安全性。理解这些常量有助于深入理解 Go 语言的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/abi/stack.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -171,8 +171,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -206,9 +208,4 @@ const (
 	// size of the unmapped space at zero.
 	StackBig = 4096
 )
-
-"""
-
-
-
 ```

@@ -164,7 +164,7 @@ By following this thought process, breaking down the code, and connecting it to 
 
 总而言之，`conftest.py` 是 `tomlkit` 项目测试套件的核心组成部分，它负责加载和组织测试数据，并动态生成测试用例，确保 `tomlkit` 库的正确性和健壮性。虽然它本身不直接执行逆向操作，但它为测试一个在逆向工程中可能用到的工具提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/tomlkit/tests/conftest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 
 import pytest
@@ -279,7 +281,4 @@ def pytest_generate_tests(metafunc):
             test_list["invalid_encode"].values(),
             ids=list(test_list["invalid_encode"].keys()),
         )
-
-"""
-
 ```

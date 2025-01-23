@@ -141,15 +141,17 @@ By following this analytical process, combining code examination with an underst
 
 总而言之，`web_history_item.cc` 文件是 Blink 渲染引擎中一个关键的组成部分，它负责管理和表示浏览器的历史记录条目，并且与 JavaScript、HTML 和 CSS 功能紧密相关。理解其功能对于调试与页面导航和状态管理相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_history_item.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -252,7 +254,4 @@ WebHistoryItem::operator HistoryItem*() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

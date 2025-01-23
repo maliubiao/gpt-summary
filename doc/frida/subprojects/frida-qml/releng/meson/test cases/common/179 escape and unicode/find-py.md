@@ -162,7 +162,7 @@ source.c another_source.c 
 
 总而言之，`find.py` 脚本虽然简单，但它在 Frida 的测试框架中扮演着查找特定类型源文件的角色，这与逆向工程中分析源代码的思路相符，并且涉及到一些基础的操作系统和编程概念。 了解其功能和可能的用途，可以帮助开发者更好地理解 Frida 的内部机制和测试流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/179 escape and unicode/find.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -181,7 +183,4 @@ for fh in os.listdir('.'):
     if os.path.isfile(fh):
         if fh.endswith('.c'):
             sys.stdout.write(fh + '\0')
-
-"""
-
 ```

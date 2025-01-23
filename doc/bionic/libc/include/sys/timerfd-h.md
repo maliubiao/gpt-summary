@@ -345,7 +345,7 @@ sys.stdin.read()
 
 这个例子展示了如何使用 Frida hook Bionic 库中的 `timerfd` 相关函数，从而了解 Android 应用程序或 framework 如何利用这些底层机制。你可以根据需要扩展这个脚本，hook `timerfd_gettime` 或其他相关函数，以进行更深入的调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/timerfd.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -356,8 +356,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2013 The Android Open Source Project
  * All rights reserved.
@@ -439,7 +441,4 @@ int timerfd_settime(int __fd, int __flags, const struct itimerspec* _Nonnull __n
 int timerfd_gettime(int __fd, struct itimerspec* _Nonnull __current_value);
 
 __END_DECLS
-
-"""
-
 ```

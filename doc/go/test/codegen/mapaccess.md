@@ -139,15 +139,17 @@ func main() {
 
 总而言之，这段代码是通过检查编译器生成的汇编代码来验证 map 操作的优化。 它利用 `asmcheck` 工具和特定的注释指令来断言某些情况下不应该出现 `mapaccess` 函数的调用，从而确保编译器进行了预期的优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/mapaccess.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -632,9 +634,4 @@ func mapAppendAssignmentString() {
 	// arm64:".*mapaccess"
 	m[k] = append(m[k+"1"], "100")
 }
-
-"""
-
-
-
 ```

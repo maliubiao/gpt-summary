@@ -124,15 +124,17 @@ package p; var _ = T{ x }
 
 `nodes_test.go` 是 Go 语言编译器中一个关键的测试文件，它专注于验证语法解析器在构建 AST 时能够准确地记录每个语法节点在源代码中的位置。 这对于后续的编译阶段（如错误报告）至关重要。 通过预定义的测试用例和位置断言，它可以有效地检测语法解析器实现中的位置信息记录错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/syntax/nodes_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -459,9 +461,4 @@ func typeOf(n Node) string {
 	k := fmt.Sprintf("%T", n)
 	return strings.TrimPrefix(k, prefix)
 }
-
-"""
-
-
-
 ```

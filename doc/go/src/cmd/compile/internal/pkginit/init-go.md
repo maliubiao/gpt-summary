@@ -253,15 +253,17 @@ Value of A: 15
 
 理解 `pkginit` 的工作原理有助于开发者更好地理解 Go 语言的包初始化机制，从而编写更健壮和可靠的 Go 代码。虽然开发者不需要直接操作这些底层细节，但对这些机制的了解可以帮助他们避免常见的初始化相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/pkginit/init.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -408,9 +410,4 @@ func MakeTask() {
 	// It's not quite read only, the state field must be modifiable.
 	objw.Global(lsym, int32(ot), obj.NOPTR)
 }
-
-"""
-
-
-
 ```

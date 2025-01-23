@@ -157,7 +157,7 @@ Function spawn
 
 总而言之，`generatorprint.py` 是 Frida 项目中一个重要的辅助工具，它负责将 Frida 的内部 API 信息转换为用户可以理解的文档，这对于逆向工程师有效地使用 Frida 进行动态分析至关重要。 虽然用户通常不会直接操作这个脚本，但它生成的文档是用户与 Frida 交互的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/docs/refman/generatorprint.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -243,7 +245,4 @@ class GeneratorPrint(GeneratorBase):
             self._generate_object(obj)
             for mod_obj in self.extract_returned_by_module(obj):
                 self._generate_object(mod_obj)
-
-"""
-
 ```

@@ -161,14 +161,16 @@ By following these steps, I can systematically analyze the code and generate a c
 
 `blink/renderer/core/frame/navigator_user_activation.cc` 是 Blink 引擎中一个重要的组件，它负责跟踪用户与页面的交互，并将这种 "用户激活" 状态通过 `navigator.userActivation` 属性暴露给 JavaScript。 这对于维护 Web 安全和用户体验至关重要，因为它控制着某些需要用户许可才能执行的敏感操作。 开发者需要理解用户激活的概念，并在编写 JavaScript 代码时正确处理相关的限制和可能性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/navigator_user_activation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ NavigatorUserActivation::NavigatorUserActivation(Navigator& navigator)
 }
 
 }  // namespace blink
-
-"""
-
 ```

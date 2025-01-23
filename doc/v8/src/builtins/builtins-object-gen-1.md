@@ -79,12 +79,14 @@ I will now elaborate on each function and provide JavaScript examples to illustr
 
 总而言之，这段代码是 V8 引擎中用于处理 JavaScript 对象属性描述符的核心部分。它负责在 V8 的内部表示和 JavaScript 可以访问的描述符对象之间进行转换，并且是 `Object.getOwnPropertyDescriptor`、`Object.defineProperty` 等内置对象方法的基础。理解这段代码有助于深入了解 JavaScript 引擎是如何管理对象属性的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-object-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 s)),
         &bailout);
     AddToDictionaryIf(
@@ -185,8 +187,4 @@ TNode<HeapObject> ObjectBuiltinsAssembler::GetAccessorOrUndefined(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

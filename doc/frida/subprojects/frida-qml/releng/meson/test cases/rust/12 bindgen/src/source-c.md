@@ -157,7 +157,7 @@ By following this detailed breakdown, the comprehensive and informative answer p
 
 总而言之，虽然 `source.c` 中的 `add` 函数本身非常简单，但它在 Frida 的上下文中可以作为测试和学习动态分析技术的良好起点，并涉及到对底层系统机制的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/rust/12 bindgen/src/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // SPDX-license-identifer: Apache-2.0
 // Copyright © 2021 Intel Corporation
 
@@ -175,7 +177,4 @@ Prompt:
 int32_t add(const int32_t first, const int32_t second) {
     return first + second;
 }
-
-"""
-
 ```

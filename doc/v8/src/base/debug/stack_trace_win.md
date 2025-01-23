@@ -107,11 +107,13 @@ Error: Something went wrong!
 
 总结来说，`stack_trace_win.cc` 是 V8 引擎在 Windows 平台上提供调试能力的关键组成部分，它负责捕获和解析底层的 C++ 调用堆栈，这间接地支持了 JavaScript 错误的报告和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/debug/stack_trace_win.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -361,7 +363,4 @@ void StackTrace::OutputToStream(std::ostream* os) const {
 }  // namespace debug
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

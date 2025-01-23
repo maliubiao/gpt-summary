@@ -110,7 +110,7 @@ By following these steps, I can systematically analyze the code and generate a c
 
 **总结来说，`computed_style_utils.cc` 是 Blink 渲染引擎中一个至关重要的组成部分，它充当了内部样式表示和外部 CSS 语法之间的桥梁，使得浏览器能够正确地展示和开发者能够方便地理解元素的样式信息。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/computed_style_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 :kShape);
 
   CSSValueList* list = CSSValueList::CreateSpaceSeparated();
@@ -942,7 +944,4 @@ CSSValue* ComputedStyleUtils::ValuesForFontVariantProperty(
       CSSValueList* list = CSSValueList::CreateSpaceSeparated();
       for (const CSSProperty* const longhand : shorthand.properties()) {
         const CSSValue* value = longhand
-"""
-
-
 ```

@@ -152,7 +152,7 @@ let value = obj.x; // JavaScript 的属性访问
 
 `v8/src/compiler/machine-operator.cc` 的第 1 部分主要负责定义 V8 编译器中用于描述底层机器操作的各种数据结构（如 `StoreRepresentation`, `AtomicLoadParameters` 等）和辅助函数。这些结构体封装了机器操作的类型、参数和属性，为编译器的后续阶段（如指令选择和代码生成）提供了必要的信息。它定义了基本的数据类型和操作，是 V8 将 JavaScript 代码转换为高效机器码的基础。该文件不是 Torque 源代码，而是标准的 C++ 代码。 其中定义的操作与 JavaScript 的各种功能息息相关，因为最终 JavaScript 的执行依赖于这些底层的机器指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/machine-operator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -160,8 +160,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -757,8 +759,4 @@ std::ostream& operator<<(std::ostream& os, TruncateKind kind) {
   IF_WASM(V, I64x2AllTrue, Operator::kNoProperties, 1, 0, 1)                   \
   IF_WASM(V, I32x4AllTrue, Operator::kNoProperties, 1, 0, 1)                   \
   IF_WASM(V, I16x8AllTrue, Operator::kNoProperties, 1, 0, 1)                   \
- 
-"""
-
-
 ```

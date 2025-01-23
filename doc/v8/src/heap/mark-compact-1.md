@@ -165,12 +165,14 @@ let str3 = "world";
 
 总而言之，这部分 C++ 代码是 V8 引擎 Mark-Compact 垃圾回收器中至关重要的组成部分，专注于标记阶段的实现，决定哪些 JavaScript 对象是存活的，需要保留，哪些是可以被回收的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/mark-compact.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 = allocation.To(target_object);
     DCHECK(ok);
     USE(ok);
@@ -1829,7 +1831,4 @@ void MarkCompactCollector::FlushBytecodeFromSFI(
   if (!heap_->IsLargeObject(compiled_data)) {
     const int aligned_filler_offset =
         ALIGN_TO_ALLOCATION_ALIGNMENT(UncompiledDataWith
-"""
-
-
 ```

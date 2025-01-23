@@ -244,15 +244,17 @@ This test file is designed to prevent errors *within V8's implementation*. Howev
 
 In summary, `v8/test/cctest/heap/test-concurrent-allocation.cc` is a critical test file that rigorously examines the thread-safety and correctness of V8's heap allocation mechanisms under concurrent conditions, ensuring the stability and reliability of the JavaScript engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-concurrent-allocation.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/heap/test-concurrent-allocation.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -855,7 +857,4 @@ UNINITIALIZED_TEST(ConcurrentRecordRelocSlot) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

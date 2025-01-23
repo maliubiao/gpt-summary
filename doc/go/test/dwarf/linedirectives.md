@@ -112,15 +112,17 @@ func main() {
 
 总而言之，`go/test/dwarf/linedirectives.go` 是 Go 编译器测试套件的一部分，专门用于验证编译器在生成调试信息时对 `//line` 指令的处理是否正确。普通 Go 开发者很少需要直接使用或编写类似的代码，但理解 `//line` 的作用对于理解代码生成工具和调试信息是有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/dwarf/linedirectives.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2011 The Go Authors. All rights reserved.
@@ -204,9 +206,4 @@ func main() {
 }
 //line foo/bar.y:293
 //line foo/bar.y:295
-
-"""
-
-
-
 ```

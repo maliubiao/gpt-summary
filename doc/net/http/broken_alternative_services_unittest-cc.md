@@ -65,7 +65,7 @@ The user wants a summary of the `broken_alternative_services_unittest.cc` file. 
 
 `net/http/broken_alternative_services_unittest.cc` 文件的主要功能是**彻底测试 `BrokenAlternativeServices` 类的各个方面，确保其能够正确可靠地管理备用服务的损坏状态**。这包括标记损坏、确认恢复、基于时间失效、响应网络变化以及应用指数退避策略。 这些测试对于保证 Chromium 网络栈在面对不稳定的网络环境或有问题的备用服务时能够做出合理的决策，从而提供更好的用户体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/broken_alternative_services_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -73,8 +73,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -739,8 +741,5 @@ void BrokenAlternativeServicesTest::TestExponentialBackoff(
     base::TimeDelta initial_delay,
     bool exponential_backoff_on_initial_delay) {
   // Tests the exponential backoff of the computed expiration delay when an
-  // alt svc is marked broken. After being marked 
-"""
-
-
+  // alt svc is marked broken. After being marked
 ```

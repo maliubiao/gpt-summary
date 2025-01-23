@@ -250,7 +250,7 @@ sys.stdin.read()
 
 总而言之，`__libc_safe_arc4random_buf` 是 Android Bionic libc 库中一个重要的内部函数，用于在可能缺乏足够系统熵的情况下提供安全的随机数生成，特别是在系统启动的早期阶段，它会回退到使用 `AT_RANDOM`。理解其功能和工作原理对于理解 Android 系统的安全和启动过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_arc4random.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -261,8 +261,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -304,7 +306,4 @@ Prompt:
 void __libc_safe_arc4random_buf(void* buf, size_t n);
 
 #endif
-
-"""
-
 ```

@@ -201,14 +201,16 @@ By following this thought process, I can systematically analyze the code and gen
 
 总而言之，`blink/renderer/platform/wtf/text/text_codec_latin1.cc` 是 Blink 引擎处理 Latin-1 字符编码的关键组件，它确保了浏览器能够正确地解释和呈现使用这种编码的网页内容，并与 JavaScript 等其他 Web 技术进行无缝集成。理解其功能有助于开发者避免字符编码相关的错误，创建更健壮的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_codec_latin1.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2006, 2008 Apple Inc. All rights reserved.
  *
@@ -500,7 +502,4 @@ std::string TextCodecLatin1::Encode(base::span<const LChar> characters,
 }
 
 }  // namespace WTF
-
-"""
-
 ```

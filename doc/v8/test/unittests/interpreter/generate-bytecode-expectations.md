@@ -237,15 +237,17 @@ console.log(x + y);
 
 总而言之，`v8/test/unittests/interpreter/generate-bytecode-expectations.cc` 是一个强大的测试工具，用于理解和验证 V8 引擎的字节码生成行为，对于 V8 开发和测试至关重要。 它帮助开发者确保 JavaScript 代码被正确地翻译成高效的字节码执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/generate-bytecode-expectations.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/interpreter/generate-bytecode-expectations.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -909,7 +911,4 @@ int main(int argc, char** argv) {
     }
   }
 }
-
-"""
-
 ```

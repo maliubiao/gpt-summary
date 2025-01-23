@@ -238,7 +238,7 @@ frida -U android_process_name -l ubi_hook.js
 
 这个 Frida Hook 可以在 `ioctl` 系统调用发生时，捕获与 UBI 相关的操作，帮助你理解 Android Framework 或 NDK 是如何间接触发这些底层操作的。你可能需要根据实际情况调整 Hook 代码，以捕获特定的 UBI 命令和参数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/mtd/ubi-user.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -249,8 +249,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -349,7 +351,4 @@ struct ubi_blkcreate_req {
   __s8 padding[128];
 } __attribute__((__packed__));
 #endif
-
-"""
-
 ```

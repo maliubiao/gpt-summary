@@ -105,12 +105,14 @@ obj.hasOwnProperty('a'); // 这也会触发 KeyedHasIC
 
 这部分 `AccessorAssembler.cc` 代码是 V8 引擎进行性能优化的关键组成部分。 它通过生成针对特定 JavaScript 属性访问和操作的内联缓存代码，显著提高了 JavaScript 代码的执行效率。 不同的函数针对不同的操作和优化程度，体现了 V8 引擎在运行时进行动态优化的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/accessor-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 or::kName);
   auto value = Parameter<Object>(Descriptor::kValue);
   auto flags = Parameter<Smi>(Descriptor::kFlags);
@@ -492,8 +494,4 @@ void AccessorAssembler::BranchIfPrototypesHaveNoElements(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

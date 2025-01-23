@@ -159,14 +159,16 @@ String output_string = entities.ConvertEntitiesInString(input_string);
 
 `blink/renderer/platform/text/web_entities.cc` 是 Blink 引擎中负责将特殊字符转换为 HTML 或 XML 实体的核心组件。它对于保证 HTML 的正确解析、显示特殊字符和防止安全漏洞至关重要。开发者在使用 Web 技术时需要理解实体编码的概念，并避免常见的错误用法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/web_entities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -248,7 +250,4 @@ String WebEntities::ConvertEntitiesInString(const String& value) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

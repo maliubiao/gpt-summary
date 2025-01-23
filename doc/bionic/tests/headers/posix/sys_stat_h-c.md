@@ -385,7 +385,7 @@ sys.stdin.read()
 
 总而言之，`bionic/tests/headers/posix/sys_stat_h.c` 是一个关键的测试文件，用于确保 Android Bionic 库提供的 `sys/stat.h` 头文件在不同架构和 ABI 下的定义是正确的，这对于 Android 系统和应用的稳定运行至关重要。理解这个文件的作用可以帮助开发者避免在使用相关接口时犯常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/sys_stat_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -396,8 +396,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -552,7 +554,4 @@ static void sys_stat_h() {
   FUNCTION(umask, mode_t (*f)(mode_t));
   FUNCTION(utimensat, int (*f)(int, const char*, const struct timespec[2], int));
 }
-
-"""
-
 ```

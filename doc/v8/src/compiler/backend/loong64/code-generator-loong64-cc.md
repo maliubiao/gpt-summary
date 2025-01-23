@@ -127,7 +127,7 @@ console.log(calculate("hello")); // x 是 string，可能导致之前生成的�
 
 `v8/src/compiler/backend/loong64/code-generator-loong64.cc` 是 V8 引擎中至关重要的组成部分，它专门负责将高级的 JavaScript 代码转换为能够在 LoongArch 64位架构上高效执行的机器指令。它处理了各种指令类型、函数调用、原子操作以及浮点运算，并且在启用了 WebAssembly 的情况下还支持 WebAssembly 代码的生成。虽然开发者通常不会直接接触这个文件，但它的正确性和效率直接影响着 JavaScript 代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/code-generator-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/loong64/code-generator-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -135,8 +135,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -894,8 +896,4 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleArchInstruction(
           reg == kJavaScriptCallCodeStartRegister);
       __ Jump(reg);
       frame_access_state()->ClearSPDelta();
-     
-"""
-
-
 ```

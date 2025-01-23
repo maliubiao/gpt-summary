@@ -218,15 +218,17 @@ Some examples of user programming patterns that could indirectly be related to t
 
 While the `AssertTypesReducer` is an internal compiler mechanism, it plays a role in ensuring that V8's optimizations are sound and that the compiled code behaves correctly according to JavaScript's semantics, even in the face of these common programming patterns. If the compiler makes incorrect assumptions about types due to such patterns, the assertions can help catch those errors during V8 development.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/assert-types-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/assert-types-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -391,7 +393,4 @@ class AssertTypesReducer
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_ASSERT_TYPES_REDUCER_H_
-
-"""
-
 ```

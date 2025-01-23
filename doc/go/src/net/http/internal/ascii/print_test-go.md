@@ -209,7 +209,7 @@ func main() {
 
 总而言之，`go/src/net/http/internal/ascii/print_test.go` 的主要功能是测试 `ascii` 包中用于处理 ASCII 字符串的 `EqualFold` 和 `IsPrint` 两个函数，确保它们能够正确地进行 ASCII 大小写不敏感比较以及判断字符串是否只包含可打印的 ASCII 字符。理解这两个函数只针对 ASCII 字符操作是避免使用错误的重点。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/internal/ascii/print_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -217,8 +217,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -314,9 +316,4 @@ func TestIsPrint(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

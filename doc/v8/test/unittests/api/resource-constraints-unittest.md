@@ -85,11 +85,13 @@ console.log("Operations done.");
 
 `resource-constraints-unittest.cc` 文件测试了 V8 引擎如何配置其内部的内存管理限制。虽然 JavaScript 开发者不能直接操作这些设置，但这些限制深刻地影响着 JavaScript 程序的内存使用和性能，特别是当程序处理大量数据或创建大量对象时，垃圾回收的行为会受到这些限制的影响。 理解这些底层的资源约束有助于理解 JavaScript 引擎的运行机制，并能更好地优化 JavaScript 代码以避免潜在的内存问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/resource-constraints-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ TEST(ResourceConstraints, ConfigureDefaults) {
 }
 
 }  // namespace v8
-
-"""
-
 ```

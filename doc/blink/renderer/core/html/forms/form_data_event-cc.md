@@ -175,14 +175,16 @@ username=testUser&password=password123&extraData=someValue
 
 总而言之，`blink/renderer/core/html/forms/form_data_event.cc` 文件定义了 Blink 引擎中用于表示 `formdata` 事件的核心对象，使得 JavaScript 能够在表单提交前拦截并操作表单数据，提供了强大的灵活性。理解其与 JavaScript 和 HTML 的关系，以及潜在的使用错误，对于开发健壮的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/form_data_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ const AtomicString& FormDataEvent::InterfaceName() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

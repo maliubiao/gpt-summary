@@ -127,14 +127,16 @@ This iterative process of scanning, deconstructing, connecting concepts, and gen
 
 总而言之，`intervention.cc` 是 Blink 引擎中一个重要的组成部分，它充当了一个“守卫”的角色，帮助开发者编写更健壮、性能更好、更安全的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/intervention.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ void Intervention::GenerateReport(LocalFrame* frame,
 }
 
 }  // namespace blink
-
-"""
-
 ```

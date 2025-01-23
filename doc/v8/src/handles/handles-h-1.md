@@ -131,7 +131,7 @@ let obj = { x: 10, y: 20 };
 
 `DirectHandle` 与标准的 `v8::Handle` 不同，它通常不参与垃圾回收管理，因此使用时需要格外注意生命周期管理，以避免悬挂指针等错误。它主要用于 V8 内部需要直接访问对象且生命周期可控的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/handles/handles.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/handles/handles.h以.tq结尾，那它是个v8 torque源代码，
@@ -139,8 +139,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 DIRECT_HANDLE
 
 template <typename T>
@@ -153,8 +155,4 @@ struct is_direct_handle<DirectHandle<T>> : public std::true_type {};
 }  // namespace v8
 
 #endif  // V8_HANDLES_HANDLES_H_
-
-"""
-
-
 ```

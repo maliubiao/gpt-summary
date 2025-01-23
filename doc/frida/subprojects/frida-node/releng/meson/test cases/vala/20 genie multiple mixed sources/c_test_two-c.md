@@ -106,7 +106,7 @@ public static void do_something_based_on_c() {
 
 `c_test_two.c` 是 Frida Node 测试套件中一个非常简单的 C 代码文件。它的主要目的是作为与其他语言（如 Vala 或 Genie）混合编程的测试用例的一部分，验证 Frida 能否正确地与此类 C 代码进行交互。虽然它自身的功能很简单，但在 Frida 的上下文中，它可以用于演示或测试 Frida 的 Hook 和修改返回值的能力。对于逆向工程师来说，理解这类测试用例有助于理解 Frida 的工作原理以及如何将其应用于更复杂的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/vala/20 genie multiple mixed sources/c_test_two.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,14 +114,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <glib.h>
 
 gboolean c_test_two_is_true (void) {
     return TRUE;
 }
-
-"""
-
 ```

@@ -816,7 +816,7 @@ gum_thumb_writer_put_pop_regs_array (GumThumbWriter * self,
 static gboolean
 gum_thumb_writer_put_push_or_pop_regs (GumThumbWriter * self,
                                
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/arch-arm/gumthumbwriter.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -825,8 +825,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C)      2019 Jon Wilson <jonwilson@zepler.net>
@@ -2073,7 +2075,4 @@ gum_thumb_writer_put_add_reg_reg_reg (GumThumbWriter * self,
   {
     insn = 0x1800 | (right.index << 6) | (left.index << 3) | dst.index;
     g
-"""
-
-
 ```

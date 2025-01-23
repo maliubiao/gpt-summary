@@ -161,7 +161,7 @@ By following these steps, breaking down the code, and directly addressing each p
 
 总而言之，这个示例程序是 Frida 工具的一个基础但功能完备的演示，它展示了如何使用 Frida Core 库进行动态 instrumentation，这在软件逆向、安全分析和动态调试等领域有着广泛的应用。理解其代码逻辑和涉及的底层知识对于有效使用 Frida 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/devkit-assets/frida-core-example-unix.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-core.h"
 
 #include <stdlib.h>
@@ -359,7 +361,4 @@ stop (gpointer user_data)
 
   return FALSE;
 }
-
-"""
-
 ```

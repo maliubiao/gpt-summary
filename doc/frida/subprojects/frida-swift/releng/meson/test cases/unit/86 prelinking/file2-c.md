@@ -104,7 +104,7 @@ Let's break down the thought process for analyzing the provided C code snippet i
 
 总而言之，`file2.c` 作为一个简单的 C 代码文件，其功能是为了在一个特定的上下文中测试 Frida 的能力，特别是与预链接相关的场景。它本身的代码很简单，但其意义在于它在 Frida 项目的测试框架中扮演的角色，以及它所揭示的关于动态插桩、预链接和底层系统知识的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/86 prelinking/file2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<private_header.h>
 
 int round1_b() {
@@ -123,7 +125,4 @@ int round1_b() {
 int round2_b() {
     return round2_c();
 }
-
-"""
-
 ```

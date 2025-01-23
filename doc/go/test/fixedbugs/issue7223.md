@@ -153,15 +153,17 @@ func main() {
 
 `go/test/fixedbugs/issue7223.go` 这个文件是一个 Go 语言的编译器错误检查测试用例，它专注于验证 `make` 函数在创建切片时，对于长度和容量参数的类型检查是否正确。它通过故意使用错误的参数类型来触发编译错误，并使用 `// ERROR` 注释来断言预期的错误信息。使用者在使用 `make` 函数时需要注意，长度和容量参数必须是整型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7223.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -183,9 +185,4 @@ func main() {
 	_ = make([]byte, true)   // ERROR "non-integer.*len|untyped bool"
 	_ = make([]byte, "abc")  // ERROR "non-integer.*len|untyped string"
 }
-
-"""
-
-
-
 ```

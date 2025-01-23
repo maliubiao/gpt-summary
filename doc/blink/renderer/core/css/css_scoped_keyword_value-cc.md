@@ -184,15 +184,17 @@ By following this systematic approach of code examination, inference, connection
 
 总结来说，`CSSScopedKeywordValue` 是 Blink 渲染引擎中一个关键的内部类，它负责表示具有作用域的 CSS 关键字值，并且与 HTML 的 DOM 结构和 JavaScript 的动态操作紧密相关。理解它的作用有助于理解浏览器如何处理 CSS 作用域，特别是在涉及 Shadow DOM 和自定义属性等高级特性时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_scoped_keyword_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ void CSSScopedKeywordValue::TraceAfterDispatch(blink::Visitor* visitor) const {
 }
 
 }  // namespace blink::cssvalue
-
-"""
-
 ```

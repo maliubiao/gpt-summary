@@ -102,7 +102,7 @@ The user wants to understand the functionality of the `style_cascade_test.cc` fi
 
 总而言之，这部分代码构建了一个测试框架，允许开发者编写和运行各种场景的单元测试，以确保 `StyleCascade` 类能够正确地处理 CSS 样式的层叠和解析，保证了 Blink 渲染引擎的正确性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_cascade_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1083,7 +1085,4 @@ TEST_F(StyleCascadeTest, CycleWithExtraEdge) {
     // are no longer in a cycle.
     EXPECT_EQ(kNotFound, resolver.CycleStart());
     EXPECT_EQ(kNotFound, resolver
-"""
-
-
 ```

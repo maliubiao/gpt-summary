@@ -152,11 +152,13 @@ Response: Let's break down the thought process for summarizing the C++ test file
 
 总而言之，`test-macro-assembler-mips64.cc` 文件是 V8 引擎质量保证的关键部分，它确保了 V8 能够在 MIPS64 架构上正确、高效地执行 JavaScript 代码。 文件中测试的每一条 MIPS64 指令，都直接或间接地支撑着 JavaScript 语言的各种功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-macro-assembler-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1883,7 +1885,4 @@ TEST(DeoptExitSizeIsFixed) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

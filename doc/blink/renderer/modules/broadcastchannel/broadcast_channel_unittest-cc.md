@@ -189,15 +189,17 @@ By following these steps, I can systematically analyze the C++ unit test file an
 
 总而言之，`blink/renderer/modules/broadcastchannel/broadcast_channel_unittest.cc` 是一个关键的测试文件，用于验证 `BroadcastChannel` Web API 在 Blink 引擎中的实现是否正确。它通过模拟各种场景，包括正常的消息传递、错误情况和涉及 Agent Cluster Lock 的情况，来确保这个 API 的稳定性和可靠性。对于开发者来说，查看这个文件可以帮助他们更好地理解 `BroadcastChannel` 的工作原理，并排查在使用过程中遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/broadcastchannel/broadcast_channel_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -476,7 +478,4 @@ TEST(BroadcastChannelTest, MAYBE_OutgoingAgentClusterLockedMessage) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

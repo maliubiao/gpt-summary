@@ -239,7 +239,7 @@ func ExampleWrongTableUnmarshal(t *testing.T) {
 
 总而言之，这个测试文件非常全面地测试了 `hash/crc32` 包的各种功能，包括不同多项式的计算正确性、不同实现的一致性、状态的序列化和反序列化、并发安全性以及性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/hash/crc32/crc32_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -247,8 +247,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -615,9 +617,4 @@ func benchmark(b *testing.B, h hash.Hash32, n, alignment int64) {
 		in = in[:0]
 	}
 }
-
-"""
-
-
-
 ```

@@ -118,7 +118,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 如果成功，用户可以通过返回的 `Session` 对象进行进一步的调试和插桩操作。
 
 通过这些步骤，用户可以逐步定位问题并进行调试。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/frida.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -128,10 +128,11 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-		public void kill_sync (uint pid, Cancellable? cancellable = null) throws Error, IOError {
+### 源代码
+```
+public void kill_sync (uint pid, Cancellable? cancellable = null) throws Error, IOError {
 			var task = create<KillTask> ();
 			task.pid = pid;
 			task.execute (cancellable);
@@ -1424,7 +1425,4 @@ Prompt:
 
 			protected override async Bytes perform_operation () throws Error, IOError {
 				return yield pare
-"""
-
-
 ```

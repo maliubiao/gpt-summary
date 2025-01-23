@@ -206,15 +206,17 @@ By following these steps, and continually refining the understanding of the code
 
 总而言之，`sqlite_database.cc` 是 Blink 引擎中 WebDatabase 功能的核心 C++ 代码，负责与底层的 SQLite 数据库进行交互，处理 SQL 执行、数据库配置、维护和权限控制。理解这个文件的功能对于理解 Web SQL Database API 的实现至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/sqlite/sqlite_database.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008 Apple Inc. All rights reserved.
  * Copyright (C) 2007 Justin Haygood (jhaygood@reaktix.com)
@@ -643,7 +645,4 @@ bool SQLiteDatabase::TurnOnIncrementalAutoVacuum() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

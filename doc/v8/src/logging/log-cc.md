@@ -83,7 +83,7 @@ This C++ source file (`log.cc`) implements the core logging infrastructure for t
 
 **In summary, `v8/src/logging/log.cc` is a crucial component of V8 responsible for recording and managing various events related to code execution. It provides different logging mechanisms to cater to various debugging, profiling, and analysis needs.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/log.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/logging/log.cc以.tq结尾，那它是个v8 torque源代码，
@@ -91,8 +91,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -995,7 +997,4 @@ void JitLogger::LogRecordedBuffer(const wasm::WasmCode* code, const char* name,
   event.name.str = name;
   event.name.len = length;
   event.isolate = reinterpret_ca
-"""
-
-
 ```

@@ -103,7 +103,7 @@ By following these steps, we can thoroughly analyze the provided code snippet an
 
 总而言之，这个 `main.cc` 文件虽然代码简洁，但它在 Frida 项目中扮演着重要的角色，用于验证核心的跨语言互操作性和编译特性，这对于 Frida 动态插桩工具的正常运行至关重要，并且与逆向工程的许多关键技术息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/13 pch/mixed/main.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 extern "C" int cfunc();
 
 void func(void) {
@@ -123,7 +125,4 @@ void func(void) {
 int main(void) {
     return cfunc();
 }
-
-"""
-
 ```

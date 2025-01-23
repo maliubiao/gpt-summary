@@ -127,14 +127,16 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 总而言之，`font_height.cc` 中定义的 `FontHeight` 类是 Blink 渲染引擎内部用于表示和操作字体高度信息的关键数据结构，它在文本布局过程中起着核心作用，并受到 HTML、CSS 和 JavaScript 的间接影响。理解其功能有助于开发者更好地理解浏览器如何渲染文本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_height.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ std::ostream& operator<<(std::ostream& stream, const FontHeight& metrics) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

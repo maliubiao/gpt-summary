@@ -114,7 +114,7 @@ By following these steps, one can systematically analyze even a simple piece of 
 
 总而言之，虽然 `src.c` 中的 `foo` 函数本身非常简单，但在 Frida 的测试和逆向工程的上下文中，它可以作为理解和验证工具功能的基础构建块。 即使是一个空函数也能揭示关于编译、链接、内存管理和动态分析的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/107 subproject symlink/symlinked_subproject/src.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,13 +122,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo(void)
 {
     return 0;
 }
-
-"""
-
 ```

@@ -135,7 +135,7 @@ Initially, one might focus solely on the C code itself. However, the directory p
 
 总而言之，这个简单的 `prog.c` 文件虽然功能简单，但在 Frida 的测试框架中扮演着验证静态库链接功能是否正常的重要角色。它为理解 Frida 的构建过程和底层原理提供了一个具体的例子。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/rust/17 staticlib link staticlib/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int what_have_we_here();
@@ -152,7 +154,4 @@ int what_have_we_here();
 int main(void) {
     printf("printing %d\n", what_have_we_here());
 }
-
-"""
-
 ```

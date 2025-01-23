@@ -97,15 +97,17 @@ My thinking process to answer the request goes like this:
 
 这部分代码主要定义了一个名为 `BrowserControlsTest` 的 C++ 类，它继承自 `testing::Test`，用于对 `blink::BrowserControls` 类进行详细的单元测试。这些测试涵盖了浏览器控制栏在各种滚动场景下的显示、隐藏、偏移量计算以及与页面滚动的交互。此外，它还测试了动态安全区域插边功能对浏览器控制栏行为的影响，以及水平滚动和页面缩放对控制栏的影响。这个测试文件使用了模拟的滚动事件和浏览器环境，并通过断言来验证浏览器控制栏的行为是否符合预期。 它是确保 Blink 引擎中浏览器控制栏功能正确性的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/browser_controls_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 Google Inc. All rights reserved.
  *
@@ -846,7 +848,4 @@ TEST_F(BrowserControlsTest, MAYBE(PageScaleHasNoImpact)) {
 
   GetWebFrameWidget()->DispatchThroughCcInputHandler(
       GenerateEvent(WebInputE
-"""
-
-
 ```

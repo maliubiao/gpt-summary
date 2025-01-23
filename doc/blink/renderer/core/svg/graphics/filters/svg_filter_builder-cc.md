@@ -157,15 +157,17 @@ This systematic approach, starting with a high-level overview and gradually dril
 
 总之，`svg_filter_builder.cc` 文件是 Blink 渲染引擎中处理 SVG 滤镜的核心组件，它连接了 HTML 中声明式的滤镜定义和底层图形处理逻辑。理解其功能有助于开发者调试和优化 SVG 滤镜效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/graphics/filters/svg_filter_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Dirk Schulze <krit@webkit.org>
  *
@@ -397,7 +399,4 @@ FilterEffect* SVGFilterBuilder::GetEffectById(const AtomicString& id) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -190,15 +190,17 @@ const zipdata = "PK...\x03\x04\x14\x00\x00\x00\x00\x00..." // 假设的 zip 文�
 
 这段 `go/src/cmd/dist/buildgo.go` 代码的核心职责是在 Go 语言构建过程中生成一些必要的辅助源文件，这些文件包含了与构建环境相关的配置信息和数据。 开发者不应该直接修改这些生成的文件，而应该通过配置 `cmd/dist` 工具的构建参数或环境变量来影响它们的生成内容。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/dist/buildgo.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -361,9 +363,4 @@ func quote(s string) string {
 	out.WriteByte('"')
 	return out.String()
 }
-
-"""
-
-
-
 ```

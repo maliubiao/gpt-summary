@@ -116,11 +116,13 @@ Supported Debugging Domains:
 
 总而言之，`v8-schema-agent-impl.cc` 虽然是用 C++ 编写的，但它是 V8 引擎与调试前端沟通的桥梁，直接影响了 JavaScript 开发者的调试体验，并可以通过 JavaScript 代码来间接触发和观察其功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-schema-agent-impl.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -148,7 +150,4 @@ Response V8SchemaAgentImpl::getDomains(
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

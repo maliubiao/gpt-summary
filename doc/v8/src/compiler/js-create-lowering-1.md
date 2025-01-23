@@ -99,13 +99,15 @@ const regex2 = new RegExp("def", "i");
 
 `js-create-lowering.cc` 的第二部分与 JavaScript 中各种对象创建的语法和行为紧密相关。它将这些高级的 JavaScript 操作转换为 V8 虚拟机可以理解和执行的底层步骤，是 V8 编译优化管道中的重要组成部分。 通过对字面量对象等创建过程的优化，它直接影响着 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-create-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  a.Store(AccessBuilder::ForJSObjectElements(),
+### 源代码
+```
+a.Store(AccessBuilder::ForJSObjectElements(),
           jsgraph()->EmptyFixedArrayConstant());
   // Initialize Object fields.
   Node* undefined = jsgraph()->UndefinedConstant();
@@ -692,8 +694,4 @@ NativeContextRef JSCreateLowering::native_context() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -226,7 +226,7 @@ fmt.Println(buf.String())
 
 总而言之，这段 Go 代码是 `rsc.io/markdown` 库中处理 Markdown 列表的核心部分，它定义了列表的数据结构，并实现了将其渲染成 HTML 和 Markdown 以及在解析过程中构建这些数据结构的功能。理解这段代码有助于深入了解 Markdown 列表的解析和渲染机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/rsc.io/markdown/list.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -234,8 +234,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -600,9 +602,4 @@ func listCorner(list *List) bool {
 	}
 	return false
 }
-
-"""
-
-
-
 ```

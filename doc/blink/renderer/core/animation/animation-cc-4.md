@@ -158,15 +158,17 @@ By following this systematic approach of understanding, deconstructing, connecti
 
 作为第五部分，这段代码集中展示了 `Animation` 类的一些关键功能，包括与 Compositor 线程的集成、Display Lock 优化以及合成状态的更新。它强调了 `Animation` 类在 Blink 渲染引擎中作为核心动画管理器的作用，负责连接 JavaScript、HTML 和 CSS，并将动画意图转化为实际的渲染操作。特别是 `UpdateCompositedPaintStatus()` 方法和 `CompositorAnimationHolder` 类，突出了 Blink 引擎为了性能而进行的优化策略，即尽可能将动画操作转移到 Compositor 线程。 此外，通过 Promise 管理动画事件也体现了与 JavaScript 异步编程模型的良好集成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/animation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (),
             "", ASSERT_NO_EXCEPTION);
       });
@@ -265,8 +267,4 @@ void Animation::CompositorAnimationHolder::Detach() {
   compositor_animation_.reset();
 }
 }  // namespace blink
-
-"""
-
-
 ```

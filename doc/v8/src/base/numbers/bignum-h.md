@@ -185,15 +185,17 @@ V8 内部的 `Bignum` 类实现了类似 `BigInt` 的功能，使得 JavaScript 
 
 总而言之，`v8/src/base/numbers/bignum.h` 定义的 `Bignum` 类是 V8 引擎处理任意精度整数的关键组件，它为 JavaScript 的 `BigInt` 提供了底层的实现基础。理解其功能和限制有助于我们更好地理解 JavaScript 引擎的工作原理以及如何处理大数运算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/bignum.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/numbers/bignum.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ class V8_BASE_EXPORT Bignum {
 }  // namespace v8
 
 #endif  // V8_BASE_NUMBERS_BIGNUM_H_
-
-"""
-
 ```

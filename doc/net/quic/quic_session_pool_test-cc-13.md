@@ -79,7 +79,7 @@ QUIC 协议本身位于网络传输层，JavaScript 代码通常运行在应用�
 
 作为 20 个部分中的第 14 部分，从提供的代码片段来看，这一部分的主要功能集中在 **详细测试 QUIC 连接在各种网络状态变化和发生写错误时的迁移行为**。它涵盖了多种场景，包括同步和异步写错误、网络通知与写错误发生的先后顺序、以及迁移过程中和迁移后对旧连接错误的处理。这部分旨在确保 QUIC 连接迁移机制的健壮性和正确性，能够有效地应对不同的网络状况，提升用户的网络体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -87,8 +87,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第14部分，共20部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pectAllReadDataConsumed();
   failed_quic_data2.ExpectAllWriteDataConsumed();
   failed_quic_data1.ExpectAllReadDataConsumed();
@@ -806,7 +808,4 @@ TEST_P(QuicSessionPoolTest, IgnoreReadErrorFromOldReaderAfterMigration) {
                              quic::QUIC_STREAM_CANCELLED)
           .Build());
   socket_data1.AddSocke
-"""
-
-
 ```

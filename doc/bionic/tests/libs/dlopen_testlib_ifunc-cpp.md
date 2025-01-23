@@ -310,7 +310,7 @@ sys.stdin.read()
 
 通过 Frida hook，你可以深入了解 Android 系统如何加载和链接包含 IFUNC 的共享库，并观察 IFUNC 的解析过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlopen_testlib_ifunc.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -321,8 +321,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -392,7 +394,4 @@ extern "C" fn_ptr foo_ifunc() {
 extern "C" const char* foo_library() {
    return foo();
 }
-
-"""
-
 ```

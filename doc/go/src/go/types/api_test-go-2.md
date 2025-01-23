@@ -183,7 +183,7 @@ func main() {
 
 这部分代码主要通过各种测试用例，覆盖了 `go/types` 包中核心功能的各种场景，确保其行为的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/types/api_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -192,8 +192,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 d exactly once.
 	for syntax := range wantOut {
 		t.Errorf("no ast.Selection found with syntax %q", syntax)
@@ -1329,9 +1331,4 @@ func TestFileVersions(t *testing.T) {
 			want := test.wantVersion
 			if v != want {
 				t.Error
-"""
-
-
-
-
 ```

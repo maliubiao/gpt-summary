@@ -169,15 +169,17 @@ Without the actual content of `minimp.go`, it's hard to pinpoint specific user e
 
 In summary, `go/test/typeparam/minimp.go` is highly likely a minimal program used within the Go testing framework to demonstrate or test specific aspects of Go's type parameter (generics) implementation. The `// rundir` directive indicates its execution context, and the `package ignored` declaration signifies it's not meant for general import.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/minimp.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -185,9 +187,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

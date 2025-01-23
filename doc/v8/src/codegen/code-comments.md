@@ -137,11 +137,13 @@ console.log(add(5, 3));
 
 `v8/src/codegen/code-comments.cc`  文件定义了在 V8 引擎生成的机器代码中嵌入和管理注释的机制。这些注释对于 V8 引擎的内部运作至关重要，尤其是在调试、性能分析以及理解和维护引擎自身方面。虽然 JavaScript 开发者不能直接访问这些注释，但它们的存在和功能直接支持了 JavaScript 的调试工具和性能分析工具的运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-comments.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ uint32_t CodeCommentsWriter::section_size() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

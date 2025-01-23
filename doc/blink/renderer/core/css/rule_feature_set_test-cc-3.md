@@ -79,7 +79,7 @@ The user is asking for a summary of the functionality of the C++ code provided, 
 
 作为系列测试的最后一部分，本文件 `rule_feature_set_test.cc` 主要通过大量的单元测试，**系统性地验证了 Blink 引擎中 `RuleFeatureSet` 组件对于各种复杂 CSS 选择器（特别是包含 `:has()`, `:is()` 和 CSS 嵌套的场景）的特征提取和样式失效行为的正确性**。它确保了引擎能够准确地识别出哪些 CSS 规则可能匹配哪些元素，并在 DOM 变化时有效地触发必要的样式重新计算，从而保证页面渲染的正确性和性能。 这些测试覆盖了各种边界情况和复杂的选择器组合，旨在防止因 CSS 选择器解析或失效逻辑错误而导致的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/rule_feature_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -87,8 +87,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , invalidation_lists.descendants));
     EXPECT_TRUE(HasNoInvalidation(invalidation_lists.siblings));
   }
@@ -555,8 +557,4 @@ TEST_F(RuleFeatureSetTest, NestingSelectorPointingToScopeInsideHas) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

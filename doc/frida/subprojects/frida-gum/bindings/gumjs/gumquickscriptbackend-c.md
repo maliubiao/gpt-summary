@@ -187,7 +187,7 @@ If a debugging session leads to this file, it likely means there's an issue with
 
 The first part of `gumquickscriptbackend.c` defines the structure and foundational elements of the `GumQuickScriptBackend`. It establishes the object model, defines the interface it implements (`GumScriptBackend`), and sets up the basic lifecycle management. It introduces the core data structures needed for asynchronous script operations and highlights the importance of thread synchronization. This section lays the groundwork for the subsequent parts of the file, which will detail the actual script loading, compilation, and execution logic.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickscriptbackend.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2020 Francesco Tamagni <mrmacete@protonmail.ch>
@@ -1270,7 +1272,4 @@ gum_quick_script_backend_snapshot_sync (GumScriptBackend * backend,
       cancellable, NULL, NULL);
   gum_script_task_run_in_js_thread_sync (task, self->scheduler);
   bytes = gum_script_task_propagate_pointer (
-"""
-
-
 ```

@@ -129,11 +129,13 @@ loadAndRunWasm();
 
 总而言之，`wasm-module-debug.cc` 是V8引擎中用于支持WebAssembly调试的关键组成部分，它提供了GDB调试器与正在运行的WebAssembly代码进行交互所需的底层功能。它使得开发者能够像调试本地代码一样调试WebAssembly，极大地提升了WebAssembly应用的开发体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/wasm-module-debug.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -554,7 +556,4 @@ bool WasmModuleDebug::GetWasmValue(const wasm::WasmValue& wasm_value,
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

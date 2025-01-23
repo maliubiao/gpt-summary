@@ -147,7 +147,7 @@ console.log(anotherClonedObj); // 输出: { a: 1, b: 2 }
 
 总而言之，`v8/src/objects/transitions.cc` 是 V8 引擎中一个关键的组成部分，负责管理对象结构的动态变化，并为优化常见的 JavaScript 对象操作提供基础。 理解其功能有助于深入了解 V8 如何高效地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/transitions.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/transitions.cc以.tq结尾，那它是个v8 torque源代码，
@@ -155,8 +155,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ransition::Kind::kObjectAssignValidityCell:
       os << "Object.assign-validity-cell";
       break;
@@ -171,8 +173,4 @@ ransition::Kind::kObjectAssignValidityCell:
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

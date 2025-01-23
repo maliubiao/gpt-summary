@@ -262,7 +262,7 @@ if (Process.platform === 'android') {
 
 对于 `strcasecmp_l`、`strncasecmp` 和 `strncasecmp_l`，你可以使用类似的方法进行 Hook，只需将 `Module.findExportByName` 中的函数名替换为相应的函数名即可。对于 `strcasecmp_l` 和 `strncasecmp_l`，你还需要注意如何解析和打印 `locale_t` 参数，这可能需要更深入的内存分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/strcasecmp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -273,8 +273,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -354,7 +356,4 @@ int strncasecmp_l(const char* _Nonnull __s1, const char* _Nonnull __s2, size_t _
 
 
 __END_DECLS
-
-"""
-
 ```

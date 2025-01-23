@@ -206,7 +206,7 @@ sys.stdin.read()
 
 这个 Frida 脚本会 hook `libm.so` 中的 `llroundf` 函数，并在函数调用前后打印日志，帮助你理解函数是如何被调用的以及输入输出是什么。这对于调试涉及到浮点数舍入的 Native 代码非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_llroundf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -217,8 +217,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例作为调试线索。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #define type		float
 #define	roundit		roundf
 #define dtype		long long
@@ -227,7 +229,4 @@ Prompt:
 #define	fn		llroundf
 
 #include "s_lround.c"
-
-"""
-
 ```

@@ -114,11 +114,13 @@ V8 引擎负责将 JavaScript 代码编译成机器码以供 CPU 执行。  当 
 
 `extension-riscv-b.cc` 文件是 V8 引擎针对 RISC-V 架构进行优化的重要组成部分。它通过提供对 “B” 扩展指令的支持，使得 V8 能够生成更高效的机器码来执行 JavaScript 代码，特别是在处理位运算、底层数据操作以及某些特定的数学计算时。 JavaScript 开发者通常不需要直接编写这些底层指令，但 V8 会在编译和优化 JavaScript 代码的过程中，根据需要自动使用这些指令来提升性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-b.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -302,7 +304,4 @@ void AssemblerRISCVB::bseti(Register rd, Register rs1, uint8_t shamt) {
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

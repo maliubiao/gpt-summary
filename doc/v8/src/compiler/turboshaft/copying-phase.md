@@ -100,11 +100,13 @@ console.log(padRight("world", 8));   // 输出: "world   "
 
 `copying-phase.cc` 中的代码是 V8 引擎为了自身编译过程的需要而编写的工具代码。  `CountDecimalDigits` 用于计算数字位数，而 `PaddingSpace` 及其输出流重载用于格式化输出，添加空格。 虽然这些功能不直接被 JavaScript 开发者调用，但它们是 V8 引擎内部运作的一部分，最终会影响 JavaScript 代码的编译和执行。  JavaScript 自身也提供了类似的字符串和数字处理能力，用于实现类似的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/copying-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -131,7 +133,4 @@ std::ostream& operator<<(std::ostream& os, PaddingSpace padding) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

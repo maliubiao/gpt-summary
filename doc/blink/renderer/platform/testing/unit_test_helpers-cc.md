@@ -144,14 +144,16 @@ By following this process, I was able to systematically analyze the code, unders
 
 总而言之，`unit_test_helpers.cc` 提供了一组实用的工具，帮助开发者更轻松地编写和维护 Blink 引擎的单元测试，特别是涉及到处理 Web 内容 (HTML, CSS, JavaScript) 和异步操作的测试。理解这些辅助函数的功能和正确使用方式对于编写高质量的 Blink 测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/unit_test_helpers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -325,7 +327,4 @@ bool LineReader::GetNextLine(String* line) {
 
 }  // namespace test
 }  // namespace blink
-
-"""
-
 ```

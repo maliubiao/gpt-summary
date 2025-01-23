@@ -149,15 +149,17 @@ void thread2(v8::internal::Cell* cell) {
 
 `v8/src/objects/cell-inl.h` 定义了 V8 中 `Cell` 对象的内联实现，用于存储可变变量，尤其是在闭包的上下文中。它涉及到内存管理、垃圾回收，并可能由 Torque 代码生成。理解 `Cell` 的作用有助于深入理解 JavaScript 闭包的实现原理。尽管普通 JavaScript 开发者不会直接操作 `Cell`，但了解其概念可以帮助理解 V8 的内部工作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/cell-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/cell-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ DEF_RELAXED_GETTER(Cell, value, Tagged<Object>) {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_CELL_INL_H_
-
-"""
-
 ```

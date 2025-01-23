@@ -115,7 +115,7 @@ Confidence Score: 5/5 - I am confident I can address all aspects of the request 
 
 在提供的第一部分代码中，`blink/renderer/core/exported/web_view_impl.cc` 的主要功能是 **`blink::WebView` 接口的具体实现，负责 `WebView` 实例的创建、初始化和一些基本的生命周期管理，并初步建立了与浏览器进程的通信机制和一些核心功能模块的关联 (如渲染合成、缩放、预渲染等)**。它为后续的页面加载、渲染和交互奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_view_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011, 2012 Google Inc. All rights reserved.
  *
@@ -843,7 +845,4 @@ bool WebViewImpl::StartPageScaleAnimation(const gfx::Point& target_position,
         view->GetScrollableArea()->SetScrollOffset(
             ScrollOffset(gfx::Vector2dF(clamped_point.OffsetFromOrigin())),
             mojom::blink::
-"""
-
-
 ```

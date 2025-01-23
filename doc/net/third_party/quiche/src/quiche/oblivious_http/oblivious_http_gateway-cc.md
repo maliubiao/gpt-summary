@@ -159,15 +159,17 @@ By following this systematic approach, analyzing the code, and carefully address
 
 通过查看日志、设置断点以及检查相关变量的值，可以帮助定位 Oblivious HTTP 流程中服务器端的具体问题。 尤其关注加密和解密过程，以及密钥的管理和使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/oblivious_http/oblivious_http_gateway.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/oblivious_http/oblivious_http_gateway.h"
 
 #include <stdint.h>
@@ -237,7 +239,4 @@ ObliviousHttpGateway::CreateObliviousHttpResponse(
 }
 
 }  // namespace quiche
-
-"""
-
 ```

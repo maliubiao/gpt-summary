@@ -137,7 +137,7 @@ Here's a plan:
 
 因此，当用户在构建 Frida Gadget 并且涉及到 Python 扩展或依赖时，Meson 构建系统会自然地执行到这个 `python.py` 文件中的代码。如果构建过程中出现与 Python 相关的问题，查看 Meson 日志并分析这个文件的代码逻辑可以帮助用户定位问题所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/modules/python.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -703,7 +705,4 @@ def initialize(interpreter: 'Interpreter') -> PythonModule:
     mod = PythonModule(interpreter)
     mod.interpreter.append_holder_map(PythonExternalProgram, PythonInstallation)
     return mod
-
-"""
-
 ```

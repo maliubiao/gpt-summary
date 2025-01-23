@@ -122,14 +122,16 @@ By following these steps and iteratively refining the understanding, a comprehen
 
 总而言之，`storage_key_proto_converter.cc` 是 Blink 引擎中一个关键的组件，负责在内部表示和外部表示之间转换 Storage Key 信息。理解其功能有助于开发者更好地理解浏览器的存储隔离机制以及与之相关的 Web 技术行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/public/common/storage_key/storage_key_proto_converter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ blink::StorageKey Convert(const storage_key_proto::StorageKey& storage_key) {
 }
 
 }  // namespace storage_key_proto
-
-"""
-
 ```

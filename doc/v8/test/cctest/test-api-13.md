@@ -686,13 +686,15 @@ TEST(StreamingWithDebuggingEnabledLate) {
   v8::TryCatch try_catch(isolate);
 
   v8::ScriptCompiler
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第14部分，共18部分，请归纳一下它的功能
+```
 
-"""
-   Local<v8::Module> module =
+### 源代码
+```
+Local<v8::Module> module =
         v8::ScriptCompiler::CompileModule(isolate, &source).ToLocalChecked();
     CheckMagicComments(isolate, module->GetUnboundModuleScript(),
                        expected_source_url, expected_source_mapping_url);
@@ -2405,7 +2407,4 @@ TEST(SimpleStreamingScriptWithSourceURL) {
                           "urn 13; } globalThis.Result = f", "oo();\n",
                           "//# sourceURL=bar2.js\n", nullptr};
   RunStr
-"""
-
-
 ```

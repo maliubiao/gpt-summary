@@ -227,15 +227,17 @@ By following this thought process, iteratively reading the code, connecting it t
 
 总而言之，`svg_fe_displacement_map_element.cc` 是 Chromium Blink 渲染引擎中处理 SVG 位移映射滤镜的核心组件，它负责解析和管理 `<feDisplacementMap>` 元素的属性，并构建实际的滤镜效果对象，最终影响浏览器如何渲染应用了该滤镜的 HTML 元素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_fe_displacement_map_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Oliver Hunt <oliver@nerget.com>
  *
@@ -390,7 +392,4 @@ void SVGFEDisplacementMapElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

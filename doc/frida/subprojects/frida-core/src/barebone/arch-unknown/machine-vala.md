@@ -89,7 +89,7 @@ for name, value in regs.items():
 4. **查看寄存器值**：用户查看返回的寄存器值，进行进一步的分析或修改。
 
 通过这些步骤，用户可以逐步深入到 `machine.vala` 文件中的调试功能实现，获取底层硬件的状态信息。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/barebone/arch-unknown/machine.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaBarebone", gir_version = "1.0")]
 namespace Frida.Barebone {
 	public class UnknownMachine : Object, Machine {
@@ -215,7 +217,4 @@ namespace Frida.Barebone {
 		}
 	}
 }
-
-"""
-
 ```

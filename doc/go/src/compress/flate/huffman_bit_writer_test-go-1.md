@@ -168,7 +168,7 @@ go test -update ./compress/flate
 
 总结来说，这部分代码是 `huffman_bit_writer_test.go` 的重要组成部分，它专注于测试数据块的写入功能，并通过对比预期输出来保证代码的正确性，同时提供了方便的机制来维护测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/compress/flate/huffman_bit_writer_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -177,8 +177,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 , 0x6c, 0x2d, 0x6d, 0x61, 0x78, 0x2e, 0x69, 0x6e, 0x22, 0x4080002a, 0x2e, 0x57, 0x72, 0x69, 0x74, 0x65, 0x28, 0x62, 0x29, 0xd, 0xa, 0x7d, 0xd, 0xa},
 	},
 	{
@@ -399,10 +401,4 @@ func testWriterEOF(t *testing.T, ttype string, test huffTest, useInput bool) {
 	}
 	t.Log("EOF ok")
 }
-
-"""
-
-
-
-
 ```

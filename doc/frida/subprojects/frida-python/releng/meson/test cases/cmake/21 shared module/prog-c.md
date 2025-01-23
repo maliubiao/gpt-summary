@@ -145,7 +145,7 @@ Let's break down the thought process for analyzing this C code and generating th
 
 总而言之，这个 `prog.c` 文件是一个用于测试动态链接功能的简单但重要的工具，它帮助验证 Frida 在处理共享模块时的正确性，并且可以作为理解动态链接机制的一个很好的示例。对于逆向工程师来说，理解这种动态加载的过程是分析程序行为和进行恶意软件分析的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cmake/21 shared module/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,9 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
+### 源代码
+```c
 #include <stdio.h>
 #include "module.h"
 
@@ -263,7 +264,4 @@ nodl:
 }
 
 #endif
-
-"""
-
 ```

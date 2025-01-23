@@ -147,14 +147,16 @@ By following this structured approach, combining code analysis with understandin
 
 总而言之，`text_codec_cjk.cc` 文件是 Blink 引擎处理 CJK 字符编码的关键组件，它确保了网页内容（包括 HTML、JavaScript 和 CSS 中的文本）能够被正确地解析和显示，避免出现乱码等问题。理解其功能对于前端开发和解决字符编码相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_codec_cjk.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2020 Apple Inc. All rights reserved.
  *
@@ -1352,7 +1354,4 @@ bool TextCodecCJK::IsSupported(StringView name) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

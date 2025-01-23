@@ -214,15 +214,17 @@ var hiddenVar int = 10
 
 `go/src/cmd/compile/doc.go` 是 `go tool compile` 命令的官方文档，它详细介绍了编译器的功能、命令行参数以及编译器指令。理解这份文档对于深入了解 Go 语言的编译过程以及编写高性能、可靠的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -564,9 +566,4 @@ The types of parameters and return values to the Go function are permitted and
 translated to Wasm in the same way as //go:wasmimport functions.
 */
 package main
-
-"""
-
-
-
 ```

@@ -135,7 +135,7 @@ A user would indirectly interact with this file during the Frida build process:
 
 **As a debugging clue:** If a user encounters an error during the Meson configuration phase related to a missing dependency (e.g., "Could not find dependency LLVM"), the developer might start investigating the corresponding dependency class in `dev.py` (`LLVMDependencyConfigTool` or `LLVMDependencyCMake`) to understand how Meson is trying to find that dependency and where the detection might be failing. They might add logging statements within these classes to gain more insight into the detection process on the user's system.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/dependencies/dev.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2019 The Meson development team
 
@@ -852,7 +854,4 @@ packages['zlib'] = zlib_factory = DependencyFactory(
     cmake_name='ZLIB',
     system_class=ZlibSystemDependency,
 )
-
-"""
-
 ```

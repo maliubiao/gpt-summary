@@ -231,7 +231,7 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`bionic/benchmarks/time_benchmark.cpp` 是 Android Bionic 库中用于测试时间相关函数性能的重要工具，它直接关系到 Android 系统和应用程序中时间功能的效率和准确性。 理解这个文件的功能和相关概念，有助于开发者更好地理解 Android 的时间机制，并避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/time_benchmark.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -239,8 +239,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  *
@@ -455,7 +457,4 @@ void BM_time_strftime(benchmark::State& state) {
   }
 }
 BIONIC_BENCHMARK(BM_time_strftime);
-
-"""
-
 ```

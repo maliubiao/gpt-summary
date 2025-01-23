@@ -267,7 +267,7 @@ Android Framework 本身也大量使用 native 代码。虽然不太可能直接
 
 总而言之，`s_nanl.c` 中的 `nanl` 函数是 Android 系统中处理 `long double` NaN 值的重要组成部分。它通过解析字符串并设置 IEEE 754 浮点数的位模式来创建特定类型的 NaN 值，并在错误处理、初始化和与其他库互操作等方面发挥作用。理解其实现和动态链接过程有助于更好地进行 Android native 开发和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/ld128/s_nanl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -277,8 +277,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -325,7 +327,4 @@ nanl(const char *s)
 	u.ieee.bits.manh |= 1ULL << 47;	/* make it a quiet NaN */
 	return (u.ieee.e);
 }
-
-"""
-
 ```

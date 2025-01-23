@@ -175,7 +175,7 @@ go test -v -run TestStreamError h2_error_test.go
 
 总而言之，这段测试代码旨在验证 `net/http` 包中处理 HTTP/2 流错误的功能是否正确地利用了 Go 语言的错误处理机制，特别是错误包装和解包的能力。它确保了可以方便地将底层的 HTTP/2 错误转换为更高级别的 Go 错误，并使用标准库提供的工具进行检查和处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/h2_error_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -183,8 +183,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -228,9 +230,4 @@ func TestStreamError(t *testing.T) {
 		t.Errorf("got Code %v, expected %v", target.Code, streamErr.Code)
 	}
 }
-
-"""
-
-
-
 ```

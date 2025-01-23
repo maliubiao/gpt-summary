@@ -123,15 +123,17 @@ This step-by-step approach, combining broad overview with detailed analysis of s
 
 总的来说，`blink/renderer/platform/peerconnection/rtc_video_encoder_test.cc` 文件的主要功能是 **全面测试 `RTCVideoEncoder` 类的各项功能和在各种场景下的鲁棒性**。它覆盖了初始化、正常编码、错误处理、与硬件加速器的交互、以及对特定编码格式（如 AV1 和 H.265）特性的测试。 这些测试确保了 `RTCVideoEncoder` 能够可靠地完成视频编码任务，为 WebRTC 功能提供稳定的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_encoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 base::WaitableEvent error_waiter(
         base::WaitableEvent::ResetPolicy::MANUAL,
         base::WaitableEvent::InitialState::NOT_SIGNALED);
@@ -595,8 +597,4 @@ TEST_F(RTCVideoEncoderEncodeTest, H265TemporalLayerGenericFrameInfo) {
 #endif  // BUILDFLAG(RTC_USE_H265)
 
 }  // namespace blink
-
-"""
-
-
 ```

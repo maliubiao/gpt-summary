@@ -142,7 +142,7 @@ func main() {
 
 `go/src/internal/trace/value.go` 定义了用于表示跟踪数据中动态类型值的核心结构体 `Value` 和相关的类型判断与访问方法。它旨在提供一种类型安全的方式来处理从 Go 程序的跟踪信息中提取的不同类型的数据，目前只支持 `uint64` 类型。 使用者需要注意在访问具体类型的值之前检查其 `Kind()`，以避免程序 panic。这段代码是 Go 语言内部跟踪机制的基础组成部分，可能被更上层的跟踪框架或库所使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/value.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -150,8 +150,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -205,9 +207,4 @@ func valueAsString(v Value) string {
 	}
 	return "Bad"
 }
-
-"""
-
-
-
 ```

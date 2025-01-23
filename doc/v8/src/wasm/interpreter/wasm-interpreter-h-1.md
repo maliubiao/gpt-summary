@@ -187,7 +187,7 @@ loadWasm();
 
 如果 WebAssembly 解释器执行到 `f32.add` 指令时，发现栈顶的两个操作数分别是 `f32` 和 `i32` 类型，就会抛出一个类型错误。 `wasm-interpreter.h` 中定义的 `RegMode` 和类型检查机制就是为了捕获这类错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter.h以.tq结尾，那它是个v8 torque源代码，
@@ -195,8 +195,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 / 0x6f I32RemS
     {RegMode::kI32Reg, RegMode::kI32Reg},  // 0x70 I32RemU
     {RegMode::kI32Reg, RegMode::kI32Reg},  // 0x71 I32And
@@ -1035,7 +1037,4 @@ class WasmBytecodeGenerator {
       return it->second;
     }
     retu
-"""
-
-
 ```

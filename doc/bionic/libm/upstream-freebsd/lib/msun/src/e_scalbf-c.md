@@ -280,7 +280,7 @@ bt
 
 通过以上步骤，可以逐步追踪代码执行路径，最终定位到 `scalbf` 函数的调用点。理解 `scalbf` 的功能和实现细节有助于理解 Android 系统底层数学运算的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_scalbf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -290,8 +290,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* e_scalbf.c -- float version of e_scalb.c.
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
  */
@@ -332,7 +334,4 @@ scalbf(float x, float fn)
 	return scalbnf(x,(int)fn);
 #endif
 }
-
-"""
-
 ```

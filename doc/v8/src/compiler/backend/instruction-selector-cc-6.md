@@ -155,7 +155,7 @@ console.log(overflow); // 输出 -2147483648 (在 32 位整数中会溢出)
 
 总而言之，`v8/src/compiler/backend/instruction-selector.cc` 是 V8 编译器的关键组成部分，它连接了高级的中间表示和底层的机器指令，是实现 JavaScript 代码高效执行的核心环节。它通过遍历 IR 图，匹配操作码，确定数据表示，并调用平台相关的代码生成函数，最终将 JavaScript 代码转化为可以在目标机器上运行的指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/instruction-selector.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/instruction-selector.cc以.tq结尾，那它是个v8 torque源代码，
@@ -163,10 +163,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
-
-            case multi(Rep::Word32(), Rep::Word64()):
+### 源代码
+```cpp
+case multi(Rep::Word32(), Rep::Word64()):
               return VisitBitcastWord32ToWord64(node);
             case multi(Rep::Word32(), Rep::Float32()):
               return VisitBitcastInt32ToFloat32(node);
@@ -996,7 +997,4 @@ Prompt:
           return VisitF16x8ReplaceLane(node);
         case Simd128ReplaceLaneOp::Kind::kF32x4:
           return VisitF32
-"""
-
-
 ```

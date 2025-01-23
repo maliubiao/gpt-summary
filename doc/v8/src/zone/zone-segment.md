@@ -127,11 +127,13 @@ myObject = null; // 假设这里 V8 并没有立即回收内存
 
 总而言之，`v8/src/zone/zone-segment.cc` 中的代码是 V8 引擎内部用于调试和内存管理的基础设施，它通过在不再使用的内存区域填充特定值来帮助开发者尽早发现潜在的内存错误，从而间接地保证了 JavaScript 代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/zone/zone-segment.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ void Segment::ZapHeader() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

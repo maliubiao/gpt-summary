@@ -184,12 +184,14 @@ console.log(resultVector); // 输出 Float32Array [6, 8, 10, 12]
 
 总而言之，这部分 C++ 代码为 WebAssembly 解释器提供了执行各种数据操作、内存访问、原子操作和 SIMD 操作的基础，是 V8 引擎支持 WebAssembly 功能的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ;
   uint32_t from0 = ReadI32(code);
   uint32_t from1 = ReadI32(code);
@@ -1545,8 +1547,5 @@ INSTRUCTION_HANDLER_FUNC s2s_SimdS128StoreMem(
   uint64_t offset = Read<uint64_t>(code);
 
   uint64_t index = pop<uint32_t>(sp, code, wasm_runtime);
-  uint64_t 
-"""
-
-
+  uint64_t
 ```

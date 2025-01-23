@@ -134,15 +134,17 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 总而言之，`v8/test/cctest/assembler-helper-arm.cc` 是一个用于辅助生成和测试 ARM 汇编代码的工具，它在 V8 的开发和测试过程中扮演着重要的角色，以确保 JavaScript 引擎在 ARM 架构上的正确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/assembler-helper-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/assembler-helper-arm.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ Handle<Code> AssembleCodeImpl(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

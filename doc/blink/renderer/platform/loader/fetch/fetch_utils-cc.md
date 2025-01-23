@@ -140,14 +140,16 @@ fetch('https://example.com', { method: 'TRACE' });
 
 `fetch_utils.cc` 文件在 Blink 引擎中扮演着重要的角色，它提供了处理和规范化网络请求的基础设施，并实施了一些安全策略。它与 JavaScript, HTML, CSS 紧密相关，因为所有通过浏览器发起的网络请求都会受到其中定义的规则的影响。理解这个文件的功能有助于更好地理解浏览器如何处理网络请求以及如何避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/fetch_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -479,7 +481,4 @@ void FetchUtils::LogFetchKeepAliveRequestSentToServiceMetric(
 }
 
 }  // namespace blink
-
-"""
-
 ```

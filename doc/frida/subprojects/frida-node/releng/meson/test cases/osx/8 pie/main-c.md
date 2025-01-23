@@ -114,7 +114,7 @@ Here's a breakdown of the thinking process to analyze the provided C code and ad
 
 总而言之，这个看似简单的 `main.c` 文件在 Frida 的上下文中扮演着重要的角色，它是 Frida 测试框架的基础组成部分，用于验证 Frida 在 macOS 平台上的基本功能。它也是开发者和用户理解 Frida 工作原理的一个很好的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/osx/8 pie/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,14 +122,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <CoreFoundation/CoreFoundation.h>
 
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

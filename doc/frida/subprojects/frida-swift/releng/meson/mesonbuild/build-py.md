@@ -163,7 +163,7 @@ shared_library('my_swift_lib',
 
 总而言之，这个 `build.py` 文件的主要功能是 **定义了 Meson 构建系统中用于表示和管理各种构建目标、依赖项和安装规则的数据结构和类**。它是 Meson 理解和执行构建指令的核心组成部分，为构建过程提供了抽象和规范。它涉及到了编译、链接、依赖管理、安装等软件构建的关键环节，并为 Frida 的 Swift 子项目的构建提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -1026,7 +1028,4 @@ class BuildTarget(Target):
         self.all_compilers = compilers
         self.compilers: OrderedDict[str, Compiler] = OrderedDict()
         s
-"""
-
-
 ```

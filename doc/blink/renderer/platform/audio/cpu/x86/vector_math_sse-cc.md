@@ -110,14 +110,16 @@ source.start();
 
 `vector_math_sse.cc` 是 Blink 引擎音频处理模块的关键组成部分，它利用 SSE 指令集优化向量数学运算，从而提高音频处理的性能。 这直接影响了 Web Audio API 的效率，并最终影响了用户在网页上体验到的音频效果。 理解这类底层优化的机制有助于开发者更好地理解 Web 技术的性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/cpu/x86/vector_math_sse.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -149,7 +151,4 @@ using MType = __m128;
 #undef VECTOR_MATH_SIMD_NAMESPACE_NAME
 
 #endif  // defined(ARCH_CPU_X86_FAMILY) && !BUILDFLAG(IS_MAC)
-
-"""
-
 ```

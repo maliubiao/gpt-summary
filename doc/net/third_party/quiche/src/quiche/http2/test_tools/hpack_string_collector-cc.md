@@ -171,15 +171,17 @@ fetch('https://example.com/data')
 
 因此，当网络请求出现与 HTTP/2 头部解码相关的问题时，`hpack_string_collector.cc` 这样的文件就成为了调试的关键入口点之一，帮助开发人员理解头部字段是如何被逐步收集和验证的，从而定位和修复潜在的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/test_tools/hpack_string_collector.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -298,7 +300,4 @@ std::ostream& operator<<(std::ostream& out, const HpackStringCollector& v) {
 
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

@@ -188,16 +188,17 @@ Imagine a user trying to dynamically generate and execute machine code (outside 
 
 In summary, `v8/src/codegen/mips64/assembler-mips64-inl.h` is a fundamental building block for V8's code generation on the MIPS64 architecture. It provides the low-level tools to translate JavaScript into executable machine instructions, handling details like operand encoding, relocation, and cache management.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/assembler-mips64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/assembler-mips64-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
-
+### 源代码
+```c
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -517,7 +518,4 @@ EnsureSpace::EnsureSpace(Assembler* assembler) { assembler->CheckBuffer(); }
 }  // namespace v8
 
 #endif  // V8_CODEGEN_MIPS64_ASSEMBLER_MIPS64_INL_H_
-
-"""
-
 ```

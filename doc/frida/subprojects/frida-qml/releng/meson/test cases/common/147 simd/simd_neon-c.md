@@ -199,7 +199,7 @@ input_array 变为 {2.0f, 3.0f, 4.0f, 5.0f};
 
 总而言之，`simd_neon.c` 是 Frida 项目中用于测试 ARM NEON SIMD 指令功能的一个简单的 C 语言测试用例。它的存在是为了验证 Frida 在处理使用了 NEON 优化的代码时的行为和正确性。虽然其中的 `neon_available` 函数实现不完善，但这并不影响其作为测试用例的基本功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/147 simd/simd_neon.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -229,7 +231,4 @@ void increment_neon(float arr[4]) {
     vst1_f32(arr, a1);
     vst1_f32(&arr[2], a2);
 }
-
-"""
-
 ```

@@ -346,7 +346,7 @@ console.log(instance.myInstanceProperty); // 输出 42
 
 这是第一部分的功能归纳。下一部分可能会涉及 `ObjectTemplate` 的更详细信息，以及属性处理器的配置和使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-template.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-template.h以.tq结尾，那它是个v8 torque源代码，
@@ -354,8 +354,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1184,7 +1186,4 @@ struct NamedPropertyHandlerConfiguration {
   NamedPropertyDescriptorCallback descriptor;
   Local<Value> data;
   PropertyHandlerFlags fl
-"""
-
-
 ```

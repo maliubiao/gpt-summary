@@ -132,14 +132,16 @@ Response: Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`socket_client_impl_test.cc` 通过各种测试用例，确保了 `P2PSocketClientImpl` 类的正确性和健壮性，同时也间接地反映了开发者在使用 P2P socket 相关 API 时需要注意的关键点。它帮助预防了因底层 P2P 通信实现错误而导致的上层 Web 应用功能异常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/p2p/socket_client_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 #include "third_party/blink/renderer/platform/p2p/socket_client_impl.h"
 #include "base/run_loop.h"
 #include "base/test/task_environment.h"
@@ -427,7 +429,4 @@ TEST_F(SocketClientImplBatchingTest, PacketBatchCompletedWithFlush) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

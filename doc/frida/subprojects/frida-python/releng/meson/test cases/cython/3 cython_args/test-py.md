@@ -141,7 +141,7 @@ By following this structured approach, combining code analysis with contextual i
 
 总而言之，这个 `test.py` 文件虽然代码很简单，但它在 Frida 的开发过程中扮演着重要的角色，用于验证 Cython 扩展模块的正确性，从而间接地保障了 Frida 动态 instrumentation 功能的可靠性。  它的位置和内容暗示了 Frida 使用 Cython 来提升性能或实现与底层系统交互的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cython/3 cython_args/test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,12 +149,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import cythonargs
 
 assert cythonargs.test() == 1
-
-"""
-
 ```

@@ -173,11 +173,13 @@ Finally, I would review my summary and the JavaScript example to make sure they 
 
 总而言之，`macro-assembler-ia32-unittest.cc` 文件是 V8 引擎的内部测试代码，用于确保在 IA-32 架构下生成正确且高效的机器码。它测试了 `MacroAssembler` 类提供的各种指令生成功能，这些功能是 V8 将高级 JavaScript 代码转换为可在 CPU 上执行的低级指令的关键。虽然 JavaScript 开发者通常不会直接接触这些底层的汇编指令，但理解它们背后的原理有助于更好地理解 JavaScript 引擎的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/macro-assembler-ia32-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -326,7 +328,4 @@ TEST_F(MacroAssemblerTest, TestDefinedPCRelLea) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -174,7 +174,7 @@ func main() {
 
 这段代码是 Go 运行时调度器的核心组成部分，负责管理处理器、线程以及 Goroutine 的调度和生命周期。它实现了 CPU 性能剖析、动态调整 `GOMAXPROCS`、死锁检测、系统监控以及 Goroutine 抢占等关键功能，是理解 Go 并发模型的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/proc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -183,8 +183,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 may not even be stopped.
 	// See golang.org/issue/17165.
 	getg().m.mallocing++
@@ -1401,10 +1403,4 @@ func pidlegetSpinning(now int64) (*p, int64) {
 		sched.needspinning.Store(1)
 		return nil, now
 	}
-
-"""
-
-
-
-
 ```

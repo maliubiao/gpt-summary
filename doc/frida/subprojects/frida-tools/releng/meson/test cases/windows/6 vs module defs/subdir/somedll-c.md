@@ -202,7 +202,7 @@ int somedllfunc(void) {
 
 因此，到达 `somedll.c` 文件通常是用户为了理解 Frida 的工作原理、排查 Frida 使用中的问题，或者研究 Frida 的测试方法而进行的主动探索过程。这个简单的文件提供了一个清晰的、可控的测试目标，帮助用户理解 Frida 的核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/windows/6 vs module defs/subdir/somedll.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -210,12 +210,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int somedllfunc(void) {
     return 42;
 }
-
-"""
-
 ```

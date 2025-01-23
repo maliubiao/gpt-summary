@@ -163,15 +163,17 @@ console.log(result); // 输出 9007199254740992，精度丢失
 
 总而言之，`v8/src/compiler/simplified-lowering-verifier.cc` 是 V8 编译器中一个关键的组成部分，它通过静态分析和验证，确保了在代码降低到机器码的过程中，类型信息和潜在的数值转换被正确处理，从而提高了生成代码的正确性和性能。虽然用户不会直接与这个文件交互，但它所执行的验证逻辑反映了 JavaScript 运行时的一些基本行为和潜在的陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-lowering-verifier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/simplified-lowering-verifier.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -921,7 +923,4 @@ void SimplifiedLoweringVerifier::VisitNode(Node* node,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

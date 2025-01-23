@@ -163,7 +163,7 @@ By following this thought process, the goal is to systematically analyze the cod
 
 总而言之，这个简单的 `s3.c` 文件虽然功能简单，但它是复杂程序和逆向分析中函数调用关系的一个缩影。理解这种简单的函数调用关系是进行更复杂程序分析的基础。 Frida 作为一个强大的动态分析工具，可以帮助我们深入理解程序的运行时行为，包括观察这种函数调用关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/114 complex link cases/s3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,14 +171,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int s2(void);
 
 int s3(void) {
     return s2() + 1;
 }
-
-"""
-
 ```

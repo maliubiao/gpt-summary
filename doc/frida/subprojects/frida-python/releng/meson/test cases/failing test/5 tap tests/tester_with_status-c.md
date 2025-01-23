@@ -102,7 +102,7 @@ By following these steps, one can systematically analyze the code and address al
 
 总而言之，`tester_with_status.c` 是一个故意设计成失败的测试用例，用于验证 Frida 或其测试框架在处理失败场景时的能力。它展示了 TAP 协议的使用以及程序退出状态码在测试中的重要性。开发者通过查看这类测试用例，可以了解 Frida 的测试流程和错误处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/failing test/5 tap tests/tester_with_status.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -120,7 +122,4 @@ int main(int argc, char **argv) {
     puts("not ok 1 - some test");
     return 2;
 }
-
-"""
-
 ```

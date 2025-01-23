@@ -170,14 +170,16 @@ Here's a breakdown of the thinking process to analyze the provided C++ code snip
 
 `layout_mathml_block_flow.cc` 文件是 Chromium Blink 引擎中负责处理块级 MathML 元素布局的关键组成部分。它通过继承通用的块级布局机制并结合 MathML 特有的布局规则，确保数学公式能够在网页上正确地呈现。虽然这个文件本身只包含基础的构造函数，但它代表了处理此类元素布局的入口点。 理解其功能有助于理解浏览器如何解析和渲染包含数学公式的网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/mathml/layout_mathml_block_flow.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ LayoutMathMLBlockFlow::LayoutMathMLBlockFlow(Element* element)
 }
 
 }  // namespace blink
-
-"""
-
 ```

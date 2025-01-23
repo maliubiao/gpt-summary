@@ -221,14 +221,16 @@ Blink 引擎会创建一个 `TransitionEvent` 对象，其属性可能如下：
 
 总而言之，`transition_event.cc` 文件是 Blink 渲染引擎中关于 CSS 过渡事件的核心实现，它负责创建和管理表示过渡事件的对象，并将这些信息传递给 JavaScript，使得 Web 开发者能够对 CSS 过渡做出响应。理解 `TransitionEvent` 的功能和属性对于正确处理 CSS 过渡至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/transition_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008 Apple Inc. All rights reserved.
  * Copyright (C) 2013 Intel Corporation. All rights reserved.
@@ -309,7 +311,4 @@ void TransitionEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

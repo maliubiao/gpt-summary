@@ -215,16 +215,18 @@ During the process, I would double-check my understanding and refine my explanat
 **归纳总结（针对第 2 部分）**
 
 这段 `fullscreen.cc` 代码是 Blink 引擎中处理全屏 API 请求和状态管理的核心组件。它负责接收来自 JavaScript 的全屏请求和退出请求，进行必要的权限检查，与浏览器的底层接口交互以执行全屏操作，并在操作完成后通过 Promise 将结果返回给 JavaScript。此外，它还负责在全屏状态改变时触发相应的事件，并处理跨域和嵌套浏览上下文下的全屏
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fullscreen/fullscreen.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- pending->GetDocument();
+### 源代码
+```cpp
+pending->GetDocument();
   if (error != RequestFullscreenError::kNone) {
     // TODO: Surface more errors in the console with added precision.
     if (error == RequestFullscreenError::kPermissionCheckFailed) {
@@ -716,8 +718,4 @@ void Fullscreen::PendingRequest::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

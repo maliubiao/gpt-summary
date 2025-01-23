@@ -161,7 +161,7 @@ Here's a breakdown of the thinking process to analyze the C++ code and generate 
 
 总而言之，`t1.cpp` 作为一个 Frida 的单元测试用例，其存在是为了确保 Frida 的核心功能之一——内省——能够正确工作。开发者在开发和维护 Frida 的过程中，会频繁地接触和使用这类测试用例。当测试失败时，这些测试用例就成为了重要的调试线索，帮助开发者定位问题并进行修复。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/56 introspection/t1.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "sharedlib/shared.hpp"
 
 int main(void) {
@@ -184,7 +186,4 @@ int main(void) {
   }
   return 0;
 }
-
-"""
-
 ```

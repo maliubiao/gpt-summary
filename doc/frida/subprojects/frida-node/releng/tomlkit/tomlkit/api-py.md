@@ -307,7 +307,7 @@ python = ">=3.7"
 
 总而言之，`api.py` 文件是 `tomlkit` 库的核心接口，用户通过调用这里定义的函数来完成 TOML 数据的解析、生成和操作。当出现问题时，理解这个文件中各个函数的功能和使用方式，是进行调试的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/tomlkit/tomlkit/api.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -315,8 +315,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import contextlib
@@ -625,7 +627,4 @@ def unregister_encoder(encoder: Encoder) -> None:
     """Unregister a custom encoder."""
     with contextlib.suppress(ValueError):
         CUSTOM_ENCODERS.remove(encoder)
-
-"""
-
 ```

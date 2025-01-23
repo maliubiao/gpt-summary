@@ -190,7 +190,7 @@ TESTCASE (basic_call_trace)
 
 总而言之，`stalker-x86-fixture.c` 是 Frida 针对 Stalker 组件在 x86 架构下进行单元测试的基础设施，它提供了一系列工具来简化测试编写和提高测试效率，同时也体现了动态插桩、二进制底层、操作系统交互等方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-x86/stalker-x86-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,8 +198,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2010-2013 Karl Trygve Kalleberg <karltk@boblycat.org>
@@ -449,7 +451,4 @@ struct _InvalidationTarget
   StalkerDummyChannel channel;
   volatile gboolean finished;
 };
-
-"""
-
 ```

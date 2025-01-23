@@ -272,7 +272,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 总结来说，`s_llroundl.c` 通过包含 `s_lround.c` 定义了 Android `libm` 库中的 `llroundl` 函数，用于将高精度浮点数四舍五入到长整型。它的实现涉及到浮点数处理、整数类型限制和动态链接等概念，并在 Android 的 NDK 开发和底层系统中发挥着重要作用。 理解其功能和使用方式对于进行精确的数值计算至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_llroundl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -283,8 +283,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例作为调试线索。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #define type		long double
 #define	roundit		roundl
 #define dtype		long long
@@ -293,7 +295,4 @@ Prompt:
 #define	fn		llroundl
 
 #include "s_lround.c"
-
-"""
-
 ```

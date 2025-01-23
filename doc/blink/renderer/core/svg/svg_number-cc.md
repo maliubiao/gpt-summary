@@ -140,15 +140,17 @@ Essentially, I approached it like detective work. I looked for clues in the code
 
 总之，`blink/renderer/core/svg/svg_number.cc` 文件在处理 SVG 文档中的数值信息方面扮演着基础且关键的角色，它连接了 HTML/XML 解析、CSS 样式应用、JavaScript DOM 操作以及 SVG 动画的实现。理解其功能有助于调试与 SVG 数值相关的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_number.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -304,7 +306,4 @@ SVGNumberAcceptPercentage::SVGNumberAcceptPercentage(float value)
     : SVGNumber(value) {}
 
 }  // namespace blink
-
-"""
-
 ```

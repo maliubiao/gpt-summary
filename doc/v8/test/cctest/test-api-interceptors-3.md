@@ -150,7 +150,7 @@ try {
 
 这部分代码主要测试了 V8 API 拦截器在 **异常处理** 和 **属性枚举** 方面的行为。具体来说，它验证了当拦截器（特别是枚举器）抛出异常时 V8 的处理方式，以及如何通过设置异常预处理回调来干预异常处理流程。此外，还深入测试了非屏蔽拦截器的特性，以及如何通过枚举器和查询拦截器来定制对象的属性枚举行为。这部分强调了 V8 拦截器机制的强大功能和灵活性，以及在处理由拦截器引发的异常时需要注意的事项。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-interceptors.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api-interceptors.cc以.tq结尾，那它是个v8 torque源代码，
@@ -158,8 +158,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 Set(isolate, "x", v8::Integer::New(isolate, 42));
   // First just try a failing indexed interceptor.
   obj_template->SetHandler(v8::IndexedPropertyHandlerConfiguration(
@@ -1053,7 +1055,4 @@ THREADED_TEST(EnumeratorsAndUnenumerableNamedProperties) {
   v8::Local<v8::ObjectTemplate> obj = ObjectTemplate::New(isolate);
   obj->SetHandler(v8::NamedPropertyHandlerConfiguration(
       Co
-"""
-
-
 ```

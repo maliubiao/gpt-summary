@@ -156,15 +156,17 @@ The filename ends with `.cc`, **not `.tq`**. Therefore, `v8/src/compiler/turbosh
 
 In summary, this code plays a crucial role in optimizing WebAssembly code that utilizes garbage collection by performing a sophisticated static analysis to infer and refine the types of GC objects, ultimately leading to more efficient and potentially safer execution.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-gc-typed-optimization-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/wasm-gc-typed-optimization-reducer.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -752,7 +754,4 @@ wasm::ValueType WasmGCTypeAnalyzer::GetResolvedType(OpIndex object) const {
 #undef TRACE
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

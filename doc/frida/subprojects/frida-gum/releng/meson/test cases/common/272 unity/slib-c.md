@@ -99,7 +99,7 @@ Let's break down the thought process for analyzing this C code snippet in the co
 
 虽然 `slib.c` 文件本身的代码非常简单，但它在 Frida 工具的上下文中扮演着重要的角色，作为一个测试用例，用于验证 Frida hook 静态库函数的功能。理解这个文件的功能和背后的相关知识，对于理解 Frida 的工作原理和在逆向工程中的应用非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/272 unity/slib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,15 +107,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1(void);
 int func2(void);
 
 int static_lib_func(void) {
     return func1() + func2();
 }
-
-"""
-
 ```

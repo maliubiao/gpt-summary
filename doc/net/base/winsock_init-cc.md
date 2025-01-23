@@ -104,15 +104,17 @@ By following this thought process, which includes understanding the code, addres
 
 `net/base/winsock_init.cc` 是 Chromium 网络栈中一个至关重要的文件，它负责 Windows 平台下 Winsock 库的可靠初始化。虽然用户不会直接接触它，但它为浏览器所有的网络功能提供了基础，并间接地影响着用户的上网体验。在调试网络相关问题时，如果怀疑 Winsock 初始化存在问题，可以考虑在这个文件中设置断点，查看 `WSAStartup()` 的返回值以及 `wsa_data` 的内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/winsock_init.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ void EnsureWinsockInit() {
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -161,7 +161,7 @@ func main() {
 
 总结来说， `math.Signbit` 函数提供了一种高效的方式来检查 `float64` 浮点数的符号，它直接操作底层二进制表示，这在某些需要精确控制浮点数行为的场景下非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/signbit.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -169,8 +169,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -181,9 +183,4 @@ package math
 func Signbit(x float64) bool {
 	return Float64bits(x)&(1<<63) != 0
 }
-
-"""
-
-
-
 ```

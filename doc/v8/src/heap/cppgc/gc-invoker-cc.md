@@ -182,15 +182,17 @@ While developers using JavaScript directly don't interact with `GCInvoker` direc
 
 In summary, `v8/src/heap/cppgc/gc-invoker.cc` plays a vital role in the memory management of the V8 engine by orchestrating the invocation of garbage collection cycles, considering different execution contexts and ensuring the integrity of the managed heap. It's a core component that directly enables JavaScript's automatic memory management.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/gc-invoker.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/gc-invoker.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -363,7 +365,4 @@ std::optional<int> GCInvoker::UpdateAllocationTimeout() {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

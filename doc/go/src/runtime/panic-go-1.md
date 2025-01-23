@@ -107,7 +107,7 @@ By following this structured approach, you can systematically analyze even compl
 
 这部分 `panic.go` 代码实现了Go语言中处理不可恢复错误和panic的核心机制。它负责检测、报告和处理各种类型的 panic，包括用户代码触发的错误和运行时内部错误。同时，它也实现了 `recover` 的机制，允许在 `defer` 函数中捕获 panic 并进行有限的恢复。这段代码还涉及到对程序状态的管理（通过原子变量和互斥锁），以及在 panic 发生时生成和打印堆栈跟踪信息的功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/panic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -116,8 +116,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 time)
 }
 
@@ -548,10 +550,4 @@ func isAbortPC(pc uintptr) bool {
 	}
 	return f.funcID == abi.FuncID_abort
 }
-
-"""
-
-
-
-
 ```

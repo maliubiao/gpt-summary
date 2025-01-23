@@ -149,15 +149,17 @@ Let's break down the thought process for analyzing this C++ unittest file.
 
 总而言之，这个单元测试确保了 `HostResolverManager` 在处理 IPv6 可达性探测失败的情况下，能够根据配置的特性标志正确地决定是否尝试解析 IPv6 地址，从而影响浏览器如何进行网络连接。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_ipv6_reachability_override_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -253,7 +255,4 @@ TEST_P(HostResolverManagerIPv6ReachabilityOverrideTest, Request) {
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -173,15 +173,17 @@ Here's a breakdown of the thinking process to generate the detailed explanation 
 
 `blink/renderer/core/css/selector_statistics.cc` 是 Blink 渲染引擎内部用于收集 CSS 选择器匹配统计信息的重要文件。它不直接暴露给前端开发者，但其背后的工作原理与 CSS 性能密切相关。理解其功能可以帮助开发者编写更高效的 CSS，并有助于 Blink 团队优化 CSS 处理流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/selector_statistics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ void SelectorStatisticsCollector::EndCollectionForCurrentRule() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

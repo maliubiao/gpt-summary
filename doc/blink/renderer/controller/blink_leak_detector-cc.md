@@ -180,15 +180,17 @@ BlinkLeakDetector 通常不是用户直接交互的功能，而是开发者用�
 
 总而言之，`blink_leak_detector.cc` 提供了一个重要的内部机制，用于确保 Blink 引擎的内存管理正确性，防止因内存泄漏导致性能下降或程序崩溃。它与 Web 技术紧密相关，通过监控关键对象的生命周期来发现潜在的问题。用户操作虽然不会直接触发它，但会导致可能泄漏的状态，最终需要开发者使用这个工具进行诊断。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/controller/blink_leak_detector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -371,7 +373,4 @@ void BlinkLeakDetector::ReportResult() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

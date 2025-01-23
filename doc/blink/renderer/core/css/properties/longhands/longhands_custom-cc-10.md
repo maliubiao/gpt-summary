@@ -141,7 +141,7 @@ Let's break down the thought process for analyzing this code snippet.
 
 总而言之，这个文件是 Blink 引擎中处理多种常见和重要的 CSS 属性的关键组成部分，负责将 CSS 文本转化为浏览器内部表示，并提供计算后样式到 CSS 值的转换能力。它是连接 CSS 语法和浏览器渲染引擎的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/longhands/longhands_custom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第11部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e* TextDecorationStyle::CSSValueFromComputedStyleInternal(
     const ComputedStyle& style,
     const LayoutObject* layout_object,
@@ -1072,7 +1074,4 @@ const CSSValue* Appearance::ParseSingleValue(
   }
   css_parsing_utils::WarnInvalidKeywordPropertyUsage(property, context, id);
   retu
-"""
-
-
 ```

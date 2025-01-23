@@ -108,15 +108,17 @@ Here's a thinking process to arrive at the detailed explanation of `handle_attac
 
 总而言之，`handle_attachment_provider.cc` 中的 `HandleAttachmentProvider` 类在 Chromium Blink 引擎的 MSE 实现中扮演着一个关键角色，它提供了一个安全可靠的机制来管理和转移 `MediaSourceAttachment` 对象的所有权，确保在多线程环境下数据的一致性和正确性。理解它的功能有助于调试和理解 Blink 引擎中 MSE 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasource/handle_attachment_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -151,7 +153,4 @@ HandleAttachmentProvider::TakeAttachment() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

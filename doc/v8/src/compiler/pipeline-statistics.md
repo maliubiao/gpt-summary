@@ -124,11 +124,13 @@ complexCalculation(largeArray);
 
 总而言之，`v8/src/compiler/pipeline-statistics.cc` 是 V8 引擎内部用于监控自身编译过程的关键组件，它不直接暴露给 JavaScript 开发者，但其收集的统计信息对于理解和优化 JavaScript 代码的执行性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/pipeline-statistics.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -285,7 +287,4 @@ void TurbofanPipelineStatistics::EndPhase() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

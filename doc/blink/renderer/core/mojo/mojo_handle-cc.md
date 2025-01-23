@@ -166,14 +166,16 @@ By following these steps, I can systematically analyze the code and produce a co
 
 `mojo_handle.cc` 文件是 Blink 引擎中处理 Mojo 通信的核心部分。它提供了 C++ 接口来操作 Mojo 句柄，并与 JavaScript 的 `ArrayBuffer` 等类型紧密集成，使得 JavaScript 代码能够利用 Mojo 的跨进程通信和共享内存能力，构建更强大和高效的 Web 应用。 理解 `MojoHandle` 的功能对于理解 Blink 如何与浏览器其他组件以及外部进程进行交互至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/mojo/mojo_handle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -460,7 +462,4 @@ MojoCreateSharedBufferResult* MojoHandle::duplicateBufferHandle(
 }
 
 }  // namespace blink
-
-"""
-
 ```

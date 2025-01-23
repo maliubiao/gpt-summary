@@ -191,7 +191,7 @@ if __name__ == '__main__':
 
 总而言之，`bionic/tests/headers/posix/sys_types_h.c` 是一个用于确保 Android Bionic 库正确定义了 POSIX 标准系统类型的重要测试文件，虽然它不直接参与 Android 运行时的功能，但它保证了底层类型定义的正确性，为 Android 系统和应用程序的正常运行奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/sys_types_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -202,8 +202,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -272,7 +274,4 @@ static void sys_types_h() {
   TYPE(timer_t);
   TYPE(uid_t);
 }
-
-"""
-
 ```

@@ -158,7 +158,7 @@ range_holder = RangeHolder(10, 20, 2, subproject=None)
 
 总而言之，`range.py` 定义了一个用于在 Frida 的 Meson 构建系统中表示数字范围的实用工具类。它本身不直接执行逆向操作或与底层系统交互，但为构建能够执行这些操作的 Frida 组件提供了基础。开发者通常在遇到构建错误或需要扩展构建功能时才会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/primitives/range.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 from __future__ import annotations
@@ -206,7 +208,4 @@ class RangeHolder(MesonInterpreterObject, IterableObject):
 
     def size(self) -> int:
         return len(self.range)
-
-"""
-
 ```

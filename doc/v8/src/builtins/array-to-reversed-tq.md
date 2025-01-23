@@ -131,14 +131,16 @@ console.log(reversedMixedArray); // 输出: [null, true, "hello", 1]
 
 这段 Torque 代码是 V8 引擎中实现 `Array.prototype.toReversed()` 的核心逻辑。它通过快速路径优化处理常见的数组类型，并通过通用路径处理更复杂的情况。理解这段代码可以帮助我们深入了解 JavaScript 数组方法在引擎底层的实现方式，并避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-to-reversed.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -303,7 +305,4 @@ transitioning javascript builtin ArrayPrototypeToReversed(
   }
 }
 }
-
-"""
-
 ```

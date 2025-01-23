@@ -158,7 +158,7 @@ Initially, I might focus too much on the *data copying* aspect. However, realizi
 
 因此，到达 `srcgen.c` 文件通常是开发者在深入 Frida 的构建过程，并试图解决构建或依赖关系相关问题时进行的操作。它不是一个用户直接交互的工具，而是构建系统内部使用的一个辅助程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/native/3 pipeline/srcgen.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<assert.h>
 #include<string.h>
@@ -237,7 +239,4 @@ int main(int argc, char **argv) {
     fclose(depfile);
     return 0;
 }
-
-"""
-
 ```

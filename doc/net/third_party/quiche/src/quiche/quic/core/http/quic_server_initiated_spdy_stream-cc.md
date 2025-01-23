@@ -131,15 +131,17 @@ During the process, I might refine my understanding. For example, initially, I m
 
 总而言之，`QuicServerInitiatedSpdyStream` 是 QUIC 协议栈中一个专门用于处理服务器发起推送的流的类，它通过严格的限制来确保这种类型的流只用于服务器向客户端单向发送数据，避免了潜在的协议错误和逻辑混乱。 理解它的功能对于调试 HTTP/3 相关的网络问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_server_initiated_spdy_stream.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -182,7 +184,4 @@ void QuicServerInitiatedSpdyStream::OnInitialHeadersComplete(
 }
 
 }  // namespace quic
-
-"""
-
 ```

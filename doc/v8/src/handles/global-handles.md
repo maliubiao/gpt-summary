@@ -78,11 +78,13 @@ heldObject = null; // 移除 JavaScript 的强引用
 
 `v8/src/handles/global-handles.cc` 文件是 V8 引擎中管理跨越 C++ 和 JavaScript 边界的对象生命周期的核心组件。它通过提供全局句柄和弱句柄机制，使得 C++ 代码能够安全有效地与 JavaScript 对象进行交互，并能在对象不再使用时得到通知，从而避免内存泄漏和管理外部资源。虽然 JavaScript 本身没有直接的全局或持久句柄概念，但其 `FinalizationRegistry` API 提供了类似的功能，用于观察对象的生命周期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/handles/global-handles.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2009 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1148,7 +1150,4 @@ void EternalHandles::Create(Isolate* isolate, Tagged<Object> object,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

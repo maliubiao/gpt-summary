@@ -151,7 +151,7 @@ Initially, one might focus solely on the triviality of the code itself. However,
 
 虽然 `foo.c` 文件本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 功能的正确性。通过理解其上下文和 Frida 的工作原理，我们可以推断出其在逆向工程、底层原理、逻辑推理和用户使用等方面的一些关联。作为调试线索，它指向了 Frida 内部构建和测试流程中的一个特定环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/153 wrap file should not failed/subprojects/zlib-1.2.8/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,12 +159,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int dummy_func(void) {
     return 42;
 }
-
-"""
-
 ```

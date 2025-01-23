@@ -175,7 +175,7 @@ s.destroy()
 
 总而言之，`storer.c` 作为一个简单的 C 库，其功能是定义和操作一个包含整数值的数据结构。在 Frida 的上下文中，它可以作为逆向分析的目标，通过 Hook 函数调用、修改函数行为等手段来理解和操纵使用该库的应用程序。理解其底层涉及二进制、操作系统和框架等多个层面的知识，并且在使用时需要注意内存管理等常见编程错误。调试过程中，开发者可能会直接查看 C 代码，使用调试器，或者利用 Frida 的动态分析能力来定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/python3/3 cython/libdir/storer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"storer.h"
 #include<stdlib.h>
 
@@ -209,7 +211,4 @@ int storer_get_value(Storer *s) {
 void storer_set_value(Storer *s, int v) {
     s->value = v;
 }
-
-"""
-
 ```

@@ -78,11 +78,13 @@ for (let i = 0; i < 10000; i++) {
 
 `v8/src/compiler/turbofan-enabled.cc` 中的 `NewCompilationJob` 函数是 Turbofan 优化器与 JavaScript 代码之间的桥梁。它负责启动针对特定 JavaScript 函数的 Turbofan 编译过程，这是 V8 引擎实现高性能 JavaScript 执行的关键组成部分。  没有这个入口点，Turbofan 就无法被用来优化 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turbofan-enabled.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -110,7 +112,4 @@ std::unique_ptr<TurbofanCompilationJob> NewCompilationJob(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

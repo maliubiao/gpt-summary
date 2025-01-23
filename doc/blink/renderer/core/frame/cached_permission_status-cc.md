@@ -193,14 +193,16 @@ By following these steps, one can effectively analyze and understand the purpose
 
 总而言之，`CachedPermissionStatus` 是 Blink 渲染引擎中负责高效管理和缓存权限状态的关键组件，它连接了 JavaScript 的 `Permissions API` 和浏览器底层的权限管理机制。理解其功能有助于更好地理解浏览器如何处理权限以及如何避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/cached_permission_status.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -338,7 +340,4 @@ CachedPermissionStatus::GetTaskRunner() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

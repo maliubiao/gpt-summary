@@ -179,15 +179,17 @@ By following these steps, including analysis, connection to web technologies, lo
 
 总而言之，`oes_texture_half_float.cc` 这个文件在 Chromium Blink 引擎中扮演着关键的角色，它负责实现和管理 WebGL 的半精度浮点纹理扩展，使得 JavaScript 开发者能够在支持的平台上利用半精度浮点数来优化纹理处理。 理解这个文件的功能有助于我们理解 WebGL 底层的工作原理以及如何正确使用相关的扩展 API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/oes_texture_half_float.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Motorola Mobility LLC. All rights reserved.
  *
@@ -241,7 +243,4 @@ const char* OESTextureHalfFloat::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

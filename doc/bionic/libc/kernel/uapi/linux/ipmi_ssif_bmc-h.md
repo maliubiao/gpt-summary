@@ -272,7 +272,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/linux/ipmi_ssif_bmc.h` 定义了与 IPMI SSIF BMC 通信的数据结构，主要用于内核驱动和用户空间程序之间的交互，尤其是在服务器或嵌入式系统中进行硬件管理时。虽然在典型的 Android 移动设备中不常见，但在特定的应用场景下，它仍然可能发挥作用。 理解其功能和潜在的使用场景有助于进行更深入的系统分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ipmi_ssif_bmc.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -283,8 +283,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -300,7 +302,4 @@ struct ipmi_ssif_msg {
   __u8 payload[IPMI_SSIF_PAYLOAD_MAX];
 };
 #endif
-
-"""
-
 ```

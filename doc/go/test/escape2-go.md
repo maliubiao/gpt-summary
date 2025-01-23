@@ -195,15 +195,17 @@ go test -gcflags="-0 -m -l" go/test/escape2.go
 
 总而言之，`escape2.go` 是 Go 编译器质量保证的重要组成部分，它通过大量的测试用例来验证逃逸分析功能的正确性，帮助开发者理解哪些操作会导致变量逃逸到堆上。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -m -l
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -2049,9 +2051,4 @@ func issue12397(x, y int) { // ERROR "moved to heap: y$"
 		gxx = &x
 	}
 }
-
-"""
-
-
-
 ```

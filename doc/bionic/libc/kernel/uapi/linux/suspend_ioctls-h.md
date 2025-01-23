@@ -301,7 +301,7 @@ Interceptor.attach(Module.findExportByName(null, "ioctl"), {
 
 希望这个详细的解释能够帮助你理解 `bionic/libc/kernel/uapi/linux/suspend_ioctls.h` 文件的功能以及它在 Android 系统中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/suspend_ioctls.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -312,8 +312,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -344,7 +346,4 @@ struct resume_swap_area {
 #define SNAPSHOT_ALLOC_SWAP_PAGE _IOR(SNAPSHOT_IOC_MAGIC, 20, __kernel_loff_t)
 #define SNAPSHOT_IOC_MAXNR 20
 #endif
-
-"""
-
 ```

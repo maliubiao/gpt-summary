@@ -160,7 +160,7 @@ range_obj = RangeHolder(1, 10, 2, subproject=None) # 假设 subproject 可以为
 
 `frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreter/primitives/range.py` 文件定义了一个用于在 Meson 构建环境中表示和操作数字范围的类 `RangeHolder`。它提供了索引、迭代和获取大小等基本功能，类似于 Python 的 `range` 函数。虽然它本身不直接涉及逆向工程的底层操作，但它生成的数字序列可以在构建过程中被用于与底层概念相关的操作中。理解这个类的功能有助于理解 Frida 的构建过程以及在构建脚本中处理数字序列的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreter/primitives/range.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 from __future__ import annotations
@@ -208,7 +210,4 @@ class RangeHolder(MesonInterpreterObject, IterableObject):
 
     def size(self) -> int:
         return len(self.range)
-
-"""
-
 ```

@@ -137,11 +137,13 @@ fetch('memory.wasm')
 
 总而言之，`memory.cc` 这个 C++ 示例清晰地展示了如何作为宿主环境与 WebAssembly 模块的线性内存进行交互，而 JavaScript 的 WebAssembly API 提供了类似的能力，使得 Web 开发者也能在浏览器中完成相同的操作。这个示例有助于理解 WebAssembly 的内存模型以及宿主环境如何控制和访问其内存。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/example/memory.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -313,8 +315,4 @@ int main(int argc, const char* argv[]) {
   std::cout << "Done." << std::endl;
   return 0;
 }
-
-
-"""
-
 ```

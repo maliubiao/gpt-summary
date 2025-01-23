@@ -101,7 +101,7 @@ function calculateArea(rectangle) {
 
 总的来说，这部分代码定义了负载消除优化的核心逻辑，涵盖了对象属性和数组元素的读取和写入，以及如何在控制流合并和循环场景下维护和更新抽象状态，从而实现有效的冗余负载消除。它通过维护一个抽象状态来跟踪内存位置的值，并在遇到读取操作时查找该状态，如果能找到之前存储的值，则可以将读取操作替换为直接使用该值，从而提高代码执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/load-elimination.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/load-elimination.cc以.tq结尾，那它是个v8 torque源代码，
@@ -109,8 +109,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ndexOf(JSObject::kElementsOffset, kTaggedSize),
                            MaybeHandle<Name>(), zone());
   return UpdateState(node, state);
@@ -689,8 +691,4 @@ Factory* LoadElimination::factory() const { return jsgraph()->factory(); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

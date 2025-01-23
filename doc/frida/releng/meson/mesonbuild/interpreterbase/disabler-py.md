@@ -176,7 +176,7 @@ else:
 
 通过以上步骤，用户可以了解到 `disabler.py` 文件中的 `Disabler` 类和 `is_disabled` 函数在 Frida 构建过程中扮演的角色，以及为什么某些功能在他们的 Frida 版本中不可用。这有助于他们理解问题的根源在于构建时的配置和依赖项，而不是 Frida 本身的 bug。用户可能需要重新配置构建环境，安装缺失的依赖项，然后重新编译 Frida 才能使用所需的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/interpreterbase/disabler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -221,7 +223,4 @@ def is_disabled(args: T.Sequence[T.Any], kwargs: T.Dict[str, T.Any]) -> bool:
         if _is_arg_disabled(i):
             return True
     return False
-
-"""
-
 ```

@@ -154,15 +154,17 @@ This section of `web_frame_test.cc` primarily focuses on testing the **fullscree
 
 This section of `web_frame_test.cc` provides comprehensive tests for the fullscreen API in Blink, covering various scenarios and interactions with other web technologies. It also includes tests for related functionalities like WebXR overlays, manifest fetching, reloading, drag image generation, printing, and theme color handling, ensuring the correct behavior and robustness of these features within the Chromium rendering engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第12部分，共19部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 cumentElement(),
             Fullscreen::FullscreenElementFrom(*document));
 
@@ -939,7 +941,4 @@ class WebFrameSwapTest : public WebFrameTest {
 TEST_F(WebFrameSwapTest, SwapMainFrame) {
   WebRemoteFrame* remote_frame = frame_test_helpers::CreateRemote();
   frame_test_helpers::SwapRemoteFrame(MainFrame(), remo
-"""
-
-
 ```

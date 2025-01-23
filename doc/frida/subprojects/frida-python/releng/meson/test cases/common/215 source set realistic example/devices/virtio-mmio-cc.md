@@ -160,7 +160,7 @@ virtio-mmio is available
 
 总而言之，这个源代码文件是 Frida 工具的一个测试用例，用于模拟一个简单的 VirtIO 设备，以便测试 Frida 的动态 instrumentation 能力。它本身不执行复杂的逻辑，但可以作为理解 Frida 如何与底层系统交互的一个入门示例。在逆向分析的上下文中，它可以作为学习如何使用 Frida 观察和修改类似系统行为的一个起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/215 source set realistic example/devices/virtio-mmio.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "virtio.h"
@@ -186,7 +188,4 @@ void VirtioMMIODevice::say_hello()
 }
 
 static VirtioMMIODevice virtio_mmio;
-
-"""
-
 ```

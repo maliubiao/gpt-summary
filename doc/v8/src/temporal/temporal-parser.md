@@ -77,11 +77,13 @@ console.log(duration.toString()); // 输出：P1Y2M10DT5H30M
 
 简而言之，`temporal-parser.cc` 是 `Temporal` API 的幕后英雄，负责理解和解释各种日期、时间和时区字符串，使得 JavaScript 开发者能够方便地使用 `Temporal` API 来处理日期和时间。它实现了 ISO 8601 规范中与 `Temporal` API 相关的部分，确保了 JavaScript 中 `Temporal` API 对日期时间字符串处理的正确性和标准化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/temporal/temporal-parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1488,7 +1490,4 @@ IMPL_PARSE_METHOD(ParsedISO8601Result, TimeZoneNumericUTCOffset)
 IMPL_PARSE_METHOD(ParsedISO8601Duration, TemporalDurationString)
 
 }  // namespace v8::internal
-
-"""
-
 ```

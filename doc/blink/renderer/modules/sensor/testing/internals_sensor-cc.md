@@ -165,15 +165,17 @@ internals.sensor.createVirtualSensor('gyroscope', { minSamplingFrequency: 10, ma
 
 总而言之，`internals_sensor.cc` 是一个用于 Blink 内部测试的重要文件，它允许开发者在没有物理传感器的情况下模拟和控制传感器行为，从而更方便地测试基于传感器的 Web 应用。它通过 Chromium 的内部 JavaScript 接口暴露功能，使得开发者可以通过 JavaScript 代码来驱动这些测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/sensor/testing/internals_sensor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -471,7 +473,4 @@ InternalsSensor::getVirtualSensorInformation(ScriptState* script_state,
 }
 
 }  // namespace blink
-
-"""
-
 ```

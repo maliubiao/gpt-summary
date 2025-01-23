@@ -164,14 +164,16 @@ Let's break down the thought process for analyzing the provided C++ test file.
 
 总而言之，`persistent_test.cc` 这个文件通过单元测试确保了 Blink 引擎中用于管理对象生命周期的关键机制能够正确工作，这对于构建稳定可靠的 Web 渲染引擎至关重要，并间接地影响着 JavaScript、HTML 和 CSS 的正确处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/test/persistent_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -230,7 +232,4 @@ TEST_F(PersistentTest, CrossThreadBindCancellation) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

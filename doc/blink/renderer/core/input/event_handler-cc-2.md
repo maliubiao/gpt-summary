@@ -271,7 +271,7 @@ By following this structured and inquisitive approach, you can effectively analy
 
 这部分 `EventHandler` 的代码专注于处理和分发各种类型的输入事件（鼠标、触摸、手势），并维护相关的状态（例如指针捕获、hover 和 active 状态）。它体现了 Blink 引擎如何将底层的输入事件转化为更高层次的事件，并最终传递给 JavaScript 代码进行处理。 触摸调整、跨 frame 事件处理和上下文菜单管理是这部分代码的关键功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/input/event_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -279,8 +279,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 terCapture() {
   ReleaseMouseCaptureFromLocalRoot();
 }
@@ -1059,8 +1061,4 @@ void EventHandler::HoverTimerFired(TimerBase*) {
     if (LocalFrameView* view = frame_->View()) {
       HitTestRequest request(HitTestRequest::kMove);
       HitTestLocation location(view->ViewportToFrame(
-      
-"""
-
-
 ```

@@ -152,15 +152,17 @@ greet("Universe");
 
 `v8/src/snapshot/code-serializer.h` 定义了 V8 中代码缓存机制的核心组件，负责将编译后的 JavaScript 代码进行序列化和反序列化，以提高代码加载和执行效率。虽然其工作对开发者是透明的，但理解其原理有助于避免潜在的与代码缓存相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/code-serializer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/code-serializer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -341,7 +343,4 @@ class SerializedCodeData : public SerializedData {
 }  // namespace v8
 
 #endif  // V8_SNAPSHOT_CODE_SERIALIZER_H_
-
-"""
-
 ```

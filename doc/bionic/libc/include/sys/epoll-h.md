@@ -308,7 +308,7 @@ setImmediate(main);
 
 通过这个 Frida 脚本，你可以观察到目标进程中 `epoll_wait` 函数的调用情况，包括监听的 `epoll` 实例、等待的事件、超时时间以及返回的就绪事件信息，从而帮助你调试与 `epoll` 相关的代码。你可以根据需要修改脚本来 Hook 其他 `epoll` 函数或提取更多有用的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/epoll.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -319,8 +319,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -436,7 +438,4 @@ int epoll_pwait2_64(int __epoll_fd, struct epoll_event* _Nonnull __events, int _
 
 
 __END_DECLS
-
-"""
-
 ```

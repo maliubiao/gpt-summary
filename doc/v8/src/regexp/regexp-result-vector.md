@@ -133,11 +133,13 @@ while ((match = regex.exec(str)) !== null) {
 
 `regexp-result-vector.cc` 文件在 V8 引擎中扮演着关键的角色，它负责高效地存储和管理 JavaScript 正则表达式匹配操作产生的中间结果。这种管理包括优化内存分配策略和控制结果向量的生命周期，从而提高正则表达式执行的性能。JavaScript 开发者虽然不能直接操作这些 C++ 类，但他们所编写的正则表达式代码的执行效果，很大程度上依赖于这些底层机制的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-result-vector.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -202,7 +204,4 @@ void RegExpResultVector::Free(int32_t* vector) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

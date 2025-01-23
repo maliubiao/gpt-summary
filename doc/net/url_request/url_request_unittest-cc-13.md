@@ -144,7 +144,7 @@ fetch('https://revoked.example.com')
 
 作为 `net/url_request/url_request_unittest.cc` 文件的第 14 部分，这段代码主要负责 **测试 Chromium 网络栈中与 HTTPS 证书吊销状态检查相关的核心逻辑**。它通过模拟各种 OCSP 响应、AIA 配置和 CRLSet 的状态，验证网络栈在处理这些信息时的正确性和鲁棒性。这部分测试确保了浏览器能够安全可靠地处理 HTTPS 连接，防止用户连接到使用了被吊销证书的恶意网站。  考虑到它是 17 部分中的第 14 部分，可以推测之前的部分可能涉及更基础的 URLRequest 功能，而后续的部分可能会测试其他与网络请求相关的特性，例如缓存、代理或 QUIC 等。  这部分专注于安全相关的证书验证机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第14部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 CSPConfig(
       {{bssl::OCSPRevocationStatus::GOOD,
         EmbeddedTestServer::OCSPConfig::SingleResponse::Date::kOld}});
@@ -996,8 +998,4 @@ TEST_F(HTTPSLocalCRLSetTest, InterceptionBlockedAllowOverrideOnHSTS) {
   ASSERT_TRUE(cert);
 
   HashValue filler_hash;
-  
-"""
-
-
 ```

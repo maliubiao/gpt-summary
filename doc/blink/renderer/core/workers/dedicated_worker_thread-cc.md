@@ -207,14 +207,16 @@ By following these steps, I can provide a comprehensive and accurate analysis of
 
 理解 `DedicatedWorkerThread.cc` 的功能对于理解 Blink 引擎如何处理 Web Workers 以及如何调试与 Worker 相关的性能问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/dedicated_worker_thread.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -293,7 +295,4 @@ WorkerOrWorkletGlobalScope* DedicatedWorkerThread::CreateWorkerGlobalScope(
 }
 
 }  // namespace blink
-
-"""
-
 ```

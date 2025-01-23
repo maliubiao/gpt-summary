@@ -178,7 +178,7 @@ By following these steps, considering the context, and iteratively refining the 
 
 `genC.cpp` 是 Frida 构建和测试流程中的一个辅助脚本，用于生成一个简单的 C++ 对象库的源代码。它本身不直接进行逆向操作，但生成的代码可以作为 Frida 测试的目标。理解其功能有助于理解 Frida 测试环境的搭建和 Frida 与目标程序交互的基础。对于 Frida 开发者来说，理解这类脚本是调试和维护 Frida 项目的重要一环。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/15 object library advanced/subprojects/cmObjLib/genC.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <fstream>
 
@@ -219,6 +221,4 @@ std::string getGenStr(void) {
 
   return 0;
 }
-"""
-
 ```

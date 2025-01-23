@@ -126,14 +126,16 @@ Let's break down the thought process for analyzing this fuzzer code.
 
 总而言之，`open_type_math_support_fuzzer.cc` 是一个关键的工具，用于确保 Chromium 浏览器能够健壮且安全地处理包含数学信息的 OpenType 字体，从而为用户提供可靠的数学公式渲染体验。它通过模拟各种可能的、甚至是错误的字体数据输入，来发现潜在的软件缺陷。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/open_type_math_support_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   return blink::LLVMFuzzerTestOneInput(data, size);
 }
-
-"""
-
 ```

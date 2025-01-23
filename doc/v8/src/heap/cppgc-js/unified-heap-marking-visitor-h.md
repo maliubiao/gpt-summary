@@ -204,15 +204,17 @@ let unusedObj = { value: 123 }; // 'unusedObj' 没有被任何可达对象引用
 
 理解 `UnifiedHeapMarkingVisitor` 的工作原理有助于开发者编写更高效、更少内存泄漏的 JavaScript 代码。通过了解垃圾回收器如何追踪对象引用，可以避免一些常见的内存管理陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/unified-heap-marking-visitor.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc-js/unified-heap-marking-visitor.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ class V8_EXPORT_PRIVATE ConcurrentUnifiedHeapMarkingVisitor
 }  // namespace v8
 
 #endif  // V8_HEAP_CPPGC_JS_UNIFIED_HEAP_MARKING_VISITOR_H_
-
-"""
-
 ```

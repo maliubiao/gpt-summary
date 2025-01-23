@@ -92,7 +92,7 @@ By following this structured thought process, combining code analysis with conte
 
 总而言之，`virt.cc` 文件虽然代码量不多，但它在 Frida 项目中扮演着重要的角色，用于模拟特定的硬件平台，并测试 Frida 在该平台上的基本功能，这对于确保 Frida 在不同架构上的稳定性和正确性至关重要。它也是 Frida 开发人员调试和验证其 ARM 支持的重要工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/215 source set realistic example/boards/arm/virt.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,8 +100,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "arm.h"
@@ -118,7 +120,4 @@ void VirtBoard::say_hello()
 }
 
 static VirtBoard virt;
-
-"""
-
 ```

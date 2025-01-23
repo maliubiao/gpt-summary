@@ -209,7 +209,7 @@ SwiftEnterBreakpoint("*0x12345678") # 替换为实际地址
 
 总而言之，这段代码是 Frida 动态插桩工具中用于桥接 JavaScript 和原生 Swift 代码的关键部分，它提供了强大的功能来分析、监控和修改 Swift 程序的运行时行为。理解其内部机制对于进行高级的 Frida 开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/build/subprojects/frida-gum/bindings/gumjs/runtime.bundle.p/out-qjs/swift.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -219,8 +219,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 TypeLayout().stride);
 }
 
@@ -1246,7 +1248,4 @@ class o {
   get numFields() {
     return void 0 !== s(this, e, "f") || a(this, e, this.handle.add(o.OFFSETOF_NUMFIELDS).readU32(), "f"), 
     s(th
-"""
-
-
 ```

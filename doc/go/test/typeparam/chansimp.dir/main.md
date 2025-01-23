@@ -289,15 +289,17 @@ func (r *RangerReceiver[T]) Next(ctx context.Context) (T, bool) {
 
 总而言之，这个测试文件展示了 `a` 包提供了一组用于简化和组合通道操作的泛型工具函数，涵盖了常见的通道处理模式和并发控制机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/chansimp.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -487,9 +489,4 @@ func main() {
 	TestExclusiveTry()
 	TestRanger()
 }
-
-"""
-
-
-
 ```

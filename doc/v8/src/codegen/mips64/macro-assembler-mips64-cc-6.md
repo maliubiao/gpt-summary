@@ -550,7 +550,7 @@ for (let i = 0; i < 10000; i++) {
 
 **为 V8 引擎在 MIPS64 架构上提供了一套核心的、平台相关的汇编代码生成能力。它定义了执行 JavaScript 代码、进行代码优化、与运行时系统交互以及调用 C++ API 的基础构建块。**  该文件是 V8 在 MIPS64 平台上高效运行的关键组成部分，因为它提供了生成高性能机器码的工具和抽象。它与其他代码生成模块（如 Hydrogen 和 Lithium）协作，将高级的 V8 中间表示转换为实际的 MIPS64 汇编指令。  此文件的存在是 V8 能够跨多种架构运行并提供高性能的关键因素之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/macro-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/macro-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -558,8 +558,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tion_object, JSFunction::kCodeOffset));
   CallCodeObject(code, kJSEntrypointTag);
 #endif
@@ -939,8 +941,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 #undef __
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
-
 ```

@@ -163,7 +163,7 @@ By following these steps, and iteratively refining the analysis, a comprehensive
 
 总而言之，`WebMediaPlayerMS` 负责 `MediaStream` 类型的媒体播放控制、状态管理、渲染以及与其他浏览器组件的交互，是 Blink 引擎中处理 WebRTC 和媒体捕获等场景的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/web_media_player_ms.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nd_of_stream = */ false);
   delegate_->SetIdle(delegate_id_, true);
 
@@ -946,8 +948,4 @@ void WebMediaPlayerMS::UnregisterFrameSinkHierarchy() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

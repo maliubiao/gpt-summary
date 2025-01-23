@@ -133,7 +133,7 @@ function example(x) {
 
 总而言之，这部分代码负责将中间表示形式的计算操作有效地安排到不同的基本块中，并确定这些基本块的执行顺序，最终生成可以高效执行的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/scheduler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/scheduler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -141,8 +141,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 input);
       }
     } else if (IrOpcode::IsMergeOpcode(use->opcode())) {
@@ -358,8 +360,4 @@ void Scheduler::MovePlannedNodes(BasicBlock* from, BasicBlock* to) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

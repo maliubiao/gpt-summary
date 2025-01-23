@@ -163,7 +163,7 @@ if (Process.platform === 'linux') {
 
 总而言之，`vulkanprog.c` 是一个非常基础的 Vulkan 程序，其核心功能是尝试创建和销毁 Vulkan 实例，主要目的是作为 Frida 动态插桩工具的测试用例，验证在没有有效 Vulkan 环境的情况下程序的鲁棒性，避免崩溃。 它可以作为逆向分析和理解底层图形 API 交互的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/18 vulkan/vulkanprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <vulkan/vulkan.h>
 #include <stdio.h>
 
@@ -199,7 +201,4 @@ int main(void)
 
     return 0;
 }
-
-"""
-
 ```

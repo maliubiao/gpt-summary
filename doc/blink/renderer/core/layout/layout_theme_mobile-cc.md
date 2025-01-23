@@ -102,14 +102,16 @@ By following these steps, I aimed to provide a comprehensive and accurate explan
 
 `layout_theme_mobile.cc` 文件是 Chromium Blink 引擎中一个重要的组成部分，它专注于为移动设备提供定制化的 UI 主题和默认样式。通过提供默认和全屏模式下的 CSS，以及调整特定控件的样式，它确保了网页在移动浏览器中能够以一种用户友好且一致的方式呈现。虽然普通 Web 开发者不会直接修改这个文件，但理解其功能有助于理解浏览器如何渲染网页以及如何通过 CSS 来覆盖或扩展这些默认样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_theme_mobile.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -174,7 +176,4 @@ void LayoutThemeMobile::AdjustInnerSpinButtonStyle(
 }
 
 }  // namespace blink
-
-"""
-
 ```

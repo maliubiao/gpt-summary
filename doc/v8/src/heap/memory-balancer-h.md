@@ -193,15 +193,17 @@ V8 的垃圾回收器（由 `MemoryBalancer` 协助管理）会在后台运行�
 
 总而言之，`v8/src/heap/memory-balancer.h` 定义了 V8 中负责动态管理堆内存的关键组件的接口。它通过监控分配和垃圾回收事件，并使用平滑算法来预测未来的内存需求，从而优化 JavaScript 应用程序的性能和内存使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/memory-balancer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/memory-balancer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -307,7 +309,4 @@ class HeartbeatTask : public CancelableTask {
 }  // namespace v8
 
 #endif  // V8_HEAP_MEMORY_BALANCER_H_
-
-"""
-
 ```

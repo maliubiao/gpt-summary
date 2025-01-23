@@ -173,7 +173,7 @@ getProperty(anotherObject); // 访问不存在的属性，可能触发反优化
 
 希望这个详细的分析对您有所帮助！
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/translated-state.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/deoptimizer/translated-state.cc以.tq结尾，那它是个v8 torque源代码，
@@ -181,8 +181,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ype()) &&
         offset == JSFunction::kCodeOffset) {
       // We're materializing a JSFunction's reference to a Code object. This is
@@ -504,8 +506,4 @@ void TranslatedState::ReadUpdateFeedback(
 
 // Undefine the heap manipulation macros.
 #include "src/objects/object-macros-undef.h"
-
-"""
-
-
 ```

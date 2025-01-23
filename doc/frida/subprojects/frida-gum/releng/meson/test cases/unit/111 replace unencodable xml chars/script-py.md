@@ -136,7 +136,7 @@ Frida是一个动态 instrumentation 工具，常用于逆向工程。这个脚�
 
 总而言之，这个脚本是Frida自身测试框架的一部分，用于验证Frida在处理可能导致XML编码问题的字符时的正确性和鲁棒性。它模拟了目标进程可能输出的各种特殊字符，并检验Frida是否能够妥善处理这些数据，以保证其功能的正常运行，尤其是在涉及到XML数据交换的场景中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/111 replace unencodable xml chars/script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -183,7 +185,4 @@ try:
             '\U000ffffe\U000fffff\U0010fffe\U0010ffff')
 except:
     pass
-
-"""
-
 ```

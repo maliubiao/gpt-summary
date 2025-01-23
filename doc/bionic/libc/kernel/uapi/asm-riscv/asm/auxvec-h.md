@@ -226,7 +226,7 @@ setImmediate(hook_auxv);
 
 通过 Frida hook，可以在动态链接器解析辅助向量时拦截执行，并查看辅助向量的内容，从而理解 Android Framework 或 NDK 如何利用这些信息来启动和运行应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-riscv/asm/auxvec.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -237,8 +237,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -259,7 +261,4 @@ Prompt:
 #define AT_VECTOR_SIZE_ARCH 10
 #define AT_MINSIGSTKSZ 51
 #endif
-
-"""
-
 ```

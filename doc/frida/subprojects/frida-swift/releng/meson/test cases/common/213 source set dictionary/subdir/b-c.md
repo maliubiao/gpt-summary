@@ -172,7 +172,7 @@ Here's a thinking process to arrive at the analysis of the C code snippet:
 
 通过以上步骤，用户可以逐步缩小问题范围，最终定位到 `b.c` 文件中的这段代码，并理解 `p` 变量在程序终止中的作用。这个过程体现了静态分析和动态分析相结合的逆向工程方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/213 source set dictionary/subdir/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdlib.h>
 #include "all.h"
 
@@ -195,7 +197,4 @@ int main(void)
     f();
     g();
 }
-
-"""
-
 ```

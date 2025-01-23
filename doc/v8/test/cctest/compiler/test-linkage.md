@@ -88,11 +88,13 @@ add(5, 3);
 
 **总结：** `test-linkage.cc` 是 V8 编译器测试框架的一部分，它专注于测试函数调用链接机制的正确性。这个机制对于 V8 引擎正确高效地执行 JavaScript 代码至关重要，因为它确保了函数调用时参数和返回值的正确传递和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-linkage.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ TEST(TestFPLinkageStubCall) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

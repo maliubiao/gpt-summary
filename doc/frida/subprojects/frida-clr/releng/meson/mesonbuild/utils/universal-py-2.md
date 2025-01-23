@@ -119,7 +119,7 @@ Throughout this process, I focused on interpreting the code's intent and connect
 
 第三部分主要关注于 Frida 构建系统的配置管理和数据加载。`OptionKey` 及其相关机制用于结构化和组织各种构建选项，而 `pickle_load` 则负责安全可靠地加载构建过程中产生的序列化数据，并进行版本兼容性检查。`first` 函数提供了一个简单的工具函数用于在可迭代对象中查找元素。这些功能共同支持了 Frida 构建系统的健壮性和可维护性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 nd(trial)
             else:
                 result[basename] = [trial]
@@ -709,8 +711,4 @@ def first(iter: T.Iterable[_T], predicate: T.Callable[[_T], bool]) -> T.Optional
         if predicate(i):
             return i
     return None
-
-"""
-
-
 ```

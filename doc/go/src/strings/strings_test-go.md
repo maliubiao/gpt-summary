@@ -170,7 +170,7 @@ func main() {
 
 这部分 `go/src/strings/strings_test.go` 代码是 `strings` 包的核心功能测试集的一部分，它详细测试了字符串的分割、查找、转换和修剪等基础操作，确保了这些功能的正确性和健壮性。通过分析这些测试用例，可以深入了解 `strings` 包中各个函数的使用方法和边界情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strings/strings_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -179,8 +179,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1361,10 +1363,5 @@ func TestCaseConsistency(t *testing.T) {
 		  For instance: CAPITAL LETTER I WITH DOT ABOVE:
 			unicode.ToUpper(unicode.ToLower('\u0130')) != '\u0130'
 
-		if !equal("ToUpper(lower)", ToUpper(lower), 
-"""
-
-
-
-
+		if !equal("ToUpper(lower)", ToUpper(lower),
 ```

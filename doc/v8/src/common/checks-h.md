@@ -152,15 +152,17 @@ let obj = {}; // 当创建 JavaScript 对象时，V8 会在堆上分配内存
 
 总而言之，`v8/src/common/checks.h` 定义的断言宏是 V8 代码质量保证的重要组成部分，它们在开发和调试阶段帮助开发者捕获各种潜在的错误，从而提高 V8 引擎的稳定性和可靠性，最终确保 JavaScript 代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/common/checks.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/common/checks.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ Prompt:
   DCHECK((size & ::v8::internal::kHeapObjectTagMask) == 0)
 
 #endif  // V8_COMMON_CHECKS_H_
-
-"""
-
 ```

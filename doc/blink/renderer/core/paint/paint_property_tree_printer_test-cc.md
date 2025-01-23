@@ -132,15 +132,17 @@ This systematic approach allows for a thorough understanding of the code and its
 
 总而言之，`paint_property_tree_printer_test.cc` 是一个重要的测试文件，它帮助 Chromium 开发人员确保绘制属性树的正确构建，从而保证网页渲染的准确性和性能。它与 HTML、CSS 密切相关，因为绘制属性树是基于它们构建的，而理解这些测试对于排查与渲染相关的 bug 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_property_tree_printer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -277,7 +279,4 @@ TEST_P(PaintPropertyTreePrinterTest, SimpleScrollTreePath) {
 }  // namespace blink
 
 #endif  // if DCHECK_IS_ON()
-
-"""
-
 ```

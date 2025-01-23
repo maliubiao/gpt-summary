@@ -226,7 +226,7 @@ if (fwCfgReadItemAddress) {
 
 `qemu_fw_cfg.h` 定义了 QEMU 固件配置接口的常量，用于在虚拟机启动时向操作系统传递配置信息。Android 内核和底层的 HAL 模块会使用这些常量来获取硬件信息。虽然 Framework 和 NDK 不会直接使用这些常量，但它们获取到的某些系统属性和硬件信息可能最终来源于这里。使用 Frida 可以 hook 相关的 HAL 函数或更底层的内核函数来观察这些信息的传递过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/qemu_fw_cfg.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -237,8 +237,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -313,7 +315,4 @@ struct fw_cfg_vmcoreinfo {
   __le64 paddr;
 };
 #endif
-
-"""
-
 ```

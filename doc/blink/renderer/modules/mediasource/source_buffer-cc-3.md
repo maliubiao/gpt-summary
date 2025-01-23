@@ -203,7 +203,7 @@ This iterative process of scanning, analyzing, connecting, exemplifying, and ref
 
 总而言之，`SourceBuffer.cc` 是 MSE 中至关重要的一个文件，它负责管理媒体数据的添加、移除和错误处理，是实现流媒体播放的核心组成部分。它的功能与 JavaScript 和 HTML 紧密相关，并通过事件机制与 JavaScript 进行交互。理解其内部逻辑有助于开发人员更好地使用 MSE API 并解决相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasource/source_buffer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -211,9 +211,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-   SourceBuffer object.
+### 源代码
+```cpp
+SourceBuffer object.
       ScheduleEvent(event_type_names::kUpdate);
 
       // 5. Queue a task to fire a simple event named updateend at this
@@ -325,8 +327,4 @@ void SourceBuffer::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

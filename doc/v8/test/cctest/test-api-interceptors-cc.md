@@ -156,7 +156,7 @@ console.log(obj.someProperty);
 
 `v8/test/cctest/test-api-interceptors.cc` 的第一部分主要定义了一些辅助函数和最初的测试用例，**旨在验证 V8 的 C++ API 提供的各种属性访问拦截器机制的基本功能和行为是否符合预期**。它涵盖了 getter、setter 拦截器的基本用法，以及一些简单的场景测试。这些测试为后续更复杂的拦截器测试奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-interceptors.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api-interceptors.cc以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1070,7 +1072,4 @@ THREADED_TEST(InterceptorHasOwnProperty) {
 THREADED_TEST(InterceptorHasOwnPropertyCausingGC) {
   LocalContext context;
   v8
-"""
-
-
 ```

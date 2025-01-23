@@ -155,7 +155,7 @@ By following this thought process, I arrive at a comprehensive analysis that add
 
 总而言之，虽然 `trivial.c` 本身的功能非常简单，但它在 Frida 项目中扮演着一个重要的角色，用于验证编译环境的正确性，并且它的存在和行为可以作为调试 Frida 构建过程的线索。 对于逆向工程师来说，理解这种最基本程序的运行机制，是理解更复杂程序和 Frida 如何进行动态插桩的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/5 compiler detection/trivial.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,15 +163,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
     printf("Trivial test is working.\n");
     return 0;
 }
-
-"""
-
 ```

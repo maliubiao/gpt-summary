@@ -183,7 +183,7 @@ Hello from Device!
 
 总而言之，这段代码虽然简单，但它展示了一个典型的 C++ 程序结构，包含了对象创建、链表操作和函数调用等基本概念，这使得它成为一个有用的 Frida 测试用例，用于验证 Frida 的功能和行为，或者帮助开发者理解 Frida 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/215 source set realistic example/main.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <vector>
 #include "common.h"
@@ -225,7 +227,4 @@ int main(void)
     for (auto d = devices; d; d = d->next)
         d->say_hello();
 }
-
-"""
-
 ```

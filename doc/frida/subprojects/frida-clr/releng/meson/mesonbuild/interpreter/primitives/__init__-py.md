@@ -102,7 +102,7 @@ My thought process to answer the prompt goes like this:
 
 总而言之，这个 `__init__.py` 文件是 Frida 构建系统的一个内部组成部分，它定义了 Meson 解释器用来处理构建过程中各种数据类型的基础结构。虽然用户不会直接操作它，但理解它的作用有助于理解 Frida 的构建过程，并在遇到构建问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreter/primitives/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -141,7 +143,4 @@ from .string import (
     DependencyVariableString, DependencyVariableStringHolder,
     OptionString, OptionStringHolder,
 )
-
-"""
-
 ```

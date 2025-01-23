@@ -145,7 +145,7 @@ Essentially, the thought process involved:
 
 总而言之，`stylus_writing_gesture_test.cc` 的第二部分代码的作用是**通过参数化测试，确保 `StylusWritingGestureTest` 测试套件中的测试用例在不同的方向性配置下都能正确运行**。这有助于验证手写笔手势处理逻辑在双向文本等复杂场景下的正确性。结合第一部分，整个测试文件的目的是**全面测试 Blink 渲染引擎中手写笔书写手势的处理逻辑**，确保其能够正确响应用户的输入并更新内部状态。这对于提供流畅和准确的手写输入体验至关重要，并与 JavaScript, HTML 和 CSS 等 Web 技术紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ime/stylus_writing_gesture_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 om::blink::HandwritingGestureResult::kFallback,
             last_gesture_result);
 }
@@ -165,8 +167,4 @@ INSTANTIATE_TEST_SUITE_P(BiDirectional,
                          &BoolToDirection);
 
 }  // namespace blink
-
-"""
-
-
 ```

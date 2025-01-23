@@ -112,15 +112,17 @@ By following these steps and engaging in self-correction, I can arrive at a comp
 
 总而言之，`remove_format_command.cc` 文件在 Chromium Blink 引擎中扮演着移除文本格式的关键角色，它与 JavaScript、HTML 和 CSS 紧密相关，响应用户的操作，并修改底层的 DOM 结构和样式。理解其工作原理对于开发富文本编辑器或其他需要编辑功能的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/remove_format_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Apple Computer, Inc.  All rights reserved.
  * Copyright (C) 2010 Google Inc. All rights reserved.
@@ -215,7 +217,4 @@ InputEvent::InputType RemoveFormatCommand::GetInputType() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -135,15 +135,17 @@ This detailed thought process, from understanding the basics to exploring connec
 
 总而言之，`huffman_builder_unittest.cc` 通过一系列的测试用例，确保了 `HuffmanBuilder` 类能够正确地构建 Huffman 编码表，避免常见的编码错误，为 Chromium 的网络通信提供了可靠的压缩基础。虽然 JavaScript 本身不直接操作这个 C++ 类，但 Huffman 编码的概念和应用与 JavaScript 在网络数据处理方面息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/huffman_trie/huffman/huffman_builder_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -298,7 +300,4 @@ TEST(HuffmanBuilderTest, ToVectorSingle) {
 }  // namespace
 
 }  // namespace net::huffman_trie
-
-"""
-
 ```

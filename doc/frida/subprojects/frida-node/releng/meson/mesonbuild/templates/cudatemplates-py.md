@@ -227,7 +227,7 @@ By following these steps, breaking down the code, making connections to the broa
 
 总而言之，`cudatemplates.py` 是 Frida 项目中一个用于自动化生成 CUDA C++ 项目样板代码的工具，它简化了创建和测试与 CUDA 相关的 Frida 功能或逆向目标的过程。理解它的功能有助于开发者更好地使用 Frida 进行 CUDA 应用程序的动态分析和逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/templates/cudatemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -235,8 +235,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -380,7 +382,4 @@ class CudaProject(FileHeaderImpl):
     lib_header_template = lib_h_template
     lib_test_template = lib_cuda_test_template
     lib_meson_template = lib_cuda_meson_template
-
-"""
-
 ```

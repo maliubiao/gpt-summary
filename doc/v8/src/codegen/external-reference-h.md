@@ -170,7 +170,7 @@ let result = Math.sin(0.5);
 
 总而言之，`v8/src/codegen/external-reference.h` 是 V8 代码生成器的核心组成部分，它作为一个中心化的注册表，定义和管理了代码生成过程中需要访问的各种外部符号。这层抽象使得 V8 的代码生成器能够以一种结构化和可维护的方式与引擎的内部组件、运行时环境、C 标准库以及 WebAssembly 功能进行交互。它并不直接包含执行逻辑，而是提供了连接 V8 生成的代码和外部世界的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/external-reference.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/external-reference.h以.tq结尾，那它是个v8 torque源代码，
@@ -178,8 +178,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -610,7 +612,4 @@ enum class IsolateFieldId : uint8_t;
   IF_TSAN(V, tsan_seq_cst_store_function_8_bits,                               \
           "tsan_seq_cst_store_function_8_bits")                                \
   IF_TSAN(V, tsan_seq_cst_store_function_16_bit
-"""
-
-
 ```

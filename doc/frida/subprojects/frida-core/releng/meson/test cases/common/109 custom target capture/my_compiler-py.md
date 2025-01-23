@@ -141,7 +141,7 @@ By following this structured approach, considering the context, and actively try
 
 总而言之，虽然 `my_compiler.py` 本身是一个非常简单的 Python 脚本，但它在 Frida 的构建和测试流程中扮演着一个小而重要的角色。理解它的功能和上下文有助于理解 Frida 的构建过程以及如何调试相关的构建问题。它的存在反映了软件构建系统中测试和验证的重要性，即使是对看似简单的步骤也是如此。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/109 custom target capture/my_compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -165,7 +167,4 @@ if __name__ == '__main__':
         print('Malformed input')
         sys.exit(1)
     print('This is a binary output file.')
-
-"""
-
 ```

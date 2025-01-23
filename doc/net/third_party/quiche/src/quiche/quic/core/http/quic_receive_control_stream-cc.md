@@ -165,15 +165,17 @@ By following these steps, including the self-correction, I could arrive at a com
 
 通过以上分析，我们可以了解到 `QuicReceiveControlStream.cc` 在 Chromium 网络栈中扮演着至关重要的角色，负责处理 HTTP/3 连接级别的控制信息，直接影响着网络连接的建立、配置和生命周期，并间接地影响着 JavaScript 应用的网络行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_receive_control_stream.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -442,7 +444,4 @@ bool QuicReceiveControlStream::ValidateFrameType(HttpFrameType frame_type) {
 }
 
 }  // namespace quic
-
-"""
-
 ```

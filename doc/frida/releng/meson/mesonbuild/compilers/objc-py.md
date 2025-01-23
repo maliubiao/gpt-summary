@@ -154,7 +154,7 @@ compile_args = compiler.get_option_compile_args(options)
 
 In summary, `objc.py` is a crucial component for building Frida on platforms where Objective-C is relevant. It provides the necessary abstraction and logic to interact with different Objective-C compilers, ensuring that Frida's components can be compiled correctly for these platforms. Understanding its functionality is essential for anyone debugging build issues related to Objective-C within the Frida project.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/objc.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -284,7 +286,4 @@ class _ClangObjCStds(_ClangCStds, _ClangObjCStdsBase):
 class AppleClangObjCCompiler(ClangObjCCompiler):
 
     """Handle the differences between Apple's clang and vanilla clang."""
-
-"""
-
 ```

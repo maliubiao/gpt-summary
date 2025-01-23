@@ -124,14 +124,16 @@ Finally, structure the answer clearly, addressing each part of the original requ
 
 总而言之，`instrumented_simulcast_adapter_test.cc`  的功能是验证 `InstrumentedSimulcastAdapter` 类的基本创建和销毁逻辑，并测试其在不同编码器配置下的行为。虽然它不直接涉及 JavaScript, HTML, CSS 的语法，但它对于确保 WebRTC 视频发送功能的正确性至关重要，而 WebRTC 功能是这些 Web 技术的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/instrumented_simulcast_adapter_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ TEST_F(InstrumentedSimulcastAdapterTest,
   EXPECT_TRUE(CreateInstrumentedSimulcastAdapter());
 }
 }  // namespace blink
-
-"""
-
 ```

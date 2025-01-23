@@ -123,7 +123,7 @@ Alt-Svc: h2="alt.example.org:443", h3-29=":8000"
 
 总而言之，这部分 `http_network_transaction_unittest.cc` 的代码主要负责测试 `HttpNetworkTransaction` 类在处理 HTTP 替代服务时的正确性和健壮性，涵盖了替代服务的存储、解析、应用、错误处理以及安全限制等多个方面。这是确保 Chromium 浏览器能够正确高效地利用替代服务，提升网络性能和用户体验的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第21部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 operties->GetAlternativeServiceInfos(
           test_server, kNetworkAnonymizationKey1);
   ASSERT_EQ(1u, alternative_service_info_vector.size());
@@ -919,7 +921,4 @@ TEST_P(HttpNetworkTransactionTest, AlternateProtocolUnsafeBlocked) {
   EXPECT_THAT(rv, IsError(ERR_IO_PENDING));
   // The HTTP request should succeed.
   EXPECT_THAT(cal
-"""
-
-
 ```

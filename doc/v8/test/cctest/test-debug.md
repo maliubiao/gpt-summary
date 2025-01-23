@@ -149,12 +149,14 @@ foo(7);
 
 总而言之，这个 C++ 测试文件的第一部分专注于 V8 引擎在处理各种 JavaScript 调试场景时的核心断点功能，确保断点在不同的代码位置、与垃圾回收交互以及在特定的限制条件下都能正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-debug.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -2146,8 +2148,5 @@ TEST(DebugStepKeyedLoadLoop) {
   DebugEventCounter run_step;
   v8::debug::SetDebugDelegate(env->GetIsolate(), &run_step);
 
-  // Create 
-"""
-
-
+  // Create
 ```

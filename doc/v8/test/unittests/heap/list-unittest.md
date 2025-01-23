@@ -148,11 +148,13 @@ console.log(myList.isEmpty()); // 输出 false
 
 `list-unittest.cc` 文件测试的是 V8 引擎内部用于管理对象和资源的双向链表数据结构。虽然 JavaScript 开发者不会直接操作这个类，但 V8 引擎在执行 JavaScript 代码时会大量使用这类底层数据结构来保证 JavaScript 功能的正常运行，例如对象管理、垃圾回收等。 上面的 JavaScript 例子只是概念上模拟了链表的一些基本操作，并不等同于 V8 内部 `heap::List` 的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/list-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ TEST(List, InsertMultipleAtTailAndRemoveFromMiddle) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

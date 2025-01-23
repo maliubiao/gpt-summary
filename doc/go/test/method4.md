@@ -183,15 +183,17 @@ func main() {
 
 总结来说，`go/test/method4.go` 是 Go 语言测试套件中用于验证方法表达式在处理参数时的正确性的一个组成部分。它通常与同一目录下的其他测试文件协同工作，并通过 `go test` 命令来执行测试。使用者在使用方法表达式时需要特别注意将接收者作为第一个参数传递。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/method4.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2012 The Go Authors. All rights reserved.
@@ -200,9 +202,4 @@ Prompt:
 
 // Test method expressions with arguments.
 package ignored
-
-"""
-
-
-
 ```

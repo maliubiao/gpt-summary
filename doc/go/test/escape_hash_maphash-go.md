@@ -218,15 +218,17 @@ This output confirms that the compiler, with escape analysis enabled, has determ
 
 This test case helps ensure that the Go compiler's escape analysis correctly handles the `hash/maphash.Hash` type, leading to more efficient code execution when this type is used in ways that allow for stack allocation. It's a form of compiler testing to verify that optimizations are working as expected.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_hash_maphash.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -m -l
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -246,9 +248,4 @@ func f() {
 	x.WriteString("foo")
 	x.Sum64()
 }
-
-"""
-
-
-
 ```

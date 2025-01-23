@@ -132,7 +132,7 @@ Finally, the information needs to be structured logically to provide a clear and
 
 总而言之，`a.c` 文件本身是一个非常简单的 C 程序，但它的价值在于作为 Frida 功能测试的基础。它展示了 Frida 如何通过动态 instrumentation 修改程序行为的能力，这正是逆向工程中的关键技术之一。 理解这个测试用例有助于理解 Frida 的工作原理以及动态分析的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/75 custom subproject dir/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<assert.h>
 char func_b(void);
 char func_c(void);
@@ -155,7 +157,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

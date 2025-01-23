@@ -186,14 +186,16 @@ console.log(allOdd2); // 输出: false
 
 总而言之，这个 Torque 代码文件是 V8 引擎中 `Array.prototype.every()` 方法的核心实现，它包含了优化的快速路径和通用的慢速路径，并且与 JavaScript 中 `every` 方法的行为完全一致。理解这段代码有助于深入了解 JavaScript 内置方法在引擎层面的执行方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-every.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -336,7 +338,4 @@ transitioning javascript builtin ArrayEvery(
   }
 }
 }
-
-"""
-
 ```

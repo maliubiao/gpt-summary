@@ -149,15 +149,17 @@ worker.postMessage('来自主线程的消息');
 
 `v8/src/execution/thread-id.cc` 是 V8 引擎内部用于管理线程 ID 的关键组件。它使用线程局部变量和原子变量来保证线程 ID 的唯一性和线程安全性。虽然 JavaScript 代码无法直接访问这些 ID，但理解其功能有助于理解 V8 的多线程架构，并避免与并发相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/thread-id.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/thread-id.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ int ThreadId::GetCurrentThreadId() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

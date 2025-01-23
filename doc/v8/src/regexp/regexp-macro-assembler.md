@@ -124,11 +124,13 @@ const result = str.test(regex); // true
 
 总而言之，`v8/src/regexp/regexp-macro-assembler.cc` 是 V8 引擎中一个至关重要的底层组件，它负责将正则表达式的抽象匹配逻辑转化为高效的机器码，直接驱动着 JavaScript 中正则表达式功能的执行效率。理解这个文件的内容，可以更深入地了解 JavaScript 正则表达式的底层实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-macro-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -656,7 +658,4 @@ Address NativeRegExpMacroAssembler::GrowStack(Isolate* isolate) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

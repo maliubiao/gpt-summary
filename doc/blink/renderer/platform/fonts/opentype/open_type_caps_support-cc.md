@@ -197,14 +197,16 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`open_type_caps_support.cc` 这个文件在 Chromium Blink 引擎中扮演着关键角色，它连接了 CSS 中声明的大写样式和底层字体技术的实现，确保文本能够按照预期的方式进行渲染，并处理了字体不支持某些特性时的回退和合成逻辑。理解它的功能有助于开发者更有效地使用 CSS 字体相关的属性，并避免一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/open_type_caps_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -497,7 +499,4 @@ bool OpenTypeCapsSupport::SyntheticSmallCapsAllowed() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

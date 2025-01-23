@@ -291,7 +291,7 @@ script.load()
 
 总结来说，`container.py` 是 `tomlkit` 库的核心组成部分，负责以结构化的方式存储和操作 TOML 数据。在 Frida 的动态逆向分析场景中，它使得读取、修改目标进程的 TOML 配置成为可能，为逆向工程师提供了强大的工具。理解 `Container` 类的功能和可能出现的错误，有助于编写更健壮的 Frida 脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/tomlkit/container.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -299,8 +299,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import copy
@@ -1176,7 +1178,4 @@ def ends_with_whitespace(it: Any) -> bool:
     return (
         isinstance(it, Table) and isinstance(it.value._previous_item(), Whitespace)
     ) or (isinstance(it, AoT) and len(it) > 0 and isinstance(it[-1], Whitespace))
-
-"""
-
 ```

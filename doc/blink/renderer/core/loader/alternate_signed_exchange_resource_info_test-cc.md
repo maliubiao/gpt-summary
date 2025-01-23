@@ -155,15 +155,17 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`alternate_signed_exchange_resource_info_test.cc` 是一个关键的测试文件，用于确保 Chromium Blink 引擎能够正确地处理和利用 Alternate Signed Exchange 技术，从而提升网页加载性能和安全性。它通过各种测试用例覆盖了不同的场景，为开发者提供了理解和调试 SXG 相关问题的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/alternate_signed_exchange_resource_info_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -481,7 +483,4 @@ TEST_F(AlternateSignedExchangeResourceInfoTest, Variants) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

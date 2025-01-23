@@ -200,7 +200,7 @@ cmd := exec.Command("/usr/bin/python2.7", "script.py", lldbPath)
 
 5. **调试权限问题 (macOS):** 在 macOS 上，调试其他进程可能需要特定的权限。如果用户没有被添加到 `_developer` 组，或者系统的安全性设置阻止了调试操作，LLDB 可能无法正常工作。测试代码中也包含了对这些权限的检查。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/runtime-lldb_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -208,8 +208,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -392,9 +394,4 @@ func TestLldbPython(t *testing.T) {
 		t.Fatalf("Unexpected lldb output:\n%s", got)
 	}
 }
-
-"""
-
-
-
 ```

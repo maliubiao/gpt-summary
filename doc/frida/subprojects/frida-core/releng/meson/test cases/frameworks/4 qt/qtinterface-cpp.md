@@ -99,7 +99,7 @@ Here's a breakdown of the thinking process used to analyze the provided C++ code
 
 总而言之，`qtinterface.cpp` 虽然代码很简单，但它是Frida测试框架中一个重要的组成部分，用于确保Frida能够有效地与Qt应用程序进行交互，这对于逆向分析Qt应用程序至关重要。它反映了Frida需要理解Qt的对象模型和底层实现细节才能进行有效的动态 instrumentation。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/4 qt/qtinterface.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <QGraphicsLayout>
 
 class Foo : public QGraphicsLayout
@@ -117,7 +119,4 @@ class Foo : public QGraphicsLayout
 };
 
 #include "qtinterface.moc"
-
-"""
-
 ```

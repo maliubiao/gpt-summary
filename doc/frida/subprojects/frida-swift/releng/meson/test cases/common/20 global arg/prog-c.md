@@ -179,7 +179,7 @@ meson setup builddir -Dglobal_build=true -Darg_host=arm64
 
 通过错误信息中的文件路径，用户可以快速定位到 `prog.c` 文件，查看其中的 `#error` 指令，从而了解哪些全局参数没有正确设置或者设置错误。这为用户提供了明确的调试方向，帮助他们检查 `meson setup` 命令中使用的 `-D` 选项，并确保所有必要的全局参数都被正确地定义和配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/20 global arg/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifndef MYTHING
   #error "Global argument not set"
 #endif
@@ -232,7 +234,4 @@ Prompt:
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

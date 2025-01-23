@@ -149,15 +149,17 @@ While `mkgrokdump.cc` itself isn't directly about user programming errors, the i
 
 **In summary, `mkgrokdump.cc` is a vital internal tool within the V8 project for generating a snapshot of key heap constants in a Python-readable format. This information is crucial for other V8 tools involved in testing, debugging, and analyzing the engine's memory management.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/mkgrokdump/mkgrokdump.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/mkgrokdump/mkgrokdump.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -400,7 +402,4 @@ int main(int argc, char* argv[]) {
   }
   return v8::DumpHeapConstants(out, argv[0]);
 }
-
-"""
-
 ```

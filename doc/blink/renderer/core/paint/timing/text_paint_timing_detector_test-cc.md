@@ -115,15 +115,17 @@ By following these steps, I was able to analyze the C++ test file and extract th
 
 总而言之，`text_paint_timing_detector_test.cc` 是一个关键的测试文件，用于确保 Blink 引擎能够准确地检测和报告 Largest Text Paint 指标，这对于提升用户体验和优化网页性能至关重要。 它涵盖了各种与 HTML、CSS 相关的场景，并考虑了用户交互和 DOM 操作的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/timing/text_paint_timing_detector_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1002,7 +1004,4 @@ TEST_F(TextPaintTimingDetectorTest, OpacityZeroHTML2) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -137,7 +137,7 @@ s3 is leaving, return value: 11
 
 总而言之，这个 `s3.c` 文件虽然代码简单，但它在一个更大的 Frida 测试框架中扮演着重要的角色，用于验证 Frida 在处理跨模块函数调用和动态链接方面的能力。开发者查看这个文件的原因很可能是为了调试 Frida 在处理这类复杂场景时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/114 complex link cases/s3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,14 +145,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int s2(void);
 
 int s3(void) {
     return s2() + 1;
 }
-
-"""
-
 ```

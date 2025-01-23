@@ -112,14 +112,15 @@ In this JavaScript example, the `Atomics.compareExchange()` operation needs to b
 
 This specific part of the `simulator-mips64.cc` file defines the `GlobalMonitor` class, which is responsible for simulating the global state and interactions related to Load-Linked/Store-Conditional instructions. This is crucial for correctly emulating atomic operations in a multi-threaded simulated MIPS64 environment within V8, directly impacting the behavior and correctness of JavaScript's `Atomics` API when running on this simulated architecture.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/simulator-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
-
-          failure_counter_ = 0;
+### 源代码
+```
+failure_counter_ = 0;
           return false;
         } else {
           return true;
@@ -212,8 +213,4 @@ void Simulator::GlobalMonitor::RemoveLinkedAddress(
 }  // namespace v8
 
 #endif  // USE_SIMULATOR
-
-"""
-
-
 ```

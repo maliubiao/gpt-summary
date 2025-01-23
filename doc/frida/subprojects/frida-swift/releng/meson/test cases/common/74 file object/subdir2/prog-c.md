@@ -195,7 +195,7 @@ By following these steps, considering the context of Frida, and engaging in hypo
 
 总而言之，`prog.c` 虽然简单，但它为理解动态分析、逆向工程以及底层原理提供了一个很好的起点，特别是在配合 Frida 这样的工具时，可以深入探索程序的运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/74 file object/subdir2/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int func(void);
@@ -218,7 +220,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

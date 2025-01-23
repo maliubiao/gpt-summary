@@ -127,7 +127,7 @@ By following these steps, we can generate a comprehensive and informative answer
 
 作为第 6 部分，这段代码主要关注 **`share_target` 属性的详细解析测试，以及 `related_applications`，`prefer_related_applications`，`theme_color` 和 `background_color` 属性的基本解析测试**。它验证了 Blink 引擎在解析这些关键的 manifest 属性时的正确性，包括对各种有效和无效的输入值的处理，以及错误信息的生成。这部分测试对于确保 Web Share API 和 PWA 的视觉体验等功能能够按照 manifest 的配置正常工作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/manifest/manifest_parser_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 manifest->share_target->params->url.IsNull());
     EXPECT_FALSE(IsManifestEmpty(manifest));
     EXPECT_EQ(2u, GetErrorCount());
@@ -1115,7 +1117,4 @@ TEST_F(ManifestParserTest, BackgroundColorParserRules) {
     EXPECT_EQ(1u, GetErrorCount());
     EXPECT_EQ(
         "property 'background_color'
-"""
-
-
 ```

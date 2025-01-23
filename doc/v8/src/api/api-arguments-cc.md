@@ -221,15 +221,17 @@ const instance = new myFunction('constructor arg', 456); // 触发 myFunction �
 
 理解 `PropertyCallbackArguments` 和 `FunctionCallbackArguments` 的作用对于编写与 V8 集成的 C++ 代码至关重要。 它们提供了访问 JavaScript 上下文和参数的桥梁，使得 C++ 能够响应 JavaScript 的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api-arguments.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/api/api-arguments.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -290,7 +292,4 @@ FunctionCallbackArguments::FunctionCallbackArguments(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -130,7 +130,7 @@ By following this process, I can break down the task, understand the code's purp
 
 总而言之，这段代码负责将 IA-32 架构上的机器码转换成人类可读的汇编语言，这对于理解 V8 的代码生成、调试和性能分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/ia32/disasm-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/ia32/disasm-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -138,9 +138,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-        AppendToBuffer("vminss %s,%s,", NameOfXMMRegister(regop),
+### 源代码
+```cpp
+AppendToBuffer("vminss %s,%s,", NameOfXMMRegister(regop),
                        NameOfXMMRegister(vvvv));
         current += PrintRightXMMOperand(current);
         break;
@@ -1185,8 +1187,4 @@ int DisassemblerIA32::InstructionDecode(v8::base::Vector<char> out_buffer,
           int8_t imm8 = static_cast<int8_t>(data[1]);
           data += 2;
           AppendToBuffer("%s,%s,%d", NameOfCPURegister(rm),
-   
-"""
-
-
 ```

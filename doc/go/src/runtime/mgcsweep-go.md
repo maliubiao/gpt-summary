@@ -331,7 +331,7 @@ func main() {
 
 这段 `go/src/runtime/mgcsweep.go` 代码片段是 Go 运行时垃圾回收器中负责**并发清扫**功能的核心实现。它通过管理活跃的清扫器、查找待清扫的内存块、执行实际的清扫操作以及实现比例清扫等机制，有效地回收未使用的内存，为 Go 程序的稳定运行提供保障。理解这段代码的功能有助于深入了解 Go 的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mgcsweep.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -340,8 +340,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1332,9 +1334,4 @@ func gcPaceSweeper(trigger uint64) {
 		pagesSwept := mheap_.pagesSwept.Load()
 		pagesInUse := mheap_.pagesInUse.Load()
 		sweepDistancePages := int
-"""
-
-
-
-
 ```

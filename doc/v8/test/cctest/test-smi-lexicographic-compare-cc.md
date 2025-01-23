@@ -187,15 +187,17 @@ console.log(String(10) < String(2));  // true (显式转换为字符串后比较
 
 总而言之，`v8/test/cctest/test-smi-lexicographic-compare.cc` 是一个确保 V8 内部正确实现 `Smi` 类型的字典顺序比较功能的测试用例。这与 JavaScript 中字符串比较的行为密切相关，理解这种比较方式对于避免编程错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-smi-lexicographic-compare.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-smi-lexicographic-compare.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ TEST(TestSmiLexicographicCompare) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

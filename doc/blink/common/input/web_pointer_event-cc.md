@@ -134,14 +134,16 @@ While this file is internal to the browser, understanding its purpose helps avoi
 
 In summary, `web_pointer_event.cc` is a crucial component in the Chromium Blink engine, responsible for unifying and representing pointer input, bridging the gap between platform-specific input events and the web's Pointer Events API. Understanding its functionality is essential for both Chromium developers and web developers working with pointer-based interactions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/input/web_pointer_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -271,7 +273,4 @@ WebPointerEvent WebPointerEvent::WebPointerEventInRootFrame() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

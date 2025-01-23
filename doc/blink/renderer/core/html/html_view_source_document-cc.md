@@ -200,14 +200,16 @@ This detailed breakdown, starting from the overall goal and drilling down into s
 
 总而言之，`html_view_source_document.cc` 文件是 Chromium Blink 引擎中负责生成和展示网页源代码视图的关键组件，它通过生成结构化的 HTML 并添加特定的类名，配合 CSS 和 JavaScript，为用户提供了一个易于阅读和交互的源代码查看体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_view_source_document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2008, 2009, 2010 Apple Inc. All rights reserved.
  *
@@ -651,7 +653,4 @@ void HTMLViewSourceDocument::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

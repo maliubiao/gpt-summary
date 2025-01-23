@@ -78,7 +78,7 @@ WebGPU 是一个 JavaScript API，允许 Web 开发者利用 GPU 的强大计算
 
 `dawn_enum_conversions.cc` 文件的主要功能是提供了一组 C++ 函数，用于在 Chromium Blink 引擎中将 WebGPU JavaScript API 定义的各种枚举类型转换为 Dawn 图形库中对应的枚举类型，以及反向转换。这 обеспечивается WebGPU 功能在浏览器中的正确实现，使得 JavaScript 代码可以控制底层的图形操作。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/dawn_enum_conversions.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -86,8 +86,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -786,7 +788,4 @@ wgpu::FeatureName AsDawnEnum(const V8GPUFeatureName& webgpu_enum) {
     case V8GPUFeatureName::Enum::kTimestampQuery:
       return wgpu::FeatureName::TimestampQuery;
     case V8GPUFeatureName::Enum:
-"""
-
-
 ```

@@ -102,15 +102,17 @@ This methodical approach allows for a comprehensive and accurate response to the
 
 总而言之，这个测试文件是确保 `IntersectionObserver` 功能在 Chromium 中正确、稳定运行的关键组成部分。它通过模拟各种使用场景和潜在的错误用法，帮助开发者发现和修复 bug，保证了 Web 开发者在使用该 API 时的行为符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/intersection_observer/intersection_observer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 cause the scroll margin is zero
   // and target should not intersect.
   TestScrollMarginNested(/* scroll_margin */ 0, /* is_intersecting */ false,
@@ -316,8 +318,4 @@ TEST_F(IntersectionObserverTest, ScrollMarginEmptyString) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -185,14 +185,16 @@ Throughout this process, I would constantly review my understanding and the code
 
 总而言之，`blink/renderer/core/events/mouse_event.cc` 文件是 Blink 引擎处理鼠标事件的基础，它负责创建、初始化、计算和派发鼠标事件，并将这些信息传递给 JavaScript，从而使得网页能够响应用户的鼠标交互。理解这个文件的功能有助于深入理解浏览器事件机制的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/mouse_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2001 Peter Kelly (pmk@post.com)
  * Copyright (C) 2001 Tobias Anton (anton@stud.fbi.fh-darmstadt.de)
@@ -768,7 +770,4 @@ double MouseEvent::offsetY() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

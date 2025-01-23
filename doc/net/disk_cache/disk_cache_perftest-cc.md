@@ -160,15 +160,17 @@ Let's break down the thought process for analyzing this C++ performance test fil
 
 总之，`net/disk_cache/disk_cache_perftest.cc` 是幕后英雄，它通过严谨的性能测试，保障了 Chromium 磁盘缓存的高效运行，最终提升了用户的网页浏览体验，也间接地影响了 JavaScript 应用的加载速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/disk_cache_perftest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -881,7 +883,4 @@ TEST(SimpleIndexPerfTest, MAYBE_EvictionPerformance) {
 }
 
 }  // namespace
-
-"""
-
 ```

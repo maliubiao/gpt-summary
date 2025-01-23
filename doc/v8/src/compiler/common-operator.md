@@ -58,12 +58,14 @@ if (x > 5) {
 
 `v8/src/compiler/common-operator.cc` 是 V8 编译器基础设施的核心部分，它定义了编译器在将 JavaScript 代码转化为机器码时所使用的基本操作单元。它不直接执行 JavaScript 代码，而是为编译器提供了一套标准的、可重用的操作符，用于构建和优化 JavaScript 代码的中间表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/common-operator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1804,8 +1806,5 @@ const Operator* CommonOperatorBuilder::Chained(const Operator* op) {
 const Operator* CommonOperatorBuilder::DeadValue(MachineRepresentation rep) {
   return zone()->New<Operator1<MachineRepresentation>>(  // --
       IrOpcode::kDeadValue, Operator::kPure,             // opcode
-      "DeadValue",                            
-"""
-
-
+      "DeadValue",
 ```

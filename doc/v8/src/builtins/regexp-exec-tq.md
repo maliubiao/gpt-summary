@@ -175,14 +175,16 @@ const str = 'xabbbcdefabc';
 
 总而言之，`v8/src/builtins/regexp-exec.tq` 文件是 V8 引擎中实现 `RegExp.prototype.exec` 方法的关键部分，它处理类型检查、选择优化路径并最终执行正则表达式匹配逻辑。理解其功能有助于深入了解 JavaScript 正则表达式的工作原理以及可能出现的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/regexp-exec.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -227,7 +229,4 @@ transitioning javascript builtin RegExpPrototypeExec(
       RegExpPrototypeExecSlow(receiver, string);
 }
 }
-
-"""
-
 ```

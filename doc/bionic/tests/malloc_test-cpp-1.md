@@ -30,7 +30,7 @@ Here's a plan:
 
 总而言之，这部分代码主要负责对 Android Bionic 库中的内存分配器进行全面的功能测试，包括基本的分配、释放、对齐、限制，以及一些 Android 特有的扩展功能，如与 Zygote 进程的集成、内存分配限制、GWP-ASan 和 MTE 的支持，以及零初始化等。这些测试确保了 Android 系统内存管理的稳定性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/malloc_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -42,8 +42,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 uirement since clang expects this behavior on Android now.
   for (size_t i = 1; i <= 128; i++) {
 #if defined(__LP64__)
@@ -785,8 +787,4 @@ TEST(android_mallopt, get_decay_time_enabled) {
   GTEST_SKIP() << "bionic-only test";
 #endif
 }
-
-"""
-
-
 ```

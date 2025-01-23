@@ -122,11 +122,13 @@ functionB @ file:///path/to/your/script.js:7
 
 `stack_trace_android.cc` 是 V8 引擎在 Android 平台上实现 JavaScript 堆栈跟踪功能的基础。它负责捕获底层的机器码级别的调用堆栈信息，供 V8 引擎进一步处理和呈现给 JavaScript 开发者。  它使得开发者能够了解 JavaScript 代码的执行流程，方便调试和错误排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/debug/stack_trace_android.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ void StackTrace::OutputToStream(std::ostream* os) const {
 }  // namespace debug
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -163,15 +163,17 @@ func main() {
 
 总而言之，`go/test/ken/mfunc.go` 是一个非常基础的 Go 语言示例，用于验证多参数、多返回值函数的基本用法。它的主要目的是确保 Go 编译器和运行时能够正确处理这种类型的函数定义和调用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/ken/mfunc.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -194,9 +196,4 @@ func
 simple(ia,ib,ic int) (oa,ob int) {
 	return ia+5, ib+ic;
 }
-
-"""
-
-
-
 ```

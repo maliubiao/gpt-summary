@@ -148,7 +148,7 @@ This systematic approach of scanning, analyzing, grouping, and connecting to Jav
 
 由于这是第三部分，并且没有提供前两部分的内容，所以这个总结主要基于你提供的代码片段。 如果提供了前两部分，可以进行更全面的功能归纳。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/regexp/regexp-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/regexp/regexp-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -156,8 +156,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 oString->Int32Value(isolate()->GetCurrentContext()).FromJust());
 
   // .toString() throws on non-RegExps that aren't RegExp.prototype
@@ -835,8 +837,4 @@ TEST_F(RegExpTestWithContext, RegExpInterruptReentrantExecution) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

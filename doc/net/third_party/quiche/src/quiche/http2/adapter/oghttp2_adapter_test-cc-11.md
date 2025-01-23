@@ -168,7 +168,7 @@ OnDataPaddingLength(1, 254)
 
 作为测试文件的最后一部分，`oghttp2_adapter_test.cc` 的功能是**对 `OgHttp2Adapter` 进行全面的单元测试，覆盖其核心的 HTTP/2 协议处理能力，包括帧的解析和生成、首部处理、流管理、流控、设置帧处理以及客户端和服务端视角下的行为。**  它的存在保证了 `OgHttp2Adapter` 的正确性和健壮性，从而确保了基于 Chromium 的浏览器能够可靠地进行 HTTP/2 通信。  这部分测试是整个 `OgHttp2Adapter` 开发和维护过程中至关重要的一环。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第12部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nsisting
   // of padding.
   size_t total_size = 0;
@@ -563,8 +565,4 @@ TEST(OgHttp2AdapterTest, SetCookieRoundtrip) {
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
-
 ```

@@ -137,7 +137,7 @@ Frida 可能会使用 `ptrace` 系统调用来依附到 `sneaky.c` 进程。 如
 
 总而言之，`sneaky.c` 虽然代码简单，但在 Frida 的测试框架中扮演着重要的角色，用于测试 Frida 在面对特定场景时的能力，特别是那些涉及隐蔽行为或非标准操作的场景。 它的存在和失败状态为 Frida 的开发人员提供了宝贵的调试信息，有助于改进 Frida 的功能和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/59 grab sibling/subprojects/b/sneaky.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,15 +145,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
     printf("I can only come into existence via trickery.\n");
     return 0;
 }
-
-"""
-
 ```

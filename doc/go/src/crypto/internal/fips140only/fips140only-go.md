@@ -153,7 +153,7 @@ func main() {
 
 总而言之，`fips140only.go` 文件的核心作用是提供一个机制来控制 Go 语言的 `crypto` 库是否运行在 FIPS 140 仅限模式下，并提供辅助函数来判断给定的哈希算法和随机数读取器是否是被 FIPS 140 标准所批准的。 这有助于开发者构建符合 FIPS 140 规范的应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140only/fips140only.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -161,8 +161,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -196,9 +198,4 @@ func ApprovedRandomReader(r io.Reader) bool {
 	_, ok := r.(drbg.DefaultReader)
 	return ok
 }
-
-"""
-
-
-
 ```

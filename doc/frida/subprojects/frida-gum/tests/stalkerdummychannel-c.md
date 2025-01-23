@@ -155,7 +155,7 @@ While this specific file doesn't directly interact with the kernel or perform lo
 
 In essence, `stalkerdummychannel.c` is a crucial piece of infrastructure for testing Frida's Stalker component, allowing developers to isolate and verify its behavior in a controlled environment without needing to run full-fledged instrumentation scenarios. This contributes to the overall robustness and reliability of the Frida toolkit, which is widely used in reverse engineering.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/stalkerdummychannel.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2019 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -290,7 +292,4 @@ sdc_transition_to_state_unlocked (StalkerDummyChannel * self,
   self->state = new_state;
   g_cond_signal (&self->cond);
 }
-
-"""
-
 ```

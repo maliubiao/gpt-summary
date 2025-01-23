@@ -149,14 +149,16 @@ Let's break down the thought process for analyzing this `interpolable_color.cc` 
 
 总而言之，`interpolable_color.cc` 是 Blink 引擎中一个核心的组件，它使得浏览器能够平滑地处理 CSS 颜色动画和过渡，为用户带来更流畅的视觉体验。它涉及到颜色表示、颜色空间转换、插值算法以及对 CSS 颜色关键字的处理等多个方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/interpolable_color.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -533,7 +535,4 @@ void InterpolableColor::Composite(const BaseInterpolableColor& value,
 }
 
 }  // namespace blink
-
-"""
-
 ```

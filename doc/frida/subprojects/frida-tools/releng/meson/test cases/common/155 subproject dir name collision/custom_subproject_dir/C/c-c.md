@@ -102,7 +102,7 @@ By following this thought process, I can create a comprehensive and accurate ans
 
 总而言之，`c.c`  这段代码本身非常简单，但它在 Frida 的测试和验证过程中扮演着重要的角色，用于测试基本的代码注入和函数调用功能。它也为理解 Frida 如何处理动态链接库和跨平台兼容性提供了一个简单的示例。 调试时，如果用户发现注入的简单函数都无法正常工作，那么很可能问题出在更底层的 Frida 注入机制或环境配置上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/155 subproject dir name collision/custom_subproject_dir/C/c.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -126,7 +128,4 @@ Prompt:
 char DLL_PUBLIC func_c(void) {
     return 'c';
 }
-
-"""
-
 ```

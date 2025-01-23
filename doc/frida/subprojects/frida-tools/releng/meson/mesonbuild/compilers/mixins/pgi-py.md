@@ -146,7 +146,7 @@ By following this systematic approach, I can comprehensively analyze the code sn
 
 总而言之，`pgi.py` 文件在 Frida 的构建系统中扮演着关键角色，它定义了如何与 PGI 编译器进行交互，其配置直接影响着最终生成的可执行文件和库文件的特性，这些特性与逆向工程以及底层系统知识息息相关。用户通常在遇到与 PGI 编译器相关的构建问题时，或者为了深入了解 Frida 的构建机制时，会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/mixins/pgi.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The meson development team
 
@@ -244,7 +246,4 @@ class PGICompiler(Compiler):
     def thread_flags(self, env: 'Environment') -> T.List[str]:
         # PGI cannot accept -pthread, it's already threaded
         return []
-
-"""
-
 ```

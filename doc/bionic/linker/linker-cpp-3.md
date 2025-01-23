@@ -294,7 +294,7 @@ sys.stdin.read()
 
 总而言之，这段代码就像一个信息提取器和验证器，它从共享库的动态段中提取构建和链接共享库所需的关键信息，为后续的动态链接过程奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -306,8 +306,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 able_get_arm_exidx(phdr, phnum, load_bias,
                                   &ARM_exidx, &ARM_exidx_count);
 #endif
@@ -1204,8 +1206,4 @@ void purge_unused_memory() {
   // it is not worth munmap()'ing those pages.
   TypeBasedAllocator<LoadTask>::purge();
 }
-
-"""
-
-
 ```

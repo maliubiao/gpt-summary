@@ -126,7 +126,7 @@ Here's a breakdown of the code's functionality:
 
 总而言之，这段代码是 `RTCRtpSender` 类中负责管理媒体发送的核心逻辑，包括参数设置、统计信息获取、媒体流管理、DTMF 支持以及与 "Encoded Transform" 功能相关的编码后数据处理。它在 WebRTC 的媒体发送流程中扮演着至关重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_rtp_sender.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 encoding_options = options->encodingOptions();
     if (!encoding_options.empty()) {
       if (encoding_options.size() != encodings.size()) {
@@ -699,8 +701,4 @@ void RTCRtpSender::LogMessage(const std::string& message) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

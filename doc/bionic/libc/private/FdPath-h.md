@@ -259,7 +259,7 @@ By following this systematic approach, including analysis, connection to the lar
 
 通过以上分析，我们可以深入理解 `bionic/libc/private/FdPath.handroid.h` 中 `FdPath` 类的功能、实现以及在 Android 系统中的应用。Frida Hook 示例可以帮助我们动态地观察其行为，加深理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/FdPath.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,8 +270,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -303,7 +305,4 @@ class FdPath {
  private:
   char buf[40];
 };
-
-"""
-
 ```

@@ -193,15 +193,17 @@ This iterative process of understanding the code, connecting it to web concepts,
 
 总而言之，`blink/renderer/modules/service_worker/navigation_preload_manager.cc` 是 Chromium 中负责实现 Service Worker Navigation Preload 功能的核心 C++ 代码。它通过 JavaScript API 暴露给开发者，允许他们优化页面导航的性能。理解这个文件的功能以及它与 Web 技术的关系，有助于开发者更好地使用 Service Worker 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/service_worker/navigation_preload_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -277,7 +279,4 @@ void NavigationPreloadManager::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

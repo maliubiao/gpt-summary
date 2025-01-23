@@ -320,7 +320,7 @@ if (Process.platform === 'android') {
 
 通过这个 Frida hook 示例，你可以动态地观察 Android 系统或应用程序中 `waitpid` 的调用情况，并验证 `bits/wait.h` 中定义的宏是如何被用于解析进程退出状态的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/wait.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -331,8 +331,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -401,7 +403,4 @@ Prompt:
 
 /** Constructs a status value for a process stopped by the given signal. */
 #define W_STOPCODE(__signal_number) ((__signal_number) << 8 | 0x7f)
-
-"""
-
 ```

@@ -100,14 +100,16 @@ This systematic approach, moving from code inspection to abstract connections an
 
 总而言之，`blink/common/safe_url_pattern.cc` 中定义的类是 Blink 引擎内部用于进行安全 URL 模式匹配的关键组件。它虽然不直接暴露给前端开发者，但其功能深刻影响着浏览器如何处理和验证 JavaScript、HTML 和 CSS 中使用的 URL，从而保障用户的安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/safe_url_pattern.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -140,7 +142,4 @@ bool operator==(const SafeUrlPatternOptions& left,
 }
 
 }  // namespace blink
-
-"""
-
 ```

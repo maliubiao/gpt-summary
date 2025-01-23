@@ -121,15 +121,17 @@ This iterative process of scanning, understanding the core purpose, identifying 
 
 总而言之，`quic_crypto_server_stream_test.cc` 是 QUIC 协议服务器端加密握手逻辑的重要测试文件，对于保证 QUIC 连接的安全性和可靠性至关重要。开发者可以通过分析这个文件中的测试用例，更好地理解服务器端握手流程，排查和修复相关的网络连接问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_crypto_server_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -538,7 +540,4 @@ TEST_F(QuicCryptoServerStreamTestWithFakeProofSource, MultipleChlo) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

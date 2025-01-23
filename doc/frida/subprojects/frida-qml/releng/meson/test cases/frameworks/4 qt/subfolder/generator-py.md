@@ -122,7 +122,7 @@ Initially, I might have focused too much on the simplicity of the script and mis
 
 总而言之，尽管 `generator.py` 脚本本身非常简单，但它在 Frida 动态插桩工具的测试和开发流程中扮演着一定的角色。它可能用于生成简单的测试数据，模拟目标程序需要的输入文件，或者作为 Frida-QML 框架测试用例的一部分。理解其功能需要结合 Frida 的应用场景以及相关的操作系统和框架知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/4 qt/subfolder/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,15 +130,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
 if len(sys.argv) > 1:
     with open(sys.argv[1], "w") as output:
         output.write("Hello World")
-
-"""
-
 ```

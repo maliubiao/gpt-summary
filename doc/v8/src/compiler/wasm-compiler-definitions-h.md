@@ -320,15 +320,17 @@ LocationSignature* BuildLocations(Zone* zone, const Signature<T>* sig,
 
 了解 `v8/src/compiler/wasm-compiler-definitions.h` 中定义的这些概念有助于理解 V8 如何编译和执行 WebAssembly 代码，以及如何避免常见的 WebAssembly 编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-compiler-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/wasm-compiler-definitions.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -449,7 +451,4 @@ LocationSignature* BuildLocations(Zone* zone, const Signature<T>* sig,
 }  // namespace v8
 
 #endif  // V8_COMPILER_WASM_COMPILER_DEFINITIONS_H_
-
-"""
-
 ```

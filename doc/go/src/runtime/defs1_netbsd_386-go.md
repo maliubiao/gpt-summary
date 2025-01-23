@@ -186,7 +186,7 @@ func main() {
 
 `go/src/runtime/defs1_netbsd_386.go` 是 Go 运行时在 NetBSD 32 位平台上与操作系统内核交互的桥梁，定义了许多底层的常量和数据结构，为 Go 的系统调用、信号处理、时间管理、内存管理等核心功能提供了基础。普通 Go 开发者无需直接关心这个文件，但理解其作用有助于更深入地理解 Go 语言的底层运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs1_netbsd_386.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // created by cgo -cdefs and then converted to Go
 // cgo -cdefs defs_netbsd.go defs_netbsd_386.go
 
@@ -384,9 +386,4 @@ const (
 	_REG_UESP   = 0x11
 	_REG_SS     = 0x12
 )
-
-"""
-
-
-
 ```

@@ -146,15 +146,17 @@ func main() {
 
 `go/test/fixedbugs/issue7525.go` 这段代码是一个精心构造的 Go 语言测试用例，其目的是验证 Go 编译器能否正确地检测并报告自引用数组类型导致的编译错误。它利用了 `unsafe.Sizeof` 创造了循环依赖，并使用特殊的注释来指导 `go test` 工具进行错误检查。 开发者应该避免在实际代码中编写类似的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7525.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -170,9 +172,4 @@ import "unsafe"
 var x struct { // GC_ERROR "initialization cycle: x refers to itself"
 	a [unsafe.Sizeof(x.a)]int // GCCGO_ERROR "array bound|typechecking loop|invalid expression"
 }
-
-"""
-
-
-
 ```

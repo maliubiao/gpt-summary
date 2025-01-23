@@ -85,11 +85,13 @@ console.log(test(3.14, 3)); // 输出 false
 
 `sloppy-equality-unittest.cc` 是 V8 编译器的内部测试，它通过观察编译器生成的中间代码，验证了 V8 在处理 JavaScript 非严格相等运算时是否遵循了 JavaScript 的语义，并且是否进行了有效的优化。这些测试确保了 V8 能够正确且高效地执行 JavaScript 中使用 `==` 运算符的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/sloppy-equality-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ TEST_F(SloppyEqualityTest, SloppyEqualityTest) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

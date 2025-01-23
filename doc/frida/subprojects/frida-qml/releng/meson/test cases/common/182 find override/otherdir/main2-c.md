@@ -169,7 +169,7 @@ Interceptor.attach(Module.findExportByName(null, 'number_retuner'), { ... });
 
 总而言之，`main2.c` 是一个用于测试 Frida 动态 instrumentation 功能的简单 C 程序。它本身并不复杂，但其在 Frida 项目中的存在，以及它所测试的功能（函数 override），使其与逆向方法、二进制底层、操作系统知识以及用户操作流程紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/182 find override/otherdir/main2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,14 +177,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int number_returner(void);
 
 int main(void) {
     return number_returner() == 100 ? 0 : 1;
 }
-
-"""
-
 ```

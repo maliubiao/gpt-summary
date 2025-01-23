@@ -147,7 +147,7 @@ if __name__ == "__main__":
 
 总而言之，`b.c` 这个文件虽然简单，但在 Frida 的测试用例中扮演着重要的角色，用于演示和验证动态插桩技术如何影响程序的执行流程和结果。它也体现了软件开发中常见的条件判断和错误处理模式，以及逆向工程中常用的分析和调试方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/73 shared subproject 2/subprojects/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 char func_c(void);
 
@@ -177,7 +179,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

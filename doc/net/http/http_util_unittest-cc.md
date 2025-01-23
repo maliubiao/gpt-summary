@@ -210,7 +210,7 @@ By following this structured approach, we can thoroughly analyze the C++ code an
 
 `net/http/http_util_unittest.cc` 的第一部分主要集中在测试 `net::HttpUtil` 中用于处理和解析 HTTP 头部、URL 以及一些特定 HTTP 头部（如 `Content-Type`, `Content-Range`, `Retry-After`）的实用工具函数。这些函数在 Chromium 浏览器的网络请求和响应处理流程中扮演着基础且关键的角色，直接影响着 JavaScript 网络 API 的行为和浏览器的功能。 通过这些单元测试，可以确保这些核心工具函数的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_util_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -218,8 +218,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1411,7 +1413,4 @@ TEST(HttpUtilTest, ParseRetryAfterHeader) {
 }
 
 TES
-"""
-
-
 ```

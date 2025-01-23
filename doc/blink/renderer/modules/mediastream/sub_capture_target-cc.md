@@ -184,15 +184,17 @@ This structured approach allows for a comprehensive analysis of the given code s
 
 总而言之，`SubCaptureTarget.cc` 定义了一个用于标识和管理子区域捕获目标的类，它在浏览器内部的媒体捕获流程中扮演着重要的角色，并与 JavaScript、HTML 等 Web 技术紧密相关。理解其功能和错误处理机制有助于我们更好地开发和调试涉及屏幕共享等功能的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/sub_capture_target.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -270,7 +272,4 @@ SubCaptureTarget::SubCaptureTarget(Type type, String id)
 }
 
 }  // namespace blink
-
-"""
-
 ```

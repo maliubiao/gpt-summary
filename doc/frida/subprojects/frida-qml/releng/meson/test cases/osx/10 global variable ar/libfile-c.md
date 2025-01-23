@@ -161,7 +161,7 @@ console.log("Ready");
 
 总而言之，虽然 `libfile.c` 本身非常简单，但它在 Frida 的上下文中扮演着重要的角色，用于测试和验证 Frida 对全局变量的处理能力，并为理解 Frida 在逆向分析中的应用提供了具体的例子。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/osx/10 global variable ar/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // Source: https://lists.gnu.org/archive/html/libtool/2002-07/msg00025.html
 
 #include <stdio.h>
@@ -180,7 +182,4 @@ void l1(void)
 {
   printf("l1 %d\n", l2);
 }
-
-"""
-
 ```

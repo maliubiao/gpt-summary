@@ -96,15 +96,17 @@ go build eof1.go
 
 `go/test/eof1.go` 这个文件是一个简单的编译测试用例，它验证了 Go 编译器在处理以注释结尾且缺少最终换行符的源文件时的正确性。它强调了 Go 编译器在语法解析上的灵活性，不需要强制在所有 Go 源代码文件的末尾添加换行符。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/eof1.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compile
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -117,8 +119,4 @@ Prompt:
 package eof1
 
 // No newline at the end of this comment.
-"""
-
-
-
 ```

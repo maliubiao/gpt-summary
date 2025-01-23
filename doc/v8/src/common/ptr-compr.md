@@ -99,11 +99,13 @@ for (let i = 0; i < largeArray.length; i++) {
 
 `ptr-compr.cc` 负责管理 V8 内部指针压缩机制的关键部分——基地址。  虽然 JavaScript 开发者无法直接感知到指针压缩的存在，但这项优化对于 V8 引擎的内存管理和性能至关重要，它使得 V8 能够更有效地利用内存，从而间接地提升 JavaScript 代码的执行效率，尤其是在处理大量对象或大型数据结构时。  它是一个底层的优化，对上层 JavaScript 代码是透明的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/common/ptr-compr.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -150,7 +152,4 @@ void ExternalCodeCompressionScheme::set_base_non_inlined(Address base) {
 #endif  // V8_COMPRESS_POINTERS
 
 }  // namespace v8::internal
-
-"""
-
 ```

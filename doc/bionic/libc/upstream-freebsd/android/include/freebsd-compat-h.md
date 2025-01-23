@@ -295,7 +295,7 @@ int main(int argc, char *argv[]) {
 
 `bionic/libc/upstream-freebsd/android/include/freebsd-compat.handroid` 这个头文件是 Bionic 库为了提供 FreeBSD 兼容性而存在的一个重要组成部分。它通过定义宏来启用 BSD 特性、替换标准函数和提供平台特定的实现。理解它的作用有助于我们更好地理解 Android 系统底层的运作方式以及 Bionic 如何处理跨平台的兼容性问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-freebsd/android/include/freebsd-compat.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -306,8 +306,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2013 The Android Open Source Project
  *
@@ -334,7 +336,4 @@ Prompt:
 #define issetugid() 0
 
 #define __compiler_membar() __asm __volatile(" " : : : "memory")
-
-"""
-
 ```

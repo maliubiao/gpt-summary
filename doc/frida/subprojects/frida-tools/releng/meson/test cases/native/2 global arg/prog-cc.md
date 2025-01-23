@@ -104,7 +104,7 @@ This detailed thought process breaks down the analysis step-by-step, starting fr
 
 `prog.cc` 是一个简单的编译时测试，用于确保 Frida 的构建系统正确地处理全局参数。它的存在有助于保证 Frida 工具链在构建时就具有正确的配置，从而为后续的逆向分析工作提供可靠的基础。如果用户在构建 Frida 时遇到与此文件相关的编译错误，那通常意味着他们在配置构建环境时遗漏或错误地设置了必要的全局参数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/native/2 global arg/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifdef MYTHING
 #error "Wrong global argument set"
 #endif
@@ -129,7 +131,4 @@ Prompt:
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

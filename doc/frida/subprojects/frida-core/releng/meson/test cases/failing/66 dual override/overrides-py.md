@@ -181,7 +181,7 @@ Frida 是一个用于动态分析和逆向工程的强大工具。 "覆盖" (ove
 
 `frida/subprojects/frida-core/releng/meson/test cases/failing/66 dual override/overrides.py` 并非一个直接由最终用户运行的脚本。它是一个 Frida 内部的 **失败测试用例**，用于验证 Frida 在处理双重覆盖场景时的行为。它的存在可以帮助开发者确保 Frida 在这种潜在的错误使用情况下能够正确处理或提供反馈。对于用户来说，理解这个测试用例可以帮助他们避免编写导致双重覆盖问题的 Frida 脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/66 dual override/overrides.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,13 +189,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('Yo dawg, we put overrides in your overrides,')
 print('so now you can override when you override.')
-
-"""
-
 ```

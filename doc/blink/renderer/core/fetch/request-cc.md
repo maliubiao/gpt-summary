@@ -107,7 +107,7 @@ const request = new Request('https://api.example.com/data', {
 
 如果在调试过程中，开发者发现请求的某些属性设置不正确，或者请求无法成功发送，他们可能会在浏览器的开发者工具中设置断点，逐步跟踪 `fetch()` 调用的执行流程，最终可能会进入到 `blink/renderer/core/fetch/request.cc` 文件中的相关代码，查看 `Request` 对象的创建和配置过程，以便找出问题所在。例如，开发者可能会检查 `RequestInit` 中的 `headers` 是否正确传递，或者 `body` 是否被正确编码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/request.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -824,7 +826,4 @@ Request* Request::CreateRequestWithRequestOrString(
       return nullptr;
     }
     if (FetchUtils::IsForbiddenMethod(ini
-"""
-
-
 ```

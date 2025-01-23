@@ -169,7 +169,7 @@ Initially, I might have focused too heavily on the computational aspects of `inc
 
 总而言之，`simd_ssse3.c` 是 Frida 项目中用于测试 SSSE3 SIMD 功能的一个小巧但关键的测试用例。它展示了如何检测 SSSE3 支持以及如何使用 SSSE3 指令进行简单的数值运算，并为理解 Frida 如何在底层利用 CPU 功能提供了线索。 它的存在对于确保 Frida 在不同硬件平台上的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/147 simd/simd_ssse3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -227,7 +229,4 @@ void increment_ssse3(float arr[4]) {
     arr[2] = (float)darr[3];
     arr[3] = (float)darr[2];
 }
-
-"""
-
 ```

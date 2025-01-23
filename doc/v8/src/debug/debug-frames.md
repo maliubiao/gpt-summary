@@ -133,11 +133,13 @@ calculateSum(10, 20);
 
 `debug-frames.cc` 是 V8 引擎中负责处理调试相关堆栈帧信息的关键组件。 它通过 `FrameInspector` 提供了一种结构化的方式来访问和检查单个堆栈帧的详细信息，并利用 `RedirectActiveFunctions` 支持在运行时修改函数字节码的能力。 这些功能是 JavaScript 调试器正常工作的基石，使得开发者能够深入了解代码的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-frames.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ void RedirectActiveFunctions::VisitThread(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

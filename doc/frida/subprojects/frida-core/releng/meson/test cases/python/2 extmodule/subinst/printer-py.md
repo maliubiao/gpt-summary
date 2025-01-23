@@ -108,7 +108,7 @@ Here's a breakdown of the thinking process to analyze the provided Python script
 
 **作为调试线索：** 如果在 Frida 的测试过程中，关于扩展模块或子安装的测试失败，开发者可能会查看相关的测试用例代码，从而找到这个 `printer.py` 文件。这个脚本的简单性使得它可以作为一个基础的验证点，确认 Frida 是否能够成功执行位于特定位置的 Python 代码。如果 "subinst" 没有被打印出来，那么就说明在 Frida 加载或执行扩展模块的流程中出现了问题，需要进一步排查。开发者可能会检查 Frida 的日志、目标进程的内存状态、或者调试 Frida 的内部代码来定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/python/2 extmodule/subinst/printer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,12 +116,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('subinst')
-
-"""
-
 ```

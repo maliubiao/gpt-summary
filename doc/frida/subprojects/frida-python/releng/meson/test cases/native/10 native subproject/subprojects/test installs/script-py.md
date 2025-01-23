@@ -121,7 +121,7 @@ Initially, one might be tempted to overthink the script's functionality due to i
 
 总而言之，这个看似简单的 `exit(1)` 脚本在 Frida 的测试框架中扮演着重要的角色，用于模拟原生组件安装失败的情况，并验证 Frida 及其构建系统是否能够正确处理这些错误。 用户通常不会直接运行它，但当遇到与原生组件安装相关的错误时，这个脚本可能会成为调试线索的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/native/10 native subproject/subprojects/test installs/script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,13 +129,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #/usr/bin/env python3
 
 # Always error
 exit(1)
-
-"""
-
 ```

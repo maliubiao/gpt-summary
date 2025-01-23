@@ -132,7 +132,7 @@ By following these steps, we can generate a comprehensive explanation that addre
 
 **这个测试用例的核心目的是验证 Frida 在处理函数调用和返回值方面的能力。即使 `func` 没有具体的实现，Frida 仍然可以 hook `main` 函数，并在调用 `func` 之后获取其返回值 (即使这个返回值是未定义的或者来自链接的库)。**  通过分析这样的测试用例，用户可以更好地理解 Frida 的工作原理，并学习如何编写更有效的 Frida 脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/native/3 pipeline/depends/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,14 +140,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void);
 
 int main(void) {
     return func() != 42;
 }
-
-"""
-
 ```

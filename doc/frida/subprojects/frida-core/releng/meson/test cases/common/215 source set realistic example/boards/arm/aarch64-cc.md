@@ -116,7 +116,7 @@ Initially, I might have overthought the complexity due to the "realistic example
 
 总而言之，这个 `aarch64.cc` 文件虽然代码简单，但在 Frida 项目中扮演着重要的角色，用于测试 Frida 在 AArch64 平台上的基本功能，并为开发者提供调试信息。它体现了 Frida 对不同架构的支持以及其内部测试的严谨性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/215 source set realistic example/boards/arm/aarch64.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "common.h"
 #include <iostream>
 
@@ -134,7 +136,4 @@ void initialize_target()
     std::cout << ANSI_START << "some " << THE_TARGET
               << " initialization" << ANSI_END << std::endl;
 }
-
-"""
-
 ```

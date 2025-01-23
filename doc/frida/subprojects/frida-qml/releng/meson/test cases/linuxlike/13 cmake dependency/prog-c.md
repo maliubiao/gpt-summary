@@ -116,7 +116,7 @@ Here's a breakdown of the thinking process to analyze the given C code snippet a
 
 总而言之，这段简单的 C 代码片段虽然功能单一，但它反映了程序运行时依赖管理的关键环节，并且与逆向工程、底层系统知识以及常见的编程错误息息相关。在 Frida 动态插桩的上下文中，这段代码可以作为一个观察点，用于验证目标进程中 zlib 库的加载状态。通过 Frida，我们可以 hook 这个条件判断语句，或者直接读取 `something` 变量的值，来实时监控库的加载情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/linuxlike/13 cmake dependency/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<zlib.h>
 
 int main(void) {
@@ -134,7 +136,4 @@ int main(void) {
         return 0;
     return 1;
 }
-
-"""
-
 ```

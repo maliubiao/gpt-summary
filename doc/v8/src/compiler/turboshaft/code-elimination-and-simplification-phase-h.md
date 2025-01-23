@@ -168,15 +168,17 @@ function calculateArea(radius) {
 
 `v8/src/compiler/turboshaft/code-elimination-and-simplification-phase.h` 定义了 Turboshaft 编译器中一个重要的优化阶段，旨在提高生成的机器码的效率。它通过移除不会执行的代码和简化复杂的表达式来实现这一目标。虽然它可以减轻一些用户编程错误的影响，但最佳实践仍然是编写清晰高效的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/code-elimination-and-simplification-phase.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/code-elimination-and-simplification-phase.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ struct CodeEliminationAndSimplificationPhase {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_CODE_ELIMINATION_AND_SIMPLIFICATION_PHASE_H_
-
-"""
-
 ```

@@ -149,14 +149,16 @@ By following these steps, we can systematically analyze the given C++ source cod
 
 总而言之，`touch_event.cc` 是 Blink 引擎中处理触摸事件的关键部分，它连接了底层的输入事件和高层的 JavaScript 事件模型，并负责实现 `TouchEvent` 对象的核心功能和行为。理解这个文件的作用有助于开发者更好地理解和处理 Web 应用中的触摸交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/touch_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright 2008, The Android Open Source Project
  * Copyright (C) 2012 Research In Motion Limited. All rights reserved.
@@ -349,7 +351,4 @@ DispatchEventResult TouchEvent::DispatchEvent(EventDispatcher& dispatcher) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

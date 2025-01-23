@@ -156,7 +156,7 @@ const bigIntAsUintN = (-1n).asUintN(8); // 255n (截断到 8 位并按无符号�
 
 这部分代码主要负责 `BigInt` 对象在 V8 引擎中的生命周期管理和与其他 JavaScript 类型的互操作，包括创建、各种类型的转换 (到字符串、数字、布尔值等) 以及一些底层的操作，为 JavaScript 中 `BigInt` 的使用提供了基础支持。它还包含了用于序列化和反序列化 `BigInt` 以及进行位操作的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/bigint.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/bigint.cc以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dispatch overhead.
     // The logic is the same as what the full implementation does below,
     // just inlined and specialized for the preconditions.
@@ -1008,8 +1010,4 @@ void MutableBigInt_LeftShiftAndCanonicalize(Address result_addr, Address x_addr,
                                             intptr_t shift) {
   Tagged<BigInt> x = Cast<BigInt>(Tagged<Object>(x_addr));
   Tagged<MutableBigInt> result =
-     
-"""
-
-
 ```

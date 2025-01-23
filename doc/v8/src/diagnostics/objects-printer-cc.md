@@ -123,7 +123,7 @@ const myObject = { name: "Alice", age: 30 };
 
 `v8/src/diagnostics/objects-printer.cc` 的主要功能是为 V8 引擎提供一个强大的对象打印工具，用于在开发和调试过程中检查 V8 堆中各种对象的内部状态。它能够打印基本类型、复杂对象、以及与 JavaScript 执行相关的内部结构信息，是 V8 调试基础设施的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/objects-printer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/objects-printer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -131,8 +131,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1104,7 +1106,4 @@ void DescriptorArray::DescriptorArrayPrint(std::ostream& os) {
     os << enum_cache()->keys()->length();
     os << "\n   - keys: " << Brief(enum_cache()->keys());
     os << "\n   - indices: " << Brief(enum_cache()->ind
-"""
-
-
 ```

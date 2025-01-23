@@ -106,7 +106,7 @@ This thought process allows for a comprehensive and well-structured answer that 
 
 由于这是第一部分，我们只能归纳出这些核心的定义。后续部分可能会涉及到具体的请求读取、路由、处理逻辑等。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/server.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -115,8 +115,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1168,9 +1170,4 @@ func (c *conn) readRequest(ctx context.Context) (w *response, err error) {
 	if err != nil {
 		if c.r.hitReadLimit() {
 			return n
-"""
-
-
-
-
 ```

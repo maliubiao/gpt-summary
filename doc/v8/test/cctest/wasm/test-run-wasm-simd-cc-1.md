@@ -237,7 +237,7 @@ By following this process, we can systematically analyze the code and generate a
 
    这部分代码主要专注于 **测试 V8 引擎中对于浮点数 (F64x2) 和整数 (I64x2, I32x4, I16x8, I8x16) 类型的向量 SIMD 指令的基本算术、比较、位运算、类型转换以及向量创建和操作功能的正确性**。它涵盖了多种常见的 SIMD 操作，并通过不同的测试用例来验证这些指令在 V8 中的实现是否符合 WebAssembly 规范。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-simd.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-run-wasm-simd.cc以.tq结尾，那它是个v8 torque源代码，
@@ -245,8 +245,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 areOpTest(execution_tier, kExprF64x2Eq, Equal);
 }
 
@@ -1116,7 +1118,4 @@ WASM_EXEC_TEST(I16x8GtU) {
 }
 
 WASM_EXEC_TEST(I16x
-"""
-
-
 ```

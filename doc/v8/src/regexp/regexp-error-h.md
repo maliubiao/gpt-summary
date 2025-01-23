@@ -178,15 +178,17 @@ try {
 
 理解 `v8/src/regexp/regexp-error.h` 中定义的错误信息，可以帮助开发者更好地理解和调试 JavaScript 中与正则表达式相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-error.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-error.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ inline constexpr bool RegExpErrorIsStackOverflow(RegExpError error) {
 }  // namespace v8
 
 #endif  // V8_REGEXP_REGEXP_ERROR_H_
-
-"""
-
 ```

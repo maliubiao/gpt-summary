@@ -93,12 +93,14 @@ myPromise.then(result => {
 
 这个 C++ 代码片段是 V8 引擎进行 JavaScript 性能优化的关键部分。它通过在编译阶段识别并简化对特定 JavaScript 内置函数的调用，减少了运行时的开销，使得 JavaScript 代码能够更快速地执行。它针对的是数组迭代和 `Promise` 构造这两个在现代 JavaScript 开发中非常重要的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ArgumentOrUndefined(0);
 
   ReduceFrameStateParams frame_state_params{
@@ -1702,7 +1704,4 @@ Reduction JSCallReducer::ReduceObjectPrototypeHasOwnProperty(Node* node) {
           for (InternalIndex key_index : InternalIndex::Range(nof)) {
             NameRef receiver_key =
                 descriptor_array.GetPropertyKe
-"""
-
-
 ```

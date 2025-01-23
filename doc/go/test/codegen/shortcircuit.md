@@ -167,15 +167,17 @@ func main() {
 
 In summary, the `efaceExtract` function is a simple illustration of how to perform type assertions on interfaces in Go. The accompanying `// asmcheck` comment suggests it's specifically used to verify the compiler's ability to optimize this common operation. Users should remember to always check the `ok` value when performing type assertions to handle cases where the interface does not hold the expected type.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/shortcircuit.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -193,9 +195,4 @@ func efaceExtract(e interface{}) int {
 	}
 	return 0
 }
-
-"""
-
-
-
 ```

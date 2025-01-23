@@ -231,15 +231,17 @@ console.log(obj.value); // 输出: 10
 
 `v8/src/objects/prototype-info.tq` 中定义的 `PrototypeInfo` 结构体是 V8 引擎中用于管理 JavaScript 原型对象关键信息的核心数据结构。它存储了模块命名空间关联、原型用户跟踪、原型链枚举缓存、原型注册信息、优化标志以及派生 `Map` 缓存等重要数据，为 V8 高效地实现 JavaScript 的原型继承机制提供了基础。理解 `PrototypeInfo` 的作用有助于深入了解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/prototype-info.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/prototype-info.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ extern class PrototypeInfo extends Struct {
   // which feeds Reflect.construct, proxies and similar.
   derived_maps: WeakArrayList|Undefined;
 }
-
-"""
-
 ```

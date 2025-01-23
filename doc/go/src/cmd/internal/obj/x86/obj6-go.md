@@ -205,15 +205,17 @@ By iteratively analyzing the code, comments, and function names, and by leveragi
 
 总而言之，`obj6.go` 是 Go 语言工具链中一个关键的组成部分，它负责处理 x86 架构特定的汇编指令，进行优化、重写和预处理，以确保最终生成的目标代码能够在不同的操作系统和链接模式下正确高效地运行。它体现了 Go 语言对底层细节的精细控制，以及对不同平台和场景的适配。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/x86/obj6.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/6l/pass.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/pass.c
 //
@@ -1760,9 +1762,4 @@ var Link386 = obj.LinkArch{
 	UnaryDst:       unaryDst,
 	DWARFRegisters: X86DWARFRegisters,
 }
-
-"""
-
-
-
 ```

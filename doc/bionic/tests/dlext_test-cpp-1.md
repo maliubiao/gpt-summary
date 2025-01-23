@@ -218,7 +218,7 @@ sys.stdin.read()
 
 总而言之，这段代码是 Android Bionic 中关于动态链接器命名空间功能的一组测试用例，它验证了命名空间隔离、符号可见性、库加载和卸载等核心特性，这些特性对于 Android 的安全性和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/dlext_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -230,8 +230,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lic namespace", ns_get_public_extern_string1());
   ASSERT_TRUE(ns_get_public_extern_string1() == ns_get_public_extern_string2());
 
@@ -943,8 +945,4 @@ TEST(dlext, ns_shared_links_and_paths) {
   android_namespace_t* ns_isolated =
           android_create_namespace("private_isolated",
                                    nullptr,
-
-"""
-
-
 ```

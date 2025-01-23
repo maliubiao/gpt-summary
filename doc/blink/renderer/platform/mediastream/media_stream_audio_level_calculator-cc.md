@@ -131,14 +131,16 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
 总而言之，`MediaStreamAudioLevelCalculator` 是 Blink 渲染引擎中一个关键的组件，负责将底层的音频数据转化为可供上层 JavaScript 代码使用的音量级别信息，从而驱动各种与音频相关的 Web 应用功能和用户界面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/media_stream_audio_level_calculator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -229,7 +231,4 @@ void MediaStreamAudioLevelCalculator::Calculate(
 }
 
 }  // namespace blink
-
-"""
-
 ```

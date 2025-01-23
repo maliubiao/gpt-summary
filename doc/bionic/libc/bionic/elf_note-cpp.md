@@ -378,7 +378,7 @@ rpc.exports = {
 
 通过这种方式，你可以深入了解 Android 系统在加载和链接共享库时如何处理 ELF Note 信息。你可以修改 Frida 脚本来 Hook `__find_elf_note` 或其他相关函数，以进一步分析链接过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/elf_note.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -389,8 +389,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -477,7 +479,4 @@ bool __find_elf_note(unsigned int note_type, const char* note_name, const ElfW(P
 
   return false;
 }
-
-"""
-
 ```

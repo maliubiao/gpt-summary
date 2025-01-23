@@ -81,7 +81,7 @@ Here's a breakdown of the thinking process to analyze the provided `dummy.cpp` f
 
 总而言之，虽然 `dummy.cpp` 文件很小且内容为空，但它在 Frida 项目中起着至关重要的作用，确保了 `gadget` 库具备 C++ 的能力，从而能够正确地与使用 C++ 构建的目标进程进行交互，这是 Frida 实现动态分析功能的基础之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/gadget/dummy.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -89,10 +89,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Force C++ linking
-
-"""
-
 ```

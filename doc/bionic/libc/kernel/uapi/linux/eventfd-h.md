@@ -273,7 +273,7 @@ if (Process.platform === 'linux') {
 
 这个 Frida 示例可以帮助你观察 Android 应用程序在底层如何使用 `eventfd`，例如查看创建 `eventfd` 时的初始值和标志，以及读写操作的文件描述符。 通过 hook `read` 和 `write`，你可以进一步了解哪些进程/线程在与 `eventfd` 交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/eventfd.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -284,8 +284,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -299,7 +301,4 @@ Prompt:
 #define EFD_CLOEXEC O_CLOEXEC
 #define EFD_NONBLOCK O_NONBLOCK
 #endif
-
-"""
-
 ```

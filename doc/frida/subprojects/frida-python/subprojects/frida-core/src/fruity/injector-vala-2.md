@@ -98,7 +98,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `injector.vala` 文件实现了 Frida 工具中的核心注入功能，涉及到符号解析、远程函数调用、异常处理等复杂操作。通过 LLDB 调试器，用户可以模拟这些功能，并在目标进程中执行动态注入。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/injector.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 , 0x41,
 			0x14, 0x00, 0x70, 0x1f, 0x20, 0x03, 0xd5, 0x90, 0x00, 0x00, 0x94, 0x60, 0x01, 0x00, 0x34, 0x99, 0x0f, 0x40, 0xf9,
 			0x04, 0x00, 0x00, 0x14, 0xf6, 0x03, 0x1c, 0xaa, 0x02, 0x00, 0x00, 0x14, 0xfb, 0x03, 0x1c, 0xaa, 0x88, 0x07, 0x40,
@@ -550,8 +552,4 @@ Prompt:
 			throws GLib.Error;
 	}
 }
-
-"""
-
-
 ```

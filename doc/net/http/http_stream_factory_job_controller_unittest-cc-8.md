@@ -147,7 +147,7 @@ A user's action triggers a network request. Here's how it might lead to this cod
 
 作为第 9 部分，且是最后一部分，这个文件专注于测试 `HttpStreamFactoryJobController` 中与 **通过 DNS 记录发现和使用 HTTP/3 (DNS-based HTTPS ALPN)** 以及一些 **连接池相关的预连接行为** 的逻辑。它验证了在各种场景下，`HttpStreamFactoryJobController` 是否能正确地创建、管理和协调不同类型的连接 Job (包括 `MainJob`, `AlternativeJob`, 和 `DnsAlpnH3Job`)，以及如何在这些 Job 之间进行竞争和回退。此外，它也覆盖了在启用 Happy Eyeballs V3 的情况下，预连接与连接池的交互。 总体而言，这部分确保了 Chromium 网络栈能够有效地利用 HTTP/3 并管理连接资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_job_controller_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _exists=*/false,
                   /*dns_alpn_h3_job_exists=*/true,
                   "DNS alpn H3 job must exist.");
@@ -919,8 +921,4 @@ TEST_F(HttpStreamFactoryJobControllerPoolTest, PreconnectSync) {
 }
 
 }  // namespace net::test
-
-"""
-
-
 ```

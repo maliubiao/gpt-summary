@@ -128,15 +128,17 @@ By following these steps, we can arrive at a comprehensive and accurate explanat
 
 总而言之，`suggestion_marker_replacement_scope.cc` 提供了一种机制，用于控制 Blink 引擎中建议标记替换操作的上下文，确保在执行这些敏感的 DOM 修改操作时，引擎的内部状态保持一致，避免出现并发问题或其他错误。它虽然不直接与前端技术交互，但对于保证用户在网页上进行文本编辑时的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/suggestion_marker_replacement_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ bool SuggestionMarkerReplacementScope::CurrentlyInScope() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

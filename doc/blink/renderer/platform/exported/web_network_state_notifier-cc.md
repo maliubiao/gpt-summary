@@ -137,14 +137,16 @@ Let's break down the thought process for analyzing this C++ file and generating 
 
 总而言之，`web_network_state_notifier.cc` 是 Blink 引擎中一个关键的组件，它负责将底层的网络状态信息传递给更高级别的 Web API，从而允许网页了解并适应用户的网络环境，提供更好的用户体验。正确地使用和维护这个模块对于确保 Chromium 浏览器的网络相关功能正常运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_network_state_notifier.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -212,7 +214,4 @@ bool WebNetworkStateNotifier::SaveDataEnabled() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

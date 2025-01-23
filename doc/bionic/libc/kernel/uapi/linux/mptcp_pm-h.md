@@ -213,7 +213,7 @@ session.createScript(hookCode)
 
 总结来说，`bionic/libc/kernel/uapi/linux/mptcp_pm.h` 是 Android 系统与 Linux 内核中 MPTCP Policy Manager 交互的底层接口定义。虽然应用程序开发者通常不会直接使用它，但理解其内容对于深入了解 Android 的网络机制至关重要。调试这类底层交互通常需要使用像 Frida 这样的动态分析工具，并结合对 Linux 内核和 Android 框架的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/mptcp_pm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -224,8 +224,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -333,7 +335,4 @@ enum {
 };
 #define MPTCP_PM_CMD_MAX (__MPTCP_PM_CMD_AFTER_LAST - 1)
 #endif
-
-"""
-
 ```

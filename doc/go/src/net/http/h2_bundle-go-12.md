@@ -150,7 +150,7 @@ type http2FrameWriteRequest struct {
 
 作为 `go/src/net/http/h2_bundle.go` 的最后一部分，这段代码片段负责 HTTP/2 帧的最终调度和获取。它优先处理控制帧，确保连接的稳定性和控制信息能够及时发送。如果不存在控制帧，则从一个环形链表中获取下一个可发送的数据帧。这种设计允许 HTTP/2 连接在控制和数据帧之间进行有效的复用和调度。它体现了 HTTP/2 协议中控制帧优先的原则，以及使用高效的数据结构来管理待发送的数据。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/h2_bundle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -159,8 +159,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第13部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 mes first.
 	if !ws.control.empty() {
 		return ws.control.shift(), true
@@ -181,10 +183,4 @@ mes first.
 	}
 	return http2FrameWriteRequest{}, false
 }
-
-"""
-
-
-
-
 ```

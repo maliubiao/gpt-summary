@@ -162,7 +162,7 @@ v_move = Move <mem> [4] v_b_ptr v_a_ptr v_mem
 
 这是 `rewriteMIPS.go` 文件的第四部分，其核心功能是定义了一系列针对 MIPS 架构的 SSA 重写规则，用于优化比较操作、位移操作、算术运算、位运算、内存拷贝、不等比较、逻辑非运算、指针运算以及边界检查和带溢出检查的运算。  通过模式匹配和条件判断，将一些通用的 SSA 指令转换为更高效的 MIPS 特定指令序列或常量，从而提升最终生成代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteMIPS.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -171,8 +171,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 Int(1)
 		return true
 	}
@@ -1558,9 +1560,4 @@ func rewriteValueMIPS_OpRotateLeft32(v *Value) bool {
 		v.reset(OpOr32)
 		v0 := b.NewValue0(v.Pos, OpLsh32x32, t)
 		v1 :=
-"""
-
-
-
-
 ```

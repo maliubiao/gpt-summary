@@ -597,7 +597,7 @@ EXPECT_STRNE(new_certs[0]->nickname, new_certs[1]->nickname);
      - 仅信任中间CA，验证服务器证书可以信任。
      - 默认信任根CA，信任中间CA，然后将中间CA设置为默认信任，验证服务器证书仍然无法信任。
      - 信任根CA，不信任中间CA，然后将中间CA设置为默认信任，验证
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/nss_cert_database_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -605,8 +605,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 he intermediate & CA certs are imported without
   // trust.
   scoped_refptr<X509Certificate> x509_found_server_cert =
@@ -1132,8 +1134,4 @@ TEST_F(CertDatabaseNSSTest, ImportDuplicateCommonName) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

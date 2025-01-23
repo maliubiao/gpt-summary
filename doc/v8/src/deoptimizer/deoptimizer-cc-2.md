@@ -655,7 +655,7 @@ void Deoptimizer::DoComputeConstructCreateStubFrame(
 
   // The constructor function was mentioned explicitly in the
   // CONSTRUCT_STUB_FRAME.
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/deoptimizer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/deoptimizer/deoptimizer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -663,8 +663,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 k;
       case TranslatedFrame::kJavaScriptBuiltinContinuationWithCatch:
         DoComputeBuiltinContinuation(
@@ -1402,7 +1404,4 @@ void Deoptimizer::DoComputeConstructInvokeStubFrame(
   // receiver parameter through the translation. It might be encoding
   // a captured object, so we need save it for later.
   TranslatedFrame::iterator receiver_it
-"""
-
-
 ```

@@ -193,7 +193,7 @@ console.log(sum); // 输出 [6, 8, 10, 12]
 
 这部分代码是 V8 引擎中 RISC-V 模拟器的核心组成部分，专注于模拟 RISC-V 向量扩展指令的执行，特别是浮点和整数运算中的循环、舍入和饱和操作。它为在非 RISC-V 平台上运行或调试 JavaScript 代码提供了必要的基础设施，并有助于理解底层硬件行为对 JavaScript 代码执行的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/riscv/simulator-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/riscv/simulator-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -201,8 +201,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _check);                                                           \
   switch (rvv_vsew()) {                                                       \
     case E8: {                                                                \
@@ -1040,7 +1042,4 @@ void RiscvDebugger::Debug() {
         PrintF("watch\n");
         PrintF("  watch <address> \n");
         PrintF("  watch memory content.
-"""
-
-
 ```

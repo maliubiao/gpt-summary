@@ -189,14 +189,16 @@ By following these steps, we can systematically analyze the `HighlightRegistry.c
 
 总而言之，`HighlightRegistry.cc` 是 Blink 渲染引擎中负责管理和渲染文档高亮的核心组件，它通过与 DOM 和布局引擎的交互，以及通过 JavaScript API 的暴露，实现了 Web 页面上的动态高亮功能。与 CSS 的配合则决定了高亮的具体视觉呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/highlight/highlight_registry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -499,7 +501,4 @@ HeapVector<Member<Highlight>> HighlightRegistry::highlightsFromPoint(
 }
 
 }  // namespace blink
-
-"""
-
 ```

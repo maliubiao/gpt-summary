@@ -177,15 +177,17 @@ func main() {
 
 因此，如果代码进行了优化，使得 `b3` 变为死代码，`hashFunc` 的结果会改变，而 `rewriteHash` 的结果可能保持不变（如果其他活跃代码没有变化）。这使得 `rewriteHash` 更适合检测本质上的代码结构变化，而忽略死代码的影响。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/print.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -378,9 +380,4 @@ func fprintFunc(p funcPrinter, f *Func) {
 		p.named(*name, f.NamedValues[*name])
 	}
 }
-
-"""
-
-
-
 ```

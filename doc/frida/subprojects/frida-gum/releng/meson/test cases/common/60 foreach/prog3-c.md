@@ -187,7 +187,7 @@ By following this thought process and constantly relating back to the context of
 
 总而言之，`prog3.c` 作为 Frida 测试用例的一部分，其目的是提供一个可控的、简单的目标程序，用于验证和调试 Frida 的各种动态 instrumentation 功能。 用户通常不会直接操作这个文件，而是通过 Frida 的测试框架或手动编写 Frida 脚本来与这个程序交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/60 foreach/prog3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,15 +195,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("This is test #3.\n");
     return 0;
 }
-
-"""
-
 ```

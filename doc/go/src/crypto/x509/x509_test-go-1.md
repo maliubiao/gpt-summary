@@ -113,7 +113,7 @@ if len(cert.DNSNames) != 0 { // 这是一个错误
 
 这个代码片段的主要目的是确保 `crypto/x509` 包中的证书创建功能能够按照预期工作，正确地从提供的模板中复制所需的证书属性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/x509_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -122,9 +122,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
-		t.Errorf("%s: SignatureAlgorithm wasn't copied from template. Got %v, want %v", test.name, cert.SignatureAlgorithm, test.sigAlgo)
+### 源代码
+```go
+t.Errorf("%s: SignatureAlgorithm wasn't copied from template. Got %v, want %v", test.name, cert.SignatureAlgorithm, test.sigAlgo)
 		}
 
 		if !slices.Equal(cert.ExtKeyUsage, testExtKeyUsage) {
@@ -804,9 +806,4 @@ func TestCreateCertificateRequest(t *testing.T) {
 		if out.Subject.CommonName != template.Subject.CommonName {
 			t.Errorf("%s: output subject common name and template subject common name don't match", test.name)
 		} else if len(out.Subject.Or
-"""
-
-
-
-
 ```

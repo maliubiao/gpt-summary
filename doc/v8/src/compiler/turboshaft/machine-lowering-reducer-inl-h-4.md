@@ -227,7 +227,7 @@ The `v8/src/compiler/turboshaft/machine-lowering-reducer-inl.h` header file prov
 
 Essentially, this file bridges the gap between high-level, abstract operations and the concrete, machine-specific instructions that the processor will eventually execute. It's a critical component for achieving high performance in V8 by enabling the compiler to generate efficient machine code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/machine-lowering-reducer-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/machine-lowering-reducer-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -235,8 +235,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ey: {
         // Compute the integer hash code.
         V<WordPtr> hash = __ ChangeUint32ToUintPtr(ComputeUnseededHash(key));
@@ -783,8 +785,4 @@ ey: {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_MACHINE_LOWERING_REDUCER_INL_H_
-
-"""
-
-
 ```

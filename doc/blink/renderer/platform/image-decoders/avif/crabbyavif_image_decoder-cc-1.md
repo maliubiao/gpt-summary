@@ -119,15 +119,17 @@ Here's a plan to address this request:
 
 `CrabbyAVIFImageDecoder` 的主要功能是解析和解码 AVIF 图像数据，包括处理容器信息、元数据（颜色空间、HDR 信息、变换、Clean Aperture）、解码图像帧以及将 YUV 数据渲染到 RGB 缓冲区。它还负责处理与 Gainmap 相关的元数据和数据。 该解码器在 Chromium Blink 引擎中扮演着关键角色，使得浏览器能够正确显示网页中使用的 AVIF 图像。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/avif/crabbyavif_image_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 vif::AVIF_PIXEL_FORMAT_YUV400 ==
                 crabbyavif::AVIF_PIXEL_FORMAT_YUV420 + 1);
   // Assert that after crabbyavif::crabby_avifDecoderParse() returns
@@ -605,8 +607,4 @@ CrabbyAVIFImageDecoder::AvifIOData::AvifIOData(
 CrabbyAVIFImageDecoder::AvifIOData::~AvifIOData() = default;
 
 }  // namespace blink
-
-"""
-
-
 ```

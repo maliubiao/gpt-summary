@@ -163,7 +163,7 @@ endif
 
 这段代码是 Frida 项目中 Meson 构建系统定义文件解析器的核心部分，负责将 Meson 代码的文本表示转换为结构化的抽象语法树 (AST)。它实现了对字典、基本类型、函数/方法参数、方法调用、索引调用、循环语句、条件语句和测试用例等 Meson 语言结构的解析。这个解析器是 Meson 工具链的关键组成部分，为后续的构建配置和代码生成提供了必要的信息。理解其功能有助于理解 Frida 项目的构建过程，并能在遇到构建问题时提供调试思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/mparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 lf.create_node(SymbolNode, block_start)
             key_values = self.key_values()
             self.block_expect('rcurl', block_start)
@@ -376,8 +378,4 @@ lf.create_node(SymbolNode, block_start)
         self.current_ws = []
 
         return block
-
-"""
-
-
 ```

@@ -168,7 +168,7 @@ By following this systematic approach, I can dissect the code snippet, understan
 
 `DocumentLoader` 是 Chromium Blink 引擎中负责管理文档加载的核心组件。它处理从接收初始请求到完成文档加载的整个生命周期，包括处理重定向、接收和处理 HTML 数据、与 HTML 解析器交互、处理相同文档导航、管理文档策略以及处理特定类型的文档（如 MHTML）。它在幕后协调各种操作，最终将从网络获取的 HTML、CSS 和 JavaScript 转化为用户可见的网页。 这段代码片段主要展示了 `DocumentLoader` 在加载过程中的数据接收、解析处理、以及与导航机制的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/document_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r::Instance(frame_->DomWindow()->GetIsolate())
              ->IsPaused());
 
@@ -954,8 +956,5 @@ void DocumentLoader::DidCommitNavigation() {
   frame_->GetFrameScheduler()->DidCommitProvisionalLoad(
       commit_type == kWebHistoryInertCommit,
       load_type_ == WebFrameLoadType::kReload
-          ? 
-"""
-
-
+          ?
 ```

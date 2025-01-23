@@ -90,15 +90,17 @@ By following these steps, the detailed and accurate explanation provided earlier
 
 尽管 `media_stream_local_frame_wrapper.cc` 文件内容为空，但它在 Windows 平台的 Chromium 构建过程中扮演着重要的角色，确保了与本地媒体流相关的代码能够成功链接。它间接地支持了 WebRTC 功能，最终影响到用户在网页上使用摄像头和麦克风的体验。对于开发者来说，理解这种构建系统层面的细节有助于解决潜在的链接问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_local_frame_wrapper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -107,7 +109,4 @@ Prompt:
 
 // This empty .cc file is needed so that the linking step succeeds on some
 // Windows platforms.
-
-"""
-
 ```

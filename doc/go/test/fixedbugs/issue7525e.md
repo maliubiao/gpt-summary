@@ -157,15 +157,17 @@ func main() {
 
 `issue7525e.go` 这个文件是一个精心设计的测试用例，用于验证 Go 编译器对自引用数组类型定义的错误检测能力。它并非实现新的 Go 语言功能，而是确保编译器能够捕捉到这种违反类型系统规则的情况，从而帮助开发者避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7525e.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2017 The Go Authors. All rights reserved.
@@ -181,9 +183,4 @@ import "unsafe"
 var x struct { // GC_ERROR "initialization cycle: x refers to itself"
 	c [unsafe.Alignof(x.c)]int // GCCGO_ERROR "array bound|typechecking loop|invalid array"
 }
-
-"""
-
-
-
 ```

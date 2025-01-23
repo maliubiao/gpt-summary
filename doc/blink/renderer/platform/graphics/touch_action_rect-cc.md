@@ -126,14 +126,16 @@ Let's break down the thought process for analyzing the `touch_action_rect.cc` fi
 
 总而言之，`touch_action_rect.cc` 文件在 Blink 渲染引擎中扮演着关键的角色，它负责存储和管理与 CSS `touch-action` 属性相关的区域信息，并直接影响浏览器如何响应用户的触摸操作。理解它的功能有助于开发者更好地控制网页的触摸交互行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/touch_action_rect.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ std::ostream& operator<<(std::ostream& os,
 }
 
 }  // namespace blink
-
-"""
-
 ```

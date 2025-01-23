@@ -110,15 +110,17 @@ The request also asks for connections to JavaScript, HTML, and CSS, logical reas
 
 这部分 `WebLocalFrameImpl` 的代码主要负责处理 **文本输入和编辑** (特别是 IME 输入)，以及 **页面打印** 和 **绘制预览** 相关的功能。它提供了底层的实现，与浏览器进程和渲染引擎的其他部分进行交互，同时暴露了一些接口供上层的 Web API (如 JavaScript) 使用。此外，还包含了一些用于测试目的的辅助功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_local_frame_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dateStyleAndLayout
   // needs to be audited.  See http://crbug.com/590369 for more details.
   GetFrame()->GetDocument()->UpdateStyleAndLayout(
@@ -918,7 +920,4 @@ RemoteFrame* WebLocalFrameImpl::CreateFencedFrame(
   mojom::blink::FrameReplicationStatePtr initial_replicated_state =
       mojom::blink::FrameReplicationState::New();
   initial
-"""
-
-
 ```

@@ -145,7 +145,7 @@ By following this thought process, which involves understanding the code, analyz
 
 总而言之，`prog4.c` 作为一个简单的测试用例，其价值在于验证 Frida 构建系统的核心功能，确保配置能够正确地传递到编译后的程序中。虽然它本身不直接进行逆向操作，但其成功运行是 Frida 整体功能可靠性的基础。通过分析这类测试用例，可以帮助开发者和用户理解 Frida 的构建过程，并在遇到问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/14 configure file/prog4.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,15 +153,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <config4a.h>
 #include <config4b.h>
 
 int main(void) {
     return RESULTA + RESULTB;
 }
-
-"""
-
 ```

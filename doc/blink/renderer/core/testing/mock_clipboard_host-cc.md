@@ -160,15 +160,17 @@ By following these steps, iterating, and refining, I arrive at a comprehensive a
 
 总而言之，`MockClipboardHost` 是 Blink 引擎测试框架中的一个关键组件，它允许开发者在不需要真实剪贴板交互的情况下，对剪贴板相关的功能进行可靠的自动化测试。理解其功能和工作原理对于调试 Blink 引擎中与剪贴板相关的错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/mock_clipboard_host.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -404,7 +406,4 @@ void MockClipboardHost::WriteStringToFindPboard(const String& text) {}
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

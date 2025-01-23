@@ -151,15 +151,17 @@ By following this structured approach, I could thoroughly analyze the provided C
 
 总而言之，`ai_language_model_capabilities.cc` 文件虽然代码不多，但在 Blink 引擎中扮演着重要的角色，它为上层 JavaScript 代码提供了关于 AI 语言模型能力的关键信息，从而影响着用户最终体验到的 AI 功能是否可用。 目前的实现非常基础，只支持英语，但随着 AI 功能的不断发展，这个文件可能会变得更加复杂，支持更多的语言和更细粒度的能力控制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ai/ai_language_model_capabilities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ V8AICapabilityAvailability AILanguageModelCapabilities::languageAvailable(
 }
 
 }  // namespace blink
-
-"""
-
 ```

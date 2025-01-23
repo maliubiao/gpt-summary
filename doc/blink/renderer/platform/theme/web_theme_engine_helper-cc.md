@@ -115,14 +115,16 @@ Finally, organizing the information logically with clear headings and examples m
 
 总而言之， `web_theme_engine_helper.cc` 文件充当了 Blink 渲染引擎中主题管理的核心枢纽，它负责根据运行平台提供正确的原生主题引擎，并提供了一些辅助功能，例如测试时的替换和渲染器偏好设置的更新。它与网页的视觉呈现息息相关，直接影响着 HTML 元素在不同操作系统上的默认外观。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/theme/web_theme_engine_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ WebThemeEngineHelper::AndroidScrollbarStyle() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

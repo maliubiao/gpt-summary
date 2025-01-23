@@ -108,7 +108,7 @@ By following these steps, the comprehensive analysis provided earlier can be con
 
 `check_args.py` 是一个简单的测试脚本，用于验证 Frida 构建过程中自定义目标的参数传递。虽然它不直接执行逆向操作或与底层系统直接交互，但它确保了构建过程的正确性，这对于最终生成可用的 Frida 工具至关重要。在构建出现问题时，开发者可能会通过分析构建日志和相关的构建脚本，最终定位到这个测试脚本，并以此为线索进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/152 index customtarget/check_args.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!python3
 
 import sys
@@ -136,7 +138,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

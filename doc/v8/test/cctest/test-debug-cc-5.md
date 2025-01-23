@@ -174,7 +174,7 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 这部分 `test-debug.cc` 代码主要集中测试了 V8 引擎在调试模式下**获取源码信息**和**检查私有成员**的能力。它确保了调试器能够准确地报告代码的位置，并且能够访问和检查 JavaScript 对象的私有状态，这对于开发者理解和调试复杂的 JavaScript 代码至关重要。此外，它还测试了在不同模块上下文和动态代码中进行调试的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-debug.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-debug.cc以.tq结尾，那它是个v8 torque源代码，
@@ -182,8 +182,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Id> const&,
                                v8::debug::BreakReasons) final {
       v8::Isolate* isolate = context->GetIsolate();
@@ -1099,7 +1101,4 @@ TEST(GetPrivateAutoAccessors) {
   values.clear();
   CHECK(v8::debug::GetPrivateMembers(context, object, accessor_filter, &names,
                                      &values))
-"""
-
-
 ```

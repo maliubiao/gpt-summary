@@ -204,15 +204,17 @@ CSS 本身不直接与帧数据的传输和优化相关。但是，CSS 可以影
 
 总而言之，`FrameQueueTransferringOptimizer` 是 Blink 引擎中一个重要的性能优化组件，它专注于提高跨线程传输媒体帧数据的效率，主要服务于 JavaScript 的 Streams API，特别是与 `<video>` 和 `<canvas>` 等媒体元素相关的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/breakout_box/frame_queue_transferring_optimizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ template class MODULES_TEMPLATE_EXPORT
     FrameQueueTransferringOptimizer<scoped_refptr<media::VideoFrame>>;
 
 }  // namespace blink
-
-"""
-
 ```

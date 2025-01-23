@@ -111,11 +111,13 @@ delete obj5.e; // 由于 configurable 为 false，无法删除
 
 总而言之，`test-property-details.cc` 这个 C++ 文件通过测试 `PropertyDetails` 的各种组合和边缘情况，确保了 V8 内部对 JavaScript 对象属性元数据的正确管理和高效存储，从而保证了 JavaScript 语言特性的正确实现。  JavaScript 开发者虽然不直接接触 `PropertyDetails`，但其背后的机制直接影响着 JavaScript 代码的执行行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-property-details.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ TEST(AsByte) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

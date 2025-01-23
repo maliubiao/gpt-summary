@@ -88,15 +88,17 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 总的来说，这部分是 `webgl_image_conversion.cc` 的核心，它确保了来自不同来源的图像数据能够被正确地转换成 WebGL 能够使用的格式，从而实现 WebGL 的图像渲染功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/webgl_image_conversion.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 000, 0x38166000, 0x38168000, 0x3816a000,
     0x3816c000, 0x3816e000, 0x38170000, 0x38172000, 0x38174000, 0x38176000,
     0x38178000, 0x3817a000, 0x3817c000, 0x3817e000, 0x38180000, 0x38182000,
@@ -895,7 +897,4 @@ void Pack<WebGLImageConversion::kDataFormatRGB8,
   for (unsigned i = 0; i < pixels_per_row; ++i) {
     float scale_factor = source[3] / 255.0f;
     uin
-"""
-
-
 ```

@@ -178,15 +178,17 @@ console.log(retrievedObject.data); // 仍然可以访问 myObject
 
 总而言之，`v8/test/unittests/heap/cppgc-js/traced-reference-unittest.cc` 是一个关键的测试文件，用于确保 `v8::TracedReference` 这一核心的 V8 C++ 基础设施能够正确可靠地工作，从而保证 V8 引擎的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc-js/traced-reference-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc-js/traced-reference-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -556,7 +558,4 @@ TEST_F(TracedReferenceTest, WriteBarrierForOnStackMove) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

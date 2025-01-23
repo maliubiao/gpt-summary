@@ -112,7 +112,7 @@ const splattedZero = SIMD.float32x4.splat(0); // 对应 SIMDSplatZero
 
 作为 `v8/test/unittests/compiler/x64/instruction-selector-x64-unittest.cc` 的第三部分，这段代码继续专注于**验证 V8 在 x64 架构上的指令选择器的正确性和效率**。它通过构造特定的 IR 节点序列，模拟不同的计算场景（包括浮点数运算、整数位运算和 SIMD 操作），并断言指令选择器为这些 IR 节点选择了预期的、优化的 x64 机器指令。这部分特别关注了包含内存加载的浮点数运算、涉及类型转换的位移操作，以及各种 SIMD 指令的优化选择，包括针对常量输入和特定 shuffle 模式的优化。与前两部分共同确保了 V8 能够为 x64 架构生成高质量的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/x64/instruction-selector-x64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/x64/instruction-selector-x64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -120,8 +120,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ode());
     ASSERT_EQ(3U, s[0]->InputCount());
     EXPECT_EQ(kSSEFloat32Sub, s[1]->arch_opcode());
@@ -946,8 +948,4 @@ TEST_F(InstructionSelectorTest, SIMDF32x4SConvert) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

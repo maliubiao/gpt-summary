@@ -78,7 +78,7 @@ Here's a plan:
 
 总而言之，`v8/src/wasm/fuzzing/random-module-generation.cc` 的这段代码是 V8 模糊测试框架的关键组成部分，负责生成具有一定复杂性和随机性的 WebAssembly 模块，用于测试 V8 的 WebAssembly 实现的健壮性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/fuzzing/random-module-generation.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/fuzzing/random-module-generation.cc以.tq结尾，那它是个v8 torque源代码，
@@ -86,8 +86,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 clared_func_index = num_functions - 1;
     WasmFunctionBuilder* f = functions[declared_func_index];
     DataRange function_range = range.split();
@@ -181,8 +183,4 @@ template EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
         Zone*, base::Vector<const uint8_t> data);
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
-
 ```

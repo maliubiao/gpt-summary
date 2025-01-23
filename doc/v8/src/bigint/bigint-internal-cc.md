@@ -185,15 +185,17 @@ While this C++ code itself is part of the V8 engine, it's relevant to consider c
 
 In summary, `v8/src/bigint/bigint-internal.cc` is a crucial part of V8's implementation of JavaScript's BigInt feature, providing the core logic for arithmetic operations using various optimization techniques. It's a low-level component that directly enables the high-level functionality developers use in JavaScript.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/bigint-internal.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/bigint/bigint-internal.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -339,7 +341,4 @@ Status Processor::Modulo(RWDigits R, Digits A, Digits B) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

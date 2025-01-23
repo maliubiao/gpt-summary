@@ -209,15 +209,17 @@ CSS 可以用来设置 canvas 的样式，例如尺寸：
 
 总而言之，`ext_clip_control.cc` 这个文件是 Blink 引擎中实现 WebGL 裁剪控制扩展的关键部分，它连接了 JavaScript API 和底层的 OpenGL 功能，允许开发者更灵活地管理 WebGL 场景的裁剪行为。理解其功能和使用方式对于调试相关的渲染问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/ext_clip_control.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ void EXTClipControl::clipControlEXT(GLenum origin, GLenum depth) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -87,7 +87,7 @@ By following these steps, you can effectively analyze the code snippet and provi
 
 总而言之，`proj1f1.c` 虽然代码简单，但在 Frida 项目中扮演着测试内部依赖关系的重要角色。它提供了一个清晰的目标，用于验证 Frida 的模块加载和 hook 功能，并且可以作为理解 Frida 工作原理的入门点。  对于逆向工程师和 Frida 开发者来说，理解这样的基本组件是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/78 internal dependency/proj1/proj1f1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -95,15 +95,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<proj1.h>
 #include<stdio.h>
 
 void proj1_func1(void) {
     printf("In proj1_func1.\n");
 }
-
-"""
-
 ```

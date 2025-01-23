@@ -304,7 +304,7 @@ Interface value: hello, type: string
 
 总而言之，这段 `decode.go` 代码片段是 Go 语言 `encoding/json` 包中负责将 JSON 数据反序列化为 Go 语言数据结构的核心实现。它提供了 `Unmarshal` 函数，能够根据 JSON 数据的类型和结构，将其转换为相应的 Go 类型，并处理各种可能出现的错误情况。这段代码是 Go 语言处理 JSON 数据的基础，使得 Go 程序能够方便地与使用 JSON 数据格式的外部系统进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/json/decode.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -313,8 +313,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1442,9 +1444,4 @@ func (d *decodeState) objectInterface() map[string]any {
 // it reads the following byte ahead. The first byte of the literal has been
 // read already (that's how the caller knows it's a literal).
 func (d *decodeState)
-"""
-
-
-
-
 ```

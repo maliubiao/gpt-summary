@@ -141,7 +141,7 @@ int multiply(int a, int b);
 
 总而言之，`foo.c` 在这里扮演了一个辅助角色，其主要功能是包含 `foo.h`。`foo.h` 才是真正定义了测试用例中使用的 C 接口。这个文件是 Frida-Swift 子项目测试框架的一部分，用于验证 Frida 在与 Swift 代码交互时，能否正确处理 C 语言接口。理解这个文件的上下文需要结合 Frida 的工作原理、Swift 与 C 的互操作性以及软件测试的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/257 generated header dep/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,10 +149,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "foo.h"
-
-"""
-
 ```

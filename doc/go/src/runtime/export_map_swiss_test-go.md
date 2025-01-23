@@ -186,7 +186,7 @@ GOEXPERIMENT=swissmap go test your_package
 
 总而言之，`go/src/runtime/export_map_swiss_test.go` 中的这段代码是 Go 语言为了探索和测试新的哈希表实现（即 "swissmap"）而设立的测试工具的一部分。  `MapTombstoneCheck` 的目的是验证 `swissmap` 中关于已删除元素的墓碑机制。  要使用或测试相关的代码，需要在构建时通过 `GOEXPERIMENT` 环境变量显式启用该实验性功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/export_map_swiss_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -207,9 +209,4 @@ package runtime
 func MapTombstoneCheck(m map[int]int) {
 	// TODO
 }
-
-"""
-
-
-
 ```

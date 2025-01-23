@@ -92,7 +92,7 @@ By following these steps, we can go from observing an empty file to understandin
 
 总之，虽然这个 `__init__.py` 文件本身内容为空，但它在 Python 包结构中扮演着重要的角色。它存在于 Frida 的 QML 测试用例中，暗示着 Frida 需要能够与基于 QML 框架的应用进行交互，这涉及到大量的底层和框架知识。 用户到达这里通常是因为他们正在进行 Frida 的开发、测试、调试，或者在尝试理解 Frida 如何与 QML 应用交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/python/1 basic/gluon/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,9 +100,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

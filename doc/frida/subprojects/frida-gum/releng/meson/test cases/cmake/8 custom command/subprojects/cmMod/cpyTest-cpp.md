@@ -124,7 +124,7 @@ This iterative process of analyzing the code, considering its context within Fri
 
 总而言之，`cpyTest.cpp` 虽然代码简单，但在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理特定构建场景时的正确性，而这些场景与逆向分析中遇到的复杂软件项目结构和构建方式息息相关。  查看这个文件通常是调试 Frida 构建系统或相关功能时的一个步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/cpyTest.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cpyTest.hpp"
 #include "cpyTest2.hpp"
 #include "cpyTest3.hpp"
@@ -143,7 +145,4 @@ Prompt:
 std::string getStrCpyTest() {
   return CPY_TEST_STR_2 CPY_TEST_STR_3 CPY_TEST_STR_4 CPY_TEST_STR_5;
 }
-
-"""
-
 ```

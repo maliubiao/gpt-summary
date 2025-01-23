@@ -85,7 +85,7 @@ def __lldb_init_module(debugger, internal_dict):
 5. **状态恢复**：根据 `fork` 或 `vfork` 的返回值，`ForkMonitor` 调用 `recover_from_fork_in_parent` 或 `recover_from_fork_in_child` 来恢复进程状态。
 
 通过以上步骤，用户可以监控和处理进程分叉时的状态变化，确保进程能够正确运行。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/payload/fork-monitor.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -94,8 +94,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 #if WINDOWS
 	public class ForkMonitor : Object {
@@ -283,7 +285,4 @@ namespace Frida {
 		public abstract void recover_from_specialization (string identifier);
 	}
 }
-
-"""
-
 ```

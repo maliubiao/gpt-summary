@@ -173,15 +173,17 @@ FuncProps{
 
 `function_properties.go` 文件在 Go 编译器中扮演着重要的角色，它定义了一套用于描述函数及其参数和返回值的属性，这些属性被用来指导编译器的内联优化决策。然而，重要的是理解这些属性是基于“尽力而为”的原则计算出来的，不应该被视为 100% 准确的保证。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/inline/inlheur/function_properties.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -280,9 +282,4 @@ const (
 	// Result is always the same (potentially) inlinable function or closure.
 	ResultAlwaysSameInlinableFunc
 )
-
-"""
-
-
-
 ```

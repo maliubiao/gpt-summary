@@ -192,7 +192,7 @@ android_java_lib = SharedLibrary(
 
 作为 Frida 项目构建过程的最后一部分 (假设前面几部分处理了更高级的构建逻辑或前端交互)，`frida/releng/meson/mesonbuild/build.py` 详细定义了各种具体的构建目标类型以及用于管理这些目标的数据结构和辅助函数。它将 Meson 构建系统的抽象概念 (例如 `executable`, `library`) 映射到 Frida 项目的具体构建产物和构建步骤。该文件是理解 Frida 构建过程细节的关键，尤其是在调试构建问题或添加新的构建目标时。它确保了 Frida 的各个组件能够按照正确的依赖关系和构建方式生成出来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -201,9 +201,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
- = 'run'
+### 源代码
+```python
+= 'run'
 
     def __init__(self, name: str,
                  command: T.Sequence[T.Union[str, File, BuildTargetTypes, programs.ExternalProgram]],
@@ -503,8 +505,4 @@ def save(obj: Build, filename: str) -> None:
             pickle.dump(obj, f)
     finally:
         obj.environment.coredata = cdata
-
-"""
-
-
 ```

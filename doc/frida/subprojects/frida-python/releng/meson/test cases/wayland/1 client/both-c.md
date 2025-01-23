@@ -93,7 +93,7 @@ Here's a breakdown of the thinking process to analyze the C code and address the
 
 总而言之，虽然这个 `both.c` 文件代码简洁，但它在 Frida 的构建和测试流程中扮演着重要的角色，确保了 Frida 能够正确地支持 Wayland 协议，这对于使用 Frida 进行 Wayland 应用的动态 instrumentation 和逆向分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/wayland/1 client/both.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "viewporter-client-protocol.h"
 #include "viewporter-server-protocol.h"
 
@@ -114,7 +116,4 @@ int main() {
   return 1;
 #endif
 }
-
-"""
-
 ```

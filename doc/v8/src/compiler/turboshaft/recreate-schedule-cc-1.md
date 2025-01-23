@@ -184,7 +184,7 @@ Turbofan 图中会添加一个 `Word32Select` 节点，其输入为：
 
 总而言之，`v8/src/compiler/turboshaft/recreate-schedule.cc` 的第二部分的核心功能是实现了 `ScheduleBuilder::ProcessOperation` 方法，用于将 Turboshaft 图中的各种操作转换为 Turbofan 图中对应的节点，这是 Turboshaft 编译器将高级表示转换为低级表示的关键步骤，为后续的 Turbofan 优化和代码生成奠定了基础。它覆盖了包括算术运算、逻辑运算、内存访问、控制流、函数调用、异常处理、原子操作等多种 Javascript 语言特性在内的底层表示转换。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/recreate-schedule.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/recreate-schedule.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,9 +192,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- with cmove.
+### 源代码
+```cpp
+with cmove.
   DCHECK_EQ(op.implem, SelectOp::Implementation::kCMove);
   DCHECK((op.rep == RegisterRepresentation::Word32() &&
           SupportedOperations::word32_select()) ||
@@ -1026,7 +1028,4 @@ Node* ScheduleBuilder::ProcessOperation(const Simd128TernaryOp& op) {
 #define HANDLE_KIND(kind)                                                      \
   case Simd128TernaryOp::Kind::k##kind:                                        \
     return AddNode(machine.kind(), {GetNode(op.first()), GetNode(op
-"""
-
-
 ```

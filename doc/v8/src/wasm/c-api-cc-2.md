@@ -144,7 +144,7 @@ wasm_ref_delete(func_ref);
 
 这部分代码是 V8 WebAssembly C API 的核心组成部分，它提供了创建和操作 WebAssembly 实例以及访问实例导出的功能。它定义了 C API 的接口，并将其与 V8 内部的 WebAssembly 实现连接起来。通过这部分代码，外部 C/C++ 代码可以加载、实例化 WebAssembly 模块，并与模块中的函数、全局变量、表和内存进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/c-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/c-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -152,8 +152,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ef(*result)) {
         result = i::WasmInternalFunction::GetOrCreateExternal(i::handle(
             i::Cast<i::WasmFuncRef>(*result)->internal(store->i_isolate()),
@@ -949,7 +951,4 @@ const wasm_externtype_t* wasm_functype_as_externtype_const(
 const wasm_externtype_t* wasm_globaltype_as_externtype_const(
     const wasm_globaltype_t* gt) {
   return hide_externtype(static_cas
-"""
-
-
 ```

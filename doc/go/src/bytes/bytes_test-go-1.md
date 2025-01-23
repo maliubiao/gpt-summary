@@ -191,7 +191,7 @@ By following this systematic approach, we can effectively analyze the Go test co
 
 这部分代码主要集中在测试 `bytes` 包中用于处理和操作 byte slice 的各种函数，涵盖了字符串的映射、大小写转换、UTF-8 校验、空白符处理、重复、rune 转换、裁剪、查找、替换、标题化、比较、分割、包含性判断以及内存操作等多个方面。  同时，也包含了对 `Buffer` 类型部分方法的错误处理测试和大量的性能基准测试，以确保功能的正确性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/bytes/bytes_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -200,10 +200,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-	expect = a
+### 源代码
+```go
+expect = a
 	if string(m) != expect {
 		t.Errorf("shrinking: expected %q got %q", expect, m)
 	}
@@ -1390,10 +1391,4 @@ func TestClone(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
-
 ```

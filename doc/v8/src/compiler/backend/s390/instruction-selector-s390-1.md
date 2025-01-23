@@ -109,13 +109,15 @@ function float_mod(a, b) {
 
 总而言之，这段代码是 V8 引擎将 JavaScript 代码高效地运行在 S390 架构上的关键组成部分，它定义了如何将高级的 JavaScript 操作转换为底层的机器指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/instruction-selector-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    if (mb > 63 - sh) mb = 63 - sh;
+### 源代码
+```
+if (mb > 63 - sh) mb = 63 - sh;
       sh = (64 - sh) & 0x3F;
       if (mb >= me) {
         bool match = false;
@@ -1538,8 +1540,4 @@ void InstructionSelectorT<Adapter>::VisitWordCompareZero(
                                           OperandMode::kNone, cont);
               case IrOpcode::kInt64AbsWithOverflow:
                 cont->OverwriteAndNegateIfEqual(kOverflow);
-          
-"""
-
-
 ```

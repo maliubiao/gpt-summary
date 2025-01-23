@@ -134,7 +134,7 @@ Here's a breakdown of how I'll approach this:
 
 这段代码的核心职责是实现 V8 编译器在进行类型推断和优化时所需的类型计算逻辑。它为各种 JavaScript 操作提供了静态类型分析的基础，使得编译器能够更安全、更高效地生成机器代码。`OperationTyper` 类通过分析操作数的类型，预测操作结果的类型，从而帮助编译器进行诸如消除冗余类型检查、内联函数等优化。同时，它也能在编译时发现一些潜在的类型错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/operation-typer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/operation-typer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -142,8 +142,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 }
 
 Type OperationTyper::NumberBitwiseXor(Type lhs, Type rhs) {
@@ -569,8 +571,4 @@ Type OperationTyper::ToBoolean(Type type) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

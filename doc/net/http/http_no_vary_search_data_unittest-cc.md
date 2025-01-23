@@ -149,7 +149,7 @@ No-Vary-Search: params=("data" "id")  // 错误的语法，缺少逗号
 
 这部分代码主要专注于测试 `net::HttpNoVarySearchData` 类的创建和从 HTTP 响应头中解析 `No-Vary-Search` 信息的功能。它涵盖了各种合法的和非法的 `No-Vary-Search` 头的语法，并验证了在不同情况下 `HttpNoVarySearchData` 对象的状态和解析错误处理是否符合预期。 这确保了 Chromium 的网络栈能够正确理解和应用服务器端通过 `No-Vary-Search` 头指定的缓存策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_no_vary_search_data_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -986,7 +988,4 @@ TEST(HttpNoVarySearchCompare, CheckUrlEqualityWithSpecialCharacters) {
                                        value);
 
     EXPECT_TRUE(no_vary_search_data.AreEquivalent(GURL(reques
-"""
-
-
 ```

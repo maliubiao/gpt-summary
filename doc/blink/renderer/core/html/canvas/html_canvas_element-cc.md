@@ -153,7 +153,7 @@ By following these steps, we can construct a comprehensive summary of the `HTMLC
 
 总而言之，这段代码是 `<canvas>` 元素在 Blink 渲染引擎中的核心实现，负责管理画布的属性、渲染上下文、以及与渲染流程的交互。它连接了 HTML 结构、JavaScript API 和底层的渲染机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/canvas/html_canvas_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2006, 2007 Apple Inc. All rights reserved.
  * Copyright (C) 2007 Alp Toker <alp@atoker.com>
@@ -1030,7 +1032,4 @@ void HTMLCanvasElement::NotifyListenersCanvasChanged() {
   scoped_refptr<StaticBitmapImage> source_image;
   if (!copier_) {
     copier_ = std::make_unique
-"""
-
-
 ```

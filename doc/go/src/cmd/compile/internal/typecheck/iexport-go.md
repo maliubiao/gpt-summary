@@ -243,15 +243,17 @@ func MyFunc(i MyInt, factor int) MyInt { // 添加了新的参数
 
 总之，`go/src/cmd/compile/internal/typecheck/iexport.go` 是 Go 编译器中负责定义和实现索引式包导出格式的关键组成部分，它极大地提升了大型项目中包导入的效率。理解它的功能有助于深入理解 Go 语言的编译原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/typecheck/iexport.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -513,9 +515,4 @@ func TparamName(exportName string) string {
 
 // The name used for dictionary parameters or local variables.
 const LocalDictName = ".dict"
-
-"""
-
-
-
 ```

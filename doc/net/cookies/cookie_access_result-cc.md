@@ -201,15 +201,17 @@ const myCookie = document.cookie.split('; ').find(row => row.startsWith('myCooki
 
 总结来说，`net/cookies/cookie_access_result.cc` 中定义的 `CookieAccessResult` 类是 Chromium 网络栈中用于表示 Cookie 访问结果的关键数据结构，它包含了访问状态、SameSite 信息、访问语义以及是否允许访问安全 Cookie 等信息，这些信息直接影响 JavaScript 对 Cookie 的访问以及浏览器在发送 HTTP 请求时是否包含 Cookie。理解这个类的作用对于调试 Cookie 相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_access_result.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ CookieAccessResult::CookieAccessResult(CookieAccessResult&&) = default;
 CookieAccessResult::~CookieAccessResult() = default;
 
 }  // namespace net
-
-"""
-
 ```

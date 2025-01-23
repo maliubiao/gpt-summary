@@ -76,11 +76,13 @@ runWasm(wasmBytes);
 
 总而言之，`wasm-fuzzer-common.cc` 是 V8 内部 Wasm 模糊测试框架的关键组成部分，它通过 C++ 接口模拟 JavaScript 环境下加载和执行 Wasm 模块的过程，并进行严谨的对比测试，以提高 V8 对各种 Wasm 代码的健壮性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/wasm-fuzzer-common.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -572,7 +574,4 @@ void WasmExecutionFuzzer::FuzzWasmModule(base::Vector<const uint8_t> data,
 }
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
 ```

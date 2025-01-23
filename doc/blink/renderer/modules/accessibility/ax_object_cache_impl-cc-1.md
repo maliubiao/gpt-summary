@@ -171,7 +171,7 @@ void AXObjectCacheImpl::Remove(AXID ax_id, bool notify_parent) {
 
 这段代码是 Chromium 浏览器可访问性实现的关键部分，它负责维护可访问性树与 DOM 树之间的一致性，确保辅助技术能够准确地理解和呈现网页内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object_cache_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
 }
 
@@ -1091,7 +1093,4 @@ void AXObjectCacheImpl::Remove(AXID ax_id, bool notify_parent) {
       MarkDocumentDirty();
     }
     active
-"""
-
-
 ```

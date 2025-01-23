@@ -121,7 +121,7 @@ Frida 是一个动态插桩工具，广泛应用于软件逆向工程、安全�
     **用户操作步骤导致错误:**
     1. 用户克隆了 Frida 的源代码。
     2. 用户尝试配置构建，例如运行 `meson setup build --default-library=shared -Dfrida_build_tools=true -Dqt6=true`
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/modules/qt6.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2020 The Meson development team
 
@@ -153,7 +155,4 @@ class Qt6Module(QtBaseModule):
 
 def initialize(interp: Interpreter) -> Qt6Module:
     return Qt6Module(interp)
-
-"""
-
 ```

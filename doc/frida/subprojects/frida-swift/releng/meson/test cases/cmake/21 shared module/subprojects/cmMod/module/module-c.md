@@ -162,7 +162,7 @@ By following these steps, I can systematically analyze the code and connect it t
 
 总而言之，这个 `module.c` 文件虽然简短，但它展示了动态链接和符号解析的核心概念，这些概念对于理解 Frida 的工作原理以及进行逆向工程和动态 instrumentation 都至关重要。它作为一个测试用例，清晰地演示了在不同操作系统上处理共享模块依赖关系的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/21 shared module/subprojects/cmMod/module/module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -268,7 +270,4 @@ int DLL_PUBLIC func(void) {
     return func_from_language_runtime();
 }
 #endif
-
-"""
-
 ```

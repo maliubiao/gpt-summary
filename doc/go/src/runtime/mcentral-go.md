@@ -164,7 +164,7 @@ Small object after GC 3 address: 0xc0000100a0
 
 总而言之，`mcentral.go` 中的代码定义了 Go 语言运行时中用于管理特定大小对象内存块的核心组件，它通过与 `mcache` 和垃圾回收器的协作，实现了高效的内存分配和回收。理解其功能有助于更深入地理解 Go 的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mcentral.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -172,8 +172,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -439,9 +441,4 @@ func (c *mcentral) grow() *mspan {
 	s.initHeapBits()
 	return s
 }
-
-"""
-
-
-
 ```

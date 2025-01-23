@@ -207,15 +207,17 @@ enum class DeoptimizeReason : uint8_t {
 
 总之，`v8/src/deoptimizer/deoptimize-reason.cc` 这个文件在 V8 引擎中扮演着关键的角色，它定义了代码去优化的各种原因，为 V8 内部的调试、性能分析和优化提供了重要的信息。理解这些去优化原因可以帮助 JavaScript 开发者编写更易于 V8 引擎优化的代码，从而提升应用程序的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/deoptimize-reason.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/deoptimizer/deoptimize-reason.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -253,7 +255,4 @@ char const* DeoptimizeReasonToString(DeoptimizeReason reason) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

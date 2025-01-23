@@ -100,7 +100,7 @@ Here's a breakdown of the thinking process to analyze the provided C++ file and 
 
 总而言之，`badformat.cpp` 是 Frida 项目中用于测试代码格式化工具 `clang-format` 的一个负面测试用例，它帮助确保 Frida 的代码库遵循一致的格式规范，尽管它本身不直接参与逆向工程或底层系统操作。 理解其存在和功能有助于理解 Frida 项目的构建和测试流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/94 clangformat/not-included/badformat.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,11 +108,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 class {
 };
-
-"""
-
 ```

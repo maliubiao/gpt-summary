@@ -823,7 +823,7 @@ void MacroAssembler::SwapDouble(MemOperand src, MemOperand dst,
   StoreF64(d0, MemOperand(sp));
   LoadF64(scratch, src);
   LoadF64(d0,
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/macro-assembler-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/s390/macro-assembler-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -831,8 +831,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 oadS32(dst, dst);
 }
 
@@ -1915,7 +1917,4 @@ void MacroAssembler::AtomicCmpExchangeHelper(Register addr, Register output,
   LoadU32(temp0, MemOperand(addr, offset));
   llgfr(temp1, temp0);
   RotateInsertSelectBits(temp0, old_value, Operand(start), Ope
-"""
-
-
 ```

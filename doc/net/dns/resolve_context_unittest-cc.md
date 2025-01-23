@@ -154,7 +154,7 @@ By following this structured thought process,  the detailed analysis and summary
 
 这部分 `resolve_context_unittest.cc` 文件的主要功能是**测试 `net::ResolveContext` 类对 DNS 服务器的管理和故障处理机制，重点在于 DNS-over-HTTPS (DoH) 服务器的可用性追踪、选择以及与传统 DNS 服务器的协同工作。** 它验证了在各种场景下，`ResolveContext` 是否能够正确地记录服务器的成功和失败状态，并基于这些状态来选择合适的 DNS 服务器进行查询，同时还测试了缓存失效和会话管理等功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/resolve_context_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -917,7 +919,4 @@ class TestDohStatusObserver : public ResolveContext::DohStatusObserver {
   void OnSessionChanged() override { ++session_changes_; }
   void OnDohServerUnavailable(bool network_change) override {
     ++server
-"""
-
-
 ```

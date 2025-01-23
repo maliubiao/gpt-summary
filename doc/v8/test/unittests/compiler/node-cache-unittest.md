@@ -114,11 +114,13 @@ let result2 = multiply(7);
 
 `node-cache-unittest.cc` 测试了 V8 编译器内部用于缓存节点的机制。这个机制对于优化 JavaScript 代码的编译过程至关重要，通过避免重复创建相同的节点来提高效率。虽然 JavaScript 开发者不能直接访问或控制 `NodeCache`，但它的存在是 V8 引擎高效执行 JavaScript 代码的关键因素之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/node-cache-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ TEST_F(NodeCacheTest, GetCachedNodes_int64) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

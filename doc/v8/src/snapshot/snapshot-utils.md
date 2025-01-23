@@ -94,11 +94,13 @@ console.log("Hello from JavaScript!");
 
 `v8/src/snapshot/snapshot-utils.cc` 提供了计算快照数据校验和的功能。这个功能是 V8 快照机制的重要组成部分，用于保证快照数据的完整性，从而确保 V8 能够安全可靠地加载快照，最终加速 JavaScript 程序的启动过程。JavaScript 代码本身不直接使用这个文件中的函数，但其运行受益于这个底层的校验和机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/snapshot-utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -138,7 +140,4 @@ uint32_t Checksum(base::Vector<const uint8_t> payload) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -157,7 +157,7 @@ Here's a breakdown of the thinking process to analyze the provided C code and ge
 
 在这个过程中，`main.c` 作为一个简单的入口点，其源代码本身可能不是调试的重点。然而，理解 `main.c` 的作用可以帮助用户理清程序的整体结构，并更好地定位问题所在的模块。目录结构 `frida/subprojects/frida-tools/releng/meson/test cases/common/39 library chain/`  强烈暗示了这个 `main.c` 是一个测试用例，用于测试 Frida 如何处理库的调用链，这进一步支持了上述的调试场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/39 library chain/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,14 +165,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int libfun(void);
 
 int main(void) {
   return libfun();
 }
-
-"""
-
 ```

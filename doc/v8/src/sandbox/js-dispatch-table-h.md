@@ -145,15 +145,17 @@ function anotherAdd(x, y) {
 
 `v8/src/sandbox/js-dispatch-table.h` 定义了一个关键的数据结构，用于 V8 引擎中 JavaScript 函数调用的安全性和性能优化。它通过提供细粒度的 CFI 和支持廉价的分层编译，在幕后发挥着至关重要的作用。用户虽然不直接操作这个表，但其功能直接影响着 JavaScript 代码的执行方式和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/js-dispatch-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/js-dispatch-table.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -467,7 +469,4 @@ V8_EXPORT_PRIVATE inline JSDispatchTable* GetProcessWideJSDispatchTable() {
 #endif  // V8_ENABLE_SANDBOX
 
 #endif  // V8_SANDBOX_JS_DISPATCH_TABLE_H_
-
-"""
-
 ```

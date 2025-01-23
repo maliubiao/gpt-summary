@@ -101,7 +101,7 @@ Here's a breakdown of how to address each of the user's requests:
 
 因此，这段代码是 Frida 在 Windows 平台上实现 CPU 上下文操作的关键部分，它在 Frida 的内部机制和 Windows 操作系统之间架起了桥梁，使得用户可以通过 Frida 的 API 来进行底层的动态分析和修改。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-windows/gumprocess-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 D_P == 8
   cpu_context->rip = context->Rip;
 
@@ -258,8 +260,4 @@ gum_windows_unparse_context (const GumCpuContext * cpu_context,
 #ifndef _MSC_VER
 # pragma GCC diagnostic pop
 #endif
-
-"""
-
-
 ```

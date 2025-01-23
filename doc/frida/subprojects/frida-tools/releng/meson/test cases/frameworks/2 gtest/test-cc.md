@@ -147,7 +147,7 @@ Frida 的其他测试用例很可能涉及到：
 
 因此，到达这个文件的过程通常是自顶向下，从测试失败的现象追溯到问题的根源。这个简单的测试文件是排除最基本问题的起点。 如果这个测试都失败了，那么进一步调试更复杂的 Frida 功能测试是毫无意义的，需要先解决基础环境问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/2 gtest/test.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<gtest/gtest.h>
 
 TEST(basic_test, eq_works) {
@@ -166,7 +168,4 @@ TEST(basic_test, eq_works) {
 TEST(basic_test, neq_works) {
     ASSERT_NE(15, 106) << "Inequal is equal. The foundations of space and time are in jeopardy.";
 }
-
-"""
-
 ```

@@ -141,14 +141,16 @@ text_run_rtl.directionalOverride() == 0
 
 总之，`web_text_run.cc` 文件虽然代码简洁，但其定义的 `WebTextRun` 类在 Blink 引擎中扮演着重要的角色，负责传递文本运行的必要信息，并桥接了平台层和渲染层，与 HTML 结构、CSS 样式以及 JavaScript 的动态操作都有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_text_run.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -191,7 +193,4 @@ WebTextRun::operator TextRun() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

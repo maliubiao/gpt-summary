@@ -130,7 +130,7 @@ By following this structured analysis and refinement process, I aimed to provide
 
 总而言之，虽然 `file3.c` 代码本身非常简单，但它在一个更复杂的系统（如 Frida）和逆向工程的上下文中就变得很有意义。它代表了程序中常见的函数调用结构，是逆向分析、动态插桩和调试的基础构建块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/86 prelinking/file3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<private_header.h>
 
 int round1_c() {
@@ -149,7 +151,4 @@ int round1_c() {
 int round2_c() {
     return round2_d();
 }
-
-"""
-
 ```

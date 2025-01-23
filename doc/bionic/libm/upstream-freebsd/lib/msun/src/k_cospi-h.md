@@ -227,7 +227,7 @@ int main() {
 
 总而言之，`__kernel_cospi` 是 Android Bionic 库中用于优化小范围内余弦计算的底层函数，它体现了 Bionic 库为了提高性能和精度所做的努力。理解其功能和上下文有助于更好地理解 Android 系统底层的数学运算机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/k_cospi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -237,8 +237,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 2017 Steven G. Kargl
  * All rights reserved.
@@ -282,8 +284,4 @@ __kernel_cospi(double x)
 	_2sumF(hi, lo);
 	return (__kernel_cos(hi, lo));
 }
-
-
-"""
-
 ```

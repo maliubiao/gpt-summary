@@ -122,11 +122,13 @@ bitwiseOr(1.5, 2.7); // 相当于 1 | 2，结果是 3
 
 `simplified-lowering-verifier.cc` 是 V8 引擎中一个关键的组件，它通过静态分析和验证类型和截断信息，确保在生成低级代码时保持类型安全并进行性能优化。它的工作直接反映了 JavaScript 的类型系统和运行时行为，虽然用户看不到这个验证过程，但它对 JavaScript 代码的执行效率和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-lowering-verifier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -876,7 +878,4 @@ void SimplifiedLoweringVerifier::VisitNode(Node* node,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

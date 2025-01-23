@@ -68,12 +68,14 @@ Response: The user wants a summary of the functionality of the C++ source code f
 
 由于这是第一部分，可以预期第二部分会包含更多类似的运行时测试函数，或者与这里列出的功能相关的其他方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-test.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1972,7 +1974,4 @@ RUNTIME_FUNCTION(Runtime_HeapObjectVerify) {
   }
   DirectHandle<Object> object = args.at(0);
 #ifdef VERIF
-"""
-
-
 ```

@@ -78,15 +78,17 @@ Essentially, this part of the test suite focuses on the lifecycle management of 
 
 总的来说，这部分测试覆盖了 `ThrottlingURLLoader` 在各种复杂场景下的行为，确保了其稳定性和可靠性，为 Chromium 的网络请求处理提供了坚实的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/loader/throttling_url_loader_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e* delegate, bool* /* defer */,
          std::vector<std::string>* removed_headers,
          net::HttpRequestHeaders* modified_headers,
@@ -916,8 +918,4 @@ TEST_F(ThrottlingURLLoaderTest, RestartWithURLResetBeforeWillRedirectRequest) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

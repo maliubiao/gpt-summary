@@ -117,7 +117,7 @@ Here's a breakdown of the thinking process to generate the detailed analysis of 
 
 总而言之，`s3.c` 作为一个非常简单的 C 代码文件，其主要作用是作为 Frida 单元测试的一部分，用于验证 Frida 代码提升功能的基本能力。虽然用户不会直接使用它，但它对于 Frida 的开发和调试至关重要，并间接地反映了 Frida 所涉及的逆向工程、底层系统和编程概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/12 promote/subprojects/s1/subprojects/s3/s3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,12 +125,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2() {
     return -42;
 }
-
-"""
-
 ```

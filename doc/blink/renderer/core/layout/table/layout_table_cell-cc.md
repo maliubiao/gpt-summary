@@ -122,14 +122,16 @@ Essentially, my process involved understanding the code's purpose, dissecting it
 
 总而言之，`layout_table_cell.cc` 文件是 Blink 渲染引擎中处理表格单元格布局的关键组成部分，它负责解释 HTML 结构和 CSS 样式，并将其转化为浏览器可以渲染的视觉效果。理解这个文件的功能有助于深入了解浏览器如何处理和呈现复杂的 HTML 表格。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/table/layout_table_cell.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -379,7 +381,4 @@ void LayoutTableCell::UpdateColAndRowSpanFlags() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

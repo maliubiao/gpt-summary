@@ -132,11 +132,13 @@ This step-by-step process of scanning, identifying key elements, analyzing funct
 
 `declarable.cc` 文件是 V8 引擎中 Torque 语言的关键组成部分，它定义了用于描述 JavaScript 语言特性的抽象表示。通过定义 `Builtin`，`RuntimeFunction` 和 `GenericCallable` 等概念，Torque 能够以一种结构化的方式描述和生成实现 JavaScript 功能所需的低级代码。理解这个文件有助于深入了解 V8 引擎是如何实现 JavaScript 语言的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/declarable.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -333,7 +335,4 @@ const Type* TypeAlias::Resolve() const {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

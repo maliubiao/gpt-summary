@@ -146,7 +146,7 @@ Now, I need to organize the thoughts into a coherent and informative response, a
 
 作为调试线索，这个 `hello.c` 文件很可能用于验证 Frida 的基本功能，例如能否成功加载和执行一个简单的 WASM 模块，或者能否 hook WASM 模块中调用的 C 标准库函数（如 `printf`）。如果 Frida 在更复杂的 WASM 模块上出现问题，先在一个简单的 `hello.c` 上进行测试可以帮助隔离问题，确定是 Frida 本身的问题还是目标 WASM 模块的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/wasm/1 basic/hello.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,15 +154,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main() {
   printf("Hello World\n");
   return 0;
 }
-
-"""
-
 ```

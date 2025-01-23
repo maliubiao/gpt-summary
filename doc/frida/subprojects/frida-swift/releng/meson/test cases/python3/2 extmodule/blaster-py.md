@@ -144,7 +144,7 @@ Frida 是一个动态插桩工具，常用于逆向工程。这个脚本虽然�
 
 总而言之，`blaster.py` 是一个简单的单元测试脚本，用于验证 Frida 与 Swift 代码交互的核心功能。它通过调用一个模拟的 Swift 函数并检查其返回值来达到测试目的。虽然脚本本身很简单，但它背后的机制和应用场景与复杂的逆向工程和动态分析技术密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/python3/2 extmodule/blaster.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import tachyon
@@ -168,7 +170,4 @@ if not isinstance(result, int):
 if result != 1:
     print(f'Returned result {result} is not 1.')
     sys.exit(1)
-
-"""
-
 ```

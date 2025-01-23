@@ -135,11 +135,13 @@ WebAssembly.instantiate(module, importObject)
 
 `globals.cc` 这个 C++ 文件通过单元测试的方式，验证了 V8 引擎在处理 WebAssembly 全局变量时的正确性，包括导入、导出、类型、可变性以及通过 JavaScript API 进行交互的能力。它确保了 WebAssembly 模块可以正确地与 JavaScript 环境共享和操作全局状态。 JavaScript 示例则展示了如何在 JavaScript 中定义和操作这些 WebAssembly 全局变量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/globals.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -351,7 +353,4 @@ TEST_F(WasmCapiTest, Globals) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

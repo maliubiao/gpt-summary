@@ -140,13 +140,15 @@ objectToObserve = null; // 解除对 objectToObserve 的强引用
 
 这部分 `objects.cc` 代码是 V8 引擎的核心组成部分，它实现了许多关键的内部数据结构和功能，这些结构和功能直接支撑着 JavaScript 语言的各种特性和运行机制。理解这些内部实现对于深入了解 JavaScript 引擎的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-                               Cast<JSReceiver>(secondary_handler))
+### 源代码
+```
+Cast<JSReceiver>(secondary_handler))
                                 .ToHandle(&handler_context);
     }
     if (!has_handler_context) handler_context = isolate->native_context();
@@ -1721,8 +1723,4 @@ EXTERN_DEFINE_BASE_NAME_DICTIONARY(GlobalDictionary, GlobalDictionaryShape)
 #undef EXTERN_DEFINE_BASE_NAME_DICTIONARY
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

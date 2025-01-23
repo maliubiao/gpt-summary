@@ -251,7 +251,7 @@ Frida 脚本会拦截对 `dlopen` 函数的调用，并打印出被加载的 `.s
 
 总结来说，`bionic/tests/libs/dlopen_testlib_depends_on_simple.cpp` 是一个用于测试 Android 动态链接器处理依赖关系的测试用例。理解它的功能有助于深入理解 Android 系统中动态链接的工作原理。 虽然它本身不是 Android framework 或 NDK 的核心组件，但它验证了这些组件所依赖的关键机制。 通过 Frida，我们可以 hook `dlopen` 函数，更直观地观察动态链接的过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlopen_testlib_depends_on_simple.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -262,8 +262,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -300,7 +302,4 @@ extern "C" bool dlopen_testlib_simple_func();
 extern "C" bool dlopen_testlib_call_simple_func() {
   return dlopen_testlib_simple_func();
 }
-
-"""
-
 ```

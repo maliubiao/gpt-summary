@@ -129,7 +129,7 @@ By following these steps, I can systematically break down the provided code snip
 
 正如前面总结的，这部分 (第 5 部分) 的核心功能是 **测试 `SpdySession` 类的流量控制机制**。它涵盖了发送和接收窗口的调整、Padding 的处理、超过流量控制窗口的处理、避免流量泄露以及流量控制阻塞后的恢复等各种场景。这些测试确保了 `SpdySession` 能够按照 SPDY 协议规范正确地管理数据传输，防止网络拥塞，并保证连接的稳定性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t(
       spdy_util_.ConstructSpdyRstStream(1, spdy::ERROR_CODE_REFUSED_STREAM));
   MockRead reads[] = {
@@ -1039,7 +1041,4 @@ TEST_F(SpdySessionTest, ResumeByPriorityAfterSendWindowSizeIncrease) {
   spdy::SpdySerializedFrame req1(spdy_util_.ConstructSpdyPost(
       kDefaultUrl, 1, kBodyDataSize, LOWEST, nullptr, 0));
   spdy::SpdyS
-"""
-
-
 ```

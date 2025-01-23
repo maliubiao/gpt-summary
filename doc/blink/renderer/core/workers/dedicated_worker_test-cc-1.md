@@ -58,15 +58,17 @@ I need to:
 **归纳一下这段代码的功能:**
 
 这段代码主要针对 Blink 引擎中 `DedicatedWorker` 的 `PostCustomEvent` 方法进行全面的单元测试。它涵盖了发送不同类型的数据（字符串、数字、MessagePort），测试了在 Worker 启动前后发送消息的情况，以及处理反序列化失败的情况。这些测试确保了 `DedicatedWorker` 能够可靠地进行跨线程通信，并且能够处理各种边界情况和错误场景。这对于保证 Web Workers 功能的正确性和稳定性至关重要，因为 Web Workers 是 JavaScript 并发编程的重要组成部分。 这些测试也间接验证了与 JavaScript 的 `postMessage` API 的兼容性和底层实现的正确性。
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/dedicated_worker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 TestingScope v8_scope;
   ScriptState* script_state = v8_scope.GetScriptState();
 
@@ -249,8 +251,4 @@ TEST_F(DedicatedWorkerTest, PostCustomEventNoMessage) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

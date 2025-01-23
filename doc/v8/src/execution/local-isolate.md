@@ -142,11 +142,13 @@ console.log(formatterEN.format(now));
 
 总而言之，`local-isolate.cc` 中定义的 `LocalIsolate` 类是 V8 引擎实现线程隔离和管理线程局部资源的关键组件，它直接支持了 JavaScript 中的 Web Workers 和 BigInt 等功能，并在国际化方面发挥作用。 理解 `LocalIsolate` 的作用有助于更深入地理解 V8 如何高效且安全地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/local-isolate.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -226,7 +228,4 @@ const std::string& LocalIsolate::DefaultLocale() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -176,7 +176,7 @@ const char* class_body_data[] = {"#privateField = 10;", nullptr};
 
 作为第 8 部分，这个文件主要集中在测试 V8 解析器对 JavaScript **类** 的各种语法特性的支持，尤其是 **私有类成员** 和 **自动访问器** 相关的语法。它涵盖了成功的解析场景以及各种预期的错误场景，确保 V8 能够正确理解和处理这些现代 JavaScript 特性。  由于是单元测试，它关注的是解析器本身的正确性，而不涉及代码的执行或运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/parsing-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -184,9 +184,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共15部分，请归纳一下它的功能
+```
 
-"""
- {nullptr, nullptr}};
+### 源代码
+```cpp
+{nullptr, nullptr}};
   const char* class_body_data[] = {
     "a: class { #a = 1 }",
     "a: class { #a = () => {} }",
@@ -1276,8 +1278,4 @@ TEST_F(ParsingTest, PrivateStaticAutoAccessorsErrors) {
     // ASI
     "static accessor #['a'] = 0\n",
     "static accessor #['a'] = 0\n b",
-    
-"""
-
-
 ```

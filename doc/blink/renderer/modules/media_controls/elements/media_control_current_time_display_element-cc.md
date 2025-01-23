@@ -119,15 +119,17 @@ My thinking process to answer the request about `media_control_current_time_disp
 
 总而言之，`media_control_current_time_display_element.cc` 文件定义了浏览器内置媒体控件中显示当前播放时间的核心逻辑和渲染方式，它通过 CSS 伪元素与样式关联，并通过 Blink 内部机制与媒体播放状态同步，最终将当前播放时间呈现给用户。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_controls/elements/media_control_current_time_display_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ MediaControlCurrentTimeDisplayElement::MediaControlCurrentTimeDisplayElement(
 }
 
 }  // namespace blink
-
-"""
-
 ```

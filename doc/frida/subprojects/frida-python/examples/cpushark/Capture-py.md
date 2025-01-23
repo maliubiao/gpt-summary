@@ -178,7 +178,7 @@ By following this structured approach, combining code analysis with knowledge of
 
 通过以上步骤，用户操作最终导致了 `Capture.py` 中相关代码的执行，从而实现了动态插桩和函数调用捕获的功能。在调试过程中，可以检查每个步骤的状态和变量值，例如 `self.state` 的变化，`self.session` 和 `self.script` 是否被正确创建，以及是否成功接收到来自 JavaScript 脚本的消息，来定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/cpushark/Capture.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import bisect
 import re
 
@@ -637,7 +639,4 @@ var interceptReadFunction = function interceptReadFunction(functionName) {
 
 setTimeout(initialize, 0);
 """
-
-"""
-
 ```

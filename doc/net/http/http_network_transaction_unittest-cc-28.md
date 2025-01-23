@@ -180,7 +180,7 @@ Confidence Score: 5/5
 
 这部分单元测试主要覆盖了 `HttpNetworkTransaction` 在处理 WebSocket 连接（特别是通过代理）、计算网络传输字节数、处理内容编码协商、处理代理解析以及支持 Reporting API 和 Network Error Logging (NEL) 方面的功能。它着重测试了在各种网络场景下 `HttpNetworkTransaction` 的正确行为和错误处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -188,9 +188,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第29部分，共34部分，请归纳一下它的功能
+```
 
-"""
-     "User-Agent: test-ua\r\n"
+### 源代码
+```cpp
+"User-Agent: test-ua\r\n"
                 "Proxy-Authorization: Basic Zm9vOmJhcg==\r\n\r\n"),
 
       MockWrite("GET / HTTP/1.1\r\n"
@@ -1068,7 +1070,4 @@ TEST_P(HttpNetworkTransactionNetworkErrorLoggingTest,
   auto session = CreateSession(&session_deps_);
   auto trans =
       std::make_unique<HttpNetworkTransaction>(DEFAULT_PRIORITY, se
-"""
-
-
 ```

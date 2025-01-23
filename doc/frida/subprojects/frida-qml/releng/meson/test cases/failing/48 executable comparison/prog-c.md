@@ -118,7 +118,7 @@ Finally, I organized the answers clearly, using headings to address each part of
 
 总而言之，尽管 `prog.c` 代码非常简单，但在 Frida 的测试框架中，它作为一个基础的、预期行为明确的程序，被用来检验 Frida 在最基本的操作场景下的正确性，为更复杂的 Frida 功能测试奠定基础。  测试用例的失败往往能揭示 Frida 自身或测试环境中的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/48 executable comparison/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,10 +126,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) { return 0; }
-
-"""
-
 ```

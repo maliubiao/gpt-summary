@@ -176,15 +176,17 @@ By following this structured approach and continually refining my understanding,
 
 通过以上步骤，开发者可以定位问题是否与 `QuicCompressedCertsCache` 的行为有关。例如，如果发现频繁的缓存未命中，可能是缓存容量设置不合理，或者缓存的键值生成逻辑存在问题。而 `quic_compressed_certs_cache_test.cc` 中定义的各种测试用例，正是帮助开发者验证这些逻辑是否正确的重要手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/quic_compressed_certs_cache_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -277,7 +279,4 @@ TEST_F(QuicCompressedCertsCacheTest, CacheMissDueToEviction) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

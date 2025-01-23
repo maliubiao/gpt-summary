@@ -117,7 +117,7 @@ By following these steps, starting with the core functionality and progressively
 
 总而言之， `fallback.c` 在 Frida 项目中扮演着一个重要的角色，它提供了一个在 SIMD 指令不可用时的功能替代，并且是 Frida 质量保证和测试流程的关键组成部分。 理解它的作用有助于逆向工程师分析程序的优化策略，也有助于 Frida 开发者确保工具的健壮性和跨平台兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/147 simd/fallback.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdfuncs.h>
 
 void increment_fallback(float arr[4]) {
@@ -135,7 +137,4 @@ void increment_fallback(float arr[4]) {
         arr[i]++;
     }
 }
-
-"""
-
 ```

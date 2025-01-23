@@ -146,15 +146,17 @@ Here's a breakdown of the thinking process to generate the comprehensive explana
 
 总而言之，`css_bracketed_value_list.cc` 文件是 Blink 渲染引擎中处理 CSS 方括号列表的核心组件。理解它的功能可以帮助我们更好地理解 CSS 的解析过程，以及在使用 JavaScript 操作包含此类值的 CSS 属性时需要注意的事项。在调试与 CSS 方括号列表相关的问题时，关注浏览器的开发者工具和 Blink 的内部机制是很有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_bracketed_value_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Igalia, S.L. All rights reserved.
  *
@@ -201,7 +203,4 @@ CSSBracketedValueList::CSSBracketedValueList()
 
 }  // namespace cssvalue
 }  // namespace blink
-
-"""
-
 ```

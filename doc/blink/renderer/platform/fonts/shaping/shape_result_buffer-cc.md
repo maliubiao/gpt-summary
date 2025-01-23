@@ -145,14 +145,16 @@ p {
 
 总而言之，`shape_result_buffer.cc` 在 Chromium Blink 渲染引擎中扮演着关键角色，它缓存了文本塑形的结果，并提供了访问这些结果的接口，使得后续的布局、渲染以及用户交互（如文本选择、光标定位）成为可能。它与 HTML、CSS 和 JavaScript 息息相关，是 Web 页面正确显示文本的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/shape_result_buffer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -349,7 +351,4 @@ GlyphData ShapeResultBuffer::EmphasisMarkGlyphData(
 }
 
 }  // namespace blink
-
-"""
-
 ```

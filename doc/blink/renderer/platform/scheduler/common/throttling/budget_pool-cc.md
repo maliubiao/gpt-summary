@@ -115,14 +115,16 @@ This iterative process of reading, analyzing, connecting, exemplifying, and refi
 
 总而言之，`BudgetPool` 提供了一种集中管理和控制任务队列执行节奏的机制，对于优化渲染性能、节省资源以及避免页面卡顿非常重要。 理解其功能和正确使用方法对于开发高性能的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/throttling/budget_pool.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ void BudgetPool::UpdateStateForAllThrottlers(base::TimeTicks now) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

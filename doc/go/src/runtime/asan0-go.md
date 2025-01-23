@@ -136,7 +136,7 @@ fatal error: unexpected signal during runtime execution
 
 `go/src/runtime/asan0.go` (当不启用 ASan 时) 的作用是提供一组空的 ASan 函数，确保代码在没有 ASan 的环境下也能编译通过。它本身不进行任何内存错误检测。真正的内存错误检测功能由另一个带有 `//go:build asan` 构建约束的 `asan0.go` 文件实现，并且需要在构建时使用 `-asan` 标志才能激活。理解这一点对于有效地使用 Go 的内存管理和调试工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/asan0.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -144,8 +144,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -169,9 +171,4 @@ func asanwrite(addr unsafe.Pointer, sz uintptr)           { throw("asan") }
 func asanunpoison(addr unsafe.Pointer, sz uintptr)        { throw("asan") }
 func asanpoison(addr unsafe.Pointer, sz uintptr)          { throw("asan") }
 func asanregisterglobals(addr unsafe.Pointer, sz uintptr) { throw("asan") }
-
-"""
-
-
-
 ```

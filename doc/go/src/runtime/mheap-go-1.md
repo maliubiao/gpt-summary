@@ -46,7 +46,7 @@ I need to:
 
 总而言之，这段代码是 Go 语言运行时系统中核心的内存管理模块的一部分，它负责管理堆内存的分配、释放、以及与垃圾回收相关的元数据。它通过 `mspan` 这一核心数据结构来组织和管理内存页，并提供了一系列函数来操作这些 `mspan`。此外，它还处理了手动管理的内存分配以及与对象关联的特殊记录的管理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mheap.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -55,8 +55,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 anual returns true if the span allocation is manually managed.
 func (s spanAllocType) manual() bool {
 	return s != spanAllocHeap
@@ -1087,9 +1089,4 @@ type specialfinalizer struct {
 func addfinalizer(p unsafe.Pointer, f *funcval, nret uintptr, fint *_type, ot *ptrtype) bool {
 	lock(&mheap_.speciallock)
 	s := (*specialfinalizer)(mhe
-"""
-
-
-
-
 ```

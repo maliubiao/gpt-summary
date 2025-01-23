@@ -136,7 +136,7 @@ add(1, 2, 3); // JavaScript 不会报错，但第三个参数 3 会被忽略
 
 这段代码（`Return` 函数）的主要功能是 **生成 ARM 架构上 Maglev 编译器用于从函数返回的汇编指令，并负责根据形式参数和实际参数的个数动态地清理函数调用时留在栈上的参数和接收者对象，确保栈的平衡和正确的返回操作。** 它体现了 JavaScript 中 `return` 语句在底层编译后的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/arm/maglev-ir-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/arm/maglev-ir-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -144,8 +144,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rameter_count();
 
   // We're not going to continue execution, so we can use an arbitrary register
@@ -179,8 +181,4 @@ rameter_count();
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -189,15 +189,17 @@ func main() {
 
 总而言之，这段代码是一个底层的编译器测试用例，用于验证在涉及反射和不安全操作时，Go编译器的行为是否符合预期，特别是在启用指针安全检查的情况下。 开发者在日常编程中应谨慎使用 `unsafe` 包，因为它会牺牲类型安全，容易引入难以调试的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue35073b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -d=checkptr -m
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -221,9 +223,4 @@ func main() {
 	_ = unsafe.Pointer(reflect.ValueOf(&n).Elem().UnsafeAddr()) // ERROR "inlining call"
 	_ = unsafe.Pointer(reflect.ValueOf(&m).Elem().Pointer())    // ERROR "inlining call"
 }
-
-"""
-
-
-
 ```

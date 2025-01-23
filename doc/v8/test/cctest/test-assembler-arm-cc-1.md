@@ -139,7 +139,7 @@ for (let i = 0; i < array1.length; i++) {
 * **使用 `CHECK_*` 宏来验证执行 NEON 指令后的 `struct T` 的成员变量值是否符合预期。**
 * **可能包含其他针对不同 NEON 指令或特性的测试用例。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -147,8 +147,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , t.field[3]);
 
 #define CHECK_EQ_32X2(field, ex0, ex1) \
@@ -979,7 +981,4 @@ TEST(15) {
     __ vst1(Neon8, NeonListOperand(q0), NeonMemOperand(r4));
     __ add(r4, r0, Operand(static_cast<int32_t>(offsetof(T, vzip32b))));
     __ vst1(Neon8,
-"""
-
-
 ```

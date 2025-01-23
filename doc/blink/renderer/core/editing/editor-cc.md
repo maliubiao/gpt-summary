@@ -744,7 +744,7 @@ void Editor::AddImageResourceObserver(ImageResourceObserver* observer) {
 }
 
 void
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/editor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -752,8 +752,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2011 Apple Inc. All rights reserved.
  * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies)
@@ -1601,7 +1603,4 @@ static Range* FindStringBetweenPositions(
       return nullptr;
 
     auto* range_obje
-"""
-
-
 ```

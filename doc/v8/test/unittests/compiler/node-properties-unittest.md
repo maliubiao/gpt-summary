@@ -153,11 +153,13 @@ This detailed thought process allows for a comprehensive understanding of the C+
 
 `node-properties-unittest.cc` 文件通过单元测试确保了 `NodeProperties` 类的正确性，而 `NodeProperties` 类是 V8 编译器中用于分析和操作代码中间表示的关键组件。 这些操作直接支持了 V8 引擎对 JavaScript 代码的各种优化，从而提高了 JavaScript 代码的执行效率。 虽然我们看不到直接的 JavaScript 代码，但这些 C++ 测试背后的机制深深影响着我们编写的每一行 JavaScript 代码的执行方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/node-properties-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ TEST_F(NodePropertiesTest, CollectControlProjections_Switch) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

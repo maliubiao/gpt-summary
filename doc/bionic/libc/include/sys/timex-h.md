@@ -327,7 +327,7 @@ if (Process.platform === 'android') {
 
 总结来说，`bionic/libc/include/sys/timex.handroid` 定义了用于调整内核时钟的接口，在 Android 系统中用于维护时间的准确性。理解这些函数的功能和使用场景，对于分析和调试 Android 系统的时间相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/timex.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -338,8 +338,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  * All rights reserved.
@@ -404,7 +406,4 @@ int clock_adjtime(clockid_t __clock, struct timex* _Nonnull __tx) __INTRODUCED_I
 
 
 __END_DECLS
-
-"""
-
 ```

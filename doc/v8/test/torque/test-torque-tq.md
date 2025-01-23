@@ -285,15 +285,17 @@ macro TestTernaryOperator(x: Smi): Smi {
 
 `v8/test/torque/test-torque.tq` 是一个至关重要的测试文件，用于确保 V8 的 Torque 语言能够正常工作。它通过大量的测试用例覆盖了 Torque 的各种语法和特性。理解这个文件的内容可以帮助开发者深入了解 Torque 语言以及 V8 内部的实现机制。虽然它不直接对应于用户编写的 JavaScript 代码，但它所测试的特性是 V8 执行 JavaScript 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/torque/test-torque.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/torque/test-torque.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1658,7 +1660,4 @@ builtin TestCallNever(implicit context: Context)(a: Smi): Smi {
 builtin TestIncrementArraySpeciesModified(implicit context: Context)(): Smi {
   return 0;
 }
-
-"""
-
 ```

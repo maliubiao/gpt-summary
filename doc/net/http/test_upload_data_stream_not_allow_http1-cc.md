@@ -144,15 +144,17 @@ fetch('/upload', {
 
 总而言之，`test_upload_data_stream_not_allow_http1.cc` 是 Chromium 网络栈中一个用于测试的组件，它模拟了不允许使用 HTTP/1 的上传数据流，帮助开发者验证在强制使用新协议时的行为是否正确。它与 JavaScript 的关系是间接的，通过支持 JavaScript 发起的网络请求并在特定测试场景下发挥作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/test_upload_data_stream_not_allow_http1.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,6 +187,4 @@ int UploadDataStreamNotAllowHTTP1::ReadInternal(IOBuffer* buf, int buf_len) {
 void UploadDataStreamNotAllowHTTP1::ResetInternal() {}
 
 }  // namespace net
-"""
-
 ```

@@ -188,15 +188,17 @@ This iterative process of scanning, analyzing, inferring, and illustrating allow
 
 `subr.go` 中的这部分代码是 Go 编译器类型检查阶段的关键组成部分，它实现了类型转换、方法查找、接口实现检查等核心功能，确保了 Go 程序的类型安全性。理解这些底层的实现逻辑有助于更深入地理解 Go 语言的类型系统和编译过程，并避免在编写 Go 代码时犯一些常见的类型相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/typecheck/subr.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -989,9 +991,4 @@ var slist []symlink
 type symlink struct {
 	field *types.Field
 }
-
-"""
-
-
-
 ```

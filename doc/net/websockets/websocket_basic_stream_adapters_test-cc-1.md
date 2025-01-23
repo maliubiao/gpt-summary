@@ -114,7 +114,7 @@ Here's a breakdown of the thought process:
 
 作为调试线索，当开发者在 Chromium 中调试 WebSocket 相关问题时，可以查看 `WebSocketSpdyStreamAdapter` 和 `WebSocketQuicStreamAdapter` 的代码，了解数据是如何在网络层传输和处理的。这些测试用例提供了各种场景的示例，可以帮助理解代码的预期行为和潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_basic_stream_adapters_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 stream = CreateSpdyStream(session);
   WebSocketSpdyStreamAdapter adapter(stream, &mock_delegate_,
                                      NetLogWithSource());
@@ -959,7 +961,4 @@ TEST_P(WebSocketQuicStreamAdapterTest, ReadIntoSmallBuffer) {
   // First read is the same size as the buffer, next is smaller, last is larger.
   mock_quic_data_.AddRead(ASYNC, ConstructServerDataPacket(2, "abc"));
   mock_quic_data_.AddRead(SYNCHRONOUS, ConstructServerDa
-"""
-
-
 ```

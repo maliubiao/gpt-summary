@@ -97,7 +97,7 @@ console.log(sum);
 
 这段 `v8/src/execution/ppc/simulator-ppc.cc` 代码是 V8 引擎中用于在非 PowerPC 平台上模拟 PowerPC 架构指令执行的关键部分。它实现了 PowerPC 指令的取指、译码和执行过程，并提供了与 V8 运行时交互的机制，使得 V8 能够在该模拟器上运行为 PowerPC 架构编译的 JavaScript 代码。它还包含了用于调试和错误处理的功能，例如断点和停止点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/ppc/simulator-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/ppc/simulator-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -105,8 +105,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e::Stack::GetCurrentStackPosition() < c_limit) {
     return reinterpret_cast<uintptr_t>(get_sp());
   }
@@ -1008,7 +1010,4 @@ void Simulator::ExecuteGeneric(Instruction* instr) {
         }
       } else {
         int32_t ra_val = ge
-"""
-
-
 ```

@@ -205,15 +205,17 @@ This systematic approach allows for a comprehensive analysis of the source code,
 
 总而言之，`blink/renderer/modules/crypto/crypto_key.cc` 文件是 Blink 渲染引擎中处理加密密钥的关键部分，它实现了 Web Crypto API 中 `CryptoKey` 接口的核心功能，负责密钥的元数据管理和可用性检查，并与 JavaScript 代码紧密集成。理解这个文件的功能对于理解浏览器如何处理 Web Crypto API 以及调试相关的安全问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/crypto/crypto_key.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -459,7 +461,4 @@ bool CryptoKey::ParseUsageMask(const Vector<String>& usages,
 }
 
 }  // namespace blink
-
-"""
-
 ```

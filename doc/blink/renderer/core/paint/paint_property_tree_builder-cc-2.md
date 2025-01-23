@@ -116,7 +116,7 @@ Here's a plan:
 
 作为构建绘制属性树过程的第三部分，这段代码专门负责处理 **单个渲染对象片段 (Fragment)** 的绘制属性更新。它接收来自前序阶段的布局信息和样式计算结果，并为该片段构建或更新其在绘制属性树中的 Effect、Clip 等节点信息。这些节点将会在后续的绘制和合成阶段被使用。简单来说，**这一部分负责将渲染对象的视觉样式属性转化为绘制属性树中可供渲染引擎理解和操作的数据结构。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_property_tree_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ined by this object may escape clips.
   if (layer->HasNonContainedAbsolutePositionDescendant()) {
     const auto* container = full_context_.container_for_absolute_position;
@@ -916,7 +918,4 @@ static bool NeedsInnerBorderRadiusClip(const LayoutObject& object) {
   //   However, when one of overflow-x or overflow-y computes to clip and the
   //   other computes to visible, the clipping region is not rounded.
   // (https://drafts.csswg.org/css
-"""
-
-
 ```

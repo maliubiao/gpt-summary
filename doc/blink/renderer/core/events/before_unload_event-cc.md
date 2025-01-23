@@ -133,14 +133,16 @@ By following these steps, we can systematically analyze the code snippet and gen
 
 总而言之， `blink/renderer/core/events/before_unload_event.cc` 这个文件是 Chromium 引擎中关于 `beforeunload` 事件的核心实现，它定义了事件对象的结构和行为，为 JavaScript 中 `beforeunload` 事件的使用提供了底层支持。 理解其功能有助于我们更好地理解浏览器事件机制以及如何正确使用 Web API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/before_unload_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2001 Peter Kelly (pmk@post.com)
  * Copyright (C) 2001 Tobias Anton (anton@stud.fbi.fh-darmstadt.de)
@@ -181,7 +183,4 @@ void BeforeUnloadEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

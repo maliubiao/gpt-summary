@@ -84,11 +84,13 @@ console.log(containingSegment);
 
 总而言之，`v8/src/objects/js-segments.cc` 是 V8 引擎中实现 JavaScript `Intl.Segmenter` API 核心功能的关键 C++ 代码，它负责创建和管理表示文本分割结果的 `Segments` 对象，并利用 ICU 库进行实际的文本分割操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-segments.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ Handle<String> JSSegments::GranularityAsString(Isolate* isolate) const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

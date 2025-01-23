@@ -425,7 +425,7 @@ sys.stdin.read()
 
 请注意，直接读取和解析 `bionic_tcb` 或 `bionic_tls` 的内存结构依赖于对这些结构的深入理解，并且可能会因为 Android 版本的不同而发生变化。这种调试方法主要用于深入了解系统底层的行为，通常不建议在生产环境中使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_tls.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -436,8 +436,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -583,7 +585,4 @@ class KernelArgumentBlock;
 extern "C" void __libc_init_main_thread_early(const KernelArgumentBlock& args, bionic_tcb* temp_tcb);
 extern "C" void __libc_init_main_thread_late();
 extern "C" void __libc_init_main_thread_final();
-
-"""
-
 ```

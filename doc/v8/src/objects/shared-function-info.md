@@ -148,11 +148,13 @@ class MyClass {
 
 `v8/src/objects/shared-function-info.cc` 文件中的 `SharedFunctionInfo` 类是 V8 引擎中一个至关重要的组成部分。 它负责存储和管理 JavaScript 函数的各种元数据和执行信息，是 V8 理解、编译、优化和执行 JavaScript 代码的基础。  你可以把它看作是 V8 内部对 JavaScript 函数的描述符，包含了执行函数所需的所有关键信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/shared-function-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1047,7 +1049,4 @@ bool SharedFunctionInfo::UniqueIdsAreUnique(Isolate* isolate) {
 #endif  // DEBUG
 
 }  // namespace v8::internal
-
-"""
-
 ```

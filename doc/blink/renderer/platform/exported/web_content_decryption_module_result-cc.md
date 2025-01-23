@@ -178,14 +178,16 @@ By following these steps, I can systematically analyze the code, connect it to w
 
 总而言之，`WebContentDecryptionModuleResult` 是 Blink 引擎中处理 CDM 操作结果的关键桥梁，它确保了 CDM 的状态和结果能够正确地传递给浏览器和网页，从而支持 EME API 的正常运行。正确地使用和处理 `WebContentDecryptionModuleResult` 对于播放受保护的媒体内容至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_content_decryption_module_result.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ void WebContentDecryptionModuleResult::Assign(
 }
 
 }  // namespace blink
-
-"""
-
 ```

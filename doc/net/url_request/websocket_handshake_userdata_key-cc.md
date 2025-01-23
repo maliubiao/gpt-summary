@@ -152,15 +152,17 @@ const char kWebSocketHandshakeUserDataKey[] = "WebSocket";
 
 `websocket_handshake_userdata_key.cc` 文件虽然简单，但其定义的常量 `kWebSocketHandshakeUserDataKey` 在 Chromium 的 WebSocket 实现中起着关键作用，它作为关联 WebSocket 握手数据的唯一标识符，使得网络栈的不同模块可以方便地访问和管理这些数据，最终支持了 JavaScript 中发起的 WebSocket 连接。 理解这个机制有助于开发者调试网络相关的问题，特别是与 WebSocket 握手过程相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/websocket_handshake_userdata_key.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ namespace net {
 const char kWebSocketHandshakeUserDataKey[] = "WebSocket";
 
 }  // namespace net
-
-"""
-
 ```

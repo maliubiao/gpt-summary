@@ -77,12 +77,14 @@ Here are a few examples of how this relates to JavaScript:
 
 In essence, this part of the simulator provides the mechanism for the simulated RISC-V code, generated from JavaScript, to interact with the underlying V8 JavaScript engine's implementation in C++. The software interrupt is the key trigger that allows this interaction to occur.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/riscv/simulator-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 into the V8 runtime are based on this very simple interface.
 // Note: To be able to return two values from some calls the code in
 // runtime.cc uses the ObjectPair which is essentially two 32-bit values
@@ -2095,8 +2097,5 @@ void Simulator::DecodeRVIType() {
     case RO_JALR: {
       set_rd(get_pc() + kInstrSize);
       // Note: No need to shift 2 for JALR's imm12, but set lowest bit to 0.
-      sreg_t next_pc = (rs1() + imm12()) 
-"""
-
-
+      sreg_t next_pc = (rs1() + imm12())
 ```

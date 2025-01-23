@@ -78,7 +78,7 @@ By following this structured approach, we can move from the simple code snippet 
 
 总而言之，虽然 `main.c` 的代码非常简单，但它在一个更大的软件构建和测试框架中扮演着重要的角色。它作为一个故意设计成在特定环境下失败的测试用例，帮助开发者和用户诊断构建环境问题，特别是编译器缺失的情况。这对于确保 Frida 作为一个复杂的动态分析工具能够被正确地构建和使用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/118 missing compiler/subprojects/sub/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -86,10 +86,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char *argv[]) { return 0; }
-
-"""
-
 ```

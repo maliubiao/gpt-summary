@@ -192,7 +192,7 @@ int main() {
 
 因此，`storer.c` 文件虽然简单，但作为 Frida 调试的一个环节，通常是通过对更上层应用逻辑的分析和逐步深入，最终定位到这个底层组件。开发者可能需要利用多种工具和技术才能到达这里。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/python3/3 cython/libdir/storer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"storer.h"
 #include<stdlib.h>
 
@@ -226,7 +228,4 @@ int storer_get_value(Storer *s) {
 void storer_set_value(Storer *s, int v) {
     s->value = v;
 }
-
-"""
-
 ```

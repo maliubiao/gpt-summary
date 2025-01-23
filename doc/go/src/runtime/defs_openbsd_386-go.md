@@ -295,7 +295,7 @@ func main() {
 
 总而言之，`go/src/runtime/defs_openbsd_386.go` 是 Go 语言运行时与 OpenBSD 操作系统底层交互的桥梁，它定义了必要的常量和数据结构，使得 Go 程序能够利用操作系统的功能。 理解这些定义对于编写需要进行底层系统调用的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_openbsd_386.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -303,8 +303,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // created by cgo -cdefs and then converted to Go
 // cgo -cdefs defs_openbsd.go
 
@@ -486,9 +488,4 @@ type pthreadcond uintptr
 type pthreadcondattr uintptr
 type pthreadmutex uintptr
 type pthreadmutexattr uintptr
-
-"""
-
-
-
 ```

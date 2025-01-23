@@ -131,14 +131,16 @@ Response: Let's break down the thought process for analyzing the provided C++ co
 
 总而言之，`web_media_player_builder.cc` 文件中的 `WebMediaPlayerBuilder` 类是 Blink 引擎中创建媒体播放器实例的关键组件，它负责管理依赖项并组装出功能完善的 `WebMediaPlayerImpl`，从而支持 HTML5 的 `<video>` 和 `<audio>` 标签的媒体播放功能，并与 JavaScript 和 CSS 紧密相关。理解其功能对于深入理解 Chromium 的媒体播放架构至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/web_media_player_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ std::unique_ptr<WebMediaPlayer> WebMediaPlayerBuilder::Build(
 }
 
 }  // namespace blink
-
-"""
-
 ```

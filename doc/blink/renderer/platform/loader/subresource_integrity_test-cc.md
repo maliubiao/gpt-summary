@@ -57,14 +57,16 @@ SRI 是一种 Web 安全特性，主要应用于 HTML 中的 `<script>` 和 `<li
    ```html
    <script src="https://example.com/script.js"
            integrity="sha384-oqVuAfXRKap7fdgcCY5uykM6+R
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/subresource_integrity_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -630,7 +632,4 @@ TEST_F(SubresourceIntegrityTest, FindBestAlgorithm) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

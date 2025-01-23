@@ -167,7 +167,7 @@ Interceptor.attach(Module.findExportByName(null, "_ZN3Foo8getValueEv"), { // 假
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/test cases/frameworks/3 gmock/gmocktest.cc` 文件是 Frida 项目中用于测试其 QML 相关功能的单元测试用例，它使用了 Google Mock 框架来模拟依赖项，并使用 Google Test 框架来定义和运行测试。理解这个文件可以帮助我们理解 Frida 的测试策略、QML 接口的功能以及相关的 C++ 编程和测试技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/3 gmock/gmocktest.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<gtest/gtest.h>
 #include<gmock/gmock.h>
 
@@ -204,7 +206,4 @@ TEST(counttest, once) {
 
     EXPECT_EQ(f.getValue(), 42) << "Got wrong value";
 }
-
-"""
-
 ```

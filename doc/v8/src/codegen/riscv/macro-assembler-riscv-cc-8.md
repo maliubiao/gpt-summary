@@ -126,7 +126,7 @@ callNativeFunction(10, "hello");
 
 作为系列的一部分，这个 `macro-assembler-riscv.cc` 文件专注于 RISC-V 架构的特定汇编代码生成，特别是与函数调用和反馈向量加载相关的操作。 它是 V8 代码生成流程中至关重要的一环，负责将 V8 的中间表示转换为可以在 RISC-V 处理器上执行的机器码。  结合其他部分，整个代码生成器共同完成了将 JavaScript 代码编译成高效的本地机器码的任务。 具体来说，这一部分确保了 JavaScript 可以正确地调用内置函数和用户提供的 C++ 扩展，并且能够利用反馈向量进行运行时优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/macro-assembler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -134,8 +134,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 o_drop_on_return * kSystemPointerSize));
     }
     __ CalcScaledAddress(sp, sp, argc_reg, kSystemPointerSizeLog2);
@@ -200,8 +202,4 @@ void MacroAssembler::LoadFeedbackVector(Register dst, Register closure,
 #undef __
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

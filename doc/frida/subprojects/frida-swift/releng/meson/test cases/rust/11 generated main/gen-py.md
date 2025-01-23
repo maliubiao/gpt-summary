@@ -174,7 +174,7 @@ By following this detailed thought process, focusing on context, and iteratively
 
 总而言之，`gen.py` 脚本是一个辅助工具，用于生成简单的 Rust 代码，作为 Frida 动态 instrumentation 框架的测试目标，特别是在涉及 Swift 与 Rust 交互的场景下。它本身不直接进行逆向操作，但生成的代码会被逆向工具使用。它的功能简单直接，主要用于构建和测试流程中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/rust/11 generated main/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -204,7 +206,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

@@ -178,11 +178,13 @@ profile.delete();
 
 `tick-sample.cc` 是 V8 引擎中用于性能分析的关键组件。它负责在执行过程中捕捉程序的状态，特别是调用栈信息，这对于理解代码的执行路径和识别性能瓶颈至关重要。它的工作直接支持了 JavaScript 开发者的性能分析工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/tick-sample.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -586,7 +588,4 @@ void TickSample::print() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

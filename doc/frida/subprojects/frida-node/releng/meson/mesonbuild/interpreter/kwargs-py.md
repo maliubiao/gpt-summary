@@ -160,7 +160,7 @@ Users typically don't interact with `kwargs.py` directly. This file is part of t
 
 **As a debugging clue:** If a Frida developer encounters a Meson build error related to incorrect argument types for a specific Meson function (e.g., `executable`, `library`, `test`), inspecting the corresponding `TypedDict` definition in `kwargs.py` can help them understand the expected argument names and types, leading to the resolution of the error in the `meson.build` file. The file path itself indicates the location of these definitions within the Frida project's build system.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/interpreter/kwargs.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2021 The Meson Developers
 # Copyright © 2021 Intel Corporation
@@ -649,7 +651,4 @@ class FuncDeclareDependency(TypedDict):
     sources: T.List[T.Union[FileOrString, build.GeneratedTypes]]
     variables: T.Dict[str, str]
     version: T.Optional[str]
-
-"""
-
 ```

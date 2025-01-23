@@ -211,15 +211,17 @@ JavaScript 代码本身并不会直接调用 `Aes256GcmDecrypter`，这个解密
 
 因此，`aes_256_gcm_decrypter_test.cc` 文件虽然是测试代码，但在实际开发和调试过程中扮演着重要的角色，它可以帮助开发者验证解密功能的正确性，并在出现问题时提供调试线索。通过运行这些测试，开发者可以尽早发现并修复潜在的解密错误，从而保证用户在使用浏览器访问网站时的安全性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/aes_256_gcm_decrypter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -526,7 +528,4 @@ TEST_F(Aes256GcmDecrypterTest, GenerateHeaderProtectionMask) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

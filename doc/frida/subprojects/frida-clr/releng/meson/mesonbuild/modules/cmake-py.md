@@ -192,7 +192,7 @@ The `detect_voidp_size()` function illustrates a direct interaction with a binar
 
 In essence, this `cmake.py` module acts as a bridge between the Meson build system and CMake projects, allowing developers to leverage existing CMake-based code within a Meson environment. Understanding its functionalities is crucial for successfully integrating and managing these subprojects.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/modules/cmake.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -644,7 +646,4 @@ class CmakeModule(ExtensionModule):
 
 def initialize(*args: T.Any, **kwargs: T.Any) -> CmakeModule:
     return CmakeModule(*args, **kwargs)
-
-"""
-
 ```

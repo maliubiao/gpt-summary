@@ -114,7 +114,7 @@ My thinking process to answer the request about `boundschecker-fixture.c` went t
 
 总之，`boundschecker-fixture.c` 是 Frida 内部用于测试 `GumBoundsChecker` 模块的重要组成部分。它通过模拟不同的场景和预设的条件，验证了 `GumBoundsChecker` 检测内存错误的能力，并为 Frida 的稳定性和可靠性提供了保障。虽然普通用户不会直接操作这个文件，但理解其功能可以帮助用户更好地理解 `GumBoundsChecker` 的工作原理，并在遇到问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/heap/boundschecker-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -257,7 +259,4 @@ static const GumReturnAddress violation_backtrace[] =
 #if defined (__GNUC__) && __GNUC__ >= 12
 # pragma GCC diagnostic ignored "-Wuse-after-free"
 #endif
-
-"""
-
 ```

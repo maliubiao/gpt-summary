@@ -160,7 +160,7 @@ func main() {
 
 这段 `proc.go` 的代码是 Go 运行时系统中至关重要的组成部分，它负责管理 Goroutine 的生命周期，处理与操作系统的交互，并提供了必要的机制来支持性能分析和与外部代码的集成。它确保了 Go 程序能够高效地利用操作系统资源，并提供了一种安全可靠的方式来执行并发任务。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/proc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -169,9 +169,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
- The goroutine may have locked this thread because
+### 源代码
+```go
+The goroutine may have locked this thread because
 		// it put it in an unusual kernel state. Kill it
 		// rather than returning it to the thread pool.
 
@@ -1297,10 +1299,5 @@ func sigprof(pc, sp, lr uintptr, gp *g, mp *m) {
 	// Set a trap in case the code does allocate.
 	// Note that on windows, one thread takes profiles of all the
 	// other threads, so mp is usually not getg().m.
-	// In fact mp 
-"""
-
-
-
-
+	// In fact mp
 ```

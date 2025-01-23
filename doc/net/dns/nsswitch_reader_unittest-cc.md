@@ -200,15 +200,17 @@ hosts: files [NOTFOUND=return] dns
 
 总而言之，`nsswitch_reader_unittest.cc` 是保证 `NsswitchReader` 类正确性的关键部分，它通过大量的测试用例覆盖了各种可能的 `nsswitch.conf` 配置及其中的语法细节，确保 Chromium 能够可靠地进行主机名解析。虽然普通用户不会直接接触到这个文件，但其背后的功能对用户的网络体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/nsswitch_reader_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -803,7 +805,4 @@ TEST_F(NsswitchReaderTest, IgnoresEmptyActionAtEndOfString) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

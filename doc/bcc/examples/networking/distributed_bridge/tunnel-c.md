@@ -73,7 +73,7 @@ Response:
 - 使用 `bpftool prog show` 确认 eBPF 程序已挂载。
 - 检查 `cat /sys/kernel/debug/tracing/trace_pipe` 查看 `bpf_trace_printk` 日志。
 - 通过 `bpftool map dump` 查看 `vni2if` 和 `mac2host` 的内容。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/examples/networking/distributed_bridge/tunnel.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -82,8 +82,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) PLUMgrid, Inc.
 // Licensed under the Apache License, Version 2.0 (the "License")
 #include <bcc/proto.h>
@@ -169,7 +171,4 @@ int handle_egress(struct __sk_buff *skb) {
   bpf_clone_redirect(skb, cfg->tunnel_ifindex, 0/*egress*/);
   return 1;
 }
-
-"""
-
 ```

@@ -181,7 +181,7 @@ By following this systematic approach, you can thoroughly analyze the provided P
 
 总而言之，`common.py` 文件是 Frida 项目中 Meson 构建系统与 CMake 构建系统之间的一个重要桥梁，它负责解析、转换和管理 CMake 项目的元数据和构建选项，以便 Meson 能够有效地构建包含 CMake 子模块的 Frida 项目。理解这个文件的功能对于理解 Frida 的构建过程和排查相关的构建问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/cmake/common.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -522,7 +524,4 @@ class TargetOptions:
         if tgt in self.target_options:
             initial = self.target_options[tgt].get_install(initial)
         return initial
-
-"""
-
 ```

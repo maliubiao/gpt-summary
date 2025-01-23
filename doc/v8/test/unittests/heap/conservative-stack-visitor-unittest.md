@@ -93,11 +93,13 @@ someFunction();
 
 `conservative-stack-visitor-unittest.cc` 文件测试的是 V8 引擎中用于保守扫描调用栈的组件，确保在垃圾回收过程中，即使栈上存在看起来像指针的非对象引用，引擎也能正确地识别并防止误回收相关的堆对象，这对于保证 JavaScript 程序的正确性和内存安全至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/conservative-stack-visitor-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -416,7 +418,4 @@ TEST_F(ConservativeStackVisitorTest, InnerHalfWord2) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -169,15 +169,17 @@ Let's consider the input string `s = "AΩ"` (Latin capital A, Greek capital Omeg
 
 In summary, `v8/test/unittests/parser/unicode-helpers.cc` provides essential utilities for V8's parser to correctly determine the length of UTF-8 encoded strings in terms of UCS-2 code units, which is fundamental for handling Unicode characters efficiently within the JavaScript engine. It helps avoid common errors related to character encoding and length calculations.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/unicode-helpers.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/unicode-helpers.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ int Utf8LengthHelper(const char* s) {
   length += Ucs2CharLength(tmp);
   return length;
 }
-
-"""
-
 ```

@@ -247,15 +247,17 @@ console.log(rightShiftResult); // 输出: 10n  (40 的二进制是 10100，右�
 
 了解这些常见的编程错误可以帮助开发者更准确地使用 JavaScript 中的 `BigInt` 位移操作符，并避免潜在的 Bug。而像 `v8/src/bigint/div-helpers.cc` 这样的底层实现，则保证了这些操作在引擎层面的正确性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/div-helpers.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/bigint/div-helpers.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +326,4 @@ void RightShift(RWDigits Z, Digits X, int shift) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

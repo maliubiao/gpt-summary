@@ -144,15 +144,17 @@ By following these steps and considering the pre-analysis, I can generate a comp
 
 `blink/renderer/core/view_transition/view_transition_style_tracker.cc` 文件的第一部分主要负责 **在视图过渡的初始阶段，识别页面中需要参与过渡的元素，并捕获这些元素在过渡开始前的样式信息**。它通过解析 CSS 的 `view-transition-name` 属性来实现元素的识别，并将捕获的信息存储起来，为后续的动画处理做准备。此外，它还涉及到管理与视图过渡相关的伪元素和处理 `view-transition-group` 属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/view_transition/view_transition_style_tracker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -959,7 +961,4 @@ void ViewTransitionStyleTracker::AddTransitionElementsFromCSSRecursive(
 bool ViewTransitionStyleTracker::FlattenAndVerifyElements(
     VectorOf<Element>& elements,
     VectorOf<AtomicString>& transiti
-"""
-
-
 ```

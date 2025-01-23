@@ -205,7 +205,7 @@ TorqueBuiltinDeclaration {
 
 总而言之，这部分 `torque-parser.cc` 的代码负责将 Torque 源代码解析成 V8 可以理解的抽象语法树，是 Torque 编译器的核心组成部分，其解析结果直接影响着 JavaScript 功能的实现效率和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/torque-parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/torque-parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -213,8 +213,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 .first.string_value;
   }
   std::optional<int32_t> GetIntParam(const std::string& s) const {
@@ -1026,7 +1028,4 @@ std::optional<ParseResult> MakeTypeswitchStatement(
     ParseResultIterator* child_results) {
   auto expression = child_results->NextAs<Expression*>();
   auto cases = child_results->NextAs<std::vector<
-"""
-
-
 ```

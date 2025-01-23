@@ -148,7 +148,7 @@ Hello Frida!
 
 因此，开发者很可能是在关注 Frida 的 Java 代码生成能力，以及 Frida 的 Node.js 绑定与 Java 代码的交互方面的问题时，会查看这个文件。他们可能会在调试构建过程、测试失败或者深入理解 Frida 内部机制时接触到这个测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/java/8 codegen custom target/com/mesonbuild/TextPrinter.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class TextPrinter {
@@ -172,7 +174,4 @@ class TextPrinter {
         System.out.println(msg);
     }
 }
-
-"""
-
 ```

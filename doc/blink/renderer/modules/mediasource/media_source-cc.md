@@ -408,7 +408,7 @@ WebTimeRanges MediaSource::BufferedInternal(
 
 总而言之，`media_source.cc` 的这部分代码是 Media Source API 的核心实现，负责管理 `MediaSource` 对象和其关联的 `SourceBuffer` 对象，处理状态变化，并与底层的媒体管道进行交互。它为 JavaScript 提供了操作媒体流的能力，是实现复杂媒体播放场景的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasource/media_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -416,8 +416,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1229,7 +1231,4 @@ WebTimeRanges MediaSource::BufferedInternal(
 
   for (unsigned i = 0; i < active_source_buffers_->length(); ++i) {
     active_source_buffers_->item(i)->GetBuffered_Locked(&ranges[i],
-"""
-
-
 ```

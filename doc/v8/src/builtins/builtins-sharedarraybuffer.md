@@ -88,11 +88,13 @@ For the Javascript examples, I will pick some common use cases for these atomic 
 
 总而言之，`builtins-sharedarraybuffer.cc` 负责实现 V8 引擎中用于处理共享内存和原子操作的关键功能，使得 JavaScript 能够在多线程环境下进行更复杂和高效的并发编程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-sharedarraybuffer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -429,7 +431,4 @@ BUILTIN(AtomicsPause) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

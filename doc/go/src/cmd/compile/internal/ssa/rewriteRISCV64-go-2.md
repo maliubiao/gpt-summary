@@ -1,5 +1,5 @@
 Response: 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteRISCV64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -7,8 +7,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 x)
 		return true
 	}
@@ -2968,10 +2970,5 @@ func rewriteValueRISCV64_OpZero(v *Value) bool {
 		v3.AddArg3(ptr, v0, mem)
 		v2.AddArg3(ptr, v0, v3)
 		v1.AddArg3(ptr, v0, v2)
-		v.AddArg3(ptr, v0, 
-"""
-
-
-
-
+		v.AddArg3(ptr, v0,
 ```

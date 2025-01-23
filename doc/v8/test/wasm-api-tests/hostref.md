@@ -125,11 +125,13 @@ runWasm();
 
 `hostref.cc` 测试用例的核心是验证 WebAssembly 和 JavaScript 之间安全地传递和操作 JavaScript 对象的能力。`externref` 类型是实现这种互操作性的关键。 通过这个测试，V8 引擎确保了 WebAssembly 可以有效地利用宿主环境的功能，例如访问 DOM API 或使用 JavaScript 提供的库。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/hostref.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -310,7 +312,4 @@ TEST_F(WasmCapiTest, HostRef) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

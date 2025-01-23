@@ -254,15 +254,17 @@ func main() {
 
 总而言之，这段代码展示了如何在 Go 语言中使用嵌入结构体和类型断言来访问嵌套的数据结构。`M1` 提供了更安全的访问方式，因为它显式地检查了类型断言的结果。而 `M2` 忽略了类型断言可能失败的情况，这可能导致潜在的运行时错误，尽管在这个特定例子中会返回 `nil`。使用者需要谨慎处理类型断言，并确保在访问嵌套结构之前验证数据的类型和结构。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue49016.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -299,9 +301,4 @@ func (s Scope) M2() Scope {
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

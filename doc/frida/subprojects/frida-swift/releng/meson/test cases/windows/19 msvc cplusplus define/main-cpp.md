@@ -99,7 +99,7 @@ By following these steps, and iteratively refining the analysis, the comprehensi
 
 **调试线索:** 如果这个测试用例失败了，可能意味着 Frida 在 Windows 平台上，对于使用特定 C++ 标准（这里是 C++98）编译的 Swift 代码的处理存在问题。开发人员会进一步调查 Frida 的 Swift 绑定部分的代码，以及 Frida 与目标进程的交互方式，来找出根本原因。他们可能会检查 Frida 如何读取和解析目标进程的元数据，以及如何处理不同 C++ 标准下的对象布局和 ABI (Application Binary Interface)。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/windows/19 msvc cplusplus define/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 int main() {
 #if __cplusplus == 199711L
     return 1;
@@ -116,7 +118,4 @@ int main() {
     return 0;
 #endif
 }
-
-"""
-
 ```

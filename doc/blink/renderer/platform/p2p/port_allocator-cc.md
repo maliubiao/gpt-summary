@@ -136,14 +136,16 @@ This structured approach ensures a comprehensive and easy-to-understand explanat
 
 总而言之，`blink/renderer/platform/p2p/port_allocator.cc` 是 Blink 引擎中负责 P2P 连接建立的关键组件，它通过管理网络端口和生成 ICE 候选，使得浏览器能够支持 WebRTC 等 P2P 技术。虽然它本身是用 C++ 实现的，但与 JavaScript WebRTC API 紧密相关，最终影响着用户在网页上使用 P2P 功能的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/p2p/port_allocator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ void P2PPortAllocator::Initialize() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

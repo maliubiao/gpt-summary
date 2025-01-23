@@ -332,7 +332,7 @@ setImmediate(hook_android_log_print);
 
 总而言之，`bionic/libc/stdio/printf_common.handroid` 是 Android Bionic C 库中 `printf` 函数族的核心实现，负责处理格式化字符串的解析、参数提取、类型处理和输出格式化等关键任务，在 Android 系统中被广泛用于日志记录、调试输出等方面。了解其实现细节有助于理解 Android 系统的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/stdio/printf_common.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -343,8 +343,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
  * All rights reserved.
@@ -1199,7 +1201,4 @@ struct helpers {
     __fortify_fatal("%%w%s%d is unsupported", fast ? "f" : "", size);
   }
 };
-
-"""
-
 ```

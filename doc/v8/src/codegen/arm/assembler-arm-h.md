@@ -712,7 +712,7 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
             int opcode_2);  // v5 and above
 
   void mcr(Coprocessor coproc, int opcode_1,
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm/assembler-arm.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm/assembler-arm.h以.tq结尾，那它是个v8 torque源代码，
@@ -720,8 +720,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -1529,8 +1531,4 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void vmls(const DwVfpRegister dst, const DwVfpRegister src1,
             const DwVfpRegister src2, const Condition cond = al);
   void vmls(const SwVfpRegister dst, const SwVfpRegister src1,
-      
-"""
-
-
 ```

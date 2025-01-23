@@ -370,15 +370,17 @@ RISC-V "B" 扩展提供了各种位操作指令，这些指令在 JavaScript 中
 
 这些编程错误在 JavaScript 代码中发生时，V8 引擎需要正确地将这些操作翻译成底层的机器码指令，而 `extension-riscv-b.cc` 中的代码正是为这些位操作提供了底层的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-b.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/extension-riscv-b.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -562,7 +564,4 @@ void AssemblerRISCVB::bseti(Register rd, Register rs1, uint8_t shamt) {
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

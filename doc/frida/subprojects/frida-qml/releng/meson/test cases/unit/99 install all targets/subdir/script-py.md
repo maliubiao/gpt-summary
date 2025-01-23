@@ -83,7 +83,7 @@ Here's a breakdown of the thinking process to analyze the provided Python script
 
 总而言之，虽然这个脚本本身很简单，但它在 Frida 的测试体系中扮演着重要的角色，用于模拟和验证与文件系统相关的操作，确保 Frida 在各种场景下的稳定性和可靠性。 它的简洁性也使得在测试环境中快速创建所需的文件成为可能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/99 install all targets/subdir/script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -91,8 +91,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -100,7 +102,4 @@ import sys
 for f in sys.argv[1:]:
   with open(f, 'w') as f:
       pass
-
-"""
-
 ```

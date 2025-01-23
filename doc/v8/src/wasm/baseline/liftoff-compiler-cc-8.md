@@ -196,7 +196,7 @@ console.log(value);
 
 作为 13 个部分中的第 9 部分，`v8/src/wasm/baseline/liftoff-compiler.cc` 文件专注于 **Liftoff 编译器中核心的 WebAssembly 指令实现，特别是关于内存、表、结构体和数组的操作**。 前面的部分可能涵盖了 Liftoff 编译器的初始化、指令解码、基本块构建等，而后续的部分可能涉及更高级的编译优化、代码生成收尾工作或者与其他 V8 基础设施的集成。  这部分是 Liftoff 编译器将高级 WebAssembly 指令转化为底层机器码的关键环节，直接决定了 WebAssembly 代码在 V8 中的执行方式和性能。它确保了 Liftoff 能够快速地为各种内存和数据结构操作生成可执行代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/liftoff-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -204,8 +204,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 kMaxUint32 if the high word had any
   // bits set.
   VarState IndexToVarStateSaturating(int stack_index, LiftoffRegList* pinned) {
@@ -969,9 +971,4 @@ kMaxUint32 if the high word had any
     LiftoffRegList pinned;
 
     LiftoffRegister rtt = pinned.set(RttCanon(array_imm.index, pinned));
-
-   
-"""
-
-
 ```

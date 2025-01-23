@@ -177,7 +177,7 @@ func main() {
 
 总而言之，`go/src/math/sin.go` 文件是 Go 语言 `math` 包中实现基本三角函数 `Sin` 和 `Cos` 的核心代码，它通过范围归约和多项式逼近等技术来高效且相对精确地计算这些函数的值。使用者需要注意输入的角度单位以及大数值输入可能带来的精度问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/sin.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -185,8 +185,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -431,9 +433,4 @@ func sin(x float64) float64 {
 	}
 	return y
 }
-
-"""
-
-
-
 ```

@@ -158,7 +158,7 @@ By following these steps, we arrive at a comprehensive understanding of the prov
    * **使用调试器:**  如果问题仍然存在，可以使用 GDB 或 LLDB 等调试器来单步执行代码，查看 `r3()` 的返回值。
    * **使用 Frida (作为动态调试手段):**  如果无法直接访问源代码或想要在运行时观察行为，开发者可以使用 Frida 来 Hook `main_func` 和 `r3()`，打印它们的返回值，从而理解程序的运行状态。这就是为什么这个文件会出现在 Frida 的相关目录中。Frida 的测试用例可能就是用来验证 Frida 是否能够正确地 Hook 和观察这种跨语言的调用关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/rust/21 transitive dependencies/diamond/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,14 +166,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int r3(void);
 
 int main_func(void) {
     return r3() == 246 ? 0 : 1;
 }
-
-"""
-
 ```

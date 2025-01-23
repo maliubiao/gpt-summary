@@ -466,7 +466,7 @@ If a user reports an issue related to retrieving data from IndexedDB, and the er
 
 This part of the `idb_request_test.cc` file comprehensively tests the **`getAll` functionality of the `IDBRequest` class** in the Chromium Blink engine's IndexedDB implementation. It covers various scenarios of retrieving data, including handling Blobs, injected keys, and testing the behavior when a `getAll` request is aborted at different stages. It also includes tests for the `AsyncTraceState` class, which is used for tracking asynchronous operations.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/idb_request_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -474,8 +474,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 te_index_key=*/false));
 
   IDBRecordArray expected_results = ToIDBRecordArray(get_all_results);
@@ -834,8 +836,4 @@ TEST(IDBRequestAsyncTraceStateTest, MoveAssignment) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

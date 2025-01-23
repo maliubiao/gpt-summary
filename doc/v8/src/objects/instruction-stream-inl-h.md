@@ -166,15 +166,17 @@ While this header file doesn't directly expose user-level programming errors, un
 
 In summary, `v8/src/objects/instruction-stream-inl.h` is a crucial part of V8's internal architecture, responsible for managing the in-memory representation of compiled JavaScript code and its associated metadata. It's not a Torque file but rather standard C++ code. Understanding its functionality is key to grasping how V8 executes JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/instruction-stream-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/instruction-stream-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -449,7 +451,4 @@ PtrComprCageBase InstructionStream::main_cage_base() {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_INSTRUCTION_STREAM_INL_H_
-
-"""
-
 ```

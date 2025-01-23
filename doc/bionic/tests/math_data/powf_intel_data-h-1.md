@@ -286,7 +286,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "powf"), {
 
 总结来说，`bionic/tests/math_data/powf_intel_data.handroid` 是一个至关重要的测试数据文件，用于确保 Android 系统核心数学库函数 `powf` 在 Intel 架构上的正确性和可靠性。它间接地影响着运行在 Android 上的各种应用程序的数学计算精度和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/powf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -298,8 +298,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 002p1, 0x1.000002p7
   },
   { // Entry 376
@@ -1547,8 +1549,4 @@ Prompt:
     0x1.40p3, 0x1.40p3
   },
 };
-
-"""
-
-
 ```

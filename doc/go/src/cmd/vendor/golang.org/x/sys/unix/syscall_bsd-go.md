@@ -249,15 +249,17 @@ Here are some common mistakes users might make when using the functions in this 
 
 This code snippet is a fundamental building block for more complex networking, process management, and system-level operations in Go on BSD-based systems. Understanding its functions and potential pitfalls is crucial for writing correct and robust Go programs that interact with the operating system at a low level.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_bsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -867,9 +869,4 @@ func Poll(fds []PollFd, timeout int) (n int, err error) {
 //sys	Msync(b []byte, flags int) (err error)
 //sys	Munlock(b []byte) (err error)
 //sys	Munlockall() (err error)
-
-"""
-
-
-
 ```

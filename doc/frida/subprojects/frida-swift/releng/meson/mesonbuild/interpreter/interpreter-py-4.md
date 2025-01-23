@@ -111,7 +111,7 @@ A user would interact with this code indirectly by writing a `meson.build` file.
 
 This section of the `interpreter.py` file in the Frida project's Meson build system primarily handles the **configuration and definition of build targets and their properties**. It provides the mechanisms to generate files, manage include paths, define test setups, and specify compiler/linker flags at different scopes. It's crucial for controlling how the Frida software is compiled, linked, and tested, and it plays a role in enabling advanced build processes, including those relevant to reverse engineering tasks.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 y=True,
             default=[],
         ),
@@ -702,7 +704,4 @@ y=True,
             raise InterpreterException('Target name must not consist only of whitespace.')
         if has_path_sep(name):
             pathseg = os.path.join(self
-"""
-
-
 ```

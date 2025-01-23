@@ -172,15 +172,17 @@ By following these steps, breaking down the problem, and iteratively refining th
 
 总而言之，`v8/src/wasm/function-body-decoder.cc` 是 V8 理解和执行 WebAssembly 代码的关键组成部分，负责将底层的字节码指令转化为可执行的形式，并确保代码的有效性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/function-body-decoder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/function-body-decoder.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,7 +297,4 @@ BitVector* AnalyzeLoopAssignmentForTesting(Zone* zone, uint32_t num_locals,
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

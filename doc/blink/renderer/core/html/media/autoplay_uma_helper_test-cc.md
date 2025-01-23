@@ -108,14 +108,16 @@ By following these steps, we can systematically dissect the test file and unders
 
 总而言之，`autoplay_uma_helper_test.cc` 这个文件专注于测试 `AutoplayUmaHelper` 类的行为，确保它能够准确地记录和处理与 HTML 媒体元素自动播放相关的事件，为 Chromium 的 UMA 系统提供可靠的数据。 它通过模拟各种场景和使用 Mock 对象来隔离测试逻辑，帮助开发者发现和修复潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/autoplay_uma_helper_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ TEST_F(AutoplayUmaHelperTest, VisibilityChangeWhenUnload) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -198,7 +198,7 @@ By following this thought process, moving from basic understanding to analyzing 
 
 总而言之，这段简单的 `exe.c` 代码虽然功能单一，但在 Frida 的构建和测试流程中扮演着特定的角色。理解其功能、依赖的环境变量和可能的错误情况，有助于理解 Frida 的构建过程和排查相关问题。对于逆向工程师来说，这样的程序可以作为练习 Frida 动态插桩技术的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/native/5 install script/src/exe.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -206,8 +206,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -235,7 +237,4 @@ int main(int argc, char * argv[]) {
 
     return 0;
 }
-
-"""
-
 ```

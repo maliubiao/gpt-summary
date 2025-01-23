@@ -113,7 +113,7 @@ By following these steps, we can systematically analyze the code snippet and gen
 
 总而言之，`cppmain.cpp` 作为一个 Frida 的测试用例，简洁地展示了 C++ 代码如何与 D 语言运行时进行交互，并通过初始化、调用函数和终止运行时来验证基本的功能。它对于理解 Frida 的跨语言支持和调试相关问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/d/10 d cpp/cppmain.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 extern "C" int rt_init();
 extern "C" int rt_term();
 extern void print_hello(int i);
@@ -141,7 +143,4 @@ int main(int, char**) {
 
     return 0;
 }
-
-"""
-
 ```

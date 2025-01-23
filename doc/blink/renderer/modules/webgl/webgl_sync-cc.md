@@ -206,15 +206,17 @@ HTML 用于构建包含 `<canvas>` 元素的 Web 页面，WebGL 内容在其中�
 
 总而言之，`webgl_sync.cc` 是 Blink 引擎中处理 WebGL 2 同步对象的核心组件，它负责管理同步对象的状态，与 GPU 进行交互，并为 JavaScript 提供了操作同步对象的底层实现。理解它的功能有助于开发者更好地使用 WebGL 2 的同步机制，避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_sync.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -299,7 +301,4 @@ void WebGLSync::DeleteObjectImpl(gpu::gles2::GLES2Interface* gl) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -223,7 +223,7 @@ Interceptor.attach(Module.getExportByName(null, "ioctl"), {
 
 总而言之，`ib_user_mad.handroid` 定义了用于 RDMA 用户空间管理的底层数据结构。它本身不包含 `libc` 函数的实现，但会被与 RDMA 相关的底层系统组件和高性能应用使用，并通过系统调用与内核进行交互。Frida 可以用来 hook 系统调用并检查这些数据结构的传递过程，从而进行调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/rdma/ib_user_mad.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -234,8 +234,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -317,7 +319,4 @@ struct ib_user_mad_reg_req2 {
   __u8 reserved[3];
 };
 #endif
-
-"""
-
 ```

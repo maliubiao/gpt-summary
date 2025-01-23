@@ -72,12 +72,14 @@ for (let i = 0; i < 10000; i++) {
 
 **In essence, `v8/src/compiler/pipeline.cc` is responsible for taking the high-level description of the JavaScript code and transforming it into low-level, highly efficient machine instructions that can be directly executed by the CPU.**  It's the brain of the optimizing compilation process in V8.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/pipeline.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1684,7 +1686,4 @@ struct WasmGCOptimizationPhase {
     DeadCodeElimination dead_code_elimination(&graph_reducer, data->graph(),
                                               data->common(), temp_zone);
     AddReducer
-"""
-
-
 ```

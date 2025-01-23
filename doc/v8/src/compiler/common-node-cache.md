@@ -89,11 +89,13 @@ console.log(anotherFunction(20)); // 使用常量 constantValue，其值为 10
 
 `CommonNodeCache` 是 V8 编译器中的一个关键优化组件，通过缓存和重用代表常量值的节点，有效地减少了编译过程中的资源消耗，并间接地提升了 JavaScript 代码的执行效率。 虽然 JavaScript 开发者看不到它的直接作用，但它是 V8 引擎高性能的重要保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/common-node-cache.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -134,7 +136,4 @@ void CommonNodeCache::GetCachedNodes(ZoneVector<Node*>* nodes) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

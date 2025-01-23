@@ -109,11 +109,13 @@ for (let i = 0; i < 100; i++) {
 
 `v8/test/unittests/heap/heap-utils.cc` 是 V8 内部测试基础设施的关键组成部分，它提供了一组底层的工具，用于模拟和控制 V8 堆的行为。这使得 V8 开发者能够编写更精确、更全面的单元测试，验证 V8 引擎在各种内存管理场景下的正确性和性能。虽然 JavaScript 开发者通常不需要直接与这些 C++ 工具交互，但理解它们背后的原理有助于更好地理解 JavaScript 的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/heap-utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -459,7 +461,4 @@ ManualGCScope::~ManualGCScope() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

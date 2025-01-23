@@ -95,7 +95,7 @@ Finally, the explanation should be structured logically, clearly distinguishing 
 
 虽然 `true.py` 脚本本身很简单，但它作为 Frida 构建系统的一部分，承担着验证构建系统在处理同名目标时正确性的重要任务。这对于确保 Frida 作为一个复杂的动态 instrumentation 工具能够稳定可靠地构建和运行至关重要，也间接支持了逆向工程人员使用 Frida 进行分析工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/83 identical target name in subproject/true.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,13 +103,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 if __name__ == '__main__':
     pass
-
-"""
-
 ```

@@ -154,13 +154,15 @@ function foo(obj) {
 
 总而言之，`macro-assembler-ppc.cc` 的这部分代码是 V8 引擎将 JavaScript 代码转化为可以在 PowerPC 架构上执行的机器码的基石。它提供了一组用于生成各种 PowerPC 汇编指令的 C++ 接口，涵盖了类型检查、算术运算、内存访问、函数调用等核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/macro-assembler-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
- InstanceType type) {
+### 源代码
+```
+InstanceType type) {
   ASM_CODE_COMMENT(this);
 
 #if V8_STATIC_ROOTS_BOOL
@@ -1939,8 +1941,4 @@ void MacroAssembler::LoadS32LE(Register dst, const MemOperand& mem,
 }
 
 void MacroAssembler::LoadS16LE(Register dst, const MemOperand& mem,
-             
-"""
-
-
 ```

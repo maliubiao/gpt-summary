@@ -96,7 +96,7 @@ The user wants a summary of the C code provided, specifically focusing on its fu
 
 总而言之，`gumdarwingrafter.c` 在 frida 中扮演着至关重要的角色，它负责在 Darwin 系统上修改目标二进制文件，为动态 instrumentation 提供必要的代码注入和 hook 基础设施。理解其内部机制对于调试 frida 脚本和深入理解 frida 的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/gumdarwingrafter.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2021-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2021-2023 Francesco Tamagni <mrmacete@protonmail.ch>
@@ -1241,7 +1243,4 @@ gum_darwin_grafter_transform_load_commands (gconstpointer commands_in,
             if (ic->rebase_off + ic->rebase_size == ic->lazy_bind_off)
               ic->rebase_size += ic->lazy_bind_size;
             else if (ic->weak_
-"""
-
-
 ```

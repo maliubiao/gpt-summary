@@ -147,15 +147,17 @@ By following these steps, we can methodically analyze the code and generate a co
 
 总而言之，`XMLHttpRequestProgressEventThrottle.cc` 是 Blink 渲染引擎中一个重要的性能优化组件，它通过节流 `XMLHttpRequest` 的 `progress` 事件，避免了过度的事件处理，提高了网页的响应速度和资源利用率。 理解它的工作原理有助于开发者更好地编写高效的 JavaScript 代码，并排查与 `progress` 事件相关的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xmlhttprequest/xml_http_request_progress_event_throttle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Julien Chaffraix <jchaffraix@webkit.org>  All right
  * reserved.
@@ -337,7 +339,4 @@ void XMLHttpRequestProgressEventThrottle::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

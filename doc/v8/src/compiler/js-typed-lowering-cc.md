@@ -113,7 +113,7 @@ calculate("invalid"); // 这里的 "invalid" 是字符串，与 + 运算符的�
 
 总而言之，`v8/src/compiler/js-typed-lowering.cc` 的核心功能是 **在 Turbofan 编译过程中，根据类型信息将通用的 JavaScript 操作降级为更高效的底层操作，从而提升 JavaScript 代码的执行性能。** 它通过类型推断、插入类型检查和转换、以及处理特定的 JavaScript 运算符和数据类型来实现这一目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-typed-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-typed-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -121,8 +121,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -915,8 +917,5 @@ Reduction JSTypedLowering::ReduceJSAdd(Node* node) {
 
     // JSAdd(x:string, y) => CallStub[StringAdd](x, y)
     // JSAdd(x, y:string) => CallStub[StringAdd](x, y)
-    Callable const callable = 
-"""
-
-
+    Callable const callable =
 ```

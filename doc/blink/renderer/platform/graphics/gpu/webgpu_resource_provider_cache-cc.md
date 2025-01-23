@@ -147,14 +147,16 @@ While developers using the JavaScript WebGPU API don't directly interact with th
 
 **In summary, `webgpu_resource_provider_cache.cc` is a crucial component for optimizing WebGPU performance in Chromium by efficiently managing and recycling the GPU resources associated with `<canvas>` elements. It works behind the scenes to reduce the overhead of resource allocation, contributing to a smoother web experience.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/webgpu_resource_provider_cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -317,7 +319,4 @@ WebGPURecyclableResourceCache::CleanUpResourcesAndReturnSizeForTesting() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

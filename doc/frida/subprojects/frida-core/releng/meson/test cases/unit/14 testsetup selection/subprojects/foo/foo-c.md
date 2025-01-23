@@ -94,7 +94,7 @@ By following this thought process, combining the code analysis with the contextu
 
 总而言之，尽管 `foo.c` 自身的功能非常简单，但它在 Frida 的测试体系中扮演着重要的角色，作为一个可控的、最小化的目标，用于验证 Frida 的核心功能和测试设置选择机制。 开发者关注到这个文件通常是因为相关的单元测试失败，需要追溯问题的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/14 testsetup selection/subprojects/foo/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -102,12 +102,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

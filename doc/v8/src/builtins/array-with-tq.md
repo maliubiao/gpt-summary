@@ -188,14 +188,16 @@ try {
 
 总而言之，这段 Torque 代码高效地实现了 JavaScript 的 `Array.prototype.with` 方法，提供了不可变地更新数组的能力，并针对常见的 packed 数组进行了优化。理解其行为和与修改数组方法的区别对于避免编程错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-with.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -283,7 +285,4 @@ transitioning javascript builtin ArrayPrototypeWith(
   }
 }
 }
-
-"""
-
 ```

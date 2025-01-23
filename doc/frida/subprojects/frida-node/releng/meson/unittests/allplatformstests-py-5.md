@@ -78,7 +78,7 @@ The user wants a summary of the functionality of the Python code provided, which
 
 总而言之， `allplatformstests.py` 是 frida-node 项目中 Meson 构建系统功能和稳定性的一个重要保障。开发者通过编写和运行这些测试，可以尽早发现和修复构建流程中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -87,8 +87,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 i[k]
 
             sources = []
@@ -846,7 +848,4 @@ i[k]
         envs = {'CPPFLAGS': '-DCPPFLAG',
                 'CFLAGS': '-DCFLAG',
                 'CXXFLAGS': '-
-"""
-
-
 ```

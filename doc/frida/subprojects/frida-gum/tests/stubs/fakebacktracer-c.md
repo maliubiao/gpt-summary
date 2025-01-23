@@ -152,7 +152,7 @@ gum_fake_backtracer_generate(GUM_BACKTRACER(backtracer), NULL, &return_addresses
 
 总而言之，`fakebacktracer.c` 是 Frida 内部测试和调试工具链的一部分，它提供了一种可控的方式来模拟回溯信息，用于验证 Frida 自身的回溯机制或模拟特定的场景。普通用户不会直接使用它，但了解其功能可以帮助理解 Frida 的内部工作原理和调试过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/stubs/fakebacktracer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2018 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2021 Francesco Tamagni <mrmacete@protonmail.ch>
@@ -230,7 +232,4 @@ gum_fake_backtracer_generate (GumBacktracer * backtracer,
       depth * sizeof (GumReturnAddress));
   return_addresses->len = depth;
 }
-
-"""
-
 ```

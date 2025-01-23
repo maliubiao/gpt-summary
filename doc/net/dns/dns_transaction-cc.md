@@ -85,7 +85,7 @@ I need to:
 
 `net/dns/dns_transaction.cc` 文件的第一部分定义了 Chromium 网络栈中处理 DNS 查询的核心组件，包括不同协议的 DNS 尝试实现和 DoH 探测功能。它负责与 DNS 服务器通信，获取域名对应的 IP 地址，是浏览器进行网络请求的关键步骤。虽然不直接与 JavaScript 交互，但其功能直接影响到 JavaScript 发起的网络请求能否成功完成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_transaction.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -93,8 +93,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1075,7 +1077,4 @@ class DnsOverHttpsProbeRunner : public DnsProbeRunner {
  public:
   DnsOverHttpsProbeRunner(base::WeakPtr<DnsSession> session,
                           base::WeakPtr<R
-"""
-
-
 ```

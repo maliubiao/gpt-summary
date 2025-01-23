@@ -169,7 +169,7 @@ case FADD_D:
 
 总而言之，`v8/src/execution/loong64/simulator-loong64.cc` 是 V8 引擎在 LoongArch 64 平台上能够顺利运行和优化的基石，它通过软件模拟硬件行为，降低了开发成本和难度，并为早期问题发现提供了有效的手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/loong64/simulator-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/loong64/simulator-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -177,9 +177,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```cpp
+{
               result = upper;
             } else {
               result = lower;
@@ -678,8 +680,4 @@ void Simulator::GlobalMonitor::RemoveLinkedAddress(
 }  // namespace v8
 
 #endif  // USE_SIMULATOR
-
-"""
-
-
 ```

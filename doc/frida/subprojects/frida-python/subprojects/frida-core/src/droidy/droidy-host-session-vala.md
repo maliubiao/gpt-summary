@@ -132,7 +132,7 @@ attach_to_process(1234)
 4. **调试操作**：用户通过 Frida 进行调试操作，Frida 处理相关事件并返回结果。
 
 这是第 1 部分的归纳，后续部分将继续深入分析其他功能模块。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/droidy/droidy-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class DroidyHostSessionBackend : Object, HostSessionBackend {
 		private Droidy.DeviceTracker tracker;
@@ -1153,7 +1155,4 @@ namespace Frida {
 		}
 
 		private void on_remote_spawn_removed (
-"""
-
-
 ```

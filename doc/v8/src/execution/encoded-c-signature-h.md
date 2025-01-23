@@ -140,15 +140,17 @@ console.log(result);
 
 总结来说，`v8/src/execution/encoded-c-signature.h` 定义的 `EncodedCSignature` 结构体是 V8 引擎中用于描述 C 函数签名的关键数据结构，它帮助 V8 在执行 JavaScript 代码时正确地与 C++ 实现的内置功能进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/encoded-c-signature.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/encoded-c-signature.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ struct EncodedCSignature {
 }  // namespace v8
 
 #endif  // V8_EXECUTION_ENCODED_C_SIGNATURE_H_
-
-"""
-
 ```

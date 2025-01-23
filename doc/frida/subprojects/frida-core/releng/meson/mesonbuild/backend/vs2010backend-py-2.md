@@ -164,7 +164,7 @@ Here's a breakdown of the code's functionality and how it relates to the user's 
 
 通过理解这段代码的功能和生成 `.vcxproj` 文件的过程，开发者可以更好地诊断和解决在 Visual Studio 2010 中构建 Frida 项目时遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ngs')
         ET.SubElement(root, 'ImportGroup', Label='Shared')
         prop_sheets_grp = ET.SubElement(root, 'ImportGroup', Label='PropertySheets')
@@ -700,7 +702,4 @@ ngs')
                     else:
                         lang = Vs2010Backend.lang_from_source_file(s)
                         self.add_pch(pch_sources, lang
-"""
-
-
 ```

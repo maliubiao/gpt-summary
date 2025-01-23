@@ -89,11 +89,13 @@ if (global.gc) {
 
 `GCInvoker` 是 V8 中负责触发和管理 C++ 垃圾回收的关键组件。它根据不同的情况选择合适的垃圾回收策略，并利用任务队列等机制来优化垃圾回收过程，从而直接影响 JavaScript 程序的内存管理和性能。虽然 JavaScript 开发者不能直接操作它，但 JavaScript 的垃圾回收行为是由其内部机制驱动的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/gc-invoker.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ std::optional<int> GCInvoker::UpdateAllocationTimeout() {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

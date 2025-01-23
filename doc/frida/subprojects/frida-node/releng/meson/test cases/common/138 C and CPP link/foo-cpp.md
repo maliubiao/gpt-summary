@@ -137,7 +137,7 @@ Finally, I organized the findings into the categories requested by the prompt (f
 
 `foo.cpp` 文件本身是一个简单的 C++ 模块，其核心功能是通过调用外部 C 函数 `get_number_index` 来决定返回一个预定义数组中的哪个元素。在 Frida 的上下文中，这个文件是一个测试用例，用于验证 Frida 在处理动态链接的 C 和 C++ 代码时的能力。理解这个文件的功能有助于开发者编写 Frida 脚本、调试 Frida-node 绑定以及理解 Frida 的内部机制。通过分析这个文件，我们可以看到动态 instrumentation 技术与逆向工程、底层二进制、操作系统机制以及常见的编程错误之间的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/138 C and CPP link/foo.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /* Copyright © 2017 Dylan Baker
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -181,7 +183,4 @@ namespace {
 extern "C" int six_one(void) {
     return numbers[get_number_index ()];
 }
-
-"""
-
 ```

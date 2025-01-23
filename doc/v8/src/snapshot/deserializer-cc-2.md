@@ -127,7 +127,7 @@ console.timeEnd('启动时间（有快照）');
 
 `v8/src/snapshot/deserializer.cc` 是 V8 引擎中负责快照反序列化的核心组件。它的主要功能是从预先保存的快照数据中重建 V8 的堆和执行环境，包括 JavaScript 对象、函数和内置结构。这对于实现 V8 的快速启动至关重要。它是一个 C++ 源代码文件，属于 V8 引擎的内部实现，虽然不直接暴露给 JavaScript 开发者，但其功能直接影响 JavaScript 的执行效率和启动速度。  用户可能会间接地遇到与快照兼容性相关的问题，但这不是常见的直接编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/deserializer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/deserializer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -135,8 +135,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Deserializer<Isolate>;
 template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
     Deserializer<LocalIsolate>;
@@ -144,8 +146,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace v8::internal
 
 #include "src/objects/object-macros-undef.h"
-
-"""
-
-
 ```

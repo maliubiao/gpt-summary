@@ -101,15 +101,17 @@ Let's break down the thought process to analyze the provided C++ test file for `
 
 `html_field_set_element_test.cc` 中的 `DidRecalcStyleWithDescendantReattach` 测试用例专注于验证 Blink 渲染引擎在处理 `<fieldset>` 元素及其子元素样式更新时的效率和正确性。它确保了当子元素的样式发生改变时，父元素不会进行不必要的重新布局，这对于提高网页性能至关重要。这个测试与 HTML 结构、CSS 样式以及通过 Javascript 操作 DOM 息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_field_set_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -140,7 +142,4 @@ TEST_F(HTMLFieldSetElementTest, DidRecalcStyleWithDescendantReattach) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

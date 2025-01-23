@@ -93,7 +93,7 @@ Let's break down the thought process for analyzing the provided C code snippet a
 
 虽然 `main.c` 的代码非常简单，只负责打印版本信息，但它在 Frida 动态仪器工具链中扮演着重要的角色。了解工具的版本是逆向工程实践中的一个基本需求，尤其是在使用像 Frida 这样功能强大的工具时。该文件也反映了软件开发中版本管理的重要性，以及构建系统（如 Meson）在组织和测试代码方面的作用。用户到达这里通常是为了了解 Frida Tools 的版本，或者在构建和调试 Frida Tools 的过程中遇到了与版本信息相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/65 build always/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include"version.h"
 
@@ -110,7 +112,4 @@ int main(void) {
     printf("Version is %s.\n", version_string);
     return 0;
 }
-
-"""
-
 ```

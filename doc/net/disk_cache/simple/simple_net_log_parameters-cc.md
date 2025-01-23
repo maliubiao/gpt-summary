@@ -152,15 +152,17 @@ Finally, I organized the information into the requested categories: Functionalit
 
 通过分析这些日志信息，开发者可以诊断缓存未命中、缓存创建失败、缓存数据损坏等问题。例如，如果看到大量的缓存创建失败事件并伴随着特定的网络错误码，就可以缩小问题范围，例如是域名解析问题还是服务器连接问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_net_log_parameters.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ void NetLogSimpleEntryCreation(const net::NetLogWithSource& net_log,
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

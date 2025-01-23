@@ -273,7 +273,7 @@ sys.stdin.read()
 
 希望这个详细的解释能够帮助你理解 `bionic/libc/include/sys/fsuid.h` 文件的功能及其在 Android 中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/fsuid.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -284,8 +284,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -343,7 +345,4 @@ int setfsuid(uid_t __uid);
 int setfsgid(gid_t __gid);
 
 __END_DECLS
-
-"""
-
 ```

@@ -304,7 +304,7 @@ if __name__ == '__main__':
 
 通过这个 Frida 脚本，你可以观察到 Android Framework 或 NDK 中的组件是如何调用 `ioctl` 并使用 `sync_file.h` 中定义的数据结构与内核同步机制进行交互的。这有助于理解 Android 图形和显示子系统的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/sync_file.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -315,8 +315,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -358,7 +360,4 @@ struct sync_set_deadline {
 #define SYNC_IOC_FILE_INFO _IOWR(SYNC_IOC_MAGIC, 4, struct sync_file_info)
 #define SYNC_IOC_SET_DEADLINE _IOW(SYNC_IOC_MAGIC, 5, struct sync_set_deadline)
 #endif
-
-"""
-
 ```

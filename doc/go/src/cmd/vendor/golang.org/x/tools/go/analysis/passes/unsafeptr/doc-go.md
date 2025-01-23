@@ -185,15 +185,17 @@ func main() {
 
 `unsafeptr` 分析器是一个非常有用的工具，可以帮助开发者避免在使用 `unsafe.Pointer` 和 `uintptr` 时可能出现的与内存管理相关的错误。  理解其工作原理和潜在的风险对于编写健壮的 Go 代码至关重要。 避免将指针值长期存储在 `uintptr` 变量中，是避免此类错误的最佳实践。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/unsafeptr/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -211,9 +213,4 @@ Prompt:
 // word in memory that holds a pointer value, because that word will be
 // invisible to stack copying and to the garbage collector.
 package unsafeptr
-
-"""
-
-
-
 ```

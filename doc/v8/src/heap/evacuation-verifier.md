@@ -91,11 +91,13 @@ console.log(objA.refToB.value); // 预期输出 123，但如果指针未更新�
 
 总而言之，`evacuation-verifier.cc` 文件中的 `EvacuationVerifier` 类是 V8 引擎中一个重要的调试和验证工具，它确保了垃圾回收过程中对象疏散操作的正确性，从而保证了 JavaScript 代码运行时的内存安全和数据完整性。虽然 JavaScript 开发者通常不会直接接触到这部分代码，但它的正常工作对于 JavaScript 应用的稳定运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/evacuation-verifier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ void EvacuationVerifier::VerifyEvacuation(PagedSpaceBase* space) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

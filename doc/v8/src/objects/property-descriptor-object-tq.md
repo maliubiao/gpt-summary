@@ -220,15 +220,17 @@ console.log(obj.y); // 输出 20
 
 `v8/src/objects/property-descriptor-object.tq` 文件是 V8 引擎中关于 JavaScript 属性描述符的核心定义。它定义了表示属性描述符的对象结构和用于操作这些描述符的关键逻辑，特别是用于验证属性描述符修改是否符合 JavaScript 规范的 `IsCompatiblePropertyDescriptor` 宏。理解这个文件对于深入了解 JavaScript 属性的内部机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/property-descriptor-object.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/property-descriptor-object.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -395,7 +397,4 @@ macro CompletePropertyDescriptor(desc: PropertyDescriptorObject): void {
 
 extern macro AllocatePropertyDescriptorObject(implicit context: Context)():
     PropertyDescriptorObject;
-
-"""
-
 ```

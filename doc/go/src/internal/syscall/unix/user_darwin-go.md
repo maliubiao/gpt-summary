@@ -261,7 +261,7 @@ User not found.
 
 总而言之，`go/src/internal/syscall/unix/user_darwin.go` 提供了一组底层的接口，用于在 Darwin 系统上获取用户和组信息。开发者在使用时需要注意内存管理、错误处理以及与 C 字符串的交互。通常情况下，建议使用更高级别的 `os/user` 包，因为它提供了更安全和跨平台的 API。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/user_darwin.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -269,8 +269,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -392,9 +394,4 @@ func Sysconf(key int32) int64 {
 	}
 	return int64(val)
 }
-
-"""
-
-
-
 ```

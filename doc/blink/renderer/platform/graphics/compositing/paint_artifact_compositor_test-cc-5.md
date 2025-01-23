@@ -106,16 +106,18 @@ This specific part of the test file focuses on verifying the logic within `Paint
 
 总而言之，这部分测试代码的主要目的是**验证 `PaintArtifactCompositor` 在处理 CSS `opacity` 属性以及与其相关的 `filter`, `animation`, `transform`, 和 `will-change` 属性时，能否正确地决定何时以及如何创建渲染表面，以保证渲染结果的正确性和性能**。 它深入测试了 Blink 引擎在处理不透明度效果时的合成逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/paint_artifact_compositor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
- 5);
+### 源代码
+```cpp
+5);
   auto* c1 = CreateClip(c0(), t0(), rrect);
   auto* c2 = CreateClip(*c1, t0(), FloatRoundedRect(60, 60, 200, 100));
 
@@ -864,7 +866,4 @@ TEST_P(PaintArtifactCompositorTest,
 
 TEST_P(PaintArtifactCompositorTest,
        OpacityIndirectlyAffectingTwoLayersWithOpacityAnimations) {
-"""
-
-
 ```

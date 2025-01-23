@@ -202,7 +202,7 @@ My thinking process to answer the request went something like this:
 
 简而言之，这是将编译好的 WebAssembly 模块和外部提供的导入值组合成一个可执行实例的关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-instantiate.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-instantiate.cc以.tq结尾，那它是个v8 torque源代码，
@@ -210,8 +210,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 has_exception());
   TRACE("Successfully built instance for module %p\n",
         module_object_->native_module());
@@ -983,7 +985,4 @@ bool InstanceBuilder::ProcessImportedGlobal(
   // supports importing a WebAssembly.Global object for this global, but also
   // defines constructing a WebAssembly.Global of v128 to be a TypeError.
   // We *should* never hit t
-"""
-
-
 ```

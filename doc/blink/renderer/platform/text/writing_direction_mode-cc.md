@@ -220,14 +220,16 @@ By following this structured approach, combining code analysis with understandin
 
 总之，`blink/renderer/platform/text/writing_direction_mode.cc` 文件在 Chromium Blink 引擎中扮演着关键角色，它连接了 CSS 的书写模式和文本方向属性与底层的布局逻辑，确保了文本能够按照正确的方向和顺序进行渲染。理解这个类的功能有助于开发者更好地理解浏览器如何处理不同语言和书写模式的网页内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/writing_direction_mode.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -307,7 +309,4 @@ std::ostream& operator<<(std::ostream& ostream,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -154,7 +154,7 @@ Let's break down the thought process for analyzing the provided C++ code and ans
 
 总而言之，这个 `manualinclude.cpp` 文件虽然简单，但它清晰地展示了 Qt 信号槽的核心概念，并且作为 Frida 的测试用例，对于理解 Frida 如何与 Qt 应用程序进行动态交互具有重要的意义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/4 qt/manualinclude.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"manualinclude.h"
 #include <mocdep.h>
 #include<QCoreApplication>
@@ -191,7 +193,4 @@ int main(int argc, char **argv) {
 }
 
 #include"manualinclude.moc"
-
-"""
-
 ```

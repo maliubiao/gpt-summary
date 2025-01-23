@@ -120,14 +120,16 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
 总而言之，`webgraphics_shared_image_interface_provider_impl.cc` 是 Blink 渲染引擎中一个关键的底层组件，它负责管理与 GPU 进程的共享图像接口，并处理连接丢失事件，这对于 WebGL、Canvas 2D 和其他依赖 GPU 加速的 Web 技术的正常运行至关重要。虽然它不直接操作 JavaScript、HTML 或 CSS，但其功能是支撑这些技术实现高性能渲染的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/webgraphics_shared_image_interface_provider_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ void WebGraphicsSharedImageInterfaceProviderImpl::
 }
 
 }  // namespace blink
-
-"""
-
 ```

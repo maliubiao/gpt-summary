@@ -147,7 +147,7 @@ By following this structured thinking process, I can systematically analyze the 
 
 总而言之，`meson_configure.py` 是 Frida Core 构建过程的关键入口点，它负责根据用户的需求和系统环境配置构建系统。理解它的功能和参数对于成功构建和调试 Frida 至关重要，特别是在进行交叉编译或需要定制构建选项的场景下。它与逆向工程紧密相关，因为它允许我们为特定的目标平台构建 Frida Agent，并且通过编译选项可以控制生成二进制文件的特性（例如，是否包含调试符号）。它也深入到二进制底层、操作系统内核和框架的层面，因为它需要处理不同架构和操作系统的构建细节和依赖关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson_configure.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import argparse
 import os
 from pathlib import Path
@@ -663,7 +665,4 @@ class ToolchainNotFoundError(Exception):
 
 class SDKNotFoundError(Exception):
     pass
-
-"""
-
 ```

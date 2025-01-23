@@ -415,7 +415,7 @@ except KeyboardInterrupt:
 
 运行此脚本后，当目标应用调用 `fanotify_init` 系统调用时，Frida 会拦截并打印出相关信息，从而帮助你调试 Android Framework 或 NDK 应用如何使用 `fanotify`. 你可以根据需要修改脚本来 hook `fanotify_mark` 或其他相关的系统调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/fanotify.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -426,8 +426,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -559,7 +561,4 @@ struct fanotify_response_info_audit_rule {
 #define FAN_EVENT_NEXT(meta,len) ((len) -= (meta)->event_len, (struct fanotify_event_metadata *) (((char *) (meta)) + (meta)->event_len))
 #define FAN_EVENT_OK(meta,len) ((long) (len) >= (long) FAN_EVENT_METADATA_LEN && (long) (meta)->event_len >= (long) FAN_EVENT_METADATA_LEN && (long) (meta)->event_len <= (long) (len))
 #endif
-
-"""
-
 ```

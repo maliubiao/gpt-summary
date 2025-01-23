@@ -127,11 +127,13 @@ V8 引擎可能会使用 `VirtualMemory` 或 `VirtualMemoryCage` 来预留一大
 
 `allocation.cc` 文件是 V8 引擎内存管理的核心组件，它提供了平台无关的内存分配、释放和管理机制，直接支撑着 JavaScript 代码的运行。JavaScript 中看似简单的对象创建、数组操作和字符串处理，背后都依赖于这个文件中提供的底层 C++ 功能。理解这些底层机制有助于更深入地理解 JavaScript 引擎的工作原理和性能特点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/allocation.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -497,7 +499,4 @@ void VirtualMemoryCage::Free() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

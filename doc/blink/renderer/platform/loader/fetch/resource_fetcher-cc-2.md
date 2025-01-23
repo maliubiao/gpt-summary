@@ -142,15 +142,17 @@ void ResourceFetcher::WarnUnusedPreloads(
 
 这部分 `ResourceFetcher.cc` 的代码主要负责监控和管理预加载的资源，并在发现未使用的预加载时向开发者发出警告。这有助于开发者优化页面的加载性能，避免不必要的资源下载，并确保预加载功能被正确使用。通过 UMA 指标的收集，Chromium 团队也能更好地了解预加载功能的使用情况和潜在的改进方向。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_fetcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 inishAsError(ResourceError::CancelledError(params.Url()),
                               freezable_task_runner_.get());
     }
@@ -984,7 +986,4 @@ void ResourceFetcher::WarnUnusedPreloads(
                  "ResourceFetcher::WarnUnusedEarlyHintsPreloads", "data",
                  CreateTracedValueForUnusedEarlyHintsPreload(pair.key));
     pair.value.state = EarlyHintsPreloadEntry::
-"""
-
-
 ```

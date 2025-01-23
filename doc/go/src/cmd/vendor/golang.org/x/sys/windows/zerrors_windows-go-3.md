@@ -138,7 +138,7 @@ func main() {
 
 这段代码是 `go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go` 文件的**一部分**，它定义了一系列以 `ERROR_` 和 `DNS_ERROR_` 开头的常量，并将这些常量映射到 `syscall.Errno` 类型。 这些常量代表了Windows操作系统中特定的系统错误码和DNS错误码。通过提供这些常量，Go程序员可以更方便、更可读地处理Windows系统调用和DNS查询可能返回的各种错误情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -146,9 +146,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第4部分，共15部分，请归纳一下它的功能
+```
 
-"""
-                                                syscall.Errno = 8218
+### 源代码
+```go
+syscall.Errno = 8218
 	ERROR_POLICY_OBJECT_NOT_FOUND                                             syscall.Errno = 8219
 	ERROR_POLICY_ONLY_IN_DS                                                   syscall.Errno = 8220
 	ERROR_PROMOTION_ACTIVE                                                    syscall.Errno = 8221
@@ -830,9 +832,4 @@ Prompt:
 	WSA_QOS_EPOLICYOBJ                                                        syscall.Errno = 11025
 	WSA_QOS_EFLOWDESC                                                         syscall.Errno = 11026
 	WSA_Q
-"""
-
-
-
-
 ```

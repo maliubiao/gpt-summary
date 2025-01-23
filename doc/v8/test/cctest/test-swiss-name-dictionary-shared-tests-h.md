@@ -177,7 +177,7 @@ int main() {
 
 `v8/test/cctest/test-swiss-name-dictionary-shared-tests.h` 是 V8 引擎中一个关键的测试文件，它定义了一系列可重用的测试用例，用于验证 `SwissNameDictionary` 数据结构的正确性和性能。它支持不同的测试运行器，能够覆盖 C++ 直接调用和 CSA 代码执行两种情况，确保了该核心数据结构在各种场景下的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-swiss-name-dictionary-shared-tests.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-swiss-name-dictionary-shared-tests.h以.tq结尾，那它是个v8 torque源代码，
@@ -185,8 +185,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1035,8 +1037,5 @@ struct SharedSwissTableTests {
 
         CheckMultiple(s, count, "key", "value", 0);
 
-        // Shrink doesn't shrink to fit, but only halves 
-"""
-
-
+        // Shrink doesn't shrink to fit, but only halves
 ```

@@ -253,7 +253,7 @@ func main() {
 
 总而言之，`go/src/cmd/link/internal/ld/data.go` 的这部分代码是 Go 链接器的核心组成部分，负责 **精确地安排最终可执行文件在内存中的布局**。 它将不同的代码和数据分配到合适的内存段和节区，计算它们的虚拟地址和文件偏移量，并处理诸如大代码段分割和跳转桩生成等复杂情况。 它的目标是生成一个符合目标平台规范、能够正确加载和执行的二进制文件。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/data.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -261,8 +261,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 me.__stop___sancov_cntrs", 0), sect)
 		ldr.SetSymSect(ldr.LookupOrCreateSym("internal/fuzz._counters", 0), sect)
 		ldr.SetSymSect(ldr.LookupOrCreateSym("internal/fuzz._ecounters", 0), sect)
@@ -1492,10 +1494,4 @@ func compressSyms(ctxt *Link, syms []loader.Sym) []byte {
 	}
 	return buf.Bytes()
 }
-
-"""
-
-
-
-
 ```

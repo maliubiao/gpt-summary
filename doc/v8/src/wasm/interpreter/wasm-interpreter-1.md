@@ -169,12 +169,14 @@ runWasm();
 
 这部分 `wasm-interpreter.cc` 代码是 WebAssembly 解释器执行核心逻辑的关键部分，它定义了如何处理各种 WebAssembly 指令，包括算术运算、逻辑运算、类型转换、控制流以及内存操作等。 这些指令的执行使得 WebAssembly 能够在 JavaScript 引擎中运行，并与 JavaScript 代码进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 NE_BINOP)
 #undef DEFINE_BINOP
 
@@ -1387,7 +1389,4 @@ INSTRUCTION_HANDLER_FUNC s2s_CopySlot_qq(const uint8_t* code, uint32_t* sp,
                                          WasmInterpreterRuntime* wasm_runtime,
                                          int64_t r0, double fp0) {
   uint32_t to = ReadI32(code)
-"""
-
-
 ```

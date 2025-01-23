@@ -109,11 +109,13 @@ loadWasm();
 
 因此，`constant-expression.cc` 文件在幕后工作，确保 WebAssembly 模块中的常量在实例化时被正确地计算和应用，从而让 JavaScript 可以访问到这些预先计算好的值或引用。`kWireBytesRef` 的情况则允许在更复杂的场景下，例如使用 `global.get` 等指令作为常量表达式的一部分，由 V8 在编译时提前计算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/constant-expression.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ ValueOrError EvaluateConstantExpression(
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

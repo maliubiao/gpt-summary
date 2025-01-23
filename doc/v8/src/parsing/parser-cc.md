@@ -236,7 +236,7 @@ FunctionLiteral {
 
 总而言之，`v8/src/parsing/parser.cc` 的这一部分定义了 V8 引擎中负责将 JavaScript 源代码文本解析成抽象语法树 (AST) 的核心组件。它包含了创建各种 AST 节点、处理类语法、进行基本的字面量优化、处理 `super` 关键字、管理作用域以及进行错误报告的关键逻辑。这个解析器是 V8 引擎将 JavaScript 代码转换为可执行形式的第一步，至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -244,8 +244,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1082,7 +1084,4 @@ void Parser::PostProcessParseResult(IsolateT* isolate, ParseInfo* info,
   {
     RCS_SCOPE(info->runtime_call_stats(), RuntimeCallCounterId::kCompileAnalyse,
               RuntimeCallStats::k
-"""
-
-
 ```

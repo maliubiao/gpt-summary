@@ -133,7 +133,7 @@ Here's a breakdown of the thinking process used to analyze the Python script and
 
 总而言之，这个脚本是 Frida 内部构建和测试流程的一部分，开发者通常不会直接与之交互，除非他们正在进行 Frida 的底层开发或构建调试。它的目的是确保 Frida 的构建系统能够正确生成所需的头文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/57 custom header generator/makeheader.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # NOTE: this file does not have the executable bit set. This tests that
@@ -155,7 +157,4 @@ with open(sys.argv[1]) as f:
     output = template % (f.readline().strip(), )
 with open(sys.argv[2], 'w') as f:
     f.write(output)
-
-"""
-
 ```

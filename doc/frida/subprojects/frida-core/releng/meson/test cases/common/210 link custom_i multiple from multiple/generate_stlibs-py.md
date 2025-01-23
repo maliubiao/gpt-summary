@@ -254,7 +254,7 @@ python generate_stlibs.py --private-dir /tmp/my_private_dir -o libflob1.a libflo
 
 总而言之，`generate_stlibs.py` 是 Frida 项目内部用于生成测试用静态库的工具脚本，它模拟了编译和链接过程，为 Frida 的测试用例提供了基础的测试环境。理解其功能和实现细节有助于理解 Frida 的构建和测试流程，并在出现问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/210 link custom_i multiple from multiple/generate_stlibs.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -262,8 +262,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import shutil, sys, subprocess, argparse, pathlib
@@ -356,7 +358,4 @@ def generate_lib(outfiles, private_dir, compiler_array):
 if __name__ == '__main__':
     options = parser.parse_args()
     sys.exit(generate_lib(options.o, options.private_dir, options.cmparr))
-
-"""
-
 ```

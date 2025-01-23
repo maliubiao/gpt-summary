@@ -191,15 +191,17 @@ b1:
 
 `branchelim_test.go` 中的代码是 Go 编译器优化器中分支消除功能的单元测试。它验证了编译器在 SSA 中间表示阶段能够正确地识别和消除不必要的控制流分支，从而提高代码的执行效率。 这些测试覆盖了简单的 `if` 和 `if/else` 结构，以及在包含循环的复杂控制流图中分支消除的处理情况。理解这些测试有助于理解 Go 编译器是如何进行代码优化的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/branchelim_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -372,9 +374,4 @@ func TestNoBranchElimLoop(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

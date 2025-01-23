@@ -161,15 +161,17 @@ Wireshark 等工具可以使用这种格式的日志文件来解密对应的 TLS
 
 总而言之，`net/ssl/ssl_key_logger.cc` 提供了一个在 Chromium 中记录 TLS 密钥信息的关键机制，主要用于网络调试和安全分析。它与 JavaScript 没有直接的编程接口，但其记录的结果可以用于分析 JavaScript 发起的 HTTPS 请求。理解其功能和使用场景对于排查网络问题和进行安全研究非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ssl/ssl_key_logger.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ SSLKeyLoggerManager* SSLKeyLoggerManager::Get() {
 }
 
 }  // namespace net
-
-"""
-
 ```

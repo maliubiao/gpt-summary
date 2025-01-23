@@ -145,7 +145,7 @@ sys.stdin.read()
 
 通过这些步骤，用户可以定位到问题可能出在 `lib.c` 的编译配置上，或者在链接库的过程中出现了错误。这个测试用例的存在可以帮助开发者和 Frida 用户理解在有同名库的情况下，如何正确地构建和链接动态库，以及 Frida 如何找到并 hook 目标函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/79 same basename/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -177,7 +179,4 @@ int func(void) {
 #else
 #error "Missing type definition."
 #endif
-
-"""
-
 ```

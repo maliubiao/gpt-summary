@@ -194,7 +194,7 @@ Initially, I might have focused too much on the individual "On..." functions in 
 
 这部分 `MediaCapabilities` 代码的核心职责是作为异步操作的**结果接收器和 Promise 解析器**。它接收来自 Chromium 各个子系统的媒体能力查询结果，并将这些结果汇总，最终通过 Promise 将信息返回给 JavaScript，使得网页能够根据浏览器的媒体处理能力做出相应的决策。它负责维护异步操作的状态，确保在所有必要信息到达后才解析 Promise，从而保证了 Media Capabilities API 的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_capabilities/media_capabilities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -202,8 +202,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 apabilities.DecodingInfo.Time.Video.Encrypted",
                         process_time);
   } else {
@@ -390,8 +392,4 @@ int MediaCapabilities::CreateCallbackId() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

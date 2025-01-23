@@ -146,11 +146,13 @@ End
 
 `d8-platforms.cc` 文件通过定义自定义的 `Platform` 实现，允许 `d8` 工具在模拟的、受控的环境中运行 JavaScript 代码。这对于测试 V8 引擎在不同条件下的行为（例如，确定性执行或存在延迟）至关重要。它直接影响了 JavaScript 中异步操作的执行方式和时间特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8-platforms.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -507,7 +509,4 @@ std::unique_ptr<Platform> MakeDelayedTasksPlatform(
 }
 
 }  // namespace v8
-
-"""
-
 ```

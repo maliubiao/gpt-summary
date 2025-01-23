@@ -140,15 +140,17 @@ transport_state {
 
 通过分析这些底层的 QUIC 事件和状态信息，开发者可以更深入地了解网络问题的根源，例如是网络拥塞、服务器性能问题还是客户端实现问题。 `quic_trace_visitor.cc` 就像一个黑盒子记录仪，帮助开发者回溯 QUIC 连接的历程，找到问题所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_trace_visitor.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -497,7 +499,4 @@ void QuicTraceVisitor::PopulateTransportState(
 }
 
 }  // namespace quic
-
-"""
-
 ```

@@ -106,7 +106,7 @@ or a0, a0, t0  // 合并到 a0
 
 这部分代码主要集中在提供用于高效且安全地进行内存访问（包括对齐和非对齐访问）以及一些基本的寄存器操作的宏指令。它为 V8 引擎的 RISC-V 代码生成器提供了底层的 building blocks，使得生成正确的汇编代码来执行 JavaScript 成为可能。 特别是非对齐内存访问的处理和 `li` 指令的多种实现方式是这部分代码的核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/macro-assembler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -114,9 +114,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共9部分，请归纳一下它的功能
+```
 
-"""
-   slli(x1, x1, 8);   // x1 <- 0xFF00FF00
+### 源代码
+```cpp
+slli(x1, x1, 8);   // x1 <- 0xFF00FF00
     and_(rd, x0, x1);  // x0 & 0xFF00FF00
     srli(rd, rd, 8);
     or_(rd, rd, x2);  // (((x0 & x1) << 8)  | ((x0 & (x1 << 8)) >> 8))
@@ -1074,8 +1076,5 @@ void MacroAssembler::ShlPair(Register dst_low, Register dst_high,
   // (HIGH32 << shamt) | (LOW32 >> (32 - shamt))
   Or(dst_high, dst_high, scratch1);
 
-  // 
-"""
-
-
+  //
 ```

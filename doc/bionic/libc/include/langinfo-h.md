@@ -297,7 +297,7 @@ sys.stdin.read()
 
 运行这个 Frida 脚本后，当目标应用调用 `nl_langinfo` 函数时，你将在 Frida 的输出中看到函数被调用时的 `nl_item` 值和返回的字符串，从而帮助你调试和理解本地化信息的获取过程。你可以根据需要修改脚本来 hook `nl_langinfo_l` 或添加更多的调试信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/langinfo.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -308,8 +308,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -414,7 +416,4 @@ char* _Nonnull nl_langinfo_l(nl_item __item, locale_t _Nonnull __l) __INTRODUCED
 __END_DECLS
 
 #endif
-
-"""
-
 ```

@@ -223,7 +223,7 @@ By following these steps and being attentive to details, we can effectively anal
 
 `v8/src/d8/d8.cc` 以 `.cc` 结尾，表明它是 C++ 源代码文件，而不是 Torque 源代码文件。Torque 文件通常以 `.tq` 结尾。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/d8/d8.cc以.tq结尾，那它是个v8 torque源代码，
@@ -231,8 +231,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 fo) {
   v8::debug::SetDebugDelegate(info.GetIsolate(), nullptr);
 }
@@ -1146,7 +1148,4 @@ void Shell::ReportException(Isolate* isolate, Local<v8::Message> message,
       stack_trace_string->IsString()) {
     v8::String::Utf8Value stack_trace(isolate, stack_trace_string.As<String>());
     print
-"""
-
-
 ```

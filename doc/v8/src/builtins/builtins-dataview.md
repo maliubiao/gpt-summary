@@ -130,11 +130,13 @@ try {
 
 `builtins-dataview.cc` 文件中的 `DataViewConstructor` 函数是 V8 引擎中实现 JavaScript `DataView` 构造函数的关键部分。它负责验证参数、计算视图长度、创建并初始化 `DataView` 对象，并处理各种可能的错误情况，确保了 JavaScript 中 `DataView` 对象的正确创建和使用。 提供的 JavaScript 示例展示了在不同场景下如何使用 `DataView` 构造函数，以及可能触发的错误类型，这些都与 C++ 代码中的逻辑对应。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-dataview.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -325,7 +327,4 @@ BUILTIN(DataViewConstructor) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

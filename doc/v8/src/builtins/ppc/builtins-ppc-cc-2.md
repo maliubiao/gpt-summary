@@ -153,7 +153,7 @@ new notAConstructor(); // TypeError: notAConstructor is not a constructor
 
 `v8/src/builtins/ppc/builtins-ppc.cc` 是 V8 引擎中至关重要的一个文件，它包含了在 PPC 架构上高效执行 JavaScript 内置函数的底层实现。它处理了函数调用、对象构造、参数传递、栈帧管理以及与解释器和优化器的交互。理解这个文件中的代码有助于深入了解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ppc/builtins-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/ppc/builtins-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -161,9 +161,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
- StandardFrameConstants::kCallerFPOffset),
+### 源代码
+```cpp
+StandardFrameConstants::kCallerFPOffset),
                  r0);
       break;
   }
@@ -1076,7 +1078,4 @@ void Builtins::Generate_CallFunction(MacroAssembler* masm,
 
   __ LoadU16(
       r5, F
-"""
-
-
 ```

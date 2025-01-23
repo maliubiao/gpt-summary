@@ -202,7 +202,7 @@ go build -gcflags="-d=ssa/prove/debug=2" your_program.go
 
 作为 `prove.go` 的一部分，这段代码专注于**利用已知的常量信息和简单的逻辑推理来简化 SSA 图**。它通过识别常量参数和不可达的分支，为后续的编译优化阶段奠定了基础。`constArg` 是核心功能，负责进行证明和触发分支移除，而 `removeBranch`、`isConstDelta` 和 `isCleanExt` 则是辅助函数，提供了更细粒度的分析能力。 这部分的功能是编译器进行静态分析和优化，提升代码性能的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/prove.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -211,8 +211,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 c.pass.debug > 1 {
 				b.Func.Warnl(v.Pos, "Proved %v's arg %d (%v) is constant %d", v, i, arg, constValue)
 			}
@@ -326,10 +328,4 @@ func isCleanExt(v *Value) bool {
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

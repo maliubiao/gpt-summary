@@ -110,7 +110,7 @@ Confidence Score: 5/5 - I'm confident I can address all parts of the request bas
 
 总而言之， `net/third_party/quiche/src/quiche/quic/core/quic_sent_packet_manager_test.cc` 的这部分着重测试了QUIC发送端数据包管理中至关重要的PTO机制在各种复杂场景下的正确性，确保QUIC连接的稳定性和性能。 这些测试覆盖了多包编号空间、握手流程以及各种边界情况，有助于防止潜在的bug并保证QUIC协议的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_sent_packet_manager_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -118,9 +118,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-    manager_.GetRetransmissionTime());
+### 源代码
+```cpp
+manager_.GetRetransmissionTime());
 
   clock_.AdvanceTime(QuicTime::Delta::FromMilliseconds(10));
   SendDataPacket(2, ENCRYPTION_FORWARD_SECURE);
@@ -841,8 +843,4 @@ TEST_F(QuicSentPacketManagerTest,
                         HAS_RETRANSMITTABLE_DATA, /*measure_rtt=*/true,
                         ECN_NOT_ECT);
   manager_.OnPacketSent(&packet4, clock_.Now(), NOT_RETRANSMISSION,
-      
-"""
-
-
 ```

@@ -172,7 +172,7 @@ Interceptor.attach(Address("目标函数地址"), {
 
 如果测试失败，开发者可能会查看 `expected_result_config.h` 的内容，确保脚本正确生成了预期的宏定义。如果发现 `expected_result_config.h` 没有被创建或内容不正确，那么可能是 `gen.py` 脚本执行失败，或者 Meson 的配置有误。 这就需要检查 `gen.py` 的代码、输入文件内容、以及 Meson 的构建配置。 例如，可以检查 `gen.py` 是否因为权限问题无法写入输出文件，或者输入文件路径是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/125 configure file in generator/src/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -195,7 +197,4 @@ with open(ifile) as f:
 templ = '#define RESULT (%s)\n'
 with open(ofile, 'w') as f:
     f.write(templ % (resval, ))
-
-"""
-
 ```

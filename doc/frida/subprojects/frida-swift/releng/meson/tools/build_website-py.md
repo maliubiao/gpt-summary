@@ -134,7 +134,7 @@ Typically, this script would be executed as part of a larger development or rele
 
 The `assert os.getcwd() == '/home/jpakkane'` line is a strong indicator that this script is likely designed to be run in a very specific environment, possibly on a developer's personal machine or a dedicated build server with that specific directory structure. This line serves as a debugging or safety mechanism to prevent the script from running in an incorrect context. If a user encounters an error due to this assertion, it suggests they are not running the script from the expected location.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/tools/build_website.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, subprocess, shutil
@@ -195,7 +197,4 @@ def update() -> None:
 
 if __name__ == '__main__':
     update()
-
-"""
-
 ```

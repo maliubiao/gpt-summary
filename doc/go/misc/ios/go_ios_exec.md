@@ -121,11 +121,13 @@ func main() {
 
 `go_ios_exec.go` 是 Go 语言为了支持在 iOS 模拟器上运行 Go 程序而提供的一个桥梁工具。它封装了与 Xcode 工具链（`xcrun simctl`）的交互，使得开发者可以使用 Go 语言编写并测试运行在 iOS 模拟器上的代码，而无需直接处理底层的 iOS 应用打包和部署细节。这大大简化了 Go 语言在 iOS 平台上的开发流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为go/misc/ios/go_ios_exec.go的go语言实现的一部分， 请归纳一下它的功能, 　如果你能推理出它是什么go语言功能的实现，请用go代码举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -492,9 +494,4 @@ const resourceRules = `<?xml version="1.0" encoding="UTF-8"?>
 </dict>
 </plist>
 `
-
-"""
-
-
-
 ```

@@ -190,7 +190,7 @@ This section of `quic_packet_creator.cc` is responsible for the core process of 
 
 这部分代码主要负责 `QuicPacketCreator` 类中 **将已准备好的 QUIC 帧序列化成最终可发送的加密数据包** 的核心流程。它涵盖了标准数据包的序列化、各种探测包的生成、以及特殊场景下的连接关闭包和合并包的处理。 同时，它还提供了一些辅助功能，用于管理待发送的帧、获取数据包属性以及支持 MTU 发现。 这部分代码是 QUIC 协议数据包发送的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_packet_creator.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -198,9 +198,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-     /*is_mtu_discovery=*/QuicUtils::ContainsFrameType(queued_frames_,
+### 源代码
+```cpp
+/*is_mtu_discovery=*/QuicUtils::ContainsFrameType(queued_frames_,
                                                           MTU_DISCOVERY_FRAME),
         packet_.encryption_level);
     QUIC_DVLOG(1) << ENDPOINT << "fate of packet " << packet_.packet_number
@@ -997,7 +999,4 @@ bool QuicPacketCreator::FlushAckFrame(const QuicFrames& frames) {
          "generator tries to send ACK frame.";
   // delegate_->MaybeBundleOpportunistically could be called nestedly when
   // sending a control f
-"""
-
-
 ```

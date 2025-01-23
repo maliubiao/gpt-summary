@@ -171,14 +171,16 @@ By following this structured approach, we can systematically analyze the C++ cod
 
 总而言之，`point_light_source.cc` 文件是 Blink 渲染引擎中处理点光源这一概念的核心部分，它主要服务于 CSS 滤镜和 SVG 滤镜中的光照效果实现。开发者通过 CSS 和 SVG 来声明点光源，而 Blink 内部使用 `PointLightSource` 类来表示和管理这些光源的属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/point_light_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005 Rob Buis <buis@kde.org>
@@ -230,7 +232,4 @@ StringBuilder& PointLightSource::ExternalRepresentation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

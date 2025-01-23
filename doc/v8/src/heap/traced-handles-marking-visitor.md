@@ -95,11 +95,13 @@ obj2 = null;
 
 `ConservativeTracedHandlesMarkingVisitor` 就像一个细致的侦探，它不会放过任何潜在的线索（traced handles），以确保所有仍然被引用的 JavaScript 对象都能被标记为存活，从而避免程序出现因过早回收对象而导致的错误。它是 V8 引擎实现高效和安全的垃圾回收的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/traced-handles-marking-visitor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ void ConservativeTracedHandlesMarkingVisitor::VisitPointer(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -316,7 +316,7 @@ func main() {
 
 总结来说，`driver.go` 文件是 `pprof` 工具的核心，它定义了 pprof 的执行流程和各种可扩展的接口，允许用户自定义 pprof 的行为以适应不同的场景。理解这些接口和 `Options` 结构体对于扩展和使用 `pprof` 非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/driver/driver.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -324,8 +324,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -626,9 +628,4 @@ func (s *internalSymbolizer) Symbolize(mode string, srcs plugin.MappingSources, 
 	}
 	return s.Symbolizer.Symbolize(mode, isrcs, prof)
 }
-
-"""
-
-
-
 ```

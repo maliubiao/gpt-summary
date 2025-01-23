@@ -150,15 +150,17 @@ console.log(result);
 
 `v8/src/diagnostics/etw-isolate-operations-win.h` 是 V8 引擎在 Windows 平台上集成 ETW 功能的关键部分。它定义了一个抽象接口，用于控制 ETW 事件的生成和处理，从而为 V8 的性能分析和诊断提供了强大的支持。虽然普通 JavaScript 开发者不会直接使用这个文件，但它反映了 V8 引擎内部如何与操作系统进行交互以提供诊断信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/etw-isolate-operations-win.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/etw-isolate-operations-win.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ class V8_EXPORT_PRIVATE EtwIsolateOperations {
 }  // namespace v8
 
 #endif  // V8_DIAGNOSTICS_ETW_ISOLATE_OPERATIONS_WIN_H_
-
-"""
-
 ```

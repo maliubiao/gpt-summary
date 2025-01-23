@@ -138,11 +138,13 @@ assertType(y, String);
 
 `add-type-assertions-reducer.cc` 是 V8 编译器中的一个重要组成部分，它通过在中间表示中添加显式的类型断言，帮助后续的优化阶段更好地理解和优化 JavaScript 代码，从而提升执行性能。它弥合了 JavaScript 的动态类型和编译器静态优化的差距。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/add-type-assertions-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ void AddTypeAssertions(JSGraph* jsgraph, Schedule* schedule, Zone* phase_zone) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

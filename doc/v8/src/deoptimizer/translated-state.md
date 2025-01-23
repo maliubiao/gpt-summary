@@ -77,12 +77,14 @@ result = add("hello", "world"); // 第二次调用，参数类型变化，可能
 
 总而言之，`v8/src/deoptimizer/translated-state.cc` 的第一部分定义了用于表示去优化状态的基础数据结构，为 V8 引擎处理代码优化和去优化提供了关键的支持。它允许 V8 精确地捕获程序在去优化点的状态，以便安全地回退到解释执行，保证 JavaScript 代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/translated-state.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1794,7 +1796,4 @@ int TranslatedState::CreateNextTranslatedValue(
 
     case TranslationOpcode::UINT32_STACK_SLOT: {
       int slot
-"""
-
-
 ```

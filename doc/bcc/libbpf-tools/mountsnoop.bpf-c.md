@@ -69,7 +69,7 @@ Response:
 - **全局过滤**：通过 `target_pid` 过滤非目标进程。
 - **时间统计**：`arg.ts` 记录系统调用开始时间，`eventp->delta` 计算耗时。
 - **跨 CPU 数据传递**：使用 `BPF_MAP_TYPE_HASH` 以线程 ID (`tid`) 为键暂存参数。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/mountsnoop.bpf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -78,8 +78,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* SPDX-License-Identifier: GPL-2.0 */
 /* Copyright (c) 2021 Hengqi Chen */
 #include <vmlinux.h>
@@ -333,7 +335,4 @@ int move_mount_exit(struct syscall_trace_exit *ctx)
 }
 
 char LICENSE[] SEC("license") = "Dual BSD/GPL";
-
-"""
-
 ```

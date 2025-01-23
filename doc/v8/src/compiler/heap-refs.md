@@ -78,12 +78,14 @@ foo(myObj);
 
 总而言之，`v8/src/compiler/heap-refs.cc` 是 V8 编译器连接 JavaScript 堆的关键桥梁，它为编译器提供了必要的工具，以理解和优化 JavaScript 代码中使用的对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/heap-refs.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1877,7 +1879,4 @@ ObjectRef MapRef::GetConstructor(JSHeapBroker* broker) const {
 
 HeapObjectRef MapRef::GetBackPointer(JSHeapBroker* broker) const {
   // I
-"""
-
-
 ```

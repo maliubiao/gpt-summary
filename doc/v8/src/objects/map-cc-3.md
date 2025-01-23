@@ -153,7 +153,7 @@ for (let i = 0; i < 500; i++) {
 
 `NormalizedMapCache::Set` 函数是 V8 引擎内部用于优化对象属性访问性能的关键组件。当对象的内部结构 (由其 Map 表示) 从高效的 "快速 Map" 演变为更灵活的 "规范化 Map" (通常是由于动态属性操作引起) 时，这个函数会将规范化后的 Map 缓存起来。缓存的键是基于原始的 "快速 Map" 和规范化后 Map 的原型计算出来的，并且缓存使用弱引用，以避免不必要的内存占用。这种缓存机制允许 V8 对于具有相似演化路径的对象重用规范化的 Map，从而提高性能并减少内存分配。它有效地管理了对象结构变化带来的复杂性，是 V8 引擎高效执行 JavaScript 代码的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/map.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/map.cc以.tq结尾，那它是个v8 torque源代码，
@@ -161,9 +161,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-
+### 源代码
+```cpp
 void NormalizedMapCache::Set(Isolate* isolate, DirectHandle<Map> fast_map,
                              DirectHandle<Map> normalized_map) {
   DisallowGarbageCollection no_gc;
@@ -173,8 +174,4 @@ void NormalizedMapCache::Set(Isolate* isolate, DirectHandle<Map> fast_map,
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

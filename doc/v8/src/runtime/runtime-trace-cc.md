@@ -207,15 +207,17 @@ multiply(7);
 
 `v8/src/runtime/runtime-trace.cc` 是 V8 引擎中一个关键的调试工具，它允许开发者深入了解 JavaScript 代码在解释器或 Baseline 编译器下的执行过程，观察字节码指令的执行和寄存器的状态，从而帮助理解代码行为、发现性能瓶颈和诊断错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-trace.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/runtime/runtime-trace.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -438,7 +440,4 @@ RUNTIME_FUNCTION(Runtime_TraceUpdateFeedback) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

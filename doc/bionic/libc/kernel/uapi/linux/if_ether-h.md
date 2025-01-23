@@ -226,7 +226,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/linux/if_ether.h` 是一个基础性的头文件，定义了以太网协议的关键常量和数据结构，对于 Android 设备的网络功能至关重要。虽然用户空间的应用程序开发通常不直接包含它，但其定义被底层的网络库和内核所使用。通过 Frida 等工具，我们可以观察和调试网络数据包的发送和接收过程，间接地验证这些定义的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_ether.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -237,8 +237,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -369,7 +371,4 @@ struct ethhdr {
 } __attribute__((packed));
 #endif
 #endif
-
-"""
-
 ```

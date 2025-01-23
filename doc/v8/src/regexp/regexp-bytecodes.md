@@ -108,11 +108,13 @@ MATCH_SUCCESS
 
 `regexp-bytecodes.cc` 是 V8 引擎中一个用于反汇编正则表达式字节码的关键文件。它允许开发者查看 V8 如何表示和执行正则表达式，虽然 JavaScript 开发者不能直接使用这些功能，但这对于理解 V8 引擎的内部工作原理以及调试引擎本身非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-bytecodes.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ void RegExpBytecodeDisassemble(const uint8_t* code_base, int length,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -171,14 +171,16 @@ This systematic approach, combining code analysis, conceptual understanding of w
 
 总而言之，`blink/renderer/platform/text/text_boundaries.cc` 文件提供了一组基础的文本处理工具，用于识别文本中的单词边界，这对于浏览器的文本渲染、用户交互和脚本功能至关重要。理解其功能和潜在的使用错误有助于开发者更好地理解和使用 Blink 引擎。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/text_boundaries.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007 Apple Inc.  All rights reserved.
  * Copyright (C) 2009 Dominik Roettsches <dominik.roettsches@access-company.com>
@@ -266,7 +268,4 @@ int FindWordEndBoundary(base::span<const UChar> chars, int position) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -140,15 +140,17 @@ My initial understanding might have been slightly less detailed. As I went throu
 
 总之，`style_image_cache_test.cc` 文件是确保 Chromium Blink 引擎中图片缓存机制正确运行的重要组成部分。它通过模拟各种使用场景，帮助开发者验证和维护 `StyleImageCache` 的功能，从而提高网页渲染性能和资源利用率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_image_cache_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -420,7 +422,4 @@ TEST_F(StyleImageCacheWithLoadingTest, LoadFailedBackgroundImageURL) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

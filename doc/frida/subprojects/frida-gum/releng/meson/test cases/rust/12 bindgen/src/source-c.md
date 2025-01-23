@@ -120,7 +120,7 @@ Finally, the key is to organize the information logically, addressing each point
 
 总而言之，虽然 `source.c` 的代码非常简单，但它在 Frida 的测试体系中扮演着基础而重要的角色。它可以作为理解 Frida 如何与 C 代码交互的起点，并为测试 Frida 的不同功能提供了一个可控的、易于理解的目标。 对于用户而言，通常不会直接操作这个文件，但了解它的存在和作用可以帮助理解 Frida 的工作原理和排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/rust/12 bindgen/src/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // SPDX-license-identifer: Apache-2.0
 // Copyright © 2021 Intel Corporation
 
@@ -138,7 +140,4 @@ Prompt:
 int32_t add(const int32_t first, const int32_t second) {
     return first + second;
 }
-
-"""
-
 ```

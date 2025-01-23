@@ -126,15 +126,17 @@ By following these steps, we can systematically analyze the C++ code and provide
 
 总而言之，`PluginScriptForbiddenScope` 是 Blink 引擎中一个用于控制插件脚本执行的机制，它通过简单的计数器来实现范围性的禁止，主要用于确保在某些关键操作期间插件脚本不会干扰浏览器的正常运行。 理解它的工作原理有助于诊断与插件相关的渲染和脚本执行问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/plugin_script_forbidden_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -165,7 +167,4 @@ bool PluginScriptForbiddenScope::IsForbidden() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

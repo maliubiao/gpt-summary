@@ -184,15 +184,17 @@ inline void SourceTextModule::SetStatus(Module::Status status) {
 
 `v8/src/objects/source-text-module-inl.h` 是 V8 引擎中用于处理 JavaScript 模块的关键组成部分。它通过内联函数提供了高效的对象操作，并与 Torque 类型系统紧密集成。它直接关系到 JavaScript 的 `import` 和 `export` 功能，并且它的设计旨在避免用户在模块使用中可能遇到的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/source-text-module-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/source-text-module-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ TQ_OBJECT_CONSTRUCTORS_IMPL(SourceTextModuleInfoEntry)
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_SOURCE_TEXT_MODULE_INL_H_
-
-"""
-
 ```

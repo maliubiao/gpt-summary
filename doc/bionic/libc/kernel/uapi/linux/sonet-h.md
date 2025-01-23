@@ -325,7 +325,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，你可以监控目标进程是否调用了与 SONET 相关的 `ioctl` 命令，并查看传递的参数，从而调试 Android 系统如何与 SONET 硬件进行交互。你需要替换 `YOUR_PROCESS_NAME_OR_PID` 为你想要监控的进程名称或 PID。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/sonet.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -336,8 +336,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -372,7 +374,4 @@ struct sonet_stats {
 #define SONET_FRAME_SDH 1
 #define SONET_FRSENSE_SIZE 6
 #endif
-
-"""
-
 ```

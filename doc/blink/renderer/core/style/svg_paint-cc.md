@@ -181,14 +181,16 @@ SVGPaint {
 
 `blink/renderer/core/style/svg_paint.cc` 中定义的 `SVGPaint` 类是 Blink 渲染引擎中处理 SVG 绘制信息的核心组成部分。它负责存储和管理 SVG 元素的填充和描边等样式信息，并将 CSS 样式规则转化为内部的绘制表示，最终驱动 SVG 图形的渲染。理解 `SVGPaint` 的功能有助于理解 Blink 引擎如何处理 SVG 样式，并能帮助开发者避免一些常见的 SVG 使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/svg_paint.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
     Copyright (C) 2004, 2005, 2007 Nikolas Zimmermann <zimmermann@kde.org>
                   2004, 2005, 2007 Rob Buis <buis@kde.org>
@@ -241,7 +243,4 @@ const AtomicString& SVGPaint::GetUrl() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

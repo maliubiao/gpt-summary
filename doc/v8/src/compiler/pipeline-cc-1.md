@@ -121,7 +121,7 @@ function add(a, b) {
 
 总而言之，这部分 `v8/src/compiler/pipeline.cc` 代码是 V8 编译器优化的核心组成部分，负责将高级的中间表示转换为可执行的机器码，并处理编译过程中可能出现的各种情况和错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/pipeline.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/pipeline.cc以.tq结尾，那它是个v8 torque源代码，
@@ -129,8 +129,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 }
 
   if (!turboshaft_pipeline.OptimizeTurboshaftGraph(linkage_)) {
@@ -909,7 +911,4 @@ struct WasmGCOptimizationPhase {
     DeadCodeElimination dead_code_elimination(&graph_reducer, data->graph(),
                                               data->common(), temp_zone);
     AddReducer
-"""
-
-
 ```

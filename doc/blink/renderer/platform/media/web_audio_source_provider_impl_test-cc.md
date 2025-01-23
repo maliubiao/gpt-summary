@@ -112,14 +112,16 @@ Response: The user wants to understand the functionality of the `web_audio_sourc
 
 总而言之，`web_audio_source_provider_impl_test.cc` 通过各种测试用例，细致地验证了 `WebAudioSourceProviderImpl` 类的行为是否符合预期，这对于确保 Web Audio API 在 Chromium 浏览器中的稳定性和正确性至关重要。这些测试覆盖了音频源的生命周期管理、音量控制、数据提供、数据污染以及与客户端的交互等方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/web_audio_source_provider_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -594,7 +596,4 @@ TEST_F(WebAudioSourceProviderImplTest, SetClientCallback) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

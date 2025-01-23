@@ -152,14 +152,16 @@ By following this structured thought process, combining code analysis with under
 
 总而言之，`url_loader_factory_bundle.cc` 中定义的类是 Blink 引擎网络加载机制的核心组件，负责根据请求的特性选择合适的工厂来处理各种类型的资源加载，这直接关系到网页中 JavaScript、HTML 和 CSS 资源的获取和渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/loader/url_loader_factory_bundle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -332,7 +334,4 @@ void URLLoaderFactoryBundle::Update(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -137,7 +137,7 @@ my_executable = executable('my_app', 'main.cpp')
 
 `frida/subprojects/frida-swift/releng/meson/mesonbuild/mparser.py` 文件的主要功能是**对 Meson 构建系统使用的领域特定语言进行词法分析和语法分析，将源代码转换成抽象语法树（AST）**。它是 Meson 构建过程中的关键组成部分，负责理解构建文件的结构和内容，并为后续的构建步骤提供结构化的数据表示。虽然它本身不直接执行逆向操作或与底层系统交互，但它是 Frida 工具链的一部分，理解其工作原理有助于理解 Frida 如何处理配置和用户输入，并且它解析的构建文件内容也为理解目标软件的构建过程提供了重要信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/mparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2017 The Meson development team
 
@@ -1061,7 +1063,4 @@ class Parser:
             return self.create_node(ArrayNode, lbracket, args, rbracket)
         elif self.accept('lcurl'):
             lcurl = se
-"""
-
-
 ```

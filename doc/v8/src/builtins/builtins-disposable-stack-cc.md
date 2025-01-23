@@ -289,15 +289,17 @@ stack1.defer(() => { disposed = true; });
 
 了解 `DisposableStack` 的工作原理和正确的使用方式对于编写健壮和资源高效的 JavaScript 代码非常重要。V8 的源代码实现细节有助于我们深入理解其行为和限制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-disposable-stack.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-disposable-stack.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -573,7 +575,4 @@ BUILTIN(DisposableStackPrototypeMove) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -197,15 +197,17 @@ Response: Let's break down the thought process for analyzing the provided Go cod
 
 总而言之，`go/test/codegen/strings.go` 这个文件是 Go 语言编译器测试套件的一部分，它通过编写特定的代码模式并结合汇编检查指令，来验证编译器在处理字符串和字节切片相关操作时的代码生成质量和效率。理解这些测试用例可以帮助开发者更深入地了解 Go 语言中字符串和字节切片的底层实现和最佳实践。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/strings.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -291,9 +293,4 @@ func NotEqualSelf(s string) bool {
 }
 
 var bsink []byte
-
-"""
-
-
-
 ```

@@ -196,7 +196,7 @@ Imagine a Frida developer is encountering issues when Frida interacts with an ap
 
 In summary, `boost_names.py` is a crucial utility for the Frida project, enabling it to dynamically interact with applications that use the Boost C++ libraries by extracting and organizing essential information about them directly from the Boost source code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/tools/boost_names.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017 Niklas Claesson
@@ -494,7 +496,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

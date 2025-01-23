@@ -139,14 +139,16 @@ By following these steps, including the iterative refinement, we arrive at a com
 
 总之，`webrtc_encoding_info_handler_test.cc` 通过各种测试用例，确保 `WebrtcEncodingInfoHandler` 能够准确地判断 WebRTC 编码配置的支持情况和能效，为上层的媒体能力查询提供可靠的基础。这对于 Web 开发者来说非常重要，因为他们可以使用 Media Capabilities API 来优化 Web 应用的媒体体验，例如选择最佳的编码格式以获得更好的性能或更低的功耗。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/webrtc_encoding_info_handler_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -332,7 +334,4 @@ TEST_F(WebrtcEncodingInfoHandlerTests, SupportedVideoUnsupportedAudio) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

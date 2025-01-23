@@ -187,7 +187,7 @@ class SomeClass {
 
 总而言之，`clangformat.py` 是 Frida 项目中一个重要的代码质量维护工具，虽然它不直接参与逆向工程的核心操作，但通过确保代码风格的一致性，间接地提高了代码的可读性和可维护性，从而有助于逆向工程师理解和分析 Frida 的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/scripts/clangformat.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -252,7 +254,4 @@ def run(args: T.List[str]) -> int:
         cformat_ver = None
 
     return run_tool('clang-format', srcdir, builddir, run_clang_format, exelist, options.check, cformat_ver)
-
-"""
-
 ```

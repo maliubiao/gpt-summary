@@ -88,11 +88,13 @@ try {
 
 `etw-debug-win.cc` 中的代码是 V8 引擎在 Windows 平台上进行底层调试和追踪的重要组成部分。它利用 Windows 的 ETW 机制，使得开发者和 V8 团队能够更深入地了解 JavaScript 代码的执行细节，从而进行性能优化和问题排查。虽然 JavaScript 代码无法直接与其交互，但其执行会间接地触发 V8 引擎使用这些调试工具记录事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/etw-debug-win.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -113,7 +115,4 @@ std::ostream& operator<<(std::ostream& os, const EtwTraceDebug&) {
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

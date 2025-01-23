@@ -82,7 +82,7 @@ Rows: 24, Columns: 80
 
 `go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_freebsd_386.go` 文件是 Go 语言 `syscall` 库的一部分，它定义了在 FreeBSD 386 架构下进行底层系统编程时会用到的各种常量，包括 TCP 选项、终端控制操作、定时器选项、进程状态选项、错误码和信号。这些常量使得 Go 程序员可以直接使用操作系统提供的功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_freebsd_386.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -90,9 +90,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-              = 0x1
+### 源代码
+```go
+= 0x1
 	TCP_NOOPT                      = 0x8
 	TCP_NOPUSH                     = 0x4
 	TCP_PCAP_IN                    = 0x1000
@@ -506,10 +508,4 @@ var signalList = [...]struct {
 	{32, "SIGTHR", "unknown signal"},
 	{33, "SIGLIBRT", "unknown signal"},
 }
-
-"""
-
-
-
-
 ```

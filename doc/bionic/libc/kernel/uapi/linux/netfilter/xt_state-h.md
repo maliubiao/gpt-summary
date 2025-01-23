@@ -243,7 +243,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/linux/netfilter/xt_state.h` 是一个定义了 Linux 内核 netfilter 连接跟踪状态的头文件。虽然用户空间程序不会直接包含它，但它定义的常量和结构体在内核的网络功能中扮演着重要的角色，并且通过 `iptables` 或 `nftables` 等工具间接地影响着 Android 的网络安全和连接管理。使用 Frida 可以 Hook 用户空间工具或内核函数来观察这些概念的实际运作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_state.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -254,8 +254,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -271,7 +273,4 @@ struct xt_state_info {
   unsigned int statemask;
 };
 #endif
-
-"""
-
 ```

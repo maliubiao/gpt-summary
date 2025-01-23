@@ -135,7 +135,7 @@ Interceptor.attach(Module.findExportByName(null, 'some_function'), {
 
 这段 `gumv8core.cpp` 的代码片段的主要功能是 **为 Frida 的 JavaScript 环境提供访问和操作目标进程 CPU 寄存器的能力。** 它定义了一系列与特定 CPU 架构相关的访问器，使得 Frida 脚本能够读取和修改通用寄存器、向量寄存器和浮点寄存器的值，从而实现动态的程序分析和修改。这部分代码是 Frida 进行动态 instrumentation 的核心组成部分，为逆向工程师提供了强大的底层控制能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8core.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 SSOR_GPR_ALIASED (x22, x[22]);
   GUM_DEFINE_CPU_CONTEXT_ACCESSOR_GPR_ALIASED (x23, x[23]);
   GUM_DEFINE_CPU_CONTEXT_ACCESSOR_GPR_ALIASED (x24, x[24]);
@@ -1271,7 +1273,4 @@ gum_v8_weak_ref_free (GumV8WeakRef * ref)
     auto source = g_idle_source_new ();
     g_source_set_callback (source,
         (GSourceFunc) gum_v8_core_invoke_pendi
-"""
-
-
 ```

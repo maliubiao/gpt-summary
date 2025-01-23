@@ -124,15 +124,17 @@ Here's a breakdown of its functions:
 
    In this example, if the `parseJson` function returns a non-OK status (indicating a parsing error), calling `processParsedData` without checking the status could lead to undefined behavior because the data might not have been parsed correctly. Always checking the status allows for proper error handling and prevents unexpected program behavior.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/status_test.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/status_test.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ TEST(StatusTest, StatusTestSupport) {
   EXPECT_THAT(json_error, StatusIs(Error::JSON_PARSER_COLON_EXPECTED, 42));
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

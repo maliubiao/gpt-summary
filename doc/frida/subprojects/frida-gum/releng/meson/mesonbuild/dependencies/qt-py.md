@@ -150,7 +150,7 @@ By following these steps, the detailed and comprehensive answer addressing all a
 
 总而言之，`qt.py` 是 Frida 构建系统中一个至关重要的组件，它负责处理与 Qt 框架的集成，使得 Frida 能够顺利地在基于 Qt 的应用程序上进行动态 instrumentation。理解其功能有助于诊断与 Qt 依赖相关的构建问题，并深入了解 Frida 的构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/dependencies/qt.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2017 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -644,7 +646,4 @@ packages['qt6'] = qt6_factory = DependencyFactory(
     pkgconfig_class=Qt6PkgConfigDependency,
     configtool_class=Qt6ConfigToolDependency,
 )
-
-"""
-
 ```

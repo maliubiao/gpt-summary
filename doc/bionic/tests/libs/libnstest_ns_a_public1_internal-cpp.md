@@ -224,7 +224,7 @@ sys.stdin.read()
 
 总结来说，`bionic/tests/libs/libnstest_ns_a_public1_internal.cpp` 虽然代码简单，但它在 Android Bionic 库的测试中扮演着重要的角色，用于验证命名空间隔离等核心机制的正确性。理解它的功能以及它与 Android 系统组件的联系，有助于更深入地理解 Android 的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/libnstest_ns_a_public1_internal.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -235,8 +235,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2018 The Android Open Source Project
  *
@@ -258,7 +260,4 @@ static const char ns_a_public1_internal_string[] = "libnstest_ns_a_public1_inter
 extern "C" const char* get_ns_a_public1_internal_string() {
   return ns_a_public1_internal_string;
 }
-
-"""
-
 ```

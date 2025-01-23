@@ -182,15 +182,17 @@ By following these steps, combining code analysis with an understanding of web d
 
 总而言之，`module_test_base.cc` 是 Blink 开发者用来确保 JavaScript 模块功能正确性的一个重要工具。它简化了编写测试用例的过程，并提供了访问模块执行结果的便捷方式，无论是成功值还是异常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/module_test_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,7 +297,4 @@ v8::Local<v8::Value> ModuleTestBase::GetException(
 }
 
 }  // namespace blink
-
-"""
-
 ```

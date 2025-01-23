@@ -98,7 +98,7 @@ Here's a breakdown of the thinking process to arrive at the explanation of the C
 
 总而言之，这个简单的 `main.c` 文件虽然功能单一，但它在 Frida Core 项目中扮演着验证构建配置的关键角色，并能为逆向工程师提供关于目标程序编译选项的有用信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/28 ndebug if-release/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -119,7 +121,4 @@ int main(void) {
 #endif
     return 0;
 }
-
-"""
-
 ```

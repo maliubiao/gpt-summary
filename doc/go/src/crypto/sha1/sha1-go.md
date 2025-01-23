@@ -194,7 +194,7 @@ func main() {
 
 总而言之，这段 Go 代码提供了 SHA-1 哈希算法的实现，但在使用时必须注意其安全缺陷，并避免将其用于安全敏感的应用。 理解其提供的各种方法和接口，以及 `Sum` 方法的行为，可以帮助开发者正确使用这个功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/sha1/sha1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -202,8 +202,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -475,9 +477,4 @@ func Sum(data []byte) [Size]byte {
 	d.Write(data)
 	return d.checkSum()
 }
-
-"""
-
-
-
 ```

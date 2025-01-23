@@ -238,7 +238,7 @@ Here's a breakdown of the thought process to achieve the desired summary:
 
 这是 `UserMediaProcessor.cc` 文件在处理用户媒体请求过程中非常核心的一部分，负责根据用户的需求和系统能力，选择合适的媒体设备并准备生成媒体流。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/user_media_processor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -246,8 +246,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _request->AudioConstraints(),
             current_request_info_->stream_controls()->audio.stream_type,
             user_media_request->ShouldDisableHardwareNoiseSuppression(),
@@ -1056,7 +1058,4 @@ void UserMediaProcessor::OnDeviceRequestStateChange(
     }
   } else if (new_state == mojom::blink::MediaStreamStateChange::PLAY) {
     if (video_sour
-"""
-
-
 ```

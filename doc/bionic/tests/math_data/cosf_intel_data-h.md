@@ -29,7 +29,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 **总结来说，这个文件的功能是为 Android 系统中 `cosf` 函数在 Intel 架构上的实现提供一组预定义的输入和预期输出，用于进行单元测试和验证。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/cosf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -41,8 +41,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1572,8 +1574,4 @@ static data_1_1_t<float, float> g_cosf_intel_data[] = {
     0x1.fc97283c4f5bd1f793201972b8db551fp-1,
     0x1.d8f720p-4
   },
-
-"""
-
-
 ```

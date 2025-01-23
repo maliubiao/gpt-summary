@@ -149,15 +149,17 @@ consistency_proof = {"<decoded_node1>", "<decoded_node2>", "<decoded_node3>"};
 
 总而言之，`net/cert/ct_log_response_parser.cc` 文件在 Chromium 的 Certificate Transparency 功能中扮演着至关重要的角色，负责将从 CT 日志服务器获取的 JSON 数据转换为浏览器可以理解和使用的 C++ 数据结构。  虽然用户不会直接调用它，但他们的日常浏览行为会间接地触发其执行，以确保 HTTPS 连接的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/ct_log_response_parser.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -288,7 +290,4 @@ bool FillConsistencyProof(const base::Value& json_consistency_proof,
 }
 
 }  // namespace net::ct
-
-"""
-
 ```

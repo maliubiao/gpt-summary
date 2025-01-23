@@ -243,7 +243,7 @@ console.log(typeof null); // "object"
 
 总的来说，`v8/src/interpreter/bytecode-generator.cc` 的这个代码片段是 V8 解释器将 Javascript 代码转换为可执行字节码的关键组成部分，负责处理多种重要的语言结构和操作符。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -251,8 +251,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 instance) {
   // Explicit calls to the super constructor using super() perform an
   // implicit binding assignment to the 'this' variable.
@@ -1103,7 +1105,4 @@ void BytecodeGenerator::BuildGetIterator(IteratorType hint) {
 
       Register obj = register_allocator()->NewRegister();
       i
-"""
-
-
 ```

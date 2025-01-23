@@ -186,7 +186,7 @@ func main() {
 
 提供的 Go 代码是 `encoding/asn1` 包的测试用例，主要用于验证 **ASN.1 数据的解码 (Unmarshal)** 功能的正确性。它涵盖了对各种 ASN.1 基本类型、时间类型、底层结构以及复杂数据结构的解码测试，并通过不同的测试函数针对特定的解码场景和错误情况进行了验证。 这些测试用例确保了 `encoding/asn1` 包能够可靠地将 ASN.1 编码的数据转换为 Go 语言中的数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/asn1/asn1_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1034,10 +1036,5 @@ var derEncodedPaypalNULCertBytes = []byte{
 	0x4f, 0x54, 0x20, 0x56, 0x41, 0x4c, 0x49, 0x44, 0x41, 0x54, 0x45, 0x44, 0x2e,
 	0x20, 0x43, 0x4c, 0x41, 0x53, 0x45, 0x41, 0x31, 0x20, 0x53, 0x65, 0x72, 0x76,
 	0x65, 0x72, 0x20, 0x43, 0x65, 0x72, 0x74, 0x69, 0x66, 0x69, 0x63, 0x61, 0x74,
-	0x65, 0x20, 0x69, 0x73, 0x73, 0x75, 0x65, 
-"""
-
-
-
-
+	0x65, 0x20, 0x69, 0x73, 0x73, 0x75, 0x65,
 ```

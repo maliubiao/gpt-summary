@@ -94,14 +94,16 @@ Here's a breakdown of the tasks:
 
 总而言之，`lazy_load_image_observer_test.cc` 通过各种测试用例，细致地验证了 `LazyLoadImageObserver` 类的正确性，涵盖了不同 `loading` 属性值、滚动位置、视口大小、动态属性修改以及与 iframe 的交互等场景，确保 Chromium 浏览器能够按照预期执行图片懒加载策略，从而提升网页性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/lazy_load_image_observer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -852,7 +854,4 @@ TEST_F(LazyLoadImagesTest, DeferredLazyLoadImagesKeptAliveForDecodeRequest) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

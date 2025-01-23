@@ -119,14 +119,16 @@ Let's break down the thought process to analyze the C++ test file.
 
 总而言之，`dark_mode_image_classifier_test.cc` 是一个关键的测试文件，用于确保 Chromium 引擎在处理暗黑模式下的图像显示时，能够正确地分类图像并应用合适的滤镜，从而为用户提供更好的浏览体验。它虽然是 C++ 代码，但其功能直接影响着网页在 HTML、CSS 和 JavaScript 的构建下的最终呈现效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/dark_mode_image_classifier_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -498,7 +500,4 @@ TEST_F(DarkModeImageClassifierTest, FeaturesAndClassification) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

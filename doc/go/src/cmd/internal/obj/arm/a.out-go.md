@@ -203,15 +203,17 @@ ADD R0, R1, R2          // 执行加法，结果存入 R0
 
 总而言之，`go/src/cmd/internal/obj/arm/a.out.go` 是Go编译器中关于ARM架构的重要数据定义文件，它为汇编器提供了必要的指令、寄存器和操作数信息，是Go语言能够编译成ARM机器码的基础。普通Go开发者无需直接修改它，但理解其内容有助于编写更底层的代码或深入理解Go的编译过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/arm/a.out.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/5c/5.out.h
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/5c/5.out.h
 //
@@ -624,9 +626,4 @@ const (
 	SHIFT_AR = 2 << 5
 	SHIFT_RR = 3 << 5
 )
-
-"""
-
-
-
 ```

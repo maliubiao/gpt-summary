@@ -180,7 +180,7 @@ func BenchmarkScalarMultWrongSize(b *testing.B) {
 
 在这种情况下，由于标量大小不匹配 P256 曲线的阶，标量乘法的结果可能是不正确的，并且基准测试的结果也无法准确反映 P256 曲线标量乘法的真实性能。使用者需要确保传递给 `benchmarkScalarMult` 和 `benchmarkScalarBaseMult` 函数的 `scalarSize` 参数与所测试的椭圆曲线的阶的大小相匹配。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/nistec/benchmark_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -188,8 +188,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -261,9 +263,4 @@ func benchmarkScalarBaseMult[P nistPoint[P]](b *testing.B, p P, scalarSize int) 
 		p.ScalarBaseMult(scalar)
 	}
 }
-
-"""
-
-
-
 ```

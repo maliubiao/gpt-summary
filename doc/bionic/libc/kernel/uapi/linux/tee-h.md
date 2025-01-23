@@ -253,7 +253,7 @@ setImmediate(hook_ioctl);
 
 这个 Frida 脚本会拦截所有 `ioctl` 调用，并打印出文件描述符和请求码。对于 TEE 相关的 `ioctl` 调用 (魔数为 `0xa4`)，它还会尝试解析参数结构体的内容，例如 `TEE_IOC_VERSION` 和 `TEE_IOC_SHM_ALLOC`。你可以根据需要添加更多对其他 TEE `ioctl` 命令的解析。通过观察 Frida 的输出，你可以了解 Android framework 或 NDK 应用是如何一步步调用到 TEE 接口的，以及传递了哪些参数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tee.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -264,8 +264,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -381,7 +383,4 @@ struct tee_ioctl_shm_register_data {
 };
 #define TEE_IOC_SHM_REGISTER _IOWR(TEE_IOC_MAGIC, TEE_IOC_BASE + 9, struct tee_ioctl_shm_register_data)
 #endif
-
-"""
-
 ```

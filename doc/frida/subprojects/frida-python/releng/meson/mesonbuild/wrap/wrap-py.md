@@ -87,7 +87,7 @@ While this specific code primarily deals with the *build process* of Frida, the 
 
 The `wrap.py` script in Frida's build system is responsible for **managing external dependencies**. It parses `.wrap` files, downloads source code from various sources (files, Git, Mercurial, SVN), verifies downloaded files using hashes, applies patches, caches downloaded dependencies, and interacts with WrapDB to streamline the process of acquiring and preparing external libraries required for building Frida.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/wrap/wrap.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -96,8 +96,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015 The Meson development team
 
@@ -820,7 +822,4 @@ class Resolver:
         return hashvalue, tmpfile.name
 
     def check_hash(self, what: str, path: str, hash_required:
-"""
-
-
 ```

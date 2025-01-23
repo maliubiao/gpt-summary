@@ -148,7 +148,7 @@ Frida 是一个动态插桩工具，它允许你在运行时修改程序的行�
 
 `shlib2.c` 文件本身的功能很简单，定义了一个返回固定值的导出函数，并声明了一个外部函数。但它在 Frida 的测试框架中扮演着重要的角色，用于测试 Frida 对共享库的动态插桩能力，特别是涉及到静态链接依赖的情况。理解这个文件的功能及其背后的原理，有助于理解 Frida 的工作方式以及与操作系统底层机制的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/32 exe static shared/shlib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -174,7 +176,4 @@ int statlibfunc(void);
 int DLL_PUBLIC shlibfunc2(void) {
     return 24;
 }
-
-"""
-
 ```

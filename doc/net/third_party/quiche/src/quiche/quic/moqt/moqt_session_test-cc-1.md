@@ -88,7 +88,7 @@ Here's a breakdown of the code's main functionalities:
 
 总而言之，`moqt_session_test.cc` 就像一个详细的测试蓝图，覆盖了 `MoqtSession` 组件在处理各种 MoQ 消息和状态时的行为，对于理解 MoQ 协议的实现细节以及调试基于 WebTransport 的 MoQ 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -96,9 +96,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-      Call(FullTrackName{"foo"}))
+### 源代码
+```cpp
+Call(FullTrackName{"foo"}))
       .WillOnce(Return(std::nullopt));
   EXPECT_CALL(mock_stream, Writev(_, _))
       .WillOnce([&](absl::Span<const absl::string_view> data,
@@ -876,7 +878,4 @@ TEST_F(MoqtSessionTest, QueuedStreamsOpenedInOrder) {
   EXPECT_CALL(*track, GetCachedObject(FullSequence(2, 0)))
       .WillOnce(
           Return(Publishe
-"""
-
-
 ```

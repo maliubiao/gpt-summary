@@ -245,15 +245,17 @@ GOOS=linux GOARCH=amd64 go test ./src/cmd/api
 
 总而言之，这段代码是 Go 语言开发过程中非常重要的一个组成部分，它确保了标准库 API 的稳定性和一致性，并通过自动化测试来减少人为错误。维护者需要仔细地维护 `api/*.txt` 文件，并遵循其格式规范。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/api/main_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1498,9 +1500,4 @@ func (w *Walker) collectDeprecated() {
 func (w *Walker) isDeprecated(obj types.Object) bool {
 	return w.deprecated[obj.Pos()]
 }
-
-"""
-
-
-
 ```

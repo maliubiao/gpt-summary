@@ -723,7 +723,7 @@ HeapEntry* EmbedderGraphEntriesAllocator::AllocateEntry(HeapThing ptr) {
     // In this case, we'll set the "accessed" flag on the newly created
     // HeapEntry to false, to indicate that this entry should not persist for
     // future snapshots
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/heap-snapshot-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/heap-snapshot-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -731,9 +731,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-  SetInternalReference(entry, "trusted_data",
+### 源代码
+```cpp
+SetInternalReference(entry, "trusted_data",
                        instance_object->trusted_data(heap_->isolate()),
                        WasmInstanceObject::kTrustedDataOffset);
   ASSERT_CONSECUTIVE_FIELDS(WasmInstanceObject, TrustedData, ModuleObject);
@@ -1573,7 +1575,4 @@ class V8_NODISCARD NullContextForSnapshotScope {
 }  // namespace
 
 bool HeapSnapshotGenerator::GenerateSnaps
-"""
-
-
 ```

@@ -98,7 +98,7 @@ By following these steps, the comprehensive and detailed explanation of the `tes
 
 尽管 `test.c` 的代码非常简单，但它在 Frida 的构建和测试流程中扮演着重要的角色。它作为一个基本的测试单元，用于验证构建系统在处理特定场景（可能与内部“保留目标”有关）时的正确性。通过分析这个简单的文件及其上下文，我们可以深入了解 Frida 构建系统的运作方式以及它与逆向工程工具开发之间的联系。这个文件本身不是用来进行逆向操作的，而是为了确保逆向工程师能够构建出可靠的 Frida 工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/150 reserved targets/test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -106,12 +106,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
   return 0;
 }
-
-"""
-
 ```

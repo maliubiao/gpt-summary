@@ -229,7 +229,7 @@ Chromium 是一个跨平台的浏览器，其网络栈为浏览器中的各种�
 
 总而言之，`net/socket/udp_socket_win.cc` 是 Chromium 在 Windows 平台上进行 UDP 网络通信的关键组成部分。它负责管理 UDP 套接字的生命周期，处理数据的发送和接收，并提供了必要的配置选项。理解这个文件的功能对于理解 Chromium 如何在 Windows 上处理基于 UDP 的网络请求至关重要，尤其是在涉及 `chrome.sockets.udp` API、WebRTC 或 QUIC 等技术时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/udp_socket_win.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -237,8 +237,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1264,7 +1266,4 @@ int UDPSocketWin::InternalSendToOverlapped(IOBuffer* buf,
     WSABUF control_buffer;
     char raw_control_buffer[WSA_CMSG_SPACE(sizeof(int))];
     co
-"""
-
-
 ```

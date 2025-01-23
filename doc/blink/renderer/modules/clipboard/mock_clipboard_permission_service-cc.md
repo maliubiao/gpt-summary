@@ -156,15 +156,17 @@ CSS 本身不直接与剪贴板权限相关。但是，CSS 可能会影响到与
 
 总而言之，`mock_clipboard_permission_service.cc` 是一个用于简化测试和开发的组件，通过模拟真实的剪贴板权限检查，使得开发者可以更专注于核心功能的实现和测试。在生产环境中使用它会导致安全漏洞。 理解其工作原理有助于调试与剪贴板相关的 web 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/clipboard/mock_clipboard_permission_service.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -195,7 +197,4 @@ void MockClipboardPermissionService::OnConnectionError() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

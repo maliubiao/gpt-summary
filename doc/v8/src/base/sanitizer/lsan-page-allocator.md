@@ -90,11 +90,13 @@ for (let i = 0; i < 10; i++) {
 
 `lsan-page-allocator.cc` 是 V8 引擎中一个关键的低层组件，它通过与 LeakSanitizer 集成，增强了 V8 的内存管理能力，并帮助开发者检测和修复内存泄漏问题。 虽然 JavaScript 开发者不会直接操作这个类，但它直接影响着 JavaScript 代码的内存分配和回收行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/sanitizer/lsan-page-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ bool LsanPageAllocator::ReleasePages(void* address, size_t size,
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -157,7 +157,7 @@ Content-Type: text/html; charset=utf-8
 
 总而言之，`HttpResponseHeaders` 是 Chromium 网络栈中处理 HTTP 响应头的核心组件，它负责将原始的头部信息解析成结构化的数据，并提供各种方法来访问和操作这些数据，从而支持浏览器的缓存、重定向、内容处理和安全策略等关键功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_response_headers.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 .InSeconds());
     return base::Seconds(seconds);
   }
@@ -842,8 +844,4 @@ bool HttpResponseHeaders::StrictlyEquals(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

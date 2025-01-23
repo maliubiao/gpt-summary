@@ -112,7 +112,7 @@ Throughout this process, I iteratively refine my understanding and the examples 
 
 这部分测试用例主要集中在验证 Blink 渲染引擎在处理复杂的 CSS 特性（如锚点定位、层叠层、容器查询）以及特殊属性（如 `inert`, `contain`) 时的正确性。它确保了这些特性能够按照 CSS 规范工作，并且在与 HTML 结构和 JavaScript 交互时能够产生预期的样式效果。此外，还关注了对旧有 CSS 属性的兼容性处理和使用情况统计。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_resolver_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ing("a"));
   auto* b = GetDocument().getElementById(AtomicString("b"));
 
@@ -1041,7 +1043,4 @@ TEST_F(StyleResolverTest, LegacyOverlapTransformOrigin_Values) {
       <style>
         div {
           transform-origin: 1px 2px
-"""
-
-
 ```

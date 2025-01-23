@@ -327,7 +327,7 @@ if (Process.platform === 'android') {
 
 通过这些步骤，你可以观察到 Android Framework 或 NDK 是如何一步步调用到 Bionic 的时间相关函数的，并可以检查参数是否正确，返回值是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/sys_time_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -338,8 +338,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  *
@@ -493,7 +495,4 @@ TEST(sys_time, gettimeofday) {
   // To try to avoid flakiness we'll accept answers within 10,000us (0.01s).
   ASSERT_LT(to_us(tv2) - to_us(tv1), 10'000);
 }
-
-"""
-
 ```

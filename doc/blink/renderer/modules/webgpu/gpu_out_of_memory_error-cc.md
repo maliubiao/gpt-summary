@@ -133,15 +133,17 @@ My thinking process to analyze the provided C++ code and generate the explanatio
 
 总而言之，`gpu_out_of_memory_error.cc` 文件在 Blink 引擎中扮演着关键的角色，它定义了 WebGPU 内存不足错误的表示方式，并将底层的 C++ 错误信息桥接到 JavaScript，以便开发者能够捕获和处理这些错误，从而提高 WebGPU 应用的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_out_of_memory_error.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ GPUOutOfMemoryError::GPUOutOfMemoryError(const String& message)
     : GPUError(message) {}
 
 }  // namespace blink
-
-"""
-
 ```

@@ -176,15 +176,17 @@ By following this systematic approach, I can thoroughly analyze the code and pro
 
 总而言之，`blink/renderer/core/xml/xpath_value.cc` 文件是 Blink 引擎中处理 XPath 值的核心组件，它负责存储和转换不同类型的 XPath 数据，是连接 JavaScript `document.evaluate()` 方法和 HTML DOM 树的关键桥梁。理解这个文件的功能对于理解和调试与 XPath 相关的 Web 开发问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/xpath_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright 2005 Frerich Raabe <raabe@kde.org>
  * Copyright (C) 2006 Apple Computer, Inc.
@@ -325,7 +327,4 @@ String Value::ToString() const {
 
 }  // namespace xpath
 }  // namespace blink
-
-"""
-
 ```

@@ -129,14 +129,16 @@ Let's break down the thought process for analyzing the provided C++ code and ans
 
 `blink/renderer/core/frame/resize_viewport_anchor.cc`  在浏览器视口大小调整时，扮演着维护用户视觉体验的重要角色。 它通过计算和调整滚动偏移，努力确保用户在调整大小前后看到的内容保持一致，从而提供更流畅和直观的浏览体验。  虽然 Web 开发者不能直接控制它，但它的存在直接影响着他们构建的网页在不同视口大小下的表现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/resize_viewport_anchor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ LocalFrameView* ResizeViewportAnchor::RootFrameView() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

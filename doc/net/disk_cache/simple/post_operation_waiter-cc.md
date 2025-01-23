@@ -147,15 +147,17 @@ self.addEventListener('fetch', event => {
 
 总而言之，`net/disk_cache/simple/post_operation_waiter.cc` 中的 `SimplePostOperationWaiterTable` 提供了一个关键的机制，用于在 Chromium 的磁盘缓存系统中管理异步操作的完成和后续处理，确保在缓存操作完成之后执行必要的回调函数，从而保证数据一致性和正确的程序流程。虽然它不直接与 JavaScript 交互，但它是浏览器处理 JavaScript 发起的缓存操作的基础设施的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/post_operation_waiter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ std::vector<base::OnceClosure>* SimplePostOperationWaiterTable::Find(
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

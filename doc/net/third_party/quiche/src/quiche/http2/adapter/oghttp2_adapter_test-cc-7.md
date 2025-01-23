@@ -167,7 +167,7 @@ By following these steps, I was able to systematically analyze the code snippet 
 
 总而言之，`oghttp2_adapter_test.cc` 的第 8 部分专注于测试 `OgHttp2Adapter` 作为 HTTP/2 服务器在处理数据传输中的关键特性，特别是 **Trailer 的发送和处理**，以及 **流控机制的正确性**。它涵盖了服务器正确发送 Trailer 的各种情况，以及在遇到流控限制和客户端违反流控时的处理方式，并测试了在处理头部时发生错误时的容错能力。这些测试对于确保 Chromium 网络栈中 HTTP/2 服务器实现的稳定性和符合协议规范至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , 0, 0, ACK_FLAG));
     EXPECT_CALL(visitor, OnFrameSent(SETTINGS, 0, 0, ACK_FLAG, 0));
 
@@ -931,8 +933,4 @@ TEST(OgHttp2AdapterTest, ServerErrorWhileHandlingHeadersDropsFrames) {
       .WillOnce(testing::DoAll(testing::InvokeWithoutArgs([&adapter]() {
                                  adapter->SubmitRst(
                                      3, Http2ErrorCode::REFUSED_STREAM);
-                     
-"""
-
-
 ```

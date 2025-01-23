@@ -65,7 +65,7 @@ Given the user's constraints, I need to:
 
 由于这是一个代码片段，没有完整的上下文，我们无法进行详细的代码逻辑推理或举例说明用户常见的编程错误。不过，基于这些函数的名称和操作，我们可以推断出一些与 JavaScript 功能的关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/mips64/builtins-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/mips64/builtins-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -73,8 +73,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e(MacroAssembler* masm, Register js_function,
                         Register scratch) {
   __ Ld(scratch,
@@ -936,9 +938,4 @@ void Builtins::Generate_InterpreterEnterAtNextBytecode(MacroAssembler* masm) {
   AdvanceBytecodeOffsetOrReturn(masm, kInterpreterBytecodeArrayRegister,
                                 kInterpreterBytecodeOffsetRegister, a1, a2, a3,
                                 a4, &if_return);
-
-
-"""
-
-
 ```

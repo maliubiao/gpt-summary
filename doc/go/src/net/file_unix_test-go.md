@@ -201,7 +201,7 @@ fmt.Println("读取了", n, "字节")
 
 `go/src/net/file_unix_test.go` 的这个代码片段专注于测试 `net.Conn` 转换为 `os.File` 后，调用 `Fd()` 方法的副作用，即确保底层文件描述符变为阻塞模式，以保证向后兼容性和某些依赖阻塞I/O操作的代码的正确性。 开发者在使用 `os.File` 的 `Fd()` 方法时，需要注意这种状态的变化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/file_unix_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -209,8 +209,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -312,9 +314,4 @@ func TestFileFdBlocks(t *testing.T) {
 		t.Error("unix socket through os.File.Fd is non-blocking")
 	}
 }
-
-"""
-
-
-
 ```

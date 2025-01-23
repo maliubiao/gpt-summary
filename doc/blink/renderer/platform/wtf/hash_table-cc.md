@@ -142,14 +142,16 @@ WTF::HashTable statistics:
 
 `blink/renderer/platform/wtf/hash_table.cc`  提供了一个用于监控 Blink 引擎中哈希表性能的关键工具。 它通过记录访问次数、冲突情况和重哈希次数，帮助开发者理解哈希表的运行状况，并识别潜在的性能瓶颈。虽然它不直接参与 JavaScript、HTML 或 CSS 的处理，但它监控的哈希表在这些技术的实现中扮演着重要的角色。  通过分析 `HashTableStats` 的输出，开发者可以诊断与哈希表使用相关的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/hash_table.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
     Copyright (C) 2005 Apple Inc. All rights reserved.
 
@@ -253,7 +255,4 @@ void HashTableStats::DumpStatsWithoutLock() {
 }  // namespace WTF
 
 #endif
-
-"""
-
 ```

@@ -111,11 +111,13 @@ By following these steps, combining code analysis with an understanding of the J
 
 `BuiltinsConstantsTableBuilder` 是 V8 引擎为了优化内置函数调用和访问常用值而设计的一个关键组件。它在幕后工作，将常用的对象和代码存储在一个易于访问的表格中，从而提高了 JavaScript 代码的执行效率。虽然 JavaScript 开发者无法直接操作这个常量表，但它的存在是 JavaScript 性能的重要保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/constants-table-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ void BuiltinsConstantsTableBuilder::Finalize() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

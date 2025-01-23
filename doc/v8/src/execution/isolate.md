@@ -57,12 +57,14 @@ vm.runInContext('console.log(value);', context2); // 输出: 20
 
 总而言之，`v8/src/execution/isolate.cc` 是 V8 引擎的核心组件，负责创建和管理独立的 JavaScript 执行环境，为 JavaScript 代码的运行提供了必要的资源和基础设施。 你编写和运行的每一行 JavaScript 代码都依赖于 `Isolate` 提供的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1734,7 +1736,4 @@ bool Isolate::GetStackTraceLimit(Isolate* isolate, int* result) {
 
   if (*result != v8_flags.stack_trace_limit) {
     isolate->CountU
-"""
-
-
 ```

@@ -230,15 +230,17 @@ While you don't directly write code against these C++ classes in typical web dev
 
 In summary, `v8/third_party/inspector_protocol/crdtp/dispatch.h` defines the core message dispatching mechanism for the Chrome DevTools Protocol within the V8 JavaScript engine. It handles parsing incoming commands, routing them to the appropriate handlers, and creating standardized responses and notifications, enabling the powerful debugging and inspection capabilities of the Chrome DevTools.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/dispatch.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/dispatch.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -552,7 +554,4 @@ class UberDispatcher {
 }  // namespace v8_crdtp
 
 #endif  // V8_CRDTP_DISPATCH_H_
-
-"""
-
 ```

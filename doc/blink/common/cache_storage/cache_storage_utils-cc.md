@@ -145,14 +145,16 @@ window.addEventListener('fetch', event => {
 
 总而言之，`blink/common/cache_storage/cache_storage_utils.cc` 文件虽然代码简洁，但其包含的 `CreateTraceId` 函数在 Cache Storage API 的内部实现中扮演着重要的角色，用于生成唯一的跟踪标识符，从而支持了 JavaScript 对缓存的管理。 用户或开发者通常不会直接与之交互，但其功能是确保 Web API 正常运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/cache_storage/cache_storage_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ int64_t CreateTraceId() {
 
 }  // namespace cache_storage
 }  // namespace blink
-
-"""
-
 ```

@@ -130,7 +130,7 @@ func main() {
 
 而本部分则是在前两部分的基础上，对已加载的包进行更深入的处理和完善，为后续的构建步骤做好准备。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/load/pkg.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -139,9 +139,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
- error
+### 源代码
+```go
+error
 			// must be either in an explicit command-line argument,
 			// or on the importer side (indicated by a non-empty importPos).
 			top, ok := stk.Top()
@@ -1142,10 +1144,5 @@ func TestPackageList(ctx context.Context, opts PackageOpts, roots []*Package) []
 // LoadImportWithFlags loads the package with the given import path and
 // sets tool flags on that package. This function is useful loading implicit
 // dependencies (like sync/atomic for coverage).
-// TODO(jayconrod): delete this function and set flags 
-"""
-
-
-
-
+// TODO(jayconrod): delete this function and set flags
 ```

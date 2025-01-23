@@ -128,7 +128,7 @@ Initially, I might have focused too much on the `foo` function itself. The key r
 
 总之，尽管 `pch.c` 的代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 是否能够正确处理使用了预编译头文件的目标程序，这对于 Frida 在实际逆向工作中的可靠性至关重要。 它间接地涉及到编译器原理、操作系统知识以及目标程序的构建方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/13 pch/userDefined/pch/pch.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,14 +136,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "pch.h"
 
 int foo(void) {
     return 0;
 }
-
-"""
-
 ```

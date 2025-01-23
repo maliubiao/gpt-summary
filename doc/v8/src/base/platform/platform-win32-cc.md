@@ -183,7 +183,7 @@ console.log("本地时区偏移量 (分钟):", timezoneOffset);
 
 `v8/src/base/platform/platform-win32.cc` 是 V8 引擎在 Windows 平台上的基石，它实现了与操作系统底层交互的关键功能，包括时间管理、内存管理、线程/进程操作、控制台输出、文件操作等，这些功能对于 V8 引擎正确、高效地执行 JavaScript 代码至关重要。它抽象了 Windows 特有的 API，为 V8 的上层代码提供了统一的平台接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-win32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/platform/platform-win32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -191,8 +191,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1181,8 +1183,4 @@ void CheckIsOOMError(int error) {
 }
 
 }  // namespace
-
-"""
-
-
 ```

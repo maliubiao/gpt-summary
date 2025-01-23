@@ -230,7 +230,7 @@ func init() {
 
 总而言之，这段 `signal_netbsd_386.go` 代码是 Go 运行时处理信号的核心组成部分，它提供了访问和修改程序执行上下文的能力，使得运行时能够实现诸如 panic 处理、goroutine 调度等关键功能。普通 Go 开发者不会直接使用这些底层的结构体和方法，而是通过 `os/signal` 包来注册和处理信号。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_netbsd_386.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -238,8 +238,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -285,9 +287,4 @@ func (c *sigctxt) set_sigcode(x uint32) { c.info._code = int32(x) }
 func (c *sigctxt) set_sigaddr(x uint32) {
 	*(*uint32)(unsafe.Pointer(&c.info._reason[0])) = x
 }
-
-"""
-
-
-
 ```

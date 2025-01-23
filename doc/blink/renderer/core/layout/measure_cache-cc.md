@@ -101,14 +101,16 @@ By following this systematic approach, we can effectively analyze the given sour
 
 总而言之，`MeasureCache` 是 Blink 渲染引擎中一个关键的性能优化组件，通过缓存布局计算结果来避免重复计算。理解其工作原理以及与 JavaScript、HTML 和 CSS 的交互对于开发高性能的 Web 应用至关重要。开发者需要注意在动态修改页面内容时，适当地失效或清除缓存，以确保布局的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/measure_cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ const LayoutResult* MeasureCache::GetLastForTesting() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

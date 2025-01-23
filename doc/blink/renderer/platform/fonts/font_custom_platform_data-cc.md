@@ -184,14 +184,16 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 总而言之，`font_custom_platform_data.cc` 是 Blink 渲染引擎中处理自定义字体的核心组件，它负责将通过 CSS 定义的字体资源转化为浏览器可以理解和渲染的格式，并根据 CSS 属性进行调整，包括处理可变字体和颜色字体。理解这个文件的功能有助于理解浏览器如何加载和渲染网页上使用的各种字体。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_custom_platform_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Apple Computer, Inc.
  * Copyright (c) 2007, 2008, 2009, Google Inc. All rights reserved.
@@ -517,7 +519,4 @@ FontCustomPlatformData* FontCustomPlatformData::Create(
 }
 
 }  // namespace blink
-
-"""
-
 ```

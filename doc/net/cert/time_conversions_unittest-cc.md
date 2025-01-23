@@ -171,15 +171,17 @@ This iterative process of scanning, understanding, connecting to higher-level co
 
 总而言之，`net/cert/time_conversions_unittest.cc` 这个文件虽然是测试代码，但它揭示了 Chromium 网络栈中时间转换的关键功能，这些功能对于处理网络安全至关重要，并且与用户日常浏览 HTTPS 网站的体验紧密相连。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/time_conversions_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -302,7 +304,4 @@ TEST(TimeConversionsTest, TimeAfter32BitPosixMaxYear) {
 }
 
 }  // namespace net::test
-
-"""
-
 ```

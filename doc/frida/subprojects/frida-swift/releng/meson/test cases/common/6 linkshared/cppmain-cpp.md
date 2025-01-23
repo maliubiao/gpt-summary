@@ -154,7 +154,7 @@ int cppfunc() {
 
 总而言之，`cppmain.cpp` 自身是一个非常简单的 C++ 程序，但它作为 Frida 测试用例的一部分，其目的是验证 Frida 在处理链接共享库的程序时，能否正确地 hook 和修改函数行为。理解这个文件的功能以及其与逆向、底层知识的关系，有助于用户在使用 Frida 进行动态分析和调试时，更好地定位问题和理解程序的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/6 linkshared/cppmain.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,14 +162,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cpplib.h"
 
 int main(void) {
     return cppfunc() != 42;
 }
-
-"""
-
 ```

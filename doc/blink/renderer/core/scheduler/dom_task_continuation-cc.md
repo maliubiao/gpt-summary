@@ -180,14 +180,16 @@ This structured approach, starting with code analysis and progressing to concept
 
 总而言之，`blink/renderer/core/scheduler/dom_task_continuation.cc` 提供了一个底层的、强大的机制来管理可取消的延迟任务，并且与 JavaScript Promise 和 `AbortSignal` 紧密集成，是 Blink 引擎实现各种异步功能的关键组件。理解它的功能有助于理解浏览器如何处理延迟执行和取消操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scheduler/dom_task_continuation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -285,7 +287,4 @@ void DOMTaskContinuation::OnAbort() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

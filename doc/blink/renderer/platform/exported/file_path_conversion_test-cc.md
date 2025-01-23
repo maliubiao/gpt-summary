@@ -111,14 +111,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`file_path_conversion_test.cc` 这个文件虽然看起来很底层，但它测试的核心功能是连接 Web 技术（JavaScript, HTML, CSS 中使用的字符串）和操作系统文件系统的桥梁，确保了 Blink 引擎能够正确地理解和操作文件路径，从而保证了 Web 应用与本地文件系统交互的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/file_path_conversion_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ TEST(FilePathConversionTest, convert) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

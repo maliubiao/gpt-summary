@@ -225,7 +225,7 @@ Bob 共享密钥: a60b8f9b1e4c7d9b8a2f3e5c6d7a8b9c0e1f2d3a4b5c6d7e8f9a0b1c2d3e4f
 
 总而言之，这段代码是 Go 语言 `crypto/ecdh` 包中实现基于 NIST 曲线的 ECDH 密钥交换的核心部分，提供了密钥生成、密钥创建和共享密钥计算的功能，并考虑了不同的加密后端和安全模式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/ecdh/nist.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -233,8 +233,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -459,9 +461,4 @@ var p521 = &nistCurve{
 		return ecdh.ECDH(ecdh.P521(), priv, pub)
 	},
 }
-
-"""
-
-
-
 ```

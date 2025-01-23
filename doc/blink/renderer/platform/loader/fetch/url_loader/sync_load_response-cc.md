@@ -87,14 +87,16 @@ This systematic approach allows me to analyze even a small code snippet within i
 
 总而言之，`SyncLoadResponse` 类是 Blink 渲染引擎内部用于存储同步加载结果的一个数据结构。虽然它本身是 C++ 代码，但其存在是为了支持 JavaScript, HTML, CSS 中一些可能触发同步资源加载的功能。理解同步加载的机制以及其潜在的问题对于编写高性能和用户友好的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/sync_load_response.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -115,7 +117,4 @@ SyncLoadResponse& SyncLoadResponse::operator=(SyncLoadResponse&& other) =
     default;
 
 }  // namespace blink
-
-"""
-
 ```

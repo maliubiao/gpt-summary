@@ -141,7 +141,7 @@ By following these steps, which involve analyzing the code itself, understanding
 
 `trivial.c` 作为一个非常简单的 C 程序，其主要作用是作为 Frida 动态插桩测试的基本目标。它可以用于验证 Frida 的核心功能，例如进程连接、函数 hook 等。虽然自身功能简单，但它在 Frida 的测试框架中扮演着重要的角色，可以帮助开发者验证和调试 Frida 的功能。它也为学习动态插桩技术提供了一个简单的入门示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing/112 run_target in test/trivial.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,15 +149,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("Trivial test is working.\n");
     return 0;
 }
-
-"""
-
 ```

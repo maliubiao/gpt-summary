@@ -224,7 +224,7 @@ func main() {
 
 总而言之，这段测试代码全面地检验了 `compress/gzip` 包的核心功能和各种边界情况，确保了该包的可靠性和正确性。理解这些测试用例有助于我们更好地理解和使用 `gzip` 包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/compress/gzip/gzip_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -232,8 +232,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -514,9 +516,4 @@ func TestLimitedWrite(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

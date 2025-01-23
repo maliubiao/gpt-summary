@@ -95,11 +95,13 @@ This systematic approach, starting with understanding the request and moving thr
 
 `LocalFactory` 是 V8 引擎中用于在局部上下文中创建和管理堆对象的关键组件。虽然 JavaScript 开发者不能直接与之交互，但当 JavaScript 代码在例如 Web Worker 这样的隔离环境中运行时，`LocalFactory` 及其类似机制会在幕后工作，为 JavaScript 代码的执行提供必要的 V8 内部对象。它确保了局部上下文拥有自己的对象管理机制，避免了与主 Isolate 的直接竞争和同步问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/local-factory.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -170,7 +172,4 @@ Handle<Object> LocalFactory::NumberToStringCacheGet(Tagged<Object>, int) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -115,7 +115,7 @@ fetch('https://example.com/data.json')
 
 这部分 `http_stream_parser_unittest.cc` 文件专注于测试 `HttpStreamParser` 类在处理各种 HTTP 响应场景时的正确性和精确性，特别是关于已接收字节数的计算和响应时间信息的记录。它涵盖了常见的 HTTP 特性（如 `Content-Length` 和 `chunked` 传输编码）以及一些边缘情况（如接收到 1xx 状态码）。这些测试确保了 `HttpStreamParser` 能够可靠地解析 HTTP 数据流，为浏览器提供正确的网络数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_parser_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -123,9 +123,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- int read_lengths[] = {body_size, 0};
+### 源代码
+```cpp
+int read_lengths[] = {body_size, 0};
   get_runner.ReadBody(body_size, read_lengths);
   EXPECT_EQ(headers_size + body_size, get_runner.parser()->received_bytes());
   EXPECT_EQ(0, get_runner.read_buffer()->offset());
@@ -818,8 +820,4 @@ TEST(HttpStreamParser, ReceiveOneByteAtATime) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

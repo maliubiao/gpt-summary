@@ -92,7 +92,7 @@ To answer the user's request, I need to:
 
 总而言之，这段代码在 WebVTT 字幕处理流程中扮演着至关重要的角色，它负责理解字幕作者在 WebVTT 文件中指定的各种布局和行为设置，确保字幕能够按照预期的方式呈现在用户面前。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/vtt/vtt_cue.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -100,8 +100,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 umber be the returned percentage, otherwise jump to the step
         //    labeled next setting.
         bool is_percentage = value_input.ScanPercentage(number);
@@ -249,8 +251,4 @@ void VTTCue::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

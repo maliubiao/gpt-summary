@@ -176,7 +176,7 @@ Package 'testlib' not found
 
 这个 Python 脚本是 Frida 构建系统中的一个测试工具，用于验证在特定环境下 `pkg-config` 的行为，特别是针对交叉编译场景下的依赖查找。它通过修改 `PKG_CONFIG_LIBDIR` 环境变量，强制 `pkg-config` 在指定的目录下查找 `.pc` 文件，从而模拟特定的构建环境。 理解这个脚本的功能有助于理解 Frida 的构建过程，并在遇到与依赖相关的构建或测试问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/45 native dep pkgconfig var/cross_pkgconfig.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -198,7 +200,4 @@ environ['PKG_CONFIG_LIBDIR'] = os.path.join(
 
 sys.exit(
     subprocess.run(['pkg-config'] + sys.argv[1:], env=environ).returncode)
-
-"""
-
 ```

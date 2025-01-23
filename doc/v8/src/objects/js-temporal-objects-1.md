@@ -276,13 +276,15 @@ This is used internally by the Temporal implementation to format time zone offse
 
 In summary, this section of the C++ code is crucial for implementing the core logic of the Temporal API in V8, handling conversions, time zone calculations, and string formatting, bringing the power of precise date and time manipulation to JavaScript.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共13部分，请归纳一下它的功能
+```
 
-"""
-      fraction %= divisor;
+### 源代码
+```
+fraction %= divisor;
       divisor /= 10;
     }
   }
@@ -1750,7 +1752,4 @@ Handle<String> FormatTimeZoneOffsetString(Isolate* isolate,
   // 9. Let m be ToZeroPaddedDecimalString(minutes, 2).
   builder.AppendCharacter(':');
   ToZeroPadde
-"""
-
-
 ```

@@ -109,7 +109,7 @@ By following these steps, we can systematically analyze the code and produce a c
 
 总而言之，这部分代码主要关注 `http.Transport` 在各种复杂的 HTTP 场景下的健壮性和正确性，特别是围绕连接管理、代理功能和一些可能导致资源泄漏或错误的边缘情况进行细致的测试。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/transport_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -118,8 +118,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 lways weird.
 	res, err := c.Head(ts.URL)
 	if err != nil {
@@ -1332,9 +1334,4 @@ func testIssue4191_InfiniteGetTimeout(t *testing.T, mode testMode) {
 		}
 		select {
 		cas
-"""
-
-
-
-
 ```

@@ -182,7 +182,7 @@ The progression from initial code understanding to considering Frida's capabilit
 
 因此，到达 `bar.c` 这个文件的路径通常是 Frida 的开发者或测试人员在进行功能测试或错误调试的过程中，逐步深入到测试用例的细节。  `bar.c` 的简单性使其成为一个良好的起点，用于验证 Frida 基础的进程注入、Hook 等核心功能是否正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/165 get project license/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,15 +190,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("I'm a main project bar.\n");
     return 0;
 }
-
-"""
-
 ```

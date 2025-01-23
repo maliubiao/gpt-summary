@@ -106,7 +106,7 @@ receiver.api_func(100); // 调用绑定的 C++ 函数
 
 总而言之，`v8/test/cctest/test-cpu-profiler.cc` 是一组全面的单元测试，旨在确保 V8 JavaScript 引擎的 CPU 性能分析器能够可靠且准确地收集 JavaScript 和 C++ 代码的性能数据。它涵盖了各种场景，包括基本分析、对优化过的 API 调用的分析、以及与 V8 内部机制（如字节码刷新和垃圾回收）的交互。这些测试对于保证 CPU 分析器作为性能诊断工具的有效性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-cpu-profiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-cpu-profiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -114,8 +114,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 he code.
   v8::Local<v8::Function> function = CreateApiCode(&env);
   DirectHandle<JSFunction> i_function =
@@ -497,8 +499,4 @@ TEST(CpuProfileJSONSerialization) {
 }  // namespace test_cpu_profiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

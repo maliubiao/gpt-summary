@@ -152,14 +152,16 @@ This systematic approach, combining code analysis with knowledge of web technolo
 
 总而言之，`text_fragment_selector.cc` 负责实现 Chromium Blink 引擎中解析和生成文本片段选择器这一重要功能，它连接了 URL 和网页内容的特定部分，并与 HTML、JavaScript 和 CSS 有着密切的关系。理解其功能和使用规则有助于开发者更有效地利用这项特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fragment_directive/text_fragment_selector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -313,7 +315,4 @@ String TextFragmentSelector::ToString() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

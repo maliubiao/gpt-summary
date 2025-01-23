@@ -223,15 +223,17 @@ func main() {
 * 使用 `fromStrings1` 和 `fromStrings1a` 时，要理解类型参数 `PT` 往往是指针类型。
 * 使用 `fromStrings3` 时，要特别注意类型参数 `T` 是否为指针类型，避免在 nil 值上调用方法。 通常情况下，`fromStrings3` 的设计不太符合预期，更容易出错。 推荐使用 `fromStrings1`, `fromStrings1a` 或 `fromStrings2`，它们提供了更清晰的类型约束和控制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/settable.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -355,9 +357,4 @@ func main() {
 	// Set on a nil value.
 	fromStrings3[*SettableInt]([]string{"1"})
 }
-
-"""
-
-
-
 ```

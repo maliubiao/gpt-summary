@@ -164,7 +164,7 @@ App spawned, PID: 12345. Kill it to see an example message being emitted.
 
 This detailed explanation covers the functionality, reverse engineering relevance, low-level aspects, logic, potential errors, and user journey for the provided Frida script.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/open_service/dtx/processcontrol.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import sys
 
 import frida
@@ -205,7 +207,4 @@ control.request({"method": "startObservingPid:", "args": [pid]})
 
 print(f"App spawned, PID: {pid}.  Kill it to see an example message being emitted.")
 sys.stdin.read()
-
-"""
-
 ```

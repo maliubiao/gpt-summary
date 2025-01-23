@@ -195,15 +195,17 @@ New users: map[alice@example.com:{1 Alice alice@example.com} bob@example.com:{2 
 
 总之，这段代码简洁地展示了 Go 语言的泛型特性以及闭包的使用。它的核心功能是根据 `previous` 切片中的元素，从一个映射中删除对应的条目（通过 `uniqueKey` 确定的键）。在实际应用中，通常 `newJSON` 会先被填充，代表新的状态，然后通过与 `previous` 状态的比较，找出不再存在于新状态中的元素。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue47676.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -227,9 +229,4 @@ func diff[T any](previous []T, uniqueKey func(T) string) func() {
 		}
 	}
 }
-
-"""
-
-
-
 ```

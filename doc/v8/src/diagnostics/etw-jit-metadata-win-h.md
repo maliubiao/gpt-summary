@@ -171,15 +171,17 @@ ETWJITInterface::LogEventData(provider, &my_event, &my_event_fields, int_value, 
 
 理解这个头文件对于想要深入了解 V8 如何在 Windows 上进行性能分析和诊断 JIT 相关问题的开发者非常重要。它提供了一种结构化的方式来生成和记录 JIT 编译过程中的关键信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/etw-jit-metadata-win.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/etw-jit-metadata-win.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -416,7 +418,4 @@ void LogEventData(const TraceLoggingHProvider provider,
 }  // namespace v8
 
 #endif  // V8_DIAGNOSTICS_ETW_JIT_METADATA_WIN_H_
-
-"""
-
 ```

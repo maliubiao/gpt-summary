@@ -200,7 +200,7 @@ Hello, Frida!
 
 总之，`srcgen.c` 作为一个构建辅助工具，通常是在 Frida 的构建流程中被自动或半自动地调用。开发者只有在遇到构建问题或需要理解其具体行为时，才会直接接触到这个源代码文件并进行调试。 该文件位于测试用例目录下，更说明了它是为了 Frida 的测试流程服务的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/native/3 pipeline/srcgen.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -208,8 +208,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<assert.h>
 #include<string.h>
@@ -279,7 +281,4 @@ int main(int argc, char **argv) {
     fclose(depfile);
     return 0;
 }
-
-"""
-
 ```

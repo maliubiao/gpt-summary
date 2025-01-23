@@ -267,7 +267,7 @@ sys.stdin.read()
 
 这个 `tls.h` 文件是Android安全通信的基石，理解其内容对于理解Android的网络安全机制至关重要。虽然开发者通常不会直接操作这些底层的定义，但了解它们可以帮助开发者更好地理解网络编程和安全最佳实践。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tls.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -278,8 +278,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -428,7 +430,4 @@ enum {
 #define TLS_CONF_HW 3
 #define TLS_CONF_HW_RECORD 4
 #endif
-
-"""
-
 ```

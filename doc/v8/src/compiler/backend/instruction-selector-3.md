@@ -160,14 +160,15 @@ This file is a crucial component in V8's compilation pipeline. It's responsible 
 
 **In summary, this final part of `instruction-selector.cc` completes the intricate task of converting a high-level, platform-independent representation of code into low-level, architecture-specific machine instructions. It handles a vast array of operations, including advanced arithmetic, bit manipulation, memory access, control flow, and specialized instructions like SIMD, making it a fundamental piece of V8's code generation process.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/instruction-selector.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-
-            case multi(Rep::Word32(), Rep::Word64()):
+### 源代码
+```
+case multi(Rep::Word32(), Rep::Word64()):
               return VisitBitcastWord32ToWord64(node);
             case multi(Rep::Word32(), Rep::Float32()):
               return VisitBitcastInt32ToFloat32(node);
@@ -1469,8 +1470,4 @@ const std::map<NodeId, int> InstructionSelector::GetVirtualRegistersForTesting()
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

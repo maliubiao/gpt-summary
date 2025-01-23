@@ -189,7 +189,7 @@ ParsedISO8601Result {
 
 总而言之，`v8/test/unittests/temporal/temporal-parser-unittest.cc` 的第 1 部分主要定义了用于测试 `TemporalParser` 成功解析各种符合 ISO 8601 标准的日期、时间和持续时间字符串的基础结构和辅助函数。它通过宏定义简化了编写测试用例的过程，并提供了一些用于断言解析结果正确性的 `Check...` 函数。这部分代码专注于验证在输入有效 ISO 字符串时，解析器是否能产生预期的结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/temporal/temporal-parser-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/temporal/temporal-parser-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -197,8 +197,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -794,7 +796,4 @@ TEST_F(TemporalParserTest, TemporalTimeStringSuccess) {
 }
 
 TEST_F(TemporalParse
-"""
-
-
 ```

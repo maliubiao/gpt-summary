@@ -144,15 +144,17 @@ myFunction("hello"); // 错误：字符串不能直接与数字相加
 
 `v8/src/compiler/operator-properties.cc` 是 V8 编译器中一个关键的文件，它定义了编译器中间表示中各种操作符的属性。这些属性对于编译器的正确性和优化至关重要，它们指导着编译器如何处理不同的 JavaScript 结构和操作，并间接地影响着 V8 如何处理 JavaScript 代码的执行和错误。它本身不是 Torque 代码，而是标准的 C++ 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/operator-properties.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/operator-properties.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -447,7 +449,4 @@ bool OperatorProperties::IsBasicBlockBegin(const Operator* op) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

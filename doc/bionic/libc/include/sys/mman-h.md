@@ -263,7 +263,7 @@ sys.stdin.read()
 
 这个分析涵盖了 `bionic/libc/include/sys/mman.handroid` 文件中定义的功能，并详细解释了它们在 Android 系统中的作用、实现方式以及如何使用 Frida 进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/mman.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -274,8 +274,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -533,7 +535,4 @@ int mseal(void* _Nonnull __addr, size_t __size, unsigned long __flags) __INTRODU
 
 
 __END_DECLS
-
-"""
-
 ```

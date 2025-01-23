@@ -174,15 +174,17 @@ Structure the answer logically, starting with a general overview of the file's p
 
 总而言之，`exception_helpers.cc` 在 Blink 引擎的 AI 功能中扮演着关键的错误处理角色，它定义了标准的错误消息和异常处理机制，使得 AI 功能的错误能够被有效地报告给开发者和用户，并为调试提供了重要的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ai/exception_helpers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -373,7 +375,4 @@ WTF::String ConvertModelAvailabilityCheckResultToDebugString(
 // LINT.ThenChange(//third_party/blink/public/mojom/ai_manager.mojom:ModelAvailabilityCheckResult)
 
 }  // namespace blink
-
-"""
-
 ```

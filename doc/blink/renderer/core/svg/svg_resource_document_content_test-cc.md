@@ -171,15 +171,17 @@ By following this kind of structured analysis, we can thoroughly understand the 
 
 总之，`svg_resource_document_content_test.cc` 文件对于理解和调试 Blink 引擎中 SVG 资源加载和管理机制至关重要。它通过各种测试用例覆盖了 `SVGResourceDocumentContent` 类的核心功能和边界情况，帮助开发者确保该类能够正确、高效地处理 SVG 资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_resource_document_content_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -404,7 +406,4 @@ TEST_F(SVGResourceDocumentContentTest, SecondLoadOfResourceInError) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

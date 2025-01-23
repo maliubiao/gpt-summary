@@ -81,7 +81,7 @@ Here's a plan to address the request:
 
    这个代码片段（第五部分）主要集中在 **比较操作、`switch` 语句的实现、带溢出检查的整数运算、原子操作以及 SIMD 向量运算的指令选择**。它是 `instruction-selector-mips64.cc` 文件的一部分，负责将高级的程序逻辑转换为底层的 MIPS64 机器指令，确保代码能够在 MIPS64 架构上正确且高效地执行。这部分展示了指令选择器处理多种不同类型操作的能力，以及针对特定架构优化的考量 (例如针对与零比较的优化)。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/instruction-selector-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/mips64/instruction-selector-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -89,8 +89,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 }
         }
       } else if (value_op.Is<Opmask::kWord32BitwiseAnd>() ||
@@ -915,7 +917,4 @@ void InstructionSelectorT<Adapter>::VisitInt64AbsWithOverflow(node_t node) {
   V(I8x16GeU, kMips64I8x16GeU)                           \
   V(I8x16RoundingAverageU, kMips64I8x16RoundingAverageU) \
   V(
-"""
-
-
 ```

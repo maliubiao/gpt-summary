@@ -139,16 +139,18 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 这部分 `rtc_video_encoder_test.cc` 代码主要负责测试 `RTCVideoEncoder` 在处理具有空间分层特性的视频编码时的各种场景，包括初始化、编码、错误处理、动态调整以及与底层硬件编码加速器的交互。此外，还涵盖了帧尺寸变化、Simulcast 的配置、与 Metrics Provider 的集成、以及处理编码器内部帧积压等高级功能。这些测试确保了 `RTCVideoEncoder` 能够可靠地实现复杂的视频编码策略，为 WebRTC 应用提供高质量的视频传输能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_encoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-           rtc_encoder_->Encode(webrtc::VideoFrame::Builder()
+### 源代码
+```cpp
+rtc_encoder_->Encode(webrtc::VideoFrame::Builder()
                                        .set_video_frame_buffer(buffer)
                                        .set_rtp_timestamp(i)
                                        .set_timestamp_us(i)
@@ -1690,8 +1692,4 @@ TEST_F(RTCVideoEncoderFrameSizeChangeTest, FrameSizeChangeFlushFailure) {
   EXPECT_EQ(WEBRTC_VIDEO_CODEC_OK, rtc_encoder_->Release());
 
     std::vector<webrtc::VideoFrameType> frame_types;
-    
-"""
-
-
 ```

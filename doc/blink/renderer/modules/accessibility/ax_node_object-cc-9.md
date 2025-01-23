@@ -191,7 +191,7 @@ By iteratively analyzing the code, considering its context, and generating examp
 
 总而言之，`AXNodeObject` 的 `NextOnLine()` 和 `PreviousOnLine()` 方法是 Blink 渲染引擎中实现可访问性导航的关键部分，它们依赖于 HTML 结构、CSS 样式和可访问性属性，并为辅助技术提供在同一视觉行上移动焦点的能力。理解这些方法的工作原理对于调试可访问性问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_node_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 hat there might be scenarios where a
     // descendant of the ignored node is not ignored and would be returned by
     // the call to `GetFirstInlineBlockOrDeepestInlineAXChildInLayoutTree`
@@ -360,8 +362,4 @@ void AXNodeObject::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

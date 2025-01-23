@@ -128,15 +128,17 @@ func main() {
 
 `issue6703y.go` 这个测试文件旨在验证 Go 编译器能够正确地检测出在全局变量初始化时，由于调用函数返回的指针值的方法值而产生的循环依赖。它突出了 Go 语言在静态分析和避免潜在运行时错误方面的能力。使用者应该避免在全局变量初始化时直接使用可能导致循环依赖的模式，例如直接调用返回指针的方法值。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6703y.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -159,10 +161,5 @@ func pf() *T {
 	return nil
 }
 
-var x = pf().pm // ERROR "initialization cycle|depends upon itself" 
-
-"""
-
-
-
+var x = pf().pm // ERROR "initialization cycle|depends upon itself"
 ```

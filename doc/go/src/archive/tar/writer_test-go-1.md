@@ -142,7 +142,7 @@ type sparseHole struct {
 
 总而言之，这段代码深入测试了 Go 语言 `archive/tar` 包中 `Writer` 的各种写入能力，特别是对稀疏文件的处理，以及如何将文件系统的内容打包到 tar 归档文件中。通过这些测试用例，开发者可以确保 `Writer` 能够正确处理不同类型的文件和写入场景。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/archive/tar/writer_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -151,8 +151,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 }, 8},
 		tests: []testFnc{
 			testWrite{"ab\x00", 3, nil},
@@ -417,10 +419,4 @@ func TestWriterAddFSNonRegularFiles(t *testing.T) {
 		t.Fatal("expected error, got nil")
 	}
 }
-
-"""
-
-
-
-
 ```

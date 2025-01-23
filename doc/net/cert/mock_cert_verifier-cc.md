@@ -185,15 +185,17 @@ This systematic approach, combining code reading with conceptual understanding a
 
 总而言之，`mock_cert_verifier.cc` 提供了一个强大的工具，用于在受控的测试环境中模拟证书验证过程，这对于开发和测试 Chromium 的网络功能至关重要。虽然它本身与 JavaScript 没有直接的代码关系，但它通过影响 HTTPS 连接的处理，间接地影响着 Web 应用的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/mock_cert_verifier.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -420,7 +422,4 @@ void CertVerifierObserverCounter::OnCertVerifierChanged() {
 }
 
 }  // namespace net
-
-"""
-
 ```

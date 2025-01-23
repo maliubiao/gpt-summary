@@ -140,11 +140,13 @@ Finally, organize the information logically, starting with the main function, th
 
 `v8/src/heap/cppgc/marking-state.cc` 文件是 V8 引擎 `cppgc` 垃圾回收器中负责管理标记阶段状态的关键组成部分。它通过维护各种工作列表和状态信息，支持 V8 对 JavaScript 对象的内存进行高效、准确的垃圾回收。虽然用户无法直接在 JavaScript 中操作这些 C++ 结构，但该文件的功能直接影响了 JavaScript 程序的内存管理和性能，特别是涉及到弱引用、并发执行和复杂的对象生命周期管理时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/marking-state.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ void MutatorMarkingState::Publish() {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

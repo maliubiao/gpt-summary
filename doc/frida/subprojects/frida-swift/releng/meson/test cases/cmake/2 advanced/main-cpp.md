@@ -97,7 +97,7 @@ By following this structured approach, we can systematically analyze the code an
 
 总而言之，这个 `main.cpp` 文件虽然代码很简单，但在 Frida 项目的上下文中，它扮演着测试构建系统配置、验证编译时常量以及作为 Frida 可以动态插桩的目标程序的角色。对于逆向工程师而言，它可以作为一个简单的练手目标，用于学习 Frida 的基本用法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/2 advanced/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 #include "config.h"
@@ -122,7 +124,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

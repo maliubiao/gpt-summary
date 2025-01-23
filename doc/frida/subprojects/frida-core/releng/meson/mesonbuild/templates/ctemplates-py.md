@@ -133,7 +133,7 @@ int my_exported_function() {
 
 总而言之，`ctemplates.py` 是 Frida 项目中用于简化 C 语言项目创建的工具，它通过提供预定义的代码和构建文件模板，提高了开发效率。理解这个文件的功能有助于理解 Frida 项目的构建方式，以及其组件可能使用的基本代码结构，这对于逆向分析 Frida 或基于 Frida 进行开发都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/templates/ctemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -269,7 +271,4 @@ class CProject(FileHeaderImpl):
     lib_header_template = lib_h_template
     lib_test_template = lib_c_test_template
     lib_meson_template = lib_c_meson_template
-
-"""
-
 ```

@@ -662,15 +662,17 @@ const std::set<std::string>& JSCollator::GetAvailableLocales() {
    - **创建和初始化 `JSCollator` 对象:**  在 V8 堆上分配 `JSCollator` 对象，并将创建的 ICU Collator 对象关联起来。
 
 2. **`JSCollator::ResolvedOptions`:** 这个静态方法返回一个 JavaScript 对象，其中包含 `Intl.Collator` 实例的已解析选项。这些选项反映了实际生效的国际化设置，可能与用户最初提供的选项有所不同（例如，由于区域设置协商）。它从底层的 ICU Collator 对象中
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-collator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-collator.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1263,7 +1265,4 @@ const std::set<std::string>& JSCollator::GetAvailableLocales() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

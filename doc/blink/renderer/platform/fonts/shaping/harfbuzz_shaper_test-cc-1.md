@@ -91,15 +91,17 @@ Here's a plan:
 
 总而言之，这个代码片段是 `harfbuzz_shaper_test.cc` 文件的一部分，专注于**测试 HarfBuzzShaper 类在处理各种字符、特别是 emoji 和复杂脚本时的字符整形和布局能力，以及对字符间距和位置计算的正确性验证。** 它通过大量的单元测试，覆盖了各种边界情况和特殊场景，确保 Blink 引擎能够准确地渲染网页上的文本内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/harfbuzz_shaper_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
   Font color_font = CreateNotoColorEmoji();
 
@@ -903,7 +905,4 @@ TEST_F(HarfBuzzShaperTest, ShapeResultCopyRangeSegmentGlyphBoundingBox) {
   HarfBuzzShaper shaper(string);
   const ShapeResult* result1 = shaper.Shape(&font, direction, 0, 6);
   c
-"""
-
-
 ```

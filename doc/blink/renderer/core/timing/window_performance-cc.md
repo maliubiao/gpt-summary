@@ -646,7 +646,7 @@ void WindowPerformance::EventTimingProcessingStart(
   PerformanceEventTiming* entry = PerformanceEventTiming::Create(
       event_type, reporting_info, event.cancelable(),
       hit_test_target ? hit_test_
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/window_performance.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -654,8 +654,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  * Copyright (C) 2012 Intel Inc. All rights reserved.
@@ -1442,7 +1444,4 @@ void WindowPerformance::ReportEventTimings() {
       if (last_event_reporting_info->presentation_time.has_value()) {
         TRACE_EVENT_INSTANT(
             "devt
-"""
-
-
 ```

@@ -165,7 +165,7 @@ console.log('x' in obj); // 输出: Interceptor called for 'in' operator on prop
 
 总而言之，`v8/test/cctest/test-api-interceptors.cc` 的第二部分专注于测试 V8 引擎在处理带有拦截器的对象的属性加载和存在性检查时的内部机制，确保这些机制在各种情况下都能正确高效地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-interceptors.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api-interceptors.cc以.tq结尾，那它是个v8 torque源代码，
@@ -173,8 +173,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::Isolate* isolate = context->GetIsolate();
   v8::HandleScope scope(isolate);
   Local<v8::FunctionTemplate> fun_templ = v8::FunctionTemplate::New(isolate);
@@ -1101,8 +1103,4 @@ THREADED_TEST(EmptyInterceptorDoesNotShadowReadOnlyProperty) {
   CheckInterceptorIC(EmptyInterceptorGetter,
                      HasICQuery<Local<Name>, v8::internal::ABSENT>,
                      "'use strict';"
-                  
-"""
-
-
 ```

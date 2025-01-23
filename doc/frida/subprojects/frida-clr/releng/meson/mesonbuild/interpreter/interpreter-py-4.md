@@ -190,7 +190,7 @@ This code interacts with these lower-level concepts in the following ways:
 
 This specific part of the `frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreter/interpreter.py` file provides the core logic for interpreting a significant portion of the build configuration defined in `meson.build` files. It handles file generation, management of include directories, test setup, and the definition of compiler and linker arguments. It plays a crucial role in translating high-level build instructions into concrete actions for the build system, ensuring that Frida components are built correctly and that tests can be executed effectively. This section is essential for developers working on Frida itself or on components that integrate with Frida.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 y=True,
             default=[],
         ),
@@ -781,7 +783,4 @@ y=True,
             raise InterpreterException('Target name must not consist only of whitespace.')
         if has_path_sep(name):
             pathseg = os.path.join(self
-"""
-
-
 ```

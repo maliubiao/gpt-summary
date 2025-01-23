@@ -128,15 +128,17 @@ The user wants a summary of the functionality of the provided C++ code snippet. 
 
 总而言之，`RTCVideoEncoder.cc` 的这部分代码是 blink 引擎中视频编码流程的关键组成部分。它的主要功能是将底层视频编码器产生的原始编码数据转换为 WebRTC 可以理解和使用的 `webrtc::EncodedImage` 对象，并通过回调函数将其传递给 WebRTC 的上层，以便进行网络传输和解码显示。它还负责处理不同视频编解码器的特定信息，并提供错误处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_encoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 xBitstream(rtc::MakeArrayView(
             output_mapping->front(), metadata.payload_size_bytes));
     if (fixed.action == H265ParameterSetsTracker::PacketAction::kInsert) {
@@ -1320,8 +1322,4 @@ void RTCVideoEncoder::SetH265ParameterSetsTrackerForTesting(
 #endif
 
 }  // namespace blink
-
-"""
-
-
 ```

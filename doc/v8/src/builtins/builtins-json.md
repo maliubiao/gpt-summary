@@ -131,11 +131,13 @@ console.log(stringifiedWithRaw); // 输出可能类似于: {"normal":"some text"
 
 总而言之，`builtins-json.cc` 文件是 V8 引擎中实现 JavaScript `JSON` 对象核心功能的关键 C++ 代码，它负责将 JSON 字符串解析成 JavaScript 对象，并将 JavaScript 对象转换为 JSON 字符串，并且包含了对 "raw JSON" 提案功能的实现。这些 C++ 函数直接响应 JavaScript 代码中对 `JSON` 对象方法的调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-json.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```json
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ BUILTIN(JsonIsRawJson) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

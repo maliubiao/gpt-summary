@@ -125,15 +125,17 @@ By following these steps, the analysis becomes structured and comprehensive, add
 
 总而言之，`QpackReceiveStream` 是 Chromium 网络栈中处理 HTTP/3 头部压缩的关键组件。它负责接收和初步处理 QPACK 编码的指令，并将这些指令传递给专门的解码器进行进一步处理，最终使得浏览器能够高效地解析服务器发送的 HTTP 头部信息。 虽然普通用户不直接接触它，但它的正确运行对于流畅的网络浏览体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/qpack/qpack_receive_stream.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ void QpackReceiveStream::OnDataAvailable() {
 }
 
 }  // namespace quic
-
-"""
-
 ```

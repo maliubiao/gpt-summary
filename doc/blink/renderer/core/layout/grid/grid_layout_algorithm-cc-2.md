@@ -180,15 +180,17 @@ My goal is to analyze the provided C++ code snippet from Chromium's Blink engine
 
 这部分代码的功能是后续网格项定位和渲染的基础，它确保了 CSS Grid 布局规范在浏览器中的正确实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/grid/grid_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ck_collection.HasBaselines()) {
     return;
   }
@@ -976,7 +978,4 @@ LayoutUnit GrowthPotentialForSet(
 
       // The max track sizing function of a 'fit-content' track is treated as
       // 'max-content
-"""
-
-
 ```

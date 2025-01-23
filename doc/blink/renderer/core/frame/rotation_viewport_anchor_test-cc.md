@@ -146,14 +146,16 @@ By following these steps, we can systematically analyze the C++ test file and un
 
 `rotation_viewport_anchor_test.cc` 是一个重要的测试文件，它确保了 Chromium 浏览器在模拟设备旋转时能够提供良好的用户体验，通过保持用户关注的内容在视口中的相对位置。它验证了浏览器引擎如何协同处理 HTML 结构、CSS 样式以及潜在的 JavaScript 交互，以实现平滑的视口转换。理解这类测试有助于开发者更好地理解浏览器的工作原理，并避免在开发过程中犯一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/rotation_viewport_anchor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ TEST_F(RotationViewportAnchorTest, PositionRelativeToViewportSize) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

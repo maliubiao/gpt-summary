@@ -95,12 +95,14 @@ let first = arr[0];
 
 总而言之，这个测试文件确保了V8引擎在MIPS64架构上能够正确地将各种JavaScript操作转换为高效的机器指令，这是保证JavaScript代码在该架构上正确且快速执行的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/mips64/instruction-selector-mips64-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file
@@ -1795,7 +1797,4 @@ TEST_F(InstructionSelectorTest, Word64EqualWithZero) {
     EXPECT_EQ(kMips64Cmp, s[0]->arch_opcode());
     EXPECT_EQ(kMode_None, s[0]->addressing_mode());
     ASSERT_EQ(2U, s[0]->InputCount()
-"""
-
-
 ```

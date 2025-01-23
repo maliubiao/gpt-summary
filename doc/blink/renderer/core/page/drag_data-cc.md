@@ -201,15 +201,17 @@ By following these steps, I can create a detailed and informative answer that ad
 
 总而言之，`drag_data.cc` 中定义的 `DragData` 类是 Blink 引擎中处理网页拖放操作的核心数据结构，它连接了 JavaScript 的拖放 API 和底层的平台数据，负责存储、管理和提供对拖拽数据的访问。理解它的功能对于理解浏览器如何处理拖放操作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/drag_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Apple Inc.  All rights reserved.
  * Copyright (C) 2013 Google Inc.
@@ -363,7 +365,4 @@ String DragData::DroppedFileSystemId() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

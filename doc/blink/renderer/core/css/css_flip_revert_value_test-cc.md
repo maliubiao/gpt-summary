@@ -167,15 +167,17 @@ Finally, organize the information logically into the requested categories: funct
 
 总而言之，`css_flip_revert_value_test.cc` 是 Blink 引擎中一个重要的单元测试，用于确保 `CSSFlipRevertValue` 类在处理 CSS 属性的翻转和恢复行为时能够正常工作，这对于正确渲染多语言和不同布局方向的网页至关重要。 虽然普通用户不会直接接触到这个类，但它背后的逻辑直接影响着网页的最终呈现效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_flip_revert_value_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ TEST(CSSFlipRevertValueTest, NotEquals) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

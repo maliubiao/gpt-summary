@@ -128,7 +128,7 @@ fetch('https://example.com', {
 
 总而言之，`net/quic/quic_proxy_client_socket_unittest.cc` 的第二部分主要关注 `QuicProxyClientSocket` 在成功建立与代理服务器的 QUIC 连接后，如何可靠地进行数据读写操作，以及在连接生命周期的不同阶段（例如关闭、断开、重置）如何正确处理读写请求和回调，并确保与 NetLog 的集成。它深入测试了异步操作、错误处理和资源管理等关键方面，保障了 `QuicProxyClientSocket` 作为 QUIC 代理客户端的健壮性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_proxy_client_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -136,9 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
+### 源代码
+```cpp
 TEST_P(QuicProxyClientSocketTest, ReadAuthResponseBody) {
   int packet_number = 1;
   mock_quic_data_.AddWrite(SYNCHRONOUS,
@@ -769,8 +770,4 @@ INSTANTIATE_TEST_SUITE_P(VersionIncludeStreamDependencySequence,
                          ::testing::PrintToStringParamName());
 
 }  // namespace net::test
-
-"""
-
-
 ```

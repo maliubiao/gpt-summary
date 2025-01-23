@@ -123,15 +123,17 @@ try {
 
 `v8/test/unittests/regress/regress-crbug-938251-unittest.cc` 是一个重要的单元测试，用于确保 V8 在尝试创建固定大小的双精度浮点数数组时，能够正确处理负数长度的情况，防止潜在的崩溃或错误。它反映了 JavaScript 中数组长度的有效性约束，并帮助防止用户在编程时可能犯的与数组长度相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/regress/regress-crbug-938251-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/regress/regress-crbug-938251-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -152,7 +154,4 @@ TEST_F(NewFixedDoubleArrayTest, ThrowOnNegativeLength) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -171,15 +171,17 @@ TemplateObjectDescription* desc = ...;
 
 总而言之， `v8/src/objects/template-objects-inl.h` 是 V8 内部用于管理和表示模板对象的关键组成部分，它与 JavaScript 的模板字面量功能紧密相关，并且其实现依赖于 Torque 生成的代码。 理解其背后的机制有助于开发者更好地理解和使用 JavaScript 的模板字面量特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/template-objects-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/template-objects-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ TQ_OBJECT_CONSTRUCTORS_IMPL(TemplateObjectDescription)
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_TEMPLATE_OBJECTS_INL_H_
-
-"""
-
 ```

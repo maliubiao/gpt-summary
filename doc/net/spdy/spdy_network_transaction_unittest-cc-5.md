@@ -243,7 +243,7 @@ TEST_P(SpdyNetworkTransactionTest, HTTP11RequiredNestedProxySecondProxyRetry) {
 
 总而言之，这部分单元测试主要关注 `SpdyNetworkTransaction` 在遇到服务器主动关闭连接 (`GOAWAY`) 以及服务器要求使用 HTTP/1.1 (`HTTP_1_1_REQUIRED`) 时的健壮性和正确性，包括在有代理和嵌套代理的复杂网络环境下的处理逻辑，并验证了 `NetworkAnonymizationKey` 在这些场景下的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -251,8 +251,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ack;
 
   const int kReadSize = 256;
@@ -1011,7 +1013,4 @@ TEST_P(SpdyNetworkTransactionTest, HTTP11RequiredNestedProxyFirstProxyRetry) {
 
   auto ssl_provider1 = std::make_unique<SSLSocketDataProvider>(ASYNC, OK);
   // Expect only HTTP/1.1 protocol in SS
-"""
-
-
 ```

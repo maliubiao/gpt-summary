@@ -155,7 +155,7 @@ This iterative process of scanning, categorizing, detailed analysis, and address
 
 这段代码是 V8 编译器中 MIPS64 架构指令选择的关键部分，专注于将高级的比较和原子操作转换为底层的 MIPS64 汇编指令。它针对不同的数据类型和编译器管道进行了适配，并且在 32 位整数比较方面做了一些特殊的处理和优化。理解这部分代码有助于深入了解 V8 如何将 JavaScript 代码高效地编译成机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/instruction-selector-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/mips64/instruction-selector-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -163,8 +163,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 plate <typename Adapter>
 void VisitFloat32Compare(InstructionSelectorT<Adapter>* selector,
                          typename Adapter::node_t node,
@@ -935,8 +937,4 @@ void InstructionSelectorT<TurboshaftAdapter>::VisitWordCompareZero(
                       this, node, is64 ? kMips64DMulOvf : kMips64MulOvf, cont);
               }
             }
-          
-"""
-
-
 ```

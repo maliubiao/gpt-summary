@@ -106,7 +106,7 @@ Essentially, I followed a process of understanding the code's core purpose, brea
 
 总的来说，`interpreter.py` 文件在 Frida 的构建系统中扮演着核心的解释器角色。它负责解析 `meson.build` 文件，处理依赖关系、执行外部命令、管理子项目、处理构建选项以及定义项目属性。它的功能与逆向工程、底层系统交互密切相关，并提供了强大的灵活性来定制构建流程。 开发者在编写 `meson.build` 文件时与此文件中的函数进行交互，任何语法或逻辑错误都会在此文件中被捕获和报告，为调试提供了关键信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 not v:
                 FeatureNew.single_use('empty variable value in declare_dependency', '1.4.0', self.subproject, location=node)
             try:
@@ -740,7 +742,4 @@ not v:
             # vs backend version we need. But after setting default_options in case
             # the project sets vs backend by default.
             backend = self.coredata.get_option(OptionKey(
-"""
-
-
 ```

@@ -119,15 +119,17 @@ function bar(arr) {
 
 `v8/src/compiler/turboshaft/store-store-elimination-phase.cc`  是 V8 Turboshaft 编译器中一个关键的优化阶段，它通过识别和移除连续的、对同一内存位置的冗余存储操作，来提高生成的机器码的效率，从而提升 JavaScript 代码的执行速度。它集成了多种优化 reducer，共同作用于编译过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/store-store-elimination-phase.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/store-store-elimination-phase.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -155,7 +157,4 @@ void StoreStoreEliminationPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

@@ -109,14 +109,16 @@ This systematic approach, combining code analysis with an understanding of web t
 
 总而言之，`external_date_time_chooser.cc` 扮演着连接 HTML 中日期/时间输入元素与操作系统或浏览器提供的原生用户界面之间的桥梁角色，负责参数传递、结果接收和事件触发，从而提供更好的用户体验和可访问性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/external_date_time_chooser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -280,7 +282,4 @@ AXObject* ExternalDateTimeChooser::RootAXObject(Element* popup_owner) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

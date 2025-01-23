@@ -191,15 +191,17 @@ During this process, I might realize some initial assumptions were incorrect. Fo
 
 通过分析用户操作的步骤，结合 `quic_client_session_cache_test.cc` 中测试的各种场景，可以更好地理解 `QuicClientSessionCache` 的行为，并定位网络连接问题的原因。例如，如果在调试过程中发现 `Lookup` 总是返回 `nullptr`，可能需要检查缓存的过期时间、大小限制，或者是否因为某些原因导致缓存中的会话无效。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/quic_client_session_cache_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2021 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -645,7 +647,4 @@ TEST_F(QuicClientSessionCacheTest, RemoveExpiredEntriesAndClear) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

@@ -119,11 +119,13 @@ const anotherFuzzedInput = '/* 尝试触发错误 */ for (let i = 0; i < 1000000
 
 `v8/test/fuzzer/fuzzer-support.cc` 是一个关键的 C++ 文件，它为 V8 JavaScript 引擎的模糊测试提供了基础设施。它负责初始化 V8 运行时环境，并允许模糊测试工具在这个环境中执行各种 JavaScript 代码片段，从而发现潜在的错误和漏洞。它本身不是 JavaScript 代码，而是 V8 模糊测试框架的 C++ 支撑代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/fuzzer-support.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ LLVMFuzzerInitialize(int* argc, char*** argv) {
   v8_fuzzer::FuzzerSupport::InitializeFuzzerSupport(argc, argv);
   return 0;
 }
-
-"""
-
 ```

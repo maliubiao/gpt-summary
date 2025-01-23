@@ -249,7 +249,7 @@ sys.stdin.read()
 
 总而言之，`bionic/tests/math_data/copysign_intel_data.handroid` 文件是 Android 系统中用于测试 `copysign` 函数在 Intel 架构设备上实现正确性的重要组成部分，它体现了 Android 对系统库质量和平台一致性的严格要求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/copysign_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -260,8 +260,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1720,7 +1722,4 @@ static data_1_2_t<double, double, double> g_copysign_intel_data[] = {
     -HUGE_VAL
   }
 };
-
-"""
-
 ```

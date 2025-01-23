@@ -102,11 +102,13 @@ instance.exports.callLog(42);
 
 总之，`v8/src/wasm/wrappers.cc` 文件对于 V8 引擎中 WebAssembly 和 JavaScript 的无缝集成至关重要。它定义了连接这两个不同世界的桥梁，使得它们能够互相调用和传递数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wrappers.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1444,7 +1446,4 @@ void BuildWasmWrapper(compiler::turboshaft::PipelineData* data,
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

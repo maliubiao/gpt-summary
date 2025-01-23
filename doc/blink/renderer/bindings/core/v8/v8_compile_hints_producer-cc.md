@@ -96,7 +96,7 @@ Strategizing complete. I will now generate the response based on these insights.
 
 `v8_compile_hints_producer.cc` 的主要功能是作为 Blink 渲染引擎的一部分，选择性地收集当前页面中 JavaScript 代码的编译信息，并通过用户指标系统 (UKM) 上报这些信息，以用于指导和优化 V8 JavaScript 引擎未来的编译行为。它通过 feature flags 和随机抽样来控制数据收集，并使用 Bloom Filter 来高效地存储和上报收集到的编译提示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/v8_compile_hints_producer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -661,8 +663,5 @@ bool V8CrowdsourcedCompileHintsProducer::SendDataToUkm() {
       .SetData326(static_cast<int64_t>(raw_data[653]) << 32 | raw_data[652])
       .SetData327(static_cast<int64_t>(raw_data[655]) << 32 | raw_data[654])
       .SetData328(static_cast<int64_t>(raw_data[657]) << 32 | raw_data[656])
-      .SetData329(static_cast<int64_t>(raw_data[659]) 
-"""
-
-
+      .SetData329(static_cast<int64_t>(raw_data[659])
 ```

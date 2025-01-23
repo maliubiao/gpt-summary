@@ -124,7 +124,7 @@ Finally, I organize the information into a coherent answer, addressing each poin
 
 总而言之，这个 `main.c` 文件虽然代码量不多，但它清晰地展示了动态链接的基本概念，并且作为一个 Frida 的测试用例，它为理解 Frida 如何处理动态链接的函数调用提供了一个具体的例子。通过分析这个文件，可以深入理解逆向工程中的静态分析、动态分析方法，以及与操作系统底层机制的关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/90 devenv/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 #ifdef _WIN32
@@ -148,7 +150,4 @@ int main(void) {
     printf("This is text.\n");
     return foo();
 }
-
-"""
-
 ```

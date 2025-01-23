@@ -208,15 +208,17 @@ size_t removed_count = active_pages.Reduce(updated_pages);
 
 总而言之，`ActiveSystemPages` 是 V8 堆管理中一个关键的组件，它通过位集高效地跟踪活跃的系统页，为内存分配和回收提供了基础。理解其功能和限制对于理解 V8 的内部运作方式至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/active-system-pages.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/base/active-system-pages.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ class ActiveSystemPages final {
 }  // namespace heap
 
 #endif  // V8_HEAP_BASE_ACTIVE_SYSTEM_PAGES_H_
-
-"""
-
 ```

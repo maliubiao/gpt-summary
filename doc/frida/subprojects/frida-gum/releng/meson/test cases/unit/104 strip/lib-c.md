@@ -142,7 +142,7 @@ if __name__ == '__main__':
 
 总而言之，`lib.c` 是一个非常基础的 C 代码文件，但在 Frida 的上下文中，它可以作为测试 Frida 动态插桩能力的一个简单示例，尤其是在处理符号信息方面。文件路径本身就提供了丰富的上下文信息，帮助理解它在 Frida 项目中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/104 strip/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,12 +150,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 void func(void){ fprintf(stderr, "Test 1 2 3\n"); }
-
-"""
-
 ```

@@ -177,7 +177,7 @@ By following these steps and continuously relating back to the prompt's requirem
 
 总而言之，`main_static.cpp` 作为一个 Frida 的测试用例，虽然代码简单，但它代表了一个重要的测试场景，并与逆向工程、底层知识以及 Frida 的实际应用紧密相关。理解它的功能有助于用户更好地理解 Frida 的能力和使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cuda/2 split/static/main_static.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int do_cuda_stuff(void);
@@ -194,7 +196,4 @@ int do_cuda_stuff(void);
 int main(void) {
   return do_cuda_stuff();
 }
-
-"""
-
 ```

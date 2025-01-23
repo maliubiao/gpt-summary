@@ -110,7 +110,7 @@ codegen.generate_wrapper_code(...)
 
 总而言之，虽然 `__init__.py` 文件本身的代码可能很简单（甚至为空），但它在 Python 包的组织和构建过程中起着至关重要的作用，特别是像 Frida 这样复杂的项目。 它可以帮助我们理解项目的模块化结构，并作为调试和理解构建过程的入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,9 +118,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

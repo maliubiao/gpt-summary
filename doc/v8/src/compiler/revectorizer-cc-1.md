@@ -115,7 +115,7 @@ const result = Float32x4.add(vec1, vec2);
 
 综合来看，`v8/src/compiler/revectorizer.cc` 是 V8 编译器中负责 SIMD 指令优化的重要组成部分。它通过分析程序中的 128 位 SIMD 操作，尝试将相邻且符合条件的指令合并为更宽的 256 位 SIMD 指令，从而提高 JavaScript 代码的执行效率，特别是在处理大量数值计算时。 第一部分可能负责了 revectorization 的前期准备工作，例如识别潜在的 revectorization 机会，而第二部分则专注于实际的指令合并和图节点的修改。该模块依赖于硬件对 AVX2 指令集的支持，并在编译时进行静态分析和优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/revectorizer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/revectorizer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -123,8 +123,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 \n", __func__);
 
   Node* node0 = pnode->Nodes()[0];
@@ -609,8 +611,4 @@ void Revectorizer::PrintStores(ZoneMap<Node*, StoreNodeSet>* store_chains) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

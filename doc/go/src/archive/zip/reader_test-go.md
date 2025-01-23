@@ -197,7 +197,7 @@ By following these steps, combining careful code examination with an understandi
 
 总而言之，这段 `reader_test.go` 代码的主要功能是 **通过定义一系列的测试用例，来全面地测试 `archive/zip` 包中 ZIP 文件读取器的正确性和健壮性**。它覆盖了各种合法的和非法的 ZIP 文件格式，以及不同操作系统和工具生成的 ZIP 文件，确保 `archive/zip` 包能够可靠地读取各种 ZIP 档案。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/archive/zip/reader_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -206,8 +206,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1337,9 +1339,4 @@ func TestIssue10957(t *testing.T) {
 // Verify that this particular malformed zip file is rejected.
 func TestIssue10956(t *testing.T) {
 	data := []byte("PK\x06\x06PK\x06\a0000\x00\x00\x0
-"""
-
-
-
-
 ```

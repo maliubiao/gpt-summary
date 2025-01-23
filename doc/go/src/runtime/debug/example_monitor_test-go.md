@@ -193,7 +193,7 @@ func main() {
 
 `go/src/runtime/debug/example_monitor_test.go` 的这段代码演示了如何利用 `debug.SetCrashOutput` 函数，通过启动一个监控子进程来自动化地捕获和保存程序崩溃信息。它巧妙地利用了 Go 的 `os/exec` 和测试框架的机制来实现这个功能。理解 `debug.SetCrashOutput` 的作用以及正确管理用于接收崩溃信息的 `io.Writer` 的生命周期是使用这个功能时需要注意的关键点。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/debug/example_monitor_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,8 +201,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -302,9 +304,4 @@ func monitor() {
 	}
 	// Now return and start the application proper...
 }
-
-"""
-
-
-
 ```

@@ -133,7 +133,7 @@ By following these steps, we can systematically analyze even a simple code snipp
 
 这个 `src1.c` 文件作为一个简单的测试用例，可能是为了验证 Frida 的基本 hook 功能是否正常工作，或者作为更复杂逆向分析任务的一个起点。  在实际的逆向工程中，目标代码通常远比这复杂，但动态分析的原理和步骤是类似的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/124 extract from unity/src1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,12 +141,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int sub_lib_method1() {
     return 1337;
 }
-
-"""
-
 ```

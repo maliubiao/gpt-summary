@@ -176,7 +176,7 @@ Go 的 `test` 命令会查找并执行 `internal/diff` 包下的所有测试函�
 
 这段代码的核心目的是确保 `diff` 包的差异计算功能能够正确地处理各种文本差异场景。它通过预先定义好输入和期望的输出，自动化地验证 `Diff` 函数的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/diff/diff_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -184,8 +184,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -229,9 +231,4 @@ func Test(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

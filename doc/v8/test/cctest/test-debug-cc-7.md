@@ -186,7 +186,7 @@ try {
 
 This final part of the `v8/test/cctest/test-debug.cc` file focuses on **verifying the accuracy and robustness of V8's exception catch prediction mechanism within the debugger.** It uses a variety of JavaScript code snippets, including scenarios with basic exceptions, Promises, `async/await`, inlined functions, and different execution contexts, to ensure the debugger can correctly identify where exceptions and promise rejections will be handled. This is crucial for providing accurate debugging information and enabling efficient performance optimizations within the V8 engine. The tests also touch upon the interaction between breakpoint setting and script compilation failures within the debugging context.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-debug.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-debug.cc以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ncaught,
                                             int functions_checked,
                                             const char* code) {
@@ -475,8 +477,4 @@ TEST(DebugSetBreakpointWrappedScriptFailCompile) {
   delegate.script()->SetBreakpoint(condition, &location, &id);
 }
 }  // namespace
-
-"""
-
-
 ```

@@ -175,15 +175,17 @@ By following these steps, you can systematically analyze the C++ code and genera
 
 总而言之，`svg_enumeration.cc` 文件在 Blink 引擎中负责处理 SVG 枚举类型的属性值，确保它们能够被正确地从字符串形式转换为内部表示，并为动画等功能提供支持。理解它的功能对于调试与 SVG 枚举属性相关的渲染问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_enumeration.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -280,7 +282,4 @@ float SVGEnumeration::CalculateDistance(const SVGPropertyBase*,
 }
 
 }  // namespace blink
-
-"""
-
 ```

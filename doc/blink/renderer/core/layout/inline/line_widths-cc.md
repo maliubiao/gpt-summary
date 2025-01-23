@@ -146,14 +146,16 @@ During the analysis, I might initially focus too heavily on just the width calcu
 
 总而言之，`line_widths.cc` 是 Chromium Blink 渲染引擎中一个专门负责计算内联元素行宽的模块，它特别关注处理由于浮动元素造成的文本环绕情况。它的实现针对简单的单一浮动场景进行了优化，并依赖于行高的一致性。理解其局限性对于避免在复杂的布局场景中出现错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/line_widths.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -305,7 +307,4 @@ bool LineWidths::Set(const InlineNode& node,
 }
 
 }  // namespace blink
-
-"""
-
 ```

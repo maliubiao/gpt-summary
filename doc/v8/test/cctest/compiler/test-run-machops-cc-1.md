@@ -114,7 +114,7 @@ Here's a breakdown of how to approach this:
 
 **总结来说，`v8/test/cctest/compiler/test-run-machops.cc` 的这一部分是 V8 引擎编译器的重要测试，它细致地检验了编译器在生成处理各种算术、逻辑运算以及控制流的机器码时的正确性，确保了 JavaScript 代码在底层能够可靠地执行。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-machops.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-run-machops.cc以.tq结尾，那它是个v8 torque源代码，
@@ -122,8 +122,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 CHECK_EQ(expected, bt.call(i, j));
     }
   }
@@ -1240,7 +1242,4 @@ TEST(RunInt32AddInComparison) {
     FOR_UINT32_INPUTS(i) {
       RawMachineAssemblerTester<uint32_t> m(MachineType::Uint32());
   m.Retu
-"""
-
-
 ```

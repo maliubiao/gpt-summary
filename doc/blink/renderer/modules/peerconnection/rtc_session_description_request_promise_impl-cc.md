@@ -151,15 +151,17 @@ By following this structured approach, combining code analysis with an understan
 
 总结来说，`rtc_session_description_request_promise_impl.cc` 是 Blink 渲染引擎中处理 WebRTC 会话描述创建和设置异步操作的关键组件，它连接了 JavaScript Promise 和底层的平台实现，负责管理异步操作的成功和失败状态，并将结果反馈给 JavaScript 代码。理解这个文件有助于深入理解 WebRTC 在 Chromium 中的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_session_description_request_promise_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -237,7 +239,4 @@ void RTCSessionDescriptionRequestPromiseImpl::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

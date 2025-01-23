@@ -158,7 +158,7 @@ Go 模糊测试框架会使用各种变异器（包括这里测试的字节切�
 
 总而言之，这段代码定义并测试了 Go 模糊测试框架中用于修改字节切片输入的各种方法。这些变异器是模糊测试引擎的核心组件，用于生成多样化的测试用例，以发现潜在的软件缺陷。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/fuzz/mutators_byteslice_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -395,9 +397,4 @@ func BenchmarkByteSliceMutators(b *testing.B) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

@@ -172,15 +172,17 @@ By following these steps, I can produce a comprehensive and accurate answer to t
 
 总而言之，`masque_server_bin.cc` 是 Chromium 中 MASQUE 代理服务器的核心入口，它负责监听端口、解析配置、创建后端处理逻辑，并最终作为一个中间人转发 HTTP/3 请求，从而实现 MASQUE 协议的功能。理解它的功能对于调试与 MASQUE 相关的网络问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/masque/masque_server_bin.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -273,7 +275,4 @@ int main(int argc, char* argv[]) {
   server->HandleEventsForever();
   return 0;
 }
-
-"""
-
 ```

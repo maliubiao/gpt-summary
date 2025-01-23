@@ -211,7 +211,7 @@ func main() {
 
 总而言之，`go/src/runtime/pprof/protomem.go` 中的代码是 Go 语言性能分析工具的关键组成部分，它负责将堆内存的运行时信息高效地序列化为 protobuf 格式，为后续的分析提供了基础数据。 理解其功能有助于开发者更好地利用 `pprof` 工具进行性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/pprof/protomem.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -219,8 +219,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -315,9 +317,4 @@ func scaleHeapSample(count, size, rate int64) (int64, int64) {
 
 	return int64(float64(count) * scale), int64(float64(size) * scale)
 }
-
-"""
-
-
-
 ```

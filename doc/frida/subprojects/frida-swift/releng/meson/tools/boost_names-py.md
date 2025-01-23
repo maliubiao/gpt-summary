@@ -201,7 +201,7 @@ boost-lib thread : ;
 
 总而言之，`boost_names.py` 是 Frida 项目中一个用于提取和组织 Boost 库信息的实用工具，它虽然不是直接的逆向工具，但其生成的数据对于理解和分析使用了 Boost 库的二进制程序至关重要。理解其工作原理和可能出现的使用错误，有助于更好地进行 Frida 的开发和维护工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/tools/boost_names.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -209,8 +209,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017 Niklas Claesson
@@ -499,7 +501,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

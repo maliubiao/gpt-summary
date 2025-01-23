@@ -238,15 +238,17 @@ Hostname: my-macbook
 
 总而言之，这段代码是 Go 语言在 Darwin 平台上与操作系统底层交互的关键部分，它封装了大量的系统调用，并提供了一些高级的辅助函数，使得 Go 程序能够充分利用 Darwin 系统的功能。理解其功能和潜在的陷阱对于编写健壮的、平台相关的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009,2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -954,9 +956,4 @@ func Connectx(fd int, srcIf uint32, srcAddr, dstAddr Sockaddr, associd SaeAssocI
 //sys	write(fd int, p []byte) (n int, err error)
 //sys	mmap(addr uintptr, length uintptr, prot int, flag int, fd int, pos int64) (ret uintptr, err error)
 //sys	munmap(addr uintptr, length uintptr) (err error)
-
-"""
-
-
-
 ```

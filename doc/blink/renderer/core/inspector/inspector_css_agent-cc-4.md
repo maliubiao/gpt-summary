@@ -97,16 +97,18 @@ I will now synthesize this information into a comprehensive summary, addressing 
 
 这段代码的核心职责是作为 DevTools 的后端，提供与 CSS 样式检查和修改相关的功能。它允许开发者查看和编辑元素的样式，跟踪 CSS 规则的使用情况，并监控计算样式的变化，从而帮助开发者更好地理解和调试页面的样式。它与 HTML 通过元素关联，与 CSS 直接交互，并为 DevTools 的 JavaScript 前端提供数据和控制接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_css_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
- AtomicString view_transition_name = g_null_atom;
+### 源代码
+```cpp
+AtomicString view_transition_name = g_null_atom;
   element = GetPseudoIdAndTag(element, pseudo_id, view_transition_name);
   if (!element)
     return {};
@@ -630,8 +632,4 @@ protocol::Response InspectorCSSAgent::setLocalFontsEnabled(bool enabled) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

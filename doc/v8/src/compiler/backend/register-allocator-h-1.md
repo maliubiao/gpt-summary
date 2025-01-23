@@ -178,7 +178,7 @@ Here's a plan:
 
 `v8/src/compiler/backend/register-allocator.h` 的第二部分继续定义了 V8 编译器后端中用于执行**寄存器分配**的关键数据结构和算法。它描述了如何组织和管理变量的生命周期信息（`LiveRange`、`LiveRangeBundle`），以及如何将虚拟寄存器映射到物理寄存器。这些类和方法共同实现了寄存器分配的各个阶段，从处理约束、构建活跃区间，到最终的寄存器分配和溢出处理，确保生成的机器代码能够高效地利用 CPU 寄存器，从而提升 JavaScript 的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/register-allocator.h以.tq结尾，那它是个v8 torque源代码，
@@ -186,8 +186,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 pre-SSA information and is used as a hint to allocate the
 // same spill slot or reuse the same register for connected live ranges.
 class LiveRangeBundle : public ZoneObject {
@@ -987,8 +989,4 @@ class LiveRangeConnector final : public ZoneObject {
 }  // namespace v8
 
 #endif  // V8_COMPILER_BACKEND_REGISTER_ALLOCATOR_H_
-
-"""
-
-
 ```

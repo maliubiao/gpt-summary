@@ -277,7 +277,7 @@ if (Process.platform === 'android') {
 
 总结来说，`bionic/tests/libs/dlopen_testlib_missing_symbol.cpp` 是一个用于测试 Android Bionic 动态链接器在处理缺失符号情况下的行为的测试用例。它通过声明一个未定义的函数并在另一个函数中调用它来模拟这种场景，有助于确保 Android 系统的稳定性和错误处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlopen_testlib_missing_symbol.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -288,8 +288,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -327,7 +329,4 @@ extern "C" bool dlopen_testlib_simple_func() {
   dlopen_testlib_missing_symbol();
   return true;
 }
-
-"""
-
 ```

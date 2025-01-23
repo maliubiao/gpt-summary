@@ -130,7 +130,7 @@ GOOS=linux GOARCH=arm64 go build your_program.go
 
 总而言之，`cpu_no_name.go` 虽然代码简单，但它体现了 Go 语言在处理平台差异性时的一种策略：对于某些不常见的或者信息难以获取的平台，提供一个默认的、安全的行为。 它强调了条件编译在构建跨平台应用中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/cpu/cpu_no_name.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -138,8 +138,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -158,9 +160,4 @@ func Name() string {
 	// "A CPU has no name".
 	return ""
 }
-
-"""
-
-
-
 ```

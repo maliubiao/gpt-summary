@@ -362,7 +362,7 @@ if __name__ == '__main__':
 
 这个 Frida 示例提供了一个基本的框架，你可以根据需要扩展它，例如添加对更多 `ioctl` 命令的 Hook，或者更详细地解析传递的数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/loop.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -373,8 +373,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -457,7 +459,4 @@ struct loop_config {
 #define LOOP_CTL_REMOVE 0x4C81
 #define LOOP_CTL_GET_FREE 0x4C82
 #endif
-
-"""
-
 ```

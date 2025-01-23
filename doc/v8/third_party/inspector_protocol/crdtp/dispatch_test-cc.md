@@ -165,15 +165,17 @@ const message = {
 
 总而言之，`v8/third_party/inspector_protocol/crdtp/dispatch_test.cc` 是一个非常重要的测试文件，它确保了 V8 能够正确地接收、解析、验证和分发 Chrome DevTools Protocol 消息，保证了 DevTools 和 V8 引擎之间的可靠通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/dispatch_test.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/dispatch_test.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -618,7 +620,4 @@ TEST(UberDispatcherTest, DispatchingToDomainWithRedirects) {
   EXPECT_THAT(bar->ExecutedCommands(), testing::ElementsAre(43));
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

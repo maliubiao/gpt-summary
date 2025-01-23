@@ -206,7 +206,7 @@ if (Process.platform === 'windows') {
 
 总而言之，尽管 `foo.c` 本身非常简单，但它作为 Frida 单元测试的一部分，涉及到了动态链接、符号导出、跨平台编译等多个重要的概念，并且可以作为学习和调试 Frida 动态 instrumentation 技术的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/90 devenv/subprojects/sub/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -214,8 +214,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _WIN32
   #define DO_EXPORT __declspec(dllexport)
 #else
@@ -226,7 +228,4 @@ DO_EXPORT int foo(void)
 {
   return 0;
 }
-
-"""
-
 ```

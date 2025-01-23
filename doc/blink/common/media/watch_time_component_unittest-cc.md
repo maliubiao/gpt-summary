@@ -149,14 +149,16 @@ By following these steps, and iteratively refining my understanding, I can effec
 
 `watch_time_component_unittest.cc` 文件通过一系列单元测试，详细验证了 `WatchTimeComponent` 的各种功能和状态转换。它揭示了这个组件的核心职责是精确地跟踪和记录媒体相关的状态持续时间，并将这些信息通过 `WatchTimeRecorder` 接口报告出去。理解这些测试用例有助于开发者正确使用 `WatchTimeComponent`，并避免常见的编程错误。 虽然它本身是 C++ 代码，但它的功能紧密支持着浏览器中 JavaScript 和 HTML 媒体元素的功能，为性能监控和用户行为分析提供了基础数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/media/watch_time_component_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -458,7 +460,4 @@ TEST_F(WatchTimeComponentTest, NoAutomaticFinalize) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

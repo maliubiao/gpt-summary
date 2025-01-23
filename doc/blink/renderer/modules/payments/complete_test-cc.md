@@ -132,15 +132,17 @@ By following these steps, we can systematically analyze the test file and unders
 
 总而言之，`complete_test.cc` 文件是确保 `PaymentRequest` API 的 `complete()` 方法在各种情况下都能正确工作的关键组成部分，它帮助开发者避免常见的错误，并为调试支付流程提供了重要的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/payments/complete_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ TEST(CompleteTest, RejectCompletePromiseAfterTimeout) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

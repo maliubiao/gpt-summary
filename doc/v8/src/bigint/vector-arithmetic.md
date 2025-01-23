@@ -119,11 +119,13 @@ console.log(quotient); // 输出: 3n (截断除法)
 
 `v8/src/bigint/vector-arithmetic.cc` 文件是 V8 引擎中实现 `BigInt` 算术运算的关键组成部分。它使用向量化的方式高效地进行大整数的加法和减法，为 JavaScript 中 `BigInt` 提供了强大的底层支持。虽然这个文件主要关注加法和减法，但 `BigInt` 的其他算术运算（如乘法、除法等）也会在 V8 引擎的其他相关文件中实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/vector-arithmetic.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ void SubtractOne(RWDigits Z, Digits X) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

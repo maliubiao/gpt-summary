@@ -104,7 +104,7 @@ Essentially, the process involves starting with the code, expanding outward usin
 
 总而言之，虽然 `main.c` 的代码本身功能很简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证构建系统处理 CMake 可执行依赖项的能力。由于它位于 `failing` 目录下，这意味着它被设计用来触发构建系统在特定情况下的错误，从而帮助开发人员识别和修复构建系统中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/109 cmake executable dependency/subprojects/cmlib/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,12 +112,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

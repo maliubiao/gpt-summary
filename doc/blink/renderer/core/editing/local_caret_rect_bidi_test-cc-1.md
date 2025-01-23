@@ -52,7 +52,7 @@ Here's a plan:
 
 **总结来说，这个代码片段是 Blink 引擎中一个重要的单元测试文件，用于验证在处理双向文本时，光标位置计算逻辑的正确性，这直接关系到用户在网页上编辑混合方向文本时的体验。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/local_caret_rect_bidi_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -60,9 +60,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-   "dir=rtl>ABC|</bdo></bdo></bdo>jkl</bdo></div>");
+### 源代码
+```cpp
+"dir=rtl>ABC|</bdo></bdo></bdo>jkl</bdo></div>");
   const PositionWithAffinity position_with_affinity(position,
                                                     TextAffinity::kDownstream);
   EXPECT_EQ(PhysicalRect(180, 0, 1, 10),
@@ -800,7 +802,4 @@ TEST_F(LocalCaretRectBidiTest,
       "<div dir=rtl><bdo dir=ltr><bdo dir=rtl><bdo "
       "dir=ltr>|abc</bdo>DEF</bdo>ghi</bdo></div>");
   const PositionWithAffinity position_with_affinity(position,
-"""
-
-
 ```

@@ -170,7 +170,7 @@ This detailed analysis, going from the overall purpose to the specifics of each 
 
 总而言之，`go/src/runtime/memmove_test.go` 是 Go 语言运行时中用于测试核心内存操作功能的重要组成部分，它确保了 `memmove` 和 `memclr` 在各种场景下的正确性和性能。开发者通过使用 Go 的高级特性（如 `copy` 和 `clear`），可以间接地受益于这些底层优化的成果。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/memmove_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -178,8 +178,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1298,9 +1300,4 @@ func BenchmarkMemclrKnownSize512KiB(b *testing.B) {
 
 	memclrSink = x[:]
 }
-
-"""
-
-
-
 ```

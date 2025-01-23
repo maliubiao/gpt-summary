@@ -127,15 +127,17 @@ go build -gcflags=-clobberdead go/test/codegen/clobberdead.go
 
 这段代码是一个精心设计的测试用例，用于验证 Go 编译器在启用 `-clobberdead` 选项时的行为。它通过检查生成的汇编代码来确认编译器是否在正确的时机用特定值覆盖了不再使用的局部变量的内存。理解这段代码需要对 Go 编译器的优化机制和汇编语言有一定的了解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/clobberdead.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck -gcflags=-clobberdead
 
 //go:build amd64 || arm64
@@ -171,9 +173,4 @@ func use(T) {}
 
 //go:noinline
 func addrTaken(*T) {}
-
-"""
-
-
-
 ```

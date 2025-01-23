@@ -156,15 +156,17 @@ This systematic approach allows for a comprehensive understanding of the code's 
 
 总而言之，`connect_udp_datagram_payload_test.cc` 是 Chromium 中用于确保 MASQUE 协议中 CONNECT-UDP 数据报负载的正确解析和序列化功能的单元测试文件。 它间接关系到浏览器中需要使用安全 UDP 连接的场景，例如通过 MASQUE 代理进行 WebRTC 通信。 开发者可以通过调试网络请求流程，并在相关代码中设置断点，来深入了解这部分代码的运行情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/masque/connect_udp_datagram_payload_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -226,7 +228,4 @@ TEST(ConnectUdpDatagramPayloadTest, SerializeUnknownPacket) {
 
 }  // namespace
 }  // namespace quiche::test
-
-"""
-
 ```

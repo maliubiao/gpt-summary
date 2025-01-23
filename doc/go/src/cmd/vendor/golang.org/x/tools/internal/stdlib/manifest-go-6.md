@@ -55,7 +55,7 @@ func main() {
 
 这部分 `manifest.go` 的功能是**作为 Go 标准库中网络协议相关常量的一个索引或清单**。它列举了大量的 IP 协议号和套接字选项，为 Go 的网络编程功能提供了基础的数据支持，并可能被其他工具用于分析和处理标准库。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/internal/stdlib/manifest.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -63,8 +63,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 index", Field, 0},
 		{"IPMreqn.Multiaddr", Field, 0},
 		{"IPPROTO_3PC", Const, 0},
@@ -2149,9 +2151,4 @@ index", Field, 0},
 		{"SOL_X25", Const, 0},
 		{"SOMAXCONN", Const, 0},
 		{"SO_ACCEPTCON
-"""
-
-
-
-
 ```

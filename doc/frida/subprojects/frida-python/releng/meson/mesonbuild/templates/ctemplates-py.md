@@ -201,7 +201,7 @@ pkg_mod.generate(
 
 总的来说，`ctemplates.py` 是 Frida 构建系统中用于生成 C 代码和构建文件的关键组成部分，它简化了 C 模块的开发过程，并确保了生成的文件符合 Frida 的构建要求。理解这个文件的功能有助于开发人员更好地理解 Frida 的构建流程，并在开发 C 模块时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/templates/ctemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -209,8 +209,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -337,7 +339,4 @@ class CProject(FileHeaderImpl):
     lib_header_template = lib_h_template
     lib_test_template = lib_c_test_template
     lib_meson_template = lib_c_meson_template
-
-"""
-
 ```

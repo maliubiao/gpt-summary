@@ -109,14 +109,16 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`promise_rejection_event.cc` 文件定义了 Blink 引擎中处理 JavaScript Promise 拒绝事件的关键结构，它连接了 JavaScript 的异步错误处理机制与浏览器的事件系统，并考虑了多执行上下文环境下的安全性和隔离性。开发者应该关注 `unhandledrejection` 事件，并适当地处理 Promise 拒绝，以避免潜在的错误和提高应用的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/promise_rejection_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ void PromiseRejectionEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

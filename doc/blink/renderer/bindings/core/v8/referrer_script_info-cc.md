@@ -166,15 +166,17 @@ This detailed thought process, moving from the general purpose of the file to th
 
 总之，`referrer_script_info.cc` 是 Blink 渲染引擎中一个关键的文件，它负责在 C++ 代码和 V8 引擎之间传递与 JavaScript 脚本加载相关的元数据，这些元数据直接影响着脚本的加载行为、安全策略以及发起的网络请求。理解它的功能有助于开发者诊断和解决与脚本加载、跨域资源共享 (CORS) 和内容安全策略 (CSP) 相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/referrer_script_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ v8::Local<v8::Data> ReferrerScriptInfo::ToV8HostDefinedOptions(
 }
 
 }  // namespace blink
-
-"""
-
 ```

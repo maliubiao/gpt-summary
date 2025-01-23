@@ -98,7 +98,7 @@ HTTP 缓存是浏览器核心功能，与 JavaScript 的网络请求息息相关
 
 总而言之，`net/http/http_cache_unittest.cc` 的这一部分 (第 3 部分) 主要集中在测试 HTTP 缓存对于简单 GET 请求的各种控制策略和边缘情况的处理，包括显式和隐式的缓存绕过、验证、预取以及范围请求等，确保在各种场景下缓存的行为符合预期和标准。它细致地测试了各种 `LOAD_` 标志和 HTTP 头部对缓存的影响，以及在并发和错误情况下的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tworkAccessedCache) {
   MockHttpCache cache;
 
@@ -931,8 +933,4 @@ TEST_F(HttpCacheRangeGetTest, ConnectedCallbackReturnInconsistentIpError) {
     ConnectedHandler connected_handler;
 
     std::unique_ptr<HttpTransaction> transaction;
-  
-"""
-
-
 ```

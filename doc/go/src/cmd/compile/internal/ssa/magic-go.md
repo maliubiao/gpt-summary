@@ -176,15 +176,17 @@ go build your_program.go                 // 默认启用优化
 
 `magic.go` 文件是 Go 编译器中一个关键的优化组件，它通过预先计算魔术数字，将常量除法和取模运算转化为更快的乘法、移位和加法操作，从而提高程序的执行效率。 这项工作是在编译期间完成的，对最终生成的可执行文件产生了影响。普通 Go 程序员无需直接使用或修改这个文件，但了解其功能可以帮助理解编译器优化的原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/magic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -611,9 +613,4 @@ func sdivisible8(c int8) sdivisibleData   { return sdivisible(8, int64(c)) }
 func sdivisible16(c int16) sdivisibleData { return sdivisible(16, int64(c)) }
 func sdivisible32(c int32) sdivisibleData { return sdivisible(32, int64(c)) }
 func sdivisible64(c int64) sdivisibleData { return sdivisible(64, c) }
-
-"""
-
-
-
 ```

@@ -140,14 +140,16 @@ Finally, I organize the information into clear sections: Functionality, Relation
 
 总而言之，`blink/renderer/core/events/mouse_event_test.cc` 通过各种测试用例，确保了 Blink 引擎中的 `MouseEvent` 类能够正确处理和报告鼠标事件的各种坐标信息，这对于构建可靠和响应式的 Web 应用程序至关重要。这些测试覆盖了数值边界、不同坐标系的计算以及与 DOM 元素的交互，有助于预防开发者在使用鼠标事件时常犯的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/mouse_event_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ TEST_F(MouseEventTest, LayerXY) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -147,15 +147,17 @@ if (ext) {
 
 总而言之，`webgl_blend_func_extended.cc` 文件通过 C++ 代码实现了 WebGL 的一个扩展，该扩展允许开发者在 JavaScript 中使用更灵活的混合函数，从而实现更丰富的图形效果。理解其功能以及与 JavaScript 的交互方式，对于开发高级 WebGL 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_blend_func_extended.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -195,7 +197,4 @@ const char* WebGLBlendFuncExtended::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

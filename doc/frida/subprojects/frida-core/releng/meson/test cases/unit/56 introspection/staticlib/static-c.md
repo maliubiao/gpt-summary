@@ -139,7 +139,7 @@ Here's a thinking process to arrive at the analysis of the provided C code snipp
 
 而查看 `frida/subprojects/frida-core/releng/meson/test cases/unit/56 introspection/staticlib/static.c` 这个文件，很可能是 Frida 的开发者或深度用户在研究 Frida 的内部工作原理，特别是关于如何内省和 hook 静态链接的函数时，会查看这些测试用例来理解 Frida 的实现细节和验证其功能。这个文件就是一个用于测试 Frida 对静态库中函数内省能力的单元测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/56 introspection/staticlib/static.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,13 +147,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "static.h"
 
 int add_numbers(int a, int b) {
   return a + b;
 }
-"""
-
 ```

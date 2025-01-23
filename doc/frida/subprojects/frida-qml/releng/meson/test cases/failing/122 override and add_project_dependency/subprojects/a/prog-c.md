@@ -133,7 +133,7 @@ int main() {
 
 总而言之，`prog.c` 作为一个简单的测试用例，其价值在于它被放置在一个特定的上下文中，用于测试 Frida 构建系统在处理依赖关系时的特定行为，特别是那些可能导致构建失败的情况。它简洁地暴露了链接过程中可能出现的问题，并作为 Frida 开发过程中的一个调试和验证工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/122 override and add_project_dependency/subprojects/a/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,15 +141,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "lib.h"
 
 int main() {
     f();
     return 0;
 }
-
-"""
-
 ```

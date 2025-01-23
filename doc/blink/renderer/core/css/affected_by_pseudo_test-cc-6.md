@@ -116,7 +116,7 @@ Strategizing complete. I will now proceed with generating the response based on 
 
 作为 `affected_by_pseudo_test.cc` 的第 7 部分，这段代码专注于**测试在元素被移除后，`:has()` 伪类对相关元素样式影响的追踪和更新是否正确。**  它通过模拟不同的 DOM 移除场景，并检查受影响元素的标志位和样式重算次数，来验证 Blink 引擎在处理这类情况时的正确性和性能。  这部分特别强调了 DOM 移除操作对 `:has()` 匹配状态以及由此引发的样式更新的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/affected_by_pseudo_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -124,9 +124,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
-                       {{kAffectedBySubjectHas, true},
+### 源代码
+```cpp
+{{kAffectedBySubjectHas, true},
                               {kAffectedByLogicalCombinationsInHas, false},
                               {kAncestorsOrAncestorSiblingsAffectedByHas, true},
                               {kSiblingsAffectedByHas, false}});
@@ -923,7 +925,4 @@ TEST_F(AffectedByPseudoTest, AffectedByHasAfterRemoval5) {
       "div142",
       {{kAffectedBySubjectHas, false},
        {kAncestorsOrAnc
-"""
-
-
 ```

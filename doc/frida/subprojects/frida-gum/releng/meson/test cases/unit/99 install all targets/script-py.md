@@ -151,7 +151,7 @@ By following these steps, moving from the code itself to its context and broader
 
 虽然这个脚本本身非常简单，但结合 Frida 的上下文和它在构建系统中的位置，我们可以理解它的作用是为测试环境快速创建一些占位文件，用于验证 Frida 的安装过程或模拟逆向分析的某些场景。它涉及到基本的文件系统操作，并与操作系统底层以及构建系统的配置紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/99 install all targets/script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -168,7 +170,4 @@ import sys
 for f in sys.argv[1:]:
   with open(f, 'w') as f:
       pass
-
-"""
-
 ```

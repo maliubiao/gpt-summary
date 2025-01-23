@@ -130,11 +130,13 @@ let bitwiseAnd = n & m; // 位与运算
 
 `v8/src/ic/binary-op-assembler.cc` 是 V8 引擎中实现 JavaScript 二进制运算的核心组件。它负责将高级的 JavaScript 操作转换为底层的、高效的机器代码，并利用类型反馈机制来优化执行效率，从而提升JavaScript代码的性能。它就像一个“二进制运算代码生成器”，确保 JavaScript 的算术和位运算能够快速且正确地执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/binary-op-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1261,7 +1263,4 @@ BinaryOpAssembler::Generate_BitwiseBinaryOpWithSmiOperandAndOptionalFeedback(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

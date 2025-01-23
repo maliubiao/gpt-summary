@@ -176,7 +176,7 @@ Essentially, my process was a combination of code reading, pattern recognition, 
 
 希望这个分析能够帮助你理解这段 V8 源代码的功能！
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -184,8 +184,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eapObjectAssumeWeak(value, runtime));
   return result;
 }
@@ -990,7 +992,4 @@ TNode<ByteArray> CodeStubAssembler::AllocateByteArray(TNode<UintPtrT> length,
   TNode<IntPtrT> size =
       WordAnd(raw_size, IntPtrConstant(~kObjectAlignmentMask));
   Branch(IntPtrLessThanOrEqual(size, IntPtrConstant(kMaxRegularHeapOb
-"""
-
-
 ```

@@ -187,7 +187,7 @@ go test unicode/utf16
 
 理解 UTF-16 的编码规则和 Go 语言中 Rune 的概念是避免这些错误的关键。 始终应该使用 `unicode/utf16` 包提供的函数来进行正确的编码和解码操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/unicode/utf16/utf16_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -470,9 +472,4 @@ func BenchmarkEncodeRune(b *testing.B) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

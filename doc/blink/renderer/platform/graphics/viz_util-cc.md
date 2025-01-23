@@ -102,14 +102,16 @@ This step-by-step process, starting with basic code analysis and progressively c
 
 总而言之，`viz_util.cc` 提供了一个关键的内部机制，用于在 Blink 渲染引擎和 Viz 组件之间协调渲染表面的管理。虽然普通 web 开发者不会直接接触到它，但它的正确运行对于浏览器正确渲染网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/viz_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -134,7 +136,4 @@ viz::FrameSinkBundleId GenerateFrameSinkBundleId(uint32_t client_id) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

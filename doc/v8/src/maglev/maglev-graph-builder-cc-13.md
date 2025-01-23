@@ -172,7 +172,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 这个代码片段主要负责 Maglev 编译器中处理对象构造函数调用、类型检查（特别是 `instanceof` 和 `in` 操作）以及基本的类型转换。它试图通过类型反馈和内联等技术来优化这些操作，提高 JavaScript 代码的执行效率。对于 `Array` 构造函数，有较为详细的优化逻辑，涵盖了常见的用法。对于其他构造函数和类型检查，也存在快速路径优化尝试。总的来说，这部分代码是 Maglev 编译器在构建执行图时处理对象创建和类型相关操作的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -180,8 +180,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第14部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ents_kind();
   // TODO(victorgomes): Support double elements array.
   if (IsDoubleElementsKind(elements_kind)) return ReduceResult::Fail();
@@ -1022,7 +1024,4 @@ void MaglevGraphBuilder::VisitToObject() {
   // ToObject <dst>
   ValueNode* value = GetAccumulator();
   interpreter::Reg
-"""
-
-
 ```

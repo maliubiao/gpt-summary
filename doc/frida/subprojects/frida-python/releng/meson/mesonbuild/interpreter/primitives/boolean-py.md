@@ -153,7 +153,7 @@ str_value_custom = my_bool.to_string('YES', 'NO')
 
 `frida/subprojects/frida-python/releng/meson/mesonbuild/interpreter/primitives/boolean.py` 文件虽然功能看似简单，但它是 Frida 构建系统的重要组成部分，负责在 Meson 构建过程中正确地表示和操作布尔值。理解它的功能有助于理解 Frida 的构建过程，并在调试构建脚本或 Meson 解释器行为时提供有价值的线索。它也间接地与逆向工程相关，因为 Frida 本身是逆向工程的强大工具，而这个文件是构建 Frida 的基石之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/interpreter/primitives/boolean.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # Copyright 2021 The Meson development team
 # SPDX-license-identifier: Apache-2.0
 from __future__ import annotations
@@ -215,7 +217,4 @@ class BooleanHolder(ObjectHolder[bool]):
         if any(x is not None for x in args) and not all(x is not None for x in args):
             raise InvalidArguments('bool.to_string() must have either no arguments or exactly two string arguments that signify what values to return for true and false.')
         return true_str if self.held_object else false_str
-
-"""
-
 ```

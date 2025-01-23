@@ -172,15 +172,17 @@ ADDU R3, R1, R2  // R3 = R1 + R2
 
 总而言之，`MIPSOps.go` 是 Go 编译器中一个关键的文件，它为 MIPS 架构定义了 SSA 中间表示的操作和控制流块，是 Go 编译器将 Go 代码转换为 MIPS 机器码的基础。  它的正确性对于生成高效且正确的 MIPS 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/_gen/MIPSOps.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -628,9 +630,4 @@ func init() {
 		linkreg:         int8(num["R31"]),
 	})
 }
-
-"""
-
-
-
 ```

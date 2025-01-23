@@ -152,14 +152,16 @@ By following these steps, iteratively analyzing the code, and connecting it to b
 
 `TableChildIterator` 是 Blink 渲染引擎中一个关键的组件，它负责按照特定的规则和顺序遍历 HTML 表格的子元素。这对于正确地进行表格的布局和渲染至关重要。它考虑了 CSS 的影响，并支持在分页/分列场景下的断点恢复。虽然前端开发者不会直接操作这个迭代器，但理解其工作原理有助于更好地理解浏览器如何渲染表格，并避免潜在的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/table/table_child_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -322,7 +324,4 @@ void TableChildIterator::AdvanceChild() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

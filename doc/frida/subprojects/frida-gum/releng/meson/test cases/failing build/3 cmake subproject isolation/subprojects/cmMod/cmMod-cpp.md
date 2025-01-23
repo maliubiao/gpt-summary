@@ -127,7 +127,7 @@ Here's a breakdown of the thinking process to analyze the provided C++ code snip
 
 `cmMod.cpp` 文件定义了一个简单的 C++ 类，用于演示字符串的拼接操作。它在 Frida 的上下文中，很可能是一个用于测试构建系统在特定失败场景下行为的测试用例。分析这个文件可以帮助理解 C++ 的基本语法、字符串操作、以及与逆向工程相关的类结构和宏定义的影响。虽然代码本身较为简单，但它也间接涉及了二进制底层、操作系统和 Frida 框架的相关知识。 开发者通常会在调试构建问题或研究 Frida 内部机制时接触到这样的测试代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing build/3 cmake subproject isolation/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include "fileA.hpp"
 
@@ -149,7 +151,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

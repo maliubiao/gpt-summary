@@ -156,7 +156,7 @@ By following these steps, systematically analyzing the code, and considering the
 
 总而言之，`test_write.py` 这个文件是 `frida-node` 中用于保证 TOML 写入功能正确性的单元测试，虽然它不直接涉及底层二进制或内核操作，但它对于确保 Frida 工具链的可靠性至关重要，并且其测试的场景与逆向工程中处理配置文件有一定的关联。理解这些测试用例可以帮助开发者理解 `tomlkit` 的行为，并作为调试 `frida-node` 中 TOML 相关问题的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/tomlkit/tests/test_write.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit import dumps
 from tomlkit import loads
 
@@ -203,7 +205,4 @@ c = 1
 """
     assert dumps(doc) == expected
     assert loads(expected) == doc
-
-"""
-
 ```

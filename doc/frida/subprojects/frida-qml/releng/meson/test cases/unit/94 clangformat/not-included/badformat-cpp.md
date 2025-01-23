@@ -108,7 +108,7 @@ The initial interpretation is quite accurate. The key is to move beyond the file
 
 总而言之，`badformat.cpp`  虽然内容简单，但在 Frida 的开发流程中起着重要的质量保证作用，确保代码风格的一致性，并帮助开发者验证代码格式化工具的配置是否正确。 它通过作为一个故意违反代码规范的例子，为自动化测试提供了明确的预期结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/94 clangformat/not-included/badformat.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,11 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 class {
 };
-
-"""
-
 ```

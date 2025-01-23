@@ -148,7 +148,7 @@ input("按下回车键继续...\n")
 
 总而言之，这个 `cpplib.cpp` 文件是一个非常简单的 C++ 源代码文件，其主要功能是定义一个可以被动态链接的函数，并在 Frida 的测试框架中充当被 hook 的目标。通过分析这个文件，可以帮助理解 Frida 如何与动态链接库交互，以及如何实现对 C/C++ 函数的动态 instrumentation。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/256 subproject extracted objects/subprojects/myobjects/cpplib.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,15 +156,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define BUILDING_DLL
 #include "cpplib.h"
 
 extern "C" int DLL_PUBLIC cppfunc(void) {
     return 42;
 }
-
-"""
-
 ```

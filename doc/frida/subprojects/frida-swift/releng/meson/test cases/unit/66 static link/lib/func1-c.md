@@ -157,7 +157,7 @@ Initially, I might have focused too much on the simplicity of the C code itself.
 
 总而言之，虽然 `func1.c` 中的代码非常简单，但它在 Frida 的单元测试中扮演着重要的角色，用于验证 Frida 在静态链接场景下的插桩能力。 当遇到与静态链接库相关的 Frida 问题时，查看这样的简单测试用例可以帮助开发者理解 Frida 的工作原理和可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/66 static link/lib/func1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1()
 {
   return 1;
@@ -176,7 +178,4 @@ int func1b()
 {
   return 1;
 }
-
-"""
-
 ```

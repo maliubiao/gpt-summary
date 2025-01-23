@@ -187,15 +187,17 @@ While developers don't directly interact with this C++ code, their JavaScript co
 
 In summary, `v8/src/heap/cppgc/marking-state.h` is a crucial component of V8's garbage collection system, defining the mechanisms for tracking object liveness during the marking phase. It handles various types of references and supports different garbage collection strategies. While developers don't directly write code in this file, understanding its purpose helps in comprehending how JavaScript's automatic memory management works and how to avoid common memory-related issues.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/marking-state.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/marking-state.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -723,7 +725,4 @@ void DynamicallyTraceMarkedObject(Visitor& visitor,
 }  // namespace cppgc
 
 #endif  // V8_HEAP_CPPGC_MARKING_STATE_H_
-
-"""
-
 ```

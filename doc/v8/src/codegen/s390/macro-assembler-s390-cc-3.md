@@ -134,7 +134,7 @@ agr r1, r2, r3  // 将 r2 和 r3 的值相加，结果存储在 r1 中
 
 **作为 V8 JavaScript 引擎中针对 s390 架构的代码生成器的基础构建块，它提供了一组 C++ 接口，用于生成各种 s390 汇编指令，涵盖算术运算、位运算、比较、数据加载和存储、分支以及类型转换等核心操作。 这使得 V8 能够将 JavaScript 代码高效地编译成可在 s390 架构上执行的机器代码。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/macro-assembler-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/s390/macro-assembler-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -142,9 +142,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
-                    \
+### 源代码
+```cpp
+\
     lgr(r1, src1);            \
     instr(r0, src2);          \
     lgr(dst, r1);             \
@@ -1278,7 +1280,4 @@ void MacroAssembler::LoadS32LE(Register dst, const MemOperand& opnd,
                                Register scratch) {
   lrv(dst, opnd);
   L
-"""
-
-
 ```

@@ -125,15 +125,17 @@ Based on these points, I can now formulate a concise summary of the functionalit
 
 总而言之，这部分代码是 `<permission>` 元素的核心逻辑实现，涵盖了从样式管理到用户交互处理，再到权限请求生命周期管理的各个方面，并与 HTML、CSS 和 JavaScript 功能紧密结合，共同实现了 `<permission>` 元素的完整功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_permission_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t(),
       /*lower_bound=*/builder.FontSize() * kMinLengthToFontSizeRatio,
       /*upper_bound=*/builder.FontSize() * kMaxLengthToFontSizeRatio,
@@ -940,8 +942,4 @@ HTMLPermissionElement::GetRecentlyAttachedTimeoutRemaining() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

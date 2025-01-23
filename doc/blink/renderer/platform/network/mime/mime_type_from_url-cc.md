@@ -145,14 +145,16 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 总而言之，`mime_type_from_url.cc` (更准确地说是 `MimeTypeFromDataURL` 函数) 在 Blink 引擎中扮演着识别和提取 Data URL 中 MIME 类型的关键角色，这对于正确处理和渲染网页上的各种内嵌资源至关重要。了解其工作原理有助于开发者更好地使用 Data URLs，并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/mime/mime_type_from_url.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2011, 2012 Apple Inc.
  * All rights reserved.
@@ -202,7 +204,4 @@ String MimeTypeFromDataURL(const String& url) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

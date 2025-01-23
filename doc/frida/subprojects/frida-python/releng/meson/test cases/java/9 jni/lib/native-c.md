@@ -168,7 +168,7 @@ A reverse engineer using Frida could:
 
 In summary, this seemingly simple C code is a crucial entry point for native code execution within a Java application and a key target for dynamic analysis and reverse engineering using tools like Frida. It provides the initial handshake between the JVM and the native library, allowing for more complex interactions and functionalities to be implemented in native code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/java/9 jni/lib/native.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <jni.h>
 
 JNIEXPORT jint JNICALL
@@ -189,7 +191,4 @@ JNI_OnLoad(JavaVM *vm, void *reserved)
 JNIEXPORT void JNICALL
 JNI_OnUnload(JavaVM *vm, void *reserved)
 {}
-
-"""
-
 ```

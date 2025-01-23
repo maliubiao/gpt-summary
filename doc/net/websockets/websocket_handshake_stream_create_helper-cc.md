@@ -134,15 +134,17 @@ const websocket = new WebSocket('wss://example.com/socket');
 
 在调试 WebSocket 连接问题时，如果怀疑握手阶段出现问题，可以断点调试这个文件中的 `Create...Stream` 方法，查看传入的参数以及创建的握手流对象的类型，以确定连接建立过程中选择的协议是否正确。还可以查看后续握手流对象发送和接收的握手消息，以诊断具体的握手错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_handshake_stream_create_helper.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ WebSocketHandshakeStreamCreateHelper::CreateHttp3Stream(
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -108,7 +108,7 @@ The user wants to understand the functionality of the `style_resolver_test.cc` f
 
 总而言之，`blink/renderer/core/css/resolver/style_resolver_test.cc` 文件的核心功能是**作为 Blink 引擎中 `StyleResolver` 组件的综合性测试套件**。它通过创建各种 HTML 结构和 CSS 规则的组合，并模拟 DOM 的动态变化，来验证 `StyleResolver` 是否能够准确、高效地将样式应用到网页元素上，并覆盖了各种边界情况和潜在的错误场景，从而保证了 Chromium 浏览器样式解析功能的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_resolver_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tPseudoElement(kPseudoIdBefore), nullptr);
 
   RuleIndexList* pseudo_rules =
@@ -296,8 +298,4 @@ TEST_F(StyleResolverTest, TextSizeAdjustUseCounter) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

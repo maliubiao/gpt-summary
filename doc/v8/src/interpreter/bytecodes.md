@@ -105,11 +105,13 @@ console.log(y);
 
 `bytecodes.cc` 文件是 V8 解释器 Ignition 的指令集蓝图。它定义了所有可执行的操作，并提供了关于这些操作的元数据。解释器通过读取和执行这些字节码来实现 JavaScript 代码的功能。该文件是理解 V8 解释器如何工作以及如何优化 JavaScript 代码执行的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecodes.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -456,7 +458,4 @@ std::ostream& operator<<(std::ostream& os, const Bytecode& bytecode) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

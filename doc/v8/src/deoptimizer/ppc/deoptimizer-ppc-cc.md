@@ -141,15 +141,17 @@ process(value); // 可能会触发反优化
 
 `v8/src/deoptimizer/ppc/deoptimizer-ppc.cc` 文件是 V8 在 PPC 架构上实现反优化的关键组件。它定义了反优化出口，提供了访问和修改寄存器状态以及描述栈帧信息的工具，确保当优化代码失效时，V8 能够安全地回退到未优化的状态继续执行 JavaScript 代码。类型不一致是导致反优化的常见原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/ppc/deoptimizer-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/deoptimizer/ppc/deoptimizer-ppc.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ void FrameDescription::SetPc(intptr_t pc) { pc_ = pc; }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

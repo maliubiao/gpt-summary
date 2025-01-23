@@ -237,15 +237,17 @@ Many of the functionalities provided in `container-utils.h` have direct parallel
 
 These utility functions in `v8/src/base/container-utils.h` provide a convenient and often more readable way to perform common operations on C++ containers within the V8 codebase. They encapsulate standard algorithms, making the code cleaner and potentially reducing the chance of common programming errors.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/container-utils.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/container-utils.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -390,7 +392,4 @@ inline void vector_append(V& v, const C& container) {
 }  // namespace v8::base
 
 #endif  // V8_BASE_CONTAINER_UTILS_H_
-
-"""
-
 ```

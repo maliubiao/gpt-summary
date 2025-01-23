@@ -127,7 +127,7 @@ func postClean(out *lazybuf) {
 
 这段代码定义了一个在非 Windows 操作系统下不执行任何操作的 `postClean` 函数，它是 `filepathlite` 包中实现跨平台文件路径处理的一部分。它的存在是为了在不同的操作系统上提供不同的路径后处理逻辑，以适应各自的路径规范。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/filepathlite/path_nonwindows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -135,8 +135,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -146,9 +148,4 @@ Prompt:
 package filepathlite
 
 func postClean(out *lazybuf) {}
-
-"""
-
-
-
 ```

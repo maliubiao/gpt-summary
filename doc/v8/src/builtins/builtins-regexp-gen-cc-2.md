@@ -146,7 +146,7 @@ This part of `v8/src/builtins/builtins-regexp-gen.cc` focuses on implementing th
 
 The code utilizes internal V8 mechanisms like `RegExpExecInternal` and batching to efficiently perform these operations. It also handles various edge cases and optimizations to ensure correct and performant behavior of these essential JavaScript string methods.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-regexp-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-regexp-gen.cc以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 er_match = RegistersForCaptureCount(capture_count);
   TNode<RawPtrT> result_offsets_vector;
   TNode<BoolT> result_offsets_vector_is_dynamic;
@@ -679,8 +681,4 @@ TNode<String> RegExpBuiltinsAssembler::RegExpReplaceGlobalSimpleString(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

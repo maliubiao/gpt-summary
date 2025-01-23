@@ -180,7 +180,7 @@ func main() {
 * **不理解 `HasPrefix` 的局限性:** 正如 `Deprecated` 注释所说，`HasPrefix` 不考虑路径边界和大小写。应该使用更精确的路径操作函数，例如 `strings.HasPrefix` 和 `strings.ToLower` 的组合来实现更精确的判断，或者使用 `filepath.Dir` 和 `filepath.Base` 来提取路径的组成部分进行比较。
 * **环境依赖性:** 虽然 `path/filepath` 提供了跨平台的能力，但某些与操作系统底层交互的功能（例如 `Abs`）的输出会依赖于当前运行的环境。需要理解这一点，并在编写跨平台代码时进行适当的抽象或处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/path/filepath/path_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -188,8 +188,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -308,9 +310,4 @@ func join(elem []string) string {
 func sameWord(a, b string) bool {
 	return strings.EqualFold(a, b)
 }
-
-"""
-
-
-
 ```

@@ -180,14 +180,16 @@ Expected: (no expectation for the return value, but the side effect is the error
 
 总而言之，`interest_group_test_utils_unittest.cc` 这个文件通过测试自定义的断言宏，确保了用于比较 `blink::InterestGroup` 对象的测试工具的正确性和有效性，这对于验证 Protected Audience API 的相关功能至关重要。这些测试工具能够提供更清晰的错误信息，帮助开发者更快速地定位和修复与兴趣群体功能相关的缺陷。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/test/interest_group_test_utils_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -499,7 +501,4 @@ Expected: true)");
 }
 
 }  // namespace
-
-"""
-
 ```

@@ -143,7 +143,7 @@ cuda_options = {
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/cuda.py` 文件的功能是为 Frida 的 Meson 构建系统提供 **编译 CUDA 代码的能力**。它封装了 CUDA 编译器 `nvcc` 的调用，处理了各种编译和链接选项，包括 C++ 标准选择、优化级别、调试信息、依赖关系生成等。同时，它还考虑了与主机 C++ 编译器的集成，将一些任务委托给主机编译器处理，并处理了平台差异（例如 Windows）。这个文件的目的是让 Frida 的构建过程能够方便且正确地编译包含 CUDA 代码的组件，这对于 Frida 在逆向使用了 GPU 计算的应用程序时至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/cuda.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 id) {{
             return 0;
         }}'''
@@ -338,8 +340,4 @@ id) {{
 
     def get_assert_args(self, disable: bool) -> T.List[str]:
         return self.host_compiler.get_assert_args(disable)
-
-"""
-
-
 ```

@@ -313,7 +313,7 @@ sys.stdin.read()
 
 这个 Frida 脚本会拦截对 `libc.so` 中 `prctl` 函数的调用，并在 `onEnter` 中打印出传递给 `prctl` 的参数。你可以根据 `prctl.h` 中的宏定义来解析 `option` 参数，并查看其他参数的值，从而了解 Android Framework 或 NDK 代码是如何使用 `prctl` 系统调用的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/prctl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -324,8 +324,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -536,7 +538,4 @@ struct prctl_mm_map {
 #define PR_PPC_DEXCR_CTRL_CLEAR_ONEXEC 0x10
 #define PR_PPC_DEXCR_CTRL_MASK 0x1f
 #endif
-
-"""
-
 ```

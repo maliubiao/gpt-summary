@@ -146,15 +146,17 @@ This structured approach, starting with a broad overview and gradually focusing 
 
 `css_style_declaration_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎中 `CSSStyleDeclaration` 类的核心功能 (如属性获取、设置、简写处理、`revert` 关键字支持以及与 JavaScript 的交互) 能够按照预期工作。这对于保证网页的正确渲染和开发者对 CSS 样式操作的可靠性至关重要。 当用户遇到网页样式问题，开发者进行调试时，这个测试文件所覆盖的功能点都是潜在的出错环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_style_declaration_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ TEST(CSSStyleDeclarationTest, ExposureCacheLeak) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

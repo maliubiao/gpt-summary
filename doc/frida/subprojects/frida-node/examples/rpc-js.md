@@ -197,7 +197,7 @@ Error: Failed to attach: unable to find process with name 'my_app'
 
 通过分析这些步骤和输出，用户可以理解 Frida 的基本工作原理，以及如何使用 RPC 功能与目标进程进行交互。这个简单的例子是进一步学习和使用 Frida 进行更复杂逆向分析任务的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/rpc.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const frida = require('..');
 
 const processName = process.argv[2];
@@ -243,7 +245,4 @@ main()
   .catch(e => {
     console.error(e);
   });
-
-"""
-
 ```

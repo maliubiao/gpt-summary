@@ -172,7 +172,7 @@ unsigned int gen_func_in_src(void) {
 
 总而言之，`depuser.c` 作为一个 Frida 的测试用例，其看似简单的代码背后蕴含着对程序构建、链接和运行过程的验证。它可以帮助开发者确保 Frida 能够正确地处理来自不同代码来源的函数调用，并且在动态插桩的过程中不会引入错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/95 manygen/depuser.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"gen_func.h"
 
 int main(void) {
@@ -190,7 +192,4 @@ int main(void) {
     unsigned int k = (unsigned int) gen_func_in_src();
     return (int)(i + j + k);
 }
-
-"""
-
 ```

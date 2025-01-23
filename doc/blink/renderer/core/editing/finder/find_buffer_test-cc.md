@@ -125,7 +125,7 @@ The user wants a summary of the functionality of the `find_buffer_test.cc` file 
 
 `find_buffer_test.cc` 的主要功能是全面测试 `FindBuffer` 类的各种文本查找能力，包括基本的文本匹配、处理不同类型的 HTML 元素 (内联、块级、分隔符)、CSS 样式影响 (可见性、空白符处理)、双向文本、特殊字符 (日文假名、组合字符)、整词匹配以及对错误输入的处理。 这些测试确保了 Blink 引擎的查找功能能够准确、可靠地在各种复杂的网页结构和样式下工作，为用户提供一致的查找体验。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/finder/find_buffer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -890,7 +892,4 @@ TEST_P(FindBufferParamTest, NullRange) {
 TEST_P(FindBufferParamTest, FindObjectReplacementCharacter) {
   SetBodyContent(
       "some tex
-"""
-
-
 ```

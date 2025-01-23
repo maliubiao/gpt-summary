@@ -202,7 +202,7 @@ func main() {
 
 总而言之，`zerrors_openbsd_mips64.go` 是 Go 语言与 OpenBSD (MIPS64 架构) 操作系统底层交互的桥梁，它定义了进行系统调用所需的各种平台特定的常量、错误码和信号，使得 Go 程序能够以一种类型安全的方式调用操作系统的功能。 开发者在使用 `syscall` 包时，通常不需要直接关注这个文件的内容，Go 的构建工具会处理平台相关的细节。理解这个文件的作用有助于更深入地理解 Go 的底层运作机制以及系统编程的概念。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_openbsd_mips64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -210,9 +210,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-          = 0x8
+### 源代码
+```go
+= 0x8
 	TIOCFLAG_PPS                      = 0x10
 	TIOCFLAG_SOFTCAR                  = 0x1
 	TIOCFLUSH                         = 0x80047410
@@ -595,10 +597,4 @@ var signalList = [...]struct {
 	{32, "SIGTHR", "thread AST"},
 	{81920, "SIGSTKSZ", "unknown signal"},
 }
-
-"""
-
-
-
-
 ```

@@ -152,7 +152,7 @@ While the functions in this snippet are implemented in C++, they directly suppor
 
 In summary, this part of `crypto_utils.cc` provides essential low-level cryptographic utility functions crucial for establishing secure QUIC connections in Chromium. While not directly manipulated by JavaScript, these functions underpin the security and functionality of web browsing.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/crypto_utils.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 bug_12871_3,
               reason < 0 || reason > ssl_early_data_reason_max_value)
       << "Unknown ssl_early_data_reason_t " << reason;
@@ -243,8 +245,4 @@ std::string CryptoUtils::GetSSLErrorStack() {
 }
 
 }  // namespace quic
-
-"""
-
-
 ```

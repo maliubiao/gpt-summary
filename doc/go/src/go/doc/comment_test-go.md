@@ -214,7 +214,7 @@ crand.Reader are things. G.M1 and G.M2 are generic methods.
 
 总而言之，这段测试代码验证了 `go/doc` 包中解析和渲染 Go 代码注释中标识符引用的核心功能，确保 `go doc` 等工具能够正确地将注释转换为不同格式的文档，方便开发者查阅和理解代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/doc/comment_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -222,8 +222,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -291,9 +293,4 @@ func TestComment(t *testing.T) {
 		t.Errorf("%s", diff.Diff("Synopsis", []byte(b), "want", []byte(wantOldText)))
 	}
 }
-
-"""
-
-
-
 ```

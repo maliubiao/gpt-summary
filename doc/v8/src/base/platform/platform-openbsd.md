@@ -104,11 +104,13 @@ console.log("Garbage collection might have happened.");
 
 总结来说，`platform-openbsd.cc` 文件提供了 V8 引擎在 OpenBSD 和 NetBSD 平台上的底层支持，涵盖了时间区域、共享库信息获取和 GC 相关的辅助功能。 其中 `SignalCodeMovingGC` 虽然不能直接从 JavaScript 调用，但它反映了 V8 引擎内部对性能监控和优化的关注，这最终会影响 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-openbsd.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ std::optional<OS::MemoryRange> OS::GetFirstFreeMemoryRangeWithin(
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

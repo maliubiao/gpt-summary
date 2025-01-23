@@ -173,15 +173,17 @@ This detailed analysis covers the various aspects requested in the prompt. It mo
 
 总而言之，`net/spdy/spdy_http_utils_perftest.cc` 虽然是性能测试文件，但它测试的核心功能是浏览器网络通信的关键环节，直接影响着 JavaScript 发起的网络请求和接收到的响应的处理。理解其功能有助于调试与 HTTP/2 相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_http_utils_perftest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -306,7 +308,4 @@ BENCHMARK(BM_CreateSpdyHeadersFromHttpRequest)->MinWarmUpTime(1.0);
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

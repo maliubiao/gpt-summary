@@ -109,7 +109,7 @@ By considering the file path and the empty `main`, the interpretation shifts fro
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/test cases/native/4 tryrun/no_compile.c` 虽然代码简单，但它在 Frida 的构建过程中扮演着重要的角色，用于测试构建系统处理不应编译的情况的能力，从而确保最终构建出的 Frida 工具的质量和可靠性。理解这类测试用例对于理解大型软件项目的构建流程和质量保证机制非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/native/4 tryrun/no_compile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,10 +117,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
-
-"""
-
 ```

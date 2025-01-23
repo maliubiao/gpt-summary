@@ -76,11 +76,13 @@ globalThis.jsAlert = (message) => {
 
 `WasmCodePointerTable` 是 V8 引擎中一个核心的基础设施，它负责管理 WebAssembly 代码以及与之交互的本地函数的内存地址。它使得 JavaScript 能够无缝地与 WebAssembly 代码进行交互，是 WebAssembly 在 V8 中高效执行的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-code-pointer-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -227,7 +229,4 @@ void WasmCodePointerTable::FreeNativeFunctionHandles() {
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

@@ -166,7 +166,7 @@ Let's break down the thought process for analyzing this Frida Gum example.
 
 总而言之，这段代码是一个简洁但功能完善的 Frida Gum 示例，展示了如何在 Windows 平台上进行函数拦截，对于学习 Frida 的基本原理和动态逆向技术非常有帮助。通过分析这段代码，我们可以了解 Frida 如何在运行时修改程序行为，以及如何利用这些能力进行安全分析、调试和逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/devkit-assets/frida-gum-example-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * To build, set up your Release configuration like this:
  *
@@ -308,7 +310,4 @@ static void
 example_listener_init (ExampleListener * self)
 {
 }
-
-"""
-
 ```

@@ -123,15 +123,17 @@ func main() {
 
 总结来说，`go/test/fixedbugs/issue4614.go` 这个代码片段是一个用于验证 Go 编译器在处理特定类型的切片操作时不会出现错误的测试用例。它主要关注对 `nil` 切片进行切片操作以及 `unsafe.Pointer` 和 `uintptr` 之间的转换。它提醒开发者在处理切片时，特别是 `nil` 切片，要格外小心，避免直接进行索引等可能引发错误的操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4614.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compile
 
 // Copyright 2012 The Go Authors. All rights reserved.
@@ -152,9 +154,4 @@ var _ = []int(nil)[n:]
 
 var _ = uintptr(unsafe.Pointer(nil))
 var _ = unsafe.Pointer(uintptr(0))
-
-"""
-
-
-
 ```

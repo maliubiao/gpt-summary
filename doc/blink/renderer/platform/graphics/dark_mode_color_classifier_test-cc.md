@@ -135,14 +135,16 @@ This systematic approach allows for a comprehensive understanding of the test fi
 
 总而言之，`dark_mode_color_classifier_test.cc` 这个文件通过一系列精心设计的测试用例，确保了 `DarkModeColorClassifier` 能够按照预期工作，正确判断哪些颜色需要在暗黑模式下进行调整，从而提升用户在暗黑模式下的浏览体验。它与网页技术紧密相关，直接影响着最终的页面渲染结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/dark_mode_color_classifier_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -219,7 +221,4 @@ TEST(DarkModeColorClassifierTest, ApplyFilterToLightBackgroundElementsOnly) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

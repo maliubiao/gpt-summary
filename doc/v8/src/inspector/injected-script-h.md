@@ -236,15 +236,17 @@ My thought process to analyze the `injected-script.h` file goes like this:
 
 总之，`v8/src/inspector/injected-script.h` 定义的 `InjectedScript` 类是 V8 Inspector 的核心组成部分，它负责在 JavaScript 运行时环境和 Inspector 后端之间建立通信桥梁，提供代码执行、对象检查、属性获取等关键功能，并能帮助开发者识别和理解各种 JavaScript 编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/injected-script.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/injected-script.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -560,7 +562,4 @@ class PromiseHandlerTracker {
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_INJECTED_SCRIPT_H_
-
-"""
-
 ```

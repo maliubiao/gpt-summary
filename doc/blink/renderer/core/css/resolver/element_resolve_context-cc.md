@@ -156,15 +156,17 @@ By following these steps, I can break down the C++ code, understand its purpose 
 
 总而言之，`element_resolve_context.cc` 中定义的 `ElementResolveContext` 类是 Blink 渲染引擎中一个核心的辅助类，它为 CSS 样式的解析和匹配提供了必要的元素上下文信息，确保浏览器能够正确地将 CSS 样式应用到 HTML 元素上。理解它的功能对于深入了解浏览器渲染机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/element_resolve_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  * Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011 Apple Inc.
@@ -273,7 +275,4 @@ ElementResolveContext::ElementResolveContext(Element& element)
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -175,14 +175,16 @@ This systematic approach, starting with the big picture and gradually drilling d
 
 总而言之，`layout_svg_viewport_container.cc` 在 Blink 渲染引擎中扮演着至关重要的角色，它负责管理 SVG 文档的根元素，确定其可视区域，并处理与 HTML 属性、CSS 样式以及 JavaScript 动态修改相关的布局逻辑。理解它的功能有助于开发者更好地理解 SVG 的渲染机制，并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/layout_svg_viewport_container.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2007 Rob Buis <buis@kde.org>
@@ -297,7 +299,4 @@ void LayoutSVGViewportContainer::StyleDidChange(
 }
 
 }  // namespace blink
-
-"""
-
 ```

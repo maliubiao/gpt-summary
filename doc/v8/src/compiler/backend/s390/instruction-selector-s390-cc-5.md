@@ -150,7 +150,7 @@ VADD rC, rA, rB  // 将寄存器 rA 和 rB 中的 64 位整数向量相加，结
 
 总而言之，`v8/src/compiler/backend/s390/instruction-selector-s390.cc` 在 V8 编译流程中扮演着至关重要的角色，它负责将高级的、平台无关的 JavaScript 或 WebAssembly 代码转化为可以在 s390 架构上高效执行的机器指令。 特别是，它对 SIMD 指令的支持对于提升现代 JavaScript 应用的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/instruction-selector-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/s390/instruction-selector-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -158,9 +158,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
-  V(I64x2BitMask)            \
+### 源代码
+```cpp
+V(I64x2BitMask)            \
   V(I64x2Splat)              \
   V(I64x2AllTrue)            \
   V(I32x4Neg)                \
@@ -835,8 +837,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

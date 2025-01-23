@@ -139,15 +139,17 @@ By following these steps, I can systematically analyze the code and generate a c
 
 第二部分代码主要集中在实现 **判断给定字符和变体选择符是否构成不同类型的 Unicode 变体序列** 的功能。它通过查阅预定义的列表、检查字符属性和变体选择符的范围等方式，为 Blink 渲染引擎提供了识别和处理这些特殊字符序列的能力，从而确保网页能够正确地呈现包含复杂字符的文本内容。 该部分代码是 Blink 引擎正确渲染国际化文本，特别是包含 Emoji 和表意文字变体的文本的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/character_variation_sequences.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 43\U0000FE00}][{\U00009F8D\U0000FE00}])"
     R"([{\U00009F8E\U0000FE00}][{\U00009F9C\U0000FE00}][{\U00009F9C\U0000FE01}])"
     R"([{\U00009F9C\U0000FE02}][{\U000020122\U0000FE00}][{\U00002051C\U0000FE00}])"
@@ -233,8 +235,4 @@ bool Character::IsVariationSequence(UChar32 ch, UChar32 vs) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

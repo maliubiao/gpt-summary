@@ -158,15 +158,17 @@ func main() {
 
 总而言之，这段代码的核心职责是将指令的内部表示转换为符合 Intel 语法规范的字符串，它依赖于正确填充的 `Inst` 结构体和可选的符号名查找功能。理解 `Inst` 结构体的各个字段以及 Intel 汇编语法的规则是正确使用这段代码的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/x86/x86asm/intel.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors.  All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -727,9 +729,4 @@ var intelReg = [...]string{
 	R14L: "r14d",
 	R15L: "r15d",
 }
-
-"""
-
-
-
 ```

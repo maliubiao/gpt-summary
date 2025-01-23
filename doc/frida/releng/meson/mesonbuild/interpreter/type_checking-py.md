@@ -202,7 +202,7 @@ custom_target(
 
 `type_checking.py` is a foundational part of Frida's build system, powered by Meson. It ensures the correctness and consistency of build definitions by rigorously validating the keyword arguments used in Meson's build functions. This plays a vital role in preventing common errors, leading to more reliable and predictable builds of Frida, the dynamic instrumentation tool used for reverse engineering and security analysis. While it doesn't directly perform reverse engineering, its correct functioning is essential for building the tools that do.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/interpreter/type_checking.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -210,8 +210,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2021 Intel Corporation
 
@@ -1065,7 +1067,4 @@ PKGCONFIG_DEFINE_KW: KwargInfo = KwargInfo(
     default=[],
     convertor=_pkgconfig_define_convertor,
 )
-
-"""
-
 ```

@@ -160,7 +160,7 @@ console.log("文件描述符 3 是否被伪装:", Cloak.hasFileDescriptor(3)); /
 
 总而言之，`gumv8cloak.cpp` 文件是 Frida 中一个强大而重要的模块的桥梁，它使得用户能够通过 JavaScript 来控制进程的可见性，为高级逆向分析和动态插桩提供了强大的工具。理解其功能和背后的原理，对于有效地使用 Frida 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8cloak.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2024 Francesco Tamagni <mrmacete@protonmail.ch>
  *
@@ -371,7 +373,4 @@ GUMJS_DEFINE_FUNCTION (gumjs_cloak_has_file_descriptor)
 
   info.GetReturnValue ().Set ((bool) gum_cloak_has_file_descriptor (fd));
 }
-
-"""
-
 ```

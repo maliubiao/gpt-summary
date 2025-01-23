@@ -186,7 +186,7 @@ fetch('https://www.example.com/api/data')
 
 这段代码是 `net/url_request/url_request_unittest.cc` 的一部分，专门用于测试 `URLRequest` 与 `NetworkDelegate` 之间的各种交互场景。它验证了 `NetworkDelegate` 如何影响请求的生命周期，包括阻止、取消、重定向请求，处理身份验证，以及处理各种网络错误和特殊情况（例如，等待回调时请求被取消，处理压缩内容等）。这些测试对于确保 Chromium 网络栈的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ks that the network delegate
 // registers the error.
 TEST_F(URLRequestTestHTTP, NetworkDelegateTunnelConnectionFailed) {
@@ -1024,8 +1026,4 @@ TEST_F(URLRequestTestHTTP, GetZippedTest) {
       }
     } else {
       EXPECT_EQ(ERR_CONTENT_LENGTH_MISMATCH, d.request_status())
-     
-"""
-
-
 ```

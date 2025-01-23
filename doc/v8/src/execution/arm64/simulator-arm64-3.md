@@ -88,13 +88,15 @@ store_vector(arr.buffer, 16, resultVector2);
 
 这部分 `simulator-arm64.cc` 代码专注于模拟 ARM64 架构中与向量计算 (NEON)、栈管理、调试输出以及多线程同步相关的指令和机制。这些模拟对于 V8 引擎在非 ARM64 平台上进行开发、测试和调试至关重要，并直接影响到 JavaScript 代码在 ARM64 平台上的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- break;
+### 源代码
+```
+break;
     case NEON_SLI:
       sli(vf, rd, rn, left_shift);
       break;
@@ -654,8 +656,4 @@ V8_EXPORT_PRIVATE extern bool _v8_internal_Simulator_ExecDebugCommand(
 #undef BRACKETS
 
 #endif  // USE_SIMULATOR
-
-"""
-
-
 ```

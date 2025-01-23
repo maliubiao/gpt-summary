@@ -162,15 +162,17 @@ This section of the `HTMLTokenizer::RunStateMachine` function is primarily respo
 
 In summary, this part of the `HTMLTokenizer::RunStateMachine` function is crucial for dissecting the internal structure of HTML tags by parsing attributes and handling special declarations like comments, DOCTYPE, and CDATA sections. It meticulously steps through the input, character by character, guided by a state machine to correctly identify and interpret these HTML elements. This process is fundamental to building the Document Object Model (DOM) and enabling the browser to understand and render web pages.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_tokenizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 feredCharacterToken();
       }
       if (IsTokenizerWhitespace(cc)) {
@@ -1103,7 +1105,4 @@ bool HTMLTokenizer::EmitData(SegmentedString& source, UChar cc) {
         token_.AppendToCharacter(cc);
         cc = source.AdvancePastNonNewline();
         break
-"""
-
-
 ```

@@ -168,7 +168,7 @@ input := &DirectChardata{Chardata: "hi"}
 
 通过这些测试用例，开发者可以确保 `encoding/xml` 包能够正确地处理 XML 文档中的文本内容和内部结构，并且在遇到不支持的情况时能够给出合理的错误提示。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/xml/marshal_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -177,8 +177,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 data{Chardata: string("hi")},
 		UnmarshalError: "cannot unmarshal into interface {}",
 	},
@@ -1335,9 +1337,4 @@ type LayerOne struct {
 
 type LayerTwo struct {
 	ValueTwo *int `xml:"value_two,attr,om
-"""
-
-
-
-
 ```

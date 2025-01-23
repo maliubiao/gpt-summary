@@ -162,7 +162,7 @@ By following this thought process, which starts with understanding the code and 
 
 作为调试线索，这个文件的存在可以帮助理解 Frida 如何处理不同 C++ 标准下的标准库函数，以及在运行时进行修改或拦截的能力。如果某个 Frida 脚本在拦截 `std::cout` 时遇到问题，开发者可能会查看这个测试用例，了解 Frida 团队是如何进行相关测试的，从而找到解决问题的方法。例如，他们可能会查看 Frida 的构建系统是如何编译这个测试程序的，以及 Frida 的测试脚本是如何与这个程序交互的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/6 std override/prog98.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,15 +170,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int main(int argc, char **argv) {
     std::cout << "I am a c++98 test program.\n";
     return 0;
 }
-
-"""
-
 ```

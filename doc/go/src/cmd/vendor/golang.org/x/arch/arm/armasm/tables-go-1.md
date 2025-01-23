@@ -133,7 +133,7 @@ func main() {
 
 这段代码是 `go/src/cmd/vendor/golang.org/x/arch/arm/armasm/tables.go` 文件的一部分，它定义了一个 Go 语言的 `map`，用于存储 ARM 汇编指令的内部表示（很可能是 `obj.As` 类型的常量）到其对应的字符串表示的映射。这个 `map` 包含了大量的 Load 和一些其他类型的 ARM 指令，以及它们的带有条件码的版本。其主要功能是为 ARM 汇编器或相关工具提供一个快速查找指令字符串表示的机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/arm/armasm/tables.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -141,9 +141,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
-          "LDRD.CC",
+### 源代码
+```go
+"LDRD.CC",
 	LDRD_MI:           "LDRD.MI",
 	LDRD_PL:           "LDRD.PL",
 	LDRD_VS:           "LDRD.VS",
@@ -2202,10 +2204,5 @@ Prompt:
 	STRH_VC:           "STRH.VC",
 	STRH_HI:           "STRH.HI",
 	STRH_LS:           "STRH.LS",
-	STRH_GE:       
-"""
-
-
-
-
+	STRH_GE:
 ```

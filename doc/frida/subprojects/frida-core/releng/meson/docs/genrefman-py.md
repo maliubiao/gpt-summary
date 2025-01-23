@@ -131,7 +131,7 @@ By following these steps, we can construct a comprehensive answer that addresses
 
 总而言之，`genrefman.py` 虽然代码简洁，但在 Frida 项目中扮演着重要的角色，它是生成用户理解和使用 Frida 的关键文档的入口。它的背后连接着 Frida 强大的逆向能力，以及对底层操作系统和平台特性的深刻理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/docs/genrefman.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
@@ -156,7 +158,4 @@ from refman.main import main
 
 if __name__ == '__main__':
     raise SystemExit(main())
-
-"""
-
 ```

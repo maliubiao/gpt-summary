@@ -115,14 +115,16 @@ Response: Let's break down the thought process for analyzing the `worker_pool.cc
 
 `worker_pool.cc` 是 Blink 渲染引擎中一个基础的线程管理工具，它允许将任务提交到后台线程执行，提高了渲染引擎的并发性和响应速度。 虽然它不直接操作 JavaScript, HTML 或 CSS，但它为处理与这些技术相关的后台任务提供了基础设施支持。 理解其功能和正确使用方式对于开发高性能的 Web 应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/worker_pool.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ scoped_refptr<base::SequencedTaskRunner> CreateSequencedTaskRunner(
 }  // namespace worker_pool
 
 }  // namespace blink
-
-"""
-
 ```

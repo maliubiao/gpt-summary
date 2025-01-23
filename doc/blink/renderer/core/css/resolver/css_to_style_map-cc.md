@@ -100,15 +100,17 @@ Let's break down the thought process for analyzing the `css_to_style_map.cc` fil
 
 总而言之，`blink/renderer/core/css/resolver/css_to_style_map.cc` 是 Blink 渲染引擎中一个至关重要的组件，它负责将抽象的 CSS 属性值转化为引擎可以理解和使用的内部样式表示，是实现网页样式效果的基础。 理解其功能有助于我们更好地理解浏览器的工作原理，并能更有效地调试 CSS 相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/css_to_style_map.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 2004-2005 Allan Sandfeld Jensen (kde@carewolf.com)
@@ -903,7 +905,4 @@ void CSSToStyleMap::MapNinePieceImageRepeat(StyleResolverState&,
 }
 
 }  // namespace blink
-
-"""
-
 ```

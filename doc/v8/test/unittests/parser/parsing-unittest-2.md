@@ -208,12 +208,15 @@ function testDoWhileLoop(count) {
 
 总而言之，这部分 C++ 代码是 V8 引擎解析器功能的核心测试，确保了引擎能够正确理解和处理各种复杂的 JavaScript 语法，尤其是在变量赋值和控制流方面。 这些测试直接影响了 JavaScript 代码在 V8 引擎中的执行方式和性能。
 
-Prompt: ```
+### 提示词
+```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
- eval(''); }", true, false, false},
+### 源代码
+```
+eval(''); }", true, false, false},
       {"function x() { eval(''); }", true, false, false},
       {"(function(x) { eval(''); })", true, false, false},
   };
@@ -1772,7 +1775,4 @@ TEST_F(ParsingTest, ImportAttributesParsingErrors) {
 
     i::DirectHandle<i::Script> script = factory->NewScript(source);
     i::UnoptimizedCompileState c
-"""
-
-
 ```

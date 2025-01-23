@@ -161,7 +161,7 @@ console.log(globalObj.someVariable); // 可能会出错
 
 作为测试套件的第 12 部分，这个文件主要关注 **V8 JavaScript 引擎 C++ API 中与上下文管理、安全控制以及基础对象操作相关的特性**。它深入测试了跨上下文访问的限制、如何通过安全令牌进行控制、以及在上下文生命周期变化（例如分离和重新附加）时 API 的行为。此外，它还涵盖了属性访问的细节，包括自定义 getter/setter 和 `Object.getOwnPropertyNames` 等反射 API。总的来说，这个文件旨在确保 V8 引擎在处理多上下文和安全敏感的操作时能够正确且可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第12部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 )
               .FromJust());
   }
@@ -1113,7 +1115,4 @@ THREADED_TEST(ShadowObject) {
   Local<Value> o = t->GetFunction(context.local())
                        .ToLocalChecked()
                        ->NewInst
-"""
-
-
 ```

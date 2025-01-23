@@ -164,7 +164,7 @@ Frida 脚本执行过程中会产生一个错误或异常。这个错误可能�
 
 尽管 `prog.c` 本身非常简单，但它作为 Frida 测试用例的一部分，揭示了 Frida 在处理特定场景下的行为，特别是当用户尝试进行不合法的函数调用时。这个测试用例帮助 Frida 的开发者确保工具的健壮性和错误处理能力，同时也提醒用户在使用 Frida 进行动态插桩时需要注意目标函数的签名和参数传递方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/39 kwarg assign/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,12 +172,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

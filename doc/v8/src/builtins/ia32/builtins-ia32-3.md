@@ -150,12 +150,14 @@ By combining the information from this part with the likely content of the previ
 
 总而言之，这部分代码定义了 V8 引擎在 IA32 架构上处理代码优化和执行模式切换的关键低级函数，这些过程对于 JavaScript 代码的性能至关重要，但对开发者来说是透明的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ia32/builtins-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 bel pop_loop;
   __ bind(&pop_loop);
   __ pop(Operand(edx, 0));
@@ -463,8 +465,4 @@ void Builtins::Generate_RestartFrameTrampoline(MacroAssembler* masm) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_IA32
-
-"""
-
-
 ```

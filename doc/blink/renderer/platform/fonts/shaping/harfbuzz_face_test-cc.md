@@ -122,14 +122,16 @@ By following these steps, we can systematically analyze the C++ test file and ex
 
 总结来说，`harfbuzz_face_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎能够正确地处理各种字体和字符，特别是涉及到 Unicode 变体选择符的情况，这直接影响了网页文本的正确显示，包括现代 Web 中常见的表情符号。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/harfbuzz_face_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -424,7 +426,4 @@ TEST(HarfBuzzFaceTest, HarfBuzzGetNominalGlyph_TestSystemFallbackEmojiVS) {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

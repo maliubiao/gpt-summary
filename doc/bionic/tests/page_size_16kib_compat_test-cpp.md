@@ -249,7 +249,7 @@ Interceptor.attach(Module.findExportByName(null, "mmap"), {
 
 请注意，hook 动态链接器的内部函数可能需要根据 Android 版本和具体的实现细节进行调整。 上面的 `load_library_internal_ptr` 的函数签名只是一个例子，实际的函数名和签名可能会有所不同。 你可以使用反汇编工具（如 IDA Pro 或 Ghidra）来确定目标函数的准确名称和签名。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/page_size_16kib_compat_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -260,8 +260,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -336,7 +338,4 @@ TEST(PageSize16KiBCompatTest, ElfAlignment4KiB_LoadElf_perAppOption) {
   android_set_16kb_appcompat_mode(false);
 #endif
 }
-
-"""
-
 ```

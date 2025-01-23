@@ -159,7 +159,7 @@ func TestLFStackPushPop(t *testing.T) {
 
 总而言之，`go/src/runtime/export_test.go` 是 `runtime` 包为了方便内部测试而设计的一个特殊文件，它通过暴露内部的实现细节，允许测试代码能够更深入、更细致地验证 `runtime` 系统的各种核心功能和机制的正确性。它本身不是一个功能实现，而是测试的基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/export_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,8 +168,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1454,9 +1456,4 @@ func (th *TimeHistogram) Count(bucket, subBucket int) (uint64, bool) {
 
 func (th *TimeHistogram) Record(duration int64) {
 	(*timeHistog
-"""
-
-
-
-
 ```

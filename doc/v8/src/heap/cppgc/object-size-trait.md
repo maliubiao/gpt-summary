@@ -96,11 +96,13 @@ console.log(str.length); // 输出 21
 
 总而言之，`v8/src/heap/cppgc/object-size-trait.cc` 定义了 V8 引擎中用于获取由 cppgc 管理的对象的尺寸的底层机制，这对于理解 V8 如何管理 JavaScript 对象的内存至关重要。它确保了 V8 能够有效地跟踪和回收不再使用的 JavaScript 对象占用的内存。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/object-size-trait.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -135,7 +137,4 @@ size_t BaseObjectSizeTrait::GetObjectSizeForGarbageCollectedMixin(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

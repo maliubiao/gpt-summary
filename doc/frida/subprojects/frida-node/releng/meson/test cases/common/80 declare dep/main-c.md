@@ -189,7 +189,7 @@ Error in func2.
 
 因此，`main.c` 文件作为测试用例，在开发和调试过程中扮演着重要的角色，帮助开发者验证代码的正确性，并在出现问题时提供调试线索。开发者通过查看这个测试用例的源代码，可以清晰地了解被测试的函数的预期行为，从而更快地定位错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/80 declare dep/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<entity.h>
 #include<stdio.h>
 
@@ -217,7 +219,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

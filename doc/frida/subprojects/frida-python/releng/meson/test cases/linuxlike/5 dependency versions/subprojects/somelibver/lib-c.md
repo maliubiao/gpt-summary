@@ -208,7 +208,7 @@ somelibver_minor_version (void)
 
 总而言之，`lib.c` 是 Frida 用于测试其依赖版本处理能力的一个简单的模拟库。它的存在是为了创建一个可控的环境，以便验证 Frida 在面对不同版本的依赖库时是否能够正常工作。对于逆向工程师来说，理解这种依赖管理机制对于有效地使用 Frida 进行动态分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/linuxlike/5 dependency versions/subprojects/somelibver/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -216,9 +216,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

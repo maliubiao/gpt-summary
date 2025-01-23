@@ -230,15 +230,17 @@ func main() {
 
 `sccp.go` 文件实现了 Go 编译器中的稀疏有条件常量传播优化。它通过三级格和工作列表迭代地分析程序的控制流和数据流，识别并传播常量值，最终实现常量折叠和部分死代码消除，提高程序的执行效率。用户无需直接操作 SCCP，但理解其原理有助于编写更高效的 Go 代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/sccp.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -824,9 +826,4 @@ func (t *worklist) replaceConst() (int, int) {
 	}
 	return constCnt, rewireCnt
 }
-
-"""
-
-
-
 ```

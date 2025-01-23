@@ -179,15 +179,17 @@ class MyHpackListener : public HpackWholeEntryListener {
 
 因此，当您在调试网络请求，特别是涉及 HTTP/2 连接时，如果发现头部信息解析错误或与预期不符，那么 `hpack_whole_entry_listener.cc` 中定义的监听器以及 `HpackDecoder` 的行为就可能是排查问题的关键点。可以通过设置断点或者添加日志输出来跟踪解码过程，查看哪些回调函数被调用，以及传递的参数是什么，从而帮助理解 HPACK 解码的细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/decoder/hpack_whole_entry_listener.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -219,7 +221,4 @@ HpackWholeEntryNoOpListener* HpackWholeEntryNoOpListener::NoOpListener() {
 }
 
 }  // namespace http2
-
-"""
-
 ```

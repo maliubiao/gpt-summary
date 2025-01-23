@@ -136,11 +136,13 @@ call console_log_address  // 这里会涉及到重定位信息
 
 `assembler.cc` 是 V8 引擎中至关重要的组成部分，它提供了生成底层机器码的能力，使得 JavaScript 代码能够在各种不同的硬件平台上高效地执行。它连接了高级的 JavaScript 代码和底层的处理器指令，是 V8 引擎实现高性能的关键技术之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -481,7 +483,4 @@ void Assembler::CodeComment::Close() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

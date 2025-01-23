@@ -188,7 +188,7 @@ function foo(arr, index, value) {
 
 总而言之，`v8/src/maglev/maglev-graph-builder.cc` 的这段代码是 Maglev 编译器核心组件之一，负责将高层次的 JavaScript 操作转化为更低层次、更易于优化的图结构。它是实现高性能 JavaScript 执行的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -196,8 +196,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 de<StoreFixedArrayElementNoWriteBarrier>({elements, index, value});
   } else {
     AddNewNode<StoreFixedArrayElementWithWriteBarrier>(
@@ -990,7 +992,4 @@ bool CheckConditionIn32(int32_t lhs, int32_t rhs, AssertCondition condition) {
       return lhs < rhs;
     case AssertCondition::kLessThanEqual:
       return lhs <=
-"""
-
-
 ```

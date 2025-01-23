@@ -101,7 +101,7 @@ By following these steps, I can build a comprehensive explanation that covers th
 
 总而言之，`visible_units_word_test.cc` 是 Blink 引擎中至关重要的测试文件，它确保了浏览器在处理文本编辑时的核心功能——按单词移动光标和定位单词中间——在各种复杂的 HTML 和 CSS 场景下都能正确工作，从而为用户提供流畅和一致的编辑体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/visible_units_word_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -109,9 +109,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-         DoPreviousWord("<c><e>abc |def ghi</e></c>"));
+### 源代码
+```cpp
+DoPreviousWord("<c><e>abc |def ghi</e></c>"));
   // To "|def"
   EXPECT_EQ("<c><e>abc |def ghi</e></c>",
             DoPreviousWord("<c><e>abc d|ef ghi</e></c>"));
@@ -243,8 +245,4 @@ TEST_F(VisibleUnitsWordTest, MiddleOfWord) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

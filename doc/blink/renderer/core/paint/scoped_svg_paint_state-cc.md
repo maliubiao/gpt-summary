@@ -158,15 +158,17 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`ScopedSVGPaintState.cc` 是 Blink 渲染引擎中一个关键的文件，它负责管理和应用 SVG 元素特有的绘画效果，确保了浏览器能够正确地呈现带有 `clip-path`, `mask` 和 `filter` 等 CSS 属性的 SVG 内容。 了解其功能有助于理解浏览器如何渲染网页，并为调试相关的渲染问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/scoped_svg_paint_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008 Rob Buis <buis@kde.org>
  * Copyright (C) 2007 Nikolas Zimmermann <zimmermann@kde.org>
@@ -277,7 +279,4 @@ void ScopedSVGPaintState::ApplyPaintPropertyState(
 }
 
 }  // namespace blink
-
-"""
-
 ```

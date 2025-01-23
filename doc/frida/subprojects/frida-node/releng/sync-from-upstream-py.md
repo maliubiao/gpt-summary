@@ -165,7 +165,7 @@ Frida 本身就是一个动态 instrumentation 工具，广泛应用于软件逆
 
 总而言之，`sync-from-upstream.py` 是 Frida 项目中一个用于管理本地仓库与上游仓库同步的重要脚本，它涉及到 Git 操作、文件系统操作，并且其同步的内容与逆向工程、二进制底层知识、操作系统原理等密切相关。理解其功能和运行机制，对于 Frida 的开发者和使用者来说都是非常有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/sync-from-upstream.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 from pathlib import Path
 import re
@@ -360,7 +362,4 @@ class UnknownUpstreamError(Exception):
 
 if __name__ == '__main__':
     sync(os.path.abspath(sys.argv[1]))
-
-"""
-
 ```

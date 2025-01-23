@@ -142,15 +142,17 @@ try {
 
 `v8/src/sandbox/hardware-support.cc` 是 V8 引擎中一个关键的 C++ 文件，它利用硬件特性来实现更强大的沙箱安全性。它允许对内存区域进行细粒度的权限控制，从而帮助防御各种常见的编程错误和安全漏洞。它不是 Torque 源代码，并且虽然用户不会直接在 JavaScript 中与之交互，但它在幕后支持着 V8 安全地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/hardware-support.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/hardware-support.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ SandboxHardwareSupport::MaybeBlockAccess() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -137,7 +137,7 @@ By following these steps, and continuously refining the understanding of the cod
 
 因此，用户通常不会直接操作 `meson_exe.py`，而是通过 Meson 构建系统间接地使用它。当构建过程中出现问题，查看 `meson_exe.py` 的代码可以帮助理解 Meson 是如何执行构建过程中需要的外部程序的，从而帮助定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/scripts/meson_exe.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2016 The Meson development team
 
@@ -262,7 +264,4 @@ def run(args: T.List[str]) -> int:
 
 if __name__ == '__main__':
     sys.exit(run(sys.argv[1:]))
-
-"""
-
 ```

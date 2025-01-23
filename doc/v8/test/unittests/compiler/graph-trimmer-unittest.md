@@ -103,11 +103,13 @@ function example(x) {
 
 `graph-trimmer-unittest.cc` 这个文件测试了 V8 编译器中 `GraphTrimmer` 类的功能，该类的作用是优化编译器生成的中间表示图，移除不再需要的 "死" 节点。 这项功能对于 JavaScript 代码的编译优化至关重要，可以减少内存占用，简化图结构，并潜在地提升编译性能。 就像上面 JavaScript 例子中展示的那样，`GraphTrimmer` 能够清理掉那些永远不会执行或者结果不会被使用的代码所对应的图节点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/graph-trimmer-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ TEST_F(GraphTrimmerTest, Roots) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

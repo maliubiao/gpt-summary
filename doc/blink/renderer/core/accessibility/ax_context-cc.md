@@ -154,14 +154,16 @@ document->RemoveAXContext(context);
 
 总而言之，`AXContext` 是 Blink 渲染引擎中一个关键的辅助功能管理组件，它将文档、辅助功能模式和辅助功能信息缓存 (`AXObjectCache`) 连接在一起，为辅助技术理解和利用 Web 内容提供了基础。它虽然不直接操作 HTML, CSS, JavaScript，但其功能是让这些技术能够以可访问的方式呈现给用户至关重要的一环。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/accessibility/ax_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ void AXContext::SetAXMode(const ui::AXMode& mode) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

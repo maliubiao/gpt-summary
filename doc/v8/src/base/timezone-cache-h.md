@@ -141,15 +141,17 @@ console.log(formatter.format(now)); // 输出洛杉矶时区的日期和时间
 
 总而言之，`v8/src/base/timezone-cache.h` 定义了 V8 引擎中处理时区信息的关键接口，它为 JavaScript 的日期和时间功能提供了基础支持，并且在处理国际化需求时至关重要。开发者应该理解时区的重要性，并正确使用 JavaScript 提供的 API 来避免与时区相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/timezone-cache.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/timezone-cache.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ class TimezoneCache {
 }  // namespace v8
 
 #endif  // V8_BASE_TIMEZONE_CACHE_H_
-
-"""
-
 ```

@@ -215,15 +215,17 @@ await wt.close();
 
 通过逐步跟踪代码执行流程，开发者可以了解客户端的请求是如何被服务器接收和处理的，从而定位问题所在。例如，他们可能会发现 `ProcessRequest` 没有正确解析查询参数，或者 `DeviousBatonSessionVisitor` 的逻辑实现与预期不符。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/tools/web_transport_test_server.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +326,4 @@ int Main(int argc, char** argv) {
 }  // namespace quic
 
 int main(int argc, char** argv) { return quic::Main(argc, argv); }
-
-"""
-
 ```

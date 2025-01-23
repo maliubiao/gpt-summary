@@ -99,13 +99,15 @@ const colors = new Uint8ClampedArray([255, 0, 0, 0, 255, 0]); // RGB 颜色
 
 总而言之，`simulator-logic-arm64.cc` 的这部分代码提供了 V8 引擎在 ARM64 架构上执行浮点和向量运算的基础，使得 JavaScript 能够高效地进行数值计算和数据处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-logic-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-                                                   \
+### 源代码
+```
+\
   LogicVRegister Simulator::FNP(VectorFormat vform, LogicVRegister dst, \
                                 const LogicVRegister& src) {            \
     if (vform == kFormatS) {                                            \
@@ -803,8 +805,4 @@ LogicVRegister Simulator::sdot(VectorFormat vform, LogicVRegister dst,
 }  // namespace v8
 
 #endif  // USE_SIMULATOR
-
-"""
-
-
 ```

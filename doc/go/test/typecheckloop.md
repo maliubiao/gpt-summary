@@ -153,15 +153,17 @@ func main() {
 
 `go/test/typecheckloop.go` 是一个测试用例，用于验证 Go 编译器在类型检查阶段能够正确地检测并报告常量定义中的循环依赖。这确保了常量的值可以在编译时被正确计算，避免了运行时错误。开发者应该避免在常量定义中引入此类循环依赖。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typecheckloop.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -176,9 +178,4 @@ package main
 const A = 1 + B // ERROR "constant definition loop\n.*A uses B\n.*B uses C\n.*C uses A|initialization cycle"
 const B = C - 1 // ERROR "constant definition loop\n.*B uses C\n.*C uses B|initialization cycle"
 const C = A + B + 1
-
-"""
-
-
-
 ```

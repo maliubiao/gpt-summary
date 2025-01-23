@@ -127,15 +127,17 @@ void Pack<WebGLImageConversion::kDataFormatRGB8,
 
 总而言之，这段代码是 Chromium 浏览器 Blink 引擎中负责 WebGL 图像数据转换的关键部分，它确保了各种来源和格式的图像数据能够被正确地加载到 GPU 中，用于 WebGL 的渲染过程。它通过模板实现对多种数据格式和 Alpha 处理方式的支持，并利用 SIMD 指令进行性能优化。用户在使用 WebGL API 时，需要注意数据类型、Alpha 预乘以及纹理格式的匹配，以避免出现错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/webgl_image_conversion.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t8_t source_r =
         static_cast<uint8_t>(static_cast<float>(source[0]) * scale_factor);
     uint8_t source_g =
@@ -1076,7 +1078,4 @@ void Pack<WebGLImageConversion::kDataFormatRGBA8_S,
           int8_t>(const int8_t* source,
                   int8_t* destination,
                   unsigned p
-"""
-
-
 ```

@@ -136,7 +136,7 @@ go run crc32sum.go 文件名.txt
 
 总而言之，这段代码提供了高效的 CRC32 计算功能，但用户需要理解 CRC32 的基本原理和不同的配置选项（如多项式）才能正确使用。在大多数情况下，推荐使用 `crc32.New` 函数来创建哈希计算器，并通过 `Write` 方法写入数据，这样可以避免直接操作底层的表和更新函数，降低出错的可能性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/hash/crc32/crc32_generic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -144,8 +144,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -237,9 +239,4 @@ func slicingUpdate(crc uint32, tab *slicing8Table, p []byte) uint32 {
 	}
 	return simpleUpdate(crc, &tab[0], p)
 }
-
-"""
-
-
-
 ```

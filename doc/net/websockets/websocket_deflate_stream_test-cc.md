@@ -117,7 +117,7 @@ ws.onmessage = (event) => {
 
 总而言之，`websocket_deflate_stream_test.cc` 的主要功能是 **全面测试 `WebSocketDeflateStream` 类的解压缩功能**，确保它能够正确地处理各种合法的和非法的压缩数据，以及在不同的场景下都能按照 WebSocket 协议的规定工作。 它通过使用 Mock 对象隔离依赖，并覆盖了同步和异步的操作，为 `WebSocketDeflateStream` 的稳定性和正确性提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_deflate_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1039,7 +1041,4 @@ TEST_F(WebSocketDeflateStreamTest,
   std::vector<std::unique_ptr<WebSocketFrame>> frames_to_output;
   AppendTo(&frames_to_output,
            WebSock
-"""
-
-
 ```

@@ -121,7 +121,7 @@ Here's a breakdown of the thinking process to analyze the C code and address the
 
 `prog.c` 是一个非常基础的 Windows 程序，其核心功能是加载一个图标资源。它本身不是一个逆向工具，而是作为 Frida 测试套件中的一个测试目标，用于验证 Frida 在处理 Windows 可执行文件资源加载时的能力。逆向工程师可以利用各种静态和动态分析技术来理解它的行为。理解 Windows 平台下的二进制底层知识和 API 调用对于分析这个程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/windows/14 resources with custom target depend_files/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<windows.h>
 
 #define MY_ICON 1
@@ -150,7 +152,4 @@ WinMain(
     ((void)nCmdShow);
     return hIcon ? 0 : 1;
 }
-
-"""
-
 ```

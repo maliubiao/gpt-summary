@@ -119,7 +119,7 @@ Initially, I might have focused too much on the standalone functionality of the 
 
 总而言之，这个简单的 `prog.c` 文件虽然功能单一，但它作为 Frida 测试套件的一部分，帮助验证 Frida 在处理 Windows 应用程序资源方面的功能是否正确。开发人员可能会在调试 Frida 工具时遇到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/windows/12 resources with custom targets/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<windows.h>
 
 #define MY_ICON 1
@@ -148,7 +150,4 @@ WinMain(
     ((void)nCmdShow);
     return hIcon ? 0 : 1;
 }
-
-"""
-
 ```

@@ -123,14 +123,16 @@ By following this systematic process,  you can effectively analyze and understan
 
 总而言之，`media_video_visibility_tracker.cc` 是 Blink 引擎中一个关键的组件，它负责准确地判断 HTML `<video>` 元素在用户视口中的可见性，这对于优化视频播放体验、节省资源以及实现一些基于可见性的功能至关重要。它深入地结合了 HTML 结构、CSS 样式以及 JavaScript 的交互，共同构建了强大的 Web 平台能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/media_video_visibility_tracker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -908,7 +910,4 @@ void MediaVideoVisibilityTracker::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

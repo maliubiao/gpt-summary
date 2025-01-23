@@ -123,7 +123,7 @@ By following these steps, combining code reading with reasoning about the purpos
 
 这部分代码是 Go 运行时系统中生成和管理堆栈跟踪的核心组件，它不仅用于在发生 panic 时打印错误信息，还提供了更细粒度的控制和扩展能力，例如支持 CGO 堆栈跟踪和程序化访问堆栈信息。这对于调试、性能分析以及理解 Go 程序的执行流程至关重要。它与第一部分共同构成了 Go 语言强大的堆栈跟踪机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/traceback.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -132,8 +132,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 We printed the whole stack.
 			return n
 		}
@@ -898,10 +900,4 @@ func cgoContextPCs(ctxt uintptr, buf []uintptr) {
 	}
 	call(cgoTraceback, noescape(unsafe.Pointer(&arg)))
 }
-
-"""
-
-
-
-
 ```

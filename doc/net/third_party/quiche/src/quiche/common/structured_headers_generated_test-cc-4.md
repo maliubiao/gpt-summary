@@ -170,7 +170,7 @@ std::nullopt
 
 作为系列测试文件的最后一部分，这个文件 (`structured_headers_generated_test.cc`) 的主要功能是 **系统地、全面地测试结构化头部解析和序列化的各种场景，确保 Chromium 网络栈能够正确地处理符合和不符合规范的结构化头部字符串**。它通过大量的测试用例覆盖了不同的数据类型、语法规则和边界情况，是保证网络栈稳定性和互操作性的重要组成部分。这些测试用例驱动着结构化头部功能的开发和维护，帮助开发者及时发现和修复潜在的 Bug，并确保 Chromium 能够正确地与遵循结构化头部规范的服务器进行通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/structured_headers_generated_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 er(1), {}}}}}},
      nullptr},
     {"0x76 in dictionary key",
@@ -608,8 +610,4 @@ TEST(StructuredHeaderGeneratedTest, SerializeDictionary) {
 
 }  // namespace structured_headers
 }  // namespace quiche
-
-"""
-
-
 ```

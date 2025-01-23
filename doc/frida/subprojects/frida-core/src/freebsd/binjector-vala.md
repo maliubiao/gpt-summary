@@ -124,7 +124,7 @@ inject_library_file(1234, "/path/to/library.so", "entrypoint_function", "data", 
 ### 总结
 
 `binjector.vala` 文件实现了 Frida 在 FreeBSD 系统上的核心注入功能，涉及进程注入、线程管理、符号解析等底层操作。通过 LLDB 调试工具，用户可以复刻和调试这些功能，排查注入过程中可能遇到的问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/freebsd/binjector.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class Binjector : Object, Injector {
 		public signal void output (uint pid, int fd, uint8[] data);
@@ -871,7 +873,4 @@ namespace Frida {
 		}
 	}
 }
-
-"""
-
 ```

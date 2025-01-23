@@ -156,7 +156,7 @@ if (Process.platform === 'linux') {
 
 作为调试线索，这个文件本身的代码非常简单，它主要是作为一个占位符和测试目标，验证 Frida 的构建系统能否正确处理新添加的、包含简单 C 代码的子项目。如果构建过程中关于新子项目的处理出现了问题，那么可能需要在构建系统的配置、编译器的输出等方面查找更深层次的原因。这个简单的 `foo.c` 文件可以帮助确定问题是否出在 Frida 如何处理新的子项目，而不是出在更复杂的代码逻辑上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/108 new subproject on reconfigure/subprojects/foo/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,11 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void foo(void);
 void foo(void) {}
-
-"""
-
 ```

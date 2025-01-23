@@ -177,15 +177,17 @@ By following these steps, iteratively refining the analysis, and thinking from d
 
 总而言之，`oes_shader_multisample_interpolation.cc` 文件是 Blink 渲染引擎中管理 `OES_shader_multisample_interpolation` WebGL 扩展的关键组成部分，它连接了 JavaScript WebGL API 和底层的 OpenGL 实现，使得 Web 开发者可以使用多重采样插值功能来提升渲染质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/oes_shader_multisample_interpolation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ const char* OESShaderMultisampleInterpolation::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

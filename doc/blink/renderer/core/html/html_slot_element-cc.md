@@ -216,14 +216,16 @@ This systematic approach, starting with a high-level overview and gradually divi
 
 理解 `HTMLSlotElement` 的功能和它与 Web 标准的联系对于开发和调试使用 Shadow DOM 的 Web Components 至关重要。 开发者需要注意正确使用 `<slot>` 元素的属性和 JavaScript API，以确保内容能够按预期分发和渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_slot_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 Google Inc. All rights reserved.
  *
@@ -1018,7 +1020,4 @@ void HTMLSlotElement::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

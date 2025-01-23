@@ -130,7 +130,7 @@ Finally, the information needs to be presented clearly and logically, following 
 
 总之，尽管 `somelib.c` 的代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色，可以作为测试 Frida 基本功能的基石，并帮助开发者和逆向工程师理解 Frida 的工作原理。它的简单性使得它成为调试和学习 Frida 的一个很好的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/133 c cpp and asm/somelib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,12 +138,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int get_cval (void) {
   return 0;
 }
-
-"""
-
 ```

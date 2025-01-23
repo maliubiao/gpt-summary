@@ -166,15 +166,17 @@ console.log(hexBytes.trim()); // 输出取决于机器的字节序，例如可�
 
 总而言之，`v8/test/unittests/base/ostreams-unittest.cc` 是 V8 引擎中用于测试十六进制格式化功能的单元测试文件，它确保了 `AsHex` 和 `AsHexBytes` 能够按照预期的方式将整数值转换为不同格式的十六进制字符串或字节序列。这对于 V8 内部的调试、日志记录以及处理二进制数据至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/ostreams-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/base/ostreams-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ TEST(Ostream, AsHexBytes) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

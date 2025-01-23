@@ -628,7 +628,7 @@ T Simulator::Msa3RInstrHelper(uint32_t opcode, T wd, T ws, T wt) {
       break;
     case ADDS_U: {
       uT ws_u = static
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/simulator-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/mips64/simulator-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -636,8 +636,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ), wd.w);
       TraceMSARegWr(wd.w);
       break;
@@ -1708,7 +1710,4 @@ void Msa3RFInstrHelper2(uint32_t opcode, T_reg ws, T_reg wt, T_reg* wd) {
     case MUL_Q: {
       const T_int_dbl min_fix_dbl =
           base::bit_cast<T_uint_dbl>(std::numeric_limits<T_int_dbl
-"""
-
-
 ```

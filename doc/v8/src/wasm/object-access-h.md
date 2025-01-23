@@ -170,15 +170,17 @@ V8 使用“tagged pointers”来区分指针和立即数。 `kHeapObjectTag` �
 
 总而言之，`v8/src/wasm/object-access.h` 是 V8 内部实现细节的一部分，它为 WebAssembly 提供了访问 V8 对象内部结构的桥梁。理解它的功能可以帮助我们更好地理解 WebAssembly 如何与 JavaScript 交互以及可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/object-access.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/object-access.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -256,7 +258,4 @@ class ObjectAccess : public AllStatic {
 }  // namespace v8
 
 #endif  // V8_WASM_OBJECT_ACCESS_H_
-
-"""
-
 ```

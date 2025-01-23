@@ -151,7 +151,7 @@ By following these steps, I can systematically analyze the C++ unit test file an
 
 作为最后一部分，这段代码主要集中在对 DoH 探测机制的各种边界情况和复杂场景进行测试，包括并发、取消、资源管理、错误处理和回退策略。它确保了 DNS 事务处理（特别是 DoH 相关的部分）的稳定性和可靠性，能够正确处理各种网络状况和用户操作，并能有效地防止潜在的编程错误和安全问题。 整个 `dns_transaction_unittest.cc` 文件旨在全面测试 DNS 事务处理的各个方面，而最后一部分则着重于确保 DoH 机制的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nner(resolve_context_.get());
   runner->Start(/*network_change=*/false);
 
@@ -598,8 +600,4 @@ TEST_F(DnsTransactionTestWithMockTime, HttpsConnectionRefusedAfterFallback) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

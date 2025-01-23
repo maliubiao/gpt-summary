@@ -213,15 +213,17 @@ func (m *myOtherStruct) bar() {}
 
 这段 `go/test/codegen/switch.go` 代码片段是 Go 语言编译器测试套件的一部分，专门用于验证 `switch` 语句的代码生成优化。它通过 `asmcheck` 工具和特定的汇编指令模式匹配，来确保编译器在不同的 `switch` 场景下生成了高效的代码。理解这段代码可以帮助开发者更深入地了解 Go 编译器的优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/switch.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -407,9 +409,4 @@ func interfaceConv(x IJ) I {
 	// arm64:`CALL\truntime.typeAssert`,`LDAR`,`MOVWU\t16\(R0\)`,`MOVD\t\(R.*\)\(R.*\)`
 	return x
 }
-
-"""
-
-
-
 ```

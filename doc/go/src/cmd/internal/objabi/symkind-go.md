@@ -167,15 +167,17 @@ func main() {
 
 `go/src/cmd/internal/objabi/symkind.go` 是 Go 编译器和链接器内部用于表示和管理符号类型的关键组成部分。它定义了各种符号种类，并提供了判断符号类型的方法。普通 Go 开发者不应该直接使用这个包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/objabi/symkind.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Derived from Inferno utils/6l/l.h and related files.
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/l.h
 //
@@ -273,9 +275,4 @@ func (t SymKind) IsDATA() bool {
 func (t SymKind) IsFIPS() bool {
 	return t == STEXTFIPS || t == SRODATAFIPS || t == SNOPTRDATAFIPS || t == SDATAFIPS
 }
-
-"""
-
-
-
 ```

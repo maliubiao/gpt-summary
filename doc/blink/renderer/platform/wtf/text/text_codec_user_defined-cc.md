@@ -139,14 +139,16 @@ This detailed breakdown covers the process of analyzing the code, identifying ke
 
 总而言之，`text_codec_user_defined.cc` 实现了对 "x-user-defined" 这种简单但有限的字符编码的支持，主要用于处理字节到 Unicode 代码点的直接映射。虽然在某些特定场景下可能有用，但在现代 Web 开发中，它远不如 UTF-8 通用和实用。 错误的使用通常会导致字符显示问题和数据丢失。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_codec_user_defined.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008 Apple, Inc. All rights reserved.
  *
@@ -289,7 +291,4 @@ std::string TextCodecUserDefined::Encode(base::span<const LChar> characters,
 }
 
 }  // namespace WTF
-
-"""
-
 ```

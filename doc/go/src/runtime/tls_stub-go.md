@@ -168,7 +168,7 @@ Goroutine 2: Data for goroutine 2
 
 `go/src/runtime/tls_stub.go` 文件中的代码是 Go 运行时在特定平台上的 TLS 设置占位符。对于这些平台，运行时可能不需要进行额外的操作系统级别的 TLS 初始化，或者相关的逻辑在其他地方处理。这体现了 Go 语言运行时为了保证跨平台兼容性，对底层操作系统差异进行抽象处理的一种方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/tls_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -176,8 +176,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -188,9 +190,4 @@ package runtime
 
 //go:nosplit
 func osSetupTLS(mp *m) {}
-
-"""
-
-
-
 ```

@@ -157,15 +157,17 @@ JavaScript 中发起的网络请求（例如使用 `fetch` API 或 `XMLHttpReque
 
 总而言之，`Http2StructureDecoder` 是 Chromium 网络栈中一个底层的、用于处理 HTTP/2 协议结构化数据的工具类。虽然 JavaScript 开发者不会直接与之交互，但它的正确运行对于基于浏览器的 Web 应用的正常功能至关重要。理解其功能和可能出现的错误有助于诊断网络相关的性能问题和错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/decoder/http2_structure_decoder.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ bool Http2StructureDecoder::ResumeFillingBuffer(DecodeBuffer* db,
 }
 
 }  // namespace http2
-
-"""
-
 ```

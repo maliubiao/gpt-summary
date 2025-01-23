@@ -102,11 +102,13 @@ processBuffer(buffer);
 
 `v8/src/sandbox/external-buffer-table.cc` 中的 `ExternalBufferTable` 类是 V8 引擎中管理外部内存缓冲区的关键组件，它通过跟踪和垃圾回收这些缓冲区，确保 JavaScript 代码与原生代码之间安全高效地共享内存，防止内存泄漏和其他安全问题。它与 JavaScript 的 `ArrayBuffer` 和 `SharedArrayBuffer` 功能紧密相关，为这些对象在涉及原生代码交互时提供了底层的内存管理支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/external-buffer-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -309,7 +311,4 @@ bool ExternalBufferTable::TryResolveEvacuationEntryDuringSweeping(
 }  // namespace v8
 
 #endif  // V8_ENABLE_SANDBOX
-
-"""
-
 ```

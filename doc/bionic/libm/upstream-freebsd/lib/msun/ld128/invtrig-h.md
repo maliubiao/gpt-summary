@@ -260,7 +260,7 @@ Here's how you might reach this code as a debugging line:
 
 By following these steps, you can trace the execution flow from high-level Android code down to the low-level math library implementations and gain insights into how functions like `asinl` are calculated, potentially involving the helper components defined in `invtrig.handroid`.
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/ld128/invtrig.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,8 +270,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -385,7 +387,4 @@ T_odd(long double x)
 		(aT[9] + x * (aT[11] + x * (aT[13] + x * (aT[15] + x * \
 		(aT[17] + x * (aT[19] + x * (aT[21] + x * aT[23])))))))))));
 }
-
-"""
-
 ```

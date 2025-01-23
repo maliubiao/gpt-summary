@@ -236,7 +236,7 @@ console.log(point.x, point.y); // 输出: 10 20
 
 总而言之，这个代码片段是 V8 引擎在 RISC-V 架构上执行 JavaScript 代码的核心组成部分，它负责底层的执行控制和关键的内置函数实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/riscv/builtins-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/riscv/builtins-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -244,8 +244,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ter_dispatch_table_address(masm->isolate()));
 
   // Get the bytecode array pointer from the frame.
@@ -1109,7 +1111,4 @@ void Builtins::Generate_CallFunction(MacroAssembler* masm,
   __ Lhu(a2,
          FieldMemOperand(a2, SharedFunctionInfo::kFormalParameterCountOffset));
   __ InvokeFunctionCode(
-"""
-
-
 ```

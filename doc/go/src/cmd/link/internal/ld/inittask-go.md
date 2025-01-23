@@ -181,15 +181,17 @@ func init() {
 
 这段代码是 Go 链接器中非常关键的一部分，它负责确保程序在启动时，所有的包都能够按照正确的依赖顺序进行初始化，从而保证程序的稳定运行。它通过分析 `inittask` 符号和 `R_INITORDER` 重定位信息来构建依赖关系图，并使用拓扑排序算法来计算初始化顺序。不同的构建模式会影响根 `inittask` 符号的选取，而循环依赖是使用者容易犯的一个错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/inittask.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -379,9 +381,4 @@ func (ctxt *Link) inittaskSym(rootNames []string, symName string) loader.Sym {
 	}
 	return sched.Sym()
 }
-
-"""
-
-
-
 ```

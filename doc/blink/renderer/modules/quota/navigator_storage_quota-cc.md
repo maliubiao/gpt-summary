@@ -182,15 +182,17 @@ By following these steps, we can arrive at a comprehensive and accurate explanat
 
 总而言之，`blink/renderer/modules/quota/navigator_storage_quota.cc` 是连接 JavaScript `navigator` 对象和 Blink 引擎底层存储配额管理的关键桥梁，它负责暴露 API、管理对象生命周期以及处理 API 的弃用。理解这个文件有助于理解浏览器如何管理网站的存储空间以及 JavaScript 如何与之交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/quota/navigator_storage_quota.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -292,7 +294,4 @@ void NavigatorStorageQuota::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

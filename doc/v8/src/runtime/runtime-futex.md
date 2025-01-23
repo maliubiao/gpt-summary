@@ -132,11 +132,13 @@ worker2(); // Worker 2 会修改共享内存并唤醒 Worker 1
 
 总而言之，`runtime-futex.cc` 是 V8 引擎中实现 JavaScript 并发和共享内存机制的关键组成部分，它通过与操作系统提供的 Futex 机制交互，为 `SharedArrayBuffer` 和 `Atomics` API 提供了底层的同步能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-futex.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ RUNTIME_FUNCTION(Runtime_SetAllowAtomicsWait) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

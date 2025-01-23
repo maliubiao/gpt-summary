@@ -156,7 +156,7 @@ This iterative process of reading, analyzing, connecting, and exemplifying allow
 
 `baseobjects.py` 文件是 frida-python 解释器对象模型的基础。它定义了核心的基类和机制，用于支持方法调用、运算符重载和对象管理。理解这个文件对于理解 Frida 脚本如何与目标进程交互以及如何扩展 Frida 的功能至关重要。它与逆向工程密切相关，因为它提供了操作和表示目标进程各种抽象的基石。它也间接涉及到二进制底层、Linux/Android 内核及框架的知识，因为其子类通常会封装与这些底层系统交互的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/interpreterbase/baseobjects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -340,7 +342,4 @@ class IterableObject(metaclass=ABCMeta):
 class ContextManagerObject(MesonInterpreterObject, AbstractContextManager):
     def __init__(self, subproject: 'SubProject') -> None:
         super().__init__(subproject=subproject)
-
-"""
-
 ```

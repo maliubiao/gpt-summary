@@ -171,15 +171,17 @@ go test cmd/compile/internal/ssa
 
 这段 `deadstore_test.go` 文件是 Go 编译器中用于测试死存储消除优化功能的重要组成部分。它通过构建包含各种死存储场景的 SSA 图，并验证优化器是否能够正确地识别和消除这些冗余的存储操作，从而保证编译器优化的正确性和有效性。对于 Go 语言的使用者来说，理解这些底层的编译器优化有助于更好地理解 Go 程序的执行效率，但通常不需要直接与这些测试代码交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/deadstore_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -354,9 +356,4 @@ func TestDeadStoreSmallStructInit(t *testing.T) {
 		t.Errorf("dead store not removed")
 	}
 }
-
-"""
-
-
-
 ```

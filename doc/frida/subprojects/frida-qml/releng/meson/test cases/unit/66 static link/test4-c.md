@@ -128,7 +128,7 @@ By following these steps of understanding the code, its context, inferring its p
 
 总而言之，`test4.c` 虽然代码简单，但在 Frida 的上下文中，它是一个关键的单元测试用例，用于验证 Frida 在处理静态链接函数时的 hook 功能，并帮助开发者确保 Frida 能够有效地用于逆向分析和动态插桩这类场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/66 static link/test4.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,15 +136,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func9();
 
 int main(int argc, char *argv[])
 {
   return func9() == 3 ? 0 : 1;
 }
-
-"""
-
 ```

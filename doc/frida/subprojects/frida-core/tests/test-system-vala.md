@@ -84,7 +84,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 测试代码记录并输出两次调用 `System.enumerate_processes()` 函数所花费的时间。
 
 通过以上步骤，用户可以验证 Frida 的进程枚举功能是否正常工作，并在 Windows 系统上验证图标信息的正确性。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/test-system.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -93,8 +93,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida.SystemTest {
 	public static void add_tests () {
 		GLib.Test.add_func ("/System/enumerate-processes-returns-processes-with-icons", () => {
@@ -129,7 +131,4 @@ namespace Frida.SystemTest {
 		});
 	}
 }
-
-"""
-
 ```

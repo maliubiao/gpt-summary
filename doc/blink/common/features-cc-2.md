@@ -92,15 +92,17 @@ Here's a breakdown of the thinking process:
 
 总而言之，这个代码片段定义了一系列用于控制 Blink 引擎行为的开关和配置项，这些开关和配置项能够影响浏览器加载、解析和渲染网页内容的方式，从而与 JavaScript, HTML, CSS 的行为产生密切的联系。理解这些 Feature 的作用对于优化网页性能、利用新的 Web 平台特性以及进行浏览器开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/features.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 equest.
 BASE_FEATURE_PARAM(bool,
                    kLCPPLazyLoadImagePreloadDryRun,
@@ -934,7 +936,4 @@ const base::FeatureParam<std::string> kSelectiveInOrderScriptAllowList{
 // to perform additional checks against any aliases found from DNS CNAME records
 // for the requested URL.
 BASE_FEATURE
-"""
-
-
 ```

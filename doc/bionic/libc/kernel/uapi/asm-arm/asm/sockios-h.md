@@ -254,7 +254,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/asm-arm/asm/sockios.handroid` 虽然文件内容简单，但在 Android 的网络编程中扮演着基础性的角色。它定义了用于控制套接字行为的常量，这些常量被 libc 函数（如 `ioctl`, `getsockopt`, `setsockopt`）使用，最终影响着应用程序的网络通信行为。通过 Frida 这样的工具，我们可以 hook 相关的 libc 函数，观察这些常量的使用情况，从而深入理解 Android 网络编程的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm/asm/sockios.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -265,8 +265,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -274,7 +276,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/sockios.h>
-
-"""
-
 ```

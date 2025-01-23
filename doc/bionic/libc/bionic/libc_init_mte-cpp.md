@@ -243,7 +243,7 @@ sys.stdin.read()
 
 这个 Frida 示例可以帮助你理解 Android Framework 或 NDK 应用是如何一步步地触发 `libc_init_mte.cpp` 中的代码执行的，并可以用于调试 MTE 相关的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/libc_init_mte.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -254,8 +254,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -581,7 +583,4 @@ bool __libc_mte_enabled() {
   HeapTaggingLevel lvl = __libc_shared_globals()->initial_heap_tagging_level;
   return lvl == M_HEAP_TAGGING_LEVEL_SYNC || lvl == M_HEAP_TAGGING_LEVEL_ASYNC;
 }
-
-"""
-
 ```

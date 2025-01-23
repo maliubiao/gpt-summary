@@ -197,15 +197,17 @@ const result = sumArray(largeArray);
 
 总而言之，`v8/test/benchmarks/cpp/benchmark-utils.cc` 提供了一个用于在 C++ 基准测试中方便地管理 V8 引擎生命周期的工具类，帮助开发者避免重复编写初始化和清理 V8 环境的代码，并减少因资源管理不当而导致的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/benchmarks/cpp/benchmark-utils.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/benchmarks/cpp/benchmark-utils.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ void BenchmarkWithIsolate::ShutdownProcess() {
 }
 
 }  // namespace v8::benchmarking
-
-"""
-
 ```

@@ -149,15 +149,17 @@ fetch('https://example.com/data.json')
 
 总而言之，`net/socket/socket_tag.cc` 文件是 Chromium 网络栈中用于标记套接字的关键组件，尤其在 Android 平台上用于支持流量统计和区分不同应用的流量。虽然 JavaScript 本身不直接操作这个类，但用户在浏览器中的操作（如导航、发起网络请求）会间接地触发其功能。 理解其工作原理对于调试 Android 平台上与网络相关的行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/socket_tag.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ void SocketTag::Apply(SocketDescriptor socket) const {
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -181,15 +181,17 @@ Here's a plan:
 ```
 `blink::PendingLayer` 类是 Chromium Blink 渲染引擎中用于表示和管理待处理合成图层的核心组件。它存储了创建最终合成器图层所需的各种信息，包括几何属性、内容信息和属性树状态。`PendingLayer` 负责处理图层的创建、更新、合并和优化，并与合成器线程的 `cc::Layer` 等类进行交互。它的主要功能是为高效的图层合成做准备，确保渲染性能和用户体验。它在渲染流水线中扮演着至关重要的角色，连接了布局、绘制和合成阶段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/pending_layer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -972,7 +974,4 @@ void PendingLayer::UpdateCompositedLayerForRepaint(
   }
 
   UpdateLayerPr
-"""
-
-
 ```

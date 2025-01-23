@@ -123,7 +123,7 @@ By following this structured approach, combining contextual understanding with t
 
 虽然 `file.c` 的内容非常简单，但它在Frida的测试框架中扮演着重要的角色，用于验证Frida处理特定边缘情况的能力，例如符号名称冲突。对于进行Frida开发、逆向工程或动态分析的用户来说，理解这种简单的测试用例可以帮助他们更好地理解Frida的工作原理以及可能遇到的问题。 这个特定的文件是调试Frida在处理复杂项目结构和符号管理方面问题的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/151 duplicate source names/dir2/dir1/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,10 +131,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int dir2_dir1 = 21;
-
-"""
-
 ```

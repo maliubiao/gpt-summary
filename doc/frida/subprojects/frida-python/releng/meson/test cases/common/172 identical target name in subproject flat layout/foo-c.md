@@ -104,7 +104,7 @@ int meson_test_main_foo(void) { return 10; }
 
 虽然 `foo.c` 文件本身非常简单，只有一个返回常量值的函数，但它在 Frida 项目中扮演着重要的角色，作为自动化测试的基础组件，确保了构建系统的基本功能正常运作。通过分析它的上下文和文件名，我们可以推断出它属于一个用于测试在扁平布局下处理相同目标名称的测试用例。当 Frida 的构建过程出现与此类场景相关的问题时，开发者可能会查看这个文件作为调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/172 identical target name in subproject flat layout/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,10 +112,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int meson_test_main_foo(void) { return 10; }
-
-"""
-
 ```

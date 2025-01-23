@@ -144,7 +144,7 @@ While users don't directly interact with this file, common mistakes when working
 
 This section of `zerrors_windows.go` defines Go constants that represent Windows error codes specifically related to **graphics, Network Access Protection (NAP), the Trusted Platform Module (TPM), Performance Logs and Alerts (PLA), and BitLocker Drive Encryption (FVE).** It serves as a crucial component for Go programs interacting with Windows by providing symbolic names for numeric error values, improving code readability and maintainability.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/zerrors_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -152,8 +152,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第8部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 305
 	ERROR_GRAPHICS_VIDPN_MODALITY_NOT_SUPPORTED                               Handle        = 0xC0262306
 	ERROR_GRAPHICS_MODE_NOT_PINNED                                            Handle        = 0x00262307
@@ -798,9 +800,4 @@ Prompt:
 	FVE_E_POLICY_USER_CERTIFICATE_REQUIRED                                    Handle        = 0x80310073
 	FVE_E_POLICY_USER_CERT_MUST_BE_HW                                         Handle        = 0x80310074
 	FVE_E_POLICY_USER_CONFIGURE_FDV_AUTOUNLOCK_NOT_
-"""
-
-
-
-
 ```

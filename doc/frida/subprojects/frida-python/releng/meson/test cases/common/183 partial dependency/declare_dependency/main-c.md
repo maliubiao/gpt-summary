@@ -207,7 +207,7 @@ By following this thought process, breaking down the problem, and connecting the
 
 **调试线索意义:**  这个 `main.c` 文件本身作为一个独立的测试用例，可以帮助 Frida 的开发者或用户验证 Frida 是否能够正确地处理和 hook 位于依赖项中的函数。例如，它可以用来测试 Frida 在处理共享库或静态库时的行为，或者验证 Frida 的 hook 机制是否能正确地拦截对这些外部函数的调用。文件路径中的 "partial dependency" 和 "declare_dependency" 暗示了这个测试用例可能专注于 Frida 如何处理声明但未完全定义的依赖项。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/183 partial dependency/declare_dependency/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -215,8 +215,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2018 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -242,7 +244,4 @@ int main(void) {
         return 1;
     }
 }
-
-"""
-
 ```

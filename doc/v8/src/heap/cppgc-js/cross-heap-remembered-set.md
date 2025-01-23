@@ -95,11 +95,13 @@ let calculator = createCalculator(); // 假设 V8 内部创建了一个 JSObject
 
 总而言之，`cross-heap-remembered-set.cc` 是 V8 引擎为了实现可靠的垃圾回收而设计的一个内部机制，它专注于处理 JavaScript 堆和 cppgc 堆之间的特定类型的引用关系，特别是那些涉及年轻代 cppgc 对象的引用。 这对于确保 V8 引擎的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/cross-heap-remembered-set.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -135,7 +137,4 @@ void CrossHeapRememberedSet::Reset(Isolate& isolate) {
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

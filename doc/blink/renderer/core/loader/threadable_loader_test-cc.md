@@ -133,15 +133,17 @@ By following these steps, combining careful reading with an understanding of web
 
 因此，这个测试文件是确保 `ThreadableLoader` 这一核心网络加载组件在各种场景下都能稳定可靠运行的关键部分。它可以帮助开发者预防和修复与网络请求相关的 bug，从而提升浏览器的性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/threadable_loader_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -625,7 +627,4 @@ TEST_F(ThreadableLoaderTest, ClearInRedirectDidFinishLoading) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

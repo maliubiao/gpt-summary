@@ -123,12 +123,14 @@ console.log(generator.next()); // { value: 3, done: true }
 
 作为 Turboshaft 编译管道的一部分，这个文件的主要职责是将 Maglev 图中的各种操作转换为 Turboshaft 可以理解的形式。这些操作都直接对应于 JavaScript 的语义和运行时行为，包括类型转换、函数调用、控制流、异常处理以及更高级的特性如生成器函数。`GraphBuildingNodeProcessor` 就像一个翻译器，将 Maglev 的指令翻译成 Turboshaft 的指令，为后续的优化和代码生成阶段做准备。第 4 部分重点在于具体的节点转换逻辑和帧状态的管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/maglev-graph-building-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 aglev::ProcessResult Process(maglev::Float64ToUint8Clamped* node,
                                 const maglev::ProcessingState& state) {
     SetMap(node, Float64ToUint8Clamped(Map(node->input())));
@@ -1664,7 +1666,4 @@ void RunMaglevOptimizations(PipelineData* data,
   }
 
   if (V8_UNLIKELY(data->
-"""
-
-
 ```

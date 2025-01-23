@@ -130,11 +130,13 @@ for (const segment of segmentsZh) {
 
 `js-segmenter.cc` 负责 `Intl.Segmenter` 对象的创建、配置和管理，它充当了 JavaScript 代码和 ICU 库之间的桥梁。它接收 JavaScript 层的配置，利用 ICU 提供的强大文本处理能力，最终为 JavaScript 开发者提供了方便的文本分段功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-segmenter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -310,7 +312,4 @@ const std::set<std::string>& JSSegmenter::GetAvailableLocales() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

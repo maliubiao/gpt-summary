@@ -230,7 +230,7 @@ console.log(objReflect.y); // 20
 
 这段代码是 V8 引擎启动过程中**初始化和注册一系列核心 JavaScript 内置对象和构造函数**的关键部分。它涵盖了国际化 (Intl)、数组缓冲区 (ArrayBuffer, SharedArrayBuffer)、原子操作 (Atomics)、类型化数组 (TypedArray)、数据视图 (DataView)、映射 (Map)、任意精度整数 (BigInt)、集合 (Set)、弱引用集合 (WeakMap, WeakSet)、代理 (Proxy) 和反射 (Reflect) 等功能。  **这一部分主要关注于为 JavaScript 提供操作各种数据结构、内存管理、并发控制以及元编程能力的基础工具。** 它是构建更高级 JavaScript 功能的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/init/bootstrapper.cc以.tq结尾，那它是个v8 torque源代码，
@@ -238,8 +238,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 map());
         native_context()->set_intl_segment_data_object_map(*map);
         native_context()->set_intl_segment_data_object_wordlike_map(
@@ -884,7 +886,4 @@ map());
                           Builtin::kReflectIsExtensible, 1, kAdapt);
     SimpleInstallFunction(isolate_, reflect, "ownKeys",
                           Builtin:
-"""
-
-
 ```

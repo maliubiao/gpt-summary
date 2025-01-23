@@ -131,7 +131,7 @@ python_module_to_check = 'frida'
 
 总而言之，尽管没有实际的代码，根据文件路径和 Frida 的特性，我们可以推断出 `frida/subprojects/frida-tools/releng/meson/test cases/python/7 install path/test.py` 的主要目的是验证 Frida 工具的安装路径是否正确，这对于 Frida 的正常使用和逆向工作的顺利进行至关重要。 该测试涉及到操作系统底层的文件系统、环境变量、进程管理等知识，并且可以帮助开发者发现用户在安装和配置 Frida 时可能遇到的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/python/7 install path/test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,9 +139,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

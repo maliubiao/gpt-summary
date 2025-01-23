@@ -132,11 +132,13 @@ let result3 = temp_result; // 或直接使用常量 3
 
 `ValueNumberingReducer` 是 V8 编译器中用于进行值编号优化的核心组件。它通过识别和消除程序中的冗余计算，显著提高了 JavaScript 代码的执行效率。虽然 JavaScript 开发者通常不需要直接与这个组件交互，但了解它的功能有助于理解 JavaScript 引擎是如何进行优化的，以及为什么编写具有清晰和可预测行为的代码更容易被优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/value-numbering-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -319,7 +321,4 @@ void ValueNumberingReducer::Grow() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

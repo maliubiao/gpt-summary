@@ -208,7 +208,7 @@ func Example_mistake() {
 
 在这个例子中，`hdr.Size` 被错误地设置为比实际内容小的值。当解压工具读取到这个文件头时，它期望读取指定大小的数据，但实际写入的数据可能更多，导致解压过程中出现问题。不同的解压工具对这种情况的处理方式可能不同，有的可能会报错，有的可能会截断文件。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/archive/tar/example_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -216,8 +216,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -289,9 +291,4 @@ func Example_minimal() {
 	// Contents of todo.txt:
 	// Get animal handling license.
 }
-
-"""
-
-
-
 ```

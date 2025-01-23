@@ -151,15 +151,17 @@ data = 4: sum1 = (6 + 4) % 65535 = 10, sum2 = (10 + 10) % 65535 = 20
 
 总之，`v8/src/snapshot/snapshot-utils.cc` 中的 `Checksum` 函数是 V8 快照机制中一个重要的组成部分，用于确保快照数据的完整性，从而保证 V8 能够安全可靠地利用快照加速启动。虽然它不直接与 JavaScript 代码交互，但其功能对 JavaScript 的运行环境至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/snapshot-utils.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/snapshot-utils.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ uint32_t Checksum(base::Vector<const uint8_t> payload) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

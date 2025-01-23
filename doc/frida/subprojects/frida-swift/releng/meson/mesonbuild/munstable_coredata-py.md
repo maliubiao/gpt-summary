@@ -197,7 +197,7 @@ Cached native machine compilers:
 
 总之，`munstable_coredata.py` 是一个 Meson 构建系统的内部调试工具，它通过转储构建缓存信息，为开发者提供了深入了解构建过程的途径。虽然它不直接参与逆向工程，但其提供的信息对于理解和分析最终生成的二进制文件具有重要的辅助作用。了解这个脚本的功能和使用场景，可以帮助 Frida 的开发者和贡献者更有效地调试构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/munstable_coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -314,7 +316,4 @@ def run(options):
         else:
             print(k + ':')
             print(textwrap.indent(pprint.pformat(v), '  '))
-
-"""
-
 ```

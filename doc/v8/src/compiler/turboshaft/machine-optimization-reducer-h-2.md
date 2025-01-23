@@ -182,7 +182,7 @@ The user wants a summary of the functionality of the provided C++ header file. T
 
 作为 Turboshaft 编译器的机器码优化阶段的一部分，此部分 `MachineOptimizationReducer` 的主要功能是**针对特定的机器码操作（如比较、位移、分支、存储、加载等）应用基于模式匹配的简化和优化**。它旨在通过识别可以进行常量折叠、代数简化或等价转换的 IR 节点，来生成更高效的目标代码。 这部分优化器专注于操作的本地特性，尝试在不改变程序语义的前提下，减少指令的数量和复杂度。它依赖于前面阶段构建的 IR 图，并为后续的指令选择和代码生成阶段做准备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/machine-optimization-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/machine-optimization-reducer.h以.tq结尾，那它是个v8 torque源代码，
@@ -190,8 +190,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ::kUnsignedLessThanOrEqual;
                 case Kind::kEqual:
                   UNREACHABLE();
@@ -998,7 +1000,4 @@ Prompt:
     int64_t diff = constant.signed_integral();
     int64_t new_index;
     if (!base::bits::SignedAddOverflow64(offset, diff << el
-"""
-
-
 ```

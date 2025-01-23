@@ -126,7 +126,7 @@ Initially, I might have just listed all the function names. However, realizing t
 
 总而言之，这部分 `macro-assembler-ppc.h` 文件是 V8 在 PowerPC 架构上生成高效机器码的关键组成部分，它提供了对底层硬件操作的抽象，使得 V8 能够执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/macro-assembler-ppc.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/macro-assembler-ppc.h以.tq结尾，那它是个v8 torque源代码，
@@ -134,8 +134,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 dst, src, Operand(kSmiShift), rc);
     }
   }
@@ -866,7 +868,4 @@ dst, src, Operand(kSmiShift), rc);
                     Register scratch1, Register scratch2,
                     Simd128Register scratch3);
   void I32x4DotI8x16AddS(Simd128Register dst, Simd128Regist
-"""
-
-
 ```

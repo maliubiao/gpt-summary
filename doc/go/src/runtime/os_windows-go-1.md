@@ -259,7 +259,7 @@ Finally, I organize the information logically, starting with a general overview,
 
 总而言之，这段代码是 Go 运行时在 Windows 平台上运行的基础，它连接了 Go 的抽象并发模型和 Windows 的底层操作系统机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -268,8 +268,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 n = 7
 	mp.libcall.args = uintptr(noescape(unsafe.Pointer(&a0)))
 	return stdcall(fn)
@@ -613,10 +615,4 @@ func osPreemptExtEnter(mp *m) {
 func osPreemptExtExit(mp *m) {
 	atomic.Store(&mp.preemptExtLock, 0)
 }
-
-"""
-
-
-
-
 ```

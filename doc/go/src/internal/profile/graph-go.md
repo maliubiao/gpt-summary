@@ -219,7 +219,7 @@ func main() {
 
 总而言之，`go/src/internal/profile/graph.go` 提供了一个用于表示和操作性能剖析图的底层框架。理解其核心数据结构和方法，以及 `Options` 的作用，对于正确使用和分析 Go 程序的性能剖析数据至关重要。使用者需要根据具体的分析目标和性能剖析数据的特点，合理配置 `Options`，才能得到有意义的性能分析结果。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/profile/graph.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -227,8 +227,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -748,9 +750,4 @@ func abs64(i int64) int64 {
 	}
 	return i
 }
-
-"""
-
-
-
 ```

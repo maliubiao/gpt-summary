@@ -134,7 +134,7 @@ By following these steps, I can create a comprehensive and accurate summary of t
 
 当开发者发现媒体控件的行为不符合预期时，他们可能会查看 Blink 引擎的源代码，包括这些测试用例，来理解其内部逻辑。这些测试用例可以作为调试的线索，帮助开发者理解在特定用户操作下，媒体控件的哪些代码会被执行，以及预期的行为是什么。 开发者可以通过运行这些测试用例来验证他们对媒体控件行为的理解，或者在修改相关代码后确保没有引入新的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_controls/media_controls_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 {360600, "100:10:00"},
   };
 
@@ -918,8 +920,4 @@ TEST_F(MediaControlsImplTest, OverflowMenuInPaintContainment) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

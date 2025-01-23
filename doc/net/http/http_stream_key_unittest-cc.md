@@ -132,15 +132,17 @@ fetch('https://sub.example.com/api/data');
 
 总而言之，`net/http/http_stream_key_unittest.cc` 这个文件通过各种测试用例，详细验证了 `HttpStreamKey` 类的行为，确保这个关键的网络连接标识符能够正确地工作，这对于保证 Chromium 浏览器的网络性能、安全性和隐私性至关重要。虽然 JavaScript 开发者不会直接操作它，但理解其背后的概念有助于更好地理解浏览器处理网络请求的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_key_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -342,7 +344,4 @@ TEST(HttpStreamKeyTest, CalculateQuicSessionAliasKey) {
 }
 
 }  // namespace net
-
-"""
-
 ```

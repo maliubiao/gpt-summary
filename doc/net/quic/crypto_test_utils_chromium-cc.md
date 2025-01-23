@@ -131,15 +131,17 @@ By following this systematic approach, considering the nuances of each part of t
 
 总之，`net/quic/crypto_test_utils_chromium.cc` 虽然是一个测试工具文件，但它对于理解 Chromium 中 QUIC 的加密机制、排查相关问题以及编写和维护测试都具有一定的参考价值。当用户或开发者需要深入了解 QUIC 的证书处理逻辑或测试相关的配置时，可能会涉及到查看这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/crypto_test_utils_chromium.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ std::unique_ptr<quic::ProofSource> ProofSourceForTestingChromium() {
 }
 
 }  // namespace net::test
-
-"""
-
 ```

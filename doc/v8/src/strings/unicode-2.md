@@ -71,13 +71,15 @@ console.log(str4.normalize('NFD')); // 输出: A<binary data, 1 bytes><binary da
 **总结:**
 
 这部分 `unicode.cc` 代码主要提供了 V8 引擎处理 Unicode 字符串所需的底层数据和转换逻辑，包括非规范化和规范化。这些功能是 JavaScript 引擎实现字符串比较和 `normalize()` 方法的基础。虽然我们不能直接在 JavaScript 中访问这些 C++ 数据结构，但它们的功能通过 JavaScript 的字符串 API 暴露出来，使得开发者能够处理各种 Unicode 字符和表示形式。
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/unicode.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-   266,        53,   267,        53,   268,        57,   269,        57,
+### 源代码
+```
+266,        53,   267,        53,   268,        57,   269,        57,
     270,        61,   271,        61,   272,        65,   273,        65,
     274,        69,   275,        69,   276,        73,   277,        73,
     278,        77,   279,        77,   280,        81,   281,        81,
@@ -603,8 +605,4 @@ int UnicodeData::GetByteCount() {
 #endif  // !V8_INTL_SUPPORT
 
 }  // namespace unibrow
-
-"""
-
-
 ```

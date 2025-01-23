@@ -184,7 +184,7 @@ result = Allocate(isolate_root(), size_value); // size_value 是从 size_literal
 
 作为编译过程的第 5 部分（假设前面的部分包括词法分析、语法分析、类型检查等），`v8/src/torque/implementation-visitor.cc` 的主要功能是 **代码生成**。它接收经过语法分析和类型检查的 Torque 抽象语法树，并将其转换成 V8 运行时可以执行的底层代码（通常是 C++ 代码）。这个阶段是连接高级 Torque 语言描述和最终机器执行的关键步骤。它确保了 Torque 代码能够被高效地翻译成 V8 引擎能够理解的形式，从而实现高性能的 JavaScript 内置功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/implementation-visitor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/implementation-visitor.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ) return scope.Yield(ref.heap_slice());
     }
     ReportError("Unable to create a heap reference.");
@@ -1023,7 +1025,4 @@ class ClassFieldOffsetGenerator : public FieldOffsetsGenerator {
 class CppClassGenerator {
  public:
   CppClassGenerator(const ClassType* type, st
-"""
-
-
 ```

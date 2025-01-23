@@ -189,7 +189,7 @@ Label target_label;
 
 总而言之，这部分代码深入到了 `Assembler` 类的具体实现，涵盖了指令分析、trampoline 管理、内部标签处理以及缓冲区和寄存器使用的底层细节，为高效可靠地生成 LoongArch64 机器码提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/loong64/assembler-loong64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/loong64/assembler-loong64.h以.tq结尾，那它是个v8 torque源代码，
@@ -197,8 +197,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 nstruction*>(buffer_start_ + pos);
     i->SetInstructionBits(instr, jit_allocation);
   }
@@ -574,8 +576,4 @@ class V8_EXPORT_PRIVATE V8_NODISCARD UseScratchRegisterScope {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_LOONG64_ASSEMBLER_LOONG64_H_
-
-"""
-
-
 ```

@@ -149,7 +149,7 @@ DISABLE_CFI_PERF void BodyDescriptorBase::IteratePointers(
 
 这是第 1 部分的分析。如果您有关于第 2 部分的内容，请随时提供！
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects-body-descriptors-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/objects-body-descriptors-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -157,8 +157,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -980,7 +982,4 @@ class InterpreterData::BodyDescriptor final : public BodyDescriptorBase {
   static inline void IterateBody(Tagged<Map> map, Tagged<HeapObject> obj,
                                  int object_size, ObjectVisitor* v) {
     IterateSelfIndirectPointer(obj, kInterpreterDataIndirectPoin
-"""
-
-
 ```

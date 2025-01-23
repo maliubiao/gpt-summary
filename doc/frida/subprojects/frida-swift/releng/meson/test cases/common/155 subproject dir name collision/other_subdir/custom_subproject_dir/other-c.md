@@ -135,7 +135,7 @@ By following these steps, the comprehensive and accurate analysis provided earli
 
 `other.c` 文件中的 `func_b` 函数功能非常简单，主要用于演示动态库的符号导出。在逆向工程中，这样的函数可能是真实程序逻辑的一部分，也可能是一些简单的辅助函数。通过理解其功能和背后的技术原理，可以帮助逆向工程师更好地分析目标程序。其中 `if('c' != 'c')` 这种永远为假的条件通常是值得关注的点，可能暗示着代码错误、未完成的功能或者某种特殊的代码生成策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/155 subproject dir name collision/other_subdir/custom_subproject_dir/other.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 
 #if defined _WIN32 || defined __CYGWIN__
@@ -164,7 +166,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

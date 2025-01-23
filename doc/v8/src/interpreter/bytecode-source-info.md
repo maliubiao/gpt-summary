@@ -84,11 +84,13 @@ TypeError: Cannot add a string and a number
 
 `bytecode-source-info.cc` 文件定义的 `BytecodeSourceInfo` 类是 V8 引擎将字节码指令与其原始 JavaScript 源代码关联起来的关键机制。它对于错误报告、调试工具和性能分析等功能至关重要，从而提升了 JavaScript 开发的效率和体验。虽然 JavaScript 开发者无法直接访问或操作 `BytecodeSourceInfo` 对象，但它的存在和功能是 JavaScript 引擎内部运作的重要组成部分，直接影响着开发者所看到的错误信息和调试体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-source-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -112,7 +114,4 @@ std::ostream& operator<<(std::ostream& os, const BytecodeSourceInfo& info) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

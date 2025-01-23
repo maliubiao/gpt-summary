@@ -170,7 +170,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "setsockopt"), {
 
 总而言之，`nf_log.h` 虽然是一个简单的头文件，但它定义了与 Android 系统底层网络功能密切相关的常量。理解这些常量的含义有助于我们更好地理解 Android 的网络行为和安全机制。通过 Frida 等工具，我们可以观察到这些常量在系统运行时的实际应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/nf_log.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -181,8 +181,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -200,7 +202,4 @@ Prompt:
 #define NF_LOG_MASK 0x2f
 #define NF_LOG_PREFIXLEN 128
 #endif
-
-"""
-
 ```

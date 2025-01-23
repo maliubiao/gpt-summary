@@ -205,7 +205,7 @@ And the `configtool.py` code is processing this dependency.
 
 **In summary, `configtool.py` is a crucial component in Meson's dependency management system, especially for projects that rely on external configuration tools. It automates the process of finding these tools, checking their versions, and extracting relevant build information, which is often essential in reverse engineering scenarios where interacting with compiled libraries is necessary.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/dependencies/configtool.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -213,8 +213,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -378,7 +380,4 @@ class ConfigToolDependency(ExternalDependency):
         if default_value is not None:
             return default_value
         raise DependencyException(f'Could not get config-tool variable and no default provided for {self!r}')
-
-"""
-
 ```

@@ -112,14 +112,16 @@ My thinking process to answer the request goes like this:
 
 总而言之，`SharedContextRateLimiter` 是 Chromium 浏览器中一个重要的组件，它通过限制发送给 GPU 的命令速率来维护渲染性能和稳定性，尤其是在处理复杂的图形内容时。它与 JavaScript, HTML, CSS 的交互是间接的，通过控制由这些技术产生的 GPU 操作来实现。理解其工作原理有助于开发者编写更高效的网页应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/shared_context_rate_limiter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ void SharedContextRateLimiter::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -103,11 +103,13 @@ Torque 是 V8 引擎使用的一种领域特定语言 (DSL)，用于编写高效
 
 总而言之，`v8/src/torque/global-context.cc` 虽然不是直接的 JavaScript 代码，但它是 V8 引擎的关键组成部分，通过为 Torque 编译器提供全局上下文和目标架构信息，间接地支持了 JavaScript 的执行和性能。 它关注的是 V8 引擎内部的编译和代码生成过程，而这些过程对于高效地运行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/global-context.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ TargetArchitecture::TargetArchitecture(bool force_32bit)
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

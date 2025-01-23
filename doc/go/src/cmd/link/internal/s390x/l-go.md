@@ -127,15 +127,17 @@ func main() {
 
 `go/src/cmd/link/internal/s390x/l.go` 是 Go 语言链接器中特定于 s390x 架构的一个重要组成部分。它定义了影响内存布局和调试信息生成的关键常量，确保了生成的 s390x 可执行文件能够正确高效地运行，并且能够被调试器正确分析。普通 Go 开发者无需直接关心此文件，但理解其作用有助于理解 Go 语言工具链的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/s390x/l.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/5l/asm.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/5l/asm.c
 //
@@ -210,9 +212,4 @@ const (
 	dwarfRegSP = 15
 	dwarfRegLR = 14
 )
-
-"""
-
-
-
 ```

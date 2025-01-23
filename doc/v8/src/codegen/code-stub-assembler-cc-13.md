@@ -277,7 +277,7 @@ console.log(proxy.x); // 对应 GetCreationContext 中对 JSProxy 的处理
 
 总而言之，`v8/src/codegen/code-stub-assembler.cc` 的第 14 部分主要实现了 V8 引擎中 **对象属性的查找和访问机制**。它涵盖了从简单的属性查找，到处理特殊对象类型（如代理和绑定函数），再到与属性描述符相关的操作。这些功能是 JavaScript 引擎实现对象模型和属性访问语义的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -285,9 +285,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第14部分，共23部分，请归纳一下它的功能
+```
 
-"""
-   GotoIf(InstanceTypeEqual(instance_type, JS_PROXY_TYPE), &if_proxy);
+### 源代码
+```cpp
+GotoIf(InstanceTypeEqual(instance_type, JS_PROXY_TYPE), &if_proxy);
     GotoIf(InstanceTypeEqual(instance_type, JS_BOUND_FUNCTION_TYPE),
            &if_bound_function);
     GotoIf(InstanceTypeEqual(instance_type, JS_WRAPPED_FUNCTION_TYPE),
@@ -1128,7 +1130,4 @@ TNode<Object> CodeStubAssembler::GetInterestingProperty(
       CSA_DCHECK(this, IsPropertyDictionary(CAST(properties)));
       // TODO(pthier): Support swiss dictionaries.
       if constexpr (!V8_ENABL
-"""
-
-
 ```

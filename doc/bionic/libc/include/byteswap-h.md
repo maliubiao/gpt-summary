@@ -295,7 +295,7 @@ setTimeout(hook_bswap32, 0);
 
 总结来说，`bionic/libc/include/byteswap.handroid.h` 提供了一组用于字节交换的宏，这在处理跨平台数据交换和网络编程时至关重要。虽然这个头文件本身不直接涉及 dynamic linker，但理解其功能和使用场景对于 Android 开发，特别是 NDK 开发，是非常重要的。 通过 Frida 可以有效地监控和调试这些底层的字节交换操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/byteswap.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -306,8 +306,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -363,7 +365,4 @@ Prompt:
  * 64-bit value.
  */
 #define bswap_64(x) __swap64(x)
-
-"""
-
 ```

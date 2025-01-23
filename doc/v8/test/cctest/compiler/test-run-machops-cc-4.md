@@ -614,7 +614,7 @@ TEST(RunInt32PairAddWithSharedInput) {
 TEST(RunInt32PairSub) {
   BufferedRawMachineAssemblerTester<int32_t> m(
       MachineType::Uint32(), MachineType::Uint32(), MachineType::Uint
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-machops.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-run-machops.cc以.tq结尾，那它是个v8 torque源代码，
@@ -622,8 +622,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (MachineType::Float32());
     m.Return(m.Float32Sub(m.Parameter(0), m.Float32Constant(i)));
 
@@ -1666,7 +1668,4 @@ TEST(RunDoubleRefDoubleDiamond) {
 
   const int magic = 99649;
   double d
-"""
-
-
 ```

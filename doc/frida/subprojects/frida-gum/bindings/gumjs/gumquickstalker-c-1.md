@@ -101,7 +101,7 @@ By following this structured approach, breaking down the code, and continuously 
 
 总的来说，`gumquickstalker.c` 的第二部分实现了 Frida Gum 的 QuickStalker 功能在 JavaScript 层的具体表现，它定义了用于控制代码追踪、注入代码和拦截函数调用的 JavaScript 对象和方法，并做了性能优化。这使得 JavaScript 用户能够方便地使用 Frida 的动态插桩能力来分析和修改目标进程的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickstalker.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,9 +110,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- parent->writer);
+### 源代码
+```c
+parent->writer);
   writer->wrapper = wrapper;
 
   gum_quick_stalker_iterator_init (&iter->iterator, parent);
@@ -654,8 +656,4 @@ gum_encode_pointer (JSContext * ctx,
     return _gum_quick_native_pointer_new (ctx, value, core);
   }
 }
-
-"""
-
-
 ```

@@ -356,7 +356,7 @@ sys.stdin.read()
 
 总结，`strsep` 是一个基础但非常实用的 C 库函数，在 Android 系统和应用中被广泛用于字符串解析。理解其功能、实现原理以及可能的使用错误对于开发和调试 Android 应用程序非常重要。通过 Frida 这样的动态分析工具，我们可以深入了解其在运行时的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/string/strsep.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -367,8 +367,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: strsep.c,v 1.8 2015/08/31 02:53:57 guenther Exp $	*/
 
 /*-
@@ -440,7 +442,4 @@ strsep(char **stringp, const char *delim)
 	/* NOTREACHED */
 }
 DEF_WEAK(strsep);
-
-"""
-
 ```

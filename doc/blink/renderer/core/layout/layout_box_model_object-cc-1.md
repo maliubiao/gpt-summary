@@ -70,15 +70,17 @@ This file appears to be responsible for managing the structure and visual proper
 
 该部分代码专注于布局盒模型的具体操作，包括计算文本插入符位置，移动和重新组织子元素（特别是处理匿名盒子），以及处理背景样式的传递规则。这些功能是 Blink 渲染引擎构建和维护页面布局的关键组成部分，直接关联到用户在浏览器中看到的最终渲染结果以及与页面的交互行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_box_model_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , TextDirection::kLtr});
   x = border_padding.inline_start;
   max_x = width - border_padding.inline_end;
@@ -245,8 +247,4 @@ bool LayoutBoxModelObject::BackgroundTransfersToView(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

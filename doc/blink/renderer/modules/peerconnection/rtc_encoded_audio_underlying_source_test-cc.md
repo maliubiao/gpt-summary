@@ -158,15 +158,17 @@ This detailed breakdown demonstrates how to analyze a C++ test file within a com
 
 总而言之，`rtc_encoded_audio_underlying_source_test.cc` 是 WebRTC 音频处理管道中一个关键组件的单元测试，它确保了编码后的音频帧能够正确地从 C++ 层传递到 JavaScript 层，为 WebRTC 应用的音频功能提供了基础保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_encoded_audio_underlying_source_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ TEST_F(RTCEncodedAudioUnderlyingSourceTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

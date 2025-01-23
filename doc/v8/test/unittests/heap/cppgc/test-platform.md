@@ -92,11 +92,13 @@ console.log("Immediate execution");
 
 `test-platform.cc` 中的 `TestPlatform` 类是一个测试工具，它通过控制 V8 引擎底层的平台行为，为 `cppgc` 组件的单元测试提供了可预测和可控的环境。虽然 JavaScript 代码本身不会直接调用或感知到 `TestPlatform`，但 `TestPlatform` 的功能对于理解和测试 V8 引擎在处理包括 JavaScript 代码在内的各种任务时的行为至关重要。 它允许测试人员模拟各种场景，例如控制异步任务的执行，这对于确保 V8 引擎的稳定性和正确性非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/test-platform.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -146,7 +148,4 @@ TestPlatform::DisableBackgroundTasksScope::~DisableBackgroundTasksScope()
 }  // namespace testing
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

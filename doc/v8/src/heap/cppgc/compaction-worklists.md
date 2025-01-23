@@ -133,12 +133,13 @@ console.log("程序执行完毕");
 
 `compaction-worklists.cc` 虽然是 V8 引擎内部的 C++ 实现，但它直接支持了 JavaScript 的内存管理，特别是在垃圾回收的内存整理阶段，通过管理需要移动的对象列表，帮助 V8 引擎高效地整理内存，减少碎片，最终提升 JavaScript 程序的性能和内存利用率。JavaScript 开发者虽然不直接操作这些底层机制，但 JavaScript 代码的行为会触发这些机制的运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/compaction-worklists.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
-
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -152,7 +153,4 @@ void CompactionWorklists::ClearForTesting() { movable_slots_worklist_.Clear(); }
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

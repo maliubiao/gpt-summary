@@ -128,7 +128,7 @@ By following these steps, even with a seemingly trivial empty file, we can deduc
 
 虽然 `three.py` 文件本身是空的，但在 Frida-Swift 的测试框架中，它的存在和路径代表了对特定安装路径结构的验证。 它与动态插桩、文件系统操作、构建系统配置以及潜在的用户安装错误都有关联。 通过分析其上下文和相关的测试流程，我们可以理解其在整个 Frida 项目中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/python/7 install path/structured/alpha/three.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,9 +136,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

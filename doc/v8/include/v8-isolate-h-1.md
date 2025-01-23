@@ -270,7 +270,7 @@ Here's a plan to address the request:
 
 总而言之，`v8/include/v8-isolate.h` 的第二部分提供了大量用于与 V8 引擎实例交互的高级接口，涵盖了内存管理、错误处理、性能监控和与宿主环境集成的各个方面。理解这些功能对于将 V8 引擎有效地嵌入到 C++ 应用程序中至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-isolate.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-isolate.h以.tq结尾，那它是个v8 torque源代码，
@@ -278,8 +278,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ered external memory. Used to give V8 an
    * indication of the amount of externally allocated memory that is kept alive
    * by JavaScript objects. V8 uses this to decide when to perform global
@@ -1145,7 +1147,4 @@ ered external memory. Used to give V8 an
   /**
    * Returns the default locale in a string if Intl support is enabled.
    * Otherwise returns an empty string.
-"""
-
-
 ```

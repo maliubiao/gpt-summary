@@ -131,14 +131,16 @@ Initially, I might have focused solely on the C++ code structure. However, the c
 
 `mhtml_loading_test.cc` 是 Blink 引擎中一个重要的测试文件，它通过模拟加载各种 MHTML 文件的场景，来验证引擎在处理 MHTML 文件时的正确性、安全性和功能完整性。它涵盖了域设置、沙箱策略、Shadow DOM 处理以及对特定 HTML 结构和脚本的处理等多个方面。这些测试有助于确保 Chromium 浏览器能够安全可靠地处理 MHTML 文件，并防止潜在的安全漏洞和渲染错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/mhtml_loading_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -399,7 +401,4 @@ TEST_F(MHTMLLoadingTest, LoadMHTMLContainingSoftLineBreaks) {
 
 }  // namespace test
 }  // namespace blink
-
-"""
-
 ```

@@ -208,14 +208,16 @@ ctx.fillRect(100, 10, 80, 40);
 
 总之，`blink/renderer/platform/graphics/logging_canvas.cc` 提供了一个强大的工具，用于深入了解 Blink 渲染引擎如何执行 Canvas 绘图操作，这对于调试渲染问题、理解图形性能瓶颈以及进行自动化测试非常有价值。但是，正确配置和理解其输出是有效使用它的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/logging_canvas.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -876,7 +878,4 @@ void ShowSkPicture(const SkPicture& picture) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

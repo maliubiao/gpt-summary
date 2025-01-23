@@ -65,12 +65,14 @@ console.log(result); // 输出 Float32Array [ 6, 8, 10, 12 ]
 
 这部分代码专注于测试 RISC-V 64位架构下汇编器的核心功能，特别是对地址操作、浮点数转换和比较、跳转表以及 RVV 向量扩展指令的正确性进行了全面的测试。这些测试是 V8 引擎在 RISC-V 平台上可靠运行 JavaScript 代码的基础。它确保了 V8 能够生成正确的机器码来执行各种 JavaScript 操作，尤其是在数值计算和向量化处理方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-riscv64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 bfe961
   uint32_t buffer[4] = {0x304ac537, 0xfe950513, 0x851513, 0x6156513};
   MacroAssembler assm(isolate, v8::internal::CodeObjectRequired::kYes);
@@ -1340,8 +1342,4 @@ UTEST_RVV_VI_VIE_FORM_WITH_RES(vsext_vf2, int64_t, 64, 32, ARRAY(int32_t),
 UTEST_RVV_VI_VIE_FORM_WITH_RES(vsext_vf4, int64_t, 64, 16, ARRAY(int16_t),
                                static_cast<int64_t>(dst[i]))
 UTEST_RVV_VI_VIE_FORM_WITH_RES(vsext_vf8, int64_t, 64, 8, ARRAY(int8_t),
-                        
-"""
-
-
 ```

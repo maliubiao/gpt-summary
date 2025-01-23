@@ -276,15 +276,17 @@ func main() {
 
 总而言之，`syscall_linux_arm64.go` 文件是 Go 语言连接 Linux ARM64 操作系统内核的关键桥梁，它定义了底层的系统调用接口，为 Go 程序提供了访问操作系统功能的途径。但直接使用 `syscall` 包需要谨慎，因为它涉及到平台依赖性和潜在的安全风险。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_linux_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -471,9 +473,4 @@ func KexecFileLoad(kernelFd int, initrdFd int, cmdline string, flags int) error 
 }
 
 const SYS_FSTATAT = SYS_NEWFSTATAT
-
-"""
-
-
-
 ```

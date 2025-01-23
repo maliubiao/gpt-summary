@@ -105,11 +105,13 @@ console.log(resolvedOptions);
 
 `v8/src/objects/js-relative-time-format.cc` 文件是 V8 引擎实现 `Intl.RelativeTimeFormat` 这个 JavaScript 国际化 API 的核心 C++ 代码。它负责对象的创建、选项处理、与 ICU 库交互进行本地化格式化，并提供了将相对时间格式化为字符串或分解为部件的功能。 这使得 JavaScript 开发者能够方便地在他们的应用程序中显示本地化的相对时间信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-relative-time-format.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -625,7 +627,4 @@ const std::set<std::string>& JSRelativeTimeFormat::GetAvailableLocales() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

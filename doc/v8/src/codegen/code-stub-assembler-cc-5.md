@@ -682,7 +682,7 @@ TNode<IntPtrT> CodeStubAssembler::AlignToAllocationAlignment(
     } else {
       result =
           WordAnd(IntPtrAdd(value, IntPtrConstant(k
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -690,8 +690,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 jectSize)),
          &if_sizeissmall, &if_notsizeissmall);
 
@@ -1495,7 +1497,4 @@ TNode<JSArray> CodeStubAssembler::CloneFastJSArray(
     HoleConversionMode convert_holes) {
   // TODO(dhai): we should be able to assert IsFastJSArray(array) here, but this
   // function is also used to copy boilerplates even when the no-elemen
-"""
-
-
 ```

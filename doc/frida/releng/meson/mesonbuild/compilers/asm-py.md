@@ -197,7 +197,7 @@ A user might write an assembly file `my_assembly.asm` intended for Windows with 
 
 If a developer is debugging an issue with assembly compilation within the Frida build process, they might find themselves examining this `asm.py` file to understand how the assembler is being invoked and what flags are being used. They might also modify this file to add custom flags or troubleshoot issues with a specific assembler.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/asm.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import os
@@ -520,7 +522,4 @@ class MetrowerksAsmCompilerEmbeddedPowerPC(MetrowerksAsmCompiler):
     def sanity_check(self, work_dir: str, environment: 'Environment') -> None:
         if self.info.cpu_family not in {'ppc'}:
             raise EnvironmentException(f'ASM compiler {self.id!r} does not support {self.info.cpu_family} CPU family')
-
-"""
-
 ```

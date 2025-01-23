@@ -217,15 +217,17 @@ By following these steps, I can systematically analyze the code, understand its 
 
 通过以上分析，可以了解 `external_texture_helper.cc` 在 WebGPU 中处理外部视频纹理的关键作用，以及其与 Web 技术栈的联系，并能帮助开发者理解可能遇到的问题和调试方向。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/external_texture_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -699,7 +701,4 @@ ExternalTexture CreateExternalTexture(
 }
 
 }  // namespace blink
-
-"""
-
 ```

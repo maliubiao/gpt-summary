@@ -114,15 +114,17 @@ VTune 的代码事件处理器接收到类似以下的信息：
 
 `v8/src/third_party/vtune/v8-vtune.h` 是 V8 引擎为了支持 Intel VTune Amplifier XE 性能分析工具而提供的接口，它允许 VTune 监控 V8 引擎 JIT 编译的代码事件，从而帮助开发者分析和优化 JavaScript 代码的性能。 虽然它本身不是 JavaScript 或 Torque 代码，但它的功能与 JavaScript 的运行时行为密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/vtune/v8-vtune.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/third_party/vtune/v8-vtune.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 /*
    This file is provided under a dual BSD/GPLv2 license.  When using or
    redistributing this file, you may do so under either license.
@@ -193,8 +195,4 @@ v8::JitCodeEventHandler GetVtuneCodeEventHandler();
 
 
 #endif  // V8_VTUNE_H_
-
-
-"""
-
 ```

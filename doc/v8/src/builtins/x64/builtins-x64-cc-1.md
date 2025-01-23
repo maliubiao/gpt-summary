@@ -136,7 +136,7 @@ Therefore, the primary focus of this code is on the *execution of JavaScript cod
 
 总的来说，这段代码是 V8 引擎在 x64 架构上解释执行 JavaScript 代码的关键组成部分，负责管理函数调用、参数传递、栈帧的创建和销毁，以及处理生成器函数的恢复执行等核心任务。它与 JavaScript 的函数调用、构造函数调用、生成器函数等功能密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/x64/builtins-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/x64/builtins-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -144,8 +144,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 meterCount(0)));
     __ j(kGreaterThan, &push_arguments, Label::kNear);
     __ movl(argc, Immediate(JSParameterCount(0)));
@@ -995,7 +997,4 @@ void Builtins::Generate_InterpreterPushArgsThenFastConstructFunction(
   // do a smi check and fall through to check if the return value is a valid
   // receiver.
   __ JumpIfNotRo
-"""
-
-
 ```

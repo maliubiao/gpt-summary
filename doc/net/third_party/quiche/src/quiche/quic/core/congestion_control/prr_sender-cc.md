@@ -176,15 +176,17 @@ This step-by-step approach, starting with a high-level understanding and progres
 
 总而言之，`prr_sender.cc` 是 Chromium 网络栈中 QUIC 拥塞控制的关键组件，负责在发生丢包后平滑地恢复发送速率，提高网络传输效率。虽然普通用户和 JavaScript 开发者不会直接接触到这个文件，但它的行为直接影响着基于 QUIC 协议的网络应用的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/congestion_control/prr_sender.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -247,7 +249,4 @@ bool PrrSender::CanSend(QuicByteCount congestion_window,
 }
 
 }  // namespace quic
-
-"""
-
 ```

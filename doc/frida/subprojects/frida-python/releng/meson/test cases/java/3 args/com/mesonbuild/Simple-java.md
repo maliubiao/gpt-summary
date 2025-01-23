@@ -178,7 +178,7 @@ Java.perform(function () {
 
 总而言之，`Simple.java` 虽然自身功能简单，但它是 Frida 功能验证的基础，并且是理解 Frida 如何进行 Java 动态 instrumentation 的一个很好的起点。通过对这个简单程序的分析，我们可以了解到 Frida 在逆向工程、底层技术以及用户使用等方面的一些关键概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/java/3 args/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class Simple {
@@ -195,7 +197,4 @@ class Simple {
         System.out.println("Java is working.\n");
     }
 }
-
-"""
-
 ```

@@ -139,15 +139,17 @@ fetch('https://example.com')
 
 `net/cert/x509_util_apple_unittest.cc` 是一个关键的测试文件，它确保了 Chromium 在 macOS 上能够正确地与 Apple 的证书管理框架交互，从而保证了基于 Chromium 的浏览器在处理 HTTPS 连接时的安全性。它测试了证书在 Chromium 和 Apple 平台特定表示之间的转换，并覆盖了常见的错误处理场景。 虽然 JavaScript 不直接调用这些 C++ 函数，但这些底层功能是 JavaScript 发起的安全网络请求的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/x509_util_apple_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -353,7 +355,4 @@ TEST(X509UtilTest,
 }  // namespace x509_util
 
 }  // namespace net
-
-"""
-
 ```

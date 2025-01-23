@@ -127,7 +127,7 @@ int func(void) {
 
 通过查看这个文件，用户可以了解到这是一个用于单元测试的辅助 C 代码，其核心功能是返回一个由宏定义的值。结合周围的测试代码和其他相关文件，用户可以更深入地理解 Frida 的某些功能是如何被测试的，并找到调试问题的线索。例如，他们可能会去查看构建系统如何生成 `generated.h`，或者查看相关的 Frida 脚本是如何使用 `func` 函数进行断言的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/95 custominc/helper.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,14 +135,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<generated.h>
 
 int func(void) {
     return RETURN_VALUE;
 }
-
-"""
-
 ```

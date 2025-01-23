@@ -156,15 +156,17 @@ By following these steps, we can construct a comprehensive and accurate answer t
 
 总而言之，`serialized_color_params.cc` 是 Blink 引擎中一个关键的组成部分，它确保了在不同的执行环境中，与 `ImageData` 和 `ImageBitmap` 相关的颜色信息能够被正确地保存和恢复，这对于构建具有复杂图形处理能力的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/serialization/serialized_color_params.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -459,7 +461,4 @@ ImageOrientationEnum SerializedImageBitmapSettings::GetImageOrientation()
 }
 
 }  // namespace blink
-
-"""
-
 ```

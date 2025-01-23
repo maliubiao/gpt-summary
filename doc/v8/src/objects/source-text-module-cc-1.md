@@ -154,7 +154,7 @@ export const result = 'done';
 
 总而言之，这部分代码是 V8 引擎实现 JavaScript 模块评估逻辑的关键组成部分，确保模块能够按照规范正确地加载、链接和执行，并处理各种可能的执行结果和错误情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/source-text-module.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/source-text-module.cc以.tq结尾，那它是个v8 torque源代码，
@@ -162,8 +162,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ption)) {
     // a. For each Cyclic Module Record m in stack, do
     for (DirectHandle<SourceTextModule> descendant : *stack) {
@@ -783,8 +785,4 @@ void SourceTextModule::InnerGetStalledTopLevelAwaitModule(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

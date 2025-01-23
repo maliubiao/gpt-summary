@@ -176,15 +176,17 @@ func main() {
 
 这段特定的代码是为测试编译器行为而设计的，它揭示了在处理 ABI0 函数作为函数值调用时可能存在的边界情况。 理解这段代码的意义需要一定的 Go 语言底层知识，特别是关于编译器和 ABI 的概念。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue47317.dir/x.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -202,9 +204,4 @@ func F() interface{} {
 }
 
 func G(x int) [2]int
-
-"""
-
-
-
 ```

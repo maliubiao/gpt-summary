@@ -190,7 +190,7 @@ Interceptor.attach(ObjC.classes.MySwiftClass["- someIntReturningMethod"], {
 
 这个名为 `t1.cpp` 的 C++ 文件是 Frida 项目中用于测试其对 Swift 代码内省能力的单元测试用例。它通过模拟简单的类实例化、方法调用和状态变化，并检查方法的返回值，来验证 Frida 的核心功能是否正常工作。这个测试用例直接关联到动态逆向分析的方法，并涉及到一些二进制底层、操作系统 API 和 Swift 运行时的知识。理解这样的测试用例有助于开发者维护和改进 Frida 的功能，也有助于用户理解 Frida 的工作原理和使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/56 introspection/t1.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,8 +198,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "sharedlib/shared.hpp"
 
 int main(void) {
@@ -213,7 +215,4 @@ int main(void) {
   }
   return 0;
 }
-
-"""
-
 ```

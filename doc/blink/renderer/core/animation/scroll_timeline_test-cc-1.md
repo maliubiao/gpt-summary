@@ -134,15 +134,17 @@ Here's a breakdown of the code and its functionalities:
 
 总而言之，这部分测试代码深入验证了滚动时间线和视图时间线在各种场景下的核心功能，包括生命周期管理、与页面缩放的交互、范围计算以及动画持续时间的推导，确保了这些 Web 平台特性能够按照规范正确运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/scroll_timeline_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mation->play();
     animations.push_back(animation);
   }
@@ -469,8 +471,4 @@ TEST_F(ScrollTimelineTest, CompositedDeferredTimelineReattachment) {
 }
 
 }  //  namespace blink
-
-"""
-
-
 ```

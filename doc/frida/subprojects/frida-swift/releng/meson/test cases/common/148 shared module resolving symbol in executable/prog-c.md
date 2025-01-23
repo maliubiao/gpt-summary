@@ -155,7 +155,7 @@ By systematically going through the code and addressing each point in the prompt
 
 总而言之，这个 `prog.c` 文件是一个精心设计的测试用例，用于验证 Frida 在处理跨模块符号解析方面的功能，同时也展示了动态链接的基本原理和可能出现的问题。了解这个测试用例的功能和相关知识，有助于理解 Frida 的工作机制以及进行相关的逆向分析工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/148 shared module resolving symbol in executable/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <assert.h>
 #ifdef _WIN32
@@ -226,7 +228,4 @@ int main(int argc, char **argv)
 
   return 0;
 }
-
-"""
-
 ```

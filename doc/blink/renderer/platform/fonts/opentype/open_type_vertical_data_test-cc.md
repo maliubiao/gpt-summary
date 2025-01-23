@@ -134,14 +134,16 @@ This systematic approach, combining code analysis with knowledge of web technolo
 
 `open_type_vertical_data_test.cc` 这个文件虽然是一个底层的 C++ 测试文件，但它对于确保浏览器能够正确且安全地处理 OpenType 字体中的垂直排版数据至关重要。它间接地影响了用户在网页上看到的垂直排版文本的正确显示。通过测试 `ValidateTable` 和 `ValidateOffset` 这样的关键函数，可以有效地防止因错误的缓冲区处理和偏移量计算而导致的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/open_type_vertical_data_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Koji Ishii <kojiishi@gmail.com>
  *
@@ -217,7 +219,4 @@ TEST(OpenTypeVerticalDataTest, ValidateOffsetTest) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

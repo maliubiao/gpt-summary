@@ -113,12 +113,14 @@ let z = a + b * c;
 
 `maglev-regalloc.cc` 的第二部分专注于处理更复杂的寄存器分配场景，特别是与控制流和循环优化相关的场景。其目标是尽可能高效地利用 CPU 寄存器，从而提高生成的机器码的执行效率，最终提升 JavaScript 代码的性能。理解这部分代码的功能有助于理解 V8 引擎如何将高级的 JavaScript 代码转换为低级的机器指令并进行优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-regalloc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 n()) {
       CHECK_EQ(double_slot, it->double_slot);
       CHECK_GT(start, it->freed_at_position);
@@ -849,8 +851,4 @@ void StraightForwardRegisterAllocator::MergeRegisterValues(ControlNode* control,
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -122,7 +122,7 @@ if (ObjC.available) {
 
 `frida/subprojects/frida-swift/releng/meson/test cases/failing/122 override and add_project_dependency/lib.c` 这个简单的 C 代码文件，在 Frida 的测试框架中扮演着一个被 hook 和 override 的目标。它的存在是为了测试 Frida 在特定场景下的功能，而其位于 "failing" 目录下表明了在这些场景中预期会出现问题。分析这个文件及其上下文有助于理解 Frida 的工作原理，以及逆向工程中常用的 hook 和 override 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing/122 override and add_project_dependency/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,12 +130,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include "lib.h"
 void f() {puts("hello");}
-
-"""
-
 ```

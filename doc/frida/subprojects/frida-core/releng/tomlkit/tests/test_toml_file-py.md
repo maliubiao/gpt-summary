@@ -185,7 +185,7 @@ a = 1\r\nb = 3\r\n
 
 总而言之，`test_toml_file.py` 是 `tomlkit` 库的核心测试文件，它覆盖了 TOML 文件读写和格式处理的各种场景，对于理解 `tomlkit` 的功能和确保其正确性至关重要。在 Frida 的上下文中，了解 `tomlkit` 的工作原理可以帮助逆向工程师更有效地分析和操作目标应用程序的配置文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/tomlkit/tests/test_toml_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 
 from tomlkit.toml_document import TOMLDocument
@@ -302,7 +304,4 @@ def test_default_eol_is_os_linesep(tmpdir):
     linesep = os.linesep.encode()
     with open(toml_path, "rb") as f:
         assert f.read() == b"a = 1" + linesep + b"b = 2" + linesep
-
-"""
-
 ```

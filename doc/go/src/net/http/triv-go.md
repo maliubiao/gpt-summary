@@ -280,7 +280,7 @@ func main() {
 
 总而言之，`triv.go` 是一个很好的学习 `net/http` 包和其他 Go 标准库功能的示例程序。它展示了如何构建简单的 HTTP 服务，处理命令行参数，导出运行时变量，以及进行一些基本的并发操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/triv.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -288,8 +288,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -430,9 +432,4 @@ func main() {
 	http.HandleFunc("/date", DateServer)
 	log.Fatal(http.ListenAndServe("localhost:12345", nil))
 }
-
-"""
-
-
-
 ```

@@ -123,11 +123,13 @@ func main() {
 
 This example shows how you can use the `gmp` package to perform calculations that would overflow standard Go integer types. The underlying magic of connecting the Go code to the C library is handled by `cgo`.
 
-Prompt: 
+### 提示词
 ```
 这是目录为go/misc/cgo/gmp/gmp.go的go语言实现的一部分， 请归纳一下它的功能, 　如果你能推理出它是什么go语言功能的实现，请用go代码举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -507,9 +509,4 @@ func (z *Int) ProbablyPrime(n int) bool {
 	z.doinit()
 	return int(C.mpz_probab_prime_p(&z.i[0], C.int(n))) > 0
 }
-
-"""
-
-
-
 ```

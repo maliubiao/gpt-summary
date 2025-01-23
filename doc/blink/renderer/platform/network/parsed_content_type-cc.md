@@ -126,14 +126,16 @@ This step-by-step approach, starting with a general understanding and gradually 
 
 总而言之，`parsed_content_type.cc` 中 `ParsedContentType` 类的核心职责是准确地解析 HTTP `Content-Type` 头，这对于浏览器正确处理各种类型的网络资源至关重要。  理解其工作原理有助于我们避免因 `Content-Type` 设置不当而引发的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/parsed_content_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  * Copyright (C) 2012 Intel Corporation. All rights reserved.
@@ -251,7 +253,4 @@ String ParsedContentType::Charset() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

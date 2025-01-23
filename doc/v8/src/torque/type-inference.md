@@ -112,11 +112,13 @@ console.log(str);
 
 `v8/src/torque/type-inference.cc` 实现了 Torque 语言的类型参数推断功能，这对于确保 Torque 代码的类型安全性和正确性至关重要。虽然 Torque 是 V8 内部的语言，但其类型推断的概念与 JavaScript 的超集 TypeScript 中的类型推断非常相似，都旨在根据上下文自动确定泛型类型的具体类型参数，从而提高代码的可读性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/type-inference.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -234,7 +236,4 @@ void TypeArgumentInference::MatchGeneric(BasicTypeExpression* parameter,
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

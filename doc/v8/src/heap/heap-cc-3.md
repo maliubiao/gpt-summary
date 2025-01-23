@@ -675,7 +675,7 @@ void CreateFillerObjectAtImpl(const WritableFreeSpace& free_space, Heap* heap,
   } else if (size == 2 * kTaggedSize) {
     HeapObject::SetFillerMap(free_space,
                              roots.unchecked_
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap.cc以.tq结尾，那它是个v8 torque源代码，
@@ -683,9 +683,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共9部分，请归纳一下它的功能
+```
 
-"""
-  auto new_limits = ComputeNewAllocationLimits(this);
+### 源代码
+```cpp
+auto new_limits = ComputeNewAllocationLimits(this);
   size_t new_old_generation_allocation_limit =
       new_limits.old_generation_allocation_limit;
   size_t new_global_allocation_limit = new_limits.global_allocation_limit;
@@ -1541,7 +1543,4 @@ Tagged<FixedArrayBase> Heap::LeftTrimFixedArray(Tagged<FixedArrayBase> object,
   // Calculate location of new array start.
   Address old_start = object.address();
   A
-"""
-
-
 ```

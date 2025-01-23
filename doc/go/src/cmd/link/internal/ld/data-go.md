@@ -175,7 +175,7 @@ func (st *relocSymState) relocsym(s loader.Sym, P []byte) {
 
 `go/src/cmd/link/internal/ld/data.go` 的第一部分主要负责在 Go 语言链接过程中处理代码和数据的布局、重定位、动态链接以及一些特定的初始化任务，为最终生成可执行文件或共享库奠定基础。它包含了处理架构差异、优化跳转距离、与操作系统动态链接机制交互以及为运行时环境准备必要元数据的关键逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/data.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -183,8 +183,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Derived from Inferno utils/6l/obj.c and utils/6l/span.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/obj.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/span.c
@@ -2192,9 +2194,4 @@ func (state *dodataState) allocateDataSections(ctxt *Link) {
 		sect := state.allocateNamedSectionAndAssignSyms(&Segdata, ".go.fuzzcntrs", sym.SLIBFUZZER_8BIT_COUNTER, sym.Sxxx, 06)
 		ldr.SetSymSect(ldr.LookupOrCreateSym("runtime.__start___sancov_cntrs", 0), sect)
 		ldr.SetSymSect(ldr.LookupOrCreateSym("runti
-"""
-
-
-
-
 ```

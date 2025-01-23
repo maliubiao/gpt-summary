@@ -239,7 +239,7 @@ Analyzing memory region 0x1000...
 
 总而言之，`frida/subprojects/frida-node/releng/progress.py` 提供了一个简单但重要的功能，用于在 Frida Node.js 绑定的操作中提供用户反馈，尤其是在那些可能耗时较长的逆向分析任务中。理解其工作原理可以帮助开发者更好地使用 Frida，并排查与用户体验相关的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/progress.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -247,8 +247,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from dataclasses import dataclass
 from typing import Callable
 
@@ -263,7 +265,4 @@ ProgressCallback = Callable[[Progress], None]
 
 def print_progress(progress: Progress):
     print(f"{progress.message}...", flush=True)
-
-"""
-
 ```

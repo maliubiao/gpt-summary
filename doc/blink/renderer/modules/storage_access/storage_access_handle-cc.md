@@ -322,15 +322,17 @@ To reach the code in `storage_access_handle.cc`, the following sequence of user 
 
 In summary, `storage_access_handle.cc` is a critical component in Blink's implementation of the Storage Access API, acting as a gatekeeper for cross-site iframe access to various storage mechanisms, enforcing permissions, and providing the necessary interfaces for JavaScript interaction.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/storage_access/storage_access_handle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -805,7 +807,4 @@ ExecutionContext* ExecutionContextFromV8Wrappable(
 }  // namespace bindings
 
 }  // namespace blink
-
-"""
-
 ```

@@ -169,7 +169,7 @@ console.log(value); // 输出 123
 
 这部分 Torque 代码的核心功能是 **将 WebAssembly 函数的返回值从其在内存中的原始表示形式安全且正确地转换为 JavaScript 可以理解的类型**。它针对不同的 WebAssembly 数据类型（整数、浮点数、引用等）进行特定的转换，并能处理单返回值和多返回值的情况，同时考虑了不同架构和平台带来的差异。这部分代码是 V8 引擎实现 WebAssembly 和 JavaScript 互操作性的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/js-to-wasm.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/js-to-wasm.tq以.tq结尾，那它是个v8 torque源代码，
@@ -177,9 +177,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- }
+### 源代码
+```
+}
       const result = Convert<Number>(ret);
       return result;
     } else if (retType == kWasmF32Type) {
@@ -337,8 +339,4 @@ Prompt:
   return resultArray;
 }
 }  // namespace wasm
-
-"""
-
-
 ```

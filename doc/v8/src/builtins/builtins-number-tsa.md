@@ -119,11 +119,13 @@ console.log(h); // 输出: 0
 
 `builtins-number-tsa.cc` 文件中的这段代码是 V8 引擎为了提升性能而采用的一种新的实现方式。它使用 Turboshaft Assembler 实现了 JavaScript 中数字的按位非运算符，并且包含了性能反馈机制，使得 V8 引擎能够更好地优化 JavaScript 代码的执行。 这段 C++ 代码是 JavaScript 功能在底层实现的直接体现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-number-tsa.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ TS_BUILTIN(BitwiseNot_WithFeedback, NumberBuiltinsAssemblerTS) {
 #include "src/compiler/turboshaft/undef-assembler-macros.inc"
 
 }  // namespace v8::internal
-
-"""
-
 ```

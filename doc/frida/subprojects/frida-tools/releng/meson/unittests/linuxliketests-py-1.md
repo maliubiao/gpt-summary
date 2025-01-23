@@ -102,7 +102,7 @@ To provide a comprehensive summary, I will go through each test function and ide
 
 作为调试线索，如果某个构建或安装相关的功能出现问题，开发者可能会逐步检查这些单元测试的执行结果，查看是否有相关的测试失败。例如，如果用户报告已安装的程序无法运行，开发者可能会首先运行 `test_run_installed` 来验证 RPATH 的处理是否正确。如果涉及到与 pkg-config 的集成问题，则会检查 `test_pkgconfig_usage` 等相关测试。这些测试覆盖了构建过程中的关键环节，可以帮助开发者快速定位问题所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,9 +111,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    def test_cpp_std_override(self):
+### 源代码
+```python
+def test_cpp_std_override(self):
         testdir = os.path.join(self.unit_test_dir, '6 std override')
         self.init(testdir)
         compdb = self.get_compdb()
@@ -818,7 +820,4 @@ Prompt:
 
     @skipIfNoPkgconfigDep('gmodule-2.0')
     def test_ldflag_dedup(se
-"""
-
-
 ```

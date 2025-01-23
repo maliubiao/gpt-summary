@@ -131,7 +131,7 @@ Breakpoint hit at 0x12345678
    - 如果内存读写操作失败，可以检查目标进程的内存权限和地址空间，确保操作的内存区域是可访问的。
 
 通过以上步骤和调试线索，用户可以逐步定位和解决 Frida 在目标进程中的调试问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/linux/frida-helper-backend.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 p with agent");
 			} finally {
 				cancel_source.destroy ();
@@ -1269,7 +1271,4 @@ p with agent");
 				Memory.copy ((uint8 *) result + offset, &word, chunk_size);
 
 				o
-"""
-
-
 ```

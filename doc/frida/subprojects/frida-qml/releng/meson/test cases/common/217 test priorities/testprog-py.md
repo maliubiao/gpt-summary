@@ -108,7 +108,7 @@ By following this step-by-step analysis, starting with the code's basic function
 
 总而言之，`testprog.py` 自身是一个非常简单的 Python 脚本，但在 Frida 的测试框架中，它充当了一个重要的角色：作为一个可预测行为的目标进程，用于测试 Frida 的各种插桩和拦截功能，特别是与测试优先级相关的场景。 它的简单性使得测试框架能够更专注于验证 Frida 的核心功能，而不是被目标程序的复杂性所干扰。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/217 test priorities/testprog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,14 +116,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 print(sys.argv[1])
-
-"""
-
 ```

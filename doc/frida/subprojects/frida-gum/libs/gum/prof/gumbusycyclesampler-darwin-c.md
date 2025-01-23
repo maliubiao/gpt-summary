@@ -176,7 +176,7 @@ Interceptor.attach(Module.findExportByName(null, '函数A'), {
 
 总而言之，`gumbusycyclesampler-darwin.c` 是 Frida 在 macOS 上进行基本 CPU 时间采样的核心组件，它利用了 macOS 的内核接口来获取线程信息，为逆向工程师提供了一种了解程序运行时性能的手段。理解其工作原理有助于更有效地使用 Frida 进行动态分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/libs/gum/prof/gumbusycyclesampler-darwin.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2011-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -268,7 +270,4 @@ gum_busy_cycle_sampler_sample (GumSampler * sampler)
   return ((GumSample) info.user_time.seconds * G_USEC_PER_SEC) +
       info.user_time.microseconds;
 }
-
-"""
-
 ```

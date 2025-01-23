@@ -217,7 +217,7 @@ func main() {
 
 在这个例子中，开发者尝试使用 `syscall.Connect`（虽然这不是 `runtime.connect`，但原理类似）。如果 `fd` 没有被正确地初始化为一个有效的 socket 文件描述符，`connect` 系统调用将会失败并返回一个错误码。这说明直接操作底层系统调用需要非常小心，并且理解其参数和前提条件至关重要。  通常，应该使用 Go 标准库提供的更高级别的抽象。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/stubs_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -225,8 +225,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -247,9 +249,4 @@ func sbrk0() uintptr
 func access(name *byte, mode int32) int32
 func connect(fd int32, addr unsafe.Pointer, len int32) int32
 func socket(domain int32, typ int32, prot int32) int32
-
-"""
-
-
-
 ```

@@ -198,15 +198,17 @@ function getProperty(obj, key) {
 
 总而言之，`v8/src/objects/feedback-vector.tq` 定义的 `FeedbackVector` 是 V8 引擎进行运行时优化的核心机制之一。它通过收集函数的执行反馈信息，帮助 V8 更好地理解代码的实际运行情况，从而做出更有效的优化决策。理解 `FeedbackVector` 的功能有助于开发者编写更易于 V8 优化的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/feedback-vector.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/feedback-vector.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ extern class FeedbackVector extends HeapObject {
 }
 
 extern class FeedbackMetadata extends HeapObject;
-
-"""
-
 ```

@@ -163,7 +163,7 @@ html_theme = "sphinx_rtd_theme"
 
 总而言之，`frida/subprojects/frida-python/releng/tomlkit/docs/conf.py` 文件虽然不直接参与 Frida 的动态 instrumentation 功能，但它是构建 `tomlkit` 库文档的关键配置文件，对于理解和使用 `tomlkit`，以及排查文档生成问题都非常重要。而 `tomlkit` 作为 Frida 的子项目，其功能间接地服务于逆向工程师。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/tomlkit/docs/conf.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -233,7 +235,4 @@ html_theme = "furo"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = []
-
-"""
-
 ```

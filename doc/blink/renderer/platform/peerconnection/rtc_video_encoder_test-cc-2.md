@@ -100,15 +100,17 @@ Here's a breakdown of the thought process to analyze the code and generate the a
 
 总而言之，这个测试文件通过各种测试用例，确保了 `RTCVideoEncoder` 能够可靠地处理各种编码场景，包括错误情况、动态变化和不同的硬件及编解码器支持，从而保证 WebRTC 音视频通信的质量和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_encoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 base::WaitableEvent error_waiter(
         base::WaitableEvent::ResetPolicy::MANUAL,
         base::WaitableEvent::InitialState::NOT_SIGNALED);
@@ -572,8 +574,4 @@ TEST_F(RTCVideoEncoderEncodeTest, H265TemporalLayerGenericFrameInfo) {
 #endif  // BUILDFLAG(RTC_USE_H265)
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -98,14 +98,16 @@ Here's a thinking process to arrive at the explanation of `ignore_paint_timing_s
 
 `ignore_paint_timing_scope.cc` 文件定义了控制 Blink 引擎绘制时间记录的关键机制。它允许在某些特定的代码区域或条件下临时禁用绘制时间的收集，这对于优化性能分析和避免记录不相关的绘制事件至关重要。其状态与 CSS 样式和 JavaScript 对页面元素的修改密切相关。虽然用户不会直接使用这个类，但理解其功能有助于理解 Blink 引擎的渲染和性能监控机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/ignore_paint_timing_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -118,7 +120,4 @@ int IgnorePaintTimingScope::ignore_depth_ = 0;
 bool IgnorePaintTimingScope::is_document_element_invisible_ = false;
 
 }  // namespace blink
-
-"""
-
 ```

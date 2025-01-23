@@ -146,15 +146,17 @@ Checkpoint Elimination 本身不是为了解决用户代码的错误，而是为
 
 `v8/test/unittests/compiler/checkpoint-elimination-unittest.cc` 是一个测试 V8 编译器中 Checkpoint Elimination 优化的单元测试文件。它验证了优化器能够正确地识别和删除冗余的检查点，从而提高 JavaScript 代码的执行效率。该测试用例通过创建一个包含两个检查点和一个无副作用操作符的简单图结构，并断言优化后第二个检查点被替换为之前的无副作用操作符来验证优化器的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/checkpoint-elimination-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/checkpoint-elimination-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ TEST_F(CheckpointEliminationTest, CheckpointChain) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

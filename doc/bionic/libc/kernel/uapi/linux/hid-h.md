@@ -219,7 +219,7 @@ if (Process.platform === 'linux') {
 
 这个分析涵盖了 `bionic/libc/kernel/uapi/linux/hid.h` 文件的功能、与 Android 的关系、涉及到的系统调用、常见错误以及 Android Framework/NDK 如何到达这里，并提供了 Frida Hook 的示例。希望这个详细的解答对你有所帮助！
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/hid.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -230,8 +230,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -263,7 +265,4 @@ enum hid_class_request {
 #define HID_DT_PHYSICAL (USB_TYPE_CLASS | 0x03)
 #define HID_MAX_DESCRIPTOR_SIZE 4096
 #endif
-
-"""
-
 ```

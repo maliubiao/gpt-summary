@@ -60,7 +60,7 @@ Android 框架或 NDK 中的图形渲染、动画、物理模拟等模块，以�
 
 这部分代码定义了 `sincosf` 函数在特定输入范围内使用的一组预先计算好的单精度浮点数，用于优化在 Intel 架构 Android 设备上的正弦和余弦计算性能。它很可能是 `sincosf_intel_data.handroid` 文件中多个数据段的一部分，共同构成了一个用于快速近似计算的查找表。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sincosf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -72,8 +72,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 223p-1,
     0x1.93cd3ep-1,
   },
@@ -1330,7 +1332,4 @@ Prompt:
   { // Entry 496
     0x1.bc4c0a9b3782e220ae55786369ccf190p-2,
     -0x1.cd4bc93947e86671ac7f
-"""
-
-
 ```

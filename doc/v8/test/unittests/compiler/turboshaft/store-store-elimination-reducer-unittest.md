@@ -80,11 +80,13 @@ function foo() {
 
 `store-store-elimination-reducer-unittest.cc` 这个文件通过创建一个模拟场景并应用 `StoreStoreEliminationReducer`，来验证该优化器能够正确地识别和消除或合并连续的存储操作。这直接关系到 V8 如何高效地处理 JavaScript 代码中的对象属性赋值等操作，从而提高 JavaScript 代码的执行性能。 提供的 JavaScript 示例展示了在高级语言层面可能触发这种优化的代码模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/turboshaft/store-store-elimination-reducer-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -143,7 +145,4 @@ TEST_F(StoreStoreEliminationReducerTest, MergeObjectInitialzationStore) {
 #include "src/compiler/turboshaft/undef-assembler-macros.inc"
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

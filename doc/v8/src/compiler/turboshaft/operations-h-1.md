@@ -106,7 +106,7 @@ let z = x + 5;
 
 这部分 `operations.h` 代码是 Turboshaft 编译器的核心组成部分，它定义了 **Turboshaft IR 的基本构建块——操作 (Operations)**，并提供了描述操作属性（如副作用）的机制。它为后续的编译优化和代码生成奠定了基础。这部分代码定义了 Turboshaft 能够表示的各种计算和操作，以及它们可能产生的副作用，这是进行有效编译和优化的关键信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/operations.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/operations.h以.tq结尾，那它是个v8 torque源代码，
@@ -114,8 +114,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 on previous checks to avoid deopting.
         .CanDependOnChecks();
   }
@@ -983,7 +985,4 @@ struct WordBinopOp : FixedArityOperationT<2, WordBinopOp> {
     }
   }
   // The Word32 and Word64 versions of the operator compute the same result w
-"""
-
-
 ```

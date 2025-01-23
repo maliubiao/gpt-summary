@@ -198,14 +198,16 @@ By following this structured thought process, we can thoroughly analyze the prov
 
 总而言之，`LayoutFrame.cc` 文件中的 `LayoutFrame` 类是 Blink 渲染引擎中处理 HTML 框架元素布局的关键组件，它与 HTML 结构、CSS 样式以及 JavaScript 的动态修改紧密相关，共同决定了网页中框架的最终呈现效果。`ImageChanged` 方法则是一个具体的例子，展示了 `LayoutFrame` 如何处理与样式相关的特定事件（自定义光标图片的变更）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 2000 Simon Hausmann <hausmann@kde.org>
@@ -262,7 +264,4 @@ void LayoutFrame::ImageChanged(WrappedImagePtr image, CanDeferInvalidation) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

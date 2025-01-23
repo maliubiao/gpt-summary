@@ -105,15 +105,17 @@ By following this systematic approach, combining code analysis with an understan
 
 总而言之，`v8_binding_for_modules_test.cc` 是 Blink 引擎中一个非常重要的测试文件，它确保了 JavaScript 模块（特别是涉及到 IndexedDB API）与底层的 C++ 代码能够正确地进行数据交互，对于保证 Web 应用的功能和数据完整性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/modules/v8/v8_binding_for_modules_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -869,7 +871,4 @@ TEST(DeserializeIDBValueTest, NestedInjectionIntoNonObject) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -157,7 +157,7 @@ Stopped thread.
 
 总而言之，`threadprog.cpp` 是一个简洁而重要的测试用例，用于验证 Frida 在处理基本线程操作时的正确性，同时也反映了多线程编程中需要考虑的一些基本概念和平台差异。 它为逆向工程师和 Frida 用户提供了一个了解多线程程序行为的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/94 threads/threadprog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /* On Windows not all versions of VS support C++11 and
  * some (most?) versions of mingw don't support std::thread,
  * even though they do support c++11. Since we only care about
@@ -210,7 +212,4 @@ int main(void) {
 }
 
 #endif
-
-"""
-
 ```

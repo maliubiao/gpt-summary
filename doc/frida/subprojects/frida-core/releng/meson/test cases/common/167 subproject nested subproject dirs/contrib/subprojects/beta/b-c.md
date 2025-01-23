@@ -120,7 +120,7 @@ Here's a breakdown of the thinking process to analyze the C code snippet and ful
 
 总而言之，这段简单的 C 代码片段虽然功能单一，但它展示了动态链接、符号可见性和跨平台编译等重要的软件开发概念，并且可以作为逆向工程和动态分析的入门示例。结合文件路径，我们可以推测出用户是在一个 Frida 相关的调试环境中接触到这段代码的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/167 subproject nested subproject dirs/contrib/subprojects/beta/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -144,7 +146,4 @@ Prompt:
 int DLL_PUBLIC func2(void) {
     return 42;
 }
-
-"""
-
 ```

@@ -170,19 +170,18 @@ TEST(ArrayTest, BasicPush) {
 
 `v8/testing/gtest/empty.cc` 本身是一个没有实际测试用例的空文件，它在 V8 的测试结构中可能扮演占位符或框架验证的角色。 如果后缀是 `.tq`，则表示它是一个空的 Torque 源代码文件。 尽管它不直接测试 JavaScript 功能，但它作为测试体系的一部分，有助于确保 V8 引擎的可靠性。  常见的编程错误主要与编写具体的测试用例有关，而非空测试文件本身。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/testing/gtest/empty.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/testing/gtest/empty.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-
-"""
-
 ```

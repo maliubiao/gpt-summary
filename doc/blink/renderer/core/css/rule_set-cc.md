@@ -143,7 +143,7 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 总而言之，`blink/renderer/core/css/rule_set.cc` 文件中的 `RuleSet` 类是 Blink 渲染引擎中管理 CSS 规则的核心组件，它通过高效的组织和索引策略，确保在渲染过程中能够快速找到并应用正确的样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/rule_set.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 2004-2005 Allan Sandfeld Jensen (kde@carewolf.com)
@@ -969,7 +971,4 @@ void RuleSet::AddFunctionRule(StyleRuleFunction* rule) {
 }
 
 void RuleSet::AddViewTransitionRule(StyleRuleViewTransition*
-"""
-
-
 ```

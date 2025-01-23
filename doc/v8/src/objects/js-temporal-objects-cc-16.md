@@ -149,7 +149,7 @@ console.log(yearMonth.toString()); // "2023-10"
 
 作为 Temporal API 实现的一部分，这个文件专注于 `Temporal.PlainDate` 和 `Temporal.PlainDateTime` 对象的 **核心表示和基本操作**。它提供了创建、转换、比较和基本修改这些日期和日期时间对象的基础设施。  后续的部分可能会涉及更复杂的操作，例如时区处理、持续时间计算、以及与 `Temporal.Instant` 等其他 Temporal 类型的交互。  这个文件是构建完整 Temporal API 功能的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -157,8 +157,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第17部分，共25部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 bject(isolate, options_obj, method_name));
   // 2. If Type(item) is Object and item has an [[InitializedTemporalDate]]
   // internal slot, then
@@ -865,7 +867,4 @@ MaybeHandle<JSReceiver> ConsolidateCalendars(Isolate* isolate,
     return one;
   }
   // 7. Throw a RangeError ex
-"""
-
-
 ```

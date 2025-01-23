@@ -184,15 +184,17 @@ Directly interacting with the read-only heap from user-level JavaScript is gener
 
 **In summary, `v8/src/heap/read-only-heap.cc` is a vital component of the V8 engine responsible for managing the memory region that holds immutable, shared objects, crucial for the performance and integrity of the JavaScript environment.** It handles initialization from snapshots, sharing across isolates, and provides mechanisms to access and verify the contents of this read-only memory area.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/read-only-heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/read-only-heap.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -533,7 +535,4 @@ void ReadOnlyPageObjectIterator::Reset(const ReadOnlyPageMetadata* page) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

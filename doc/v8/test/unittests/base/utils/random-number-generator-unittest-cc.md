@@ -187,15 +187,17 @@ int main() {
 
 总之，`v8/test/unittests/base/utils/random-number-generator-unittest.cc` 是一个重要的测试文件，用于确保 V8 内部的随机数生成器按预期工作，并覆盖了各种使用场景和边界条件。理解这个文件的功能有助于理解 V8 中随机数生成的基础设施，以及如何在 JavaScript 中使用相关的 API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/utils/random-number-generator-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/base/utils/random-number-generator-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -458,7 +460,4 @@ INSTANTIATE_TEST_SUITE_P(RandomSeeds, RandomNumberGeneratorTest,
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -48,9 +48,12 @@ Essentially, these tests ensure that the "managed" object mechanism in V8 correc
 
 总而言之，`v8/test/unittests/objects/managed-unittest.cc` 文件是 V8 引擎中用于保障 `Managed` 对象内存管理机制正确性的关键测试文件。它通过模拟各种场景，验证了 `Managed` 对象在垃圾回收和 Isolate 销毁时的析构行为，以及在跨 Isolate 使用时的生命周期管理。
 
-Prompt: ```这是目录为v8/test/unittests/objects/managed-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/objects/managed-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,6 +244,4 @@ TEST_F(ManagedTest, CollectAcrossIsolates) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

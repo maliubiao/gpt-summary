@@ -181,7 +181,7 @@ func main() {
 
 这段 `go/src/go/printer/printer.go` 代码实现了 `go/printer` 包的核心功能，即 **将 Go 语言的抽象语法树 (AST) 节点格式化为可读的源代码文本**。 它负责处理代码的缩进、空格、换行、注释以及条件编译指令，并提供了一些配置选项来调整输出格式。这段代码是构建 Go 代码格式化和生成工具的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/printer/printer.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -190,8 +190,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1267,9 +1269,4 @@ func getLastComment(n ast.Node) *ast.CommentGroup {
 	case *ast.ImportSpec:
 		return n.Comment
 	case *ast.ValueSp
-"""
-
-
-
-
 ```

@@ -192,14 +192,16 @@ console.log(found); // 输出: 130
 
 这段 Torque 代码是 V8 引擎中 `Array.prototype.findLast` 方法的具体实现。它通过从后向前遍历数组并执行回调函数来查找满足条件的最后一个元素。代码中包含优化路径 (`FastArrayFindLast`) 和通用路径 (`ArrayFindLastLoopContinuation`)，以提高性能。理解这段代码有助于深入了解 JavaScript 数组方法的底层实现以及 V8 引擎的运作方式。开发者在使用 `findLast` 时需要注意提供正确的回调函数和 `thisArg`，并确保回调函数的逻辑符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-findlast.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -311,7 +313,4 @@ transitioning javascript builtin ArrayPrototypeFindLast(
   }
 }
 }
-
-"""
-
 ```

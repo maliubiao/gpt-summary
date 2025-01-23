@@ -228,15 +228,17 @@ Let's break down the thought process for analyzing the `SVGTextContentElement.cc
 
 总而言之，`blink/renderer/core/svg/svg_text_content_element.cc` 文件是 Blink 引擎中处理 SVG 文本的核心组件，它连接了 HTML 结构、CSS 样式和 JavaScript 脚本，负责 SVG 文本的渲染、交互和操作。理解这个文件的功能对于深入理解浏览器如何处理 SVG 文本至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_text_content_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2007, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006, 2007, 2008 Rob Buis <buis@kde.org>
@@ -589,7 +591,4 @@ void SVGTextContentElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -121,7 +121,7 @@ gdb ./prog
 
 总而言之，这个 `prog.c` 文件是一个用于 Frida 工具测试的简单程序，它展示了条件执行和条件编译的概念，并用于验证 Frida 在处理不同数量的命令行参数以及不同编译配置下的目标进程时的行为。通过分析这个文件，可以帮助理解 Frida 的工作原理以及如何利用它进行动态插桩。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/233 wrap case/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<up_down.h>
 #include<stdio.h>
 
@@ -144,7 +146,4 @@ int main(int argc, char **argv) {
     return 1;
 #endif
 }
-
-"""
-
 ```

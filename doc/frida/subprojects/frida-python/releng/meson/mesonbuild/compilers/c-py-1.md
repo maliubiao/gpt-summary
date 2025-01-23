@@ -108,7 +108,7 @@ This systematic approach, breaking down the code into its components and conside
 
 这个组件对于 Frida 在需要编译 PowerPC 架构目标代码的场景下至关重要，例如在逆向运行于 PowerPC 架构的嵌入式系统时。 通过提供对 Metrowerks 编译器的抽象，Frida 的构建系统能够灵活地支持不同的目标平台。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/c.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ksCompiler, CCompiler):
     id = 'mwcceppc'
 
@@ -145,8 +147,4 @@ ksCompiler, CCompiler):
         if std.value != 'none':
             args.append('-lang ' + std.value)
         return args
-
-"""
-
-
 ```

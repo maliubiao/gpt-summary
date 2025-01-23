@@ -110,7 +110,7 @@ int multiply(int a, int b) {
 
 `foo.c` 很可能是一个简单的 C 代码文件，作为 Frida Python 绑定单元测试套件的一部分。它的主要目的是提供一个可编译的 C 代码片段，用于验证 Frida 的各种功能，例如函数调用拦截、内存操作、模块加载等。理解 `foo.c` 的功能需要结合其所在的目录结构和 Frida 的整体架构。 它可以作为调试 Frida 功能的起点，特别是在涉及到与 Native 代码交互的场景中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/73 dep files/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,9 +118,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

@@ -208,14 +208,16 @@ nameJohn Doeage30
 
 总而言之，`encoded_form_data.cc` 文件定义了 Blink 引擎中用于表示和管理编码后表单数据的关键类，它与 HTML 表单和 JavaScript 的 `FormData`, `Blob`, `ReadableStream` API 紧密相关，负责将用户在浏览器中填写的表单数据转化为可以通过网络发送的格式。 理解这个类的工作原理对于理解浏览器如何处理表单提交至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/encoded_form_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2006, 2008, 2011 Apple Inc. All rights reserved.
  * Copyright (C) 2009 Google Inc. All rights reserved.
@@ -494,7 +496,4 @@ bool EncodedFormData::IsSafeToSendToAnotherThread() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

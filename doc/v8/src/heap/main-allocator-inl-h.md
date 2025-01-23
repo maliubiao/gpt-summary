@@ -289,15 +289,17 @@ AllocationResult result = main_allocator->AllocateRaw(16, kTaggedAligned, Alloca
 
 了解 `MainAllocator` 的功能有助于理解 V8 如何管理内存，这对于调试性能问题和理解内存相关的错误至关重要，尤其是在进行 V8 引擎开发、编写 C++ 扩展或进行 WebAssembly 开发时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/main-allocator-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/main-allocator-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -394,7 +396,4 @@ bool MainAllocator::TryFreeLast(Address object_address, int object_size) {
 }  // namespace v8
 
 #endif  // V8_HEAP_MAIN_ALLOCATOR_INL_H_
-
-"""
-
 ```

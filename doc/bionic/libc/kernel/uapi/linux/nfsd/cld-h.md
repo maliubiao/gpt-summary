@@ -226,7 +226,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/linux/nfsd/cld.h` 定义了 NFS 服务器与客户端租约管理组件之间的通信协议。 虽然它位于 Android 的 Bionic 库中，但主要服务于 Linux 内核的 NFS 功能，与 Android Framework 或 NDK 的直接交互较少。 理解其功能需要理解 NFS 协议和内核的运作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/nfsd/cld.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -237,8 +237,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -302,7 +304,4 @@ struct cld_msg_hdr {
   __u32 cm_xid;
 } __attribute__((packed));
 #endif
-
-"""
-
 ```

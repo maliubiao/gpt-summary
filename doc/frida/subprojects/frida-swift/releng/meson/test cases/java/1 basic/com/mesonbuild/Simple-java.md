@@ -146,7 +146,7 @@ This step-by-step process, focusing on understanding the core code within its br
 
 总而言之，`Simple.java` 作为一个极其简单的 Java 程序，其核心功能就是打印一行信息。但在 Frida 的上下文中，它扮演着重要的角色，作为验证 Frida Java 支持功能的基础测试用例。 通过分析这个简单的程序，可以帮助开发者理解 Frida 如何与 Java 应用程序进行交互，以及 Frida 所依赖的一些底层技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/java/1 basic/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class Simple {
@@ -163,7 +165,4 @@ class Simple {
         System.out.println("Java is working.\n");
     }
 }
-
-"""
-
 ```

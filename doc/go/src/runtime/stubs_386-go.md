@@ -254,7 +254,7 @@ By following these steps, the detailed and accurate Chinese explanation provided
 
 总而言之，这段代码是 Go 运行时在 386 架构上的底层支撑，涉及浮点数与整数的转换、栈管理、C 代码调用等关键功能。 理解这些函数的用途有助于更深入地理解 Go 语言的运行机制。 但是，对于一般的 Go 开发者来说，大部分这些函数是运行时内部使用的，不需要直接调用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/stubs_386.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -262,8 +262,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -288,9 +290,4 @@ func asmcgocall_no_g(fn, arg unsafe.Pointer)
 // getfp returns the frame pointer register of its caller or 0 if not implemented.
 // TODO: Make this a compiler intrinsic
 func getfp() uintptr { return 0 }
-
-"""
-
-
-
 ```

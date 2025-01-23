@@ -112,11 +112,13 @@ By following these steps, we can systematically analyze the C++ code and effecti
 
 `gdb-server-thread.cc` 的核心作用是为 V8 引擎提供一个底层的 GDB 远程调试支持，允许开发者使用标准的 GDB 调试器来检查和调试运行在 V8 中的 WebAssembly 代码。它并不直接涉及 JavaScript 代码的调试，而是服务于 WebAssembly 在 V8 引擎中的执行环境。  JavaScript 代码通过加载和实例化 WebAssembly 模块来间接地与这个 GDB 服务器产生关联，从而实现对 WebAssembly 代码的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/gdb-server-thread.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ void GdbServerThread::Stop() {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

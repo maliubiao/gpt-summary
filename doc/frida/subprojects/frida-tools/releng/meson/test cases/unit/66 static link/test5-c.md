@@ -108,7 +108,7 @@ This methodical breakdown, starting with the simple and progressively adding con
 
 总而言之， `test5.c` 是一个用于测试 Frida 在静态链接场景下 hook 函数并验证其返回值的简单单元测试用例。它的存在是为了确保 Frida 能够在静态链接的程序中正确地进行动态 instrumentation。开发者通过查看这个文件，可以理解测试的目标，并结合 Frida 的使用方式，定位测试失败的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/66 static link/test5.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,15 +116,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func16();
 
 int main(int argc, char *argv[])
 {
   return func16() == 3 ? 0 : 1;
 }
-
-"""
-
 ```

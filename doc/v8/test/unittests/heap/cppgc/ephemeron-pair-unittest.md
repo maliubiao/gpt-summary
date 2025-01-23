@@ -125,11 +125,13 @@ console.log(weakMap.get(key2)); // 输出: { moreData: "更多数据" }
 
 `ephemeron-pair-unittest.cc` 测试了 C++ `cppgc` 库中用于实现弱引用关系的 `EphemeronPair` 类，其功能与 JavaScript 中的 `WeakMap` 概念非常相似，都是为了在垃圾回收的场景下，让一个对象的生命周期依赖于另一个对象的存在，而不会因为这种依赖关系而阻止被依赖对象被回收。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/ephemeron-pair-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -419,7 +421,4 @@ TEST_F(EphemeronPairTest, EphemeronPairWithKeyInConstruction) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

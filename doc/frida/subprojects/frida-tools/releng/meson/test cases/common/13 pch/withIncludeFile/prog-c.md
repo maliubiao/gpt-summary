@@ -120,7 +120,7 @@ Initially, one might focus too much on the *specific* actions of `func`. However
 
 总而言之，`prog.c` 作为一个简单的测试用例，其核心功能是验证 Frida 构建系统中预编译头文件的正确使用。它通过故意省略头文件包含，来强制依赖 PCH 提供的功能，从而确保构建系统的正确性。在逆向工程和底层系统理解的背景下，理解 PCH 的工作机制有助于更深入地分析程序的依赖关系和构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/13 pch/withIncludeFile/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // No includes here, they need to come from the PCH or explicit inclusion
 
 void func(void) {
@@ -140,7 +142,4 @@ void func(void) {
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

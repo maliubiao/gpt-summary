@@ -212,7 +212,7 @@ libebtables.so 的布局样本：
 
 `bionic/libc/kernel/uapi/linux/netfilter_bridge/ebt_redirect.h` 虽然是一个小巧的头文件，但它在 Android 的网络功能中扮演着重要的角色，特别是在网络共享、热点等场景下，通过 `netfilter_bridge` 和 `ebtables` 工具来配置网络流量的重定向。理解这个头文件的作用有助于我们更深入地了解 Android 底层的网络机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter_bridge/ebt_redirect.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -223,8 +223,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -238,7 +240,4 @@ struct ebt_redirect_info {
 };
 #define EBT_REDIRECT_TARGET "redirect"
 #endif
-
-"""
-
 ```

@@ -201,15 +201,17 @@ Let's assume a simplified `PayloadTaggingScheme` where:
 
 In summary, `v8/src/sandbox/tagged-payload.h` provides a crucial mechanism for V8's internal memory management and likely plays a role in the sandboxing efforts by allowing the engine to embed metadata directly within pointer values. While not directly exposed to JavaScript, it's a foundational component for how V8 operates.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/tagged-payload.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/tagged-payload.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -318,7 +320,4 @@ struct TaggedPayload {
 }  // namespace v8
 
 #endif  // V8_SANDBOX_TAGGED_PAYLOAD_H_
-
-"""
-
 ```

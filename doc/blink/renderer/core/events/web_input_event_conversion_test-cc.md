@@ -116,15 +116,17 @@ Regarding the relationship to web technologies, the code directly deals with how
 
 总的来说，`web_input_event_conversion_test.cc` 文件的主要功能是**验证 Blink 引擎中负责将各种平台或内部的输入事件转换为统一的 `WebInputEvent` 及其子类的代码的正确性**。它通过一系列单元测试，覆盖了键盘事件的按键位置识别、鼠标/触摸/手势/指针事件的坐标转换（包括页面缩放和可视视口偏移的情况）、事件合并以及弹性拉伸的影响等关键场景，确保了 Blink 引擎能够准确地理解用户的输入，并将这些信息正确地传递到渲染管道和 JavaScript 环境中。这对于构建稳定可靠的 Web 应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/web_input_event_conversion_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -919,7 +921,4 @@ TEST_F(WebInputEventConversionTest, ElasticOverscroll) {
   web_view->GetPage()->GetVisualViewport().SetLocation(visual_offset);
   {
     WebMouseEvent we
-"""
-
-
 ```

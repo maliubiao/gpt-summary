@@ -139,7 +139,7 @@ By following this structured approach, we can thoroughly analyze the code snippe
 
 `thread-suspend-monitor-glue.c` 是 Frida 用于在 Darwin 系统上管理和清理其内部 "cloaked" 线程的关键组成部分。它的主要目的是提高 Frida 的隐蔽性，避免被逆向分析人员轻易发现。理解这段代码需要一定的 Darwin 内核和 Frida 内部机制的知识。用户通常不会直接操作这个文件，但用户的 Frida 操作会间接地触发其执行。通过分析 Frida 的源代码和使用调试工具，可以追踪到这段代码的执行路径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/payload/thread-suspend-monitor-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-payload.h"
 
 #ifdef HAVE_DARWIN
@@ -201,7 +203,4 @@ _frida_thread_suspend_monitor_remove_cloaked_threads (task_inspect_t task, threa
 }
 
 #endif
-
-"""
-
 ```

@@ -283,7 +283,7 @@ sys.stdin.read()
 
 `res_comp.c` 文件是 Android Bionic 中 DNS 解析的关键组成部分，负责域名的压缩、解压缩和格式验证。理解其功能和实现对于理解 Android 的网络工作原理至关重要。通过 Frida 等工具，我们可以深入调试这些底层函数，更好地理解系统的运作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/resolv/res_comp.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -294,8 +294,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: res_comp.c,v 1.6 2004/05/22 23:47:09 christos Exp $	*/
 
 /*
@@ -562,7 +564,4 @@ u_int32_t _getlong(const u_char *src) { return (ns_get32(src)); }
 u_int16_t _getshort(const u_char *src) { return (ns_get16(src)); }
 #endif /*__ultrix__*/
 #endif /*BIND_4_COMPAT*/
-
-"""
-
 ```

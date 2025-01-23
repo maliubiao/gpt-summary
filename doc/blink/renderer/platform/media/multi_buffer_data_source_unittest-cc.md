@@ -94,15 +94,17 @@ Here's a plan:
 
 总而言之，该单元测试文件的第一部分主要集中测试了 `MultiBufferDataSource` 在资源加载、HTTP 协议处理（特别是 Range 请求和分段响应）、错误处理、数据读取和共享等核心功能方面的正确性和健壮性。这些测试确保了 Chromium 能够可靠和高效地加载多媒体资源，为用户提供流畅的媒体播放体验。 该部分还涵盖了预加载策略和码率/播放速率设置对数据加载行为的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/multi_buffer_data_source_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2066,7 +2068,4 @@ TEST_F(MultiBufferDataSourceTest, CheckBufferSizeForSmallFiles) {
 
 TEST_F(MultiBufferDataSourceTest, CheckBufferSizeAfterReadingALot) {
   In
-"""
-
-
 ```

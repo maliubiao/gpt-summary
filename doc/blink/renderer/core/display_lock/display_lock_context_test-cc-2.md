@@ -190,15 +190,17 @@ By following these steps, I can provide a comprehensive and accurate summary of 
 
 这部分测试文件主要关注 `DisplayLockContext` 在处理各种渲染更新场景下的行为，特别是当元素被锁定（使用 `content-visibility: hidden` 或 `contain` 属性）时，如何影响事件处理、Paint Property 更新、布局计算以及绘制脏位的传播。测试用例覆盖了从基本的事件监听、属性更新到复杂的渲染流程控制，旨在验证锁定机制的正确性和效率，确保在需要的时候能够有效地阻止不必要的渲染操作，并在解锁后能够正确地恢复和处理这些更新。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/display_lock/display_lock_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ->DescendantBlockingWheelEventHandlerChanged());
   EXPECT_FALSE(
       lockedchild_object->DescendantBlockingWheelEventHandlerChanged());
@@ -1011,7 +1013,4 @@ TEST_F(DisplayLockContextRenderingTest,
   RunStartOfLifecycleTasks();
 
   // Run the following checks a few times since we sh
-"""
-
-
 ```

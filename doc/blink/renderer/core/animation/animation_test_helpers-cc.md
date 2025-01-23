@@ -210,14 +210,16 @@ EXPECT_EQ(computed_style->Opacity(), 1.0f);
 
 总而言之，`animation_test_helpers.cc` 提供了一组用于简化动画相关测试的工具函数，它与 JavaScript、HTML 和 CSS 都有密切的联系，因为它模拟和验证了这些技术在动画方面的交互行为。理解这些辅助函数的功能可以帮助开发者更有效地编写和维护 Blink 引擎中动画相关的单元测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/animation_test_helpers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +326,4 @@ void EnsureInterpolatedValueCached(ActiveInterpolations* interpolations,
 
 }  // namespace animation_test_helpers
 }  // namespace blink
-
-"""
-
 ```

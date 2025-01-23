@@ -772,7 +772,7 @@ void HeapVerification::VerifyRememberedSetFor(Tagged<HeapObject> object) {
 
   OldToNewSlotVerifyingVisitor old_to_new_visitor(
       
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-verifier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap-verifier.cc以.tq结尾，那它是个v8 torque源代码，
@@ -780,8 +780,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1673,7 +1675,4 @@ void HeapVerifier::VerifySafeMapTransition(Heap* heap,
     // In-place internalization does not change a string's fields.
     //
     // When sharing the string table, the setting an
-"""
-
-
 ```

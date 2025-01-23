@@ -342,7 +342,7 @@ session.detach()
 
 这个 Frida 脚本会 hook `libc.so` 中的 `ether_ntoa` 和 `ether_aton` 函数。当这些函数被调用时，`onEnter` 函数会被执行，打印出输入参数。`onLeave` 函数在函数执行完毕后被调用，打印出返回值。这可以帮助你理解在特定场景下，这些函数是如何被调用以及处理哪些数据的。你可以根据需要添加更多逻辑来检查参数或修改返回值，进行更深入的动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/netinet/ether.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -353,8 +353,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -428,7 +430,4 @@ struct ether_addr* _Nullable ether_aton(const char* _Nonnull __ascii);
 struct ether_addr* _Nullable ether_aton_r(const char* _Nonnull __ascii, struct ether_addr* _Nonnull __addr);
 
 __END_DECLS
-
-"""
-
 ```

@@ -170,7 +170,7 @@ let sumWithRange = obj.add_all_5args_enforce_range(1, 2, 3, 4, 1); // 假设最�
 
 这段代码是 V8 引擎测试框架 `d8` 的一部分，它通过 `FastCApiObject` 将一些底层的 C++ 功能暴露给 JavaScript 环境进行测试。这些功能涵盖了带限制的比较、对象类型检查、WebAssembly 内存操作、指针操作以及精确的 64 位整数运算。 通过区分 "fast" 和 "slow" 回调，V8 可以在性能关键的场景下尝试使用更高效的 C++ 直接调用。理解这段代码有助于深入了解 V8 引擎的内部机制以及 JavaScript 如何与底层 C++ 代码进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8-test.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/d8/d8-test.cc以.tq结尾，那它是个v8 torque源代码，
@@ -178,8 +178,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 h(FastCApiObject::ClampCompareI32Patch)
 #endif  // V8_USE_SIMULATOR_WITH_GENERIC_C_CALLS
             .Build();
@@ -385,8 +387,4 @@ Local<FunctionTemplate> Shell::CreateLeafInterfaceTypeTemplate(
 }
 
 }  // namespace v8
-
-"""
-
-
 ```

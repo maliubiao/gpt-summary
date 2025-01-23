@@ -188,7 +188,7 @@ By following these steps, the comprehensive answer addressing all aspects of the
 
 `v8/src/regexp/experimental/experimental-interpreter.cc` 是 V8 引擎中实验性的正则表达式解释器的核心实现。它负责解释执行预编译的正则表达式字节码，以在输入字符串中查找匹配项。它支持各种正则表达式功能，包括字符匹配、断言、捕获组、量词和 lookbehind 断言。该解释器采用基于 NFA 的方法，并包含捕获组优化机制。它的主要目标是提供高效且符合 JavaScript 语义的正则表达式匹配能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/experimental/experimental-interpreter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/experimental/experimental-interpreter.cc以.tq结尾，那它是个v8 torque源代码，
@@ -196,8 +196,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1001,7 +1003,4 @@ class NfaInterpreter {
   size_t ApproximateTotalMemoryUsage() {
     return (blocked_threads_.length() + active_threads_.length()) *
            memory_consumption_per_thread
-"""
-
-
 ```

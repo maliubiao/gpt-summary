@@ -195,7 +195,7 @@ BgNVBAMM example.comMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
 
 这段代码是 `go/src/crypto/x509/x509_test.go` 的一部分，着重测试了 `crypto/x509` 包中关于 **创建和解析 X.509 证书、证书请求以及处理证书吊销列表（CRL）** 的核心功能。它通过各种测试用例，包括性能测试、错误场景测试以及特定字段和扩展的处理测试，来确保这些功能的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/x509_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -204,8 +204,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 edError {
 			t.Errorf("unexpected error: got %q, want %q", err.Error(), tc.expectedError)
 		}
@@ -1043,9 +1045,4 @@ UJ8hsHxtnIeqb2ufHnQFJO+wEJhx2Uxm/BTuzHOeffuQkwATez4skZ7SlX9exgb7
 6jRMRilqb4F7f8w+uDoqxRrA9zc8mwY16zPsyBhRet+ZGbj/ilgvGmtZ21qZZ/FU
 0pJFJIVLM3l49Onr5uIt5+hCWKwHlgE0nGpjKLR3cMg=
 -----END CERTIFICATE
-"""
-
-
-
-
 ```

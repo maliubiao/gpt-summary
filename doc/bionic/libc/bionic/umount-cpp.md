@@ -308,7 +308,7 @@ if __name__ == '__main__':
 
 `bionic/libc/bionic/umount.cpp` 文件定义了 `umount` 函数，它是卸载文件系统的核心功能。虽然代码本身很简单，但它在 Android 系统中扮演着至关重要的角色，涉及存储设备管理、系统维护等多个方面。理解其功能和使用方法对于 Android 开发和系统调试都很有帮助。通过 Frida 等工具，我们可以方便地监控和调试这类底层函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/umount.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -319,8 +319,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -354,7 +356,4 @@ Prompt:
 int umount(const char* target) {
   return umount2(target, 0);
 }
-
-"""
-
 ```

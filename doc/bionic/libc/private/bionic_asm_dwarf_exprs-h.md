@@ -216,7 +216,7 @@ if (sigactionPtr) {
 
 `bionic_asm_dwarf_exprs.handroid` 文件虽然不包含可执行的 `libc` 函数，但它定义的关键汇编宏对于生成 DWARF CFI 信息至关重要。这些信息是 Android 系统进行错误处理、调试和栈回溯的基础，尤其在处理信号和调试动态链接的共享库时。理解这些宏的功能有助于深入了解 Android 底层的调试机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_asm_dwarf_exprs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -227,8 +227,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020 The Android Open Source Project
  * All rights reserved.
@@ -330,7 +332,4 @@ Prompt:
   .cfi_escape DW_OP_breg0 + (\base_reg)           // expr: 1 byte
   m_cfi_sleb128 (\offset)                         // expr: 1 or 2 bytes
 .endm
-
-"""
-
 ```

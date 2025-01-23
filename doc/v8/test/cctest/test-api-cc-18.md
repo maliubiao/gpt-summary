@@ -131,7 +131,7 @@ reject("error message");
 
 作为 36 个部分中的第 19 部分，这个代码片段专注于测试 V8 引擎中关于 Promise 错误处理和生命周期观察的关键 API。它确保了当 Promise 状态发生变化时，V8 能够正确地触发相应的回调函数（如 `PromiseRejectCallback`）和钩子函数（如 `PromiseHook`），为开发者提供必要的错误捕获和生命周期管理机制。这对于构建健壮和可维护的异步 JavaScript 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -139,8 +139,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第19部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ck_trace->GetFrame(CcTest::isolate(), 0)->GetColumn();
         } else {
           promise_reject_line_number = -1;
@@ -1022,7 +1024,4 @@ TEST(PromiseHook) {
   promise_hook_data->Reset();
   source =
       "class X extends
-"""
-
-
 ```

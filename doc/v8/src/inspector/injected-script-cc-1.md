@@ -174,7 +174,7 @@ By following this structured approach, combining code analysis with an understan
 
 这部分代码主要负责处理 **JavaScript 对象的绑定、查找和释放，以及处理函数调用的参数**。它维护着调试器内部的 `RemoteObjectId` 和实际 JavaScript 对象之间的映射，确保调试器可以安全地引用和操作这些对象。此外，`resolveCallArgument` 确保了从调试器传递到 JavaScript 函数的参数被正确解析和转换。`PromiseHandlerTracker` 和 `ProtocolPromiseHandler` 则专注于管理异步 Promise 的生命周期，使得调试器能够跟踪 Promise 的状态和结果。 简而言之，这部分代码是 `InjectedScript` 类中对象管理和函数调用支持的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/injected-script.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/injected-script.cc以.tq结尾，那它是个v8 torque源代码，
@@ -182,10 +182,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-    EvaluateCallback::sendFailure(weak_callback, this,
+### 源代码
+```cpp
+EvaluateCallback::sendFailure(weak_callback, this,
                                   Response::InternalError());
     return;
   }
@@ -675,8 +676,4 @@ void PromiseHandlerTracker::discardAll() {
 }
 
 }  // namespace v8_inspector
-
-"""
-
-
 ```

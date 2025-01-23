@@ -214,7 +214,7 @@ You decided not to stay forever.
 
 总而言之，`another_visitor.c` 是一个为 Frida 动态 instrumentation 工具设计的简单测试用例，用于验证 Frida 与预编译共享库的交互能力。它展示了基本的函数调用和动态链接的概念，并可以作为逆向工程学习和实践的简单目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/17 prebuilt shared/another_visitor.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -222,8 +222,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<alexandria.h>
 #include<stdio.h>
 
@@ -234,7 +236,4 @@ int main(int argc, char **argv) {
     printf("\nYou decided not to stay forever.\n");
     return 0;
 }
-
-"""
-
 ```

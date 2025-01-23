@@ -132,11 +132,13 @@ const regex = /ab+c/i;
 
 总而言之，`scanner.cc` 是 V8 引擎解析 JavaScript 代码的第一道关卡，它将原始文本转换为结构化的 tokens，为后续的语法分析和代码生成奠定了基础。它的正确性和效率对于整个 JavaScript 引擎的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/scanner.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1261,7 +1263,4 @@ void Scanner::SeekNext(size_t position) {
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

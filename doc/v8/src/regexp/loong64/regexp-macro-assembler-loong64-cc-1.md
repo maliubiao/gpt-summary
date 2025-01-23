@@ -379,7 +379,7 @@ while ((match = regex.exec(text)) !== null) {
 
 简而言之，这段代码负责将正则表达式匹配的抽象结果（哪些部分匹配了，哪些被捕获了）转换为 V8 可以理解和使用的数据结构，并为全局匹配的后续迭代做好准备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/loong64/regexp-macro-assembler-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/loong64/regexp-macro-assembler-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -387,8 +387,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (a1, MemOperand(frame_pointer(), kInputStartOffset));
         __ Ld_d(a0, MemOperand(frame_pointer(), kRegisterOutputOffset));
         __ Ld_d(a2, MemOperand(frame_pointer(), kStartIndexOffset));
@@ -933,8 +935,4 @@ void RegExpMacroAssemblerLOONG64::LoadCurrentCharacterUnchecked(
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_LOONG64
-
-"""
-
-
 ```

@@ -136,7 +136,7 @@ By following this thought process, breaking down the code, and systematically ad
 
 总而言之，`mconf.py` 是 Frida 构建流程中一个关键的工具，它允许用户查看和定制构建过程的各个方面。理解其功能对于逆向工程人员来说非常重要，因为构建配置直接影响最终生成的可执行文件的特性，从而影响逆向分析的难易程度和结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/mconf.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 # Copyright © 2023-2024 Intel Corporation
@@ -514,7 +516,4 @@ def run(options: CMDOptions) -> int:
     coredata.parse_cmd_line_options(options)
     builddir = os.path.abspath(os.path.realpath(options.builddir))
     return run_impl(options, builddir)
-
-"""
-
 ```

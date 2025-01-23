@@ -158,7 +158,7 @@ func main() {
 
 总而言之，`go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_netbsd_386.go` 文件是 Go 语言在 NetBSD/386 平台上进行底层系统编程的关键组成部分，它定义了与操作系统交互时可能遇到的错误和事件，使得 Go 程序能够以一种可移植且易于理解的方式处理这些情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_netbsd_386.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 OLONG    = syscall.Errno(0x3f)
 	ENEEDAUTH       = syscall.Errno(0x51)
 	ENETDOWN        = syscall.Errno(0x32)
@@ -407,10 +409,4 @@ var signalList = [...]struct {
 	{31, "SIGUSR2", "user defined signal 2"},
 	{32, "SIGPWR", "power fail/restart"},
 }
-
-"""
-
-
-
-
 ```

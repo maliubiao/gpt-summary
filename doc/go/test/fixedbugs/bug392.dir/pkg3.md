@@ -131,15 +131,17 @@ var V = "hello"
 
 另一个潜在的错误是 **假设内联一定会发生**。 尽管代码的注释提到了内联，但 Go 编译器是否真正将 `pkg2.F()` 内联到 `pkg3.go` 中取决于编译器的优化策略。 用户不应该依赖于内联一定会发生来编写代码，而应该关注代码的逻辑正确性。 这里的 `pkg3.go` 主要是为了测试编译器在这种跨包场景下的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug392.dir/pkg3.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -153,9 +155,4 @@ import "./pkg2"
 
 var x = pkg2.F()
 var v = pkg2.V
-
-"""
-
-
-
 ```

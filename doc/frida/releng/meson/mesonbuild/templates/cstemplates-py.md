@@ -229,7 +229,7 @@ ltoken = "MYLIB"
 
 总而言之，`cstemplates.py` 文件是 Frida 项目中用于自动化 C# 项目创建的重要组成部分，它通过提供预定义的模板，简化了开发者构建基于 C# 的 Frida 工具或进行 C# 应用程序逆向分析的过程。 理解这个文件的功能和内容，可以帮助开发者更好地利用 Frida 和 Meson 来完成他们的工作，并在出现问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/templates/cstemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -237,8 +237,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -329,7 +331,4 @@ class CSharpProject(ClassImpl):
     lib_template = lib_cs_template
     lib_test_template = lib_cs_test_template
     lib_meson_template = lib_cs_meson_template
-
-"""
-
 ```

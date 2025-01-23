@@ -193,15 +193,17 @@ Received: message from ch2
 
 总而言之，`go/test/codegen/select.go` 中的这段代码片段是一个用于测试 Go 语言编译器 `select` 语句实现的内部测试用例，它通过 `asmcheck` 注释来验证生成的汇编代码是否符合预期。 普通开发者在编写 `select` 语句时需要注意避免死锁、正确处理 `nil` 通道以及理解 `select` 的随机性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/select.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -222,9 +224,4 @@ func f() {
 		}
 	}
 }
-
-"""
-
-
-
 ```

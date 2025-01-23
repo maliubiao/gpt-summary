@@ -240,7 +240,7 @@ If there's an error in the `meson.build` file (like the common errors mentioned 
 
 This `interpreter.py` file in Frida's build system is a fundamental component of the Meson build interpreter. Its primary responsibility is to **interpret high-level build instructions from `meson.build` files and translate them into concrete, manageable build targets**. It handles the creation, validation, and registration of executables, libraries, and other build artifacts. This involves managing source files, dependencies, compiler options, and ensuring the integrity of the build definition. Essentially, it bridges the gap between the user-friendly Meson DSL and the underlying build backend, enabling the construction of the Frida dynamic instrumentation toolkit.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -249,8 +249,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 .subdir, os.path.split(name)[0])
             if os.path.exists(os.path.join(self.source_root, pathseg)):
                 raise InvalidArguments(textwrap.dedent(f'''\
@@ -636,8 +638,4 @@ This will become a hard error in the future.''', location=self.current_node)
         if step < 1:
             raise InterpreterException('step must be >=1')
         return P_OBJ.RangeHolder(start, stop, step, subproject=self.subproject)
-
-"""
-
-
 ```

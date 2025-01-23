@@ -154,7 +154,7 @@ By following these steps, combining code analysis with contextual awareness of F
 
 总而言之，虽然 `main.c` 文件本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证基本的构建和版本信息功能。理解它的功能需要结合 Frida 的上下文，并可以涉及到逆向工程、二进制底层、操作系统以及构建系统等多个方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/65 build always/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include"version.h"
 
@@ -171,7 +173,4 @@ int main(void) {
     printf("Version is %s.\n", version_string);
     return 0;
 }
-
-"""
-
 ```

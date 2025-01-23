@@ -248,15 +248,17 @@ CanvasResourceSwapChain::CanvasResourceSwapChain(
     *   **例子:**
         ```html
         <canvas id="myCanvas" width="200" height="1
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/canvas_resource.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 sResource> ExternalCanvasResource::Create(
     scoped_refptr<gpu::ClientSharedImage> client_si,
     const viz::TransferableResource& transferable_resource,
@@ -607,8 +609,4 @@ CanvasResourceSwapChain::CanvasResourceSwapChain(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

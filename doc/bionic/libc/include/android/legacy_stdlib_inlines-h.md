@@ -252,7 +252,7 @@ session.detach()
 
 总而言之， `bionic/libc/include/android/legacy_stdlib_inlines.handroid` 是一个为了向后兼容性和性能优化而存在的头文件，它为旧版本的 Android 系统提供了部分标准 C 库函数的内联实现。理解它的作用有助于开发者更好地理解 Android 平台的 ABI 稳定性和不同版本之间的差异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/android/legacy_stdlib_inlines.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -263,8 +263,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -303,7 +305,4 @@ Prompt:
 #include <bits/stdlib_inlines.h>
 
 #endif
-
-"""
-
 ```

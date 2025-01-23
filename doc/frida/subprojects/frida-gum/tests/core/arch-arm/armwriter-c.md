@@ -128,7 +128,7 @@ By following this thought process, we can comprehensively analyze the `armwriter
 
 `armwriter.c` 是 Frida 中用于测试 ARM 汇编代码生成功能的关键文件。它通过一系列单元测试验证了 `GumArmWriter` 组件的正确性。理解这个文件的内容对于那些希望深入了解 Frida 代码生成机制或者在调试相关问题时都非常有帮助。它也直接关联到逆向工程中分析和理解 ARM 指令的基础知识，以及二进制底层、操作系统内核和 Android 框架的一些概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm/armwriter.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -327,7 +329,4 @@ TESTCASE (vpop_range)
   gum_arm_writer_put_vpop_range (&fixture->aw, ARM_REG_S0, ARM_REG_S31);
   assert_output_n_equals (3, 0xecbd0a20);
 }
-
-"""
-
 ```

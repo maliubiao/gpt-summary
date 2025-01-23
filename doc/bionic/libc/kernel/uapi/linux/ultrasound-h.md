@@ -274,7 +274,7 @@ sys.stdin.read()
 
 这个 Frida 示例可以帮助你追踪 Android 应用如何通过系统调用与超声波内核驱动程序进行交互，从而理解 `ultrasound.h` 中定义的宏是如何被最终使用的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ultrasound.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -285,8 +285,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -331,7 +333,4 @@ Prompt:
 #define GUS_VOLUME_SCALE(chn,voice,p1,p2) _GUS_CMD(chn, voice, _GUS_VOLUME_SCALE, (p1), (p2))
 #define GUS_VOICE_POS(chn,voice,p) _GUS_CMD(chn, voice, _GUS_VOICE_POS, (p) & 0xffff, ((p) >> 16) & 0xffff)
 #endif
-
-"""
-
 ```

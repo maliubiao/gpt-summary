@@ -93,7 +93,7 @@ TEST_F(AccessibilityTest, PositionInTextWithAffinity) {
 
 提供的代码片段主要集中在测试 `AXPosition` 类在处理 **文本内容** 和 **HTML 标签 (特别是 label 元素)** 时的行为。它验证了 `AXPosition` 与 DOM `Position` 之间的正确转换，以及在处理文本偏移量和亲和性时的准确性。 此外，它还测试了在 label 元素被 accessibility 树忽略时，`AXPosition` 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_position_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -101,9 +101,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- node child of the second tspan containing "world"
+### 源代码
+```cpp
+node child of the second tspan containing "world"
   text = GetElementById("tspan")->firstChild();
   ASSERT_NE(nullptr, text);
   EXPECT_TRUE(text->IsTextNode());
@@ -852,7 +854,4 @@ TEST_F(AccessibilityTest, DISABLED_PositionInCSSContent) {
   const AXObject* ax_css_after = ax_quote_parent->UnignoredChildAt(2);
   ASSERT_NE(nullptr, ax_css_after);
   ASSERT_EQ(ax
-"""
-
-
 ```

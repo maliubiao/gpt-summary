@@ -107,11 +107,13 @@ console.log(result3); // 输出: ["a", "a", "a", "a"]
 
 `regexp-macro-assembler-s390.cc` 是 V8 引擎中一个非常底层的组件，它负责将高级的正则表达式模式转化为可以在 s390 架构上高效执行的机器代码。它通过精细地管理寄存器、栈和指令序列，实现了正则表达式的各种匹配语义，从而使得 JavaScript 能够支持强大的文本处理能力。开发者在编写 JavaScript 正则表达式时，无需直接关注这些底层的汇编实现，但正是这些代码保证了正则表达式在 V8 引擎中的高效运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/s390/regexp-macro-assembler-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1643,7 +1645,4 @@ void RegExpMacroAssemblerS390::LoadCurrentCharacterUnchecked(int cp_offset,
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_S390X
-
-"""
-
 ```

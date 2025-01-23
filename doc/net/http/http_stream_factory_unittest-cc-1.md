@@ -155,7 +155,7 @@ By following these steps and considering the pre-analysis, we can construct a co
 
 总而言之，这部分测试用例旨在确保 `HttpStreamFactory` 能够安全、高效地管理 HTTP 连接，并正确地处理各种网络配置和用户设置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -163,9 +163,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
-          SecureDnsPolicy::kAllow, session.get());
+### 源代码
+```cpp
+SecureDnsPolicy::kAllow, session.get());
   };
 
   if (base::FeatureList::IsEnabled(features::kHappyEyeballsV3)) {
@@ -947,7 +949,4 @@ TEST_P(HttpStreamFactoryTest, ReprioritizeAfterStreamReceived) {
                           /*allowed_bad_certs=*/{},
                           /*enable_ip_based_pooling=*/true,
                           /*enable_alternative_services=*/
-"""
-
-
 ```

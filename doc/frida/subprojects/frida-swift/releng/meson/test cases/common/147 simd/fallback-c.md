@@ -124,7 +124,7 @@ var myArray: [Float] = [1.0, 2.0, 3.0]
 
 总而言之，`fallback.c` 中的 `increment_fallback` 函数是一个基础但重要的组成部分，它保证了在 SIMD 指令不可用时，程序依然能够正常运行，尽管性能可能会有所下降。在逆向工程中，分析这类回退代码可以帮助我们理解软件的优化策略、兼容性处理以及潜在的性能瓶颈。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/147 simd/fallback.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdfuncs.h>
 
 void increment_fallback(float arr[4]) {
@@ -142,7 +144,4 @@ void increment_fallback(float arr[4]) {
         arr[i]++;
     }
 }
-
-"""
-
 ```

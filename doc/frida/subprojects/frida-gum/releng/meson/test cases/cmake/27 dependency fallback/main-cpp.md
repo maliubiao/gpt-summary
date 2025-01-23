@@ -115,7 +115,7 @@ Initially, I might have focused too much on the simple functionality of the C++ 
 
 总而言之，这个简单的 `main.cpp` 文件在一个更大的 Frida 项目中扮演着重要的角色，它用于自动化测试构建系统的健壮性，确保 Frida 在面对缺失或不可用的依赖项时也能正常构建和运行，这对于一个需要跨多种环境工作的动态插桩工具来说至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/27 dependency fallback/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 
@@ -135,7 +137,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

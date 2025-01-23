@@ -202,7 +202,7 @@ input() # 让脚本保持运行
 
 总而言之，`frida/releng/progress.py` 提供了一个基础的、可扩展的进度报告机制，虽然代码本身很简单，但它在 Frida 整个工具链中扮演着重要的角色，帮助用户了解长时间运行操作的状态，这对于调试和理解 Frida 的行为至关重要。用户通常不会直接修改这个文件，但理解它的功能可以帮助他们更好地理解 Frida 的内部工作原理和如何报告进度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/progress.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -210,8 +210,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from dataclasses import dataclass
 from typing import Callable
 
@@ -226,7 +228,4 @@ ProgressCallback = Callable[[Progress], None]
 
 def print_progress(progress: Progress):
     print(f"{progress.message}...", flush=True)
-
-"""
-
 ```

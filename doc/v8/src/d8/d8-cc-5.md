@@ -122,7 +122,7 @@ System peak memory usage (kb): XXXXX // XXXXX 是实际的峰值内存使用量
 
 总而言之，这部分代码增强了 d8 工具的诊断能力（性能监控）和测试能力（模糊测试），并提供了基本的与文件系统交互的功能，使得 d8 可以加载和执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/d8/d8.cc以.tq结尾，那它是个v8 torque源代码，
@@ -130,8 +130,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 else {
           std::cout << "| " << std::setw(kNameBoxSize - 2) << std::left << key
                     << " | " << std::setw(kValueBoxSize - 2) << std::right
@@ -1101,7 +1103,4 @@ void Worker::ExecuteInThread() {
             Local<Value> onmessage;
             handler_present =
                 maybe_onmessage.ToLocal(&onmessage) && onmessage->IsF
-"""
-
-
 ```

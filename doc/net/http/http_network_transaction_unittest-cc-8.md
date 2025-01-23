@@ -180,7 +180,7 @@ fetch('http://example.com', {
 
 这部分 (`net/http/http_network_transaction_unittest.cc` 的第9部分) 的主要功能是 **测试 `HttpNetworkTransaction` 类在各种代理场景下的正确性和鲁棒性**。它验证了在不同的代理配置下，`HttpNetworkTransaction` 是否能够正确地发起请求、处理响应、管理连接以及处理可能出现的错误，例如代理连接失败、协议错误和需要客户端认证等。这为后续更复杂的网络功能测试奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rans2 =
       std::make_unique<HttpNetworkTransaction>(DEFAULT_PRIORITY, session.get());
 
@@ -995,7 +997,4 @@ TEST_P(HttpNetworkTransactionTest, HttpsClientAuthCertNeededNoCrash) {
 
   // CONNECT to www.example.org:443 via SPDY.
   spdy::SpdySerializedFr
-"""
-
-
 ```

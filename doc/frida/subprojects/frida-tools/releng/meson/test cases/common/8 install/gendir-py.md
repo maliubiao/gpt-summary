@@ -137,7 +137,7 @@ By following these steps of understanding, connecting, brainstorming, structurin
 
 作为调试线索，了解 `gendir.py` 的功能可以帮助开发人员理解测试用例的意图，以及它在整个构建和测试流程中的作用。如果测试失败，可能是因为提供的目录名不正确，或者脚本运行的环境不符合预期（例如，缺少必要的权限）。通过分析脚本的输入、输出和执行环境，可以定位问题的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/8 install/gendir.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -155,7 +157,4 @@ dirname = sys.argv[1]
 fname = os.path.join(dirname, 'file.txt')
 os.makedirs(dirname, exist_ok=True)
 open(fname, 'w').close()
-
-"""
-
 ```

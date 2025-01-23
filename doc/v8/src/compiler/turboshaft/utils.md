@@ -101,11 +101,13 @@ console.log(sum);
 
 `v8/src/compiler/turboshaft/utils.cc` 文件中的 `ShouldSkipOptimizationStep()` 函数是一个用于调试和控制 Turboshaft 编译器优化过程的工具。虽然它不直接与 JavaScript 代码交互，但可以通过 V8 的命令行标志来间接影响 JavaScript 代码的执行和性能。 开发者可以通过这些标志来深入了解 V8 的编译过程并进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -132,7 +134,4 @@ bool ShouldSkipOptimizationStep() {
 #endif  // DEBUG
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

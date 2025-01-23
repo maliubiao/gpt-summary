@@ -190,7 +190,7 @@ func main() {
 
 `go/src/crypto/internal/fips140/sha3/keccakf.go` 中的代码实现了 Keccak-f[1600] 置换，这是 SHA-3 算法的核心。它处理了字节序，并使用循环展开等技术优化了性能。这段代码通常不会被外部用户直接使用，而是作为 `crypto/sha3` 包的一部分提供服务。 使用者在使用 `crypto/sha3` 包时需要注意选择正确的 SHA-3 变体，并正确处理 SHAKE 函数和潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/sha3/keccakf.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -198,8 +198,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -631,9 +633,4 @@ func keccakF1600Generic(da *[200]byte) {
 		a[24] = bc4 ^ (bc1 &^ bc0)
 	}
 }
-
-"""
-
-
-
 ```

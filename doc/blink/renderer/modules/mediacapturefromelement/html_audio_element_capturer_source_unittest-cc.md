@@ -180,15 +180,17 @@ By following these steps, and constantly relating the C++ code back to its role 
 
 总而言之，`html_audio_element_capturer_source_unittest.cc` 是一个非常重要的测试文件，它确保了 Chromium 中从 HTML `<audio>` 元素捕获音频流的核心功能能够正常工作，并且能够处理各种边界情况和潜在的错误场景。它与 Web 技术紧密相关，是实现现代 Web 音频功能的基础组件之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediacapturefromelement/html_audio_element_capturer_source_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -397,7 +399,4 @@ TEST_F(HTMLAudioElementCapturerSourceTest, TaintedPlayerDeliversMutedAudio) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

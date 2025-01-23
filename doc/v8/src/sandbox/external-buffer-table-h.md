@@ -179,15 +179,17 @@ sharedView[0] = 123;
 
 `v8/src/sandbox/external-buffer-table.h` 定义了一个关键的内部组件，用于在 V8 的沙箱环境中安全有效地管理指向外部缓冲区的指针。它通过存储大小信息、使用标签进行类型区分以及支持垃圾回收和压缩等机制，为 JavaScript 中与外部数据交互的功能提供了底层的支持。 如果它是 `.tq` 文件，那么它将使用 Torque 语言来定义其逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/external-buffer-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/external-buffer-table.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -415,7 +417,4 @@ static_assert(sizeof(ExternalBufferTable) == ExternalBufferTable::kSize);
 #endif  // V8_ENABLE_SANDBOX
 
 #endif  // V8_SANDBOX_EXTERNAL_BUFFER_TABLE_H_
-
-"""
-
 ```

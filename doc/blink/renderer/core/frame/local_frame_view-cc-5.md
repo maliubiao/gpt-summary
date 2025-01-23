@@ -142,16 +142,18 @@ By systematically addressing these points and considering the provided code, I c
 
 总的来说，`LocalFrameView` 不仅仅是一个简单的视图管理类，它还是 Blink 引擎中一个重要的**渲染策略执行和优化中心**，旨在在保证用户体验的前提下，最大程度地提升渲染性能和资源利用率，特别是在处理复杂的页面结构和跨域内容时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_frame_view.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
- context);
+### 源代码
+```cpp
+context);
   }
 
   if (DocumentFencedFrames* fenced_frames =
@@ -980,8 +982,4 @@ bool LocalFrameView::UpdateLastSuccessfulPositionFallbacks() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

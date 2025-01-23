@@ -120,7 +120,7 @@ This structured approach ensures that all aspects of the request are considered 
 
 `mconf.py` 是 Frida 构建系统中一个关键的实用工具，它允许开发者和用户方便地查看和调整构建配置。这对于理解 Frida 的构建方式、解决构建问题以及针对特定目标环境进行定制非常重要。从逆向的角度来看，理解 Frida 的构建配置有助于更好地分析其行为和特性。脚本的功能涉及文件操作、命令行参数解析、数据加载和保存、格式化输出等编程基础，并与 Meson 构建系统紧密结合。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/mconf.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 # Copyright © 2023-2024 Intel Corporation
@@ -498,7 +500,4 @@ def run(options: CMDOptions) -> int:
     coredata.parse_cmd_line_options(options)
     builddir = os.path.abspath(os.path.realpath(options.builddir))
     return run_impl(options, builddir)
-
-"""
-
 ```

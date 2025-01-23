@@ -105,7 +105,7 @@ vaddpd xmm0,[rip+0x1234]
 
 这部分 `disasm-x64.cc` 代码负责反汇编大量的 **VEX 编码的 SIMD 指令 (包括 AVX 和 FMA)** 以及部分 **传统的 SSE 和 FPU 指令**。它通过解析指令的操作码、前缀以及 ModR/M 字节等信息，将机器码转换为可读的汇编指令字符串，这对于理解 V8 引擎执行 JavaScript 代码的底层机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/x64/disasm-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/x64/disasm-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -113,9 +113,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
-           FMA_PD_INSTRUCTION_LIST(DECLARE_FMA_DISASM)
+### 源代码
+```cpp
+FMA_PD_INSTRUCTION_LIST(DECLARE_FMA_DISASM)
             default: {
               UnimplementedInstruction();
             }
@@ -1081,7 +1083,4 @@ int DisassemblerX64::TwoByteOpcodeInstruction(uint8_t* data) {
       current += PrintOperands("movq", XMMOPER_XMMREG_OP_ORDER, current);
     } else if (opcode == 0x50) {
       App
-"""
-
-
 ```

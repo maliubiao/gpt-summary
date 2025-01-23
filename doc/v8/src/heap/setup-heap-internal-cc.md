@@ -142,7 +142,7 @@ Bringing all these observations together leads to the summary provided in the ex
 
 `v8/src/heap/setup-heap-internal.cc` 的第 1 部分主要负责 V8 堆的**早期初始化**，包括创建最核心的只读和可变对象及其映射。 它的目标是建立 V8 运行时环境的基础骨架，确保最基本的 JavaScript 值和对象类型能够被正确表示和管理。 这部分的工作为后续更复杂的堆对象和功能的初始化奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/setup-heap-internal.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/setup-heap-internal.cc以.tq结尾，那它是个v8 torque源代码，
@@ -150,8 +150,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -930,7 +932,4 @@ bool Heap::CreateLateReadOnlyNonJSReceiverMaps() {
     IF_WASM(ALLOCATE_MAP, WASM_RESUME_DATA_TYPE, WasmResumeData::kSize,
             wasm_resume_data)
     IF_WASM(ALLOCATE_MAP, WASM_SUSPEN
-"""
-
-
 ```

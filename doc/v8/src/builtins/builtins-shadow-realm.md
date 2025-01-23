@@ -92,11 +92,13 @@ shadowFunc(); // 输出: 来自 ShadowRealm 的函数
 
 总而言之，`builtins-shadow-realm.cc` 文件是 V8 引擎中实现 `ShadowRealm` 核心功能的关键部分，它负责创建隔离的 JavaScript 执行环境，并在这些环境中安全地执行代码和传递值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-shadow-realm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -320,7 +322,4 @@ BUILTIN(ShadowRealmPrototypeEvaluate) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

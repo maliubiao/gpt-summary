@@ -79,15 +79,17 @@ The user wants a summary of the functionalities present in the provided C++ code
 
 这部分 `web_frame_test.cc` 代码主要集中于测试 `WebFrame` 类在处理**页面缩放和视口配置**相关的各种场景。它验证了浏览器引擎在解析和应用视口元标签、设备像素比、初始缩放因子以及用户缩放行为时的逻辑是否正确。这些测试覆盖了不同类型的网页配置，包括有无视口标签、是否允许用户缩放、是否启用 `wide viewport` 等，并验证了在调整窗口大小时页面缩放和滚动行为的正确性。 这些测试对于确保 Chromium 浏览器正确渲染和缩放网页至关重要，尤其是在不同的设备和屏幕尺寸下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共19部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r.Resize(gfx::Size(viewport_width, viewport_height));
   web_view_helper.GetWebView()
       ->MainFrameWidget()
@@ -845,7 +847,4 @@ TEST_F(WebFrameTest, DivAutoZoomScaleLegibleScaleTest) {
   float double_tap_zoom_already_legible_ratio = 1.2f;
   float maximum_legible_scale_factor = 1.13f;
   frame_test_h
-"""
-
-
 ```

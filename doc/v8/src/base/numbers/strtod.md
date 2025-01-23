@@ -129,11 +129,13 @@ console.log(num13); // 输出: NaN
 
 `strtod.cc` 是 V8 引擎中至关重要的一个文件，它实现了将字符串转换为 `double` 类型的核心逻辑。JavaScript 的 `parseFloat()` 函数的背后，很可能就是依赖于这段 C++ 代码提供的能力。理解这段代码的功能，有助于理解 JavaScript 中数字类型转换的行为和潜在的精度限制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/strtod.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -552,7 +554,4 @@ double Strtod(Vector<const char> buffer, int exponent) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

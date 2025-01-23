@@ -141,15 +141,17 @@ func main() {
 
 总而言之，`go/src/cmd/go/stop_other_test.go` 中的这段代码片段是一个用于获取跨平台兼容的进程终止信号的实用工具函数，主要用于测试或其他需要控制进程生命周期的场景。它特别注意了 Windows 平台对于 `os.Interrupt` 的不支持，并提供了 `os.Kill` 作为替代方案。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/stop_other_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -174,9 +176,4 @@ func quitSignal() os.Signal {
 	}
 	return os.Interrupt
 }
-
-"""
-
-
-
 ```

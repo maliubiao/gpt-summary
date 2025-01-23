@@ -156,7 +156,7 @@ The tests use a simulation environment (`EventHandlerSimTest`) to create control
 
 结合之前部分的分析，`event_handler_test.cc` 是一个全面的事件处理器测试套件，覆盖了各种输入事件类型和用户交互场景，旨在确保 Blink 引擎能够正确、高效地处理用户输入，并提供一致和可靠的用户体验。它对于维护 Blink 引擎的稳定性和可靠性至关重要，并且是开发者理解 Blink 事件处理机制的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/input/event_handler_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 that we have not yet fired scrollend.
   EXPECT_EQ(
       GetDocument().getElementById(AtomicString("log"))->innerHTML().Utf8(),
@@ -456,8 +458,4 @@ TEST_F(EventHandlerSimTest, GestureTapHoverState) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

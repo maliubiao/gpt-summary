@@ -137,7 +137,7 @@ Essentially, the process involves understanding the code's purpose, connecting i
 
 `stat.c` 是 Frida 测试套件中一个简洁但重要的文件，用于验证 Frida 动态Instrumentation工具在处理静态链接和共享链接库时，能否正确地进行函数调用跟踪和拦截。它为理解 Frida 的工作原理和进行相关的逆向工程实践提供了基础的测试场景。 理解这个文件的功能和上下文，有助于更好地使用 Frida 进行软件分析、安全审计和漏洞挖掘等工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/55 exe static shared/stat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "subdir/exports.h"
 
 int shlibfunc(void);
@@ -154,7 +156,4 @@ int shlibfunc(void);
 int DLL_PUBLIC statlibfunc(void) {
     return shlibfunc();
 }
-
-"""
-
 ```

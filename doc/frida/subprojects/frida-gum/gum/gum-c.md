@@ -179,7 +179,7 @@ Let's break down the thought process for analyzing the `gum.c` file.
 
 总而言之，`gum.c` 是 Frida 动态 instrumentation 引擎的核心组成部分，负责库的生命周期管理、核心功能的初始化以及与底层操作系统和硬件的交互。理解 `gum.c` 的功能对于深入理解 Frida 的工作原理和进行高级的逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/gum.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2023 Stefano Moioli <smxdev4@gmail.com>
@@ -1092,7 +1094,4 @@ gum_do_query_cpu_features (void)
 }
 
 #endif
-
-"""
-
 ```

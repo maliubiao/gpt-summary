@@ -95,12 +95,14 @@ call [kRootRegister + IsolateData::BuiltinEntrySlotOffset(Builtin::kArrayPush)]
 
 `macro-assembler-ia32.cc` 的第二部分继续提供了构建 IA32 机器码的基础设施，这些机器码直接负责执行 JavaScript 代码。它涵盖了函数调用、API 交互、内存管理和底层操作等方面，是 V8 引擎将 JavaScript 代码转化为可执行指令的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/macro-assembler-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 array is always available in production code. Only in one unit
     // test it is not available. The following code is not needed in the unit
     // test though, so we don't provide code here for the case where the root
@@ -575,8 +577,4 @@ void MacroAssembler::SmiCompare(Operand dst, Register src) {
 #undef __
 
 #endif  // V8_TARGET_ARCH_IA32
-
-"""
-
-
 ```

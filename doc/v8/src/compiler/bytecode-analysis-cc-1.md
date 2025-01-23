@@ -115,7 +115,7 @@ While this C++ code doesn't directly catch user programming errors, it helps ens
 
 In summary, this second part of `v8/src/compiler/bytecode-analysis.cc` focuses on **verifying the correctness of the bytecode analysis**, specifically for **generator function resumption logic** and **register liveness information**. It uses assertions and debugging output to ensure that the analysis performed in the earlier parts of the file produces valid and consistent results. This validation is crucial for the correct and optimized execution of JavaScript code, especially when dealing with advanced features like generators.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/bytecode-analysis.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/bytecode-analysis.cc以.tq结尾，那它是个v8 torque源代码，
@@ -123,8 +123,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r.current_offset();
 
     const BytecodeLivenessState* in_liveness =
@@ -477,8 +479,4 @@ BytecodeAnalysis::BytecodeAnalysis(Handle<BytecodeArray> bytecode_array,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

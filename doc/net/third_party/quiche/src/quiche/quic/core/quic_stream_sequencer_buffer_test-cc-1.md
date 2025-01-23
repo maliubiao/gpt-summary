@@ -111,7 +111,7 @@ By following these steps, the generated response accurately reflects the purpose
 
 总而言之，这部分测试代码专注于验证 `QuicStreamSequencerBuffer` 在处理复杂的数据接收场景下的正确性和健壮性，包括跨越 buffer 边界的数据、大量的碎片数据以及随机的写入和读取操作，同时也测试了其动态内存管理的能力。 开发者可以通过分析这些测试用例来理解 `QuicStreamSequencerBuffer` 的工作原理，并辅助调试相关的 stream 处理问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_stream_sequencer_buffer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eredFrames) {
   // Write into [0, 8.5 * kBlockSizeBytes - 1024) and then read out [0, 1024).
   std::string source(max_capacity_bytes_ - 1024, 'a');
@@ -438,8 +440,4 @@ TEST_F(QuicStreamSequencerBufferTest, GrowBlockSizeOnDemand) {
 }  // namespace test
 
 }  // namespace quic
-
-"""
-
-
 ```

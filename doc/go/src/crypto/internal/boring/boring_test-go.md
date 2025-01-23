@@ -167,7 +167,7 @@ go build -tags boringcrypto your_package.go
 
 总而言之，`go/src/crypto/internal/boring/boring_test.go` 这个文件主要用于测试 `boring` 包的一些内部机制，这些机制很可能与 Go 标准库的 `crypto` 包使用 BoringSSL 作为底层实现有关。使用者应该主要通过编译标签来控制是否使用 BoringSSL 实现，而不是直接操作 `boring` 包的内部函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/boring/boring_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -211,9 +213,4 @@ func TestUnreachable(t *testing.T) {
 func TestUnreachableExceptTests(t *testing.T) {
 	UnreachableExceptTests()
 }
-
-"""
-
-
-
 ```

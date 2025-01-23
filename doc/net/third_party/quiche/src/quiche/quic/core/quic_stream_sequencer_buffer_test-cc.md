@@ -149,7 +149,7 @@ This systematic approach, starting with the overall goal and progressively divin
 
 这部分代码主要定义了针对 `QuicStreamSequencerBuffer` 类的基础单元测试用例，涵盖了其核心的数据写入、读取、获取可读区域、窥视数据以及基本的缓冲区管理功能。这些测试用例旨在验证 `QuicStreamSequencerBuffer` 在处理基本的流数据接收场景时的正确性，包括有序和无序到达的数据，以及各种边界情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_stream_sequencer_buffer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2015 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1006,7 +1008,4 @@ TEST_F(QuicStreamSequencerBufferTest, MarkConsumedAcrossEnd) {
 }
 
 TEST_F(QuicStreamSequencerBufferTest, FlushBuff
-"""
-
-
 ```

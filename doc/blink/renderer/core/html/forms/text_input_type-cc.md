@@ -160,15 +160,17 @@ By following this structured approach, we can systematically analyze the code an
 
 总而言之，`blink/renderer/core/html/forms/text_input_type.cc` 这个文件是 Blink 引擎中处理最基本也是最常用的 HTML 表单元素 `<input type="text">` 的核心逻辑所在。它连接了 HTML 结构、JavaScript 交互和一些基本的 CSS 渲染行为，并且负责收集这类元素的使用数据，同时也影响着用户与网页表单的交互体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/text_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -224,7 +226,4 @@ bool TextInputType::SupportsInputModeAttribute() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

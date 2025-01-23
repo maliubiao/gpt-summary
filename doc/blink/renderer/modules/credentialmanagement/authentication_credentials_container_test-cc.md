@@ -94,15 +94,17 @@ Here's a plan:
 
 因此，调试线索可能是：用户在特定网站执行了登录或凭据相关的操作，触发了网站的 JavaScript 代码调用了 Credential Management API，从而导致 Blink 引擎中 `AuthenticationCredentialsContainer` 的代码被执行，最终进入到相关的测试代码路径进行验证。 开发者可以通过查看浏览器的开发者工具中的控制台输出、网络请求以及内部的日志记录来追踪这些步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/credentialmanagement/authentication_credentials_container_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -586,7 +588,4 @@ TEST_F(AuthenticationCredentialsContainerActiveModeMultiIdpTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

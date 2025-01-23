@@ -131,11 +131,13 @@ console.log(locale.textInfo);
 
 `v8/src/objects/js-locale.cc` 文件是 V8 引擎中处理国际化和本地化的核心组件之一。它利用 ICU 库提供的功能，为 JavaScript 开发者提供了操作和查询语言环境信息的强大工具，使得 JavaScript 应用能够更好地支持多语言和文化。 `Intl.Locale` API 在 JavaScript 中的使用，背后正是这个 C++ 文件在默默地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-locale.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1001,7 +1003,4 @@ Handle<String> JSLocale::ToString(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

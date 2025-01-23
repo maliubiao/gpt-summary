@@ -167,15 +167,17 @@ func main() {
 
 总而言之，`go/src/cmd/vendor/golang.org/x/sys/unix/sysvshm_unix_other.go` 文件中的 `SysvShmCtl` 函数是 Go 语言中用于管理 System V 共享内存段的关键组成部分，它直接映射到操作系统的 `shmctl` 系统调用，为 Go 程序提供了与操作系统底层共享内存机制交互的能力。使用者需要理解 `shmctl` 的各种命令及其参数，并注意权限管理和资源清理，以避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/sysvshm_unix_other.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -189,9 +191,4 @@ package unix
 func SysvShmCtl(id, cmd int, desc *SysvShmDesc) (result int, err error) {
 	return shmctl(id, cmd, desc)
 }
-
-"""
-
-
-
 ```

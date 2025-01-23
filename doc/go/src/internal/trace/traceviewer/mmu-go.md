@@ -283,7 +283,7 @@ GET /mmu?mode=details&window=10000000&flags=stw|background
 
 总而言之，这段代码是 Go trace viewer 中用于可视化 MMU 的核心组件，通过 HTTP 接口提供数据给前端，帮助开发者深入理解 Go 程序的垃圾回收行为以及对程序性能的影响。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/traceviewer/mmu.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -291,8 +291,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -707,9 +709,4 @@ func (m *mmu) newLinkedUtilWindow(ui trace.UtilWindow, window time.Duration) lin
 	}
 	return linkedUtilWindow{ui, fmt.Sprintf("%s#%v:%v", r.URL(ViewProc), float64(ui.Time)/1e6, float64(ui.Time+int64(window))/1e6)}
 }
-
-"""
-
-
-
 ```

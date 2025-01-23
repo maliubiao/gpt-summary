@@ -118,15 +118,17 @@ console.log(myMap.get(key)); // 可能会返回 undefined，因为 key 的哈希
 
 `v8/src/numbers/hash-seed-inl.h` 定义了获取 V8 哈希种子的函数。这个种子对于 V8 内部的哈希操作至关重要，并间接影响了 JavaScript 中使用哈希的数据结构的性能和安全性。用户无法直接访问或修改这个哈希种子，但理解其作用有助于理解 V8 的内部工作原理以及与 JavaScript 哈希相关的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/numbers/hash-seed-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/numbers/hash-seed-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -181,7 +183,4 @@ inline uint64_t HashSeed(ReadOnlyRoots roots) {
 }  // namespace v8
 
 #endif  // V8_NUMBERS_HASH_SEED_INL_H_
-
-"""
-
 ```

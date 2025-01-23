@@ -164,7 +164,7 @@ block B3:
 
 `v8/src/compiler/string-builder-optimizer.cc` 的目标就是优化第一种常见的错误，通过识别这种模式并应用更高效的字符串构建策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/string-builder-optimizer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/string-builder-optimizer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -172,9 +172,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- just
+### 源代码
+```cpp
+just
       // regular concatenations of 2 constant strings and that can't be
       // beginning of string builders.
       if (HasConcatOrPhiUse(lhs)) {
@@ -558,8 +560,4 @@ StringBuilderOptimizer::StringBuilderOptimizer(JSGraph* jsgraph,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -200,15 +200,17 @@ Handle<Smi> LoadHandler::LoadField(Isolate* isolate, FieldIndex field_index) {
 
 `v8/src/ic/handler-configuration-inl.h` 是 V8 引擎中一个关键的内部文件，它定义了用于配置和表示 IC 处理器的机制。这些处理器负责优化 JavaScript 代码中的属性访问操作，涵盖了各种不同的加载和存储场景。理解这个文件有助于深入了解 V8 的优化策略和内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/handler-configuration-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ic/handler-configuration-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -520,7 +522,4 @@ inline const char* WasmValueType2String(WasmValueType type) {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_IC_HANDLER_CONFIGURATION_INL_H_
-
-"""
-
 ```

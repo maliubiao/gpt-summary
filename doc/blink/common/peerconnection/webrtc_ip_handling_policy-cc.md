@@ -80,14 +80,16 @@ Response: My thinking process to answer the request goes like this:
 
 `webrtc_ip_handling_policy.cc` 这个文件虽然代码量不大，但它定义了关键的字符串常量，用于控制 WebRTC 的 IP 地址处理行为。这些策略直接影响着 WebRTC 连接的建立过程和最终的连接效果，并与用户的隐私设置息息相关。理解这些策略对于 WebRTC 开发者来说至关重要，可以帮助他们构建更健壮、更符合用户隐私预期的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/peerconnection/webrtc_ip_handling_policy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -105,7 +107,4 @@ const char kWebRTCIPHandlingDefaultPublicInterfaceOnly[] =
 const char kWebRTCIPHandlingDisableNonProxiedUdp[] = "disable_non_proxied_udp";
 
 }  // namespace blink
-
-"""
-
 ```

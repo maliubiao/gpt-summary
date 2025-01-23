@@ -182,15 +182,17 @@ By following this structured approach, the analysis becomes more thorough and th
 
 总而言之，`ComputedStyle::cc` 是 Blink 渲染引擎中至关重要的一个组成部分，它连接了 CSS 样式规则和最终的渲染结果，确保网页能够按照预期的方式呈现给用户。 这部分代码片段展现了其处理多种关键样式属性，并考虑了历史兼容性和性能优化的复杂性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/computed_style.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e.
   if (Display() == EDisplay::kInlineListItem ||
       ListStylePosition() == EListStylePosition::kInside) {
@@ -598,8 +600,4 @@ STATIC_ASSERT_ENUM(cc::OverscrollBehavior::Type::kNone,
                    EOverscrollBehavior::kNone);
 
 }  // namespace blink
-
-"""
-
-
 ```

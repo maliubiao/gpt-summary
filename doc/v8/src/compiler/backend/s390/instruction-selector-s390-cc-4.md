@@ -654,7 +654,7 @@ void VisitAtomicBinop(InstructionSelectorT<Adapter>* selector,
 }
 
 template <typename Adapter>
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/instruction-selector-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/s390/instruction-selector-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -662,9 +662,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
-      return VisitWord64UnaryOp(this, node, kS390_Abs64,
+### 源代码
+```cpp
+return VisitWord64UnaryOp(this, node, kS390_Abs64,
                                           OperandMode::kNone, cont);
               case IrOpcode::kInt64AddWithOverflow:
                 cont->OverwriteAndNegateIfEqual(kOverflow);
@@ -1566,8 +1568,4 @@ void InstructionSelectorT<Adapter>::VisitWord64AtomicStore(node_t node) {
   V(I64x2UConvertI32x4Low)   \
   V(I64x2UConvertI32x4High)  \
   V(I64x2Abs)                \
-
-"""
-
-
 ```

@@ -155,15 +155,17 @@ The `css_grid_auto_repeat_value.cc` file is a crucial part of Blink's CSS Grid i
 
 总而言之，`CSSGridAutoRepeatValue.cc` 文件在 CSS Grid 布局中扮演着关键的角色，它负责表示和处理 `repeat` 函数中 `auto-fill` 和 `auto-fit` 关键字，直接影响着网页的最终渲染效果。理解其功能有助于我们更好地理解和调试 CSS Grid 布局。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_grid_auto_repeat_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ bool CSSGridAutoRepeatValue::Equals(const CSSGridAutoRepeatValue& other) const {
 
 }  // namespace cssvalue
 }  // namespace blink
-
-"""
-
 ```

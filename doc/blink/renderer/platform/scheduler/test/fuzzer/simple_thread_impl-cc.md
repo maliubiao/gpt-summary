@@ -106,14 +106,16 @@ This structured approach—understanding context, analyzing code, inferring func
 
 总而言之，`simple_thread_impl.cc` 是 Blink 渲染引擎调度器测试框架中的一个重要组件，它提供了一种模拟线程行为的方式，用于验证调度器的功能和鲁棒性。虽然它不直接处理 JavaScript, HTML 或 CSS 代码，但它的存在是为了确保调度器能够正确地管理和执行与这些技术相关的任务。在使用时需要注意资源管理和线程安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/test/fuzzer/simple_thread_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 #include "third_party/blink/renderer/platform/scheduler/test/fuzzer/simple_thread_impl.h"
 
 #include "third_party/blink/renderer/platform/scheduler/test/fuzzer/thread_manager.h"
@@ -147,7 +149,4 @@ SimpleThreadImpl::~SimpleThreadImpl() {
 
 }  // namespace sequence_manager
 }  // namespace base
-
-"""
-
 ```

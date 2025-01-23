@@ -170,7 +170,7 @@ const result = myObj.value;
 
 到目前为止，根据提供的代码片段，`v8/src/compiler/js-native-context-specialization.cc` 的主要功能是 **V8 编译器中负责根据 JavaScript 原生上下文的特性，对属性和元素访问操作进行优化的组件**。它利用类型反馈、隐藏类信息和元素种类等信息，为常见的属性和元素访问模式生成更高效的机器码。该组件通过构建特定的 IR 节点来实现这些优化，并且能够处理多种访问模式和不同的数据类型。  它致力于提高 JavaScript 代码在 V8 引擎中的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-native-context-specialization.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-native-context-specialization.cc以.tq结尾，那它是个v8 torque源代码，
@@ -178,9 +178,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
- Node* control, PropertyAccessInfo const& access_info) {
+### 源代码
+```cpp
+Node* control, PropertyAccessInfo const& access_info) {
   // TODO(v8:11457) Support property tests for dictionary mode protoypes.
   DCHECK(!access_info.HasDictionaryHolder());
 
@@ -914,7 +916,4 @@ JSNativeContextSpecialization::
     // optimize away the tricky part of the access later.
     if (JSTypedArray::kMaxSizeInHeap == 0) {
       base_pointer = jsgraph()->ZeroConstant()
-"""
-
-
 ```

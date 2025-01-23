@@ -117,7 +117,7 @@ Strategizing complete. Proceeding with response generation.
 
 这部分代码主要实现了 `dlmalloc` 内存分配器的核心功能：**内存分配 (`dlmalloc`, `tmalloc_large`, `tmalloc_small`) 和内存释放 (`dlfree`) 以及基于 `malloc` 的内存分配并清零的函数 (`dlcalloc`)**。 它展现了 `dlmalloc` 如何管理堆内存，包括使用 smallbins 和 treebins 来高效地查找和管理空闲内存块，以及处理各种分配场景（小块、大块、合并、分割等）。同时，它也处理了与操作系统进行交互以获取或释放内存的情况。  理解这部分代码对于理解程序如何管理内存，以及如何利用或防御与内存管理相关的漏洞至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/dlmalloc.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 lse {
       set_free_with_pinuse(p, psize, next);
     }
@@ -1240,8 +1242,4 @@ void* mspace_malloc(mspace msp, size_t bytes) {
         if (smallbits != 0) { /* Use chunk in next nonempty smallbin */
           mchunkptr b, p, r;
           size_t rsize;
-       
-"""
-
-
 ```

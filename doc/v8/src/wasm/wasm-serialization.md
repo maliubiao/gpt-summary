@@ -123,11 +123,13 @@ runWasm();
 
 总而言之，`v8/src/wasm/wasm-serialization.cc` 是 V8 引擎中实现 WebAssembly 模块持久化和快速加载的关键组件，它通过序列化和反序列化技术，极大地提升了 WebAssembly 应用的性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-serialization.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1284,7 +1286,4 @@ MaybeHandle<WasmModuleObject> DeserializeNativeModule(
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

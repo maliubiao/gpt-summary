@@ -146,15 +146,17 @@ This specific code snippet doesn't involve any direct command-line argument proc
 
 In summary, the provided code snippet demonstrates the fundamental concept of struct embedding in Go, allowing package `b` to reuse and incorporate the structure and behavior of the `T` struct from package `a`. Understanding how embedding works and potential pitfalls like shadowing is crucial for effective Go development.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue15838.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -164,9 +166,4 @@ package b
 import "./a"
 
 type T struct{ a.T }
-
-"""
-
-
-
 ```

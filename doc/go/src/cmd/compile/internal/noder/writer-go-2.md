@@ -117,7 +117,7 @@ func main() {
 
 这段 `writer.go` 代码是 Go 编译器的核心组成部分，负责在类型检查之后，将 Go 语言包的声明信息进行结构化地序列化，包括处理编译器指令（如 `//go:embed` 和 `//go:linkname`），为后续的编译阶段提供必要的元数据。它通过 `declCollector` 收集声明的细节，并使用 `pkgWriter` 将这些信息写入输出流，为代码生成和链接奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/noder/writer.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -126,8 +126,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 cope at this type declaration.
 	implicits []*types2.TypeParam
 }
@@ -715,10 +717,4 @@ func (pw *pkgWriter) terminates(stmt syntax.Stmt) bool {
 
 	return false
 }
-
-"""
-
-
-
-
 ```

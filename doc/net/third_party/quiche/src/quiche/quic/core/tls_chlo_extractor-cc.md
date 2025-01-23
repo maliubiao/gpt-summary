@@ -129,15 +129,17 @@ Let's break down the thought process to analyze the provided C++ code.
 
 总而言之，`tls_chlo_extractor.cc` 是 Chromium QUIC 实现中一个关键的组件，它负责从初始握手包中高效且安全地提取 TLS ClientHello 的关键信息，为后续的连接处理决策提供依据。虽然它不直接与 JavaScript 交互，但它提取的信息直接影响着基于 Chromium 的浏览器和 Node.js 应用的网络行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/tls_chlo_extractor.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2020 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -667,7 +669,4 @@ std::ostream& operator<<(std::ostream& os,
 }
 
 }  // namespace quic
-
-"""
-
 ```

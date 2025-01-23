@@ -130,11 +130,13 @@ const frozenArray = Object.freeze([6, 7]); // ElementsKind 可能是 PACKED_FROZ
 
 `v8/src/objects/elements-kind.cc` 文件是 V8 引擎中一个关键的组成部分，它负责定义和管理 JavaScript 数组的内部表示。通过使用不同的 `ElementsKind`，V8 可以在内存使用和性能方面对数组进行优化。理解 `ElementsKind` 的概念有助于理解 JavaScript 代码在 V8 中是如何被高效执行的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/elements-kind.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -427,7 +429,4 @@ bool UnionElementsKindUptoSize(ElementsKind* a_out, ElementsKind b) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

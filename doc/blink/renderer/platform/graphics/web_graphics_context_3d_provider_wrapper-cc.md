@@ -95,14 +95,16 @@ By following these steps, analyzing the code structure, inferring the class's pu
 
 总而言之，`WebGraphicsContext3DProviderWrapper` 是 Blink 渲染引擎中用于管理 WebGL 上下文销毁事件的关键组件，它利用观察者模式确保在 WebGL 上下文生命周期结束时，相关的内部组件能够得到及时通知并进行必要的清理工作，从而保证了 WebGL 功能的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/web_graphics_context_3d_provider_wrapper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -129,7 +131,4 @@ void WebGraphicsContext3DProviderWrapper::RemoveObserver(
 }
 
 }  // namespace blink
-
-"""
-
 ```

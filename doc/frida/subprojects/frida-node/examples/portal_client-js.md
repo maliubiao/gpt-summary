@@ -185,7 +185,7 @@ By systematically working through these steps, I can arrive at a comprehensive a
 
 通过以上步骤，可以逐步排查问题，确定是客户端本身的问题、服务端配置问题还是网络问题。例如，如果客户端根本无法连接，问题可能在于 Frida 服务端没有启动或者网络配置错误；如果客户端可以连接但无法加入频道，可能是服务端配置了频道权限；如果消息发送后其他客户端收不到，可能是服务端的消息路由逻辑有问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/portal_client.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const frida = require('..');
 const readline = require('readline');
 const util = require('util');
@@ -378,7 +380,4 @@ app.run()
   .catch(e => {
     console.error(e);
   });
-
-"""
-
 ```

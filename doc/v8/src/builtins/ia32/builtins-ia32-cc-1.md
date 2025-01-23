@@ -167,7 +167,7 @@ While this code is low-level V8 implementation, it's related to common JavaScrip
 
 This specific part of the `builtins-ia32.cc` file is responsible for implementing the **entry point and core mechanics for executing JavaScript code within V8's interpreter on the IA-32 architecture.** It handles setting up the execution environment, managing function calls (including those with spread operators), and facilitating constructor invocations. This code is fundamental to how V8 runs unoptimized JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ia32/builtins-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/ia32/builtins-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,8 +175,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 backVector::kOsrStateOffset),
            scratch);
 }
@@ -1053,7 +1055,4 @@ static void Generate_InterpreterEnterBytecode(MacroAssembler* masm) {
   __ push(scratch);
 
   // Initialize the dispatch
-"""
-
-
 ```

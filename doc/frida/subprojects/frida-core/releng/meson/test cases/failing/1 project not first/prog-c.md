@@ -107,7 +107,7 @@ int main(int argc, char **argv) { return 0; }
 
 尽管 `prog.c` 的代码非常简单，但它作为一个测试用例在 Frida 的构建系统中扮演着重要的角色。它用于验证构建系统在特定错误场景下的行为，特别是处理项目依赖关系时的正确性。理解这种看似简单的文件在复杂系统中的作用，有助于我们更好地理解软件构建过程和测试策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/1 project not first/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,10 +115,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) { return 0; }
-
-"""
-
 ```

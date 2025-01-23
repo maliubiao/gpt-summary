@@ -269,7 +269,7 @@ Android App (Java) -> java.net.URL -> java.net.InetAddress.getByName() -> Native
 
 通过 Frida Hook 观察 `__res_get_static` 的调用，可以验证上述流程，并了解哪些线程正在进行 DNS 查询。这对于调试网络相关的线程安全问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/include/resolv_static.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -280,8 +280,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #pragma once
 
 #include <netdb.h>
@@ -316,7 +318,4 @@ struct res_static {
 struct res_static* __res_get_static(void);
 
 __END_DECLS
-
-"""
-
 ```

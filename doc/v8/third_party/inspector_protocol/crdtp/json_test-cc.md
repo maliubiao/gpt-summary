@@ -236,15 +236,17 @@ Several tests directly address common mistakes developers make when working with
 
 In summary, `v8/third_party/inspector_protocol/crdtp/json_test.cc` is a comprehensive test suite for V8's JSON handling, ensuring its correctness and robustness in encoding and parsing JSON data, which is essential for communication between the debugger and the V8 runtime.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/json_test.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/json_test.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -999,7 +1001,4 @@ TYPED_TEST(ConvertJSONToCBORTest, RoundTripValidJson16) {
 }
 }  // namespace json
 }  // namespace v8_crdtp
-
-"""
-
 ```

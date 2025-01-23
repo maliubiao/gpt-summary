@@ -85,7 +85,7 @@ const minResult = c.min(d); // minResult 将是 Float32x4(1, 3, 2, 1)
 
 这部分 `v8/src/compiler/machine-operator.cc` 代码的核心功能是**定义了 V8 编译器在处理 WebAssembly SIMD 指令时所使用的各种机器级别的操作**。它通过宏定义的方式，清晰地列举了支持的 SIMD 操作类型、属性、以及输入输出数量。 这些定义是 V8 将 WebAssembly 代码编译成本地机器码的关键组成部分，并直接关联到 JavaScript 中暴露的 WebAssembly SIMD 功能。  该文件本身是 C++ 代码，而非 Torque 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/machine-operator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -93,9 +93,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
- IF_WASM(V, I8x16AllTrue, Operator::kNoProperties, 1, 0, 1)                   \
+### 源代码
+```cpp
+IF_WASM(V, I8x16AllTrue, Operator::kNoProperties, 1, 0, 1)                   \
   IF_WASM(V, I8x16RelaxedLaneSelect, Operator::kNoProperties, 3, 0, 1)         \
   IF_WASM(V, I16x8RelaxedLaneSelect, Operator::kNoProperties, 3, 0, 1)         \
   IF_WASM(V, I32x4RelaxedLaneSelect, Operator::kNoProperties, 3, 0, 1)         \
@@ -661,8 +663,4 @@ Prompt:
 struct StackSlotOperator : public Operator1<StackSlotRepresentation> {
   explicit StackSlotOperator(int size, int alignment, bool is_tagged)
       : Operator1<StackSlotRepresentation>(
-        
-"""
-
-
 ```

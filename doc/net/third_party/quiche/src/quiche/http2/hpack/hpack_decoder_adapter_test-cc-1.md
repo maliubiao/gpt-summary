@@ -63,7 +63,7 @@ The request explicitly states that this is the *second part* of a two-part reque
 
 这部分测试代码专注于验证 `HpackDecoderAdapter` 在处理更复杂的 HTTP/2 头部块序列时的正确性，特别是针对动态表的使用（更新和索引引用）和特定场景（例如重用已删除条目的名称和处理 Cookie 头部）。它通过构造特定的 HPACK 编码数据，并断言解码后的结果是否与预期一致，来确保解码器的健壮性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/hpack_decoder_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -71,8 +71,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ded:
   // 6402                                    | d.
   //                                         |     Decoded:
@@ -339,8 +341,4 @@ TEST_P(HpackDecoderAdapterTest, Cookies) {
 }  // namespace
 }  // namespace test
 }  // namespace spdy
-
-"""
-
-
 ```

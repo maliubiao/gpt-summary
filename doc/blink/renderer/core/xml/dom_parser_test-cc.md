@@ -174,15 +174,17 @@ By following these steps, we can systematically analyze the source code and unde
 
 `blink/renderer/core/xml/dom_parser_test.cc` 是一个关键的测试文件，用于确保 Blink 引擎中的 `DOMParser` 类能够正确地解析 XML 和 HTML 字符串，并根据文档类型声明正确地设置文档模式。这对于保证网页的正常渲染和 JavaScript 代码的正确执行至关重要。测试用例覆盖了基本的功能和重要的边界条件，帮助开发者预防和修复与 DOM 解析相关的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/dom_parser_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ TEST(DOMParserTest, DomParserDocumentUsesNoQuirksMode) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

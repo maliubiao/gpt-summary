@@ -123,7 +123,7 @@ During the process, I might realize I haven't explicitly mentioned the build sys
 
 总之，`libA.cpp` 虽然代码简单，但在 Frida 的上下文中扮演着测试和验证 Frida 与动态链接库交互的重要角色。 它的存在是为了确保 Frida 能够正确地加载、操作和拦截目标进程中的代码。开发者通过一系列操作，例如编写测试用例、浏览源代码、分析构建系统、以及使用 Frida 脚本进行调试，都有可能深入到这个文件的细节中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/15 object library advanced/subprojects/cmObjLib/libA.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "libA.hpp"
 
 #if not BUILD_AS_OBJ
@@ -142,7 +144,4 @@ Prompt:
 std::string getLibStr(void) {
   return "Hello World";
 }
-
-"""
-
 ```

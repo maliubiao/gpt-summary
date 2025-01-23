@@ -117,7 +117,7 @@ BEQZ  r3, offset
 
 这部分代码是 V8 引擎在 LoongArch64 平台模拟执行机器码的核心组件，负责模拟内存访问、控制流、与 V8 Runtime 的交互以及处理调试相关的操作。它为在没有实际 LoongArch64 硬件的情况下运行和测试 V8 引擎提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/loong64/simulator-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/loong64/simulator-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -125,8 +125,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tr;
 }
 
@@ -1041,7 +1043,4 @@ void Simulator::DecodeTypeOp7() {
       printf_instr("PCADDU12I\t %s: %016lx, si20: %d\n",
                    Registers::Name(rd_reg()), rd(), si20());
       int32_t si20_signExtend = static_cast<int32_t>(si20
-"""
-
-
 ```

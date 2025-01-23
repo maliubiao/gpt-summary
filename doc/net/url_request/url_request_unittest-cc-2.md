@@ -145,7 +145,7 @@ Now, let's generate the detailed response.
 
 总而言之，本部分 `url_request_unittest.cc` 的代码主要用于测试 `URLRequest` 及其相关的核心功能，包括请求优先级管理、连接状态通知以及各种 Cookie 处理场景（包括通过策略进行控制）。 这些测试确保了 Chromium 网络栈在处理网络请求时能够正确地管理请求优先级，及时通知连接状态，并按照标准和策略正确地处理 Cookie。 这些功能对于保证 Web 应用的性能、安全性和用户体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -153,10 +153,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共17部分，请归纳一下它的功能
+```
 
-"""
-
-      TRAFFIC_ANNOTATION_FOR_TESTS));
+### 源代码
+```cpp
+TRAFFIC_ANNOTATION_FOR_TESTS));
   EXPECT_EQ(DEFAULT_PRIORITY, req->priority());
 
   req->SetPriority(LOW);
@@ -1030,7 +1031,4 @@ TEST_P(URLRequestSameSiteCookiesTest, SameSiteCookies) {
               d.data_received().find("StrictSameSiteCookie=1"));
     EXPECT_NE(std::string::npos, d.data_received().find("LaxSameSiteCookie=1"));
     EXPECT_EQ(0, default_network_delegate().blocked_annotate_cookies_count()
-"""
-
-
 ```

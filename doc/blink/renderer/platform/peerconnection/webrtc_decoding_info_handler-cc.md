@@ -166,14 +166,16 @@ By following these steps and incorporating self-correction, I can generate a com
 
 总而言之，`webrtc_decoding_info_handler.cc` 在 WebRTC 的媒体协商和解码过程中扮演着关键的角色，它确保了浏览器能够有效地处理接收到的音频和视频数据，并间接地影响了用户在网页上使用 WebRTC 功能的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/webrtc_decoding_info_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ void WebrtcDecodingInfoHandler::DecodingInfo(
 }
 
 }  // namespace blink
-
-"""
-
 ```

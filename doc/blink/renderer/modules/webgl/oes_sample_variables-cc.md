@@ -174,15 +174,17 @@ void main() {
 
 通过查看浏览器的开发者工具的控制台输出，以及 WebGL 错误信息（如果存在），开发者可以追踪上述步骤，判断问题出在哪个环节，从而定位到 `blink/renderer/modules/webgl/oes_sample_variables.cc` 相关的代码是否按预期工作。例如，如果 `gl.getExtension()` 返回 `null`，则可以推断出 `blink::OESSampleVariables::Supported()` 返回了 `false`，需要进一步调查底层 OpenGL 的支持情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/oes_sample_variables.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ const char* OESSampleVariables::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

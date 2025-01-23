@@ -157,15 +157,17 @@ initiator_type: "fetch"
 
 `WorkerResourceTimingNotifierImpl` 是 Blink 引擎中一个关键的组件，它负责将 Web Worker 中资源加载的性能数据传递到 JavaScript 可以访问的 Performance API 中，为开发者提供了分析和优化 Worker 性能的重要工具。它与 JavaScript, HTML, CSS 都有关系，因为它记录了由这些技术触发的资源加载行为的性能数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/worker_resource_timing_notifier_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ void WorkerResourceTimingNotifierImpl::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

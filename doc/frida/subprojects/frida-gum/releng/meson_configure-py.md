@@ -148,7 +148,7 @@ Throughout this process, I'd continually review and refine my understanding. For
 
 总而言之，`meson_configure.py` 是 Frida 构建流程的关键入口点，它负责根据用户的配置选项和系统环境，生成 Meson 构建系统所需的配置文件，从而为后续的编译、链接和安装过程奠定基础。它涉及到与操作系统、编译器工具链、目标平台架构等多个底层的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson_configure.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import argparse
 import os
 from pathlib import Path
@@ -664,7 +666,4 @@ class ToolchainNotFoundError(Exception):
 
 class SDKNotFoundError(Exception):
     pass
-
-"""
-
 ```

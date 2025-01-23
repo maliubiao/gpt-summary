@@ -167,15 +167,17 @@ Understanding object references is crucial for avoiding common JavaScript progra
 
 In summary, `v8/src/heap/reference-summarizer.cc` provides a mechanism within the V8 engine to analyze the direct references held by objects in the heap. This is a valuable tool for understanding object relationships, debugging memory issues, and gaining insights into the workings of V8's garbage collection. While not directly exposed in JavaScript, its functionality underpins how JavaScript objects interact and are managed in memory.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/reference-summarizer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/reference-summarizer.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -328,7 +330,4 @@ ReferenceSummary ReferenceSummary::SummarizeReferencesFrom(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

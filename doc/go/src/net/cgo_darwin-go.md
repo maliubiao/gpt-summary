@@ -143,7 +143,7 @@ Addresses for www.google.com :
 
 总之，`go/src/net/cgo_darwin.go` 中的 `cgoAddrInfoFlags` 是 Go 语言在 macOS 上使用 CGO 进行网络地址查询的一个底层配置，它通过设置 `getaddrinfo` 的标志位来控制地址查询的行为，例如是否返回规范名称、是否映射 IPv4 地址到 IPv6 空间，以及是否返回所有类型的地址。普通 Go 开发者通常不需要直接操作这个常量，但了解其作用有助于理解 Go `net` 包在不同平台上的行为差异。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/cgo_darwin.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -151,8 +151,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -162,9 +164,4 @@ package net
 import "internal/syscall/unix"
 
 const cgoAddrInfoFlags = (unix.AI_CANONNAME | unix.AI_V4MAPPED | unix.AI_ALL) & unix.AI_MASK
-
-"""
-
-
-
 ```

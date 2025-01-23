@@ -178,7 +178,7 @@ By following these steps, I could systematically analyze the code snippet and pr
 
 这部分 `script.c` 文件主要测试了 Frida 的 JavaScript API 与操作系统底层资源的交互能力，特别是套接字相关的操作，以及 Frida 的代码追踪功能 `Stalker` 的各种使用场景。它还涵盖了 Frida 提供的全局属性和 `Process` API 的基本功能。这些测试确保了 Frida 能够正确地获取和操作目标进程的运行时信息，并提供强大的动态代码分析和插桩能力。理解这些测试用例可以帮助开发者了解 Frida 的工作原理，并为用户提供调试 Frida 脚本的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/gumjs/script.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ESSAGE_WITH ("\"tcp6\"");
     GUM_CLOSE_SOCKET (fd);
   }
@@ -1453,7 +1455,4 @@ TESTCASE (process_malloc_ranges_can_be_enumerated)
   {
     g_print ("<skipping, run in slow mode> ");
     ret
-"""
-
-
 ```

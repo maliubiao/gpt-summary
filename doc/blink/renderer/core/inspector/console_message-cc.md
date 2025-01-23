@@ -134,14 +134,16 @@ This iterative process of examining the code, considering its context, and conne
 
 总而言之，`console_message.cc` 文件定义的 `ConsoleMessage` 类是 Blink 渲染引擎中用于记录和表示各种运行时信息和错误的中心组件，它直接关联着开发者在浏览器控制台中看到的各种消息，对于调试和理解网页行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/console_message.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ void ConsoleMessage::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

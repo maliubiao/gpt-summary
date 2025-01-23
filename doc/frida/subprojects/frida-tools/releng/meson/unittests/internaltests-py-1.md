@@ -126,7 +126,7 @@ By following these steps, I can systematically understand the purpose and functi
 
 这部分代码主要测试了 Frida 构建系统内部的一些关键功能模块，包括版本比较、MSVC 工具集检测、命令行参数处理、依赖文件解析、日志记录、库路径排序、依赖工厂以及类型化的参数装饰器。 这些测试用例确保了 Frida 的构建过程能够正确处理各种情况，例如不同的平台、不同的编译器版本、复杂的命令行参数和依赖关系。  这些功能虽然不是直接的 Frida 运行时代码，但对于保证 Frida 构建的正确性和可靠性至关重要，最终也会影响到逆向工程师使用 Frida 的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/unittests/internaltests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 k_args)
 
     def test_version_compare(self):
@@ -796,7 +798,4 @@ k_args)
         )
         def _(obj, node, args: T.Tuple, kwargs: T.Dict[str, T.List[str]]) -> None:
             self.asse
-"""
-
-
 ```

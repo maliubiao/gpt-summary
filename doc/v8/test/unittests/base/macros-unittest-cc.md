@@ -145,15 +145,17 @@ int main() {
 
 总而言之，`v8/test/unittests/base/macros-unittest.cc` 的主要功能是确保 V8 内部使用的宏能够按预期工作，这对于 V8 引擎的正确性和性能至关重要，并间接影响 Javascript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/macros-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/base/macros-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ ASSERT_NOT_TRIVIALLY_COPYABLE(NonTrivialMoveAssignment);
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

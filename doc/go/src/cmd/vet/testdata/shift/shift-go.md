@@ -117,15 +117,17 @@ go vet ./...
 
 `go/src/cmd/vet/testdata/shift/shift.go` 这段代码是 `vet` 工具用于测试其检测可疑位移操作功能的一部分。它验证了 `vet` 能够识别出对小整数类型进行过大左移的潜在错误。开发者应该注意避免这类错误，并利用 `go vet` 工具来帮助他们发现代码中的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vet/testdata/shift/shift.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -139,9 +141,4 @@ func ShiftTest() {
 	_ = i8 << 7
 	_ = (i8 + 1) << 8 // ERROR ".i8 . 1. .8 bits. too small for shift of 8"
 }
-
-"""
-
-
-
 ```

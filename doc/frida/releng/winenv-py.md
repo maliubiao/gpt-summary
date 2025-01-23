@@ -172,7 +172,7 @@ Frida 本身是一个动态 Instrumentation 工具，常用于逆向工程。`wi
 
 总而言之，`frida/releng/winenv.py` 是 Frida 在 Windows 平台上至关重要的一个模块，它负责搭建 Frida 运行和扩展所需的本地开发环境，并为 Frida 的各种高级功能（例如模块编译、代码注入）提供了必要的支持。理解其功能和工作原理有助于排查 Frida 在 Windows 平台上遇到的环境配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/winenv.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import json
 from operator import attrgetter
 import os
@@ -322,7 +324,4 @@ def detect_msvs_library_path(machine: MachineSpec,
 
 class MissingDependencyError(Exception):
     pass
-
-"""
-
 ```

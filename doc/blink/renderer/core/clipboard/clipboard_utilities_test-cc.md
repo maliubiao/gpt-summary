@@ -167,15 +167,17 @@ Finally, organize the findings into a clear and structured answer, addressing ea
 
 `clipboard_utilities_test.cc` 文件测试了 Blink 引擎中用于生成剪贴板 HTML 内容的工具函数，这些函数负责将图片 URL 和 PNG 数据转换为可以在支持富文本的环境中粘贴的 `<img>` 标签代码。 这些功能与用户在网页上复制图片或图片链接的操作以及网页 JavaScript 使用 Clipboard API 密切相关。 测试用例覆盖了非 ASCII 字符和 null 字符的处理，以及空 PNG 数据的情况，确保了这些工具函数的健壮性。 开发者在使用涉及剪贴板操作的功能时，需要注意潜在的 HTML 注入风险和字符编码问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/clipboard/clipboard_utilities_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ TEST(ClipboardUtilitiesTest, PNGToImageMarkup) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

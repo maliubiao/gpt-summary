@@ -197,7 +197,7 @@ func main() {
 
 总结来说，`clone_test.go` 这部分代码主要用于测试 `html/template` 包中 `Clone` 方法的正确性和独立性，确保克隆操作能够创建出与原始模板互不影响的副本，并验证了在不同场景下的克隆行为。同时也指出了在模板执行后尝试克隆或修改模板是一个常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/html/template/clone_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,8 +205,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -485,9 +487,4 @@ func TestClonePipe(t *testing.T) {
 		t.Errorf("got %q want %q", got, want)
 	}
 }
-
-"""
-
-
-
 ```

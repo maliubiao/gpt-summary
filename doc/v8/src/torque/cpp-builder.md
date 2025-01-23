@@ -103,11 +103,13 @@ console.log(newLength); // 输出: 4
 
 `cpp-builder.cc` 是 V8 引擎中一个重要的代码生成器，它负责将高级的 Torque 语言描述的功能转换为底层的 C++ 代码。这使得 V8 能够以一种结构化和可维护的方式实现 JavaScript 的各种特性和运行时行为。 它的工作对于 JavaScript 代码的最终执行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/cpp-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ void File::EndNamespace(const std::string& name0, const std::string& name1) {
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -116,11 +116,13 @@ try {
 
 `handler-outside-posix.cc` 文件是 V8 引擎中负责设置底层信号处理机制的关键部分。它与 JavaScript 的关系在于，它处理的是当 JavaScript 代码执行导致底层 C++ 代码发生错误时，操作系统发出的信号。这有助于 V8 提高稳定性和提供更好的错误报告，即使 JavaScript 代码本身并没有直接操作信号的机制。它为 V8 提供了一个拦截和处理底层错误的“陷阱”机制，这就是 "trap-handler" 名称的由来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/handler-outside-posix.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ void RemoveTrapHandler() {
 }  // namespace trap_handler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -112,7 +112,7 @@ let result = add(5, 3);
 
 在提供的代码片段中，`constants-ppc.h` 的功能是 **定义了大量的 PowerPC 向量和浮点运算相关的汇编指令常量，包括它们的助记符和机器码**。 这部分主要集中在 `PPC_EVECTOR_OPCODE_LIST` 宏定义的内容，涵盖了向量加载/存储、向量算术运算（加减乘除、绝对值、取反）、向量比较以及浮点数的各种转换和运算指令。 这些定义是 V8 在 PowerPC 架构上生成高效机器码的关键基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/constants-ppc.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/constants-ppc.h以.tq结尾，那它是个v8 torque源代码，
@@ -120,9 +120,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
-     \
+### 源代码
+```c
+\
   /* Vector Store Double of Four Half Words Indexed */                        \
   V(evstdhx, EVSTDHX, 0x10000324)                                             \
   /* Vector Store Double of Two Words */                                      \
@@ -608,8 +610,5 @@ Prompt:
   /* Decimal Floating Round To DFP Short */                                   \
   V(drsp, DRSP, 0xEC000604)                                                   \
   /* Decimal Floating Subtract */                                             \
-  V(dsub, DSUB, 0xEC000404)                             
-"""
-
-
+  V(dsub, DSUB, 0xEC000404)
 ```

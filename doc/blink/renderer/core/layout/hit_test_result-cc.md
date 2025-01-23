@@ -173,14 +173,16 @@ By following these steps, we can systematically analyze the given source code an
 * `inner_node_`:  指向 `<a>` 元素的指针
 * `inner_element_`: 指向 `<a>` 元素的指针
 * `inner_url_element_`: 指向 `<a>` 元素
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/hit_test_result.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2008, 2011 Apple Inc. All rights reserved.
  * Copyright (C) 2012 Nokia Corporation and/or its subsidiary(-ies)
@@ -873,7 +875,4 @@ Node* HitTestResult::InnerNodeOrImageMapImage() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

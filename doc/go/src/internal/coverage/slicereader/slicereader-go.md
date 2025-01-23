@@ -194,7 +194,7 @@ func main() {
 
 总而言之，`go/src/internal/coverage/slicereader/slicereader.go` 提供了一个方便且高效的方式来读取和解析字节切片中的二进制数据，特别是在处理可能来自内存映射文件的只读数据时。使用者需要注意正确使用其提供的读取方法，并了解只读模式下的潜在限制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/coverage/slicereader/slicereader.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -202,8 +202,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -327,9 +329,4 @@ func toString(b []byte) string {
 	}
 	return unsafe.String(&b[0], len(b))
 }
-
-"""
-
-
-
 ```

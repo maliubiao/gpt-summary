@@ -134,7 +134,7 @@ By following these steps, and continually refining the understanding based on th
 
 `prog.c` 并不是一个会被直接执行的程序，而是 Frida 构建系统中的一个测试用例。它的功能是验证构建系统在处理头文件包含和宏定义时是否正确。虽然它不直接参与逆向操作，但它的成功编译是保证 Frida 功能正确性的基础。用户通常不会直接接触到这个文件，而是会在 Frida 的开发或构建过程中，当出现构建错误时，可能会在错误日志中看到它的身影。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/linuxlike/6 subdir include order/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <glib.h>
 
 #ifndef MESON_OUR_GLIB
@@ -151,7 +153,4 @@ Prompt:
 #endif
 
 int main(void) { return 0; }
-
-"""
-
 ```

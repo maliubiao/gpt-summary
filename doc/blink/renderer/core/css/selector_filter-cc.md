@@ -128,15 +128,17 @@ Let's break down the thought process for analyzing the `selector_filter.cc` file
 
 总而言之，`blink/renderer/core/css/selector_filter.cc` 文件是 Chromium Blink 引擎中一个重要的性能优化组件，它通过预先过滤 CSS 选择器来加速样式匹配过程，从而提高网页渲染效率。它与 CSS、HTML 和 JavaScript 都有着密切的关系，并在各种用户操作触发的样式重新计算中发挥作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/selector_filter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 2004-2005 Allan Sandfeld Jensen (kde@carewolf.com)
@@ -405,7 +407,4 @@ void SelectorFilter::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -158,7 +158,7 @@ By following these steps, a comprehensive and accurate analysis of the C code wi
 
 这个 `liba.c` 文件作为 Frida 测试用例的一部分，其目的是为了验证 Frida 是否能够正确地 hook 和监控共享库中的函数，并观察其内部状态。因此，用户操作到达这里的目的是为了测试和验证 Frida 的功能，或者在更复杂的实际场景中，使用 Frida 来理解和调试使用了类似结构的共享库的程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/55 dedup compiler libs/liba/liba.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "liba.h"
 
 static int val;
@@ -186,7 +188,4 @@ int liba_get(void)
 {
   return val;
 }
-
-"""
-
 ```

@@ -150,7 +150,7 @@ Frida 的插桩可以改变这个输出。例如，使用上面的 Frida 脚本�
 
 总而言之，`foo.c` 作为一个简单的测试用例，展示了动态链接库中导出的函数的基本形式，这正是 Frida 这类动态插桩工具所操作的目标。理解这类简单的例子有助于理解更复杂的逆向工程场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/53 install script/src/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _WIN32
   #define DO_EXPORT __declspec(dllexport)
 #else
@@ -170,7 +172,4 @@ DO_EXPORT int foo(void)
 {
   return 0;
 }
-
-"""
-
 ```

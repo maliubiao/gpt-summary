@@ -263,15 +263,17 @@ function mainFunction(p) {
 
 `v8/src/parsing/preparse-data.cc` 是 V8 预解析功能的核心部分，它负责收集 JavaScript 代码的元数据，以便在后续的解析和编译阶段进行优化和功能实现。虽然开发者不会直接与这个文件交互，但了解其功能有助于理解 V8 如何处理和优化 JavaScript 代码，并能更好地理解某些 JavaScript 语言特性的实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/preparse-data.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/preparse-data.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1132,7 +1134,4 @@ std::unique_ptr<ConsumedPreparseData> ConsumedPreparseData::For(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

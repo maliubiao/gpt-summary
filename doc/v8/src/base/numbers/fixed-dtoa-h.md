@@ -217,15 +217,17 @@ const halfWayFixedString = halfWayNumber.toFixed(1); // 结果: "0.2" (四舍五
 
 理解 `FastFixedDtoa` 的行为和返回值，并仔细处理缓冲区大小、`decimal_point` 的含义以及错误情况，是正确使用此函数的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/fixed-dtoa.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/numbers/fixed-dtoa.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ V8_BASE_EXPORT bool FastFixedDtoa(double v, int fractional_count,
 }  // namespace v8
 
 #endif  // V8_BASE_NUMBERS_FIXED_DTOA_H_
-
-"""
-
 ```

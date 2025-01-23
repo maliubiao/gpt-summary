@@ -103,15 +103,17 @@ By following these steps, the comprehensive summary provided previously can be g
 
 总而言之，`paint_property_node_test.cc` 是 Blink 渲染引擎中一个重要的测试文件，它验证了用于管理和跟踪渲染属性变化的 `PaintPropertyNode` 及其子类的正确性，这对于浏览器正确、高效地渲染网页至关重要，并间接地与 HTML、CSS 和 JavaScript 的功能息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_property_node_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -834,7 +836,4 @@ TEST_F(PaintPropertyNodeTest, ClipLocalTransformSpaceChange) {
   EXPECT_CHANGE_EQ(PaintPropertyChangeType::kUnchanged, clip.ancestor,
                    STATE(ancestor), nullptr);
   EXPECT_CHANGE_EQ(PaintPropertyChangeType::kChangedOnlySimpleVal
-"""
-
-
 ```

@@ -146,7 +146,7 @@ In proj1_func2.
 
 总而言之，`proj1f2.c` 作为一个简单的测试用例，其主要目的是验证 Frida Gum 库在处理内部依赖关系时的正确性。用户通常不会直接与之交互，但其存在对于 Frida 的开发、测试和调试都至关重要。 通过分析这样的测试用例，我们可以更好地理解 Frida 的工作原理，并能更好地利用 Frida 进行动态 instrumentation 和逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/78 internal dependency/proj1/proj1f2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,15 +154,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<proj1.h>
 #include<stdio.h>
 
 void proj1_func2(void) {
     printf("In proj1_func2.\n");
 }
-
-"""
-
 ```

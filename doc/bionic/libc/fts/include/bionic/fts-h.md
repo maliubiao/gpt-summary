@@ -323,7 +323,7 @@ if __name__ == '__main__':
 
 这个 Frida 脚本演示了如何 hook `fts_read` 函数，并读取返回的 `FTSENT` 结构体中的关键信息。你可以根据需要修改脚本来 hook 其他 `fts` 函数或读取 `FTSENT` 结构体的其他成员。请注意，读取结构体成员时需要根据目标架构（32 位或 64 位）以及 `FTSENT` 结构体的实际内存布局来计算偏移量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/fts/include/bionic/fts.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -334,8 +334,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: fts.h,v 1.12 2009/08/27 16:19:27 millert Exp $	*/
 /*	$NetBSD: fts.h,v 1.5 1994/12/28 01:41:50 mycroft Exp $	*/
 
@@ -464,7 +466,4 @@ int fts_set(FTS* _Nonnull __fts, FTSENT* _Nonnull __entry, int __options);
 __END_DECLS
 
 #endif /* !_FTS_H_ */
-
-"""
-
 ```

@@ -207,7 +207,7 @@ func main() {
 
 总而言之，这段代码演示了如何在 Go 中创建自定义的 HTTP 请求处理器，并通过 `http.Handle` 将其注册到特定的 URL 路径上，从而实现处理特定请求的功能。 关键点在于理解 `http.Handler` 接口以及如何在并发环境下保证数据安全。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/example_handle_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -215,8 +215,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -246,9 +248,4 @@ func ExampleHandle() {
 	http.Handle("/count", new(countHandler))
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
-
-"""
-
-
-
 ```

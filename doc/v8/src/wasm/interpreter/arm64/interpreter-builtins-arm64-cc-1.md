@@ -181,7 +181,7 @@ The provided code snippet from `v8/src/wasm/interpreter/arm64/interpreter-builti
 
 Both functions are crucial for enabling WebAssembly modules to effectively interact with the surrounding environment, whether it's the JavaScript runtime or native C/C++ code. They handle the necessary type conversions and stack management to bridge the gap between these different execution contexts.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/arm64/interpreter-builtins-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/arm64/interpreter-builtins-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -189,9 +189,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    __ SmiTag(return_value);
+### 源代码
+```cpp
+__ SmiTag(return_value);
     }
   }
   __ jmp(&return_value_done);
@@ -1051,8 +1053,5 @@ void Builtins::Generate_GenericWasmToJSInterpreterWrapper(
   __ bind(&return_done);
 
   // Restore after builtin call
-  __ 
-"""
-
-
+  __
 ```

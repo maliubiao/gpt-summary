@@ -94,7 +94,7 @@ Now, let's address the specific questions:
 
 因此，作为调试线索，如果某个 `frida` 的构建过程出现问题，开发者可能会检查这些单元测试是否通过。如果与编译器参数、库文件查找、或者模板替换相关的测试失败，就能缩小问题的范围，定位到可能是这些内部工具函数或类出现了错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/unittests/internaltests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -767,7 +769,4 @@ class InternalTests(unittest.TestCase):
                     for link_arg in link_args:
                         for lib in ('pthread', 'm', 'c', 'dl', 'rt'):
                             self.assertNotIn(f'lib{lib}.a', link_arg, msg=lin
-"""
-
-
 ```

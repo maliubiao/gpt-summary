@@ -184,7 +184,7 @@ print(f"打过补丁的 resolve 结果: {resolved_path_patched}")
 
 总而言之，`frida/subprojects/frida-clr/releng/meson/mesonbuild/_pathlib.py` 是 Frida 项目中为了解决特定 Windows 系统上 Python 标准库 `pathlib` bug 而存在的一个内部补丁模块。用户通常不会直接与之交互，但理解其功能有助于理解在特定环境下的路径解析行为和潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/_pathlib.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -257,7 +259,4 @@ else:
         'PosixPath',
         'WindowsPath',
     ]
-
-"""
-
 ```

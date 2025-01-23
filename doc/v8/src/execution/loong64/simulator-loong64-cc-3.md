@@ -145,7 +145,7 @@ let sum = a + b; // JavaScript 中会进行字符串拼接，但在其他语言�
 
 总的来说，这部分代码实现了 LoongArch64 指令集的一个重要子集的模拟，涵盖了程序控制、内存访问、基本的算术逻辑和浮点运算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/loong64/simulator-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/loong64/simulator-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -153,8 +153,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 () << 12);
       int64_t current_pc = get_pc();
       alu_out = static_cast<int64_t>(si20_signExtend) + current_pc;
@@ -958,7 +960,4 @@ void Simulator::DecodeTypeOp17() {
     case ADD_W: {
       printf_instr("ADD_W\t %s: %016lx, %s, %016lx, %s, %016lx\n",
                    Registers::Nam
-"""
-
-
 ```

@@ -159,14 +159,16 @@ By following this detailed thought process, which involves code analysis, keywor
 
 总而言之，`text_directive.cc` 是 Blink 引擎中处理 URL 文本片段指令的关键组件，它负责解析指令并将其转换为内部表示，以便后续的文本查找和高亮显示功能能够正常工作。它与 JavaScript 通过 URL 和 `TextDirectiveOptions` 对象进行交互，其目标是 HTML 文档中的文本内容，最终的呈现效果可能会受到 CSS 的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fragment_directive/text_directive.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ String TextDirective::ToStringImpl() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

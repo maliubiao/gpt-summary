@@ -93,11 +93,13 @@ numbers[3] = 40;
 
 `AlignedSlotAllocator` 是 V8 引擎内部的一个低级内存管理工具，用于高效地分配和管理对齐的内存槽位。虽然 JavaScript 开发者不需要直接使用它，但它的存在是 V8 引擎为了优化性能而进行的底层工作的一个体现。通过保证特定大小的内存块的对齐，V8 可以利用 CPU 的特性，提高数据访问效率，最终提升 JavaScript 代码的执行速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/aligned-slot-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ int AlignedSlotAllocator::Align(int n) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

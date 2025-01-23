@@ -185,7 +185,7 @@ ResetCoverage() 后的覆盖率 (字节): [0 0 0 ...]
 
 这段代码是 Go 语言 fuzzing 功能的核心组成部分，它负责跟踪和比较代码覆盖率，帮助 fuzzing 引擎有效地探索代码的不同执行路径，从而发现潜在的 bug。理解这些函数的功能对于深入理解 Go fuzzing 的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/fuzz/coverage.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -193,8 +193,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -300,9 +302,4 @@ var (
 	// which specially assigns their addresses for this purpose.
 	_counters, _ecounters [0]byte
 )
-
-"""
-
-
-
 ```

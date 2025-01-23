@@ -91,7 +91,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 总而言之，`func5.c` 虽然代码简单，但它在 Frida 的静态链接测试场景中扮演着一个基础的测试角色。逆向工程师可能会在分析使用静态链接的 Frida 模块时遇到它，并通过查看源代码来理解其功能。其简单的特性也使得它成为 Frida 功能测试和调试的一个良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/66 static link/lib/func5.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -99,13 +99,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func5()
 {
   return 1;
 }
-
-"""
-
 ```

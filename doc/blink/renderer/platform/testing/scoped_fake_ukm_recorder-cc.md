@@ -129,14 +129,16 @@ UKM 旨在收集用户与网页交互、性能以及浏览器行为的指标数�
 
 总而言之，`ScopedFakeUkmRecorder` 是 Blink 引擎测试框架中一个关键的组件，它允许开发者在隔离的环境中验证与 UKM 记录相关的代码逻辑，确保网页的功能和性能指标能够被正确地度量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/scoped_fake_ukm_recorder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ void ScopedFakeUkmRecorder::SetHandle(mojo::ScopedMessagePipeHandle handle) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -217,15 +217,17 @@ TNode<Object> CodeStubAssembler::Call(TNode<Context> context,
 
 总而言之，`v8/src/codegen/code-stub-assembler-inl.h` 是 V8 引擎中一个核心的底层代码文件，它定义了用于生成和执行 JavaScript 代码的关键机制，特别是关于函数调用和对象操作的部分。理解这个文件的内容有助于深入了解 V8 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -476,7 +478,4 @@ TNode<Object> CodeStubAssembler::FastCloneJSObject(
 }  // namespace v8
 
 #endif  // V8_CODEGEN_CODE_STUB_ASSEMBLER_INL_H_
-
-"""
-
 ```

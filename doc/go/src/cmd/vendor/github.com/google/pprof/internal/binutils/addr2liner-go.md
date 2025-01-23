@@ -200,7 +200,7 @@ exec.Command(cmd, "-aif", "-e", file)
 
 这段代码的核心在于利用外部工具 `addr2line` 来实现地址到源代码信息的转换，并针对 `addr2line` 的特性和潜在问题进行了一定的处理和封装。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/binutils/addr2liner.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -208,8 +208,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -448,9 +450,4 @@ func (d *addr2Liner) addrInfo(addr uint64) ([]plugin.Frame, error) {
 
 	return stack, nil
 }
-
-"""
-
-
-
 ```

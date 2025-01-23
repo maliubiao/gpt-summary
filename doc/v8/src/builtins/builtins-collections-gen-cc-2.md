@@ -132,7 +132,7 @@ set.add(1);     // 再次添加相同的元素，Set 不会改变
 
 这部分代码主要负责实现 JavaScript `Map` 和 `Set` 的添加元素操作（`set` 和 `add` 方法）。它深入到 V8 内部的哈希表实现，包括计算哈希值、查找现有条目、检查空间以及在必要时进行哈希表扩容。 这些内置函数的实现确保了 `Map` 和 `Set` 在 JavaScript 中的高效操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-collections-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-collections-gen.cc以.tq结尾，那它是个v8 torque源代码，
@@ -140,8 +140,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 o to runtime to compute the hash code.
     entry_start_position_or_hash = SmiUntag(CallGetOrCreateHashRaw(CAST(key)));
     Goto(&add_entry);
@@ -981,7 +983,4 @@ const TNode<OrderedHashMap> CollectionsBuiltinsAssembler::AddValueToKeyedGroup(
     const TNode<OrderedHashMap> groups, const TNode<Object> key,
     const TNode<Object> value, const TNode<String> methodName) {
   GrowCollection<OrderedHashMap> grow = [this, gro
-"""
-
-
 ```

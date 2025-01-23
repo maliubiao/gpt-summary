@@ -214,7 +214,7 @@ My thinking process to analyze the provided C++ code snippet and answer the user
 
 总的来说，这段作为第 9 部分的代码，主要集中在 **数值类型之间的转换 (特别是浮点数和整数到 Tagged 值的转换)、类型检查、以及错误处理机制的实现**。它提供了构建 V8 引擎和实现 JavaScript 内置功能所需的底层工具。 这些函数确保了 JavaScript 运行时的类型安全性和正确的数值运算，并提供了在发生错误时抛出适当异常的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -222,8 +222,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 runcateFloat64ToFloat16RawBitsSupported()),
          &truncate_op_supported, &truncate_op_fallback);
 
@@ -1101,7 +1103,4 @@ TNode<BoolT> CodeStubAssembler::IsStrictArgumentsMap(TNode<Context> context,
   const TNode<NativeContext> native_context = LoadNativeContext(context);
   const TNode<Object> arguments_map =
       LoadContextElement(native_context, Context::
-"""
-
-
 ```

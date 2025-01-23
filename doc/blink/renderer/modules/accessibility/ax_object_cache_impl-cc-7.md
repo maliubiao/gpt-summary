@@ -146,7 +146,7 @@ As the final part, this section of `ax_object_cache_impl.cc` focuses on **advanc
 
 作为 `ax_object_cache_impl.cc` 的最后一部分，此代码片段集中于一些更高级和优化的辅助功能处理功能。它涵盖了处理元素位置变化、计算辅助功能属性、处理用户交互（如触摸悬停）、集成插件提供的辅助功能信息、以及优化屏幕阅读器等工具的逐行导航体验。此外，它还涉及了自动填充建议的辅助功能支持和事件来源的追踪。  总而言之，这部分代码负责确保辅助功能树能够准确、高效地反映页面的动态变化和复杂结构，从而为使用辅助技术的用户提供更好的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object_cache_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ized, we store the last value for it
   // in cached_bounding_boxes_, to help with comparing if it really changed
   // or not when sending another serialization later.
@@ -560,8 +562,4 @@ std::ostream& operator<<(std::ostream& stream, const AXObjectCacheImpl& cache) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

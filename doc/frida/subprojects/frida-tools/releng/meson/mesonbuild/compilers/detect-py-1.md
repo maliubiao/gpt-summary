@@ -108,7 +108,7 @@ GnuCCompiler(
 
 总而言之，这个代码片段是 Frida 构建系统中的一个关键组成部分，负责自动发现构建所需的各种编译器，为后续的编译和链接过程奠定基础。它深入涉及到操作系统底层工具链的交互，并考虑了跨平台和交叉编译的需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ':
                     version = _get_lcc_version_from_defines(defines)
                     cls = fortran.ElbrusFortranCompiler
@@ -809,8 +811,4 @@ def _get_clang_compiler_defines(compiler: T.List[str]) -> T.Dict[str, str]:
                                    f'Compiler stderr:\n{error}\n-----\n')
     defines: T.Dict[str, str] = {}
     for line in output.split('\n'):
-    
-"""
-
-
 ```

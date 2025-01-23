@@ -162,15 +162,17 @@ try {
 
 这些错误通常会导致程序崩溃，因为操作系统会终止访问违规的进程。V8 的陷阱处理器和类似此测试中自定义的异常处理器，目标是在某些情况下（例如 WebAssembly 的陷阱）提供一种更优雅的错误处理机制，或者允许工具（如 ASan）介入并报告错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/wasm/trap-handler-win-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/wasm/trap-handler-win-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ TEST_F(ExceptionHandlerFallbackTest, DoTest) {
 #endif
 
 }  //  namespace
-
-"""
-
 ```

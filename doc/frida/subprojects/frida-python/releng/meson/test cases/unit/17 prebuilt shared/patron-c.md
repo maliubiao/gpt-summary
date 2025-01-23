@@ -158,7 +158,7 @@ By following this structured approach, we can effectively analyze the code snipp
 
 总结来说，`patron.c` 是一个非常简单的 C 程序，它的主要目的是作为 Frida 动态 instrumentation 工具的测试目标。它通过调用外部库函数 `alexandria_visit()` 提供了一个可以被 Frida hook 的点，用于验证 Frida 的功能。理解这个文件的功能以及它与逆向工程的关系，需要一定的二进制底层、操作系统以及动态链接的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/17 prebuilt shared/patron.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<alexandria.h>
 #include<stdio.h>
 
@@ -177,7 +179,4 @@ int main(int argc, char **argv) {
     alexandria_visit();
     return 0;
 }
-
-"""
-
 ```

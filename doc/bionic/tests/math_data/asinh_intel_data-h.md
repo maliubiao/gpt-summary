@@ -213,7 +213,7 @@ sys.stdin.read()
 
 总而言之，`asinh_intel_data.handroid` 是 Android Bionic 库中用于测试 `asinh` 函数实现准确性的关键数据文件。它通过提供大量的输入和期望输出用例，确保了 Android 系统中该数学函数的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/asinh_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -225,8 +225,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1693,8 +1695,4 @@ static data_1_1_t<double, double> g_asinh_intel_data[] = {
     0x1.1000000000001p-1
   },
   { // Entry 362
- 
-"""
-
-
 ```

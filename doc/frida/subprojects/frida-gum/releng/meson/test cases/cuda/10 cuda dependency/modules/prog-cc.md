@@ -143,7 +143,7 @@ if (Process.platform === 'linux') {
 
 总而言之，这段代码是一个简单的 CUDA 应用程序，用于测试 CUDA 依赖项。它可以作为逆向工程和动态分析的入门示例，帮助理解程序如何与 CUDA 驱动和库进行交互。调试这个程序的过程也涵盖了常见的 CUDA 开发和配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cuda/10 cuda dependency/modules/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <cuda_runtime.h>
 #include <cublas_v2.h>
 #include <iostream>
@@ -186,7 +188,4 @@ int main(void) {
 
     return 0;
 }
-
-"""
-
 ```

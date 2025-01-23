@@ -170,7 +170,7 @@ If the Android phone is then disconnected:
 
 By understanding these steps, a developer debugging issues with device detection or management in the Frida QML application would look at the execution flow starting from the application launch, through the `Frida` class initialization, and into the device management callbacks. They might set breakpoints in these functions to observe the state of the device manager and the connected devices.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/src/frida.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <frida-core.h>
 
 #include "frida.h"
@@ -342,7 +344,4 @@ void Frida::removeById(QString id)
         }
     }
 }
-
-"""
-
 ```

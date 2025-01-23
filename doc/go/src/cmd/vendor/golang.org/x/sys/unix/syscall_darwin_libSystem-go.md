@@ -152,15 +152,17 @@ func main() {
 
 这段代码是 Go 语言在 Darwin 系统上进行系统调用的基础设施。它声明了与底层系统调用对应的 Go 函数，并通过 `//go:linkname` 将其与运行时包中的实现连接起来。虽然它本身不处理业务逻辑或命令行参数，但它是构建更高级别操作系统交互功能的基础。直接使用 `syscall` 包需要谨慎，容易出错，建议在可能的情况下使用 `os` 或其他更高级别的包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_darwin_libSystem.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -187,9 +189,4 @@ func syscall_syscallPtr(fn, a1, a2, a3 uintptr) (r1, r2 uintptr, err Errno)
 //go:linkname syscall_rawSyscall syscall.rawSyscall
 //go:linkname syscall_rawSyscall6 syscall.rawSyscall6
 //go:linkname syscall_syscallPtr syscall.syscallPtr
-
-"""
-
-
-
 ```

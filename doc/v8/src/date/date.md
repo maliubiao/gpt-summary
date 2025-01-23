@@ -122,11 +122,13 @@ console.log(`解析后的 Date 对象: ${parsedDateObj}`);
 
 `v8/src/date/date.cc` 文件是 V8 引擎中实现 JavaScript `Date` 对象核心功能的关键组成部分。 它负责处理各种底层的日期和时间计算、时区管理、格式化和解析操作，使得 JavaScript 开发者可以方便地使用 `Date` 对象来处理日期和时间相关的任务。  `DateCache` 类的存在是为了优化时区信息的获取，提升性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/date/date.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -788,7 +790,4 @@ double ParseDateTimeString(Isolate* isolate, Handle<String> str) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

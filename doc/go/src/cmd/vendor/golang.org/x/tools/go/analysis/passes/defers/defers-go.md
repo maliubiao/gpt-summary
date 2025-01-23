@@ -154,15 +154,17 @@ main.go:12:2: call to time.Since is not deferred
 
 `defers` 分析器专注于检查 `time.Since` 的调用是否被正确地放在 `defer` 语句中，这有助于开发者避免在需要测量函数或代码块执行时间时犯错，确保记录的是函数或代码块执行完成后的真实耗时。它通过静态分析 AST 来实现这一功能，依赖于 `inspect` 分析器提供的遍历能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/defers/defers.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -222,9 +224,4 @@ func run(pass *analysis.Pass) (interface{}, error) {
 
 	return nil, nil
 }
-
-"""
-
-
-
 ```

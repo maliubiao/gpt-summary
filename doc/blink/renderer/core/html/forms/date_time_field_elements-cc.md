@@ -117,14 +117,16 @@ The user wants to understand the functionality of the `date_time_field_elements.
 
 总而言之，`date_time_field_elements.cc` 文件是 Blink 引擎中处理 HTML 日期和时间输入的核心，它定义了各种 C++ 类来表示和管理这些输入的各个组成部分，并负责与内部数据结构和外部接口进行交互。理解这些类的功能有助于理解浏览器如何解析和处理用户在网页上输入的日期和时间信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/date_time_field_elements.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -865,7 +867,4 @@ void DateTimeYearFieldElement::SetValueAsDateTimeFieldsState(
 }
 
 }  // namespace blink
-
-"""
-
 ```

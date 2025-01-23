@@ -117,14 +117,16 @@ This structured approach allows for a comprehensive analysis of the code snippet
 
 总而言之，`service_worker_loader_helpers.cc` 是 Blink 引擎中处理 Service Worker 加载流程的关键部分，它负责将 Service Worker 的行为和响应转化为浏览器可以理解和处理的格式，从而实现了 Service Worker 的各种功能，包括离线缓存、资源拦截和自定义响应等。 开发者在使用 Service Worker 时需要注意遵循 Web 标准和 HTTP 规范，以避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/service_worker/service_worker_loader_helpers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -347,7 +349,4 @@ const char* ServiceWorkerLoaderHelpers::FetchResponseSourceToSuffix(
 }
 
 }  // namespace blink
-
-"""
-
 ```

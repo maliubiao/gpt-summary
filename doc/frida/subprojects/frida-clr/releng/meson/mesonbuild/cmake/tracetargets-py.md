@@ -240,7 +240,7 @@ And the `target_name` passed to `resolve_cmake_trace_targets` is `'MyLib'`.
 
 In essence, this code is a crucial part of Frida's internal build system, enabling it to correctly manage dependencies for components that rely on CMake. Understanding its functionality is essential for developers working on Frida itself or for advanced users debugging build issues related to Frida's interaction with native code and CMake projects.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/cmake/tracetargets.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -248,8 +248,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 from __future__ import annotations
@@ -411,7 +413,4 @@ def resolve_cmake_trace_targets(target_name: str,
     # see eg. #11113
 
     return res
-
-"""
-
 ```

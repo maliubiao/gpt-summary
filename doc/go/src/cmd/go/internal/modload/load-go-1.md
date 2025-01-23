@@ -422,7 +422,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 总而言之，这段代码实现了 Go 模块系统中加载和管理包及其依赖关系的关键逻辑，确保了构建过程能够正确地找到并使用所需的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modload/load.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -430,10 +430,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-	}
+### 源代码
+```go
+}
 
 	toAdd := make([]module.Version, 0, len(need))
 	for m := range need {
@@ -1030,10 +1031,4 @@ func WhyDepth(path string) int {
 	}
 	return n
 }
-
-"""
-
-
-
-
 ```

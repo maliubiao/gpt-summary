@@ -149,15 +149,17 @@ let largeArray = new Array(10000).fill(0);
 
 `v8/src/heap/cppgc/heap-space.cc` 是 V8 中 CppGC 堆内存管理的关键组件，它定义了用于组织和管理不同类型内存空间的类。它与 JavaScript 的内存分配息息相关，确保了 JavaScript 对象的内存能够被有效地管理和回收。理解其功能有助于深入了解 V8 的垃圾回收机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap-space.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/heap-space.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ LargePageSpace::LargePageSpace(RawHeap* heap, size_t index)
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

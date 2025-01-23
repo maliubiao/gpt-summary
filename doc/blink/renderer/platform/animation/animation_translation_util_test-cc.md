@@ -117,14 +117,16 @@ out_ops_expected.AppendRotate(90, gfx::Vector3dF(0, 0, 1));
 
 总而言之，`animation_translation_util_test.cc` 通过各种测试用例确保了 Blink 引擎能够正确地将 CSS 和 JavaScript 中定义的动画变换转换为底层图形库可以理解的形式，从而保证网页动画和变换的正确渲染。 它间接地帮助开发者避免了由于变换处理错误而导致的各种视觉问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/animation/animation_translation_util_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -238,7 +240,4 @@ TEST(AnimationTranslationUtilTest, RelativeInterpolated) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

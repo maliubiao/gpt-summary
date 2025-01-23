@@ -288,7 +288,7 @@ d = 2
 
 总而言之，`test_toml_document.py` 虽然是测试代码，但对于理解 `tomlkit` 库的功能和行为至关重要，这对于需要处理 TOML 格式配置文件的 Frida 用户来说非常有帮助。它可以作为调试和学习 `tomlkit` 用法的宝贵资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/tomlkit/tests/test_toml_document.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -296,8 +296,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import copy
 import json
 import pickle
@@ -1384,7 +1386,4 @@ table = {a = 1, b = 2}
 age = 42
 """
     assert tomlkit.dumps(doc) == expected
-
-"""
-
 ```

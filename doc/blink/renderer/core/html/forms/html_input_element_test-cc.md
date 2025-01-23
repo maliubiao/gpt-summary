@@ -128,15 +128,17 @@ My thinking process to analyze the `html_input_element_test.cc` file went throug
 
 总而言之，`html_input_element_test.cc` 是 Blink 引擎确保其 `<input>` 元素实现符合规范且行为正确的关键组成部分。它通过各种单元测试覆盖了 `HTMLInputElement` 类的核心功能和与其他 Web 技术 (HTML, CSS, JavaScript) 的交互。理解这个测试文件有助于深入了解浏览器如何解析和渲染 HTML 表单，以及如何响应用户的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_input_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -547,7 +549,4 @@ INSTANTIATE_TEST_SUITE_P(
                       PasswordFieldResetParam{"range", "51", false}));
 
 }  // namespace blink
-
-"""
-
 ```

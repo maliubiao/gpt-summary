@@ -243,15 +243,17 @@ type Foo struct {
 
 总之，这段代码通过一系列的错误示例，清晰地演示了 Go 语言中结构体字段可见性规则以及编译器如何帮助开发者避免违反这些规则。 它的目的是验证 Go 编译器的错误报告机制是否正确且具有指导意义。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue31053.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -294,9 +296,4 @@ func main() {
 	f.unexported()    // ERROR "f.unexported undefined .cannot refer to unexported field or method unexported."
 	_ = f.hook        // ERROR "f.hook undefined .cannot refer to unexported field or method hook."
 }
-
-"""
-
-
-
 ```

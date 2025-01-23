@@ -143,7 +143,7 @@ This comprehensive analysis covers all the points raised in the user's request.
 
 作为这组测试的最后一部分，`net/spdy/spdy_session_unittest.cc` 通过一系列详尽的单元测试，**全面地验证了 `SpdySession` 类的核心功能**，涵盖了连接池化、服务器设置处理、ALPS 配置以及连接生命周期的关键阶段。这些测试确保了 `SpdySession` 在各种场景下都能正确、安全、高效地管理 SPDY 和 HTTP/2 连接，是 Chromium 网络栈质量保证的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 estCertsDirectory(), "spdy_pooling.pem");
   ssl_info.is_issued_by_known_root = true;
   ssl_info.public_key_hashes.push_back(test::GetTestHashValue(1));
@@ -564,8 +566,4 @@ TEST_F(SpdySessionTest, ConfirmHandshakeAfterClose) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

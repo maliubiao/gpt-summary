@@ -113,7 +113,7 @@ console.log(sum); // 输出 [6, 8, 10, 12]
 
 在这个系列的源代码中，`v8/src/codegen/arm/assembler-arm.cc` 文件作为 ARM 架构代码生成的核心组件，负责将高级的中间表示或者操作翻译成实际的 ARM 机器指令。  这部分代码专注于实现浮点运算 (VFP) 和 SIMD 运算 (NEON) 的指令生成，是 V8 在 ARM 平台上实现高性能 JavaScript 执行的关键组成部分。之前的部分可能涉及了更基础的 ARM 指令生成，而接下来的部分可能涉及更高级的代码生成策略、优化或者特定的平台功能支持。  总而言之，`assembler-arm.cc` 的核心功能是提供了一组 C++ 接口，用于方便地生成各种 ARM 汇编指令，特别是那些能够显著提升 JavaScript 性能的浮点和向量运算指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm/assembler-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm/assembler-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -121,8 +121,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 | dst.code() * B12 | 0xA * B8 | B4);
 }
 
@@ -1142,7 +1144,4 @@ static Instr EncodeNeonShiftOp(NeonShiftOp op, NeonSize size, bool is_unsigned,
     }
     case VSHR: {
       DCHECK(shift > 0 && size_in_b
-"""
-
-
 ```

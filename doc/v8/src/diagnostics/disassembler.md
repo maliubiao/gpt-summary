@@ -166,11 +166,13 @@ if (code) {
 
 `v8/src/diagnostics/disassembler.cc` 是 V8 引擎中一个关键的诊断工具，它允许开发者和引擎开发者查看 JavaScript 代码编译后的底层执行指令，从而更好地理解代码的执行过程和进行性能分析。 Node.js 的 `v8:debug` 模块提供了从 JavaScript 代码中访问这个反汇编功能的途径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/disassembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -674,7 +676,4 @@ int Disassembler::Decode(Isolate* isolate, std::ostream& os, uint8_t* begin,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -155,7 +155,7 @@ My thinking process to answer the request goes like this:
 
 这部分 `http_network_transaction_unittest.cc` 的主要功能是**详尽地测试 `HttpNetworkTransaction` 类在处理需要 HTTPS 代理认证的场景下的各种情况，包括认证重试机制、代理服务器变更以及 CONNECT 方法对不同状态码的处理。** 它确保了网络栈在复杂的代理认证流程中能够正确地处理认证挑战、管理连接，并最终成功完成请求。作为 34 个测试部分中的一部分，它专注于代理认证相关的特定功能点，验证了这些关键网络交互的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第14部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 TION_FOR_TESTS);
   session_deps_.net_log = NetLog::Get();
   std::unique_ptr<HttpNetworkSession> session(CreateSession(&session_deps_));
@@ -1026,8 +1028,4 @@ TEST_P(HttpNetworkTransactionTest, NTLMAuthV2) {
       // request we should be issuing -- the final header line contains a Type
       // 1 message.
       MockWrite("GET /kids/login.aspx HTTP/1.1\r\n"
-               
-"""
-
-
 ```

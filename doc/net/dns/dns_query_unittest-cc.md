@@ -128,15 +128,17 @@ Let's break down the thought process for analyzing the `dns_query_unittest.cc` f
 
 总而言之，`net/dns/dns_query_unittest.cc` 是保障 Chromium 网络栈中 DNS 查询功能正确性和健壮性的重要组成部分。它通过各种测试用例覆盖了 `DnsQuery` 类的不同使用场景和边界条件，确保在实际的网络请求中能够正确地构建和解析 DNS 查询报文。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_query_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -702,7 +704,4 @@ TEST(DnsQueryParseTest, FailsQueryWithNamePointer) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

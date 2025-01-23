@@ -136,7 +136,7 @@ Path(sys.argv[1]).write_text('stage2\n')
 
 总而言之，`stage2.py` 虽小，但在 Frida 的构建过程中扮演着验证前一阶段输出并生成基础 C 代码的角色。它体现了代码生成和测试驱动开发的理念，也与逆向工程中对目标软件构建过程的理解密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/262 generator chain/stage2.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,15 +144,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 from pathlib import Path
 
 assert(Path(sys.argv[1]).read_text() == 'stage2\n')
 Path(sys.argv[2]).write_text('int main(void){}\n')
-
-"""
-
 ```

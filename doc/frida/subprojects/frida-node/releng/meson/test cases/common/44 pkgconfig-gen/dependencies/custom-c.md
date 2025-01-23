@@ -103,7 +103,7 @@ By following these steps, we can build a comprehensive and insightful explanatio
 
 总而言之，虽然 `custom.c` 本身的代码非常简单，但它在 Frida 的构建、测试和依赖管理流程中扮演着一个小但重要的角色。它的存在可以帮助验证 Frida 能否正确处理自定义的 C 代码依赖，并且可以作为动态分析中最基础的代码注入示例。理解它的上下文和用途有助于深入理解 Frida 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/44 pkgconfig-gen/dependencies/custom.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,12 +111,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int custom_function(void) {
     return 42;
 }
-
-"""
-
 ```

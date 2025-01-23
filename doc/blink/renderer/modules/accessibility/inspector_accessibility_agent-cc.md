@@ -126,7 +126,7 @@ Strategizing complete. I will now proceed with generating the response based on 
 
 该文件的第一部分主要定义了 `InspectorAccessibilityAgent` 类及其核心功能，用于将 Blink 内部的 Accessibility 信息转换为开发者工具可以理解的协议格式。它专注于构建 `protocol::Accessibility::AXNode` 对象，处理忽略的节点，并提供获取部分 Accessibility 树的功能。其中包含用于收集和格式化各种 Accessibility 属性的辅助函数，并初步展示了与 HTML, CSS 之间的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/inspector_accessibility_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -943,7 +945,4 @@ InspectorAccessibilityAgent::BuildProtocolAXNodeForUnignoredAXObject(
       auto name_source_properties =
           std::make_unique<protocol::Array<AXValueSource>>();
       for (NameSour
-"""
-
-
 ```

@@ -93,15 +93,17 @@ func TestImportBug0(t *testing.T) {
 
 `go/test/fixedbugs/bug083.dir/bug0.go` 定义了一个非常简单的 Go 包，包含一个空结构体 `t0` 和一个该类型的全局变量 `V0`。  它的主要目的是作为 Go 语言测试套件的一部分，用于复现或验证已修复的 Bug #83。  它本身不包含复杂的逻辑或用户交互，也不处理命令行参数。  使用者需要理解其作为测试代码的本质，而不是期望它提供实际的功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug083.dir/bug0.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -112,9 +114,4 @@ type t0 struct {
 }
 
 var V0 t0
-
-"""
-
-
-
 ```

@@ -150,7 +150,7 @@ Let's break down the thought process for analyzing this C code snippet and gener
 
 总而言之，这个 `meson-subsample.c` 文件定义了一个简单的 GObject 类型，用于存储和打印消息。它在基于 GLib/GObject 的应用程序中扮演着数据载体的角色。理解其功能和实现细节对于逆向分析和调试这类应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/12 multiple gir/gir/meson-subsample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-subsample.h"
 
 struct _MesonSubSample
@@ -284,7 +286,4 @@ meson_sub_sample_print_message (MesonSubSample *self)
 
   g_print ("Message: %s\n", self->msg);
 }
-
-"""
-
 ```

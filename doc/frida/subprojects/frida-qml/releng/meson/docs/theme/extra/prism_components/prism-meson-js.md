@@ -143,7 +143,7 @@ Meson 构建系统本身就常用于构建涉及底层、内核和框架的软�
 
 总而言之，`prism-meson.js` 虽然不是直接的逆向工具，但它通过改善 Meson 构建脚本的可读性，间接地为理解软件构建过程提供了帮助，这在逆向工程中是一个重要的环节。对于涉及底层、内核和框架的软件，理解其构建方式尤为关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/docs/theme/extra/prism_components/prism-meson.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 Prism.languages.meson= {
 	'triple-quoted-string': {
 		'pattern': /'''[\s\S]*?'''/,
@@ -169,6 +171,4 @@ Prism.languages.meson= {
 	'punctuation': /[(),[\]]/
 	// TODO: Handle ternary ?:
 };
-"""
-
 ```

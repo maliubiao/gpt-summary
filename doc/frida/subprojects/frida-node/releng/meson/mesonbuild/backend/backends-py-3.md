@@ -131,7 +131,7 @@ My thinking process for analyzing the provided Python code snippet and generatin
 
 这个代码文件的核心功能是 **将编译目标的信息转换为 Meson 构建系统可以理解和执行的编译命令生成器**。它负责构建调用编译器的完整命令行，包括指定输入文件、输出文件、包含路径、编译选项和依赖关系生成等。这是 Frida 构建过程中编译 Native 组件的关键步骤，确保了 Frida 能够将用 C/C++ 等语言编写的底层代码编译成目标平台可以执行的二进制文件，从而实现其动态 Instrumentation 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 rt a Compiler to a Generator.
         '''
         exelist = compiler.get_exelist()
@@ -166,8 +168,4 @@ rt a Compiler to a Generator.
         all_sources = T.cast('_ALL_SOURCES_TYPE', target.sources) + T.cast('_ALL_SOURCES_TYPE', target.generated)
         return self.compiler_to_generator(target, target.compiler, all_sources,
                                           target.output_templ, target.depends)
-
-"""
-
-
 ```

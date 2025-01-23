@@ -113,15 +113,17 @@ Here's a breakdown of how to address each part of the request:
 
 总而言之，`kurl_test.cc` 的第一部分主要关注 `blink::KURL` 类的基本功能，包括 URL 的解析、组成部分的获取和设置、编码解码以及一些边界情况的处理，确保 `KURL` 类能够正确地表示和操作 URL，这是 Blink 引擎中处理网络请求和资源加载的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/kurl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -1020,7 +1022,4 @@ TEST(KURLTest, urlStrippedForUseAsReferrer) {
 }
 
 TEST(KURLTest, urlStrippedForUseAsReferrerRespectsReferr
-"""
-
-
 ```

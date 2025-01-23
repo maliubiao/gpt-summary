@@ -163,14 +163,16 @@ Initially, I might just say "handles image loading." But upon closer inspection 
 
 总而言之，`blink/renderer/core/style/style_fetched_image.cc` 是 Blink 渲染引擎中处理图像资源的核心组件，它连接了图像数据和 CSS 样式系统，负责加载、管理、并提供图像的相关信息，以便浏览器能够正确地渲染网页。 开发者在使用 HTML、CSS 和 JavaScript 操作图像时，其背后的图像加载和管理逻辑都与这个文件息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/style_fetched_image.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2000 Lars Knoll (knoll@kde.org)
  *           (C) 2000 Antti Koivisto (koivisto@kde.org)
@@ -481,7 +483,4 @@ void StyleFetchedImage::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

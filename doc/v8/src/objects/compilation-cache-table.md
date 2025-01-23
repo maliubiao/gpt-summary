@@ -123,11 +123,13 @@ regex2.test("abbc");
 
 `v8/src/objects/compilation-cache-table.cc` 文件是 V8 引擎中一个关键的性能优化组件。它通过缓存已编译的 JavaScript 代码，显著提高了代码的执行效率，尤其是在重复执行相同代码片段的情况下（例如页面刷新、循环执行、多次调用相同的 `eval` 或创建相同的正则表达式）。它使用不同的键来区分缓存条目，并针对 `eval` 代码进行了特殊的上下文处理。 理解这个文件的功能有助于深入了解 V8 引擎的内部工作原理以及 JavaScript 的性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/compilation-cache-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -771,7 +773,4 @@ void CompilationCacheTable::RemoveEntry(InternalIndex entry) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

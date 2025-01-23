@@ -140,11 +140,13 @@ console.log(sumArrayOptimized(numbers));
 
 `v8/src/compiler/loop-unrolling.cc` 是 V8 编译器中实现循环展开优化的关键部分。它通过复制循环体来减少循环控制的开销，从而提高 JavaScript 代码中循环的执行效率。这个优化是 V8 自动进行的，JavaScript 开发者不需要显式地编写展开后的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/loop-unrolling.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -356,7 +358,4 @@ void UnrollLoop(Node* loop_node, ZoneUnorderedSet<Node*>* loop, uint32_t depth,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

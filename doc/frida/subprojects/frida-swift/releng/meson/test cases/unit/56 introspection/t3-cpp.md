@@ -178,7 +178,7 @@ By following these steps, combining code analysis with an understanding of Frida
 
 总而言之，`t3.cpp` 是 Frida 框架中一个精心设计的单元测试，用于验证 Frida 在处理包含共享库和静态库的 C++ 代码时，能否正确地进行代码内省和动态操作，这对于确保 Frida 功能的稳定性和正确性至关重要，并且也为逆向工程师提供了一个可供学习和参考的示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/56 introspection/t3.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "sharedlib/shared.hpp"
 #include "staticlib/static.h"
 
@@ -204,7 +206,4 @@ int main(void) {
   }
   return 0;
 }
-
-"""
-
 ```

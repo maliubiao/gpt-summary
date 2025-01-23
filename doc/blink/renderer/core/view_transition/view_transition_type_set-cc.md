@@ -190,14 +190,16 @@ This iterative process of scanning, identifying key elements, analyzing function
 
 总而言之，`view_transition_type_set.cc` 是实现视图过渡功能的重要组成部分，它负责管理过渡的类型，并与 JavaScript 和 CSS 紧密协作，使得开发者可以通过脚本控制视图过渡的表现，并通过 CSS 进行更精细的样式定制。理解其功能和限制对于正确使用视图过渡 API 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/view_transition/view_transition_type_set.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -334,7 +336,4 @@ ViewTransitionTypeSet::CreateIterationSource(ScriptState*, ExceptionState&) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

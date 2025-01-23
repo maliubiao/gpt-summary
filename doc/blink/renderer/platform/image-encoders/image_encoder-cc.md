@@ -136,14 +136,16 @@ By following this structured thought process, I can generate a comprehensive and
 
 总而言之，`image_encoder.cc` 文件在 Chromium Blink 引擎中扮演着重要的角色，它负责将像素数据转换为各种常用的图像格式，为 Web 平台上图像的创建、传输和显示提供了基础能力。虽然开发者通常不会直接操作这个文件中的代码，但理解其功能有助于理解浏览器如何处理图像。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-encoders/image_encoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ SkWebpEncoder::Options ImageEncoder::ComputeWebpOptions(double quality) {
   return options;
 }
 }  // namespace blink
-
-"""
-
 ```

@@ -143,14 +143,16 @@ By following this structured approach,  we can effectively analyze the code snip
 
 总而言之，`ResourceLoaderOptions` 是 Blink 引擎内部一个重要的配置类，它控制着资源加载的方方面面，直接影响着网页的性能、安全性和行为。虽然前端开发者不会直接操作这个类，但理解其背后的概念对于编写高效、安全的 web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_loader_options.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -212,7 +214,4 @@ ResourceLoaderOptions& ResourceLoaderOptions::operator=(
 ResourceLoaderOptions::~ResourceLoaderOptions() = default;
 
 }  // namespace blink
-
-"""
-
 ```

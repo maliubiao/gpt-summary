@@ -159,14 +159,16 @@ scoped_refptr<StringImpl> AtomicStringTable::Add(
 
 `atomic_string_table.cc` 中定义的 `AtomicStringTable` 是 Blink 渲染引擎中一个核心的优化组件，它通过字符串驻留来减少内存使用并加速字符串比较，这对于高效地处理 HTML、CSS 和 JavaScript 中大量的字符串数据至关重要。虽然开发者通常不直接与之交互，但理解其工作原理有助于更好地理解 Blink 的内部机制和性能优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/atomic_string_table.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -677,7 +679,4 @@ bool AtomicStringTable::ReleaseAndRemoveIfNeeded(StringImpl* string) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

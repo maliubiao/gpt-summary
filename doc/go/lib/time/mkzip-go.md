@@ -162,15 +162,17 @@ US/Eastern
 
 总而言之，`mkzip.go` 是一个专门用于创建特定格式（无压缩）的 ZIP 文件的工具，这个 ZIP 文件对于 Go 语言 `time` 包加载时区信息至关重要。使用者需要确保在包含时区数据文件的目录下运行此脚本，并提供正确的输出 ZIP 文件路径。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/lib/time/mkzip.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -265,9 +267,4 @@ func main() {
 		log.Fatal(err)
 	}
 }
-
-"""
-
-
-
 ```

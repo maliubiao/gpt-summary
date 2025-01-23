@@ -223,7 +223,7 @@ This second part of the `macro-assembler-arm64.h` definition significantly expan
 
 In essence, this section builds upon the foundational elements of the `MacroAssembler` to provide the tools needed to implement more sophisticated logic within the V8 engine's code generation pipelines.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/macro-assembler-arm64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/macro-assembler-arm64.h以.tq结尾，那它是个v8 torque源代码，
@@ -231,8 +231,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 st Register& rd, const Register& rn,
                   const Operand& operand);
 
@@ -956,7 +958,4 @@ st Register& rd, const Register& rn,
                                     const Register& temp);
   void AtomicDecompressTagged(const Register& destination, const Register& base,
                               const Register& index, c
-"""
-
-
 ```

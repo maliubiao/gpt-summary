@@ -167,11 +167,13 @@ fail(); // 再次 rejected
 
 `v8/test/fuzzilli/main.cc` 文件是一个使用 C++ 编写的测试工具，它利用 `libreprl` 库来驱动 V8 JavaScript 引擎执行 JavaScript 代码片段，并断言执行结果是否符合预期。这对于确保 V8 引擎的正确性和稳定性至关重要，特别是对于 Fuzzilli 这样的模糊测试工具来说，需要能够可靠地执行和监控各种 JavaScript 代码的运行情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzilli/main.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ int main(int argc, char** argv) {
   puts("OK");
   return 0;
 }
-
-"""
-
 ```

@@ -99,7 +99,7 @@ I need to synthesize these individual functionalities into a concise summary.
 
 总而言之，`MixedContentChecker` 负责在浏览器加载和渲染网页的过程中，识别并处理潜在的安全风险，即从 HTTPS 页面加载 HTTP 资源的情况，并根据配置和策略采取相应的措施，例如阻止、升级或警告。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/mixed_content_checker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 the current local frame's client; the embedder doesn't distinguish
   // mixed content signals from different frames on the same page.
   frame->GetLocalFrameHostRemote().DidContainInsecureFormAction();
@@ -402,8 +404,4 @@ MixedContent::CheckModeForPlugin MixedContentChecker::DecideCheckModeForPlugin(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -79,7 +79,7 @@ By following these steps, one can systematically analyze even a trivial piece of
 
 尽管 `b.c` 文件本身非常简单，但它作为 Frida 测试套件的一部分，承担着验证 Frida 在特定场景下行为正确性的作用。 它的存在暗示着 Frida 需要能够处理或报告与字符串操作相关的潜在问题。理解其上下文对于理解其意义至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/warning/1 version for string div/a/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -87,12 +87,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void)
 {
 }
-
-"""
-
 ```

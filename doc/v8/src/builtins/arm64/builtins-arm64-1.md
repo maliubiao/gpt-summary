@@ -142,12 +142,14 @@ logArgs(1, 2, 3); // 对应 Builtins::Generate_CallOrConstructVarargs 等相关�
 
 `builtins-arm64.cc` 的这一部分是 V8 引擎中实现 JavaScript 函数调用和对象构造等核心功能的基石。它定义了在 ARM64 架构上执行这些操作的具体步骤，并且与 JavaScript 语言的语义紧密相关。通过这些底层的 built-in 函数，V8 能够高效地执行 JavaScript 代码。 同时，也包含了与解释器和 WebAssembly 集成的重要功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/arm64/builtins-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 rg_index, spread_arg_out,
                               receiver_mode, mode);
 
@@ -1981,7 +1983,4 @@ void LoadTargetJumpBuffer(MacroAssembler* masm, Register target_continuation,
 
 // Updates the stack limit to match the new active stack.
 // Pass the {finished_continuation} argument to indi
-"""
-
-
 ```

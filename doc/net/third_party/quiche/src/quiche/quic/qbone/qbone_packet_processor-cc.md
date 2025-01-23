@@ -212,15 +212,17 @@ direction = Direction::FROM_NETWORK
 
 总而言之，`qbone_packet_processor.cc` 文件是 Chromium 中处理 Qbone 网络数据包的核心组件，负责对进出的数据包进行校验、过滤和转发，并根据需要生成 ICMP 错误响应或 TCP Reset 包。它在整个网络栈中扮演着网关或策略执行点的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/qbone/qbone_packet_processor.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -524,7 +526,4 @@ uint8_t QbonePacketProcessor::TrafficClassFromHeader(
   return ipv6_header[0] << 4 | ipv6_header[1] >> 4;
 }
 }  // namespace quic
-
-"""
-
 ```

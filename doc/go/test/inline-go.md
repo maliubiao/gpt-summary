@@ -201,15 +201,17 @@ func main() { // 编译器会提示 "can inline main"
 
 总之，这段代码是 Go 语言编译器内联功能的一个测试用例，它通过诊断信息来验证内联行为。理解内联的工作原理和编译器的决策过程对于编写高效的 Go 代码非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/inline.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheckwithauto -0 -m -d=inlfuncswithclosures=1
 
 //go:build !goexperiment.newinliner
@@ -643,9 +645,4 @@ func issue62211G(x bool) bool { // ERROR "can inline issue62211G"
 		return true
 	}
 }
-
-"""
-
-
-
 ```

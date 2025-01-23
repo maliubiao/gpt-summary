@@ -227,7 +227,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/linux/stddef.h` 是一个基础的头文件，提供了用于定义类型和控制编译行为的宏。它在 Android 的 Bionic 库和 Native 开发中扮演着重要的角色，为与 Linux 内核交互提供了基础。虽然不能直接 hook 这个头文件，但可以使用 Frida hook 使用了其中定义的宏的函数，以进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/stddef.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -238,8 +238,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -268,7 +270,4 @@ Prompt:
 #define __counted_by_be(m)
 #endif
 #endif
-
-"""
-
 ```

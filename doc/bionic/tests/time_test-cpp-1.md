@@ -34,7 +34,7 @@ Since this is part 2, I should avoid repeating the detailed explanations from pa
 
 这些测试用例共同确保了 `bionic` 库提供的日期和时间处理功能的可靠性和准确性，这对于 Android 系统的稳定运行和应用程序的正确行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/time_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -46,8 +46,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 f we change the timezone again and call localtime_r, localtime_r should use the new timezone.
   setenv("TZ", "America/Los_Angeles", 1);
   struct tm tm = {};
@@ -325,8 +327,4 @@ TEST(time, tzalloc_unique_ptr) {
   GTEST_SKIP() << "glibc doesn't have timezone_t";
 #endif
 }
-
-"""
-
-
 ```

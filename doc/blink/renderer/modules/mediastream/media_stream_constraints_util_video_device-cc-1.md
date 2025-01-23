@@ -274,7 +274,7 @@ navigator.mediaDevices.getUserMedia({
 
 总而言之，这个文件是 Chromium Blink 引擎中处理视频媒体约束的核心部分，它连接了 JavaScript 的媒体请求和底层的操作系统视频设备管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_video_device.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -282,8 +282,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 itness(basic_constraint_set.saturation,
                                   saturation_set_) +
            NumericRangeSetFitness(basic_constraint_set.sharpness,
@@ -790,8 +792,4 @@ SelectEligibleSettingsVideoDeviceCapture(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

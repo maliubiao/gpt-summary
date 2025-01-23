@@ -156,7 +156,7 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzAB
 
 `name_gen.py` 是 Frida 构建系统中一个用于生成满足特定长度限制的文件名的实用工具。它与逆向工程中的动态分析环节间接相关，涉及到操作系统文件系统的底层知识，并通过逻辑推理确保生成的文件名符合要求。理解其功能和使用场景有助于理解 Frida 的构建流程，并在遇到与文件名相关的构建或测试错误时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/227 very long command line/name_gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 """
 generate sequence of filename that does not exceed MAX_LEN=260
@@ -189,7 +191,4 @@ base = base[: name_len - max_num_len]
 
 for i in range(int(sys.argv[1])):
     print("{base}{i:0{max_num_len}d}".format(base=base, max_num_len=max_num_len, i=i))
-
-"""
-
 ```

@@ -122,7 +122,7 @@ Here's a breakdown of the tests and their functionality:
 
 在调试 WebTransport 相关问题时，如果怀疑是 Blink 引擎的实现有问题，开发者可能会运行这些单元测试来验证特定功能的行为是否符合预期。例如，如果一个双向流在应该正常工作的情况下突然报错，开发者可能会查看 `ReceivedResetStream` 和 `ReceivedStopSending` 相关的测试用例，并尝试复现测试场景，以确定问题是否出在 Blink 的流处理逻辑上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webtransport/web_transport_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t();
 
   read_tester.WaitUntilSettled();
@@ -401,8 +403,4 @@ TEST_F(WebTransportTest, ReceivedStopSending) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
-
 ```

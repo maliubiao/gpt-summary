@@ -125,11 +125,13 @@ void CSAGenerator::EmitInstruction(const CallBuiltinInstruction& instruction, St
 
 `csa-generator.cc` 是 V8 编译流程中的一个关键组件，它负责将高级的 Torque 代码转换为可以在 V8 中高效执行的低级 CSA 代码。这种转换使得 V8 能够使用优化的机器码来实现 JavaScript 的各种内置功能和运行时操作，从而提高 JavaScript 的执行效率。 你编写的 JavaScript 代码最终会间接地依赖于 `csa-generator.cc` 生成的代码来运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/csa-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1207,7 +1209,4 @@ void CSAGenerator::EmitCSAValue(VisitResult result,
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

@@ -194,7 +194,7 @@ Baseline 编译器本身不直接捕获 JavaScript 语法错误或类型错误 (
 
 `v8/src/baseline/baseline-compiler.cc` 的主要功能是作为 V8 引擎的 **Baseline 编译器**，负责将 JavaScript 函数的 **字节码** 快速转换为 **机器码**。它遍历字节码指令，并使用 `BaselineAssembler` 生成针对目标架构的机器指令。这个过程是 V8 执行 JavaScript 代码的第一步编译阶段，旨在提供快速的初始执行，为后续的优化编译提供基础。文件中涉及了字节码处理、机器码生成、内置函数和运行时函数的调用，以及维护字节码偏移表等关键功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/baseline-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/baseline/baseline-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -202,8 +202,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1124,8 +1126,5 @@ void BaselineCompiler::VisitStar() {
 
 #define SHORT_STAR_VISITOR(Name, ...)                                         \
   void BaselineCompiler::Visit##Name() {                                      \
-    __ StoreRegister(                       
-"""
-
-
+    __ StoreRegister(
 ```

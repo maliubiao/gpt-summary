@@ -130,7 +130,7 @@ By following this structured thought process, we can systematically analyze even
 
 总而言之，`libB.c` 这个简单的文件在一个特定的测试场景下，扮演着重要的角色，用于验证 Frida 在处理静态库符号剥离时的功能是否正确。它简洁地展示了公共接口和内部实现分离的概念，以及符号可见性对逆向分析的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/65 static archive stripping/lib/libB.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,14 +138,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <libB.h>
 
 static int libB_func_impl(void) { return 0; }
 
 int libB_func(void) { return libB_func_impl(); }
-
-"""
-
 ```

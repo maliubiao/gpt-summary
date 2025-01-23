@@ -165,15 +165,17 @@ console.log(obj.age);  // 输出 30
 
 `v8/test/cctest/test-swiss-name-dictionary.cc` 是一个关键的 V8 测试文件，它专注于验证 `SwissNameDictionary` 数据结构的正确性和性能。理解这个文件的内容有助于深入了解 V8 如何高效地管理 JavaScript 对象的属性。虽然用户不会直接与 `SwissNameDictionary` 交互，但其背后的原理与 JavaScript 对象的性能息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-swiss-name-dictionary.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-swiss-name-dictionary.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -408,7 +410,4 @@ SharedSwissTableTests<RuntimeTestRunner, kRuntimeTestFileName>
 }  // namespace test_swiss_hash_table
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

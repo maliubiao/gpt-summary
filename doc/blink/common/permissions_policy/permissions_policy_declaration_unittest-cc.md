@@ -134,14 +134,16 @@ Permissions Policy (曾用名 Feature Policy) 是一种 Web 平台机制，允�
 
 `permissions_policy_declaration_unittest.cc` 文件通过单元测试确保 `ParsedPermissionsPolicyDeclaration` 类的 `Contains()` 方法能够正确判断给定的源是否符合 Permissions Policy 声明的规则。这对于浏览器正确执行网页定义的 Permissions Policy 至关重要，从而保障用户的安全和隐私，并允许网站控制其功能的使用。 开发者理解这些测试用例可以更好地理解 Permissions Policy 的工作原理，并避免常见的配置错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/permissions_policy/permissions_policy_declaration_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ TEST(ParsedPermissionsPolicyDeclarationTest, Contains) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

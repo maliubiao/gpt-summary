@@ -91,15 +91,17 @@ I will go through each `TEST_P` and `TEST` block and summarize its purpose.
 
 通过这些测试用例，可以有效地确保 Blink 引擎中的 PNG 解码器能够可靠地处理各种合法的和非法的 PNG 文件，从而提升网页浏览的稳定性和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/png/png_image_decoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 -of-animation.png");
 }
 
@@ -865,7 +867,4 @@ TEST_P(PNGTests, VerifyFrameCompleteBehavior) {
     auto* frame = decoder->DecodeFrameBufferAtIndex(0);
     ASSERT_TRUE(frame);
     EXPECT_NE(
-"""
-
-
 ```

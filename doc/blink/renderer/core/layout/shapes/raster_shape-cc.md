@@ -148,14 +148,16 @@ This systematic approach helps to dissect the code, understand its purpose, and 
 
 总而言之，`raster_shape.cc` 是 Blink 引擎中一个关键的文件，它负责实现 CSS `shape-outside` 属性中基于栅格图像的形状定义和外边距计算，从而实现更灵活和美观的网页布局。理解这个文件的功能有助于开发者更好地掌握 CSS 形状相关的特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/shapes/raster_shape.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Adobe Systems Incorporated. All rights reserved.
  *
@@ -346,7 +348,4 @@ LineSegment RasterShape::GetExcludedInterval(LayoutUnit logical_top,
 }
 
 }  // namespace blink
-
-"""
-
 ```

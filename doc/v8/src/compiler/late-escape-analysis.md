@@ -138,11 +138,13 @@ console.log(globalData.z);
 
 `v8/src/compiler/late-escape-analysis.cc` 文件中的代码实现了 V8 编译器中的迟后逃逸分析，这是一个关键的优化过程，用于识别可以安全地进行栈上分配、标量替换或直接消除的堆内存分配，从而提高 JavaScript 代码的执行效率。虽然开发者通常不需要直接关心这个过程，但了解其原理有助于理解 V8 如何优化代码以及为什么某些代码模式可能更高效。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/late-escape-analysis.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -291,7 +293,4 @@ void LateEscapeAnalysis::RemoveWitness(Node* allocation) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

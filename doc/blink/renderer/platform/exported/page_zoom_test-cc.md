@@ -80,14 +80,16 @@ This structured approach allows for a comprehensive analysis of the code snippet
 
 总而言之，`page_zoom_test.cc` 文件通过测试 `blink::ZoomValuesEqual` 函数，确保了 Blink 渲染引擎在处理页面缩放值时能够正确地进行比较，避免因浮点数精度问题导致的错误，这对于提供一致且可靠的网页渲染至关重要，并间接地影响了 JavaScript、HTML 和 CSS 的相关功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/page_zoom_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -106,7 +108,4 @@ TEST(PageZoomTest, ZoomValuesEqual) {
   // Test two values that are close, but should not be considered equal.
   EXPECT_FALSE(blink::ZoomValuesEqual(1.5, 1.4));
 }
-
-"""
-
 ```

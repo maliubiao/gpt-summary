@@ -219,7 +219,7 @@ This methodical approach allows for a comprehensive analysis of the code snippet
 
 这段 `css.go` 文件是 Go 语言 `html/template` 库中至关重要的组成部分，它通过提供 CSS 转义和过滤功能，帮助开发者在动态生成 HTML 内容时安全地处理 CSS 代码，防止潜在的安全风险。理解其功能和正确的使用方式对于构建安全的 Web 应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/html/template/css.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -227,8 +227,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -489,9 +491,4 @@ func cssValueFilter(args ...any) string {
 	}
 	return string(b)
 }
-
-"""
-
-
-
 ```

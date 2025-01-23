@@ -168,15 +168,17 @@ enum class NetLogCaptureMode {
 
 总而言之， `net/log/net_log_capture_mode.cc` 虽然是一个小文件，但它在 Chromium 网络日志系统中扮演着关键的角色，决定了网络日志包含的信息量和敏感程度。用户的配置和 Chromium 内部的网络日志记录逻辑都会间接地使用到这个文件中的函数。 理解这个文件的功能有助于理解 Chromium 网络日志的工作原理，并能更好地利用网络日志进行网络问题的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/log/net_log_capture_mode.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ bool NetLogCaptureIncludesSocketBytes(NetLogCaptureMode capture_mode) {
 }
 
 }  // namespace net
-
-"""
-
 ```

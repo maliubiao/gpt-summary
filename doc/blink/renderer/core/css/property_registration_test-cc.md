@@ -229,15 +229,17 @@ During the process, I might have initially focused too much on the details of `D
 
 `property_registration_test.cc` 是一个关键的测试文件，用于确保 Blink 引擎正确地实现了 CSS 自定义属性的注册功能，特别是处理了在初始值中使用 `var()` 的情况。 这对于保证 Web 开发者可以按照 CSS 规范预期的方式使用自定义属性至关重要。通过阅读这些测试用例，开发者可以更好地理解浏览器引擎对自定义属性注册的内部处理逻辑，从而避免一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/property_registration_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -307,7 +309,4 @@ TEST_F(PropertyRegistrationTest, VarInInitialValueUniversalRegistered) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

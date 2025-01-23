@@ -202,7 +202,7 @@ By following these steps, we can systematically analyze the code snippet and pro
 
 第 33 部分是这个定义列表中的一部分，它延续了定义各种 SSA 操作的工作，涵盖了原子操作、函数调用、地址操作、WebAssembly 指令等。这部分与其他部分共同构成了 Go 编译器理解和生成目标代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/opGen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -211,10 +211,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第33部分，共36部分，请归纳一下它的功能
+```
 
-"""
-
-		auxType:        auxSymOff,
+### 源代码
+```go
+auxType:        auxSymOff,
 		argLen:         3,
 		clobberFlags:   true,
 		faultOnNilArg0: true,
@@ -1496,9 +1497,4 @@ Prompt:
 			inputs: []inputInfo{
 				{0, 281474976776191}, // R0 R1 R2 R3 R4 R5 R6 R7 R8 R9 R10 R11 R12 R13 R14 R15 SP
 				{1, 281474976776191}, // R0 R1 R2 R3 R4 R5 R6 R7 R8 R9 R10 R11 R12 R13
-"""
-
-
-
-
 ```

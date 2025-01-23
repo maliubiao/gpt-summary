@@ -110,14 +110,16 @@ myObject.myFunction = function(arg) { /* ... */ };
 
 `union_base.cc` 文件在 Blink 引擎的 bindings 机制中扮演着重要的角色，它确保了从 JavaScript 传递到 Blink C++ 代码的参数类型符合预期，从而保证了代码的稳定性和安全性。它通过提供一个通用的 `ThrowTypeErrorNotOfType` 方法，简化了在处理联合类型时抛出类型错误的过程。当 JavaScript 代码与 Blink 引擎交互，特别是涉及到接受多种可能类型参数的 API 时，这个文件就发挥了作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/union_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -141,7 +143,4 @@ void UnionBase::ThrowTypeErrorNotOfType(ExceptionState& exception_state,
 }  // namespace bindings
 
 }  // namespace blink
-
-"""
-
 ```

@@ -225,14 +225,16 @@ By following this detailed thought process, combining code analysis with knowled
 
 总而言之，`ui_event.cc` 文件中定义的 `UIEvent` 类是 Blink 渲染引擎中处理用户交互事件的基础，它连接了用户的操作、HTML 结构、CSS 样式以及 JavaScript 逻辑，使得网页能够响应用户的行为并提供动态的用户体验。理解 `UIEvent` 及其相关概念对于进行 Web 开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/ui_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2001 Peter Kelly (pmk@post.com)
  * Copyright (C) 2001 Tobias Anton (anton@stud.fbi.fh-darmstadt.de)
@@ -337,7 +339,4 @@ void UIEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

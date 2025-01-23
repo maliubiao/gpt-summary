@@ -132,11 +132,13 @@ function sum(n) {
 
 `v8/src/compiler/wasm-loop-peeling.cc` 文件中的 `PeelWasmLoop` 函数是 V8 引擎用于优化 WebAssembly 循环性能的关键部分。它通过复制循环体的开头部分来减少循环开销并为后续优化创造机会，从而提升 JavaScript 中运行的 WebAssembly 代码的执行效率。 虽然我们不能直接在 JavaScript 中调用或控制这个优化过程，但它的存在直接影响着我们编写的 WebAssembly 代码在 JavaScript 环境中的运行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-loop-peeling.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ void PeelWasmLoop(Node* loop_node, ZoneUnorderedSet<Node*>* loop, Graph* graph,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

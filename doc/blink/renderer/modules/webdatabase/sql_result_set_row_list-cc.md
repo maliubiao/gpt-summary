@@ -205,15 +205,17 @@ By systematically going through these steps, we can build a comprehensive unders
 
 总而言之，`sql_result_set_row_list.cc` 文件实现了 Web SQL Database API 中用于表示查询结果行的关键数据结构，它直接服务于 JavaScript，让 JavaScript 能够方便地访问和操作数据库查询结果。理解它的功能和潜在的使用错误对于开发和调试 Web SQL Database 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/sql_result_set_row_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Apple Inc. All rights reserved.
  *
@@ -288,7 +290,4 @@ ScriptValue SQLResultSetRowList::item(ScriptState* script_state,
 }
 
 }  // namespace blink
-
-"""
-
 ```

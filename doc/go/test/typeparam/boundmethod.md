@@ -149,15 +149,17 @@ The commented-out section related to `StringInt` highlights a past limitation in
 
 In summary, the `boundmethod.go` file serves as a test case to ensure that Go's generic implementation correctly handles type-bound methods and interface satisfaction for both concrete and generic types. It explores different ways to invoke these methods, ensuring consistency and correctness.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/boundmethod.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -266,9 +268,4 @@ func main() {
 		panic(fmt.Sprintf("got %s, want %s", got3, want3))
 	}
 }
-
-"""
-
-
-
 ```

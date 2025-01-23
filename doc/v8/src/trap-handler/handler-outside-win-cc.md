@@ -147,15 +147,17 @@ try {
 
 `v8/src/trap-handler/handler-outside-win.cc` 是 V8 在 Windows 平台上处理 WebAssembly 运行时错误的关键组件。它负责注册和注销系统级别的异常处理程序，以便在发生 Wasm 陷阱时能够捕获并进行处理，最终将其转换为 JavaScript 错误，从而保证了 JavaScript 环境的稳定性和安全性。虽然普通 JavaScript 开发者不会直接接触到这个文件，但它处理的错误类型与常见的 WebAssembly 编程错误密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/handler-outside-win.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/trap-handler/handler-outside-win.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ void RemoveTrapHandler() {
 }  // namespace trap_handler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

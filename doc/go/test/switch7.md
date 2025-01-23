@@ -143,15 +143,17 @@ func processValue(v interface{}) {
 
 `go/test/switch7.go` 这段代码是 Go 编译器测试套件的一部分，专门用于验证编译器能否正确地检测并报告 `type switch` 语句中重复的 `case` 分支。它通过故意构造包含重复 `case` 的代码来触发编译错误，确保编译器在实际开发中能够帮助开发者避免这类错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/switch7.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2016 The Go Authors. All rights reserved.
@@ -186,10 +188,4 @@ func f4(e interface{}) {
 	}:
 	}
 }
-
-
-"""
-
-
-
 ```

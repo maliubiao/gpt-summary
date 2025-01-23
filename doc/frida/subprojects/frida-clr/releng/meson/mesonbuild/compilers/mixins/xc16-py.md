@@ -167,7 +167,7 @@ Frida 是一个动态插桩工具，广泛应用于软件逆向工程。这个 `
 
 总而言之，`xc16.py` 文件在 Frida 构建系统中扮演着关键的角色，它定义了如何使用 Microchip XC16 编译器来构建 Frida 的组件，特别是与 Frida-CLR 相关的部分，从而使得 Frida 能够与使用 XC16 编译器编译的嵌入式目标程序进行交互和插桩。理解这个文件的功能有助于开发者在使用 Frida 进行嵌入式系统逆向工程时，更好地配置构建环境和解决编译问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/mixins/xc16.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2019 The Meson development team
 
@@ -288,7 +290,4 @@ class Xc16Compiler(Compiler):
                 parameter_list[idx] = i[:9] + os.path.normpath(os.path.join(build_dir, i[9:]))
 
         return parameter_list
-
-"""
-
 ```

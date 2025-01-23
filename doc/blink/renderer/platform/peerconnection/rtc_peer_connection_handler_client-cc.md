@@ -90,14 +90,16 @@ This detailed thought process, even for a small code snippet, highlights how to 
 
 尽管提供的 `rtc_peer_connection_handler_client.cc` 代码片段非常简洁，它仍然揭示了该文件在 Blink 引擎中扮演着处理 WebRTC 客户端连接的关键角色。它通过与 JavaScript API 交互，使得网页能够实现实时的音视频通信功能，并最终影响到用户在 HTML 页面上看到和听到的内容。理解这类底层实现有助于开发者更好地理解 WebRTC 的工作原理，并避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_peer_connection_handler_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -111,7 +113,4 @@ RTCPeerConnectionHandlerClient::~RTCPeerConnectionHandlerClient() = default;
 void RTCPeerConnectionHandlerClient::ClosePeerConnection() {}
 
 }  // namespace blink
-
-"""
-
 ```

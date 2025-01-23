@@ -74,7 +74,7 @@ Response:
 
 ### 总结
 `frida-helper-backend.vala` 是 Frida 在 macOS 和 iOS 平台上实现进程管理、注入和调试功能的核心模块。它通过直接与 Darwin 内核交互，提供了强大的进程控制能力。用户在使用时需要注意权限、进程状态等问题，避免常见的操作错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/darwin/frida-helper-backend.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -83,8 +83,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class DarwinHelperBackend : Object, DarwinHelper {
 		public signal void idle ();
@@ -996,7 +998,4 @@ namespace Frida {
 		}
 	}
 }
-
-"""
-
 ```

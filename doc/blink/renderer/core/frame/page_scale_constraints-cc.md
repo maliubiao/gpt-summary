@@ -195,14 +195,16 @@ body {
 
 总而言之，`blink/renderer/core/frame/page_scale_constraints.cc` 文件定义了 Blink 渲染引擎中用于管理页面缩放约束的核心类。它直接受到 HTML 的 Viewport Meta 标签的影响，并通过其方法来限制和调整页面的缩放行为，从而影响用户与网页的交互方式。理解这个类的功能有助于我们更好地理解浏览器如何处理页面缩放，并避免在开发中犯相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/page_scale_constraints.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -309,7 +311,4 @@ bool PageScaleConstraints::operator==(const PageScaleConstraints& other) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -153,14 +153,16 @@ By following these steps, I could systematically analyze the code and generate a
 
 总而言之，`caching_word_shape_iterator.cc` 是 Blink 引擎中负责高效文本整形的关键组件，它通过缓存机制优化了渲染性能，并细致地处理了包括字间距和负间距在内的各种文本布局需求。它与 HTML、CSS 和 JavaScript 紧密相关，共同构成了网页文本渲染的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/caching_word_shape_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -227,7 +229,4 @@ const ShapeResult* CachingWordShapeIterator::ShapeWord(const TextRun& word_run,
 }
 
 }  // namespace blink
-
-"""
-
 ```

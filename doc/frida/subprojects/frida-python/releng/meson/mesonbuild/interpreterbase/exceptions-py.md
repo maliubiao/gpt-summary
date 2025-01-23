@@ -189,7 +189,7 @@ By following this breakdown, categorizing, connecting, and illustrating, I can g
 
 总之，`exceptions.py` 文件定义了 Frida Python 绑定构建过程中可能出现的各种异常，这些异常的发生通常与构建脚本的编写错误有关。理解这些异常有助于开发者诊断和修复构建问题，确保 Frida Python 绑定的正确构建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/interpreterbase/exceptions.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -221,7 +223,4 @@ class ContinueRequest(BaseException):
 
 class BreakRequest(BaseException):
     pass
-
-"""
-
 ```

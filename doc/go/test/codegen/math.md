@@ -123,15 +123,17 @@ func approx(x float64) {
 
 总而言之，`go/test/codegen/math.go` 是一个用于验证 Go 编译器在处理数学运算时代码生成质量的重要测试文件，它通过预期的汇编指令来确保编译器能够针对不同的架构生成高效且正确的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/math.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -392,9 +394,4 @@ func nanGenerate32() float32 {
 	z1 := zero * inf
 	return z0 + z1
 }
-
-"""
-
-
-
 ```

@@ -160,7 +160,7 @@ func main() {
 
 这段代码的核心功能是定义和注册了 AMD64 架构下特定 Go 语言内置函数的优化实现。`runtime.futexwakeup` 的优化旨在避免不必要的 futex 唤醒，而 `internal/runtime/maps.ctrlGroupMatchFull` 则通过 SIMD 指令加速了 map 查找过程中控制信息的匹配。`findIntrinsic` 函数负责将符号与这些优化实现关联起来，并考虑了 race detector 和软浮点等因素。这些机制都是 Go 编译器为了提升性能而在底层进行的优化，开发者通常无需直接关心。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssagen/intrinsics.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -169,8 +169,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // ctrlEmpty or ctrlDeleted, so no need to truncate.
 
 			return ret
@@ -254,10 +256,4 @@ func IsIntrinsicCall(n *ir.CallExpr) bool {
 	}
 	return findIntrinsic(name.Sym()) != nil
 }
-
-"""
-
-
-
-
 ```

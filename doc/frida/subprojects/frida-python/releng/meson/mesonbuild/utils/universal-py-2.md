@@ -89,7 +89,7 @@ The user wants to understand the functionality of the Python code provided. I ne
 
 因此，如果用户在构建 Frida Python 模块时遇到与选项配置、Wine 路径、加载构建数据相关的问题，或者看到进度条相关的输出，那么很可能代码执行流程会涉及到 `universal.py` 文件中的函数。  调试时，可以关注这些环节的日志和错误信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 nd(trial)
             else:
                 result[basename] = [trial]
@@ -679,8 +681,4 @@ def first(iter: T.Iterable[_T], predicate: T.Callable[[_T], bool]) -> T.Optional
         if predicate(i):
             return i
     return None
-
-"""
-
-
 ```

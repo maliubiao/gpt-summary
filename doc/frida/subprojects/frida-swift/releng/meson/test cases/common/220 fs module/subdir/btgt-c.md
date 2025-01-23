@@ -105,7 +105,7 @@ By following this thought process, we arrive at a comprehensive answer that addr
 
 因此，用户查看 `btgt.c` 的目的是了解在文件系统模块的测试中，Frida 是如何与一个简单的目标程序进行交互的，以便排查测试失败的原因。`btgt.c` 的简单性使得测试的重点可以完全放在 Frida 的文件系统模块功能上，而不用担心目标程序本身的复杂性引入的干扰。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/220 fs module/subdir/btgt.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,14 +113,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int
 main(void)
 {
     return 0;
 }
-
-"""
-
 ```

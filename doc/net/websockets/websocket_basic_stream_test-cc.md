@@ -89,7 +89,7 @@ By systematically analyzing these elements, I can address each part of the user'
 
 这个代码文件的主要功能是为 `net::WebSocketBasicStream` 类提供全面的单元测试。它通过模拟不同的 socket 数据输入（包括完整的、分片的、错误的帧数据），来验证 `WebSocketBasicStream` 类在读取和解析 WebSocket 帧时的正确性。这些测试覆盖了同步和异步读取模式，以及各种帧类型和边界情况，确保该类在各种场景下都能可靠地工作。这对于保证 Chromium 浏览器中 WebSocket 功能的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_basic_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -97,8 +97,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -879,7 +881,4 @@ TEST_F(WebSocketBasicStreamSocketSingleReadTest,
 }
 
 // Check that an invalid frame results in an err
-"""
-
-
 ```

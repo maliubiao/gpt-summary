@@ -346,7 +346,7 @@ if __name__ == '__main__':
 
 通过这种方式，可以观察到在调用 `poll` 时，传递给它的参数，以及它的返回值，从而理解 fortification 机制在运行时是如何工作的。如果 `nfds` 超出范围，你可能会在 Frida 的输出中看到相关的错误信息，或者观察到 `poll` 返回错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/fortify/poll.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -357,8 +357,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -458,7 +460,4 @@ int ppoll64(struct pollfd* _Nullable const fds __pass_object_size, nfds_t fd_cou
 #undef __bos_fd_count_trivially_safe
 
 #endif /* defined(__BIONIC_FORTIFY) */
-
-"""
-
 ```

@@ -121,14 +121,16 @@ By following these steps, iteratively analyzing the code, and connecting it to w
 
 总而言之，`SearchInputType.cc` 负责实现 `<input type="search">` 元素的特定行为，包括 UI 渲染、内置清除按钮的管理、Escape 键的处理以及可选的延迟触发 `search` 事件机制，这些功能都与 HTML、CSS 和 JavaScript 的交互密切相关，共同构成了 Web 平台上搜索输入框的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/search_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -301,7 +303,4 @@ void SearchInputType::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -203,15 +203,17 @@ By following these steps, I could systematically analyze the code and generate a
 
 通过这些步骤，开发者可以深入了解 Blink 引擎如何处理 SVG `<g>` 元素，并找到导致渲染问题的根本原因。`svg_g_element.cc` 文件是理解这一过程的关键入口点之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_g_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2007, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -264,7 +266,4 @@ bool SVGGElement::LayoutObjectIsNeeded(const DisplayStyle&) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

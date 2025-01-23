@@ -131,15 +131,17 @@ Let's consider a simplified hypothetical implementation of `TryHandleWasmTrap`:
 
 In summary, `v8/src/trap-handler/handler-inside-win.h` plays a crucial role in the robustness of V8 when executing WebAssembly on Windows. It provides the necessary infrastructure to catch low-level hardware or software exceptions originating from WebAssembly code and translate them into manageable errors within the JavaScript environment.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/handler-inside-win.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/trap-handler/handler-inside-win.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ TH_DISABLE_ASAN bool TryHandleWasmTrap(EXCEPTION_POINTERS* exception);
 }  // namespace v8
 
 #endif  // V8_TRAP_HANDLER_HANDLER_INSIDE_WIN_H_
-
-"""
-
 ```

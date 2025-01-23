@@ -111,7 +111,7 @@ Let's break down the thought process for analyzing this Python code snippet.
 
 `frida/subprojects/frida-swift/releng/meson/mesonbuild/linkers/base.py` 文件是 Frida 构建系统中关于类似 `ar` 的链接器的抽象定义。它通过枚举和基类的方式，为构建过程中的静态库链接提供了基础框架。虽然普通 Frida 用户不会直接接触这个文件，但对于 Frida 的开发者和构建维护者来说，理解它的功能对于调试构建问题、添加新的链接器支持以及深入理解 Frida 的构建流程至关重要。它间接地与逆向工程相关，因为它定义了 Frida 组件的构建方式，而这些组件是逆向分析的基础工具。同时，它涉及到二进制文件格式和操作系统层面的知识，因为链接器的核心任务就是处理这些底层的技术细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/linkers/base.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2023 The Meson development team
 
@@ -160,7 +162,4 @@ class ArLikeLinker:
 
     def rsp_file_syntax(self) -> RSPFileSyntax:
         return RSPFileSyntax.GCC
-
-"""
-
 ```

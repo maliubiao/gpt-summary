@@ -119,15 +119,17 @@ func F() {
 
 因此，理解编译器优化的工作原理，特别是内联的条件和限制，对于编写高性能的Go代码至关重要。 但不要过度依赖或假设内联一定会发生，最好的方式是通过实际的性能测试来验证优化效果。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue19261.dir/q.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -145,9 +147,4 @@ func H() {
 	print(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 	print(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 }
-
-"""
-
-
-
 ```

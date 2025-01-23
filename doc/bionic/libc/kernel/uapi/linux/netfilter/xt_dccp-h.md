@@ -233,7 +233,7 @@ input()
 
 `xt_dccp.h` 是一个定义了 DCCP 协议相关 netfilter 扩展信息的内核头文件。它在 Android 系统中用于配置和处理涉及 DCCP 协议的防火墙规则。虽然用户空间的程序不会直接链接这个头文件，但内核会使用其中的定义来完成网络数据包的过滤和匹配。通过 Frida 等工具，我们可以 hook 内核函数来观察这些结构体的使用情况，从而进行更深入的调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_dccp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -244,8 +244,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -269,7 +271,4 @@ struct xt_dccp_info {
   __u8 option;
 };
 #endif
-
-"""
-
 ```

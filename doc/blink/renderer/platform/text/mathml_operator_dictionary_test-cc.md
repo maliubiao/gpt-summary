@@ -107,14 +107,16 @@ By following these steps, I can effectively analyze the C++ test file and provid
 
 总而言之，`mathml_operator_dictionary_test.cc` 通过详尽的测试用例，确保 `MathMLOperatorDictionary` 能够准确地识别和分类各种 MathML 运算符，这对于 Chromium Blink 引擎正确渲染 HTML 中的 MathML 内容至关重要。它的正确性直接影响到用户在浏览器中看到的数学公式的呈现效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/mathml_operator_dictionary_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -357,7 +359,4 @@ TEST(MathOperatorDictionaryTest, Postfix) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

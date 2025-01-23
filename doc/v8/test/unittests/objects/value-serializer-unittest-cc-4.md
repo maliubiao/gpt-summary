@@ -159,7 +159,7 @@ if (deserializedValue && deserializedValue.module instanceof WebAssembly.Module)
 
 总而言之，这部分测试确保了 V8 的 `ValueSerializer` 能够安全且正确地处理 WebAssembly 模块的序列化和反序列化，这对于在不同 JavaScript 上下文之间传递 Wasm 模块至关重要。同时也覆盖了在资源受限情况下以及对错误对象的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/value-serializer-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/objects/value-serializer-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,8 +167,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 SObject> compiled =
         i::wasm::GetWasmEngine()->SyncCompile(
             i_isolate(), enabled_features, i::wasm::CompileTimeImports{},
@@ -479,8 +481,4 @@ TEST_F(ValueSerializerTest, InvalidLegacyFormatData) {
 
 }  // namespace
 }  // namespace v8
-
-"""
-
-
 ```

@@ -136,11 +136,13 @@ console.log(externalStr); // 'externalStr' 在 V8 内部很可能是外部字符
 
 `test-external-string-tracker.cc` 这个 C++ 测试文件验证了 V8 引擎在处理外部字符串时的内存管理和垃圾回收机制的正确性。虽然 JavaScript 开发者不能直接控制外部字符串的创建，但了解 V8 内部的这种优化机制有助于理解 JavaScript 引擎如何高效地处理大型字符串和与外部数据交互。这些测试确保了 V8 在使用外部字符串时能够正确地追踪内存使用情况，并在不再需要时释放相关资源，从而保证 JavaScript 程序的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-external-string-tracker.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -371,7 +373,4 @@ TEST(ExternalString_PromotedThinString) {
 }  // namespace v8
 
 #undef TEST_STR
-
-"""
-
 ```

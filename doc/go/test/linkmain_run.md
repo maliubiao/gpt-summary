@@ -162,15 +162,17 @@ This command would fail with a similar error to what the `runFail` calls in the 
 
 **In essence, `go/test/linkmain_run.go` is a test case that validates the core Go linking behavior: you can link `main` packages into executables, but you cannot directly link non-`main` packages.** It uses the `go tool compile` and `go tool link` commands with various options to set up and verify these scenarios.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/linkmain_run.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 //go:build !nacl && !js && !wasip1
@@ -255,9 +257,4 @@ func main() {
 	runFail("go tool link -importcfg", tmp("importcfg"), "-o", tmp("linkmain.exe"), tmp("linkmain1.a"))
 	cleanup()
 }
-
-"""
-
-
-
 ```

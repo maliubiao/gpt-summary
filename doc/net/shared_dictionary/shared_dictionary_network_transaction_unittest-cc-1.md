@@ -84,7 +84,7 @@ Based on these test cases, the primary function of `SharedDictionaryNetworkTrans
 * **Feature Flags (chrome://flags):** 检查与共享字典相关的 Feature Flags 是否已正确启用。
 * **服务器配置：**  确认服务器是否正确配置了共享字典相关的头信息，并且字典文件可访问且有效。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/shared_dictionary/shared_dictionary_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -92,8 +92,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 f.get(), buf->size(), read_callback.callback())),
               test::IsError(ERR_UNEXPECTED_CONTENT_DICTIONARY_HEADER));
 }
@@ -723,8 +725,4 @@ TEST_P(SharedDictionaryNetworkTransactionProtocolCheckTest, Basic) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

@@ -396,7 +396,7 @@ if (Process.platform === 'linux') {
 
 这些 Frida 脚本可以帮助你观察哪些进程正在使用 Netlink 进行 SCSI 通信，发送和接收了哪些消息，从而调试 Android Framework 或 NDK 如何到达这个底层的内核接口。 你可以根据 `scsi_nl_msgtype` 的值来判断具体的 SCSI Netlink 消息类型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/scsi/scsi_netlink.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -407,8 +407,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -448,7 +450,4 @@ struct scsi_nl_host_vendor_msg {
 #define SCSI_NL_VID_ID_MASK (~SCSI_NL_VID_TYPE_MASK)
 #define INIT_SCSI_NL_HDR(hdr,t,mtype,mlen) { (hdr)->version = SCSI_NL_VERSION; (hdr)->transport = t; (hdr)->magic = SCSI_NL_MAGIC; (hdr)->msgtype = mtype; (hdr)->msglen = mlen; }
 #endif
-
-"""
-
 ```

@@ -234,7 +234,7 @@ Frida 脚本会在 `catopen` 函数被调用时打印相关信息，包括传入
 
 总结一下，`bionic/tests/nl_types_test.cpp` 是一个基础的单元测试，用于验证 Bionic C 库中本地化消息处理函数的基本错误处理行为。了解这些函数的原理和使用方式对于开发支持多语言的 Android 应用至关重要。 通过 Frida 等工具，我们可以深入观察和调试这些底层库函数的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/nl_types_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -245,8 +245,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -280,7 +282,4 @@ TEST(nl_types, smoke) {
   ASSERT_EQ(-1, catclose(cat));
   ASSERT_ERRNO(EBADF);
 }
-
-"""
-
 ```

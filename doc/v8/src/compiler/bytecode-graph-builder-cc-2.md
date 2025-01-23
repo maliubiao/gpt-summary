@@ -141,7 +141,7 @@ Start with the overall functionality. Then address each constraint point by poin
 
 作为 `BytecodeGraphBuilder` 的一部分，这部分代码专注于将涉及 **变量访问（全局和局部/上下文）、属性操作以及基本对象和上下文创建** 的字节码指令转换为中间表示图。 它处理了从作用域加载和存储值、访问对象属性、以及建立程序执行所需的基本结构（如闭包和上下文）。 这部分是连接字节码指令和更底层的编译器 IR 之间的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/bytecode-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/bytecode-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -149,8 +149,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 adGlobal(name, feedback_slot_index, TypeofMode::kNotInside);
   environment()->BindAccumulator(node, Environment::kAttachFrameState);
 }
@@ -973,7 +975,4 @@ void BytecodeGraphBuilder::VisitCreateEmptyArrayLiteral() {
 
 void BytecodeGraphBuilder::VisitCreateArrayFromIterable() {
   Node* iterable = NewNode(javascript(
-"""
-
-
 ```

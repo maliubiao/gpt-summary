@@ -168,7 +168,7 @@ console.log(instance.getPrivate()); // 正确
 
 这些测试确保了 V8 的解析器能够准确地理解和处理这些特定的 JavaScript 语法特性，为后续的编译和执行阶段奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/parsing-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -176,8 +176,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第15部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
       i::Variable* loop_var = loop_block->LookupLocal(var_name);
       CHECK_NOT_NULL(loop_var);
@@ -403,8 +405,4 @@ TEST_F(ParsingTest, LogicalAssignmentDestructuringErrors) {
 }  // namespace test_parsing
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

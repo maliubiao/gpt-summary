@@ -120,15 +120,17 @@ Let's break down the thought process for analyzing the C++ test file `grammar_ma
 
 `grammar_marker_test.cc` 是一个至关重要的测试文件，用于验证 Blink 引擎中表示语法错误的 `GrammarMarker` 类的正确性。虽然用户不会直接与这个文件交互，但用户在网页上的文本输入操作会触发 Blink 引擎的语法检查功能，而 `GrammarMarker` 类正是这个功能的核心组成部分。开发者通过编写和运行这样的测试用例，可以确保浏览器的语法检查功能能够稳定可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/grammar_marker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ TEST_F(GrammarMarkerTest, ConstructorAndGetters) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

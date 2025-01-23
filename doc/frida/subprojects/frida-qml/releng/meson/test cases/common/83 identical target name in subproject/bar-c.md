@@ -110,7 +110,7 @@ I'm a main project bar.
 
 虽然 `bar.c` 的代码非常简单，但它在 Frida 项目的上下文中扮演着重要的角色，用于测试构建系统在处理特定情况下的行为。它与逆向工程的关系在于，确保 Frida 工具的基础设施能够可靠地构建和运行，从而支持逆向工程师的工作。它也间接涉及底层知识，因为 Frida 的运行依赖于操作系统和二进制执行环境。理解这种测试用例有助于开发者调试构建系统相关的问题，并确保 Frida 项目的稳定性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/83 identical target name in subproject/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,15 +118,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("I'm a main project bar.\n");
     return 0;
 }
-
-"""
-
 ```

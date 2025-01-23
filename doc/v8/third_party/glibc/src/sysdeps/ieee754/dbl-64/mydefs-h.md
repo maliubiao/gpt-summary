@@ -137,15 +137,17 @@ This systematic approach, breaking down the code into its individual components 
 
 这个文件是 V8 依赖的 glibc 库的一部分，专门用于处理 64 位双精度浮点数的 IEEE 754 标准相关的定义。虽然它本身不是 Torque 代码，但其定义的类型和宏可能会被 V8 的其他 C/C++ 代码使用，包括可能由 Torque 生成的代码。 它与 JavaScript 的关系在于，JavaScript 的 `Number` 类型通常就是以 IEEE 754 双精度浮点数的形式存储的，因此理解这种底层表示对于理解 JavaScript 的数值行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/mydefs.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/mydefs.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 /*
  * IBM Accurate Mathematical Library
  * Copyright (C) 2001-2022 Free Software Foundation, Inc.
@@ -180,7 +182,4 @@ typedef union { int4 i[2]; double x; double d; } mynumber;
 #define max(x, y)  (((y) > (x)) ? (y) : (x))
 #define min(x, y)  (((y) < (x)) ? (y) : (x))
 #endif
-
-"""
-
 ```

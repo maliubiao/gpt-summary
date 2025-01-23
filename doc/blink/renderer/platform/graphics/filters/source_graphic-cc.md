@@ -148,14 +148,16 @@ sourceGraphic->SetSourceRectForTests(gfx::Rect(20, 20, 60, 60));
 
 `blink/renderer/platform/graphics/filters/source_graphic.cc` 中定义的 `SourceGraphic` 类是 Blink 渲染引擎中处理图形过滤器的核心组件之一。它代表了被应用滤镜的元素的原始图像内容，为后续的滤镜操作提供基础。它与 CSS 滤镜和 SVG 滤镜密切相关，是实现 Web 页面复杂视觉效果的关键技术。 开发者通常不需要直接操作 `SourceGraphic` 对象，但理解其作用有助于理解浏览器如何处理滤镜效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/source_graphic.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Dirk Schulze <krit@webkit.org>
  * Copyright (C) 2013 Google Inc. All rights reserved.
@@ -204,7 +206,4 @@ StringBuilder& SourceGraphic::ExternalRepresentation(StringBuilder& ts,
 }
 
 }  // namespace blink
-
-"""
-
 ```

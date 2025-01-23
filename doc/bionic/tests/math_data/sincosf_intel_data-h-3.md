@@ -191,7 +191,7 @@ if (Process.arch === 'arm64') {
 
 总而言之，`sincosf_intel_data.handroid` 是 Android Bionic 库中至关重要的测试数据文件，它确保了 `sincosf` 函数在各种输入情况下的正确性，从而保障了依赖该函数的 Android 系统和应用程序的稳定运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sincosf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -203,10 +203,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-
-  { // Entry 747
+### 源代码
+```c
+{ // Entry 747
     -0x1.6a09ecdd2b784b699034ee8102670e27p-1,
     0x1.6a09dff2bbe3c9616a3576c55e773207p-1,
     0x1.2106cap4,
@@ -1087,8 +1088,4 @@ Prompt:
     -0.0f,
   },
 };
-
-"""
-
-
 ```

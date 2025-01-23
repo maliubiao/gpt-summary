@@ -133,7 +133,7 @@ Initially, one might focus too much on the code itself. The key insight is that 
 
 总而言之，`prog.c` 作为一个非常简单的程序，其意义在于作为 Frida 测试框架中的一个受控目标，用于验证 Frida 在处理与 `umask` 相关的操作时的正确性。它本身没有复杂的逻辑，但它所处的测试环境以及它所参与的测试流程，都与逆向工程、底层系统知识和用户常见的编程错误紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/26 install umask/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,12 +141,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **arv) {
     return 0;
 }
-
-"""
-
 ```

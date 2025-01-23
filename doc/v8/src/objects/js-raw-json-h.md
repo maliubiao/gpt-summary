@@ -131,15 +131,17 @@ console.log(parsedObject.name); // 输出 "Alice"
 
 `v8/src/objects/js-raw-json.h` 定义了 `JSRawJson` 类，它是 V8 引擎内部用于表示和存储原始 JSON 字符串的一种机制。它与 JavaScript 的 `JSON` 对象功能密切相关，并可能在引擎内部的 JSON 处理和优化中扮演重要角色。理解这类内部结构有助于更好地理解 JavaScript 引擎的工作原理和优化技巧。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-raw-json.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-raw-json.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ class JSRawJson : public TorqueGeneratedJSRawJson<JSRawJson, JSObject> {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_RAW_JSON_H_
-
-"""
-
 ```

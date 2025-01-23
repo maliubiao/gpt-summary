@@ -133,7 +133,7 @@ By following these steps, combining code analysis with domain knowledge about Fr
 
 `nonebackend.py` 是 Frida 构建系统中一个特殊用途的后端，它专注于处理安装和元数据，而跳过实际的编译和链接。这在逆向工程中，特别是分析已编译目标时非常有用。理解其功能和限制，可以帮助用户避免常见的使用错误，并在调试构建问题时提供线索。它虽然不直接涉及二进制操作或内核编程，但其应用场景与这些底层概念紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/nonebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2022 The Meson development team
 
@@ -169,7 +171,4 @@ class NoneBackend(Backend):
         mlog.log('Generating simple install-only backend')
         self.serialize_tests()
         self.create_install_data_files()
-
-"""
-
 ```

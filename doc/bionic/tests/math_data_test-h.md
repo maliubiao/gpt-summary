@@ -276,7 +276,7 @@ sys.stdin.read()
 
 这个 Frida 示例展示了如何拦截 Bionic 库中的数学函数调用，从而调试 Android Framework 或 NDK 如何一步步地使用这些底层库。通过 Hook 其他相关的函数，可以更详细地追踪调用链和数据流动。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data_test.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -287,8 +287,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -589,7 +591,4 @@ void DoMathDataTest(data_1_3_t<RT, T1, T2, T3> (&data)[N], RT f(T1, T2, T3)) {
                         data[i].expected, f(data[i].input1, data[i].input2, data[i].input3)) << "Failed on element " << i;
   }
 }
-
-"""
-
 ```

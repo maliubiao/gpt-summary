@@ -90,11 +90,13 @@ try {
 
 `regexp-error.cc` 文件在 V8 引擎中扮演着关键的角色，它集中管理了正则表达式相关的错误消息。当 JavaScript 代码执行正则表达式操作并遇到错误时，这个文件提供的错误消息字符串会被用来构建最终抛给 JavaScript 的错误对象，从而让开发者能够了解错误的具体原因。  它将底层的 C++ 错误信息桥接到了 JavaScript 的错误处理机制中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-error.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -117,7 +119,4 @@ const char* RegExpErrorString(RegExpError error) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

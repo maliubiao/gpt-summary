@@ -143,7 +143,7 @@ Based on this analysis, the next step is to organize the information into a clea
 * **这个文件是 Frida 单元测试的一部分。** 如果在 Frida 的使用中遇到与静态链接代码相关的问题，可以参考这个测试用例来理解 Frida 的预期行为和测试方法。
 * **这个文件可以作为学习 Frida 如何处理静态链接代码的起点。** 通过分析相关的 Frida 测试脚本，可以了解如何使用 Frida API 来 hook 静态链接的函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/66 static link/lib/func1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1()
 {
   return 1;
@@ -162,7 +164,4 @@ int func1b()
 {
   return 1;
 }
-
-"""
-
 ```

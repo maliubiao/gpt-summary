@@ -130,15 +130,17 @@ go/test/fixedbugs/issue63489a.go:17:2: file declares //go:build go1.21
 
 这个测试用例确保了 Go 编译器能够在这种情况下提供清晰的错误信息，帮助开发者快速定位问题所在。 它强调了 **`//go:build` 构建约束和实际使用的语言特性版本之间保持一致性的重要性。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue63489a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -lang=go1.22
 
 // Copyright 2023 The Go Authors. All rights reserved.
@@ -159,9 +161,4 @@ func f() {
 	for _ = range 10 { // ERROR "file declares //go:build go1.21"
 	}
 }
-
-"""
-
-
-
 ```

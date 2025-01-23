@@ -138,15 +138,17 @@ By following these steps, iterating, and refining, a comprehensive and accurate 
 
 总而言之，`insert_line_break_command.cc` 文件是 Chromium Blink 引擎中处理用户在可编辑区域按下 Enter 键的核心代码，它负责根据上下文精确地插入换行符，并维护文档的结构和样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/insert_line_break_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2006 Apple Computer, Inc.  All rights reserved.
  *
@@ -384,7 +386,4 @@ void InsertLineBreakCommand::DoApply(EditingState* editing_state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

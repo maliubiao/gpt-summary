@@ -178,15 +178,17 @@ template class EXPORT_TEMPLATE_DEFINE(MY_EXPORT) MyTemplate<int>;
 
 理解 `v8/src/base/export-template.h` 的关键在于理解 C++ 模板显式实例化和跨平台编译时导出声明的复杂性。这个头文件通过巧妙的宏技巧，为 V8 内部代码提供了一种简洁且可移植的方式来管理模板的导出。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/export-template.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/export-template.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -350,7 +352,4 @@ EXPORT_TEMPLATE_TEST(DEFAULT, __declspec(dllimport));
 #undef EXPORT_TEMPLATE_TEST_MSVC_HACK_MSVC_HACK
 
 #endif  // V8_BASE_EXPORT_TEMPLATE_H_
-
-"""
-
 ```

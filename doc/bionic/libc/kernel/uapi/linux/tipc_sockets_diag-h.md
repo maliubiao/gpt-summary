@@ -217,7 +217,7 @@ if (Process.platform === 'android') {
 
 请注意，上述 Frida 脚本是示例，实际调试时可能需要根据具体的 Android 版本和架构进行调整，并查找正确的常量定义（例如 `SOL_TIPC`, `TIPC_SOCK_DIAG_GET` 等）。你可能还需要查看相关的内核源代码来确定具体的选项值和结构体布局。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tipc_sockets_diag.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -228,8 +228,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -247,7 +249,4 @@ struct tipc_sock_diag_req {
   __u32 tidiag_states;
 };
 #endif
-
-"""
-
 ```

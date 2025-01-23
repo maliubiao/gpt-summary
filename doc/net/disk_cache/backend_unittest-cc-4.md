@@ -154,7 +154,7 @@ This section of `backend_unittest.cc` primarily focuses on **testing the functio
 
 总而言之，这部分 `net/disk_cache/backend_unittest.cc` 代码的主要功能是 **全面测试 `SimpleCacheBackendImpl` 的各项功能和鲁棒性**，确保其在各种场景下都能按照预期工作，并且能够有效地管理缓存数据，提升网络性能。这些测试覆盖了缓存的核心操作、错误处理、并发控制以及资源管理等方面，是保证 `SimpleCacheBackendImpl` 质量的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/backend_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _cache::SimpleBackendImpl* simple_cache =
       static_cast<disk_cache::SimpleBackendImpl*>(cache_.get());
   auto task_runner = base::ThreadPool::CreateSequencedTaskRunner(
@@ -1049,7 +1051,4 @@ TEST_F(DiskCacheBackendTest, SimpleDontLeakPostDoomCreate) {
       cache_->CreateEntry(kKey, net::LOWEST, base::DoNothing());
   ASSERT_EQ(net::OK, result.net_error());
   entry = result.Rel
-"""
-
-
 ```

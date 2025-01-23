@@ -101,15 +101,17 @@ Based on this initial part of the code, the `html_element.cc` file seems to be r
 
 `blink/renderer/core/html/html_element.cc` 的第一部分主要负责定义 `HTMLElement` 基类，并处理 HTML 元素的基础属性，特别是那些直接影响元素呈现的属性（呈现属性）和用于关联 JavaScript 事件处理函数的属性。它扮演着连接 HTML 结构、CSS 样式和 JavaScript 行为的关键角色。该部分的代码逻辑主要集中在属性的解析、验证和将 HTML 属性值转换为相应的 CSS 样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -781,8 +783,4 @@ AttributeTriggers* HTMLElement::TriggersForAttributeName(
        nullptr},
       {html_names::kAriaAutocompleteAttr,
        WebFeature::kARIAAutocompleteAttribute, kNoEvent, nullptr},
-
-"""
-
-
 ```

@@ -118,7 +118,7 @@ const valueOfX = obj.x;
 
 这部分 `objects-inl.h` 代码的核心功能是为 `HeapObject` 提供**底层的、高性能的内联方法来直接操作其内存布局**，包括读取和写入各种类型的字段，处理指针压缩和沙箱环境，以及管理对象元数据（如 Map）。这些方法是 V8 引擎实现 JavaScript 对象语义的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/objects-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -126,8 +126,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 e_t offset, PtrComprCageBase cage_base) const {
   return i::ReadSandboxedPointerField(field_address(offset), cage_base);
 }
@@ -970,7 +972,4 @@ Tagged<Object> Object::GetSimpleHash(Tagged<Object> object) {
     uint32_t hash;
     // Check range before conversion to avoid undefined behavior.
     if (num >= kMinInt &&
-"""
-
-
 ```

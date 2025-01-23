@@ -103,11 +103,13 @@ console.log(outerFunction(3)); // 输出 38
 
 `frame-constants-ia32.cc` 文件是 V8 引擎针对 IA-32 架构进行底层实现的关键部分。它定义了 JavaScript 代码执行时栈帧的结构和关键寄存器的使用方式，这直接影响了函数调用、变量查找、作用域管理等核心 JavaScript 功能的实现。虽然开发者通常不需要直接接触这些底层细节，但理解它们有助于深入了解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/ia32/frame-constants-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ intptr_t MaglevFrame::StackGuardFrameSize(int register_input_count) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_IA32
-
-"""
-
 ```

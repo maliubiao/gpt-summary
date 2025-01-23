@@ -226,15 +226,17 @@ foo();
 
 总而言之，`v8/src/execution/arm64/pointer-auth-arm64.cc` 文件是 V8 在 ARM64 模拟器环境下实现指针认证功能的核心代码，它通过模拟 PAC 的计算和验证过程，增强了 V8 的安全性，防止恶意代码篡改关键的程序执行路径。虽然 JavaScript 开发者不会直接操作这些代码，但这些底层的安全机制对于确保 JavaScript 代码的安全执行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/pointer-auth-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm64/pointer-auth-arm64.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -507,7 +509,4 @@ uint64_t Simulator::StripPAC(uint64_t ptr, PointerType type) {
 }  // namespace v8
 
 #endif  // USE_SIMULATOR
-
-"""
-
 ```

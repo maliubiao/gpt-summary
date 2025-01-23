@@ -96,15 +96,17 @@ Here's a breakdown of the thinking process to achieve this:
 
 总而言之，`WebFrameWidgetImpl.cc` 的第 4 部分主要负责 **管理 Web 框架 (Frame) 的渲染、布局、用户交互以及与浏览器 Compositor 的通信**。它处理了诸如滚动、焦点、视口变化、输入事件和合成等关键功能，是 Blink 引擎中连接渲染引擎和浏览器进程的重要组成部分。它通过处理各种事件和状态变化，确保网页能够正确地呈现并响应用户的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_widget_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 havior::kInstant);
   params->for_focused_editable = mojom::blink::FocusedEditableParams::New();
 
@@ -1025,7 +1027,4 @@ void WebFrameWidgetImpl::RequestAnimationAfterDelay(
 }
 
 void WebFrameWidgetImpl::SetRootLayer(scoped_refptr<cc::Layer>
-"""
-
-
 ```

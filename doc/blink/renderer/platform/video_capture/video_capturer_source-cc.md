@@ -117,14 +117,16 @@ navigator.mediaDevices.getUserMedia({ video: true })
 
 尽管 `video_capturer_source.cc` 的代码很短，但它定义了一个关键的抽象接口，用于管理各种视频捕获源。 它在 Chromium 的媒体架构中扮演着核心角色，连接了底层的硬件设备和上层的 Web 技术（JavaScript 和 HTML）。 理解它的功能有助于理解浏览器如何实现视频捕获功能，并有助于诊断与视频相关的 Web 应用开发问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/video_capture/video_capturer_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ media::VideoCaptureFeedbackCB VideoCapturerSource::GetFeedbackCallback() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

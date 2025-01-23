@@ -152,14 +152,16 @@ const className = element.className;
 
 `v8_value_cache.cc` 是 Blink 引擎中一个关键的性能优化模块，它通过缓存 Blink 内部字符串到 V8 外部字符串的映射，有效地减少了 V8 字符串对象的创建开销和内存占用，从而提升了 Web 页面的渲染性能。它与 JavaScript 的交互最为直接，同时也间接影响着 HTML 和 CSS 的处理效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/v8_value_cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -392,7 +394,4 @@ v8::Local<v8::String> StringCache::CreateStringAndInsertIntoCache(
 }
 
 }  // namespace blink
-
-"""
-
 ```

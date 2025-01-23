@@ -186,7 +186,7 @@ Interceptor.attach(Module.findExportByName(null, "somefunc"), {
 
 通过分析这个简单的 `main.c` 文件以及它在 Frida 测试环境中的作用，用户可以更好地理解 Frida 如何处理符号查找、头文件包含以及动态链接等问题，从而解决他们在实际项目开发中遇到的类似挑战。 这个文件作为一个测试用例，旨在验证 Frida 在特定场景下的行为是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/130 include order/sub4/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Use the <> include notation to force searching in include directories */
 #include <main.h>
 
@@ -204,7 +206,4 @@ int main(void) {
     return 0;
   return 1;
 }
-
-"""
-
 ```

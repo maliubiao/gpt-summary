@@ -102,7 +102,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 在调试过程中，如果发现在录制过程中出现问题，例如编码失败、数据丢失或生成的媒体文件损坏，开发人员可能会查看 `media_recorder_handler_unittest.cc` 中的测试用例，以了解 `MediaRecorderHandler` 在各种情况下的预期行为，并以此为依据进行代码分析和问题定位。断点可以设置在 `MediaRecorderHandler` 的关键方法中，例如 `Initialize`, `Start`, `OnVideoFrameForTesting`, `OnEncodedVideo` 等，以跟踪数据的处理流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediarecorder/media_recorder_handler_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1002,7 +1004,4 @@ TEST_P(MediaRecorderHandlerTest, PauseRecorderForVideo) {
   }
 
   EXPECT_TRUE(media_recorder_hand
-"""
-
-
 ```

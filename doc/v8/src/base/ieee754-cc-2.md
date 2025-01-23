@@ -145,7 +145,7 @@ The user wants a summary of the functionality of the provided C++ code snippet, 
 
 这些函数都遵循 IEEE 754 标准，并处理了各种特殊情况，例如 NaN、无穷大和零，以确保数值计算的准确性和可靠性。它们直接支持了 JavaScript 中 `Math` 对象的相应功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/ieee754.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/ieee754.cc以.tq结尾，那它是个v8 torque源代码，
@@ -153,8 +153,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 i is always exact for |n| < 2000.
  *
  * Special cases:
@@ -1104,7 +1106,4 @@ double pow(double x, double y) {
       return s * tiny * tiny;                  /* underflow */
     } else {
       if (
-"""
-
-
 ```

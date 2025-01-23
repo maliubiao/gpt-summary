@@ -135,15 +135,17 @@ document.getElementById('myPara').textContent = 'Hi World';
 
 此部分 `inline_node.cc` 的核心功能是 **在文本内容发生变化时，高效地维护和更新内联文本的布局信息 (主要是 `InlineItem`)，并对文本进行精细的分段和塑形，以确保正确的渲染结果并优化性能**。它处理了文本修改、偏移量映射、内联元素的收集、文本分段以及最终的文本塑形等关键步骤，并且特别关注了复杂文本的处理和性能优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 . inserting "A" before "V", and joining in Arabic,
     // we should not reuse first glyph.
     // See http://crbug.com/1199331
@@ -957,8 +959,4 @@ void InlineNode::ShapeTextForFirstLineIfNeeded(InlineNodeData* data) const {
 
   data->first_line_items_ = first_line_items;
   // The score line breaker can't apply different styles by different line
- 
-"""
-
-
 ```

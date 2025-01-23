@@ -65,7 +65,7 @@ Strategizing complete. I will now generate the response by addressing each of th
 
 `bionic/tests/dlext_test.cpp` 通过一系列细致的单元测试，确保了 Android Bionic 库中关于动态链接扩展和命名空间管理功能的正确性和可靠性，这对于保障 Android 系统的安全性和稳定性至关重要。 这些测试覆盖了各种场景，包括不同类型的命名空间创建、命名空间之间的链接、库的加载和卸载，以及错误处理等，为 Android 平台的动态链接机制提供了强有力的保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/dlext_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -77,9 +77,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-                                   (GetTestLibRoot() + "/private_namespace_libs").c_str(),
+### 源代码
+```cpp
+(GetTestLibRoot() + "/private_namespace_libs").c_str(),
                                    ANDROID_NAMESPACE_TYPE_ISOLATED,
                                    (GetTestLibRoot() + "/public_namespace_libs").c_str(),
                                    nullptr);
@@ -627,8 +629,4 @@ TEST(dlext, dlopen_handle_value_app_compat) {
           << "dlopen should return valid pointer";
   dlclose(handle);
 }
-
-"""
-
-
 ```

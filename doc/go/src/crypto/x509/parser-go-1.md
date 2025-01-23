@@ -113,7 +113,7 @@ biBWaWV3MRMwEQYDVQQKEwpHb29nbGUgSW5jLjETMBEGA1UECxMKQ2hyb21lIENF
 
 总之，这段代码的核心职责是将 X.509 证书和 CRL 的二进制表示转换为 Go 语言中的结构化数据，使其可以被程序进一步处理和验证。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/parser.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -122,8 +122,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 make(map[string]bool)
 				if !extensions.ReadASN1(&extensions, cryptobyte_asn1.SEQUENCE) {
 					return nil, errors.New("x509: malformed extensions")
@@ -379,10 +381,4 @@ func ParseRevocationList(der []byte) (*RevocationList, error) {
 
 	return rl, nil
 }
-
-"""
-
-
-
-
 ```

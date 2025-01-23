@@ -245,7 +245,7 @@ if (Process.arch === 'arm64') {
 
 这个 Frida 脚本可以帮助开发者在运行时观察堆标记级别的设置情况，从而更好地理解系统的内存管理行为。可以通过类似的方法 hook 其他相关的函数，例如 `prctl` 调用，来深入分析堆标记的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/heap_tagging.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -256,8 +256,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -501,7 +503,4 @@ extern "C" __LIBC_HIDDEN__ __attribute__((no_sanitize("memtag"))) void memtag_ha
   __hwasan_handle_longjmp(sp_dst);
 #endif  // __has_feature(hwaddress_sanitizer)
 }
-
-"""
-
 ```

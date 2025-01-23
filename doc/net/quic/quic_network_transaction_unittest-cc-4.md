@@ -101,7 +101,7 @@ This part of the test suite focuses on validating the behavior of `QuicNetworkTr
 
 这部分测试主要集中在 **验证 `HttpNetworkTransaction` 在 QUIC 连接建立后遇到各种错误时的健壮性和回退机制**。它确保在 QUIC 连接不可用或发生错误时，网络栈能够安全地回退到 TCP，保证网络请求的最终完成，并正确维护 QUIC 的状态，避免未来重复尝试使用失败的 QUIC 连接。这对于保证用户体验和网络连接的稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 hout racing an HTTP connection, we need the host resolution to happen
   // synchronously.  Of course, even though QUIC *could* perform a 0-RTT
   // connection to the the server, in this test we require confirmation
@@ -865,7 +867,4 @@ TEST_P(QuicNetworkTransactionTest,
       base::StringPrintf("Alt-Svc: quic=\":443\"; v=\"%u\"\r\n\r\n",
                          version_.transport_version - 1);
   MockRead http_reads[] = {
-"""
-
-
 ```

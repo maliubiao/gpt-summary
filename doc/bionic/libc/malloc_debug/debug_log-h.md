@@ -324,7 +324,7 @@ except KeyboardInterrupt:
 
 通过这些 Frida hook 示例，你可以在运行时动态地观察 `malloc_debug` 组件输出的日志信息，这对于调试内存相关的问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/debug_log.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -335,8 +335,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009 The Android Open Source Project
  * All rights reserved.
@@ -379,7 +381,4 @@ Prompt:
 #define error_log_string(str) async_safe_write_log(ANDROID_LOG_ERROR, "malloc_debug", (str))
 #define info_log(format, ...) \
   async_safe_format_log(ANDROID_LOG_INFO, "malloc_debug", (format), ##__VA_ARGS__)
-
-"""
-
 ```

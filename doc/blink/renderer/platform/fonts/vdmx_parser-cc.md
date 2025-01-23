@@ -127,14 +127,16 @@ By following these steps, we can systematically analyze the provided code snippe
 
 总而言之，`blink/renderer/platform/fonts/vdmx_parser.cc` 是 Blink 引擎中一个关键的组成部分，它负责解析字体文件中的 VDMX 表，从而确保在 Windows 平台上能够正确渲染文本，并与系统字体度量保持一致。虽然开发者通常不会直接调用这个文件中的代码，但它的功能对网页的最终呈现效果有着重要的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/vdmx_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2008, 2009, Google Inc. All rights reserved.
  *
@@ -307,7 +309,4 @@ bool ParseVDMX(int* y_max,
 }
 
 }  // namespace blink
-
-"""
-
 ```

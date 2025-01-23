@@ -208,15 +208,17 @@ By following this structured approach, iteratively refining understanding, and c
 
 `blink/renderer/core/clipboard/data_transfer_item_list.cc` 是 Blink 引擎中实现 `DataTransferItemList` Web API 的关键部分，负责管理拖放和剪贴板操作中的数据项。理解其功能和与 JavaScript 的交互对于调试与拖放和剪贴板相关的 Web 应用问题至关重要。开发者需要注意权限控制，以及在合适的事件处理函数中访问和操作 `DataTransferItemList`。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/clipboard/data_transfer_item_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007 Apple Inc.  All rights reserved.
  * Copyright (C) 2008, 2009 Google Inc.
@@ -319,7 +321,4 @@ void DataTransferItemList::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

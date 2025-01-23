@@ -104,11 +104,13 @@ Add r0, r1, r2
 
 `bytecode-decoder.cc` 是 V8 引擎中至关重要的组成部分，它负责将底层的字节码指令转换成更易于理解的形式，这对于调试 JavaScript 引擎、分析代码性能以及理解 JavaScript 的执行机制至关重要。它架起了 JavaScript 代码和底层执行机制之间的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-decoder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -335,7 +337,4 @@ std::ostream& BytecodeDecoder::Decode(std::ostream& os,
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

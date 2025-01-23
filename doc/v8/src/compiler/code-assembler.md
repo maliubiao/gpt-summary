@@ -85,12 +85,14 @@ Bind(&if_not_smi);
 
 `CodeAssembler` 是 V8 编译器中用于生成高效机器码的关键组件。它通过提供一个高级且类型安全的接口，简化了机器码的生成过程，并与 TurboFan 优化编译器紧密配合，最终提升了 JavaScript 代码的执行效率。虽然 JavaScript 开发者不能直接使用它，但 `CodeAssembler` 的工作直接影响着 JavaScript 代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/code-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1825,7 +1827,4 @@ CodeAssemblerLabel::CodeAssemblerLabel(CodeAssembler* assembler,
 }
 
 CodeAssemblerLabel::~CodeAssemblerLabel() { label_->~R
-"""
-
-
 ```

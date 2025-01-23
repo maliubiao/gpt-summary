@@ -89,7 +89,7 @@ To address this, I will:
 
 总而言之，`MediaRecorderHandler` 充当了 JavaScript `MediaRecorder` API 和底层媒体编码/封装模块之间的桥梁，确保媒体数据能够被正确地捕获、编码和封装。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediarecorder/media_recorder_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -97,8 +97,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 changing state to "inactive", which contradicts
     // https://www.w3.org/TR/mediastream-recording/#dom-mediarecorder-start
     // step 14.4.
@@ -334,8 +336,4 @@ void MediaRecorderHandler::OnVideoEncodingError() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

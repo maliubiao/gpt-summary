@@ -146,7 +146,7 @@ By following this structured approach, the detailed and comprehensive answer pro
 
 总而言之，`coarrays.py` 文件在 Frida 的构建系统中扮演着重要的角色，它负责处理 Fortran Coarray 依赖，确保在构建过程中能够找到合适的库并正确配置编译选项，从而支持 Frida 中可能使用 Coarray 特性的组件。理解这个文件的功能有助于理解 Frida 的构建过程，并为解决与 Coarray 相关的构建问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/dependencies/coarrays.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2019 The Meson development team
 
@@ -236,7 +238,4 @@ class CoarrayDependency(SystemDependency):
         elif cid == 'nagfor':
             # NAG doesn't require any special arguments for Coarray
             self.is_found = True
-
-"""
-
 ```

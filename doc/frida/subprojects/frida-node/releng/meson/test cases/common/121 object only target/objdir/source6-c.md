@@ -149,7 +149,7 @@ This step-by-step approach allows for a systematic analysis of the provided code
 
 总而言之，尽管 `source6.c` 中的函数非常简单，但它在 Frida 的测试框架中扮演着一定的角色，并且可以作为理解动态插桩和逆向工程概念的入门示例。其所在的目录结构提供了丰富的上下文信息，有助于理解其用途和相关的开发、测试流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/121 object only target/objdir/source6.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,12 +157,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func6_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

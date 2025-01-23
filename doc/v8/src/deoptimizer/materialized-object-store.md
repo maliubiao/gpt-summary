@@ -124,11 +124,13 @@ add("hello", "world");
 
 `MaterializedObjectStore` 是 V8 引擎中用于存储和管理与函数调用栈帧相关的物化对象的关键组件。它在反优化过程中扮演着重要的角色，帮助 V8 恢复程序执行状态，保证在优化假设失效时，程序能够正确回退到未优化的状态继续执行。虽然 JavaScript 开发者不能直接操作它，但理解其功能有助于理解 V8 的优化和反优化机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/materialized-object-store.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ Handle<FixedArray> MaterializedObjectStore::EnsureStackEntries(int length) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -75,12 +75,14 @@ const internedStr2 = "world";
 
 总而言之，`v8/test/cctest/test-shared-strings.cc` 是 V8 引擎为了确保其内部优化机制 (共享字符串) 正确性和稳定性的关键测试文件。 这些优化虽然对 JavaScript 开发者是透明的，但对于构建高性能的 JavaScript 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-shared-strings.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1800,7 +1802,4 @@ void CheckStringAndResource(
       } else {
         // Check that exactly one resource is alive.
         expected_ali
-"""
-
-
 ```

@@ -133,14 +133,16 @@ My thought process to analyze the C++ test file goes like this:
 
 总之，`idle_deadline_test.cc` 文件通过单元测试确保了 `IdleDeadline` 类的正确性，这对于浏览器正确实现和优化 JavaScript 的 `requestIdleCallback` API 至关重要，最终影响到网页的性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scheduler/idle_deadline_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ TEST_F(IdleDeadlineTest, YieldForHighPriorityWork) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -172,15 +172,17 @@ Let's say the preloading mechanism isn't working correctly. A developer might in
 
 By understanding the functionality of `trie_bit_buffer.cc` and how it fits into the larger picture of data compression and network communication, developers can effectively debug issues related to these processes within the Chromium browser.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/huffman_trie/trie/trie_bit_buffer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -344,7 +346,4 @@ void TrieBitBuffer::Flush() {
 }
 
 }  // namespace net::huffman_trie
-
-"""
-
 ```

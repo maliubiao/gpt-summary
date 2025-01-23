@@ -250,7 +250,7 @@ while (j) { let foo; foo = j }
 
 总的来说，这个代码片段（第6部分）集中测试了 V8 解析器在处理以下关键 JavaScript 语法结构时的正确性：**循环语句中的变量赋值分析、asm.js 模块识别、`use strict`/`use asm` 指令计数、Unicode 行分隔符处理、箭头函数语法、`super` 关键字用法以及动态 `import()` 表达式和 import 属性的解析。** 它旨在确保解析器能够正确识别合法的 JavaScript 代码，并能够准确地报告非法的语法错误。由于是单元测试的一部分，它着重于隔离地测试这些特定的语法特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/parsing-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -258,10 +258,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共15部分，请归纳一下它的功能
+```
 
-"""
-
-      {true, "while (j) { var [foo] = [j] }", top},
+### 源代码
+```cpp
+{true, "while (j) { var [foo] = [j] }", top},
       {true, "while (j) { var [[foo]=[42]] = [] }", top},
       {true, "while (j) { var foo; foo = j }", top},
       {true, "while (j) { var foo; [foo] = [j] }", top},
@@ -1228,7 +1229,4 @@ TEST_F(ParsingTest, ImportAttributesParsingErrors) {
 
     i::DirectHandle<i::Script> script = factory->NewScript(source);
     i::UnoptimizedCompileState c
-"""
-
-
 ```

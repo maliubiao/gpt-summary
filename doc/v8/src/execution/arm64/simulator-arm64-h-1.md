@@ -172,7 +172,7 @@ console.log(sum);
 
 总而言之，这部分 `simulator-arm64.h` 代码是 V8 引擎在 ARM64 架构上模拟执行 JavaScript 代码的关键组成部分，它提供了指令级的模拟能力，并包含了丰富的调试和分析工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-arm64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm64/simulator-arm64.h以.tq结尾，那它是个v8 torque源代码，
@@ -180,8 +180,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 e if (pc_->IsBti()) {
         CheckBTypeForBti();
       } else if (!pc_->IsException()) {
@@ -998,8 +1000,4 @@ e if (pc_->IsBti()) {
                          int index);
   LogicVRegister sqrdmulh(VectorFormat vform, LogicVRegister dst,
                           const LogicVRegister& src1,
-                      
-"""
-
-
 ```

@@ -161,15 +161,17 @@ go vet -checks=stdmethods ./...
 
 总而言之，`stdmethods` 分析器是一个非常有用的工具，它可以帮助开发者避免因方法签名错误而导致的接口实现问题，提高代码的健壮性和可靠性。理解其工作原理和正确解读其报告对于有效使用该分析器至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/stdmethods/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -200,9 +202,4 @@ Prompt:
 //	UnmarshalJSON UnreadByte UnreadRune WriteByte
 //	WriteTo
 package stdmethods
-
-"""
-
-
-
 ```

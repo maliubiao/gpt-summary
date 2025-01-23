@@ -247,7 +247,7 @@ if (Process.arch === 'arm64') {
 
 这段 `regcomp.c` 的代码片段专注于正则表达式编译过程中的 **字符类和转义字符的处理**。它包含了一系列静态函数，用于解析和理解 `[]` 字符类中的各种元素（如具名字符、排序元素），判断字符是否需要转义，并生成相应的内部表示代码。这些功能是构建完整正则表达式编译器的关键组成部分，为后续的匹配过程奠定了基础。它处理了与国际化、大小写敏感性以及字符的各种属性相关的复杂性，确保正则表达式能够正确地匹配各种文本模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/lib/libc/regex/regcomp.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -259,8 +259,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 - p_b_symbol - parse a character or [..]ed multicharacter collating symbol
  == static wint_t p_b_symbol(struct parse *p);
  */
@@ -1343,8 +1345,4 @@ pluscount(struct parse *p, struct re_guts *g)
 		g->iflags |= BAD;
 	return(maxnest);
 }
-
-"""
-
-
 ```

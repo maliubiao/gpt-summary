@@ -149,7 +149,7 @@ document = { URL: "abcdefgh" };
 
 这部分代码主要关注 **V8 堆分析器如何处理和表示快照中的各种对象和属性，包括 native 对象、全局对象、访问器属性、隐藏属性、符号以及私有类字段。** 它测试了获取 native 对象 ID 的机制，以及快照的删除功能。 核心目标是确保堆分析器能够准确地反映 V8 堆的状态，为开发者提供可靠的内存分析工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-heap-profiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-heap-profiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -157,8 +157,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e* isolate_;
   v8::EmbedderGraph* graph_;
   v8::EmbedderGraph::Node* classid_to_group_[3];
@@ -972,7 +974,4 @@ TEST(JSGeneratorObject) {
 bool HasWeakEdge(const v8::HeapGraphNode* node) {
   for (int i = 0; i < node->GetChildrenCount(); ++i) {
     const v8::HeapGraphEdge* handle_edge = n
-"""
-
-
 ```

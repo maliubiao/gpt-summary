@@ -274,7 +274,7 @@ Interceptor.attach(Module.findExportByName("libiptc.so", "iptc_add_rule"), {
 
 通过以上分析，我们可以了解到 `bionic/libc/kernel/uapi/linux/netfilter/xt_multiport.handroid` 文件定义了 Android 系统中用于配置网络过滤规则的关键数据结构，它在网络安全和控制方面扮演着重要的角色。 理解其功能和使用方式有助于我们更好地理解 Android 系统的网络机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_multiport.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -285,8 +285,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -315,7 +317,4 @@ struct xt_multiport_v1 {
   __u8 invert;
 };
 #endif
-
-"""
-
 ```

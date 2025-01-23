@@ -109,7 +109,7 @@ Let's break down the code:
 
 作为整个测试文件（共34部分）的第10部分，这段代码的功能是 **深入测试 `HttpNetworkTransaction` 在复杂的HTTPS代理场景下，特别是在需要客户端证书认证时的错误处理和健壮性**。  它着重于确保在多层代理和不同的证书请求时机下，`HttpNetworkTransaction` 不会崩溃，并且能够正确地返回相应的错误信息。  这一部分可能紧随初始化和基本连接测试之后，开始涉及更复杂的代理和安全相关的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ame endpoint_connect(spdy_util_.ConstructSpdyConnect(
       /*extra_headers=*/nullptr, 0, 1,
       HttpProxyConnectJob::kH2QuicTunnelPriority,
@@ -926,7 +928,4 @@ TEST_P(HttpNetworkTransactionTest, HttpsNestedProxySpdyConnectHttps) {
 
   // Since this request and response are sent over the tunnel established
   // previously, from a socket-perspective these need to be wrapped as data
-"""
-
-
 ```

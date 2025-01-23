@@ -170,15 +170,17 @@ fetch('module.wasm')
 
 总而言之，`v8/src/wasm/module-decoder.h` 是 V8 中处理 WebAssembly 模块解码的核心组件，它负责将 WebAssembly 字节码转化为 V8 可以理解和执行的内部表示。理解它的功能对于深入了解 V8 如何支持 WebAssembly 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-decoder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-decoder.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -378,7 +380,4 @@ class ModuleDecoder {
 }  // namespace v8
 
 #endif  // V8_WASM_MODULE_DECODER_H_
-
-"""
-
 ```

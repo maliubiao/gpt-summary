@@ -138,7 +138,7 @@ go generate go/src/internal/types/errors/codes.go
 
 `go/src/internal/types/errors/codes.go` 文件的主要功能是定义了一系列常量，作为 Go 语言类型检查过程中各种错误的唯一标识符。它通过定义 `Code` 类型和相关的常量，为错误处理、错误分类和与其他工具的集成提供了基础。配合 `stringer` 工具，可以方便地将这些错误代码转换为字符串表示，提高可读性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/types/errors/codes.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -147,8 +147,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1565,9 +1567,4 @@ const (
 	//  import "unsafe"
 	//
 	//  var x in
-"""
-
-
-
-
 ```

@@ -114,7 +114,7 @@ let longLivedObject = {}; // 一个长期存活的对象
 
 这段 `v8/src/heap/mark-compact.cc` 代码片段是 Mark-Compact 垃圾回收器完成阶段的关键组成部分，负责执行对象迁移、清理各种类型的引用、调整堆空间大小以及启动后续的清扫工作。它确保了 JavaScript 程序的内存能够被有效管理和回收，防止内存泄漏，并保证程序的稳定性和性能。 该部分涉及到垃圾回收过程中的多个重要环节，包括对象标记的最终处理、不同内存区域的清理和调整，以及为后续的清扫阶段做准备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/mark-compact.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/mark-compact.cc以.tq结尾，那它是个v8 torque源代码，
@@ -122,8 +122,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Heap::ResizeNewSpaceMode::kNone, resize_new_space_);
       resize_new_space_ = heap_->ShouldResizeNewSpace();
     }
@@ -967,8 +969,5 @@ class EvacuateNewSpaceVisitor final : public EvacuateVisitorBase {
       allocation = AllocateInOldSpace(size, alignment);
       space_allocated_in = OLD_SPACE;
     }
-    bool ok 
-"""
-
-
+    bool ok
 ```

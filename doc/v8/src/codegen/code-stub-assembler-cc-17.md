@@ -191,7 +191,7 @@ console.log(null === undefined); // false (类型不同)
 
 作为整个 `code-stub-assembler.cc` 的一部分，这段代码是负责实现 JavaScript 中**比较运算符**的核心逻辑。它处理了各种数据类型的比较，包括类型转换、优化和特殊情况处理（如 NaN）。它利用了 `CodeStubAssembler` 提供的低级指令来高效地生成执行比较操作的机器码。  在整个编译流程中，这部分代码确保了 JavaScript 比较运算符的行为符合语言规范，并且尽可能地快速执行。它也是类型反馈优化的重要组成部分，通过收集类型信息来进一步加速后续的比较操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -199,9 +199,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第18部分，共23部分，请归纳一下它的功能
+```
 
-"""
- Number) operation, as the
+### 源代码
+```cpp
+Number) operation, as the
           // ToNumeric(left) will by itself already invoke ToPrimitive with
           // a Number hint.
           var_left = CallBuiltin(Builtin::kNonNumberToNumeric, context(), left);
@@ -1097,7 +1099,4 @@ TNode<Boolean> CodeStubAssembler::StrictEqual(
   //           return %StringEqual(lhs, rhs);
   //         } else {
   /
-"""
-
-
 ```

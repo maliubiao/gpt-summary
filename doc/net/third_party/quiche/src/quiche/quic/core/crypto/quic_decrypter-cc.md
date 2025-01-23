@@ -144,15 +144,17 @@ Let's break down the thought process for analyzing the provided C++ code.
 
 总之，`quic_decrypter.cc` 是 QUIC 协议中处理数据包解密的关键组件，确保了通信的安全性。虽然 JavaScript 代码本身不直接操作这个文件，但它依赖于浏览器底层网络栈（包括这里的 C++ 代码）来建立安全的 QUIC 连接。理解这个文件的功能有助于调试 QUIC 相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/quic_decrypter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ void QuicDecrypter::DiversifyPreliminaryKey(absl::string_view preliminary_key,
 }
 
 }  // namespace quic
-
-"""
-
 ```

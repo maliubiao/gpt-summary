@@ -183,15 +183,17 @@ let result = add(5, 3);
 
 `blink/renderer/bindings/core/v8/script_function.cc` 是 Blink 引擎中连接 JavaScript 函数和 C++ 代码的关键部分。它负责 JavaScript 函数的创建、执行和生命周期管理，确保了 JavaScript 代码能够在浏览器环境中正确运行，并与浏览器提供的各种功能进行交互。虽然普通用户不会直接接触到这个文件，但理解它的作用对于理解浏览器引擎的工作原理以及调试与 JavaScript 相关的 bug 是非常有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/script_function.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -293,7 +295,4 @@ v8::Local<v8::Function> ScriptFunction::ToV8Function(
 }
 
 }  // namespace blink
-
-"""
-
 ```

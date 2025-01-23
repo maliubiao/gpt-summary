@@ -129,7 +129,7 @@ console.log(result); // 输出: Float32x4[5, 10, 15, 20]
 
 这第4部分主要集中在测试 Turboshaft 指令选择器在 ARM64 架构上对于 **SIMD 浮点数乘法（特别是与重复通道的乘法）、特定的 SIMD shuffle 操作以及整数乘法与特定形式的立即数的优化** 的能力。它确保了编译器能够为这些场景选择最有效率的 ARM64 指令。此外，它也开始覆盖了一些类型转换相关的指令选择测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/arm64/turboshaft-instruction-selector-arm64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/arm64/turboshaft-instruction-selector-arm64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -137,8 +137,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
   int32_t lane;
   int shuffle_input_index;
@@ -989,7 +991,4 @@ TEST_F(TurboshaftInstructionSelectorTest, ChangeInt32ToInt64AfterLoad) {
     m.Return(m.ChangeInt32ToInt64(
         m.Load(MachineType::Uint8(), m.Parameter(0), m.Parameter(1))));
     Stream s = m.Build()
-"""
-
-
 ```

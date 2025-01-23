@@ -125,14 +125,16 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 `drawing_display_item.cc` 中定义的 `DrawingDisplayItem` 是 Blink 渲染引擎中一个核心的组件，它负责存储和管理用于绘制网页元素的绘图指令。虽然开发者不会直接操作它，但理解它的功能和原理有助于理解浏览器如何渲染网页，并有助于优化前端性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/drawing_display_item.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -455,7 +457,4 @@ gfx::Rect DrawingDisplayItem::TightenVisualRect(const gfx::Rect& visual_rect,
 }
 
 }  // namespace blink
-
-"""
-
 ```

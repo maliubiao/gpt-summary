@@ -204,7 +204,7 @@ def set_file_system_breakpoints():
 
 总而言之，`frida/build/subprojects/frida-tools/agents/fs/fs_agent.js` 这个 Frida agent 提供了一个**基于流的、抽象的文件系统访问接口**，允许 Frida 用户在运行时观察和操作目标进程的文件系统。它通过创建双向数据流和使用 Frida 的底层插桩能力，使得用户可以方便地进行文件的读取、写入和管理，而无需直接处理复杂的系统调用细节。这个 agent 采用请求/响应模式来处理控制消息和数据传输，并通过事件机制来通知新的流创建。其核心目标是提供一个高层次、易于使用的文件系统交互方式，作为 Frida 动态插桩工具的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/build/subprojects/frida-tools/agents/fs/fs_agent.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -214,12 +214,11 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第12部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 EAAYlD,GACpB0C,QACAnD,KAAK2D,WAAaA,EAClB3D,KAAKS,SAAWA,EAChBT,KAAK2D,WAAWvB,SAAS,UAAW,CAAE3B,SAAUT,KAAKS,UAAY,MACjET,KAAK4D,KAAK,SAAU5D,KAAK6D,UAAUC,KAAK9D,MAC5C,CACA+D,OAAOP,EAAOQ,EAAUC,GACpBjE,KAAK2D,WAAWvB,SAAS,SAAU,CAAE3B,SAAUT,KAAKS,UAAY+C,GAC3Db,MAAKuB,GAAKD,MACVpB,OAAMC,GAASmB,EAASnB,IACjC,CACAe,YACI7D,KAAK2D,WAAWvB,SAAS,UAAW,CAAE3B,SAAUT,KAAKS,UAAY,KACrE"}
 ✄
 import e from"events";import{Readable as t,Writable as s}from"stream";export class Controller{constructor(){this.events=new e,this.sources=new Map,this.nextEndpointId=1,this.requests=new Map,this.nextRequestId=1,this.onCreate=e=>{const t=e.endpoint,s=new n(t);this.sources.set(t.id,s),this.events.emit("stream",s)},this.onFinish=e=>{const t=e.endpoint.id,s=this.sources.get(t);if(void 0===s)throw new Error("Invalid endpoint ID");this.sources.delete(t),s.push(null)},this.onWrite=(e,t)=>{const s=e.endpoint.id,n=this.sources.get(s);if(void 0===n)throw new Error("Invalid endpoint ID");if(null===t)throw new Error("Invalid request: missing data");return n.deliver(t)},this.handlers={".create":this.onCreate,".finish":this.onFinish,".write":this.onWrite}}open(e,t={}){const s={id:this.nextEndpointId++,label:e,details:t};return new i(this,s)}receive(e){const t=e.stanza,{id:s,name:n,payload:i}=t,r=n[0];if("."===r)this.onRequest(s,n,i,e.data);else{if("+"!==r)throw new Error("Unknown stanza: "+n);this.onNotification(s,n,i)}}_request(e,t,s){return new Promise(((n,i)=>{const r=this.nextRequestId++;this.requests.set(r,{resolve:n,reject:i});const o={id:r,name:e,payload:t};this.events.emit("send",{stanza:o,data:s})}))}onRequest(e,t,s,n){const i=this.handlers[t];if(void 0===i)throw new Error(`Invalid request: ${t}`);let r;try{r=i(s,n)}catch(t){return void this.reject(e,t)}r instanceof Promise?r.then((t=>this.resolve(e,t))).catch((t=>this.reject(e,t))):this.resolve(e,r)}resolve(e,t){const s={id:e,name:"+result",payload:t};this.events.emit("send",{stanza:s,data:null})}reject(e,t){const s={id:e,name:"+error",payload:{message:t.toString()}};this.events.emit("send",{stanza:s,data:null})}onNotification(e,t,s){const n=this.requests.get(e);if(void 0===n)throw new Error("Invalid request ID");if(this.requests.delete(e),"+result"===t)n.resolve(s);else{if("+error"!==t)throw new Error("Unknown notification: "+t);{const e=s;n.reject(new Error(e.message))}}}}export default Controller;class n extends t{constructor({label:e,details:t}){super(),this.onReadComplete=null,this.delivery=null,this.label=e,this.details=t}_read(e){null===this.onReadComplete&&(this.onReadComplete=t=>(this.onReadComplete=null,0===t.length?(this.push(null),!1):(this.push(t)&&this._read(e),!0)),this.tryComplete())}deliver(e){return new Promise(((t,s)=>{if(null!==this.delivery)throw new Error("Protocol violation");this.delivery={chunk:e,resolve:t,reject:s},this.tryComplete()}))}tryComplete(){const{onReadComplete:e,delivery:t}=this;null!==e&&null!==t&&(this.onReadComplete=null,this.delivery=null,e(t.chunk)?t.resolve():t.reject(new Error("Stream closed")))}}class i extends s{constructor(e,t){super(),this.controller=e,this.endpoint=t,this.controller._request(".create",{endpoint:this.endpoint},null),this.once("finish",this._onFinish.bind(this))}_write(e,t,s){this.controller._request(".write",{endpoint:this.endpoint},e).then((e=>s())).catch((e=>s(e)))}_onFinish(){this.controller._request(".finish",{endpoint:this.endpoint},null)}}
-"""
-
-
 ```

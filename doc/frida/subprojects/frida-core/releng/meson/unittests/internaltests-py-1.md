@@ -146,7 +146,7 @@ By following this structured approach and constantly refining my understanding, 
 
 总而言之，`internaltests.py` 的第二部分主要功能是为 Frida 内部的各种实用工具函数和模块提供全面的单元测试。这些测试覆盖了版本比较、命令行参数处理、依赖文件解析、日志记录、库路径管理、依赖项查找以及参数类型校验等多个方面。其目的是确保 Frida 内部代码的正确性和健壮性，为 Frida 的稳定运行和开发提供保障。虽然普通用户不会直接接触到这些代码，但它们对于 Frida 的开发和维护至关重要，并且间接地影响着用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/unittests/internaltests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 k_args)
 
     def test_version_compare(self):
@@ -816,7 +818,4 @@ k_args)
         )
         def _(obj, node, args: T.Tuple, kwargs: T.Dict[str, T.List[str]]) -> None:
             self.asse
-"""
-
-
 ```

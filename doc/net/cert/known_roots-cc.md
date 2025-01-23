@@ -119,15 +119,17 @@ memcpy(input_hash.data(), example_hash, 32);
 
 `net/cert/known_roots.cc` 是 Chromium 网络安全的关键组成部分，负责维护和查找浏览器信任的根证书信息。虽然 JavaScript 代码不能直接与之交互，但它通过 HTTPS 连接的建立和安全验证过程间接地影响着 Web 应用的安全性。理解这个文件的功能有助于理解浏览器如何判断一个 HTTPS 连接是否安全可靠。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/known_roots.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ int32_t GetNetTrustAnchorHistogramIdForSPKI(const HashValue& spki_hash) {
 }
 
 }  // namespace net
-
-"""
-
 ```

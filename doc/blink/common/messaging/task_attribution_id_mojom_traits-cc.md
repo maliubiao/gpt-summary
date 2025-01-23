@@ -119,14 +119,16 @@ Response: Let's break down the thought process for analyzing this C++ source cod
 
 `task_attribution_id_mojom_traits.cc` 是一个基础的粘合层，负责在 Mojo IPC 边界转换 `TaskAttributionId`。虽然它本身不直接涉及用户交互或前端技术，但它处理的数据对于理解和追踪由 JavaScript, HTML 和 CSS 产生的各种任务至关重要。  使用错误通常发生在对 `TaskAttributionId` 的设计目的和生命周期理解不足的情况下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/messaging/task_attribution_id_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -146,7 +148,4 @@ bool StructTraits<blink::mojom::TaskAttributionId::DataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

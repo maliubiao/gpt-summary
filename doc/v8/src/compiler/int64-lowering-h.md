@@ -131,15 +131,17 @@ console.log(bitwiseOr); // 输出 4294967295 (位操作会将其视为 32 位有
 
 总之，`v8/src/compiler/int64-lowering.h` 是 V8 编译器中一个关键的组件，特别是在 32 位架构上，它负责将抽象的 64 位整数运算转换为可以在目标机器上执行的具体操作，从而保证 JavaScript 代码能够正确处理超出 32 位安全范围的整数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/int64-lowering.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/int64-lowering.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ class V8_EXPORT_PRIVATE Int64Lowering {
 }  // namespace v8
 
 #endif  // V8_COMPILER_INT64_LOWERING_H_
-
-"""
-
 ```

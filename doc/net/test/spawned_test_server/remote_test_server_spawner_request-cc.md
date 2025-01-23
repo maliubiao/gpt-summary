@@ -182,15 +182,17 @@ int main() {
 
 总而言之，`remote_test_server_spawner_request.cc` 在 Chromium 的网络栈测试中扮演着重要的角色，它负责与远程的服务器管理进程进行通信，从而动态地创建和管理用于测试的 HTTP 服务器实例。理解它的功能和使用方式对于进行网络相关的 Chromium 开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/test/spawned_test_server/remote_test_server_spawner_request.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -407,7 +409,4 @@ bool RemoteTestServerSpawnerRequest::WaitForCompletion(std::string* response) {
 }
 
 }  // namespace net
-
-"""
-
 ```

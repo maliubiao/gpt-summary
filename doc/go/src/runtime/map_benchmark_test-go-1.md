@@ -102,7 +102,7 @@ Initially, I might have focused too much on the specific types being tested (e.g
 
 通过这两部分的基准测试，Go 语言的开发者能够更全面地评估和优化 `map` 类型的性能，确保其在各种应用场景下的高效运行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/map_benchmark_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -111,8 +111,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 nt32]))
 	b.Run("Key=bigType/Elem=int32", benchSizes(benchmarkMapPop[bigType, int32]))
 	b.Run("Key=bigType/Elem=bigType", benchSizes(benchmarkMapPop[bigType, bigType]))
@@ -142,10 +144,4 @@ func BenchmarkMapSmallAccessMiss(b *testing.B) {
 	b.Run("Key=int64/Elem=int64", smallBenchSizes(benchmarkMapAccessMiss[int64, int64]))
 	b.Run("Key=string/Elem=string", smallBenchSizes(benchmarkMapAccessMiss[string, string]))
 }
-
-"""
-
-
-
-
 ```

@@ -169,14 +169,16 @@ By following these steps, a comprehensive and accurate explanation of the `Worke
 
 总而言之，`WorkerClassicScriptLoader` 在 Web Worker 的生命周期中扮演着至关重要的角色，它确保了 Worker 能够安全可靠地加载其执行所需的 JavaScript 代码，并遵循各种 Web 安全策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/worker_classic_script_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Apple Inc. All Rights Reserved.
  * Copyright (C) 2009, 2011 Google Inc. All Rights Reserved.
@@ -552,7 +554,4 @@ void WorkerClassicScriptLoader::ProcessContentSecurityPolicy(
 }
 
 }  // namespace blink
-
-"""
-
 ```

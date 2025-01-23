@@ -144,15 +144,17 @@ This systematic approach, starting from the core purpose and gradually delving i
 
 如果在上述任何一个环节出现问题，例如音频数据没有正确传输、采样率转换错误、缓冲区溢出等，开发人员可能会通过调试工具 (例如 Chrome 的开发者工具) 观察到音频处理的异常。如果怀疑是 Blink 引擎的底层实现问题，他们可能会查看相关的 C++ 代码，例如 `webaudio_media_stream_audio_sink_test.cc`，来了解其工作原理以及可能存在的 bug。这个测试文件可以帮助开发人员理解 `WebAudioMediaStreamAudioSink` 的预期行为，并用于验证修复后的代码是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/webaudio_media_stream_audio_sink_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -428,7 +430,4 @@ INSTANTIATE_TEST_SUITE_P(
         testing::ValuesIn({128, 512, 480})));
 
 }  // namespace blink
-
-"""
-
 ```

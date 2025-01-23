@@ -150,15 +150,17 @@ Initially, I might have focused too much on the C++ aspects. However, the core f
 
 总而言之，`web_core_test_support.cc` 是 Blink 渲染引擎测试基础设施的关键组成部分，它通过 `internals` 对象为 JavaScript 测试提供了强大的内部控制和检查能力，帮助开发者验证 Blink 功能的正确性和稳定性。普通用户在日常浏览网页的过程中不会直接接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/v8/web_core_test_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -258,7 +260,4 @@ void ResetInternalsObject(v8::Local<v8::Context> context) {
 }  // namespace web_core_test_support
 
 }  // namespace blink
-
-"""
-
 ```

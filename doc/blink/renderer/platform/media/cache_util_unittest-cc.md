@@ -114,14 +114,16 @@ Response: Let's break down the thought process for analyzing the C++ unittest fi
 
 总而言之，`cache_util_unittest.cc` 这个文件通过测试 `GetReasonsForUncacheability` 函数，确保了 Blink 引擎能够正确地根据 HTTP 响应头判断资源是否可以被缓存，这对于优化网页加载性能至关重要，并直接影响到 JavaScript, HTML 和 CSS 等资源的加载和使用。理解这些缓存机制对于 Web 开发人员来说是至关重要的，可以避免一些常见的性能问题和用户体验问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/cache_util_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -209,7 +211,4 @@ TEST(CacheUtilTest, GetReasonsForUncacheability) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

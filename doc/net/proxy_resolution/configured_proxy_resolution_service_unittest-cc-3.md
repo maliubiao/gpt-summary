@@ -116,7 +116,7 @@ function FindProxyForURL(url, host) {
 
 总而言之，这部分测试用例深入探讨了 `ConfiguredProxyResolutionService` 在处理基于 PAC 文件的代理配置时的各种复杂情况，确保了网络栈在不同场景下的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/configured_proxy_resolution_service_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d_time());
 
   EXPECT_THAT(callback2.WaitForResult(), IsOk());
@@ -877,7 +879,4 @@ TEST_F(ConfiguredProxyResolutionServiceTest, PACScriptRefetchAfterFailure) {
 
   auto config_service =
       std::make_unique
-"""
-
-
 ```

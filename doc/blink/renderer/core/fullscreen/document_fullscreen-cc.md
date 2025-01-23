@@ -201,14 +201,16 @@ Here's a breakdown of the thinking process used to analyze the `document_fullscr
 
 总而言之，`document_fullscreen.cc` 文件是 Blink 引擎中处理文档级别全屏操作的核心，它为 JavaScript 提供了必要的接口来查询和控制全屏状态，并与 HTML 元素和 CSS 样式有着密切的联系。理解其功能和相关的最佳实践对于开发涉及全屏功能的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fullscreen/document_fullscreen.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013, Google Inc. All rights reserved.
  *
@@ -261,7 +263,4 @@ void DocumentFullscreen::webkitExitFullscreen(Document& document) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

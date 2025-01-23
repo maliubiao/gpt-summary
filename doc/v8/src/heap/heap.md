@@ -67,12 +67,14 @@ myString = null;
 
 简而言之，`v8/src/heap/heap.cc` 是 V8 引擎管理 JavaScript 对象生命周期的核心，它确保了 JavaScript 程序的内存能够被有效地分配和回收。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1840,7 +1842,4 @@ void Heap::CollectGarbage(AllocationSpace space,
     }
 
     if (collector == G
-"""
-
-
 ```

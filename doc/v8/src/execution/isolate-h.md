@@ -208,7 +208,7 @@ v8::Isolate::Dispose(isolate2);
 
 总而言之，`v8/src/execution/isolate.h` 定义了 `Isolate` 类，它是 V8 JavaScript 引擎中一个**独立的、自包含的 JavaScript 执行环境**。`Isolate` 负责管理执行 JavaScript 代码所需的所有核心资源，包括堆内存、上下文、内置功能、错误处理、编译和执行流程。它是 V8 架构中实现隔离性和并发性的关键组件。理解 `Isolate` 的概念对于深入理解 V8 的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/isolate.h以.tq结尾，那它是个v8 torque源代码，
@@ -216,8 +216,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1051,7 +1053,4 @@ class V8_EXPORT_PRIVATE Isolate final : private HiddenFactory {
 
   THREAD_LOCAL_TOP_ADDRESS(Tagged<Context>, pending_handler_context)
   THREAD_LOCAL_TOP_ADDRESS(Address, pending_handler_en
-"""
-
-
 ```

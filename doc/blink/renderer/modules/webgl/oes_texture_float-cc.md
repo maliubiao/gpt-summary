@@ -158,15 +158,17 @@ By following these steps, I can systematically analyze the provided code and gen
 
 总而言之，`blink/renderer/modules/webgl/oes_texture_float.cc` 这个文件是 WebGL 中支持浮点纹理的关键底层实现，它通过 JavaScript API 暴露给开发者，使得他们能够在 WebGL 应用中使用更高精度的数据进行渲染和计算。理解这个文件的作用有助于开发者更好地使用 WebGL 的浮点纹理功能，并排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/oes_texture_float.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -226,7 +228,4 @@ const char* OESTextureFloat::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -220,15 +220,17 @@ Func {
 
 总之，`go/src/cmd/compile/internal/ssa/check.go` 是 Go 编译器中一个关键的组成部分，它通过执行一系列细致的检查，确保生成的 SSA 代码的正确性和一致性，为后续的编译器优化和最终代码生成奠定坚实的基础。 这对于保证 Go 语言编译器的可靠性和生成代码的正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/check.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -860,9 +862,4 @@ func isExactFloat32(x float64) bool {
 	// Check the exponent is in range. The mantissa check above is sufficient for NaN values.
 	return math.IsNaN(x) || x == float64(float32(x))
 }
-
-"""
-
-
-
 ```

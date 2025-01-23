@@ -218,7 +218,7 @@ When debugging issues related to these compatibility functions, tracing how code
 
 In summary, `bionic/libm/freebsd-compat.handroid` plays a crucial role in enhancing the portability of code to Android by providing implementations and declarations for certain math-related functions and definitions present in FreeBSD's libc but not in standard C or Android's default Bionic. Understanding its purpose and the functionalities it provides is essential for developers working with native code on Android, especially when porting code from other Unix-like systems.
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/freebsd-compat.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -228,8 +228,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2013 The Android Open Source Project
  *
@@ -272,7 +274,4 @@ static inline int digittoint(char ch) {
 // FreeBSD exports these in <math.h> but we don't.
 double cospi(double);
 double sinpi(double);
-
-"""
-
 ```

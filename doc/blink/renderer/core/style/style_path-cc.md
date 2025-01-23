@@ -212,14 +212,16 @@ By following these steps and iterating on my understanding, I can generate a com
 
 总之，`blink::StylePath` 是 Blink 渲染引擎中一个核心的类，它负责管理和操作 CSS 和 SVG 中使用的路径数据，是实现诸如 `clip-path` 和 `offset-path` 等高级视觉效果的基础。理解它的功能有助于开发者更好地理解浏览器如何处理路径相关的样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/style_path.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,7 +297,4 @@ void StylePath::GetPath(Path& path,
 }
 
 }  // namespace blink
-
-"""
-
 ```

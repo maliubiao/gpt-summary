@@ -217,7 +217,7 @@ By following these steps, breaking down the code, considering the context, and t
 
 总而言之，这段代码是 Chromium 磁盘缓存实现的关键组成部分，负责管理单个缓存条目的数据存储和访问，特别是对存储 HTTP 头部信息的 Stream 0 进行了特殊处理。它在浏览器的网络请求和缓存机制中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_entry_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -225,8 +225,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _->size(), data_size);
   }
   file_size += sparse_data_size_;
@@ -290,8 +292,4 @@ void SimpleEntryImpl::SetStream0Data(net::IOBuffer* buf,
 }
 
 }  // namespace disk_cache
-
-"""
-
-
 ```

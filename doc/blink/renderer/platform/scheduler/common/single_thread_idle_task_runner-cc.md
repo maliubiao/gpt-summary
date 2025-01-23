@@ -205,14 +205,16 @@ Delayed idle task executed after deadline.
 
 总而言之，`SingleThreadIdleTaskRunner` 提供了一种在单线程上执行低优先级后台任务的机制，它可以有效地利用系统的空闲时间，提高整体性能。但是，开发者需要理解其工作原理和限制，避免将其用于关键的、对延迟敏感的操作，并正确地使用和配置相关的 Delegate。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/single_thread_idle_task_runner.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -318,7 +320,4 @@ void SingleThreadIdleTaskRunner::RunTask(IdleTask idle_task) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

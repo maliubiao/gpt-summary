@@ -129,7 +129,7 @@ Finally, stepping into the shoes of a Frida developer designing tests is crucial
 
 `prog.cc` 是一个简单的 C++ 程序，用于检测系统中的 CUDA 设备。虽然它本身不是一个逆向工具，但它可以作为逆向分析的辅助手段，帮助理解目标程序对 CUDA 的依赖性。更重要的是，作为 Frida 项目的测试用例，它验证了 Frida 框架与 CUDA 程序的交互能力。理解这个程序的原理和用途有助于理解 Frida 的工作方式以及在逆向分析中如何利用 CUDA 相关的技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cuda/10 cuda dependency/cpp/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <cuda_runtime.h>
 #include <iostream>
 
@@ -158,7 +160,4 @@ int main(void) {
     std::cout << "Found " << n << " CUDA devices.\n";
     return 0;
 }
-
-"""
-
 ```

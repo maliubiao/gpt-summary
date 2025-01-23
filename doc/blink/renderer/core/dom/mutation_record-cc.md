@@ -173,15 +173,17 @@ parent.removeChild(div);        // 移除 div 元素
 
 总而言之，`mutation_record.cc` 是 Blink 引擎中实现 DOM Mutation Observer API 的关键组成部分，负责记录和表示 DOM 树的各种变化，并将这些信息传递给 JavaScript 代码，使开发者能够对 DOM 变化做出响应。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/mutation_record.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -398,7 +400,4 @@ MutationRecord* MutationRecord::CreateWithNullOldValue(MutationRecord* record) {
 MutationRecord::~MutationRecord() = default;
 
 }  // namespace blink
-
-"""
-
 ```

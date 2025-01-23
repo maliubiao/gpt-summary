@@ -103,15 +103,17 @@ Here's a breakdown of the thinking process to generate the comprehensive answer 
 
 总而言之，`net/disk_cache/blockfile/file.cc` 定义了一个基础的 `File` 类，用于抽象表示磁盘缓存中的文件，并为跨平台的文件操作提供基础。虽然 JavaScript 不直接操作这个类，但它在浏览器缓存机制中扮演着关键角色，当 JavaScript 发起网络请求并涉及到资源缓存时，这个类会被间接地使用。 调试与磁盘缓存相关的问题时，深入到这个文件及其平台特定实现，是排查底层文件操作错误的重要步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/blockfile/file.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2010 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -128,7 +130,4 @@ File::File() : init_(false), mixed_(false) {}
 File::File(bool mixed_mode) : init_(false), mixed_(mixed_mode) {}
 
 }  // namespace disk_cache
-
-"""
-
 ```

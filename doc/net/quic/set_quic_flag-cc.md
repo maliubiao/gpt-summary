@@ -133,15 +133,17 @@ QUICHE_FLAG(bool, quic_retry_without_alt_svc, false, false, "Retry connection wi
 
 `net/quic/set_quic_flag.cc` 提供了一个关键的机制，用于在运行时配置 QUIC 协议的行为。虽然它本身是 C++ 代码，但其功能与 JavaScript 有着间接的联系，因为用户通过浏览器提供的界面（如命令行标志、`chrome://flags`、或潜在的 DevTools 功能）进行的操作，最终会调用到这个文件中的代码来设置 QUIC 标志，从而影响由 JavaScript 发起的网络请求的行为。在调试与 QUIC 相关的问题时，理解这个文件的功能以及如何到达这里是非常有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/set_quic_flag.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -223,7 +225,4 @@ void SetQuicFlagByName(const std::string& flag_name, const std::string& value) {
 }
 
 }  // namespace net
-
-"""
-
 ```

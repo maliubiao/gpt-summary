@@ -158,15 +158,17 @@ go build -gcflags=-asan -ldflags=-linkmode=external -o msan_fail msan_fail.go
 
 总而言之，这段代码是 Go 语言测试基础设施中非常重要的一部分，它确保了 Go 在使用 CGO 并处理内存时，MSAN 这样的内存错误检测工具能够正常工作，从而帮助开发者发现和修复潜在的内存相关的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/internal/testsanitizers/msan_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -254,9 +256,4 @@ func TestMSAN(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

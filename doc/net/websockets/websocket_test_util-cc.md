@@ -183,15 +183,17 @@ Sec-WebSocket-Protocol: chat\r\n
 
 通过使用这些工具，开发者可以在一个可控的环境中测试 WebSocket 的各个方面，例如握手过程、协议升级、错误处理等，从而定位和修复用户在使用 WebSocket 时遇到的问题。 这些工具简化了测试的编写，避免了每次测试都需要手动构造复杂的请求和响应字符串。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -505,7 +507,4 @@ void TestWebSocketStreamRequestAPI::OnHttp2HandshakeStreamCreated(
 void TestWebSocketStreamRequestAPI::OnHttp3HandshakeStreamCreated(
     WebSocketHttp3HandshakeStream* handshake_stream) {}
 }  // namespace net
-
-"""
-
 ```

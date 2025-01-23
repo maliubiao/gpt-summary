@@ -144,15 +144,17 @@ defer 中的 x: 1
 
 `go/test/fixedbugs/issue32595.dir/a.go` 中的代码片段主要用于测试或演示 `defer` 关键字的基本用法，即在函数返回前执行延迟调用的函数。 虽然提供的代码片段功能很简单，但它强调了 `defer` 的核心概念。 更复杂的测试用例可能会利用 `defer` 来确保资源清理、错误处理或其他需要在函数退出前执行的操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue32595.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -162,9 +164,4 @@ package a
 func A() {
 	defer func() {}()
 }
-
-"""
-
-
-
 ```

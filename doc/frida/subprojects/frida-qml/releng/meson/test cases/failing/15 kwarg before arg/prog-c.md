@@ -122,7 +122,7 @@ Frida 的测试框架应该能够捕获到 Frida 在处理这个错误场景时�
 
 这个测试用例的存在帮助 Frida 的开发者确保 Frida 能够健壮地处理各种可能的错误场景，即使这些错误来源于目标进程的代码。它提供了一个明确的失败案例，用于验证 Frida 的错误处理机制是否按预期工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/15 kwarg before arg/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,10 +130,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) { return 0; }
-
-"""
-
 ```

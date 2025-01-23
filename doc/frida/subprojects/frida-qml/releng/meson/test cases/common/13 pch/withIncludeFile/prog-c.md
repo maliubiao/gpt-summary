@@ -111,7 +111,7 @@ By following these steps, we can comprehensively analyze the code snippet and co
 
 `frida/subprojects/frida-qml/releng/meson/test cases/common/13 pch/withIncludeFile/prog.c` 这个源代码文件虽然简单，但它在 Frida 的构建和测试过程中扮演着重要的角色，用于验证预编译头文件机制的正确性，从而间接保证了 Frida 作为动态 instrumentation 工具的可靠性和功能完整性。它也反映了一些编程中的常见错误，并可以作为开发者调试 Frida 构建问题的一个线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/13 pch/withIncludeFile/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // No includes here, they need to come from the PCH or explicit inclusion
 
 void func(void) {
@@ -131,7 +133,4 @@ void func(void) {
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

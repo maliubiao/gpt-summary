@@ -197,14 +197,16 @@ Aborted the first timeout.
 
 `blink/renderer/core/scheduler/dom_task.cc` 是 Blink 引擎中管理和执行与 DOM 相关的异步任务的关键组件。它与 JavaScript 的 Promise 和 `AbortSignal` 紧密结合，负责协调 JavaScript 代码的执行，并确保这些执行能够正确地与浏览器的渲染流程集成。理解 `DOMTask` 的功能和工作原理对于理解 Blink 引擎的调度机制以及如何编写高效的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scheduler/dom_task.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -415,7 +417,4 @@ void DOMTask::RemoveAbortAlgorithm() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

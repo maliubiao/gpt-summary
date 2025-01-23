@@ -141,7 +141,7 @@ Finally, I organize the generated information into a clear and structured respon
 
 总而言之，这个 `simd_sse.c` 文件是 Frida 框架中用于测试 SSE 指令支持和相关功能的组件。它展示了如何检测 SSE 可用性以及如何使用 SSE 指令进行简单的数值计算。理解这个文件有助于理解 Frida 框架的内部工作原理，以及在逆向分析中使用 SIMD 指令的相关知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/147 simd/simd_sse.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -180,7 +182,4 @@ void increment_sse(float arr[4]) {
     __m128 result = _mm_add_ps(val, one);
     _mm_storeu_ps(arr, result);
 }
-
-"""
-
 ```

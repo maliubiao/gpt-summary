@@ -128,7 +128,7 @@ mwcceppc_instruction_set_args = {
 
 这个模块是 Frida 构建系统中针对特定编译器和架构的关键组成部分，确保了 Frida agent 能够正确地编译并在目标 PowerPC 设备上运行。 它体现了构建系统对不同编译器和架构的适配能力，这对于 Frida 这种需要在多种环境下运行的工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/compilers/c.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ksCompiler, CCompiler):
     id = 'mwcceppc'
 
@@ -165,8 +167,4 @@ ksCompiler, CCompiler):
         if std.value != 'none':
             args.append('-lang ' + std.value)
         return args
-
-"""
-
-
 ```

@@ -328,7 +328,7 @@ sys.stdin.read()
 
 通过这种方式，你可以观察 Android 系统服务（例如 `vold`）在与 SCSI 设备交互时，是否使用了这里定义的 `SCSI_IOCTL_GET_IDLUN` 命令，从而验证 Android framework 是如何一步步到达这个底层的 SCSI 接口的。 你可能需要根据实际的 Android 版本和目标进程调整 Frida 脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/android/scsi/scsi/scsi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -339,8 +339,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -378,7 +380,4 @@ struct ccs_modesel_head {
 #define SCSI_IOCTL_GET_BUS_NUMBER 0x5386
 #define SCSI_IOCTL_GET_PCI 0x5387
 #endif
-
-"""
-
 ```

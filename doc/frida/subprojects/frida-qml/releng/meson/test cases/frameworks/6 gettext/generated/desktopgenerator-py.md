@@ -130,7 +130,7 @@ Initially, I might have focused too heavily on the reverse engineering aspects o
 
 总而言之，`desktopgenerator.py` 是一个非常基础的文件复制工具，但它在 Frida 的本地化测试和构建流程中扮演着一个角色。理解它的功能和上下文可以帮助开发者和逆向工程师更好地理解 Frida 的内部工作原理以及如何处理本地化资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/6 gettext/generated/desktopgenerator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, sys, shutil
@@ -153,7 +155,4 @@ except FileNotFoundError:
     pass
 
 shutil.copy(ifile, ofile)
-
-"""
-
 ```

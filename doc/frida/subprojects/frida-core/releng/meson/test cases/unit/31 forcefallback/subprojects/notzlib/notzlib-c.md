@@ -105,7 +105,7 @@ int not_a_zlib_function (void)
 
 总结来说，`notzlib.c` 文件虽然代码简单，但在 Frida 的测试框架中扮演着重要的角色，用于模拟和测试在依赖库不可用时的 fallback 机制。 理解这类简单的 mock 实现有助于理解更复杂的动态仪器工具和逆向工程技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/31 forcefallback/subprojects/notzlib/notzlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,15 +113,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "notzlib.h"
 
 int not_a_zlib_function (void)
 {
   return 42;
 }
-
-"""
-
 ```

@@ -176,7 +176,7 @@ function add(a, b) {
 
 `v8/src/compiler/backend/instruction.cc` 是 V8 编译器后端中至关重要的部分，它定义了表示机器指令及其操作数的数据结构，并提供了操作和管理这些指令的功能。 它是将高级 JavaScript 代码转换为可执行机器码的关键环节，直接影响 JavaScript 的执行效率。 虽然开发者通常不会直接与这个文件中的代码交互，但理解其功能有助于深入了解 JavaScript 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/instruction.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/instruction.cc以.tq结尾，那它是个v8 torque源代码，
@@ -184,8 +184,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1096,8 +1098,4 @@ void InstructionSequence::ValidateSSA() const {
       CHECK(!definitions.Contains(vreg));
       definitions.Add(vreg);
     }
-
-"""
-
-
 ```

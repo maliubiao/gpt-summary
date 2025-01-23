@@ -84,7 +84,7 @@ Based on the code, it primarily handles the server-side logic for the TLS 1.3 ha
 
 总而言之，这段代码是 Go 语言 `crypto/tls` 包中实现 TLS 1.3 服务器端握手的核心组成部分，它负责处理客户端的握手请求，协商安全参数，验证身份，并建立安全的加密连接。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/handshake_server_tls13.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -93,8 +93,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1146,9 +1148,4 @@ func (hs *serverHandshakeStateTLS13) readClientCertificate() error {
 
 	// If we requested a client certificate, then the client must send a
 	// certificate message. I
-"""
-
-
-
-
 ```

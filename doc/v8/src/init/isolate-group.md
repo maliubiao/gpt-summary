@@ -78,11 +78,13 @@ Let's refine the example to show how Isolates can be used.
 
 总而言之，`isolate-group.cc` 中定义的 `IsolateGroup` 类是 V8 引擎中一个核心的底层组件，它负责管理内存、指针压缩、代码生成等关键资源，这些功能对于高效、安全地执行 JavaScript 代码至关重要。虽然 JavaScript 代码无法直接访问 `IsolateGroup`，但其功能直接影响着 JavaScript 的运行行为和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/isolate-group.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -321,7 +323,4 @@ void IsolateGroup::ReleaseDefault() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

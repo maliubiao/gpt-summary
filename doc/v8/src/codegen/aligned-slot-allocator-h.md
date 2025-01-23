@@ -192,15 +192,17 @@ let result = add(5, 10);
 
 `v8/src/codegen/aligned-slot-allocator.h` 定义的 `AlignedSlotAllocator` 类是 V8 引擎内部用于管理对齐内存分配的关键组件，主要用于代码生成阶段，以高效地分配和组织栈帧等数据结构，从而提升 JavaScript 代码的执行效率。虽然 JavaScript 开发者不会直接使用它，但它的存在对 V8 的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/aligned-slot-allocator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/aligned-slot-allocator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ class V8_EXPORT_PRIVATE AlignedSlotAllocator {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_ALIGNED_SLOT_ALLOCATOR_H_
-
-"""
-
 ```

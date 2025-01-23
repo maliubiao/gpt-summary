@@ -92,15 +92,17 @@ AnimationFrameTimingMonitor``` 类是 Chromium Blink 引擎中的一个组件，
 
 `AnimationFrameTimingMonitor` 的主要功能是作为 Chromium Blink 引擎中的性能监控工具，**负责细致地跟踪和记录动画帧和相关任务的执行时间，特别是关注 JavaScript 代码的执行和由此引发的样式计算、布局等操作。它的目的是识别导致页面性能瓶颈的长动画帧和长任务，并提供详细的性能数据用于分析和优化。** 它通过与 Blink 引擎的各个阶段集成，捕获关键的时间点和事件信息，最终生成性能报告和跟踪数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/animation_frame_timing_monitor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -963,7 +965,4 @@ void AnimationFrameTimingMonitor::DidRunJavaScriptDialog() {
   // without WillRunJavaScriptDialog, which can happen in the case of
   // WebView/browser-initiated dialogs.
   if (!pen
-"""
-
-
 ```

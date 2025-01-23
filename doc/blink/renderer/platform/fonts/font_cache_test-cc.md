@@ -122,14 +122,16 @@ Initially, I might have just stated that `FallbackForEmojis` tests emoji fallbac
 
 总而言之，`font_cache_test.cc` 是一个关键的测试文件，用于确保 Blink 引擎的字体缓存机制能够正确、高效地工作，并能处理各种边界情况和不同平台的特性，从而保证网页的正常渲染。它涵盖了字体回退、字符支持、本地化以及错误处理等多个方面，与 Web 开发中字体相关的概念紧密相连。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_cache_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -317,7 +319,4 @@ TEST_F(FontCacheTest, Locale) {
 #endif  // BUILDFLAG(IS_ANDROID)
 
 }  // namespace blink
-
-"""
-
 ```

@@ -136,12 +136,14 @@ function conditionalLogic(value) {
 
 `machine-operator-reducer.cc` 的第二部分继续致力于对 V8 引擎的中间表示进行细致的机器级优化，涵盖了位运算、比较运算、浮点数运算以及条件分支等多个方面。这些优化直接提升了 JavaScript 代码在底层执行的效率，使得代码运行得更快。它通过识别常见的运算模式，并利用代数和位运算的性质进行简化和替换，生成更高效的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 sResolvedValue()) {
       auto shift = mright.right().ResolvedValue();
       if (CanRevertLeftShiftWithRightShift<int32_t>(left, shift)) {
@@ -1492,8 +1494,4 @@ Graph* MachineOperatorReducer::graph() const { return mcgraph()->graph(); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

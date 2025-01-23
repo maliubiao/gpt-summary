@@ -193,15 +193,17 @@ func main() {
 
 总而言之，`go/test/alias2.go` 是一个精心设计的测试文件，用于验证 Go 编译器在处理类型别名时的各种规则，特别是关于方法声明的限制。它通过触发编译错误来确保编译器行为的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/alias2.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2016 The Go Authors. All rights reserved.
@@ -306,9 +308,4 @@ type B1 = struct{}
 func (B1) m() {} // ERROR "invalid receiver type"
 
 // TODO(gri) expand
-
-"""
-
-
-
 ```

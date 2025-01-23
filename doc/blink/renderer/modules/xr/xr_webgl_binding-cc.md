@@ -244,15 +244,17 @@ This systematic approach, combining code analysis, knowledge of WebXR/WebGL APIs
 
 总而言之，`xr_webgl_binding.cc` 文件是 WebXR 和 WebGL 互操作性的关键组成部分，它负责管理 WebGL 上下文，提供访问 WebGL 资源的接口，并确保 WebXR 会话和 WebGL 上下文的正确集成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_webgl_binding.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -526,7 +528,4 @@ void XRWebGLBinding::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

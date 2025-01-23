@@ -146,7 +146,7 @@ int main() {
 
 总而言之，`v8/test/cctest/test-macro-assembler-riscv32.cc` 的第 1 部分主要功能是 **系统地测试 V8 引擎中 RISC-V 32位宏汇编器的基础指令、宏以及对非对齐内存访问的处理能力。** 这些测试覆盖了算术运算、逻辑运算、内存访问、浮点运算、跳转控制和常量加载等核心功能，确保 V8 能够为 RISC-V 32位架构生成正确且高效的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-macro-assembler-riscv32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-macro-assembler-riscv32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1076,7 +1078,4 @@ TEST(macro_float_minmax_f32) {
 
   CHECK_MINMAX(1.0f, -1.0f, -1.0f, 1.0f);
   CHECK_MINMAX(-1.0f, 1.0f, -1.0f, 1
-"""
-
-
 ```

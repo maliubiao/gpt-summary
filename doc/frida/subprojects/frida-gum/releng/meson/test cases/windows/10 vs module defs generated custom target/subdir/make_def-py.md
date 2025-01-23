@@ -125,7 +125,7 @@ Initially, I might have focused too narrowly on the script itself. The prompt ex
 
 总而言之，这个脚本虽然简单，但它在 Windows 平台上的 DLL 开发和与 Frida 相关的动态插桩测试中扮演着一个基础但重要的角色。它帮助定义了 DLL 的导出接口，使得其他模块（包括 Frida）可以找到并与这些 DLL 进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/windows/10 vs module defs generated custom target/subdir/make_def.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,15 +133,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
 with open(sys.argv[1], 'w') as f:
     print('EXPORTS', file=f)
     print('        somedllfunc', file=f)
-
-"""
-
 ```

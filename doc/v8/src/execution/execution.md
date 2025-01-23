@@ -162,11 +162,13 @@ try {
 
 `v8/src/execution/execution.cc` 是 V8 引擎执行 JavaScript 代码的核心组件。它提供了执行各种 JavaScript 操作（函数调用、对象构造、脚本执行等）的基础设施，并处理相关的上下文管理和错误处理。其内部的 C++ 方法与我们日常编写的 JavaScript 代码的执行过程紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/execution.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -834,7 +836,4 @@ void Execution::CallWasm(Isolate* isolate, DirectHandle<Code> wrapper_code,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

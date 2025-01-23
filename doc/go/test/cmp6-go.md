@@ -211,15 +211,17 @@ go test ./...
 
 总而言之，`go/test/cmp6.go` 是 Go 语言测试套件中一个重要的组成部分，它通过编写会产生特定编译错误的代码，来验证 Go 编译器的类型检查机制是否正常工作，确保开发者在编写代码时能够及时发现并纠正错误的比较操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/cmp6.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -306,9 +308,4 @@ func main() {
 	use(i == m) // ERROR "invalid operation"
 	use(m == i) // ERROR "invalid operation"
 }
-
-"""
-
-
-
 ```

@@ -241,7 +241,7 @@ func main() {
 
 总而言之，`go/src/reflect/set_test.go` 的核心在于测试 Go 语言反射机制在进行“设置”操作时，是否正确处理了各种隐式类型转换的场景，确保反射功能的稳定性和可靠性。 理解这些测试用例可以帮助开发者更好地掌握 Go 语言反射的使用方式和潜在的陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/set_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -249,8 +249,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -478,9 +480,4 @@ func TestAssignableTo(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

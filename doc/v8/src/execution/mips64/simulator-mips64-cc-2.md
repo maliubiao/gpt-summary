@@ -120,7 +120,7 @@ SW $t1, 0x1004  // 将 $t1 的值存储到内存地址 0x1004
 
 这部分 `simulator-mips64.cc` 代码是 MIPS64 模拟器的核心组成部分，主要负责模拟 MIPS64 架构下的**内存操作**（包括对齐检查、条件写）、**与 V8 runtime 的交互**（通过软中断机制）以及提供基本的**调试功能**（断点和观察点）。它模拟了 CPU 执行机器码时对内存的读写以及与外部环境的交互，是 V8 引擎在不支持 MIPS64 硬件的平台上运行 JavaScript 代码的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/simulator-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/mips64/simulator-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -128,8 +128,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , addr, icount_);
         break;
       case 4:
@@ -1005,8 +1007,4 @@ static bool FPUProcessNaNsAndZeros(T a, T b, MaxMinKind kind, T* result) {
   } else if (std::isnan(a)) {
     *result = b;
   } else if (std::isnan(b)) {
- 
-"""
-
-
 ```

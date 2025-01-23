@@ -238,15 +238,17 @@ go/test/method2.go:38:15: cannot call method on T literal
 
 这段 `method2.go` 通过故意使用错误的接收器类型来教育开发者关于 Go 语言方法定义的规则。通过阅读这些错误信息，开发者可以更好地理解哪些接收器类型是允许的，哪些是不允许的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/method2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -288,9 +290,4 @@ var _ = pv.val   // ERROR "undefined|pointer to interface"
 func (t *T) g() int { return t.a }
 
 var _ = (T).g() // ERROR "needs pointer receiver|undefined|method requires pointer|cannot call pointer method"
-
-"""
-
-
-
 ```

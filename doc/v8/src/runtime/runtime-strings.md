@@ -181,11 +181,13 @@ console.log(wellFormed); // 输出: � (替换了未配对的代理项)
 
 总而言之，`v8/src/runtime/runtime-strings.cc` 文件是 V8 引擎中处理 JavaScript 字符串操作的核心组成部分，它提供了高效且底层的实现，确保 JavaScript 字符串操作的性能和正确性。理解这些运行时函数有助于深入了解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-strings.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -683,7 +685,4 @@ RUNTIME_FUNCTION(Runtime_StringToWellFormed) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

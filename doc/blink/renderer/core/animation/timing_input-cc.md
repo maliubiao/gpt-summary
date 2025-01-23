@@ -173,14 +173,16 @@ This file is deeply intertwined with the Web Animations API, which is exposed to
 
 In summary, `timing_input.cc` is a critical component in Blink that ensures the validity and correct interpretation of animation timing information provided by JavaScript through the Web Animations API. It acts as a crucial layer of abstraction and validation between the scripting environment and the underlying animation engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/timing_input.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -459,7 +461,4 @@ template CORE_EXPORT bool TimingInput::Update(Timing&,
                                               ExceptionState&);
 
 }  // namespace blink
-
-"""
-
 ```

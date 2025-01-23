@@ -144,7 +144,7 @@ By following this kind of structured analysis and considering the context of Fri
 
 这个 `lib3.c` 文件虽然简单，但它是 Frida 工作流程中一个基础的构建块，代表了 Frida 可以操作的众多共享库函数之一。通过理解这个简单的例子，可以更好地理解 Frida 如何与目标进程的动态链接库进行交互，从而实现强大的动态插桩功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/39 library chain/subdir/subdir3/lib3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -168,7 +170,4 @@ Prompt:
 int DLL_PUBLIC lib3fun(void)  {
   return 0;
 }
-
-"""
-
 ```

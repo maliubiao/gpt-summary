@@ -282,7 +282,7 @@ if __name__ == '__main__':
 
 通过这种方式，你可以观察 Android Framework 或 NDK 代码如何通过 `ioctl` 与内核的 GPIO 驱动程序进行交互，从而理解数据结构的使用和交互流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/gpio.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -293,8 +293,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -480,7 +482,4 @@ struct gpioevent_data {
 #define GPIOHANDLE_SET_CONFIG_IOCTL _IOWR(0xB4, 0x0A, struct gpiohandle_config)
 #define GPIO_GET_LINEINFO_WATCH_IOCTL _IOWR(0xB4, 0x0B, struct gpioline_info)
 #endif
-
-"""
-
 ```

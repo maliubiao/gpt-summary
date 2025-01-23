@@ -135,7 +135,7 @@ This methodical approach, combining code scanning, understanding the purpose of 
 
 这部分 `machinefiletests.py` 文件的主要功能是 **全面测试 Meson 构建系统处理 Native File 的能力**。它通过创建各种场景和配置，验证了 Native File 如何影响 Meson 的程序查找、编译器选择、构建选项设置等核心功能。这些测试确保了 Meson 的 Native File 功能能够按照预期工作，为用户提供了一种灵活的方式来定制本地构建环境。这对于需要特定工具链或配置的开发场景，以及在逆向工程中模拟特定构建环境都非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/machinefiletests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -896,8 +898,4 @@ class CrossFileTests(BasePlatformTests):
             os.makedirs(dir_)
             with tempfile.NamedTemporaryFile('w', dir=dir_, delete=False, encoding='utf-8') as f:
                 f.write(cross_content)
-   
-"""
-
-
 ```

@@ -132,7 +132,7 @@ python create_zipapp.py --outfile frida_meson.pyz --compress
 
 因此，查看 `create_zipapp.py` 的源代码通常是用户在 Frida 构建或打包过程中遇到问题，并试图理解和解决这些问题的调试步骤之一。他们可能正在寻找如何自定义打包过程，或者理解某个 Frida 工具是如何被打包和分发的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/packaging/create_zipapp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -165,7 +167,4 @@ with tempfile.TemporaryDirectory() as d:
     shutil.copy2(source / 'meson.py', Path(d, '__main__.py'))
     shutil.copytree(source / 'mesonbuild', Path(d, 'mesonbuild'))
     zipapp.create_archive(d, interpreter=options.interpreter, target=options.outfile, compressed=options.compress)
-
-"""
-
 ```

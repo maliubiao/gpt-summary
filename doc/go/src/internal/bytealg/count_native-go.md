@@ -178,7 +178,7 @@ func main() {
 
 总结来说， `go/src/internal/bytealg/count_native.go` 提供了一组高性能的字节计数函数，用于在字节切片和字符串中快速查找特定字节的出现次数。它是 Go 语言为了优化性能而采用的一种常见手段，将一些核心操作的实现下沉到更底层的、甚至可能是汇编的级别。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/bytealg/count_native.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -186,8 +186,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -221,9 +223,4 @@ func countGenericString(s string, c byte) int {
 	}
 	return n
 }
-
-"""
-
-
-
 ```

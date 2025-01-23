@@ -148,7 +148,7 @@ Organize the analysis into the categories requested by the prompt: Functionality
 
 总而言之，`prog7.c` 是 Frida 构建系统的一个测试用例，用于验证配置文件处理的正确性。它可以作为逆向分析的对象，也可以通过 Frida 进行动态分析。理解其功能和上下文有助于调试 Frida 构建过程中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/14 configure file/prog7.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <string.h>
 #include <config7.h>
 
@@ -168,7 +170,4 @@ int main(void) {
         || strcmp(MESSAGE4, "\\${var1}")
         || strcmp(MESSAGE5, "\\ ${ ${ \\${ \\${");
 }
-
-"""
-
 ```

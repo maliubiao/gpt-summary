@@ -252,7 +252,7 @@ let result = add(5, 10);
 
 结合之前的部分，这部分代码增强了 V8 在 MIPS64 架构上动态生成和优化机器码的能力，这对于 JavaScript 引擎的性能至关重要。它允许 V8 在运行时修改生成的代码，例如链接跳转目标、内联函数等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -260,8 +260,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 o unbound label at this point is zero, so we can
     // move next buffer check to maximum.
     next_buffer_check_ =
@@ -368,8 +370,4 @@ LoadStoreLaneParams::LoadStoreLaneParams(MachineRepresentation rep,
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
-
 ```

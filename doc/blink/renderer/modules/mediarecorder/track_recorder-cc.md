@@ -171,15 +171,17 @@ By following these steps, the detailed and comprehensive explanation provided in
 
 通过以上分析，我们可以了解到 `track_recorder.cc` 文件虽然是一个相对简单的 C++ 实现，但它在 `MediaRecorder` 功能中扮演着关键的角色，负责将用户在 JavaScript 中指定的媒体类型转换为 Blink 引擎内部使用的格式，是连接 JavaScript API 和底层媒体处理逻辑的重要桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediarecorder/track_recorder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ MediaTrackContainerType GetMediaContainerTypeFromString(const String& type) {
 }
 
 }  // namespace blink.
-
-"""
-
 ```

@@ -101,7 +101,7 @@ Here's a thinking process to arrive at the analysis of the provided `main.c` cod
 
 这个 `main.c` 文件虽然代码简单，但在 Frida 的构建过程中扮演着重要的角色，用于验证 RPM 包的构建质量。它通过调用 `meson_print()` 函数来检查构建环境中与 Meson 相关的信息是否被正确处理。理解这个文件的作用有助于理解 Frida 的构建流程和潜在的构建错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/manual tests/5 rpm/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<lib.h>
 #include<stdio.h>
 int main(void)
@@ -119,7 +121,4 @@ int main(void)
   printf("%s", t);
   return 0;
 }
-
-"""
-
 ```

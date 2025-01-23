@@ -149,14 +149,16 @@ const slice5 = uint8Array.slice(3, 1); // []
 
 理解这段 Torque 代码有助于深入了解 JavaScript 中 `TypedArray.prototype.slice()` 的底层实现机制，包括其性能优化策略（快速复制）和错误处理。这对于编写高性能和健壮的 JavaScript 代码非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-slice.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -290,7 +292,4 @@ transitioning javascript builtin TypedArrayPrototypeSlice(
   return dest;
 }
 }
-
-"""
-
 ```

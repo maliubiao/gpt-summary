@@ -179,7 +179,7 @@ This script is likely executed as part of a larger build process, especially wit
 
 In summary, `manygen.py` is a build utility for generating test artifacts within the Frida project. While not directly involved in dynamic instrumentation, it creates the code that might be the target of such instrumentation, making it relevant to reverse engineering in that context.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/95 manygen/subdir/manygen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 
@@ -271,7 +273,4 @@ else:
 
 os.unlink(tmpo)
 os.unlink(tmpc)
-
-"""
-
 ```

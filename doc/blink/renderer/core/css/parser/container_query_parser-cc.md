@@ -178,15 +178,17 @@ By following these steps, you can systematically analyze the code and generate a
 *   Blink 引擎的开发者可以使用断点调试工具，在 `container_query_parser.cc` 的相关函数中设置断点，来跟踪容器查询的解析过程，查看输入的令牌和生成的 AST，从而深入分析解析错误的原因。
 *   如果涉及到新的容器查询特性或语法，开发者可能会修改 `container_query_parser.cc` 来支持这些新的特性，并进行测试以确保其正确解析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/container_query_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -472,7 +474,4 @@ const MediaQueryExpNode* ContainerQueryParser::ConsumeFeature(
 }
 
 }  // namespace blink
-
-"""
-
 ```

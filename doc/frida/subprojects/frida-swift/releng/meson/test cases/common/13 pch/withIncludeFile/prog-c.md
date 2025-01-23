@@ -120,7 +120,7 @@ By following this detailed thought process, which involves interpreting the code
 
 `prog.c` 是 Frida 测试套件中的一个重要文件，用于验证 Frida 对预编译头文件的支持。它通过一个简单的例子展示了如何在不显式包含头文件的情况下使用标准库函数，从而测试编译器和 Frida 对 PCH 的处理能力。理解这个文件的功能有助于理解 Frida 在动态分析和逆向工程中如何处理符号解析和代码注入，尤其是在目标程序使用了 PCH 的情况下。  用户在调试 Frida 相关问题时，可能会通过查看此类测试用例来理解 Frida 的内部机制，并找到解决问题的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/13 pch/withIncludeFile/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // No includes here, they need to come from the PCH or explicit inclusion
 
 void func(void) {
@@ -140,7 +142,4 @@ void func(void) {
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

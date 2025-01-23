@@ -159,14 +159,16 @@ By following these steps, we can systematically analyze the code snippet and gen
 
 总而言之，`url_conversion.cc` 文件在 Blink 引擎中扮演着至关重要的角色，它负责将网页中各种来源的 URL 字符串转换为 Chromium 统一的 `GURL` 类型，为后续的 URL 处理和操作奠定了基础。虽然用户或开发者不直接操作这个文件，但理解其功能有助于理解浏览器如何处理 URL，以及避免与 URL 相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/url_conversion.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ GURL WebStringToGURL(const WebString& web_string) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

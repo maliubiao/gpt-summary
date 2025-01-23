@@ -91,7 +91,7 @@ By following these steps, we can effectively analyze the code snippet and provid
 
 总而言之，这部分测试代码是 Blink 引擎中用于确保在复杂的双向文本布局场景下，光标能够准确显示的关键组成部分，它直接影响到用户在网页上编辑和交互文本的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/local_caret_rect_bidi_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -99,10 +99,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-                                                    TextAffinity::kDownstream);
+### 源代码
+```cpp
+TextAffinity::kDownstream);
   EXPECT_EQ(PhysicalRect(270, 0, 1, 10),
             LocalCaretRectOfPosition(position_with_affinity).rect);
 }
@@ -272,8 +273,4 @@ TEST_F(LocalCaretRectBidiTest, InRtlBlockLineEndRtlBaseRunWithFourNestedRuns) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

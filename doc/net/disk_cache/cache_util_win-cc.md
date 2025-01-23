@@ -138,15 +138,17 @@ By following these steps, we arrive at a comprehensive and accurate analysis of 
 
 通过这些步骤，可以逐步定位到问题是否发生在 `MoveCache` 函数，以及导致移动失败的具体原因，例如目标路径已存在、权限不足等。  `cache_util_win.cc` 作为一个底层的工具函数，是缓存管理功能实现的关键部分，因此在调试缓存相关问题时，需要关注这个文件以及它调用的 Windows API 函数的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/cache_util_win.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ bool MoveCache(const base::FilePath& from_path, const base::FilePath& to_path) {
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

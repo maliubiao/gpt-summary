@@ -103,7 +103,7 @@ Here's a breakdown of the thinking process used to analyze the provided C code s
 
 总而言之，这个 `foo.c` 文件是一个简单的测试用例，用于验证 Frida 在处理不同编译配置下的代码时的行为。开发者或测试人员通过运行测试和分析测试结果来间接地与这个文件交互，将其作为调试和验证的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/18 pkgconfig static/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int power_level (void)
 {
 #ifdef FOO_STATIC
@@ -121,7 +123,4 @@ int power_level (void)
     return 8999;
 #endif
 }
-
-"""
-
 ```

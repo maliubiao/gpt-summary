@@ -114,15 +114,17 @@ A user, while browsing a website, might encounter styling issues that lead a Chr
 
 In essence, this test file acts as a specification and validation for the `MatchResult` class, a crucial piece in the complex process of rendering web pages with CSS. When things go wrong with styling, understanding the role and correct operation of components like `MatchResult` becomes essential for debugging.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/match_result_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -411,7 +413,4 @@ TEST_F(MatchResultTest, ResetTreeScope) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

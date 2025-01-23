@@ -138,7 +138,7 @@ void bar(Assembler& assm, Register base, int* array) {
 
 这部分代码是连接高级代码生成逻辑和底层机器码指令的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/assembler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/assembler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::label_at_put(Label* L, int at_offset) {
   int target_pos;
   DEBUG_PRINTF("\tlabel_at_put: %p @ %p (%d)\n", L,
@@ -1034,7 +1036,4 @@ void Assembler::EmitHelper(T x) {
 }
 
 void Assembler::emit(Instr x
-"""
-
-
 ```

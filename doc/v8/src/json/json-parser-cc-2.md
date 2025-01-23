@@ -148,7 +148,7 @@ console.log(complexJsonObject.hobbies[0]);   // 输出: reading
 
 这段 `v8/src/json/json-parser.cc` 代码片段是 V8 引擎 JSON 解析器的核心部分，负责将 JSON 字符串转换为 V8 内部表示的 JavaScript 对象和值。它实现了对 JSON 对象、数组、字符串和数字的解析，并包含了错误处理逻辑以检测不符合 JSON 语法规则的输入。这段代码是 JavaScript 中 `JSON.parse()` 方法的底层实现基础。其主要功能是遍历 JSON 字符串的 token，根据 JSON 的语法规则构建相应的 V8 对象结构，并处理各种边界情况和错误。可选的源信息追踪功能增强了调试和错误报告的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/json/json-parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/json/json-parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -156,8 +156,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 de_stack.back() = val_node;
           }
 
@@ -615,8 +617,4 @@ template class JsonParser<uint16_t>;
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

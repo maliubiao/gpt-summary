@@ -203,7 +203,7 @@ ff  ; 不定长 Map 结束
 
 `v8/third_party/inspector_protocol/crdtp/cbor.cc` 是 V8 中用于处理 CBOR 格式的关键组件，它使得 V8 能够高效地编码和解码用于 Chrome DevTools Protocol 的消息。它与 JavaScript 有着重要的联系，因为开发者工具的前端通常使用 JavaScript 来处理通过 CRDP 接收到的 CBOR 数据。 理解 CBOR 的规范和正确使用这个库对于避免常见的编程错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/cbor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/cbor.cc以.tq结尾，那它是个v8 torque源代码，
@@ -211,8 +211,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1093,7 +1095,4 @@ bool ParseEnvelope(int32_t stack_depth,
     out->HandleError(Status{Error::CBOR_ENVELOPE_CONTENTS_LENGTH_MISMATCH,
                             tokenizer->Status().pos});
     re
-"""
-
-
 ```

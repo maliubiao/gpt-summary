@@ -212,15 +212,17 @@ func main() {
 
 总而言之，这段代码提供了一组用于执行底层 `ioctl` 系统调用的 Go 语言接口。使用者需要了解 Linux 系统和相关设备的 `ioctl` 命令和数据结构，才能正确地使用这些函数。错误的使用可能导致程序错误、数据损坏甚至系统不稳定。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/ioctl_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -555,9 +557,4 @@ func IoctlLoopSetStatus64(fd int, value *LoopInfo64) error {
 func IoctlLoopConfigure(fd int, value *LoopConfig) error {
 	return ioctlPtr(fd, LOOP_CONFIGURE, unsafe.Pointer(value))
 }
-
-"""
-
-
-
 ```

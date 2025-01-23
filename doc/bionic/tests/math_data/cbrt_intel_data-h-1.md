@@ -214,7 +214,7 @@ sys.stdin.read()
 
 这个代码片段（`cbrt_intel_data.handroid` 的第二部分）的主要功能是 **提供一组预定义的测试用例数据，用于验证 Android Bionic 库中 `cbrt` 函数的实现是否正确**。 这些数据包含了各种各样的输入值及其对应的预期输出值，旨在覆盖不同的边界条件和精度要求，确保 `cbrt` 函数在各种情况下都能可靠地工作。 它本身不是 `cbrt` 函数的实现，而是其质量保证的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/cbrt_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -226,8 +226,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 2a2e8ba2e8ba5p2
   },
   { // Entry 354
@@ -1071,8 +1073,4 @@ Prompt:
     -0x1.f40p6
   }
 };
-
-"""
-
-
 ```

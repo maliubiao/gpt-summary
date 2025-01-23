@@ -197,7 +197,7 @@ const concatOutput2 = [10, 20, 30, 'abc'];
 
 这段 `v8/src/builtins/builtins-array.cc` 代码片段是 V8 引擎实现 `Array.prototype.concat` 方法的核心。它包含了用于优化连接操作的多种策略，能够处理不同类型的数组和非数组参数，并确保了 `concat` 方法的正确性和性能。通过估计元素数量、收集索引以及区分快速和慢速连接路径，V8 尽可能高效地完成了数组的连接操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-array.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-array.cc以.tq结尾，那它是个v8 torque源代码，
@@ -205,8 +205,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tatic_cast<uint32_t>(Object::NumberValue(array->length()));
   int element_count = 0;
   switch (array->GetElementsKind()) {
@@ -942,8 +944,4 @@ BUILTIN(ArrayConcat) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -207,14 +207,16 @@ During the process, I might have initially focused too heavily on the technical 
 
 总之，`blink/renderer/core/events/focus_event.cc` 文件是 Blink 引擎处理焦点事件的核心，它定义了 `FocusEvent` 类并负责事件的创建和派发，与 JavaScript、HTML 和 CSS 的焦点相关功能紧密相连。理解其功能有助于开发者更好地理解和处理 Web 页面中的焦点交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/focus_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -294,7 +296,4 @@ DispatchEventResult FocusEvent::DispatchEvent(EventDispatcher& dispatcher) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

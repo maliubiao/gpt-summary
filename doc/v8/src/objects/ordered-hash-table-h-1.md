@@ -193,7 +193,7 @@ Object.defineProperty(obj, 'd', {
 
 `SmallOrderedNameDictionary` 是 V8 内部用于高效存储少量 JavaScript 对象属性名、属性值和属性详情的关键数据结构。它保证了属性的插入顺序，并提供了添加、删除、访问、修改和调整容量等操作。理解其功能有助于深入理解 JavaScript 对象的内部表示和行为。这个类是 V8 引擎实现 JavaScript 对象语义的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/ordered-hash-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/ordered-hash-table.h以.tq结尾，那它是个v8 torque源代码，
@@ -201,8 +201,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 e<SmallOrderedNameDictionary> {
  public:
   DECL_PRINTER(SmallOrderedNameDictionary)
@@ -262,8 +264,4 @@ e<SmallOrderedNameDictionary> {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_ORDERED_HASH_TABLE_H_
-
-"""
-
-
 ```

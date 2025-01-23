@@ -246,7 +246,7 @@ print(decoded_string)
 
 总而言之，`frida/releng/tomlkit/tomlkit/_compat.py` 文件中的 `decode` 函数是一个实用的工具函数，用于处理字符串解码，这在处理来自各种来源的文本数据时非常重要，尤其是在逆向工程和动态分析的场景中，需要处理来自目标进程的原始字节数据。理解其工作原理和潜在的使用错误有助于我们更有效地进行调试和数据分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/tomlkit/tomlkit/_compat.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -254,8 +254,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import contextlib
@@ -278,7 +280,4 @@ def decode(string: Any, encodings: list[str] | None = None):
             return string.decode(encoding)
 
     return string.decode(encodings[0], errors="ignore")
-
-"""
-
 ```

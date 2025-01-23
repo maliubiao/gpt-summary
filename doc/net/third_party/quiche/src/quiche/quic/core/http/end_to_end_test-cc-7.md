@@ -133,7 +133,7 @@ Let's consider a user experiencing intermittent network issues on a website usin
 
 This section of the `end_to_end_test.cc` file meticulously tests the QUIC protocol's capabilities related to **connection migration, path validation, and related connection management features**. It covers scenarios where the client proactively migrates due to path degradation, utilizes server-provided preferred addresses, handles packet reordering during path validation, and gracefully recovers from path validation failures. Furthermore, it includes tests for stream management (`STOP_SENDING`), connection lifecycle during handshake, stream ID limits, custom transport parameters, and key updates, ensuring the overall robustness and reliability of the QUIC implementation in various network conditions and protocol interactions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/end_to_end_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -141,9 +141,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共10部分，请归纳一下它的功能
+```
 
-"""
- The next path degrading shouldn't trigger port migration.
+### 源代码
+```cpp
+The next path degrading shouldn't trigger port migration.
   WaitForNewConnectionIds();
   QuicSocketAddress original_self_addr = client_connection->self_address();
   client_connection->OnPathDegradingDetected();
@@ -969,7 +971,4 @@ TEST_P(EndToEndTest, KeyUpdateInitiatedByServer) {
 
   SendSynchronousFooRequestAndCheckResponse();
   EXPECT_EQ(1u, client_connection->GetStats().key_update_cou
-"""
-
-
 ```

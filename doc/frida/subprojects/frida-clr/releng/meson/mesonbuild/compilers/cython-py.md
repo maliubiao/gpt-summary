@@ -137,7 +137,7 @@ The `get_option_compile_args` method would return the list of arguments: `['-3']
 
 **As a debugging clue:** If a user encounters issues during the Cython compilation step of a Frida build, investigating the arguments being passed to the `cython` executable (which are constructed by the methods in `cython.py`) can help pinpoint the problem. For example, checking if the correct Python version is being targeted or if the `--cplus` flag is present when needed. Errors in the `meson.build` file related to Cython configuration would also lead back to how Meson is utilizing this `CythonCompiler` class.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/cython.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2021 Intel Corporation
 from __future__ import annotations
@@ -238,7 +240,4 @@ class CythonCompiler(Compiler):
         if lang.value == 'cpp':
             args.append('--cplus')
         return args
-
-"""
-
 ```

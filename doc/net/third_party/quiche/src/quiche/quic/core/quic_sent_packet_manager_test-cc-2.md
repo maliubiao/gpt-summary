@@ -132,7 +132,7 @@ By following this systematic approach, we can effectively analyze the C++ test c
 
 总而言之，这部分代码是对 `QuicSentPacketManager` 核心功能的深入测试，确保其在各种场景下都能正确、高效地管理已发送的数据包，并处理丢包和重传等复杂情况，是 QUIC 协议可靠运行的关键保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_sent_packet_manager_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -140,10 +140,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
-
-  SendDataPacket(4, ENCRYPTION_FORWARD_SECURE);
+### 源代码
+```cpp
+SendDataPacket(4, ENCRYPTION_FORWARD_SECURE);
   // Trigger loss timeout and mark packet4 for retransmission.
   EXPECT_CALL(*loss_algorithm, GetLossTimeout())
       .WillOnce(Return(clock_.Now() + QuicTime::Delta::FromMilliseconds(10)));
@@ -853,8 +854,4 @@ TEST_F(QuicSentPacketManagerTest, ComputingProbeTimeoutByLeftEdge) {
       QuicTime::Delta::FromMilliseconds(GetDefaultDelayedAckTimeMs());
   const QuicTime packet1_sent_time = clock_.Now();
   EXPECT_EQ(packet1_sent_time + expected_pto_delay,
-        
-"""
-
-
 ```

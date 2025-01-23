@@ -192,7 +192,7 @@ By following this kind of structured analysis and refinement, we can arrive at a
 
 请注意，由于提供的代码只是 `runtime/trace` 包测试的一部分，上述关于易犯错的点的推断是基于对该包的理解，而不是直接从这段代码中分析得出的。这段测试代码的主要目的是衡量性能，而不是演示如何使用 `runtime/trace` API。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/trace/annotation_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -200,8 +200,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -238,9 +240,4 @@ func BenchmarkNewTask(b *testing.B) {
 		}
 	})
 }
-
-"""
-
-
-
 ```

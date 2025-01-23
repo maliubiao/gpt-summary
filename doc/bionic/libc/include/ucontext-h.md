@@ -338,7 +338,7 @@ if (Process.platform === 'android') {
 
 请注意，直接在 Android Framework 中 hook 这些函数可能不会有结果，因为 Framework 自身很少直接使用 `ucontext`。你可能需要在使用 `ucontext` 的特定 NDK 库或旧代码中进行查找。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/ucontext.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -349,8 +349,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #pragma once
 
 /**
@@ -361,7 +363,4 @@ Prompt:
  */
 
 #include <sys/ucontext.h>
-
-"""
-
 ```

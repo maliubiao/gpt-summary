@@ -158,15 +158,17 @@ iframe.contentWindow.addEventListener('message', (event) => {
 
 总而言之，`web_message_port_converter.cc` 是 Blink 引擎中处理 JavaScript `MessagePort` 对象到内部消息通道转换的关键组件。它确保了跨 JavaScript 执行上下文的消息传递能够正确进行，并处理了消息端口的转移和状态变化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_message_port_converter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ WebMessagePortConverter::DisentangleAndExtractMessagePortChannel(
 }
 
 }  // namespace blink
-
-"""
-
 ```

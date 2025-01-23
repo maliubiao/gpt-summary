@@ -139,7 +139,7 @@ This structured approach, starting with a high-level overview and then diving in
 
 总而言之，`vs2013backend.py` 虽然是一个构建系统的后端模块，但它在 Frida-node 的构建过程中扮演着关键角色，并且其行为会直接影响最终生成的可执行文件的特性，这与逆向工程和底层知识都有着密切的联系。 理解这个文件的功能和逻辑，可以帮助开发者更好地理解 Frida-node 的构建过程，并在遇到问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/backend/vs2013backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -183,7 +185,4 @@ class Vs2013Backend(Vs2010Backend):
                     raise MesonException('There is currently no support for ICL before 19, patches welcome.')
             if self.platform_toolset is None:
                 self.platform_toolset = 'v120'
-
-"""
-
 ```

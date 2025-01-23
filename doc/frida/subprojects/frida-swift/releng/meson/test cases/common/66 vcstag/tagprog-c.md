@@ -123,7 +123,7 @@ Initially, I might have focused solely on the C code itself. However, realizing 
 
 `tagprog.c` 是 Frida 项目中一个简单但重要的工具，它用于在编译时嵌入并打印 Frida 的版本控制标签。这个工具在逆向分析 Frida 本身、调试构建问题以及理解 Frida 的内部版本管理机制方面都扮演着一定的角色。 虽然代码本身非常简单，但其存在和功能反映了软件构建和版本控制的重要性，并为开发者提供了一个快速获取 Frida 版本信息的途径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/66 vcstag/tagprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 extern const char *vcstag;
@@ -141,7 +143,4 @@ int main(void) {
     printf("Version is %s\n", vcstag);
     return 0;
 }
-
-"""
-
 ```

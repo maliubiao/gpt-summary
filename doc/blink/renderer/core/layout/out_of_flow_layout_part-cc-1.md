@@ -116,15 +116,17 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 总之，这部分代码是 Blink 引擎中负责确定和计算 Out-of-flow 元素及其行内包含块信息的关键组成部分，它直接关系到 CSS 定位属性的实现和最终的页面布局。理解这部分代码的功能有助于深入理解浏览器如何渲染网页以及处理复杂的布局场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/out_of_flow_layout_part.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 er_descendant.containing_block.Fragment();
       const LayoutObject* containing_block =
           containing_block_fragment->GetLayoutObject();
@@ -839,7 +841,4 @@ void OutOfFlowLayoutPart::LayoutFragmentainerDescendants(
       const LayoutObject* last_css_containing_block = nullptr;
 
       /
-"""
-
-
 ```

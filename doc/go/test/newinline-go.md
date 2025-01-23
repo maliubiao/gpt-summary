@@ -150,15 +150,17 @@ func add2(p *byte, n uintptr) *byte { // ERROR "can inline add2"
 
 总而言之，这段代码是一个用于测试 Go 语言新内联器功能的工具，它通过特定的编译器标志和断言注释来验证内联器在各种场景下的行为是否符合预期。 理解这些编译器标志和断言注释是正确使用和理解这段代码的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/newinline.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheckwithauto -0 -m -d=inlfuncswithclosures=1
 
 //go:build goexperiment.newinliner
@@ -562,9 +564,4 @@ loop:
 		select2(x, y) // ERROR "inlining call to select2"
 	}
 }
-
-"""
-
-
-
 ```

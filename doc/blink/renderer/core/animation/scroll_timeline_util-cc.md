@@ -155,14 +155,16 @@ By following this structured approach, we can systematically analyze the C++ cod
 
 总而言之，`scroll_timeline_util.cc` 文件是 Blink 引擎中实现滚动时间线功能的重要组成部分，它负责将高层次的抽象概念转换为底层的合成器可以理解的数据，从而实现流畅的滚动驱动动画效果。它深入参与了 JavaScript、HTML 和 CSS 中定义的滚动时间线特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/scroll_timeline_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -284,7 +286,4 @@ CompositorScrollTimeline::ScrollDirection ConvertOrientation(
 }  // namespace scroll_timeline_util
 
 }  // namespace blink
-
-"""
-
 ```

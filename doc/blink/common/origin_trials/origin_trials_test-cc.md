@@ -189,14 +189,16 @@ Origin Trials 的核心目的是让开发者能够在实际应用中使用尚未
 
 总而言之，`origin_trials_test.cc` 通过一系列单元测试来确保 Blink 引擎能够正确地管理和判断 Origin Trials 的各种属性，这对于确保 Origin Trials 机制的稳定性和可靠性至关重要，并间接地影响了 Web 开发者如何正确地使用这些实验性功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/origin_trials/origin_trials_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ TEST(OriginTrialTest, TrialIsPersistent) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

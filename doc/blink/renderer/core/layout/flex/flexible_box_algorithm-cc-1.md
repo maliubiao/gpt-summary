@@ -219,15 +219,17 @@ By following these steps, we can systematically analyze the given code snippet a
 
 总而言之，`blink/renderer/core/layout/flex/flexible_box_algorithm.cc` 的这段代码是 Chromium Blink 引擎中实现 CSS Flexbox 布局算法的关键组成部分。它负责处理 Flex 项目的对齐方式规范化、内容分发时的空间计算以及根据索引查找 Flex 项目。这段代码直接响应 CSS 中与 Flexbox 相关的属性，并确保在不同的布局配置下，Flexbox 能够按照规范正确地渲染页面。理解这段代码的功能有助于深入理解 Flexbox 的内部工作机制，并能帮助开发者避免常见的 Flexbox 使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/flex/flexible_box_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 CK_NE(align, ItemPosition::kNormal);
   DCHECK_NE(align, ItemPosition::kLeft) << "left, right are only for justify";
   DCHECK_NE(align, ItemPosition::kRight) << "left, right are only for justify";
@@ -316,8 +318,4 @@ void FlexibleBoxAlgorithm::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

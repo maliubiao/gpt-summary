@@ -161,15 +161,17 @@ gc({ type: 'major', flavor: 'last-resort' });
 
 总之，`v8/src/extensions/gc-extension.cc` 提供了一种强大的工具，用于控制 V8 的垃圾回收机制，但它主要用于底层的调试、测试和性能分析，普通 JavaScript 开发者应谨慎使用。过度或不当的使用可能会导致性能问题和代码难以维护。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/extensions/gc-extension.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/extensions/gc-extension.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -474,7 +476,4 @@ void GCExtension::GC(const v8::FunctionCallbackInfo<v8::Value>& info) {
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

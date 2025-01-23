@@ -153,7 +153,7 @@ By following this systematic thought process, we can effectively analyze even a 
 
 尽管 `custom_target.py` 本身的功能非常基础，但它在 Frida 项目的上下文中扮演着重要的角色，用于准备测试环境，特别是涉及到自定义链接目标文件的场景。 理解这个脚本的功能有助于理解 Frida 的构建和测试流程，以及在逆向工程中使用 Frida 进行动态分析时可能涉及的文件操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/208 link custom/custom_target.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,15 +161,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import shutil, sys
 
 if __name__ == '__main__':
     shutil.copyfile(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

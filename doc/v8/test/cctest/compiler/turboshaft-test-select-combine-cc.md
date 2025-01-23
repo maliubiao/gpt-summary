@@ -145,15 +145,17 @@ function calculateAndChoose(x, y, trueValue, falseValue) {
 
 你提到的如果文件以 `.tq` 结尾，则它是 v8 Torque 源代码。这是正确的。Torque 是 V8 用来编写一些底层运行时代码的领域特定语言。这个文件是 `.cc` 结尾，所以它是标准的 C++ 源代码。 该注释只是提醒读者 Torque 也是 V8 开发中常用的语言。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/turboshaft-test-select-combine.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/turboshaft-test-select-combine.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -676,7 +678,4 @@ TEST(Float64SelectCombineInt64CompareZero) {
 }  // end namespace
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

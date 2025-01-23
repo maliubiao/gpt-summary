@@ -127,7 +127,7 @@ func add(a int32, b int32) int32 {
 
 这是 Go 语言编译器中用于 AMD64 架构的 SSA 重写规则的一部分。它的主要功能是将 Go 语言的抽象操作转换为具体的 AMD64 机器指令操作，是代码生成过程中的关键步骤，负责将中间表示转化为目标架构的代码。 这部分代码涵盖了基础的算术、逻辑、位运算、比较和数据移动等操作的转换规则。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteAMD64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -135,8 +135,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Code generated from _gen/AMD64.rules using 'go generate'; DO NOT EDIT.
 
 package ssa
@@ -2698,9 +2700,4 @@ func rewriteValueAMD64_OpAMD64ADDSSload(v *Value) bool {
 	}
 	// match: (ADDSSload [off1] {sym1} val (LEAQ [off2] {sym2} base) mem)
 	// cond: is32Bit(int64(off1)+in
-"""
-
-
-
-
 ```

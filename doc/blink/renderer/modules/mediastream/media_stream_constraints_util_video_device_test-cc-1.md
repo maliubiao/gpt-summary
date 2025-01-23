@@ -77,7 +77,7 @@ navigator.mediaDevices.getUserMedia({ video: { height: { ideal: 1080 } } })
 
 这部分代码主要测试了 `MediaStreamConstraintsUtil` 在处理 **理想高度 (Ideal Height)** 约束时的设备选择和配置逻辑。它验证了在不同理想高度值的情况下，系统能够正确选择合适的摄像头设备和分辨率，并生成相应的 `TrackAdapterSettings` 以便后续处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_video_device_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -85,8 +85,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eckTrackAdapterSettingsEqualsFrameRate(result);
   }
 
@@ -779,7 +781,4 @@ TEST_F(MediaStreamConstraintsUtilVideoDeviceTest, MandatoryMinAspectRatio) {
   EXPECT_EQ(*low_res_closest_format_, result.Format());
   EXPECT_FALSE(result.track_adapter_settings().target_size().has_value());
   // The source's native as
-"""
-
-
 ```

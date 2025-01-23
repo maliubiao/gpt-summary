@@ -186,14 +186,16 @@ ctx.stroke();
 
 总而言之，`blink/renderer/platform/graphics/stroke_data.cc` 文件是 Blink 渲染引擎中负责处理图形描边细节的关键组件，它将高级的 CSS 属性和 JavaScript API 调用转化为底层的绘图指令。理解它的功能有助于深入了解浏览器如何渲染网页上的图形元素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/stroke_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (C) 2013 Google Inc. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -258,7 +260,4 @@ void StrokeData::SetupPaint(cc::PaintFlags* flags) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

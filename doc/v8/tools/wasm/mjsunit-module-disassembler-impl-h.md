@@ -154,7 +154,7 @@ assertEquals(3, instance.exports.add(1, 2));
 
 请提供第 2 部分的内容，以便我继续进行分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/wasm/mjsunit-module-disassembler-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/wasm/mjsunit-module-disassembler-impl.h以.tq结尾，那它是个v8 torque源代码，
@@ -162,8 +162,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1172,7 +1174,4 @@ class MjsunitImmediatesPrinter {
   void F64Const(ImmF64Immediate& imm) {
     out_ << "...";
     PrintF64Const(ou
-"""
-
-
 ```

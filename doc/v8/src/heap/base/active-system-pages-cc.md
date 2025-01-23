@@ -203,15 +203,17 @@ largeArray = null;
 
 总而言之，`v8/src/heap/base/active-system-pages.cc` 中定义的 `ActiveSystemPages` 类是 V8 引擎用于高效跟踪和管理系统内存页的关键组件，它通过位图技术来实现这一目标，并在 V8 的堆管理中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/active-system-pages.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/base/active-system-pages.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -283,7 +285,4 @@ size_t ActiveSystemPages::Size(size_t page_size_bits) const {
 
 }  // namespace base
 }  // namespace heap
-
-"""
-
 ```

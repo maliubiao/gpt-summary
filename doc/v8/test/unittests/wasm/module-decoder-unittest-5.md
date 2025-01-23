@@ -97,10 +97,13 @@ WebAssembly.validate(wasmBytes)
 
 总而言之，这个 C++ 代码文件通过单元测试的方式，确保了 WebAssembly 模块解码器在处理各种不同结构的模块时，能够正确地进行验证，这对于保证 WebAssembly 模块的安全性和正确执行至关重要，并且直接影响着 JavaScript 中 WebAssembly 模块的加载和使用。
 
-Prompt: ```这是目录为v8/test/unittests/wasm/module-decoder-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/wasm/module-decoder-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ONE_EMPTY_FUNCTION(SIG_INDEX(0)),
       // table declaration -----------------------------------------------------
       SECTION(Table, ENTRY_COUNT(1), kFuncRefCode, kNoMaximum, 1),
@@ -460,7 +463,4 @@ TEST_F(WasmModuleVerifyTest, InvalidSharedGlobal) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

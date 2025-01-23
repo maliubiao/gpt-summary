@@ -103,7 +103,7 @@ Based on these observations, I can now formulate the summary.
 
 **总结来说，这部分 `find_buffer_test.cc` 文件的功能是全面测试 Blink 引擎中 `FindBuffer` 类在各种复杂的 HTML 结构和特殊情况下的文本查找能力，特别是针对包含替换元素、表单元素和 Ruby 注音标签的场景。这些测试对于确保浏览器查找功能的准确性和可靠性至关重要。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/finder/find_buffer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t with <script></script> and \uFFFC (object replacement "
       "character)");
   FindBuffer buffer(WholeDocumentRange(), GetParam());
@@ -496,8 +498,4 @@ TEST_P(FindBufferParamTest, PositionAfterBlock) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

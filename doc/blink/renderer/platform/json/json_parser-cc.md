@@ -229,14 +229,16 @@ By following this systematic approach, I can thoroughly analyze the code and ext
 
 理解 `json_parser.cc` 的功能对于理解 Blink 引擎如何处理 Web 页面中的数据至关重要，特别是当涉及到与服务器进行数据交互时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/json/json_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -942,7 +944,4 @@ std::unique_ptr<JSONValue> ParseJSON(const String& json,
 }
 
 }  // namespace blink
-
-"""
-
 ```

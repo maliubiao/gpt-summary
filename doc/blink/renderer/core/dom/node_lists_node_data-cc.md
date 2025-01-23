@@ -149,15 +149,17 @@ Finally, we organize the information into a clear and structured answer, coverin
 
 `blink/renderer/core/dom/node_lists_node_data.cc` 文件在 Blink 引擎中扮演着重要的性能优化角色，它通过管理 NodeList 缓存，避免了不必要的 DOM 树遍历。其核心功能是缓存失效，确保了 JavaScript 代码能够获取到最新的 DOM 状态。虽然开发者不会直接操作这个文件，但理解其功能有助于理解 Blink 引擎的内部工作原理以及 DOM 操作的性能优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/node_lists_node_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -212,7 +214,4 @@ void NodeListsNodeData::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

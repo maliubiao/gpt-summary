@@ -133,7 +133,7 @@ Initially, I might have focused too much on the *content* of the printed strings
 
 总而言之，`patron.c` 作为一个简单的测试用例，主要用于验证 Frida 在处理与共享库交互的应用程序时的功能。它提供了一个明确的目标，方便 Frida 开发者或使用者进行测试和调试，并理解 Frida 如何进行动态分析和 hook 操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/17 prebuilt shared/patron.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<alexandria.h>
 #include<stdio.h>
 
@@ -152,7 +154,4 @@ int main(int argc, char **argv) {
     alexandria_visit();
     return 0;
 }
-
-"""
-
 ```

@@ -129,14 +129,16 @@ This systematic approach helps to thoroughly analyze the code and address all as
 
 总而言之，`blink/renderer/platform/cursors.cc` 是 Blink 渲染引擎中一个基础但重要的文件，它定义了构成 Web 标准一部分的标准鼠标光标，并为 CSS 和 JavaScript 操作鼠标光标提供了底层的实现支持。正确理解和使用这些预定义的光标类型对于创建符合用户习惯和易于理解的 Web 界面至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/cursors.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Apple Inc. All rights reserved.
  *
@@ -427,7 +429,4 @@ const ui::Cursor& GrabbingCursor() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -100,7 +100,7 @@ This systematic approach helps me to extract the essential information from the 
 
 在接下来的第二部分中，预计会继续测试该文件中剩余的关于时间功能的测试用例，并可能深入探讨某些功能的具体实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/time_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -112,8 +112,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  *
@@ -1303,7 +1305,4 @@ TEST(time, bug_31339449) {
 
 #if defined(__BIONIC__)
   // I
-"""
-
-
 ```

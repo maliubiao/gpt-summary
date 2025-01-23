@@ -145,7 +145,7 @@ console.log(sum === 0.3); // 输出: false  (由于浮点数精度问题)
 
 这部分代码主要集中在 **SIMD 浮点运算** 和 **浮点数转换** 的模拟实现。它涵盖了基本的浮点算术运算、比较、特殊值处理、以及不同舍入模式下的类型转换。这部分的功能对于确保 V8 能够正确且高效地执行涉及浮点数计算的 JavaScript 代码至关重要，尤其是在处理图形、音频、科学计算等高性能场景时。它补充了前面可能涉及的整数运算和其他类型的 SIMD 操作，共同构成了 ARM64 架构模拟器中向量处理能力的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-logic-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm64/simulator-logic-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -153,8 +153,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 gister& src2) {
   SimVRegister temp;
   LogicVRegister product = smull2(vform, temp, src1, src2);
@@ -1090,8 +1092,4 @@ LogicVRegister Simulator::fsqrt(VectorFormat vform, LogicVRegister dst,
     FN(vform, dst, temp1, temp2);                                       \
     return dst;                                                         \
   }                                                                     \
-                     
-"""
-
-
 ```

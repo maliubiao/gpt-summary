@@ -119,7 +119,7 @@ By following these steps, we can provide a comprehensive and contextually releva
 
 总而言之，这个简单的 C 代码片段本身的功能很简单，但作为 Frida 的测试用例，它为理解动态插桩技术提供了一个清晰的起点。通过对这个示例的分析，可以学习到 Frida 如何与目标程序的二进制代码进行交互，以及如何利用动态插桩技术进行逆向工程和安全分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/146 library at root/main/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,14 +127,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern int fn(void);
 
 int main(void) {
     return 1 + fn();
 }
-
-"""
-
 ```

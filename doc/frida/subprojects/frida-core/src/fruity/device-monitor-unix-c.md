@@ -117,7 +117,7 @@ This structured approach, combining code analysis with a systematic breakdown of
 
 总而言之，这段代码虽然功能简单，但在 Frida 连接 iOS 设备的流程中扮演着设备识别的基础角色。它的存在是为了确保即使没有更详细的信息，也能为用户提供一个基本的设备名称，以便进行后续的逆向操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/device-monitor-unix.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-core.h"
 
 #include "frida-base.h"
@@ -138,7 +140,4 @@ _frida_fruity_usbmux_backend_extract_details_for_device (gint product_id, const 
   *name = g_strdup ("iOS Device");
   *icon = NULL;
 }
-
-"""
-
 ```

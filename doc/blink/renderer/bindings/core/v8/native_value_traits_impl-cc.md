@@ -143,15 +143,17 @@ CSS 定义了网页的样式。虽然这个文件没有直接处理 CSS 属性�
 
 总而言之，`native_value_traits_impl.cc` 是 Blink 引擎中一个核心的文件，它确保了 JavaScript 和 C++ 之间能够安全可靠地传递数据，是理解 Blink 引擎如何与 JavaScript 交互的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/native_value_traits_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ ByteSpanWithInlineStorage& ByteSpanWithInlineStorage::operator=(
 }  // namespace bindings::internal
 
 }  // namespace blink
-
-"""
-
 ```

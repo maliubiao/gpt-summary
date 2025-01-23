@@ -231,7 +231,7 @@ Person{
 
 这部分代码主要实现了将 Go 语言的各种数据类型编码成 JSON 格式字符串的核心功能，包括 `Marshal` 和 `MarshalIndent` 两个主要的入口函数，并支持通过 `Marshaler` 和 `encoding.TextMarshaler` 接口进行自定义编码。它处理了基本类型、复合类型以及错误情况，并默认进行了 HTML 转义以提高安全性。同时，使用了 `sync.Pool` 来优化性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/json/encode.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -240,8 +240,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1385,9 +1387,4 @@ func typeFields(t reflect.Type) structFields {
 				}
 				index := make([]int, len(f.index)+1)
 				copy(index, f
-"""
-
-
-
-
 ```

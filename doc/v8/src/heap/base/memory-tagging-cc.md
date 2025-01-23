@@ -175,15 +175,17 @@ TCO value outside scope: 0        // 表示标签检查已恢复
 
 `v8/src/heap/base/memory-tagging.cc` 是 V8 中用于管理内存标签功能（特别是 ARM MTE）的关键组成部分。它允许在需要的时候临时禁用内存标签检查，这通常用于处理一些与内存标签机制不兼容的特定操作。虽然 JavaScript 开发者不会直接操作这些底层机制，但内存标签的存在显著增强了 V8 运行时的安全性，帮助防范各种常见的内存安全漏洞。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/memory-tagging.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/base/memory-tagging.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -230,7 +232,4 @@ SuspendTagCheckingScope::~SuspendTagCheckingScope() {
 }
 
 }  // namespace heap::base
-
-"""
-
 ```

@@ -89,7 +89,7 @@ Here's a plan:
 
 总而言之，`frida/subprojects/frida-node/releng/meson/mesonbuild/modules/gnome.py` 模块是 Frida 项目中用于简化和自动化构建与 GNOME 技术栈相关的组件的工具。它提供了一系列函数，用于处理 GResource、Gir、Typelib 和 VAPI 文件的生成，并管理这些组件之间的依赖关系。这对于确保 Frida 能够与使用 GNOME 技术（如 Vala 语言编写的组件）进行交互至关重要。该模块通过封装底层的构建命令和逻辑，使得 Frida 的构建过程更加清晰和可维护。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 cy, str]],
                                ) -> T.Tuple[T.List[str], T.List[VapiTarget], T.List[str], T.List[str], T.List[str]]:
         '''
@@ -243,8 +245,4 @@ def initialize(interp: 'Interpreter') -> GnomeModule:
     mod.interpreter.append_holder_map(TypelibTarget, interpreter.CustomTargetHolder)
     mod.interpreter.append_holder_map(VapiTarget, interpreter.CustomTargetHolder)
     return mod
-
-"""
-
-
 ```

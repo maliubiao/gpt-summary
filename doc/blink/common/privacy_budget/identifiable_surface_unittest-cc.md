@@ -182,14 +182,16 @@ This thought process emphasizes understanding the code through its structure, te
 
 总而言之，`identifiable_surface_unittest.cc` 文件通过单元测试确保了 `IdentifiableSurface` 类在 Blink 引擎中能够正确地标识和管理可能暴露用户身份信息的 Web 平台特性，这对于实现隐私预算和保护用户隐私至关重要。 虽然普通用户不会直接接触到这个类，但它在幕后默默地工作，影响着浏览器如何处理和限制潜在的身份识别行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/identifiable_surface_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -306,7 +308,4 @@ TEST(IdentifiableSurfaceTest, Comparison) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

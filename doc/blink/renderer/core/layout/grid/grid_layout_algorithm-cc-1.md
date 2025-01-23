@@ -150,16 +150,18 @@ My thinking process to arrive at the summary of the provided code snippet goes l
 
 这部分代码是 Blink 引擎中实现 CSS Grid Layout 算法的关键部分，专注于计算网格轨道的大小、网格容器的尺寸以及处理各种内容对齐和自动重复的情况。它深入处理了 CSS Grid 规范的复杂性，并与 HTML 和 Javascript 相互作用，共同构建网页的布局。理解这部分代码有助于深入了解浏览器如何渲染和布局网格结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/grid/grid_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
- 'space-between', 'space-around', and 'space-evenly' all
+### 源代码
+```cpp
+'space-between', 'space-around', and 'space-evenly' all
   // divide by the free-space, and may have a non-zero modulo. Investigate if
   // this should be distributed between the tracks.
   switch (content_alignment.Distribution()) {
@@ -938,7 +940,4 @@ void GridLayoutAlgorithm::ComputeGridItemBaselines(
   auto& track_collection = sizing_subtree.SizingCollection(track_direction);
 
   if (!tra
-"""
-
-
 ```

@@ -101,7 +101,7 @@ By following these steps, we can systematically analyze the code snippet and pro
 
 这段代码片段（第 3 部分）主要关注 `NetworkQualityEstimator` 的 **观察者模式** 和 **初始状态设置**。它详细测试了如何添加和移除 `RTTAndThroughputEstimatesObserver`，以及在不同的场景下（首次请求、重复请求、网络变化、有效连接类型变化）观察者是否能正确地接收到 `NetworkQualityEstimator` 发出的通知，并获取到相应的 RTT 和吞吐量信息。 此外，它还测试了初始空值的设置以及重复请求的处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/network_quality_estimator_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r->Build();
 
   EXPECT_EQ(nqe::internal::InvalidRTT(), observer.http_rtt());
@@ -845,7 +847,4 @@ TEST_F(NetworkQualityEstimatorTest, OnPrefsRead) {
   TestRTTObserver rtt_observer;
   TestThroughputObserver throughput_observer;
   TestRTTAndThro
-"""
-
-
 ```

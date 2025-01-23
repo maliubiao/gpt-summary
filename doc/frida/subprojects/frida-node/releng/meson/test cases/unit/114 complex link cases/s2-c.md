@@ -176,7 +176,7 @@ int s1(void) {
 
 总而言之，这段简单的 `s2.c` 代码在 Frida 的上下文中，主要用于测试和验证 Frida 的基本 hook 功能，特别是对于函数调用和返回值的处理。虽然代码本身不复杂，但它能够帮助开发者理解 Frida 的工作原理，并为分析更复杂的程序打下基础。 文件路径中的 "complex link cases" 暗示了这个测试用例的重点可能是验证 Frida 在不同链接场景下 hook 函数的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/114 complex link cases/s2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,14 +184,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int s1(void);
 
 int s2(void) {
     return s1() + 1;
 }
-
-"""
-
 ```

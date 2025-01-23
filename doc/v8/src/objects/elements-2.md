@@ -59,12 +59,14 @@ console.log(uint8Array); // Uint8ClampedArray [ 10, 200, 255 ]
 
 这部分代码是 V8 引擎中处理数字数组和 TypedArray 的核心组件。它提供了高效、类型化的存储和操作机制，使得 JavaScript 能够有效地处理数值数据和二进制数据。`TypedElementsAccessor` 的设计使得 V8 能够支持多种不同类型的 TypedArray，并针对不同类型进行优化。这段代码的性能直接影响到 JavaScript 中数值计算、图形处理、网络通信等方面的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/elements.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 dDoubleArray>(backing_store),
                                  entry.as_int(), isolate);
   }
@@ -1766,8 +1768,4 @@ class SloppyArgumentsElementsAccessor
   }
 
   static uint32_t GetCapacityImpl(Tagged<JSObject> holder,
-     
-"""
-
-
 ```

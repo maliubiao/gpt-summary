@@ -111,7 +111,7 @@ I need to identify the main categories of controls defined in the file and brief
 
 总而言之，这部分代码定义了大量的控制接口，允许应用程序和驱动程序细粒度地控制各种多媒体硬件的功能，特别是视频和音频的编解码过程以及摄像头和调谐器等设备的参数。这些定义构成了 Android 多媒体框架与底层硬件交互的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/v4l2-controls.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -123,8 +123,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 define V4L2_CID_MPEG_VIDEO_HEVC_I_FRAME_MIN_QP (V4L2_CID_CODEC_BASE + 647)
 #define V4L2_CID_MPEG_VIDEO_HEVC_I_FRAME_MAX_QP (V4L2_CID_CODEC_BASE + 648)
 #define V4L2_CID_MPEG_VIDEO_HEVC_P_FRAME_MIN_QP (V4L2_CID_CODEC_BASE + 649)
@@ -838,7 +840,4 @@ enum v4l2_stateless_hevc_start_code {
 #define V4L2_HEVC_SPS_FLAG_LONG_TERM_REF_PICS_PRESENT (1ULL << 6)
 #define V4L2_HEVC_SPS_FLAG_SPS_TEMPORAL_MVP_ENABLED (1ULL << 7)
 #define V4L2_HEVC_SPS_FL
-"""
-
-
 ```

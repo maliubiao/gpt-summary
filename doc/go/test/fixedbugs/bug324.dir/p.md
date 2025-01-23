@@ -133,15 +133,17 @@ p.Implementation.private()
 
 这段代码简洁地展示了Go语言接口中未导出方法的概念。它强调了Go语言的封装性，允许接口定义一些内部实现细节，这些细节对于实现接口的具体类型是必要的，但对于接口的使用者来说是不可见的。这有助于保持代码的清晰度和可维护性，并隐藏内部实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug324.dir/p.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -157,9 +159,4 @@ type Implementation struct{}
 func (p *Implementation) private() { println("p.Implementation.private()") }
 
 var X = new(Implementation)
-
-"""
-
-
-
 ```

@@ -202,15 +202,17 @@ This systematic approach, starting with the overall context and gradually delvin
 
 总的来说，`go/src/cmd/link/internal/arm/asm.go` 是 Go 链接器中处理 ARM 架构的底层汇编细节的关键部分。它负责生成启动代码、处理重定位、生成 PLT 和 GOT 等，是构建 ARM 平台上可执行文件的核心组件。开发者通常不需要直接与这个文件交互，但理解其功能有助于深入理解 Go 程序的链接过程和在 ARM 架构上的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/arm/asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/5l/asm.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/5l/asm.c
 //
@@ -908,9 +910,4 @@ func addgotsyminternal(target *ld.Target, ldr *loader.Loader, syms *ld.ArchSyms,
 		ldr.Errorf(s, "addgotsyminternal: unsupported binary format")
 	}
 }
-
-"""
-
-
-
 ```

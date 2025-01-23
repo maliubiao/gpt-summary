@@ -194,15 +194,17 @@ C function called.
 
 总而言之，这段测试代码验证了 `cgo` 工具在不同平台下构建和使用动态链接共享对象的能力，同时也暗示了开发者在使用这项功能时需要注意的一些关键点，特别是动态链接库的路径设置和平台特定的编译/链接需求。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/internal/testso/so_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -340,9 +342,4 @@ func testSO(t *testing.T, dir string) {
 	}
 	t.Logf("%s:\n%s", strings.Join(cmd.Args, " "), out)
 }
-
-"""
-
-
-
 ```

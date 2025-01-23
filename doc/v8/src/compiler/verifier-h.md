@@ -140,15 +140,17 @@ square("five"); // 应该传入数字，但传入了字符串
 
 总而言之，`v8/src/compiler/verifier.h` 定义了用于验证 V8 编译器生成的中间表示的类。它的主要目的是确保编译过程的正确性，帮助 V8 开发者尽早发现编译器中的错误，从而提高 JavaScript 代码执行的可靠性和性能。虽然普通 JavaScript 开发者不会直接与这些代码交互，但 `Verifier` 的工作是 V8 引擎正确执行 JavaScript 代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/verifier.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/verifier.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ class V8_EXPORT_PRIVATE ScheduleVerifier {
 }  // namespace v8
 
 #endif  // V8_COMPILER_VERIFIER_H_
-
-"""
-
 ```

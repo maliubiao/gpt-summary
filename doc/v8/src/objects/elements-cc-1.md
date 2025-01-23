@@ -687,7 +687,7 @@ Here's a breakdown of the thought process to arrive at the summary:
 
   static MaybeHandle<Object> FillImpl(DirectHandle<JSObject> receiver,
                                       Direct
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/elements.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/elements.cc以.tq结尾，那它是个v8 torque源代码，
@@ -695,8 +695,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ,
                               DirectHandle<FixedArrayBase> store,
                               InternalIndex entry, DirectHandle<Object> value,
@@ -1468,7 +1470,4 @@ class DictionaryElementsAccessor
                                        Tagged<JSObject> receiver,
                                        Tagged<FixedArrayBase> backing_store) {
     Tagged<NumberDictionary> dict = Cast<NumberDictionary>(backing_store)
-"""
-
-
 ```

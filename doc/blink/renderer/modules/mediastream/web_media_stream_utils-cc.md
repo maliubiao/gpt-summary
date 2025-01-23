@@ -176,15 +176,17 @@ By following these steps, and iteratively refining the explanation, we arrive at
 
 总而言之，`web_media_stream_utils.cc` 中的 `CreateWebMediaStreamVideoTrack` 函数是 Blink 引擎中创建视频 `WebMediaStreamTrack` 的关键入口点，它连接了底层的媒体源和上层的 JavaScript API，使得网页能够访问和控制用户的摄像头。 理解它的功能有助于理解 Web Media Stream API 的内部实现和调试相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/web_media_stream_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ WebMediaStreamTrack CreateWebMediaStreamVideoTrack(
 }
 
 }  // namespace blink
-
-"""
-
 ```

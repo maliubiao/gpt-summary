@@ -103,10 +103,13 @@ It systematically tests various valid and invalid module structures to ensure th
 
 通过这些细致的测试用例，可以提高 WebAssembly 模块解码器的健壮性和可靠性。
 
-Prompt: ```这是目录为v8/test/unittests/wasm/module-decoder-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/wasm/module-decoder-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ONE_EMPTY_FUNCTION(SIG_INDEX(0)),
       // table declaration -----------------------------------------------------
       SECTION(Table, ENTRY_COUNT(1), kFuncRefCode, kNoMaximum, 1),
@@ -466,7 +469,4 @@ TEST_F(WasmModuleVerifyTest, InvalidSharedGlobal) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

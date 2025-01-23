@@ -109,7 +109,7 @@ By following these steps, combining code analysis with domain knowledge about Fr
 
 总而言之，这个 `main.c` 文件是一个非常简洁但重要的测试用例，它验证了 Frida 在处理动态链接库函数调用时的基本能力，并且揭示了软件开发、逆向工程中关于共享库链接的一些核心概念。 调试这类问题需要对编译链接过程、操作系统加载库的机制以及 Frida 的工作原理有一定的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/30 shared_mod linking/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_IMPORT __declspec(dllimport)
 #else
@@ -130,7 +132,4 @@ int DLL_IMPORT func();
 int main(int argc, char **arg) {
     return func();
 }
-
-"""
-
 ```

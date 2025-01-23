@@ -140,15 +140,17 @@ This methodical approach allowed me to dissect the code, understand its purpose,
 
 这部分测试代码主要集中在对 `LayoutBoxModelObject` 类中关于基本布局属性计算（如光标位置、边框内边距）以及粘性定位功能的测试。它通过创建各种 HTML 和 CSS 场景，验证了 Blink 引擎在处理这些布局特性时的正确性，并覆盖了多种可能的用户使用场景和潜在的错误情况。这些测试对于确保 Blink 引擎的布局功能符合 Web 标准至关重要。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_box_model_object_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -946,7 +948,4 @@ TEST_P(LayoutBoxModelObjectTest,
   EXPECT_EQ(
       sticky_parent,
       nested_child_constraints->nearest_sticky_layer_shifting_cont
-"""
-
-
 ```

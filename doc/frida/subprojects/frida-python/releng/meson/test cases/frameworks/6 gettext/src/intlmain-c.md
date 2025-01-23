@@ -160,7 +160,7 @@ International greeting.
 
 总而言之，`intlmain.c` 虽然是一个简单的测试程序，但它清晰地展示了 `gettext` 库的基本用法，对于理解和调试使用 `gettext` 进行本地化的应用程序来说是一个很好的起点。在 Frida 的上下文中，它可以作为验证 hook 脚本、理解本地化流程以及定位目标应用程序中本地化问题的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/6 gettext/src/intlmain.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<libintl.h>
 #include<locale.h>
 #include<stdio.h>
@@ -187,7 +189,4 @@ int main(int argc, char **argv) {
     printf("%s\n", _("International greeting."));
     return 0;
 }
-
-"""
-
 ```

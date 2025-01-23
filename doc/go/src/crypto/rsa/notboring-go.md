@@ -152,7 +152,7 @@ func newPrivateKey(key *PrivateKey) (*boring.PrivateKeyRSA, error) {
 
 因此，**务必在构建 Go 程序时明确指定所需的构建标签，特别是在依赖特定实现（如 BoringCrypto）的情况下。** 确保开发、测试和生产环境的构建配置一致非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/rsa/notboring.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -160,8 +160,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -178,9 +180,4 @@ func boringPublicKey(*PublicKey) (*boring.PublicKeyRSA, error) {
 func boringPrivateKey(*PrivateKey) (*boring.PrivateKeyRSA, error) {
 	panic("boringcrypto: not available")
 }
-
-"""
-
-
-
 ```

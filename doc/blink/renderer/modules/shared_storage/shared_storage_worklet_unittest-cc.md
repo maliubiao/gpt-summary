@@ -129,7 +129,7 @@ By following this systematic approach, we can generate a comprehensive summary o
 
 这个测试文件的目的是确保当用户通过网页上的 JavaScript 代码触发 Shared Storage Worklet 的各种操作时，Blink 引擎中的相关逻辑能够正确执行。通过模拟各种场景和错误情况，开发者可以确保 Shared Storage Worklet 的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/shared_storage/shared_storage_worklet_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1026,7 +1028,4 @@ TEST_F(SharedStorageWorkletTest,
             "Expected error: Failed to read the 'navigator' property from "
             "'SharedStorageWorkletGlobalScope': navigator cannot be accessed "
             "during addMod
-"""
-
-
 ```

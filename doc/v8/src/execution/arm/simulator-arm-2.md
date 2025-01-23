@@ -140,12 +140,14 @@ Here are some JavaScript examples where the simulated NEON instructions in this 
 
 **In summary, this part of the `simulator-arm.cc` file provides the low-level simulation of ARMv8 instructions, particularly those related to floating-point operations and NEON SIMD. This is crucial for V8's ability to accurately and efficiently simulate the execution of JavaScript and WebAssembly code on ARM architectures, even when running on different hardware.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm/simulator-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ersionSaturate(val, unsigned_integer);
   } else {
     switch (mode) {
@@ -2088,7 +2090,4 @@ void Simulator::DecodeAdvancedSIMDDataProcessing(Instruction* instr) {
         NeonSize ns =
             static_cast<NeonSize>(base::bits::WhichPowerOfTwo(size >> 3));
         switch (ns)
-"""
-
-
 ```

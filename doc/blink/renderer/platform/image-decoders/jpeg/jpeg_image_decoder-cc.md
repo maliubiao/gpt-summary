@@ -194,15 +194,17 @@ By following these steps, I can systematically analyze the provided code and gen
 
 这部分代码主要关注于解码前的准备工作，包括数据接收、头信息解析和参数配置。 实际的像素解码操作可能会在 `Decode()` 方法的后续状态中进行（`kJpegDecompressSequential` 或 `kJpegDecompressProgressive`）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/jpeg/jpeg_image_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Apple Computer, Inc.
  *
@@ -1112,7 +1114,4 @@ gfx::Size JPEGImageDecoder::DecodedSize() const {
 }
 
 void JPEGImageDecoder::SetDecodedSize(un
-"""
-
-
 ```

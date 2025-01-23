@@ -94,11 +94,13 @@ let result = add(5, 10);
 
 `disasm-loong64.cc` 是 V8 引擎中一个重要的组成部分，它提供了将 JavaScript 代码编译成的 LoongArch64 机器码转换回汇编语言的能力，这对于理解 V8 的工作原理、进行性能分析和调试至关重要。 开发者可以通过查看反汇编输出来了解 V8 如何优化和执行他们的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/loong64/disasm-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1810,7 +1812,4 @@ void Disassembler::Disassemble(FILE* f, uint8_t* begin, uint8_t* end,
 }  // namespace disasm
 
 #endif  // V8_TARGET_ARCH_LOONG64
-
-"""
-
 ```

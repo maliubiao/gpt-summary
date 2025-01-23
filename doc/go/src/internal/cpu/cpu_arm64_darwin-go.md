@@ -165,7 +165,7 @@ func IsFeatureEnabled(featureName string) bool {
 
 总而言之，这段代码的核心功能是在 macOS 的 arm64 架构上检测 CPU 的硬件特性，它通过 `sysctl` 系统调用实现，并针对 Apple Silicon M1 进行了特殊处理。虽然其目的是为 Go 运行时提供 CPU 特性信息，但直接使用 `internal` 包可能会导致潜在的兼容性问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/cpu/cpu_arm64_darwin.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -173,8 +173,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -221,9 +223,4 @@ func sysctlEnabled(name []byte) bool {
 	}
 	return value > 0
 }
-
-"""
-
-
-
 ```

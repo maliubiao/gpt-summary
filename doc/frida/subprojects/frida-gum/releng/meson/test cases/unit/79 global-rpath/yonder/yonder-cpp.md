@@ -200,7 +200,7 @@ By following these steps, combining code analysis with an understanding of Frida
 
 总而言之，`yonder.cpp` 虽然功能简单，但它可以作为 Frida 动态 instrumentation 的一个目标，用于演示和测试 Frida 的各种功能，并且在逆向工程的上下文中，可以作为理解程序行为的一个入口点。用户通常通过 Frida 脚本来间接与这个函数互动，或者在调试 Frida 本身时会查看这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/79 global-rpath/yonder/yonder.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -208,12 +208,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "yonder.h"
 
 char *yonder(void) { return "AB54 6BR"; }
-
-"""
-
 ```

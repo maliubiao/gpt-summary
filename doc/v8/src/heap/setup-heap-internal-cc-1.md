@@ -172,7 +172,7 @@ async function myFunction() {
 
 总而言之，`v8/src/heap/setup-heap-internal.cc` 的这一部分主要负责 **在 V8 堆的初始化阶段，构建和配置构成 JavaScript 运行时环境基础的各种元数据结构（主要是对象 Map）以及关键的只读对象**。 这些对象为 V8 引擎执行 JavaScript 代码提供了必要的类型信息、常量值和初始状态。 这部分代码是 V8 引擎启动和正常运行的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/setup-heap-internal.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/setup-heap-internal.cc以.tq结尾，那它是个v8 torque源代码，
@@ -180,8 +180,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 DER_OBJECT_TYPE,
             WasmSuspenderObject::kSize, wasm_suspender_object)
     IF_WASM(ALLOCATE_MAP, WASM_TYPE_INFO_TYPE, kVariableSizeSentinel,
@@ -958,7 +960,4 @@ void Heap::CreateInitialMutableObjects() {
     info = CreateSharedFunctionInfo(
         isolate_, Builtin::kPromiseAnyRejectElementClosure, 1);
     set_promise_any_reject_element_closure_sh
-"""
-
-
 ```

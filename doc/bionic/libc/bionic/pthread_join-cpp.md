@@ -299,7 +299,7 @@ if (Process.platform === 'android') {
 
 通过以上分析，我们详细了解了 `bionic/libc/bionic/pthread_join.cpp` 的功能、与 Android 的关系、内部 libc 函数的实现、涉及的动态链接过程、常见错误以及如何使用 Frida 进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/pthread_join.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -310,8 +310,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -386,7 +388,4 @@ int pthread_join(pthread_t t, void** return_value) {
   __pthread_internal_remove_and_free(thread);
   return 0;
 }
-
-"""
-
 ```

@@ -101,7 +101,7 @@ Initially, I might have thought the variable `dir2_dir1` was intended to hold so
 
 总而言之，这个简单的 C 文件本身的功能很有限，但它的存在是 Frida 质量保证和测试体系的一部分。它用于测试 Frida 在处理具有重复名称的源文件时的能力，这与逆向工程中遇到的实际问题息息相关。开发者或测试人员关注这个文件通常是因为相关的测试失败、构建出现问题，或者需要理解 Frida 如何处理特定的代码组织场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/151 duplicate source names/dir2/dir1/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,10 +109,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int dir2_dir1 = 21;
-
-"""
-
 ```

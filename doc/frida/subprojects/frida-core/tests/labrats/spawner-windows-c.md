@@ -171,7 +171,7 @@ This structured approach ensures that all aspects of the user's request are addr
 
 总而言之，`spawner-windows.c` 是 Frida 自动化测试流程中的一个重要组成部分，它通过模拟各种进程启动场景，帮助开发者验证 Frida 在 Windows 平台上的稳定性和正确性。开发者通常通过 Frida 的测试框架间接地与这个工具交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/labrats/spawner-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #define VC_EXTRALEAN
 
 #include <stdio.h>
@@ -317,7 +319,4 @@ error_epilogue:
     return 1;
   }
 }
-
-"""
-
 ```

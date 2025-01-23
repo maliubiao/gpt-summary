@@ -249,15 +249,17 @@ Read UUID:     [b1 8a 1f 2a 00 00 30 00 c0 00 00 00 00 00 00 00]
 
 这段代码是 Go 链接器为了解决 macOS 上外部链接生成的可执行文件 UUID 不确定性问题而设计的。它通过基于 Go 构建 ID 生成和写入 UUID，确保了在相同构建 ID 下生成的可执行文件具有相同的 UUID，从而提高了构建的可重复性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/macho_update_uuid.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -358,9 +360,4 @@ func machoRewriteUuid(ctxt *Link, exef *os.File, exem *macho.File, outexe string
 	// We're done
 	return nil
 }
-
-"""
-
-
-
 ```

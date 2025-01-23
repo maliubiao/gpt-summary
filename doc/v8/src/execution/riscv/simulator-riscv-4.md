@@ -77,12 +77,14 @@ console.log(c); // 输出类似 Float32Array [ 6, 7.4142135, 8.7320508, 10 ]
 
 作为 `v8/src/execution/riscv/simulator-riscv.cc` 的最后一部分，这段代码完成了 RISC-V 向量扩展指令的模拟执行功能。它是 V8 引擎在 RISC-V 平台上支持高性能数值计算的关键组成部分，通过模拟执行 RVV 指令，使得 V8 能够优化 JavaScript 中涉及数组和数值计算的代码。这部分代码主要关注浮点向量运算，并处理了各种不同的 RVV 指令及其操作数类型和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/riscv/simulator-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 USE(vd);
               })
           break;
@@ -1334,8 +1336,4 @@ void Simulator::DoSwitchStackLimit(Instruction* instr) {
 }  // namespace v8
 
 #endif  // USE_SIMULATOR
-
-"""
-
-
 ```

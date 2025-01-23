@@ -199,15 +199,17 @@ ptrToThis:     /* 指向 *MyStruct 的类型描述符的偏移量 */
 
 总而言之，`go/src/cmd/compile/internal/reflectdata/reflect.go` 是 Go 编译器中至关重要的一个文件，它负责生成运行时反射所需的基础设施，使得 Go 语言能够在运行时具备强大的类型自省和操作能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/reflectdata/reflect.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1692,9 +1694,4 @@ func deref(t *types.Type) *types.Type {
 	}
 	return t
 }
-
-"""
-
-
-
 ```

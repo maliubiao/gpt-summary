@@ -160,11 +160,13 @@ console.log(largeNumberCount);
 
 `bytecode-register-optimizer.cc` 是 V8 引擎中一个关键的性能优化组件。它通过智能地管理和重用寄存器，延迟不必要的操作，以及利用类型和变量信息，来生成更高效的字节码，从而加速 JavaScript 代码的执行。虽然 JavaScript 开发者不需要直接理解其内部机制，但了解其存在和作用有助于理解 V8 如何优化代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-register-optimizer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -757,7 +759,4 @@ void BytecodeRegisterOptimizer::RegisterFreeEvent(Register reg) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

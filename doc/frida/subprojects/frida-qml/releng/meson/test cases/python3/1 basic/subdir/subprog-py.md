@@ -171,7 +171,7 @@ This script is a test case, so a user wouldn't typically arrive here through nor
 
 In essence, this script is a small but crucial piece in Frida's internal testing, designed to ensure a fundamental aspect of its functionality works as expected. It highlights the core concepts of dynamic instrumentation, albeit in a simplified form.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/python3/1 basic/subdir/subprog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # In order to run this program, PYTHONPATH must be set to
@@ -193,7 +195,4 @@ print('Running mainprog from subdir.')
 
 if gluonator.gluoninate() != 42:
     sys.exit(1)
-
-"""
-
 ```

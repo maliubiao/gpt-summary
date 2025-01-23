@@ -87,7 +87,7 @@ The code appears to be responsible for generating Ninja build rules for compilin
 
 作为 Frida 构建过程的一部分，这段 `ninjabackend.py` 的代码主要负责将 Meson 构建系统的抽象描述转化为 Ninja 构建工具的具体指令，专注于**生成用于编译和链接源代码的详细构建规则**。它深入处理了各种编译器的选项、调试信息的生成、预编译头的使用、共享库符号的处理以及不同平台和目标类型下的链接策略。这段代码体现了对底层编译链接过程的深入理解，以及对不同操作系统和编译器之间差异的细致处理，是 Frida 构建流程中将高级构建描述转化为可执行构建步骤的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -96,8 +96,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 file called foo.pdb. So will a static library
         # foo.lib, which clobbers both foo.pdb _and_ the dll file's
         # export library called foo.lib (by default, currently we name
@@ -716,7 +718,4 @@ file called foo.pdb. So will a static library
 
         prelinker = target.get_prelinker()
         cmd = prelinker.exelist
-"""
-
-
 ```

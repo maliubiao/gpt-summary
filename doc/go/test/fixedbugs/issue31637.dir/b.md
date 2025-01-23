@@ -243,15 +243,17 @@ Some extra data
 
 总而言之，这段 `b.go` 代码片段主要用于演示 Go 语言中结构体嵌套的基本用法，它允许 `No` 结构体直接使用 `a.EDO` 的成员。理解结构体嵌套是编写更简洁、更具表达力的 Go 代码的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue31637.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -271,9 +273,4 @@ func X() No {
 func main() {
 	X()
 }
-
-"""
-
-
-
 ```

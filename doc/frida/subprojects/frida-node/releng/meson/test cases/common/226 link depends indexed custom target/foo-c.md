@@ -125,7 +125,7 @@ Here's a breakdown of the thought process to analyze the provided C code and ans
 
 虽然 `foo.c` 的功能很简单，但它在 Frida 这样的动态插桩工具的上下文中，可以作为测试用例来验证构建系统的行为，或者作为逆向工程的练习目标来观察文件依赖关系。理解这个程序的功能以及它与底层系统和构建过程的联系，可以帮助开发者和逆向工程师更好地理解 Frida 的工作原理和进行相关的调试工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/226 link depends indexed custom target/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main(void) {
@@ -150,7 +152,4 @@ int main(void) {
 
   return 0;
 }
-
-"""
-
 ```

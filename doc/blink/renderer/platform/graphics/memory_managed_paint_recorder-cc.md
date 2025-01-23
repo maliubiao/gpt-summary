@@ -112,14 +112,16 @@ By following these steps, I can systematically analyze the code and provide a co
 
 `MemoryManagedPaintRecorder` 是 Blink 渲染引擎中负责高效记录和管理绘制操作的关键组件。它位于渲染管线的底层，接收由高层逻辑产生的绘制指令，并为最终的图形渲染做准备。虽然开发者通常不直接使用它，但理解其功能有助于理解浏览器渲染机制以及在高层 API 中可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/memory_managed_paint_recorder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 Google Inc. All rights reserved.
  *
@@ -236,7 +238,4 @@ void MemoryManagedPaintRecorder::EndSideRecording() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

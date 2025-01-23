@@ -188,15 +188,17 @@ Let's break down the thought process for analyzing this C++ test file.
 
 `simple_buffer_allocator_test.cc` 文件是 QUIC 库中 `SimpleBufferAllocator` 类的单元测试，用于验证其基本的内存分配、释放和移动语义是否正确。虽然它与 JavaScript 没有直接的编程接口，但作为 Chromium 网络栈的基础组件，它的正确性对于所有依赖该栈的应用程序（包括运行 JavaScript 代码的浏览器）至关重要。理解这些测试用例有助于开发者了解 `SimpleBufferAllocator` 的行为，并在遇到网络相关的内存问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/simple_buffer_allocator_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ TEST(SimpleBufferAllocatorTest, CopyBuffer) {
 
 }  // namespace
 }  // namespace quiche
-
-"""
-
 ```

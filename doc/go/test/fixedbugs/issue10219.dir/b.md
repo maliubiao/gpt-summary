@@ -189,15 +189,17 @@ func main() {
 
 总而言之，这段代码的核心功能是演示了如何在 Go 语言中使用相对路径导入来访问同级目录下的其他包，并创建和操作其中定义的结构体。使用者需要注意保持正确的目录结构和避免循环导入。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue10219.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -209,9 +211,4 @@ import "./a"
 func F() *a.S {
 	return &a.S{}
 }
-
-"""
-
-
-
 ```

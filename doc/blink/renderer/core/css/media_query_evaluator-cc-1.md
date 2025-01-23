@@ -128,7 +128,7 @@ Confidence: 5/5
 
 总而言之，这部分代码是 Chromium Blink 引擎中负责**具体执行 CSS 媒体特性评估逻辑**的关键组成部分。它定义了一系列针对不同媒体特性的评估函数，这些函数接收媒体查询中指定的值和当前设备的实际媒体特性值，并返回该媒体特性是否匹配的结果。这直接影响了 CSS 媒体查询的功能，使得网页能够根据不同的设备环境应用不同的样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/media_query_evaluator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ectRatioMediaFeatureEval(
     const MediaQueryExpValue& value,
     MediaQueryOperator,
@@ -1059,7 +1061,4 @@ KleeneValue MediaQueryEvaluator::EvalStyleFeature(
   // Style features do not support the range syntax.
   DCHECK(!bounds.IsRange());
   DCHECK(bounds.right.op == MediaQ
-"""
-
-
 ```

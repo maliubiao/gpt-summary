@@ -184,15 +184,17 @@ func s1(x **[]int, xs **string, i, j int) {
 
 `go/test/sliceopt.go` 代码片段是一个用于测试 Go 编译器 `append` 和切片操作优化能力的测试文件。它通过特殊的注释和编译器标志来断言编译器是否按照预期进行了优化，例如“仅长度更新”和省略不必要的完整切片操作。这段代码本身并不直接运行，而是作为 Go 编译器测试套件的一部分发挥作用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/sliceopt.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -d=append,slice
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -225,9 +227,4 @@ func s1(x **[]int, xs **string, i, j int) {
 	zs = (**xs)[0:] // ERROR "slice: omit slice operation$"
 	println(zs)
 }
-
-"""
-
-
-
 ```

@@ -138,15 +138,17 @@ arr.push(4); // 当执行到这里时，V8 内部会调用与 Array.prototype.pu
 
 `v8/src/snapshot/embedded/embedded-data-inl.h` 定义了访问 V8 引擎预编译的内置函数代码和元数据的接口。它通过 `EmbeddedData` 类提供了一系列内联函数，允许 V8 引擎在运行时快速定位和执行内置的 JavaScript 功能，这是 V8 高性能的关键组成部分。虽然普通 JavaScript 开发者不会直接修改或使用这个文件，但它体现了 V8 引擎为了执行效率所做的底层优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/embedded/embedded-data-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/embedded/embedded-data-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ uint32_t EmbeddedData::PaddedInstructionSizeOf(Builtin builtin) const {
 }  // namespace v8
 
 #endif  // V8_SNAPSHOT_EMBEDDED_EMBEDDED_DATA_INL_H_
-
-"""
-
 ```

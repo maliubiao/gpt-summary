@@ -169,7 +169,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "open"), {
 
 总而言之，`bionic/tests/unistd_test.cpp` 是一个关键的测试文件，用于确保 Android Bionic 库提供的 Unix 标准系统调用和实用工具函数能够正确地工作，这对于保证 Android 系统的稳定性和应用程序的兼容性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/unistd_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -181,8 +181,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 S);
   VERIFY_SYSCONF_UNSUPPORTED(_SC_TRACE);
   VERIFY_SYSCONF_UNSUPPORTED(_SC_TRACE_EVENT_FILTER);
@@ -848,8 +850,4 @@ TEST(UNISTD_TEST, copy_file_range) {
   ASSERT_EQ("hello world", content);
 #endif  // __GLIBC__
 }
-
-"""
-
-
 ```

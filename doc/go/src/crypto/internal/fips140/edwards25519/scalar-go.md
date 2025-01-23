@@ -215,7 +215,7 @@ Scalar 1 and Scalar 2 are not equal
 
 总而言之，这段 `scalar.go` 代码是 Edwards25519 椭圆曲线密码学中处理标量的核心组件，提供了创建、操作和转换标量的功能，并且由于包含在 `fips140` 目录中，可以推断其实现遵循了 FIPS 140 标准的要求。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/edwards25519/scalar.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -223,8 +223,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright (c) 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -568,9 +570,4 @@ func (s *Scalar) signedRadix16() [64]int8 {
 
 	return digits
 }
-
-"""
-
-
-
 ```

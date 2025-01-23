@@ -89,7 +89,7 @@ Now, I need to structure this information into a concise summary that answers th
 
 这部分代码主要负责 Frida 在 ARM64 架构下动态生成和管理代码执行块的核心逻辑。它涵盖了保存和恢复 CPU 上下文、处理代码失效、确保辅助函数可达、加载寄存器值、处理栈不对齐异常以及执行块的创建、提交、失效和回填等关键功能。这些功能共同支撑了 Frida 的动态插桩能力，使其能够在运行时修改目标程序的行为，为逆向工程、安全分析和动态调试提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-arm64/gumstalker-arm64.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,9 +98,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-    gssize size = 2 * sizeof (GumArm64VectorReg);
+### 源代码
+```c
+gssize size = 2 * sizeof (GumArm64VectorReg);
 
       if (i == 6)
         size += (32 - 8) * sizeof (GumArm64VectorReg);
@@ -1118,7 +1120,4 @@ gum_exec_block_virtualize_branch_insn (GumExecBlock * block,
 
   is_conditional = (id == ARM64_INS_B && cc != ARM64_CC_INVALID) ||
       (id == ARM64_INS_CBZ) || (id == ARM64_INS_CBNZ
-"""
-
-
 ```

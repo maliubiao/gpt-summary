@@ -112,15 +112,17 @@ By following this structured thought process, we can effectively analyze the giv
 
 总而言之，`editing_state.cc` 文件虽然代码量不大，但在 Blink 渲染引擎的编辑功能中扮演着重要的角色，它提供了一种基础的机制来管理和控制编辑操作的状态，并为调试提供了有价值的工具。它与 JavaScript、HTML 和 CSS 的交互是间接的，但对于实现用户在网页上进行的各种编辑操作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/editing_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ NoEditingAbortChecker::~NoEditingAbortChecker() {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

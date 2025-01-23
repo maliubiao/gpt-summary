@@ -101,7 +101,7 @@ By following these steps, we can arrive at a comprehensive understanding of the 
 
 总而言之，`visible_units_line_test.cc` 的第二部分深入测试了 Blink 引擎在处理各种复杂的文本布局和编辑场景时，对“行”的理解和操作的正确性，这对于保证用户在浏览器中的文本编辑体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/visible_units_line_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 > <b>ef|</b></p>",
             TestEndOfLine("<p>a|b <b>cd</b> <b>ef</b></p>"));
   EXPECT_EQ(
@@ -527,8 +529,4 @@ TEST_F(VisibleUnitsLineTest, InSameLineWithBidiReordering) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

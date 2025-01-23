@@ -158,15 +158,17 @@ Let's break down the thought process for analyzing this C++ test file for the Bl
 
 总而言之，这个测试文件专注于验证媒体控件中动画箭头的显示和动画逻辑，它与 HTML（通过 SVG 元素的渲染）、CSS（通过控制样式和动画）以及 JavaScript（通过触发显示逻辑）都有密切的关系。理解这些关系有助于调试与媒体控件动画相关的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_controls/elements/media_control_animated_arrow_container_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ TEST_F(MediaControlAnimatedArrowContainerElementTest, ShowIncrementsCounter) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

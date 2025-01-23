@@ -158,16 +158,18 @@ While this code is internal to the browser, understanding its functionality help
 
 In conclusion, this part of `inspector_trace_events.cc` focuses on **capturing specific events related to DOM manipulation, CSS processing (especially style recalculations and animations), and JavaScript event dispatch and scheduling**. It structures this information into trace events that are essential for providing detailed insights into the browser's rendering and scripting behavior within the Chromium DevTools. This allows developers to understand the sequence of actions, identify performance bottlenecks, and debug issues related to the interaction between JavaScript, HTML, and CSS.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_trace_events.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-                                  LocalFrame* frame,
+### 源代码
+```cpp
+LocalFrame* frame,
                                              DOMNodeId nodeId) {
   auto dict = std::move(context).WriteDictionary();
   dict.Add("frame", IdentifiersFactory::FrameId(frame));
@@ -399,8 +401,4 @@ void inspector_scheduler_abort_event::Data(perfetto::TracedValue trace_context,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

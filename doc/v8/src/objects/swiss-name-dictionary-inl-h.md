@@ -153,15 +153,17 @@ While developers don't directly interact with `SwissNameDictionary` in their Jav
 
 **In summary, `v8/src/objects/swiss-name-dictionary-inl.h` defines the core implementation of a high-performance hash table used by V8 to manage the properties of JavaScript objects. It leverages the Swiss Table algorithm for efficiency and includes mechanisms for dynamic sizing, handling deleted entries, iteration, and metadata storage. While not directly written in Torque, it often works in conjunction with Torque-generated code for object management within V8.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/swiss-name-dictionary-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/swiss-name-dictionary-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -928,7 +930,4 @@ ACCESSORS_CHECKED2(SwissNameDictionary, meta_table, Tagged<ByteArray>,
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_SWISS_NAME_DICTIONARY_INL_H_
-
-"""
-
 ```

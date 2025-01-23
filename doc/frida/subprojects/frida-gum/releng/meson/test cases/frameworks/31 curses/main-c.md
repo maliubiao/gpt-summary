@@ -130,7 +130,7 @@ By following this structured thought process, anticipating the prompt's requirem
 
 总而言之，虽然这个 `main.c` 文件非常简单，但它在 Frida 动态插桩工具的上下文中，特别是对于涉及到文本界面应用程序的分析和调试时，具有一定的测试和验证意义。它可以帮助开发者理解 Frida 如何与 `curses` 库交互，并为解决更复杂的问题提供基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/31 curses/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "curses.h"
 
 int main(void) {
@@ -147,6 +149,4 @@ initscr();
 endwin();
 return 0;
 }
-"""
-
 ```

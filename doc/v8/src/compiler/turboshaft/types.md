@@ -123,11 +123,13 @@ getPoint([1, 2]);
 
 `v8/src/compiler/turboshaft/types.cc` 文件定义了 Turboshaft 编译器用于表示和操作类型信息的内部机制。虽然 JavaScript 是动态类型的，但 V8 引擎为了优化性能，会在编译阶段尽可能地推断和利用类型信息。这个文件定义的类型系统是实现这种优化的关键组成部分。它允许 Turboshaft 进行更精细的类型分析，从而生成更高效的机器码，最终提升 JavaScript 代码的执行速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/types.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -844,7 +846,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE) FloatType<32>;
 template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE) FloatType<64>;
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

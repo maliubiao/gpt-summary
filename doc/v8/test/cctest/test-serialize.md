@@ -105,12 +105,14 @@ if (savedState) {
 
 总而言之，这个 C++ 代码文件的第一部分是 V8 引擎序列化和反序列化功能的测试基础，它验证了核心机制的正确性，而这些机制直接影响到 JavaScript 应用的启动速度、环境定制和状态持久化等方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-serialize.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2007-2010 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1872,9 +1874,4 @@ static DirectHandle<SharedFunctionInfo> CompileScriptAndProduceCache(
   (*out_cached_data)->AcquireDataOwnership();
   return sfi;
 }
-
-
-"""
-
-
 ```

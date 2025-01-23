@@ -152,7 +152,7 @@ While JavaScript developers don't directly interact with this code, understandin
 
 The complete `v8/src/compiler/backend/mips64/instruction-scheduler-mips64.cc` file, through its `GetInstructionLatency` function, serves as a **detailed specification of the execution costs (latencies) for virtually all MIPS64 instructions relevant to V8's code generation**. This information is the foundation upon which the instruction scheduler builds its optimization strategies, ultimately leading to faster execution of JavaScript code on MIPS64 architectures. It meticulously defines how long each individual instruction is expected to take, considering factors like operand types and the specific MIPS64 architecture variant.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/instruction-scheduler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/mips64/instruction-scheduler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -160,8 +160,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 gister());
     case kMips64DaddOvf:
       return DaddOverflowLatency();
@@ -567,8 +569,4 @@ gister());
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

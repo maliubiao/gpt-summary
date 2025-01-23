@@ -138,15 +138,17 @@ try {
 
 `v8/src/objects/call-site-info-inl.h` 定义了 `CallSiteInfo` 对象的内联实现，该对象用于存储函数调用点的信息，包括代码对象和各种标志位。它与 JavaScript 的错误堆栈、性能分析等功能密切相关。V8 使用 Torque 来生成部分相关代码，提高了效率和类型安全性。 理解 `CallSiteInfo` 的结构和功能有助于深入理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/call-site-info-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/call-site-info-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ void CallSiteInfo::set_code_object(Tagged<HeapObject> code,
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_CALL_SITE_INFO_INL_H_
-
-"""
-
 ```

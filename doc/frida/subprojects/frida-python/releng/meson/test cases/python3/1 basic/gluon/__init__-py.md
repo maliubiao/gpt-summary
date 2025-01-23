@@ -78,7 +78,7 @@ By following this structured thinking process, breaking down the prompt, and ite
 
 尽管 `frida/subprojects/frida-python/releng/meson/test cases/python3/1 basic/gluon/__init__.py` 文件内容为空，但它在 Python 的模块导入机制中扮演着至关重要的角色，将 `gluon` 目录定义为一个可导入的包。这为后续的 Frida Python 测试代码提供了组织和导入的基础。虽然这个文件本身不直接执行逆向操作或涉及底层知识，但它的存在是 Frida Python 绑定能够发挥作用的前提，而 Frida 的核心功能正是与二进制底层、操作系统内核和应用程序框架进行交互来实现动态插桩和逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/python3/1 basic/gluon/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -86,9 +86,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

@@ -156,15 +156,17 @@ go test ./cmplx  # 或者可能是 go test ./
 
 总结来说，`go/test/cmplx.go` 是一个用于测试 Go 编译器对 `complex` 函数错误调用的检测能力的测试文件。它通过编写各种错误的 `complex` 函数调用，并使用 `// ERROR` 注释标记预期的错误信息，来验证编译器的正确性。开发者在使用 `complex` 函数时需要注意参数类型和返回值类型，以避免类似的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/cmplx.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -233,9 +235,4 @@ func main() {
 	C128 = complex(f64, f64) // ERROR "cannot use"
 
 }
-
-"""
-
-
-
 ```

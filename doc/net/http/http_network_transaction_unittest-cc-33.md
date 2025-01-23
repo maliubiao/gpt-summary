@@ -165,7 +165,7 @@ This iterative process of understanding the code's purpose, identifying key elem
 
 作为单元测试文件的最后一部分，这个文件着重于测试 `HttpNetworkTransaction` 类在一些更特定和复杂的场景下的行为，例如客户端证书认证后的连接保持、DNS 别名处理以及与 IP 保护代理相关的请求头处理。它还包含了针对特定 Feature Flag (如 Happy Eyeballs V3) 的测试。 这表明在整个 `http_network_transaction_unittest.cc` 文件中，测试的范围从基础的 HTTP 请求处理逐渐扩展到更高级和特定的网络功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第34部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Connection: close\r\n"
                "Content-Length: 4\r\n\r\n"
                "auth"),
@@ -898,8 +900,4 @@ TEST_P(HttpNetworkTransactionPoolTest, SwitchToHttpStreamPool) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

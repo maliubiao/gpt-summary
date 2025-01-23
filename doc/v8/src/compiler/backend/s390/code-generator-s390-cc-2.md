@@ -155,7 +155,7 @@ if (num1 !== num2) { // 浮点数运算可能导致精度误差
 
 总而言之，`v8/src/compiler/backend/s390/code-generator-s390.cc` 是 V8 引擎将 JavaScript 代码转换为可在 S390 架构上执行的机器码的关键部分，它负责实现各种语言结构和操作符的底层指令生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/code-generator-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/s390/code-generator-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -163,8 +163,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lhs_register, sp, Operand(offset));
       }
 
@@ -1068,7 +1070,4 @@ lhs_register, sp, Operand(offset));
       __ vlgv(r1, i.InputSimd128Register(0), MemOperand(r0, 1), Condition(3));
       __ lrvgr(r0, r0);
       __ lrvgr
-"""
-
-
 ```

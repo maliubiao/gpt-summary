@@ -149,7 +149,7 @@ By following this layered approach – from surface code analysis to deep contex
 
 总而言之，`libfile.c` 虽然代码简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在动态链接共享模块时的核心功能，同时也揭示了逆向工程中动态分析的一些基本概念和技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/30 shared_mod linking/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -173,7 +175,4 @@ Prompt:
 int DLL_PUBLIC func() {
     return 0;
 }
-
-"""
-
 ```

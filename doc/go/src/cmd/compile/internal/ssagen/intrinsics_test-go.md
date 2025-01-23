@@ -129,7 +129,7 @@ go test -update ./go/src/cmd/compile/internal/ssagen
 
 这段代码（第 1 部分）的核心功能是**声明了一个在编译器测试中使用的预期内联函数集合**。它通过 `wantIntrinsics` 这个 `map` 来指定不同架构下哪些包的哪些函数应该被编译器内联优化。同时，它还定义了一个命令行 Flag `-update`，用于在需要时更新这个预期集合（尽管具体的更新逻辑未在此代码片段中展示）。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssagen/intrinsics_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -137,8 +137,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -968,9 +970,4 @@ var wantIntrinsics = map[testIntrinsicKey]struct{}{
 	{"ppc64", "internal/runtime/atomic", "LoadAcq"}:                    struct{}{},
 	{"ppc64", "internal/runtime/atomic", "LoadAcq64"}:                  struct{}{},
 	{"ppc64", "
-"""
-
-
-
-
 ```

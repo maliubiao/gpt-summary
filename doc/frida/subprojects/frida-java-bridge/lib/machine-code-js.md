@@ -86,7 +86,7 @@ scan_instructions(lldb.process, 0x12340000, 10)
 3. **跟踪cursor移动**：记录每次循环后的地址变化是否符合预期
 4. **验证tryParse逻辑**：检查是否返回false negative导致错过匹配
 5. **指令解析正确性**：交叉验证`Instruction.parse`输出与反汇编工具（如objdump）
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/machine-code.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -95,8 +95,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
+```
 
-"""
+### 源代码
+```javascript
 function parseInstructionsAt (address, tryParse, { limit }) {
   let cursor = address;
   let prevInsn = null;
@@ -119,7 +121,4 @@ function parseInstructionsAt (address, tryParse, { limit }) {
 module.exports = {
   parseInstructionsAt
 };
-
-"""
-
 ```

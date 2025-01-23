@@ -123,7 +123,7 @@ By following these steps, combining code analysis with logical reasoning about t
 
 **正确的使用方式是确保 `goexperiment.boringcrypto` 和 `boringcrypto` 标签的状态是互斥的。**  通常，你只需要指定其中一个来控制是否使用 BoringSSL。  这个测试文件的存在就是为了在构建过程中捕捉到这种潜在的配置错误。它确保了这两个标签在逻辑上是等价的，如果其中一个被设置，那么就意味着期望使用 BoringSSL 的相关功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/boring/notboring_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -131,8 +131,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -146,9 +148,4 @@ import "testing"
 func TestNotBoring(t *testing.T) {
 	t.Error("goexperiment.boringcrypto and boringcrypto should be equivalent build tags")
 }
-
-"""
-
-
-
 ```

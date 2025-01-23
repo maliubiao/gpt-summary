@@ -84,12 +84,14 @@ UTEST_LOAD_STORE(lw, sw, int32_t, 0x456AF894)
 
 总而言之，`test-assembler-riscv32.cc` 通过大量的单元测试来保证 V8 引擎在 RISC-V 32位架构下，能够正确地将 JavaScript 的各种操作翻译成底层的机器指令，从而确保 JavaScript 代码能够在该架构上正确高效地执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-riscv32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1905,7 +1907,4 @@ TEST(li_estimate) {
     CcTest::InitializeVM();                                                  \
     Isolate* isolate = CcTest::i_isolate();                                  \
     Han
-"""
-
-
 ```

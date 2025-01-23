@@ -117,11 +117,13 @@ c_internal.StoreHeapObject(world_object); // 存储指向对象指针
 
 总而言之，`tagged-impl.cc` 定义了 V8 引擎中表示和操作 JavaScript 值的基本 building block。虽然开发者无法直接触及这些底层的 C++ 实现，但理解它们有助于更深入地理解 JavaScript 引擎的工作原理以及 JavaScript 语言的一些特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/tagged-impl.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ template class TaggedImpl<HeapObjectReferenceType::WEAK, Address>;
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

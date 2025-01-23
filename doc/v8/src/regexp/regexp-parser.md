@@ -59,12 +59,14 @@ console.log(regexUnicodeSets.test('b')); // 输出: false
 
 在这些 JavaScript 示例中，当你定义 `regex1`, `regex2`, `regex3`, `regexUnicode`, `regexUnicodeSets` 这些正则表达式时，V8 引擎内部就会调用 `regexp-parser.cc` 中的代码来解析这些字符串，构建出相应的 AST。后续的 `text.match()` 或 `regex.test()` 等操作会基于这个解析后的 AST 进行匹配。例如，对于 `regex2 = /(a)(b+)(c)/i;`, `regexp-parser.cc` 会识别出三个捕获组，并将其信息存储在 AST 中，以便在匹配成功后，JavaScript 可以通过 `match2[1]`, `match2[2]`, `match2[3]` 来访问捕获的内容。对于 `regex3`, `regexp-parser.cc` 会处理 `(?<first>...)` 这样的命名捕获组语法，使得 JavaScript 可以通过 `match3.groups.first` 来访问捕获的内容。  带有 `/u` 或 `/v` 标志的正则表达式的解析也会依赖于 `regexp-parser.cc` 中对 Unicode 相关语法的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2018,7 +2020,4 @@ bool IsExactPropertyValueAlias(const char* property_value_name,
         static_cast<UPropertyNameChoice>(U_LONG_PROPERTY_NAME + i));
     if (long_name == nullptr) break;
     if (strcmp(
-"""
-
-
 ```

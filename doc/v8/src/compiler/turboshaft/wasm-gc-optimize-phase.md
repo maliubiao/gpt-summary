@@ -102,11 +102,13 @@ console.log(`Point: (${x2}, ${y2})`);
 
 `v8/src/compiler/turboshaft/wasm-gc-optimize-phase.cc` 文件定义了一个重要的 Turboshaft 编译阶段，它专注于优化使用 WebAssembly GC 特性的代码。通过消除冗余加载和利用类型信息，它可以提升 WebAssembly 模块的执行效率，进而提高依赖这些模块的 JavaScript 应用的性能。虽然这个阶段直接作用于 WebAssembly 代码，但其优化效果可以间接地惠及 JavaScript。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-gc-optimize-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -129,7 +131,4 @@ void WasmGCOptimizePhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

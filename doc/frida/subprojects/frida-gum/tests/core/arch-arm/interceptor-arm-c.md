@@ -116,7 +116,7 @@ Now, I'll organize my thoughts to address each of the user's requests.这个文�
 
 总而言之，这个测试文件是 Frida 开发团队用来验证其在 ARM 架构下拦截器功能的正确性的重要组成部分。对于 Frida 用户来说，理解这些测试用例可以帮助他们更好地理解 Frida 的工作原理，并排查在使用过程中遇到的问题。它涵盖了 ARM 架构下的一些关键特性，例如 Thumb 指令集、链接寄存器和代码缓存，这些都是进行 ARM 平台逆向工程时需要深入理解的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm/interceptor-arm.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016-2019 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -335,7 +337,4 @@ gum_emit_lr_func (gpointer mem,
 
   gum_thumb_writer_clear (&tw);
 }
-
-"""
-
 ```

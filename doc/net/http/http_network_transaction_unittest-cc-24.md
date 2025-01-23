@@ -109,7 +109,7 @@ Now I can formulate the response based on these observations.
 
 这段代码是 `HttpNetworkTransaction` 类的单元测试，主要关注其在处理客户端证书认证和 IP 连接池方面的行为。它通过模拟各种网络场景，验证了 `HttpNetworkTransaction` 能够正确处理客户端证书的请求和提供、管理客户端证书缓存，并能够有效地利用 IP 连接池来优化网络连接。此外，它还测试了在涉及 HTTPS 代理时，连接池的隔离性。作为测试的一部分，它也覆盖了在 TLS 重新协商期间的证书请求处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -117,9 +117,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第25部分，共34部分，请归纳一下它的功能
+```
 
-"""
- which should abort due to requiring a
+### 源代码
+```cpp
+which should abort due to requiring a
         // client certificate.
         rv = callback.WaitForResult();
         ASSERT_THAT(rv, IsError(ERR_SSL_CLIENT_AUTH_CERT_NEEDED));
@@ -921,7 +923,4 @@ TEST_P(HttpNetworkTransactionTest, NoIPConnectionPoolingForTwoProxiesHttp) {
           "https://not-used:70", TRAFFIC_ANNOTATION_FOR_TESTS);
   session_deps_.proxy_resolution_service->SetProxyDelegate(proxy_delegate);
   se
-"""
-
-
 ```

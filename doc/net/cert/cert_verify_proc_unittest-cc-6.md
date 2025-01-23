@@ -94,7 +94,7 @@ Since this is part 7 of 8, the overall file likely tests various aspects of the 
 
 作为整个 `net/cert/cert_verify_proc_unittest.cc` 文件的一部分，这第七部分专注于 **深入测试 `CertVerifyProc` 在处理被显式信任的证书（特别是叶子证书和自签名证书）时，对各种证书标准约束的执行情况。** 它旨在确保即使证书被标记为可信，其自身的属性和签名算法仍然会受到一定程度的检查，并验证不同平台证书验证器在这些场景下的行为一致性。此外，它还涵盖了对弱签名算法的检测和处理，以及基本的证书名称验证逻辑，进一步完善了对证书验证流程的测试覆盖。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/cert_verify_proc_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 n the rest of the tests in this class
   // are unlikely to be useful.
   if (VerifyProcTypeIsBuiltin()) {
@@ -968,7 +970,4 @@ TEST_F(CertVerifyProcNameTest, DoesntMatchIpSanIPv6Mapped) {
 
 // Matches the dNSName SAN
 TEST_F(CertVerifyP
-"""
-
-
 ```

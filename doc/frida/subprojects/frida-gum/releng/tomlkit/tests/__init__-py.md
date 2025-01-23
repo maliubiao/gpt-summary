@@ -85,7 +85,7 @@ Essentially, the process involves understanding the fundamental role of `__init_
 
 总而言之，尽管这个 `__init__.py` 文件本身内容为空，但它在 Python 的模块和包管理中扮演着至关重要的角色，并间接地支撑着 Frida 这样的复杂动态插桩工具的测试和开发。它的存在使得测试代码能够被正确地组织和执行，从而保证了 Frida 的稳定性和可靠性，最终服务于逆向工程师的各种分析任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/tests/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -93,9 +93,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

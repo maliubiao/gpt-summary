@@ -145,14 +145,16 @@ By following this thought process, combining code analysis with knowledge of web
 
 `LayoutTextFragment` 是 Blink 渲染引擎中一个至关重要的类，它负责高效地表示和管理文本布局的局部片段。它深入参与了文本的渲染、样式应用、`::first-letter` 伪元素处理、光标定位、选中范围管理以及 Hit Testing 等关键过程，并与 HTML、CSS 和 JavaScript 的功能紧密相关。理解 `LayoutTextFragment` 的工作原理对于深入了解浏览器渲染机制非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_text_fragment.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999 Lars Knoll (knoll@kde.org)
  * (C) 2000 Dirk Mueller (mueller@kde.org)
@@ -443,7 +445,4 @@ String LayoutTextFragment::PlainText() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

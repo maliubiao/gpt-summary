@@ -118,15 +118,17 @@ func main() {
 
 `ggen.go` 文件中的这两个函数是 Go 编译器 ARM 后端代码生成的核心组成部分。`zerorange` 负责高效地将内存区域清零，这与 Go 语言的变量初始化等特性密切相关。`ginsnop` 则用于生成空操作指令，用于代码对齐、时间延迟或调试等目的。这些函数体现了编译器后端需要考虑的底层硬件细节和性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/arm/ggen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -187,9 +189,4 @@ func ginsnop(pp *objw.Progs) *obj.Prog {
 	p.Scond = arm.C_SCOND_EQ
 	return p
 }
-
-"""
-
-
-
 ```

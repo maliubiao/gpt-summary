@@ -321,7 +321,7 @@ sys.stdin.read()
 
 `bionic/tests/assert_test.cpp` 是 Bionic 库中一个重要的测试文件，用于验证 `assert` 宏的正确行为。理解 `assert` 的工作原理以及它在 Android 开发中的作用，有助于我们编写更健壮和可靠的代码。同时，了解如何使用 Frida 等工具来调试 `assert` 的行为，可以帮助我们更有效地定位和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/assert_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -332,8 +332,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -381,7 +383,4 @@ TEST(assert, assert_true_NDEBUG) {
 TEST(assert, assert_false_NDEBUG) {
   assert(false);
 }
-
-"""
-
 ```

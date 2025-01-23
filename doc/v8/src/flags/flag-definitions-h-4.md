@@ -204,7 +204,7 @@ By following this systematic approach, including scanning for patterns, grouping
 
 `v8/src/flags/flag-definitions.h` 定义了 V8 引擎的众多可配置选项，它们直接影响着 JavaScript 代码的执行、性能和调试。理解这些 flag 的作用对于深入了解 V8 引擎和进行高级调试至关重要。开发者可以通过命令行标志灵活地调整 V8 的行为，以满足不同的需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/flags/flag-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/flags/flag-definitions.h以.tq结尾，那它是个v8 torque源代码，
@@ -212,8 +212,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 results cache")
 DEFINE_BOOL(trace_regexp_peephole_optimization, false,
             "trace regexp bytecode peephole optimization")
@@ -919,8 +921,4 @@ DEFINE_IMPLICATION(gdbjit, log)
 #undef FLAG_MODE_META
 #undef FLAG_MODE_DEFINE_IMPLICATIONS
 #undef FLAG_MODE_APPLY
-
-"""
-
-
 ```

@@ -93,7 +93,7 @@ Here's a thinking process to arrive at the detailed explanation:
 
 总而言之，`foo.c` 作为一个非常简单的测试文件，其价值在于它所属的测试用例能够验证 Frida 构建系统的健壮性，特别是在处理子项目和目标命名方面。虽然它自身不涉及复杂的逆向技术或底层知识，但它保证了 Frida 这个逆向工具能够被正确地构建出来，从而支持更复杂的逆向分析工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/172 identical target name in subproject flat layout/subprojects/subproj/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,10 +101,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int meson_test_subproj_foo(void) { return 20; }
-
-"""
-
 ```

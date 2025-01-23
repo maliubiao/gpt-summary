@@ -117,7 +117,7 @@ Here's a breakdown of the thinking process to generate the comprehensive analysi
 
 总而言之，`stobuilt.c` 虽然代码很简单，但它在一个特定的上下文（Frida 的测试套件，关于递归链接的边缘情况）中扮演着重要的角色。它用于测试 Frida 在处理动态链接场景下的能力，特别是涉及到多个库之间相互依赖的复杂情况。理解这个文件的功能和相关背景有助于理解 Frida 的工作原理以及在逆向工程中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/145 recursive linking/edge-cases/stobuilt.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "../lib.h"
 
 
@@ -134,7 +136,4 @@ SYMBOL_EXPORT
 int get_builto_value (void) {
   return 1;
 }
-
-"""
-
 ```

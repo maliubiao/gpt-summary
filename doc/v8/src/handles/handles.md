@@ -98,11 +98,13 @@ createAndUseObject();
 
 `handles.cc` 文件定义了 V8 引擎中用于安全有效地管理 JavaScript 堆中对象的关键机制——句柄和句柄作用域。虽然 JavaScript 开发者不会直接操作句柄，但它们是 V8 引擎内部实现对象引用和内存管理的基础。`HandleScope` 的使用确保了在适当的时候释放句柄，防止内存泄漏，并且为垃圾回收器提供了必要的对象生命周期信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/handles/handles.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -350,7 +352,4 @@ Address HandleScope::current_limit_address(Isolate* isolate) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

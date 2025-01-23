@@ -172,7 +172,7 @@ self.link_targets = [<Target object representing 'mylib'>]
 
 这部分 `Target` 类的代码主要负责**构建目标的基本信息初始化和管理**。它接收来自 Meson 构建定义的参数，处理源文件、预编译对象、依赖项等信息，并确定构建目标所需的编译器。这是定义一个构建目标的基础步骤，为后续的编译、链接和安装过程奠定了基础。它抽象了构建目标的关键属性，使得 Meson 能够统一地处理不同类型的构建目标（库、可执行文件等）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 elf.objects: T.List[ObjectTypes] = []
         self.structured_sources = structured_sources
         self.external_deps: T.List[dependencies.Dependency] = []
@@ -845,8 +847,4 @@ elf.objects: T.List[ObjectTypes] = []
         for t in targets:
             if not isinstance(t, (Target, CustomTargetIndex)):
                 if isinstance(t, dependencies.ExternalLibrary):
-                   
-"""
-
-
 ```

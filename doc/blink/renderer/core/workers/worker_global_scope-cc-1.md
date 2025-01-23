@@ -161,15 +161,17 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 `WorkerGlobalScope` 在 Chromium Blink 引擎中扮演着至关重要的角色，它作为 Worker 的全局上下文，提供了运行 JavaScript 代码所需的各种服务和管理功能。它与 JavaScript、HTML 和 CSS 都有着密切的联系，支持了现代 Web 技术在 Worker 环境中的应用，并提供了安全性和性能优化的机制。 从这段代码片段来看，其主要关注点在于模块脚本加载、微任务管理、Worker 设置、安全特性 (Trusted Types)、性能监控 (UKM) 以及资源管理和优化（字体匹配指标、代码缓存）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/worker_global_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 WorkerMainScriptLoadParameters>
         worker_main_script_load_params_for_modules) {
   DCHECK(worker_main_script_load_params_for_modules);
@@ -256,8 +258,4 @@ CodeCacheHost* WorkerGlobalScope::GetCodeCacheHost() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

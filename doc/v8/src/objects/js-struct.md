@@ -157,11 +157,13 @@ for (let i = 0; i < 1000; i++) {
 
 `v8/src/objects/js-struct.cc` 文件是 V8 引擎中实现共享的、结构化 JavaScript 对象的核心部分。它定义了 `JSSharedStruct` 的内部结构、管理其元数据、控制属性访问，并维护一个类型注册表以实现内存优化。虽然 JavaScript 开发者不能直接创建或操作 `JSSharedStruct`，但其存在影响着 V8 如何表示和优化某些类型的 JavaScript 对象，尤其是有着固定结构的对象。 理解这些内部机制有助于更深入地理解 V8 的性能优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-struct.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -689,7 +691,4 @@ void SharedStructTypeRegistry::EnsureCapacity(PtrComprCageBase cage_base,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

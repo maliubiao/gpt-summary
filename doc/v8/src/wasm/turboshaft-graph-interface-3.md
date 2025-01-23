@@ -77,13 +77,15 @@ console.log(isCorrectType);
 
 总而言之，这个 C++ 文件定义了 WebAssembly 指令到 Turboshaft 图节点的映射，这些图节点最终会被编译成机器码，使得 JavaScript 能够有效地执行 WebAssembly 代码，包括处理数组、引用类型和字符串等复杂数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/turboshaft-graph-interface.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-     __ ArraySet(dst_array, dst_index_loop, value, element_type);
+### 源代码
+```
+__ ArraySet(dst_array, dst_index_loop, value, element_type);
 
             IF_NOT (__ Uint32LessThan(src_index.op, src_index_loop)) BREAK;
 
@@ -1564,7 +1566,4 @@ Prompt:
         V<Float32> converted_back = __ ChangeUint32ToFloat32(result);
         __ TrapIf(__ Word32Equal(__ Float32Equal(converted_back, truncated), 0),
                   TrapId::kTrapFloatU
-"""
-
-
 ```

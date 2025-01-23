@@ -130,15 +130,17 @@ func main() {
 
 `go/test/fixedbugs/issue5614.go` 是一个 Go 编译器测试用例，用于验证修复了 Issue 5614。该 Issue 涉及在内联优化过程中，导出的具名类型在隐式转换为其底层类型时，类型信息可能丢失的问题。  虽然这个文件本身代码很简单，但它背后代表了一个关于 Go 编译器优化和类型系统的重要细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue5614.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compiledir
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -150,9 +152,4 @@ Prompt:
 // their underlying type.
 
 package ignored
-
-"""
-
-
-
 ```

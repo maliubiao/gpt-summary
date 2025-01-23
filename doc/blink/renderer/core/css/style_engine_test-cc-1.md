@@ -117,7 +117,7 @@ Therefore, the main function of this part of the `style_engine_test.cc` file is 
 
 **总结来说，这部分 `style_engine_test.cc` 代码主要负责验证 Blink 引擎的 `StyleEngine` 在处理 CSS 样式表、规则、媒体查询以及响应各种文档和用户环境变化时的正确性和效率。** 它通过大量的单元测试，覆盖了 `StyleEngine` 的核心功能，确保了样式系统的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_engine_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 iv {}");
   TextPosition min_pos = TextPosition::MinimumPosition();
 
@@ -1040,7 +1042,4 @@ TEST_F(StyleEngineTest, MediaQueriesChangeSpecificPrefersContrast) {
   EXPECT_EQ(Color::FromRGB(255, 165, 0),
             GetDocument().body()->GetComputedStyle()->VisitedDependentColor(
                 GetCSSPropertyCo
-"""
-
-
 ```

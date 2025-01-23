@@ -315,7 +315,7 @@ func (d *fakeDriver) Open(dsn string) (driver.Conn, error) {
 
 `go/src/database/sql/fakedb_test.go`  实现了一个轻量级的内存数据库，用于测试 `database/sql` 包的功能。它使用自定义的查询语言，并提供了一些模拟错误和延迟的机制，方便开发者在隔离的环境中测试数据库相关的代码。理解其查询语言和限制是正确使用它的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/database/sql/fakedb_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -323,8 +323,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1594,9 +1596,4 @@ func colTypeToReflectType(typ string) reflect.Type {
 	}
 	panic("invalid fakedb column type of " + typ)
 }
-
-"""
-
-
-
 ```

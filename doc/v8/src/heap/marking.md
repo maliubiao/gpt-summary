@@ -123,11 +123,13 @@ createObjects();
 
 `v8/src/heap/marking.cc` 文件实现了 V8 引擎垃圾回收机制中用于标记存活对象的关键数据结构和操作。它通过维护一个位图来高效地跟踪堆内存中的对象是否可达，这是 JavaScript 自动内存管理的基础。JavaScript 开发者虽然无法直接操作这个位图，但其行为直接影响着 JavaScript 程序的性能和内存使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/marking.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ MarkBit MarkBit::FromForTesting(Tagged<HeapObject> heap_object) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

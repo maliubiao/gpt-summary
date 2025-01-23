@@ -171,14 +171,16 @@ const newArray = Int32Array.of(10, 20, 30);
 
 理解 `TypedArray.of()` 的功能和使用方式对于有效操作类型化数组至关重要，避免上述常见的错误可以提高代码的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-of.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ transitioning javascript builtin TypedArrayOf(
   }
 }
 }
-
-"""
-
 ```

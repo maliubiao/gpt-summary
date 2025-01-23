@@ -267,7 +267,7 @@ By following this structured approach, I can systematically analyze the C++ code
 
 总而言之，这个代码片段定义了 `CodeStubAssembler` 中用于实现 JavaScript 对象属性访问和操作、类型反馈管理以及底层数据加载的关键工具函数。 这些功能是 V8 引擎高效执行 JavaScript 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -275,8 +275,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 <Object> receiver, TNode<JSReceiver> object,
       TNode<Map> map, TNode<Int32T> instance_type, TNode<Name> unique_name,
       Label* if_found_value, TVariable<Object>* var_value,
@@ -940,7 +942,4 @@ Prompt:
   //
   // TODO(saelo): it would be a bit nicer if this would happen automatically in
   // the function prologue for functions marked as requiring this (e.g. via th
-"""
-
-
 ```

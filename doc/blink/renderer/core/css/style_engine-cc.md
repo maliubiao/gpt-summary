@@ -455,7 +455,7 @@ Font StyleEngine::ComputeFont(Element& element,
 
 这是 `style_engine.cc` 文件第 1 部分的功能归纳。后续部分可能会涉及更具体的样式计算、继承、层叠等方面的内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_engine.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -463,8 +463,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -1343,8 +1345,4 @@ void StyleEngine::SetRuleUsageTracker(StyleRuleUsageTracker* tracker) {
 }
 
 Font StyleEngine::ComputeFont(Element& element,
-              
-"""
-
-
 ```

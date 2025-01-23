@@ -214,7 +214,7 @@ func main() {
 
 接下来的第 2 部分很可能会包含更多的测试用例，或者可能包含性能测试（benchmark）。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/fmt/scan_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -223,8 +223,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1314,9 +1316,4 @@ func testScanInts(t *testing.T, scan func(*RecursiveInt, *bytes.Buffer) error) {
 	for ; r != nil; r = r.next {
 		if r.i != i {
 			t.Fatalf("bad scan: expected %d got %d", i,
-"""
-
-
-
-
 ```

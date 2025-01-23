@@ -213,7 +213,7 @@ By following these steps, we can systematically dissect the C++ header file and 
 
 总而言之，`v8/src/maglev/maglev-ir.h` 是 Maglev 编译器核心的数据结构定义，它用不同的节点类型来表示 JavaScript 代码中的各种操作，为后续的优化和代码生成奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-ir.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-ir.h以.tq结尾，那它是个v8 torque源代码，
@@ -221,8 +221,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 :kHoleyFloat64};
 
   static constexpr OpProperties kProperties = OpProperties::NotIdempotent() |
@@ -1130,8 +1132,4 @@ class TryOnStackReplacement : public FixedInputNodeT<1, TryOnStackReplacement> {
   const MaglevCompilationUnit* unit() const { return unit_; }
 
   int MaxCallStackArgs() const;
-  
-"""
-
-
 ```

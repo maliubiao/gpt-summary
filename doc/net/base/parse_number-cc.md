@@ -244,15 +244,17 @@ Let's imagine a scenario where a user is trying to access a website with a speci
 
 By understanding the functionality of `net/base/parse_number.cc`, developers can write more robust and secure networking code in Chromium by ensuring that string representations of numbers are parsed correctly and potential errors are handled appropriately.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/parse_number.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -403,7 +405,4 @@ bool ParseUint64(std::string_view input,
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -122,15 +122,17 @@ func New() int {
 
 总而言之，这段代码是一个简单的单元测试，用于验证在特定条件下，两个本地包中的函数返回值之和是否为 0，这很可能与 Go 语言的泛型特性测试有关。使用者需要注意正确的目录结构和运行命令，以避免相对路径导入错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue50598.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -153,9 +155,4 @@ func main() {
 		panic(fmt.Sprintf("got %d, want %d", got, want))
 	}
 }
-
-"""
-
-
-
 ```

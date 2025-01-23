@@ -150,7 +150,7 @@ g++ -DCPPTHING -DCTHING prog.cc -c
 
 因此，用户通常是通过构建失败的反馈和对构建过程的分析来接触到这个测试用例文件的，目的是理解构建错误的原因并修复它。这个文件作为一个测试用例，其目的是验证构建系统的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/21 target arg/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifdef CTHING
 #error "Wrong local argument set"
 #endif
@@ -173,7 +175,4 @@ extern "C" int func();
 int main(void) {
     return func();
 }
-
-"""
-
 ```

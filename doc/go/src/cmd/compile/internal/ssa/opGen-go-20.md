@@ -235,7 +235,7 @@ By following this structured thought process, I can effectively analyze the give
 
 作为第21部分（共36部分），这段代码的主要功能是定义了 **LoongArch 64位架构下，一部分操作的 SSA 中间表示到机器指令的映射关系和寄存器使用约束**。它涵盖了基本的数据移动、浮点数操作、函数调用以及一些底层的运行时操作。在整个 `opGen.go` 文件中，不同的部分可能负责不同类型的操作或指令集扩展。这部分侧重于一些基础和常见的操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/opGen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -244,8 +244,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第21部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 1,
 		asm:    loong64.AMOVWU,
 		reg: regInfo{
@@ -1222,10 +1224,5 @@ Prompt:
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 35183835217920}, // F0 F2 F4 F6 F8 F10 F12 F14 F16 F18 F20 F22 F24 F26 F28 F30
-				{1, 35183835217920}, // F0 F2 F4 
-"""
-
-
-
-
+				{1, 35183835217920}, // F0 F2 F4
 ```

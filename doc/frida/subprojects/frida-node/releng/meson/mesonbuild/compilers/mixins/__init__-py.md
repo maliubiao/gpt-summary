@@ -94,7 +94,7 @@ Here's a breakdown of the thinking process to analyze the given Python `__init__
 
 总而言之，`frida/subprojects/frida-node/releng/meson/mesonbuild/compilers/mixins/__init__.py` 文件本身的功能很简单，就是将 `mixins` 目录标记为一个 Python 包。 然而，它在 Frida 的构建系统中起着至关重要的组织作用，间接地支持了 Frida 的逆向能力，并与底层的二进制、操作系统和框架知识紧密相关。 用户通常不会直接操作这个文件，但它会在构建过程中被自动处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/compilers/mixins/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -102,9 +102,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

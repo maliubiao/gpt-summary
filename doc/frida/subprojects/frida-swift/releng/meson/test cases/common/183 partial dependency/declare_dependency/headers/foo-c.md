@@ -113,7 +113,7 @@ Initially, I might have focused too much on the `#error` directive in isolation.
 
 `foo.c` 本身是一个非常简单的文件，其核心功能是作为一个构建断言。它的存在是为了在 Frida 的构建过程中，确保某些 C 代码被正确地处理为头文件，而不是被错误地编译为源文件。这反映了 Frida 作为一个复杂项目，需要细致的构建系统管理和测试。虽然它不直接执行逆向操作，但它支持了 Frida 这个逆向工具的正确构建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/183 partial dependency/declare_dependency/headers/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2018 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -139,7 +141,4 @@ Prompt:
  */
 
 #error "Included C sources that shouldn't be."
-
-"""
-
 ```

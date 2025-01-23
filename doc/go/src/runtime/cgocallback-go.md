@@ -185,7 +185,7 @@ Recovered from panic: Panic from C code!
 
 `_cgo_panic_internal` 是Go运行时环境中一个关键的内部函数，它充当了C代码向Go程序报告严重错误的桥梁。  它利用Go的panic机制，使得C代码中的特定情况能够被Go程序的错误处理机制所捕获和处理。 理解这个函数的功能有助于理解Go语言与C代码的互操作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/cgocallback.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -193,8 +193,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -208,9 +210,4 @@ package runtime
 func _cgo_panic_internal(p *byte) {
 	panic(gostringnocopy(p))
 }
-
-"""
-
-
-
 ```

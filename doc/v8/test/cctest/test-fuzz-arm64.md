@@ -95,11 +95,13 @@ console.log(result);
 
 `test-fuzz-arm64.cc` 通过生成大量的随机数据来模拟各种可能的 ARM64 指令序列，以此来测试 V8 引擎在 ARM64 架构下的指令解码器和反汇编器的健壮性。这对于确保 JavaScript 代码在 ARM64 设备上稳定可靠地运行至关重要。虽然模糊测试的对象是底层的 C++ 代码，但其最终目标是保证上层 JavaScript 代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-fuzz-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -191,7 +193,4 @@ TEST(FUZZ_disasm) {
 }  // namespace v8
 
 #undef RANDGEN
-
-"""
-
 ```

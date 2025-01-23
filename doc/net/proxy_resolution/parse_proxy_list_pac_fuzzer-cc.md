@@ -142,15 +142,17 @@ size_t size = sizeof(data) - 1;
 
 理解 `parse_proxy_list_pac_fuzzer.cc` 的作用，有助于理解 Chromium 如何测试和确保 PAC 文件解析的健壮性和安全性，这对于保证用户的网络安全至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/parse_proxy_list_pac_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   list.SetFromPacString(input);
   return 0;
 }
-
-"""
-
 ```

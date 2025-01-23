@@ -204,7 +204,7 @@ func main() {
 
 这段 `signal_mipsx.go` 文件是Go运行时在Linux/MIPS平台处理信号的关键组成部分。它负责在接收到信号时检查和修改程序的状态，为Go的panic机制和可能的调试功能提供支持。理解其功能有助于深入了解Go语言的底层运作原理。对于一般的Go开发者，重要的是理解如何正确地使用 `os/signal` 包，并认识到像 `SIGSEGV` 这样的错误信号通常表示程序中存在需要修复的bug，而不是应该被捕获和恢复的异常。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_mipsx.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -212,8 +212,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -309,9 +311,4 @@ func (c *sigctxt) pushCall(targetPC, resumePC uintptr) {
 	c.set_link(uint32(resumePC))
 	c.set_pc(uint32(targetPC))
 }
-
-"""
-
-
-
 ```

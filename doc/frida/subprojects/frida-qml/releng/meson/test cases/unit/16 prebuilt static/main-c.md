@@ -188,7 +188,7 @@ const char* msg() {
 
 总而言之，这个 `main.c` 文件虽然简单，但在 Frida 的上下文中，它是用于测试预构建静态组件功能的入口点。开发者在进行 Frida 的开发、测试或调试时可能会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/16 prebuilt static/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<best.h>
 
@@ -205,7 +207,4 @@ int main(int argc, char **argv) {
     printf("%s\n", msg());
     return 0;
 }
-
-"""
-
 ```

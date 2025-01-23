@@ -154,15 +154,17 @@ The `Check` instruction in the test demonstrates the importance of **assertions 
 
 In summary, `v8/test/unittests/assembler/macro-assembler-loong64-unittest.cc` is a C++ unit test file that specifically tests the code generation capabilities of the `MacroAssembler` class for the LoongArch 64 architecture within the V8 JavaScript engine. It ensures that fundamental assembler instructions like `Abort` and conditional checks (`Check`) function as expected.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/macro-assembler-loong64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/macro-assembler-loong64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -227,7 +229,4 @@ TEST_F(MacroAssemblerTest, TestCheck) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

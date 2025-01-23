@@ -153,15 +153,17 @@ panic: runtime error: invalid memory address or nil pointer dereference
 
 这个代码片段是一个简洁的例子，用于说明 Go 语言全局变量的初始化顺序，并展示了曾经存在的一个关于空白标识符赋值的初始化顺序计算 bug (Issue 5244) 及其修复。现在的 Go 版本已经修复了这个问题，能够正确处理这类依赖关系。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue5244.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -180,9 +182,4 @@ var _ = f() + g()
 var g = func() int { return 2 }
 
 func main() {}
-
-"""
-
-
-
 ```

@@ -175,7 +175,7 @@ runWasm();
 
 总而言之，这部分 `wasm-code-manager.cc` 代码是 V8 引擎中管理 WebAssembly 模块编译后代码的核心组件，负责代码的分配、存储、查找、更新以及与调试信息和性能数据的关联。它为 JavaScript 执行 WebAssembly 代码提供了底层的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-code-manager.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-code-manager.cc以.tq结尾，那它是个v8 torque源代码，
@@ -183,8 +183,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _imported_functions; i++) {
     import_statuses[i] = module_->type_feedback.well_known_imports.get(i);
   }
@@ -941,7 +943,4 @@ size_t WasmCodeManager::EstimateNativeModuleCodeSize(
   // TurboFan. If there is no liftoff though then all code will get generated
   // by TurboFan.
   if (include_liftoff && dynamic_
-"""
-
-
 ```

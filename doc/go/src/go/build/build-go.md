@@ -308,7 +308,7 @@ Running on Windows
 
 总而言之，这段 `go/src/go/build/build.go` 的第一部分为 Go 语言的构建过程奠定了基础，定义了核心的数据结构和操作，用于理解和表示 Go 代码的组织结构。后续的部分将在此基础上实现更复杂的构建逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/build/build.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -317,8 +317,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1309,9 +1311,4 @@ Found:
 		// Record imports and information about cgo.
 		isCgo := false
 		f
-"""
-
-
-
-
 ```

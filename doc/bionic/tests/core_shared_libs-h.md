@@ -254,7 +254,7 @@ sys.stdin.read()
 
 这个 `core_shared_libs.handroid` 文件虽然简单，但它在 Android 的动态链接和命名空间隔离机制中扮演着重要的配置角色，确保了基本的系统功能能够在新创建的命名空间中正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/core_shared_libs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -265,8 +265,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020 The Android Open Source Project
  * All rights reserved.
@@ -299,7 +301,4 @@ Prompt:
 
 // A new namespace should have these libraries on a link to the default namespace.
 static constexpr const char* kCoreSharedLibs = "libc.so:libc++.so:libdl.so:libm.so";
-
-"""
-
 ```

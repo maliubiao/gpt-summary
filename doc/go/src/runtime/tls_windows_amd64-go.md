@@ -174,7 +174,7 @@ void nonGoThreadFunc(void* arg) {
 
 `go/src/runtime/tls_windows_amd64.go` 中的 `osSetupTLS` 函数是一个底层的 Go 运行时函数，用于为 Windows 系统上由操作系统创建的非 Go 线程设置线程本地存储。这对于支持 Go 程序与外部代码（尤其是通过 `cgo`）的交互至关重要，确保这些外部线程在与 Go 运行时交互时拥有正确的上下文。 开发者通常不需要直接操作这个函数，但理解其作用有助于理解 Go 运行时如何管理与非 Go 线程的交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/tls_windows_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -182,8 +182,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -194,9 +196,4 @@ package runtime
 //
 // Defined in assembly.
 func osSetupTLS(mp *m)
-
-"""
-
-
-
 ```

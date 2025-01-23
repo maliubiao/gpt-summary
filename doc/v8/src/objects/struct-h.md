@@ -136,15 +136,17 @@ The comment "if v8/src/objects/struct.h以.tq结尾，那它是个v8 torque源�
 
 `v8/src/objects/struct.h` defines essential low-level structures within the V8 engine. These structures are not directly manipulated by JavaScript developers but are fundamental to how JavaScript objects, properties, and classes are implemented and optimized under the hood. The use of Torque in generating these structures emphasizes the performance-critical nature of this part of the V8 engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/struct.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/struct.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -243,7 +245,4 @@ class ClassPositions
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_STRUCT_H_
-
-"""
-
 ```

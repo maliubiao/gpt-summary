@@ -161,7 +161,7 @@ Here's a breakdown of its functionalities, relating them to reverse engineering,
 
 In summary, `gumstalker-arm.c` is a critical component of Frida's Stalker engine for ARM architectures. It's responsible for the low-level details of dynamically generating and injecting ARM and Thumb assembly code into a target process. This generated code allows Frida to intercept and observe the target's execution flow, inspect data, and even modify its behavior, making it a powerful tool for dynamic analysis and reverse engineering on ARM-based systems like Android. It leverages a deep understanding of the ARM architecture, instruction encodings, and calling conventions to achieve its goals.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-arm/gumstalker-arm.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 _b_label_wide (cw, taken);
 
     gum_thumb_writer_put_label (cw, cb_not_taken);
@@ -1093,8 +1095,4 @@ gum_count_trailing_zeros (guint16 value)
 }
 
 #endif
-
-"""
-
-
 ```

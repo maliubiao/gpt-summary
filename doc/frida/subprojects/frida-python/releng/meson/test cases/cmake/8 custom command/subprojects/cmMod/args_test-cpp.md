@@ -149,7 +149,7 @@ MY_CUSTOM_MACRO
 
 总而言之，`args_test.cpp` 是 Frida 构建过程中的一个小工具，用于根据输入生成一个包含宏定义的头文件。它的功能看似简单，但在构建复杂的软件系统（如 Frida）时，这类工具可以帮助实现灵活的代码生成和配置管理。理解其功能有助于调试与 Frida 构建过程相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/args_test.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <fstream>
 
@@ -177,7 +179,4 @@ int main(int argc, const char *argv[]) {
 
   return 0;
 }
-
-"""
-
 ```

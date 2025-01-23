@@ -121,11 +121,13 @@ console.log(strA === strB); // 在理想情况下，这会输出 true，因为�
 
 `v8/src/objects/string-table.cc` 中实现的字符串表是 V8 引擎中一个基础且关键的组件。它通过唯一化字符串，实现了内存优化和高效的字符串查找与比较，对 JavaScript 代码的性能有着显著的影响，尤其是在处理大量的字符串操作和对象属性访问时。 JavaScript 中的对象属性名、字符串字面量和标识符等都依赖于字符串表进行管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -879,7 +881,4 @@ void StringTable::NotifyElementsRemoved(int count) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

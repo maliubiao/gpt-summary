@@ -95,7 +95,7 @@ Here's a breakdown of the thought process to arrive at the answer:
 
 总而言之，这个 `boost.py` 文件是 Frida 项目构建过程中管理 Boost 库依赖的关键配置文件，它定义了如何将各种 Boost 库集成到 Frida 中，从而为 Frida 提供了底层的 C++ 功能支持，这对于 Frida 实现其动态 instrumentation 的核心功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/dependencies/boost.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,9 +104,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-        name='boost_exception',
+### 源代码
+```python
+name='boost_exception',
         shared=[],
         static=[],
         single=[],
@@ -361,8 +363,4 @@ Prompt:
 
 #                                           #
 ####       ---- END GENERATED ----       ####
-
-"""
-
-
 ```

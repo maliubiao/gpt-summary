@@ -241,7 +241,7 @@ By following this structured thinking process, breaking down the code, and consi
 
 总而言之，`toml_file.py` 提供了一个方便的方式来读取和写入 TOML 配置文件，在 Frida 这样的动态 instrumentation 工具中，配置文件扮演着重要的角色，帮助用户灵活地控制工具的行为。理解这个文件的功能有助于我们更好地使用和调试 Frida。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/tomlkit/toml_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -249,8 +249,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 import re
 
@@ -309,7 +311,4 @@ class TOMLFile:
 
         with open(self._path, "w", encoding="utf-8", newline="") as f:
             f.write(content)
-
-"""
-
 ```

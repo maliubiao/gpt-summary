@@ -139,7 +139,7 @@ Initially, I might have focused too much on the *execution* of this program. How
 
 总而言之，`prog.c` 是 Frida 测试框架的一部分，它的主要功能是生成一个包含未定义符号的对象文件，用于测试 Frida 在处理此类场景时的能力，这与逆向工程中的动态分析和符号解析密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/52 object generator/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1_in_obj(void);
 int func2_in_obj(void);
 int func3_in_obj(void);
@@ -157,7 +159,4 @@ int func4_in_obj(void);
 int main(void) {
     return func1_in_obj() + func2_in_obj() + func3_in_obj() + func4_in_obj();
 }
-
-"""
-
 ```

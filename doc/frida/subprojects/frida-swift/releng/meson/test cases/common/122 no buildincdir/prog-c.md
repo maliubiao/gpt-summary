@@ -90,7 +90,7 @@ Let's break down the thought process for analyzing this seemingly simple C file 
 
 尽管 `prog.c` 本身只是一个简单的空 `main` 函数，但它作为 Frida 测试套件的一部分，其存在是为了验证 Frida 在特定构建环境下的行为，尤其是当缺少某些构建依赖时。 这与逆向工程中可能遇到的各种环境问题相关，并帮助确保 Frida 在更广泛的场景下都能正常工作。  它提醒用户在构建和使用 Frida 时，正确配置构建环境的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/122 no buildincdir/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,14 +98,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"header.h"
 
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

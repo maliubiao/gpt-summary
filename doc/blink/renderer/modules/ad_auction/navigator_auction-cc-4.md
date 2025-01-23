@@ -65,7 +65,7 @@ This section of `NavigatorAuction.cc` focuses on providing the JavaScript API im
 
 In essence, this part of the code bridges the gap between JavaScript code running in a web page and the underlying browser functionalities responsible for managing ad interest groups and orchestrating the ad auction process within the FLEDGE/Protected Audience framework.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ad_auction/navigator_auction.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -73,8 +73,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 etIsolate()));
   }
 
@@ -861,8 +863,4 @@ ScriptPromise<IDLString> NavigatorAuction::finalizeAd(
   CopySellerSignalsFromIdlToMojo(/*auction_handle=*/nullptr,
                                  /*auction_id=*/nullptr, *config, *mojo_config);
   CopyPerBuyerSignalsFromIdlToMojo(/*auction_handle=*/nullptr,
-      
-"""
-
-
 ```

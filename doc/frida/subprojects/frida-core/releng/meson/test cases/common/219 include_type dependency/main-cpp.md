@@ -85,7 +85,7 @@ Here's a breakdown of the thinking process to analyze the provided C++ code snip
 
 虽然 `main.cpp` 的代码非常简单，但它在 Frida 项目的上下文中扮演着验证 Frida 处理代码注入和类型依赖能力的重要角色。它的存在暗示了 Frida 需要处理注入代码可能存在的各种依赖关系，并确保注入过程的稳定性和可靠性。 开发者可以通过创建和维护这样的测试用例来保证 Frida 能够正确处理各种复杂的注入场景，避免用户在使用过程中遇到由于依赖问题导致的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/219 include_type dependency/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -93,8 +93,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <boost/graph/filtered_graph.hpp>
 
@@ -103,7 +105,4 @@ using namespace std;
 int main(void) {
   return 0;
 }
-
-"""
-
 ```

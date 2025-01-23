@@ -144,7 +144,7 @@ Let's break down the thought process for analyzing this Python script.
 
 虽然 `cp.py` 脚本本身功能简单，但它在 Frida 的构建系统中扮演着重要的角色，用于管理和复制预编译的对象文件。理解它的功能和潜在的错误有助于理解 Frida 的构建过程，并在遇到相关问题时进行调试。该脚本操作的对象往往是与底层系统和二进制文件相关的，因此理解这些概念有助于更好地理解该脚本的应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/15 prebuilt object/cp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,14 +152,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #! /usr/bin/env python3
 
 import sys
 from shutil import copyfile
 copyfile(*sys.argv[1:])
-
-"""
-
 ```

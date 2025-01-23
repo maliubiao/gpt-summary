@@ -81,7 +81,7 @@ Based on the included code:
 
 总而言之，`PointerEventManager` 是 Blink 引擎中处理用户与网页交互的关键组件，它负责将各种类型的指针输入转化为统一的事件模型，并确保这些事件能够正确地传递到网页的相应部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/input/pointer_event_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -89,8 +89,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -870,8 +872,4 @@ WebInputEventResult PointerEventManager::HandlePointerEvent(
   if (pointerdown_node) {
     TouchAction touch_action =
         touch_action_util::EffectiveTouchActionAtPointerDown(event,
-                                  
-"""
-
-
 ```

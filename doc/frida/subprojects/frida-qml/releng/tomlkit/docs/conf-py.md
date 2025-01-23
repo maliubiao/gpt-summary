@@ -157,7 +157,7 @@ print(config["debug_mode"])
 
 总而言之，`frida/subprojects/frida-qml/releng/tomlkit/docs/conf.py` 文件是 Sphinx 文档构建的配置文件，它定义了如何为 `tomlkit` 库生成文档。虽然它本身不直接参与逆向工程，但它所配置的 `tomlkit` 库在逆向工程中可以用来解析 TOML 配置文件。 理解这个文件的作用以及可能出现的错误，对于维护 `tomlkit` 的文档至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/tomlkit/docs/conf.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -227,7 +229,4 @@ html_theme = "furo"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = []
-
-"""
-
 ```

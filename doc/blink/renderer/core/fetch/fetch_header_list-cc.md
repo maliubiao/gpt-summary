@@ -210,15 +210,17 @@ Initially, I might have described `Get()` as simply retrieving the value of a he
 
 通过以上步骤，开发者可以逐步追踪代码执行流程，最终定位到 `fetch_header_list.cc` 文件，分析 `FetchHeaderList` 对象的内部状态，以找出问题的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/fetch_header_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -419,7 +421,4 @@ bool FetchHeaderList::IsValidHeaderValue(const String& value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

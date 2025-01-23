@@ -101,7 +101,7 @@ By following these steps, I can generate a comprehensive and accurate summary of
 
 这些功能是 Frida 构建系统的重要组成部分，确保了在不同平台和配置下能够正确生成构建所需的各种文件。与逆向工程的关联主要体现在理解目标程序构建过程中的配置和命令行参数，这有助于更深入地理解其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 n that happens, it can be
     # considered an achievement in itself.
     #
@@ -1001,7 +1003,4 @@ def detect_subprojects(spdir_name: str, current_dir: str = '',
         if append_this:
             if basename in result:
                 result[basename].appe
-"""
-
-
 ```

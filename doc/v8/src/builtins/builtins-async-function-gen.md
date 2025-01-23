@@ -150,11 +150,13 @@ processData("abc").catch(error => console.error(error));
 
 `builtins-async-function-gen.cc` 文件是 V8 引擎实现 `async`/`await` 异步编程模型的基础设施。它通过定义一系列内置函数，处理异步函数的创建、执行、暂停、恢复、以及 Promise 的解决和拒绝，从而使得 JavaScript 能够方便地编写异步代码，避免回调地狱，提高代码的可读性和可维护性。这个文件中的 C++ 代码与 JavaScript 的 `async` 和 `await` 关键字有着直接而紧密的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-async-function-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -379,7 +381,4 @@ TF_BUILTIN(AsyncFunctionAwait, AsyncFunctionBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

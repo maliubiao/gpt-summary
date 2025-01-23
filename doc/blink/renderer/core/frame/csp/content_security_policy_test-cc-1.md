@@ -52,15 +52,17 @@ My plan is to:
 
 这个代码片段主要集中测试了 CSP 中关于 **scheme 绕过机制**以及 **Trusted Types 功能**的实现细节和各种边界情况。它验证了如何通过注册 scheme 来允许特定类型的请求，以及特权 scheme 如何影响这种绕过。 此外，它详细测试了 `trusted-types` 和 `require-trusted-types-for` 指令的解析、生效逻辑和不同配置下的行为，确保 CSP 能够正确地控制 Trusted Types 的使用，从而提高 Web 应用的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/csp/content_security_policy_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 cure_url);  // https://example.com
   csp->BindToDelegate(execution_context->GetContentSecurityPolicyDelegate());
   csp->AddPolicies(ParseContentSecurityPolicies(
@@ -725,7 +727,4 @@ TEST_F(ContentSecurityPolicyTest, IsStrictPolicyEnforced) {
   csp = MakeGarbageCollected<ContentSecurityPolicy>();
   csp->AddPolicies(ParseContentSecurityPolicies(
       strict_policy, ContentSecurity
-"""
-
-
 ```

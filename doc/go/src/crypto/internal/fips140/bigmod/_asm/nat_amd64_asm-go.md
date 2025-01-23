@@ -151,7 +151,7 @@ func main() {
 
 总而言之，这段代码是为特定的密码学库生成高性能的大整数运算汇编代码的关键部分，它利用了 `avo` 库简化了汇编代码的生成过程，并能根据 CPU 特性进行优化。使用者需要理解其背后的算法和参数含义，才能正确使用和理解其功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/bigmod/_asm/nat_amd64_asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -159,8 +159,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -274,9 +276,4 @@ func addMulVVW(bits int) {
 	Store(carry, ReturnIndex(0))
 	RET()
 }
-
-"""
-
-
-
 ```

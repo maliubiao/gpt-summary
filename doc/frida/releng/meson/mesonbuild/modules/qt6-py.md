@@ -157,7 +157,7 @@ Frida 作为一个动态 instrumentation 工具，经常被用于逆向分析和
 
 总而言之，`frida/releng/meson/mesonbuild/modules/qt6.py` 是 Frida 构建系统中一个关键的模块，负责处理 Qt 6 框架的集成。它通过提供 Qt 6 的相关信息，使得 Frida 能够更好地与使用 Qt 6 构建的应用程序进行交互，从而支持逆向分析和安全研究工作。虽然用户不会直接操作这个文件，但理解它的功能对于解决与 Qt 6 相关的构建或运行时问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/modules/qt6.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2020 The Meson development team
 
@@ -189,7 +191,4 @@ class Qt6Module(QtBaseModule):
 
 def initialize(interp: Interpreter) -> Qt6Module:
     return Qt6Module(interp)
-
-"""
-
 ```

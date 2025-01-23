@@ -168,7 +168,7 @@ ParameterParsingScope scope(parser, new_parameters);
 
 这部分 `v8/src/parsing/parser-base.h` 代码定义了 `ParserBase` 类在解析 JavaScript 代码时用于管理作用域、函数状态以及其他辅助信息的基础结构。它为后续的语法分析和抽象语法树 (AST) 构建提供了必要的支持。虽然不是直接的 JavaScript 代码，但它深刻地影响着 V8 如何理解和执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser-base.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/parser-base.h以.tq结尾，那它是个v8 torque源代码，
@@ -176,8 +176,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 rsingScope(Impl* parser, FormalParametersT* parameters)
         : parser_(parser), parent_parameters_(parser_->parameters_) {
       parser_->parameters_ = parameters;
@@ -1130,7 +1132,4 @@ bool ParserBase<Impl>::ParseCurrentSymbolAsClassFieldOrMethod(
 template <typename Impl>
 bool ParserBase<Impl>::ParseAccessorPropertyOrAutoAccessors(
     ParsePropert
-"""
-
-
 ```

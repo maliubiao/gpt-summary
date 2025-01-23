@@ -131,7 +131,7 @@ fetch('https://example.com/redirect-me')
 
 这部分 `url_request_unittest.cc` 的主要功能是 **针对 `URLRequest` 类的 HTTP 重定向行为进行详细的单元测试，涵盖了重定向的时序、多次重定向的处理、URL 转义、与 `NetworkDelegate` 和 `URLRequest::Delegate` 的异步委托信息交互、以及请求取消等关键场景**。 这些测试确保了 `URLRequest` 在处理 HTTP 重定向时的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -139,9 +139,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共17部分，请归纳一下它的功能
+```
 
-"""
-     << " Parameter = \"" << test_file << "\"";
+### 源代码
+```cpp
+<< " Parameter = \"" << test_file << "\"";
     }
   }
 }
@@ -959,7 +961,4 @@ TEST_F(URLRequestTestHTTP, CancelInResponseStarted) {
     d.RunUntilComplete();
 
     EXPECT_EQ(1, d.response_start
-"""
-
-
 ```

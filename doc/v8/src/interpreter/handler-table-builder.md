@@ -91,11 +91,13 @@ try {
 
 `handler-table-builder.cc` 是 V8 虚拟机实现 JavaScript 异常处理机制的关键组成部分。它在编译时生成必要的元数据，使得 V8 能够在运行时高效地处理 JavaScript 代码中的 `try...catch` 语句，确保程序在出现错误时能够优雅地恢复或处理。它不直接参与 JavaScript 代码的执行，而是在幕后准备必要的数据结构，以支持 JavaScript 的语言特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/handler-table-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ void HandlerTableBuilder::SetContextRegister(int handler_id, Register reg) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

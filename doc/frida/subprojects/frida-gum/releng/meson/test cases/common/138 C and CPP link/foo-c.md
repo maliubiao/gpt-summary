@@ -156,7 +156,7 @@ By following this structured thinking process, considering the context, and refi
 
 总而言之，虽然 `foo.c` 的代码非常简单，但它在 Frida 的上下文中扮演着重要的角色，特别是在测试和验证 Frida 功能方面。  用户查看这个文件通常与理解 Frida 的内部机制、调试相关问题或参与 Frida 的开发有关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/138 C and CPP link/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2017 Dylan Baker
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -185,7 +187,4 @@ Prompt:
 int forty_two(void) {
     return 42;
 }
-
-"""
-
 ```

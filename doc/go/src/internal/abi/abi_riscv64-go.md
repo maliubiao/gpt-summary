@@ -116,7 +116,7 @@ func main() {
 
 `abi_riscv64.go` 文件定义了 RISC-V 64位架构下 Go 语言函数调用时参数传递的关键约定，特别是用于传递整型和浮点型参数的寄存器数量。 这对于 Go 编译器生成正确的机器码至关重要，保证了函数调用的正确性和效率。 普通 Go 开发者通常不需要直接关注这些细节，但理解其背后的原理有助于编写更优化的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/abi/abi_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -124,8 +124,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -143,9 +145,4 @@ const (
 
 	EffectiveFloatRegSize = 8
 )
-
-"""
-
-
-
 ```

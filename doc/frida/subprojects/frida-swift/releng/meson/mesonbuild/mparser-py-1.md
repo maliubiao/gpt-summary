@@ -127,7 +127,7 @@ AssignmentNode(
 
 `mparser.py` 文件是 Frida 构建系统中 Meson 配置文件的语法解析器。它的主要功能是将词法分析器生成的 token 流转换为抽象语法树 (AST)，从而理解构建配置文件的内容。它能够处理各种表达式、语句和控制流结构，并提供基本的错误处理机制。虽然它不直接操作二进制底层或内核，但它解析的构建配置文件会间接影响最终生成的可执行文件和库。理解该解析器的工作原理有助于理解 Frida 的构建过程，这对于逆向工程和调试都具有一定的意义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/mparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 lf.create_node(SymbolNode, block_start)
             key_values = self.key_values()
             self.block_expect('rcurl', block_start)
@@ -340,8 +342,4 @@ lf.create_node(SymbolNode, block_start)
         self.current_ws = []
 
         return block
-
-"""
-
-
 ```

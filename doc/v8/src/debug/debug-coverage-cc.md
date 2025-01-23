@@ -205,15 +205,17 @@ CoverageFunction {
 
 `v8/src/debug/debug-coverage.cc` 是 V8 调试工具集中一个关键的组成部分，负责收集 JavaScript 代码的覆盖率信息。它提供了多种覆盖率模式，并对收集到的数据进行处理和优化，帮助开发者理解代码的执行情况，发现潜在的错误和未测试的代码路径。它通过与 V8 内部的 `SharedFunctionInfo`、`FeedbackVector` 和 `CoverageInfo` 等机制交互来实现其功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-coverage.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/debug-coverage.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1037,7 +1039,4 @@ void Coverage::SelectMode(Isolate* isolate, debug::CoverageMode mode) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -144,15 +144,17 @@ func ExportedFunc() int {
 
 `go/test/fixedbugs/issue7023.go` 是Go编译器测试套件的一部分，用于验证编译器在内联包含 `goto` 语句的函数时，能够正确生成导出数据。它主要服务于Go编译器开发者，确保编译器功能的正确性。 普通Go开发者无需直接关注此文件，但可以从中了解到Go编译器在处理复杂代码结构时的考虑和潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7023.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compiledir
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -163,9 +165,4 @@ Prompt:
 // contains a goto.
 
 package ignored
-
-"""
-
-
-
 ```

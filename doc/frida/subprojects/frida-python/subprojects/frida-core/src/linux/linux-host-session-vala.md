@@ -161,7 +161,7 @@ attach_and_debug(<target_pid>)
    - 如果目标进程崩溃或发生错误，Frida 会通过 `process_crashed` 信号通知用户，并提供崩溃信息。
 
 通过这些步骤，用户可以逐步调试目标进程，并分析其行为。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/linux/linux-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class LinuxHostSessionBackend : Object, HostSessionBackend {
 		private LinuxHostSessionProvider local_provider;
@@ -1218,7 +1220,4 @@ namespace Frida {
 				dir = Dir.open ("/proc/%u/task".printf (target_pid));
 			} catch (FileError e) {
 				throw new Error.PROCESS_NOT_FOUND ("Unable to query system_server threads: %s", e.m
-"""
-
-
 ```

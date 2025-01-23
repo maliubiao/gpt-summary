@@ -261,7 +261,7 @@ if (Process.arch === 'arm64') {
 
 通过这些步骤，我们可以理解 `linker_note_gnu_property_test.cpp` 文件的功能，它与 Android 动态链接器和安全性的关系，以及如何在 Android 系统中间接地触发相关的代码执行。 Frida 提供了一种强大的方式来动态地观察和调试这些底层过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_note_gnu_property_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -272,8 +272,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2020 The Android Open Source Project
  * All rights reserved.
@@ -709,7 +711,4 @@ TEST(note_gnu_property, no_platform_support) {
   GTEST_SKIP() << "BTI is not supported on this architecture.";
 #endif
 }
-
-"""
-
 ```

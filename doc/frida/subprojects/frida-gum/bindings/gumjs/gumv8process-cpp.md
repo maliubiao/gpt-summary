@@ -165,7 +165,7 @@ The user interacts with this C++ code primarily through Frida's JavaScript API. 
 
 In summary, `gumv8process.cpp` is a foundational component of Frida, acting as the bridge between JavaScript and the target process's internals. It provides a rich set of functionalities for introspection and manipulation, making it a powerful tool for dynamic analysis, reverse engineering, and security research.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8process.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2020-2023 Francesco Tamagni <mrmacete@protonmail.ch>
@@ -798,7 +800,4 @@ gum_v8_exception_handler_on_exception (GumExceptionDetails * details,
 
   return handled;
 }
-
-"""
-
 ```

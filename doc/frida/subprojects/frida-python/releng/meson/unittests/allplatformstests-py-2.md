@@ -114,7 +114,7 @@ Here's a plan:
 
 该代码片段主要功能是 **对 Frida Python 绑定的构建系统进行全面的单元测试**，涵盖了链接时优化、源码分发（Git 和 Mercurial）、使用预编译的静态库和共享库、RPATH 处理、构建选项处理（特别是数组类型）、以及与 pkg-config 和 CMake 集成等多个方面。这些测试旨在确保 Frida 的构建系统在各种平台和配置下都能正确工作，为 Frida 的稳定性和可靠性提供保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,9 +123,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
-        raise SkipTest('thinLTO requires ld.lld, ld.gold, ld64, or lld-link')
+### 源代码
+```python
+raise SkipTest('thinLTO requires ld.lld, ld.gold, ld64, or lld-link')
         elif is_windows():
             raise SkipTest('LTO not (yet) supported by windows clang')
 
@@ -843,8 +845,4 @@ Prompt:
         def get_opt():
             opts = self.introspect('--buildoptions')
             for x in opts:
-          
-"""
-
-
 ```

@@ -220,7 +220,7 @@ if (Process.platform === 'linux') {
 
 总而言之，`wxstc.cpp` 虽然代码简洁，但在 Frida 的上下文中扮演着重要的角色，用于验证 Frida 对 wxWidgets 框架的动态 instrumentation 能力，并作为开发和调试 Frida 功能的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/9 wxwidgets/wxstc.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -228,15 +228,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <wx/stc/stc.h>
 
 int main(void) {
     wxStyledTextCtrl *canvas = new wxStyledTextCtrl();
     delete canvas;
 }
-
-"""
-
 ```

@@ -85,7 +85,7 @@ Here's a plan to address the request:
 
 `v8/test/cctest/test-strings.cc` 的第 3 部分主要集中在测试 V8 字符串对象的以下方面：字符串查找的细节、字符串到数组和整数索引的转换逻辑、字符串哈希的生成、不同编码方式字符串的相等性比较、外部字符串的内部化过程以及相关的内存管理和缓存机制，以及在国际化场景下字符串处理的中断能力。这些测试确保了 V8 在处理各种字符串操作时的正确性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-strings.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-strings.cc以.tq结尾，那它是个v8 torque源代码，
@@ -93,9 +93,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-     .FromJust());
+### 源代码
+```
+.FromJust());
   CHECK_EQ(-1, CompileRun("external.indexOf('a', 1)")
                    ->Int32Value(context.local())
                    .FromJust());
@@ -512,8 +514,4 @@ TEST(CheckIntlSegmentIteratorTerminateExecutionInterrupt) {
 }  // namespace test_strings
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

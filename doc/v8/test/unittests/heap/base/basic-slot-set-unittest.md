@@ -90,11 +90,13 @@ let objC = { otherRef: objA };
 
 `basic-slot-set-unittest.cc` 文件通过各种测试用例，确保了 V8 引擎中用于高效管理内存槽位的 `BasicSlotSet` 类能够正确地执行插入、查找、迭代和移除等关键操作。这个底层的组件对于 V8 的垃圾回收机制至关重要，它帮助 V8 跟踪对象引用，从而实现高效的内存管理。 JavaScript 开发者虽然不会直接操作 `BasicSlotSet`，但其背后的原理直接影响着 JavaScript 程序的性能和内存使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/base/basic-slot-set-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -293,7 +295,4 @@ TEST(BasicSlotSet, RemoveRange) {
 
 }  // namespace base
 }  // namespace heap
-
-"""
-
 ```

@@ -127,15 +127,17 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 这部分 `remote_frame.cc` 代码的核心职责是管理和维护跨进程的 Frame 对象的状态同步，特别是关于视觉属性、窗口关系和合成等方面。它充当了本地 Frame (LocalFrame) 和远程渲染进程中 Frame 之间的桥梁，确保了 Web 页面的正确渲染和交互。这些功能与 JavaScript 操作、HTML 结构以及 CSS 样式息息相关，共同构成了现代 Web 应用的运行基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/remote_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nt().GetFrame());
   return owner->GetDocument().GetFrame()->GetOutermostMainFrameSize();
 }
@@ -494,8 +496,4 @@ void RemoteFrame::ForwardFencedFrameEventToEmbedder(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

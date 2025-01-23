@@ -93,14 +93,16 @@ Essentially, I went from a high-level understanding of the file name to a detail
 
 总而言之，`cursor_control_handler.cc` 负责在 Blink 渲染引擎中处理用于控制文本光标的手势事件。 它与 HTML 元素交互，受到 JavaScript 代码的影响，并可能被 CSS 属性所限制。 理解其功能有助于我们更好地理解浏览器如何处理用户输入，以及在开发 Web 应用时如何避免潜在的冲突和错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/cursor_control_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -158,7 +160,4 @@ CursorControlHandler::HandleGestureScrollEnd(const WebGestureEvent& event) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

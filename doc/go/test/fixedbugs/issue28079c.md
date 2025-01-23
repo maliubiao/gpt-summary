@@ -139,15 +139,17 @@ func main() {
 
 总结来说，这段代码是一个精心设计的Go编译器错误检查用例，用于验证编译器是否能正确识别出在特定上下文中位移操作符的错误用法，强调了Go语言对位移操作符操作数类型的严格要求。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue28079c.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -163,9 +165,4 @@ import "unsafe"
 func f() {
 	_ = complex(1<<uintptr(unsafe.Pointer(nil)), 0) // ERROR "invalid operation: shifted operand 1 \(type float64\) must be integer|non-integer type for left operand of shift"
 }
-
-"""
-
-
-
 ```

@@ -186,7 +186,7 @@ try {
 
 这部分 `v8/test/unittests/temporal/temporal-parser-unittest.cc` 文件的主要功能是 **全面测试 V8 引擎中 Temporal API 相关日期和时间字符串解析器的正确性和健壮性**。它通过大量的成功和失败的测试用例，确保引擎能够按照 Temporal API 的规范准确地解析各种格式的日期时间字符串，并有效地处理非法的输入，从而保证 JavaScript 代码中 Temporal API 的正常运行。 这部分测试覆盖了年月、月日、瞬时时间和带时区的日期时间字符串的解析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/temporal/temporal-parser-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/temporal/temporal-parser-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ParseTemporalYearMonthStringSuccess("2021-11-09 01:23:45Z", 2021, 11, 9,
                                             "");
   VerifyParseTemporalYearMonthStringSuccess("2021-11-09 01:23:45.678912345Z",
@@ -746,8 +748,4 @@ TEST_F(TemporalParserTest, TemporalDurationStringBasic) {
   VerifyParseDurationSuccess("P4D", 1, empty, empty, empty, 4, empty, empty,
                              empty, empty, empty, empty);
   VerifyParseDurationSuccess("PT5H", 1, empty, empty, empty, empty, 5, empty,
-
-"""
-
-
 ```

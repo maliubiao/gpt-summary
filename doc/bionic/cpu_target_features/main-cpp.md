@@ -349,7 +349,7 @@ except Exception as e:
 
 **注意:**  你需要确保你的 Android 设备已 root，并且安装了 Frida 服务端。你需要根据实际情况调整脚本中的库名称和函数名称。如果 `printAarch64TargetFeatures` 的实现直接在 `main.cpp` 文件中（不太可能，通常会放在一个单独的库中），则可以直接 hook `main` 函数内部的调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/cpu_target_features/main.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -360,8 +360,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2024 The Android Open Source Project
  *
@@ -399,7 +401,4 @@ int main() {
 #error Unsupported arch. This binary only supports aarch64, arm, x86, x86-64, and risc-v
 #endif
 }
-
-"""
-
 ```

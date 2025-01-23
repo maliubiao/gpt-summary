@@ -125,15 +125,17 @@ The `std::vector` constructor that takes a size argument attempts to default-con
 
 **In summary, `v8/third_party/googletest/gmock_custom/gmock/internal/custom/gmock-port.h` is a crucial portability header that ensures gmock, a vital testing framework for V8, can function correctly across different development environments by providing workarounds for missing standard library features in older compilers.** While it's a C++ file and doesn't directly contain JavaScript, it indirectly contributes to the robustness and reliability of the JavaScript engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/googletest/gmock_custom/gmock/internal/custom/gmock-port.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/googletest/gmock_custom/gmock/internal/custom/gmock-port.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ using is_default_constructible = std::is_constructible<T>;
 }
 
 #endif  // TESTING_GMOCK_CUSTOM_GMOCK_INTERNAL_CUSTOM_GMOCK_PORT_H_
-
-"""
-
 ```

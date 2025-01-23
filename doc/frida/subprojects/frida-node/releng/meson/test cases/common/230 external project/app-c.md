@@ -160,7 +160,7 @@ By following these steps, the comprehensive analysis provided in the initial exa
 
 这个 `app.c` 文件本身就是一个小的、可控的测试单元，用于确保 Frida 能够正确地处理与外部库的交互。它的简单性使得调试和问题定位更加容易。如果 Frida 在这个简单的场景下工作不正常，那么更复杂场景下的问题就更难排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/230 external project/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,15 +168,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <libfoo.h>
 
 int main(void)
 {
     return call_foo() == 42 ? 0 : 1;
 }
-
-"""
-
 ```

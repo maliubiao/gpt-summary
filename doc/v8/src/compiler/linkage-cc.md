@@ -209,15 +209,17 @@ bool CallDescriptor::CanTailCall(const CallDescriptor* callee) const {
 
 `v8/src/compiler/linkage.cc` 是 V8 编译器中一个至关重要的文件，它定义了函数调用的抽象和实现细节。理解 `CallDescriptor` 及其相关概念有助于深入理解 V8 引擎如何执行 JavaScript 代码以及如何进行性能优化。虽然开发者通常不需要直接修改这个文件，但其背后的原理与编写高效且健壮的 JavaScript 代码息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/linkage.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/linkage.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1017,7 +1019,4 @@ LinkageLocation Linkage::GetParameterSecondaryLocation(int index) const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

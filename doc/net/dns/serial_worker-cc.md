@@ -170,15 +170,17 @@ By following these steps, the comprehensive and accurate answer to the prompt ca
 
 总而言之，`net/dns/serial_worker.cc` 中的 `SerialWorker` 类是一个幕后英雄，它通过提供可靠的任务串行执行和重试机制，增强了 Chromium 网络栈的稳定性和鲁棒性，虽然不直接与 JavaScript 交互，但为 JavaScript 发起的网络请求提供了坚实的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/serial_worker.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -354,7 +356,4 @@ base::WeakPtr<SerialWorker> SerialWorker::AsWeakPtr() {
 }
 
 }  // namespace net
-
-"""
-
 ```

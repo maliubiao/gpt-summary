@@ -279,7 +279,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 **注意:**  在不同的 Android 版本和架构上，`ilogb` 函数可能位于不同的共享库中（例如 `libm.so`）。你需要根据实际情况调整 Frida Hook 脚本。 此外，hook 底层 C 库函数可能需要 root 权限或使用特定的 Frida 配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/ilogb_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -290,8 +290,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1182,7 +1184,4 @@ static data_int_1_t<double> g_ilogb_intel_data[] = {
     -0x1.0p-1074
   }
 };
-
-"""
-
 ```

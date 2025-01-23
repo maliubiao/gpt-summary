@@ -101,7 +101,7 @@ This systematic approach, starting with understanding the context and gradually 
 
 由于这是第 2 部分，我们可以推断第 1 部分可能包含了对其他类型 token 的测试，例如标识符、关键字、运算符等。这段代码专注于数字字面量，是整个词法分析器测试的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/scanner/scanner_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -110,8 +110,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 tissa requires a 'p' exponent"},
 		{token.FLOAT, "0x1.1", "0x1.1", "hexadecimal mantissa requires a 'p' exponent"},
 		{token.FLOAT, "0x1.1e0", "0x1.1e0", "hexadecimal mantissa requires a 'p' exponent"},
@@ -188,10 +190,4 @@ tissa requires a 'p' exponent"},
 		}
 	}
 }
-
-"""
-
-
-
-
 ```

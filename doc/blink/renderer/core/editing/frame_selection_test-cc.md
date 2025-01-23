@@ -141,7 +141,7 @@ By following these steps and iteratively refining my understanding, I can produc
 
 `frame_selection_test.cc` (提供的第 1 部分) 主要关注于测试 `FrameSelection` 类中与基本选择操作、基于粒度的选择、范围选择、`SelectAll` 功能以及处理选择句柄和上下文菜单相关的逻辑。这些测试用例覆盖了用户常见的选择操作场景，并验证了在不同 HTML 结构和 CSS 样式下选择行为的正确性。 它们也间接反映了在进行选择功能开发时需要注意的用户使用习惯和潜在的编程错误。 开发者可以通过分析这些测试用例，理解 `FrameSelection` 的工作原理，并在调试选择相关问题时找到线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/frame_selection_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -924,7 +926,4 @@ TEST_F(FrameSelectionTest, CaretInShadowTree) {
 
   ce->blur();  // Move focus to document body.
   EXPECT_TRUE(Selectio
-"""
-
-
 ```

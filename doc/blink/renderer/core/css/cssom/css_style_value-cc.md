@@ -139,15 +139,17 @@ Let's break down the request and plan the response. The user has provided a code
 
 通过观察调用堆栈，你可以追踪到是哪个模块或哪个 JavaScript API 调用了 `CSSStyleValue::parse()`，从而理解样式解析的流程。  例如，你可能会看到调用堆栈中包含 `StyleValueFactory::FromString`，以及更上层的 CSS 规则解析器或 JavaScript 引擎的调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/css_style_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ String CSSStyleValue::toString() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

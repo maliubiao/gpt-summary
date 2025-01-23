@@ -152,14 +152,16 @@ By following these steps, which involve understanding the code, connecting it to
 
 总而言之，`dark_mode_image_cache_test.cc` 这个文件通过单元测试确保了 `DarkModeImageCache` 能够正确地缓存和检索用于暗黑模式的图像滤镜信息，这对于提升网页在暗黑模式下的渲染性能至关重要。 它间接地影响了网页开发者通过 CSS 和 JavaScript 实现暗黑模式的方式，并需要在引擎层面保证其正确性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/dark_mode_image_cache_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ TEST_F(DarkModeImageCacheTest, Caching) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

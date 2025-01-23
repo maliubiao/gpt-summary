@@ -142,7 +142,7 @@ By following this structured approach of examining the code's name, includes, st
 
 `blink/renderer/core/css/resolver/style_builder_converter.cc` (第1部分) 是 Blink 渲染引擎中负责将已解析的 CSS 属性值转换为内部样式数据结构的关键组件。它处理多种复杂的 CSS 属性，为后续的样式计算、布局和渲染奠定基础。这个文件直接关联着 CSS 语言，并通过处理应用于 HTML 元素的样式，间接地与 HTML 和 JavaScript 产生联系。理解这个文件的功能有助于理解浏览器如何将 CSS 代码转化为用户最终看到的网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_builder_converter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -956,8 +958,4 @@ FontDescription::Size StyleBuilderConverterBase::ConvertFontSize(
 
   const auto& primitive_value = To<CSSPrimitiveValue>(value);
   if (primitive_value.IsPercentage()) {
-   
-"""
-
-
 ```

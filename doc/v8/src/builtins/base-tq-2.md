@@ -185,7 +185,7 @@ The `v8/src/builtins/base.tq` file serves as a foundational library of Torque ma
 
 Essentially, this file encapsulates common, low-level operations and checks that are used by higher-level built-in functions and compiler optimizations within V8. It promotes code reuse and consistency across the V8 implementation. The focus is on providing efficient and type-safe operations at the heart of the JavaScript engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/base.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/base.tq以.tq结尾，那它是个v8 torque源代码，
@@ -193,8 +193,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 it context: Context)(value: JSAny, name: constexpr string): JSAny {
   if (IsNullOrUndefined(value)) {
     ThrowTypeError(MessageTemplate::kCalledOnNullOrUndefined, name);
@@ -746,8 +748,4 @@ extern macro LoadSimd128(intptr): Simd128;
 extern macro I8x16BitMask(I8X16): int32;
 extern macro I8x16Eq(I8X16, I8X16): I8X16;
 extern macro I8x16Splat(int32): I8X16;
-
-"""
-
-
 ```

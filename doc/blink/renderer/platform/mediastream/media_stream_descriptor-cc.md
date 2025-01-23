@@ -180,14 +180,16 @@ This step-by-step process, combining code analysis with understanding the broade
 
 总而言之，`MediaStreamDescriptor.cc` 中定义的 `MediaStreamDescriptor` 类是 Blink 引擎中媒体流管理的核心，它负责维护媒体流的状态和结构，并与 Web 平台的 JavaScript API 紧密协作，使得 Web 开发者能够方便地处理音视频流。理解其功能有助于深入理解 WebRTC API 的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/media_stream_descriptor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Ericsson AB. All rights reserved.
  * Copyright (C) 2013 Google Inc. All rights reserved.
@@ -356,7 +358,4 @@ void MediaStreamDescriptor::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

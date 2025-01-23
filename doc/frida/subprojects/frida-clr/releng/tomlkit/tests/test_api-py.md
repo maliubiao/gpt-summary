@@ -276,7 +276,7 @@ Finally, the information needs to be organized logically, covering each point of
 
 从逆向工程的角度来看，这个文件确保了 Frida 中使用的 TOML 解析库能够正确处理配置文件，这对于 Frida 自身的配置和目标应用程序的配置解析都至关重要。  理解这些测试用例可以帮助开发者更好地理解 `tomlkit` 的使用方法和可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/tomlkit/tests/test_api.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -284,8 +284,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import io
 import json
 import os
@@ -753,7 +755,4 @@ def test_parse_empty_quoted_table_name():
     parsed = loads(content)
     assert parsed == {"": {"x": 1}}
     assert dumps(parsed) == content
-
-"""
-
 ```

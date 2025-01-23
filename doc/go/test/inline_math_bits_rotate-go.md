@@ -177,15 +177,17 @@ Rotated by 9: 10
 
 使用者需要注意，旋转计数 `k` 实际上是模上类型的位宽的。对于 `RotateLeft8`，`k` 会被隐式地模 8；对于 `RotateLeft16`，`k` 会被模 16，以此类推。这确保了旋转操作的有效性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/inline_math_bits_rotate.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -m
 
 //go:build amd64
@@ -215,9 +217,4 @@ func f() { // ERROR "can inline f"
 	x64 = bits.RotateLeft64(x64, 1)
 	x = bits.RotateLeft(x, 1)
 }
-
-"""
-
-
-
 ```

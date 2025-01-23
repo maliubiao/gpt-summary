@@ -149,15 +149,17 @@ processPoint(new Point("a", 2)); // 可能会导致 NaN，因为字符串和数�
 
 `v8/src/objects/field-type.cc` 定义了 `FieldType` 类，它是 V8 引擎中用于表示对象字段类型信息的关键组件。 它在 V8 的类型推断和代码优化过程中发挥着重要作用，虽然用户无法直接在 JavaScript 中访问或操作它。 理解 `FieldType` 的功能有助于理解 V8 如何在动态类型的 JavaScript 环境中进行性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/field-type.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/field-type.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -271,7 +273,4 @@ bool FieldType::NowContains(Tagged<FieldType> type, Tagged<Object> value) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

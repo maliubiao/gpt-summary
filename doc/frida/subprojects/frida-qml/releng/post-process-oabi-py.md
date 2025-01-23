@@ -119,7 +119,7 @@ A developer working on the Frida project for iOS, specifically targeting arm64e 
 
 In essence, the script is an automated solution to a compatibility issue that arises during cross-compilation for a specific target architecture. Developers would encounter it as part of the standard build process or when troubleshooting issues related to architecture-specific builds.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/post-process-oabi.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import argparse
 from pathlib import Path
@@ -226,7 +228,4 @@ def perform(*args, **kwargs):
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

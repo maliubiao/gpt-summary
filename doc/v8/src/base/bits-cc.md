@@ -206,15 +206,17 @@ Let's try with larger numbers that will result in a value exceeding 32 bits.
 
 This `bits.cc` file provides essential low-level building blocks for V8's efficient and robust operation, especially when dealing with integer arithmetic and bit manipulation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/bits.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/bits.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -326,7 +328,4 @@ int64_t SignedSaturatedSub64(int64_t lhs, int64_t rhs) {
 }  // namespace bits
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

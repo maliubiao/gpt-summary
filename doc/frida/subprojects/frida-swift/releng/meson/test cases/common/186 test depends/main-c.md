@@ -89,7 +89,7 @@ Here's a thinking process to arrive at the detailed explanation of the `main.c` 
 
 总而言之，尽管 `main.c` 的代码非常简单，但在 Frida 的测试框架中，它扮演着一个重要的角色，用于验证基本的 C 编译环境和依赖项处理是否正常工作。它的存在是确保 Frida 作为一个复杂的动态插桩工具能够稳定可靠运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/186 test depends/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -97,10 +97,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0; }
-
-"""
-
 ```

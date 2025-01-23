@@ -97,11 +97,13 @@ console.log("本地时区名称:", timezoneFormatter.format(now));
 
 总而言之，`platform-aix.cc` 是 V8 引擎在 AIX 平台上运行的基础，它通过提供操作系统级别的服务，使得 JavaScript 能够在 AIX 系统上正确且高效地执行。尽管开发者通常不会直接接触到这个文件中的代码，但它的正确性对于 JavaScript 应用程序在 AIX 上的行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-aix.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -308,7 +310,4 @@ bool OS::DecommitPages(void* address, size_t size) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

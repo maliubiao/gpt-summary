@@ -116,15 +116,17 @@ Here's a plan:
 
 总而言之，`ViewTransitionStyleTracker` 在 Chromium Blink 引擎中扮演着至关重要的角色，它负责管理视图过渡过程中元素的样式状态，确保过渡动画的正确渲染和执行，并与 JavaScript、HTML 和 CSS 功能紧密相关，共同实现平滑的页面过渡效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/view_transition/view_transition_style_tracker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
     if (!animations) {
       return false;
@@ -913,8 +915,4 @@ void ViewTransitionStyleTracker::SnapBrowserControlsToFullyShown() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

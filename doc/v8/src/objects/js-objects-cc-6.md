@@ -244,7 +244,7 @@ By following this systematic approach, analyzing the code snippet in parts, and 
 
 这段代码作为 `v8/src/objects/js-objects.cc` 的一部分，主要关注 JavaScript 对象的核心生命周期管理，特别是**对象结构的变更（通过 `Map` 迁移）**和**原型链的管理与优化**。它包含了设置原型、追踪原型依赖、在原型变更时失效缓存等关键功能。此外，还涉及到对象元素的管理和 `Date` 对象的内部操作。 这些底层的 C++ 代码支撑着 JavaScript 中对象和原型链的各种行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -252,9 +252,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
- } else {
+### 源代码
+```cpp
+} else {
           new_map->SetConstructor(object_function);
         }
       }
@@ -1115,8 +1117,4 @@ void JSDate::SetCachedFields(int64_t local_time_ms, DateCache* date_cache) {
   set_year(Smi::FromInt(year), SKIP_WRITE_BARRIER);
   set_month(Smi::FromInt(month), SKIP_WRITE_BARRIER);
   set_day(Smi::FromInt(day), SKIP_WRITE_BARRIER);
-  
-"""
-
-
 ```

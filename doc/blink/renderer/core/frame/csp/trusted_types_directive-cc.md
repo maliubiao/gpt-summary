@@ -130,14 +130,16 @@ CSP 策略可以通过 HTTP 响应头或 HTML 的 `<meta>` 标签来声明。
 
 总而言之，`trusted_types_directive.cc` 是 Blink 引擎中实现 Trusted Types 功能的关键部分，它负责强制执行 CSP 中 `trusted-types` 指令的规则，确保只有符合规范的策略名称才能被 JavaScript 代码使用，从而增强 Web 应用的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/csp/trusted_types_directive.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ bool CSPTrustedTypesAllows(
 }
 
 }  // namespace blink
-
-"""
-
 ```

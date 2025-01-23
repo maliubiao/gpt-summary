@@ -165,7 +165,7 @@ Interceptor.attach(Module.findExportByName(null, "Func1"), { // 注意大小写�
 
 总而言之，即使 `func1` 是一个非常简单的函数，它也可以作为学习和测试 Frida 功能的基础案例。它涉及到动态分析的基本概念，例如 hook 函数、观察返回值，并且也与二进制文件结构、操作系统底层机制有一定的关联。 理解这样的简单函数有助于开发者更好地掌握 Frida，并为分析更复杂的程序打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/272 unity/slib1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,12 +173,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1(void) {
     return 1;
 }
-
-"""
-
 ```

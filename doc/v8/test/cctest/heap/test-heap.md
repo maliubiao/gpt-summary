@@ -117,12 +117,14 @@ Many of the functionalities tested in this C++ code directly relate to how JavaS
 
 In essence, this `test-heap.cc` file is a low-level verification of the core memory management and object handling mechanisms that underpin JavaScript execution in the V8 engine. The C++ tests directly manipulate the internal structures of the V8 heap to ensure their correctness and robustness, which directly impacts the performance and reliability of JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1896,7 +1898,4 @@ void CompilationCacheRegeneration(bool retain_root_sfi, bool flush_root_sfi,
 
   {
     v8::HandleScope scope(CcTest::is
-"""
-
-
 ```

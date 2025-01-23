@@ -88,11 +88,13 @@ console.log("余数:", remainder); // 输出结果取决于具体的计算
 
 `v8/src/bigint/div-schoolbook.cc` 文件是 V8 引擎中实现 `BigInt` 除法运算的核心部分。它使用经典的 “小学教科书式” 长除法算法，并通过一些优化来高效地计算大整数的商和余数。这使得 JavaScript 能够处理超出普通 `Number` 类型范围的超大整数的精确除法运算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/div-schoolbook.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -282,7 +284,4 @@ void ProcessorImpl::DivideSchoolbook(RWDigits Q, RWDigits R, Digits A,
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

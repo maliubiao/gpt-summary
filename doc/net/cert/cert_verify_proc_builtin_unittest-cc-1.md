@@ -137,7 +137,7 @@ Here's a breakdown of the thought process to analyze the code:
 
 这部分代码的主要功能是**详尽地测试 Chromium 内置证书验证过程的关键特性，包括对本地信任和已知根证书的 CRL 检查优化、吊销检查的超时处理、EV 证书的 OCSP 检查豁免以及 Chrome Root Store 的各种约束机制。** 这些测试确保了 Chromium 在处理各种证书场景时的正确性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/cert_verify_proc_builtin_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nd succeed.
   InitializeVerifyProc(
       CreateParams(
@@ -946,7 +948,4 @@ TEST_F(CertVerifyProcBuiltinTest, ChromeRootStoreConstraintMinAndMaxVersion) {
            callback.callback());
 
     int error = callback.WaitForResult
-"""
-
-
 ```

@@ -155,7 +155,7 @@ func TestNameConstraints_DNSExampleCom(t *testing.T) {
 
 总而言之，这段代码定义了一套详尽的测试用例，用于验证 Go 语言 `crypto/x509` 包中名称约束功能的正确性和健壮性。它涵盖了各种常见的名称约束类型和场景，并通过与 OpenSSL 的可选对比测试来提高测试的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/name_constraints_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -164,8 +164,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1884,9 +1886,4 @@ func makeConstraintsLeafCert(leaf leafSpec, key *ecdsa.PrivateKey, parent *Certi
 	}
 
 	var err erro
-"""
-
-
-
-
 ```

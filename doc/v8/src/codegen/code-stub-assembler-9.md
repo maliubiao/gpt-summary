@@ -132,12 +132,14 @@ for (let key in obj) {
 
 This specific part of `code-stub-assembler.cc` is heavily focused on implementing the core logic for fundamental JavaScript operations related to **comparison, type checking, and basic arithmetic**. It provides the low-level building blocks that the V8 engine uses during code generation to execute these operations efficiently. Being part 10 of 12 suggests it's dealing with the core operational semantics after some initial setup and before final code emission or optimization stages.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第10部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 /           return false;
   //         }
   //       } else if (lhs->IsBigInt()) {
@@ -1913,8 +1915,4 @@ TNode<BoolT> CodeStubAssembler::IsHoleyFastElementsKindForRead(
   static_assert(HOLEY_ELEMENTS == (PACKED_ELEMENTS | 1));
   static_assert(HOLEY_DOUBLE_ELEMENTS == (PACKED_DOUBLE_ELEMENTS | 1));
   static_assert(HOLEY_NONEXTENSIBLE_ELEMENTS ==
-         
-"""
-
-
 ```

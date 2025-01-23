@@ -102,7 +102,7 @@ Interceptor.attach(Module.findExportByName(null, "calculate_something"), {
 
 `genh.py` 是一个非常简单的 Python 脚本，用于生成一个包含单个宏定义的 C 头文件。虽然它本身的功能有限，但在 Frida 这样的动态插桩工具的上下文中，它可以用于辅助实现更灵活的函数返回值修改。它的存在通常是作为构建过程的一部分，用户直接与之交互的可能性较小，除非在调试构建问题时。理解这个脚本的功能有助于理解 Frida 项目的构建流程和其在逆向工程中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/95 custominc/easytogrepfor/genh.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -119,7 +121,4 @@ import sys
 f = open(sys.argv[1], 'w')
 f.write('#define RETURN_VALUE 0')
 f.close()
-
-"""
-
 ```

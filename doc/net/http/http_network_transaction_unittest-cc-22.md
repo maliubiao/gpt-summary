@@ -176,7 +176,7 @@ My thinking process to answer the request goes like this:
 
 作为整个 `HttpNetworkTransaction` 单元测试套件的一部分，第 23 部分（基于您提供的代码片段）主要负责 **验证 `HttpNetworkTransaction` 类在各种 HTTP 身份验证场景下的正确行为**。它通过模拟不同的服务器和代理服务器的身份验证需求，以及不同的身份验证结果，来确保 `HttpNetworkTransaction` 能够可靠地处理身份验证协商过程，包括同步和异步的身份验证流程，以及在 HTTPS 连接中的身份验证。 这部分测试可能专注于身份验证逻辑的核心功能和各种边缘情况，为构建健壮的网络功能提供保障。 其他部分可能涵盖连接管理、数据传输、缓存、QUIC 等其他网络协议相关的测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -184,9 +184,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第23部分，共34部分，请归纳一下它的功能
+```
 
-"""
-   kServer,
+### 源代码
+```cpp
+kServer,
        AUTH_ASYNC,
        ERR_INVALID_AUTH_CREDENTIALS,
        2,
@@ -1181,7 +1183,4 @@ TEST_P(HttpNetworkTransactionTest, SimpleCancel) {
       std::make_unique<HttpNetworkTransaction>(DEFAULT_PRIORITY, session.get());
 
   StaticSocketDataProvider data(data_reads, base::span<MockWrite
-"""
-
-
 ```

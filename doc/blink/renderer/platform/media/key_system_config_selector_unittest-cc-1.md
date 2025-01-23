@@ -94,15 +94,17 @@ By following these steps, the generated answer provides a comprehensive and info
 
 这部分测试着重验证了 `KeySystemConfigSelector` 在处理更复杂的配置场景下的选择逻辑，包括组合的音视频能力、多个可选项以及需要特定权限的配置。特别是，它详细测试了与硬件安全解密相关的逻辑以及 Feature Flag 对选择行为的影响，这对于确保在不同平台和用户权限设置下，媒体能够正确播放至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/key_system_config_selector_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 [0].mime_type = kUnsupportedContainer;
   audio_capabilities[0].codecs = kSupportedAudioCodec;
 
@@ -324,8 +326,4 @@ TEST_F(KeySystemConfigSelectorTest,
 #endif  // BUILDFLAG(IS_WIN)
 
 }  // namespace blink
-
-"""
-
-
 ```

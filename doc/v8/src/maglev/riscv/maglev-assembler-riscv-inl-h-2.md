@@ -432,7 +432,7 @@ inline void MaglevAssembler::MaybeEmitPlaceHolderForDeopt() {
 
 作为第 3 部分，这段代码延续了 `v8/src/maglev/riscv/maglev-assembler-riscv-inl.h` 文件的主要功能：**为 V8 引擎的 Maglev 编译器提供 RISC-V 架构特定的汇编指令生成工具**。它专注于实现各种比较操作、条件跳转、浮点数处理、位运算以及一些基本的栈和数据操作。这些函数是构建更高级的 JavaScript 语义和优化的基石，使得 Maglev 编译器能够将 JavaScript 代码高效地转换为 RISC-V 机器码。总之，这部分代码定义了 Maglev 编译器在 RISC-V 架构上进行代码生成的关键构建块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/riscv/maglev-assembler-riscv-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/riscv/maglev-assembler-riscv-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -440,8 +440,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 > value,
                                                     Condition cond,
                                                     Label* target,
@@ -658,8 +660,4 @@ inline void MaglevAssembler::MaybeEmitPlaceHolderForDeopt() {
 }  // namespace v8
 
 #endif  // V8_MAGLEV_RISCV_MAGLEV_ASSEMBLER_RISCV_INL_H_
-
-"""
-
-
 ```

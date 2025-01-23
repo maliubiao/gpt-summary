@@ -403,7 +403,7 @@ Number of sections: 2
 
 这个例子演示了如何使用 Frida Hook 技术来观察 NDK 代码中与 `coff.h` 相关的操作，即使现代 Android 开发中直接处理 COFF 文件的情况不多见。 你可以根据需要 Hook 更多的函数，例如 `open` 或其他与文件操作相关的函数，以更详细地跟踪程序的执行流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/coff.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -414,8 +414,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -602,7 +604,4 @@ struct COFF_reloc {
 #define COFF_DEF_TEXT_SECTION_ALIGNMENT 4
 #define COFF_DEF_SECTION_ALIGNMENT 4
 #endif
-
-"""
-
 ```

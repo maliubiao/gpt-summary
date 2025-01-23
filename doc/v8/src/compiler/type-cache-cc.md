@@ -160,15 +160,17 @@ add("hello", " world"); // 第三次调用，编译器观察到 a 和 b 都是�
 
 总而言之，`v8/src/compiler/type-cache.cc` 是 V8 编译器中负责管理类型信息的关键组件，它虽然不直接暴露给 JavaScript 开发者，但其工作直接影响着 JavaScript 代码的执行效率。理解它的作用有助于我们编写更易于 V8 优化的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/type-cache.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/type-cache.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -186,7 +188,4 @@ DEFINE_LAZY_LEAKY_OBJECT_GETTER(const TypeCache, TypeCache::Get)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

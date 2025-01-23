@@ -41,7 +41,7 @@ To fulfill the request, I need to:
 
 总而言之，这个 `rewriter.py` 脚本提供了一套命令行的工具，用于自动化地修改 `meson.build` 文件，而无需手动编辑文本。这对于大型项目或者需要进行批量修改的场景非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/rewriter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -50,8 +50,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -860,7 +862,4 @@ class Rewriter:
                     self.modified_nodes += [root]
 
         elif cmd
-"""
-
-
 ```

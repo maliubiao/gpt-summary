@@ -59,12 +59,14 @@ Here are some examples illustrating the connection:
 
 In summary, this part of the `wasm-code-manager.cc` file is fundamental to the efficient and correct execution of WebAssembly code within the V8 JavaScript engine. It handles the core tasks of managing compiled code, function entry points, and the memory regions where the code resides, all of which are essential for the seamless integration of WebAssembly into the JavaScript ecosystem.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-code-manager.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 _imported_functions; i++) {
     import_statuses[i] = module_->type_feedback.well_known_imports.get(i);
   }
@@ -1472,8 +1474,4 @@ Address WasmCodePointerAddress(WasmCodePointer pointer) {
 }  // namespace internal
 }  // namespace v8
 #undef TRACE_HEAP
-
-"""
-
-
 ```

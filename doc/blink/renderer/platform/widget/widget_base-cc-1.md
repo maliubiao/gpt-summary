@@ -131,15 +131,17 @@ By following this structured approach, including the process of initial assessme
 
 `WidgetBase::cc` 的第二部分继续扮演着 Widget 的基础管理角色，专注于处理动画调度、屏幕和表面信息的同步、窗口几何属性的维护、坐标空间的转换以及一些渲染优化策略。 这些功能是构建复杂 Web 页面和应用的基础，确保了内容能够正确地渲染和与用户交互，并能够适应不同的设备和屏幕环境。它与 JavaScript, HTML, 和 CSS 紧密协作，共同构成了 Web 平台的核心渲染能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/widget_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nce finished handling the
   // ime event.
   UpdateSelectionBounds();
@@ -396,8 +398,4 @@ std::optional<int> WidgetBase::GetMaxRenderBufferBounds() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

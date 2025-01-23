@@ -211,15 +211,17 @@ By following this thought process, breaking down the problem, and using concrete
 
 `repo.py` 是 Frida 项目用于自动化版本管理和依赖更新的关键脚本。它简化了发布流程，确保了各个组件版本的一致性，这对于 Frida 的开发者和用户（包括逆向工程师）来说都至关重要。理解这个脚本的功能和潜在的错误情况可以帮助开发者更有效地管理 Frida 项目，并帮助用户排查与版本相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/.github/scripts/repo.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -477,7 +479,4 @@ def run(argv: list[str], **kwargs) -> subprocess.CompletedProcess:
 
 if __name__ == "__main__":
     main(sys.argv)
-
-"""
-
 ```

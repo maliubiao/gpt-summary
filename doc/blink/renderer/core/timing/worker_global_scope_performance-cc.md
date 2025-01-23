@@ -165,15 +165,17 @@ By following these steps, we can systematically analyze the C++ code and generat
 
 总而言之， `worker_global_scope_performance.cc` 是 Blink 引擎中一个关键的组件，它将底层的性能测量能力暴露给 Web Worker 的 JavaScript 环境，使得开发者可以监控和优化其 Worker 的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/worker_global_scope_performance.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -249,7 +251,4 @@ void WorkerGlobalScopePerformance::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

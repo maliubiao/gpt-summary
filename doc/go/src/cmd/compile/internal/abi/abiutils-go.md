@@ -179,15 +179,17 @@ go tool compile -arch=amd64 myprogram.go
 
 总结来说，`abiutils.go` 是 Go 编译器中一个至关重要的组成部分，它负责理解和实现不同架构下的函数调用约定，为生成高效、正确的机器码奠定了基础。 开发者虽然不直接使用它，但了解其功能有助于更深入地理解 Go 语言的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/abi/abiutils.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -876,9 +878,4 @@ func (pa *ABIParamAssignment) ComputePadding(storage []uint64) []uint64 {
 	}
 	return padding
 }
-
-"""
-
-
-
 ```

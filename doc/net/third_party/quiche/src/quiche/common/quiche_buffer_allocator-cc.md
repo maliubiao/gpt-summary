@@ -150,15 +150,17 @@ This systematic approach—understanding the code's purpose, dissecting its logi
 
 `quiche_buffer_allocator.cc` 中的 `CopyFromIovec` 函数是一个在 Chromium 网络栈中用于高效复制分散内存数据到连续缓冲区的实用工具。虽然它不直接与 JavaScript 代码交互，但它在幕后支持着 JavaScript 发起的网络请求，特别是当使用 QUIC 协议时，需要处理来自网络的、可能分散的数据块。 理解这个函数的功能和潜在的错误用法对于调试网络相关的 Chromium 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/quiche_buffer_allocator.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ QuicheBuffer QuicheBuffer::CopyFromIovec(QuicheBufferAllocator* allocator,
 }
 
 }  // namespace quiche
-
-"""
-
 ```

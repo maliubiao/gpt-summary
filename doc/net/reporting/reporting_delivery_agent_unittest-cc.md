@@ -157,7 +157,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 这部分 `ReportingDeliveryAgentTest` 代码主要关注于 **验证 `ReportingDeliveryAgent` 的基本报告上传流程和机制**，包括成功的立即上传、延迟上传、不同类型的头部配置、子域名处理、以及上传失败和被阻止的情况。它还测试了端点管理和一些并发场景下的行为，并初步涉及了报告的批量处理逻辑。  这些测试旨在确保 `ReportingDeliveryAgent` 能够正确地将网络报告传递到配置的服务器，并处理各种可能发生的异常情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_delivery_agent_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -982,7 +984,4 @@ TEST_F(ReportingDeliveryAgentTest, BatchReportsAcrossGroups) {
 }
 
 // Tests that the agent can send all outstanding reports for a single s
-"""
-
-
 ```

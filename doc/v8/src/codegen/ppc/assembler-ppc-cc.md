@@ -185,7 +185,7 @@ add(5, 10);
 
 总而言之，这部分代码是构建 V8 中 PPC 代码生成器的基石，它定义了关键的数据结构和方法，使得可以将高级表示的 JavaScript 代码转换为可以在 PPC 处理器上执行的低级机器指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/assembler-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/assembler-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -193,8 +193,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -1184,7 +1186,4 @@ void Assembler::stb(Register dst, const MemOperand& src) {
 }
 
 void Assembler::sth(Regist
-"""
-
-
 ```

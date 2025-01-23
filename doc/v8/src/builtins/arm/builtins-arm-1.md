@@ -119,12 +119,14 @@ console.log(instance.value);
 
 总而言之，这部分 C++ 代码是 V8 引擎在 ARM 架构上执行 JavaScript 代码的关键组成部分，它提供了许多核心的运行时支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/arm/builtins-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 nd(kInterpreterDispatchTableRegister, scratch, LSL,
                     kPointerSizeLog2));
   __ Jump(kJavaScriptCallCodeStartRegister);
@@ -1927,7 +1929,4 @@ void SwitchToAllocatedStack(MacroAssembler* masm, RegisterAllocator& regs,
   // Push the loaded fp. We know it is null, because there is no frame yet,
   // so we could also push 0 directly. In any case we need to push it,
   // because this marks the bas
-"""
-
-
 ```

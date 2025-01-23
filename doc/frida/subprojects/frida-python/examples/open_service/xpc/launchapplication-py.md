@@ -184,7 +184,7 @@ By following this structured analysis and constantly refining the understanding 
 
 通过这个脚本，逆向工程师可以自动化地启动目标应用程序并监控其输出，从而更高效地进行动态分析。它提供了一种比手动启动应用程序更可控和更方便的方式来与目标应用程序进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/open_service/xpc/launchapplication.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import pprint
 import sys
 from threading import Thread
@@ -258,7 +260,4 @@ def process_console_output(stream, sink):
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

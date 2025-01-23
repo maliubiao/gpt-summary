@@ -228,7 +228,7 @@ This section of the `ax_node_object.cc` file primarily focuses on **determining 
 
 总结来说，这个代码片段是 Blink 引擎可访问性实现的关键部分，它定义了元素是否对辅助技术“可见”的基本规则，并对各种 HTML 元素和 ARIA 属性进行了细致的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_node_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -236,8 +236,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Settings* settings = GetDocument()->GetSettings();
       if (settings->GetAccessibilityIncludeSvgGElement()) {
         return kIncludeObject;
@@ -1128,8 +1130,5 @@ bool AXNodeObject::IsDataTable() const {
   }
 
   if (!GetLayoutObject()) {
-    // The table is not rendered, so the author has 
-"""
-
-
+    // The table is not rendered, so the author has
 ```

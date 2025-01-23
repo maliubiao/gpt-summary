@@ -155,12 +155,14 @@ testPropertyAssignment();
 
 这部分 C++ 代码深入测试了 V8 引擎在底层如何跟踪对象字段的类型，特别是关注字段的常量性以及在不同场景下的转换。它验证了 V8 在处理特殊数值、不同的属性赋值方式以及 Map 规范化时的行为是否符合预期，这对于理解 V8 的优化机制和性能至关重要。这些测试确保了 V8 能够有效地进行类型推断和代码优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-field-type-tracking.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 mplate <class... Args>
 MaybeHandle<Object> Call(Isolate* isolate, Handle<JSFunction> function,
                          Args... args) {
@@ -433,8 +435,4 @@ TEST(CheckFitsRepresentationPredicate) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

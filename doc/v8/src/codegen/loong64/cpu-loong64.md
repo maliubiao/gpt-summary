@@ -99,11 +99,13 @@ let result3 = add(5, 6); // 此时执行的可能是优化后的代码
 * 对于非 Android 平台，则直接使用了汇编指令 `ibar 0` 来进行指令缓存刷新。
 * `V8_TARGET_ARCH_LOONG64` 和 `V8_HOST_ARCH_LOONG64` 宏用于条件编译，确保代码只在目标架构和宿主架构都是 LoongArch64 时才会被编译。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/loong64/cpu-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -142,7 +144,4 @@ void CpuFeatures::FlushICache(void* start, size_t size) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_LOONG64
-
-"""
-
 ```

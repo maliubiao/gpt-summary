@@ -109,14 +109,16 @@ By following this systematic approach, we can thoroughly analyze the code and ad
 
 `web_input_event.cc` 文件是 Blink 引擎中一个关键的输入事件处理模块。它负责管理和转换 Web 特定的输入事件类型到更通用的 UI 事件类型，这对于整个 Chromium 浏览器处理用户交互至关重要。它通过 `MergeDispatchTypes` 控制事件的派发方式，并通过 `GetTypeAsUiEventType` 提供了一个统一的事件类型表示，方便了 Chromium 的其他组件（包括最终与 JavaScript, HTML, CSS 交互的部分）进行处理。理解这个文件有助于理解浏览器如何接收、处理和响应用户的各种输入操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/input/web_input_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -229,7 +231,4 @@ ui::EventType WebInputEvent::GetTypeAsUiEventType() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -130,11 +130,13 @@ add(1, 2);
 
 `code-desc.cc` 中定义的 `CodeDesc` 类是 V8 内部用于管理和描述生成的机器代码的关键组件。 它存储了代码的各种元数据，使得 V8 引擎能够正确地执行、管理和优化 JavaScript 代码。 JavaScript 开发者通常不需要直接与 `CodeDesc` 交互，但了解它的作用有助于理解 V8 引擎的内部工作原理，以及 JavaScript 代码是如何被编译和执行的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-desc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ void CodeDesc::Verify(const CodeDesc* desc) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

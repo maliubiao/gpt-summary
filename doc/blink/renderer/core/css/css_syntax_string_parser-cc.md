@@ -192,15 +192,17 @@ By following this systematic approach, I was able to dissect the C++ code, under
 
 总而言之，`CSSSyntaxStringParser` 在 Blink 渲染引擎中扮演着关键角色，负责理解和验证自定义 CSS 属性的语法，确保开发者定义的属性能够被正确解析和应用。 它的存在使得 CSS 的扩展性更强，允许开发者创建具有特定类型约束的自定义属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_syntax_string_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -388,7 +390,4 @@ bool CSSSyntaxStringParser::ConsumeIdent(String& ident) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

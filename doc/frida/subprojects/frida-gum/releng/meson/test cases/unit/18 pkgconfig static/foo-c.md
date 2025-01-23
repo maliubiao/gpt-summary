@@ -109,7 +109,7 @@ By following this detailed thought process, which involves understanding the cod
 
 总而言之，这个简单的 `power_level` 函数虽然功能简单，但它很好地展示了编译时条件对代码行为的影响，这是逆向工程中需要重点关注的一个方面。通过 Frida 这样的动态插桩工具，用户可以观察到这些编译时条件在运行时产生的实际效果，并将其作为调试线索来深入理解目标程序的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/18 pkgconfig static/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int power_level (void)
 {
 #ifdef FOO_STATIC
@@ -127,7 +129,4 @@ int power_level (void)
     return 8999;
 #endif
 }
-
-"""
-
 ```

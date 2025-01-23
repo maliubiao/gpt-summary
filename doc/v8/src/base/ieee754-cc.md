@@ -96,7 +96,7 @@ Here's a breakdown of the thinking process:
 
 这个 C++ 源代码文件的第一部分为 V8 JavaScript 引擎提供了操作 IEEE 754 双精度浮点数的底层工具和核心数学函数。它包含了用于直接操作浮点数二进制表示的宏，以及用于高效计算三角函数（余弦、正弦、正切）和计算除以 pi/2 余数的内核函数。这些函数是实现 JavaScript `Math` 对象中相关数学方法的基础，并力求提供高精度和性能。该代码借鉴了 `fdlibm` 库，并针对 V8 进行了修改和优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/ieee754.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/ieee754.cc以.tq结尾，那它是个v8 torque源代码，
@@ -104,8 +104,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // The following is adapted from fdlibm (http://www.netlib.org/fdlibm).
 //
 // ====================================================
@@ -1072,7 +1074,4 @@ double acosh(double x) {
  * Method :
  *      Since  asin(x) = x + x^3/6 + x^5*3/40 + x^7*15/336 + ...
  *      we approximate asin(x) on [0,
-"""
-
-
 ```

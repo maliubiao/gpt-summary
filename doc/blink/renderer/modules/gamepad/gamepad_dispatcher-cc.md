@@ -207,15 +207,17 @@ Let's break down the thought process for analyzing the `gamepad_dispatcher.cc` f
 
 总而言之，`blink/renderer/modules/gamepad/gamepad_dispatcher.cc` 是 Blink 引擎中处理 gamepad 输入的核心，它连接了底层的系统事件和上层的 JavaScript API，负责数据的传递和功能的协调。理解其功能对于调试和理解 Web Gamepad API 的实现至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/gamepad/gamepad_dispatcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -321,7 +323,4 @@ void GamepadDispatcher::StopListening() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

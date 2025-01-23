@@ -73,7 +73,7 @@ By following these steps, I can dissect the provided code snippet and provide a 
 
 总而言之，`go/src/cmd/compile/internal/walk/order.go` 文件的核心职责是 **确保 Go 语言表达式按照规范定义的语义和求值顺序执行，并通过引入临时变量和生成相应的中间代码来实现这一目标。** 它处理了各种复杂的表达式类型，并针对特定场景进行了优化，以提高代码效率和符合 Go 语言的规范。 这段代码是 Go 编译器将高级 Go 代码转换为低级指令的关键步骤之一。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/walk/order.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -82,8 +82,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 / effects to o.out as needed.
 // If this is part of an assignment lhs = *np, lhs is given.
 // Otherwise lhs == nil. (When lhs != nil it may be possible
@@ -512,10 +514,4 @@ func (o *orderState) as2ok(n *ir.AssignListStmt) {
 	o.out = append(o.out, n)
 	o.stmt(typecheck.Stmt(as))
 }
-
-"""
-
-
-
-
 ```

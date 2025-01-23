@@ -154,15 +154,17 @@ By following this structured approach, I could systematically analyze the code, 
 
 总而言之，`blink/common/page_state/page_state_serialization.cc` 的这一部分代码是 Blink 引擎中非常核心的组件，它负责将复杂的网页状态信息转换为可以存储和传输的格式，这对于浏览器的历史记录、会话恢复、前进/后退导航等功能至关重要。 它与 Javascript, HTML, CSS 都有着密切的联系，因为它存储和恢复的状态正是这些 Web 技术所构建的网页的各种属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/page_state/page_state_serialization.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ursivelyAppendReferencedFiles(state->top, &state->referenced_files);
 
   // De-dupe
@@ -300,8 +302,4 @@ std::string EncodeResourceRequestBody(
 #endif
 
 }  // namespace blink
-
-"""
-
-
 ```

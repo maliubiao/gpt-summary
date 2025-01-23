@@ -192,7 +192,7 @@ def check_installation(install_path):
 
 尽管 `bar.py` 本身的代码很简单，但它在 Frida 工具的测试体系中扮演着重要的角色，用于验证安装数据的结构是否符合预期。通过分析其所在路径和可能的用途，我们可以推断出它与逆向工程中的安装分析、底层系统知识以及常见的用户错误都有一定的关联。查看 `bar.py` 的源代码通常是开发人员在调试安装测试失败时的一个重要步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/252 install data structured/pysrc/bar.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,10 +200,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''mod.bar module'''
-
-"""
-
 ```

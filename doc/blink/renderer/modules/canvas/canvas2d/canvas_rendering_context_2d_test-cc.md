@@ -115,7 +115,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 这部分代码主要建立了 `CanvasRenderingContext2D` 单元测试的基础框架。它定义了测试类 `CanvasRenderingContext2DTest`，包含了测试环境的初始化（例如创建 Canvas 元素，设置测试平台），以及一些基础的测试用例，初步验证了 `fillRect` 和 `clearRect` 等基本绘图功能，并开始关注性能和资源管理方面的问题 (例如自动刷新机制、是否开启硬件加速等)。  它还引入了用于模拟和辅助测试的类，为后续更复杂的 Canvas 功能测试奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/canvas_rendering_context_2d_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -910,7 +912,4 @@ TEST_P(CanvasRenderingContext2DTest, DisableOverdrawOptimization) {
 }
 
 TEST_P(CanvasRenderingContext2DTest, ClearRect_Exact
-"""
-
-
 ```

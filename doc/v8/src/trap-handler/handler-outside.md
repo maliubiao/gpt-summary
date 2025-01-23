@@ -72,11 +72,13 @@ try {
 
 `handler-outside.cc` 为 V8 的陷阱处理机制提供了必要的支持，它负责管理和维护关于受保护代码区域的元数据。虽然它本身不处理陷阱，但它确保了当 JavaScript 代码执行时发生内存访问错误时，V8 能够安全地捕获并处理这些错误，从而提高了 JavaScript 运行时的健壮性和安全性。 在上面的 JavaScript 例子中，虽然 `handler-outside.cc` 的代码没有直接运行，但它注册的保护信息和配置为 V8 能够捕获到数组越界访问并抛出 `RangeError` 异常提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/handler-outside.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -362,7 +364,4 @@ void SetLandingPad(uintptr_t landing_pad) { gLandingPad.store(landing_pad); }
 }  // namespace trap_handler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

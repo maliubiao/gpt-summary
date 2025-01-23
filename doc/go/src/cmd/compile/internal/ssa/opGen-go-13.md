@@ -1,5 +1,5 @@
 Response: 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/opGen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -7,8 +7,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第14部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 }, // SP SB R3 R4 R5 R6 R7 R8 R9 R10 R11 R12 R14 R15 R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29
 			},
 			outputs: []outputInfo{
@@ -2039,10 +2041,5 @@ Prompt:
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1006632944}, // X5 X6 X7 X8 X9 X10 X11 X12 X13 X14 X15 X16 X17 X18 X19 X20 X21 X22 X23 X24 X25 X26 X28 X29 X30
-				{1, 1006632944}, // X5 X6 X7 X8 X9 X10 X11 X12 X13 X14 X15 
-"""
-
-
-
-
+				{1, 1006632944}, // X5 X6 X7 X8 X9 X10 X11 X12 X13 X14 X15
 ```

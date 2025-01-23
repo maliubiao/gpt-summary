@@ -133,7 +133,7 @@ By following these steps, the detailed analysis provided in the initial good ans
 
 总而言之，`extralib.cpp` 本身是一个简单的日志记录示例，但在 Frida 的上下文中，它作为测试用例的一部分，可以帮助验证 Frida 与 Swift 框架的集成是否正确。分析这个文件可以帮助开发者理解 Frida 测试套件的结构、日志记录在动态分析中的作用，以及一些底层的系统交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/1 boost/extralib.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define _XOPEN_SOURCE 500
 
 #include <iostream>
@@ -170,7 +172,4 @@ int main(int argc, char **argv) {
   BOOST_LOG_TRIVIAL(trace) << "SOMETHING";
   return 0;
 }
-
-"""
-
 ```

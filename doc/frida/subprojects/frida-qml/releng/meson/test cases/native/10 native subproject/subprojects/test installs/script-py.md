@@ -128,7 +128,7 @@ $ echo $?
 
 这个简单的 `script.py` 脚本的主要功能是提供一个总是失败的测试用例。它在 Frida-QML 的测试框架中扮演着验证错误处理机制的角色。用户通常会在 Frida-QML 的开发、测试或调试过程中，通过运行测试、查看日志或浏览源代码的方式接触到这个脚本。理解这个脚本的意图有助于调试测试失败等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/native/10 native subproject/subprojects/test installs/script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,13 +136,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #/usr/bin/env python3
 
 # Always error
 exit(1)
-
-"""
-
 ```

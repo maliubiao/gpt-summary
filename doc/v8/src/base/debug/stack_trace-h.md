@@ -196,15 +196,17 @@ Here's a breakdown of its functionalities:
 
 In summary, `v8/src/base/debug/stack_trace.h` provides fundamental mechanisms for capturing and analyzing the call stack within the V8 engine. This is essential for debugging, error reporting, and understanding the execution flow of both the V8 engine itself and the JavaScript code it runs.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/debug/stack_trace.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/debug/stack_trace.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -302,7 +304,4 @@ class V8_BASE_EXPORT StackTrace {
 }  // namespace v8
 
 #endif  // V8_BASE_DEBUG_STACK_TRACE_H_
-
-"""
-
 ```

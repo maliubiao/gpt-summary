@@ -180,15 +180,17 @@ CSS 可以通过 Media Queries 来响应设备姿态的变化，但这通常需�
 
 总而言之，`navigator_device_posture.cc` 是连接底层设备姿态信息和 Web 前端 JavaScript API 的关键桥梁，它使得 Web 开发者能够创建能够感知设备物理形态并做出相应调整的网页应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/device_posture/navigator_device_posture.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ void NavigatorDevicePosture::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -155,7 +155,7 @@ This part of the `internaltests.py` file extensively tests the functionality of 
 
 这部分代码是 Frida 构建系统中关于 Meson 构建配置的关键组成部分，专注于测试函数关键字参数的处理机制。它确保了类型安全、版本控制的正确性，并且能够进行自定义的验证和转换。此外，还包含了对底层 CPU 架构检测以及构建系统核心组件属性的测试。这些测试对于保证 Frida 项目在不同平台和 Meson 版本下的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/internaltests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 rtIsNot(kwargs['input'], default)
 
         _(None, mock.Mock(), [], {})
@@ -554,8 +556,4 @@ rtIsNot(kwargs['input'], default)
         for raw, expected in cases:
             with self.subTest(raw):
                 self.assertEqual(OptionKey.from_string(raw), expected)
-
-"""
-
-
 ```

@@ -124,12 +124,14 @@ myFunction();
 
 总之，这段C++代码是V8引擎中负责对象和数组的内存管理和属性操作的核心部分，是理解JavaScript底层运行机制的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 eapObjectAssumeWeak(value, runtime));
   return result;
 }
@@ -1736,7 +1738,4 @@ TNode<JSArray> CodeStubAssembler::CloneFastJSArray(
     HoleConversionMode convert_holes) {
   // TODO(dhai): we should be able to assert IsFastJSArray(array) here, but this
   // function is also used to copy boilerplates even when the no-elemen
-"""
-
-
 ```

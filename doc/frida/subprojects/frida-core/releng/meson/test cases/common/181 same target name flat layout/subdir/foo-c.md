@@ -114,7 +114,7 @@ By following this thought process, we can systematically analyze even a simple c
 
 总而言之，虽然 `meson_test_subproj_foo.c` 中的代码非常简单，但它在 Frida 项目的上下文中扮演着测试和验证的角色。理解它的功能以及与逆向工程、底层知识的联系，可以帮助我们更好地理解 Frida 的工作原理和使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/181 same target name flat layout/subdir/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,10 +122,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int meson_test_subproj_foo(void) { return 20; }
-
-"""
-
 ```

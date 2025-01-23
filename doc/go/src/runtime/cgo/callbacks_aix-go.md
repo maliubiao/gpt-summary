@@ -157,7 +157,7 @@ CGO_ENABLED=1 CC=gcc go build main.go
 
 总而言之，`go/src/runtime/cgo/callbacks_aix.go` 是 Go 运行时针对 AIX 平台 CGO 功能的底层支撑文件，它通过导出特定的函数，使得 C 代码能够以特定的方式（长调用）与 Go 运行时环境进行交互。开发者在使用 CGO 时，通常不需要直接操作这个文件中的函数，但需要理解 CGO 的基本原理和潜在的陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/cgo/callbacks_aix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -165,8 +165,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -179,9 +181,4 @@ package cgo
 //go:cgo_export_static __cgo_topofstack
 //go:cgo_export_static runtime.rt0_go
 //go:cgo_export_static _rt0_ppc64_aix_lib
-
-"""
-
-
-
 ```

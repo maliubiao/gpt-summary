@@ -107,15 +107,17 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 作为测试套件的第 3 部分，这段代码主要负责**测试 Intersection Observer API 中 `MinScrollDeltaToUpdate` 功能的正确性**。它通过创建各种包含滚动容器和目标元素的 HTML 结构，并模拟滚动相关的操作（如改变容器高度或使用 `scrollTo`），来验证在不同场景下，Blink 引擎能否准确计算出触发下一次 Intersection Observer 回调所需的最小滚动距离。这部分测试覆盖了不同的 `threshold` 值和 CSS 样式，确保了该功能在各种情况下的稳定性和准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/intersection_observer/intersection_observer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 adURL("https://example.com/");
   main_resource.Complete(R"HTML(
     <div id='root' style="width: 100px; height: 100px">
@@ -817,8 +819,4 @@ TEST_F(IntersectionObserverTest, MinScrollDeltaToUpdateThreshold0_5) {
   root->scrollTo(0, 151);
   EXPECT_EQ(gfx::Vector2dF(), observation->MinScrollDeltaToUpdate());
   EXPECT_EQ(LocalFrameView::kScrollAndVisibilityOnly,
-      
-"""
-
-
 ```

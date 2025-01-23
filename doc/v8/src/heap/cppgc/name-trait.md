@@ -114,11 +114,13 @@ static HeapObjectName NameTrait<JSArray>::GetNameFor(...) [T = JSArray]
 
 `name-trait.cc` 这个文件定义了一个用于从 C++ 类型签名中提取类型名称的工具函数。它在 V8 引擎的 `cppgc` 组件中扮演着重要的角色，帮助垃圾回收器识别和管理不同类型的 C++ 对象，这些 C++ 对象是 JavaScript 特性和数据结构在 V8 内部的表示。虽然 JavaScript 代码不直接调用它，但其功能是 V8 引擎正确执行 JavaScript 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/name-trait.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ HeapObjectName NameTraitBase::GetNameFromTypeSignature(const char* signature) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

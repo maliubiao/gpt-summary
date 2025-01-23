@@ -162,15 +162,17 @@ console.log(myObject.age); // 输出 undefined
 
 `v8/src/objects/swiss-name-dictionary.tq` 定义了 V8 引擎中用于存储 JavaScript 对象属性的关键数据结构 `SwissNameDictionary`。它使用 Swiss Table 算法实现了高效的属性查找、添加和删除操作，并与 JavaScript 对象的属性访问和操作紧密相关。理解其功能有助于深入理解 V8 引擎的内部工作原理以及一些常见的 JavaScript 行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/swiss-name-dictionary.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/swiss-name-dictionary.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -486,7 +488,4 @@ macro SwissNameDictionaryAddPortable(
       otherwise Bailout;
 }
 }
-
-"""
-
 ```

@@ -153,15 +153,17 @@ Type of x: []int, Value of x: [1 2 3], Type of i: interface {}, Value of i: [1 2
 
 这个 `go/test/typeparam/issue48276b.go` 文件中的代码片段是一个非常基础的泛型示例，主要用于展示泛型函数如何接受任何类型的值并将其赋值给一个空接口变量。它简洁地体现了 Go 语言泛型的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue48276b.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -177,9 +179,4 @@ func main() {
 func f[T any](x T) {
 	var _ interface{} = x
 }
-
-"""
-
-
-
 ```

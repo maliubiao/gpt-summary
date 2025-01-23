@@ -146,11 +146,13 @@ console.log(longLivedCache);
 
 `pretenuring-propagation-reducer.cc` 通过静态分析 JavaScript 代码的中间表示，预测哪些对象会长期存活，并指示 V8 引擎在分配这些对象时就将其放置在 Old Generation 中。这减少了垃圾回收的压力，特别是 Full GC 的频率，从而提高了 JavaScript 应用程序的性能。虽然开发者不能直接控制这种优化，但理解其原理有助于编写出更容易被 V8 优化器处理的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/pretenuring-propagation-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -301,7 +303,4 @@ void PretenuringPropagationAnalyzer::Run() {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

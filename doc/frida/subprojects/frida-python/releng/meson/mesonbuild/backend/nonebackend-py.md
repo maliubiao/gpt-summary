@@ -107,7 +107,7 @@ install_data('config.ini', install_dir : '/etc/my_project')
 
 总而言之，`nonebackend.py` 在 Frida 的构建系统中扮演着一个特殊的角色，它专注于处理安装相关的事情，而跳过了实际的代码构建过程。这在某些特定的构建或部署场景下非常有用，但也容易被误用，导致用户期望的构建结果与实际不符。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/backend/nonebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2022 The Meson development team
 
@@ -143,7 +145,4 @@ class NoneBackend(Backend):
         mlog.log('Generating simple install-only backend')
         self.serialize_tests()
         self.create_install_data_files()
-
-"""
-
 ```

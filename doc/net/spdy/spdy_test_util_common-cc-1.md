@@ -189,7 +189,7 @@ fetch('/api/data', {
 
 `net/spdy/spdy_test_util_common.cc` 文件的第二部分主要提供了 `SpdyTestUtil` 类中用于**构造和序列化各种 SPDY 协议帧**的辅助函数。这些函数简化了在测试环境中创建 SPDY 请求帧、响应帧和数据帧的过程，并提供了管理流和构造通用头部块的功能。 它的核心目标是为 Chromium 网络栈的 SPDY 协议相关组件提供便捷的测试工具。 它与 JavaScript 的关系在于它测试的底层协议是支撑 JavaScript 发起网络请求的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_test_util_common.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 }
 
 spdy::SpdySerializedFrame SpdyTestUtil::ConstructSpdyReply(
@@ -352,8 +354,4 @@ HashValue GetTestHashValue(uint8_t label) {
 
 }  // namespace test
 }  // namespace net
-
-"""
-
-
 ```

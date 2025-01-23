@@ -74,7 +74,7 @@ Here's a plan to address the request:
 
 总而言之，`longhands_custom.cc` 文件的第一部分主要负责处理部分 CSS 属性的解析和计算值到 CSS 值的转换，确保浏览器能够正确理解和应用开发者编写的 CSS 样式，并将内部的计算结果以合适的 CSS 值形式暴露出来。 它连接了 CSS 语法和 Blink 渲染引擎的内部表示，是浏览器渲染流程中至关重要的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/longhands/longhands_custom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -82,8 +82,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -930,7 +932,4 @@ const CSSValue* BackgroundColor::ParseSingleValue(
 }
 
 const blink::Color Backg
-"""
-
-
 ```

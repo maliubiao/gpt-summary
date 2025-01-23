@@ -118,11 +118,13 @@ add(1, 2);
 
 `parse-info.cc` 文件是 V8 引擎解析 JavaScript 代码的核心组件之一。它定义了关键的数据结构和标志，用于配置解析过程并存储相关信息。这些标志直接影响了 V8 如何理解和处理不同的 JavaScript 代码结构和功能，从而最终影响代码的执行方式和性能。理解这些概念对于深入了解 V8 引擎的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parse-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -453,7 +455,4 @@ void ParseInfo::CheckFlagsForFunctionFromScript(Tagged<Script> script) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

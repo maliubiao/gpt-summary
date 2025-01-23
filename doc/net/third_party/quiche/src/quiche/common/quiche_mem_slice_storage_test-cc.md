@@ -146,15 +146,17 @@ By following this structured thought process, breaking down the problem, and ref
 
 总而言之，`quiche_mem_slice_storage_test.cc` 文件本身是用于确保 `QuicheMemSliceStorage` 类正确工作的测试代码。它与 JavaScript 没有直接的编程联系，但它是构成 Chromium 网络栈中 QUIC 协议实现的重要组成部分，间接地影响着用户的网络体验。当出现网络问题时，理解这类底层组件的功能和测试方法对于开发者进行调试和问题定位至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/quiche_mem_slice_storage_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ TEST_F(QuicheMemSliceStorageImplTest, MultipleIovInMultipleSlice) {
 }  // namespace
 }  // namespace test
 }  // namespace quiche
-
-"""
-
 ```

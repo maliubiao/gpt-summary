@@ -160,15 +160,17 @@ scheme_host_port.port() = 8080
 
 `net/dns/public/util.cc` 是 Chromium 网络栈中负责处理 DNS 相关实用功能的 C++ 文件。它与 JavaScript 的关系是间接的，主要体现在为 JavaScript 发起的网络请求提供底层的 DNS 处理支持。了解这个文件的功能有助于理解 Chromium 如何处理 DNS 查询，尤其是在涉及 mDNS 和 HTTPS 查询时。通过设置断点、查看网络日志和抓包分析，可以追踪用户操作如何一步步地触发到这个文件中的代码执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/public/util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -288,7 +290,4 @@ std::string GetNameForHttpsQuery(const url::SchemeHostPort& scheme_host_port,
 
 }  // namespace dns_util
 }  // namespace net
-
-"""
-
 ```

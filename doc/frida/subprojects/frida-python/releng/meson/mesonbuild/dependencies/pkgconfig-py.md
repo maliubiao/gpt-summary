@@ -140,7 +140,7 @@ Here's a breakdown of how to address each point:
 
 总而言之，`pkgconfig.py` 是 Frida 构建系统中的关键组件，负责处理外部库依赖，它通过与 `pkg-config` 工具的交互，为构建过程提供了必要的库信息，这对于成功构建 Frida 及其组件至关重要。理解它的功能和工作原理有助于诊断与依赖项相关的构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/dependencies/pkgconfig.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -726,7 +728,4 @@ class PkgConfigDependency(ExternalDependency):
         if default_value is not None:
             return default_value
         raise DependencyException(f'Could not get pkg-config variable and no default provided for {self!r}')
-
-"""
-
 ```

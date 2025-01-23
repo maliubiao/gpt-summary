@@ -131,7 +131,7 @@ By following these steps, including contextual analysis and iterative refinement
 
 总而言之，`stuff.c` 作为一个非常简单的 C 源文件，其主要功能是返回固定的值 0。在 Frida 项目的上下文中，它很可能被用作单元测试的基础目标，用于验证 Frida 的 hook 功能以及与运行时库加载路径相关的行为。对于逆向工程师来说，它可以作为一个简单的目标进行学习和实验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/10 build_rpath/sub/stuff.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,12 +139,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int get_stuff() {
     return 0;
 }
-
-"""
-
 ```

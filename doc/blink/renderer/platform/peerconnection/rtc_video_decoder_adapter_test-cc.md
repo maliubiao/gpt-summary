@@ -166,14 +166,16 @@ By following this systematic approach, combining code analysis with domain knowl
 
 总而言之，`rtc_video_decoder_adapter_test.cc` 是一个关键的测试文件，用于确保 `RTCVideoDecoderAdapter` 能够正确地将 WebRTC 的视频解码需求适配到 Chromium 的媒体框架，处理各种正常和异常情况，并保证视频解码的稳定性和可靠性，最终影响到用户在网页上使用 WebRTC 进行视频通信的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_decoder_adapter_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1047,7 +1049,4 @@ TEST_F(RTCVideoDecoderAdapterTest, CanReadSharedFrameBuffer) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

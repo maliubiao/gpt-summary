@@ -165,7 +165,7 @@ executable('my-agent', 'agent.cc')
 
 `frida/subprojects/frida-core/releng/meson/mesonbuild/ast/visitor.py` 文件定义了 Meson 构建系统用于遍历和处理抽象语法树的访问者基类。虽然它本身不直接执行逆向操作或与底层系统交互，但它是 Frida 构建过程中的一个重要组成部分，理解它可以帮助我们更好地理解 Frida 的构建方式，并在开发与构建系统相关的工具时提供基础框架。用户通常在开发、调试与 Frida 构建系统或自定义 Meson 工具相关的任务时会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/ast/visitor.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -336,7 +338,4 @@ class AstVisitor:
     def visit_ParenthesizedNode(self, node: mparser.ParenthesizedNode) -> None:
         self.visit_default_func(node)
         node.inner.accept(self)
-
-"""
-
 ```

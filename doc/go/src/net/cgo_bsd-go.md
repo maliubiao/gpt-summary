@@ -146,7 +146,7 @@ IP Records: [172.217.160.142/ip4 2607:f8b0:4009:81a::200e/ip6] // IPv4 和 IPv6 
 
 这段 `go/src/net/cgo_bsd.go` 文件中的代码定义了一个常量，用于配置在 DragonflyBSD 和 FreeBSD 系统上使用 CGo 调用 `getaddrinfo` 函数进行主机名解析时的行为。它属于 Go `net` 包的底层实现细节，开发者一般无需直接操作，但理解其作用有助于深入理解 Go 的网络功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/cgo_bsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -154,8 +154,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -170,9 +172,4 @@ package net
 import "C"
 
 const cgoAddrInfoFlags = (C.AI_CANONNAME | C.AI_V4MAPPED | C.AI_ALL) & C.AI_MASK
-
-"""
-
-
-
 ```

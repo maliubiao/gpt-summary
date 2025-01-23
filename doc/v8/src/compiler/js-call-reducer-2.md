@@ -127,12 +127,14 @@ caller(1, 2);
 
 总而言之，这个代码片段是 V8 引擎中负责函数调用优化的重要组成部分，它通过分析和转换中间表示，将一些常见的 JavaScript 函数调用模式替换为更高效的底层操作，从而提升代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 y(broker(), key_index);
             Node* lhs = jsgraph()->HeapConstantNoHole(receiver_key.object());
             __ GotoIf(__ ReferenceEqual(TNode<Object>::UncheckedCast(lhs),
@@ -1708,9 +1710,4 @@ Reduction JSCallReducer::ReduceJSCall(Node* node,
                   Runtime::kThrowConstructorNonCallableError, 1));
     return Changed(node);
   }
-
-
-"""
-
-
 ```

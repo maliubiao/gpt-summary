@@ -297,7 +297,7 @@ session.then(() => {
 
 请注意，实际的符号名称可能会因编译器和构建配置而异，你可能需要使用其他工具（如 `readelf` 或 `nm`）来查找确切的符号名称。此外，结构体的内存布局（字段的偏移量）也可能因 Android 版本和架构而有所不同，你需要根据实际情况进行调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/system_properties/include/system_properties/prop_info.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -308,8 +308,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -399,7 +401,4 @@ struct prop_info {
 };
 
 static_assert(sizeof(prop_info) == 96, "sizeof struct prop_info must be 96 bytes");
-
-"""
-
 ```

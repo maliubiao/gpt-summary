@@ -76,7 +76,7 @@ This section of `tls_test.go` primarily focuses on testing various aspects of th
 
 这部分 `tls_test.go` 的主要功能是 **全面测试 Go 语言 `crypto/tls` 包中关于 TLS 握手过程、连接状态、证书处理、密码套件选择、客户端认证机制以及一些高级特性 (如 ML-KEM 和 ECH) 的实现是否正确**。它通过构造不同的场景和配置，验证 TLS 协议的各个细节是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/tls_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -85,8 +85,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 andshakeComplete %v (server) and %v (client), expected true", ss.HandshakeComplete, cs.HandshakeComplete)
 			}
 
@@ -1095,9 +1097,4 @@ func TestECH(t *testing.T) {
 	clientConfig, serverConfig := testConfig.Clone(), testConfig.Clone()
 	clientConfig.InsecureSkipVerify = false
 	clientConfig.Rand = ran
-"""
-
-
-
-
 ```

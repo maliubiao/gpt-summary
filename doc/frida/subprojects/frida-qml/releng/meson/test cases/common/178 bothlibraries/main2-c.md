@@ -172,7 +172,7 @@ Let's break down the thought process for analyzing the C code and answering the 
 
 总而言之，`main2.c` 是一个简单的测试程序，旨在验证跨库的符号访问。它非常适合作为 Frida 动态插桩学习和测试的案例，能够帮助理解动态链接、程序行为以及如何使用 Frida 进行逆向分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/178 bothlibraries/main2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "mylib.h"
 
 DO_IMPORT int func(void);
@@ -191,7 +193,4 @@ DO_IMPORT int retval;
 int main(void) {
     return func() + foo() == retval ? 0 : 1;
 }
-
-"""
-
 ```

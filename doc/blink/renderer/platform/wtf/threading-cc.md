@@ -176,14 +176,16 @@ Let's break down the thought process for analyzing the `threading.cc` file.
 
 `blink/renderer/platform/wtf/threading.cc` 文件提供了一组底层的线程管理工具，包括获取线程 ID 和线程本地存储。这些工具对于 Blink 渲染引擎的正确运行至关重要，因为它是一个高度多线程的应用程序。虽然用户编写的 JavaScript, HTML, CSS 代码不直接使用这些 API，但它们构建在 Blink 提供的基础设施之上，并受到其线程模型的约束。理解这些底层机制有助于理解浏览器引擎的工作原理，并避免潜在的并发问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/threading.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ size_t Threading::ThreadStackSize() {
 #endif
 
 }  // namespace WTF
-
-"""
-
 ```

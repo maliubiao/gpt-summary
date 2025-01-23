@@ -141,15 +141,17 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`canvas_style_test_utils.cc` 是 Blink 引擎中用于测试 Canvas 2D 样式相关功能的辅助工具，它简化了在 C++ 测试环境中操作和验证 `fillStyle` 和 `strokeStyle` 属性的过程。 开发者在调试 Canvas 样式问题时可能会间接地接触到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/canvas_style_test_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -202,7 +204,4 @@ String GetFillStyleAsString(BaseRenderingContext2D* ctx,
 }
 
 }  // namespace blink
-
-"""
-
 ```

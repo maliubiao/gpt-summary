@@ -242,7 +242,7 @@ except Exception as e:
 
 `xt_devgroup.h` 定义了 Linux Netfilter 中用于基于网络设备组匹配数据包的结构。虽然它本身不是 libc 函数，但 Android 作为基于 Linux 内核的系统，可以利用 Netfilter 和 `xt_devgroup` 来实现各种网络策略和隔离功能。用户空间的工具通过 libc 提供的系统调用与内核交互来配置这些规则。 理解 Android Framework 到内核的调用链，并使用 Frida 这样的工具进行动态调试，可以帮助我们深入了解这些底层的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_devgroup.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -253,8 +253,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -278,7 +280,4 @@ struct xt_devgroup_info {
   __u32 dst_mask;
 };
 #endif
-
-"""
-
 ```

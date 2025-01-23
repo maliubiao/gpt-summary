@@ -115,12 +115,14 @@ This C++ code directly implements the underlying mechanics of how JavaScript cod
 
 **In essence, this file provides the low-level "engine" that makes JavaScript code run on s390 systems. It translates high-level JavaScript constructs into the concrete machine instructions that the processor understands.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/s390/builtins-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1903,7 +1905,4 @@ void Builtins::Generate_InterpreterPushArgsThenConstructImpl(
   __ push(r0);
 
   if (mode == InterpreterPushArgsMode::kWithFi
-"""
-
-
 ```

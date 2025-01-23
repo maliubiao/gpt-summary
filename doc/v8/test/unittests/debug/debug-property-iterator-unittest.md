@@ -153,11 +153,13 @@ console.log(namedProperties); // 输出: [ 'named_property' ]
 
 总而言之，`debug::PropertyIterator` 是 V8 调试器用来模拟和控制 JavaScript 中属性遍历行为的底层机制，它使得调试器能够精确地检查对象的属性，包括继承关系和访问权限等细节。这些测试用例确保了 `PropertyIterator` 在各种场景下都能正确工作，从而保证了 V8 调试功能的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/debug/debug-property-iterator-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -358,7 +360,4 @@ TEST_F(SharedObjectDebugPropertyIteratorTest, SharedStruct) {
 }  // namespace
 }  // namespace debug
 }  // namespace v8
-
-"""
-
 ```

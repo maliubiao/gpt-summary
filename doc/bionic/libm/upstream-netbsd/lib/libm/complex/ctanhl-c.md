@@ -277,7 +277,7 @@ int main() {
 
 `ctanhl.c` 文件实现了计算长双精度复数双曲正切的功能，是 Android Bionic 数学库的重要组成部分，为 NDK 开发和 Framework 底层功能提供了支持。理解其实现原理和使用方法对于进行相关领域的开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-netbsd/lib/libm/complex/ctanhl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -287,8 +287,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* $NetBSD: ctanhl.c,v 1.1 2014/10/10 00:48:18 christos Exp $ */
 
 /*-
@@ -337,7 +339,4 @@ ctanhl(long double complex z)
 
 	return w;
 }
-
-"""
-
 ```

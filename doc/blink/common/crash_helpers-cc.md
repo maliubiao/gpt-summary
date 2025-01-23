@@ -84,14 +84,16 @@ This systematic approach, combining code analysis, domain knowledge (how renderi
 
 `blink/common/crash_helpers.cc` 提供了一些用于故意触发崩溃的工具函数，主要用于 Blink 引擎的开发、测试和调试。虽然用户不会直接调用这些函数，但他们的行为可能会间接地导致 Blink 内部出现需要崩溃处理的情况。这些崩溃辅助函数帮助开发者更好地理解和解决 Blink 引擎中可能出现的各种错误和异常情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/crash_helpers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -133,7 +135,4 @@ NOINLINE void BadCastCrashIntentionally() {
 }  // namespace internal
 
 }  // namespace blink
-
-"""
-
 ```

@@ -97,14 +97,16 @@ Service Workers 是在浏览器后台运行的脚本，可以拦截和处理网�
 
 `service_worker_router_rule_mojom_traits_unittest.cc` 是一个关键的测试文件，用于确保 Blink 引擎能够正确地处理 Service Worker 路由规则的跨进程通信。它的正确性直接影响着 Service Worker 功能的可靠性和稳定性，间接地影响着使用 Service Worker 的 Web 应用的行为。  它通过细致的 round trip 测试，覆盖了各种可能的路由规则配置，来保障核心功能的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/service_worker/service_worker_router_rule_mojom_traits_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ TEST(ServiceWorkerRouterRulesTest, SimpleRoundTrip) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

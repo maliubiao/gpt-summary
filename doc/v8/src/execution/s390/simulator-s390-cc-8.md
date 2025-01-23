@@ -116,7 +116,7 @@ console.log(result); // 在 JavaScript 中会输出 2147483648，但在某些底
 
 作为第 9 部分，这个代码片段主要集中在 **模拟 s390 架构的算术运算、逻辑运算、加载和存储指令**。  它涵盖了 64 位和 32 位整数的加法、减法、乘法、除法，以及位运算（AND、OR、XOR）。 此外，还包含了从内存加载数据到寄存器以及将寄存器数据存储到内存的指令模拟。  这部分代码是 s390 模拟器核心功能的关键组成部分，使得 V8 引擎能够在 s390 架构上执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/s390/simulator-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/s390/simulator-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -124,8 +124,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 CODE_RRF_A_INSTRUCTION(r1, r2, r3);
   // 64-bit Non-clobbering arithmetics / bitwise ops.
   int64_t r2_val = get_register(r2);
@@ -1347,7 +1349,4 @@ EVALUATE(SLLG) {
   uint64_t r3_val = get_register(r3);
   uint64_t alu_out = 0;
   alu_out = r3_v
-"""
-
-
 ```

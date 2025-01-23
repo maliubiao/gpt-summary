@@ -93,7 +93,7 @@ By following these steps – understanding the context, analyzing the content, c
 
 总而言之，尽管 `dummy.cpp` 的代码非常简单，但它在 Frida 的构建过程中扮演着关键的角色，确保了 C++ 代码能够正确链接，从而使得 Frida 提供的动态插桩和逆向分析功能得以实现。它本身不执行逆向操作，但它是构建一个能够进行逆向分析的工具的必要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/agent/dummy.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,10 +101,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Force C++ linking
-
-"""
-
 ```

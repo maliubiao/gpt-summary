@@ -244,7 +244,7 @@ Let's break down the thought process for analyzing this Go code snippet.
 
 总而言之，`go/src/cmd/compile/internal/ssa/rewriteMIPS64.go` 这个文件的主要功能是**实现 Go 语言编译器针对 MIPS64 架构的特定代码优化**。它通过模式匹配和重写规则，将 SSA 中间表示中的通用操作和控制流结构转化为更高效的 MIPS64 指令序列，从而提升在 MIPS64 架构上运行的 Go 程序的性能。 这段代码是 Go 编译器后端针对特定架构进行优化的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteMIPS64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -253,10 +253,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
-
-	// result: (MOVDstore ptr val mem)
+### 源代码
+```go
+// result: (MOVDstore ptr val mem)
 	for {
 		t := auxToType(v.Aux)
 		ptr := v_0
@@ -1039,10 +1040,4 @@ func rewriteBlockMIPS64(b *Block) bool {
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

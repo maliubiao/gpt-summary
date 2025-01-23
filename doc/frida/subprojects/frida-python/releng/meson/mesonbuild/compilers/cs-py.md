@@ -167,7 +167,7 @@ public class MyHelper
 
 总而言之，`frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/cs.py` 文件是 Frida 项目构建过程中用于处理 C# 代码编译的关键组件，它抽象了不同 C# 编译器的细节，并为 Meson 提供了生成正确编译命令的能力。虽然它不直接实现 Frida 的动态插桩功能，但为构建支持 Frida 与 .NET 应用交互的工具或组件提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/cs.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -313,7 +315,4 @@ class VisualStudioCsCompiler(CsCompiler):
 
     def rsp_file_syntax(self) -> 'RSPFileSyntax':
         return RSPFileSyntax.MSVC
-
-"""
-
 ```

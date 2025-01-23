@@ -410,15 +410,17 @@ function vulnerableFunction() {
 
 总而言之，`v8/src/base/platform/platform-darwin.cc` 是 V8 引擎在 Darwin 平台上运行的关键组成部分，它提供了与操作系统底层交互的能力，支持 V8 的内存管理、代码执行、安全性和其他核心功能。理解这个文件的作用有助于深入理解 V8 引擎的平台适配机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-darwin.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/platform/platform-darwin.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -659,7 +661,4 @@ V8_BASE_EXPORT void SetJitWriteProtected(int enable) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

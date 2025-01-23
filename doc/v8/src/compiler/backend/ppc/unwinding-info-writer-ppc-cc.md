@@ -151,15 +151,17 @@ try {
 
 总结来说，`v8/src/compiler/backend/ppc/unwinding-info-writer-ppc.cc` 是 V8 引擎在 PPC 架构上生成关键的栈回溯信息的 C++ 代码，它确保了当程序需要回溯调用栈时能够正确地恢复程序状态，这对于调试和异常处理至关重要。 它与 JavaScript 的联系在于，它为 JavaScript 代码的执行提供了必要的底层支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ppc/unwinding-info-writer-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ppc/unwinding-info-writer-ppc.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ void UnwindingInfoWriter::MarkPopLinkRegisterFromTopOfStack(int pc_offset) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

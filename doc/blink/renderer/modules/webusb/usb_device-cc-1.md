@@ -146,7 +146,7 @@ Here's a breakdown of the thought process to analyze this code snippet:
 
 通过查看相关日志、断点调试 C++ 代码以及 JavaScript 代码的 Promise 状态，可以追踪用户操作是如何一步步到达 `usb_device.cc` 文件的。特别关注网络面板中 WebUSB 相关的请求和响应，以及控制台输出的错误信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webusb/usb_device.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -154,9 +154,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- endpoint->endpoint_number;
+### 源代码
+```cpp
+endpoint->endpoint_number;
     if (endpoint_number == 0 || endpoint_number >= kEndpointsBitsNumber)
       continue;  // Ignore endpoints with invalid indices.
     auto& bit_vector = endpoint->direction == UsbTransferDirection::INBOUND
@@ -471,8 +473,4 @@ void USBDevice::MarkRequestComplete(ScriptPromiseResolverBase* resolver) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

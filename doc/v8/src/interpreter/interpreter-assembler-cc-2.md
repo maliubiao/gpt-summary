@@ -140,7 +140,7 @@ let result = obj1 + obj2; // 内部会调用 obj1 和 obj2 的 valueOf 或 toStr
 
 总而言之，这段 `v8/src/interpreter/interpreter-assembler.cc` 的代码片段是 V8 解释器中处理 JavaScript 二元运算符的核心逻辑。它通过高效的类型检查和分发，针对不同的操作数类型执行相应的运算，并收集类型反馈信息以优化后续执行。这段代码直接体现了 JavaScript 动态类型和运算符重载的特性在 V8 引擎中的实现方式。虽然这个特定的文件是 C++，但它与 Torque 生成的代码紧密合作，共同构成了 V8 解释器的重要组成部分。理解这段代码有助于深入了解 JavaScript 运行时的行为和 V8 引擎的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/interpreter-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -148,8 +148,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ype_feedback = SmiConstant(BinaryOperationFeedback::kBigInt);
         Goto(&if_done);
       }
@@ -182,8 +184,4 @@ ype_feedback = SmiConstant(BinaryOperationFeedback::kBigInt);
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

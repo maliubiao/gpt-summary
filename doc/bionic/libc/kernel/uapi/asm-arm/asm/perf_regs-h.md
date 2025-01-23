@@ -232,7 +232,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/asm-arm/asm/perf_regs.handroid` 这个头文件虽然很小，但对于 Android 的性能监控功能至关重要。它定义了在 ARM 架构下使用 perf event 时可以访问的寄存器常量，这些常量被用于配置性能事件，以便在事件发生时记录相关的寄存器状态，从而帮助开发者分析和优化应用程序的性能。虽然它不直接参与 dynamic linker 的功能，但可以使用性能监控来分析 dynamic linker 的行为。 通过 Frida hook，我们可以动态地观察应用程序如何使用这些常量来配置性能事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm/asm/perf_regs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -243,8 +243,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -273,7 +275,4 @@ enum perf_event_arm_regs {
   PERF_REG_ARM_MAX,
 };
 #endif
-
-"""
-
 ```

@@ -153,7 +153,7 @@ x := 1 // This is a comment about x
 
 总而言之，`go/src/go/types/commentMap_test.go` 中的 `commentMap` 函数是一个用于从 Go 源代码中提取特定模式注释的实用工具，其关键特性在于它如何定义和记录注释的位置。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/types/commentMap_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -161,8 +161,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -266,9 +268,4 @@ x /* ERROR "3:1" */                // ignore automatically inserted semicolon he
 		t.Errorf("commentMap got %d errors; want %d", found, want)
 	}
 }
-
-"""
-
-
-
 ```

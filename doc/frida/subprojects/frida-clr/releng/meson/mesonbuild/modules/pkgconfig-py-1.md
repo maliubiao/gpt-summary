@@ -231,7 +231,7 @@ Requires: glib-2.0 >= 2.56
 
 总的来说，这段代码是 Frida 构建系统的重要组成部分，它确保了 Frida 可以被其他软件或库方便地找到和使用，无论是已安装还是未安装的状态。它通过生成标准的 `.pc` 文件，遵循了 Linux 生态系统中常见的库管理方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/modules/pkgconfig.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -240,8 +240,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 tadir(), 'pkgconfig')
 
         subdirs = kwargs['subdirs'] or default_subdirs
@@ -339,8 +341,4 @@ tadir(), 'pkgconfig')
 
 def initialize(interp: Interpreter) -> PkgConfigModule:
     return PkgConfigModule()
-
-"""
-
-
 ```

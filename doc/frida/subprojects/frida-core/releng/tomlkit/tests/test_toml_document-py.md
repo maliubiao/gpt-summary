@@ -220,7 +220,7 @@ Initially, I might focus too much on the specific details of each test case. The
 
 总而言之，`test_toml_document.py` 是 `tomlkit` 库的核心测试文件，它详细地测试了库处理 TOML 文档的各种能力。理解这个文件的内容，可以帮助我们了解 `tomlkit` 的功能特性，以及在逆向工程和动态 instrumentation 的场景下如何利用它来处理 TOML 格式的配置文件。对于调试使用 `tomlkit` 的代码，或者理解 `frida-core` 中如何使用 `tomlkit`，这个文件都是一个重要的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/tomlkit/tests/test_toml_document.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -228,8 +228,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import copy
 import json
 import pickle
@@ -1316,7 +1318,4 @@ table = {a = 1, b = 2}
 age = 42
 """
     assert tomlkit.dumps(doc) == expected
-
-"""
-
 ```

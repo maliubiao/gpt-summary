@@ -117,7 +117,7 @@ sys.stdin.read()
 
 总而言之，`bionic/tests/math_data/scalb_intel_data.handroid` 文件是 Android 平台为了确保其数学库中 `scalbn` 函数（特别是针对 Intel 架构的实现）的正确性和性能而准备的一组详尽的测试数据。它不包含代码逻辑，而是作为测试的输入和预期输出。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/scalb_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -129,8 +129,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 fffffffffffep-1023,
     0x1.cp6
   },
@@ -795,8 +797,4 @@ fffffffffffep-1023,
     -0x1.388p15
   }
 };
-
-"""
-
-
 ```

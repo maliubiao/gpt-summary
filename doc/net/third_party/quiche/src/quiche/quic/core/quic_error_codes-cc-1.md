@@ -105,7 +105,7 @@ Here's a breakdown of the thought process to address the user's request:
 
 总而言之，`quic_error_codes.cc` 是 QUIC 协议实现中至关重要的一个文件，它确保了不同层级和不同规范的错误码能够被正确地映射和理解，从而保证了 QUIC 连接的健壮性和互操作性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_error_codes.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 int64_t>(
                          QuicHttpQpackErrorCode::ENCODER_STREAM_ERROR)};
     case QUIC_QPACK_ENCODER_STREAM_INVALID_STATIC_ENTRY:
@@ -517,8 +519,4 @@ QuicResetStreamError QuicResetStreamError::FromIetf(
 #undef RETURN_STRING_LITERAL  // undef for jumbo builds
 
 }  // namespace quic
-
-"""
-
-
 ```

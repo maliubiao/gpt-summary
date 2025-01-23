@@ -114,11 +114,13 @@ loadAndRunWasm();
 
 总而言之，`v8/src/compiler/wasm-gc-lowering.cc` 是 V8 引擎中至关重要的一个组成部分，它使得 JavaScript 能够无缝地与使用垃圾回收特性的 WebAssembly 模块进行交互，保证了类型安全和程序的正确执行。 它位于编译器优化的核心环节，负责将高级的 WebAssembly GC 概念转化为 V8 引擎能够理解和执行的底层操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-gc-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1175,7 +1177,4 @@ void WasmGCLowering::UpdateSourcePosition(Node* new_node, Node* old_node) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

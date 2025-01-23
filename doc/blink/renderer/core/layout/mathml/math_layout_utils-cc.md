@@ -110,14 +110,16 @@ By following these steps, including careful reading, categorization, analysis of
 
 `math_layout_utils.cc` 文件是 Blink 引擎中处理 MathML 布局的核心工具集。它提供了用于创建布局约束、计算尺寸、验证结构以及获取和判断 MathML 元素特性的各种函数。 这些功能直接关系到 MathML 在网页上的正确渲染，并会受到 HTML 结构和 CSS 样式的双重影响。 开发者在使用 MathML 时如果结构不符合规范，或者浏览器引擎在处理布局时出现错误，都可能导致渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/mathml/math_layout_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -549,7 +551,4 @@ bool IsStretchyOperator(const BlockNode& node, bool stretch_axis_is_vertical) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -151,15 +151,17 @@ console.log(obj.name);
 
 总而言之，`v8/src/objects/compressed-slots-inl.h` 是 V8 引擎为了优化内存使用和性能而实现指针压缩的关键组成部分。它定义了用于存储和操作压缩指针的类，并提供了必要的原子操作以支持并发环境。虽然 JavaScript 开发者不需要直接接触这些代码，但这项技术是 V8 能够高效运行 JavaScript 代码的基础之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/compressed-slots-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/compressed-slots-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -446,7 +448,4 @@ void OffHeapCompressedObjectSlot<CompressionScheme>::Release_CompareAndSwap(
 #endif  // V8_COMPRESS_POINTERS
 
 #endif  // V8_OBJECTS_COMPRESSED_SLOTS_INL_H_
-
-"""
-
 ```

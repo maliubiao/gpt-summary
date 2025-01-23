@@ -106,15 +106,17 @@ This iterative process of scanning, hypothesizing, analyzing, connecting, and re
 
 总而言之，`blink/renderer/core/layout/text_autosizer.cc` 的主要职责是 **智能地识别网页中需要进行文本自动调整的区域，并根据一定的策略和页面状态，动态地调整这些区域的文本大小，以提升在小屏幕设备上的阅读体验。** 它通过分析布局结构、CSS 样式和页面信息来实现这一目标，并利用指纹机制进行优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/text_autosizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -991,7 +993,4 @@ TextAutosizer::Fingerprint TextAutosizer::ComputeFingerprint(
 
 TextAutosizer::Cluster* TextAutosizer::MaybeCreateCluster(LayoutBlock* block) {
   BlockFlags flags = ClassifyBloc
-"""
-
-
 ```

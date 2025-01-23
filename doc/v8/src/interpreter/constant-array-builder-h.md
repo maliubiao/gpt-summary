@@ -190,15 +190,17 @@ While developers don't directly interact with `ConstantArrayBuilder`, their codi
 
 In summary, `v8/src/interpreter/constant-array-builder.h` is a crucial component for the V8 interpreter, responsible for creating and managing the pool of constant values used during bytecode execution. It optimizes for memory usage and access speed, and its functionality is directly tied to how JavaScript literals and certain language constructs are handled internally by the engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/constant-array-builder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/constant-array-builder.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -455,7 +457,4 @@ class V8_EXPORT_PRIVATE ConstantArrayBuilder final {
 }  // namespace v8
 
 #endif  // V8_INTERPRETER_CONSTANT_ARRAY_BUILDER_H_
-
-"""
-
 ```

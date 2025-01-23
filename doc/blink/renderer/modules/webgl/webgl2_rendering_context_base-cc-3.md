@@ -195,7 +195,7 @@ Strategizing complete. I will now generate the response based on these observati
 
 这段代码片段主要负责 **WebGL 2 上下文中与纹理数据更新 (特别是压缩纹理)、Shader Uniform 变量设置、整型顶点属性处理、实例渲染控制、多渲染目标配置、精细的缓冲区清除以及查询对象管理相关的底层实现。**  它提供了将 JavaScript 的 WebGL 2 API 调用转化为实际 GPU 操作的关键功能，并包含了大量的参数验证和错误处理逻辑，以确保 API 的正确使用和程序的稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl2_rendering_context_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dTexSubImage3D",
                       "a buffer is bound to PIXEL_UNPACK_BUFFER");
     return;
@@ -1140,7 +1142,4 @@ void WebGL2RenderingContextBase::endQuery(GLenum target) {
   switch (target) {
     case GL_ANY_SAMPLES_PASSED:
     case GL_ANY_SAMPLES_PASSED_CONSERVA
-"""
-
-
 ```

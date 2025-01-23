@@ -90,7 +90,7 @@ Let's break down the thought process for analyzing the C code snippet and fulfil
 
 `tester_with_status.c` 是一个故意设计为失败的测试用例，用于验证 Frida 动态 instrumentation 工具在处理失败测试场景时的能力。它通过输出 TAP 格式的失败信息和返回非零退出码来模拟测试失败。这个简单的程序可以作为 Frida 进行各种逆向分析和监控的**目标**，例如观察进程输出、监控退出状态等。 它的存在也体现了软件开发中测试的重要性，尤其是对于像 Frida 这样复杂的工具，需要确保其在各种场景下的行为都是正确的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing test/5 tap tests/tester_with_status.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -108,7 +110,4 @@ int main(int argc, char **argv) {
     puts("not ok 1 - some test");
     return 2;
 }
-
-"""
-
 ```

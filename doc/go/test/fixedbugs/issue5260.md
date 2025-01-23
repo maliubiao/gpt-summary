@@ -128,15 +128,17 @@ const Greeting = "你好，世界"
 
 `issue5260.go` 代码片段本身并没有实现特定的Go语言功能，而是作为一个测试用例存在，用于验证Go语言在处理带有UTF-8 BOM的导出字符串常量时的正确性。它重点关注了包导入机制和UTF-8编码处理，并反映了早期Go版本中存在的一个已被修复的bug。开发者需要了解BOM的作用，并注意编辑器可能自动添加BOM，以避免潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue5260.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -147,9 +149,4 @@ Prompt:
 // cannot be read back during package import.
 
 package ignored
-
-"""
-
-
-
 ```

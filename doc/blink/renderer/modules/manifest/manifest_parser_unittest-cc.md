@@ -57,7 +57,7 @@ Manifest 文件是一个 JSON 格式的文件，用于描述 Web 应用的元数
 
 这部分 `manifest_parser_unittest.cc` 文件的主要功能是**通过一系列单元测试来验证 `ManifestParser` 类解析 Web 应用 Manifest 文件的正确性、健壮性和错误处理能力**。它涵盖了各种合法的和非法的 Manifest 文件内容，包括不同数据类型、格式错误、不支持的属性等，确保 Manifest 文件能被浏览器正确解析，从而为用户提供预期的 Web 应用体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/manifest/manifest_parser_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -65,8 +65,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -989,7 +991,4 @@ TEST_F(ManifestParserTest, DisplayParseRules) {
   // Parsing fails for 'borderless' when Borderless flag is disabled.
   {
     base::test::ScopedFeatureList fe
-"""
-
-
 ```

@@ -148,7 +148,7 @@ By following these steps, we can systematically analyze the code and provide a c
 
 总而言之，`verify_static.py` 是 Frida 项目中一个用于测试特定构建场景的实用工具，它可以帮助开发者和用户验证 zlib 库的链接方式，这对于理解程序的依赖关系、排查问题以及进行逆向分析都很有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/linuxlike/14 static dynamic linkage/verify_static.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 """Test script that checks if zlib was statically linked to executable"""
 import subprocess
@@ -187,7 +189,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

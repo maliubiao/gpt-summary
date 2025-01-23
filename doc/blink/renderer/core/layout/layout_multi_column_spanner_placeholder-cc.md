@@ -102,14 +102,16 @@ By following these steps, iteratively refining the understanding and explanation
 5. **在布局树中插入和移除:**
    - `InsertedIntoTree` 方法在占位符被添加到布局树时调用。它会强制重新布局原始的 spanner 元素，因为现在它作为一个 spanner 进行布局。
    - `WillBeRemovedFromTree` 方法在占位符即将从布局树中移除时调用。它会清除原始 spanner 元素上的占位符引用，并强制重新布局 spanner 元素，
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_multi_column_spanner_placeholder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ PhysicalSize LayoutMultiColumnSpannerPlaceholder::Size() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -150,7 +150,7 @@ console.log(str1 === str2.normalize()); // 输出: true
 
 在第 5 部分的代码中，主要展示了用于 **Unicode 反规范化 (`Ecma262UnCanonicalize`) 和规范化 (`CanonicalizationRange`) 的查找表数据**。 这些表定义了各种字符和字符序列之间的映射关系，用于将字符串转换为规范或非规范的形式。  `Convert` 函数利用这些表来执行实际的转换操作。 此外，`UnicodeData::GetByteCount()` 提供了关于这些表内存使用情况的信息。 这部分代码是 V8 引擎处理 Unicode 字符串底层逻辑的关键组成部分，确保了 JavaScript 能够正确地处理各种语言和字符集的文本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/unicode.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/strings/unicode.cc以.tq结尾，那它是个v8 torque源代码，
@@ -158,9 +158,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
-   266,        53,   267,        53,   268,        57,   269,        57,
+### 源代码
+```cpp
+266,        53,   267,        53,   268,        57,   269,        57,
     270,        61,   271,        61,   272,        65,   273,        65,
     274,        69,   275,        69,   276,        73,   277,        73,
     278,        77,   279,        77,   280,        81,   281,        81,
@@ -639,8 +641,4 @@ int UnicodeData::GetByteCount() {
          kLetterTable7Size * sizeof(int32_t) +
          kID_StartTable0Size * sizeof(int32_t) +
          kID_StartTable1Size * sizeof(int32_t) +
- 
-"""
-
-
 ```

@@ -222,7 +222,7 @@ func main() {
 
 这个测试文件通过 `cryptotest.TestBlockMode` 来验证 `cipher.NewCBCEncrypter` 和 `cipher.NewCBCDecrypter` 的实现是否符合 CBC 模式的规范，确保开发者在使用这些函数时能够获得正确的加密和解密结果。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/cipher/cbc_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -230,8 +230,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -290,9 +292,4 @@ func newRandReader(t *testing.T) io.Reader {
 	t.Logf("Deterministic RNG seed: 0x%x", seed)
 	return rand.New(rand.NewSource(seed))
 }
-
-"""
-
-
-
 ```

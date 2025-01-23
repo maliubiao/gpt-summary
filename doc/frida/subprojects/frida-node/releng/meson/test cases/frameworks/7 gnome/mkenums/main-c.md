@@ -209,7 +209,7 @@ Get MESON_THE_XVALUE by name failed.
 
 总而言之，这段 `main.c` 文件是一个测试工具，用于验证由 Meson 构建系统生成的 GNOME 框架的枚举和标志定义是否正确，这对于确保 Frida 能够正确地与这些框架进行交互至关重要。它涉及到 GLib 库的使用，以及对枚举和标志在二进制层面的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/7 gnome/mkenums/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -217,8 +217,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 #include<glib-object.h>
@@ -249,7 +251,4 @@ int main(int argc, char **argv) {
     fprintf(stderr, "All ok.\n");
     return 0;
 }
-
-"""
-
 ```

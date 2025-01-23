@@ -128,7 +128,7 @@ const str2 = "foobar";
 
 这部分 `test-shared-strings.cc` 代码主要用于 **测试 V8 引擎在处理共享字符串的并发外部化、内部化以及与垃圾回收机制交互时的正确性和线程安全性**。它涵盖了多种场景，包括资源共享、已死亡字符串的处理、与客户端 Isolate 的交互以及针对特定 Bug 的回归测试，旨在确保 V8 的共享字符串功能能够稳定可靠地工作，并防止潜在的并发问题和内存泄漏。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-shared-strings.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-shared-strings.cc以.tq结尾，那它是个v8 torque源代码，
@@ -136,8 +136,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ve = 1;
       }
     } else {
@@ -1053,7 +1055,4 @@ UNINITIALIZED_TEST(ProtectExternalStringTableAddString) {
 
   MultiClientIsolateTest test;
   v8::Isolate
-"""
-
-
 ```

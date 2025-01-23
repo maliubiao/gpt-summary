@@ -116,15 +116,17 @@ As a developer debugging issues related to text editing, you might end up examin
 
 By understanding the purpose and implementation of `BitStack`, developers can gain insights into the low-level mechanisms that power text editing and potentially debug issues related to these features within the Chromium Blink engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/iterators/bit_stack.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012 Apple Inc. All
  * rights reserved.
@@ -196,7 +198,4 @@ unsigned BitStack::size() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

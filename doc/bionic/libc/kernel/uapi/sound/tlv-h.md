@@ -277,7 +277,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，并在 Android 设备上进行音频操作（例如调整音量），你可以在 Frida 的输出中看到 `ioctl` 调用及其传递的数据，从而观察到 `tlv.handroid` 中定义的结构是如何被使用的。你需要分析打印出的十六进制数据，对照 `tlv.handroid` 中的定义，来理解数据的含义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/sound/tlv.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -288,8 +288,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -333,7 +335,4 @@ Prompt:
 #define SNDRV_CTL_TLVD_DECLARE_DB_RANGE(name,...) unsigned int name[] = { SNDRV_CTL_TLVD_DB_RANGE_ITEM(__VA_ARGS__) }
 #define SNDRV_CTL_TLVD_DB_GAIN_MUTE - 9999999
 #endif
-
-"""
-
 ```

@@ -302,7 +302,7 @@ if (Process.platform === 'linux') {
 
 总而言之，`bionic/libc/kernel/uapi/linux/efs_fs_sb.handroid bionic` 这个头文件是连接用户空间和 Linux 内核中 `efs` 文件系统实现的桥梁，它定义了用于理解和操作 `efs` 文件系统的数据结构和常量。虽然现代 Android 系统中 `efs` 的使用可能减少，但理解其原理对于分析旧设备或特定场景仍然很有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/efs_fs_sb.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -313,8 +313,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -364,7 +366,4 @@ struct efs_sb_info {
   __u16 total_groups;
 };
 #endif
-
-"""
-
 ```

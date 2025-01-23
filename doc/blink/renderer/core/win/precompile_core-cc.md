@@ -101,15 +101,17 @@ By following this thought process, breaking down the problem into smaller parts,
 
 `blink/renderer/core/win/precompile_core.cc` 虽然自身代码很简单，但它在 Blink 引擎的 Windows 构建过程中扮演着重要的角色，通过生成预编译头文件来加速编译，间接地提高了开发效率。用户不会直接与这个文件交互，但它的正确运行对整个浏览器的开发至关重要。 开发者通常会在遇到与编译速度或预编译头文件相关的构建问题时才会关注这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/win/precompile_core.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -117,7 +119,4 @@ Prompt:
 // Precompiled header generator for Windows builds. No include is needed
 // in this file as the PCH include is forced via the "Forced Include File"
 // flag.
-
-"""
-
 ```

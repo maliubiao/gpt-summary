@@ -153,15 +153,17 @@ github.com/your/project/util.go:3.5,4.8 1
 
 这段代码是 `go tool covdata` 工具的基础框架，它负责接收用户的指令并分发给相应的子命令处理逻辑。要理解每个子命令的具体功能，还需要查看 `makeMergeOp`, `makeDumpOp`, `makeSubtractIntersectOp` 等函数的实现以及它们调用的 `cov.CovDataVisitor` 的具体行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/covdata/covdata.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -399,9 +401,4 @@ func main() {
 	dbgtrace(1, "leaving main")
 	Exit(st)
 }
-
-"""
-
-
-
 ```

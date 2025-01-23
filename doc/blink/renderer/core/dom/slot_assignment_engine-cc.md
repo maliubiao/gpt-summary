@@ -172,15 +172,17 @@ Imagine a user is developing a web page with a custom element using Shadow DOM a
 
 In essence, this file is a crucial part of the Shadow DOM implementation in Blink, ensuring that the separation between a component's internal structure (shadow DOM) and its external content (light DOM) is managed correctly and efficiently. It plays a vital role in web component encapsulation and composition.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/slot_assignment_engine.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -243,7 +245,4 @@ void SlotAssignmentEngine::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

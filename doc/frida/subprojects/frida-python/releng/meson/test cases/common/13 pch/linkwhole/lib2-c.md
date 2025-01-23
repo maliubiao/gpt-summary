@@ -173,7 +173,7 @@ Command line was: myprogram.exe --option value "another argument"
 
 总而言之，`lib2.c` 虽然代码量很少，但它揭示了程序如何获取启动参数，这在逆向工程、底层系统理解和调试中都是一个重要的概念。它也反映了跨平台开发的挑战以及 Frida 作为动态插桩工具的应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/13 pch/linkwhole/lib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,15 +181,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 void func2() {
     const char *cl = GetCommandLineA();
     printf("Command line was: %s\n", cl);
 }
-
-"""
-
 ```

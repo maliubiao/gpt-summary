@@ -204,7 +204,7 @@ python copyfile.py input.txt output.txt
 
 `copyfile.py` 是一个简单的文件复制工具，在 Frida 的测试框架中用于辅助进行测试环境的搭建，例如复制测试所需的文件。虽然脚本本身很简单，但它操作的对象和运行环境涉及到操作系统、文件系统、二进制数据等底层概念。理解这个脚本的功能可以帮助开发者和用户更好地理解 Frida 测试的流程和可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/130 include order/ctsub/copyfile.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -212,15 +212,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 import shutil
 
 shutil.copyfile(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

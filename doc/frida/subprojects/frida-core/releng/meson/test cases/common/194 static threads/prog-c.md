@@ -148,7 +148,7 @@ This breakdown demonstrates a layered approach, starting with the simple code, t
 
 总而言之，`prog.c` 作为一个简单的测试用例，其核心功能是调用外部函数 `g()`。它的价值在于作为动态分析的目标，帮助测试 Frida 的功能，并为逆向工程师提供一个可以进行 Hook 和观察的简单程序。即使代码很简单，它也涉及到程序运行的基本概念，如函数调用、链接、进程空间等，并可能与操作系统底层的功能相关联。  在调试过程中，理解这个文件的作用以及如何通过 Frida 进行交互是关键的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/194 static threads/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,15 +156,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern void *g(void);
 
 int main(void) {
   g();
   return 0;
 }
-
-"""
-
 ```

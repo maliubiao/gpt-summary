@@ -206,7 +206,7 @@ func (x *ecbDecrypter) CryptBlocks(dst, src []byte) {
 
 总而言之，`go/src/crypto/des/const.go` 文件是 Go 语言中 DES 和 TDEA 加密算法实现的关键组成部分，它定义了算法所需的各种固定参数和查找表。用户应该通过 `crypto/des` 包提供的 API 来使用这些算法，并注意 DES 的安全局限性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/des/const.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -214,8 +214,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -358,9 +360,4 @@ var sBoxes = [8][4][16]uint8{
 
 // Size of left rotation per round in each half of the key schedule
 var ksRotations = [16]uint8{1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1}
-
-"""
-
-
-
 ```

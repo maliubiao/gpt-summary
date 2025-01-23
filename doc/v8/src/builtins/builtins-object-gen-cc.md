@@ -162,7 +162,7 @@ console.log(Object.getOwnPropertyNames(nonEnumObj)); // 输出: [ 'nonEnum' ]
 
 `v8/src/builtins/builtins-object-gen.cc` 文件的第 1 部分主要实现了 `Object.prototype.hasOwnProperty`、`Object.assign`、`Object.keys`、`Object.hasOwn` 和 `Object.getOwnPropertyNames` 这些核心的 JavaScript `Object` 内置方法。它还包含用于实现 `Object.entries` 和 `Object.values` 的辅助类和方法，特别是针对这些方法的性能优化（快速路径）。该文件展示了 V8 引擎如何用 C++ 高效地实现 JavaScript 的基本对象操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-object-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-object-gen.cc以.tq结尾，那它是个v8 torque源代码，
@@ -170,8 +170,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -970,7 +972,4 @@ TF_BUILTIN(ObjectGetOwnPropertyNames, ObjectBuiltinsAssembler) {
     TNode<FixedArrayBase> elements;
     TNode<NativeContext> native_context = LoadNativeContext(context);
     TNode<
-"""
-
-
 ```

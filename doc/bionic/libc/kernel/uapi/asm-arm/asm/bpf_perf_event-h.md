@@ -222,7 +222,7 @@ if (Process.arch === 'arm64') {
 
 `bpf_perf_event.handroid` 是一个简单的架构特定头文件，用于引入通用的 BPF 和 perf_event 定义。虽然它本身不执行任何逻辑，但它是 Android 系统利用 BPF 和 perf_event 功能的基础，这些功能在性能监控、网络安全、系统调用审计等方面发挥着重要作用。用户空间程序通过系统调用与内核的这些子系统交互，而动态链接器负责加载和链接相关的库。 通过 Frida 等工具，我们可以 hook 相关的系统调用来调试和理解这些底层的交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm/asm/bpf_perf_event.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -233,8 +233,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -242,7 +244,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/bpf_perf_event.h>
-
-"""
-
 ```

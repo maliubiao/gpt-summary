@@ -182,14 +182,16 @@ console.log(Object.getOwnPropertyDescriptor(myObj, 'answer'));
 
 这个 Torque 文件是 V8 引擎中 `Object` built-in 功能的核心实现部分。 它定义了对象可扩展性、原型链操作、对象创建以及属性描述符处理等关键行为。通过 Torque 这种高性能的 DSL，V8 能够高效地执行这些底层的 JavaScript 操作。 理解这个文件的内容有助于深入了解 JavaScript 对象的内部工作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/object.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -537,7 +539,4 @@ transitioning macro FromPropertyDescriptor(
 }
 
 }  // namespace object
-
-"""
-
 ```

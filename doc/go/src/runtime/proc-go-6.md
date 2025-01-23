@@ -215,7 +215,7 @@ Goroutine 4 is running on P 0
 
 总而言之，这段代码是 Go 运行时调度器的核心组件，负责 Goroutine 的调度和执行，是 Go 并发模型高效运行的关键。它通过精巧的队列管理、原子操作和工作窃取等机制，实现了高效的并发执行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/proc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -224,10 +224,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
-
-	return pp, now
+### 源代码
+```go
+return pp, now
 }
 
 // runqempty reports whether pp has no Gs on its local run queue.
@@ -894,10 +895,4 @@ func doInit1(t *initTask) {
 		t.state = 2 // initialization done
 	}
 }
-
-"""
-
-
-
-
 ```

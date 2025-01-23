@@ -165,15 +165,17 @@ If the `ByteData`'s internal `data_` (after applying `ReadingScope`) points to t
 
 In summary, `v8/src/parsing/preparse-data-impl.h` is a vital internal component of V8's parsing mechanism, responsible for managing and consuming pre-calculated information about JavaScript code to optimize the parsing and compilation process. It uses a combination of C++ classes and data structures to efficiently represent and access this information.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/preparse-data-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/preparse-data-impl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -432,7 +434,4 @@ class ZoneConsumedPreparseData final
 }  // namespace v8
 
 #endif  // V8_PARSING_PREPARSE_DATA_IMPL_H_
-
-"""
-
 ```

@@ -133,7 +133,7 @@ By following these steps, we can construct a comprehensive and accurate summary 
 
 总而言之，这部分测试代码专注于验证 Blink 引擎在处理视频轨道宽高比和缩放模式约束时的正确性和合理性，确保 `getUserMedia` API 能够按照预期选择合适的视频设备和配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_video_device_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pect ratio equals the minimum aspect ratio.
   EXPECT_EQ(kAspectRatio, result.track_adapter_settings().min_aspect_ratio());
   EXPECT_EQ(max_aspect_ratio,
@@ -827,7 +829,4 @@ TEST_F(MediaStreamConstraintsUtilVideoDeviceTest,
   EXPECT_EQ(320.0 / 240.0, result.track_adapter_settings().min_aspect_ratio());
   EXPECT_EQ(320.0 / 240.0, result.track_adapter_settings().max_aspect_ratio());
   Chec
-"""
-
-
 ```

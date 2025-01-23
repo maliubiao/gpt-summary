@@ -292,7 +292,7 @@ go test -v io/fs/readdir_test.go
 
 总而言之，`go/src/io/fs/readdir_test.go` 这个文件通过一系列的测试用例，确保了 `io/fs` 包中的 `ReadDir` 函数能够在不同的场景下正确地读取目录内容，并且 `FileInfoToDirEntry` 函数能够正确地将文件信息转换为目录项信息。这对于保证 `io/fs` 包的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/io/fs/readdir_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -300,8 +300,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -413,9 +415,4 @@ func TestReadDirPath(t *testing.T) {
 		t.Fatalf("s1: %s != s2: %s", s1, s2)
 	}
 }
-
-"""
-
-
-
 ```

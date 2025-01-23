@@ -89,16 +89,18 @@ By following these steps, I can systematically analyze the C++ code and generate
 
 总而言之，这部分代码增强了 `StringImpl` 类的字符串处理能力，使其能够更灵活、更高效地支持 Blink 引擎中各种文本相关的操作，为 JavaScript 引擎、HTML 解析器和 CSS 引擎等上层模块提供了坚实的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/string_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-         match_string.Characters8(), index,
+### 源代码
+```cpp
+match_string.Characters8(), index,
                                       search_length, match_length);
     return FindIgnoringCaseInternal(Characters8() + index,
                                     match_string.Characters16(), index,
@@ -926,8 +928,4 @@ int CodeUnitCompareIgnoringASCIICase(const StringImpl* string1,
 }
 
 }  // namespace WTF
-
-"""
-
-
 ```

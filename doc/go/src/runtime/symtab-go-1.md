@@ -58,7 +58,7 @@ Response:
 
 这段代码的核心功能是提供一种机制，在运行时根据程序执行到的具体位置 (由程序计数器 PC 表示)，查找与该位置相关的各种元数据信息。这些信息对于调试、性能分析、垃圾回收等 Go 语言的运行时功能至关重要。例如，它可以帮助我们确定当前执行的代码在哪个文件的哪一行，或者当前栈帧的布局信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/symtab.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -67,9 +67,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- ent.targetpc == targetpc {
+### 源代码
+```go
+ent.targetpc == targetpc {
 					val, pc := ent.val, ent.valPC
 					if debugCheckCache {
 						checkVal, checkPC = ent.val, ent.valPC
@@ -362,10 +364,4 @@ func stackmapdata(stkmap *stackmap, n int32) bitvector {
 	}
 	return bitvector{stkmap.nbit, addb(&stkmap.bytedata[0], uintptr(n*((stkmap.nbit+7)>>3)))}
 }
-
-"""
-
-
-
-
 ```

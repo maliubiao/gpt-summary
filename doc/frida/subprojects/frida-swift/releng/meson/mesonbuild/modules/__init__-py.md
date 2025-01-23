@@ -146,7 +146,7 @@ A user's actions leading to execution within this file typically involve configu
 
 **Debugging Clue:** If a build error occurs related to a Meson module, the error message or traceback might point to lines within this `__init__.py` file or within the specific module files that are being used. This file defines the fundamental structure, so errors in module loading or basic function calls could lead back here. For instance, if a module method tries to access an attribute of `ModuleState` that doesn't exist, the error might originate from the definition of `ModuleState` in this file.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/modules/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -426,7 +428,4 @@ class TypelibTarget(build.CustomTarget):
 
 class VapiTarget(build.CustomTarget):
     pass
-
-"""
-
 ```

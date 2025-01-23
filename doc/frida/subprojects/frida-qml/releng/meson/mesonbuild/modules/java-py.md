@@ -238,7 +238,7 @@ By following these steps, we can systematically analyze the code and generate a 
 
 通过这样的步骤，用户可以从一个构建错误追踪到具体的 Meson 模块代码，从而更深入地理解问题的根源并进行修复。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/modules/java.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -246,8 +246,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -360,7 +362,4 @@ class JavaModule(NewExtensionModule):
 
 def initialize(*args: T.Any, **kwargs: T.Any) -> JavaModule:
     return JavaModule(*args, **kwargs)
-
-"""
-
 ```

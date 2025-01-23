@@ -154,7 +154,7 @@ Vala 是一种可以编译成 C 代码的编程语言。Frida 使用 Vala 来构
 
 总而言之，`vala.py` 文件在 Frida 的构建系统中扮演着关键的角色，它使得 Meson 能够理解和使用 Vala 编译器来构建 Frida 的相关组件。理解这个文件的功能对于理解 Frida 的构建过程，甚至在一定程度上理解 Frida 内部某些模块的工作方式都有所帮助，尤其是在进行逆向工程或调试时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/vala.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -285,7 +287,4 @@ class ValaCompiler(Compiler):
 
     def thread_link_flags(self, env: 'Environment') -> T.List[str]:
         return []
-
-"""
-
 ```

@@ -361,7 +361,7 @@ const (
 	SYS_GETADDRINFO                     = 0x818 // 2072
 	SYS_GETNAMEINFO                     = 0x819 // 2073
 	SYS_FREEADDRINFO                    = 0x81A // 2074
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zsysnum_zos_s390x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -369,8 +369,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 YS___TOWUPPER_STD_A                = 0x6B6 // 1718
 	SYS___LOCALE_INIT_A                 = 0x6B7 // 1719
 	SYS___LOCALECONV_A                  = 0x6B8 // 1720
@@ -1607,10 +1609,5 @@ YS___TOWUPPER_STD_A                = 0x6B6 // 1718
 	SYS_TRUNCD32                        = 0xC3E // 3134
 	SYS_TRUNCD64                        = 0xC3F // 3135
 	SYS_TRUNCD128                       = 0xC40 // 3136
-	SYS_WCSTOD32                 
-"""
-
-
-
-
+	SYS_WCSTOD32
 ```

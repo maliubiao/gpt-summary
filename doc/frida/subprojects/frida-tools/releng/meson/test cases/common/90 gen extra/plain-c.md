@@ -149,7 +149,7 @@ By following these steps, combining an understanding of the code itself with the
 
 总而言之，这个 `plain.c` 文件虽然简单，但它是一个很好的基础示例，用于测试和演示动态插桩工具 Frida 的基本功能，同时也揭示了 C 语言程序的基本结构和函数调用的概念，这些概念在逆向工程和二进制分析中至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/90 gen extra/plain.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,14 +157,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int bob_mcbob(void);
 
 int main(void) {
     return bob_mcbob();
 }
-
-"""
-
 ```

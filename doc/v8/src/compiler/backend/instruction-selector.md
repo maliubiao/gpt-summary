@@ -46,12 +46,14 @@ The `instruction-selector.cc` also deals with more complex JavaScript concepts:
 
 **In essence, this part of `instruction-selector.cc` sets up the foundational framework for translating JavaScript's operations into the low-level instructions that the CPU can understand and execute. It manages the core data structures, the overall selection process, and handles fundamental aspects like deoptimization and function calls.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/instruction-selector.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1738,7 +1740,4 @@ void InstructionSelectorT<Adapter>::InitializeCallBuffer(
     // the parameters.
     LinkageLocation saved_return_location =
         LinkageLocat
-"""
-
-
 ```

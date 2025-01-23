@@ -134,15 +134,17 @@ I will then categorize these functionalities and relate them to Javascript, HTML
 
 这段代码主要负责 **HTML媒体元素生命周期中的资源选择和播放控制**。它实现了从 `<source>` 元素中选择合适的媒体资源，并管理媒体元素的播放状态，包括播放、暂停、seek、以及对播放结束和错误的处理。此外，它还涉及与用户界面（如原生控件和字幕显示）的交互，以及响应浏览上下文的生命周期变化。 这部分代码是媒体元素核心逻辑的关键组成部分，确保了媒体资源能够正确加载和播放。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/html_media_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ts step below.
     if (!source->MediaQueryMatches() &&
         base::FeatureList::IsEnabled(kVideoSourceMediaQuerySupport)) {
@@ -1104,7 +1106,4 @@ void HTMLMediaElement::CreatePlaceholderTracksIfNecessary() {
   // didn't explicitly announce the tracks.
   if (HasAudio() && !audioTracks().length()) {
     AddMediaTrack(media::MediaTrack::Cr
-"""
-
-
 ```

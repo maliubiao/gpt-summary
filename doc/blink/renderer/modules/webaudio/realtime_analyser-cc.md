@@ -219,15 +219,17 @@ CSS 本身不直接与 `RealtimeAnalyser` 交互，但它通常用于**可视化
 
 理解用户操作的路径有助于开发者定位问题。例如，如果频谱图显示没有任何数据，那么很可能是音频源没有连接到分析器，或者分析器的配置不正确。如果频谱图看起来噪声很大，可能是平滑参数设置不当，或者 `minDecibels` 和 `maxDecibels` 的范围不合适。通过逐步跟踪数据流和逻辑，可以更有效地诊断和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/realtime_analyser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010, Google Inc. All rights reserved.
  *
@@ -560,7 +562,4 @@ void RealtimeAnalyser::ConvertFloatToDb(DOMFloat32Array* destination_array) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

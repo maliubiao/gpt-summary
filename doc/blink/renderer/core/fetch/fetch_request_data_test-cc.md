@@ -160,15 +160,17 @@ This iterative process of examining the code, understanding the testing framewor
 
 总而言之，`fetch_request_data_test.cc` 是 Blink 引擎中用于保证 `FetchRequestData` 类功能正确性的重要测试文件。它涵盖了创建、初始化、请求头处理以及特定场景下（如 Service Worker）的数据管理，对于理解 Blink 引擎如何处理网络请求至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/fetch_request_data_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -273,7 +275,4 @@ TEST(FetchRequestDataTest, CheckServiceworkerRaceNetworkRequestToken) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

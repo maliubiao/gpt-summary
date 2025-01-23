@@ -734,15 +734,17 @@ void LocalFrameView::UpdateLifecyclePhasesInternal(
     // The idea is that we want to synchronously determine the initial,
     // first-time-rendered state of on- or off-screen `content-visibility:
     
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_frame_view.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t() call.
   DCHECK(!IsInPerformLayout());
   TRACE_EVENT0("blink,benchmark", "LocalFrameView::performPostLayoutTasks");
@@ -1587,7 +1589,4 @@ bool LocalFrameView::RunStyleAndLayoutLifecyclePhases(
 
   // Now we can run post layout steps in preparation for further phases.
   ForAllNonThrottledLocalFrameViews([](LocalFrameVie
-"""
-
-
 ```

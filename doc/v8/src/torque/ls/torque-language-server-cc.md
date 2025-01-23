@@ -167,15 +167,17 @@ console.log(myArray); // 输出: [1, 2, 3, 4]
 
 `v8/src/torque/ls/torque-language-server.cc` 是 V8 中 Torque 语言的语言服务器实现，它为开发 Torque 代码的工程师提供了实时的代码分析、补全和错误检查等功能，从而帮助他们更高效地开发和维护 V8 引擎的底层 JavaScript 实现。它通过监听符合 LSP 规范的消息与编辑器或 IDE 进行通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/ls/torque-language-server.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/ls/torque-language-server.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ int WrappedMain(int argc, const char** argv) {
 int main(int argc, const char** argv) {
   return v8::internal::torque::ls::WrappedMain(argc, argv);
 }
-
-"""
-
 ```

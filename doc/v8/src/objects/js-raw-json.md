@@ -95,11 +95,13 @@ console.log(parsedObject); // 输出: { name: 'Alice', age: 30 }
 
 `v8/src/objects/js-raw-json.cc` 文件定义了 V8 引擎中用于存储和管理未经完全解析的 "raw JSON" 字符串的机制。这主要是为了支持 "JSON.parse with source" 提案，该提案旨在允许在解析 JSON 的同时保留对原始 JSON 字符串的访问。  `JSRawJson` 对象充当了 V8 内部对这种原始 JSON 数据的表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-raw-json.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```json
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -142,7 +144,4 @@ MaybeHandle<JSRawJson> JSRawJson::Create(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

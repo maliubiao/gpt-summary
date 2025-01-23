@@ -64,15 +64,17 @@ Here's a breakdown of the file's functionality:
 
 `blink/renderer/platform/media/watch_time_reporter_unittest.cc` 文件的主要功能是全面地测试 `WatchTimeReporter` 类在各种媒体播放场景下的行为，包括播放状态变化、后台播放、静音、电源状态变化、显示类型变化等，确保其能够准确、可靠地记录用户观看媒体的时长并上报相关数据。 这些测试用例覆盖了 `WatchTimeReporter` 的核心逻辑和各种边界情况，旨在预防和发现潜在的错误，保证媒体观看时长统计的准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/watch_time_reporter_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1670,8 +1672,4 @@ TEST_P(WatchTimeReporterTest, WatchTimeReporterMultiplePartialFinalize) {
     EXPECT_WATCH_TIME(Eme, kWatchTime2);
     EXPECT_WATCH_TIME(Mse, kWatchTime2);
     EXPECT_WATCH_TIME(NativeControlsOff, kWatchTime2);
-
-"""
-
-
 ```

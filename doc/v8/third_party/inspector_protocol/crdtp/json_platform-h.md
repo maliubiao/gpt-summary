@@ -161,15 +161,17 @@ console.log(typeof parsedNumber); // 输出: "number"
 
 `v8/third_party/inspector_protocol/crdtp/json_platform.h` 定义了用于在字符串和双精度浮点数之间进行 JSON 兼容转换的平台无关接口。实际的转换逻辑由平台相关的实现提供。这个文件对于 V8 引擎处理 JavaScript 中的 JSON 数字至关重要，并且在涉及到数据序列化和反序列化时起着关键作用。 理解其功能和潜在的错误用法有助于开发者编写更健壮的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/json_platform.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/json_platform.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ std::string DToStr(double value);
 }  // namespace v8_crdtp
 
 #endif  // V8_CRDTP_JSON_PLATFORM_H_
-
-"""
-
 ```

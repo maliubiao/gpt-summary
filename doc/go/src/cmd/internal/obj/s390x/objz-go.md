@@ -215,15 +215,17 @@ Since this code is part of the Go toolchain's internal implementation, typical G
 
 In summary, `objz.go` plays a crucial role in the Go compilation process for the S/390x architecture by performing architecture-specific instruction transformations, handling dynamic linking, and implementing the stack management mechanisms that are fundamental to Go's execution model.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/s390x/objz.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Based on cmd/internal/obj/ppc64/obj9.go.
 //
 //	Copyright © 1994-1999 Lucent Technologies Inc.  All rights reserved.
@@ -1027,9 +1029,4 @@ var Links390x = obj.LinkArch{
 	UnaryDst:       unaryDst,
 	DWARFRegisters: S390XDWARFRegisters,
 }
-
-"""
-
-
-
 ```

@@ -143,7 +143,7 @@ By following these steps, combining code analysis with an understanding of the s
 
 总而言之，`test2.c` 作为一个 Frida 的单元测试用例，旨在验证 Frida 对静态链接代码的 Instrumentation 能力。它简洁地展示了 Frida 在逆向工程中处理静态链接代码时的重要性，并涉及到二进制底层、操作系统交互等多个方面的知识。理解这样的测试用例有助于用户更好地理解 Frida 的工作原理和应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/66 static link/test2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,15 +151,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func4();
 
 int main(int argc, char *argv[])
 {
   return func4() == 2 ? 0 : 1;
 }
-
-"""
-
 ```

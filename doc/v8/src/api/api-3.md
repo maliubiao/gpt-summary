@@ -173,12 +173,14 @@ Let's illustrate with JavaScript examples for some of the key functions.
 
 总而言之，这个代码文件是 V8 引擎 API 的重要组成部分，它提供了操作 JavaScript 对象和函数的基础能力，是连接 C++ 应用程序和 JavaScript 代码的桥梁。它确保了 V8 引擎的各种核心功能能够以结构化的方式被外部程序使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 :GetConstructorName() {
   // TODO(v8:12547): Consider adding GetConstructorName(Local<Context>).
   auto self = Utils::OpenHandle(this);
@@ -1812,7 +1814,4 @@ bool v8::V8::Initialize(const int build_config) {
   const bool kEmbedderEnableChecks = (build_config & kEnableChecks) != 0;
 #ifdef V8_ENABLE_CHECKS
   const bool kV8EnableChe
-"""
-
-
 ```

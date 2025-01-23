@@ -80,14 +80,16 @@ The user wants to understand the functionality of the `image_frame_generator_tes
 
 总而言之，`image_frame_generator_test.cc` 文件通过一系列单元测试，确保 `ImageFrameGenerator` 能够正确、高效地处理各种图像解码和缩放场景，这对于在 Chromium 中正确渲染网页上的图像至关重要。这些测试覆盖了各种边缘情况和性能考量，保证了用户在不同设备和网络环境下都能获得良好的图像浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/image_frame_generator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -504,7 +506,4 @@ TEST_F(ImageFrameGeneratorTest, clearMultiFrameDecoder) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

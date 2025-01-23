@@ -166,15 +166,17 @@ Essentially, my approach was a combination of code analysis, knowledge of web te
 
 这部分代码继续扩展了 `GraphicsContext` 的绘图能力，涵盖了更复杂的形状绘制（带孔的矩形）、裁剪操作、链接处理和变换操作。它与 CSS 的各种视觉属性有着密切的联系，是浏览器渲染网页内容的关键组成部分。 理解这些功能有助于理解浏览器如何将 HTML、CSS 和 JavaScript 指令转换为屏幕上的图形。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/graphics_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ags.getColor4f()) {
       canvas_->drawDRRect(SkRRect(outer), SkRRect(inner),
                           DarkModeFlags(this, auto_dark_mode, fill_flags));
@@ -355,8 +357,4 @@ void GraphicsContext::AdjustLineToPixelBoundaries(gfx::PointF& p1,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

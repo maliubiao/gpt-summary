@@ -352,15 +352,17 @@ if base.Flag.N != 0 || !ssagen.Arch.LinkArch.CanJumpTable || base.Ctxt.Retpoline
 
 了解编译器如何处理 `switch` 语句的优化（例如跳转表、二分查找）可以帮助我们编写更高效的代码，尽管这些优化通常是自动进行的，开发者无需显式干预。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/walk/switch.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1338,9 +1340,4 @@ func stringSearch(expr ir.Node, cc []exprClause, out *ir.Nodes) {
 
 	// TODO: if expr[bestIdx] has enough different possible values, use a jump table.
 }
-
-"""
-
-
-
 ```

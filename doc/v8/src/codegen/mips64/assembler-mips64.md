@@ -64,12 +64,14 @@ let result = add(5, 10);
 
 **总结来说， `assembler-mips64.cc` 这个文件是V8引擎将JavaScript代码转化为MIPS64机器码的关键组成部分，它提供了生成和管理底层机器指令的能力，使得JavaScript代码可以在MIPS64架构的处理器上高效执行。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/assembler-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -1998,7 +2000,4 @@ void Assembler::srlv(Register rd, Register rt, Register rs) {
 
 void Assembler::sra(Register rd, Register rt, uint16_t sa) {
   GenInstrReg
-"""
-
-
 ```

@@ -153,7 +153,7 @@ By following this structured approach and actively refining understanding, a com
 
 总而言之，这部分 `node.cc` 代码是 Blink 引擎中处理 DOM 结构修改的核心部分，它连接了 JavaScript 代码和底层的 DOM 树操作，并确保了这些操作的正确性和安全性。 理解这部分代码的功能对于理解浏览器如何动态渲染网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ld_child, exception_state);
 
   exception_state.ThrowDOMException(
@@ -1098,7 +1100,4 @@ bool Node::ContainsIncludingHostElements(const Node& node) const {
     if (current == this)
       return true;
     auto* curr_fragment = DynamicTo<DocumentFragment>
-"""
-
-
 ```

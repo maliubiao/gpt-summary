@@ -144,7 +144,7 @@ I will structure the response by listing the functionalities of the `extension.c
 
 总而言之，这部分代码是 Frida Python 绑定的核心组成部分，它将 Frida C 核心库的强大功能以 Pythonic 的方式暴露出来，使得 Python 开发者能够方便地进行动态插桩、逆向工程和安全分析等任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/frida/_frida/extension.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 repr, "pid=%u, parent_pid=%u", self->pid, self->parent_pid);
 
   origin = frida_child_get_origin (handle);
@@ -1474,9 +1476,4 @@ frida_python_authentication_service_dispose (GObject * object)
   if (self->callback != NULL)
   {
     PyGILState_STATE gstate;
-
-    
-"""
-
-
 ```

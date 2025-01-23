@@ -80,12 +80,14 @@ case ADDX: {
 
 总而言之， `simulator-ppc.cc` 的这段代码是V8引擎在非PowerPC平台上执行或调试PowerPC代码的关键组成部分，它通过软件的方式精确地模拟了PowerPC架构的指令行为，从而使得V8能够在更广泛的平台上运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/ppc/simulator-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 t_register(ra);
         if (ra_val < im_val) {
           bf |= 0x80000000;
@@ -2244,8 +2246,4 @@ t_register(ra);
       condition_reg_ &= ~(0x0F << cr_shift);
       condition_reg_ |= (field_val << cr_shift);
       // Clear copied exception bits
- 
-"""
-
-
 ```

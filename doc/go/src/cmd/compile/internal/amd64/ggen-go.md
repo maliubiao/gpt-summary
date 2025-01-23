@@ -212,15 +212,17 @@ Go 编译器会自动优化类似 `make([]int, n)` 这样的操作，使用类�
 
 总结来说，`go/src/cmd/compile/internal/amd64/ggen.go` 中的这段代码专注于生成 AMD64 架构下高效的内存置零代码，这是 Go 语言中变量初始化和内存管理的关键组成部分。它根据要清零的内存大小和目标操作系统等因素，选择不同的汇编指令序列来实现最佳性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/amd64/ggen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -356,9 +358,4 @@ func ginsnop(pp *objw.Progs) *obj.Prog {
 	p.To.Reg = x86.REG_AX
 	return p
 }
-
-"""
-
-
-
 ```

@@ -99,14 +99,16 @@ By following these steps, we can systematically analyze the provided code and ge
 
 `sequence_manager_fuzzer.cc` 是一个用于测试 Blink 引擎核心调度器 `SequenceManager` 的重要工具。它通过生成随机的输入和操作序列，旨在发现 `SequenceManager` 在各种复杂场景下的潜在错误，包括与 JavaScript 执行、HTML 解析和 CSS 样式计算相关的调度问题。它间接地帮助识别开发者在使用相关 API 时可能遇到的问题，并确保浏览器的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/test/fuzzer/sequence_manager_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 #include <stdlib.h>
 #include <iostream>
 
@@ -130,7 +132,4 @@ DEFINE_BINARY_PROTO_FUZZER(
   base::sequence_manager::SequenceManagerFuzzerProcessor::ParseAndRun(
       fuzzer_input);
 }
-
-"""
-
 ```

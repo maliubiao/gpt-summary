@@ -89,7 +89,7 @@ func CheckASanStatus() {
 
 `asan.go` 文件的作用是利用 Go 语言的构建标签机制，提供一个简单的布尔常量来指示程序是否在启用 AddressSanitizer 的情况下被编译。这允许程序内部根据 ASan 的启用状态执行不同的逻辑，例如启用更严格的内存检查或输出调试信息。要使 `asanEnabled` 为 `true`，必须在构建时显式地使用 `go build -tags asan` 命令。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/check/asan.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -97,8 +97,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -108,9 +110,4 @@ Prompt:
 package check
 
 const asanEnabled = true
-
-"""
-
-
-
 ```

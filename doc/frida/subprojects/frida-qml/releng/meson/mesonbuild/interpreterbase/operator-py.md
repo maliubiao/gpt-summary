@@ -186,7 +186,7 @@ endif
 
 `frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreterbase/operator.py` 文件虽然不直接参与 Frida 的动态 instrumentation 过程，但它定义了 Meson 构建系统中使用的运算符。这些运算符在 Frida 的构建过程中至关重要，并间接地影响着最终生成的 Frida 工具的功能和特性。理解这些运算符有助于 Frida 开发者维护和扩展 Frida，也有助于理解 Frida 的构建流程。对于 Frida 的用户来说，理解运算符的概念可以帮助他们更好地理解 Frida 的工作原理，并在编写 Frida 脚本时进行更复杂的逻辑判断和数据处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreterbase/operator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 
 from enum import Enum
@@ -228,7 +230,4 @@ class MesonOperator(Enum):
     IN = 'in'
     NOT_IN = 'not in'
     INDEX = '[]'
-
-"""
-
 ```

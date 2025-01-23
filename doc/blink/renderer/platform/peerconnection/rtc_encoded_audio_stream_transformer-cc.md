@@ -162,14 +162,16 @@ By following this structured approach, we can systematically analyze the C++ cod
 
 总而言之，`rtc_encoded_audio_stream_transformer.cc` 是 Blink 引擎中一个关键的组件，它实现了 WebRTC 编码音频流的自定义转换功能，并通过与 JavaScript 的交互，为开发者提供了强大的音频处理能力。 理解其工作原理和潜在的错误可以帮助开发者更好地利用 WebRTC 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_encoded_audio_stream_transformer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -413,7 +415,4 @@ RTCEncodedAudioStreamTransformer::GetBroker() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

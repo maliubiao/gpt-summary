@@ -257,7 +257,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言 `crypto` 包在特定条件下使用 BoringSSL 库实现 RSA 算法的关键部分，提供了密钥生成、加密解密以及签名验签等核心功能。使用者需要理解 RSA 的各种填充模式和参数，并注意密钥的安全管理，才能正确且安全地使用这些功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/boring/rsa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -265,8 +265,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -646,9 +648,4 @@ func VerifyRSAPKCS1v15(pub *PublicKeyRSA, h crypto.Hash, hashed, sig []byte) err
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

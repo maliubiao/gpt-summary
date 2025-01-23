@@ -376,7 +376,7 @@ if (Process.platform === 'android') {
 
 通过这种方式，你可以追踪 Android Framework 或 NDK 应用如何间接地使用底层的 pty 功能，并了解其调用时机和参数。对于更深入的调试，你可以 hook 相关的 Java 或 Native 函数，逐步追踪调用栈，最终定位到 `openpty` 的调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/pty_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -387,8 +387,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -555,7 +557,4 @@ TEST(pty, bug_28979140) {
   ASSERT_TRUE(arg.matched);
   close(pty);
 }
-
-"""
-
 ```

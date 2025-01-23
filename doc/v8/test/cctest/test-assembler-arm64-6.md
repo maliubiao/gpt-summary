@@ -133,12 +133,14 @@ In summary, this part of the `test-assembler-arm64.cc` file focuses on verifying
 
 总而言之，这部分 C++ 测试代码深入地验证了 ARM64 架构下 V8 引擎汇编器的功能，确保了其能够正确地生成执行 JavaScript 代码所需的低级指令，包括浮点数运算、原子操作和内存屏障等关键特性。这些测试对于保证 JavaScript 引擎的正确性、性能和在多线程环境下的稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ormat(kFormat8H));
   CHECK_EQ(128U, RegisterSizeInBitsFromFormat(kFormat4S));
   CHECK_EQ(128U, RegisterSizeInBitsFromFormat(kFormat2D));
@@ -2259,7 +2261,4 @@ static void ProcessNaNsHelper(double n, double m, double expected) {
   CHECK_EQUAL_FP64(expected, d4);
   CHECK_EQUAL_FP64(expected, d5);
   CHECK_EQUAL_FP64(expecte
-"""
-
-
 ```

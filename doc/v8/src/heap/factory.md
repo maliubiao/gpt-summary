@@ -115,12 +115,14 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 总而言之， `v8/src/heap/factory.cc` 是 V8 引擎中一个非常核心的文件，它就像一个 "工厂"，负责生产引擎运行所需的各种各样的内部对象，这些对象是理解 V8 如何表示和管理 JavaScript 代码和数据的关键。由于这是第 1 部分，因此它只包含了 `Factory` 类的一部分功能，后续的部分会继续扩展其对象创建的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/factory.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1730,7 +1732,4 @@ Handle<PromiseResolveThenableJobTask> Factory::NewPromiseResolveThenableJobTask(
     DirectHandle<JSReceiver> thenable, DirectHandle<JSReceiver> then,
     DirectHandle<Context> context) {
   DCH
-"""
-
-
 ```

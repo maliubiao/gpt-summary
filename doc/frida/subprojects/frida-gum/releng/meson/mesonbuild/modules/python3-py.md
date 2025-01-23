@@ -202,7 +202,7 @@ Meson 会生成一个构建目标，该目标指示构建系统编译 `my_extens
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/mesonbuild/modules/python3.py` 这个文件是 Frida 构建系统中处理 Python 3 扩展模块构建的关键组件。用户通常不会直接操作它，但通过编写 `meson.build` 文件来间接使用其功能。当构建过程出现问题或者需要深入了解构建细节时，开发者可能会查看这个文件的源代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/modules/python3.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -210,8 +210,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2017 The Meson development team
 
@@ -297,7 +299,4 @@ class Python3Module(ExtensionModule):
 
 def initialize(*args, **kwargs):
     return Python3Module(*args, **kwargs)
-
-"""
-
 ```

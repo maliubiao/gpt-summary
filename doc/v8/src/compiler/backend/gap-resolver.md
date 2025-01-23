@@ -107,11 +107,13 @@ b = a;
 
 总而言之，`gap-resolver.cc` 中的 `GapResolver` 类在 V8 引擎的代码生成过程中扮演着至关重要的角色，它确保了在进行多个数据移动操作时，即使存在冲突，也能安全可靠地完成，从而保证了 JavaScript 代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/gap-resolver.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -345,7 +347,4 @@ MoveOperands* GapResolver::PerformMoveHelper(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

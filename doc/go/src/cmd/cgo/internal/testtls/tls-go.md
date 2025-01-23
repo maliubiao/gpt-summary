@@ -205,15 +205,17 @@ go test -v
 
 总而言之，`go/src/cmd/cgo/internal/testtls/tls.go` 是 `cgo` 工具包内部用于测试其线程本地存储功能的代码。它通过与 C 代码交互，验证了 `cgo` 是否能够正确地处理和管理跨越 Go 和 C 边界的线程局部变量。理解这段代码有助于深入理解 `cgo` 的工作原理以及 Go 语言如何与 native 代码进行集成。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/internal/testtls/tls.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -248,9 +250,4 @@ func testTLS(t *testing.T) {
 		t.Fatalf("at end, C.getTLS() = %#x, want %#x", val, keyVal)
 	}
 }
-
-"""
-
-
-
 ```

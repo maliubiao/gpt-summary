@@ -183,15 +183,17 @@ foo(10);
 
 `v8/src/compiler/allocation-builder.h` 定义的 `AllocationBuilder` 类是 V8 编译器中一个关键的辅助工具，用于高效地构建表示对象分配和初始化的中间代码。它与 JavaScript 中对象和数组的创建、函数调用和作用域以及 `arguments` 对象等功能密切相关。虽然开发者通常不会直接与这个类交互，但了解其功能有助于理解 V8 内部的工作原理以及一些常见的 JavaScript 行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/allocation-builder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/allocation-builder.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -297,7 +299,4 @@ class AllocationBuilder final {
 }  // namespace v8
 
 #endif  // V8_COMPILER_ALLOCATION_BUILDER_H_
-
-"""
-
 ```

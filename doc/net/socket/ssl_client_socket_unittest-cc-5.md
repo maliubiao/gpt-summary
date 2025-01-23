@@ -113,7 +113,7 @@ fetch('https://example.com:42', {
 
 总而言之，这段 `ssl_client_socket_unittest.cc` 的代码片段的主要功能是 **全面测试 `SSLClientSocket` 类在各种 SSL/TLS 连接场景下的正确性和健壮性**，特别关注客户端证书处理、公钥 pinning 实施、证书透明度验证以及对各种 TLS 握手错误的处理。这些测试确保了 Chromium 浏览器在处理 HTTPS 连接时的安全性、兼容性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/ssl_client_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 on_max = SSL_PROTOCOL_VERSION_TLS1_2;
   server_config.client_cert_type = SSLServerConfig::REQUIRE_CLIENT_CERT;
   ASSERT_TRUE(
@@ -923,7 +925,4 @@ TEST_F(SSLClientSocketTest, AccessDeniedClientCerts) {
   // Release the ServerHello and wait for the client to write its second flight.
   raw_transport->BlockWrite();
   raw_transport->UnblockReadResult(
-"""
-
-
 ```

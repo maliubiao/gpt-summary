@@ -55,10 +55,13 @@ Here's a breakdown of its functionality:
 
 **In essence, this file provides a performance evaluation of the `FastDtoa` function, specifically testing its efficiency in generating the shortest possible string representation and a fixed-precision (6 digits) string representation of double-precision floating-point numbers.**  The first part of the benchmark likely contains the implementation of the `FastDtoa` function itself and potentially other related benchmark tests.
 
-Prompt: ```这是目录为v8/test/benchmarks/cpp/dtoa.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/benchmarks/cpp/dtoa.cc的一个c++源代码文件， 请归纳一下它的功能
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 8674600354,
     68.0541953008,  656.9876681725, 535.4170555010, 777.7861015686,
     568.1950006959, 292.7121747782, 270.9829747699, 291.7444687249,
@@ -156,7 +159,4 @@ static void BM_DtoaSixDigits(benchmark::State& state) {
 
 BENCHMARK(BM_DtoaShortest);
 BENCHMARK(BM_DtoaSixDigits);
-
-"""
-
 ```

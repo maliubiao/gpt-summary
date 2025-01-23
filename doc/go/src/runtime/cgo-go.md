@@ -187,7 +187,7 @@ Finally, I organize the information logically, starting with a summary of the fu
 
 `go/src/runtime/cgo.go` 文件是 Go 语言 CGO 功能的核心，它定义了 Go 运行时与 C 代码交互所需的各种接口和机制。它通过一系列函数指针，连接了 Go 和 C 的运行时环境，实现了从 Go 调用 C 代码以及 C 代码回调 Go 代码的功能，并提供了必要的线程管理、堆栈管理和同步支持。理解这个文件中的变量和函数，有助于深入理解 Go 语言的 CGO 实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/cgo.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -296,9 +298,4 @@ func cgoNoCallback(v bool) {
 	}
 	g.nocgocallback = v
 }
-
-"""
-
-
-
 ```

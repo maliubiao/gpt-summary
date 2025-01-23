@@ -8,14 +8,16 @@ My thought process to answer the request goes like this:
 3. **Identify the Core Purpose:** Based on the class name `RemoteFrameOwner` and the inclusion of `LocalFrame`, I can infer that this class is responsible for managing frames that are *remotely rendered* (i.e., out-of-process iframes or similar). It acts as a local representation of a frame that lives in a different process.
 
 4. **Analyze Member Variables:** I would go through the member variables declared in the
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/remote_frame_owner.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -121,7 +123,4 @@ bool RemoteFrameOwner::ShouldLazyLoadChildren() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

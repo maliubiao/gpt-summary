@@ -133,7 +133,7 @@ add("hello", " world"); // 调用时 a 和 b 是字符串
 
 `v8/src/compiler/turbofan-typer.cc` 是 V8 引擎中 Turbofan 优化编译器的关键组件，负责对编译器构建的中间表示图进行类型推断和类型标注。它通过遍历图中的节点，并根据每个节点的语义和输入类型，计算出该节点的输出类型。这个过程对于后续的编译器优化至关重要，因为它提供了关于程序运行时值的宝贵信息，使得编译器可以生成更高效、更优化的机器代码。该文件实现了类型推断的核心逻辑，并与 V8 的类型系统和 JavaScript 的语义紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turbofan-typer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turbofan-typer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -141,8 +141,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1043,7 +1045,4 @@ Type Typer::Visitor::TypeNumberConstant(Node* node) {
 
 Type Typer::Visitor::TypeHeapConstant(Node* node) {
   return TypeConst
-"""
-
-
 ```

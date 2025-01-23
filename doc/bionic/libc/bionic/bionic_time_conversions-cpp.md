@@ -247,7 +247,7 @@ sys.stdin.read()
 
 总结来说，`bionic_time_conversions.cpp` 提供了一组基础的时间表示转换工具，这些工具被 Android 系统的各个层面广泛使用，从 Framework 的高级 API 到 NDK 开发的底层代码，都可能间接地依赖于这些转换函数来处理不同格式的时间数据。 通过 Frida 这样的动态调试工具，我们可以深入了解这些函数的调用过程和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/bionic_time_conversions.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -258,8 +258,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  * All rights reserved.
@@ -343,7 +345,4 @@ void monotonic_time_from_realtime_time(timespec& monotonic_time, const timespec&
 void realtime_time_from_monotonic_time(timespec& realtime_time, const timespec& monotonic_time) {
   convert_timespec_clocks(realtime_time, CLOCK_REALTIME, monotonic_time, CLOCK_MONOTONIC);
 }
-
-"""
-
 ```

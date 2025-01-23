@@ -220,15 +220,17 @@ HTML 和 CSS 本身不直接与 `IDBDatabase.cc` 交互。但是，嵌入在 HTM
 
 总而言之，`IDBDatabase.cc` 是 Blink 引擎中实现 IndexedDB 数据库连接的核心组件，它负责处理 JavaScript 的请求，管理数据库的生命周期和事务，并与后端的存储服务进行通信。理解这个文件的功能对于理解 IndexedDB 在 Chromium 中的实现至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/idb_database.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -1013,7 +1015,4 @@ int IDBDatabase::GetSchedulingPriority(
 }
 
 }  // namespace blink
-
-"""
-
 ```

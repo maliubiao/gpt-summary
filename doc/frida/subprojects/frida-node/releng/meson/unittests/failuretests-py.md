@@ -127,7 +127,7 @@ def test_invalid_project_name(self):
 
 `failuretests.py` 就像一个预先设置好的错误场景集合，用于验证 Meson 在这些错误情况下是否能够正确地报告问题，帮助用户进行调试和修复。它确保了 Meson 的健壮性和用户友好性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/unittests/failuretests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -520,7 +522,4 @@ class FailureTests(BasePlatformTests):
     def test_error_func(self):
         self.assertMesonRaises("error('a', 'b', ['c', ['d', {'e': 'f'}]], 'g')",
                                r"Problem encountered: a b \['c', \['d', {'e' : 'f'}\]\] g")
-
-"""
-
 ```

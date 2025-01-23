@@ -176,7 +176,7 @@ If there's an issue with the documentation build, a developer debugging the proc
 
 Therefore, the path to this code starts with the developer's intention to generate documentation within the Meson build system and involves the execution of Meson parsing the `meson.build` file and invoking the functionality provided by this `hotdoc.py` module.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/modules/hotdoc.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -673,7 +675,4 @@ def initialize(interpreter: Interpreter) -> HotDocModule:
     mod = HotDocModule(interpreter)
     mod.interpreter.append_holder_map(HotdocTarget, HotdocTargetHolder)
     return mod
-
-"""
-
 ```

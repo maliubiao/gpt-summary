@@ -169,7 +169,7 @@ func main() {
 
 `go/src/internal/cpu/cpu_mips.go` 这段代码的核心功能是定义了 MIPS 架构 CPU 缓存行的大小，并提供了一个空的初始化函数。 这个信息可以被 Go 语言运行时用于优化内存布局，以减少多线程环境下的伪共享问题，从而提高程序的性能。  普通 Go 开发者不需要直接与这段代码交互，它的作用是透明地发生在 Go 运行时的底层。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/cpu/cpu_mips.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -177,8 +177,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -189,9 +191,4 @@ const CacheLinePadSize = 32
 
 func doinit() {
 }
-
-"""
-
-
-
 ```

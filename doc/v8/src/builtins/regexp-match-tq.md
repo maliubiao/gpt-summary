@@ -166,14 +166,16 @@ console.log(match3); // 输出: null
 
 总而言之，`v8/src/builtins/regexp-match.tq`  实现了 `String.prototype.match()` 的核心功能，包括处理全局和非全局匹配，以及针对特定情况的性能优化。理解这段代码有助于深入了解 JavaScript 正则表达式匹配的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/regexp-match.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -317,7 +319,4 @@ transitioning javascript builtin RegExpPrototypeMatch(
   return RegExpMatchFast(fastRegExp, string);
 }
 }
-
-"""
-
 ```

@@ -120,11 +120,13 @@ process("world");
 
 总而言之，`node-type-unittest.cc` 文件通过单元测试确保 Maglev 编译器内部用于表示和操作 JavaScript 值类型的机制是正确和一致的，这对于 Maglev 编译器的优化至关重要，并最终影响 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/maglev/node-type-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ TEST_F(MaglevTest, NodeTypeCombineIsConsistent) {
 }  // namespace v8
 
 #endif  // V8_ENABLE_MAGLEV
-
-"""
-
 ```

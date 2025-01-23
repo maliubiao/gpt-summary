@@ -100,7 +100,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 如果会话未正确关闭，可以通过`on_connection_closed()`和`discard_connections()`追踪资源泄漏。
 
 通过以上步骤，用户可以逐步追踪到代码中的问题，并进行调试和修复。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/lib/agent/agent.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 (GLib.Error e) {
 				throw new Error.TRANSPORT ("%s", e.message);
 			}
@@ -633,8 +635,4 @@ Prompt:
 		});
 	}
 }
-
-"""
-
-
 ```

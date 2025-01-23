@@ -188,7 +188,7 @@ By following these steps and iteratively refining the analysis, I can arrive at 
 
 总而言之，这个 `meson-sample.c` 文件是一个简单的示例，用于演示如何使用 GLib 的 GObject 类型系统。在 Frida 的上下文中，它作为一个被测试的目标，帮助验证 Frida 对这类代码的 hook 和操作能力。通过分析这个简单的例子，可以更好地理解 Frida 在更复杂的应用程序中的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/11 gir subproject/subprojects/mesongir/meson-sample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample.h"
 
 typedef struct _MesonSamplePrivate
@@ -325,7 +327,4 @@ meson_sample_print_message (MesonSample *self)
 
   g_print ("Message: %s\n", priv->msg);
 }
-
-"""
-
 ```

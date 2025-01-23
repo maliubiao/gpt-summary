@@ -304,7 +304,7 @@ if (Process.platform === 'android') {
 
 希望这个详细的解释能够帮助你理解 `lrand48.c` 文件在 Android Bionic 中的作用和实现方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/lib/libc/stdlib/lrand48.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -315,8 +315,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: lrand48.c,v 1.9 2013/10/22 08:08:51 matt Exp $	*/
 
 /*
@@ -350,7 +352,4 @@ lrand48(void)
 	__dorand48(__rand48_seed);
 	return __rand48_seed[2] * 32768 + (__rand48_seed[1] >> 1);
 }
-
-"""
-
 ```

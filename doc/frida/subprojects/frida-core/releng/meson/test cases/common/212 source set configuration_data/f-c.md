@@ -118,7 +118,7 @@ Let's break down the thought process to arrive at the analysis of the provided C
 
 总而言之，`f.c` 虽然代码简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理特定边缘情况（例如，指向任意内存地址的函数指针）时的行为，这对于保证 Frida 的稳定性和功能性至关重要。它也反映了逆向工程中经常遇到的与内存地址和函数指针相关的概念和挑战。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/212 source set configuration_data/f.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = (void *)0x12AB34CD;
@@ -135,7 +137,4 @@ void (*p)(void) = (void *)0x12AB34CD;
 void f(void)
 {
 }
-
-"""
-
 ```

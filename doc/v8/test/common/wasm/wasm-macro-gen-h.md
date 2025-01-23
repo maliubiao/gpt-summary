@@ -210,7 +210,7 @@ const uint8_t kSetLocal[] = {
 
 `v8/test/common/wasm/wasm-macro-gen.h` 的主要功能是 **提供一组 C++ 宏，用于简化生成 WebAssembly (Wasm) 字节码的过程**。 这些宏抽象了 Wasm 二进制格式的细节，使得开发者可以使用更具可读性和易于维护的方式来构造 Wasm 模块。 它不是 Torque 源代码，但生成的 Wasm 模块最终会在 JavaScript 环境中运行。 虽然它本身不包含运行时逻辑，但可以用来生成包含特定逻辑的 Wasm 代码。 使用这些宏或手动构建 Wasm 字节码时，可能会遇到各种编程错误，例如指令操作码错误、参数顺序错误、栈管理错误、LEB128 编码错误和类型不匹配等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/common/wasm/wasm-macro-gen.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/common/wasm/wasm-macro-gen.h以.tq结尾，那它是个v8 torque源代码，
@@ -218,8 +218,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -843,8 +845,5 @@ inline uint16_t ExtractPrefixedOpcodeBytes(WasmOpcode opcode) {
 // Takes a reference value from the value stack to allow sequences of
 // conditional branches.
 #define WASM_BR_ON_CAST(depth, sourcetype, targettype)   \
-  WASM_GC_OP(kExprBrOnCast),                       
-"""
-
-
+  WASM_GC_OP(kExprBrOnCast),
 ```

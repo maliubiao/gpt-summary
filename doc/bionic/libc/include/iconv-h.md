@@ -331,7 +331,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 通过 Frida Hook，你可以动态地观察 `iconv` 函数的调用情况，了解应用程序在哪些场景下进行了字符编码转换，以及使用的编码类型和转换的数据内容，这对于调试字符编码相关的问题非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/iconv.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -342,8 +342,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -434,7 +436,4 @@ int iconv_close(iconv_t _Nonnull __converter) __INTRODUCED_IN(28);
 
 
 __END_DECLS
-
-"""
-
 ```

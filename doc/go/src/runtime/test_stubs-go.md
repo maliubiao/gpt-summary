@@ -126,7 +126,7 @@ func main() {
 
 `go/src/runtime/test_stubs.go` 文件中的 `testSPWrite()` 函数在非 amd64 架构下是一个空函数，很可能是一个占位符或测试桩，用于处理不同架构之间实现的差异。 它暗示了在 amd64 架构下可能存在一个实际的 `testSPWrite` 函数，负责执行与栈指针写入相关的操作，但这通常是 Go 运行时内部使用的低级操作，用户代码不应直接调用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/test_stubs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -134,8 +134,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -145,9 +147,4 @@ Prompt:
 package runtime
 
 func testSPWrite() {}
-
-"""
-
-
-
 ```

@@ -112,14 +112,16 @@ During the process, I might have initially focused too much on the creation of t
 
 `layout_theme_win.cc` 虽然是一个底层的 C++ 文件，但它在定义 Blink 渲染引擎在 Windows 平台上的默认外观方面发挥着关键作用。它负责获取系统主题信息，并将其应用于 HTML 元素的默认渲染，这最终会影响到用户在浏览器中看到的内容，以及 JavaScript 和 CSS 与之交互的方式。理解其功能有助于开发者更好地理解跨平台开发的挑战，并编写更具兼容性和用户友好性的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_theme_win.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -151,7 +153,4 @@ Color LayoutThemeWin::SystemHighlightFromColorProvider(
 }
 
 }  // namespace blink
-
-"""
-
 ```

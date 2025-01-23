@@ -115,7 +115,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `fdt-padder.vala` 文件的主要功能是确保文件描述符表中的文件描述符不会低于某个最小值，以避免在某些操作系统上由于文件描述符过低而导致的权限问题或安全限制。通过 LLDB 调试工具，用户可以观察文件描述符的复制过程，并排查可能的问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/lib/payload/fdt-padder.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 #if WINDOWS
 	public class FileDescriptorTablePadder {
@@ -260,7 +262,4 @@ namespace Frida {
 	}
 #endif
 }
-
-"""
-
 ```

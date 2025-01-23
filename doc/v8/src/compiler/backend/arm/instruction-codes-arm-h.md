@@ -146,15 +146,17 @@ ADD R2, R0, R1  ; 将 R0 和 R1 的值相加，结果存入 R2
 
 **需要强调的是，这些编程错误与 `instruction-codes-arm.h` 的联系是间接的。用户不会直接因为这个头文件而出错，但理解其背后的机器码执行原理，有助于编写更高效的 JavaScript 代码。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/instruction-codes-arm.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm/instruction-codes-arm.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -550,7 +552,4 @@ namespace compiler {
 }  // namespace v8
 
 #endif  // V8_COMPILER_BACKEND_ARM_INSTRUCTION_CODES_ARM_H_
-
-"""
-
 ```

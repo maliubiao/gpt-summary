@@ -129,7 +129,7 @@ Initially, I might have focused too much on the trivial nature of the code. The 
 
 总而言之，尽管 `value.c` 中的 `c_value` 函数本身非常简单，但它在 Frida 的测试框架中扮演着角色，并且可以作为理解 Frida 动态 instrumentation 原理的入门示例。通过分析这样一个简单的函数，我们可以更好地理解 Frida 如何与目标进程交互、hook 函数以及修改程序行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/rust/2 sharedlib/value.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,12 +137,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int c_value(void) {
     return 7;
 }
-
-"""
-
 ```

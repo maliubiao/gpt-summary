@@ -206,7 +206,7 @@ func pthread_attr_init(attr *pthreadattr) int32 {
 
 这段代码是 Go runtime 在 OpenBSD 操作系统上与底层线程机制交互的关键部分。它通过 `trampoline` 函数和 `libcCall` 安全地调用了 OpenBSD 提供的 pthread 函数，为 Go 语言的 goroutine 并发模型提供了基础。 理解这段代码的功能和潜在的错误点，有助于我们更好地理解 Go 语言的底层实现以及进行跨平台开发时需要注意的事项。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/sys_openbsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -214,8 +214,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -291,9 +293,4 @@ func pthread_create_trampoline()
 
 //go:cgo_import_dynamic _ _ "libpthread.so"
 //go:cgo_import_dynamic _ _ "libc.so"
-
-"""
-
-
-
 ```

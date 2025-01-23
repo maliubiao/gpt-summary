@@ -126,7 +126,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言运行时针对 ARM 架构的特定测试，涵盖了整数除法和取模的性能测试，以及针对特定常数除法的优化实现 (`runtime.Usplit`) 的测试，并验证了在大偏移量下浮点数读写的正确性，以确保在 ARM 架构上 Go 程序的稳定运行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/vlop_arm_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -134,8 +134,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -264,9 +266,4 @@ func TestArmFloatBigOffsetRead(t *testing.T) {
 		t.Errorf("bad value %f\n", x)
 	}
 }
-
-"""
-
-
-
 ```

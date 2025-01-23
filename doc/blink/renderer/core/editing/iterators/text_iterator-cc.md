@@ -162,7 +162,7 @@ Essentially, I started with a high-level understanding, drilled down into the co
 
 总而言之，`blink/renderer/core/editing/iterators/text_iterator.cc` 文件的主要功能是提供一个灵活且可配置的 DOM 树文本内容迭代器。它在 Blink 渲染引擎中扮演着核心角色，为诸如文本选择、复制粘贴、查找等功能提供了基础的文本提取能力。它需要深入理解 HTML 结构和 CSS 渲染规则，并能够处理各种复杂的 DOM 场景，包括 Shadow DOM 和表单控件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/iterators/text_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012 Apple Inc. All
  * rights reserved.
@@ -1008,7 +1010,4 @@ void TextIteratorAlgorithm<Strategy>::HandleNonTextNode() {
 }
 
 templ
-"""
-
-
 ```

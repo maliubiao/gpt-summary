@@ -227,15 +227,17 @@ func updateSum(t testing.TB, e *script.Engine, s *script.State, archive *txtar.A
 
 总而言之，`script_test.go` 是 `cmd/go` 工具自身进行集成测试的关键部分，它通过执行预定义的脚本来验证 `go` 命令的各种功能是否按预期工作，涵盖了模块管理、构建、运行、版本控制集成等多个方面。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/script_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -660,9 +662,4 @@ const disabledOnPlatform = false ||
 	runtime.GOOS == "js" || // #60971
 	runtime.GOOS == "wasip1" || // #60971
 	runtime.GOOS == "plan9" // https://github.com/golang/go/issues/57540#issuecomment-1470766639
-
-"""
-
-
-
 ```

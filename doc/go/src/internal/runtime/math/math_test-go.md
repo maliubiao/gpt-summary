@@ -153,7 +153,7 @@ func main() {
 
 在这个例子中，错误的做法直接使用了返回的乘积，而没有检查 `overflow`。这会导致在实际发生溢出时，程序会得到一个不正确的结果且没有报错。正确的做法是始终检查 `overflow` 标志，以便在发生溢出时进行适当的处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/math/math_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -161,8 +161,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -242,9 +244,4 @@ func BenchmarkMulUintptr(b *testing.B) {
 		}
 	})
 }
-
-"""
-
-
-
 ```

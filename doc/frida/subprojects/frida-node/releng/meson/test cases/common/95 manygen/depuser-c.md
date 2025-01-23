@@ -173,7 +173,7 @@ Finally, I organize the thoughts into a coherent answer, using clear headings an
 
 总而言之，`depuser.c` 是 Frida 项目中一个用于测试依赖项处理的简单但重要的测试用例，它涵盖了静态链接、动态链接等基本概念，对于理解构建系统和逆向工程中的依赖关系分析都很有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/95 manygen/depuser.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"gen_func.h"
 
 int main(void) {
@@ -191,7 +193,4 @@ int main(void) {
     unsigned int k = (unsigned int) gen_func_in_src();
     return (int)(i + j + k);
 }
-
-"""
-
 ```

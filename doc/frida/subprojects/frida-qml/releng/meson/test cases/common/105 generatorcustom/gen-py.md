@@ -145,7 +145,7 @@ const char api_key[] = "api_key";
 
 总之，`gen.py` 是一个用于自动化生成 C 代码片段的辅助脚本，它简化了在 Frida 测试用例中嵌入常量字符串的过程。尽管脚本本身很简单，但它在 Frida 的开发和测试流程中扮演着重要的角色，并且与逆向分析工具的整体目标间接相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/105 generatorcustom/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -168,7 +170,4 @@ with open(ifile) as f:
 templ = 'const char %s[] = "%s";\n'
 with open(ofile, 'w') as f:
     f.write(templ % (resname, resname))
-
-"""
-
 ```

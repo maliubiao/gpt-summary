@@ -187,15 +187,17 @@ I would organize the information logically, starting with the overall purpose, t
 
 总而言之，`gdb-remote-util.h` 是 V8 中用于支持 WebAssembly 调试的关键组件，它提供了一组底层的实用工具来处理 GDB 远程协议通信中的数据转换和地址表示。 虽然 JavaScript 开发者不会直接使用这些 C++ 函数，但理解它们的功能有助于理解 V8 如何实现 WebAssembly 的调试功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/gdb-remote-util.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/wasm/gdb-server/gdb-remote-util.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ class wasm_addr_t {
 }  // namespace v8
 
 #endif  // V8_DEBUG_WASM_GDB_SERVER_GDB_REMOTE_UTIL_H_
-
-"""
-
 ```

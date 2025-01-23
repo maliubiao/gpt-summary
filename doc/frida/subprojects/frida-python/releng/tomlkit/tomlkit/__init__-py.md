@@ -279,7 +279,7 @@ city = "London"
 
 总之，`__init__.py` 文件作为 `tomlkit` 包的入口点，是用户调试使用 `tomlkit` 过程中可能接触到的第一个文件，它可以帮助用户了解包提供的基本功能和 API。当出现与 TOML 解析或生成相关的错误时，traceback 信息很可能会指向这个文件，从而引导用户进行进一步的调查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/tomlkit/tomlkit/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -287,8 +287,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit.api import TOMLDocument
 from tomlkit.api import aot
 from tomlkit.api import array
@@ -348,7 +350,4 @@ __all__ = [
     "register_encoder",
     "unregister_encoder",
 ]
-
-"""
-
 ```

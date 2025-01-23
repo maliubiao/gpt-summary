@@ -167,15 +167,17 @@ FAIL    cgotlstest [build failed]
 
 总而言之， `go/src/cmd/cgo/internal/testtls/tls_test.go` 这个文件虽然代码量很少，但其目的是为了确保 `cgo` 能够正确地与 Go 的 TLS 功能协同工作，这对于需要 Go 代码与 C 代码进行安全通信的场景至关重要。  它属于 Go 编译工具链中 `cgo` 功能的内部测试部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/internal/testtls/tls_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -187,9 +189,4 @@ import "testing"
 func TestTLS(t *testing.T) {
 	testTLS(t)
 }
-
-"""
-
-
-
 ```

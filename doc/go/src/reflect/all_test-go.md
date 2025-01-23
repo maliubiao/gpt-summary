@@ -127,7 +127,7 @@ func main() {
 
 这段 `go/src/reflect/all_test.go` 的代码片段的主要功能是 **测试 Go 语言 `reflect` 包中关于类型信息获取、值信息获取与修改、以及类型比较等核心功能的正确性。** 它通过定义一系列的测试用例，覆盖了各种 Go 语言类型的反射场景，确保 `reflect` 包的各项功能能够按照预期工作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/all_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -136,8 +136,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1465,9 +1467,4 @@ func TestAlignment(t *testing.T) {
 
 	x := T1{T1inner{2}, 17}
 	check2ndField(x, uintptr(unsafe.Pointer(&x.f))-uintptr(uns
-"""
-
-
-
-
 ```

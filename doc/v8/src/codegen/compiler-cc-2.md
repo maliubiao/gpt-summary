@@ -94,7 +94,7 @@ buggyFunction(); // 这行代码会导致 ReferenceError
 
 这部分 `compiler.cc` 代码的核心功能是实现 V8 引擎的 **后台编译和合并机制**。它允许 V8 在后台线程异步地编译 JavaScript 代码，并将编译结果高效地整合到主线程，从而提高应用程序的启动速度和响应性。 `BackgroundCompileTask` 负责后台的解析和初步编译，而 `BackgroundMergeTask` 负责将后台编译的结果与主线程的缓存信息合并，并更新必要的指针和引用，以保证代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -102,8 +102,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 -most function.
   if (!IterativelyExecuteAndFinalizeUnoptimizedCompilationJobs(
           isolate, script, parse_info, isolate->allocator(), is_compiled_scope,
@@ -906,8 +908,4 @@ void BackgroundMergeTask::BeginMergeInBackground(
         // not it or the new sfi have bytecode -- this is necessary to keep the
         // old sfi reference in the old script list alive, so that pointers to
         // the new sfi are redirected to the old sfi.
-     
-"""
-
-
 ```

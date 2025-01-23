@@ -108,7 +108,7 @@ console.log(regex.test("cherry")); // 输出: false (不匹配 "a" 或 "b")
 
 总的来说，`v8/src/regexp/regexp-compiler.cc` 负责将高级的正则表达式模式转化为可以在 V8 引擎中高效执行的低级指令，从而支持 JavaScript 中强大的字符串处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -116,9 +116,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
- eat
+### 源代码
+```cpp
+eat
   // any character one at a time.  Any non-anchored regexp has such a
   // loop prepended to it in order to find where it starts.  We look for
   // a pattern of the form ...abc... where we can look 6 characters ahead
@@ -893,8 +895,4 @@ void RegExpCompiler::ToNodeCheckForStackOverflow() {
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

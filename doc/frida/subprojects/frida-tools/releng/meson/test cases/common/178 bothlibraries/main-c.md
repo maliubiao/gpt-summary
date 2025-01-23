@@ -152,7 +152,7 @@ By following this thought process, I can generate a comprehensive and accurate a
 
 总而言之，这个 `main.c` 文件是一个用于测试 Frida 动态 instrumentation 能力的简单但重要的组成部分，特别关注于动态链接库中函数和变量的导入和验证。理解它的功能可以帮助理解 Frida 如何在运行时与目标程序进行交互，这对于逆向工程和安全分析等领域至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/178 bothlibraries/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "mylib.h"
 
 DO_IMPORT int func(void);
@@ -170,7 +172,4 @@ DO_IMPORT int retval;
 int main(void) {
     return func() == retval ? 0 : 1;
 }
-
-"""
-
 ```

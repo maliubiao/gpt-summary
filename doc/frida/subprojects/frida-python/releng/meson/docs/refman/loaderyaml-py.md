@@ -228,7 +228,7 @@ Function(
 
 总而言之，`loaderyaml.py` 在 Frida 项目中扮演着关键的角色，它负责将结构化的 API 文档从 YAML 格式转换为 Python 对象，为后续的文档生成和使用提供了基础。虽然它本身不直接参与逆向操作，但它所处理的文档是逆向工程师使用 Frida 进行分析的重要参考资料。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/docs/refman/loaderyaml.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -236,8 +236,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -542,7 +544,4 @@ class LoaderYAML(LoaderBase):
                 mlog.warning('YAML reference manual loaded using the best-effort fastyaml loader.  Results are not guaranteed to be stable or correct.')
 
             return manual
-
-"""
-
 ```

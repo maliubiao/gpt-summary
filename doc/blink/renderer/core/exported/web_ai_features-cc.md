@@ -124,15 +124,17 @@ Finally, the key is to organize the information logically and address each part 
 
 总而言之，`web_ai_features.cc` 虽然本身不直接操作 DOM 或处理样式，但它是 Blink 暴露 AI 功能给 Web 开发者的关键桥梁。它通过 Feature Flag 机制，控制着 JavaScript 中相关 API 的可用性，从而间接地影响了 Web 页面的行为和用户体验。开发者理解这个文件的作用，有助于他们正确地使用和调试与 AI 相关的 Web 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_ai_features.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -178,7 +180,4 @@ bool WebAIFeatures::IsRewriterAPIEnabled(v8::Local<v8::Context> v8_context) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

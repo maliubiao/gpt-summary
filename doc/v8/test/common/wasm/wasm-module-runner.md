@@ -67,9 +67,12 @@ This systematic approach ensures that I cover all the important aspects of the c
 
 这个文件是 V8 Wasm 测试基础设施的关键组成部分，它抽象了底层的 Wasm 操作，使得测试代码更加简洁和易于编写。它主要用于单元测试和集成测试，以确保 V8 对 Wasm 的实现是正确和健壮的。
 
-Prompt: ```这是目录为v8/test/common/wasm/wasm-module-runner.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/common/wasm/wasm-module-runner.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -230,6 +233,4 @@ int32_t CallWasmFunctionForTesting(Isolate* isolate,
 void SetupIsolateForWasmModule(Isolate* isolate) { WasmJs::Install(isolate); }
 
 }  // namespace v8::internal::wasm::testing
-
-"""
 ```

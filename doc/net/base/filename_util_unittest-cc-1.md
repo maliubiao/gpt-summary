@@ -157,7 +157,7 @@ fetch('http://www.example.com/%E5%B2%A1%E3%80%80%E5%B2%A1.txt')
 
 这部分测试用例更加细致地覆盖了各种边缘情况和平台特定的行为，旨在提高文件名生成逻辑的可靠性和兼容性，从而为用户提供更好的下载体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/filename_util_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /image.aspx?id=blargh", "", "", "",
      "application/x-chrome-extension", L"download", L"image.crx"},
     {__LINE__, "http://www.example.com/image.aspx?id=blargh", "", "", " .foo",
@@ -226,8 +228,4 @@ TEST(FilenameUtilTest, IsReservedNameOnWindows) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

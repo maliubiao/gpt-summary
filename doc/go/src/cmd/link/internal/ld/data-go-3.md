@@ -170,7 +170,7 @@ ctxt.xdefine("runtime.erodata", sym.SRODATA, int64(rodata.Vaddr+rodata.Length))
 
 总而言之，这段代码是 Go 链接器中负责核心数据布局和符号定义的关键部分，它确保了 Go 程序在不同平台和架构上能够正确地加载和运行。它处理了底层的内存布局、符号管理以及平台特定的细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/data.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -179,8 +179,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 if ctxt.HeadType != objabi.Haix || ctxt.LinkMode != LinkExternal {
 			// Addresses are already set on AIX with external linker
 			// because these symbols are part of their sections.
@@ -402,10 +404,4 @@ func compressSyms(ctxt *Link, syms []loader.Sym) []byte {
 	}
 	return buf.Bytes()
 }
-
-"""
-
-
-
-
 ```

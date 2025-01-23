@@ -137,15 +137,17 @@ By following these steps, I can systematically analyze the code and generate a c
 
 因此，`disk_cache_test_util.cc` 虽然不直接与用户交互，但它是确保浏览器磁盘缓存功能稳定性和可靠性的重要组成部分，最终会影响到用户的浏览体验。开发人员会使用它来模拟各种缓存操作场景，验证缓存功能的正确性，并在出现问题时作为调试的辅助工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/disk_cache_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -350,7 +352,4 @@ void CallbackTest::RunWithEntry(disk_cache::EntryResult result) {
   last_entry_result_ = std::move(result);
   Run(last_entry_result_.net_error());
 }
-
-"""
-
 ```

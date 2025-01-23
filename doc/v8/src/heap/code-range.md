@@ -109,11 +109,13 @@ console.log("Hello, world!"); // console.log 是一个内置函数
 
 `code-range.cc` 是 V8 引擎中负责管理可执行代码内存的关键组件。它通过提供分配、释放、属性设置和地址提示等功能，确保 V8 能够高效且安全地执行 JavaScript 代码。虽然 JavaScript 开发者无法直接操作它，但它的存在和优化直接影响着 JavaScript 代码的运行速度和性能。 内置函数作为 JavaScript 语言的基础组成部分，也依赖于 `code-range.cc` 提供的内存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/code-range.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -602,7 +604,4 @@ uint8_t* CodeRange::RemapEmbeddedBuiltins(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

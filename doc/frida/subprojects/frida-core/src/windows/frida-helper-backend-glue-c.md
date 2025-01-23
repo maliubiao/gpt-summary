@@ -201,7 +201,7 @@ A user typically doesn't interact with this C code directly. Instead, they use F
 
 `frida-helper-backend-glue.c` is a fundamental piece of Frida's Windows implementation, responsible for the core task of injecting code into target processes. It leverages low-level Windows APIs, demonstrates concepts relevant to reverse engineering, and incorporates error handling for common issues. Users indirectly trigger this code through Frida's higher-level interfaces when they want to instrument a Windows application.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/windows/frida-helper-backend-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -209,8 +209,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-helper-backend.h"
 
 #include <gio/gio.h>
@@ -818,7 +820,4 @@ frida_file_exists_and_is_readable (const WCHAR * filename)
 
   return TRUE;
 }
-
-"""
-
 ```

@@ -158,7 +158,7 @@ Frida 的工作原理涉及到对目标进程的内存操作和代码注入，�
 
 总而言之，`frida/subprojects/frida-gum/tests/gumjs/script.c` 的第 7 部分代码主要集中测试了 Frida GumJS 脚本中**定时器**和**拦截器**这两大核心功能。它覆盖了定时器的创建、取消、立即执行和延迟执行，以及拦截器的参数和返回值读写、寄存器访问、系统错误码处理、调用上下文信息获取、监听器的管理和函数的替换等关键特性。这些测试用例旨在验证 Frida 提供的 JavaScript API 的正确性和健壮性，确保开发者能够可靠地使用这些功能进行动态 instrumentation 和逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/gumjs/script.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 MESSAGES ();
 
   g_usleep (25000);
@@ -1458,7 +1460,4 @@ TESTCASE (function_can_be_replaced_and_call_original_fast_performance)
   duration_default = g_timer_elapsed (timer, NULL);
 
   gu
-"""
-
-
 ```

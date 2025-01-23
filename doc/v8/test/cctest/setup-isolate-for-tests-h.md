@@ -108,15 +108,17 @@ console.log("数组的长度是:", myArray.length);
 
 `v8/test/cctest/setup-isolate-for-tests.h` 是 V8 单元测试框架的关键组成部分，它提供了一种可定制的方式来设置 V8 隔离，以便进行各种测试。虽然它不是 Torque 源代码，但它与 JavaScript 功能密切相关，因为它负责设置执行 JavaScript 代码的环境。理解其功能可以帮助开发者更好地理解 V8 的初始化过程，并避免在嵌入 V8 时可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/setup-isolate-for-tests.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/setup-isolate-for-tests.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -141,7 +143,4 @@ class SetupIsolateDelegateForTests : public SetupIsolateDelegate {
 }  // namespace v8
 
 #endif  // V8_TEST_CCTEST_SETUP_ISOLATE_FOR_TESTS_H_
-
-"""
-
 ```

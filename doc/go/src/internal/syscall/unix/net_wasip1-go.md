@@ -191,7 +191,7 @@ func main() {
 
 `go/src/internal/syscall/unix/net_wasip1.go` 这部分代码为 Go 语言在 `wasip1` 环境下提供了网络编程接口的定义，但目前这些接口的实现是占位符，所有函数都返回 `syscall.ENOSYS`，表明底层功能尚未实现。  开发者在 `wasip1` 环境中进行网络编程时需要注意这一点，并寻找其他可用的替代方案（如果存在），或者等待 WASI 环境提供相应的网络支持。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/net_wasip1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -245,9 +247,4 @@ func RecvmsgInet4(fd int, p, oob []byte, flags int, from *syscall.SockaddrInet4)
 func RecvmsgInet6(fd int, p, oob []byte, flags int, from *syscall.SockaddrInet6) (n, oobn int, recvflags int, err error) {
 	return 0, 0, 0, syscall.ENOSYS
 }
-
-"""
-
-
-
 ```

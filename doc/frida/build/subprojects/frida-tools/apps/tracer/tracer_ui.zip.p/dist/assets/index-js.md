@@ -90,7 +90,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 该源代码文件实现了与 Radare2 的交互功能，主要用于二进制文件的动态分析和调试。通过内存页管理、架构适配和异步处理，代码能够高效地执行 Radare2 命令并返回结果。用户在使用时需要注意正确加载二进制文件，并处理可能的内存读取失败情况。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/build/subprojects/frida-tools/apps/tracer/tracer_ui.zip.p/dist/assets/index.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```javascript
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -232,7 +234,4 @@ function archFromFrida(arch) {
             return arch;
     }
 }
-
-"""
-
 ```

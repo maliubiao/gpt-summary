@@ -96,12 +96,14 @@ console.log(key_count); // 这会受到 C++ 中定义的 UnboxedDoubleIndexedPro
 
 总之，这个代码片段是 V8 引擎测试框架的一部分，用于确保索引属性拦截器功能按照预期工作，允许 C++ 代码深度定制 JavaScript 对象的行为，特别是在处理数字索引属性时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-interceptors.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 DoubleWithIndexedAccessor) {
   v8::Isolate* isolate = CcTest::isolate();
   v8::HandleScope scope(isolate);
@@ -1923,7 +1925,4 @@ THREADED_TEST(GetOwnPropertyNamesWithIndexedInterceptorExceptions_regress4026) {
 
   obj_template->Set(isolate, "7", v8::Integer::New(isolate, 7));
   obj_template->
-"""
-
-
 ```

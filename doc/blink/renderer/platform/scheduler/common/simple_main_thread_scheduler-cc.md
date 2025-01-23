@@ -182,14 +182,16 @@ console.log("结束");
 
 总而言之，`SimpleMainThreadScheduler` 是一个非常基础的主线程调度器实现，它提供了最基本的功能，并将许多更高级的调度责任委托给了 Chromium 的其他组件或直接忽略。理解它的局限性对于避免在 Blink 渲染引擎开发中犯错至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/simple_main_thread_scheduler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -298,7 +300,4 @@ void SimpleMainThreadScheduler::StartIdlePeriodForTesting() {}
 void SimpleMainThreadScheduler::SetRendererBackgroundedForTesting(bool) {}
 
 }  // namespace blink::scheduler
-
-"""
-
 ```

@@ -155,14 +155,16 @@ By following this thought process, we can systematically analyze the code and ge
 
 `DrawingRecorder` 是 Blink 渲染引擎中一个关键的组件，它负责管理图形绘制操作的记录和与显示项的关联。理解它的工作原理对于理解 Blink 的渲染流程至关重要。正确使用 `DrawingRecorder`，特别是注意其使用前提和作用域，可以避免一些常见的渲染错误并提高渲染性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/drawing_recorder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ DrawingRecorder::~DrawingRecorder() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

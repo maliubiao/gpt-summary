@@ -129,7 +129,7 @@ Process.on('moduleload', function (module) {
 
 总而言之，虽然 `liba_func` 本身非常简单，但它的存在以及它在 Frida 项目中的位置，可以帮助我们理解软件构建、链接、测试以及动态库加载等重要的概念，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/32 pkgconfig use libraries/lib/liba.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,11 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void liba_func() {
 }
-
-"""
-
 ```

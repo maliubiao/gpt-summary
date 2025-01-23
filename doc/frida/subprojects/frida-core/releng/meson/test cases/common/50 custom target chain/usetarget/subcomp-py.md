@@ -170,7 +170,7 @@ By following this thought process, combining the script's code with the contextu
 
 总而言之，虽然 `subcomp.py` 本身功能简单，但它作为 Frida 构建过程中的一个环节，其成功执行对于确保整个构建流程的正确性至关重要。它可以作为构建系统中的一个检查点，验证构建环境和自定义目标链的配置是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/50 custom target chain/usetarget/subcomp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -187,7 +189,4 @@ import sys
 with open(sys.argv[1], 'rb') as ifile:
     with open(sys.argv[2], 'w') as ofile:
         ofile.write('Everything ok.\n')
-
-"""
-
 ```

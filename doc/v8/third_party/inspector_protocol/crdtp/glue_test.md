@@ -169,11 +169,13 @@ if (response.result.internalProperties) {
 
 `glue_test.cc` 测试的 `detail::PtrMaybe` 类型是 V8 引擎在处理 CRDP 消息时用于表示可选值的工具。 它方便了 C++ 代码对来自 DevTools 的请求或发送给 DevTools 的响应中可选字段的处理。 这种机制最终影响了 JavaScript 在 DevTools 中与 V8 引擎交互的方式，因为它决定了哪些数据可以被 JavaScript 代码访问和操作。  `PtrMaybe` 确保了 C++ 代码能够健壮地处理协议中定义的可选部分，并间接地影响了 JavaScript 开发者在使用 DevTools API 时所能获得的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/glue_test.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ TEST(PtrMaybeTest, SmokeTest) {
 }
 }  // namespace glue
 }  // namespace v8_crdtp
-
-"""
-
 ```

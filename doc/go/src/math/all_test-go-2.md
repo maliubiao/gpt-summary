@@ -179,7 +179,7 @@ func BenchmarkSinExample(b *testing.B) {
 
 它通过单元测试验证函数的行为是否符合预期，并通过性能基准测试评估函数的执行效率。 这对于保证 Go 语言标准库的质量和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/all_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -188,8 +188,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 %g, want %g", E, f, Log10E)
 	}
 	for i := 0; i < len(vflogSC); i++ {
@@ -1337,10 +1339,4 @@ func BenchmarkFMA(b *testing.B) {
 	}
 	GlobalF = x
 }
-
-"""
-
-
-
-
 ```

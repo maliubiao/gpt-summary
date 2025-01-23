@@ -210,15 +210,17 @@ counter 锁被持有
 
 总而言之，`blink/renderer/modules/locks/lock_manager.cc` 是 Blink 引擎中 Web Locks API 的核心实现，负责协调 JavaScript 的锁请求，与浏览器进程通信，并管理锁的生命周期。理解这个文件的工作原理对于调试和理解 Web Locks API 的行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/locks/lock_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -818,7 +820,4 @@ void LockManager::DidCheckStorageAccessAllowed(
 }
 
 }  // namespace blink
-
-"""
-
 ```

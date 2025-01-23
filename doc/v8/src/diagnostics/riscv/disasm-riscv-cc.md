@@ -66,7 +66,7 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 `v8/src/diagnostics/riscv/disasm-riscv.cc` 的第1部分定义了一个 RISC-V 指令反汇编器的基础框架。它提供了将机器码指令转换为可读汇编代码的核心功能，并支持自定义的符号名称转换。这个工具对于理解 V8 引擎在 RISC-V 架构上的代码生成和执行过程至关重要，并能辅助开发者进行调试和性能分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/riscv/disasm-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/riscv/disasm-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -74,8 +74,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1147,7 +1149,4 @@ void Decoder::DecodeRAType(Instruction* instr) {
   // TODO(riscv): Add macro for RISCV A extension
   // Special handling for A extension instructions because it uses func5
   // For all A extension instruction, V8 simulator is pure sequenti
-"""
-
-
 ```

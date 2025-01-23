@@ -190,7 +190,7 @@ By following these steps, we can systematically analyze the code snippet within 
 
 `a.c` 文件本身是一个非常简单的 C 代码，但它在 Frida 的测试环境中扮演着一个目标程序的角色。它的主要功能是提供可以被 Frida 动态插桩的点，用于测试 Frida 的各种功能，例如 hook 函数、替换函数实现等。通过分析这个文件及其上下文，我们可以了解 Frida 如何与目标程序进行交互，以及在逆向工程中可能应用的技术。  为了更深入地理解其具体功能，我们需要查看 `all.h` 以及其他定义了 `f()` 和 `g()` 函数的源文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/214 source set custom target/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,8 +198,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 int main(void)
@@ -207,7 +209,4 @@ int main(void)
     f();
     g();
 }
-
-"""
-
 ```

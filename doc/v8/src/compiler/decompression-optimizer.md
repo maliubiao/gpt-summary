@@ -97,11 +97,13 @@ V8 的 `decompression-optimizer` 可能会观察到 `compareObjects` 函数中�
 
 `v8/src/compiler/decompression-optimizer.cc` 文件中的代码负责 V8 引擎中一个重要的性能优化，它通过识别和处理“可能被压缩”的值，特别是指针，来减少不必要的解压缩操作。虽然 JavaScript 开发者不能直接操作这个优化器，但他们编写的代码风格和使用的语言特性会影响这个优化器是否能够有效地工作，从而最终影响 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/decompression-optimizer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -510,7 +512,4 @@ void DecompressionOptimizer::Reduce() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

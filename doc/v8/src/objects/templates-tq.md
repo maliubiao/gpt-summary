@@ -197,15 +197,17 @@ if (NeedsAccessCheck(functionTemplateInfo)) {
 
 `v8/src/objects/templates.tq` 定义了 V8 中模板的核心数据结构，这些模板是连接 C++ 代码和 JavaScript 环境的关键桥梁。 理解这个文件中的定义有助于深入理解 V8 如何管理和使用模板，以及如何正确地使用 V8 提供的 C++ API 来扩展 JavaScript 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/templates.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/templates.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -320,7 +322,4 @@ extern class DictionaryTemplateInfo extends HeapObject {
   property_names: FixedArray;
   serial_number: Smi;
 }
-
-"""
-
 ```

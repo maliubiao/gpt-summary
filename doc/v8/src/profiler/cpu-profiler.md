@@ -131,11 +131,13 @@ console.profileEnd('My Profile');
 
 `v8/src/profiler/cpu-profiler.cc` 是 V8 引擎中负责 CPU 性能分析的核心 C++ 代码。它通过周期性采样、事件处理、符号化等技术，收集 JavaScript 代码执行过程中的 CPU 使用情况，并最终生成可供开发者分析的性能报告。JavaScript 开发者可以通过 `console.profile()` 和 `console.profileEnd()` 等 API 与这个底层的 C++ 实现进行交互，从而进行性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/cpu-profiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -843,7 +845,4 @@ void CpuProfiler::StopProcessor() {
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

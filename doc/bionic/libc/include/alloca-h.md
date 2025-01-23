@@ -300,7 +300,7 @@ if (Process.platform === 'android') {
 
 `bionic/libc/include/alloca.handroid` 定义了用于在栈上分配内存的 `alloca` 宏。虽然 `alloca` 提供了一种快速分配临时内存的方式，但由于缺乏错误处理且容易导致栈溢出，新代码通常不推荐使用。理解 `alloca` 的工作原理和潜在风险对于开发安全的 Android native 代码至关重要。通过 Frida 等工具，我们可以动态地监控 `alloca` 的使用情况，从而更好地理解和调试 Android 系统的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/alloca.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -311,8 +311,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -359,7 +361,4 @@ Prompt:
  * @return a pointer to the space on success, but has undefined behavior on failure.
  */
 #define alloca(size)   __builtin_alloca(size)
-
-"""
-
 ```

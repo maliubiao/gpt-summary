@@ -136,15 +136,17 @@ var my_list = CreateList(10); // 我们希望类型推断能知道 T 是 int
 
 `v8/src/torque/type-inference.cc` 是 V8 引擎中负责 Torque 语言类型参数推断的关键组件。它确保了用 Torque 编写的底层代码的类型安全，并通过自动推断类型参数简化了 Torque 代码的编写。这最终有助于 V8 引擎的性能和稳定性，并间接影响 JavaScript 的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/type-inference.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/type-inference.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ void TypeArgumentInference::MatchGeneric(BasicTypeExpression* parameter,
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

@@ -159,15 +159,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`blink/renderer/core/svg/svg_fe_func_r_element.cc` 文件是 Blink 渲染引擎处理 SVG 滤镜效果中红色通道变换的关键组成部分。它与 HTML、JavaScript 和 CSS 紧密相关，共同实现了网页上丰富的视觉效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_fe_func_r_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -195,7 +197,4 @@ namespace blink {
 SVGFEFuncRElement::SVGFEFuncRElement(Document& document)
     : SVGComponentTransferFunctionElement(svg_names::kFEFuncRTag, document) {}
 }
-
-"""
-
 ```

@@ -172,7 +172,7 @@ By following these steps, a comprehensive analysis like the example provided can
 
 通过以上步骤，用户的操作最终会触发 `itracer.py` 的执行，并利用 Frida 的功能实现指令级别的动态跟踪。`itracer.py` 在这个过程中扮演着配置跟踪策略、启动跟踪、接收和处理跟踪数据的关键角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/frida_tools/itracer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import json
 import os
 import struct
@@ -660,7 +662,4 @@ if __name__ == "__main__":
         main()
     except KeyboardInterrupt:
         pass
-
-"""
-
 ```

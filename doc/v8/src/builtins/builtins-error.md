@@ -117,11 +117,13 @@ console.log(typeError.toString()); // 输出: TypeError: Invalid type
 
 `builtins-error.cc` 文件是 V8 引擎中实现 JavaScript `Error` 对象核心功能的关键部分。它负责 `Error` 对象的创建、堆栈信息的捕获以及生成其字符串表示。 这些内置函数的 C++ 实现直接支撑着 JavaScript 中 `Error` 对象的行为和功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-error.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ BUILTIN(ErrorPrototypeToString) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

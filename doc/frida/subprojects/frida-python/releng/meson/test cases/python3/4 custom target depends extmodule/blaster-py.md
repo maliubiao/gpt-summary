@@ -111,7 +111,7 @@ Here's a breakdown of the thinking process to analyze the `blaster.py` script:
 
 `blaster.py` 是一个简单的 Python 脚本，用于测试 Frida 与外部 native module 的集成。它通过加载一个假定的 native module `tachyon` 并调用其函数来验证基本的交互能力。这个脚本在 Frida 的开发和测试过程中扮演着重要的角色，帮助确保 Frida 能够正确地处理外部依赖，并且为开发者提供了一个如何与 native 代码交互的示例。 了解这个脚本的功能可以帮助我们更好地理解 Frida 的内部机制，以及如何在 Frida 中使用和测试 native 扩展。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/python3/4 custom target depends extmodule/blaster.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -156,7 +158,4 @@ if not isinstance(result, int):
 if result != 1:
     print(f'Returned result {result} is not 1.')
     sys.exit(1)
-
-"""
-
 ```

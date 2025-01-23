@@ -146,11 +146,13 @@ By following this structured approach, I could effectively analyze the C++ code 
 
 总而言之，`trace-buffer.cc` 实现了 V8 引擎中追踪功能的底层基础设施，它负责高效地管理和存储追踪事件，这些事件最终被用于性能分析和调试 JavaScript 代码。虽然 JavaScript 开发者不能直接操作这个 C++ 类，但他们的日常开发工作，尤其是性能优化工作，会间接地依赖于这个组件提供的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/tracing/trace-buffer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -258,7 +260,4 @@ TraceBuffer* TraceBuffer::CreateTraceBufferRingBuffer(
 }  // namespace tracing
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

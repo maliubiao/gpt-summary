@@ -142,14 +142,16 @@ This systematic approach, starting with high-level understanding and progressive
 
 总而言之，`web_url_response.cc` 文件定义的 `WebURLResponse` 类是 Blink 渲染引擎中一个非常关键的组件，它承载着从网络层传递过来的响应信息，并为上层模块（包括 JavaScript 环境）提供了访问这些信息的接口。理解其功能对于理解浏览器如何处理网页资源至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_url_response.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -890,7 +892,4 @@ bool WebURLResponse::ShouldUseSourceHashForJSCodeCache() const {
 WebURLResponse::WebURLResponse(ResourceResponse& r) : resource_response_(&r) {}
 
 }  // namespace blink
-
-"""
-
 ```

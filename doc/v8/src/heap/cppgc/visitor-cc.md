@@ -126,15 +126,17 @@ obj1 = null; // obj1 不再直接被引用
 
 `v8/src/heap/cppgc/visitor.cc` 定义了用于遍历和访问 cppgc 管理的堆中对象的访问器。`ConservativeTracingVisitor` 实现了保守的垃圾回收标记策略，这对于处理不确定类型的指针和确保垃圾回收的完整性至关重要。虽然直接与 JavaScript 用户代码交互较少，但它是 V8 引擎实现自动内存管理的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/visitor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/visitor.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -284,7 +286,4 @@ void ConservativeTracingVisitor::VisitFullyConstructedConservatively(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

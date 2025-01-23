@@ -171,7 +171,7 @@ By following this detailed thinking process, considering the context, and addres
 
 虽然 `lib.c` 本身的功能很简单，但在 Frida 的测试框架中，它扮演着重要的角色，用于验证 Frida 在处理 Native 代码、子项目和特定构建配置下的能力。理解其功能和背后的原理有助于理解 Frida 的工作机制，并为逆向工程实践提供基础。当测试出现问题时，开发者会沿着测试执行的路径，逐步深入到测试用例的源代码中，寻找问题的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/native/10 native subproject/subprojects/recursive-both/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,12 +179,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "recursive-both.h"
 
 int rcb(void) { return 7; }
-
-"""
-
 ```

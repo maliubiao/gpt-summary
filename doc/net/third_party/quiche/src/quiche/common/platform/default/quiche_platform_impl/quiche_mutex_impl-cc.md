@@ -148,15 +148,17 @@ Here's a breakdown of the thinking process to generate the detailed analysis of 
 
 总而言之，`quiche_mutex_impl.cc` 虽然是底层的 C++ 代码，但它对于保证 Chromium 网络栈（包括 QUIC 协议）的稳定性和性能至关重要，最终也会影响到用户通过 JavaScript 操作浏览器时的网络体验。  调试网络问题时，理解这些底层的同步机制是很有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/platform/default/quiche_platform_impl/quiche_mutex_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche_platform_impl/quiche_mutex_impl.h"
 
 namespace quiche {
@@ -172,7 +174,4 @@ void QuicheLockImpl::ReaderUnlock() { mu_.ReaderUnlock(); }
 void QuicheLockImpl::AssertReaderHeld() const { mu_.AssertReaderHeld(); }
 
 }  // namespace quiche
-
-"""
-
 ```

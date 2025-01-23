@@ -162,15 +162,17 @@ void write_out_of_bounds(int index, int value) {
 
 总而言之，`v8/src/debug/wasm/gdb-server/target.h` 定义的 `Target` 类是 V8 中用于调试 WebAssembly 代码的关键组件，它充当了 GDB 调试器和 V8 WebAssembly 引擎之间的通信桥梁和控制中心。它处理 GDB 命令，管理调试状态，并在 Wasm 代码执行过程中出现断点或异常时通知调试器。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/target.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/wasm/gdb-server/target.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -313,7 +315,4 @@ class Target {
 }  // namespace v8
 
 #endif  // V8_DEBUG_WASM_GDB_SERVER_TARGET_H_
-
-"""
-
 ```

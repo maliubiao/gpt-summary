@@ -219,7 +219,7 @@ case interpreter::TestTypeOfFlags::LiteralFlag::kUndefined:
 
 `v8/src/baseline/baseline-compiler.cc` 的第三部分代码展示了 Baseline 编译器如何将各种 JavaScript 字节码指令转换为底层的机器码操作，涵盖了类型处理、字面量创建、作用域管理、控制流、对象操作、异常处理等多个方面。它的目标是在保证一定性能的前提下，快速地启动 JavaScript 代码的执行。尽管 Baseline 编译器生成的代码不如优化编译器高效，但它是 V8 引擎中不可或缺的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/baseline-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/baseline/baseline-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -227,8 +227,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ap_bit_field, kInterpreterAccumulatorRegister);
       __ LoadWord8Field(map_bit_field, map_bit_field, Map::kBitFieldOffset);
       __ TestAndBranch(map_bit_field, Map::Bits1::IsCallableBit::kMask, kZero,
@@ -925,8 +927,4 @@ SaveAccumulatorScope::~SaveAccumulatorScope() {
 }  // namespace baseline
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

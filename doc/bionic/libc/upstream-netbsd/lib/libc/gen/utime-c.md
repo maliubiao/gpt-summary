@@ -393,7 +393,7 @@ sys.stdin.read()
 
 这些 Frida 脚本可以帮助你观察 Android Framework 或 NDK 如何最终调用到 `libc.so` 中的 `utime` 函数，从而更好地理解整个调用链。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/lib/libc/gen/utime.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -404,8 +404,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: utime.c,v 1.14 2012/06/25 22:32:44 abs Exp $	*/
 
 /*-
@@ -471,7 +473,4 @@ utime(const char *path, const struct utimbuf *times)
 	}
 	return (utimes(path, tvp));
 }
-
-"""
-
 ```

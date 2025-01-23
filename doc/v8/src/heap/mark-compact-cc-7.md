@@ -165,7 +165,7 @@ arr = null;
 
 作为 Mark-Compact 垃圾回收算法的最后阶段，`v8/src/heap/mark-compact.cc` 中提供的代码片段主要负责 **清除（Sweep）** 阶段。它遍历堆中的各个内存空间（新生代、老生代、大型对象空间等），识别并释放那些在标记阶段被确定为不再可达的对象的内存。这个阶段是回收废弃内存，为后续的对象分配腾出空间的关键步骤，确保了 JavaScript 程序的内存高效运行。它与标记阶段配合完成整个 Mark-Compact 垃圾回收过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/mark-compact.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/mark-compact.cc以.tq结尾，那它是个v8 torque源代码，
@@ -173,9 +173,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
- PagedSpace* space = static_cast<PagedSpace*>(p->owner());
+### 源代码
+```cpp
+PagedSpace* space = static_cast<PagedSpace*>(p->owner());
     p->SetLiveBytes(0);
     CHECK(p->SweepingDone());
     space->ReleasePage(p);
@@ -431,8 +433,4 @@ void RootMarkingVisitor::VisitRunningCode(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

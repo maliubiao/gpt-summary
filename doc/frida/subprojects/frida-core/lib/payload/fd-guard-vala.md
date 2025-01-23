@@ -112,7 +112,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 如果用户发现某些文件描述符未被正确关闭，可以通过调试器（如 LLDB）查看 `close` 调用的上下文，检查 `FileDescriptorGuard` 的拦截逻辑是否正确执行。
 
 通过以上步骤，用户可以逐步追踪到 `FileDescriptorGuard` 模块的执行路径，并排查相关问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/payload/fd-guard.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 #if WINDOWS
 	public class FileDescriptorGuard : Object {
@@ -206,7 +208,4 @@ namespace Frida {
 	}
 #endif
 }
-
-"""
-
 ```

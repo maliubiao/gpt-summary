@@ -134,7 +134,7 @@ By following these steps, combining code understanding with knowledge of Frida a
 
 因此，这个 `app.c` 文件是 Frida 工具链中用于测试特定功能（例如 Vala 绑定）的一个简单示例，它可以作为理解 Frida 如何与底层 C 代码交互的一个起点。通过分析这个简单的例子，开发者可以验证 Frida 的基本 hook 功能是否正常工作，并为更复杂的逆向任务打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/vala/17 plain consumer/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "badger.h"
 
 int main(int argc, char *argv[]) {
@@ -155,7 +157,4 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
-
-"""
-
 ```

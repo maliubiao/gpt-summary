@@ -117,7 +117,7 @@ websocket.onopen = () => {
 
 **调试线索:** 如果开发者发现通过 WebSocket 发送的数据在网络上是压缩的，或者遇到了与压缩相关的问题（例如，接收端无法正确解压），那么他们可能会查看 `net/websockets/websocket_deflate_stream.cc` 相关的代码，设置断点，来分析压缩过程是否正确，压缩后的数据是否符合预期，以及帧头的标志位是否设置正确。  这些测试用例本身就提供了各种场景的验证，可以帮助开发者理解和排查问题。 例如，如果怀疑是异步写入导致的问题，可能会关注 `WriteFrameAsync` 这个测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_deflate_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 etFrameHeader::kOpCodeText,
            kFinal | kReserved1,
            std::string(
@@ -599,8 +601,4 @@ TEST_F(WebSocketDeflateStreamWithClientWindowBitsTest, WindowBits10) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

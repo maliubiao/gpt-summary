@@ -97,14 +97,16 @@ Here's a plan:
 
 总而言之，`blink/renderer/core/inspector/main_thread_debugger.cc` 是 Blink 引擎中至关重要的调试组件，它连接了 JavaScript 执行环境和开发者工具，为 Web 开发提供了强大的调试能力。它与 JavaScript 的执行、HTML DOM 的操作以及 CSS 样式的应用都有着密切的关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/main_thread_debugger.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2011 Google Inc. All rights reserved.
  *
@@ -677,7 +679,4 @@ void MainThreadDebugger::XpathSelectorCallback(
 }
 
 }  // namespace blink
-
-"""
-
 ```

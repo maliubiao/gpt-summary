@@ -255,7 +255,7 @@ if (mallocPtr) {
 
 `malloc_common_dynamic.cpp` 虽然代码量不大，但它在 Android 的内存管理体系中扮演着至关重要的角色。它通过动态加载机制，实现了内存分配器的灵活切换和扩展，为调试、性能分析以及自定义内存管理提供了基础。理解这个文件的工作原理，有助于深入了解 Android Native 内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/malloc_common_dynamic.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,8 +266,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 The Android Open Source Project
  * All rights reserved.
@@ -777,7 +779,4 @@ extern "C" void free_malloc_leak_info(uint8_t* info) {
 }
 // =============================================================================
 #endif
-
-"""
-
 ```

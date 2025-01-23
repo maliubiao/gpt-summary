@@ -144,15 +144,17 @@ console.log("WASM result:", wasm_result);
 
 总而言之，`v8/src/compiler/turboshaft/wasm-in-js-inlining-phase.cc` 定义了 V8 编译器中一个重要的优化阶段，它通过将 WASM 代码内联到 JavaScript 代码中来提高性能，特别是在 JavaScript 代码频繁调用 WASM 函数的场景下。理解其原理有助于开发者编写更高效的 JavaScript 和 WASM 互操作代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-in-js-inlining-phase.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/wasm-in-js-inlining-phase.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ void WasmInJSInliningPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

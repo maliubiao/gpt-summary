@@ -206,15 +206,17 @@ By following this structured approach, I can systematically analyze the code and
 
 总而言之，`go/src/cmd/internal/script/scripttest/run.go` 提供了一个强大的框架，用于系统地测试 Go 工具链的行为，通过脚本化的方式定义测试用例，并允许替换工具链中的组件进行更细粒度的测试。理解其核心功能和使用方式，可以帮助 Go 语言开发者更有效地进行工具链的测试和验证。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/script/scripttest/run.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -487,9 +489,4 @@ func scriptCC(cmdExec script.Cmd, ccexe string) script.Cmd {
 			return cmdExec.Run(s, append([]string{ccexe}, args...)...)
 		})
 }
-
-"""
-
-
-
 ```

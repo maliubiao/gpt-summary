@@ -152,15 +152,17 @@ Throughout this process, I made assumptions based on common patterns in C++ and 
 
 总而言之，`quic_connection_context.cc` 提供了一个重要的基础设施，用于在 Chromium 的 QUIC 实现中管理和隔离不同 QUIC 连接的上下文信息，这对于确保并发性和正确性至关重要。虽然它不直接与 JavaScript 交互，但它支持了 JavaScript 发起的网络请求的底层处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_context.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ QuicConnectionContextSwitcher::~QuicConnectionContextSwitcher() {
 }
 
 }  // namespace quic
-
-"""
-
 ```

@@ -183,7 +183,7 @@ func main() {
 
 这最后一部分的测试代码主要关注 `crypto/sha512` 包的 **资源效率**（通过内存分配测试）、**正确性**（通过与其他实现的兼容性测试）以及 **性能**（通过基准测试）。它确保了该包不仅能够正确地计算哈希值，还具有良好的性能，并且可以与其他系统的 SHA-512 实现无缝集成。 这些测试是保证 Go 语言标准库中密码学组件质量的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/sha512/sha512_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -192,8 +192,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 e is proportional to its mole fraction.  Lewis-Randall Rule",
 		"sha\aj\t\xe6g\xf3\xbc\xc9\b\xbbg\xae\x85\x84ʧ;<n\xf3r\xfe\x94\xf8+\xa5O\xf5:_\x1d6\xf1Q\x0eR\u007f\xad\xe6\x82ћ\x05h\x8c+>l\x1f\x1f\x83٫\xfbA\xbdk[\xe0\xcd\x19\x13~!yThe fugacity of a constituent in a mixture of gases at a given tem\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00B",
 	},
@@ -553,10 +555,4 @@ func BenchmarkHash1K(b *testing.B) {
 func BenchmarkHash8K(b *testing.B) {
 	benchmarkSize(b, 8192)
 }
-
-"""
-
-
-
-
 ```

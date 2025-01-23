@@ -101,7 +101,7 @@ By following this detailed process, combining code analysis with contextual know
 
 总而言之，`helpers.py` 提供了一系列用于处理和格式化 Meson 构建系统中各种数据的实用工具函数，这些函数在 Frida 的构建过程中发挥着重要的作用，尤其是在处理用户配置和生成构建命令时。虽然这些函数本身不直接进行逆向操作或与底层内核交互，但它们处理的数据和构建过程直接支持了 Frida 最终的逆向能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreterbase/helpers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -178,7 +180,4 @@ def stringifyUserArguments(args: TYPE_var, subproject: SubProject, quote: bool =
         FeatureNew.single_use('User option in string format', '1.3.0', subproject)
         return stringifyUserArguments(args.printable_value(), subproject)
     raise InvalidArguments('Value other than strings, integers, bools, options, dictionaries and lists thereof.')
-
-"""
-
 ```

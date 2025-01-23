@@ -174,12 +174,14 @@ Here are some examples illustrating the relationship:
 
 In summary, this part of `v8/src/wasm/c-api.cc` provides the low-level C interface that allows external applications and libraries to interact with the V8 WebAssembly engine, mirroring the functionalities available through the standard JavaScript WebAssembly API. This is crucial for embedding V8 and running WebAssembly in non-browser environments or for creating native extensions that interact with WebAssembly.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/c-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ef(*result)) {
         result = i::WasmInternalFunction::GetOrCreateExternal(i::handle(
             i::Cast<i::WasmFuncRef>(*result)->internal(store->i_isolate()),
@@ -1625,8 +1627,4 @@ wasm_instance_t* wasm_frame_instance(const wasm_frame_t* frame) {
 #undef WASM_DEFINE_SHARABLE_REF
 
 }  // extern "C"
-
-"""
-
-
 ```

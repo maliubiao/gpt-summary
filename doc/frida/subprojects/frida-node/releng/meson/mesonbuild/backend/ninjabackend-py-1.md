@@ -164,7 +164,7 @@ self.introspection_data['my_library'] = {
 
 这个代码片段的核心功能是 **为 Ninja 构建系统记录和管理编译目标的源文件和编译器信息**。它通过 `create_target_source_introspection` 函数将这些信息存储在 `self.introspection_data` 字典中，以便在后续的构建和分析过程中使用。`create_target_linker_introspection` 负责记录链接器信息。 `generate_target` 是一个更高级别的函数，它调用了这些内省函数，并负责生成整个目标的 Ninja 构建规则。这些信息对于理解构建过程、进行静态分析和调试都非常有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,9 +173,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
-      Adds the source file introspection information for a language of a target
+### 源代码
+```python
+Adds the source file introspection information for a language of a target
 
         Internal introspection storage format:
         self.introspection_data = {
@@ -851,8 +853,4 @@ Prompt:
                 ofilename = os.path.join(self.get_target_private_dir(target), ofilebase)
                 elem = NinjaBuildElement(self.all_outputs, ofilename, "CUSTOM_COMMAND", rel_sourcefile)
                 elem.add_item('COMMAND', ['resgen', rel_sourcefile, ofilename])
-       
-"""
-
-
 ```

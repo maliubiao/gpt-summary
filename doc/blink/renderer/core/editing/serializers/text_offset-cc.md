@@ -158,15 +158,17 @@ By following this structured thinking process, including analyzing the code, mak
 
 `TextOffset` 是 Blink 引擎中一个基础且重要的类，用于精确表示 `Text` 节点内的字符位置。它在处理用户输入、文本选择、光标移动以及 JavaScript 操作 DOM 文本内容时发挥着关键作用。了解 `TextOffset` 的功能有助于理解 Blink 引擎如何管理和操作网页中的文本信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/serializers/text_offset.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ bool TextOffset::IsNotNull() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

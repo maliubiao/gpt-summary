@@ -146,11 +146,13 @@ console.log(toHexBytes(0xFFFFFFFF, 4));    // 输出 "ff ff ff ff" (小端)
 
 `ostreams-unittest.cc` 文件测试了 V8 引擎内部用于方便格式化输出的工具类，特别是针对十六进制格式化以及字节序处理。虽然 JavaScript 没有完全相同的类，但可以通过其内置的方法和 API (如 `toString(16)`, `ArrayBuffer`, `DataView`) 来实现类似的功能，尤其是在处理二进制数据时，字节序的概念与 `AsHexBytes` 的测试密切相关。这些底层的 C++ 工具类为 V8 引擎提供了更精细的控制，用于调试、日志记录和内部数据表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/ostreams-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ TEST(Ostream, AsHexBytes) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

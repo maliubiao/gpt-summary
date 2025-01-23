@@ -162,7 +162,7 @@ The user wants a functional summary of the provided Python code, specifically fo
 
 总而言之，`ninjabackend.py` 的这一部分是 Frida 构建系统中至关重要的一部分，它负责将高级的构建描述转换为底层的构建指令，使得 Ninja 能够高效地完成软件的编译和链接过程。 理解它的功能有助于深入理解 Frida 的构建过程，并为逆向工程和问题排查提供有价值的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,9 +171,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                     target.build_rpath,
+### 源代码
+```python
+target.build_rpath,
                                        target.install_rpath))
             # ... but then add rustc's sysroot to account for rustup
             # installations
@@ -837,8 +839,5 @@ https://gcc.gnu.org/bugzilla/show_bug.cgi?id=47485'''))
         #
         # PDB files also lead to filename collisions. A target foo.exe
         # has a corresponding foo.pdb. A shared library foo.dll _also_
-        # has pdb 
-"""
-
-
+        # has pdb
 ```

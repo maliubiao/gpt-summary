@@ -214,7 +214,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/linux/virtio_config.handroid` 这个头文件定义了用户空间程序与 Linux 内核中 VirtIO 设备驱动程序进行通信时使用的常量，对于理解 Android 系统中的虚拟化机制至关重要。 虽然它本身不包含 libc 函数的实现或直接涉及 dynamic linker 的操作，但它提供的定义被其他系统组件广泛使用，包括 libc 函数和用户空间的 VirtIO 驱动程序（可能是共享库）。 通过 Frida 等工具，我们可以 Hook 相关的系统调用来观察这些常量的使用情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/virtio_config.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -225,8 +225,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -260,7 +262,4 @@ Prompt:
 #define VIRTIO_F_RING_RESET 40
 #define VIRTIO_F_ADMIN_VQ 41
 #endif
-
-"""
-
 ```

@@ -205,7 +205,7 @@ Here's a breakdown of how to analyze the code:
 
 这段代码主要测试了 V8 C++ API 中关于属性拦截、函数调用处理器、对象类型判断以及对象信息获取等方面的功能，并初步展示了 V8 的多线程测试框架的用法。这些测试用例旨在确保 V8 API 的行为符合预期，并且在多线程环境下能够正确运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -213,9 +213,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第15部分，共36部分，请归纳一下它的功能
+```
 
-"""
- .FromJust());
+### 源代码
+```cpp
+.FromJust());
   return v8::Intercepted::kYes;
 }
 
@@ -1065,7 +1067,4 @@ void ApiTestFuzzer::SetUp(PartOfTest part) {
 
 void ApiTestFuzzer::RunAllTests() {
   // This method is called when running each THREADING
-"""
-
-
 ```

@@ -165,14 +165,16 @@ This file is a core part of how CSS masking is implemented in the browser. Here'
 
 In summary, `style_mask_source_image.cc` is a crucial component in Blink's rendering engine responsible for managing and representing the sources used for CSS masking, bridging the gap between CSS declarations and the actual image or SVG resources used for masking. Understanding its role is essential for comprehending how masking works in web browsers.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/style_mask_source_image.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -346,7 +348,4 @@ void StyleMaskSourceImage::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

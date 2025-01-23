@@ -184,7 +184,7 @@ EXPECT_EQ("HTTP/1.1 200 reason phrase asdf", headers4.first_line());
 
 作为第 4 部分，这个测试文件深入测试了 `BalsaHeaders` 类中关于 **HTTP 头部字段的各种操作**，包括设置、获取、添加、删除和修改，以及对 `Content-Length` 和 `Transfer-Encoding` 等重要头部字段的特殊处理。它验证了 `BalsaHeaders` 类在处理 HTTP 头部信息时的正确性和鲁棒性，确保了网络栈能够正确地解析和构建 HTTP 消息。 这部分测试用例覆盖了更细致的头部操作逻辑，为 `BalsaHeaders` 类的可靠性提供了保证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/balsa/balsa_headers_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -192,10 +192,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-
-  // "GET /foo HTTP/1.0"     // 17
+### 源代码
+```cpp
+// "GET /foo HTTP/1.0"     // 17
   // "XXXXXXXXXXXXXX"        // 14
   // "key 2: value\n 2\r\n"  // 17
   // "key\n 3: value3\r\n"   // 16
@@ -985,7 +986,4 @@ TEST(BalsaHeaders, WriteToBufferWithProperCasedHeaderKey) {
   headers.WriteHeaderAndEndingToBuffer(
       &simple_buffer, BalsaHeaders::CaseOption::kPropercase,
       BalsaHeaders::CoalesceOp
-"""
-
-
 ```

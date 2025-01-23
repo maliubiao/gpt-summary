@@ -362,7 +362,7 @@ Interceptor.attach(Module.findExportByName(null, "mmap"), {
 
 通过 Frida hook，你可以深入了解 Android 系统和应用是如何使用 `sys/mman.h` 中定义的内存管理函数的，从而帮助你调试问题、理解系统行为或进行安全分析。请记住，在生产环境中使用 Frida 修改函数行为需要谨慎，因为它可能会导致应用崩溃或不可预测的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/sys_mman_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -373,8 +373,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -467,7 +469,4 @@ static void sys_mman_h() {
   FUNCTION(shm_unlink, int (*f)(const char*));
 #endif
 }
-
-"""
-
 ```

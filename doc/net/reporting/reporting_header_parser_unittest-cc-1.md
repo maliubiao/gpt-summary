@@ -133,7 +133,7 @@ Report-To: {"group":"errors","max_age":86400,"endpoints":[{"url":"https://exampl
 
 这部分代码主要测试了 `ReportingHeaderParser` 在解析各种复杂的 `Report-To` 头部时的行为，包括处理不同来源、不同命名、以及包含冗余或重复 endpoint 的情况。它验证了解析器能够正确地更新和覆盖已有的 reporting 配置，并确保了 reporting 配置的隔离性和正确性。  这对于确保浏览器能够按照服务器的指示进行有效的错误和事件报告至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_header_parser_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s.emplace_back(CommandType::ADD_REPORTING_ENDPOINT_GROUP,
                                    kGroupKey11_);
     expected_commands.emplace_back(CommandType::ADD_REPORTING_ENDPOINT_GROUP,
@@ -785,7 +787,4 @@ TEST_P(ReportingHeaderParserTest, ZeroMaxAgeRemovesEndpointGroup) {
   // Set a header with two endpoint groups.
   std::vector<ReportingEndpoint::EndpointInfo> endpoints1 = {{kEndpoint1_}};
   std::vector<ReportingEndpoint::EndpointInf
-"""
-
-
 ```

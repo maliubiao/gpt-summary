@@ -110,7 +110,7 @@ Bytes result = builder.build();
 5. **在调试过程中**，用户可能会使用 LLDB 设置断点，查看内存中的数据布局，或单步执行以验证数据是否正确编码或解码。
 
 通过以上步骤，用户可以逐步构建和解析 OPACK 数据，并在调试过程中验证其正确性。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/opack.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class OpackBuilder {
@@ -366,7 +368,4 @@ namespace Frida.Fruity {
 		}
 	}
 }
-
-"""
-
 ```

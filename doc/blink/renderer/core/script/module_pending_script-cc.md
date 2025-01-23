@@ -145,15 +145,17 @@ This systematic approach, combining code analysis with knowledge of web technolo
 
 总而言之，`module_pending_script.cc` 中的类是 Blink 引擎中处理 JavaScript 模块加载的关键组件，负责跟踪模块的状态并协调其依赖的加载，确保模块在被 JavaScript 代码使用之前已完全加载和准备就绪。它们与 HTML 的 `<script type="module">` 标签紧密相关，并直接影响 JavaScript 模块的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/script/module_pending_script.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ Script* ModulePendingScript::GetSource() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

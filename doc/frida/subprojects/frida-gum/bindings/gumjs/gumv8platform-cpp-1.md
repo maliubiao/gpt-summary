@@ -110,7 +110,7 @@ Essentially, it acts as a bridge between the V8 JavaScript engine and the underl
 
 总而言之，`gumv8platform.cpp` 是 Frida 连接 V8 JavaScript 引擎和底层操作系统的重要桥梁，它提供了执行动态 instrumentation 所需的关键平台功能。 用户通过编写 Frida 脚本，间接地触发了此文件中代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8platform.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 AnchorTo (isolate);
   }
 }
@@ -644,8 +646,4 @@ gum_page_protection_from_v8 (PageAllocator::Permission permission)
       return GUM_PAGE_NO_ACCESS;
   }
 }
-
-"""
-
-
 ```

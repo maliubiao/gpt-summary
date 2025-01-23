@@ -149,15 +149,17 @@ This systematic approach, combining code analysis with an understanding of the u
 
 `css_attr_value_tainting_test.cc` 是 Blink 引擎中用于测试 CSS `attr()` 函数值污点标记机制的关键单元测试文件。它确保了从 HTML 属性获取并在 CSS 中使用的值能够被正确地标记和处理，这对于 Web 安全至关重要。开发者可以通过查看这些测试用例来理解 Blink 引擎在处理 `attr()` 函数时的内部逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_attr_value_tainting_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ TEST_F(CSSAttrValueTaintingTest, Equality) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

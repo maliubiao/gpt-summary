@@ -135,7 +135,7 @@ Stalker.follow({
 
 总而言之，`gumquickstalker.c` (第 1 部分) 的主要功能是 **为 Frida 的 JavaScript API 提供访问底层 Stalker 功能的接口**。它允许用户通过 JavaScript 代码来控制程序执行的追踪，设置回调函数来处理追踪到的事件，以及配置 Stalker 的各种参数。它构建了 JavaScript 世界和 Frida 底层执行追踪引擎之间的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickstalker.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020-2023 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -1323,7 +1325,4 @@ gum_quick_special_iterator_new (GumQuickStalker * parent,
 
   writer = &iter->writer;
   _gum_quick_special_writer_init (writer, ctx,
-"""
-
-
 ```

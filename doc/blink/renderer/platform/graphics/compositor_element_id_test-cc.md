@@ -136,14 +136,16 @@ By following this systematic approach, combining code analysis with domain knowl
 
 总之，`compositor_element_id_test.cc` 这个文件通过各种测试用例，确保了 `CompositorElementId` 类能够正确地编码、解码和管理合成器中各种元素的唯一标识，这对于 Blink 引擎的稳定性和正确性至关重要。虽然普通用户不会直接接触到它，但它在浏览器渲染引擎的幕后发挥着关键作用，连接了 DOM 树和最终的屏幕绘制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositor_element_id_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ TEST_F(CompositorElementIdTest, EncodeDecodeDOMNodeId) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

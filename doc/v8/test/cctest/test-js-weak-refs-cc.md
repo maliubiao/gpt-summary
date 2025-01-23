@@ -163,7 +163,7 @@ target = null;
 
 `v8/test/cctest/test-js-weak-refs.cc` 的第 1 部分主要关注于 **`FinalizationRegistry` 的基本注册、取消注册以及内部数据结构的管理**。它测试了在不使用和使用取消注册令牌的情况下，注册对象时 `FinalizationRegistry` 内部 `active_cells` 链表和 `key_map` 的正确维护。此外，还测试了 `WeakCell` 对象在被标记为需要清理时，如何在 `active_cells` 和 `cleared_cells` 之间移动，以及如何通过 `PopClearedCellHoldings` 模拟清理过程。这些测试验证了 `FinalizationRegistry` 核心功能的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-js-weak-refs.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-js-weak-refs.cc以.tq结尾，那它是个v8 torque源代码，
@@ -171,8 +171,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1019,7 +1021,4 @@ TEST(TestRemoveUnregisterToken) {
       isolate->factory()->NewJSObject(isolate->object_function());
 
   Hand
-"""
-
-
 ```

@@ -155,15 +155,17 @@ By following these steps, one can systematically analyze the C++ test file and u
 
 总而言之，`password_credential_test.cc` 这个文件是 Chromium 浏览器 Blink 渲染引擎中用于测试密码凭据处理逻辑的关键部分，它直接关系到 Credential Management API 的正确实现和使用，并与 JavaScript、HTML 等前端技术紧密相连。理解这个文件的功能有助于理解浏览器如何处理用户凭据以及如何进行相关的开发和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/credentialmanagement/password_credential_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -314,7 +316,4 @@ TEST_F(PasswordCredentialTest, CreateFromFormElementWithoutName) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

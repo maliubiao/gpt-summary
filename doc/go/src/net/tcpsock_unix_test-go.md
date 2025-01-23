@@ -186,7 +186,7 @@ func main() {
 
 这两个测试用例都深入探讨了TCP连接建立过程中的一些细节和潜在的并发问题。  `TestTCPSpuriousConnSetupCompletion` 关注的是在高并发下避免将短暂的、实际上无效的连接误判为已建立。  `TestTCPSpuriousConnSetupCompletionWithCancel` 则关注使用 `context` 取消连接操作的正确性，确保取消操作不会对后续的连接尝试产生不良影响。  理解这些测试用例有助于开发者更好地理解Go网络库的内部工作原理，并避免在实际应用中犯类似的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/tcpsock_unix_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -308,9 +310,4 @@ func TestTCPSpuriousConnSetupCompletionWithCancel(t *testing.T) {
 	}
 	wg.Wait()
 }
-
-"""
-
-
-
 ```

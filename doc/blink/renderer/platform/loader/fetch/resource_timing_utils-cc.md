@@ -188,14 +188,16 @@ Let's break down the thought process to analyze the given C++ code.
 
 总而言之，`resource_timing_utils.cc` 是 Blink 引擎中负责生成资源加载 timing 数据的关键模块，它直接影响了 Web 开发者通过 Performance API 能够获取到的信息，因此理解其工作原理有助于诊断和优化网页性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_timing_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -317,7 +319,4 @@ mojom::blink::ResourceTimingInfoPtr CreateResourceTimingInfo(
 }
 
 }  // namespace blink
-
-"""
-
 ```

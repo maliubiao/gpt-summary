@@ -178,15 +178,17 @@ Web SQL Database API 是一个可以通过 JavaScript 代码在浏览器中使�
 
 总而言之，`dom_window_web_database_test.cc` 文件是 Blink 引擎中用于确保 Web SQL API 在不同场景下行为正确的关键测试文件，它直接关联了开发者在 JavaScript 中使用 `window.openDatabase()` 的行为，并验证了浏览器的安全策略是否得到了正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/dom_window_web_database_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ TEST(DOMWindowWebDatabaseTest, WebSQLFirstPartyContext) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

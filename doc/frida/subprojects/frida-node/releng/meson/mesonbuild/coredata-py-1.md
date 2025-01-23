@@ -675,7 +675,7 @@ class BuiltinOption(T.Generic[_T, _U]):
 # Update `docs/markdown/Builtin-options.md` after changing the options below
 # Also update mesonlib._BUILTIN_NAMES. See the comment there for why this is required.
 # Please also update completion scripts in $MESONSRC/
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -684,8 +684,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 values
         for key, opt in BUILTIN_OPTIONS.items():
             self.add_builtin_option(self.options, key.evolve(subproject=subproject), opt)
@@ -1389,7 +1391,4 @@ BUILTIN_CORE_OPTIONS: T.Dict['OptionKey', 'BuiltinOption'] = OrderedDict([
     (OptionKey('layout'),          BuiltinOption(UserComboOption, 'Build directory layout', 'mirror', choices=['mirror', 'flat'])),
     (OptionKey('optimization'),    BuiltinOption(UserComboOption, 'Optimization level', '0', choices=['plain', '0', 'g', '1', '2', '3', 's'])),
     (OptionKey('prefer_static'),   BuiltinO
-"""
-
-
 ```

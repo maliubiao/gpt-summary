@@ -162,7 +162,7 @@ Initially, one might be tempted to say the `.c` file *does nothing* because it o
 
 这个 `foo.c` 文件本身功能非常简单，主要是包含了一个头文件 `foo.h`。它的存在是 Frida 构建和测试过程的一部分。真正的功能和与逆向方法、底层知识的关联都取决于 `foo.h` 文件的内容。开发者通常会在调试 Frida 测试用例或理解其构建过程时接触到这类文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/257 generated header dep/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,10 +170,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "foo.h"
-
-"""
-
 ```

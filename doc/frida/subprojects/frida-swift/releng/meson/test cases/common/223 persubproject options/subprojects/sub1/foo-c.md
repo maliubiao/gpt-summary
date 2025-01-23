@@ -112,7 +112,7 @@ Finally, the answer needs to be structured clearly and concisely, using headings
 
 总而言之，这个 `foo.c` 文件虽然代码简单，但其目的是验证 Frida 构建系统的关键特性，确保子项目的编译选项能够被正确处理，这对于保证 Frida 功能的正确性和稳定性至关重要。  它体现了软件开发中测试驱动开发 (TDD) 的思想，通过编写测试用例来验证软件的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/223 persubproject options/subprojects/sub1/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo(void);
 
 int foo(void) {
@@ -130,7 +132,4 @@ int foo(void) {
   int x;
   return 0;
 }
-
-"""
-
 ```

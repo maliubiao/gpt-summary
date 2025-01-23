@@ -126,14 +126,16 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 `FakeResourceLoadInfoNotifier` 是一个测试工具，用于模拟资源加载完成的通知，并捕获相关的加载信息。它在 Chromium 渲染引擎的测试中扮演着重要的角色，帮助开发者验证引擎在处理不同类型资源加载场景下的行为，并能帮助揭示与资源加载相关的常见错误，例如错误的 MIME 类型、加载失败以及 CORS 问题。虽然它本身不直接操作 JavaScript, HTML 或 CSS，但它模拟的加载信息直接影响着这些前端技术在浏览器中的执行和渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/testing/fake_resource_load_info_notifier.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ std::string FakeResourceLoadInfoNotifier::GetMimeType() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

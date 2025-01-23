@@ -182,15 +182,17 @@ Initially, I might have just said "handles mouse events." But then I'd look clos
 
 总而言之，`event_handling_util.cc` 是 Blink 引擎中处理用户输入事件的核心工具库，它连接了底层的事件捕获和高层的 JavaScript 事件处理，确保用户交互能够正确地被网页响应。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/input/event_handling_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -403,7 +405,4 @@ void PointerEventTarget::Trace(Visitor* visitor) const {
 
 }  // namespace event_handling_util
 }  // namespace blink
-
-"""
-
 ```

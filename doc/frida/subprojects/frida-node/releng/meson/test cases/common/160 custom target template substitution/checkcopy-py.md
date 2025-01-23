@@ -121,7 +121,7 @@ By following these steps, combining direct analysis with contextual understandin
 
 总而言之，`checkcopy.py` 是 Frida 构建系统的一个小而关键的组成部分，用于验证构建过程中的模板替换功能是否正常工作，确保最终构建出的 Frida 组件的正确性。它与逆向方法的联系在于，它是保证 Frida 工具链可靠性的基石之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/160 custom target template substitution/checkcopy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -140,7 +142,4 @@ if '@INPUT1@' in sys.argv[1]:
     shutil.copyfile(sys.argv[2], sys.argv[3])
 else:
     sys.exit('String @INPUT1@ not found in "{}"'.format(sys.argv[1]))
-
-"""
-
 ```

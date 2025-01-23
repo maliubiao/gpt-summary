@@ -187,7 +187,7 @@ python custom_stlib.py --private-dir=C:\temp\my_private_dir -o my_custom.lib "C:
 
 总而言之，`custom_stlib.py` 是 Frida 测试框架中的一个辅助脚本，用于生成自定义的静态库，以便测试 Frida 在处理静态链接代码时的功能。 理解其功能和运行方式有助于理解 Frida 的测试流程，并为相关的逆向分析和底层技术学习提供实践案例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/208 link custom/custom_stlib.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import shutil, sys, subprocess, argparse, pathlib
@@ -278,7 +280,4 @@ def generate_lib(outfile, private_dir, compiler_array):
 if __name__ == '__main__':
     options = parser.parse_args()
     sys.exit(generate_lib(options.o, options.private_dir, options.cmparr))
-
-"""
-
 ```

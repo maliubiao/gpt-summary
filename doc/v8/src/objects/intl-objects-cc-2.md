@@ -217,7 +217,7 @@ console.log(Intl.supportedValuesOf('calendar'));
 
 作为 `v8/src/objects/intl-objects.cc` 文件的第 3 部分，这段代码的核心功能是 **处理和验证 `Intl.NumberFormat` 构造函数接收的数字格式化选项，并确定最终的格式化属性。** 此外，它还涉及一些底层的 locale 协商和匹配机制，为后续的格式化操作做准备。 这部分代码是 V8 引擎实现 JavaScript 国际化 API 中数字格式化功能的重要组成部分，确保了数字能够按照用户指定的或默认的国际化规则进行格式化。它还提供了查询和验证 V8 支持的各种国际化值的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/intl-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/intl-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -225,9 +225,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
- true.
+### 源代码
+```cpp
+true.
   bool need_fd = true;
   // 23. If roundingPriority is "auto", then
   if (RoundingPriority::kAuto == digit_options.rounding_priority) {
@@ -1077,7 +1079,4 @@ std::string LookupMatcher(Isolate* isolate,
 
 // This function doesn't correspond exactly with the spec. Instead
 // we use I
-"""
-
-
 ```

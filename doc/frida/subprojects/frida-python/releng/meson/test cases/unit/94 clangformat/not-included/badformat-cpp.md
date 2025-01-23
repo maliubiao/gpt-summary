@@ -104,7 +104,7 @@ Initially, I might have focused too much on the empty class itself. However, rec
 
 `badformat.cpp` 文件本身是一个非常简单的 C++ 文件，但它在 Frida 项目的构建和代码质量保证中扮演着重要的角色。它通过作为一个故意格式错误的反例，帮助验证 clang-format 工具的配置是否正确，确保 Frida 项目的代码风格一致性。虽然它不直接涉及逆向的具体操作或底层知识，但它间接地支持了 Frida 项目的开发和维护，而 Frida 本身是一个强大的逆向工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/94 clangformat/not-included/badformat.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,11 +112,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 class {
 };
-
-"""
-
 ```

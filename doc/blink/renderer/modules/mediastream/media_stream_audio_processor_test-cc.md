@@ -86,7 +86,7 @@ The user wants to understand the functionality of the `media_stream_audio_proces
 
 总而言之，该文件的主要功能是提供一个全面的测试套件，用于验证 Blink 引擎中 `MediaStreamAudioProcessor` 类的各种音频处理功能，确保其在各种场景下都能正确地处理音频数据，并与 WebRTC 等相关模块正确集成。它对于保证浏览器音频功能的质量和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_audio_processor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -94,8 +94,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -846,7 +848,4 @@ TEST(MediaStreamAudioProcessorWouldModifyAudioTest,
   DISABLED_TrueWhenSoftwareEchoCancellationIsEnabled
 #else
 #define MAYBE_TrueWhenSoftw
-"""
-
-
 ```

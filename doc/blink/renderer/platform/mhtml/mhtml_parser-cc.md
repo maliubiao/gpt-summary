@@ -163,14 +163,16 @@ iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHx
 
 总而言之，`mhtml_parser.cc` 在 Chromium Blink 引擎中扮演着重要的角色，负责将打包的 MHTML 文件转换为浏览器可以理解和使用的资源集合，从而实现离线浏览或网页存档的功能。它与 HTML、CSS 和 JavaScript 的关系在于它解析的正是包含这些内容的 MIME 部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mhtml/mhtml_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -660,7 +662,4 @@ KURL MHTMLParser::ConvertContentIDToURI(const String& content_id) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

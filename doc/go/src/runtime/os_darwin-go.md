@@ -245,7 +245,7 @@ func main() {
 
 总而言之，这段 `os_darwin.go` 代码是 Go 语言在 macOS 平台上的基石，它负责底层的线程管理、信号处理、系统信息获取等关键功能，为 Go 程序的运行提供了必要的支撑。 开发者通常不需要直接操作这些底层细节，但了解其功能可以帮助更好地理解 Go 运行时的行为和并发模型的实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_darwin.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -253,8 +253,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -734,9 +736,4 @@ const sigPerThreadSyscall = 1 << 31
 func runPerThreadSyscall() {
 	throw("runPerThreadSyscall only valid on linux")
 }
-
-"""
-
-
-
 ```

@@ -166,7 +166,7 @@ Here's a breakdown of the code and its functionalities:
 
 这段代码是 `net/http` 包中关于 `Request` 类型的功能测试集合。它通过各种测试用例，覆盖了 `Request` 对象在处理 URL 查询参数、请求体数据（URL 编码和 multipart）、HTTP 头部、Basic 认证、请求写入等方面的各种场景和边界情况，确保 `http.Request` 的行为符合预期，并且能够正确处理各种合法的和非法的输入。 这部分代码主要集中在对 HTTP 请求的解析和基本属性的处理上。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/request_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1338,9 +1340,4 @@ func newTestMultipartRequest(t *testing.T) *Request {
 	b := strings.NewReader(strings.ReplaceAll(message, "\n", "\r\n"))
 	req, err := NewRequest("POST", "/", b)
 	if err != nil {
-"""
-
-
-
-
 ```

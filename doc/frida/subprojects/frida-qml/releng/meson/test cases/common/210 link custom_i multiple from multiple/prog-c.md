@@ -144,7 +144,7 @@ if (ObjC.available) {
 
 `prog.c` 是一个非常基础的 C 程序，其主要作用是作为 Frida 动态 instrumentation 工具的测试目标。它简化了测试场景，专注于验证 Frida 在链接和符号处理方面的能力。通过分析这个简单的程序，可以更好地理解 Frida 在二进制底层操作、进程内存管理以及与操作系统框架交互方面的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/210 link custom_i multiple from multiple/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void flob_1(void);
 void flob_2(void);
 
@@ -162,7 +164,4 @@ int main(void) {
     flob_2();
     return 0;
 }
-
-"""
-
 ```

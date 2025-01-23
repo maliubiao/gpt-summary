@@ -146,7 +146,7 @@ Commands:
 
 总而言之，`regenerate_docs.py` 是 Frida 构建系统中用于生成 Meson 相关文档的工具。它通过调用 Meson 并解析其输出来工作，生成的文档对于理解和使用 Meson 构建的项目（包括 Frida 本身）至关重要，同时也间接地与逆向工程、二进制底层知识相关联。 理解这个脚本的功能和运行方式，可以帮助开发者和逆向工程师更好地理解 Frida 的构建过程和依赖关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/tools/regenerate_docs.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
@@ -327,7 +329,4 @@ if __name__ == '__main__':
 
     regenerate_docs(output_dir=args.output_dir,
                     dummy_output_file=args.dummy_output_file)
-
-"""
-
 ```

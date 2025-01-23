@@ -95,7 +95,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 尽管 `lib.c` 代码非常简洁，但它在 Frida 的测试体系中扮演着验证特定场景下编译行为的角色。  它与逆向方法相关，因为它确保了 Frida 在处理特定配置时不会出现致命错误，从而保证了 Frida 作为逆向工具的稳定性。它也涉及到了编译过程、操作系统层面的一些基本概念。对于开发者而言，理解这种测试用例的目的，有助于更好地理解 Frida 的内部机制和保证代码质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/265 default_options dict/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,10 +103,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #warning Make sure this is not fatal
-
-"""
-
 ```

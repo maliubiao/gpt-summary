@@ -144,7 +144,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 总而言之，`func3.c` 虽然功能简单，但在 Frida 的开发和测试流程中扮演着重要的角色，用于验证核心功能的正确性，尤其是在静态链接的场景下。用户一般不会直接编写或修改这个文件，但当涉及到 Frida 的内部调试或功能开发时，它可能会成为开发者关注的焦点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/66 static link/lib/func3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,13 +152,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func3()
 {
   return 1;
 }
-
-"""
-
 ```

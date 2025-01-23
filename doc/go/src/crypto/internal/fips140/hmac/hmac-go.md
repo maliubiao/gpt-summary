@@ -178,7 +178,7 @@ HMAC-SHA256 digest (alternative): 29f58d5f113e38b27b192791b0860c06974f2e19a90e38
 
 理解这些功能和潜在的错误可以帮助开发者正确地使用 Go 语言的 `crypto/internal/fips140/hmac` 包来实现安全的 HMAC 认证。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/hmac/hmac.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -186,8 +186,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -360,9 +362,4 @@ func New[H fips140.Hash](h func() H, key []byte) *HMAC {
 func MarkAsUsedInKDF(h *HMAC) {
 	h.forHKDF = true
 }
-
-"""
-
-
-
 ```

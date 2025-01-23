@@ -139,7 +139,7 @@ func main() {
 
 总的来说，这部分 `genssa` 函数的主要职责是将 SSA 中间表示的核心指令和控制流结构转换为目标架构的实际汇编代码。 它处理了各种 SSA 操作，包括类型断言、内存访问、算术运算等，并生成相应的机器指令。 同时，它还负责生成必要的调试信息，以便在调试时能够将生成的代码与源代码关联起来。 这是代码生成过程中的一个关键阶段。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssagen/ssa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -148,8 +148,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 sa.OpLoad, typs.Uintptr, cache, s.mem())
 				// Jump to loop head.
 				b := s.endBlock()
@@ -1174,10 +1176,4 @@ func genssa(f *ssa.Func, pp *objw.Progs) {
 				if v, ok := progToValue[p]; ok {
 					s = v.String()
 				} else if b, ok := progToBlock[p]; ok {
-
-"""
-
-
-
-
 ```

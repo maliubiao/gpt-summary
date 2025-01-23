@@ -87,11 +87,13 @@ websocket.onmessage = (event) => {
 
 总而言之， `dispatch_test.cc` 这个文件测试了 C++ 代码中负责接收、解析和分发 DevTools 协议消息的核心逻辑，这直接关系到 JavaScript 如何与 Chrome 浏览器进行交互以实现开发者工具的各种功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/dispatch_test.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -536,7 +538,4 @@ TEST(UberDispatcherTest, DispatchingToDomainWithRedirects) {
   EXPECT_THAT(bar->ExecutedCommands(), testing::ElementsAre(43));
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

@@ -149,15 +149,17 @@ Finally, I organized the information into the requested categories: functionalit
 
 简而言之，这个单元测试文件是 Chromium 开发者确保私钥处理功能正确性的重要工具。虽然普通用户不会直接与之交互，但其测试结果对于保证用户安全地进行网络通信至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ssl/openssl_private_key_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ INSTANTIATE_TEST_SUITE_P(All,
                          TestKeyToString);
 
 }  // namespace net
-
-"""
-
 ```

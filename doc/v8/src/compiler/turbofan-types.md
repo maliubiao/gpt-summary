@@ -140,11 +140,13 @@ let result = possiblyNull(10); // Turbofan might infer a union type (number | nu
 
 `v8/src/compiler/turbofan-types.cc` is a fundamental part of V8's optimizing compiler. It defines a sophisticated internal type system that allows Turbofan to reason about JavaScript values with greater precision than the language's dynamic typing suggests. This enables significant performance optimizations by generating more efficient machine code and reducing the need for runtime type checks. It acts as a bridge between the dynamic nature of JavaScript and the static requirements of efficient compilation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turbofan-types.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1443,7 +1445,4 @@ PROPER_ATOMIC_BITSET_TYPE_HIGH_LIST(VERIFY_TORQUE_HIGH_BITSET_AGREEMENT)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

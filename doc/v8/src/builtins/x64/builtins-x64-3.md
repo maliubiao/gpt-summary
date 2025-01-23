@@ -96,12 +96,14 @@ loop();
 
 总而言之，这个文件中的代码是 V8 引擎的核心组成部分，负责管理 JavaScript 函数的执行方式，并且通过动态地切换解释器和基线代码来优化 JavaScript 代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/x64/builtins-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // interpreter frame into a baseline frame and continues execution in baseline
 // code. Otherwise execution continues with bytecode.
 void Generate_BaselineOrInterpreterEntry(MacroAssembler* masm,
@@ -318,8 +320,4 @@ void Builtins::Generate_RestartFrameTrampoline(MacroAssembler* masm) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_X64
-
-"""
-
-
 ```

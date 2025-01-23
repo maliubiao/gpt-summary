@@ -133,7 +133,7 @@ foo_do_something returns: 42
 
 因此，`foo.cpp` 文件本身是测试流程中的一个简单组件，其目的是提供一个可预测的目标供 Frida 进行 instrumentation 测试。  用户到达这里的步骤是为了验证 Frida 对 C++ 代码的 hook 能力，并且可能是在一个更复杂的测试场景中，例如测试与 GTK 相关的代码的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/36 gtkdoc cpp/foo.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,14 +141,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "foo.h"
 
 int foo_do_something(void) {
     return 42;
 }
-
-"""
-
 ```

@@ -149,7 +149,7 @@ This detailed thought process allows for a comprehensive and insightful analysis
 
 总而言之，`generatorbase.py` 是 Frida Swift API 参考文档生成过程中的一个核心组件，它提供了一个基础框架和通用工具函数，用于处理 API 元数据并生成最终的文档。它的存在对于理解和使用 Frida 进行逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/docs/refman/generatorbase.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -225,7 +227,4 @@ class GeneratorBase(metaclass=ABCMeta):
 
     def extract_returned_by_module(self, module: Object) -> T.List[Object]:
         return [x for x in self.objects if x.obj_type == ObjectType.RETURNED and x.defined_by_module is module]
-
-"""
-
 ```

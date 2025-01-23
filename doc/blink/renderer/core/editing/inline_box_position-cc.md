@@ -173,15 +173,17 @@ Finally, organize the findings into the requested categories, providing clear ex
 
 总而言之，`blink/renderer/core/editing/inline_box_position.cc` 是 Blink 渲染引擎中一个至关重要的文件，它负责确保文本光标位于有效的内联盒子内，从而支持正确的文本编辑和用户交互。它与 HTML 结构、CSS 布局以及 JavaScript 的编辑功能紧密相关。 理解其功能有助于开发者调试与光标定位相关的 bug，并更好地理解浏览器如何处理富文本编辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/inline_box_position.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009 Apple Inc. All rights
  * reserved.
@@ -370,7 +372,4 @@ PositionInFlatTreeWithAffinity ComputeInlineAdjustedPosition(
 }
 
 }  // namespace blink
-
-"""
-
 ```

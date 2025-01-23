@@ -150,15 +150,17 @@ func main() {
 
 总而言之，`go/test/syntax/typesw.go` 的这个片段是一个用于测试Go编译器类型switch语法错误检测能力的负面测试用例。它故意构造了一个无效的类型switch语句，以验证编译器能够正确地报告错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/syntax/typesw.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2011 The Go Authors. All rights reserved.
@@ -172,9 +174,4 @@ func main() {
 	default:
 	}
 }
-
-"""
-
-
-
 ```

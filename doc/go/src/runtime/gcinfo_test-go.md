@@ -178,7 +178,7 @@ func main() {
 
 总而言之，`gcinfo_test.go` 中的代码是 Go 运行时自测试的一部分，用于确保垃圾回收器能够正确地识别和跟踪程序内存中的指针。普通 Go 开发者通常不需要直接使用或深入理解 `runtime.PointerMask`，但了解其背后的原理有助于理解 Go 语言的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/gcinfo_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -186,8 +186,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -402,9 +404,4 @@ var (
 	infoEface  = []byte{typeScalar, typePointer}
 	infoIface  = []byte{typeScalar, typePointer}
 )
-
-"""
-
-
-
 ```

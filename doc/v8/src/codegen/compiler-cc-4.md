@@ -99,7 +99,7 @@ v8/src/codegen/compiler.cc``` 文件是 V8 引擎中负责将 JavaScript 源代�
 
 这部分代码主要负责 **V8 引擎中动态 JavaScript 代码的编译和执行**。它处理了 `eval()` 函数和 `Function()` 构造器创建的代码，包括缓存查找、源代码解析、作用域管理、错误处理以及代码生成权限的验证。此外，它还涉及脚本编译和缓存管理的一些基础机制，例如编译计时和后台编译的尝试。 这确保了 V8 能够安全高效地执行动态生成的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -107,9 +107,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                              isolate, &is_compiled_scope);
+### 源代码
+```cpp
+isolate, &is_compiled_scope);
 }
 
 // static
@@ -852,7 +854,4 @@ MaybeDirectHandle<SharedFunctionInfo> GetSharedFunctionInfoForScriptImpl(
           consuming_code_cache_succeeded = true;
           // Promote to per-isolate compilation cache.
           compilation_cache->PutScript(source, language
-"""
-
-
 ```

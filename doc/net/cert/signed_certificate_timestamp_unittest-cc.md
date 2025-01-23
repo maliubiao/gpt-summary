@@ -124,15 +124,17 @@ JavaScript 可以通过浏览器提供的 API 间接地访问与 CT 相关的信
 
 `net/cert/signed_certificate_timestamp_unittest.cc` 是一个关键的测试文件，用于确保 `SignedCertificateTimestamp` 类的正确实现。虽然普通用户不直接接触这个文件，但它在保障基于 CT 的 HTTPS 连接的安全性方面起着重要的作用。当用户遇到与 CT 相关的网络问题时，这个文件及其对应的代码可能会成为开发者调试的关键入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/signed_certificate_timestamp_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ TEST_F(SignedCertificateTimestampTest, SCTsWithDifferentOriginsNotEqual) {
 }  // namespace
 
 }  // namespace net::ct
-
-"""
-
 ```

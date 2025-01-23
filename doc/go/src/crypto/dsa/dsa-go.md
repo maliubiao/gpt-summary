@@ -270,7 +270,7 @@ DSA 密钥对生成成功
 
 理解这些潜在的错误点可以帮助开发者更安全、更有效地使用 `crypto/dsa` 包。 然而，再次强调，对于新的应用，应该优先考虑使用更安全的现代签名算法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/dsa/dsa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -278,8 +278,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -606,9 +608,4 @@ func Verify(pub *PublicKey, hash []byte, r, s *big.Int) bool {
 
 	return v.Cmp(r) == 0
 }
-
-"""
-
-
-
 ```

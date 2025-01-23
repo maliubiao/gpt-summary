@@ -138,7 +138,7 @@ console.log(Math.max(5, NaN)); // 输出 NaN
 
 这部分代码主要测试了 `MacroAssembler` 在 LoongArch64 架构上生成 **字节交换指令、常量加载指令、以及涉及到跳转表的控制流指令** 的能力。它还涵盖了 **基本的算术左移加法指令**。  这些是构建更复杂代码生成功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-macro-assembler-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-macro-assembler-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1057,7 +1059,4 @@ bool run_Unaligned(char* memory_buffer, int32_t in_offset, int32_t out_offset,
 
 static const std::vector<uint64_t> unsigned_test_values() {
   // clang-format o
-"""
-
-
 ```

@@ -184,15 +184,17 @@ console.log(a);       // 输出 0.30000000000000004
 
 由于浮点数的二进制表示的局限性，某些十进制小数无法精确表示。这导致在进行浮点数运算时可能会产生微小的误差。`cached-powers.cc` 中存储的是近似值，这在转换过程中是必要的，但也突出了浮点数运算的近似性。程序员应该使用一个小的容差值（epsilon）来比较浮点数是否“足够接近”，而不是直接比较是否相等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/cached-powers.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/numbers/cached-powers.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -307,7 +309,4 @@ void PowersOfTenCache::GetCachedPowerForDecimalExponent(int requested_exponent,
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

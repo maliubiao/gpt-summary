@@ -73,15 +73,17 @@ The code is related to text shaping, which is a fundamental part of rendering te
 
 总而言之，这段代码通过大量的测试用例，确保了 Blink 引擎在各种复杂的文本场景下，能够准确地将屏幕坐标转换为文本字符的偏移量，这对于浏览器正确渲染和交互文本至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/shape_result_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 {0, 0, 1, 1,  2,  2,  3,  3,  5,  5,  6,  6,  7,  7,  9,  9,  10, 10},
 #endif
      ShapeResultTest::kArabicFont,
@@ -269,8 +271,4 @@ TEST_P(CaretOffsetForPositionTest, OffsetForPositions) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

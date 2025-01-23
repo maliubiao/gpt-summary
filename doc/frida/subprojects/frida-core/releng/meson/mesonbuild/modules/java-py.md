@@ -172,7 +172,7 @@ This iterative process of reading, analyzing, connecting concepts, and structuri
 
 总而言之，`frida/subprojects/frida-core/releng/meson/mesonbuild/modules/java.py` 是 Frida 构建系统中一个关键的模块，负责生成 Java 本地接口所需的头文件，这对于 Frida 动态 instrumentation 功能至关重要，因为它允许 Frida 的 Native 代码与目标应用程序的 Java 代码进行交互。理解这个模块的功能有助于逆向工程师理解 Frida 的构建过程，并更好地利用 Frida 进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/modules/java.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -294,7 +296,4 @@ class JavaModule(NewExtensionModule):
 
 def initialize(*args: T.Any, **kwargs: T.Any) -> JavaModule:
     return JavaModule(*args, **kwargs)
-
-"""
-
 ```

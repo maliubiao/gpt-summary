@@ -345,15 +345,17 @@ func sortByWeight(edges []NamedCallEdge, weights map[NamedCallEdge]int64) {
 
 这段测试代码通过 `testRoundTrip` 和模糊测试 `FuzzRoundTrip` 确保了序列化和反序列化的正确性，降低了使用者因手动操作而犯错的可能性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/pgo/serialize_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -544,9 +546,4 @@ func FuzzRoundTrip(f *testing.F) {
 		testRoundTrip(t, d)
 	})
 }
-
-"""
-
-
-
 ```

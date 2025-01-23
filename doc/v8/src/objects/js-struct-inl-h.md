@@ -121,15 +121,17 @@ console.log(result); // JavaScript 会将数字转换为字符串并进行拼接
 
 总而言之，`v8/src/objects/js-struct-inl.h` 是 V8 内部实现细节的关键部分，它提供了高效地操作和管理 `JSStruct` 对象的机制，并且与 V8 的 Torque 语言和垃圾回收机制紧密集成。 虽然普通 JavaScript 开发者不会直接接触这个文件，但它所定义的功能对于 V8 引擎的性能和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-struct-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-struct-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ TQ_OBJECT_CONSTRUCTORS_IMPL(JSSharedStruct)
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_STRUCT_INL_H_
-
-"""
-
 ```

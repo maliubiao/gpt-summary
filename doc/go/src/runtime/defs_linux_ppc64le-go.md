@@ -153,7 +153,7 @@ Mapped memory: Hello
 
 总之，`go/src/runtime/defs_linux_ppc64le.go` 是Go运行时系统与Linux操作系统和ppc64le架构交互的关键组成部分，它定义了底层的常量和数据结构，支撑着Go语言的诸多核心功能。普通Go开发者一般不需要直接操作这些定义，但了解它们有助于理解Go程序在底层是如何工作的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_linux_ppc64le.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -161,8 +161,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // created by cgo -cdefs and then converted to Go
 // cgo -cdefs defs_linux.go defs3_linux.go
 
@@ -388,9 +390,4 @@ type ucontext struct {
 	__unused    [15]uint64
 	uc_mcontext sigcontext
 }
-
-"""
-
-
-
 ```

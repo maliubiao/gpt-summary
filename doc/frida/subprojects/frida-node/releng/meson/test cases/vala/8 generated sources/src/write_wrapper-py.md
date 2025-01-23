@@ -137,7 +137,7 @@ Finally, organize the information into a clear and logical explanation, addressi
 
 总而言之，`write_wrapper.py` 自身的功能很简单，但它在 Frida 生态系统中扮演着一个生成 Vala 源代码的辅助角色，为动态 instrumentation 和逆向分析提供了基础的构建块。它的存在体现了 Frida 代码注入和执行的底层机制，并与操作系统和目标进程的交互息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/vala/8 generated sources/src/write_wrapper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -159,7 +161,4 @@ void print_wrapper(string arg) {
 
 with open(sys.argv[1], 'w') as f:
     f.write(contents)
-
-"""
-
 ```

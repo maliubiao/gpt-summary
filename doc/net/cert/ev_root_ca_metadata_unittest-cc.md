@@ -150,15 +150,17 @@ Imagine a scenario where a user reports that the green address bar (EV indicator
 
 In summary, `ev_root_ca_metadata_unittest.cc` is a crucial component for ensuring the reliability of Chromium's EV certificate verification process. While not directly used by JavaScript, its correct functioning is essential for providing users with accurate security indicators and building trust in secure websites. The test cases serve as valuable documentation and debugging tools for developers working on the browser's network stack.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/ev_root_ca_metadata_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ TEST(EVRootCAMetadataTest, AddRemove) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

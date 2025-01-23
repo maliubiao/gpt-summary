@@ -180,14 +180,16 @@ func anotherFunc(n int) {
 
 如果使用命令 `go run -gcflags='-d=maymorestack=main.mayMoreStack' main.go mypkg/hook.go` 运行，则不会调用 `mypkg.mayMoreStack`，因为编译器会查找 `main` 包下的 `mayMoreStack` 函数，但该函数不存在。这会导致混淆，用户可能会认为 `-d=maymorestack` 没有生效。正确的运行方式应该是将 `mayMoreStack` 放在 `main` 包中，或者使用 `-gcflags='-d=maymorestack=mypkg.mayMoreStack'` 并确保编译包含了 `mypkg` 包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/maymorestack.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run -gcflags=-d=maymorestack=main.mayMoreStack
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -235,9 +237,4 @@ func anotherFunc(n int) {
 
 	runtime.KeepAlive(x)
 }
-
-"""
-
-
-
 ```

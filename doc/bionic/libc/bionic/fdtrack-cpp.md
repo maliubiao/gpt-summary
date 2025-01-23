@@ -394,7 +394,7 @@ if __name__ == "__main__":
 
 通过这些 Frida hook 示例，你可以更深入地理解 `fdtrack` 机制的工作原理，并观察 Android Framework 或 NDK 应用如何与其交互。记住替换 `your.target.package` 为你想要调试的应用程序的包名。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/fdtrack.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -405,8 +405,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -472,7 +474,4 @@ void __libc_init_fdtrack() {
   // Register a no-op signal handler.
   signal(BIONIC_SIGNAL_FDTRACK, [](int) {});
 }
-
-"""
-
 ```

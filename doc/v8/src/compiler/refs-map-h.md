@@ -176,15 +176,17 @@ const refToObj1 = obj1;
 
 总而言之，`v8/src/compiler/refs-map.h` 定义的 `RefsMap` 类是 V8 编译器内部用于高效管理对象地址和相关元数据的重要数据结构。它通过自定义的哈希映射实现，提供了快速的查找、插入和删除操作，并支持廉价的复制，这对于编译器的性能至关重要。虽然 JavaScript 开发者不能直接使用它，但理解其功能有助于理解 V8 如何在幕后管理对象和内存。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/refs-map.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/refs-map.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -239,7 +241,4 @@ class RefsMap
 }  // namespace v8
 
 #endif  // V8_COMPILER_REFS_MAP_H_
-
-"""
-
 ```

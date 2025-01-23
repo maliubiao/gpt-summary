@@ -159,7 +159,7 @@ int main() {
 
 `replacer.py` 是一个简单的但功能强大的脚本，用于在 Frida 的构建或测试过程中动态地修改 C 源代码。它在逆向工程中可以用于快速修改代码以进行动态分析，但也需要用户注意使用方法，避免引入错误。其作为 Frida 测试套件的一部分，通常在自动化测试或开发调试过程中被执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/35 dist script/replacer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -185,7 +187,4 @@ modfile = source_root / 'prog.c'
 contents = modfile.read_text()
 contents = contents.replace(sys.argv[1], sys.argv[2])
 modfile.write_text(contents)
-
-"""
-
 ```

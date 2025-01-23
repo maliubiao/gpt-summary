@@ -152,14 +152,16 @@ console.log(set3.isDisjointFrom(array)); // 输出: false (有共同元素 7)
 
 这段 Torque 代码通过优化快速路径（当 `other` 也是一个没有自定义迭代器的 Set 或 Map 时）和提供处理各种可迭代对象的慢速路径，高效地实现了 `Set.prototype.isDisjointFrom` 方法的功能。它还包含了必要的类型检查以防止不当的 API 使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/set-is-disjoint-from.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -322,7 +324,4 @@ macro FastIsDisjointFrom<T: type>(
   unreachable;
 }
 }
-
-"""
-
 ```

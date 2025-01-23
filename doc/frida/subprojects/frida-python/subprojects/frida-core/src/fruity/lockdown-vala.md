@@ -118,7 +118,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `lockdown.vala` 文件实现了与 iOS 设备的 `lockdown` 服务的通信，支持设备的配对、会话管理、服务启动等功能。通过 LLDB 调试工具，可以深入分析这些功能的执行过程。用户在使用时需要注意设备的配对状态、服务名称的正确性以及 TLS 证书的有效性，以避免常见的错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/lockdown.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class LockdownClient : Object {
@@ -414,7 +416,4 @@ namespace Frida.Fruity {
 		PROTOCOL
 	}
 }
-
-"""
-
 ```

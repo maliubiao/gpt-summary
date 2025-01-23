@@ -126,14 +126,16 @@ By following this systematic approach, we can break down the code, understand it
 
 总而言之，`resource_fetcher_properties.cc` 中的 `DetachableResourceFetcherProperties` 类提供了一种机制，用于在资源获取的生命周期中安全地保存关键属性，这对于调试、性能分析以及在原始对象不再可用时仍需访问这些信息的场景非常有用。 这些信息直接关联着浏览器如何处理网页中的 HTML 结构、JavaScript 行为以及 CSS 样式所触发的资源请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_fetcher_properties.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ void DetachableResourceFetcherProperties::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

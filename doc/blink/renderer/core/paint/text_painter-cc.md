@@ -176,15 +176,17 @@ By following these steps, one can systematically analyze a complex source code f
 
 `blink/renderer/core/paint/text_painter.cc` 是 Chromium Blink 引擎中至关重要的文件，它负责将抽象的文本信息和样式信息转化为用户可见的像素。理解其功能和与 Web 技术的关系，有助于开发者更好地理解浏览器的工作原理，并进行更有效的调试和性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/text_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -911,7 +913,4 @@ const AffineTransform* TextPainter::SvgTextPaintState::GetShaderTransform()
 }
 
 }  // namespace blink
-
-"""
-
 ```

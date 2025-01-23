@@ -168,15 +168,17 @@ Here's a breakdown of its functionalities:
 
 In summary, `v8/src/snapshot/embedded/platform-embedded-file-writer-base.h` defines the blueprint for generating platform-specific embedded code/data for V8's snapshot mechanism. It's crucial for V8's fast startup and involves careful handling of data types, alignment, and assembly-like directives. While it doesn't directly manipulate JavaScript code, it's a foundational component that enables V8 to execute JavaScript efficiently.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/embedded/platform-embedded-file-writer-base.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/embedded/platform-embedded-file-writer-base.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -300,7 +302,4 @@ inline bool IsDrumBrakeInstructionHandler(const char* name) {
 }  // namespace v8
 
 #endif  // V8_SNAPSHOT_EMBEDDED_PLATFORM_EMBEDDED_FILE_WRITER_BASE_H_
-
-"""
-
 ```

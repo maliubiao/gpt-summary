@@ -83,15 +83,17 @@ header.stale_while_revalidate == base::Seconds(60)
 
 总而言之，这个代码文件的前半部分专注于测试 Blink 引擎对各种重要 HTTP 头部字段的解析能力，这些头部字段直接影响着网页资源的加载、缓存、安全性和行为，与 Javascript, HTML 和 CSS 的正常工作息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/http_parsers_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -872,7 +874,4 @@ TEST(HTTPParsersTest, ParseContentSecurityPoliciesReportTo) {
   EXPECT_TRUE(policies[0]->use_reporting_api);
   // The specification https://w3c.github.io/webappsec-csp/#directive-report-to
   // only allows for one endpoints to be defined
-"""
-
-
 ```

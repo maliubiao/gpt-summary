@@ -89,11 +89,13 @@ infiniteLoop();
 
 `global-safepoint-unittest.cc` 验证了 V8 引擎在多线程环境下管理 JavaScript 执行的能力，特别是确保全局安全点能够有效地中断 JavaScript 代码的执行，这是 V8 引擎保证稳定性和正确性的重要机制之一。虽然 JavaScript 代码本身无法直接控制全局安全点，但它是 V8 引擎内部管理和优化的关键组成部分，直接影响着 JavaScript 代码的执行和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/global-safepoint-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ TEST_F(GlobalSafepointTest, Interrupt) {
 }  // namespace v8
 
 #endif  // V8_CAN_CREATE_SHARED_HEAP
-
-"""
-
 ```

@@ -126,11 +126,13 @@ console.log(highlighted);
 
 `v8/src/objects/template-objects.cc` 负责高效地管理 JavaScript 模板字面量背后的模板对象。通过缓存机制，它避免了重复创建相同的模板对象，从而提高了 JavaScript 代码的执行效率，尤其是在多次使用相同模板字面量的情况下。它处理了标准模板字面量和标签模板两种情况，并为标签函数提供了访问原始字符串的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/template-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ Handle<JSArray> TemplateObjectDescription::GetTemplateObject(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

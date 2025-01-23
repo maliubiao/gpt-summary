@@ -178,7 +178,7 @@ I'll go through each of these areas and elaborate on their functionality and con
 
 这段代码是 Chromium Blink 引擎中 `BaseRenderingContext2D` 类的一部分，负责实现 HTML Canvas 2D API 中与 Mesh2D 图形绘制、像素数据操作 (getImageData/putImageData)、图像平滑控制以及文本属性管理相关的核心功能。它连接了 JavaScript API 和底层的 Skia 图形库，处理用户通过 JavaScript 与 Canvas 交互时触发的各种操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/base_rendering_context_2d.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ntCanvasOrigin(image_source);
 
   auto* pattern = MakeGarbageCollected<CanvasPattern>(
@@ -1122,7 +1124,4 @@ void BaseRenderingContext2D::DrawTextInternal(
     }
 
     // accessFont needs the styl
-"""
-
-
 ```

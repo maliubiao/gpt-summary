@@ -100,11 +100,13 @@ console.log(result); // 输出结果：5.640000104904175
 
 `v8/src/execution/encoded-c-signature.cc` 文件定义了 `EncodedCSignature` 类，它负责对 C 函数的签名信息进行编码，尤其关注浮点类型的参数和返回值。这对于 V8 引擎与 C++ 代码进行高效且正确的交互至关重要，尤其是在使用 Fast API Calls 等机制时，V8 需要准确地了解 C++ 函数的签名信息来进行参数传递、类型转换和返回值处理。 JavaScript 代码虽然不直接操作这个类，但其行为受到这个类所编码的 C++ 函数签名的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/encoded-c-signature.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -150,7 +152,4 @@ EncodedCSignature::EncodedCSignature(const CFunctionInfo* signature) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

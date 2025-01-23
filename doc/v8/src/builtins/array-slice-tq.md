@@ -187,14 +187,16 @@ bar(10, 20, 30, 40);
 
 这段 Torque 代码揭示了 V8 引擎为了优化 `Array.prototype.slice()` 的性能所做的努力，针对不同的情况采取了不同的快速路径。理解这些优化有助于我们编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-slice.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -427,7 +429,4 @@ transitioning javascript builtin ArrayPrototypeSlice(
   return a;
 }
 }
-
-"""
-
 ```

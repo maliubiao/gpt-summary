@@ -245,7 +245,7 @@ func main() {
 
 因此，在使用 Go 的网络编程功能时，需要注意操作系统的差异，特别是对于像 Plan 9 这样具有特殊实现的系统。查阅文档或进行针对性测试是很重要的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/sockopt_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -253,8 +253,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -274,9 +276,4 @@ func setKeepAlive(fd *netFD, keepalive bool) error {
 func setLinger(fd *netFD, sec int) error {
 	return syscall.EPLAN9
 }
-
-"""
-
-
-
 ```

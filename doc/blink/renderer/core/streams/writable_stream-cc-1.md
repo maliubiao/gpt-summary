@@ -141,7 +141,7 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 结合推测的第 1 部分内容（可能包含 `WritableStream` 的构造、基本写入操作等），这第二部分的代码主要关注于 `WritableStream` 的状态管理、关闭流程、错误处理以及与 JavaScript Promise 的集成。`WritableStream` 作为 Streams API 的一部分，在 Blink 引擎中扮演着数据接收和处理的关键角色。它通过与 `WritableStreamDefaultController` 和 `WritableStreamDefaultWriter` 等组件的协作，实现了 JavaScript 中 `WritableStream` 对象的完整功能。这部分代码确保了在各种状态下（包括正常关闭和发生错误时） `WritableStream` 能够正确地响应和通知 JavaScript 代码，并通过 Blink 的追踪机制进行有效的内存管理和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/streams/writable_stream.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 equest(
     ScriptPromiseResolver<IDLUndefined>* close_request) {
   close_request_ = close_request;
@@ -336,8 +338,4 @@ void WritableStream::RejectPromises(ScriptState* script_state,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

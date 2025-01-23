@@ -175,7 +175,7 @@ func main() {
 
 总而言之，这段 `dwarf.go` 代码的主要功能是 **在 Go 语言链接过程中生成符合 DWARF 标准的调试信息**。它负责将 Go 语言的类型、变量、函数等信息转换为 DWARF 的数据结构，并组织成各个 DWARF section，以便调试器能够理解和使用。 这段代码是 Go 语言调试支持的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/dwarf.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -183,8 +183,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2160,9 +2162,4 @@ func dwarfGenerateDebugInfo(ctxt *Link) {
 			continue
 		}
 		// Skip things
-"""
-
-
-
-
 ```

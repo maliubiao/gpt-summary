@@ -172,7 +172,7 @@ By following this structured thinking process, considering the core request, ana
 
 总而言之，这段简单的 `prog.c` 代码虽然功能不多，但它很好地展示了逆向分析中需要关注的一个核心问题：**理解程序依赖的外部组件的行为**。Frida 这样的动态instrumentation工具在分析这类问题时非常有用，因为它允许我们在运行时观察和修改程序的行为，即使我们没有源代码或者对依赖项的内部实现不了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/74 file object/subdir2/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int func(void);
@@ -195,7 +197,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

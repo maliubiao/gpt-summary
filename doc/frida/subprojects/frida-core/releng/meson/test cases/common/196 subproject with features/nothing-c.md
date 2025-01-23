@@ -96,7 +96,7 @@ By following this thought process, the detailed and comprehensive answer provide
 
 `nothing.c` 虽然代码极其简单，但它在 Frida 的开发和测试流程中扮演着重要的角色。它作为一个基础的测试用例，用于验证 Frida 的基本功能，确保即使对于一个什么都不做的程序，Frida 也能正常工作。理解这样的测试用例有助于用户更好地理解 Frida 的工作原理和进行问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/196 subproject with features/nothing.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,13 +104,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void)
 {
     return 0;
 }
-
-"""
-
 ```

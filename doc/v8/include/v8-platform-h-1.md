@@ -150,7 +150,7 @@ if (address != nullptr) {
 
 这部分 `v8-platform.h` 定义了 V8 引擎与底层操作系统进行交互的关键接口，涵盖了内存管理（包括共享内存和子空间）、多线程任务调度以及其他系统级服务。嵌入器需要实现这些接口，以便 V8 可以在不同的平台上运行。 理解这些接口的功能对于深入理解 V8 的工作原理以及进行平台移植至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-platform.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-platform.h以.tq结尾，那它是个v8 torque源代码，
@@ -158,8 +158,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 The page permissions of the newly allocated pages.
    *
    * \param handle A platform-specific handle to a shared memory object. See
@@ -589,8 +591,4 @@ class Platform {
 }  // namespace v8
 
 #endif  // V8_V8_PLATFORM_H_
-
-"""
-
-
 ```

@@ -160,15 +160,17 @@ ParameterDifference diff2(to_types, from2_types);
 
 `v8/src/torque/parameter-difference.h` 中定义的 `ParameterDifference` 类是 V8 中用于比较函数或方法签名参数差异的关键组件。它通过判断子类型关系和隐式转换的需求来确定一个签名是否比另一个签名更优，这对于 V8 内部的函数重载解析至关重要，并最终影响 JavaScript 代码的执行效率和正确性。虽然普通 JavaScript 开发者不会直接使用它，但理解其背后的原理有助于理解 V8 如何处理不同类型的 JavaScript 值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/parameter-difference.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/parameter-difference.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -243,7 +245,4 @@ class ParameterDifference {
 }  // namespace v8::internal::torque
 
 #endif  // V8_TORQUE_PARAMETER_DIFFERENCE_H_
-
-"""
-
 ```

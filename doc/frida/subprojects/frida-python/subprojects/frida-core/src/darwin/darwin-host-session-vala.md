@@ -112,7 +112,7 @@ inject_library(1234, "/path/to/library.dylib")
    - Frida 监控注入结果，并在成功或失败时通知用户。
 
 通过以上步骤，用户可以逐步完成进程注入操作，并在调试过程中发现和解决问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/darwin/darwin-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class DarwinHostSessionBackend : Object, HostSessionBackend {
 		private DarwinHostSessionProvider local_provider;
@@ -1247,7 +1249,4 @@ namespace Frida {
 
 		private static CrashInfo parse_report (uint pid, string raw_report) {
 			var tokens = raw_report.
-"""
-
-
 ```

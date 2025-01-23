@@ -127,15 +127,17 @@ This iterative process of code analysis, hypothesis formation, connection to web
 
 总而言之，`selector_filter_parent_scope.cc` 是 Blink 引擎中一个幕后英雄，它通过高效地管理父级作用域信息，为 CSS 选择器的快速匹配提供了重要的支持，从而提升了网页渲染的性能。虽然普通用户和 Web 开发者不会直接与之交互，但它在浏览器高效渲染网页的过程中发挥着关键作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/selector_filter_parent_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ void SelectorFilterParentScope::PopAncestors(Element& element) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

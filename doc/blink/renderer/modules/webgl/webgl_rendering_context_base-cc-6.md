@@ -108,7 +108,7 @@ Here's a plan:
 
 这部分代码主要负责处理各种来源（`ArrayBufferView`, `ImageData`, `HTMLImageElement`, `HTMLVideoElement`, `HTMLCanvasElement`）的图像数据，进行必要的预处理（例如颜色空间转换、Alpha 预乘/反预乘、垂直翻转），并最终将其上传到 WebGL 的纹理对象。它还包含了参数验证和 GPU 拷贝优化的逻辑。这部分是 WebGL 纹理功能的核心组成部分，使得开发者能够将各种视觉内容集成到 WebGL 场景中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_rendering_context_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
   return internalformat;
 }
@@ -941,7 +943,4 @@ void WebGLRenderingContextBase::TexImageHelperCanvasRenderingContextHost(
 
   SourceImageStatus source_image_status = kInvalidSourceImageStatus;
   scoped_refptr<Ima
-"""
-
-
 ```

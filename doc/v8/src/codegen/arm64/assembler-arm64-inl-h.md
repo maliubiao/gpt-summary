@@ -130,7 +130,7 @@ V8 引擎在执行这段代码时，`assembler-arm64-inl.h` 中的功能会被�
 
 `v8/src/codegen/arm64/assembler-arm64-inl.h` (第 1 部分) 主要定义了用于在 V8 引擎中生成 ARM64 汇编代码所需的基本数据结构和内联函数。 它提供了表示和操作 ARM64 寄存器、立即数和内存操作数的工具，以及生成和修改 ARM64 指令的辅助功能。 这是 V8 将 JavaScript 代码转化为可执行机器码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/assembler-arm64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/assembler-arm64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -138,8 +138,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1150,8 +1152,5 @@ Instr Assembler::ExtendMode(Extend extend) {
 }
 
 Instr Assembler::ImmExtendShift(unsigned left_shift) {
-  DCHECK_LE(left_shift, 
-"""
-
-
+  DCHECK_LE(left_shift,
 ```

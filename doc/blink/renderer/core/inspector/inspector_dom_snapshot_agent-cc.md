@@ -110,15 +110,17 @@ Here's a plan:
 
 `InspectorDOMSnapshotAgent.cc` 的主要功能是为开发者工具提供一个机制，用于捕获和分析网页在特定时刻的 DOM 结构和样式信息。它能够遍历 DOM 树和布局树，提取各种节点属性、计算样式以及布局相关的详细信息，并将其组织成结构化的数据，以便开发者进行调试和性能分析。同时，它还支持追踪 DOM 修改的来源，并允许按需过滤需要捕获的 CSS 属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_dom_snapshot_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -946,7 +948,4 @@ void InspectorDOMSnapshotAgent::Trace(Visitor* visitor) const {
   visitor->Trace(dom_debugger_agent_);
   visitor->Trace(paint_order_map_);
   visitor->Trace(d
-"""
-
-
 ```

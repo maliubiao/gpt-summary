@@ -151,15 +151,17 @@ TEST_F(StrtodTest, ExampleInference) {
 
 总结来说，`v8/test/unittests/numbers/strtod-unittest.cc` 是一个关键的测试文件，用于确保 V8 引擎中字符串到浮点数转换功能的正确性和健壮性，这直接关系到 JavaScript 中 `parseFloat()` 函数的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/numbers/strtod-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/numbers/strtod-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -637,7 +639,4 @@ TEST_F(StrtodTest, RandomStrtod) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

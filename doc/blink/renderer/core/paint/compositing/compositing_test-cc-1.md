@@ -111,7 +111,7 @@ This involves understanding the functionality of the code, its relation to web t
 
 总而言之，这段代码通过一系列细致的单元测试，覆盖了 Blink 渲染引擎中合成机制的多个关键方面，确保了在各种场景下，合成行为的正确性和性能优化。这些测试对于理解 Blink 的内部工作原理以及排查渲染问题非常有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/compositing/compositing_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ayoutBox();
   EXPECT_EQ(EPointerEvents::kAuto, target_box->StyleRef().UsedPointerEvents());
   ASSERT_FALSE(target_box->Layer()->SelfNeedsRepaint());
@@ -995,7 +997,4 @@ TEST_P(CompositingSimTest, DirectTransformPropertyUpdateCausesChange) {
   inner_element->setAttribute(html_names::kStyleAttr,
                               AtomicString("transform: rotate(30deg)"));
   UpdateAl
-"""
-
-
 ```

@@ -165,7 +165,7 @@ By following these steps, combining code analysis with an understanding of the c
 
 在这个简单的 `a.c` 文件中，调试过程会相对简单。但在更复杂的程序中，`abort()` 可能在深层调用栈中被触发，需要结合多种调试手段才能找到问题所在。这个文件作为 Frida 的测试用例，其简洁性使得 Frida 的开发者可以方便地验证 Frida 在处理程序终止等方面的功能是否正常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/212 source set configuration_data/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdlib.h>
 #include "all.h"
 
@@ -183,7 +185,4 @@ int main(void)
     if (p) abort();
     f();
 }
-
-"""
-
 ```

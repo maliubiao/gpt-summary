@@ -154,7 +154,7 @@ Interceptor.attach(Module.findExportByName(null, "nonExistentFunction"), { ... }
 
 总而言之，`file3.c` 虽然代码简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 处理基本函数调用，特别是与预链接相关的场景的能力。理解这个文件及其相关的测试用例，有助于开发者和用户更好地理解 Frida 的工作原理，并排查可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/86 prelinking/file3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<private_header.h>
 
 int round1_c() {
@@ -173,7 +175,4 @@ int round1_c() {
 int round2_c() {
     return round2_d();
 }
-
-"""
-
 ```

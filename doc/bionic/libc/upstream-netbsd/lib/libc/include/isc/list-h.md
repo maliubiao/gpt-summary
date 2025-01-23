@@ -317,7 +317,7 @@ except Exception as e:
 
 总而言之，`list.h` 提供了一个基础且高效的双向链表实现，虽然它本身不涉及动态链接，但作为 Bionic libc 的一部分，被 Android 系统和应用程序的各种组件广泛使用，为构建更复杂的数据结构和算法提供了基础。理解其功能和使用方式对于理解 Android 底层机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/lib/libc/include/isc/list.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -328,8 +328,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: list.h,v 1.6 2022/04/19 20:32:15 rillig Exp $	*/
 
 /*
@@ -450,7 +452,4 @@ Prompt:
 
 #endif /* LIST_H */
 /*! \file */
-
-"""
-
 ```

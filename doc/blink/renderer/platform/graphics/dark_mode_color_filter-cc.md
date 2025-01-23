@@ -147,14 +147,16 @@ body {
 
 总而言之，`dark_mode_color_filter.cc` 文件在 Chromium Blink 引擎中扮演着至关重要的角色，它提供了实现网页暗黑模式的核心颜色过滤机制，并且与 JavaScript, HTML, CSS 等 Web 技术共同作用，为用户提供更好的暗黑模式浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/dark_mode_color_filter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -345,7 +347,4 @@ std::unique_ptr<DarkModeColorFilter> DarkModeColorFilter::FromSettings(
 DarkModeColorFilter::~DarkModeColorFilter() {}
 
 }  // namespace blink
-
-"""
-
 ```

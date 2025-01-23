@@ -195,15 +195,17 @@ err = unix.CapRightsLimit(fd, rights2) // 这样做不会增加权限，只会�
 
 总之，这段代码为 Go 语言提供了操作 FreeBSD capability 的能力，使得 Go 程序可以利用这种更精细的权限控制机制来提高安全性。使用者需要仔细理解 capability 的概念和每个函数的作用，并查阅 FreeBSD 的相关文档以获得准确的 capability 值。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/cap_freebsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -399,9 +401,4 @@ func CapRightsGet(fd uintptr) (*CapRights, error) {
 	}
 	return r, nil
 }
-
-"""
-
-
-
 ```

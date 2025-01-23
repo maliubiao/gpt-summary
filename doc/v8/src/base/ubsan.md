@@ -64,11 +64,13 @@ console.log(result); // JavaScript 会输出一个超出安全整数范围的值
 
 `ubsan.cc` 文件本身并不直接被 JavaScript 代码调用。它的存在是为了在特定的 V8 构建配置下，提供必要的底层机制来支持 Undefined Behavior Sanitizer，特别是处理 32 位架构上的 64 位整数乘法溢出。这有助于 V8 开发者在开发和测试阶段尽早发现潜在的整数溢出问题，从而提高 JavaScript 引擎的健壮性和安全性。  最终用户看到的 JavaScript 行为是 V8 基于其规范处理溢出的结果，但 `ubsan.cc` 这样的文件在幕后默默地保障着引擎的正确运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/ubsan.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -119,7 +121,4 @@ extern "C" int64_t __mulodi4(int64_t a, int64_t b, int* overflow) {
   *overflow = (r_high > 0 || result_sign != expected_result_sign) ? 1 : 0;
   return result;
 }
-
-"""
-
 ```

@@ -184,15 +184,17 @@ By following this detailed process of code examination, contextual awareness, an
 
 `capture_source_location.cc` 是 Blink 引擎中一个关键的文件，负责捕获代码执行的源位置信息。它与 JavaScript 引擎紧密集成，并间接服务于 HTML 和 CSS 的开发调试。理解其功能有助于开发者更好地理解浏览器如何报告错误，以及如何在复杂的 Web 应用中进行调试。通过分析其代码和可能的调用路径，我们可以更好地定位问题，提高开发效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/capture_source_location.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ std::unique_ptr<SourceLocation> CaptureSourceLocation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

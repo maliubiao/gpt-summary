@@ -173,7 +173,7 @@ By following these steps, we can arrive at a comprehensive and informative answe
 
 总而言之，`appA.c` 是一个非常基础但重要的测试用例，用于验证 Frida 在处理静态链接库时的能力。它简洁地展示了调用外部库函数的功能，并为理解逆向工程、底层知识和常见编程错误提供了一个简单的入口点。用户到达这里通常是为了调试或理解 Frida 在特定场景下的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/65 static archive stripping/app/appA.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,13 +181,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <libA.h>
 
 int main(void) { printf("The answer is: %d\n", libA_func()); }
-
-"""
-
 ```

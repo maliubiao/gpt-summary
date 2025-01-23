@@ -142,15 +142,17 @@ By following these steps, I could systematically analyze the provided C++ code a
 
 总而言之，`reporting_garbage_collector_unittest.cc` 通过一系列单元测试，确保了 `ReportingGarbageCollector` 能够按照预期的方式管理和清理网络报告和相关的 Reporting Source 数据，这对于维护 Web 平台的健康和提供可靠的错误报告机制至关重要。虽然 JavaScript 不直接操作这个文件中的代码，但 JavaScript 生成的报告数据是这个垃圾回收器管理的对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_garbage_collector_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -305,7 +307,4 @@ TEST_F(ReportingGarbageCollectorTest, ExpiredSourceWithPendingReports) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

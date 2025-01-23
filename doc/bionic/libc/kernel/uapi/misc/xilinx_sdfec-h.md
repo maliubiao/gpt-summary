@@ -290,7 +290,7 @@ sys.stdin.read()
 
 通过这种方式，可以逐步跟踪 Android Framework 或 NDK 应用如何通过 HAL 与内核中的 SDFEC 驱动程序进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/misc/xilinx_sdfec.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -301,8 +301,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -422,7 +424,4 @@ struct xsdfec_ldpc_param_table_sizes {
 #define XSDFEC_GET_STATS _IOR(XSDFEC_MAGIC, 12, struct xsdfec_stats)
 #define XSDFEC_SET_DEFAULT_CONFIG _IO(XSDFEC_MAGIC, 13)
 #endif
-
-"""
-
 ```

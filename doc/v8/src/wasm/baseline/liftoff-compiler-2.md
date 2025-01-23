@@ -95,12 +95,14 @@ console.log(result_array); // 输出 [6, 8, 10, 12]
 
 总而言之，这个 C++ 代码片段是 WebAssembly 执行引擎的核心组成部分，它负责将高层的 WebAssembly 指令翻译成可以直接在硬件上执行的机器码，从而使得 JavaScript 能够执行 WebAssembly 模块的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ue, false_value}, {});
     if (!__ emit_select(dst, condition, true_value, false_value, kind)) {
       FREEZE_STATE(frozen);
@@ -1613,7 +1615,4 @@ ue, false_value}, {});
             &LiftoffAssembler::emit_i16x8_extmul_low_i8x16_u);
       case wasm::kExprI16x8ExtMulHighI8x16S:
         return EmitB
-"""
-
-
 ```

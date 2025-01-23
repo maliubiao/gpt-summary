@@ -96,7 +96,7 @@ By following these steps, I could systematically dissect the code snippet and ge
 
 这部分代码深入到了 `HTMLCanvasElement` 的底层实现，处理了与性能、资源管理和浏览器渲染机制紧密相关的复杂逻辑。它连接了 JavaScript API、HTML 元素和 CSS 属性，共同实现了 Canvas 元素的强大功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/canvas/html_canvas_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 state, MakeGarbageCollected<ImageBitmap>(this, crop_rect, options),
       options, exception_state);
 }
@@ -441,8 +443,4 @@ void HTMLCanvasElement::SetHasPlacedElements() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

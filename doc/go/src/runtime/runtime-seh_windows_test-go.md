@@ -173,7 +173,7 @@ main.main()
 
 `go/src/runtime/runtime-seh_windows_test.go` 是 Go 运行时中一个关键的测试文件，它专门用于验证 Go 语言在 Windows AMD64 平台上使用结构化异常处理（SEH）进行堆栈回溯的正确性。  它测试了 `.pdata` 表的生成、基本的回溯、以及在不同 panic 场景下的回溯行为，确保 Go 程序在 Windows 下能够可靠地处理异常情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/runtime-seh_windows_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -181,8 +181,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -374,9 +376,4 @@ func TestSehUnwindNilPointerPanic(t *testing.T) {
 		t.Fatal("did not see nil pointer panic")
 	}
 }
-
-"""
-
-
-
 ```

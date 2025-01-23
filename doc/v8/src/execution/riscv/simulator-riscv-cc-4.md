@@ -586,7 +586,7 @@ void Simulator::DecodeRVRType() {
   switch (instr_.InstructionBits() & kRTypeMask) {
     case RO_ADD: {
       set_rd(sext_xlen(rs1
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/riscv/simulator-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/riscv/simulator-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -594,8 +594,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 into the V8 runtime are based on this very simple interface.
 // Note: To be able to return two values from some calls the code in
 // runtime.cc uses the ObjectPair which is essentially two 32-bit values
@@ -1550,7 +1552,4 @@ I_TYPE Simulator::RoundF2IHelper(F_TYPE original, int rmode) {
       DCHECK(rounded == -std::numeric_limits<F_TYPE>::infinity());
       return min_i;
     }
-"""
-
-
 ```

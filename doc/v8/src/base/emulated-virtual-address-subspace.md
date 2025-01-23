@@ -125,11 +125,13 @@ jitCodeManager.freeFunctionCode(myFunctionCodeAddress, /* ... */);
 
 `EmulatedVirtualAddressSubspace` 是 V8 内部用于模拟和管理虚拟地址子空间的一个底层工具。它通过在现有的父地址空间内划分逻辑区域，并提供自定义的分配、释放和权限管理机制，为 V8 的复杂内存管理需求提供了灵活性。虽然 JavaScript 开发者不会直接与之交互，但它的存在是 V8 高效运行 JavaScript 代码的基础之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/emulated-virtual-address-subspace.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -329,7 +331,4 @@ bool EmulatedVirtualAddressSubspace::DecommitPages(Address address,
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

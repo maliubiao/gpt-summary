@@ -127,7 +127,7 @@ By following this structured approach, combining code reading, logical deduction
 
 这部分 `nodes.go` 代码专注于将 Go 语言的 AST 结构转化为符合 Go 语言编码规范的源代码文本。它通过一系列精心设计的函数，分别处理不同类型的语法结构，并运用一些启发式规则来提高代码的可读性。 这部分代码是 `go fmt` 等代码格式化工具的核心逻辑所在。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/printer/nodes.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -136,8 +136,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 sRBrace bool) {
 	if nindent > 0 {
 		p.print(indent)
@@ -949,10 +951,4 @@ func (p *printer) file(src *ast.File) {
 	p.declList(src.Decls)
 	p.print(newline)
 }
-
-"""
-
-
-
-
 ```

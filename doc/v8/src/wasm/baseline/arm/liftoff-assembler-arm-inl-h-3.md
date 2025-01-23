@@ -146,7 +146,7 @@ console.log(add_result); // 输出 i32x4 向量，元素分别为 6, 8, 10, 12
 
 作为 6 部分中的第 4 部分，这个代码片段主要集中在 **为 WebAssembly 的 SIMD 操作生成 ARM NEON 汇编代码**。它涵盖了各种 SIMD 向量的创建、加载/存储、通道操作、算术运算、类型转换和位运算等功能。这是 Liftoff 编译器将 WebAssembly 的 SIMD 指令翻译成底层机器码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/arm/liftoff-assembler-arm-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/arm/liftoff-assembler-arm-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -154,9 +154,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-    NeonMemOperand(actual_src_addr));
+### 源代码
+```c
+NeonMemOperand(actual_src_addr));
       vmovl(NeonU32, liftoff::GetSimd128Register(dst), dst.low_fp());
     }
   } else if (transform == LoadTransformationKind::kZeroExtend) {
@@ -956,7 +958,4 @@ void LiftoffAssembler::emit_i32x4_add(LiftoffRegister dst, LiftoffRegister lhs,
                                       LiftoffRegister rhs) {
   vadd(Neon32, liftoff::GetSimd128Register(dst),
        liftoff::GetSimd128Register(lhs), liftoff::GetSimd12
-"""
-
-
 ```

@@ -154,7 +154,7 @@ private:
 
 总而言之，`cpptemplates.py` 是 Frida 构建系统中用于生成 C++ 项目结构的关键组成部分。它通过提供预定义的模板，简化了创建新的 Frida C++ 组件的过程，并且涉及到跨平台编译、动态链接等底层概念。用户通常不会直接编辑这个文件，但理解它的作用对于调试 Frida 的构建过程和自定义 Frida 组件的结构至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/templates/cpptemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -307,7 +309,4 @@ class CppProject(FileHeaderImpl):
     lib_header_template = lib_hpp_template
     lib_test_template = lib_cpp_test_template
     lib_meson_template = lib_cpp_meson_template
-
-"""
-
 ```

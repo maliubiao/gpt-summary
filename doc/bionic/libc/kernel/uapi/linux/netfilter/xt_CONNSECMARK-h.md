@@ -247,7 +247,7 @@ Hook `netd` 需要更深入的分析，找到 `netd` 中负责处理防火墙规
 
 总而言之，`xt_CONNSECMARK` 是一个强大的 netfilter 模块，允许在连接级别保存和恢复安全标记，这在需要基于连接状态进行细粒度策略控制的场景中非常有用，Android 作为基于 Linux 内核的系统，自然可以使用并受益于这个模块的功能。通过理解其工作原理和使用方法，可以更好地进行网络安全策略的配置和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_CONNSECMARK.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -258,8 +258,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -277,7 +279,4 @@ struct xt_connsecmark_target_info {
   __u8 mode;
 };
 #endif
-
-"""
-
 ```

@@ -108,7 +108,7 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 这段代码是 `net/quic/quic_network_transaction_unittest.cc` 的一部分，主要功能是 **系统地测试 `HttpNetworkTransaction` 类在处理基于 QUIC 协议的网络请求时的各种行为和场景，包括正常的请求响应、HTTP/3 特性、错误处理以及与网络监控组件的集成。**  它通过模拟网络数据包的交换和服务器的行为，来验证 QUIC 协议栈在 Chromium 中的实现是否正确和健壮。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 key));
   }
 
@@ -860,7 +862,4 @@ TEST_P(QuicNetworkTransactionTest, ResetOnEmptyResponseHeaders) {
 }
 
 TEST_P(QuicNetworkTransactionTest, LargeResponseHeaders)
-"""
-
-
 ```

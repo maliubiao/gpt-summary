@@ -204,7 +204,7 @@ func main() {
 
 `go/src/net/cgo_unix_test.go` 这个文件是 `net` 包中用于测试基于 Cgo 的 DNS 查询功能的集成测试。它确保在特定构建条件下，`cgoLookupIP`, `cgoLookupPort`, 和 `cgoLookupPTR` 这些内部函数能够正确地执行 IP 地址查找、端口查找和 PTR 记录查找，并且能够响应 `context` 的取消信号。 开发者在使用涉及到 Cgo 的网络功能时，需要注意构建标签的设置和 `context` 的正确使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/cgo_unix_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -212,8 +212,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -283,9 +285,4 @@ func TestCgoLookupPTRWithCancel(t *testing.T) {
 		t.Error(err)
 	}
 }
-
-"""
-
-
-
 ```

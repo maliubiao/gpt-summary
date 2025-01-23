@@ -265,7 +265,7 @@ Node {
 
 作为 12 个部分中的第 4 部分，这个代码片段集中在 **JavaScript 函数调用的优化**。 它通过模式匹配和替换，将高层的 JavaScript 调用转换为更高效的底层操作。这包括对 `Promise`、`Math` 对象、内置构造函数 (`Array`, `Boolean`, `Object`)，以及 `Function.prototype` 和 `Object` 的方法调用的优化。`JSCallReducer` 的目标是减少解释器或编译后的代码的执行开销，提升 JavaScript 代码的整体性能。 考虑到这是一个较大的文件的一部分，其他部分可能负责处理其他类型的优化或与调用相关的其他方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-call-reducer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -273,8 +273,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eateFunctionContext(
       native_context, context, PromiseBuiltins::kPromiseContextLength);
   StoreContextSlot(promise_context, PromiseBuiltins::kPromiseSlot, promise);
@@ -1096,7 +1098,4 @@ Reduction JSCallReducer::ReduceObjectPrototypeHasOwnProperty(Node* node) {
           for (InternalIndex key_index : InternalIndex::Range(nof)) {
             NameRef receiver_key =
                 descriptor_array.GetPropertyKe
-"""
-
-
 ```

@@ -130,14 +130,16 @@ This structured approach ensures that all aspects of the code are covered and ex
 
 总而言之，`blink/renderer/core/html/forms/button_input_type.cc` 文件是 Chromium Blink 渲染引擎中处理 HTML `<input type="button">` 元素的核心组件，它定义了按钮的基本行为、样式处理和与 JavaScript 的交互方式，同时也体现了浏览器引擎内部对 HTML 特性使用情况的跟踪和管理。 了解这些内部机制有助于开发者更好地理解和使用 HTML 表单元素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/button_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -191,7 +193,4 @@ void ButtonInputType::AdjustStyle(ComputedStyleBuilder& builder) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

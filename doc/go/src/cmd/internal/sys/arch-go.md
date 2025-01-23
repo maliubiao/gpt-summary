@@ -176,15 +176,17 @@ GOOS=linux GOARCH=amd64 go build myprogram.go
 
 总而言之，`go/src/cmd/internal/sys/arch.go` 是 Go 编译器实现跨平台编译的关键组成部分，它定义了各种目标架构的属性，使得编译器能够根据不同的目标平台生成正确的机器码。虽然普通开发者不需要直接操作这个文件，但了解其功能有助于更好地理解 Go 的编译过程和进行交叉编译。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/sys/arch.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -470,9 +472,4 @@ var Archs = [...]*Arch{
 	ArchS390X,
 	ArchWasm,
 }
-
-"""
-
-
-
 ```

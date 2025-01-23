@@ -159,15 +159,17 @@ Caller function: main.inner, line: 8
 
 总而言之，这段代码通过禁用特定函数的内联优化，并使用 `runtime.Caller` 在不同的调用栈深度上获取信息，来验证 `runtime.Caller` 的行为是否符合预期。它也展示了如何通过命令行参数控制编译器的优化行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/inline_caller.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run -gcflags -l=4
 
 // Copyright 2017 The Go Authors. All rights reserved.
@@ -245,9 +247,4 @@ func main() {
 		}
 	}
 }
-
-"""
-
-
-
 ```

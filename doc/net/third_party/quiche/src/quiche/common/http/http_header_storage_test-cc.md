@@ -146,15 +146,17 @@ size_t Join(char* buf, const std::vector<absl::string_view>& fragments, absl::st
 
 总而言之，`http_header_storage_test.cc` 是 QUICHE 库中用于保证 HTTP 头部处理相关功能正确性的重要组成部分，虽然用户和 JavaScript 开发者不会直接接触到这些代码，但它的正确性直接影响了基于 Chromium 的浏览器和使用 QUIC 协议的网络应用程序的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/http/http_header_storage_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/common/http/http_header_storage.h"
 
 #include "quiche/common/platform/api/quiche_test.h"
@@ -190,7 +192,4 @@ TEST(JoinTest, JoinMultiple) {
 
 }  // namespace test
 }  // namespace quiche
-
-"""
-
 ```

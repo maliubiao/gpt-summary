@@ -109,14 +109,16 @@ By following these steps, we can move from understanding a small piece of C++ co
 
 `PageDismissalScope` 是 Blink 引擎中用于管理页面销毁过程的一个简单但重要的机制。它通过维护一个计数器来跟踪当前是否有活跃的页面销毁作用域。虽然用户不会直接与之交互，但它的存在影响着浏览器内部对页面生命周期的管理，从而间接地影响 JavaScript 事件的触发、HTML 文档的处理以及 CSS 样式的应用。 正确使用 `PageDismissalScope` 有助于确保页面卸载和新页面加载过程的稳定性和一致性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/page_dismissal_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -146,7 +148,4 @@ bool PageDismissalScope::IsActive() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

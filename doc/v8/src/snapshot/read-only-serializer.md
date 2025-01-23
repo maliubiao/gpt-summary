@@ -140,11 +140,13 @@ By following this process of skimming, focusing, understanding the flow, identif
 
 这个文件的功能对于 V8 引擎的性能和资源利用至关重要，它处理了 JavaScript 语言的基础构建块的持久化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/read-only-serializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -596,7 +598,4 @@ void ReadOnlySerializer::Serialize() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -209,7 +209,7 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 这段 `code-generator-ia32.cc` 的代码片段是 V8 引擎在 IA-32 架构上生成机器码的核心部分，专门负责处理栈操作以及大量的 SIMD 浮点数和整数运算指令。它根据不同的 IR 指令生成相应的 IA-32 汇编代码，包括针对不同数据类型和 SIMD 操作的优化指令。代码中还考虑了 CPU 特性，以便在支持 AVX 等指令集的处理器上生成更高效的代码。 这部分代码的功能对于 V8 引擎在 IA-32 架构上执行 JavaScript 代码的性能至关重要，尤其是在处理需要大量数值计算或数据并行处理的场景下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/code-generator-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ia32/code-generator-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -217,8 +217,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ckSlot() || input->IsFloatStackSlot()) {
           __ AllocateStackSpace(stack_decrement - kSystemPointerSize);
           __ push(i.InputOperand(1));
@@ -1139,7 +1141,4 @@ ckSlot() || input->IsFloatStackSlot()) {
     case kSSEI16x8GeU: {
       DCHECK_EQ(i.OutputSimd128Register(), i.InputSimd128Register(0));
       CpuFeatureScope sse_scope(m
-"""
-
-
 ```

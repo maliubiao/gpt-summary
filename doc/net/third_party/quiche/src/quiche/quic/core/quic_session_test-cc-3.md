@@ -81,7 +81,7 @@ The user is asking for a functional summary of the provided C++ code snippet, wh
 
 总而言之，这部分测试覆盖了 `QuicSession` 在服务器端处理流和消息的关键逻辑，确保了 QUIC 协议的正确性和可靠性，从而为基于 QUIC 的网络应用提供了稳定的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -89,8 +89,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 &MockQuicConnection::ReallyCloseConnection));
   EXPECT_CALL(*connection_, SendConnectionClosePacket(_, _, _));
 
@@ -876,7 +878,4 @@ TEST_P(QuicSessionTestServer, OnStopSendingClosedStream) {
   QuicStreamId stream_id = stream->id();
   CloseStream(stream_id);
   QuicStopSendingFrame frame(1, stream_id
-"""
-
-
 ```

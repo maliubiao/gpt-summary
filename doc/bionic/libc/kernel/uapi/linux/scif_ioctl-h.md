@@ -335,7 +335,7 @@ if (ioctlAddress) {
 
 通过这个 Frida 脚本，你可以在目标进程调用 `ioctl` 并使用 `SCIF_CONNECT` 时观察到相关的信息，从而调试 Android Framework 或 NDK 如何使用 SCIF。请注意，实际的 `SCIF_CONNECT` 的值可能会因 Android 版本和架构而异，需要根据具体情况进行调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/scif_ioctl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -346,8 +346,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -429,7 +431,4 @@ struct scifioctl_node_ids {
 #define SCIF_FENCE_WAIT _IOWR('s', 16, __s32)
 #define SCIF_FENCE_SIGNAL _IOWR('s', 17, struct scifioctl_fence_signal)
 #endif
-
-"""
-
 ```

@@ -163,7 +163,7 @@ By following this structured approach, breaking down the code into smaller piece
 
 总而言之，`session-glue.c` 虽然代码量不大，但在 Frida 的架构中扮演着重要的角色，它负责收集目标设备的系统信息，为 Frida 的正常运行和逆向分析工作奠定了基础。理解它的功能和实现细节，有助于我们更好地使用 Frida，并在遇到问题时进行有效的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/base/session-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-base.h"
 
 #if defined (HAVE_WINDOWS)
@@ -309,7 +311,4 @@ _frida_query_android_system_property (const gchar * name)
 }
 
 #endif
-
-"""
-
 ```

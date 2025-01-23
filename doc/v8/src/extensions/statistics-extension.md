@@ -97,11 +97,13 @@ console.log("垃圾回收后的总共提交的内存 (bytes):", statisticsAfterG
 
 `statistics-extension.cc` 通过定义和实现原生 JavaScript 函数 `getV8Statistics()`，为 JavaScript 开发者提供了一种访问 V8 引擎内部运行时状态的机制。这对于深入了解 JavaScript 代码的性能特征以及 V8 引擎的运行行为非常有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/extensions/statistics-extension.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -288,7 +290,4 @@ void StatisticsExtension::GetCounters(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -166,14 +166,16 @@ By following this structured approach, combining code analysis, inferential reas
 
 `wake_up_budget_pool.cc` 中定义的 `WakeUpBudgetPool` 类是 Blink 渲染引擎中用于管理任务队列唤醒频率的重要组件。它通过配置唤醒间隔、持续时间和对齐策略，有效地控制了任务的执行时机，从而在性能优化和资源节约方面发挥着关键作用。理解其工作原理对于理解浏览器如何调度和执行 JavaScript 代码，以及如何优化 Web 应用的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/throttling/wake_up_budget_pool.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -307,7 +309,4 @@ void WakeUpBudgetPool::WriteIntoTrace(perfetto::TracedValue context,
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

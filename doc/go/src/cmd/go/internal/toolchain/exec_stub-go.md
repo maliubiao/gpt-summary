@@ -128,15 +128,17 @@ func execGoToolchain(gotoolchain, dir, exe string) {
 
 在 `js` 和 `wasip1` 平台上，`execGoToolchain` 实际上是一个**占位符**，它明确地表明了在这些环境下直接执行 Go 工具链中的可执行文件是不支持的。这很可能是因为 `js` 和 `wasip1` 的运行时环境与传统的操作系统环境有很大的不同，直接执行本地可执行文件的方式并不适用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/toolchain/exec_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -150,9 +152,4 @@ import "cmd/go/internal/base"
 func execGoToolchain(gotoolchain, dir, exe string) {
 	base.Fatalf("execGoToolchain unsupported")
 }
-
-"""
-
-
-
 ```

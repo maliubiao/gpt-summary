@@ -181,15 +181,17 @@ Num Inner Infos: 1
 
 `v8/src/parsing/preparser-logger.h` 定义了一个简单的日志类，用于在 V8 的预解析阶段记录关于 JavaScript 函数的关键信息。这些信息有助于 V8 引擎进行优化和错误检测。虽然普通开发者不会直接使用这个类，但了解其功能可以帮助我们编写更高效和可维护的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/preparser-logger.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/preparser-logger.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ class PreParserLogger final {
 }  // namespace v8.
 
 #endif  // V8_PARSING_PREPARSER_LOGGER_H_
-
-"""
-
 ```

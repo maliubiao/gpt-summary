@@ -157,14 +157,16 @@ By following this kind of structured analysis and iterative refinement, one can 
 
 总之，`blink/renderer/platform/text/text_break_iterator.cc` 是 Blink 引擎中负责文本分段和确定断点的关键组件，它直接影响着网页文本的渲染效果，并与 HTML 结构、CSS 样式以及 JavaScript 的文本处理能力紧密相关。理解其功能有助于开发者更好地理解和控制网页文本的布局和显示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/text_break_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999 Lars Knoll (knoll@kde.org)
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2010 Apple Inc. All rights
@@ -700,7 +702,4 @@ std::ostream& operator<<(std::ostream& ostream, BreakSpaceType break_space) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

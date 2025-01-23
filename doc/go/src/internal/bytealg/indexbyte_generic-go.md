@@ -137,7 +137,7 @@ func main() {
 
 这段 `indexbyte_generic.go` 文件提供了在特定架构下，用于在字节切片和字符串中查找指定字节的简单实现。它是 `bytes.IndexByte` 和 `strings.IndexByte` 的一个回退方案。使用者需要注意检查函数的返回值，以避免在未找到目标字节时出现错误。由于是内部包的实现，通常开发者不需要直接调用这些函数，而是通过标准库的 `bytes` 和 `strings` 包来使用其功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/bytealg/indexbyte_generic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -145,8 +145,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -176,9 +178,4 @@ func IndexByteString(s string, c byte) int {
 	}
 	return -1
 }
-
-"""
-
-
-
 ```

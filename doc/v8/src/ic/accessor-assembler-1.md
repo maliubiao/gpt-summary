@@ -128,13 +128,15 @@ console.log(child.childProp); // 对应 LoadIC 或 GenericPropertyLoad
 
 总而言之，这个代码片段是V8引擎实现JavaScript对象模型和属性访问机制的核心部分，它直接影响着JavaScript代码的执行效率。通过内联缓存、快速属性访问等优化手段，V8力求以高性能的方式执行JavaScript代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/accessor-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
- = FieldType::Any().ptr();
+### 源代码
+```
+= FieldType::Any().ptr();
     // FieldType::Any can hold any value.
     GotoIf(
         TaggedEqual(field_type, BitcastWordToTagged(IntPtrConstant(kAnyType))),
@@ -1797,8 +1799,4 @@ void AccessorAssembler::LoadIC_Noninlined(const LoadICParameters* p,
   {
     Label try_megamorphic(this), try_megadom(this);
     GotoIf(TaggedEqual(feedback, MegamorphicSymbolConstant()),
-           
-"""
-
-
 ```

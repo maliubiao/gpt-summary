@@ -110,11 +110,13 @@ for (let i = 0; i < 5000; i++) {
 
 `v8/src/heap/free-list.cc` 文件实现了 V8 引擎中用于管理老生代对象空间的空闲列表功能。它通过组织和维护可用的空闲内存块，提高了内存分配和释放的效率，从而直接影响了 JavaScript 程序的性能。虽然 JavaScript 开发者不能直接操作这些底层的 C++ 代码，但他们的代码行为（创建和释放对象）会触发这些机制的运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/free-list.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -706,7 +708,4 @@ size_t FreeList::SumFreeLists() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

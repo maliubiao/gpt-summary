@@ -144,7 +144,7 @@ Initially, I might focus too much on the simplicity of the C code itself. Howeve
 
 总而言之，`static_lib_source.c` 这个简单的文件在 Frida 的测试框架中，用于演示和验证 Frida 与静态链接库交互的能力，并揭示了静态链接、符号解析和代码依赖等底层概念。对于逆向工程师来说，理解这种简单的依赖关系是分析更复杂程序的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/windows/20 vs install static lib with generated obj deps/static_lib_source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,15 +152,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern int generated_function(void);
 
 int static_lib_function(void)
 {
     return generated_function();
 }
-
-"""
-
 ```

@@ -154,15 +154,17 @@ console.log(result);     // 这是一个函数调用语句
 
 `v8/src/interpreter/bytecode-source-info.cc` 定义了 `BytecodeSourceInfo` 结构，用于记录字节码指令对应的源代码位置和类型。 这对于 V8 的内部工作（例如调试、性能分析）以及帮助开发者理解和调试 JavaScript 代码至关重要。 即使它本身不直接处理用户错误，但它提供的元数据是错误报告和调试工具的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-source-info.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-source-info.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -186,7 +188,4 @@ std::ostream& operator<<(std::ostream& os, const BytecodeSourceInfo& info) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

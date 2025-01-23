@@ -210,15 +210,17 @@ let processedData = processData(largeData);
 
 总而言之，`v8/src/heap/gc-tracer.h` 定义的 `GCTracer` 类是 V8 垃圾回收机制的重要组成部分，它负责监控和记录 GC 的行为，为性能分析和优化提供关键的数据支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/gc-tracer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/gc-tracer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -839,7 +841,4 @@ const char* ToString(GCTracer::Event::Type type, bool short_name);
 }  // namespace v8
 
 #endif  // V8_HEAP_GC_TRACER_H_
-
-"""
-
 ```

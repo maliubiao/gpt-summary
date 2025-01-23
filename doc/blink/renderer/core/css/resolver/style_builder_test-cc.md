@@ -118,15 +118,17 @@ By following this thought process, we can effectively analyze the given C++ test
 
 总而言之，`style_builder_test.cc` 是 Blink 引擎中一个重要的测试文件，它确保了 `StyleBuilder` 类在构建元素计算样式时的正确性，这对于保证网页的正常渲染至关重要。理解这个文件的功能和测试用例，可以帮助开发者更好地理解 CSS 样式解析的内部机制，并排查与样式相关的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_builder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -283,7 +285,4 @@ TEST_F(StyleBuilderTest, GridTemplateAreasApplyOrder) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

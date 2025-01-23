@@ -178,7 +178,7 @@ print(result)
 
 总而言之，`frida/subprojects/frida-gum/releng/tomlkit/tests/util.py` 文件虽然看似简单，但它是确保 `tomlkit` 库功能正确性的重要组成部分，间接地支撑着 Frida 动态Instrumentation 工具的可靠运行，尤其是在需要解析目标进程 TOML 配置的场景下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/tests/util.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit.items import AoT
 from tomlkit.items import Array
 from tomlkit.items import Bool
@@ -245,7 +247,4 @@ def assert_is_ppo(v_unwrapped, unwrapped_type):
 def elementary_test(v, unwrapped_type):
     v_unwrapped = v.unwrap()
     assert_is_ppo(v_unwrapped, unwrapped_type)
-
-"""
-
 ```

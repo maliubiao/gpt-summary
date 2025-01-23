@@ -90,14 +90,16 @@ By following this structured approach, I can effectively analyze the code snippe
 
 总而言之，`test_ukm_recorder.cc` 中的 `TestUkmRecorder` 类是一个用于单元测试的关键工具，它允许开发者在不实际发送 UKM 数据的情况下，验证 Blink 引擎中的代码是否正确地触发了预期的 UKM 事件。这对于确保隐私预算机制和其他依赖 UKM 的功能按预期工作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/test_ukm_recorder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -126,7 +128,4 @@ std::vector<const ukm::mojom::UkmEntry*> TestUkmRecorder::GetEntriesByHash(
 
 }  // namespace test
 }  // namespace blink
-
-"""
-
 ```

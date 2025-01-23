@@ -195,15 +195,17 @@ HTML 和 CSS 本身不直接与这个文件交互。但是，用户在 HTML 页�
 
 总而言之，`FileSystemWritableFileStream.cc` 是 File System Access API 中实现文件写入功能的核心组件，它连接了 JavaScript 的写入操作和底层的操作系统文件系统接口。理解这个文件的工作原理有助于理解 Web 应用如何与用户的本地文件系统进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/file_system_access/file_system_writable_file_stream.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -339,7 +341,4 @@ String FileSystemWritableFileStream::mode() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

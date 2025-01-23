@@ -198,14 +198,16 @@ page_scale_factor: 1.5
 
 总而言之，`blink/common/widget/visual_properties_mojom_traits.cc` 是 Blink 引擎中一个关键的文件，它确保了与渲染和显示相关的各种属性可以在不同的进程之间可靠地传递，这对于 Chromium 的多进程架构至关重要。它定义了数据的序列化和反序列化规则，并间接地影响着网页在浏览器中的呈现方式和用户交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/widget/visual_properties_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ bool StructTraits<
 }
 
 }  // namespace mojo
-
-"""
-
 ```

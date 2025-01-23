@@ -108,11 +108,13 @@ function foo() {
 
 `simplified-lowering-unittest.cc` 是 V8 编译器的一个关键测试文件，它专注于验证 `SimplifiedLowering` 阶段的功能是否正确，确保 JavaScript 代码中的高级操作和数据类型能够被正确地转换为更底层的表示，为后续的机器码生成做好准备。 这个测试文件通过构造各种输入场景并断言 lowering 后的结果，来保证 V8 编译器优化的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/simplified-lowering-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ V8_FUZZ_TEST_F(SimplifiedLoweringFuzzTest, SmiConstantToIntPtrConstantP)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

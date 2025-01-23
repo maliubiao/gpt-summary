@@ -143,7 +143,7 @@ while ((match = regex.exec(str)) !== null) {
 
 `experimental-interpreter.cc` 的第二部分主要负责正则表达式执行过程中的 **状态和内存管理**，以及实现 **避免重复执行的优化策略**。特别是当启用了实验性的捕获组优化时，它会管理额外的时钟数组来辅助优化捕获组相关的匹配。这部分代码是 V8 引擎高效执行 JavaScript 正则表达式的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/experimental/experimental-interpreter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/experimental/experimental-interpreter.cc以.tq结尾，那它是个v8 torque源代码，
@@ -151,8 +151,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _;
   }
 
@@ -467,8 +469,4 @@ int ExperimentalRegExpInterpreter::FindMatches(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

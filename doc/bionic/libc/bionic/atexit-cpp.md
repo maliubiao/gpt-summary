@@ -290,7 +290,7 @@ if (Process.platform === 'android') {
 
 通过 Frida Hook，你可以清晰地观察到哪些函数被注册为退出处理程序，以及它们在何时被执行，这对于理解 Android 系统和应用程序的生命周期管理以及调试资源泄漏等问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/atexit.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -301,8 +301,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2020 The Android Open Source Project
  * All rights reserved.
@@ -586,7 +588,4 @@ restart:
     __libc_stdio_cleanup();
   }
 }
-
-"""
-
 ```

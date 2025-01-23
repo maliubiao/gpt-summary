@@ -118,7 +118,7 @@ Project targets '0.49.0' but uses feature introduced in '0.50.0': new_awesome_fe
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/mesonbuild/interpreterbase/decorators.py` 文件定义了一套机制，用于在 Frida 的构建过程中检查 Meson 功能的使用是否与项目指定的目标 Meson 版本兼容。它通过使用装饰器和不同的检查类（`FeatureNew`, `FeatureDeprecated`, `FeatureBroken`）来识别并警告用户使用了过新、已弃用或存在问题的 Meson 功能。这有助于确保 Frida 构建的稳定性和正确性，避免由于 Meson 版本不兼容导致的问题。 这部分代码是 Frida 构建系统的重要组成部分，它通过静态分析来提前发现潜在的兼容性问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/interpreterbase/decorators.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 n f'Project specifies a minimum meson_version \'{tv}\' but uses features which were added in newer versions:'
 
     @staticmethod
@@ -249,8 +251,4 @@ class FeatureNewKwargs(FeatureCheckKwargsBase):
 
 class FeatureDeprecatedKwargs(FeatureCheckKwargsBase):
     feature_check_class = FeatureDeprecated
-
-"""
-
-
 ```

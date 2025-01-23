@@ -163,7 +163,7 @@ By following this structured approach, combining code analysis with system-level
 
 通过以上步骤，用户的操作最终会触发 `launchd.js` 中的代码执行，实现对进程启动的控制。这个文件是 Frida 在 Darwin 平台上实现动态 Instrumentation 的一个关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/darwin/agent/launchd.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const POSIX_SPAWN_START_SUSPENDED = 0x0080;
 const SIGKILL = 9;
 
@@ -505,7 +507,4 @@ function findInserterResume() {
 
   return null;
 }
-
-"""
-
 ```

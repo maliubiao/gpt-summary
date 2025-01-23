@@ -207,15 +207,17 @@ By following these steps, and iterating through the analysis, a comprehensive an
 
 总而言之，`QuicConnectivityMonitor` 是 Chromium QUIC 实现中一个重要的组件，它负责监控网络连接状态，收集统计信息，并为网络连接问题的诊断提供线索。虽然 JavaScript 代码不直接调用它，但它的行为和收集的信息可以间接地影响 JavaScript 的网络 API 和错误处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_connectivity_monitor.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -474,7 +476,4 @@ void QuicConnectivityMonitor::OnSessionGoingAwayOnIPAddressChange(
 }
 
 }  // namespace net
-
-"""
-
 ```

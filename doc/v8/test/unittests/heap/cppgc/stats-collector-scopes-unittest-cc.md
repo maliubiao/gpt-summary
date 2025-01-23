@@ -147,15 +147,17 @@ for (let i = 0; i < 10000; i++) {
 
 总而言之，这个 C++ 单元测试文件专注于验证 V8 内部的 `StatsCollector` 组件在跟踪垃圾回收相关操作时的正确性，这对于理解和优化 JavaScript 引擎的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/stats-collector-scopes-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc/stats-collector-scopes-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -470,7 +472,4 @@ TEST_F(CppgcTracingScopesTest, TestIndividualConcurrentScopes) {
 }  // namespace cppgc
 
 #endif  // CPPGC_IS_STANDALONE
-
-"""
-
 ```

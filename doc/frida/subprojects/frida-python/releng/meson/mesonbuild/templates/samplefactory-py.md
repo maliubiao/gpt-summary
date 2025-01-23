@@ -144,7 +144,7 @@ input_options = Arguments(language='cpp')
 
 总而言之，`samplefactory.py` 在 Frida 的构建流程中扮演着一个关键角色，它通过简单工厂模式，根据用户选择的编程语言，动态地生成相应的项目模板，为后续的代码编写、编译和测试提供了基础结构。虽然它本身不直接进行逆向操作，但为逆向工程师创建实验环境提供了便利。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/templates/samplefactory.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -195,7 +197,4 @@ _IMPL: T.Mapping[str, T.Union[T.Type[ClassImpl], T.Type[FileHeaderImpl], T.Type[
 
 def sample_generator(options: Arguments) -> SampleImpl:
     return _IMPL[options.language](options)
-
-"""
-
 ```

@@ -147,7 +147,7 @@ func main() {
 
 `go/src/runtime/os_netbsd_amd64.go` 中的 `lwp_mcontext_init` 函数是 Go 运行时环境在 NetBSD (amd64 架构) 上创建新 goroutine 的关键步骤之一。它负责初始化新创建的轻量级进程的机器上下文，为其设置好执行入口、栈空间以及必要的参数，从而启动 goroutine 的执行。 这段代码是 Go 语言并发模型的基础设施，但对于普通的 Go 开发者来说是透明的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_netbsd_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -155,8 +155,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -176,9 +178,4 @@ func lwp_mcontext_init(mc *mcontextt, stk unsafe.Pointer, mp *m, gp *g, fn uintp
 	mc.__gregs[_REG_R9] = uint64(uintptr(unsafe.Pointer(gp)))
 	mc.__gregs[_REG_R12] = uint64(fn)
 }
-
-"""
-
-
-
 ```

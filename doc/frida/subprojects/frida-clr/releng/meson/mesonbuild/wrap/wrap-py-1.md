@@ -186,7 +186,7 @@ By following these steps, I can generate a comprehensive and informative answer 
 
 这个脚本是 Frida 构建流程中自动化处理依赖项的关键组成部分，确保了构建过程的可重复性和依赖项的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/wrap/wrap.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,9 +195,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- bool = True) -> None:
+### 源代码
+```python
+bool = True) -> None:
         if what + '_hash' not in self.wrap.values and not hash_required:
             return
         expected = self.wrap.get(what + '_hash').lower()
@@ -322,8 +324,4 @@ Prompt:
                         os.chmod(dst_file, stat.S_IWUSR)
                         os.remove(dst_file)
                 shutil.copy2(src_file, dst_dir)
-
-"""
-
-
 ```

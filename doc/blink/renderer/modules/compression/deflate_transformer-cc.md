@@ -179,15 +179,17 @@ By following this thought process, we can systematically analyze the C++ code an
 
 总而言之，`deflate_transformer.cc` 是 Chromium Blink 引擎中实现 DEFLATE 压缩功能的核心组件，它与 JavaScript Streams API 紧密结合，为 web 开发者提供了在客户端进行数据压缩的能力，从而优化网络传输和提升用户体验。理解其功能和使用场景，有助于排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/compression/deflate_transformer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -326,7 +328,4 @@ void DeflateTransformer::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -121,7 +121,7 @@ To summarize, this part of `rewriteARM.go` defines a set of peephole optimizatio
 **总结这段代码的功能:**
 
 这段 `rewriteARM.go` 代码定义了一系列基于模式匹配的重写规则，用于优化ARM架构下的按位与 (`AND`)、带移位的按位与等操作。这些规则旨在通过常量折叠、强度削减、消除冗余操作和利用ARM指令特性来生成更高效的ARM汇编代码。它是Go编译器针对ARM架构进行性能优化的关键组成部分。
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -129,8 +129,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 MANDconst)
 		v.AuxInt = int32ToAuxInt(int32(uint32(c) >> uint64(d)))
 		v.AddArg(x)
@@ -3116,10 +3118,4 @@ func rewriteValueARM_OpARMMOVHload(v *Value) bool {
 		mem := v_1
 		if !(sym == nil) {
 			break
-		
-"""
-
-
-
-
 ```

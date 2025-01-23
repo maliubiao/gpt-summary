@@ -185,14 +185,16 @@ Promise.allSettled([promise4, promise5, promise6]).then((results) => {
 
 总而言之，`v8/src/builtins/promise-all-element-closure.tq` 中的代码是 V8 引擎实现 `Promise.all` 和 `Promise.allSettled` 核心逻辑的关键部分，它负责高效、正确地处理每个输入 promise 的结果，并最终决定聚合 promise 的状态和值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/promise-all-element-closure.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -384,7 +386,4 @@ transitioning javascript builtin PromiseAllSettledRejectElementClosure(
       value, target, PromiseAllSettledWrapResultAsRejectedFunctor{});
 }
 }
-
-"""
-
 ```

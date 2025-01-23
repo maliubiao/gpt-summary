@@ -152,15 +152,17 @@ fetch('https://example.com/data', {
 
 如果用户在使用浏览器时遇到与 HTTP 头部相关的问题 (例如，某些头部信息丢失或不正确)，开发人员可能会查看与 QPACK 相关的代码，包括像 `QpackDecoderStreamReceiver` 这样的类。 通过运行这些单元测试，可以验证 QPACK 解码器是否正确地处理了各种编码情况。 如果某个测试失败，就表明解码器可能存在 bug，需要进行修复。 开发者还可以使用调试器来跟踪 `QpackDecoderStreamReceiver` 的执行过程，查看它如何解析接收到的数据，以及如何通知其委托对象。 这些测试用例提供了具体的输入和预期的输出，有助于快速定位和修复问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/qpack/qpack_decoder_stream_receiver_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ TEST_F(QpackDecoderStreamReceiverTest, StreamCancellation) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

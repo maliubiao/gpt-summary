@@ -159,15 +159,17 @@ Even though JavaScript is dynamically typed, the `TypeInferenceReducer` might in
 
 **In summary, `v8/src/compiler/turboshaft/type-inference-reducer.h` is a crucial component of V8's Turboshaft compiler responsible for understanding the types of values during compilation. This information is vital for optimization, verification, and informing later stages of the compilation process, ultimately contributing to faster and more reliable JavaScript execution.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/type-inference-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/type-inference-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -742,7 +744,4 @@ class TypeInferenceReducer
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_TYPE_INFERENCE_REDUCER_H_
-
-"""
-
 ```

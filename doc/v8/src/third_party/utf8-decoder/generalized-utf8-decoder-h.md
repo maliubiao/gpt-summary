@@ -268,15 +268,17 @@ console.log(decodedString.codePointAt(0).toString(16)); // 输出: "1d11e"
 
 理解 `GeneralizedUtf8DfaDecoder` 这样的底层解码器的工作原理，有助于开发者更好地理解字符编码，并避免在处理文本数据时出现常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/utf8-decoder/generalized-utf8-decoder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/third_party/utf8-decoder/generalized-utf8-decoder.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // See http://bjoern.hoehrmann.de/utf-8/decoder/dfa/ and the sibling file
 // utf8-decoder.h for details.
 //
@@ -381,7 +383,4 @@ struct GeneralizedUtf8DfaDecoder {
 };
 
 #endif  // __GENERALIZED_UTF8_DFA_DECODER_H
-
-"""
-
 ```

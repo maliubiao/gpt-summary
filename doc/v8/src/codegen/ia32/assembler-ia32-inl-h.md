@@ -161,15 +161,17 @@ ret               ; 返回
 
 总之，`v8/src/codegen/ia32/assembler-ia32-inl.h` 是 V8 代码生成器的核心组成部分，它提供了用于生成 IA32 机器码的基础工具和抽象。理解这个文件中的代码对于深入了解 V8 的代码生成过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/assembler-ia32-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ia32/assembler-ia32-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -468,7 +470,4 @@ void Operand::set_disp8(int8_t disp) {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_IA32_ASSEMBLER_IA32_INL_H_
-
-"""
-
 ```

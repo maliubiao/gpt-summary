@@ -150,7 +150,7 @@ This iterative process of skimming, identifying high-level areas, detailed analy
 
 `allplatformstests.py` 的第一部分主要负责测试 Frida 构建系统的核心功能，包括选项处理、配置文件生成、安装路径管理、编译器和链接器行为、输出处理、安装和卸载流程以及依赖管理。 这些测试覆盖了构建过程的多个方面，确保 Frida 可以在各种平台上正确构建和安装，这对于 Frida 的正常使用和逆向分析工作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -901,8 +903,4 @@ class AllPlatformTests(BasePlatformTests):
                           self._run, self.mtest_command + ['--setup=valgrind'])
         with open(os.path.join(self.logdir, 'testlog-valgrind.txt'), encoding='utf-8') as f:
             vg_log = f.read()
-
-"""
-
-
 ```

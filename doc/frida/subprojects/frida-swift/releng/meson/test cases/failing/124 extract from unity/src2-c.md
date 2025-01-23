@@ -163,7 +163,7 @@ Frida 是一款强大的动态插桩工具，常用于逆向工程、安全分�
 
 这个简单的例子展示了 Frida 在动态分析中的基本应用。即使是一个非常简单的函数，Frida 也能提供强大的运行时观察和修改能力，帮助逆向工程师理解程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing/124 extract from unity/src2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,12 +171,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int sub_lib_method2() {
     return 1337;
 }
-
-"""
-
 ```

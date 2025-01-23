@@ -154,7 +154,7 @@ Let's break down its functionalities with examples relating to reverse engineeri
 
 **In summary, `common.py` is a crucial utility within Frida's build system for seamlessly integrating CMake projects. It handles the translation between Meson's and CMake's concepts, manages build settings, and provides structured representations of CMake project information. This integration is indirectly relevant to reverse engineering by enabling the building of Frida itself and its interaction with target applications that might be built using CMake.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/cmake/common.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -495,7 +497,4 @@ class TargetOptions:
         if tgt in self.target_options:
             initial = self.target_options[tgt].get_install(initial)
         return initial
-
-"""
-
 ```

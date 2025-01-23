@@ -155,15 +155,17 @@ Essentially, the process involved understanding the code's purpose, breaking it 
 
 `net/test/test_connection_cost_observer.cc` 中定义的 `TestConnectionCostObserver` 类是 Chromium 网络栈测试框架中的一个重要工具，用于模拟和验证网络连接成本变化相关的行为。虽然它本身不直接与 JavaScript 交互，但它所观察的底层网络状态信息最终会影响到 Web 平台的 JavaScript API，从而影响网页的行为。 开发者可以通过这个类来编写可靠的单元测试，并调试与网络连接成本相关的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/test/test_connection_cost_observer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ TestConnectionCostObserver::last_cost_changed_input() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

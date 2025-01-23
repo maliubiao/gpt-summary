@@ -125,7 +125,7 @@ This section of the code primarily focuses on handling the **successful completi
 
 总而言之，这部分代码是 Credential Management API 实现的关键部分，负责处理异步操作的结果，并将底层的操作状态和数据转换成 JavaScript 可以理解的 Promise 结果和错误信息。它确保了 API 的正确性和安全性，并为开发者提供了标准的错误处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/credentialmanagement/authentication_credentials_container.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -133,9 +133,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- scoped_abort_state ? scoped_abort_state->Signal() : nullptr;
+### 源代码
+```cpp
+scoped_abort_state ? scoped_abort_state->Signal() : nullptr;
     if (signal && signal->aborted()) {
       auto* script_state = resolver->GetScriptState();
       ScriptState::Scope script_state_scope(script_state);
@@ -908,7 +910,4 @@ ScriptPromise<IDLNullable<Credential>> AuthenticationCredentialsContainer::get(
       resolver->Reject(MakeGarbageCollected<DOMException>(
           DOMExceptionCode::kNotSupportedError,
           "Required parameter
-"""
-
-
 ```

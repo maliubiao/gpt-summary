@@ -173,15 +173,17 @@ This systematic approach helps to understand the purpose and function of the giv
 
 总而言之，`video_playback_quality.cc` 是 Blink 渲染引擎中一个关键的组件，它专注于提供细粒度的视频播放质量指标，这些指标对于诊断和优化基于 Media Source Extensions 的视频播放体验至关重要。虽然用户不会直接接触到这个 C++ 文件，但其背后的逻辑直接影响着用户最终看到的视频质量和流畅度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasource/video_playback_quality.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -235,7 +237,4 @@ VideoPlaybackQuality::VideoPlaybackQuality(const Document& document,
 }
 
 }  // namespace blink
-
-"""
-
 ```

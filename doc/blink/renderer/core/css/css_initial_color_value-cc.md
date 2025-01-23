@@ -134,15 +134,17 @@ This thought process involves a combination of code analysis, knowledge of web t
 
 总而言之，`css_initial_color_value.cc` 文件虽然代码量不大，但在 Blink 渲染引擎中扮演着关键的角色，它代表了 CSS 中 `initial` 关键字应用于颜色属性时的抽象概念，并参与到 CSS 样式计算和最终渲染的过程中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_initial_color_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -163,7 +165,4 @@ String CSSInitialColorValue::CustomCSSText() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

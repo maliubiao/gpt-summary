@@ -207,15 +207,17 @@ Initially, I might focus too heavily on the network request aspect. Then, realiz
 
 总而言之，`event_source.cc` 文件是 Chromium Blink 引擎中实现 EventSource API 的核心组件，负责管理连接、处理数据、分发事件以及处理错误和重连逻辑，使得 Web 开发者能够利用 Server-Sent Events 技术构建实时的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/eventsource/event_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009, 2012 Ericsson AB. All rights reserved.
  * Copyright (C) 2010 Apple Inc. All rights reserved.
@@ -613,7 +615,4 @@ void EventSource::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -235,7 +235,7 @@ Here's a plan:
 
 这些功能对于 Frida 这样的动态 Instrumentation 工具至关重要，因为它需要构建和管理各种组件，包括 gum 库本身以及用于目标进程注入和代码执行的组件。理解这些构建过程对于逆向分析 Frida 本身或使用 Frida 进行逆向分析都是很有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -244,8 +244,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 = arg
             for dep in t.depends:
                 assert isinstance(dep, (build.CustomTarget, build.BuildTarget))
@@ -857,7 +859,4 @@ Prompt:
         '''
         Some backends don't support custom compilers. This is a convenience
         method to conve
-"""
-
-
 ```

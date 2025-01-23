@@ -191,7 +191,7 @@ func main() {
 
 总而言之，`go/src/runtime/checkptr_test.go` 这部分代码的核心作用是测试 Go 语言编译器提供的指针安全检查功能，确保当开发者选择启用这些检查时，运行时能够有效地捕获潜在的内存安全错误，从而帮助开发者编写更健壮和安全的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/checkptr_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -309,9 +311,4 @@ func TestCheckPtr2(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

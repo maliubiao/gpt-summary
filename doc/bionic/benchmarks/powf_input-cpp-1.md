@@ -100,7 +100,7 @@ This structured approach helps to address all aspects of the user's request whil
 
 `bionic/benchmarks/powf_input.cpp` 的第二部分定义了一个大型的浮点数对数组，这个数组的主要目的是作为 `powf` 函数的性能基准测试的输入数据。这些数据旨在覆盖各种可能的输入场景，以评估 `powf` 函数在不同情况下的性能和精度，这对于确保 Android 系统的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/powf_input.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -111,8 +111,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 249236p-2},
   {0x1.001494p+0, 0x1.51eb86p-2},
   {0x1p+0, 0x1.51eb86p-2},
@@ -1112,7 +1114,4 @@ Prompt:
   {0x1.da454ep-1, 0x1.249236p-2},
   {0x1.184adap+9, 0x1.d1746p-1},
   {0x1.5c5a3ep-1, 0x1.666666p+0}
-"""
-
-
 ```

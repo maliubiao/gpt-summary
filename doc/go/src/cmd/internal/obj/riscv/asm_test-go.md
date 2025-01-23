@@ -259,15 +259,17 @@ Response: Let's break down the thought process for analyzing the provided Go cod
 
 总而言之，`asm_test.go` 这个文件通过生成各种边界情况和典型场景的 RISC-V 汇编代码，并使用 Go 的汇编器工具进行编译，来验证 Go 的 RISC-V 汇编器实现的正确性和健壮性。它确保了在处理大型代码、远距离跳转、大立即数等方面，汇编器能够生成正确的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/riscv/asm_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -563,9 +565,4 @@ TEXT _stub(SB),$0-0
 		t.Errorf("PCALIGN test failed - got %s\nwant %s", out, want)
 	}
 }
-
-"""
-
-
-
 ```

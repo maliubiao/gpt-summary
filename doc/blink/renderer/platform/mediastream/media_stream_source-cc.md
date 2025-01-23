@@ -211,14 +211,16 @@ By following these steps, you can systematically analyze a source code file like
 
 总之，`blink/renderer/platform/mediastream/media_stream_source.cc` 文件是 Blink 引擎中处理媒体流源的关键组成部分，它负责管理媒体源的状态、提供数据给消费者以及通知相关的组件状态变化。理解它的功能有助于深入了解 WebRTC 和 Media Streams API 的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/media_stream_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -571,7 +573,4 @@ void MediaStreamSource::Dispose() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

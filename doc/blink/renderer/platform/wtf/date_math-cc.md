@@ -134,14 +134,16 @@ Let's focus on the `IsLeapYear` and `MsToYear` functions for examples of logical
 
 In summary, `blink/renderer/platform/wtf/date_math.cc` is a crucial, low-level component in the Chromium rendering engine responsible for the core logic behind date and time manipulation. It plays a vital role in enabling JavaScript's `Date` object and handling date-related tasks in the browser. Understanding its functionalities helps in comprehending how web browsers process and manage date and time information.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/date_math.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999-2000 Harri Porten (porten@kde.org)
  * Copyright (C) 2006, 2007 Apple Inc. All rights reserved.
@@ -831,7 +833,4 @@ base::TimeDelta ConvertToLocalTime(base::Time time) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

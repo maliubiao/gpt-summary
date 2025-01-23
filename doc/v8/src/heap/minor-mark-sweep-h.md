@@ -217,15 +217,17 @@ createAndReferenceYoungObject();
 
 理解 V8 的垃圾回收机制，包括新生代的次要标记清除，可以帮助开发者编写更高效、更少内存泄漏的 JavaScript 代码。 虽然不需要深入到 C++ 的实现细节，但对概念的理解是有益的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/minor-mark-sweep.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/minor-mark-sweep.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -483,7 +485,4 @@ class MinorMarkSweepCollector final {
 }  // namespace v8
 
 #endif  // V8_HEAP_MINOR_MARK_SWEEP_H_
-
-"""
-
 ```

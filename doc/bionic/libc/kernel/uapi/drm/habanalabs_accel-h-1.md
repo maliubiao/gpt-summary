@@ -114,7 +114,7 @@ By following these steps, breaking down the problem into smaller pieces, and ite
 
 希望这个归纳能够帮助你更好地理解这个头文件的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/drm/habanalabs_accel.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -126,8 +126,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ;
   __u64 start_addr1;
   __u64 addr_mask1;
@@ -180,8 +182,4 @@ struct hl_debug_args {
 #define HL_COMMAND_START (DRM_COMMAND_BASE + HL_IOCTL_INFO)
 #define HL_COMMAND_END (DRM_COMMAND_BASE + HL_IOCTL_DEBUG + 1)
 #endif
-
-"""
-
-
 ```

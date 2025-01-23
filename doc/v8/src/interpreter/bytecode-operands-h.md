@@ -174,15 +174,17 @@ function sumPropertiesGood() {
 
 总结来说，`v8/src/interpreter/bytecode-operands.h` 是 V8 字节码解释器的核心组成部分，它定义了字节码指令可以使用的各种数据类型，并为 V8 内部提供了操作和查询这些类型的工具。虽然普通 JavaScript 开发者不会直接接触这个文件，但理解其概念有助于编写更高效的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-operands.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-operands.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -419,7 +421,4 @@ class BytecodeOperands : public AllStatic {
 }  // namespace v8
 
 #endif  // V8_INTERPRETER_BYTECODE_OPERANDS_H_
-
-"""
-
 ```

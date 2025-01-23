@@ -96,7 +96,7 @@ To achieve this, I will:
 
 总而言之，这部分代码是 Blink 渲染引擎中负责**构建和管理 CSS 规则失效信息**的关键组件。它通过分析 CSS 选择器的结构和特征，将这些信息存储在不同的失效集合中，以便在 DOM 发生变化时能够高效地触发必要的样式重计算，从而优化渲染性能。 重点在于对选择器特征的精确提取和失效集合的正确管理，特别是针对像 `:has()` 这样复杂伪类的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/invalidation/rule_invalidation_data_visitor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 still have invalidation sets
   // for the features since we are able to detect when they change.
   // That is, ".a" should not have ".b" in its invalidation set for
@@ -888,7 +890,4 @@ RuleInvalidationDataVisitor<VisitorType>::InvalidationSetForSimpleSelector(
       case CSSSelector::kPseudoOnlyChild:
       case CSSSelector::kPseudoLink:
       case CSSSelector::kPseudoVisited:
-"""
-
-
 ```

@@ -110,7 +110,7 @@ Initially, one might think this script does something more complex. However, the
 
 因此，用户通常不会直接执行这个脚本。它作为 Frida 自动化测试流程的一部分，在幕后默默工作，帮助开发者验证 Frida 的功能是否正常。如果调试某个 Frida 的测试用例失败，开发者可能会查看相关的测试脚本和支持脚本（如 `genbob.py`）来理解测试的setup和预期行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/88 dep fallback/subprojects/boblib/genbob.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,15 +118,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 with open(sys.argv[1], 'w') as f:
     f.write('')
-
-"""
-
 ```

@@ -183,11 +183,13 @@ fetch('table.wasm')
 
 `table.cc` 这个 C++ 示例代码的核心功能是演示如何使用 WebAssembly C API 来操作 Table 对象。它展示了 Table 的创建、访问、修改和增长等基本操作，并演示了如何通过 Table 进行间接函数调用。这些操作在 JavaScript 的 WebAssembly API 中都有对应的实现，使得 JavaScript 也可以与 WebAssembly 的 Table 进行交互，从而实现动态的函数调度和插件机制等功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/example/table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -380,7 +382,4 @@ int main(int argc, const char* argv[]) {
   std::cout << "Done." << std::endl;
   return 0;
 }
-
-"""
-
 ```

@@ -147,7 +147,7 @@ This detailed breakdown allows me to address all aspects of your request, from o
 
 作为 20 个部分中的第 10 部分，这个代码片段集中测试了 `QuicSessionPool` 的核心功能之一：**在检测到路径退化时的连接迁移能力**。它覆盖了端口迁移、避免迁移到坏的 Socket、处理带有 Draining Stream 的会话迁移以及在新网络连接后进行迁移等多个关键场景。这些测试用例旨在确保 `QuicSessionPool` 能够有效地应对网络环境的变化，保持 QUIC 连接的稳定性和性能。通过对这些特定场景的深入测试，可以验证连接迁移机制的健壮性和正确性，为用户提供更流畅的网络体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共20部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 quic_data2.AddRead(ASYNC, server_maker_.Packet(server_packet_num++)
                                     .AddPathResponseFrame()
                                     .AddPaddingFrame()
@@ -882,8 +884,5 @@ TEST_P(QuicSessionPoolTest,
   QuicChromiumClientSession* session2 = GetActiveSession(server2);
   EXPECT_NE(session1, session2);
 
-  // Cause QUIC stream to be created and send GET 
-"""
-
-
+  // Cause QUIC stream to be created and send GET
 ```

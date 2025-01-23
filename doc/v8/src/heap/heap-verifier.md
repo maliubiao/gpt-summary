@@ -70,11 +70,13 @@ console.log(obj.x);
 
 总而言之，`heap-verifier.cc` 是 V8 引擎中一个重要的调试和验证工具，它通过在运行时检查堆的完整性，帮助开发者尽早发现和修复潜在的内存管理错误，从而保证 JavaScript 代码的稳定性和性能。 虽然 JavaScript 开发者通常不会直接与这个文件交互，但它的功能对于 V8 引擎的正确运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-verifier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -997,7 +999,4 @@ void HeapVerifier::VerifySafeMapTransition(Heap* heap,
 }  // namespace internal
 }  // namespace v8
 #endif  // VERIFY_HEAP
-
-"""
-
 ```

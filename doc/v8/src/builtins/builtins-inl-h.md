@@ -226,15 +226,17 @@ By following this structured analysis and iterative refinement, I can arrive at 
 
 `v8/src/builtins/builtins-inl.h` 是 V8 引擎中非常核心的一个文件，它定义了获取各种内建函数的入口。这些内建函数是 V8 执行 JavaScript 代码的基础，与 JavaScript 的各种语法和功能紧密相关。理解这个文件有助于深入理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -531,7 +533,4 @@ wasm::WasmCodePointerTable::Handle Builtins::WasmBuiltinHandleOf(
 }  // namespace v8
 
 #endif  // V8_BUILTINS_BUILTINS_INL_H_
-
-"""
-
 ```

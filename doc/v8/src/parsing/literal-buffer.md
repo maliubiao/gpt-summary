@@ -106,11 +106,13 @@ const str2 = "abc你好";
 
 `LiteralBuffer` 是 V8 内部用于高效构建字符串字面量的关键组件。它在解析阶段发挥作用，负责处理不同编码的字符，并最终将字面量转换为 V8 内部的字符串对象。它的动态增长和编码转换机制优化了内存使用和处理效率。它与 JavaScript 的联系在于，每当 JavaScript 代码中出现一个字符串字面量时，`LiteralBuffer` 就有可能参与到这个字符串的创建过程中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/literal-buffer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ void LiteralBuffer::AddTwoByteChar(base::uc32 code_unit) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

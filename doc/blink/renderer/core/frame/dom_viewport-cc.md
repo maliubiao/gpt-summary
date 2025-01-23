@@ -214,14 +214,16 @@ Let's break down the thought process for analyzing the provided C++ code.
 
 总而言之，`blink/renderer/core/frame/dom_viewport.cc` 文件中的 `DOMViewport` 类是 Blink 引擎中用于提供视口分段信息的核心组件，它为 JavaScript 开发者提供了在具有多显示区域的设备上创建更复杂和适应性更强网页布局的能力。理解其工作原理和潜在的使用陷阱对于正确地利用这一特性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/dom_viewport.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -285,7 +287,4 @@ std::optional<HeapVector<Member<DOMRect>>> DOMViewport::segments() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

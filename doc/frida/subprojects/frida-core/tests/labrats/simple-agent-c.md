@@ -163,7 +163,7 @@ With all this information gathered, I structure the output to address each part 
 
 总而言之，`simple-agent.c` 是一个用于演示 Frida 基础功能的简单示例，它涉及到动态链接、进程控制、文件操作等底层概念，并可以帮助逆向工程师理解 Frida Agent 的生命周期和基本工作原理。通过分析这个简单的 Agent，可以为理解更复杂的 Frida 脚本和 Agent 打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/labrats/simple-agent.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -278,7 +280,4 @@ append_to_log (char c)
   fclose (f);
 #endif
 }
-
-"""
-
 ```

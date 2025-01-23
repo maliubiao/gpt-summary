@@ -143,7 +143,7 @@ console.log(formattedNumber); // 输出 "$1,234.56"
 
 简单来说，这部分代码是 `Intl.NumberFormat` 功能的 "配置中心"，确保对象在进行实际的数字格式化之前，其内部状态是正确且符合用户需求的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-number-format.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-number-format.cc以.tq结尾，那它是个v8 torque源代码，
@@ -151,9 +151,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    "currency"
+### 源代码
+```cpp
+"currency"
   //    [[CurrencyDisplay]]             "currencyDisplay"
   //    [[CurrencySign]]                "currencySign"
   //    [[Unit]]                        "unit"
@@ -913,7 +915,4 @@ Handle<String> TrimWhiteSpaceOrLineTerminator(Isolate* isolate,
   {
     DisallowGarbageCollection no_gc;
     String::Fl
-"""
-
-
 ```

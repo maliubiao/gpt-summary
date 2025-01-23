@@ -136,7 +136,7 @@ Essentially, I performed a code review with the specific goal of understanding t
 
 `net/quic/quic_network_transaction_unittest.cc` 文件的第一部分主要负责搭建测试 QUIC 网络事务的基础设施。它定义了用于参数化测试的结构，提供了构建 QUIC 数据包和 HTTP 头部信息的辅助函数，并定义了主要的测试 fixture 类 `QuicNetworkTransactionTest`。这个类包含了创建和配置测试环境所需的各种成员变量和方法，为后续的测试用例提供了便利的工具和抽象，以便能够有效地测试 `HttpNetworkTransaction` 在 QUIC 协议下的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -978,7 +980,4 @@ class QuicNetworkTransactionTest
     EXPECT_TRUE(http_server_properties_->IsAlternativeServiceBroken(
         alternative_service_info_vector[0].alternative_service(),
         network_anonymization_
-"""
-
-
 ```

@@ -100,7 +100,7 @@ By following this structured approach, we can systematically analyze the code an
 
 `ui.py` 文件在 Frida Core 的构建过程中扮演着关键角色，它负责自动检测和配置各种 UI 相关的依赖库，确保 Frida Core 能够正确编译和链接这些库。这涉及到与操作系统底层、编译器工具链以及目标依赖库的交互。理解这个文件的功能有助于我们理解 Frida Core 的依赖关系，并在构建过程中遇到问题时进行排查。对于逆向工程师来说，了解 Frida 如何处理这些 UI 库的依赖也有助于理解 Frida 可能具备的与目标程序 UI 交互的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/dependencies/ui.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,8 +108,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2017 The Meson development team
 
@@ -391,7 +393,4 @@ packages['vulkan'] = vulkan_factory = DependencyFactory(
     [DependencyMethods.PKGCONFIG, DependencyMethods.SYSTEM],
     system_class=VulkanDependencySystem,
 )
-
-"""
-
 ```

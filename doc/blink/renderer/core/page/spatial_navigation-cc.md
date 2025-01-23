@@ -102,7 +102,7 @@ spatial_navigation.cc` 文件的主要功能是实现在 Chromium Blink 渲染�
 
 `spatial_navigation.cc` 文件的主要功能是 **在 Chromium Blink 渲染引擎中实现基于方向键的网页元素空间导航**。它负责识别和评估潜在的焦点候选者，根据方向和距离计算来选择下一个焦点元素，并处理滚动容器和视口等复杂场景。该文件与 HTML、CSS 和 JavaScript 紧密相关，其逻辑会受到网页结构和样式的影响，并响应用户的键盘交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/spatial_navigation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Nokia Corporation and/or its subsidiary(-ies)
  * Copyright (C) 2009 Antonio Gomes <tonikitoo@webkit.org>
@@ -956,7 +958,4 @@ PhysicalRect ShrinkInlineBoxToLineBox(const LayoutObject& layout_object,
 
   // If actual line-height is bigger than the inline box, we shouldn't change
   // anything. This is, for example, needed to not brea
-"""
-
-
 ```

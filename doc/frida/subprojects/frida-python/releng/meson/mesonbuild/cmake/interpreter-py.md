@@ -135,7 +135,7 @@ target_include_directories(mylib PUBLIC
 
 总而言之，`frida/subprojects/frida-python/releng/meson/mesonbuild/cmake/interpreter.py` 的主要功能是作为 Frida 的一个桥梁，负责将 CMake 构建系统的项目信息翻译成 Meson 构建系统可以理解的形式。这使得 Frida 能够利用目标应用程序的 CMake 构建信息来辅助进行动态插桩和逆向分析。它处理了 CMake 项目的结构、目标、依赖、编译选项、链接选项等关键信息，并进行必要的转换和过滤，以便 Meson 可以基于这些信息进行构建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/cmake/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -903,8 +905,5 @@ class ConverterCustomTarget:
         mlog.log('Custom Target', mlog.bold(self.name), f'({self.cmake_name})')
         mlog.log('  -- command:      ', mlog.bold(str(self.command)))
         mlog.log('  -- outputs:      ', mlog.bold(str(self.outputs)))
-        mlog.log('  -- conflict_map: ', 
-"""
-
-
+        mlog.log('  -- conflict_map: ',
 ```

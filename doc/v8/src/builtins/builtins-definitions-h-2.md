@@ -280,7 +280,7 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，这段代码是 V8 引擎实现 JavaScript 语言核心功能的重要组成部分，它定义了大量用于执行各种 JavaScript 操作的底层函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-definitions.h以.tq结尾，那它是个v8 torque源代码，
@@ -288,8 +288,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 C(ModulusSmi_Baseline, BinarySmiOp_Baseline)                               \
   TFC(Exponentiate_Baseline, BinaryOp_Baseline)                                \
   TFC(ExponentiateSmi_Baseline, BinarySmiOp_Baseline)                          \
@@ -695,7 +697,4 @@ C(ModulusSmi_Baseline, BinarySmiOp_Baseline)                               \
   CPP(AtomicsMutexAsyncUnlockResolveHandler, JSParameterCount(1))              \
   CPP(AtomicsMutexAsyncUnlockRejectHandler, JSParameterCount(1))               \
   CPP(AtomicsConditionConstructor, JSParameterCo
-"""
-
-
 ```

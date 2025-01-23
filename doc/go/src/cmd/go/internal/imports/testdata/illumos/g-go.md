@@ -130,24 +130,21 @@ go build -tags "customtag" main.go
 
 这段代码的核心功能是在非 `illumos` 系统上副作用导入 `g` 包，利用 Go 语言的构建标签机制实现了特定平台下的条件编译和初始化行为。理解构建标签对于编写跨平台或者具有特定平台行为的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/imports/testdata/illumos/g.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 //go:build !illumos
 // +build !illumos
 
 package illumos
 
 import _ "g"
-
-"""
-
-
-
 ```

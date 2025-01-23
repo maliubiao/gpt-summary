@@ -197,7 +197,7 @@ func main() {
 
 **例如，如果一个 Go 程序在 Windows ARM 上运行，并且依赖于准确的调用栈信息（例如，在性能分析或错误报告中），开发者需要意识到这个潜在的问题。**  Go 运行时通过同时设置 `_CONTEXT_CONTROL` 和 `_CONTEXT_INTEGER` 来避免这个问题，确保能获取到完整的上下文信息。  普通开发者不需要直接处理这些常量，但理解其背后的原因有助于理解 Go 运行时在不同平台上的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_windows_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,8 +205,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -313,9 +315,4 @@ type _DISPATCHER_CONTEXT struct {
 func (c *_DISPATCHER_CONTEXT) ctx() *context {
 	return c.context
 }
-
-"""
-
-
-
 ```

@@ -284,7 +284,7 @@ sys.stdin.read()
 
 请注意，直接操作或修改 `sigcontext` 中的值通常是不推荐的，除非你对信号处理机制有深入的理解，并且知道自己在做什么。错误的操作可能导致程序崩溃或其他不可预测的行为。 这个头文件的主要作用是定义数据结构，供内核和用户空间程序理解信号处理期间的上下文信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/sigcontext.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -295,8 +295,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -510,7 +512,4 @@ struct sigcontext {
 };
 #endif
 #endif
-
-"""
-
 ```

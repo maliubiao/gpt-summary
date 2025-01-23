@@ -102,11 +102,13 @@ WebAssembly.instantiate(wasmCode, importObject)
 
 总而言之，`wasm.cc` 是一个重要的工具，用于确保 V8 引擎能够可靠地执行 WebAssembly 代码，这对于 WebAssembly 在 Web 平台上的广泛应用至关重要。它通过不断尝试各种可能的 WebAssembly 代码组合，来发现潜在的漏洞和错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/wasm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
 ```

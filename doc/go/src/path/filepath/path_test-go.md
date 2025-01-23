@@ -128,7 +128,7 @@ func main() {
 
 这段代码是 `path/filepath` Go 语言标准库的一部分测试，旨在全面验证该库提供的各种文件路径操作函数的正确性和可靠性。 它通过定义一系列包含不同输入和预期输出的测试用例，覆盖了路径清理、路径判断、路径转换、路径分割、路径连接、文件扩展名提取以及目录树遍历等多种文件路径处理场景，并且考虑了不同操作系统平台下的差异性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/path/filepath/path_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -137,8 +137,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1492,9 +1494,4 @@ func TestRelativeSymlinkToAbsolute(t *testing.T) {
 	}
 	if p != want {
 		t.Errorf(`EvalSymlinks("link"
-"""
-
-
-
-
 ```

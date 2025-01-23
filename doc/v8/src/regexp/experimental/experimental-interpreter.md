@@ -111,11 +111,13 @@ console.log(regex5.test(str5_false)); // 输出: false
 
 `experimental-interpreter.cc` 文件是 V8 引擎中一个重要的组成部分，它提供了一种**实验性的、基于广度优先搜索的 NFA 解释器**来执行 JavaScript 正则表达式。 这种方法与传统的回溯算法不同，旨在在某些情况下提供更好的性能，并支持包括捕获组、量词、断言和反向引用等在内的各种正则表达式特性。 你在 JavaScript 中编写和使用的正则表达式，其执行过程很可能涉及到这个或类似的解释器。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/experimental/experimental-interpreter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1232,7 +1234,4 @@ int ExperimentalRegExpInterpreter::FindMatches(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

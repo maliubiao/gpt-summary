@@ -200,15 +200,17 @@ func main() {
 
 `complit.go` 中的代码是 Go 编译器处理复合字面量的核心部分。它负责将源代码中的复合字面量转换为内部表示，并生成相应的初始化代码，同时考虑了静态和动态初始化的优化。虽然用户通常不需要直接了解这部分代码的细节，但理解其背后的原理有助于更好地理解 Go 语言的编译过程和一些潜在的性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/walk/complit.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -892,9 +894,4 @@ func genAsStatic(as *ir.AssignStmt) {
 	}
 	base.Fatalf("genAsStatic: rhs %v", as.Y)
 }
-
-"""
-
-
-
 ```

@@ -167,7 +167,7 @@ By following these steps, I was able to systematically analyze the code and gene
 
 提供的第三部分代码主要集中在 `InputMethodController` **获取和提供关于当前焦点元素及其文本输入特性的详细信息**。这包括了输入类型、各种输入标志（如自动完成、自动更正、拼写检查）、软键盘行为提示、以及与输入法相关的其他属性。这些信息对于浏览器和输入法正确处理文本输入至关重要，例如决定显示哪种类型的软键盘，是否启用拼写检查，以及回车键的行为等。  它也涉及到一些辅助功能方面的信息，例如拼写建议。 结合前两部分的功能，可以推断 `InputMethodController` 负责了从用户开始输入到最终文本提交的整个输入流程的管理和协调工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ime/input_method_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t();
     info.composition_end = composition_plain_text_range.End();
   }
@@ -474,8 +476,4 @@ WebVector<ui::ImeTextSpan> InputMethodController::GetImeTextSpans() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

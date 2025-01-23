@@ -109,7 +109,7 @@ This part of the `quic_session_pool_test.cc` file primarily focuses on testing:
 
 这部分 `quic_session_pool_test.cc` 文件主要负责测试 `QuicSessionPool` 在以下关键方面的功能：**QUIC 会话的创建（同步和异步），0-RTT 连接的建立和处理，初始 RTT 值的管理和优化，`Http3GoAway` 帧的响应，以及与服务器网络统计和 NetworkAnonymizationKey 的协同工作。此外，还测试了基于 Origin Frame 的连接池化能力。** 这些测试确保了 `QuicSessionPool` 的核心功能能够正确可靠地运行，为基于 QUIC 的网络连接提供稳定和高效的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共20部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (&verify_details);
 
   MockQuicData socket_data(version_);
@@ -897,7 +899,4 @@ TEST_P(QuicSessionPoolTest, PoolingSkipDns) {
   std::unique_ptr<HttpStream> stream2 = CreateStream(&builder2.request);
   EXPECT_TRUE(stream2.get());
   EXPECT_EQ(GetActiveSession(kDefaultD
-"""
-
-
 ```

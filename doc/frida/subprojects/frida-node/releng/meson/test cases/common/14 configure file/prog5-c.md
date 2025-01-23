@@ -168,7 +168,7 @@ By following this thought process, combining code analysis with contextual under
 
 这个过程展示了如何从一个测试失败开始，逐步深入到具体的源代码文件和构建配置，最终理解程序行为和排查问题。在这个过程中，`prog5.c` 成为了一个需要分析的目标，而理解其功能和依赖关系是解决问题的关键一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/14 configure file/prog5.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,15 +176,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <string.h>
 #include <config5.h>
 
 int main(void) {
     return strcmp(MESSAGE, "@var2@");
 }
-
-"""
-
 ```

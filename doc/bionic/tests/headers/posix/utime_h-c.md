@@ -290,7 +290,7 @@ if (Process.platform === 'android') {
 
 总而言之，`bionic/tests/headers/posix/utime_h.c` 文件本身是一个测试文件，用于确保 `utime.h` 头文件定义正确。而 `utime` 函数是 Bionic libc 提供的一个用于修改文件时间戳的 POSIX 标准函数，被 Android Framework 和 NDK 广泛使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/utime_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -301,8 +301,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -344,7 +346,4 @@ static void utime_h() {
 
   FUNCTION(utime, int (*f)(const char*, const struct utimbuf*));
 }
-
-"""
-
 ```

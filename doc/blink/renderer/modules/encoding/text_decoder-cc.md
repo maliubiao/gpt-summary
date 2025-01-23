@@ -168,15 +168,17 @@ const decoder = new TextDecoder('utf-8');
 
 总而言之，`blink/renderer/modules/encoding/text_decoder.cc` 是 Blink 引擎中实现文本解码核心功能的关键文件，它支撑了 Web 平台上处理各种字符编码文本数据的能力，并直接与 JavaScript 的 `TextDecoder` API 相关联。 理解其功能有助于开发者更好地处理和调试与字符编码相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/encoding/text_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -325,7 +327,4 @@ String TextDecoder::decode(ExceptionState& exception_state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

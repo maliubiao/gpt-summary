@@ -58,13 +58,15 @@ console.log(sharedArray[index]); // Load operation
 
 **In summary, this part of the `machine-operator.cc` file defines the vocabulary of low-level operations that the V8 compiler uses to represent and manipulate data and control flow during the compilation of JavaScript code.** It provides a set of fundamental building blocks that are essential for translating high-level JavaScript into efficient machine code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    IrOpcode::kStackSlot, Operator::kNoDeopt | Operator::kNoThrow,
+### 源代码
+```
+IrOpcode::kStackSlot, Operator::kNoDeopt | Operator::kNoThrow,
             "StackSlot", 0, 0, 0, 1, 0, 0,
             StackSlotRepresentation(size, alignment, is_tagged)) {}
 };
@@ -1464,7 +1466,4 @@ const Operator* MachineOperatorBuilder::Word64AtomicExchange(
     AtomicOpParameters params) {
 #define OP_WITH_KIND(kType, Kind)                           \
   if (params.type() == MachineType::kType()                 \
-"""
-
-
 ```

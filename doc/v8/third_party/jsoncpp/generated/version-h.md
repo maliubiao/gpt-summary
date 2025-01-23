@@ -177,15 +177,17 @@ int main() {
 
 总之，`v8/third_party/jsoncpp/generated/version.h` 是一个关键的文件，用于定义所使用的 `jsoncpp` 库的版本信息，这对于 V8 的构建、依赖管理和潜在的兼容性问题至关重要。尽管 JavaScript 代码本身不直接包含它，但它支持了 V8 处理 JSON 的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/jsoncpp/generated/version.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/jsoncpp/generated/version.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // DO NOT EDIT. This file (and "version") is a template used by the build system
 // (either CMake or Meson) to generate a "version.h" header file.
 #ifndef JSON_VERSION_H_INCLUDED
@@ -208,7 +210,4 @@ Prompt:
 // it frees its memory.
 
 #endif  // JSON_VERSION_H_INCLUDED
-
-"""
-
 ```

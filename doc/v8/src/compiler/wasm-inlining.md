@@ -90,11 +90,13 @@ function javascriptFunction(a, b) {
 
 `v8/src/compiler/wasm-inlining.cc` 是 V8 引擎中一个关键的优化组件，它通过内联 WebAssembly 函数调用来提升 JavaScript 与 WebAssembly 互操作时的性能。当 JavaScript 代码频繁调用小的 WebAssembly 函数时，这种优化尤其有效。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-inlining.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -641,7 +643,4 @@ const wasm::WasmModule* WasmInliner::module() const { return env_->module; }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

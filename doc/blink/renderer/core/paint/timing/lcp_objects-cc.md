@@ -185,15 +185,17 @@ lcp_info.root_rect_info_.set_height(300);
 
 总而言之，`blink/renderer/core/paint/timing/lcp_objects.cc` 文件虽然是 Blink 引擎的内部实现细节，但它承载着记录和传递关键性能指标信息的责任，这些信息对于开发者理解和优化网页的加载性能至关重要，而网页的呈现又直接依赖于 HTML、CSS 和 JavaScript 的协同作用。通过 Chromium 的开发者工具，开发者可以间接地观察到这个文件所做的工作，并利用这些信息来提升用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/timing/lcp_objects.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ void LCPRectInfo::OutputToTraceValue(TracedValue& value) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

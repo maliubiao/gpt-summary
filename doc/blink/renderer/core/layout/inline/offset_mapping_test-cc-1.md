@@ -117,15 +117,17 @@ Based on these observations, the primary function of `offset_mapping_test.cc` is
 
 总而言之，`blink/renderer/core/layout/inline/offset_mapping_test.cc` (第 2 部分) 的功能是**全面测试 `OffsetMapping` 类在各种复杂的文本布局场景下的正确性，确保 Blink 引擎能够准确地在 DOM 结构和渲染后的文本内容之间建立偏移量映射关系，这对于文本选择、光标定位、以及正确实现 CSS 文本相关特性至关重要。** 这些测试覆盖了被替换元素、CSS 伪类、不同的 `white-space` 属性、生成内容、双向文本等多种情况，力求保证 `OffsetMapping` 的鲁棒性和准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/offset_mapping_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Content(Position(space_node, 1u)).IsNull());
   EXPECT_TRUE(
       StartOfNextNonCollapsedContent(Position(space_node, 0u)).IsNull());
@@ -874,7 +876,4 @@ TEST_F(OffsetMappingTest, NoCrashByListStyleTypeChange) {
   UpdateAllLifecyclePhasesForTest();
   GetOffsetMapping();
   // Pass if OffsetMapping constructor didn'
-"""
-
-
 ```

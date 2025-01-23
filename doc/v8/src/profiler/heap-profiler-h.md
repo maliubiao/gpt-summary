@@ -213,15 +213,17 @@ Heap profiling is extremely valuable for identifying common JavaScript programmi
 
 In summary, `v8/src/profiler/heap-profiler.h` defines the core mechanisms for memory analysis within V8, enabling developers to understand and optimize the memory behavior of their JavaScript applications. While not directly written in Torque, it forms a crucial part of V8's runtime system that underpins the heap profiling features available to JavaScript developers.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/heap-profiler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/heap-profiler.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2009-2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -389,7 +391,4 @@ class HeapProfiler : public HeapObjectAllocationTracker {
 }  // namespace v8
 
 #endif  // V8_PROFILER_HEAP_PROFILER_H_
-
-"""
-
 ```

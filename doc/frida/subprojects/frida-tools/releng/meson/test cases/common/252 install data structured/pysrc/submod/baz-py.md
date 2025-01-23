@@ -129,7 +129,7 @@ print("baz module successfully imported")
 
 虽然 `baz.py` 本身是一个非常简单的文件，但它在 Frida-tools 的测试体系中扮演着重要的角色，用于验证模块安装和导入的正确性。分析它的功能和上下文可以帮助我们理解 Frida-tools 的构建和测试流程，以及在开发和维护过程中可能遇到的问题。它虽然不直接涉及逆向操作或底层技术，但作为工具链的一部分，为用户使用 Frida 进行逆向分析提供了基础保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/252 install data structured/pysrc/submod/baz.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,10 +137,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''mod.submod.baz module'''
-
-"""
-
 ```

@@ -184,7 +184,7 @@ const result = SIMD.Int32x4.select(mask, a, b);
 
 这些测试用例旨在验证当启用 "revectorize" 优化时，Turbofan 编译器是否能够正确地将多个 128 位 SIMD 操作组合成更高效的 256 位 SIMD 指令，从而提升 WebAssembly 代码的执行性能。每个测试通常会设置一些输入数据，执行相应的 WebAssembly 代码，并检查输出结果是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-simd.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-run-wasm-simd.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rbofan_S256Xor) {
   RunI32x8BinOpRevecTest(kExprS128Xor, BitwiseXor,
                          compiler::IrOpcode::kS256Xor);
@@ -989,7 +991,4 @@ TEST(RunWasmTurbofan_ShuffleToS256Load8x8U) {
   SKIP_TEST_IF_NO_TURBOSHAFT;
   EXPERIMENTAL_FLAG_SCOPE(revectorize);
   if (!CpuFeatu
-"""
-
-
 ```

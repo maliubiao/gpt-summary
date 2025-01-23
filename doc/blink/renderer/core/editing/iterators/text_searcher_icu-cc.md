@@ -204,15 +204,17 @@ By following this iterative process of understanding, analyzing, connecting, and
 
 总而言之，`blink/renderer/core/editing/iterators/text_searcher_icu.cc` 文件是 Blink 渲染引擎中一个关键的组成部分，它利用 ICU 库提供了强大的文本搜索功能，支撑着浏览器中各种与文本查找相关的特性。 理解其功能和与前端技术的联系，有助于开发者更好地理解浏览器的工作原理，并在遇到相关问题时进行调试和解决。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/iterators/text_searcher_icu.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012 Apple Inc. All
  * rights reserved.
@@ -472,7 +474,4 @@ void TextSearcherICU::SetCaseSensitivity(bool case_sensitive) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

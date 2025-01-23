@@ -117,15 +117,17 @@ func fEqEqOptimized(a int, f float64) bool {
 
 总而言之，这段代码是 Go 编译器为了确保其 late_fuse 优化器能够正确工作而设计的测试用例。它通过定义具有特定模式的函数，并期望编译器能够将其转换为更高效的形式来验证优化器的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fuse.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -d=ssa/late_fuse/debug=1
 
 //go:build (amd64 && !gcflags_noopt) || (arm64 && !gcflags_noopt)
@@ -317,9 +319,4 @@ func fPhi(a, b string) string {
 
 func main() {
 }
-
-"""
-
-
-
 ```

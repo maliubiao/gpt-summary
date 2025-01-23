@@ -134,15 +134,17 @@ Here's a breakdown of the key components and their roles:
 
 In summary, `v8/src/maglev/maglev-concurrent-dispatcher.h` defines the mechanism for efficiently compiling JavaScript code using multiple threads in the Maglev compiler. It manages the lifecycle of compilation jobs, ensuring that they are executed concurrently and their results are integrated back into the V8 runtime. Understanding this component is crucial for comprehending how V8 optimizes JavaScript code for better performance.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-concurrent-dispatcher.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-concurrent-dispatcher.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ class V8_EXPORT_PRIVATE MaglevConcurrentDispatcher final {
 #endif  // V8_ENABLE_MAGLEV
 
 #endif  // V8_MAGLEV_MAGLEV_CONCURRENT_DISPATCHER_H_
-
-"""
-
 ```

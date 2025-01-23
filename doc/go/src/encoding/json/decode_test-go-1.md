@@ -126,7 +126,7 @@ func main() {
 
 **这段代码是第 2 部分，主要功能是测试 JSON 的解码 (Unmarshal) 功能，并涵盖了各种数据类型、错误场景以及一些特殊用法。** 它确保了 `encoding/json` 包的解码功能的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/json/decode_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -135,8 +135,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 x\":12},\"Loop1\":13,\"Loop2\":14,\"X\":15,\"Y\":16,\"Z\":17,\"Q\":18}"
 	if string(got) != want {
 		t.Errorf("Marshal:\n\tgot:  %s\n\twant: %s", got, want)
@@ -1459,9 +1461,4 @@ func TestUnmarshalPanic(t *testing.T) {
 		}
 	}()
 	Unmarshal([]b
-"""
-
-
-
-
 ```

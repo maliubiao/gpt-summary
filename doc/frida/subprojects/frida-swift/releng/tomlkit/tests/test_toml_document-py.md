@@ -194,7 +194,7 @@ Frida 是一个动态 instrumentation 工具，常用于逆向工程。TOML 作�
 
 总而言之，`test_toml_document.py` 是 `tomlkit` 库的核心测试文件，它确保了该库能够正确地解析和操作各种 TOML 文档结构，这对于依赖 `tomlkit` 的 Frida 工具和脚本的稳定运行至关重要，特别是在逆向工程领域，精确地读取和操作配置文件是成功进行分析的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/tomlkit/tests/test_toml_document.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -202,8 +202,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import copy
 import json
 import pickle
@@ -1290,7 +1292,4 @@ table = {a = 1, b = 2}
 age = 42
 """
     assert tomlkit.dumps(doc) == expected
-
-"""
-
 ```

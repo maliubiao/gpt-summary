@@ -143,14 +143,16 @@ std::atomic_int StringObject::destructor_calls{0};
 
 总而言之，`heap_test_objects.cc` 虽然代码简洁，但它在 Blink 的开发流程中扮演着至关重要的角色，它通过提供可控的测试对象，帮助开发者验证底层的内存管理机制是否正确可靠，从而间接地保障了 JavaScript、HTML 和 CSS 等上层功能的稳定运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/heap_test_objects.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -163,7 +165,4 @@ namespace blink {
 std::atomic_int IntegerObject::destructor_calls{0};
 
 }  // namespace blink
-
-"""
-
 ```

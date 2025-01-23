@@ -116,7 +116,7 @@ func main() {
 
 这部分代码的核心功能是实现 Go 语言中**表达式使用情况的精细化追踪**。 它特别关注标识符在赋值语句左侧的情况，并采取措施避免在这种情况下过早地标记变量为已使用。  通过区分不同类型的“使用”，这组函数为 Go 编译器的静态分析（例如检测未使用变量）提供了基础能力。 它可以被认为是 Go 语言类型检查器中用于理解代码语义和进行错误检测的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/types/call.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -125,9 +125,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- use(args ...ast.Expr) bool { return check.useN(args, false) }
+### 源代码
+```go
+use(args ...ast.Expr) bool { return check.useN(args, false) }
 
 // useLHS is like use, but doesn't "use" top-level identifiers.
 // It should be called instead of use if the arguments are
@@ -180,10 +182,4 @@ func (check *Checker) use1(e ast.Expr, lhs bool) bool {
 	}
 	return x.mode != invalid
 }
-
-"""
-
-
-
-
 ```

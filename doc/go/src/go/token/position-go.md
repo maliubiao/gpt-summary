@@ -192,7 +192,7 @@ func main() {
 
 总而言之，`go/token/position.go` 文件定义了 Go 语言中表示和管理源代码位置的基础设施，为词法分析、语法分析以及后续的编译和代码处理过程提供了关键的支持。理解其核心概念和使用方法对于开发 Go 语言工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/token/position.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -200,8 +200,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -817,9 +819,4 @@ func searchInts(a []int, x int) int {
 	}
 	return i - 1
 }
-
-"""
-
-
-
 ```

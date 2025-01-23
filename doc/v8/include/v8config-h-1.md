@@ -182,7 +182,7 @@ readFile();
 
 总结来说，这部分 `v8config.h` 代码的核心功能是**在编译时进行架构兼容性检查，并确定目标平台的关键属性（如字节序），以便为 V8 的后续构建过程提供必要的配置信息。** 它是 V8 跨平台能力的基础，确保 V8 能够正确地在不同的硬件架构上编译和运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8config.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8config.h以.tq结尾，那它是个v8 torque源代码，
@@ -190,8 +190,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 CH_X64 || V8_HOST_ARCH_MIPS64))
 #error Target architecture mips64 is only supported on mips64 and x64 host
 #endif
@@ -260,8 +262,4 @@ CH_X64 || V8_HOST_ARCH_MIPS64))
 #endif
 
 #endif  // V8CONFIG_H_
-
-"""
-
-
 ```

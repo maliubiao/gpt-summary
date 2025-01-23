@@ -120,15 +120,17 @@ const serverAddress = {
 
 总而言之，`quic_socket_address_coder_test.cc` 是一个关键的测试文件，用于确保 QUIC 协议栈中网络套接字地址的编码和解码功能的正确性，这对于建立和维护可靠的 QUIC 连接至关重要。开发者在调试网络问题时，可能会通过错误信息、代码追踪和单元测试来定位到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_socket_address_coder_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ TEST_F(QuicSocketAddressCoderTest, EncodeAndDecode) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

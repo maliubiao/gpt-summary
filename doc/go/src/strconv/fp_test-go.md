@@ -185,7 +185,7 @@ func myatof64(s string) (f float64, ok bool) {
 
 总而言之，这段测试代码主要验证了 `strconv` 包在处理浮点数解析和格式化方面的正确性，并且特别关注了对二进制指数格式的支持，这可能是为了处理某些特定的数据格式或者为了更底层的数值表示提供支持。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strconv/fp_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -193,8 +193,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -337,9 +339,4 @@ func TestFp(t *testing.T) {
 		t.Fatal("testfp: read testdata/testfp.txt: ", s.Err())
 	}
 }
-
-"""
-
-
-
 ```

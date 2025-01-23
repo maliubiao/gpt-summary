@@ -125,11 +125,13 @@ fs.open('./my_file.txt', 'r', (err, fd) => {
 
 `EmbedderDataArray` 是 V8 引擎为了支持嵌入器存储与 JavaScript 对象关联的额外信息而设计的内部数据结构。虽然 JavaScript 代码不能直接操作它，但它的存在使得嵌入器能够更有效地管理和扩展 JavaScript 运行时的功能，支持诸如 DOM 操作、Native 模块集成等高级特性。`EnsureCapacity` 方法保证了这种数据存储可以根据需要动态增长。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/embedder-data-array.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ Handle<EmbedderDataArray> EmbedderDataArray::EnsureCapacity(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

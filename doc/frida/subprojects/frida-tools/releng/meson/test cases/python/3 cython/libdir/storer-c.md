@@ -163,7 +163,7 @@ By following this structured approach, breaking down the problem into smaller pi
 
 这时，查看 `storer.c` 的源代码可以帮助理解 `Storer` 模块的工作原理，检查内存管理是否正确，以及数据是如何被存储和修改的，从而帮助定位和解决问题。文件路径 `frida/subprojects/frida-tools/releng/meson/test cases/python/3 cython/libdir/storer.c` 也暗示这可能是 Frida 工具自身的一部分，用于测试或作为某些功能的底层实现。Cython 的存在说明 Python 代码可能通过 Cython 接口调用了这个 C 模块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/python/3 cython/libdir/storer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"storer.h"
 #include<stdlib.h>
 
@@ -197,7 +199,4 @@ int storer_get_value(Storer *s) {
 void storer_set_value(Storer *s, int v) {
     s->value = v;
 }
-
-"""
-
 ```

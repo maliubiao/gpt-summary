@@ -92,15 +92,17 @@ By following this systematic approach, we can effectively analyze the given code
 
 `recording_test_utils.cc` 是 Blink 引擎中用于测试 Canvas 录制功能的关键组件。它通过提供 `RecordedOpsView` 类和辅助函数，使得开发者能够方便地验证 Canvas 绘制操作是否被正确地记录，并与 JavaScript 中执行的绘制指令相对应。这有助于确保 Canvas 功能的正确性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/canvas/recording_test_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ cc::PaintFlags ClearRectFlags() {
 }
 
 }  // namespace blink_testing
-
-"""
-
 ```

@@ -219,15 +219,17 @@ ok      _/path/to/your/go/test/typeparam   0.001s
 
 `go/test/typeparam/select.go` 这个文件是 Go 语言中用于测试 `select` 语句与泛型交互的测试用例。由于它位于 `ignored` 包下，很可能是用来测试实验性特性、复现已知问题或验证错误处理。使用者需要注意 `ignored` 包的含义，避免将其中的代码视为正式或推荐的用法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/select.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -235,9 +237,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

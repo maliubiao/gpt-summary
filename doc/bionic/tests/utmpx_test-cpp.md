@@ -219,7 +219,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 `bionic/tests/utmpx_test.cpp` 是一个用于测试 Bionic 库中 `utmpx` 相关函数的单元测试。由于 Bionic 的实现可能是一个简化版本，该测试主要验证函数调用的基本行为。尽管如此，理解 `utmpx` 的概念和其在传统 Unix/Linux 系统中的作用仍然很重要。在 Android 开发中，开发者应该优先使用 Android 提供的更高级别的 API 来处理用户会话和系统事件管理。Frida 可以用来动态地分析和调试这些底层函数的调用过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/utmpx_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -230,8 +230,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2023 The Android Open Source Project
  * All rights reserved.
@@ -274,7 +276,4 @@ TEST(utmpx, smoke) {
   endutxent();
   ASSERT_EQ(NULL, pututxline(&empty));
 }
-
-"""
-
 ```

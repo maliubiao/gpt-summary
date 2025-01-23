@@ -127,7 +127,7 @@ Initially, I might have focused too much on the *runtime* behavior of the `power
 
 总而言之，这个简单的 `foo.c` 文件虽然代码量很少，但它在一个更宏大的 Frida 项目中，充当着测试静态链接功能的重要角色，并体现了逆向工程中需要关注的编译时配置和链接方式等关键概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/18 pkgconfig static/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int power_level (void)
 {
 #ifdef FOO_STATIC
@@ -145,7 +147,4 @@ int power_level (void)
     return 8999;
 #endif
 }
-
-"""
-
 ```

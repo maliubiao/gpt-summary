@@ -81,11 +81,13 @@ If there are connections to JavaScript, those should be illustrated with JavaScr
 
 `v8/src/objects/ordered-hash-table.cc` 文件是 V8 引擎中实现有序哈希表的核心，它为 JavaScript 的 `Map`、`Set` 以及部分对象属性的有序存储提供了底层的支持。它通过精心的内存管理、哈希冲突处理以及动态调整策略，保证了这些数据结构在各种场景下的高效运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/ordered-hash-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1608,7 +1610,4 @@ OrderedHashTableIterator<JSMapIterator, OrderedHashMap>::Transition();
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

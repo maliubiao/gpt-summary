@@ -141,15 +141,17 @@ isolate2.runInContext(() => {
 
 总结来说，`v8/src/compiler/per-isolate-compiler-cache.h` 定义的 `PerIsolateCompilerCache` 类是 V8 编译管道中的一个关键组件，它通过缓存跨编译运行的数据来提高编译效率，特别是对于内置对象等常用数据。虽然 JavaScript 开发者通常不直接操作这个类，但它的功能直接影响了 JavaScript 代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/per-isolate-compiler-cache.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/per-isolate-compiler-cache.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ class PerIsolateCompilerCache : public ZoneObject {
 }  // namespace v8
 
 #endif  // V8_COMPILER_PER_ISOLATE_COMPILER_CACHE_H_
-
-"""
-
 ```

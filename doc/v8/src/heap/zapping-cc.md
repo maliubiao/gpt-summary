@@ -157,15 +157,17 @@ console.log(ref.value); // 如果垃圾回收后，obj 对应的内存被 zappin
 
 `v8/src/heap/zapping.cc` 是 V8 引擎用于调试目的的重要组成部分。它通过在垃圾回收后用特定值填充内存来帮助开发人员识别内存管理错误，特别是 use-after-free 错误。虽然 JavaScript 开发者不会直接使用这些函数，但它们对于保证 V8 引擎的稳定性和可靠性至关重要，从而间接地影响 JavaScript 的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/zapping.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/zapping.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ void ZapBlock(Address start, size_t size, uintptr_t zap_value) {
 }
 
 }  // namespace v8::internal::heap
-
-"""
-
 ```

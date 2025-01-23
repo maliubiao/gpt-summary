@@ -212,7 +212,7 @@ except Exception as e:
 
 总结来说，`bionic/linker/linker_test_globals.cpp` 是一个为动态链接器测试提供辅助功能的源文件，其核心作用是提供一些桩函数以避免链接错误，从而隔离和简化测试环境。它本身不直接参与 Android Framework 或 NDK 应用的常规执行流程，而是服务于 Bionic 动态链接器的开发和测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_test_globals.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -223,8 +223,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  * All rights reserved.
@@ -257,8 +259,4 @@ Prompt:
 void DL_WARN_documented_change(int api_level [[maybe_unused]],
                                const char* doc_link [[maybe_unused]],
                                const char* fmt [[maybe_unused]], ...) {}
-
-
-"""
-
 ```

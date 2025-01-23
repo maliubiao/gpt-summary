@@ -114,7 +114,7 @@ const arr = [];
 
 总而言之，`v8/src/roots/roots.h` 是 V8 引擎中一个关键的头文件，它定义了 V8 堆中一组预定义的、核心的对象 (roots) 的结构和访问方式。这些 roots 代表了 JavaScript 语言的基础构建块，并被 V8 引擎的各个部分广泛使用。该文件通过枚举、宏和类定义，组织并管理这些重要的对象，为 V8 的高效运行提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/roots/roots.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/roots/roots.h以.tq结尾，那它是个v8 torque源代码，
@@ -122,8 +122,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 fo, name##_accessor, CamelName##Accessor)
 
 // Produces (AccessorInfo, name, CamelCase) entries
@@ -424,8 +426,4 @@ class ReadOnlyRoots {
 }  // namespace v8
 
 #endif  // V8_ROOTS_ROOTS_H_
-
-"""
-
-
 ```

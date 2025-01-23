@@ -128,7 +128,7 @@ assembler.mov(r0, Operand(0x12345678));
 
 这部分代码的核心功能是 **为 ARM 架构提供一个汇编器接口**，允许 V8 编译器生成底层的机器码指令。它涵盖了标签管理、立即数处理、各种 ARM 指令（包括分支、数据处理和乘法/除法）的编码，并提供了一些辅助函数来处理指令编码的细节和常见的汇编编程问题。这部分是 V8 将 JavaScript 代码转化为可执行机器码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm/assembler-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm/assembler-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -136,8 +136,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 & ~kImm24Mask) == 0) {
         PrintF("value\n");
       } else {
@@ -1070,8 +1072,4 @@ void Assembler::usat(Register dst, int satpos, const Operand& src,
   }
 
   emit(cond | 0x6 * B24 | 0xE * B20 | satpos * B16 | dst.code() * B12 |
-      
-"""
-
-
 ```

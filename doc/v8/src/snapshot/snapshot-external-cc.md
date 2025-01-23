@@ -140,15 +140,17 @@ This detailed breakdown, considering the context of V8's initialization and perf
 
 总而言之，`v8/src/snapshot/snapshot-external.cc` 是 V8 引擎中一个关键的组件，它负责加载和管理外部快照数据，这是 V8 快速启动的重要机制。它通过 C++ 代码实现，并通过与 `v8::StartupData` 结构体的交互，将预先序列化的 JavaScript 堆状态加载到 V8 引擎中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/snapshot-external.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/snapshot-external.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ const v8::StartupData* Snapshot::DefaultSnapshotBlob() {
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

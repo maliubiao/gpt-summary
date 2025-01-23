@@ -122,7 +122,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 总之，这段代码是 V8 引擎中负责高效编译 WebAssembly 模块的关键组成部分，它支持同步和异步编译，并特别优化了流式编译的性能。它与 JavaScript 的 `WebAssembly` API 紧密相关，使得 JavaScript 能够利用 WebAssembly 提供的性能优势。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -130,8 +130,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ate->counters(), module->origin, wasm_compile, module_time));
   }
 
@@ -934,7 +936,4 @@ class AsyncCompileJob::FinishCompilation : public CompileStep {
   void RunInForeground(AsyncCompileJob* job) override {
     TRACE_COMPILE("(3) Compilation finished\n");
     if
-"""
-
-
 ```

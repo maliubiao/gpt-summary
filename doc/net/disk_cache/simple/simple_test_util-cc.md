@@ -133,15 +133,17 @@ fetch('https://example.com/image.png')
 
 总而言之，`net/disk_cache/simple/simple_test_util.cc` 是一个重要的测试基础设施文件，它允许开发者创建各种异常的缓存状态，从而全面测试 `simple` 磁盘缓存的健壮性和错误处理能力。它不直接与 JavaScript 交互，但其测试覆盖了 JavaScript 发起的网络请求所依赖的缓存功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ bool CorruptStream0LengthFromEntry(const std::string& key,
 }
 
 }  // namespace disk_cache::simple_util
-
-"""
-
 ```

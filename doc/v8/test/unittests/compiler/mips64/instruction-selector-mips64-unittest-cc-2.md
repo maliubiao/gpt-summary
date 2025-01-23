@@ -166,7 +166,7 @@ int main() {
 
 总而言之，这段代码是 V8 编译器测试套件的关键组成部分，用于确保在 MIPS64 架构上编译 JavaScript 代码的正确性和性能。 它通过模拟 V8 IR 节点的生成，并断言指令选择器产生了预期的 MIPS64 指令序列来实现这一目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/mips64/instruction-selector-mips64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/mips64/instruction-selector-mips64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -174,8 +174,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
     EXPECT_EQ(1U, s[0]->OutputCount());
     EXPECT_EQ(kFlags_set, s[0]->flags_mode());
@@ -332,8 +334,4 @@ TEST_F(InstructionSelectorTest, Word64ReverseBytes) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

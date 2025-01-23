@@ -134,7 +134,7 @@ This iterative process of scanning, identifying, inferring, relating, and antici
 
 `msubprojects.py` 是 Frida 构建系统中的一个关键脚本，它提供了一套全面的命令行工具，用于自动化管理 Frida 依赖的外部子项目。其核心功能包括下载、更新、检出、清理子项目，并与 Meson 的 Wrap 功能紧密集成。该脚本支持多种版本控制系统，并提供了详细的日志输出和错误处理机制，方便开发者和用户管理 Frida 的依赖关系，确保 Frida 能够被正确地构建。它对于解决构建过程中遇到的子项目相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/msubprojects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from dataclasses import dataclass, InitVar
@@ -895,7 +897,4 @@ def run(options: 'Arguments') -> int:
     for wrap in wraps:
         dirname = Path(source_dir, subproject_dir, wrap.directory).as_posix()
         runner = Runn
-"""
-
-
 ```

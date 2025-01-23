@@ -117,7 +117,7 @@ A user would typically encounter this code indirectly during the build process i
 
 In summary, `NoneBackend` in Frida's build system is a specialized backend focused solely on installation, skipping the build process. Its existence and error handling provide insights into the modular design of Meson and the expected workflows for building and installing software. When debugging, encountering errors related to this backend suggests a misconfiguration or an unexpected state where only installation is being attempted despite the need for compilation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/backend/nonebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2022 The Meson development team
 
@@ -153,7 +155,4 @@ class NoneBackend(Backend):
         mlog.log('Generating simple install-only backend')
         self.serialize_tests()
         self.create_install_data_files()
-
-"""
-
 ```

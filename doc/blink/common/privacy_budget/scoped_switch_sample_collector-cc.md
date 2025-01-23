@@ -108,14 +108,16 @@ Response: Let's break down the thought process to analyze the given C++ code and
 
 `ScopedSwitchSampleCollector` 是一个用于测试目的的工具类，它允许在特定的代码区域内替换全局的隐私预算样本收集器。虽然它本身是用 C++ 编写的，但它服务于 Chromium 浏览器引擎的隐私预算机制，而这个机制与 JavaScript, HTML, CSS 等 Web 技术收集到的信息密切相关。正确理解和使用 `ScopedSwitchSampleCollector` 对于编写可靠的隐私预算相关测试至关重要，需要避免嵌套使用等潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/scoped_switch_sample_collector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -142,7 +144,4 @@ ScopedSwitchSampleCollector::~ScopedSwitchSampleCollector() {
 
 }  // namespace test
 }  // namespace blink
-
-"""
-
 ```

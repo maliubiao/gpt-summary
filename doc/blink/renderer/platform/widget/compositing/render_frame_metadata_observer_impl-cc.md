@@ -146,14 +146,16 @@ By following these steps, you can effectively analyze the given C++ code and pro
 
 `RenderFrameMetadataObserverImpl` 是一个幕后英雄，它默默地监视着渲染过程中的关键状态，并将这些状态变化通知给渲染引擎的其他部分。理解它的功能有助于开发者更好地理解浏览器的工作原理，以及如何有效地使用 JavaScript、HTML 和 CSS 来构建高性能的 Web 应用。它在连接底层渲染和上层 Web 技术栈方面起着至关重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/compositing/render_frame_metadata_observer_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -435,7 +437,4 @@ void RenderFrameMetadataObserverImpl::DidEndScroll() {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

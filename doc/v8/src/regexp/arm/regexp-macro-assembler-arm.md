@@ -132,11 +132,13 @@ V8 引擎在幕后会执行以下步骤（简化）：
 
 `regexp-macro-assembler-arm.cc` 是 V8 引擎在 ARM 架构上执行正则表达式的核心组件。它负责将 JavaScript 正则表达式编译成高效的机器码，并管理执行过程中的各种状态，从而实现了 JavaScript 强大的正则表达式功能。 你编写的 JavaScript 正则表达式最终会被这个文件中的代码转换成底层的机器指令来执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/arm/regexp-macro-assembler-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1530,7 +1532,4 @@ void RegExpMacroAssemblerARM::LoadCurrentCharacterUnchecked(int cp_offset,
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_ARM
-
-"""
-
 ```

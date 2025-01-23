@@ -197,14 +197,16 @@ Content-Type: image/png
 
 总而言之，`blink/renderer/platform/network/form_data_encoder.cc` 是 Blink 引擎中负责将表单数据转换为网络传输格式的关键组件，它直接影响着用户在网页上填写和提交表单的行为。理解其功能有助于开发者更好地理解浏览器如何处理表单数据，并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/form_data_encoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -483,7 +485,4 @@ void FormDataEncoder::EncodeStringAsFormData(Vector<char>& buffer,
 }
 
 }  // namespace blink
-
-"""
-
 ```

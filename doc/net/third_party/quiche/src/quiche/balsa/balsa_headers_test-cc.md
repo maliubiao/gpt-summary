@@ -133,7 +133,7 @@ headers.RemoveValue("My-Header", "value");
 
 这部分代码的主要功能是**全面测试 `quiche::BalsaHeaders` 类和 `quiche::BalsaBuffer` 类的各项功能**，包括 header 的添加、替换、删除、迭代、首行设置，以及 buffer 的内存管理和写入操作。这些测试覆盖了正常情况和各种边界情况，旨在确保这两个类在处理 HTTP 报文头时的正确性和健壮性。同时也对 `BalsaBuffer` 类的基本内存管理和写入功能进行了测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/balsa/balsa_headers_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1063,7 +1065,4 @@ TEST(BalsaHeaders, MultipleAppendToHeaderWithCommaAndSpace) {
   headers.AppendToHeaderWithCommaAndSpace("X-Forwarded-For", "6.6.6.6");
 
   // Fetch the 'X-Forwarded-For' headers and compare them to the expected order
-"""
-
-
 ```

@@ -175,7 +175,7 @@ This detailed breakdown should cover the requested aspects of the file's functio
 
 `net/disk_cache/blockfile/backend_impl.cc` 的第 1 部分定义了磁盘缓存后端的核心结构和功能，负责缓存的生命周期管理、条目操作、空间管理以及与底层文件系统的交互。它是 Chromium 网络栈中实现高效资源缓存的关键组成部分，直接影响着网页加载速度和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/blockfile/backend_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1340,7 +1342,4 @@ void BackendImpl::FlushIndex() {
 // ------------------------------------------------------------------------
 
 int32_t BackendImpl::GetEntryC
-"""
-
-
 ```

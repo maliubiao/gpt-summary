@@ -110,7 +110,7 @@ HasASIMD:  false
 
 这段 `cpu_arm64_other.go` 代码是 `internal/cpu` 包中针对特定 ARM64 操作系统的一个“空操作”实现。它的存在是为了保证 `cpu` 包在这些平台上也能编译和运行，但由于操作系统限制，它无法进行实际的 CPU 特性检测。开发者在使用 `cpu` 包时需要意识到这种平台差异，并避免在这些平台上过度依赖精确的 CPU 特性信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/cpu/cpu_arm64_other.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -118,8 +118,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -133,9 +135,4 @@ func osInit() {
 	// reading privileged aarch64 system registers or sysctl in user space to detect
 	// CPU features at runtime.
 }
-
-"""
-
-
-
 ```

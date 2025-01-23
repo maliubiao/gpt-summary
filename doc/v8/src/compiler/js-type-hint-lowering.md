@@ -108,11 +108,13 @@ getType("hello"); // 如果后续调用 value 变成 string，可能导致去优
 
 `v8/src/compiler/js-type-hint-lowering.cc` 是 V8 引擎中一个关键的性能优化组件。它通过观察 JavaScript 代码的运行时行为（类型反馈），推测性地将通用操作替换为更高效的特定类型操作。这种优化对于提升 JavaScript 代码的执行效率至关重要。然而，由于是推测性的，如果运行时类型与预期不符，V8 需要进行去优化，回到更通用的执行路径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-type-hint-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -798,7 +800,4 @@ Node* JSTypeHintLowering::BuildDeoptIfFeedbackIsInsufficient(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

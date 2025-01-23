@@ -179,15 +179,17 @@ Root
 
 `v8/src/profiler/sampling-heap-profiler.h` 定义了 V8 引擎中用于采样堆内存分配的关键类。它通过定期采样堆内存中的对象，并记录其分配信息，最终生成 `AllocationProfile`，帮助开发者分析 JavaScript 代码的内存使用情况，从而识别内存泄漏和性能瓶颈。虽然这个文件本身是 C++ 头文件，但它与 JavaScript 的运行时行为密切相关，是理解 V8 引擎内存管理和性能分析的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/sampling-heap-profiler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/sampling-heap-profiler.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -390,7 +392,4 @@ class SamplingHeapProfiler {
 }  // namespace v8
 
 #endif  // V8_PROFILER_SAMPLING_HEAP_PROFILER_H_
-
-"""
-
 ```

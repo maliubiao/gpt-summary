@@ -193,7 +193,7 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 这部分代码主要负责可访问性信息的序列化和发送，管理 block flow 数据，判断可访问性树的 dirty 状态，处理各种 DOM 事件和 ARIA 属性变化，以及调度和执行可访问性树的更新操作。它的核心目标是维护一个与 DOM 结构和状态同步的可访问性树，并将这些信息准确地传递给辅助技术，以提升网页的可访问性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object_cache_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -201,8 +201,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ates.empty() -implies-> events.empty()
   DCHECK(!updates.empty() || events.empty())
       << "Every event must have at least one corresponding update because "
@@ -1108,7 +1110,4 @@ void AXObjectCacheImpl::HandleAttributeChanged(const QualifiedName& attr_name,
       TextChanged(element);
       DeferTreeUpdate(
           TreeUpdateReason::kSectionOrRegionRoleMaybeChangedFromLab
-"""
-
-
 ```

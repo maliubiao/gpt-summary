@@ -154,15 +154,17 @@ CreateMarkupOptions options = CreateMarkupOptions::Builder()
 
 总而言之，`create_markup_options.cc` 文件定义了一个用于配置 HTML 标记生成过程的关键数据结构，它在浏览器处理复制、粘贴、拖拽等操作时起着重要的作用，直接影响用户最终获得的内容格式和结构。理解这个文件的功能有助于我们理解 Blink 引擎是如何处理这些操作的，并能帮助我们排查相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/serializers/create_markup_options.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ CreateMarkupOptions::Builder::SetIgnoresCSSTextTransformsForRenderedText(
 }
 
 }  // namespace blink
-
-"""
-
 ```

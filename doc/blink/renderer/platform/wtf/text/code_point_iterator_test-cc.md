@@ -115,14 +115,16 @@ By following these steps, we can thoroughly understand the purpose, functionalit
 
 总而言之，`code_point_iterator_test.cc` 这个文件通过一系列的测试用例，确保了 `CodePointIterator` 能够正确地处理各种 Unicode 字符串，这对于 Blink 引擎正确渲染和处理 Web 页面中的文本至关重要。它与 JavaScript、HTML 和 CSS 的功能都有着密切的联系，因为它处理的是 Web 内容的核心组成部分——文本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/code_point_iterator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ TEST(CodePointIteratorTest, Equality) {
 }  // namespace
 
 }  // namespace WTF
-
-"""
-
 ```

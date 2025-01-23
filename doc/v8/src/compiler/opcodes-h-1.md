@@ -139,7 +139,7 @@ console.log(resultArray); // 输出类似 [6, 8, 10, 12]
 
 这部分 `v8/src/compiler/opcodes.h` 的主要功能是定义了 V8 编译器中用于表示 **WebAssembly SIMD 操作** 以及 **部分 AVX SIMD256 操作** 的操作码。这些操作码是编译器理解和优化 WebAssembly SIMD 代码的关键。虽然 JavaScript 开发者不会直接使用这些操作码，但理解它们有助于理解 WebAssembly SIMD 的工作原理以及可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/opcodes.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/opcodes.h以.tq结尾，那它是个v8 torque源代码，
@@ -147,9 +147,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-        \
+### 源代码
+```c
+\
   IF_WASM(V, F64x2Pmin)                   \
   IF_WASM(V, F64x2Pmax)                   \
   IF_WASM(V, F64x2Ceil)                   \
@@ -782,8 +784,4 @@ V8_EXPORT_PRIVATE std::ostream& operator<<(std::ostream&, IrOpcode::Value);
 }  // namespace v8
 
 #endif  // V8_COMPILER_OPCODES_H_
-
-"""
-
-
 ```

@@ -225,7 +225,7 @@ if (getNetworkInterfaceNameTypeAddress) {
 
 通过运行这个 Frida 脚本，你可以观察 `netd` 进程在处理网络接口信息时，是如何使用 `netdevice.h` 中定义的常量的。你需要根据实际的 Android 版本和 `netd` 的实现细节来调整脚本中的库名、函数名和参数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netdevice.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -236,8 +236,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -271,7 +273,4 @@ enum {
 #define NET_ADDR_STOLEN 2
 #define NET_ADDR_SET 3
 #endif
-
-"""
-
 ```

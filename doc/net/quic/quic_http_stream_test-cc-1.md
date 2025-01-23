@@ -102,7 +102,7 @@ fetch('https://www.example.org/', {
 
 总而言之，这部分 `quic_http_stream_test.cc` 的代码主要集中在测试 `QuicHttpStream` 类在处理各种 HTTP 请求和响应场景下的正确性，包括处理连续请求、忽略 Trailer、NetLog 中 Header 的处理、处理大型 Header、以及在连接生命周期的不同阶段（连接建立前后、发送请求前后、接收响应前后）的行为。此外，还测试了发送不同类型的 POST 请求（普通 POST 和分块 POST）的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_http_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r_frame_length;
   SetResponse("200", string());
   ProcessPacket(InnerConstructResponseHeadersPacket(
@@ -888,7 +890,4 @@ TEST_P(QuicHttpStreamTest, SendChunkedPostRequestWithFinalEmptyDataPacket) {
                                  strlen(kUploadData) + header.length()),
             stream_->GetTotalSentBytes());
   EXPECT_EQ(static_cast<int64_t>(spdy_response_headers_fr
-"""
-
-
 ```

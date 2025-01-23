@@ -118,11 +118,13 @@ node --snapshot=./my-snapshot.blob index.js
 
 `v8/src/snapshot/snapshot.cc` 文件是 V8 引擎中实现快照功能的核心组件。它定义了快照数据的结构、创建和加载的流程，以及相关的管理和校验机制。快照功能是提高 JavaScript 应用启动性能的关键技术，它通过预先序列化引擎的初始状态，避免了重复的初始化和编译工作。 在 JavaScript 的角度来看，使用快照能够让应用启动得更快，用户体验更好。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/snapshot.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1294,7 +1296,4 @@ SnapshotCreatorImpl* SnapshotCreatorImpl::FromSnapshotCreator(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

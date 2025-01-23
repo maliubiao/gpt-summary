@@ -107,15 +107,17 @@ Based on this analysis, I can now summarize the functionalities of the file.
 
 总而言之，`computed_style_test.cc` 的第 3 部分以及整个文件都在细致地测试 `ComputedStyle` 类的各个方面，确保 Blink 引擎能正确地计算和处理元素的样式，为网页的正确渲染奠定基础。这些测试覆盖了各种 CSS 特性和使用场景，有助于发现和修复潜在的 bug，保证了浏览器的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/computed_style_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Inline,
                                CSSValueID::kBlock,
                                CSSValueID::kListItem,
@@ -772,8 +774,4 @@ TEST_F(ComputedStyleTest, ColorSchemeFlagsIsNormal_WithMeta) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

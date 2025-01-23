@@ -93,7 +93,7 @@ Here's a plan to address the request:
 
 第 18 部分的 `quic_connection_test.cc` 文件主要测试了 `QuicConnection` 类在处理连接完整性限制、发送 ACK 频率帧、快速恢复丢失的 `ServerHello`、进行路径迁移以及管理多端口连接等方面的功能。这些测试确保了 QUIC 连接在各种网络条件下，包括潜在的攻击和网络变化时，能够保持安全、可靠和高效。 这些功能对于提升用户的网络体验至关重要，尤其是在现代 Web 应用中，JavaScript 经常需要与服务器进行复杂的网络交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第18部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ionOnIntegrityLimitDuringHandshake) {
   if (!connection_.version().UsesTls()) {
     return;
@@ -859,7 +861,4 @@ TEST_P(QuicConnectionTest, MultiPortPathReceivesStatelessReset) {
   frame.sequence_number = 1u;
   EXPECT_CALL(visitor_, CreateContextForMultiPortPath)
       .WillRepeatedly(testing::WithArgs<0>([&](auto&& o
-"""
-
-
 ```

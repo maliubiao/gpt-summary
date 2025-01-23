@@ -148,15 +148,17 @@ GOOS=linux GOARCH=amd64 go build
 
 这段测试代码通过一系列预定义的测试用例，验证了 `goodOSArchFile` 函数的正确性。它模拟了各种文件名后缀，包括针对当前操作系统和架构、其他操作系统和架构的组合，以及通用的 `.go` 和 `.c` 文件。通过断言 `goodOSArchFile` 的返回值与预期结果是否一致，确保了 Go 语言构建约束的文件名匹配机制能够正确工作。这对于保证 Go 程序能够跨平台编译和运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modindex/syslist_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -222,9 +224,4 @@ func TestGoodOSArch(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

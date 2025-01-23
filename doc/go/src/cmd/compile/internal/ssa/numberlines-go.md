@@ -190,15 +190,17 @@ b1:
 
 总结来说，`go/src/cmd/compile/internal/ssa/numberlines.go` 的核心功能是为 SSA 指令标记源代码行号，从而支持调试和其他需要源码映射的功能。它通过一系列规则来判断哪些 SSA 操作应该被认为是语句的起始点，并利用编译器的调试标志来提供额外的统计和调试信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/numberlines.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -461,9 +463,4 @@ func numberLines(f *Func) {
 	// cachedLineStarts is an empty sparse map for values that are included within ranges.
 	f.cachedLineStarts = newXposmap(ranges)
 }
-
-"""
-
-
-
 ```

@@ -127,15 +127,17 @@ function recursiveFunction(n) {
 
 `v8/test/cctest/compiler/test-run-stackcheck.cc` 中的 `TerminateAtMethodEntry` 测试用例验证了 V8 引擎能够在方法入口处响应终止执行的请求。这对于确保引擎的稳定性和处理异常情况至关重要，特别是当遇到可能导致崩溃或资源耗尽的错误时。虽然测试本身是用 C++ 编写的，但它直接关联到 JavaScript 代码的执行和错误处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-stackcheck.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-run-stackcheck.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -158,7 +160,4 @@ TEST(TerminateAtMethodEntry) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

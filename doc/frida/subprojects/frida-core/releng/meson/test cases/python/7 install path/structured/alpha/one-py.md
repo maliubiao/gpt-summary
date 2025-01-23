@@ -106,7 +106,7 @@ By following these steps, the comprehensive and well-structured answer provided 
 
 `one.py` 是 Frida 项目中一个用于验证安装路径结构的测试用例。它本身不执行逆向操作或直接操作底层，但它是确保 Frida 能够正常工作的基础，而 Frida 是一个强大的逆向工具。通过运行这类测试用例，可以尽早发现安装问题，避免用户在使用 Frida 时遇到各种错误。用户通常不会直接接触这个文件，但它可以作为调试线索，帮助开发者和高级用户理解 Frida 的安装过程并排查问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/python/7 install path/structured/alpha/one.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,9 +114,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

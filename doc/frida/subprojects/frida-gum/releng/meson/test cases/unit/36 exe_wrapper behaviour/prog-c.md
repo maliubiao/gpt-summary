@@ -144,7 +144,7 @@ By following these steps, considering different angles, and refining the analysi
 
 通过这样的步骤，开发者和 Frida 用户可以利用这个简单的 `prog.c` 程序来验证 Frida 的功能，调试 Frida 脚本，或者理解目标程序在运行时如何与文件系统交互。这个文件作为 Frida 项目的一部分，其主要目的是为 Frida 提供测试和演示的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/36 exe_wrapper behaviour/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main (int argc, char * argv[])
@@ -171,7 +173,4 @@ int main (int argc, char * argv[])
   }
   return 0;
 }
-
-"""
-
 ```

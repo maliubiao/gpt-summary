@@ -195,15 +195,17 @@ By following these steps, iteratively refining understanding, and connecting the
 
 总而言之，`blink/renderer/core/css/local_font_face_source.cc` 是 Blink 引擎中一个重要的组件，它使得网页能够利用用户计算机上已安装的字体，提升用户体验，并减少对网络字体下载的依赖。理解它的功能和工作原理对于开发和调试涉及本地字体的网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/local_font_face_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -418,7 +420,4 @@ void LocalFontFaceSource::ReportFontLookup(
 }
 
 }  // namespace blink
-
-"""
-
 ```

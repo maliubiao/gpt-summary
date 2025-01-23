@@ -205,7 +205,7 @@ By following this structured thought process, considering the specific context o
 
 **总结:** 这个 `prog.c` 文件很可能是一个用于测试 Frida 功能的简单示例程序。开发者通过查看这个文件的源码，并结合 Frida 的动态插桩功能，可以深入理解程序的行为，从而进行调试和开发。这个文件本身虽然简单，但它在 Frida 的上下文中扮演着重要的角色，用于验证和演示动态插桩的原理和应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/137 whole archive/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -213,14 +213,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<mylib.h>
 
 int main(void) {
     return func1() - func2();
 }
-
-"""
-
 ```

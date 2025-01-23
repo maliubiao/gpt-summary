@@ -143,7 +143,7 @@ This code exists within the Frida project's test suite. A user would likely enco
 
 In essence, the primary path to encountering this code is through the development, debugging, or investigation of the Frida dynamic instrumentation tool itself. It serves as a specific, controlled example for testing and verifying Frida's capabilities related to SSSE3 instruction handling.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/147 simd/simd_ssse3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -201,7 +203,4 @@ void increment_ssse3(float arr[4]) {
     arr[2] = (float)darr[3];
     arr[3] = (float)darr[2];
 }
-
-"""
-
 ```

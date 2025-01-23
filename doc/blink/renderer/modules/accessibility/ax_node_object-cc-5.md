@@ -101,7 +101,7 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 总而言之，这段代码是 Chromium Blink 引擎中负责处理辅助功能的核心部分，它将渲染树的信息转化为辅助功能树可以理解的结构和属性，并响应辅助技术的操作请求，从而使网页内容能够被辅助技术用户访问。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_node_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 * current = object;
   while (current) {
     if (auto* block_flow = DynamicTo<LayoutBlockFlow>(current)) {
@@ -931,7 +933,4 @@ int AXNodeObject::TextOffsetInFormattingContext(int offset) const {
   // If "formatting_context" is not a Layout NG object, the offset mappings will
   // be computed on demand and cached.
   cons
-"""
-
-
 ```

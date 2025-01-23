@@ -159,15 +159,17 @@ func MyFeature() string {
 
 总而言之，`go/src/cmd/go/go11.go` 是 Go 工具链自身用于版本判断的一个小而重要的组成部分，它利用了 Go 的构建标签机制。 一般 Go 开发者不需要直接操作它，但理解构建标签对于编写跨版本兼容的代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/go11.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -178,9 +180,4 @@ package main
 
 // Test that go1.1 tag above is included in builds. main.go refers to this definition.
 const go11tag = true
-
-"""
-
-
-
 ```

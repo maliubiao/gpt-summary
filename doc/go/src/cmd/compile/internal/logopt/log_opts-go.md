@@ -191,15 +191,17 @@ go tool compile: optimizer logging destination '<version>,<directory>' but could
 
 总而言之，这段代码是 Go 编译器中一个重要的组成部分，它提供了详细的优化日志信息，这对于编译器开发者、性能分析工具以及 IDE 来说都非常有价值。通过遵循 LSP 的规范，使得这些日志更容易与其他工具集成和分析。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/logopt/log_opts.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -740,9 +742,4 @@ func parsePos(ctxt *obj.Link, pos src.XPos, posTmp []src.Pos) ([]src.Pos, src.Po
 	})
 	return posTmp, posTmp[0]
 }
-
-"""
-
-
-
 ```

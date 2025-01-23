@@ -88,15 +88,17 @@ Based on the provided code snippet for `blink/renderer/core/layout/layout_text.c
 
 In essence, `LayoutText` is the fundamental building block for representing and managing text content within the Blink rendering engine. It bridges the gap between the raw text in the HTML and its visual representation on the screen, taking into account CSS styling, text transformations, security, and interaction with other rendering components like selection and accessibility. It handles the complexities of text manipulation and ensures that changes are reflected correctly in the rendered output. The class is deeply integrated with the layout process, the painting pipeline, and other browser functionalities that rely on understanding the structure and content of text.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_text.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 false;
   return To<LayoutText>(o)->HasEmptyText();
 }
@@ -720,8 +722,4 @@ void LayoutText::RecalcVisualOverflow() {
 #endif
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -171,15 +171,17 @@ During the process, I might realize that my initial assumptions need correction.
 
 总而言之，`speech_synthesis_base.cc` 文件定义了 Blink 引擎中语音合成功能的基础架构，通过工厂模式管理具体的平台实现，并提供了完成回调机制，使得 JavaScript 的 `SpeechSynthesis` API 能够有效地与底层的语音合成能力进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/speech/speech_synthesis_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ void SpeechSynthesisBase::HandleSpeakingCompleted() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

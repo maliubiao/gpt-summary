@@ -214,15 +214,17 @@ fmt.Println(pkgInfo.CgoLDFLAGS) // 输出: [-lmylib]
 
 这段代码是 Go 构建系统的重要组成部分，它确保了在不同的操作系统、架构和构建标签下，只有相关的代码才会被包含到最终的构建结果中，同时也处理了 C 代码的集成。理解其功能有助于开发者更好地掌握 Go 的构建过程和条件编译机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modindex/build.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1179,9 +1181,4 @@ func (ctxt *Context) goodOSArchFile(name string, allTags map[string]bool) bool {
 	}
 	return true
 }
-
-"""
-
-
-
 ```

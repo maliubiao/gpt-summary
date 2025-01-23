@@ -136,7 +136,7 @@ if target:
    - 在断点处理函数中，可以获取当前线程的寄存器信息，帮助用户分析程序状态。
 
 通过以上步骤，用户可以逐步调试目标程序，并分析程序的执行状态。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/barebone/interceptor.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaBarebone", gir_version = "1.0")]
 namespace Frida.Barebone {
 	public class Interceptor : Object {
@@ -509,7 +511,4 @@ namespace Frida.Barebone {
 		public abstract void replace_return_value (uint64 retval);
 	}
 }
-
-"""
-
 ```

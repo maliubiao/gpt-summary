@@ -311,7 +311,7 @@ Frida Hook 会拦截对 `getcwd` 和 `__getcwd_chk` 的调用，并打印出它�
 
 总而言之，`bionic/libc/include/bits/fortify/unistd.handroid` 是 Bionic C 库中用于提升安全性的关键部分，它通过定义安全增强的函数接口，并在编译时和运行时进行缓冲区溢出检查，来保护 Android 系统和应用程序免受潜在的安全漏洞影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/fortify/unistd.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -322,8 +322,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -568,7 +570,4 @@ ssize_t readlinkat(int dirfd, const char* _Nonnull path, char* const _Nonnull __
 #undef __PREAD_PREFIX
 #undef __PWRITE_PREFIX
 #endif /* defined(__BIONIC_FORTIFY) */
-
-"""
-
 ```

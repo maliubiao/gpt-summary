@@ -132,11 +132,13 @@ console.log(counter());
 
 `pretenuring-handler.cc` 是 V8 引擎中一个重要的性能优化组件，它通过观察对象的生命周期来智能地将可能长期存活的对象分配到老年代，从而减少 GC 的开销。 虽然 JavaScript 开发者不能直接配置预分配，但编写出创建长期存活对象的代码模式，会间接地触发 V8 的预分配优化，提升应用程序的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/pretenuring-handler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -433,7 +435,4 @@ void PretenuringHandler::reset() { allocation_sites_to_pretenure_.reset(); }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

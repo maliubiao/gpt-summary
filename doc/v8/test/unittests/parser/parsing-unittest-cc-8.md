@@ -182,7 +182,7 @@ The user wants a summary of the functionality of the C++ code in `v8/test/unitte
 
 这部分 `parsing-unittest.cc` 的主要功能是 **全面测试 V8 JavaScript 解析器在处理各种类相关的语法结构、对象字面量、循环语句（`for...in` 和 `for...of`）、Unicode 转义、模板字面量以及剩余参数时的错误处理能力**。它通过提供各种包含语法错误的 JavaScript 代码片段，验证解析器是否能够正确地识别这些错误并进行报告，从而保证 V8 引擎在解析实际代码时的健壮性和准确性。 这部分测试覆盖了 ES6 及后续版本引入的许多新特性，着重于解析器对不符合语法规则的代码的识别。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/parsing-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -190,8 +190,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 "static accessor #['a'] = 0\n #b",
     "static accessor #['a'] = 0\n b(){}",
     "static accessor #['a']\n",
@@ -1070,8 +1072,4 @@ TEST_F(ParsingTest, ParseRestParametersErrors) {
                         "...args\r,b",
                         "a, ... args,\rb",
                         "...args\t\n\t\t\n,  b",
-         
-"""
-
-
 ```

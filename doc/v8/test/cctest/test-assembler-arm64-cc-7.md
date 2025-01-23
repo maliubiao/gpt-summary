@@ -140,7 +140,7 @@ ADD  W2, W0, W1  ; 将 W0 和 W1 的值相加，结果存储到 W2 寄存器 (�
 
 `v8/test/cctest/test-assembler-arm64.cc` 的第 8 部分主要负责测试 V8 引擎在 ARM64 架构上执行带进位加法 (`Adc`) 和带借位减法 (`Sbc`) 汇编指令的正确性。它通过提供各种输入和预期输出来验证汇编器的实现是否符合 ARM64 指令集的规范，并确保这些指令能够正确地影响处理器标志位。这对于保证 V8 引擎在 ARM64 平台上的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -148,9 +148,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共15部分，请归纳一下它的功能
+```
 
-"""
- ZFlag, 0x00000001, NoFlag},
+### 源代码
+```cpp
+ZFlag, 0x00000001, NoFlag},
        {0x00000001, NoFlag, 0x00000002, NoFlag},
        {0x7FFFFFFE, NoFlag, 0x7FFFFFFF, NoFlag},
        {0x7FFFFFFF, NoFlag, 0x80000000, NVFlag},
@@ -1474,7 +1476,4 @@ TEST(fadd) {
   CHECK_EQUAL_FP64(kFP64PositiveInfinity, d10);
   CHECK_EQUAL_FP64(kFP64NegativeInfinity, d11);
   CHECK_EQUAL_FP64(k
-"""
-
-
 ```

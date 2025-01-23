@@ -193,7 +193,7 @@ __ Load(Map(inputs[0]), StoreOp::Kind::Aligned(true), MemoryRepresentation::Int3
 
 作为第 3 部分（共 4 部分），这段代码的功能可以归纳为：**构建 Turboshaft 编译图的核心逻辑，负责将高级的中间表示 (IR) 操作转换为底层的、更接近机器指令的操作，以便后续的优化和代码生成。**  它处理了 V8 引擎中大量的 JavaScript 语义相关的操作，包括内存访问、对象操作、算术运算、字符串处理、类型检查和控制流等，是连接前端 IR 和后端代码生成的重要桥梁。这段代码展示了 Turboshaft 如何针对不同的 IR 操作码生成相应的图节点，这些节点构成了最终可执行代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -201,8 +201,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 node->InputAt(1);
       Node* value = node->InputAt(2);
       ObjectAccess const& access = ObjectAccessOf(node->op());
@@ -954,8 +956,4 @@ node->InputAt(1);
                                            Map(node->InputAt(1)));
 
     case IrOpcode::kMaybeGrowFastElements: {
-
-"""
-
-
 ```

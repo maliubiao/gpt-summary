@@ -193,14 +193,16 @@ By following these steps, we can systematically analyze the C++ code and underst
 
 总而言之，`css_keyframe_effect_model.cc` 在 Blink 渲染引擎中扮演着至关重要的角色，它负责理解、处理和计算 CSS 关键帧动画的定义，并将这些定义转化为浏览器可以执行的动画效果。它与 HTML、CSS 和 JavaScript 紧密相关，是实现 Web 页面动态效果的基础组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css/css_keyframe_effect_model.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -429,7 +431,4 @@ CssKeyframeEffectModel::GetComputedKeyframes(Element* element) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

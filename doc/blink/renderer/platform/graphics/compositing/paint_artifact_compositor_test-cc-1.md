@@ -105,15 +105,17 @@ By following these steps, a comprehensive and informative answer can be generate
 
 总而言之，这部分代码深入测试了 Blink 引擎中负责将绘制指令和各种视觉属性转化为可供合成器使用的图层结构的组件，确保了网页内容能够被正确且高效地渲染到屏幕上。 这些测试涵盖了 CSS 中常见的视觉效果和布局方式，对于保证浏览器的渲染质量和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/paint_artifact_compositor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tArtifact artifact;
   artifact.Chunk(t0(), *clips.back(), e0())
       .RectDrawing(gfx::Rect(0, 0, 200, 200), Color::kWhite);
@@ -838,7 +840,4 @@ TEST_P(PaintArtifactCompositorTest,
   auto scroll_state_c = CreateCompositedScrollTranslationState(
       PropertyTreeState::Root(), scroll_b, 11, 22, gfx::Rect(0, 0, 10, 20),
       gfx::Size(50, 60
-"""
-
-
 ```

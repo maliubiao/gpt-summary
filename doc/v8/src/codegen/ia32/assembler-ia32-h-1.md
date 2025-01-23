@@ -123,7 +123,7 @@ console.log(sum); // 输出 [6, 8, 10, 12]
 
 这部分 `assembler-ia32.h` 代码是 V8 引擎中用于生成 IA-32 架构机器码的关键组成部分，它提供了丰富的指令接口，特别是对 SIMD 和位操作指令的支持，这对于 V8 优化 JavaScript 代码的执行性能至关重要。它直接关系到 JavaScript 中数值计算、类型转换等功能的底层实现。理解这部分代码需要对 IA-32 汇编语言和 SIMD 指令集有深入的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/assembler-ia32.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ia32/assembler-ia32.h以.tq结尾，那它是个v8 torque源代码，
@@ -131,8 +131,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 vttsd2si(Register dst, Operand src);
   void cvttsd2si(Register dst, XMMRegister src) {
     cvttsd2si(dst, Operand(src));
@@ -917,7 +919,4 @@ vttsd2si(Register dst, Operand src);
   // to use the shortest encoding possible.
   // sel specifies the /n in the modrm byte (see the Intel PRM).
   void emit_arith(int sel, Operand dst, const Imme
-"""
-
-
 ```

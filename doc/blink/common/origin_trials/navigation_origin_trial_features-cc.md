@@ -111,14 +111,16 @@ enum class OriginTrialFeature {
 
 总而言之，`navigation_origin_trial_features.cc` 通过其 `FeatureEnabledForNavigation` 函数，在浏览器导航过程中扮演着一个“守门员”的角色，决定哪些实验性的 Web 平台特性可以在页面加载时被激活，这直接影响着开发者如何利用这些新特性来构建网站，以及用户在浏览网页时的体验。开发者需要正确理解 Origin Trials 的工作机制以及如何正确地使用 Origin Trial 令牌，才能有效地利用这些实验性功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/origin_trials/navigation_origin_trial_features.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -149,7 +151,4 @@ bool FeatureEnabledForNavigation(blink::mojom::OriginTrialFeature feature) {
 }  // namespace origin_trials
 
 }  // namespace blink
-
-"""
-
 ```

@@ -184,7 +184,7 @@ pkg_mod.generate(
 
 总而言之，`objctemplates.py` 是 Frida 项目构建系统中的一个重要组成部分，它通过提供预定义的代码模板，简化了 Objective-C 组件的创建过程，并确保了代码结构的一致性。理解这个文件的功能有助于理解 Frida 的构建流程以及如何为其添加新的模块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/templates/objctemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -320,7 +322,4 @@ class ObjCProject(FileHeaderImpl):
     lib_header_template = lib_h_template
     lib_test_template = lib_objc_test_template
     lib_meson_template = lib_objc_meson_template
-
-"""
-
 ```

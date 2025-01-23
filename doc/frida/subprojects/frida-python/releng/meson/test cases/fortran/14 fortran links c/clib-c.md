@@ -115,7 +115,7 @@ By following these steps, focusing on context, and iteratively refining the anal
 
 `clib.c` 文件虽然代码简单，但在 Frida 项目中扮演着重要的角色，作为测试 Frida 对跨语言（Fortran 和 C）调用支持的基石。它可以帮助开发者验证 Frida 在处理不同语言模块交互时的正确性，并为用户提供一个理解 Frida 功能的参考示例。对于逆向工程师来说，理解这类跨语言交互是分析复杂软件的关键一环。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/fortran/14 fortran links c/clib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 void hello(void){
@@ -132,7 +134,4 @@ void hello(void){
   printf("hello from C\n");
 
 }
-
-"""
-
 ```

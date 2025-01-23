@@ -158,7 +158,7 @@ By following this detailed and iterative process, you can systematically analyze
 
 总而言之，这部分代码定义了一些灵活的回调机制，允许 Frida 用户在枚举进程的各种属性时执行自定义的检查和操作，这对于动态分析、逆向工程和安全研究等领域非常有用。它们是 Frida Gum 库的核心组成部分，用于提供对目标进程内部状态的精细控制和观察能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/process.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ls_start + details->range->size;
 
   if (ctx_start == details_start && ctx_end == details_end)
@@ -259,8 +261,4 @@ dep_found_cb (const GumDependencyDetails * details,
 
   return ctx->value_to_return;
 }
-
-"""
-
-
 ```

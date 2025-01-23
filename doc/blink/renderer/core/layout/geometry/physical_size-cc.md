@@ -119,14 +119,16 @@ By following this structured thinking process, we can generate a comprehensive a
 
 总而言之，`physical_size.cc` 中定义的 `PhysicalSize` 类和 `FitToAspectRatio` 方法是 Blink 渲染引擎处理元素尺寸和宽高比的核心组件。虽然开发者不能直接操作它们，但理解它们的功能有助于更好地理解和使用相关的 Web 技术，避免常见的布局和样式错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/geometry/physical_size.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -163,7 +165,4 @@ std::ostream& operator<<(std::ostream& os, const PhysicalSize& value) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

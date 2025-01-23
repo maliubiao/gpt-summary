@@ -143,14 +143,16 @@ Now I can formulate the response based on these points.
 
 总之，`array_buffer_contents.cc` 是 Blink 引擎中管理 JavaScript `ArrayBuffer` 和 `SharedArrayBuffer` 底层内存的关键组件，它涉及到内存的分配、释放、共享和传输，并与 JavaScript 的类型化数组功能紧密相关。 理解其功能有助于理解 Blink 如何处理 JavaScript 中的二进制数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/typed_arrays/array_buffer/array_buffer_contents.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Apple Inc. All rights reserved.
  * Copyright (C) 2013 Google Inc. All rights reserved.
@@ -399,7 +401,4 @@ void ArrayBufferContents::FreeMemory(void* data) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

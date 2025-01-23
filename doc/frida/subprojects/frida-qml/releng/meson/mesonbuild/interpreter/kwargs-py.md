@@ -168,7 +168,7 @@ executable(
 
 通过查看错误信息和 `kwargs.py` 文件中相应的类型定义，开发者可以快速定位 `meson.build` 文件中的问题，例如使用了错误的参数名称或提供了错误的参数类型。 `kwargs.py` 文件就像一个参考手册，帮助理解 Meson 构建系统期望的参数格式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/kwargs.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2021 The Meson Developers
 # Copyright © 2021 Intel Corporation
@@ -657,7 +659,4 @@ class FuncDeclareDependency(TypedDict):
     sources: T.List[T.Union[FileOrString, build.GeneratedTypes]]
     variables: T.Dict[str, str]
     version: T.Optional[str]
-
-"""
-
 ```

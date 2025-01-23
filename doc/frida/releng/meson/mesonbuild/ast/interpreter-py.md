@@ -175,7 +175,7 @@ else:
 
 总而言之，`frida/releng/meson/mesonbuild/ast/interpreter.py` 是 Frida 生态系统中一个用于静态分析 Meson 构建文件的关键组件，它帮助理解构建过程，提取构建信息，为后续的动态分析提供基础。虽然它本身不执行构建操作，但其分析结果可以揭示构建过程与底层系统交互的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/ast/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -626,7 +628,4 @@ class AstInterpreter(InterpreterBase):
 
     def evaluate_testcase(self, node: TestCaseClauseNode) -> Disabler | None:
         return Disabler(subproject=self.subproject)
-
-"""
-
 ```

@@ -154,7 +154,7 @@ This systematic approach allows me to break down a potentially complex piece of 
 
 这部分代码是 Chromium Blink 引擎中处理 DOM 文档创建和管理的关键部分。它负责创建各种类型的 DOM 节点，并对元素名称的有效性进行校验。它还管理与表单元素相关的列表，并提供了 `ResizeObserver` 的代理实现。其核心目标是确保浏览器能够正确地解析和构建网页的 DOM 结构，并为 JavaScript 和 CSS 提供操作 DOM 的基础。 这部分代码的执行是网页加载和动态交互的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
 }
 
@@ -1010,8 +1012,5 @@ Node* Document::importNode(Node* imported_node,
     return nullptr;
   }
   if (imported_node->IsShadowRoot()) {
-    // ShadowRoot nodes should not be 
-"""
-
-
+    // ShadowRoot nodes should not be
 ```

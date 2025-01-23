@@ -132,7 +132,7 @@ console.log("当前 Wasm 内存消耗：", memoryUsage);
 
 `v8/src/runtime/runtime-test-wasm.cc` 中定义的运行时函数是 V8 引擎内部用于 WebAssembly 相关测试和状态检查的关键组成部分。它们允许 V8 开发人员深入了解 Wasm 模块的编译、执行和内存管理，从而确保 V8 对 WebAssembly 的支持的正确性和性能。虽然普通 JavaScript 开发者无法直接调用这些函数，但它们的功能对于理解 V8 如何处理 WebAssembly 以及诊断潜在问题非常有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-test-wasm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/runtime/runtime-test-wasm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -140,8 +140,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 = native_module->GetCode(func_index);
   return isolate->heap()->ToBoolean(code && code->is_liftoff() &&
                                     code->for_debugging());
@@ -376,8 +378,4 @@ RUNTIME_FUNCTION(Runtime_WasmGenerateRandomModule) {
 #endif  // V8_WASM_RANDOM_FUZZERS
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

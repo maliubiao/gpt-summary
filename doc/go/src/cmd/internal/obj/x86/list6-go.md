@@ -136,15 +136,17 @@ GOARCH=386 go build myprogram.go
 
 `go/src/cmd/internal/obj/x86/list6.go` 的主要功能是定义和管理 x86 架构的寄存器名称，并提供用于在 Go 语言工具链中转换和处理这些寄存器的实用函数。它为 Go 语言针对 x86 架构的汇编和编译功能提供了基础支持。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/x86/list6.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/6c/list.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6c/list.c
 //
@@ -409,9 +411,4 @@ func rlconv(bits int64) string {
 func opSuffixString(s uint8) string {
 	return "." + opSuffix(s).String()
 }
-
-"""
-
-
-
 ```

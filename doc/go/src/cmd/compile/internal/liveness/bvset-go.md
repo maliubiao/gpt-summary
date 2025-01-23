@@ -224,15 +224,17 @@ Index: 2, BitVec: {N:32 B:[1 1 0 0 0 0 0 0]}
 
    在这个例子中，我们添加 `bv` 到 `bvecSet` 后，又修改了 `bv` 的内容。这可能会导致 `bvecSet` 内部存储的 `bitvec.BitVec` 也被修改，从而破坏了其唯一性。正确的做法是在添加后不要修改原始的 `bitvec.BitVec`，或者在添加前创建其副本。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/liveness/bvset.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -331,9 +333,4 @@ func hashbitmap(h uint32, bv bitvec.BitVec) uint32 {
 
 	return h
 }
-
-"""
-
-
-
 ```

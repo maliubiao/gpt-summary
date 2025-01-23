@@ -148,7 +148,7 @@ Here's a breakdown of the apparent functionalities:
 
 总而言之，`input_method_controller.cc` 的第一部分为 Blink 引擎处理复杂的输入法输入奠定了基础，它负责捕获和管理输入过程中的关键状态和事件，并作为浏览器和网页 Javascript 之间的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ime/input_method_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2011 Apple Inc. All rights reserved.
  * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies)
@@ -980,8 +982,4 @@ void InputMethodController::AddImeTextSpans(
                  .Markers()
                  .MarkersIntersectingRange(
                      ToEphemeralRangeInFlatTree(ephemeral_line_range),
-            
-"""
-
-
 ```

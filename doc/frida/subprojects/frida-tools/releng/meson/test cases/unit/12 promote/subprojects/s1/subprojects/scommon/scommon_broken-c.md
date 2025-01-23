@@ -108,7 +108,7 @@ Initially, one might be tempted to try and infer the functionality of the *inten
 
 总而言之，`scommon_broken.c` 本身并没有实际的运行功能。它的作用更像是一个构建系统的“陷阱”，用于测试或标记错误配置。它的存在提示开发者应该使用另一个名为 `scommon.c` 的文件，而后者很可能包含了实际的通用功能，并与 Frida 的逆向工程目标和底层技术密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/12 promote/subprojects/s1/subprojects/scommon/scommon_broken.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,10 +116,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #error This file must not be used. The other scommon one should be instead.
-
-"""
-
 ```

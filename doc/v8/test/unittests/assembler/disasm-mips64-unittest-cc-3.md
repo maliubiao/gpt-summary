@@ -102,7 +102,7 @@ console.log(result); // 输出 2
 
 作为系列的一部分，`v8/test/unittests/assembler/disasm-mips64-unittest.cc` 文件专注于 V8 引擎中 MIPS64 架构反汇编器功能的 **单元测试**。  它的核心目的是验证反汇编器能够 **准确地** 将 MIPS64 的机器码指令转换回其对应的汇编表示形式，特别是针对逻辑移位指令。这对于确保 V8 在 MIPS64 架构上的正确性和可调试性至关重要。  虽然它本身不是 JavaScript 代码，但它对于理解和验证 V8 如何执行 JavaScript 代码的底层机制起着关键作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-mips64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-mips64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -110,8 +110,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ), "79c2b2ca       srlri.w  w11, w22, 2");
     COMPARE(srlri_d(w24, w10, 6), "7986560a       srlri.d  w24, w10, 6");
   }
@@ -120,8 +122,4 @@ Prompt:
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

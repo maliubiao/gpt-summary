@@ -138,7 +138,7 @@ Let's imagine a developer is trying to build a Frida gadget for a specific embed
 
 If the developer encounters a linking error where a specific linker flag is not being recognized, they might investigate the generated linker command line. If they see the flag is missing or not in the expected format, they might then look at the `compcert.py` file to understand how linker arguments are being processed. They would examine the `ccomp_args_to_wul` list and the `_unix_args_to_native` method to see if their linker flag is being handled correctly. This would lead them directly to this source code file as a crucial part of the build process for CompCert.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/mixins/compcert.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2019 The Meson development team
 
@@ -265,7 +267,4 @@ class CompCertCompiler(Compiler):
                 parameter_list[idx] = i[:9] + os.path.normpath(os.path.join(build_dir, i[9:]))
 
         return parameter_list
-
-"""
-
 ```

@@ -136,11 +136,13 @@ const array = [obj, obj];
 
 `v8-serialization-duplicate-tracker.cc` 是 V8 引擎中一个重要的组成部分，它负责在对象序列化过程中识别和处理重复的对象引用，从而优化序列化过程并保持对象之间的关系。虽然 JavaScript 开发者不能直接操作它，但它的功能对于 V8 引擎的内部运作以及诸如开发者工具通信等场景至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-serialization-duplicate-tracker.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ V8SerializationDuplicateTracker::V8SerializationDuplicateTracker(
       m_counter(1),
       m_v8ObjectToSerializedDictionary(v8::Map::New(context->GetIsolate())) {}
 }  // namespace v8_inspector
-
-"""
-
 ```

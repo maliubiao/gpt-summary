@@ -164,7 +164,7 @@ By following these steps, combining code analysis with an understanding of the s
 
 总而言之，这个简单的 C 程序虽然功能单一，但作为 Frida 的一个测试用例，它可以用来验证 Frida 的基本动态插桩能力，例如内存修改和函数拦截。它也展示了逆向工程中常用的动态分析技术，并涉及到一些底层的计算机知识。理解这样的测试用例有助于用户更好地理解 Frida 的工作原理和应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/35 dist script/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<string.h>
 
 #define REPLACEME "incorrect"
@@ -181,7 +183,4 @@ Prompt:
 int main(int argc, char **argv) {
     return strcmp(REPLACEME, "correct");
 }
-
-"""
-
 ```

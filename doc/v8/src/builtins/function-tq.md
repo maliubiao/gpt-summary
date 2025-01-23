@@ -146,14 +146,16 @@ By following these steps, you can systematically analyze and explain the functio
 
 这个 Torque 文件定义了与 JavaScript 函数原型方法 `@@hasInstance` 和 `bind` 相关的内置函数。 `FunctionPrototypeHasInstance` 实现了 `instanceof` 的逻辑，而 `FastFunctionPrototypeBind` 则是 `bind` 方法的一个性能优化版本。  它通过检查函数的内部状态来决定是否可以使用更高效的方式创建绑定函数。如果条件不满足，则会回退到更通用的 `FunctionPrototypeBind` 实现。  理解这些代码可以帮助我们了解 V8 引擎是如何优化 JavaScript 中函数操作的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/function.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ transitioning javascript builtin FastFunctionPrototypeBind(
   }
 }
 }  // namespace function
-
-"""
-
 ```

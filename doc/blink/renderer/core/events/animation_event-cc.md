@@ -235,14 +235,16 @@ box.addEventListener('animationend', (event) => {
 
 总而言之，`animation_event.cc` 文件在 Chromium Blink 引擎中扮演着关键角色，它定义了用于表示和传递 CSS 动画事件信息的 `AnimationEvent` 类，使得 JavaScript 能够有效地与 CSS 动画进行交互。理解这个文件的功能有助于开发者更好地利用 CSS 动画并进行相关的事件处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/animation_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008 Apple Inc. All rights reserved.
  *
@@ -317,7 +319,4 @@ void AnimationEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

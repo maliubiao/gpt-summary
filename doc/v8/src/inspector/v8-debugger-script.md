@@ -142,11 +142,13 @@ function add(a, b) {
 
 `v8-debugger-script.cc` 中定义的 `V8DebuggerScript` 类是 V8 调试器与被调试脚本之间的桥梁，它封装了脚本的各种信息和操作，使得调试器能够有效地管理和控制 JavaScript 和 WebAssembly 代码的执行过程。它不直接执行 JavaScript 代码，而是作为调试基础设施的一部分，为调试工具提供必要的信息和操作接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-debugger-script.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -490,7 +492,4 @@ void V8DebuggerScript::removeWasmBreakpoint(int id) {
 #endif  // V8_ENABLE_WEBASSEMBLY
 
 }  // namespace v8_inspector
-
-"""
-
 ```

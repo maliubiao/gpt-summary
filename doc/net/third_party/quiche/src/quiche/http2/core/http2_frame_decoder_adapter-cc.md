@@ -136,7 +136,7 @@ fetch('/some/resource')
 
 `Http2DecoderAdapter` 的主要功能是**作为 HTTP/2 帧解码器，接收原始字节流，解析帧结构和头部信息（通过 HPACK 解码），并将解码后的帧信息通过 `SpdyFramerVisitorInterface` 回调接口传递给上层模块。** 它负责将底层的字节流转换为结构化的 HTTP/2 帧表示，并处理解码过程中可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/core/http2_frame_decoder_adapter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -988,7 +990,4 @@ void Http2DecoderAdapter::DetermineSpdyState(DecodeStatus status) {
       break;
     case DecodeStatus::kDecodeInProgress:
       QUICHE_DVLOG(1) << "ProcessInputFrame -> DecodeStatus::kD
-"""
-
-
 ```

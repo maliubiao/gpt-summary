@@ -84,15 +84,17 @@ By following these steps, I can create a comprehensive and accurate summary of t
 
 这部分 `inspector_style_sheet.cc` 文件的主要功能是 **作为 Blink 引擎和 Inspector 之间关于 CSS 样式表信息的桥梁**。它负责从 Blink 内部的 CSS 对象中提取数据，并将其转换为 Inspector 前端可以理解的格式。同时，它也提供了一些基础的 CSS 验证功能，为 Inspector 的实时编辑和错误提示提供了支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_style_sheet.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010, Google Inc. All rights reserved.
  *
@@ -961,7 +963,4 @@ std::unique_ptr<protocol::CSS::CSSStyle> InspectorStyle::StyleWithProperties(
   }
 
   std::unique_ptr<protocol::C
-"""
-
-
 ```

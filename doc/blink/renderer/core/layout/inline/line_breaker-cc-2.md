@@ -100,15 +100,17 @@ Given this is part 3 of 6, I should focus on the functionalities exposed in this
 
 总而言之，这部分代码是 Blink 引擎中负责文本断行核心逻辑的关键部分，它深入处理了各种断行场景，并与 CSS 属性紧密相关，最终决定了文本内容如何在网页上进行排列显示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/line_breaker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 item_index >= break_at_.end.item_index;
   if (should_break) {
     DCHECK_LE(break_at_.end.text_offset, item_result->text_offset.end);
@@ -899,7 +901,4 @@ void LineBreaker::RemoveTrailingCollapsibleSpace(LineInfo* line_info) {
   }
 
   // W
-"""
-
-
 ```

@@ -131,15 +131,17 @@ div {
 
 这段代码是 Chromium 开发者工具中元素审查功能的核心组成部分，它连接了浏览器的渲染引擎和开发者工具的前端界面，为开发者提供了直观的元素布局和样式信息。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_highlight.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ox();
     padding_box =
         PhysicalRect(border_box.X() + layout_inline->BorderLeft(),
@@ -1003,8 +1005,4 @@ InspectorHighlightConfig InspectorHighlight::DefaultConfig() {
   config.grid_highlight_config = std::make_unique<InspectorGridHighlightConfig>(
       InspectorHighlight::DefaultGridConfig());
   config.flex_container_highlight_config =
-      
-"""
-
-
 ```

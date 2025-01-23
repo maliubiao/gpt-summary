@@ -121,14 +121,16 @@ By following these steps, I could systematically analyze the code, understand it
 
 总而言之，`blink/common/context_menu_data/context_menu_mojom_traits.cc` 是一个关键的桥梁，它连接了浏览器渲染进程的上下文菜单信息和浏览器主进程的处理逻辑。它处理的数据与用户的网页交互密切相关，并受到 JavaScript, HTML 和 CSS 的影响。理解其功能和潜在的错误对于开发和维护 Chromium 浏览器至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/context_menu_data/context_menu_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ bool StructTraits<blink::mojom::UntrustworthyContextMenuParamsDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

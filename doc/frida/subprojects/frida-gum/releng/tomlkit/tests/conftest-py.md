@@ -208,7 +208,7 @@ broken = # this is an error
 
 总而言之，`conftest.py` 作为 `pytest` 的配置入口，在测试的组织、数据准备和执行过程中扮演着核心角色。开发人员和测试人员会经常与这个文件打交道，以确保测试的正确性和完整性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/tests/conftest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -216,8 +216,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 
 import pytest
@@ -323,7 +325,4 @@ def pytest_generate_tests(metafunc):
             test_list["invalid_encode"].values(),
             ids=list(test_list["invalid_encode"].keys()),
         )
-
-"""
-
 ```

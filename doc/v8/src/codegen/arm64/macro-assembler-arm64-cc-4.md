@@ -742,7 +742,7 @@ void MacroAssembler::PrintfNoPreserve(const char* format,
 #ifndef V8_OS_WIN
   CPURegList pcs_varargs_fp = kPCSVarargsFP;
 #endif
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/macro-assembler-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/macro-assembler-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -750,8 +750,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (destination, kPtrComprCageBaseRegister, destination);
 }
 
@@ -1629,7 +1631,4 @@ void MacroAssembler::Printf(const char* format, CPURegister arg0,
     UseScratchRegisterScope temps(this);
     // If any of the arguments are the current stack pointer, allocate a new
     // register for them, and adjust the value to compensate f
-"""
-
-
 ```

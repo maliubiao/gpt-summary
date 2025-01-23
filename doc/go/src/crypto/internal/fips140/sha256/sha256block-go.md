@@ -225,7 +225,7 @@ func main() {
 
 这段代码是 Go 语言 `crypto/sha256` 包实现 SHA256 哈希算法的关键组成部分，负责高效地处理输入数据的每个 64 字节块，并更新哈希状态。 理解其功能有助于深入了解 SHA256 算法的内部运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/sha256/sha256block.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -233,8 +233,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -363,9 +365,4 @@ func blockGeneric(dig *Digest, p []byte) {
 
 	dig.h[0], dig.h[1], dig.h[2], dig.h[3], dig.h[4], dig.h[5], dig.h[6], dig.h[7] = h0, h1, h2, h3, h4, h5, h6, h7
 }
-
-"""
-
-
-
 ```

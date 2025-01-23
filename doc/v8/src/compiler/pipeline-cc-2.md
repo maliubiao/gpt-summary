@@ -157,7 +157,7 @@ Block D:
 
 这部分代码定义了 V8 Turbofan 编译器管道中的多个关键优化阶段，这些阶段专注于对代码的控制流和数据流进行分析和转换，以生成更高效的机器码。这些阶段包括循环简化、WebAssembly 特定的 lowering 和优化、CSA 代码的早期和后续优化、指令调度、向量化以及位转换消除。它们共同作用，提升 JavaScript 和 WebAssembly 代码的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/pipeline.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/pipeline.cc以.tq结尾，那它是个v8 torque源代码，
@@ -165,8 +165,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (data, &graph_reducer, &load_elimination);
     AddReducer(data, &graph_reducer, &wasm_gc);
     AddReducer(data, &graph_reducer, &dead_code_elimination);
@@ -990,7 +992,4 @@ CompilationJob::Status WasmTurboshaftWrapperCompilationJob::ExecuteJobImpl(
   CodeTracer* code_tracer = nullptr;
   if (info_.trace_turbo_graph()) {
     // NOTE: We must not call `GetCodeTracer` if
-"""
-
-
 ```

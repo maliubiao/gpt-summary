@@ -220,7 +220,7 @@ if (Process.platform === 'android') {
 
 `bionic/tests/headers/posix/poll_h.c` 扮演着验证 bionic libc 中 `poll.h` 头文件定义正确性的重要角色。`poll` 函数本身是 Android 系统中进行多路 I/O 复用的关键工具，被广泛应用于网络编程等场景。理解其工作原理和可能出现的错误，对于开发健壮的 Android 应用程序至关重要。通过 Frida 等工具，我们可以动态地监控和调试 `poll` 函数的调用，帮助我们理解系统行为和排查问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/poll_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -231,8 +231,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -286,7 +288,4 @@ static void poll_h() {
 
   FUNCTION(poll, int (*f)(struct pollfd[], nfds_t, int));
 }
-
-"""
-
 ```

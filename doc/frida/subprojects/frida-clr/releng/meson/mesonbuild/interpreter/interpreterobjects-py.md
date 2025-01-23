@@ -210,7 +210,7 @@ By following this structured approach, focusing on the core concepts, and addres
 
 总的来说，`interpreterobjects.py` 文件的主要功能是定义 Meson 构建系统中各种构建元素的持有者对象。 这些持有者对象封装了构建系统的核心概念 (如选项、进程、环境变量、依赖项等)，并提供了在 Meson 脚本中访问和操作这些元素的接口。 它们是 Meson 解释器执行 `meson.build` 文件时构建内部表示的关键组成部分，同时也为用户提供了与底层构建过程交互的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreter/interpreterobjects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -219,8 +219,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 import os
 import shlex
@@ -972,8 +974,4 @@ class Test(MesonInterpreterObject):
                  env: mesonlib.EnvironmentVariables,
                  should_fail: bool, timeout: int, workdir: T.Optional[str], protocol: str,
                  priority: int, verbose: bool):
-     
-"""
-
-
 ```

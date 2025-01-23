@@ -201,7 +201,7 @@ sys.stdin.read() # 让脚本保持运行，等待用户输入
 
 总而言之，`tachyon_module.c` 是一个简单的 Python C 扩展模块，其核心功能是比较输入的字符串是否为 "shoot"。在 Frida 的上下文中，它可以作为一种与目标进程交互的手段，用于测试或验证某些特定的行为。理解其功能和可能的错误用法有助于在逆向工程过程中进行调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/python/8 different python versions/ext/tachyon_module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -209,8 +209,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
   Copyright 2018 The Meson development team
 
@@ -270,7 +272,4 @@ PyMODINIT_FUNC PyInit_tachyon(void) {
     return PyModule_Create(&tachyonmodule);
 }
 #endif
-
-"""
-
 ```

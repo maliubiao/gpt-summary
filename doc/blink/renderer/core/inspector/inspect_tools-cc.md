@@ -194,14 +194,16 @@ By following these steps, you can systematically analyze the code and produce a 
 
 该文件通过各种 `InspectTool` 子类实现了不同的检查功能，每个子类负责特定的高亮和信息展示。它们通过 `InspectorOverlayAgent` 与 DevTools 前端进行交互，并在渲染引擎的视图上绘制相应的覆盖层。 这些工具极大地提升了开发者调试和理解网页的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspect_tools.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1105,7 +1107,4 @@ void WindowControlsOverlayTool::Draw(float scale) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

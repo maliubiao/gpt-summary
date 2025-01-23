@@ -763,12 +763,14 @@ void MacroAssembler::RecordWriteField(Register object, int offset,
                                       Register value, Register slot_address,
                                       LinkRegisterStatus lr_status,
                                
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/macro-assembler-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2646,7 +2648,4 @@ void MacroAssembler::IsObjectTypeFast(Register object,
 // Sets equality condition flags.
 void MacroAssembler::IsObjectType(Register object, Register scratch1,
                                   Register scratch2,
-"""
-
-
 ```

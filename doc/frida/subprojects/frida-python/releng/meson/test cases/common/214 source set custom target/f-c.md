@@ -153,7 +153,7 @@ By following this structured approach, combining contextual understanding with k
 
 总而言之，尽管 `f.c` 的代码极其简单，但它在 Frida 的测试框架中扮演着基础但重要的角色，用于验证 Frida 的核心 hook 功能，并为用户提供一个简单的调试起点。它清晰地展示了 Frida 如何与底层二进制、操作系统进程模型以及动态链接等概念进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/214 source set custom target/f.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,14 +161,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void f(void)
 {
 }
-
-"""
-
 ```

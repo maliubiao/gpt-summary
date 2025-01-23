@@ -244,7 +244,7 @@ log_level = INFO
 
 总而言之，`keyval.py` 模块在 Frida 工具的构建过程中扮演着读取和解析配置文件的角色。虽然它本身不直接参与逆向操作或底层交互，但它加载的配置信息对于 Frida 工具的行为至关重要。当构建过程中出现与配置文件相关的错误时，查看指向 `keyval.py` 的 traceback 信息，并检查文件路径、内容格式和权限是主要的调试方向。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/modules/keyval.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -252,8 +252,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017, 2019 The Meson development team
 
@@ -319,7 +321,4 @@ class KeyvalModule(ExtensionModule):
 
 def initialize(interp: 'Interpreter') -> KeyvalModule:
     return KeyvalModule(interp)
-
-"""
-
 ```

@@ -106,7 +106,7 @@ By following these steps, combining direct code analysis with contextual knowled
 
 总而言之，`bob.c` 作为一个简单的 C 代码文件，在 Frida Core 的测试用例中扮演着验证链接器脚本功能以及演示基本函数调用和隐藏内部实现细节的作用。理解这个文件的功能有助于理解 Frida 如何与目标程序进行交互，以及逆向工程中常见的概念和技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/linuxlike/3 linker script/bob.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 int hiddenFunction(void) {
@@ -125,7 +127,4 @@ int hiddenFunction(void) {
 int bobMcBob(void) {
     return hiddenFunction();
 }
-
-"""
-
 ```

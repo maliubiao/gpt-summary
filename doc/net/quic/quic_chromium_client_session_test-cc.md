@@ -91,7 +91,7 @@ fetch('https://test.example.com')
 
 这部分代码主要定义了 `QuicChromiumClientSessionTest` 类，并提供了一系列基础的测试用例，用于验证 `QuicChromiumClientSession` 的基本功能，例如会话的创建、QUIC 握手、SSL 信息的获取以及基本流的创建和管理。它为后续更复杂的测试用例奠定了基础，确保了客户端 QUIC 会话的核心功能是可靠的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_chromium_client_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -860,7 +862,4 @@ TEST_P(QuicChromiumClientSessionTest, ReadAfterConnectionClose) {
                      quic::QUIC_CRYPTO_VERSION_NOT_SUPPORTED, "Time to panic!")
                  .Build());
   quic_data.AddSocketDataToFactory(&socket_factory_
-"""
-
-
 ```

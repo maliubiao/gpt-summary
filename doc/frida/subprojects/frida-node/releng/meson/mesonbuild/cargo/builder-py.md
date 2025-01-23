@@ -124,7 +124,7 @@ endif
 
 总而言之，`frida/subprojects/frida-node/releng/meson/mesonbuild/cargo/builder.py` 是 Frida 构建系统中用于简化生成 Meson AST 的一个工具类，它为 Frida 的构建过程提供了灵活性和可编程性，间接地支持了 Frida 作为逆向工程工具的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/cargo/builder.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2022-2023 Intel Corporation
 
@@ -372,7 +374,4 @@ class Builder:
         varids = [self.identifier(i) for i in varnames]
         commas = [self._symbol(',') for i in range(len(varnames) - 1)]
         return mparser.ForeachClauseNode(self._symbol('foreach'), varids, commas, self._symbol(':'), items, block, self._symbol('endforeach'))
-
-"""
-
 ```

@@ -74,7 +74,7 @@ By following these steps and refining the approach along the way, a comprehensiv
 
 总而言之，`atan2_intel_data.handroid` 文件在 Android bionic 库中扮演着至关重要的角色，它通过提供详尽的测试用例，确保了 `atan2` 函数在 Intel 架构上的正确性和可靠性，这是 Android 系统稳定性和应用功能正常运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atan2_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -86,8 +86,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 bbp-31,
     0x1.fffffffffffffp-3,
     0x1.0p28
@@ -1533,7 +1535,4 @@ bbp-31,
     0x1.fffffffffffffp1023
   },
   { // Ent
-"""
-
-
 ```

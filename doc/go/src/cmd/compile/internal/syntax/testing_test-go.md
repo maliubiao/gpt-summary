@@ -206,15 +206,17 @@ map[int][]syntax.Comment{
 
 总而言之，这段测试代码旨在确保 `CommentMap` 函数能够准确地解析带有特定标记的注释，并提取其位置信息，这对于构建编译器、静态分析工具等需要理解代码结构和标记信息的工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/syntax/testing_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -263,9 +265,4 @@ x /* ERROR "3:1" */                // ignore automatically inserted semicolon he
 		t.Errorf("CommentMap got %d errors; want %d", found, want)
 	}
 }
-
-"""
-
-
-
 ```

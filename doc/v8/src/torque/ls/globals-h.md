@@ -158,15 +158,17 @@ void Array::Push(Isolate* isolate, Handle<JSArray> array, Handle<Object> value) 
 
 总而言之，`v8/src/torque/ls/globals.h` 为 V8 中 Torque 语言服务器提供了基础的全局变量和日志记录功能，以支持 Torque 代码的开发和调试，从而间接地影响 V8 引擎和 JavaScript 的开发体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/ls/globals.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/ls/globals.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -226,7 +228,4 @@ DECLARE_CONTEXTUAL_VARIABLE(TorqueFileList, std::vector<std::string>);
 }  // namespace v8
 
 #endif  // V8_TORQUE_LS_GLOBALS_H_
-
-"""
-
 ```

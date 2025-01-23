@@ -163,11 +163,13 @@ console.log(message);
 
 `v8/src/objects/scope-info.cc` 文件定义了 V8 引擎中用于表示 JavaScript 作用域信息的关键数据结构 `ScopeInfo`。它存储了作用域的类型、变量、外部作用域、函数名、模块信息等重要信息。这些信息是 V8 引擎实现 JavaScript 作用域规则、闭包、模块化等特性的基础。JavaScript 的各种作用域行为和变量访问规则，在 V8 内部都是通过对 `ScopeInfo` 对象的创建、管理和访问来实现的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/scope-info.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1474,7 +1476,4 @@ Tagged<FixedArray> SourceTextModuleInfo::RegularExportExportNames(int i) const {
 }  // namespace v8
 
 #include "src/objects/object-macros-undef.h"
-
-"""
-
 ```

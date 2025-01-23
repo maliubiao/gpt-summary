@@ -122,7 +122,7 @@ Here's a breakdown of the code's key parts:
 
 这部分 `ml_graph_test.cc` 文件专注于测试 WebNN API 中 `MLTensor` 的生命周期管理、数据读写操作以及图的执行流程。它通过模拟 JavaScript 的使用场景，验证了底层 C++ 实现的正确性和健壮性，确保了 WebNN API 的核心功能能够正常工作。它还针对特定的算子进行了图构建和信息验证的测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ml/webnn/ml_graph_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ());
   return builder->build(scope.GetScriptState(), {{"output", output}},
                         scope.GetExceptionState());
@@ -898,7 +900,4 @@ TEST_F(MLGraphTest, CastTester) {
                    ToDescriptor(webnn::OperandDataType::kUint32, shape)}
         .Test(*this, scope, context);
     CastTester{.input = {.data_type = V8MLOperandDataT
-"""
-
-
 ```

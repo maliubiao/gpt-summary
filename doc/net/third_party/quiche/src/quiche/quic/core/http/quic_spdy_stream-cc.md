@@ -143,7 +143,7 @@ c1         // :path: /data
 
 这部分代码定义了 `QuicSpdyStream` 类的核心结构和接收处理逻辑。它负责接收和解析来自 QUIC 流的 HTTP/3 (或早期 QUIC 版本) 帧，特别是 HEADERS 和 DATA 帧，并将数据传递给上层应用。它还提供了发送 HTTP 数据的接口，并集成了 WebTransport 的初步支持。 它的主要职责是作为 QUIC 流上 HTTP 语义的载体，连接底层的 QUIC 连接管理和上层的 HTTP 处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_stream.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1105,7 +1107,4 @@ bool QuicSpdyStream::ParseHeaderStatusCode(const HttpHeaderBlock& header,
   }
   const absl::string_view status(it->second);
   return ParseHeaderStatusCod
-"""
-
-
 ```

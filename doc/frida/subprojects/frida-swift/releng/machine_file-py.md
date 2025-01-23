@@ -202,7 +202,7 @@ enabled_tools = ['injector'] if not is_debug else ['injector', 'logger']
 
 总之，`machine_file.py` 定义的 `load` 函数是 Frida 加载和解析机器配置文件的关键部分。理解它的功能有助于理解 Frida 如何根据目标环境进行配置，并在进行 Frida 的逆向分析和调试时提供重要的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/machine_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -210,8 +210,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from configparser import ConfigParser
 from pathlib import Path
 from typing import Sequence, Union
@@ -256,7 +258,4 @@ def strv_to_meson(strv: Sequence[str]) -> str:
 
 def str_to_meson(s: str) -> str:
     return "'" + s + "'"
-
-"""
-
 ```

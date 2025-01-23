@@ -130,15 +130,17 @@ DocumentMarker::MarkerType SpellingMarker::GetType() const {
 
 `spelling_marker.cc` 文件定义了 `SpellingMarker` 类，它是 Blink 渲染引擎中用于表示拼写错误的内部数据结构。它与 HTML 内容直接关联，可以通过 JavaScript 进行间接交互，并通过 CSS 控制其视觉呈现。理解 `SpellingMarker` 的工作原理对于调试与拼写检查相关的问题至关重要。当你在 Chromium 浏览器中看到拼写错误的红色下划线时，背后很可能就涉及 `SpellingMarker` 对象的创建和使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/spelling_marker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ DocumentMarker::MarkerType SpellingMarker::GetType() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

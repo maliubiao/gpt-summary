@@ -70,11 +70,13 @@ console.log(doubledNumbers); // 输出: [2, 4, 6]
 
 **总结来说，`platform-embedded-file-writer-win.cc` 是 V8 构建过程中的一个关键组件，它负责将 JavaScript 的核心功能（通过内置函数实现）的预编译版本嵌入到最终的 V8 库中，从而提高 V8 的启动速度和执行效率。**  它专注于生成 Windows 平台特定的、用于嵌入的汇编代码，并处理了不同编译器和架构之间的差异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/embedded/platform-embedded-file-writer-win.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -802,7 +804,4 @@ int PlatformEmbeddedFileWriterWin::WriteByteChunk(const uint8_t* data) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

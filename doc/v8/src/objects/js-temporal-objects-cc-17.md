@@ -151,7 +151,7 @@ console.log(timeUntil.toString()); // 输出类似: PT26H30M
 
 作为 25 个部分中的第 18 部分，`v8/src/objects/js-temporal-objects.cc` 主要负责 **`Temporal.PlainDateTime` 对象的具体实现**。它涵盖了创建、访问、修改、格式化和比较 `Temporal.PlainDateTime` 实例的核心逻辑。  考虑到这是实现 Temporal API 的一部分，之前的章节可能处理了基础的 Temporal 类型定义和辅助函数，而后续章节可能会涉及其他 Temporal 类型（如 `Temporal.PlainDate`, `Temporal.PlainTime`, `Temporal.ZonedDateTime` 等）的实现或更高级的功能。  这个文件专注于 `Temporal.PlainDateTime` 这个核心的日期和时间组合类型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -159,8 +159,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第18部分，共25部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ception.
   THROW_NEW_ERROR(isolate, NEW_TEMPORAL_INVALID_ARG_RANGE_ERROR());
 }
@@ -871,7 +873,4 @@ Maybe<DateRecordWithCalendar> ParseTemporalMonthDayString(
   // 3. If isoString contains a UTCDesignator, then
   if (parsed->utc_designator) {
     // a. Throw a *R
-"""
-
-
 ```

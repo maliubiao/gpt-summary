@@ -190,7 +190,7 @@ A developer or tester might interact with this script in the following scenarios
 
 In essence, while the script itself is simple, it's a utility within a larger ecosystem that deals with the complex task of dynamically analyzing and understanding the inner workings of compiled applications, often involving reverse engineering techniques and knowledge of low-level system details.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/22 object extraction/create-source.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,12 +198,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #! /usr/bin/env python3
 import sys
 print(f'#include "{sys.argv[1]}"')
-
-"""
-
 ```

@@ -127,14 +127,16 @@ Finally, organize the information logically with clear headings and bullet point
 
 `layout_fieldset_test.cc` 这个文件通过模拟特定的 DOM 操作场景，特别是子节点的添加和移除，来测试 Blink 引擎中 `LayoutFieldset` 类的健壮性，防止在处理 `<fieldset>` 元素时发生崩溃。 它与 HTML 结构、CSS 样式（如 `display: contents`）以及 JavaScript 的 DOM 操作都有关联，确保即使在这些技术相互作用的复杂情况下，布局引擎也能稳定运行。  这些测试用例关注的是引擎的内部实现，但也反映了开发者在使用 HTML、CSS 和 JavaScript 操作 `<fieldset>` 时可能遇到的潜在问题和需要注意的地方。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/forms/layout_fieldset_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ TEST_F(LayoutFieldsetTest, AddChildAnonymousInlineCrash) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

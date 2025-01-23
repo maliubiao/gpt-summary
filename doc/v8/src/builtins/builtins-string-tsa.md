@@ -77,11 +77,13 @@ console.log(String.fromCodePoint(0x1F600)); // 输出 "😀" (超出基本多文
 
 `builtins-string-tsa.cc` 文件是 V8 引擎中一个关键的组成部分，它使用 Turboshaft Assembler 实现了高性能的字符串创建和操作，并直接支撑了 JavaScript 中 `String.fromCharCode()` 和 `String.fromCodePoint()` 这两个重要的内置方法。理解这些底层的实现可以帮助我们更好地理解 JavaScript 字符串的工作原理以及 V8 引擎的优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-string-tsa.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -331,7 +333,4 @@ TS_BUILTIN(StringFromCharCode, StringBuiltinsAssemblerTS) {
 #include "src/compiler/turboshaft/undef-assembler-macros.inc"
 
 }  // namespace v8::internal
-
-"""
-
 ```

@@ -150,7 +150,7 @@ ld.bfd -o mylib.so -shared -L/opt/mylibs -lfoo -rpath='$ORIGIN/../mylibs'  # 实
 
 `frida/subprojects/frida-gum/releng/meson/mesonbuild/linkers/linkers.py` 的主要功能是为 Meson 构建系统提供一个抽象层来处理各种静态和动态链接器。它定义了基类和针对特定链接器的子类，负责将 Meson 的构建指令转换为特定链接器可以理解的命令行参数，并处理不同操作系统和架构下的链接差异。这使得 Meson 能够以统一的方式管理链接过程，简化构建脚本的编写，并提高构建的可移植性。这个文件对于理解软件的构建过程、依赖关系以及解决链接错误至关重要，同时也与逆向工程、二进制文件结构和操作系统底层机制等概念紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/linkers/linkers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 
@@ -1105,7 +1107,4 @@ class CcrxDynamicLinker(DynamicLinker):
     id = 'rlink'
 
     def __init__(self, for_machine: mesonlib.Mac
-"""
-
-
 ```

@@ -200,14 +200,16 @@ By following these steps, combining code analysis with an understanding of the u
 
 总而言之，`MathUnderOverLayoutAlgorithm.cc` 是 Blink 渲染引擎中一个关键的组成部分，它负责精确地布局 MathML 中带有上标和下标的复杂结构，确保数学公式能够在网页上正确且美观地呈现。理解其功能和与 Web 技术的关系，有助于开发者更好地使用和调试 MathML。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/mathml/math_under_over_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -638,7 +640,4 @@ MinMaxSizesResult MathUnderOverLayoutAlgorithm::ComputeMinMaxSizes(
 }
 
 }  // namespace blink
-
-"""
-
 ```

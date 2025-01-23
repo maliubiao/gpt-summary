@@ -169,15 +169,17 @@ fetch('https://example.com/image.jpg')
 
 总而言之，`data_payload_decoder.cc` 是 Chromium 网络栈中处理 HTTP/2 数据传输的核心组件之一，它负责高效、正确地解析 DATA 帧的内容，并将数据传递给上层模块进行处理，最终使得用户能够访问到网络资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/decoder/payload_decoders/data_payload_decoder.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -308,7 +310,4 @@ DecodeStatus DataPayloadDecoder::ResumeDecodingPayload(FrameDecoderState* state,
 }
 
 }  // namespace http2
-
-"""
-
 ```

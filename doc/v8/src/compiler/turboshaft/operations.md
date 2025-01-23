@@ -122,11 +122,13 @@ if (age >= 18) {
 
 `operations.cc` 文件是 Turboshaft 编译器的核心组成部分，它详细定义了构成 JavaScript 代码中间表示的各种操作。理解这个文件对于深入了解 V8 引擎的编译原理至关重要。 JavaScript 代码的执行最终会落实到这些底层的操作上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/operations.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2195,7 +2197,4 @@ bool Operation::IsOnlyUserOf(const Operation& value, const Graph& graph) const {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

@@ -188,15 +188,17 @@ Error: Value too high
 
 **Explanation of the error:** The user's error here isn't directly in the C++ code, but in how they deploy their JavaScript code. Forgetting or incorrectly configuring source maps prevents developers from effectively debugging minified or bundled code because the error locations point to the transformed code, not the original source they wrote. The `SourcePositionTable` in V8 plays a crucial role in the *internal* mapping within the engine, while source maps extend this concept for debugging deployed code in browsers. If V8's internal source position table was faulty or incomplete, it would lead to incorrect stack traces even during development.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/source-position-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/source-position-table.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -362,7 +364,4 @@ class V8_EXPORT_PRIVATE SourcePositionTableIterator {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_SOURCE_POSITION_TABLE_H_
-
-"""
-
 ```

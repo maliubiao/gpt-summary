@@ -193,7 +193,7 @@ pkg_mod.generate(
 
 总而言之，`fortrantemplates.py` 是 Frida 项目中用于自动化生成 Fortran 代码和 Meson 构建文件的工具，虽然它本身不直接进行逆向操作，但它提供的能力是构建在逆向工程中使用的工具或组件的基础。它涉及到二进制底层、操作系统构建机制以及编程语言的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/templates/fortrantemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -201,8 +201,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -304,7 +306,4 @@ class FortranProject(FileImpl):
     lib_template = lib_fortran_template
     lib_meson_template = lib_fortran_meson_template
     lib_test_template = lib_fortran_test_template
-
-"""
-
 ```

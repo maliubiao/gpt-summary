@@ -132,11 +132,13 @@ rma->Bind(&end_label);
 
 `RawMachineAssembler` 是 V8 引擎中一个非常核心的组件，它负责将高级的中间表示（例如由 Turbofan 生成的）转换为可以直接在机器上执行的底层指令。虽然 JavaScript 开发者不会直接使用它，但它的存在和高效运作对于 JavaScript 代码的性能至关重要。它充当了高级语言和机器硬件之间的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/raw-machine-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1023,7 +1025,4 @@ RawMachineLabel::~RawMachineLabel() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

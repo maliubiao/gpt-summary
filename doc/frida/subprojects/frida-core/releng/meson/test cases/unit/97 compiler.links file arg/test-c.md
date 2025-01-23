@@ -122,7 +122,7 @@ By following this thought process, we can extract meaningful information even fr
 
 总而言之，尽管 `test.c` 本身非常简单，但它在 Frida 的构建和测试流程中扮演着验证基础构建环境的关键角色。它的成功与否直接反映了编译器、链接器以及构建系统的健康状况，为后续更复杂的 Frida 功能的构建奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/97 compiler.links file arg/test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,10 +130,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0; }
-
-"""
-
 ```

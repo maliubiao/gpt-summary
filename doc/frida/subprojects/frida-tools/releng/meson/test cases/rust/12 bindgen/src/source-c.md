@@ -158,7 +158,7 @@ Leaving add function
 
 虽然 `source.c` 文件本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 `bindgen` 工具生成 Rust FFI 绑定的正确性。对于 Frida 用户来说，理解这样的简单 C 代码以及如何使用 Frida 进行动态分析是进行更复杂逆向工程的基础。这个例子涵盖了逆向工程的基本概念，如函数识别、动态 hook，并涉及到了一些底层和操作系统的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/rust/12 bindgen/src/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // SPDX-license-identifer: Apache-2.0
 // Copyright © 2021 Intel Corporation
 
@@ -176,7 +178,4 @@ Prompt:
 int32_t add(const int32_t first, const int32_t second) {
     return first + second;
 }
-
-"""
-
 ```

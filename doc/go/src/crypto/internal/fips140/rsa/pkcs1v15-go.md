@@ -191,7 +191,7 @@ func main() {
 
 总而言之，`pkcs1v15.go` 文件在 Go 的 `crypto/internal/fips140/rsa` 包中，专门为 FIPS 140 认证环境提供了基于 PKCS #1 v1.5 的 RSA 签名和验证功能。它依赖于底层的 RSA 加密和解密操作，并确保符合 FIPS 标准的要求。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/rsa/pkcs1v15.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -339,9 +341,4 @@ func checkApprovedHashName(hash string) {
 		fips140.RecordNonApproved()
 	}
 }
-
-"""
-
-
-
 ```

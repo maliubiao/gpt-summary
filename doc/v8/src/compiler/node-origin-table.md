@@ -127,11 +127,13 @@ let result = add(5, 10);
 
 `NodeOriginTable` 是 V8 引擎内部的一个关键组件，它帮助开发者理解和调试 Turbofan 编译器的优化过程。它记录了图节点的创建来源和处理阶段，这对于追踪编译器的行为和性能至关重要。虽然用户编写的 JavaScript 代码不会直接与其交互，但了解它的功能可以帮助我们理解 V8 如何将 JavaScript 代码转化为高效的机器码。它像一个编译器的“溯源”工具，帮助开发者理解每个操作的来龙去脉。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/node-origin-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -243,7 +245,4 @@ void NodeOriginTable::PrintJson(std::ostream& os) const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -124,7 +124,7 @@ By following these steps, I was able to produce a comprehensive and informative 
 
 这段代码继续完善了 Inspector 对 Cache Storage 的调试能力，专注于**删除特定的缓存条目**和**请求缓存条目的详细响应内容**。这些功能对于开发者理解浏览器的缓存行为、调试缓存策略以及验证 JavaScript 代码与 Cache Storage API 的交互至关重要。它们使得开发者可以在不重新加载页面或执行 JavaScript 代码的情况下，精确地检查和操作缓存，从而提高调试效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/cache_storage/inspector_cache_storage_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -132,9 +132,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                     CacheStorageErrorString(error))
+### 源代码
+```cpp
+CacheStorageErrorString(error))
                       .Utf8()));
             }
           },
@@ -279,8 +281,4 @@ void InspectorCacheStorageAgent::requestCachedResponse(
           std::move(callback_wrapper), std::move(task_runner)));
 }
 }  // namespace blink
-
-"""
-
-
 ```

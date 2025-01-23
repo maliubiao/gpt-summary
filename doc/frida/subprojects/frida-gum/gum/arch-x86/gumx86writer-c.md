@@ -144,7 +144,7 @@ Strategizing complete. I will now proceed with generating the response based on 
 
 希望这个详细的分析对您有所帮助！
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/arch-x86/gumx86writer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2023 Fabian Freyer <fabian.freyer@physik.tu-berlin.de>
@@ -1450,7 +1452,4 @@ gum_x86_writer_put_jmp_near_ptr (GumX86Writer * self,
   gum_x86_writer_commit (self, 6);
 
   gum_x86_writer_put_ud
-"""
-
-
 ```

@@ -158,7 +158,7 @@ By following this structured thought process, leveraging the provided context, a
 
 通过这种逐步的排查过程，用户可以定位到这个简单的 `main.c` 文件，并分析其在 Frida 构建和测试流程中的作用，从而帮助理解和解决构建或安装过程中出现的问题。这个文件虽然功能简单，但它是 Frida 持续集成和质量保证体系中的一个基本组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/99 install all targets/subdir/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,12 +166,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char *argv[]) {
   return 0;
 }
-
-"""
-
 ```

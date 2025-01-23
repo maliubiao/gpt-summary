@@ -130,7 +130,7 @@ Confidence Score: 5/5  I am confident I can address all constraints effectively.
 
 可以认为，这部分代码是 QUIC 数据包处理的“**认证和解密中心**”，确保接收到的数据包是合法的、没有被篡改的，并且能够被正确地解析和处理。它的输入是原始的加密数据包，输出是解密后的数据和初步解析的头部信息，为后续更高层次的 QUIC 帧处理奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -138,9 +138,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共9部分，请归纳一下它的功能
+```
 
-"""
-                                      char* decrypted_buffer,
+### 源代码
+```cpp
+char* decrypted_buffer,
                                        size_t buffer_length) {
   QUICHE_DCHECK_NE(GOOGLE_QUIC_PACKET, header->form);
   QUICHE_DCHECK(!header->has_possible_stateless_reset_token);
@@ -956,8 +958,4 @@ bool QuicFramer::ProcessFrameData(QuicDataReader* reader,
   }
   QUIC_DVLOG(2) << ENDPOINT << "Processing packet with header " << header;
   while (!reader->IsDoneReading()) {
- 
-"""
-
-
 ```

@@ -178,7 +178,7 @@ console.log(globalThis); // 或 window (在浏览器中) 或 global (在 Node.js
 
 总而言之，这部分 `isolate.h` 代码定义了 V8 引擎中至关重要的异常处理和执行上下文管理机制，为 JavaScript 代码的可靠执行提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/isolate.h以.tq结尾，那它是个v8 torque源代码，
@@ -186,8 +186,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 trypoint)
   THREAD_LOCAL_TOP_ADDRESS(Address, pending_handler_constant_pool)
   THREAD_LOCAL_TOP_ADDRESS(Address, pending_handler_fp)
@@ -1022,7 +1024,4 @@ trypoint)
 #ifdef V8_ENABLE_MAGLEV
   maglev::MaglevConcurrentDispatcher* maglev_concurrent_dispatcher() {
     DCHECK_NOT_N
-"""
-
-
 ```

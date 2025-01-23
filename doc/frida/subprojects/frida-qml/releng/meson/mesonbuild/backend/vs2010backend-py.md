@@ -127,7 +127,7 @@ By following these steps, we can arrive at the comprehensive summary provided in
 
 总而言之，`vs2010backend.py` 的主要功能是 **将 Meson 的构建描述转换为 Visual Studio 2010 可以理解的项目文件格式**，使得开发者可以使用 Visual Studio 2010 来编译、构建和调试 frida 项目。它负责生成 `.sln` 解决方案文件和 `.vcxproj` 项目文件，处理项目依赖、生成器目标、构建配置等关键信息。这对于使用 Windows 和 Visual Studio 环境的 frida 开发者和逆向工程师至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -755,7 +757,4 @@ class Vs2010Backend(backends.Backend):
                              target_ext=None,
                              target_platform=None) -> T.Tuple[ET.Element, ET.Element]:
         root = ET.Element('Project', {'DefaultTargets': "Build
-"""
-
-
 ```

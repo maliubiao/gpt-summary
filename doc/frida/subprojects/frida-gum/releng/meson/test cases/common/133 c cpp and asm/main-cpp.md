@@ -167,7 +167,7 @@ Initially, I might have focused too much on the C++ part. Realizing the signific
 
 总而言之，这个 `main.cpp` 文件是一个简洁但关键的测试用例，用于验证 Frida 动态 Instrumentation 工具在处理混合语言代码时的基本能力，并为开发者提供了一个参考，了解如何 hook 和与不同语言编写的函数进行交互。它也反映了 Frida 在逆向工程中动态分析的核心思想和方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/133 c cpp and asm/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 
 extern "C" {
@@ -188,7 +190,4 @@ int main(void) {
   std::cout << "C++ seems to be working." << std::endl;
   return get_retval();
 }
-
-"""
-
 ```

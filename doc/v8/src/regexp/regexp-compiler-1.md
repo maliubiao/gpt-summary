@@ -49,13 +49,15 @@ console.log(regex3.test(text6)); // Output: true
 *   For `regex3`, the `IsIgnoreCase` checks in the C++ code are relevant. The code would handle the case-insensitive matching by considering both 'B' and 'b'.
 
 **In essence, this C++ code is a low-level implementation detail within V8 that optimizes the execution of JavaScript regular expressions by performing fast preliminary checks to avoid unnecessary full matching attempts.** It contributes to making JavaScript's regular expression engine efficient.
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- quarks = elm.atom()->data();
+### 源代码
+```
+quarks = elm.atom()->data();
       for (int i = 0; i < characters && i < quarks.length(); i++) {
         QuickCheckDetails::Position* pos =
             details->positions(characters_filled_in);
@@ -1702,7 +1704,4 @@ int ChoiceNode::EmitOptimizedUnanchoredSearch(RegExpCompiler* compiler,
   RegExpMacroAssembler* macro_assembler = compiler->macro_assembler();
   Isolate* isolate = macro_assembler->isolate();
   // At this point we know that we are at a non-greedy loop that will
-"""
-
-
 ```

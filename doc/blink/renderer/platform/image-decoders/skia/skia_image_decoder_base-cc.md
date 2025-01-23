@@ -171,14 +171,16 @@ This systematic approach allows for a thorough analysis of the code, moving from
 
 `SkiaImageDecoderBase` 是 Blink 引擎中至关重要的组件，它提供了一个通用的图像解码框架，并利用 Skia 库的强大功能来处理各种图像格式。它与 HTML、CSS 和 JavaScript 紧密相关，是网页上图像显示的基础。理解其功能和工作原理有助于开发者更好地理解浏览器如何处理图像，并能帮助排查与图像显示相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/skia/skia_image_decoder_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -631,7 +633,4 @@ bool SkiaImageDecoderBase::IsFailedFrameIndex(wtf_size_t index) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

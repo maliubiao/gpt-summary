@@ -112,7 +112,7 @@ frida -p com.example.app "target_app_arg" --script my_script.js
 
 总而言之， `exe.c` 这个简单的程序本身并没有什么复杂的功能，但它作为 Frida 测试用例的一部分，其目的是为了验证 Frida 在处理命令行参数时是否能够正确地处理各种情况，特别是当参数顺序错误时。这有助于确保 Frida 的稳定性和可靠性，并帮助用户避免常见的参数使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing/35 project argument after target/exe.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,12 +120,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

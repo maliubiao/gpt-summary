@@ -159,11 +159,13 @@ console.log(Math.PI); // 3
 
 `protectors.cc` 文件定义的保护器机制是 V8 引擎实现高性能的关键组成部分。它允许 V8 在某些假设成立的前提下进行优化，并在这些假设不再成立时安全地撤销这些优化。JavaScript 开发者通常不需要直接操作保护器，但他们编写的代码行为（例如修改内置对象的属性或原型）可能会间接地导致保护器失效，从而影响代码的执行性能。 理解保护器有助于理解 V8 如何进行优化以及为什么某些看似无害的操作可能会对性能产生影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/protectors.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -227,7 +229,4 @@ DECLARED_PROTECTORS_ON_ISOLATE(INVALIDATE_PROTECTOR_ON_ISOLATE_DEFINITION)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

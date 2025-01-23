@@ -173,15 +173,17 @@ This structured approach allows me to systematically analyze the code, understan
 
 总而言之，`inner_text_builder_unittest.cc` 是保证 Blink 引擎正确提取网页文本内容的关键组成部分，它通过大量的单元测试覆盖了各种边界情况和使用场景，确保了内容提取功能的稳定性和准确性，而这对于很多依赖于网页内容分析的功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/content_extraction/inner_text_builder_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -711,7 +713,4 @@ TEST(InnerTextBuilderTest, InnerTextPassagesExcludesSvgElements) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

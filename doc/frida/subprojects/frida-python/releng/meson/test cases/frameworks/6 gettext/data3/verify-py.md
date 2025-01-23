@@ -149,7 +149,7 @@ By following this structured approach, considering different aspects of the prom
 
 总而言之，`verify.py` 作为一个简单的文件内容验证脚本，在 Frida 的开发和测试流程中扮演着确保功能正确性的角色，尤其是在涉及文件生成和内容修改的场景下。它的存在暗示着在 Frida 的国际化支持或其他功能中，需要通过检查特定字符串是否存在来验证某些操作的成功。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/6 gettext/data3/verify.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -172,7 +174,4 @@ check_str = sys.argv[2]
 assert os.path.isfile(fname)
 with open(fname, 'r', encoding='utf-8') as f:
     assert check_str in f.read()
-
-"""
-
 ```

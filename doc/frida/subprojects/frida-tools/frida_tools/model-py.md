@@ -181,7 +181,7 @@ By systematically considering these aspects, we can build a comprehensive unders
 
 总而言之，`model.py` 文件中定义的类是 Frida 用于在运行时表示目标进程结构的关键数据结构。它们抽象了底层的内存地址和二进制格式，为用户提供了一种更方便的方式来理解和操作目标进程。这些类在各种逆向工程场景中都非常有用，特别是当你需要动态地分析程序的行为时。理解这些类的功能和属性对于有效地使用 Frida 进行动态 instrumentation 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/frida_tools/model.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 class Module:
     def __init__(self, name: str, base_address: int, size: int, path: str) -> None:
         self.name = name
@@ -270,7 +272,4 @@ class ObjCMethod(Function):
             self.method,
             self.address,
         )
-
-"""
-
 ```

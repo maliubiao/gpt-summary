@@ -38,12 +38,14 @@ While the specific Torque code for the `+` operator is complex, the `Implementat
 
 In essence, the `ImplementationVisitor` is a bridge between the high-level, declarative nature of Torque and the low-level, imperative implementation of V8, making it possible for V8 to efficiently execute JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/implementation-visitor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1726,7 +1728,4 @@ VisitResult ImplementationVisitor::Visit(NewExpression* expr) {
   if (!class_type->AllowInstantiation()) {
     // Classes that are only used for testing should never be instantiated.
     ReportError(*c
-"""
-
-
 ```

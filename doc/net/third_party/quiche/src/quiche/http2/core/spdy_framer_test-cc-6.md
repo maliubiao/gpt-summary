@@ -140,7 +140,7 @@ By going through these steps and observations, I can formulate a comprehensive a
 
 总而言之，`spdy_framer_test.cc` 通过各种测试用例，全面验证了 `SpdyFramer` 类的正确性和健壮性，确保其能够可靠地处理 SPDY 帧的编码和解码，这是 Chromium 网络栈中实现 HTTP/2 协议的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/core/spdy_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -148,9 +148,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
-     // frame type PRIORITY_UPDATE
+### 源代码
+```cpp
+// frame type PRIORITY_UPDATE
       0x00,                    // flags
       0x00, 0x00, 0x00, 0x00,  // stream ID, must be 0
       0x00, 0x00, 0x00, 0x00,  // prioritized stream ID, must not be zero
@@ -427,8 +429,4 @@ TEST_P(SpdyFramerTest, SpdyFrameIRSize) {
 }  // namespace test
 
 }  // namespace spdy
-
-"""
-
-
 ```

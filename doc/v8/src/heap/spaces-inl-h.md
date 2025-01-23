@@ -175,15 +175,17 @@ let largeString = "A".repeat(100000);
 
 总而言之，`v8/src/heap/spaces-inl.h` 虽然是一个底层的 C++ 头文件，但它定义了 V8 引擎管理 JavaScript 对象内存的关键机制，理解其功能有助于深入理解 JavaScript 的内存管理和性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/spaces-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/spaces-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -319,7 +321,4 @@ MutablePageMetadata* MemoryChunkIterator::Next() {
 }  // namespace v8
 
 #endif  // V8_HEAP_SPACES_INL_H_
-
-"""
-
 ```

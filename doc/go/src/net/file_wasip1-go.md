@@ -167,7 +167,7 @@ Go 程序需要知道预先创建的 Socket 对应的文件描述符才能使用
 
 总而言之，这段代码的核心作用是在 WASI 环境下，为 Go 程序提供了一种利用宿主环境预先存在的网络资源的方式，通过将文件描述符转换为 Go 的网络对象，实现更灵活的集成和交互。使用者需要清楚地了解宿主环境提供的文件描述符类型和状态，以避免使用错误的 API 或导致运行时错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/file_wasip1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -279,9 +281,4 @@ func newFileConn(fd *netFD) Conn {
 //
 //go:linkname fd_fdstat_get_type syscall.fd_fdstat_get_type
 func fd_fdstat_get_type(fd int) (uint8, error)
-
-"""
-
-
-
 ```

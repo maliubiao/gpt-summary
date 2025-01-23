@@ -281,7 +281,7 @@ sys.stdin.read()
 
 尽管 `bionic/libc/kernel/uapi/linux/cyclades.handroid` 定义了与 Cyclades 多端口串口卡交互的接口，但现代 Android 系统已经移除了对这些功能的支持。理解这个头文件更多的是了解 Android 系统的演变以及早期版本或定制系统中可能存在的硬件交互方式。在实际开发中，应该避免使用这些已废弃的接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/cyclades.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -292,8 +292,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -329,7 +331,4 @@ struct cyclades_monitor {
 #define CYSETWAIT 0x435912
 #define CYGETWAIT 0x435913
 #endif
-
-"""
-
 ```

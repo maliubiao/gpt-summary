@@ -127,7 +127,7 @@ Here's a plan to address the request:
 
 `v8/src/wasm/wasm-objects.h` 是 V8 引擎中至关重要的头文件，它定义了用于表示 WebAssembly 核心概念的 C++ 类。这些类构成了 V8 如何在内部管理和操作 WebAssembly 模块、实例及其相关资源的基础。它为 V8 引擎提供了描述 WebAssembly 结构和行为的数据模型，并为 JavaScript 的 `WebAssembly` API 提供了底层的实现支撑。该文件不是 Torque 源代码，并且它定义的对象直接映射到 JavaScript WebAssembly API 中的对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-objects.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-objects.h以.tq结尾，那它是个v8 torque源代码，
@@ -135,8 +135,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.  Use of
 // this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -876,8 +878,4 @@ class WasmDispatchTableData {
   //    any locks, which is important for applications with many worker threads.
   // 2) It keeps track of all wrappers that are currently installed in this
   //    table, and how often they are stored in this table. The first time a
- 
-"""
-
-
 ```

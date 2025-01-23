@@ -144,7 +144,7 @@ Initially, I might be tempted to look for explicit JavaScript interactions. Howe
 
 总而言之，`throughput_analyzer_unittest.cc` 是一个至关重要的测试文件，它确保了 Chromium 网络栈中负责吞吐量分析的关键组件能够可靠地工作，从而为浏览器提供准确的网络质量信息，并最终提升用户的网络浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/nqe/throughput_analyzer_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -938,7 +940,4 @@ TEST_F(ThroughputAnalyzerTest, TestThroughputWithNetworkRequestsOverlap) {
     auto context = context_builder->Build();
 
     EXPECT_EQ(0, t
-"""
-
-
 ```

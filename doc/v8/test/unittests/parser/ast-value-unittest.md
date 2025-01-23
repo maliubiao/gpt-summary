@@ -45,9 +45,12 @@ This methodical approach, starting with a broad overview and then progressively 
 
 此外，该文件也间接测试了 `AstValueFactory` 和 `AstNodeFactory` 创建 BigInt 字面量的能力。
 
-Prompt: ```这是目录为v8/test/unittests/parser/ast-value-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/parser/ast-value-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -100,6 +103,4 @@ TEST_F(AstValueTest, BigIntToBooleanIsTrue) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

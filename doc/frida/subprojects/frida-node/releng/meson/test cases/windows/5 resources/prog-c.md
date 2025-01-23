@@ -156,7 +156,7 @@ Finally, organize the findings into clear categories as requested: functionality
 
 总而言之，这段简单的 C 代码片段在一个更大的软件工程项目中扮演着测试和验证特定功能的角色。通过分析这段代码，我们可以更好地理解 Windows 资源加载机制，以及 Frida 这样的动态插桩工具在逆向工程和调试中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/windows/5 resources/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<windows.h>
 
 // deliberately don't get MY_ICON from resource.h so that depfile generation can
@@ -187,7 +189,4 @@ WinMain(
     ((void)nCmdShow);
     return hIcon ? 0 : 1;
 }
-
-"""
-
 ```

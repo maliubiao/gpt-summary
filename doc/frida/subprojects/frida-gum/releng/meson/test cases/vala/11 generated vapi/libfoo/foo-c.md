@@ -127,7 +127,7 @@ Interceptor.attach(Module.findExportByName("libfoo.so", "foo_foo_return_success"
 
 总而言之，`foo.c` 虽然简单，但它展示了 GObject 的基本结构和函数定义，是逆向工程中会遇到的基本代码单元。理解这样的代码是分析更复杂程序的基础。作为 Frida 的测试用例，它也体现了 Frida 需要能够动态地与各种类型的代码进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/vala/11 generated vapi/libfoo/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "foo.h"
 
 struct _FooFoo
@@ -165,7 +167,4 @@ int foo_foo_return_success(void)
 {
   return 0;
 }
-
-"""
-
 ```

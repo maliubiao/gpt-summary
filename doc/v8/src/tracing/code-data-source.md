@@ -113,11 +113,13 @@ eval("console.log('Hello from eval');");
 
 `v8/src/tracing/code-data-source.cc` 是 V8 引擎中一个重要的组件，它通过 Perfetto 框架，为开发者提供了一种深入了解 JavaScript 代码执行情况的方式，帮助进行性能分析和调试。 它通过 "interning" 技术高效地记录脚本、函数和 Isolate 的元数据，并将这些信息与 JavaScript 的概念紧密联系起来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tracing/code-data-source.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -398,7 +400,4 @@ void CodeDataSource::OnStop(const StopArgs&) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

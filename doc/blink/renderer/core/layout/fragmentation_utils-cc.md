@@ -178,15 +178,17 @@ By following these steps, I was able to produce a comprehensive and informative 
 
 `fragmentation_utils.cc` 的第一部分提供了一系列核心工具函数，用于 Blink 渲染引擎在布局过程中处理 CSS 盒模型的碎片化。它涉及到分割属性的优先级判断、分割点吸引力的评估、碎片容器容量的计算以及碎片构建器的配置。理解这些函数的功能有助于深入理解浏览器如何处理多列布局、分页打印等与内容碎片化相关的 CSS 特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/fragmentation_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -895,7 +897,4 @@ BreakStatus FinishFragmentation(BoxFragmentBuilder* builder) {
       previous_break_token->MonolithicOverflow()) {
     // See if we've now managed to move past previous fragmentainer overflow, or
     // if we need to steer clear of at least some of it in the nex
-"""
-
-
 ```

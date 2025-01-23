@@ -123,14 +123,16 @@ p {
 
 总而言之，`han_kerning.cc` 是 Chromium 渲染引擎中一个重要的模块，它专注于提升 CJK 文本的排版质量，通过智能地调整特定字符之间的间距，使得文本在视觉上更加舒适和专业。它的工作受到 CSS 样式的影响，并最终影响用户在浏览器中看到的文本渲染效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/han_kerning.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -559,7 +561,4 @@ HanKerning::FontData::FontData(const SimpleFontData& font,
 }
 
 }  // namespace blink
-
-"""
-
 ```

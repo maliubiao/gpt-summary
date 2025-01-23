@@ -285,7 +285,7 @@ func main() {
 
 在这个例子中，"This should also go to the file" **不会** 被写入 `output.log` 文件，只有 panic 的信息和堆栈跟踪会被写入。要实现将所有输出重定向到文件，需要使用其他方法，例如重定向 `os.Stdout` 和 `os.Stderr`。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/debug/stack_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -293,8 +293,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -493,9 +495,4 @@ func TestSetCrashOutput(t *testing.T) {
 		t.Errorf("stderr output does not contain %q, but should", printlnOnly)
 	}
 }
-
-"""
-
-
-
 ```

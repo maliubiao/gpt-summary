@@ -121,7 +121,7 @@ fetch('https://example.com/data')
 
 总而言之，`net/third_party/quiche/src/quiche/http2/adapter/nghttp2_adapter_test.cc` 文件是 Chromium 中用于测试 `NgHttp2Adapter` 类的重要组成部分。它通过各种测试用例，验证了 `NgHttp2Adapter` 作为 HTTP/2 适配器的正确性、健壮性和性能，确保了 Chromium 能够可靠地进行 HTTP/2 通信。 最后一部分的测试很可能集中在一些更复杂的场景，例如负向流控的处理，以确保适配器在各种边缘情况下都能正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第11部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ce most of the flow control window consumed is padding, the adapter
   // generates window updates.
   EXPECT_CALL(visitor, OnBeforeFrameSent(WINDOW_UPDATE, 1, _, 0x0)).Times(1);
@@ -239,8 +241,4 @@ TEST_P(NgHttp2AdapterDataTest, NegativeFlowControlStreamResumption) {
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
-
 ```

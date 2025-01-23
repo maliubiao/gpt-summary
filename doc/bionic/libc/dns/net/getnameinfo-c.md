@@ -343,7 +343,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 希望这个详细的分析对你有所帮助！
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/net/getnameinfo.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -354,8 +354,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: getnameinfo.c,v 1.53 2012/09/26 23:13:00 christos Exp $	*/
 /*	$KAME: getnameinfo.c,v 1.45 2000/09/25 22:43:56 itojun Exp $	*/
 
@@ -801,7 +803,4 @@ ip6_sa2str(const struct sockaddr_in6 *sa6, char *buf, size_t bufsiz, int flags)
 		return n;
 }
 #endif /* INET6 */
-
-"""
-
 ```

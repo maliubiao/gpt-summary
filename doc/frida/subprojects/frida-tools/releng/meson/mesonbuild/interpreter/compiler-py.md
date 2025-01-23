@@ -103,7 +103,7 @@ compiler.has_function_method(('pthread_create',), {'dependencies': [pthread_dep]
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/mesonbuild/interpreter/compiler.py` 文件的核心功能是为 Frida 的构建过程提供了一组强大的编译器自省工具。它允许构建脚本在构建时动态地查询目标编译器的各种特性，并根据这些特性做出相应的构建决策，从而确保 Frida 能够正确地在不同的平台上编译和运行。这对于像 Frida 这样需要跨多种操作系统和架构进行构建的复杂项目来说至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/interpreter/compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021 Intel Corporation
@@ -788,7 +790,4 @@ class CompilerHolder(ObjectHolder['Compiler']):
 
         # This could be done with a comprehension, but that confuses the type
         # checker, and
-"""
-
-
 ```

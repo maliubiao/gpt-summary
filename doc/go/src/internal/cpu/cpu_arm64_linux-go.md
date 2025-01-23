@@ -127,7 +127,7 @@ func UseSIMD() {
 
 这段代码片段是 Go 运行时环境在 `arm64` Linux 系统上进行 CPU 相关初始化的关键部分。它利用 Go 的 build tags 机制实现了平台特定的代码编译，并通过调用 `hwcapInit` 函数来检测和初始化 CPU 的硬件能力。理解这种平台特定的初始化对于理解 Go 程序的底层行为和进行性能优化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/cpu/cpu_arm64_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -135,8 +135,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -148,9 +150,4 @@ package cpu
 func osInit() {
 	hwcapInit("linux")
 }
-
-"""
-
-
-
 ```

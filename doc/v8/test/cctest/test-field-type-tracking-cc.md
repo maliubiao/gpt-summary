@@ -168,7 +168,7 @@ TEST(GeneralizeSmiFieldToDouble) {
 
 总而言之，`v8/test/cctest/test-field-type-tracking.cc` 的第 1 部分主要定义了一些辅助函数和数据结构（如 `Expectations` 类），用于设置和检查 V8 字段类型跟踪功能的测试环境和预期结果。 它涵盖了属性重新配置的基础测试，特别是将访问器属性更改为数据属性的场景，并初步涉及了字段类型泛化的测试框架。  `Expectations` 类是核心，它允许测试精确地断言 Map 的结构、属性类型、表示方式等关键信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-field-type-tracking.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-field-type-tracking.cc以.tq结尾，那它是个v8 torque源代码，
@@ -176,8 +176,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1029,7 +1031,4 @@ TEST(GeneralizeDoubleFieldToTagged) {
   TestGeneralizeField(
       {PropertyConstness::kMutable, Representation::Double(), any_type},
       {PropertyConstness::kMutable, Representation::HeapObje
-"""
-
-
 ```

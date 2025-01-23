@@ -148,7 +148,7 @@ Initially, I might have focused heavily on function hooking in the reversing sec
 
 总而言之，这个 C 文件定义了一个简单的 GObject 类型，用于在 Frida 的 Swift 绑定测试用例中模拟与 GNOME 库的交互。理解其功能有助于理解 Frida 如何 hook 和操作基于 GObject 的应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/7 gnome/gir/dep1/dep2/dep2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "dep2.h"
 
 struct _MesonDep2
@@ -282,7 +284,4 @@ meson_dep2_return_message (MesonDep2 *self)
 
   return (const gchar*) self->msg;
 }
-
-"""
-
 ```

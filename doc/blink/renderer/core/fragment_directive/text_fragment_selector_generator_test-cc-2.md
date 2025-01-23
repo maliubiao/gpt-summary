@@ -116,15 +116,17 @@ This file, `text_fragment_selector_generator_test.cc`, is a critical component o
 
 总而言之，`blink/renderer/core/fragment_directive/text_fragment_selector_generator_test.cc` 的主要功能是 **全面测试 `TextFragmentSelectorGenerator` 类的正确性和健壮性**。它通过大量的单元测试覆盖了各种边缘情况和复杂场景，确保该类能够准确地识别文本片段的上下文，并能够应对异步操作和 DOM 结构变化带来的挑战。这个测试文件对于保证 Chromium 浏览器中文本片段选择器功能的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fragment_directive/text_fragment_selector_generator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ction
 // is not at index=0 but there is only space before it.
 TEST_F(TextFragmentSelectorGeneratorTest,
@@ -509,8 +511,4 @@ TEST_F(TextFragmentSelectorGeneratorTest, RemoveLayoutObjectAsync) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

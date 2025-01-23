@@ -97,13 +97,15 @@ The key connection lies in the `FUNCTION_REFERENCE` macros. These establish a li
 
 总而言之，`v8/src/codegen/external-reference.cc` 的第二部分继续定义了 V8 引擎与外部环境（特别是 JavaScript 代码）交互的关键接口，涵盖了原子操作、TSAN 集成以及对特定 JavaScript 功能的支持。 这些外部引用是 V8 引擎实现其功能并与 JavaScript 运行时环境协同工作的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/external-reference.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                            int old_value_high,
+### 源代码
+```
+int old_value_high,
                                              int new_value_low,
                                              int new_value_high) {
   uint64_t old_value = static_cast<uint64_t>(old_value_high) << 32 |
@@ -321,8 +323,4 @@ void abort_with_reason(int reason) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

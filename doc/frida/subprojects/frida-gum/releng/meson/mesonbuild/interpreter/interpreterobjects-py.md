@@ -123,7 +123,7 @@ A user's actions that would lead to the execution of the code in `interpreterobj
 
 **In summary, `interpreterobjects.py` defines the building blocks for representing and manipulating build system elements within the Meson interpreter. It provides a Pythonic interface to interact with features, external commands, environment variables, dependencies, and other aspects necessary to configure and execute the build process for a project like Frida.** This file is not directly involved in Frida's runtime behavior or instrumentation capabilities but is essential for its construction.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/interpreter/interpreterobjects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 import os
 import shlex
@@ -885,8 +887,4 @@ class Test(MesonInterpreterObject):
                  env: mesonlib.EnvironmentVariables,
                  should_fail: bool, timeout: int, workdir: T.Optional[str], protocol: str,
                  priority: int, verbose: bool):
-     
-"""
-
-
 ```

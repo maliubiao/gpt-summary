@@ -229,7 +229,7 @@ sys.stdin.read()
 
 通过这种方式，可以观察到 `getuid()` 的返回值，并间接地理解 `__kernel_old_uid_t` 等类型在系统调用中的作用。要 hook `setuid` 并观察其参数，可以使用类似的方法，修改 `onEnter` 函数来访问 `args` 数组中的参数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/posix_types.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -240,8 +240,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -255,7 +257,4 @@ typedef unsigned short __kernel_old_gid_t;
 #define __kernel_old_uid_t __kernel_old_uid_t
 #include <asm-generic/posix_types.h>
 #endif
-
-"""
-
 ```

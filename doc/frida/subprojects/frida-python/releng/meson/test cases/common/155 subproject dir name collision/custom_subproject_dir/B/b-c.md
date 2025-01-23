@@ -173,7 +173,7 @@ sys.stdin.read()
 
 总而言之，`b.c` 是 Frida 工具的一个小的组成部分，用于测试特定场景下的构建行为。它的简单逻辑直接关系到逆向工程中的控制流分析和动态插桩技术。理解其功能和背后的原理有助于开发人员和逆向工程师更好地利用 Frida 工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/155 subproject dir name collision/custom_subproject_dir/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 char func_c(void);
 
@@ -203,7 +205,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

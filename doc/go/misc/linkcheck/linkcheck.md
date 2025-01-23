@@ -111,11 +111,13 @@ func main() {
 
 这个简单的例子展示了如何使用 `sync.WaitGroup` 来同步和等待多个并发执行的 goroutine，这与 `linkcheck.go` 中使用 `sync.WaitGroup` 来等待所有网页爬取完成的机制是类似的。 `linkcheck.go` 额外使用了 channel 来进行任务分配，但在并发执行的核心概念上是相同的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为go/misc/linkcheck/linkcheck.go的go语言实现的一部分， 请归纳一下它的功能, 　如果你能推理出它是什么go语言功能的实现，请用go代码举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -307,9 +309,4 @@ func main() {
 		os.Exit(1)
 	}
 }
-
-"""
-
-
-
 ```

@@ -117,12 +117,14 @@ KeyedLoadIC 用于优化通过索引或字符串键访问对象属性的情况�
 
 总而言之，`accessor-assembler.cc` 的这部分代码是 V8 引擎中至关重要的性能优化组件，它通过内联缓存和反馈向量等技术，显著提高了 JavaScript 属性访问的速度，从而提升了整体的 JavaScript 执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/accessor-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 &try_megamorphic);
     GotoIf(TaggedEqual(feedback, MegaDOMSymbolConstant()), &try_megadom);
     Goto(miss);
@@ -1799,7 +1801,4 @@ void AccessorAssembler::GenerateDefineKeyedOwnICTrampoline() {
 
   auto receiver = Parameter<Object>(Descriptor::kReceiver);
   auto name = Parameter<Object>(Descript
-"""
-
-
 ```

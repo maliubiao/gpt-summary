@@ -182,7 +182,7 @@ Therefore, if a user reports a Meson build error related to syntax in their `mes
 
 The primary function of `mparser.py` (part 1) is to perform **lexical analysis** of Meson build files. It takes the raw text and breaks it down into a stream of tokens, identifying keywords, identifiers, literals, operators, and punctuation. It also handles whitespace, comments, and multi-line strings. Crucially, it detects basic lexical errors like invalid string quoting and warns about the use of future reserved keywords, laying the groundwork for the syntactic analysis performed in the subsequent parts of the parser.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/mparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2017 The Meson development team
 
@@ -1106,7 +1108,4 @@ class Parser:
             return self.create_node(ArrayNode, lbracket, args, rbracket)
         elif self.accept('lcurl'):
             lcurl = se
-"""
-
-
 ```

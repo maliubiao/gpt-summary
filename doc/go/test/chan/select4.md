@@ -199,15 +199,17 @@ func main() {
 
 In this hypothetical scenario (where `sideEffect` functions somehow influence channel readiness, which isn't standard), a user might incorrectly assume "Evaluating case 1" will always print before "Evaluating case 2". However, the order of evaluation is not guaranteed, and the `select` statement will choose a ready case pseudo-randomly if multiple are ready at the same time. The original example highlights a similar point with the evaluation of `*f()`.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/chan/select4.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -239,9 +241,4 @@ func main() {
 		}
 	}
 }
-
-"""
-
-
-
 ```

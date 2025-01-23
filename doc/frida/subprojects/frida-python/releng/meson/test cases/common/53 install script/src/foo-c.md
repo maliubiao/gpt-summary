@@ -114,7 +114,7 @@ Let's break down the thought process for analyzing this seemingly simple C code 
 
 这个简单的例子可以帮助用户排除一些基础性的问题，例如目标函数是否真的被导出了，或者 Frida 是否能够正确地加载动态链接库。如果用户自己的目标函数更复杂，他们可以逐步比较，找出导致问题的差异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/53 install script/src/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _WIN32
   #define DO_EXPORT __declspec(dllexport)
 #else
@@ -134,7 +136,4 @@ DO_EXPORT int foo(void)
 {
   return 0;
 }
-
-"""
-
 ```

@@ -165,7 +165,7 @@ func main() {
 
 总结来说，`ctr_test.go` 这个文件通过多种测试用例，验证了 Go 语言 `crypto/cipher` 包中 CTR 模式实现的正确性，包括核心逻辑的测试以及与实际块密码的集成测试。理解其功能有助于开发者正确地使用 CTR 模式进行加密操作，并避免常见的安全漏洞。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/cipher/ctr_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -173,8 +173,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -268,9 +270,4 @@ func TestCTRStream(t *testing.T) {
 		cryptotest.TestStreamFromBlock(t, block, cipher.NewCTR)
 	})
 }
-
-"""
-
-
-
 ```

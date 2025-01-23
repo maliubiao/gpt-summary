@@ -164,15 +164,17 @@ Finally, organize the analysis into clear sections based on the original request
 
 总而言之，`ColdModeSpellCheckRequester` 是 Chromium Blink 引擎中一个重要的后台拼写检查模块，它通过在浏览器空闲时进行非侵入式的拼写检查，提升了用户体验，并与 JavaScript、HTML 和 CSS 紧密协作，共同构建了网页的编辑功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/spellcheck/cold_mode_spell_check_requester.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -445,7 +447,4 @@ void ColdModeSpellCheckRequester::ElementRemoved(Element* element) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

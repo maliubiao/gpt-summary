@@ -203,15 +203,17 @@ transport.catch(error => {
 
 通过以上步骤，开发者可以逐步缩小问题范围，最终定位到导致错误的具体原因，例如客户端代码错误、服务器端逻辑错误或网络配置问题。 `quic_test_backend.cc` 作为一个可控的测试环境，对于调试 WebTransport 应用的服务器端行为非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/quic_test_backend.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2021 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -341,7 +343,4 @@ QuicTestBackend::ProcessWebTransportRequest(
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

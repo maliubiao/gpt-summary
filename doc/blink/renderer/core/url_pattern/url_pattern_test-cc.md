@@ -195,15 +195,17 @@ By following this systematic approach, I was able to generate a comprehensive an
 
 总而言之，`url_pattern_test.cc` 是 Blink 引擎中用于确保 `URLPattern` 类功能正确性的重要组成部分。理解这个测试文件的内容可以帮助开发者更好地理解 `URLPattern` 的工作原理，并为调试相关问题提供有价值的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/url_pattern/url_pattern_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "third_party/blink/renderer/core/url_pattern/url_pattern.h"
 
 #include "testing/gtest/include/gtest/gtest.h"
@@ -321,7 +323,4 @@ TEST(URLPatternTest, CompatibleFromURLPattern) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -158,15 +158,17 @@ CSS 样式可能会受到文本节点分割的影响。例如，如果有一个 
 
 总而言之，`SplitTextNodeCommand` 是 Blink 渲染引擎中一个核心的底层命令，负责处理文本节点的分割操作，这是实现富文本编辑功能的基础。虽然前端开发者不会直接调用它，但理解其功能有助于理解浏览器如何处理用户的编辑行为，并能帮助排查与文本编辑相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/split_text_node_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2008 Apple Inc. All rights reserved.
  *
@@ -278,7 +280,4 @@ void SplitTextNodeCommand::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

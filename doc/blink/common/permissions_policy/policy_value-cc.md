@@ -171,14 +171,16 @@ PolicyValue enumValue3 = PolicyValue::CreateEnum(static_cast<int32_t>(ImageQuali
 
 总而言之，`blink/common/permissions_policy/policy_value.cc` 定义的 `PolicyValue` 类是 Blink 引擎中用于表示和操作权限策略值的核心组件，它为权限策略的实施提供了基础的数据结构和操作方法。虽然前端技术不直接操作这个类，但它直接影响着浏览器如何解析和执行通过 HTML `allow` 属性或 HTTP 头部设置的权限策略，并最终影响 JavaScript 查询到的权限状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/permissions_policy/policy_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -331,7 +333,4 @@ void PolicyValue::SetToMin() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

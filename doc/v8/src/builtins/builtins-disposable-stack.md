@@ -139,11 +139,13 @@ console.log("stack3 是否已清理:", stack3.disposed); // 输出: true
 
 总而言之，`builtins-disposable-stack.cc` 文件是 V8 引擎中实现 `DisposableStack` JavaScript 特性的底层代码，它定义了 `DisposableStack` 对象的创建、资源注册、清理以及状态管理等核心功能。 JavaScript 开发者通过使用 `DisposableStack` 的 API，间接地调用这些 C++ 实现，从而方便地管理需要在使用后进行清理的资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-disposable-stack.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -419,7 +421,4 @@ BUILTIN(DisposableStackPrototypeMove) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

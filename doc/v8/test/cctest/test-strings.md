@@ -166,12 +166,14 @@ The request also asks for JavaScript examples if the C++ code relates to JavaScr
     ```
 
 总而言之，`v8/test/cctest/test-strings.cc` 是一个非常全面的 V8 字符串功能测试套件，它确保了 V8 在处理各种字符串操作时的正确性和性能。这些测试直接反映了开发者在 JavaScript 中使用的字符串 API 和行为。
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-strings.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1978,8 +1980,4 @@ TEST(ExternalStringIndexOf) {
                .FromJust());
   CHECK_EQ(1, CompileRun("external.indexOf('', 1)")
                   ->Int32Value(context.local())
-             
-"""
-
-
 ```

@@ -160,7 +160,7 @@ cython --fast-fail -2 --cplus -o my_module.cpp my_module.pyx
 
 6. **Debugging Scenario:** If the Cython compilation fails, a developer might investigate the Meson build logs. They might see the exact command-line arguments passed to the Cython compiler. If those arguments seem incorrect or if there's a suspicion that Meson isn't configuring the Cython compiler correctly, the developer might trace through Meson's source code, potentially leading them to this `cython.py` file to understand how the Cython compiler integration is implemented and if there are any configuration issues or bugs in the Meson's Cython support. They might also examine the generated dependency files (if `-M` is used) to understand the build dependencies.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/cython.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2021 Intel Corporation
 from __future__ import annotations
@@ -261,7 +263,4 @@ class CythonCompiler(Compiler):
         if lang.value == 'cpp':
             args.append('--cplus')
         return args
-
-"""
-
 ```

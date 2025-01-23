@@ -59,9 +59,12 @@ Response: My thinking process to arrive at the summary goes like this:
 
 这个测试文件对于确保 V8 引擎中 WebAssembly 代码指针表的稳定性和可靠性至关重要，特别是在并发场景下。
 
-Prompt: ```这是目录为v8/test/unittests/wasm/wasm-code-pointer-table-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/wasm/wasm-code-pointer-table-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -168,6 +171,4 @@ TEST_F(WasmCodePointerTableTest, ConcurrentSweep) {
 }
 
 }  // namespace v8::internal::wasm
-
-"""
 ```

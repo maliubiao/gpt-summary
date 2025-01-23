@@ -105,7 +105,7 @@ Initially, I might have focused too heavily on the simple functionality of loadi
 
 总之，`prog.c` 是一个非常简单的 Windows GUI 程序，其主要目的是演示如何加载一个图标资源。它在 Frida 项目中作为测试用例存在，用于验证 Frida 在处理 Windows 资源加载方面的功能。理解这段代码对于理解 Windows 程序的资源管理以及 Frida 如何与 Windows API 交互都是有帮助的，尤其是在逆向工程和动态分析的场景下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/windows/5 resources/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<windows.h>
 
 // deliberately don't get MY_ICON from resource.h so that depfile generation can
@@ -136,7 +138,4 @@ WinMain(
     ((void)nCmdShow);
     return hIcon ? 0 : 1;
 }
-
-"""
-
 ```

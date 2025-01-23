@@ -134,14 +134,16 @@ By following this process of scanning, analyzing specific functions, connecting 
 
 `blink/renderer/platform/fonts/font_metrics.cc` 文件中的 `FontMetrics` 类是 Blink 渲染引擎中处理字体度量的核心组件。它负责获取、管理和调整字体的高度、基线等关键信息，直接影响着网页文本的布局和显示。理解 `FontMetrics` 的功能有助于开发者更好地理解浏览器如何渲染文本，并避免一些常见的布局错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_metrics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2008, 2010 Apple Inc. All rights reserved.
  * Copyright (C) 2006 Alexey Proskuryakov
@@ -360,7 +362,4 @@ int FontMetrics::IntAscentInternal(
   NOTREACHED();
 }
 }
-
-"""
-
 ```

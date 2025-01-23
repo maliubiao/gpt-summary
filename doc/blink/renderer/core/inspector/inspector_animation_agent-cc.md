@@ -147,15 +147,17 @@ Here's a breakdown of the thought process to analyze the code:
 
 这是 `InspectorAnimationAgent` 的核心部分，负责**建立开发者工具与 Blink 渲染引擎中动画系统的桥梁**。它负责监听动画的创建和更新，并将这些信息以结构化的方式传递给开发者工具前端。同时，它也提供了前端控制动画播放状态、时间和速度的能力，使得开发者能够方便地调试和分析网页中的动画效果。 这部分代码主要关注动画信息的收集、组织和基本控制功能的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_animation_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1010,7 +1012,4 @@ protocol::Response InspectorAnimationAgent::AssertAnimation(
         "Could not find animation with given id");
   }
   result
-"""
-
-
 ```

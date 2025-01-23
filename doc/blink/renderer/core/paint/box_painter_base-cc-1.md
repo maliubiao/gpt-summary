@@ -98,7 +98,7 @@ Now I'll formulate the summary based on these points.
 
 通过调试工具，例如 Chrome DevTools 的 "渲染" 面板，可以查看哪些元素正在重绘，并可以设置断点在 `box_painter_base.cc` 中的相关函数来跟踪绘制流程，从而理解用户操作是如何触发这些代码的执行的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/box_painter_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ageAutoDarkMode::Disabled(),
       ImagePaintTimingInfo(
           /* image_may_be_lcp_candidate */ false,
@@ -768,8 +770,4 @@ bool BoxPainterBase::ShouldSkipPaintUnderInvalidationChecking(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

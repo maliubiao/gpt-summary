@@ -166,7 +166,7 @@ func rewriteValueS390X_OpS390XXORload(v *Value) bool {
 
 总的来说， `rewriteS390X.go` 的这一部分是 Go 编译器为 S390X 架构生成高效机器码的关键组成部分，它通过一系列精细的重写规则，在 SSA 层面进行了深入的优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteS390X.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第11部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 xInt)
 		v.reset(OpS390XMOVDconst)
 		v.AuxInt = int64ToAuxInt(int64(c) ^ d)
@@ -1454,9 +1456,4 @@ func rewriteBlockS390X(b *Block) bool {
 			x := v_0.Args[0]
 			c := auxToS390xCCMask(b.Aux)
 			if !(y == int32(uint8(y)) && (c == s390x.
-"""
-
-
-
-
 ```

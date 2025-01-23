@@ -143,15 +143,17 @@ Let's break down the thought process for analyzing the `LoaderFactoryForWorker.c
 
 总而言之，`LoaderFactoryForWorker.cc` 是 Blink 引擎中一个核心的组件，它专注于为 Web Worker 和 Worklet 环境提供资源加载能力，与 JavaScript、HTML、CSS 的资源加载息息相关。理解它的功能对于调试 Worker 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/loader_factory_for_worker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -316,7 +318,4 @@ CodeCacheHost* LoaderFactoryForWorker::GetCodeCacheHost() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

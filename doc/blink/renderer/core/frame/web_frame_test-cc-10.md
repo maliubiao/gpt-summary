@@ -258,16 +258,18 @@ Now, I will synthesize this information into the requested format.
 
 这段代码是 `web_frame_test.cc` 的一部分，专门用于测试 `WebFrame` 及其相关功能，例如 iframe 的重新加载、可视区域变化通知、同文档导航的资源请求、从 DOM 节点提取图片内容、`pushState` 导航、`about:blank` 同步导航、同文档历史导航的提交类型和序列号传播、子框架首次非空导航、动态修改 CSS 引起的滚动属性变化、当前历史记录项的正确性、子框架创建失败的处理、固定定位元素在固定视口中的渲染、`FrameView` 的移动和滚动、以及全屏模式下的行为。这些测试覆盖了 `WebFrame` 的多个重要方面，确保了 Chromium Blink 引擎在处理各种 Web 页面和用户交互时的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第11部分，共19部分，请归纳一下它的功能
+```
 
-"""
-                        finish_creation);
+### 源代码
+```cpp
+finish_creation);
   }
   void BeginNavigation(std::unique_ptr<WebNavigationInfo> info) override {
     cache_mode_ = info->url_request.GetCacheMode();
@@ -1020,7 +1022,4 @@ TEST_F(WebFrameTest, FullscreenMainFrame) {
   EXPECT_EQ(nullptr, Fullscreen::FullscreenElementFrom(*document));
   web_view_impl->DidEnterFullscreen();
   EXPECT_EQ(document->do
-"""
-
-
 ```

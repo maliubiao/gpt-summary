@@ -200,15 +200,17 @@ try {
 
 `v8/src/trap-handler/handler-inside.cc` 是 V8 引擎中至关重要的组成部分，它负责在 WebAssembly 代码执行过程中出现内存访问错误时进行精细的处理，确保安全性和可靠性。它通过检查故障地址是否符合预期的 WebAssembly 陷阱模式，来区分真正的程序错误和 WebAssembly 规范中允许的、可以恢复的陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/handler-inside.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/trap-handler/handler-inside.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -310,7 +312,4 @@ bool IsAccessedMemoryCovered(uintptr_t addr) {
 }  // namespace trap_handler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -142,7 +142,7 @@ callWasmFunction();
 
 总而言之，这段 `v8/src/builtins/arm/builtins-arm.cc` 的代码是 V8 引擎中至关重要的一部分，它实现了 JavaScript 与 WebAssembly 在 ARM 架构上的互操作，特别是处理了异步挂起和恢复的复杂情况，并确保了参数和返回值的正确传递以及异常的妥善处理。它为 JavaScript 调用 WebAssembly 函数提供了必要的底层支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/arm/builtins-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/arm/builtins-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -150,8 +150,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e of the stack segment for
   // the stack frame iterator.
   __ EnterFrame(StackFrame::STACK_SWITCH);
@@ -1048,8 +1050,4 @@ void Builtins::Generate_CallApiCallbackImpl(MacroAssembler* masm,
                         FunctionTemplateInfo::kMaybeRedirectedCallbackOffset));
   }
   __ EnterExitFrame(scratch, FC::getExtraSlotsCountFrom<ExitFrameConstants>(),
-           
-"""
-
-
 ```

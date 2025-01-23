@@ -122,15 +122,17 @@ Here's a breakdown of the thought process:
 
 作为 `web_frame_test.cc` 系列的第 7 部分，这个代码片段主要关注 `WebFrame` 在 **导航和页面加载过程中的行为、用户交互的基本响应（如 Tab 键），以及 JavaScript 上下文的管理和页面内容提取能力**。它构建在前面部分可能已经测试过的 `WebFrame` 基础功能之上，并为后续部分可能涉及的更复杂的功能（例如渲染、布局、事件处理等）奠定基础。 这部分测试着重于确保 `WebFrame` 能够正确地管理其生命周期，响应用户的基本操作，并提供必要的信息提取能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第7部分，共19部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 itWebFrameClient() override = default;
 
   // frame_test_helpers::TestWebFrameClient:
@@ -936,7 +938,4 @@ TEST_F(WebFrameTest, FindDetachFrameBeforeScopeStrings) {
   for (WebLocalFrameImpl* frame = main_frame; frame;
        frame = To<WebLocalFrameImpl>(frame->TraverseNext())) {
     EXPECT_TRUE(frame->GetFindInPage()-
-"""
-
-
 ```

@@ -95,14 +95,16 @@ By following these steps, we can effectively analyze the provided C++ code snipp
 
 总而言之，`prefetched_signed_exchange_info_mojom_traits.cc` 是 Chromium 中一个重要的基础设施文件，它确保了在处理预取签名交换信息时，SHA-256 哈希值能够在不同的进程之间正确地传输和转换，这对于保证预取内容的完整性和安全性至关重要，最终影响用户加载网页的速度和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/navigation/prefetched_signed_exchange_info_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -129,7 +131,4 @@ bool StructTraits<blink::mojom::SHA256HashValueDataView, net::SHA256HashValue>::
 }
 
 }  // namespace mojo
-
-"""
-
 ```

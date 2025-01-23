@@ -126,15 +126,17 @@ ok      go/src/cmd/cgo/internal/testsanitizers  0.005s  // 包括了其他测试
 
 `go/src/cmd/cgo/internal/testsanitizers/empty_test.go` 文件是一个简单的占位符测试文件，其主要目的是确保在所有平台上，`go test` 命令都能找到至少一个可以执行的测试文件，这与 Go 的构建约束功能密切相关。它本身不处理命令行参数，但会受到 `go test` 命令参数的影响。 理解其存在的意义比理解其代码本身更为重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/internal/testsanitizers/empty_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -143,9 +145,4 @@ Prompt:
 // ensures there's at least one test file on every platform.
 
 package sanitizers_test
-
-"""
-
-
-
 ```

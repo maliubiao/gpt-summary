@@ -131,7 +131,7 @@ Here's a breakdown of the thinking process to answer the user's request:
 
 总而言之，这部分代码是 Frida Stalker 组件在 x86 架构下的一个详细的测试套件，用于确保其能够正确地跟踪和分析各种类型的函数调用和跳转指令，这对于 Frida 作为动态分析工具的可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-x86/stalker-x86.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 _fixup = -0x54;
   call_template.instruction_count = 5;
   call_template.ia32_padding_instruction_count = 5;
@@ -1176,8 +1178,4 @@ TESTCASE (prefetch_backpatch)
   g_assert_cmpuint (bp_ctx.runner_range.size, !=, 0);
 
   bp_ctx.transformer = gum_stalker_transformer_make_from_callback (
-  
-"""
-
-
 ```

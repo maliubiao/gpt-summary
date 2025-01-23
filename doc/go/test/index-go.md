@@ -178,15 +178,17 @@ go run index2.go > index2.out.go
 
 总而言之，`go/test/index.go` 是 Go 语言测试工具链的一部分，专门用于生成针对数组和切片边界检查的测试用例，覆盖了动态和静态的检查场景，帮助确保 Go 语言的内存安全。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/index.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // skip
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -486,9 +488,4 @@ func forall(choices [][]string, f func([]string)) {
 	}
 	recurse(0)
 }
-
-"""
-
-
-
 ```

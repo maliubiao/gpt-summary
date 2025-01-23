@@ -114,12 +114,14 @@ wasmInstance.exports.main();
 
 总而言之，`v8/src/runtime/runtime-wasm.cc` 是 V8 引擎中 WebAssembly 功能的核心组成部分，它实现了 WebAssembly 与 JavaScript 运行时环境无缝集成所需的关键底层功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-wasm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1695,7 +1697,4 @@ RUNTIME_FUNCTION(Runtime_WasmStringNewWtf16) {
   uint64_t mem_size = trusted_instance_data->memory_size(memory);
   if (size_in_codeunits > kMaxUInt32 / 2 ||
       !base::IsInBounds<uint64_t>(offset, size_in_co
-"""
-
-
 ```

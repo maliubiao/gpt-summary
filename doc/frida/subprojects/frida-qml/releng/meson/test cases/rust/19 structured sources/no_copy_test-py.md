@@ -96,7 +96,7 @@ Let's break down the thought process for analyzing this Python script and genera
 
 总之，`no_copy_test.py` 是 Frida 构建系统中的一个看门人，确保特定的文件不会意外地出现在构建输出中，从而维护构建的正确性和最终产品的质量。它通过简单的文件存在性检查来实现这一目标，但其背后的意义涉及到构建流程、代码组织以及最终二进制文件的构成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/rust/19 structured sources/no_copy_test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -124,7 +126,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

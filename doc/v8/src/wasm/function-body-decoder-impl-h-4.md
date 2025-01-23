@@ -239,7 +239,7 @@ WebAssembly.instantiate(wasmBytes).then(module => {
 
 这部分代码主要负责 WebAssembly 函数体中**控制流指令**（如分支、循环、条件语句）和**常量指令**的解码和初步处理。它读取字节码，识别指令类型，并提取指令的操作数。同时，它还进行基本的**类型检查**和**验证**，确保指令的使用符合 WebAssembly 规范。解码器通过调用接口方法，将解码出的信息传递给 V8 的其他组件（例如代码生成器），以便进行后续的编译和执行。这部分是 WebAssembly 代码执行流程中的关键步骤，负责将二进制指令转化为 V8 可以理解和执行的形式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/function-body-decoder-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/function-body-decoder-impl.h以.tq结尾，那它是个v8 torque源代码，
@@ -247,8 +247,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 r(0, ref_object, "object reference");
         return 0;
     }
@@ -1135,7 +1137,4 @@ r(0, ref_object, "object reference");
 
   V8_NOINLINE V8_PRESERVE_MOST int EnsureStackArguments_Slow(int count) {
     uint32_t limit =
-"""
-
-
 ```

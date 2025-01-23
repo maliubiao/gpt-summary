@@ -162,7 +162,7 @@ int main() {
 
 `frida/subprojects/frida-core/releng/meson/test cases/native/10 native subproject/subprojects/buildtool/buildtool.c` 是 Frida 构建系统中的一个工具，用于生成简单的 C 代码片段，这些代码片段主要用于 Frida 的内部测试。它本身的代码很简单，但它在 Frida 的开发和测试流程中扮演着重要的角色，并且涉及到二进制底层、操作系统、以及目标平台（如 Android）的知识。用户通常不会直接操作这个文件，但了解它的作用可以帮助理解 Frida 的构建过程和测试方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/native/10 native subproject/subprojects/buildtool/buildtool.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 const char * gen_main(void);
@@ -181,7 +183,4 @@ int main() {
     printf("{ return 0; }\n");
     return 0;
 }
-
-"""
-
 ```

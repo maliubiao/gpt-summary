@@ -162,15 +162,17 @@ let myObjects = allocateObjects();
 
 `v8/src/heap/heap-layout.cc` 文件包含了 V8 堆内存布局相关的底层实现，特别是关于年轻代的判断和一致性检查。理解这些内部机制有助于我们更好地理解 JavaScript 的垃圾回收行为，并避免一些常见的内存管理相关的编程错误，从而编写出更高效的 JavaScript 代码。如果该文件以 `.tq` 结尾，则表明它是使用 V8 的 Torque 语言编写的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-layout.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap-layout.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ void HeapLayout::CheckYoungGenerationConsistency(const MemoryChunk* chunk) {
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

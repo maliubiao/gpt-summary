@@ -156,11 +156,13 @@ console.log("清除后活跃页数:", memoryManager.getActivePageCount()); // �
 
 `active-system-pages-unittest.cc` 测试的 `ActiveSystemPages` 类是 V8 引擎中用于管理系统内存页的关键组件，它为诸如内存分配、垃圾回收等底层内存管理功能提供了基础的数据结构和操作。虽然 JavaScript 开发者不直接与之交互，但它的高效运行对于 JavaScript 代码的性能至关重要。 上面的 JavaScript 例子只是一个概念性的模拟，展示了 `ActiveSystemPages` 可能实现的功能逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/base/active-system-pages-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ TEST(ActiveSystemPagesTest, Clear) {
 
 }  // namespace base
 }  // namespace heap
-
-"""
-
 ```

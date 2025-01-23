@@ -116,11 +116,13 @@ function simpleAdd(a, b) {
 
 `v8/src/compiler/frame.cc` 是 V8 编译器中至关重要的一个文件，它定义了 JavaScript 函数调用时栈帧的结构和访问方式。它直接影响了 JavaScript 代码的执行效率和内存管理，并为更高级的特性（如闭包）提供了基础。虽然开发者通常不需要直接与这个文件打交道，但理解其功能有助于更深入地了解 JavaScript 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/frame.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ FrameOffset FrameAccessState::GetFrameOffset(int spill_slot) const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

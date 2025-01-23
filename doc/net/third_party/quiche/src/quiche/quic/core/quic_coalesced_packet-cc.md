@@ -160,15 +160,17 @@ This systematic approach, combining code analysis, logical deduction, and unders
 
 总之，`quic_coalesced_packet.cc` 文件实现了 QUIC 协议中的数据包合并功能，这是一个重要的性能优化手段，可以减少网络拥塞和延迟，提高数据传输效率。虽然 JavaScript 不直接操作这个 C++ 类，但用户的 JavaScript 代码触发的网络请求最终会通过 Chromium 的网络栈，并可能涉及到这个类的使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_coalesced_packet.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -380,7 +382,4 @@ std::vector<size_t> QuicCoalescedPacket::packet_lengths() const {
 }
 
 }  // namespace quic
-
-"""
-
 ```

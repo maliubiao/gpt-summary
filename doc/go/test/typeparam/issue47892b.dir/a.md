@@ -174,15 +174,17 @@ func main() {
 
 因此，在使用 `F()` 方法时，务必确保传入的 `*T` 类型的参数的 `p` 字段已经被正确初始化，指向有效的 `int64` 变量，避免 `nil` 指针解引用错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue47892b.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -212,9 +214,4 @@ type I[Idx any] interface {
 func Gen() I[*T] {
 	return i{}
 }
-
-"""
-
-
-
 ```

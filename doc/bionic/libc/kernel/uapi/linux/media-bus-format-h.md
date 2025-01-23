@@ -227,7 +227,7 @@ sys.stdin.read()
 
 这个 Frida 示例提供了一个基本的框架，你可以根据需要修改它来 hook 不同的函数和检查不同的参数，从而更深入地了解 Android 多媒体框架如何使用这些格式定义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/media-bus-format.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -238,8 +238,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -376,7 +378,4 @@ Prompt:
 #define MEDIA_BUS_FMT_META_20 0x8006
 #define MEDIA_BUS_FMT_META_24 0x8007
 #endif
-
-"""
-
 ```

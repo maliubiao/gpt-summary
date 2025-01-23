@@ -130,7 +130,7 @@ I need to identify typical mistakes developers make when using these WebGL funct
 
 这部分代码主要负责处理 **帧缓冲区的像素读取** 和 **渲染缓冲区及 2D 纹理的存储分配和数据上传**。它实现了 WebGL 2 API 中与这些操作相关的核心功能，包括从不同来源 (包括 JavaScript 数组、HTML 元素等) 获取数据并将其传递给底层的 OpenGL 实现。同时，它也处理了相关的参数验证和错误处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl2_rendering_context_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 framebuffer = GetReadFramebufferBinding();
   if (framebuffer && framebuffer->CheckDepthStencilStatus(&reason) !=
                          GL_FRAMEBUFFER_COMPLETE) {
@@ -1025,8 +1027,4 @@ void WebGL2RenderingContextBase::texSubImage2D(
   }
   WebGLRenderingContextBase::texSubImage2D(script_state, target, level, xoffset,
                                            yoffset, format, type, context_host,
-                                      
-"""
-
-
 ```

@@ -126,7 +126,7 @@ Let's break down the thought process for analyzing this Python code snippet.
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/mesonbuild/dependencies/hdf5.py` 这个文件是 Frida 构建系统中的一个关键组件，负责可靠地检测和配置 HDF5 库的依赖，确保 Frida 能够正确地编译和链接，以便在需要时与使用 HDF5 的目标程序进行交互。它考虑了不同环境下的 HDF5 配置方式，并处理了一些常见的配置问题，体现了构建系统在软件开发中的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/dependencies/hdf5.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2019 The Meson development team
 
@@ -304,7 +306,4 @@ def hdf5_factory(env: 'Environment', for_machine: 'MachineChoice',
     return candidates
 
 packages['hdf5'] = hdf5_factory
-
-"""
-
 ```

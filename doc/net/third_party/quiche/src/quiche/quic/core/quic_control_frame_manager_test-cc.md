@@ -109,15 +109,17 @@ Now, I will construct the detailed response based on these thoughts.
 
 **总而言之，`quic_control_frame_manager_test.cc` 文件对于保证 Chromium QUIC 栈中控制帧管理的正确性和可靠性至关重要。虽然普通用户不会直接接触到这个文件，但其背后的逻辑直接影响着用户在使用基于 Chromium 的浏览器访问网络时的体验。开发者通过运行和分析这些测试用例，可以更好地理解和调试 QUIC 连接的相关问题。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_control_frame_manager_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -693,7 +695,4 @@ TEST_F(QuicControlFrameManagerTest, NumBufferedMaxStreams) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

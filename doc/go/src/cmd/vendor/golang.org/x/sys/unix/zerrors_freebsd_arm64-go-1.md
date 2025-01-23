@@ -166,7 +166,7 @@ This Go code file serves as a **platform-specific (FreeBSD ARM64) definition fil
 
 It also includes **lookup tables (`errorList` and `signalList`)** to easily map numeric error and signal values to their symbolic names and human-readable descriptions. This file is a crucial part of the `syscall` package, enabling Go programs to interact directly with the FreeBSD kernel on ARM64 architectures.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_freebsd_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -174,8 +174,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 CP_RACK_IDLE_REDUCE_HIGH      = 0x444
 	TCP_RACK_MIN_PACE              = 0x445
 	TCP_RACK_MIN_PACE_SEG          = 0x446
@@ -581,10 +583,4 @@ var signalList = [...]struct {
 	{32, "SIGTHR", "unknown signal"},
 	{33, "SIGLIBRT", "unknown signal"},
 }
-
-"""
-
-
-
-
 ```

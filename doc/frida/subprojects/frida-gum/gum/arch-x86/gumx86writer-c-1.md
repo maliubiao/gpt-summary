@@ -155,7 +155,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 这段代码是 Frida 动态插桩功能的核心组成部分，理解它的工作原理对于深入理解 Frida 的实现和进行高级的插桩操作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/arch-x86/gumx86writer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 2 (self);
 
   return TRUE;
@@ -1394,7 +1396,4 @@ gum_x86_writer_put_xchg_reg_reg_ptr (GumX86Writer * self,
 
   gum_x86_writer_describe_cpu_reg (self, left_reg, &left);
   gum_x86_writer_describe_cpu
-"""
-
-
 ```

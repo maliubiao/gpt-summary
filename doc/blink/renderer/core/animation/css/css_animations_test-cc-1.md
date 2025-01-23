@@ -142,15 +142,17 @@ Here's a breakdown of the functionalities demonstrated in this snippet:
 
 **In summary, this section of `css_animations_test.cc` is dedicated to ensuring the robust and accurate synchronization between Blink's internal representation of CSS animations and the compositor thread, which is crucial for smooth and visually correct animations in the browser.** It covers various aspects of animation control and how these changes propagate to the rendering engine. The tests also address potential edge cases and prevent common errors related to timing and synchronization.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css/css_animations_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 animation->updatePlaybackRate(0.5, ASSERT_NO_EXCEPTION);
   UpdateAllLifecyclePhasesForTest();
 
@@ -405,8 +407,4 @@ TEST_P(CSSAnimationsTest, OpacityUnchangedWhileDeferred) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

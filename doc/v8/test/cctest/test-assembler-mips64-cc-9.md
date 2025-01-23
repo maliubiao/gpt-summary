@@ -396,7 +396,7 @@ TEST(MSA_sat_s_sat_u) {
     run_msa_bit(
         &tc[i],
         [](MacroAssembler& assm, uint32_t m) { __ sat_u_h(w2, w0, m % 16); },
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -404,9 +404,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第10部分，共13部分，请归纳一下它的功能
+```
 
-"""
-  [](uint64_t wd, uint64_t ws, uint32_t m) {                                  \
+### 源代码
+```cpp
+[](uint64_t wd, uint64_t ws, uint32_t m) {                                  \
     uint64_t res = 0;                                                         \
     int elem_size = kMSARegSize / lanes;                                      \
     for (int i = 0; i < lanes / 2; ++i) {                                     \
@@ -1134,8 +1136,5 @@ TEST(MSA_3R_instructions) {
       T ws_op = static_cast<T>((ws[i] >> shift) & mask);                     \
       T wd_op = static_cast<T>((wd[i] >> shift) & mask);                     \
       T shift_op = static_cast<T>(((wt[i] >> shift) & mask) % size_in_bits); \
-      int64_t bits = shift_op + 1;           
-"""
-
-
+      int64_t bits = shift_op + 1;
 ```

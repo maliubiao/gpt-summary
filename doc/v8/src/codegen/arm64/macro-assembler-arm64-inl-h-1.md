@@ -156,7 +156,7 @@ add(5, 10);
 
 这部分 `macro-assembler-arm64-inl.h` 代码定义了 `MacroAssembler` 类的关键组成部分，提供了一组内联函数，用于生成各种基本的 ARM64 汇编指令。这些函数涵盖了位操作、类型转换、算术运算、栈管理、条件和无条件跳转等核心功能。它们是 V8 JavaScript 引擎将 JavaScript 代码编译为高效机器码的基础构建块。`MacroAssembler` 提供了一个抽象层，使得 V8 的编译器可以更容易地生成正确的 ARM64 汇编代码，而无需手动编写复杂的汇编指令。 这些函数的设计考虑了性能和代码生成效率，通过内联的方式减少了函数调用的开销。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/macro-assembler-arm64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/macro-assembler-arm64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -164,8 +164,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ECK(allow_macro_instructions());
   DCHECK(!rd.IsZero());
   sbfiz(rd, rn, lsb, width);
@@ -622,8 +624,4 @@ void MacroAssembler::TestAndBranchIfAllClear(const Register& reg,
 }  // namespace v8
 
 #endif  // V8_CODEGEN_ARM64_MACRO_ASSEMBLER_ARM64_INL_H_
-
-"""
-
-
 ```

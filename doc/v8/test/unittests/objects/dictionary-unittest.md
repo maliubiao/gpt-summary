@@ -122,9 +122,12 @@ console.log(mySet.has({ id: 1 })); // 输出 false，因为是不同的对象引
 
 `dictionary-unittest.cc` 文件是 V8 引擎的关键测试文件，它确保了内部用于实现 JavaScript 对象和 Set 等核心数据结构的字典和哈希表能够正确可靠地工作。这些测试直接关系到 JavaScript 语言的性能和功能正确性。通过理解这些测试，可以更深入地了解 V8 引擎的内部工作原理以及 JavaScript 对象和 Set 的底层实现。
 
-Prompt: ```这是目录为v8/test/unittests/objects/dictionary-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/objects/dictionary-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -434,6 +437,4 @@ TEST_F(DictionaryTest, MaximumClonedShallowObjectProperties) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

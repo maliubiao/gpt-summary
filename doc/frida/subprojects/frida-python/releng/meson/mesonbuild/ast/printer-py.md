@@ -251,7 +251,7 @@ var x = 1 + 2;
 
 因此，用户编写 Frida 脚本是操作的起点。当涉及到 Frida 内部对脚本的处理时，就可能涉及到 Meson 构建系统和 AST 的操作，`printer.py` 就是在这个环节中发挥作用的。作为调试线索，如果用户发现 Frida 脚本的行为不符合预期，或者在脚本加载时出现错误，Frida 的开发者可能会查看脚本的 AST 结构来排查问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/ast/printer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -259,8 +259,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -881,7 +883,4 @@ class AstJSONPrinter(AstVisitor):
             kwargs_list += [{'key': key_res, 'val': val_res}]
         self.current['kwargs'] = kwargs_list
         self.setbase(node)
-
-"""
-
 ```

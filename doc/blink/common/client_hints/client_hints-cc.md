@@ -153,14 +153,16 @@ By following this structured approach, considering the specific requirements of 
 
 `blink/common/client_hints/client_hints.cc` 文件是 Blink 引擎中处理客户端提示的核心组件，它负责管理客户端提示与权限策略之间的关系，并决定在什么情况下发送或移除客户端提示头部。它直接影响着浏览器与服务器之间关于设备和网络信息的沟通，从而影响到 Web 页面的资源加载和用户体验。理解这个文件的功能对于理解 Chromium 如何处理客户端提示至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/client_hints/client_hints.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -303,7 +305,4 @@ void FindClientHintsToRemove(const PermissionsPolicy* permissions_policy,
 }
 
 }  // namespace blink
-
-"""
-
 ```

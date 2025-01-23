@@ -117,7 +117,7 @@ Initially, I might have focused too much on the simple functionality of sleeping
 
 总而言之，`delayer.c` 虽然是一个非常简单的程序，但它在动态分析和逆向工程的上下文中却有着重要的作用，特别是在需要模拟和控制程序执行时间的情况下。它作为 Frida 测试套件的一部分，也体现了 Frida 在进行系统级操作和时间控制方面的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/91 benchmark/delayer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Simple prog that sleeps for a random time. */
 
 #include<stdlib.h>
@@ -147,7 +149,4 @@ int main(void) {
 #endif
     return 0;
 }
-
-"""
-
 ```

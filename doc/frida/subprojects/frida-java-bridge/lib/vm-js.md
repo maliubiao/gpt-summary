@@ -98,7 +98,7 @@ const cls = Java.use("java.lang.String"); // 抛出异常："Current thread is n
 8. **引用计数更新**：`link` 增加计数，`unlink` 减少计数。
 9. **分离决策**：根据引用计数和线程ID决定是否分离。
 10. **Env销毁**：`dispose` 方法在主线程分离时清理资源。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/vm.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
+```
 
-"""
+### 源代码
+```javascript
 const Env = require('./env');
 const { JNI_OK, checkJniResult } = require('./result');
 
@@ -281,7 +283,4 @@ VM.dispose = function (vm) {
 module.exports = VM;
 
 /* global Memory, NativeFunction, NULL, Process */
-
-"""
-
 ```

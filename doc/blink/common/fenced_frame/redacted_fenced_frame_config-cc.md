@@ -154,14 +154,16 @@ std::unique_ptr<FencedFrame> CreateFencedFrame(const FencedFrameConfig& config) 
 
 虽然当前的 `redacted_fenced_frame_config.cc` 文件内容很简单，但它为 Blink 引擎中处理“已修订”的围栏帧奠定了基础。未来，这个文件可能会包含更复杂的配置选项，用于控制围栏帧的隐私和隔离特性。理解这个文件的作用有助于开发者更好地理解和使用围栏帧技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/fenced_frame/redacted_fenced_frame_config.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ RedactedFencedFrameProperties::RedactedFencedFrameProperties() = default;
 RedactedFencedFrameProperties::~RedactedFencedFrameProperties() = default;
 
 }  // namespace blink::FencedFrame
-
-"""
-
 ```

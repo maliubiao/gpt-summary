@@ -318,7 +318,7 @@ class ReferenceManual:
 
 总而言之，`generatorjson.py` 是 Frida 项目中一个关键的工具，它负责将 API 的结构化信息转换为易于机器处理的 JSON 格式，为 Frida 的使用者和开发者提供了重要的参考资料。虽然用户不直接操作它，但它的正确运行对于 Frida 的文档质量和可用性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/docs/refman/generatorjson.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -326,8 +326,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 from __future__ import annotations
@@ -443,7 +445,4 @@ class GeneratorJSON(GeneratorBase):
         }
 
         self.out.write_text(json.dumps(data), encoding='utf-8')
-
-"""
-
 ```

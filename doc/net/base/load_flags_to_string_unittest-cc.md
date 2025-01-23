@@ -91,15 +91,17 @@ fetch('https://example.com', { cache: 'no-store' })
 
 总而言之，`net/base/load_flags_to_string_unittest.cc` 这个文件本身是测试代码，但它所测试的 `LoadFlagsToString` 函数在 Chromium 网络栈的调试和日志记录中扮演着重要的角色，帮助开发者理解网络请求的配置和行为，从而解决各种网络相关的问题。JavaScript 开发者虽然不直接调用这个 C++ 函数，但其通过 JavaScript API 发起的网络请求行为，最终会受到底层 `Load Flags` 的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/load_flags_to_string_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -135,7 +137,4 @@ TEST(LoadFlagsToStringTest, ThreeFlags) {
 }
 
 }  // namespace net
-
-"""
-
 ```

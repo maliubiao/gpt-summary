@@ -106,16 +106,18 @@ Here's a breakdown of the functionalities in this part:
 
 总而言之，这部分测试代码覆盖了 `WebFrameWidget` 在处理各种与文本显示和用户交互相关的场景时的正确性，确保了浏览器引擎能够准确地获取和更新页面中元素的几何信息，这对于诸如光标定位、文本选择、辅助功能等特性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_widget_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- resizable: true
+### 源代码
+```cpp
+resizable: true
   // Default is set in /third_party/blink/renderer/core/frame/settings.json5.
   WebView().MainFrameWidget()->ApplyVisualProperties(visual_properties);
   widget->UpdateAllLifecyclePhases(DocumentUpdateReason::kTest);
@@ -951,8 +953,4 @@ TEST_F(EventHandlingWebFrameWidgetSimTest, RafAlignedEventWithUpdate) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -148,7 +148,7 @@ Frida 是一个动态插桩工具，广泛应用于逆向工程、安全研究�
 
 总而言之，`sampler-fixture.c` 是 Frida-gum 中用于测试采样器功能的基础设施代码，它定义了测试环境和相关的辅助宏，主要服务于 Frida 的开发和测试过程，而不是直接被最终用户使用。理解这个文件可以帮助开发者更好地理解 Frida 采样器的设计和测试方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/prof/sampler-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2018 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2008 Christian Berentsen <jc.berentsen@gmail.com>
@@ -196,7 +198,4 @@ test_sampler_fixture_teardown (TestSamplerFixture * fixture,
 {
   g_clear_object (&fixture->sampler);
 }
-
-"""
-
 ```

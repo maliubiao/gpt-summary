@@ -88,14 +88,16 @@ By following these steps, we can go from a piece of C++ code to a comprehensive 
 
 总而言之，`browsing_context_group_info.cc` 中定义的 `BrowsingContextGroupInfo` 类是 Blink 引擎中用于管理和标识浏览上下文组的核心组件，它通过内部机制影响着 Web 开发者在使用 JavaScript、HTML 和 CSS 时所观察到的跨域交互和隔离行为。 理解其背后的原理有助于开发者更好地掌握和调试与跨域相关的 Web 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/page/browsing_context_group_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -131,7 +133,4 @@ bool operator!=(const BrowsingContextGroupInfo& lhs,
 }
 
 }  // namespace blink
-
-"""
-
 ```

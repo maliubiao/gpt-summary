@@ -144,7 +144,7 @@ The overall theme of this part of the code is parsing different elements of a re
 
 总而言之，这部分代码是 Go 语言 `regexp` 包中至关重要的组成部分，负责将人类可读的正则表达式字符串转换为机器可以理解和执行的内部表示形式。它处理了正则表达式语法中关于字符和字符组的各种复杂细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/regexp/syntax/parse.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -153,8 +153,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 {
 		return false
 	}
@@ -1030,10 +1032,4 @@ func unhex(c rune) rune {
 	}
 	return -1
 }
-
-"""
-
-
-
-
 ```

@@ -107,14 +107,16 @@ By following this systematic approach, I could break down the seemingly simple c
 
 总而言之，`blink/renderer/platform/graphics/paint/region_capture_data.cc` 文件定义的 `RegionCaptureData` 类是 Blink 渲染引擎中用于描述需要捕获的屏幕区域的关键数据结构。虽然它本身不直接与 JavaScript、HTML 或 CSS 代码交互，但它承载的信息直接反映了这些前端技术所呈现的内容，并在屏幕捕获等功能中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/region_capture_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -144,7 +146,4 @@ String RegionCaptureData::ToString() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

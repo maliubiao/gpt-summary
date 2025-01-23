@@ -110,14 +110,16 @@ Finally, I organize the findings into the requested categories: functionality, r
 
 总结来说，`identifiability_study_worker_client_added.cc` 文件是 Blink 引擎中用于收集 worker 添加事件并记录到 UKM 系统的关键组件，用于支持隐私预算和身份识别研究。它与 JavaScript 和 HTML 的功能紧密相关，因为 worker 通常是由 JavaScript 代码在 HTML 页面中创建的。虽然普通用户不会直接接触到这个文件，但在 Blink 引擎的开发过程中，需要注意正确使用和配置，以确保 UKM 数据的准确性和完整性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/identifiability_study_worker_client_added.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ void IdentifiabilityStudyWorkerClientAdded::Record(ukm::UkmRecorder* recorder) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

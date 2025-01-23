@@ -180,15 +180,17 @@ The user wants a summary of the functionalities of the `LocalDOMWindow` class in
 
 总而言之，这部分代码涵盖了 `LocalDOMWindow` 类中与窗口操作、事件处理以及一些高级浏览器功能相关的核心逻辑，这些功能是构建动态和交互式网页的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_dom_window.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t {
   return GetSecurityOrigin()->ToString();
 }
@@ -1090,8 +1092,4 @@ void LocalDOMWindow::UpdateEventListenerCountsToDocumentForReuseIfNeeded() {
   is_dom_window_reused_ = false;
 }
 }  // namespace blink
-
-"""
-
-
 ```

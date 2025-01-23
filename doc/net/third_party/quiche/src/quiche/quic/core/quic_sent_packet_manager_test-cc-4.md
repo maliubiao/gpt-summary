@@ -120,7 +120,7 @@ Here's a breakdown of the thinking process to analyze the code:
 
 因此，当开发者在调试与 QUIC 相关的网络性能或可靠性问题，特别是涉及到网络拥塞的场景时，`QuicSentPacketManager` 以及其处理 ECN 的逻辑就成为了重要的排查点。 代码中的测试用例可以帮助验证这部分逻辑的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_sent_packet_manager_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -128,9 +128,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
-                  NO_RETRANSMITTABLE_DATA, /*measure_rtt=*/true,
+### 源代码
+```cpp
+NO_RETRANSMITTABLE_DATA, /*measure_rtt=*/true,
                         ECN_NOT_ECT);
   EXPECT_EQ(manager_.peer_max_ack_delay(), extra_4_ms);
 
@@ -705,8 +707,4 @@ TEST_F(QuicSentPacketManagerTest, EcnAckedButNoMarksReported) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

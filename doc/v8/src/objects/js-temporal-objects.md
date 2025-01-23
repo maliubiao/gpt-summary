@@ -88,12 +88,14 @@ console.log(formattedDate); // 输出当前区域设置的日期格式
 
 `v8/src/objects/js-temporal-objects.cc` 的第1部分主要负责定义 Temporal API 的内部数据结构，并实现了许多基础的抽象操作，为 JavaScript 中使用 Temporal API 提供了底层的 C++ 支持。 它处理了 Temporal 对象的创建、基本数据表示和核心计算逻辑，以及 Temporal 字符串的解析。 这部分代码是构建功能完善的 Temporal API 的重要基础。 由于这是第1部分，可以推测后续的部分会涵盖更复杂的 Temporal 类型、时区处理、日历系统集成以及更高级的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1710,8 +1712,4 @@ void FormatSecondsStringPart(IncrementalStringBuilder* builder, int32_t second,
     DCHECK_GE(9, precision_len);
     for (int32_t len = 0; len < precision_len; len++) {
       builder->AppendInt(static_cast<int32_t>(fraction / divisor));
-
-"""
-
-
 ```

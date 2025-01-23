@@ -95,15 +95,17 @@ Now, let's connect these functionalities to web technologies and illustrate with
 
 总的来说，这部分代码确保了弹性盒子布局在各种复杂场景下都能正确、高效地渲染，并与 CSS 的相关属性紧密配合，实现了灵活且强大的布局能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/flex/flex_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 sizes.min_size;
       }
     }
@@ -406,8 +408,4 @@ void FlexLayoutAlgorithm::CheckFlexLines(
 #endif
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -76,13 +76,15 @@ outerFunction(3);
 
 `v8/src/compiler/common-operator.cc` 的第二部分（连同第一部分）定义了 V8 编译器中用于表示操作的 `Operator` 类，并特别关注了与程序执行状态 (`FrameStateInfo`) 相关的操作符的定义和访问机制。这对于 V8 引擎的编译、优化、调试以及异常处理等核心功能至关重要。虽然 JavaScript 开发者不能直接操作这些底层的 C++ 结构，但理解它们背后的概念有助于深入理解 JavaScript 的执行原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/common-operator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-           // name
+### 源代码
+```
+// name
       1, 0, 0, 1, 0, 0,                                  // counts
       rep);                                              // parameter
 }
@@ -113,8 +115,4 @@ const FrameStateInfo& FrameStateInfoOf(const Operator* op) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

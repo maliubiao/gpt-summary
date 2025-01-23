@@ -157,7 +157,7 @@ This iterative process of skimming, deeper analysis, connecting to web technolog
 
 总而言之，`responsiveness_metrics.cc` 的第 1 部分奠定了收集用户交互响应性指标的基础，涵盖了 Pointer 和部分键盘事件的处理，并提供了将这些指标记录到 UKM 和 UMA 的机制。它与 JavaScript、HTML 和 CSS 密切相关，因为它的功能是衡量用户与这些技术构建的网页的交互性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/responsiveness_metrics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -917,7 +919,4 @@ void ResponsivenessMetrics::ContextmenuFlushTimerFired(TimerBase*) {
   // case we need to treat contextmenu as if pointerup and flush the previous
   // pointerdown with a valid interactionId. (crbug.com/1413096)
   FlushPointerdownAndPointerup();
-"""
-
-
 ```

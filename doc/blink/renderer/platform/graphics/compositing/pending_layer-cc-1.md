@@ -127,15 +127,17 @@ By following these steps, I could systematically analyze the code snippet, extra
 
 总而言之，这部分代码是 Blink 渲染引擎中至关重要的一部分，它连接了布局、绘制和合成阶段，确保了渲染结果的正确性和高效性。它处理了如何将 CSS 样式转换为可以被硬件加速的合成器理解和使用的图层属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/pending_layer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 operties(layer_selection, chunks_unchanged);
 }
 
@@ -200,8 +202,4 @@ SkColor4f PendingLayer::ComputeBackgroundColor() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

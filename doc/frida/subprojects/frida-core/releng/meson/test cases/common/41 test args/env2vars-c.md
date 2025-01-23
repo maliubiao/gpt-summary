@@ -152,7 +152,7 @@ Third envvar is wrong.
 
 总而言之，`env2vars.c` 是一个简单的但重要的测试程序，用于验证 Frida 运行所需的特定环境变量是否已正确配置。它的失败通常意味着测试环境有问题，需要开发者检查环境变量的设置。这与逆向工程中需要关注目标程序的环境变量依赖性有异曲同工之妙。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/41 test args/env2vars.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -185,7 +187,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

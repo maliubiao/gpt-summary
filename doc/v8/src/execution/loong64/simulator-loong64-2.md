@@ -59,12 +59,14 @@ console.log(result); // 输出 15
 
 请注意，这只是第 3 部分，可能还有其他部分负责指令的获取、解码、分支预测、异常处理等功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/loong64/simulator-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 e(rd_reg()), rd(), Registers::Name(rj_reg()),
                    rj(), Registers::Name(rk_reg()), rk());
       int32_t alu32_out = static_cast<int32_t>(rj() + rk());
@@ -1689,7 +1691,4 @@ void Simulator::DecodeTypeOp22() {
             temp_result = upper / 2;
             double reminder = std::modf(temp_result, &temp);
             if (reminder == 0)
-"""
-
-
 ```

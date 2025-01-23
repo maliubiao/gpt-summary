@@ -141,14 +141,16 @@ WebMouseEvent {
 
 总而言之，`blink/renderer/core/events/web_input_event_conversion.cc` 是 Blink 引擎中处理用户输入的核心组件，它负责将底层的平台事件转换为浏览器内部统一的事件表示，并进行必要的坐标和状态转换，确保 JavaScript 和其他 Web 技术能够正确地处理用户交互。理解其功能对于理解浏览器事件处理机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/web_input_event_conversion.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -472,7 +474,4 @@ Vector<WebPointerEvent> TransformWebPointerEventVector(
 }
 
 }  // namespace blink
-
-"""
-
 ```

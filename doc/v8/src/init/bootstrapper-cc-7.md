@@ -172,7 +172,7 @@ By following these steps, I can effectively analyze the provided V8 source code 
 
 作为启动过程的第 8 部分，这段代码专注于 **创建和配置一些重要的、相对底层的 JavaScript 内置对象和功能**，例如 `Reflect`、绑定函数、弱引用、终结器注册表以及不同模式下的 `arguments` 对象。它也负责初始化类型化数组的基础结构。这些功能的初始化为后续更高级的 JavaScript 特性和用户代码的执行奠定了基础。可以认为这部分主要关注的是 **元编程和内存管理相关的基础构建块**。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/init/bootstrapper.cc以.tq结尾，那它是个v8 torque源代码，
@@ -180,8 +180,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 :kReflectOwnKeys, 1, kAdapt);
     SimpleInstallFunction(isolate_, reflect, "preventExtensions",
                           Builtin::kReflectPreventExtensions, 1, kAdapt);
@@ -903,8 +905,4 @@ void Genesis::InitializeGlobal_harmony_iterator_helpers() {
           JS_VALID_ITERATOR_WRAPPER_TYPE, JSValidIteratorWrapper::kHeaderSize,
           TERMINAL_FAST_ELEMENTS_KIND, 0);
   Map::SetPrototype(isolate(), valid_iterator_wrapper_map,
-              
-"""
-
-
 ```

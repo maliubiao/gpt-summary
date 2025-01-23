@@ -139,7 +139,7 @@ console.timeEnd('profiling');
 
 这部分代码主要定义了用于测试 V8 CPU profiler 功能的基础设施和一些核心测试用例。它包含了用于模拟事件、创建测试代码、启动/停止 profiler 以及初步验证 profiler 功能的测试。 重点在于验证 profiler 的基本工作流程和事件处理机制是否正确。它为后续更复杂的测试用例奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-cpu-profiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-cpu-profiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -147,8 +147,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1011,7 +1013,4 @@ static const char* hot_deopt_no_frame_entry_test_source =
     "  var start = Date.now();\n"
     "  do {\n"
     "    for (var i = 1; i < 1000;
-"""
-
-
 ```

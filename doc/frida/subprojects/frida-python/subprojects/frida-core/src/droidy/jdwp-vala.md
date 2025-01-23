@@ -128,7 +128,7 @@ Response:
 ### 总结
 
 `jdwp.vala` 文件实现了 Frida 工具中与 JVM 调试相关的核心功能，包括调试命令的执行、事件处理、底层通信等。通过 LLDB 可以复刻部分调试功能，但在实际使用中需要注意异步操作和异常处理的正确性。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/droidy/jdwp.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaJDWP", gir_version = "1.0")]
 namespace Frida.JDWP {
 	public class Client : GLib.Object, AsyncInitable {
@@ -1492,8 +1494,4 @@ namespace Frida.JDWP {
 				ref_type: ref_type,
 				signature: signature,
 				status: status
-		
-"""
-
-
 ```

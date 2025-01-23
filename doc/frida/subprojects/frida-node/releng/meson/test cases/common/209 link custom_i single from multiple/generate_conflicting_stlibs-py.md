@@ -168,7 +168,7 @@ Imagine a developer working on the Frida Node.js bindings. They might be encount
 
 In essence, this script is a focused tool within Frida's testing infrastructure to ensure that the build system correctly handles (or intentionally breaks in specific test cases) scenarios where multiple static libraries define the same symbols. Developers investigating linking issues in Frida would likely encounter this script as part of their debugging and understanding process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/209 link custom_i single from multiple/generate_conflicting_stlibs.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import shutil, sys, subprocess, argparse, pathlib
@@ -268,7 +270,4 @@ def generate_lib(outfiles, private_dir, compiler_array):
 if __name__ == '__main__':
     options = parser.parse_args()
     sys.exit(generate_lib(options.o, options.private_dir, options.cmparr))
-
-"""
-
 ```

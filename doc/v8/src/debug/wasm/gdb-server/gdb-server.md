@@ -132,11 +132,13 @@ instance.exports.add(5, 10); // 调用 WebAssembly 函数
 
 `gdb-server.cc` 是 V8 中一个关键的底层组件，它通过实现一个 GDB 远程服务器，使得开发者可以使用强大的 GDB 工具来调试在 V8 中运行的 WebAssembly 代码。它处理了与 GDB 的通信、WebAssembly 模块的管理、断点设置、状态检查等核心功能，从而桥接了 V8 内部的 WebAssembly 执行环境和外部的 GDB 调试器。  虽然 JavaScript 开发者不直接与此代码交互，但他们使用 GDB 调试 WebAssembly 的能力完全依赖于这个 C++ 文件的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/gdb-server.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -588,7 +590,4 @@ bool GdbServer::DebugDelegate::IsFunctionBlackboxed(
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

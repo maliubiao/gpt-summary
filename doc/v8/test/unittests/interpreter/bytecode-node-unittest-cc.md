@@ -163,15 +163,17 @@ This systematic approach, starting with understanding the context and then progr
 
 `v8/test/unittests/interpreter/bytecode-node-unittest.cc` 是 V8 引擎中用于测试 `BytecodeNode` 类的单元测试文件。它验证了 `BytecodeNode` 对象的创建、操作数访问以及相等性比较等核心功能。虽然开发者通常不会直接操作 `BytecodeNode`，但理解其代表的字节码概念有助于编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/bytecode-node-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/interpreter/bytecode-node-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -273,7 +275,4 @@ TEST_F(BytecodeNodeTest, NoEqualityWithDifferentSourceInfo) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

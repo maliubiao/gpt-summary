@@ -223,7 +223,7 @@ sys.stdin.read()
 
 这个详细的解释涵盖了 `bionic/libc/kernel/uapi/linux/netfilter/xt_IDLETIMER.handroid` 文件的功能、与 Android 的关系、相关概念、使用错误以及如何通过 Frida 进行调试。记住，这个头文件本身是内核的一部分，用户空间程序需要通过系统调用和相关的库才能与其交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_IDLETIMER.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -234,8 +234,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -260,7 +262,4 @@ struct idletimer_tg_info_v1 {
   struct idletimer_tg * timer __attribute__((aligned(8)));
 };
 #endif
-
-"""
-
 ```

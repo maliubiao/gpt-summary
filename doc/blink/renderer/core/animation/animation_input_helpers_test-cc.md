@@ -119,14 +119,16 @@ This systematic approach, starting from the file name and progressively analyzin
 
 `animation_input_helpers_test.cc` 通过各种测试用例，确保了 `AnimationInputHelpers` 中的关键函数能够正确地处理动画相关的输入字符串，并将其转换为内部表示，或者将内部表示转换回字符串。这对于 Blink 引擎正确解析和执行 CSS 动画和 Web Animations API 至关重要。它涵盖了属性名的转换和 timing function 的解析，这些都直接关联到开发者在使用 JavaScript 和 CSS 创建动画时的语法和语义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/animation_input_helpers_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -312,7 +314,4 @@ TEST_F(AnimationAnimationInputHelpersTest, PropertyHandleToKeyframeAttribute) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

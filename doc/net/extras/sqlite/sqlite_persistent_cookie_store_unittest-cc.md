@@ -134,7 +134,7 @@ document.cookie = "sessionid=12345; domain=example.com; path=/";
 
 总而言之，`net/extras/sqlite/sqlite_persistent_cookie_store_unittest.cc` 的第 1 部分主要测试了 `SQLitePersistentCookieStore` 的**基本数据库初始化和恢复能力，Cookie 的基本持久化存储和读取功能，以及在启动时对会话 Cookie 的处理逻辑**。 这些测试用例确保了 Cookie 能够可靠地存储在本地数据库中，并在浏览器重启后能够被正确地加载，这是浏览器网络栈中 Cookie 管理功能的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/extras/sqlite/sqlite_persistent_cookie_store_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -997,7 +999,4 @@ TEST_F(SQLitePersistentCookieStoreTest, PersistIsPersistent) {
       kSessionName, "val", "sessioncookie.com", "/",
       /*creation=*/base::Time::Now(),
       /*e
-"""
-
-
 ```

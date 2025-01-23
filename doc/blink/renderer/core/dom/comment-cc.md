@@ -169,15 +169,17 @@ By following these steps and refining the analysis, we arrive at the comprehensi
 
 总而言之，`blink/renderer/core/dom/comment.cc` 文件在 Blink 渲染引擎中扮演着至关重要的角色，负责表示和管理 HTML/XML 文档中的注释，并与 HTML 解析器和 JavaScript DOM API 紧密协作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/comment.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -222,7 +224,4 @@ CharacterData* Comment::CloneWithData(Document& factory,
 }
 
 }  // namespace blink
-
-"""
-
 ```

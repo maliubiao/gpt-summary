@@ -136,11 +136,13 @@ for (let i = 0; i < 10000; i++) {
 
 `default-thread-isolated-allocator.cc` 文件是 V8 引擎中一个重要的组成部分，它提供了线程隔离的内存分配抽象，并尝试利用 Linux 的 PKU 特性来保护 JIT 编译生成的机器码，从而增强 JavaScript 运行时的安全性和稳定性。虽然目前的代码实现中 `Allocate` 和 `Free` 只是简单的包装了 `malloc` 和 `free`，但其框架已经为未来更精细的线程隔离内存管理和 PKU 的应用奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/default-thread-isolated-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ bool DefaultThreadIsolatedAllocator::Valid() const {
 }
 
 }  // namespace v8::platform
-
-"""
-
 ```

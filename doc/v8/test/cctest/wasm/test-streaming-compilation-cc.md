@@ -137,7 +137,7 @@ compileAndRun('my_wasm_module.wasm');
 
 `v8/test/cctest/wasm/test-streaming-compilation.cc` 的第 1 部分主要定义了用于测试 V8 中 WebAssembly 流式编译功能的基础架构和一些基本的成功和失败测试用例。它创建了模拟平台和流式测试器，能够控制编译任务的执行，并验证在不同字节接收和完成编译的时机下，流式编译是否能正确完成或报告错误。这些测试覆盖了基本的流式编译流程，包括完整接收字节和分段接收字节的情况，以及在模块解析阶段就发现错误的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-streaming-compilation.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-streaming-compilation.cc以.tq结尾，那它是个v8 torque源代码，
@@ -145,8 +145,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1021,7 +1023,4 @@ STREAM_TEST(TestAbortAfterFunctionGotCompiled1) {
       U32V_1(4),                  // !!! invalid body size !!!
       U32V_1(0),                  // locals count
       kExprLocalGet, 0, kExprEnd  // bo
-"""
-
-
 ```

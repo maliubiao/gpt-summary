@@ -137,15 +137,17 @@ console.log(deref2); // 可能输出 {} (如果 GC 还没发生)，也可能输�
 
 `v8/src/runtime/runtime-weak-refs.cc` 文件中的运行时函数是 V8 引擎实现 `FinalizationRegistry` 和 `WeakRef` 这两个 JavaScript 高级特性的底层支撑。它们负责处理弱引用的注册、注销以及在需要时临时保持对象存活等关键操作。理解这些底层机制有助于更深入地理解 JavaScript 中弱引用和终结器的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-weak-refs.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/runtime/runtime-weak-refs.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ RUNTIME_FUNCTION(Runtime_JSWeakRefAddToKeptObjects) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

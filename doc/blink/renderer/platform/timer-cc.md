@@ -161,14 +161,16 @@ By following these steps, combining code analysis with an understanding of web d
 
 总而言之，`blink/renderer/platform/timer.cc` 是 Blink 引擎中一个核心的底层组件，负责管理定时任务，它直接支撑了 JavaScript 的定时器 API，并且间接地影响了 HTML 和 CSS 中与时间相关的特性。理解其功能对于深入了解浏览器的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/timer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2008 Apple Inc. All rights reserved.
  * Copyright (C) 2009 Google Inc. All rights reserved.
@@ -339,7 +341,4 @@ base::TimeTicks TimerBase::TimerCurrentTimeTicks() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

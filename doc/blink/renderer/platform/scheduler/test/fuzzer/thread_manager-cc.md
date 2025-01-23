@@ -127,14 +127,16 @@ This systematic approach, starting with high-level understanding and gradually d
 
 总而言之，`thread_manager.cc` 中的 `ThreadManager` 类是模糊测试框架的核心组件，它提供了一种可控的方式来模拟和操作线程、任务队列和任务，从而有效地测试 Blink 渲染引擎调度器的健壮性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/test/fuzzer/thread_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 #ifdef UNSAFE_BUFFERS_BUILD
 // TODO(crbug.com/351564777): Remove this and convert code to safer constructs.
 #pragma allow_unsafe_buffers
@@ -583,7 +585,4 @@ void ThreadManager::Task::Execute(
 
 }  // namespace sequence_manager
 }  // namespace base
-
-"""
-
 ```

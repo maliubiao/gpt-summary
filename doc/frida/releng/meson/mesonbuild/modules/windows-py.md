@@ -122,7 +122,7 @@ By following these steps, we can effectively analyze the code and generate a com
 
 总而言之，`frida/releng/meson/mesonbuild/modules/windows.py` 是 Frida 构建系统中一个关键的模块，专门用于处理 Windows 平台上的资源编译任务，它涉及到对 Windows 资源编译工具的识别、命令的构建和构建过程的集成。理解其功能对于理解 Frida 在 Windows 上的构建过程以及排查相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/modules/windows.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015 The Meson development team
 
@@ -339,7 +341,4 @@ class WindowsModule(ExtensionModule):
 
 def initialize(interp: 'Interpreter') -> WindowsModule:
     return WindowsModule(interp)
-
-"""
-
 ```

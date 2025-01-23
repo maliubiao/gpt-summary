@@ -166,7 +166,7 @@ Increments the counter value.
 
 总而言之，`generatormd.py` 是 Frida 文档生成流程的关键组成部分，它负责将 API 的结构化描述转换为用户可以阅读的 Markdown 文档，这对于 Frida 的使用者，特别是进行逆向工程的开发者来说至关重要。 了解这个脚本的功能和工作原理有助于理解 Frida 的文档生成流程，并在遇到文档问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/docs/refman/generatormd.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -566,7 +568,4 @@ class GeneratorMD(GeneratorBase):
             data[fn.name] = f'{funcs_file}#{fn.name}'
 
         self.link_def_out.write_text(json.dumps(data, indent=2), encoding='utf-8')
-
-"""
-
 ```

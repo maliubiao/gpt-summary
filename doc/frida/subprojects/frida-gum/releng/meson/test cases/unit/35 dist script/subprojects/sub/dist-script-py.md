@@ -143,7 +143,7 @@ Review the generated response for clarity and accuracy. Ensure the explanations 
 
 通过以上步骤，开发者可以逐步缩小问题范围，确定是 `dist-script.py` 脚本本身的问题，还是其他环节（如环境变量配置、`mesonrewrite` 工具的行为等）导致了测试失败。 这个脚本作为一个单元测试的一部分，它的执行是 Frida 构建和测试流程中的一个环节，而调试过程就是沿着这个流程反向追踪，查找问题根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/35 dist script/subprojects/sub/dist-script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -172,7 +174,4 @@ subprocess.run([*mesonrewrite, '-s', source_root, *rewrite_cmd], check=True)
 modfile = source_root / 'prog.c'
 with modfile.open('w') as f:
     f.write('int main(){return 0;}')
-
-"""
-
 ```

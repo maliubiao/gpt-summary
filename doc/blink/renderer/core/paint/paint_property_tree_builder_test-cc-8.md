@@ -151,7 +151,7 @@ TEST_P(PaintPropertyTreeBuilderTest, AvoidCompositingReasonLoop) {
 
 总而言之，这个文件是 Blink 渲染引擎中一个关键的测试组件，它通过大量的单元测试确保了 `PaintPropertyTreeBuilder` 能够正确地根据 HTML 结构和 CSS 样式构建用于渲染优化的属性树。它覆盖了各种常见的 CSS 属性和场景，并模拟了 JavaScript 的 DOM 操作，以验证属性树构建的正确性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_property_tree_builder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 c_effect =
       GetChromeClient()
           .layer_tree_host()
@@ -990,8 +992,4 @@ TEST_P(PaintPropertyTreeBuilderTest, BackgroundClipFragmented) {
         padding: 10px;
         box-sizing: border-box;
         background-image: linear-gradient(blue, red);
-     
-"""
-
-
 ```

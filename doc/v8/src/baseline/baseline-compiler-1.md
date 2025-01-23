@@ -231,12 +231,14 @@ Plan:
 
 总而言之，这部分C++代码是Baseline编译器实现JavaScript语义的关键组成部分，它将高级的JavaScript概念和操作转换为可以在机器上执行的低级指令。  每个 `Visit` 方法都针对特定的JavaScript语言特性，并生成相应的机器码来实现这些特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/baseline-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ap_bit_field, kInterpreterAccumulatorRegister);
       __ LoadWord8Field(map_bit_field, map_bit_field, Map::kBitFieldOffset);
       __ TestAndBranch(map_bit_field, Map::Bits1::IsCallableBit::kMask, kZero,
@@ -933,8 +935,4 @@ SaveAccumulatorScope::~SaveAccumulatorScope() {
 }  // namespace baseline
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

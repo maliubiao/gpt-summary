@@ -76,11 +76,13 @@ blr             # 返回
 
 `instruction-selector-ppc-unittest.cc` 是 V8 引擎中至关重要的一个测试文件，它通过编写单元测试来确保针对 PowerPC 架构的指令选择器能够正确地将 JavaScript 代码转换为高效的机器指令，从而保证 V8 在 PPC 平台上的性能和正确性。 它直接关系到 JavaScript 代码的执行效率和准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/ppc/instruction-selector-ppc-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -94,7 +96,4 @@ namespace internal {
 namespace compiler {}  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -140,7 +140,7 @@ on_message: {'timestamp': 1678886404.123, 'type': 'data', 'payload': {'cpuUsage'
 
 总而言之，`sysmontap.py` 是一个利用 Frida 的动态插桩能力来监控系统 CPU 使用率的实用脚本。它体现了动态逆向分析的思想，并涉及到操作系统底层和框架的知识。理解其功能和潜在的错误有助于用户更好地利用 Frida 进行调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/open_service/dtx/sysmontap.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import time
 
 import frida
@@ -179,7 +181,4 @@ sysmon.request({"method": "start"})
 time.sleep(5)
 sysmon.request({"method": "stop"})
 time.sleep(1)
-
-"""
-
 ```

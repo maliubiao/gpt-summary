@@ -168,7 +168,7 @@ Frida 本身是一个动态插桩工具，常用于逆向工程。这个 `cs.py`
 
 总而言之，`frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/cs.py` 文件是 Frida 构建系统中用于抽象和管理 C# 编译器的关键组件，它连接了 Meson 构建系统和底层的 C# 编译器，并为 Frida 中可能包含的 C# 组件的编译提供了必要的支持。理解这个文件的功能对于调试 Frida 的构建过程，以及理解 Frida 如何与 .NET CLR 交互都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/cs.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -314,7 +316,4 @@ class VisualStudioCsCompiler(CsCompiler):
 
     def rsp_file_syntax(self) -> 'RSPFileSyntax':
         return RSPFileSyntax.MSVC
-
-"""
-
 ```

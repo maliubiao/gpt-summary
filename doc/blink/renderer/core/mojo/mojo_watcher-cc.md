@@ -190,14 +190,16 @@ This step-by-step approach, starting with a high-level understanding and gradual
 
 总而言之，`mojo_watcher.cc` 提供了一个核心的、底层的机制，用于在 Blink 渲染引擎中异步监听 Mojo 句柄的状态变化，这对于实现跨进程通信和与浏览器内部服务交互至关重要。 虽然 JavaScript 开发者通常不会直接使用 `MojoWatcher` 类，但他们会通过更高层次的 Blink API (如 Mojo 接口绑定生成的代码) 来间接地利用其功能。理解 `MojoWatcher` 的作用有助于理解 Blink 内部的通信机制以及如何安全有效地使用 Mojo 进行跨进程通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/mojo/mojo_watcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -400,7 +402,4 @@ void MojoWatcher::RunReadyCallback(MojoResult result) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

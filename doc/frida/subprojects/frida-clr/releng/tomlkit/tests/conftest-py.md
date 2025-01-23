@@ -197,7 +197,7 @@ key = value  # 缺少引号
 
 总而言之，`frida/subprojects/frida-clr/releng/tomlkit/tests/conftest.py` 是 `tomlkit` 测试套件的关键组成部分，它定义了如何加载和组织测试用例，确保 `tomlkit` 能够正确解析各种 TOML 格式的数据，这对于依赖 `tomlkit` 的 `frida-clr` 以及整个 Frida 框架的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/tomlkit/tests/conftest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 
 import pytest
@@ -312,7 +314,4 @@ def pytest_generate_tests(metafunc):
             test_list["invalid_encode"].values(),
             ids=list(test_list["invalid_encode"].keys()),
         )
-
-"""
-
 ```

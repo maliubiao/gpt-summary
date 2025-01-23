@@ -156,11 +156,13 @@ console.log(matches2);
 
 `v8/test/fuzzer/regexp.cc` 是 V8 引擎中用于模糊测试正则表达式功能的 C++ 代码。它通过生成各种可能的正则表达式模式和标志位组合，并用不同的输入字符串进行匹配测试，旨在发现 V8 正则表达式引擎中潜在的错误、漏洞或性能问题。 这直接关系到 JavaScript 中正则表达式的功能和稳定性。模糊测试是一种重要的软件测试方法，可以有效地发现隐藏的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/regexp.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   CHECK(!i_isolate->has_exception());
   return 0;
 }
-
-"""
-
 ```

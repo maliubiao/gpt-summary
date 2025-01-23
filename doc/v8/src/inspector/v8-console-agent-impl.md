@@ -127,11 +127,13 @@ console.error("An error occurred!");
 
 `v8-console-agent-impl.cc` 是 V8 Inspector 中连接 JavaScript `console` 对象和调试前端的关键组件。 它负责管理控制台的启用状态，接收来自 V8 引擎的控制台消息，并将这些消息格式化后发送到开发者工具，使得开发者能够在浏览器中看到 JavaScript 代码产生的控制台输出。 尽管 `clearMessages()` 方法目前的功能比较简单，但整个文件构成了 JavaScript 调试体验中不可或缺的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-console-agent-impl.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ bool V8ConsoleAgentImpl::reportMessage(V8ConsoleMessage* message,
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

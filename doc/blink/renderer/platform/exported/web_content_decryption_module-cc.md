@@ -96,14 +96,16 @@ Here's a thinking process to arrive at the explanation of `web_content_decryptio
 
 `blink/renderer/platform/exported/web_content_decryption_module.cc` 文件是 Chromium Blink 引擎中处理内容解密的关键部分，它作为接口或抽象基类，为 JavaScript 通过 EME API 与浏览器底层的解密功能进行交互提供了桥梁。虽然该文件本身代码很少，但它在实现受保护内容播放方面起着至关重要的作用。具体的解密逻辑和实现分布在其他的相关文件中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_content_decryption_module.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013, Google Inc. All rights reserved.
  *
@@ -135,7 +137,4 @@ namespace blink {
 WebContentDecryptionModule::~WebContentDecryptionModule() = default;
 
 }  // namespace blink
-
-"""
-
 ```

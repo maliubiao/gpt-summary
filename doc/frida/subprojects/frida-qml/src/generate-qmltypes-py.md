@@ -179,7 +179,7 @@ argv = [
 
 总而言之，`generate-qmltypes.py` 是 Frida 用于增强其 QML 支持的关键工具，它通过调用 Qt 自身的构建工具来提取和生成 QML 类型的元数据，从而使 Frida 能够在运行时动态地理解和操作 QML 对象，这对于逆向工程使用 QML 界面的应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/src/generate-qmltypes.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from pathlib import Path
 import subprocess
 import sys
@@ -241,7 +243,4 @@ def main(argv: list[str]):
 
 if __name__ == "__main__":
     main(sys.argv)
-
-"""
-
 ```

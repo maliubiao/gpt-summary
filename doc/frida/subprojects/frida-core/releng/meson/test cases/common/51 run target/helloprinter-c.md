@@ -154,7 +154,7 @@ By following these steps, we can systematically analyze the code, connect it to 
 
 `helloprinter.c` 虽然简单，但它作为一个测试用例，可以用来验证 Frida 的基础功能，例如进程附加、代码执行监控等。通过分析这个简单的例子，可以更好地理解 Frida 在动态逆向分析中的作用，以及它所涉及的底层系统知识。  它的存在也为 Frida 的开发者提供了一个清晰的调试目标，用于验证和修复 Frida 的相关功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/51 run target/helloprinter.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
@@ -175,7 +177,4 @@ int main(int argc, char **argv) {
     }
     return 0;
 }
-
-"""
-
 ```

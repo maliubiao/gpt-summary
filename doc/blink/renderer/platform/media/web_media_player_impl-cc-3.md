@@ -117,15 +117,17 @@ My thinking process to answer the request goes like this:
 
 这部分代码是 `WebMediaPlayerImpl` 中处理媒体播放器核心状态和行为的关键部分。它负责响应页面和帧的可见性变化，管理播放状态，处理资源加载，并与渲染器和解码器进行交互。理解这部分代码的功能有助于理解 Chromium 中媒体播放器的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/web_media_player_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Hidden() {
   DCHECK(main_task_runner_->BelongsToCurrentThread());
 
@@ -993,7 +995,4 @@ void WebMediaPlayerImpl::FinishMemoryUsageReport(int64_t demuxer_memory_usage) {
            << " Audio: " << stats.audio_memory_usage
            << ", Video: " << video_memory_usage
            << ", DataSource: " << data_sour
-"""
-
-
 ```

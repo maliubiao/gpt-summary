@@ -140,7 +140,7 @@ This systematic approach ensures that all aspects of the prompt are addressed lo
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/test cases/unit/22 warning location/b.c` 很可能是一个用于测试 Frida 警告功能的单元测试用例，它接收来自 Frida Script 的消息，执行一些操作以触发警告，并验证警告信息是否正确。理解这个文件的功能需要对 Frida 的工作原理、动态插桩技术以及操作系统底层的知识有一定的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/22 warning location/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,9 +148,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

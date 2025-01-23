@@ -82,12 +82,14 @@ I will go through the code snippet and categorize the functions and their functi
 
 总而言之，`builtins-ppc.cc` 文件是 V8 引擎在 PPC64 架构上执行 JavaScript 代码的核心组成部分，它实现了连接 JavaScript 代码和底层机器指令的关键功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ppc/builtins-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1897,7 +1899,4 @@ void Builtins::Generate_ConstructForwardAllArgsImpl(
       break;
     case ForwardWhichFrame::kParentFrame:
       __ LoadU64(r7, MemOperand(fp,
-"""
-
-
 ```

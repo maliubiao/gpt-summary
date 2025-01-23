@@ -289,7 +289,7 @@ except Exception as e:
 
 `bionic/libc/kernel/uapi/linux/atmdev.h` 定义了与 Linux ATM 设备驱动交互的接口。虽然在现代 Android 设备中不常用，但它作为 Linux 内核 API 的一部分仍然存在于 Bionic 库中。理解这个头文件的功能有助于理解 Android 系统与底层硬件交互的某些方面，尤其是在处理旧式网络设备或特定行业应用时。使用 Frida 可以帮助我们动态地分析系统调用，从而观察这些接口是否被使用以及如何被使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/atmdev.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -300,8 +300,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -404,7 +406,4 @@ struct atm_cirange {
 #define ATM_VS2TXT_MAP "IDLE", "CONNECTED", "CLOSING", "LISTEN", "INUSE", "BOUND"
 #define ATM_VF2TXT_MAP "ADDR", "READY", "PARTIAL", "REGIS", "RELEASED", "HASQOS", "LISTEN", "META", "256", "512", "1024", "2048", "SESSION", "HASSAP", "BOUND", "CLOSE"
 #endif
-
-"""
-
 ```

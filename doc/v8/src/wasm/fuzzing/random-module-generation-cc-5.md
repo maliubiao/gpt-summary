@@ -167,7 +167,7 @@ return WasmInitExpr::Binop(
 
 总而言之，`GenerateInitExpr` 在随机 WebAssembly 模块生成过程中扮演着**生成初始化表达式**的关键角色，确保模块的全局变量和表等元素能够被赋予有效的初始值。这是构建一个可执行的 WebAssembly 模块所必需的步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/fuzzing/random-module-generation.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/fuzzing/random-module-generation.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,9 +175,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
- i = 0; i < num_globals; ++i) {
+### 源代码
+```cpp
+i = 0; i < num_globals; ++i) {
               int index = (start_index + i) % num_globals;
               if (builder->GetGlobalType(index) == type &&
                   !builder->IsMutableGlobal(index)) {
@@ -955,7 +957,4 @@ base::Vector<uint8_t> GenerateWasmModuleForDeopt(
   // Create main function body.
   {
     uint32_t de
-"""
-
-
 ```

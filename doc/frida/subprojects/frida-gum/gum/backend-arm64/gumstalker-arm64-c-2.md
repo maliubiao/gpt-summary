@@ -118,7 +118,7 @@ Now I can construct the summarized functionalities and examples based on these p
 
 这部分代码主要负责 **`GumExecCtx` 的生命周期管理、代码块的管理和切换、以及代码的编译和重写过程中的核心逻辑**。它定义了 Stalker 如何分配和管理内存来存储生成的代码，如何获取和编译需要插桩的代码块，以及如何在执行过程中在不同的代码块之间切换。 它是 Stalker 实现动态插桩功能的核心组成部分，连接了代码的表示（`GumExecBlock`）和实际的执行流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-arm64/gumstalker-arm64.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 != NULL)
   {
     GumCodeSlab * next = (GumCodeSlab *) code_slab->slab.next;
@@ -1205,8 +1207,4 @@ gum_exec_ctx_write_prolog_helper (GumExecCtx * ctx,
     /* GumCpuContext.v[0:8] plus padding for v[8:32] */
     for (i = 6; i != -2; i -= 2)
     {
-  
-"""
-
-
 ```

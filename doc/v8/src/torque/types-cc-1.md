@@ -168,7 +168,7 @@ const element = myArray.elements[2];
 
 这部分代码主要负责 **处理 Torque 中定义的类型和与类型相关的操作**，特别是针对 **索引字段的访问和管理**。它提供了生成访问索引字段切片的机制，并包含了多种用于判断、比较、格式化和处理不同类型的功能。这些功能是 Torque 编译器将高级类型定义转换为底层代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/types.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/types.cc以.tq结尾，那它是个v8 torque源代码，
@@ -176,9 +176,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- std::tie(previous_element_size, std::ignore) =
+### 源代码
+```cpp
+std::tie(previous_element_size, std::ignore) =
         *SizeOf(previous->name_and_type.type);
     Expression* previous_element_size_expression =
         MakeNode<IntegerLiteralExpression>(
@@ -675,8 +677,4 @@ std::string Type::GetDebugType() const {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
-
 ```

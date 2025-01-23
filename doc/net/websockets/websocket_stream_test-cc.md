@@ -136,7 +136,7 @@ I will organize the response according to the user's request, covering each of t
 
 总而言之，`net/websockets/websocket_stream_test.cc` 的第一部分主要负责 **测试 `net::WebSocketStream` 类在建立 WebSocket 连接和进行握手过程中的核心功能**。它覆盖了 HTTP/1.1 和 HTTP/2 两种握手方式，并验证了子协议协商、自定义头、身份验证等关键特性。 这些测试通过模拟网络数据和断言程序行为，确保了 Chromium 网络栈中 WebSocket 连接建立逻辑的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -966,8 +968,5 @@ TEST_P(WebSocketMultiProtocolStreamCreateTest, UnsolicitedSubProtocol) {
   auto samples = histogram_tester.GetHistogramSamplesSinceCreation(
       "Net.WebSocket.HandshakeResult2");
   EXPECT_EQ(1, samples->TotalCount());
-  if (stream_type_ 
-"""
-
-
+  if (stream_type_
 ```

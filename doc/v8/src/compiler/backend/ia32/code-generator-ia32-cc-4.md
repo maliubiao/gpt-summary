@@ -150,7 +150,7 @@ retry_atomic_add:
 
 这部分代码主要负责为 IA32 架构生成执行原子二元运算和控制流（分支跳转）的汇编指令。它通过宏定义和辅助函数，针对不同数据类型和操作类型生成高效且正确的汇编代码。特别是对于原子操作，它使用了 `lock cmpxchg` 指令来保证多线程环境下的数据一致性。此外，它还处理了条件码到 IA32 条件跳转指令的转换，以及 WebAssembly trap 的特殊处理（如果启用）。这部分是代码生成器中至关重要的一部分，因为它直接影响了 JavaScript 代码在 IA32 架构上的并发性能和控制流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/code-generator-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ia32/code-generator-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -158,9 +158,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
-   \
+### 源代码
+```cpp
+\
   case kAtomic##op##Int8: {                        \
     ASSEMBLE_ATOMIC_BINOP(inst, mov_b, cmpxchg_b); \
     __ movsx_b(eax, eax);                          \
@@ -969,7 +971,4 @@ void CodeGenerator::AssembleMove(InstructionOperand* source,
         XMMRegister dst = g.ToDoubleRegister(destination);
         MachineRepresentation rep =
             LocationOperand
-"""
-
-
 ```

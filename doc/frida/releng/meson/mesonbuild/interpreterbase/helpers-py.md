@@ -199,7 +199,7 @@ By following this detailed breakdown, analyzing the code, and connecting it to t
 
 通过理解 `helpers.py` 中各个函数的功能，开发者可以更好地定位和解决 Frida 构建过程中出现的配置相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/interpreterbase/helpers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -276,7 +278,4 @@ def stringifyUserArguments(args: TYPE_var, subproject: SubProject, quote: bool =
         FeatureNew.single_use('User option in string format', '1.3.0', subproject)
         return stringifyUserArguments(args.printable_value(), subproject)
     raise InvalidArguments('Value other than strings, integers, bools, options, dictionaries and lists thereof.')
-
-"""
-
 ```

@@ -166,15 +166,17 @@ var _ = <-a.ConfigLoaded // 假设 b 的初始化依赖于配置加载完成
 
 更严重的情况是，如果 `a` 的初始化也依赖于 `b` 的某些状态，就可能形成真正的死锁。  本例中的 `issue25055.dir/b.go` 正是展示了这种直接依赖造成的死锁。 `b` 的初始化需要从 `a.A` 接收数据，而如果 `a` 的初始化没有先发送数据，就会永久阻塞。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue25055.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -184,9 +186,4 @@ package b
 import "./a"
 
 var _ = <-a.A
-
-"""
-
-
-
 ```

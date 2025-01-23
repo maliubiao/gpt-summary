@@ -227,7 +227,7 @@ This iterative process of scanning, grouping, inferring, exemplifying, and refin
 
 总而言之，`go/src/internal/abi/symtab.go` 虽然是一个内部文件，但它定义了 Go 运行时理解和操作程序的核心元数据，支撑着诸如 goroutine 管理、垃圾回收、栈回溯和代码优化等关键功能。理解其内容有助于更深入地理解 Go 的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/abi/symtab.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -235,8 +235,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -348,9 +350,4 @@ const (
 const MINFUNC = 16 // minimum size for a function
 
 const FuncTabBucketSize = 256 * MINFUNC // size of bucket in the pc->func lookup table
-
-"""
-
-
-
 ```

@@ -214,7 +214,7 @@ func UseGlobal() {
 
 **需要注意的是，代码中 `Importer` 类型和 `NewPackage` 函数的文档都标记为 `Deprecated`，并建议使用 `go/types` 包进行类型检查。这意味着这段代码是 `go/ast` 包中较早期的实现，新的代码应该优先使用 `go/types` 包提供的功能来进行更全面的语义分析。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/ast/resolve.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -222,8 +222,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -401,9 +403,4 @@ func NewPackage(fset *token.FileSet, files map[string]*File, importer Importer, 
 	p.errors.Sort()
 	return &Package{pkgName, pkgScope, imports, files}, p.errors.Err()
 }
-
-"""
-
-
-
 ```

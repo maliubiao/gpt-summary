@@ -327,7 +327,7 @@ sys.stdin.read()
 
 `reserved_signals.handroid` 文件定义了一组供 Android 内部使用的实时信号。理解这些信号及其用途有助于理解 Android 系统的底层工作原理，并避免在应用程序开发中犯一些常见的错误，例如尝试使用或干扰这些保留信号。通过 Frida 等工具，我们可以观察这些信号的传递和处理过程，从而更深入地了解 Android 系统的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/platform/bionic/reserved_signals.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -338,8 +338,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -437,7 +439,4 @@ static inline __always_inline sigset64_t filter_reserved_signals(sigset64_t sigs
   unblock(&sigset, __SIGRTMIN + 9);
   return sigset;
 }
-
-"""
-
 ```

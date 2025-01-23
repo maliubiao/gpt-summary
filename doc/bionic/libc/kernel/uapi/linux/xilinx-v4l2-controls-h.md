@@ -292,7 +292,7 @@ if __name__ == '__main__':
 
 通过运行这个 Frida 脚本，并操作 Android 相机应用中可能涉及到 Xilinx 摄像头 TPG 功能的设置，你可以在 Frida 的输出中看到 `ioctl` 调用中使用的 Xilinx 特定控制 ID，从而了解 Android Framework 是如何一步步地配置底层的硬件的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/xilinx-v4l2-controls.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -303,8 +303,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -335,7 +337,4 @@ Prompt:
 #define V4L2_CID_XILINX_TPG_STUCK_PIXEL_THRESH (V4L2_CID_XILINX_TPG + 16)
 #define V4L2_CID_XILINX_TPG_NOISE_GAIN (V4L2_CID_XILINX_TPG + 17)
 #endif
-
-"""
-
 ```

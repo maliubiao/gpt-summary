@@ -73,12 +73,14 @@ greet("World");
 
 总而言之，`v8/src/logging/log.cc` 的第一部分是 V8 引擎内部用于监控和分析 JavaScript 代码执行的关键组件，它记录了 JavaScript 代码在 V8 中编译、执行和优化的各种底层事件。 虽然我们不直接在 JavaScript 中操作这些功能，但 JavaScript 代码的运行会直接触发这些日志和性能分析事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/log.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1901,7 +1903,4 @@ void AppendFunctionMessage(LogFile::MessageBuilder& msg, const char* reason,
   msg << V8FileLogger::kNext << time << V8FileLogger::kNext;
 }
 }  // n
-"""
-
-
 ```

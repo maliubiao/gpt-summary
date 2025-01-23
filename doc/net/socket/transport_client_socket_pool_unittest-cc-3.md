@@ -72,7 +72,7 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 作为第 4 部分，这段代码的功能主要是 **针对 `TransportClientSocketPool` 的高级测试**，重点在于验证其在处理 `SocketTag` 和空闲套接字超时方面的正确性和健壮性。它确保了在各种复杂的网络连接场景下，`SocketTag` 能够被正确地应用和重用，并且空闲的连接能够按照配置的策略被清理，从而提高网络连接的效率和资源利用率。 这些测试对于确保 Chromium 网络栈的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/transport_client_socket_pool_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -80,8 +80,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 event reuse.
   handle.socket()->Disconnect();
   handle.Reset();
@@ -744,8 +746,4 @@ TEST_F(TransportClientSocketPoolMockNowSourceTest, IdleUnusedSocketTimeout) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

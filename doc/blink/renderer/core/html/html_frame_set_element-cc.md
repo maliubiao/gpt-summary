@@ -168,14 +168,16 @@ Finally, the last step is to organize the information gleaned from the analysis 
 
 总而言之，`html_frame_set_element.cc` 文件是 Blink 引擎中处理 `<frameset>` 标签的核心实现，它连接了 HTML 结构、CSS 样式和 JavaScript 交互，负责解析、布局和管理基于框架的页面结构。理解这个文件的功能有助于理解浏览器如何渲染和处理使用 `<frameset>` 的网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_frame_set_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -787,7 +789,4 @@ bool HTMLFrameSetElement::ResizeAxis::CanResizeSplitAt(int split_index) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

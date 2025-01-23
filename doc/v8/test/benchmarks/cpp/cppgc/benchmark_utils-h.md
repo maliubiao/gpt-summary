@@ -131,15 +131,17 @@ obj = null;
 
 总而言之，`v8/test/benchmarks/cpp/cppgc/benchmark_utils.h` 提供了一个用于方便地测试 `cppgc` 性能的基础设施，它简化了堆的创建和管理，使得开发者可以专注于编写具体的基准测试逻辑。虽然它本身是 C++ 代码，但它对于保证 V8 引擎（从而也包括 JavaScript 运行时）的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/benchmarks/cpp/cppgc/benchmark_utils.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/benchmarks/cpp/cppgc/benchmark_utils.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ class BenchmarkWithHeap : public benchmark::Fixture {
 }  // namespace cppgc
 
 #endif  // TEST_BENCHMARK_CPP_CPPGC_BENCHMARK_UTILS_H_
-
-"""
-
 ```

@@ -241,7 +241,7 @@ libc.so:
 
 `bionic/tests/math_data/powf_intel_data.handroid` 文件是一个关键的组成部分，用于确保 Android 系统中 `powf` 函数在 Intel 架构上的正确实现。它通过提供大量的测试用例，覆盖了 `powf` 函数可能遇到的各种输入情况，帮助开发者验证 `bionic` 库的数学运算功能的可靠性。虽然它本身不包含可执行代码，但它在软件测试和质量保证方面发挥着重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/powf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -253,8 +253,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1775,7 +1777,4 @@ static data_1_2_t<float, float, float> g_powf_intel_data[] = {
   { // Entry 375
     HUGE_VALF,
     0x1.000
-"""
-
-
 ```

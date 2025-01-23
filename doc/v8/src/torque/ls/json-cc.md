@@ -201,15 +201,17 @@ std::string output = SerializeToString(input);
 
 总而言之，`v8/src/torque/ls/json.cc` 文件提供了一个可靠的方式，将 Torque 语言服务内部的数据结构转换为标准的 JSON 格式，以便于与其他工具或组件进行数据交换和通信。它通过处理不同的数据类型和潜在的格式错误，确保生成的 JSON 字符串是有效的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/ls/json.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/ls/json.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ std::string SerializeToString(const JsonValue& value) {
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

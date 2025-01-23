@@ -196,15 +196,17 @@ func main() {
 
 `filelock_other.go` 文件是 `cmd/go` 工具中处理文件锁机制的一部分，它巧妙地利用 Go 的构建标签特性，为不支持文件锁的平台提供了一个回退实现，避免了编译错误，但同时也提醒开发者需要注意跨平台兼容性，并妥善处理可能出现的 "操作不支持" 的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/lockedfile/internal/filelock/filelock_other.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -240,9 +242,4 @@ func unlock(f File) error {
 		Err:  errors.ErrUnsupported,
 	}
 }
-
-"""
-
-
-
 ```

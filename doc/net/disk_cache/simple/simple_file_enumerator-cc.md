@@ -191,15 +191,17 @@ Finally, organize the findings into a clear and structured response, addressing 
 
 `simple_file_enumerator.cc` 提供了一个简单且平台兼容的机制来枚举指定目录下的直接文件，这对于磁盘缓存的实现至关重要。虽然它不直接与 JavaScript 交互，但它的功能是支持浏览器缓存机制的关键，而浏览器缓存机制直接影响到 JavaScript 应用的性能。理解其功能和潜在的错误使用方式有助于开发和调试与磁盘缓存相关的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_file_enumerator.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,7 +297,4 @@ std::optional<SimpleFileEnumerator::Entry> SimpleFileEnumerator::Next() {
 #endif  // BUILDFLAG(IS_POSIX) || BUILDFLAG(IS_FUCHSIA)
 
 }  // namespace disk_cache
-
-"""
-
 ```

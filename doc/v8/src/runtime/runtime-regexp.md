@@ -140,12 +140,14 @@ while ((match2 = globalRegex.exec(str)) !== null) {
 
 总而言之，`v8/src/runtime/runtime-regexp.cc` 是 V8 引擎中处理正则表达式操作的核心 C++ 代码，它为 JavaScript 开发者提供的正则表达式功能提供了底层的实现支持。这个文件中的代码效率和正确性直接影响着 JavaScript 中正则表达式相关操作的性能和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-regexp.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1929,7 +1931,4 @@ RUNTIME_FUNCTION(Runtime_RegExpSplit) {
     Handle<Object> result;
     ASSIGN_RETURN_FAILURE_ON_EXCEPTION(
         is
-"""
-
-
 ```

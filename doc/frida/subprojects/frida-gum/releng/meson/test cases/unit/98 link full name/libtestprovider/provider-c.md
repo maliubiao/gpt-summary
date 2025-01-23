@@ -174,7 +174,7 @@ By following these steps, the comprehensive analysis provided in the initial exa
 
 总而言之，`provider.c` 作为一个简单的示例，演示了共享库的初始化机制，并可以作为 Frida 进行动态分析的目标，帮助用户理解程序的运行时行为和内部状态。通过分析这个文件，用户可以学习如何使用 Frida hook 函数、观察变量、理解共享库的加载过程以及避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/98 link full name/libtestprovider/provider.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 static int g_checked = 0;
 
@@ -196,7 +198,4 @@ static void __attribute__((constructor(101), used)) init_checked(void) {
 int get_checked(void) {
     return g_checked;
 }
-
-"""
-
 ```

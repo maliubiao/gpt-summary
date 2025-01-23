@@ -91,7 +91,7 @@ Essentially, I read the code with a focus on identifying the *actions* the class
 
 总结来说，`ContainerNode.cc` 文件定义了 Blink 引擎中处理 DOM 树结构变化的核心逻辑，是实现动态网页功能的基础。它连接了 HTML 解析、JavaScript DOM 操作、CSS 样式更新以及辅助功能等多个方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/container_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -943,7 +945,4 @@ void ContainerNode::WillRemoveChild(Node& child) {
   }
 
   // |nodeWillBeRem
-"""
-
-
 ```

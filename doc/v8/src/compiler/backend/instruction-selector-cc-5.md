@@ -163,7 +163,7 @@ WebAssembly.instantiate(wasmBytes).then(wasmModule => {
 
 作为编译过程的第 6 部分 (假设总共 8 个主要阶段)，`v8/src/compiler/backend/instruction-selector.cc` 的主要功能是 **将编译器后端生成的中间表示 (特别是 SIMD 相关的操作) 转换为目标机器架构的具体指令**。它是连接高层抽象的 IR 和底层硬件指令的关键桥梁，专注于为 SIMD 操作选择最优的机器指令，以提高 JavaScript (特别是通过 WebAssembly) 的执行性能。在这个阶段，编译器已经进行了类型分析、优化等前期工作，现在需要将逻辑操作映射到实际的硬件指令序列。后续的阶段可能会包括指令调度、寄存器分配和最终的代码生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/instruction-selector.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/instruction-selector.cc以.tq结尾，那它是个v8 torque源代码，
@@ -171,9 +171,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
- MarkAsSimd128(node), VisitI16x8SubSatS(node);
+### 源代码
+```cpp
+MarkAsSimd128(node), VisitI16x8SubSatS(node);
     case IrOpcode::kI16x8Mul:
       return MarkAsSimd128(node), VisitI16x8Mul(node);
     case IrOpcode::kI16x8MinS:
@@ -880,7 +882,4 @@ void InstructionSelectorT<TurboshaftAdapter>::VisitNode(
           return VisitTruncateInt64ToInt32(node);
         case ChangeOp::Kind::kBitcast:
           switch (multi(change.from, change.to)) {
-"""
-
-
 ```

@@ -121,11 +121,13 @@ WebAssembly.instantiate(wasmCode).then(instance => {
 
 `code-reference.cc` 中的 `CodeReference` 提供了一个统一的接口来访问 V8 内部不同类型的已编译代码的元数据。这对于 V8 的内部管理、调试、优化以及与其他代码类型（如 WebAssembly）的集成至关重要。虽然 JavaScript 开发者不能直接操作 `CodeReference`，但它反映了 V8 如何在底层处理和执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-reference.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ DISPATCH(int, code_comments_size)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

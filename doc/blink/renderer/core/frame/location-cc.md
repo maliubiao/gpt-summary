@@ -227,14 +227,16 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`blink/renderer/core/frame/location.cc` 是 Blink 引擎中至关重要的一个文件，它负责实现 Web 开发者常用的 `window.location` API，处理 URL 的解析、修改和页面导航，并遵循 Web 安全策略。理解它的功能有助于我们更好地理解浏览器如何处理页面跳转和 URL 操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/location.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008, 2010 Apple Inc. All rights reserved.
  *
@@ -566,7 +568,4 @@ bool Location::IsAttached() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

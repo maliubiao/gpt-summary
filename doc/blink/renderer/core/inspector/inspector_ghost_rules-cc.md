@@ -133,14 +133,16 @@ Inspector 的 "Styles" 面板可能会在以下位置插入不可见的、空的
 
 `inspector_ghost_rules.cc` 是 Blink 引擎中一个专门为开发者工具 (Inspector) 服务的组件。 它通过动态地添加和移除临时的、不可见的 CSS 规则（"幽灵规则"）来改进 Inspector 中 CSS 嵌套规则的展示和操作体验。 开发者应该意识到这些规则是 Inspector 的内部实现，不应该在正常的开发流程中直接依赖或修改它们。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_ghost_rules.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ void InspectorGhostRules::DepopulateSheet(CSSStyleSheet& sheet) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

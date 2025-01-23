@@ -176,7 +176,7 @@ Now, let's connect these functionalities to the user's specific requests:
 
 作为构建绘制属性树的中间环节，**第 4 部分 `FragmentPaintPropertyTreeBuilder` 的主要职责是负责为单个渲染片段 (通常对应一个 HTML 元素或其一部分) 构建和更新各种关键的绘制属性节点，包括裁剪、透视变换和滚动相关的属性。** 它将布局阶段计算出的几何信息和 CSS 样式信息转换为绘制引擎可以理解的绘制属性树结构，为后续的绘制操作提供必要的信息。本部分关注的是更精细化的、基于单个元素或片段的属性设置，为构建完整的绘制属性树打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_property_tree_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 -overflow/#corner-clipping).
   return object.StyleRef().HasBorderRadius() && object.IsBox() &&
          NeedsOverflowClip(object) && object.ShouldClipOverflowAlongBothAxis();
@@ -974,7 +976,4 @@ void FragmentPaintPropertyTreeBuilder::SetNeedsPaintPropertyUpdateIfNeeded() {
 
   // If we reach FragmentPaintPropertyTreeBuilder for an object needing a
   // pending transform upda
-"""
-
-
 ```

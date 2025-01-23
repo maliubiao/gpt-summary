@@ -114,7 +114,7 @@ By following these steps, iteratively analyzing the code, and constantly making 
 
 作为单元测试的第 2 部分，这段代码主要集中在 **`WebMediaPlayerImpl` 的核心加载流程和预加载策略的测试**。它详细验证了不同的 `preload` 属性值对媒体加载行为的影响，以及在加载过程中和加载完成后，媒体播放器状态的正确性。这部分测试对于确保媒体播放器在不同预加载配置下的行为符合预期至关重要，也覆盖了后台挂起和恢复的基础功能。  可以说，这部分奠定了 `WebMediaPlayerImpl` 正确处理媒体加载和资源管理的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_media_player_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -122,9 +122,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
- = std::move(cdm);
+### 源代码
+```cpp
+= std::move(cdm);
     quit_closure.Run();
   }
 
@@ -963,7 +965,4 @@ TEST_F(WebMediaPlayerImplTest, AutoplayMuted) {
   metadata.video_decoder_config = TestVideoConfig::Normal();
   metadata.has_audio = true;
   metadata.a
-"""
-
-
 ```

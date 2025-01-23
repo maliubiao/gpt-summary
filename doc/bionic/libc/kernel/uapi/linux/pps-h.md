@@ -304,7 +304,7 @@ if (Process.platform === 'linux') {
 
 通过 Frida hook，你可以观察到应用程序与内核 PPS 子系统交互的详细过程，包括传递的参数和返回值，从而帮助理解和调试相关的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/pps.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -315,8 +315,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -396,7 +398,4 @@ struct pps_bind_args {
 #define PPS_FETCH _IOWR('p', 0xa4, struct pps_fdata *)
 #define PPS_KC_BIND _IOW('p', 0xa5, struct pps_bind_args *)
 #endif
-
-"""
-
 ```

@@ -125,11 +125,13 @@ JavaScript 运行时允许通过 C++ API 注册中断回调。这些回调可以
 
 `stack-guard.cc` 文件是 V8 引擎中一个至关重要的底层组件，它通过管理堆栈限制和处理各种中断，确保了 JavaScript 代码的安全和高效执行。虽然 JavaScript 开发者通常不需要直接了解这些细节，但理解其基本原理有助于更好地理解 JavaScript 运行时的行为，例如为什么会出现栈溢出错误，以及 V8 是如何进行垃圾回收和代码优化的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/stack-guard.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -526,7 +528,4 @@ Tagged<Object> StackGuard::HandleInterrupts(InterruptLevel level) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

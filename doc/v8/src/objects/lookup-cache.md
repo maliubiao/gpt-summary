@@ -98,11 +98,13 @@ console.timeEnd('thirdAccess');
 
 总而言之，`lookup-cache.cc` 中定义的 `DescriptorLookupCache` 是 V8 引擎为了优化 JavaScript 属性访问性能而设计的一个内部缓存机制。它对 JavaScript 开发者是透明的，但在幕后默默地提升着代码的执行效率。  `Clear()` 方法则提供了清空这个缓存的能力，通常在对象结构发生重大变化时被调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/lookup-cache.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -118,7 +120,4 @@ void DescriptorLookupCache::Clear() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

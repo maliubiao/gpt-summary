@@ -108,14 +108,16 @@ This detailed process covers understanding the code's structure, inferring its p
 
 总而言之，`RtcEventLogOutputSinkProxy` 是一个重要的中间层，它简化了 WebRTC 事件日志的写入过程，并为未来的扩展和不同的日志输出方式提供了灵活性。正确理解其功能和潜在的使用风险对于维护和调试 WebRTC 相关代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_event_log_output_sink_proxy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -151,7 +153,4 @@ bool RtcEventLogOutputSinkProxy::Write(std::string_view output) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

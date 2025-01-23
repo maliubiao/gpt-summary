@@ -192,7 +192,7 @@ static const uint8_t length_error[] = {
 
 这些测试覆盖了 Wasm 模块解码过程中可能出现的各种情况，包括合法的和非法的模块结构，旨在确保 V8 的解码器能够健壮且正确地处理各种 WebAssembly 模块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/wasm/module-decoder-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/wasm/module-decoder-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -200,8 +200,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (1), STRUCT_FIELD(kI64Code, true))),
       SECTION(Global, ENTRY_COUNT(1),  // --
               kRefCode, 1, 0,          // type, mutability
@@ -972,8 +974,5 @@ TEST_F(WasmModuleVerifyTest, Regression_735887) {
       SECTION(Table, ENTRY_COUNT(1), kFuncRefCode, kNoMaximum, 1),
       // elements ------------------------------------------------------------
       SECTION(Element,
-              ENTRY_COUNT(1),  // 
-"""
-
-
+              ENTRY_COUNT(1),  //
 ```

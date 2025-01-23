@@ -156,7 +156,7 @@ fetch('https://mail.example.org/resource2');
 
 这部分测试旨在确保 `QuicSessionPool` 在更复杂的实际网络环境中能够稳定可靠地工作，并且与其他网络组件能够良好地协同。它构建在之前的测试基础上，涵盖了更多边界情况和集成测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第19部分，共20部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 riority_header=*/true);
   client_maker_.Reset();
   server_maker_.Reset();
@@ -958,7 +960,4 @@ TEST_P(QuicSessionPoolTest, ReadErrorClosesConnection) {
   Initialize();
   ProofVerifyDetailsChromium verify_details = DefaultProofVerifyDetails();
   crypto_client_stream_factory_.AddProofVerifyDetail
-"""
-
-
 ```

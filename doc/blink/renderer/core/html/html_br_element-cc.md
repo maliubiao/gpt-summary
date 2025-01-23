@@ -143,14 +143,16 @@ By following these steps, I can systematically analyze the C++ code and produce 
 
 总而言之，`html_br_element.cc` 文件是 Blink 引擎中处理 `<br>` 元素的核心，它负责创建和管理 `<br>` 元素的表示，并处理一些历史遗留的属性，同时与 CSS 样式系统集成，最终影响页面的布局渲染。开发者应该更多地使用 CSS 来控制布局和样式，而不是依赖于像 `clear` 这样的 HTML presentation attribute。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_br_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -222,7 +224,4 @@ LayoutObject* HTMLBRElement::CreateLayoutObject(const ComputedStyle& style) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

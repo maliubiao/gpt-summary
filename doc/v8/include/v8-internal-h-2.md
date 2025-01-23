@@ -169,7 +169,7 @@ This structured approach, starting with high-level observations and progressivel
 
 总而言之，这段代码是 V8 引擎内部基础设施的关键组成部分，为高效地管理和操作 JavaScript 对象和数据提供了基础。它体现了 V8 在性能和灵活性方面的设计考虑，例如通过 `WrappedIterator` 统一迭代接口，并通过 `ValueHelper` 优化句柄的表示和访问。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-internal.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-internal.h以.tq结尾，那它是个v8 torque源代码，
@@ -177,8 +177,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ry =
       typename std::iterator_traits<Iterator>::iterator_category;
 
@@ -444,8 +446,4 @@ void PrintPropertyCallbackInfo(void* property_callback_info);
 }  // namespace v8
 
 #endif  // INCLUDE_V8_INTERNAL_H_
-
-"""
-
-
 ```

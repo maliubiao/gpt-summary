@@ -168,15 +168,17 @@ Torque LS 的目标是提升开发使用 Torque 编写 V8 代码的体验，例�
 
 `v8/src/torque/ls/message-handler.h` 是 Torque 语言服务器的关键组成部分，它定义了处理消息和反馈编译结果的机制。 这对于提高 Torque 开发效率和尽早发现潜在错误至关重要，最终也间接地提升了 V8 和 JavaScript 的性能和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/ls/message-handler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/ls/message-handler.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ V8_EXPORT_PRIVATE void CompilationFinished(TorqueCompilerResult result,
 }  // namespace v8
 
 #endif  // V8_TORQUE_LS_MESSAGE_HANDLER_H_
-
-"""
-
 ```

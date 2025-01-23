@@ -64,7 +64,7 @@ Now, I'll structure the summary by grouping related functionalities and highligh
 
 总而言之，这段代码是 Meson 构建系统解释器的核心组成部分，负责理解和执行构建描述文件中的关键指令，从而完成项目的配置和依赖管理。它连接了高级的构建描述语言和底层的构建工具，使得开发者可以用简洁的方式表达复杂的构建逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -73,8 +73,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 not v:
                 FeatureNew.single_use('empty variable value in declare_dependency', '1.4.0', self.subproject, location=node)
             try:
@@ -698,7 +700,4 @@ not v:
             # vs backend version we need. But after setting default_options in case
             # the project sets vs backend by default.
             backend = self.coredata.get_option(OptionKey(
-"""
-
-
 ```

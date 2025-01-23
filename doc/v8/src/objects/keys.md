@@ -165,11 +165,13 @@ By following this systematic approach, we can effectively analyze the C++ code a
 
 总而言之，`v8/src/objects/keys.cc` 文件是 V8 引擎中实现 JavaScript 对象键操作的核心部分，它负责高效、准确地收集和处理各种场景下的对象键，并与 JavaScript 的相关 API 和语言特性紧密关联。理解这个文件的工作原理有助于深入理解 JavaScript 对象的属性访问机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/keys.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1567,7 +1569,4 @@ Maybe<bool> KeyAccumulator::CollectOwnJSProxyTargetKeys(
 #undef RETURN_NOTHING_IF_NOT_SUCCESSFUL
 #undef RETURN_FAILURE_IF_NOT_SUCCESSFUL
 }  // namespace v8::internal
-
-"""
-
 ```

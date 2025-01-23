@@ -509,15 +509,17 @@ void AudioRendererMixerInput::OnDeviceSwitchReady(
 
 **调试线索**:  如果在 `AudioRendererMixerInput` 的代码中设置断点，并按照上述步骤操作，就可以观察到代码的执行流程。例如，可以在 `ProvideInput()` 中设置断点，查看音频数据的填充过程；或者在 `SwitchOutputDevice()` 中设置断点，观察设备切换的逻辑。 观察 `DCHECK` 触发的位置可以帮助定位编程错误，例如方法调用顺序错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media/audio/audio_renderer_mixer_input.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -877,7 +879,4 @@ void AudioRendererMixerInput::OnDeviceSwitchReady(
 }
 
 }  // namespace blink
-
-"""
-
 ```

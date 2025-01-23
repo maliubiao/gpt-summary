@@ -136,7 +136,7 @@ By following this structured approach, considering the context, and iteratively 
 
 虽然 `hp.c` 文件本身非常简单，不涉及复杂的逆向技术或底层知识，但它在 Frida 的构建和测试流程中扮演着一个基础性的角色。它的存在是为了验证构建系统的基本功能，确保 Frida 的开发基础设施能够正常工作。开发者在构建或调试 Frida 的过程中可能会遇到这个文件作为调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/native/10 native subproject/subprojects/buildtool/subprojects/hostp/hp.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,12 +144,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

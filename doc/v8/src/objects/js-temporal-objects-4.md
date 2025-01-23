@@ -145,13 +145,15 @@ console.log(roundedDuration); // PT2H (引擎内部使用 JSTemporalDuration::Ro
 
 总而言之，这个 C++ 文件是 V8 引擎中 `Temporal` API 的核心实现部分，它提供了处理日期、时间和持续时间的基本构建块，确保了 JavaScript 中 `Temporal` 对象的正确行为和计算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共13部分，请归纳一下它的功能
+```
 
-"""
- ? 366 : 365;
+### 源代码
+```
+? 366 : 365;
 }
 
 bool IsValidTime(Isolate* isolate, const TimeRecord& time) {
@@ -1627,7 +1629,4 @@ MaybeHandle<JSTemporalDuration> JSTemporalDuration::Round(
       UnbalanceDurationRelative(isolate,
                                 {Object::NumberValue(duration->years()),
                                  Object::NumberValue(duration-
-"""
-
-
 ```

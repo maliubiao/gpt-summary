@@ -158,7 +158,7 @@ This simple C code, while seemingly trivial, serves as a foundational building b
 
 总而言之，这个 `libfile.c` 文件虽然简单，但在 Frida 的上下文中扮演着重要的角色，它是一个用于演示、测试和学习动态 instrumentation 技术的良好示例。它的简洁性使其成为理解 Frida 工作原理和调试 Frida 脚本的理想起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/178 bothlibraries/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "mylib.h"
 
 DO_EXPORT int retval = 42;
@@ -175,7 +177,4 @@ DO_EXPORT int retval = 42;
 DO_EXPORT int func(void) {
     return retval;
 }
-
-"""
-
 ```

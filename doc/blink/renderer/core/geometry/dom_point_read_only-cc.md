@@ -169,15 +169,17 @@ This detailed thought process allows for a comprehensive analysis of the `dom_po
 
 总而言之，`dom_point_read_only.cc` 文件在 Blink 渲染引擎中扮演着表示和操作不可变点的核心角色，它与 JavaScript 通过 Web API 紧密相连，并间接影响着 HTML 元素的布局和 CSS 变换效果。理解这个文件的功能有助于理解浏览器如何处理和渲染网页上的几何信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/geometry/dom_point_read_only.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -247,7 +249,4 @@ DOMPointReadOnly::DOMPointReadOnly(double x, double y, double z, double w)
     : x_(x), y_(y), z_(z), w_(w) {}
 
 }  // namespace blink
-
-"""
-
 ```

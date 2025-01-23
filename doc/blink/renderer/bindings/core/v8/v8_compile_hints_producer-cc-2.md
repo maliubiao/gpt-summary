@@ -150,7 +150,7 @@ By following this structured approach, breaking down the code into smaller piece
 
 总而言之，这段代码是 Chromium Blink 引擎中用于生成和记录 V8 JavaScript 引擎编译提示的关键组成部分，它负责将原始数据转换成 V8 可以利用的提示信息，并在过程中考虑了用户隐私保护。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/v8_compile_hints_producer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 raw_data[1496])
       .SetData749(static_cast<int64_t>(raw_data[1499]) << 32 | raw_data[1498])
       .SetData750(static_cast<int64_t>(raw_data[1501]) << 32 | raw_data[1500])
@@ -479,8 +481,4 @@ void V8CrowdsourcedCompileHintsProducer::AddNoise(unsigned* data) {
 }  // namespace blink::v8_compile_hints
 
 #endif  // BUILDFLAG(PRODUCE_V8_COMPILE_HINTS)
-
-"""
-
-
 ```

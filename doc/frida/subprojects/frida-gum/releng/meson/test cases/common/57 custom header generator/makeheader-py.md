@@ -170,7 +170,7 @@ python3 makeheader.py input.txt my_header.h
 
 总之，`makeheader.py` 作为一个简单的辅助脚本，在 Frida 的构建流程中扮演着将配置信息转化为 C/C++ 头文件的角色，方便其他 Frida 组件使用这些信息。理解它的功能和潜在的错误有助于调试 Frida 的构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/57 custom header generator/makeheader.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # NOTE: this file does not have the executable bit set. This tests that
@@ -192,7 +194,4 @@ with open(sys.argv[1]) as f:
     output = template % (f.readline().strip(), )
 with open(sys.argv[2], 'w') as f:
     f.write(output)
-
-"""
-
 ```

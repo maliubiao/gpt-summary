@@ -199,7 +199,7 @@ Initially, I might have focused solely on the C code. However, recognizing the "
 
 总而言之，`generated-main.c` 是一个用于测试特定功能的简单程序，它本身并不直接是用户操作的目标，而是作为测试或调试过程中的一个参考点或被分析的对象。用户通过开发、调试或逆向分析涉及 GLib 资源的应用程序，或者研究 Frida 的实现机制，都有可能接触到或深入理解这个文件的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/7 gnome/resources/generated-main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 #include<gio/gio.h>
@@ -235,7 +237,4 @@ int main(int argc, char **argv) {
     g_bytes_unref(data);
     return 0;
 }
-
-"""
-
 ```

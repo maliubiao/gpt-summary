@@ -161,7 +161,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 总而言之，这部分测试着重验证了 `PaintPropertyTreeBuilder` 在处理各种复杂的 CSS 属性组合以及特定场景（例如 SVG 和 iframe）时的正确性和健壮性，确保渲染引擎能够准确地构建用于高效绘制的属性树。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_property_tree_builder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d_paint_state.Effect());
 }
 
@@ -1001,7 +1003,4 @@ TEST_P(PaintPropertyTreeBuilderTest, ClearClipPathEffectNode) {
     ASSERT_TRUE(rect);
     EXPECT_FALSE(rect->FirstFragment().PaintProperties()->MaskClip());
     EXPECT_FALSE(rect->FirstFragment().PaintProperti
-"""
-
-
 ```

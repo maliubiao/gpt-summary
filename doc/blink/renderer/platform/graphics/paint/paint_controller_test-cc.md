@@ -259,15 +259,17 @@ TEST_P(PaintControllerTest, UpdateBasic) {
 
 这个源代码文件的主要功能是 **作为 Chromium Blink 引擎中 `PaintController` 组件的单元测试集**。它通过模拟各种绘制场景和状态变化，验证了 `PaintController` 的核心功能，包括绘制操作的缓存和重用、失效机制、以及处理绘制指令顺序的能力。这些测试对于确保渲染引擎的正确性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_controller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -976,7 +978,4 @@ TEST_P(PaintControllerTest, UpdateSwapOrderWithChildrenAndInvalidation) {
     EXPECT_EQ(kCached, DrawRect(context, container2, kBackgroundType,
                                 gfx::Rect(100, 200, 100, 100)));
     EXPECT_EQ(kCached, DrawRect(context, content2, kBackgroundTyp
-"""
-
-
 ```

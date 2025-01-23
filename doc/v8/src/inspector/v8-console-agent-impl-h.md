@@ -216,15 +216,17 @@ DevTools 前端会根据这些数据在控制台面板中显示相应的消息�
 
 总而言之，`V8ConsoleAgentImpl` 是 V8 引擎中一个至关重要的组件，它使得 JavaScript 代码中的控制台输出能够被开发者工具捕获和呈现，从而为 JavaScript 调试提供了强大的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-console-agent-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-console-agent-impl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -273,7 +275,4 @@ class V8ConsoleAgentImpl : public protocol::Console::Backend {
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_V8_CONSOLE_AGENT_IMPL_H_
-
-"""
-
 ```

@@ -167,7 +167,7 @@ func main() {
 
 总而言之，`indexbyte_native.go` 提供的是针对特定架构优化的字节查找底层实现，使用者通常通过 `bytes` 或 `strings` 包中的相应函数来间接使用，需要注意区分字节和字符，并妥善处理未找到的情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/bytealg/indexbyte_native.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -190,9 +192,4 @@ func IndexByte(b []byte, c byte) int
 
 //go:noescape
 func IndexByteString(s string, c byte) int
-
-"""
-
-
-
 ```

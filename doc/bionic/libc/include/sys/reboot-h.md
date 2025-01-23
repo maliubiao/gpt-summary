@@ -234,7 +234,7 @@ sys.stdin.read()
 
 通过这个 Frida Hook 示例，你可以观察到 Android Framework 是如何调用底层的 `reboot` 函数来执行重启操作的。 你可以根据需要修改 `package_name` 来 hook 不同的进程。 请注意，hook 系统进程可能需要 root 权限。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/reboot.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -245,8 +245,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -307,7 +309,4 @@ __BEGIN_DECLS
 int reboot(int __op);
 
 __END_DECLS
-
-"""
-
 ```

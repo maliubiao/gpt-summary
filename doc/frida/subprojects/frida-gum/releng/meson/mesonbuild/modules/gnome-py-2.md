@@ -54,7 +54,7 @@ The user wants a summary of the functionality of the provided Python code, which
 
 总而言之，这段代码是 Frida 构建系统中用于自动化生成文档的关键部分，它利用了 GNOME 生态系统中成熟的工具链来维护和发布高质量的文档。这对于 Frida 这样的开发者工具来说至关重要，高质量的文档能够帮助用户理解和使用 Frida 的各种功能，包括其与逆向工程相关的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -63,9 +63,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-       l_data = build.Data([m_file], m_install_dir, m_install_dir,
+### 源代码
+```python
+l_data = build.Data([m_file], m_install_dir, m_install_dir,
                                         mesonlib.FileMode(), state.subproject, install_tag='doc')
                 targets.append(l_data)
 
@@ -791,7 +793,4 @@ Prompt:
         return ModuleReturnValue(rv, rv)
 
     def _extract_vapi_packages(self, state: 'ModuleState', packages: T.List[T.Union[InternalDependen
-"""
-
-
 ```

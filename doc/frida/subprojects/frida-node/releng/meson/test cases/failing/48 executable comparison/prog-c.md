@@ -141,7 +141,7 @@ int main(int argc, char **argv) { return 0; }
 
 总而言之，尽管 `prog.c` 本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于检测在 Frida 的开发和使用过程中可能引入的与可执行文件生成相关的意外变化。通过比较这个简单程序的编译结果，可以有效地验证 Frida 的操作是否对程序的二进制表示产生了不期望的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/48 executable comparison/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,10 +149,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) { return 0; }
-
-"""
-
 ```

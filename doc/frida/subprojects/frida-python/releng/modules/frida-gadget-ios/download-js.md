@@ -125,7 +125,7 @@ By following this structured thought process, we can comprehensively analyze the
 
 总而言之，`download.js` 负责 Frida 工具链中关键的依赖项——Frida Gadget 的获取和管理，它是连接 Frida 框架和目标 iOS 应用的桥梁，对于进行 iOS 应用程序的动态逆向分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/modules/frida-gadget-ios/download.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const fs = require('fs');
 const gadget = require('.');
 const https = require('https');
@@ -282,7 +284,4 @@ function onError(error) {
   console.error(error.message);
   process.exitCode = 1;
 }
-
-"""
-
 ```

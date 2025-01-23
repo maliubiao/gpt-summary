@@ -55,12 +55,14 @@ Simplified Lowering 的目标是将这些高级的 JavaScript 操作分解成更
 
 **总结来说，这部分代码是 V8 引擎中将高级 JavaScript 数值运算和类型转换操作转换为底层机器操作的关键组成部分，它直接影响着 JavaScript 代码的执行效率。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 broker_;
   Zone* zone_;                      // Temporary zone.
   // Map from node to its uses that might need to be revisited.
@@ -1006,8 +1008,4 @@ void SimplifiedLowering::ChangeOp(Node* node, const Operator* new_op) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

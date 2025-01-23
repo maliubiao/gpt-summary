@@ -119,7 +119,7 @@ By following this detailed thinking process, breaking down the problem, connecti
 
 这个测试用例旨在验证 Frida 在处理函数依赖和控制函数行为方面的能力。通过控制 `func_c` 的返回值，可以验证 Frida 能否正确地影响 `func_b` 的执行路径（是正常返回还是异常退出）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/75 custom subproject dir/custom_subproject_dir/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 char func_c(void);
 
@@ -149,7 +151,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

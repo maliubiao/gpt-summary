@@ -108,15 +108,17 @@ func main() {
 
 总而言之，`issue8745.go` 这个测试用例专注于验证Go编译器在处理字符串索引的类型推断和错误报告方面的正确性，确保错误信息能够清晰地指出问题的根源是 `byte` 类型与预期类型不符。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue8745.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -130,9 +132,4 @@ package p
 func f(s string) {
 	var _ float64 = s[2] // ERROR "cannot use.*type byte.*as type float64|cannot use .* as float64 value"
 }
-
-"""
-
-
-
 ```

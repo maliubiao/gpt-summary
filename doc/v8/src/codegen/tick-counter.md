@@ -102,11 +102,13 @@ worker.onmessage = function(event) {
 
 虽然 JavaScript 代码本身不直接操作 `TickCounter`，但 `TickCounter` 是 V8 引擎内部用于管理与不同执行上下文（例如 Worker）相关的内存堆的关键组件。 它的存在使得 V8 能够更好地进行资源管理、性能监控和保证隔离性，从而支撑 JavaScript 代码的可靠执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/tick-counter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -130,7 +132,4 @@ void TickCounter::DetachLocalHeap() { local_heap_ = nullptr; }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

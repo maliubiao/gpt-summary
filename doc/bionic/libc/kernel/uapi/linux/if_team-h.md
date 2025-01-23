@@ -232,7 +232,7 @@ except KeyboardInterrupt:
 
 这个 Frida 示例提供了一个基本的框架。你可以根据需要修改脚本，例如解析 Netlink 消息的更多细节，或者 hook 其他相关的系统调用或库函数。  要进行更深入的调试，你需要了解 Generic Netlink 消息的详细结构，并根据 `if_team.h` 中定义的属性枚举来解析消息内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_team.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -243,8 +243,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -309,7 +311,4 @@ enum {
   TEAM_CMD_MAX = (__TEAM_CMD_MAX - 1)
 };
 #endif
-
-"""
-
 ```

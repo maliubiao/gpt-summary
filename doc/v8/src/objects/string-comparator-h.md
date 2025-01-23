@@ -139,15 +139,17 @@ console.log(str4 == str5);  // 输出: true  (值相等)
 
 总而言之，`v8/src/objects/string-comparator.h` 定义了 V8 内部用于高效比较字符串相等性的核心组件，它直接支撑着 JavaScript 中字符串比较操作的实现。理解其功能有助于深入了解 V8 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string-comparator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/string-comparator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ class StringComparator {
 }  // namespace v8
 
 #endif  // V8_OBJECTS_STRING_COMPARATOR_H_
-
-"""
-
 ```

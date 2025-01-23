@@ -145,7 +145,7 @@ m.Return(compare_result);
 
 总而言之，提供的代码片段是 `v8/test/unittests/compiler/arm64/turboshaft-instruction-selector-arm64-unittest.cc` 文件的第 6 部分，专注于测试 Turboshaft 编译器在 ARM64 架构上对 **比较指令、利用 Flag-setting 指令优化比较零的操作、逻辑运算与 NOT 运算的组合以及位域提取指令** 的指令选择过程的正确性。它通过构建各种 IR 代码片段，并断言指令选择器能够生成期望的 ARM64 汇编指令，以此来验证编译器的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/arm64/turboshaft-instruction-selector-arm64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/arm64/turboshaft-instruction-selector-arm64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -153,8 +153,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mmuted_cond;
 };
 
@@ -974,7 +976,4 @@ TEST_F(TurboshaftInstructionSelectorTest,
 
 TEST_F(TurboshaftInstructionSelectorTest,
        Word64AndWithImmediateWithWord64ShiftRig
-"""
-
-
 ```

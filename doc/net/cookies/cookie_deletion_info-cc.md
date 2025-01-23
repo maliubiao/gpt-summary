@@ -165,15 +165,17 @@ document.cookie = "myCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
 总而言之，`net/cookies/cookie_deletion_info.cc` 文件定义了一个关键的数据结构，用于在 Chromium 中描述和执行 Cookie 删除操作。虽然它本身是 C++ 代码，但它与 JavaScript 的 Cookie 操作以及用户的浏览器设置行为密切相关。理解这个类的功能对于调试 Cookie 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_deletion_info.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -320,7 +322,4 @@ bool CookieDeletionInfo::Matches(const CanonicalCookie& cookie,
 }
 
 }  // namespace net
-
-"""
-
 ```

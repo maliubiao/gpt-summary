@@ -146,7 +146,7 @@ By following these steps, the comprehensive summary of the provided code can be 
 
 第 6 部分的 `v8/src/compiler/backend/arm/instruction-selector-arm.cc` 源代码主要负责 **为 ARM 架构上的 WebAssembly SIMD 操作选择和生成机器指令**。它涵盖了各种 SIMD 操作的指令选择逻辑，并特别处理了 shuffle 操作的优化。 代码使用了模板来实现对不同编译器阶段的适配，并标记了尚未实现的 SIMD 操作。 这部分代码是 V8 引擎支持高性能 WebAssembly 执行的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/instruction-selector-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm/instruction-selector-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , g.UseImmediate(val[1]),
          g.UseImmediate(val[2]), g.UseImmediate(val[3]));
   }
@@ -948,7 +950,4 @@ void InstructionSelectorT<Adapter>::VisitTruncateFloat32ToUint32(node_t node) {
   if constexpr (Adapter::IsTurboshaft) {
     using namespace turboshaft;  // NOLINT(build/namespaces)
     const Operation& op =
-"""
-
-
 ```

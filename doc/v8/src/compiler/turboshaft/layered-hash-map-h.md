@@ -187,15 +187,17 @@ Let's assume the following sequence of operations on a `LayeredHashMap<std::stri
 
 In summary, `v8/src/compiler/turboshaft/layered-hash-map.h` defines a specialized hash map in V8's Turboshaft compiler that efficiently manages data in layers, enabling quick removal of entire groups of inserted items. It's a C++ header file and its functionality is conceptually related to the idea of scopes in JavaScript, but it's not directly a JavaScript feature. Understanding its limitations regarding duplicate keys and updates is crucial to avoid common programming errors when using this data structure.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/layered-hash-map.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/layered-hash-map.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -392,7 +394,4 @@ void LayeredHashMap<Key, Value>::ResizeIfNeeded() {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_LAYERED_HASH_MAP_H_
-
-"""
-
 ```

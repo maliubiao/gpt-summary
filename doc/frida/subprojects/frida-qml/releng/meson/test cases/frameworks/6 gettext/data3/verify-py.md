@@ -125,7 +125,7 @@ By following these steps, we can systematically analyze the script and address a
 
 总而言之，`verify.py` 脚本是一个简单的测试工具，用于验证文件内容是否符合预期，这在 Frida 动态插桩的上下文中，是验证 instrumentation 效果的关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/6 gettext/data3/verify.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -148,7 +150,4 @@ check_str = sys.argv[2]
 assert os.path.isfile(fname)
 with open(fname, 'r', encoding='utf-8') as f:
     assert check_str in f.read()
-
-"""
-
 ```

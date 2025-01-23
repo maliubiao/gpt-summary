@@ -215,7 +215,7 @@ By following these steps, focusing on understanding the core purpose and mechani
 
 `v8/src/flags/flag-definitions.h` 的主要功能是作为 V8 引擎配置的核心入口点，它使用宏定义的方式声明了所有可用的命令行标志，并描述了这些标志的功能、默认值以及它们之间的隐含关系。这个文件为 V8 提供了强大的可配置性，允许开发者和用户根据不同的需求调整引擎的行为，例如启用实验性特性、控制优化策略、进行调试等。  它通过模板化的宏定义，使得相同的标志定义可以服务于不同的编译阶段和目的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/flags/flag-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/flags/flag-definitions.h以.tq结尾，那它是个v8 torque源代码，
@@ -223,8 +223,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -979,7 +981,4 @@ DEFINE_BOOL(
     "Disable all optimizing compilers while leaving baseline compilers enabled")
 // Disable all optimizing JavaScript compilers.
 // JavaScript code can execute either in Ign
-"""
-
-
 ```

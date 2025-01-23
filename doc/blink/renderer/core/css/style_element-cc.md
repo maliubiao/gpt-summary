@@ -206,15 +206,17 @@ During the process, I might realize I've missed a key aspect. For instance, the 
 
 总而言之，`blink/renderer/core/css/style_element.cc` 文件中的 `StyleElement` 类是 Blink 渲染引擎处理内联 CSS 样式的核心组件，它连接了 HTML 结构、CSS 规则和 JavaScript 的动态操作，确保样式能够正确地被解析、管理和应用到网页上。 理解其功能对于调试 CSS 相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007 Rob Buis
  * Copyright (C) 2008 Apple, Inc. All rights reserved.
@@ -479,7 +481,4 @@ void StyleElement::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

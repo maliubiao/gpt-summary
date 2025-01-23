@@ -298,7 +298,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 通过以上分析，我们可以看到 `PointerData.cpp` 在 Android 内存管理和调试中扮演着至关重要的角色，它为开发者提供了强大的工具来识别和解决内存相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/PointerData.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -309,8 +309,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -975,7 +977,4 @@ void PointerData::IteratePointers(std::function<void(uintptr_t pointer)> fn) {
     fn(DemanglePointer(entry.first));
   }
 }
-
-"""
-
 ```

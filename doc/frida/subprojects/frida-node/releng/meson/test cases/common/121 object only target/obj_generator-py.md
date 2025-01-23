@@ -142,7 +142,7 @@ By following this structured thought process, addressing each part of the reques
 
 总而言之，`obj_generator.py` 是一个用于模拟目标文件生成的辅助脚本，它简化了在测试环境中对编译过程的控制，而无需实际进行复杂的编译操作。它的存在是 Frida 项目为了确保其构建和测试流程的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/121 object only target/obj_generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # Mimic a binary that generates an object file (e.g. windres).
@@ -172,7 +174,4 @@ if __name__ == '__main__':
     else:
         cmd = [compiler, '-c', ifile, '-o', ofile]
     sys.exit(subprocess.call(cmd))
-
-"""
-
 ```

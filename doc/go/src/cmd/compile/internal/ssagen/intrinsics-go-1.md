@@ -152,7 +152,7 @@ func main() {
 
 作为 `intrinsics.go` 文件的第二部分，这段代码主要负责**注册和查找特定架构的内联函数实现**。它定义了如何将 Go 语言的函数与底层的、优化的机器指令序列关联起来，以便编译器在生成目标代码时进行替换。这部分代码的核心是 `addF`、`findIntrinsic` 和 `IsIntrinsicCall` 这几个函数，它们共同完成了内联函数的注册、查找和判断工作，是 Go 编译器进行性能优化的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssagen/intrinsics.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -160,8 +160,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // ctrlEmpty or ctrlDeleted, so no need to truncate.
 
 			return ret
@@ -245,10 +247,4 @@ func IsIntrinsicCall(n *ir.CallExpr) bool {
 	}
 	return findIntrinsic(name.Sym()) != nil
 }
-
-"""
-
-
-
-
 ```

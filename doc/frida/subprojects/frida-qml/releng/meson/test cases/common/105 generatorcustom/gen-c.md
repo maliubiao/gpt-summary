@@ -192,7 +192,7 @@ const char * MESSAGE = "Hello, Frida!";
 
 因此，调试线索可能是：Frida的测试流程 ->  Meson构建系统 ->  调用 `gen.c` 生成头文件 ->  测试代码使用生成的头文件 -> 测试失败 -> 开发者手动运行 `gen.c` 进行验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/105 generatorcustom/gen.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* SPDX-License-Identifier: Apache-2.0 */
 /* Copyright © 2023 Intel Corporation */
 
@@ -245,7 +247,4 @@ int main(int argc, const char ** argv) {
 
     return 0;
 }
-
-"""
-
 ```

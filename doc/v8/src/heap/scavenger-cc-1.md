@@ -160,7 +160,7 @@ This iterative process of scanning, identifying key components, analyzing method
 
 总之，`v8/src/heap/scavenger.cc` 的代码片段展示了 V8 垃圾回收器中新生代回收的核心逻辑，它确保了 JavaScript 程序的内存能够被有效地管理和回收，从而避免内存泄漏等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/scavenger.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/scavenger.cc以.tq结尾，那它是个v8 torque源代码，
@@ -168,9 +168,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- ThreadIsolation::LookupWritableJitPage(
+### 源代码
+```cpp
+ThreadIsolation::LookupWritableJitPage(
         page->area_start(), page->area_size());
     for (auto& slot_update : slot_updates) {
       Tagged<HeapObject> new_target = std::get<0>(slot_update);
@@ -392,8 +394,4 @@ ScavengeVisitor::ScavengeVisitor(Scavenger* scavenger)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

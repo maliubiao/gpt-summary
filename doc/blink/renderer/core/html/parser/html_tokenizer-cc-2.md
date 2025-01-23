@@ -101,15 +101,17 @@ Essentially, I performed a code review, made inferences based on common parsing 
 
 `html_tokenizer.cc` 中的代码片段展示了 HTML 词法分析器的核心逻辑，它通过状态机驱动，逐字符读取 HTML 输入流，识别并生成各种 HTML Token，包括标签、文本内容等，并能正确处理 `<script>` 和 `<style>` 等特殊内容。它是浏览器解析 HTML 文档的第一步，为后续的语法分析和 DOM 树构建奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_tokenizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
       default:
         NOTREACHED();
@@ -217,8 +219,4 @@ inline void HTMLTokenizer::ParseError() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

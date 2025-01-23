@@ -190,7 +190,7 @@ TEST_F(CacheStorageTest, AddAllAbortOne) {
 
 `blink/renderer/modules/cache_storage/cache_test.cc` 的主要功能是为 Blink 渲染引擎的 `blink::Cache` 类提供全面的单元测试。 它通过模拟各种场景，包括成功情况和错误情况，验证了 `Cache` 类的各种方法（如 `match`, `matchAll`, `keys`, `add`, `put`, `delete` 等）的参数传递、返回值以及与底层存储交互的正确性。 这些测试对于确保 Cache API 的稳定性和可靠性至关重要，直接影响了基于 Service Worker 的 Web 应用的缓存机制的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/cache_storage/cache_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -198,8 +198,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1005,7 +1007,4 @@ TEST_F(CacheStorageTest, Add) {
 // to add() addAll() fails.
 TEST_F(CacheStorageTest, AddAllAbortOne) {
   ScriptState::Scope scope(GetScriptSta
-"""
-
-
 ```

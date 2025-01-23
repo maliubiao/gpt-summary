@@ -189,7 +189,7 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`frida/subprojects/frida-gum/bindings/gumjs/gumquickcore.c` 文件的第 5 部分是 Frida 中非常核心的一部分，它构建了 Frida 的 JavaScript 运行时环境与 Native 代码交互的关键桥梁。它提供了处理 Native 函数回调、访问上下文信息、操作 CPU 状态、实现匹配模式、处理 Source Map、支持 Web Worker、调度回调、处理异常和消息以及支持 FFI 的基础设施。这些功能共同构成了 Frida 强大的动态插桩能力，使其成为逆向工程、安全分析和动态调试的强大工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickcore.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,8 +198,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 allback_finalize (c);
 }
 
@@ -1559,7 +1561,4 @@ gum_quick_core_teardown_atoms (GumQuickCore * self)
 
   GUM_TEARDOWN_ATOM (abi);
   GUM_TEARDOWN_ATOM
-"""
-
-
 ```

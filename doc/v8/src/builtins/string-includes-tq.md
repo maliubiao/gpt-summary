@@ -192,14 +192,16 @@ console.log(str.includes(/o/));    // 抛出 TypeError: First argument to String
 
 这段 Torque 代码清晰地展示了 `String.prototype.includes()` 方法在 V8 引擎中的具体实现逻辑，包括参数校验、类型转换和核心的字符串搜索步骤。理解这些底层的实现细节有助于开发者更好地理解和使用 JavaScript 的字符串方法，并避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/string-includes.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ transitioning javascript builtin StringPrototypeIncludes(
   return index != -1 ? True : False;
 }
 }
-
-"""
-
 ```

@@ -100,11 +100,13 @@ try {
 
 `runtime-temporal.cc` 中的 `Runtime_IsInvalidTemporalCalendarField` 函数是 V8 引擎为了支持 JavaScript 的 Temporal API 而实现的一个底层机制。它负责在运行时验证给定的字符串是否是无效的日历字段。当你在 JavaScript 中使用 Temporal API 并涉及到日历字段时，V8 引擎可能会调用这个 C++ 函数来进行必要的校验，确保操作的正确性并提供相应的错误信息。  这个函数是连接 JavaScript 代码和 V8 引擎内部日期时间处理逻辑的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-temporal.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -126,7 +128,4 @@ RUNTIME_FUNCTION(Runtime_IsInvalidTemporalCalendarField) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

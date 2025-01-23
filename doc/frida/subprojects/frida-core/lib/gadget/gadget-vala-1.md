@@ -142,7 +142,7 @@ Hello, Frida!
 ### 总结
 
 `gadget.vala` 是 Frida Gadget 的核心模块，负责脚本加载、RPC 通信、进程管理、认证授权等功能。通过 LLDB 调试工具，可以深入分析 Gadget 的运行机制，排查用户常见的使用错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/gadget/gadget.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 gress = true;
 
 			try {
@@ -1009,8 +1011,4 @@ gress = true;
 		});
 	}
 }
-
-"""
-
-
 ```

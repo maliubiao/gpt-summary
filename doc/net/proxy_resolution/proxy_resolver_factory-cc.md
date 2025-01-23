@@ -127,15 +127,17 @@ Here's a breakdown of the thinking process used to analyze the provided C++ code
 
 理解 `ProxyResolverFactory` 的作用和 `expects_pac_bytes` 参数对于调试与 PAC 文件相关的代理问题至关重要。通过查看网络日志和使用开发者工具，可以追踪用户操作如何触发代理解析流程，并最终到达 `ProxyResolverFactory` 的创建和使用环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/proxy_resolver_factory.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -154,7 +156,4 @@ ProxyResolverFactory::ProxyResolverFactory(bool expects_pac_bytes)
 ProxyResolverFactory::~ProxyResolverFactory() = default;
 
 }  // namespace net
-
-"""
-
 ```

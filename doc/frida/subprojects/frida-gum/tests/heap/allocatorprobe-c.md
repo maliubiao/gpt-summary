@@ -125,7 +125,7 @@ By following these steps, systematically analyzing the code, and considering the
 
 总而言之，`allocatorprobe.c` 是 Frida-Gum 中用于测试内存分配监控功能的重要组成部分。它不仅验证了 AllocatorProbe 的正确性，也为用户理解和使用这个工具提供了宝贵的参考。通过分析这个文件，可以深入了解 Frida 在二进制底层进行动态 instrumentation 的技术细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/heap/allocatorprobe.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2010 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -357,7 +359,4 @@ do_nonstandard_heap_calls (TestAllocatorProbeFixture * fixture,
 #endif /* _DEBUG */
 
 #endif /* HAVE_WINDOWS */
-
-"""
-
 ```

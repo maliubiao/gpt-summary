@@ -120,14 +120,16 @@ Finally, organize the findings into a clear and logical structure, as demonstrat
 
 总而言之，`gpu_test_utils.cc` 提供了一组强大的工具，允许 Blink 开发者在受控的环境中测试与 GPU 相关的代码，模拟各种场景，包括正常的 GPU 操作和异常情况，从而提高 Blink 渲染引擎的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/test/gpu_test_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -203,7 +205,4 @@ void InitializeSharedGpuContextRaster(
 }
 
 }  // namespace blink
-
-"""
-
 ```

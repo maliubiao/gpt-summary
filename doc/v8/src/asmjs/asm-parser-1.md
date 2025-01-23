@@ -142,12 +142,14 @@ function f(stdlib, foreign, heap) {
 
 总而言之，`asm-parser.cc` 的这部分代码是 V8 引擎中实现 asm.js 功能的关键部分，它通过解析和验证表达式，确保了 asm.js 代码的正确性和可优化性，从而提高了 JavaScript 在特定场景下的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/asmjs/asm-parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 F64Le, F32Le, "<=");
       HANDLE_CASE('>', I32GtS, I32GtU, F64Gt, F32Gt, ">");
       HANDLE_CASE(TOK(GE), I32GeS, I32GeU, F64Ge, F32Ge, ">=");
@@ -798,8 +800,4 @@ void AsmJsParser::GatherCases(ZoneVector<int32_t>* cases) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

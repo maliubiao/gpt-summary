@@ -251,7 +251,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "sendto"), {
 
 请注意，这个 Frida 示例需要运行在 root 权限的 Android 设备上，并且需要安装 Frida 工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/netinet/ip_icmp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -262,8 +262,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: ip_icmp.h,v 1.21 2005/07/31 03:30:55 pascoe Exp $	*/
 /*	$NetBSD: ip_icmp.h,v 1.10 1996/02/13 23:42:28 christos Exp $	*/
 
@@ -480,7 +482,4 @@ struct icmp {
 __END_DECLS
 
 #endif /* _NETINET_IP_ICMP_H_ */
-
-"""
-
 ```

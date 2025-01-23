@@ -175,15 +175,17 @@ This detailed thought process, starting from a high-level understanding and grad
 
 简而言之，当网页使用 Canvas API 绘制和操作文本时，Blink 引擎中的 `TextMetrics` 类就会被调用来提供必要的文本度量信息，而 `text_metrics_test.cc` 文件就是用来确保这个核心功能的正确性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/canvas/text_metrics_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -424,7 +426,4 @@ TEST_P(CaretPositionForOffsetBidiTest, CaretPositionForOffsetsBidi) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

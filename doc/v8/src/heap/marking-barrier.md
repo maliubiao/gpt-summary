@@ -99,11 +99,13 @@ obj2.ref = null; // 现在 obj2 不再引用 obj1
 
 `marking-barrier.cc` 是 V8 引擎实现自动内存管理的关键底层机制。它通过追踪对象之间的引用关系，辅助垃圾回收器准确地识别哪些对象是“可达”的，哪些对象可以被安全回收。这使得 JavaScript 开发者可以专注于业务逻辑，而无需手动管理内存。  JavaScript 代码中创建和修改对象引用等操作，都会在底层触发 `MarkingBarrier` 的相关逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/marking-barrier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -591,7 +593,4 @@ bool MarkingBarrier::IsMarked(const Tagged<HeapObject> value) const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

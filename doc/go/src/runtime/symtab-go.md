@@ -150,7 +150,7 @@ Stack trace:
 
 这段 `symtab.go` 代码是 Go 运行时系统中负责 **运行时符号表管理和堆栈帧信息获取** 的关键组成部分。 它提供了将程序执行时的内存地址（程序计数器 PC）映射回源代码位置（函数名、文件名、行号）的能力。 这项能力是 Go 语言的许多重要功能的基础，包括错误报告、调试、性能分析和反射。它通过 `Frames` 和 `Frame` 结构体以及相关的函数，使得 Go 程序能够在运行时自省其调用堆栈和函数信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/symtab.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -159,8 +159,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1150,9 +1152,4 @@ func pcvalue(f funcInfo, off uint32, targetpc uintptr, strict bool) (int32, uint
 				// fail in the first clause.
 				ent := &cache.entries[ck][i]
 				if ent.off == off &&
-"""
-
-
-
-
 ```

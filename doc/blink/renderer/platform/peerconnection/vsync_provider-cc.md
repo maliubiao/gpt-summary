@@ -98,14 +98,16 @@ This step-by-step approach, breaking down the code and connecting it to broader 
 
 总而言之，`vsync_provider.cc` 提供了一个关键的底层机制，用于同步 WebRTC 视频处理与屏幕刷新率，从而确保流畅的视频体验。它通过回调函数和线程安全的机制，连接了底层的图形渲染和上层的应用逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/vsync_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ void VSyncProviderImpl::Initialize(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -119,7 +119,7 @@ if (Process.platform !== 'linux') {
 
 总而言之，尽管 `prog.c` 本身很简单，但它在 Frida 的测试框架中扮演着特定的角色。理解其上下文和 Frida 的工作原理，可以帮助我们理解为什么会有这样一个简单的程序存在，以及它可能与逆向工程、底层知识和用户错误等方面产生联系。 失败的测试用例通常是调试的起点，而 `prog.c` 作为目标程序，其简单的结构反而有助于隔离和定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/57 subproj filegrab/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,10 +127,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) { return 0; }
-
-"""
-
 ```

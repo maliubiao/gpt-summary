@@ -183,7 +183,7 @@ By following this structured approach, analyzing the code piece by piece, and th
 
 这个文件在 Frida 的内部运作中扮演着基础性的角色，它确保了 Frida 能够正确地理解和操作不同平台上的目标进程。理解 `MachineSpec` 的功能有助于理解 Frida 如何实现跨平台动态 instrumentation。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/machine_spec.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 from dataclasses import dataclass
 import platform
@@ -487,7 +489,4 @@ BIG_ENDIAN_ARCHS = {
 }
 
 TARGET_TRIPLET_ARCH_PATTERN = re.compile(r"^(i.86|x86_64|arm(v\w+)?|aarch64|mips\w*|powerpc|s390x)$")
-
-"""
-
 ```

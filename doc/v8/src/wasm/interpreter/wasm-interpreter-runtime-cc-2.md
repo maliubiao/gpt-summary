@@ -166,7 +166,7 @@ WebAssembly.instantiateStreaming(fetch('my_wasm_module.wasm'), importObject)
 
 总而言之，`v8/src/wasm/interpreter/wasm-interpreter-runtime.cc` 的第三部分主要负责 **WebAssembly 解释器在运行时执行函数调用，特别是处理内部 Wasm 函数之间的直接调用、通过函数引用的调用以及与 JavaScript 之间的互操作，包括处理导入函数和间接调用。它还包含了对栈空间管理、类型检查和错误处理的逻辑。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter-runtime.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter-runtime.cc以.tq结尾，那它是个v8 torque源代码，
@@ -174,8 +174,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e reset it every time we get to a backward jump in a loop.
   HandleScope handle_scope(GetIsolate());
 
@@ -1029,7 +1031,4 @@ WasmInterpreterRuntime::ArrayNewUninitialized(uint32_t length,
   }
 
   Handle
-"""
-
-
 ```

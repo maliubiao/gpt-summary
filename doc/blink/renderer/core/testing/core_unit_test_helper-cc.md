@@ -150,15 +150,17 @@ Let's break down the thought process for analyzing the given C++ code.
 
 总而言之，`core_unit_test_helper.cc` 是 Blink 引擎测试基础设施的重要组成部分，它为开发者提供了便利的工具来验证核心功能的正确性。虽然普通用户不会直接接触它，但它的存在保证了 Blink 引擎的质量和稳定性，间接地影响着用户的浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/core_unit_test_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -388,7 +390,4 @@ PhysicalRect LocalVisualRect(const LayoutObject& object) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

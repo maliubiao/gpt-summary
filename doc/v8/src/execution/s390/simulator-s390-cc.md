@@ -698,7 +698,7 @@ void Simulator::set_last_debugger_input(char* input) {
 void Simulator::SetRedirectInstruction(Instruction* instruction) {
 // we use TRAP4 here (0xBF22)
 #
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/s390/simulator-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/s390/simulator-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -706,8 +706,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1516,7 +1518,4 @@ void Simulator::EvalTableInit() {
   V(vch, VCH, 0xE7FB)       /* type = VRR_B VECTOR COMPARE HIGH  */            \
   V(vo, VO, 0xE76A)         /* type = VRR_C VECTOR OR  */                      \
   V(vn, VN, 0xE768)         /* type = VRR_C VECTOR AN
-"""
-
-
 ```

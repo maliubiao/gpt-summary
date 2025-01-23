@@ -114,14 +114,16 @@ By following these steps, the detailed and accurate analysis provided in the ini
 
 `html_script_element_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎能够正确地处理 HTML 中的 `<script>` 标签，并正确地提取和存储其包含的 JavaScript 代码。 这对于保证网页的 JavaScript 代码能够被正确加载和执行至关重要。  该测试也揭示了在操作 `<script>` 标签内容时需要注意的一些细节，避免开发者在使用过程中犯常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_script_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ TEST_F(HTMLScriptElementTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -142,7 +142,7 @@ This systematic approach allows for a comprehensive analysis of the code, addres
 
 通过分析 `vs2022backend.py` 的代码，我们可以更好地理解 Meson 如何为 Frida 生成 Visual Studio 项目，以及在出现问题时，可以从哪些方面进行排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/backend/vs2022backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2021 The Meson development team
 
@@ -206,7 +208,4 @@ class Vs2022Backend(Vs2010Backend):
             optargs = [x for x in file_args['c'] if x.startswith('/std:c')]
             if optargs:
                 ET.SubElement(clconf, 'LanguageStandard_C').text = optargs[0].replace("/std:c", "stdc")
-
-"""
-
 ```

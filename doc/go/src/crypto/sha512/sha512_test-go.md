@@ -144,7 +144,7 @@ go test -run Marshal
 
 这部分代码是 `crypto/sha512` 包的测试用例的起始部分，它定义了用于测试 SHA-512 和 SHA-224 哈希算法的测试数据结构 `sha512Test` 和包含了 SHA-224 的黄金测试用例 `golden224`。它的主要目的是提供一组已知的输入和预期输出，用于验证 `crypto/sha512` 包的实现是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/sha512/sha512_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -153,8 +153,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -393,9 +395,4 @@ var golden256 = []sha512Test{
 		"550762913d51eefbcd1a55068fcfc9b154fd11c1078b996df0d926ea59d2a68d",
 		"abcdefghij",
 		"sha\x06\"1!\x94\xfc+\xf7,\x9fU_\xa3\xc8Ld\xc2#\x93\xb8koS\xb1Q\x968w\x19Y@꽖(>⨎\xff\xe3\xbe^\x1e%S\x869\x92+\x01\x99\xfc,\x85\xb8\xaa\x0e\xb7-܁\xc5,\xa2abcde\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\
-"""
-
-
-
-
 ```

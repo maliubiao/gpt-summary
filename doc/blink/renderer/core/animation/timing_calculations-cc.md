@@ -204,14 +204,16 @@ By following these steps, combining a high-level understanding with a closer exa
 
 总而言之，`timing_calculations.cc` 文件是 Blink 动画系统的核心，它精确地实现了 Web Animations 规范中关于时间计算的部分，确保了各种动画效果的正确执行。理解这个文件中的功能可以帮助开发者更好地理解和使用 CSS Animations、CSS Transitions 和 JavaScript Web Animations API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/timing_calculations.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -671,7 +673,4 @@ std::optional<AnimationTimeDelta> TimingCalculations::CalculateIterationTime(
 }
 
 }  // namespace blink
-
-"""
-
 ```

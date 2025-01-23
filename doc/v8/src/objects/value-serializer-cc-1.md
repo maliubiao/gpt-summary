@@ -103,7 +103,7 @@ obj.circular = obj;
 
 这部分 `ValueSerializer` 代码的核心功能是 **提供将多种特定类型的 JavaScript 值（如 Map、Set、ArrayBuffer、Error 等）序列化为字节流以及从字节流反序列化回这些对象的能力**。它考虑了不同类型的特性和状态（例如 ArrayBuffer 的共享性、可调整大小性、是否已分离），并针对 WebAssembly 和宿主对象提供了相应的处理机制。 代码中包含了错误处理机制，用于处理无法序列化的值或其他异常情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/value-serializer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/value-serializer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -111,8 +111,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ate them.
   DirectHandle<OrderedHashMap> table(Cast<OrderedHashMap>(js_map->table()),
                                      isolate_);
@@ -1007,7 +1009,4 @@ MaybeHandle<JSObject> ValueDeserializer::ReadJSObject() {
 
 MaybeHandle<JSArray> ValueDeserializer::ReadSparseJSArray() {
   // If we are at the end of the stack, abort. This function may r
-"""
-
-
 ```

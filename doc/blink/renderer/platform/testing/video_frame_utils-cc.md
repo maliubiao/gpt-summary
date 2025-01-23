@@ -158,14 +158,16 @@ scoped_refptr<media::VideoFrame> frame = CreateTestFrame(coded_size, visible_rec
 
 总而言之，`video_frame_utils.cc` 提供了一组方便的工具，用于在 Blink 引擎的测试环境中创建和管理各种类型的视频帧，以便更轻松地测试视频渲染和相关功能。虽然它本身是 C++ 代码，但它创建的视频帧对象与浏览器处理 HTML `<video>` 元素、JavaScript 视频 API 和 CSS 样式息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/video_frame_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -234,7 +236,4 @@ scoped_refptr<media::VideoFrame> CreateTestFrame(
 }
 
 }  // namespace blink
-
-"""
-
 ```

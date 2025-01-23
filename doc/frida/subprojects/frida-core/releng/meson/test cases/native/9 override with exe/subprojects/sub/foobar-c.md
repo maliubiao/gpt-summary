@@ -120,7 +120,7 @@ Finally, I would organize the thoughts into the structured response provided ear
 
 总而言之，`foobar.c` 作为一个 Frida 的测试用例，其主要目的是为了生成一个简单的、可预测的可执行文件，用于验证 Frida 在动态代码覆盖、替换等方面的功能。它本身不是一个逆向工具，而是逆向工具测试体系中的一个辅助组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/native/9 override with exe/subprojects/sub/foobar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include <stdio.h>
 
@@ -143,7 +145,4 @@ int main(int argc, char* argv[]) {
   assert(r == 0);
   return 0;
 }
-
-"""
-
 ```

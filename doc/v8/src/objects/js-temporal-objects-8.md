@@ -133,12 +133,14 @@ console.log(dateTimeIsoFields);
 
 **In summary, this specific part of the V8 source code is responsible for the core logic and functionality of the `Temporal.PlainDate` and `Temporal.PlainDateTime` JavaScript objects, enabling developers to work with dates and times without time zone information in a standardized and robust way.** The fact that it's part 9 of 13 suggests that the Temporal API implementation is divided into logical components across multiple files.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第9部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 bject(isolate, options_obj, method_name));
   // 2. If Type(item) is Object and item has an [[InitializedTemporalDate]]
   // internal slot, then
@@ -1554,7 +1556,4 @@ Maybe<DateRecordWithCalendar> ParseTemporalMonthDayString(
   // 3. If isoString contains a UTCDesignator, then
   if (parsed->utc_designator) {
     // a. Throw a *R
-"""
-
-
 ```

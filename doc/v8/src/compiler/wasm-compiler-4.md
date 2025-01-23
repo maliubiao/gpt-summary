@@ -142,12 +142,14 @@ By following these steps, the generated answer effectively summarizes the provid
 
 因此，第五部分在整个 WebAssembly 编译流程中扮演着关键的角色，**负责将 WebAssembly 字符串相关的指令转换为底层的图节点，以便后续的优化和代码生成阶段能够处理这些字符串操作。** 它确保了 WebAssembly 模块能够有效地处理文本数据，并与 JavaScript 环境中的字符串进行互操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 osition);
   }
   return gasm_->CallBuiltin(Builtin::kWasmStringEncodeWtf8Array,
@@ -1726,7 +1728,4 @@ class WasmWrapperGraphBuilder : public WasmGraphBuilder {
     Node* error = gasm_->SmiConstant(
         Smi::FromInt(
             static_cast<int32_t>(Messag
-"""
-
-
 ```

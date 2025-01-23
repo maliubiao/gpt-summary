@@ -220,7 +220,7 @@ Build ID: a1b2c3d4e5f678901234567890abcdef0
 
 总而言之，`elfexec.go` 是 `pprof` 工具箱中一个重要的组成部分，它提供了低级别的 ELF 文件解析能力，使得 `pprof` 能够理解程序运行时的二进制文件结构，从而进行性能分析和剖析。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/elfexec/elfexec.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -228,8 +228,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -608,9 +610,4 @@ func HeaderForFileOffset(headers []*elf.ProgHeader, fileOffset uint64) (*elf.Pro
 	}
 	return ph, nil
 }
-
-"""
-
-
-
 ```

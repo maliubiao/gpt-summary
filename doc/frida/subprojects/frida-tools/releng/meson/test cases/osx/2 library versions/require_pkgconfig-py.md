@@ -102,7 +102,7 @@ This script is typically run as part of Frida's internal build or testing proces
 
 In summary, this simple script plays a small but important role in ensuring that the necessary dependencies (`pkg-config`) are available when building Frida, particularly on macOS outside of CI environments. Its output can be a valuable debugging clue for developers and advanced users encountering build-related issues.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/osx/2 library versions/require_pkgconfig.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -121,7 +123,4 @@ if 'CI' in os.environ or shutil.which('pkg-config'):
     print('yes')
 else:
     print('no')
-
-"""
-
 ```

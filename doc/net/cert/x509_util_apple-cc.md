@@ -142,15 +142,17 @@ This structured approach allows for a comprehensive and accurate understanding o
 
 总而言之，`net/cert/x509_util_apple.cc` 是 Chromium 在 Apple 平台上处理 X.509 证书的关键组成部分，它桥接了 Chromium 的内部证书表示和 Apple 系统的安全框架，确保了 HTTPS 连接的安全性和可靠性。虽然 JavaScript 不直接调用这些函数，但用户的 JavaScript 操作会间接地触发这些代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/x509_util_apple.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -330,7 +332,4 @@ base::apple::ScopedCFTypeRef<CFArrayRef> CertificateChainFromSecTrust(
 
 }  // namespace x509_util
 }  // namespace net
-
-"""
-
 ```

@@ -117,7 +117,7 @@ By following this systematic breakdown, addressing each aspect of the prompt, an
 
 总而言之，这个 `module.c` 文件是一个用于测试 Frida 与共享模块交互能力的示例代码，它涵盖了跨平台共享库导出、运行时符号查找等关键概念，并且可以作为理解 Frida 工作原理和进行相关调试的入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cmake/21 shared module/subprojects/cmMod/module/module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -223,7 +225,4 @@ int DLL_PUBLIC func(void) {
     return func_from_language_runtime();
 }
 #endif
-
-"""
-
 ```

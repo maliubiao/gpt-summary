@@ -793,15 +793,17 @@ protocol::Response InspectorNetworkAgent::getCertificate(
         SecurityOrigin::Create(resource->RequestedURL());
     net::X509Certificate* cert = resource->Certificate();
     if (resource_origin->IsSameOriginWith(security_origin.get()) &&
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_network_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 not_modified && cached_resource && cached_resource->EncodedSize()) {
     DidReceiveData(
         identifier, loader,
@@ -1662,7 +1664,4 @@ protocol::Response InspectorNetworkAgent::searchInResponseBody(
   bool base64_encoded;
   protocol::Response response =
       GetResponseBody(request_id, &content, &base64_encoded);
-"""
-
-
 ```

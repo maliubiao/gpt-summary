@@ -97,15 +97,17 @@ By following these steps, I can effectively analyze the C++ code and generate a 
 
 `input_handler_proxy_unittest.cc` 的第1部分主要关注 `InputHandlerProxy` **接收和初步处理各种输入事件的能力**，以及它**如何根据事件的类型、目标和相关的属性 (例如 CSS 的 `touch-action` 和 JavaScript 的事件监听器) 来决定如何路由这些事件**。 它涵盖了鼠标滚轮事件、基本的触摸事件处理、以及手势事件的初步处理逻辑。  重点在于验证 `InputHandlerProxy` 的核心功能，为后续更复杂的测试场景打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/input_handler_proxy_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1657,7 +1659,4 @@ TEST_P(InputHandlerProxyTest, MultiTouchPointHitTestNegative) {
 }
 
 TEST_P(InputHan
-"""
-
-
 ```

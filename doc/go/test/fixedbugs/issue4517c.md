@@ -124,15 +124,17 @@ func main() {
 
 `issue4517c.go` 的核心作用是确保 Go 编译器能够正确地防止用户将 `init` 标识符用于非函数声明，从而维护语言的规范和避免潜在的混淆。 这是一个编译器自身健壮性的测试用例，而不是一个展示特定 Go 语言功能的实际应用代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4517c.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2012 The Go Authors. All rights reserved.
@@ -142,9 +144,4 @@ Prompt:
 package p
 
 type init byte // ERROR "cannot declare init - must be func"
-
-"""
-
-
-
 ```

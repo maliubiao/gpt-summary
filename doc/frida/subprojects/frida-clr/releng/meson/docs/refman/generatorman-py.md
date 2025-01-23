@@ -230,7 +230,7 @@ console.log(data);
 
 总而言之，`generatorman.py` 是 Frida 文档生成流程中的一个关键环节，它负责将结构化的 API 信息转化为用户可以查阅的 man page 文档，为 Frida 的使用者提供了重要的参考。 虽然它本身是用高级语言编写，但它所服务的对象 Frida，以及其生成的文档内容，都与逆向工程、二进制底层、操作系统内核及框架等底层技术紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/docs/refman/generatorman.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -238,8 +238,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import re
 from pathlib import Path
 
@@ -622,7 +624,4 @@ class GeneratorMan(GeneratorBase):
             page.br()
 
         page.write()
-
-"""
-
 ```

@@ -132,11 +132,13 @@ runWasm();
 
 C++ 代码演示了 WebAssembly 模块的序列化和反序列化，这允许将编译后的模块存储起来并在以后重用，节省了重新编译的时间。虽然 JavaScript 标准本身没有直接提供序列化 `WebAssembly.Module` 的 API，但 JavaScript 仍然可以加载、编译和实例化 WebAssembly 模块，并与 C++ 代码中的功能相对应。 C++ 示例中 `hello_callback` 函数的功能可以通过 JavaScript 中的 `importObject` 提供给 WebAssembly 模块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/example/serialize.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -239,8 +241,4 @@ int main(int argc, const char* argv[]) {
   std::cout << "Done." << std::endl;
   return 0;
 }
-
-
-"""
-
 ```

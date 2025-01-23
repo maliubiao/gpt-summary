@@ -135,15 +135,17 @@ void someFunction() {
 
 `v8/src/heap/cppgc/process-heap-statistics.cc` 提供了一个基础的、线程安全的机制来跟踪 V8 进程堆上的内存分配情况。 这些统计信息对于理解 V8 的内存使用行为，以及诊断与内存相关的潜在问题至关重要。虽然用户无法直接修改这些值，但他们的 JavaScript 代码行为会间接地影响这些统计数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/process-heap-statistics.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/process-heap-statistics.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ std::atomic_size_t ProcessHeapStatistics::total_allocated_space_{0};
 std::atomic_size_t ProcessHeapStatistics::total_allocated_object_size_{0};
 
 }  // namespace cppgc
-
-"""
-
 ```

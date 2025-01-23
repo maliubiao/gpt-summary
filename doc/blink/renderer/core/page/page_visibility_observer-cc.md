@@ -129,15 +129,17 @@ By following these steps, the comprehensive explanation provided earlier can be 
 
 `PageVisibilityObserver` 是 Blink 渲染引擎中一个关键的内部组件，负责跟踪和管理网页的可见性状态。它与 Page Visibility API 紧密相关，使得 JavaScript 代码能够感知并响应页面的可见性变化，从而实现更智能和高效的网页行为。理解它的工作原理对于调试与页面可见性相关的 Bug 以及深入理解浏览器的工作机制非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/page_visibility_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ void PageVisibilityObserver::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

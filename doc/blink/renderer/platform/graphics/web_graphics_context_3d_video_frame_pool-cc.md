@@ -121,14 +121,16 @@ This C++ code is a low-level component of the Blink rendering engine and doesn't
 
 In summary, `web_graphics_context_3d_video_frame_pool.cc` is a foundational piece of the Chromium rendering engine that optimizes video rendering by efficiently managing GPU-backed video frames and handling the necessary synchronization for smooth and correct video playback on web pages. While it's not directly manipulated by web developers, its correct operation is essential for a good user experience.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/web_graphics_context_3d_video_frame_pool.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -540,7 +542,4 @@ bool WebGraphicsContext3DVideoFramePool::
 }
 
 }  // namespace blink
-
-"""
-
 ```

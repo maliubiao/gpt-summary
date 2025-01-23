@@ -149,15 +149,17 @@ By following this systematic approach, combining code analysis with knowledge of
 
 总而言之，`canvas_image_source_util.cc` 文件是 Blink 引擎中处理 Canvas 2D API 图像源的关键组件，它负责类型转换、有效性检查和来源污染判断，确保 Canvas API 的正确和安全使用。它直接关联了 JavaScript 中传递给 Canvas API 的各种图像源类型，并且是处理相关错误和安全策略的核心。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/canvas_image_source_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -264,7 +266,4 @@ bool WouldTaintCanvasOrigin(CanvasImageSource* image_source) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

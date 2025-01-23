@@ -86,7 +86,7 @@ A user might encounter this code during debugging in various scenarios:
 
 This part of `universal.py` provides a foundational set of utility functions and classes for Frida's build system. It handles core tasks like string and path manipulation, executing external commands, comparing versions, managing files and their permissions, detecting the operating system, and defining custom data structures and error types. These utilities are essential for managing the complexities of building a cross-platform tool like Frida, including interactions with external tools, handling binary files, and managing dependencies.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -95,8 +95,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 
@@ -1076,7 +1078,4 @@ def search_version(text: str) -> str:
     # Limiting major version number to two digits seems to work
     # thus far. When we get to GCC 100, this will break, but
     # if we are still relevant whe
-"""
-
-
 ```

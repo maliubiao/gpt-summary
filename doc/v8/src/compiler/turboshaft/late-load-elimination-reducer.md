@@ -103,11 +103,13 @@ function foo(obj) {
 
 总而言之，`late-load-elimination-reducer.cc` 是 V8 引擎中一个关键的优化组件，它通过分析和消除冗余的内存加载操作，显著提升了 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/late-load-elimination-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -784,7 +786,4 @@ template bool LateLoadEliminationAnalyzer::BeginBlock<false>(
     const Block* block);
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

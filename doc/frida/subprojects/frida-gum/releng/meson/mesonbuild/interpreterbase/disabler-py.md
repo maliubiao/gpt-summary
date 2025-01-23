@@ -140,7 +140,7 @@ The user typically doesn't directly interact with `disabler.py`. They interact w
 
 `disabler.py` provides a fundamental mechanism within Frida's build system (using Meson) to represent and check for the absence of dependencies or the disabling of features. It plays a crucial role in conditional compilation and ensuring that the build process adapts to the available environment. While users don't directly interact with this file, understanding its function is important for troubleshooting build issues related to missing dependencies and for understanding how Frida's features are enabled or disabled during the build process. This knowledge can be valuable for reverse engineers looking to understand the build-time configuration of the Frida tools they are analyzing.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/interpreterbase/disabler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -185,7 +187,4 @@ def is_disabled(args: T.Sequence[T.Any], kwargs: T.Dict[str, T.Any]) -> bool:
         if _is_arg_disabled(i):
             return True
     return False
-
-"""
-
 ```

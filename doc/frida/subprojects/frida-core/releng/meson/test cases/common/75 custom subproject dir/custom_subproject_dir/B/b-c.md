@@ -148,7 +148,7 @@ Interceptor.attach(Module.findExportByName(null, "func_b"), { // 假设 func_b �
 
 总而言之，这个简单的 `b.c` 文件虽然代码不多，但它体现了动态链接、条件控制、程序退出等重要的编程概念，并且在逆向工程和动态插桩的场景下具有实际意义，例如作为 hook 的目标或分析控制流的关键点。 它的存在也反映了软件开发中模块化和依赖关系的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/75 custom subproject dir/custom_subproject_dir/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 char func_c(void);
 
@@ -178,7 +180,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

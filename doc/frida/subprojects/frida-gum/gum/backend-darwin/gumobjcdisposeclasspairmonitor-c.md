@@ -195,7 +195,7 @@ Java.perform(function() {
 
 总而言之，`gumobjcdisposeclasspairmonitor.c` 是 Frida 框架中一个用于监控 Objective-C 类释放的关键组件，它通过底层的 hook 机制为动态逆向分析提供了强大的工具。理解其功能和工作原理对于有效地使用 Frida 进行 macOS/iOS 平台的逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-darwin/gumobjcdisposeclasspairmonitor.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2021 Francesco Tamagni <mrmacete@protonmail.ch>
  *
@@ -360,7 +362,4 @@ gum_objc_dispose_class_pair_monitor_on_leave (GumInvocationListener * listener,
 
   g_rec_mutex_unlock (&self->mutex);
 }
-
-"""
-
 ```

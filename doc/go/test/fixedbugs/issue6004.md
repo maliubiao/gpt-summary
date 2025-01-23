@@ -171,15 +171,17 @@ func main() {
 
 总之，这段代码是一个用于测试 Go 编译器类型检查能力的特殊示例，它强调了 `nil` 值的类型推断在 Go 语言中的重要性以及可能出现的错误场景。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6004.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -194,9 +196,4 @@ func main() {
 	_, _ = 1, nil            // ERROR "use of untyped nil"
 	_ = append(nil, 1, 2, 3) // ERROR "untyped nil|nil"
 }
-
-"""
-
-
-
 ```

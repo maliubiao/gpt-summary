@@ -179,15 +179,17 @@ By following these steps, which involve a combination of code analysis, logical 
 
 总而言之，`simple_util.cc` 提供了一组底层的、核心的工具函数，用于支持 Chromium 浏览器的 Simple 磁盘缓存机制，它与 JavaScript 的关系在于它支撑了浏览器缓存功能，而缓存功能直接影响了 JavaScript 代码加载资源和执行的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -308,7 +310,4 @@ uint32_t IncrementalCrc32(uint32_t previous_crc, const char* data, int length) {
 }
 
 }  // namespace disk_cache::simple_util
-
-"""
-
 ```

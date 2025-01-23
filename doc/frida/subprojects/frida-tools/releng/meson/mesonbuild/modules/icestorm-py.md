@@ -168,7 +168,7 @@ This step-by-step approach, moving from high-level understanding to detailed cod
 
 总而言之，`icestorm.py` 是 Frida 构建系统的一个关键模块，它自动化了 Icestorm FPGA 项目的构建流程，这对于需要与特定硬件交互或进行硬件相关逆向的 Frida 应用开发至关重要。理解这个模块的功能可以帮助开发者更好地构建和调试涉及 FPGA 的 Frida 项目。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/modules/icestorm.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017 The Meson development team
 
@@ -301,7 +303,4 @@ class IceStormModule(ExtensionModule):
 
 def initialize(interp: Interpreter) -> IceStormModule:
     return IceStormModule(interp)
-
-"""
-
 ```

@@ -202,15 +202,17 @@ func main() {
 
 理解这些易犯的错误可以帮助开发者更安全有效地使用这些底层的 `ioctl` 辅助函数。在实际使用中，通常需要参考相关的操作系统和设备驱动程序的文档来确定正确的请求码和数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/ioctl_signed.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -280,9 +282,4 @@ func IoctlGetTermios(fd int, req int) (*Termios, error) {
 	err := ioctlPtr(fd, req, unsafe.Pointer(&value))
 	return &value, err
 }
-
-"""
-
-
-
 ```

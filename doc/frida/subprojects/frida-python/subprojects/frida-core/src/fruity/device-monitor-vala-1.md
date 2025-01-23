@@ -132,7 +132,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 用户通过 Frida 工具开始调试设备，确保调试数据的可靠传输。
 
 通过以上步骤，用户可以逐步完成设备的连接、隧道建立、配对和调试操作。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/device-monitor.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ice_request;
 		private Promise<LibUSB.Device>? modeswitch_request;
 		private Promise<Tunnel?>? tunnel_request;
@@ -925,8 +927,4 @@ ice_request;
 		cancellable.set_error_if_cancelled ();
 	}
 }
-
-"""
-
-
 ```

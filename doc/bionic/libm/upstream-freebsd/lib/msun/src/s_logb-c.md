@@ -185,7 +185,7 @@ libm.so:
 
 总而言之，`s_logb.c` 中的 `logb` 函数是 Android 数学库 `libm` 的一个组成部分，虽然不常用，但仍然在某些情况下被调用。理解其实现细节，以及它在 Android 系统中的位置，对于进行底层的调试和性能分析是有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_logb.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -195,8 +195,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -242,7 +244,4 @@ logb(double x)
 #if (LDBL_MANT_DIG == 53)
 __weak_reference(logb, logbl);
 #endif
-
-"""
-
 ```

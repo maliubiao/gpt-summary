@@ -109,7 +109,7 @@ Let's assume:
 
 This final part of the `xcodebackend.py` script focuses on concluding the Xcode project generation process. It writes the metadata, defines the build configurations for the project and its targets, and incorporates compiler/linker flags. This ensures that the generated Xcode project is a valid and complete representation of the build described by Meson, ready for building Frida components or related tools, which are often used in reverse engineering tasks.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/backend/xcodebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ldPhase')
             phase_dict.add_item('buildActionMask', 2147483647)
             file_arr = PbxArray()
@@ -563,8 +565,4 @@ ldPhase')
 
     def generate_suffix(self, pbxdict: PbxDict) -> None:
         pbxdict.add_item('rootObject', self.project_uid, 'Project object')
-
-"""
-
-
 ```

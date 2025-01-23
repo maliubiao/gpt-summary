@@ -111,7 +111,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 总而言之，这个简单的 `a.c` 文件在实际项目中扮演着一个中间层的角色，它的行为依赖于被调用的 `c_fun`。在逆向分析和调试过程中，它可以作为一个观察点和 Hook 点，帮助理解程序的执行流程和发现潜在的问题。它所属的 `failing` 目录表明它是用于测试和调试特定失败场景的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/62 subproj different versions/subprojects/a/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,14 +119,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "c.h"
 
 int a_fun() {
     return c_fun();
 }
-
-"""
-
 ```

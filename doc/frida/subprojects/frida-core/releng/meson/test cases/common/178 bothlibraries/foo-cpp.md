@@ -139,7 +139,7 @@ Here's a breakdown of the thinking process to arrive at the explanation of the `
 
 总而言之，`foo.cpp` 作为一个简单的测试用例，旨在验证 Frida 在处理动态链接库中的函数时的基本功能，例如符号解析和函数 hook。它涵盖了动态链接、内存管理、C/C++ 互操作等基础概念，是理解 Frida 工作原理的一个很好的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/178 bothlibraries/foo.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <memory>
 #include "mylib.h"
 
@@ -160,7 +162,4 @@ int foo(void) {
     auto bptr = std::make_shared<int>(0);
     return *bptr;
 }
-
-"""
-
 ```

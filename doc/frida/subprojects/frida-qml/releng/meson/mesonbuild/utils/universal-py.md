@@ -157,7 +157,7 @@ By following these steps, I can arrive at a comprehensive and accurate summary o
 
 因此，这个 `universal.py` 文件作为 Frida QML 构建过程中的一个通用工具库，在 Meson 构建系统的驱动下被间接地调用和使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 
@@ -1147,7 +1149,4 @@ def search_version(text: str) -> str:
     # Limiting major version number to two digits seems to work
     # thus far. When we get to GCC 100, this will break, but
     # if we are still relevant whe
-"""
-
-
 ```

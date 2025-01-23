@@ -65,15 +65,17 @@ Here's a plan to summarize the functionality:
 
 这部分代码主要针对 `PaintController` 的子序列缓存功能进行全面的单元测试。它验证了在各种场景下，包括基本缓存、属性变化、绘制顺序变化、包含 fragments 以及跨越 `PaintChunk` 等情况，`PaintController` 是否能正确地缓存和重用绘制指令，从而优化渲染性能。 这些测试覆盖了在实际网页渲染中可能遇到的各种复杂情况，确保了渲染引擎的稳定性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_controller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e,
                                 gfx::Rect(100, 200, 50, 200)));
     EXPECT_EQ(kCached, DrawRect(context, content2, kForegroundType,
@@ -790,7 +792,4 @@ TEST_P(PaintControllerTest, CachedNestedSubsequenceUpdate) {
         SubsequenceRecorder inner_r(context, content2);
         paint_controller.UpdateCurrentPaintChunkProperties(
             co
-"""
-
-
 ```

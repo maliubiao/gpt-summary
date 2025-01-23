@@ -186,7 +186,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言运行时在 ARM 架构下实现原子操作的关键部分，为 `sync/atomic` 包提供了底层的支持。开发者应该优先使用 `sync/atomic` 包中提供的上层抽象，避免直接使用这些内部函数，以确保代码的正确性和可维护性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/atomic/atomic_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -470,9 +472,4 @@ func Store8(addr *uint8, v uint8)
 
 //go:noescape
 func Store64(addr *uint64, v uint64)
-
-"""
-
-
-
 ```

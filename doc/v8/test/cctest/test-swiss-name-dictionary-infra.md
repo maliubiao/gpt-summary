@@ -74,11 +74,13 @@ console.log(Object.getOwnPropertySymbols(myObject)); // [ Symbol(mySymbol) ]
 
 总而言之，`v8/test/cctest/test-swiss-name-dictionary-infra.cc` 这个 C++ 文件是 V8 引擎内部测试 `SwissNameDictionary` 功能的基础设施，它允许开发者更精细地控制属性的元数据和键的哈希值，从而确保这个关键数据结构的正确性和性能。这直接影响了 JavaScript 对象属性的定义、访问和操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-swiss-name-dictionary-infra.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ const std::vector<PropertyDetails> distinct_property_details =
 }  // namespace test_swiss_hash_table
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

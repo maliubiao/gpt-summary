@@ -98,7 +98,7 @@ By following these steps, I can systematically analyze the provided code snippet
 
 `linuxliketests.py` 文件的主要功能是作为 Frida `frida-qml` 子项目在 Linux 等类 Unix 系统上的单元测试套件。它通过一系列独立的测试用例，验证了 Meson 构建系统在处理 C++ 标准、编译选项、链接库、安装过程、依赖管理（特别是通过 `pkg-config`）、RPATH 设置以及 introspection 功能时的正确性。这些测试对于确保 Frida 在 Linux 系统上的稳定性和可靠性至关重要，同时也为开发者和用户提供了理解 Frida 构建过程和排查相关问题的线索。 很多测试用例直接或间接地与逆向工程的知识和技能相关，例如理解动态链接、库依赖和编译选项。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,9 +107,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    def test_cpp_std_override(self):
+### 源代码
+```python
+def test_cpp_std_override(self):
         testdir = os.path.join(self.unit_test_dir, '6 std override')
         self.init(testdir)
         compdb = self.get_compdb()
@@ -814,7 +816,4 @@ Prompt:
 
     @skipIfNoPkgconfigDep('gmodule-2.0')
     def test_ldflag_dedup(se
-"""
-
-
 ```

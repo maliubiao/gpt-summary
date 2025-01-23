@@ -110,14 +110,16 @@ Referrer Policy 直接影响浏览器在发送网络请求时，`Referer` HTTP �
 
 总而言之，`referrer_utils_unittest.cc` 这个文件虽然小，但它测试了 Chromium 中一个关键的网络安全和隐私设置的默认值，这个默认值直接影响着 Web 开发者在处理网络请求时的行为以及用户的隐私安全。 理解 Referrer Policy 的工作原理对于构建安全可靠的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/loader/referrer_utils_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -134,7 +136,4 @@ TEST(DefaultNetReferrerPolicyTest, IsCorrect) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

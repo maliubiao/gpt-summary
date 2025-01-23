@@ -197,7 +197,7 @@ By following these steps, we can arrive at a comprehensive and accurate answer t
 
 **总结来说，这部分 `opGen.go` 的功能是定义 Go 编译器 SSA 中间表示中一部分**“降低”后的操作**，这些操作与**并发控制（原子操作、内存屏障）**、**内存访问** 和 **运行时错误处理** 相关，并且开始体现出 **特定硬件架构** 的特征。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/opGen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -206,8 +206,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第28部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 7 R8 R9 R10 R11 R12 R14 R15 R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29
 			},
 			outputs: []outputInfo{
@@ -1209,10 +1211,5 @@ Prompt:
 		reg: regInfo{
 			inputs: []inputInfo{
 				{0, 1006632944}, // X5 X6 X7 X8 X9 X10 X11 X12 X13 X14 X15 X16 X17 X18 X19 X20 X21 X22 X23 X24 X25 X26 X28 X29 X30
-				{1, 1006632944}, // X5 X6 X7 X8 X9 X10 X11 X12 X13 X14 X15 
-"""
-
-
-
-
+				{1, 1006632944}, // X5 X6 X7 X8 X9 X10 X11 X12 X13 X14 X15
 ```

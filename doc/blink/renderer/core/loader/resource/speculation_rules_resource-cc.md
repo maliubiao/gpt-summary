@@ -202,15 +202,17 @@ This iterative process of reading the code, making educated guesses, connecting 
 
 总而言之，`SpeculationRulesResource.cc` 文件在 Blink 引擎中扮演着关键角色，负责获取和初步处理网页指定的推测规则资源，从而为浏览器执行性能优化策略奠定基础。它与 HTML 和 JavaScript 紧密相关，通过解析 HTML 中声明的链接来加载规则，并可能受到 JavaScript 的动态操作。理解这个文件的功能有助于我们更好地理解浏览器如何利用推测规则来提升用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/resource/speculation_rules_resource.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -253,7 +255,4 @@ Resource* SpeculationRulesResource::Factory::Create(
 }
 
 }  // namespace blink
-
-"""
-
 ```

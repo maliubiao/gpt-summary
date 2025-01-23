@@ -199,7 +199,7 @@ mightDeoptimize("hello"); // 可能触发去优化
 
 总而言之，这个文件是 V8 引擎在 IA-32 架构上实现高性能和动态优化的重要组成部分。 它通过精细的汇编代码操作，实现了代码执行模式的切换和上下文的恢复，使得 V8 能够高效且可靠地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ia32/builtins-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/ia32/builtins-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -207,8 +207,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 bel pop_loop;
   __ bind(&pop_loop);
   __ pop(Operand(edx, 0));
@@ -516,8 +518,4 @@ void Builtins::Generate_RestartFrameTrampoline(MacroAssembler* masm) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_IA32
-
-"""
-
-
 ```

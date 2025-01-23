@@ -301,7 +301,7 @@ setImmediate(main);
 
 请注意，直接读取内存地址需要谨慎，并要确保目标地址是有效的。上面的示例只是一个简单的演示，实际调试中可能需要更精细的地址计算和错误处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/elf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -312,8 +312,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -613,7 +615,4 @@ typedef Elf64_Xword Elf64_Relr;
 
 /* FreeBSD spells this slightly differently to Linux. */
 #define R_X86_64_JUMP_SLOT R_X86_64_JMP_SLOT
-
-"""
-
 ```

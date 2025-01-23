@@ -152,7 +152,7 @@ By following these steps, we can gain a comprehensive understanding of the scrip
 
 总而言之，这个脚本是一个简单的条件性文件复制工具，但它的存在表明了 Frida 构建过程中的某些复杂性和对模板替换的依赖。它作为一个测试用例，确保了构建流程的正确性，从而间接地保障了 Frida 作为一个逆向工具的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/160 custom target template substitution/checkcopy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -171,7 +173,4 @@ if '@INPUT1@' in sys.argv[1]:
     shutil.copyfile(sys.argv[2], sys.argv[3])
 else:
     sys.exit('String @INPUT1@ not found in "{}"'.format(sys.argv[1]))
-
-"""
-
 ```

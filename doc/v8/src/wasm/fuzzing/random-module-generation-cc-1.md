@@ -624,7 +624,7 @@ tomicXor8U:
       if (builder_->builder()->GetTableType(i) == needed_type) {
         table.push_back(i);
       
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/fuzzing/random-module-generation.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/fuzzing/random-module-generation.cc以.tq结尾，那它是个v8 torque源代码，
@@ -632,8 +632,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tomicXor8U:
       case kExprI64AtomicExchange8U:
       case kExprI64AtomicCompareExchange8U:
@@ -1490,7 +1492,4 @@ tomicXor8U:
         struct_get_helper(ValueType::Primitive(wanted_kind), data);
     if (!got_struct_value) {
       Gene
-"""
-
-
 ```

@@ -207,15 +207,17 @@ console.log(arr); // 输出: [1, 2, 3, 4]
 
 `v8/src/torque/ls/message-handler.cc` 是 V8 中 Torque 语言服务器的关键组成部分，它负责处理客户端的请求和通知，驱动 Torque 编译，并向客户端报告编译结果和诊断信息，从而为 Torque 开发者提供实时的代码分析和辅助功能。它通过 Language Server Protocol 与代码编辑器进行通信，使得开发者能够在熟悉的编辑器环境中更高效地编写和调试 Torque 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/ls/message-handler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/ls/message-handler.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -604,7 +606,4 @@ void HandleMessage(JsonValue raw_message, MessageWriter writer) {
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

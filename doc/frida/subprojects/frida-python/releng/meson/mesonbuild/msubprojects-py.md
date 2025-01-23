@@ -100,7 +100,7 @@ The user wants to understand the functionality of the Python script `msubproject
 
 `frida/subprojects/frida-python/releng/meson/mesonbuild/msubprojects.py` 脚本是 Frida 构建系统的一个重要组成部分，其主要功能是 **自动化管理 Frida 项目的外部依赖子项目**。 它提供了一组命令，允许开发者方便地更新、检出、下载、清理和管理这些子项目的源代码，并支持 Git、Mercurial、Subversion 和本地文件等多种子项目类型。 这个工具简化了 Frida 依赖管理的流程，提高了开发效率，并有助于确保 Frida 项目能够使用正确版本的依赖库。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/msubprojects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from dataclasses import dataclass, InitVar
@@ -861,7 +863,4 @@ def run(options: 'Arguments') -> int:
     for wrap in wraps:
         dirname = Path(source_dir, subproject_dir, wrap.directory).as_posix()
         runner = Runn
-"""
-
-
 ```

@@ -92,7 +92,7 @@ Termination Reason: Namespace SIGNAL, Code 0x0
    - Frida 将解析后的崩溃信息发送到会话中，供用户查看或进一步分析。
 
 通过以上步骤，用户可以逐步了解崩溃的原因，并利用 Frida 提供的调试功能进行进一步的分析和修复。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/darwin/darwin-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 split ("\n", 2);
 			var raw_header = tokens[0];
 			var report = tokens[1];
@@ -315,8 +317,4 @@ split ("\n", 2);
 	}
 #endif
 }
-
-"""
-
-
 ```

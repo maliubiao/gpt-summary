@@ -166,14 +166,16 @@ Base64 编码在 Web 开发中被广泛使用，与 JavaScript, HTML, CSS 的功
 
 总而言之，`blink/renderer/platform/wtf/text/base64.cc` 文件是 Blink 引擎中核心的 Base64 处理模块，为 Web 平台上的各种需要 Base64 编码和解码的场景提供了基础支持。理解其功能和使用方式对于进行 Web 开发，尤其是涉及到数据传输、资源嵌入等方面至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/base64.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
    Copyright (C) 2000-2001 Dawit Alemayehu <adawit@kde.org>
    Copyright (C) 2006 Alexey Proskuryakov <ap@webkit.org>
@@ -313,7 +315,4 @@ String NormalizeToBase64(const String& encoding) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

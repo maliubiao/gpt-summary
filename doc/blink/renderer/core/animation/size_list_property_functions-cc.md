@@ -154,14 +154,16 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
 总而言之，`size_list_property_functions.cc` 这个文件是 Blink 渲染引擎处理 `background-size` 和 `mask-size` 这类具有列表性质的 CSS 属性的关键部分，确保了浏览器能够正确地解析、计算和应用这些样式，并支持通过 JavaScript 进行动态修改和动画。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/size_list_property_functions.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -230,7 +232,4 @@ void SizeListPropertyFunctions::SetSizeList(const CSSProperty& property,
 }
 
 }  // namespace blink
-
-"""
-
 ```

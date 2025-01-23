@@ -151,7 +151,7 @@ console.log(value); // 输出 undefined
 
 总结来说，这部分单元测试旨在确保 `BaseWithIndexAndDisplacement32Matcher` 能够准确地识别出各种 32 位内存寻址的模式，这对于 V8 编译器生成高效且正确的机器码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/node-matchers-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/node-matchers-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -159,8 +159,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -986,9 +988,4 @@ TEST_F(NodeMatcherTest, ScaledWithOffset32Matcher) {
   BaseWithIndexAndDisplacement32Matcher match108(
       graph()->NewNode(a_op, d15, m4));
   CheckBaseWithIndexAndDisplacement(&match108, nullptr, 0, m4, d15);
-
- 
-"""
-
-
 ```

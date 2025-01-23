@@ -118,12 +118,14 @@ The C++ test (`CollectSample`) sets up the `CallCollectSample` native function a
 
 In essence, this C++ code acts as a rigorous testing framework for the V8 CPU profiler, simulating various JavaScript execution scenarios and validating that the profiler captures accurate and detailed performance information. The JavaScript examples within the C++ code define the workloads that the profiler is being tested against.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-cpu-profiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 de->GetChildrenCount());
   GetChild(env, start_node, "CallCollectSample");
 
@@ -1980,7 +1982,4 @@ TEST(StandardNaming) {
   LocalContext env;
   i::Isolate* isolate = CcTest::i_isolate();
   i
-"""
-
-
 ```

@@ -121,7 +121,7 @@ Finally, the goal is to present this analysis in a clear and structured way, add
 
 总而言之，这个看似简单的 `main.cpp` 文件是 Frida 测试框架的一部分，用于验证链接器的 "as-needed" 功能是否按预期工作，这对于理解动态链接和进行逆向工程都是非常重要的概念。 调试这个文件可能发生在 Frida 的开发和测试过程中，当需要确认链接行为的正确性时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/173 as-needed/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <cstdlib>
 
 #include "libA.h"
@@ -138,7 +140,4 @@ Prompt:
 int main(void) {
   return !meson_test_as_needed::linked ? EXIT_SUCCESS : EXIT_FAILURE;
 }
-
-"""
-
 ```

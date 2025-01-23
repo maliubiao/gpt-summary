@@ -211,15 +211,17 @@ go build -gcflags="-d=pcln=pctofile" main.go
 
 `go/src/cmd/internal/obj/pcln.go` 是 Go 语言工具链中一个非常核心的组件，它负责生成用于支持运行时反射、调试和错误处理的关键数据结构。虽然普通 Go 开发者不会直接使用它，但理解其功能有助于深入理解 Go 语言的底层实现机制。对于 Go 工具链的开发者来说，正确理解和维护这段代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/pcln.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -643,9 +645,4 @@ func (it *PCIter) Init(p []byte) {
 	it.Done = false
 	it.Next()
 }
-
-"""
-
-
-
 ```

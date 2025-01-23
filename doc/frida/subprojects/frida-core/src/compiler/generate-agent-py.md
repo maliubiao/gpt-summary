@@ -125,7 +125,7 @@ By following these steps, I can systematically analyze the script and generate a
 
 总而言之，`generate-agent.py` 是 Frida 构建过程中的一个关键环节，它负责将 Agent 的源代码转换成可以在目标进程中运行的 JavaScript 代码。理解这个脚本的功能和原理，有助于理解 Frida Agent 的构建过程，并在开发和调试 Frida Agent 时提供有价值的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/compiler/generate-agent.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from pathlib import Path
 import shutil
 import subprocess
@@ -226,7 +228,4 @@ def generate_agent(output_dir, priv_dir, input_dir, npm, v8_mksnapshot, host_os_
 
 if __name__ == "__main__":
     main(sys.argv)
-
-"""
-
 ```

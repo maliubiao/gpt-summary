@@ -107,12 +107,14 @@ add("hello", "world");
 
 总而言之，`translated-state.cc` 是 V8 引擎中一个至关重要的组件，它确保了 JavaScript 代码在优化和反优化之间能够平滑过渡，保证了代码的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/translated-state.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 _offset = OptimizedJSFrame::StackSlotOffsetRelativeToFp(
           iterator->NextOperand());
       uint32_t value = GetUInt32Slot(fp, slot_offset);
@@ -1267,8 +1269,4 @@ void TranslatedState::ReadUpdateFeedback(
 
 // Undefine the heap manipulation macros.
 #include "src/objects/object-macros-undef.h"
-
-"""
-
-
 ```

@@ -175,15 +175,17 @@ By following these steps, including the crucial step of understanding the broade
 
 总而言之，`net/http/http_transaction_test_util.cc` 提供了一套强大的工具，使得 Chromium 的开发者能够有效地测试网络栈的各个组件，特别是 `HttpTransaction` 的行为，模拟各种网络场景，并隔离和调试网络相关的问题，而无需依赖真实的外部服务器。它在单元测试和集成测试中都扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_transaction_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1075,7 +1077,4 @@ int ConnectedHandler::OnConnected(const TransportInfo& info,
 }
 
 }  // namespace net
-
-"""
-
 ```

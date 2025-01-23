@@ -83,15 +83,17 @@ Strategizing complete. I will now generate the response.
 
 `incremental_marking_test.cc` 的第 1 部分主要功能是**测试 `HeapVector` 和 `HeapDeque` 这两种基于顺序存储的容器类在增量标记垃圾回收下的正确性**。  它覆盖了这些容器的常见操作，例如添加元素、复制、移动和交换，以及在增量标记过程中，它们是否能正确地维护对内部垃圾回收对象的引用，防止对象被过早回收。  这些测试使用 `Member` 和 `WeakMember` 来验证对象在垃圾回收后的存活状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/test/incremental_marking_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -908,7 +910,4 @@ TEST_F(IncrementalMarkingTest, HeapHashMapCopyMemberMember) {
       MakeGarbageCollected<
           HeapHashMap<Member<LinkedObject>, Member<LinkedObject>>>();
   map1->insert(ob
-"""
-
-
 ```

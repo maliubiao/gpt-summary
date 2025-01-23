@@ -232,15 +232,17 @@ Essentially, these methods are crucial for correctly positioning, sizing, drawin
 
 这部分代码定义了 `LayoutObject` 中负责管理元素定位、包含关系、滚动、视觉效果以及渲染失效的关键功能。它体现了浏览器渲染引擎在处理 CSS 布局和渲染方面的核心逻辑，并且与 JavaScript 和 HTML 的功能有着紧密的联系。这些功能确保了网页元素能够按照 CSS 规则正确地显示在屏幕上，并响应用户的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t* candidate) {
     return candidate->CanContainFixedPositionObjects();
   });
@@ -1150,7 +1152,4 @@ void LayoutObject::SetPseudoElementStyle(const LayoutObject& owner,
     SetStyle(builder.TakeStyle());
     return;
   }
-"""
-
-
 ```

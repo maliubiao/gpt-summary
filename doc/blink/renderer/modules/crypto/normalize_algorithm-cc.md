@@ -150,7 +150,7 @@ TypeError: iv: Not a BufferSource
 
 总而言之，`blink/renderer/modules/crypto/normalize_algorithm.cc` 文件的第一部分主要负责将 Web Crypto API 中用户提供的算法标识符（名称字符串或包含名称和参数的字典对象）转换成 Blink 引擎内部使用的标准化的 `WebCryptoAlgorithm` 结构体。这包括将算法名称映射到内部 ID，并解析和验证算法所需的参数，同时处理可能出现的各种错误情况。它是 Web Crypto API 在 Blink 引擎中的关键入口点之一，确保了用户提供的算法信息能够被正确理解和使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/crypto/normalize_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -1137,7 +1139,4 @@ bool ParseAesDerivedKeyParams(const Dictionary& raw,
     return false;
 
   params = std::make_unique<WebCry
-"""
-
-
 ```

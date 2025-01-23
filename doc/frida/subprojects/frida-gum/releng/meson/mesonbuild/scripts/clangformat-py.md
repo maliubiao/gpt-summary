@@ -147,7 +147,7 @@ This systematic approach, starting with understanding the context and code struc
 
 通过以上步骤，开发者可以追溯到 `clangformat.py` 的执行过程，并理解其在 Frida 构建系统中的作用以及如何处理代码格式化问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/scripts/clangformat.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -212,7 +214,4 @@ def run(args: T.List[str]) -> int:
         cformat_ver = None
 
     return run_tool('clang-format', srcdir, builddir, run_clang_format, exelist, options.check, cformat_ver)
-
-"""
-
 ```

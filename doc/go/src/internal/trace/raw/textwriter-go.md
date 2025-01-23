@@ -166,7 +166,7 @@ Event: ID=2, Name=syscall_enter, Args=[open /tmp/test.txt]
 
 总而言之，`textwriter.go` 提供了一个核心的组件，用于将 Go 程序的 trace 数据以易于理解的文本格式保存下来，方便开发者进行分析和诊断。它本身不处理命令行参数，而是依赖调用者提供输出目标，并且强调了版本一致性的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/raw/textwriter.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -174,8 +174,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -215,9 +217,4 @@ func (w *TextWriter) WriteEvent(e Event) error {
 	_, err := fmt.Fprintln(w.w, e.String())
 	return err
 }
-
-"""
-
-
-
 ```

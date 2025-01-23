@@ -135,15 +135,17 @@ By following these steps and constantly questioning and refining your understand
 
 总而言之，`smooth_scroll_sequencer.cc` 负责管理 Blink 渲染引擎中的平滑滚动动画序列，确保多个滚动请求能够有序且平滑地执行，并处理各种边界情况和潜在的冲突。它与 JavaScript, HTML, CSS 紧密相关，是实现现代 Web 页面平滑滚动体验的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scroll/smooth_scroll_sequencer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ void SmoothScrollSequencer::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

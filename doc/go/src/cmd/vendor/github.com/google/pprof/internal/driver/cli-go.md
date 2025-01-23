@@ -199,7 +199,7 @@ Bob
 
 总而言之，这段代码是 `pprof` 工具解析命令行参数的核心部分，它定义了各种选项和参数，并将其转换为程序内部使用的 `source` 结构体，以便后续的剖析数据处理和报告生成。理解这段代码有助于理解 `pprof` 工具的命令行使用方式和配置选项。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/driver/cli.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -207,8 +207,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -569,9 +571,4 @@ var usageMsgVars = "\n\n" +
 	"                      ${name}.debug, $dir/.debug/${name}.debug,\n" +
 	"                      usr/lib/debug/$dir/${name}.debug\n" +
 	"   * On Windows, %USERPROFILE% is used instead of $HOME"
-
-"""
-
-
-
 ```

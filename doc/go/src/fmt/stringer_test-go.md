@@ -190,7 +190,7 @@ fmt.Println(person) // 输出: Name: Alice, Age: 30
 
 **易犯错的点在于，如果开发者忘记实现 `String()` 方法，或者在实现 `String()` 方法时返回了不正确或不清晰的字符串，那么在使用 `%v` 格式化输出时，结果可能不是预期的，难以理解或调试。**  例如，如果 `String()` 方法实现错误，可能返回空字符串或者一些无意义的信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/fmt/stringer_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -198,8 +198,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -261,9 +263,4 @@ func TestStringer(t *testing.T) {
 	s = Sprintf("%v %v", TB(true), TS("x"))
 	check(t, s, "B: true S: \"x\"")
 }
-
-"""
-
-
-
 ```

@@ -208,15 +208,17 @@ This systematic process of code analysis, hypothesis formation, example construc
 
 总而言之，`css_attr_value_tainting.cc` 属于 Blink 引擎内部处理 CSS 的一个安全机制，旨在防止因不当使用 `attr()` 函数而导致的性能问题和潜在的无限循环。用户通常不需要直接与这个文件交互，但理解其功能有助于理解 Blink 如何处理复杂的 CSS 场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_attr_value_tainting.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -307,7 +309,4 @@ String RemoveAttrTaintToken(StringView str) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

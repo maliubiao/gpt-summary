@@ -263,7 +263,7 @@ if (internal_function_addr) {
 
 总结来说，`bionic/tests/libs/ns_hidden_child_global.cpp` 是一个用于测试 Android Bionic 库动态链接器特性的测试文件，重点关注命名空间隔离和符号可见性。它通过定义一对相互调用的函数，并可能在不同的共享库中定义它们，来验证链接器的行为。虽然这个文件本身不涉及 libc 函数的具体实现，但它与 Android Framework 和 NDK 构建的应用程序的动态链接过程息息相关。使用 Frida 可以方便地调试这些动态链接相关的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/ns_hidden_child_global.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -274,8 +274,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2020 The Android Open Source Project
  * All rights reserved.
@@ -309,7 +311,4 @@ extern "C" void internal_function();
 extern "C" void global_function() {
   internal_function();
 }
-
-"""
-
 ```

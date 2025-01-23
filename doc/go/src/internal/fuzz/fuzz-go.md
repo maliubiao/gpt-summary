@@ -187,7 +187,7 @@ opts := fuzz.CoordinateFuzzingOpts{
 
 `CoordinateFuzzing` 函数是 Go 语言 fuzzing 功能的核心协调器，它负责配置、启动、管理和监控多个 fuzzing worker 进程，以并发地执行模糊测试。它处理种子语料库、动态生成测试输入、跟踪代码覆盖率、检测崩溃，并尝试最小化导致崩溃或增加覆盖率的输入，最终帮助开发者发现程序中潜在的错误和漏洞。这段代码是 Go 语言实现高效、可扩展的模糊测试能力的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/fuzz/fuzz.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -196,8 +196,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1214,9 +1216,4 @@ func ReadCorpus(dir string, types []reflect.Type) ([]CorpusEntry, error) {
 func readCorpusData(data []byte, types []reflect.Type) ([]any, error) {
 	vals, err := unmarshalCorpusFile(data)
 	if e
-"""
-
-
-
-
 ```

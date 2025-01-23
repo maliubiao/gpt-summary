@@ -153,15 +153,17 @@ Let's break down the thought process for analyzing this C++ test file and genera
 
 因此，`uber_quic_stream_id_manager_test.cc` 中测试的各种场景，都是为了确保在用户进行各种网络操作时，QUIC 协议栈能够正确地管理流 ID，保证连接的稳定性和效率。通过阅读和理解这些测试用例，可以更好地理解 `UberQuicStreamIdManager` 的工作原理，并有助于排查与 QUIC 流管理相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/uber_quic_stream_id_manager_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -498,7 +500,4 @@ TEST_P(UberQuicStreamIdManagerTest, SetMaxOpenOutgoingStreamsPlusFrame) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

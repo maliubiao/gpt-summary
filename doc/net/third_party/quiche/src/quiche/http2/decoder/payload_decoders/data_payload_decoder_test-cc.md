@@ -129,15 +129,17 @@ fetch('/image.png')
 
 总而言之，`data_payload_decoder_test.cc` 是确保 Chromium 网络栈中 HTTP/2 DATA 帧 payload 解码功能正确性的重要组成部分，它通过各种测试用例覆盖了不同的场景，并使用了辅助工具来简化测试过程。虽然 JavaScript 代码不直接操作这个解码器，但解码器的正确性直接影响着 JavaScript 如何接收和处理网络数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/decoder/payload_decoders/data_payload_decoder_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ TEST_P(DataPayloadDecoderTest, VariousDataPayloadSizes) {
 }  // namespace
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

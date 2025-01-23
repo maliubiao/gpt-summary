@@ -111,14 +111,16 @@ This systematic approach, starting with a high-level understanding and progressi
 
 总而言之，`blink/renderer/platform/link_hash.cc` 是 Blink 引擎中负责高效且隐私地跟踪用户访问过的链接的关键组件，它直接影响到 HTML 超链接的功能和 CSS `:visited` 伪类的行为。虽然开发者不直接使用它，但理解其工作原理有助于更好地理解浏览器如何处理链接和样式，并避免相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/link_hash.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2008, 2009, Google Inc. All rights reserved.
  *
@@ -214,7 +216,4 @@ LinkHash PartitionedVisitedLinkFingerprint(
 }
 
 }  // namespace blink
-
-"""
-
 ```

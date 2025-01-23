@@ -121,11 +121,13 @@ runWasm();
 
 `wasm-optimize-phase.cc` 中定义的 `WasmOptimizePhase` 是 V8 引擎编译 WebAssembly 代码的关键优化步骤。它通过运行一系列的 reducer 来改进 WebAssembly 代码的性能和效率，从而最终提升在 JavaScript 中运行的 WebAssembly 应用的执行速度。 虽然我们看不到直接的 JavaScript 代码在这个文件中，但这个 C++ 代码的执行直接影响了 JavaScript 中 WebAssembly 代码的运行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-optimize-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -158,7 +160,4 @@ void WasmOptimizePhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

@@ -147,7 +147,7 @@ func main() {
 
 `runtime.fastlog2` 是 Go 运行时为了优化堆采样性能而实现的一个快速近似对数函数。它利用位操作和查找表来避免昂贵的精确对数计算。  普通 Go 开发者无法直接使用它，但了解它的存在和作用可以帮助理解 Go 运行时的内部机制。其核心价值在于速度，并为此牺牲了部分精度，这在堆采样等性能敏感的场景中是合适的权衡。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/fastlog2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -155,8 +155,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -184,9 +186,4 @@ func fastlog2(x float64) float64 {
 	low, high := fastlog2Table[xManIndex], fastlog2Table[xManIndex+1]
 	return float64(xExp) + low + (high-low)*float64(xManScale)*fastlogScaleRatio
 }
-
-"""
-
-
-
 ```

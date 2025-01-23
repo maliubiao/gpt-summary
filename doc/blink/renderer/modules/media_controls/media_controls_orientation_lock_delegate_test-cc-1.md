@@ -105,7 +105,7 @@ The tests use functions like `RotateScreenTo`, `RotateDeviceTo`, `SimulateEnterF
 
 总而言之，这部分测试着重于验证 `MediaControlsOrientationLockDelegate` 在各种复杂的旋转和全屏切换场景下，能够正确地管理屏幕方向锁定，以提供良好的用户体验，并考虑到用户的系统设置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_controls/media_controls_orientation_lock_delegate_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tationData::Create(
                     alpha, -90. /* beta */, 90. /* gamma */, absolute)));
       EXPECT_EQ(natural_orientation,
@@ -825,8 +827,4 @@ TEST_F(MediaControlsOrientationLockAndRotateToFullscreenDelegateTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

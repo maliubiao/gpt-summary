@@ -239,7 +239,7 @@ TEST_F(EventHandlerSimTest, TestScrollendFiresAfterScrollWithEarlyKeyUp) {
 
 总而言之，这部分测试用例旨在确保 Blink 的事件处理器能够正确、可靠地处理各种用户输入事件，并与 JavaScript, HTML, CSS 等 Web 技术协同工作，保证网页的交互功能正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/input/event_handler_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -247,8 +247,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 og');
         log.innerText = 'keydown cancelable=' + e.cancelable;
       });
@@ -1083,8 +1085,5 @@ TEST_F(EventHandlerSimTest, TestScrollendFiresAfterScrollWithEarlyKeyUp) {
   GetDocument().GetFrame()->GetEventHandler().KeyEvent(e);
   Compositor().BeginFrame();
 
-  // Verify 
-"""
-
-
+  // Verify
 ```

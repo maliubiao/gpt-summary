@@ -90,11 +90,13 @@ let result5 = Math.pow(2.5, 2); // 结果是 6.25
 
 `v8/src/numbers/ieee754.cc` 文件中的代码负责实现 JavaScript 中 `Math.pow()` 函数的底层逻辑。它遵循 IEEE 754 标准，并根据 V8 的配置选择使用标准库的实现或 V8 内部的实现。  这个文件确保了 JavaScript 在进行幂运算时能够得到符合规范的结果，并且能够处理诸如 NaN 和无穷大等特殊情况。理解这个文件可以帮助我们更深入地了解 JavaScript 引擎是如何处理数字运算的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/numbers/ieee754.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -128,7 +130,4 @@ double pow(double x, double y) {
 }
 
 }  // namespace v8::internal::math
-
-"""
-
 ```

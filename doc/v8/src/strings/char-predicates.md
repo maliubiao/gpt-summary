@@ -112,11 +112,13 @@ V8 引擎在解析这段代码时，会使用 `IsWhiteSpaceSlow` 来识别空格
 
 文件开头的 `#ifndef V8_INTL_SUPPORT` 和 `#error Internationalization is expected to be enabled.` 表明这个文件依赖于 V8 的国际化 (Internationalization) 支持。这意味着这些字符判断函数是基于 Unicode 标准实现的，能够正确处理各种语言的字符。 如果编译 V8 时禁用了国际化支持，则会触发编译错误，因为这些函数的功能依赖于 Unicode 相关的库 (如 `unicode/uchar.h`)。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/char-predicates.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ bool IsWhiteSpaceSlow(base::uc32 c) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

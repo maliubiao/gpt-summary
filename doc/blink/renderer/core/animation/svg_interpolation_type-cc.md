@@ -143,14 +143,16 @@ This structured approach, combining code analysis with knowledge of web technolo
 
 `svg_interpolation_type.cc` 是 Blink 引擎中处理 SVG 动画的关键部分，它负责将动画定义中的值转换为 SVG 元素可以理解并应用的属性值。它与 HTML 中定义的 SVG 元素、CSS 中定义的动画样式以及 JavaScript 通过 DOM 或 Web Animations API 对 SVG 动画的控制紧密相关。理解其功能有助于理解浏览器如何渲染和更新 SVG 动画。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/svg_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ void SVGInterpolationType::Apply(
 }
 
 }  // namespace blink
-
-"""
-
 ```

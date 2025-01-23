@@ -133,15 +133,17 @@ golang.org/x/sys v0.0.0-20210615035009-dddb6d4f5106: dir has been modified (/Use
 
 总而言之，`go mod verify` 是一个用于增强 Go 模块安全性的重要工具，它可以帮助开发者确保其项目的依赖没有被篡改。理解其功能和使用场景对于维护安全可靠的 Go 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modcmd/verify.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -285,9 +287,4 @@ func verifyMod(ctx context.Context, mod module.Version) []error {
 	}
 	return errs
 }
-
-"""
-
-
-
 ```

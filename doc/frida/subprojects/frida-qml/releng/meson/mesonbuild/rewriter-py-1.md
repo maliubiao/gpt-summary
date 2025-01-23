@@ -131,7 +131,7 @@ The user wants to understand the functionality of the Python code provided. I ne
 
 总而言之，这部分代码是 `rewriter.py` 脚本的核心执行引擎，负责将用户的意图转化为对 Meson 构建文件的实际修改。它涉及到对构建系统、文件操作和抽象语法树的理解和操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/rewriter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ['operation'] == 'target_add':
             if target is not None:
                 mlog.error('Can not add target', mlog.bold(cmd['target']), 'because it already exists', *self.on_error())
@@ -410,8 +412,4 @@ def run(options):
         raise e
     finally:
         mlog.set_verbose()
-
-"""
-
-
 ```

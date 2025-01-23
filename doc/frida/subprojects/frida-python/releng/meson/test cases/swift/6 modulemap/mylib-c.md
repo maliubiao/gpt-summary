@@ -196,7 +196,7 @@ By following this structured approach, breaking down the problem into smaller pa
 
 总而言之，虽然 `mylib.c` 本身的代码非常简单，但它在 Frida 的上下文中扮演着重要的角色，用于测试和演示 Frida 的动态插桩能力，特别是与 Swift 模块的集成。 它的简洁性使其成为理解 Frida 核心概念的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/swift/6 modulemap/mylib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,14 +204,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"mylib.h"
 
 int getNumber() {
     return 42;
 }
-
-"""
-
 ```

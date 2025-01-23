@@ -370,15 +370,17 @@ function greet(name) {
 
 理解 `v8/src/objects/instruction-stream.cc` 的功能对于理解 V8 如何管理和执行 JavaScript 代码至关重要。它涉及到代码的生命周期管理，包括代码的生成、移动和垃圾回收过程中的更新。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/instruction-stream.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/instruction-stream.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -512,7 +514,4 @@ InstructionStream::WriteBarrierPromise::~WriteBarrierPromise() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

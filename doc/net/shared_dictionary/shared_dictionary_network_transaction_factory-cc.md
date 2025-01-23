@@ -156,15 +156,17 @@ JavaScript 本身不直接操作 `SharedDictionaryNetworkTransactionFactory` 或
 
 总而言之，`SharedDictionaryNetworkTransactionFactory` 在 Chromium 网络栈中扮演着关键角色，它负责创建能够处理共享字典的 HTTP 事务，从而优化网络性能，减少数据传输量。虽然 JavaScript 不直接操作它，但 JavaScript 发起的网络请求是其工作的驱动力。 理解其功能有助于理解 Chromium 如何实现共享字典这一优化技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/shared_dictionary/shared_dictionary_network_transaction_factory.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ HttpNetworkSession* SharedDictionaryNetworkTransactionFactory::GetSession() {
 }
 
 }  // namespace net
-
-"""
-
 ```

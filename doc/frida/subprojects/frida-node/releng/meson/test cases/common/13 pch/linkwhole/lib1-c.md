@@ -172,7 +172,7 @@ Exiting func1! // Output from Frida script's onLeave
 
 In essence, this seemingly simple C code snippet serves as a fundamental building block for understanding program control flow and provides a clear example of how Frida can be used for dynamic analysis and reverse engineering. The context of the "linkwhole" test case adds an interesting dimension related to the linking process and ensuring all necessary code is included in the final binary.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/13 pch/linkwhole/lib1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,13 +180,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void func1() {
     printf("Calling func2.");
     func2();
 }
-
-"""
-
 ```

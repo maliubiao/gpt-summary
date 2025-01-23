@@ -147,7 +147,7 @@ Interceptor.attach(fooProcessAddress, {
 
 因此，`foo.c` 文件的存在是 Frida 开发和测试流程中的一个环节，用于验证 Frida 在 Windows 环境下 hook C 函数的能力，特别是涉及到处理额外的库路径的情况。  这个简单的文件作为被 hook 的目标，使得测试更加可控和易于理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/windows/13 test argument extra paths/lib/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,15 +155,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "foo.h"
 
 int
 foo_process(void) {
   return 42;
 }
-
-"""
-
 ```

@@ -183,7 +183,7 @@ v5 = Store {int} v4 v1 v3 // 理论上这里可能出现 Move，但会被优化�
 
 第 14 部分的 `rewritegeneric.go` 代码主要定义了针对 `OpMove` 操作的多种重写规则。这些规则旨在通过识别和转换特定的 `OpMove` 模式来优化通用类型的内存拷贝操作。其核心功能是提升结构体、数组、切片等数据结构的赋值、拷贝以及相关操作的性能。它通过合并连续的存储操作，优化 Move 后跟 Zero 的场景，消除冗余的 Move，并利用 `VarDef` 信息来实现这些优化。 这部分代码是 Go 编译器优化流程中的一个关键环节，对于生成高效的目标代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritegeneric.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -192,8 +192,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第14部分，共26部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 Pos, OpOffPtr, tt4)
 		v4.AuxInt = int64ToAuxInt(o4)
 		v4.AddArg(dst)
@@ -1198,9 +1200,4 @@ func rewriteValuegeneric_OpMul16(v *Value) bool {
 			}
 			v.reset(OpNeg16)
 			v0 := b.NewValue0(v.Pos, OpL
-"""
-
-
-
-
 ```

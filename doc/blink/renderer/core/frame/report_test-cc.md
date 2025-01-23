@@ -124,14 +124,16 @@ Let's break down the thought process for analyzing the `report_test.cc` file.
 
 总而言之，`report_test.cc` 通过一系列单元测试，确保了 `blink::Report` 类的核心功能（特别是报告的唯一标识和发送策略）能够按预期工作，这对于 Blink 引擎正确处理各种 Web 平台的报告机制至关重要。 这些报告机制直接关联到 Web 开发中常见的安全策略、错误处理等方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/report_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ TEST(ReportTest, ExtensionURLsAreNotReported) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

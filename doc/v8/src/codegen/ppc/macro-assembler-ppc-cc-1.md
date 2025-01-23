@@ -129,7 +129,7 @@ oldGenObject.data = youngGenObject;
 **归纳其功能:**
 
 总而言之，这个代码片段是 `MacroAssembler` 类中用于在 PPC 架构上生成机器码的关键部分，它提供了处理指针、实现垃圾回收机制（写屏障）、管理函数调用栈帧、进行类型转换以及辅助生成函数序言和调用逻辑等底层操作的功能。 这些功能是 V8 引擎将 JavaScript 代码高效地编译和执行为机器码的基础。
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/macro-assembler-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/macro-assembler-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -137,8 +137,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r));
     AndU64(scratch, handle, scratch, SetRC);
     beq(&is_trusted_pointer_handle, cr0);
@@ -1070,7 +1072,4 @@ void MacroAssembler::IsObjectTypeFast(Register object,
 // Sets equality condition flags.
 void MacroAssembler::IsObjectType(Register object, Register scratch1,
                                   Register scratch2,
-"""
-
-
 ```

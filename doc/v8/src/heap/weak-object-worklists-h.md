@@ -189,15 +189,17 @@ While developers don't directly interact with these worklists, understanding the
 
 In summary, `v8/src/heap/weak-object-worklists.h` is a crucial piece of V8's garbage collection infrastructure, responsible for meticulously tracking weak objects and references to ensure correct memory management according to the semantics of JavaScript's weak reference features.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/weak-object-worklists.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/weak-object-worklists.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -334,7 +336,4 @@ class WeakObjects final {
 }  // namespace v8
 
 #endif  // V8_HEAP_WEAK_OBJECT_WORKLISTS_H_
-
-"""
-
 ```

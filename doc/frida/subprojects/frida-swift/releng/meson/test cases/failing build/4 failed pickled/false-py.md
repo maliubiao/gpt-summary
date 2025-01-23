@@ -83,7 +83,7 @@ By following this thought process, I can analyze even a simple script like this 
 
 作为调试线索，看到这个脚本失败，开发者会意识到这是**预期的失败**。  这个脚本的目的就是为了验证在某种特定情况下，Frida 的测试框架能够正确地识别并处理失败的情况。 目录名 `failing build` 和文件名 `false.py` 都明确指出了这一点。  这可以帮助开发者区分真正的错误和预期的失败测试。 进一步查看 `4 failed pickled` 目录下的其他文件可能会提供更多关于这一组特定失败测试的上下文信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing build/4 failed pickled/false.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -91,13 +91,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 sys.exit(1)
-
-"""
-
 ```

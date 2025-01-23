@@ -75,12 +75,14 @@ void Simulator::fadd(VectorFormat vform, LogicVRegister dst, const LogicVRegiste
 
 总而言之，这个 C++ 文件是 V8 引擎在非 ARM64 平台上执行涉及到浮点运算和 SIMD 指令的 JavaScript 代码的关键组成部分，它通过软件模拟实现了 ARM64 架构的指令行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-logic-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1959,7 +1961,4 @@ LogicVRegister Simulator::ExtractNarrow(VectorFormat dstform,
 LogicVRegister Simulator::xtn(VectorFormat vform, LogicVRegister dst,
                               const LogicVRegister& src) {
   return ExtractNarrow(vform, dst, true, src, true
-"""
-
-
 ```

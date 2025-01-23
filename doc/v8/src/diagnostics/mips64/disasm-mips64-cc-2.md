@@ -167,7 +167,7 @@ let result = add(5, 10);
 
 这第三部分的代码是 `v8/src/diagnostics/mips64/disasm-mips64.cc` 文件中负责 **解码和格式化各种 MIPS64 指令** 的核心部分，特别是 **立即数类型的指令、PC 相对寻址指令和大量的 MSA (MIPS SIMD Architecture) 指令**。它通过识别指令的操作码和操作数，将其转换为易于理解的汇编语言文本，是 V8 引擎在 MIPS64 架构上进行调试和分析的重要工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/mips64/disasm-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/mips64/disasm-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,8 +175,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 instr, "ldc1    'ft, 'imm16s('rs)");
       break;
     case SWC1:
@@ -997,8 +999,4 @@ void Disassembler::Disassemble(FILE* f, uint8_t* begin, uint8_t* end,
 }  // namespace disasm
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
-
 ```

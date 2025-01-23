@@ -169,15 +169,17 @@ console.log(strObj.length);
 
 `v8/src/objects/primitive-heap-object.tq` 是一个关键的 Torque 文件，它定义了 V8 中表示基本类型堆对象的抽象基类。理解它的作用有助于深入了解 V8 如何在内部处理 JavaScript 的基本类型，并避免一些常见的编程错误。它强调了即使是 JavaScript 的基本类型在 V8 内部也可能以对象的形式存在，并参与到 V8 的对象模型中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/primitive-heap-object.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/primitive-heap-object.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ Prompt:
 @abstract
 @cppObjectLayoutDefinition
 extern class PrimitiveHeapObject extends HeapObject {}
-
-"""
-
 ```

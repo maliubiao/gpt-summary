@@ -155,7 +155,7 @@ By following this structured approach, I could effectively analyze the code snip
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/mesonbuild/mtest.py` 的主要功能是 **为 Frida 项目提供一个灵活且可配置的测试执行框架，能够运行各种类型的测试，收集和报告测试结果，并支持多种执行模式和调试选项，以便开发者能够有效地验证 Frida 代码的正确性。** 它与 Meson 构建系统紧密集成，并能够处理不同平台和测试输出格式的差异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/mtest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2017 The Meson development team
 
@@ -999,7 +1001,4 @@ class JunitBuilder(TestLogger):
                 failures=str(sum(1 for r in test.results if r.result in
                                  {TestResult.FAIL, TestResult.UNEXPECTEDPASS, TestResult.TIMEOUT})),
                 skipped=str
-"""
-
-
 ```

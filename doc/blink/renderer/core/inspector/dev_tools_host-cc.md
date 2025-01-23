@@ -168,14 +168,16 @@ Let's consider the `showContextMenuAtPoint` function:
 
 In summary, `dev_tools_host.cc` is a crucial component in the Blink rendering engine that enables the functionality of the Chrome DevTools by providing a communication channel and various utility functions for interacting with the rendering engine, accessing system resources, and managing the DevTools frontend UI. Its interactions are deeply intertwined with JavaScript, HTML, and CSS, as it facilitates the inspection and manipulation of web content.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/dev_tools_host.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008 Apple Inc. All rights reserved.
  * Copyright (C) 2008 Matt Lilek <webkit@mattlilek.com>
@@ -454,7 +456,4 @@ bool DevToolsHost::isHostedMode() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

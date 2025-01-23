@@ -116,14 +116,16 @@ Initially, I might have focused too much on the specific C++ syntax. However, th
 
 总而言之，`link_to_text_mojom_traits.cc` 文件是 Blink 引擎中 "Link to Text" 功能的一个重要组成部分，它确保了相关状态和错误信息能够在不同的浏览器进程之间可靠地传递，这对于功能的正确运行至关重要。它背后的错误类型也反映了用户在使用该功能或开发者在集成该功能时可能遇到的各种情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/link_to_text/link_to_text_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ bool EnumTraits<blink::mojom::LinkGenerationReadyStatus,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

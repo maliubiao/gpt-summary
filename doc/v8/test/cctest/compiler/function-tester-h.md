@@ -226,15 +226,17 @@ TEST(LogicTest, TestGreaterThan) {
 
 总而言之，`v8/test/cctest/compiler/function-tester.h` 提供了一个强大的工具，用于在 V8 的编译测试中验证 JavaScript 代码片段的行为，包括正常的返回值和预期的异常情况。这对于确保 V8 编译器正确地生成代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/function-tester.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/function-tester.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -376,7 +378,4 @@ class FunctionTester : public InitializedHandleScope {
 }  // namespace v8
 
 #endif  // V8_CCTEST_COMPILER_FUNCTION_TESTER_H_
-
-"""
-
 ```

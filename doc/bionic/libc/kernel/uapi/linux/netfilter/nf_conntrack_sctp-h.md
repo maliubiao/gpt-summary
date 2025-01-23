@@ -172,7 +172,7 @@ sys.stdin.read()
 
 这个 Frida 示例提供了一个调试思路，实际操作会更复杂，需要对 Linux 内核和 Netfilter 的内部机制有一定的了解。 你可能还需要使用 `ksymbols` 或内核调试工具来辅助定位目标函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/nf_conntrack_sctp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -183,8 +183,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -208,7 +210,4 @@ enum sctp_conntrack {
   SCTP_CONNTRACK_MAX
 };
 #endif
-
-"""
-
 ```

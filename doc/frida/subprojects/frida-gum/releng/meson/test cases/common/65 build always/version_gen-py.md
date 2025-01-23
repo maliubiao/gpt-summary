@@ -172,7 +172,7 @@ This iterative process of code scanning, functional decomposition, contextualiza
 
 此外，如果开发者修改了 Frida 的版本控制策略或构建流程，也可能需要修改 `version_gen.py` 脚本来适应新的需求。理解这个脚本的功能有助于开发者排查与版本信息生成相关的构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/65 build always/version_gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os, subprocess
@@ -211,7 +213,4 @@ if __name__ == '__main__':
     outfile = sys.argv[2]
     fallback = sys.argv[3]
     generate(infile, outfile, fallback)
-
-"""
-
 ```

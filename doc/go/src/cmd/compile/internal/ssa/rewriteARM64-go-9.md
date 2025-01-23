@@ -181,7 +181,7 @@ b1:
 
 作为 `rewriteARM64.go` 文件的第 10 部分，这段代码延续了该文件的核心功能：**对 SSA 图中的控制流块进行基于 ARM64 架构的特定优化**。它通过一系列的模式匹配和重写规则，旨在将常见的、但可能效率较低的 SSA 结构，转换为更直接、更符合 ARM64 硬件特性的指令序列，从而提高最终生成的可执行文件的性能。这段代码特别关注于 **条件跳转** 相关的优化，包括简化比较操作、利用 ARM64 的条件码和位测试指令等。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -189,9 +189,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第10部分，共10部分，请归纳一下它的功能
+```
 
-"""
- = symToAux(makeJumpTableSym(b))
+### 源代码
+```go
+= symToAux(makeJumpTableSym(b))
 			v1 := b.NewValue0(b.Pos, OpSB, typ.Uintptr)
 			v0.AddArg(v1)
 			b.resetWithControl2(BlockARM64JUMPTABLE, idx, v0)
@@ -1956,10 +1958,4 @@ Prompt:
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

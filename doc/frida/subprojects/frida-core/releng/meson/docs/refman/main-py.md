@@ -206,7 +206,7 @@ By following this structured approach, I can systematically analyze the script a
 
 总而言之，`main.py` 是 Frida 文档生成的核心脚本，它通过灵活的加载器和生成器机制，将结构化的数据转换为多种格式的参考文档，帮助用户理解和使用 Frida 进行动态 instrumentation 和逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/docs/refman/main.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -214,8 +214,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -295,7 +297,4 @@ def main() -> int:
 
     generator.generate()
     return 0
-
-"""
-
 ```

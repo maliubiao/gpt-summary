@@ -118,7 +118,7 @@ Based on this, the core function of this section appears to be **testing various
 
 总而言之，该代码片段的功能是 **对 HTTP 缓存处理字节范围请求的各种复杂场景进行详尽的单元测试**。它涵盖了缓存的跳过、记录、存储、重新验证以及处理各种服务器响应状态码和缓存控制指令的情况。这些测试确保了 Chromium 的 HTTP 缓存能够正确、高效地处理范围请求，从而提升用户体验，例如在视频播放、大文件下载等场景中实现断点续传和高效的资源加载。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Transaction);
   transaction.start_return_code = ERR_FAILED;
   transaction.load_flags |= LOAD_VALIDATE_CACHE;
@@ -949,7 +951,4 @@ TEST_F(HttpCacheGetTest, 206ReturnsSubrangeRangeCachedContent) {
 
   EXPECT_EQ(0U, headers.find("HTTP/1.1 200 OK\n"));
   EXPECT_EQ(3,
-"""
-
-
 ```

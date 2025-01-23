@@ -134,7 +134,7 @@ This refined understanding allows for a more accurate and insightful answer.
 
 总而言之，虽然 `simple.c` 的代码非常简单，但它在 Frida 的测试框架中扮演着一个角色，用于验证 Frida 在特定情况下的行为。  用户可能会在调试与 Frida 相关的构建、测试或逆向工程问题时，接触到这样的简单示例代码。 文件路径中的 "failing" 和 "pkgconfig variables zero length" 强烈暗示了这个文件与构建系统配置问题相关的测试用例有关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/46 pkgconfig variables zero length/simple.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,14 +142,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"simple.h"
 
 int simple_function() {
     return 42;
 }
-
-"""
-
 ```

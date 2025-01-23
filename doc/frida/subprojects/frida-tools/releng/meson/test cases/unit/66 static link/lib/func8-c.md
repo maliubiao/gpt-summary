@@ -119,7 +119,7 @@ By following these steps and engaging in some self-correction, we can construct 
 
 `func8.c` 中的代码虽然简单，但它代表了在逆向工程中需要分析的基本单元——函数。Frida 这样的工具可以帮助逆向工程师动态地观察、理解甚至修改这些函数的行为，从而深入了解目标程序的运行机制。理解二进制底层知识、操作系统原理以及可能的编程错误，对于有效地使用 Frida 进行逆向分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/66 static link/lib/func8.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,15 +127,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func7();
 
 int func8()
 {
   return func7() + 1;
 }
-
-"""
-
 ```

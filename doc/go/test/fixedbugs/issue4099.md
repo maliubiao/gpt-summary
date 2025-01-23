@@ -128,15 +128,17 @@ The line `// errorcheck -0 -m` specifies the command-line flags used when runnin
 
 In summary, the `issue4099.go` snippet is a carefully crafted test case to ensure the Go compiler correctly interprets and enforces the rules surrounding the `//go:noescape` directive and its impact on escape analysis. It highlights the directive's limited scope and the requirement for functions marked with it to lack a body. The `// ERROR` comment is a specific assertion about the compiler's output when escape analysis is enabled.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4099.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m
 
 //go:build !goexperiment.newinliner
@@ -165,9 +167,4 @@ func G() {
 	var buf2 [10]byte // ERROR "moved to heap: buf2"
 	F2(buf2[:])
 }
-
-"""
-
-
-
 ```

@@ -200,7 +200,7 @@ add(5, 3);
 
 作为编译过程的第 2 部分，这段代码主要负责**执行和管理 JavaScript 函数的实际编译过程，从最初的未优化编译（生成字节码）开始，并为后续的优化编译（生成机器码）奠定基础。** 它处理了单个函数的编译、迭代地编译多个函数（包括内部函数），并提供了优化编译的入口点和缓存机制。 此外，它还涉及了基本的错误处理和编译任务管理。  这部分代码是 V8 将 JavaScript 源代码转化为可执行代码的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -208,8 +208,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ingleUnoptimizedCompilationJob(
     ParseInfo* parse_info, FunctionLiteral* literal, Handle<Script> script,
     AccountingAllocator* allocator,
@@ -1015,7 +1017,4 @@ MaybeHandle<SharedFunctionInfo> CompileToplevel(
       finalize_unoptimized_compilation_data_list;
 
   // Prepare and execute compilation of the outer
-"""
-
-
 ```

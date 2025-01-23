@@ -74,15 +74,17 @@ Based on this, I can now formulate a concise summary of the functionality covere
 
 总而言之，这段代码通过大量的单元测试，细致地验证了 `InputHandlerProxy` 在处理各种复杂的触摸和手势输入场景下的正确性和效率，确保了 Blink 引擎能够准确、流畅地响应用户的触摸操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/input_handler_proxy_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dlerProxyTest, MultiTouchPointHitTestPositive) {
   // One of the touch points is on a touch-region. So the event should be sent
   // to the main thread.
@@ -1606,8 +1608,4 @@ TEST_F(InputHandlerProxyEventQueueTest, TouchEventAttribution) {
   touch.touches[1] =
       CreateWebTouchPoint(WebTouchPoint::State::kStatePressed, 10, 10);
   touch.touches[2] =
- 
-"""
-
-
 ```

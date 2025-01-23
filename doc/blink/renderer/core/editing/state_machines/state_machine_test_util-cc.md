@@ -183,15 +183,17 @@ Let's break down the thought process for analyzing this C++ test utility file.
 
 `state_machine_test_util.cc` 是 Blink 引擎中一个重要的测试工具，用于确保文本分段状态机能够正确识别文本中的各种边界，特别是字形边界。这对于保证浏览器在处理各种语言和复杂字符时的文本编辑、渲染和 JavaScript 操作的正确性至关重要。虽然用户不会直接接触到这个文件，但其背后的逻辑直接影响着用户与网页文本交互的方方面面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/state_machines/state_machine_test_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -304,7 +306,4 @@ String GraphemeStateMachineTestBase::ProcessSequenceForward(
 }
 
 }  // namespace blink
-
-"""
-
 ```

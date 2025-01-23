@@ -143,7 +143,7 @@ func main() {
 
 `go/src/runtime/mem_wasm.go` 中的这段代码是 Go 在 Wasm 平台上实现动态内存分配的关键部分。它通过 `sbrk` 模拟了传统的内存扩展机制，并依赖于底层的 Wasm 系统调用 `growMemory` 来增加线性内存。这段代码展示了 Go 运行时如何与底层的 Wasm 环境交互，为 Go 程序提供必要的内存管理能力。普通 Go 开发者不应该直接使用 `sbrk`，而应该依赖 Go 提供的更高级的内存管理工具。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mem_wasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -151,8 +151,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -180,9 +182,4 @@ func sbrk(n uintptr) unsafe.Pointer {
 // Implemented in src/runtime/sys_wasm.s
 func growMemory(pages int32) int32
 func currentMemory() int32
-
-"""
-
-
-
 ```

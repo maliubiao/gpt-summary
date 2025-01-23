@@ -291,7 +291,7 @@ files = ["libc.so", "libm.so"]
 
 总而言之，`symbols.py` 是一个用于在 Android Bionic 开发过程中提取和分析符号信息的实用工具，它直接关系到动态链接器的功能和 Bionic 库的构建与维护。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/tools/symbols.pyandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -302,8 +302,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```python
 #
 # Copyright (C) 2015 The Android Open Source Project
 #
@@ -399,7 +401,4 @@ def GetFromSystemSo(files):
     for f in files:
         results |= GetFromElf(glob.glob(os.path.join(lib_dir, f))[-1])
     return results
-
-"""
-
 ```

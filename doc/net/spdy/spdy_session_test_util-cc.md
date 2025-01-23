@@ -113,15 +113,17 @@ By following these steps, the comprehensive analysis provided earlier can be con
 
 `net/spdy/spdy_session_test_util.cc` 中的 `SpdySessionTestTaskObserver` 是一个专门用于测试 Spdy 会话内部行为的工具。它通过观察任务执行情况来帮助开发人员验证 Spdy 相关代码的正确性。虽然它不直接与 JavaScript 交互，但用户通过浏览器发起的网络请求会最终触发底层 Spdy 会话的处理，而这个工具就是用来测试这些处理过程的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ void SpdySessionTestTaskObserver::DidProcessTask(
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -158,15 +158,17 @@ func init() {
 
 `go/src/cmd/link/internal/x86/asm.go` 是 Go 链接器中负责 x86 架构汇编代码生成和重定位处理的关键部分。它生成用于获取 PC 的 thunk 函数，生成用于初始化模块元数据的代码，并处理动态链接相关的各种重定位类型，最终生成特定平台格式的重定位条目，确保程序能够正确地链接和执行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/x86/asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/8l/asm.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/8l/asm.c
 //
@@ -660,9 +662,4 @@ func addpltsym(target *ld.Target, ldr *loader.Loader, syms *ld.ArchSyms, s loade
 		ldr.Errorf(s, "addpltsym: unsupported binary format")
 	}
 }
-
-"""
-
-
-
 ```

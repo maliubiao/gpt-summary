@@ -149,7 +149,7 @@ This abstraction is crucial for making Meson a cross-platform build system, as i
 
 `frida/subprojects/frida-core/releng/meson/mesonbuild/compilers/c.py` 文件的主要功能是 **为 Meson 构建系统提供一个抽象层来管理和配置不同的 C 语言编译器**。它定义了通用的 C 编译器接口，并为各种主流的 C 编译器提供了具体的实现，以便 Meson 能够以统一的方式处理 C 代码的编译过程，屏蔽了不同编译器之间的差异。这使得 Frida 项目能够在不同的平台上使用不同的 C 编译器进行构建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/compilers/c.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 
@@ -923,7 +925,4 @@ class MetrowerksCCompilerARM(MetrowerksCompiler, CCompiler):
         return args
 
 class MetrowerksCCompilerEmbeddedPowerPC(Metrower
-"""
-
-
 ```

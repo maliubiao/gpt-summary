@@ -103,15 +103,17 @@ By following these steps, I can generate a comprehensive and accurate answer tha
 
 因此，当你看到 DevTools "Accessibility" 面板中显示的各种属性和忽略原因时，背后就有 `inspector_type_builder_helper.cc` 中的代码在默默工作，将 Blink 内部的 Accessibility 信息转化为你看到的清晰易懂的界面。这个文件是连接 Blink 内部 Accessibility 实现和 DevTools 用户界面的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/inspector_type_builder_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -363,7 +365,4 @@ std::unique_ptr<AXValueSource> CreateValueSource(NameSource& name_source) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

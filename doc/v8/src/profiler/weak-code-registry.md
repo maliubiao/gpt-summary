@@ -135,11 +135,13 @@ myFunc = null; //  现在没有强引用指向这个函数对象了
 
 总而言之，`WeakCodeRegistry` 是 V8 引擎内部用于管理已编译 JavaScript 代码生命周期的一个重要组件，它通过弱引用的方式跟踪代码对象，并在垃圾回收发生时提供通知，这对于性能分析、代码管理等内部机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/weak-code-registry.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ void WeakCodeRegistry::Clear() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

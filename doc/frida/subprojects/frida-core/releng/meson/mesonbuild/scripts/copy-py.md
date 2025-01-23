@@ -176,7 +176,7 @@ python copy.py /path/to/nonexistent_file.txt /another/path/
 
 总而言之，`copy.py` 是 Frida 构建系统中的一个实用工具，用于在构建的不同阶段将文件复制到指定的位置，这对于确保 Frida 的各个组件能够正确部署至关重要，同时也与 Frida 作为逆向工具所操作的二进制文件和系统环境密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/scripts/copy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2021-2023 Intel Corporation
 from __future__ import annotations
@@ -205,7 +207,4 @@ def run(args: T.List[str]) -> int:
     except Exception:
         return 1
     return 0
-
-"""
-
 ```

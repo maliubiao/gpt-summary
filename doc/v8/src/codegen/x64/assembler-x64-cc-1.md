@@ -107,7 +107,7 @@ a.addq(rax, rbx);      // 将 rbx 寄存器的值加到 rax 寄存器
 
 总而言之，这个部分的 `assembler-x64.cc` 代码是 V8 引擎的核心组成部分，它提供了生成底层机器码的能力，使得 V8 能够执行 JavaScript 代码。 它涵盖了 x64 架构中大量的基本指令，为构建更高级的编译器功能提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/assembler-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/x64/assembler-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -115,8 +115,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s not one of al, bl, cl, dl.  Its encoding needs REX.
     emit_rex_32(dst);
   }
@@ -1439,7 +1441,4 @@ void Assembler::pushq(Register src) {
   }
 #endif
 }
-"""
-
-
 ```

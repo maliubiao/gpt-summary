@@ -284,7 +284,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "__riscv_hwprobe"), {
 
 总结来说，`bionic/libc/include/sys/hwprobe.handroid` 定义了用于 RISC-V 架构的硬件探测接口，是 Android 系统针对特定硬件进行优化和功能适配的重要组成部分。理解其功能和使用方式有助于深入了解 Android 底层机制和进行性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/hwprobe.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -295,8 +295,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2023 The Android Open Source Project
  * All rights reserved.
@@ -363,7 +365,4 @@ typedef int (*__riscv_hwprobe_t)(struct riscv_hwprobe* _Nonnull __pairs, size_t 
 __END_DECLS
 
 #endif
-
-"""
-
 ```

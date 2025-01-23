@@ -157,11 +157,13 @@ console.log(obj.value); // 调用 getter
 
 `serializer-deserializer.cc` 文件是 V8 引擎中负责对象持久化和恢复的关键组件。它通过管理对象缓存、判断延迟序列化的可行性以及恢复外部引用重定向等机制，确保了 V8 引擎能够高效地加载和运行 JavaScript 代码，并能正确处理与外部环境的交互。 虽然这是一个底层的 C++ 实现，但其功能对 JavaScript 的性能和功能有着至关重要的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/serializer-deserializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ void SerializerDeserializer::RestoreExternalReferenceRedirector(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

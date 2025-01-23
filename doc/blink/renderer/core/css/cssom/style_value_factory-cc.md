@@ -160,15 +160,17 @@ By following this structured approach, you can effectively analyze a complex sou
 
 总而言之，`style_value_factory.cc` 是 Blink 引擎中一个关键的组件，负责将底层的 CSS 值转换为更高层次、更结构化的 CSSOM 对象，使得 JavaScript 能够更方便、安全地操作页面元素的样式。 理解其工作原理对于调试 CSSOM 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/style_value_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -631,7 +633,4 @@ CSSStyleValueVector StyleValueFactory::CssValueToStyleValueVector(
 }
 
 }  // namespace blink
-
-"""
-
 ```

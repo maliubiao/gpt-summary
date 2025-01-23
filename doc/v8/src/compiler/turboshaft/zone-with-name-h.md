@@ -258,15 +258,17 @@ void example_safe_usage() {
 
 In summary, `ZoneWithName` and `ZoneWithNamePointer` are powerful tools for managing memory and enhancing type safety within the Turboshaft compiler, especially during development and debugging. They help prevent common errors related to memory management and pointer usage.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/zone-with-name.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/zone-with-name.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -391,7 +393,4 @@ class ZoneWithName final {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_ZONE_WITH_NAME_H_
-
-"""
-
 ```

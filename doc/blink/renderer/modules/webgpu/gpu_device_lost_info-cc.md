@@ -158,15 +158,17 @@ By following these steps, we can thoroughly analyze the C++ code and generate a 
 
 总而言之，`gpu_device_lost_info.cc` 文件在 WebGPU 的错误处理机制中扮演着重要的角色，它负责封装底层设备丢失的信息，并将其传递给上层的 JavaScript 代码，帮助开发者诊断和处理 WebGPU 应用中可能出现的设备丢失问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_device_lost_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ const String& GPUDeviceLostInfo::message() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

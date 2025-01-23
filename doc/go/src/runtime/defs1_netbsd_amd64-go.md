@@ -105,7 +105,7 @@ func main() {
 
 总而言之，`go/src/runtime/defs1_netbsd_amd64.go` 文件是 Go 运行时环境与 NetBSD 操作系统内核之间的桥梁，它定义了进行底层系统交互所需的常量和数据结构。 开发者通常不会直接修改这个文件，而是通过 Go 的标准库（如 `syscall`, `os`, `time` 等）来间接使用其中的定义。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs1_netbsd_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -113,8 +113,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // created by cgo -cdefs and then converted to Go
 // cgo -cdefs defs_netbsd.go defs_netbsd_amd64.go
 
@@ -315,9 +317,4 @@ const (
 	_REG_RSP    = 0x18
 	_REG_SS     = 0x19
 )
-
-"""
-
-
-
 ```

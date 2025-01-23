@@ -147,7 +147,7 @@ try {
 
 作为 Liftoff 编译器的第 8 部分，该代码片段主要负责 **WebAssembly 异常处理机制的底层实现** 以及 **原子内存操作的实现**。它包含了存储和加载异常值、生成异常处理代码、以及实现各种原子指令的逻辑。这些功能是使得 WebAssembly 能够与 JavaScript 的异常处理机制互操作，并支持多线程共享内存的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/liftoff-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -155,8 +155,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 se {
       Load16BitExceptionValue(dst, values_array, index, pinned);
       __ emit_i64_shli(dst, dst, 48);
@@ -956,8 +958,5 @@ se {
   // Same as {PopIndexToVarState}, but can take a VarState in the middle of the
   // stack without popping it.
   // For 64-bit values on 32-bit systems, the resulting VarState will contain a
-  // single register whose value will be 
-"""
-
-
+  // single register whose value will be
 ```

@@ -92,12 +92,14 @@ case kLoong64Float64Add:
 
 总而言之，`code-generator-loong64.cc` 是 V8 将 JavaScript 代码转换为可在 LoongArch64 处理器上执行的机器码的关键组件。它处理各种 JavaScript 构造，并生成相应的底层指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/code-generator-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1705,8 +1707,4 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleArchInstruction(
       __ movfr2gr_d(i.OutputRegister(0), scratch_d);
       if (load_status) {
         Register output2 = i.OutputRegister(1);
-   
-"""
-
-
 ```

@@ -92,7 +92,7 @@ I will describe the steps a user might take in a browser that would lead to this
 
 总而言之，这部分代码专注于测试 `HttpNetworkTransaction` 在各种复杂的 HTTP 场景下的健壮性和正确性，特别是涉及到时间和连接管理的关键方面，这对于确保 Chromium 浏览器网络功能的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -100,8 +100,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 get());
 
   MockRead data_reads[] = {
@@ -975,7 +977,4 @@ TEST_P(HttpNetworkTransactionTest, KeepAliveEarlyClose2) {
       MutableNetworkTrafficAnnotationTag(TRAFFIC_ANNOTATION_FOR_TESTS);
 
   std::unique_ptr<HttpNetworkSession> sess
-"""
-
-
 ```

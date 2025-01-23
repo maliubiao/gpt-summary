@@ -198,7 +198,7 @@ WebAssembly.instantiateStreaming(fetch('your_wasm_module.wasm'), {
 
 这部分侧重于 **字节级别的操作 (swizzle, shuffle)、基本的布尔归约、SIMD 向量与标量之间的通道提取和替换，以及开始涉及到内存加载和存储操作**。它通过大量的独立测试用例，覆盖了不同 SIMD 指令的不同使用场景和边界条件，以确保 V8 能够正确地编译和执行这些指令。  结合其他部分的测试，可以全面验证 V8 对 WebAssembly SIMD 功能的完整性和正确性支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-simd.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-run-wasm-simd.cc以.tq结尾，那它是个v8 torque源代码，
@@ -206,8 +206,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0},
      {15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0},
      {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}},
@@ -974,8 +976,5 @@ void RunLoadZeroTest(TestExecutionTier execution_tier, WasmOpcode op) {
     // Only first lane is set to sentinel.
     CHECK_EQ(sentinel, LANE(global, 0));
     // The other lanes are zero.
-    for 
-"""
-
-
+    for
 ```

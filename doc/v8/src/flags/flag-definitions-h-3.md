@@ -221,7 +221,7 @@ node --always_turbofan --no-turbo -- your_script.js
 
 总而言之，这部分 `v8/src/flags/flag-definitions.h` 代码定义了 V8 引擎中 **垃圾回收** 和 **代码生成** 相关的各种配置选项。这些标志允许开发者和 V8 内部组件细粒度地控制内存管理策略、代码优化级别以及调试和分析功能。虽然这些标志定义在 C++ 代码中，但它们深刻影响着 V8 执行 JavaScript 代码的行为和性能。理解这些标志对于深入了解 V8 引擎的工作原理以及进行性能调优至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/flags/flag-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/flags/flag-definitions.h以.tq结尾，那它是个v8 torque源代码，
@@ -229,8 +229,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 FIELD_WRITES)
 DEFINE_BOOL(concurrent_marking, true, "use concurrent marking")
 #else
@@ -911,8 +913,5 @@ DEFINE_INT(regexp_tier_up_ticks, 1,
            "tiering-up to the compiler")
 DEFINE_BOOL(regexp_peephole_optimization, REGEXP_PEEPHOLE_OPTIMIZATION_BOOL,
             "enable peephole optimization for regexp bytecode")
-DEFINE_BOOL(regexp_results_cache, true, "enable the regexp 
-"""
-
-
+DEFINE_BOOL(regexp_results_cache, true, "enable the regexp
 ```

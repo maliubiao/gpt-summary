@@ -133,7 +133,7 @@ cdef class MyClass:
 
 总而言之，`generator.py` 是一个非常基础的工具，它的存在是为了辅助 Frida Python 绑定的构建和测试过程，特别是与 Cython 代码交互相关的测试。它本身不进行复杂的逆向分析，但它产生的输出可以用于测试 Frida 在进行逆向操作时的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cython/2 generated sources/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 
@@ -155,7 +157,4 @@ args = parser.parse_args()
 
 with open(args.input) as i, open(args.output, 'w') as o:
     o.write(i.read())
-
-"""
-
 ```

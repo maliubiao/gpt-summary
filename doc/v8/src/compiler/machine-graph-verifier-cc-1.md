@@ -107,7 +107,7 @@ TypeError: node #<node_id>:<Add> uses node #<input_id>:<StringConstant> which do
 
 `v8/src/compiler/machine-graph-verifier.cc` 的这部分代码（`MachineRepresentationChecker`）是 V8 编译器中的一个关键组件，负责在机器图生成后进行类型和表示的一致性验证。 它通过遍历图中的节点并检查其输入是否符合操作的预期类型，从而确保生成的机器代码的正确性。 如果发现类型不匹配，它会立即报错并停止编译，这有助于在早期发现潜在的 JavaScript 类型错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-graph-verifier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/machine-graph-verifier.cc以.tq结尾，那它是个v8 torque源代码，
@@ -115,8 +115,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 PrintDebugHelp(str, node);
     FATAL("%s", str.str().c_str());
   }
@@ -423,8 +425,4 @@ void MachineGraphVerifier::Run(Graph* graph, Schedule const* const schedule,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

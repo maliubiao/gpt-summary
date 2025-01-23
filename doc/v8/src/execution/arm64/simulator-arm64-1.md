@@ -115,12 +115,14 @@ Here's a breakdown of the thought process to achieve the desired summary:
 
 这部分 `simulator-arm64.cc` 代码是 V8 引擎在 ARM64 架构模拟执行方面的重要组成部分。它通过解释执行的方式，逐条模拟 ARM64 指令的行为，使得 V8 能够在非 ARM64 平台上运行为 ARM64 平台编译的 JavaScript 代码，或者为调试和测试提供支持。它涵盖了多种指令类型，包括算术、逻辑、内存访问、位操作和浮点运算等，这些指令是 JavaScript 代码在底层执行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 tyFourBits()) {
     uint64_t op2 = ExtendValue(xreg(instr->Rm()), ext, left_shift);
     AddSubHelper(instr, op2);
@@ -2269,7 +2271,4 @@ bool Simulator::ExecDebugCommand(ArrayUniquePtr<char> line_ptr) {
       int64_t value;
       if (!GetValue(arg1, &value)) {
         Prin
-"""
-
-
 ```

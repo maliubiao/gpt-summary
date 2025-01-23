@@ -99,7 +99,7 @@ Strategizing complete. Proceeding with response generation.
 
 总的来说，这部分 `SpdyStream` 的单元测试主要关注于测试 `SpdyStream` **接收数据和处理错误**的能力。它验证了 `SpdyStream` 是否能够正确解析和处理各种类型的响应头部（包括 Early Hints），处理非法的 HTTP 状态码，管理流量控制，并在各种异常情况下做出正确的反应，例如连接关闭或接收到错误的数据。 这些测试确保了 `SpdyStream` 能够可靠地与符合 HTTP/2 协议的服务器进行通信，并为上层（例如 Chrome 浏览器）提供准确的网络数据和状态信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_stream_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 received.
   EXPECT_EQ(load_timing_info.receive_headers_start,
             expected_receive_headers_start_time);
@@ -898,8 +900,4 @@ TEST_F(SpdyStreamTestWithMockClock, FlowControlSlowReads) {
 }
 
 }  // namespace net::test
-
-"""
-
-
 ```

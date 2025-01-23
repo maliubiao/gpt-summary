@@ -59,15 +59,17 @@ Here's a breakdown of the steps:
 
 总而言之，`blink/renderer/platform/heap/test/heap_test.cc` 的第 1 部分主要 **涵盖了 Blink 堆管理的核心功能测试**，包括基础的垃圾回收、各种堆数据结构的正确性、跨线程对象管理以及预终结器的行为。它通过各种单元测试来验证这些机制的正确性和健壮性，并尝试捕获常见的内存管理错误。这些测试对于确保 Blink 引擎的稳定性和性能至关重要，因为堆管理是其运行 JavaScript、处理 HTML 和 CSS 的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/test/heap_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -1043,7 +1045,4 @@ TEST_F(HeapTest, HeapCollectionTypes) {
       auto* four_d(MakeGarbageCollected<IntWrapper>(4));
       auto* four_e(MakeGarbageCollected<IntWrapper>(4));
       auto* four(MakeGarbageCollected<In
-"""
-
-
 ```

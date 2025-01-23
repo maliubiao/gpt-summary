@@ -77,12 +77,14 @@ let obj2 = { ref: obj1 };
 
 总而言之，这个 C++ 文件是 V8 引擎中生成堆快照的核心组成部分，它深入到引擎的内部，理解 JavaScript 对象的结构和关系，并将这些信息转化为结构化的数据，供开发者分析和调试 JavaScript 代码的内存问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/heap-snapshot-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1663,8 +1665,5 @@ void V8HeapExplorer::ExtractContextReferences(HeapEntry* entry,
   if (!IsNativeContext(context) && context->is_declaration_context()) {
     Tagged<ScopeInfo> scope_info = context->scope_info();
     // Add context allocated locals.
-    for (auto it : ScopeInfo::IterateLocalNames(scope_info, no_gc)) 
-"""
-
-
+    for (auto it : ScopeInfo::IterateLocalNames(scope_info, no_gc))
 ```

@@ -110,7 +110,7 @@ By following this thought process, combining script analysis, domain knowledge (
 
 因此，到达这个脚本的路径可能涉及到 Frida 的开发、构建、测试和调试过程。这个脚本是 Frida 构建系统的一部分，用于自动化生成一些简单的 C 代码片段，以便在测试 Frida 的功能时使用。尤其是在测试 Frida 与不同语言 (例如 Swift) 的交互时，可能需要生成一些简单的 C 函数作为桥梁或测试目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/169 source in dep/generated/genheader.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -137,7 +139,4 @@ int %s(void) {
 funname = open(ifile).readline().strip()
 
 open(ofile, 'w').write(templ % funname)
-
-"""
-
 ```

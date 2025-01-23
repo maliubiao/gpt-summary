@@ -91,15 +91,17 @@ I will now formulate a summary based on these observations, keeping in mind the 
 
 这部分 `display_lock_context_test.cc` 文件主要集中测试了 `DisplayLockContext` 类与 **Find-in-Page** 功能的集成。它验证了不同锁定状态的元素在 Find-in-Page 中的可搜索性、解锁行为、以及相关的渲染和生命周期管理，确保 Find-in-Page 功能能够正确地与显示锁定机制协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/display_lock/display_lock_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1036,7 +1038,4 @@ TEST_F(DisplayLockContextTest, DisplayLockPreventsActivation) {
 
   ASSERT_FALSE(DisplayLockUtilities::ShouldIgnoreNodeDueToDisplayLock(
       *host, DisplayLockActivationReason::kAny));
-"""
-
-
 ```

@@ -162,11 +162,13 @@ console.log(resolvedOptions);
 
 `v8/src/objects/js-duration-format.cc` 文件是 V8 引擎中实现 `Intl.DurationFormat` API 的关键 C++ 代码。它负责处理用户提供的语言环境和格式选项，并使用 ICU 库来完成本地化的持续时间格式化，最终供 JavaScript 代码调用。该文件实现了构造 `Intl.DurationFormat` 对象、获取解析后的选项以及将持续时间对象格式化为字符串或部分数组的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-duration-format.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1294,7 +1296,4 @@ const std::set<std::string>& JSDurationFormat::GetAvailableLocales() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

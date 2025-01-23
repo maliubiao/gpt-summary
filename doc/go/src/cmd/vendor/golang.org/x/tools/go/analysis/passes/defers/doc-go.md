@@ -217,15 +217,17 @@ func main() {
 
 总而言之，`defers` 分析器旨在帮助开发者避免在使用 `defer` 语句时因对参数求值时机理解不足而导致的常见错误，目前专注于 `time.Since` 的误用场景。理解 `defer` 语句的行为对于编写健壮的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/defers/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -251,9 +253,4 @@ Prompt:
 //
 //	defer func() { recordLatency(time.Since(start)) }()
 package defers
-
-"""
-
-
-
 ```

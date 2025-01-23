@@ -207,15 +207,17 @@ func main() {
 
 总而言之，`GoSyntax` 函数是 RISC-V 反汇编过程中的一个关键部分，它负责将机器指令翻译成人类可读的 Plan 9 汇编表示。理解 Plan 9 语法以及符号表处理对于正确使用和解释其输出至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/riscv64/riscv64asm/plan9x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -593,9 +595,4 @@ func plan9Arg(inst *Inst, pc uint64, symname func(uint64) (string, uint64), arg 
 		return strings.ToUpper(arg.String())
 	}
 }
-
-"""
-
-
-
 ```

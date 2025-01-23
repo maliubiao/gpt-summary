@@ -167,15 +167,17 @@ target = null; // target 对象不再被引用，会被垃圾回收
 
 总而言之，`v8/src/heap/cppgc/heap-object-header.cc` 是 V8 引擎中管理 C++ 堆对象头部信息的关键组件，负责存储和维护对象的元数据，并在垃圾回收过程中执行必要的清理操作。理解其功能有助于深入理解 V8 的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap-object-header.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/heap-object-header.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -227,7 +229,4 @@ HeapObjectName HeapObjectHeader::GetName(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

@@ -167,7 +167,7 @@ Here's a breakdown of the thinking process to analyze the provided C++ code snip
 
 虽然 `prog.cc` 本身是一个非常简单的程序，但它在 Frida 项目的上下文中，特别是作为一个单元测试用例，其目的是验证构建系统中关于 RPATH 处理的正确性。理解其简单的内存分配和释放操作，以及潜在的错误，有助于开发者确保 Frida 在各种平台上正确地链接和运行。对于逆向工程师来说，这个简单的例子也演示了动态内存管理的基本概念，这些概念在更复杂的程序的逆向分析中至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/89 pkgconfig build rpath order/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <string>
 #include <iostream>
 
@@ -185,7 +187,4 @@ int main(int argc, char **argv) {
     delete s;
     return 0;
 }
-
-"""
-
 ```

@@ -274,16 +274,18 @@ void DOMWindow::DoPostMessage(scoped_refptr<SerializedScriptValue> message,
 
 这段代码片段集中展现了 `blink::DOMWindow` 类在处理跨域安全和窗口间通信方面的核心功能。它直接关联了 Web 开发者经常使用的 JavaScript API 和 HTML 配置，并体现了浏览器引擎在保障 Web 安全性方面所做的工作。理解这些代码有助于开发者更好地理解浏览器的安全模型以及如何正确使用跨域通信相关的 API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/dom_window.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  // ReportingObserver's reports.
+### 源代码
+```cpp
+// ReportingObserver's reports.
     //
     // TODO(arthursonzogni): Reconsider this decision later, developers might be
     // interested.
@@ -622,8 +624,4 @@ void DOMWindow::DisconnectCoopAccessMonitor(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

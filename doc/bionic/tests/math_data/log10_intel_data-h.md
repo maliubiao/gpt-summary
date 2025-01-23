@@ -72,7 +72,7 @@ This detailed breakdown illustrates the iterative process of understanding code 
 
 接下来，我会逐步展开回答你提出的其他问题，但请记住，由于这只是代码文件的一部分（一个数据文件），很多问题（例如 libc 函数的实现、dynamic linker 的功能）无法仅从这个文件本身完全解答，需要结合 bionic 的其他源代码进行分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/log10_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -84,8 +84,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1548,7 +1550,4 @@ static data_1_1_t<double, double> g_log10_intel_data[] = {
     -0.0
   },
   { // E
-"""
-
-
 ```

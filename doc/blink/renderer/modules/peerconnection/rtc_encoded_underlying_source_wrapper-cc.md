@@ -153,15 +153,17 @@ sender.transform = transformStream;
 
 总而言之，`rtc_encoded_underlying_source_wrapper.cc` 是 Blink 引擎中一个关键的组件，它使得 JavaScript 代码能够介入到 WebRTC 编码后的媒体数据流中，提供了强大的自定义和处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_encoded_underlying_source_wrapper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -291,7 +293,4 @@ void RTCEncodedUnderlyingSourceWrapper::Close() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

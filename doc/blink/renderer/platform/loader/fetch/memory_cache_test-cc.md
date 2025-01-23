@@ -116,14 +116,16 @@ Finally, I'd organize the information into the requested categories: functionali
 
 总而言之，`memory_cache_test.cc` 是一个基础但关键的测试文件，它确保了 Chromium Blink 引擎的资源缓存机制能够正确有效地工作，这对于提供快速、流畅的网页浏览体验至关重要。它验证了 `MemoryCache` 的核心功能，这些功能直接支撑着浏览器对 JavaScript, HTML, CSS 等资源的加载和管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/memory_cache_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Google Inc. All rights reserved.
  *
@@ -520,7 +522,4 @@ TEST_F(MemoryCacheStrongReferenceTest, ClearStrongReferences) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

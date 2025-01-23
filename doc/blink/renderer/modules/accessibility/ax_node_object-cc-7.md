@@ -287,7 +287,7 @@ Here's a plan:
 
 总而言之，这部分代码是 Blink 引擎实现 Web 内容可访问性的关键组成部分，它连接了 HTML 结构、ARIA 属性和 JavaScript 行为，为辅助技术提供了理解和呈现网页内容所需的必要信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_node_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -295,8 +295,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 o<HTMLSelectElement>(GetNode())) {
     for (auto* const option : *select->selectedOptions()) {
       AXObject* ax_option = AXObjectCache().Get(option);
@@ -1220,7 +1222,4 @@ String AXNodeObject::Description(
     if (description_objects)
       description_objects->clear();
     String ancestor_desc
-"""
-
-
 ```

@@ -125,7 +125,7 @@ console.log(add(3, 4)); // 输出 7
 
 这部分 `test-serialize.cc` 的核心功能是 **系统地测试 V8 引擎的代码序列化和反序列化机制，特别是针对编译缓存的各个方面进行细致的验证**。它通过模拟不同的场景和配置，确保代码缓存能够正确地生成、存储、加载和使用，从而保证 JavaScript 代码执行的效率和一致性。这部分测试是 V8 引擎稳定性和性能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-serialize.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-serialize.cc以.tq结尾，那它是个v8 torque源代码，
@@ -133,8 +133,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 TEST(CodeSerializerWithProfiler) {
   v8_flags.enable_lazy_source_positions = true;
   v8_flags.stress_lazy_source_positions = false;
@@ -980,7 +982,4 @@ TEST(CodeSerializerThreeBigStrings) {
       base::StaticCharVector("\";"), length_of_c);
   Handle<String> source_c_str =
       f->NewStr
-"""
-
-
 ```

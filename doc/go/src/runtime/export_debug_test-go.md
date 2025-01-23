@@ -250,7 +250,7 @@ godbg --pid <进程ID> --gid <GoroutineID> --inject "fmt.Println(\"Injected!\")"
 
 `go/src/runtime/export_debug_test.go` 中的 `InjectDebugCall` 函数提供了一个强大的底层机制，用于在运行时向 Goroutine 注入代码。它主要服务于高级调试和诊断工具的实现，直接使用需要非常谨慎，并对 Go 的运行时机制有深入的理解。使用者容易在信号处理、参数传递和时机选择上犯错。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/export_debug_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -258,8 +258,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -443,9 +445,4 @@ func (h *debugCallHandler) handle(info *siginfo, ctxt *sigctxt, gp2 *g) bool {
 	// Resume execution.
 	return true
 }
-
-"""
-
-
-
 ```

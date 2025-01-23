@@ -353,7 +353,7 @@ if (Process.platform === 'linux') {
 
 通过这种方式，你可以逐步跟踪 Android Framework 或 NDK 如何使用底层的 SCSI 通用接口，并深入理解数据是如何传递的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/android/scsi/scsi/sg.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -364,8 +364,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -515,7 +517,4 @@ struct sg_header {
 #define SG_DEF_COMMAND_Q 0
 #define SG_DEF_UNDERRUN_FLAG 0
 #endif
-
-"""
-
 ```

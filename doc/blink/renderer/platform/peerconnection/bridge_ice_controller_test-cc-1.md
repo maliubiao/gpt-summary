@@ -64,15 +64,17 @@ Based on this analysis, I can formulate the explanation and address each of the 
 
 这部分测试主要关注 `BridgeIceController` 作为中间层，如何可靠且安全地处理来自上层组件的 ICE 控制请求和提议，特别是针对切换和剪除连接的场景。 它验证了在处理有效、无效甚至恶意（例如，包含空指针）的输入时，`BridgeIceController` 的行为是否符合预期，包括正确地转发请求、拒绝无效请求、以及在出现严重错误时触发断言。 这有助于确保 WebRTC 连接的稳定性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/bridge_ice_controller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 proposal),
                            "without a connection");
 }
@@ -244,8 +246,4 @@ TEST_F(BridgeIceControllerTest, HandlesPruneRequest) {
 }
 
 }  // unnamed namespace
-
-"""
-
-
 ```

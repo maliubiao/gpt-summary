@@ -219,15 +219,17 @@ By following this structured approach, combining code analysis, domain knowledge
 
 总而言之，`go/src/cmd/go/main.go` 是 Go 语言工具链的核心入口，它像一个指挥中心，接收用户的指令，并调度各个功能模块来完成相应的任务，是理解 Go 语言工作原理的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/main.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -640,9 +642,4 @@ func handleChdirFlag() {
 		base.Fatalf("go: %v", err)
 	}
 }
-
-"""
-
-
-
 ```

@@ -90,14 +90,16 @@ By following these steps, including the self-correction and refinement, we can a
 
 总而言之，`web_font_typeface_factory_test.cc` 是 Blink 引擎中一个非常重要的测试文件，它确保了浏览器能够可靠地加载和渲染各种 Web 字体，为用户提供一致且正确的网页浏览体验。 它涵盖了不同字体格式、平台差异以及特性开关的影响，并通过单元测试的方式保证了 `WebFontTypefaceFactory` 逻辑的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/web_font_typeface_factory_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -451,7 +453,4 @@ TEST(WebFontTypefaceFactoryTest, MAYBE_VariationsWinFallbackIfNeeded) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -232,7 +232,7 @@ argsv = [
 
 总而言之，`cmake_run_ctgt.py` 是 Frida 构建系统中的一个重要辅助工具，它桥接了 Meson 和 CMake，用于执行 CMake 的自定义命令并管理输出文件，确保构建过程的顺利进行。理解它的功能有助于理解 Frida 的构建流程，并在出现构建问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/scripts/cmake_run_ctgt.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -240,8 +240,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 from __future__ import annotations
 
@@ -345,7 +347,4 @@ def run(argsv: T.List[str]) -> int:
 
 if __name__ == '__main__':
     sys.exit(run(sys.argv[1:]))
-
-"""
-
 ```

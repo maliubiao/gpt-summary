@@ -164,7 +164,7 @@ Let's assume:
 
 As the third part of a four-part generation process, this section of `generate-bindings.py` is responsible for **generating the C++ source code that bridges the gap between the JavaScript API of the `GumRelocator` class and its underlying C++ implementation within Frida-Gum**. It defines the V8-specific methods that handle JavaScript calls to create, reset, interact with, and manage the lifecycle of `GumRelocator` objects. This ensures that JavaScript developers can effectively utilize Frida's code relocation capabilities within their instrumentation scripts.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/generate-bindings.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 function_prefix}_new (input_code, writer);
   }}
 
@@ -976,7 +978,4 @@ def generate_class_api_reference(name, arch, flavor, api):
             description = """commit the first pending reference to the given label,
     returning `true` on success. Returns `false` if the given label hasn't been
     defined yet, or there are no more pending references to it."
-"""
-
-
 ```

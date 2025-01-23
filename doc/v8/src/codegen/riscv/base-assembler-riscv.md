@@ -138,11 +138,13 @@ let result = add(5, 10);
 
 `base-assembler-riscv.cc` 是 V8 引擎中负责将 JavaScript 代码转换成 RISC-V 机器码的关键组成部分。它提供了一个低级别的接口，用于生成各种 RISC-V 指令，使得 V8 能够在该架构上高效地执行 JavaScript 代码。  JavaScript 开发者通常不会直接与这个文件交互，但 V8 引擎在幕后使用它来将你编写的 JavaScript 代码转化为 CPU 可以理解和执行的指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/base-assembler-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -637,7 +639,4 @@ void AssemblerRiscvBase::GenInstrALUFP_rr(uint8_t funct7, uint8_t funct3,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

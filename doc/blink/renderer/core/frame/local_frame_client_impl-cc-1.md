@@ -133,16 +133,18 @@ Combining the functionalities described in both parts of the file, `LocalFrameCl
 
 总而言之，`LocalFrameClientImpl` 是 Blink 渲染引擎中至关重要的一个组件，它连接了核心渲染逻辑和外部环境，负责处理各种与页面加载、用户交互、性能监控等方面相关的事件和操作。理解其功能对于深入理解 Blink 渲染引擎的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_frame_client_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- owner ? owner->GetFramePolicy() : FramePolicy();
+### 源代码
+```cpp
+owner ? owner->GetFramePolicy() : FramePolicy();
 
   // navigation_info->frame_policy is only used for the synchronous
   // re-navigation to about:blank. See:
@@ -607,8 +609,4 @@ bool LocalFrameClientImpl::IsDomStorageDisabled() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -164,7 +164,7 @@ By following these steps, we can provide a comprehensive and insightful analysis
 
 尽管 `main.cpp` 代码非常简单，但它在 `frida-node` 项目的构建和测试流程中扮演着重要的角色。它验证了构建系统能够正确处理头文件包含，这是编译任何 C++ 代码的基础。对于 Frida 这样的复杂项目，确保构建系统的正确性至关重要，因为这直接关系到 Frida 的核心功能和用户体验。理解这些测试用例可以帮助开发者更好地理解 Frida 的内部工作原理和构建流程，并有助于排查构建相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/13 system includes/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 
@@ -184,7 +186,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

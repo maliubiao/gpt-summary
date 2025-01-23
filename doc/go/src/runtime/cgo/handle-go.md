@@ -198,7 +198,7 @@ func main() {
 
    为了避免这种情况，需要仔细管理 `Handle` 的生命周期，确保在C代码不再需要访问关联的Go值后，立即在Go代码中调用 `Delete()`。 通常使用 `defer` 语句来确保 `Delete()` 被执行，即使在函数执行过程中发生错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/cgo/handle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -206,8 +206,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -352,9 +354,4 @@ var (
 	handles   = sync.Map{} // map[Handle]interface{}
 	handleIdx atomic.Uintptr
 )
-
-"""
-
-
-
 ```

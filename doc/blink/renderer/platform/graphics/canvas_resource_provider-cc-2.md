@@ -103,15 +103,17 @@ Finally, I'll synthesize these observations into a concise summary.
 
 作为系列描述的最后一部分，可以总结 `CanvasResourceProvider` 的功能为：**它是 Blink 渲染引擎中负责管理和提供 HTML Canvas 元素绘制所需的核心图形资源的组件。它协调 Skia 图形库进行实际的渲染工作，处理绘制指令的记录和回放，管理 GPU 资源，并提供资源回收机制以优化性能。它有效地将 JavaScript Canvas API 的高级抽象转换为底层的图形操作，使得 Web 开发者可以使用硬件加速的 2D 图形功能。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/canvas_resource_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 last_snapshot_sk_image_id = snapshot_sk_image_id_;
   snapshot_sk_image_id_ = sk_image->uniqueID();
 
@@ -520,8 +522,4 @@ void CanvasResourceProvider::DisableLineDrawingAsPathsIfNecessary() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

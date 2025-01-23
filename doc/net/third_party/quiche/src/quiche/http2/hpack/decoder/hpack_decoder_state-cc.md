@@ -174,15 +174,17 @@ fetch('https://example.com/data', {
 
 总而言之，`HpackDecoderState` 在 HTTP/2 通信中扮演着关键的角色，负责将压缩的头部信息还原成原始形式，确保浏览器能够正确理解服务器的响应，并为 JavaScript 提供必要的头部信息。理解其工作原理对于排查 HTTP/2 相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/decoder/hpack_decoder_state.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -402,7 +404,4 @@ void HpackDecoderState::ReportError(HpackDecodingError error) {
 }
 
 }  // namespace http2
-
-"""
-
 ```

@@ -168,7 +168,7 @@ func main() {
 
 总而言之，这段 Go 代码是 `net` 包在 Windows 平台测试 TCP 保活功能的辅助代码，它定义了相关的系统调用常量和提供了一个跳过不支持保活特性系统的测试函数。理解其功能有助于理解 Go 语言网络编程中与操作系统底层交互的部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/tcpconn_keepalive_conf_windows_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -176,8 +176,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -209,9 +211,4 @@ func maybeSkipKeepAliveTest(t *testing.T) {
 		t.Skip("skipping on windows")
 	}
 }
-
-"""
-
-
-
 ```

@@ -88,11 +88,13 @@ largeArray = null;
 
 `tracing-flags.cc` 文件定义了 V8 引擎内部用于控制追踪和统计信息收集的底层开关。虽然 JavaScript 代码不能直接操作这些开关，但这些开关的设置会影响 V8 引擎执行 JavaScript 代码的行为和性能，并且其收集的信息可能最终会通过各种工具和机制暴露给开发者，用于性能分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/tracing-flags.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -110,7 +112,4 @@ std::atomic_uint TracingFlags::zone_stats{0};
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

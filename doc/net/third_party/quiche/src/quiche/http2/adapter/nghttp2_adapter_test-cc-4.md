@@ -169,7 +169,7 @@ Strategizing complete. I will now proceed with generating the response based on 
 
 这部分 `nghttp2_adapter_test.cc` 主要集中测试了 `NgHttp2Adapter` 类在 **HTTP/2 连接建立的初期阶段**和 **基础的请求/响应交互**中，如何处理各种 **SETTINGS 帧**（包括初始窗口大小、最大帧大小、推送使能）以及如何进行 **基本的流量控制**。此外，它也覆盖了客户端如何 **拒绝服务器推送**以及在遇到 **无效帧或错误** 时的反应，为理解 HTTP/2 连接的初始化和基本数据传输流程提供了重要的测试覆盖。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Sequence().ServerPreface().WindowUpdate(0, 65536).Serialize();
   // Server preface (empty SETTINGS)
   EXPECT_CALL(visitor, OnFrameHeader(0, 0, SETTINGS, 0));
@@ -981,7 +983,4 @@ TEST(NgHttp2AdapterTest, ServerVisitorRejectsHeaders) {
                     {"header2", "rejected"},
                     {"header3", "not processed"},  // CONTINUATION starts here
                     {"header4", "not processed
-"""
-
-
 ```

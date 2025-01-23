@@ -167,14 +167,16 @@ By following this structured approach, we can systematically analyze the provide
 
 总之，`dom_array_buffer_view.cc` 虽然本身是一个底层的 C++ 文件，但它对于 JavaScript 中操作二进制数据至关重要。它定义了 Blink 如何与 V8 协同工作，以提供 `ArrayBufferView` 的功能，而这些功能在现代 Web 开发中被广泛用于处理各种类型的二进制数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/typed_arrays/dom_array_buffer_view.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ const WrapperTypeInfo& DOMArrayBufferView::wrapper_type_info_ =
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

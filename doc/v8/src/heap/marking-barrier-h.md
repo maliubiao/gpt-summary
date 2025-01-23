@@ -137,15 +137,17 @@ obj2.ref = obj3;
 
 总之，`v8/src/heap/marking-barrier.h` 定义的 `MarkingBarrier` 类是 V8 垃圾回收机制中一个核心组件，它通过实现写屏障来确保对象引用的更新被正确追踪，从而保证垃圾回收的正确性和效率。虽然 JavaScript 开发者不会直接操作它，但理解其工作原理有助于理解 JavaScript 的内存管理行为并避免潜在的内存泄漏问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/marking-barrier.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/marking-barrier.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ class MarkingBarrier {
 }  // namespace v8
 
 #endif  // V8_HEAP_MARKING_BARRIER_H_
-
-"""
-
 ```

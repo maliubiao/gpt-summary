@@ -131,7 +131,7 @@ By following this detailed thought process, I can generate a comprehensive and a
 
 总之，`frida/subprojects/frida-clr/releng/meson/meson.py` 是 Frida 项目中用于构建 `frida-clr` 组件的关键脚本，它利用 Meson 构建系统来管理编译和链接过程，为 Frida 能够对 .NET 应用程序进行动态逆向提供了基础。 虽然它本身不直接执行逆向或底层操作，但其构建的产物是实现这些功能的必要条件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/meson.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
@@ -168,7 +170,4 @@ from mesonbuild import mesonmain
 
 if __name__ == '__main__':
     sys.exit(mesonmain.main())
-
-"""
-
 ```

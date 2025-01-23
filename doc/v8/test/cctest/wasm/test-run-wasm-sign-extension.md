@@ -83,11 +83,13 @@ console.log(extended32BitValue); // 输出 127
 
 `test-run-wasm-sign-extension.cc` 文件通过一系列测试用例，确保 V8 引擎正确地实现了 WebAssembly 的符号扩展指令。  虽然 JavaScript 没有直接对应的符号扩展指令，但在处理整数时，JavaScript 引擎会隐式地进行符号扩展，以保证数据的一致性和正确性。 这个 C++ 测试文件对于保证 WebAssembly 在 V8 中正确执行至关重要，从而确保 JavaScript 和 WebAssembly 的互操作性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-sign-extension.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ WASM_EXEC_TEST(I64SExtendI32) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -158,7 +158,7 @@ This detailed thought process, moving from high-level structure to specific code
 
 总而言之，`v8/src/diagnostics/s390/disasm-s390.cc` 是 V8 引擎在 S390 架构上的一个关键组成部分，其核心功能是**将 S390 机器码指令转换成人类可读的汇编代码**。它通过宏定义和 `switch` 语句实现了指令的解码和格式化，支持多种 S390 指令格式，并提供了处理特殊和未知指令的能力。这个反汇编器对于调试、分析和诊断 S390 平台上运行的 JavaScript 代码至关重要。它帮助开发者理解 V8 如何将 JavaScript 翻译成机器码，并能定位底层执行过程中可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/s390/disasm-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/s390/disasm-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 IY_INSTRUCTIONS(name, opcode_name, opcode_value) \
   case opcode_name:                                              \
     Format(instr, #name "\t'd2('r3),'i8");                       \
@@ -341,8 +343,4 @@ void Disassembler::Disassemble(FILE* f, uint8_t* begin, uint8_t* end,
 }  // namespace disasm
 
 #endif  // V8_TARGET_ARCH_S390X
-
-"""
-
-
 ```

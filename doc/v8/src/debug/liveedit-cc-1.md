@@ -146,7 +146,7 @@ console.log(add(2, 3));
 
 总而言之，这段 `v8/src/debug/liveedit.cc` 代码的核心功能是实现 **JavaScript 代码的热更新**。它通过比较新旧版本的脚本，找出函数字面量的差异，并更新 JavaScript 引擎中正在运行的函数对象，使得代码的修改能够立即生效。`CompareStrings` 用于计算代码差异，而 `TranslatePosition` 用于在不同版本的代码之间转换位置信息。这个功能极大地提升了开发效率，允许开发者在不中断应用运行的情况下调试和修复代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/liveedit.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/liveedit.cc以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rseInfo new_parse_info(isolate, new_flags, &new_compile_state,
                            &reusable_state);
   std::vector<FunctionLiteral*> new_literals;
@@ -404,8 +406,4 @@ int LiveEdit::TranslatePosition(const std::vector<SourceChangeRange>& diffs,
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

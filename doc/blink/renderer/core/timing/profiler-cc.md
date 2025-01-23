@@ -217,15 +217,17 @@ During the process, I might have initially focused too heavily on the low-level 
 
 `blink/renderer/core/timing/profiler.cc` 文件定义了 Blink 引擎中用于性能分析的关键类 `Profiler`。它负责创建、启动、停止性能分析，并最终生成包含性能数据的 `ProfilerTrace` 对象。这个类与 JavaScript 的 `performance` API 紧密相关，服务于优化 HTML 页面和 CSS 样式的性能。理解这个文件的功能有助于理解浏览器性能分析工具的工作原理，以及如何进行 Web 前端性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/profiler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -322,7 +324,4 @@ ScriptPromise<ProfilerTrace> Profiler::stop(ScriptState* script_state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

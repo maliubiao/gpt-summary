@@ -119,7 +119,7 @@ This thought process involves moving from the specific (the script's content) to
 
 总而言之，`test-script-ext.py` 作为一个非常简单的 Python 脚本，其价值在于它在 Frida 测试框架中的作用，用于验证 Frida 查找和执行外部脚本的能力。 它的存在暗示了 Frida 在底层需要与操作系统进行交互，处理文件系统、进程创建和标准输入/输出等操作，并且用户在使用 Frida 相关功能时可能会遇到常见的配置或权限问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/windows/8 find program/test-script-ext.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,12 +127,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('ext/noext')
-
-"""
-
 ```

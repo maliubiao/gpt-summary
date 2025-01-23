@@ -123,7 +123,7 @@ By following this thought process, combining code analysis with an understanding
 
 当测试失败或出现问题时，开发人员或测试人员会查看相关的源代码文件（如 `b.c`）来理解测试的意图和程序的行为，从而找到调试线索。例如，如果一个 Frida script 预期能够绕过 `abort()` 但却失败了，他们可能会检查 `b.c` 确认条件判断的逻辑是否正确，或者全局变量 `p` 是否以预期的方式被使用。  这个简单的 `b.c` 文件很可能就是为了测试 Frida 如何与具有潜在终止行为的目标程序进行交互而设计的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/212 source set configuration_data/subdir/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdlib.h>
 #include "all.h"
 
@@ -146,7 +148,4 @@ int main(void)
     f();
     g();
 }
-
-"""
-
 ```

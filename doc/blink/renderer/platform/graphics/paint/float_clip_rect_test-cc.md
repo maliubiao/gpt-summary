@@ -155,14 +155,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`float_clip_rect_test.cc` 文件通过一系列单元测试，确保了 `FloatClipRect` 类在各种场景下的行为符合预期，这对于 Blink 渲染引擎正确实现 Web 页面的裁剪功能至关重要。虽然开发者通常不会直接使用这个类，但理解其功能有助于理解浏览器引擎内部如何处理 CSS 的 `clip-path`, `overflow`, `border-radius` 等属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/float_clip_rect_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -285,7 +287,4 @@ TEST_F(FloatClipRectTest, Map) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

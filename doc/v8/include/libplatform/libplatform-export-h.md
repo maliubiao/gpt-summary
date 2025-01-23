@@ -132,15 +132,17 @@ isolate.dispose();
 
 总而言之，`v8/include/libplatform/libplatform-export.h` 是一个至关重要的头文件，它负责控制 V8 平台库中符号的导出和导入，确保了 V8 引擎能够正确地构建为共享库，并能被其他应用程序使用。理解其作用对于进行 V8 相关的开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/libplatform/libplatform-export.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/libplatform/libplatform-export.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -170,7 +172,4 @@ Prompt:
 #endif  // defined(_WIN32)
 
 #endif  // V8_LIBPLATFORM_LIBPLATFORM_EXPORT_H_
-
-"""
-
 ```

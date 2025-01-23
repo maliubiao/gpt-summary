@@ -164,15 +164,17 @@ let result = myFunction(5, 10);
 
 `v8/src/profiler/strings-storage.h` 中定义的 `StringsStorage` 类是 V8 Profiler 组件中一个重要的工具，它有效地管理和存储分析过程中所需的字符串，避免了内存泄漏和冗余存储，提高了 Profiler 的效率和可靠性。它与 JavaScript 的执行紧密相关，因为它存储了 JavaScript 代码的各种元数据和运行时信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/strings-storage.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/strings-storage.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -247,7 +249,4 @@ class V8_EXPORT_PRIVATE StringsStorage {
 }  // namespace v8
 
 #endif  // V8_PROFILER_STRINGS_STORAGE_H_
-
-"""
-
 ```

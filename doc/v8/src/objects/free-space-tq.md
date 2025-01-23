@@ -163,15 +163,17 @@ let anotherObj = { data: "new data" };
 
 `v8/src/objects/free-space.tq` 定义了 V8 堆中用于管理空闲内存块的 `FreeSpace` 对象结构。它通过 `size` 字段记录空闲块大小，并通过 `next` 字段维护空闲链表。虽然 JavaScript 开发者不直接操作 `FreeSpace`，但它在 V8 的内存分配和垃圾回收过程中扮演着关键角色。理解 `FreeSpace` 的功能有助于理解 JavaScript 的内存管理机制，并避免常见的内存管理错误，如内存泄漏和过度创建临时对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/free-space.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/free-space.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ extern class FreeSpace extends HeapObject {
   size: Smi;
   next: FreeSpace|Smi|Uninitialized;
 }
-
-"""
-
 ```

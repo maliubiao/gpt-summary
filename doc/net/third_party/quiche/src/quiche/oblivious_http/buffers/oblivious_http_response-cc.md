@@ -182,15 +182,17 @@ By following this thought process, systematically analyzing the code, and consid
 
 通过以上步骤，开发者可以逐步深入到 `oblivious_http_response.cc` 文件，并利用断点调试和日志分析来诊断与 OHTTP 响应处理相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/oblivious_http/buffers/oblivious_http_response.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/oblivious_http/buffers/oblivious_http_response.h"
 
 #include <stddef.h>
@@ -543,7 +545,4 @@ ObliviousHttpResponse::CommonOperationsToEncapDecap(
 }
 
 }  // namespace quiche
-
-"""
-
 ```

@@ -189,7 +189,7 @@ if (Process.platform === 'linux') {
 
 总结来说，`bionic_vdso.handroid.h` 是 Bionic C 库中定义 VDSO 接口的关键头文件，它使得 Android 应用能够高效地调用内核提供的优化后的时间相关函数。理解 VDSO 的工作原理有助于理解 Android 系统中高性能时间获取机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_vdso.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -200,8 +200,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -265,7 +267,4 @@ enum {
 #endif
   VDSO_END
 };
-
-"""
-
 ```

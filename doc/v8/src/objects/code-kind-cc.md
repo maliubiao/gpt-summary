@@ -202,15 +202,17 @@ While this specific file doesn't directly cause user programming errors, underst
 
 In summary, `v8/src/objects/code-kind.cc` provides essential infrastructure for V8 to internally manage and represent the different stages of code compilation, which directly impacts the performance of JavaScript execution. While JavaScript developers don't interact with this code directly, understanding the underlying concepts can be helpful for writing efficient and performant JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/code-kind.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/code-kind.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ const char* CodeKindToMarker(CodeKind kind) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -87,12 +87,14 @@ console.log(view[0]); // 输出 5
 
 这部分 `instruction-selector-arm.cc` 代码是V8引擎将JavaScript（特别是涉及到性能密集型操作和底层特性的WebAssembly）代码高效地转化为ARM机器码的关键环节。它根据不同的操作类型选择最优的ARM指令，从而保证JavaScript代码在ARM架构上的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/instruction-selector-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 perand = g.UseRegister(value);
   EmitWithContinuation(opcode, value_operand, value_operand, cont);
 }
@@ -1666,7 +1668,4 @@ void InstructionSelectorT<Adapter>::VisitTruncateFloat32ToUint32(node_t node) {
   if constexpr (Adapter::IsTurboshaft) {
     using namespace turboshaft;  // NOLINT(build/namespaces)
     const Operation& op =
-"""
-
-
 ```

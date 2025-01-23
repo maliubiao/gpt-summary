@@ -145,7 +145,7 @@ Initially, I might have focused too much on the direct use of this script *withi
 
 `envcheck.py` 是一个简单的脚本，用于验证特定环境变量的存在和值。虽然它本身不直接进行逆向操作，但它体现了理解目标程序运行环境的重要性，这在逆向工程中是一个关键环节。它的存在也反映了软件开发中进行单元测试以确保环境配置正确的实践。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/48 testsetup default/envcheck.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -166,7 +168,4 @@ assert 'ENV_C' in os.environ
 print('ENV_A is', os.environ['ENV_A'])
 print('ENV_B is', os.environ['ENV_B'])
 print('ENV_C is', os.environ['ENV_C'])
-
-"""
-
 ```

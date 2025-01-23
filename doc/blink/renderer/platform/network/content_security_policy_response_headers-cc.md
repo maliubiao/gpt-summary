@@ -128,14 +128,16 @@ csp_headers.should_parse_wasm_eval(); // 返回 true 或 false，取决于 "http
 
 总而言之，`content_security_policy_response_headers.cc` 文件在 Chromium 中扮演着解析和存储 CSP 响应头的关键角色，为浏览器后续执行 CSP 策略提供了必要的数据基础，直接影响着网页中 JavaScript、HTML 和 CSS 的加载和执行行为，是 Web 安全机制的重要组成部分。开发者需要理解 CSP 的工作原理和正确配置方式，才能有效地利用其保护网站免受安全威胁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/content_security_policy_response_headers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google, Inc. All rights reserved.
  *
@@ -188,7 +190,4 @@ ContentSecurityPolicyResponseHeaders::ContentSecurityPolicyResponseHeaders(
       response_url_(response_url),
       should_parse_wasm_eval_(should_parse_wasm_eval) {}
 }
-
-"""
-
 ```

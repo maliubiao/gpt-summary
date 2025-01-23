@@ -1,5 +1,5 @@
 Response: 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteS390X.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -7,8 +7,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 nt64)
 		v1.AddArg(x)
 		v0.AddArg2(v1, y)
@@ -2988,9 +2990,4 @@ func rewriteValueS390X_OpS390XMOVBZreg(v *Value) bool {
 	typ := &b.Func.Config.Types
 	// match: (MOVBZreg e:(MOVBreg x))
 	// cond:
-"""
-
-
-
-
 ```

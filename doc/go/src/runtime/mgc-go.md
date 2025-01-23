@@ -185,7 +185,7 @@ func main() {
 
 这段 `mgc.go` 的代码片段是 Go 语言运行时垃圾回收实现的核心组成部分。 它定义了 GC 的基本结构、状态、关键阶段（标记和清除），以及相关的控制逻辑和数据结构（如 `workType`）。 它还处理了与写屏障、GC 触发条件（包括对 `GOGC` 环境变量的读取）以及用户显式触发 GC 的接口 (`GC()` 函数) 相关的逻辑。  总而言之，它是 Go 语言自动内存管理机制的基石。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mgc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1121,9 +1123,4 @@ top:
 
 	// For debugging/testing.
 	for gcDebugMarkDone.spinAfterRaggedBarr
-"""
-
-
-
-
 ```

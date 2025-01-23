@@ -225,15 +225,17 @@ Finally, I organized my findings into a clear and logical structure, covering ea
 
 总而言之，`masque_encapsulated_client.cc` 负责 Chromium 中 MASQUE 客户端的封装连接功能，它将普通网络流量封装在 QUIC 连接中，为更高层次的应用提供安全的隧道。虽然它本身不包含 JavaScript，但它是浏览器网络功能的重要组成部分，JavaScript 可以通过浏览器提供的 API 间接地使用它的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/masque/masque_encapsulated_client.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -583,7 +585,4 @@ QuicConfig MasqueEncapsulatedConfig(MasqueClient* underlying_masque_client) {
 }
 
 }  // namespace quic
-
-"""
-
 ```

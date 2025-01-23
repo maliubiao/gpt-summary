@@ -138,7 +138,7 @@ func main() {
 
 `go/src/runtime/defs_solaris_amd64.go` 是 Go 运行时在 Solaris/AMD64 平台上实现底层系统交互的关键组成部分，它通过 `cgo` 机制将 CPU 寄存器相关的常量暴露给运行时代码，主要用于信号处理、goroutine 上下文切换等核心功能。 普通 Go 开发者无需关心或直接使用这个文件中的内容。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_solaris_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -146,8 +146,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -196,9 +198,4 @@ const (
 	REG_RSP    = C.REG_RSP
 	REG_SS     = C.REG_SS
 )
-
-"""
-
-
-
 ```

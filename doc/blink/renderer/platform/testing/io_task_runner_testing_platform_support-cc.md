@@ -98,14 +98,16 @@ Let's break down the thought process for analyzing this C++ code snippet and ans
 
 总而言之，`io_task_runner_testing_platform_support.cc` 为 Blink 渲染引擎的测试提供了一个重要的基础设施，允许开发者在受控的环境中测试与 I/O 操作相关的代码逻辑。理解其功能有助于编写更可靠和全面的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/io_task_runner_testing_platform_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -126,7 +128,4 @@ IOTaskRunnerTestingPlatformSupport::GetIOTaskRunner() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -171,15 +171,17 @@ go test -run=Issue4964
 
 `go/test/fixedbugs/issue4964.go` 的主要功能是作为一个测试用例，用于验证 Go 编译器在处理跨包逃逸分析时的正确性。它旨在复现并确保修复了 Issue 4964 中描述的缺陷，即编译器导出的逃逸分析结果在跨包场景下可能不足以进行精确分析。  它本身不包含可执行的代码逻辑，而是依赖 Go 编译器的行为进行测试。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4964.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -190,9 +192,4 @@ Prompt:
 // for cross package analysis.
 
 package ignored
-
-"""
-
-
-
 ```

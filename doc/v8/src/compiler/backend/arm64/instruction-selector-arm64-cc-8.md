@@ -150,7 +150,7 @@ Atomics.add(view, 0, 5);
 
 作为 11 个部分中的第 9 部分，`v8/src/compiler/backend/arm64/instruction-selector-arm64.cc` 的主要功能是 **V8 编译器后端中 ARM64 架构的指令选择器**。它负责将编译器生成的、与平台无关的中间表示 (IR) 节点转换为可以在 ARM64 处理器上执行的具体机器指令。  这个过程包括选择合适的指令、生成操作数，并进行一些针对 ARM64 架构的优化。  考虑到这是第 9 部分，可以推测之前的部分可能涉及 IR 的生成和优化，而后续的部分可能涉及指令的调度、寄存器分配和最终的代码生成。 这个文件是连接高级语言（JavaScript 或 WebAssembly）操作和底层硬件指令的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm64/instruction-selector-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm64/instruction-selector-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -158,9 +158,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共11部分，请归纳一下它的功能
+```
 
-"""
-    Node* right_of_left = left->InputAt(1);
+### 源代码
+```cpp
+Node* right_of_left = left->InputAt(1);
       Emit(kArm64Bfi, g.DefineSameAsFirst(left), g.UseRegister(right),
            g.UseRegister(right_of_left), g.TempImmediate(32),
            g.TempImmediate(32));
@@ -969,7 +971,4 @@ SIMD_UNOP_LIST(SIMD_VISIT_UNOP)
     VisitSimdShiftRRR(this, kArm64##Name, node, width);          \
   }
 SIM
-"""
-
-
 ```

@@ -125,7 +125,7 @@ The user wants to understand the functionality of the Python file `build.py` wit
 
 `frida/releng/meson/mesonbuild/build.py` 文件的第一部分主要负责定义用于描述软件构建过程的各种核心数据结构。它定义了 `Build` 类来表示整个构建的状态，以及各种 dataclass 来表示构建目标、依赖项、包含目录、安装信息等。这些数据结构是 Meson 构建系统用于理解和执行构建过程的基础。它还包含了一些用于处理安装标签和 macOS 动态库名称的辅助函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -988,7 +990,4 @@ class BuildTarget(Target):
         self.all_compilers = compilers
         self.compilers: OrderedDict[str, Compiler] = OrderedDict()
         s
-"""
-
-
 ```

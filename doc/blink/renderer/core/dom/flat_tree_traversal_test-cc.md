@@ -133,7 +133,7 @@ Here's a breakdown of the thinking process to generate the summary:
 
 总而言之，`blink/renderer/core/dom/flat_tree_traversal_test.cc` 是一个至关重要的测试文件，用于确保 Blink 引擎中负责扁平树遍历的功能能够正确处理各种 DOM 结构，特别是涉及到 Shadow DOM 的情况。它对于保证浏览器正确渲染网页和执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/flat_tree_traversal_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -998,7 +1000,4 @@ TEST_F(FlatTreeTraversalTest, v1AllFallbackContent) {
 
   EXPECT_EQ(nullptr, FlatTreeTraversal::NextSibling(*fallback_x));
   EXPECT_EQ(nullptr, FlatTreeTraversal::NextSibling(*fallbac
-"""
-
-
 ```

@@ -69,7 +69,7 @@ The file defines various fixed-size and dynamically growing array types used int
 
 **功能总结**: `v8/src/objects/fixed-array.h` 定义了 V8 引擎中用于存储各种类型数据的核心数据结构——不同类型的固定大小和动态大小的数组。这些数组是 V8 实现 JavaScript 数组和其他内部数据结构的关键组成部分，提供了高效的内存管理和元素访问机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/fixed-array.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/fixed-array.h以.tq结尾，那它是个v8 torque源代码，
@@ -77,8 +77,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -947,8 +949,4 @@ class PodArrayBase : public Super {
   bool matches(int offset, const T* buffer, int length) {
     DCHECK_LE(offset, this->length());
     DCHECK_LE(offset + length, this->length());
-    
-"""
-
-
 ```

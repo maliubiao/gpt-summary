@@ -149,7 +149,7 @@ exec 0<&-  # 错误地关闭了标准输入
 
 `go/src/runtime/fds_unix.go` 中的这段代码是 Go 运行时环境健壮性的重要组成部分。它在程序启动初期进行关键的初始化工作，尝试修复可能被外部因素破坏的标准文件描述符，以提高程序的稳定性和可预测性。虽然它不能完全阻止所有与文件描述符相关的错误，但它可以处理一些常见的情况，例如标准流被意外关闭的情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/fds_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -157,8 +157,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -204,9 +206,4 @@ func checkfds() {
 		}
 	}
 }
-
-"""
-
-
-
 ```

@@ -162,7 +162,7 @@ Initially, one might focus too much on the simplicity of the `main.c` code itsel
 
 总而言之，这个 `main.c` 文件是一个用于测试 Frida 工具在 Linux 系统上处理动态库加载机制的简单但重要的测试用例。它的设计简洁明了，方便验证在不同库加载配置下程序的行为是否符合预期。  开发人员通过分析这个测试用例的代码和运行结果，可以确保 Frida 在处理动态链接相关的场景时能够正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/linuxlike/11 runpath rpath ldlibrarypath/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int some_symbol (void);
@@ -183,7 +185,4 @@ int main (void) {
   fprintf (stderr, "ret was %i instead of 1\n", ret);
   return -1;
 }
-
-"""
-
 ```

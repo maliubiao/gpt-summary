@@ -137,7 +137,7 @@ Here's a breakdown of the thought process to arrive at the summary:
 
 这段代码是 Service Worker 运行时的核心，它接收并调度来自浏览器各个模块的事件，并将这些事件传递到 Service Worker 的 JavaScript 代码中执行，从而实现 Service Worker 的各种功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/service_worker/service_worker_global_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -145,9 +145,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-        this, WaitUntilObserver::kMessageerror, event_id);
+### 源代码
+```cpp
+this, WaitUntilObserver::kMessageerror, event_id);
         event_to_dispatch = ExtendableMessageEvent::CreateError(
             origin, ports, source, observer);
       }
@@ -930,7 +932,4 @@ void ServiceWorkerGlobalScope::DispatchSyncEvent(
 
 void ServiceWorkerGlobalScope::StartSyncEvent(String tag,
                                               bool last_c
-"""
-
-
 ```

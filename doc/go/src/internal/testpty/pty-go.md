@@ -202,7 +202,7 @@ drwxr-xr-x  2 user  group  4096 Oct 26 10:00 directory1
 
 总而言之，`go/src/internal/testpty/pty.go` 提供了一个底层接口，用于在Unix系统上创建和管理伪终端，这对于需要模拟终端交互的测试场景非常有用。使用者需要了解伪终端的基本概念，并注意资源管理和跨平台兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/testpty/pty.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -210,8 +210,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -250,9 +252,4 @@ var ErrNotSupported = errors.New("testpty.Open not implemented on this platform"
 func Open() (pty *os.File, processTTY string, err error) {
 	return open()
 }
-
-"""
-
-
-
 ```

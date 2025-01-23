@@ -180,14 +180,16 @@ div2.firstChild = temp;
 
 `write_barrier_perftest.cc` 是一个关键的性能测试文件，用于评估 Blink 渲染引擎中写屏障的性能开销。这直接影响到 JavaScript 操作、DOM 操作以及 CSS 样式应用等核心渲染任务的效率。理解这类测试有助于开发者更好地理解 Blink 的内存管理机制，并编写出更高效的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/test/write_barrier_perftest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -277,7 +279,4 @@ TEST_F(WriteBarrierPerfTest, MemberWritePerformance) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

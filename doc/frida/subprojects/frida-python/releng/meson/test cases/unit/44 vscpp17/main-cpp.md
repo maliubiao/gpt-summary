@@ -169,7 +169,7 @@ By following this systematic approach and constantly referring back to the promp
 
 **因此，作为调试线索，这个文件的存在和输出可以帮助 Frida 的开发者或用户确定在特定的构建环境和编译器下，C++17 是否被正确启用。这对于解决与 C++17 特性相关的编译或运行时错误至关重要。**  例如，如果在构建 Frida 的某个组件时遇到与 C++17 相关的错误，开发者可以检查这个测试用例的输出，以确认是否是由于编译器配置问题导致的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/44 vscpp17/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 
 #if __cpp_lib_filesystem || (defined(__cplusplus) && __cplusplus >= 201703L)
@@ -208,7 +210,4 @@ std::cerr << "ERROR: C++17 not enabled" << std::endl;
 return EXIT_FAILURE;
 #endif
 }
-
-"""
-
 ```

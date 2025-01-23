@@ -185,7 +185,7 @@ This iterative process of skimming, deep diving, connecting concepts, identifyin
 
 `minstall.py` 脚本的第一部分主要负责 Meson 构建系统中软件安装流程的 **初始化和核心文件操作**。它处理命令行参数，加载安装数据，并定义了用于创建目录、复制文件、创建符号链接以及设置文件权限和所有权的基本功能。它还初步涉及了 SELinux 上下文的处理和对不同类型安装项的区分。这部分为后续的安装过程奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/minstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2014 The Meson development team
 
@@ -927,7 +929,4 @@ class Installer:
             fname = check_for_stampfile(t.fname)
             outdir = get_destdir_path(destdir, fullprefix, t.outdir)
             ou
-"""
-
-
 ```

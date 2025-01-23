@@ -222,7 +222,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/asm-riscv/asm/statfs.handroid` 这个文件本身只是一个简单的头文件包含，但它对于 Android 系统中获取文件系统状态信息至关重要。 理解 `statfs` 系统调用以及相关的 `libc` 函数，对于理解 Android 的存储管理和资源分配机制非常有帮助。 通过 Frida 等工具，我们可以深入到 Native 层，观察和调试这些底层的系统调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-riscv/asm/statfs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -233,8 +233,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -242,7 +244,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/statfs.h>
-
-"""
-
 ```

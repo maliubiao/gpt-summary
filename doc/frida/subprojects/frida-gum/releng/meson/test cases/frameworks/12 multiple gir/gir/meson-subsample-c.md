@@ -149,7 +149,7 @@ Message: Frida is here!
 
 总而言之，`meson-subsample.c` 是一个用于演示 Frida 功能的简单 C 代码示例，它展示了如何定义和使用 GLib 对象，并且可以作为 Frida instrumentation 的目标，用于学习和测试 Frida 的各种特性。 它的存在是为了验证 Frida 在集成了 Meson 构建系统的环境下的工作能力，同时也为用户提供了一个简单的实验对象来学习 Frida 的使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/12 multiple gir/gir/meson-subsample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-subsample.h"
 
 struct _MesonSubSample
@@ -283,7 +285,4 @@ meson_sub_sample_print_message (MesonSubSample *self)
 
   g_print ("Message: %s\n", self->msg);
 }
-
-"""
-
 ```

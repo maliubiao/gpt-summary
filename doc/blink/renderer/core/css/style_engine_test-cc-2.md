@@ -109,7 +109,7 @@ To provide a good summary, I need to:
 
 这部分代码主要集中在**测试 `StyleEngine` 对各种媒体查询的响应和覆盖机制**。它涵盖了 `prefers-contrast`，`prefers-reduced-motion`， `prefers-reduced-transparency`， `prefers-reduced-data`， `forced-colors`，以及 `prefers-color-scheme` 这些媒体查询特性的变化和通过 API 进行覆盖时的行为。此外，还测试了与 `forced-color-adjust` 属性的交互以及相关的 `UseCounter` 指标记录。 简而言之，这部分重点验证了 `StyleEngine` 如何根据用户偏好和媒体查询动态调整页面样式，并确保覆盖机制的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_engine_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lor()));
 
   color_scheme_helper.SetPreferredContrast(
@@ -1029,7 +1031,4 @@ TEST_F(StyleEngineTest, RejectSelectorForPseudoElement) {
   EXPECT_EQ(0u, stats->rules_fast_rejected);
 
   Element* div = GetDocument(
-"""
-
-
 ```

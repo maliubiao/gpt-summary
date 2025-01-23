@@ -130,14 +130,16 @@ enum class SubtreePaintPropertyUpdateReason : unsigned {
 
 总而言之，`subtree_paint_property_update_reason.cc` 及其相关的头文件是 Blink 渲染引擎内部用于跟踪和调试绘制更新原因的重要组成部分。理解其背后的概念有助于 Web 开发者编写更高效的 CSS 和 JavaScript 代码，避免不必要的渲染开销。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/subtree_paint_property_update_reason.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ String SubtreePaintPropertyUpdateReasonsToString(unsigned bitmask) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

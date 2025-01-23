@@ -185,15 +185,17 @@ This systematic approach, moving from basic understanding to detailed analysis a
 
 总而言之，`net/server/http_server_response_info_unittest.cc` 是用来确保 `HttpServerResponseInfo` 类能够正确地构建符合 HTTP 协议的响应信息，这对于 Chromium 网络栈的正常运行至关重要，并且直接影响浏览器如何与服务器进行通信以及 JavaScript 如何处理服务器返回的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/server/http_server_response_info_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ TEST(HttpServerResponseInfoTest, CreateFor500) {
 }
 
 }  // namespace net
-
-"""
-
 ```

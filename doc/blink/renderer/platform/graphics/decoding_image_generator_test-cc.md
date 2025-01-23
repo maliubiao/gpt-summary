@@ -121,14 +121,16 @@ This systematic approach allows for a thorough understanding of the test file's 
 
 `decoding_image_generator_test.cc` 文件通过一系列单元测试，确保 `DecodingImageGenerator` 类能够正确地从不同类型的图像数据中创建 `SkImageGenerator` 对象，并能够处理各种边界情况和错误。这对于保证浏览器能够正确解码和渲染各种格式的图像至关重要，直接影响用户在网页上看到的视觉内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/decoding_image_generator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ TEST_F(DecodingImageGeneratorTest, AdjustedGetPixels) {
 // DecodingImageGenerator::Create.
 
 }  // namespace blink
-
-"""
-
 ```

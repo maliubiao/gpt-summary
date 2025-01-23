@@ -104,7 +104,7 @@ Finally, I need to summarize the functionality based on this specific part (part
 
 *   **总结：** 这部分 `v8/src/codegen/riscv/macro-assembler-riscv.cc` 代码是 V8 引擎 RISC-V 架构代码生成的核心部分，专注于生成控制流和函数调用相关的汇编指令，为 JavaScript 代码的执行提供底层的机器码支持，并涉及到与内置函数、C++ 代码以及 WebAssembly 的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/macro-assembler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -112,9 +112,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
-           Condition cond, Register rs, const Operand& rt) {
+### 源代码
+```cpp
+Condition cond, Register rs, const Operand& rt) {
   DCHECK(RelocInfo::IsCodeTarget(rmode));
   DCHECK_IMPLIES(options().isolate_independent_code,
                  Builtins::IsIsolateIndependentBuiltin(*code));
@@ -1046,7 +1048,4 @@ void MacroAssembler::WasmRvvS128const(VRegister dst, const uint8_t imms[16]) {
   li(kScratchReg, vals[1]);
   vmv_sx(kSimd128ScratchReg, kScratchReg);
   vslideup_vi(dst, kSimd128ScratchR
-"""
-
-
 ```

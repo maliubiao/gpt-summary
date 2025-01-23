@@ -377,7 +377,7 @@ sys.stdin.read()
 
 这个 Frida 示例可以帮助你理解 Android 应用或服务是如何通过 `ioctl` 与内核驱动程序进行交互的，以及传递的数据结构的内容。通过修改 Frida 脚本，你可以 hook 不同的 `ioctl` 命令，查看不同的数据交互过程，从而深入理解 `hdlcdrv` 驱动程序的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/hdlcdrv.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -388,8 +388,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -463,7 +465,4 @@ struct hdlcdrv_ioctl {
 #define HDLCDRV_PARMASK_PARIOBASE (1 << 5)
 #define HDLCDRV_PARMASK_MIDIIOBASE (1 << 6)
 #endif
-
-"""
-
 ```

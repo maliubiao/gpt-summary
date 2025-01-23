@@ -159,7 +159,7 @@ case RO_ADDI: {
 
 作为第7部分，这段代码主要负责 **RISC-V 指令集中算术逻辑运算、数据加载与存储、程序控制流指令以及部分压缩指令的模拟执行**。它处理了通用寄存器和内存的读写，并能识别和模拟对 V8 内置函数的调用。  此外，它还包含了对 CSR 寄存器的操作以及浮点运算指令的模拟。 如果启用了 RISC-V 向量扩展，这部分代码也会包含对向量指令的模拟。  整体而言，这部分代码构成了 RISC-V 模拟器核心执行逻辑的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/riscv/simulator-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/riscv/simulator-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,8 +167,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 & ~sreg_t(1);
       set_pc(next_pc);
       if (v8_flags.trace_sim) {
@@ -1350,7 +1352,4 @@ void Simulator::DecodeRvvIVV() {
     }
     default:
       // v8::base::Em
-"""
-
-
 ```

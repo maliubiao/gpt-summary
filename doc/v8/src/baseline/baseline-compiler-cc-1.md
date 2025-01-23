@@ -203,7 +203,7 @@ Initially, I might have just listed all the `Visit` methods and their correspond
 
 因此，这段代码的功能可以归纳为： **实现 V8 JavaScript 引擎 Baseline 编译器的字节码处理逻辑，将解释器生成的字节码转换为机器码，从而执行相应的 JavaScript 操作。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/baseline-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/baseline/baseline-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -211,9 +211,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-                                  \
+### 源代码
+```cpp
+\
         interpreter::Register::FromShortStar(interpreter::Bytecode::k##Name), \
         kInterpreterAccumulatorRegister);                                     \
   }
@@ -1067,7 +1069,4 @@ void BaselineCompiler::VisitTestTypeOf() {
       // Check if the map is callable but not undetectable.
       Register map_bit_field = kInterpreterAccumulatorRegister;
       __ LoadMap(m
-"""
-
-
 ```

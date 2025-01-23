@@ -114,7 +114,7 @@ By following this structured thinking process, considering the context of Frida 
 
 总而言之，`fix_path_components` 函数的功能是**将一个字符串列表中的元素尽可能地组合成有效的、在文件系统中存在的路径字符串**。它主要用于处理可能被分割或分散的路径信息，尤其是在动态分析和逆向工程中，从程序的追踪信息中提取完整的路径信息。它依赖于操作系统的文件系统结构和 Python 的 `pathlib` 模块来判断路径的有效性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/cmake/traceparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,9 +123,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- [curr_str]
+### 源代码
+```python
+[curr_str]
                 curr_str = None
                 path_found = False
             elif Path(f'{curr_str} {i}').exists():
@@ -144,8 +146,4 @@ Prompt:
         if curr_str:
             fixed_list += [curr_str]
         return fixed_list
-
-"""
-
-
 ```

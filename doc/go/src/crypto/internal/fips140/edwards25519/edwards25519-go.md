@@ -197,7 +197,7 @@ func main() {
 
 这段代码是实现 Edwards25519 密码学功能的基础，它提供了在椭圆曲线上进行点运算的关键组件。上层应用会基于这些基础功能构建更高级的密码学协议，例如签名、密钥交换等。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/edwards25519/edwards25519.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,8 +205,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright (c) 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -634,9 +636,4 @@ func (v *affineCached) CondNeg(cond int) *affineCached {
 	v.T2d.Select(new(field.Element).Negate(&v.T2d), &v.T2d, cond)
 	return v
 }
-
-"""
-
-
-
 ```

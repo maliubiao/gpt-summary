@@ -109,7 +109,7 @@ Here's a breakdown of the thinking process to generate the detailed explanation 
 
 虽然 `g.c` 的代码非常简单，但在 Frida 的上下文中，它可能是一个有用的 Hook 点，用于观察程序流程，理解函数调用关系，甚至修改程序行为。其背后的原理涉及到二进制、操作系统、动态链接等多个层面的知识。理解用户如何通过 Frida 操作并最终触及到这个简单的函数，可以帮助我们更好地理解 Frida 的工作原理和逆向分析的流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/213 source set dictionary/g.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,15 +117,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void g(void)
 {
     h();
 }
-
-"""
-
 ```

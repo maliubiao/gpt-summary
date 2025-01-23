@@ -143,15 +143,17 @@ By following these steps, focusing on code details, and drawing logical inferenc
 
 总而言之，`media_source_attachment_supplement.cc` 文件定义了一个 `MediaSource` 附件的补充类，它为将 `MediaSource` 对象连接到 HTML 媒体元素提供了基础框架。虽然这个文件中的某些关键功能（如添加音视频轨道）尚未实现，但它在管理 `MediaSource` 附件的生命周期和协调相关操作中扮演着重要的角色。理解这个文件的功能有助于理解 Chromium Blink 引擎中 MSE 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasource/media_source_attachment_supplement.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ MediaSourceAttachmentSupplement::GetExclusiveKey() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

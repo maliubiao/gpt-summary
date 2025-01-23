@@ -140,7 +140,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 因此，到达 `lib.c` 的路径通常是从理解和调试 Frida 的对象提取功能开始，然后深入到其源代码和测试用例中。这个简单的 `lib.c` 文件作为一个清晰且易于理解的目标，用于验证 Frida 是否能够正确识别和操作目标进程中的函数对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/22 object extraction/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,12 +148,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 42;
 }
-
-"""
-
 ```

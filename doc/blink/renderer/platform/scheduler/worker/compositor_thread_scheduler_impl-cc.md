@@ -157,14 +157,16 @@ By following this structured approach, I can systematically analyze the code, un
 
 `CompositorThreadSchedulerImpl.cc` 是 Blink 渲染引擎中 Compositor 线程的核心调度器。它负责管理和调度 Compositor 线程上的任务，确保流畅的渲染和用户交互。它与 JavaScript、HTML 和 CSS 功能的实现密切相关，特别是在动画、滚动和图层合成方面。理解其功能有助于开发者编写更高效的 Web 应用，避免导致 Compositor 线程性能问题的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/worker/compositor_thread_scheduler_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -317,7 +319,4 @@ void CompositorThreadSchedulerImpl::SetV8Isolate(v8::Isolate* isolate) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

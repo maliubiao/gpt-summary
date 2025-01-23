@@ -131,11 +131,13 @@ WebAssembly.instantiateStreaming(fetch('module.wasm'), {})
 
 `wasm-features.cc` 文件是 V8 引擎中管理 WebAssembly 特性启用状态的关键部分。它根据命令行标志和运行上下文来决定哪些 Wasm 特性是可用的。这直接影响了 JavaScript 中加载和执行 Wasm 模块的能力，特别是当涉及到实验性的或较新的 Wasm 功能时。开发者需要了解这些特性以及如何在 V8 中启用它们，才能充分利用 WebAssembly 的最新进展。 通过命令行标志（例如在 Node.js 环境中运行 `node --experimental-wasm-stringref your_script.js`）可以启用相应的特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-features.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ WasmEnabledFeatures WasmEnabledFeatures::FromContext(
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

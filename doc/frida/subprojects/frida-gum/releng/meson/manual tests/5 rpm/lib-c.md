@@ -208,7 +208,7 @@ By following these steps, the comprehensive answer provided in the initial promp
 
 **作为调试线索:**  如果 Frida 脚本无法找到 `meson_print`，或者在 Hook 时出现错误，那么检查 `lib.c` 的源代码可以帮助确认函数名称是否正确，以及理解函数的行为，从而更好地编写 Frida 脚本。例如，如果脚本预期 `meson_print` 接收参数，但查看源代码后发现它没有参数，就需要修改脚本。 此外，了解 `meson_print` 仅仅返回一个静态字符串，可以避免尝试修改这个返回的字符串而导致程序崩溃。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/manual tests/5 rpm/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -216,15 +216,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"lib.h"
 
 char *meson_print(void)
 {
   return "Hello, world!";
 }
-
-"""
-
 ```

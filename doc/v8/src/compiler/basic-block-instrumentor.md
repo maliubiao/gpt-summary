@@ -103,11 +103,13 @@ console.log(add(15, 3));
 
 总而言之，`basic-block-instrumentor.cc` 是 V8 编译器中一个关键的组成部分，它通过在编译后的代码中插入额外的指令，实现了对基本块执行情况和内置函数调用行为的运行时监控，为性能分析、代码覆盖率测试和理解 V8 内部机制提供了重要的基础数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/basic-block-instrumentor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -379,7 +381,4 @@ void BasicBlockCallGraphProfiler::StoreCallGraph(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

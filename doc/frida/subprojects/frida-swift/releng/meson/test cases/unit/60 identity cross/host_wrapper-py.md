@@ -131,7 +131,7 @@ By following these steps, combining direct analysis of the code with contextual 
 
 总而言之，`host_wrapper.py` 是 Frida 构建过程中的一个辅助脚本，它简化了在不同操作系统上调用编译器并添加特定预处理器定义的操作，这对于区分宿主机和目标设备的构建场景非常有用，而这在逆向工程和动态 instrumentation 领域是很常见的需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/60 identity cross/host_wrapper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import subprocess, sys, platform
@@ -152,7 +154,4 @@ else:
     cc = 'cc'
 
 subprocess.call([cc, "-DEXTERNAL_HOST"] + sys.argv[1:])
-
-"""
-
 ```

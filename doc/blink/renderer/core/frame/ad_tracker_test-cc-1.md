@@ -157,15 +157,17 @@ The user wants a summary of the functionality of the provided C++ code. This is 
 *   **忽略了通过 JavaScript 动态修改样式或添加样式表也会触发资源加载，并且这些资源可能被标记为广告资源。**
 *   **在测试环境中未能正确设置 `AdTracker` 的 ad suffix，导致测试结果不准确。**  例如，测试用例中使用了 `ad_tracker_->SetAdSuffix("ad=true");` 来模拟广告 URL 的标记。如果开发者在本地测试时忘记设置或设置错误，就可能观察到与预期不符的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/ad_tracker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
   ad_tracker_->SetAdSuffix("ad_script.js");
 
@@ -889,8 +891,4 @@ INSTANTIATE_TEST_SUITE_P(All,
                          ::testing::Values(true, false));
 
 }  // namespace blink
-
-"""
-
-
 ```

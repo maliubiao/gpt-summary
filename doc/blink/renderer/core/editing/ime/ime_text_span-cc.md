@@ -153,15 +153,17 @@ Let's break down the thought process for analyzing the `ime_text_span.cc` file.
 
 总而言之，`blink/renderer/core/editing/ime/ime_text_span.cc` 文件是 Blink 引擎中处理 IME 相关文本显示的核心组件，它负责存储和传递 IME 文本跨度的信息，以便在网页上正确渲染输入法相关的视觉效果。它的工作依赖于与浏览器进程的通信，并最终影响用户在网页上看到的 IME 提示和装饰。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ime/ime_text_span.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -318,7 +320,4 @@ ui::ImeTextSpan ImeTextSpan::ToUiImeTextSpan() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

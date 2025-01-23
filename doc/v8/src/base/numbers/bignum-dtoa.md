@@ -116,11 +116,13 @@ console.log(smallNumber.toString()); // 输出 "1.23e-6" (最短且易读的表�
 
 `v8/src/base/numbers/bignum-dtoa.cc` 是 V8 引擎中负责将双精度浮点数转换为字符串的关键组件。它提供了多种转换模式，并使用高精度的 `Bignum` 类来确保转换的准确性，尤其是在生成能够无歧义地表示浮点数的最短字符串方面。这直接影响了 JavaScript 中 `Number.prototype.toString()`, `Number.prototype.toFixed()`, 和 `Number.prototype.toPrecision()` 等方法的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/bignum-dtoa.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -728,7 +730,4 @@ static void FixupMultiply10(int estimated_power, bool is_even,
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -154,15 +154,17 @@ This code itself is infrastructure for debugging and aims to *help* prevent prog
 
 In summary, `v8/src/debug/wasm/gdb-server/gdb-server-thread.cc` is a foundational component for enabling remote debugging of WebAssembly code within the V8 JavaScript engine. It handles the low-level details of network communication and thread management, allowing developers to use familiar GDB tools to analyze and debug their WebAssembly applications.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/gdb-server-thread.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/wasm/gdb-server/gdb-server-thread.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -284,7 +286,4 @@ void GdbServerThread::Stop() {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

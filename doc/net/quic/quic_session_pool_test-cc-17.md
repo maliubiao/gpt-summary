@@ -121,7 +121,7 @@ QUIC 协议是 HTTP/3 的底层传输协议，而 HTTP/3 是现代 Web 应用程
 
 这部分测试用例确保了 `QuicSessionPool` 能够高效、安全地管理 QUIC 连接，并能根据不同的网络环境和用户配置做出正确的决策。 它是保证 Chromium QUIC 实现质量的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第18部分，共20部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 onPoolPeer::GetCryptoConfig(factory_.get(),
                                            kNetworkAnonymizationKey1);
   std::unique_ptr<QuicCryptoClientConfigHandle> crypto_config_handle2_2 =
@@ -916,7 +918,4 @@ TEST_P(QuicSessionPoolWithDestinationTest, DifferentProxyChain) {
       context_.clock(), origin2_.host(), quic::Perspective::IS_CLIENT,
       /*client_priority_uses_incremental=*/true,
       /*use_p
-"""
-
-
 ```

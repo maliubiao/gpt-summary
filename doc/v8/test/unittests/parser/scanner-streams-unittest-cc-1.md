@@ -67,7 +67,7 @@ By following these steps, the analysis can accurately describe the functionality
 
 总而言之，`v8/test/unittests/parser/scanner-streams-unittest.cc`  通过创建各种类型的字符流并进行克隆测试，旨在确保 V8 引擎在处理不同来源和编码的 JavaScript 代码时，其底层的字符流机制能够正确地提供字符数据，并且在需要时能够进行高效的复制 (克隆)，这对于性能和正确性至关重要。该测试用例覆盖了 V8 在处理字符串时的多种场景，保证了扫描器在各种情况下都能可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/scanner-streams-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/scanner-streams-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -75,8 +75,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 byte_source, uc16_stream.get(), length);
 
     // This avoids the GC from trying to free a stack allocated resource.
@@ -145,8 +147,4 @@ byte_source, uc16_stream.get(), length);
     TestCloneCharacterStream("12345678", two_byte_streaming_stream.get(), 8);
   }
 }
-
-"""
-
-
 ```

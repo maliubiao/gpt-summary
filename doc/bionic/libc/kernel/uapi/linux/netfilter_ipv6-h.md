@@ -250,7 +250,7 @@ if __name__ == '__main__':
 
 通过以上分析，我们了解了 `bionic/libc/kernel/uapi/linux/netfilter_ipv6.h` 这个头文件在 Android 系统中的作用，以及它与 Android 功能的联系，并了解了用户空间程序如何通过系统调用与内核的 Netfilter 框架交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter_ipv6.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -261,8 +261,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -296,7 +298,4 @@ enum nf_ip6_hook_priorities {
   NF_IP6_PRI_LAST = INT_MAX,
 };
 #endif
-
-"""
-
 ```

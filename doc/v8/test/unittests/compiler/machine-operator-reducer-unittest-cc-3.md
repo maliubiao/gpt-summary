@@ -151,7 +151,7 @@ function calculate(y) {
 
 作为系列的一部分，`v8/test/unittests/compiler/machine-operator-reducer-unittest.cc` 的第 4 部分继续深入测试 `MachineOperatorReducer` 组件的各种优化能力。  它涵盖了整数和浮点数的比较、位运算、算术运算以及数学函数的优化。  这些测试用例验证了在特定的输入模式下，`MachineOperatorReducer` 能够正确地将机器操作简化为更高效的形式，从而提升最终生成的机器码的性能，并间接提升 JavaScript 代码的执行效率。  该文件通过大量的具体测试用例，确保了 `MachineOperatorReducer` 的正确性和有效性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/machine-operator-reducer-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/machine-operator-reducer-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -159,8 +159,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e::MulWithWraparound(x, y)));
     }
   }
@@ -1057,8 +1059,4 @@ TEST_F(MachineOperatorReducerTest, Select) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

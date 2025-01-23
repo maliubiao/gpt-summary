@@ -124,14 +124,16 @@ The `std::tuple` returned would be `std::make_tuple(4, 4)` (4 frames processed, 
 
 In summary, `delay_neon.cc` is a crucial component of the Chromium Blink engine's audio processing pipeline, providing an efficient and optimized implementation of a variable audio delay effect for ARM processors. It directly relates to the Web Audio API and exemplifies how low-level C++ code enables high-level web functionalities.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/cpu/arm/delay_neon.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -331,7 +333,4 @@ void Delay::HandleNaN(float* delay_times,
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

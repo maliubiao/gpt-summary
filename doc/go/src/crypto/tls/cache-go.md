@@ -182,7 +182,7 @@ func main() {
 
 总而言之，这段 `cache.go` 代码实现了一个精巧的证书缓存机制，通过引用计数和共享对象来优化 TLS 连接中证书的处理效率，是 `crypto/tls` 包中一个重要的性能优化组件。使用者需要理解其工作原理，避免修改缓存中的证书，并妥善管理 `activeCert` 的生命周期。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/cache.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -190,8 +190,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -287,9 +289,4 @@ func (cc *certCache) newCert(der []byte) (*activeCert, error) {
 	}
 	return cc.active(entry), nil
 }
-
-"""
-
-
-
 ```

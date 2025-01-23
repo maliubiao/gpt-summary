@@ -148,12 +148,14 @@ I need to identify the core functionalities implemented in this part and, if app
 这部分代码还包含了一些辅助函数，例如 `GetValueType` 用于将字符串转换为 WebAssembly 的值类型，以及一些用于类型转换的辅助函数 (如 `ToI32`, `ToF64` 等)。此外，它还定义了一些内部的辅助函数和常量，用于设置构造函数和原型对象。
 
 总而言之，这段代码是 V8 引擎中实现 WebAssembly JavaScript API 的关键部分，它允许 JavaScript 代码与 WebAssembly 的内存、全局变量、表、异常和函数进行交互。
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-js.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 be in integer range. That's the type
   // {WasmMemoryObject::New} uses.
   static_assert(i::wasm::kSpecMaxMemory32Pages < i::kMaxInt);
@@ -1826,7 +1828,4 @@ void WasmJs::PrepareForSnapshot(Isolate* isolate) {
         isolate, webassembly, "Table", wasm::WebAssemblyTable);
     Handle<JSObject> table_proto =
         SetupConstructor(isolate, table_construct
-"""
-
-
 ```

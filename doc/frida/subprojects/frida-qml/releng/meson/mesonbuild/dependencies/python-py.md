@@ -147,7 +147,7 @@ A list containing a single partially applied function (a `functools.partial` obj
 
 **As a debugging clue:** If a user reports issues building Frida related to Python, examining the Meson log will show which dependency resolution methods were attempted and whether they succeeded or failed. Error messages from the `PythonSystemDependency` (like "could not find Python.h") would point directly to problems within this code and the user's Python setup. Investigating the output of the `python_info.py` script (if it's logged) can also provide valuable insights into the detected Python environment.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/dependencies/python.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2022 The Meson development team
 
@@ -588,7 +590,4 @@ packages['numpy'] = numpy_factory = DependencyFactory(
     [DependencyMethods.PKGCONFIG, DependencyMethods.CONFIG_TOOL],
     configtool_class=NumPyConfigToolDependency,
 )
-
-"""
-
 ```

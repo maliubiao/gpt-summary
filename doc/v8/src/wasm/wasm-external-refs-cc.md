@@ -161,7 +161,7 @@ console.log(buffer.slice(10, 15)); // 输出: Uint8Array(5) [ 255, 255, 255, 255
 
 `v8/src/wasm/wasm-external-refs.cc` 是 V8 中一个关键的文件，它提供了 WebAssembly 运行时所需的各种外部函数实现，涵盖了数值运算、内存操作、数组处理和字符串转换等核心功能。这些 C++ 函数由 WASM 虚拟机在执行 WASM 代码时调用，构成了 WASM 与 V8 运行时环境交互的基础。理解这个文件的功能有助于深入了解 WebAssembly 的底层实现以及可能遇到的编程问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-external-refs.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-external-refs.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1132,7 +1134,4 @@ double flat_string_to_f64(Address string_address) {
   Tagged<String> s = Cast<String>(Tagged<Object>(string_address));
   return FlatStringToDouble(s, ALLOW_TRAILING_JUNK,
                             std::numeric_limits<double>::
-"""
-
-
 ```

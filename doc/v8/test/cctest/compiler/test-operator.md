@@ -115,11 +115,13 @@ let result = add(5, 3);
 
 `test-operator.cc` 文件是 V8 编译器中非常基础但重要的一个测试文件，它验证了表示 JavaScript 操作的 `Operator` 类的核心功能。这些功能直接影响着编译器能否正确地表示和处理 JavaScript 代码，最终影响 JavaScript 代码的执行效率和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-operator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -409,7 +411,4 @@ TEST(Operator_CountsOrder) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

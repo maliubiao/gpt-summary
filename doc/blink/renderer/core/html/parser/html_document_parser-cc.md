@@ -84,15 +84,17 @@ Here's a plan:
 
 这部分代码主要负责 `HTMLDocumentParser` 类的基础架构和核心功能。它定义了 HTML 文档解析器的基本结构，包括同步/异步解析策略、分块解析机制、预加载扫描的启用与配置、与脚本执行和 CSS 处理的基本交互。 核心目标是高效且准确地将 HTML 文本流转换为浏览器可用的 DOM 结构，并为后续的渲染和脚本执行做好准备。 此外，它也关注解析性能，并为此引入了预算控制和性能指标收集机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_document_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google, Inc. All Rights Reserved.
  *
@@ -893,8 +895,5 @@ bool HTMLDocumentParser::PumpTokenizer() {
               input_.Current().NumberOfCharactersConsumed();
           // On android calling chunk_parsing_timer.Elapsed seems fairly slow
           // compared to the parsing time of small tokens. Only update the
-          // 
-"""
-
-
+          //
 ```

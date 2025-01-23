@@ -129,14 +129,16 @@ By following this thought process, moving from the general to the specific, and 
 
 总而言之，`text_break_iterator_icu.cc` 文件在 Chromium Blink 引擎中扮演着至关重要的角色，它利用强大的 ICU 库为文本处理提供了基础的边界分析功能，直接影响着网页的排版、文本选择、光标移动等用户体验。理解其功能有助于我们更好地理解浏览器如何处理和渲染互联网上的各种文本内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/text_break_iterator_icu.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Lars Knoll <lars@trolltech.com>
  * Copyright (C) 2007, 2011, 2012 Apple Inc. All rights reserved.
@@ -1160,7 +1162,4 @@ TextBreakIterator* CursorMovementIterator(base::span<const UChar> string) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

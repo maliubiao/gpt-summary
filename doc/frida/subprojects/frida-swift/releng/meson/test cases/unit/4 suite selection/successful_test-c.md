@@ -112,7 +112,7 @@ By following this thought process, focusing on context, and systematically addre
 
 `successful_test.c` 文件本身是一个非常简单的 C 代码文件，但它在 Frida 的测试框架中扮演着重要的角色，用于验证测试套件选择功能的正确性。  它与逆向方法、二进制底层、Linux 等概念存在间接联系，是 Frida 功能正常运行的基础。 普通用户不会直接接触到这个文件，但开发者在维护和调试 Frida 时可能会关注到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/4 suite selection/successful_test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,10 +120,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0 ; }
-
-"""
-
 ```

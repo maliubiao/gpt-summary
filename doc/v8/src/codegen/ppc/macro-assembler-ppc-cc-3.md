@@ -141,7 +141,7 @@ console.log(add(2.5, 1.5)); // 输出 4
 
 这些方法为V8引擎在PPC架构上生成高效的机器码提供了基础 building blocks。它们抽象了底层的汇编指令，使得代码生成器可以更方便地生成正确的代码，并减少了手动编写汇编代码时容易出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/macro-assembler-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/macro-assembler-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -149,9 +149,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
-                                  SetIsolateDataSlots set_isolate_data_slots,
+### 源代码
+```cpp
+SetIsolateDataSlots set_isolate_data_slots,
                                   bool has_function_descriptor) {
   return CallCFunction(function, num_arguments, 0, set_isolate_data_slots,
                        has_function_descriptor);
@@ -1021,8 +1023,4 @@ void MacroAssembler::LoadS32LE(Register dst, const MemOperand& mem,
 }
 
 void MacroAssembler::LoadS16LE(Register dst, const MemOperand& mem,
-             
-"""
-
-
 ```

@@ -127,11 +127,13 @@ getNameLength(numberObj); // V8 需要处理 'name' 不是字符串的情况
 
 `PropertyAccessBuilder` 是 V8 编译器中一个关键的组件，它负责将 JavaScript 的属性访问操作转化为高效的中间代码。它的工作涉及到类型检查、持有者查找、数据加载以及各种优化策略，这些都直接影响了 JavaScript 代码的执行效率。 理解 `PropertyAccessBuilder` 的功能有助于理解 V8 引擎是如何优化和执行 JavaScript 代码的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/property-access-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -499,7 +501,4 @@ Node* PropertyAccessBuilder::BuildLoadDataField(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

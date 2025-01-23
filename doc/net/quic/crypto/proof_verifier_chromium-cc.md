@@ -232,15 +232,17 @@ By following these steps, combining code analysis with an understanding of the b
 
 总而言之，`net/quic/crypto/proof_verifier_chromium.cc` 在 Chromium 的 QUIC 实现中扮演着至关重要的角色，它负责确保客户端连接到的是经过身份验证的合法服务器，是 QUIC 安全性的关键组成部分。它与 JavaScript 的联系是间接的，但直接影响着用户通过浏览器访问 HTTPS 网站的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/crypto/proof_verifier_chromium.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -866,7 +868,4 @@ void ProofVerifierChromium::OnJobComplete(Job* job) {
 }
 
 }  // namespace net
-
-"""
-
 ```

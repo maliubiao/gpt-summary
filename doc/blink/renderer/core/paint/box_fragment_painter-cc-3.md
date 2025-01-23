@@ -123,7 +123,7 @@ By following this plan, I can generate a comprehensive and accurate summary that
 
 总而言之，`BoxFragmentPainter` 是 Blink 渲染引擎中负责盒子模型渲染和交互的核心组件之一，其 `HitTest` 功能是实现用户与网页交互的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/box_fragment_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 IsBlockInInline()) {
     // "fast/events/ondragenter.html" reaches here.
     return false;
@@ -566,8 +568,4 @@ gfx::Rect BoxFragmentPainter::VisualRect(const PhysicalOffset& paint_offset) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

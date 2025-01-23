@@ -128,14 +128,16 @@ By following these steps, combining code analysis with knowledge of the Chromium
 
 总而言之，`ContextLifecycleObserver` 提供了一种用于管理对象生命周期，特别是在上下文销毁时进行清理操作的重要机制。它与 Blink 内部的各种对象生命周期管理紧密相关，间接地影响着 JavaScript, HTML 和 CSS 的处理和资源管理。 正确使用它可以提高代码的健壮性和资源管理的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/context_lifecycle_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ void ContextLifecycleObserver::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

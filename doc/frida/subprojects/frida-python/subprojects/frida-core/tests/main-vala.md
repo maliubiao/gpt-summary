@@ -79,7 +79,7 @@ attach_to_process("your_process_name")
    - 例如，用户可能会查看 `stderr` 或日志文件，寻找错误信息或异常堆栈跟踪。
 
 通过这些步骤，用户可以逐步定位和解决测试中的问题，确保 Frida 的功能正常工作。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/tests/main.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -88,12 +88,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 public static void main (string[] args) {
 	Frida.Test.run (args);
 }
-
-"""
-
 ```

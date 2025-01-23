@@ -249,15 +249,17 @@ gainNode.connect(audioCtx.destination);
 
 `audio_graph_tracer.cc` 文件在 Chromium 的 Blink 引擎中扮演着重要的角色，它负责追踪 Web Audio API 的运行时状态，并将这些信息提供给开发者工具，帮助开发者理解和调试他们的音频应用。它本身不直接处理 JavaScript, HTML 或 CSS，而是作为幕后工作者，记录这些技术驱动的音频图变化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_graph_tracer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -420,7 +422,4 @@ AudioGraphTracer* AudioGraphTracer::FromWindow(const LocalDOMWindow& window) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

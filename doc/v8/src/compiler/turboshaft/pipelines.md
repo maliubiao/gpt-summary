@@ -107,11 +107,13 @@ const sum = add(5, 10);
 
 `pipelines.cc` 文件是 V8 编译器的核心组成部分，它定义了将 JavaScript 代码和内置函数转换为高性能机器码的关键流程。`BuiltinPipeline` 专门针对内置函数进行优化，这直接影响了 JavaScript 中常用操作的执行效率。 `Pipeline` 则定义了更通用的编译流程，处理更复杂的 JavaScript 代码。理解这个文件有助于深入理解 V8 如何提升 JavaScript 的执行速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/pipelines.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -186,7 +188,4 @@ void BuiltinPipeline::OptimizeBuiltin() {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

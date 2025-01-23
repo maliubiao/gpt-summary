@@ -158,7 +158,7 @@ func main() {
 
 `go/src/runtime/defs1_netbsd_arm.go` 是 Go 语言 runtime 在 NetBSD/ARM 架构上的基石，它定义了与操作系统交互所需的各种常量和数据结构，使得 Go 语言程序能够利用底层的操作系统功能。开发者通常不需要直接操作这个文件中的内容，但理解其作用有助于理解 Go 语言 runtime 的工作原理以及系统调用的机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs1_netbsd_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // created by cgo -cdefs and then converted to Go
 // cgo -cdefs defs_netbsd.go defs_netbsd_arm.go
 
@@ -361,9 +363,4 @@ const (
 	_REG_R15  = 0xf
 	_REG_CPSR = 0x10
 )
-
-"""
-
-
-
 ```

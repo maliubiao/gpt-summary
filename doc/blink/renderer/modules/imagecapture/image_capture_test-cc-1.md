@@ -138,7 +138,7 @@ navigator.mediaDevices.getUserMedia({ video: true })
 
 总而言之，这部分测试代码专注于验证 `ImageCapture` 模块的核心功能，即如何根据不同的约束条件，正确地配置和应用摄像头的照片拍摄设置，确保 Web API 的行为符合规范预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/imagecapture/image_capture_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 all_capabilities_->setExposureTime(CreateMediaSettingsRange("et"));
     all_capabilities_->setColorTemperature(CreateMediaSettingsRange("ct"));
     all_capabilities_->setIso(CreateMediaSettingsRange("is"));
@@ -832,7 +834,4 @@ TEST_F(ImageCaptureConstraintTest, ApplyAdvancedIdealConstraints) {
   // fitness distances in [0.0, 1.0]) is always finite.
   // On the other hand, the SelectSettings algorithm
   // (https://w3c.github.io/mediacapture-main/#dfn-selectsett
-"""
-
-
 ```

@@ -124,11 +124,13 @@ myArray = null;
 
 `ActiveSystemPages` 是 V8 引擎中一个关键的低级组件，负责跟踪系统中已分配的内存页。 虽然 JavaScript 开发者无法直接操作它，但它的运作方式直接影响着 JavaScript 程序的内存使用效率和性能。  JavaScript 对象的创建和垃圾回收等操作都会间接地与 `ActiveSystemPages` 的功能产生关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/active-system-pages.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ size_t ActiveSystemPages::Size(size_t page_size_bits) const {
 
 }  // namespace base
 }  // namespace heap
-
-"""
-
 ```

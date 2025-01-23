@@ -206,7 +206,7 @@ By following this structured approach, we can generate a comprehensive and accur
 
 这个代码片段是 Go runtime 中与 ARM 架构相关的底层实现细节。`gostartcall` 用于设置新 goroutine 的初始执行状态，是 goroutine 创建的关键部分。 `usplit` 则是一个内部的测试辅助函数，可能用于验证算术运算。普通 Go 开发者不应该直接调用或依赖这些内部函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/sys_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -214,8 +214,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -237,9 +239,4 @@ func gostartcall(buf *gobuf, fn, ctxt unsafe.Pointer) {
 
 // for testing
 func usplit(x uint32) (q, r uint32)
-
-"""
-
-
-
 ```

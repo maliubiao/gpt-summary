@@ -180,15 +180,17 @@ This structured approach helps to systematically analyze the code and generate a
 
 通过在 `SVGCircleElement` 的关键方法（如构造函数、`AsPath()`, `SvgAttributeChanged()`）中设置断点，可以追踪用户操作导致的代码执行路径，从而进行调试。 观察这些方法中属性值的变化，可以帮助理解渲染过程中发生的事情以及可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_circle_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006, 2007 Rob Buis <buis@kde.org>
@@ -313,7 +315,4 @@ void SVGCircleElement::CollectExtraStyleForPresentationAttribute(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -190,14 +190,16 @@ By following this structured approach of deconstruction, inference, connection, 
 
 总而言之，`OffscreenCanvasPlaceholder` 是 Blink 渲染引擎中一个重要的幕后功臣，它使得 JavaScript 可以方便地使用 `OffscreenCanvas` 进行高性能的图形渲染，同时隐藏了跨线程资源管理的复杂性。 理解它的功能有助于开发者更好地理解 `OffscreenCanvas` 的工作原理和潜在的性能影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/offscreen_canvas_placeholder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -423,7 +425,4 @@ bool OffscreenCanvasPlaceholder::PostSetSuspendAnimationToOffscreenCanvasThread(
 }
 
 }  // namespace blink
-
-"""
-
 ```

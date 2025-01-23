@@ -168,15 +168,17 @@ ConcreteType's M method called with T{X: 5, Y: 8}
 
 总而言之，这段代码是 Go 语言中定义数据结构和接口的简单示例，为后续的代码实现提供了类型基础。理解接口和结构体是编写 Go 程序的基础。 路径名 `go/test/fixedbugs/bug248.dir/bug0.go` 表明这段代码很可能是 Go 语言测试用例的一部分，用于验证或修复特定的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug248.dir/bug0.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file
@@ -190,9 +192,4 @@ type T struct {
 type I interface {
 	M(T)
 }
-
-"""
-
-
-
 ```

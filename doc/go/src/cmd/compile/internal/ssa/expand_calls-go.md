@@ -142,15 +142,17 @@ func main() {
 
 `expand_calls.go` 是 Go 编译器中一个重要的组成部分，它专注于处理函数调用中复合类型参数和返回值的分解和组装。 它的存在使得 Go 语言能够高效地处理各种复杂的数据结构，并为后续的编译优化奠定了基础。 普通 Go 开发者无需直接关心其实现细节，但理解其功能有助于更深入地理解 Go 语言的运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/expand_calls.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1186,9 +1188,4 @@ func (x *expandState) invalidateRecursively(a *Value) {
 		x.Printf("Lost statement marker in %s on former %s\n", base.Ctxt.Pkgpath+"."+x.f.Name, s)
 	}
 }
-
-"""
-
-
-
 ```

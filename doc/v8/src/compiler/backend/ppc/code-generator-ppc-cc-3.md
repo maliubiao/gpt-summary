@@ -155,7 +155,7 @@ By following these steps, I arrive at a comprehensive and accurate answer that a
 
 这段代码是 `code-generator-ppc.cc` 中专门负责生成 **PPC 架构下 SIMD 指令** 的一部分。它涵盖了 SIMD 数据的加载、存储、Lane 操作、Splat 操作、算术运算、逻辑运算、类型转换、常量加载以及其他相关的内存操作。这部分代码是 V8 引擎将 JavaScript SIMD API 翻译成底层机器码的关键组成部分，确保了 JavaScript 代码在 PPC 架构上的高效执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ppc/code-generator-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ppc/code-generator-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -163,9 +163,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-                          \
+### 源代码
+```cpp
+\
     MemOperand operand = i.MemoryOperand(&mode, &index);                   \
     DCHECK_EQ(mode, kMode_MRR);                                            \
     __ op(dst, operand, i.InputUint8(3), kScratchReg, kScratchSimd128Reg); \
@@ -1067,7 +1069,4 @@ AllocatedOperand CodeGenerator::Push(InstructionOperand* source) {
   PPCOperandConverter g(this, nullptr);
   int last_frame_slot_id =
       frame
-"""
-
-
 ```

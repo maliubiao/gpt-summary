@@ -45,12 +45,14 @@ When V8's optimizing compiler processes this code, the `code-generator-s390.cc` 
 
 **While you don't directly interact with this C++ code when writing JavaScript, it's the engine under the hood that makes your code executable.** The optimizations and code generation strategies implemented in this file directly impact the performance of your JavaScript applications on S390 systems.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/code-generator-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1446,7 +1448,4 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleArchInstruction(
       if (ShouldApplyOffsetToStackCheck(instr, &offset)) {
         lhs_register = i.TempRegister(0);
         __ SubS64(
-"""
-
-
 ```

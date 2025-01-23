@@ -209,7 +209,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/linux/seg6.h` 定义了 SRv6 相关的内核 API，虽然 Android Framework 和 NDK 没有直接暴露这些功能，但在底层的网络处理和特定的场景下，这些定义会被使用到。进行相关的调试和分析通常需要在内核层面进行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/seg6.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -220,8 +220,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -258,7 +260,4 @@ struct sr6_tlv {
   __u8 data[0];
 };
 #endif
-
-"""
-
 ```

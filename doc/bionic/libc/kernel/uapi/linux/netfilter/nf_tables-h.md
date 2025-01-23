@@ -326,7 +326,7 @@ if __name__ == "__main__":
 
 例如，你可能会看到 `nlmsg_type` 为 `0` (NFT_MSG_NEWTABLE)，然后会有一个 `nlattr`，其 `nla_type` 为 `1` (NFTA_TABLE_NAME)，并且 `nla_data` 包含了表的名字。通过分析这些数据，你可以了解 Android 系统或应用是如何使用 `nftables` 来管理网络流量的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/nf_tables.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -337,8 +337,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -1411,7 +1413,4 @@ enum nft_tunnel_attributes {
 };
 #define NFTA_TUNNEL_MAX (__NFTA_TUNNEL_MAX - 1)
 #endif
-
-"""
-
 ```

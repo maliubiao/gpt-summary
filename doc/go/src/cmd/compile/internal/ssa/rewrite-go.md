@@ -204,7 +204,7 @@ b1:
 
 这段 `go/src/cmd/compile/internal/ssa/rewrite.go` 代码是 Go 编译器中 SSA 中间表示的重写和优化引擎。它通过迭代应用各种重写规则，对 SSA 图进行转换，以达到提高代码效率、减小代码体积、并更好地适应目标架构的目的。其核心功能由 `applyRewrite` 函数驱动，并通过大量的辅助函数来支持各种具体的重写逻辑。 这部分代码是 Go 编译器进行关键性能优化的基石之一。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewrite.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -212,8 +212,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2508,9 +2510,4 @@ func isARM64bitcon(x uint64) bool {
 		// period is 16
 		x = uint64(int64(int16(x)))
 	case x != x>>4|x<<6
-"""
-
-
-
-
 ```

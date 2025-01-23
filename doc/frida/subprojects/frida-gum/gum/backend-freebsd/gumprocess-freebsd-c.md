@@ -206,7 +206,7 @@ This systematic approach, starting with a high-level understanding and gradually
 
 总而言之，`gumprocess-freebsd.c` 是 Frida 在 FreeBSD 平台上实现动态 instrumentation 功能的关键组件，它提供了与进程、线程、内存和模块交互的底层接口，使得 Frida 能够执行代码注入、hook 和内存分析等强大的逆向工程操作。理解其功能和实现细节对于调试 Frida 相关问题和深入理解 Frida 的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-freebsd/gumprocess-freebsd.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -214,8 +214,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2022-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2023 Francesco Tamagni <mrmacete@protonmail.ch>
@@ -1343,7 +1345,4 @@ gum_freebsd_unparse_regs (const GumCpuContext * ctx,
 # error FIXME
 #endif
 }
-
-"""
-
 ```

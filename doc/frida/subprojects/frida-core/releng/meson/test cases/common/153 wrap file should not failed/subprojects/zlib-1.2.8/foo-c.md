@@ -113,7 +113,7 @@ This detailed thought process demonstrates how to analyze a seemingly simple pie
 
 总而言之，`foo.c` 本身是一个非常简单的占位符文件，但它在 Frida 的构建和测试体系中扮演着重要的角色，用于确保 Frida 能够正确处理外部依赖库，这对于 Frida 的核心功能——动态 instrumentation 和逆向分析——至关重要。  用户不会直接操作这个文件，但它的存在保证了 Frida 在处理依赖 `zlib` 的程序时能够正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/153 wrap file should not failed/subprojects/zlib-1.2.8/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,12 +121,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int dummy_func(void) {
     return 42;
 }
-
-"""
-
 ```

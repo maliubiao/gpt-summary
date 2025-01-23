@@ -280,7 +280,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 **通过这个 Frida 脚本，你可以在应用程序运行时，实时观察每次 `fabsf` 函数被调用时的输入和输出值，从而帮助你调试与浮点数绝对值计算相关的逻辑。** 这对于理解 Framework 或 NDK 代码如何使用底层的 Bionic 库函数非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/fabsf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -291,8 +291,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -739,7 +741,4 @@ static data_1_1_t<float, float> g_fabsf_intel_data[] = {
     -0.0f
   }
 };
-
-"""
-
 ```

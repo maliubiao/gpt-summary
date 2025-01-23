@@ -107,15 +107,17 @@ To provide a good summary, I need to identify the key responsibilities of each c
 
 这部分代码是 Blink 引擎处理 HTML 表单元素交互的核心部分，确保了 `<select>` 元素在不同场景下的正确行为和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/select_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 he selection so it can be compared to the new selection
   // when we call onChange during selectOption, which gets called
   // from selectOptionByPopup, which gets called after the user
@@ -989,8 +991,4 @@ void ListBoxSelectType::UpdateSelectedState(HTMLOptionElement* clicked_option,
     if (select_->is_multiple_ && !did_deselect_others &&
         clicked_option->Selected() &&
         RuntimeEnabledFeatures::MultiSelectDeselectWhenOnlyOptionEnabled()) {
-  
-"""
-
-
 ```

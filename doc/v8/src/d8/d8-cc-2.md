@@ -202,7 +202,7 @@ fetchData(); // 没有 .catch() 处理拒绝
 
 这部分代码主要集中在 **模块加载、JSON 处理、isolate 级别的数据管理、未处理的 Promise 拒绝处理、Web Worker 支持和 Realm 管理** 等核心功能。它为 d8 这个 V8 开发者 Shell 提供了执行和管理 JavaScript 代码的基础设施，特别是针对模块化和多 realm 的场景。此外，还包含了性能监控和异步操作跟踪等实用工具的接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/d8/d8.cc以.tq结尾，那它是个v8 torque源代码，
@@ -210,8 +210,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 fter we create a new API for the case
       // where TLA is enabled.
       if (!try_catch.HasCaught()) {
@@ -1112,7 +1114,4 @@ void Shell::EnableDebugger(const v8::FunctionCallbackInfo<v8::Value>& info) {
 }
 
 void Shell::DisableDebugger(const v8::FunctionCallbackInfo<v8::Value>& in
-"""
-
-
 ```

@@ -141,7 +141,7 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`virtio-mmio.cc` 是 Frida 内部用于表示和处理 VirtIO MMIO 设备的一个简单组件，它体现了 Frida 对虚拟化环境的理解和支持，并在 Frida 的某些功能实现和测试中发挥作用。理解这个文件有助于深入理解 Frida 的内部工作机制，尤其是在与虚拟机环境交互的场景下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/215 source set realistic example/devices/virtio-mmio.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "virtio.h"
@@ -167,7 +169,4 @@ void VirtioMMIODevice::say_hello()
 }
 
 static VirtioMMIODevice virtio_mmio;
-
-"""
-
 ```

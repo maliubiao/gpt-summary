@@ -162,14 +162,16 @@ By following this structured approach, considering the key elements of the code,
 
 总而言之，`offset_mapping.cc` 是 Blink 渲染引擎中一个关键的组件，它弥合了 DOM 抽象结构和最终渲染出的文本之间的鸿沟，为诸如文本选择、光标定位等功能提供了底层的映射支持，并且需要考虑到 CSS 样式带来的复杂性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/offset_mapping.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -791,7 +793,4 @@ void OffsetMappingUnit::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

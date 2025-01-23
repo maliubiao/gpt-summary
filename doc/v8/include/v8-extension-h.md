@@ -258,15 +258,17 @@ v8::RegisterExtension(std::move(my_ext));
 
 理解 `v8/include/v8-extension.h` 中的 `Extension` 类是理解 V8 扩展机制的关键，它为将 C++ 代码集成到 V8 的 JavaScript 环境中提供了基础框架。开发者需要仔细管理内存，避免命名冲突，并在正确的 `Isolate` 中注册和使用扩展。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-extension.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-extension.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -329,7 +331,4 @@ void V8_EXPORT RegisterExtension(std::unique_ptr<Extension>);
 }  // namespace v8
 
 #endif  // INCLUDE_V8_EXTENSION_H_
-
-"""
-
 ```

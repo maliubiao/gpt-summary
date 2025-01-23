@@ -141,7 +141,7 @@ By following this structured approach, considering the context, and addressing e
 
 尽管 `prog.c` 本身是一个非常简单的空操作程序，但它在 Frida 的测试框架中扮演着重要的角色，用于验证基本的程序执行能力，尤其是在涉及自定义安装目录的场景下。理解其功能以及它与逆向、底层原理和测试流程的关系，有助于理解 Frida 的工作原理和调试测试失败的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/45 custom install dirs/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,12 +149,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

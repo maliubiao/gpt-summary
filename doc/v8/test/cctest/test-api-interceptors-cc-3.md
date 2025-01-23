@@ -162,7 +162,7 @@ Object.defineProperty(myObj, 'configurableProp', {
 
 总而言之，`v8/test/cctest/test-api-interceptors.cc` 的这一部分专注于 **全面测试 V8 引擎提供的属性拦截器 API 的各种功能、行为和边界情况**，包括基本操作、与原型链的交互、与其他 V8 特性（如访问器、普通属性、隐藏属性）的协作、以及在不同优化场景下的表现，从而确保该 API 的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-interceptors.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api-interceptors.cc以.tq结尾，那它是个v8 torque源代码，
@@ -170,8 +170,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pertyDescriptor(obj, 'x');"
         "desc.value;";
     CHECK_EQ(42, v8_compile(code)
@@ -1025,7 +1027,4 @@ void UnboxedDoubleIndexedPropertyEnumerator(
 // Make sure that the the interceptor code in the runtime properly handles
 // merging property name lists for double-array-backed arrays.
 THREADED_TEST(IndexedInterceptorUnboxed
-"""
-
-
 ```

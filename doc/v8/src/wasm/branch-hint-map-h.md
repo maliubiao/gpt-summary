@@ -195,15 +195,17 @@ function processItem(item) {
 
 总而言之，`v8/src/wasm/branch-hint-map.h` 是 V8 内部用于优化 WebAssembly 代码执行的重要组成部分，它通过存储和查询分支预测提示信息，帮助编译器生成更高效的机器码，最终提升 JavaScript 应用程序的性能。虽然开发者通常不直接操作这个类，但理解其背后的概念有助于编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/branch-hint-map.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/branch-hint-map.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ using BranchHintInfo = std::unordered_map<uint32_t, BranchHintMap>;
 }  // namespace v8
 
 #endif  // V8_WASM_BRANCH_HINT_MAP_H_
-
-"""
-
 ```

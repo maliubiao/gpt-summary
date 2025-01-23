@@ -104,13 +104,15 @@ Key functionalities to summarize:
 
 总而言之，这部分代码深入 V8 引擎的内部，实现了 JavaScript 中一些复杂对象（如 arguments 对象和 String 包装对象）的元素访问机制，并提供了高性能的数组操作功能，这些都对 JavaScript 代码的执行效率至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/elements.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-                             Tagged<FixedArrayBase> store) {
+### 源代码
+```
+Tagged<FixedArrayBase> store) {
     Tagged<SloppyArgumentsElements> elements =
         Cast<SloppyArgumentsElements>(store);
     Tagged<FixedArray> arguments = elements->arguments();
@@ -1067,8 +1069,4 @@ ElementsAccessor** ElementsAccessor::elements_accessors_ = nullptr;
 #undef RETURN_FAILURE_IF_NOT_SUCCESSFUL
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

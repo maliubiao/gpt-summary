@@ -256,7 +256,7 @@ func main() {
 
 总而言之，这段代码提供了一些高效的底层数学运算，是构建更高级数学功能的基础。使用者需要仔细理解每个函数的用途和返回值，特别注意溢出和进位的情况，以避免错误。由于这些函数位于 `internal` 包中，通常不建议直接在应用程序代码中使用，除非你正在编写非常底层的运行时或核心库代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/math/math.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -264,8 +264,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -321,9 +323,4 @@ func Add64(x, y, carry uint64) (sum, carryOut uint64) {
 	carryOut = ((x & y) | ((x | y) &^ sum)) >> 63
 	return
 }
-
-"""
-
-
-
 ```

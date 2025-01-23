@@ -92,7 +92,7 @@ By following these steps, I was able to generate a comprehensive and accurate an
 
 尽管 `frida/releng/meson/mesonbuild/dependencies/data/__init__.py` 文件本身是空的，但它的存在标志着 `data` 目录是一个 Python 包，很可能用于组织和存放 Frida 构建过程所需的依赖项数据。虽然用户不会直接操作这个文件，但它是 Frida 项目构建和依赖管理的重要组成部分，并且与 Frida 的逆向能力息息相关。理解这个文件的作用有助于理解 Frida 的内部结构和构建流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/dependencies/data/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,9 +100,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

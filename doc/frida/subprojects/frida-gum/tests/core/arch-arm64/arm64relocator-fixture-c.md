@@ -185,7 +185,7 @@ B -0x1F00 ;  相对于当前地址跳转 -0x1F00 字节，即跳转到 0xA000 (�
 
 总而言之，这个文件是 Frida 开发者为了确保 ARM64 代码重定位功能正确可靠而编写的单元测试框架。它模拟了代码重定位的过程，并通过各种断言来验证重定位的正确性，为 Frida 的稳定运行提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm64/arm64relocator-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014-2020 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -261,7 +263,4 @@ static const guint8 cleared_outbuf[TEST_OUTBUF_SIZE] = { 0, };
 #define assert_outbuf_still_zeroed_from_offset(OFF) \
     g_assert_cmpint (memcmp (fixture->output + OFF, cleared_outbuf + OFF, \
         sizeof (cleared_outbuf) - OFF), ==, 0)
-
-"""
-
 ```

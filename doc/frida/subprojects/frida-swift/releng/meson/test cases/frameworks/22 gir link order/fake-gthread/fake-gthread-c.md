@@ -117,7 +117,7 @@ int fake_gthread_fake_function (void)
 
 总而言之，`fake-gthread.c` 是 Frida 项目中用于测试目的的一个小而重要的文件。它通过提供一个简化的 `gthread` 库的模拟实现，帮助开发者隔离测试环境，验证 Frida 与 Swift 和 `gthread` 的交互，并在开发和调试过程中提供重要的线索。普通用户通常不会直接接触到这个文件，但它在 Frida 的内部运作中扮演着关键角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/22 gir link order/fake-gthread/fake-gthread.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,15 +125,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "fake-gthread.h"
 
 int fake_gthread_fake_function (void)
 {
   return 7;
 }
-
-"""
-
 ```

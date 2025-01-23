@@ -186,15 +186,17 @@ The basic block corresponding to the loop's body would have a much higher execut
 
 In summary, `v8/src/compiler/basic-block-instrumentor.cc` plays a crucial role in V8's performance analysis by injecting code to count basic block executions and track built-in function calls. This information is invaluable for understanding the runtime behavior of JavaScript code and guiding optimization strategies within the V8 engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/basic-block-instrumentor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/basic-block-instrumentor.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -466,7 +468,4 @@ void BasicBlockCallGraphProfiler::StoreCallGraph(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

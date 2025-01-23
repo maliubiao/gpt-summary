@@ -171,15 +171,17 @@ function onAcknowledgementReceived() {
 
 总之，`rtt_stats_test.cc` 是确保 `RttStats` 类正确运行的关键，它通过各种测试用例覆盖了 RTT 统计的各个方面，为 QUIC 协议的稳定性和性能提供了保障。当出现与 RTT 相关的网络问题时，理解这个测试文件的功能和覆盖范围，能够帮助开发者更好地定位和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/congestion_control/rtt_stats_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -412,7 +414,4 @@ TEST_F(RttStatsTest, StandardDeviationCalculatorTest3) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

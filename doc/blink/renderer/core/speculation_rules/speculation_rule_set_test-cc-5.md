@@ -197,7 +197,7 @@ By following this systematic approach of examining the file structure, individua
 
 作为这个测试系列的最后一部分，`speculation_rule_set_test.cc` 主要关注的是 `SpeculationRuleSet` 类的**解析、验证和错误处理**能力。它确保了 Blink 引擎能够正确地理解开发者提供的推测规则，并在遇到错误时能够给出合理的反馈，从而保证了推测规则功能的健壮性和可靠性。这个文件覆盖了各种可能的输入情况，包括有效的规则、各种类型的错误规则以及与缓存相关的特殊属性的处理，为推测规则功能的正确实现提供了坚实的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/speculation_rules/speculation_rule_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ssage) {
         return message.Contains(
             "expects_no_vary_search's value must be a string");
@@ -432,8 +434,4 @@ TEST_F(SpeculationRuleSetTest, ImplicitSource) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

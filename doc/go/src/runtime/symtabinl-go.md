@@ -163,7 +163,7 @@ main.main()
 
 因此，**避免使用 `go:linkname` 连接到 `runtime` 或其他标准库的内部符号是一个良好的实践。** 应该尽可能使用公开的 API 和接口来实现功能。  代码中注释提到的 `github.com/phuslu/log` 等包使用 `go:linkname` 是一种需要谨慎对待的做法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/symtabinl.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -171,8 +171,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -314,9 +316,4 @@ func (u *inlineUnwinder) fileLine(uf inlineFrame) (file string, line int) {
 	file, line32 := funcline1(u.f, uf.pc, false)
 	return file, int(line32)
 }
-
-"""
-
-
-
 ```

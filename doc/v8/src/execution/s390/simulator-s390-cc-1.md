@@ -141,7 +141,7 @@ console.log(result); // 输出 8
 
 这部分代码主要负责构建 s390 架构指令的 **评估表 (`EvalTable`)**，这个表是 V8 的 s390 模拟器核心组件之一。它通过将 s390 的机器指令映射到相应的 C++ 模拟函数，使得 V8 能够理解和执行 s390 架构的代码。 这为在非 s390 平台上开发和测试针对 s390 的 JavaScript 应用提供了基础。后续的部分很可能会包含 `Simulator` 类的实现，以及各种 `Evaluate_...` 函数的具体实现，这些函数将模拟每条 s390 指令的行为，包括操作寄存器、内存、标志位等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/s390/simulator-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/s390/simulator-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -149,8 +149,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 D  */                     \
   V(vno, VNO, 0xE768B)      /* type = VRR_C VECTOR NOR  */                     \
   V(vlc, VLC, 0xE7DE)       /* type = VRR_A VECTOR LOAD COMPLEMENT  */         \
@@ -830,7 +832,4 @@ D  */                     \
   EvalTable[ICMH] = &Simulator::Evaluate_ICMH;
   EvalTable[ICMY] = &Simulator::Evaluate_ICMY;
   Eva
-"""
-
-
 ```

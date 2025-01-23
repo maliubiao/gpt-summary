@@ -242,15 +242,17 @@ func (h Here) Dir(p string) (Info, error) {
 
 总之，这段代码的核心是演示 Go 语言中方法值的概念，展示了如何将方法赋值给变量，以及如何通过这些方法值来调用方法，包括绑定了特定接收者和未绑定接收者的情况。理解方法值对于掌握 Go 语言的面向对象特性非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue43479.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -278,9 +280,4 @@ var C = X.Dir
 var D = (*T).M
 var E = T.M
 var F = X.M
-
-"""
-
-
-
 ```

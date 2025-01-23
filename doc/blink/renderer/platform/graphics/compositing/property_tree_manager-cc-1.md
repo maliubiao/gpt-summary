@@ -116,15 +116,17 @@ Here's a breakdown of how to approach this:
 
 总而言之，`PropertyTreeManager` 在 Blink 渲染引擎中扮演着连接 Web 内容描述和 GPU 加速渲染的关键角色。它负责将高级的 Web 概念转化为底层的渲染指令，并尽力优化渲染过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/property_tree_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _C1_1M
   //     +- E_C1_2 <-- E_C1_2M
   // C0 <-- C1
@@ -718,8 +720,4 @@ void PropertyTreeManager::UpdatePixelMovingFilterClipExpanders() {
 }  // namespace blink
 
 WTF_ALLOW_MOVE_AND_INIT_WITH_MEM_FUNCTIONS(blink::PendingClip)
-
-"""
-
-
 ```

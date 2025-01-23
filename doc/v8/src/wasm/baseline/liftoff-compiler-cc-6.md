@@ -135,7 +135,7 @@ const result = Int32x4.add(a, b);
 
 `v8/src/wasm/baseline/liftoff-compiler.cc` 的第 7 部分专注于实现 WebAssembly SIMD 指令的快速编译。它通过一个大的 `switch` 语句分发不同的 SIMD 操作码，并调用 `LiftoffAssembler` 中相应的方法来生成目标平台的机器码。这部分代码是 V8 引擎支持 WebAssembly SIMD 功能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/liftoff-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -143,8 +143,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 inOp<kS128, kS128>(
             &LiftoffAssembler::emit_i16x8_extmul_high_i8x16_s);
       case wasm::kExprI16x8ExtMulHighI8x16U:
@@ -819,7 +821,4 @@ inOp<kS128, kS128>(
       Load32BitExceptionValue(dst.high_gp(), values_array, index, pinned);
       Load32BitExceptionValue(dst.low_gp(), values_array, index, pinned);
     } el
-"""
-
-
 ```

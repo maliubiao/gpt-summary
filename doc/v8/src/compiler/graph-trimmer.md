@@ -95,11 +95,13 @@ console.log(result);
 
 `graph-trimmer.cc` 中的 `GraphTrimmer` 类是 V8 编译优化流程中的一个重要组件，它通过识别和移除代码中不必要的部分，提高了编译效率并优化了最终生成的机器码的性能。 它通过在编译器内部的图结构上执行死代码消除来实现这一目标，这直接影响了 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/graph-trimmer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -148,7 +150,4 @@ void GraphTrimmer::TrimGraph() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

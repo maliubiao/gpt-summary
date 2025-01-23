@@ -71,11 +71,13 @@ for (const match of matches) {
 
 **总结:** `RegExpBytecodeGenerator` 就像一个编译器，它将人类可读的正则表达式模式转换成机器可以高效执行的低级指令。这对于提升JavaScript正则表达式的性能至关重要。  开发者通常不需要直接与这个文件打交道，但理解它的作用有助于深入理解V8引擎是如何处理正则表达式的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-bytecode-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2008-2009 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -500,7 +502,4 @@ void RegExpBytecodeGenerator::ExpandBuffer() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

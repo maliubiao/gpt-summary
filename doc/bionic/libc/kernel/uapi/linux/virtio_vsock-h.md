@@ -223,7 +223,7 @@ sys.stdin.read()
 
 通过这些 Frida hook 示例，你可以观察 NDK 应用如何使用 socket API 与 virtio-vsock 交互，并检查传递的数据和参数，从而更好地理解 virtio-vsock 的工作原理。 你可以根据需要扩展这些示例，hook 更多的系统调用或内核函数，以进行更深入的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/virtio_vsock.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -234,8 +234,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -292,7 +294,4 @@ enum virtio_vsock_rw {
   VIRTIO_VSOCK_SEQ_EOR = 2,
 };
 #endif
-
-"""
-
 ```

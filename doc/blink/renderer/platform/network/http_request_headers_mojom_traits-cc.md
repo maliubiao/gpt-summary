@@ -167,14 +167,16 @@ Initially, I might have focused too much on the technical details of Mojo. Howev
 
 总而言之，`http_request_headers_mojom_traits.cc` 是 Blink 引擎中一个关键的组件，它负责在不同的进程之间传递 HTTP 请求头信息，是实现 Web 页面网络功能的基础。虽然开发者通常不直接与这个文件交互，但它默默地支撑着 JavaScript、HTML 和 CSS 中涉及网络请求的各种操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/http_request_headers_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ bool StructTraits<
 }
 
 }  // namespace mojo
-
-"""
-
 ```

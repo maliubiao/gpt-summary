@@ -294,7 +294,7 @@ sys.stdin.read()
 
 通过使用 Frida，你可以动态地观察这些强化版本的字符串函数在 Android 系统中的行为，验证它们是否如预期地进行了安全检查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/fortify/string.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -305,8 +305,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -590,7 +592,4 @@ void* _Nullable memrchr(const void* _Nonnull const __pass_object_size s, int c, 
 #endif /* __ANDROID_API__ >= 23 */
 
 #endif /* defined(__BIONIC_FORTIFY) */
-
-"""
-
 ```

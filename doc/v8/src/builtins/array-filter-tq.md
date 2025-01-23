@@ -165,14 +165,16 @@ console.log(greaterThanThree); // 输出: [4, 5]
 
 总而言之，这段 Torque 代码精确地实现了 `Array.prototype.filter` 的核心功能，包括了对数组元素进行迭代，根据回调函数的返回值决定是否将元素添加到新的数组中。它还包含了针对特定场景的性能优化（`FastArrayFilter`），以及在优化失败时回退到通用实现的逻辑（Deopt Continuations）。理解这段代码有助于深入理解 JavaScript 引擎的工作方式以及 `filter` 方法的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-filter.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -369,7 +371,4 @@ transitioning javascript builtin ArrayFilter(
   }
 }
 }
-
-"""
-
 ```

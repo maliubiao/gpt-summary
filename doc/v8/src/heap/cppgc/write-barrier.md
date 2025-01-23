@@ -110,11 +110,13 @@ objE.ref = objD; // 多次指针赋值，触发写屏障，帮助垃圾回收器
 
 `write-barrier.cc` 文件是 V8 引擎 cppgc 组件中实现写屏障的关键代码，它在底层默默地工作，确保 JavaScript 的自动内存管理机制能够正确、高效地运行。虽然 JavaScript 开发者不会直接操作写屏障，但每一次的对象属性赋值都可能触发它，从而保证了垃圾回收的正确性，避免了内存泄漏和野指针等问题。理解写屏障的原理有助于更深入地理解 JavaScript 引擎的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/write-barrier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -390,7 +392,4 @@ template V8_EXPORT_PRIVATE void WriteBarrier::CombinedWriteBarrierSlow<
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

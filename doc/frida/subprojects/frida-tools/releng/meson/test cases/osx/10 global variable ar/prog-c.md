@@ -195,7 +195,7 @@ rpc.exports = {
 
 总而言之，`prog.c` 作为一个简单的 C 程序，其价值在于它作为 Frida 动态 instrumentation 工具的测试目标，用于验证 Frida 在 Hook 和修改程序行为方面的能力，特别是在涉及全局变量访问的场景下。 理解其上下文和 Frida 的工作原理是分析这个文件的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/osx/10 global variable ar/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // Source: https://lists.gnu.org/archive/html/libtool/2002-07/msg00025.html
 
 extern void l1(void);
@@ -212,7 +214,4 @@ int main(void)
 {
   l1();
 }
-
-"""
-
 ```

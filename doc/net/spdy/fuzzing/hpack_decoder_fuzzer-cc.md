@@ -119,15 +119,17 @@ HPACK (HTTP/2 Header Compression) 是 HTTP/2 协议的关键组成部分，用�
 
 总而言之，`hpack_decoder_fuzzer.cc` 是 Chromium 用来保证其 HTTP/2 HPACK 解码器健壮性和安全性的重要工具。它通过生成大量的随机数据并模拟分块解码的过程，有效地帮助开发者发现和修复潜在的 bug。虽然普通用户不会直接与这个文件交互，但它所起的作用直接影响着用户的网络体验和安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/fuzzing/hpack_decoder_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   decoder.EndDecodingBlock();
   return 0;
 }
-
-"""
-
 ```

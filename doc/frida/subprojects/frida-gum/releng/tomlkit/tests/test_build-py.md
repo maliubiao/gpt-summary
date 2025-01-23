@@ -174,7 +174,7 @@ input()
 
 因此，`test_build.py` 文件作为 `tomlkit` 库的一部分，为使用该库的用户提供了重要的参考和调试线索。当用户在使用 Frida 和 `tomlkit` 操作 TOML 文件时遇到问题，查看这些测试用例可以帮助他们理解库的功能和正确的使用方法，从而解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/tests/test_build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import datetime
 
 from tomlkit import aot
@@ -328,7 +330,4 @@ name = "test"
 """
 
     assert doc.as_string() == expected
-
-"""
-
 ```

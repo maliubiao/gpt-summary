@@ -101,7 +101,7 @@ My thought process for analyzing the provided code snippet and generating the su
 
 总而言之，`net/quic/quic_session_pool_test.cc` 的第 6 部分专注于测试 Chromium QUIC 客户端在各种网络迁移场景下的稳定性和正确性，特别是当涉及到通过代理建立的 QUIC 连接时。它通过模拟不同的网络事件来验证连接池是否能够正确地管理和迁移 QUIC 会话，确保用户即使在网络环境变化的情况下也能获得流畅的网络体验。这些测试对于确保 QUIC 协议在实际网络环境中的可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共20部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (stream.get());
 
   // Cause QUIC stream to be created.
@@ -849,7 +851,4 @@ TEST_P(QuicSessionPoolTest, MigrateToProbingSocket) {
       server_maker_.Packet(1).AddPathResponseFrame().AddPaddingFrame().Build());
   // Read multiple connectivity probes synchronously.
   quic_data2.
-"""
-
-
 ```

@@ -112,15 +112,17 @@ p := &obj.Prog{
 
 总而言之，`go/src/cmd/compile/internal/riscv64/gsubr.go` 中的 `ginsnop` 函数是 Go 编译器后端为 RISC-V 64 位架构生成 NOP 指令的关键部分，它体现了编译器如何将高级语言概念转化为目标机器的指令。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/riscv64/gsubr.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -141,9 +143,4 @@ func ginsnop(pp *objw.Progs) *obj.Prog {
 	p.To = obj.Addr{Type: obj.TYPE_REG, Reg: riscv.REG_ZERO}
 	return p
 }
-
-"""
-
-
-
 ```

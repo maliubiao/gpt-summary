@@ -114,7 +114,7 @@ else:
 
 虽然 `frida/subprojects/frida-tools/releng/meson/mesonbuild/utils/__init__.py` 文件本身是空的，但它通过将目录标记为 Python 包，为该目录下其他实用工具模块的组织和导入提供了基础。这些实用工具模块在 Frida 工具的构建和发布过程中发挥作用，并可能间接涉及到逆向工程、底层二进制处理以及对 Linux 和 Android 平台的理解。用户通常不会直接与这个空文件交互，但它在 Frida 工具的开发和构建过程中扮演着重要的组织角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/utils/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,9 +122,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

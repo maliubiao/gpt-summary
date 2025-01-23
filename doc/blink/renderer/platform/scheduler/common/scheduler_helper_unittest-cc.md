@@ -130,14 +130,16 @@ Response: Let's break down the thought process for analyzing this C++ unittest f
 
 总之，`scheduler_helper_unittest.cc` 通过一系列的单元测试，全面地验证了 `SchedulerHelper` 类的核心功能，这些功能是 Blink 引擎高效且正确地处理 JavaScript、HTML 和 CSS 背后异步任务的基础。理解这些测试用例有助于开发者更好地理解 Blink 引擎的调度机制，并避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/scheduler_helper_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -323,7 +325,4 @@ TEST_F(SchedulerHelperTest, ObserversNotNotifiedFor_ControlTaskQueue) {
 }  // namespace scheduler_helper_unittest
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

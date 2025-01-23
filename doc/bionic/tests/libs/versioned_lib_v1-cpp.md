@@ -233,7 +233,7 @@ sys.stdin.read()
 
 总结来说，`bionic/tests/libs/versioned_lib_v1.cpp` 是一个用于测试 Android Bionic 库中符号版本控制功能的示例文件。它展示了如何定义带有版本信息的符号，以及动态链接器如何在运行时处理这些符号。理解这个文件有助于深入理解 Android 系统库的动态链接机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/versioned_lib_v1.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -244,8 +244,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  *
@@ -276,7 +278,4 @@ int version_zero_function() {
 }
 
 __asm__(".symver versioned_function_v1,versioned_function@@TESTLIB_V1");
-
-"""
-
 ```

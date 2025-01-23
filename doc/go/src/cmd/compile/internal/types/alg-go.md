@@ -252,15 +252,17 @@ func main() {
 
 `go/src/cmd/compile/internal/types/alg.go` 文件是 Go 语言编译器中至关重要的组成部分，它定义了类型比较和哈希算法的基础结构。理解其功能有助于深入理解 Go 语言的类型系统，以及为什么某些类型可以比较，而另一些类型不能。使用者需要注意 Go 语言中可比较类型的限制，以避免在编写代码时出现编译错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types/alg.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -353,9 +355,4 @@ func IsPaddedField(t *Type, i int) bool {
 	}
 	return t.Field(i).End() != end
 }
-
-"""
-
-
-
 ```

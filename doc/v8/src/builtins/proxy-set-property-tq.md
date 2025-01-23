@@ -261,14 +261,16 @@ try {
 
 总结来说，`v8/src/builtins/proxy-set-property.tq` 文件是 V8 引擎中实现 JavaScript `Proxy` 对象 `set` 操作的核心代码，它处理了各种情况，包括查找和调用 `set` 陷阱，处理陷阱的返回值，以及在没有陷阱时的默认行为。理解这段代码有助于深入了解 `Proxy` 对象的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/proxy-set-property.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -356,7 +358,4 @@ transitioning builtin ProxySetProperty(
   }
 }
 }
-
-"""
-
 ```

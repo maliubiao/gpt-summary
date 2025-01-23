@@ -145,7 +145,7 @@ By following these steps, the detailed and informative summary provided earlier 
 
 这段代码片段的核心在于**高效地通知监听器画布内容的变化**，并**优化画布内容到视频帧的转换过程**。它还负责在画布渲染上下文丢失时提供错误显示的机制。  其目标是为诸如 `captureStream()` 这样的功能提供底层支持，确保画布内容的实时更新能够被高效地传递到需要的地方（例如 JavaScript 代码或视频编码器）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/canvas/html_canvas_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 <StaticBitmapImageToVideoFrameCopier>(
         WebGraphicsContext3DVideoFramePool::
             IsGpuMemoryBufferReadbackFromTextureEnabled());
@@ -1023,7 +1025,4 @@ ScriptPromise<ImageBitmap> HTMLCanvasElement::CreateImageBitmap(
   }
   return ImageBitmapSource::FulfillImageBitmap(
       script_
-"""
-
-
 ```

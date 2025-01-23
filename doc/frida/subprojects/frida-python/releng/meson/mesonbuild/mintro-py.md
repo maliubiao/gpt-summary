@@ -154,7 +154,7 @@ This systematic approach of understanding the purpose, dissecting functionalitie
 
 `mintro.py` 是 Frida 中用于 Meson 构建系统的内省工具，它通过分析构建过程中的数据，以 JSON 格式提供关于项目结构、构建选项、依赖项、目标文件等关键信息。这些信息对于 IDE 集成、自动化构建脚本以及逆向工程分析都非常有价值。  尤其对于逆向工程师而言，它可以帮助快速了解目标项目的构成和构建方式，为后续的分析工作提供基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/mintro.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2016 The Meson development team
 
@@ -831,7 +833,4 @@ def write_meson_info_file(builddata: build.Build, errors: list, build_files_upda
         json.dump(info_data, fp)
         fp.flush()
     os.replace(tmp_file, info_file)
-
-"""
-
 ```

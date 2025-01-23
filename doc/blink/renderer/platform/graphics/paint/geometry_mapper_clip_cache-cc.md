@@ -170,14 +170,16 @@ Subsequent attempts to render the same `div` (or another element with the same c
 
 In summary, `GeometryMapperClipCache` is a crucial optimization within the Blink rendering engine that improves performance by caching clipping results associated with geometric transformations. It directly relates to CSS properties like `clip-path`, `overflow`, and `transform`, and its behavior is influenced by JavaScript manipulations that affect these styles. Understanding its functionality is important for both browser engineers and web developers aiming for efficient and correct rendering.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/geometry_mapper_clip_cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ void GeometryMapperClipCache::SetCachedClip(const ClipCacheEntry& entry) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

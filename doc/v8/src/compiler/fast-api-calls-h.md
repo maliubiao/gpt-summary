@@ -164,15 +164,17 @@ console.log(multipliedArray); // 预期输出类似 [2, 4, 6, 8, 10]
 
 `v8/src/compiler/fast-api-calls.h` 是 V8 编译器中至关重要的部分，它定义了用于优化 JavaScript 调用 C++ 代码的机制。理解其功能有助于深入了解 V8 的性能优化策略，特别是与 Fast API 相关的部分。它通过重载解析、类型信息传递和代码生成等技术，提高了 JavaScript 与 C++ 代码互操作的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/fast-api-calls.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/fast-api-calls.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ Node* BuildFastApiCall(Isolate* isolate, Graph* graph,
 }  // namespace v8
 
 #endif  // V8_COMPILER_FAST_API_CALLS_H_
-
-"""
-
 ```

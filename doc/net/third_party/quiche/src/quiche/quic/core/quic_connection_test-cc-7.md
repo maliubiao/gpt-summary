@@ -122,7 +122,7 @@ Here's a breakdown of the thought process to generate the response:
 
 作为整个 `QuicConnectionTest` 文件的一部分，这第 8 部分主要集中在测试 `QuicConnection` 类在 **网络路径特性变化**（通过 MTU 发现）和 **连接生命周期管理**（通过超时机制）方面的健壮性和正确性。它验证了连接在不同网络条件下如何调整自身以优化性能，以及如何在长时间空闲或遇到错误时进行恰当的处理。 这部分测试确保了 QUIC 连接在各种实际网络环境中能够稳定可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 onnected());
   EXPECT_THAT(saved_connection_close_frame_.quic_error_code,
               IsError(QUIC_PACKET_WRITE_ERROR));
@@ -911,7 +913,4 @@ TEST_P(QuicConnectionTest, SendScheduler) {
 TEST_P(QuicConnectionTest, FailToSendFirstPacket) {
   // Test that the connection does not crash when it fails to send the first
   // packet at which point self_address_ mig
-"""
-
-
 ```

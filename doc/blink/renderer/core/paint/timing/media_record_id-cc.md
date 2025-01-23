@@ -156,15 +156,17 @@ By following this systematic process of code examination, inference, connection 
 
 总结来说，`blink/renderer/core/paint/timing/media_record_id.cc` 定义的 `MediaRecordId` 类是 Blink 内部用于唯一标识媒体记录的关键结构，它连接了 HTML 元素、CSS 样式和 JavaScript 操作所产生的渲染状态，并为高效和安全地管理媒体相关的绘制和时间信息提供了基础。虽然前端开发者不会直接使用它，但理解其功能有助于深入理解浏览器如何处理网页中的媒体内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/timing/media_record_id.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ MediaRecordIdHash MediaRecordId::GenerateHash(const LayoutObject* layout,
 }
 
 }  // namespace blink
-
-"""
-
 ```

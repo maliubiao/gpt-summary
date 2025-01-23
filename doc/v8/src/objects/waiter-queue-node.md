@@ -108,11 +108,13 @@ setTimeout(() => {
 
 `WaiterQueueNode` 类是 V8 引擎内部用于管理等待操作的关键组件。它提供了一个高效的链表结构来组织等待特定事件或条件的执行上下文。在 JavaScript 中，像 `Atomics.wait` 这样的底层同步原语就依赖于 `WaiterQueueNode` 来实现其等待和通知机制。 简而言之，`WaiterQueueNode` 是 JavaScript 中某些需要等待的异步或同步操作在 V8 引擎底层的实现基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/waiter-queue-node.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -285,7 +287,4 @@ void WaiterQueueNode::SetNotInListForVerification() {
 }  // namespace detail
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

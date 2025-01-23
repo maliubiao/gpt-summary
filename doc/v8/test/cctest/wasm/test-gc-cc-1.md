@@ -146,7 +146,7 @@ console.log(packedArray[3]); // 输出 2
 
 总而言之，这段代码是 V8 中用于严格测试 WebAssembly 垃圾回收机制和相关特性的重要组成部分，确保了 Wasm 在 V8 中的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-gc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-gc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -154,9 +154,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-                  WASM_REF_NULL(type_index)),
+### 源代码
+```cpp
+WASM_REF_NULL(type_index)),
                                          WASM_I32V(3))))),
        kExprEnd});
 
@@ -890,7 +892,4 @@ WASM_COMPILED_EXEC_TEST(FunctionRefs) {
 
   tester.CheckResult(test, 1);
   tester.CheckResult(test_fa
-"""
-
-
 ```

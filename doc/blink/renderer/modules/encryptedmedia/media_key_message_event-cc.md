@@ -125,15 +125,17 @@ By following these steps, and iterating through the information, we can construc
 
 总而言之，`media_key_message_event.cc` 文件在 Chromium Blink 引擎中扮演着关键的角色，它定义了用于在加密媒体处理过程中传递消息的事件对象，连接了浏览器内核的底层逻辑和 JavaScript 的 EME API。理解它的功能对于开发和调试涉及 DRM 保护的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/encryptedmedia/media_key_message_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc.  All rights reserved.
  *
@@ -184,7 +186,4 @@ void MediaKeyMessageEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

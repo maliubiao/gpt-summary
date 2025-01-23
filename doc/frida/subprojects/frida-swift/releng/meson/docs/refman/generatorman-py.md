@@ -227,7 +227,7 @@ send('Hello from Frida!')
 
 因此，`generatorman.py` 脚本在 Frida 的文档生成流程中扮演着关键的角色，它的正确性直接影响到用户理解和使用 Frida 的能力。 当用户遇到与 Meson 构建系统相关的功能使用问题时，查看最新的 man page 是首要的步骤，而这个脚本就是生成 man page 的关键工具。如果 man page 的内容有问题，那么就需要回到修改 `ReferenceManual` 数据和调试 `generatorman.py` 脚本这两个环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/docs/refman/generatorman.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -235,8 +235,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import re
 from pathlib import Path
 
@@ -619,7 +621,4 @@ class GeneratorMan(GeneratorBase):
             page.br()
 
         page.write()
-
-"""
-
 ```

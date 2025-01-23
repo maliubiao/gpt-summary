@@ -169,7 +169,7 @@ This detailed thought process allows for a comprehensive understanding of the co
 
 `v8/test/unittests/assembler/disasm-loong64-unittest.cc` 的第 1 部分（以及后续部分）的主要功能是 **系统地测试 V8 JavaScript 引擎中 LoongArch64 架构反汇编器的正确性**。它通过生成各种 LoongArch64 机器码指令，并验证反汇编器能否将它们准确地转换回对应的汇编指令字符串，从而确保 V8 在处理 LoongArch64 架构时能够正确地进行代码分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-loong64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-loong64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -177,8 +177,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -931,8 +933,5 @@ TEST_F(DisasmLoong64Test, TypeOp17) {
   COMPARE(fmax_d(f0, f1, f0), "01090020       fmax.d       f0, f1, f0");
   COMPARE(fmin_d(f0, f1, f0), "010b0020       fmin.d       f0, f1, f0");
 
-  COMPARE(fmaxa_s(f12, f13, f14), "010cb9ac     
-"""
-
-
+  COMPARE(fmaxa_s(f12, f13, f14), "010cb9ac
 ```

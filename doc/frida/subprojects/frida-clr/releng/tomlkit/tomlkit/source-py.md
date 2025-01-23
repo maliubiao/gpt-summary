@@ -187,7 +187,7 @@ version = 16.2
 
 `frida/subprojects/frida-clr/releng/tomlkit/tomlkit/source.py` 文件是 Frida 中用于解析 TOML 配置文件的关键组件。它提供了一种高效且易于管理的方式来逐字符读取和处理 TOML 数据，并提供了错误处理和状态管理机制。虽然它本身不直接进行逆向操作或涉及底层系统调用，但它在 Frida 的配置加载过程中扮演着重要的角色，间接地影响着 Frida 如何执行其动态 instrumentation 功能。用户通常不会直接与此文件交互，但当遇到 TOML 解析错误时，理解其功能有助于定位和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/tomlkit/tomlkit/source.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from copy import copy
@@ -377,7 +379,4 @@ class Source(str):
             cur += len(line) + 1
 
         return len(self.splitlines()), 0
-
-"""
-
 ```

@@ -114,15 +114,17 @@ This header file is part of V8's internal implementation and is not directly use
 
 **In summary, `v8/src/fuzzilli/cov.h` provides the mechanisms within V8 to track code execution during fuzzing, particularly focusing on built-in JavaScript functions. This information is crucial for the Fuzzilli fuzzer to effectively explore the V8 codebase and uncover potential bugs or vulnerabilities.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/fuzzilli/cov.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/fuzzilli/cov.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -144,7 +146,4 @@ void cov_init_builtins_edges(uint32_t num_edges);
 void cov_update_builtins_basic_block_coverage(const std::vector<bool>& cov_map);
 
 #endif  // V8_FUZZILLI_COV_H_
-
-"""
-
 ```

@@ -191,7 +191,7 @@ func main() {
 
 总而言之，这段 `vdso_freebsd.go` 文件是 Go 语言为了在 FreeBSD 系统上优化时间获取性能所做的底层工作。正常的 Go 开发者应该使用 `time` 包提供的接口，而无需关心这些底层的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/vdso_freebsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -315,9 +317,4 @@ func walltime() (sec int64, nsec int32) {
 	}
 	return int64(bt.sec), int32((1e9 * uint64(bt.frac>>32)) >> 32)
 }
-
-"""
-
-
-
 ```

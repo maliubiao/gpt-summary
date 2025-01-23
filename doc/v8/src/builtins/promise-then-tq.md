@@ -168,14 +168,16 @@ thenPromise.then(
 
 总而言之，`v8/src/builtins/promise-then.tq`  是 V8 引擎中实现 `Promise.prototype.then` 核心功能的 Torque 代码，它严格遵循 ECMAScript 规范，负责参数校验、新 Promise 的创建和链接，以及回调函数的类型处理，为 Promise 链式调用提供了基础。理解这段代码有助于深入理解 JavaScript Promise 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/promise-then.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ transitioning javascript builtin PromisePrototypeThen(
   return resultPromise;
 }
 }
-
-"""
-
 ```

@@ -88,7 +88,7 @@ fetch('https://example.com/api/data')
 
 这些测试对于确保 Chromium 浏览器在处理 HTTPS 连接和各种 Web 安全协议时的安全性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/x509_util_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -96,8 +96,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 c7, 0x84, 0x3d, 0xc7, 0x9e, 0x51, 0xee, 0xbc,
       0x23, 0x33, 0xfd, 0xeb, 0x20, 0x78, 0x3b, 0x93, 0xe8, 0xe6, 0x78,
       0x10, 0xd7, 0x5e, 0x37, 0x48, 0x04, 0x07, 0x5f, 0x57, 0xe6, 0x16,
@@ -358,8 +360,4 @@ TEST(X509UtilTest, HasRsaPkcs1Sha1Signature) {
 }
 
 }  // namespace net::x509_util
-
-"""
-
-
 ```

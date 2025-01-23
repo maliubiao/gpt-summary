@@ -195,7 +195,7 @@ By following this systematic approach, combining code analysis with domain knowl
 
 `clike.py` 文件在 frida 的构建系统中扮演着关键角色，它为 C 和 C++ 等语言的编译器提供了通用的构建和检测功能。 这些功能包括处理编译器参数、执行健全性检查、检测头文件和符号、编译和运行代码片段、获取类型信息以及宏定义等。 这使得 Meson 能够灵活地支持各种 C-like 编译器，并能根据目标平台的特性进行正确的构建配置。  这些功能与逆向工程紧密相关，因为它们直接影响着最终生成的可执行文件和库的特性和结构，而这些都是逆向分析的对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/compilers/mixins/clike.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2023 The Meson development team
 
@@ -933,8 +935,4 @@ class CLikeCompiler(Compiler):
         main = '''
         int main(void) {{
           return {func} ();
-    
-"""
-
-
 ```

@@ -167,7 +167,7 @@ int main() {
 
 总而言之，`v8/test/cctest/compiler/test-run-machops.cc` 是 V8 引擎中至关重要的一个测试文件，它专注于验证编译器后端生成的最底层机器指令的正确性，这是保证 JavaScript 代码高效且正确执行的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-machops.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-run-machops.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,8 +175,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 oFloat64(m.LoadFromPointer(&input, MachineType::Int64())));
   m.Return(m.Int32Constant(11));
   FOR_INT64_INPUTS(i) {
@@ -767,8 +769,4 @@ TEST(Regression12373) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -111,15 +111,17 @@ go build without_newline.go
 
 `go/test/eof1.go` 的主要功能是测试 Go 编译器在处理文件末尾缺少换行符的情况下的行为。它通过自身作为一个没有结尾换行符的 Go 源文件来验证编译器可以正确处理这种情况。 它不涉及任何复杂的逻辑或命令行参数处理，而是专注于测试编译器的语法解析能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/eof1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // compile
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -132,8 +134,4 @@ Prompt:
 package eof1
 
 // No newline at the end of this comment.
-"""
-
-
-
 ```

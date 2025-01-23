@@ -306,7 +306,7 @@ if (Process.arch === 'arm64') {
 
 **注意:**  需要在 root 过的 Android 设备或模拟器上运行 Frida，并且需要知道目标应用的包名。这个示例针对的是 `arm64` 架构，可能需要根据目标设备的架构进行调整。对于其他架构，例如 `arm`，你需要修改 Frida 脚本中查找符号的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/byteswap_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -317,8 +317,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -361,8 +363,4 @@ TEST(byteswap, bswap_64) {
   EXPECT_EQ(le64, bswap_64(be64));
   EXPECT_EQ(be64, bswap_64(le64));
 }
-
-
-"""
-
 ```

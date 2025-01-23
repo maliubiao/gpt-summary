@@ -168,14 +168,16 @@ DragData {
 
 总而言之，`drag_mojom_traits.cc` 是 Blink 渲染引擎中处理拖放功能的核心组成部分，它负责将高级的 `blink::WebDragData` 对象转换为可以在不同进程之间安全高效传递的 Mojo 消息，从而支撑了 Web 页面中强大的拖放交互能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mojo/drag_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -511,7 +513,4 @@ bool StructTraits<blink::mojom::DragDataDataView, blink::WebDragData>::Read(
 }
 
 }  // namespace mojo
-
-"""
-
 ```

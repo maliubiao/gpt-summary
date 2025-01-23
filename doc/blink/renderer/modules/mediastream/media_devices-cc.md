@@ -205,7 +205,7 @@ navigator.mediaDevices.getUserMedia({ audio: true, video: { facingMode: 'user' }
 
 总而言之，`media_devices.cc` 是 Blink 引擎中实现 Web 媒体设备功能的核心 C++ 文件，它响应 JavaScript 的请求，与操作系统交互，管理用户权限，并返回媒体设备信息或媒体流给网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_devices.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -213,8 +213,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1030,8 +1032,4 @@ void MediaDevices::setCaptureHandleConfig(ScriptState* script_state,
   if (!script_state->ContextIsValid()) {
     exception_state.ThrowDOMException(DOMExceptionCode::kInvalidStateError,
                                       "Current frame is detached.");
- 
-"""
-
-
 ```

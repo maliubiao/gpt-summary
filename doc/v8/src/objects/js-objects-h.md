@@ -158,7 +158,7 @@ Here's a breakdown of the information I need to extract and present:
 
 `v8/src/objects/js-objects.h` 是 V8 引擎中至关重要的头文件，它定义了 JavaScript 对象在 C++ 层的表示和操作方式。它包含了 `JSReceiver` 和 `JSObject` 类及其丰富的成员方法，用于实现 JavaScript 语言中关于对象创建、属性访问、修改、删除、原型链管理、元数据管理等核心功能。该文件与 V8 的 Torque 编译系统相关联，并直接影响着 JavaScript 代码的执行行为。理解这个文件的内容有助于深入了解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-objects.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-objects.h以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -857,7 +859,4 @@ class JSObject : public TorqueGeneratedJSObject<JSObject, JSReceiver> {
 
   // Convert the object to use the canonical dictionary
   // representation. If the object is e
-"""
-
-
 ```

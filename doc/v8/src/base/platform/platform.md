@@ -78,11 +78,13 @@ Uncaught RangeError: Maximum call stack size exceeded
 
 总结来说，`v8/src/base/platform/platform.cc` 文件中关于栈操作的代码是 V8 引擎底层基础设施的关键组成部分，它为 JavaScript 的正常运行、错误检测和调试提供了必要的支持。 虽然 JavaScript 开发者无法直接操作这些底层机制，但这些机制保证了 JavaScript 代码能够安全可靠地执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -116,7 +118,4 @@ Stack::StackSlot Stack::GetStackStart() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

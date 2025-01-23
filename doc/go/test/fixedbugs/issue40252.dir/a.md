@@ -138,15 +138,17 @@ func main() {
 
 在这个例子中，如果 `T` 的 `Func` 方法内部访问了 `t` 的字段，当 `t` 为 `nil` 时，就会发生 nil 指针解引用 panic。  这段 `issue40252.dir/a.go` 的代码展示了 Go 语言中一种较为特殊和底层的机制，理解这种机制有助于更深入地理解 Go 语言的接口和方法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue40252.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -161,9 +163,4 @@ func Call() {
 	f := I.Func
 	f(nil)
 }
-
-"""
-
-
-
 ```

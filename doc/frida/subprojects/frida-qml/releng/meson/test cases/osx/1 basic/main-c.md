@@ -130,7 +130,7 @@ By following these steps of analyzing the code itself, placing it within the con
 
 这个简单的例子是 Frida 学习和调试的良好起点，因为它排除了复杂应用程序带来的干扰，让用户可以专注于理解 Frida 的基本机制。用户到达这个 `main.c` 文件通常意味着他们正处于学习 Frida 动态 instrumentation 技术的早期阶段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/osx/1 basic/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,14 +138,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <CoreFoundation/CoreFoundation.h>
 
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

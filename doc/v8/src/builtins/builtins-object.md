@@ -176,11 +176,13 @@ By following these steps, you can effectively analyze C++ code like this and rel
 
 总而言之，`v8/src/builtins/builtins-object.cc` 文件是 V8 引擎中至关重要的一个组成部分，它桥接了 JavaScript 的 `Object` 相关操作和 V8 引擎底层的 C++ 实现。理解这个文件有助于深入理解 JavaScript 语言的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-object.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -549,7 +551,4 @@ BUILTIN(ObjectSeal) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

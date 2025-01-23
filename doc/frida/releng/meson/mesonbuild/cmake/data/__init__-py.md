@@ -134,7 +134,7 @@ Users generally don't interact with these internal build system files directly. 
 
 While the `__init__.py` file itself is currently empty, its presence signifies the potential for storing CMake-related data within the Frida build system. This data, in turn, plays an indirect but important role in enabling Frida's core functionality for dynamic instrumentation and reverse engineering by facilitating the build process and management of dependencies, potentially at the binary level and across different operating systems like Linux and Android. Users are unlikely to interact with this file directly but might encounter its path during debugging build-related issues.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/cmake/data/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,9 +142,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

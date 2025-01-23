@@ -160,15 +160,17 @@ element.addEventListener('scroll', handleScroll, { passive: true });
 
 总而言之，`add_event_listener_options_resolved.cc` 这个文件定义了一个关键的数据结构，用于在 Blink 引擎内部表示和存储 JavaScript `addEventListener` 方法的选项，是连接 JavaScript 事件处理机制和 Blink 内部实现的重要桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/events/add_event_listener_options_resolved.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -203,7 +205,4 @@ void AddEventListenerOptionsResolved::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

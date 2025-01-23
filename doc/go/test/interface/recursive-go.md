@@ -181,15 +181,17 @@ go build go/test/interface/recursive.go
 
 总而言之，这段代码的核心在于展示了 Go 语言对相互递归接口的支持，这是一种强大的类型系统特性，允许定义复杂的类型关系。 理解其机制和正确实现接口方法是使用这项功能时的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/interface/recursive.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // compile
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -211,9 +213,4 @@ type I2 interface {
 type T int
 func (t T) foo() I2 { return t }
 func (t T) bar() I1 { return t }
-
-"""
-
-
-
 ```

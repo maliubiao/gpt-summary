@@ -131,14 +131,16 @@ By following these steps, we can systematically dissect the test file and unders
 
 总之，`progress_shadow_element_test.cc` 这个文件是 Blink 渲染引擎中用于测试 `<progress>` 元素在特定条件下的渲染行为的关键组成部分，它确保了当开发者使用 CSS 自定义 `<progress>` 元素外观时，其内部结构能够正确地进行布局和渲染。理解这个测试文件有助于我们更好地理解 `<progress>` 元素及其阴影 DOM 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/shadow/progress_shadow_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ TEST_F(ProgressShadowElementTest, LayoutObjectIsNeeded) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

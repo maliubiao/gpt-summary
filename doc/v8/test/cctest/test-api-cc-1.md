@@ -171,7 +171,7 @@ Let's take the `ScavengeExternalString` test as an example:
 
 This second part of the `test-api.cc` file primarily focuses on **testing the creation, management, and garbage collection of various types of strings (especially external strings), the interaction between JavaScript and C++ through function callbacks and templates (including optimizations like fast returns), and the ability to associate external data with JavaScript objects.** It ensures that V8's C++ API functions as expected in these areas and helps to catch potential issues related to memory management, resource handling, and the correct execution of native code within the V8 environment.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -179,8 +179,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 one_byte_string)))
             .ToLocalChecked();
     i::Handle<i::String> istring = v8::Utils::OpenHandle(*string);
@@ -1113,7 +1115,4 @@ THREADED_TEST(BigUnsignedInteger) {
 THREADED_TEST(OutOfSignedRangeUnsignedInteger) {
   LocalContext env;
   v8::HandleSco
-"""
-
-
 ```

@@ -163,7 +163,7 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
 总而言之，这个文件是 V8 引擎自检机制的一部分，对于确保引擎的稳定性和正确性至关重要，尤其是在开发和调试阶段。它揭示了 V8 内部复杂的对象管理机制，并与 JavaScript 的性能特性有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/objects-debug.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/objects-debug.cc以.tq结尾，那它是个v8 torque源代码，
@@ -171,8 +171,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 override {
     // Visit all HeapObject pointers in [start, end).
     for (OffHeapObjectSlot p = start; p < end; ++p) {
@@ -436,8 +438,4 @@ bool TransitionsAccessor::IsConsistentWithBackPointers() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

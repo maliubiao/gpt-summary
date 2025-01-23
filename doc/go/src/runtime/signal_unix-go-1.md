@@ -110,7 +110,7 @@ By following this structured approach, one can effectively analyze and understan
 
 这部分代码是 Go runtime 信号处理机制的关键组成部分，它深入处理了信号的接收、判断、转发和屏蔽等底层操作。它不仅要保证 Go 程序自身信号处理的正确性，还要处理与非 Go 代码 (特别是 C/C++) 交互时的复杂情况，例如在非 Go 线程中调用 Go 函数时如何正确地保存和恢复信号上下文。代码中大量的 `//go:nosplit` 注释表明这些函数必须在栈空间受限的情况下运行，通常是在处理信号的关键路径上。整体来看，这部分代码致力于构建一个健壮且灵活的信号处理框架，以支持 Go 程序在各种 Unix 环境下的稳定运行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -119,8 +119,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 al didn't cause the program to exit, restore the
 	// Go signal handler and carry on.
 	//
@@ -543,10 +545,4 @@ func setsigsegv(pc uintptr) {
 	gp.sigcode0 = _SEGV_MAPERR
 	gp.sigcode1 = 0 // TODO: emulate si_addr
 }
-
-"""
-
-
-
-
 ```

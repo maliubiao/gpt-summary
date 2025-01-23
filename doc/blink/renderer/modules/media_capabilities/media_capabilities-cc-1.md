@@ -164,7 +164,7 @@ keySystemAccess: nullptr // 因为没有配置加密信息
 
 通过在 `decodingInfo` 或 `encodingInfo` 方法的入口处设置断点，或者在 `IsValidMediaDecodingConfiguration`、`GetEmeSupport` 等关键函数中设置断点，可以追踪用户操作如何一步步地到达这段代码。同时，查看浏览器的控制台输出，可以获取可能的错误信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_capabilities/media_capabilities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 kState::Trace(
     blink::Visitor* visitor) const {
   visitor->Trace(key_system_access);
@@ -977,7 +979,4 @@ void MediaCapabilities::ResolveCallbackIfReady(int callback_id) {
   // content.
   if (pending_cb->key_system_access) {
     UMA_HISTOGRAM_TIMES("Media.C
-"""
-
-
 ```

@@ -208,7 +208,7 @@ GOOS=linux GOARCH=amd64 go build myprogram.go
 
 总而言之，`go/src/math/log_asm.go` 这段代码是 Go 标准库为了在特定架构上提供高性能的自然对数计算而采用的一种优化手段，它体现了 Go 语言的条件编译和汇编集成的能力。普通 Go 开发者通常不需要直接与这段代码交互，而是通过调用通用的 `math.Log` 函数来享受其带来的性能提升。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/log_asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -216,8 +216,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -229,9 +231,4 @@ package math
 const haveArchLog = true
 
 func archLog(x float64) float64
-
-"""
-
-
-
 ```

@@ -159,7 +159,7 @@ Interceptor.attach(Module.findExportByName(null, "gum_spinlock_acquire"), {
 
 总而言之，`gumspinlock.c` 文件实现了 Frida Gum 库中的自旋锁功能，是理解 Frida 内部并发控制机制的关键部分。理解自旋锁的原理对于逆向分析、性能调试以及深入理解 Frida 的工作方式都至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/gumspinlock.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2019 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2024 Francesco Tamagni <mrmacete@protonmail.ch>
@@ -222,7 +224,4 @@ gum_spinlock_release (GumSpinlock * spinlock)
 
   g_atomic_int_set (&self->is_held, FALSE);
 }
-
-"""
-
 ```

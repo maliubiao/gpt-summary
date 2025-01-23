@@ -107,14 +107,16 @@ PaintRecord {
 
 `PaintRecordBuilder` 是 Blink 渲染引擎中一个关键的低级组件，负责构建 `PaintRecord`，该结构记录了需要执行的绘画操作。它间接地受到 HTML 结构、CSS 样式和 JavaScript 动态修改的影响，并将这些高级描述转换为实际的绘制指令。理解其功能有助于理解浏览器渲染流程，并避免导致性能问题的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_record_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -144,7 +146,4 @@ void PaintRecordBuilder::EndRecording(cc::PaintCanvas& canvas,
 }
 
 }  // namespace blink
-
-"""
-
 ```

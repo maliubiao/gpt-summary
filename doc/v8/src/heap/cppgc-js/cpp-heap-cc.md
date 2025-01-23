@@ -153,7 +153,7 @@ myJsObject = null; // 解除引用
 
 `v8/src/heap/cppgc-js/cpp-heap.cc` 的第一部分主要负责定义 `CppHeap` 类的基本结构和核心功能，使其能够作为 cppgc 在 V8 中的接口。它处理了堆的创建、与 V8 平台的集成、基本的垃圾回收触发机制、统计信息的收集以及自定义内存空间的支持。 此外，它初步建立了与 V8 `Isolate` 的关联机制，并引入了新生代垃圾回收的初步管理策略 (`MinorGCHeapGrowing`)。  这一部分奠定了 `CppHeap` 作为 V8 中 C++ 对象内存管理基础的关键作用。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/cpp-heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc-js/cpp-heap.cc以.tq结尾，那它是个v8 torque源代码，
@@ -161,8 +161,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1072,8 +1074,5 @@ void CppHeap::FinishMarkingAndProcessWeakness() {
   if (isolate_) {
     // The size is used for recomputing the global heap limit.
     used_size_ = stats_collector_->marked_bytes();
-    // Force a check next time 
-"""
-
-
+    // Force a check next time
 ```

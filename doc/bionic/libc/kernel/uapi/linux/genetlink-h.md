@@ -288,7 +288,7 @@ sys.stdin.read()
 
 请注意，这只是一个简单的示例，实际的调试可能需要更复杂的 Hook 逻辑，并且需要根据具体的 Android 版本和目标进程进行调整。你需要根据你想要观察的具体功能和进程来选择合适的 Hook 点和解析方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/genetlink.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -299,8 +299,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -382,7 +384,4 @@ enum {
 };
 #define CTRL_ATTR_POLICY_MAX (__CTRL_ATTR_POLICY_DUMP_MAX - 1)
 #endif
-
-"""
-
 ```

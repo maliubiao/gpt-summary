@@ -191,15 +191,17 @@ Node Type: Identifier     , Mask: 10000000000
 
 `typeof.go` 中的 `typeOf` 函数是 `go/ast/inspector` 包为了提升 AST 节点类型判断效率而实现的核心功能。它使用类型断言和位运算，为每种 AST 节点类型分配一个唯一的比特位掩码，使得类型判断非常迅速。 `maskOf` 函数则进一步方便了对一组节点类型的快速检查。理解其返回值的含义和使用场景，可以帮助使用者更有效地利用 `go/ast` 包进行代码分析和处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/ast/inspector/typeof.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -427,9 +429,4 @@ func maskOf(nodes []ast.Node) uint64 {
 	}
 	return mask
 }
-
-"""
-
-
-
 ```

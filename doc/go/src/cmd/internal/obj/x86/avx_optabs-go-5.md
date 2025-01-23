@@ -85,7 +85,7 @@ end:
 
 这部分代码主要定义了一系列以 "AVP" 开头的AVX指令的操作码映射，这些指令涵盖了诸如**打包比较 (PCMP)**、**压缩 (COMPRESS)**、**冲突检测 (CONFLICT)**、**点积 (PDP)**、**数据重排 (PERM)**、**扩展 (EXPAND)**、**提取 (EXTR)**、**分散/收集 (GATHER)**、**水平加减 (PHADD/PHSUB)**、**插入 (PINSR)**、**前导零计数 (PLZCNT)**、**带符号/无符号乘法 (PMADD)**、**掩码移动 (PMASKMOV)**、**最大/最小值 (PMAX/PMIN)** 以及 **向量寄存器到掩码寄存器/掩码寄存器到向量寄存器移动 (PMOV)** 等多种操作。这些指令是AVX指令集中用于处理向量数据的核心指令，提供了更高级和高效的数据并行处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/x86/avx_optabs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -94,8 +94,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 3A | evexW0, evexN32, 0x3E,
 		avxEscape | evex512 | evex66 | evex0F3A | evexW0, evexN64, 0x3E,
 	}},
@@ -621,10 +623,4 @@ Prompt:
 		avxEscape | evex256 | evexF3 | evex0F38 | evexW0, evexN8 | evexZeroingEnabled, 0x21,
 		avxEscape | evex512 | evexF3 | evex0F38 | evexW0, evexN16 | evexZeroingEnabled, 0x21,
 	}},
-	
-"""
-
-
-
-
 ```

@@ -178,14 +178,16 @@ registerAnimator('horizontal-scroll', HorizontalScrollAnimator);
 
 `CompositorMutatorClient` 是 Blink 渲染引擎中一个关键的组件，它专注于将由 Animation Worklet 驱动的动画效果高效地应用到合成层上。  它通过异步的方式与合成器交互，并负责管理变动的生命周期。 理解它的功能有助于理解 Blink 如何实现高性能的 Web 动画。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositor_mutator_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ bool CompositorMutatorClient::HasMutators() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -139,7 +139,7 @@ if (recursive_mutex_unlock) {
 
 总结来说，`linkexe.cc` 是一个用于测试 Frida 对使用 Boost.Thread 的程序进行动态分析能力的简单示例。它涉及了线程创建、递归互斥锁等概念，并可以作为 Frida 进行逆向分析的起始点。理解这个文件的功能和背后的原理，有助于用户更好地使用 Frida 来调试和分析更复杂的应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/1 boost/linkexe.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define _XOPEN_SOURCE 500
 
 #include<boost/thread.hpp>
@@ -167,7 +169,4 @@ int main(int argc, char **argv) {
     thr.join();
     return 0;
 }
-
-"""
-
 ```

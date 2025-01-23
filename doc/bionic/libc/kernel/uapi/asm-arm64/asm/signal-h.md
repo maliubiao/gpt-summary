@@ -295,7 +295,7 @@ if (Process.arch === 'arm64') {
 
 这个例子展示了如何使用 Frida 来动态地观察 Android 应用中与信号处理相关的操作，帮助理解 framework 和 NDK 如何与底层的 libc 交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/signal.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -306,8 +306,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -321,7 +323,4 @@ Prompt:
 #define SIGSTKSZ 16384
 #include <asm-generic/signal.h>
 #endif
-
-"""
-
 ```

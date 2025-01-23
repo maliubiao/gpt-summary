@@ -211,15 +211,17 @@ gameLoop();
 
 总而言之，`blink/renderer/modules/gamepad/gamepad.cc` 文件在 Chromium Blink 引擎中扮演着连接底层硬件和上层 JavaScript API 的关键角色，负责管理游戏手柄的状态，并为 Web 开发者提供访问手柄输入信息的途径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/gamepad/gamepad.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011, Google Inc. All rights reserved.
  *
@@ -452,7 +454,4 @@ void Gamepad::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

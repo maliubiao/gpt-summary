@@ -155,7 +155,7 @@ By following these steps, combining high-level understanding with detailed analy
 
 总而言之，`frida/subprojects/frida-core/compat/build.py` 是 Frida 构建过程中一个关键的脚本，它负责处理跨平台兼容性的构建需求。它涉及到编译原理、操作系统特性、目标平台架构等多种知识，是理解 Frida 如何在不同环境下运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/compat/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 import argparse
 import base64
@@ -831,7 +833,4 @@ MINGW_ARCHS = {
 
 if __name__ == "__main__":
     main(sys.argv)
-
-"""
-
 ```

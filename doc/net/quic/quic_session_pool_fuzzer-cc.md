@@ -132,15 +132,17 @@ fetch('https://www.example.org/')
 
 `net/quic/quic_session_pool_fuzzer.cc` 是一个用于测试 Chromium QUIC 会话池健壮性的模糊测试工具。它通过模拟网络环境和随机输入，旨在发现 `QuicSessionPool` 中潜在的 bug 和安全漏洞，从而提高 Chrome 浏览器网络连接的稳定性和安全性。 虽然它与 JavaScript 没有直接的代码关系，但它所测试的组件对于支持 JavaScript 发起的 QUIC 网络请求至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -350,7 +352,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
 }  // namespace test
 }  // namespace net
-
-"""
-
 ```

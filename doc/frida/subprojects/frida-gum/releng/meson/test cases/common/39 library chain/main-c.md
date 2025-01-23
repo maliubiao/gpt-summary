@@ -136,7 +136,7 @@ Here's a breakdown of the thinking process to analyze the C code snippet and ful
 
 总而言之，这个简单的 `main.c` 文件是 Frida 工具测试框架中的一个基础组件，用于测试 Frida 对库函数调用的 instrumentation 能力。逆向工程师可以借鉴这种简单的结构来创建测试环境，以便更方便地使用 Frida 进行动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/39 library chain/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,14 +144,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int libfun(void);
 
 int main(void) {
   return libfun();
 }
-
-"""
-
 ```

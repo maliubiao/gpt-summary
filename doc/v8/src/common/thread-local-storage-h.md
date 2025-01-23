@@ -170,15 +170,17 @@ V8 使用 TLS 来确保某些内部状态（例如，每个执行上下文）是
 
 总结来说，虽然用户不会直接编写或修改 `v8/src/common/thread-local-storage.h` 中的代码，但了解 TLS 的作用有助于理解 V8 如何在多线程环境下管理状态，并帮助开发者编写更健壮的多线程 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/common/thread-local-storage.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/common/thread-local-storage.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -240,7 +242,4 @@ Prompt:
 #endif  // V8_TLS_LIBRARY_MODE
 
 #endif  // V8_COMMON_THREAD_LOCAL_STORAGE_H_
-
-"""
-
 ```

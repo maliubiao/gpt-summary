@@ -77,7 +77,7 @@ The user is asking for a summary of the functionality of the `audio_track_record
 
 `audio_track_recorder_unittest.cc` 的第一部分定义了测试 `AudioTrackRecorder` 核心音频编码功能的框架和基础测试用例。它主要关注验证在不同的音频参数和编码配置下，`AudioTrackRecorder` 能否正确地将原始音频数据编码成预期的格式，并使用 Mock 对象来模拟回调和验证输出结果。这部分代码为确保 `MediaRecorder` API 的音频录制功能正常工作提供了重要的保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediarecorder/audio_track_recorder_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -85,8 +85,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -906,7 +908,4 @@ class AudioTrackRecorderTest : public testing::TestWithParam<ATRTestParams> {
 
   // Sometimes we may provide more input than necessary to the encoder, we track
   // this so we
-"""
-
-
 ```

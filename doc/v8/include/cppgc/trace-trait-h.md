@@ -149,15 +149,17 @@ class MyObject : public cppgc::GarbageCollected<MyObject> {
 
 `v8/include/cppgc/trace-trait.h` 是 V8 垃圾回收机制的关键组成部分。它定义了对象追踪的接口和机制，使得垃圾回收器能够理解如何遍历和扫描不同类型的 C++ 对象，从而正确地管理 JavaScript 对象的内存。如果它是 `.tq` 文件，则表示它是用 Torque 编写的，用于生成相关的 C++ 代码。理解 `TraceTrait` 对于理解 V8 的内存管理和避免相关的编程错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/cppgc/trace-trait.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/cppgc/trace-trait.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ struct TraceTraitImpl<T, true> {
 }  // namespace cppgc
 
 #endif  // INCLUDE_CPPGC_TRACE_TRAIT_H_
-
-"""
-
 ```

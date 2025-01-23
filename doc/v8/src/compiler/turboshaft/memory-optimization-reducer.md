@@ -113,11 +113,13 @@ const myPoints = createPoints(10);
 
 `memory-optimization-reducer.cc` 通过分析 Turboshaft 编译器的中间表示，识别可以进行内存优化的模式，例如连续的同类型对象分配，以及可以安全省略的写屏障操作。 这些优化提高了 JavaScript 代码的执行效率，减少了内存分配的开销，并降低了垃圾回收的压力。虽然 JavaScript 开发者不需要显式地调用这些优化，但它们是 V8 引擎性能的关键组成部分，使得 JavaScript 代码在底层能够更高效地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/memory-optimization-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -291,7 +293,4 @@ void MemoryAnalyzer::MergeCurrentStateIntoSuccessor(const Block* successor) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

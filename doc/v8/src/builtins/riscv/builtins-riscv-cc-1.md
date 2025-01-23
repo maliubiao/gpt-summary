@@ -117,7 +117,7 @@ Finally, the snippet shows the beginning of the `Generate_InterpreterEntryTrampo
 
 你提到的 `.tq` 文件是 V8 的 Torque 语言编写的源代码。Torque 是一种用于生成高效内置函数的领域特定语言。由于 `v8/src/builtins/riscv/builtins-riscv.cc` 是 `.cc` 文件，因此它不是 Torque 源代码，而是使用 C++ 和 RISC-V 汇编编写的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/riscv/builtins-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/riscv/builtins-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -125,9 +125,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
- static_cast<int>(interpreter::Bytecode::kDebugBreakExtraWide));
+### 源代码
+```cpp
+static_cast<int>(interpreter::Bytecode::kDebugBreakExtraWide));
   __ Branch(&process_bytecode, Ugreater, bytecode, Operand(3),
             Label::Distance::kNear);
   __ And(scratch2, bytecode, Operand(1));
@@ -983,7 +985,4 @@ static void Generate_InterpreterEnterBytecode(MacroAssembler* masm) {
   // Initialize the dispatch table register.
   __ li(kInterpreterDispatchTableRegister,
         ExternalReference::interpre
-"""
-
-
 ```

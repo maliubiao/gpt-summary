@@ -153,14 +153,16 @@ stack_trace: /* 如果需要，可能包含调用栈信息 */
 4. **CORS 配置错误导致资源加载失败:**  当从一个域名的网页尝试加载来自另一个域名的资源时，如果目标服务器没有正确配置 CORS 头部，浏览器会阻止资源加载，并在控制台输出 CORS 相关的错误信息。
    ```
    控制台输出: "Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at https://
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/frame_console.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Apple Inc. All rights reserved.
  *
@@ -322,7 +324,4 @@ void FrameConsole::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

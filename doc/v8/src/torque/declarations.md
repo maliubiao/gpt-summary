@@ -158,11 +158,13 @@ console.log(sum); // 15
 
 `declarations.cc` 是 Torque 编译器的核心组件，负责管理 Torque 语言中声明的各种实体。 这些声明最终会被用来生成 C++ 代码，而这些 C++ 代码是 V8 引擎实现 JavaScript 功能的基础。 因此，这个文件在 V8 引擎中扮演着至关重要的角色，它将高级的 Torque 声明映射到低级的 C++ 实现，从而驱动 JavaScript 的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/declarations.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -481,7 +483,4 @@ Macro* Declarations::DeclareOperator(const std::string& name, Macro* m) {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

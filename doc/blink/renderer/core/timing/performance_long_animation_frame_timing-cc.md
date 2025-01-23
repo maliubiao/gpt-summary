@@ -132,15 +132,17 @@ By following these steps, we can systematically understand the purpose, function
 
 **作为调试线索，这意味着当你在 Performance 面板或通过 JavaScript API 看到 `long-animation-frame` 类型的性能条目时，就意味着浏览器内部的这段 C++ 代码已经工作，并记录了相关的性能数据。** 你可以通过查看这些数据来分析是什么原因导致了该动画帧的耗时过长，例如，是样式计算耗时、布局耗时，还是执行了长时间的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/performance_long_animation_frame_timing.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ void PerformanceLongAnimationFrameTiming::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

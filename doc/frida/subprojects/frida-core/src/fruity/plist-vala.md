@@ -130,7 +130,7 @@ bplist00... (二进制数据)
    - 如果解析过程中抛出异常，查看异常信息，确定是文件格式错误还是数据类型不匹配等问题。
 
 这是第 1 部分的归纳，第 2 部分将继续分析剩余代码的功能。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/plist.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class Plist : PlistDict {
@@ -1441,7 +1443,4 @@ namespace Frida.Fruity {
 		}
 
 		publ
-"""
-
-
 ```

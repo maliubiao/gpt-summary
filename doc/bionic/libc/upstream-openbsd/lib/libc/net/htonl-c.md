@@ -357,7 +357,7 @@ sys.stdin.read()
 
 通过这种方式，你可以方便地观察 `htonl` 函数的调用情况，验证字节序转换是否正确。 你还可以添加更复杂的逻辑，例如修改输入参数或返回值，以进行更深入的调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/net/htonl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -368,8 +368,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: htonl.c,v 1.8 2024/04/15 14:30:48 naddy Exp $ */
 /*
  * Public domain.
@@ -385,7 +387,4 @@ htonl(uint32_t x)
 {
 	return htobe32(x);
 }
-
-"""
-
 ```

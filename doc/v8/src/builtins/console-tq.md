@@ -121,14 +121,16 @@ console.assert(0 > 1, { message: "Custom error object" }); // 断言为假，控
 
 总而言之，这个 Torque 代码片段揭示了 V8 引擎中 `console.assert` 的一个高效实现路径，它首先进行快速的布尔值检查，只有当断言失败时才调用更复杂的处理函数。理解这样的底层实现有助于我们更准确地理解和使用 JavaScript 的 `console` API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/console.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -152,7 +154,4 @@ javascript builtin FastConsoleAssert(
   }
 }
 }
-
-"""
-
 ```

@@ -150,14 +150,15 @@ console.log(nestedObj?.a?.d?.c); // undefined
 
 **总结:**  第 4 部分的 `bytecode-generator.cc` 代码负责将 JavaScript 中用于修改数据、控制异步操作、处理异常以及进行属性访问和函数调用的核心语法结构翻译成 V8 虚拟机可以执行的低级指令，是 JavaScript 代码执行的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-
-    Assignment* default_init = (*target)->AsAssignment();
+### 源代码
+```
+Assignment* default_init = (*target)->AsAssignment();
     DCHECK_EQ(default_init->op(), Token::kAssign);
     default_value = default_init->value();
     *target = default_init->target();
@@ -1792,8 +1793,5 @@ void BytecodeGenerator::VisitCallSuper(Call* expr) {
 }
 
 void BytecodeGenerator::BuildInstanceInitializationAfterSuperCall(
-    Register this_function, Register 
-"""
-
-
+    Register this_function, Register
 ```

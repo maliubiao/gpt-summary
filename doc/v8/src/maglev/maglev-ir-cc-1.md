@@ -229,7 +229,7 @@ By following these steps, we can arrive at the comprehensive summary provided in
 
 总的来说，`v8/src/maglev/maglev-ir.cc` 的这一部分（第 2 部分）主要负责定义和实现 Maglev IR 中的**常量表示、栈操作、函数参数和返回值处理、控制流、`arguments` 对象、数组分配以及各种类型检查和转换相关的节点**。 这些节点是 Maglev 编译器构建中间表示的基础构建块，用于对 JavaScript 代码进行优化和最终生成机器码。它展示了 Maglev IR 如何细粒度地表示 JavaScript 的各种语言特性和运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-ir.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-ir.cc以.tq结尾，那它是个v8 torque源代码，
@@ -237,8 +237,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ler* masm, DoubleRegister reg) {
   DCHECK(is_spilled());
   DCHECK(use_double_register());
@@ -1103,7 +1105,4 @@ void ChangeUint32ToFloat64::SetValueLocationConstraints() {
 void ChangeUint32ToFloat64::GenerateCode(MaglevAssembler* masm,
                                          const ProcessingState& state) {
   __ Uint32ToDouble(ToDoubleRegister(result()),
-"""
-
-
 ```

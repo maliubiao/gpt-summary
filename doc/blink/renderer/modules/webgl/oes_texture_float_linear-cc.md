@@ -190,15 +190,17 @@ By following these steps, I can systematically analyze the code, understand its 
 
 `blink/renderer/modules/webgl/oes_texture_float_linear.cc` 文件是 Blink 引擎中实现 WebGL `OES_texture_float_linear` 扩展的关键部分。它允许 WebGL 应用程序对浮点数纹理进行线性插值，从而提高渲染质量。 理解这个文件的功能有助于开发者更好地利用 WebGL 的高级特性，并有助于调试与浮点数纹理渲染相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/oes_texture_float_linear.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -250,7 +252,4 @@ const char* OESTextureFloatLinear::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

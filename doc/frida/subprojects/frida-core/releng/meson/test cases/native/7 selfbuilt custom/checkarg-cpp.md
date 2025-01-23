@@ -146,7 +146,7 @@ By following these steps and iteratively refining the analysis, I can generate a
 
 `checkarg.cpp` 是一个非常简单的 C++ 程序，用于测试程序是否接收到了预期的命令行参数数量。虽然代码本身简单，但它在软件开发和测试中扮演着重要的角色，尤其是在确保构建系统和程序运行时环境正确传递参数方面。对于 Frida 这样的复杂工具，确保其核心组件能够正确处理参数至关重要。 开发者查看此文件通常是为了排查与构建、测试或参数传递相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/native/7 selfbuilt custom/checkarg.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,15 +154,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <cassert>
 
 int main(int argc, char *[]) {
     assert(argc == 2);
     return 0;
 }
-
-"""
-
 ```

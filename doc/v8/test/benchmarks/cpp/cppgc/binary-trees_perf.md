@@ -85,9 +85,12 @@ By following these steps, I could systematically dissect the code and arrive at 
 
 这个文件通常用于评估 V8 的 cppgc 在处理复杂对象结构时的性能，以及比较不同垃圾回收策略或优化的效果。
 
-Prompt: ```这是目录为v8/test/benchmarks/cpp/cppgc/binary-trees_perf.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/benchmarks/cpp/cppgc/binary-trees_perf.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,6 +196,4 @@ BENCHMARK_F(BinaryTrees, V1)(benchmark::State& st) {
     RunBinaryTrees(heap());
   }
 }
-
-"""
 ```

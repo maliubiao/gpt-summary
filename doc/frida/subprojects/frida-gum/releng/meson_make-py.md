@@ -166,7 +166,7 @@ python ./subprojects/frida-gum/releng/meson_make.py all
 
 总而言之，`frida/subprojects/frida-gum/releng/meson_make.py` 脚本是 Frida 构建流程中的一个重要环节，它简化了与 Meson 构建系统的交互，使得开发者能够更方便地构建 `frida-gum` 组件，而 `frida-gum` 是 Frida 进行动态 instrumentation 的核心。理解这个脚本的功能有助于理解 Frida 的构建过程，并在遇到构建问题时进行有效的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson_make.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import argparse
 import os
 from pathlib import Path
@@ -307,7 +309,4 @@ def distclean(sourcedir: Path, builddir: Path):
             shutil.rmtree(item)
         except:
             pass
-
-"""
-
 ```

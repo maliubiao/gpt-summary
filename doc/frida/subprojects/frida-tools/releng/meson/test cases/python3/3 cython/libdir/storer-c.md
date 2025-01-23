@@ -214,7 +214,7 @@ Value: 20
 
 总而言之，`storer.c` 提供了一个简单的内存数据存储机制，它在逆向工程中可以作为理解更复杂数据结构的基础。通过 Frida 这样的工具，逆向工程师可以动态地观察和修改这种结构的行为，从而深入理解程序的运行逻辑。而理解 `storer.c` 这样的基础代码，有助于用户更好地理解 Frida 的工作原理以及如何利用它进行高效的调试和逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/python3/3 cython/libdir/storer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -222,8 +222,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"storer.h"
 #include<stdlib.h>
 
@@ -248,7 +250,4 @@ int storer_get_value(Storer *s) {
 void storer_set_value(Storer *s, int v) {
     s->value = v;
 }
-
-"""
-
 ```

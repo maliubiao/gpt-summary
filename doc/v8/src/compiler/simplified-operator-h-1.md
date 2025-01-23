@@ -325,7 +325,7 @@ By following these steps, I could effectively analyze the C++ header file and pr
 
 **简而言之，`simplified-operator.h` 定义了 V8 编译器理解和优化 JavaScript 代码所使用的“语言”或“指令集”。** 它是连接 JavaScript 语义和底层机器执行的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-operator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/simplified-operator.h以.tq结尾，那它是个v8 torque源代码，
@@ -333,8 +333,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 oncat();
   const Operator* StringEqual();
   const Operator* StringLessThan();
@@ -794,8 +796,4 @@ class FastApiCallNode final : public SimplifiedNodeWrapperBase {
 }  // namespace v8
 
 #endif  // V8_COMPILER_SIMPLIFIED_OPERATOR_H_
-
-"""
-
-
 ```

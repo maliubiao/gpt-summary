@@ -270,7 +270,7 @@ sys.stdin.read()
 
 你可以类似地 Hook 其他的浮点数分类和判断函数，例如 `__fpclassifyd` 或 `__isinf`，以调试 Android Framework 或 NDK 应用中与浮点数处理相关的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/fpclassify.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -281,8 +281,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  * All rights reserved.
@@ -389,7 +391,4 @@ __strong_alias(isinfl, __isinfl);
 __strong_alias(isnanl, __isnanl);
 __strong_alias(isfinitel, __isfinitel);
 __strong_alias(isnormall, __isnormall);
-
-"""
-
 ```

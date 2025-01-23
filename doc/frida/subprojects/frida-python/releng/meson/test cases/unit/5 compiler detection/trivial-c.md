@@ -132,7 +132,7 @@ Initially, I might focus too much on the triviality of the C code itself. The ke
 
 总而言之，虽然 `trivial.c` 本身代码很简单，但它在 Frida 项目中扮演着验证构建环境基础功能的重要角色，对于确保 Frida 能够成功构建和运行至关重要，并能作为用户排查安装和构建问题的一个线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/5 compiler detection/trivial.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,15 +140,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
     printf("Trivial test is working.\n");
     return 0;
 }
-
-"""
-
 ```

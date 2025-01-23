@@ -144,7 +144,7 @@ Throughout this process, there might be some back-and-forth. For example, initia
 
 这部分测试主要集中在 **`EventHandlerRegistry` 对于 touch 事件处理的正确性和健壮性**。它验证了在 document 和 element 上添加、移除、重复添加、移除所有 touch 事件 handler 的行为，以及在包含 iframe 的复杂 DOM 结构中，touch 事件 handler 的管理是否正确。通过断言 `FrameWidgetHost` 的调用计数，间接验证了渲染流程中是否正确通知了 touch 事件 handler 的存在与否。这部分是 `web_view_test.cc` 中关于事件处理测试的一个重要组成部分，特别关注移动端和触摸交互场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_view_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ame()->GetEventHandlerRegistry();
   registry->DidAddEventHandler(*document, kTouchEvent);
   base::RunLoop().RunUntilIdle();
@@ -978,8 +980,4 @@ TEST_F(WebViewTest, SubframeBeforeUnloadUseCounter) {
         "addEventListener('beforeunload', function() {});"));
     To<WebLocalFrameImpl>(
         web_view->MainFrame()->FirstChild()->ToWebLocalFrame())
-       
-"""
-
-
 ```

@@ -179,7 +179,7 @@ void StoreArrayBufferElement(V<Base> object, const ElementAccess& access,
 
 总而言之，这部分代码提供了构建 Turboshaft 编译器生成机器码所需的基本 building blocks，专注于内存管理、类型化访问、栈操作和控制流选择等关键功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -187,8 +187,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ct, access, index, value, true);
   }
   template <typename Base>
@@ -891,7 +893,4 @@ ct, access, index, value, true);
     return CallRuntimeImpl<typename Descriptor::result_t>(
         isolate, Descriptor::kFunction,
         Descriptor::Create(Asm().output
-"""
-
-
 ```

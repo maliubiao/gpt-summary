@@ -234,7 +234,7 @@ if (Process.platform === 'android') {
 
 总结一下，`bionic/tests/android_get_device_api_level.cpp` 是一个简单的测试用例，用于验证 `android_get_device_api_level()` 函数的基本功能。虽然测试代码本身没有直接使用 libc 函数或涉及 dynamic linker 的复杂操作，但它测试的函数是 Bionic 库的关键组成部分，对于 Android 应用程序的兼容性和功能实现至关重要。理解这个测试用例有助于我们更好地理解 Android 系统中 API Level 的概念以及如何在 Native 层获取它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/android_get_device_api_level.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -245,8 +245,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -287,7 +289,4 @@ TEST(android_get_device_api_level, smoke) {
   ASSERT_GE(android_get_device_api_level(), 29);
 #endif
 }
-
-"""
-
 ```

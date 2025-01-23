@@ -173,7 +173,7 @@ func (c *Counter) Generate(out []byte, additional *[SeedSize]byte) {
 
 总而言之，这段代码是 `crypto/internal/fips140/drbg` 包中 `Counter` DRBG 实现的一个测试用例，用于验证其生成随机位的功能是否符合预期。 它展示了初始化、重新播种和生成随机位等核心操作，并使用预定义的输入和输出来进行断言。 理解这段代码有助于理解如何正确使用 `Counter` DRBG，并避免一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140test/ctrdrbg_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -181,8 +181,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -223,9 +225,4 @@ func TestCounterDRBG(t *testing.T) {
 		t.Errorf("unexpected output:\n%x\n%x", buf, returnedBits)
 	}
 }
-
-"""
-
-
-
 ```

@@ -237,7 +237,7 @@ Object.defineProperty(proxy, 'configurableProp', { configurable: true }); // Typ
 
 请记住，这只是 `objects.cc` 的一部分，整个文件会包含更多关于 V8 对象系统的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -245,8 +245,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 } else if (!IsNumber(*value) && !IsUndefined(*value, isolate)) {
       ASSIGN_RETURN_ON_EXCEPTION_VALUE(isolate, to_assign,
                                        Object::ToNumber(isolate, value),
@@ -1047,7 +1049,4 @@ Maybe<bool> JSProxy::SetPrivateSymbol(Isolate* isolate, Handle<JSProxy> proxy,
                                       PropertyDescriptor* desc,
                                       Maybe<ShouldThrow> should_throw) {
   // Despite the g
-"""
-
-
 ```

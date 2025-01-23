@@ -180,15 +180,17 @@ func main() {
 
 总而言之， `go/src/cmd/vendor/golang.org/x/sys/plan9/env_plan9.go` 提供了 Go 程序在 Plan 9 系统上操作环境变量的底层能力，它是 Go 语言跨平台环境变量处理机制的一部分。理解其功能和潜在的陷阱，可以帮助开发者编写更健壮的 Plan 9 Go 应用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/plan9/env_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -220,9 +222,4 @@ func Environ() []string {
 func Unsetenv(key string) error {
 	return syscall.Unsetenv(key)
 }
-
-"""
-
-
-
 ```

@@ -178,15 +178,17 @@ By following these steps, we can systematically analyze the `NamedNodeMap.cc` fi
 
 总而言之，`NamedNodeMap.cc` 是 Blink 引擎中负责管理 HTML 元素属性的核心组件，它连接了 HTML 的静态结构和 JavaScript 的动态操作，并为 CSS 样式的应用提供了基础数据。理解它的功能对于深入理解浏览器的工作原理和调试前端问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/named_node_map.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -324,7 +326,4 @@ void NamedNodeMap::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -145,7 +145,7 @@ stg r3, 8(r2)  // 假设 StoreTaggedField 最终生成的是 stg 指令
 
 `v8/src/compiler/backend/s390/code-generator-s390.cc` 是 V8 编译器中至关重要的一个组件，它专注于将高级的中间表示转换为可以在 IBM System/390 架构上运行的底层机器代码。它处理各种指令、管理函数调用栈、并支持 WebAssembly 等特性。尽管用户无法直接操作这些代码，但它却是 JavaScript 代码高效执行的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/code-generator-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/s390/code-generator-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -153,8 +153,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ore32Lane: {
       STORE_LANE(32, 3 - i.InputUint8(1));
       break;
@@ -914,8 +916,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

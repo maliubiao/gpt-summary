@@ -244,7 +244,7 @@ if *millionFlag {
 
 总而言之，这段测试代码覆盖了 ML-KEM 的关键功能，并确保其在各种情况下的正确性和健壮性，包括正常流程、错误处理和性能基准。理解这些测试用例有助于更好地理解和使用 `crypto/mlkem` 包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/mlkem/mlkem_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -252,8 +252,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -587,9 +589,4 @@ func TestConstantSizes(t *testing.T) {
 		t.Errorf("EncapsulationKeySize1024 mismatch: got %d, want %d", EncapsulationKeySize1024, mlkem.EncapsulationKeySize1024)
 	}
 }
-
-"""
-
-
-
 ```

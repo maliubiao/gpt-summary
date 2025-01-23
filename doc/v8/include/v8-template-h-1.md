@@ -220,7 +220,7 @@ console.log(myObject.anotherProp); // 如果没有其他处理，可能返回 un
 
 这些类是 V8 引擎暴露给 C++ 嵌入器的强大工具，使得开发者能够创建具有自定义行为的 JavaScript 对象，从而实现 JavaScript 和 C++ 的无缝集成，构建高性能的应用程序和扩展。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-template.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-template.h以.tq结尾，那它是个v8 torque源代码，
@@ -228,8 +228,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ags;
 };
 
@@ -540,8 +542,4 @@ Signature* Signature::Cast(Data* data) {
 }  // namespace v8
 
 #endif  // INCLUDE_V8_TEMPLATE_H_
-
-"""
-
-
 ```

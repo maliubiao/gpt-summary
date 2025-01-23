@@ -163,7 +163,7 @@ This code is fundamental to dynamic instrumentation, a core technique in reverse
 
 This detailed breakdown provides a comprehensive understanding of the functionalities within the `gumv8interceptor.cpp` file and its crucial role in Frida's dynamic instrumentation capabilities.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8interceptor.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 LL);
   _gum_v8_interceptor_release_invocation_context (module, jic);
 }
@@ -706,8 +708,4 @@ gum_v8_interceptor_release_invocation_return_value (
   else
     gum_v8_invocation_return_value_release_persistent (retval);
 }
-
-"""
-
-
 ```

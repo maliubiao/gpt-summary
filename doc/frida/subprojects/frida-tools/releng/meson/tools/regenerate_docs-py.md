@@ -161,7 +161,7 @@ ValueError: Output directory value is not set
 
 总而言之，`regenerate_docs.py` 是 Frida 构建系统中负责生成文档的一个重要工具。它通过与 Meson 交互并解析其输出，自动化了文档的生成过程，确保文档与当前的构建配置保持同步。理解这个脚本的功能可以帮助开发人员理解 Frida 的构建过程和可用的配置选项，也有助于逆向工程师理解 Frida 的一些底层特性和依赖关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/tools/regenerate_docs.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
@@ -342,7 +344,4 @@ if __name__ == '__main__':
 
     regenerate_docs(output_dir=args.output_dir,
                     dummy_output_file=args.dummy_output_file)
-
-"""
-
 ```

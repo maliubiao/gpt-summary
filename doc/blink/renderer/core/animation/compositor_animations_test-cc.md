@@ -133,15 +133,17 @@ By following these steps, I can effectively analyze the code snippet and provide
 
 总而言之，这部分代码是 `compositor_animations_test.cc` 文件的开始，它搭建了测试框架和基础工具，并开始测试 `CompositorAnimations` 的核心功能，即判断动画是否可以进行合成优化。它与 Web 开发中的 CSS 动画息息相关，验证了引擎对于不同动画场景的处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/compositor_animations_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Google Inc. All rights reserved.
  *
@@ -914,7 +916,4 @@ TEST_P(AnimationCompositorAnimationsTest,
   base::AutoReset<MockCSSPaintImageGenerator*> scoped_override_generator(
       &g_override_generator, mock_generator);
   base::AutoReset<CSSPaintImageGener
-"""
-
-
 ```

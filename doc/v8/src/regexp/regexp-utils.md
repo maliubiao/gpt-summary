@@ -151,11 +151,13 @@ while ((match = regex.exec(str)) !== null) {
 
 `v8/src/regexp/regexp-utils.cc` 文件是 V8 引擎中实现 JavaScript 正则表达式功能的核心组成部分。它提供了底层的 C++ 函数，用于执行正则表达式匹配、管理捕获组、处理 `lastIndex` 属性以及进行性能优化。理解这个文件有助于深入了解 JavaScript 正则表达式在 V8 引擎中的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -381,7 +383,4 @@ MaybeHandle<Object> RegExpUtils::SetAdvancedStringIndex(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

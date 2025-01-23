@@ -274,7 +274,7 @@ sys.stdin.read()
 
 请注意，实际的调用过程可能会更复杂，涉及多个系统服务和库。这个 Frida 示例只是一个起点，你需要根据具体的调试目标进行调整。  另外，直接 hook `ioctl` 可能会产生大量的输出，需要仔细过滤才能找到你感兴趣的信息。 你可能需要 hook 更高层次的函数，例如 `SurfaceFlinger` 中获取显示参数的特定方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/screen_info.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -285,8 +285,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -351,7 +353,4 @@ struct screen_info {
 #define VIDEO_CAPABILITY_SKIP_QUIRKS (1 << 0)
 #define VIDEO_CAPABILITY_64BIT_BASE (1 << 1)
 #endif
-
-"""
-
 ```

@@ -118,15 +118,17 @@ Self-Correction/Refinement during the thought process:
 
 这部分 `column_layout_algorithm_test.cc` 文件的主要功能是**详尽地测试 Blink 引擎在处理 CSS 分列布局时，关于强制断点和新的格式化上下文的各种场景，并验证其最小和最大尺寸的计算逻辑**。 它旨在确保引擎能够正确地解析和应用相关的 CSS 属性，并生成符合预期的布局结果。 通过这些测试，可以有效地发现和修复引擎在处理复杂分列布局时的潜在 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/column_layout_algorithm_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ></div>
         <div style="border:10px solid;">
           <div style="height:10px;"></div>
@@ -1257,7 +1259,4 @@ TEST_F(ColumnLayoutAlgorithmTest, ColumnBalancingLinesAvoidBreakInside) {
   String dump = DumpFragmentTree(GetElementById("container"));
   String expectation = R"DUMP(.:: LayoutNG Physical Fragment Tree ::.
   offset:unplace
-"""
-
-
 ```

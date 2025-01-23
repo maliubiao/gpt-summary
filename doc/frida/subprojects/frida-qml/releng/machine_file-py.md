@@ -222,7 +222,7 @@ log_level = 2 if ${is_debug} else 1
 
 总而言之，`machine_file.py` 是 Frida 构建系统中一个关键的辅助工具，它负责将目标机器的配置信息加载到构建系统中，从而确保 Frida 能够正确地编译和运行在目标设备上。理解其功能有助于理解 Frida 的构建流程和排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/machine_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -230,8 +230,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from configparser import ConfigParser
 from pathlib import Path
 from typing import Sequence, Union
@@ -276,7 +278,4 @@ def strv_to_meson(strv: Sequence[str]) -> str:
 
 def str_to_meson(s: str) -> str:
     return "'" + s + "'"
-
-"""
-
 ```

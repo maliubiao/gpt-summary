@@ -119,7 +119,7 @@ This iterative process of scanning, deeper analysis, connecting to the prompt, o
 
 `frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/xcodebackend.py` 文件的核心功能是将 Frida 的 Meson 构建描述转换为 Xcode 项目文件。它负责创建 Xcode 项目的各个组成部分，包括项目设置、Target 定义、构建阶段、构建配置等，确保 Frida 可以在 Xcode IDE 中进行构建、调试和管理。这个后端使得 macOS 开发者能够利用 Xcode 的集成开发环境来开发和研究 Frida，同时也方便了逆向工程师使用 Xcode 的工具来分析和修改 Frida 的代码。它涉及了构建系统的核心概念，以及不同操作系统平台上的二进制文件处理知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/xcodebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ldPhase')
             phase_dict.add_item('buildActionMask', 2147483647)
             file_arr = PbxArray()
@@ -573,8 +575,4 @@ ldPhase')
 
     def generate_suffix(self, pbxdict: PbxDict) -> None:
         pbxdict.add_item('rootObject', self.project_uid, 'Project object')
-
-"""
-
-
 ```

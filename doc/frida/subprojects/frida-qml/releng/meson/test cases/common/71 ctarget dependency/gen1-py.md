@@ -118,7 +118,7 @@ Here's a breakdown of the thinking process to analyze the Python script and gene
 
 总而言之，`gen1.py` 是一个辅助性的脚本，它通过简单的文件复制功能，在 Frida 的测试环境中扮演着管理依赖关系的角色，确保某些文件在其他测试脚本执行前已经就绪。虽然它本身不涉及复杂的逆向技术，但它是 Frida 测试框架的一部分，为确保 Frida 功能的正确性提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/71 ctarget dependency/gen1.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import time, sys
@@ -140,7 +142,4 @@ with open(sys.argv[1]) as f:
     contents = f.read()
 with open(sys.argv[2], 'w') as f:
     f.write(contents)
-
-"""
-
 ```

@@ -112,7 +112,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `test-agent.vala` 是 Frida 动态插桩工具的核心测试文件，涵盖了脚本加载、消息接收、性能测试、以及特定平台的启动场景和线程挂起感知等功能。通过 LLDB 调试和合理的假设输入与输出，用户可以更好地理解和调试这些功能。同时，用户需要注意常见的错误，如脚本加载失败、消息接收超时、线程挂起与恢复顺序错误等。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/test-agent.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida.AgentTest {
 	public static void add_tests () {
 		GLib.Test.add_func ("/Agent/Script/load-and-receive-messages", () => {
@@ -739,7 +741,4 @@ Interceptor.attach(Module.getExportByName('libsystem_kernel.dylib', 'open'), () 
 		}
 	}
 }
-
-"""
-
 ```

@@ -522,7 +522,7 @@ sys.stdin.read()
 **调试步骤:**
 
 1. **安装
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/fdsan_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -533,8 +533,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2018 The Android Open Source Project
  *
@@ -757,7 +759,4 @@ TEST_F(fdsan, vfork) {
   ASSERT_TRUE(WIFEXITED(status));
   ASSERT_EQ(0, WEXITSTATUS(status));
 }
-
-"""
-
 ```

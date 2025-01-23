@@ -161,15 +161,17 @@ Feature Flags 是一种软件开发实践，允许在不重新编译代码的情
 
 `net/base/features.cc` 文件是 Chromium 网络栈的核心组成部分，它定义了大量的特性开关，用于控制各种网络功能的行为。这些特性开关直接或间接地影响着 JavaScript 的网络功能，了解它们对于理解和调试 Chromium 的网络行为至关重要。用户虽然不直接操作这些开关，但他们的浏览体验会受到这些开关状态的影响。对于开发者来说，合理地使用和管理特性开关是保证软件质量和灵活性的重要手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/features.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -814,7 +816,4 @@ BASE_FEATURE(kIgnoreHSTSForLocalhost,
              base::FEATURE_ENABLED_BY_DEFAULT);
 
 }  // namespace net::features
-
-"""
-
 ```

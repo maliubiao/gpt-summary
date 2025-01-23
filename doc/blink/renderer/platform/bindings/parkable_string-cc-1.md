@@ -132,15 +132,17 @@ Throughout this process, I paid attention to the specific details of the code, s
 
 这段代码体现了 `ParkableString` 优化的核心思想：**延迟加载，按需恢复，以及利用后台线程执行耗时操作，避免阻塞主线程。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/parkable_string.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 td::move(compressed);
   } else {
     metadata_->compression_failed_ = true;
@@ -302,8 +304,4 @@ size_t ParkableString::CharactersSizeInBytes() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

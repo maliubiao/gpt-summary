@@ -163,7 +163,7 @@ World!
 
 通过以上步骤，用户可以逐步追踪到 `catfiles.py` 的执行，并分析其在特定测试场景下失败的原因，例如测试用例提供的输入文件不正确，或者测试框架传递的参数有误等。  这个脚本本身很基础，但它作为测试环境的一部分，其正确性也是保证整个 Frida 功能可靠性的环节之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/40 custom target plainname many inputs/catfiles.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -182,7 +184,4 @@ with open(out, 'wb') as o:
     for infile in sys.argv[1:-1]:
         with open(infile, 'rb') as f:
             o.write(f.read())
-
-"""
-
 ```

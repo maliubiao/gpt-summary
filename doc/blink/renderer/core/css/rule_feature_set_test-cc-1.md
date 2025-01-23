@@ -160,7 +160,7 @@ The tests also examine scenarios related to self-invalidation and the replacemen
 **总结一下它的功能 (本部分)：**
 
 这部分 `rule_feature_set_test.cc` 文件的主要功能是**针对各种 CSS 选择器（尤其是 `:webkit-any`, 兄弟选择器, ID/属性选择器组合, 伪类, `:host`, `:host-context`, `:is`, `:where`, `:nth-child`, `::part`, `:has`）及其组合，验证 Blink 引擎在解析 CSS 规则时，能否正确地识别出这些选择器可能导致的元素失效，并将其记录在 `InvalidationLists` 中。**  这些测试确保了当这些 CSS 特性被使用时，渲染引擎能够准确地追踪需要更新的元素，从而保证页面的正确渲染和性能。
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/rule_feature_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 orPreMatch::kMayMatch,
             CollectFeatures(".a :-webkit-any(#b, #c)"));
 
@@ -989,7 +991,4 @@ TEST_F(RuleFeatureSetTest, invalidatesHasOnShadowHostAtNonSubjectPosition) {
     EXPECT_TRUE(HasClassInvalidation("b", invalidation_lists.descendants));
     EXPECT_TRUE(invalidation_lists.descendants[0]->TreeBoundaryCrossing());
     EXPECT_TRUE(HasNoInvalidation(invalidati
-"""
-
-
 ```

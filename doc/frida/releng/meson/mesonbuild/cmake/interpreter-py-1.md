@@ -93,7 +93,7 @@ myexe_tgt = executable('myexe', myexe_src, link_with : mylib_tgt, include_direct
 
 当调试与 CMake 子项目集成相关的问题时，可以查看 Meson 的构建日志，寻找与 `CMakeInterpreter` 相关的输出，例如配置信息、CMake 运行的命令、解析出的目标信息等。如果构建失败，查看 CMake 的错误信息 (`self.cmake_stderr`) 或 Meson 抛出的异常信息可以帮助定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/cmake/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 mlog.bold(str(self.conflict_map)))
         mlog.log('  -- working_dir:  ', mlog.bold(str(self.working_dir)))
         mlog.log('  -- depends_raw:  ', mlog.bold(str(self.depends_raw)))
@@ -614,8 +616,4 @@ class CMakeInterpreter:
 
     def target_list(self) -> T.List[str]:
         return list(self.internal_name_map.keys())
-
-"""
-
-
 ```

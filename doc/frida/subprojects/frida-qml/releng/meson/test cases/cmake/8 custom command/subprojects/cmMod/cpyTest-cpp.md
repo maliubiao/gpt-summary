@@ -139,7 +139,7 @@ Initially, I might have focused too much on the simplicity of the C++ code itsel
 
 总而言之，用户到达 `cpyTest.cpp` 可能是因为他们在调试 Frida QML 相关的字符串处理问题，并且通过查看测试用例的代码来理解相关功能的实现细节和排查问题。文件路径中的 `meson` 和 `cmake` 表明这与构建系统和测试用例的配置有关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/cpyTest.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cpyTest.hpp"
 #include "cpyTest2.hpp"
 #include "cpyTest3.hpp"
@@ -158,7 +160,4 @@ Prompt:
 std::string getStrCpyTest() {
   return CPY_TEST_STR_2 CPY_TEST_STR_3 CPY_TEST_STR_4 CPY_TEST_STR_5;
 }
-
-"""
-
 ```

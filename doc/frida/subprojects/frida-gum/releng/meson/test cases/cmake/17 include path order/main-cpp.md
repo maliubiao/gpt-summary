@@ -121,7 +121,7 @@ Finally, organize the analysis into clear sections, addressing each point in the
 
 总而言之，虽然 `main.cpp` 代码本身非常简单，但它作为 Frida 构建系统测试用例的一部分，承载着验证编译器头文件搜索路径顺序是否正确的重要任务。这对于确保 Frida 能够正确构建并处理各种目标程序依赖关系至关重要，而这些依赖关系在逆向工程中是不可避免的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/17 include path order/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 
@@ -141,7 +143,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

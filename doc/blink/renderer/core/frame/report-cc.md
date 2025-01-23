@@ -181,14 +181,16 @@ By following these steps, we can systematically analyze the provided code snippe
 
 总而言之，`report.cc` 文件在 Blink 渲染引擎中扮演着重要的角色，它负责生成和管理各种类型的报告，这些报告帮助开发者了解浏览器内部发生的重要事件，并及时发现和修复潜在的问题，从而提升 Web 应用的安全性、性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/report.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -229,7 +231,4 @@ bool Report::ShouldSendReport() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

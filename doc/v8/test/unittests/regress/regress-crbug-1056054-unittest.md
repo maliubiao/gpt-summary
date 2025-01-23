@@ -70,11 +70,13 @@ C++ 测试用例通过直接操作 V8 内部的数据结构（如 `GlobalDiction
 
 因此，这个 C++ 单元测试本质上是在验证 V8 引擎在处理 JavaScript 中对全局对象添加属性操作时，在特定边缘情况下（枚举索引接近最大值）的健壮性和正确性。  如果 Chromium bug 1056054 描述的问题存在，那么在执行此 C++ 测试时可能会触发错误。修复该 bug 后，这个测试应该能够顺利通过，证明问题已解决。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/regress/regress-crbug-1056054-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -101,7 +103,4 @@ TEST_F(EnumIndexOverflowTest, GlobalObject) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

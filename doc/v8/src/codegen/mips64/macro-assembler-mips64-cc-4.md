@@ -167,7 +167,7 @@ void MacroAssembler::JumpIfIsInRange(Register value, unsigned lower_limit,
 
 This portion of `v8/src/codegen/mips64/macro-assembler-mips64.cc` provides the building blocks for generating MIPS64 assembly code within the V8 engine. It offers abstractions for common tasks like loading constants, controlling program flow (jumps, calls, branches), managing the stack, handling exceptions, supporting floating-point operations, and, crucially, implementing the complex logic required for invoking JavaScript functions and interacting with the V8 runtime environment. It's a fundamental component in enabling the execution of JavaScript code on MIPS64 architectures.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/macro-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/macro-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,9 +175,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
-                 RootRegisterOffsetForExternalReferenceTableEntry(
+### 源代码
+```cpp
+RootRegisterOffsetForExternalReferenceTableEntry(
                                    isolate(), reference)));
         return MemOperand(scratch, 0);
       }
@@ -1193,7 +1195,4 @@ void MacroAssembler::CallRuntime(const Runtime::Function* f,
 void MacroAssembler::TailCallRuntime(Runtime::FunctionId fid) {
   ASM_CODE_COMMENT(this);
   cons
-"""
-
-
 ```

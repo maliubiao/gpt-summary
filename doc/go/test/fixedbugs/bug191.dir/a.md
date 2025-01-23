@@ -162,15 +162,17 @@ func main() {
 
 在这个例子中，尽管 `a.T` 和 `int` 底层是相同的，但在函数参数类型检查时，Go 编译器仍然会区分它们。因此，在将 `a.T` 类型的值传递给期望 `int` 类型参数的函数，或反之亦然时，可能需要进行显式类型转换。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug191.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -184,10 +186,4 @@ func init() {
 }
 
 type T int;
-
-
-"""
-
-
-
 ```

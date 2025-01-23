@@ -184,14 +184,16 @@ By following this iterative process of analysis, inference, and refinement, you 
 
 总而言之，`css_image_list_interpolation_type.cc` 是 Blink 引擎中实现 CSS 图像列表动画和过渡的核心组件，它负责将不同的图像列表值转换为可插值的格式，计算中间状态，并在动画或过渡结束后将结果应用到元素的样式中。理解它的功能有助于开发者更好地利用 CSS 动画和过渡创建丰富的用户界面效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_image_list_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -387,7 +389,4 @@ void CSSImageListInterpolationType::ApplyStandardPropertyValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

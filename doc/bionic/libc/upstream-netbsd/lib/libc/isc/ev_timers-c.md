@@ -321,7 +321,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，你可以在目标应用程序调用 `evSetTimer` 时，在控制台上看到相关的调用信息，从而帮助你调试和理解定时器的使用情况。你可以类似地 hook 其他定时器相关的函数，例如 `evClearTimer` 或 `evResetTimer`。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/lib/libc/isc/ev_timers.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -332,8 +332,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: ev_timers.c,v 1.11 2012/03/21 00:34:54 christos Exp $	*/
 
 /*
@@ -853,7 +855,4 @@ idle_timeout(evContext opaqueCtx,
 #endif
 
 /*! \file */
-
-"""
-
 ```

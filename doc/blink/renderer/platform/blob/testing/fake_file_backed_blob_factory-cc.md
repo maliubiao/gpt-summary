@@ -192,14 +192,16 @@ factory.RegisterBlobSync(std::move(receiver), uuid, contentType, std::move(file)
 
 总而言之，`FakeFileBackedBlobFactory` 是一个用于测试的工具，它通过模拟文件支持的 Blob 的创建来简化和隔离涉及 Blob 对象的测试。理解其局限性（例如，它不进行实际的文件操作）以及正确处理其异步性对于编写可靠的测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/blob/testing/fake_file_backed_blob_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -253,7 +255,4 @@ void FakeFileBackedBlobFactory::RegisterBlobSync(
 }
 
 }  // namespace blink
-
-"""
-
 ```

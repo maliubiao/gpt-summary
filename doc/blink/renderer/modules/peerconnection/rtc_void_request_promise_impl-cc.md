@@ -167,15 +167,17 @@ This iterative thought process, starting with high-level understanding and gradu
 
 总而言之，`rtc_void_request_promise_impl.cc` 是 Blink 引擎中用于管理特定类型的 WebRTC 异步操作结果的关键组件，它将 C++ 的处理结果桥接到 JavaScript 的 Promise 机制，使得开发者可以使用 Promise 来处理这些操作的成功或失败。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_void_request_promise_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ void RTCVoidRequestPromiseImpl::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -128,14 +128,16 @@ Read through the explanation to ensure clarity, accuracy, and completeness. Chec
 
 `blink/common/scheme_registry.cc` 是 Blink 引擎中一个重要的组件，它负责管理 URL 扩展协议的注册表。这个注册表影响着 Blink 如何解析和处理各种 URL，并直接关联到 JavaScript 和 HTML 等 Web 技术的功能。虽然普通 Web 开发者不直接操作这个文件，但理解其功能有助于理解浏览器如何处理自定义的 URL 协议。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/scheme_registry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ bool CommonSchemeRegistry::IsExtensionScheme(const std::string& scheme) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -138,14 +138,16 @@ This structured approach allows for a comprehensive understanding of the code's 
 
 `css_font_style_interpolation_type.cc` 文件在 Chromium Blink 引擎中扮演着关键角色，它负责确保 CSS `font-style` 属性的动画和过渡效果能够平滑、正确地呈现。它处理了各种 CSS 值、特殊关键字以及继承情况，并且通过内部的数值转换和插值计算，实现了视觉上的平滑过渡。同时，它也考虑了用户可能遇到的使用错误，并在一定程度上进行了处理或限制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_font_style_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ void CSSFontStyleInterpolationType::ApplyStandardPropertyValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

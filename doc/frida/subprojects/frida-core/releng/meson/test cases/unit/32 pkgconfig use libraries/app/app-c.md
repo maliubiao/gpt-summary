@@ -161,7 +161,7 @@ if (libb) {
 
 尽管 `app.c` 文件本身非常简洁，但它作为 Frida 测试用例的一部分，体现了动态链接、函数调用、程序入口等基本的程序运行原理。在逆向工程的上下文中，它可以作为目标程序进行各种动态分析技术的验证和学习。理解这个简单的例子有助于理解更复杂的程序行为和 Frida 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/32 pkgconfig use libraries/app/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,15 +169,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void libb_func();
 
 int main(void) {
     libb_func();
     return 0;
 }
-
-"""
-
 ```

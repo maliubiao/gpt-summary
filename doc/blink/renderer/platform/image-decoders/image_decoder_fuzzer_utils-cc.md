@@ -91,14 +91,16 @@ By following these steps, I was able to dissect the C++ code, understand its pur
 
 `image_decoder_fuzzer_utils.cc` 是 Blink 引擎中一个重要的测试工具，它通过生成随机数据来驱动图像解码器，模拟各种异常输入情况，从而帮助开发者发现和修复潜在的 bug 和安全漏洞，最终提高浏览器处理图像的稳定性和安全性。虽然普通开发者不会直接使用它，但它的功能直接关系到用户浏览网页时能否正确、安全地看到图片。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/image_decoder_fuzzer_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ void FuzzDecoder(DecoderType decoder_type, FuzzedDataProvider& fdp) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

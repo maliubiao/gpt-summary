@@ -165,15 +165,17 @@ go run -tags debugtrace myprogram.go
 
 总之，这段代码为 Go 编译器提供了灵活的内联启发式调试追踪机制，可以通过代码或环境变量来控制，并且针对单元测试提供了特殊的支持。使用者需要理解构建标签和环境变量的作用，才能正确地使用这个功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/inline/inlheur/trace_on.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -214,9 +216,4 @@ func enableDebugTraceIfEnv() {
 func disableDebugTrace() {
 	debugTrace = 0
 }
-
-"""
-
-
-
 ```

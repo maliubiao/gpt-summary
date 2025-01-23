@@ -121,7 +121,7 @@ By following these steps – understanding the code, connecting it to the reques
 
 总而言之，这个脚本虽然功能看似简单，但在 Frida 的构建和测试流程中扮演着确保构建环境和版本信息正确性的角色。理解这类脚本有助于理解软件的构建过程，这对于逆向工程和安全分析来说都是有益的背景知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/35 dist script/subprojects/sub/dist-script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -150,7 +152,4 @@ subprocess.run([*mesonrewrite, '-s', source_root, *rewrite_cmd], check=True)
 modfile = source_root / 'prog.c'
 with modfile.open('w') as f:
     f.write('int main(){return 0;}')
-
-"""
-
 ```

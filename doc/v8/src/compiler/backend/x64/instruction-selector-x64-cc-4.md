@@ -105,7 +105,7 @@ console.log(smallNumber); // 输出结果可能不是预期的，因为发生了
 
 作为编译过程的一部分，`v8/src/compiler/backend/x64/instruction-selector-x64.cc` 的主要功能是 **将高级的、平台无关的中间表示 (IR) 翻译成特定于 x64 架构的低级机器指令**。 这是代码生成阶段的关键步骤，它直接影响最终生成代码的性能。它针对不同的 IR 操作选择最优的 x64 指令，并利用 x64 架构的特性进行优化，从而确保 JavaScript 代码能在 x64 平台上高效执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/instruction-selector-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/instruction-selector-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -113,9 +113,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共10部分，请归纳一下它的功能
+```
 
-"""
-  case IrOpcode::kInt32Add:
+### 源代码
+```cpp
+case IrOpcode::kInt32Add:
     case IrOpcode::kInt32Sub:
     case IrOpcode::kInt32Mul:
     case IrOpcode::kInt32MulHigh:
@@ -901,7 +903,4 @@ InstructionCode TryNarrowOpcodeSize(InstructionSelectorT<Adapter>* selector,
   } else {
     // TODO(epertoso): we can probably get some size information out phi nodes.
     // If the load repres
-"""
-
-
 ```

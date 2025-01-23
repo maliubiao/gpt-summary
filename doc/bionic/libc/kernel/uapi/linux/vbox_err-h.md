@@ -255,7 +255,7 @@ Java.perform(function() {
 
 虽然 `vbox_err.h` 文件中的错误码主要与 VirtualBox 相关，但由于其被包含在 Android 的 Bionic 库中，Android 平台在某些特定的虚拟化或底层操作场景下可能会遇到或需要处理这些错误。通过 Frida hook，我们可以监控 NDK 库中函数的返回值，观察是否返回了这些定义的错误码，从而了解其在 Android 系统中的实际应用情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/vbox_err.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,8 +266,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -413,7 +415,4 @@ Prompt:
 #define VERR_BAD_EXE_FORMAT (- 608)
 #define VINF_HGCM_ASYNC_EXECUTE (2903)
 #endif
-
-"""
-
 ```

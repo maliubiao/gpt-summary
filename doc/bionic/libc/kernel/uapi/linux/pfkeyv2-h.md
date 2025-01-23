@@ -284,7 +284,7 @@ if __name__ == "__main__":
 
 通过这个 Frida Hook 示例，可以在 Android 系统建立 VPN 连接的过程中，观察到发送到内核的 PF_KEY v2 消息，从而理解 Android 系统如何与内核 IPsec 子系统交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/pfkeyv2.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -295,8 +295,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -593,7 +595,4 @@ struct sadb_x_filter {
 #define SADB_IDENTTYPE_USERFQDN 3
 #define SADB_IDENTTYPE_MAX 3
 #endif
-
-"""
-
 ```

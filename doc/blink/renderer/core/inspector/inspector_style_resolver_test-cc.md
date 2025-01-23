@@ -156,14 +156,16 @@ This systematic approach, starting from understanding the overall goal and then 
 
 总而言之，`inspector_style_resolver_test.cc` 这个文件通过一系列单元测试，确保了 `InspectorStyleResolver` 能够准确地提取和提供关于 HTML 元素及其祖先元素匹配的 CSS 规则的信息，这是浏览器开发者工具中样式检查功能的核心。虽然开发者不会直接操作这个类，但理解其背后的逻辑有助于更有效地使用开发者工具进行网页样式调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_style_resolver_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -349,7 +351,4 @@ TEST_F(InspectorStyleResolverTest, HighlightPseudoInheritance) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

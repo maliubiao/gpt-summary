@@ -153,7 +153,7 @@ python frida/releng/meson/tools/run_with_cov.py test_frida.py --verbose
 
 总而言之，`run_with_cov.py` 是 Frida 开发和测试流程中的一个关键工具，它通过收集代码覆盖率来帮助开发者理解代码执行情况，提高代码质量。理解其功能对于 Frida 的开发人员和测试人员来说非常重要，特别是在遇到问题需要调试时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/tools/run_with_cov.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
@@ -205,7 +207,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     raise SystemExit(main())
-
-"""
-
 ```

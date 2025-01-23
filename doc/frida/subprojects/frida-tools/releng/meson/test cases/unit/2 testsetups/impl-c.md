@@ -130,7 +130,7 @@ do_nasty(buffer);
 
 总而言之，这段简单的 C 代码片段展示了一个经典的缓冲区溢出漏洞，它是逆向工程中需要重点关注的一种安全问题，并涉及到对二进制底层、操作系统内存管理等方面的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/2 testsetups/impl.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,14 +138,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Write past the end. */
 
 void do_nasty(char *ptr) {
     ptr[10] = 'n';
 }
-
-"""
-
 ```

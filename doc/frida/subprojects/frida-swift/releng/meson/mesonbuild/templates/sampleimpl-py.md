@@ -208,7 +208,7 @@ executable('simple_tool', simple_tool_src)
 
 总而言之，`sampleimpl.py` 是 Frida 工具链中一个幕后工作的代码生成器，它通过预定义的模板和用户输入，自动化了项目初始化的过程，为开发者提供了一个快速开始的起点。理解它的功能有助于理解 Frida 的内部结构和工作流程，并能帮助解决项目初始化阶段可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/templates/sampleimpl.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -216,8 +216,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -378,7 +380,4 @@ class FileHeaderImpl(FileImpl):
         kwargs = self.lib_kwargs()
         with open(kwargs['header_file'], 'w', encoding='utf-8') as f:
             f.write(self.lib_header_template.format_map(kwargs))
-
-"""
-
 ```

@@ -113,15 +113,17 @@ Based on the provided code, this section of the test file focuses on:
 
 这些功能共同确保了 Web 内容能够正确地渲染、响应用户输入，并提供良好的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_widget_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rget_editable);
   EXPECT_EQ(GetLastProximateBounds(), nullptr);
 }
@@ -898,7 +900,4 @@ TEST_F(WebFrameWidgetSimTest, ResizableMatchesCanResize) {
   visual_properties.screen_infos = display::ScreenInfos(display::ScreenInfo());
 
   //
-"""
-
-
 ```

@@ -102,7 +102,7 @@ navigator.ml.createContext().then(context => {
 
 本部分代码定义了将多种 WebNN 操作 (`Split`, `Tanh`, `Tile`, `Transpose`, `Triangular`, `Where`) 从 Blink 内部的 `MLOperator` 表示转换为相应的 Mojo 消息结构的功能。这是 WebNN API 实现的关键部分，它允许 Blink 将高层次的机器学习操作描述转换为可以跨进程传递和执行的低层次表示。 每个 `Create...Operation` 函数负责特定操作类型的转换，确保操作的参数和结构能够正确地传递给底层的机器学习运行时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ml/webnn/ml_graph_type_converter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Sigmoid(std::move(sigmoid_mojo));
 }
 
@@ -477,8 +479,4 @@ std::optional<String> SerializeMojoOperation(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

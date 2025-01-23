@@ -212,15 +212,17 @@ By following these steps, I can systematically analyze the code and generate a c
 
 通过以上步骤，开发者可以从用户的操作开始，逐步深入到 Blink 引擎的源代码，例如 `SVGGraphicsElement.cc`，来查找导致 `getBBox()` 返回错误结果的原因。  可能的问题包括布局计算错误、变换矩阵计算错误、或者对 SVG 坐标系统的理解偏差等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_graphics_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -392,7 +394,4 @@ void SVGGraphicsElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

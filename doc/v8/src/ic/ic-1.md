@@ -80,12 +80,14 @@ const numbers = [1, 2, 3]; // 在创建数组字面量时，会使用 StoreInArr
 
 总而言之，`ic.cc` 的这部分代码是 V8 引擎实现高性能 JavaScript 的关键组成部分，它通过内联缓存技术显著加速了对象属性的存储操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/ic.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Look up in script context table.
   Handle<String> str_name = Cast<String>(name);
   Handle<JSGlobalObject> global = isolate()->global_object();
@@ -1663,7 +1665,4 @@ FastCloneObjectMode GetCloneModeForMapPreCheck(DirectHandle<Map> map,
 }
 
 FastCloneObjectMode GetCloneModeForMap(DirectHandle<M
-"""
-
-
 ```

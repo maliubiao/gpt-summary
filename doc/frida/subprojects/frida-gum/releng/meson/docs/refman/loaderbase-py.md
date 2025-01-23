@@ -201,7 +201,7 @@ The `ReferenceManual` object would contain an `Object` named `memory_region` wit
 
 In essence, this code acts as a crucial validation step in the Frida documentation generation pipeline, ensuring the quality and consistency of the API reference. Developers working on Frida interact with this code indirectly by creating and modifying the documentation files that it processes. When things go wrong (documentation errors), they will encounter error messages originating from this code, guiding them to fix the issues.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/docs/refman/loaderbase.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -209,8 +209,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -416,7 +418,4 @@ class LoaderBase(metaclass=ABCMeta):
         resolver = _Resolver()
         with mlog.nested():
             return resolver.validate_and_resolve(manual)
-
-"""
-
 ```

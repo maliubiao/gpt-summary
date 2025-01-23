@@ -156,7 +156,7 @@ main.c\0utils.c\0
 
 总而言之，`find.py` 是一个简单但实用的脚本，用于在特定的上下文中查找 C 源代码文件。它的存在和使用都与逆向工程、底层系统知识以及 Frida 这样的动态插桩工具密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/179 escape and unicode/find.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -175,7 +177,4 @@ for fh in os.listdir('.'):
     if os.path.isfile(fh):
         if fh.endswith('.c'):
             sys.stdout.write(fh + '\0')
-
-"""
-
 ```

@@ -116,7 +116,7 @@ By following this structured thought process, you can effectively analyze the co
 
 作为调试线索，如果用户在构建 Frida 时遇到了与 `cmTest.cpp` 相关的编译错误，这通常意味着 **CMake 的配置与预期不符**。 用户应该检查构建系统的配置步骤，例如查看 CMake 的缓存文件 (CMakeCache.txt) 或 Meson 的配置信息，来确定哪些编译标志被设置了，哪些没有被设置，并根据错误信息进行修正。  这也有可能是用户使用的编译器版本不符合要求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/19 advanced options/subprojects/cmOpts/cmTest.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmTest.hpp"
 
 #if __cplusplus < 201103L
@@ -151,7 +153,4 @@ Prompt:
 int getTestInt() {
   return MESON_MAGIC_INT;
 }
-
-"""
-
 ```

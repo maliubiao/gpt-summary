@@ -287,7 +287,7 @@ Interceptor.attach(Module.findExportByName(null, "__NR_open"), {
 
 总而言之，`posix_types_32.handroid` 是一个定义了内核使用的基本数据类型的重要头文件，它确保了用户空间和内核空间对于诸如用户 ID、进程 ID 等核心概念的理解一致，是 Android 系统正常运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/posix_types_32.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -298,8 +298,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -319,7 +321,4 @@ typedef unsigned short __kernel_old_dev_t;
 #define __kernel_old_dev_t __kernel_old_dev_t
 #include <asm-generic/posix_types.h>
 #endif
-
-"""
-
 ```

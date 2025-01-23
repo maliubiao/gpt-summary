@@ -93,7 +93,7 @@ By following this structured process, combining detailed analysis with an unders
 
 总而言之，`v8/src/objects/objects.h` 的第二部分继续定义了 V8 引擎中对象表示和管理的关键数据结构和工具类，特别强调了对象元数据、内存布局、垃圾回收支持和共享对象的安全发布。这些底层机制是 V8 引擎高效运行和支持各种 JavaScript 功能的基础。虽然 JavaScript 开发者通常不会直接接触这些代码，但理解它们有助于更深入地理解 JavaScript 引擎的工作原理，并能更好地理解与内存管理和并发相关的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/objects.h以.tq结尾，那它是个v8 torque源代码，
@@ -101,9 +101,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- word as a map pointer.
+### 源代码
+```c
+word as a map pointer.
   inline Tagged<Map> ToMap() const;
 
   // Scavenge collection: the map word of live objects in the from space
@@ -265,8 +267,4 @@ class V8_NODISCARD SharedObjectSafePublishGuard final {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_OBJECTS_H_
-
-"""
-
-
 ```

@@ -114,7 +114,7 @@ Now, let's address the specific points in the request:
 
 通过以上调试线索，可以逐步跟踪用户操作和代码执行流程，定位到 `blink/renderer/core/dom/document.cc` 文件中相关功能的执行。例如，如果在控制台中看到 `InvalidStateError` 并提示与 `document.open()` 相关，可以检查导致 `document.open()` 调用的 JavaScript 代码，确认是否在不合适的时机或对非 HTML 文档进行了调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 XObjectCacheOwner(), this);
 
   DCHECK_EQ(ax_contexts_.size(), 0U);
@@ -1026,8 +1028,5 @@ bool Document::DispatchBeforeUnloadEvent(ChromeClient* chrome_client,
     // only the caller, which makes this call over the frame subtree, can know
     // whether or not  we'll unload so the caller is responsible for advancing
     // to kBeforeUnloadEventHandled. Here, we'll reset back to our prior value
-    // once the handler 
-"""
-
-
+    // once the handler
 ```

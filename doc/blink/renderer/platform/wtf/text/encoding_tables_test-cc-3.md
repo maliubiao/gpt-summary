@@ -1,14 +1,16 @@
 Response:
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/encoding_tables_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , {4390, 0x7852}, {4391, 0x785C},
      {4392, 0x785E}, {4393, 0x7860}, {4394, 0x7861}, {4395, 0x7863},
      {4396, 0x7864}, {4397, 0x7868}, {4398, 0x786A}, {4399, 0x786E},
@@ -958,7 +960,4 @@ constexpr EucKrEncodeIndex kEucKrDecodingIndexReference{{
     {1020, 0xB0F7},  {1021, 0xB0F8},  {1022, 0xB0F9},  {1023, 0xB0FA},
     {1024, 0xB0FB},  {1025, 0xB0FC},  {1026, 0xB0FD},  {1027, 0xB0FE},
     {1028, 0xB0FF},  {1029, 0xB100},  {103
-"""
-
-
 ```

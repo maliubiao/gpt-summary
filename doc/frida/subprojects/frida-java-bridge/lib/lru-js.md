@@ -114,7 +114,7 @@ cache.capacity = 0; // 直接修改容量导致后续set()异常
 3. **类型转换**：JavaScript对象到Java对象的自动包装
 4. **生命周期同步**：Java对象GC与JavaScript引用的协同
 5. **异常处理**：destroy回调中的异常应正确处理避免崩溃
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/lru.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
+```
 
-"""
+### 源代码
+```javascript
 // Based on https://stackoverflow.com/a/46432113
 
 class LRU {
@@ -171,7 +173,4 @@ class LRU {
 }
 
 module.exports = LRU;
-
-"""
-
 ```

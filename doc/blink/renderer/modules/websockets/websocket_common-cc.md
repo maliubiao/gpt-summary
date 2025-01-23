@@ -262,15 +262,17 @@ By following this structured approach, combining high-level understanding with d
 
 总而言之，`websocket_common.cc` 文件是 Blink 引擎中处理 WebSocket 通用逻辑的关键组件，它确保了 WebSocket API 的正确使用和安全性，并为 `WebSocketChannel` 提供了必要的辅助功能。理解这个文件的工作原理有助于深入了解浏览器如何实现 WebSocket 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/websockets/websocket_common.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -532,7 +534,4 @@ std::optional<uint16_t> WebSocketCommon::ValidateCloseCodeAndReason(
 }
 
 }  // namespace blink
-
-"""
-
 ```

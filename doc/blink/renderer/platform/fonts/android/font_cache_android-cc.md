@@ -190,14 +190,16 @@ By following this detailed thought process, combining code analysis with knowled
 
 `font_cache_android.cc` 在 Chromium Blink 引擎中扮演着至关重要的角色，它负责在 Android 平台上有效地管理和查找字体，确保网页内容能够以正确的样式和字符显示出来。它与 HTML, CSS 的字体声明紧密相关，并通过回退机制和语言环境适配来提升用户体验。理解其功能有助于开发者更好地处理 Android 平台上的字体显示问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/android/font_cache_android.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2011 Google Inc. All rights reserved.
  *
@@ -475,7 +477,4 @@ AtomicString FontCache::GetGenericFamilyNameForScript(
 }
 
 }  // namespace blink
-
-"""
-
 ```

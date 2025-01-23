@@ -177,7 +177,7 @@ objdump -d target_app | grep deflate
 
 总而言之，这个 `lib.c` 文件是一个专门用于测试 Frida 工具在处理静态链接外部库场景下的能力的简单示例。它通过检查一个已知库 (`zlib`) 中的函数是否存在来验证链接是否成功，这对于确保 Frida 在逆向工程和动态分析过程中能够正确处理各种类型的目标程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/linuxlike/4 extdep static lib/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<zlib.h>
 
 int statlibfunc(void) {
@@ -195,7 +197,4 @@ int statlibfunc(void) {
         return 0;
     return 1;
 }
-
-"""
-
 ```

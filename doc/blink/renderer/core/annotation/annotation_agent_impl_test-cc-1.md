@@ -92,7 +92,7 @@ The user wants a summary of the provided C++ code snippet, which is part of a te
 
 当查找失败时，开发者可能会检查 blink 引擎的源代码，例如 `annotation_agent_impl_test.cc`，来理解查找功能在不同情况下的行为，并找出导致查找失败的原因。这些测试用例就像是针对各种可能导致查找失败的场景的单元测试。开发者可以通过阅读这些测试用例来理解 `kTextFinder` 的工作原理和限制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/annotation/annotation_agent_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -100,8 +100,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e();
 
   Element* p = GetDocument().getElementById(AtomicString("text"));
@@ -427,8 +429,4 @@ TEST_F(AnnotationAgentImplTest, TextFinderDoesntFindOffscreenFixed) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

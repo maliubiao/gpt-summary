@@ -106,7 +106,7 @@ func main() {
 
 作为测试文件的一部分，这第2部分代码的主要功能是定义了一组全面的测试用例，专注于验证 `complex128` 类型在进行除法运算时，对于各种边界条件和特殊值的处理是否符合预期。这些测试用例覆盖了零、无穷大和 NaN 等特殊情况，旨在确保 Go 语言的复数除法实现的正确性和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/cmplxdivide1.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -114,8 +114,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 , zero), complex(nan, nan)},
 	{complex(1, zero), complex(nan, -zero), complex(nan, nan)},
 	{complex(1, zero), complex(nan, 1), complex(nan, nan)},
@@ -1218,9 +1220,4 @@ Prompt:
 	{complex(2, -zero), complex(inf, -1), complex(zero, zero)},
 	{complex(2, -zero), complex(inf, 2), complex(zero, -zero)},
 	{com
-"""
-
-
-
-
 ```

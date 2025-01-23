@@ -66,13 +66,15 @@ bar();
 **总结:**
 
 这部分 `frames.cc` 的代码是 V8 虚拟机实现的核心部分，它定义了如何理解和操作不同类型的函数调用在执行栈上的表示。这对于垃圾回收器正确识别和保留活动对象至关重要，同时也为调试器和性能分析工具提供了必要的信息。
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/frames.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- [Constant Pool]         |                                        |
+### 源代码
+```
+[Constant Pool]         |                                        |
   //  |- - - - - - - - - - - - -|                                        |
   //  | saved frame ptr         |  <-- fp                                |
   //  |- - - - - - - - - - - - -|                                        |
@@ -1689,7 +1691,4 @@ void UnoptimizedJSFrame::Summarize(std::vector<FrameSummary>* functions) const {
 int InterpretedFrame::GetBytecodeOffset() const {
   const int index = InterpreterFrameConstants::kBytecodeOffsetExpressionIndex;
   DCHECK_EQ(
-"""
-
-
 ```

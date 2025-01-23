@@ -159,7 +159,7 @@ CUDA 通常用于加速计算密集型任务，这在某些软件中可能涉及
 
 `frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/cuda.py` 文件中的 `CudaCompiler` 类的核心功能是**为 Meson 构建系统提供编译 CUDA 代码的能力**。它通过管理和转换编译器标志，调用 NVIDIA 的 `nvcc` 编译器，并进行环境健全性检查，使得 Meson 能够有效地构建包含 CUDA 代码的项目。这对于像 Frida 这样的工具至关重要，因为它们可能需要利用 GPU 的计算能力来执行某些动态插桩或分析任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/cuda.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -793,7 +795,4 @@ class CudaCompiler(Compiler):
         #include <{header}>
         using {symbol};
         int main(vo
-"""
-
-
 ```

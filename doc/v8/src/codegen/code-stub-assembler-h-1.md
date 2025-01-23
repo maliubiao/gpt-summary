@@ -294,7 +294,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 这些底层的 `CodeStubAssembler` 功能正是 V8 用来实现和优化 JavaScript 语言特性的构建块。了解这些可以更深入地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -302,9 +302,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
-     int false_value);
+### 源代码
+```c
+int false_value);
   TNode<IntPtrT> SelectIntPtrConstant(TNode<BoolT> condition, int true_value,
                                       int false_value);
   TNode<Boolean> SelectBooleanConstant(TNode<BoolT> condition);
@@ -1031,7 +1033,4 @@ Prompt:
                              int additional_offset) {
     FixedArrayBoundsCheck(UncheckedCast<FixedArrayBase>(array), index,
                           addit
-"""
-
-
 ```

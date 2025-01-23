@@ -284,7 +284,7 @@ if __name__ == '__main__':
 
 **请注意:**  上述 Frida 脚本只是一个基本示例，你需要根据具体的 SRv6 `ioctl` 命令和数据结构来调整脚本，才能正确地解析和显示 SRv6 的配置信息。 调试内核相关的操作通常比较复杂，需要对 Linux 内核的网络子系统有一定的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/seg6_local.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -295,8 +295,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -377,7 +379,4 @@ enum {
 };
 #define SEG6_LOCAL_FLV_OP_MAX (__SEG6_LOCAL_FLV_OP_MAX - 1)
 #endif
-
-"""
-
 ```

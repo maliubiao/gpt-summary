@@ -149,15 +149,17 @@ myFunction();
 
 总而言之，`v8/src/profiler/strings-storage.cc` 实现了一个高效的字符串存储和管理机制，通过字符串复用和引用计数来优化内存使用，特别是在性能分析这种会产生大量重复字符串的场景下。正确使用 `GetCopy` 和 `Release` 方法是避免内存泄漏的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/strings-storage.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/strings-storage.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -345,7 +347,4 @@ base::HashMap::Entry* StringsStorage::GetEntry(const char* str, size_t len) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

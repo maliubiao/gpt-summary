@@ -248,15 +248,17 @@ func main() {
 
 这段 `syscall_solaris.go` 文件是 Go 语言连接 Solaris 操作系统内核的桥梁，理解它的功能对于进行底层的系统编程至关重要。但同时也需要注意使用系统调用时可能遇到的各种陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_solaris.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1361,9 +1363,4 @@ func (s *Strioctl) SetInt(i int) {
 func IoctlSetStrioctlRetInt(fd int, req int, s *Strioctl) (int, error) {
 	return ioctlPtrRet(fd, req, unsafe.Pointer(s))
 }
-
-"""
-
-
-
 ```

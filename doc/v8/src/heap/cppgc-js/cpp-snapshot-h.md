@@ -146,15 +146,17 @@ int main() {
 
 总而言之，`v8/src/heap/cppgc-js/cpp-snapshot.h` 定义了一个用于将 C++ 对象快照集成到 V8 垃圾回收机制中的内部工具类。它主要用于优化 V8 的启动性能和确保垃圾回收器能够正确管理嵌入器提供的 C++ 对象。普通 V8 使用者不会直接使用它，但理解其功能有助于理解 V8 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/cpp-snapshot.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc-js/cpp-snapshot.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ class V8_EXPORT_PRIVATE CppGraphBuilder final {
 }  // namespace v8
 
 #endif  // V8_HEAP_CPPGC_JS_CPP_SNAPSHOT_H_
-
-"""
-
 ```

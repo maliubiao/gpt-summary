@@ -87,11 +87,13 @@ Here's a plan:
 
 `dispatch.cc` 中的代码是 V8 引擎中处理 DevTools 协议消息的关键基础设施。 它负责解析消息、将其路由到正确的处理程序，并生成响应。 这使得 JavaScript 编写的 DevTools 前端能够与 V8 引擎进行有效的通信和交互，实现调试、性能分析等功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/dispatch.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -676,7 +678,4 @@ void UberDispatcher::WireBackend(
 }
 
 }  // namespace v8_crdtp
-
-"""
-
 ```

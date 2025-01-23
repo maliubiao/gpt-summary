@@ -160,14 +160,16 @@ This iterative process of code examination, understanding the underlying concept
 
 总结来说，`intrinsic_sizing_info.cc` 文件中的 `ConcreteObjectSize` 函数是 Blink 渲染引擎中负责根据各种输入（包括内在尺寸和 CSS 样式）计算替换元素最终渲染尺寸的关键部分。理解其工作原理有助于我们更好地控制网页元素的布局和渲染效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/intrinsic_sizing_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Eric Seidel <eric@webkit.org>
  * Copyright (C) 2008, 2009 Apple Inc. All rights reserved.
@@ -244,7 +246,4 @@ gfx::SizeF ConcreteObjectSize(const IntrinsicSizingInfo& sizing_info,
 }
 
 }  // namespace blink
-
-"""
-
 ```

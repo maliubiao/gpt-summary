@@ -216,7 +216,7 @@ Frida 在 hook 这两种不同链接方式的程序时，其内部机制会有�
 
 总而言之，用户查看这段源代码是为了理解 `func3` 函数的实现细节以及其编译时的条件，从而更好地调试目标程序中与该函数相关的行为。预处理器指令的存在提示用户需要考虑程序的构建方式和编译选项。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/3 static/lib3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -224,8 +224,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func3(const int x) {
     return x + 1;
 }
@@ -237,7 +239,4 @@ int func3(const int x) {
 #ifdef BREAK
 # error "got shared only C args, but shouldn't have"
 #endif
-
-"""
-
 ```

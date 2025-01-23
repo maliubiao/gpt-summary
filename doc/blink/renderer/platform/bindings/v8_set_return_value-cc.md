@@ -159,14 +159,16 @@ This iterative process of scanning, analyzing, connecting to concepts, and struc
 
 `v8_set_return_value.cc` 是 Blink 渲染引擎中至关重要的一个文件，它提供了将 C++ 对象和概念桥接到 JavaScript 的核心机制。它通过创建属性描述符对象和暴露接口/命名空间对象，使得 JavaScript 能够与 HTML 结构和浏览器提供的 Web API 进行交互。虽然普通 Web 开发者不会直接使用这些函数，但理解它们的功能有助于理解 Blink 引擎如何工作以及 JavaScript 与浏览器内部的交互方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/v8_set_return_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -256,7 +258,4 @@ v8::Local<v8::Value> GetExposedNamespaceObject(
 }  // namespace bindings
 
 }  // namespace blink
-
-"""
-
 ```

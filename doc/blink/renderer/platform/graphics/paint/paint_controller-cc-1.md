@@ -110,24 +110,22 @@ By following these steps, I was able to analyze the code snippet, infer its func
 
 总而言之，`PaintController` 是 Blink 渲染引擎中负责将网页的结构和样式转化为最终像素输出的关键组件。它通过高效的缓存机制和灵活的失效策略，努力实现高性能的网页渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  RecordDebugInfo(client);
+### 源代码
+```cpp
+RecordDebugInfo(client);
   if (IsSkippingCache() && persistent_data_) {
     client.Invalidate(PaintInvalidationReason::kUncacheable);
   }
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

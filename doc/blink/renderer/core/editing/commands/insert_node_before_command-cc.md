@@ -170,15 +170,17 @@ This systematic approach, starting with high-level understanding and gradually d
 
 总而言之，`InsertNodeBeforeCommand` 是 Blink 渲染引擎中负责在指定节点前插入新节点的核心组件，它响应来自 JavaScript 的 DOM 操作请求，并确保在执行插入操作时考虑到编辑上下文和错误处理。理解这个类有助于深入了解浏览器如何处理动态的 HTML 内容修改。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/insert_node_before_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2008 Apple Inc. All rights reserved.
  *
@@ -268,7 +270,4 @@ void InsertNodeBeforeCommand::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

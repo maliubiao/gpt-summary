@@ -148,14 +148,16 @@ bytes_read = stream->read(pixel_buffer, sizeof(pixel_buffer));
 
 总而言之，`segment_stream.cc` 中定义的 `SegmentStream` 类是 Blink 渲染引擎中处理分段数据的关键组件，尤其在图像解码等场景中起着重要的作用。它提供了一个方便的、顺序访问分段数据的抽象，简化了上层模块（如图像解码器）的操作。理解其功能和潜在的错误用法对于开发和调试 Blink 渲染引擎至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/skia/segment_stream.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ size_t SegmentStream::getLength() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

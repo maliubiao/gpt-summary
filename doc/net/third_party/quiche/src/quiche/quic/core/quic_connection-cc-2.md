@@ -241,7 +241,7 @@ bool QuicConnection::OnPathChallengeFrame(const QuicPathChallengeFrame& frame) {
 
 这段代码是 `QuicConnection` 类中负责处理接收到的各种 QUIC 控制帧的核心部分。它根据接收到的帧类型执行相应的操作，包括路径验证、连接管理、流控制、连接 ID 管理、错误处理等。它是 QUIC 连接状态维护和正确运行的关键组成部分。 这部分代码主要关注对等方发送来的控制信息，并根据这些信息更新本地连接状态或采取相应的行动。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -249,8 +249,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 me) {
   QUIC_BUG_IF(quic_bug_10511_8, !connected_)
       << "Processing PATH_CHALLENGE frame when connection is closed. Received "
@@ -1103,7 +1105,4 @@ bool QuicConnection::SendControlFrame(const QuicFrame& frame) {
 }
 
 vo
-"""
-
-
 ```

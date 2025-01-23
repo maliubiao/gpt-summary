@@ -237,7 +237,7 @@ Prism.js 高亮后，`=` 会被识别为 `operator`，而 `=` 在 `if` 条件中
 
 总之，`prism-meson.js` 虽然是一个小型的语法定义文件，但它在提高 Meson 构建脚本的可读性方面发挥着重要作用，间接地为逆向工程和理解软件构建过程提供了便利。 对于 Frida 这样的复杂项目，理解其构建系统是深入研究其内部机制的关键一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/docs/theme/extra/prism_components/prism-meson.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -245,8 +245,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 Prism.languages.meson= {
 	'triple-quoted-string': {
 		'pattern': /'''[\s\S]*?'''/,
@@ -263,6 +265,4 @@ Prism.languages.meson= {
 	'punctuation': /[(),[\]]/
 	// TODO: Handle ternary ?:
 };
-"""
-
 ```

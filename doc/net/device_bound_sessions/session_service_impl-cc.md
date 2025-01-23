@@ -161,15 +161,17 @@ By following this structured approach, combining code analysis with domain knowl
 
 总而言之，`net/device_bound_sessions/session_service_impl.cc` 是 Chromium 中实现设备绑定会话的核心组件，它在幕后管理着与用户设备绑定的网络会话的生命周期和使用，直接影响着基于这些会话的网络请求的行为和安全性。理解它的功能对于调试与持久化登录、安全认证以及设备绑定相关的网络问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/device_bound_sessions/session_service_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -419,7 +421,4 @@ void SessionServiceImpl::StartSessionRefresh(
 }
 
 }  // namespace net::device_bound_sessions
-
-"""
-
 ```

@@ -140,7 +140,7 @@ fetch('https://example.com/data')
 
 这段代码主要负责**管理和维护传输层的 Socket 连接池**。它实现了连接的创建、复用、空闲清理、释放以及处理连接错误和网络状态变化等关键功能。其目标是高效地管理底层的 TCP 连接，为上层的 HTTP 请求等提供可靠的连接基础，并尽可能地复用连接以提高性能和减少资源消耗。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/transport_client_socket_pool.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -148,9 +148,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- without an assigned ConnectJob.
+### 源代码
+```cpp
+without an assigned ConnectJob.
     CheckForStalledSocketGroups();
   }
 }
@@ -1104,8 +1106,4 @@ TransportClientSocketPool::Group::BindRequestToConnectJob(
     return nullptr;
 
   // Otherwise, bind the ConnectJob to the Request.
-
-"""
-
-
 ```

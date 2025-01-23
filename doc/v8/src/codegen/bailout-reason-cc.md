@@ -216,15 +216,17 @@ And the `BAILOUT_MESSAGES_LIST` and `ABORT_MESSAGES_LIST` macros expand to somet
 
 **In summary, `v8/src/codegen/bailout-reason.cc` is a foundational file within V8 responsible for managing and providing descriptions for the reasons behind deoptimizations and execution aborts. It's a crucial part of V8's internal workings, providing valuable information for debugging and understanding the engine's behavior in response to different JavaScript code patterns.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/bailout-reason.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/bailout-reason.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ bool IsValidAbortReason(int reason_id) {
 #undef ERROR_MESSAGES_TEXTS
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

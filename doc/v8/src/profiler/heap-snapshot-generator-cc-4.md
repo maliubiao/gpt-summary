@@ -163,7 +163,7 @@ console.profileEnd('My Profile');
 
 `v8/src/profiler/heap-snapshot-generator.cc` 是 V8 引擎中**至关重要的组件**，负责**生成当前 JavaScript 堆的详细快照**。这个过程包括遍历堆中的所有对象，记录它们的类型、大小、引用关系以及其他元数据（如分配跟踪信息和源代码位置）。最终，这些信息被序列化成 JSON 格式，供开发者工具或其他分析工具使用，以帮助开发者**理解 JavaScript 程序的内存使用情况，诊断内存泄漏和性能问题**。它通过 `HeapSnapshotGenerator` 类执行快照的创建和信息提取，并通过 `HeapSnapshotJSONSerializer` 类将这些信息转换为易于解析的 JSON 格式。虽然这是一个 C++ 文件，但它的功能直接服务于 JavaScript 开发者，是 JavaScript 运行时环境的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/heap-snapshot-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/heap-snapshot-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -171,8 +171,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 hot() {
   v8::base::ElapsedTimer timer;
   timer.Start();
@@ -772,8 +774,4 @@ void HeapSnapshotJSONSerializer::SerializeLocations() {
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

@@ -107,15 +107,17 @@ By following these steps, I can provide a comprehensive explanation of the `Widg
 
 总而言之，`WidgetInputHandlerManager` 是 Blink 渲染引擎中处理用户输入的核心组件，它负责在多线程环境下协调各种输入事件的处理，确保用户交互能够正确地反映在页面上，并尽可能地优化性能。 它深刻地影响着 JavaScript 事件的触发、HTML 元素的行为以及 CSS 样式的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/widget_input_handler_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ll observable effects of an input gesture to be processed
   // when the CompositorFrame caused by that input has been produced, send, and
   // displayed. Therefore, explicitly request the presentation *after* any
@@ -587,8 +589,4 @@ void WidgetInputHandlerManager::FlushEventQueuesForTesting(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

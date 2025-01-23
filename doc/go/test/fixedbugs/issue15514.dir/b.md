@@ -116,15 +116,17 @@ func main() {
 
 总结来说，`go/test/fixedbugs/issue15514.dir/b.go` 中的 `B` 函数似乎是为了测试 Go 语言对于匿名结构体以及未命名结构体字段的处理。它返回一个具有特定结构的零值，强调了这种结构体字段无法直接通过名称访问的特性。这种代码通常出现在测试用例中，用于验证编译器在处理特定语法或边缘情况时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue15514.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -132,9 +134,4 @@ Prompt:
 package b
 
 func B() (_ struct{ _ int32 }) { return }
-
-"""
-
-
-
 ```

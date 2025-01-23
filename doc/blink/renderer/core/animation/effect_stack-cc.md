@@ -209,14 +209,16 @@ This iterative process of reading, identifying key components, analyzing functio
 
 总而言之，`blink/renderer/core/animation/effect_stack.cc` 文件是 Blink 渲染引擎中处理动画效果的核心组件，负责管理动画的层叠、优先级、合成模式，并最终确定元素在屏幕上的动画表现。理解其功能对于开发高性能、可预测的 Web 动画至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/effect_stack.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -444,7 +446,4 @@ void EffectStack::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

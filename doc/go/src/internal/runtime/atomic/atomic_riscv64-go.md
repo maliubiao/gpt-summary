@@ -196,7 +196,7 @@ func main() {
 
 总而言之，`atomic_riscv64.go` 文件是 Go 语言在 RISC-V 64位架构上实现并发安全的关键底层组件，为 `sync/atomic` 包提供了基础的原子操作支持。 开发者应该主要使用 `sync/atomic` 包中的高级 API，并仔细理解原子操作的内存顺序语义，以避免并发编程中的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/atomic/atomic_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -204,8 +204,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -309,9 +311,4 @@ func StoreRel64(ptr *uint64, val uint64)
 
 //go:noescape
 func StoreReluintptr(ptr *uintptr, val uintptr)
-
-"""
-
-
-
 ```

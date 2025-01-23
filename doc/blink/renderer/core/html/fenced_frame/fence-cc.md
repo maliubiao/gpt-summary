@@ -219,14 +219,16 @@ By following this systematic and iterative process, you can effectively analyze 
 
 总而言之，`fence.cc` 文件定义了 fenced frame 与外部世界进行受限且安全交互的关键 API，主要集中在事件报告、配置管理和安全控制方面。它通过 `window.fence` 对象暴露给 JavaScript，使得 fenced frame 能够执行一些特定的、受控的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/fenced_frame/fence.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -694,7 +696,4 @@ void Fence::AddConsoleMessage(const String& message,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -161,7 +161,7 @@ This systematic approach of understanding the context, dissecting the code, iden
 
 `net/socket/tcp_socket_win.cc` 的第二部分专注于 **处理 Windows 平台上异步 TCP socket 操作的完成事件和信号**。它通过 `DidCompleteRead`, `DidCompleteConnect`, `DidCompleteWrite`, 和 `DidSignalRead` 等方法，响应操作系统发出的异步操作完成通知，并执行相应的回调，将结果传递回 Chromium 网络栈的上层模块。这部分代码是 Chromium 在 Windows 上实现高效、非阻塞 TCP 通信的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/tcp_socket_win.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 indOnce(&TCPSocketDefaultWin::RetryRead,
                                     base::Unretained(this)));
     if (rv == ERR_IO_PENDING)
@@ -337,8 +339,4 @@ void TCPSocketDefaultWin::OnClosed() {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

@@ -232,7 +232,7 @@ Hello World
 
 总而言之，`cmMod.cpp` 定义了一个简单的字符串处理类，它在 Frida 动态插桩的上下文中可以作为被观察和修改的目标，帮助逆向工程师理解程序的行为。用户到达这个文件的过程通常是由于在 Frida 逆向分析过程中遇到了与该类相关的现象，并希望通过查看源代码来获得更深入的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cmake/3 advanced no dep/subprojects/cmMod/lib/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -240,8 +240,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include "config.h"
 
@@ -258,7 +260,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

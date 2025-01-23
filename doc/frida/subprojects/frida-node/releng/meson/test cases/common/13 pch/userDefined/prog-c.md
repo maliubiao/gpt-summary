@@ -110,7 +110,7 @@ Hello from foo in pch.c!
 
 总而言之，`prog.c` 作为一个简单的测试用例，其核心目的是验证 Frida 在处理用户自定义预编译头文件时的能力。它本身的功能依赖于外部定义的函数 `foo()`，并能反映出与逆向工程、底层编译链接过程以及常见编程错误相关的一些概念。 调试线索通常指向理解 Frida 内部机制、验证其功能或解决与预编译头相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/13 pch/userDefined/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // No includes here, they need to come from the PCH
 
 int main(void) {
@@ -128,7 +130,4 @@ int main(void) {
     // pch implementation files and not only auto-generated ones.
     return foo();
 }
-
-"""
-
 ```

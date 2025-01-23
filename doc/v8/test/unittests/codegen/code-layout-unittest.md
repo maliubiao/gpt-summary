@@ -56,9 +56,12 @@ Essentially, it ensures that the `CodeDesc` structure and the `Factory::CodeBuil
 
 **总结来说，这个文件通过创建具有不同展开信息配置的代码对象，并断言其内部结构和属性是否符合预期，来测试 V8 代码生成器在处理代码布局时的正确性。它确保了 V8 能够正确地创建和管理包含或不包含展开信息的代码对象，这对于异常处理和调试等功能至关重要。**
 
-Prompt: ```这是目录为v8/test/unittests/codegen/code-layout-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/codegen/code-layout-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,6 +176,4 @@ TEST_F(CodeLayoutTest, CodeLayoutWithUnwindingInfo) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

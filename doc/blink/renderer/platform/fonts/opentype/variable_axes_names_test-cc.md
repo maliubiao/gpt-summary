@@ -150,14 +150,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`variable_axes_names_test.cc` 确保了 Blink 引擎能够正确地理解和处理可变字体中的关键信息，这对于 Web 开发者能够有效地利用可变字体的强大功能至关重要。它保证了浏览器能够正确地解析字体文件，并将这些信息用于 CSS 样式计算和 JavaScript 访问，最终呈现出符合用户期望的排版效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/variable_axes_names_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -195,7 +197,4 @@ TEST(VariableAxesNamesTest, TestVariableAxes) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

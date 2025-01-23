@@ -160,7 +160,7 @@ endif
 
 这个文件的主要功能是 **解析 Meson 构建系统的描述语言**。它通过词法分析将代码分解成 token，然后通过语法分析将 token 组织成一个抽象语法树 (AST)。这个 AST 代表了构建文件的结构和逻辑，是 Meson 构建系统后续处理的基础。文件中还包含了错误处理机制，用于在解析过程中检测和报告语法错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/mparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2017 The Meson development team
 
@@ -1084,7 +1086,4 @@ class Parser:
             return self.create_node(ArrayNode, lbracket, args, rbracket)
         elif self.accept('lcurl'):
             lcurl = se
-"""
-
-
 ```

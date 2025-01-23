@@ -164,15 +164,17 @@ This detailed thought process demonstrates how to systematically analyze a code 
 
 总而言之，`ax_range_test.cc` 是 Blink 引擎中一个重要的单元测试文件，它确保了 `AXRange` 类的正确性和可靠性，这对于网页的可访问性和浏览器的核心功能至关重要。虽然普通用户不会直接接触到这个文件，但其测试的功能直接影响着用户与网页的交互体验，特别是对于需要使用辅助技术的用户。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_range_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ TEST_F(AccessibilityTest, RangeOfContents) {
 
 }  // namespace test
 }  // namespace blink
-
-"""
-
 ```

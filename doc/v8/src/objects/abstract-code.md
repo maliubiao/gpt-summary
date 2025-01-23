@@ -102,11 +102,13 @@ try {
 
 `v8/src/objects/abstract-code.cc` 提供了一个底层的机制，用于在 V8 引擎内部获取 JavaScript 代码的源代码位置信息。它抽象了机器码和字节码两种代码表示形式，使得上层模块 (例如错误处理、调试器) 可以统一地访问位置信息，从而为开发者提供更好的开发体验。  在 JavaScript 中看到的错误堆栈信息和调试器中的断点定位等功能，都直接依赖于这个文件中定义的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/abstract-code.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -140,7 +142,4 @@ int AbstractCode::SourceStatementPosition(Isolate* isolate, int offset) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

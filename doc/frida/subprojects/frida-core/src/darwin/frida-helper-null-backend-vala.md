@@ -125,7 +125,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `frida-helper-null-backend.vala` 是一个占位符实现，提供了 Frida 工具在 macOS 平台上所需的接口，但大多数功能尚未实现。用户在使用这些功能时可能会遇到 `NOT_SUPPORTED` 错误，需要通过调试工具（如 LLDB）进一步分析问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/darwin/frida-helper-null-backend.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class DarwinHelperBackend : Object, DarwinHelper {
 		public signal void idle ();
@@ -265,7 +267,4 @@ namespace Frida {
 		throw new Error.NOT_SUPPORTED ("Not yet supported on this OS");
 	}
 }
-
-"""
-
 ```

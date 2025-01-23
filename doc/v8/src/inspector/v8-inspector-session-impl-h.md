@@ -170,15 +170,17 @@ std::unique_ptr<protocol::Runtime::RemoteObject> remoteObject =
 
 总而言之，`v8/src/inspector/v8-inspector-session-impl.h` 定义的 `V8InspectorSessionImpl` 类是 V8 Inspector 架构的核心组件，负责管理调试会话、处理协议消息、管理 Inspector Agent 以及实现与 JavaScript 调试和分析相关的核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-inspector-session-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-inspector-session-impl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -331,7 +333,4 @@ class V8InspectorSessionImpl : public V8InspectorSession,
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_V8_INSPECTOR_SESSION_IMPL_H_
-
-"""
-
 ```

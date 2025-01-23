@@ -182,7 +182,7 @@ int main() {
 
 总而言之，`bar.c` 这个文件虽然简单，但它巧妙地模拟了一个在逆向工程中常见的场景：调用外部或未定义的函数。它主要用于测试 Frida 的 hook 功能，并展示了 Frida 如何在没有函数实际实现的情况下，仍然能够拦截和控制函数调用。理解这个文件的功能和背后的原理，有助于更好地使用 Frida 进行动态分析和逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/39 external, internal library rpath/external library/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,15 +190,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int some_undefined_func (void);
 
 int bar_system_value (void)
 {
   return some_undefined_func ();
 }
-
-"""
-
 ```

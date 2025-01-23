@@ -153,7 +153,7 @@ By following this structured approach, analyzing the code, and making connection
 
 这部分 `v8/src/runtime/runtime.h` 定义了大量底层的 C++ 运行时函数，这些函数是 V8 引擎执行 JavaScript 和 WebAssembly 代码的核心组成部分。它们涵盖了 WebAssembly 的各种操作、弱引用管理、内联缓存优化以及其他支持 JavaScript 语义的功能。理解这些运行时函数有助于深入理解 V8 引擎的工作原理，并能帮助开发者编写更高效、更健壮的 JavaScript 和 WebAssembly 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/runtime/runtime.h以.tq结尾，那它是个v8 torque源代码，
@@ -161,9 +161,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-           \
+### 源代码
+```c
+\
   F(WasmAllocateFeedbackVector, 3, 1)         \
   F(WasmLiftoffDeoptFinish, 1, 1)             \
   F(TierUpJSToWasmWrapper, 1, 1)              \
@@ -563,8 +565,4 @@ V8_EXPORT_PRIVATE extern int g_num_isolates_for_testing;
 }  // namespace v8
 
 #endif  // V8_RUNTIME_RUNTIME_H_
-
-"""
-
-
 ```

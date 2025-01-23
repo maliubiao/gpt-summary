@@ -123,14 +123,16 @@ Web App Manifest 是一个 JSON 文件，用于描述 Web 应用程序的元数�
 
 总而言之，`manifest_mojom_traits.cc` 是 Blink 引擎中处理 Web App Manifest 的关键组件，它负责在进程间安全可靠地传递 manifest 数据，并进行一些基本的校验。它与 JavaScript, HTML, CSS 的功能息息相关，因为 manifest 文件本身就是为了增强 Web 应用在这些技术栈上的用户体验而存在的。理解这个文件的作用有助于开发者更好地理解 Web App Manifest 的工作原理以及可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/manifest/manifest_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -417,7 +419,4 @@ bool StructTraits<blink::mojom::ManifestTabStripDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

@@ -116,14 +116,16 @@ Essentially, I approached it like reverse-engineering the component's purpose an
 
 总而言之，`DateTimeSymbolicFieldElement` 是 Blink 引擎中一个核心组件，负责处理日期和时间输入控件中基于预定义符号的选择逻辑，它与 HTML 结构、JavaScript 交互和 CSS 样式密切相关。理解其功能和使用方式对于开发基于 Chromium 的浏览器或相关 Web 应用非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/date_time_symbolic_field_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -314,7 +316,4 @@ String DateTimeSymbolicFieldElement::OptionAtIndex(int index) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

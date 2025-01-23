@@ -97,7 +97,7 @@ NEL 本身是由服务器通过 HTTP 头部控制的，但 Javascript 可以通�
 
 总而言之，这部分代码定义了 `NetworkErrorLoggingService` 所需的数据结构和部分核心功能，用于管理和处理 NEL 策略以及生成和发送 NEL 报告。它与 Javascript 的交互是间接的，主要通过处理 Javascript 发起的网络请求的结果来实现。理解这些结构和流程对于调试网络请求失败和理解 NEL 机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/network_error_logging/network_error_logging_service.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rk_anonymization_key(network_anonymization_key), origin(origin) {}
 
 NetworkErrorLoggingService::NelPolicyKey::NelPolicyKey(
@@ -287,8 +289,4 @@ NetworkErrorLoggingService::NetworkErrorLoggingService()
     : clock_(base::DefaultClock::GetInstance()) {}
 
 }  // namespace net
-
-"""
-
-
 ```

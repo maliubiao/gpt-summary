@@ -129,7 +129,7 @@ This iterative process of reading, inferring, connecting to the larger context, 
 
 虽然 `main.cpp` 代码本身很简单，但它在 Frida 的测试框架中扮演着重要的角色，用于测试 Frida 对包含自定义头文件的 C++ 代码的支持能力。理解其功能需要结合 Frida 的应用场景和相关的底层技术知识。作为调试线索，它可以帮助开发者定位 Frida 在处理特定类型的代码结构时可能存在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/250 system include dir/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,12 +137,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <lib.hpp>
 
 int main() { return 0; }
-
-"""
-
 ```

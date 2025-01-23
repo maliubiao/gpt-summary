@@ -121,14 +121,16 @@ Let's break down the thought process for analyzing the C++ code and answering th
 
 总而言之，`web_process_memory_dump.cc` 提供了一个关键的机制，用于收集和组织 Blink 渲染引擎进程的内存使用信息，这对于理解和优化 Web 应用的性能至关重要。它通过与 Chromium 底层内存转储机制的交互，以及对各种内存类型（如堆、Skia 图形内存、可丢弃内存）的支持，为开发者提供了强大的内存分析工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/instrumentation/tracing/web_process_memory_dump.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -305,7 +307,4 @@ void WebProcessMemoryDump::DumpHeapUsage(
 }
 
 }  // namespace content
-
-"""
-
 ```

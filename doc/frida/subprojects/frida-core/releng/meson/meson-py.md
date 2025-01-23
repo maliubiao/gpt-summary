@@ -168,7 +168,7 @@ Meson 构建系统本身需要与底层的编译工具链交互，而 Frida 作�
 
 因此，当用户遇到与 Frida 构建相关的问题时，查看 `frida/subprojects/frida-core/releng/meson/meson.py` 文件的代码，可以帮助他们理解 Frida 的构建入口，了解依赖项检查、路径处理以及如何调用 Meson 构建系统，从而更好地定位和解决构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/meson.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
@@ -205,7 +207,4 @@ from mesonbuild import mesonmain
 
 if __name__ == '__main__':
     sys.exit(mesonmain.main())
-
-"""
-
 ```

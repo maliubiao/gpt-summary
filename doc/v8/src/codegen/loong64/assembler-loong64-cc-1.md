@@ -102,7 +102,7 @@ add(5, 3);
 
 这段代码是 V8 引擎在 LoongArch64 平台上生成机器码的关键组成部分，它提供了丰富的指令支持，涵盖了算术、逻辑、位操作、内存访问、浮点运算等多个方面，使得 V8 能够高效地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/loong64/assembler-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/loong64/assembler-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -110,8 +110,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rd, Register rj, Register rk, int32_t sa2) {
   DCHECK(is_uint2(sa2 - 1));
   GenImm(ALSL_WU, sa2 + 3, rk, rj, rd);
@@ -1301,7 +1303,4 @@ void Assembler::CheckTrampolinePool() {
       // As we are only going to emit trampoline once, we need to prevent any
       // further emission.
       next_buffer_ch
-"""
-
-
 ```

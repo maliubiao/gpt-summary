@@ -150,7 +150,7 @@ By following this structured approach, focusing on the context provided by the f
 
 虽然 `file.c` 的代码非常简单，但在 Frida 的测试框架中，它成为了一个用于验证错误处理（例如重复符号定义）的工具。它揭示了动态 instrumentation 工具在处理底层二进制、操作系统机制以及可能遇到的编程错误时需要考虑的复杂性。  这个特定的失败测试用例很可能旨在确保 Frida 在遇到链接错误或类似的符号冲突时能够正确处理或报告。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/17 same target/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,10 +158,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func() { return 0; }
-
-"""
-
 ```

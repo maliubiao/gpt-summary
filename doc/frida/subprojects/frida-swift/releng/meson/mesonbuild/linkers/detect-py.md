@@ -148,7 +148,7 @@ A user's actions during the Frida build process will eventually lead to the exec
 
 **Debugging Clue:** If the Frida build fails with errors related to linking or finding the linker, investigating the output of the Meson configuration phase or adding debug print statements within `detect.py` (e.g., printing the commands being executed and their output) can provide valuable insights into why the linker detection might be failing. Specifically, looking at the `stdout` and `stderr` captured by `Popen_safe_logged` can reveal why the script isn't recognizing the linker.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/linkers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 
@@ -387,7 +389,4 @@ def guess_nix_linker(env: 'Environment', compiler: T.List[str], comp_class: T.Ty
     else:
         __failed_to_detect_linker(compiler, check_args, o, e)
     return linker
-
-"""
-
 ```

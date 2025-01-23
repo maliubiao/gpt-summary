@@ -123,7 +123,7 @@ By following these steps, which involve understanding the context, analyzing the
 
 总而言之，这个 `appB.c` 文件本身是一个非常基础的 C 程序，但在 Frida 的测试用例上下文中，它成为了一个用于演示和测试静态库剥离以及动态插桩功能的简单目标。它也反映了软件开发和逆向工程中常见的编译、链接、运行以及动态分析的流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/65 static archive stripping/app/appB.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,13 +131,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <libB.h>
 
 int main(void) { printf("The answer is: %d\n", libB_func()); }
-
-"""
-
 ```

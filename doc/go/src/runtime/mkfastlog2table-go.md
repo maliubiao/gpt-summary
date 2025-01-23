@@ -158,7 +158,7 @@ go run mkfastlog2table.go
 
 总而言之，`mkfastlog2table.go` 是 Go 运行时为了优化性能而采用的一种代码生成技术，它通过预先计算并存储对数近似值，实现了快速的对数运算，主要用于堆内存采样等性能敏感的场景。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mkfastlog2table.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -277,9 +279,4 @@ func nlog(x float64) float64 {
 	hfsq := float64(0.5 * f * f)
 	return float64(k*Ln2Hi) - ((hfsq - (float64(s*float64(hfsq+R)) + float64(k*Ln2Lo))) - f)
 }
-
-"""
-
-
-
 ```

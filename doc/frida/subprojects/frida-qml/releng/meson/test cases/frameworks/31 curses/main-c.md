@@ -139,7 +139,7 @@ Let's break down the thought process for analyzing this C code snippet and answe
 
 尽管 `main.c` 的代码非常简洁，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 对 `curses` 库的 Hook 能力。理解这段代码的功能以及其背后的底层概念，有助于理解 Frida 的工作原理以及逆向工程的一些基本方法。同时，了解 `curses` 库的常见使用错误，可以帮助开发者避免在实际项目中使用 `curses` 时出现问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/31 curses/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "curses.h"
 
 int main(void) {
@@ -156,6 +158,4 @@ initscr();
 endwin();
 return 0;
 }
-"""
-
 ```

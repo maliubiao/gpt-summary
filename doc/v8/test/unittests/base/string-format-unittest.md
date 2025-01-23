@@ -112,11 +112,13 @@ console.log(message); // 输出: Expected 11 got 42!
 
 `string-format-unittest.cc` 测试的 `FormattedString` 类是 V8 引擎内部用于高效构建格式化字符串的 C++ 工具。 虽然它不是直接暴露给 JavaScript 开发者的 API，但它反映了在底层引擎中处理字符串格式化的需求。 JavaScript 通过模板字面量或字符串连接提供了类似的功能，但实现方式和性能考量可能有所不同。 V8 引擎内部使用 `FormattedString` 这样的工具，有助于提升其在处理字符串相关的操作时的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/string-format-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ TEST(FormattedStringTest, Uint32AndUint64) {
 }
 
 }  // namespace v8::base
-
-"""
-
 ```

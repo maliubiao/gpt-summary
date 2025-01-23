@@ -179,7 +179,7 @@ Calculates the sum of two numbers.
 
 `frida/subprojects/frida-node/releng/meson/docs/refman/model.py` 文件是 Frida Node.js 绑定的 API 文档模型。它定义了描述 Frida API 结构的 Python 数据类，用于生成用户参考手册。 虽然普通用户不会直接接触这个文件，但它对于 Frida 的开发和文档生成至关重要，并且间接地影响着用户理解和使用 Frida 进行逆向的能力。  它描述的 API 背后涉及到大量的底层知识，理解这些知识有助于更有效地使用 Frida。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/docs/refman/model.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -292,7 +294,4 @@ class Object(NamedObject, FetureCheck):
 class ReferenceManual:
     functions: T.List[Function]
     objects: T.List[Object]
-
-"""
-
 ```

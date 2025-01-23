@@ -76,13 +76,15 @@ SIMD 向量指令的模拟则与 JavaScript 中一些高性能操作 (例如，W
 
 总而言之，`v8/src/execution/ppc/simulator-ppc.cc` 文件的第三部分实现了 PowerPC 指令集的模拟器，这是 V8 引擎在非 PowerPC 架构上执行 JavaScript 代码的关键组成部分。它通过模拟 PowerPC 指令的行为，使得 JavaScript 代码得以运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/ppc/simulator-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-     switch (bfa) {
+### 源代码
+```
+switch (bfa) {
         case 5:
           ClearFPSCR(VXSOFT);
           ClearFPSCR(VXSQRT);
@@ -1824,8 +1826,4 @@ bool Simulator::GlobalMonitor::NotifyStoreExcl(uintptr_t addr,
 
 #undef SScanF
 #endif  // USE_SIMULATOR
-
-"""
-
-
 ```

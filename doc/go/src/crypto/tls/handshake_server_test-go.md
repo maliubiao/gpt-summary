@@ -184,7 +184,7 @@ func testCrossVersionResume(t *testing.T, version uint16) {
 
 这段 `handshake_server_test.go` 代码是 `crypto/tls` 包中至关重要的部分，它通过大量的测试用例验证了 TLS 服务器握手实现的正确性和健壮性，涵盖了协议协商、密码套件选择、扩展处理、错误处理以及与外部 TLS 实现的互操作性等多个方面。这些测试用例也间接地反映了在使用 Go 语言进行 TLS 服务器开发时需要注意的一些配置和潜在的错误点。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/handshake_server_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -193,8 +193,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1235,10 +1237,5 @@ func TestHandshakeServerSNIGetCertificate(t *testing.T) {
 	// Replace the NameToCertificate map with a GetCertificate function
 	nameToCert := config.NameToCertificate
 	config.NameToCertificate = nil
-	config.GetCertificate = func(clientHello *ClientHelloInfo) (*Certificate, error) 
-"""
-
-
-
-
+	config.GetCertificate = func(clientHello *ClientHelloInfo) (*Certificate, error)
 ```

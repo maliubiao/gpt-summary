@@ -141,7 +141,7 @@ input() # Keep script running
 
 总而言之，这个简单的 C++ 文件在 Frida 项目中扮演着一个单元测试的角色，用于验证静态代码分析工具 `clang-tidy` 的正确性，确保 Frida 代码库的质量。虽然代码本身功能简单，但它涉及了编程语言的基础概念以及软件开发中的测试和代码质量保证流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/68 clang-tidy/cttest_fixed.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<cstdio>
 
 int main(int, char**) {
@@ -158,7 +160,4 @@ int main(int, char**) {
   printf("Intbool is %d\n", (int)intbool);
   return 0;
 }
-
-"""
-
 ```

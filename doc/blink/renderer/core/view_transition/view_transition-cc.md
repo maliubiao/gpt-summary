@@ -142,15 +142,17 @@ This iterative process of scanning, identifying core components, relating them t
 
 `blink/renderer/core/view_transition/view_transition.cc` 文件的主要功能是作为 Blink 引擎中视图过渡机制的核心控制器。它负责管理过渡的生命周期，协调 DOM 的捕获和更新，处理 JavaScript 回调，并与 Compositor 协同工作以实现平滑的视觉过渡效果。它通过状态机的方式管理过渡的不同阶段，并依赖于 HTML、CSS 和 JavaScript 来定义和触发视图过渡。该文件是实现声明式视图过渡的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/view_transition/view_transition.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1030,7 +1032,4 @@ gfx::Size ViewTransition::GetSnapshotRootSize() const {
     return gfx::Size();
 
   return style_tracker_->GetSnapshotRootSi
-"""
-
-
 ```

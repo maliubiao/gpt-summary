@@ -222,7 +222,7 @@ Local:
 
 总而言之，`v8/src/debug/debug-scopes.cc` 的主要功能是 **为 V8 调试器提供核心的基础设施，用于在 JavaScript 代码执行过程中检查和遍历作用域链，从而帮助开发者理解变量的可见性和值，并调试与作用域相关的错误。** 它通过 `ScopeIterator` 类实现了这一功能，该类能够解析代码、识别不同类型的作用域、并提取作用域内的变量信息。 这部分代码主要关注作用域的遍历和信息的提取，为后续调试操作（例如设置断点、单步执行、查看变量值）提供了必要的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-scopes.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/debug-scopes.cc以.tq结尾，那它是个v8 torque源代码，
@@ -230,8 +230,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1140,8 +1142,4 @@ bool ScopeIterator::VisitLocals(const Visitor& visitor, Mode mode,
 
       case VariableLocation::PARAMETER: {
         if (frame_inspector_ == nullptr) {
-  
-"""
-
-
 ```

@@ -279,7 +279,7 @@ Frida.attach(targetProcess, function(session) {
 
 这个过程可能需要多次尝试和调整，因为不同的 Android 版本和设备可能使用不同的 Camera HAL 实现。 通过 Frida Hook，你可以动态地观察 Camera HAL 的行为，深入理解 Android Framework 如何一步步地与底层的 USB 视频设备进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/usb/video.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -290,8 +290,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -681,7 +683,4 @@ struct uvc_frame_mjpeg {
 #define DECLARE_UVC_FRAME_MJPEG(n) struct UVC_FRAME_MJPEG(n) { __u8 bLength; __u8 bDescriptorType; __u8 bDescriptorSubType; __u8 bFrameIndex; __u8 bmCapabilities; __le16 wWidth; __le16 wHeight; __le32 dwMinBitRate; __le32 dwMaxBitRate; __le32 dwMaxVideoFrameBufferSize; __le32 dwDefaultFrameInterval; __u8 bFrameIntervalType; __le32 dwFrameInterval[n]; \
 } __attribute__((packed))
 #endif
-
-"""
-
 ```

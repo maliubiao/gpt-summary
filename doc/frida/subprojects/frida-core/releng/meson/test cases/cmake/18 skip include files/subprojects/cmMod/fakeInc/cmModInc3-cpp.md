@@ -149,7 +149,7 @@ Finally, the information is organized and presented in a clear and structured ma
 
 总而言之，`cmModInc3.cpp` 是 Frida 构建系统的一个测试用例，用于验证包含文件处理的逻辑。它本身的代码非常简单，但其存在揭示了 Frida 开发过程中对构建系统健壮性的重视。它与逆向方法的关联是间接的，更多体现在理解构建过程的重要性上。用户通常不会直接操作这个文件，而是通过构建 Frida 遇到错误时，将其作为调试的线索来追溯问题根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/18 skip include files/subprojects/cmMod/fakeInc/cmModInc3.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifndef MESON_INCLUDE_IMPL
 #error "MESON_INCLUDE_IMPL is not defined"
 #endif // !MESON_INCLUDE_IMPL
@@ -166,7 +168,4 @@ Prompt:
 string cmModClass::getStr1() const {
   return getStr2();
 }
-
-"""
-
 ```

@@ -86,9 +86,12 @@ This systematic approach allows me to break down the code into manageable parts,
 
 **总结来说，这个文件是 `v8windbg` 扩展的一部分，它的目标是让 WinDbg 用户能够更方便地理解 V8 引擎的内部状态。它通过调用独立的 `v8_debug_helper` 库，并将其返回的结果转换为 WinDbg 可以理解和展示的数据结构，从而实现了这个目标。** 这使得调试者能够在 WinDbg 中查看 V8 堆对象的内容、栈帧信息以及其他 V8 特有的数据结构。
 
-Prompt: ```这是目录为v8/tools/v8windbg/src/v8-debug-helper-interop.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/tools/v8windbg/src/v8-debug-helper-interop.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -278,6 +281,4 @@ std::vector<Property> GetStackFrame(WRL::ComPtr<IDebugHostContext> sp_context,
                                 reader_scope.GetReader());
   return GetPropertiesAsVector(props->num_properties, props->properties);
 }
-
-"""
 ```

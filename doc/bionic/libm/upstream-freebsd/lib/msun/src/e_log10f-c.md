@@ -250,7 +250,7 @@ if (Process.arch === "arm64" || Process.arch === "arm") {
 
 希望以上分析能够帮助你理解 `e_log10f.c` 文件的功能、实现以及在 Android 系统中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_log10f.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -261,8 +261,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -332,7 +334,4 @@ log10f(float x)
 	return y*log10_2lo + (lo+hi)*ivln10lo + lo*ivln10hi + hi*ivln10hi +
 	    y*log10_2hi;
 }
-
-"""
-
 ```

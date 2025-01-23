@@ -168,15 +168,17 @@ This specific code snippet does not process any command-line arguments. It's a s
 
 In summary, this code snippet is a focused test case likely designed to probe the Go compiler's handling of different numeric types in function calls, particularly concerning the ABI and the interaction between interfaces and concrete types. The simplified helper functions and the use of `//go:noinline` and `//go:registerparams` are strong indicators of its testing nature.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/abi/idata.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -274,9 +276,4 @@ func main() {
 	s := ToFloat(v).String()
 	fmt.Printf("s=%s\n", s)
 }
-
-"""
-
-
-
 ```

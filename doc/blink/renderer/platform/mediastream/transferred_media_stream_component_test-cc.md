@@ -103,14 +103,16 @@ By following these steps, one can thoroughly analyze the provided C++ test file 
 
 总而言之，`transferred_media_stream_component_test.cc` 这个文件通过一系列单元测试，确保了 `TransferredMediaStreamComponent` 能够正确地管理和代理媒体流组件，这对于 Blink 引擎中 MediaStream API 的稳定性和可靠性至关重要，并间接地影响着使用这些 API 的 Web 应用的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/transferred_media_stream_component_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ TEST_F(TransferredMediaStreamComponentTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

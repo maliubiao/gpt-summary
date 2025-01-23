@@ -230,7 +230,7 @@ console.log('堆快照已生成');
 
 `v8/test/cctest/test-heap-profiler.cc` 文件是 V8 堆分析器功能的综合测试集。它涵盖了堆快照的基本创建、与垃圾回收的交互、不同类型的对象引用（如 handle 和 weak handle）对快照内容的影响，以及 WebAssembly 对象在快照中的表示。该测试文件确保了 V8 的堆分析器能够准确地捕获 JavaScript 堆的状态，为开发者提供可靠的内存分析工具，帮助他们诊断和解决内存泄漏等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-heap-profiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-heap-profiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -238,10 +238,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
-
-        new WeakData{heap_profiler->TakeHeapSnapshot(), &gc_calls, &handle};
+### 源代码
+```cpp
+new WeakData{heap_profiler->TakeHeapSnapshot(), &gc_calls, &handle};
 
     v8::HandleScope inner_scope(isolate);
     handle.Reset(isolate, v8::Object::New(isolate));
@@ -420,8 +421,4 @@ TEST(HeapSnapshotWithWasmInstance) {
 #endif  // V8_ENABLE_SANDBOX
 }
 #endif  // V8_ENABLE_WEBASSEMBLY
-
-"""
-
-
 ```

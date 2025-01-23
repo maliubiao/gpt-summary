@@ -167,7 +167,7 @@ By following these steps, we can comprehensively analyze the script's functional
 
 总而言之，`generate_stlibs.py` 是 Frida 工具链中一个用于生成测试用例所需静态库的实用工具，它涉及到编译、链接等底层知识，并且其执行依赖于正确的命令行参数和系统环境。理解其功能和工作原理有助于理解 Frida 的构建过程以及在出现问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/210 link custom_i multiple from multiple/generate_stlibs.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import shutil, sys, subprocess, argparse, pathlib
@@ -269,7 +271,4 @@ def generate_lib(outfiles, private_dir, compiler_array):
 if __name__ == '__main__':
     options = parser.parse_args()
     sys.exit(generate_lib(options.o, options.private_dir, options.cmparr))
-
-"""
-
 ```

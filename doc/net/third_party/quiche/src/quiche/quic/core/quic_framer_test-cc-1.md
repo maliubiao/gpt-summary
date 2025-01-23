@@ -129,7 +129,7 @@ QUIC 协议是 HTTP/3 的底层传输协议，因此与 JavaScript 在 Web 开�
 
 总而言之，这部分代码是 QUIC 协议帧处理器单元测试的核心组成部分，它通过定义一系列辅助函数和测试用例，来确保 `QuicFramer` 能够正确地解析和处理各种 QUIC 数据包，包括异常和边界情况。这对于保证基于 QUIC 协议的网络连接的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -137,9 +137,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共16部分，请归纳一下它的功能
+```
 
-"""
-                 << " associated data: "
+### 源代码
+```cpp
+<< " associated data: "
                       << absl::BytesToHexString(associated_data);
       return false;
     }
@@ -1020,7 +1022,4 @@ TEST_P(QuicFramerTest, PacketHeaderWith1BytePacketNumber) {
       {"Unable to read first byte.",
        {0x40}},
       //
-"""
-
-
 ```

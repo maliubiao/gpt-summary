@@ -148,14 +148,16 @@ By following these steps, I can systematically analyze the code and provide a co
 
 `path_interpolation_functions.cc` 的核心职责是实现 SVG `path` 元素的动画功能。它处理了 CSS `path()` 值的转换、兼容性检查、中间值的计算以及最终值的应用。它通过分离可插值的数值部分和不可插值的结构部分，确保了路径动画的平滑性和正确性。理解这个文件有助于深入了解 Blink 引擎如何处理复杂的 SVG 动画。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/path_interpolation_functions.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -404,7 +406,4 @@ scoped_refptr<StylePath> PathInterpolationFunctions::AppliedValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

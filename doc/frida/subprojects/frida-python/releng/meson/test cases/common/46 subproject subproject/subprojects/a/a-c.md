@@ -150,7 +150,7 @@ Interceptor.attach(Module.findExportByName(null, "fucn"), { // 注意这里是 "
 
 总而言之，这个 `a.c` 文件虽然功能简单，但它在 Frida 项目中扮演着重要的角色，用于测试和演示 Frida 的核心功能，并作为学习和调试 Frida 的一个入口点。它清晰地展示了如何创建一个可以被动态 hook 的导出函数，涉及了动态链接、符号导出等底层概念，是理解 Frida 工作原理的良好示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/46 subproject subproject/subprojects/a/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2(void);
 
 #if defined _WIN32 || defined __CYGWIN__
@@ -174,7 +176,4 @@ int func2(void);
 #endif
 
 int DLL_PUBLIC func(void) { return func2(); }
-
-"""
-
 ```

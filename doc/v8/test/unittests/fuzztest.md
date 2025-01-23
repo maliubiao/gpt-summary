@@ -58,9 +58,12 @@ By following these steps, I can systematically analyze the code and create a com
 
 **总结来说，`v8/test/unittests/fuzztest.cc` 文件通过定义一些示例性的模糊测试用例，来演示和验证 V8 的模糊测试功能，特别是与 FuzzTest 框架以及与外部模糊测试工具 (如 Centipede) 的集成。它展示了如何使用 `V8_FUZZ_TEST` 宏定义测试，如何指定输入域，以及如何设计测试用例来触发不同类型的错误。**
 
-Prompt: ```这是目录为v8/test/unittests/fuzztest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/fuzztest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -134,6 +137,4 @@ V8_FUZZ_TEST(SmokeTest, SingleString);
 
 #endif  // V8_ENABLE_FUZZTEST
 }  // namespace v8::internal
-
-"""
 ```

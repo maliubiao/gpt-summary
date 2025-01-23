@@ -118,11 +118,13 @@ try {
 
 `js-create-lowering-unittest.cc` 通过单元测试来确保 V8 引擎的 `JSCreateLowering` 组件能够正确地将 JavaScript 中各种创建对象和上下文的操作转换为底层的内存分配操作。这对于 V8 的性能至关重要，因为高效的内存管理是 JavaScript 引擎优化的关键方面。 这些测试覆盖了 JavaScript 中一些核心的语言特性，确保了 V8 引擎在编译这些特性时能够生成正确的低级代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/js-create-lowering-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -326,7 +328,4 @@ TEST_F(JSCreateLoweringTest, JSCreateCatchContext) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

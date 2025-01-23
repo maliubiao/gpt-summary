@@ -173,7 +173,7 @@ Interceptor.attach(Module.findExportByName("libversioned.so", "versioned_func"),
 
 总之，尽管 `versioned.c` 的代码非常简单，但它在 Frida 项目中扮演着重要的角色，用于测试 Frida 处理版本化共享库的能力，并为 Frida 的开发和用户的调试提供了重要的参考依据。它简洁地体现了动态 instrumentation 技术在逆向工程中的应用，并涉及了操作系统底层的一些关键概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/1 soname/versioned.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,12 +181,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int versioned_func() {
     return 0;
 }
-
-"""
-
 ```

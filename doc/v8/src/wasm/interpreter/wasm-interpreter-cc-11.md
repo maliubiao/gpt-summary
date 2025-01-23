@@ -139,7 +139,7 @@ console.log(result); // 输出 WebAssembly 函数的返回值
 
 作为 15 个部分中的第 12 部分，这段代码主要集中在处理 WebAssembly 的核心执行逻辑，涵盖了函数调用、基本的控制流操作、局部和全局变量的访问以及内存的读写。它负责将高级的 WebAssembly 指令转化为解释器可以理解和执行的低级操作。由于是中间部分，它依赖于之前部分建立的解释器框架和数据结构，并为后续部分处理更复杂的指令或优化做准备。 这部分代码体现了解释器执行 WebAssembly 代码时的核心机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter.cc以.tq结尾，那它是个v8 torque源代码，
@@ -147,8 +147,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第12部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
         } else {
           EMIT_INSTR_HANDLER_WITH_PC(s2s_CallFunction, instr.pc);
@@ -1154,7 +1156,4 @@ Prompt:
         return RegMode::kNoReg;                   \
       case kS2R:                                  \
         EMIT_INSTR_HANDLER(s2r_
-"""
-
-
 ```

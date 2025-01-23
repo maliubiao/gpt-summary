@@ -298,7 +298,7 @@ libm.so:
 
 总而言之，`w_dremf.c` 文件虽然简单，但在 Android 系统中扮演着重要的角色，为应用程序和系统组件提供了基础的浮点数取余功能。理解其功能、实现方式以及与 Android 架构的联系，有助于我们更好地进行 Android 开发和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/w_dremf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -308,8 +308,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * dremf() wrapper for remainderf().
  *
@@ -325,7 +327,4 @@ dremf(float x, float y)
 {
 	return remainderf(x, y);
 }
-
-"""
-
 ```

@@ -224,15 +224,17 @@ runWasm();
 
 总而言之，`v8/test/wasm-api-tests/traps.cc` 是一个关键的测试文件，用于确保 V8 能够正确地处理 WebAssembly 中的运行时错误，并提供准确的错误信息，这对于 Wasm 的健壮性和与 JavaScript 的互操作性至关重要。它也间接反映了 Wasm 开发者需要注意的一些常见错误模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/traps.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/wasm-api-tests/traps.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -365,7 +367,4 @@ TEST_F(WasmCapiTest, Traps) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

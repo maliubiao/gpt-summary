@@ -209,15 +209,17 @@ console.log(Array.isArray(restArgs)); // 输出 true，rest 参数形成的是�
 
 总而言之，`v8/test/unittests/compiler/run-jsobjects-unittest.cc` 通过 C++ 代码测试了 V8 编译器在处理 JavaScript 中与对象（特别是 `arguments` 对象和 rest 参数）相关的特性时是否正确地实现了语言规范，并且可以帮助开发者理解 `arguments` 对象在不同模式下的行为差异以及 rest 参数的用法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/run-jsobjects-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/run-jsobjects-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ TEST_F(RunJSObjectsTest, ArgumentsRest) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -168,15 +168,17 @@ func main() {
 
 `zeroextension_test.go` 文件是 Go 编译器内部用于测试 SSA 阶段零扩展行为的单元测试。它通过构造一系列包含类型转换和算术运算的测试用例，来验证编译器在处理这些操作时的正确性，特别是涉及到有符号数到无符号数的转换时。测试用例的结果有时可能并不符合直接的算术计算结果，这反映了测试的重点在于编译器内部的表示和转换行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/zeroextension_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -211,9 +213,4 @@ func TestZeroExtension(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

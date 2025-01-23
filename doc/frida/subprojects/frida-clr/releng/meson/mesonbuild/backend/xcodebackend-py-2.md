@@ -111,7 +111,7 @@ Finally, I need to summarize the functionality of this specific part of the code
 
 这部分代码的核心功能是**将 Meson 构建系统中定义的构建目标和配置信息转换为 Xcode 项目文件 (`project.pbxproj`) 中对应的 `XCBuildConfiguration` 和 `XCConfigurationList` 结构**。它负责设置每个构建目标在不同构建类型下的编译选项、链接参数、依赖关系等，从而让 Xcode 能够理解并执行 Frida 的构建过程。这部分代码是 Meson 构建系统与 Xcode 集成的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/xcodebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ldPhase')
             phase_dict.add_item('buildActionMask', 2147483647)
             file_arr = PbxArray()
@@ -565,8 +567,4 @@ ldPhase')
 
     def generate_suffix(self, pbxdict: PbxDict) -> None:
         pbxdict.add_item('rootObject', self.project_uid, 'Project object')
-
-"""
-
-
 ```

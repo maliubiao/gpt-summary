@@ -236,7 +236,7 @@ sys.stdin.read()
 
 `pthread_equal` 是一个基础但重要的 POSIX 线程函数，用于比较线程标识符。它在 Android 的多线程编程中被广泛使用。理解其功能和限制对于编写正确的并发代码至关重要。虽然其实现非常简单，但与其他线程管理和同步机制结合使用时，可以构建复杂的并发逻辑。 通过 Frida Hook，我们可以方便地观察和调试 `pthread_equal` 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/pthread_equal.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -247,8 +247,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -282,7 +284,4 @@ Prompt:
 int pthread_equal(pthread_t lhs, pthread_t rhs) {
   return (lhs == rhs ? 1 : 0);
 }
-
-"""
-
 ```

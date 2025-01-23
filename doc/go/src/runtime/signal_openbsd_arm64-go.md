@@ -210,7 +210,7 @@ func (c *sigctxt) set_pc(x uint64) { c.regs().Sc_elr = uintptr(x) }
 
 这段 `go/src/runtime/signal_openbsd_arm64.go` 代码是 Go 运行时处理 OpenBSD ARM64 平台上信号的关键组成部分。它定义了用于访问和修改信号发生时 CPU 寄存器状态的结构体和方法，为 Go 语言的信号处理机制提供了底层支持。普通 Go 开发者不需要直接操作这些结构体，而是通过 `os/signal` 包进行更高层次的信号处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_openbsd_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -218,8 +218,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -295,9 +297,4 @@ func (c *sigctxt) set_sigcode(x uint64) { c.info.si_code = int32(x) }
 func (c *sigctxt) set_sigaddr(x uint64) {
 	*(*uint64)(add(unsafe.Pointer(c.info), 16)) = x
 }
-
-"""
-
-
-
 ```

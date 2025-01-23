@@ -283,7 +283,7 @@ Hook 内核函数更加复杂，通常需要使用更高的权限和更底层的
 
 `bionic/libc/kernel/uapi/linux/ppp_defs.h` 定义了 PPP 协议相关的常量和数据结构，用于用户空间程序和 Linux 内核之间传递信息。它本身不包含可执行代码，但被 Android 网络协议栈的各个层次（包括 Framework、Native 服务、RIL 和内核驱动）所使用。要调试这些步骤，可以使用 Frida hook 相关 Native 代码中的函数，观察其如何使用这些定义来处理 PPP 数据包。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ppp_defs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -294,8 +294,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -403,7 +405,4 @@ struct ppp_idle64 {
   __s64 recv_idle;
 };
 #endif
-
-"""
-
 ```

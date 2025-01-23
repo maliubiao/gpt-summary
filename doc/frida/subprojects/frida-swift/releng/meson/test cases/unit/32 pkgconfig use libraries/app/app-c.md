@@ -166,7 +166,7 @@ By following these steps, the user arrives at a state where Frida is actively mo
 
 虽然 `app.c` 代码本身非常简单，但它作为 Frida 测试用例，体现了动态插桩的核心应用场景：在运行时观察和操纵程序行为，即使目标代码的实现细节不可知。这个简单的例子也涉及到许多底层的操作系统和编程概念，是理解 Frida 工作原理的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/32 pkgconfig use libraries/app/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,15 +174,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void libb_func();
 
 int main(void) {
     libb_func();
     return 0;
 }
-
-"""
-
 ```

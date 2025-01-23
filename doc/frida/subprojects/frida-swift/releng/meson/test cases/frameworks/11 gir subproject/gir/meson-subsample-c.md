@@ -198,7 +198,7 @@ Message: Hello Frida
 
 `meson-subsample.c` 文件定义了一个简单的 GObject 类，用于演示和测试 Frida 对 GObject 对象的动态插桩能力。它本身的功能并不复杂，但作为 Frida 测试套件的一部分，它对于验证 Frida 的正确性和理解 Frida 如何与基于 GObject 的应用程序进行交互至关重要。开发者查看这个文件通常是为了理解 Frida 的内部机制、学习如何编写 Frida 脚本或调试与 GObject 交互相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/11 gir subproject/gir/meson-subsample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -206,8 +206,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-subsample.h"
 
 struct _MesonSubSample
@@ -332,7 +334,4 @@ meson_sub_sample_print_message (MesonSubSample *self)
 
   g_print ("Message: %s\n", self->msg);
 }
-
-"""
-
 ```

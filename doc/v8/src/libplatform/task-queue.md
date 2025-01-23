@@ -146,11 +146,13 @@ console.log("这段代码会立即执行");
 
 `v8/src/libplatform/task-queue.cc` 中的 `TaskQueue` 类是 V8 引擎中用于管理和执行异步任务的基础组件。它的功能和工作方式与 JavaScript 事件循环中的宏任务队列非常相似，都提供了一种机制来延迟执行某些操作，并在合适的时机进行处理。理解 `TaskQueue` 的实现有助于更深入地理解 JavaScript 异步编程的底层原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/task-queue.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -219,7 +221,4 @@ void TaskQueue::BlockUntilQueueEmptyForTesting() {
 
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

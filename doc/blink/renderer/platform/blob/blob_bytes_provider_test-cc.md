@@ -125,14 +125,16 @@ This systematic approach, starting from the code itself and then expanding to it
 
 总而言之，`blob_bytes_provider_test.cc` 是一个关键的测试文件，用于确保 Blink 引擎中 Blob 数据管理的核心组件 `BlobBytesProvider` 的稳定性和正确性，这直接关系到 Web 平台上 Blob 相关功能的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/blob/blob_bytes_provider_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -504,7 +506,4 @@ TEST_F(BlobBytesProviderTest, RequestAsStream) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

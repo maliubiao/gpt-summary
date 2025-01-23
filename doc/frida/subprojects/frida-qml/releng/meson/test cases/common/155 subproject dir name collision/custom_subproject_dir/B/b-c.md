@@ -186,7 +186,7 @@ By following these steps, including self-correction, the comprehensive answer pr
 
 总而言之，`b.c` 文件中的 `func_b` 函数实现了一个简单的逻辑：依赖于另一个函数 `func_c` 的返回值来决定是正常返回还是终止程序。在 Frida 的上下文中，这样的代码可以作为测试用例，也可以作为逆向分析的目标，用于理解程序的行为、修改其执行流程或排查错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/155 subproject dir name collision/custom_subproject_dir/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 char func_c(void);
 
@@ -216,7 +218,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

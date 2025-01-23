@@ -159,14 +159,16 @@ By following these steps, combining code analysis with domain knowledge of web t
 
 总而言之，`blink/renderer/core/style/content_data.cc` 是 Blink 渲染引擎中一个核心的文件，它负责将 CSS `content` 属性的声明转化为实际的渲染内容，并与布局系统紧密协作。理解它的功能对于深入了解浏览器如何处理 CSS 生成内容至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/content_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Antti Koivisto (koivisto@kde.org)
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010 Apple Inc. All rights
@@ -280,7 +282,4 @@ LayoutObject* NoneContentData::CreateLayoutObject(LayoutObject& owner) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

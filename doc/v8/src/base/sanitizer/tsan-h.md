@@ -144,15 +144,17 @@ int main() {
 
 总而言之，`v8/src/base/sanitizer/tsan.h` 是 V8 引擎中用于支持 ThreadSanitizer 的一个重要组成部分，它通过宏定义允许开发者选择性地禁用 TSan 的分析，从而帮助提高 V8 引擎的并发安全性和稳定性，最终也间接地提升了 JavaScript 的运行质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/sanitizer/tsan.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/sanitizer/tsan.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ Prompt:
 #endif  // !defined(THREAD_SANITIZER)
 
 #endif  // V8_BASE_SANITIZER_TSAN_H_
-
-"""
-
 ```

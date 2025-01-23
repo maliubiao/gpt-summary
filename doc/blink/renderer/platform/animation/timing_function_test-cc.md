@@ -169,14 +169,16 @@ By following these steps, you can systematically analyze a source code file like
 
 总而言之，`blink/renderer/platform/animation/timing_function_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎中关于动画 timing function 的实现是正确和可靠的，这直接影响到网页动画和过渡效果的呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/animation/timing_function_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Google Inc. All rights reserved.
  *
@@ -685,7 +687,4 @@ TEST_F(TimingFunctionTest, StepsEvaluate) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

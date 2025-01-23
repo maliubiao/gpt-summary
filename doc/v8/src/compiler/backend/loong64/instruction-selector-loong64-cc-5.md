@@ -133,7 +133,7 @@ const c = Float32x4(1.0, 2.0, 3.0, 4.0);
 
 `v8/src/compiler/backend/loong64/instruction-selector-loong64.cc` 是 V8 引擎中至关重要的一个组件，它负责将高级的 JavaScript (特别是 SIMD 部分) 或 WebAssembly 代码翻译成底层的、可以在 LoongArch64 架构上执行的机器指令，是连接高级语言和硬件的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/instruction-selector-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/loong64/instruction-selector-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -141,8 +141,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 SatF64x2SZero, kLoong64I32x4TruncSatF64x2SZero)         \
   V(I32x4TruncSatF64x2UZero, kLoong64I32x4TruncSatF64x2UZero)         \
   V(I32x4RelaxedTruncF32x4S, kLoong64I32x4RelaxedTruncF32x4S)         \
@@ -730,8 +732,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

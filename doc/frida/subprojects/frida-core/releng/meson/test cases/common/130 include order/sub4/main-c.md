@@ -178,7 +178,7 @@ int somefunc(void) {
 
 总而言之，虽然这个 C 代码文件本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 C 语言的头文件包含机制是否正常工作。理解这个测试用例的目的是理解 Frida 构建过程和 C 语言基础的重要一步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/130 include order/sub4/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Use the <> include notation to force searching in include directories */
 #include <main.h>
 
@@ -196,7 +198,4 @@ int main(void) {
     return 0;
   return 1;
 }
-
-"""
-
 ```

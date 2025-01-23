@@ -131,11 +131,13 @@ if (localVarValue.type.startsWith("struct")) {
 
 总而言之，`debug-wasm-objects.cc` 是 V8 引擎中实现 Wasm 调试支持的关键组成部分，它通过创建特殊的 JavaScript 代理对象，使得开发者能够在 JavaScript 环境中方便地检查和理解 Wasm 实例的内部状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-wasm-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1384,7 +1386,4 @@ Handle<ArrayList> AddWasmTableObjectInternalProperties(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

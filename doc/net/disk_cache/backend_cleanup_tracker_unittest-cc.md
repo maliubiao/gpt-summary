@@ -186,15 +186,17 @@ Finally, I organize the information into the requested categories: Functionality
 
 因此，虽然 `backend_cleanup_tracker_unittest.cc` 是一个 C++ 单元测试文件，它测试的核心功能是 Chromium 缓存机制的关键部分，并且与用户在浏览器中的日常操作息息相关。理解这个类的工作原理可以帮助开发者诊断和解决与浏览器缓存相关的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/backend_cleanup_tracker_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -310,7 +312,4 @@ TEST_F(BackendCleanupTrackerTest, SamePath) {
 
 }  // namespace
 }  // namespace disk_cache
-
-"""
-
 ```

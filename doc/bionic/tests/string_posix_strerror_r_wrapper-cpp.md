@@ -329,7 +329,7 @@ if __name__ == '__main__':
 
 这些 Frida 脚本会在 `posix_strerror_r` 或 `strerror_r` 函数被调用时打印出其参数和返回值，帮助你理解程序执行过程中错误处理的流程。你需要将 `"你的测试程序的进程名"` 或 `"你的Android应用的包名"` 替换为实际的进程名或包名。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/string_posix_strerror_r_wrapper.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -340,8 +340,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2021 The Android Open Source Project
  *
@@ -371,7 +373,4 @@ Prompt:
 int posix_strerror_r(int errnum, char* buf, size_t buflen) {
   return strerror_r(errnum, buf, buflen);
 }
-
-"""
-
 ```

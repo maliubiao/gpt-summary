@@ -178,7 +178,7 @@ data: [0x02, 0x00, 0x01, 0x00, 0x0A, 0x41, 0x42, 0x43, 0x00]
 
 后续部分很可能会扩展 `BodyGen` 类，实现更复杂的指令生成逻辑，并处理导入、导出、表、内存等模块组件的生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/fuzzing/random-module-generation.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/fuzzing/random-module-generation.cc以.tq结尾，那它是个v8 torque源代码，
@@ -186,8 +186,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1104,7 +1106,4 @@ class BodyGen {
       case kExprI64AtomicAnd8U:
       case kExprI64AtomicOr8U:
       case kExprI64A
-"""
-
-
 ```

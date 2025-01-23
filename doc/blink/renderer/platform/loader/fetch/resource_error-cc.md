@@ -181,14 +181,16 @@ By following these steps of understanding the request, analyzing the code, conne
 
 总而言之，`resource_error.cc` 文件在 Blink 渲染引擎中扮演着至关重要的角色，它负责统一、规范地表示资源加载过程中出现的各种错误，并将这些错误信息传递给上层模块，最终影响到 Web 开发者在 JavaScript、HTML 和 CSS 中所能观察到的行为和错误信息。 了解 `ResourceError` 的工作原理有助于开发者更好地理解和调试 Web 应用程序中的资源加载问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_error.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Apple Computer, Inc.  All rights reserved.
  * Copyright (C) 2009 Google Inc. All rights reserved.
@@ -560,7 +562,4 @@ std::ostream& operator<<(std::ostream& os, const ResourceError& error) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

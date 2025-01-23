@@ -86,13 +86,15 @@ console.log(sum); // 输出 [10, 12, 14, 16, 18, 20, 22, 24]
 
 总而言之，这部分代码是V8引擎中用于确保其在MIPS64架构上能够正确生成和执行使用MSA扩展的机器码的重要组成部分。它通过模拟MSA指令的行为并在C++中进行验证，来保证JavaScript代码在MIPS64上的高效且正确的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
-                                \
+### 源代码
+```
+\
       T r;                                                                   \
       if (bits == size_in_bits) {                                            \
         r = static_cast<T>(ws_op);                                           \
@@ -1303,7 +1305,4 @@ TEST(MSA_fmin_fmin_a_fmax_fmax_a) {
     TEST_FP_MIN_MAX_W(fmax_w, &tc_w[i], &exp_res_fmax_w[i])
     TEST_FP_MIN_MAX_W(fmax_a_w, &tc_w[i], &exp_res_fmax_a_w[i])
     TEST_FP_MIN_MAX_W(fmin_w, &tc_w[
-"""
-
-
 ```

@@ -171,7 +171,7 @@ console.log(average);
 
 总而言之，这部分代码是 V8 的 JIT 调试能力的核心组成部分，它将 V8 动态生成的机器码与 JavaScript 源代码联系起来，使得开发者可以使用 GDB 这样的标准调试工具来调试高性能的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/gdb-jit.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/gdb-jit.cc以.tq结尾，那它是个v8 torque源代码，
@@ -179,9 +179,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  }
+### 源代码
+```cpp
+}
 
     w->WriteULEB128(0);  // Terminate the compile unit.
     size.set(static_cast<uint32_t>(w->position() - start));
@@ -1137,8 +1139,4 @@ size_t NumOverlapEntriesForTesting(const base::AddressRegion region) {
 
 #undef __MACH_O
 #undef __ELF
-
-"""
-
-
 ```

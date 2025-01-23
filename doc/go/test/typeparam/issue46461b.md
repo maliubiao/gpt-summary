@@ -116,15 +116,17 @@ Since this file is within the Go compiler's test suite and uses the `ignored` pa
 
 **In summary, `go/test/typeparam/issue46461b.go` is a test file designed to verify the Go compiler's correct handling of a specific error related to type parameters. Its purpose is not to provide reusable code but to act as a negative test case within the compiler's development and testing process.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue46461b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compiledir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -132,9 +134,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

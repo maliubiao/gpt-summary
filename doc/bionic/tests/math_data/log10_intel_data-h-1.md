@@ -238,7 +238,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 这段代码片段是 Android Bionic 库中用于测试 `log10` 函数在 Intel 架构上的实现的一组测试数据。它包含了一系列输入值和预期的输出值，用于验证 `log10` 函数的正确性和精度。每一个条目代表一个独立的测试用例，帮助开发者确保 Bionic 库提供的 `log10` 函数能够按照预期工作。这些测试数据使用了十六进制浮点数表示法，以确保数值的精确性，避免了十进制到二进制转换带来的误差，这在底层数学库的测试中非常重要。  结合文件名和路径信息，我们可以确定这段代码在 Bionic 库的测试框架中扮演着关键角色，用于保证 Android 系统底层数学运算的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/log10_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -250,8 +250,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ntry 361
     0x1.p0,
     0x1.4p3
@@ -265,8 +267,4 @@ ntry 361
     0x1.f40p9
   }
 };
-
-"""
-
-
 ```

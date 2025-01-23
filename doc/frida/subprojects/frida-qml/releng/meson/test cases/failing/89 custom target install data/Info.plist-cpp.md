@@ -90,7 +90,7 @@ Here's a breakdown of the thinking process to analyze the provided file path and
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/test cases/failing/89 custom target install data/Info.plist.cpp` 是 Frida 项目中一个用于测试在安装过程中处理 `Info.plist` 文件数据的失败测试用例。它的存在是为了确保 Frida 能够健壮地处理各种可能的 `Info.plist` 文件内容和错误情况，这对于其作为动态 instrumentation 工具的可靠性至关重要。它与逆向分析密切相关，因为它涉及到对应用程序元数据的处理，并可能揭示底层操作系统和二进制文件结构的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/89 custom target install data/Info.plist.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,10 +98,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 Some data which gets processed before installation
-
-"""
-
 ```

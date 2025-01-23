@@ -214,15 +214,17 @@ CALL    0x1000 // 假设 fmt.Println 的地址是 0x1000
 
 总而言之，`go/src/cmd/link/internal/ld/main.go` 是 Go 语言链接器的核心，负责将编译后的对象文件组合成最终的可执行程序或库文件，并提供了丰富的命令行选项来控制链接过程的各个方面。 理解这些选项对于构建复杂的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/main.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/6l/obj.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/obj.c
 //
@@ -768,9 +770,4 @@ func startProfile() {
 		})
 	}
 }
-
-"""
-
-
-
 ```

@@ -116,11 +116,13 @@ console.log(upperCaseMixedString); // 输出: "你好WORLD" (注意 "你好" 部
 
 `v8/src/strings/string-case.cc` 中的 `FastAsciiConvert` 函数是 V8 引擎为了提高 JavaScript 中 ASCII 字符串大小写转换性能而实现的关键优化。它利用了按字处理和位运算等技巧来实现高效转换。虽然 JavaScript 的 `toLowerCase()` 和 `toUpperCase()` 方法可以处理更广泛的字符集（包括 Unicode），但对于常见的 ASCII 字符串，V8 引擎会优先使用这种快速的 C++ 实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/string-case.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ template uint32_t FastAsciiConvert<true>(char* dst, const char* src,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

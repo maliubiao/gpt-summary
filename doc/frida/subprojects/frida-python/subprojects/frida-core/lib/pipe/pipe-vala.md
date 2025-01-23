@@ -127,7 +127,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 捕获并记录 `IOError`，分析错误原因（权限、路径、资源泄漏等）。
 
 通过以上步骤，可以逐步追踪用户操作如何到达 `pipe.vala` 中的代码，并定位潜在问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/lib/pipe/pipe.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class PipeTransport : Object {
 		public string local_address {
@@ -351,7 +353,4 @@ namespace Frida {
 	}
 #endif
 }
-
-"""
-
 ```

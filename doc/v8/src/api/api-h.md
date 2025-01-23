@@ -218,15 +218,17 @@ v8::Local<v8::Object> public_obj = v8::Utils::ToLocal(internal_obj);
 
 总结来说，`v8/src/api/api.h` 是 V8 引擎与外部 C++ 代码交互的关键接口定义文件，它定义了用于创建、操作 JavaScript 对象和与 V8 引擎进行通信所需的各种类和函数。理解这个文件对于嵌入和使用 V8 引擎至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/api/api.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -808,7 +810,4 @@ class V8_EXPORT_PRIVATE ExternalMemoryAccounterBase {
 }  // namespace v8
 
 #endif  // V8_API_API_H_
-
-"""
-
 ```

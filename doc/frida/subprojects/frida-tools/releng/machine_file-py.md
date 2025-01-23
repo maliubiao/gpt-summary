@@ -191,7 +191,7 @@ debug_enabled = "{{ is_debug }}"
 
 总而言之，`frida/subprojects/frida-tools/releng/machine_file.py` 是 Frida 工具链中一个关键的组件，用于加载和解析描述目标机器环境的配置文件。它利用 `eval()` 提供了强大的灵活性，但也引入了潜在的安全风险和用户错误的可能性。理解其功能和解析逻辑对于调试 Frida 相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/machine_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from configparser import ConfigParser
 from pathlib import Path
 from typing import Sequence, Union
@@ -245,7 +247,4 @@ def strv_to_meson(strv: Sequence[str]) -> str:
 
 def str_to_meson(s: str) -> str:
     return "'" + s + "'"
-
-"""
-
 ```

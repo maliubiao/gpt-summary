@@ -95,11 +95,13 @@ console.log("Sample of 3 unique random integers less than 10:", nextSample(10, 3
 
 `random-number-generator-unittest.cc` 文件是对 V8 引擎中用于生成随机数的底层 C++ 类 `RandomNumberGenerator` 进行全面测试的单元测试文件。它确保了 JavaScript 中的 `Math.random()` 函数及其相关功能在各种情况下都能正确可靠地工作。  该测试覆盖了生成不同类型的随机数（整数、布尔值、浮点数）以及生成唯一随机数样本的功能，并验证了对无效输入的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/utils/random-number-generator-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -362,7 +364,4 @@ INSTANTIATE_TEST_SUITE_P(RandomSeeds, RandomNumberGeneratorTest,
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

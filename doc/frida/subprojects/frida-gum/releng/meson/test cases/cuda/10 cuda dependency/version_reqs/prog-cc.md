@@ -151,7 +151,7 @@ By following this systematic approach, breaking down the code, and considering i
 
 总而言之，`prog.cc` 是一个用于验证 CUDA 环境的简单而重要的工具，在 Frida 的开发和测试过程中，以及用户调试与 CUDA 相关的 Frida 问题时，都扮演着重要的角色。它提供了关于 CUDA 环境的关键信息，帮助开发者和用户快速定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cuda/10 cuda dependency/version_reqs/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <cuda_runtime.h>
 #include <iostream>
 
@@ -189,7 +191,4 @@ int main(void) {
     std::cout << "Found " << n << " CUDA devices.\n";
     return 0;
 }
-
-"""
-
 ```

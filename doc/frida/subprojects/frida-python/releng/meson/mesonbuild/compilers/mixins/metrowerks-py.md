@@ -145,7 +145,7 @@ By following these steps, we can provide a comprehensive and informative answer 
 
 总而言之，`metrowerks.py` 文件是 Frida 项目中连接 Meson 构建系统和 Metrowerks 编译器家族的关键桥梁，它通过提供编译器特定的配置信息，使得 Frida 能够正确地使用这些编译器进行交叉编译，这对于在各种嵌入式平台上部署 Frida 及其 Agent 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/mixins/metrowerks.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2019 The Meson development team
 
@@ -434,7 +436,4 @@ class MetrowerksCompiler(Compiler):
                 parameter_list[idx] = i[:9] + os.path.normpath(os.path.join(build_dir, i[9:]))
 
         return parameter_list
-
-"""
-
 ```

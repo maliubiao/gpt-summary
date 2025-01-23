@@ -143,15 +143,17 @@ func main() {
 
 `rewrite386splitload.go` 的核心功能是将 386 架构下某些“加载并比较”的复合 SSA 指令分解为独立的加载和比较指令。这有助于后续的编译器优化和代码生成阶段更好地处理这些操作。它体现了编译器在中间表示阶段对指令进行的细粒度转换。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewrite386splitload.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Code generated from _gen/386splitload.rules using 'go generate'; DO NOT EDIT.
 
 package ssa
@@ -311,9 +313,4 @@ func rewriteValue386splitload_Op386CMPWload(v *Value) bool {
 func rewriteBlock386splitload(b *Block) bool {
 	return false
 }
-
-"""
-
-
-
 ```

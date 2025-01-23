@@ -238,7 +238,7 @@ By following this systematic approach, combining code analysis with knowledge of
 
 总而言之，`frida/subprojects/frida-gum/bindings/gumpp/interceptor.cpp` 文件是 Frida 代码拦截功能的核心实现，理解其功能对于进行深入的动态分析和逆向工程至关重要。用户虽然不会直接修改这个文件，但其提供的 API 是用户与 Frida 交互的关键入口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumpp/interceptor.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -246,8 +246,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "gumpp.hpp"
 
 #include "invocationcontext.hpp"
@@ -374,7 +376,4 @@ namespace Gum
 
   extern "C" Interceptor * Interceptor_obtain (void) { return new InterceptorImpl; }
 }
-
-"""
-
 ```

@@ -278,7 +278,7 @@ if __name__ == '__main__':
 
 这个 Frida 脚本会 hook `libiptc.so` 中的 `iptc_commit` 和 `iptc_add_rule` 函数，当你修改 `iptables` 规则时，这些 hook 会打印相关信息，帮助你理解 `iptables` 是如何工作的，以及 `xtables.h` 中定义的结构体是如何被使用的。  更深入的调试可能需要解析 `xt_entry` 结构体的内容，这需要更详细的结构体布局知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/x_tables.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -289,8 +289,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -381,7 +383,4 @@ struct xt_counters_info {
 #define xt_entry_foreach(pos,ehead,esize) for((pos) = (typeof(pos)) (ehead); (pos) < (typeof(pos)) ((char *) (ehead) + (esize)); (pos) = (typeof(pos)) ((char *) (pos) + (pos)->next_offset))
 #define xt_ematch_foreach(pos,entry) for((pos) = (struct xt_entry_match *) entry->elems; (pos) < (struct xt_entry_match *) ((char *) (entry) + (entry)->target_offset); (pos) = (struct xt_entry_match *) ((char *) (pos) + (pos)->u.match_size))
 #endif
-
-"""
-
 ```

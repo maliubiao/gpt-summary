@@ -126,16 +126,18 @@ By following these steps, I can systematically analyze the code and provide a co
 
 `GridLineResolver` 的第二部分代码专注于实现将 CSS 中定义的各种网格线位置表示形式解析为引擎内部使用的具体网格线索引。它处理了显式数字、命名网格线和命名网格区域，并为 `auto` 和 `span` 关键字的解析提供了基础。`ResolveGridPositionsFromStyle` 方法则利用这些解析结果来确定网格项的最终跨度，并处理了一些常见的错误情况，例如起始线和结束线顺序颠倒。 这部分代码是 CSS Grid Layout 实现的核心组成部分，确保了浏览器能够正确地理解和渲染开发者定义的网格布局。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/grid/grid_line_resolver.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- return LookBackForNamedGridLine(last_line, abs(position.IntegerPosition()),
+### 源代码
+```cpp
+return LookBackForNamedGridLine(last_line, abs(position.IntegerPosition()),
                                   last_line, lines_collection);
 }
 
@@ -259,8 +261,4 @@ GridSpan GridLineResolver::ResolveGridPositionsFromStyle(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

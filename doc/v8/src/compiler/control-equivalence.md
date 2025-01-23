@@ -113,11 +113,13 @@ function complex(a, b) {
 
 `control-equivalence.cc` 文件中的代码是 V8 编译器中进行控制流等价性分析的关键部分。它通过深度优先搜索和维护括号列表来识别控制流图中的等价节点，为后续的编译器优化提供了基础，最终提升 JavaScript 代码的执行效率。虽然 JavaScript 开发者不会直接与这段 C++ 代码交互，但这段代码的执行逻辑直接影响着他们编写的 JavaScript 代码在 V8 引擎上的运行方式和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/control-equivalence.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -353,7 +355,4 @@ void ControlEquivalence::BracketListTRACE(BracketList& blist) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

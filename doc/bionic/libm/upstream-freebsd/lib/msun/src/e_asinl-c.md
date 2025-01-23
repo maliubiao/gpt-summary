@@ -270,7 +270,7 @@ int main() {
 
 总而言之，`e_asinl.c` 文件实现了 `long double` 版本的反正弦函数，是 Android 系统中一个基础且重要的数学函数，被广泛应用于各种场景。理解其实现细节以及动态链接的工作原理有助于进行更深入的 Android 系统和应用开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_asinl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -280,9 +280,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
+### 源代码
+```c
 /* FreeBSD: head/lib/msun/src/e_asin.c 176451 2008-02-22 02:30:36Z das */
 /*
  * ====================================================
@@ -355,7 +356,4 @@ asinl(long double x)
 	}    
 	if(expsign>0) return t; else return -t;    
 }
-
-"""
-
 ```

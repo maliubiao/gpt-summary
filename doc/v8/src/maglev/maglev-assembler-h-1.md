@@ -89,7 +89,7 @@ inline void CompareInt32AndAssert(Register r1, Register r2, Condition cond,
 
 `v8/src/maglev/maglev-assembler.h` 的第二部分继续定义了 `MaglevAssembler` 类，提供了更多用于生成机器码指令的方法，涵盖了比较、类型检查、数据转换、内存操作、栈管理、函数调用约定、优化和去优化等多个方面。它是 Maglev 编译器将 JavaScript 代码转换为可执行机器码的关键组件。了解其功能有助于理解 V8 引擎的内部工作原理，特别是其优化编译过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -97,8 +97,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ine void CompareInt32AndAssert(Register r1, Register r2, Condition cond,
                                     AbortReason reason);
   inline void CompareInt32AndAssert(Register r1, int32_t value, Condition cond,
@@ -527,8 +529,4 @@ constexpr Condition UnsignedConditionFor(Operation operation) {
 }  // namespace v8
 
 #endif  // V8_MAGLEV_MAGLEV_ASSEMBLER_H_
-
-"""
-
-
 ```

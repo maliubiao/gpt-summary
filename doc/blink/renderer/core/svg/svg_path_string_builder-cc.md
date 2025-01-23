@@ -169,15 +169,17 @@ close_path.command = kPathSegClosePath;
 
 总而言之，`blink/renderer/core/svg/svg_path_string_builder.cc` 是 Blink 引擎中一个核心的工具类，负责构建 SVG 路径的字符串表示，它与 HTML 中 SVG 元素的定义、JavaScript 对 SVG 的动态操作以及 CSS 的一些高级特性都有着密切的联系。 理解它的功能和潜在的使用错误有助于我们更好地理解和调试 SVG 相关的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_path_string_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) Research In Motion Limited 2010-2011. All rights reserved.
  *
@@ -311,7 +313,4 @@ void SVGPathStringBuilder::EmitSegment(const PathSegmentData& segment) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

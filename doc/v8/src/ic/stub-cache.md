@@ -100,11 +100,13 @@ console.log(p2.toString()); // 如果 p2 没有定义自己的 toString 方法�
 
 `stub-cache.cc` 中实现的 Stub 缓存是 V8 引擎中一项关键的性能优化机制。它通过缓存针对特定对象结构和属性操作的优化代码片段，显著加速了 JavaScript 代码的执行，特别是对于频繁的对象属性访问和方法调用。JavaScript 开发者通常无需直接与 Stub 缓存交互，但理解其工作原理有助于理解 V8 如何优化代码执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/stub-cache.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ void StubCache::Clear() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

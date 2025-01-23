@@ -163,11 +163,13 @@ myFunction();
 
 `js-intrinsic-lowering.cc` 文件在 V8 编译器的优化过程中扮演着重要的角色，它通过将 JavaScript 内置函数的运行时调用转换为更底层的操作，从而提高了 JavaScript 代码的执行效率。  它处理的这些内置函数，直接关联着 JavaScript 中常用的语法结构和功能，例如对象属性操作、迭代器、生成器和异步函数等。 理解这个文件的作用有助于理解 V8 引擎是如何优化和执行 JavaScript 代码的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-intrinsic-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -597,7 +599,4 @@ SimplifiedOperatorBuilder* JSIntrinsicLowering::simplified() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

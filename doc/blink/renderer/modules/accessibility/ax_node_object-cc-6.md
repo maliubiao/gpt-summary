@@ -124,7 +124,7 @@ This section of `ax_node_object.cc` focuses on two core aspects of the accessibi
 
 本部分代码的核心职责是构建 `AXNodeObject` 的子节点列表，确保可访问性树能够准确地反映页面的结构和内容。它针对不同类型的 HTML 元素和 ARIA 属性提供了特定的子节点添加逻辑，包括对内联文本的精细处理。理解这部分代码对于调试可访问性问题，例如屏幕阅读器无法正确识别页面元素或元素之间的关系至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_node_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t OffsetMapping* inline_offset_mapping =
       InlineNode::GetOffsetMapping(formatting_context);
   if (!inline_offset_mapping)
@@ -1038,7 +1040,4 @@ bool AXNodeObject::OnNativeSetSequentialFocusNavigationStartingPointAction() {
 
 void AXNodeObject::SelectedOptions(AXObjectVector& options) const {
   if (auto* select = DynamicT
-"""
-
-
 ```

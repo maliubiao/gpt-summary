@@ -197,7 +197,7 @@ func main() {
 
 这段测试代码验证了 `strings.Clone` 函数的功能是创建一个字符串的独立副本。测试用例覆盖了空字符串和非空字符串，并使用 `unsafe` 包来检查底层内存是否被复制。基准测试则用于评估该函数的性能和内存分配情况。使用者需要注意的是，`strings.Clone` 会创建新的内存空间，因此原始字符串和克隆后的字符串是相互独立的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strings/clone_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,8 +205,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -252,9 +254,4 @@ func BenchmarkClone(b *testing.B) {
 		stringSink = strings.Clone(str)
 	}
 }
-
-"""
-
-
-
 ```

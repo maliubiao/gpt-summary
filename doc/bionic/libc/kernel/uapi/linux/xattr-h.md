@@ -272,7 +272,7 @@ if (Process.platform === 'linux') {
 
 总而言之，`bionic/libc/kernel/uapi/linux/xattr.h` 是一个定义了扩展属性相关常量的关键头文件，它为 Android 的安全机制和文件系统功能提供了基础的符号定义。虽然它自身不包含可执行代码，但它被 libc 中操作扩展属性的函数广泛使用，并在 Android Framework 和 NDK 的底层实现中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/xattr.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -283,8 +283,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -342,7 +344,4 @@ Prompt:
 #define XATTR_POSIX_ACL_DEFAULT "posix_acl_default"
 #define XATTR_NAME_POSIX_ACL_DEFAULT XATTR_SYSTEM_PREFIX XATTR_POSIX_ACL_DEFAULT
 #endif
-
-"""
-
 ```

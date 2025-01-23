@@ -160,14 +160,16 @@ By following these steps, we can systematically analyze the code and understand 
 
 `interpolable_shadow.cc` 文件是 Blink 渲染引擎中处理 CSS 阴影动画和过渡的关键部分。它负责将 CSS 阴影值转换为内部表示，进行插值计算，并将结果用于渲染。理解这个文件的功能有助于理解浏览器如何实现平滑的阴影动画效果，并能帮助开发者避免一些常见的 CSS 动画错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/interpolable_shadow.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -398,7 +400,4 @@ void InterpolableShadow::Interpolate(const InterpolableValue& to,
 }
 
 }  // namespace blink
-
-"""
-
 ```

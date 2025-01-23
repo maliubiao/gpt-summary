@@ -140,15 +140,17 @@ By following these steps, we can systematically analyze the source code and gene
 
 `chrome_client.cc` 文件中的 `ChromeClient` 类是 Blink 渲染引擎与宿主浏览器之间沟通的关键桥梁。它处理了诸如窗口管理、对话框显示、鼠标交互、打印等与浏览器 UI 密切相关的功能。理解这个类的作用对于理解 Blink 引擎如何与浏览器协同工作至关重要。当进行与浏览器 UI 交互相关的调试时，这个文件是一个重要的入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/chrome_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2009, 2011 Apple Inc. All rights reserved.
  * Copyright (C) 2008, 2010 Nokia Corporation and/or its subsidiary(-ies)
@@ -435,7 +437,4 @@ bool ChromeClient::Print(LocalFrame* frame) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

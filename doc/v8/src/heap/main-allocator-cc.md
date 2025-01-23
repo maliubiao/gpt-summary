@@ -157,7 +157,7 @@ function myFunction() {}
 
 `v8/src/heap/main-allocator.cc` 中的 `MainAllocator` 类是 V8 引擎堆内存分配的核心组件。它负责根据请求的大小和对齐方式在不同的堆空间中分配原始内存。它通过管理线性分配区域和使用不同的分配策略来优化分配性能，并与垃圾回收机制紧密集成。此外，它还提供了分配观察者机制和支持黑色分配等高级功能。 简而言之，**它是 V8 引擎中动态内存分配的引擎。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/main-allocator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/main-allocator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -165,8 +165,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1033,7 +1035,4 @@ bool PagedSpaceAllocatorPolicy::TryAllocationFromFreeList(
   Address start = new_node.address();
   Address end = new_node.address() + new_node_size;
   Address limit = allocator_->ComputeL
-"""
-
-
 ```

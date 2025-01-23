@@ -172,7 +172,7 @@ console.log(intValue); // 输出 NaN (非数字)
 
 总而言之，这部分代码是 RISC-V 模拟器的核心组成部分，负责模拟 RISC-V 处理器在执行浮点运算和进行多线程同步时涉及的关键指令行为。它确保了 V8 引擎能够在非 RISC-V 硬件上正确地执行针对 RISC-V 架构编译的 JavaScript 代码。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/riscv/simulator-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/riscv/simulator-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -180,10 +180,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共10部分，请归纳一下它的功能
+```
 
-"""
-
-  }
+### 源代码
+```cpp
+}
 
   // Since integer max values are either all 1s (for unsigned) or all 1s
   // except for sign-bit (for signed), they cannot be represented precisely in
@@ -1241,8 +1242,5 @@ void Simulator::DecodeRVIType() {
     case RO_JALR: {
       set_rd(get_pc() + kInstrSize);
       // Note: No need to shift 2 for JALR's imm12, but set lowest bit to 0.
-      sreg_t next_pc = (rs1() + imm12()) 
-"""
-
-
+      sreg_t next_pc = (rs1() + imm12())
 ```

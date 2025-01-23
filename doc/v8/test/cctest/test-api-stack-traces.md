@@ -299,7 +299,7 @@ outerFunction();
 
 这些测试确保了 V8 引擎能够正确地生成和提供用于调试和错误分析的堆栈跟踪信息，并允许开发者在必要时对其进行定制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-stack-traces.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api-stack-traces.cc以.tq结尾，那它是个v8 torque源代码，
@@ -307,8 +307,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1127,7 +1129,4 @@ void AnalyzeStackOfDynamicScriptWithSourceURL(
         stackTrace->GetFrame(info.GetIsolate(), i)->GetScriptNameOrSourceURL();
     CHECK(!name.IsEmpty());
     CHECK(url->Eq
-"""
-
-
 ```

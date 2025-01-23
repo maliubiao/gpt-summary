@@ -177,15 +177,17 @@ Build ID: b41e5c45250e25c9fd5e9f9a1de7857ea0d41224
 
 总而言之，`cmd/internal/buildid` 包提供了一个核心的、平台感知的机制来读取 Go 编译产物的构建 ID，这对于 Go 工具链的正常运作和提供可靠的版本信息至关重要。普通 Go 开发者通常不会直接使用这个包，而是通过 `go` 命令行工具来间接利用其功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/buildid/buildid.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -529,9 +531,4 @@ func HashToString(h [32]byte) string {
 	}
 	return string(dst[:])
 }
-
-"""
-
-
-
 ```

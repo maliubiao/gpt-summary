@@ -124,14 +124,16 @@ By following these steps, we can construct a comprehensive and accurate answer t
 
 总而言之，`aec_dump_agent_impl.cc` 是一个底层的组件，负责在 Blink 渲染引擎中管理 AEC 数据的转储，主要用于调试和分析 AEC 算法的行为。它通过 Mojo 与浏览器进程通信，并使用委托模式通知渲染进程中的其他组件执行实际的数据写入操作。虽然不直接与 JavaScript, HTML, CSS 交互，但它的功能对于理解和调试 WebRTC 应用中的音频处理问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/aec_dump_agent_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ void AecDumpAgentImpl::Stop() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

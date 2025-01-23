@@ -180,15 +180,17 @@ This structured approach allows for a thorough understanding of the file's purpo
 
 总而言之，`media_stream_audio_destination_handler.cc` 文件是 Web Audio API 中一个关键的组件，它桥接了 Web Audio 的音频处理能力和 `MediaStream` 的数据流，使得 Web Audio 产生的音频可以被其他 Web 技术所利用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/media_stream_audio_destination_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -357,7 +359,4 @@ void MediaStreamAudioDestinationHandler::SendLogMessage(
 }
 
 }  // namespace blink
-
-"""
-
 ```

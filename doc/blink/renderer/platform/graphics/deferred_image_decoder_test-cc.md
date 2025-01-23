@@ -159,14 +159,16 @@ This step-by-step approach allows for a comprehensive understanding of the test 
 
 总而言之，`deferred_image_decoder_test.cc` 通过大量的单元测试用例，细致地验证了 `DeferredImageDecoder` 类的各种功能和边界情况，确保其在 Blink 渲染引擎中能够正确高效地处理图像解码任务，从而为用户提供流畅的网页浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/deferred_image_decoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -675,7 +677,4 @@ TEST_F(MultiFrameDeferredImageDecoderTest, FrameDurationOverride) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

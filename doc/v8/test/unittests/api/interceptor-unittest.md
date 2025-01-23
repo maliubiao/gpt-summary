@@ -134,11 +134,13 @@ Object.defineProperty(obj, 'baz', { value: 456 }); // C++ 中 named descriptor, 
 
 `interceptor-unittest.cc` 文件通过各种单元测试，验证了 V8 引擎中对象属性拦截器机制的正确性和完整性。 这些测试确保了当 JavaScript 代码与对象属性进行交互时，预期的 C++ 拦截器函数能够被正确地触发，从而允许开发者在底层定制 JavaScript 对象的行为。 拦截器是 V8 引擎提供的一个强大的扩展机制，用于实现诸如代理 (Proxy) 等更高级的 JavaScript 特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/interceptor-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -368,7 +370,4 @@ TEST_F(InterceptorLoggingTest, DispatchTest) {
 }  // namespace
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -151,15 +151,17 @@ fetch('https://example.com', {
 
 总而言之，`header_validator_test.cc` 文件通过大量的单元测试，确保了 `HeaderValidator` 类能够严格按照 HTTP/2 协议规范验证 HTTP 头部，从而保证了 Chromium 网络栈的健壮性和安全性。它间接地影响着 JavaScript 发起的网络请求的成功与否。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/header_validator_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/header_validator.h"
 
 #include <optional>
@@ -987,7 +989,4 @@ TEST(HeaderValidatorTest, MixedCaseContentLength) {
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

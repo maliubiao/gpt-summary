@@ -158,15 +158,17 @@ By following these steps, combining code analysis with an understanding of web t
 
 作为该系列文件的最后一部分，`blink/renderer/core/html/html_element.cc` 集中实现了 `HTMLElement` 类的核心功能，特别是与自定义元素和 HTML 表单集成相关的逻辑。 它通过 `attachInternals()` 方法为自定义元素提供了与内置表单控件同等的能力，并管理了这些元素在表单生命周期中的行为，包括状态管理、验证以及与 CSS 伪类的互动。  该文件是连接 JavaScript 中自定义元素的定义、HTML 结构以及 CSS 样式的关键桥梁，确保了 Web 平台的一致性和可扩展性。 理解这个文件的功能对于开发高级 Web 组件和深入了解浏览器渲染引擎的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 .
   if (IsValue()) {
     exception_state.ThrowDOMException(
@@ -328,8 +330,4 @@ void dumpInnerHTML(blink::HTMLElement* element) {
 }
 
 #endif
-
-"""
-
-
 ```

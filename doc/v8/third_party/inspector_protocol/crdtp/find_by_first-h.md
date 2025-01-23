@@ -210,15 +210,17 @@ MyData* result_ptr = v8_crdtp::FindByFirst(sorted_data_ptr, search_key);
 
 总之，`v8/third_party/inspector_protocol/crdtp/find_by_first.h` 提供了一种高效的在排序的字节序列键值对向量中进行查找的机制，这在 V8 引擎处理 Chrome DevTools Protocol 相关任务时可能非常有用。开发者在使用时需要注意维护输入数据的排序，并正确处理查找结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/find_by_first.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/find_by_first.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -277,7 +279,4 @@ T* FindByFirst(const std::vector<std::pair<span<uint8_t>, std::unique_ptr<T>>>&
 }  // namespace v8_crdtp
 
 #endif  // V8_CRDTP_FIND_BY_FIRST_H_
-
-"""
-
 ```

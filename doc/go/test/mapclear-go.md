@@ -197,15 +197,17 @@ func main() {
 
 总而言之，这段 `go/test/mapclear.go` 是 Go 语言标准库中用于测试 `range` 循环在与 `map` 和 `delete` 操作结合使用时的行为的关键测试用例。它确保了 Go 语言在这种特定场景下的行为是稳定和可预测的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/mapclear.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -295,9 +297,4 @@ func main() {
 	checkloopvars()
 	checksideeffects()
 }
-
-"""
-
-
-
 ```

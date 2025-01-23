@@ -135,7 +135,7 @@ Here's a breakdown of how to approach the task:
 
 这部分 `interpreter.py` 文件的核心功能是 **解释和执行 Meson 构建文件中声明的与项目结构、依赖关系、外部命令执行和配置相关的指令**。它负责理解构建作者的意图，并将其转化为构建系统可以理解和执行的操作。  它通过提供一系列内置函数来支持构建过程的各个方面，例如声明依赖、执行外部工具、管理子项目和获取配置选项。同时，它还包含一些错误检查机制，以帮助用户避免常见的构建配置错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 not v:
                 FeatureNew.single_use('empty variable value in declare_dependency', '1.4.0', self.subproject, location=node)
             try:
@@ -769,7 +771,4 @@ not v:
             # vs backend version we need. But after setting default_options in case
             # the project sets vs backend by default.
             backend = self.coredata.get_option(OptionKey(
-"""
-
-
 ```

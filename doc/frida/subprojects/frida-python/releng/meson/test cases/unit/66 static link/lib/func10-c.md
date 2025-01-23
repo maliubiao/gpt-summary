@@ -150,7 +150,7 @@ By following these steps of deconstruction, contextualization, and careful consi
 
 总而言之，`func10.c` 作为一个非常简单的测试用例，在 Frida 的开发、测试和学习过程中都扮演着一定的角色。它简洁地展示了一个可以被 Frida 插桩的目标函数，帮助验证 Frida 的基本功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/66 static link/lib/func10.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,13 +158,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func10()
 {
   return 1;
 }
-
-"""
-
 ```

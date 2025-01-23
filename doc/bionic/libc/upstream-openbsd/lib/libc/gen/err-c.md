@@ -325,7 +325,7 @@ if (libcModule) {
 
 这个分析涵盖了 `bionic/libc/upstream-openbsd/lib/libc/gen/err.c` 文件的主要功能、与 Android 的关系、实现细节、动态链接、常见错误以及如何使用 Frida 进行调试。希望这些信息对你有所帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/gen/err.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -336,8 +336,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: err.c,v 1.12 2015/08/31 02:53:57 guenther Exp $ */
 /*-
  * Copyright (c) 1993
@@ -381,7 +383,4 @@ err(int eval, const char *fmt, ...)
 	va_end(ap);
 }
 DEF_WEAK(err);
-
-"""
-
 ```

@@ -220,15 +220,17 @@ By following these steps – from initial reading and keyword identification to 
 
 总而言之，`blink/renderer/core/css/style_containment_scope_tree.cc` 是 Blink 渲染引擎中一个关键的组件，负责管理 CSS `contain` 属性创建的样式隔离边界，确保浏览器能够正确地进行隔离的布局、绘制和样式计算。它与 HTML 结构、CSS 样式以及 JavaScript 的 DOM 操作紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_containment_scope_tree.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -423,7 +425,4 @@ String StyleContainmentScopeTree::ToString(StyleContainmentScope* style_scope,
 #endif  // DCHECK_IS_ON()
 
 }  // namespace blink
-
-"""
-
 ```

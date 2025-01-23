@@ -194,7 +194,7 @@ Finally, I organized the information into logical sections (Functionality, Relat
 
 总之，`asm.py` 文件是 Frida 构建系统中处理汇编语言编译的关键组件。理解其功能和实现细节对于 Frida 的开发者和希望深入了解 Frida 构建过程的逆向工程师都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/asm.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -202,8 +202,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import os
@@ -517,7 +519,4 @@ class MetrowerksAsmCompilerEmbeddedPowerPC(MetrowerksAsmCompiler):
     def sanity_check(self, work_dir: str, environment: 'Environment') -> None:
         if self.info.cpu_family not in {'ppc'}:
             raise EnvironmentException(f'ASM compiler {self.id!r} does not support {self.info.cpu_family} CPU family')
-
-"""
-
 ```

@@ -128,13 +128,15 @@ console.log(x === y); // false (严格相等，不会进行类型转换)
 
 总而言之，这个代码文件的功能是为V8引擎的运行时生成高效的、底层的机器码，以支持各种JavaScript操作，尤其是在对象管理、内存操作、循环控制和类型比较等方面。它是JavaScript引擎高效执行的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第9部分，共12部分，请归纳一下它的功能
+```
 
-"""
-                           ElementsKind to_kind,
+### 源代码
+```
+ElementsKind to_kind,
                                                Label* bailout) {
   DCHECK(!IsHoleyElementsKind(from_kind) || IsHoleyElementsKind(to_kind));
   if (AllocationSite::ShouldTrack(from_kind, to_kind)) {
@@ -1852,7 +1854,4 @@ TNode<Boolean> CodeStubAssembler::StrictEqual(
   //           return %StringEqual(lhs, rhs);
   //         } else {
   /
-"""
-
-
 ```

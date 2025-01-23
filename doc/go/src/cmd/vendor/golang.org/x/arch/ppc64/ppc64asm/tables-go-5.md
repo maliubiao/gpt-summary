@@ -154,7 +154,7 @@ func main() {
 
 作为第六部分，也是最后一部分，这段代码的功能是 **定义了 PPC64 汇编指令集的核心数据结构，即操作码表**。这个表包含了将汇编语言翻译成机器码以及将机器码翻译回汇编语言的关键信息。它是构建 PPC64 汇编器、反汇编器以及其他相关工具的基础。之前的部分可能定义了其他辅助的数据结构、常量或者处理函数，最终都服务于对 PPC64 汇编指令的解析和处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/ppc64/ppc64asm/tables.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -162,8 +162,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 mUnsigned_6_6, ap_ImmUnsigned_15_15}},
 	{MTFSFI, 0xfc0007ff00000000, 0xfc00010c00000000, 0x7e080000000000, // Move To FPSCR Field Immediate X-form (mtfsfi BF,U,W)
 		[6]*argField{ap_ImmUnsigned_6_8, ap_ImmUnsigned_16_19, ap_ImmUnsigned_15_15}},
@@ -342,10 +344,4 @@ mUnsigned_6_6, ap_ImmUnsigned_15_15}},
 	{XORIS, 0xfc00000000000000, 0x6c00000000000000, 0x0, // XOR Immediate Shifted D-form (xoris RA,RS,UI)
 		[6]*argField{ap_Reg_11_15, ap_Reg_6_10, ap_ImmUnsigned_16_31}},
 }
-
-"""
-
-
-
-
 ```

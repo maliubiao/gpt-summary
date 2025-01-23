@@ -178,14 +178,16 @@ By following this structured approach, combining code analysis with knowledge of
 
 总之，`web_font.cc` 文件中的 `WebFont` 类是 Blink 渲染引擎处理字体渲染的核心组件，它抽象了底层的字体操作，并为上层提供了统一的接口，使得 Blink 能够正确地根据 CSS 样式在页面上绘制文本。理解它的功能对于理解浏览器如何渲染网页中的文字至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_font.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -294,7 +296,4 @@ gfx::RectF WebFont::SelectionRectForText(const WebTextRun& run,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -351,7 +351,7 @@ if __name__ == '__main__':
 
 请注意，直接观察到用户空间程序与 BFS 文件系统的交互可能比较困难，因为现代 Android 系统中，用户空间程序通常与更高级的文件系统（如 ext4 或 F2FS）交互。BFS 可能仅在非常底层的引导过程或特定的系统分区中使用。你可能需要调整 hook 的目标进程或系统调用，或者在 Android 源代码中查找明确使用了 BFS 的组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/bfs_fs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -362,8 +362,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -422,7 +424,4 @@ struct bfs_super_block {
 #define BFS_FILEBLOCKS(ip) ((ip)->i_sblock == 0 ? 0 : (le32_to_cpu((ip)->i_eblock) + 1) - le32_to_cpu((ip)->i_sblock))
 #define BFS_UNCLEAN(bfs_sb,sb) ((le32_to_cpu(bfs_sb->s_from) != - 1) && (le32_to_cpu(bfs_sb->s_to) != - 1) && ! (sb->s_flags & SB_RDONLY))
 #endif
-
-"""
-
 ```

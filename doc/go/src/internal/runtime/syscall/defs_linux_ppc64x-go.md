@@ -168,7 +168,7 @@ func main() {
 
 总而言之，`go/src/internal/runtime/syscall/defs_linux_ppc64x.go` 这个文件是 Go 语言在 Linux ppc64 架构上进行底层系统调用编程的基础，特别是为实现像 `epoll` 这样的 I/O 多路复用机制提供了关键的定义。使用者需要了解这些常量的含义以及如何正确地使用 `syscall` 包来调用相应的系统调用，并注意错误处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/syscall/defs_linux_ppc64x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -176,8 +176,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -203,9 +205,4 @@ type EpollEvent struct {
 	pad_cgo_0 [4]byte
 	Data      [8]byte // unaligned uintptr
 }
-
-"""
-
-
-
 ```

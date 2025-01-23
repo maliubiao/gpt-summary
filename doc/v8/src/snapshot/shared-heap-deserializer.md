@@ -112,11 +112,13 @@ console.log(`Worker received API URL: ${workerData.apiUrl}`);
 
 `shared-heap-deserializer.cc` 负责将预先存储的共享数据加载到新的 V8 隔离中，特别关注字符串表的反序列化。这是一种 V8 内部的优化机制，旨在提高性能和减少内存占用，特别是在创建多个隔离的场景下，例如 Node.js 的 worker 线程。虽然 JavaScript 开发者不能直接控制这个过程，但它对 JavaScript 应用的效率有着重要的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/shared-heap-deserializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ void SharedHeapDeserializer::DeserializeStringTable() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

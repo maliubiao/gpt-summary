@@ -161,14 +161,16 @@ My thought process for analyzing the `InspectorStyleResolver.cc` file goes like 
 
 `InspectorStyleResolver` 是 Blink 渲染引擎中一个关键的内部组件，它为开发者工具提供了深入了解元素样式来源的能力。它解析 CSS 规则，并将其与相应的 HTML 元素和伪元素关联起来，帮助开发者理解 CSS 的工作原理和页面元素的样式构成。 虽然它不直接与 JavaScript 交互，但 JavaScript 开发者经常使用 Inspector 来调试和优化他们的代码和样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_style_resolver.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -342,7 +344,4 @@ InspectorStyleResolver::ParentPseudoElementRules() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -146,15 +146,17 @@ By following this structured thought process, breaking down the code, and connec
 
 总之，`sql_transaction_state_machine.cc` 文件虽然不直接处理用户交互或实现核心的数据库功能，但它在 Blink 引擎的 WebDatabase 模块中扮演着重要的角色，为开发者提供了关键的调试信息，帮助理解和诊断 Web SQL Database API 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/sql_transaction_state_machine.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Apple Inc. All rights reserved.
  *
@@ -221,7 +223,4 @@ const char* NameForSQLTransactionState(SQLTransactionState state) {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

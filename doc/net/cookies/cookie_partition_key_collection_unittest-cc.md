@@ -188,15 +188,17 @@ This iterative process of understanding the file name, analyzing the code, ident
 
 总而言之，`cookie_partition_key_collection_unittest.cc` 文件本身不涉及用户直接操作，但它测试的核心类 `CookiePartitionKeyCollection` 是 Chromium 处理 Cookie Partitioning 的关键组成部分，直接影响着 JavaScript 如何与 Cookie 进行交互。理解这个类及其功能对于理解浏览器如何实现 Cookie 隔离至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_partition_key_collection_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -391,7 +393,4 @@ TEST(CookiePartitionKeyCollectionTest, MatchesSite) {
   }
 }
 }  // namespace net
-
-"""
-
 ```

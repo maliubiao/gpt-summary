@@ -140,7 +140,7 @@ Here's a breakdown of the thought process to analyze the code:
 
 这部分 `test-api.cc` 专注于 V8 C++ API 的并发和内存管理特性测试。它使用自定义的 `ApiTestFuzzer` 框架来模拟多线程环境，并测试了锁机制、弱回调、全局对象生命周期、外部内存跟踪以及 JIT 代码事件通知等关键功能。此外，还包含了一些针对特定 Bug 的回归测试，以及对异常处理和上下文管理的测试。作为 36 个部分中的一部分，这部分可能集中在 V8 API 的某个特定领域，即与嵌入器进行更深层次交互和资源管理相关的部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -148,8 +148,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第16部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _TEST, which is an
   // initialized test and has entered the isolate at this point. We need to exit
   // the isolate, so that the fuzzer threads can enter it in turn, while running
@@ -1092,7 +1094,4 @@ static void CheckTryCatchSourceInfo(v8::Local<v8::Script> script,
 THREADED_TEST(TryCatchSourceInfo) {
   LocalContext context;
   v8::Isolate* isolate
-"""
-
-
 ```

@@ -246,7 +246,7 @@ go test -cover -pkgcfg bad_config.json ./mypackage
 
 总而言之，这段测试代码的核心目标是验证 Go 语言 `cover` 工具通过配置文件进行灵活的代码覆盖率收集的能力，并确保在各种正常和异常情况下都能正确运行和报错。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cover/cfg_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -254,8 +254,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -527,9 +529,4 @@ func testCoverNoTestsNoFuncs(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

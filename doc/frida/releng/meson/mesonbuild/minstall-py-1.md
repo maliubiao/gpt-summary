@@ -111,7 +111,7 @@ Now, I'll address each of the user's requests based on this understanding.
 
 这段代码的核心功能是 **执行具体的安装操作**，包括将构建生成的文件和目录复制到最终的安装位置，并根据配置进行 strip 二进制文件、设置文件权限和修复动态链接库的运行时路径。它负责将构建的成果物部署到目标系统，使其能够被正常使用。同时，它也包含了在安装前可选的重新构建项目的逻辑，并具备一定的权限管理和日志记录能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/minstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 tname = os.path.join(outdir, os.path.basename(fname))
             final_path = os.path.join(d.prefix, t.outdir, os.path.basename(fname))
             should_strip = t.strip or (t.can_strip and self.options.strip)
@@ -256,8 +258,4 @@ def run(opts: 'ArgumentType') -> int:
         else:
             installer.do_install(datafilename)
     return 0
-
-"""
-
-
 ```

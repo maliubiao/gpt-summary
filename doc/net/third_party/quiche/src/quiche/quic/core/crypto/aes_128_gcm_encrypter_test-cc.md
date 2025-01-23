@@ -207,15 +207,17 @@ encryptData(keyData, ivData, aadData, plaintextData)
 
 总而言之，`aes_128_gcm_encrypter_test.cc` 文件是保证 Chromium QUIC 协议加密功能正确性和安全性的重要组成部分。它通过大量的测试用例来验证 `Aes128GcmEncrypter` 类的实现是否符合预期，这对于构建可靠的网络应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/aes_128_gcm_encrypter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -504,7 +506,4 @@ TEST_F(Aes128GcmEncrypterTest, GenerateHeaderProtectionMask) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

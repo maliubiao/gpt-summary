@@ -136,11 +136,13 @@ const result = floatNum | 0;      // 使用位运算将浮点数转换为整数 
 
 `v8/src/maglev/riscv/maglev-assembler-riscv.cc` 文件是 V8 引擎中 Maglev 编译器针对 RISC-V 架构的关键组成部分。它通过提供 C++ 接口来生成 RISC-V 机器码，实现了诸如内存分配、函数调用、字符串操作、类型检查和数值转换等 JavaScript 核心功能所需的底层操作。了解这个文件有助于深入理解 V8 如何将 JavaScript 代码高效地转换为机器码并在 RISC-V 架构上执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/riscv/maglev-assembler-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -760,7 +762,4 @@ void MaglevAssembler::TryChangeFloat64ToIndex(Register result,
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

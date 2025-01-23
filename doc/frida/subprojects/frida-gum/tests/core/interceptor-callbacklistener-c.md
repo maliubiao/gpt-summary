@@ -179,7 +179,7 @@ Interceptor.attach(Module.findExportByName(null, 'authenticateUser'), {
 
 因此，当你在调试 Frida 脚本时，如果发现 `Interceptor` 的行为不符合预期，或者在 `onEnter` 或 `onLeave` 回调中遇到了问题，就可以追溯到 `frida/subprojects/frida-gum/tests/core/interceptor-callbacklistener.c` 这个文件所定义的核心机制。理解了这个文件的功能，就能更好地理解 Frida 的底层工作原理，并更有效地进行逆向分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/interceptor-callbacklistener.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2019 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -252,7 +254,4 @@ test_callback_listener_new (void)
 {
   return g_object_new (TEST_TYPE_CALLBACK_LISTENER, NULL);
 }
-
-"""
-
 ```

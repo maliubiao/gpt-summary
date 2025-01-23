@@ -157,7 +157,7 @@ By following this systematic approach, I was able to break down the code, unders
 
 `blink/renderer/modules/mediastream/media_stream_constraints_util_video_content_test.cc` 文件的主要功能是测试 Blink 引擎中用于处理视频内容捕获约束的核心逻辑。它通过各种单元测试用例，验证在不同约束条件下，系统能否正确选择合适的视频捕获设置，包括默认行为、约束冲突、强制约束和理想约束的处理。这些测试直接关系到 WebRTC API 的功能，影响着 JavaScript 中 `getUserMedia` 和 `getDisplayMedia` 等方法的使用，以及最终在 HTML `<video>` 元素中显示的视频流的属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_video_content_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -939,7 +941,4 @@ TEST_F(MediaStreamConstraintsUtilVideoContentTest, MandatoryWidthRange) {
               result.track_adapter_settings().min_aspect_ratio());
     EXPECT_EQ(static_cast<double>(kMaxWidth) / kMinScreenCastDimension,
               result.tr
-"""
-
-
 ```

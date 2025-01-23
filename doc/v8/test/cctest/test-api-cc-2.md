@@ -399,7 +399,7 @@ After analyzing each test, I can now compile the information into a structured s
 
 总的来说，这部分代码的功能是 **系统地测试 V8 JavaScript 引擎中关于各种 JavaScript 类型的 API 实现是否正确和稳定**。它涵盖了基本类型（数值、布尔、字符串）、对象类型（普通对象、Arguments、Map、Set、WeakMap、WeakSet）、函数类型（普通函数、生成器函数、异步函数）、错误类型以及日期类型。此外，还深入测试了 V8 的模板机制，这是 V8 扩展和嵌入的关键部分。通过这些测试，可以确保 V8 引擎能够正确地识别和操作不同类型的 JavaScript 值，为 JavaScript 代码的执行提供可靠的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -407,8 +407,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pe scope(env->GetIsolate());
   v8::Isolate* isolate = CcTest::isolate();
 
@@ -1276,7 +1278,4 @@ THREADED_TEST(DescriptorInheritance) {
   CHECK_EQ(15.2, CompileRun("obj.knurd")->NumberValue(env.local()).FromJust());
   CHECK(CompileRun("'knurd' in obj")->BooleanValue(isolate));
   CHECK_EQ(20.1, CompileRun("obj.v1")->NumberValue(env.local()).FromJust())
-"""
-
-
 ```

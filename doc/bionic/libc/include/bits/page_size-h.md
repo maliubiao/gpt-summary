@@ -226,7 +226,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "getpagesize"), {
 
 `bionic/libc/include/bits/page_size.handroid` 文件在旧版本的 Android 系统中用于定义 `PAGE_SIZE` 和 `PAGE_MASK` 宏。然而，为了支持不同的页面大小，Android 官方强烈建议使用 `getpagesize()` 函数来获取当前系统的页面大小。理解这个文件的作用以及 `getpagesize()` 的使用方法，对于开发兼容不同 Android 设备的 Native 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/page_size.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -237,8 +237,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2023 The Android Open Source Project
  * All rights reserved.
@@ -288,7 +290,4 @@ __BEGIN_DECLS
 #endif
 
 __END_DECLS
-
-"""
-
 ```

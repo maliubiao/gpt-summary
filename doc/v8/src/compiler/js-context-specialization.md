@@ -97,11 +97,13 @@ console.log(import.meta.url);
 
 **总结来说，`js-context-specialization.cc` 通过在编译时分析和优化 JavaScript 的上下文操作，提高了代码的执行效率。它关注的是 JavaScript 引擎内部的优化，对开发者来说是透明的，但对提升 JavaScript 性能至关重要。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-context-specialization.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -649,7 +651,4 @@ Isolate* JSContextSpecialization::isolate() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

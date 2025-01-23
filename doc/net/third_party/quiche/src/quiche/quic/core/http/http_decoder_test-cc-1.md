@@ -103,7 +103,7 @@ Finally, for the "Part 2 Summary," I consolidate the identified functionalities 
 
 因此，当在生产环境中遇到 HTTP/3 相关的问题时，例如连接建立失败、请求失败、数据传输错误等，开发者可能会需要查看 `HttpDecoder` 的代码和相关的测试用例，来理解解码过程中可能出现的问题。`http_decoder_test.cc` 文件中的测试用例就提供了一些常见的错误场景，可以帮助开发者更好地理解和调试 HTTP/3 的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/http_decoder_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 visitor_, OnSettingsFrame(empty_frame));
 
   EXPECT_EQ(input.size(), ProcessInput(input));
@@ -585,8 +587,4 @@ TEST_F(HttpDecoderTest, DecodeSettings) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

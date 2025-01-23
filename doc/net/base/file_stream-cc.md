@@ -234,15 +234,17 @@ By following these steps and iteratively refining the understanding, we can arri
 
 总而言之，`net/base/file_stream.cc` 中的 `FileStream` 类是 Chromium 网络栈中用于执行异步文件 I/O 操作的核心组件，它为上层提供了安全且高效的文件访问接口，并且与 JavaScript 的文件相关 API 有着底层的联系。理解其功能和使用方式对于理解 Chromium 的文件处理机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/file_stream.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -345,7 +347,4 @@ int FileStream::ConnectNamedPipe(CompletionOnceCallback callback) {
 #endif  // BUILDFLAG(IS_WIN)
 
 }  // namespace net
-
-"""
-
 ```

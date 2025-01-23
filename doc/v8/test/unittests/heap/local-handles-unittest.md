@@ -111,11 +111,13 @@ onmessage = (event) => {
 
 `local-handles-unittest.cc` 文件是 V8 引擎中用于测试本地句柄这一内部机制的关键部分。本地句柄虽然对 JavaScript 开发者不可见，但它是 V8 实现高效内存管理和支持并发的关键技术，尤其在多线程环境下，它能够提高性能并降低线程间的竞争。 上述 JavaScript 的 Web Worker 示例可以帮助理解在多线程环境下数据共享和访问的场景，而 V8 内部正是使用类似本地句柄的机制来高效地管理这些操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/local-handles-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ TEST_F(LocalHandlesTest, DereferenceLocalHandleFailsWhenDisallowed) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

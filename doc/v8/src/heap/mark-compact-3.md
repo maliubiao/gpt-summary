@@ -68,12 +68,14 @@ console.log(obj2.ref.data); // 即使 obj1 移动了，仍然可以正确访问�
 
 总而言之，`v8/src/heap/mark-compact.cc` 的这部分代码是 V8 引擎进行高效、可靠垃圾回收的关键组成部分，它确保了在内存整理后，Javascript 程序的引用关系仍然有效，从而保证了程序的正确运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/mark-compact.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 eap()->tracer()),
         trace_id_(reinterpret_cast<uint64_t>(this) ^
                   tracer_->CurrentEpoch(GCTracer::Scope::MC_EVACUATE)) {}
@@ -1141,8 +1143,4 @@ void RootMarkingVisitor::VisitRunningCode(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

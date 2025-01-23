@@ -138,7 +138,7 @@ _qml_backend.render_something()
 
 总而言之，`pythontests.py` 是 Frida-QML 项目中至关重要的测试文件，它确保了 Python 扩展模块的构建过程的正确性，这对于 Frida 的功能完整性和可用性至关重要，特别是在逆向工程等需要与底层交互的场景中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/pythontests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -236,7 +238,4 @@ python = pymod.find_installation('python3', required: true)
         if shutil.which('python2') or PythonModule._get_win_pythonpath('python2'):
             raise self.skipTest('python2 installed, already tested')
         self._test_bytecompile()
-
-"""
-
 ```

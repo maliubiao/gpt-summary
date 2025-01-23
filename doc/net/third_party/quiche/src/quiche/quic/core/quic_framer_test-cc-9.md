@@ -76,7 +76,7 @@ JavaScript 代码（例如，在浏览器中运行的 Web 应用）通过浏览�
 
 该部分主要集中测试 `QuicFramer` 构建和解析各种控制类型和数据类型的 QUIC 数据包的能力，包括 Public Reset、Stateless Reset、以及包含不同帧（如 ACK、Stream、Blocked 和 Max Streams）的数据包。 此外，还测试了数据包的加密和在特定情况下 ACK 帧的截断处理。 这些测试确保了 `QuicFramer` 能够正确地处理各种QUIC协议场景，是保证Chromium QUIC 实现正确性的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -84,9 +84,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共16部分，请归纳一下它的功能
+```
 
-"""
- clang-format off
+### 源代码
+```cpp
+clang-format off
   unsigned char packet_variant1[] = {
       // public flags (public reset, 8 byte ConnectionId)
       0x0E,
@@ -1028,7 +1030,4 @@ TEST_P(QuicFramerTest, ServerUniDiMaxStreamsFrame) {
       // connection_id
       {"",
        {0xFE, 0xDC
-"""
-
-
 ```

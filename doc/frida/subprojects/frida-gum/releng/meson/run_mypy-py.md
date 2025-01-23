@@ -108,7 +108,7 @@ Initially, I might have focused too much on the *direct* connection to reverse e
 
 作为调试线索，如果 `run_mypy.py` 报告了类型错误，开发者需要查看 MyPy 输出的错误信息，定位到具体的代码行和类型不匹配的问题，然后修改代码以修复类型错误。  错误信息中的文件名和行号是关键的调试信息。  如果是在 CI 环境中出现错误，开发者需要查看 CI 的构建日志，找到 `run_mypy.py` 步骤的输出，分析错误信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/run_mypy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from pathlib import Path
@@ -280,7 +282,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

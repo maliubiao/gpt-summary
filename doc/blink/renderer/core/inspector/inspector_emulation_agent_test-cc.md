@@ -109,14 +109,16 @@ This detailed thought process, moving from high-level understanding to specific 
 
 总而言之，`inspector_emulation_agent_test.cc` 文件通过单元测试确保了 `InspectorEmulationAgent` 能够正确地模拟浏览器对不同图像类型的支持，这对于 Web 开发者进行兼容性测试和调试至关重要。理解其功能有助于我们更好地利用浏览器的开发者工具，并避免在 Web 开发中遇到与资源加载相关的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_emulation_agent_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -166,7 +168,4 @@ TEST_F(InspectorEmulationAgentTest, ModifiesAcceptHeader) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

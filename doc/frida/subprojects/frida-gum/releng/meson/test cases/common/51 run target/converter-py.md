@@ -189,7 +189,7 @@ By following these steps, combining code analysis with contextual understanding,
 
 总而言之，尽管 `converter.py` 脚本本身非常简单，但它在 Frida 这样的复杂动态分析工具的测试框架中扮演着一个实用的小角色，用于处理二进制数据的复制任务。理解其功能和上下文有助于理解 Frida 的测试流程和底层操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/51 run target/converter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,15 +197,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 with open(sys.argv[1], 'rb') as ifile, open(sys.argv[2], 'wb') as ofile:
     ofile.write(ifile.read())
-
-"""
-
 ```

@@ -236,7 +236,7 @@ func main() {
 
 4. **重复使用 Context 而不更新 Nonce:**  虽然代码中使用了 `seqNum` 来管理 nonce，但在某些 HPKE 模式下，如果错误地重复使用相同的上下文进行多次加密而不正确地更新 nonce，可能会导致安全问题。虽然这个测试代码没有直接展示错误使用的情况，但理解 nonce 的重要性是必要的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/hpke/hpke_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -244,8 +244,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -441,9 +443,4 @@ func TestRFC9180Vectors(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

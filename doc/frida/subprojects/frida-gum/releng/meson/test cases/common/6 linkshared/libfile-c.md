@@ -133,7 +133,7 @@ This step-by-step approach, starting with a high-level understanding and gradual
 
 总而言之，`libfile.c` 是一个用于演示共享库基本概念和测试动态链接功能的简单示例。在 Frida 的上下文中，它可以作为测试 Frida 的函数 Hook 和模块加载功能的用例。逆向工程师可以使用 Frida 来观察、修改或扩展这个简单库的行为，从而学习和掌握动态分析的技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/6 linkshared/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -157,7 +159,4 @@ Prompt:
 int DLL_PUBLIC func(void) {
     return 0;
 }
-
-"""
-
 ```

@@ -101,14 +101,16 @@ By following these steps, I could systematically dissect the code, understand it
 
 `text_codec_replacement.cc` 是 Blink 引擎中一个重要的错误处理机制，它确保了即使在遇到无效或不支持的字符编码时，浏览器也能以一种安全的方式处理文本，避免程序崩溃或不可预测的行为。虽然它能防止程序出错，但最终的结果是信息丢失，用户会看到替换字符，这表明存在编码问题需要修复。理解这个文件的作用有助于开发者更好地理解浏览器如何处理文本编码问题，并避免常见的编码错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_codec_replacement.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ String TextCodecReplacement::Decode(base::span<const uint8_t> data,
 }
 
 }  // namespace WTF
-
-"""
-
 ```

@@ -153,15 +153,17 @@ let cycle = createCycle();
 
 `v8/test/cctest/heap/test-write-barrier.cc` 是一个关键的测试文件，用于验证 V8 引擎中写屏障机制在增量垃圾回收过程中的正确性。它通过模拟对象的引用关系修改和检查标记状态来确保 V8 的内存管理机制能够可靠地回收不再使用的对象，避免内存泄漏和程序崩溃。虽然 JavaScript 开发者不需要直接操作写屏障，但理解其背后的原理有助于更好地理解 JavaScript 的内存管理方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-write-barrier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/heap/test-write-barrier.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -256,7 +258,4 @@ HEAP_TEST(WriteBarrier_MarkingExtension) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

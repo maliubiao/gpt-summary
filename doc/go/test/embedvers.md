@@ -165,15 +165,17 @@ func main() {
 
 总结来说，这段代码是 Go 语言自身测试的一部分，用于确保在不支持 `//go:embed` 的旧版本 Go 中，编译器能够正确地识别并报告错误。它强调了 Go Embed 功能的版本依赖性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/embedvers.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -lang=go1.15
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -186,9 +188,4 @@ import _ "embed"
 
 //go:embed x.txt // ERROR "go:embed requires go1.16 or later"
 var x string
-
-"""
-
-
-
 ```

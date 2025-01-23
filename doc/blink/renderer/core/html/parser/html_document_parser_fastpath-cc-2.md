@@ -103,15 +103,17 @@ This part focuses on the core implementation of the fast path HTML parsing logic
 
 总而言之，这段代码是 HTML 快速路径解析器的核心实现部分，专注于尝试高效地解析完整的 HTML 文档和 HTML 片段。它包含了检查是否可以使用快速路径的逻辑，以及在解析过程中遇到不支持的 HTML 结构时进行记录的机制。这部分代码的目标是在满足特定条件下，加速 HTML 到 DOM 的转换过程，从而提升网页加载速度和渲染性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_document_parser_fastpath.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ed) {
       LogFastPathUnsupportedTagTypeDetails(
           static_cast<uint32_t>(context_tag_type),
@@ -169,8 +171,4 @@ void LogTagsForUnsupportedTagTypeFailure(DocumentFragment& fragment) {
 #undef SUPPORTED_TAGS
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -76,7 +76,7 @@ Here's a breakdown of what I need to do:
 
 总而言之，这部分代码主要负责测试 `ClientSocketPoolBase` 类在处理并发连接请求时，如何根据全局和 Group 的连接数限制、请求优先级等因素进行连接的管理和调度，确保网络连接的合理分配和高效利用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/client_socket_pool_base_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -84,8 +84,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ] = {PrivacyMode::PRIVACY_MODE_DISABLED,
                                        PrivacyMode::PRIVACY_MODE_ENABLED};
 
@@ -855,7 +857,4 @@ TEST_F(ClientSocketPoolBaseTest,
       std::unique_ptr<ClientSocketHandle> handle =
           std::make_unique<ClientSocketHandle>();
       EXPECT_EQ(ERR_
-"""
-
-
 ```

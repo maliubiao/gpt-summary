@@ -195,15 +195,17 @@ func main() {
 
 总结来说，`go/test/nilcheck.go` 是一个底层的编译器测试文件，用于验证 Go 语言编译器是否正确地实现了 nil 检查机制，以保障程序的运行时安全。它通过禁用优化并显式要求插入 nil 检查，然后通过预定义的错误标记来判断编译器的行为是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/nilcheck.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -N -d=nil
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -394,9 +396,4 @@ func f5(m map[string]struct{}) bool {
 	_, ok := tmp1, tmp2
 	return ok
 }
-
-"""
-
-
-
 ```

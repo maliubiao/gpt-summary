@@ -137,15 +137,17 @@ By following these steps, focusing on the code's purpose, dissecting its compone
 
 `WebGLContextObject.cc` 中定义的 `WebGLContextObject` 类是 Blink 渲染引擎中管理 WebGL 对象生命周期的核心组件。它负责将 WebGL 对象与创建它们的上下文关联起来，并在上下文可能丢失的情况下验证对象的有效性，从而帮助防止程序错误和崩溃。理解这个类的工作原理对于调试 WebGL 相关的 bug 非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_context_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Apple Inc. All rights reserved.
  *
@@ -204,7 +206,4 @@ void WebGLContextObject::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

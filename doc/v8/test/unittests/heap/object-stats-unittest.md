@@ -84,11 +84,13 @@ const regex = /abc/; // 在 V8 内部会映射到一个 JSRegExp 的实例类型
 
 总而言之，虽然这个 C++ 文件是关于 V8 内部实现的，但它对于确保 JavaScript 功能的正确性和可靠性至关重要。 它通过测试来防止内部类型命名冲突，从而维护了 V8 引擎的稳定性和正确性，最终让 JavaScript 开发者能够编写出可预测且可靠的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/object-stats-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -127,7 +129,4 @@ TEST(ObjectStats, NoClashWithInstanceTypes) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

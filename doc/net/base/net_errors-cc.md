@@ -143,15 +143,17 @@ fetch('https://thisdomaindoesnotexist.example/')
 
 理解 `net_errors.cc` 及其定义错误代码的机制对于调试 Chromium 网络栈的问题至关重要。当遇到网络问题时，查看浏览器控制台或网络日志中出现的 `ERR_` 开头的错误代码，可以帮助开发者快速定位问题的根源，并采取相应的解决措施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/net_errors.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -285,7 +287,4 @@ Error FileErrorToNetError(base::File::Error file_error) {
 }
 
 }  // namespace net
-
-"""
-
 ```

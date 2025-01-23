@@ -151,14 +151,16 @@ This structured approach, starting with understanding the core components and pr
 
 总而言之，`LayoutWorkletGlobalScopeProxy.cc` 在 Blink 渲染引擎中扮演着关键角色，它负责管理 Layout Worklet 的执行环境，加载和运行 JavaScript 代码，并将其定义的自定义布局能力暴露给 CSS 使用，从而实现了 CSS Houdini 规范中自定义布局的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/custom/layout_worklet_global_scope_proxy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ void LayoutWorkletGlobalScopeProxy::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

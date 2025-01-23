@@ -152,15 +152,17 @@ chain:
 
 `verify_using_cert_verify_proc.cc` 是一个用于调试和测试证书验证的强大工具。它允许开发者在浏览器环境之外，使用 Chromium 的证书验证逻辑手动验证证书链，从而帮助诊断各种与 HTTPS 连接相关的证书问题。用户通常不会直接操作它，但它对于理解和解决浏览器遇到的证书错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/cert_verify_tool/verify_using_cert_verify_proc.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -305,7 +307,4 @@ bool VerifyUsingCertVerifyProc(
 
   return rv == net::OK;
 }
-
-"""
-
 ```

@@ -74,7 +74,7 @@ By following these steps, I can move from understanding a trivial piece of code 
 
 虽然 `bob.c` 本身是一个非常简单的C文件，但它在Frida的构建系统中扮演着重要的角色，用于测试链接器标志的去重功能。这间接地关系到逆向工程（通过确保Frida的正确构建）、二进制底层知识（链接器标志直接影响二进制文件）、以及潜在的构建配置错误。理解这种看似简单的测试用例有助于理解大型软件项目的构建过程和测试策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/51 ldflagdedup/bob.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -82,14 +82,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<gmodule.h>
 
 int func() {
     return 0;
 }
-
-"""
-
 ```

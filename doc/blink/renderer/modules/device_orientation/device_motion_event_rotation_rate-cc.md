@@ -234,15 +234,17 @@ Let's break down the thought process for analyzing this C++ code snippet.
 * 检查浏览器的安全设置，确保网页有访问设备运动传感器的权限。
 * 在不同的设备和浏览器上测试，因为传感器数据的可用性和精度可能因设备而异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/device_orientation/device_motion_event_rotation_rate.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -315,7 +317,4 @@ std::optional<double> DeviceMotionEventRotationRate::gamma() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

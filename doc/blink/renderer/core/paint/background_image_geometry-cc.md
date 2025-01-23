@@ -156,7 +156,7 @@ Planning complete. I will now generate the response following these steps.
 
 总的来说，这部分代码负责背景图片最基础也是最重要的几何属性计算，为后续的实际绘制工作奠定基础。后续的部分可能会涉及更复杂的场景，例如渐变背景、多层背景等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/background_image_geometry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -920,7 +922,4 @@ void BackgroundImageGeometry::Calculate(
   PhysicalRect unsnapped_positioning_area =
       PhysicalRect::EnclosingRect(positioning_area);
   unsnapped_dest_
-"""
-
-
 ```

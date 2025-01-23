@@ -179,7 +179,7 @@ Dependency not found as expected.
 
 `frida/subprojects/frida-qml/releng/meson/test cases/common/161 not-found dependency/testlib.c` 很可能是一个用于测试 Frida 在遇到缺失依赖项时的行为的 C 源代码文件。它模拟了依赖项缺失的场景，并验证 Frida 是否能正确地处理和报告这些错误。虽然普通用户不会直接操作这个文件，但它对于确保 Frida 的稳定性和为用户提供有用的错误信息至关重要。对于 Frida 的开发者来说，这个文件是调试和理解 Frida 内部工作原理的重要资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/161 not-found dependency/testlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,9 +187,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

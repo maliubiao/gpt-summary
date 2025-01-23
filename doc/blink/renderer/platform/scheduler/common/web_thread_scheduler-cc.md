@@ -110,14 +110,16 @@ Let's consider a scenario involving a timer:
 
 **In summary, `web_thread_scheduler.cc` defines the crucial mechanism for managing and executing tasks on the main thread of the Blink rendering engine. It's deeply involved in every aspect of how web pages are loaded, rendered, and how JavaScript interacts with the browser. Understanding its role is essential for optimizing web page performance and avoiding common pitfalls.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/web_thread_scheduler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ void WebThreadScheduler::OnUrgentMessageProcessed() {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

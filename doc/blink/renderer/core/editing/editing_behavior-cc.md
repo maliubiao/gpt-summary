@@ -141,15 +141,17 @@ By following this kind of structured analysis, combining code inspection with kn
 
 总而言之，`blink/renderer/core/editing/editing_behavior.cc` 是 Blink 渲染引擎中负责键盘输入与编辑行为映射的关键文件，它连接了用户的键盘操作和浏览器底层的编辑功能，与 JavaScript, HTML, CSS 共同协作，实现了网页的文本编辑能力。理解这个文件的工作原理对于调试与编辑相关的浏览器行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/editing_behavior.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007 Apple, Inc.  All rights reserved.
  * Copyright (C) 2012 Google, Inc.  All rights reserved.
@@ -479,7 +481,4 @@ bool EditingBehavior::ShouldInsertCharacter(const KeyboardEvent& event) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

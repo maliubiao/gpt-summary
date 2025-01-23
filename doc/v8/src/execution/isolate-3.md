@@ -213,12 +213,14 @@ console.log(result);
 
 总而言之， `v8/src/execution/isolate.cc` 的这部分代码是 V8 引擎的核心组成部分，负责创建、初始化和管理 JavaScript 执行所需的隔离环境，并提供了许多与 JavaScript 语言特性紧密集成的功能接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 heap_.code_range_->RemapEmbeddedBuiltins(
       this, embedded_blob_code_, embedded_blob_code_size_);
   CHECK_NOT_NULL(embedded_blob_code_);
@@ -1942,7 +1944,4 @@ void Isolate::OnPromiseBefore(Handle<JSPromise> promise) {
 void Isolate::OnPromiseAfter(Handle<JSPromise> promise) {
   RunPromiseHook(PromiseHookType::kAfter, promise,
                  factory()->undefined_
-"""
-
-
 ```

@@ -126,7 +126,7 @@ uintArray[0] += 1; // uintArray[0] 会变成 0，发生回绕
 
 这部分主要测试了 ARM64 指令选择器对于**带溢出检查的加减法、移位操作、乘法除法以及各种形式的乘法累加/减法指令（包括标量和 SIMD）**的正确选择和生成。它还涵盖了 SIMD 向量的移位后加法以及特定 SIMD 乘法优化场景的测试。这些测试对于保证 V8 在 ARM64 架构上高效且正确地执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/arm64/instruction-selector-arm64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/arm64/instruction-selector-arm64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -134,8 +134,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 T_EQ(3U, s[0]->InputCount());
     EXPECT_EQ(s.ToVreg(p0), s.ToVreg(s[0]->InputAt(0)));
   }
@@ -1019,7 +1021,4 @@ const SIMDMulDupInst kSIMDF64x2MulDuplInstructions[] = {
 };
 
 using Instru
-"""
-
-
 ```

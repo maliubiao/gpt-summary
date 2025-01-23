@@ -136,7 +136,7 @@ func main() {
 
 `go/src/net/file_stub.go` 是 `net` 包在 `js` 平台上的一个占位实现，用于表示基于文件描述符的网络操作在该平台上不被支持。它的主要作用是确保代码在 `js` 平台上编译通过，并通过返回 `syscall.ENOPROTOOPT` 来明确指示这些功能不可用。开发者在 `js` 环境下进行网络编程时，需要使用平台特定的 API 而不是依赖于这些返回错误的函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/file_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -144,8 +144,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -162,9 +164,4 @@ import (
 func fileConn(f *os.File) (Conn, error)             { return nil, syscall.ENOPROTOOPT }
 func fileListener(f *os.File) (Listener, error)     { return nil, syscall.ENOPROTOOPT }
 func filePacketConn(f *os.File) (PacketConn, error) { return nil, syscall.ENOPROTOOPT }
-
-"""
-
-
-
 ```

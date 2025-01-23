@@ -94,7 +94,7 @@ By following this thought process, I can effectively analyze the code and genera
 
 在后续的第二部分中，可能会包含更多针对性能、特定平台或者更复杂的字符串操作的测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/string_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -106,8 +106,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 The Android Open Source Project
  *
@@ -1184,7 +1186,4 @@ static void DoMemmoveTest(uint8_t* src, uint8_t* dst, size_t len) {
 
 TEST(STRING_TEST, memmove_align) {
   RunSrcDstBufferAlignTest(L
-"""
-
-
 ```

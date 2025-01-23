@@ -226,7 +226,7 @@ A user might end up looking at this code in the following scenario:
 
 In essence, this `loaderbase.py` file is a crucial part of ensuring the quality and consistency of Frida's documentation, which is vital for its users, including reverse engineers. It defines the rules and processes for transforming a raw API specification into a well-structured and validated representation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/docs/refman/loaderbase.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -234,8 +234,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -441,7 +443,4 @@ class LoaderBase(metaclass=ABCMeta):
         resolver = _Resolver()
         with mlog.nested():
             return resolver.validate_and_resolve(manual)
-
-"""
-
 ```

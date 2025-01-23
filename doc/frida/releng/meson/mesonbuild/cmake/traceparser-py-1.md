@@ -144,7 +144,7 @@ fixed_list = ["/home/user documents/file with spaces.txt", "another", "/opt/app"
 
 这段代码片段的主要功能是**解析一个字符串列表，识别并重新组合被空格分隔的文件路径，以便后续的构建或分析步骤能够正确使用这些路径信息。** 它通过检查组合后的字符串是否对应真实存在的文件或目录来实现路径的识别和重建。这在处理构建系统的输出日志时非常有用，因为这些日志中经常包含各种文件路径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/cmake/traceparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,9 +153,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- [curr_str]
+### 源代码
+```python
+[curr_str]
                 curr_str = None
                 path_found = False
             elif Path(f'{curr_str} {i}').exists():
@@ -174,8 +176,4 @@ Prompt:
         if curr_str:
             fixed_list += [curr_str]
         return fixed_list
-
-"""
-
-
 ```

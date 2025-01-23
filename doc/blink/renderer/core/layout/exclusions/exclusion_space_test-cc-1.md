@@ -59,15 +59,17 @@ I will structure the summary by grouping related test cases and explaining the f
 
 总而言之，`exclusion_space_test.cc` 的目的是确保 `ExclusionSpace` 类能够正确地管理和查询布局排除区域，从而实现文本内容的正确绕排，这对于实现 CSS 的 `float` 和 `shape-outside` 等特性至关重要。 这些测试覆盖了各种场景，包括基本情况、复杂情况和边界情况，以保证代码的健壮性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/exclusions/exclusion_space_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ElementsAre(CreateLayoutOpportunity(9, 151, 309)));
   EXPECT_THAT(exclusion_space.AllLayoutOpportunities(9, 174),
               ElementsAre(CreateLayoutOpportunity(9, 174, 309)));
@@ -284,8 +286,4 @@ TEST(ExclusionSpaceTest, MergeExclusionSpacesNoOutputExclusions) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

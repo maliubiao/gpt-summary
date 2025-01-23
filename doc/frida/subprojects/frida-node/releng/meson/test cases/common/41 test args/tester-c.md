@@ -145,7 +145,7 @@ Initially, one might focus purely on the C code's mechanics. However, realizing 
 
 总而言之，`tester.c` 作为一个简单的测试工具，在 Frida 的开发和测试流程中扮演着重要的角色，用于验证文件内容读取和比较功能的正确性。它也为逆向工程师提供了一个简单的目标程序，可以用来练习和演示 Frida 的动态插桩能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/41 test args/tester.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <string.h>
 #include <fcntl.h>
@@ -189,7 +191,4 @@ int main(int argc, char **argv) {
     }
     return 0;
 }
-
-"""
-
 ```

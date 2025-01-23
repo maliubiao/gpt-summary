@@ -196,7 +196,7 @@ private:
 
 总而言之，这个 `main.cpp` 文件虽然简单，但它揭示了异步操作和多线程编程中可能出现的问题，并且可以作为 Frida 进行动态插桩和逆向分析的一个很好的示例。 通过分析这个测试用例，开发者可以更好地理解 `CmMod` 模块的行为，并使用 Frida 来调试和验证其功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/16 threads/subprojects/cmMod/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 #include <cstdlib>
@@ -215,7 +217,4 @@ int main() {
   cc.asyncIncrement();
   return cc.getNum() == 1 ? EXIT_SUCCESS : EXIT_FAILURE;
 }
-
-"""
-
 ```

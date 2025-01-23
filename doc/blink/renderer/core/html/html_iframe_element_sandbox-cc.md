@@ -100,14 +100,16 @@ This detailed thought process, focusing on understanding the code, connecting it
 
 总而言之，`html_iframe_element_sandbox.cc` 文件在 Chromium Blink 引擎中扮演着至关重要的角色，它确保了 `<iframe>` 元素的 `sandbox` 属性能够按照 HTML 规范的要求工作，并帮助开发者实施安全策略，防止恶意或意外的代码在嵌入的 iframe 中执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_iframe_element_sandbox.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ bool HTMLIFrameElementSandbox::ValidateTokenValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

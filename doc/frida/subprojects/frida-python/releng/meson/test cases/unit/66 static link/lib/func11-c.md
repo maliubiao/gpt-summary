@@ -119,7 +119,7 @@ By following this thought process, which involves understanding the code, its co
 
 `func11.c` 虽然代码简单，但在 Frida 的上下文中，它可以用来测试静态链接的库函数的行为。逆向工程师可以通过动态分析工具如 Frida 来 hook 和观察这个函数，从而了解其行为以及与之相关的 `func10` 的行为。理解这个简单的函数及其上下文，有助于理解 Frida 的工作原理和单元测试的结构。对于用户而言，除非是 Frida 的开发者或贡献者，否则不太可能直接与这个文件交互。用户遇到与此相关的“错误”通常是因为他们在使用 Frida hook 其他函数时遇到了依赖关系或配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/66 static link/lib/func11.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,15 +127,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func10();
 
 int func11()
 {
   return func10() + 1;
 }
-
-"""
-
 ```

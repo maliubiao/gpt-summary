@@ -450,7 +450,7 @@ using SixByteInstr = uint64_t;
   V(ork, ORK, 0xB9F6)       /* type = RRF_A OR (32)  */                     \
   V(xrk, XRK, 0xB9F7)       /* type = RRF_A EXCLUSIVE OR (32)  */           \
   V(ark,
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/constants-s390.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/s390/constants-s390.h以.tq结尾，那它是个v8 torque源代码，
@@ -458,8 +458,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1044,8 +1046,4 @@ using SixByteInstr = uint64_t;
   V(vclgd, VCLGD,                                                              \
     0xE7C0) /* type = VRR_A VECTOR FP CONVERT TO LOGICAL 64-BIT  */            \
   V(vcdlg, VCDLG,                                                              \
-  
-"""
-
-
 ```

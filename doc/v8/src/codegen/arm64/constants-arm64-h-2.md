@@ -116,7 +116,7 @@ console.log(result === 0.3); // 输出 false，因为浮点数精度有限
 
 这部分主要定义了用于浮点数处理（包括基本运算和与整数、定点数的转换）以及大量 NEON (SIMD) 指令的常量。 这些常量是 V8 将 JavaScript 代码编译成高效 ARM64 机器码的关键，特别是对于数值密集型和并行计算相关的代码。 这部分内容展示了 ARM64 架构在浮点数和向量化计算方面的丰富指令集。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/constants-arm64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/constants-arm64.h以.tq结尾，那它是个v8 torque源代码，
@@ -124,8 +124,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 0;
 constexpr FPDataProcessing3SourceOp FPDataProcessing3SourceFMask = 0x5F000000;
 constexpr FPDataProcessing3SourceOp FPDataProcessing3SourceMask = 0xFFE08000;
@@ -685,7 +687,4 @@ constexpr NEONLoadStoreMultiStructPostIndexOp NEON_ST2_post =
     NEON_ST2 | NEONLoadStoreMultiStructPostIndex;
 constexpr NEONLoadStoreMultiStructPostIndexOp NEON_ST3_post =
     N
-"""
-
-
 ```

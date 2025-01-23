@@ -168,14 +168,16 @@ Let's break down the thought process to analyze the given C++ code.
 
 总而言之，`PaintArtifact` 是 Blink 渲染引擎中用于组织和管理绘制信息的核心数据结构，它连接了 HTML 结构、CSS 样式和 JavaScript 动态效果，最终驱动着网页内容的渲染过程。理解 `PaintArtifact` 的功能对于深入理解浏览器渲染原理和进行性能优化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_artifact.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -281,7 +283,4 @@ std::ostream& operator<<(std::ostream& os, const PaintArtifact& artifact) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

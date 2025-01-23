@@ -103,7 +103,7 @@ The user wants to understand the functionality of the C code provided, specifica
 
 总而言之，`stalker-arm64-fixture.c` 是一个用于测试 Frida Stalker 组件在 ARM64 架构下功能的关键文件。它通过搭建测试环境、生成测试代码、模拟执行和监控事件，来验证 Stalker 的正确性和鲁棒性。理解这个文件的功能有助于理解 Frida Stalker 的工作原理，以及动态逆向分析的一些底层概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm64/stalker-arm64-fixture.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2021 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2017 Antonio Ken Iannillo <ak.iannillo@gmail.com>
@@ -335,7 +337,4 @@ struct _InvalidationTarget
   StalkerDummyChannel channel;
   volatile gboolean finished;
 };
-
-"""
-
 ```

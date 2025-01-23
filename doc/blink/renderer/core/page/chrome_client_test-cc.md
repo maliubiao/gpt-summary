@@ -167,15 +167,17 @@ This structured approach, combining code analysis with understanding of web tech
 
 总而言之，`chrome_client_test.cc` 是 Blink 引擎中用于测试 `ChromeClient` 接口关于工具提示功能的关键单元测试文件，它通过模拟各种场景来确保工具提示的正确显示和更新。它与 HTML 的 `title` 属性紧密相关，并可以通过 JavaScript 间接影响。 这个文件主要用于开发和调试阶段，帮助开发者确保 Blink 引擎的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/chrome_client_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -290,7 +292,4 @@ TEST_F(ChromeClientTest, UpdateTooltipUnderCursorEmptyString) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

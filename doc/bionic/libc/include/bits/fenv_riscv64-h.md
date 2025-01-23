@@ -288,7 +288,7 @@ if (Process.arch === 'riscv64') {
 
 通过这种方式，你可以跟踪 Android Framework 或 NDK 应用如何使用 Bionic libc 提供的浮点环境控制功能，并定位潜在的问题或理解其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/fenv_riscv64.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -299,8 +299,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2022 The Android Open Source Project
  * All rights reserved.
@@ -353,7 +355,4 @@ typedef __uint32_t fexcept_t;
 #define FE_UPWARD     0x3
 
 __END_DECLS
-
-"""
-
 ```

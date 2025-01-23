@@ -116,7 +116,7 @@ Essentially, the process involves: understanding the code → analyzing the cont
 
 虽然 `prog.c` 的代码本身非常简单，但它在 Frida 的测试框架中扮演着一个基础的角色。它可以用来验证 Frida 的基本 Hooking 能力，并作为理解 Frida 如何与目标进程交互的起点。通过分析这个简单的例子，可以帮助开发者理解 Frida 的工作原理，并排查使用 Frida 时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/osx/10 global variable ar/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // Source: https://lists.gnu.org/archive/html/libtool/2002-07/msg00025.html
 
 extern void l1(void);
@@ -133,7 +135,4 @@ int main(void)
 {
   l1();
 }
-
-"""
-
 ```

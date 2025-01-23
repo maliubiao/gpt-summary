@@ -155,7 +155,7 @@ By following these steps, combining code analysis with contextual information ab
 
 总而言之，`main.c` 是一个用于测试 Frida 在处理特定类型的 Rust 代码依赖关系时的能力的 C 源代码文件。它通过简单的函数调用和条件判断来验证 Frida 是否能够正确地插桩和控制程序的执行流程，并与逆向工程、二进制底层知识、操作系统原理等密切相关。 理解这个测试用例有助于我们理解 Frida 的工作原理和使用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/rust/21 transitive dependencies/diamond/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,14 +163,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int r3(void);
 
 int main_func(void) {
     return r3() == 246 ? 0 : 1;
 }
-
-"""
-
 ```

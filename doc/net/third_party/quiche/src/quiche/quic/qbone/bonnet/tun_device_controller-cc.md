@@ -142,15 +142,17 @@ By following these steps, systematically analyzing the code, and thinking about 
 
 总而言之，`tun_device_controller.cc` 是 Chromium 网络栈中负责管理 TUN 设备的底层组件，它通过与操作系统内核交互来配置设备的 IP 地址、路由规则和相关策略，为基于 QBONE 的 QUIC 连接和其他需要网络隧道的功能提供支持。虽然不直接与用户 JavaScript 代码交互，但它是实现这些功能的关键基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/qbone/bonnet/tun_device_controller.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2020 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -329,7 +331,4 @@ void TunDeviceController::RegisterAddressUpdateCallback(
 }
 
 }  // namespace quic
-
-"""
-
 ```

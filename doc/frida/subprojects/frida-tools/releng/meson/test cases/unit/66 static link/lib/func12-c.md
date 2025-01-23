@@ -212,7 +212,7 @@ This detailed thought process covers the various aspects of the user's request, 
 
 `func12.c` 虽然代码简单，但在动态 instrumentation 和逆向工程的上下文中，它成为了一个可以被观察、分析和操纵的目标。理解其功能和它所处的环境，有助于逆向工程师深入理解程序的运行机制。Frida 这样的工具使得对这类函数的动态分析变得高效且强大。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/66 static link/lib/func12.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -220,8 +220,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func10();
 int func11();
 
@@ -229,7 +231,4 @@ int func12()
 {
   return func10() + func11();
 }
-
-"""
-
 ```

@@ -169,15 +169,17 @@ func main() {
 
 总之，`go/src/cmd/compile/internal/gc/obj.go` 是 Go 编译器生成目标文件的关键组成部分，它负责将编译器的内部表示转化为可以在后续编译和链接步骤中使用的持久化数据。 理解它的功能有助于深入理解 Go 的编译流程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/gc/obj.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -468,9 +470,4 @@ func dumpembeds() {
 		staticdata.WriteEmbed(v)
 	}
 }
-
-"""
-
-
-
 ```

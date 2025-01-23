@@ -155,15 +155,17 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`bluetooth_uuid_unittest.cc` 文件虽然是一个单元测试文件，但它验证了 Blink 引擎中处理 Web Bluetooth API 传递的 UUID 的关键逻辑，对于确保 Web Bluetooth 功能的正确性至关重要。它直接关系到 JavaScript 开发者如何使用 Web Bluetooth API，以及用户与蓝牙设备交互的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/bluetooth/bluetooth_uuid_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -223,7 +225,4 @@ TEST(BluetoothUUIDTest, GetBluetoothUUIDFromV8Value_InvalidUUID) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

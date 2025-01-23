@@ -164,14 +164,16 @@ or_condition2.conditions.push_back(condA);
 
 总之，`service_worker_router_rule.cc` 文件为 Blink 引擎提供了定义和管理 Service Worker 路由规则的基础结构。这些规则决定了 Service Worker 如何拦截和处理网络请求，对于实现离线体验、性能优化等 Service Worker 的核心功能至关重要。 理解这些底层的 C++ 结构有助于更深入地理解 Service Worker 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/service_worker/service_worker_router_rule.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ bool ServiceWorkerRouterSource::operator==(
 }
 
 }  // namespace blink
-
-"""
-
 ```

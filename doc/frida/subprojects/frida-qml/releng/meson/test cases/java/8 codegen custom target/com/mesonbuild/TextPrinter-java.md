@@ -152,7 +152,7 @@ Hello Frida
 
 `TextPrinter.java` 本身是一个非常简单的 Java 类，它的功能就是存储和打印字符串。 在 Frida 的上下文中，它作为一个辅助工具，可以帮助逆向工程师在目标应用程序中打印信息，观察其内部状态。虽然它本身不涉及底层的二进制、内核等知识，但它的存在是 Frida 这种强大的动态 instrumentation 工具能力的体现。 用户会接触到这个文件，通常是因为他们正在开发、调试、学习或测试与 Frida 相关的代码，特别是与 Java 代码集成和处理相关的部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/java/8 codegen custom target/com/mesonbuild/TextPrinter.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class TextPrinter {
@@ -176,7 +178,4 @@ class TextPrinter {
         System.out.println(msg);
     }
 }
-
-"""
-
 ```

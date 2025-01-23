@@ -159,12 +159,14 @@ console.log(map.has('key1')); // 输出 true，这会调用 C++ 中定义的 Map
 
 总之，这段 C++ 代码是 V8 引擎的基石，它定义了 JavaScript 中许多核心对象的蓝图，使得 JavaScript 代码能够在这些预定义好的结构上运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 map());
         native_context()->set_intl_segment_data_object_map(*map);
         native_context()->set_intl_segment_data_object_wordlike_map(
@@ -1529,8 +1531,4 @@ void Genesis::InitializeGlobal_harmony_iterator_helpers() {
           JS_VALID_ITERATOR_WRAPPER_TYPE, JSValidIteratorWrapper::kHeaderSize,
           TERMINAL_FAST_ELEMENTS_KIND, 0);
   Map::SetPrototype(isolate(), valid_iterator_wrapper_map,
-              
-"""
-
-
 ```

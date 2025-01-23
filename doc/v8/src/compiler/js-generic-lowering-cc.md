@@ -165,7 +165,7 @@ By following these steps, combining code analysis with an understanding of compi
 
 在编译器的早期阶段，`v8/src/compiler/js-generic-lowering.cc` 的主要职责是将高级的、通用的 JavaScript 操作转换为可以直接由 V8 引擎执行的底层操作，主要通过替换为对内置函数或运行时函数的调用来实现。这个过程为后续的更具体的优化阶段奠定了基础。它还负责处理运行时反馈信息，以便在后续执行中进行性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-generic-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-generic-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -173,8 +173,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -965,7 +967,4 @@ void JSGenericLowering::LowerJSGetTemplateObject(Node* node) {
                     jsgraph()->ConstantNoHole(description, broker()));
   node->InsertInput(zone(), 2,
                     jsgraph()->UintPtr
-"""
-
-
 ```

@@ -159,7 +159,7 @@ let c = a + b;
 
 这部分代码专注于模拟 PowerPC 架构中**浮点数操作、位操作、基本的数据加载和存储，以及一部分向量（SIMD）指令**的执行。它为 V8 引擎在 PowerPC 平台上运行 JavaScript 代码提供了底层的指令级模拟能力。通过解释这些指令的行为，模拟器能够准确地反映在真实的 PowerPC 硬件上执行代码的效果。这部分代码是整个模拟器实现中的一个关键组成部分，负责处理多种核心的 CPU 指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/ppc/simulator-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/ppc/simulator-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,9 +167,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
-     switch (bfa) {
+### 源代码
+```cpp
+switch (bfa) {
         case 5:
           ClearFPSCR(VXSOFT);
           ClearFPSCR(VXSQRT);
@@ -1246,7 +1248,4 @@ Prompt:
     intermediate_type b_val = static_cast<intermediate_type>(                \
         get_simd_register_by_lane<result_type>(b, i));                       \
     intermediate
-"""
-
-
 ```

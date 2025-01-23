@@ -267,7 +267,7 @@ sys.stdin.read()
 
 这个 Frida 示例可以帮助你验证这个 `nl_types.cpp` 文件中的函数行为，并观察是否有其他部分的代码尝试使用这些函数。  尽管在这个特定的 Bionic 版本中，这些函数的功能是空的，但在其他系统或 Bionic 的其他版本中，它们可能有实际的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/nl_types.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -278,8 +278,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -325,7 +327,4 @@ int catclose(nl_catd) {
   errno = EBADF;
   return -1;
 }
-
-"""
-
 ```

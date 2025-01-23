@@ -210,7 +210,7 @@ Error occurred
 
 总而言之，这个简单的 `main.c` 文件在一个特定的 Frida 测试环境中扮演着一个被测试的目标角色，用于验证 Frida 在处理静态链接可执行文件时的动态 instrumentation 能力。通过分析其源代码和上下文，我们可以推断出其功能，与逆向工程和底层知识的联系，以及可能的用户操作和调试方向。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/16 prebuilt static/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -218,8 +218,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<best.h>
 
@@ -227,7 +229,4 @@ int main(int argc, char **argv) {
     printf("%s\n", msg());
     return 0;
 }
-
-"""
-
 ```

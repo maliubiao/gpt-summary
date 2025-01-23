@@ -160,15 +160,17 @@ The primary potential for user error stems from the use of the **dot import**:
 
 **In summary, this seemingly simple code snippet demonstrates function aliasing in Go, heavily reliant on the less common dot import. While functional, the use of dot imports carries risks and is generally avoided in favor of explicit imports for better code clarity and to prevent namespace collisions.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug488.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -178,9 +180,4 @@ package a
 import . "fmt"
 
 var p1 = Print
-
-"""
-
-
-
 ```

@@ -161,7 +161,7 @@ objdump -t libef.so | grep "Ef::get_x"
 
 总而言之，`ef.cpp` 是一个用于 Frida Gum 测试的简单 C++ 类，它的主要目的是提供一个可供 Frida 进行动态分析的目标。通过分析这个简单的类，可以验证 Frida 在处理动态链接库和 Hook 函数方面的功能。对于逆向工程师来说，理解这样的代码可以帮助他们学习如何使用 Frida 对更复杂的程序进行分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/89 default library/ef.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"ef.h"
 
 DLL_PUBLIC Ef::Ef() : x(99) {
@@ -179,7 +181,4 @@ DLL_PUBLIC Ef::Ef() : x(99) {
 int DLL_PUBLIC Ef::get_x() const {
     return x;
 }
-
-"""
-
 ```

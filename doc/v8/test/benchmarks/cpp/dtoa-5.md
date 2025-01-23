@@ -78,10 +78,13 @@ console.log(fixedRepresentation); // 输出 "123.456789"
 
 这个C++代码文件是V8引擎中用于测试浮点数到字符串转换性能的基准测试代码。它通过模拟JavaScript中 `toString()` 和 `toFixed()` 等方法的行为，来评估 `FastDtoa` 函数在不同转换场景下的效率。这对于优化JavaScript引擎的性能至关重要，因为数字到字符串的转换在Web开发中非常常见。
 
-Prompt: ```这是目录为v8/test/benchmarks/cpp/dtoa.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/benchmarks/cpp/dtoa.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 8674600354,
     68.0541953008,  656.9876681725, 535.4170555010, 777.7861015686,
     568.1950006959, 292.7121747782, 270.9829747699, 291.7444687249,
@@ -179,7 +182,4 @@ static void BM_DtoaSixDigits(benchmark::State& state) {
 
 BENCHMARK(BM_DtoaShortest);
 BENCHMARK(BM_DtoaSixDigits);
-
-"""
-
 ```

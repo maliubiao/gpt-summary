@@ -110,17 +110,16 @@ console.log(sum(1, 2, 3, 4)); // 输出: 10
 
 `v8/src/execution/arguments.cc` 是 V8 引擎中负责幕后工作的一个关键文件，它处理了 JavaScript 函数调用时参数的传递、存储和访问，直接支持了 JavaScript 中关于函数参数的各种语法和特性，例如 `arguments` 对象、默认参数和剩余参数。理解这个文件的作用有助于深入理解 JavaScript 函数执行的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arguments.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 #include "src/execution/arguments.h"
-
-"""
-
 ```

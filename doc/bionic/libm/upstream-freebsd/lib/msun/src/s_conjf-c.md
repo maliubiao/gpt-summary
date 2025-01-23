@@ -249,7 +249,7 @@ int main() {
 
 总而言之，`s_conjf.c` 文件虽然代码很简单，但在 Android 系统中扮演着提供基础数学运算功能的角色，无论是 Framework 还是 NDK 应用，在需要进行复数运算时都可能间接地或直接地使用到它。 调试时，可以通过标准的 C/C++ 调试工具和技术来跟踪代码的执行流程，最终定位到这个函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_conjf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -259,8 +259,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -299,7 +301,4 @@ conjf(float complex z)
 
 	return (CMPLXF(crealf(z), -cimagf(z)));
 }
-
-"""
-
 ```

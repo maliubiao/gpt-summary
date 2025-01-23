@@ -116,14 +116,16 @@ By following these steps, we can systematically analyze the code, understand its
 
 `v8_dom_wrapper.cc` 是 Blink 引擎中连接 JavaScript 和 C++ DOM 实现的关键组件。它负责创建和验证 DOM 对象的 JavaScript 包装器，使得 JavaScript 代码能够安全有效地操作和访问网页的结构和内容。它通过内部的检查机制来确保类型安全，防止不正确的对象被当作 DOM 对象处理，从而提高了浏览器的稳定性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/v8_dom_wrapper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -229,7 +231,4 @@ bool V8DOMWrapper::HasInternalFieldsSet(v8::Isolate* isolate,
 }
 
 }  // namespace blink
-
-"""
-
 ```

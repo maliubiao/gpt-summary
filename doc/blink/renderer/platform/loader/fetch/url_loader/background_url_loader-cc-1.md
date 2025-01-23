@@ -128,15 +128,17 @@ By following these steps, iterating, and refining the analysis, we can arrive at
 
 `BackgroundURLLoader` 是 Chromium Blink 渲染引擎中一个核心的 URL 加载器，专注于**异步地**获取网络资源。它不直接支持同步加载，并通过一个内部的上下文对象来管理加载过程。其主要功能包括发起和管理异步请求、调整请求优先级、冻结/解冻加载过程，并提供机制来处理加载后的响应数据。  它作为 Blink 内部的基础设施，支撑着 JavaScript 的 `fetch` API、HTML 标签资源加载以及 CSS 资源加载等多种网页内容获取场景，确保这些操作不会阻塞页面的主线程，从而提升用户体验。它还允许在加载过程中动态调整优先级和自定义响应处理，提供了更灵活的资源加载控制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/background_url_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 per>
         resource_load_info_notifier_wrapper) {
   // BackgroundURLLoader doesn't support sync requests.
@@ -181,8 +183,4 @@ void BackgroundURLLoader::SetBackgroundResponseProcessorFactory(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

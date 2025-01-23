@@ -142,15 +142,17 @@ CSS 可以用来样式化 SVG 元素，但 `svg_parsing_error.cc` 主要关注�
 
 这个错误消息会明确指出哪个元素（`<circle> `），哪个属性 (`cx`) 存在问题，以及期望的类型和实际的值，从而帮助开发者快速定位到错误的 SVG 代码。 开发者可以检查 HTML 源代码中对应的 SVG 部分，并修正 `cx` 属性的值为有效的数值，例如 `cx="50"`。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_parsing_error.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ String SVGParsingError::Format(const String& tag_name,
 }
 
 }  // namespace blink
-
-"""
-
 ```

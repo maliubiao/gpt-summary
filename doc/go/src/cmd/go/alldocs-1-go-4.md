@@ -230,7 +230,7 @@ func ExampleAdd() {
 
 总而言之，这段文档详细地阐述了 Go 语言中测试体系的核心组成部分，包括 `go test` 命令的使用方法、各种命令行参数的作用以及编写测试、基准测试和示例函数的规范。理解这些内容对于编写高质量、可测试的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/alldocs-1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -239,8 +239,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 or, but ./vendor/... and ./mycode/vendor/... do.
 // Note, however, that a directory named vendor that itself contains code
 // is not a vendored package: cmd/vendor would be a command named vendor,
@@ -567,10 +569,4 @@ or, but ./vendor/... and ./mycode/vendor/... do.
 //
 //
 package main
-
-"""
-
-
-
-
 ```

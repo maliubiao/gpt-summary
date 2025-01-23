@@ -133,15 +133,17 @@ func main() {
 
 总之，`go/test/switch5.go` 这段代码的功能是作为 Go 语言编译器的一个测试用例，专门用于验证编译器能否正确地检测并报告 `switch` 语句中重复的 `case` 子句。它并不执行实际的程序逻辑，而是通过预期的编译错误来验证编译器的行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/switch5.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2016 The Go Authors. All rights reserved.
@@ -236,9 +238,4 @@ func f8(r rune) {
 	case x, x: // ERROR "duplicate case (x .value 10.)?"
 	}
 }
-
-"""
-
-
-
 ```

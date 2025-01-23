@@ -130,7 +130,7 @@ By following this structured process, combining code analysis with understanding
 
 总而言之，`emscripten.py` 是 Frida 为了支持对 Emscripten 编译的代码进行动态 instrumentation 而提供的关键组件。它处理了 Emscripten 特有的编译和链接需求，使得 Frida 能够有效地与运行在 JavaScript 引擎中的 WebAssembly 代码进行交互。理解这个文件的功能对于理解 Frida 如何工作以及调试与 Emscripten 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/mixins/emscripten.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The meson development team
 
@@ -229,7 +231,4 @@ class EmscriptenMixin(Compiler):
             if os.path.exists(abs_path):
                 return [abs_path]
         return None
-
-"""
-
 ```

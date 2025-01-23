@@ -101,7 +101,7 @@ A user might end up looking at this code during debugging in several scenarios:
 
 This code snippet defines a crucial part of Frida's build system, specifically for the Swift bindings. It provides the core mechanisms for defining and managing build targets (executables, libraries), handling source files, managing dependencies and compiler options, and ensuring the integrity of the build process. It acts as the intermediary between the declarative Meson build language and the underlying build system, orchestrating the compilation and linking of Frida's components.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 .subdir, os.path.split(name)[0])
             if os.path.exists(os.path.join(self.source_root, pathseg)):
                 raise InvalidArguments(textwrap.dedent(f'''\
@@ -497,8 +499,4 @@ This will become a hard error in the future.''', location=self.current_node)
         if step < 1:
             raise InterpreterException('step must be >=1')
         return P_OBJ.RangeHolder(start, stop, step, subproject=self.subproject)
-
-"""
-
-
 ```

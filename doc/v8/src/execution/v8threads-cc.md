@@ -174,15 +174,17 @@ console.log("Main thread:", heavyComputation());
 
 总结来说，`v8/src/execution/v8threads.cc` 是 V8 引擎中处理线程同步和状态管理的关键部分，它通过 `Locker` 和 `Unlocker` 提供全局锁机制，并通过 `ThreadManager` 和 `ThreadState` 管理线程的本地状态，确保了 V8 在多线程环境下的稳定性和数据一致性。 了解这些机制对于理解 V8 的内部工作原理以及避免潜在的并发问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/v8threads.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/v8threads.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -513,7 +515,4 @@ ThreadId ThreadManager::CurrentId() { return ThreadId::Current(); }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

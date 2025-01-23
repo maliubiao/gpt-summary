@@ -296,7 +296,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 这个 Frida 脚本会拦截 `iconv_open`，打印源编码和目标编码；拦截 `iconv`，打印转换器指针、输入输出缓冲区指针和长度，以及尝试读取输入字符串；拦截 `iconv_close`，打印转换器指针。通过这些信息，你可以观察到 Android Framework 或 NDK 应用在进行字符编码转换时是如何使用 `iconv` 接口的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/iconv.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -307,8 +307,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -682,7 +684,4 @@ int iconv_close(iconv_t __converter) {
   delete __converter;
   return 0;
 }
-
-"""
-
 ```

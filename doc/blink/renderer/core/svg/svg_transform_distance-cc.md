@@ -162,15 +162,17 @@ By following this kind of structured thought process, combining code analysis wi
 
 总而言之，`svg_transform_distance.cc` 文件中的 `SVGTransformDistance` 类是 Blink 渲染引擎处理 SVG 动画和过渡效果的一个核心组件，它用于表示和计算不同 SVG 变换之间的差异，从而实现平滑的动画过渡效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_transform_distance.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007 Eric Seidel <eric@webkit.org>
  *
@@ -397,7 +399,4 @@ float SVGTransformDistance::Distance() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

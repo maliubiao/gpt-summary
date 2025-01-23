@@ -243,7 +243,7 @@ if __name__ == '__main__':
 
 总而言之，`bionic/libc/kernel/uapi/linux/hsr_netlink.h` 是一个定义了与 HSR 协议相关的 Netlink 通信接口的内核头文件。它本身不包含 libc 函数的实现，但定义了用户空间程序与内核 HSR 模块交互所需的常量。虽然 HSR 并非 Android 的核心功能，但在特定的工业或嵌入式场景下可能会被使用。通过 Frida hook 网络相关的系统调用，我们可以观察到这些常量在实际通信过程中的使用情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/hsr_netlink.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -254,8 +254,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -291,7 +293,4 @@ enum {
 };
 #define HSR_C_MAX (__HSR_C_MAX - 1)
 #endif
-
-"""
-
 ```

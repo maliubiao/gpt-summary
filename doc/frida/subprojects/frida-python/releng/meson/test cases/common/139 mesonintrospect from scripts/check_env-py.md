@@ -151,7 +151,7 @@ Finally, organize the information clearly with headings and bullet points to add
 
 总而言之，`check_env.py` 虽小，但它是 Frida 构建和测试流程中一个重要的环节，用于确保构建环境的正确性，而这对于最终能否成功构建和使用 Frida 这个强大的动态 instrumentation 工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/139 mesonintrospect from scripts/check_env.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -189,7 +191,4 @@ if not os.path.isfile(some_executable):
 
 if do_print:
     print(some_executable, end='')
-
-"""
-
 ```

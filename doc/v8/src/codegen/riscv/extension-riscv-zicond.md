@@ -108,12 +108,13 @@ let w = conditionalAssignmentTernary(x, y, cond); // w 将会是 5
 
 总而言之，`extension-riscv-zicond.cc` 文件为 V8 引擎提供了生成特定 RISC-V 扩展指令的能力，这些指令可以被用于优化 JavaScript 代码的执行效率，尤其是在处理条件分支和赋值等操作时。  JavaScript 开发者通常不需要直接了解这些底层细节，但了解这些可以帮助理解 V8 如何利用硬件特性来提升性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-zicond.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
-
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -137,7 +138,4 @@ void AssemblerRISCVZicond::czero_nez(Register rd, Register rs1, Register rs2) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

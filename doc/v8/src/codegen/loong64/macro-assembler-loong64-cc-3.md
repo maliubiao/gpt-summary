@@ -189,7 +189,7 @@ main();
 
 这部分 `v8/src/codegen/loong64/macro-assembler-loong64.cc` 代码是 V8 引擎在 LoongArch64 架构上生成机器码的关键组成部分。它提供了用于调用 Builtin 函数、操作栈、处理异常、调用 JavaScript 函数以及进行调试和错误处理的基础指令。这些功能直接支撑着 JavaScript 代码的执行，并帮助 V8 引擎处理一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/loong64/macro-assembler-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/loong64/macro-assembler-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -197,8 +197,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d(target, IsolateData::builtin_entry_table_offset()));
 }
 
@@ -1160,7 +1162,4 @@ void MacroAssembler::LeaveFrame(StackFrame::Type type) {
   ASM_CODE_COMMENT(this);
   addi_d(sp, fp, 2 * kSystemPointerSize);
   Ld_d(ra, MemOperand(fp, 1 * kSystemPoin
-"""
-
-
 ```

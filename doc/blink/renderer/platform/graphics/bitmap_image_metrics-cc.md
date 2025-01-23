@@ -149,14 +149,16 @@ During this process, I might revisit earlier assumptions. For example, initially
 
 总而言之，`bitmap_image_metrics.cc` 文件在 Chromium 中扮演着重要的角色，它收集关于解码后位图图像的各种信息，帮助开发者了解不同图像格式的使用情况和性能特征，从而为浏览器优化和 Web 标准的演进提供数据支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/bitmap_image_metrics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ void BitmapImageMetrics::CountDecodedImageDensity(const String& type,
 }
 
 }  // namespace blink
-
-"""
-
 ```

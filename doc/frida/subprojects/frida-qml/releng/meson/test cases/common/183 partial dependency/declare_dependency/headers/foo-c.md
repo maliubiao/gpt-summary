@@ -108,7 +108,7 @@ Initially, one might focus solely on the error message. However, the crucial ste
 
 `foo.c` 文件虽然代码很简单，但在 Frida 的构建系统中扮演着重要的角色。它作为一个故意触发错误的测试用例，帮助确保构建过程的正确性，避免潜在的编译和链接错误。这对于像 Frida 这样复杂的逆向工程工具来说，是保证其功能稳定性和可靠性的重要一环。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/183 partial dependency/declare_dependency/headers/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2018 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -134,7 +136,4 @@ Prompt:
  */
 
 #error "Included C sources that shouldn't be."
-
-"""
-
 ```

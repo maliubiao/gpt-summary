@@ -184,15 +184,17 @@ While this header defines the structure, errors typically occur when the code *u
 
 In summary, `v8/src/codegen/external-reference-table.h` is a foundational header in V8's code generation process. It provides a structured and managed way to access external resources that are crucial for the execution of JavaScript code. It acts as a bridge between the dynamically generated code and the static C++ implementation of the V8 engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/external-reference-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/external-reference-table.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -338,7 +340,4 @@ static_assert(ExternalReferenceTable::kSizeInBytes ==
 }  // namespace internal
 }  // namespace v8
 #endif  // V8_CODEGEN_EXTERNAL_REFERENCE_TABLE_H_
-
-"""
-
 ```

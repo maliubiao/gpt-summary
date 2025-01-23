@@ -232,7 +232,7 @@ executable('my_program', 'main.c', c_args: c_args)
 
 总而言之，`interpreter.py` 是 Meson 构建系统的“大脑”，它理解 `meson.build` 文件的意图，并驱动整个构建过程。 它的主要职责是将用户编写的高级构建描述转换为 Meson 可以理解和执行的内部表示，并最终生成底层的构建系统配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -241,8 +241,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2023-2024 Intel Corporation
@@ -952,8 +954,5 @@ class Interpreter(InterpreterBase, HoldableObject):
         srcdir = Path(self.environment.source_dir)
         # convert variables which refer to an -uninstalled.pc style datadir
         for k, v in variables.items():
-            if 
-"""
-
-
+            if
 ```

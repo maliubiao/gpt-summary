@@ -125,7 +125,7 @@ This code is part of the browser's internal implementation, so users don't direc
 
 As the final part of the analysis, this code file (`ax_selection_test.cc`) comprehensively tests the `AXSelection` class, ensuring its correctness and robustness in handling various selection scenarios across different HTML elements and accessibility contexts. It acts as a crucial validation point for the accessibility selection mechanism within the Blink rendering engine, directly impacting how assistive technologies interact with web content and how programmatic selection manipulation behaves. The tests cover basic selection within text fields and rich text areas, handling of ARIA attributes, and the crucial aspect of preventing invalid selections across shadow DOM boundaries. They also ensure that the accessibility representation of the selection aligns with the underlying DOM selection.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_selection_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 de());
   EXPECT_EQ(GetElementById("after"),
             dom_selection.Focus().ComputeNodeAfterPosition());
@@ -495,8 +497,4 @@ TEST_F(AccessibilitySelectionTest, Table) {
 
 }  // namespace test
 }  // namespace blink
-
-"""
-
-
 ```

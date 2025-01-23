@@ -203,7 +203,7 @@ func main() {
 
 总而言之，`rewriteARM.go` 的第 16 部分旨在进一步提升 Go 代码在 ARM 架构上的执行效率，通过模式匹配和指令替换，生成更精简、高效的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -212,9 +212,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第16部分，共16部分，请归纳一下它的功能
+```
 
-"""
- (NE (CMPconst [0] l:(XORshiftLL x y [c])) yes no)
+### 源代码
+```go
+(NE (CMPconst [0] l:(XORshiftLL x y [c])) yes no)
 		// cond: l.Uses==1
 		// result: (NE (TEQshiftLL x y [c]) yes no)
 		for b.Controls[0].Op == OpARMCMPconst {
@@ -494,10 +496,4 @@ Prompt:
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

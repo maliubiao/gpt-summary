@@ -217,15 +217,17 @@ This structured approach allows for a comprehensive understanding of the code an
 
 总而言之，`v8/src/torque/utils.cc` 是 Torque 编译器的重要组成部分，提供了一系列用于字符串处理、消息报告、命名约定检查和代码生成的实用工具函数。虽然是用 C++ 编写的，但它的功能与 JavaScript 的特性和开发实践有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/utils.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/utils.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -620,7 +622,4 @@ std::ostream& operator<<(std::ostream& os, const ResidueClass& a) {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

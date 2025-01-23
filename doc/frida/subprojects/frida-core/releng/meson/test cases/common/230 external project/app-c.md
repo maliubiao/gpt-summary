@@ -139,7 +139,7 @@ if (Process.platform === 'linux') {
 
 总而言之，`app.c` 作为一个简单的测试用例，主要用于验证 `libfoo` 中 `call_foo()` 函数的基本功能。在调试复杂系统时，它可以作为一个独立的、可控的环境，帮助开发者和逆向工程师隔离和理解特定组件的行为。  Frida 在这个过程中可以作为强大的动态分析工具，帮助深入理解 `call_foo()` 的运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/230 external project/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,15 +147,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <libfoo.h>
 
 int main(void)
 {
     return call_foo() == 42 ? 0 : 1;
 }
-
-"""
-
 ```

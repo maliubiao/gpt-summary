@@ -318,7 +318,7 @@ Here's a plan to address the request:
 5. **对 `Array` 构造函数的不当使用**: 例如，使用单个数字参数调用 `Array` 构造函数创建稀疏数组，这可能不是用户的预期。
 6. **Generator 和 Async 函数的性能**: Maglev 尝试优化生成器和异步函数的创建和执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -326,8 +326,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第13部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 er_info->possible_maps_are_known()) {
     // No info about receiver, can't infer API holder.
     return not_found;
@@ -1116,7 +1118,4 @@ ReduceResult MaglevGraphBuilder::TryReduceConstructArrayConstructor(
       maybe_allocation_site.has_value()
           ? maybe_allocation_site->GetElementsKind()
           : array_function.initial_map(broker()).elem
-"""
-
-
 ```

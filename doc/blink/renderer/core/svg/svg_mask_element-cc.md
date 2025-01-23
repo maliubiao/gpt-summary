@@ -218,15 +218,17 @@ By following this detailed thought process, combining code analysis with an unde
 
 总而言之，`blink/renderer/core/svg/svg_mask_element.cc` 文件是 Blink 引擎中至关重要的组成部分，它负责具体实现 SVG `<mask>` 元素的功能，并与布局、样式系统以及 JavaScript 交互，共同实现了网页上的 SVG masking 效果。 开发者理解这个文件的作用有助于调试和理解 SVG mask 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_mask_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006, 2007 Rob Buis <buis@kde.org>
@@ -399,7 +401,4 @@ void SVGMaskElement::CollectExtraStyleForPresentationAttribute(
 }
 
 }  // namespace blink
-
-"""
-
 ```

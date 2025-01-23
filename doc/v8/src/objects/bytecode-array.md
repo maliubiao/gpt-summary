@@ -115,11 +115,13 @@ try {
 
 `v8/src/objects/bytecode-array.cc` 文件定义了 V8 引擎中用于存储和管理已编译 JavaScript 函数字节码的关键数据结构 `BytecodeArray`。它不仅存储了字节码指令，还维护了源码位置信息、常量池和异常处理信息，并提供了反汇编和 JSON 输出等功能，这些对于 V8 执行 JavaScript 代码、调试和错误报告至关重要。虽然 JavaScript 开发者不能直接操作 `BytecodeArray` 对象，但其背后的机制深刻影响着 JavaScript 代码的执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/bytecode-array.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ void BytecodeArray::CopyBytecodesTo(Tagged<BytecodeArray> to) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

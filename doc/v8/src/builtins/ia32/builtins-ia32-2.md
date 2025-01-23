@@ -210,12 +210,14 @@ console.log(Array.from(view));
 
 总而言之，`v8/src/builtins/ia32/builtins-ia32.cc` 的第 3 部分包含了在 IA-32 架构上实现 V8 引擎核心功能的低级代码，特别是与 WebAssembly 和 JavaScript 之间的互操作、WebAssembly 运行时支持、C++ 函数调用、类型转换、API 回调处理、内存操作以及代码去优化相关的关键功能。 这些底层的汇编代码支撑着 JavaScript 和 WebAssembly 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ia32/builtins-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 r_buffer,
           JSToWasmWrapperFrameConstants::kWrapperBufferSigRepresentationArray +
               4));
@@ -1989,7 +1991,4 @@ void Generate_DeoptimizationEntry(MacroAssembler* masm,
   Label pop_loop_header;
   __ jmp(&pop_loop_header);
   La
-"""
-
-
 ```

@@ -134,15 +134,17 @@ This test implicitly touches upon common concurrency-related errors that develop
 
 **In summary, `v8/test/cctest/compiler/test-concurrent-shared-function-info.cc` is a crucial test case for ensuring the stability and correctness of V8's function compilation and debugging mechanisms when they operate concurrently on the same function metadata.** It helps prevent subtle and hard-to-debug issues that could arise from concurrent access to shared resources within the engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-concurrent-shared-function-info.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-concurrent-shared-function-info.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -349,7 +351,4 @@ TEST(TestConcurrentSharedFunctionInfo) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

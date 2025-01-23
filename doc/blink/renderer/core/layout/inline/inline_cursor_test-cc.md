@@ -153,15 +153,17 @@ By systematically examining the test cases, I can extract the necessary informat
 
 `inline_cursor_test.cc` 的主要功能是 **全面地测试 `InlineCursor` 类在各种行内布局场景下的行为和功能**。它涵盖了基本的光标移动、对不同类型行内布局项的处理、双向文本、裁剪元素、分栏布局、省略号、软连字符以及列表项等复杂情况的测试。 这些测试确保了 `InlineCursor` 能够可靠地在行内布局结构中进行导航和定位，这对于 Blink 渲染引擎的文本编辑、选择、辅助功能等功能至关重要。 这些测试与 HTML、CSS 紧密相关，因为它们验证了 `InlineCursor` 如何根据 HTML 结构和 CSS 样式进行布局遍历。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_cursor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1097,7 +1099,4 @@ TEST_F(InlineCursorTest, PositionForPointInChildHorizontalLTR) {
   EXPECT_EQ(PositionWithAffinity(Position(text, 0)),
             cursor.PositionForPointInChild(left_top + PhysicalOffset(-5, 0)));
   EXPECT_EQ(PositionWithAffinity(Posit
-"""
-
-
 ```

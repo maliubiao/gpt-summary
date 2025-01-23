@@ -278,7 +278,7 @@ func postProcessExecutable(ctxt *ld.Link, outfile string) error {
 
 这段 `lib.go` 的代码片段是 Go 链接器在链接过程的最后阶段执行的关键步骤。它负责对生成的可执行文件进行后处理，包括合并调试信息、移除符号、处理平台特定的需求（如 UUID 重写和代码签名）、以及优化与外部链接器的交互。其核心目标是生成最终可分发和执行的二进制文件，并确保其符合目标平台的规范和要求。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/lib.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -286,8 +286,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 Args[0], err)
 		}
 		if err := updateFunc(ctxt, exef, exem, rewrittenOutput); err != nil {
@@ -1303,10 +1305,4 @@ func (ctxt *Link) findExtLinkTool(toolname string) string {
 	cmdpath := strings.TrimRight(string(out), "\r\n")
 	return cmdpath
 }
-
-"""
-
-
-
-
 ```

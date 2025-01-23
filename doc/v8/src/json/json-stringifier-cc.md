@@ -225,7 +225,7 @@ const inputObject = {
 
 `v8/src/json/json-stringifier.cc` 文件的主要职责是实现 V8 引擎中 `JSON.stringify()` 的核心逻辑。 它负责将各种 JavaScript 数据类型转换为符合 JSON 规范的字符串表示形式，并处理 `replacer` 和 `gap` 等可选参数，同时检测和防止循环引用。 该文件是 V8 引擎中处理 JSON 序列化的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/json/json-stringifier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/json/json-stringifier.cc以.tq结尾，那它是个v8 torque源代码，
@@ -233,8 +233,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1116,7 +1118,4 @@ JsonStringifier::Result JsonStringifier::Serialize_(Handle<JSAny> object,
     if (deferred_string_key) SerializeDeferredKey(comma, key);
     return SerializeSmi(Cast<Smi>(*object));
   }
-"""
-
-
 ```

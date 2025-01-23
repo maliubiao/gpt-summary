@@ -340,7 +340,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/platform/bionic/page.handroid` 虽然是一个小巧的头文件，但它提供了 Android 系统中进行基本内存管理操作的关键信息。无论是 NDK 开发还是 Android Framework 的底层实现，都离不开对内存页的理解和操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/platform/bionic/page.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -351,8 +351,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  *
@@ -412,7 +414,4 @@ inline uintptr_t page_offset(uintptr_t x) {
 inline uintptr_t page_end(uintptr_t x) {
   return page_start(x + page_size() - 1);
 }
-
-"""
-
 ```

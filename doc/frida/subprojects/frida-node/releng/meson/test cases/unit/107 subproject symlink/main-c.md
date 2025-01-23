@@ -153,7 +153,7 @@ collect2: 错误：ld 返回了 1 个退出状态
 
 总而言之，这个简单的 `main.c` 文件在 Frida 的上下文中扮演着重要的角色，它作为一个基本的测试目标，用于验证 Frida 的核心功能和构建系统的正确性。虽然代码本身非常简单，但它涉及到很多底层概念和与逆向工程相关的技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/107 subproject symlink/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,15 +161,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern int foo(void);
 
 int main(void)
 {
     return foo();
 }
-
-"""
-
 ```

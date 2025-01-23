@@ -189,7 +189,7 @@ Java.perform(function() {
 
 这个 `Simple.java` 文件是一个简单的 Java 程序，用于演示内部类的基本用法。在 Frida 的上下文中，它是作为一个测试用例存在，用于验证 Frida 对 Java 内部类的插桩能力。理解这个文件的功能有助于理解 Frida 如何与 Java 代码进行交互，以及在逆向工程中如何利用 Frida 来分析和修改 Java 程序的运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/java/4 inner class/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class Simple {
@@ -214,7 +216,4 @@ class Simple {
         System.out.println(ic.getString());
     }
 }
-
-"""
-
 ```

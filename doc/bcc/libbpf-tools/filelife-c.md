@@ -66,7 +66,7 @@ Prompt:
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 
-"""
+```c
 // SPDX-License-Identifier: (LGPL-2.1 OR BSD-2-Clause)
 // Copyright (c) 2020 Wenbo Zhang
 //
@@ -265,7 +265,5 @@ cleanup:
 
 	return err != 0;
 }
-
-"""
 
 ```

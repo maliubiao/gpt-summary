@@ -255,7 +255,7 @@ Without seeing the context of how users interact with this low-level code direct
 
 This first part of `obj.go` for the RISC-V architecture primarily focuses on the **initial processing and normalization of RISC-V assembly instructions**. It handles the conversion of pseudo-instructions into real instructions, manages stack frame setup, marks instructions for relocation, and lays the groundwork for the subsequent stages of assembly and linking. It defines the core data structures and functions for representing and manipulating RISC-V instructions within the Go toolchain.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/riscv/obj.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -263,8 +263,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright © 2015 The Go Authors.  All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -2369,9 +2371,4 @@ func instructionsForMOV(p *obj.Prog) []*instruction {
 		// For example:
 		// 	MOV $0x8000000000000000, X10
 		// beco
-"""
-
-
-
-
 ```

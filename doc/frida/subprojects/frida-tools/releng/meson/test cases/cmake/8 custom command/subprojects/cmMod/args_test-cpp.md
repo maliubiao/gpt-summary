@@ -169,7 +169,7 @@ By following these steps, moving from the specific code details to the broader c
 
 通过这些步骤，开发者可以逐步定位构建失败的原因，可能是 `args_test` 本身的问题，也可能是构建系统中参数传递或环境配置的问题。`args_test.cpp` 作为构建过程中的一个测试环节，它的存在就是为了及早发现这些潜在的问题，确保最终构建出的 Frida 工具链是稳定可靠的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/args_test.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <fstream>
 
@@ -197,7 +199,4 @@ int main(int argc, const char *argv[]) {
 
   return 0;
 }
-
-"""
-
 ```

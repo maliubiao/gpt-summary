@@ -102,11 +102,13 @@ MUL reg_result, reg_sum, 2 // 执行乘法，此时 reg_sum 的结果可能已�
 
 `instruction-scheduler-mips64.cc` 文件是V8引擎为了在MIPS64架构上高效执行JavaScript代码而设计的一个关键组件。它通过智能地重新排列机器指令的顺序，充分利用CPU的并行处理能力，从而提高JavaScript代码的执行速度。虽然JavaScript开发者通常不需要直接关注这些底层的编译细节，但指令调度器的工作对于提升整体的JavaScript性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/instruction-scheduler-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1866,7 +1868,4 @@ int InstructionScheduler::GetInstructionLatency(const Instruction* instr) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

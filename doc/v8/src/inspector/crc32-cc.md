@@ -136,15 +136,17 @@ console.log(`The CRC32 checksum of "${text}" is: ${checksum}`);
 
 总而言之，`v8/src/inspector/crc32.cc` 提供了一个高效的 CRC32 计算功能，用于 V8 内部的数据校验。理解其工作原理和适用场景可以帮助开发者更好地利用和避免相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/crc32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/crc32.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -230,7 +232,4 @@ int32_t computeCrc32(const String16& text) {
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

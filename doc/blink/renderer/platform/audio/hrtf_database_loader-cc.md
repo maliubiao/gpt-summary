@@ -181,14 +181,16 @@ This step-by-step approach allows for a thorough understanding of the code and i
 
 总而言之，`hrtf_database_loader.cc` 文件是 Blink 渲染引擎中处理空间音频效果的关键组件，它通过异步加载和缓存 HRTF 数据库，为 Web Audio API 提供了必要的音频数据，使得开发者能够在网页上创建沉浸式的音频体验。理解其异步特性和线程安全性对于正确使用相关 API 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/hrtf_database_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -337,7 +339,4 @@ void HRTFDatabaseLoader::WaitForLoaderThreadCompletion() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

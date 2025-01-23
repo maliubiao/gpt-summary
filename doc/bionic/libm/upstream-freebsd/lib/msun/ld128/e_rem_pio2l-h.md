@@ -258,7 +258,7 @@ Section Headers:
 
 `__ieee754_rem_pio2l` 是 Android `libm` 中一个用于高精度计算浮点数除以 π/2 余数的底层函数。它的实现考虑了不同大小的输入，使用了多精度技术和底层的 kernel 函数来保证精度。理解这个函数的功能有助于深入理解 Android 数学库的工作原理以及如何进行高精度浮点数运算。对于 NDK 开发者来说，了解这些底层机制可以帮助他们更好地理解性能和精度的权衡。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/ld128/e_rem_pio2l.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -268,8 +268,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -401,7 +403,4 @@ __ieee754_rem_pio2l(long double x, long double *y)
 	if(expsign<0) {y[0] = -r; y[1] = -w; return -n;}
 	y[0] = r; y[1] = w; return n;
 }
-
-"""
-
 ```

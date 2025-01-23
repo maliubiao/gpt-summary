@@ -100,11 +100,13 @@ V8 编译器会将这个函数编译成机器码。在生成嵌入式快照时�
 
 `platform-embedded-file-writer-zos.cc` 是 V8 引擎在 z/OS 平台构建嵌入式快照的关键组件。它负责将 JavaScript 的编译产物和初始状态转换成 z/OS 平台可以理解的汇编代码，从而实现更快的启动速度。它本身不直接处理 JavaScript 代码，而是处理其编译后的表示形式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/embedded/platform-embedded-file-writer-zos.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ void PlatformEmbeddedFileWriterZOS::SectionRoData() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

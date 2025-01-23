@@ -207,7 +207,7 @@ template := &x509.Certificate{}
 
 总而言之，这个代码片段是 Go 语言 `crypto/x509` 包中名称约束功能的核心测试部分，它涵盖了创建、解析和验证带有名称约束的证书的各种场景，并确保了该功能的正确性和与 OpenSSL 的互操作性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/x509/name_constraints_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -216,8 +216,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 r
 	if template.ExtKeyUsage, template.UnknownExtKeyUsage, err = parseEKUs(leaf.ekus); err != nil {
 		return nil, err
@@ -680,10 +682,4 @@ func TestBadNamesInSANs(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
-
 ```

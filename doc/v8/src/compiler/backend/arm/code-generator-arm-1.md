@@ -403,12 +403,14 @@ putFloatRegister();
     case kArmI64x2SplatI32Pair: {
       Simd128Register dst = i.OutputSimd128Register();
       __ vdup(Neon3
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/code-generator-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 putFloatRegister();
       SwVfpRegister left = i.InputFloatRegister(0);
       SwVfpRegister right = i.InputFloatRegister(1);
@@ -2162,7 +2164,4 @@ putFloatRegister();
       __ sxth(i.OutputRegister(0), i.OutputRegister(0));
       break;
     case kAtomicCompareEx
-"""
-
-
 ```

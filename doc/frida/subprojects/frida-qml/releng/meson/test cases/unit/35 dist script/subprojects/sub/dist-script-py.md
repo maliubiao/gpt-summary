@@ -164,7 +164,7 @@ By following these steps, decomposing the script, and connecting it to the broad
 
 总而言之，这个脚本是Frida构建流程中的一个自动化步骤，用于在分发阶段修改项目版本并创建一些必要的测试文件。用户通常不会直接与之交互，而是通过执行更高级别的构建或测试命令来间接地触发它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/35 dist script/subprojects/sub/dist-script.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -193,7 +195,4 @@ subprocess.run([*mesonrewrite, '-s', source_root, *rewrite_cmd], check=True)
 modfile = source_root / 'prog.c'
 with modfile.open('w') as f:
     f.write('int main(){return 0;}')
-
-"""
-
 ```

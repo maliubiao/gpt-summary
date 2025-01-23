@@ -142,15 +142,17 @@ While this test file doesn't directly *cause* user errors, it tests the underlyi
 
 In summary, `rtc_rtp_transceiver_impl_test.cc` is a vital part of ensuring the correctness and robustness of the WebRTC implementation in Chromium. It specifically focuses on testing the core logic of how media is sent and received through the `RTCRtpTransceiverImpl` class, which is directly used by the JavaScript WebRTC API.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_rtp_transceiver_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -573,7 +575,4 @@ TEST_F(RTCRtpTransceiverImplTest, TransceiverStateUpdateModeSetDescription) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

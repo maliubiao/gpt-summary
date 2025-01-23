@@ -174,15 +174,17 @@ data[0] = 'A'; // Use-after-free 错误，如果这块内存被 zapped，可能�
 
 `v8/src/zone/zone-segment.cc` 文件是 V8 引擎内存管理的关键组成部分，它定义了用于管理 Zone 中内存段的 `Segment` 类。其中的 `ZapContents()` 和 `ZapHeader()` 方法是重要的调试辅助工具，用于标记已释放或未初始化的内存，帮助开发者和 V8 自身检测内存相关的错误。虽然它是 C++ 代码，但其功能直接支持着 JavaScript 代码的执行和内存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/zone/zone-segment.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/zone/zone-segment.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ void Segment::ZapHeader() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

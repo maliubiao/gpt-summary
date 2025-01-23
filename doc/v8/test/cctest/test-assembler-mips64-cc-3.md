@@ -123,7 +123,7 @@ Finally, the request asks for a summary of the functionality of *this specific p
 
 作为第 4 部分，这段代码的主要功能是针对 MIPS64 架构，详细测试了汇编器在处理浮点数取整、跳转表、位反转、浮点数分类、绝对值、加法以及条件比较等指令时的正确性和行为。这些测试是确保 V8 引擎在 MIPS64 平台上正确执行 JavaScript 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -131,8 +131,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 kArchVariant == kMips64r6) {
         CHECK_EQ(test.c, outputsNaN2008[i]);
       } else {
@@ -1254,7 +1256,4 @@ TEST(CMP_COND_FMT) {
     CHECK_EQ(base::bit_cast<uint64_t>(test.dUne), dTrue);
     CHECK_EQ(base::bit_cast<uint64_t>(test.dNe), dTrue);
     CHECK_EQ(bas
-"""
-
-
 ```

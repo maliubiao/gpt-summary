@@ -150,15 +150,17 @@ By following these steps, including the iterative refinement, we can arrive at a
 
 总而言之，`SplitTextNodeContainingElementCommand` 是 Blink 渲染引擎中处理文本编辑的核心组件，它负责将文本节点在指定位置分割开，并会根据父元素的特性进行一些额外的处理，以确保编辑操作的正确性和布局的完整性。理解其功能有助于我们理解浏览器是如何处理用户在网页上的编辑行为的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/split_text_node_containing_element_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2008 Apple Inc. All rights reserved.
  *
@@ -231,7 +233,4 @@ void SplitTextNodeContainingElementCommand::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

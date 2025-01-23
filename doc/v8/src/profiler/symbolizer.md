@@ -141,11 +141,13 @@ setTimeout(() => {
 
 总而言之，`symbolizer.cc` 是 V8 性能分析的基础，它将底层的执行信息转化为开发者可以理解的符号，帮助我们定位 JavaScript 代码中的性能瓶颈。它在幕后默默工作，但其功能对于高效的 JavaScript 开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/symbolizer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -336,7 +338,4 @@ Symbolizer::SymbolizedSample Symbolizer::SymbolizeTickSample(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

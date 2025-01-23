@@ -147,7 +147,7 @@ Here's a breakdown of how to approach this:
 
 总之，这段代码是 V8 引擎实现其核心对象模型和与 C++ 代码集成的关键组成部分，虽然 JavaScript 开发者通常不会直接使用这些 API，但它们是 V8 引擎运行的基础，并且在原生模块开发中至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-object.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-object.h以.tq结尾，那它是个v8 torque源代码，
@@ -155,8 +155,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 x) {
 #ifndef V8_ENABLE_CHECKS
   using A = internal::Address;
@@ -380,8 +382,4 @@ Object* Object::Cast(v8::Value* value) {
 }  // namespace v8
 
 #endif  // INCLUDE_V8_OBJECT_H_
-
-"""
-
-
 ```

@@ -150,7 +150,7 @@ By following these steps, I aimed to provide a comprehensive and informative exp
 
 这些类是 Blink 渲染引擎理解和应用各种 CSS 功能的关键组成部分。它们将 CSS 语法结构化地表示在内存中，以便进行后续的样式计算和渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_rule.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ion(value)) {
     condition_text_ = exp_node->Serialize();
 
@@ -212,8 +214,4 @@ void StyleRuleApplyMixin::TraceAfterDispatch(blink::Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

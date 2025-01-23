@@ -288,7 +288,7 @@ sys.stdin.read()
 
 总结来说，`bionic/tests/libs/dlsym_weak_function.cpp` 这个文件本身非常简单，但它展示了弱符号这一重要的动态链接概念。理解弱符号对于理解 Android 系统库和应用程序的协同工作方式至关重要，特别是在处理可选功能、库的扩展以及第三方组件集成时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlsym_weak_function.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -299,8 +299,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -320,8 +322,4 @@ Prompt:
 extern "C" int __attribute__((weak)) weak_func() {
   return 42;
 }
-
-
-"""
-
 ```

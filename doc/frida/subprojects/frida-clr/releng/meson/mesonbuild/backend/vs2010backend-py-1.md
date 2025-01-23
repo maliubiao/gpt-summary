@@ -104,7 +104,7 @@ Here's a breakdown of how to analyze the code:
 
 这部分代码的核心功能是 **创建和配置 Visual Studio 2010 项目文件的基本结构和元数据**。它负责设置项目的 GUID、支持的构建配置（Debug/Release）、指定项目类型、导入必要的 MSBuild 属性表 (`Microsoft.Cpp.Default.props`, `Microsoft.Cpp.props`)，以及设置项目名称和根命名空间等全局属性。此外，它还处理了目标平台的配置和一些通用的项目属性，例如输出目录和中间目录。  这部分为后续添加具体的编译和链接设置奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ",
                                       'ToolsVersion': '4.0',
                                       'xmlns': 'http://schemas.microsoft.com/developer/msbuild/2003'})
@@ -697,7 +699,4 @@ Prompt:
                                                proj_to_build_root: str,
                                                primary_src_lang: T.Optional[str]) -> None:
         ET.SubElement(root, 'ImportGroup', Label='ExtensionSetti
-"""
-
-
 ```

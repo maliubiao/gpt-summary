@@ -99,7 +99,7 @@ By following this systematic process, I could produce a comprehensive and accura
 
 通过查看测试报告，开发者可以知道某个测试用例失败了。如果开发者意外地看到 `failing_test.c` 失败，这通常不是问题，因为它本来就是设计用来失败的。但如果其他本应成功的测试用例也失败了，并且与子项目相关，那么开发者就需要仔细检查最近对子项目处理代码的修改，看看是否引入了 bug。`failing_test.c` 的存在可以作为测试框架正确运行的基准。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/4 suite selection/subprojects/subprjmix/failing_test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,10 +107,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return -1 ; }
-
-"""
-
 ```

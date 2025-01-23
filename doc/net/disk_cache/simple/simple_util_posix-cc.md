@@ -105,15 +105,17 @@ By following these steps and iteratively refining the explanation, the goal is t
 
 总而言之，`simple_util_posix.cc` 虽然代码简单，但在 Chromium 的磁盘缓存管理中扮演着基础但重要的角色，为上层模块提供了一个可靠的 POSIX 系统下的文件删除功能。它与 JavaScript 的联系是间接的，通过浏览器提供的各种缓存机制和 API 来实现。理解这个文件的功能有助于理解 Chromium 浏览器如何管理其磁盘缓存。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_util_posix.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -129,7 +131,4 @@ bool SimpleCacheDeleteFile(const base::FilePath& path) {
 }
 
 }  // namespace disk_cache::simple_util
-
-"""
-
 ```

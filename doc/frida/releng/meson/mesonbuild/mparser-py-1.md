@@ -155,7 +155,7 @@ endif
 
 作为调试线索，如果构建过程中出现与 Meson 解析相关的错误，错误信息中通常会指出出错的文件 (`meson.build` 或其包含的文件) 和具体的行列号。逆向工程师或开发者可以根据这些信息定位到 `meson.build` 文件中出错的位置，并检查是否符合 Meson 的语法规则。理解 `mparser.py` 的工作原理，特别是它对不同语法结构的解析逻辑和错误处理方式，可以更有效地理解和解决 Meson 构建过程中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/mparser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 lf.create_node(SymbolNode, block_start)
             key_values = self.key_values()
             self.block_expect('rcurl', block_start)
@@ -368,8 +370,4 @@ lf.create_node(SymbolNode, block_start)
         self.current_ws = []
 
         return block
-
-"""
-
-
 ```

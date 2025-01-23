@@ -175,15 +175,17 @@ Payload 内容（十六进制）：`02 00 00 00 05 00 00 82 48 87`
 
 通过以上步骤和调试线索，可以追踪用户操作如何触发 PUSH_PROMISE 帧的接收和解码，并定位可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/decoder/payload_decoders/push_promise_payload_decoder.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -357,7 +359,4 @@ void PushPromisePayloadDecoder::ReportPushPromise(FrameDecoderState* state) {
 }
 
 }  // namespace http2
-
-"""
-
 ```

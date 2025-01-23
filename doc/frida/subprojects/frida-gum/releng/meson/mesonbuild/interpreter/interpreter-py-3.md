@@ -129,7 +129,7 @@ Now, I need to elaborate on each of these points, focusing on the connections to
 
 这一部分的 `interpreter.py` 文件主要负责 **解析和执行 `meson.build` 文件中用于定义各种构建步骤和安装行为的函数**。它提供了诸如生成版本控制标签、创建自定义构建目标、定义运行目标、生成代码、定义测试和安装规则等核心功能。这些功能使得 Frida Gum 的构建过程能够灵活地处理各种复杂的构建需求，并能与逆向工程所需的特定工具和流程集成。它在 Meson 构建系统中扮演着至关重要的角色，将用户在 `meson.build` 文件中声明的意图转化为实际的构建操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 =True),
         MULTI_OUTPUT_KW,
         # Cannot use the COMMAND_KW because command is allowed to be empty
@@ -819,7 +821,4 @@ Prompt:
             'input',
             ContainerTypeInfo(list, (mesonlib.File, str)),
             listif
-"""
-
-
 ```

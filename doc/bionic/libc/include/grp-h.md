@@ -344,7 +344,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "getgrnam"), {
 
 总而言之，`grp.handroid` 定义的函数是 Android 系统管理用户组信息的基础，它们被 Android Framework 和 NDK 中的代码广泛使用，以实现权限管理、进程隔离等关键功能。 理解这些函数的功能和使用方法对于深入理解 Android 系统的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/grp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -355,8 +355,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 1989, 1993
  *    The Regents of the University of California.  All rights reserved.
@@ -430,7 +432,4 @@ int initgroups(const char* _Nonnull __user, gid_t __group);
 __END_DECLS
 
 #endif
-
-"""
-
 ```

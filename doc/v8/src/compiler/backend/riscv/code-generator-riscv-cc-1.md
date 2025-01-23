@@ -153,7 +153,7 @@ console.log(fact_result); // 输出 120
 
 总而言之，这部分 `code-generator-riscv.cc` 代码是V8引擎将JavaScript代码转化为RISC-V机器码的关键组成部分，专注于处理函数调用、C函数交互、栈帧管理、内存屏障以及基本的算术和逻辑运算。它确保了JavaScript代码能够在RISC-V架构上正确高效地执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/code-generator-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/code-generator-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -161,8 +161,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r = [this, opcode, instr](int offset) {
     RecordTrapInfoIfNeeded(zone(), this, opcode, instr, offset);
   };
@@ -1022,8 +1024,5 @@ r = [this, opcode, instr](int offset) {
       } else {
         uint32_t imm = i.InputOperand(2).immediate();
         __ ShrPair(i.OutputRegister(0), second_output, i.InputRegister(0),
-                   i.InputRegister(1), 
-"""
-
-
+                   i.InputRegister(1),
 ```

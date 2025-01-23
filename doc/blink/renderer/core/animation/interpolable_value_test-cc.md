@@ -143,14 +143,16 @@ Understanding how to correctly create and interpolate `InterpolableValue` object
 
 总而言之，`interpolable_value_test.cc` 是 Blink 引擎中确保 CSS 动画和过渡功能正确性的重要组成部分。它通过各种测试用例，验证了 `InterpolableValue` 类及其相关类在不同场景下的插值逻辑是否符合预期，从而保证了网页动画的流畅性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/interpolable_value_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -400,7 +402,4 @@ TEST_F(AnimationInterpolableValueTest, InterpolableNumberAsExpression) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

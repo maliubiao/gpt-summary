@@ -164,7 +164,7 @@ int func4(void) {
 
 总而言之，虽然 `four.c` 中的 `func4` 函数本身非常简单，但它在一个更大的 Frida 测试框架中扮演着验证共享库提取功能的重要角色。理解这个简单的例子有助于理解 Frida 如何与底层的二进制、操作系统机制以及逆向分析技术相结合。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/120 extract all shared library/four.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,14 +172,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"extractor.h"
 
 int func4(void) {
     return 4;
 }
-
-"""
-
 ```

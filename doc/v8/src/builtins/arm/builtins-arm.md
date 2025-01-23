@@ -97,12 +97,14 @@ console.log(generator.next()); // { value: 2, done: false }
 
 `builtins-arm.cc` 文件是 V8 引擎在 ARM 架构下的 "发动机" 的一部分。它包含了实现 JavaScript 核心功能的低级代码，这些代码在 JavaScript 代码执行的幕后默默工作，保证了 JavaScript 代码能够被正确高效地执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/arm/builtins-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1881,7 +1883,4 @@ static void Generate_InterpreterEnterBytecode(MacroAssembler* masm) {
                               kInterpreterBytecodeOffsetRegister));
   __ ldr(kJavaScriptCallCodeStartRegister,
          MemOpera
-"""
-
-
 ```

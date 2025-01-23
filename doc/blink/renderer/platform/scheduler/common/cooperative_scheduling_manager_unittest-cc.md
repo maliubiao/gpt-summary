@@ -157,14 +157,16 @@ This iterative process of scanning, analyzing, inferring, connecting, and struct
 
 `cooperative_scheduling_manager_unittest.cc` 这个文件专注于测试 Blink 渲染引擎中用于实现协作式调度的核心组件 `CooperativeSchedulingManager`。它验证了作用域控制、安全点的触发条件以及时间间隔限制等关键行为。理解这些测试用例有助于开发者理解 `CooperativeSchedulingManager` 的工作原理，以及如何在 Blink 引擎中正确使用它来优化主线程的性能，从而提升网页的响应速度和用户体验。它与 JavaScript, HTML, CSS 的交互是通过确保长时间运行的任务不会无限期地阻塞渲染和用户交互来实现的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/cooperative_scheduling_manager_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -237,7 +239,4 @@ TEST(CooperativeSchedulingManager, SafePoint) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

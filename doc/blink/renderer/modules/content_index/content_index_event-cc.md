@@ -142,15 +142,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`content_index_event.cc` 文件定义了用于在 Service Worker 中传递内容索引相关信息的事件对象。它的核心作用是连接用户操作和 Service Worker 的后台处理逻辑，以便实现诸如离线内容缓存等功能。理解这个文件需要了解 Service Worker 的工作原理以及事件驱动编程模型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/content_index/content_index_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ const AtomicString& ContentIndexEvent::InterfaceName() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

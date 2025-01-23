@@ -112,7 +112,7 @@ Organize the response clearly, using headings and bullet points to make it easy 
 
 总而言之，`frida/releng/tomlkit/tests/util.py` 是 `tomlkit` 库测试框架的一部分，它提供了一些基础的断言函数，用于验证 `tomlkit` 对象与其底层 Python 类型的正确转换，这对于确保 Frida 能够正确解析 TOML 配置文件至关重要，并间接地影响到 Frida 在逆向工程中的有效性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/tomlkit/tests/util.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit.items import AoT
 from tomlkit.items import Array
 from tomlkit.items import Bool
@@ -179,7 +181,4 @@ def assert_is_ppo(v_unwrapped, unwrapped_type):
 def elementary_test(v, unwrapped_type):
     v_unwrapped = v.unwrap()
     assert_is_ppo(v_unwrapped, unwrapped_type)
-
-"""
-
 ```

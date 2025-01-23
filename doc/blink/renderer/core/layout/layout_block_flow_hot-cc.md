@@ -151,14 +151,16 @@ This systematic approach, moving from the high-level context to the specifics of
 
 总而言之，`layout_block_flow_hot.cc` 文件中的代码是 Blink 渲染引擎处理块级元素布局的核心逻辑，它紧密关联着 HTML 结构和 CSS 样式，并通过 `CreatesNewFormattingContext` 和 `StyleDidChange` 等关键函数来决定元素的布局行为和响应样式变化。理解这些功能对于深入理解浏览器渲染机制和解决前端开发中的布局问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_block_flow_hot.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ void LayoutBlockFlow::StyleDidChange(StyleDifference diff,
 }
 
 }  // namespace blink
-
-"""
-
 ```

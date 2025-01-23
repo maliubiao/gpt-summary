@@ -144,7 +144,7 @@ In essence, this part of the test file provides more in-depth and varied test ca
 
 总而言之，这部分测试用例继续深入地测试了媒体流约束工具集中集合类的各种功能，覆盖了更复杂的场景和边界情况，确保这些类能够正确地表示和处理各种媒体流约束。这些测试对于保证 Chromium 浏览器在处理 WebRTC 媒体流约束时的正确性和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_sets_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 oint(100, 100.0 * kAspectRatio));
     EXPECT_TRUE(AreValidVertices(set, vertices));
 
@@ -824,8 +826,4 @@ TEST_F(MediaStreamConstraintsUtilSetsTest, RescaleSetFromConstraints) {
 
 }  // namespace media_constraints
 }  // namespace blink
-
-"""
-
-
 ```

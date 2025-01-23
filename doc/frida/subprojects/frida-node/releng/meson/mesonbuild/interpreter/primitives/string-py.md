@@ -168,7 +168,7 @@ agent_output = join_paths(build_dir, 'frida-agent.so')
 
 总而言之，`frida/subprojects/frida-node/releng/meson/mesonbuild/interpreter/primitives/string.py` 文件定义了 Meson 构建系统中字符串类型的核心行为，它通过提供各种方法和运算符重载，使得 Meson 构建脚本能够方便地处理和操作字符串数据，这对于 Frida 的构建过程至关重要。理解这个文件的功能有助于理解 Frida 的构建流程，并能帮助开发者在遇到与字符串处理相关的构建问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/interpreter/primitives/string.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 from __future__ import annotations
@@ -425,7 +427,4 @@ class OptionStringHolder(StringHolder):
         ret = super().op_div(other)
         name = self._op_div(self.held_object.optname, other)
         return OptionString(ret, name)
-
-"""
-
 ```

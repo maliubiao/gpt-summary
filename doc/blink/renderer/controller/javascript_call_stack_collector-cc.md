@@ -156,15 +156,17 @@ By following these steps, we can systematically analyze the code and generate a 
 
 `javascript_call_stack_collector.cc` 文件提供了一个关键的基础设施，用于在 Blink 渲染引擎中安全且异步地收集 JavaScript 调用栈信息。这对于错误报告、崩溃诊断、性能分析和开发者工具等功能至关重要。理解其工作原理有助于我们更好地调试 Web 应用和理解 Blink 的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/controller/javascript_call_stack_collector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -312,7 +314,4 @@ void JavaScriptCallStackCollector::CollectJavaScriptCallStack() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -123,7 +123,7 @@ Let's break down the thought process for analyzing this small C code snippet wit
 
 总而言之，这个简单的 C 代码文件 `meson-tachyonlib.c` 虽然功能简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 加载和调用外部模块的核心功能。通过分析这个文件，可以帮助用户理解 Frida 的基本工作原理，并在遇到相关问题时提供调试的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/python3/4 custom target depends extmodule/ext/lib/meson-tachyonlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _MSC_VER
 __declspec(dllexport)
 #endif
@@ -141,7 +143,4 @@ tachyon_phaser_command (void)
 {
     return "shoot";
 }
-
-"""
-
 ```

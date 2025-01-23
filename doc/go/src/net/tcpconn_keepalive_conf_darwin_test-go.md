@@ -220,7 +220,7 @@ rawConn.Control(func(fd uintptr) {
 
 在这个错误的例子中，开发者可能没有意识到在 Darwin 上应该使用 `sysTCP_KEEPCNT` 和 `sysTCP_KEEPINTVL`，导致设置保活计数和间隔的操作可能不会生效或者行为不符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/tcpconn_keepalive_conf_darwin_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -228,8 +228,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -252,9 +254,4 @@ const (
 type fdType = int
 
 func maybeSkipKeepAliveTest(_ *testing.T) {}
-
-"""
-
-
-
 ```

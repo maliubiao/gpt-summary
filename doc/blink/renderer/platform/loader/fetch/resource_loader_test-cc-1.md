@@ -83,16 +83,18 @@ By following this structured approach, I was able to dissect the code snippet, u
 
 通过这些细致的测试，Chromium 开发者可以确保 `ResourceLoader` 能够可靠高效地加载各种网络资源，从而为用户提供流畅的网页浏览体验。 这个特定的代码片段专注于验证在特定场景下 `ResourceLoader` 的正确性，即当服务器响应中没有提供 CNAME 别名时，`ResourceLoader` 能够正确识别并处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_loader_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- loader = resource->Loader();
+### 源代码
+```cpp
+loader = resource->Loader();
 
   // Create the response.
   ResourceResponse response(url);
@@ -112,8 +114,4 @@ Prompt:
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

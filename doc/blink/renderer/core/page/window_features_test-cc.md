@@ -118,15 +118,17 @@ window.open('https://example.com', '_blank', 'noopener,noreferrer,width=800,heig
 
 总而言之，`window_features_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎能够正确地解析和应用窗口特性，这对于网页开发者控制新窗口的行为至关重要。它直接关联到 JavaScript 的 `window.open()` 函数和 HTML 中 `target="_blank"` 等属性，并帮助避免用户在使用这些特性时可能遇到的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/window_features_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ TEST_F(WindowFeaturesTest, PartitionedPopin) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

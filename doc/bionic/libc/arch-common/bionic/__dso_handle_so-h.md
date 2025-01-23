@@ -268,7 +268,7 @@ aarch64-linux-android-clang++ -shared test.o -o libtest.so
 
 `bionic/libc/arch-common/bionic/__dso_handle_so.handroid` 文件虽然很小，但在 Android 的动态链接机制中扮演着重要的角色。它定义了一个用于标识动态共享对象的符号 `__dso_handle`，并有助于链接器进行优化。理解它的作用有助于深入理解 Android 系统中共享库的加载和管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/arch-common/bionic/__dso_handle_so.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -279,8 +279,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 The Android Open Source Project
  * All rights reserved.
@@ -320,7 +322,4 @@ Prompt:
 static const void* const __dso_handle_const = &__dso_handle_const;
 __attribute__((__visibility__("hidden")))
 __attribute__((alias("__dso_handle_const"))) extern void* __dso_handle;
-
-"""
-
 ```

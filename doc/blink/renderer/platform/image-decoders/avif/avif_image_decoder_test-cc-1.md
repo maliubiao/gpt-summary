@@ -135,15 +135,17 @@ By following this thought process, the detailed breakdown of the `avif_image_dec
 
 总而言之，本部分测试着重验证了 AVIF 图像解码器在处理 Gain Map、不同 YUV 格式、渐进式/增量式解码以及 `clap` 属性等方面的功能和鲁棒性，确保浏览器能够正确高效地渲染各种复杂的 AVIF 图像。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/avif/avif_image_decoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 th-alpha.avif", 5u,
      kAnimationLoopInfinite},
     {"/images/resources/avif/star-animated-12bpc.avif", 5u, 0},
@@ -910,7 +912,4 @@ TEST(StaticAVIFTests, BppHistogramBig) {
   constexpr int kFileSize = 88692;
   constexpr int kSample =
       (k
-"""
-
-
 ```

@@ -113,7 +113,7 @@ address := uintptr(ptr) + uintptr(offset1) + uintptr(offset2) + uintptr(y) * 2 /
 
 `go/src/cmd/compile/internal/ssa/rewriteAMD64.go` 的第 4 部分主要定义了针对 AMD64 架构中各种基本操作 (如加法、加载有效地址、存储、带符号/零扩展的移动等) 的 SSA 值重写规则。 这些规则通过模式匹配和转换，旨在将低效的 SSA 表示转换为更优化的形式，从而提高最终生成机器码的性能。 这一部分的代码集中在内存访问、地址计算和基本算术运算的优化上。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteAMD64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -121,9 +121,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第4部分，共12部分，请归纳一下它的功能
+```
 
-"""
-	v.reset(OpAMD64ADDQ)
+### 源代码
+```go
+v.reset(OpAMD64ADDQ)
 		v.AddArg2(x, y)
 		return true
 	}
@@ -2778,9 +2780,4 @@ func rewriteValueAMD64_OpAMD64MOVQload(v *Value) bool {
 		}
 		off2 := auxIntToInt32(v_0.AuxInt)
 		ptr := v_0.A
-"""
-
-
-
-
 ```

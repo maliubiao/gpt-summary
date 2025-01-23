@@ -136,14 +136,16 @@ Finally, I organize my findings into the categories requested by the prompt: Fun
 
 总而言之，`web_theme_engine_mac.cc` 是 Blink 引擎中一个关键的平台特定组件，它确保了 Web 页面在 macOS 上能够呈现出符合用户期望的原生外观，特别是对于滚动条等常见的 UI 元素。它通过桥接 Blink 的渲染机制和 macOS 的原生主题 API 来实现这一目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/theme/web_theme_engine_mac.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -226,7 +228,4 @@ void WebThemeEngineMac::PaintMacScrollBarParts(
 }
 
 }  // namespace blink
-
-"""
-
 ```

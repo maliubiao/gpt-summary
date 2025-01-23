@@ -133,7 +133,7 @@ By following this thought process, systematically breaking down the code and its
 
 总而言之，`mainprog.cpp` 是一个简洁但有力的示例，展示了 Frida 如何通过动态 instrumentation 技术来影响目标程序的执行流程，这在逆向工程、安全分析和调试等领域具有重要的意义。它也涉及到对底层二进制、操作系统原理和编程实践的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/native/7 selfbuilt custom/mainprog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,14 +141,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"data.h"
 
 int main(void) {
     return generated_function() != 52;
 }
-
-"""
-
 ```

@@ -119,11 +119,13 @@ runWasm();
 
 `wasm-revec-reducer.cc` 是 V8 引擎中负责 WebAssembly 代码 SIMD 重构优化的关键组件。它通过识别可以并行执行的标量操作，并将其转换为更高效的 SIMD 指令，从而提升 WebAssembly 代码在 JavaScript 环境中的性能。 上述 JavaScript 例子展示了一个 WebAssembly 代码场景，其中的连续内存加载操作可能会被 `wasm-revec-reducer.cc` 优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-revec-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1662,7 +1664,4 @@ void WasmRevecAnalyzer::Print(const char* info) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

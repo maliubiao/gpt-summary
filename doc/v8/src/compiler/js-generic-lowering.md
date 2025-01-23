@@ -103,11 +103,13 @@ console.log('x' in point); // 这里会触发 JSHasProperty 操作
 
 `js-generic-lowering.cc` 文件是 V8 编译器中至关重要的一部分，它负责将抽象的 JavaScript 操作转换为 V8 内部可以执行的、更具体的步骤。 几乎每一个 JavaScript 语法结构和操作符都会在该阶段被处理，最终转换为对 V8 内置函数或运行时函数的调用。 理解这个文件的功能有助于深入理解 V8 如何编译和执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-generic-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1396,7 +1398,4 @@ MachineOperatorBuilder* JSGenericLowering::machine() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

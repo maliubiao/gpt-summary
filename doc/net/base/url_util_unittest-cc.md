@@ -132,7 +132,7 @@ JavaScript 在浏览器环境中经常需要处理 URL。 `net/base/url_util.h` 
 
 总而言之， `net/base/url_util_unittest.cc` 的第 1 部分主要集中于测试 Chromium 网络栈中用于处理 URL 查询参数、fragment、主机名、端口号以及进行 URL 规范化和简化的各种实用函数。 这些测试确保了网络栈能够正确地解析、构建和操作 URL，这对于浏览器的正常功能至关重要。 这些功能与 JavaScript 在浏览器中处理 URL 的能力密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/url_util_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1082,7 +1084,4 @@ TEST(UrlUtilTest, GoogleHost) {
       {GURL("http://oogle.com"), false},
       {GURL("http://google.co"), false},
       {GUR
-"""
-
-
 ```

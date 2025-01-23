@@ -213,15 +213,17 @@ go build -gcflags "-cpuprofile=cpu.prof" main.go
 
 这段 `util.go` 中的代码是 Go 编译器内部用于集成性能分析和跟踪功能的关键部分。它通过解析命令行参数，调用 `runtime/pprof` 和 `runtime/trace` 包的功能，生成各种类型的 profile 文件，帮助开发者了解编译器自身的性能状况。了解这些功能可以帮助我们更好地理解 Go 编译器的内部工作原理，并在需要时进行性能诊断。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/gc/util.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -352,9 +354,4 @@ func startProfile() {
 		})
 	}
 }
-
-"""
-
-
-
 ```

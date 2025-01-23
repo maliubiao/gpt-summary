@@ -72,7 +72,7 @@ The user wants a summary of the functionality of the provided C++ code snippet, 
 
 当开发者调试与 QUIC 相关的网络问题时，例如请求卡住、数据接收不完整、连接错误等，就可能需要深入到 `BidirectionalStreamQuicImpl` 的代码中进行分析，而这些单元测试用例就是理解其工作原理的重要参考。 通过查看这些测试用例，开发者可以了解在各种场景下 `BidirectionalStreamQuicImpl` 的预期行为，从而更好地定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/bidirectional_stream_quic_impl_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -80,8 +80,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Server acks the request.
   ProcessPacket(ConstructServerAckPacket(1, 1, 1, 1));
 
@@ -848,7 +850,4 @@ TEST_P(BidirectionalStreamQuicImplTest, InterleaveReadDataAndSendData) {
   quiche::HttpHeaderBlock response_headers = ConstructResponseHeaders("200");
   size_t spdy_response_headers_frame_length;
   Proce
-"""
-
-
 ```

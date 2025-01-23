@@ -163,7 +163,7 @@ By following these steps, and constantly relating the code back to the prompt's 
 
 总而言之，`sum.c` 文件本身是一个简单的 LLVM 代码生成示例，但它在 Frida 项目的上下文中扮演着重要的角色，用于测试和验证 Frida 对 LLVM 生成代码的动态插桩能力。理解这个文件的功能和它涉及的技术，有助于理解 Frida 的工作原理以及逆向工程中常用的一些概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/15 llvm/sum.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /** This code is public domain, and taken from
  * https://github.com/paulsmith/getting-started-llvm-c-api/blob/master/sum.c
  */
@@ -249,7 +251,4 @@ int main(int argc, char const *argv[]) {
     LLVMDisposeBuilder(builder);
     LLVMDisposeExecutionEngine(engine);
 }
-
-"""
-
 ```

@@ -268,7 +268,7 @@ sys.stdin.read()
 
 通过这种方式，你可以观察到 Android Framework 或 NDK 如何通过 Bionic libc 调用时间函数，并验证 `time64_config.handroid` 中的配置是否影响了这些函数的行为。例如，你可以观察到当时间值超出 32 位 `time_t` 范围时，Bionic 是否使用了 64 位的处理方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/time64_config.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -279,8 +279,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* Debugging
    TIME_64_DEBUG
    Define if you want debugging messages
@@ -355,8 +357,4 @@ Prompt:
 #define SYSTEM_LOCALTIME_MIN    -2147483647
 #define SYSTEM_GMTIME_MAX        2147483647
 #define SYSTEM_GMTIME_MIN       -2147483647
-
-
-"""
-
 ```

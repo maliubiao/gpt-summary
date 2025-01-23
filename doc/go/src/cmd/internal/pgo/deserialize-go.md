@@ -244,15 +244,17 @@ Caller: main.another_caller, Callee: main.callee, Offset: 20, Weight: 50
 
 总而言之，`deserialize.go` 专注于将 PGO 工具生成的序列化 profile 数据转换成 Go 程序可以使用的结构化数据，是 PGO 功能实现的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/pgo/deserialize.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -355,9 +357,4 @@ func FromSerialized(r io.Reader) (*Profile, error) {
 	return d, nil
 
 }
-
-"""
-
-
-
 ```

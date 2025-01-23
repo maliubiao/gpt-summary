@@ -134,11 +134,13 @@ console.log(result);
 
 `all-nodes.cc` 中的 `AllNodes` 类是 V8 引擎 Turbofan 编译器中用于分析代码结构的关键工具。它通过图形遍历技术来理解 JavaScript 代码的执行流程和依赖关系，为各种编译器优化提供了基础。虽然 JavaScript 开发者不会直接使用这个类，但它的功能直接影响着 V8 引擎编译 JavaScript 代码的效率和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/all-nodes.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ void AllNodes::Mark(Zone* local_zone, Node* end, const Graph* graph) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -138,7 +138,7 @@ By following these steps, I can generate a comprehensive and accurate answer tha
 
 总而言之，这部分代码是 `v8/src/execution/isolate.cc` 中关于 `Isolate` 对象初始化、资源管理和错误处理的重要组成部分，直接影响着 V8 引擎的性能、稳定性和可调试性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/isolate.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 heap_.code_range_->RemapEmbeddedBuiltins(
       this, embedded_blob_code_, embedded_blob_code_size_);
   CHECK_NOT_NULL(embedded_blob_code_);
@@ -997,7 +999,4 @@ void Isolate::DumpAndResetStats() {
 
 #if V8_ENABLE_WEBASSEMBLY
   // TODO(7424): There is no publi
-"""
-
-
 ```

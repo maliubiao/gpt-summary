@@ -87,15 +87,17 @@ func main() {
 
 `a.go` 文件定义了一个简单的 Go 包，包含一个空结构体 `A` 和一个总是返回 `true` 的方法 `f`。最可能的用途是作为 Go 语言 bug 修复的测试用例，用于验证某些基础的语言特性，例如方法调用和布尔返回值。这段代码本身逻辑简单，不易出错。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue49094.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -107,9 +109,4 @@ type A struct{}
 func (a *A) f() bool {
 	return true
 }
-
-"""
-
-
-
 ```

@@ -140,7 +140,7 @@ By following this structured approach, considering the context of Frida and reve
 
 总而言之，这个 `prog.cpp` 文件是一个用于测试 CUDA 依赖的简单程序，它展示了基本的 CUDA 初始化和 cuBLAS 的使用。在 Frida 的上下文中，它可以作为逆向分析和调试的目标，帮助开发者理解和排查与 CUDA 相关的程序问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cuda/12 cuda dependency (mixed)/prog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <cuda_runtime.h>
 #include <cublas_v2.h>
 #include <iostream>
@@ -187,7 +189,4 @@ int main(void) {
 
     return 0;
 }
-
-"""
-
 ```

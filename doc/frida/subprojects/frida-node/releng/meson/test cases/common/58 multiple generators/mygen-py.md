@@ -178,7 +178,7 @@ some other text
 
 总而言之，`mygen.py` 是 Frida 构建系统中一个简单的代码生成工具，它通过读取输入文件并生成 C++ 源代码文件，为 Frida 的构建过程提供支持。虽然脚本本身很简单，但它反映了软件构建过程中动态代码生成的需求，并且与逆向工程、底层系统知识以及常见的编程错误都有间接的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/58 multiple generators/mygen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -210,7 +212,4 @@ with open(outsrc, 'w') as f:
     return 0;
 }
 ''' % val)
-
-"""
-
 ```

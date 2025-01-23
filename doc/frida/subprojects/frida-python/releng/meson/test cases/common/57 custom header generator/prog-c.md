@@ -117,7 +117,7 @@ By following this thought process and iteratively refining the analysis, we arri
 
 `frida/subprojects/frida-python/releng/meson/test cases/common/57 custom header generator/prog.c` 是一个简单的C程序，用于测试Frida的自定义头文件生成功能。它通过包含一个由Frida生成的头文件并使用其中定义的宏作为返回值来验证生成器是否正常工作。虽然代码本身简单，但其背后的目的和相关的技术细节与逆向工程、二进制底层知识以及系统编程密切相关。理解这个文件的作用有助于我们更好地理解Frida的内部工作原理和测试流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/57 custom header generator/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,14 +125,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"myheader.lh"
 
 int main(void) {
     return RET_VAL;
 }
-
-"""
-
 ```

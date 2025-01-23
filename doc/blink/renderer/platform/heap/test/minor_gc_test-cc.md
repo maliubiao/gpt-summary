@@ -124,14 +124,16 @@ By following this systematic approach, we can thoroughly understand the purpose 
 
 总而言之，`minor_gc_test.cc` 是 Blink 引擎中一个关键的测试文件，它确保了次要垃圾回收机制的正确性，这对于高效的内存管理和避免内存泄漏至关重要，最终影响着 Web 浏览器的性能和稳定性。虽然开发者不直接与这些代码交互，但理解其背后的原理有助于编写更健壮和高效的 Web 应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/test/minor_gc_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -414,7 +416,4 @@ TYPED_TEST(MinorGCTestForType,
 }
 
 }  // namespace blink
-
-"""
-
 ```

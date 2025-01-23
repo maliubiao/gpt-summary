@@ -128,7 +128,7 @@ This systematic approach ensures all aspects of the prompt are addressed compreh
 
 尽管 `prog.c` 代码非常简单，但它作为一个 Frida 测试用例，可以用来验证基本的功能，并为理解 Frida 如何进行动态分析和逆向工程提供了一个起点。它涉及到对程序执行流程、函数调用、以及可能的动态链接等底层概念的理解。通过分析这样的简单示例，可以更好地理解 Frida 在更复杂的场景下的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/18 includedir/src/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,14 +136,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "func.h"
 
 int main(void) {
     return func();
 }
-
-"""
-
 ```

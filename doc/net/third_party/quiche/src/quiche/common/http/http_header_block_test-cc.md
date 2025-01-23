@@ -219,15 +219,17 @@ HttpHeaderBlock block2 = block1.Clone();
 
 `http_header_block_test.cc` 是一个关键的测试文件，用于确保 Chromium 网络栈中 `HttpHeaderBlock` 类的正确性。虽然 JavaScript 代码不能直接操作这个类，但它通过浏览器 API 与 HTTP 头部交互，而 `HttpHeaderBlock` 在底层负责管理这些头部信息。理解这个测试文件的功能可以帮助开发者更好地理解 HTTP 头部在网络通信中的作用，以及在遇到相关问题时如何进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/http/http_header_block_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -537,7 +539,4 @@ TEST(HttpHeaderBlockTest, InsertReturnValue) {
 
 }  // namespace test
 }  // namespace quiche
-
-"""
-
 ```

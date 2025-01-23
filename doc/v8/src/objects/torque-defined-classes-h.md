@@ -184,15 +184,17 @@ class V8_EXPORT MyObject : public HeapObject {
 
 `v8/src/objects/torque-defined-classes.h` 是 V8 引擎中一个重要的头文件，它通过包含 Torque 生成的 C++ 代码，定义了 V8 内部使用的各种对象类。 虽然普通 JavaScript 开发者不需要直接操作这个文件，但理解其背后的概念有助于更好地理解 JavaScript 的运行机制和编写更高效的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/torque-defined-classes.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/torque-defined-classes.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ class Oddball;
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_TORQUE_DEFINED_CLASSES_H_
-
-"""
-
 ```

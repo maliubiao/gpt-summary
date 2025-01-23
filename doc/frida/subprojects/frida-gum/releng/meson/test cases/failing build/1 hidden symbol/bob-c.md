@@ -89,7 +89,7 @@ int hidden_function() {
 
 总而言之，`bob.c` 这个文件虽然代码简单，但其目的是为了测试 Frida 在处理包含隐藏符号的二进制文件时的构建或运行时行为。它模拟了一个在逆向工程中可能遇到的场景，即某些函数的符号信息不可见。这个测试用例帮助 Frida 的开发者确保工具的健壮性和正确性，尤其是在需要与底层操作系统机制和二进制文件格式交互时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing build/1 hidden symbol/bob.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -97,14 +97,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 int hidden_function() {
     return 7;
 }
-
-"""
-
 ```

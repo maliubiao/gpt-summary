@@ -216,15 +216,17 @@ OAS (AssignStmt)
 
 总而言之，`go/src/cmd/compile/internal/walk/assign.go` 是 Go 编译器中负责处理赋值语句的核心部分，它将高级的 Go 语法转换为更底层的表示，并进行一些优化，为后续的代码生成阶段做准备。理解这部分代码的功能可以帮助我们更深入地了解 Go 语言的内部机制和编译过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/walk/assign.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -967,9 +969,4 @@ func extendSlice(n *ir.CallExpr, init *ir.Nodes) ir.Node {
 	init.Append(nodes...)
 	return s
 }
-
-"""
-
-
-
 ```

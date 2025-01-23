@@ -194,7 +194,7 @@ Line 'Some other irrelevant line' does not match any known pattern.
 
 作为第二部分，这段代码的功能是定义了三个预编译的正则表达式，用于识别特定模式的字符串。这些模式分别对应 Go 语言函数调用栈帧、CPU 性能分析事件和锁竞争性能分析事件。 这段代码本身不执行任何解析或分析操作，而是为其他 Go 代码提供了用于模式匹配的工具。 它可以被看作是解析旧版本或特定格式性能分析数据的基础构建块。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/profile/legacy_profile.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -203,8 +203,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 .
 	`runtime\.panic`,
 	`runtime\.reflectcall`,
@@ -238,10 +240,4 @@ var lockRxStr = strings.Join([]string{
 	`(SpinLock::)?SlowUnlock.*`,
 	`(SpinLockHolder::)?~SpinLockHolder.*`,
 }, `|`)
-
-"""
-
-
-
-
 ```

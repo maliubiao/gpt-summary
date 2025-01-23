@@ -215,7 +215,7 @@ const result = getElement(myArray, 1);
 
 作为 V8 编译器优化流程的一部分，`v8/src/compiler/js-native-context-specialization.cc` 专注于**利用 JavaScript 原生上下文信息来优化属性和元素的访问操作**。它通过分析类型反馈、对象结构和原型链等信息，尝试在编译时生成更高效的机器码，减少运行时的开销。这段代码处理了多种属性和元素访问的场景，包括加载、存储、检查存在性以及与 `for...in` 循环和 getter/setter 相关的优化。其目标是提升 JavaScript 代码在 V8 引擎上的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-native-context-specialization.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-native-context-specialization.cc以.tq结尾，那它是个v8 torque源代码，
@@ -223,8 +223,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 f the compiler.
   // TODO(v8:14012): We could lower further here and emit LoadTypedElement (like
   // we do for other typed arrays). However, given the lack of hardware support
@@ -976,7 +978,4 @@ JSNativeContextSpecialization::BuildPropertyLoad(
 JSNativeContextSpecialization::ValueEffectControl
 JSNativeContextSpecialization::BuildPropertyTest(
     Node* effect,
-"""
-
-
 ```

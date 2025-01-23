@@ -163,7 +163,7 @@ By following these steps and refining the answers, I can provide a comprehensive
 
 这些测试确保了 Chromium 在处理 HTTP Cookie 时符合最新的标准和安全最佳实践。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/canonical_cookie_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -171,9 +171,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共9部分，请归纳一下它的功能
+```
 
-"""
- SchemefulIndependentCases();
+### 源代码
+```cpp
+SchemefulIndependentCases();
 
     VerifyIncludeForRequestURLTestCases(CookieAccessSemantics::LEGACY,
                                         schemeful_disabled_test_cases);
@@ -901,7 +903,4 @@ TEST(CanonicalCookieTest, PartialCompare) {
 
   // Changing the value does not affect the ordering.
   EXPECT_FALSE(cookie->PartialCompare(*cookie_different_value
-"""
-
-
 ```

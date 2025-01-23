@@ -132,7 +132,7 @@ Let's take the `test_cpp_std_override` as an example:
 
 This section of the Frida Node.js bindings unit tests comprehensively examines how the Meson build system functions on Linux-like operating systems. It focuses on core build system functionalities like handling different C++ standards, managing shared library dependencies (through RPATH and `LD_LIBRARY_PATH`), integrating with `pkg-config`, and ensuring the deterministic behavior of the build process. These tests are crucial for guaranteeing the stability and correctness of the Frida Node.js addon build process across various Linux distributions and system configurations. They also highlight potential pitfalls and common errors developers and users might encounter when building or running software with shared library dependencies on these platforms.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,9 +141,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    def test_cpp_std_override(self):
+### 源代码
+```python
+def test_cpp_std_override(self):
         testdir = os.path.join(self.unit_test_dir, '6 std override')
         self.init(testdir)
         compdb = self.get_compdb()
@@ -848,7 +850,4 @@ Prompt:
 
     @skipIfNoPkgconfigDep('gmodule-2.0')
     def test_ldflag_dedup(se
-"""
-
-
 ```

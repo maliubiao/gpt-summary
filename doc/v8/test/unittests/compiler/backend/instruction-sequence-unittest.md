@@ -129,11 +129,13 @@ test.WireBlocks(); // 连接代码块
 
 总而言之，`instruction-sequence-unittest.cc` 是 V8 编译器后端的一个关键测试组件，它允许开发者编写精细的单元测试，确保生成的指令序列能够正确高效地执行 JavaScript 代码。 它通过模拟指令的生成和控制流的构建，来验证编译器的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/backend/instruction-sequence-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -695,7 +697,4 @@ Instruction* InstructionSequenceTest::AddInstruction(Instruction* instruction) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -414,7 +414,7 @@ WebAssembly.instantiate(wasmCode)
 
 `v8/test/unittests/wasm/module-decoder-unittest.cc` 的功能是 **全面测试 v8 中 WASM 模块解码器的正确性和健壮性**。它通过构造各种合法的和非法的 WASM 模块结构，并断言解码器的行为是否符合预期，来确保解码器能够正确解析和验证 WASM 字节码，并且能够有效地检测出常见的 WASM 模块构建错误。 这对于确保 v8 能够安全可靠地执行 WASM 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/wasm/module-decoder-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/wasm/module-decoder-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -422,8 +422,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ONE_EMPTY_FUNCTION(SIG_INDEX(0)),
       // table declaration -----------------------------------------------------
       SECTION(Table, ENTRY_COUNT(1), kFuncRefCode, kNoMaximum, 1),
@@ -783,8 +785,4 @@ TEST_F(WasmModuleVerifyTest, InvalidSharedGlobal) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

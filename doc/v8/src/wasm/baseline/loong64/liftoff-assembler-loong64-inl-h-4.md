@@ -154,7 +154,7 @@ This final part of the `liftoff-assembler-loong64-inl.h` file provides key inlin
 
 Essentially, this file defines the low-level assembly instruction sequences needed to implement fundamental operations within the Liftoff WebAssembly compiler for the LoongArch 64-bit architecture. It bridges the gap between the higher-level Liftoff compiler logic and the actual machine code execution.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/loong64/liftoff-assembler-loong64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/loong64/liftoff-assembler-loong64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -162,8 +162,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 lse {
     Jump(target);
   }
@@ -253,8 +255,4 @@ void LiftoffStackSlots::Construct(int param_slots) {
 }  // namespace v8::internal::wasm
 
 #endif  // V8_WASM_BASELINE_LOONG64_LIFTOFF_ASSEMBLER_LOONG64_INL_H_
-
-"""
-
-
 ```

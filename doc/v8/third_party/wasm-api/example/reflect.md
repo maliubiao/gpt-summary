@@ -126,11 +126,13 @@ fetch('reflect.wasm')
 
 `reflect.cc` 这个 C++ 文件提供了一个低级别的、直接使用 WebAssembly C++ API 的方式来检查 WebAssembly 模块的结构。JavaScript 通过 `WebAssembly` API 提供了类似的高级功能，允许开发者在浏览器环境中加载、实例化和使用 WebAssembly 模块的导出。 C++ 代码更偏向于展示 WebAssembly 的内部结构和类型信息，而 JavaScript 则更侧重于实际的模块使用和交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/example/reflect.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -268,8 +270,4 @@ int main(int argc, const char* argv[]) {
   std::cout << "Done." << std::endl;
   return 0;
 }
-
-
-"""
-
 ```

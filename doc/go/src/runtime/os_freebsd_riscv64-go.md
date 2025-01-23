@@ -160,7 +160,7 @@ func initPlatformSpecific() {
 
 `go/src/runtime/os_freebsd_riscv64.go` 目前定义了一个空的 `osArchInit` 函数，它作为 Go 运行时针对 FreeBSD 和 RISC-V 64 位架构进行初始化的占位符。尽管当前没有具体的初始化操作，但这体现了 Go 运行时对不同平台的支持机制。通过构建标签和平台特定的源文件，Go 能够根据目标操作系统和架构选择性地编译和执行代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_freebsd_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,8 +168,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -177,9 +179,4 @@ Prompt:
 package runtime
 
 func osArchInit() {}
-
-"""
-
-
-
 ```

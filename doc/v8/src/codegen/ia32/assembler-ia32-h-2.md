@@ -145,7 +145,7 @@ assembler.emit_modrm(MODRM(DIRECT_REG, ebx.code(), eax.code()));
 
 `v8/src/codegen/ia32/assembler-ia32.h` 中定义的 `Assembler` 类是 V8 引擎为 IA-32 架构生成机器码的基础工具。它提供了一套全面的接口，用于发射各种指令、处理操作数、管理代码布局和记录重定位信息。这个类是 V8 将高级 JavaScript 代码转换为底层机器码，最终在 CPU 上执行的关键环节。它通过提供细粒度的控制，使得 V8 的代码生成器能够高效且精确地生成目标平台的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/assembler-ia32.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ia32/assembler-ia32.h以.tq结尾，那它是个v8 torque源代码，
@@ -153,8 +153,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 diate& x);
 
   void emit_operand(int code, Operand adr);
@@ -265,8 +267,4 @@ class EnsureSpace {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_IA32_ASSEMBLER_IA32_H_
-
-"""
-
-
 ```

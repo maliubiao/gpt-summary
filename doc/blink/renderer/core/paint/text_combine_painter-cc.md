@@ -172,15 +172,17 @@ This iterative process of scanning, analyzing, connecting, inferring, and struct
 
 总而言之，`blink/renderer/core/paint/text_combine_painter.cc` 负责在 Chromium 中绘制应用了文本装饰线或着重号的组合文本，确保这些样式能够正确地渲染在网页上。它与 CSS 的 `text-decoration` 和 `text-emphasis-mark` 属性紧密相关，并在渲染流水线中的特定阶段被调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/text_combine_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -331,7 +333,4 @@ void TextCombinePainter::PaintEmphasisMark(const TextPaintStyle& text_style,
 }
 
 }  // namespace blink
-
-"""
-
 ```

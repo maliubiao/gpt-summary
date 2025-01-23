@@ -104,7 +104,7 @@ Here's a breakdown of the logic involved:
 
 这部分代码主要专注于测试 `AXSelection` 类与 `<textarea>` 元素的交互，涵盖了创建、读取、清除和设置 `<textarea>` 元素的可访问性选择的各种场景，并特别关注了文本方向性（Affinity）的处理。它确保了 Blink 引擎能够正确地将用户的 DOM 选择反映到可访问性 API 中，从而帮助屏幕阅读器等辅助技术理解和操作 `<textarea>` 元素中的文本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_selection_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -112,9 +112,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- auto ax_selection =
+### 源代码
+```cpp
+auto ax_selection =
       AXSelection::FromCurrentSelection(ToTextControl(*textarea));
   ASSERT_TRUE(ax_selection.IsValid());
 
@@ -911,7 +913,4 @@ TEST_F(AccessibilitySelectionTest, SelectTheWholeOfTheTextarea) {
             dom_selection.Anchor().ComputeNodeAfterPosition());
   EXPECT_EQ(GetDocument().body(), dom_selection.Focus().AnchorNode());
   EXPECT_EQ(5, dom_selection.Focus().OffsetInContainerNo
-"""
-
-
 ```

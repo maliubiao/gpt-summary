@@ -133,14 +133,16 @@ input = { 0x2e, 0x63, 0x6c, 0x61, 0x73, 0x73, 0x20, 0x7b, 0x0a, 0x20, 0x20, 0x63
 
 总之，`renderer_fuzzing_support.cc` 提供了一个关键的入口点，使得能够利用模糊测试技术来检测和修复 Blink 渲染引擎在处理 JavaScript, HTML, CSS 等 Web 技术时可能存在的缺陷。 正确地使用它需要理解其参数的含义以及底层模糊测试框架的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/renderer_fuzzing_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ void RendererFuzzingSupport::Run(
 }
 
 }  // namespace blink
-
-"""
-
 ```

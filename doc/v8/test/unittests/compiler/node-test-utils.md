@@ -58,12 +58,14 @@ EXPECT_THAT(branch_node, compiler::IsBranch(condition_node, control_node));
 
 **总结一下，虽然这个 C++ 文件本身不执行 JavaScript 代码，但它提供了一个用于测试将 JavaScript 代码编译成内部表示的编译器的工具集，确保了编译过程的正确性，从而间接地保证了 JavaScript 代码的正确执行。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/node-test-utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1664,8 +1666,5 @@ Matcher<Node*> IsMerge(const Matcher<Node*>& control0_matcher,
 }
 
 
-Matcher<Node*> 
-"""
-
-
+Matcher<Node*>
 ```

@@ -140,7 +140,7 @@ headers.AppendHeader("X-Forwarded-For", "2.2.2.2, 3.3.3.3, 4.4.4.4, 5.5.5.5, 6.6
 
 这个代码片段是 `balsa_headers_test.cc` 文件的一部分，它专注于测试 `BalsaHeaders` 类中 **获取和检查 HTTP 头部值** 的各种方法，包括区分大小写和不区分大小写的检查，获取单个或所有头部值，以及根据前缀进行匹配等功能。这些测试用例覆盖了正常情况、边界情况以及各种可能的用户输入和操作，确保 `BalsaHeaders` 类能够正确可靠地处理 HTTP 头部。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/balsa/balsa_headers_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 .
   EXPECT_THAT(
       headers.GetAllOfHeader("X-Forwarded-For"),
@@ -1064,7 +1066,4 @@ TEST(BalsaHeaders, GetIteratorForKeyDoesWhatItSays) {
   EXPECT_NE(header.lines().end(), key_it);
   EXPECT_NE(header.header_lines_key_end(), key_it);
   EXPECT_EQ("key
-"""
-
-
 ```

@@ -194,7 +194,7 @@ Alternatively, if a user encounters a bug while using Frida:
 2. **The script uses one of the JavaScript APIs tested in `script.c` (e.g., `send`, `setTimeout`).**
 3. **An unexpected behavior or error occurs.**
 4. **The user or a Frida developer might
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/gumjs/script.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2015 Marc Hartmayer <hello@hartmayer.com>
@@ -1021,7 +1023,4 @@ TESTCASE (instruction_can_be_parsed)
       "send(operands[1].type);"
       "send(operands[1].value.base);"
       "send(operands[1].value.scal
-"""
-
-
 ```

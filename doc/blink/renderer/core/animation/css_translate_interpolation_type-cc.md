@@ -141,14 +141,16 @@ element.classList.add('animate');
 
 总之，`css_translate_interpolation_type.cc` 文件在 Blink 渲染引擎中扮演着关键角色，它确保了 CSS `translate` 属性的动画效果能够平滑、正确地执行，从而提升了用户在网页上看到的视觉体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_translate_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -362,7 +364,4 @@ void CSSTranslateInterpolationType::ApplyStandardPropertyValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

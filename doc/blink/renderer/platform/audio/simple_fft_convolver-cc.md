@@ -142,14 +142,16 @@ This detailed thought process demonstrates how to move from a basic understandin
 
 总之，`SimpleFFTConvolver` 是 Blink 引擎中一个核心的音频处理组件，它通过高效的 FFT 算法实现了音频卷积功能，为 Web Audio API 提供了强大的音频效果处理能力。理解其功能有助于我们更好地理解 Web Audio API 的工作原理以及如何避免潜在的使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/simple_fft_convolver.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ void SimpleFFTConvolver::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -164,7 +164,7 @@ source.start();
 
 `blink/renderer/modules/webaudio/base_audio_context.cc` 文件定义了 `BaseAudioContext` 类，它是 Blink 引擎中 Web Audio API 功能的核心实现。它负责音频上下文的生命周期管理、各种音频节点的创建、音频数据的解码和处理、音频上下文状态的管理以及与渲染线程的交互。它为 JavaScript 提供了底层的音频处理能力，是构建复杂 Web Audio 应用的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/base_audio_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010, Google Inc. All rights reserved.
  *
@@ -1060,7 +1062,4 @@ void BaseAudioContext::NotifyWorkletIsReady() {
     // the reference to the AudioWorkletThread for the future worklet operation.
     audio_worklet_thread_ =
         audioWorklet()->GetMessagingProxy()->Get
-"""
-
-
 ```

@@ -218,15 +218,17 @@ revocableProxy.revoke(); // 撤销代理
 
 总之，`v8/src/builtins/builtins-proxy-gen.h` 定义了 V8 内部用于创建和管理 JavaScript 代理对象以及检查代理陷阱结果的关键 C++ 接口。它与 JavaScript 的 `Proxy` 功能紧密相关，确保了代理行为的正确性和符合规范。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-proxy-gen.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-proxy-gen.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ class ProxiesCodeStubAssembler : public CodeStubAssembler {
 }  // namespace v8
 
 #endif  // V8_BUILTINS_BUILTINS_PROXY_GEN_H_
-
-"""
-
 ```

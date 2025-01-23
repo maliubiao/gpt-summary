@@ -785,7 +785,7 @@ typename ParserBase<Impl>::StatementT ParserBase<Impl>::ParseVariableStatement(
   // is inside an initializer block, it is ignored.
 
   DeclarationParsingResult
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser-base.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/parser-base.h以.tq结尾，那它是个v8 torque源代码，
@@ -793,8 +793,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 tr);
 
   ClassInfo class_info(this);
@@ -1662,7 +1664,4 @@ typename ParserBase<Impl>::StatementT ParserBase<Impl>::ParseIfStatement(
   StatementT else_statement = impl()->NullStatement();
   if (Check(Token::kElse)) {
     else_statement = Par
-"""
-
-
 ```

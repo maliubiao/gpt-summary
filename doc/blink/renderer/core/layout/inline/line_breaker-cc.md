@@ -166,15 +166,17 @@ HelloWorld!Thisisalongsentence.
 
 在 `blink/renderer/core/layout/inline/line_breaker.cc` 文件的第 1 部分，主要的功能是 **初始化 `LineBreaker` 对象并为其准备行布局所需的各种初始状态和数据**。这包括接收布局上下文信息，处理特殊情况（如 SVG、文本组合、克隆盒装饰），计算可用宽度，以及提供添加内联项到行信息的方法。 这一部分为后续的行布局和断点查找奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/line_breaker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1007,7 +1009,4 @@ void LineBreaker::PrepareNextLine(LineInfo* line_info) {
   has_cloned_box_decorations_ = false;
   if ((break_token_ && break_token_->HasClonedBoxDecorations()) ||
       cloned_box_decorations
-"""
-
-
 ```

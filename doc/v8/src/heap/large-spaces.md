@@ -113,11 +113,13 @@ function myFunction(x) {
 
 `v8/src/heap/large-spaces.cc` 文件实现了 V8 堆中用于存储大型对象的机制。这对于 JavaScript 引擎高效地处理大型数据结构、WebAssembly 内存以及编译后的代码至关重要。如果没有大对象空间，V8 将难以管理这些大型内存需求，并可能导致性能问题或内存溢出。 JavaScript 开发者通常不需要直接与大对象空间交互，但他们的代码（特别是处理大量数据或使用 WebAssembly 时）会间接地利用这一机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/large-spaces.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -587,7 +589,4 @@ TrustedLargeObjectSpace::TrustedLargeObjectSpace(Heap* heap)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

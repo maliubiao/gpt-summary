@@ -97,7 +97,7 @@ By following these steps, breaking down the problem into smaller parts, and conn
 
 总而言之，这个 `main.c` 文件虽然代码量很少，但它精准地聚焦于共享库链接这一关键概念，是 Frida 用于测试其动态插桩能力在处理共享库场景下的一个典型用例。它涉及到操作系统底层、二进制格式以及动态链接等多个方面的知识，对于理解 Frida 的工作原理和逆向工程实践都具有一定的参考价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/30 shared_mod linking/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_IMPORT __declspec(dllimport)
 #else
@@ -118,7 +120,4 @@ int DLL_IMPORT func();
 int main(int argc, char **arg) {
     return func();
 }
-
-"""
-
 ```

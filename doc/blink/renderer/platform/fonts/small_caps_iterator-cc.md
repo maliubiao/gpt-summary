@@ -148,14 +148,16 @@ By following this thought process, breaking down the code, connecting it to rele
 
 总而言之，`SmallCapsIterator` 是 Blink 渲染引擎中一个关键的组件，它精确地识别出在应用 `font-variant-caps: small-caps;` 样式时需要进行不同处理的文本片段，确保了网页文本能够按照 CSS 的规范正确渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/small_caps_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ bool SmallCapsIterator::Consume(unsigned* caps_limit,
 }
 
 }  // namespace blink
-
-"""
-
 ```

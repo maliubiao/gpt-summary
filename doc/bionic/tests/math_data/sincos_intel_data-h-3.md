@@ -241,7 +241,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 总而言之，`sincos_intel_data.handroid` 是 Bionic 库中一个关键的测试数据文件，它保证了 Android 系统中 `sincos` 函数在 Intel 架构上的正确性和精度，这对于依赖三角函数计算的各种 Android 功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sincos_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -253,8 +253,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 b39bd8373e0d6b94p-49,
     -0x1.ffffffffffffffffffffffffa2c9eda8p-1,
     -0x1.2d97c7f3321d1p3,
@@ -1440,8 +1442,4 @@ b39bd8373e0d6b94p-49,
     -0.0,
   },
 };
-
-"""
-
-
 ```

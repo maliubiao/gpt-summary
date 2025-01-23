@@ -129,15 +129,17 @@ This systematic approach allows for a thorough understanding of the code's purpo
 
 总而言之，`dns_util_unittest.cc` 通过一系列单元测试，确保了 `dns_util.h` 中 DNS 相关实用工具函数的正确性，这些函数在浏览器的 DNS 解析和 DoH 功能中扮演着重要的角色，并直接影响到 JavaScript 发起的网络请求的成功与否。了解这些测试用例的功能和逻辑，有助于理解 Chromium 网络栈的 DNS 实现，并在遇到相关问题时提供调试思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_util_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2009 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ TEST_F(DNSUtilTest, GetDohProviderIdForHistogramFromNameserver) {
 }
 
 }  // namespace net
-
-"""
-
 ```

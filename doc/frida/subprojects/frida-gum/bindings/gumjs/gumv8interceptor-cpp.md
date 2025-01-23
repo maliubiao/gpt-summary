@@ -224,7 +224,7 @@ By following these steps, I can systematically analyze the C++ code and provide 
 
 `gumv8interceptor.cpp` 的第一部分主要负责定义 Frida 中拦截器的核心数据结构和 JavaScript 绑定接口。它定义了不同类型的拦截器监听器，用于处理 JavaScript 和 C/C++ 的函数调用和探针，并声明了用于在 JavaScript 中控制拦截行为的 C++ 函数。这部分代码是 Frida 实现动态 instrumentation 的基础，允许用户通过 JavaScript 脚本来监控和修改目标程序的执行流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8interceptor.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -233,8 +233,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -1288,7 +1290,4 @@ gum_v8_js_probe_listener_on_enter (GumInvocationListener * listener,
   gum_v8_interceptor_release_invocation_args (module, args);
 
   _gum_v8_invocation_context_reset (jic, NU
-"""
-
-
 ```

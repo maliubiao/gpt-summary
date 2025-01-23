@@ -82,14 +82,16 @@ The user wants to understand the functionality of the `buffering_bytes_consumer_
 
 总而言之，`buffering_bytes_consumer_test.cc` 通过各种测试用例，详细验证了 `BufferingBytesConsumer` 类的缓冲、延迟、数据管道转换等核心功能，确保其在 Chromium 引擎中能够正确高效地处理网络数据。 这对于最终用户来说意味着更快的页面加载速度和更流畅的网络体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/buffering_bytes_consumer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -471,7 +473,4 @@ INSTANTIATE_TEST_SUITE_P(
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

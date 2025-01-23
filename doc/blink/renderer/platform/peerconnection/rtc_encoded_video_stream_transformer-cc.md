@@ -149,14 +149,16 @@ This iterative process of examining the code, identifying key components, unders
 
 总而言之，`RTCEncodedVideoStreamTransformer.cc` 是 Blink 引擎中处理编码后视频流转换的关键组件，它桥接了 C++ 的高性能处理能力和 JavaScript 的灵活性，为 WebRTC 应用提供了强大的视频处理能力。理解其功能和与 JavaScript API 的交互方式对于开发复杂的 WebRTC 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_encoded_video_stream_transformer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -559,7 +561,4 @@ void RTCEncodedVideoStreamTransformer::LogMessage(const std::string& message) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

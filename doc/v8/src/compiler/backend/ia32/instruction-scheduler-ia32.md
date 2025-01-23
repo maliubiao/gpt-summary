@@ -102,11 +102,13 @@ console.log(result);
 
 `instruction-scheduler-ia32.cc` 是 V8 引擎中负责 IA32 架构指令调度的关键组件。它提供了关于 IA32 指令的特性（标志位）和性能（延迟）信息，这些信息被指令调度器用来优化最终生成的机器码的执行顺序，从而提高 JavaScript 代码在 IA32 平台上的运行效率。虽然 JavaScript 开发者不会直接接触到这个文件，但它的工作直接影响着 JavaScript 代码的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/instruction-scheduler-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -575,7 +577,4 @@ int InstructionScheduler::GetInstructionLatency(const Instruction* instr) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

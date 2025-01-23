@@ -133,7 +133,7 @@ add(5, 10); // 假设 a 和 b 都是小整数 (Smi)
 
 `v8/src/codegen/ppc/macro-assembler-ppc.h` 定义了 PowerPC 架构的 `MacroAssembler` 类，它是一个用于生成 PowerPC 汇编代码的高级接口。它提供了封装了底层汇编指令的方法，以及用于处理函数调用、栈管理、常量加载和控制流等常见代码模式的辅助功能。这个类是 V8 引擎在 PowerPC 架构上执行 JavaScript 代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/macro-assembler-ppc.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/macro-assembler-ppc.h以.tq结尾，那它是个v8 torque源代码，
@@ -141,8 +141,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -933,7 +935,4 @@ class V8_EXPORT_PRIVATE MacroAssembler : public MacroAssemblerBase {
       srawi(dst, src, kSmiShift, rc);
     } else {
       ShiftRightS64(
-"""
-
-
 ```

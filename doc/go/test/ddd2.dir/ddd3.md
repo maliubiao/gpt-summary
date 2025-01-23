@@ -124,15 +124,17 @@ func Sum(nums ...int) int {
 
 总而言之，这段代码是一个简单的测试用例，用于验证 Go 语言中跨包调用的可变参数函数的功能是否正常。它展示了如何定义和调用可变参数函数，以及如何在不同的参数情况下进行测试。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/ddd2.dir/ddd3.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -161,9 +163,4 @@ func main() {
 		panic("fail")
 	}
 }
-
-"""
-
-
-
 ```

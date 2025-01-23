@@ -290,7 +290,7 @@ sys.stdin.read()
 
 总而言之，`bionic/tests/ifunc_test.cpp` 是一个重要的测试文件，它验证了 Android Bionic 中 ifunc 功能的正确性。ifunc 是一个强大的特性，允许 Android 系统根据运行时环境动态选择最佳的函数实现，从而提高性能和兼容性。 理解 ifunc 的工作原理对于深入理解 Android 系统和进行性能优化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/ifunc_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -301,8 +301,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 The Android Open Source Project
  *
@@ -420,7 +422,4 @@ TEST(ifunc, hwcap) {
 }
 
 #endif  // defined(__BIONIC__)
-
-"""
-
 ```

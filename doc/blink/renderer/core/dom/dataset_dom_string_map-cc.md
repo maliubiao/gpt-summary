@@ -151,15 +151,17 @@ This structured approach allows for a comprehensive understanding of the code an
 
 总而言之，`dataset_dom_string_map.cc` 是 Blink 引擎中连接 HTML `data-*` 属性和 JavaScript `HTMLElement.dataset` API 的关键桥梁，负责底层的属性管理和转换逻辑。理解它的功能有助于调试与 `dataset` 相关的 Web 开发问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/dataset_dom_string_map.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Apple Inc. All rights reserved.
  *
@@ -367,7 +369,4 @@ void DatasetDOMStringMap::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

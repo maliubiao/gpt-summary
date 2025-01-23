@@ -92,7 +92,7 @@ Response:
 2. **edges**：检查锁依赖边的完整性和循环。
 3. **stack_traces**：通过`stack_id`解析具体代码位置。
 4. **thread_to_parent**：验证线程创建关系是否正常记录。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/tools/deadlock.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -101,8 +101,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * deadlock.c  Detects potential deadlocks in a running process.
  *             For Linux, uses BCC, eBPF. See .py file.
@@ -309,7 +311,4 @@ int trace_clone(struct pt_regs *ctx, unsigned long flags, void *child_stack,
   }
   return 0;
 }
-
-"""
-
 ```

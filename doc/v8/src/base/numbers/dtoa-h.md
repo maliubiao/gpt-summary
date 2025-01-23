@@ -190,15 +190,17 @@ console.log(num.toPrecision(5)); // 输出 "0.12346" (注意四舍五入)
 
 理解 `v8/src/base/numbers/dtoa.h` 中的定义对于理解 V8 如何在底层处理数字到字符串的转换至关重要。这对于需要深入了解 JavaScript 引擎行为或进行相关优化的开发者非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/dtoa.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/numbers/dtoa.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -270,7 +272,4 @@ V8_BASE_EXPORT void DoubleToAscii(double v, DtoaMode mode, int requested_digits,
 }  // namespace v8
 
 #endif  // V8_BASE_NUMBERS_DTOA_H_
-
-"""
-
 ```

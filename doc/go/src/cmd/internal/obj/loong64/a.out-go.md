@@ -182,15 +182,17 @@ const (
 
 总而言之，`go/src/cmd/internal/obj/loong64/a.out.go` 是 Go 语言工具链中至关重要的架构特定文件，它为 LoongArch64 架构的汇编和链接过程提供了基础性的定义。理解其内容有助于深入了解 Go 语言的编译原理以及其对新架构的支持方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/loong64/a.out.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -926,9 +928,4 @@ func init() {
 		panic("REG_X0 is not a multiple of 32")
 	}
 }
-
-"""
-
-
-
 ```

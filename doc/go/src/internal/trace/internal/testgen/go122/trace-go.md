@@ -224,7 +224,7 @@ go build gentrace.go
 
 总而言之，`go/src/internal/trace/internal/testgen/go122/trace.go` 提供了一个方便的工具，用于生成各种 Go 1.22 版本的跟踪数据，并将其与期望结果一起打包成 `txtar` 文件，用于测试 Go 语言的跟踪功能。正确理解其 API 和命令行参数的使用方式对于有效地编写跟踪相关的单元测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/internal/testgen/go122/trace.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -232,8 +232,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -635,9 +637,4 @@ type Seq uint64
 // Time represents a low-level trace timestamp (which does not necessarily
 // correspond to nanoseconds, like trace.Time does).
 type Time uint64
-
-"""
-
-
-
 ```

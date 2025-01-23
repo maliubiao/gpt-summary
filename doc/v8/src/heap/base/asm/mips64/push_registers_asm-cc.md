@@ -149,15 +149,17 @@ In this example, `recursiveFunction` calls itself repeatedly without a proper ba
 
 While `push_registers_asm.cc` is designed to manage the stack for specific internal V8 operations, understanding how function calls and stack frames work is crucial for avoiding stack overflow errors in your JavaScript code. The assembly code illustrates the mechanics of saving and restoring register values on the stack during function calls, which is a fundamental aspect of how programs execute and manage their memory.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/asm/mips64/push_registers_asm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/base/asm/mips64/push_registers_asm.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ asm(".text                                               \n"
     "  jr $ra                                            \n"
     // Delay slot: Discard all callee-saved registers.
     "  daddiu $sp, $sp, 96                               \n");
-
-"""
-
 ```

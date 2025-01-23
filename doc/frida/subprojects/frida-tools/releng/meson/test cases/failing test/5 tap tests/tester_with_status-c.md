@@ -91,7 +91,7 @@ Let's break down the thought process for analyzing this simple C code snippet in
 
 `tester_with_status.c` 虽然代码简单，但其在 Frida 项目的上下文中扮演着重要的角色。它作为一个预期会失败的测试用例，用于验证 Frida 的测试框架是否能够正确地识别和报告测试失败的情况。这涉及到操作系统进程管理、二进制程序的退出状态码以及标准的测试报告协议 (TAP) 等底层概念。 理解这样的测试用例有助于开发者更好地理解 Frida 的测试流程，并避免在理解测试结果时产生误解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing test/5 tap tests/tester_with_status.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -109,7 +111,4 @@ int main(int argc, char **argv) {
     puts("not ok 1 - some test");
     return 2;
 }
-
-"""
-
 ```

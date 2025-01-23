@@ -115,7 +115,7 @@ By following this thought process, breaking down the code, and connecting it to 
 
 这部分代码的功能是专门从预处理器宏定义中提取 GNU GCC 和 LCC 编译器的版本信息。这是 Frida 在进行动态 instrumentation 时，为了更好地理解目标进程的编译环境而进行的一个重要步骤。这些信息有助于 Frida 更准确有效地进行代码注入、函数 hook 和其他 instrumentation 操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,9 +124,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    if not line:
+### 源代码
+```python
+if not line:
             continue
         d, *rest = line.split(' ', 2)
         if d != '#define':
@@ -151,8 +153,4 @@ def _get_lcc_version_from_defines(defines: T.Dict[str, str]) -> str:
     major = generation_and_major[1:]
     minor = defines.get('__LCC_MINOR__', '0')
     return dot.join((generation, major, minor))
-
-"""
-
-
 ```

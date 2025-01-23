@@ -111,14 +111,16 @@ Response: Here's a thinking process to arrive at the explanation of the fuzzer c
 
 `blink/renderer/platform/math_transform_fuzzer.cc` 是一个用于测试 Blink 引擎中数学字符转换功能的关键工具。它通过生成随机输入来检验 `ItalicMathVariant` 函数的健壮性和正确性，这对于确保浏览器能够正确渲染包含数学内容的网页至关重要。虽然它本身不直接与 JavaScript、HTML 或 CSS 交互，但它测试的代码是这些 Web 技术在处理数学内容时的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/math_transform_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -148,7 +150,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   }
   return 0;
 }
-
-"""
-
 ```

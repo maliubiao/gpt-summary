@@ -90,11 +90,13 @@ console.log(outerFunction(3)); // 输出 38
 
 `frame-constants-loong64.cc` 文件是 V8 引擎在 LoongArch 64 架构上执行 JavaScript 代码的关键组成部分。它定义了栈帧的结构和关键寄存器的使用，使得 V8 能够正确地管理函数调用、作用域和变量访问。 虽然 JavaScript 开发者不直接与之交互，但理解这些底层机制有助于更好地理解 JavaScript 的执行原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/loong64/frame-constants-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -133,7 +135,4 @@ intptr_t MaglevFrame::StackGuardFrameSize(int register_input_count) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_LOONG64
-
-"""
-
 ```

@@ -146,7 +146,7 @@ By following this thought process, breaking down the request, analyzing the code
 
 总而言之，这个 `cpplib.cpp` 文件虽然功能简单，但它是一个很好的例子，可以用来演示动态链接库的基本概念，以及如何使用 Frida 进行动态 instrumentation 和逆向分析。它也涉及到了一些底层的二进制和操作系统知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/6 linkshared/cpplib.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,15 +154,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define BUILDING_DLL
 #include "cpplib.h"
 
 int DLL_PUBLIC cppfunc(void) {
     return 42;
 }
-
-"""
-
 ```

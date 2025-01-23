@@ -188,15 +188,17 @@ By following these steps, iteratively refining the analysis, and focusing on the
 
 总而言之，`GlobalStorageAccessHandle` 是 Blink 渲染引擎中一个关键的组件，它扮演着连接 JavaScript 代码和底层存储机制的桥梁角色，负责管理和提供对各种 Web Storage API 的访问。理解其功能有助于调试与存储相关的 Web 应用问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/storage_access/global_storage_access_handle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -417,7 +419,4 @@ void GlobalStorageAccessHandle::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

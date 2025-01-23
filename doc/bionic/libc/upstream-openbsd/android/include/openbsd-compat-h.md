@@ -226,7 +226,7 @@ sys.stdin.read()
 
 通过这种方式，你可以观察到 Android Framework 或 NDK 的调用如何最终触达到 Bionic 库中的特定函数，并理解这些底层机制的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/android/include/openbsd-compat.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -237,8 +237,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -304,7 +306,4 @@ __LIBC_HIDDEN__ extern char* _mktemp(char*);
 // Only OpenBSD has this at the moment, and we're more likely to just say
 // "malloc is always calloc", so we don't expose this as libc API.
 __LIBC_HIDDEN__ void* recallocarray(void*, size_t, size_t, size_t);
-
-"""
-
 ```

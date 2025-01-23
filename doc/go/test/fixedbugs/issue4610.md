@@ -162,15 +162,17 @@ func main() {
 
 这段特定的测试代码是关于一个历史 bug，所以普通使用者在编写现代 Go 代码时不太可能遇到完全相同的错误。然而，理解结构体和指针的使用仍然是 Go 编程的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4610.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2012 The Go Authors. All rights reserved.
@@ -187,10 +189,4 @@ func main() {
 	var foo bar
 	_ = &foo{} // ERROR "is not a type|expected .;."
 } // GCCGO_ERROR "expected declaration"
-
-
-"""
-
-
-
 ```

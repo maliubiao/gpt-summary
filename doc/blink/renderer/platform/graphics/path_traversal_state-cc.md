@@ -128,14 +128,16 @@ Let's break down the thought process to analyze the `path_traversal_state.cc` fi
 
 总而言之，`blink/renderer/platform/graphics/path_traversal_state.cc` 是 Blink 引擎中处理图形路径的核心组件，它负责管理路径遍历的状态，并提供计算路径长度、查找指定位置点和法线角度等关键功能，这些功能是实现 SVG 和 Canvas 路径渲染的基础。理解其功能有助于理解浏览器如何处理和操作 Web 页面中的矢量图形。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/path_traversal_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007 Eric Seidel <eric@webkit.org>
  *
@@ -359,7 +361,4 @@ void PathTraversalState::ProcessSegment() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

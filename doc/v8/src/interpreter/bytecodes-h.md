@@ -167,7 +167,7 @@ By following these steps and iteratively refining the explanation, we arrive at 
 
 理解这个文件对于深入了解 V8 解释器的工作原理至关重要。它揭示了 JavaScript 代码在底层是如何被分解成一系列微小的操作步骤并执行的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecodes.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecodes.h以.tq结尾，那它是个v8 torque源代码，
@@ -175,8 +175,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -602,7 +604,4 @@ namespace interpreter {
     OperandType::kIdx, OperandType::kUImm, OperandType::kImm)                  \
                                                                                \
   /* Complex flow control For..in */                                           \
-"""
-
-
 ```

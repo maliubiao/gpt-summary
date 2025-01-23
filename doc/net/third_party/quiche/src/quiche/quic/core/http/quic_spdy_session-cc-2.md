@@ -180,7 +180,7 @@ By following these steps, we can generate a comprehensive and accurate answer th
 
 总而言之，这部分 `QuicSpdySession.cc` 代码主要负责在 QUIC 会话中支持更高级的 HTTP/3 特性，特别是不可靠的数据传输 (HTTP/3 Datagram) 和双向通信通道 (WebTransport)。它处理了这些特性的初始化、消息的发送和接收、以及相关的错误处理和状态管理。  它衔接了底层的 QUIC 连接管理和上层的 HTTP/3 协议处理，为构建实时的、低延迟的 Web 应用提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 sent) {
       QUIC_HISTOGRAM_COUNTS("QuicSession.HeaderCompressionRatioHpackSent",
                             ratio, 1, 200, 200,
@@ -486,8 +488,4 @@ void QuicSpdySession::OnConfigNegotiated() {
 #undef ENDPOINT  // undef for jumbo builds
 
 }  // namespace quic
-
-"""
-
-
 ```

@@ -138,14 +138,16 @@ Permissions Policy 通过 HTTP 头部和 HTML 属性进行声明，并影响 Jav
 
 理解 `blink/common/permissions_policy/permissions_policy.cc` 的功能对于 Web 开发者来说至关重要，因为它直接关系到如何在 Web 应用中安全地使用各种强大的浏览器特性，并控制第三方内容的权限，从而提升用户的安全性和隐私。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/permissions_policy/permissions_policy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -774,7 +776,4 @@ const PermissionsPolicyFeatureList& PermissionsPolicy::GetFeatureList() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

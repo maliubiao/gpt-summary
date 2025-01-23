@@ -210,14 +210,16 @@ try {
 
 This Torque code provides the fundamental building blocks for the `Proxy` object in V8, ensuring that the interactions with proxies adhere to the JavaScript specification and helping to catch common errors in proxy handler implementations.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/proxy.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ extern enum ProxyRevokeFunctionContextSlot extends intptr
   kProxyContextLength
 }
 }
-
-"""
-
 ```

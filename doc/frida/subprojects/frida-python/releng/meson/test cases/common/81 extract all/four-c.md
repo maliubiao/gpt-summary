@@ -137,7 +137,7 @@ Java.perform(function () {
 
 总而言之，`four.c` 虽然简单，但作为 Frida 测试用例的一部分，它扮演着验证 Frida 核心功能的重要角色，并涉及到逆向工程的常见技术和底层系统知识。开发者通过编写和分析这类测试用例，可以确保 Frida 的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/81 extract all/four.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,14 +145,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"extractor.h"
 
 int func4(void) {
     return 4;
 }
-
-"""
-
 ```

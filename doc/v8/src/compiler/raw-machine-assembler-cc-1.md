@@ -197,7 +197,7 @@ Node* phi_node = builder->Phi(MachineRepresentation::kWord32, 2,
 
 总而言之，`v8/src/compiler/raw-machine-assembler.cc` 提供了一组工具，用于在 V8 编译器的机器代码生成阶段，以结构化的方式构建底层的操作序列和控制流。它处理了基本块的创建、操作节点的添加、以及控制流和数据流的合并等关键任务。理解其功能对于深入了解 V8 编译器的代码生成过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/raw-machine-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/raw-machine-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -205,8 +205,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ream& os) {
   os << CurrentBlock();
 }
@@ -272,8 +274,4 @@ RawMachineLabel::~RawMachineLabel() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

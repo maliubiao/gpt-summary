@@ -204,7 +204,7 @@ By following this systematic approach, you can effectively analyze and summarize
 
 总而言之，这部分是 `test-code-stub-assembler.cc` 文件中测试 `CodeStubAssembler` 基本功能的起始部分，涵盖了函数调用、基本类型转换和一些基础的数据结构操作。它为后续更复杂的测试用例奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -212,8 +212,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1129,7 +1131,4 @@ void TestNameDictionaryLookup() {
   };
 
   for (size_t i = 0; i < arraysize(non_existing_ke
-"""
-
-
 ```

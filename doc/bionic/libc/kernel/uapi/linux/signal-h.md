@@ -295,7 +295,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/linux/signal.handroid` 这个头文件虽然简单，但它定义了与 Linux 内核信号处理相关的关键常量，这些常量在 Android 的信号处理机制中扮演着基础性的角色，直接影响着应用如何响应和处理各种系统信号。理解这些宏定义有助于深入理解 Android 的底层运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/signal.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -306,8 +306,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -323,7 +325,4 @@ Prompt:
 #define SS_AUTODISARM (1U << 31)
 #define SS_FLAG_BITS SS_AUTODISARM
 #endif
-
-"""
-
 ```

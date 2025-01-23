@@ -150,7 +150,7 @@ By following these steps, I can generate a comprehensive and accurate response t
 
 在这个过程中，查看 `faa.c` 的源代码是为了确认被 Hook 的目标函数的功能，确保 Frida 的 Hook 操作是针对正确的函数，并且能够正确地观察或修改其行为。文件路径中的 `unit` 和 `test cases` 明确表明了这是一个测试环境下的代码。`external library rpath` 提示了测试重点可能在于 Frida 如何处理外部库的加载和链接。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/39 external, internal library rpath/external library/faa.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,13 +158,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int faa_system_value (void)
 {
     return 1969;
 }
-
-"""
-
 ```

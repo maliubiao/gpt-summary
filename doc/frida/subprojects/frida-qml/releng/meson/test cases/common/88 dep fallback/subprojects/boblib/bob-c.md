@@ -128,7 +128,7 @@ By following these steps, we can comprehensively analyze the given C code snippe
 
 总而言之，虽然 `bob.c` 本身非常简单，但它体现了动态 instrumentation 和逆向工程中涉及的一些基本概念，例如函数导出、内存地址、以及如何使用 Frida 进行动态分析和修改。 它的简单性也使其成为测试和学习 Frida 功能的一个很好的例子。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/88 dep fallback/subprojects/boblib/bob.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 #ifdef _MSC_VER
@@ -146,7 +148,4 @@ __declspec(dllexport)
 const char* get_bob(void) {
     return "bob";
 }
-
-"""
-
 ```

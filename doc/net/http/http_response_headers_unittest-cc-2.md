@@ -202,7 +202,7 @@ HTTP 响应头对于 JavaScript 在浏览器中的行为至关重要。以下是
 
 总而言之，`net/http/http_response_headers_unittest.cc` 文件通过大量的单元测试，确保了 `HttpResponseHeaders` 类能够正确地解析和操作 HTTP 响应头，这对于 Chromium 浏览器的网络功能（包括缓存、内容协商、部分内容请求等）的正确运行至关重要。这些测试也为开发者提供了理解和调试相关问题的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_response_headers_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -210,8 +210,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 NSTANTIATE_TEST_SUITE_P(HttpResponseHeaders,
                          RemoveIndividualHeaderTest,
                          testing::ValuesIn(remove_individual_header_tests));
@@ -781,8 +783,4 @@ TEST(HttpResponseHeadersTest, StrictlyEqualsRawMismatch) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
-
 ```

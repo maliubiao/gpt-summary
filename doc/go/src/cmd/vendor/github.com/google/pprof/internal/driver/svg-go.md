@@ -183,7 +183,7 @@ func main() {
 
 总而言之，这段代码的核心功能是增强由 `dot` 工具生成的SVG图像，使其在Web浏览器中具有更好的平移和缩放体验，通过嵌入 `svgpan` JavaScript库并调整SVG结构来实现。 它利用了Go语言的字符串操作和正则表达式功能。理解其功能和潜在的假设对于正确使用和调试与此相关的代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/driver/svg.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -191,8 +191,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -273,9 +275,4 @@ func massageSVG(svg string) string {
 
 	return svg
 }
-
-"""
-
-
-
 ```

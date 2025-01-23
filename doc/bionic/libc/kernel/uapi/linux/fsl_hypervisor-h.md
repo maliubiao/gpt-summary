@@ -320,7 +320,7 @@ except KeyboardInterrupt:
 
 `bionic/libc/kernel/uapi/linux/fsl_hypervisor.handroid` 头文件定义了与 Freescale hypervisor 交互的内核接口。Android 系统通过 Bionic 库提供的 `ioctl` 系统调用，以及可能的 HAL 层封装，来使用这些接口管理 hypervisor 分区、进行内存操作、发送事件通知和管理属性。 理解这些接口对于分析和调试基于 Freescale hypervisor 的 Android 系统至关重要。 使用 Frida 可以动态地观察这些底层的系统调用，帮助我们理解 Android Framework 或 NDK 应用是如何与 hypervisor 进行交互的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/fsl_hypervisor.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -331,8 +331,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -393,7 +395,4 @@ struct fsl_hv_ioctl_prop {
 #define FSL_HV_IOCTL_GETPROP _IOWR(FSL_HV_IOCTL_TYPE, 7, struct fsl_hv_ioctl_prop)
 #define FSL_HV_IOCTL_SETPROP _IOWR(FSL_HV_IOCTL_TYPE, 8, struct fsl_hv_ioctl_prop)
 #endif
-
-"""
-
 ```

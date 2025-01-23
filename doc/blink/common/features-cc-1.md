@@ -98,15 +98,17 @@ Confidence Score: 4/5 (Slight uncertainty on "logical reasoning" and "user error
 
 `blink/common/features.cc` 定义了 Blink 引擎的各种功能开关和参数，是控制浏览器行为的核心配置文件。 这些 Feature Flags 深刻影响着网页的加载、渲染、脚本执行以及各种 Web API 的行为。 理解这些 Feature Flags 的作用对于 Blink 引擎的开发、测试以及性能优化至关重要。 开发者可以通过配置这些 Flags 来启用或禁用特定功能，进行实验，或者调整浏览器的行为以适应不同的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/features.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 equest.
 BASE_FEATURE_PARAM(bool,
                    kLCPPLazyLoadImagePreloadDryRun,
@@ -1540,8 +1542,4 @@ bool IsLinkPreviewTriggerTypeEnabled(LinkPreviewTriggerType type) {
 // DO NOT ADD NEW FEATURES HERE.
 
 }  // namespace blink::features
-
-"""
-
-
 ```

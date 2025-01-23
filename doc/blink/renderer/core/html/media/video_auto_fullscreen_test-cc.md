@@ -132,14 +132,16 @@ Essentially, I'm trying to "read between the lines" of the C++ code, understandi
 
 `video_auto_fullscreen_test.cc` 是 Blink 引擎中一个重要的测试文件，它专注于验证 HTML5 视频元素的自动全屏行为是否符合预期，特别是 `playsinline` 属性的影响。这些测试确保了 Blink 引擎在处理视频全屏逻辑时的正确性，从而为开发者提供一致和可靠的视频播放体验。理解这些测试用例及其背后的逻辑，有助于开发者更好地理解和使用 HTML5 视频功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/video_auto_fullscreen_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -358,7 +360,4 @@ TEST_F(VideoAutoFullscreen, DISABLED_OnPlayTriggersFullscreenWithoutGesture) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

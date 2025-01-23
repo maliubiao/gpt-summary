@@ -124,14 +124,16 @@ By following these steps, you can effectively analyze the given C++ code and pro
 
 总而言之，`heap_compact_test.cc` 是 Blink 引擎中一个重要的测试文件，它确保了堆压缩这一关键的内存管理功能能够正确地工作，从而保障了 JavaScript、HTML 和 CSS 等技术的稳定运行和性能表现。它通过模拟各种场景，验证了堆压缩对不同堆数据结构的影响，并间接地反映了一些与内存管理相关的常见编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/test/heap_compact_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -561,7 +563,4 @@ TEST_F(HeapCompactTest, AvoidCompactionWhenTraitsProhibitMemcpy) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

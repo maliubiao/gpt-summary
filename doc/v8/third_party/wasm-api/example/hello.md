@@ -122,11 +122,13 @@ fetch('hello.wasm')
 
 `hello.cc` 提供了一个使用 V8 的 C++ API 操作 WebAssembly 的例子，展示了加载、编译、实例化和运行 Wasm 模块，以及如何实现从 Wasm 代码回调到宿主环境（这里是 C++）。JavaScript 的 `WebAssembly` API 提供了类似的功能，使得在 Web 浏览器或其他 JavaScript 运行时环境中加载和运行 WebAssembly 代码成为可能。  `hello.cc` 就像一个底层的、更细粒度的视角，展示了 JavaScript 背后的 WebAssembly 机制是如何工作的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/example/hello.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -217,8 +219,4 @@ int main(int argc, const char* argv[]) {
   std::cout << "Done." << std::endl;
   return 0;
 }
-
-
-"""
-
 ```

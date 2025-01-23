@@ -183,15 +183,17 @@ By following this thought process, combining code analysis with an understanding
 
 总而言之，`ext_float_blend.cc` 这个文件在 WebGL 的底层实现中扮演着关键的角色，它负责管理 `EXT_float_blend` 扩展的生命周期和状态，使得 JavaScript 可以通过 WebGL API 来利用该扩展提供的浮点数混合功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/ext_float_blend.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ const char* EXTFloatBlend::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

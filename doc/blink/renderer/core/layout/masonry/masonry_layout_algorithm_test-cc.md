@@ -138,14 +138,16 @@ By following these steps, we can systematically analyze the C++ test file and un
 
 总而言之，`masonry_layout_algorithm_test.cc` 是一个关键的测试文件，用于确保 Chromium Blink 引擎正确实现了 CSS masonry 布局的 `masonry-template-tracks` 属性，保证了网页开发者能够按照 CSS 规范使用这项功能。它通过模拟 HTML 和 CSS 环境，并对算法的输出进行断言，来验证代码的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/masonry/masonry_layout_algorithm_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be found
 // in the LICENSE file.
@@ -216,7 +218,4 @@ TEST_F(MasonryLayoutAlgorithmTest, TemplateTracksExpandedRanges) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -215,15 +215,17 @@ try {
 
 `blink/renderer/core/dom/dom_exception.cc` 文件在 Chromium Blink 引擎中扮演着至关重要的角色，它定义和管理了 DOM 操作中可能发生的各种错误，确保了 Web 平台的稳定性和规范性。它直接关联着 JavaScript 与 HTML 的交互，并为开发者提供了丰富的错误信息，帮助他们调试和修复 Web 应用中的 DOM 相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/dom_exception.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -518,7 +520,4 @@ void DOMException::AddContextToMessages(v8::ExceptionContext type,
 }
 
 }  // namespace blink
-
-"""
-
 ```

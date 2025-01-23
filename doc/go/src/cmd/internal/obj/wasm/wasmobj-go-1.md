@@ -137,7 +137,7 @@ local.set 2  // 假设返回值映射到局部变量索引 2
 
 这部分 `compile` 函数的核心功能是**将 Go 函数的指令序列转换为等价的 WebAssembly 字节码序列**。它负责完成指令级别的翻译，包括算术运算、逻辑运算、控制流、函数调用和内存访问等。同时，它还会进行一些优化，例如将栈指针缓存到局部变量中。 这个过程是 Go 语言编译到 WebAssembly 目标平台至关重要的一步。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/wasm/wasmobj.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -146,9 +146,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-			if p.To.Reg != 0 {
+### 源代码
+```go
+if p.To.Reg != 0 {
 				regUsed[p.To.Reg-MINREG] = true
 			}
 		}
@@ -486,10 +488,4 @@ func writeSleb128(w io.ByteWriter, v int64) {
 		w.WriteByte(c)
 	}
 }
-
-"""
-
-
-
-
 ```

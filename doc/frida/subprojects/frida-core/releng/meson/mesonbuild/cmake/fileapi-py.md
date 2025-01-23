@@ -167,7 +167,7 @@ Assume a simple CMake project with:
 3. **Examine the `query.json` file to ensure the correct kinds of information are being requested.**
 4. **Run the `load_reply()` method in a debugging environment to step through the parsing logic and see if any errors occur during JSON parsing or reference resolution.** The `debug_json` output created in `load_reply()` can be invaluable for inspecting the raw parsed data.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/cmake/fileapi.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -501,7 +503,4 @@ class CMakeFileAPI:
         for i in data.keys():
             assert isinstance(i, str)
         return data
-
-"""
-
 ```

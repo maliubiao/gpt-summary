@@ -117,14 +117,16 @@ This detailed thought process, combining code analysis, domain knowledge (web de
 
 总而言之，`blink/common/frame/frame_policy_mojom_traits.cc` 虽然是一个底层的 C++ 文件，但它在浏览器中扮演着至关重要的角色，因为它负责将高层次的 Web 技术概念 (如 iframe 的安全策略) 转换为可以在浏览器内部进行处理的数据结构，并最终影响到 JavaScript, HTML 和 CSS 的行为。 理解这个文件及其背后的概念有助于开发者更好地理解和调试与 iframe 相关的行为和安全问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/frame/frame_policy_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -144,7 +146,4 @@ bool StructTraits<blink::mojom::FramePolicyDataView, blink::FramePolicy>::Read(
 }
 
 }  // namespace mojo
-
-"""
-
 ```

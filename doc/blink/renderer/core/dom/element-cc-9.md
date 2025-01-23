@@ -252,7 +252,7 @@ bool Element::CanGeneratePseudoElement(PseudoId pseudo_id) const {
 
 总的来说，`element.cc` 在 Blink 渲染引擎的样式处理流程中扮演着至关重要的角色，它将 HTML 结构和 CSS 样式连接起来，为元素的最终渲染呈现提供必要的样式信息。它处于样式计算流程的核心位置，是理解浏览器如何应用 CSS 的关键文件之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -260,8 +260,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Traversal::ParentElement(*top);
   Element* document_element = top->GetDocument().documentElement();
 
@@ -1132,7 +1134,4 @@ bool Element::MayTriggerVirtualKeyboard() const {
 }
 
 bool Element::matches(const AtomicString& s
-"""
-
-
 ```

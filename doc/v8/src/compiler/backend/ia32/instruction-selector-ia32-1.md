@@ -73,12 +73,14 @@ let floatValue = parseFloat("3.14"); // 可能会对应到相关的类型转换�
 
 总而言之，这部分代码是 V8 引擎将 JavaScript 代码转换成底层机器码的关键部分，它负责将高级的抽象操作映射到具体的 IA32 汇编指令，以便 CPU 可以执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/instruction-selector-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 Fixed(node, eax);
   node_t projection1 = selector->FindProjection(node, 1);
   if (selector->valid(projection1)) {
@@ -1724,8 +1726,4 @@ void InstructionSelectorT<Adapter>::VisitWord32AtomicPairCompareExchange(
 
 template <typename Adapter>
 void InstructionSelectorT<Adapter>::VisitS128Const(node_t node) {
- 
-"""
-
-
 ```

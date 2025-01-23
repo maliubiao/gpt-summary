@@ -158,7 +158,7 @@ console.log(test(1, 1, 3, 2)); // 输出 1 (因为 (1 < 1 && 3 > 2) 为 false, (
 
 这个文件的目的是通过各种组合和配置来验证 Turboshaft 编译器在处理复杂的比较和逻辑运算组合时的正确性和鲁棒性，从而确保 V8 能够正确高效地执行相应的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/turboshaft-test-compare-combine.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/turboshaft-test-compare-combine.cc以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1014,8 +1016,5 @@ constexpr uint32_t kMaxDepth = 4;
 //                        |                   |           |
 //                         ------> and <------            |
 //                                  |                     |
-//                             
-"""
-
-
+//
 ```

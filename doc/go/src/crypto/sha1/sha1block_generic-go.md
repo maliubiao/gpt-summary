@@ -124,7 +124,7 @@ go build -tags=purego my_program.go
 
 `sha1block_generic.go` 文件提供了一个在特定架构或编译条件下使用的 SHA1 数据块处理的通用实现。它利用 Go 语言的构建标签机制，作为架构特定优化的备选项或在 `purego` 模式下使用。开发者在使用 `crypto/sha1` 包时，需要了解构建标签的影响，尤其是在关注性能的场景下，不同架构下使用的 `block` 函数实现可能不同。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/sha1/sha1block_generic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -132,8 +132,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -145,9 +147,4 @@ package sha1
 func block(dig *digest, p []byte) {
 	blockGeneric(dig, p)
 }
-
-"""
-
-
-
 ```

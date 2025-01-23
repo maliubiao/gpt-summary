@@ -147,7 +147,7 @@ console.log(riscvSpecificFunction());
 
 总而言之，这部分代码实现了模拟器的核心调试交互功能，让开发者能够控制模拟执行，观察程序状态，并定位错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/riscv/simulator-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/riscv/simulator-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -155,8 +155,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 )\n");
         PrintF("flags\n");
         PrintF("  print flags\n");
@@ -1080,8 +1082,5 @@ void Simulator::Format(Instruction* instr, const char* format) {
   UNIMPLEMENTED_RISCV();
 }
 
-// Calls 
-"""
-
-
+// Calls
 ```

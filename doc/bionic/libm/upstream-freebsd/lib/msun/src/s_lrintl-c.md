@@ -223,7 +223,7 @@ libm.so:
 
 `s_lrintl.c` 文件通过宏定义和包含 `s_lrint.c` 来实现将 `long double` 类型浮点数四舍五入到 `long` 类型整数的功能。它是 Android Bionic `libm` 库的重要组成部分，供 NDK 开发者直接使用，也可能被 Android Framework 通过 JNI 间接调用。理解其功能和潜在的错误使用场景对于编写健壮的 Android native 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_lrintl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -234,15 +234,14 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #define type		long double
 #define	roundit		rintl
 #define dtype		long
 #define	fn		lrintl
 
 #include "s_lrint.c"
-
-"""
-
 ```

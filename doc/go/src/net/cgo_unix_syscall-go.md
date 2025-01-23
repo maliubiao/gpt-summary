@@ -197,7 +197,7 @@ func main() {
 
 `go/src/net/cgo_unix_syscall.go` 是 Go 语言 `net` 包在特定平台下与底层操作系统网络 API 交互的桥梁。它通过 CGo 技术封装了底层的 C 函数和数据结构，为 Go 的网络功能提供了必要的支持，尤其是在地址解析和套接字地址转换方面。虽然普通开发者不会直接使用这个文件中的函数，但了解其功能有助于理解 Go 网络编程的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/cgo_unix_syscall.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,8 +205,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -308,9 +310,4 @@ func cgoSockaddrInet6(ip IP, zone int) *syscall.RawSockaddr {
 	copy(sa.Addr[:], ip)
 	return (*syscall.RawSockaddr)(unsafe.Pointer(&sa))
 }
-
-"""
-
-
-
 ```

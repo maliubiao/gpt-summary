@@ -179,15 +179,17 @@ let myObjects = createObjects();
 
 `YoungGenerationMarkingVisitor` 的作用正是识别这些仍然存活的对象，确保只有真正的垃圾才会被回收。理解其工作原理有助于开发者编写更高效、更少内存泄漏的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/young-generation-marking-visitor.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/young-generation-marking-visitor.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -330,7 +332,4 @@ class YoungGenerationMarkingVisitor final
 }  // namespace v8
 
 #endif  // V8_HEAP_YOUNG_GENERATION_MARKING_VISITOR_H_
-
-"""
-
 ```

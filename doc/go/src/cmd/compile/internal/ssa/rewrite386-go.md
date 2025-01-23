@@ -215,7 +215,7 @@ In summary, the first part of `go/src/cmd/compile/internal/ssa/rewrite386.go` de
 
 This part lays the groundwork for translating Go code into efficient 386 machine code by transforming the architecture-independent SSA representation into a form that is closer to the target architecture's instruction set.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewrite386.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -223,8 +223,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Code generated from _gen/386.rules using 'go generate'; DO NOT EDIT.
 
 package ssa
@@ -3026,10 +3028,4 @@ func rewriteValue386_Op386LEAL(v *Value) bool {
 			v.AuxInt = int32ToAuxInt(c)
 			v.Aux = symToAux(s)
 			v.AddArg2(x, y)
-
-"""
-
-
-
-
 ```

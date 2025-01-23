@@ -250,15 +250,17 @@ function isSmall(n) {
 
 总之，`v8/src/baseline/baseline-assembler.h` 定义了 V8 引擎 Baseline 编译器生成机器码的关键接口，它将高级的汇编操作抽象出来，使得编译器可以更方便地生成执行 JavaScript 代码所需的指令。它与 JavaScript 的每一个功能都息息相关，是 V8 引擎将 JavaScript 代码转化为可执行机器码的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/baseline-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/baseline/baseline-assembler.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -529,7 +531,4 @@ class EnsureAccumulatorPreservedScope final {
 }  // namespace v8
 
 #endif  // V8_BASELINE_BASELINE_ASSEMBLER_H_
-
-"""
-
 ```

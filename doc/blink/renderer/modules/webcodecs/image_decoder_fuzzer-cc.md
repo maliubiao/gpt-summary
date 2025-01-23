@@ -165,15 +165,17 @@ invocations {
 
 总而言之，`image_decoder_fuzzer.cc` 是一个关键的工具，用于确保 Chromium 浏览器在处理各种图像数据和 API 调用时具有高度的稳定性和安全性。它通过模拟各种场景，帮助开发者发现潜在的 bug 和安全漏洞。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/image_decoder_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -360,7 +362,4 @@ DEFINE_BINARY_PROTO_FUZZER(
 }
 
 }  // namespace blink
-
-"""
-
 ```

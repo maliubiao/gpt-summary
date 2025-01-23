@@ -126,15 +126,17 @@ By following these steps, I aimed to provide a comprehensive and informative ans
 
 总而言之，`block_layout_algorithm_test.cc` 的主要功能是 **系统地测试 Blink 引擎中负责块级元素布局的核心算法 `BlockLayoutAlgorithm` 的正确性**。它通过创建各种模拟的 HTML 结构和 CSS 样式场景，并断言布局结果是否符合预期，从而确保浏览器能够准确地渲染网页内容。测试涵盖了基本的尺寸计算、复杂的布局特性（如外边距折叠和浮动），以及性能优化相关的缓存机制。 这对于保证浏览器渲染的稳定性和一致性至关重要。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/block_layout_algorithm_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1069,7 +1071,4 @@ TEST_F(BlockLayoutAlgorithmTest, CollapsingMarginsEmptyBlockWithClearance) {
       /* #zero-inner margin-top */ Length::Fixed(0),
       /* #zero-inner margin-bottom */ Length::Fixed(0),
       /* #zero margin-bottom */
-"""
-
-
 ```

@@ -151,15 +151,17 @@ fetch('https://example.com', {
 
 总而言之，`qpack_required_insert_count.cc` 文件是 Chromium 网络栈中处理 QPACK 协议中关键的同步机制——Required Insert Count 的核心组件，确保了 HTTP/3 连接中头部压缩的可靠性和一致性。虽然 JavaScript 不直接调用它，但用户发起的网络请求是触发这段代码执行的根本原因。 理解这个文件的功能有助于我们理解 HTTP/3 的底层工作原理以及排查相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/qpack/qpack_required_insert_count.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ bool QpackDecodeRequiredInsertCount(uint64_t encoded_required_insert_count,
 }
 
 }  // namespace quic
-
-"""
-
 ```

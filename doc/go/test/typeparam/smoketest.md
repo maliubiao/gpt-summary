@@ -308,15 +308,17 @@ func main() {
 
 总而言之，`go/test/typeparam/smoketest.go` 是 Go 语言泛型功能的基础性验证代码，它通过一系列简单的声明来确保泛型语法的正确性。理解这个文件有助于学习和掌握 Go 语言的泛型编程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/smoketest.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compile
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -373,9 +375,4 @@ type _ interface {
 	m2()
 	T3[bool]
 }
-
-"""
-
-
-
 ```

@@ -155,7 +155,7 @@ This iterative process of understanding, analyzing, connecting, structuring, and
 
 通过查看 `detect-netfx.py` 的源代码，用户可以更清楚地了解 Frida 是如何检测 .NET Framework 环境的，以及哪些文件路径和注册表键是检查的关键。这有助于用户更准确地诊断问题并采取相应的解决措施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/detect-netfx.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 from pathlib import Path
 import sys
@@ -212,7 +214,4 @@ def find_sdk() -> Optional[Path]:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

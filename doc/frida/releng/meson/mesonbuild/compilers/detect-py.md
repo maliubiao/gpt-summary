@@ -114,7 +114,7 @@ Based on this analysis, I can summarize the core function of the code.
 
 总之，`frida/releng/meson/mesonbuild/compilers/detect.py` 是 Frida 构建系统的关键组成部分，它负责自动检测和配置编译器，为后续的编译和链接过程奠定基础。理解其功能和工作原理对于调试 Frida 构建问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 
@@ -807,7 +809,4 @@ def detect_fortran_compiler(env: 'Environment', for_machine: MachineChoice) -> C
                     popen_exceptions[join_args(compiler)] = 'no pre-processor defines'
                     continue
                 if guess_gcc_or_lcc == 'lcc
-"""
-
-
 ```

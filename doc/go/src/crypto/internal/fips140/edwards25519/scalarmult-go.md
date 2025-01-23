@@ -180,7 +180,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言中 Edwards25519 椭圆曲线标量乘法的核心实现，提供了安全（恒定时间）和高效（利用预计算）的乘法操作，同时也提供了一个变时间的版本以供性能敏感但安全性要求稍低的场景使用。使用者需要理解不同函数的特性和适用场景，以避免潜在的错误和安全风险。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/edwards25519/scalarmult.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -188,8 +188,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright (c) 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -404,9 +406,4 @@ func (v *Point) VarTimeDoubleScalarBaseMult(a *Scalar, A *Point, b *Scalar) *Poi
 	v.fromP2(tmp2)
 	return v
 }
-
-"""
-
-
-
 ```

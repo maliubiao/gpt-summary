@@ -153,15 +153,17 @@ try {
 
 `v8/src/codegen/external-reference-table.cc` 是 V8 引擎代码生成过程中不可或缺的一部分，它维护了一个关键的外部引用表，用于将符号名称映射到 V8 内部各种组件的地址。这使得编译器能够生成引用这些外部符号的代码，并在运行时进行正确的链接和调用。虽然普通 JavaScript 开发者不会直接操作这个表，但理解其背后的概念有助于理解 V8 引擎的工作原理以及避免一些潜在的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/external-reference-table.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/external-reference-table.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -518,7 +520,4 @@ void ExternalReferenceTable::AddNativeCodeStatsCounters(Isolate* isolate,
 }  // namespace v8
 
 #undef SYMBOLIZE_FUNCTION
-
-"""
-
 ```

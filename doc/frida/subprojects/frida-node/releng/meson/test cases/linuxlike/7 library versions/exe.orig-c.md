@@ -165,7 +165,7 @@ Finally, the key is to organize the information logically, using clear headings 
 
 总而言之，`exe.orig.c` 虽然代码简单，但其在 Frida 项目中的位置和用途表明它是用于测试 Frida 功能的一个基础组件，涉及到了动态插桩、逆向工程、操作系统底层机制以及软件构建和测试等多个方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/linuxlike/7 library versions/exe.orig.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int myFunc (void);
 
 int main(void)
@@ -183,7 +185,4 @@ int main(void)
     return 0;
   return 1;
 }
-
-"""
-
 ```

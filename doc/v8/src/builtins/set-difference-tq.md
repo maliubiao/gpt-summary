@@ -152,14 +152,16 @@ console.log(differenceSet); // 输出: Set(2) { 1, 2 }
 
 `v8/src/builtins/set-difference.tq` 中的代码实现了 `Set.prototype.difference` 方法，它通过高效的内部操作（如 `FastDifference` 宏）来计算两个 Set 的差集。代码针对不同的输入类型进行了优化，并包含了错误处理机制，例如检查接收者是否为 Set 对象。用户常犯的错误包括在非 Set 对象上调用该方法，或者传递不符合预期的参数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/set-difference.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -352,7 +354,4 @@ macro FastDifference<T : type extends FixedArray>(
   unreachable;
 }
 }
-
-"""
-
 ```

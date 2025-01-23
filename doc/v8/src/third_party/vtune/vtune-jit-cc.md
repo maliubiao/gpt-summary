@@ -195,15 +195,17 @@ iJIT_NotifyEvent(iJVM_EVENT_TYPE_METHOD_LOAD_FINISHED, &jmethod);
 
 总而言之，`v8/src/third_party/vtune/vtune-jit.cc` 是 V8 与 VTune 之间重要的桥梁，它使得 VTune 能够深入分析 V8 引擎动态生成的代码，帮助开发者理解 JavaScript 代码的运行时行为和性能特征，从而发现和修复潜在的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/vtune/vtune-jit.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/third_party/vtune/vtune-jit.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
   This file is provided under a dual BSD/GPLv2 license.  When using or
   redistributing this file, you may do so under either license.
@@ -468,7 +470,4 @@ v8::JitCodeEventHandler GetVtuneCodeEventHandler() {
 }
 
 }  // namespace vTune
-
-"""
-
 ```

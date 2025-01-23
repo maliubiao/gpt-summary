@@ -137,7 +137,7 @@ myObject = null; // 对象不再被 `myObject` 引用，变得不可达，成为
 
 `v8/src/heap/mark-compact.cc` 是 V8 引擎中实现标记-压缩垃圾回收算法的核心 C++ 源代码文件。它负责标记堆内存中的活动对象，并为后续的压缩操作做准备。这个文件直接关系到 JavaScript 的内存管理，确保不再使用的对象能够被回收，防止内存泄漏，从而保证 JavaScript 应用程序的稳定运行。它不是 Torque 源代码。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/mark-compact.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/mark-compact.cc以.tq结尾，那它是个v8 torque源代码，
@@ -145,8 +145,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1027,7 +1029,4 @@ void MarkCompactCollector::Finish() {
     // the young generation.
     if (!v8_flags.minor_ms) {
       DCHECK_EQ(
-"""
-
-
 ```

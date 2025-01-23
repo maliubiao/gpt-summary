@@ -142,7 +142,7 @@ The `file_net_log_observer_unittest.cc` file contains unit tests for the `FileNe
 
 该文件的主要功能是 **作为 `FileNetLogObserver` 类的单元测试套件，验证其在各种场景下的日志记录功能是否正确可靠，包括有界和无界模式、事件添加、文件大小限制、并发写入、自定义数据以及错误处理等。** 它确保了 Chromium 网络栈中日志记录机制的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/log/file_net_log_observer_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1106,8 +1108,5 @@ TEST_F(FileNetLogObserverBoundedTest, PartiallyOverwriteFiles) {
 //
 //   constants.json      -- succeess
 //   event_file_0.json   -- fails to open
-// 
-"""
-
-
+//
 ```

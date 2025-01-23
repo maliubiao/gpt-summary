@@ -174,7 +174,7 @@ CompareISODate(date1_earlier, date3_same) -> 0
 
 作为 V8 引擎中处理 `Temporal` API 的第 9 部分，这个文件主要负责实现 `Temporal` API 中**基础的日期和时间操作**。它提供了用于验证、比较、调整和计算日期和时间的核心 C++ 函数。这些底层函数为 JavaScript 中 `Temporal` 对象的创建和操作提供了坚实的基础。考虑到这是一个较大的功能模块的一部分，可以推测之前的模块可能处理了 `Temporal` API 的类型定义、属性访问等，而后续的模块可能会涉及更复杂的时区处理、格式化、解析等功能。 该文件专注于提供构建更高级日期时间功能的构建块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -182,9 +182,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共25部分，请归纳一下它的功能
+```
 
-"""
- ? 366 : 365;
+### 源代码
+```cpp
+? 366 : 365;
 }
 
 bool IsValidTime(Isolate* isolate, const TimeRecord& time) {
@@ -944,7 +946,4 @@ Maybe<DateDurationRecord> UnbalanceDurationRelative(
       // ii. Let untilOptions be ! OrdinaryObjectCreate(null).
       Handle<JSObject> until_options = factory->NewJSObjectWithNullProto();
       // ii
-"""
-
-
 ```

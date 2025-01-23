@@ -133,7 +133,7 @@ func main() {
 
 总而言之，`go/src/crypto/internal/fips140/bigmod/nat_asm.go`  是 Go 语言 `crypto` 库中为了满足 FIPS 140 标准而提供的针对特定 CPU 架构优化的大整数模运算底层实现。它通过汇编代码提升性能，并由上层 `crypto` 包的 API 间接使用。开发者通常不需要直接与这个文件中的代码交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/bigmod/nat_asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -141,8 +141,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -180,9 +182,4 @@ func addMulVVW1536(z, x *uint, y uint) (c uint)
 
 //go:noescape
 func addMulVVW2048(z, x *uint, y uint) (c uint)
-
-"""
-
-
-
 ```

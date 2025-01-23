@@ -113,15 +113,17 @@ Let's break down the thought process for analyzing the given C++ unittest file.
 
 `credential_manager_type_converters_unittest.cc` 是一个至关重要的单元测试文件，它保证了 Chromium Blink 引擎中 Credential Management API 涉及的各种数据类型在不同的表示形式之间能够正确地转换。这对于 API 的正确性和稳定性至关重要，并且间接地影响了使用该 API 的 Web 应用的功能。开发者可以通过理解这些测试用例，更好地理解 Credential Management API 的内部工作原理以及如何正确地使用它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/credentialmanagement/credential_manager_type_converters_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -585,7 +587,4 @@ TEST(CredentialManagerTypeConvertersTest, NoClientId) {
 }
 
 }  // namespace mojo
-
-"""
-
 ```

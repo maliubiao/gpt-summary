@@ -230,12 +230,14 @@ The request also asks for JavaScript examples if a connection exists between the
 
 总而言之，`js-create-lowering.cc` 是 V8 编译器中负责将 JavaScript 对象创建操作转化为底层实现的模块，它在 JavaScript 代码的编译和优化过程中扮演着关键的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-create-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1686,8 +1688,4 @@ Reduction JSCreateLowering::ReduceJSCreateObject(Node* node) {
   a.Allocate(instance_size, AllocationType::kYoung, Type::Any());
   a.Store(AccessBuilder::ForMap(), instance_map);
   a.Store(AccessBuilder::ForJSObjectPropertiesOrHash(), properties);
-
-"""
-
-
 ```

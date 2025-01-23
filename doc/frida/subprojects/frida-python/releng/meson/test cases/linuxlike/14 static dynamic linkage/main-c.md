@@ -140,7 +140,7 @@ Let's break down the thought process for analyzing this C code snippet in the co
 
 尽管 `main.c` 代码非常简洁，但它作为一个 Frida 测试用例，涵盖了逆向工程中关于库版本信息获取、动态链接与静态链接的区别、以及 Frida 动态插桩能力的应用等多个重要概念。通过分析这个简单的例子，可以更好地理解 Frida 的工作原理以及在实际逆向分析中的应用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/linuxlike/14 static dynamic linkage/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "stdio.h"
 #include "zlib.h"
 
@@ -157,7 +159,4 @@ int main(void) {
     printf("%s\n", zlibVersion());
     return 0;
 }
-
-"""
-
 ```

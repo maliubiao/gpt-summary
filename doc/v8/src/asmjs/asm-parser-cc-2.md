@@ -209,7 +209,7 @@ AsmType* AsmJsParser::AdditiveExpression() {
 
 总而言之，`v8/src/asmjs/asm-parser.cc` 是 V8 引擎中至关重要的一个组件，它负责将 asm.js 代码转换为可执行的 WebAssembly，并在转换过程中进行严格的语法和类型检查，从而保证了 asm.js 代码的性能和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/asmjs/asm-parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/asmjs/asm-parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -217,8 +217,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 F64Le, F32Le, "<=");
       HANDLE_CASE('>', I32GtS, I32GtU, F64Gt, F32Gt, ">");
       HANDLE_CASE(TOK(GE), I32GeS, I32GeU, F64Ge, F32Ge, ">=");
@@ -869,8 +871,4 @@ void AsmJsParser::GatherCases(ZoneVector<int32_t>* cases) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

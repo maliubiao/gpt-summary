@@ -152,15 +152,17 @@ While developers don't directly *control* escape analysis, understanding its imp
 
 The `go/test/escape.go` file is a crucial part of the Go project's testing infrastructure. It systematically verifies the correctness of the compiler's escape analysis, ensuring that memory is managed efficiently and safely according to Go's memory model. It highlights the scenarios where local variables need to be promoted to the heap to maintain their validity beyond their original scope.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -387,9 +389,4 @@ func main() {
 		panic("BUG: no escape")
 	}
 }
-
-"""
-
-
-
 ```

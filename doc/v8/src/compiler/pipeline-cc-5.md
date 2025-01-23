@@ -129,7 +129,7 @@ for (let i = 0; i < 10000; i++) {
 
 总而言之，这段代码是 TurboFan 编译器的核心组成部分，负责将优化后的中间表示转换为可执行的机器码，并进行最终的确认和输出。它涵盖了代码生成的关键步骤，包括指令生成、寄存器分配和最终代码的生成与调试信息的输出。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/pipeline.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/pipeline.cc以.tq结尾，那它是个v8 torque源代码，
@@ -137,8 +137,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nt();
   int virtual_registers = code->VirtualRegisterCount();
   size_t hash_code = base::hash_combine(instruction_blocks, virtual_registers);
@@ -424,8 +426,4 @@ std::ostream& operator<<(std::ostream& out, const InstructionRangesAsJSON& s) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

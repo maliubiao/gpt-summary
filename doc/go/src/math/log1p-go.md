@@ -159,7 +159,7 @@ func main() {
 
 总而言之，这段 `go/src/math/log1p.go` 代码的核心功能是提供一个高精度的 `ln(1+x)` 计算方法，尤其适用于 `x` 接近零的情况。它通过一系列数学技巧和优化手段实现了这一目标，是 Go 语言标准库中 `math` 包的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/log1p.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -167,8 +167,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -372,9 +374,4 @@ func log1p(x float64) float64 {
 	}
 	return float64(k)*Ln2Hi - ((hfsq - (s*(hfsq+R) + (float64(k)*Ln2Lo + c))) - f)
 }
-
-"""
-
-
-
 ```

@@ -161,7 +161,7 @@ v (OpOr32)
 
 这部分 `rewriteMIPS.go` 代码专注于优化 MIPS 架构下的位操作、选择操作、存储操作以及零值初始化等。它通过模式匹配和替换，将通用的 SSA 操作转换为更符合 MIPS 架构特性的指令序列，从而提升生成代码的效率。 例如，它使用移位和或运算的组合来实现循环移位，并根据数据大小选择合适的存储指令。 这部分是 Go 编译器后端代码生成阶段的关键组成部分，负责将架构无关的中间表示转化为目标架构的高效机器码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteMIPS.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -170,9 +170,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
- b.NewValue0(v.Pos, OpMIPSMOVWconst, typ.UInt32)
+### 源代码
+```go
+b.NewValue0(v.Pos, OpMIPSMOVWconst, typ.UInt32)
 		v1.AuxInt = int32ToAuxInt(c & 31)
 		v0.AddArg2(x, v1)
 		v2 := b.NewValue0(v.Pos, OpRsh32Ux32, t)
@@ -1530,9 +1532,4 @@ func rewriteValueMIPS_OpZero(v *Value) bool {
 		v1 := b.NewValue0(v.Pos, OpMIPSMOVBstore, types.TypeMem)
 		v1.AuxInt = int32ToAuxInt(0)
 		v1
-"""
-
-
-
-
 ```

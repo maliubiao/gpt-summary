@@ -227,7 +227,7 @@ def my_function(*, kwarg1, kwarg2):
 
 这个文件的主要功能是定义了一组 Python 装饰器，用于增强 Meson 构建系统中解释器函数的健壮性和可靠性。这些装饰器专注于**参数校验、类型检查、参数处理和功能特性控制**，旨在防止因参数错误或使用了不兼容的功能而导致的构建失败，并提供清晰的错误信息帮助开发者进行调试。它们是 Frida Python 绑定构建过程中的重要组成部分，虽然不直接参与逆向操作，但确保了构建出的 Frida Python API 的质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/interpreterbase/decorators.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -236,8 +236,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -925,7 +927,4 @@ class FeatureNew(FeatureCheckBase):
     @staticmethod
     def get_warning_str_prefix(tv: str) -> str:
         retur
-"""
-
-
 ```

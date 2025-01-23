@@ -143,15 +143,17 @@ Let's break down the thought process for analyzing the `selector_query.cc` file.
 
 总而言之，`blink/renderer/core/css/selector_query.cc` 是 Blink 引擎中负责高效执行 CSS 选择器查询的关键组件，它连接了 CSS 样式规则、HTML DOM 结构和 JavaScript DOM 操作，是现代 Web 开发中不可或缺的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/selector_query.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011, 2013 Apple Inc. All rights reserved.
  * Copyright (C) 2014 Samsung Electronics. All rights reserved.
@@ -796,7 +798,4 @@ void SelectorQueryCache::Invalidate() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

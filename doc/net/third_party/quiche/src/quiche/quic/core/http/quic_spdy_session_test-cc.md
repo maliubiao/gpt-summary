@@ -175,7 +175,7 @@ Review the generated response for clarity, accuracy, and completeness. Ensure it
 
 总而言之，`net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_session_test.cc` 的第一部分主要负责搭建测试环境，定义辅助测试类，并测试 `QuicSpdySession` 类的基础会话管理、流管理、加密握手以及初步的 WebTransport 和 HTTP Datagram 支持功能。这些测试确保了 `QuicSpdySession` 能够正确地处理 QUIC 连接和基于 QUIC 的 HTTP/2 或 HTTP/3 通信，这直接影响着浏览器中 JavaScript 发起的网络请求的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1019,7 +1021,4 @@ TEST_P(QuicSpdySessionTestServer,
   CompleteHandshake();
   EXPECT_CALL(*writer_, WritePacket(_, _, _, _, _, _))
       .W
-"""
-
-
 ```

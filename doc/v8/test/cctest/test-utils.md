@@ -103,11 +103,13 @@ console.log(int3); // 输出: 1000000
 
 总而言之，`v8/test/cctest/test-utils.cc` 文件虽然不包含直接的 JavaScript 代码，但它通过测试 V8 内部的 C++ 实用工具函数，间接地确保了 V8 引擎能够正确且高效地执行各种 JavaScript 代码。 这些底层的工具是构建高性能 JavaScript 引擎的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -396,7 +398,4 @@ TEST(CPlusPlus11Features) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

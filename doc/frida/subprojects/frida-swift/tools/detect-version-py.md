@@ -140,15 +140,17 @@ By following this step-by-step analysis, focusing on the code's logic, dependenc
 
 作为调试线索，如果用户报告了与版本相关的问题，例如某个功能在特定版本不可用，或者在升级 Frida 后脚本行为发生变化，那么查看 `detect-version.py` 的代码可以帮助理解版本检测的逻辑，从而判断用户获取的版本信息是否准确，以及版本检测机制是否正常工作。例如，如果用户报告的版本是 "0.0.0"，但他们声称已经安装了特定版本的 Frida，那么就需要检查他们的环境变量设置和 `releng` 目录是否存在，以排查版本检测失败的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/tools/detect-version.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 from pathlib import Path
 import sys
@@ -187,7 +189,4 @@ def releng_location_exists(location: Path) -> bool:
 
 if __name__ == "__main__":
     print(detect_version())
-
-"""
-
 ```

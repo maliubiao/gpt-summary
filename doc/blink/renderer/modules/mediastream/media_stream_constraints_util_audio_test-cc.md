@@ -117,7 +117,7 @@ Strategizing complete. I will now proceed with generating the response based on 
 
 这个 C++ 代码文件的主要功能是**作为 Blink 引擎中音频媒体流约束处理逻辑的单元测试套件**。它通过定义各种测试用例，验证 `SelectSettingsAudioCapture` 等关键函数在接收到不同的音频约束时，是否能够正确地选择合适的音频捕获设置，并涵盖了基本的约束类型、组合约束、设备特定约束以及内容捕获等多种场景。这确保了当网页通过 JavaScript 的 `getUserMedia` API 请求音频访问时，Blink 引擎能够按照规范和用户的意愿选择最佳的音频配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_audio_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -974,8 +976,4 @@ TEST_P(MediaStreamConstraintsUtilAudioTest, ChannelsWithSource) {
 
   std::unique_ptr<blink::LocalMediaStreamAudioSource> source =
       GetLocalMediaStreamAudioSource(false /* enable_system_echo_canceller */,
-                                    
-"""
-
-
 ```

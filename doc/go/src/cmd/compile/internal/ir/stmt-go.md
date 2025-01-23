@@ -245,15 +245,17 @@ While this code is internal to the compiler, understanding how it represents sta
 
 `go/src/cmd/compile/internal/ir/stmt.go` is a fundamental piece of the Go compiler. It defines the data structures used to represent Go statements in the compiler's internal representation. This representation is crucial for the subsequent phases of compilation, such as type checking, optimization, and code generation. Understanding this code provides insight into how the Go compiler understands and processes the structure of Go programs.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ir/stmt.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -759,9 +761,4 @@ func NewTypeSwitchGuard(pos src.XPos, tag *Ident, x Node) *TypeSwitchGuard {
 	n.op = OTYPESW
 	return n
 }
-
-"""
-
-
-
 ```

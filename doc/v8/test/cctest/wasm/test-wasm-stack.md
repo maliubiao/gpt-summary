@@ -115,11 +115,13 @@ try {
 
 **总结来说，`test-wasm-stack.cc` 是 V8 引擎中用于保证 WebAssembly 和 JavaScript 协同工作时，错误处理和堆栈信息收集功能正确性的重要测试文件。它确保了开发者在混合使用 JavaScript 和 WebAssembly 时，能够获得有用的调试信息。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-wasm-stack.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -409,7 +411,4 @@ WASM_COMPILED_EXEC_TEST(CollectDetailedWasmStack_WasmError) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

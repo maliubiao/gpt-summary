@@ -110,14 +110,16 @@ The user wants to understand the functionality of the `reverb_convolver_stage.cc
 
 `reverb_convolver_stage.cc` 是 Blink 引擎中实现混响效果的一个核心组件，它负责将音频信号与脉冲响应片段进行卷积，并管理相关的延迟。它主要通过 JavaScript 中的 Web Audio API 被使用，为网页提供丰富的音频处理能力。理解其功能有助于开发者更好地利用 Web Audio API 创建出色的音频体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/reverb_convolver_stage.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -346,7 +348,4 @@ void ReverbConvolverStage::Reset() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -203,15 +203,17 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 总而言之，这段代码是 Blink 渲染引擎中 HTML 解析器的核心组成部分，它负责将解析后的 HTML 结构转化为浏览器可以理解和渲染的 DOM 树。它处理了各种 HTML 语法规则、错误处理以及与 JavaScript 功能（如自定义元素和 DOM Parts）的集成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_construction_site.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 gImpl::Create8BitIfPossible(token->SystemIdentifier());
   auto* doctype = MakeGarbageCollected<DocumentType>(
       document_, token->GetName(), public_id, system_id);
@@ -943,8 +945,4 @@ void HTMLConstructionSite::PendingDOMParts::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

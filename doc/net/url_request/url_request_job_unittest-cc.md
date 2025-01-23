@@ -128,15 +128,17 @@ Let's break down the thought process for analyzing the provided C++ code.
 
 因此，`net/url_request/url_request_job_unittest.cc` 文件中的测试用例模拟了各种网络场景和响应，帮助开发者确保 `URLRequestJob` 在实际用户操作中能够正确、稳定地工作，并能处理各种异常情况。当用户遇到网络请求相关的问题时，理解 `URLRequestJob` 的工作原理和相应的测试可以帮助开发者缩小问题范围，定位 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_job_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -945,7 +947,4 @@ TEST(URLRequestJobComputeReferrer,
 }
 
 }  // namespace net
-
-"""
-
 ```

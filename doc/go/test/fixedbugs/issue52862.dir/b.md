@@ -171,15 +171,17 @@ go run main.go  # 假设 main.go 在 go/test/fixedbugs/ 目录下
 
 总而言之，`b.go` 的核心功能就是一个简单的函数调用转发器，它强调了 Go 语言中跨包调用的机制，并且使用相对路径导入。 使用者需要注意相对路径导入的局限性和避免循环依赖的问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue52862.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -191,9 +193,4 @@ import "./a"
 func F() complex128 {
 	return a.F()
 }
-
-"""
-
-
-
 ```

@@ -215,15 +215,17 @@ bool is_internalized2 = !(type2 & internal::kIsNotInternalizedMask);
 
 总而言之，`v8/src/objects/instance-type.h` 是 V8 引擎中一个核心的头文件，它定义了对象类型的编码方式，是理解 V8 内部对象表示和处理的基础。虽然一般的 JavaScript 开发者不会直接接触到它，但它对于理解 V8 的底层机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/instance-type.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/instance-type.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -566,7 +568,4 @@ static constexpr InstanceType PROPERTY_DICTIONARY_TYPE = NAME_DICTIONARY_TYPE;
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_INSTANCE_TYPE_H_
-
-"""
-
 ```

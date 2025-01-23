@@ -106,7 +106,7 @@ I will summarize these functionalities in detail.
 
 这部分代码是 `testdir` 测试框架的核心组成部分，专注于自动化测试的验证环节。它提供了一系列函数，用于比较测试程序的输出、检查预期的错误信息、验证生成的汇编代码、根据构建标签过滤测试，以及提供一些辅助功能来管理测试环境和解析测试数据。 它的主要目的是确保编译器在各种场景下的行为符合预期，包括输出结果、错误报告和生成的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/testdir/testdir_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -115,8 +115,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ile, if any (replace ".go" with ".out").
 // If they don't match, fail with an informative message.
 func (t test) checkExpectedOutput(gotBytes []byte) error {
@@ -963,10 +965,4 @@ func replacePrefix(s, old, new string) string {
 	}
 	return s
 }
-
-"""
-
-
-
-
 ```

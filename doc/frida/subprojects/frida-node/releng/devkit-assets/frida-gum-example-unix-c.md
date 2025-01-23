@@ -241,7 +241,7 @@ By following this structured approach, breaking down the code into its component
 
 总而言之，`frida-gum-example-unix.c` 是一个很好的 Frida 入门示例，展示了如何使用 Frida 的 C API 进行基本的函数拦截，并提供了理解 Frida 工作原理的基础。 了解了这个示例，可以帮助用户进一步学习和使用 Frida 进行更复杂的动态 Instrumentation 任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/devkit-assets/frida-gum-example-unix.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -249,8 +249,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-gum.h"
 
 #include <fcntl.h>
@@ -373,7 +375,4 @@ static void
 example_listener_init (ExampleListener * self)
 {
 }
-
-"""
-
 ```

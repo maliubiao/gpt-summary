@@ -119,15 +119,17 @@ This detailed thought process, moving from the code itself to its broader contex
 
 总而言之，`identifiability_study_helper_test.cc` 是一个测试文件，用于验证 Blink 引擎中用于 Canvas 2D API 可识别性研究的辅助类的正确性。它间接地反映了浏览器开发者对于通过 Canvas 进行用户识别的关注，并尝试通过技术手段来理解和分析这种可能性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/identifiability_study_helper_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ TEST(IdentifiabilityStudyHelperTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

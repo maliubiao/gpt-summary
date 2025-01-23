@@ -267,15 +267,17 @@ fetch('callbacks.wasm')
 
 理解这些测试用例和可能出现的错误，对于开发和调试涉及 WebAssembly 和 C++ 交互的程序至关重要。`callbacks.cc` 提供了一组很好的示例，展示了如何正确地使用 V8 的 Wasm C API 来实现回调功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/callbacks.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/wasm-api-tests/callbacks.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -609,7 +611,4 @@ TEST_F(WasmCapiTest, DirectCallCapiFunctionWithManyArgs) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

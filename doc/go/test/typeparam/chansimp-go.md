@@ -230,15 +230,17 @@ go test ./
 
 `go/test/typeparam/chansimp.go` 很可能是一个 Go 语言测试文件，其主要目的是验证 Go 语言中泛型与通道结合使用时的各种特性和行为。它通过编写各种测试用例来确保编译器能够正确处理泛型通道的声明、使用、类型推断以及发送和接收操作。理解泛型和通道的基本概念，以及它们之间的交互方式，有助于避免在使用这个功能时犯错。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/chansimp.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -246,9 +248,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

@@ -134,7 +134,7 @@ Now, let's generate the detailed response.
 
 这部分 `transform_stream.cc` 代码主要负责 `TransformStream` 的**创建、初始化和核心数据转换流程的管理**。它定义了 `TransformStream` 类，实现了与 JavaScript 的接口，并封装了数据转换和刷新的内部逻辑，包括如何调用用户提供的 JavaScript transformer 函数。此外，它还涉及了背压的初步管理和错误处理机制的建立。这部分代码是 `TransformStream` 功能的基础，为后续的数据处理和流的生命周期管理奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/streams/transform_stream.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -980,7 +982,4 @@ void TransformStream::Error(ScriptState* script_state,
 }
 
 void TransformStream::ErrorWritableAndUnblockWrite(Script
-"""
-
-
 ```

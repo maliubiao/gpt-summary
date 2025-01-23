@@ -125,7 +125,7 @@ func main() {
 
 `go/src/runtime/sigaction.go` 的这段代码是在特定架构上实现设置信号处理函数的核心逻辑。它通过调用底层的系统调用（可能是 `sysSigaction` 直接对应系统调用），使得 Go 程序能够响应操作系统发出的信号。 普通开发者通常通过 `os/signal` 包来间接使用这个功能，从而实现对程序信号的控制和处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/sigaction.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -133,8 +133,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -151,9 +153,4 @@ package runtime
 func sigaction(sig uint32, new, old *sigactiont) {
 	sysSigaction(sig, new, old)
 }
-
-"""
-
-
-
 ```

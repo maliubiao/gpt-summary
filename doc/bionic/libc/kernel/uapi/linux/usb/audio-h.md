@@ -273,7 +273,7 @@ if __name__ == '__main__':
 
 `bionic/libc/kernel/uapi/linux/usb/audio.handroid` 是 Android 系统与 USB 音频设备交互的基础。它定义了通信所需的常量、宏和数据结构。理解这个头文件的内容对于分析和调试 Android 音频系统的 USB 音频相关问题至关重要。通过 Frida 等工具，我们可以 hook 相关的系统调用和库函数，深入了解 Android 系统如何一步步地与 USB 音频设备进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/usb/audio.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -284,8 +284,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -584,7 +586,4 @@ struct uac1_status_word {
   __u8 bOriginator;
 } __attribute__((packed));
 #endif
-
-"""
-
 ```

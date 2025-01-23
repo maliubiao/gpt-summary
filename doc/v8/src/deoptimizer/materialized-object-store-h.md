@@ -136,15 +136,17 @@ counter.increment(); // 可能会进行优化
 
 `v8/src/deoptimizer/materialized-object-store.h` 定义了一个用于存储去优化过程中物化对象的类。它使用栈帧指针作为键，并提供 `Get`、`Set` 和 `Remove` 操作来管理这些对象。虽然开发者不会直接操作这个类，但理解其功能有助于理解 V8 如何处理代码优化和去优化，以及某些编程模式可能对性能产生的影响。 该文件是 C++ 头文件，而非 Torque 源代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/materialized-object-store.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/deoptimizer/materialized-object-store.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ class MaterializedObjectStore {
 }  // namespace v8
 
 #endif  // V8_DEOPTIMIZER_MATERIALIZED_OBJECT_STORE_H_
-
-"""
-
 ```

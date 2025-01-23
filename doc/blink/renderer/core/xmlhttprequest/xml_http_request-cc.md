@@ -135,7 +135,7 @@ Here's a breakdown of how to approach this:
 
 这部分代码主要负责 `XMLHttpRequest` 对象的初始化、状态管理和 `open()` 方法的实现，是发起 HTTP 请求的起始阶段。它处理了请求方法、URL、同步/异步模式的设置，并对一些不合法的操作进行了校验和限制，为后续的请求发送和响应处理奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xmlhttprequest/xml_http_request.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  *  Copyright (C) 2004, 2006, 2008 Apple Inc. All rights reserved.
  *  Copyright (C) 2005-2007 Alexey Proskuryakov <ap@webkit.org>
@@ -988,7 +990,4 @@ void XMLHttpRequest::send(const String& body, ExceptionState& exception_state) {
     return;
 
   scoped_refptr<EncodedFormData> http_bod
-"""
-
-
 ```

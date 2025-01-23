@@ -198,7 +198,7 @@ setImmediate(main);
 
 总而言之，`bionic/libc/kernel/uapi/linux/netfilter/xt_esp.h` 文件定义了用于匹配 ESP 协议报文的网络过滤规则结构，它在 Android 的 VPN 和其他网络安全功能中扮演着重要的角色，尽管用户空间应用程序通常不会直接操作它，而是通过系统服务和内核的 Netfilter 框架间接使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_esp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -209,8 +209,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -227,7 +229,4 @@ struct xt_esp {
 #define XT_ESP_INV_SPI 0x01
 #define XT_ESP_INV_MASK 0x01
 #endif
-
-"""
-
 ```

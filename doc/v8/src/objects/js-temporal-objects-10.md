@@ -100,12 +100,14 @@ console.log(hours); // 输出 24
 
 作为 Temporal API 实现的第11部分，这个 C++ 文件深入实现了 `Temporal.PlainTime` 和 `Temporal.ZonedDateTime` 的核心原型方法，包括时间运算、比较、格式化、属性获取以及对象创建和修改等功能。 这些 C++ 代码是 V8 引擎执行相应 JavaScript 代码的底层实现，保证了 Temporal API 在 JavaScript 中的正确运行。 这部分代码依赖于之前部分定义的 Temporal API 的基础结构和辅助工具函数，并为后续部分构建更高级的功能奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第11部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 t<JSTemporalPlainTime>(item_obj);
     return CreateTemporalTime(
         isolate, {item->iso_hour(), item->iso_minute(), item->iso_second(),
@@ -1606,7 +1608,4 @@ MaybeHandle<JSTemporalZonedDateTime> JSTemporalZonedDateTime::With(
   DCHECK(IsString(*offset_string));
 
   // 19. Let dat
-"""
-
-
 ```

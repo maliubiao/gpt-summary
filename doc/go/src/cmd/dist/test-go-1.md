@@ -70,7 +70,7 @@ Based on these functions, the code seems to be responsible for:
 
 **总结来说，这段代码是 `go tool dist test` 命令中处理复杂测试场景（如并发测试和 FIPS 测试）的核心组成部分，它负责管理测试的执行流程、检查系统环境、以及提供安全保障。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/dist/test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -79,9 +79,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- &w.out, &w.out)
+### 源代码
+```go
+&w.out, &w.out)
 			t.worklist = append(t.worklist, w)
 			return nil
 		})
@@ -866,10 +868,4 @@ func fipsVersions(short bool) []string {
 	}
 	return versions
 }
-
-"""
-
-
-
-
 ```

@@ -166,15 +166,17 @@ By following these steps and incorporating self-correction, the resulting explan
 
 总而言之，`custom_element_registry.cc` 是 Blink 引擎中实现 Web Components 中 Custom Elements 规范的关键部分，它负责管理自定义元素的注册、查找和升级，连接了 JavaScript、HTML 和 CSS，使得开发者能够创建具有更强语义和可重用性的 Web 组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/custom/custom_element_registry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -586,7 +588,4 @@ void CustomElementRegistry::AssociatedWith(Document& document) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

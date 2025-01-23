@@ -116,15 +116,17 @@ Initially, one might think, "GSSAPI is for security, so maybe JavaScript uses it
 
 `net/tools/gssapi/gss_methods.cc` 提供了一些 GSSAPI 函数的桩实现，主要用于测试或在某些特定构建配置中使用。在实际的浏览器运行环境中，Chromium 会使用操作系统提供的 GSSAPI 库来执行真正的安全操作。理解这一点对于调试与 GSSAPI 相关的网络认证问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/gssapi/gss_methods.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ gss_inquire_context(OM_uint32* minor_status,
                     int* open) {
   return 0;
 }
-
-"""
-
 ```

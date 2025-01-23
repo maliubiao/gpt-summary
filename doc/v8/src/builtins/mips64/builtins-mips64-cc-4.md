@@ -132,7 +132,7 @@ By following these steps, I could systematically analyze the assembly code and g
 
 总而言之，`v8/src/builtins/mips64/builtins-mips64.cc` 文件是 V8 引擎在 MIPS64 架构上的一个关键组成部分，它提供了连接 JavaScript 和底层 C++ 代码的桥梁，并负责处理代码的优化和去优化过程，以及在解释器和基线编译器之间进行切换。它定义了在 MIPS64 架构上执行 V8 内部操作和内置函数的底层指令序列。理解这个文件中的代码有助于深入理解 V8 的执行模型和性能优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/mips64/builtins-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/mips64/builtins-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -140,8 +140,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 alling convention. Callers use
   // EnterExitFrame/LeaveExitFrame so they handle stack restoring and we don't
   // have to do that here. Any caller must drop kCArgsSlotsSize stack space
@@ -663,8 +665,4 @@ void Builtins::Generate_RestartFrameTrampoline(MacroAssembler* masm) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
-
 ```

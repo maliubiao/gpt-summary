@@ -117,15 +117,17 @@ go/test/intrinsic_atomic.go:17:2: intrinsic substitution for CompareAndSwapUint3
 
 总而言之，这段代码是 Go 语言编译器测试套件的一部分，专门用于验证 `sync/atomic` 包中原子操作的内联优化功能是否按预期工作。它使用了 `errorcheck` 指令和特定的编译器调试标志来断言编译器的行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/intrinsic_atomic.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -d=ssa/intrinsics/debug
 
 //go:build amd64 || arm64 || loong64 || mips || mipsle || mips64 || mips64le || ppc64 || ppc64le || riscv64 || s390x
@@ -147,9 +149,4 @@ func atomics() {
 	atomic.SwapUint32(&x, 1)              // ERROR "intrinsic substitution for SwapUint32"
 	atomic.CompareAndSwapUint32(&x, 1, 2) // ERROR "intrinsic substitution for CompareAndSwapUint32"
 }
-
-"""
-
-
-
 ```

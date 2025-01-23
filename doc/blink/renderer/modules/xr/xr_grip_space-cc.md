@@ -153,15 +153,17 @@ Essentially, I approached this by first understanding the code itself, then conn
 
 总而言之，`xr_grip_space.cc` 文件定义了 WebXR 中 grip space 的核心功能，负责提供与 XR 输入源手柄位置和方向相关的信息，并被 JavaScript WebXR API 所使用，从而允许开发者在虚拟现实环境中定位和交互虚拟物体。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_grip_space.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -223,7 +225,4 @@ void XRGripSpace::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

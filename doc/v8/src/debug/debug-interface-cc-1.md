@@ -178,7 +178,7 @@ V8 的调试接口可以帮助开发者调试各种 JavaScript 和 WebAssembly �
 
 这段代码是 V8 调试接口的重要组成部分，它提供了各种功能来检查和控制 V8 虚拟机的执行状态，特别是在调试 JavaScript 和 WebAssembly 代码时。它充当了 V8 内部机制和外部调试工具之间的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-interface.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/debug-interface.cc以.tq结尾，那它是个v8 torque源代码，
@@ -186,8 +186,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
   DCHECK_GE(i::kMaxInt, func.code.offset());
   DCHECK_GE(i::kMaxInt, func.code.end_offset());
@@ -774,8 +776,4 @@ Maybe<bool> DebugPropertyIterator::Advance() {
 }  // namespace v8
 
 #include "src/api/api-macros-undef.h"
-
-"""
-
-
 ```

@@ -156,7 +156,7 @@ By following this thought process, combining code analysis with domain knowledge
 
 总而言之，`vs2019backend.py` 虽然不是直接进行逆向操作的工具，但它是构建 Frida 在 Windows 平台上可执行文件的关键组件。理解它的功能对于理解 Frida 的构建过程，以及在构建过程中遇到问题时进行调试至关重要，而编译出的 Frida 工具是逆向工程师进行动态分析的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/backend/vs2019backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014-2019 The Meson development team
 
@@ -220,7 +222,4 @@ class Vs2019Backend(Vs2010Backend):
             optargs = [x for x in file_args['c'] if x.startswith('/std:c')]
             if optargs:
                 ET.SubElement(clconf, 'LanguageStandard_C').text = optargs[0].replace("/std:c", "stdc")
-
-"""
-
 ```

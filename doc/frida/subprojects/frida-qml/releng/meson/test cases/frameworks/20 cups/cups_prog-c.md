@@ -172,7 +172,7 @@ By following these steps, breaking down the problem, and considering the context
 
 总而言之，虽然 `cups_prog.c` 本身非常简单，但它为我们提供了一个很好的例子，说明了如何使用 Frida 进行动态分析，以及如何将逆向工程技术应用于理解程序与底层系统库的交互。 通过 Frida，我们可以超越静态分析，深入了解程序运行时的行为，这对于调试、安全分析和理解系统的工作原理都非常有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/20 cups/cups_prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <cups/cups.h>
 
 int
@@ -190,7 +192,4 @@ main()
     cupsGetDefault();
     return 0;
 }
-
-"""
-
 ```

@@ -118,7 +118,7 @@ I will structure the response to address each of the user's points explicitly, d
 
 总而言之，这部分测试确保了 `URLRequestHttpJob` 能够正确、安全、有效地处理各种 HTTP 请求场景，并且与平台特性 (如 Android 的明文策略) 和新的 Web 标准 (如 WebSocket 和 Partitioned Cookie) 兼容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_http_job_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 isementOverHttp) {
   MockWrite writes[] = {MockWrite(kSimpleGetMockWrite)};
   MockRead reads[] = {MockRead("HTTP/1.1 200 OK\r\n"
@@ -913,8 +915,4 @@ TEST_F(URLRequestHttpJobTest, PartitionedCookiePrivacyMode) {
         UnorderedElementsAre(
             MatchesCookieWithAccessResult(
                 MatchesCookieWithNameSourceType("__Host-partitioned",
-                                            
-"""
-
-
 ```

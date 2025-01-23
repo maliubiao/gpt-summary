@@ -126,15 +126,17 @@ This systematic approach, combining code analysis with an understanding of the t
 
 总而言之，`QuicStreamPeer.cc` 是一个专门为测试而设计的工具，它允许开发者在测试环境中灵活地操作 `QuicStream` 对象的内部状态，从而更有效地进行单元测试和调试。虽然它与 JavaScript 没有直接的编程关系，但它对于确保基于 QUIC 的网络连接（包括 JavaScript 发起的请求）的正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/quic_stream_peer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -254,7 +256,4 @@ void QuicStreamPeer::SetFinSent(QuicStream* stream) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

@@ -307,7 +307,7 @@ sys.stdin.read()
 
 这个示例可以帮助你理解 Android 应用如何通过 NDK 和 Bionic libc 调用 `times` 函数，并观察其参数和返回值。你可以根据需要修改 Frida 脚本来获取更详细的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/sys_times_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -318,8 +318,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -363,7 +365,4 @@ static void sys_times_h() {
 
   FUNCTION(times, clock_t (*f)(struct tms*));
 }
-
-"""
-
 ```

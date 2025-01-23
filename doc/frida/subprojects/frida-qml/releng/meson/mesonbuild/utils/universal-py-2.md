@@ -108,7 +108,7 @@ Now, let's connect these functionalities to the user's specific requests.
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/utils/universal.py` 是 Frida 构建系统的一个基础工具库，提供了各种常用的功能，以支持 Frida 和相关组件的顺利构建。它虽然不直接涉及 Frida 的核心动态插桩功能，但为其构建过程提供了重要的基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 nd(trial)
             else:
                 result[basename] = [trial]
@@ -698,8 +700,4 @@ def first(iter: T.Iterable[_T], predicate: T.Callable[[_T], bool]) -> T.Optional
         if predicate(i):
             return i
     return None
-
-"""
-
-
 ```

@@ -127,7 +127,7 @@ By identifying these key areas and the purpose of each test, I can then synthesi
 
 总而言之，这段代码是 `database/sql` 包健壮性和正确性的重要保障，覆盖了各种正常和异常场景，以确保开发者可以安全可靠地使用 Go 语言的 `database/sql` 包进行数据库操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/database/sql/sql_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -136,8 +136,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 err = stmt.Close(); err != nil {
 		t.Fatal(err)
 	}
@@ -1634,9 +1636,4 @@ func (c *ctxOnlyConn) Begin() (driver.Tx, error) {
 }
 
 func (c *ctxOnlyConn)
-"""
-
-
-
-
 ```

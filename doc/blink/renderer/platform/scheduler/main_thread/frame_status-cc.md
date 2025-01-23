@@ -137,14 +137,16 @@ Response: Let's break down the thought process for analyzing this C++ file.
 
 理解 `FrameStatus` 及其背后的状态转换逻辑对于开发高性能和健壮的 Web 应用程序至关重要，尤其是在涉及到复杂页面结构和异步操作时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/frame_status.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -230,7 +232,4 @@ FrameStatus GetFrameStatus(FrameScheduler* frame_scheduler) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

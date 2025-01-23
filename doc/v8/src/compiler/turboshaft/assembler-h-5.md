@@ -201,7 +201,7 @@ const arr = [1, 2, 3]; // 创建一个新的数组
 
 `v8/src/compiler/turboshaft/assembler.h` 是 Turboshaft 编译器中至关重要的一个头文件。它定义了一个高级汇编器接口，允许编译器开发者以抽象的方式生成中间代码，而无需直接处理底层的机器指令。它提供了丰富的功能，涵盖了运行时函数调用、控制流管理、反优化、对象创建以及各种 JavaScript 数据类型的操作，是构建高效 JavaScript 执行引擎的核心组件之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -209,8 +209,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 _graph().graph_zone(),
                            lazy_deopt_on_throw),
         frame_state, context, args);
@@ -956,7 +958,4 @@ _graph().graph_zone(),
   }
 
   V<String> Stri
-"""
-
-
 ```

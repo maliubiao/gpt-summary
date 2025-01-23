@@ -141,14 +141,16 @@ Here's a breakdown of how to approach this:
 
 5. **忘记考虑变换原点：**  CSS 的 `transform-origin` 属性会影响旋转、缩放等变换的效果，但 `AffineTransform` 对象本身只描述变换矩阵，不包含变换原点的信息。在使用 `AffineTransform` 进行计算时需要注意这一点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/transforms/affine_transform_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -355,7 +357,4 @@ TEST(AffineTransformTest, ToString) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -101,11 +101,13 @@ for (let i = 0; i < 10000; i++) {
 
 `v8/src/maglev/maglev.cc` 是 V8 引擎中 Maglev 优化编译器的入口点，负责接收 JavaScript 函数并将其编译成更高效的机器代码，从而提升 JavaScript 代码的执行性能。这是一个内部组件，与 JavaScript 功能紧密相关，但开发者无法直接与其交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -138,7 +140,4 @@ MaybeHandle<Code> Maglev::Compile(Isolate* isolate, Handle<JSFunction> function,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

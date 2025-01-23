@@ -94,7 +94,7 @@ Here's a plan:
 
 总而言之，这部分测试用例专注于验证 `WebMediaPlayerMS` 组件在视频帧处理方面的稳定性和正确性，确保其能够高效且可靠地渲染 MediaStream 类型的视频内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/web_media_player_ms_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
   compositor_->EnqueueFrame(std::move(frame2), true);
 
@@ -180,8 +182,4 @@ INSTANTIATE_TEST_SUITE_P(All,
                                             ::testing::Bool(),
                                             ::testing::Bool()));
 }  // namespace blink
-
-"""
-
-
 ```

@@ -150,15 +150,17 @@ const result = add(5, 3);
 
 `v8/src/codegen/code-reference.cc` 定义的 `CodeReference` 类是 V8 内部用于抽象和访问不同类型编译代码的关键组件。它提供了一种统一的方式来获取代码的各种属性，方便 V8 内部的各个模块进行代码管理和操作。虽然普通 JavaScript 开发者不会直接使用它，但理解其功能有助于理解 V8 的代码生成和执行机制，并避免一些潜在的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-reference.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-reference.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ DISPATCH(int, code_comments_size)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

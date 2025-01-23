@@ -189,7 +189,7 @@ This detailed thinking process allows for a comprehensive analysis of even a see
 
 总而言之，`lib2.c` 虽然代码简单，但在 Frida 的上下文中，它成为了一个可以被动态观察和操控的目标，为逆向工程师提供了理解程序行为、发现漏洞和进行安全分析的入口。 它也反映了动态分析中涉及的底层技术和可能遇到的常见问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/42 dep order/lib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,9 +197,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

@@ -91,16 +91,18 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 这部分 `intersection_observer_test.cc` 文件的主要功能是**验证 Blink 引擎中 Intersection Observer API 的核心逻辑，特别是 `MinScrollDeltaToUpdate` 的计算以及 `trackVisibility` 功能的正确性**。它通过创建各种 HTML 结构和应用不同的 CSS 样式，并模拟滚动和渲染过程，来测试 Intersection Observer 在不同场景下的行为是否符合预期。 这些测试确保了当 JavaScript 代码使用 Intersection Observer API 时，底层的 C++ 实现能够准确地报告元素的交叉状态和可见性，并进行合理的性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/intersection_observer/intersection_observer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-      frame_view->GetIntersectionObservationStateForTesting());
+### 源代码
+```cpp
+frame_view->GetIntersectionObservationStateForTesting());
   Compositor().BeginFrame();
   test::RunPendingTasks();
   EXPECT_EQ(observer_delegate->CallCount(), 2);
@@ -858,7 +860,4 @@ TEST_F(IntersectionObserverTest, ScrollMarginNestedNotIntersecting) {
 
 TEST_F(IntersectionObserverTest, NoScrollMarginNested) {
   // The scroller should clip the content be
-"""
-
-
 ```

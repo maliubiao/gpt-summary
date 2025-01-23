@@ -278,7 +278,7 @@ if (Process.platform === 'android') {
 
 这个 Frida 脚本可以帮助你观察 `dlopen` 和 `dlclose` 的调用参数和返回值，以及 `unload_guard` 函数的执行时机，从而更好地理解动态链接器的行为和 `RTLD_NODELETE` 的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlopen_nodelete_2.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -289,8 +289,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -322,7 +324,4 @@ static void __attribute__((destructor)) unload_guard() {
     *unload_flag_ptr = true;
   }
 }
-
-"""
-
 ```

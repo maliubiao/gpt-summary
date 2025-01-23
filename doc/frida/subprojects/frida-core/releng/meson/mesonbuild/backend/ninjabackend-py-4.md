@@ -201,7 +201,7 @@ This part of the `NinjaBackend` class in Frida's build system is primarily respo
 
 In essence, it bridges the gap between the high-level build definition in `meson.build` and the low-level compiler invocations managed by Ninja, ensuring that each source file is compiled correctly with the necessary flags and dependencies. This is a fundamental part of the build process for Frida and any other software project using Meson and Ninja.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -210,8 +210,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 file called foo.pdb. So will a static library
         # foo.lib, which clobbers both foo.pdb _and_ the dll file's
         # export library called foo.lib (by default, currently we name
@@ -830,7 +832,4 @@ file called foo.pdb. So will a static library
 
         prelinker = target.get_prelinker()
         cmd = prelinker.exelist
-"""
-
-
 ```

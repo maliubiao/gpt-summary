@@ -103,11 +103,13 @@ try {
 
 `test-wasm-codegen.cc` 通过 C++ 单元测试来验证 V8 引擎中控制 WebAssembly 代码生成的回调机制是否按预期工作。它直接影响了 JavaScript 中 `WebAssembly.Module()` 的行为，决定了在特定条件下是否允许编译 WebAssembly 模块。 这通常与安全策略（例如内容安全策略 CSP）有关，CSP 可以通过限制 `unsafe-eval` 和 `wasm-eval` 指令来影响 WebAssembly 的编译。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-wasm-codegen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ TEST(WasmModuleObjectCompileFailure) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

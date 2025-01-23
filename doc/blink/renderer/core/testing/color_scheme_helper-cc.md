@@ -185,15 +185,17 @@ By following this structured thought process, breaking down the code, connecting
 
 `ColorSchemeHelper` 是 Blink 渲染引擎测试框架中的一个重要工具，它允许测试代码灵活地模拟不同的颜色方案环境，以便测试与颜色方案相关的特性。它通过临时修改和恢复内部设置来实现这一功能，并与 CSS 媒体查询有着直接的关联。虽然普通用户操作不会直接到达这里，但理解它的功能有助于理解 Blink 内部是如何进行颜色方案相关的测试和调试的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/color_scheme_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ void ColorSchemeHelper::SetEmulatedForcedColors(Document& document,
   document.ColorSchemeChanged();
 }
 }  // namespace blink
-
-"""
-
 ```

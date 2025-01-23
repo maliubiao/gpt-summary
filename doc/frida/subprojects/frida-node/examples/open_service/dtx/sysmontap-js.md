@@ -216,7 +216,7 @@ onMessage: {
 
 总而言之，`sysmontap.js` 是一个利用 Frida 动态分析能力的脚本，它通过与 iOS 设备的系统监控服务交互，实时获取 CPU 使用率数据，这对于逆向工程、性能分析和安全研究等场景都很有价值。理解其功能和背后的原理，有助于更有效地使用 Frida 进行系统级的动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/open_service/dtx/sysmontap.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -224,8 +224,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const frida = require('../../..');
 
 let sysmon = null;
@@ -257,7 +259,4 @@ main()
   .catch(e => {
     console.error(e);
   });
-
-"""
-
 ```

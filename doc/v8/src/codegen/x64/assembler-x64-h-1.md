@@ -129,7 +129,7 @@ console.log(result); // 输出 15
 
 总而言之，这段代码是 `v8/src/codegen/x64/assembler-x64.h` 文件的一部分，它详细定义了 `Assembler` 类能够生成的各种 x64 汇编指令的 C++ 接口。 这些指令涵盖了数据操作、算术运算、逻辑运算、控制流、浮点运算以及 SIMD 操作，是 V8 引擎将 JavaScript 代码编译成可执行机器码的核心组成部分。 尤其需要注意的是，这里包含了大量的 SSE 和 AVX 指令的定义，这对于 JavaScript 中处理数值计算和多媒体等高性能场景至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/assembler-x64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/x64/assembler-x64.h以.tq结尾，那它是个v8 torque源代码，
@@ -137,8 +137,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 de)                     \
   void instruction##l(Register dst, Immediate imm8) {                       \
     shift(dst, imm8, subcode, kInt32Size);                                  \
@@ -895,7 +897,4 @@ de)                     \
   void roundss(XMMRegister dst, XMMRegister src, RoundingMode mode);
   void roundss(XMMRegister dst, Operand src, RoundingMode mode);
   void roundsd(XMMRegister dst, XMMRegister src, Rou
-"""
-
-
 ```

@@ -105,7 +105,7 @@ Let's break down the thought process to analyze the given C code snippet in the 
 
 总而言之，这个简单的 `main.c` 文件在 Frida 的测试框架中扮演着一个验证特定构建配置（子项目符号链接）是否正确的角色。它的功能虽然简单，但可以帮助发现 Frida 工具链在处理符号链接时可能存在的问题。在调试过程中，开发者会利用各种逆向和底层知识来定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/107 subproject symlink/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,15 +113,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern int foo(void);
 
 int main(void)
 {
     return foo();
 }
-
-"""
-
 ```

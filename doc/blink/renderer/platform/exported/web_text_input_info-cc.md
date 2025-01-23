@@ -189,14 +189,16 @@ info2.selection_end = 2;
 
 总而言之，`web_text_input_info.cc` 中定义的 `Equals` 方法是 Blink 内部用于比较文本输入状态的重要组成部分。虽然前端开发者不会直接使用这个类，但理解其背后的概念和 `WebTextInputInfo` 中包含的信息，对于编写健壮且能正确处理用户输入的 Web 应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_text_input_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -242,7 +244,4 @@ bool WebTextInputInfo::Equals(const WebTextInputInfo& other) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

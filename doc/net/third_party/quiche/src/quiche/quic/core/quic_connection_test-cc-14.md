@@ -135,7 +135,7 @@ Strategizing complete. I will now proceed with generating the response.
 
 这个代码片段主要测试了 `QuicConnection` 类在处理握手阶段的配置信息、接收到的控制帧，以及连接关闭与 ACK 捆绑等方面的功能。它还覆盖了 PTO 机制、防止 ACK 被修改、不因无法解密的包延长空闲时间、ACK 与响应的捆绑、提前触发 ACK 告警、客户端黑洞检测以及在密钥丢弃后连接状态管理等多个关键场景，确保 `QuicConnection` 能够按照 QUIC 协议规范正确地管理连接生命周期，处理各种网络事件和异常情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第15部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 g, true);
   QuicConfigPeer::SetReceivedOriginalConnectionId(&received_config,
                                                   TestConnectionId(0x12345));
@@ -902,7 +904,4 @@ TEST_P(QuicConnectionTest, TestingLiveness) {
   EXPECT_THAT(error, IsQuicNoError());
 
   if (connection_.ve
-"""
-
-
 ```

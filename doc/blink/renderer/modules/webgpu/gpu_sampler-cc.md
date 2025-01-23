@@ -186,15 +186,17 @@ wgpu::SamplerDescriptor dawn_desc = {
 
 在调试 WebGPU 相关的渲染问题时，如果怀疑是采样器配置问题，开发者可以使用浏览器提供的开发者工具（例如 Chrome 的 DevTools）来查看 WebGPU 相关的资源，包括采样器的属性。如果需要深入到 C++ 层调试，可能需要在 Chromium 的源代码中设置断点，例如在 `GPUSampler::Create` 或 `AsDawnType` 函数中，来观察参数的传递和执行流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_sampler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ GPUSampler::GPUSampler(GPUDevice* device,
     : DawnObject<wgpu::Sampler>(device, std::move(sampler), label) {}
 
 }  // namespace blink
-
-"""
-
 ```

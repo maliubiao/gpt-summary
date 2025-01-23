@@ -104,15 +104,17 @@ By following these steps, we can thoroughly analyze the given code snippet and a
 
 **总结来说，这部分测试用例深入验证了 CSP 在判断策略严格性、衡量不同级别的安全限制、控制 Fenced Frame 内容加载以及与浏览器优化功能交互时的行为，并暗示了一些开发者在使用 CSP 时可能遇到的常见问题。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/csp/content_security_policy_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 PolicyType::kReport,
       ContentSecurityPolicySource::kHTTP, *secure_origin));
   EXPECT_FALSE(csp->IsStrictPolicyEnforced());
@@ -340,8 +342,4 @@ INSTANTIATE_FEATURE_OVERRIDE_TEST_SUITE(
     SpeculationRulesHeaderContentSecurityPolicyTest);
 
 }  // namespace blink
-
-"""
-
-
 ```

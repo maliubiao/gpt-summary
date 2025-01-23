@@ -178,7 +178,7 @@ Promise.reject(new Error("Failed!"));
 
 总的来说，`v8/src/inspector/injected-script.cc` 的主要功能是 **作为 V8 Inspector 后端的核心组件，负责在 JavaScript 虚拟机和 DevTools 前端之间建立桥梁，实现代码求值、对象属性检查、Promise 结果处理和错误信息传递等关键的调试功能。** 它处理 JavaScript 的异步特性，并将 V8 内部的 JavaScript 对象和错误信息转换为 DevTools 可以理解和展示的协议格式。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/injected-script.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/injected-script.cc以.tq结尾，那它是个v8 torque源代码，
@@ -186,8 +186,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -949,7 +951,4 @@ void InjectedScript::addPromiseCallback(
   CHECK_EQ(weak_callback.use_count(), 1);
 
   if (value.IsEmpty()) {
-"""
-
-
 ```

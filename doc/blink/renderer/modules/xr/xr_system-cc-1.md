@@ -142,7 +142,7 @@ I need to trace back how a user interaction in a web page can trigger the execut
 
 总而言之，这段代码是 Blink 引擎中处理 WebXR API 调用的核心部分，负责与浏览器进程通信，管理 XR 会话的生命周期，并确保符合规范和安全策略。它连接了 JavaScript API 和底层的 XR 平台服务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_system.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rovider() {
   if (!frame_provider_) {
     frame_provider_ = MakeGarbageCollected<XRFrameProvider>(this);
@@ -947,8 +949,5 @@ void XRSystem::AddedEventListener(
     // See https://bit.ly/2S0zRAS for task types.
     auto task_runner =
         GetExecutionContext()->GetTaskRunner(TaskType::kMiscPlatformAPI);
-    if 
-"""
-
-
+    if
 ```

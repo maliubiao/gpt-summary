@@ -158,15 +158,17 @@ The visual output will be a combination of the grayscale image and the blurred a
 
 By placing breakpoints or logging statements within the `SVGFEBlendElement` class, developers can trace the execution flow during the rendering process and understand how the `<feBlend>` element is being processed. Observing the values of the attributes and the inputs to the `Build` function can help diagnose issues related to incorrect filter definitions or unexpected blending behavior.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_fe_blend_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -332,7 +334,4 @@ void SVGFEBlendElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

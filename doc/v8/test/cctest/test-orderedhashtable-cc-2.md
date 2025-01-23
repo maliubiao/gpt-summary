@@ -96,7 +96,7 @@ By following these steps, we can systematically analyze the C++ test code and ge
 
 `v8/test/cctest/test-orderedhashtable.cc` 是 V8 引擎中一个至关重要的测试文件，它细致地测试了各种有序哈希表实现的添加、删除、查找、修改等核心功能，并覆盖了边界情况，确保这些数据结构在 V8 中能够正确高效地工作。这直接关系到 JavaScript 对象的属性存储和访问等核心机制的稳定性和性能。 通过这些测试，V8 开发者可以确保底层数据结构的可靠性，从而为上层 JavaScript 代码的正确执行提供保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-orderedhashtable.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-orderedhashtable.cc以.tq结尾，那它是个v8 torque源代码，
@@ -104,9 +104,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- dict->FindEntry(isolate, *key1);
+### 源代码
+```cpp
+dict->FindEntry(isolate, *key1);
   PropertyDetails found = dict->DetailsAt(entry);
   CHECK_EQ(PropertyDetails::Empty().AsSmi(), found.AsSmi());
 
@@ -763,8 +765,4 @@ TEST(ZeroSizeOrderedNameDictionary) {
 }  // namespace test_orderedhashtable
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

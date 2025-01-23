@@ -234,7 +234,7 @@ Number of loggers: 0
 
 总而言之，这个代码片段是 Go 运行时为了方便内部测试而设计的一个接口，允许测试代码深入了解和验证运行时调试日志功能的行为。  它暴露了一些内部状态和操作，使得测试能够更加全面和有效。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/export_debuglog_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -242,8 +242,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -304,9 +306,4 @@ func CountDebugLog() int {
 	startTheWorld(stw)
 	return i
 }
-
-"""
-
-
-
 ```

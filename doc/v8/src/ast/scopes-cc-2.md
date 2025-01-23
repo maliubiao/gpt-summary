@@ -184,7 +184,7 @@ anotherFunction();
 
 `v8/src/ast/scopes.cc` 负责在 V8 引擎中创建、管理和维护 JavaScript 代码的作用域。它定义了表示不同作用域类型的类，跟踪在每个作用域中声明的变量，并实现了变量查找、解析和分配的逻辑。该文件是 V8 引擎理解和执行 JavaScript 代码中作用域规则的关键组成部分，直接影响着变量的可见性、生命周期和访问方式。它还处理了诸如 `eval`、`with` 和模块等特殊情况下的作用域行为，并为调试提供了支持。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/scopes.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/scopes.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tory, &new_unresolved_list,
                             maybe_in_arrowhead);
 
@@ -1107,7 +1109,4 @@ void Scope::AllocateScopeInfosRecursively(
     std::unordered_map<int, Handle<ScopeInfo>>& scope_infos_to_reuse) {
   DCHECK(scope_info_.is_null());
   MaybeHandle<ScopeInfo> next_outer_scope
-"""
-
-
 ```

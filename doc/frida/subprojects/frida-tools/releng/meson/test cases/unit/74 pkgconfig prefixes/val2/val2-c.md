@@ -158,7 +158,7 @@ int val1(void) { return 10; }
 
 尽管 `val2.c` 的代码非常简单，但它涵盖了软件开发和逆向工程中的一些基本概念，包括函数定义、函数调用、依赖关系以及在二进制层面和操作系统层面的执行过程。理解这种简单的代码是理解更复杂系统和软件行为的基础。在调试和逆向分析中，即使是最简单的函数也可能提供重要的线索，帮助我们理解程序的整体结构和逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/74 pkgconfig prefixes/val2/val2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,13 +166,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "val1.h"
 #include "val2.h"
 
 int val2(void) { return val1() + 2; }
-
-"""
-
 ```

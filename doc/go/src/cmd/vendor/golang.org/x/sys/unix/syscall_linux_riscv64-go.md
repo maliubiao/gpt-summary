@@ -232,15 +232,17 @@ func main() {
 
 `syscall_linux_riscv64.go` 文件是 Go 语言在 Linux RISC-V 64 位架构上与操作系统内核交互的桥梁。它定义了 Go 语言可以直接调用的底层系统调用接口，是构建更高级抽象（如 `os` 和 `net` 包）的基础。直接使用这些接口需要对操作系统和底层原理有较深的理解，并谨慎处理各种细节和错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_linux_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -432,9 +434,4 @@ func RISCVHWProbe(pairs []RISCVHWProbePairs, set *CPUSet, flags uint) (err error
 }
 
 const SYS_FSTATAT = SYS_NEWFSTATAT
-
-"""
-
-
-
 ```

@@ -183,15 +183,17 @@ gc.collect(); // 触发垃圾回收
 
 理解 `v8/src/heap/base/worklist.h` 的功能对于理解 V8 垃圾回收等核心功能的实现至关重要。它展示了如何在多线程环境中高效地管理任务，利用线程本地存储和工作窃取来提高性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/worklist.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/base/worklist.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -668,7 +670,4 @@ void Worklist<EntryType, MinSegmentSize>::Local::Clear() {
 }  // namespace heap::base
 
 #endif  // V8_HEAP_BASE_WORKLIST_H_
-
-"""
-
 ```

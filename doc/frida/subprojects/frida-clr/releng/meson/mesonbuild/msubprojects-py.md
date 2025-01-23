@@ -92,7 +92,7 @@ To address the request, I will analyze the code and identify its primary functio
 
 总的来说，`frida/subprojects/frida-clr/releng/meson/mesonbuild/msubprojects.py` (第一部分) 的主要功能是为 Frida 项目管理 Meson 构建系统中的外部依赖 (子项目)，特别是那些通过 `wrap` 文件进行管理的依赖。它提供了下载、更新、检出特定版本、应用补丁等操作，并集成了对 Git, Mercurial, SVN 等版本控制系统的支持。 脚本还提供了进度跟踪和日志记录功能，帮助用户了解子项目操作的进度和状态。核心的 `Runner` 类封装了对单个子项目执行各种操作的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/msubprojects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from dataclasses import dataclass, InitVar
@@ -853,7 +855,4 @@ def run(options: 'Arguments') -> int:
     for wrap in wraps:
         dirname = Path(source_dir, subproject_dir, wrap.directory).as_posix()
         runner = Runn
-"""
-
-
 ```

@@ -139,16 +139,18 @@ By following these steps of skimming, detailed analysis of key methods, identify
 
 总的来说，这段代码是 `TextControlElement` 中处理文本内容的核心部分，确保了文本的正确显示、编辑和与其他浏览器功能的集成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/text_control_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  if (inner_editor->GetLayoutObject() &&
+### 源代码
+```cpp
+if (inner_editor->GetLayoutObject() &&
       inner_editor->GetLayoutObject()->Style()->ShouldCollapseBreaks()) {
     return;
   }
@@ -411,8 +413,4 @@ ETextOverflow TextControlElement::ValueForTextOverflow() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -215,7 +215,7 @@ By following this structured approach, considering Frida's purpose, and focusing
 
 总而言之，`threadprog.c` 是一个用于测试和演示多线程基本功能的简单程序，它可以用作 Frida 动态插桩的目标，帮助逆向工程师理解程序的运行时行为，尤其是在并发场景下。通过分析这个简单的例子，可以更好地理解 Frida 如何与底层操作系统机制交互，以及如何发现和调试多线程程序中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/94 threads/threadprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -223,8 +223,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32
 
 #include<windows.h>
@@ -271,7 +273,4 @@ int main(void) {
 }
 
 #endif
-
-"""
-
 ```

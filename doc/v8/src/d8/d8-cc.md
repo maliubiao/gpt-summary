@@ -180,7 +180,7 @@ Hello, D8 User!
 
 这段代码是 V8 引擎命令行工具 `d8` 的核心部分，负责初始化和配置 V8 引擎，处理命令行参数，编译和执行 JavaScript 代码，并提供基本的调试和分析功能。 它是一个 C++ 文件，而非 Torque 文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/d8/d8.cc以.tq结尾，那它是个v8 torque源代码，
@@ -188,8 +188,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1095,7 +1097,4 @@ class D8WasmAsyncResolvePromiseTask : public v8::Task {
 
 void D8WasmAsyncResolvePromiseCallback(
     v8::Isolate* isolate, v8::Local<v8::Cont
-"""
-
-
 ```

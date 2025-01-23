@@ -136,15 +136,17 @@ const arr = [1, 2, 3];
 
 总而言之，`v8/src/heap/cppgc/allocation.cc` 是 V8 中 cppgc 组件的关键组成部分，负责提供安全高效的垃圾回收对象内存分配接口，并作为 `ObjectAllocator` 的前端，处理不同参数的分配请求。虽然普通 JavaScript 开发者不会直接接触到这个文件，但它的功能是 V8 引擎运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/allocation.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/allocation.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ CPPGC_FORCE_ALWAYS_INLINE void* MakeGarbageCollectedTraitInternal::Allocate(
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

@@ -128,7 +128,7 @@ By following this thought process, I can generate a comprehensive and accurate a
 
 总而言之，这个 `c.c` 文件虽然简单，但在 Frida 的开发、测试和学习过程中扮演着重要的角色，它作为一个清晰、可控的 native 代码目标，用于验证和演示 Frida 的核心功能。 它的存在更多的是为了内部测试和开发，而不是用户直接修改或交互。 用户接触到这个文件通常是在进行更深入的探索和调试时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/72 shared subproject/subprojects/C/c.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -152,7 +154,4 @@ Prompt:
 char DLL_PUBLIC func_c(void) {
     return 'c';
 }
-
-"""
-
 ```

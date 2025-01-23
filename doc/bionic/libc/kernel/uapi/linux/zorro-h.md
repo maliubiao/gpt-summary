@@ -234,7 +234,7 @@ except KeyboardInterrupt:
 
 总而言之，`bionic/libc/kernel/uapi/linux/zorro.h` 定义了与 Linux 内核中 Zorro 总线设备交互的接口。尽管在现代主流 Android 设备中不常见，但它作为 Linux 内核的一部分被包含在 Bionic 库中。 理解这个文件有助于理解 Linux 内核的设备驱动模型和用户空间程序与内核的交互方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/zorro.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -245,8 +245,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -313,7 +315,4 @@ struct ConfigDev {
 } __attribute__((__packed__));
 #define ZORRO_NUM_AUTO 16
 #endif
-
-"""
-
 ```

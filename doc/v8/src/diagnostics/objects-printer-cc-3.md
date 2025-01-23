@@ -97,7 +97,7 @@ Here's a breakdown of how to address each point:
 
 这部分代码主要负责为一些特定的 V8 内部对象类型（特别是与 WebAssembly 相关的对象，以及一些通用的对象如 `LoadHandler`, `StoreHandler`, `AllocationSite`, `Script` 等）定义了打印其内部状态的 `XXXPrint` 方法。  这些方法用于在调试和诊断 V8 引擎时，以易于理解的文本格式输出对象的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/objects-printer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/objects-printer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -105,9 +105,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
- << "\n";
+### 源代码
+```cpp
+<< "\n";
 }
 
 // Never called directly, as WasmFunctionData is an "abstract" class.
@@ -1068,8 +1070,4 @@ void Map::MapPrint(std::ostream& os) {
     os << "\n - unused property fields: " << UnusedPropertyFields();
   }
   os << "\n - elements kind: " << ElementsKindToString(elements_kind());
-  
-"""
-
-
 ```

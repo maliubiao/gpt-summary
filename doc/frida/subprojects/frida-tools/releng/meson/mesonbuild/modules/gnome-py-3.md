@@ -117,7 +117,7 @@ By following these steps, one can effectively analyze the provided code snippet 
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/mesonbuild/modules/gnome.py` 模块的核心功能是 **简化 Frida 项目中与 GNOME 技术栈相关的 Vala API 定义生成过程**。它封装了调用 `vapigen` 工具的复杂性，并提供了处理依赖、安装等相关任务的功能，使得 Frida 的开发者能够更方便地使用 Vala 语言编写与 GNOME 应用或库交互的脚本和扩展。该模块是 Frida 构建系统的重要组成部分，为 Frida 的 GNOME 生态支持提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 cy, str]],
                                ) -> T.Tuple[T.List[str], T.List[VapiTarget], T.List[str], T.List[str], T.List[str]]:
         '''
@@ -271,8 +273,4 @@ def initialize(interp: 'Interpreter') -> GnomeModule:
     mod.interpreter.append_holder_map(TypelibTarget, interpreter.CustomTargetHolder)
     mod.interpreter.append_holder_map(VapiTarget, interpreter.CustomTargetHolder)
     return mod
-
-"""
-
-
 ```

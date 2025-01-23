@@ -130,14 +130,16 @@ This systematic approach allows for a comprehensive and accurate analysis of the
 
 总而言之，`blink/renderer/platform/audio/panner.cc` 是 Web Audio API 中音频空间定位功能的核心实现，它负责根据不同的模型创建具体的 panning 算法实例，并与 JavaScript 中的 `PannerNode` 紧密相关。理解其功能和限制对于开发高质量的 Web 音频应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/panner.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -192,7 +194,4 @@ std::unique_ptr<Panner> Panner::Create(PanningModel model,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -154,7 +154,7 @@ Since this is part 3 of 3, I need to summarize the functionality that was likely
 
 总而言之，`mtest.py` 是 Frida 项目中至关重要的测试基础设施，它确保了 Frida 的代码质量和功能稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/mtest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 metadata()
 
         ss = set()
@@ -760,8 +762,4 @@ def run_with_args(args: T.List[str]) -> int:
     add_arguments(parser)
     options = parser.parse_args(args)
     return run(options)
-
-"""
-
-
 ```

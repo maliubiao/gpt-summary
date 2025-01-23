@@ -167,7 +167,7 @@ city = "Anytown"
 
 `frida/subprojects/frida-swift/releng/tomlkit/tests/__init__.py` 文件本身的主要功能是将 `tomlkit.tests` 目录标记为一个 Python 包。它在 Frida 项目中扮演着支持测试 `tomlkit` 库的角色，而 `tomlkit` 很有可能是 Frida 用于处理 TOML 配置文件的依赖库。 虽然这个文件本身不直接涉及底层二进制、内核或逆向技术，但它所支持的 `tomlkit` 的正确性对于 Frida 的正常运行和逆向分析工作至关重要。用户可能会在调试 Frida 配置相关问题时，通过查看源代码结构到达这个文件，以理解 Frida 的配置加载和解析机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/tomlkit/tests/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,9 +175,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

@@ -209,15 +209,17 @@ PaymentItem* item = BuildPaymentItemForTest(data, modification_type, value_to_us
 
 总而言之，`payment_test_helper.cc` 是 Blink 引擎中一个关键的测试辅助工具，它通过提供便捷的函数来创建和操作支付相关的对象，极大地简化了 Payment Request API 的单元测试和集成测试的编写，并为开发者提供了调试 Payment Request 功能的重要线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/payments/payment_test_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -484,7 +486,4 @@ BuildSecurePaymentConfirmationMethodDataForTest(const V8TestingScope& scope) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

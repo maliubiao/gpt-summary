@@ -163,7 +163,7 @@ By following these steps, moving from a basic understanding of the code to analy
 
 总而言之，这个 `catfiles.py` 脚本是一个简单的文件合并工具，它在 Frida 的测试框架中被用作辅助工具，用于生成特定的测试文件，以测试 Frida 在处理文件系统操作或特定输入时的行为。其 "failing" 状态表明它与某个已知的失败测试用例相关，需要开发人员进行调查和修复。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/40 custom target plainname many inputs/catfiles.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -182,7 +184,4 @@ with open(out, 'wb') as o:
     for infile in sys.argv[1:-1]:
         with open(infile, 'rb') as f:
             o.write(f.read())
-
-"""
-
 ```

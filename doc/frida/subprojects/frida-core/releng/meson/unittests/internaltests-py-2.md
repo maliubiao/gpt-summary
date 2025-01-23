@@ -107,7 +107,7 @@ frida.attach("not_a_pid")
 
 `internaltests.py` 的这一部分专注于测试 Meson 构建系统中用于处理函数参数的 `@typed_kwargs` 装饰器的功能，包括类型检查、默认值、弃用警告、值校验和类型转换。 此外，它还测试了 CPU 架构检测功能。 这些测试对于确保 Frida 内部接口的健壮性和在不同平台上的兼容性至关重要，间接地影响着 Frida 在逆向工程场景中的可靠性和易用性。 开发者可以通过这些测试用例来发现和修复与参数处理和环境检测相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/unittests/internaltests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 rtIsNot(kwargs['input'], default)
 
         _(None, mock.Mock(), [], {})
@@ -506,8 +508,4 @@ rtIsNot(kwargs['input'], default)
         for raw, expected in cases:
             with self.subTest(raw):
                 self.assertEqual(OptionKey.from_string(raw), expected)
-
-"""
-
-
 ```

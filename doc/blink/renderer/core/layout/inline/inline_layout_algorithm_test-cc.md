@@ -108,15 +108,17 @@ I will structure the response as follows:
 
 总而言之，`inline_layout_algorithm_test.cc` 文件的主要功能是 **作为 Chromium Blink 引擎中 `inline` 布局算法的测试套件，通过大量的测试用例来确保该算法在各种 HTML 结构和 CSS 样式下都能正确地进行布局计算和渲染**。 这些测试覆盖了行内布局的各种细节，包括基本类型、伪元素、行内块级元素、浮动、文本对齐、文本组合等，并间接地与 JavaScript, HTML, CSS 的功能相关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_layout_algorithm_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1025,7 +1027,4 @@ TEST_F(InlineLayoutAlgorithmTest, TextBoxTrimConstraintSpace) {
   const TextBoxTrimResult empty_before{
       *GetLayoutBlockFlowByElementId("empty_before")};
   EXPECT_TRUE(empty_befor
-"""
-
-
 ```

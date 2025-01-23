@@ -156,7 +156,7 @@ My thought process to answer the request goes like this:
 
 总而言之，这部分代码定义了 `MediaKeySession` 类的基础结构和用于创建和加载会话的核心功能，是 EME 流程的起点。它负责与底层的 CDM 交互，并将结果通过 Promise 和事件机制反馈给 JavaScript。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/encryptedmedia/media_key_session.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Apple Inc. All rights reserved.
  *
@@ -985,7 +987,4 @@ void MediaKeySession::UpdateTask(ContentDecryptionModuleResult* result,
 }
 
 ScriptPromise<IDLUndefined> MediaKe
-"""
-
-
 ```

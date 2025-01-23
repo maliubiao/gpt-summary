@@ -63,9 +63,12 @@ This systematic approach, starting with the file path and progressively analyzin
 
 通过将这些常用的测试数值集中在一个地方定义，可以提高测试代码的可维护性和一致性。 其他测试文件只需要包含相应的头文件 (`test/common/value-helper.h`) 就可以直接使用这些预定义的数组。
 
-Prompt: ```这是目录为v8/test/common/value-helper.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/common/value-helper.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -87,6 +90,4 @@ constexpr double ValueHelper::float64_array[];
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

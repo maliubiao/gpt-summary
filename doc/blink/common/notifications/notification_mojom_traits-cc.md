@@ -180,14 +180,16 @@ new Notification('Hello', {
 
 `notification_mojom_traits.cc` 文件在 Chromium Blink 引擎中扮演着关键的角色，它负责安全可靠地将来自 Mojo IPC 的通知数据转换为 Blink 内部使用的格式，并执行必要的验证，防止错误或恶意数据影响系统。 虽然它不直接操作 JavaScript, HTML 或 CSS，但它处理的数据来源于 JavaScript 的 `Notification` API，并间接地与 HTML 的语言属性和通知的视觉呈现有关。 该文件通过明确的限制和验证，帮助开发者遵循规范，避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/notifications/notification_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -288,7 +290,4 @@ bool StructTraits<blink::mojom::NotificationResourcesDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

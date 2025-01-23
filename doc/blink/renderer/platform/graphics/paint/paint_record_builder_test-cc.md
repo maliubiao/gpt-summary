@@ -117,14 +117,16 @@ By following these steps, I could effectively deconstruct the test file, underst
 
 总而言之，`paint_record_builder_test.cc` 通过各种测试用例，确保 `PaintRecordBuilder` 能够正确地记录和管理绘制操作，这是 Blink 渲染引擎正确渲染网页内容的关键组成部分。 它的测试重点在于隔离和验证 `PaintRecordBuilder` 自身的行为，以及它与其他相关组件（如 `PaintController`）的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_record_builder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -197,7 +199,4 @@ TEST_F(PaintRecordBuilderTest, TransientAndAnotherPaintController) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

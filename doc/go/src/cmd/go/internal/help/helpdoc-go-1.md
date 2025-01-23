@@ -72,7 +72,7 @@ By following this thought process, I can generate a comprehensive and accurate a
 
 **总结来说，第二部分专注于构建过程的更精细控制和调试，而整个 `helpdoc.go` 文件旨在为用户提供关于如何使用 `go` 命令的全面帮助信息。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/help/helpdoc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -81,8 +81,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 of the cache:
 
 GODEBUG=gocacheverify=1 causes the go command to bypass the
@@ -348,10 +350,4 @@ with the -json flag. Typically, this indicates an early, serious error.
 Consumers should be robust to this.
 	`,
 }
-
-"""
-
-
-
-
 ```

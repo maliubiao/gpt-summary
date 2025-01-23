@@ -168,15 +168,17 @@ func main() {
 
 **总结：** 关键在于理解 `PkgPath` 反映的是 **字段类型本身** 的包路径，而不是其底层类型的包路径。对于在函数内部定义的类型别名，其字段类型没有关联到任何可导入的包，因此 `PkgPath` 为空。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue21120.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -206,9 +208,4 @@ func F2() string {
 	v := reflect.TypeOf(s)
 	return v.Field(0).PkgPath
 }
-
-"""
-
-
-
 ```

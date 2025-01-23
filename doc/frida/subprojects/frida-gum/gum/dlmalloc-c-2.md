@@ -662,7 +662,7 @@ static int pthread_init_lock (MLOCK_T *lk) {
   the chunk size redundantly records whether the current chunk is
   inuse (unless the chunk is mmapped). This redundancy enables usage
   checks
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/dlmalloc.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -671,8 +671,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 _t))
 #define SIZE_T_BITSIZE      (sizeof(size_t) << 3)
 
@@ -1522,8 +1524,5 @@ nextchunk-> +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
   half (0x140 <= x < 0x180) in the right subtree.  This is, of course,
   done by inspecting individual bits.
 
-  Using these rules, each node's left subtree 
-"""
-
-
+  Using these rules, each node's left subtree
 ```

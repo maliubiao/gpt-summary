@@ -144,15 +144,17 @@ fetch('https://example.com/data')
 
 `NullEncrypter` 是一个用于测试、调试或特定非安全场景的 QUIC 加密器实现。它不提供真正的加密，但会添加一个哈希值用于完整性校验。理解它的功能对于调试 QUIC 连接和避免安全误用至关重要。在生产环境中，通常会使用提供真正加密的 `QuicEncrypter` 实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/null_encrypter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ absl::string_view NullEncrypter::GetNoncePrefix() const {
 size_t NullEncrypter::GetHashLength() const { return kHashSizeShort; }
 
 }  // namespace quic
-
-"""
-
 ```

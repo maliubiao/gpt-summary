@@ -131,15 +131,17 @@ func main() {
 
 总而言之，这段代码片段本身非常简单，但它暗示了 Go 语言中跨包类型使用的基本机制。它很可能是一个测试用例的一部分，用于验证编译器在处理跨包交互时的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue49094.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -151,9 +153,4 @@ import "./a"
 func M(r *a.A) string {
 	return ""
 }
-
-"""
-
-
-
 ```

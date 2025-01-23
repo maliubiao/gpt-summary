@@ -252,7 +252,7 @@ age = 40
 
 总而言之，`frida/subprojects/frida-swift/releng/tomlkit/tomlkit/container.py` 是 Frida 工具中处理 TOML 配置文件的核心组件，它提供了存储、管理和操作 TOML 数据的能力，并间接地影响着 Frida 与底层系统和框架的交互。理解这个文件的功能和实现，对于使用 Frida 进行逆向工程和调试是非常有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/tomlkit/tomlkit/container.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -260,8 +260,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import copy
@@ -1137,7 +1139,4 @@ def ends_with_whitespace(it: Any) -> bool:
     return (
         isinstance(it, Table) and isinstance(it.value._previous_item(), Whitespace)
     ) or (isinstance(it, AoT) and len(it) > 0 and isinstance(it[-1], Whitespace))
-
-"""
-
 ```

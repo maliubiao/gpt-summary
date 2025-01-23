@@ -143,15 +143,17 @@ if (navigator.onLine) {
 
 总而言之，`net/base/address_tracker_linux_fuzzer.cc` 是一个测试工具，用于提高 Chromium 网络栈的健壮性，确保它能够正确处理各种网络事件，从而为用户提供稳定可靠的网络体验。虽然用户不会直接接触到这个文件，但它的作用是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/address_tracker_linux_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace net::test
-
-"""
-
 ```

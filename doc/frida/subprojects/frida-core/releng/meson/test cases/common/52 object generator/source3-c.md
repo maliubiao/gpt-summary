@@ -172,7 +172,7 @@ Finally, the process involves organizing the thoughts into a clear and structure
 
 总而言之，尽管 `source3.c` 的代码非常简单，但它在 Frida 的开发和测试流程中扮演着一个基础的角色，用于验证 Frida 的核心功能，并为开发者提供了一个简单的目标进行测试和调试。对于逆向工程师来说，理解 Frida 如何操作这样简单的函数是理解其更复杂功能的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/52 object generator/source3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,12 +180,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func3_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

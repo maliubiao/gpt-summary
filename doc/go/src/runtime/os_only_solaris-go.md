@@ -122,7 +122,7 @@ func main() {
 
 `go/src/runtime/os_only_solaris.go` 中的 `getncpu` 函数是 Go 运行时环境在 Solaris 系统上获取可用 CPU 核心数的关键实现。它通过系统调用获取信息，并为 Go 的调度器提供决策依据，最终影响 Go 程序的并发执行能力。理解其功能有助于理解 Go 程序在 Solaris 系统上的资源利用方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_only_solaris.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -130,8 +130,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -150,9 +152,4 @@ func getncpu() int32 {
 
 	return n
 }
-
-"""
-
-
-
 ```

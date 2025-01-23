@@ -136,7 +136,7 @@ By following these steps,  breaking down the problem, inferring functionality, a
 * **更深入的测试用例分析：**  每个测试用例的具体目的和覆盖范围是什么？
 * **Frida Hook 调试示例：** 如何使用 Frida 来观察 `scalbn` 函数的执行过程，并验证测试数据的有效性？
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/scalbn_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -148,8 +148,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -2073,7 +2075,4 @@ static data_1_2_t<double, double, int> g_scalbn_intel_data[] = {
     (int)-5
   },
   { // Entry
-"""
-
-
 ```

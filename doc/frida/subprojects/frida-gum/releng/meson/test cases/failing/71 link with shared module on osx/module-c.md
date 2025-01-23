@@ -193,7 +193,7 @@ int func(void) {
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/test cases/failing/71 link with shared module on osx/module.c` 这个文件本身是一个非常简单的共享库源代码，但在 Frida 的测试框架中，它被用于测试 macOS 上共享库动态链接的特定失败场景，帮助开发者确保 Frida 在处理这种情况时能够正确工作或报告错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/71 link with shared module on osx/module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -201,12 +201,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 1496;
 }
-
-"""
-
 ```

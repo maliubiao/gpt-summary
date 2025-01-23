@@ -113,11 +113,13 @@ By following these steps, breaking down the code, understanding its context, and
 
 总而言之，`search-util.cc` 文件是 V8 Inspector 实现代码搜索和处理源码映射等关键功能的底层支持，直接影响着 JavaScript 开发者的调试体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/search-util.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ String16 findSourceMapURL(const String16& content, bool multiline) {
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

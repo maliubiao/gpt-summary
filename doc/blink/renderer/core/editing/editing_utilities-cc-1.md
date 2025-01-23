@@ -250,7 +250,7 @@ This iterative process of scanning, grouping, connecting, inferring, and conside
 
 总而言之，这部分 `editing_utilities.cc` 文件提供了一组核心的、底层的工具函数，用于处理 Blink 编辑器中的各种操作，例如查找元素、处理位置、确定文本方向、处理特殊字符、管理事件等等。 这些函数是构建更高级编辑功能的基础，并且与 HTML 的结构、CSS 的渲染以及 JavaScript 的事件处理机制紧密相关。理解这些工具函数的功能有助于深入理解 Blink 编辑器的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/editing_utilities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -258,9 +258,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- |enclosingBlock()| should use
+### 源代码
+```cpp
+|enclosingBlock()| should use
 // |Position| version The enclosing block of [table, x] for example, should be
 // the block that contains the table and not the table, and this function should
 // be the only one responsible for knowing about these kinds of special cases.
@@ -1115,7 +1117,4 @@ void InsertTextAndSendInputEventsOfTypeInsertReplacementText(
       DispatchBeforeInputDataTransfer(
           target, InputEvent::InputType::kInsertReplacementText,
           data_transfer) != DispatchEventResult::kNotCa
-"""
-
-
 ```

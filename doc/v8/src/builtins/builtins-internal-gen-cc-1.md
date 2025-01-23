@@ -220,7 +220,7 @@ Finally, after understanding the code, we can address the prompt's questions dir
 
 由于这是第 2 部分，可以推测第 1 部分可能包含其他类型的内置函数定义，而第 3 部分可能会处理更多的复杂逻辑或者与其他 V8 内部组件的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-internal-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-internal-gen.cc以.tq结尾，那它是个v8 torque源代码，
@@ -228,8 +228,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Label shrinking_done(this);
     TNode<Smi> capacity = GetCapacity<NameDictionary>(properties);
     GotoIf(SmiGreaterThan(new_nof, SmiShr(capacity, 2)), &shrinking_done);
@@ -1078,7 +1080,4 @@ TF_BUILTIN(InstantiateAsmJs, CodeStubAssembler) {
   TNode<Code> code = LoadJSFunctionCode(function);
   TailCallJSCode(code, context, function, new_target, arg_count,
                  disp
-"""
-
-
 ```

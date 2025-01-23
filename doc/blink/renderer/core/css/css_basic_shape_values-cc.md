@@ -208,15 +208,17 @@ By following these steps, combining code analysis with knowledge of CSS and brow
 
 总而言之，`css_basic_shape_values.cc` 是 Blink 引擎中处理 CSS basic shape 值的核心组件，它将 CSS 语法表示的形状转换为内部对象，并负责将这些对象序列化回 CSS 字符串，在浏览器的渲染过程中起着至关重要的作用。理解这个文件的功能有助于开发者理解 CSS basic shape 的工作原理，并进行更有效的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_basic_shape_values.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Adobe Systems Incorporated. All rights reserved.
  *
@@ -889,7 +891,4 @@ void CSSBasicShapeXYWHValue::Validate() const {
 
 }  // namespace cssvalue
 }  // namespace blink
-
-"""
-
 ```

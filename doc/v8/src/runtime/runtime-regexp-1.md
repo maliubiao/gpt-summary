@@ -87,12 +87,14 @@ I will now formulate the summary and provide JavaScript examples for the relevan
 
 总而言之，这部分代码包含了 V8 引擎中用于支持 JavaScript 正则表达式核心功能的运行时函数，涵盖了分割、替换、初始化和匹配等关键操作。它体现了 V8 如何在 C++ 层面上高效地实现 JavaScript 的正则表达式特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-regexp.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 olate, result, RegExpUtils::RegExpExec(isolate, splitter, string,
                                                  factory->undefined_value()));
 
@@ -610,8 +612,4 @@ RUNTIME_FUNCTION(Runtime_RegExpMatchGlobalAtom) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

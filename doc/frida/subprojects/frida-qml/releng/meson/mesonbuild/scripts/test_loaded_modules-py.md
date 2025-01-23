@@ -99,7 +99,7 @@ A typical scenario where a developer might encounter this script's output as a d
 
 In summary, `test_loaded_modules.py` is a crucial internal testing tool for Frida. It ensures the tool remains lean and efficient by verifying that running wrapped commands does not lead to excessive module loading, directly supporting the goals of reverse engineering and maintaining a stable and performant dynamic instrumentation environment.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/scripts/test_loaded_modules.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import sys
@@ -123,7 +125,4 @@ def run(args: T.List[str]) -> int:
     meson_exe.run(args)
     print(json.dumps(list(sys.modules.keys())))
     return 0
-
-"""
-
 ```

@@ -140,13 +140,15 @@ if (globalThis.newFeature) {
 
 `v8/src/init/bootstrapper.cc` 的最后一部分负责完成 V8 引擎的启动，它创建和配置 JavaScript 的全局执行环境，包括全局对象、内置对象、内置函数以及原型链等核心组件。 这使得 JavaScript 代码能够在 V8 引擎提供的标准环境下运行。如果没有这个文件及其前面几部分的初始化工作，JavaScript 代码将无法执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
-      .ToHandle(&context)) {
+### 源代码
+```
+.ToHandle(&context)) {
       native_context_ = Cast<NativeContext>(context);
     }
   }
@@ -316,8 +318,4 @@ void Bootstrapper::FreeThreadResources() { DCHECK(!IsActive()); }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

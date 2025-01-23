@@ -209,7 +209,7 @@ output_file = "${paths:is_arm_output_prefix}output.txt"
 
 总而言之，`machine_file.py` 在 Frida 项目中扮演着关键的角色，负责加载和解析机器特定的配置信息，这些信息对于 Frida 的正确运行和适应不同的目标环境至关重要。理解这个文件的功能有助于理解 Frida 的配置机制，并在遇到相关问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/machine_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -217,8 +217,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from configparser import ConfigParser
 from pathlib import Path
 from typing import Sequence, Union
@@ -263,7 +265,4 @@ def strv_to_meson(strv: Sequence[str]) -> str:
 
 def str_to_meson(s: str) -> str:
     return "'" + s + "'"
-
-"""
-
 ```

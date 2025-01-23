@@ -175,7 +175,7 @@ configure_file(
 
 In essence, this part of `interpreter.py` is crucial for translating the high-level build instructions written in the `meson.build` language into concrete actions that the build system will perform, such as configuring files, setting up compiler flags, and defining test environments. It handles a lot of the logic and validation needed to ensure a robust and secure build process for projects like Frida.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 y=True,
             default=[],
         ),
@@ -766,7 +768,4 @@ y=True,
             raise InterpreterException('Target name must not consist only of whitespace.')
         if has_path_sep(name):
             pathseg = os.path.join(self
-"""
-
-
 ```

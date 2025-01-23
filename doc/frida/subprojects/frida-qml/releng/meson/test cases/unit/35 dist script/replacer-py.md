@@ -146,7 +146,7 @@ Essentially, I approached it by understanding the *what*, then connecting it to 
 
 作为调试线索，如果单元测试失败或者出现预期外的行为，可以检查这个脚本的执行情况，确认是否进行了正确的替换，以及环境变量 `MESON_DIST_ROOT` 是否设置正确。如果手动执行脚本后出现问题，需要检查提供的 pattern 和 replacement 是否正确，以及目标文件是否存在且内容是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/35 dist script/replacer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -172,7 +174,4 @@ modfile = source_root / 'prog.c'
 contents = modfile.read_text()
 contents = contents.replace(sys.argv[1], sys.argv[2])
 modfile.write_text(contents)
-
-"""
-
 ```

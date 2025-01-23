@@ -99,11 +99,13 @@ console.assert(globalValue1 === functionResult1, "全局变量的值和函数的
 
 `wasm-init-expr.cc` 是一个模糊测试工具，用于确保 V8 的 WebAssembly 引擎在处理全局变量的初始化表达式时行为正确且一致。它通过生成随机的 WebAssembly 模块，并比较全局变量的初始值与执行相同逻辑的函数的结果，来检测潜在的错误。这对于保证 WebAssembly 代码在 JavaScript 环境中的正确性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/wasm-init-expr.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -477,7 +479,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
 ```

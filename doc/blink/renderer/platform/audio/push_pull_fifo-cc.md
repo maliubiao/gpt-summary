@@ -178,14 +178,16 @@ This systematic approach, starting from the high-level understanding and progres
 
 `PushPullFIFO` 是 Chromium 中用于音频数据缓冲和异步传输的关键组件。它通过环形缓冲区、线程安全机制和溢出/欠载处理，确保音频数据在生产者和消费者之间平滑、可靠地传递。理解其工作原理和潜在的使用错误，对于开发涉及 Web Audio API 的应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/push_pull_fifo.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -517,7 +519,4 @@ const PushPullFIFOStateForTest PushPullFIFO::GetStateForTest() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

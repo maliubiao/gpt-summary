@@ -163,7 +163,7 @@ VUSHL.8H V0.B, V1.B, #3  // 尝试将 V1 的 8 个字节左移，结果放入 V0
 
 作为 Go ARM64 汇编器的第六部分，`asm7.go` 的主要职责是 **实现将 Go 汇编语言指令转换为 ARM64 机器码的核心编码逻辑**。它通过一系列函数，针对不同的指令格式和操作码，将指令的操作数、立即数、条件码等信息编码成最终的二进制机器码。这部分代码是连接 Go 汇编器前端 (解析) 和后端 (生成机器码) 的关键环节，确保了 Go 程序能够在 ARM64 架构上正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/arm64/asm7.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -172,8 +172,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 n = 1 // two register
 		case 0x6:
 			len = 2 // three registers
@@ -1851,9 +1853,4 @@ func (c *ctxt7) omovlit(as obj.As, p *obj.Prog, a *obj.Addr, dr int) uint32 {
 		fp, w := 0, 0
 		switch as {
 		case AFMOVS, AVMOV
-"""
-
-
-
-
 ```

@@ -131,7 +131,7 @@ By following this systematic approach, starting with the high-level purpose and 
 
 总结来说，`frida/releng/meson/mesonbuild/_pathlib.py` 是一个针对特定 Windows 系统上 `pathlib.resolve()` 方法 bug 的补丁，它通过条件性地替换 `pathlib.Path` 类并重写 `resolve` 方法来解决这个问题，确保了 Frida 构建过程在 Windows 上的文件路径操作的可靠性。 它间接地与逆向方法相关，因为逆向工程中经常需要处理文件路径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/_pathlib.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -204,7 +206,4 @@ else:
         'PosixPath',
         'WindowsPath',
     ]
-
-"""
-
 ```

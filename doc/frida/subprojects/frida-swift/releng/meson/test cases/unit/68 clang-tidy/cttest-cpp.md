@@ -120,7 +120,7 @@ This code is likely part of the **unit tests** for Frida's Swift integration. A 
 
 **In summary, while this specific code snippet is simple, it demonstrates fundamental C++ concepts relevant to reverse engineering, binary representation, and the kind of low-level details that Frida interacts with when performing dynamic instrumentation.**  Its presence as a unit test within the Frida project highlights its role in verifying the correctness of Frida's functionality related to data type handling, potentially in the context of Swift interoperability.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/68 clang-tidy/cttest.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<cstdio>
 
 int main(int, char**) {
@@ -137,7 +139,4 @@ int main(int, char**) {
     printf("Intbool is %d\n", (int)intbool);
     return 0;
 }
-
-"""
-
 ```

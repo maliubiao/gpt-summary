@@ -224,7 +224,7 @@ By following this structured approach and incorporating self-correction, the gen
 
 这些测试用例确保了这些关键的 GC 相关功能能够按照预期工作，并且能够处理一些边界情况（如 `SetMaxThreadsOvf` 中的大数值输入）。通过这些测试，Go 语言的开发者可以更加自信地使用这些功能来监控和调整其程序的内存管理行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/debug/garbage_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -232,8 +232,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -472,9 +474,4 @@ func TestSetMaxThreadsOvf(t *testing.T) {
 	nt := SetMaxThreads(1 << (30 + ^uint(0)>>63))
 	SetMaxThreads(nt) // restore previous value
 }
-
-"""
-
-
-
 ```

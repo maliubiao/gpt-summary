@@ -111,15 +111,17 @@ By following this structured thought process, I can ensure that the answer is ac
 
 `quic_simple_server_backend_factory.cc` 提供了一种创建简单 QUIC 服务器后端的方式，它默认使用内存缓存。虽然它本身的代码很简单，但在 QUIC 服务器处理客户端请求的流程中扮演着关键的角色。理解它的功能和局限性对于开发和调试 QUIC 相关的应用非常重要。当用户在浏览器中与使用 QUIC 协议的服务器交互时，服务器端就需要使用这样的工厂来创建处理请求的后端服务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/quic/quic_simple_server_backend_factory.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -137,7 +139,4 @@ QuicSimpleServerBackendFactory::CreateBackend() {
 }
 
 }  // namespace net
-
-"""
-
 ```

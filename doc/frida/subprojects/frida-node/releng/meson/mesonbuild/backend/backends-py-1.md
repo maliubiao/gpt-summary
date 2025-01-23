@@ -160,7 +160,7 @@ During debugging, if a user encounters issues with shared libraries not being fo
 
 This part of the `backends.py` file primarily focuses on the **generation of compiler and linker commands, particularly concerning shared library dependencies (RPATHs) and Windows-specific DLL handling.** It also handles object file naming conventions and lays the groundwork for the test framework by providing functions for test serialization and path construction. Essentially, it's responsible for the crucial steps of translating the high-level build definitions into the concrete instructions needed to compile and link the Frida Node.js components, ensuring that shared libraries can be found at runtime.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,9 +169,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
- if Path(dir).is_dir():
+### 源代码
+```python
+if Path(dir).is_dir():
                         dirs.add(dir)
             symbols_match = symbols_regex.match(arg)
             if symbols_match:
@@ -835,8 +837,5 @@ Prompt:
             for arg in t.cmd_args:
                 if not isinstance(arg, (build.CustomTarget, build.BuildTarget)):
                     continue
-                result[arg.get_id()] 
-"""
-
-
+                result[arg.get_id()]
 ```

@@ -132,11 +132,13 @@ try {
 
 `macro-assembler-loong64-unittest.cc` 文件通过测试 `MacroAssembler` 在 LoongArch 64 架构上的正确性，确保 V8 引擎能够在该架构上高效且可靠地将 JavaScript 代码编译成机器码。  `Abort` 和 `Check` 等汇编指令的功能在 JavaScript 中通过错误处理、断言和条件判断等机制体现出来，尽管 JavaScript 无法直接操作底层的汇编指令。 这些底层的测试保证了 JavaScript 代码在 V8 引擎上的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/macro-assembler-loong64-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ TEST_F(MacroAssemblerTest, TestCheck) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -114,14 +114,16 @@ By following these steps and continuously refining the understanding, we can arr
 
 `blink/public/mojom/authenticator_mojom_traits.cc` 是 Chromium Blink 引擎中一个关键的文件，它负责 Web Authentication API 相关数据结构在不同进程之间的序列化和反序列化。它通过定义 Mojo 类型转换的 traits，实现了 C++ 枚举和结构体与 Mojo 类型的相互转换，从而支持了 WebAuthn API 的跨进程通信。虽然普通用户和前端开发者不会直接操作这个文件，但它的正确性对于 WebAuthn 功能的正常运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/public/mojom/authenticator_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -503,7 +505,4 @@ bool EnumTraits<blink::mojom::AttestationConveyancePreference,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

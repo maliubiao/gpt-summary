@@ -120,11 +120,13 @@ By following these steps, with a focus on understanding the code's purpose and i
 
 `v8/src/runtime/runtime-typedarray.cc` 文件是 V8 引擎中实现 `ArrayBuffer` 和 `TypedArray` 相关核心功能的关键部分。它提供了 JavaScript 中这些对象的方法所需的底层 C++ 实现，确保了这些操作的高效执行。了解这些运行时函数的功能有助于深入理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-typedarray.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -329,7 +331,4 @@ RUNTIME_FUNCTION(Runtime_TypedArraySet) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

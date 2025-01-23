@@ -68,7 +68,7 @@ To summarize the functionality, I will iterate through the test cases and extrac
 
 总而言之，这部分代码主要关注 `SSLConnectJob` 在代理场景下的认证流程、连接状态管理以及对 ECH 功能的支持和错误处理。这些测试确保了网络栈在各种复杂场景下都能正确建立 SSL 连接。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/ssl_connect_job_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -76,8 +76,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 R_PROXY_CONNECTION_FAILED,
                                           io_mode == SYNCHRONOUS);
 
@@ -803,7 +805,4 @@ TEST_F(SSLConnectJobTest, ECHRecoveryThenLegacyCrypto) {
   base::HistogramTester histogram_tester;
   TestConnectJobDelegate test_delegate;
   std::unique_ptr<Connec
-"""
-
-
 ```

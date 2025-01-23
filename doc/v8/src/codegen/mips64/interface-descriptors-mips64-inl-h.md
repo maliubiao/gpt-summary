@@ -141,15 +141,17 @@ processLargeObject(myObject);
 
 总而言之，`v8/src/codegen/mips64/interface-descriptors-mips64-inl.h` 是 V8 引擎在 MIPS64 架构上实现高性能 JavaScript 执行的关键组成部分，它定义了底层操作的寄存器使用约定，确保了代码的正确性和效率。 理解其作用有助于更深入地了解 JavaScript 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/interface-descriptors-mips64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/interface-descriptors-mips64-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -554,7 +556,4 @@ constexpr auto WasmJSToWasmWrapperDescriptor::registers() {
 #endif  // V8_TARGET_ARCH_MIPS64
 
 #endif  // V8_CODEGEN_MIPS64_INTERFACE_DESCRIPTORS_MIPS64_INL_H_
-
-"""
-
 ```

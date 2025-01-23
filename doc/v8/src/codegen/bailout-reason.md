@@ -106,11 +106,13 @@ add(1, 2);
 
 总而言之，`bailout-reason.cc` 这个文件在 V8 引擎中扮演着至关重要的角色，它维护了优化和错误处理的关键信息，间接地影响着 JavaScript 代码的执行效率和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/bailout-reason.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ bool IsValidAbortReason(int reason_id) {
 #undef ERROR_MESSAGES_TEXTS
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

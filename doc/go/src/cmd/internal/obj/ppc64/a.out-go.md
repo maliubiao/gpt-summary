@@ -158,15 +158,17 @@ BL   runtime.println // 调用 println 函数 (使用 ABL 操作码)
 
 总而言之，`go/src/cmd/internal/obj/ppc64/a.out.go` 是 Go 语言工具链中关于 PowerPC 64 位架构的重要基础，它为编译和链接过程提供了必要的架构信息。普通 Go 开发者无需直接关注此文件，但理解其作用有助于更深入地了解 Go 的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/ppc64/a.out.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // cmd/9c/9.out.h from Vita Nuova.
 //
 //	Copyright © 1994-1999 Lucent Technologies Inc.  All rights reserved.
@@ -1265,9 +1267,4 @@ const (
 	ABL   = obj.ACALL
 	ALAST = ALASTGEN // The final enumerated instruction value + 1. This is used to size the oprange table.
 )
-
-"""
-
-
-
 ```

@@ -114,14 +114,16 @@ By following these steps, analyzing the code, connecting it to broader web conce
 
 总而言之，`blink/renderer/platform/text_codec_fuzzer.cc` 是一个用于提高 Blink 引擎文本编码和解码功能健壮性的重要工具。通过模拟各种可能的输入和配置，它可以帮助开发者发现并修复潜在的 bug，确保网页能够正确地显示各种字符编码的文本内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text_codec_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   }
   return 0;
 }
-
-"""
-
 ```

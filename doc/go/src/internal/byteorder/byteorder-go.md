@@ -193,7 +193,7 @@ func main() {
 
 总而言之，`internal/byteorder` 包提供了一组基础的字节序处理工具，开发者需要根据具体的应用场景和目标系统的字节序来选择合适的函数，并注意处理字节切片的长度，以避免潜在的错误。虽然这是一个内部包，但理解其原理对于理解 Go 语言的底层数据处理机制是有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/byteorder/byteorder.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,8 +201,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -352,9 +354,4 @@ func BEAppendUint64(b []byte, v uint64) []byte {
 		byte(v),
 	)
 }
-
-"""
-
-
-
 ```

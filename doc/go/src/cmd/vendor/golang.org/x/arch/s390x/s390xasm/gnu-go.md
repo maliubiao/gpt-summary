@@ -175,15 +175,17 @@ func main() {
 
 这段代码的核心功能是为 s390x 架构的汇编指令提供更友好的 GNU 汇编语法表示，通过使用扩展助记符来隐藏某些标志位或字段的细节，从而提高代码的可读性和可维护性。它通过定义一系列结构体和函数来实现这一目标，根据指令的特定字段值来查找或构建相应的扩展助记符，并在最终的汇编输出中替换基本助记符。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/s390x/s390xasm/gnu.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors.  All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1204,9 +1206,4 @@ func removeArg(inst *Inst, index int8) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

@@ -122,11 +122,13 @@ console.log(result); // 输出 Infinity，但在内部计算过程中可能会�
 
 `cached-powers.cc` 是 V8 引擎中用于优化浮点数处理的关键组件。它通过预先计算并缓存一些常用的 2 的幂次方，特别是那些接近 10 的整数次幂的 2 的幂次方，来显著提高 JavaScript 中数字解析、格式化以及浮点数运算的效率。这对于处理非常大或非常小的数字尤其重要，因为它避免了重复进行复杂的幂运算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/cached-powers.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ void PowersOfTenCache::GetCachedPowerForDecimalExponent(int requested_exponent,
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -167,15 +167,17 @@ func main() {
 
 总而言之，`go fix` 命令是 Go 语言提供的一个方便的工具，用于代码的自动化升级和迁移。它通过调用底层的 `go tool fix` 工具来实现代码的修改，并提供了一些选项来控制修复的范围和规则。理解其工作原理和使用方式，可以帮助 Go 开发者更高效地维护和升级他们的代码库。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/fix/fix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -261,9 +263,4 @@ func runFix(ctx context.Context, cmd *base.Command, args []string) {
 		base.Run(str.StringList(cfg.BuildToolexec, base.Tool("fix"), "-go="+goVersion, fixArg, files))
 	}
 }
-
-"""
-
-
-
 ```

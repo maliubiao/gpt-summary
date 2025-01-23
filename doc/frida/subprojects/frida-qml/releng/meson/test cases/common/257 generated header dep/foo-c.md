@@ -111,7 +111,7 @@ Initially, one might be tempted to overthink the self-inclusion. Is there some c
 
 虽然 `foo.c` 文件本身非常简单且存在明显的错误（循环包含），但它所处的上下文表明它是 Frida 动态 instrumentation 工具测试框架的一部分，并且可能涉及动态生成头文件。 理解这个文件的目的是为了支撑测试用例的构建和运行，而 Frida 本身与逆向工程、底层系统知识密切相关。  开发者查看这个文件通常是因为遇到了与构建、测试或代码理解相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/257 generated header dep/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,10 +119,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "foo.h"
-
-"""
-
 ```

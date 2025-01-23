@@ -116,7 +116,7 @@ I will address each of the user's requests systematically, drawing examples and 
 
 总而言之，这部分代码主要集中在测试 `HttpStreamFactory::JobController` 在处理并发 HTTP/2 请求、预连接、协议协商以及与 QUIC 等备用服务交互时的核心逻辑和限制机制。它确保了网络栈能够有效地管理连接资源，避免过载，并尽可能利用更优的网络协议来提升性能。同时，也测试了一些容错处理机制，例如在请求被取消时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_job_controller_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ovider> ssl_socket_data;
   // kNumRequests - 1 will resume themselves after a delay. There will be
   // kNumRequests - 1 sockets opened.
@@ -889,7 +891,4 @@ class HttpStreamFactoryJobControllerDnsHttpsAlpnTest
     base::RunLoop().RunUntilIdle();
     ASSERT_GT(crypto_client_stream_factory_.streams().size(), index);
     Mo
-"""
-
-
 ```

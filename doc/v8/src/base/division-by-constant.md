@@ -115,11 +115,13 @@ console.log(processArray(data)); // 输出 [ 2, 3, 4, 5 ]
 
 `v8/src/base/division-by-constant.cc` 中的代码是 V8 引擎为了提升 JavaScript 中常量除法运算性能而实现的关键优化。它通过预先计算魔术数字，将较慢的除法运算替换为更快的乘法和位移操作，从而提高了 JavaScript 代码的执行效率。这种优化对于性能敏感的应用，例如游戏、图形处理和复杂的 Web 应用非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/division-by-constant.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -234,7 +236,4 @@ template EXPORT_TEMPLATE_DEFINE(V8_BASE_EXPORT)
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

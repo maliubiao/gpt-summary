@@ -183,7 +183,7 @@ By following this structured approach, considering the context, and anticipating
 
 总之，这个简单的 `lib.c` 文件在 Frida 的测试框架中扮演着一个基础的角色，用于验证 Frida 与 C 代码交互的能力。通过分析这个简单的例子，可以帮助理解 Frida 的基本 hook 机制以及在逆向工程和动态分析中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/22 object extraction/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,12 +191,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     return 42;
 }
-
-"""
-
 ```

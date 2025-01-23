@@ -134,15 +134,17 @@ By following these steps and considering the context of the file within the larg
 
 `net/third_party/quiche/src/quiche/quic/test_tools/mock_quic_spdy_client_stream.cc`  定义了一个用于单元测试的 mock 类，用于模拟 QUIC 客户端 SPDY 流的行为。它简化了测试的编写，允许开发人员隔离被测代码，并验证代码与 QUIC 客户端流的交互。虽然与 JavaScript 没有直接的运行时关系，但它对于确保 Chromium 网络栈在处理基于 QUIC 的网络请求时能够正确工作至关重要，而这些请求通常是由 JavaScript 发起的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/mock_quic_spdy_client_stream.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ MockQuicSpdyClientStream::~MockQuicSpdyClientStream() {}
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

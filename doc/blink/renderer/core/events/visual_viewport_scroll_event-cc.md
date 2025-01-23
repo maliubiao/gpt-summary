@@ -199,14 +199,16 @@ By following these steps, iterating on the understanding, and constantly connect
 
 总而言之，`visual_viewport_scroll_event.cc` 定义了 Blink 引擎中用于表示视觉视口滚动事件的类，它与 JavaScript, HTML, CSS 通过标准的 `scroll` 事件机制进行交互，并被 Chromium 内部用于跟踪相关功能的使用情况。理解其特性（不冒泡、不可取消）对于避免编程错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/visual_viewport_scroll_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ void VisualViewportScrollEvent::DoneDispatchingEventAtCurrentTarget() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

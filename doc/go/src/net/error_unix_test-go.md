@@ -169,7 +169,7 @@ func main() {
 
 总而言之，这段代码提供了一组工具，用于在 Unix 系统上更准确地识别和比较网络操作中遇到的底层系统调用错误，帮助开发者编写更健壮的网络应用程序。理解这些辅助函数的作用，并避免直接比较错误，是正确处理 Unix 平台网络错误的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/error_unix_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -177,8 +177,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -217,9 +219,4 @@ func samePlatformError(err, want error) bool {
 func isENOBUFS(err error) bool {
 	return errors.Is(err, syscall.ENOBUFS)
 }
-
-"""
-
-
-
 ```

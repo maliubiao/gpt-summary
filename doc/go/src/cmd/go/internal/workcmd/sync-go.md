@@ -210,15 +210,17 @@ use ./mod_b
 
 总而言之，`go work sync` 是 Go Workspaces 中用于维护工作区内模块依赖版本一致性的关键命令，它通过 MVS 算法生成构建列表，并将该列表同步到各个工作区模块的 `go.mod` 文件中，同时也会更新 `go.work` 文件中的 Go 版本。理解其工作原理和参数对于正确使用 Go Workspaces 非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/workcmd/sync.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -365,9 +367,4 @@ func runSync(ctx context.Context, cmd *base.Command, args []string) {
 		base.Fatal(err)
 	}
 }
-
-"""
-
-
-
 ```

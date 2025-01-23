@@ -149,15 +149,17 @@ console.log(hexString); // 输出: 0aff05c012
 
 总而言之，`v8/src/utils/hex-format.cc` 中的 `FormatBytesToHex` 函数是一个小巧但重要的实用工具，用于在 V8 内部将字节数据转换为易于阅读的十六进制格式，并且它通过安全检查来防止常见的缓冲区溢出错误。了解其功能有助于理解 V8 如何处理和表示底层的二进制数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/hex-format.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/utils/hex-format.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ void FormatBytesToHex(char* formatted, size_t size_of_formatted,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

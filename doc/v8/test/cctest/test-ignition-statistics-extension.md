@@ -128,11 +128,13 @@ console.log(counters);
 
 `v8/test/cctest/test-ignition-statistics-extension.cc` 这个 C++ 文件确保了 V8 引擎能够正确地将 Ignition 解释器的性能统计信息暴露给 JavaScript 开发者，让他们能够通过 `getIgnitionDispatchCounters()` 函数了解代码执行期间 bytecode 的调度情况，这对于性能分析和优化非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-ignition-statistics-extension.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ TEST(IgnitionStatisticsExtension) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

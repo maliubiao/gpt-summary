@@ -193,15 +193,17 @@ test1: recv2 on closed nb: 0 false true (<- operator)
 
 总而言之，`go/test/closedchan.go` 是 Go 语言中关于 channel 关闭机制的重要测试文件，它详细验证了在各种场景下关闭 channel 后的行为，帮助开发者理解和正确使用 Go 的并发特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/closedchan.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -561,9 +563,4 @@ func main() {
 		os.Exit(1)
 	}
 }
-
-"""
-
-
-
 ```

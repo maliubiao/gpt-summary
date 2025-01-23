@@ -87,15 +87,17 @@ The user wants to understand the functionality of the `text_control_element.cc` 
 
 这就是对 `blink/renderer/core/html/forms/text_control_element.cc` 文件功能的初步归纳，侧重于提供的代码片段。接下来，请提供第 2 部分的代码，以便进行更全面的分析。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/text_control_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -969,8 +971,4 @@ Node* TextControlElement::CreatePlaceholderBreakElement() const {
 
 void TextControlElement::AddPlaceholderBreakElementIfNecessary() {
   HTMLElement* inner_editor = InnerEditorElement();
-
-"""
-
-
 ```

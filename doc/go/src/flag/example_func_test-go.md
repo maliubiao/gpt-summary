@@ -190,7 +190,7 @@ Usage of CustomPortRange:
 
 这段代码是 `flag` 包中 `Func` 和 `BoolFunc` 函数的典型用法示例，展示了如何自定义命令行标志的处理逻辑，包括类型转换、格式校验和自定义行为。理解这些用法可以帮助开发者构建更灵活和强大的命令行工具。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/flag/example_func_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -198,8 +198,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -257,9 +259,4 @@ func ExampleBoolFunc() {
 	// dummy message: true
 	// dummy message: 0
 }
-
-"""
-
-
-
 ```

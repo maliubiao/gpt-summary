@@ -138,7 +138,7 @@ obj.value = 30; // 存储属性值
 
 这段 `v8/src/compiler/backend/s390/instruction-selector-s390.cc` 代码片段是 V8 编译器中至关重要的一部分，它负责将高级的中间表示转换成底层的 S390 机器指令，从而实现 JavaScript 代码在 S390 架构上的执行。它处理各种操作类型，并针对 S390 架构的特性进行优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/instruction-selector-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/s390/instruction-selector-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 and_mode &=
           ~OperandMode::kAllowImmediate & ~OperandMode::kAllowDistinctOps;
     } else if (*operand_mode & OperandMode::kAllowRRM) {
@@ -988,8 +990,4 @@ void InstructionSelectorT<TurboshaftAdapter>::VisitWord64Shr(node_t node) {
                                   sh),
             &mb, &me)) {
       // Adjust the mask such that it doesn't include any rotated bits.
-  
-"""
-
-
 ```

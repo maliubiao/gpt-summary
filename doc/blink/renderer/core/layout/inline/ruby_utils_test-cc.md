@@ -161,14 +161,16 @@ Ruby 注音是 HTML 中的一个特性，用于在基准文本上方或下方显
 
 总而言之，`ruby_utils_test.cc` 是 Blink 渲染引擎中一个重要的测试文件，它专注于验证 Ruby 注音布局的核心逻辑，确保浏览器能够正确地渲染包含 Ruby 注音的网页，并处理各种复杂的 HTML 结构和 CSS 样式。 它通过模拟不同的 Ruby 注音场景，并断言 `RubyBlockPositionCalculator` 的输出是否符合预期，从而保证了渲染引擎的质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/ruby_utils_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -288,7 +290,4 @@ TEST(RubyBlockPositionCalculatorTest, GroupLinesAnnotationForAnnotation) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

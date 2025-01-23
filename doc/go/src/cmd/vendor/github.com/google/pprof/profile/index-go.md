@@ -167,7 +167,7 @@ go tool pprof --sample_type=alloc_space my_profile.pb.gz
 
 `go/src/cmd/vendor/github.com/google/pprof/profile/index.go` 中的这段代码是 `pprof` 工具中一个关键的组成部分，它提供了灵活的方式来定位和选择性能剖析数据中的特定样本类型，无论是通过数字索引还是名称。它还考虑了旧版本的兼容性，并提供了基础的错误处理机制，以帮助用户正确地指定他们想要分析的数据。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/profile/index.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -241,9 +243,4 @@ func sampleTypes(p *Profile) []string {
 	}
 	return types
 }
-
-"""
-
-
-
 ```

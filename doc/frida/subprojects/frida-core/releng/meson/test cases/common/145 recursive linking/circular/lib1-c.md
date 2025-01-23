@@ -147,7 +147,7 @@ Initially, I might focus too much on the *specific* values returned by the funct
 
 这个 `lib1.c` 文件本身作为一个简单的例子，通常是更大测试用例的一部分，用于测试Frida在处理具有循环依赖或跨模块依赖的代码时的能力。目录结构 `frida/subprojects/frida-core/releng/meson/test cases/common/145 recursive linking/circular/` 也暗示了这一点。用户到达这个代码文件的原因很可能是因为他们在研究 Frida 的内部实现、测试用例，或者遇到了与动态链接和函数hook相关的问题，并试图理解 Frida 是如何处理这种情况的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/145 recursive linking/circular/lib1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,15 +155,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int get_st2_prop (void);
 int get_st3_prop (void);
 
 int get_st1_value (void) {
   return get_st2_prop () + get_st3_prop ();
 }
-
-"""
-
 ```

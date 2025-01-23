@@ -197,7 +197,7 @@ Finally, organize the analysis into the requested categories: functionality, rel
 
 总而言之，这个简单的 `exe.orig.c` 文件虽然自身功能不多，但它为演示 Frida 的动态分析能力提供了一个清晰而集中的目标。它突出了在逆向工程中遇到的常见场景：分析未知行为的函数，以及理解程序在二进制层面的执行流程。其依赖于外部未定义的函数 `myFunc` 的特性，使其成为学习和实践 Frida 在处理动态链接库时的绝佳案例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/linuxlike/7 library versions/exe.orig.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int myFunc (void);
 
 int main(void)
@@ -215,7 +217,4 @@ int main(void)
     return 0;
   return 1;
 }
-
-"""
-
 ```

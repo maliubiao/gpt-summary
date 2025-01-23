@@ -132,14 +132,16 @@ Response: Let's break down the thought process for analyzing the provided C++ un
 
 `browsing_context_group_info_unittest.cc` 文件通过测试 `BrowsingContextGroupInfo` 类的创建和比较功能，确保了 Blink 引擎能够正确地管理和识别不同的浏览上下文组。虽然这个类本身是底层的 C++ 实现，但它对于理解和正确实现涉及跨域隔离、窗口管理和 Web Worker 等 Web 技术至关重要。理解 `BrowsingContextGroupInfo` 的功能有助于开发者避免在处理相关 Web 技术时可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/page/browsing_context_group_info_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ TEST(BrowsingContextGroupInfoTest, ComparisonOperator) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

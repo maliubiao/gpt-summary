@@ -153,15 +153,17 @@ bool is_retransmission = QuicSentPacketManagerPeer::IsRetransmission(&manager, 1
 
 **简而言之，当 Chromium 的网络连接出现问题，特别是涉及到 QUIC 协议时，开发人员可能会深入研究 `QuicSentPacketManager` 的内部运作机制。 而 `QuicSentPacketManagerPeer` 作为测试工具，提供了必要的手段来检查和验证 `QuicSentPacketManager` 的行为，因此成为了调试过程中的一个重要组成部分。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/quic_sent_packet_manager_peer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -368,7 +370,4 @@ QuicPacketCount QuicSentPacketManagerPeer::GetEct1Sent(
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

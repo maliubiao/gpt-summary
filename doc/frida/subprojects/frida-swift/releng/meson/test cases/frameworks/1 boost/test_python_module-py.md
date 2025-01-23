@@ -117,7 +117,7 @@ Let's break down the thought process for analyzing the provided Python script.
 * **检查编译过程:** 如果是新添加或修改的代码导致测试失败，需要检查 `python2_module` 和 `python3_module` 的编译过程是否正确，是否存在编译错误或链接错误。
 * **使用调试器:** 可以使用 Python 调试器 (例如 `pdb`) 来单步执行脚本，查看变量的值和程序的执行流程，从而更深入地理解问题所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/1 boost/test_python_module.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import sys
 sys.path.append(sys.argv[1])
 
@@ -154,7 +156,4 @@ def run():
 
 if __name__ == '__main__':
     run()
-
-"""
-
 ```

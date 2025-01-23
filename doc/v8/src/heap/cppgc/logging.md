@@ -107,11 +107,13 @@ try {
 
 `v8/src/heap/cppgc/logging.cc` 提供了 `cppgc` 组件内部的日志记录和断言机制，用于在开发和调试阶段检查错误，并在运行时处理致命错误。虽然 JavaScript 代码不能直接调用这些函数，但当 `cppgc` 内部发生错误时，可能会导致 V8 引擎崩溃，从而影响 JavaScript 代码的执行。 `DCheckImpl` 主要用于开发时尽早发现问题，而 `FatalImpl` 则用于处理无法恢复的错误，其行为在不同的构建版本中有所不同。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/logging.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -141,7 +143,4 @@ void FatalImpl(const char* message, const SourceLocation& loc) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

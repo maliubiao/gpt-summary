@@ -264,7 +264,7 @@ except Exception as e:
 
 请注意，Hook 底层的系统调用需要 root 权限，并且需要一定的逆向工程知识来确定相关的系统调用和参数。这个示例提供了一个基本的框架，具体的实现可能需要根据实际情况进行调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/kfd_sysfs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -361,7 +363,4 @@ Prompt:
 #define HSA_IOLINK_FLAGS_NO_PEER_TO_PEER_DMA (1 << 4)
 #define HSA_IOLINK_FLAGS_RESERVED 0xffffffe0
 #endif
-
-"""
-
 ```

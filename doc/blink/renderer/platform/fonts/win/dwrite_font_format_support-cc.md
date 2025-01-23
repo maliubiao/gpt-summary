@@ -120,14 +120,16 @@ By following this systematic approach, combining code analysis with knowledge of
 
 `dwrite_font_format_support.cc` 这个文件在 Chromium 浏览器中扮演着关键角色，它负责检测 Windows 系统底层的字体渲染能力，从而影响浏览器对 CSS 字体变体特性的支持。这直接关系到网页开发者如何使用字体变体，以及最终用户在不同 Windows 版本上浏览网页的体验。理解这个文件的功能有助于开发者更好地利用字体变体，并考虑到兼容性问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/win/dwrite_font_format_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ bool DWriteVersionSupportsVariations() {
   return variations_supported->value();
 }
 }  // namespace blink
-
-"""
-
 ```

@@ -155,14 +155,16 @@ This systematic approach helps to dissect the code, understand its purpose withi
 
 `BytesConsumerTestReader` 的主要目的是为了简化和规范 `BytesConsumer` 的测试流程，帮助开发者更容易地发现和修复 `BytesConsumer` 实现中的错误。它通过模拟读取过程和管理状态，使得测试代码更加简洁和可维护。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/testing/bytes_consumer_test_reader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ std::pair<BytesConsumer::Result, Vector<char>> BytesConsumerTestReader::Run(
 }
 
 }  // namespace blink
-
-"""
-
 ```

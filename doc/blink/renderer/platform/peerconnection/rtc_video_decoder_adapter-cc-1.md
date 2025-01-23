@@ -81,15 +81,17 @@ Here's a plan to address the user's request:
 
 4. **频繁且不必要的调用 `ReinitializeSync`：** 重新初始化解码器是一个开销较大的操作。开发者应该避免在短时间内频繁地调用 `ReinitializeSync`，除非确实有必要更改解码配置。不必要的重新初始化会浪费计算资源并可能导致性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_video_decoder_adapter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 olor_space =
       blink::WebRtcToGfxColorSpace(*input_image.ColorSpace());
 
@@ -155,8 +157,4 @@ void RTCVideoDecoderAdapter::DecrementCurrentDecoderCountForTesting() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

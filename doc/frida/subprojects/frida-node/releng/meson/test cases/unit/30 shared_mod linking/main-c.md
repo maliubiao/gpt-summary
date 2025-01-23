@@ -99,7 +99,7 @@ Let's break down the thought process for analyzing the provided C code snippet a
 
 总而言之，这个 `main.c` 文件虽然简单，但它在一个非常关键的点上进行了测试：确保 Frida 能够正确地与目标进程中的动态链接库进行交互，这对于 Frida 作为动态 Instrumentation 工具的核心功能至关重要。它也体现了跨平台开发的常见挑战，需要考虑不同操作系统的差异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/30 shared_mod linking/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_IMPORT __declspec(dllimport)
 #else
@@ -120,7 +122,4 @@ int DLL_IMPORT func();
 int main(int argc, char **arg) {
     return func();
 }
-
-"""
-
 ```

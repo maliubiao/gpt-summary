@@ -400,7 +400,7 @@ if __name__ == '__main__':
 
 通过这个 Frida hook 示例，你可以观察到哪些进程调用了与 FSI 相关的 `ioctl` 命令，传递了哪些参数，以及 `ioctl` 的返回值，从而帮助你理解 Android Framework 或 NDK 如何与底层的 FSI 驱动程序进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/fsi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -411,8 +411,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -454,7 +456,4 @@ struct scom_access {
 #define FSI_SBEFIFO_CMD_TIMEOUT_SECONDS _IOW('s', 0x01, __u32)
 #define FSI_SBEFIFO_READ_TIMEOUT_SECONDS _IOW('s', 0x00, __u32)
 #endif
-
-"""
-
 ```

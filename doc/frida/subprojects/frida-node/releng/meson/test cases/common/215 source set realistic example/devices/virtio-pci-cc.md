@@ -124,7 +124,7 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 `frida/subprojects/frida-node/releng/meson/test cases/common/215 source set realistic example/devices/virtio-pci.cc` 这个文件是 Frida 框架内部的一个测试组件，用于模拟一个 VirtIO PCI 设备。它主要服务于 Frida 的测试和开发，间接地与逆向分析相关，因为它提供了一个可控的环境来测试 Frida 对虚拟化硬件的 instrumentation 能力。理解这个文件需要一定的二进制底层、Linux/Android 内核以及 VirtIO 框架的知识。用户通常不会直接操作这个文件，但开发者可能会在开发和调试 Frida 时接触到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/215 source set realistic example/devices/virtio-pci.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "virtio.h"
@@ -150,7 +152,4 @@ void VirtioPCIDevice::say_hello()
 }
 
 static VirtioPCIDevice virtio_pci;
-
-"""
-
 ```

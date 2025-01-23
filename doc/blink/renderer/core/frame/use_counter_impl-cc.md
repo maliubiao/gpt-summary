@@ -99,14 +99,16 @@ This methodical approach of breaking down the code, identifying key elements, tr
 
 总而言之，`blink/renderer/core/frame/use_counter_impl.cc`  在 Chromium 中扮演着至关重要的角色，它默默地收集着 Web 平台各种特性的使用情况，为 Chromium 团队的决策提供数据支持，帮助他们了解哪些特性被广泛使用，哪些特性需要改进，以及 Web 平台的未来发展方向。它与 JavaScript, HTML, CSS 紧密相关，因为这三大技术构成了 Web 平台的基础，而 `UseCounterImpl` 正是用来追踪它们的使用情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/use_counter_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google, Inc. All rights reserved.
  *
@@ -449,7 +451,4 @@ void UseCounterImpl::TraceMeasurement(const UseCounterFeature& feature) {
                "feature", feature.value());
 }
 }  // namespace blink
-
-"""
-
 ```

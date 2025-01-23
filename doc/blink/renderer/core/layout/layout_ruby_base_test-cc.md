@@ -135,14 +135,16 @@ Let's break down the thought process for analyzing the provided C++ test file.
 
 总而言之，`layout_ruby_base_test.cc` 文件通过一系列单元测试，确保 Chromium Blink 引擎能够正确地渲染和布局包含 `<ruby>` 标签的 HTML 内容，并且能够处理动态的 DOM 和 CSS 样式修改，从而避免潜在的布局错误和开发者在使用 `ruby` 标签时可能遇到的困惑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_ruby_base_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -227,7 +229,4 @@ TEST_F(LayoutRubyBaseTest, ChangeToRubyNoBlockChildren) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

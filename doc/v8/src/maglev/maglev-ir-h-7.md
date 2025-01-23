@@ -184,7 +184,7 @@ By following these steps, we can systematically dissect the provided C++ header 
 
 **请注意：**  由于您只提供了部分代码，上述分析是基于这部分代码的功能进行的推断。完整的 `maglev-ir.h` 文件会包含更多类型的节点，涵盖更广泛的 JavaScript 操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-ir.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-ir.h以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 uint64_t bitfield) : Base(bitfield) {}
 
   // Although FunctionEntryStackCheck calls a builtin, we don't mark it as Call
@@ -1088,7 +1090,4 @@ class LoadDoubleDataViewElement
                                                                        \
     static constexpr OpProperties kProperties =                        \
         O
-"""
-
-
 ```

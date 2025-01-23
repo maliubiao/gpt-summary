@@ -93,7 +93,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 总而言之，这段简单的代码虽然功能单一，但它可以作为 Frida 动态 instrumentation 工具链中的一个基础测试案例或调试目标。通过分析这个简单的例子，可以帮助理解 Frida 的基本工作原理、动态链接库的概念以及逆向工程的一些基本方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/146 library at root/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,15 +101,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 __declspec(dllexport)
 #endif
 int fn(void) {
     return -1;
 }
-
-"""
-
 ```

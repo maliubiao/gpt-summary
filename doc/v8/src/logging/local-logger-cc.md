@@ -141,15 +141,17 @@ V8 Torque 源代码文件通常以 `.tq` 作为扩展名。  由于 `v8/src/logg
 
 `v8/src/logging/local-logger.cc` 提供了一个本地化的日志记录接口，用于将关键事件信息传递给全局日志记录器。它本身不包含复杂的业务逻辑，主要作用是作为 V8 内部不同组件记录信息的统一入口。它记录的信息对于理解 V8 的内部行为、调试 JavaScript 代码以及进行性能分析至关重要。用户通常不会直接与此文件交互，但其记录的信息反映了用户编写的 JavaScript 代码的执行情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/local-logger.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/logging/local-logger.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ void LocalLogger::MapDetails(Tagged<Map> map) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

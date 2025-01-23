@@ -128,7 +128,7 @@ By following this structured approach, I was able to extract the key functionali
 
 作为整个测试套件的最后一部分，这个文件专注于测试 `HttpStreamPoolAttemptManager` 这个关键组件的各种功能和边界情况。它确保了在不同的网络环境、服务器配置和用户行为下，连接尝试管理能够正确、高效、安全地进行。  这个文件与其他测试文件一起，共同验证了 Chromium 网络栈的健壮性和可靠性。它特别关注连接建立的策略选择、错误处理和资源管理，这对于提供良好的用户浏览体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_pool_attempt_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ilder().add_v4("192.0.2.1").endpoint())
       .CompleteStartSynchronously(OK);
   StaticSocketDataProvider data;
@@ -559,8 +561,4 @@ TEST_F(HttpStreamPoolAttemptManagerTest, JobAllowH3OnlyCancelTcpBasedAttempt) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

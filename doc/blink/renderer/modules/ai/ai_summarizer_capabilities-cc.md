@@ -122,15 +122,17 @@ By following these steps, the comprehensive and accurate answer provided previou
 
 `ai_summarizer_capabilities.cc` 文件虽然代码量不多，但在 Blink 引擎的 AI 摘要功能中扮演着关键的角色，负责提供语言支持的判断。它通过定义 `AISummarizerCapabilities` 类和 `languageAvailable` 方法，为 JavaScript API 提供了底层支持，从而影响了 Web 页面的行为和用户体验。 理解这个文件有助于理解 Chromium 中 AI 功能的架构和实现方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ai/ai_summarizer_capabilities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ V8AICapabilityAvailability AISummarizerCapabilities::languageAvailable(
 }
 
 }  // namespace blink
-
-"""
-
 ```

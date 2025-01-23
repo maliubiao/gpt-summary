@@ -99,7 +99,7 @@ Here's a breakdown of the thinking process to arrive at the explanation:
 
 尽管 `simple.c` 文件中的函数功能非常基础，但它在 Frida 项目的测试框架中扮演着重要的角色。它可以用作测试 Frida 基础 hook 功能的简单目标，同时它也可能暴露与构建系统、依赖管理 (`pkgconfig`) 相关的问题。 开发者通过分析这个文件及其相关的测试配置，可以诊断 Frida 工具链中可能存在的问题。这个简单的例子也展示了 Frida 在动态逆向分析中的基本应用：hook 函数并在运行时观察和修改程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing/47 pkgconfig variables not key value/simple.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,14 +107,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"simple.h"
 
 int simple_function() {
     return 42;
 }
-
-"""
-
 ```

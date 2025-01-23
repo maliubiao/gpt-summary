@@ -150,14 +150,16 @@ By systematically examining the code, understanding the domain (font shaping, ma
 
 总而言之，`stretchy_operator_shaper.cc` 是 Blink 渲染引擎中处理可伸缩数学符号渲染的关键组件，它根据目标尺寸和字体提供的资源，智能地选择或构建合适的字形来呈现这些符号。其正确性直接影响到网页上数学公式和其他需要使用可伸缩符号的元素的显示质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/stretchy_operator_shaper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -361,7 +363,4 @@ const ShapeResult* StretchyOperatorShaper::Shape(const Font* font,
 }
 
 }  // namespace blink
-
-"""
-
 ```

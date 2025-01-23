@@ -116,15 +116,17 @@ MOV reg, 0x1000
 
 总之，`go/src/cmd/internal/objabi/reloctype.go` 文件是 Go 链接器实现的核心组成部分，它定义了链接过程中至关重要的重定位类型，指导链接器如何正确地连接不同的代码模块，生成可执行文件。虽然普通 Go 开发者不需要直接操作这些类型，但理解它们有助于深入理解 Go 的编译和链接过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/objabi/reloctype.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Derived from Inferno utils/6l/l.h and related files.
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/6l/l.h
 //
@@ -563,9 +565,4 @@ func (r RelocType) IsDirectJump() bool {
 func (r RelocType) IsDirectCallOrJump() bool {
 	return r.IsDirectCall() || r.IsDirectJump()
 }
-
-"""
-
-
-
 ```

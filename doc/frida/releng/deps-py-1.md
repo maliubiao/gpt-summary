@@ -172,7 +172,7 @@ By following this iterative and analytical process, we can systematically unders
 
 `frida/releng/deps.py` 脚本的主要功能是**自动化管理 Frida 项目的外部依赖**，包括下载、验证和更新这些依赖。它通过读取 `deps.toml` 文件来获取依赖信息，并根据目标平台的不同下载相应的 toolchain 和 SDK。此外，它还能自动检测并更新 `deps.toml` 中记录的依赖版本，并同步更新 "wrap" 文件中引用的子项目版本。这个脚本是 Frida 项目构建和维护的重要组成部分，确保了 Frida 能够顺利构建和运行在不同的平台上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/deps.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,9 +181,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-          ]), flush=True)
+### 源代码
+```python
+]), flush=True)
 
     def _print_status(self, scope: str, *args):
         status = " ".join([str(arg) for arg in args])
@@ -499,8 +501,4 @@ class DependencySpec:
 
 if __name__ == "__main__":
     main()
-
-"""
-
-
 ```

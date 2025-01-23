@@ -145,7 +145,7 @@ if __name__ == '__main__':
 
 `cups_prog.c` 是一个非常简单的 C 程序，其主要目的是作为 Frida 动态插桩工具的测试用例，用于验证 Frida 对 CUPS 库函数 `cupsGetDefault()` 的 hook 能力。它本身的功能很简单，但作为测试用例，它与逆向分析、操作系统框架、二进制底层知识以及 Frida 的使用紧密相关。 通过分析这个简单的程序，可以更好地理解 Frida 的工作原理以及如何在实际的逆向分析和安全研究中使用 Frida。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/20 cups/cups_prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <cups/cups.h>
 
 int
@@ -163,7 +165,4 @@ main()
     cupsGetDefault();
     return 0;
 }
-
-"""
-
 ```

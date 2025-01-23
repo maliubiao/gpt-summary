@@ -324,7 +324,7 @@ if (Process.platform === 'android') {
 
 总结来说，`bionic/tests/libs/dlopen_testlib_simple_hwasan.cpp` 是一个用于测试 Android 动态链接器在不同 HWASan 编译配置下行为的简单测试库。它通过一个全局变量指示编译时的 HWASan 状态，并提供一个简单的函数供加载后调用。理解这个库的功能有助于深入理解 Android 的动态链接机制和内存安全特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlopen_testlib_simple_hwasan.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -335,8 +335,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2023 The Android Open Source Project
  * All rights reserved.
@@ -376,7 +378,4 @@ extern "C" uint32_t dlopen_testlib_compiled_with_hwasan = false;
 extern "C" bool dlopen_testlib_simple_hwasan_func() {
   return true;
 }
-
-"""
-
 ```

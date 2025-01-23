@@ -68,11 +68,13 @@ console.log(result); // 输出 15
 
 `sidetable.cc` 中提供的 `OpIndexBelongsToTableGraph` 函数是一个用于 V8 Turboshaft 编译器内部调试的工具。它帮助开发者确保编译器在构建和优化代码的图表示时保持数据结构的完整性。虽然 JavaScript 开发者无法直接使用这个函数，但这类内部机制的正确性直接影响着 JavaScript 代码的执行效率和稳定性。更完善、更可靠的编译器内部机制，最终会转化为更快的 JavaScript 执行速度和更少的运行时错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/sidetable.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -91,7 +93,4 @@ bool OpIndexBelongsToTableGraph(const Graph* graph, OpIndex index) {
 #endif
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

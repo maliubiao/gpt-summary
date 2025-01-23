@@ -84,12 +84,14 @@ async function runWasm(wasmBytes) {
 
 这部分C++代码是V8引擎中WebAssembly模糊测试的关键组件，它能够根据随机数据生成各种各样的WebAssembly模块，用于测试V8的WebAssembly实现是否健壮和正确。它生成的模块可以在JavaScript环境中使用 `WebAssembly.compile` 和 `WebAssembly.instantiate` 加载和执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/fuzzing/random-module-generation.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 clared_func_index = num_functions - 1;
     WasmFunctionBuilder* f = functions[declared_func_index];
     DataRange function_range = range.split();
@@ -183,8 +185,4 @@ template EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
         Zone*, base::Vector<const uint8_t> data);
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
-
 ```

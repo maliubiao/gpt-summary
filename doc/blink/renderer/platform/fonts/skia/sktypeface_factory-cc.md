@@ -157,14 +157,16 @@ By following this structured thought process, I could analyze the code effective
 
 总而言之，`sktypeface_factory.cc` 是 Blink 引擎中负责创建 Skia 字体对象的关键组件，它连接了前端的字体使用需求和底层的图形渲染能力。 理解它的功能有助于理解浏览器如何处理和渲染网页中的文本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/skia/sktypeface_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ sk_sp<SkTypeface> SkTypeface_Factory::FromFilenameAndTtcIndex(
 }
 
 }  // namespace blink
-
-"""
-
 ```

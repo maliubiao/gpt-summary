@@ -220,7 +220,7 @@ By following these steps, I can systematically analyze the C code and generate a
 
 总而言之，`allocationtracker.c` 是 Frida 框架中一个非常重要的测试文件，它详细验证了 `GumAllocationTracker` 的各项功能，而 `GumAllocationTracker` 本身是进行动态逆向分析和理解程序内存行为的关键组件。理解这个文件的内容有助于更深入地理解 Frida 的工作原理以及如何有效地使用它进行安全研究和漏洞分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/heap/allocationtracker.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -228,8 +228,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2010 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -781,7 +783,4 @@ TESTCASE (hashtable_life)
 }
 
 #endif /* HAVE_WINDOWS */
-
-"""
-
 ```

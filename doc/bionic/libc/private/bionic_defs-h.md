@@ -216,7 +216,7 @@ frida -U -f <your_app_package_name> -l your_script.js --no-pause
 
 总结来说，`bionic/libc/private/bionic_defs.handroid` 是一个重要的内部头文件，它通过定义与弱符号相关的宏，为 Android 的 Native Bridge 机制提供了基础支持。它本身不包含函数实现，而是影响着 Bionic 库中某些符号在 Native Bridge 环境下的链接行为。理解这个文件有助于深入了解 Android 如何在不同 CPU 架构上运行本地代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_defs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -227,8 +227,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -276,7 +278,4 @@ Prompt:
 #endif
 
 #endif /* __BIONIC_PRIVATE_BIONIC_DEFS_H_ */
-
-"""
-
 ```

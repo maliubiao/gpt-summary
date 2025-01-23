@@ -161,16 +161,18 @@ This detailed breakdown allows for a comprehensive understanding of the code sni
 
 这部分 `ThreadDebuggerCommonImpl` 实现了 Blink 渲染引擎中与调试功能密切相关的底层逻辑，特别是关于事件监控、可访问性信息获取和 `console` API 扩展。它通过 V8 接口将这些能力暴露给开发者工具，使得开发者能够更深入地了解和调试网页的行为。 其中与 JavaScript、HTML 和 CSS 的交互体现在它操作 DOM 元素、监听 JavaScript 事件以及支持 JavaScript 的调试 API。 开发者在使用这些调试功能时需要注意参数类型、目标对象的有效性以及及时清理资源（例如取消事件监听和定时器）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/thread_debugger_common_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- Line API] }",
+### 源代码
+```cpp
+Line API] }",
       v8::SideEffectType::kHasSideEffect);
 }
 
@@ -436,8 +438,4 @@ void ThreadDebuggerCommonImpl::OnTimer(TimerBase* timer) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

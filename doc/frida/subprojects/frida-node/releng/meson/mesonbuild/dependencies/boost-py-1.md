@@ -79,7 +79,7 @@ Frida 作为逆向工程工具，会利用 Boost 库提供的各种功能来辅�
 
 该文件的功能是**定义了 Frida 构建过程中使用的各个 Boost 库的链接方式和编译选项**。它作为一个配置数据文件，为 Meson 构建系统提供了关于如何正确链接 Boost 库的信息，确保 Frida 能够正确地使用 Boost 库提供的各种功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/dependencies/boost.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -88,9 +88,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-        name='boost_exception',
+### 源代码
+```python
+name='boost_exception',
         shared=[],
         static=[],
         single=[],
@@ -345,8 +347,4 @@ Prompt:
 
 #                                           #
 ####       ---- END GENERATED ----       ####
-
-"""
-
-
 ```

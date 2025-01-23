@@ -142,14 +142,16 @@ Response: Let's break down the thought process for analyzing this C++ code and g
 
 总而言之，`identifiability_study_settings.cc` 提供了一个灵活且可配置的框架，用于在 Chromium 浏览器中进行隐私相关的研究，其核心功能是根据配置判断是否应该对特定的浏览器活动进行采样，以便分析其对用户可识别性的影响。虽然它本身不包含 Web 技术代码，但它直接影响着浏览器如何处理和记录 JavaScript, HTML 和 CSS 产生的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/identifiability_study_settings.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -348,7 +350,4 @@ bool IdentifiabilityStudySettings::ShouldSampleAnything() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

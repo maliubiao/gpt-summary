@@ -186,7 +186,7 @@ Cflags: -I${includedir}
 
 总而言之，`cross_pkgconfig.py` 是 Frida 构建系统中的一个辅助脚本，用于模拟和测试在特定环境下 `pkg-config` 的行为，特别是在处理 native 依赖和进行交叉编译时。它不是用户直接操作的工具，而是在构建和测试流程中自动执行的。理解它的功能有助于诊断与 native 依赖相关的构建和测试问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/45 native dep pkgconfig var/cross_pkgconfig.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -208,7 +210,4 @@ environ['PKG_CONFIG_LIBDIR'] = os.path.join(
 
 sys.exit(
     subprocess.run(['pkg-config'] + sys.argv[1:], env=environ).returncode)
-
-"""
-
 ```

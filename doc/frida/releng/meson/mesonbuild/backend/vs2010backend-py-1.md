@@ -159,7 +159,7 @@ This code is responsible for generating Visual Studio project files (`.vcxproj`)
 
 总而言之，这段代码的核心职责是将 Meson 的构建目标信息转换为 Visual Studio 2010 可以理解的项目文件格式，从而使得用户可以使用 Visual Studio 来构建和调试 Frida 项目。它涵盖了不同类型的构建目标，并处理了与编译器、链接器和依赖相关的各种设置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ",
                                       'ToolsVersion': '4.0',
                                       'xmlns': 'http://schemas.microsoft.com/developer/msbuild/2003'})
@@ -752,7 +754,4 @@ Prompt:
                                                proj_to_build_root: str,
                                                primary_src_lang: T.Optional[str]) -> None:
         ET.SubElement(root, 'ImportGroup', Label='ExtensionSetti
-"""
-
-
 ```

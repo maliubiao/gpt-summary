@@ -120,7 +120,7 @@ By following these steps, combining deduction with knowledge of Frida and build 
 
 `one.py` 文件本身是一个空的占位符或标记文件，用于 Frida 构建和测试过程中验证 Swift 集成相关的安装路径是否正确。它的存在是测试逻辑的一部分，虽然没有直接的执行代码，但对于确保 Frida 的 Swift 集成能够正确部署和运行至关重要。用户通常不会直接操作或修改这个文件，但可能会在调试 Frida 构建、安装或测试失败时查看它作为线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/python/7 install path/structured/alpha/one.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,9 +128,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

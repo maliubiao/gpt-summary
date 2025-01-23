@@ -138,7 +138,7 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 总的来说，这部分代码是 `QuicConnection` 类中负责维护连接活性、适应网络变化和保障安全性的重要组成部分。它体现了 QUIC 协议在连接管理和路径优化方面的复杂性和灵活性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 red_cid_sequence_numbers =
       peer_issued_cid_manager_->ConsumeToBeRetiredConnectionIdSequenceNumbers();
   QUICHE_DCHECK(!retired_cid_sequence_numbers.empty());
@@ -963,8 +965,4 @@ void QuicConnection::ReversePathValidationResultDelegate::
     QUIC_CODE_COUNT_N(quic_kick_off_client_address_validation, 4, 6);
     QUIC_DVLOG(1) << "Mark alternative peer address "
                   << context->effective_peer_address() << " validated.";
-   
-"""
-
-
 ```

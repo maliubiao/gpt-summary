@@ -128,7 +128,7 @@ By following this thought process, we can systematically analyze the provided co
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/test cases/unit/86 prelinking/main.c` 是 Frida 项目中一个非常具体的单元测试，用于验证 Frida 处理预链接库的能力。它通过一个简单的断言来检查 `public_func()` 的返回值，从而间接地测试了 Frida 在处理预链接时的正确性，这对于 Frida 的逆向工程功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/86 prelinking/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<public_header.h>
 #include<stdio.h>
 
@@ -148,7 +150,4 @@ int main(int argc, char **argv) {
     }
     return 0;
 }
-
-"""
-
 ```

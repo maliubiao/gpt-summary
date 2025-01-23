@@ -155,14 +155,16 @@ By following this systematic approach, one can effectively analyze and understan
 
 `font_platform_data.cc` 中的 `FontPlatformData` 类是 Blink 渲染引擎中处理字体的核心组件。它封装了平台相关的字体信息，并负责与 Skia 和 HarfBuzz 等底层库进行交互。它直接受到 HTML 和 CSS 中字体样式声明的影响，并最终决定了网页上文本的渲染效果。理解其功能对于深入了解浏览器如何处理字体以及进行性能优化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_platform_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Brent Fulgham
  *
@@ -538,7 +540,4 @@ String FontPlatformData::GetPostScriptName() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -225,12 +225,14 @@ if (global.gc) {
 
 总而言之，这部分 C++ 代码是 V8 引擎中负责内存管理和垃圾回收的关键组成部分，它直接影响着 JavaScript 代码的执行效率和内存使用情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 arbageCollector::MARK_COMPACTOR) {
       if (memory_reducer_ != nullptr) {
         memory_reducer_->NotifyMarkCompact(committed_memory_before);
@@ -1974,7 +1976,4 @@ Tagged<FixedArrayBase> Heap::LeftTrimFixedArray(Tagged<FixedArrayBase> object,
   // Calculate location of new array start.
   Address old_start = object.address();
   A
-"""
-
-
 ```

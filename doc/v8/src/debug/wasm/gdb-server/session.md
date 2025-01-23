@@ -109,11 +109,13 @@ By following this structured thought process, I can effectively analyze the C++ 
 
 `v8/src/debug/wasm/gdb-server/session.cc` 中的 `Session` 类是 V8 调试 WebAssembly 代码的关键组件。它负责建立和管理与外部 GDB 调试器的通信会话，并实现了 GDB 远程串行协议。虽然 JavaScript 代码本身不直接操作这个类，但当你使用浏览器开发者工具调试 WebAssembly 代码时，这个类就在幕后工作，使得开发者工具能够控制 WebAssembly 代码的执行并检查其状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/wasm/gdb-server/session.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ bool Session::GetPacket(Packet* pkt) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

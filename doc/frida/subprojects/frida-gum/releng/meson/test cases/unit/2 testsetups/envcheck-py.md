@@ -125,7 +125,7 @@ By following these steps, we arrive at the detailed and informative answer provi
 
 总而言之，虽然 `envcheck.py` 脚本本身非常简单，但它在 Frida 的构建和测试流程中扮演着一个重要的角色，确保了运行环境的基本条件满足，从而避免了一些由于环境变量配置错误导致的潜在问题。它也体现了软件开发中进行环境一致性检查的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/2 testsetups/envcheck.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,14 +133,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
 
 assert 'PATH' in os.environ
-
-"""
-
 ```

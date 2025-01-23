@@ -187,15 +187,17 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 总而言之，`khr_parallel_shader_compile.cc` 这个文件在 Chromium Blink 引擎中扮演着重要的角色，它通过利用多核 CPU 的能力来优化 WebGL 应用的着色器编译性能，从而提升用户体验。理解其功能有助于开发者更好地理解 WebGL 的底层工作原理，并能帮助他们在遇到性能瓶颈时找到优化的方向。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/khr_parallel_shader_compile.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2018 Google Inc. All rights reserved.
  *
@@ -255,7 +257,4 @@ const char* KHRParallelShaderCompile::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

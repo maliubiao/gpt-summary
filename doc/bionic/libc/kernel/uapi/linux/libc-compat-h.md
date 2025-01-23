@@ -241,7 +241,7 @@ if __name__ == "__main__":
 
 通过这种方式，虽然我们没有直接 hook `libc-compat.handroid`，但我们可以观察到依赖于其定义的函数的行为，从而间接地理解它的作用。  如果 `libc-compat.handroid` 的定义不正确，可能会导致 `getifaddrs` 返回的结构体内容不符合预期，从而在 Frida 的输出中体现出来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/libc-compat.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -252,8 +252,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -386,7 +388,4 @@ Prompt:
 #endif
 #endif
 #endif
-
-"""
-
 ```

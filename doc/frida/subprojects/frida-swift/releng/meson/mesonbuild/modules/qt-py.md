@@ -182,7 +182,7 @@ Meson will create a custom build step that, when executed, generates a file name
 
 In summary, `frida/subprojects/frida-swift/releng/meson/mesonbuild/modules/qt.py` is a crucial component for building Qt applications within the Meson build system. It automates the process of compiling various Qt-specific file types and provides a clean interface for integrating Qt into a larger build process. Understanding its functionality is helpful for both developers building Qt applications and reverse engineers analyzing them.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/modules/qt.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -813,7 +815,4 @@ class QtBaseModule(ExtensionModule):
             return ModuleReturnValue(results.return_value[0], [results.new_objects, translations])
         else:
             return ModuleReturnValue(translations, [translations])
-
-"""
-
 ```

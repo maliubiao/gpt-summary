@@ -193,15 +193,17 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 总而言之，`ephemeral_range.cc` 文件定义了 Blink 引擎内部用于高效表示和操作文本或节点范围的关键数据结构，它在处理用户的编辑操作和 JavaScript 对选区的操作中扮演着重要的角色。理解 `EphemeralRange` 的功能有助于深入了解 Blink 渲染引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ephemeral_range.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -445,7 +447,4 @@ template class CORE_TEMPLATE_EXPORT
     EphemeralRangeTemplate<EditingInFlatTreeStrategy>;
 
 }  // namespace blink
-
-"""
-
 ```

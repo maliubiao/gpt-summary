@@ -177,15 +177,17 @@ As a debugging clue, consider the user actions that could trigger cache relocati
 
 If you suspect this code is involved in an issue, you would look for log messages related to cache operations, especially errors from `base::Move` or `base::CreateDirectory`. Tracing the execution flow when profile relocation or cache clearing happens would be crucial. You might set breakpoints in `MoveCache` to inspect the `from_path` and `to_path` values and see if the execution reaches this function and what the outcome is.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/cache_util_posix.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -229,7 +231,4 @@ bool MoveCache(const base::FilePath& from_path, const base::FilePath& to_path) {
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

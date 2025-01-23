@@ -180,7 +180,7 @@ By following this systematic process, I can generate a comprehensive and accurat
 
 总而言之，这段代码是 Chromium Blink 引擎中处理 HTML 元素属性、类型判断、锚点定位以及设置内部 HTML 内容的关键部分，它直接响应 JavaScript 的 DOM 操作，并与 HTML 和 CSS 的功能紧密相关。理解这段代码的功能有助于深入了解浏览器如何解析和渲染网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -188,9 +188,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第13部分，共13部分，请归纳一下它的功能
+```
 
-"""
-  if (exception_state.HadException()) {
+### 源代码
+```cpp
+if (exception_state.HadException()) {
     return nullptr;
   }
 
@@ -376,8 +378,4 @@ void Element::setHTML(const String& html,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -140,7 +140,7 @@ By following this thought process, starting with basic code analysis and progres
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/test cases/cmake/27 dependency fallback/subprojects/cmMod/cmMod.cpp` 这个文件虽然代码简单，但它在 Frida 的构建和测试体系中扮演着重要的角色，用于验证在特定构建场景下依赖项的正确集成。理解这个文件的功能和上下文，有助于理解 Frida 的构建过程和依赖管理机制，这对于 Frida 的开发者和高级用户来说是有价值的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/27 dependency fallback/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -165,7 +167,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

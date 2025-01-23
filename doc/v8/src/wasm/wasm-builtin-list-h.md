@@ -141,15 +141,17 @@ console.log(result); // V8 内部会使用 WasmInt32ToHeapNumber 将 i32 转换�
 
 总而言之，`v8/src/wasm/wasm-builtin-list.h` 是 V8 内部一个关键的头文件，它定义了 V8 如何支持 WebAssembly 功能所需的底层内置函数，并提供了管理这些内置函数的机制。它与 JavaScript 的 `WebAssembly` API 紧密相关，是 V8 实现 WebAssembly 支持的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-builtin-list.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-builtin-list.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -377,7 +379,4 @@ class BuiltinLookup {
 #undef WASM_BUILTIN_LIST
 
 #endif  // V8_WASM_WASM_BUILTIN_LIST_H_
-
-"""
-
 ```

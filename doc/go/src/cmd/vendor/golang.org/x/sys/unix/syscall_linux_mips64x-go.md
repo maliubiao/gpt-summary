@@ -300,15 +300,17 @@ func main() {
 
 总而言之，`syscall_linux_mips64x.go` 文件是 Go 语言在 Linux MIPS64/MIPS64LE 架构下与操作系统交互的基石，它提供了访问底层系统调用的能力，使得 Go 程序能够执行各种操作系统级别的任务。 直接使用 `syscall` 包需要对操作系统原理和系统调用有深入的理解，并注意资源管理和错误处理。 在大多数情况下，建议使用 Go 标准库中更高级的包（如 `os`, `net` 等），这些包在 `syscall` 的基础上提供了更安全和方便的抽象。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_linux_mips64x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -497,9 +499,4 @@ func (cmsg *Cmsghdr) SetLen(length int) {
 func (rsa *RawSockaddrNFCLLCP) SetServiceNameLen(length int) {
 	rsa.Service_name_len = uint64(length)
 }
-
-"""
-
-
-
 ```

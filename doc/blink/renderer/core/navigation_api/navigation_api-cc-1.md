@@ -167,15 +167,17 @@ By following this structured approach, I can effectively analyze the code and ge
 
 这部分 `navigation_api.cc` 代码是 Blink 引擎中 Navigation API 的核心组成部分，负责生成和分发关键的 `NavigateEvent`，并管理导航的生命周期。它与 JavaScript 通过事件监听和 Promise 机制紧密相连，同时也会处理由 HTML 元素操作（如链接点击和表单提交）触发的导航。理解这部分代码有助于深入理解浏览器如何处理页面导航以及 Navigation API 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/navigation_api/navigation_api.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ame();
   auto* script_state = ToScriptStateForMainWorld(frame);
   ScriptState::Scope scope(script_state);
@@ -475,8 +477,4 @@ void NavigationApi::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

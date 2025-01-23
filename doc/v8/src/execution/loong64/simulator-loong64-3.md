@@ -76,13 +76,15 @@ Atomics.add(view, 0, 1);
 
 **总结来说，这部分代码是 LoongArch64 模拟器的核心组成部分，负责解码和执行指令，并提供了一些辅助功能，例如函数调用和内存访问监控，使得 V8 引擎能够在没有真实 LoongArch64 硬件的情况下运行 JavaScript 代码。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/loong64/simulator-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```
+{
               result = upper;
             } else {
               result = lower;
@@ -581,8 +583,4 @@ void Simulator::GlobalMonitor::RemoveLinkedAddress(
 }  // namespace v8
 
 #endif  // USE_SIMULATOR
-
-"""
-
-
 ```

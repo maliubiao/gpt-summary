@@ -108,11 +108,13 @@ for (let i = 0; i < 10000; i++) {
 
 `vtune-jit.cc` 是 V8 引擎中一个重要的组成部分，它专门负责将 JIT 编译的 JavaScript 代码的元数据暴露给 Intel VTune 工具，使得开发者可以使用 VTune 来进行更深入和精确的 JavaScript 性能分析。它本身不执行 JavaScript，而是作为性能分析工具的“信息提供者”。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/vtune/vtune-jit.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 /*
   This file is provided under a dual BSD/GPLv2 license.  When using or
   redistributing this file, you may do so under either license.
@@ -377,7 +379,4 @@ v8::JitCodeEventHandler GetVtuneCodeEventHandler() {
 }
 
 }  // namespace vTune
-
-"""
-
 ```

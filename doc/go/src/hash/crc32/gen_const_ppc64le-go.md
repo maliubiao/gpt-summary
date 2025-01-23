@@ -153,7 +153,7 @@ GLOBL ·IEEEBarConst(SB),RODATA,$32
 
 总而言之，`gen_const_ppc64le.go` 是一个用于生成特定架构优化代码的工具，它利用多项式运算生成 CRC32 计算所需的预计算常量，并将这些常量以汇编代码的形式输出，以便在运行时提高 CRC32 的计算效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/hash/crc32/gen_const_ppc64le.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -161,8 +161,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -313,9 +315,4 @@ func genCrc32ConstTable(w *bytes.Buffer, poly uint32, polyid string) {
 	fmt.Fprintf(w, "DATA ·%sBarConst+24(SB)/8,$0x0000000000000000\n", polyid)
 	fmt.Fprintf(w, "GLOBL ·%sBarConst(SB),RODATA,$32\n", polyid)
 }
-
-"""
-
-
-
 ```

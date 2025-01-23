@@ -132,15 +132,17 @@ By following these steps, we can move from a basic understanding of the code to 
 
 总而言之，`document_statistics_collector.cc` 是 Blink 引擎中一个重要的模块，它通过分析 DOM 树的结构、内容和样式信息，为后续的网页处理和优化提供了基础数据。它与 HTML, CSS 紧密相关，并且其收集的统计信息可能会影响到 JavaScript 的行为或被 JavaScript 所使用。理解这个模块的功能对于理解 Blink 引擎如何理解和处理网页内容至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document_statistics_collector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -370,7 +372,4 @@ WebDistillabilityFeatures DocumentStatisticsCollector::CollectStatistics(
 }
 
 }  // namespace blink
-
-"""
-
 ```

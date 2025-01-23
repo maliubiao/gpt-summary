@@ -61,12 +61,14 @@ const typedArray = new Uint8Array([10, 20, 30]); // V8会使用 Uint8ElementsAcc
 
 总而言之， `v8/src/objects/elements.cc` 的第1部分是V8引擎中一个核心组件的起始部分，它为JavaScript数组提供了灵活和高效的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/elements.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1585,7 +1587,4 @@ class DictionaryElementsAccessor
                                        Tagged<JSObject> receiver,
                                        Tagged<FixedArrayBase> backing_store) {
     Tagged<NumberDictionary> dict = Cast<NumberDictionary>(backing_store)
-"""
-
-
 ```

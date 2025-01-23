@@ -130,14 +130,16 @@ void ProcessManyDomChanges() {
 
 `DisableLayoutSideEffectsScope` 是 Blink 内部用于优化渲染性能的关键机制。它通过简单的计数器来临时禁用某些可能昂贵的布局副作用，特别是在处理大量的 DOM 操作时。虽然 Web 开发者不能直接操作它，但理解其背后的原理有助于理解浏览器如何优化渲染过程，并对编写高性能的 Web 应用有所启发。 它的正确使用依赖于 Blink 开发者对布局流程和潜在副作用的深刻理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/disable_layout_side_effects_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -149,7 +151,4 @@ namespace blink {
 unsigned DisableLayoutSideEffectsScope::count_ = 0;
 
 }  // namespace blink
-
-"""
-
 ```

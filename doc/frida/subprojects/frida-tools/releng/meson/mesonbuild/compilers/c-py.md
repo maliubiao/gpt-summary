@@ -110,7 +110,7 @@ The user wants a summary of the functionalities of the Python code provided. I n
 
 `frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/c.py` 文件的主要功能是作为 Frida 构建系统中处理 C 语言编译的核心组件。它抽象了不同 C 编译器的行为，允许 Meson 构建系统以统一的方式配置和调用这些编译器，从而实现跨平台的 C 代码构建。 这涉及到对编译器选项、语言标准、警告级别、包含路径、库链接等方面的管理，并且与底层的二进制生成、操作系统特性以及用户可能遇到的配置错误密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/c.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 
@@ -884,7 +886,4 @@ class MetrowerksCCompilerARM(MetrowerksCompiler, CCompiler):
         return args
 
 class MetrowerksCCompilerEmbeddedPowerPC(Metrower
-"""
-
-
 ```

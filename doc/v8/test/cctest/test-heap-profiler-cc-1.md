@@ -94,7 +94,7 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 这部分代码专注于测试 V8 堆快照功能的正确性和健壮性。它涵盖了快照对对象内部结构、弱引用、对象 ID 的管理、垃圾回收的影响、JSON 序列化、对象统计跟踪以及嵌入器扩展等方面的能力。这些测试确保了堆快照能够提供准确、可靠的堆信息，这对于内存泄漏分析、性能优化等至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-heap-profiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-heap-profiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -102,8 +102,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 * prop = map_table->GetChild(i);
     const v8::SnapshotObjectId to_node_id = prop->GetToNode()->GetId();
     if (to_node_id == k->GetId() || to_node_id == v->GetId()) {
@@ -976,7 +978,4 @@ class EmbedderGraphBuilder : public v8::PersistentHandleVisitor {
 
  private:
   v8::Isolat
-"""
-
-
 ```

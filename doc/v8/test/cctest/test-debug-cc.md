@@ -133,7 +133,7 @@ main();
 
 总而言之，`v8/test/cctest/test-debug.cc` 的这段代码是 V8 团队用来确保其 JavaScript 调试器按预期工作的自动化测试用例。它覆盖了调试器的核心功能，并使用 C++ 编写测试来模拟各种 JavaScript 调试场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-debug.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-debug.cc以.tq结尾，那它是个v8 torque源代码，
@@ -141,8 +141,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1096,7 +1098,4 @@ TEST(BreakPointBuiltinConcurrentOpt) {
   CompileRun("function test(x) { return 1 + Math.sin(x) }");
   CompileRun(
       "%PrepareFunctionForOpti
-"""
-
-
 ```

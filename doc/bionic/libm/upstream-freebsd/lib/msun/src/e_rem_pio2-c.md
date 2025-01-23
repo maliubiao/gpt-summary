@@ -200,7 +200,7 @@ libm.so:
 
 总结来说，`e_rem_pio2.c` 中的 `__ieee754_rem_pio2` 函数是 Android 底层数学库中一个重要的组成部分，负责高精度地计算一个数除以 `pi/2` 的余数，这对于实现精确的三角函数等数学运算至关重要。理解它的功能和实现方式有助于深入了解 Android 平台的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_rem_pio2.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -210,9 +210,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -388,7 +389,4 @@ medium:
 	if(hx<0) {y[0] = -ty[0]; y[1] = -ty[1]; return -n;}
 	y[0] = ty[0]; y[1] = ty[1]; return n;
 }
-
-"""
-
 ```

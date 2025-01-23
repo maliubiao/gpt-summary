@@ -134,15 +134,17 @@ modifyArrayScattered(myArray);
 
 `v8/src/compiler/pair-load-store-reducer.h` 定义了一个编译器优化器，旨在将相邻且满足特定条件的加载和存储操作合并成更高效的成对指令，目前主要针对存储操作和 `arm64` 架构。这种优化可以提升 JavaScript 代码的执行效率，尤其是在处理连续内存访问时。虽然用户不会直接与这个优化器交互，但理解其原理有助于编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/pair-load-store-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/pair-load-store-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 #ifndef V8_COMPILER_PAIR_LOAD_STORE_REDUCER_H_
 #define V8_COMPILER_PAIR_LOAD_STORE_REDUCER_H_
 
@@ -189,7 +191,4 @@ class V8_EXPORT_PRIVATE PairLoadStoreReducer final
 }  // namespace v8
 
 #endif  // V8_COMPILER_PAIR_LOAD_STORE_REDUCER_H_
-
-"""
-
 ```

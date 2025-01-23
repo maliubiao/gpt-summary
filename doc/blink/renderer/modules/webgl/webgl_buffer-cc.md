@@ -178,15 +178,17 @@ By following these steps, combining code analysis with an understanding of the W
 
 总之，`webgl_buffer.cc` 是 Blink 引擎中 WebGL 缓冲区管理的关键部分，它连接了 JavaScript WebGL API 和底层的 OpenGL ES 实现，负责在 GPU 上分配、管理和释放缓冲区资源。理解这个文件的功能对于理解 WebGL 的底层工作原理和调试相关的渲染问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_buffer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Apple Inc. All rights reserved.
  *
@@ -241,7 +243,4 @@ void WebGLBuffer::SetInitialTarget(GLenum target) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

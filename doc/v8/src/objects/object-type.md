@@ -117,11 +117,13 @@ void GetProperty(InternalObject* obj, String* key) {
 
 `v8/src/objects/object-type.cc` 中的 `CheckObjectType` 函数是一个 **内部的、仅用于调试的机制**，用于确保 V8 引擎在开发阶段能够尽早发现对象类型不匹配的错误。它并不直接影响生产环境下 JavaScript 代码的执行，但对于 V8 自身的开发和维护至关重要。它间接地与 JavaScript 相关，因为它可以帮助 V8 开发者保证 JavaScript 代码在 V8 上的正确执行。当 JavaScript 代码运行时出现类型错误时，例如 `TypeError`，背后的原因可能与 V8 内部类似的类型检查机制有关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/object-type.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ Address CheckObjectType(Address raw_value, Address raw_type,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

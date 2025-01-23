@@ -130,7 +130,7 @@ Initially, I might have focused solely on the code itself. However, recognizing 
 
 总而言之，虽然 `libA.cpp` 本身的代码非常简单，但它在一个更大的测试框架中扮演着关键的角色，用于验证和演示动态链接的 "as-needed" 特性。理解它的功能和背后的原理对于逆向工程和调试与动态链接库相关的问题都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/173 as-needed/libA.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define BUILDING_DLL
 
 #include "libA.h"
@@ -147,7 +149,4 @@ Prompt:
 namespace meson_test_as_needed {
   DLL_PUBLIC bool linked = false;
 }
-
-"""
-
 ```

@@ -279,15 +279,17 @@ func main() {
 
 总而言之，`go/src/cmd/vendor/golang.org/x/sys/unix/syscall_freebsd.go` 是 Go 语言与 FreeBSD 操作系统交互的桥梁，它通过封装系统调用，使得 Go 程序能够利用 FreeBSD 提供的底层功能。理解其功能和潜在的错误点对于编写可靠的、与操作系统紧密集成的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_freebsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009,2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -743,9 +745,4 @@ func Dup3(oldfd, newfd, flags int) error {
 //sys	munmap(addr uintptr, length uintptr) (err error)
 //sys	accept4(fd int, rsa *RawSockaddrAny, addrlen *_Socklen, flags int) (nfd int, err error)
 //sys	utimensat(dirfd int, path string, times *[2]Timespec, flags int) (err error)
-
-"""
-
-
-
 ```

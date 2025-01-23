@@ -123,7 +123,7 @@ Confidence Score: 4/5 (Slight uncertainty in providing very precise input/output
 
 这部分代码主要负责定义并实现了 **多个 CSS 简写属性** 的解析逻辑和计算值生成方式。它确保了浏览器能够正确理解和应用开发者在 CSS 中使用的这些简写属性，并将它们转换为浏览器内部可以处理的长写属性值。 这些结构体通过 `ParseShorthand` 方法将 CSS 字符串转换为内部表示，并通过 `CSSValueFromComputedStyleInternal` 方法根据计算样式生成最终的 CSS 值，从而连接了 CSS 语法和浏览器的渲染过程。  它涵盖了包括布局相关的 `masonry-track`、定位相关的 `offset`、边框相关的 `outline`、溢出相关的 `overflow` 以及内外边距、滚动相关的多个简写属性的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/shorthands/shorthands_custom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 )) {
     return marker_start;
   }
@@ -1037,7 +1039,4 @@ bool ScrollTimeline::ParseShorthand(
     const CSSParserContext& context,
     const CSSParserLocalContext& local_context,
     HeapVector<CSSPropertyValue, 64>& proper
-"""
-
-
 ```

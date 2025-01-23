@@ -116,15 +116,17 @@ By following these steps, I arrive at the kind of detailed and context-aware sum
 
 希望以上解释能够帮助你理解 `blink/renderer/core/layout/physical_fragment.cc` (第二部分) 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/physical_fragment.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 sitioned())
       continue;
     AddOutlineRectsForDescendant(child, collector, additional_offset,
@@ -356,8 +358,4 @@ void ShowEntireFragmentTree(const blink::PhysicalFragment* target) {
 }
 
 #endif  // DCHECK_IS_ON()
-
-"""
-
-
 ```

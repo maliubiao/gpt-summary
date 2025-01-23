@@ -100,7 +100,7 @@ By following this thought process, breaking down the problem, connecting the cod
 
 `bobuser.c` 本身是一个非常简单的程序，但其存在于 `failing build/1 hidden symbol/` 目录中，明确表明它是 Frida 测试用例的一部分，用于测试 Frida 在处理隐藏符号时的行为。它强调了在逆向工程中，并非所有函数都容易被直接访问和 hook，需要理解符号可见性的概念，并使用合适的工具和技术来应对这种情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing build/1 hidden symbol/bobuser.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -108,14 +108,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 int main(int argc, char **argv) {
     return hidden_function();
 }
-
-"""
-
 ```

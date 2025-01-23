@@ -96,7 +96,7 @@ Here's a plan:
 
 如果在构建过程中出现与配置文件生成相关的错误，例如找不到变量或宏定义格式错误，调试人员可能会查看 `universal.py` 文件中的这些函数，以理解配置文件的生成逻辑和可能出错的地方。例如，如果构建日志中提示某个变量未定义，调试人员可能会检查 `do_replacement()` 函数，查看其如何处理未定义的变量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/utils/universal.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 n that happens, it can be
     # considered an achievement in itself.
     #
@@ -996,7 +998,4 @@ def detect_subprojects(spdir_name: str, current_dir: str = '',
         if append_this:
             if basename in result:
                 result[basename].appe
-"""
-
-
 ```

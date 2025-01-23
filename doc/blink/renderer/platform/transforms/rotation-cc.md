@@ -147,14 +147,16 @@ By following these steps, combining code analysis, understanding of web technolo
 
 总而言之，`blink/renderer/platform/transforms/rotation.cc` 文件是 Blink 渲染引擎中负责处理 3D 旋转的核心组件，它通过 `Rotation` 类和相关的函数，为 CSS 变换和 JavaScript 动画提供了底层的旋转计算能力，并使用了四元数来避免万向锁问题。理解其功能有助于深入了解浏览器如何处理 3D 图形变换。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/transforms/rotation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Antti Koivisto (koivisto@kde.org)
  * Copyright (C) 2004, 2005, 2006, 2007, 2008 Apple Inc. All rights reserved.
@@ -303,7 +305,4 @@ Rotation Rotation::Add(const Rotation& a, const Rotation& b) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

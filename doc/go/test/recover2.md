@@ -140,11 +140,13 @@ func safeCall(n int) {
 
 每个测试函数都使用 `defer mustRecover("expected_error_message")` 结构，确保在发生 panic 时，`mustRecover` 函数会被执行，并检查捕获到的错误信息是否包含预期的字符串。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/recover2.go的go语言实现的一部分， 请归纳一下它的功能, 　如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 如果涉及命令行参数的具体处理，请详细介绍一下
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -230,9 +232,4 @@ func test7() {
 	var x, y int
 	println(x / y)
 }
-
-"""
-
-
-
 ```

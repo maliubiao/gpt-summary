@@ -177,7 +177,7 @@ func main() {
 
 总而言之，`go/src/math/const.go` 通过定义一系列常用的数学常量和数值极限，为 Go 语言的数学计算和其他需要了解数据类型范围的场景提供了基础，避免了重复定义和提高了代码的可读性和维护性。使用者需要注意浮点数比较的精度问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/const.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -185,8 +185,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -244,9 +246,4 @@ const (
 	MaxUint32 = 1<<32 - 1           // 4294967295
 	MaxUint64 = 1<<64 - 1           // 18446744073709551615
 )
-
-"""
-
-
-
 ```

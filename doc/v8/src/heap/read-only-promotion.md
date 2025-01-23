@@ -128,11 +128,13 @@ By following these steps, we can effectively analyze the C++ code and explain it
 
 `v8/src/heap/read-only-promotion.cc` 文件实现了V8引擎中将符合条件的对象移动到只读内存空间的关键优化功能。这个过程对JavaScript开发者是透明的，但它显著地提升了JavaScript代码的执行效率和安全性，特别是对于内置对象、函数和编译后的代码而言。通过将这些对象标记为只读，V8能够进行更积极的缓存和更高效的内存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/read-only-promotion.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -805,7 +807,4 @@ void ReadOnlyPromotion::Promote(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

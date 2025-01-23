@@ -220,15 +220,17 @@ NetLogUDPDataTransfer(source, NetLogEventType::UDP_SEND_DATA, data_length, data_
 
 总而言之，`udp_net_log_parameters.cc` 虽然不直接处理网络数据，但它为记录关键的 UDP 网络活动提供了必要的结构化信息，是 Chromium 网络调试的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/udp_net_log_parameters.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ base::Value::Dict CreateNetLogUDPConnectParams(const IPEndPoint& address,
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -157,7 +157,7 @@ Let's break down the thought process for analyzing this Python code snippet.
 
 这个文件的核心目标是**将 Meson 构建系统的抽象编译流程适配到 CUDA 编译的特定需求上**，并确保与宿主编译器的协同工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/cuda.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 id) {{
             return 0;
         }}'''
@@ -352,8 +354,4 @@ id) {{
 
     def get_assert_args(self, disable: bool) -> T.List[str]:
         return self.host_compiler.get_assert_args(disable)
-
-"""
-
-
 ```

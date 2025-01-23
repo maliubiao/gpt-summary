@@ -421,7 +421,7 @@ CloseEntry("Key1")
 
 到目前为止，该文件主要定义了一个用于模糊测试 Chromium 磁盘缓存的框架。它包含了初始化代码、用于模拟缓存操作的类 `DiskCacheLPMFuzzer`，以及一些辅助函数。 该文件的核心功能是能够 **接收一系列预定义的缓存操作指令 (通过 protobuf 消息)**，并在模拟的缓存环境中 **执行这些操作**，从而达到测试磁盘缓存实现的目的。 它支持多种缓存后端和异步操作，并提供了一致性哈希等机制来管理缓存状态，以提高模糊测试的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/disk_cache_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -429,8 +429,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1245,7 +1247,4 @@ void DiskCacheLPMFuzzer::RunCommands(
 
         uint64_t it_id = ione.it_id();
         uint64_t entry_id = ione.entry_
-"""
-
-
 ```

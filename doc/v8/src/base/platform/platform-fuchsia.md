@@ -136,11 +136,13 @@ This iterative process of skimming, identifying key elements, understanding unde
 
 `v8/src/base/platform/platform-fuchsia.cc` 文件是 V8 引擎在 Fuchsia 操作系统上的底层支撑，它实现了内存管理、权限控制等关键功能，使得 V8 能够有效地运行 JavaScript 代码，包括处理变量、对象、数组、缓冲区、WebAssembly 以及共享内存等特性。  JavaScript 开发者虽然不会直接调用这些 C++ 函数，但他们的代码行为会间接地触发这些底层操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-fuchsia.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -631,7 +633,4 @@ bool AddressSpaceReservation::DecommitPages(void* address, size_t size) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

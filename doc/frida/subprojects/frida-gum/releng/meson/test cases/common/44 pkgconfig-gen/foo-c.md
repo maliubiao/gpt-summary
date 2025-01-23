@@ -140,7 +140,7 @@ Let's break down the thought process to analyze this C code snippet and address 
 
 在这个特定的测试用例场景下，很可能 `answer_to_life_the_universe_and_everything` 的实现会在同一个测试套件的其他文件中提供，并且构建系统会确保它们被正确地链接在一起。这个简单的 `foo.c` 文件的存在是为了测试 pkg-config 的生成是否正确地反映了这种依赖关系。 pkg-config 文件会被其他需要使用这个库的项目用来查找所需的编译和链接参数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/44 pkgconfig-gen/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"simple.h"
 
 int answer_to_life_the_universe_and_everything (void);
@@ -157,7 +159,4 @@ int answer_to_life_the_universe_and_everything (void);
 int simple_function(void) {
     return answer_to_life_the_universe_and_everything();
 }
-
-"""
-
 ```

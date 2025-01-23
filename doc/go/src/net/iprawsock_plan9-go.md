@@ -176,7 +176,7 @@ func main() {
 
 这段 `go/src/net/iprawsock_plan9.go` 代码表明，Go 语言在 Plan 9 操作系统上并没有实现标准的原始 IP 套接字功能。  所有的相关函数都返回 `syscall.EPLAN9` 错误。  这意味着在 Plan 9 上进行需要原始 IP 套接字操作的网络编程可能需要使用 Plan 9 特有的系统调用或方法，而不是依赖 Go 的 `net` 包提供的标准接口。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/iprawsock_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -184,8 +184,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -220,9 +222,4 @@ func (sd *sysDialer) dialIP(ctx context.Context, laddr, raddr *IPAddr) (*IPConn,
 func (sl *sysListener) listenIP(ctx context.Context, laddr *IPAddr) (*IPConn, error) {
 	return nil, syscall.EPLAN9
 }
-
-"""
-
-
-
 ```

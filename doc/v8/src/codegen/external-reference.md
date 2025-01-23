@@ -99,12 +99,14 @@ FUNCTION_REFERENCE_WITH_TYPE(ieee754_sin_function, base::ieee754::sin,
 
 总而言之，`external-reference.cc` 文件是 V8 引擎连接 JavaScript 世界和底层 C++ 实现的关键组件，它使得 V8 能够高效地执行各种 JavaScript 操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/external-reference.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1795,8 +1797,4 @@ ExternalReference ExternalReference::atomic_pair_exchange_function() {
 
 static uint64_t atomic_pair_compare_exchange(intptr_t address,
                                              int old_value_low,
-                 
-"""
-
-
 ```

@@ -118,7 +118,7 @@ Throughout this process, I constantly referred back to the code to verify my und
 
 总而言之，`vs2010backend.py` 充当了 Meson 构建系统和 Visual Studio 2010 之间的桥梁，使得开发者可以使用 Meson 来管理 Frida 在 Windows 平台上的构建过程，并利用 Visual Studio 2010 的 IDE 和构建工具进行编译、链接和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ",
                                       'ToolsVersion': '4.0',
                                       'xmlns': 'http://schemas.microsoft.com/developer/msbuild/2003'})
@@ -711,7 +713,4 @@ Prompt:
                                                proj_to_build_root: str,
                                                primary_src_lang: T.Optional[str]) -> None:
         ET.SubElement(root, 'ImportGroup', Label='ExtensionSetti
-"""
-
-
 ```

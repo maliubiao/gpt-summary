@@ -206,7 +206,7 @@ func ProcessData(data *Data) {
 
 总而言之，这段代码是 `cgo` 工具的核心组成部分，负责根据目标编译器 (`gc` 或 `gccgo`) 的不同，生成将 Go 函数暴露给 C 代码调用的桥梁代码。它处理了参数和返回值的传递，符号的导出和链接，以及内置函数的定义，从而实现了 Go 和 C 代码的无缝集成。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cgo/out.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -215,8 +215,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 (fgcc, "\t_cgo_release_context(_cgo_ctxt);\n")
 		if gccResult != "void" {
 			if len(fntype.Results.List) == 1 && len(fntype.Results.List[0].Names) <= 1 {
@@ -1193,10 +1195,4 @@ static void GoInit(void) {
 
 extern size_t _cgo_wait_runtime_init_done(void) __attribute__ ((weak));
 `
-
-"""
-
-
-
-
 ```

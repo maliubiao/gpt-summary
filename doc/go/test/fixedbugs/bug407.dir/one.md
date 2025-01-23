@@ -160,15 +160,17 @@ The most common mistake when working with method values like this is misundersta
 
 In essence, this code snippet serves as a test case or a demonstration of how method values are created and used in Go, specifically focusing on the distinction between pointer and value receivers. It highlights the importance of matching the receiver type when calling a method value stored in a function field. The original issue (Issue 2877) likely pertains to a bug or clarification needed in how this mechanism functions or is specified.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug407.dir/one.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -186,12 +188,4 @@ func (t T) goo(arg int) {}
 
 func (t *T) F() { t.f = (*T).foo }
 func (t *T) G() { t.g = T.goo }
-
-
-
-
-"""
-
-
-
 ```

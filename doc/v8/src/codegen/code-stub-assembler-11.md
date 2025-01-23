@@ -72,12 +72,14 @@ myObject = null; // 现在 myObject 不再被引用
 ```
 
 总结来说，这段 C++ 代码是 V8 引擎中用于高效管理动态数组的基础构建块，它是实现 JavaScript 中许多核心数据结构和功能的重要组成部分。`IsMarked` 函数则与 V8 引擎的内存管理和垃圾回收机制紧密相关。
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第12部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ArrayList, length_),
                                    SmiConstant(0));
 
@@ -225,8 +227,4 @@ void CodeStubAssembler::GetMarkBit(TNode<IntPtrT> object, TNode<IntPtrT>* cell,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

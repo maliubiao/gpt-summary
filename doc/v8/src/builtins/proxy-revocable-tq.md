@@ -210,14 +210,16 @@ try {
 
 总而言之，`v8/src/builtins/proxy-revocable.tq` 中的代码实现了 JavaScript 的 `Proxy.revocable()` 功能，它允许创建可以被显式撤销的代理对象，这为 JavaScript 提供了更细粒度的代理生命周期管理能力。理解其工作原理和可能出现的错误对于有效地使用可撤销代理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/proxy-revocable.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -258,7 +260,4 @@ transitioning javascript builtin ProxyRevocable(
   }
 }
 }
-
-"""
-
 ```

@@ -192,7 +192,7 @@ By following this systematic approach, combining code analysis with contextual i
 
 `libA.cpp` 虽然代码简单，但在 Frida 的测试上下文中扮演着重要的角色，用于验证 Frida 与 C++ 对象库的交互能力。通过 hook 和修改其行为，可以测试 Frida 的基本功能，并为理解更复杂的逆向工程场景奠定基础。它涉及到编译、链接、内存操作、进程间通信等底层概念，并且在实际使用中，用户需要注意库名、函数名、类型匹配和权限等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/5 object library/subprojects/cmObjLib/libA.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,14 +200,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "libA.hpp"
 
 std::string getLibStr(void) {
   return "Hello World";
 }
-
-"""
-
 ```

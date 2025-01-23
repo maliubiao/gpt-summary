@@ -157,15 +157,17 @@ This systematic approach of analyzing individual components and then synthesizin
 
 `go/src/cmd/go/internal/work/build_test.go` 中的这部分代码主要测试了 `go` 命令在构建和安装过程中与外部工具（如 `pkg-config`）交互、生成共享库名称以及处理文件系统权限等关键方面的逻辑。这些测试确保了 `go` 命令在各种场景下都能正确可靠地工作，特别是在涉及到 C/C++ 互操作和共享库构建时。用户虽然不会直接调用这些内部函数，但了解这些测试背后的功能可以帮助理解 `go build` 和 `go install` 命令的工作原理以及可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/work/build_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -440,9 +442,4 @@ func TestRespectSetgidDir(t *testing.T) {
 		t.Fatalf("moveOrCopyFile(%q, %q): want %q, got %q", dirGIDFile, pkgfile.Name(), want, got)
 	}
 }
-
-"""
-
-
-
 ```

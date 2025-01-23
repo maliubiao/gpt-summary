@@ -155,7 +155,7 @@ If there's an issue with the build process (e.g., a command fails, a JAR isn't c
 
 This Python file, `build.py`, is a critical component of the Frida Node.js bindings build system. It defines the core data structures (classes) that represent different types of build targets (executables, Java archives, data files, etc.). These classes are used by the Meson build system to understand how to build the project, manage dependencies, execute commands, and install the resulting artifacts. It provides a structured way to describe the build process, making it more maintainable and understandable. Its functionality is fundamental for creating the tools and libraries that underpin Frida's dynamic instrumentation capabilities, which are crucial for reverse engineering and security analysis.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,9 +164,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
- = 'run'
+### 源代码
+```python
+= 'run'
 
     def __init__(self, name: str,
                  command: T.Sequence[T.Union[str, File, BuildTargetTypes, programs.ExternalProgram]],
@@ -466,8 +468,4 @@ def save(obj: Build, filename: str) -> None:
             pickle.dump(obj, f)
     finally:
         obj.environment.coredata = cdata
-
-"""
-
-
 ```

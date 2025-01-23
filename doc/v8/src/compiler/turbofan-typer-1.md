@@ -130,12 +130,14 @@ const areEqual = Object.is(5, 5); // areEqual 的类型会被推断为 Boolean
 
 这部分 `turbofan-typer.cc` 代码的核心功能是为 Turbofan 编译器提供精确的类型信息，使其能够进行更有效的代码优化。它通过分析不同的节点类型和操作，特别是 JavaScript 的内置函数和对象方法，来确定这些操作的返回类型，从而为 V8 引擎的快速执行提供基础。这些类型信息直接反映了 JavaScript 语言的语义和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turbofan-typer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 iltin::kMathCbrt:
     case Builtin::kMathCos:
     case Builtin::kMathExpm1:
@@ -1008,8 +1010,4 @@ Type Typer::Visitor::TypeJSGetIterator(Node* node) { return Type::Any(); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -144,7 +144,7 @@ By following these steps, I could systematically analyze the code, understand it
 
 **总结来说，`style_builder_converter.cc` 是 Blink 渲染引擎中 CSS 样式处理流程的关键环节，它负责将抽象的 CSS 值转换为引擎可以理解和使用的具体数据，是连接 CSS 解析和后续样式应用的重要桥梁。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_builder_converter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 h will all come
   // from a list.
   const CSSValueList* list = DynamicTo<CSSValueList>(value);
@@ -546,8 +548,4 @@ PositionArea StyleBuilderConverter::ConvertPositionArea(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

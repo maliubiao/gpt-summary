@@ -247,7 +247,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/linux/virtio_snd.handroid` 是 Android 系统在虚拟化环境下处理音频的关键接口定义，它架起了用户空间音频服务与内核虚拟音频驱动之间的桥梁。 理解这个文件的内容对于深入了解 Android 音频系统的底层实现至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/virtio_snd.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -258,8 +258,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -563,7 +565,4 @@ struct virtio_snd_ctl_event {
   __le16 mask;
 };
 #endif
-
-"""
-
 ```

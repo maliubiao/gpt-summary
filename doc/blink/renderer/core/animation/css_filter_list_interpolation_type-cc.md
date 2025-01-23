@@ -174,14 +174,16 @@ Initially, I might have focused too much on the low-level C++ details. I'd then 
 
 总之，`css_filter_list_interpolation_type.cc` 文件在 Blink 引擎中扮演着关键角色，它确保了 CSS `filter` 和 `backdrop-filter` 属性的动画和过渡能够平滑自然地进行，是连接 CSS 样式定义和最终视觉渲染的重要桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_filter_list_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -581,7 +583,4 @@ CSSFilterListInterpolationType::PerformAccumulativeComposition(
 }
 
 }  // namespace blink
-
-"""
-
 ```

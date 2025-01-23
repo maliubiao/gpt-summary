@@ -213,15 +213,17 @@ By following this thought process, I can generate a comprehensive and accurate r
 
 总而言之，`css_attr_type.cc` 是 Blink 渲染引擎中处理 CSS `attr()` 函数的关键部分，负责解析和确定属性值的类型，确保 CSS 能够正确地从 HTML 属性中获取并应用样式。 当涉及到 `attr()` 函数的样式问题时，理解这个文件的功能对于调试和排查问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_attr_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -314,7 +316,4 @@ CSSAttrType CSSAttrType::GetDefaultValue() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

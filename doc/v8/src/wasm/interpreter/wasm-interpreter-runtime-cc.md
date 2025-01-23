@@ -146,7 +146,7 @@ runWasm();
 
 总的来说，`v8/src/wasm/interpreter/wasm-interpreter-runtime.cc` 构成了 V8 中 Wasm 解释器运行时的核心基础设施。它提供了连接 V8 运行时和 Wasm 解释器的桥梁，管理解释器的状态，并实现了 Wasm 指令执行所需的关键运行时支持功能，包括内存管理、表操作、异常处理以及与 JavaScript 的互操作。 这个文件是 Wasm 解释器能够正确、安全地执行 Wasm 代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter-runtime.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter-runtime.cc以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -985,8 +987,4 @@ WasmInterpreterRuntime::HandleException(uint32_t* sp,
   DCHECK(isolate_->has_exception());
 
   bool catchable = current_frame_.current_function_ &&
-               
-"""
-
-
 ```

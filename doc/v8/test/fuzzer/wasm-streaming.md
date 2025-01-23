@@ -127,11 +127,13 @@ compileAndInstantiateStreaming(wasmBinary);
 
 `v8/test/fuzzer/wasm-streaming.cc` 中的代码本质上是在对V8引擎实现 `WebAssembly.instantiateStreaming()` 和 `WebAssembly.compileStreaming()` 功能的底层C++代码进行健壮性测试。它通过生成各种各样的Wasm字节码序列，并比较流式编译和同步编译的结果，来发现潜在的错误或不一致性。  如果流式编译的结果与同步编译的结果不同，则可能意味着流式编译的实现存在bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/wasm-streaming.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -332,7 +334,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
 ```

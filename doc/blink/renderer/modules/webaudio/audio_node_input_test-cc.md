@@ -135,15 +135,17 @@ Finally, organize the findings into clear sections based on the prompt's request
 
 总而言之，`audio_node_input_test.cc` 虽然是底层的 C++ 测试，但它直接保障了 Web Audio API 的稳定性和可靠性，最终影响着用户在网页上使用音频功能的体验。它通过模拟各种对象销毁场景，确保 Blink 引擎能够正确管理内存，避免因不合理的资源释放顺序导致的崩溃。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_node_input_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ TEST(AudioNodeInputTest, OutputDestroyedBeforeInput) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

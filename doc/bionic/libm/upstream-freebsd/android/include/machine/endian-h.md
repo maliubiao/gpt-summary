@@ -377,7 +377,7 @@ if __name__ == '__main__':
 
 总而言之，`bionic/libm/upstream-freebsd/android/include/machine/endian.handroid` 本身只是一个简单的包含指令，它的核心作用是使 Android 系统中的 C 代码能够方便地使用标准 C 库提供的字节序处理功能，这对于网络通信、跨平台数据交换等至关重要。 Android Framework 和 NDK 中的网络相关操作最终都会依赖于这些底层的字节序转换函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/android/include/machine/endian.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -388,10 +388,9 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #include <endian.h>
-
-"""
-
 ```

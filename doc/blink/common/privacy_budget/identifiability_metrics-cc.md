@@ -131,14 +131,16 @@ By following this structured thought process, combining code analysis with domai
 
 总而言之，`identifiability_metrics.cc` 文件中的 `IdentifiabilityDigestOfBytes` 函数提供了一种在 Blink 引擎中计算字节序列标识性摘要的机制，这对于评估各种浏览器行为和数据对用户可识别性的贡献至关重要，特别是在隐私预算的背景下。虽然它不直接与前端技术交互，但其计算结果可以用于分析和限制由 JavaScript, HTML, CSS 产生的可能泄露用户身份的信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/identifiability_metrics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ uint64_t IdentifiabilityDigestOfBytes(base::span<const uint8_t> in) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

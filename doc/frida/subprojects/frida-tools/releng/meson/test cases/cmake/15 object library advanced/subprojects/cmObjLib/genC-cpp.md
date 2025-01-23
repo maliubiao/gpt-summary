@@ -108,7 +108,7 @@ By following these steps and continually refining the understanding, we can crea
 
 `genC.cpp` 虽然本身是一个简单的代码生成器，但在 Frida 这样的复杂动态 instrumentation 工具的上下文中，它扮演着重要的角色，用于创建测试目标，验证 Frida 的功能，并确保其在不同平台和构建系统上的正确性。 它间接地涉及到逆向工程、二进制底层、操作系统和构建系统等多个方面的知识。  用户到达这里通常是出于开发、调试或理解 Frida 工具构建和测试流程的目的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/15 object library advanced/subprojects/cmObjLib/genC.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <fstream>
 
@@ -149,6 +151,4 @@ std::string getGenStr(void) {
 
   return 0;
 }
-"""
-
 ```

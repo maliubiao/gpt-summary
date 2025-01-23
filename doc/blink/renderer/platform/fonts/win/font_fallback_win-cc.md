@@ -167,14 +167,16 @@ By following this structured approach – skimming, detailed reading, identifyin
 
 总而言之，`font_fallback_win.cc` 是 Chromium 在 Windows 平台上实现字体回退的关键组件，它根据 Unicode 脚本和字符属性，以及用户系统安装的字体情况，为网页内容选择合适的字体进行渲染，确保用户能够看到正确的文字显示。理解其工作原理有助于开发者更好地设计网页的字体方案，提高用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/win/font_fallback_win.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2006, 2007, 2008, 2009, 2010, 2012 Google Inc. All rights
  * reserved.
@@ -838,7 +840,4 @@ const AtomicString& GetFallbackFamily(
 }
 
 }  // namespace blink
-
-"""
-
 ```

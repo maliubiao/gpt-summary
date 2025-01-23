@@ -246,7 +246,7 @@ console.log(array2); // 输出: Float32Array [ 5, 6, 7, 8 ]
 
 总而言之，`v8/src/wasm/baseline/ia32/liftoff-assembler-ia32-inl.h` 是 V8 的 WebAssembly 引擎 Liftoff 在 IA-32 架构上的代码生成引擎的核心组成部分，专门负责将 Wasm 的 SIMD 指令翻译成可执行的机器码。它是整个编译流程的最终环节之一，确保了 WebAssembly 代码能够在特定的硬件平台上运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/ia32/liftoff-assembler-ia32-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/ia32/liftoff-assembler-ia32-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -254,9 +254,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                            LiftoffRegister src) {
+### 源代码
+```c
+LiftoffRegister src) {
   Register tmp = GetUnusedRegister(kGpReg, {}).gp();
   I32x4SConvertF32x4(dst.fp(), src.fp(), liftoff::kScratchDoubleReg, tmp);
 }
@@ -1071,8 +1073,4 @@ void LiftoffStackSlots::Construct(int param_slots) {
 }  // namespace v8::internal::wasm
 
 #endif  // V8_WASM_BASELINE_IA32_LIFTOFF_ASSEMBLER_IA32_INL_H_
-
-"""
-
-
 ```

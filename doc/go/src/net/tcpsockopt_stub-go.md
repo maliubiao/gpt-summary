@@ -197,7 +197,7 @@ tcpConn.SetKeepAlive(true) // 可能会期望设置默认的 Keep-Alive 参数
 
 这段代码在传统的操作系统上可能可以工作，但在 `js` 或 `wasip1` 环境下，`SetKeepAlive(true)` 内部最终会尝试设置 Keep-Alive 相关的 socket 选项，从而调用到 `tcpsockopt_stub.go` 中的占位符函数，导致设置失败。开发者需要意识到这些平台的限制，并可能需要寻找其他的网络通信策略。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/tcpsockopt_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,8 +205,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -235,9 +237,4 @@ func setKeepAliveInterval(fd *netFD, d time.Duration) error {
 func setKeepAliveCount(fd *netFD, n int) error {
 	return syscall.ENOPROTOOPT
 }
-
-"""
-
-
-
 ```

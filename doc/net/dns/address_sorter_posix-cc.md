@@ -214,15 +214,17 @@ fetch('https://example.com/data.json')
 
 总而言之，`address_sorter_posix.cc` 是 Chromium 网络栈中一个幕后英雄，它默默地工作以确保浏览器能够选择最佳的网络路径进行连接，从而提供更流畅的网络体验。虽然 JavaScript 开发者不直接操作它，但它的正确运行对于所有基于浏览器的网络应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/address_sorter_posix.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -712,7 +714,4 @@ std::unique_ptr<AddressSorter> AddressSorter::CreateAddressSorter() {
 }
 
 }  // namespace net
-
-"""
-
 ```

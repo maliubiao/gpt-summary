@@ -97,9 +97,12 @@ This systematic approach, starting from a broad overview and progressively drill
 
 这个文件的命名和目录结构也暗示了它在 V8 项目中的地位，V8 是 Google Chrome 和 Node.js 的 JavaScript 引擎，它有自己的垃圾回收机制，因此需要这样的工具来确保 C++ 代码的安全性。
 
-Prompt: ```这是目录为v8/tools/gcmole/gcmole-test.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/tools/gcmole/gcmole-test.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -465,6 +468,4 @@ void TestVariableScopeInsideIf(Isolate* isolate) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

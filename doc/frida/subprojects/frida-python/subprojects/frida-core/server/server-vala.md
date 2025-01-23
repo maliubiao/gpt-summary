@@ -126,7 +126,7 @@ Response:
 3. **信号处理**：`Posix.signal` 处理 `SIGINT` 和 `SIGTERM` 信号，用户可以模拟这些信号，观察服务器的停止过程。
 
 通过这些步骤，用户可以逐步调试 Frida 服务器的启动、运行和停止过程，确保其按预期工作。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/server/server.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida.Server {
 	private static Application application;
 
@@ -454,7 +456,4 @@ namespace Frida.Server {
 		return new TlsCertificate.from_file (path);
 	}
 }
-
-"""
-
 ```

@@ -130,11 +130,13 @@ function example(a, b) {
 
 `v8/src/utils/bit-vector.cc` 中定义的 `BitVector` 类是一个用于高效存储和操作非负整数集合的工具。它利用位的紧凑表示和快速的位操作，在 V8 引擎内部的各种场景中用于优化性能，例如实现 `Set` 对象、进行垃圾回收标记和进行编译优化等。虽然 JavaScript 开发者不直接接触 `BitVector`，但它的存在是 V8 引擎高效运行的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/bit-vector.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ int BitVector::Count() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -118,7 +118,7 @@ Here's a breakdown of the thinking process to analyze the provided Python script
 
 总而言之，这个 `cp.py` 脚本是一个简单的文件复制工具，在 Frida 项目的测试环境中扮演着辅助角色，帮助准备测试所需的文件。它本身不涉及复杂的逆向分析或底层操作，但它操作的对象可能是二进制文件、库文件等，这些文件是逆向工程的常见目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/107 subproject symlink/cp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,15 +126,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from sys import argv
 from shutil import copy
 
 copy(argv[1], argv[2])
-
-"""
-
 ```

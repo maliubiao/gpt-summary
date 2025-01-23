@@ -111,9 +111,12 @@ console.log(obj.b); // 输出 2 (自身属性)
 
 总而言之，`concurrent-prototype-unittest.cc` 是 V8 引擎为了保证 JavaScript 原型继承机制在多线程环境下的稳定性和可靠性而编写的底层测试代码。它直接测试了 V8 引擎内部处理 JavaScript 对象和原型链的并发操作逻辑。
 
-Prompt: ```这是目录为v8/test/unittests/objects/concurrent-prototype-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/objects/concurrent-prototype-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -311,6 +314,4 @@ TEST_F(ConcurrentPrototypeTest, ProtoWalkBackground_PrototypeChainWrite) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

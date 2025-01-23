@@ -88,14 +88,16 @@ Response: Here's a breakdown of the thought process to analyze the provided C++ 
 
 `thread_unittest.cc` 文件专注于测试 Blink 引擎中非主线程的创建和管理机制。 虽然它不直接操作 JavaScript, HTML 或 CSS 的代码，但它所测试的功能是构建稳定可靠的渲染引擎的基础，并间接地支持了这些 Web 技术的正确执行。 这个测试用例验证了 Blink 内部状态在线程创建前后的一致性，有助于预防潜在的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/thread_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -123,7 +125,4 @@ TEST(ThreadTest, IsBeforeThreadCreated) {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

@@ -101,7 +101,7 @@ Here's a breakdown of how to approach this:
 
 `composite_edit_command.cc` 文件的第一部分定义了 `CompositeEditCommand` 类，它是 Blink 编辑模块中用于管理和执行一系列相关编辑操作的核心组件。它确保了编辑操作的原子性，并与撤销/重做机制紧密集成。它通过组合各种更小的编辑命令来实现复杂的编辑功能，并受到用户在网页上的编辑行为触发。理解 `CompositeEditCommand` 的工作原理是理解 Blink 编辑模块的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/composite_edit_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2006, 2007, 2008 Apple Inc. All rights reserved.
  *
@@ -905,7 +907,4 @@ void CompositeEditCommand::RebalanceWhitespaceOnTextSubstring(Text* text_node,
   // FIXME: Because of the problem mentioned at the top of this function, we
   // must also use nbsps at the start/end of the string because this function
   // doesn't get all surrounding whitespace, just the whitespace in t
-"""
-
-
 ```

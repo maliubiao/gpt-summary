@@ -161,15 +161,17 @@ If you suspect issues with media stream constraints, you might:
 
 In summary, `media_constraints.cc` is a crucial file in the Chromium Blink engine that plays a central role in managing and enforcing the requirements specified when requesting access to user media devices via the WebRTC API. It bridges the gap between the JavaScript world of web development and the underlying C++ implementation of media handling in the browser.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_constraints.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -752,7 +754,4 @@ const String MediaConstraints::ToString() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

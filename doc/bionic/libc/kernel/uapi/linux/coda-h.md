@@ -318,7 +318,7 @@ if __name__ == "__main__":
 
 总而言之，`bionic/libc/kernel/uapi/linux/coda.h` 是一个定义了用户空间程序与 Linux 内核中 Coda 分布式文件系统客户端交互接口的关键头文件。理解这个文件的内容有助于理解 Android 如何支持 Coda 文件系统以及如何在底层进行相关的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/coda.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -329,8 +329,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -845,7 +847,4 @@ struct coda_mount_data {
   int fd;
 };
 #endif
-
-"""
-
 ```

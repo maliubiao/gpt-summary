@@ -337,7 +337,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/asm-riscv/asm/shmbuf.handroid` 本身只是一个简单的包含文件，它的意义在于指向了定义共享内存缓冲区结构的关键头文件。理解它的功能需要理解共享内存在 Android 系统中的作用以及相关的 libc 函数和系统调用。通过 Frida 这样的工具，我们可以深入观察 Android Framework 和 NDK 如何使用这些底层的共享内存机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-riscv/asm/shmbuf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -348,8 +348,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -357,7 +359,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/shmbuf.h>
-
-"""
-
 ```

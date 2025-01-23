@@ -137,7 +137,7 @@ By following this structured thought process, we can generate a detailed and ins
 
 虽然提供的 `__init__.py` 文件内容为空，但它的存在是至关重要的，它将 `frida_tools` 目录标记为一个 Python 包，为组织和导入 Frida 的工具模块提供了基础。理解其作用有助于我们理解 Frida 工具的组织结构，并在遇到相关问题时进行调试。`frida_tools` 包本身的功能与动态逆向分析紧密相关，并可能涉及到对二进制底层、操作系统内核及框架的深入理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/frida_tools/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,9 +145,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

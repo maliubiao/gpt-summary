@@ -161,15 +161,17 @@ JavaScript 代码本身不会直接调用 `FillUnixAddress` 这样的 C++ 函数
 
 总而言之，`net/base/sockaddr_util_posix_unittest.cc` 这个文件虽然不是用户直接操作的对象，但它通过测试关键的网络地址处理函数，确保了 Chromium 在处理 Unix 域套接字时的正确性。当用户遇到与本地服务通信相关的问题时，这个单元测试文件可以作为开发者调试和理解底层机制的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/sockaddr_util_posix_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -287,7 +289,4 @@ TEST(FillUnixAddressTest, AbstractLinuxAddress) {
 }
 
 }  // namespace net
-
-"""
-
 ```

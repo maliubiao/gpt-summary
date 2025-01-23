@@ -210,15 +210,17 @@ func main() {
 
 总而言之，`go/test/convlit.go` 通过一系列精心设计的测试用例，确保 Go 编译器能够正确地执行类型转换规则，并及时地报告非法的转换操作，从而帮助开发者编写出类型安全的代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/convlit.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -293,9 +295,4 @@ var _ = Tbyte("abc") // ok
 // implicit is still not
 var _ Trune = "abc" // ERROR "cannot use|incompatible|invalid|cannot convert"
 var _ Tbyte = "abc" // ERROR "cannot use|incompatible|invalid|cannot convert"
-
-"""
-
-
-
 ```

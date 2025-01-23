@@ -98,11 +98,13 @@ console.timeEnd("myFunction"); // 开发者可以通过 console.timeEnd 标记�
 
 `trace-config.cc` 中定义的 `TraceConfig` 类是 V8 引擎内部用于配置追踪功能的关键组件。它决定了在执行 JavaScript 代码时会记录哪些类型的事件和信息。虽然 JavaScript 代码本身不能直接操作 `TraceConfig`，但开发者可以通过浏览器或 Node.js 提供的开发者工具来利用这些追踪信息进行性能分析和调试。  `TraceConfig` 默认启用的 "v8" 类别确保了 V8 引擎自身的一些关键信息会被追踪，从而为开发者工具提供基础数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/tracing/trace-config.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -145,7 +147,4 @@ void TraceConfig::AddIncludedCategory(const char* included_category) {
 }  // namespace tracing
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

@@ -138,11 +138,13 @@ console.log("Function call difference:", callCountDifference);
 
 `metrics.cc` 文件定义了 V8 内部用于收集性能指标的基础设施。虽然 JavaScript 代码不能直接操作它，但它所记录的数据对于理解和优化 JavaScript 代码的性能至关重要，并且常常通过嵌入器提供的工具或 API 间接地暴露给开发者。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/metrics.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ void Recorder::Delay(std::unique_ptr<Recorder::DelayedEventBase>&& event) {
 }  // namespace metrics
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

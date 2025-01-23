@@ -116,11 +116,13 @@ try {
 
 总而言之，`hardware-support.cc` 通过提供硬件级别的内存保护机制，增强了 V8 引擎的安全性，使得 JavaScript 代码在更安全的环境中运行，即使存在某些漏洞，也能限制其影响范围，防止对引擎核心功能的破坏。JavaScript 开发者通常不需要直接与这些 API 交互，但会受益于其提供的安全保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/hardware-support.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ SandboxHardwareSupport::MaybeBlockAccess() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -157,14 +157,16 @@ By following this systematic approach, combining code analysis with knowledge of
 
 总而言之，`ReplayingCanvas` 是 Blink 渲染引擎中一个强大的工具，用于控制和重放 Canvas 绘图操作，主要用于调试、性能分析和特定的渲染需求。 理解其工作原理和使用场景，可以帮助开发者更好地利用 Canvas 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/replaying_canvas.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -243,7 +245,4 @@ void ReplayingCanvas::onDrawPicture(const SkPicture* picture,
 }
 
 }  // namespace blink
-
-"""
-
 ```

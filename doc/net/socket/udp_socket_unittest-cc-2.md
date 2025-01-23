@@ -132,7 +132,7 @@ Let's break down the code to address each of these points:
 
 总而言之，`net/socket/udp_socket_unittest.cc` 的这部分代码主要负责测试 Chromium 网络栈中 UDP 客户端套接字的核心功能，包括读取操作（特别是针对优化路径和缓冲区大小的处理）、在 Android 平台上的套接字标记和网络绑定功能，以及全局 UDP 套接字数量限制的实施。这些测试旨在确保 UDP 套接字在各种场景下都能正确可靠地工作，为上层应用（包括 JavaScript 通过 Chrome 扩展 API 使用 UDP 的场景）提供稳定的网络基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/udp_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Setup the client, enable experimental optimization and connected to the
   // server.
   UDPClientSocket client(DatagramSocket::DEFAULT_BIND, nullptr, NetLogSource());
@@ -499,8 +501,4 @@ TEST_F(UDPSocketTest, LimitConnectMultithreaded) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

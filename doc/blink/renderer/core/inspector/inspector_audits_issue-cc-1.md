@@ -67,15 +67,17 @@ To address the user's request, I need to:
 
 这部分 `inspector_audits_issue.cc` 文件的功能是 **专注于向开发者工具报告特定类型的错误，包括由于网络问题导致的样式表加载失败，以及违反内容安全策略 (CSP) 的行为。** 它为开发者提供了重要的调试信息，帮助他们理解和解决与资源加载和安全策略相关的问题。这些功能与 JavaScript、HTML 和 CSS 密切相关，因为它们是网页开发中最基本的技术，而本文件旨在帮助开发者确保这些技术能够安全且正确地加载和执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_audits_issue.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 etDetails(protocol::Audits::InspectorIssueDetails::create()
                           .setStylesheetLoadingIssueDetails(std::move(details))
                           .build())
@@ -187,8 +189,4 @@ AuditsIssue AuditsIssue::CreateContentSecurityPolicyIssue(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -181,7 +181,7 @@ mytool --file <filename> --size <size_in_bytes>
 
 总而言之，`go/src/internal/syscall/unix/fallocate_freebsd_arm.go` 中的 `PosixFallocate` 函数提供了一个在 FreeBSD ARM 架构上预分配文件磁盘空间的底层接口。它封装了 `posix_fallocate` 系统调用，并处理了 ARM 架构特定的调用约定。虽然一般开发者不会直接使用它，但它是 Go 运行时和标准库中实现更高级文件操作的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/fallocate_freebsd_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -189,8 +189,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -213,9 +215,4 @@ func PosixFallocate(fd int, off int64, size int64) error {
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

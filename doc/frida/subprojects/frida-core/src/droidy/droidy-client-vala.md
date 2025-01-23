@@ -105,7 +105,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `droidy-client.vala` 文件实现了与 Android 设备的底层通信，支持设备管理、Shell 命令执行、文件同步和调试会话管理等功能。通过 LLDB 脚本，我们可以复刻部分调试功能，帮助用户更好地理解和调试 Android 设备上的操作。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/droidy/droidy-client.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaDroidy", gir_version = "1.0")]
 namespace Frida.Droidy {
 	public class DeviceTracker : Object {
@@ -1310,7 +1312,4 @@ namespace Frida.Droidy {
 		}
 	}
 }
-
-"""
-
 ```

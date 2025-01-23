@@ -109,14 +109,16 @@ By following these steps, we can systematically understand the purpose, function
 
 总而言之，`date_time_format_test.cc` 文件通过一系列的单元测试，确保 Blink 引擎中的 `DateTimeFormat` 类能够正确地解析各种日期和时间格式字符串，这对于正确实现 JavaScript 的 `Intl.DateTimeFormat` API 和处理 HTML 日期时间相关的表单元素至关重要。这些测试用例也揭示了用户和开发者在使用日期时间格式化时可能遇到的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/date_time_format_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -420,7 +422,4 @@ TEST_F(DateTimeFormatTest, SingleUpperCaseInvalid) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

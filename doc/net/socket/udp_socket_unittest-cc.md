@@ -135,7 +135,7 @@ Now I can formulate the summarized functionality of this first part of the `udp_
 
 总而言之，`net/socket/udp_socket_unittest.cc` 的第一部分主要专注于**验证 UDP socket 的基本连接、数据传输以及一些基础的 socket 选项功能**，并展示了如何使用单元测试来确保这些核心功能的正确性。 它涵盖了客户端和服务端 socket 的基本操作，以及一些常见的配置场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/udp_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1034,7 +1036,4 @@ TEST_F(UDPSocketTest, SetDSCP) {
 // bytes that arrive.
 TEST_F(UDPSocketTest, VerifyDscpAndEcnExchangeV4) {
   IPEndPoint s
-"""
-
-
 ```

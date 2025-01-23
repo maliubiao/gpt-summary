@@ -126,7 +126,7 @@ runWasm();
 
 到目前为止，我们分析的代码片段主要关注了 **V8 引擎中 LoongArch64 架构下对 WebAssembly 协程和 JavaScript 到 WebAssembly 调用的底层支持**。 这部分代码实现了核心的栈切换、状态管理、以及异常处理机制，使得 JavaScript 可以安全地调用和管理可能挂起的 WebAssembly 函数。它为实现 `async/await` 等异步编程模型在 WebAssembly 中的应用奠定了基础。接下来的部分可能涉及其他 V8 内置函数的实现，或者与此相关的更具体的功能模块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/loong64/builtins-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/loong64/builtins-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -134,8 +134,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 StoreTaggedField(
       scratch, FieldMemOperand(suspender, WasmSuspenderObject::kStateOffset));
   int32_t active_suspender_offset =
@@ -1030,7 +1032,4 @@ void Builtins::Generate_CallApiCallbackImpl(MacroAssembler* masm,
       argc = CallApiCallbackOptimizedDescriptor::ActualArgumentsCountRegister();
       func_templ =
           CallApiCallbackOptimizedDescriptor::Functi
-"""
-
-
 ```

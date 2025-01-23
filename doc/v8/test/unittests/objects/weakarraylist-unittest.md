@@ -125,9 +125,12 @@ compactedList.forEach(weakRef => {
 
 `weakarraylist-unittest.cc` 中测试的 `WeakArrayList` 的核心功能是管理对对象的弱引用，并提供方法来清理那些指向已被回收对象的弱引用。  这与 JavaScript 中的 `WeakRef` 以及 `WeakSet`/`WeakMap` 的设计目标非常相似，都是为了在不阻止垃圾回收的前提下持有对对象的引用。  JavaScript 提供了更高级别的 API (`WeakRef`, `WeakSet`, `WeakMap`) 来实现类似的功能，而 C++ 代码则是在 V8 引擎的底层实现中提供了这样的数据结构。
 
-Prompt: ```这是目录为v8/test/unittests/objects/weakarraylist-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/objects/weakarraylist-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,6 +188,4 @@ TEST_F(WeakArrayListTest, OutOfPlaceCompact) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

@@ -204,15 +204,17 @@ Finally, organize the extracted information into a clear and structured format, 
 
 通过以上步骤，开发者可以逐步定位问题，最终可能需要深入到 `local_test_server.cc` 的代码来理解服务器的启动和配置过程，或者检查传递给 Python 测试服务器的参数是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/test/spawned_test_server/local_test_server.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -440,7 +442,4 @@ bool LocalTestServer::AddCommandLineArguments(
 }
 
 }  // namespace net
-
-"""
-
 ```

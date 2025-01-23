@@ -143,15 +143,17 @@ fetch('http://example.com/data')
 
 总而言之，`net/socket/fuzzed_server_socket.cc` 提供了一种在受控环境下测试 Chromium 网络栈服务器端逻辑的方式，通过模拟各种正常的和异常的网络行为，帮助开发者发现和修复潜在的 bug。它与 JavaScript 的关系在于，它模拟的是 JavaScript 代码可能与之交互的服务器行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/fuzzed_server_socket.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ void FuzzedServerSocket::DispatchAccept(std::unique_ptr<StreamSocket>* socket,
 }
 
 }  // namespace net
-
-"""
-
 ```

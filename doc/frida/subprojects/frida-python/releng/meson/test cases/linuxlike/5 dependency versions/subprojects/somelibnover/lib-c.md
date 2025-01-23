@@ -163,7 +163,7 @@ Finally, the answers are structured logically with clear headings and bullet poi
 
 总而言之，这个 `lib.c` 文件是一个非常简单的 C 代码文件，其核心功能是提供一个返回固定值的函数，主要用于 Frida 的测试框架中，特别是用于测试在不同依赖版本场景下的行为。虽然代码本身很简单，但它在 Frida 这个强大的逆向工具的上下文中扮演着重要的角色，并且涉及了共享库、符号导出、动态链接等底层概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/linuxlike/5 dependency versions/subprojects/somelibnover/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,9 +171,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

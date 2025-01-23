@@ -117,7 +117,7 @@ When working with complex numbers and division, especially with special values l
 
 This code snippet defines a comprehensive set of test cases for the complex number division operation in Go. It aims to verify the correctness of the `cmplx.Divide` function across a wide range of inputs, including regular complex numbers and special values like zero, NaN, and infinity. The data helps ensure that the Go standard library's complex number division handles edge cases and different scenarios according to the expected mathematical behavior.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/cmplxdivide1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -125,8 +125,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 , zero), complex(nan, nan)},
 	{complex(1, zero), complex(nan, -zero), complex(nan, nan)},
 	{complex(1, zero), complex(nan, 1), complex(nan, nan)},
@@ -1229,9 +1231,4 @@ Prompt:
 	{complex(2, -zero), complex(inf, -1), complex(zero, zero)},
 	{complex(2, -zero), complex(inf, 2), complex(zero, -zero)},
 	{com
-"""
-
-
-
-
 ```

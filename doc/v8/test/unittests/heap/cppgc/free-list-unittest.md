@@ -129,11 +129,13 @@ let newObject = { name: "example" };
 
 `free-list-unittest.cc` 这个 C++ 文件是对 V8 引擎内部用于管理空闲内存的 `FreeList` 类进行单元测试的代码。`FreeList` 在 V8 的内存管理中扮演着重要的角色，它负责跟踪和分配空闲内存，使得 JavaScript 对象的内存分配和回收能够高效地进行。虽然 JavaScript 代码不能直接操作 `FreeList`，但其行为深刻地受到 `FreeList` 工作方式的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/free-list-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -330,7 +332,4 @@ TEST(FreeListTest, Allocate) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

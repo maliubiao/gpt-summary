@@ -312,7 +312,7 @@ sys.stdin.read()
 
 总结来说，`errno.handroid` 本身只是一个简单的包含文件，但它在 Android 系统中扮演着至关重要的角色，确保了 ARM64 架构下错误码定义的一致性，为应用程序的错误处理提供了基础。 理解其作用以及相关的 libc 函数和系统调用机制，对于开发健壮的 Android 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/errno.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -323,8 +323,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -332,7 +334,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/errno.h>
-
-"""
-
 ```

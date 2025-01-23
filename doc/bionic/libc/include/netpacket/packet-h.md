@@ -269,7 +269,7 @@ if __name__ == "__main__":
 
 总结来说，`bionic/libc/include/netpacket/packet.h` 定义了与 Linux packet sockets 交互所需的关键结构和常量，为 Android 系统中进行底层网络编程提供了基础。虽然 Framework 本身不常用，但在 NDK 开发、网络工具和某些系统服务中可能会被使用。理解这个头文件的内容有助于开发者深入理解 Android 平台的网络机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/netpacket/packet.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -280,10 +280,9 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #include <linux/if_packet.h>
-
-"""
-
 ```

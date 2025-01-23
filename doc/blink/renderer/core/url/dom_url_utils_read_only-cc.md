@@ -201,15 +201,17 @@ console.log(url.host); // 断点可以设置在这里
 
 总结来说，`blink/renderer/core/url/dom_url_utils_read_only.cc` 是 Blink 引擎中负责只读 URL 组件提取的核心部分，它为 JavaScript 的 `URL` 接口提供了底层的实现，并在浏览器处理 HTML、CSS 和其他涉及 URL 的场景中发挥着重要作用。理解它的功能有助于开发者更好地理解 Web 平台的 URL 处理机制，并避免在使用 URL 相关的 API 时犯常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/url/dom_url_utils_read_only.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  * Copyright (C) 2012 Motorola Mobility Inc.
@@ -280,7 +282,4 @@ String DOMURLUtilsReadOnly::hash(const KURL& kurl) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

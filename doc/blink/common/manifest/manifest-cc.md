@@ -190,14 +190,16 @@ By following this thought process, one can systematically analyze the provided C
 
 总而言之，`blink/common/manifest/manifest.cc` 文件是 Blink 引擎中用于表示 Web App Manifest 的核心数据结构定义，它将 Manifest JSON 文件中的信息映射到 C++ 对象，以便在浏览器内部进行处理和使用，从而支持 PWA 的各种特性。理解这个文件有助于理解 PWA 功能的底层实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/manifest/manifest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -354,7 +356,4 @@ bool Manifest::TabStrip::operator==(const TabStrip& other) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

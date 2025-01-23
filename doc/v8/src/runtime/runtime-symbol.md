@@ -158,11 +158,13 @@ console.log(sym); // 在控制台中通常也会显示类似 Symbol(myDescriptio
 
 `v8/src/runtime/runtime-symbol.cc` 文件中的运行时函数是 JavaScript `Symbol` 功能的底层实现。 它们处理 Symbol 对象的创建、描述获取以及私有性检查等核心操作，使得 JavaScript 能够安全有效地使用 Symbol，特别是用于创建私有对象属性和方法。  虽然 JavaScript 开发者通常不需要直接调用这些运行时函数，但理解它们的功能有助于深入理解 JavaScript `Symbol` 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-symbol.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ RUNTIME_FUNCTION(Runtime_SymbolIsPrivate) {
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

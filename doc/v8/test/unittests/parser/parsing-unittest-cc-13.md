@@ -199,7 +199,7 @@ exampleLetScope();
 
 总而言之，这一部分是 V8 引擎解析器单元测试中的一个重要组成部分，专注于验证解析器在处理复杂的变量声明、作用域以及异步编程相关的语法时的正确性，以确保 V8 引擎能够准确地理解和执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/parsing-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -207,8 +207,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第14部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ar() {} } my_var;", true},
       {"",
        "'use strict'; function inner2() { if (true) { function my_var() {} }  "
@@ -1079,7 +1081,4 @@ TEST_F(ParsingTest, LexicalLoopVariable) {
 
       const i::AstRawString* var_name =
           info.ast_value_factory()->GetOneByteString("loop_var"
-"""
-
-
 ```

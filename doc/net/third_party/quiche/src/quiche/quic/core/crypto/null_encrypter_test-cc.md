@@ -137,15 +137,17 @@ console.log(encryptedData); // 输出与 C++ 测试中 "EncryptClient" 预期输
 
 **因此，查看 `null_encrypter_test.cc` 文件可以帮助开发者理解 `NullEncrypter` 的行为，验证其是否按预期工作，并在调试过程中排除某些加密相关的问题。** 例如，如果开发者怀疑是加密算法本身有问题，他们可以尝试临时切换到 `NullEncrypter` 来验证在没有加密的情况下，连接和数据传输是否正常，从而缩小问题范围。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/null_encrypter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ TEST_F(NullEncrypterTest, GetCiphertextSize) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

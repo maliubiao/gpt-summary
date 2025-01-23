@@ -150,15 +150,17 @@ myObjectInstance.myMethod();
 
 总而言之，`v8/src/objects/templates.cc` 是 V8 引擎中至关重要的一个文件，它定义了模板机制，使得 C++ 代码能够灵活地定义和控制 JavaScript 对象的结构和行为，从而实现 JavaScript 与原生代码的高效互操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/templates.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/templates.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -520,7 +522,4 @@ Handle<JSObject> DictionaryTemplateInfo::NewInstance(
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

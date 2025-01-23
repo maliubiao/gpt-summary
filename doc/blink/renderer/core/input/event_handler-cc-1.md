@@ -89,7 +89,7 @@ Here's a breakdown of the thought process to answer the user's request:
 
 这段代码片段主要负责 **根据当前上下文 (例如，鼠标悬停的元素、元素的 CSS 样式) 确定并返回要显示的鼠标光标样式**。 它是浏览器引擎中处理鼠标外观显示的核心部分，直接关联到 CSS 的 `cursor` 属性以及 HTML 元素的一些默认光标行为。  它确保用户在与网页交互时，鼠标指针能够提供直观的反馈，例如指示链接的可点击性、元素的可拖拽性、文本的可编辑性等等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/input/event_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -97,8 +97,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ursor::kNResize:
       return NorthResizeCursor();
     case ECursor::kSResize:
@@ -916,7 +918,4 @@ void EventHandler::ReleasePointerCapture(PointerId pointer_id,
 }
 
 void EventHandler::ReleaseMousePoin
-"""
-
-
 ```

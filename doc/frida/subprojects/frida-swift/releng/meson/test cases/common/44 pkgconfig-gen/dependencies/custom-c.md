@@ -135,7 +135,7 @@ By following this structured approach and constantly considering the context of 
 
 `custom.c` 文件本身非常简单，其核心功能就是定义一个返回固定值的函数。在 Frida 的上下文中，它很可能被用作测试 Frida 功能的简单目标或依赖项。用户通常不会直接操作这个文件，而是通过与 Frida 的交互（例如运行测试、分析源码或调试问题）间接地接触到它。它的存在体现了 Frida 测试框架需要一些简单、可预测的组件来验证其核心功能，例如 hook 机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/44 pkgconfig-gen/dependencies/custom.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,12 +143,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int custom_function(void) {
     return 42;
 }
-
-"""
-
 ```

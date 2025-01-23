@@ -95,7 +95,7 @@ The user wants a summary of the provided C++ code file `css_parsing_utils.cc` fr
 
 `blink/renderer/core/css/properties/css_parsing_utils.cc` 的第一部分定义了一系列基础的实用工具函数，专注于 **将 CSS 语法中的各种值类型（如数字、关键字、基本函数等）解析为 Blink 引擎内部使用的 CSS 值对象**。 这些函数是 CSS 解析过程中的核心组成部分，确保浏览器能够正确理解和应用网页的样式。它们直接关系到 CSS 的解析，间接地影响 HTML 元素的渲染和 JavaScript 对样式的动态修改。 该部分涵盖了基础的数值、关键字以及一些简单的函数解析，为后续更复杂 CSS 值的解析奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/css_parsing_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -962,7 +964,4 @@ bool IsGeneratedImage(const CSSValueID id) {
     case CSSValueID::kWebkitRepeatingLinearGradient:
     case CSSValueID::kWebkitRepeatingRadialGradient:
     case CSSValueID::
-"""
-
-
 ```

@@ -128,11 +128,13 @@ c();
 
 `unwinding-info-writer-ppc.cc` 文件是 V8 引擎中一个关键的组件，它负责为 PowerPC 架构生成必要的栈展开信息。这个信息对于 JavaScript 的异常处理、调试和错误报告等核心功能至关重要，保证了 JavaScript 代码在运行时能够正确地处理错误和提供调试信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ppc/unwinding-info-writer-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ void UnwindingInfoWriter::MarkPopLinkRegisterFromTopOfStack(int pc_offset) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

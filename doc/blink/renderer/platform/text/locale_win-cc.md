@@ -159,14 +159,16 @@ Finally, organize the gathered information into a clear and structured answer, c
 
 总之，`blink/renderer/platform/text/locale_win.cc` 是 Blink 引擎中至关重要的一个文件，它连接了 Windows 系统的本地化设置和 Blink 引擎的文本处理能力，直接影响着 Web 页面中与本地化相关的各种功能，特别是 JavaScript 的 `Intl` API 和 HTML 的本地化特性。理解其功能有助于开发者更好地处理 Web 应用的国际化和本地化问题，避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/locale_win.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -662,7 +664,4 @@ void LocaleWin::InitializeLocaleData() {
                 negative_suffix);
 }
 }
-
-"""
-
 ```

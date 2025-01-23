@@ -123,11 +123,13 @@ myFunction();
 
 `vtuneapi.cc` 文件是 V8 与 VTune Amplifier 之间的桥梁。它提供了一组 C++ API，供 V8 内部使用来标记 JavaScript 代码的执行过程。虽然 JavaScript 代码本身不能直接调用这个文件中的函数，但它的执行会触发 V8 内部对这些 API 的调用，从而使得开发者可以使用 VTune 来深入了解 JavaScript 代码的性能瓶颈。通过定义域和任务，V8 能够将复杂的执行过程组织成结构化的事件，方便 VTune 进行分析和可视化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/vtune/vtuneapi.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include "vtuneapi.h"
 #ifdef _MSC_VER  // for msvc
 #include <cstdlib>
@@ -211,7 +213,4 @@ bool VTuneDomain::beginTask(const char* task_name) {
 }
 
 void VTuneDomain::endTask() { __itt_task_end(domain_); }
-
-"""
-
 ```

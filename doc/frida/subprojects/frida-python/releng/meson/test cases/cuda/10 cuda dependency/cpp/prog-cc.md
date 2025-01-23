@@ -191,7 +191,7 @@ Frida 可以在用户态拦截 `cudaGetDeviceCount` 的调用，甚至可以更�
 
 因此，查看 `prog.cc` 这样的简单测试代码往往是调试过程中一个初步的步骤，用于快速验证基础的 CUDA 环境是否正常，为后续更复杂的调试工作提供基础。 这个简单的例子可以帮助用户隔离问题，确定问题是出在基本的 CUDA 环境配置上，还是出在目标程序更复杂的逻辑中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cuda/10 cuda dependency/cpp/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <cuda_runtime.h>
 #include <iostream>
 
@@ -220,7 +222,4 @@ int main(void) {
     std::cout << "Found " << n << " CUDA devices.\n";
     return 0;
 }
-
-"""
-
 ```

@@ -156,14 +156,16 @@ By following these steps, you can effectively analyze the given C++ test file an
 
 `uuid_test.cc` 文件是 Chromium Blink 引擎中用于测试 UUID 格式校验功能的单元测试文件。虽然它本身是用 C++ 编写的，与 JavaScript、HTML 和 CSS 没有直接的运行时交互，但它所测试的 UUID 功能在 Web 开发中被广泛使用，用于生成唯一标识符。理解这个测试文件有助于理解浏览器引擎是如何确保 UUID 格式的正确性，这对于处理前端传递过来的数据至关重要。 开发者在使用 UUID 时需要注意其特定的格式要求，避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/uuid_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -240,7 +242,4 @@ TEST(UUIDTest, NoHyphen) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

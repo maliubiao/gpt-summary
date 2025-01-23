@@ -85,12 +85,14 @@ console.log(oldValue); // 输出 5 (如果值仍然是 5)
 
 总而言之，这部分代码是 V8 引擎将高级 JavaScript 或 WebAssembly 代码转换为可以在 IA32 架构上执行的低级机器码的关键组成部分，尤其是在处理数值计算、多媒体处理和并发等性能敏感的场景中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/code-generator-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ckSlot() || input->IsFloatStackSlot()) {
           __ AllocateStackSpace(stack_decrement - kSystemPointerSize);
           __ push(i.InputOperand(1));
@@ -1983,8 +1985,5 @@ ckSlot() || input->IsFloatStackSlot()) {
       frame_access_state()->IncreaseSPDelta(-1);
       break;
     }
-#define ATOMIC_BINOP_CASE(op, inst)             
-"""
-
-
+#define ATOMIC_BINOP_CASE(op, inst)
 ```

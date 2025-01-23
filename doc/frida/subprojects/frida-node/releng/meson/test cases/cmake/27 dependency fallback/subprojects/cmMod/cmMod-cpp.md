@@ -134,7 +134,7 @@ This iterative process of code analysis, contextualization within the Frida proj
 
 总而言之，`cmMod.cpp` 是 Frida 项目中一个相对简单的测试用例，用于验证构建系统中依赖项回退的机制。它通过预处理器宏进行内部一致性检查，确保在正确的构建环境下编译。 虽然它不直接参与逆向操作，但它是构建可靠的逆向工具 Frida 的重要组成部分。 开发者在构建或调试 Frida 时可能会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/27 dependency fallback/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -159,7 +161,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

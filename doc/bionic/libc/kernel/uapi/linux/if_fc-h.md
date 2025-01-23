@@ -241,7 +241,7 @@ Interceptor.attach(Module.findExportByName(null, "fc_send"), {
 
 总结来说，`bionic/libc/kernel/uapi/linux/if_fc.h` 定义了 Linux 系统中用于 Fibre Channel 网络协议的关键数据结构和常量。虽然在常见的 Android 设备上不常用，但在特定的企业级或工业应用中可能扮演重要角色。理解这些定义对于进行底层的网络编程和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_fc.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -252,8 +252,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -280,7 +282,4 @@ struct fcllc {
   __be16 ethertype;
 };
 #endif
-
-"""
-
 ```

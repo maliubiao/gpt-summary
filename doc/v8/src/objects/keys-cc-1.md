@@ -154,7 +154,7 @@ try {
 
 总而言之，`v8/src/objects/keys.cc` 的第二部分继续深入实现了 V8 引擎中收集 JavaScript 对象自身属性键的关键逻辑。它专注于处理不同类型的对象存储结构，并特别关注了 ES6 引入的 Proxy 对象的 `ownKeys` 陷阱的实现和规范性验证。这部分代码确保了 JavaScript 中获取对象自身属性键操作的正确性、效率和符合语言规范。它在底层支撑了 `Object.keys()`, `Object.getOwnPropertyNames()`, `Object.getOwnPropertySymbols()` 和 `Reflect.ownKeys()` 等 JavaScript API 的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/keys.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/keys.cc以.tq结尾，那它是个v8 torque源代码，
@@ -162,9 +162,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- continue;
+### 源代码
+```cpp
+continue;
     } else {
       if (keys->AddKey(key, DO_NOT_CONVERT) != ExceptionStatus::kSuccess) {
         return std::optional<int>();
@@ -738,8 +740,4 @@ Maybe<bool> KeyAccumulator::CollectOwnJSProxyTargetKeys(
 #undef RETURN_NOTHING_IF_NOT_SUCCESSFUL
 #undef RETURN_FAILURE_IF_NOT_SUCCESSFUL
 }  // namespace v8::internal
-
-"""
-
-
 ```

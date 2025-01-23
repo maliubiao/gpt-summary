@@ -158,7 +158,7 @@ Frida 的介入会改变程序的行为，但不会改变程序本身的逻辑�
 
 这个简单的 `prog.c` 文件在 Frida 的测试和开发流程中充当了一个基础的验证目标，用于确保 Frida 能够在 Windows 环境下成功附加和注入代码。它可以帮助开发者排查 Frida 自身的问题，或者作为更复杂逆向工程任务的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/windows/1 basic/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,14 +166,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <windows.h>
 
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

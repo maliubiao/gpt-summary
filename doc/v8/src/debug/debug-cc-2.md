@@ -188,7 +188,7 @@ calculate(2);
 
 这部分 `v8/src/debug/debug.cc` 的代码专注于 **为 JavaScript 代码的精确调试做准备**。它通过清除 Baseline 代码、去优化函数、安装调试字节码和管理断点 trampoline 等机制，确保开发者能够在调试过程中准确地单步执行代码、设置断点并检查程序状态，从而有效地诊断和修复各种编程错误。它还涉及处理异常和 Promise 拒绝等事件，以提供更全面的调试体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/debug.cc以.tq结尾，那它是个v8 torque源代码，
@@ -196,9 +196,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
- OffHeapInstructionStream::TryLookupCode(isolate, pc);
+### 源代码
+```cpp
+OffHeapInstructionStream::TryLookupCode(isolate, pc);
         if (builtin == Builtin::kBaselineOrInterpreterEnterAtBytecode ||
             builtin == Builtin::kBaselineOrInterpreterEnterAtNextBytecode) {
           Address* pc_addr = frame->pc_address();
@@ -1054,7 +1056,4 @@ void Debug::OnException(Handle<Object> exception,
           return;
         }
         // Wasm is always
-"""
-
-
 ```

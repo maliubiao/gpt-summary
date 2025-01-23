@@ -244,7 +244,7 @@ if __name__ == "__main__":
 
 这个头文件虽然看似简单，但在 Android 这样的复杂系统中，它扮演着连接用户空间和内核空间，处理底层硬件交互的重要角色。理解它的功能有助于深入了解 Android 的输入系统。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/serio.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -255,8 +255,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -327,7 +329,4 @@ Prompt:
 #define SERIO_FSIA6B 0x42
 #define SERIO_EXTRON_DA_HD_4K_PLUS 0x43
 #endif
-
-"""
-
 ```

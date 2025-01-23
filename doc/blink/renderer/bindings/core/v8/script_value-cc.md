@@ -168,15 +168,17 @@ By following this systematic approach of code analysis, inference, example const
 
 总而言之，`script_value.cc` 是 Blink 渲染引擎中一个至关重要的文件，它提供了连接 C++ 世界和 JavaScript 世界的桥梁，负责安全有效地管理和操作 V8 中的 JavaScript 值。理解它的功能对于调试涉及 JavaScript 交互的 Blink 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/script_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008, 2009, 2011 Google Inc. All rights reserved.
  *
@@ -247,7 +249,4 @@ ScriptValue ScriptValue::CreateNull(v8::Isolate* isolate) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

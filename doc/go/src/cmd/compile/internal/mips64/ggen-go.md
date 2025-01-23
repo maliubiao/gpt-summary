@@ -189,15 +189,17 @@ MOVV R0, 72(R1)
 
 `ggen.go` 中的 `zerorange` 函数负责高效地将内存区域初始化为零值，这是 Go 语言中变量初始化和内存分配的关键步骤。`ginsnop` 函数则用于生成空操作指令，用于代码对齐或延迟槽填充等底层优化。 这些函数是 Go 编译器针对 MIPS64 架构进行代码生成的内部实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/mips64/ggen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -253,9 +255,4 @@ func ginsnop(pp *objw.Progs) *obj.Prog {
 	p := pp.Prog(mips.ANOOP)
 	return p
 }
-
-"""
-
-
-
 ```

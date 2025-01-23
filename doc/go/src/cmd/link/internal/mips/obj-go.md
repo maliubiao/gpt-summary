@@ -130,15 +130,17 @@ func main() {
 
 `go/src/cmd/link/internal/mips/obj.go` 是 Go 链接器中至关重要的一个文件，它定义了 MIPS 架构特定的链接行为和配置。理解这个文件的作用有助于理解 Go 编译器和链接器如何为不同的目标架构生成可执行文件。需要注意的是，目前 MIPS 架构的动态链接支持尚未完全实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/mips/obj.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/5l/obj.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/5l/obj.c
 //
@@ -245,9 +247,4 @@ func adddynrel(target *ld.Target, ldr *loader.Loader, syms *ld.ArchSyms, s loade
 	ld.Exitf("adddynrel currently unimplemented for MIPS")
 	return false
 }
-
-"""
-
-
-
 ```

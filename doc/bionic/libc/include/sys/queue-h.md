@@ -421,7 +421,7 @@ if (addToList) {
 
 `bionic/libc/include/sys/queue.h` 提供了一组通用的队列数据结构和操作宏，是构建 Android 系统和 NDK 库的重要基础。理解这些数据结构及其操作对于深入理解 Android 系统的运行机制至关重要。 通过 Frida 等动态分析工具，我们可以观察和调试这些底层数据结构的使用情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/queue.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -432,8 +432,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (c) 1991, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -993,7 +995,4 @@ struct {								\
 	    : (elm->field.cqe_prev))
 
 #endif	/* sys/queue.h */
-
-"""
-
 ```

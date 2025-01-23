@@ -119,14 +119,16 @@ By following this structured approach, and iterating on the analysis, we can arr
 
 `FencedFrameConfig.cc` 文件定义了 `FencedFrameConfig` 类，它是 Blink 引擎中用于管理 Fenced Frame 配置的核心组件。它存储了加载 URL、共享存储上下文、尺寸和 URL 可见性等关键信息，直接影响着 HTML 元素的行为以及 JavaScript 和 CSS 在 Fenced Frame 环境下的表现。理解 `FencedFrameConfig` 的功能对于理解和调试涉及 Fenced Frame 的 Web 开发问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/fenced_frame/fenced_frame_config.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -243,7 +245,4 @@ String FencedFrameConfig::GetSharedStorageContext() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -129,11 +129,13 @@ sum(1, 2, 3);
 
 `v8/src/deoptimizer/deoptimize-reason.cc` 文件是 V8 引擎中一个非常核心的组成部分，它定义了 JavaScript 代码反优化的各种原因。了解这些原因可以帮助 JavaScript 开发者更好地理解 V8 的优化机制，并编写出更易于优化的代码，从而提升应用程序的性能。开发者通常不会直接与这些枚举值打交道，但在 V8 的调试工具或性能分析报告中，可能会看到这些 deoptimization 原因的字符串表示，帮助理解性能瓶颈所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/deoptimize-reason.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ char const* DeoptimizeReasonToString(DeoptimizeReason reason) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

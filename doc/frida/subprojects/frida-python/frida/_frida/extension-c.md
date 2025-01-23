@@ -155,7 +155,7 @@ This first part of `extension.c` lays the groundwork for the Frida Python bindin
 
 In essence, it's the foundational layer that allows Python developers to programmatically interact with the powerful dynamic instrumentation capabilities of Frida.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/frida/_frida/extension.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2013-2023 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2024 Håvard Sørbø <havard@hsorbo.no>
@@ -869,7 +871,4 @@ static PyMethodDef PyPortalMembership_methods[] =
 static PyMethodDef PyPortalService_methods[] =
 {
   { "start", (PyCFunction
-"""
-
-
 ```

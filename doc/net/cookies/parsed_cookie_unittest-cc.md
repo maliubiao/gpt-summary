@@ -76,7 +76,7 @@ The user wants a summary of the functionality of the `parsed_cookie_unittest.cc`
 
 总而言之，`net/cookies/parsed_cookie_unittest.cc` 文件的主要功能是 **通过全面的单元测试来保证 `net::ParsedCookie` 类能够正确可靠地解析和操作 HTTP Cookie 字符串**。这对于浏览器正确处理来自服务器和 JavaScript 的 Cookie 至关重要，直接影响到网站的功能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/parsed_cookie_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -84,8 +84,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -994,8 +996,5 @@ TEST(ParsedCookieTest, SetSameSite) {
   EXPECT_TRUE(pc.IsValid());
 }
 
-// Test that the correct enum 
-"""
-
-
+// Test that the correct enum
 ```

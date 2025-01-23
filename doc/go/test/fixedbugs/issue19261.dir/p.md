@@ -105,15 +105,17 @@ go test -run=Issue19261  # 运行包含 issue 19261 的测试
 
 总结来说，这段代码是 Go 语言测试套件的一部分，用于验证编译器是否正确地执行了函数内联优化。它通过 `// ERROR` 注释来断言编译器在分析 `F` 和调用 `F` 的地方时应该能够进行内联。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue19261.dir/p.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -138,9 +140,4 @@ func G() {
 	print(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 	print(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 }
-
-"""
-
-
-
 ```

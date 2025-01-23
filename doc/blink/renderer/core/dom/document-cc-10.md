@@ -234,7 +234,7 @@ By following these steps, I could systematically break down the complex code and
 
 总而言之，这最后一部分涵盖了文档对象的一些高级特性、性能优化、测试支持以及与浏览器其他组件交互的关键部分，并提供了一些调试辅助手段。它完善了 `Document` 类的功能，使其能够在一个复杂的浏览器环境中正常运作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -242,8 +242,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第11部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ument::setVlinkColor(const AtomicString& value) {
   if (!IsFrameSet())
     SetBodyAttribute(html_names::kVlinkAttr, value);
@@ -1072,8 +1074,4 @@ void ShowLiveDocumentInstances() {
   }
 }
 #endif
-
-"""
-
-
 ```

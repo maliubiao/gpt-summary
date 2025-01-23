@@ -141,15 +141,17 @@ This C++ 源代码文件 `quiche_test_impl.cc` 的主要功能是提供一个在
 
 总而言之，`quiche_test_impl.cc` 中的 `QuicheFlagSaverImpl` 类是一个测试工具，用于管理 Quiche 库的全局 flag，确保测试的可靠性和隔离性。虽然普通用户不会直接接触它，但它在 Chromium 网络栈的开发和测试中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/platform/default/quiche_platform_impl/quiche_test_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ QuicheFlagSaverImpl::~QuicheFlagSaverImpl() {
 #include "quiche/common/quiche_protocol_flags_list.h"  // NOLINT
 #undef QUICHE_PROTOCOL_FLAG
 }
-
-"""
-
 ```

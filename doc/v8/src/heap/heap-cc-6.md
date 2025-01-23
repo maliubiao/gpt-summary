@@ -171,7 +171,7 @@ for (let i = 0; i < 1000000; i++) {
 
 `v8/src/heap/heap.cc` 的第七部分主要负责 **监控和管理 V8 堆的内存使用情况，并基于这些信息和配置参数，做出是否需要进行垃圾回收以及如何扩展堆空间的决策。** 它是 V8 引擎进行有效内存管理的关键组成部分，确保 JavaScript 代码能够高效运行并避免因内存耗尽而崩溃。 这部分代码的核心在于平衡内存使用效率、程序运行性能和启动速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap.cc以.tq结尾，那它是个v8 torque源代码，
@@ -179,8 +179,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 space()->SizeOfObjects();
   return total;
 }
@@ -1048,7 +1050,4 @@ void Heap::NotifyOldGenerationExpansion(
 
 void Heap::SetEmbedderRootsHandler(EmbedderRootsHandler* handler) {
   embedder_roots_handler_ = hand
-"""
-
-
 ```

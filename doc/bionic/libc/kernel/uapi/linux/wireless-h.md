@@ -254,7 +254,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，你可以监控 Android 系统或应用在进行无线操作时调用的 `ioctl` 系统调用，并查看相关的命令码，从而理解 Android Framework 或 NDK 是如何一步步地使用 `wireless.handroid` 中定义的常量来与内核进行交互的。要解析 `args[2]` 指向的数据，你需要根据 `request` 的值，查阅 `wireless.handroid` 中定义的结构体，并使用 Frida 的 Memory API 来读取内存中的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/wireless.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -265,8 +265,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -704,7 +706,4 @@ struct iw_event {
 #define IW_EV_QUAL_PK_LEN (IW_EV_LCP_PK_LEN + sizeof(struct iw_quality))
 #define IW_EV_POINT_PK_LEN (IW_EV_LCP_PK_LEN + 4)
 #endif
-
-"""
-
 ```

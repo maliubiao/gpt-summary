@@ -147,7 +147,7 @@ String token defined wrong.
 
 总而言之，`dumpprog.c` 作为一个测试程序，其主要目的是验证 Frida 构建过程中宏定义的正确性，虽然它本身不直接参与逆向过程，但它确保了 Frida 工具链的基础配置是正确的，这对于 Frida 的正常运行和使用至关重要，也间接关联到逆向分析中对目标程序配置的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/14 configure file/dumpprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #define SHOULD_BE_UNDEFINED 1
 
 #include"config3.h"
@@ -209,7 +211,4 @@ int main(void) {
     }
     SHOULD_BE_RETURN 0;
 }
-
-"""
-
 ```

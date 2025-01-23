@@ -113,11 +113,13 @@ console.log(accumulator); // 输出 30 (10 + 20)
 
 `generate-bytecodes-builtins-list.cc` 是 V8 编译过程中的一个关键工具，它负责生成连接字节码与其 C++ 处理实现的关键桥梁。它通过宏定义的方式，让 V8 的其他部分能够方便地引用和使用这些字节码处理器，从而实现 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/generate-bytecodes-builtins-list.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ int main(int argc, const char* argv[]) {
 
   return 0;
 }
-
-"""
-
 ```

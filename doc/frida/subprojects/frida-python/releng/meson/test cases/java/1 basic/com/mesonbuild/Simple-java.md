@@ -228,7 +228,7 @@ Java is working.
 
 总而言之，`Simple.java` 本身是一个非常基础的 Java 程序，但它在 Frida 动态插桩的上下文中扮演着重要的角色，可以作为学习、测试和演示 Frida 功能的简单目标。通过对它的分析，我们可以了解 Frida 如何与 Java 程序交互，以及它在逆向工程中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/java/1 basic/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -236,8 +236,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class Simple {
@@ -245,7 +247,4 @@ class Simple {
         System.out.println("Java is working.\n");
     }
 }
-
-"""
-
 ```

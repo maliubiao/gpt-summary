@@ -112,11 +112,13 @@ wasmInstance.exports.callGreet("World");
 
 `wasm-import-wrapper-cache.cc` 文件实现了 WebAssembly 导入函数调用包装器的缓存机制。这个缓存是 V8 引擎为了优化 WebAssembly 和 JavaScript 互操作性能而采取的关键策略。它通过避免重复生成包装器代码，显著提升了执行效率和降低了内存消耗。 JavaScript 通过 `WebAssembly.instantiate` 方法导入函数到 WebAssembly 模块，当 WebAssembly 代码调用这些导入的函数时，就会涉及到 `WasmImportWrapperCache` 的使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-import-wrapper-cache.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -357,7 +359,4 @@ size_t WasmImportWrapperCache::EstimateCurrentMemoryConsumption() const {
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

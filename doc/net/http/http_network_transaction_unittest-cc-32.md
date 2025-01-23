@@ -119,7 +119,7 @@ fetch('https://www.example.com/data')
 
 作为测试套件的倒数第二部分，这部分代码集中测试了 `HttpNetworkTransaction` 在**连接管理、SSL 安全性和动态配置变更**等方面的复杂场景下的行为。它涵盖了预连接的利用、基于网络隔离键的 SSL 连接隔离、SSL 配置的动态更新以及处理服务器的客户端证书请求等高级功能。 这部分测试可能旨在验证之前测试中未充分覆盖的边界情况和复杂交互，为最终的测试覆盖和稳定性提供保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第33部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ableFeature(
       features::kPartitionConnectionsByNetworkIsolationKey);
 
@@ -924,7 +926,4 @@ TEST_P(HttpNetworkTransactionTest, PostHandshakeClientCertWithSockets) {
                // Close the connection so we test that /post-auth is not
                // allocated to |data_unauth| or |data_long_lived|.
                "
-"""
-
-
 ```

@@ -293,7 +293,7 @@ setImmediate(hookEFAIoctl);
 
 通过使用 Frida Hook，开发者可以动态地观察 NDK 应用程序与 EFA 驱动程序之间的交互，从而进行调试、性能分析或安全研究。记住，上述 Frida 代码只是一个基本示例，实际应用中可能需要根据具体的 EFA 驱动程序和用户空间库进行调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/rdma/efa-abi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -304,8 +304,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -435,7 +437,4 @@ enum efa_mr_methods {
   EFA_IB_METHOD_MR_QUERY = (1U << UVERBS_ID_NS_SHIFT),
 };
 #endif
-
-"""
-
 ```

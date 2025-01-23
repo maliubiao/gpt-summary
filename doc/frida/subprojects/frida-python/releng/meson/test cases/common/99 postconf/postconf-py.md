@@ -128,7 +128,7 @@ By following this systematic approach, we can comprehensively analyze the script
 
 总而言之，`postconf.py` 脚本虽然简单，但在 Frida 的构建流程中起到了传递编译时配置信息的作用，为 Frida 的 C 代码提供了动态调整行为的可能性，这与逆向工程中动态分析和修改程序行为的理念是一致的。 了解这个脚本的功能和它在构建过程中的位置，有助于理解 Frida 的工作原理和解决构建过程中可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/99 postconf/postconf.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -154,7 +156,4 @@ with open(input_file, encoding='utf-8') as f:
     data = f.readline().strip()
 with open(output_file, 'w', encoding='utf-8') as f:
     f.write(template.format(data))
-
-"""
-
 ```

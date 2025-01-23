@@ -186,15 +186,17 @@ In this modified example, a user might expect the output of the `Printf` stateme
 
 **In summary, the code demonstrates a simple use of Go generics with nested functions. The type parameter is declared but unused, and the function ultimately returns a sequence of closures that evaluate to the integer 0.** The primary purpose of such code, especially with a filename like "issue47684c.go", is likely to serve as a test case for the Go compiler or runtime related to the implementation of generics, specifically scenarios involving nested function returns and unused type parameters.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue47684c.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -214,9 +216,4 @@ func f[G any]() func()func()int {
 func main() {
 	f[int]()()()
 }
-
-"""
-
-
-
 ```

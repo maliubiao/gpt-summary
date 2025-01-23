@@ -196,7 +196,7 @@ Initially, I might have focused solely on the functionality of `get_checked`. Ho
 
 总而言之，这个 `provider.c` 文件虽然简单，但它作为一个测试用例，包含了动态链接、代码执行和内存管理等多个与 Frida 动态 Instrumentation 核心功能相关的概念，是理解 Frida 工作原理的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/98 link full name/libtestprovider/provider.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 static int g_checked = 0;
 
@@ -218,7 +220,4 @@ static void __attribute__((constructor(101), used)) init_checked(void) {
 int get_checked(void) {
     return g_checked;
 }
-
-"""
-
 ```

@@ -281,7 +281,7 @@ sys.stdin.read()
 
 这个 `bionic/libc/private/bionic_ieee.handroid` 文件虽然小巧，但它是 Android 系统中进行浮点数运算的基础，对理解底层数据表示和调试相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_ieee.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -292,8 +292,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: ieee.h,v 1.4 2011/11/08 17:06:51 deraadt Exp $	*/
 /*	$NetBSD: ieee.h,v 1.2 2001/02/21 17:43:50 bjh21 Exp $	*/
 
@@ -412,7 +414,4 @@ struct ieee_ext {
 __END_DECLS
 
 #endif /* _MACHINE_IEEE_H_ */
-
-"""
-
 ```

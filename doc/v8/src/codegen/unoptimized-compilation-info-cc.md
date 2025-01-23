@@ -174,15 +174,17 @@ UnoptimizedCompilationInfo::SourcePositionRecordingMode() const {
 
 总而言之，`v8/src/codegen/unoptimized-compilation-info.cc` 是 V8 引擎中一个关键的组成部分，它为 JavaScript 代码的初始、快速编译阶段提供了必要的数据结构和信息。理解它的作用有助于我们更好地理解 V8 的编译流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/unoptimized-compilation-info.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/unoptimized-compilation-info.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ UnoptimizedCompilationInfo::SourcePositionRecordingMode() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

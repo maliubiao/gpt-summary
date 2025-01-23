@@ -191,7 +191,7 @@ if __name__ == '__main__':
 
 因此，当调试与 Frida 测试相关的错误时，如果发现涉及到动态生成的 C/C++ 代码，追踪到 `frida/subprojects/frida-tools/releng/meson/test cases/common/58 multiple generators/mygen.py` 这个脚本，就意味着需要理解这个脚本是如何生成测试代码的，以及它的输入是如何影响最终的测试结果的。 例如，如果某个 Frida hook 测试失败，并且涉及到特定的函数名，那么可能需要检查生成该函数名的输入文件内容是否正确，以及 `mygen.py` 的逻辑是否按预期工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/58 multiple generators/mygen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -223,7 +225,4 @@ with open(outsrc, 'w') as f:
     return 0;
 }
 ''' % val)
-
-"""
-
 ```

@@ -239,7 +239,7 @@ if (Process.arch === 'arm64' || Process.arch === 'x64') {
 
 通过这个 Frida Hook，你可以在应用运行时，实时观察 `cosh` 函数的输入和输出，从而帮助调试相关的数学计算过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/cosh_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -251,10 +251,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-    -0x1.25e4f7b2737fap5
+### 源代码
+```c
+-0x1.25e4f7b2737fap5
   },
   { // Entry 362
     0x1.00000000ffff654361c5613c8dcf8b38p15,
@@ -1725,8 +1726,4 @@ Prompt:
     -0x1.633ce8fb9f87ep9
   }
 };
-
-"""
-
-
 ```

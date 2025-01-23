@@ -175,7 +175,7 @@ setTimeout(() => {
 
 作为系列文章的最后一部分，这段代码展示了 V8 引擎中为了支持 JavaScript 的并发特性（如 `SharedArrayBuffer` 和 `Atomics`）而在底层模拟器层面所做的工作。`GlobalMonitor` 负责管理模拟环境下的锁和原子操作，确保在模拟 MIPS64 架构时，这些并发操作的行为与真实硬件上的行为一致。这对于在没有实际 MIPS64 硬件的环境中测试和运行使用了并发特性的 JavaScript 代码至关重要。它体现了 V8 引擎为了提供跨平台、高性能的 JavaScript 运行时所做的底层架构努力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/simulator-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/mips64/simulator-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -183,10 +183,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共9部分，请归纳一下它的功能
+```
 
-"""
-
-          failure_counter_ = 0;
+### 源代码
+```cpp
+failure_counter_ = 0;
           return false;
         } else {
           return true;
@@ -279,8 +280,4 @@ void Simulator::GlobalMonitor::RemoveLinkedAddress(
 }  // namespace v8
 
 #endif  // USE_SIMULATOR
-
-"""
-
-
 ```

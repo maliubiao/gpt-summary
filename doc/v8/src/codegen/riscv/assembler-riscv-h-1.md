@@ -140,7 +140,7 @@ Here's a breakdown of the thought process:
 
 总而言之，这部分代码的核心目的是提供一种**安全且方便**的方式来在 RISC-V 代码生成过程中管理临时使用的寄存器，提高代码生成器的可靠性和可维护性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/assembler-riscv.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/assembler-riscv.h以.tq结尾，那它是个v8 torque源代码，
@@ -148,8 +148,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 nal_reference_positions_.end();
   }
 
@@ -283,8 +285,4 @@ class V8_EXPORT_PRIVATE UseScratchRegisterScope {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_RISCV_ASSEMBLER_RISCV_H_
-
-"""
-
-
 ```

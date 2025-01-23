@@ -195,15 +195,17 @@ This line has a NUL character:
 
 总而言之，`blink/renderer/core/html/track/vtt/buffered_line_reader.cc` 是 Blink 渲染引擎中一个关键的低级别组件，负责高效且准确地读取和处理 WebVTT 字幕文件的文本内容，是实现网页视频和音频字幕功能的重要基础。它与前端的 HTML、JavaScript 和 CSS 通过 `<track>` 元素和相关的 Web API 紧密相连。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/vtt/buffered_line_reader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013, Opera Software ASA. All rights reserved.
  *
@@ -306,7 +308,4 @@ bool BufferedLineReader::GetLine(String& line) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

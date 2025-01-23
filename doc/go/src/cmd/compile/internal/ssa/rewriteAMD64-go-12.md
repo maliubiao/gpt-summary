@@ -169,7 +169,7 @@ func main() {
 
 总而言之，这部分 `rewriteAMD64.go` 代码的功能是定义了一系列针对 AMD64 架构的 SSA 重写规则，旨在优化条件字节存储操作和基于标志位设置值的操作，通过识别特定的指令模式并将其替换为更高效的指令序列或常量值，提升最终生成机器码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteAMD64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -178,8 +178,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第13部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 tr, v0, mem)
 		return true
 	}
@@ -1530,10 +1532,4 @@ func rewriteValueAMD64_OpAMD64SETGE(v *Value) bool {
 		v.reset(OpAMD64MOVLconst)
 		v.AuxInt = int32ToAuxInt(1)
 		return true
-
-"""
-
-
-
-
 ```

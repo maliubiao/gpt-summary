@@ -128,11 +128,13 @@ console.log(generator.getNext()); // undefined (没有更多可分割的区间)
 
 总而言之，`v8/src/heap/index-generator.cc` 中的 `IndexGenerator` 类是 V8 引擎内部的一个工具，用于以分治的方式生成索引，这在堆内存管理中非常有用。虽然 JavaScript 开发者无法直接使用它，但它的存在和运作方式直接影响着 JavaScript 代码的执行效率和内存管理。 上面的 JavaScript 例子只是一个概念性的模拟，帮助理解其分治生成索引的核心思想。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/index-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ std::optional<size_t> IndexGenerator::GetNext() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -134,15 +134,17 @@ By following these steps, iteratively analyzing the code, connecting it to relev
 
 总而言之，`registry_controlled_domain.cc` 文件虽然是一个底层的 C++ 文件，但它提供的 RCD 判断功能是 Chromium 网络栈中许多高层功能（如安全策略、Cookie 管理、Web Storage 隔离）的基础。理解这个文件的作用对于理解浏览器的网络行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/registry_controlled_domains/registry_controlled_domain.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -656,7 +658,4 @@ void SetFindDomainGraphForTesting(base::span<const uint8_t> domains) {
 }
 
 }  // namespace net::registry_controlled_domains
-
-"""
-
 ```

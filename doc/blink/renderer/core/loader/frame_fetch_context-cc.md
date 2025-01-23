@@ -184,7 +184,7 @@ During the process, I might have initially focused too much on one aspect (e.g.,
 
 作为第 1 部分，我们可以总结 `blink/renderer/core/loader/frame_fetch_context.cc` 的主要功能是 **为 Frame 内发起的资源请求提供必要的上下文信息和配置，包括客户端提示、缓存策略、安全策略等，确保资源请求能够按照预期的规则和策略执行**。 它充当连接 Frame 上下文和底层网络请求的关键桥梁，并与 JavaScript, HTML, CSS 的资源加载过程紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/frame_fetch_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -940,7 +942,4 @@ void FrameFetchContext::AddClientHintsIfNecessary(
                            WebClientHintsType::kDpr, hints_preferences)) {
     request.SetHttpHeaderField(http_names::kDpr,
                                AtomicStrin
-"""
-
-
 ```

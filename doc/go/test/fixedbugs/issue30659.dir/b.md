@@ -185,15 +185,17 @@ func main() {
 
 `b.go` 中的函数 `B` 的主要功能是接收实现了特定接口的对象作为参数，并返回一个固定的值。它很可能是 Go 语言类型系统和接口机制的测试用例的一部分，用于验证编译器是否正确地执行了接口约束。使用者需要确保传递给 `B` 函数的参数确实实现了 `a.I` 和 `a.I2` 接口。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue30659.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -207,9 +209,4 @@ import (
 func B(p1 a.I, p2 a.I2) int {
 	return 42
 }
-
-"""
-
-
-
 ```

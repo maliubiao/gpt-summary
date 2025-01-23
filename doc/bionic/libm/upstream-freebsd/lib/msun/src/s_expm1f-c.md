@@ -269,7 +269,7 @@ sys.stdin.read()
 
 请注意，进行 Frida hook 需要一定的技术知识，并且可能需要 root 权限才能附加到目标进程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_expm1f.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -280,8 +280,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* s_expm1f.c -- float version of s_expm1.c.
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
  */
@@ -403,7 +405,4 @@ expm1f(float x)
 	}
 	return y;
 }
-
-"""
-
 ```

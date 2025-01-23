@@ -223,7 +223,7 @@ Finally, I organized the information into logical sections as requested by the p
 
 这段代码的核心功能是 **全面测试 V8 的中断机制和相关的 C++ API 功能**。它涵盖了在各种 JavaScript 代码结构中请求中断的能力，以及对 `Function::New`、`Object::New`、句柄作用域、函数签名检查和事件日志记录等关键 API 的测试。  第 25 部分特别关注了中断在不同 JavaScript 上下文中的表现以及与函数调用优化的交互。通过这些测试，V8 开发者可以确保引擎的稳定性和可靠性，尤其是在需要外部控制 JavaScript 执行的情况下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -231,8 +231,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第25部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tinue_ = false;
     }
 
@@ -1164,7 +1166,4 @@ TEST(EventLogging) {
     CHECK_EQ(0, event_count);
     {
       CHECK_EQ(0, e
-"""
-
-
 ```

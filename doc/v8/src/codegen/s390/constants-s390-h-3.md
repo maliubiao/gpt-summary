@@ -151,7 +151,7 @@ V8 会根据操作数的类型（32 位或 64 位整数）选择 `AR` 或 `AGR` 
 
 到目前为止，`v8/src/codegen/s390/constants-s390.h` 文件主要负责定义了 s390 架构的汇编指令集以及相关的编码信息，为 V8 引擎在 s390 平台上生成正确的机器码提供了基础的常量和定义。它涵盖了指令的操作码、指令格式、寻址模式以及与系统调用和浮点运算相关的常量。虽然 JavaScript 开发者不会直接接触这些内容，但这个文件对于 V8 引擎的正确运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/constants-s390.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/s390/constants-s390.h以.tq结尾，那它是个v8 torque源代码，
@@ -159,9 +159,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
- 0xB90A)   /* type = RRE   ADD LOGICAL (64)  */                 \
+### 源代码
+```c
+0xB90A)   /* type = RRE   ADD LOGICAL (64)  */                 \
   V(slgr, SLGR, 0xB90B)   /* type = RRE   SUBTRACT LOGICAL (64)  */            \
   V(msgr, MSGR, 0xB90C)   /* type = RRE   MULTIPLY SINGLE (64)  */             \
   V(dsgr, DSGR, 0xB90D)   /* type = RRE   DIVIDE SINGLE (64)  */               \
@@ -850,8 +852,5 @@ class Instruction {
         // Two Bytes - Bits 0 to 15
         return static_cast<Opcode>((*instr << 8) | (*(instr + 1)));
       case TWO_BYTE_DISJOINT_OPCODE:
-        // Two Bytes - Bits 0 to 7, 
-"""
-
-
+        // Two Bytes - Bits 0 to 7,
 ```

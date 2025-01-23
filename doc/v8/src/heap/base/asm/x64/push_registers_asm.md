@@ -128,11 +128,13 @@ main();
 
 `push_registers_asm.cc` 中的汇编代码是 V8 引擎用于支持保守栈扫描的关键组成部分。它确保了在执行栈扫描时，所有可能包含对象引用的寄存器值都被放置在栈上，并且将栈指针传递给回调函数以便进行检查。这对于 JavaScript 的垃圾回收机制至关重要，能够正确地识别并保留仍然被引用的对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/asm/x64/push_registers_asm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ asm(
     ".Lfunc_end0-PushAllRegistersAndIterateStack        \n"
 #endif  // !defined(__APPLE__)
     );
-
-"""
-
 ```

@@ -206,15 +206,17 @@ By following these steps and iterating through the analysis, the comprehensive e
 
 总而言之，`blink/renderer/core/svg/svg_fe_flood_element.cc` 文件是 Blink 引擎中处理 SVG `<feFlood>` 元素的核心，它负责将 HTML/CSS 中描述的属性转化为实际的图形滤镜效果，并涉及到一些安全性的考量。理解这个文件的功能对于调试 SVG 滤镜相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_fe_flood_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2007, 2008 Rob Buis <buis@kde.org>
@@ -289,7 +291,4 @@ bool SVGFEFloodElement::TaintsOrigin() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

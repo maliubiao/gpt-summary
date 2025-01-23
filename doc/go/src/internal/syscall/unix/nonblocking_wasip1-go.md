@@ -163,7 +163,7 @@ func main() {
 
 这段 `nonblocking_wasip1.go` 文件是 Go 语言在 `wasip1` 平台上处理非阻塞文件描述符的一个基础组件。它提供了检查文件描述符是否处于非阻塞模式的能力，为构建高效的异步 I/O 操作提供了基础。 它的核心是通过 `go:linkname` 指令调用 `syscall` 包中特定于平台的实现来获取文件描述符的原始状态标志。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/nonblocking_wasip1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -171,8 +171,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -204,9 +206,4 @@ func HasNonblockFlag(flag int) bool {
 //
 //go:linkname fd_fdstat_get_flags syscall.fd_fdstat_get_flags
 func fd_fdstat_get_flags(fd int) (uint32, error)
-
-"""
-
-
-
 ```

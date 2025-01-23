@@ -158,15 +158,17 @@ While `GraphReducer` is an internal compiler component, understanding its purpos
 
 In summary, `v8/src/compiler/graph-reducer.h` defines the core infrastructure for a crucial optimization phase within the V8 JavaScript engine's compiler. It leverages a system of extensible reducers to iteratively simplify and improve the compiler's internal representation of JavaScript code, ultimately contributing to faster and more efficient execution. While it's not directly visible to JavaScript programmers, understanding its role helps in appreciating the complexities involved in achieving high performance in JavaScript engines.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/graph-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/graph-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -386,7 +388,4 @@ class V8_EXPORT_PRIVATE GraphReducer
 }  // namespace v8
 
 #endif  // V8_COMPILER_GRAPH_REDUCER_H_
-
-"""
-
 ```

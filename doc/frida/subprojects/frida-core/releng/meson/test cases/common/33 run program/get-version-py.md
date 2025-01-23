@@ -97,7 +97,7 @@ By following this systematic approach, breaking down the problem into smaller pa
 
 总而言之，尽管 `get-version.py` 本身功能非常简单，但它在 Frida 的构建和测试流程中扮演着一个小的但重要的角色，用于验证 `frida-core` 的版本信息。 其存在也反映了软件开发中版本管理的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/33 run program/get-version.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,12 +105,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('1.2')
-
-"""
-
 ```

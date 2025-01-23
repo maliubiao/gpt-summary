@@ -150,7 +150,7 @@ ldd target_app
 
 因此，用户（通常是 Frida 的开发者或贡献者）通过运行 Frida 的测试套件来执行这个脚本。如果测试失败，脚本的输出和断言信息可以作为调试线索，帮助开发者定位 Frida 在处理共享库依赖方面的问题。这可能涉及到 Frida 如何调用系统命令、如何解析其输出，以及如何在 Frida 的内部逻辑中处理这些信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/d/3 shared library/lld-test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -180,7 +182,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

@@ -192,12 +192,14 @@ It seems like this part of the code deals with fundamental operations in JavaScr
 
 总的来说，这部分代码定义了 Maglev 编译器在执行 JavaScript 代码时所使用的基本操作单元，涵盖了类型检查、类型转换、对象操作、字符串操作、控制流等多个方面。这些节点会被 Maglev 编译器用于将 JavaScript 代码翻译成高效的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-ir.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 traints() {
   UseRegister(receiver_input());
 }
@@ -1835,7 +1837,4 @@ void ToNumberOrNumeric::GenerateCode(MaglevAssembler* masm,
   __ Move(result_reg, object);
 
   __ bind(*don
-"""
-
-
 ```

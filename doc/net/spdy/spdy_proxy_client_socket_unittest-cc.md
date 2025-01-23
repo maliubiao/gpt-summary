@@ -112,7 +112,7 @@ DATA frame:
 
 总而言之，`net/spdy/spdy_proxy_client_socket_unittest.cc` 文件的第一部分主要测试了 `SpdyProxyClientSocket` 类建立通过 SPDY 协议连接到代理服务器，并协商建立到目标服务器的隧道连接的关键功能，包括连接的成功与失败、代理认证的处理、数据发送和接收等核心流程。这些测试确保了在各种场景下 `SpdyProxyClientSocket` 的行为符合预期，是保证 Chromium 网络栈稳定性和可靠性的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_proxy_client_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1047,8 +1049,5 @@ TEST_P(SpdyProxyClientSocketTest, ReadWillSplitDataFromLargeFrame) {
 
   AssertConnectSucceeds();
 
-  // SpdySession consumes the next two reads and sends then to sock_ to 
-"""
-
-
+  // SpdySession consumes the next two reads and sends then to sock_ to
 ```

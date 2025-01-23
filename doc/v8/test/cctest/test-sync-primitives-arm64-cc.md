@@ -198,15 +198,17 @@ Atomics.compareExchange(view, 0, 0, 10); // 期望当前值为 0，设置为 10
 
 `v8/test/cctest/test-sync-primitives-arm64.cc` 这样的测试文件对于确保 V8 引擎在各种架构下正确地实现同步原语至关重要，从而为 JavaScript 开发者提供可靠的并发编程能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-sync-primitives-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-sync-primitives-arm64.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -611,7 +613,4 @@ TEST(simulator_invalidate_exclusive_access_threaded) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

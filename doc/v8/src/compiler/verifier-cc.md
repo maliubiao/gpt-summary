@@ -100,7 +100,7 @@ function add(a, b) {
 
 `v8/src/compiler/verifier.cc` 是 Turbofan 编译器的重要组成部分，它通过对中间表示进行全面的结构和一致性检查，来确保编译器生成的代码的正确性。它涵盖了图的连接性、类型一致性（可选）、特定操作符的使用规范以及控制流的完整性。 它可以帮助在编译早期发现潜在的编程错误和编译器自身的逻辑错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/verifier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/verifier.cc以.tq结尾，那它是个v8 torque源代码，
@@ -108,8 +108,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1043,7 +1045,4 @@ void Verifier::Visitor::Check(Node* node, const AllNodes& all) {
     case IrOpcode::kJSAsyncFunctionEnter:
       CheckValueInputIs(node, 0, Type::Any());
       CheckValueInputIs(node, 1, Type::Any())
-"""
-
-
 ```

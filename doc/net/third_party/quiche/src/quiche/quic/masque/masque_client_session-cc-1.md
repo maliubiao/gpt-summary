@@ -132,7 +132,7 @@ Another-Header: Another Value
 
 这段代码片段是 `MasqueClientSession` 类中负责 **初始化 MASQUE 客户端发送给代理服务器的初始 CONNECT 请求的 HTTP 头部** 的关键部分。它设置了标准的 CONNECT 方法和 `connect-udp` 协议，并允许通过 `additional_headers_` 灵活地添加额外的自定义头部信息。 这部分功能确保了客户端能够按照 MASQUE 协议的要求构建正确的初始请求，以便与代理服务器建立连接。 结合 "Part 1" 的内容，可以推断 "Part 1" 可能涉及 `MasqueClientSession` 类的其他核心功能，例如 QUIC 连接管理、数据包的发送和接收、以及 MASQUE 协议状态的管理等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/masque/masque_client_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
   }
   for (absl::string_view sp : absl::StrSplit(additional_headers_, ';')) {
@@ -158,8 +160,4 @@ Prompt:
 }
 
 }  // namespace quic
-
-"""
-
-
 ```

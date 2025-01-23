@@ -186,15 +186,17 @@ Byte at index 4: o (ASCII: 111)
 
 总而言之，`go/test/unsafe_string_data.go` 文件的主要作用是测试 `unsafe.StringData` 函数的正确性。理解其功能有助于我们更好地理解 Go 语言中字符串的底层表示以及 `unsafe` 包的使用。在使用 `unsafe.StringData` 时，务必小心谨慎，避免修改字符串数据和管理好指针的生命周期。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/unsafe_string_data.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2022 The Go Authors. All rights reserved.
@@ -217,9 +219,4 @@ func main() {
 		panic(fmt.Errorf("unsafe.StringData ret %p != %p", ptr2, unsafe.Pointer(sh1.Data)))
 	}
 }
-
-"""
-
-
-
 ```

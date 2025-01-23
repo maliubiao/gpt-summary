@@ -92,7 +92,7 @@ Here's a thinking process to arrive at the detailed analysis of `b.c`:
 
 总而言之，`b.c` 作为一个简单的 C 代码，其核心功能在于根据全局变量 `p` 的值来决定是否终止程序，并调用其他外部定义的函数。它在 Frida 的测试框架中扮演着验证 Frida 处理包含多个源文件的项目，特别是涉及到源文件集字典情况的角色。开发者通过查看和分析 `b.c` 的代码，可以更好地理解 Frida 的工作机制以及测试用例的预期行为，从而定位和解决在 Frida 开发和测试过程中遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/213 source set dictionary/subdir/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,8 +100,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdlib.h>
 #include "all.h"
 
@@ -115,7 +117,4 @@ int main(void)
     f();
     g();
 }
-
-"""
-
 ```

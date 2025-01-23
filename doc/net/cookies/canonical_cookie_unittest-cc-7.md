@@ -149,7 +149,7 @@ EXPECT_THAT(
 
 总而言之，`net/cookies/canonical_cookie_unittest.cc` 文件的这部分（第 8 部分）专注于 **彻底测试 `CanonicalCookie::IsSetPermittedInContext()` 方法在各种 `SameSite` 策略和上下文条件下的正确性**。它模拟了各种场景，验证了浏览器底层 Cookie 设置逻辑的预期行为，这对于确保 Web 安全性和隐私至关重要。通过这些测试，可以确保浏览器能够正确地执行 `SameSite` 策略，防止某些跨站请求伪造 (CSRF) 攻击和其他安全风险。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/canonical_cookie_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 okieAccessResult(
           CookieInclusionStatus::MakeFromReasonsForTesting(
               {CookieInclusionStatus::EXCLUDE_SECURE_ONLY}),
@@ -885,7 +887,4 @@ TEST(CanonicalCookieTest, IsSetPermitted_AllowedToAccessSecureCookies) {
                                      delegate_treats_url_as_trustworthy),
                   kCookieableSchemes),
               Mat
-"""
-
-
 ```

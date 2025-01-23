@@ -168,14 +168,16 @@ By following this systematic approach of understanding the code, connecting it t
 
 总而言之，`document_policy.cc` 文件在 Chromium 中扮演着至关重要的角色，它负责表示、管理和处理文档策略，这是现代 Web 安全架构中的一个关键组成部分，用于控制各种 Web 功能的行为，提升安全性和可控性。理解其功能对于开发安全可靠的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/permissions_policy/document_policy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -389,7 +391,4 @@ bool DocumentPolicy::IsPolicyCompatible(
 }
 
 }  // namespace blink
-
-"""
-
 ```

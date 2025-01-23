@@ -102,15 +102,17 @@ By following these steps, I can effectively analyze the provided code snippet an
 
 总而言之，`blink/renderer/core/layout/inline/line_breaker.cc` 的这部分主要负责处理内联布局中更复杂和特殊的情况，特别是 **Ruby 文本和浮动元素**的布局和断行。它需要理解和实现 HTML 和 CSS 的相关规范，并做出合理的断行决策，以保证页面的正确渲染。它还需要处理各种边缘情况和潜在的用户错误，以提供健壮的布局能力。 这部分与之前的部分共同构成了内联元素断行的完整逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/line_breaker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lyStartOverhang(*line_info, line_info->Results().size(),
                              *current_style_, overhang.start)) {
     overhang.start = LayoutUnit();
@@ -888,7 +890,4 @@ void LineBreaker::HandleOverflow(LineInfo* line_info) {
           }
 
           sta
-"""
-
-
 ```

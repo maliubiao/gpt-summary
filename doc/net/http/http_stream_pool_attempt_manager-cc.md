@@ -162,7 +162,7 @@ fetch('https://example.com/data.json')
 
 `HttpStreamPool::AttemptManager` 的第一部分代码定义了该类的基本结构和核心功能，即**管理 HTTP(S) 连接尝试**。它负责接收连接请求、进行 DNS 解析、尝试建立连接（包括 QUIC 和 TCP/TLS）、处理连接限制，并与 `HttpStreamPool::Group` 协作，为上层网络请求提供底层的连接支持。它在用户发起网络请求到成功建立连接的过程中扮演着至关重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_pool_attempt_manager.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1143,7 +1145,4 @@ bool HttpStreamPool::AttemptManager::IsConnectionAttemptReady() {
         // TODO(crbug.com/346835898): Better to handle cases where we partially
         // attempted some connections.
         NotifyPreconnectsComplet
-"""
-
-
 ```

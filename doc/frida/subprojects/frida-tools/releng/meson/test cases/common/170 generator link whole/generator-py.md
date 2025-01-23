@@ -179,7 +179,7 @@ python generator.py my_lib.txt
 
 如果在使用 Frida 时遇到与链接或模块加载相关的问题，并且发现涉及到一些看似自动生成的 C 代码，那么可以检查 Frida 的构建系统或测试用例，看是否使用了类似 `generator.py` 的脚本。  脚本的路径 `frida/subprojects/frida-tools/releng/meson/test cases/common/170 generator link whole/generator.py` 本身就是一个重要的调试线索，表明这很可能是一个用于测试“whole linking”场景的辅助脚本。  如果链接过程中出现了问题，可以检查生成的 `.h` 和 `.c` 文件是否符合预期，以及 `export.h` 的定义是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/170 generator link whole/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -219,7 +221,4 @@ int {name}(void) {{
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

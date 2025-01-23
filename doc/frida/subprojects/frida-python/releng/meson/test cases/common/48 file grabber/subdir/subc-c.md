@@ -140,7 +140,7 @@ Interceptor.attach(Module.findExportByName(null, "funcc"), {
 
 总而言之，`subc.c` 中的 `funcc` 函数虽然简单，但在 Frida 的测试和验证框架中扮演着角色，并且可以作为逆向工程师学习和使用 Frida 的一个简单示例。用户通常不会直接接触到这个文件，除非他们正在开发 Frida 本身或者深入研究其测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/48 file grabber/subdir/subc.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,10 +148,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int funcc(void) { return 0; }
-
-"""
-
 ```

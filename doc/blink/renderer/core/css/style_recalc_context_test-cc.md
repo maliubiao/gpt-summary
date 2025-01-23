@@ -145,15 +145,17 @@ By following these steps, you can systematically analyze the C++ test file, unde
 
 `style_recalc_context_test.cc` 是一个至关重要的测试文件，它确保了 Blink 渲染引擎中 `StyleRecalcContext` 类的正确性。该类负责在样式重新计算过程中查找容器元素，这对于 CSS 容器查询功能的实现至关重要。通过分析这个测试文件，我们可以更好地理解 Blink 如何处理 CSS 容器查询，以及在开发过程中可能遇到的相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_recalc_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -331,7 +333,4 @@ TEST_F(StyleRecalcContextTest, FromAncestors_FlatTree) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -176,7 +176,7 @@ Let's break down the thought process for analyzing this simple C code snippet in
 
 因此，这个文件的存在是 Frida 开发和测试流程的一部分，目的是为了确保 Frida 在特定的场景下能够正确地工作。其简单的功能使得测试更加清晰和易于调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/windows/10 vs module defs generated custom target/subdir/somedll.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,12 +184,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int somedllfunc(void) {
     return 42;
 }
-
-"""
-
 ```

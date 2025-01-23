@@ -120,14 +120,16 @@ This structured thought process, going from a high-level understanding to detail
 
 `thread_debugger.cc` 是 Blink 渲染引擎中一个重要的内部组件，它负责管理与 JavaScript 调试相关的状态，并与 V8 调试器进行通信。它虽然不直接操作 HTML 或 CSS，但通过提供 JavaScript 调试能力，间接地帮助开发者理解和调试与 HTML 和 CSS 交互的 JavaScript 代码。 理解其功能有助于理解 Blink 引擎如何集成 V8 引擎的调试功能，并能帮助开发者在遇到复杂调试场景时更好地定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/thread_debugger.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ void ThreadDebugger::IdleFinished(v8::Isolate* isolate) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

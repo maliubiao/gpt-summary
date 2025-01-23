@@ -137,14 +137,16 @@ Blink 引擎负责将 HTML、CSS 和 JavaScript 代码渲染成用户可见的�
 
 `unicode_utilities_test.cc` 是 Blink 引擎中一个关键的测试文件，它确保了底层的 Unicode 处理功能的正确性。这些功能直接影响着浏览器如何解析、渲染和处理网页文本，与 JavaScript、HTML 和 CSS 的功能紧密相关。通过各种测试用例，它帮助避免了开发者和用户在使用 Web 技术时可能遇到的与 Unicode 相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/unicode_utilities_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013 Yandex LLC. All rights reserved.
  *
@@ -388,7 +390,4 @@ TEST(UnicodeUtilitiesTest, StringsWithKanaLettersTest) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

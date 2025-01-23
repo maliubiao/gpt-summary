@@ -95,7 +95,7 @@ The logic often involves checking the type of tokens in the stream and creating 
 
 This specific part of `longhands_custom.cc` defines the **parsing and computed style retrieval logic for a subset of CSS longhand properties related to layout, text appearance, and page/column breaks.** It provides the mechanism for the Blink rendering engine to understand CSS syntax for these properties and to provide their calculated values for rendering and JavaScript interaction. It handles the conversion between CSS text and the engine's internal representations of these style attributes.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/longhands/longhands_custom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -103,9 +103,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共13部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```cpp
+{
   return CSSIdentifierValue::Create(style.BreakAfter());
 }
 
@@ -1031,7 +1033,4 @@ const CSSValue* ParseContentValue(CSSParserTokenStream& stream,
     if (!parsed_value) {
       parsed_value = css_parsing_utils::ConsumeIdent<
           CSSValueID::
-"""
-
-
 ```

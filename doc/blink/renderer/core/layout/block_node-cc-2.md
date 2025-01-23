@@ -175,15 +175,17 @@ By following this thought process, breaking down the code, connecting it to web 
 
 `blink/renderer/core/layout/block_node.cc` 文件集中实现了 Blink 渲染引擎中处理块级盒模型布局的核心逻辑。它负责计算块级元素的尺寸，应用 CSS 变换，处理溢出，支持自定义布局、滚动标记组和 MathML，并提供优化的布局算法。该文件的功能是网页正确渲染和用户体验的基础，它深刻地关联着 HTML 结构、CSS 样式以及 JavaScript 动态修改带来的布局变化。理解 `BlockNode` 的工作原理对于深入理解浏览器渲染机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/block_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 atioType::kAutoAndRatio && !IsReplaced())) {
     return Style().LogicalAspectRatio();
   }
@@ -469,8 +471,4 @@ DevtoolsReadonlyLayoutScope::~DevtoolsReadonlyLayoutScope() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

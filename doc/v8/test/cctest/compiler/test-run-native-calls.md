@@ -158,7 +158,7 @@ let result = calculateSquareRoot("abc"); // 这很可能导致原生函数出错
 
 `v8/test/cctest/compiler/test-run-native-calls.cc` 的主要功能是 **验证 V8 编译器能够正确地生成用于调用原生 C++ 函数的机器码**。它通过构建和编译模拟原生函数调用的 IR 图，并执行生成的代码来确保编译器在处理不同参数类型、返回值类型和寄存器分配的情况下都能产生正确的代码。这个测试对于保证 V8 引擎的稳定性和正确性，以及支持高效的内置函数和扩展功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-native-calls.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-run-native-calls.cc以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1166,8 +1168,5 @@ void MixedParamTest(int start) {
 #if V8_TARGET_ARCH_32_BIT
   static MachineType types[] = {
       MachineType::Int32(),   MachineType::Float32(), MachineType::Float64(),
-      MachineType::Int32(),  
-"""
-
-
+      MachineType::Int32(),
 ```

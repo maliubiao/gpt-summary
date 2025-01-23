@@ -226,7 +226,7 @@ func main() {
 
 总而言之，这段代码是 `encoding/xml` 包的关键使用示例，它展示了如何利用结构体标签来定义 Go 数据结构与 XML 数据之间的映射关系，并提供了序列化和反序列化的基本用法。理解结构体标签的语法和 `encoding/xml` 包的工作原理对于在 Go 中处理 XML 数据至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/xml/example_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -234,8 +234,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -387,9 +389,4 @@ func ExampleUnmarshal() {
 	// Groups: [Friends Squash]
 	// Address: {Hanga Roa Easter Island}
 }
-
-"""
-
-
-
 ```

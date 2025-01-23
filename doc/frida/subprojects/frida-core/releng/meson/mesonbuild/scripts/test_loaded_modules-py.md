@@ -180,7 +180,7 @@ args = ["non_existent_command"]
 
 `test_loaded_modules.py` 是 Frida 测试框架中一个用于验证模块加载行为的实用脚本。虽然它本身不进行逆向操作，但它对于确保 Frida 的稳定性和效率至关重要。通过记录和比较执行命令前后加载的 Python 模块，它可以帮助开发者及时发现并解决潜在的问题，例如不必要的依赖或意外的模块加载。理解这个脚本的功能有助于深入了解 Frida 的开发和测试流程，以及动态逆向工具背后的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/scripts/test_loaded_modules.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import sys
@@ -204,7 +206,4 @@ def run(args: T.List[str]) -> int:
     meson_exe.run(args)
     print(json.dumps(list(sys.modules.keys())))
     return 0
-
-"""
-
 ```

@@ -188,7 +188,7 @@ Let's break down the code snippet:
 
 这段代码的主要功能是 **将 WebAssembly 中对各种 "well-known" (通常与 JavaScript 内置功能对应的) 导入函数的调用，转换为 V8 内部的图表示形式，以便后续的优化和代码生成**。它涵盖了字符串操作、类型转换、字符串查找、部分字符串大小写转换、函数调用（包括直接调用、间接调用和尾调用）、引用类型操作、SIMD 操作、原子操作、内存和表操作以及异常处理等多个方面。 这段代码是 WebAssembly 和 JavaScript 互操作性的关键部分，因为它允许 WebAssembly 代码有效地利用 JavaScript 引擎提供的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/graph-builder-interface.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/graph-builder-interface.cc以.tq结尾，那它是个v8 torque源代码，
@@ -196,8 +196,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 WKI::kStringFromCharCode:
         result = builder_->StringFromCharCode(args[0].node);
         builder_->SetType(result, kWasmRefExternString);
@@ -958,7 +960,4 @@ WKI::kStringFromCharCode:
 
   void StructGet(FullDecoder* decoder, const Value& struct_object,
                  const FieldI
-"""
-
-
 ```

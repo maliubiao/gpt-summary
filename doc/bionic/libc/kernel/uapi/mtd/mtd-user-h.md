@@ -257,7 +257,7 @@ if (Process.platform === 'linux') {
 
 总而言之，`mtd-user.handroid` 是一个底层的头文件，它定义了用户空间程序与 Linux 内核 MTD 子系统交互所需的数据结构。它在 Android 的存储管理、OTA 更新、工厂恢复等关键功能中发挥着重要作用。虽然用户通常不会直接接触到这些结构体，但理解它们的功能有助于深入了解 Android 系统的底层运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/mtd/mtd-user.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -268,8 +268,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -285,7 +287,4 @@ typedef struct region_info_user region_info_t;
 typedef struct nand_oobinfo nand_oobinfo_t;
 typedef struct nand_ecclayout_user nand_ecclayout_t;
 #endif
-
-"""
-
 ```

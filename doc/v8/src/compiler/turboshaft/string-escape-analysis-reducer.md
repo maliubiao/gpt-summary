@@ -146,11 +146,13 @@ localConcat();
 
 `string-escape-analysis-reducer.cc` 文件实现了 V8 引擎中用于分析字符串逃逸的关键逻辑。理解字符串逃逸对于理解 JavaScript 引擎如何优化字符串操作至关重要。通过识别哪些字符串不需要长期持有，编译器可以进行更积极的优化，提高 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/string-escape-analysis-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ void StringEscapeAnalyzer::ReprocessStringConcats() {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

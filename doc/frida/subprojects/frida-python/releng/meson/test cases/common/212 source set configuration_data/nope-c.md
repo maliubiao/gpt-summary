@@ -112,7 +112,7 @@ if (some_condition) {
 
 `nope.c` 虽然代码简单，但在 Frida 的测试体系中扮演着重要的角色。它用于测试 Frida 对未定义函数指针的处理能力，这与逆向工程中遇到的实际情况密切相关。理解这种测试用例可以帮助开发者更好地理解 Frida 的内部机制，并避免在使用 Frida 进行动态分析时遇到潜在的陷阱。用户操作到达这个文件的路径通常是 Frida 开发者在编写、调试和维护 Frida 自身代码的过程中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/212 source set configuration_data/nope.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,12 +120,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = undefined;
-
-"""
-
 ```

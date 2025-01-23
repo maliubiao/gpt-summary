@@ -110,14 +110,16 @@ By following this structured approach, including analyzing the code, connecting 
 
 总而言之，`parsed_content_type_test.cc` 文件通过详尽的测试用例，确保 Blink 引擎能够准确可靠地解析 `Content-Type` 头部，这对于浏览器正确处理各种 Web 资源至关重要，直接影响到网页的渲染、JavaScript 的执行以及用户体验。 开发者理解 `Content-Type` 的重要性并正确配置服务器响应头是避免许多常见 Web 开发问题的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/parsed_content_type_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ TEST(ParsedContentTypeTest, Validity) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

@@ -119,11 +119,13 @@ largeArray = null;
 
 `large-page-metadata.cc` 文件定义了 V8 引擎中用于管理大页的关键数据结构和方法。它在 V8 的内存管理和垃圾回收机制中扮演着重要的角色，直接影响着 JavaScript 代码在 V8 引擎中的内存使用和性能表现。 虽然我们不能在 JavaScript 中直接操作 `LargePageMetadata` 的实例，但 JavaScript 中创建和销毁大型对象的操作会触发 V8 内部对大页的管理和回收，从而间接地与 `LargePageMetadata` 的功能产生关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/large-page-metadata.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ void LargePageMetadata::ClearOutOfLiveRangeSlots(Address free_start) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

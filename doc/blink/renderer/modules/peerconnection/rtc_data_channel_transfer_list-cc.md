@@ -134,15 +134,17 @@ Here's a breakdown of the thinking process to generate the explanation of `rtc_d
 
 总而言之，`RTCDataChannelTransferList` 是 Blink 引擎中用于管理 WebRTC 数据通道传输过程中需要特殊处理的对象的一个内部机制，它主要服务于 JavaScript 的 `RTCDataChannel` API，确保数据（尤其是可转移对象）能够被高效、安全地发送。它在幕后工作，但对于理解 WebRTC 的底层实现和调试相关问题很有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_data_channel_transfer_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ void RTCDataChannelTransferList::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

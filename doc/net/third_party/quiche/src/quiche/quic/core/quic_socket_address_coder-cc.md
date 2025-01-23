@@ -232,15 +232,17 @@ const decoded = decodeSocketAddress(encoded); // { ip: "192.168.1.1", port: 8080
 
 总而言之，`quic_socket_address_coder.cc` 扮演着 QUIC 协议栈中网络地址序列化和反序列化的关键角色，确保了网络地址信息在不同组件之间或存储介质上的正确传递和使用。 理解它的功能有助于调试网络连接问题，特别是当涉及到 QUIC 协议时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_socket_address_coder.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -333,7 +335,4 @@ bool QuicSocketAddressCoder::Decode(const char* data, size_t length) {
 }
 
 }  // namespace quic
-
-"""
-
 ```

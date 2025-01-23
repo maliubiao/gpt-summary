@@ -242,15 +242,17 @@ By following this systematic approach, I can effectively analyze the C++ code an
 
 `quic_session_peer.cc` 是一个关键的测试工具，它允许 Chromium 网络栈的开发人员深入了解和测试 QUIC 会话的内部工作机制。它通过提供对 `QuicSession` 内部状态和方法的访问，使得编写细粒度的测试用例成为可能，从而确保 QUIC 协议在各种场景下的正确性和健壮性。 虽然普通用户或 JavaScript 开发者不会直接接触到这个文件，但它在幕后支撑着现代 Web 技术的可靠运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/quic_session_peer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -505,7 +507,4 @@ QuicAlarm* QuicSessionPeer::GetStreamCountResetAlarm(QuicSession* session) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

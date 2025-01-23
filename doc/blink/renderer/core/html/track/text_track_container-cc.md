@@ -186,15 +186,17 @@ By following these steps, a comprehensive and accurate answer can be constructed
 
 总而言之，`TextTrackContainer.cc` 文件中的代码负责在 Blink 引擎内部实现文本轨道的可视化渲染，它与 HTML 的 `<track>` 元素、JavaScript 的文本轨道 API 以及 CSS 的样式机制紧密协作，共同为用户提供视频字幕和其他文本轨道功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/text_track_container.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008, 2009, 2010, 2011 Apple Inc. All rights reserved.
  * Copyright (C) 2012 Google Inc. All rights reserved.
@@ -420,7 +422,4 @@ void TextTrackContainer::UpdateDisplay(HTMLMediaElement& media_element,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -197,7 +197,7 @@ func main() {
 
 总而言之，`go/src/strconv/decimal.go` 中的 `decimal` 结构体是为了在浮点数转换为字符串的过程中提供高精度的十进制中间表示和操作，其功能是受限的，使用者需要理解其特定的用途和操作方式，避免将其误用于通用的十进制算术运算。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strconv/decimal.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,8 +205,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -622,9 +624,4 @@ func (a *decimal) RoundedInteger() uint64 {
 	}
 	return n
 }
-
-"""
-
-
-
 ```

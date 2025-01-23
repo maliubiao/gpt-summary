@@ -126,7 +126,7 @@ My thinking process for analyzing the provided code snippet and generating the r
 
 这段代码是 `SpdySessionPool` 的关键组成部分，负责管理和优化 Spdy 会话的生命周期。它通过延迟请求的执行、及时移除不再需要的请求以及智能地重用基于 IP 地址匹配的现有会话，来提高网络请求的效率和性能。这对于提供快速流畅的网络体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session_pool.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ests. This needs to be after the
   // OnSpdySessionAvailable() calls, to prevent requests from calling into the
   // socket pools in cases where that's not necessary.
@@ -204,8 +206,4 @@ base::WeakPtr<SpdySession> SpdySessionPool::FindMatchingIpSession(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

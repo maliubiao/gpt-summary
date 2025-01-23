@@ -119,11 +119,13 @@ console.log(calculateDistance(p1)); // 可能会报错，因为 p1.distance is n
 
 `dependent-code.cc` 文件是 V8 引擎中实现优化和反优化机制的关键部分。它负责跟踪 JavaScript 代码对运行时对象的依赖关系，并在这些对象的状态发生变化时，触发代码的反优化，以保证代码的正确执行。上述 JavaScript 示例展示了原型链的改变如何触发这种反优化过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/dependent-code.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -343,7 +345,4 @@ const char* DependentCode::DependencyGroupName(DependencyGroup group) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

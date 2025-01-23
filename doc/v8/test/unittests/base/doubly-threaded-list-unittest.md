@@ -172,11 +172,13 @@ processMicrotasks();
 
 `doubly-threaded-list-unittest.cc` 文件测试了 V8 引擎内部 `DoublyThreadedList` 类的功能。虽然 JavaScript 开发者不能直接使用这个类，但理解其原理有助于理解 V8 如何在底层管理数据，例如可以想象它可能被用于实现类似微任务队列这样的机制，尽管实际实现可能更复杂。  这个单元测试确保了 V8 内部使用的这个重要数据结构的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/doubly-threaded-list-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -329,7 +331,4 @@ TEST_F(DoublyThreadedListTest, IteratorTest) {
 }
 
 }  // namespace v8::base
-
-"""
-
 ```

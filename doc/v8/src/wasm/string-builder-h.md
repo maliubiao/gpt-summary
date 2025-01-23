@@ -153,15 +153,17 @@ sb << 123;
 
 总而言之，`v8/src/wasm/string-builder.h` 中定义的 `StringBuilder` 类是 V8 内部用于高效构建字符串的一个工具，特别是在 WebAssembly 上下文中。它通过底层的内存管理和优化的写入操作，提供了比标准库更快的字符串构建能力。理解其内部机制和潜在的陷阱对于 V8 开发者来说非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/string-builder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/string-builder.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -334,7 +336,4 @@ inline StringBuilder& operator<<(StringBuilder& sb, int value) {
 }  // namespace v8
 
 #endif  // V8_WASM_STRING_BUILDER_H_
-
-"""
-
 ```

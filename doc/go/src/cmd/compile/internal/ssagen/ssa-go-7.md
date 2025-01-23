@@ -213,7 +213,7 @@ This systematic approach of deconstruction, inference, example generation, error
 
 总而言之，`compileSSA` 函数是 Go 编译器代码生成阶段的关键组成部分，它负责将高级的、平台无关的 SSA 表示转换为可以直接在目标机器上执行的低级汇编代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssagen/ssa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -222,9 +222,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
-					s = b.String()
+### 源代码
+```go
+s = b.String()
 				} else {
 					s = "   " // most value and branch strings are 2-3 characters long
 				}
@@ -863,10 +865,4 @@ var (
 	BoundsCheckFunc [ssa.BoundsKindCount]*obj.LSym
 	ExtendCheckFunc [ssa.BoundsKindCount]*obj.LSym
 )
-
-"""
-
-
-
-
 ```

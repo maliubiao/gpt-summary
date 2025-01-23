@@ -193,7 +193,7 @@ go test -run ScalarMult
 
 4. **对可变时间操作的安全性理解不足:** `VarTimeDoubleScalarBaseMult` 带有 "VarTime" 前缀，意味着它的执行时间可能依赖于输入的秘密值（标量）。  在某些对侧信道攻击敏感的环境中，应该避免使用这类可变时间的操作，而选择恒定时间的实现（如果库提供了）。  这个测试文件中同时存在不带 "VarTime" 前缀的 `ScalarMult` 和 `ScalarBaseMult`，它们通常会实现为恒定时间操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/edwards25519/scalarmult_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,8 +201,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright (c) 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -408,9 +410,4 @@ func BenchmarkVarTimeDoubleScalarBaseMult(b *testing.B) {
 		p.VarTimeDoubleScalarBaseMult(dalekScalar, B, dalekScalar)
 	}
 }
-
-"""
-
-
-
 ```

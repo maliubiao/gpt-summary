@@ -177,15 +177,17 @@ Let's break down the thought process for analyzing the `MediaStreamTrackProcesso
 
 `media_stream_track_processor.cc` 文件是 Blink 渲染引擎中实现 `MediaStreamTrackProcessor` JavaScript API 的关键部分。它负责将 `MediaStreamTrack` 转换为 `ReadableStream`，并处理与轨道状态相关的生命周期管理。理解这个文件的功能有助于开发者调试在使用 `MediaStreamTrackProcessor` API 时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/breakout_box/media_stream_track_processor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -360,7 +362,4 @@ void MediaStreamTrackProcessor::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

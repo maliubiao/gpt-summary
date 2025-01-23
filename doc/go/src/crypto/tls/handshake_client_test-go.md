@@ -224,7 +224,7 @@ openssl s_server -no_ticket -num_tickets 0 -tls1 -cipher RC4-SHA -cert <临时�
 
 总而言之，这段代码是一个强大的 TLS 客户端测试框架，它通过与 OpenSSL 服务器进行交互，并结合记录和回放机制，能够全面地测试 Go 语言 TLS 客户端的各种功能和场景。理解 `clientTest` 结构体和 `run` 函数的工作流程是理解这段代码的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/handshake_client_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -233,8 +233,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1369,10 +1371,5 @@ func TestLRUClientSessionCache(t *testing.T) {
 		t.Fatalf("session cache failed update for key 0")
 	}
 
-	// Calling Put with a nil entry 
-"""
-
-
-
-
+	// Calling Put with a nil entry
 ```

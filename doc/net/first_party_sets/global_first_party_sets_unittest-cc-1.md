@@ -119,7 +119,7 @@ Let's break down the thought process for analyzing this C++ unit test file.
 
 总而言之，这部分单元测试深入测试了 `GlobalFirstPartySets` 类在处理 First-Party Sets 配置更新和查询时的各种复杂场景，确保了 Chromium 能够正确地管理和使用 First-Party Sets 信息，从而影响到 Web 平台上与安全和隐私相关的关键功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/first_party_sets/global_first_party_sets_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 etadata) {
   SchemefulSite nonmember(GURL("https://nonmember.test"));
   FirstPartySetEntry primary_entry(kPrimary, SiteType::kPrimary, std::nullopt);
@@ -741,8 +743,4 @@ TEST_F(GlobalFirstPartySetsWithConfigTest, ComputeMetadata) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

@@ -205,15 +205,17 @@ go build ../mypackage
 
 这段测试代码的核心目的是确保 `go` 命令的用户在使用 `-C` 标志时，能够在各种子命令中获得一致的行为，并且开发者在添加新的子命令时，能够方便且正确地实现对 `-C` 标志的支持。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/chdir_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -263,9 +265,4 @@ func TestChdir(t *testing.T) {
 	}
 	walk("go", base.Go)
 }
-
-"""
-
-
-
 ```

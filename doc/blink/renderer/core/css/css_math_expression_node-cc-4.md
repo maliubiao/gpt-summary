@@ -155,7 +155,7 @@ Essentially, my process involves understanding the code's purpose, connecting it
 
 这部分 `css_math_expression_node.cc` 代码是 Chromium Blink 引擎中负责解析复杂 CSS 数学表达式函数的核心部分。它识别并解析诸如锚点定位、进度指示、尺寸计算、兄弟元素索引/计数以及各种标准数学运算等函数，将 CSS 文本转换为可供渲染引擎理解和计算的内部数据结构，从而实现 CSS 的动态和灵活的样式控制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_math_expression_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -163,9 +163,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
-            CSSValueID::kStart, CSSValueID::kEnd, CSSValueID::kSelfStart,
+### 源代码
+```cpp
+CSSValueID::kStart, CSSValueID::kEnd, CSSValueID::kSelfStart,
             CSSValueID::kSelfEnd, CSSValueID::kCenter>(stream);
         if (!value) {
           value = css_parsing_utils::ConsumePercent(
@@ -1056,7 +1058,4 @@ CSSMathExpressionNode* CSSMathExpressionNode::Create(
       } else if (calc_op == CalculationOperator::kRoundToZero) {
         op = CSSMathOperator::kRoundToZero;
       } else if (c
-"""
-
-
 ```

@@ -160,7 +160,7 @@ private const uint8[] MYLIBRARY_CODE = {
 
 总而言之，这个脚本是 Frida 开发流程中的一个自动化工具，用于将二进制代码嵌入到 Vala 源代码中，方便 Frida 模块的开发和分发。调试过程可能会涉及到对 radare2 的使用、对二进制文件结构的理解以及对脚本逻辑的分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/helpers/serialize.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from pathlib import Path
@@ -227,7 +229,4 @@ if __name__ == "__main__":
     input_dylib = Path(sys.argv[1])
     output_vala = Path(sys.argv[2])
     main(input_dylib, output_vala)
-
-"""
-
 ```

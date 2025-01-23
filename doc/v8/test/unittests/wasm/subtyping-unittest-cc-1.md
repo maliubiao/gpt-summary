@@ -148,7 +148,7 @@ By following these steps, iteratively refining the understanding, and focusing o
 
 总而言之，`v8/test/unittests/wasm/subtyping-unittest.cc` 的第二部分主要扩展了第一部分的功能，**专注于测试 WebAssembly 中共享类型的子类型化行为，并系统地验证子类型关系和 Union/Intersection 操作是否符合预期的代数性质。** 这部分测试对于确保 V8 正确处理更复杂的 WebAssembly 类型系统特性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/wasm/subtyping-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/wasm/subtyping-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -156,9 +156,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  struct_shared);
+### 源代码
+```cpp
+struct_shared);
     INTERSECTION(struct_shared.AsNullable(),
                  ValueType::RefNull(HeapType::kNoneShared),
                  ValueType::RefNull(HeapType::kNoneShared));
@@ -267,8 +269,4 @@ Prompt:
 }
 
 }  // namespace v8::internal::wasm::subtyping_unittest
-
-"""
-
-
 ```

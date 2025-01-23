@@ -113,11 +113,13 @@ myFunction();
 
 `v8-debugger-id.cc` 文件中的 `V8DebuggerId` 类是 V8 调试基础设施的核心组件之一，用于生成和管理调试过程中所需的唯一标识符。虽然 JavaScript 代码本身无法直接访问这个类，但其功能对于 JavaScript 调试器的正常运行至关重要，它帮助 V8 引擎和调试器之间建立关联，准确地追踪和控制 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-debugger-id.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ std::pair<int64_t, int64_t> V8DebuggerId::pair() const {
 
 }  // namespace internal
 }  // namespace v8_inspector
-
-"""
-
 ```

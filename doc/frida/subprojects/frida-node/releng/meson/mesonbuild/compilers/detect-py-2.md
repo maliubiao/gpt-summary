@@ -101,7 +101,7 @@ Now, I can address each of the user's requests:
 
 总而言之，这段代码的功能是 **从编译器的预处理器输出中提取关键的宏定义，并利用这些宏定义来准确地识别 GNU (GCC) 或 LCC 编译器的版本信息。** 这是 Frida 构建系统中的一个关键步骤，用于确保 Frida 能够根据目标环境的编译器特性进行正确的编译和运行。它为后续的 Frida 功能，例如 agent 的编译和注入，提供了必要的编译器信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,9 +110,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    if not line:
+### 源代码
+```python
+if not line:
             continue
         d, *rest = line.split(' ', 2)
         if d != '#define':
@@ -137,8 +139,4 @@ def _get_lcc_version_from_defines(defines: T.Dict[str, str]) -> str:
     major = generation_and_major[1:]
     minor = defines.get('__LCC_MINOR__', '0')
     return dot.join((generation, major, minor))
-
-"""
-
-
 ```

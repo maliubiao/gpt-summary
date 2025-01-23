@@ -173,15 +173,17 @@ Here are some examples of situations where the benefit might be limited or the o
 
 **In summary, `v8/src/compiler/branch-condition-duplicator.cc` implements an optimization that can improve the performance of JavaScript code by duplicating cheap branch conditions used by multiple branches, allowing for more independent and potentially better optimization of the code within those branches.** It's a part of the complex machinery that makes V8 a highly performant JavaScript engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/branch-condition-duplicator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/branch-condition-duplicator.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -290,7 +292,4 @@ void BranchConditionDuplicator::Reduce() { ProcessGraph(); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

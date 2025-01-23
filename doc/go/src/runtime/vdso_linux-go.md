@@ -121,7 +121,7 @@ func main() {
 
 `go/src/runtime/vdso_linux.go` 是 Go 运行时在 Linux 平台上进行性能优化的关键组件。它负责解析 vDSO，查找关键的内核函数地址，使得 Go 程序可以在用户空间直接调用这些函数，从而避免了昂贵的系统调用开销，提高了程序的执行效率。这对于 `time` 包等需要频繁获取系统信息的场景尤为重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/vdso_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -129,8 +129,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -424,9 +426,4 @@ func vdsoauxv(tag, val uintptr) {
 func inVDSOPage(pc uintptr) bool {
 	return pc >= vdsoLoadStart && pc < vdsoLoadEnd
 }
-
-"""
-
-
-
 ```

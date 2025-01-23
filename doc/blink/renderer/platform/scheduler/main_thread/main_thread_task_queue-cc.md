@@ -90,14 +90,16 @@ By following these steps, I could effectively analyze the provided source code a
 
 总而言之，`MainThreadTaskQueue` 是 Blink 渲染引擎中管理主线程任务的核心组件，它负责任务的存储、调度和执行，并与 JavaScript、HTML、CSS 等 Web 技术的功能紧密相关，直接影响着网页的渲染性能和用户体验。理解其工作原理对于开发高性能的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/main_thread_task_queue.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -435,7 +437,4 @@ MainThreadTaskQueue::WrapTaskRunner(
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

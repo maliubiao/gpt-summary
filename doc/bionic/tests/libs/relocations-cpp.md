@@ -301,7 +301,7 @@ sys.stdin.read()
 
 总结来说，`bionic/tests/libs/relocations.cpp` 是一个非常基础的测试文件，用于验证 Android Bionic 库的动态链接器在处理符号重定位时的基本功能。虽然代码简单，但它触及了 Android 系统底层运行机制的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/relocations.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -312,8 +312,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2020 The Android Open Source Project
  * All rights reserved.
@@ -345,7 +347,4 @@ Prompt:
 extern "C" const char* function() {
   return "relocations";
 }
-
-"""
-
 ```

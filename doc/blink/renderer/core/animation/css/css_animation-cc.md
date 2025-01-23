@@ -157,14 +157,16 @@ My thinking process to analyze the `CSSAnimation.cc` file went through these sta
 
 总而言之，`blink/renderer/core/animation/css/css_animation.cc` 文件中的 `CSSAnimation` 类是 Blink 引擎中处理 CSS 动画的关键组件，它连接了 CSS 样式定义、HTML 元素和 JavaScript 的动画控制，负责驱动和管理 CSS 动画的整个生命周期。理解其功能有助于开发者更好地理解浏览器如何渲染动画以及如何使用 JavaScript 与之交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css/css_animation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -293,7 +295,4 @@ CSSAnimation::PlayStateTransitionScope::~PlayStateTransitionScope() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

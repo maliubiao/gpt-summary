@@ -64,9 +64,12 @@ By following these steps, I can systematically break down the code and understan
 
 这些测试是 V8 引擎开发过程中重要的质量保证环节，用于确保内存管理的稳定性和效率。 `AccountingAllocator` 可能是用于跟踪内存分配情况的辅助类，帮助进行测试和验证。 `Zone` 是内存分配发生的区域，分配器与特定的 `Zone` 关联。
 
-Prompt: ```这是目录为v8/test/unittests/zone/zone-allocator-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/zone/zone-allocator-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,6 +195,4 @@ TEST_F(RecyclingZoneAllocatorTest, UseWithStdContainers) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

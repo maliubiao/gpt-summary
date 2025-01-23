@@ -277,7 +277,7 @@ sys.stdin.read()
 
 总结来说，`bionic/tests/libs/ns_hidden_child_app.cpp` 是一个用于测试 Android Bionic 动态链接器处理弱符号和命名空间隔离的示例代码，它展示了如何声明和检查弱符号，以及动态链接器在运行时如何解析这些符号。理解这段代码有助于开发者更好地理解 Android 的动态链接机制，并避免在使用弱符号时犯常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/ns_hidden_child_app.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -288,8 +288,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2020 The Android Open Source Project
  * All rights reserved.
@@ -327,7 +329,4 @@ extern "C" void app_function() {
   printf("public_function is %s\n", public_function == nullptr ? "null" : "non-null");
   printf("internal_function is %s\n", internal_function == nullptr ? "null" : "non-null");
 }
-
-"""
-
 ```

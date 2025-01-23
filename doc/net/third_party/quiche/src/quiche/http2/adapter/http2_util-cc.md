@@ -155,15 +155,17 @@ Finally, I organized the information into logical sections (Functionality, Relat
 
 总而言之，`http2_util.cc` 虽然不直接与用户交互，但它是 Chromium 处理 HTTP/2 协议的关键组成部分，在网络通信的幕后发挥着重要的作用，特别是在错误处理和协议转换方面。 理解它的功能有助于调试与 HTTP/2 相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/http2_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/http2_util.h"
 
 #include "quiche/http2/core/spdy_protocol.h"
@@ -298,7 +300,4 @@ bool DeltaAtLeastHalfLimit(int64_t limit, int64_t /*size*/, int64_t delta) {
 
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

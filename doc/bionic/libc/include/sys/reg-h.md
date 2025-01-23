@@ -210,7 +210,7 @@ setImmediate(hook_syscall);
 
 `bionic/libc/include/sys/reg.h` 是一个底层头文件，定义了 CPU 寄存器的宏，主要供 Bionic 内部使用。它在系统调用、信号处理、异常处理等底层机制中发挥着作用。虽然开发者通常不会直接使用这个文件中的宏，但理解其功能有助于深入了解 Android 系统的运行原理。通过 Frida 等工具，可以动态地观察寄存器的状态，从而调试和理解底层代码的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/reg.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -221,8 +221,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  * All rights reserved.
@@ -309,7 +311,4 @@ Prompt:
 #endif
 
 #endif
-
-"""
-
 ```

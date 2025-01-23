@@ -158,15 +158,17 @@ By following these steps, I could analyze the C++ code snippet and provide a com
 
 这部分 `BlockLayoutAlgorithm` 的代码主要负责**处理块级盒子在分片场景下的最终调整和断点决策**，以及**计算和传播影响布局的边距和基线信息**。它确保了内容能够正确地分割到不同的分片容器中，并保证了文本的垂直对齐。同时，它也负责为子元素的布局准备必要的约束条件，是块级盒子布局算法中至关重要的一个环节，与 CSS 的分片、边距、文本和列表等属性紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/block_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 . Also encompass fragmentainer overflow (may be caused by
     // monolithic content).
     previous_inflow_position->logical_block_offset =
@@ -937,8 +939,5 @@ bool BlockLayoutAlgorithm::PositionOrPropagateListMarker(
   const ConstraintSpace& space = GetConstraintSpace();
   const auto& content = layout_result.GetPhysicalFragment();
   FontBaseline baseline_type = Style().GetFontBaseline();
-  if 
-"""
-
-
+  if
 ```

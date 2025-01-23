@@ -211,14 +211,16 @@ out.ads = {
 
 总结来说，`blink/common/interest_group/interest_group_mojom_traits.cc` 是 Blink 引擎中一个关键的桥梁，它负责将通过 Mojo 传递的兴趣组数据转换为 C++ 对象，使得 Blink 引擎能够理解和处理这些数据，从而支持 Protected Audience API 的核心功能。它虽然不直接操作 JavaScript, HTML 或 CSS，但它处理的数据是这些技术实现兴趣组相关功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/interest_group_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ bool StructTraits<blink::mojom::InterestGroupDataView, blink::InterestGroup>::
 }
 
 }  // namespace mojo
-
-"""
-
 ```

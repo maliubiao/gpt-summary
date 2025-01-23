@@ -98,15 +98,17 @@ func main() {
 
 总结来说，这段代码是一个精巧的测试用例，用于验证 Go 编译器在特定场景下能否正确地执行 "tighten" 优化 pass，将内存加载操作移动到更优的位置，从而提高潜在的性能。它依赖于 `errorcheck` 指令来断言编译器的行为，而不是通过程序的运行时输出来验证。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/tighten.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -d=ssa/tighten/debug=1
 
 //go:build arm64
@@ -129,9 +131,4 @@ func moveValuesWithMemoryArg(len int) {
 		_ = e != ts // ERROR "MOVDload is moved$" "MOVDaddr is moved$"
 	}
 }
-
-"""
-
-
-
 ```

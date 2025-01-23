@@ -217,7 +217,7 @@ document.cookie = "__Host-mycookie=value; path=/; domain=example.com; secure"; /
 
 总而言之，`net/cookies/canonical_cookie_unittest.cc` 的这部分代码主要负责对 `CanonicalCookie` 类进行全面的单元测试，确保其能够正确地创建、解析、验证和存储 Cookie 信息，并且能够正确处理与安全相关的 Cookie 前缀 (`__Secure-`, `__Host-`) 和属性 (`Secure`). 这些测试覆盖了各种边界情况和错误场景，保证了 Chromium 在处理 Cookie 时的正确性和安全性。它直接关系到 JavaScript 中 `document.cookie` API 的行为，并且在调试 Cookie 相关问题时提供了重要的线索和参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/canonical_cookie_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -225,9 +225,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
-   "a", "__Secure-a=b", "x.y", "/", base::Time(), base::Time(),
+### 源代码
+```cpp
+"a", "__Secure-a=b", "x.y", "/", base::Time(), base::Time(),
                   base::Time(), base::Time(), true, false,
                   CookieSameSite::NO_RESTRICTION, COOKIE_PRIORITY_LOW)
                   ->IsCanonical());
@@ -888,7 +890,4 @@ TEST(CanonicalCookieTest, CreateSanitizedCookie_Logic) {
   EXPECT_TRUE(CanonicalCookie::CreateSanitizedCookie(
       GURL("https://www.foo.com"), "A", "B", std::string(), "/", two_hours_ago,
       one_h
-"""
-
-
 ```

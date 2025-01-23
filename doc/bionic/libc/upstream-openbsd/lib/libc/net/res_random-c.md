@@ -316,7 +316,7 @@ sys.stdin.read()
 
 总而言之，`res_random.c` 文件在 Android 的 DNS 解析过程中扮演着重要的角色，它负责生成看似随机且不易重复的事务 ID，确保 DNS 查询的正确性和安全性。开发者通常不需要直接操作这个文件中的函数，而是通过上层 API 间接使用其功能。使用 Frida 可以帮助我们深入了解其内部运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/net/res_random.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -327,8 +327,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* $OpenBSD: res_random.c,v 1.23 2015/10/05 02:57:16 guenther Exp $ */
 
 /*
@@ -609,8 +611,4 @@ main(int argc, char **argv)
 	return 0;
 }
 #endif
-
-
-"""
-
 ```

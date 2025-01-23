@@ -122,7 +122,7 @@ By following these steps, I could break down the request, analyze the simple cod
 
 通过查看这样的简单测试用例，用户可以更容易地理解 Frida 的基础操作，例如如何 hook C 函数，而不用被复杂的业务逻辑所干扰。这个文件作为一个教学示例或一个简单的验证目标是非常有用的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/138 C and CPP link/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2017 Dylan Baker
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -151,7 +153,4 @@ Prompt:
 int forty_two(void) {
     return 42;
 }
-
-"""
-
 ```

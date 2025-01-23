@@ -196,15 +196,17 @@ By following this structured approach, we can systematically analyze the code, u
 
 总而言之，`css_reflect_value.cc` 文件是 Blink 渲染引擎中处理 CSS `box-reflect` 属性的核心部分，它负责表示、操作和比较 `box-reflect` 属性的值，并在渲染过程中发挥关键作用。理解这个文件的功能有助于理解浏览器如何实现元素的反射效果，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_reflect_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc.  All rights reserved.
  *
@@ -261,7 +263,4 @@ void CSSReflectValue::TraceAfterDispatch(blink::Visitor* visitor) const {
 
 }  // namespace cssvalue
 }  // namespace blink
-
-"""
-
 ```

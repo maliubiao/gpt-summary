@@ -249,7 +249,7 @@ By following this structured approach, considering the context of Frida and reve
 
 总而言之，这段代码是一个简单的 C++ 共享库，提供了一个计算字符串长度的函数，并且通过 `extern "C"` 使得它可以被 C 代码调用。在 Frida 的上下文中，理解这段代码的功能对于进行动态插桩、hook 函数、分析程序行为至关重要。逆向工程师可能会通过一系列步骤，从识别目标函数到编写 Frida 脚本，最终到达理解这段源代码的阶段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/rust/20 rust and cpp/lib.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -257,8 +257,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // SPDX-License-Identifier: Apache-2.0
 // Copyright © 2023 Intel Corporation
 
@@ -277,7 +279,4 @@ uint64_t priv_length(const std::string & str) {
 extern "C" uint64_t lib_length(const char * str) {
     return priv_length(str);
 }
-
-"""
-
 ```

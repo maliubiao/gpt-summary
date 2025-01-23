@@ -112,11 +112,13 @@ main();
 
 总而言之，`tracing-cpu-profiler.cc` 是 V8 内部的一个关键组件，它将底层的 tracing 机制与 CPU profiler 连接起来，使得 JavaScript 开发者可以通过熟悉的性能分析工具来了解其代码的性能瓶颈。它使得性能分析过程更加自动化和集成化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/tracing-cpu-profiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ void TracingCpuProfilerImpl::StopProfiling() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

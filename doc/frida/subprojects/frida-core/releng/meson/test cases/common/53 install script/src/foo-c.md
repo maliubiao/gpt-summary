@@ -124,7 +124,7 @@ By following these steps, the detailed analysis provided earlier can be construc
 
 尽管 `foo.c` 中的 `foo` 函数非常简单，但它在 Frida 的测试框架中扮演着角色。理解这样的简单函数有助于理解更复杂的系统。在逆向工程中，即使是看似无足轻重的函数也可能提供有价值的信息，或者成为动态分析的切入点。文件路径本身提供了重要的上下文信息，表明其主要用途是作为 Frida 构建和测试流程的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/53 install script/src/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _WIN32
   #define DO_EXPORT __declspec(dllexport)
 #else
@@ -144,7 +146,4 @@ DO_EXPORT int foo(void)
 {
   return 0;
 }
-
-"""
-
 ```

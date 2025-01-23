@@ -36,9 +36,12 @@ In essence, the file aims to ensure that the `CodeStubAssembler` correctly imple
 
 **总体来说，这个文件的目标是确保 `CodeStubAssembler` 提供的各种基础操作和数据结构（如 `ArrayList`）能够正确地工作，为使用 `CodeStubAssembler` 构建更复杂的代码逻辑提供可靠的保障。**  它通过编写一系列针对特定 `CodeStubAssembler` 方法的测试用例，来验证其正确性。 这些测试用例通常会构建一些简单的代码片段，然后执行这些片段，并检查其输出是否与预期一致。
 
-Prompt: ```这是目录为v8/test/unittests/codegen/code-stub-assembler-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/codegen/code-stub-assembler-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,6 +201,4 @@ TARGET_TEST_F(CodeStubAssemblerTest, ArrayListElementsEquivalent) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

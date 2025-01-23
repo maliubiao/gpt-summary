@@ -93,14 +93,16 @@ By following this systematic approach, combining code analysis with domain knowl
 
 `partitions_test.cc` 通过一系列单元测试，细致地验证了 `WTF::Partitions` 分配器在内存分配、释放和提交/取消提交方面的行为。这些测试确保了 Blink 引擎的内存管理机制的正确性，这对于浏览器性能、稳定性和安全性至关重要。虽然这些测试本身不直接操作 JavaScript、HTML 或 CSS 代码，但它们验证了支持这些高级功能的底层内存管理基础设施的正确性。理解这些测试有助于开发者了解 Blink 引擎的内存管理策略，避免潜在的内存使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/allocator/partitions_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ TEST_F(PartitionsTest, Decommit) {
 #endif  // !defined(MEMORY_TOOL_REPLACES_ALLOCATOR)
 
 }  // namespace WTF
-
-"""
-
 ```

@@ -99,7 +99,7 @@ Here's a breakdown of how to arrive at the summary:
 
 总而言之，`blink/renderer/bindings/core/v8/script_streamer_test.cc` 的第一部分主要负责测试 Blink 引擎中 `ScriptStreamer` 类的核心功能，即在 JavaScript 脚本下载过程中进行流式编译，并验证其在各种正常和异常情况下的行为，包括处理编译错误、取消、代码缓存和不同的字符编码等。它通过模拟网络数据传输和直接与 V8 引擎交互来实现测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/script_streamer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -910,7 +912,4 @@ class DummyLoaderFactory final : public ResourceFetcher::LoaderFactory {
   CodeCacheHost* GetCodeCacheHost() override { return nullptr; }
 
   bool load_started() const {
-"""
-
-
 ```

@@ -88,7 +88,7 @@ if (Process.platform === 'android') {
 
 总而言之，`atan_intel_data.handroid` 是 bionic 库中 `atan` 函数的关键测试数据来源，用于确保该函数在各种输入情况下都能提供准确可靠的结果，这对 Android 系统的稳定性和应用的功能正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atan_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -100,8 +100,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 0000000001p-2
   },
   { // Entry 1079
@@ -417,8 +419,4 @@ Prompt:
     -0.0
   }
 };
-
-"""
-
-
 ```

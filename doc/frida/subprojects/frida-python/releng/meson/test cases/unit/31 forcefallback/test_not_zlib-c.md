@@ -126,7 +126,7 @@ Frida 的工作原理涉及到对目标进程的内存进行操作，这与二�
 7. **分析测试用例:** 用户分析 `test_not_zlib.c` 的代码，了解到 Frida 在 "forcefallback" 模式下可能会以更简单的方式验证函数调用和返回值，即使不能进行完整的 hook。
 
 通过分析这个测试用例，用户可以更好地理解 Frida 的内部工作原理，以及在面对各种安全限制和环境约束时可能采取的回退策略，从而更好地调试和编写自己的 Frida 脚本。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/31 forcefallback/test_not_zlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <notzlib.h>
 
 int main (int ac, char **av)
@@ -144,7 +146,4 @@ int main (int ac, char **av)
     return 1;
   return 0;
 }
-
-"""
-
 ```

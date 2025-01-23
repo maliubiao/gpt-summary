@@ -148,15 +148,17 @@ This structured approach allows for a comprehensive understanding of the code sn
 
 总而言之，`blink/renderer/core/css/css_media_rule.cc` 文件是理解 Blink 如何表示和处理 CSS `@media` 规则的关键入口点，对于调试响应式设计问题或与 `@media` 规则相关的性能问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_media_rule.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /**
  * (C) 1999-2003 Lars Knoll (knoll@kde.org)
  * (C) 2002-2003 Dirk Mueller (mueller@kde.org)
@@ -238,7 +240,4 @@ void CSSMediaRule::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

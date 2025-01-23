@@ -135,7 +135,7 @@ By following this structured approach, breaking down the code, considering the c
 
 总而言之， `versatilepb.cc` 文件是 Frida 为了支持特定的 ARM 开发板而提供的平台适配代码，它通过定义特定于硬件的行为和初始化步骤，使得 Frida 能够在该平台上正常运行并进行动态 instrumentation。 它的存在体现了 Frida 强大的平台扩展能力和对底层硬件的关注。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/215 source set realistic example/boards/arm/versatilepb.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "arm.h"
@@ -161,7 +163,4 @@ void VersatilePBBoard::say_hello()
 }
 
 static VersatilePBBoard versatilepb;
-
-"""
-
 ```

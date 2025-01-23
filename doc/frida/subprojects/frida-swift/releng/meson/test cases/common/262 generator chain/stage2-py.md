@@ -163,7 +163,7 @@ By following this thought process, we can arrive at a comprehensive and accurate
 
 `stage2.py` 自身功能简单，但在 Frida 的测试框架中扮演着重要的中间环节角色，用于验证测试流程的正确性，并准备后续测试步骤所需的基本代码片段。它所处的测试流程与 Frida 的核心功能——动态代码注入和执行密切相关，而这些功能又依赖于对二进制底层、操作系统内核等知识的深入理解。用户通常不会直接操作这个脚本，但 Frida 的开发者会使用它来确保 Frida 功能的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/262 generator chain/stage2.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,15 +171,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 from pathlib import Path
 
 assert(Path(sys.argv[1]).read_text() == 'stage2\n')
 Path(sys.argv[2]).write_text('int main(void){}\n')
-
-"""
-
 ```

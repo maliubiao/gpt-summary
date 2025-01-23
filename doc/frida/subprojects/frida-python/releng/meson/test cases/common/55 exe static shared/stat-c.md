@@ -199,7 +199,7 @@ readelf -s 你的库.so   # Linux/Android
 
 总而言之，这段代码片段展示了一个简单的动态链接库函数的结构，它强调了导出函数和函数调用的概念，这对于理解动态链接和进行逆向工程至关重要。Frida 这样的工具使得在运行时观察和修改这类函数的行为成为可能，为调试和分析提供了强大的手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/55 exe static shared/stat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "subdir/exports.h"
 
 int shlibfunc(void);
@@ -216,7 +218,4 @@ int shlibfunc(void);
 int DLL_PUBLIC statlibfunc(void) {
     return shlibfunc();
 }
-
-"""
-
 ```

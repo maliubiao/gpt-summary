@@ -114,7 +114,7 @@ By following this thought process, we can arrive at the comprehensive and inform
 
 `frida/subprojects/frida-node/releng/meson/test cases/common/215 source set realistic example/devices/virtio-mmio.cc` 文件是 Frida 工具链中用于检测或表示 VirtIO MMIO 设备的一个组件。它涉及到虚拟化、操作系统内核、硬件抽象等底层知识，并在逆向工程中扮演着提供环境信息的重要角色。用户通常不会直接操作这个文件，而是通过使用 Frida 工具来间接触发其执行，并将其输出作为调试分析的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/215 source set realistic example/devices/virtio-mmio.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "virtio.h"
@@ -140,7 +142,4 @@ void VirtioMMIODevice::say_hello()
 }
 
 static VirtioMMIODevice virtio_mmio;
-
-"""
-
 ```

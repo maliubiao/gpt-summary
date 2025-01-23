@@ -163,15 +163,17 @@ V8 使用 `SpecialAddSet` 和 `IgnoreSet` 中的信息，确保了像 KELVIN SIG
 
 `v8/src/regexp/gen-regexp-special-case.cc` 是一个重要的代码生成工具，它通过分析 Unicode 数据，为 V8 的正则表达式引擎生成必要的辅助数据结构，以确保 case-insensitive 匹配的正确性，特别是处理那些与简单的大小写转换不同的特殊情况。它与 JavaScript 的正则表达式 `/i` 标志的行为紧密相关，并帮助开发者避免一些与 Unicode 相关的 case-insensitive 匹配的陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/gen-regexp-special-case.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/gen-regexp-special-case.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -339,7 +341,4 @@ int main(int argc, const char** argv) {
 
   return 0;
 }
-
-"""
-
 ```

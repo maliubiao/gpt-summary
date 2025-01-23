@@ -182,7 +182,7 @@ st.body = &http2requestBody{pipe: &http2pipe{b: &http2dataBuffer{}}} // 假设 b
 
 总而言之，这个代码片段是 Go 语言 `net/http` 包中 HTTP/2 服务器连接处理的核心逻辑，负责接收和处理来自客户端的各种 HTTP/2 帧，管理连接和流的生命周期，实施流控，并将请求调度到处理函数，是构建高性能 HTTP/2 服务器的关键组成部分。它确保了服务器能够正确地与 HTTP/2 客户端进行通信，并遵循 HTTP/2 协议规范。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/h2_bundle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -191,8 +191,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第7部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 == http2stateIdle {
 		// 6.4 "RST_STREAM frames MUST NOT be sent for a
 		// stream in the "idle" state. If a RST_STREAM frame
@@ -1230,9 +1232,4 @@ func (rws *http2responseWriterState) writeChunk(p []byte) (n int, err error) {
 		}
 		_, hasContentLength := rws.snapHeader["Content-Length"]
 		if !hasContentLe
-"""
-
-
-
-
 ```

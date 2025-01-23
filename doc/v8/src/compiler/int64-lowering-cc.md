@@ -155,7 +155,7 @@ kInt32PairAdd(x_low, x_high, y_low, y_high)
 
 `v8/src/compiler/int64-lowering.cc` 的主要功能是在 V8 编译器的优化阶段，特别是针对 32 位目标架构，**将 IR 图中的 64 位整数操作分解为一系列等价的 32 位整数操作**。这使得 V8 能够在不支持原生 64 位指令的平台上高效地执行涉及 64 位整数的 JavaScript 代码（例如，使用 `BigInt` 或 64 位 Typed Arrays）。 它通过遍历 IR 图，识别 64 位操作相关的节点，并使用相应的 32 位操作序列替换它们来实现。 这涉及到处理常量、加载、存储、算术运算、比较运算、类型转换以及函数调用和返回的调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/int64-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/int64-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -163,8 +163,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -993,8 +995,4 @@ void Int64Lowering::LowerNode(Node* node) {
           d.Phi(MachineRepresentation::kWord32,
                 graph()->NewNode(machine()->Int32Add(),
                                  graph()->NewNode(machine()->Word32Ctz().op(),
-                     
-"""
-
-
 ```

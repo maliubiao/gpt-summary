@@ -145,7 +145,7 @@ A user's actions would lead to this code being executed during the Meson build c
 
 In essence, this `arm.py` file is a crucial part of how the Meson build system adapts to the specifics of ARM compilers, ensuring that Frida and related components are built correctly for their target platforms. Understanding this code provides insights into the low-level details of ARM compilation and potential pitfalls in the build process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/mixins/arm.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 Meson development team
 
@@ -322,7 +324,4 @@ class ArmclangCompiler(Compiler):
                 parameter_list[idx] = i[:2] + os.path.normpath(os.path.join(build_dir, i[2:]))
 
         return parameter_list
-
-"""
-
 ```

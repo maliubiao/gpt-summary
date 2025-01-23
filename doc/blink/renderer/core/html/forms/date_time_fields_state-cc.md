@@ -166,14 +166,16 @@ By following this structured approach, combining code analysis with knowledge of
 
 总而言之，`date_time_fields_state.cc` 中的 `DateTimeFieldsState` 类是 Blink 引擎中管理 HTML 表单日期和时间字段状态的核心，它负责数据的存储、转换，并为后续的表单处理提供基础。 理解它的功能有助于理解浏览器如何处理用户在日期和时间输入框中的输入。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/date_time_fields_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -294,7 +296,4 @@ FormControlState DateTimeFieldsState::SaveFormControlState() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

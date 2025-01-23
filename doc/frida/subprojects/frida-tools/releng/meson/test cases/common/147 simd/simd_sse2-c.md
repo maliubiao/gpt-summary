@@ -165,7 +165,7 @@ movapd  [rdx], xmm0       ; 将 xmm0 的内容存储到内存地址 rdx
 
 总而言之，`simd_sse2.c` 是 Frida 针对 SSE2 指令集的一个测试用例，用于验证 Frida 在处理这类指令时的正确性。它涉及到对 SIMD 指令的理解、二进制底层知识、操作系统内核特性以及 Frida 框架的运作方式。理解这个文件的功能有助于逆向工程师分析使用了 SIMD 指令的程序，并帮助 Frida 用户理解 Frida 如何处理这些指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/147 simd/simd_sse2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 #include<emmintrin.h>
@@ -211,7 +213,4 @@ void increment_sse2(float arr[4]) {
     arr[2] = (float)darr[3];
     arr[3] = (float)darr[2];
 }
-
-"""
-
 ```

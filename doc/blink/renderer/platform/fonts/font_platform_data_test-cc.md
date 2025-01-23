@@ -123,14 +123,16 @@ By following this systematic approach, one can effectively analyze the source co
 
 总而言之，`font_platform_data_test.cc` 文件通过一系列单元测试，确保 Blink 引擎能够正确地处理和表示平台相关的字体数据，这对于在 Web 页面上准确、一致地渲染文本至关重要。 这些测试覆盖了字体特性的处理、抗锯齿、字体唯一性识别以及特定平台下的渲染优化等方面，帮助开发者避免常见的与字体相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_platform_data_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 Google Inc. All rights reserved.
  *
@@ -294,7 +296,4 @@ TEST_F(FontPlatformDataTest, GeometricPrecision) {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

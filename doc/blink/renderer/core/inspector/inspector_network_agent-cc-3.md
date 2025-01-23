@@ -223,17 +223,18 @@ Initially, I might have focused too broadly on the general purpose of a network 
 
 总而言之，这部分代码是 `InspectorNetworkAgent` 中处理资源内容查看、搜索以及导航和 POST 数据检查的关键组成部分。它为开发者提供了深入了解和调试网页网络行为的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_network_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-
-  if (!response.IsSuccess())
+### 源代码
+```cpp
+if (!response.IsSuccess())
     return response;
 
   auto results = v8_session_->searchInTextByLines(
@@ -380,8 +381,4 @@ void InspectorNetworkAgent::IsCacheDisabled(bool* is_cache_disabled) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

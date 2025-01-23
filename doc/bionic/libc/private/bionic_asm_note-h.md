@@ -236,7 +236,7 @@ setImmediate(hook_dl_iterate_phdr);
 
 通过以上分析，我们可以了解到 `bionic/libc/private/bionic_asm_note.handroid` 这个文件虽然小，但它定义的常量在 Android 平台的二进制文件加载和运行过程中扮演着重要的角色，它关联着 Android 的版本识别、安全特性（如内存标记）以及可能的内核交互等方面。理解这些信息有助于我们更深入地了解 Android 系统的底层运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_asm_note.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -247,8 +247,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2021 The Android Open Source Project
  * All rights reserved.
@@ -283,7 +285,4 @@ Prompt:
 #define NT_ANDROID_TYPE_KUSER 3
 #define NT_ANDROID_TYPE_MEMTAG 4
 #define NT_ANDROID_TYPE_PAD_SEGMENT 5
-
-"""
-
 ```

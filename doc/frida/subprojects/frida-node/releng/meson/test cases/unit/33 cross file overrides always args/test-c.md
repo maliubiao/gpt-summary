@@ -99,7 +99,7 @@ Initially, I might have focused too much on the runtime behavior of the code. Ho
 
 总而言之，这个看似简单的 `test.c` 文件在 Frida 的构建系统中扮演着重要的角色，它通过编译时断言来确保关键的构建配置 (关于文件偏移量的处理) 符合预期，这对于 Frida 正确、可靠地进行动态 instrumentation 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/33 cross file overrides always args/test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _FILE_OFFSET_BITS
   #error "_FILE_OFFSET_BITS should not be set"
 #endif
@@ -117,7 +119,4 @@ int main(int argc, char *argv[])
 {
   return 0;
 }
-
-"""
-
 ```

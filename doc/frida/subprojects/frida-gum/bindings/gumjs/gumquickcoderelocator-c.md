@@ -182,7 +182,7 @@ This iterative process of analyzing the code, forming hypotheses, connecting it 
 
 总而言之，`gumquickcoderelocator.c` 是 Frida 内部一个关键的低层组件，负责在动态插桩过程中处理代码重定位的复杂任务，确保 hook 功能的正确性和稳定性。用户通常不会直接与之交互，但理解其功能有助于理解 Frida 的工作原理和排查相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickcoderelocator.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -243,7 +245,4 @@ gumjs_get_parent_module (GumQuickCore * core)
 {
   return _gum_quick_core_load_module_data (core, "code-relocator");
 }
-
-"""
-
 ```

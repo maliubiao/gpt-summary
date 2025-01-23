@@ -133,7 +133,7 @@ The function would return `1 + 2 + 3 = 6`. This means 6 slots would be reserved 
 
 This specific section of `v8/src/compiler/simplified-operator.cc` focuses on **determining the argument counts for Fast API calls** within V8's compiler. It provides two key functions: one for the "fast path" argument count based on the function signature and another for the "slow path" argument count, which includes additional overhead for stack management. This functionality is crucial for the compiler to correctly set up and execute calls from JavaScript to optimized native C++ functions. The undefinition of macros at the end suggests a localized use of these macros for defining or processing different types of simplified operators within this part of the file.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/simplified-operator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -141,8 +141,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 = p.c_function().signature;
   CHECK_NOT_NULL(signature);
   return signature->ArgumentCount();
@@ -168,8 +170,4 @@ int FastApiCallNode::SlowCallArgumentCount(Node* node) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

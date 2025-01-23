@@ -141,7 +141,7 @@ TESTCASE (eob_and_eoi_on_ret)
 
 这些测试用例确保了 `gum_thumb_relocator` 能够准确地分析、修改和生成 ARM Thumb 代码，这对于 Frida 的动态插桩功能至关重要。它关注于底层的二进制指令处理，确保 Frida 能够在运行时安全有效地修改目标进程的 ARM Thumb 代码。  这些测试覆盖了指令的读取、写入、块的边界识别等关键功能，并考虑了不同指令组合和控制流结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm/thumbrelocator.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,9 +150,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                /* cmp r0, #0         */
+### 源代码
+```c
+/* cmp r0, #0         */
     GUINT16_TO_LE (0xbf18),                         /* it ne              */
     GUINT16_TO_LE (0xe8bd), GUINT16_TO_LE (0x8010), /* pop.w {r4, pc}     */
     GUINT16_TO_LE (0x3001),                         /* adds r0, #1        */
@@ -213,8 +215,4 @@ TESTCASE (eob_and_eoi_on_ret)
   g_assert_true (gum_thumb_relocator_eoi (&fixture->rl));
   g_assert_cmpuint (gum_thumb_relocator_read_one (&fixture->rl, NULL), ==, 0);
 }
-
-"""
-
-
 ```

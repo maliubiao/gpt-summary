@@ -169,14 +169,16 @@ Let's break down the thought process for analyzing the provided C++ code.
 
 总而言之，`UseCounterFeatureTracker` 是 Blink 引擎内部一个用于收集各种 Web 技术特性使用情况的机制，为 Chrome 团队提供有价值的数据，用于了解 Web 生态系统的发展趋势，从而更好地进行浏览器开发和标准化工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/use_counter/use_counter_feature_tracker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,7 +297,4 @@ void UseCounterFeatureTracker::Set(const UseCounterFeature& feature,
 }
 
 }  // namespace blink
-
-"""
-
 ```

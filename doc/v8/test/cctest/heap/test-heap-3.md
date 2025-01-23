@@ -87,12 +87,14 @@ Here's a breakdown of how to approach this:
 
 总的来说，这部分代码是一个深入的 V8 堆管理功能测试套件。它通过 C++ 代码直接操作堆的内部结构，并结合执行 JavaScript 代码来验证各种 GC 场景、内存分配策略、以及与 JavaScript 对象模型相关的行为是否符合预期。这些测试对于确保 V8 引擎的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 mentally mark the backing store.
   DirectHandle<JSReceiver> obj =
       v8::Utils::OpenDirectHandle(*v8::Local<v8::Object>::Cast(result));
@@ -1842,7 +1844,4 @@ UNINITIALIZED_TEST(RestoreHeapLimit) {
 #endif
   ManualGCScope manual_gc_scope;
   const siz
-"""
-
-
 ```

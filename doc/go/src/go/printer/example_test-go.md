@@ -198,7 +198,7 @@ func myFunc(x int) {
 
 这段 `example_test.go` 文件的主要目的是为了演示 `go/printer` 包的基本用法，帮助开发者理解如何将 Go 代码的 AST 结构转换回可读的源代码。 通过阅读和理解这个示例，开发者可以学习如何在自己的代码分析和生成工具中使用 `go/printer` 包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/printer/example_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -206,8 +206,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -275,9 +277,4 @@ func ExampleFprint() {
 	//
 	// fmt.Println(s)
 }
-
-"""
-
-
-
 ```

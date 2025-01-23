@@ -183,7 +183,7 @@ func main() {
 
 这段测试代码的主要目的是确保 `hash/fnv` 包提供的 FNV 哈希算法实现是正确、可靠且能够正确地进行状态的序列化和反序列化。它通过大量的预设测试用例和完整性检查来覆盖各种场景。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/hash/fnv/fnv_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -191,8 +191,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -460,9 +462,4 @@ func benchmarkKB(b *testing.B, h hash.Hash) {
 		h.Sum(in)
 	}
 }
-
-"""
-
-
-
 ```

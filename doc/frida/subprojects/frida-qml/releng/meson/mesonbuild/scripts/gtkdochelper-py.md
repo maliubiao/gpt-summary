@@ -216,7 +216,7 @@ This script is typically executed as part of the **build process** of Frida when
 4. **Inspect the intermediate files:** Examine the output of `gtkdoc-scan` and the generated DocBook XML to pinpoint where the documentation generation is going wrong.
 5. **Verify the `gtk-doc` installation:** Ensure that the `gtk-doc` toolchain is correctly installed and accessible in the system's PATH.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/scripts/gtkdochelper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -224,8 +224,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015-2016 The Meson development team
 
@@ -512,7 +514,4 @@ def run(args: T.List[str]) -> int:
 
 if __name__ == '__main__':
     sys.exit(run(sys.argv[1:]))
-
-"""
-
 ```

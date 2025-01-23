@@ -187,15 +187,17 @@ This systematic approach allows for a comprehensive understanding of the code's 
 
 总而言之，`DirectoryEntry.cc` 是 Blink 引擎中处理目录操作的关键组件，它连接了 JavaScript 的 File System API 和底层的操作系统文件系统。理解它的功能和交互方式对于开发和调试涉及文件系统操作的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/filesystem/directory_entry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -288,7 +290,4 @@ void DirectoryEntry::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -118,7 +118,7 @@ Based on this analysis, I can now formulate the summary and address the specific
 
 总而言之，这部分 `bytecode-generator.cc` 代码是 V8 解释器中至关重要的一部分，它负责将高级的 JavaScript 代码转换为底层的字节码指令，使得 V8 虚拟机能够高效地执行 JavaScript 代码，尤其是在处理复杂的控制流和异常情况时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -126,8 +126,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lose(generator);
   // }
   //
@@ -1022,7 +1024,4 @@ void BytecodeGenerator::BuildTryFinally(
   ControlScope::DeferredCommands commands(this, token, result, message);
 
   // Preserve the context in a dedicated register, so that it can be
-"""
-
-
 ```

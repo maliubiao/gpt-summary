@@ -187,7 +187,7 @@ func main() {
 
 总结来说，`go/src/runtime/cgo/openbsd.go` 的这段代码是 `cgo` 功能在 OpenBSD 上的一个底层实现细节，它负责提供 C 运行时所需的 `__guard_local` 符号，以确保 Go 程序与 C 代码的互操作能够正常进行。理解这段代码需要了解 `cgo` 的工作原理以及 OpenBSD 系统的一些特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/cgo/openbsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -218,9 +220,4 @@ var _guard_local uintptr
 // .openbsd.randomdata section.
 //
 //go:cgo_export_dynamic __guard_local __guard_local
-
-"""
-
-
-
 ```

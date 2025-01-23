@@ -145,7 +145,7 @@ func main() {
 
 `go/src/runtime/create_file_nounix.go` 的主要功能是 **声明在非 Unix 系统下，通过此特定路径的实现，Go 运行时无法直接创建文件**。这表明 Go 运行时在不同的操作系统上采用了不同的文件创建策略。虽然这个文件中的 `create` 函数没有实际实现，但 Go 的标准库会在非 Unix 系统上使用其他平台特定的机制来完成文件创建。开发者不应该直接依赖或尝试调用这个未实现的 `create` 函数，而是应该使用 `os` 包中提供的标准文件操作函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/create_file_nounix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -153,8 +153,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -169,9 +171,4 @@ func create(name *byte, perm int32) int32 {
 	throw("unimplemented")
 	return -1
 }
-
-"""
-
-
-
 ```

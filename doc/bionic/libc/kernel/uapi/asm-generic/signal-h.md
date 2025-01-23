@@ -298,7 +298,7 @@ sys.stdin.read()
 
 通过以上分析和示例，可以更深入地理解 `bionic/libc/kernel/uapi/asm-generic/signal.h` 文件在 Android 系统中的作用以及如何进行调试。它为用户空间程序提供了与内核信号机制交互的基础，是理解 Android 应用程序异常处理和进程管理的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-generic/signal.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -309,8 +309,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -389,7 +391,4 @@ typedef struct sigaltstack {
 } stack_t;
 #endif
 #endif
-
-"""
-
 ```

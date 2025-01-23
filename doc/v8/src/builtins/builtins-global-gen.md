@@ -96,11 +96,13 @@ console.log(isNaN({}));          // true  (对象尝试转换为数字，结果�
 
 `builtins-global-gen.cc` 文件是 V8 引擎中实现全局 `isFinite()` 和 `isNaN()` 函数的关键部分。它使用 C++ 提供了高性能的底层实现，并严格遵循 ECMAScript 规范中定义的这些函数的行为，包括类型转换等细节。 JavaScript 代码中对 `isFinite()` 和 `isNaN()` 的调用最终会由 V8 引擎执行到这里定义的 C++ 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-global-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ TF_BUILTIN(GlobalIsNaN, CodeStubAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

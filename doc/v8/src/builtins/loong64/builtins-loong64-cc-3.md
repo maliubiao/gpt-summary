@@ -121,7 +121,7 @@ boundGreet("Alice"); // 输出 "Hello, Alice! My context is: [object Object]"
 
 ```javascript
 async function load
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/loong64/builtins-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/loong64/builtins-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -129,8 +129,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 unction(a1);
 
   // Calling convention for function specific ConstructStubs require
@@ -1026,8 +1028,5 @@ void Generate_WasmResumeHelper(MacroAssembler* masm, wasm::OnResume on_resume) {
                       active_suspender, kRAHasBeenSaved,
                       SaveFPRegsMode::kIgnore);
   __ li(scratch, Operand(Smi::FromInt(WasmSuspenderObject::kActive)));
-  __ 
-"""
-
-
+  __
 ```

@@ -145,14 +145,16 @@ By following this structured approach, we can effectively analyze the C++ code a
 
 总而言之，`shared_buffer.cc` 中定义的 `SharedBuffer` 和 `SegmentedBuffer` 是 Blink 引擎中用于高效管理内存缓冲区的重要基础设施，它们在处理各种 Web 技术（如 JavaScript 的 `ArrayBuffer` 和 `Blob`，HTML 的媒体资源，CSS 的字体等）所涉及的数据时发挥着关键作用。理解它们的功能和潜在的使用错误对于开发和调试 Blink 引擎相关的功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/shared_buffer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2008 Apple Inc. All rights reserved.
  * Copyright (C) Research In Motion Limited 2009-2010. All rights reserved.
@@ -341,7 +343,4 @@ scoped_refptr<SharedBuffer> SharedBuffer::Create(Vector<char>&& vector) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

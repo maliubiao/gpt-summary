@@ -145,7 +145,7 @@ By following these steps, one can construct a comprehensive and accurate answer 
 
 这个 `prog.c` 文件虽然简单，但它存在于一个特定的测试框架中，用于验证 Frida 在处理特定场景时的行为。它的失败表明在 macOS 上使用共享模块进行链接时可能存在一些需要注意的问题，或者 Frida 在某些特定配置下可能存在缺陷。对于开发者来说，了解这些测试用例可以帮助他们更好地理解 Frida 的工作原理和潜在的限制，从而更有效地进行逆向分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/71 link with shared module on osx/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,13 +153,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
+### 源代码
+```c
 int main(int argc, char **argv) {
     return func();
 }
-
-"""
-
 ```

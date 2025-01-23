@@ -185,7 +185,7 @@ myext = python3.extension_module(
 
 This `python.py` module is a crucial component for integrating Python into Meson-based build systems. It handles the complexities of finding Python installations, building extension modules, and managing dependencies. Its features are highly relevant to reverse engineering, especially when working with tools like Frida that heavily rely on Python extensions to interact with target processes. Understanding this module provides insights into how Frida and similar tools are built and how to extend their capabilities.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/modules/python.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
 
@@ -751,7 +753,4 @@ def initialize(interpreter: 'Interpreter') -> PythonModule:
     mod = PythonModule(interpreter)
     mod.interpreter.append_holder_map(PythonExternalProgram, PythonInstallation)
     return mod
-
-"""
-
 ```

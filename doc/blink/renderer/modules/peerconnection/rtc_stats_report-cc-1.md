@@ -156,7 +156,7 @@ webrtc_codec_stat.id_ = "codec-1";
 
 总而言之，这部分代码在 Chromium Blink 引擎中扮演着关键的角色，它将底层的、与平台相关的 WebRTC 统计信息桥接到上层的 JavaScript 环境，使得开发者能够监控和分析 WebRTC 连接的状态和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_stats_report.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -164,10 +164,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-  }
+### 源代码
+```cpp
+}
   return v8_stat;
 }
 
@@ -445,8 +446,4 @@ bool RTCStatsReport::GetMapEntry(ScriptState* script_state,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

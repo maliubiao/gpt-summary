@@ -167,11 +167,13 @@ main();
 
 `v8/src/base/platform/semaphore.cc` 文件提供了 V8 引擎在 C++ 层面上使用的跨平台信号量实现。尽管 JavaScript 语言本身没有直接的信号量概念，但在 V8 的内部实现中，为了处理并发和同步，可能会用到这样的底层机制。在 JavaScript 中，可以通过异步编程模式和一些技巧来模拟信号量的部分功能，例如限制并发数量或实现互斥访问。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/semaphore.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -352,7 +354,4 @@ bool Semaphore::WaitFor(const TimeDelta& rel_time) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

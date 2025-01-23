@@ -192,7 +192,7 @@ func main() {
 
 总而言之，这段代码是 Go trace 功能的重要组成部分，负责将 trace 数据转换为可供可视化工具使用的格式，并提供了灵活的分片机制来处理大型 trace 数据。使用者需要理解其工作原理和参数含义，才能正确地使用和分析 Go 程序的 trace 信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/traceviewer/emitter.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -200,8 +200,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1015,9 +1017,4 @@ func pickTaskColor(id uint64) string {
 	idx := id % uint64(len(colorForTask))
 	return colorForTask[idx]
 }
-
-"""
-
-
-
 ```

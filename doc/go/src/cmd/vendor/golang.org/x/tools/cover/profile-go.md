@@ -245,15 +245,17 @@ File: example.go, Mode: set
 
 总而言之，`profile.go` 是 Go 语言代码覆盖率功能的核心组成部分，负责将 `go test` 生成的原始覆盖率数据解析成结构化的数据，方便后续的分析和展示。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/cover/profile.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -520,9 +522,4 @@ func (b boundariesByPos) Less(i, j int) bool {
 	}
 	return b[i].Offset < b[j].Offset
 }
-
-"""
-
-
-
 ```

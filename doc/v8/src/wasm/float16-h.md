@@ -173,15 +173,17 @@ runWasm();
 
 总而言之，`v8/src/wasm/float16.h` 提供了一个 C++ 类，用于在 V8 引擎的 WebAssembly 实现中处理半精度浮点数，方便进行内存读写和与标准 32 位浮点数之间的转换。它依赖于外部的 `fp16` 库来实现实际的转换逻辑。用户通常不会直接在 JavaScript 中操作这个类，而是通过 WebAssembly 代码间接地使用它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/float16.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/float16.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ static_assert(sizeof(Float16) == sizeof(uint16_t));
 }  // namespace v8
 
 #endif  // V8_WASM_FLOAT16_H_
-
-"""
-
 ```

@@ -131,7 +131,7 @@ Typically, a user wouldn't directly interact with this Python file. Instead, it'
 
 **As a debugging clue:** If a Frida developer encounters an issue building the `frida-clr` component, they might investigate the generated `meson.build` file in `frida/subprojects/frida-clr/`. If the content of this file is incorrect or missing elements, it would lead them to examine the logic in `mesontemplates.py` to understand how the file is generated and where the potential error might be in the input arguments or the template logic. They might even temporarily modify this Python script to print out the `options` object to see what data is being passed to it.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/templates/mesontemplates.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -211,7 +213,4 @@ def create_meson_build(options: Arguments) -> None:
                                             default_options=formatted_default_options)
     open('meson.build', 'w', encoding='utf-8').write(content)
     print('Generated meson.build file:\n\n' + content)
-
-"""
-
 ```

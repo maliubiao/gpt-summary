@@ -156,14 +156,16 @@ By following this structured thought process, I can ensure the generated respons
 
 `content_type.cc` 文件在 Chromium Blink 引擎中负责处理 `Content-Type` 头部，这对于浏览器正确识别和处理各种 Web 资源至关重要。它的功能直接影响着 HTML 页面的渲染、CSS 样式的应用以及 JavaScript 代码的执行。  理解和正确配置 `Content-Type` 是 Web 开发中避免诸多问题的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/mime/content_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2008 Apple Inc.  All rights reserved.
  * Copyright (C) 2008 Torch Mobile Inc. All rights reserved.
@@ -260,7 +262,4 @@ void ContentType::ParseParameters(Vector<String>& result) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

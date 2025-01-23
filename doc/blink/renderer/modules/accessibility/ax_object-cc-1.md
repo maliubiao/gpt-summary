@@ -71,7 +71,7 @@ This part of `AXObject` class primarily deals with the **lifecycle and structura
 
 This portion of the `AXObject` code is fundamentally responsible for managing the **creation, destruction, and hierarchical relationships** of accessibility objects within the Blink rendering engine. It ensures the **integrity of the accessibility tree**, correctly determines **parent-child relationships** based on the underlying DOM structure, and provides mechanisms to **access and interpret ARIA attributes**. It also initiates the process of **serializing `AXObject` data** for external consumption, encompassing basic properties like bounding boxes and color information. This functionality is crucial for accurately representing the structure and semantics of a web page to assistive technologies.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -79,9 +79,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共10部分，请归纳一下它的功能
+```
 
-"""
-                   << GetNode() << '\n'
+### 源代码
+```cpp
+<< GetNode() << '\n'
                              << GetLayoutObject();
   // The parent cannot have children. This object must be destroyed.
   DCHECK(!parent_ || parent_->CanHaveChildren())
@@ -980,7 +982,4 @@ void AXObject::SerializeElementAttributes(ui::AXNodeData* node_data) const {
   }
 
   // Expose StringAttribute::kRole, which is used for the xml-rol
-"""
-
-
 ```

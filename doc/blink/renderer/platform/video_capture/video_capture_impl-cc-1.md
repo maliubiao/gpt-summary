@@ -131,15 +131,17 @@ By following this structured approach, including initial exploration, focused an
 
 `VideoCaptureImpl` 作为一个核心的中间层，负责连接 Blink 渲染引擎的视频捕获请求和底层的操作系统或硬件视频捕获能力。它管理着视频捕获的整个流程，包括设备的启动、数据的接收和处理、以及与客户端的通信和状态管理。它确保了视频数据能够正确、高效地传输到 Web 页面中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/video_capture/video_capture_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lient_info;
       params_ = params;
       params_.requested_format.frame_rate =
@@ -698,8 +700,4 @@ base::WeakPtr<VideoCaptureImpl> VideoCaptureImpl::GetWeakPtr() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

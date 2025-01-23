@@ -126,15 +126,17 @@ void someFunction() {
 
 `v8/src/heap/cppgc/name-trait.cc` 提供的核心功能是从 C++ 类型签名字符串中提取类型名称，这对于 V8 内部的调试、内存管理和类型信息处理非常重要。虽然它不直接执行 JavaScript 代码，但它为 V8 运行 JavaScript 提供了基础支持。 理解动态内存管理是避免与此类代码交互时出现内存泄漏的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/name-trait.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/name-trait.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ HeapObjectName NameTraitBase::GetNameFromTypeSignature(const char* signature) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

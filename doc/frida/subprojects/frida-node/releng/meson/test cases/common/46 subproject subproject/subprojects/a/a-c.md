@@ -149,7 +149,7 @@ By following these steps, the detailed explanation covering functionality, rever
 
 总结来说，这段简单的 C 代码片段虽然功能直接，但在 Frida 动态插桩的上下文中扮演着重要的角色。理解其结构和背后的动态链接原理，对于进行有效的逆向分析和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/46 subproject subproject/subprojects/a/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2(void);
 
 #if defined _WIN32 || defined __CYGWIN__
@@ -173,7 +175,4 @@ int func2(void);
 #endif
 
 int DLL_PUBLIC func(void) { return func2(); }
-
-"""
-
 ```

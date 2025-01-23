@@ -239,7 +239,7 @@ By following this structured approach, systematically analyzing the code, and fo
 
 总而言之，`visualstudio.py` 文件是 Frida 在 Windows 平台上构建过程中至关重要的一个环节，它负责将高级的构建配置转换为底层的编译器命令行参数，直接影响着最终生成的可执行文件和库文件的特性。 理解这个文件的功能有助于理解 Frida 的构建过程，并在遇到编译问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/compilers/mixins/visualstudio.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -247,8 +247,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The meson development team
 
@@ -707,7 +709,4 @@ class ClangClCompiler(VisualStudioLikeCompiler):
             return converted
         else:
             return dep.get_compile_args()
-
-"""
-
 ```

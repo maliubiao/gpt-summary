@@ -215,7 +215,7 @@ By following this structured approach, combining code analysis with conceptual u
 
 总而言之，`gumarmbacktracer.c` 是 Frida 在 ARM 架构上实现动态栈回溯的关键组成部分，它结合了对 ARM 架构、调用约定、内存管理以及动态插桩技术的理解，为逆向工程师提供了强大的运行时代码分析能力。理解其工作原理有助于用户更有效地使用 Frida，并在遇到问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/arch-arm/gumarmbacktracer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -223,8 +223,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2013-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2021 Francesco Tamagni <mrmacete@protonmail.ch>
@@ -440,7 +442,4 @@ gum_arm_backtracer_generate (GumBacktracer * backtracer,
 }
 
 #endif
-
-"""
-
 ```

@@ -67,11 +67,13 @@ const intVal = Math.trunc(floatNum); // 将浮点数截断为整数
 
 `v8/src/maglev/arm/maglev-assembler-arm.cc` 文件是 Maglev 编译器在 ARM 架构上生成高性能 JavaScript 执行代码的关键组成部分。它通过提供底层的汇编代码生成工具，使得 Maglev 能够有效地将高级的 JavaScript 代码转换为可以在 ARM 处理器上运行的机器码，从而实现 JavaScript 代码的快速执行。 JavaScript 的各种语言特性和运行时行为，例如对象创建、函数调用、字符串操作和类型转换，都在底层依赖于这样的汇编代码生成机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/arm/maglev-assembler-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -644,7 +646,4 @@ void MaglevAssembler::TryChangeFloat64ToIndex(Register result,
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

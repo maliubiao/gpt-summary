@@ -101,7 +101,7 @@ Let's break down the thought process to analyze the provided Python script and a
 
 `no_copy_test.py` 是 Frida 构建系统中的一个简单但重要的测试用例。它通过检查特定文件的存在与否来验证构建过程的正确性。虽然它本身不执行逆向操作或直接与底层交互，但它属于 Frida 生态系统的一部分，间接地支持了 Frida 的核心功能，而 Frida 则是逆向工程中常用的强大工具。这个脚本的执行失败可以作为开发者调试构建问题的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/rust/19 structured sources/no_copy_test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -129,7 +131,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

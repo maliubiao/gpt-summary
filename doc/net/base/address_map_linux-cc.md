@@ -140,15 +140,17 @@ This detailed breakdown illustrates the process of understanding the code, conne
 
 尽管 `net/base/address_map_linux.cc` 当前的代码非常简洁，但从其命名和包含的头文件来看，它旨在处理 Linux 系统下的网络地址映射。它很可能定义了用于跟踪地址变化和缓存地址信息的接口。理解这个文件的作用需要结合 Chromium 网络栈的上下文，并推测其可能的完整实现。调试与此相关的代码需要追踪网络请求的生命周期，并关注网络栈中处理地址映射的环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/address_map_linux.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ AddressMapCacheLinux* AddressMapOwnerLinux::GetAddressMapCacheLinux() {
 }
 
 }  // namespace net
-
-"""
-
 ```

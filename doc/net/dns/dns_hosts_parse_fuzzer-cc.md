@@ -157,15 +157,17 @@ By following these steps, the comprehensive and accurate answer provided in the 
 
 总而言之，`net/dns/dns_hosts_parse_fuzzer.cc` 是一个重要的安全工具，它通过模糊测试来确保 Chromium 的 hosts 文件解析器能够安全可靠地处理各种输入，从而保障用户的网络安全和浏览体验。虽然用户不直接接触这个文件，但其测试的功能直接影响着用户访问网络的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_hosts_parse_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
                                          net::PARSE_HOSTS_COMMA_IS_WHITESPACE);
   return 0;
 }
-
-"""
-
 ```

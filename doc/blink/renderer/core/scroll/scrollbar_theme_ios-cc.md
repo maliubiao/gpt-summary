@@ -142,15 +142,17 @@ Here's a thinking process to arrive at the explanation of `scrollbar_theme_ios.c
 
 `scrollbar_theme_ios.cc` 是 Blink 渲染引擎中一个关键的文件，它负责指定 iOS 环境下的默认滚动条主题为移动端 overlay 风格。这直接影响了用户在 iOS 设备上浏览网页时的滚动条视觉体验，并与 HTML 结构、CSS 样式和 JavaScript 滚动操作紧密相关。理解这个文件的作用有助于开发者更好地理解浏览器的工作原理，并能更有效地进行网页开发和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scroll/scrollbar_theme_ios.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -166,7 +168,4 @@ ScrollbarTheme& ScrollbarTheme::NativeTheme() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

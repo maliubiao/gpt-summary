@@ -127,7 +127,7 @@ console.log(data); // 输出: Float32Array [ 2, 4, 6, 8 ]
 
 第 3 部分的 `assembler-x64-unittest.cc` 主要集中于 **全面而细致地测试 x64 汇编器中各种指令的正确实现**，特别是针对位操作、跳转表以及大量的 256 位 AVX 和 AVX2 的 SIMD 指令进行了详尽的单元测试。这些测试覆盖了不同类型的操作数 (寄存器、立即数、内存) 和指令的各种变体，旨在确保 V8 引擎生成的 x64 汇编代码的准确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/assembler-x64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/assembler-x64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -135,10 +135,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-
-    __ rorxq(r8, rcx, 0x4);
+### 源代码
+```cpp
+__ rorxq(r8, rcx, 0x4);
     __ movq(r9, uint64_t{0x8112233445566778});  // expected result
     __ cmpq(r8, r9);
     __ j(not_equal, &exit);
@@ -1044,8 +1045,4 @@ TEST_F(AssemblerX64Test, AssemblerX64BinOp256bit) {
                           0xc4, 0x41, 0x2d, 0xf9, 0xcb,
                           // vpsubd ymm12,ymm13,ymm14
                           0xc4, 0x41, 0x15, 0xfa, 0xe6,
-                         
-"""
-
-
 ```

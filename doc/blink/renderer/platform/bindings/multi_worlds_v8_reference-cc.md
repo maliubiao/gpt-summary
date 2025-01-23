@@ -113,14 +113,16 @@ My thought process to analyze the `multi_worlds_v8_reference.cc` code and genera
 
 `multi_worlds_v8_reference.cc` 提供了一个框架，用于安全地管理和访问跨 JavaScript 执行环境的对象引用。它通过持有全局引用和在目标环境中创建（或未来创建）对象的副本来实现这一目标。虽然目前克隆功能尚未实现，但其设计目标是为了解决在多 "world" 环境中安全地操作 JavaScript 对象这一关键问题。理解其功能和局限性对于开发涉及多个 JavaScript 上下文的 Chromium 功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/multi_worlds_v8_reference.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ v8::Local<v8::Object> MultiWorldsV8Reference::GetObject(
 }
 
 }  // namespace blink
-
-"""
-
 ```

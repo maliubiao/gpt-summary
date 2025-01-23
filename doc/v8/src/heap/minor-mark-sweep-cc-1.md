@@ -199,7 +199,7 @@ for (let i = 0; i < 10000; i++) {
 
 总而言之，`v8/src/heap/minor-mark-sweep.cc` 这部分代码负责 V8 引擎中 **新生代垃圾回收** 的核心逻辑。它通过执行 Minor Mark-Sweep 算法，高效地回收新生代中不再使用的短期对象，并将存活的对象晋升到老年代。其主要步骤包括：处理外部指针、扫描和清理新生代页面（包括常规页面和带有粘性标记位的页面）、处理新生代大对象，以及启动后台 Sweeper 线程来完成垃圾回收的实际操作。 这个过程对于维持 JavaScript 程序的内存健康和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/minor-mark-sweep.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/minor-mark-sweep.cc以.tq结尾，那它是个v8 torque源代码，
@@ -207,9 +207,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
+### 源代码
+```cpp
 #ifdef V8_COMPRESS_POINTERS
   using BasicSlotSet = ::heap::base::BasicSlotSet<kTaggedSize>;
   BasicSlotSet* slots = p->slot_set<SURVIVOR_TO_EXTERNAL_POINTER>();
@@ -429,8 +430,4 @@ void MinorMarkSweepCollector::RequestGC() {
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

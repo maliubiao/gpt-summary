@@ -96,11 +96,13 @@ console.log(largeBigInt.toString(32));
 
 总而言之，`v8/src/bigint/tostring.cc` 文件是 V8 引擎中实现 JavaScript `BigInt` 类型转换为字符串表示的核心组件，它提供了多种算法和优化策略来高效地完成这个任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/tostring.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -714,7 +716,4 @@ uint32_t ToStringResultLength(Digits X, int radix, bool sign) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

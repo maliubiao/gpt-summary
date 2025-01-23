@@ -133,7 +133,7 @@ This iterative process of scanning, analyzing, connecting, and summarizing allow
 
 `frida/releng/meson/mesonbuild/mtest.py` 的主要功能是作为一个**灵活且可配置的测试运行工具**，用于执行 Frida 项目的测试套件。它能够**发现、加载和执行测试用例**，支持**多线程并行**，允许**测试过滤和重复运行**，并能生成**多种格式的测试报告**。这个工具对于确保 Frida 项目的质量和稳定性至关重要，特别是考虑到 Frida 涉及到底层二进制操作和跨平台支持等复杂性。它通过运行各种测试用例来验证 Frida 的核心功能，例如 API 的正确性、平台兼容性以及 Agent 功能的有效性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/mtest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2017 The Meson development team
 
@@ -977,7 +979,4 @@ class JunitBuilder(TestLogger):
                 failures=str(sum(1 for r in test.results if r.result in
                                  {TestResult.FAIL, TestResult.UNEXPECTEDPASS, TestResult.TIMEOUT})),
                 skipped=str
-"""
-
-
 ```

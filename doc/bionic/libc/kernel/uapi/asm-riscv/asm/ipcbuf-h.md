@@ -242,7 +242,7 @@ if (Process.platform === 'linux') {
 
 总结来说，`bionic/libc/kernel/uapi/asm-riscv/asm/ipcbuf.handroid` 虽然自身只是一个简单的重定向头文件，但它指向的通用定义文件在 Android 系统中扮演着重要的角色，定义了内核管理 IPC 缓冲区所需的数据结构，并被 libc 函数和最终的内核实现所使用。通过 Frida hook，我们可以观察到应用程序如何通过 libc 调用到内核的 IPC 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-riscv/asm/ipcbuf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -253,8 +253,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -262,7 +264,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/ipcbuf.h>
-
-"""
-
 ```

@@ -226,7 +226,7 @@ go tool trace trace1.out trace2.out
 
 总而言之，`go/src/internal/trace/gc.go` 是 Go 运行时追踪系统中用于分析垃圾回收对程序 Mutator 性能影响的关键组件。它通过解析 trace 事件，计算 Mutator 利用率，并提供不同维度和时间窗口的分析，帮助开发者深入了解程序的 GC 行为和性能瓶颈。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/gc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -234,8 +234,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1165,9 +1167,4 @@ func isGCMarkAssist(r Range) bool {
 func isGCSweep(r Range) bool {
 	return r.Name == "GC incremental sweep"
 }
-
-"""
-
-
-
 ```

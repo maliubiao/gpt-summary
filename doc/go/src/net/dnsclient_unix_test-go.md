@@ -73,7 +73,7 @@ This systematic approach allowed me to break down the code, understand its purpo
 
 简单来说，这段代码是用来确保 Go 语言在 Unix 系统下能够正确、健壮地进行 DNS 客户端操作，并能正确处理各种网络状况和 DNS 服务器的响应。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/dnsclient_unix_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -82,8 +82,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1403,9 +1405,4 @@ func TestStrictErrorsLookupIP(t *testing.T) {
 		{
 			desc: "searchY IPv6-only timeout fails in strict mode",
 			re
-"""
-
-
-
-
 ```

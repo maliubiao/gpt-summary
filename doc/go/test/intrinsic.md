@@ -150,14 +150,16 @@ func main() {
 
 总而言之，`go/test/intrinsic.go` 是 Go 编译器测试基础设施的关键组成部分，用于验证编译器正确地实现了和优化了 intrinsic 函数，从而保证 Go 程序在不同架构上的高效执行。普通 Go 开发者不需要直接与此文件交互，但理解 intrinsic 函数的概念有助于更好地理解 Go 的性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/intrinsic.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheckandrundir -0 -d=ssa/intrinsics/debug
 
 //go:build amd64 || arm64 || arm || s390x
@@ -167,9 +169,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

@@ -148,15 +148,17 @@ console.log(formatterPercent.format(0.567)); // 输出: "56.70%"
 
 总而言之，`v8/src/objects/js-number-format.tq` 是 V8 内部实现 `Intl.NumberFormat` 对象的关键部分，它连接了 JavaScript 和底层的 ICU 库，负责存储格式化状态并委托实际的格式化操作。理解其作用有助于我们更好地理解 JavaScript 国际化 API 的工作原理，并避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-number-format.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-number-format.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ extern class JSNumberFormat extends JSObject {
       Foreign;  // Managed<icu::number::LocalizedNumberFormatter>
   bound_format: JSFunction|Undefined;
 }
-
-"""
-
 ```

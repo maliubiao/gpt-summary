@@ -147,7 +147,7 @@ let myObj = { a: 1, b: "hello" };
 
 这是 `v8/src/snapshot/deserializer.cc` 的核心部分，负责 **从序列化数据流中读取字节码，并根据这些字节码在内存中重建 V8 的堆对象**。它处理各种对象类型和引用关系，包括普通对象、元映射、根对象、外部引用和堆外数据。 这个过程是 V8 快速启动的关键，因为它允许 V8 从预先构建的状态恢复，而不是每次都从头开始初始化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/deserializer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/deserializer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -155,8 +155,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ng EphemeronHashTable, see
     // MarkingVisitorBase::VisitEphemeronHashTable.
     Tagged<EphemeronHashTable> table = Cast<EphemeronHashTable>(raw_obj);
@@ -1007,8 +1009,5 @@ Tagged<HeapObject> Deserializer<IsolateT>::Allocate(
   return obj;
 }
 
-template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE) 
-"""
-
-
+template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 ```

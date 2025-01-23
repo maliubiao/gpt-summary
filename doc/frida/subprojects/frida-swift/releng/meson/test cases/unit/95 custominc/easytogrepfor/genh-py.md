@@ -118,7 +118,7 @@ By following this iterative process of understanding the core request, analyzing
 
 因此，这个脚本的存在是为了辅助 Frida 的开发和测试工作，特别是涉及到与 C/C++ 代码交互的场景。它作为一个便捷的工具，用于生成简单的配置头文件，以满足测试或开发过程中的特定需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/95 custominc/easytogrepfor/genh.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -135,7 +137,4 @@ import sys
 f = open(sys.argv[1], 'w')
 f.write('#define RETURN_VALUE 0')
 f.close()
-
-"""
-
 ```

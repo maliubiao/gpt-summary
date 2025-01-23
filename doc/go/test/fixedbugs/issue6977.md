@@ -179,15 +179,17 @@ func main() {
 
 总而言之，`issue6977.go` 通过精心设计的接口定义，旨在测试 Go 语言编译器在处理接口类型，特别是接口嵌入和重复方法名时的正确性，确保编译器能够按照语言规范的要求进行类型检查和错误报告。它是一个内部测试文件，帮助保证 Go 语言的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6977.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -228,9 +230,4 @@ type U6 interface { m(); m() } // ERROR "duplicate method .*m"
 type U7 interface { M32; m() } // ERROR "duplicate method .*m"
 type U8 interface { m(); M32 } // ERROR "duplicate method .*m"
 type U9 interface { M32; M64 } // ERROR "duplicate method .*m"
-
-"""
-
-
-
 ```

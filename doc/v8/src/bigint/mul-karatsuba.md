@@ -96,11 +96,13 @@ console.log(product);
 
 `v8/src/bigint/mul-karatsuba.cc` 文件是 V8 JavaScript 引擎中用于优化 `BigInt` 乘法运算的关键 C++ 代码。它实现了 Karatsuba 乘法算法，当 JavaScript 代码执行涉及大 `BigInt` 数的乘法运算时，V8 会利用这段代码来提高性能。JavaScript 开发者无需直接接触这段 C++ 代码，但它的存在直接影响着 JavaScript 中 `BigInt` 乘法运算的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/mul-karatsuba.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -308,7 +310,4 @@ void ProcessorImpl::KaratsubaMain(RWDigits Z, Digits X, Digits Y,
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

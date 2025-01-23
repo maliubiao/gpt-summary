@@ -143,7 +143,7 @@ By following these steps, one can systematically analyze the code snippet and pr
 
 总而言之，这段 Python 代码是 Frida 工具链中用于 **识别目标程序或库所使用编译器及其版本的关键组件**。它通过解析预处理器定义的宏，为 Frida 的后续分析和插桩操作提供重要的上下文信息，尤其是在处理不同平台和编译器差异时。这段代码的功能对于逆向工程师理解目标程序的构建方式和潜在特性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,9 +152,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    if not line:
+### 源代码
+```python
+if not line:
             continue
         d, *rest = line.split(' ', 2)
         if d != '#define':
@@ -179,8 +181,4 @@ def _get_lcc_version_from_defines(defines: T.Dict[str, str]) -> str:
     major = generation_and_major[1:]
     minor = defines.get('__LCC_MINOR__', '0')
     return dot.join((generation, major, minor))
-
-"""
-
-
 ```

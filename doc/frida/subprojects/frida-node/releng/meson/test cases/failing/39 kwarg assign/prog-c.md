@@ -138,7 +138,7 @@ rpc.exports = {
 
 总而言之，尽管 `prog.c` 本身非常简单，但它的存在是为了服务于 Frida 的测试框架，特别是测试 Frida 在处理带有关键字参数的函数调用时的错误处理能力。这个特定的 "failing" 测试用例很可能旨在验证当尝试使用关键字参数调用 C 函数时，如果调用不合法（例如，函数不支持关键字参数，或者参数名称不匹配），Frida 是否能正确地检测并报告错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/39 kwarg assign/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,12 +146,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

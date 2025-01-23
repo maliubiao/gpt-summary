@@ -249,15 +249,17 @@ This methodical approach, starting with the big picture and progressively drilli
 
 总而言之，`bluetooth_remote_gatt_characteristic.cc` 文件是 Web Bluetooth API 中操作远程 GATT 特征的关键组成部分，它连接了 JavaScript 代码和底层的蓝牙服务，负责实现读取、写入、订阅通知等核心功能。 理解它的功能和工作流程对于开发和调试 Web Bluetooth 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/bluetooth/bluetooth_remote_gatt_characteristic.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -837,7 +839,4 @@ void BluetoothRemoteGATTCharacteristic::DeferredValueChange::Trace(
 }
 
 }  // namespace blink
-
-"""
-
 ```

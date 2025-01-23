@@ -119,7 +119,7 @@ Frida 应该能够报告警告信息来源于 `main.c` 文件的第某个行号�
 
 总而言之，这个 `main.c` 文件本身的功能很简单，但它在一个更大的 Frida 测试框架中扮演着重要的角色，用于验证 Frida 在处理特定代码结构（不内联的函数）时，能否准确地报告警告的位置。这对于确保 Frida 在各种复杂的逆向工程场景中的可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/22 warning location/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,9 +127,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

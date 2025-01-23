@@ -104,11 +104,13 @@ extern "C" void __sanitizer_cov_trace_pc_guard(uint32_t* guard) {
 
 总而言之，`v8/src/fuzzilli/cov.cc` 是 V8 模糊测试框架中用于收集和管理代码覆盖率的关键组件，它通过共享内存与模糊测试器通信，并利用 LLVM Sanitizer 的功能来追踪 JavaScript 代码的执行路径，从而有效地指导模糊测试过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/fuzzilli/cov.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ void cov_update_builtins_basic_block_coverage(
     }
   }
 }
-
-"""
-
 ```

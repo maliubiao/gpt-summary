@@ -224,15 +224,17 @@ While developers don't directly manipulate the `ExternalPointerTable`, understan
 
 In summary, `v8/src/sandbox/external-pointer-table.h` defines a crucial mechanism for V8 to safely interact with memory outside its own heap. It provides type safety, integrates with garbage collection, and supports compaction, making it a vital component for both sandboxing and memory management within the V8 engine. While JavaScript developers don't directly interact with it, its existence underpins the functionality of native integrations and the safe management of external resources.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/external-pointer-table.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/external-pointer-table.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -656,7 +658,4 @@ static_assert(sizeof(ExternalPointerTable) == ExternalPointerTable::kSize);
 #endif  // V8_COMPRESS_POINTERS
 
 #endif  // V8_SANDBOX_EXTERNAL_POINTER_TABLE_H_
-
-"""
-
 ```

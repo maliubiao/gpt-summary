@@ -181,14 +181,16 @@ Response: Let's break down the thought process for analyzing this C++ unit test 
 
 总而言之，`interest_group_unittest.cc` 通过各种测试用例，细致地验证了 `InterestGroup` 类的核心功能，特别是与隐私保护和报告机制相关的部分，这对于确保 Protected Audience API 的正确性和安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/interest_group_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -441,7 +443,4 @@ TEST(InterestGroupTest, TrustedBiddingSignalsSlotSizeMode) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

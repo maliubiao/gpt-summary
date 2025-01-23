@@ -210,15 +210,17 @@ createPoint(1, 2);
 
 `v8/src/compiler/js-heap-broker.h` 定义的 `JSHeapBroker` 类是 V8 优化编译器的关键组件，它充当了编译器和 JavaScript 堆之间的信息桥梁。它负责缓存对象信息、管理持久句柄、处理反馈向量、提供属性访问信息等，所有这些都旨在帮助编译器更好地理解 JavaScript 代码的运行时行为，并生成更高效的机器码。它不会直接阻止用户编写错误的 JavaScript 代码，但其提供的优化能力可以间接地影响代码的性能表现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-heap-broker.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-heap-broker.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -881,7 +883,4 @@ READ_ONLY_ROOT_LIST(V)
 }  // namespace v8
 
 #endif  // V8_COMPILER_JS_HEAP_BROKER_H_
-
-"""
-
 ```

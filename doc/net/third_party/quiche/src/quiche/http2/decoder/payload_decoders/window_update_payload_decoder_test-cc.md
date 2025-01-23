@@ -106,15 +106,17 @@ This iterative process of examining the code, understanding its purpose, connect
 
 因此，当用户遇到网络问题时，开发人员可以通过检查网络抓包（例如使用 Wireshark）来查看浏览器发送和接收的 HTTP/2 帧，包括 `WINDOW_UPDATE` 帧。如果发现接收到的 `WINDOW_UPDATE` 帧格式异常，可以进一步分析 `WindowUpdatePayloadDecoder` 的代码和测试用例，以确定问题所在。例如，如果抓包显示接收到了一个 payload 大小不为 4 字节的 `WINDOW_UPDATE` 帧，那么 `WrongSize` 测试用例就模拟了这种情况，可以帮助理解解码器是如何处理这种错误的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/decoder/payload_decoders/window_update_payload_decoder_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ TEST_F(WindowUpdatePayloadDecoderTest, VariousPayloads) {
 }  // namespace
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

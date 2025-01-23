@@ -223,14 +223,16 @@ animate();
 
 总而言之，`blink/renderer/core/animation/svg_length_list_interpolation_type.cc` 是 Blink 渲染引擎中一个关键的组件，它负责确保 SVG 长度列表属性的动画和过渡能够平滑且正确地执行，为丰富的 Web 动画效果提供了基础支持。理解其功能有助于开发者更好地利用 CSS 和 JavaScript 来创建动态的 SVG 图形。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/svg_length_list_interpolation_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +326,4 @@ SVGPropertyBase* SVGLengthListInterpolationType::AppliedSVGValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

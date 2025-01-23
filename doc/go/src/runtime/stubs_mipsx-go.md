@@ -163,7 +163,7 @@ By following these steps, we can effectively analyze the given Go code snippet a
 
 这段 `stubs_mipsx.go` 文件是 Go 运行时在 MIPS 架构下的一个占位符或者部分实现。`load_g()` 和 `save_g()` 是 Goroutine 切换的关键汇编接口的声明，而 `getfp()` 是一个尝试获取帧指针但目前在 MIPS 上未实现的功能。使用者需要注意 `getfp()` 在 MIPS 上总是返回 `0` 这一事实。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/stubs_mipsx.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -171,8 +171,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -188,9 +190,4 @@ func save_g()
 // getfp returns the frame pointer register of its caller or 0 if not implemented.
 // TODO: Make this a compiler intrinsic
 func getfp() uintptr { return 0 }
-
-"""
-
-
-
 ```

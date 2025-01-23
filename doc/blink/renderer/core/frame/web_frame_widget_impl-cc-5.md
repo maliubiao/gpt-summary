@@ -159,15 +159,17 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 总而言之，这部分代码主要负责处理用户在网页上进行的文本编辑和选择操作，并为输入法提供底层支持。它将用户的意图（例如，按下 `Ctrl+C` 复制，或者通过输入法输入文字）转化为 Blink 引擎内部对 DOM 树的修改和渲染更新。同时，也包含了一些与窗口和屏幕属性管理以及测试相关的辅助功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_widget_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 m::blink::ImeTextSpanInfo::New(
         ime_text_span, widget_base_->BlinkSpaceToEnclosedDIPs(rect)));
   }
@@ -1064,7 +1066,4 @@ WebPlugin* WebFrameWidgetImpl::GetFocusedPluginContainer() {
     return nullptr;
   if (auto* container = focused_frame->GetWebPluginContainer())
     return cont
-"""
-
-
 ```

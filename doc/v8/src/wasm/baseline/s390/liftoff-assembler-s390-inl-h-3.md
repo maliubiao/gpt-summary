@@ -642,7 +642,7 @@ void LiftoffStackSlots::Construct(int param_slots) {
             UNREACHABLE();
         }
         break;
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/s390/liftoff-assembler-s390-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/s390/liftoff-assembler-s390-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -650,9 +650,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-  LoadAndExtend8x8SLE(dst.fp(), src_op, r1);
+### 源代码
+```c
+LoadAndExtend8x8SLE(dst.fp(), src_op, r1);
     } else if (memtype == MachineType::Uint8()) {
       LoadAndExtend8x8ULE(dst.fp(), src_op, r1);
     } else if (memtype == MachineType::Int16()) {
@@ -1288,8 +1290,4 @@ void LiftoffStackSlots::Construct(int param_slots) {
 #undef BAILOUT
 
 #endif  // V8_WASM_BASELINE_S390_LIFTOFF_ASSEMBLER_S390_INL_H_
-
-"""
-
-
 ```

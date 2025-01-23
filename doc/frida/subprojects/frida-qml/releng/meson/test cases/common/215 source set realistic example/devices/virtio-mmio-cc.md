@@ -143,7 +143,7 @@ if (Process.findModuleByName("模块名包含virtio的库")) { // 替换为实�
 
 总而言之，`virtio-mmio.cc` 是 Frida 测试框架的一部分，用于模拟 VirtIO MMIO 设备的简单初始化过程。理解它的功能需要一定的 VirtIO 和底层硬件交互的知识，并且它可以作为逆向工程中理解相关系统行为的一个起点或参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/215 source set realistic example/devices/virtio-mmio.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "virtio.h"
@@ -169,7 +171,4 @@ void VirtioMMIODevice::say_hello()
 }
 
 static VirtioMMIODevice virtio_mmio;
-
-"""
-
 ```

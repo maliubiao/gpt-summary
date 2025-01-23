@@ -117,11 +117,13 @@ console.timeEnd("manyCalls");
 
 总而言之，`builtins-lazy-gen.cc` 文件定义了 V8 引擎中处理 JavaScript 函数首次调用的关键逻辑，它负责触发延迟编译，并根据函数的执行情况进行优化，最终提升 JavaScript 代码的执行效率。虽然 JavaScript 开发者不能直接操作这个文件，但可以观察到延迟编译和优化的效果对 JavaScript 应用的启动速度和运行时性能带来的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-lazy-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -390,7 +392,4 @@ TF_BUILTIN(OptimizeTurbofanEager, LazyBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

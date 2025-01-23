@@ -184,7 +184,7 @@ wasmModule.instance.exports.simdFunction(1, 2, 3, 4); // This would likely be wr
 
 This part of the Wasm SIMD test suite in V8 focuses on thoroughly testing various SIMD instructions, particularly those involving integer and floating-point operations, conversions, and memory access, with a strong emphasis on verifying the effectiveness of the Turbofan compiler's vectorization optimizations, including "force packing" and "intersect packing" techniques. It uses C++ to directly construct and execute Wasm code snippets, asserting the correctness of the results. The tests also indirectly verify that the compiler can generate efficient 256-bit SIMD instructions when appropriate.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-simd.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-run-wasm-simd.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,9 +192,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共9部分，请归纳一下它的功能
+```
 
-"""
-                         WASM_I32V(1))),
+### 源代码
+```cpp
+WASM_I32V(1))),
 
            WASM_SIMD_STORE_MEM_OFFSET(8, WASM_ZERO, WASM_LOCAL_GET(temp1)),
            WASM_SIMD_STORE_MEM_OFFSET(24, WASM_ZERO, WASM_LOCAL_GET(temp2)),
@@ -882,8 +884,4 @@ TEST(RunWasmTurbofan_I8x32UConvertI16x16) {
         r.builder().WriteMemory(&memory[j], values[i + j]);                    \
       }                                                                        \
       r.Call(0, 16);                                                           \
-                                                              
-"""
-
-
 ```

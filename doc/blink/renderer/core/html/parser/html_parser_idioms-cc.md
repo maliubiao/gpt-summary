@@ -145,14 +145,16 @@ This systematic approach helps to break down the seemingly complex task of under
 
 总而言之，`html_parser_idioms.cc` 提供了一组核心的、可重用的工具函数，用于处理 HTML 解析过程中常见的模式，包括字符串清理、数字解析、字符编码处理以及线程安全的比较操作。 它的存在简化了 HTML 解析器的开发，并确保了对 HTML 规范的正确实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_parser_idioms.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Apple Inc. All rights reserved.
  *
@@ -647,7 +649,4 @@ String AttemptStaticStringCreation(base::span<const UChar> characters,
 }
 
 }  // namespace blink
-
-"""
-
 ```

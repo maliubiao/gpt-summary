@@ -163,7 +163,7 @@ By following this systematic approach, combining code analysis with knowledge of
 
 这段代码片段主要负责 `MediaSource` 对象的生命周期管理（清理资源）、创建关联的 `WebSourceBuffer` 对象（这是向 `MediaSource` 提供媒体数据的关键步骤），以及调度异步事件。它直接关联到 JavaScript 中 `MediaSource` API 的使用，特别是 `addSourceBuffer()` 方法和相关的事件处理。 代码中也包含了错误处理逻辑，确保在创建 `SourceBuffer` 时，能够妥善处理不支持的类型和超出配额的情况，并将这些错误信息反馈给 JavaScript。 这部分代码是 Chromium Blink 引擎中实现 Media Source Extensions (MSE) 功能的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediasource/media_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e can do some simple cleanup,
       // but must not access |*web_media_source_| or our SourceBuffers'
       // |*web_source_buffer_|'s. We're helped by the demuxer not calling us or
@@ -289,8 +291,4 @@ void MediaSource::ScheduleEvent(const AtomicString& event_name) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

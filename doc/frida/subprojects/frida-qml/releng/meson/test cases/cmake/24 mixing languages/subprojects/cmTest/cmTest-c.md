@@ -127,7 +127,7 @@ Interceptor.attach(Module.findExportByName(null, "foo"), {
 
 总而言之，这段代码虽然简单，但它很好地展示了混合语言构建环境中的基本概念，以及在逆向工程中可能遇到的代码结构和调试场景。 Frida 的上下文提示了用户可能正在进行动态分析，而 CMake 的存在则指向了构建配置的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/24 mixing languages/subprojects/cmTest/cmTest.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "cmTest.h"
 #include <stdio.h>
 
@@ -150,7 +152,4 @@ int doStuff(void) {
   printf("Hello World\n");
   return foo(42);
 }
-
-"""
-
 ```

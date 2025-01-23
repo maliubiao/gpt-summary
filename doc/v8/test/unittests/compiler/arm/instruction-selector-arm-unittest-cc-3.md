@@ -103,7 +103,7 @@ I've mentally grouped the tests by operation (e.g., integer arithmetic, bitwise 
 
 作为第四部分，这个代码片段和整个 `instruction-selector-arm-unittest.cc` 文件一起，构成了一个全面的测试套件，用于确保 V8 引擎在 ARM 架构上能够正确地将各种 JavaScript 操作编译成高效且正确的机器码。它涵盖了多种数据类型、运算符和 ARM 特有的指令，是保证 V8 在 ARM 平台上稳定性和性能的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/arm/instruction-selector-arm-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/arm/instruction-selector-arm-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -111,8 +111,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 RT_EQ(2U, s[2]->InputCount());
   EXPECT_EQ(s.ToVreg(s[0]->InputAt(0)), s.ToVreg(s[2]->InputAt(0)));
   EXPECT_EQ(s.ToVreg(s[1]->Output()), s.ToVreg(s[2]->InputAt(1)));
@@ -883,8 +885,4 @@ INSTANTIATE_TEST_SUITE_P(InstructionSelectorTest,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

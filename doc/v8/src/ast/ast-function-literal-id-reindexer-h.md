@@ -170,15 +170,17 @@ FunctionLiteral (ID: 15) - outerFunction  // 5 + 10
 
 `v8/src/ast/ast-function-literal-id-reindexer.h` 定义了一个用于重索引 AST 中函数字面量 ID 的工具类。它在 V8 的内部编译和优化流程中扮演着重要的角色，确保函数 ID 的唯一性和一致性，从而支持各种代码转换和优化操作。虽然用户不会直接接触到这个类，但它处理的是 JavaScript 中最核心的元素之一：函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/ast-function-literal-id-reindexer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/ast-function-literal-id-reindexer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ class AstFunctionLiteralIdReindexer final
 }  // namespace v8
 
 #endif  // V8_AST_AST_FUNCTION_LITERAL_ID_REINDEXER_H_
-
-"""
-
 ```

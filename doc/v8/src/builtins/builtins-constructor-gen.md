@@ -100,11 +100,13 @@ I need to:
 
 `builtins-constructor-gen.cc` 是 V8 引擎中一个至关重要的文件，它负责生成处理 JavaScript 中构造函数调用和字面量创建的核心代码。通过使用 CodeStubAssembler，它能够生成高度优化的机器码，从而提升 JavaScript 的执行效率。  理解这个文件有助于深入了解 V8 引擎如何高效地处理 JavaScript 的面向对象特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-constructor-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -874,7 +876,4 @@ void ConstructorBuiltinsAssembler::CopyMutableHeapNumbersInObject(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

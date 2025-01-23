@@ -101,11 +101,13 @@ if (global.gc) {
 
 `prefinalizer-unittest.cc` 文件测试了 V8 引擎的 C++ 垃圾回收机制中一个重要的特性：预终结器。这个特性允许在对象真正被释放之前执行一些清理操作，这与 JavaScript 中的 `FinalizationRegistry` 提供了类似的功能，用于在对象被垃圾回收后执行清理任务。这有助于管理外部资源或执行其他需要在对象生命周期结束时进行的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/prefinalizer-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -483,7 +485,4 @@ TEST_F(PrefinalizerTest, VirtualPrefinalizer) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

@@ -204,7 +204,7 @@ By following this thought process, combining code analysis with an understanding
 
 总而言之，`subprojectscommandtests.py` 是 Frida 项目中用于确保 Meson 子项目管理功能正确性的关键测试文件。虽然它不直接涉及逆向操作或底层内核交互，但它保证了构建系统的可靠性，这对于 Frida 工具链的正常工作至关重要，并且可以作为用户调试构建问题的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/subprojectscommandtests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -212,8 +212,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -514,7 +516,4 @@ class SubprojectsCommandTests(BasePlatformTests):
         self.assertFalse(Path(self.subprojects_dir / 'sub_file').exists())
         self.assertFalse(Path(self.subprojects_dir / 'sub_git').exists())
         self.assertFalse(Path(self.subprojects_dir / 'redirect.wrap').exists())
-
-"""
-
 ```

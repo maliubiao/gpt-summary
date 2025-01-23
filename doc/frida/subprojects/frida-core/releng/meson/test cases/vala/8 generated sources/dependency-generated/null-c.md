@@ -119,7 +119,7 @@ By following this thought process, I could arrive at the detailed and informativ
 
 `null.c` 作为一个自动生成的空文件，本身的功能很有限，主要是作为构建系统中的占位符或最小依赖项。它间接地支持了 Frida 的逆向能力，并反映了构建系统需要处理不同平台和依赖关系的能力。用户通常不会直接操作这个文件，但它可能是 Frida 构建和调试过程中一个微小的线索。理解这类文件的作用有助于深入理解 Frida 的构建流程和内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/vala/8 generated sources/dependency-generated/null.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,10 +127,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 //
-
-"""
-
 ```

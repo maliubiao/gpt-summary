@@ -153,7 +153,7 @@ template <typename T> requires std::is_integral_v<T> my_function
 
 总而言之，这部分 `ast.go` 代码定义了用于表示 C++ 符号反解结果的抽象语法树的结构。它提供了一组 Go 结构体，每个结构体代表 C++ 语言中的一个特定元素，并提供了一些操作这些结构体的方法，例如遍历、复制和打印。 这为 `demangle` 工具的核心逻辑提供了数据模型的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/ianlancetaylor/demangle/ast.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -162,8 +162,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 turn nil
 	}
 	module := me.Module.Copy(fn, skip)
@@ -649,10 +651,4 @@ func (ps *printState) isEmpty(a AST) bool {
 		return false
 	}
 }
-
-"""
-
-
-
-
 ```

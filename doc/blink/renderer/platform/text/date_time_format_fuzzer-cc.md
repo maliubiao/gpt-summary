@@ -138,14 +138,16 @@ By following this structured approach, combining code analysis with knowledge of
 
 `date_time_format_fuzzer.cc` 是一个用于测试 Blink 引擎中日期和时间格式字符串解析功能的工具。它通过生成大量的随机输入，并使用一个简单的 token 处理器来验证解析结果，以发现潜在的 bug 和安全漏洞。这对于确保基于 Blink 的浏览器（如 Chrome）能够正确且安全地处理各种日期和时间格式至关重要，并直接影响到 JavaScript `Intl.DateTimeFormat` API 的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/date_time_format_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -187,7 +189,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
       WTF::String::FromUTF8(UNSAFE_BUFFERS(base::span(data, size))), handler);
   return 0;
 }
-
-"""
-
 ```

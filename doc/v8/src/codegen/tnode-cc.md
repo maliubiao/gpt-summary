@@ -130,15 +130,17 @@ let x = 5 + 3;
 
 `v8/src/codegen/tnode.cc`  是 V8 代码生成器中的核心组件，它定义了用于表示 JavaScript 代码操作的中间表示 (`TNode`)。 虽然开发者不会直接接触 `TNode`，但它在 JavaScript 代码的编译和执行过程中起着至关重要的作用。 它连接了高级的 JavaScript 代码和底层的机器码，并影响着代码的性能和错误处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/tnode.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/tnode.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -152,7 +154,4 @@ constexpr MachineType MachineTypeOf<ExternalReference>::value;
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

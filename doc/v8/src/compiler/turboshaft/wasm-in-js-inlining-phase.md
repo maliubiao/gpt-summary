@@ -116,11 +116,13 @@ function calculateSum(a, b) {
 
 `v8/src/compiler/turboshaft/wasm-in-js-inlining-phase.cc` 文件定义了一个 V8 引擎中重要的编译阶段，它通过将满足条件的 Wasm 函数代码内联到 JavaScript 代码中，来优化 JavaScript 调用 Wasm 函数的性能。这对于构建高性能的 Web 应用，尤其是那些大量使用 WebAssembly 的应用来说，至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-in-js-inlining-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ void WasmInJSInliningPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

@@ -143,14 +143,16 @@ By following this thought process, combining code analysis with an understanding
 
 总而言之，`shared_gpu_context.cc` 是 Blink 渲染引擎中一个至关重要的组件，它集中管理 GPU 上下文和相关的资源，为硬件加速渲染提供了基础，并直接影响着网页的图形性能和用户体验。虽然开发者通常不直接操作这个类，但理解其功能有助于理解浏览器如何利用 GPU 来渲染网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/shared_gpu_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -455,7 +457,4 @@ bool SharedGpuContext::MaySupportImageChromium() {
 #endif  // BUILDFLAG(IS_ANDROID)
 
 }  // blink
-
-"""
-
 ```

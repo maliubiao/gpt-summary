@@ -116,7 +116,7 @@ func main() {
 
 总而言之，`go/src/runtime/race/timer_test.go` 这段代码的功能是测试在高并发场景下 `time.Ticker` 的行为，特别是利用 Go 语言的竞态检测器来发现潜在的并发问题。它通过创建多个 goroutine 并发地使用 `time.Ticker`，并使用互斥锁进行简单的同步，模拟并发环境。使用者在使用 `time.Ticker` 时需要注意及时停止以释放资源，并了解其精度限制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/race/timer_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -124,8 +124,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -159,9 +161,4 @@ func TestTimers(t *testing.T) {
 	}
 	wg.Wait()
 }
-
-"""
-
-
-
 ```

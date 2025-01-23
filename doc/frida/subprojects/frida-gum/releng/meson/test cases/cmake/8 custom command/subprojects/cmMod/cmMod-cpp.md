@@ -146,7 +146,7 @@ input()
 
 总结来说，`cmMod.cpp` 自身的功能相对简单，主要用于在 Frida 的测试环境中演示和验证某些功能。它的存在是 Frida 开发和测试流程的一部分，涉及到构建系统、代码编译、动态链接以及 Frida 的运行时行为。理解这个文件的作用需要将其放在 Frida 的整体架构和测试框架中进行考虑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include "genTest.hpp"
 #include "cpyBase.txt"
@@ -180,7 +182,4 @@ string cmModClass::getStr() const {
 string cmModClass::getOther() const {
   return "Strings:\n - " + getStrCpy() + "\n - " + getStrNext() + "\n - " + getStrCpyTest();
 }
-
-"""
-
 ```

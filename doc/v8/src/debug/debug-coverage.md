@@ -152,11 +152,13 @@ add(5, 2); // 调用一次，a > 0 的分支会被执行
 
 总而言之，`v8/src/debug/debug-coverage.cc` 是 V8 引擎中负责实现代码覆盖率收集的核心组件，它通过跟踪 JavaScript 代码的执行情况，为开发者提供代码执行的详细信息，帮助他们进行测试和代码优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-coverage.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -980,7 +982,4 @@ void Coverage::SelectMode(Isolate* isolate, debug::CoverageMode mode) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

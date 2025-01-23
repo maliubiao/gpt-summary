@@ -134,7 +134,7 @@ fetch('https://example.com/data')
 
 总而言之，这部分代码专注于测试 `QuicSentPacketManager` 在关键网络事件（接收 ACK、超时、连接迁移）下的核心逻辑和状态管理，确保 QUIC 连接的可靠性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_sent_packet_manager_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::Delta::FromMilliseconds(11), clock_.Now());
   manager_.OnAckRange(QuicPacketNumber(1), QuicPacketNumber(2));
   EXPECT_EQ(PACKETS_NEWLY_ACKED,
@@ -902,8 +904,4 @@ TEST_F(QuicSentPacketManagerTest,
                                    ENCRYPTION_FORWARD_SECURE, kEmptyCounts));
   EXPECT_EQ(0u, BytesInFlight());
   EXPECT_TRUE(manager_.GetRttStats()->latest_rtt().IsZero());
-
-"""
-
-
 ```

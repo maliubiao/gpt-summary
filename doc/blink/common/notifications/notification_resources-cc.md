@@ -123,14 +123,16 @@ new Notification('下载完成', {
 
 `blink/common/notifications/notification_resources.cc` 文件定义了 `NotificationResources` 类，这个类在 Blink 引擎中负责封装和管理与浏览器通知相关的各种资源信息。它充当了 Web 开发者通过 JavaScript API 创建的通知请求与 Blink 引擎内部通知处理逻辑之间的桥梁。  虽然它本身是 C++ 代码，但其功能直接关系到 Web 开发者使用的 JavaScript `Notification` API，并且间接与 HTML 内容有关。  理解此类有助于深入了解 Chromium 如何处理浏览器通知。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/notifications/notification_resources.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ NotificationResources::NotificationResources(
 NotificationResources::~NotificationResources() {}
 
 }  // namespace blink
-
-"""
-
 ```

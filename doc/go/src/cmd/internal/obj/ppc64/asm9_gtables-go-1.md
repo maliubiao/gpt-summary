@@ -96,7 +96,7 @@ case ABRW:
 
 总而言之，这段代码是 Go 语言 PowerPC 64 位汇编器实现的关键部分，它负责将汇编指令翻译成机器可以执行的二进制代码。理解这段代码需要对 PowerPC 架构的指令集和编码规范有深入的了解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/ppc64/asm9_gtables.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -105,8 +105,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 *[5]uint32) {
 	o0 := GenOpcodes[p.As-AXXSETACCZ]
 	o0 |= uint32(p.To.Reg&0x1f) << 21                // VRT
@@ -511,10 +513,4 @@ func opsetGen(from obj.As) bool {
 	}
 	return true
 }
-
-"""
-
-
-
-
 ```

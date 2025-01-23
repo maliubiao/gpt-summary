@@ -237,7 +237,7 @@ func enumProcesses(processIds []uint32, bytesReturned *uint32) error {
 
 总而言之，这段代码是 Go 语言在 Windows 平台上实现底层系统调用的重要组成部分，它为 Go 语言程序提供了与 Windows 操作系统内核交互的能力，从而支持更高级的功能和抽象。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/syscall_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -245,10 +245,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-	return err
+### 源代码
+```go
+return err
 }
 
 func WSARecvMsg(fd Handle, msg *WSAMsg, bytesReceived *uint32, overlapped *Overlapped, croutine *byte) error {
@@ -929,10 +930,4 @@ const (
 	EV_ERR     = 0x0080
 	EV_RING    = 0x0100
 )
-
-"""
-
-
-
-
 ```

@@ -208,7 +208,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言在 illumos 系统上实现 TCP Keep-Alive 功能的关键部分，它负责读取和验证相关的 socket 选项。使用者需要理解其平台依赖性以及 illumos 特有的 Keep-Alive 行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/tcpconn_keepalive_illumos_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -216,8 +216,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -338,9 +340,4 @@ func verifyKeepAliveSettings(t *testing.T, fd fdType, oldCfg, cfg KeepAliveConfi
 		t.Fatalf("TCP_KEEPALIVE_ABORT_THRESHOLD: got %dms; want %v", tcpKeepAliveAbortInterval, tcpKeepAliveAbortThreshold)
 	}
 }
-
-"""
-
-
-
 ```

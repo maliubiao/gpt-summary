@@ -181,11 +181,13 @@ console.assert(breakOccurred, "Break for early termination did not occur.");
 
 `v8-array-unittest.cc` 通过一系列单元测试，详细验证了 V8 引擎中 `v8::Array` 类的 `Iterate` 方法的正确性和健壮性。这个底层的迭代机制为 JavaScript 中各种高级数组迭代方法提供了基础。理解这些测试用例可以帮助我们更深入地了解 JavaScript 数组在 V8 引擎中的实现方式和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/v8-array-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -351,7 +353,4 @@ TEST_F(ArrayTest, IterateEarlyTermination) {
 
 }  // namespace
 }  // namespace v8
-
-"""
-
 ```

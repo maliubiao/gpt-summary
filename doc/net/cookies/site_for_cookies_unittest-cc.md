@@ -204,15 +204,17 @@ By following this detailed thought process, including analysis, categorization, 
 
 总而言之，`net/cookies/site_for_cookies_unittest.cc` 文件通过大量的测试用例，详细验证了 Chromium 中 `SiteForCookies` 类的各种功能和边界条件，这对于理解浏览器如何处理 Cookie 以及与 JavaScript 的交互至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/site_for_cookies_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -844,7 +846,4 @@ TEST(SiteForCookiesTest, LessThan) {
 }
 
 }  // namespace net
-
-"""
-
 ```

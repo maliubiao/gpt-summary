@@ -196,15 +196,17 @@ internal/race
 
 这段代码提供了一套用于编码和解码路径的机制，主要目的是在 Go 语言的构建工具内部安全地表示和处理包路径。 `PathToPrefix` 用于将路径编码成前缀形式，而 `PrefixToPath` 则用于解码。 `TestRuntimePackageList` （虽然被跳过）旨在验证运行时包的依赖关系是否被正确标记。  使用者应该使用提供的函数进行编码和解码，避免手动操作，并注意 `PrefixToPath` 可能会因为无效的转义序列而返回错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/objabi/path_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -298,9 +300,4 @@ func TestRuntimePackageList(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

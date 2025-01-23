@@ -208,15 +208,17 @@ This iterative process of code analysis, inference, example generation, and refi
 
 总结来说，`restriction_target.cc` 文件定义了用于限制媒体流捕获范围的关键类，它通过 JavaScript API 与网页交互，依赖于 HTML 元素作为目标，并且受到浏览器底层媒体捕获机制的支持。理解这个文件有助于理解 Chromium 中如何实现精细化的屏幕或窗口共享功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/restriction_target.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ RestrictionTarget::RestrictionTarget(String id)
                        std::move(id)) {}
 
 }  // namespace blink
-
-"""
-
 ```

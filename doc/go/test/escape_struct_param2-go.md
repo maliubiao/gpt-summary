@@ -176,15 +176,17 @@ func main() {
 
 在这个例子中，`data` 是 `processData` 函数的局部变量，分配在栈上。 当函数返回时，`data` 的栈帧被销毁。 返回指向 `data.Value` 的指针将导致悬挂指针，访问它会导致未定义的行为。  尽管 Go 的逃逸分析会识别出这种情况并可能将 `data` 分配到堆上，但开发者应该避免编写这样的代码。 正确的做法通常是返回 `Data` 结构体本身，或者在堆上分配 `Data`。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_struct_param2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -m -l
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -483,9 +485,4 @@ func tUPPiSPPia() { // This test is sensitive to the level cap in function summa
 	v := &V{u1, u2, &u3}  // ERROR "&V{...} does not escape$"
 	Ssink = v.UPPiSPPia() // Ssink = *&ps6 = &s6 (only &s6 really escapes)
 }
-
-"""
-
-
-
 ```

@@ -200,7 +200,7 @@ func (f *File) Close() error {
 
 总而言之，`go/src/internal/poll/file_plan9.go` 这段代码的核心功能是在 Plan 9 操作系统上为文件描述符提供同步机制，主要通过 `FDMutex` 结构体及其方法实现读写锁和引用计数，以确保并发文件操作的安全性。开发者在使用时需要注意正确地获取和释放锁，以及管理好文件描述符的生命周期。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/file_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -208,8 +208,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -252,9 +254,4 @@ func (fdmu *FDMutex) WriteLock() bool {
 func (fdmu *FDMutex) WriteUnlock() bool {
 	return fdmu.fdmu.rwunlock(false)
 }
-
-"""
-
-
-
 ```

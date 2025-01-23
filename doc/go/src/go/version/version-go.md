@@ -208,7 +208,7 @@ func main() {
 
 `go/version` 包提供了一组用于操作 Go 版本字符串的实用工具，包括提取语言版本、比较版本以及验证版本字符串的有效性。它依赖于内部的 `internal/gover` 包来实现核心的版本比较和验证逻辑。使用者需要注意确保传递给 `Compare` 和 `IsValid` 函数的版本字符串以 "go" 开头，以避免出现预期之外的结果。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/version/version.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -216,8 +216,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -282,9 +284,4 @@ func Compare(x, y string) int {
 func IsValid(x string) bool {
 	return gover.IsValid(stripGo(x))
 }
-
-"""
-
-
-
 ```

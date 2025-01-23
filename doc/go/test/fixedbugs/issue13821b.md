@@ -157,15 +157,17 @@ func main() {
 
 `issue13821b.go` 是一个 Go 语言编译器的回归测试用例，用于验证编译器在处理自定义布尔类型进行逻辑 `&&` 运算时的类型检查是否正确。 它强调了 Go 语言强类型系统的特性，即即使底层类型相同（如 `bool`），不同的自定义类型之间也不能直接进行某些操作，需要进行显式的类型转换。 这有助于避免潜在的逻辑错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue13821b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -190,9 +192,4 @@ var x6 = b2 && x1   // ERROR "mismatched types B2 and B|incompatible types"
 var x7 = b2 && x2   // ERROR "mismatched types B2 and B|incompatible types"
 
 var x8 = b && !B2(true) // ERROR "mismatched types B and B2|incompatible types"
-
-"""
-
-
-
 ```

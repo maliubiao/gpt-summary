@@ -173,15 +173,17 @@ console.log(isMatch(stringSet, "HELLO")); // 输出: false
 
 `v8/src/objects/string-set-inl.h` 定义了用于字符串集合的形状 `StringSetShape`，它规定了如何判断字符串是否匹配（基于内容相等）以及如何计算字符串的哈希值。这与 JavaScript 中 `Set` 对象存储字符串时的行为有相似之处，特别是关于元素唯一性和高效查找的机制。理解这些底层的实现细节有助于更深入地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/string-set-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/string-set-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ uint32_t StringSetShape::HashForObject(ReadOnlyRoots roots,
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_STRING_SET_INL_H_
-
-"""
-
 ```

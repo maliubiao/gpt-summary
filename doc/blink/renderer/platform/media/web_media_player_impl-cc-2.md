@@ -95,15 +95,17 @@ Finally, let's synthesize the findings into a structured response.
 
 这部分代码是 `WebMediaPlayerImpl` 的核心组成部分，主要负责管理媒体播放器的运行时行为，包括内存管理、后台优化、远程播放控制、性能监控和各种状态管理。它确保了在各种场景下（例如，页面隐藏、远程播放）媒体播放器能够正确高效地工作，并收集必要的性能数据用于分析和改进。它与 JavaScript、HTML 和 CSS 通过浏览器提供的 API 和事件进行交互，共同实现了网页上的媒体播放功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/web_media_player_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ce_memory_usage
            << ", Demuxer: " << demuxer_memory_usage;
 
@@ -890,8 +892,4 @@ void WebMediaPlayerImpl::DidMediaMetadataChange() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

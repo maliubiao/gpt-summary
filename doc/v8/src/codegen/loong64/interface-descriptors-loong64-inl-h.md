@@ -197,15 +197,17 @@ When `myObject` is `null`, and you try to access a property, the `LoadDescriptor
 
 **In summary, `interface-descriptors-loong64-inl.h` is a crucial file that defines the low-level calling conventions and register usage for various operations within the V8 JavaScript engine on the LoongArch64 architecture. It acts as a blueprint for how the engine manipulates data at the machine code level, directly impacting how JavaScript code is executed.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/loong64/interface-descriptors-loong64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/loong64/interface-descriptors-loong64-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -610,7 +612,4 @@ constexpr auto WasmJSToWasmWrapperDescriptor::registers() {
 #endif  // V8_TARGET_ARCH_LOONG64
 
 #endif  // V8_CODEGEN_LOONG64_INTERFACE_DESCRIPTORS_LOONG64_INL_H_
-
-"""
-
 ```

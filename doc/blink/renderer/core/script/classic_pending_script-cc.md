@@ -176,15 +176,17 @@ This iterative process of skimming, detailed analysis, connecting concepts, and 
 
 通过理解 `ClassicPendingScript` 的功能和状态转换，开发者可以更好地理解脚本加载的流程，并定位问题所在。他们可以在 `ClassicPendingScript` 的关键方法上设置断点，例如 `Fetch()`、`NotifyFinished()` 和 `GetSource()`，来跟踪脚本加载的各个阶段，并检查相关变量的值，从而更有效地进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/script/classic_pending_script.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -817,7 +819,4 @@ KURL ClassicPendingScript::UrlForTracing() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

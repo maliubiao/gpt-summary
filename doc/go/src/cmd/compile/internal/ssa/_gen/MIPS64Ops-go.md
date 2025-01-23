@@ -173,15 +173,17 @@ In this hypothetical (and incorrect) scenario, the compiler might try to place t
 
 In summary, `MIPS64Ops.go` is a crucial, auto-generated component of the Go compiler that provides the necessary information for generating efficient and correct machine code for the MIPS64 architecture. It's a low-level detail that most Go developers don't need to worry about directly, but it plays a fundamental role in the compilation process.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/_gen/MIPS64Ops.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -683,9 +685,4 @@ func init() {
 		linkreg:         int8(num["R31"]),
 	})
 }
-
-"""
-
-
-
 ```

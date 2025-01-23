@@ -103,11 +103,13 @@ console.log(product);
 
 **总结来说，`mul-toom.cc` 是 V8 引擎为了优化 JavaScript `BigInt` 的乘法性能而实现的一个关键组件，它直接影响了 JavaScript 中对大整数进行乘法运算的速度。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/mul-toom.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -331,7 +333,4 @@ void ProcessorImpl::MultiplyToomCook(RWDigits Z, Digits X, Digits Y) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

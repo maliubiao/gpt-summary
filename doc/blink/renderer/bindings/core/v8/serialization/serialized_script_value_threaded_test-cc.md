@@ -155,15 +155,17 @@ const dataView = new DataView(buffer); // Error: ArrayBuffer is detached
 
 总而言之，`serialized_script_value_threaded_test.cc` 是 Blink 引擎中一个非常重要的测试文件，它确保了在多线程环境下，JavaScript 值的序列化和反序列化机制的稳定性和安全性，这对于 Web Workers 等关键的 Web 技术的正常运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/serialization/serialized_script_value_threaded_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ TEST(SerializedScriptValueThreadedTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

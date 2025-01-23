@@ -109,7 +109,7 @@ By following these steps, I can construct a comprehensive and informative answer
 
 考虑到这是测试套件的第 9 部分，很可能前面的部分已经测试了 SPDY 协议的更基础的方面，例如帧的编码解码、会话管理等。  第 9 部分 `spdy_network_transaction_unittest.cc`  更侧重于 **测试基于 SPDY 协议的网络事务 (transactions) 的完整生命周期和各种交互场景**。它验证了 `SpdyNetworkTransaction` 作为网络请求的核心处理类，在各种正常和异常情况下的行为是否符合预期。这部分测试可能依赖于前面部分测试通过的更底层的 SPDY 功能。  接下来的部分可能专注于更高级的特性或与其他网络组件的集成测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -117,9 +117,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共12部分，请归纳一下它的功能
+```
 
-"""
-       kBufferSize % kMaxSpdyFrameChunkSize != 0) {
+### 源代码
+```cpp
+kBufferSize % kMaxSpdyFrameChunkSize != 0) {
         writes.push_back(CreateMockWrite(body2, i++));
       } else {
         writes.push_back(CreateMockWrite(body1, i++));
@@ -898,7 +900,4 @@ TEST_P(SpdyNetworkTransactionTest, WebSocketOverHTTP2) {
   MockWrite writes[] = {
       CreateMockWrite(req, 0), CreateMockWrite(settings_ack, 2),
       CreateMockWrite(websocket_request, 4), Cr
-"""
-
-
 ```

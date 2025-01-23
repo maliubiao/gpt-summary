@@ -30,7 +30,7 @@ Here's a plan to address the user's request:
 
 **总结来说，`cos_intel_data.handroid` 文件是 Android Bionic 库中 `cos` 函数质量保证的关键组成部分，它提供了一组用于验证该函数在 Intel 架构下实现正确性和精度的标准测试数据。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/cos_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -42,8 +42,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ,
     -0x1.921fb54442d17p-1
   },
@@ -1376,8 +1378,4 @@ Prompt:
     -0.0
   },
 };
-
-"""
-
-
 ```

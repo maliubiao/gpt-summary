@@ -115,7 +115,7 @@ node2: i32.add local.get 1, const 1
 
 总而言之，`v8/src/compiler/turboshaft/wasm-revec-reducer.cc` 的第一部分主要定义了用于 **识别和表示 WebAssembly 代码中可以进行 SIMD 向量化优化的结构和算法**。它专注于构建 SLP 树，处理 Load/Store 操作，以及识别特定的 SIMD 操作模式，为后续的向量化代码生成做准备。它旨在将标量的操作序列转换为更高效的 SIMD 指令，从而提升 WebAssembly 代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/wasm-revec-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/wasm-revec-reducer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -123,8 +123,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1076,7 +1078,4 @@ PackNode* SLPTree::BuildTreeRec(const NodeGroup& node_group,
       for (auto intersect_pnode : *intersect_packnodes) {
         if (intersect_pnode->IsSame(node_group)) {
           TRACE("Perfect diamond merge at intersec
-"""
-
-
 ```

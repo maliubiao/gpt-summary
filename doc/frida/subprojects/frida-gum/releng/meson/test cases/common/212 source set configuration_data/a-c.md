@@ -172,7 +172,7 @@ if (ObjC.available) {
 
 总的来说，这个简单的 `a.c` 文件是 Frida 测试框架中的一个基础组件，用于验证 Frida 动态修改程序行为的能力，特别是针对全局变量和函数调用。它的简单性使得测试目标明确，方便开发者进行功能验证和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/212 source set configuration_data/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdlib.h>
 #include "all.h"
 
@@ -190,7 +192,4 @@ int main(void)
     if (p) abort();
     f();
 }
-
-"""
-
 ```

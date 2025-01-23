@@ -86,11 +86,13 @@ console.log(message);
 
 `v8-string-conversions.cc` 文件在 V8 引擎的 Inspector 组件中扮演着关键的角色，它提供了高效且可靠的 UTF-8 和 UTF-16 之间的转换功能，使得 Inspector 能够正确地处理和传输包含各种字符的字符串数据，从而实现 JavaScript 代码的调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-string-conversions.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -493,7 +495,4 @@ std::basic_string<UChar> UTF8ToUTF16(const char* stringStart, size_t length) {
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

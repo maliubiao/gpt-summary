@@ -196,7 +196,7 @@ fetch('https://example.com/data.json')
 
 总而言之，`net/socket/ssl_client_socket_unittest.cc` 的第一部分主要关注 `SSLClientSocket` 的基础连接、读写操作以及错误处理的单元测试。它通过模拟各种场景，验证了 `SSLClientSocket` 在建立安全连接和进行数据传输时的核心功能，并为后续更复杂的测试用例奠定了基础。文件中定义的各种辅助类和枚举类型也为更全面和细致的测试提供了支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/ssl_client_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1143,7 +1145,4 @@ class SSLClientSocketReadTest
                             IOBuffer* buf,
                             int buf_len,
                             TestC
-"""
-
-
 ```

@@ -101,11 +101,13 @@ WebAssembly.instantiateStreaming(fetch('another_wasm_module.wasm'), importObject
 
 **`test-wasm-import-wrapper-cache.cc` 中的测试用例就是在模拟和验证这些缓存命中和缓存缺失的场景，确保 V8 的 WebAssembly 导入包装器缓存机制能够正确高效地工作。** 例如，`CacheHit` 测试就模拟了上述的第二次导入相同函数的情况，而 `CacheMissSig` 和 `CacheMissKind` 则模拟了导入不同签名或不同调用方式的函数的情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-wasm-import-wrapper-cache.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ TEST(CacheHitMissSig) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -137,11 +137,13 @@ function exampleNoEscapeStoreOp() {
 
 `late-escape-analysis-reducer.cc` 通过分析对象的生命周期和使用方式，识别出可以安全移除的堆对象分配，从而减少内存分配和垃圾回收的开销，是 V8 引擎优化 JavaScript 代码性能的重要组成部分。它通过精确地分析 `StoreOp` 等操作，来判断对象是否真正需要分配在堆上，还是可以通过更高效的方式（如栈分配或寄存器存储）来处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/late-escape-analysis-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ void LateEscapeAnalysisAnalyzer::MarkToRemove(OpIndex alloc) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

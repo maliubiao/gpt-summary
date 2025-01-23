@@ -173,15 +173,17 @@ By following these steps, including the process of self-correction and refinemen
 
 通过查看浏览器的网络请求日志 (在 Chrome 中打开开发者工具 -> Network)，你可以看到请求头中是否包含了 `Authorization` 字段，以及服务器的响应状态码，这些信息可以帮助你判断 `URLSecurityManager` 的行为是否符合预期。你也可以在 Chromium 的源代码中设置断点，跟踪 `URLSecurityManager` 的调用过程，更深入地理解其工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/url_security_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2010 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -290,7 +292,4 @@ TEST(URLSecurityManager, CanDelegate_NoAllowlist) {
 }
 
 }  // namespace net
-
-"""
-
 ```

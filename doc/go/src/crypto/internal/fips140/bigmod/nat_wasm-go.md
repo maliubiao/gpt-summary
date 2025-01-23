@@ -126,7 +126,7 @@ func main() {
 
 这段代码是 Go 语言中实现大整数运算的关键组成部分，特别是针对 WebAssembly 平台的优化，体现了在资源受限或特定架构下进行性能优化的思路。理解其功能需要对大整数表示和基本的算术运算有一定了解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/bigmod/nat_wasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -134,8 +134,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -197,9 +199,4 @@ func addMulVVW1536(z, x *uint, y uint) (c uint) {
 func addMulVVW2048(z, x *uint, y uint) (c uint) {
 	return addMulVVWWasm(z, x, y, 2048/_W)
 }
-
-"""
-
-
-
 ```

@@ -71,11 +71,13 @@ console.log(objectIndex2); // 输出: 250
 
 `v8/src/objects/simd.cc` 通过提供优化的 SIMD 实现，显著提升了 JavaScript 中数组 `indexOf` 和 `includes` 方法在大数据集上的性能，使得 JavaScript 应用程序能够更高效地处理数组操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/simd.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -529,7 +531,4 @@ uintptr_t ArrayIndexOfIncludesDouble(Address array_start, uintptr_t array_len,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

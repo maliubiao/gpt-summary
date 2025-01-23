@@ -183,15 +183,17 @@ console.log(sum);
 
 总的来说，`simplify-tf-loops.cc` 的目标是通过结构化转换来改进编译器内部循环的表示，这为后续的优化和分析奠定了基础，间接地有助于提高执行效率和代码的健壮性。它并不直接处理用户的 JavaScript 错误，但可以使编译器更好地理解和处理各种循环模式，包括那些由错误编程导致的模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/simplify-tf-loops.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/simplify-tf-loops.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ Reduction SimplifyTFLoops::Reduce(Node* node) {
 }
 
 }  // namespace v8::internal::compiler
-
-"""
-
 ```

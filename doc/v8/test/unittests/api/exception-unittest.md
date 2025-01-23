@@ -106,11 +106,13 @@ try {
 
 总而言之，`exception-unittest.cc` 是 V8 引擎质量保证的关键部分，它通过 C++ 代码模拟各种 JavaScript 异常场景，并验证 V8 引擎的异常处理机制是否符合预期，从而保证 JavaScript 代码在 V8 环境中能够可靠地运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/exception-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -381,7 +383,4 @@ TEST_F(APIExceptionTest, TryCatchFinallyStoresMessageUsingTryCatchHandler) {
 
 }  // namespace
 }  // namespace v8
-
-"""
-
 ```

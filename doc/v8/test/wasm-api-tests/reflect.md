@@ -107,11 +107,13 @@ exports.forEach(exportItem => {
 
 总而言之，`v8/test/wasm-api-tests/reflect.cc` 这个 C++ 文件测试了 V8 引擎中 WebAssembly C API 的反射能力，确保开发者可以使用 C++ 代码来获取 WebAssembly 模块的结构信息。而 JavaScript 也提供了相应的 API 来实现类似的功能，允许开发者在运行时检查 WebAssembly 模块的导出项。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/reflect.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ TEST_F(WasmCapiTest, Reflect) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

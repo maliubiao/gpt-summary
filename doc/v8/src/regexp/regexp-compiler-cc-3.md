@@ -146,7 +146,7 @@ fail_label:
 
 `v8/src/regexp/regexp-compiler.cc` 的第 4 部分主要负责将正则表达式中的文本匹配和选择逻辑转换为高效的机器指令。它通过多趟编译、预加载、快速检查、贪婪循环优化等技术来提高正则表达式的匹配性能。理解这部分代码的功能有助于理解 V8 如何高效地执行 JavaScript 中的正则表达式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eds_bounds_check, preloaded);
             break;
           case SIMPLE_CHARACTER_MATCH:
@@ -1007,7 +1009,4 @@ int ChoiceNode::EmitOptimizedUnanchoredSearch(RegExpCompiler* compiler,
   RegExpMacroAssembler* macro_assembler = compiler->macro_assembler();
   Isolate* isolate = macro_assembler->isolate();
   // At this point we know that we are at a non-greedy loop that will
-"""
-
-
 ```

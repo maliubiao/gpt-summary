@@ -94,7 +94,7 @@ let instance = new MyClass();
 
 该部分代码专注于 V8 堆内存的深度探索，负责识别堆中不同类型的对象，为其赋予有意义的名称和分类，并提取对象之间的引用关系和源代码位置信息。这是生成详细堆快照的关键步骤，为后续的内存分析和性能诊断提供了必要的数据基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/heap-snapshot-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/heap-snapshot-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -102,8 +102,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 aybe_constructor;
   }
 
@@ -862,8 +864,5 @@ void V8HeapExplorer::ExtractContextReferences(HeapEntry* entry,
   if (!IsNativeContext(context) && context->is_declaration_context()) {
     Tagged<ScopeInfo> scope_info = context->scope_info();
     // Add context allocated locals.
-    for (auto it : ScopeInfo::IterateLocalNames(scope_info, no_gc)) 
-"""
-
-
+    for (auto it : ScopeInfo::IterateLocalNames(scope_info, no_gc))
 ```

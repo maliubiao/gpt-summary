@@ -663,7 +663,7 @@ void JSFinalizationRegistry::RemoveCellFromUnregisterTokenMap(
     }
   } else {
     // weak_cell is somewhere in the middle of its key list
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -671,8 +671,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ble->HasSufficientCapacityToAdd(1)) {
     int nof = table->NumberOfElements() + 1;
     int capacity = T::ComputeCapacity(nof);
@@ -1441,8 +1443,4 @@ EXTERN_DEFINE_BASE_NAME_DICTIONARY(GlobalDictionary, GlobalDictionaryShape)
 #undef EXTERN_DEFINE_BASE_NAME_DICTIONARY
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

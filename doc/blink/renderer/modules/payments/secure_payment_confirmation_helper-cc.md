@@ -244,15 +244,17 @@ This systematic approach, starting with the high-level purpose and drilling down
 
 总而言之，`secure_payment_confirmation_helper.cc` 是 Chromium Blink 引擎中负责安全支付确认功能的一个关键组件，它确保了从网页传递过来的 SPC 相关数据的有效性和安全性。 通过对这些数据的严格验证，可以防止恶意或错误的支付请求，并为用户提供更安全的支付体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/payments/secure_payment_confirmation_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -435,7 +437,4 @@ SecurePaymentConfirmationHelper::ParseSecurePaymentConfirmationData(
 }
 
 }  // namespace blink
-
-"""
-
 ```

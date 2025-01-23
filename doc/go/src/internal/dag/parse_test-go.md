@@ -230,7 +230,7 @@ go test -run TestParse ./internal/dag
 
 这段代码主要负责测试 `internal/dag` 包中 DAG 的解析功能，特别是验证了 `Parse` 函数能够正确地将字符串表示的 DAG 转换为 `Graph` 结构，并且能够计算传递闭包。使用者需要理解传递闭包的概念，并确保输入的 DAG 字符串符合 `Parse` 函数所期望的格式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/dag/parse_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -238,8 +238,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -301,9 +303,4 @@ func TestParse(t *testing.T) {
 	// Parse returns the transitive closure, so it adds d->a.
 	wantEdges(t, g, "b->a c->a d->a d->b d->c")
 }
-
-"""
-
-
-
 ```

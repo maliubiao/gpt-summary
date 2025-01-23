@@ -155,11 +155,13 @@ console.log(myBitVector.contains(35)); // 输出: true
 
 `bit-vector-unittest.cc` 文件测试了 V8 引擎内部使用的 `BitVector` 类，该类提供了一种高效的方式来存储和操作整数集合。 虽然 JavaScript 没有直接对应的内置类，但可以使用 `Set` 对象或手动使用位运算来模拟其功能。 `BitVector` 在 V8 内部用于各种优化任务，提升 JavaScript 引擎的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/utils/bit-vector-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -428,7 +430,4 @@ TEST_F(BitVectorTest, MoveAssignLarge) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

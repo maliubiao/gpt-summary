@@ -113,7 +113,7 @@ func main() {
 
 `go/src/runtime/conv_wasm_test.go` 文件中的 `TestFloatTruncation` 函数主要用于测试 WASM 平台上 `float64` 到 `int64` 和 `uint64` 的转换行为，特别是针对边界值和超出范围的值，验证其是否按照预期的截断方式进行转换。 理解这种截断行为对于在 WASM 环境中进行数值计算的开发者至关重要，以避免因类型转换导致的意外结果。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/conv_wasm_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -121,8 +121,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -251,9 +253,4 @@ func TestFloatTruncation(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

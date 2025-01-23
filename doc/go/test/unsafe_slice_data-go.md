@@ -147,15 +147,17 @@ func main() {
 
 总之，`go/test/unsafe_slice_data.go` 的这个代码片段是一个单元测试，用于确保 `unsafe.SliceData` 函数能够正确地返回切片底层数据数组的指针，这对于 Go 语言的底层实现和某些需要进行低级内存操作的场景至关重要。 使用者在使用 `unsafe.SliceData` 时需要格外小心，因为它绕过了 Go 的类型安全检查，容易引入错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/unsafe_slice_data.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2022 The Go Authors. All rights reserved.
@@ -178,9 +180,4 @@ func main() {
 		panic(fmt.Errorf("unsafe.SliceData %p != %p", ptr2, unsafe.Pointer(sh1.Data)))
 	}
 }
-
-"""
-
-
-
 ```

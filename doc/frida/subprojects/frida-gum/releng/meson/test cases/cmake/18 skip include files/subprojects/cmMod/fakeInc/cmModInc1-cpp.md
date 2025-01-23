@@ -149,7 +149,7 @@ cmModClass instance(input_string);
 
 尽管 `cmModInc1.cpp` 的代码本身很简单，但它的存在以及所在的目录结构揭示了 Frida 项目在构建和测试方面的一些策略，特别是关于条件编译和处理缺失或模拟的包含文件的情况。这与逆向分析中理解目标程序的构建方式和依赖关系是相通的。对于涉及到 Frida 底层、Linux/Android 内核及框架的知识，这个文件更多的是作为一个测试用例，间接地反映了 Frida 需要处理的各种构建环境和依赖关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/18 skip include files/subprojects/cmMod/fakeInc/cmModInc1.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifndef MESON_INCLUDE_IMPL
 #error "MESON_INCLUDE_IMPL is not defined"
 #endif // !MESON_INCLUDE_IMPL
@@ -166,7 +168,4 @@ Prompt:
 cmModClass::cmModClass(string foo) {
   str = foo + " World";
 }
-
-"""
-
 ```

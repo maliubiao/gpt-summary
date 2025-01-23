@@ -113,7 +113,7 @@ Response:
 ### 总结
 
 `linux-host-session.vala` 是 Frida 在 Linux 系统上实现动态插桩的核心模块，主要负责进程管理、注入、调试等功能。通过 LLDB 可以复现和调试 Frida 的注入过程，用户在使用过程中可能会遇到权限不足、目标进程不存在等常见错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/linux/linux-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class LinuxHostSessionBackend : Object, HostSessionBackend {
 		private LinuxHostSessionProvider local_provider;
@@ -1170,7 +1172,4 @@ namespace Frida {
 				dir = Dir.open ("/proc/%u/task".printf (target_pid));
 			} catch (FileError e) {
 				throw new Error.PROCESS_NOT_FOUND ("Unable to query system_server threads: %s", e.m
-"""
-
-
 ```

@@ -105,11 +105,13 @@ console.log(obj.c); // 输出 3
 
 `index-generator-unittest.cc` 测试了 V8 引擎内部用于生成非连续索引的 `IndexGenerator` 类。 这个类很可能被 V8 用于管理 JavaScript 对象属性或其他堆内存结构的内部索引，以实现更高效的存储、访问和内存管理。 虽然 JavaScript 开发者不会直接操作它，但它的存在对 JavaScript 引擎的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/index-generator-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -148,7 +150,4 @@ TEST(IndexGeneratorTest, GetNext) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

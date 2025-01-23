@@ -105,11 +105,13 @@ C++ 测试中的 `WasmRunner` 类以及 `Build` 方法实际上是在 V8 内部�
 
 总而言之，`test-liftoff-for-fuzzing.cc` 文件是 V8 引擎中用于测试 Liftoff 编译器在处理模糊测试场景下的 WebAssembly 代码时的正确性和健壮性的关键组成部分，它直接关系到 JavaScript 引擎执行 WebAssembly 代码的质量和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-liftoff-for-fuzzing.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ TEST(NondeterminismBinop) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

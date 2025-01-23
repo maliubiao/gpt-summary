@@ -150,15 +150,17 @@ This methodical approach, starting with a high-level understanding and progressi
 
 总而言之，`svg_string_list.cc` 文件中的 `SVGStringListBase` 类是 Blink 渲染引擎中处理 SVG 字符串列表属性的关键组件，它负责字符串的解析、存储和生成，并与 HTML 解析、JavaScript DOM 操作以及 CSS 样式应用密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_string_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -292,7 +294,4 @@ float SVGStringListBase::CalculateDistance(const SVGPropertyBase*,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -163,7 +163,7 @@ A user action that involves setting or sending cookies will potentially involve 
 
 The first part of `net/cookies/cookie_util.cc` focuses on the fundamental tasks of **parsing, validating, and interpreting the attributes of HTTP cookies**. It provides the building blocks for understanding the structure and scope of individual cookies, including their expiration, domain, path, and special prefixes. It also lays the groundwork for the more complex logic of determining SameSite context. Essentially, it ensures that cookie strings are correctly understood and that basic cookie rules are enforced when cookies are being set.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1015,7 +1017,4 @@ CookieOptions::SameSiteCookieContext ComputeSameSiteContextForRequest(
   //   tagged with a flag allowing it.
   //
   //   Note that this can be the case for req
-"""
-
-
 ```

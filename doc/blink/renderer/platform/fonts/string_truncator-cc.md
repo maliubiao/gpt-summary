@@ -163,14 +163,16 @@ By following this structured approach, you can effectively analyze and explain c
 
 总而言之，`string_truncator.cc` 是 Blink 渲染引擎中负责文本截断的关键组件，它与 CSS 的 `text-overflow` 属性密切相关，并依赖于字体信息来精确计算文本宽度，从而实现正确的文本截断和省略号显示。 理解它的工作原理有助于我们更好地理解浏览器如何渲染和显示网页上的文本内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/string_truncator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2006, 2007 Apple Inc.  All rights reserved.
  *
@@ -378,7 +380,4 @@ String StringTruncator::RightTruncate(const String& string,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -170,7 +170,7 @@ int foo(void) {
 
 总而言之，这个简单的 `main.c` 文件虽然功能简单，但它可以作为理解程序行为、进行逆向分析、以及理解底层原理的起点。通过分析这个文件，我们可以涉及到静态分析、动态分析、Frida 的使用、二进制底层知识、操作系统原理以及常见的编程错误等多个方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/native/11 native dependency/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,15 +178,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "lib.h"
 
 int main(void) {
     const int v = foo() - 1;
     return v;
 }
-
-"""
-
 ```

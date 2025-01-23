@@ -128,15 +128,17 @@ Essentially, the process involves:
 
 总而言之，`run_all_perftests.cc` 是 Blink 渲染引擎性能测试的关键入口点，它负责设置测试环境并运行一系列旨在衡量 Blink 在处理 JavaScript、HTML 和 CSS 等 Web 技术时的性能的测试。开发者通过运行这些测试，可以及时发现和修复性能问题，从而提高 Chromium 浏览器的整体性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/controller/tests/run_all_perftests.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -152,7 +154,4 @@ int main(int argc, char** argv) {
   base::TestSuite test_suite(argc, argv);
   return test_suite.Run();
 }
-
-"""
-
 ```

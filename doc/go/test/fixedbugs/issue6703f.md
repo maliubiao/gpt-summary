@@ -142,15 +142,17 @@ func main() {
 
 `go/test/fixedbugs/issue6703f.go` 这个测试用例旨在验证 Go 编译器能够检测出由于在全局变量初始化时调用方法且该方法内部访问了该全局变量而导致的初始化循环依赖。它不涉及运行时输入输出或复杂的命令行参数，而是依赖于 `go test` 命令来检查编译器的错误报告是否符合预期。理解这种类型的测试用例有助于开发者避免在实际编程中犯类似的初始化循环依赖错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6703f.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -169,9 +171,4 @@ func (T) m() int {
 }
 
 var x = T(0).m() // ERROR "initialization cycle|depends upon itself"
-
-"""
-
-
-
 ```

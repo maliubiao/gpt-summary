@@ -81,7 +81,7 @@ By following this thought process, we can move from the simple script to a detai
 
 `printer.py` 脚本本身非常简单，功能单一。它的价值在于它是 Frida 测试套件的一部分，用于验证 Frida 在处理扩展模块和子插桩时的功能。虽然它不直接涉及复杂的逆向工程操作或底层系统交互，但它作为测试用例，间接地反映了 Frida 在这些方面的能力和潜在问题。开发者在调试 Frida 时可能会遇到这个脚本，以了解特定测试的意图和结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/python/2 extmodule/subinst/printer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -89,12 +89,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('subinst')
-
-"""
-
 ```

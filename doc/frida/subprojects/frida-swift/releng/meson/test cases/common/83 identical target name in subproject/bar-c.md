@@ -168,7 +168,7 @@ Hooked subproject bar! // 如果 hook 到了子项目的 bar
 
 当调试与 Frida 相关的命名冲突问题时，开发者可能会查看这个测试用例，以了解如何模拟和解决这类问题。  这个 `bar.c` 文件本身很简单，但它的存在是为了服务于 Frida 更复杂的功能测试和确保其在特定场景下的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/83 identical target name in subproject/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,15 +176,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("I'm a main project bar.\n");
     return 0;
 }
-
-"""
-
 ```

@@ -117,15 +117,17 @@ HTMLDivElement
 
 `HTMLTreeBuilder.cc` 的这一部分代码展示了其作为 Blink 引擎中构建 DOM 树核心组件的基本功能。它负责接收 HTML 标记，维护解析状态（插入模式和开放元素栈），并根据 HTML 规范将这些标记转换成 DOM 树。代码中已经展现了处理不同类型的 HTML 标记（DOCTYPE, 起始标签, 结束标签, 文本, 注释）的基本逻辑，以及与 JavaScript (通过 `<script>` 标签) 的初步交互。此外，代码中也包含了错误处理的机制。 总之，这一部分是 `HTMLTreeBuilder` 初始化和处理基本 HTML 结构的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_tree_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google, Inc. All Rights Reserved.
  * Copyright (C) 2011, 2014 Apple Inc. All rights reserved.
@@ -1051,7 +1053,4 @@ void HTMLTreeBuilder::ProcessStartTagForInBody(AtomicHTMLToken* token) {
     case HTMLTag::kIFrame:
       frameset_ok_ = false;
       ProcessGen
-"""
-
-
 ```

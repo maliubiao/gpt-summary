@@ -145,15 +145,17 @@ fetch('https://proxy.example/proxy/.well-known/masque/udp/example.com/1234/', {
 
 `connect_udp_tunnel_test.cc` 作为一个单元测试文件，其存在的主要目的就是确保 `ConnectUdpTunnel` 类的这些步骤和逻辑是正确可靠的，从而保证基于 MASQUE 的 UDP 隧道功能在 Chromium 中的正常运作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/tools/connect_udp_tunnel_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -518,7 +520,4 @@ TEST_F(ConnectUdpTunnelTest, SendToTarget) {
 
 }  // namespace
 }  // namespace quic::test
-
-"""
-
 ```

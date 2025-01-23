@@ -128,7 +128,7 @@ By following this process, I can generate a comprehensive and accurate answer to
 
 总而言之，`blink/renderer/core/page/focus_controller.cc` 的这部分代码是 Chromium Blink 引擎中负责管理页面焦点状态的核心组件。它处理了焦点追踪、焦点移动逻辑（包括顺序导航、Shadow DOM、Popover 等）、事件触发，并与 HTML 的 `tabindex` 属性、JavaScript 的焦点操作以及 CSS 的显示属性等密切相关。理解这部分代码的功能对于调试与焦点相关的 bug，以及理解浏览器如何处理用户交互至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/focus_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007 Apple Inc. All rights reserved.
  * Copyright (C) 2008 Nuanti Ltd.
@@ -940,7 +942,4 @@ inline bool IsNonKeyboardFocusableShadowHost(const Element& element) {
   // This host supports focus, but cannot be keyboard focused. For example:
   // - Tabindex is negative
   // -
-"""
-
-
 ```

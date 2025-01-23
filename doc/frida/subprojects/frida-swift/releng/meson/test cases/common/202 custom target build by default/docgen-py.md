@@ -139,7 +139,7 @@ By following this structured approach, breaking down the code, and considering i
 
 总而言之，`docgen.py` 是一个简单的文件生成脚本，在 Frida 的构建或测试环境中用于创建一些基本的测试文件或目录结构。虽然它本身不涉及复杂的逆向工程或底层编程，但它是构建工具链的一部分，并且可以帮助验证 Frida 的功能。了解它的功能和可能出现的错误有助于理解 Frida 的构建过程和进行问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/202 custom target build by default/docgen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -161,7 +163,4 @@ os.mkdir(out)
 for name in ('a', 'b', 'c'):
     with open(os.path.join(out, name + '.txt'), 'w') as f:
         f.write(name)
-
-"""
-
 ```

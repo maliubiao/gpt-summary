@@ -188,15 +188,17 @@ Input Chunk 2: [0x80, 0x81] // 无效的 UTF-8 序列
 
 总而言之，`blink/renderer/modules/encoding/text_decoder_stream.cc` 文件是实现 Web API `TextDecoderStream` 的关键部分，它负责将二进制数据流转换为文本字符串流，是浏览器处理字符编码的核心机制之一，并且与 JavaScript 的流式 API 紧密集成。 理解它的功能对于理解浏览器如何处理文本数据至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/encoding/text_decoder_stream.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -390,7 +392,4 @@ TextDecoderStream::TextDecoderStream(ScriptState* script_state,
       ignore_bom_(options->ignoreBOM()) {}
 
 }  // namespace blink
-
-"""
-
 ```

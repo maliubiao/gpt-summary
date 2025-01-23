@@ -138,7 +138,7 @@ print(memory)
 ### 总结
 
 `frida-core/src/gdb.vala` 文件实现了 Frida 工具中与 GDB 协议交互的核心功能，支持对目标进程的调试控制、内存读写、断点管理、寄存器操作等。通过该模块，用户可以方便地进行动态插桩和调试操作。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/gdb.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaGDB", gir_version = "1.0")]
 namespace Frida.GDB {
 	public class Client : Object, AsyncInitable {
@@ -1334,7 +1336,4 @@ namespace Frida.GDB {
 
 			public unowned PacketBuilder append_register_id (uint register_id) {
 				buffer.append_
-"""
-
-
 ```

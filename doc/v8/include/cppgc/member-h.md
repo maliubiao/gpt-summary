@@ -220,15 +220,17 @@ container->member = obj2;
 
 总结来说，`v8/include/cppgc/member.h` 定义了 V8 中用于安全管理垃圾回收堆上对象指针的关键工具，它提供了强引用、弱引用和无追踪指针等多种选择，并与垃圾回收器紧密集成，以避免常见的内存管理错误。 理解 `Member` 的作用对于编写可靠的 V8 C++ 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/cppgc/member.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/cppgc/member.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -867,7 +869,4 @@ static constexpr size_t kSizeofCompressedMember =
 }  // namespace cppgc
 
 #endif  // INCLUDE_CPPGC_MEMBER_H_
-
-"""
-
 ```

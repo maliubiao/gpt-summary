@@ -93,7 +93,7 @@ In summary, while the script itself is trivial, its significance lies entirely i
 
 总而言之，`c_compiler.py` 虽然代码极其简单，但它是 Frida 构建系统的一个小小的组成部分，用于进行基本的构建环境检查。它的存在与逆向工程（通过构建逆向工具 Frida）、二进制底层操作、操作系统内核及框架都有间接的联系。理解其作用需要将其放在 Frida 的整个构建流程中去考虑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/58 introspect buildoptions/c_compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,12 +101,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('c')
-
-"""
-
 ```

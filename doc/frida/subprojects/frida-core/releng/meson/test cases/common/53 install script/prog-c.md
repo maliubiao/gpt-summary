@@ -189,7 +189,7 @@ Hello from foo!
 
 总而言之， `prog.c` 虽然简单，但它演示了一个程序与外部模块交互的基本模式，这正是逆向工程和动态分析中经常需要研究的场景。它也包含了可能导致用户错误的关键点，例如外部依赖的管理和正确链接。 作为调试线索， `prog.c` 的源代码可以帮助用户理解程序的整体流程，并定位可能存在问题的外部函数调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/53 install script/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 #ifdef _WIN32
@@ -213,7 +215,4 @@ int main(void) {
     printf("This is text.\n");
     return foo();
 }
-
-"""
-
 ```

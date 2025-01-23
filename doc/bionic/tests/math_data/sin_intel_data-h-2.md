@@ -18,7 +18,7 @@ Therefore, the primary function of this code is to provide test data for verifyi
 
 由于这是第3部分，结合文件路径和数据内容，可以推断出整个文件（以及可能的前后几部分）的目的是为了提供一个全面的测试数据集，覆盖正弦函数在不同输入范围和精度要求下的行为，从而确保 Android 系统中正弦函数实现的准确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sin_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -30,8 +30,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 9eb93595d8194ab917fp-1,
     -0x1.6885b7d7e8a30p-1
   },
@@ -1465,7 +1467,4 @@ Prompt:
   },
   { // Entry 1069
     -0x1.3faefc7a54
-"""
-
-
 ```

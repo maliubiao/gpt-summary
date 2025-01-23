@@ -122,15 +122,17 @@ func main() {
 
 `go/test/typeparam/mdempsky/8.dir/a.go` 中的代码片段定义了一个泛型函数 `F`，它的核心功能是 **强制其类型参数 `T` 必须是可比较的**。 这段代码主要用于测试和演示 Go 语言的泛型类型约束特性。 使用者需要注意，只有实现了 `comparable` 接口的类型才能作为 `F` 的类型参数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/mdempsky/8.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -138,9 +140,4 @@ Prompt:
 package a
 
 func F[T interface{ comparable }]() {}
-
-"""
-
-
-
 ```

@@ -159,15 +159,17 @@ func main() {
 
 `sigchanyzer` 分析器的作用是帮助开发者避免在使用 `signal.Notify` 函数时由于使用无缓冲 channel 而可能导致的信号丢失问题。它通过静态分析代码，检查是否存在将无缓冲的 `os.Signal` channel 传递给 `signal.Notify` 的情况，并发出警告，提醒开发者使用带缓冲的 channel 来确保信号的可靠接收。这有助于提高 Go 程序的健壮性和可靠性，尤其是在需要处理操作系统信号的场景下。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/sigchanyzer/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -185,9 +187,4 @@ Prompt:
 //
 // where c is an unbuffered channel, which can be at risk of missing the signal.
 package sigchanyzer
-
-"""
-
-
-
 ```

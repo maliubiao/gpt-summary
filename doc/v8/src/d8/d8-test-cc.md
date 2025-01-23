@@ -155,7 +155,7 @@ d8.test.fast_c_api.resetCounters();
 
 这只是对提供的代码片段的功能的初步分析和归纳。要完全理解其功能，需要结合 V8 引擎的 Fast API Calls 机制以及 d8 测试框架的上下文进行更深入的研究。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8-test.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/d8/d8-test.cc以.tq结尾，那它是个v8 torque源代码，
@@ -163,8 +163,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -994,7 +996,4 @@ class FastCApiObject {
     }
     return checked_arg;
   }
-"""
-
-
 ```

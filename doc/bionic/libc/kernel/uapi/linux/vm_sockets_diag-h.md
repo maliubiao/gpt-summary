@@ -220,7 +220,7 @@ if (getsockoptPtr) {
 
 总而言之，`vm_sockets_diag.h` 定义了用于用户空间程序与 Linux 内核中 vsock 模块进行交互的数据结构，以获取虚拟套接字的诊断信息，这在 Android 的模拟器、容器化环境以及虚拟机等场景中有着重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/vm_sockets_diag.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -231,8 +231,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -264,7 +266,4 @@ struct vsock_diag_msg {
   __u32 vdiag_cookie[2];
 };
 #endif
-
-"""
-
 ```

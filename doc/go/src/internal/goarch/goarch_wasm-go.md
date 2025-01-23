@@ -145,7 +145,7 @@ GOOS=js GOARCH=wasm go build -o main.wasm main.go
 
 总而言之，`go/src/internal/goarch/goarch_wasm.go` 这个文件定义了 Go 运行时在 WebAssembly 平台上运行所需的关键架构常量，为 Go 语言在 WebAssembly 环境中的执行奠定了基础。理解这些常量有助于我们更好地理解 Go 如何适应不同的平台。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/goarch/goarch_wasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -153,8 +153,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -168,9 +170,4 @@ const (
 	_MinFrameSize        = 0
 	_StackAlign          = PtrSize
 )
-
-"""
-
-
-
 ```

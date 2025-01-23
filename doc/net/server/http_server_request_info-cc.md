@@ -160,15 +160,17 @@ bool accepts_french = request_info.HasHeaderValue("accept-language", "fr-fr");  
 
 总而言之，`net/server/http_server_request_info.cc` 定义的 `HttpServerRequestInfo` 类是 Chromium 服务器端网络栈中一个核心的数据结构，用于封装和管理接收到的 HTTP 请求信息，为后续的请求处理提供必要的数据。它与 JavaScript 的关系是间接的，体现在它存储了由 JavaScript 代码通过浏览器发起的 HTTP 请求的头部信息。理解其功能和潜在的使用错误有助于进行网络相关的调试和开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/server/http_server_request_info.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ bool HttpServerRequestInfo::HasHeaderValue(
 }
 
 }  // namespace net
-
-"""
-
 ```

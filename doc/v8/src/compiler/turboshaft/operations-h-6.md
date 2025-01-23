@@ -158,7 +158,7 @@ Here's a breakdown of the thought process to arrive at the answer:
 
 总而言之，`v8/src/compiler/turboshaft/operations.h` 是 Turboshaft 编译器的核心组成部分，它定义了编译器能够执行的所有基本操作，为后续的代码优化和机器码生成奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/operations.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/operations.h以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 m the zero inobject case.
   // The index itself is shifted up by one bit, the lower-most bit
   // signifying if the field is a mutable double box (1) or not (0).
@@ -1080,7 +1082,4 @@ struct CheckMapsOp : OperationT<CheckMapsOp> {
 // AssumeMaps are inserted after CheckMaps have been lowered, in order to keep
 // map information around and easily accessible for subsequent optimization
 // passes (Load Elimination for instance can then use those Assum
-"""
-
-
 ```

@@ -137,11 +137,13 @@ C++ 中的 `TestSpeciesProtector` 系列测试模拟了在 JavaScript 中修改 
 
 `v8/test/cctest/test-typedarrays.cc` 这个 C++ 文件是 V8 引擎中用于测试 JavaScript Typed Arrays 和 ArrayBufferView 相关特性的关键测试文件。它通过 C++ 代码模拟 JavaScript 的行为，并验证 V8 引擎在处理这些特性时的正确性，包括内容复制和 `Symbol.species` 保护机制等。这些测试确保了 V8 引擎能够按照 JavaScript 规范正确地执行涉及 Typed Arrays 的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-typedarrays.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ UNINITIALIZED_TEST(SpeciesProto) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

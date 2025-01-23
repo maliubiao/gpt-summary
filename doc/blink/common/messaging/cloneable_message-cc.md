@@ -170,14 +170,16 @@ This iterative process of scanning, analyzing key elements, connecting to broade
 
 总而言之，`CloneableMessage` 是 Blink 内部一个重要的工具，用于安全有效地传递消息和资源。理解其浅拷贝的特性以及如何处理像 `Blob` 这样的特殊资源对于正确使用它至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/messaging/cloneable_message.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -259,7 +261,4 @@ void CloneableMessage::EnsureDataIsOwned() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

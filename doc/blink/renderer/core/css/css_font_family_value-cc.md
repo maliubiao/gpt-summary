@@ -141,15 +141,17 @@ Here's a breakdown of the thinking process to generate the answer:
 
 总而言之，`css_font_family_value.cc` 文件定义了 Blink 引擎中表示 CSS 字体族值的核心数据结构，它在连接 HTML、CSS 和 JavaScript，并最终将样式渲染到屏幕上起着至关重要的作用。虽然用户和程序员不会直接操作这个类，但对 `font-family` 属性的理解和使用都会间接地涉及到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_font_family_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ void CSSFontFamilyValue::TraceAfterDispatch(blink::Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

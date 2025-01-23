@@ -108,12 +108,14 @@ console.log(str.charAt(0));   // "h"
 
 总而言之，这段 C++ 代码是 V8 引擎启动过程中的关键部分，负责为 JavaScript 环境构建最基础的对象和功能，使得 JavaScript 代码能够运行。 它就像是搭建舞台并准备好演员和道具，为 JavaScript 代码的执行奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 the constructor has
 // non-instance prototype.
 static void InstallWithIntrinsicDefaultProto(Isolate* isolate,
@@ -1520,7 +1522,4 @@ void Genesis::InitializeGlobal(Handle<JSGlobalObject> global_object,
     SimpleInstallFunction(isolate_, prototype, "localeCompare",
                           Builtin::kStringPrototypeLocaleCompare, 1, kAdapt);
 #endif  // V8_INTL_SUP
-"""
-
-
 ```

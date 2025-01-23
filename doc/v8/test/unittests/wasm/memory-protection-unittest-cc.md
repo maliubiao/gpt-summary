@@ -135,15 +135,17 @@ const wasmInstance = new WebAssembly.Instance(wasmModule, {});
 
 `v8/test/unittests/wasm/memory-protection-unittest.cc` 是一个关键的测试文件，用于确保 V8 在处理 WebAssembly 代码时能够提供可靠的内存保护，这对于 JavaScript 平台的安全性和稳定性至关重要。它通过不同的测试用例验证了代码保护的启用、禁用以及与信号处理的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/wasm/memory-protection-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/wasm/memory-protection-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -421,7 +423,4 @@ TEST_P(ParameterizedMemoryProtectionTestWithSignalHandling, TestSignalHandler) {
 #endif  // V8_OS_POSIX && !V8_OS_FUCHSIA
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

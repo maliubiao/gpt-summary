@@ -116,12 +116,14 @@ Response: The user wants a summary of the C++ source code file `v8/src/execution
 
 `v8/src/execution/frames.cc` 文件的第三部分（以及整个文件）是 V8 引擎的核心组件之一，它定义了用于管理程序执行上下文的各种栈帧结构。这些结构不仅用于记录 JavaScript 代码的执行状态，也用于处理与 WebAssembly 的互操作。通过这些栈帧，V8 引擎可以进行函数调用、管理局部变量、处理异常、进行垃圾回收以及支持调试等关键操作。这些底层的 C++ 结构直接支撑着我们编写和运行的 JavaScript 和 WebAssembly 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/frames.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 InterpreterFrameConstants::kBytecodeOffsetFromFp,
             InterpreterFrameConstants::kExpressionsOffset -
                 index * kSystemPointerSize);
@@ -1164,8 +1166,4 @@ BuiltinContinuationFrameInfo::BuiltinContinuationFrameInfo(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

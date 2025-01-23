@@ -148,15 +148,17 @@ func main() {
 
 这段代码是 Go 编译器中处理 s390x 架构指令的关键部分，确保了 Go 代码能够正确地编译成在该架构上执行的机器码，并能正确处理条件分支和相关的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/s390x/condition_code.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -285,9 +287,4 @@ func (c CCMask) String() string {
 }
 
 func (CCMask) CanBeAnSSAAux() {}
-
-"""
-
-
-
 ```

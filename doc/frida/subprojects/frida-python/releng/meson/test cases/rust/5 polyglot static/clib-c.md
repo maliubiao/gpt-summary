@@ -182,7 +182,7 @@ Hello from Rust!
 
 总而言之，`clib.c` 这个文件作为一个简单的示例，展示了 C 和 Rust 之间的基本互操作性，并且可以作为 Frida 测试跨语言 hook 功能的一个用例。 逆向工程师可以通过 Frida 等工具来动态分析这类多语言程序，理解其运行机制和数据交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/rust/5 polyglot static/clib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdint.h>
 
@@ -206,7 +208,4 @@ void hello_from_both(void) {
     if (hello_from_rust(2, 3) == 5)
         printf("Hello from Rust!\n");
 }
-
-"""
-
 ```

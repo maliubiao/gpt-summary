@@ -133,11 +133,13 @@ V8 编译器可以对这个 IR 图进行各种优化，例如：
 
 `node.cc` 中定义的 `Node` 类是 V8 编译器构建和优化 JavaScript 代码的核心数据结构。它代表了程序中的操作和数据，并通过输入和使用关系形成一个图，为后续的编译优化和代码生成提供了基础。理解 `Node` 的结构和操作对于深入了解 V8 编译器的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/node.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -649,7 +651,4 @@ V8_DONT_STRIP_SYMBOL
 V8_EXPORT_PRIVATE extern void _v8_internal_Node_Print(void* object) {
   reinterpret_cast<i::compiler::Node*>(object)->Print();
 }
-
-"""
-
 ```

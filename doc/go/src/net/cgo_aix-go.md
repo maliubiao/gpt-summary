@@ -174,7 +174,7 @@ func main() {
 
 总而言之，这段 `cgo_aix.go` 代码片段是 Go 语言 `net` 包在特定平台下利用系统提供的 `getnameinfo` 函数实现反向 DNS 查询的关键部分。理解其功能有助于理解 Go 语言网络库在不同操作系统上的实现策略。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/cgo_aix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -182,8 +182,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -208,9 +210,4 @@ func cgoNameinfoPTR(b []byte, sa *C.struct_sockaddr, salen C.socklen_t) (int, er
 	gerrno, err := C.getnameinfo(sa, C.size_t(salen), (*C.char)(unsafe.Pointer(&b[0])), C.size_t(len(b)), nil, 0, C.NI_NAMEREQD)
 	return int(gerrno), err
 }
-
-"""
-
-
-
 ```

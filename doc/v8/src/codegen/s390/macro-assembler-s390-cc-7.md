@@ -115,7 +115,7 @@ myFunction();
 
 作为第 8 部分，这段代码片段的功能可以归纳为：**在 s390 架构上，当 V8 引擎的 `HandleScope` 对象限制发生变化时，负责清理已分配的扩展资源，并确保程序能够安全地继续执行或退出。这通常是异常处理或函数退出流程的一部分，用于维护 V8 引擎的内存一致性和稳定性。**  它保存了之前的状态，调用 C++ 函数执行实际的清理操作，并恢复上下文，为后续的控制流做好准备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/macro-assembler-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/s390/macro-assembler-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -123,8 +123,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d. Delete allocated extensions.
   {
     ASM_CODE_COMMENT_STRING(
@@ -148,8 +150,4 @@ d. Delete allocated extensions.
 #undef __
 
 #endif  // V8_TARGET_ARCH_S390X
-
-"""
-
-
 ```

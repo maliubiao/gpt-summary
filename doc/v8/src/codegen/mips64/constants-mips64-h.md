@@ -196,7 +196,7 @@ const uint32_t kMipsLwlOffset = 0;
 
 总而言之，`v8/src/codegen/mips64/constants-mips64.h` 是 V8 引擎中至关重要的一个头文件。 它为 MIPS64 架构的代码生成过程提供了基础性的定义，包括架构变体、字节序、寄存器定义、指令编码以及浮点和 SIMD 相关的常量。 这些常量确保了 V8 能够为 MIPS64 架构生成正确且高效的机器码，从而可靠地执行 JavaScript 代码。 它的核心作用是为 V8 的代码生成器提供关于目标硬件的必要信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/constants-mips64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/constants-mips64.h以.tq结尾，那它是个v8 torque源代码，
@@ -204,8 +204,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1223,8 +1225,5 @@ enum SecondaryField : uint32_t {
 
   // MSA: Operation Field for BIT Instruction Format
   SLLI = ((0U << 23) + 9),
-  SRAI 
-"""
-
-
+  SRAI
 ```

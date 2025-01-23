@@ -120,15 +120,17 @@ By following these steps, the detailed analysis provided in the initial good ans
 
 总而言之，`modules_initializer.cc` 是 Blink 引擎中一个核心的配置和注册中心，它确保了 Web 平台各种功能的正确初始化和可用性，使得前端开发者能够使用 JavaScript、HTML 和 CSS 构建丰富的 Web 应用。当你在使用各种 Web API 时，背后很可能就涉及到这个文件中定义的初始化逻辑。理解这个文件有助于深入理解 Blink 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/modules_initializer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -587,7 +589,4 @@ void ModulesInitializer::RegisterInterfaces(mojo::BinderMap& binders) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -86,7 +86,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 总而言之，尽管 `liba.c` 本身非常简单，但在 Frida 的测试和构建环境中，它作为一个简单的、可被链接的库，用于验证 Frida 处理库依赖关系的能力。在逆向工程的上下文中，即使是这样的空函数也可以作为 Frida hook 的目标，用于测试 Frida 的基本功能。通过分析这个文件的上下文和它在 Frida 项目中的位置，可以推断出它的用途和相关的技术概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/32 pkgconfig use libraries/lib/liba.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -94,11 +94,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void liba_func() {
 }
-
-"""
-
 ```

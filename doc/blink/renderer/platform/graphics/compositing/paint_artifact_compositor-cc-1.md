@@ -105,16 +105,18 @@ This iterative process of scanning, analyzing specific methods, identifying rela
 
 总而言之，`PaintArtifactCompositor` 是 Blink 渲染引擎中负责将绘制信息转化为最终在屏幕上显示的合成图层的关键组件，它涉及到性能优化、动画渲染以及复杂视觉效果的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/paint_artifact_compositor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- layer must be hit testable because the compositor may not know
+### 源代码
+```cpp
+layer must be hit testable because the compositor may not know
     // whether the hit test is clipped out.
     // See: cc::LayerTreeHostImpl::IsInitialScrollHitTestReliable().
     layer_->SetHitTestable(true);
@@ -843,8 +845,4 @@ ContentLayerClientImpl* PaintArtifactCompositor::ContentLayerClientForTesting(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -116,7 +116,7 @@ By following these steps and incorporating the self-corrections, a comprehensive
 
 总而言之，`GumArm64Writer` 是 Frida 实现动态插桩的核心引擎之一，它将底层的 ARM64 指令编码细节抽象出来，为开发者提供了一个方便的接口来动态修改目标进程的行为。 理解其功能和限制对于有效使用 Frida 进行逆向工程和动态分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/arch-arm64/gumarm64writer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 _writer_describe_reg (self, src_reg, &rs);
 
   opc = 1;
@@ -1367,8 +1369,4 @@ gum_count_trailing_ones (guint64 value)
 {
   return gum_count_trailing_zeros (~value);
 }
-
-"""
-
-
 ```

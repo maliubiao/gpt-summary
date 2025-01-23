@@ -127,7 +127,7 @@ Initially, I might have focused too much on the simple C code. However, the surr
 
 `rejected_main.c` 虽然代码简单，但它在 Frida 的测试体系中扮演着重要的角色，用于验证 Frida 在遇到被拒绝的目标时是否能正确处理。它间接地涉及到操作系统底层、动态链接、权限控制等知识，并可以帮助开发者理解 Frida 的工作原理和边界。对于普通用户而言，这个文件本身不是直接操作的对象，但其测试的目的与用户在使用 Frida 时可能遇到的限制和错误息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/17 prebuilt shared/rejected_main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,15 +135,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "rejected.h"
 
 int main(void) {
     say();
     return 0;
 }
-
-"""
-
 ```

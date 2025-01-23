@@ -153,11 +153,13 @@ console.log(locale.maximize().toString()); // 输出: "en-US" (或其他更详�
 
 `builtins-intl.cc` 文件是 V8 引擎中实现 JavaScript 国际化 API 的关键组成部分。它将 JavaScript 的 Intl API 调用映射到高效的 C++ 代码，并利用 ICU 库来处理各种与区域设置相关的操作，从而为 JavaScript 开发者提供了强大的国际化支持。理解这个文件的内容有助于深入了解 JavaScript 国际化功能的底层实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-intl.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1625,7 +1627,4 @@ BUILTIN(V8BreakIteratorInternalBreakType) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

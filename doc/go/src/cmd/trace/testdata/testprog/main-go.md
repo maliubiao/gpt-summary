@@ -150,15 +150,17 @@ func main() {
 
 总而言之，这段 `main.go` 文件是一个用于生成 Go 运行时跟踪数据的测试程序，它演示了如何通过执行不同的操作来触发各种运行时事件，从而帮助测试和验证 Go 运行时跟踪器的功能。 理解其内部逻辑有助于更好地理解 Go 运行时跟踪的工作原理和使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/trace/testdata/testprog/main.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -288,9 +290,4 @@ func allocHog(dt time.Duration) {
 		s = append(s, make([]byte, 1024))
 	}
 }
-
-"""
-
-
-
 ```

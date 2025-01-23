@@ -150,7 +150,7 @@ func main() {
 
 在这个例子中，尝试用 `byte('你')` 去计数字符串 `"你好世界"` 中的 `"你"` 字是错误的。 因为 `"你"` 字在 UTF-8 编码中由多个字节组成，而 `CountString` 只会匹配单个字节。  使用者应该意识到 `CountString` 是按字节进行计数的，而不是按 Unicode 字符进行计数。 如果需要计数 Unicode 字符，应该使用 `strings` 包中的 `Count` 函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/bytealg/count_generic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -158,8 +158,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -187,9 +189,4 @@ func CountString(s string, c byte) int {
 	}
 	return n
 }
-
-"""
-
-
-
 ```

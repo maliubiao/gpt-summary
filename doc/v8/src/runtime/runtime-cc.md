@@ -210,15 +210,17 @@ bool Runtime::NeedsExactContext(FunctionId id) {
 
 总而言之，`v8/src/runtime/runtime.cc` 是 V8 引擎中一个至关重要的文件，它定义了 JavaScript 运行时环境的核心功能，并将这些功能以 C++ 函数的形式实现。理解这个文件的作用有助于深入了解 JavaScript 的执行机制以及 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/runtime/runtime.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -598,7 +600,4 @@ int g_num_isolates_for_testing = 1;
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

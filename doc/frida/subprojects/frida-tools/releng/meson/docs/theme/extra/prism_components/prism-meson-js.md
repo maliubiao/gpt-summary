@@ -171,7 +171,7 @@ endif
 
 总而言之，`prism-meson.js` 作为一个语法高亮定义文件，其功能是提升 Meson 代码的可读性，间接地帮助逆向工程师理解目标软件的构建过程，并辅助开发者编写正确的 Meson 代码。它虽然不直接操作底层，但服务于构建系统，而构建系统是连接源代码和最终二进制文件的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/docs/theme/extra/prism_components/prism-meson.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 Prism.languages.meson= {
 	'triple-quoted-string': {
 		'pattern': /'''[\s\S]*?'''/,
@@ -197,6 +199,4 @@ Prism.languages.meson= {
 	'punctuation': /[(),[\]]/
 	// TODO: Handle ternary ?:
 };
-"""
-
 ```

@@ -283,15 +283,17 @@ nq_diff_bool := MyStruct{A: 10, B: "hello", C: false}
 
 总而言之，`go/src/cmd/compile/internal/compare/compare.go` 是 Go 编译器中负责生成复杂类型（结构体、字符串、接口）相等比较代码的关键部分。它通过分析类型结构和特性，生成高效且安全的比较逻辑，确保 `==` 运算符在各种场景下的正确行为。虽然开发者不会直接使用这个包，但了解其功能有助于理解 Go 语言中类型比较的底层机制，并避免常见的比较错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/compare/compare.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -677,9 +679,4 @@ func eqmemfunc(size int64, t *types.Type) (fn *ir.Name, needsize bool) {
 
 	return typecheck.LookupRuntime("memequal", t, t), true
 }
-
-"""
-
-
-
 ```

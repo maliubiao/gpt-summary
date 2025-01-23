@@ -122,11 +122,13 @@ myArray.push(6);
 
 `MemoryChunkMetadata` 是 V8 引擎进行底层内存管理的关键组件。它记录了内存块的各种属性，使得 V8 能够有效地分配、使用和回收内存，从而支持 JavaScript 程序的运行。虽然 JavaScript 开发者不需要直接操作 `MemoryChunkMetadata`，但理解其作用有助于理解 V8 引擎的内存管理机制，以及 JavaScript 程序的性能特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/memory-chunk-metadata.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ void MemoryChunkMetadata::SynchronizedHeapStore() {
 #endif
 
 }  // namespace v8::internal
-
-"""
-
 ```

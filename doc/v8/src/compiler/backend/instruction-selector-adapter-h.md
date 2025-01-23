@@ -696,7 +696,7 @@ struct TurboshaftAdapter : public turboshaft::OperationMatcher {
   static constexpr bool IsTurbofan = false;
   static constexpr bool IsTurboshaft = true;
   static constexpr bool AllowsImplicitWord64ToWord32
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/instruction-selector-adapter.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/instruction-selector-adapter.h以.tq结尾，那它是个v8 torque源代码，
@@ -704,8 +704,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1688,7 +1690,4 @@ struct TurboshaftAdapter : public turboshaft::OperationMatcher {
 #if V8_ENABLE_WEBASSEMBLY
     const turboshaft::Simd128LoadTransformOp* load_transform_ = nullptr;
 #if V8_ENABLE_WASM_SIM
-"""
-
-
 ```

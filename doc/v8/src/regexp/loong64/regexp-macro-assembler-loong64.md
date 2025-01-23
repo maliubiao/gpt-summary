@@ -101,11 +101,13 @@ while ((match = regex.exec(text)) !== null) {
 
 `regexp-macro-assembler-loong64.cc` 是 V8 引擎中一个关键的底层组件，它负责将 JavaScript 的正则表达式编译成针对 LOONG64 架构优化的机器码，从而实现高效的正则表达式匹配功能。它处理了状态管理、指令生成和回溯等核心逻辑，是 JavaScript 正则表达式能够在浏览器和 Node.js 等环境中快速执行的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/loong64/regexp-macro-assembler-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1472,7 +1474,4 @@ void RegExpMacroAssemblerLOONG64::LoadCurrentCharacterUnchecked(
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_LOONG64
-
-"""
-
 ```

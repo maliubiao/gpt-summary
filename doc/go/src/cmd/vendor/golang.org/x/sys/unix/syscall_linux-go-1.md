@@ -143,7 +143,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言与 Linux 内核交互的重要桥梁，它通过封装系统调用，使得 Go 程序员可以方便地利用操作系统提供的强大功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -151,8 +151,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 igmask, _C__NSIG/8, flags)
 }
 
@@ -681,10 +683,4 @@ func SchedGetAttr(pid int, flags uint) (*SchedAttr, error) {
 
 //sys	Cachestat(fd uint, crange *CachestatRange, cstat *Cachestat_t, flags uint) (err error)
 //sys	Mseal(b []byte, flags uint) (err error)
-
-"""
-
-
-
-
 ```

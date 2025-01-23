@@ -143,11 +143,13 @@ console.log(sumFirstFew(data)); // 输出 60
 
 `v8/src/compiler/turboshaft/loop-peeling-phase.cc` 文件定义了 Turboshaft 编译器中的循环剥离优化阶段。它通过复制循环的初始迭代来减少循环开销，并为其他优化创造机会。这项优化直接影响 JavaScript 代码的性能，尤其是在处理循环结构时。虽然我们不能直接在 JavaScript 代码中控制循环剥离，但了解其原理有助于理解 V8 如何优化我们的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/loop-peeling-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ void LoopPeelingPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

@@ -699,7 +699,7 @@ recursiveFunction(10000); // 可能会导致栈溢出
 
 这是 `v8/src/codegen/ia32/macro-assembler-ia32.cc` 的第三部分，它继续定义了 `MacroAssembler` 类在 IA32 架构下的功能。总的来说，这部分代码提供了用于生成各种控制流指令（如调用、跳转）、操作函数调用栈、与内置函数和外部代码交互、以及处理特定 V8 概念（如代码对象、Smi）的接口。这些功能是 V8 引擎将 JavaScript 代码转换为可执行机器码的关键组成部分。 `MacroAssembler` 作为一个抽象层，简化了机器码生成的复杂性，并提供了与 V8 内部结构（如 Isolate、Code 对象）交互的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ia32/macro-assembler-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ia32/macro-assembler-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -707,8 +707,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 array is always available in production code. Only in one unit
     // test it is not available. The following code is not needed in the unit
     // test though, so we don't provide code here for the case where the root
@@ -1183,8 +1185,4 @@ void MacroAssembler::SmiCompare(Operand dst, Register src) {
 #undef __
 
 #endif  // V8_TARGET_ARCH_IA32
-
-"""
-
-
 ```

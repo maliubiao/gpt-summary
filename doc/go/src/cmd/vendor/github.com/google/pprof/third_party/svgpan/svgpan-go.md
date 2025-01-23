@@ -127,7 +127,7 @@ func main() {
 
 总而言之，这段 Go 代码片段利用 Go 的资源嵌入功能，将一个 JavaScript 库捆绑到 Go 程序中，以便在客户端（通常是 Web 浏览器）实现 SVG 图像的交互式平移和缩放。使用者需要了解资源嵌入的机制，并熟悉嵌入的 JavaScript 库的 API 和使用方法，才能正确地使用它。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/third_party/svgpan/svgpan.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -135,8 +135,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // SVG pan and zoom library.
 // See copyright notice in string constant below.
 
@@ -148,9 +150,4 @@ import _ "embed"
 
 //go:embed svgpan.js
 var JSSource string
-
-"""
-
-
-
 ```

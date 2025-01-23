@@ -130,14 +130,16 @@ Finally, the information is organized into categories (Functionality, Relationsh
 
 `fragment_items_builder_test.cc` 是一个重要的测试文件，它验证了 Blink 渲染引擎中负责构建内联布局片段的核心组件 `FragmentItemsBuilder` 的正确性。理解这个文件的功能有助于深入了解浏览器如何将 HTML、CSS 和 JavaScript 代码转化为用户看到的网页布局。它涵盖了标准和自定义的布局场景，并间接反映了内联布局的一些关键概念和潜在的复杂性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/fragment_items_builder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -277,7 +279,4 @@ TEST_F(FragmentItemsBuilderTest, MultipleLogicalLineItems) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -175,15 +175,17 @@ const promise = navigator.ink.requestPresenter({ presentationArea: foreignDiv })
 
 总而言之，`blink/renderer/modules/delegated_ink/ink.cc` 文件是 Delegated Ink 功能的入口点，它负责接收来自 JavaScript 的请求，并创建用于渲染墨迹的 `DelegatedInkTrailPresenter` 对象，同时进行必要的参数校验以防止错误的使用。它与 JavaScript、HTML 和 CSS 紧密相关，共同实现了网页上的墨迹输入体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/delegated_ink/ink.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -243,7 +245,4 @@ void Ink::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

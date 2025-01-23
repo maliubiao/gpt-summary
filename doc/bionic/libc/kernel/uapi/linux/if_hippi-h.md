@@ -204,7 +204,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/linux/if_hippi.h` 是一个定义 Linux 内核中 HIPPI 协议相关数据结构的头文件。尽管 Android 本身不常用 HIPPI，但为了内核兼容性和潜在的底层硬件支持，它被包含在 Bionic 中。用户空间的 Android 应用和 NDK 通常不会直接操作这些结构体，相关的操作主要发生在内核层面。通过 Frida 可以 hook 用户空间的系统调用来观察网络数据接收过程，但要深入分析内核中 HIPPI 的处理需要更底层的技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_hippi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -215,8 +215,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -293,7 +295,4 @@ struct hippi_hdr {
   struct hippi_snap_hdr snap;
 } __attribute__((packed));
 #endif
-
-"""
-
 ```

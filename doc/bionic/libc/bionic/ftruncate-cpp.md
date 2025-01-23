@@ -301,7 +301,7 @@ if (Process.platform === 'android') {
 
 `bionic/libc/bionic/ftruncate.cpp` 文件在 Android 的 32 位系统中定义了 `ftruncate` 函数，并通过调用 `ftruncate64` 来实现其功能，以支持处理更大的文件。理解其实现原理、与 Android 功能的关联以及常见的使用错误对于进行 Android 开发和调试至关重要。 Frida 这样的工具可以帮助开发者动态地分析和调试系统调用，更好地理解其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/ftruncate.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -312,8 +312,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  *
@@ -345,7 +347,4 @@ int ftruncate(int filedes, off_t length) {
   return ftruncate64(filedes, length);
 }
 #endif  // !defined(__LP64__)
-
-"""
-
 ```

@@ -151,7 +151,7 @@ Done.
 
 `go/src/runtime/mcheckmark.go` 实现的 `checkmark` 模式是 Go GC 的一个强大的内部验证工具，用于在开发和测试阶段检测并发 GC 中可能出现的错误。普通 Go 开发者无需直接关心其实现细节，但理解其作用有助于更深入地了解 Go 语言的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mcheckmark.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -159,8 +159,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -263,9 +265,4 @@ func setCheckmark(obj, base, off uintptr, mbits markBits) bool {
 	atomic.Or8(bytep, mask)
 	return false
 }
-
-"""
-
-
-
 ```

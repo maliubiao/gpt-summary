@@ -113,7 +113,7 @@ Initially, I might have been tempted to try to find some hidden significance in 
 
 总而言之，这个 `file.c` 文件本身是一个非常简单的 C 代码片段，但它的存在和位置揭示了 Frida 项目在构建系统层面对健壮性和错误处理的关注，这对于确保 Frida 作为一个可靠的动态 instrumentation 工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/151 duplicate source names/dir3/dir1/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,10 +121,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int dir3_dir1 = 31;
-
-"""
-
 ```

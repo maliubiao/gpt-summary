@@ -158,15 +158,17 @@ This systematic approach, moving from high-level understanding to detailed analy
 
 总而言之，`worker_internals_fetch.cc` 文件提供的功能主要是为了方便 Blink 引擎的开发者对 Worker 环境下 Fetch API 的行为进行测试和验证，特别是关于重定向 URL 的追踪和资源加载优先级的获取。普通用户或前端开发者通常不会直接接触到这些底层的 C++ 代码，但这些代码的正确性直接影响到 Web 应用程序在浏览器中的性能和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/testing/worker_internals_fetch.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ void WorkerInternalsFetch::ResolveResourcePriority(
 }
 
 }  // namespace blink
-
-"""
-
 ```

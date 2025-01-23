@@ -185,14 +185,16 @@ This detailed thought process, moving from high-level understanding to specific 
 
 `layout_grid.cc` 文件在 Blink 渲染引擎中扮演着至关重要的角色，它负责实现 CSS Grid Layout 的核心逻辑，包括响应样式变化、管理子元素、计算轨道大小和位置等。它与 HTML、CSS 和 JavaScript 都有密切的关系：它根据 HTML 结构和 CSS 样式来计算布局，并且 JavaScript 可以通过操作 DOM 和样式来间接影响 `LayoutGrid` 的行为。理解这个文件的功能有助于深入了解浏览器如何渲染和管理 CSS Grid 布局。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/grid/layout_grid.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -515,7 +517,4 @@ Vector<LayoutUnit> LayoutGrid::ComputeExpandedPositions(
 }
 
 }  // namespace blink
-
-"""
-
 ```

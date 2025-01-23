@@ -161,7 +161,7 @@ By following this structured approach, breaking down the code, and directly addr
 
 `sync_from_upstream.py` 是 Frida 项目中一个重要的维护脚本，它负责管理和同步 Frida 依赖的第三方库。它巧妙地利用 Git 的功能，既能将本地仓库与上游保持同步，又能尽可能地保留本地的修改。理解其功能和潜在的错误场景，对于 Frida 的开发人员和高级用户来说至关重要。它与逆向工程紧密相关，因为它管理着支撑 Frida 核心功能的底层库。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/sync-from-upstream.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 from pathlib import Path
 import re
@@ -356,7 +358,4 @@ class UnknownUpstreamError(Exception):
 
 if __name__ == '__main__':
     sync(os.path.abspath(sys.argv[1]))
-
-"""
-
 ```

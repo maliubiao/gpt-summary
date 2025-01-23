@@ -177,15 +177,17 @@ LdaConstant [2.718]
 
 **总结来说， `v8/test/unittests/interpreter/bytecode-array-iterator-unittest.cc` 是一个关键的单元测试，用于确保 V8 解释器能够正确地遍历和解析生成的字节码，这对于 JavaScript 代码的正确执行至关重要。** 它通过构建包含各种字节码指令的 `BytecodeArray`，然后使用 `BytecodeArrayIterator` 遍历并断言每个指令的信息是否符合预期来实现测试功能。虽然直接操作字节码不是 JavaScript 开发者的日常工作，但理解字节码的概念有助于理解 JavaScript 引擎的内部工作原理，并编写出更高效的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/bytecode-array-iterator-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/interpreter/bytecode-array-iterator-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -458,7 +460,4 @@ TEST_F(BytecodeArrayIteratorTest, IteratesBytecodeArray) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

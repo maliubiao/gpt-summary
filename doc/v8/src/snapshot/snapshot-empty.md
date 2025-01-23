@@ -121,11 +121,13 @@ console.timeEnd('Access Built-in Object');
 
 `snapshot-empty.cc` 是 V8 引擎中一个重要的组成部分，它确保了在不依赖快照的情况下，引擎仍然能够正常构建和运行。虽然这会牺牲一些启动性能，但在某些特定的应用场景下，例如对二进制文件大小有严格限制的环境中，这种构建方式可能是必要的。它通过提供必要的接口占位符，使得 V8 的核心代码在没有快照时也能保持一致性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/snapshot-empty.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ bool Snapshot::ShouldVerifyChecksum(const v8::StartupData* data) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

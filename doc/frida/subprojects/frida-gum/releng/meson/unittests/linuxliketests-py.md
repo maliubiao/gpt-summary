@@ -80,7 +80,7 @@ Here's a breakdown of how I'll approach it:
 
 `linuxliketests.py` 的第一部分主要负责验证 Frida 在类 Unix 系统上构建和安装共享库、静态库、以及处理依赖项时的核心功能。它通过一系列的单元测试，覆盖了 `soname` 处理、PIC 代码生成、`pkg-config` 的使用、安装文件权限、`umask` 处理、编译器标志顺序以及 C/C++ 标准支持等关键方面。这些测试对于确保 Frida 构建系统的正确性和可靠性至关重要。它们也间接反映了 Frida 在底层二进制处理、动态链接、以及与操作系统交互方面的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -89,8 +89,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2022 The Meson development team
 
@@ -826,9 +828,4 @@ class LinuxlikeTests(BasePlatformTests):
             self.assertEqual(want_mode, found_mode,
                              msg=('Expected file %s to have mode %s but found %s instead.' %
                                   (datafile, want_mode, found_mode)))
-
-
-"""
-
-
 ```

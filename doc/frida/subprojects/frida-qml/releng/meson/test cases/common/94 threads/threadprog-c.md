@@ -177,7 +177,7 @@ By following these steps, I can generate a comprehensive and informative analysi
 
 总而言之，`threadprog.c` 作为一个简单的多线程示例，在 Frida 这样的动态插桩工具的上下文中，可以帮助用户理解目标程序的线程行为，并作为编写 Frida 脚本或进行逆向分析的起点或参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/94 threads/threadprog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32
 
 #include<windows.h>
@@ -233,7 +235,4 @@ int main(void) {
 }
 
 #endif
-
-"""
-
 ```

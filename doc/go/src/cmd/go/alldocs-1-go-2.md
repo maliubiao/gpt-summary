@@ -209,7 +209,7 @@ func ExampleAdd() {
 
 这部分文档详细解释了 Go 语言中包的管理方式（包括导入路径、命名约定和 vendor 机制）以及如何使用 `go test` 命令进行代码测试，包括各种测试执行选项、性能分析工具和代码覆盖率分析。 它旨在帮助开发者理解如何组织和测试 Go 代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/alldocs-1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -217,8 +217,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 or, but ./vendor/... and ./mycode/vendor/... do.
 // Note, however, that a directory named vendor that itself contains code
 // is not a vendored package: cmd/vendor would be a command named vendor,
@@ -545,10 +547,4 @@ or, but ./vendor/... and ./mycode/vendor/... do.
 //
 //
 package main
-
-"""
-
-
-
-
 ```

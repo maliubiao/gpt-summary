@@ -149,15 +149,17 @@ myObject = null;
 
 总而言之，`v8/src/heap/cppgc/heap.h` 定义了 V8 中 C++ 垃圾回收器的核心类，负责管理 C++ 对象的堆内存和执行垃圾回收，这对于 V8 引擎高效地运行 JavaScript 代码至关重要。虽然开发者通常不直接操作这个类，但理解其功能有助于理解 V8 的内部工作原理以及如何避免潜在的内存管理问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/heap.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ class V8_EXPORT_PRIVATE Heap final : public HeapBase,
 }  // namespace cppgc
 
 #endif  // V8_HEAP_CPPGC_HEAP_H_
-
-"""
-
 ```

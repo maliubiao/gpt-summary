@@ -111,7 +111,7 @@ By following these steps, I can generate a comprehensive and informative answer 
 
 总而言之，`net/third_party/quiche/src/quiche/quic/core/quic_framer_test.cc` 文件的第 8 部分主要负责测试 `QuicFramer` 类处理和构建关键的 QUIC 控制帧，特别是 ACK 帧，以及 RST_STREAM 和 CONNECTION_CLOSE 帧。这些测试覆盖了不同的场景和配置，确保 `QuicFramer` 能够正确地解析接收到的帧，并能构建出符合协议规范的帧，从而保证 QUIC 协议的可靠性和正确性。 这部分测试对于确保 Chromium 网络栈中 QUIC 协议实现的健壮性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共16部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ationTimePlus((0x2995 << 3) + 3)},
       {kSmallLargestObserved - 2, CreationTimePlus((0x2995 << 3) + 4)},
   };
@@ -919,8 +921,5 @@ TEST_P(QuicFramerTest, BuildCloseFramePacketExtendedInfo) {
 
     // frame type (IETF_CONNECTION_CLOSE frame)
     0x1c,
-    // 
-"""
-
-
+    //
 ```

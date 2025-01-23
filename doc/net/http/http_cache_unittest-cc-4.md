@@ -141,7 +141,7 @@ The tests in `http_cache_unittest.cc` ensure that:
 
 This specific part of the `http_cache_unittest.cc` file focuses on rigorously testing the **HTTP cache's behavior related to range requests and the handling of parallel requests**, including scenarios involving cache validation, deletion, and transaction management. It aims to ensure the cache remains consistent, correct, and performs efficiently under these complex conditions, which are crucial for a smooth and fast browsing experience.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 action);
   mock_transaction.url = kRangeGET_TransactionOK.url;
   mock_transaction.data = kFullRangeData;
@@ -1064,7 +1066,4 @@ TEST_F(HttpCacheSimpleGetTest, ParallelValidationCancelReader) {
 
     c->result = cache.CreateTransaction(&c->trans);
     ASSERT_THAT(c->result, Is
-"""
-
-
 ```

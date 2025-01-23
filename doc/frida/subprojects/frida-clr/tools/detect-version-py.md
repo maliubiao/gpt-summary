@@ -134,7 +134,7 @@ Initially, I might focus too heavily on just the Python code itself. However, th
 
 `frida/subprojects/frida-clr/tools/detect-version.py` 是一个用于检测 Frida 版本号的实用工具，它依赖于项目构建结构中 `releng` 目录下的版本信息。虽然脚本本身比较简单，但它在 Frida 的构建、维护和使用过程中都扮演着重要的角色，并且与逆向工程、底层系统知识紧密相关。用户到达这个脚本通常是为了了解或解决与 Frida 版本相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/tools/detect-version.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 from pathlib import Path
 import sys
@@ -182,7 +184,4 @@ def releng_location_exists(location: Path) -> bool:
 
 if __name__ == "__main__":
     print(detect_version())
-
-"""
-
 ```

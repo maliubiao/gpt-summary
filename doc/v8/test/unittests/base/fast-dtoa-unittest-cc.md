@@ -200,15 +200,17 @@ console.log(str4); // 输出 "123.5"
 
 `v8/test/unittests/base/fast-dtoa-unittest.cc` 是 V8 引擎中一个重要的单元测试文件，它确保了 `FastDtoa` 函数能够正确地将双精度浮点数转换为字符串。理解这个文件可以帮助我们更好地理解 JavaScript 中数字到字符串转换的内部机制，并避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/fast-dtoa-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/base/fast-dtoa-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -499,7 +501,4 @@ TEST_F(FastDtoaTest, FastDtoaGayPrecision) {
 }  // namespace test_fast_dtoa
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

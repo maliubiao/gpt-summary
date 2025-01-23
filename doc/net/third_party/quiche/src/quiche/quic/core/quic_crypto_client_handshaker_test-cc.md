@@ -117,15 +117,17 @@ By following this thought process, we can systematically analyze the C++ test fi
 
 因此，虽然用户操作很简洁，但在浏览器底层会触发一系列复杂的网络操作，最终会涉及到 `QuicCryptoClientHandshaker` 的执行。  调试 QUIC 连接问题通常需要查看网络日志和 Chromium 的内部状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_crypto_client_handshaker_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -346,7 +348,4 @@ TEST_P(QuicCryptoClientHandshakerTest, TestNoPaddingInFullHelloWhenDisabled) {
 
 }  // namespace
 }  // namespace quic::test
-
-"""
-
 ```

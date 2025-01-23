@@ -131,7 +131,7 @@ else:
 
 总而言之，`CLikeCompiler` mixin 类是 Frida 构建系统中处理与 C 语言兼容的编译器交互的核心组件，它提供了一系列用于探测编译器特性、查找库文件和验证编译/链接选项的功能，这对于确保 Frida 能够在各种目标平台上正确构建和运行至关重要。虽然它本身不执行逆向操作，但其功能是构建逆向工程工具的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/compilers/mixins/clike.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,9 +140,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    }}'''
+### 源代码
+```python
+}}'''
         return head, main
 
     @staticmethod
@@ -745,8 +747,4 @@ Prompt:
             self.preprocessor.mode = 'PREPROCESSOR'
             self.modes.append(self.preprocessor)
         return self.preprocessor
-
-"""
-
-
 ```

@@ -177,15 +177,17 @@ This systematic approach, starting with understanding the goal and progressively
 
 总而言之，`css_attr_type_test.cc` 是一个确保 Blink 引擎能够正确解析和处理 CSS `attr()` 函数中类型指示符的关键测试文件，它直接关系到 CSS 功能的正确实现以及与 HTML 属性的联动。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_attr_type_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -294,7 +296,4 @@ TEST_P(DimensionUnitTypeTest, ParseDimensionUnitTypeInvalid) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

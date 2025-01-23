@@ -176,7 +176,7 @@ By following these steps, considering the context, and refining the analysis, we
 
 总而言之，这个 `meson-sample.c` 文件是一个用于演示和测试目的的简单 C 代码，它使用了 GObject 框架，并且可以作为 Frida 动态插桩的目标。分析这个文件可以帮助理解 Frida 的基本 hook 功能，以及与底层二进制、操作系统和框架交互的一些概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/22 gir link order/meson-sample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample.h"
 
 #include "get-prgname.h"
@@ -234,7 +236,4 @@ meson_sample_print_message (MesonSample *self)
   g_print ("Message: %s\n", get_prgname_get_name ());
   g_print ("Message: %d\n", fake_gthread_fake_function ());
 }
-
-"""
-
 ```

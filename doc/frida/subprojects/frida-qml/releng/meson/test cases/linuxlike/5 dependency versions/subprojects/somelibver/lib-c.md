@@ -224,7 +224,7 @@ Leaving some_function, return value: [返回值]
 
 总而言之，这个 `lib.c` 文件很可能是一个简单的测试库，用于验证 Frida 在处理不同版本依赖时的核心功能，例如模块加载、符号解析和 hook 技术。它帮助 Frida 开发者确保工具的健壮性和兼容性，同时也为用户提供了一个理解 Frida 如何处理版本问题的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/linuxlike/5 dependency versions/subprojects/somelibver/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -232,9 +232,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

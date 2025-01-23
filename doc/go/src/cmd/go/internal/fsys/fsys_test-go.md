@@ -227,15 +227,17 @@ func main() {
 
 这段代码的核心在于提供了一种灵活的方式来模拟和操作文件系统，这对于构建工具链、进行单元测试以及创建可复现的构建环境至关重要。通过 overlay 和 bind 的机制，Go 工具链可以在不修改实际磁盘文件的前提下，改变文件系统的“外观”，从而满足各种构建和测试需求。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/fsys/fsys_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1573,9 +1575,4 @@ func testReadDir(t *testing.T, name string, want ...string) {
 		t.Errorf("ReadDir(%q) = %q, %v, want %q, nil", name, names, err, want)
 	}
 }
-
-"""
-
-
-
 ```

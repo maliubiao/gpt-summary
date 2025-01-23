@@ -95,7 +95,7 @@ func osinit() {
 
 `go/src/runtime/os_freebsd_noauxv.go` 中的 `archauxv` 函数在 FreeBSD (非 ARM) 环境下提供了一个空的实现。这表明在这种环境下，Go 运行时可能不使用或不需要通过辅助向量来获取系统信息。理解这一点有助于理解 Go 运行时的平台差异性以及其如何根据不同的操作系统和架构进行调整。 在其他支持辅助向量的系统上，`archauxv` 函数通常会解析辅助向量中的信息并将其用于 Go 运行时的初始化和优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_freebsd_noauxv.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -103,8 +103,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -115,9 +117,4 @@ package runtime
 
 func archauxv(tag, val uintptr) {
 }
-
-"""
-
-
-
 ```

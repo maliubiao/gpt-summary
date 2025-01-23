@@ -177,7 +177,7 @@ By following this detailed and iterative process, combining code reading with kn
 
 总而言之，`xpcproxy.js` 是一个专注于干预 Darwin 系统进程创建的 Frida 脚本，尤其侧重于影响越狱环境下的进程启动行为。它利用 Frida 的 hook 功能，修改系统调用和特定框架的函数，以达到控制新进程启动状态的目的，这在动态分析、逆向工程和越狱相关的场景中非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/darwin/agent/xpcproxy.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const POSIX_SPAWN_START_SUSPENDED = 0x0080;
 
 applyJailbreakQuirks();
@@ -304,7 +306,4 @@ function resolveSubstrateExec(base, size) {
   }
   return matches[0].address;
 }
-
-"""
-
 ```

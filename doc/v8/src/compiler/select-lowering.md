@@ -96,11 +96,13 @@ function bar(x) {
 
 `v8/src/compiler/select-lowering.cc` 是 V8 编译器中一个重要的组件，它负责将 JavaScript 中的条件选择结构（三元运算符、`if-else` 语句）转换为更底层的、基于条件跳转和 Phi 节点的表示。这个转换使得后续的编译器优化和代码生成阶段能够更有效地工作，最终生成高效的目标机器码来执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/select-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ Reduction SelectLowering::LowerSelect(Node* node) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

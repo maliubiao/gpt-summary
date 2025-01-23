@@ -116,7 +116,7 @@ By following these steps, we can go from a basic understanding of the code to a 
 
 总而言之，这个简单的 `main.c` 文件虽然自身功能不多，但它是 Frida 测试框架中用于验证跨语言链接能力的一个关键组成部分，体现了 Frida 在动态分析和逆向工程中的核心技术。 它的存在可以帮助开发者和研究人员理解 Frida 的内部工作机制，并确保 Frida 的跨语言支持的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/225 link language/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,14 +124,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "c_linkage.h"
 
 int main(void) {
     return makeInt();
 }
-
-"""
-
 ```

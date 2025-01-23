@@ -158,15 +158,17 @@ obj2.ref = obj1;
 
 总而言之，`v8/test/cctest/heap/test-compaction.cc` 是一个至关重要的测试文件，用于确保 V8 的堆压缩功能在各种异常情况下（特别是 OOM）的正确性和稳定性，这对于保证 JavaScript 程序的健壮性至关重要。虽然 JavaScript 开发者通常不需要直接接触这些底层细节，但理解这些机制有助于更好地理解 JavaScript 的内存管理特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-compaction.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/heap/test-compaction.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -607,7 +609,4 @@ HEAP_TEST(CompactionPartiallyAbortedPageWithRememberedSetEntries) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

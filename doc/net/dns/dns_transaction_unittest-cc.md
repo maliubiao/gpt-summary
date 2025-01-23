@@ -740,7 +740,7 @@ class DnsTransactionTestBase : public testing::Test {
   // taken verbatim from |data| of |data_length| bytes. The transaction id in
   // |data| should equal |id|, unless testing mismatched response.
   void AddQuery
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -748,8 +748,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1636,7 +1638,4 @@ class DnsTransactionTestBase : public testing::Test {
     explicit DohJobInterceptor(DnsTransactionTestBase* test) : test_(test) {}
 
     D
-"""
-
-
 ```

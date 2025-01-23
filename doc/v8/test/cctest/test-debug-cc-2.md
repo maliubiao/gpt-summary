@@ -173,7 +173,7 @@ foo();
 
 这部分代码主要关注 **V8 JavaScript 引擎在进行代码单步调试时，对于循环结构（如 `for` 循环、数组和对象属性的访问）和基本语句执行的正确性测试**。它验证了在 `StepOver` 模式下，调试器能够正确地跳过单行代码，并在循环的每次迭代中按照预期的位置暂停。测试用例涵盖了数组和对象的读取与赋值操作，以及确保循环控制语句和断点机制的有效性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-debug.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-debug.cc以.tq结尾，那它是个v8 torque源代码，
@@ -181,8 +181,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 a function for testing stepping of keyed load. The statement 'y=1'
   // is there to have more than one breakable statement in the loop, TODO(315).
   v8::Local<v8::Function> foo = CompileFunction(
@@ -1165,7 +1167,4 @@ TEST(DebugCountFunctionCall) {
 
   v8::debug::SetDebugDelegate(isolate, nullptr);
   CheckDebuggerUnloaded(
-"""
-
-
 ```

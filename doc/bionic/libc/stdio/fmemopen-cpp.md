@@ -319,7 +319,7 @@ sys.stdin.read()
 
 希望以上分析能够帮助你理解 `bionic/libc/stdio/fmemopen.cpp` 的功能和实现细节，以及它在 Android 系统中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/stdio/fmemopen.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -330,8 +330,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*-
  * Copyright (C) 2013 Pietro Cerutti <gahr@FreeBSD.org>
  *
@@ -490,7 +492,4 @@ FILE* fmemopen(void* buf, size_t capacity, const char* mode) {
 
   return fp;
 }
-
-"""
-
 ```

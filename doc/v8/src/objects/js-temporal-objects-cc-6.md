@@ -173,7 +173,7 @@ TimeRecord result = {
 
 总而言之，`v8/src/objects/js-temporal-objects.cc` 是 V8 引擎中实现 ECMAScript Temporal API 的关键组成部分，它提供了处理 Temporal 对象的底层基础设施和核心逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-temporal-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -181,8 +181,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共25部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _zone, isolate));
 }
 // #sec-canonicalizetimezonename
@@ -899,7 +901,4 @@ Maybe<BalancePossiblyInfiniteDurationResult> BalancePossiblyInfiniteDuration(
   // ii. Else if sign = -1, then
   // 1. Return negative overflow.
   double hou
-"""
-
-
 ```

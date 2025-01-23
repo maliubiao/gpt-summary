@@ -141,11 +141,13 @@ testSerialization();
 
 `serialize.cc` 这个 C++ 文件是 V8 引擎内部测试 WebAssembly 模块序列化和反序列化功能的一个单元测试。它通过 C API 创建、序列化、反序列化一个简单的 WebAssembly 模块，并验证反序列化后的模块功能是否正常。这与 JavaScript 中 `WebAssembly.Module` 的底层实现密切相关，尽管 JavaScript 标准没有直接暴露序列化 API，但引擎内部的实现原理类似。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/serialize.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ TEST_F(WasmCapiTest, Serialize) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

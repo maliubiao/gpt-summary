@@ -116,11 +116,13 @@ console.log(result);
 
 `gdb-jit.cc` 是 V8 引擎中一个至关重要的组成部分，它弥合了 JavaScript 运行时和外部调试器 GDB 之间的鸿沟，使得开发者能够像调试本地代码一样深入地理解和调试 JavaScript 代码的执行过程，尤其是在处理复杂的性能问题或理解 V8 的内部机制时非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/gdb-jit.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2240,7 +2242,4 @@ size_t NumOverlapEntriesForTesting(const base::AddressRegion region) {
 
 #undef __MACH_O
 #undef __ELF
-
-"""
-
 ```

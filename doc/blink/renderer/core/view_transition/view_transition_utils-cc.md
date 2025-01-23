@@ -161,14 +161,16 @@ By following these steps, I can systematically analyze the C++ code and produce 
 
 总而言之，`view_transition_utils.cc` 提供了一组底层的工具函数，帮助 Blink 引擎的其他部分管理和查询视图过渡的状态，是实现视图过渡功能的重要组成部分。它通过 `DOMViewTransition` 与 JavaScript 进行交互，并与 HTML 元素和 CSS 伪元素紧密相关。理解这些工具函数的功能，有助于理解 Blink 引擎是如何实现视图过渡这一特性的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/view_transition/view_transition_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ bool ViewTransitionUtils::
 }
 
 }  // namespace blink
-
-"""
-
 ```

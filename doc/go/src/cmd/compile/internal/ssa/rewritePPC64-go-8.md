@@ -196,7 +196,7 @@ v2 = OpPPC64MOVDconst <type:int64> aux:0
 
 作为 `rewritePPC64.go` 的一部分，这段代码的核心功能是定义了一系列针对 PPC64 架构的 SSA 指令重写规则，旨在将低效或可以简化的指令模式转换为更高效的等价形式。  它涵盖了条件设置、移位操作、算术和逻辑运算、边界检查、位计数和缓存预取等多个方面，是 Go 编译器为 PPC64 架构生成高性能代码的关键组成部分。  这部分是优化流程中的一个环节，通过模式匹配和替换，逐步降低代码的抽象层次，使其更贴近目标机器的指令集。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritePPC64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -205,9 +205,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第9部分，共12部分，请归纳一下它的功能
+```
 
-"""
- [0])
+### 源代码
+```go
+[0])
 	for {
 		if auxIntToInt32(v.AuxInt) != 0 || v_0.Op != OpPPC64FlagGT {
 			break
@@ -1618,9 +1620,4 @@ func rewriteValuePPC64_OpRsh16Ux64(v *Value) bool {
 	v_0 := v.Args[0]
 	b := v.Block
 	typ := &b.
-"""
-
-
-
-
 ```

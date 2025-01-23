@@ -118,12 +118,14 @@ console.log(target); // Output: { a: 1, b: 2, c: 3 }
 
 **In summary, this part of the `js-objects.cc` file provides the fundamental C++ implementation for how JavaScript objects behave in V8. It lays the groundwork for more specific object types and their interactions within the engine.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1773,7 +1775,4 @@ Maybe<bool> JSReceiver::ValidateAndApplyPropertyDescriptor(
       // current.[[Get]]) is false, return false.
       if (desc->has_get() &&
           !Object::SameValue(*desc->get(), *current-
-"""
-
-
 ```

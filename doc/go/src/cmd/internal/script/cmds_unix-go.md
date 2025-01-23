@@ -192,15 +192,17 @@ func main() {
 
 总而言之，`cmds_unix.go` 中的这段代码提供了一个特定于Unix系统的实用工具函数，用于判断 "Text file busy" 错误，这通常发生在尝试修改或删除正在运行的可执行文件时。使用者需要理解其作用范围，并在错误处理中结合其他可能的错误类型一起考虑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/script/cmds_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -217,9 +219,4 @@ import (
 func isETXTBSY(err error) bool {
 	return errors.Is(err, syscall.ETXTBSY)
 }
-
-"""
-
-
-
 ```

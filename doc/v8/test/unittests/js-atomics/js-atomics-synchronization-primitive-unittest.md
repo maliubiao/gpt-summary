@@ -120,11 +120,13 @@ worker2();
 
 `js-atomics-synchronization-primitive-unittest.cc` 这个 C++ 文件是 V8 引擎中用于测试底层同步机制（互斥锁和条件变量）的关键部分。这些机制是 JavaScript `Atomics` API 实现并发和线程间同步的基础。虽然 JavaScript 开发者不会直接操作 `Mutex` 或 `Condition` 对象，但理解这些底层的概念有助于更好地理解和使用 `Atomics` API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/js-atomics/js-atomics-synchronization-primitive-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -417,7 +419,4 @@ TEST_F(JSAtomicsConditionTest, NotifyAll) {
 }  // namespace v8
 
 #endif  // V8_CAN_CREATE_SHARED_HEAP
-
-"""
-
 ```

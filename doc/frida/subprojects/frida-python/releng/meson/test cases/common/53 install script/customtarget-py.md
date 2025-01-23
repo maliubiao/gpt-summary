@@ -94,7 +94,7 @@ By following these steps, I can break down the script, understand its purpose wi
 
 总而言之，`customtarget.py` 脚本虽然功能简单，但在 Frida 项目的构建和测试流程中扮演着验证安装步骤是否正确执行的角色。它与逆向方法的关系是间接的，作为确保 Frida 能够正确安装的基石而存在。理解这样的测试脚本有助于理解 Frida 项目的构建过程和潜在的安装问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/53 install script/customtarget.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -123,7 +125,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

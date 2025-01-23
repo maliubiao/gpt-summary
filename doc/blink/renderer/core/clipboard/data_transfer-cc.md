@@ -182,15 +182,17 @@ Initially, I might have just listed the methods without fully understanding thei
 
 `blink/renderer/core/clipboard/data_transfer.cc` 文件是 Blink 引擎中处理数据传输操作的核心组件，它实现了 `DataTransfer` 接口的各种功能，包括数据存储、拖放效果管理、数据类型处理等。理解这个文件的功能对于理解浏览器如何处理拖放和剪贴板操作至关重要，也有助于调试相关的 Web 开发问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/clipboard/data_transfer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008 Apple Inc. All rights reserved.
  *
@@ -844,7 +846,4 @@ void DataTransfer::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

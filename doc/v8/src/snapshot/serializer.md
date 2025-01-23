@@ -114,11 +114,13 @@ sayHello();
 
 `serializer.cc` 是 V8 引擎快照机制的关键组成部分，它负责将 JavaScript 运行时的内存状态保存下来，以便快速恢复，这是 V8 引擎性能优化的重要手段之一。它处理了各种 JavaScript 对象的序列化，包括基本类型、对象、函数以及对象之间的引用关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/serializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1562,7 +1564,4 @@ bool Serializer::SerializeReadOnlyObjectReference(Tagged<HeapObject> obj,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

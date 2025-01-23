@@ -150,15 +150,17 @@ In this example, even with `ParkedMutexGuard`, if the locking order is inconsist
 
 In summary, `v8/src/heap/parked-scope-inl.h` provides a crucial mechanism in V8 for managing thread synchronization in a way that minimizes blocking of essential operations like garbage collection. It uses the concept of "parking" threads to allow other critical tasks to proceed while a thread is waiting for a resource. However, it's still essential to use these synchronization primitives correctly to avoid common concurrency issues.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/parked-scope-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/parked-scope-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -304,7 +306,4 @@ V8_INLINE void ParkingThread::ParkedJoinAll(LocalHeap* local_heap,
 }  // namespace v8
 
 #endif  // V8_HEAP_PARKED_SCOPE_INL_H_
-
-"""
-
 ```

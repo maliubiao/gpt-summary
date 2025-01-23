@@ -142,7 +142,7 @@ ExternalReference sin_ref = ExternalReference::math_sin();
 
 总而言之，`v8/src/codegen/external-reference.h` 是 V8 内部一个关键的组件，它负责管理和抽象对外部 C++ 代码的引用，使得 JavaScript 能够高效地利用底层的系统功能和优化实现。虽然普通 JavaScript 开发者不会直接接触到这个头文件，但理解其作用有助于更深入地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/external-reference.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/external-reference.h以.tq结尾，那它是个v8 torque源代码，
@@ -150,8 +150,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 s,                              \
           "tsan_seq_cst_store_function_16_bits")                               \
   IF_TSAN(V, tsan_seq_cst_store_function_32_bits,                              \
@@ -383,8 +385,4 @@ void abort_with_reason(int reason);
 }  // namespace v8
 
 #endif  // V8_CODEGEN_EXTERNAL_REFERENCE_H_
-
-"""
-
-
 ```

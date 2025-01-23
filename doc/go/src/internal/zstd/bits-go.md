@@ -196,7 +196,7 @@ func main() {
 
 总而言之，这段代码是 zstd 解压缩库中处理比特流的关键部分，它提供了灵活且可控的方式来读取压缩数据中的比特信息，支持正向和反向两种读取模式，以适应不同的压缩算法需求。使用者需要仔细处理读取位置和比特数量，并注意 `reverseBitReader` 的特殊起始条件，以避免错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/zstd/bits.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -204,8 +204,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -336,9 +338,4 @@ func (rbr *reverseBitReader) fetch(b uint8) bool {
 func (rbr *reverseBitReader) makeError(msg string) error {
 	return rbr.r.makeError(int(rbr.off), msg)
 }
-
-"""
-
-
-
 ```

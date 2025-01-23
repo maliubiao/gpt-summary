@@ -197,15 +197,17 @@ func main() {
 
 总结来说，`issue24651a.go` 是一个用于测试 Go 编译器在特定编译选项和指令下行为的测试用例，它不是一个可以直接运行的应用程序，而是 Go 语言质量保证体系的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue24651a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 //errorcheck -0 -race -m -m
 
 //go:build (linux && amd64) || (linux && ppc64le) || (darwin && amd64) || (freebsd && amd64) || (netbsd && amd64) || (windows && amd64)
@@ -232,9 +234,4 @@ func main() { // ERROR "cannot inline main: marked go:noinline$"
 	println("Foo(", x, ")=", Foo(x))
 	println("Bar(", x, ")=", Bar(x)) // ERROR "inlining call to Bar"
 }
-
-"""
-
-
-
 ```

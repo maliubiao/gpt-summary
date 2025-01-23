@@ -194,7 +194,7 @@ The answer is: 42
 
 总而言之，`appB.c` 在这个上下文中是一个非常基础的测试程序，用于验证 Frida 在处理依赖静态库的程序时的行为，特别是在进行静态库剥离之后。开发者通过构建、运行和调试这个简单的程序，可以确保 Frida 的功能在各种情况下都能正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/65 static archive stripping/app/appB.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -202,13 +202,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <libB.h>
 
 int main(void) { printf("The answer is: %d\n", libB_func()); }
-
-"""
-
 ```

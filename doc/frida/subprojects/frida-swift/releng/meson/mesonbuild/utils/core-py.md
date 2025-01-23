@@ -169,7 +169,7 @@ As a user interacting with Frida, you might indirectly reach this code through v
 
 **In essence, this `core.py` file is a foundational part of Frida's build system, providing essential utilities for managing external program execution and environment variables. While end-users might not directly interact with this file, their actions that trigger builds or process instrumentation will indirectly rely on the functionalities it provides.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/utils/core.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 
@@ -345,7 +347,4 @@ class ExecutableSerialisation:
         self.skip_if_destdir = False
         self.subproject = T.cast('SubProject', '')  # avoid circular import
         self.dry_run = False
-
-"""
-
 ```

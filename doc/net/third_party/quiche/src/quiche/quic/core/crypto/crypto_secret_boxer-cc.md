@@ -236,15 +236,17 @@ By following these steps, one can systematically analyze the C++ code and genera
 
 总而言之，`net/third_party/quiche/src/quiche/quic/core/crypto/crypto_secret_boxer.cc` 文件实现了 QUIC 协议栈中用于安全加密和解密数据的核心组件，它使用强大的认证加密算法，并考虑了密钥管理和线程安全。虽然它本身是 C++ 代码，但其功能直接支持了在网络通信中保护数据，这与 Javascript 在客户端处理网络数据有着重要的关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/crypto_secret_boxer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -395,7 +397,4 @@ bool CryptoSecretBoxer::Unbox(absl::string_view in_ciphertext,
 }
 
 }  // namespace quic
-
-"""
-
 ```

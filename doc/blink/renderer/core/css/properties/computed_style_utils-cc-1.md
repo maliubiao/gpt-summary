@@ -123,7 +123,7 @@ Based on this, the core function of this code snippet appears to be taking inter
 
 总而言之，这部分 `computed_style_utils.cc` 代码是 Blink 引擎中负责将内部表示的计算样式值转换为外部（例如 JavaScript 或开发者工具）可访问的 CSS 值表示的关键部分，涉及到多种 CSS 属性的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/computed_style_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -131,9 +131,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
-   inset = insets.right;
+### 源代码
+```cpp
+inset = insets.right;
         break;
       case CSSPropertyID::kBottom:
         inset = insets.bottom;
@@ -957,8 +959,5 @@ class OrderedNamedLinesCollector {
            ordered_named_auto_repeat_grid_lines_.empty();
   }
   bool IsSubgriddedAxis() const { return is_subgridded_axis_; }
-  wtf_size_t 
-"""
-
-
+  wtf_size_t
 ```

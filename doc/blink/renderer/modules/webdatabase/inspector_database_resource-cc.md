@@ -146,15 +146,17 @@ By following these steps, we can systematically analyze the code and generate a 
 
 总而言之，`inspector_database_resource.cc` 是 Blink 引擎中一个关键的组成部分，它桥接了 WebSQL 数据库的内部表示和开发者工具的可视化界面，为开发者提供了重要的调试和监控能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/inspector_database_resource.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008 Apple Inc. All rights reserved.
  * Copyright (C) 2008 Matt Lilek <webkit@mattlilek.com>
@@ -219,7 +221,4 @@ void InspectorDatabaseResource::Bind(protocol::Database::Frontend* frontend) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

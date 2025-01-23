@@ -194,7 +194,7 @@ Finally, the information needs to be organized logically. Using the categories f
 
 因此，当你使用 Frida 进行 hook、代码注入等操作时，`gumpagepool.c` 中的代码很可能在后台默默地工作，负责管理 Frida 在目标进程中使用的内存。 理解这个文件的功能对于深入理解 Frida 的工作原理以及调试相关的内存问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/libs/gum/heap/gumpagepool.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -202,8 +202,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2018 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -643,7 +645,4 @@ tail_align (gpointer ptr,
   result->next_tail_ptr = GSIZE_TO_POINTER (next_tail_boundary);
   result->gap_size = next_tail_boundary - (aligned_end_address + 1);
 }
-
-"""
-
 ```

@@ -135,7 +135,7 @@ Sphinx 会读取 `conf.py` 的配置，找到 `tomlkit` 库的源代码，并使
 
 通过检查 `conf.py` 文件，开发人员可以诊断和解决文档构建过程中遇到的各种问题。该文件是 Sphinx 构建过程的核心配置，任何与文档生成相关的错误都可能与此文件中的设置有关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/docs/conf.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -205,7 +207,4 @@ html_theme = "furo"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = []
-
-"""
-
 ```

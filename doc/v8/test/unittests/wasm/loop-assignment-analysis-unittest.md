@@ -63,9 +63,12 @@ Essentially, I'm reverse-engineering the functionality by carefully examining th
 
 **总而言之，`loop-assignment-analysis-unittest.cc` 文件的目的是通过各种测试用例，确保 V8 引擎的 Wasm 循环赋值分析器能够准确可靠地识别出 WebAssembly 循环内部被赋值的局部变量，从而为后续的编译器优化提供准确的信息。**
 
-Prompt: ```这是目录为v8/test/unittests/wasm/loop-assignment-analysis-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/wasm/loop-assignment-analysis-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,6 +298,4 @@ TEST_F(WasmLoopAssignmentAnalyzerTest, regress_642867) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

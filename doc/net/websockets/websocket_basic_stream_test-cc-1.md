@@ -110,7 +110,7 @@ I need to:
 
 总而言之，这部分测试深入验证了 `WebSocketBasicStream` 类在处理 WebSocket 帧的接收和发送时的健壮性和合规性，确保了 Chromium 能够正确可靠地处理各种 WebSocket 通信场景，并能有效地应对潜在的错误或不合规的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_basic_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 or.
 TEST_F(WebSocketBasicStreamSocketSingleReadTest, SyncInvalidFrame) {
   std::vector<std::unique_ptr<WebSocketFrame>> frames;
@@ -448,8 +450,4 @@ TEST_F(WebSocketBasicStreamSwitchTest, CheckSwitch) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
-
 ```

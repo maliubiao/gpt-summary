@@ -91,15 +91,17 @@ The user wants to understand the functionality of the `background_url_loader.cc`
 
 总结来说，`BackgroundURLLoader` 是 Chromium Blink 引擎中一个重要的组件，负责在后台异步加载网络资源，从而提高 Web 页面的加载速度和用户体验。它与 JavaScript, HTML 和 CSS 的资源加载密切相关，并在引擎内部与多种机制（如缓存、节流器）集成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/background_url_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -867,7 +869,4 @@ void BackgroundURLLoader::LoadSynchronously(
     uint64_t& encoded_body_length,
     scoped_refptr<BlobDataHandle>& downloaded_blob,
     std::unique_ptr<ResourceLoadInfoNotifierWrap
-"""
-
-
 ```

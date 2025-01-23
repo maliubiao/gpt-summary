@@ -102,11 +102,13 @@ loadAndRunWasm();
 
 `wasm-compile-simd.cc` 这个 C++ fuzzer 的目标是确保在 JavaScript 代码执行 `WebAssembly.compile(buffer)` 时，V8 引擎能够正确地编译包含 SIMD 指令的 WebAssembly 模块，而不会发生崩溃或其他错误。如果 fuzzer 发现了一个导致编译失败或产生错误代码的 WebAssembly 模块，V8 团队就可以修复编译器中的 bug，从而提高 JavaScript 中 WebAssembly 功能的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/wasm-compile-simd.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -140,7 +142,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
 ```

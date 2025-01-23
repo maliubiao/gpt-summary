@@ -478,7 +478,7 @@ WebAssembly.instantiate(wasmModule, importObject)
 
 作为第 5 部分，`v8/src/wasm/module-instantiate.cc` 的功能可以归纳为 **WebAssembly 模块实例化过程中的关键步骤，负责将编译后的 WebAssembly 模块与 JavaScript 环境连接起来，创建可执行的实例。** 它处理了模块的导入、导出、内存、表和元素段的初始化，确保 WebAssembly 代码能够正确地与 JavaScript 代码进行交互。这个文件是 V8 执行 WebAssembly 的核心组成部分，它实现了将抽象的 WebAssembly 模块转换为可以在 V8 虚拟机中运行的具体实例的过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-instantiate.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-instantiate.cc以.tq结尾，那它是个v8 torque源代码，
@@ -486,10 +486,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
-
-            kLazyFunctionsAndNull);
+### 源代码
+```cpp
+kLazyFunctionsAndNull);
         if (MaybeMarkError(computed_element, thrower_)) return;
 
         WasmValue computed_value = to_value(computed_element);
@@ -541,8 +542,4 @@ void InstanceBuilder::InitializeTags(
 }  // namespace v8::internal::wasm
 
 #undef TRACE
-
-"""
-
-
 ```

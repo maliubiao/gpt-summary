@@ -335,7 +335,7 @@ if (Process.platform === 'android') {
 
 通过这些 Frida hook 示例，可以在 Android 设备上运行时动态地监控 `socket` 和 `connect` 等函数的调用，了解应用程序的网络行为，并调试相关问题。 需要注意的是，对于更复杂的结构体，需要在 Frida 中编写更详细的代码来解析结构体成员。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/socket.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -346,8 +346,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -657,7 +659,4 @@ ssize_t recvfrom(int __fd, void* _Nullable __buf, size_t __n, int __flags, struc
 __END_DECLS
 
 #endif
-
-"""
-
 ```

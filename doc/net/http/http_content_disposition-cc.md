@@ -166,15 +166,17 @@ Content-Disposition: attachment; filename="=?UTF-8?B?5rWL6K+V5LiW5aS0LnR4dA==?="
 
 总而言之，`net/http/http_content_disposition.cc` 是 Chromium 网络栈中一个关键的文件，它负责理解服务器关于如何处理响应内容的指令，并将这些指令转化为浏览器的实际行为，这对于提供良好的用户下载体验至关重要。虽然 JavaScript 不直接执行这段代码，但 JavaScript 的下载行为很大程度上依赖于这段代码的解析结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_content_disposition.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -612,7 +614,4 @@ void HttpContentDisposition::Parse(const std::string& header,
 }
 
 }  // namespace net
-
-"""
-
 ```

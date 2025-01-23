@@ -147,7 +147,7 @@ func doSomethingConcurrently() {
 
 总而言之，`go/src/internal/runtime/sys/consts_race.go` 是 Go 语言 race 检测器实现的一个小而关键的部分，它通过条件编译提供了一个标志，用于在运行时区分是否启用了 race 检测。开发者应该充分利用 `-race` 标志在开发和测试阶段检测和修复数据竞争问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/sys/consts_race.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -155,8 +155,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -166,9 +168,4 @@ Prompt:
 package sys
 
 const isRace = 1
-
-"""
-
-
-
 ```

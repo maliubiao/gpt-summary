@@ -92,7 +92,7 @@ Here's a breakdown of the thinking process to arrive at the detailed explanation
 
 虽然 `frida/subprojects/frida-core/releng/meson/test cases/frameworks/1 boost/unit_test.cpp` 这个特定的文件只是一个非常简单的单元测试，但它在 Frida 项目中扮演着重要的角色，用于验证 `frida-core` 的基本功能是否正常。它的存在是为了确保 Frida 的稳定性和可靠性，从而为用户进行动态 instrumentation 和逆向工程提供坚实的基础。虽然它本身不涉及复杂的逆向技术或底层细节，但它验证的代码是支撑这些技术的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/1 boost/unit_test.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,8 +100,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define BOOST_TEST_MODULE "MesonTest"
 #define BOOST_TEST_MAIN
 #include <boost/test/unit_test.hpp>
@@ -111,7 +113,4 @@ BOOST_AUTO_TEST_CASE(m_test) {
     BOOST_CHECK(true);
     BOOST_CHECK_EQUAL(x, 4);
 }
-
-"""
-
 ```

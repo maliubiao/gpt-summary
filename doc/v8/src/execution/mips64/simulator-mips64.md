@@ -73,12 +73,14 @@ console.log(result);
 
 这个 `simulator-mips64.cc` 文件是 V8 引擎中 MIPS64 架构的软件模拟器，它允许 V8 在非 MIPS64 平台上执行为 MIPS64 编译的 JavaScript 代码，并提供调试和分析功能。 它通过模拟 MIPS64 处理器的寄存器、指令执行流程和内存访问来实现这一目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/simulator-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1914,7 +1916,4 @@ void Simulator::TraceMemWr(int64_t addr, T value) {
         base::SNPrintF(trace_buf_,
                        "    %04" PRIx16 " --> [%08" PRIx64 "]    (%" PRIu64 ")",
                        static_cast<uint16_t>(value)
-"""
-
-
 ```

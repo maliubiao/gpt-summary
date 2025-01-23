@@ -138,11 +138,13 @@ console.log(refsMap); // 查看剩余的映射
 
 `v8/src/compiler/refs-map.cc` 中定义的 `RefsMap` 类是 V8 编译器内部用于高效管理和查找对象引用信息的关键数据结构。它通过将内存地址映射到相关的元数据，帮助编译器在编译和优化 JavaScript 代码时进行各种操作。 虽然 JavaScript 开发者不能直接操作它，但它的存在对 JavaScript 的性能至关重要。 上面的 JavaScript 示例用 `Map` 模拟了其核心功能，帮助理解其在概念上的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/refs-map.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -181,7 +183,4 @@ uint32_t RefsMap::Hash(Address addr) { return static_cast<uint32_t>(addr); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

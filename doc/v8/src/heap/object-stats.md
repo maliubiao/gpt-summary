@@ -131,11 +131,13 @@ let promise = new Promise((resolve, reject) => {
 
 `v8/src/heap/object-stats.cc` 是 V8 引擎中一个关键的组成部分，它负责收集 JavaScript 运行时堆中各种对象的统计信息，帮助理解内存使用、进行性能分析和优化，并支持 V8 引擎自身的开发和调试。它直接关联着 JavaScript 代码的执行和内存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/object-stats.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 //
 // Use of this source code is governed by a BSD-style license that can be
@@ -1294,7 +1296,4 @@ void ObjectStatsCollector::Collect() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

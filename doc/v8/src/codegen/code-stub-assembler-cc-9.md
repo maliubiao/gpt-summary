@@ -160,7 +160,7 @@ By following these steps, I can systematically analyze the provided C++ code sni
 
 简单来说，这部分代码就像是 V8 引擎的“类型识别器”，它能够快速准确地判断各种 V8 内部对象的类型，为后续的代码执行和优化提供必要的信息。这部分的功能是确保 V8 能够正确地理解和操作 JavaScript 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -168,8 +168,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第10部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 STRICT_ARGUMENTS_MAP_INDEX);
   return TaggedEqual(arguments_map, map);
 }
@@ -1038,7 +1040,4 @@ TNode<BoolT> CodeStubAssembler::IsHeapNumberUint32(TNode<HeapNumber> number) {
       IsHeapNumberPositive(number),
       [=, this] {
         TNode<Float64T> value = LoadHeapNumberValue(nu
-"""
-
-
 ```

@@ -124,14 +124,16 @@ By following this structured approach, including analysis, inference, example ge
 
 `OpenedFrameTracker` 是 Blink 引擎中一个重要的组成部分，它负责维护 Frame 之间的父子关系，特别是由 JavaScript 或 HTML 打开的新窗口/Frame。它的功能与浏览器的窗口管理和资源清理密切相关，对于理解 Blink 引擎如何处理 Frame 的生命周期至关重要。理解其工作原理可以帮助开发者避免一些常见的与窗口管理相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/opened_frame_tracker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -178,7 +180,4 @@ void OpenedFrameTracker::Dispose() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -153,7 +153,7 @@ int meson_test_subproj_foo(void) { return 20; }
 
 总之，`subdir/foo.c` 文件本身是一个非常简单的 C 代码，其主要作用是在 Frida 的测试框架中作为一个基本的测试目标。它展示了一个具有简单功能的函数，可以用于验证 Frida 的 hook、返回值修改等核心功能。用户通常不会直接操作这个文件，除非他们参与 Frida 的开发、构建或调试过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/181 same target name flat layout/subdir/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,10 +161,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int meson_test_subproj_foo(void) { return 20; }
-
-"""
-
 ```

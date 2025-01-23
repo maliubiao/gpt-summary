@@ -171,15 +171,17 @@ console.log(sum); // 输出: [6, 8, 10, 12]
 
 `v8/src/codegen/riscv/extension-riscv-v.h` 是 V8 引擎中一个关键的 C++ 头文件，它定义了用于生成 RISC-V 向量扩展指令的接口。这些指令对于优化 JavaScript 在 RISC-V 架构上的执行性能至关重要，尤其是在处理数组和数值计算密集型任务时。理解这个文件的功能可以帮助我们更好地理解 V8 的底层工作原理以及如何编写更易于优化的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-v.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/extension-riscv-v.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -682,7 +684,4 @@ class LoadStoreLaneParams {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_RISCV_EXTENSION_RISCV_V_H_
-
-"""
-
 ```

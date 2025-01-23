@@ -169,15 +169,17 @@ My thinking process to answer the request goes like this:
 
 `blink/renderer/modules/webgl/ext_render_snorm.cc` 是 Blink 引擎中实现 WebGL `EXT_render_snorm` 扩展的关键文件，它负责管理该扩展的启用、支持检查，并最终允许 JavaScript 代码使用带符号归一化整数纹理作为渲染目标，从而扩展了 WebGL 的渲染能力。理解这个文件的功能对于调试 WebGL 应用中与该扩展相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/ext_render_snorm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ const char* EXTRenderSnorm::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

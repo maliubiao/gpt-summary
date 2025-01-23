@@ -152,7 +152,7 @@ ret
 
 尽管 `frida/subprojects/frida-clr/releng/meson/mesonbuild/templates/__init__.py` 文件本身是空的，但它标志着 `templates` 目录作为一个 Python 包的存在。这个目录很可能包含了用于生成 Frida 在进行 .NET CLR 动态 instrumentation 时所需的代码或配置文件的模板。理解这个目录的作用以及其可能的模板内容，有助于理解 Frida 如何与目标进程进行交互，以及在构建和使用 Frida 时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/templates/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,9 +160,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

@@ -150,14 +150,16 @@ Self-Correction Example During the Process: Initially, I might have focused too 
 
 总而言之，`blink/renderer/platform/video_capture/video_capture_impl.cc` 是 Blink 引擎中实现 Web 视频捕获的关键组成部分，它负责与底层硬件和操作系统交互，并将捕获到的视频数据转换成 Web 技术可以使用的格式，从而使得 JavaScript 和 HTML 能够实现访问和展示摄像头视频的功能。理解这个文件的功能有助于深入了解 Web 视频捕获的实现原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/video_capture/video_capture_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1474,7 +1476,4 @@ base::WeakPtr<VideoCaptureImpl> VideoCaptureImpl::GetWeakPtr() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

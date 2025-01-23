@@ -213,7 +213,7 @@ const char* g_private_extern_string = "This string is from private namespace";
 
 总结来说，`bionic/tests/libs/namespaces_private.cpp` 虽然代码简单，但它在 Android Bionic 库的测试中扮演着重要的角色，用于验证命名空间隔离机制的正确性。理解其背后的原理需要理解 Android 的命名空间概念以及动态链接器的工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/namespaces_private.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -224,8 +224,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  *
@@ -243,8 +245,4 @@ Prompt:
  */
 
 const char* g_private_extern_string = "This string is from private namespace";
-
-
-"""
-
 ```

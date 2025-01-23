@@ -173,7 +173,7 @@ python gen-res.py template.rc output.rc my_app_icon.ico
 
 总而言之，`gen-res.py` 是一个简单的资源文件生成工具，在 Frida 的 Windows 相关测试中扮演着辅助角色。它通过读取模板文件并替换占位符来创建用于测试的资源文件，这在确保 Frida 能够正确处理 Windows 应用程序的资源方面具有重要意义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/windows/12 resources with custom targets/res/gen-res.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,15 +181,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 with open(sys.argv[1]) as infile, open(sys.argv[2], 'w') as outfile:
     outfile.write(infile.read().format(icon=sys.argv[3]))
-
-"""
-
 ```

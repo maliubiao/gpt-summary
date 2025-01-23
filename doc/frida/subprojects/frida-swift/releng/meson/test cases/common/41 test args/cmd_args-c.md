@@ -135,7 +135,7 @@ Frida 的测试脚本可能会执行以下操作：
 
 总而言之，`cmd_args.c` 作为一个简单的测试工具，其价值在于验证 Frida 核心功能（参数传递）的正确性，这对于确保 Frida 在实际逆向工作中的可靠性至关重要。它虽然代码简单，但其存在和执行是 Frida 测试流程中不可或缺的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/41 test args/cmd_args.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 
@@ -163,7 +165,4 @@ int main(int argc, char **argv) {
     }
     return 0;
 }
-
-"""
-
 ```

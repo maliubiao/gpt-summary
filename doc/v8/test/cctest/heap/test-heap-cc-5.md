@@ -154,7 +154,7 @@ While these are internal tests, they touch upon concepts related to common progr
 
 This part of `v8/test/cctest/heap/test-heap.cc` rigorously tests the core mechanisms of V8's heap management, particularly focusing on how allocation sites are created and managed, how garbage collection interacts with optimized code by treating embedded objects and cells as weak references, and how weak references are used within inline caches to allow for efficient memory reclamation. It also includes regression tests for specific bug fixes and explores scenarios involving memory pressure and interrupt handling. The overarching goal is to ensure the stability, correctness, and efficiency of V8's memory management.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/heap/test-heap.cc以.tq结尾，那它是个v8 torque源代码，
@@ -162,8 +162,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 psSlotOffset).ToSmi();
     CHECK_EQ(static_cast<DependentCode::DependencyGroups>(groups.value()),
              DependentCode::kAllocationSiteTransitionChangedGroup |
@@ -1116,7 +1118,4 @@ TEST(Regress3631) {
         i::GCFlag::kNoFlags, i::GarbageCollectionReason::kTesting);
   }
   // Incre
-"""
-
-
 ```

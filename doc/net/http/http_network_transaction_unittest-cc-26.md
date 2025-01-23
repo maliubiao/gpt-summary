@@ -124,7 +124,7 @@ fetch('https://example.com/data')
 
 总而言之，`net/http/http_network_transaction_unittest.cc` 的第 27 部分专注于测试 `HttpNetworkTransaction` 在处理现代网络协议（HTTP/2/SPDY）和连接管理时的复杂场景和边缘情况，确保网络栈的稳定性和性能。 它覆盖了连接复用、备用服务、隧道、证书匹配以及各种错误处理机制，这些对于提供流畅和可靠的网络浏览体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第27部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 WithSource());
   rv = callback2.GetResult(rv);
   EXPECT_THAT(rv, IsOk());
@@ -955,7 +957,4 @@ TEST_P(HttpNetworkTransactionTest, HttpAsyncReadError) {
 TEST_P(HttpNetworkTransactionTest, CloseSSLSocketOnIdleForHttpRequest) {
   ClientSocketPoolManager::set_max_sockets_per_group(
       HttpNetworkSession::NORMAL_SOCKE
-"""
-
-
 ```

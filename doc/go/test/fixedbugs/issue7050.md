@@ -87,15 +87,17 @@ func main() {
 
 这段 `issue7050.go` 代码片段是一个针对 Go 语言标准库 `os` 包中 `os.Stdout.Write(nil)` 行为的单元测试。它验证了当向标准输出写入 `nil` 时，`Write` 方法不会返回错误。这体现了 Go 语言对于某些边界条件和特殊输入的处理方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7050.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -115,9 +117,4 @@ func main() {
 		fmt.Printf("BUG: os.Stdout.Write(nil) = %v\n", err)
 	}
 }
-
-"""
-
-
-
 ```

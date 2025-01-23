@@ -118,15 +118,17 @@ By following this thought process, the detailed and accurate answer provided ear
 
 `text_fragment_selector_generator_test.cc` 文件作为 Blink 引擎的一部分，主要功能是**测试 `TextFragmentSelectorGenerator` 类的文本片段选择器生成功能**。它通过模拟各种用户文本选择场景，并断言生成的选择器字符串是否符合预期，来确保 `TextFragmentSelectorGenerator` 的正确性和可靠性。 这个文件是单元测试，专注于验证生成器的核心逻辑，并使用指标来监控其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fragment_directive/text_fragment_selector_generator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -873,7 +875,4 @@ TEST_F(TextFragmentSelectorGeneratorTest, RangeSelector_LongWord) {
     <!DOCTYPE html>
     <div>Test page</div>
     <p id='first'>First second third fourth fifth sixth text_text_text_text_text_text_text_text_text_text_text_text_text_
-"""
-
-
 ```

@@ -191,7 +191,7 @@ session.detach()
 
 总而言之，`frida/subprojects/frida-core/tests/test-agent-glue.c` 文件虽然是测试代码，但它揭示了 Frida Agent 与目标进程交互的关键机制，对于理解 Frida 的工作原理和调试相关问题非常有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/test-agent-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-tests.h"
 
 int frida_agent_test_script_dummy_global_to_trick_optimizer = 0;
@@ -246,7 +248,4 @@ frida_agent_test_script_thread_resume (guint thread_id)
 }
 
 #endif
-
-"""
-
 ```

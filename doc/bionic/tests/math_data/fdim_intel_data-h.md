@@ -255,7 +255,7 @@ if (Process.platform === 'android') {
 
 `bionic/tests/math_data/fdim_intel_data.handroid` 是 Android Bionic 库中用于测试 `fdim` 函数的数据文件。它包含了大量的测试用例，用于验证 `fdim` 函数在各种输入情况下的行为是否正确。虽然这个文件本身不涉及 dynamic linker 的功能，但 `fdim` 函数是 `libc.so` 的一部分，涉及到动态链接过程。 通过 Frida hook 可以动态地观察 `fdim` 函数的运行情况，帮助理解其行为和验证其正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/fdim_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,8 +266,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -2056,7 +2058,4 @@ static data_1_2_t<double, double, double> g_fdim_intel_data[] = {
     -HUGE_VAL
   }
 };
-
-"""
-
 ```

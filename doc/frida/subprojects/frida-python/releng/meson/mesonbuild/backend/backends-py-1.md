@@ -118,7 +118,7 @@ Based on this analysis, I can now formulate the summary and examples.
 
 这部分代码主要负责 **构建过程中与链接和测试执行相关的核心逻辑**。它处理了动态链接库的运行时路径 (RPATH) 的计算、Windows 下 DLL 路径的管理、目标文件的命名、测试用例的组织和序列化，以及构建系统重新生成所需的依赖信息。 这些功能是构建工具的关键组成部分，确保构建出的软件能够正确链接依赖库并在运行时找到它们，并且能够正确地执行和管理测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,9 +127,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
- if Path(dir).is_dir():
+### 源代码
+```python
+if Path(dir).is_dir():
                         dirs.add(dir)
             symbols_match = symbols_regex.match(arg)
             if symbols_match:
@@ -793,8 +795,5 @@ Prompt:
             for arg in t.cmd_args:
                 if not isinstance(arg, (build.CustomTarget, build.BuildTarget)):
                     continue
-                result[arg.get_id()] 
-"""
-
-
+                result[arg.get_id()]
 ```

@@ -494,7 +494,7 @@ function add(a, b) {
 虽然用户通常不直接编写反汇编器，但 V8 的开发者在编写或修改反汇编器时可能会犯以下错误，而这些单元测试旨在捕获这些错误：
 
 1. **指令格式解析错误:**  错误地解析机器码的各个字段，导致指令的操作码、寄存器、立即数等被错误识别。 例如，将 `add`
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-arm-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-arm-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -502,8 +502,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1356,8 +1358,5 @@ TEST_F(DisasmArmTest, Vfp) {
               "eddafbff       vldr d31, [r10 + 4*255]");
 
       COMPARE(vstr(d16, r0, 0),
-              "edc00b00 
-"""
-
-
+              "edc00b00
 ```

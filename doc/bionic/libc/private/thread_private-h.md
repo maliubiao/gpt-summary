@@ -278,7 +278,7 @@ sys.stdin.read()
 
 通过这种方式，你可以深入了解 Android 系统和应用是如何一步步地使用 Bionic libc 提供的线程同步机制的。 虽然你不能直接 hook 到 `_THREAD_PRIVATE_MUTEX_LOCK` 这样的宏，因为它们在编译时就被展开了，但你可以 hook 到它们最终调用的 `pthread_mutex_lock` 函数来观察类似的同步行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/thread_private.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -289,8 +289,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* $OpenBSD: thread_private.h,v 1.18 2006/02/22 07:16:31 otto Exp $ */
 
 /* PUBLIC DOMAIN: No Rights Reserved. Marco S Hyman <marc@snafu.org> */
@@ -326,7 +328,4 @@ __LIBC_HIDDEN__ void    _thread_arc4_unlock(void);
 extern volatile sig_atomic_t _rs_forked;
 
 __END_DECLS
-
-"""
-
 ```

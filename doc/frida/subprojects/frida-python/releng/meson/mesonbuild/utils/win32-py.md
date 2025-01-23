@@ -160,7 +160,7 @@ This code is executed as part of Meson's initialization and whenever it needs to
 
 **Debugging Scenario:** If a user encounters the "Some other Meson process is already using this build directory" error, the execution path has led to the `except` block in the `__enter__` method of this `win32.py` file. This indicates that another process already held the lock on `meson-private/meson_lock.lck`. The debugging focus would then be on identifying the other process holding the lock (perhaps another terminal running Meson, or a previous Meson command that didn't exit cleanly).
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/utils/win32.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -199,7 +201,4 @@ class BuildDirLock(BuildDirLockBase):
     def __exit__(self, *args: T.Any) -> None:
         msvcrt.locking(self.lockfile.fileno(), msvcrt.LK_UNLCK, 1)
         self.lockfile.close()
-
-"""
-
 ```

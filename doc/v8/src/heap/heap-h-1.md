@@ -129,7 +129,7 @@ Given that this is part 2 of 4, I should focus on the functionality covered in t
 
 总而言之，`v8/src/heap/heap.h` 的第二部分主要定义了 V8 引擎中负责**垃圾回收的具体执行流程和优化策略**的接口。它涵盖了触发和控制不同类型的垃圾回收、遍历堆内存中的根对象以确定可达性、以及通过记录集、增量标记和并发标记等技术来提升垃圾回收效率，减少对 JavaScript 执行的影响。 这些机制是 V8 引擎高效管理内存，防止内存泄漏，并提供流畅 JavaScript 执行体验的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap.h以.tq结尾，那它是个v8 torque源代码，
@@ -137,8 +137,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 callback_flags = kNoGCCallbackFlags);
 
   // Performs garbage collection operation for the shared heap.
@@ -907,7 +909,4 @@ callback_flags = kNoGCCallbackFlags);
   Heap& operator=(const Heap&) = delete;
 
   static bool IsRegularObjectAllocation(Alloc
-"""
-
-
 ```

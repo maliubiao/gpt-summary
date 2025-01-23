@@ -180,15 +180,17 @@ By following this detailed thought process, we can generate a comprehensive and 
 
 总而言之，`media_control_volume_control_container_element.cc` 文件是 Blink 引擎中负责管理音量控制容器这一重要 UI 组件的幕后功臣，它通过 C++ 代码实现了容器的创建、样式控制以及对用户鼠标交互的响应，并与 HTML、CSS 和 JavaScript 共同协作，为用户提供流畅的媒体播放体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_controls/elements/media_control_volume_control_container_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ void MediaControlVolumeControlContainerElement::DefaultEventHandler(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -141,15 +141,17 @@ go test ./...
 
 总而言之，`TestSplitPkg` 这个测试函数确保了 `splitPkg` 函数能够正确地从表示符号的字符串中分离出包名和符号名，这对于 Go 编译器的符号解析至关重要。理解其分割规则对于正确使用和理解编译器的内部机制非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ir/func_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -232,9 +234,4 @@ func TestSplitPkg(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

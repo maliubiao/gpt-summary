@@ -105,11 +105,13 @@ feedAnimalWasm(myDog);    // 这也是可以的，因为 Dog 是 Animal 的子�
 
 总而言之，`wasm-subtyping.cc` 是 V8 引擎中实现 WebAssembly 类型系统关键部分的代码，它确保了 WebAssembly 代码内部以及 WebAssembly 与 JavaScript 代码之间的类型安全性和正确的互操作性。  它定义了严格的规则来判断类型之间的关系，这对于编译、优化和安全执行 WebAssembly 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-subtyping.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -969,7 +971,4 @@ bool IsSameTypeHierarchy(HeapType type1, HeapType type2,
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

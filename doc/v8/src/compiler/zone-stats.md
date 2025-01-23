@@ -132,11 +132,13 @@ void Compiler::CompileFunction(FunctionLiteral* function) {
 
 `zone-stats.cc` 是 V8 编译器内部用于内存管理和统计的关键组件。它不直接与 JavaScript 代码交互，但它所提供的功能对于理解和优化 V8 编译器的性能至关重要，而编译器的效率直接影响 JavaScript 代码的执行速度和资源消耗。JavaScript 代码的结构和复杂性会间接地影响编译器对内存的需求，这些需求会被 `zone-stats.cc` 跟踪和记录。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/zone-stats.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ void ZoneStats::ReturnZone(Zone* zone) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

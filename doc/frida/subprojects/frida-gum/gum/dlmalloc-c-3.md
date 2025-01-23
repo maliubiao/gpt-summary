@@ -160,7 +160,7 @@ free(ptr); // 错误：重复释放
 
 这部分 `dlmalloc.c` 代码主要定义了内存分配器的核心数据结构和管理机制，包括用于组织空闲内存块的树形结构、用于管理内存段的结构、用于维护分配器状态的结构，以及全局参数的定义。它还包含了与操作系统内存分配交互的设置、用于调试和错误处理的钩子和宏，以及用于实现高效空闲块查找的索引和位图操作。总而言之，这部分代码是 `dlmalloc` 分配器的基础骨架，负责内存块的组织、管理和关键参数的维护。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/dlmalloc.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 contains all smaller
   sizes than its right subtree.  However, the node at the root of each
   subtree has no particular ordering relationship to either.  (The
@@ -1128,7 +1130,4 @@ static void do_check_tree(mstate m, tchunkptr t) {
       head = u;
       assert(u->parent != u);
       assert (u
-"""
-
-
 ```

@@ -140,7 +140,7 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 这段代码片段集中于管理 DOM 节点在扁平树中的状态变化，这是处理 Shadow DOM 的关键部分。它通过与 `StyleEngine` 的交互，确保在扁平树发生变化时，样式能够正确地重新计算，并且布局树能够得到相应的更新。此外，它还提供了一些辅助功能，如滚动时间线管理和控制台消息输出，用于增强 DOM 节点的功能和可调试性。理解这段代码的功能对于理解 Blink 引擎如何处理 Shadow DOM 以及如何优化与 DOM 操作相关的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 suredOutsideFlatTree() to
     // determine that we are outside the flat tree before updating the style
     // recalc root in MarkAncestorsWithChildNeedsStyleRecalc().
@@ -280,8 +282,4 @@ void ShowNodePath(const blink::Node* node) {
 }
 
 #endif
-
-"""
-
-
 ```

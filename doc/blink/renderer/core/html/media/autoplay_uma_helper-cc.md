@@ -215,14 +215,16 @@ Let's break down the thought process for analyzing the `autoplay_uma_helper.cc` 
 
 `autoplay_uma_helper.cc` 是一个幕后工作者，它不直接参与网页的渲染或功能逻辑，而是默默地收集关于自动播放行为的各种指标，并将这些数据上报给 Chromium 团队。这些数据对于理解 Web 生态系统中自动播放的使用情况、浏览器策略的有效性以及开发者如何使用自动播放功能至关重要。开发者虽然不能直接调用这个类的方法，但可以通过遵循最佳实践，例如合理使用 `autoplay` 属性和 JavaScript 的 `play()` 方法，并考虑用户体验，来间接地影响 `AutoplayUmaHelper` 收集到的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/autoplay_uma_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -535,7 +537,4 @@ void AutoplayUmaHelper::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

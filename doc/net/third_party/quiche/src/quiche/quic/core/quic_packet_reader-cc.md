@@ -174,15 +174,17 @@ This step-by-step approach, starting with high-level understanding and drilling 
 
 在调试过程中，如果怀疑数据包读取有问题，可以在 `QuicPacketReader::ReadAndDispatchPackets()` 函数中设置断点，查看读取到的数据包内容、发送端地址、接收时间等信息，以确定数据包是否被正确接收以及元数据是否正确。还可以检查 `processor` 对象的状态，查看数据包是否被正确传递和处理。网络抓包工具（如 Wireshark）也可以用来分析实际的网络数据包，验证客户端和服务器之间的通信过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_packet_reader.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -323,7 +325,4 @@ QuicIpAddress QuicPacketReader::GetSelfIpFromPacketInfo(
 }
 
 }  // namespace quic
-
-"""
-
 ```

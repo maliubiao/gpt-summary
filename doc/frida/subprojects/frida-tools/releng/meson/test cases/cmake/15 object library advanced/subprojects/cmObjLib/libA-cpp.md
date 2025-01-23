@@ -148,7 +148,7 @@ libA.cpp:3:2: error: "BUILD_AS_OBJ was not defined"
 
 总而言之，虽然 `libA.cpp` 代码本身非常简单，但它在 Frida 工具的构建和测试流程中扮演着特定的角色。理解其功能和约束有助于理解 Frida 工具的构建方式和如何正确地使用它。 作为调试线索，当遇到与 Frida 工具构建或对象库相关的问题时，查看类似的测试用例可以提供有价值的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/15 object library advanced/subprojects/cmObjLib/libA.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "libA.hpp"
 
 #if not BUILD_AS_OBJ
@@ -167,7 +169,4 @@ Prompt:
 std::string getLibStr(void) {
   return "Hello World";
 }
-
-"""
-
 ```

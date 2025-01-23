@@ -126,15 +126,17 @@ func main() {
 
 总而言之，这段代码通过一系列精心设计的错误用例，确保 Go 编译器在处理切片创建时能够有效地进行参数校验，从而帮助开发者在早期发现潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4085a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -153,9 +155,4 @@ func main() {
 	_ = make(T, 0, -1) // ERROR "negative cap|must not be negative"
 	_ = make(T, 10, 0) // ERROR "len larger than cap|length and capacity swapped"
 }
-
-"""
-
-
-
 ```

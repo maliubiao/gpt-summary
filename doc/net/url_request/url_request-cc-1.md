@@ -187,7 +187,7 @@ This part of `net/url_request/url_request.cc` primarily focuses on the mechanism
 
 总而言之，这段代码是 Chromium 网络栈中处理网络请求重定向和特定重试逻辑的关键部分，确保了浏览器能够正确处理服务器的重定向指令，并为跨域资源访问提供了一种受控的重试机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 est::PrepareToRestart() {
   DCHECK(job_.get());
 
@@ -623,8 +625,4 @@ base::WeakPtr<URLRequest> URLRequest::GetWeakPtr() {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

@@ -170,14 +170,16 @@ By following these steps and iterating on the explanation, we can arrive at a co
 
 总而言之，`geometry_mapper_transform_cache.cc` 是 Blink 渲染引擎中一个重要的性能优化组件，它通过缓存元素的变换信息来避免重复计算，尤其是在处理复杂的 CSS 变换和动画时。它与 CSS 的 `transform` 属性以及相关的布局和绘制过程紧密相关。虽然外部开发者不会直接操作这个类，但理解其功能有助于理解浏览器如何高效地渲染网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/geometry_mapper_transform_cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -345,7 +347,4 @@ void GeometryMapperTransformCache::UpdateScreenTransform(
 }
 
 }  // namespace blink
-
-"""
-
 ```

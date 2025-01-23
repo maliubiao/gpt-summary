@@ -167,15 +167,17 @@ By following this structured approach, combining code analysis with an understan
 
 总之，`blink/renderer/modules/filesystem/file_writer_test.cc` 是一个关键的测试文件，用于确保 Blink 渲染引擎中文件写入功能的正确性和健壮性。它与 JavaScript File API 紧密相关，并且可以作为开发者理解底层实现和调试相关问题的宝贵资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/filesystem/file_writer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -536,7 +538,4 @@ TEST_F(FileWriterTest, CancelFailedTruncate) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

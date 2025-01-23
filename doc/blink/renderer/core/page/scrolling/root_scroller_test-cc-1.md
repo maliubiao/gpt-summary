@@ -116,7 +116,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 这部分 `root_scroller_test.cc` 主要集中在测试 **iframe 作为根滚动器** 和 **隐式根滚动器的选择机制**。它详细验证了在各种场景下，包括浏览器控制、动态 DOM 操作和 CSS 属性变化时，根滚动器的行为是否符合预期。这些测试覆盖了与 HTML 结构、CSS 样式和 JavaScript DOM 操作的交互，并帮助开发者理解可能导致滚动问题的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/scrolling/root_scroller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 itialize("root-scroller-iframe.html");
   UpdateAllLifecyclePhases(MainFrameView());
 
@@ -1020,7 +1022,4 @@ TEST_F(ImplicitRootScrollerSimTest, UseCounterPositive) {
 
 // Tests use counter for implicit root scroller. Ensure it's counted on a
 // page that loads without an implicit r
-"""
-
-
 ```

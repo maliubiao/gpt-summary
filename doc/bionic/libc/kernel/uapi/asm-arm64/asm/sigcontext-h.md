@@ -349,7 +349,7 @@ int main (int argc, char *argv[]) {
 
 请注意，hook 内核函数需要深入的了解内核结构，并且有一定的风险。在生产环境中应谨慎操作。 这个示例仅用于调试和学习目的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/sigcontext.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -360,8 +360,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -473,7 +475,4 @@ struct zt_context {
 #define ZT_SIG_REGS_SIZE(n) (ZT_SIG_REG_BYTES * (n))
 #define ZT_SIG_CONTEXT_SIZE(n) (sizeof(struct zt_context) + ZT_SIG_REGS_SIZE(n))
 #endif
-
-"""
-
 ```

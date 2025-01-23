@@ -130,14 +130,16 @@ By following these steps, combining code analysis with an understanding of web b
 
 `AudioServiceAudioProcessorProxy` 是 Blink 引擎中一个重要的音频处理代理组件，它负责与底层的音频服务交互，管理音频处理控制，并收集统计信息。虽然它不直接与 JavaScript, HTML, CSS 代码交互，但它的功能是实现 WebRTC 等 Web 技术中音频相关特性的基础。理解其功能有助于理解 Blink 引擎如何处理音频流。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/audio_service_audio_processor_proxy.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ void AudioServiceAudioProcessorProxy::
 }
 
 }  // namespace blink
-
-"""
-
 ```

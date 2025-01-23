@@ -183,7 +183,7 @@ By following this structured approach and continuously refining my understanding
 
 总而言之，`c_linkage.cpp` 是 Frida 测试套件的一部分，其主要目的是验证 Frida 能够正确处理 C 链接的函数，这对于 Frida 在逆向工程和动态分析中的应用至关重要，因为很多目标程序会混合使用 C 和 C++ 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/225 link language/c_linkage.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,14 +191,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 extern "C" {
     int makeInt(void) {
         return 0;
     }
 }
-
-"""
-
 ```

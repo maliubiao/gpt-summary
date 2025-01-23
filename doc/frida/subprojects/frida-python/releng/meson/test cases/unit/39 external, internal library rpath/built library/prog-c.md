@@ -128,7 +128,7 @@ if (Process.arch === 'x64' || Process.arch === 'arm64') {
 
 总而言之，`prog.c` 作为一个简单的测试用例，展示了 Frida 能够用来动态分析和修改程序行为的能力，同时也涉及到动态链接、库加载路径等底层概念，这些都是逆向工程中非常重要的组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/39 external, internal library rpath/built library/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int bar_built_value (int in);
 
 int main (int argc, char *argv[])
@@ -145,7 +147,4 @@ int main (int argc, char *argv[])
     // this will evaluate to 0
     return bar_built_value(10) - (42 + 1969 + 10);
 }
-
-"""
-
 ```

@@ -208,15 +208,17 @@ Finally, I organize my findings into the requested categories: Functionality, Re
 
 总而言之，`blink/renderer/core/script/script.cc` 是 Blink 引擎中负责 JavaScript 代码执行的关键模块，理解其功能和使用场景对于理解 Blink 的脚本处理机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/script/script.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ ScriptEvaluationResult Script::RunScriptAndReturnValue(
 }
 
 }  // namespace blink
-
-"""
-
 ```

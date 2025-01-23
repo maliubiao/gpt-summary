@@ -169,15 +169,17 @@ These tests help catch common errors that developers might make when working wit
 
 In summary, this unit test file plays a crucial role in ensuring the reliability and correctness of the `CodeStubAssembler`, a vital component for V8's efficient JavaScript execution. It systematically verifies individual functionalities and helps prevent common programming errors in low-level code generation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/codegen/code-stub-assembler-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/codegen/code-stub-assembler-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ TARGET_TEST_F(CodeStubAssemblerTest, ArrayListElementsEquivalent) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

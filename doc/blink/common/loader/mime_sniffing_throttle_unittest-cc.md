@@ -143,14 +143,16 @@ By following these steps and iteratively refining our understanding, we arrive a
 
 总而言之，`mime_sniffing_throttle_unittest.cc` 通过各种测试用例，确保 `MimeSniffingThrottle` 能够正确地判断是否需要进行 MIME 类型嗅探，并在需要时拦截响应并根据内容更新 MIME 类型，从而保证浏览器能够正确地处理各种 Web 资源，包括 JavaScript, HTML 和 CSS。它也测试了在各种边界情况下的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/loader/mime_sniffing_throttle_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -666,7 +668,4 @@ TEST_F(MimeSniffingThrottleTest, Abort_NoBodyPipe) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

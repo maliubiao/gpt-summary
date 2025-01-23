@@ -152,11 +152,13 @@ By following this structured approach, analyzing the code, identifying key patte
 
 `v8/src/regexp/regexp-ast.cc` 文件是 V8 引擎中用于表示正则表达式内部结构的蓝图。它定义了构成正则表达式抽象语法树的各种 C++ 类，这些类与 JavaScript 中使用的正则表达式语法元素直接对应。理解这个文件的作用有助于深入理解 V8 引擎是如何处理和执行 JavaScript 正则表达式的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-ast.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -602,7 +604,4 @@ RegExpClassSetExpression* RegExpClassSetExpression::Empty(Zone* zone,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

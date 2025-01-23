@@ -91,7 +91,7 @@ Let's break down the thought process for analyzing this Python code snippet.
 
 总而言之，`samplefactory.py` 在 Frida 的项目初始化过程中扮演着关键的角色，它负责根据用户选择的编程语言，动态地选择并实例化合适的项目模板，为用户快速搭建 Frida 扩展或工具的开发环境提供了便利。它虽然不直接涉及底层的二进制操作，但其生成的项目结构是进行后续逆向工程和动态插桩的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/templates/samplefactory.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -142,7 +144,4 @@ _IMPL: T.Mapping[str, T.Union[T.Type[ClassImpl], T.Type[FileHeaderImpl], T.Type[
 
 def sample_generator(options: Arguments) -> SampleImpl:
     return _IMPL[options.language](options)
-
-"""
-
 ```

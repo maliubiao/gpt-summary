@@ -239,7 +239,7 @@ sys.stdin.read()
 
 通过 Frida hook，你可以实时观察 `sqrt` 函数的调用情况，验证其输入和输出，从而理解 Android Framework 或 NDK 是如何一步步调用到这个 Bionic 库函数的。这个数据文件 `sqrt_intel_data.handroid` 则是在 Bionic 的开发和测试阶段，用于确保 `sqrt` 函数在各种情况下的行为符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sqrt_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -250,8 +250,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -970,7 +972,4 @@ static data_1_1_t<double, double> g_sqrt_intel_data[] = {
     0x1.9p6
   }
 };
-
-"""
-
 ```

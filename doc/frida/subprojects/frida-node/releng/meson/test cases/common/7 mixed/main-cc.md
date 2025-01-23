@@ -171,7 +171,7 @@ collect2: error: ld returned 1 exit status
 
 因此，`main.cc` 的存在是 Frida 开发和测试流程中的一个环节，目的是创建一个简单、可控的目标程序，用于验证 Frida 的功能和稳定性。 调试线索可以从文件路径、代码内容和 Frida 的使用方式等方面进行分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/7 mixed/main.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 extern "C" int func();
 
 class BreakPlainCCompiler;
@@ -188,7 +190,4 @@ class BreakPlainCCompiler;
 int main(void) {
     return func();
 }
-
-"""
-
 ```

@@ -229,7 +229,7 @@ python file_contains.py android_config.ini "/system/lib64/libnative.so"
 
 总而言之，`file_contains.py` 是一个简单的但很有用的工具，用于自动化验证配置文件内容，在 Frida 这样的复杂软件的开发和测试过程中扮演着重要的角色，帮助开发者确保配置文件的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/14 configure file/file_contains.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -237,8 +237,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -261,7 +263,4 @@ def main():
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

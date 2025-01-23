@@ -99,11 +99,13 @@ try {
 
 总而言之，`stack_trace_zos.cc` 是 V8 引擎在 z/OS 平台上提供健壮的错误处理和调试能力的关键组成部分，尽管开发者通常不需要直接与之交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/debug/stack_trace_zos.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright (c) 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -227,7 +229,4 @@ void StackTrace::OutputToStream(std::ostream* os) const {
 }  // namespace debug
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

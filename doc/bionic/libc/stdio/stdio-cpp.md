@@ -359,7 +359,7 @@ if __name__ == '__main__':
 
 通过类似的方式，你可以 hook 其他 `stdio.cpp` 中的函数，例如 `fread`, `fwrite`, `fclose` 等，以调试 Android Framework 或 NDK 如何一步步地调用到这些函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/stdio/stdio.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -371,8 +371,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*	$OpenBSD: findfp.c,v 1.15 2013/12/17 16:33:27 deraadt Exp $ */
 /*-
  * Copyright (c) 1990, 1993
@@ -1616,7 +1618,4 @@ FILE* popen(const char* cmd, const char* mode) {
     if (dup2(fds[child], desired_child_fd) == -1) _exit(127);
     close(fds[child]);
     if (bidirectional) dup2(STDOUT_FILENO, STDIN
-"""
-
-
 ```

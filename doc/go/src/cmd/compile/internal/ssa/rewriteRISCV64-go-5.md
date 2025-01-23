@@ -182,7 +182,7 @@ func main() {
 
 这一部分是Go编译器后端代码生成的重要环节，它弥合了Go语言高级抽象和RISC-V 64硬件指令之间的差距，确保了Go程序在RISC-V 64架构上能够正确且高效地运行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteRISCV64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -191,8 +191,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 rg(x)
 		v1 := b.NewValue0(v.Pos, OpRISCV64OR, y.Type)
 		v2 := b.NewValue0(v.Pos, OpRISCV64ADDI, y.Type)
@@ -1653,10 +1655,5 @@ func rewriteValueRISCV64_OpZero(v *Value) bool {
 		v3.AddArg3(ptr, v0, mem)
 		v2.AddArg3(ptr, v0, v3)
 		v1.AddArg3(ptr, v0, v2)
-		v.AddArg3(ptr, v0, 
-"""
-
-
-
-
+		v.AddArg3(ptr, v0,
 ```

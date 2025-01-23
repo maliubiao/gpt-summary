@@ -139,7 +139,7 @@ By following this systematic breakdown, considering different aspects of the cod
 
 总而言之，`toml_file.py` 提供了一个方便的接口，用于在 Frida 动态 instrumentation 的上下文中操作 TOML 配置文件，这在逆向工程中修改应用程序行为或分析其配置信息时非常有用。它关注的是 TOML 文件的读写和格式保持，依赖于 `tomlkit` 库进行实际的 TOML 解析和生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/tomlkit/tomlkit/toml_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 import re
 
@@ -207,7 +209,4 @@ class TOMLFile:
 
         with open(self._path, "w", encoding="utf-8", newline="") as f:
             f.write(content)
-
-"""
-
 ```

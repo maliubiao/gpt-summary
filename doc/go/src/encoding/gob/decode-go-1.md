@@ -171,7 +171,7 @@ err := dec.Decode(&data) // 这里会发生错误，因为类型不匹配
 
 总而言之，这部分代码是 `encoding/gob` 包解码功能的核心实现，负责将外部的 Gob 数据表示转化为 Go 语言程序可以理解和操作的数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/gob/decode.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -180,8 +180,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ase reflect.String:
 		return fw == tString
 	case reflect.Interface:
@@ -443,10 +445,4 @@ func init() {
 func allocValue(t reflect.Type) reflect.Value {
 	return reflect.New(t).Elem()
 }
-
-"""
-
-
-
-
 ```

@@ -181,15 +181,17 @@ console.log(y); // y is not declared
 
 `v8/src/interpreter/interpreter-assembler.h` 定义的 `InterpreterAssembler` 类是 V8 解释器的核心组件，负责将字节码指令转换为可执行的机器码。它提供了丰富的接口来访问字节码操作数、操作寄存器、管理上下文、进行函数调用和控制流跳转等，是理解 V8 解释器工作原理的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/interpreter-assembler.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -667,7 +669,4 @@ class V8_EXPORT_PRIVATE InterpreterAssembler : public CodeStubAssembler {
 }  // namespace v8
 
 #endif  // V8_INTERPRETER_INTERPRETER_ASSEMBLER_H_
-
-"""
-
 ```

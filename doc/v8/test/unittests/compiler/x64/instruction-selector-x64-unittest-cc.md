@@ -104,7 +104,7 @@ Regarding the additional questions:
 
 `v8/test/unittests/compiler/x64/instruction-selector-x64-unittest.cc` 的主要功能是 **细致地测试 V8 引擎在 x64 架构下指令选择器的正确性，确保它能为各种中间表示的操作选择最优的机器指令，从而保证生成的机器码的性能和正确性。** 它涵盖了类型转换、条件选择、内存访问和算术运算等关键操作的指令选择测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/x64/instruction-selector-x64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/x64/instruction-selector-x64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -112,8 +112,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -971,8 +973,5 @@ TEST_F(InstructionSelectorTest, Int32AddScaled2MulWithConstantShuffle3) {
 TEST_F(InstructionSelectorTest, Int32AddScaled2MulWithConstantShuffle4) {
   StreamBuilder m(this, MachineType::Int32(), MachineType::Int32(),
                   MachineType::Int32());
-  Node* 
-"""
-
-
+  Node*
 ```

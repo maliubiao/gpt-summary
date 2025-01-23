@@ -244,7 +244,7 @@ func ExampleCleanCmdEnvPWD() {
 
 这段代码展示了 `internal/testenv` 包在 Go 语言测试中提供的重要辅助功能，特别是对于需要与外部工具交互的测试场景。理解这些功能可以帮助开发者编写更健壮和可移植的 Go 语言测试。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/testenv/testenv_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -252,8 +252,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -462,9 +464,4 @@ func isEmulatedBuilder(builderName string) bool {
 	// begins with an underscore.
 	return strings.HasSuffix(builderName, "-emu") || strings.Contains(builderName, "_emu")
 }
-
-"""
-
-
-
 ```

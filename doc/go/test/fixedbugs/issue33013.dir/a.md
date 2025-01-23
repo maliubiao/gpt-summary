@@ -197,15 +197,17 @@ func main() {
 
 总结来说，这段代码定义了一个接口 `G`，其核心特点是包含一个使用空接口 `interface{}` 作为参数的方法。这允许实现该接口的类型能够接收和处理各种不同类型的参数，但同时也要求实现者必须小心地进行类型检查和断言以避免运行时错误。 这段代码很可能是一个测试用例的一部分，用于验证 Go 语言在处理包含空接口的方法时的行为和边界情况。 文件路径 `go/test/fixedbugs/issue33013.dir/a.go` 也暗示了这一点，它可能与修复或测试特定 issue 33013 相关。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue33013.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -215,9 +217,4 @@ package a
 type G interface {
 	UsesEmpty(p interface{}) int
 }
-
-"""
-
-
-
 ```

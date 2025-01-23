@@ -162,7 +162,7 @@ endif
 
 总而言之，`cmake2meson.py` 是一个用于构建系统转换的实用工具，虽然它本身不直接参与逆向过程，但通过简化构建，间接地为逆向工程师提供了便利。理解其工作原理和潜在的局限性对于有效地使用它至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/tools/cmake2meson.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2014 Jussi Pakkanen
@@ -490,7 +492,4 @@ if __name__ == '__main__':
     P = p.parse_args()
 
     Converter(P.cmake_root).convert()
-
-"""
-
 ```

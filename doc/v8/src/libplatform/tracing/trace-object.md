@@ -157,11 +157,13 @@ Console  myFunction  [duration: X ms]
 
 `trace-object.cc` 中定义的 `TraceObject` 类是 V8 引擎追踪机制的基础，它作为一个通用的数据容器，用于存储和管理各种 JavaScript 代码执行过程中产生的追踪事件信息。 JavaScript 中的 `console.time` 和 `console.timeEnd` 等 API 最终会通过 V8 内部的机制，利用 `TraceObject` 来记录性能数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/tracing/trace-object.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -297,7 +299,4 @@ void TraceObject::InitializeForTesting(
 }  // namespace tracing
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

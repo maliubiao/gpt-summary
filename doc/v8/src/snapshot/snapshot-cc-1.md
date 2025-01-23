@@ -111,7 +111,7 @@ console.timeEnd('启动时间');
 
 这段代码是 V8 引擎中负责创建和预热快照的核心部分。它提供了创建初始快照以及通过执行预热脚本来优化快照的能力，从而显著提升 V8 引擎的启动速度和性能。`SnapshotCreatorImpl` 类管理着快照创建的整个过程，包括添加上下文和数据，并最终生成可加载的快照数据块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/snapshot.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/snapshot.cc以.tq结尾，那它是个v8 torque源代码，
@@ -119,8 +119,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ArrayBuffer::Allocator::NewDefaultAllocator());
   v8::Isolate::CreateParams create_params;
   create_params.array_buffer_allocator = array_buffer_allocator.get();
@@ -480,8 +482,4 @@ SnapshotCreatorImpl* SnapshotCreatorImpl::FromSnapshotCreator(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

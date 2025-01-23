@@ -109,12 +109,14 @@ try {
 
 这段 C++ 代码是 V8 引擎实现 JavaScript 语义的关键部分，它提供了底层的类型转换、类型检查和错误处理机制。JavaScript 的许多动态特性和类型行为都依赖于这些 C++ 代码的实现。开发者虽然不能直接操作这些 C++ 函数，但理解它们的功能有助于更好地理解 JavaScript 的运行原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 runcateFloat64ToFloat16RawBitsSupported()),
          &truncate_op_supported, &truncate_op_fallback);
 
@@ -1859,7 +1861,4 @@ TNode<BoolT> CodeStubAssembler::IsHeapNumberUint32(TNode<HeapNumber> number) {
       IsHeapNumberPositive(number),
       [=, this] {
         TNode<Float64T> value = LoadHeapNumberValue(nu
-"""
-
-
 ```

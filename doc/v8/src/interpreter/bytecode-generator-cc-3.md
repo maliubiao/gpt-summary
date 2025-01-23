@@ -166,7 +166,7 @@ Based on these observations, I can formulate the functional summary and address 
 
 考虑到这是字节码生成器的第 4 部分，很可能前面几部分已经处理了更基础的表达式、变量声明等。**这部分主要关注于控制流的实现和更复杂的语言特性（如类）的字节码生成。** 它负责将程序执行的流程和面向对象的结构转换为虚拟机可以理解的指令。  后续的部分可能会涉及函数调用、对象操作、内置函数等方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -174,9 +174,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共11部分，请归纳一下它的功能
+```
 
-"""
- restored
+### 源代码
+```cpp
+restored
   // when the handler is entered by the stack-unwinding machinery.
   // TODO(ignition): Be smarter about register allocation.
   Register context = register_allocator()->NewRegister();
@@ -959,7 +961,4 @@ void BytecodeGenerator::BuildClassLiteral(ClassLiteral* expr, Register name) {
     builder()
         ->MoveRegister(class_constructor, args[0])
         .CallPrope
-"""
-
-
 ```

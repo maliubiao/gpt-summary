@@ -265,7 +265,7 @@ sys.stdin.read()
 
 这个 Frida hook 示例可以帮助你调试当 Android Framework 或 NDK 代码调用 `remainder` 函数时，传递的具体参数和返回的结果，从而验证代码的行为是否符合预期。同时，这也展示了 `remainder_intel_data.handroid` 中定义的数据在 `libm` 的开发和测试中起到的验证作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/remainder_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -276,8 +276,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1586,7 +1588,4 @@ static data_1_2_t<double, double, double> g_remainder_intel_data[] = {
     -0x1.0p1
   }
 };
-
-"""
-
 ```

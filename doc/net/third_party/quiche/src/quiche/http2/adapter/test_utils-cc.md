@@ -160,15 +160,17 @@ EXPECT_THAT(buffer, EqualsFrames({spdy::SpdyFrameType::HEADERS, spdy::SpdyFrameT
 
 总而言之，`net/third_party/quiche/src/quiche/http2/adapter/test_utils.cc` 是一个关键的测试基础设施文件，用于确保 Chromium 的 HTTP/2 适配器能够正确可靠地处理 HTTP/2 协议的各种情况。它通过提供模拟、断言等工具，帮助开发人员进行有效的单元测试和集成测试，从而提高代码质量和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/test_utils.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/test_utils.h"
 
 #include <cstring>
@@ -451,7 +453,4 @@ testing::Matcher<absl::string_view> EqualsFrames(
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

@@ -162,7 +162,7 @@ A user would typically interact with this code through the command line. The fol
 
 The `rewriter.py` script within the Frida project is a powerful command-line tool for **programmatically manipulating Meson build definition files (`meson.build`)**. It allows users to add, remove, and modify build targets, their source files, keyword arguments of various Meson functions, and project default options. This tool simplifies the process of making targeted changes to the build system, which is particularly useful for tasks like debugging, instrumentation, and customizing the build process for specific needs, including reverse engineering scenarios.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/rewriter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -981,7 +983,4 @@ class Rewriter:
                     self.modified_nodes += [root]
 
         elif cmd
-"""
-
-
 ```

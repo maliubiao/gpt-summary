@@ -153,15 +153,17 @@ By following this structured thought process and incorporating self-correction, 
 
 通过以上步骤，开发者可以利用 `mock_nghttp2_callbacks.cc` 提供的模拟回调，以及单元测试框架提供的工具，有效地调试 HTTP/2 相关的代码。这个文件在 Chromium 的网络栈测试中扮演着至关重要的角色，帮助开发者确保 HTTP/2 实现的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/mock_nghttp2_callbacks.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/mock_nghttp2_callbacks.h"
 
 #include "quiche/http2/adapter/nghttp2_util.h"
@@ -292,7 +294,4 @@ nghttp2_session_callbacks_unique_ptr MockNghttp2Callbacks::GetCallbacks() {
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

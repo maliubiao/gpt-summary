@@ -160,14 +160,16 @@ blink_objects/CSSSelector: { object_count: Y }  // Y 代表 CSS 选择器的数�
 
 `instance_counters_memory_dump_provider.cc` 是 Blink 引擎中一个关键的内存诊断工具。它通过在内存转储中记录各种对象实例的计数，为开发者提供了理解 Blink 内部对象生命周期和内存使用情况的重要信息，这对于调试内存泄漏、优化性能以及理解 Blink 的内部工作原理非常有帮助。虽然普通开发者不会直接使用它，但它统计的数据反映了网页中 HTML, CSS 和 JavaScript 代码在 Blink 引擎内部的表现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/instrumentation/instance_counters_memory_dump_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ bool InstanceCountersMemoryDumpProvider::OnMemoryDump(
 }
 
 }  // namespace blink
-
-"""
-
 ```

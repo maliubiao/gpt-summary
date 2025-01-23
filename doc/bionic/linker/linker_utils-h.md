@@ -257,7 +257,7 @@ sys.stdin.read()
 
 总而言之，`bionic/linker/linker_utils.h` 文件中定义的函数是 Android 动态链接器实现的关键组成部分，它们提供了处理路径、文件名以及进行安全操作的基础工具，确保了 Android 系统能够正确加载和链接共享库。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_utils.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -268,8 +268,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -329,7 +331,4 @@ std::string dirname(const char* path);
 
 bool safe_add(off64_t* out, off64_t a, size_t b);
 bool is_first_stage_init();
-
-"""
-
 ```

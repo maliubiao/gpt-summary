@@ -115,7 +115,7 @@ Here's a breakdown of the thinking process:
 
 总而言之，这部分 `ServiceWorkerGlobalScope.cc` 代码是连接浏览器底层事件和 Service Worker JavaScript 代码的关键桥梁，它负责接收、处理和分发各种类型的事件，使得 Service Worker 能够实现其强大的离线缓存、后台同步、推送通知等功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/service_worker/service_worker_global_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 hance,
                                               int event_id) {
   DCHECK(IsContextThread());
@@ -742,8 +744,4 @@ void ServiceWorkerGlobalScope::RemoveItemFromRaceNetworkRequests(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

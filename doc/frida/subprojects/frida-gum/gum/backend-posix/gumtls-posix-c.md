@@ -147,7 +147,7 @@ Interceptor.attach(Address("0x12345"), {
 
 通过理解 `gumtls-posix.c` 的功能和与底层系统的交互方式，可以更好地调试和使用 Frida 提供的 TLS 功能，进行更深入的动态分析和逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-posix/gumtls-posix.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015-2019 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -210,7 +212,4 @@ gum_tls_key_set_value (GumTlsKey key,
 {
   pthread_setspecific (key, value);
 }
-
-"""
-
 ```

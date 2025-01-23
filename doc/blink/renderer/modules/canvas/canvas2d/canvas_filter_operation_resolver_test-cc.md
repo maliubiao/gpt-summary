@@ -173,15 +173,17 @@ By following this structured approach, combining keyword recognition, pattern an
 
 总而言之，`canvas_filter_operation_resolver_test.cc` 是确保 Blink 引擎能够正确解析和处理 Canvas 2D API 滤镜功能的重要组成部分。它通过大量的测试用例覆盖了各种场景，帮助开发者避免在使用 Canvas 滤镜时遇到问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/canvas_filter_operation_resolver_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -659,7 +661,4 @@ INSTANTIATE_TEST_SUITE_P(
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

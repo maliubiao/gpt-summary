@@ -116,7 +116,7 @@ Here's a breakdown of the thinking process used to analyze the provided C code s
 
 `main.c` 文件是一个简单的 C 程序，其核心功能是调用一个外部函数 `r3` 并根据其返回值进行判断。虽然代码本身很简单，但在 Frida 的上下文中，它成为了动态分析和逆向工程的良好示例，涉及到了二进制底层、链接、操作系统加载等概念。理解这样的简单示例有助于理解 Frida 如何与更复杂的程序进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/rust/21 transitive dependencies/diamond/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,14 +124,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int r3(void);
 
 int main_func(void) {
     return r3() == 246 ? 0 : 1;
 }
-
-"""
-
 ```

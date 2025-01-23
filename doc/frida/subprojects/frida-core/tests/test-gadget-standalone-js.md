@@ -182,7 +182,7 @@ Finally, I organized the analysis into logical sections based on the prompt's re
 
 这个脚本作为一个调试线索，可以帮助逆向工程师快速验证程序是否调用了 `sleep` 函数，以及在调用时可以执行哪些操作。它是一个非常简洁但功能强大的动态分析示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/test-gadget-standalone.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const sleep = Module.getExportByName('libSystem.B.dylib',
     (Process.arch === 'ia32') ? 'sleep$UNIX2003' : 'sleep');
 const exit = new NativeFunction(
@@ -212,7 +214,4 @@ rpc.exports = {
     }
   }
 };
-
-"""
-
 ```

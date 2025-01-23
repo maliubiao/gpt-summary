@@ -107,7 +107,7 @@ By following these steps, I could generate a comprehensive and well-structured a
 
 总而言之，`frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/cpp.py` 文件的核心功能是 **为 Frida 项目在 Meson 构建系统中集成和管理各种 C++ 编译器提供必要的抽象和配置机制。** 它负责处理不同 C++ 编译器的差异，生成正确的编译命令，并处理用户可能遇到的配置错误，确保 Frida 能够使用合适的编译器和编译选项成功构建。 这对于 Frida 这样一个需要跨平台支持和可能需要在不同环境下编译的项目来说至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/cpp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 options[key].value]
 
         if ver is not None:
@@ -402,8 +404,4 @@ class MetrowerksCPPCompilerEmbeddedPowerPC(MetrowerksCompiler, CPPCompiler):
         if std.value != 'none':
             args.append('-lang ' + std.value)
         return args
-
-"""
-
-
 ```

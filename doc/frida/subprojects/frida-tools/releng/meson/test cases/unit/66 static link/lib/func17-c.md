@@ -92,7 +92,7 @@ By following this process of analyzing the code, understanding the context, conn
 
 总而言之，虽然 `func17.c` 自身的功能非常简单，但它作为 Frida 工具链的一部分，在测试 Frida 处理静态链接二进制文件的能力方面发挥着作用。  理解这类简单的测试用例可以帮助逆向工程师更好地理解 Frida 的工作原理，并排查在使用 Frida 进行逆向分析时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/66 static link/lib/func17.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,13 +100,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func17()
 {
   return 1;
 }
-
-"""
-
 ```

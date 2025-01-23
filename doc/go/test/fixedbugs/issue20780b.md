@@ -162,15 +162,17 @@ The test might pass even if there's a subtle concurrency issue that the race det
 
 **In essence, this code is a targeted test case specifically designed to ensure the Go race detector functions correctly after a particular code change.** It sets up a scenario involving potentially concurrent operations on large data structures (although the provided code doesn't explicitly launch goroutines, the structure and the intent behind the `-race` flag strongly suggest it's designed to work in environments where concurrency is being tested).
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue20780b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run -race
 
 //go:build cgo && linux && amd64
@@ -234,9 +236,4 @@ func h(x0, x1, x2, x3, x4 Big) {
 	g(3, x3)
 	g(4, x4)
 }
-
-"""
-
-
-
 ```

@@ -140,15 +140,17 @@ By following these steps, combining code analysis with an understanding of web d
 
 `canvas_rendering_api_ukm_metrics_test.cc` 是一个 Blink 引擎的测试文件，用于验证当网页使用 JavaScript 的 Canvas API 创建不同类型的渲染上下文时，是否正确记录了相关的 UKM 指标。它通过模拟 JavaScript 的 Canvas 操作，并断言 UKM 记录器中存在预期的指标数据，来确保 Blink 引擎的指标记录功能正常工作。这对于监控 Canvas API 的使用情况和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/canvas/canvas_rendering_api_ukm_metrics_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ TEST_F(CanvasRenderingAPIUkmMetricsTest, CanvasBitmapRenderer) {
 // Skip tests for WebGL context for now
 
 }  // namespace blink
-
-"""
-
 ```

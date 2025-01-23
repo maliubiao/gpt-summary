@@ -204,15 +204,17 @@ go fix ./...
 
 总而言之，`go/src/cmd/fix/gotypes_test.go` 这个文件定义了 `gotypes` 代码修复功能的测试用例，该功能旨在将旧的 `golang.org/x/tools/go/exact` 和 `golang.org/x/tools/go/types` 包的引用更新为 Go 标准库中的 `go/constant` 和 `go/types` 包。 用户在使用 `go fix -r gotypes` 命令时，需要理解修复的含义，注意可能发生的命名冲突，以及可能需要进行额外的代码调整以适应新包的 API。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/fix/gotypes_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -302,9 +304,4 @@ func f() {
 `,
 	},
 }
-
-"""
-
-
-
 ```

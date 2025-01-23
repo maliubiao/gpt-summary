@@ -109,14 +109,16 @@ This systematic approach, starting with a high-level understanding and gradually
 
 总而言之，`web_font_typeface_factory.cc` 是 Blink 渲染引擎中处理 Web 字体的关键组件，它连接了 CSS 声明的字体资源和底层的字体渲染技术，确保网页文本能够以正确的样式和形式呈现给用户。它的设计考虑了跨平台兼容性、不同字体格式的支持以及性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/web_font_typeface_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -391,7 +393,4 @@ void WebFontTypefaceFactory::ReportInstantiationResult(
 }
 
 }  // namespace blink
-
-"""
-
 ```

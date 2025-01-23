@@ -173,15 +173,17 @@ By following these steps, breaking down the code into its components and their p
 
 总而言之，`soft_navigation_heuristics.cc` 是 Blink 渲染引擎中一个重要的组成部分，它通过观察用户的交互行为、DOM 的变化和页面的渲染情况，利用一系列的启发式规则来判断是否发生了软导航，并为开发者提供相关的性能指标和调试信息。 这对于理解和优化现代 Web 应用的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/soft_navigation_heuristics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -813,7 +815,4 @@ SoftNavigationHeuristics::EventScope::~EventScope() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

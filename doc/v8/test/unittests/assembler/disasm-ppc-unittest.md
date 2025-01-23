@@ -102,11 +102,13 @@ blr                      // 返回
 
 `disasm-ppc-unittest.cc` 是 V8 JavaScript 引擎中一个关键的测试文件，它确保了 V8 的 PPC 架构反汇编器能够正确地将机器码翻译回汇编代码。这对于 V8 的调试、性能分析和安全分析等功能至关重要，虽然 JavaScript 开发者通常不会直接使用它，但它是 V8 引擎内部的重要组成部分，支撑着 JavaScript 代码的执行和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-ppc-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -263,7 +265,4 @@ TEST_F(DisasmPpcTest, DisasmPPC) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

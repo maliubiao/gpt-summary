@@ -206,15 +206,17 @@ console.log(jsonStringified);
 
 总而言之，`v8/include/v8-json.h` 定义了 V8 引擎中处理 JSON 解析和字符串化的核心接口，它与 JavaScript 的 `JSON.parse()` 和 `JSON.stringify()` 功能紧密相关，是实现这些内置功能的底层基础。了解这些接口有助于理解 V8 如何在 C++ 层面处理 JavaScript 的 JSON 操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-json.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-json.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ class V8_EXPORT JSON {
 }  // namespace v8
 
 #endif  // INCLUDE_V8_JSON_H_
-
-"""
-
 ```

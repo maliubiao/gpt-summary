@@ -132,15 +132,17 @@ unexpected line at PC=<某个程序计数器的值>: go/test/inline_literal.go:<
 
 总而言之，`go/test/inline_literal.go` 是一个精巧的测试程序，用于验证 Go 语言在进行函数内联优化时，仍然能够维护正确的源代码行号信息，这对于调试器、错误报告以及其他需要精确定位源代码位置的工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/inline_literal.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2017 The Go Authors. All rights reserved.
@@ -191,9 +193,4 @@ func main() {
 		}
 	}
 }
-
-"""
-
-
-
 ```

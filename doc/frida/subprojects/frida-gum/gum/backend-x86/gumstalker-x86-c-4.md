@@ -151,7 +151,7 @@ Let's break down each requirement with the provided code.
 
 这部分代码是 Frida Stalker 在 x86 架构下处理程序控制流转移指令的核心逻辑。它负责在程序执行到分支指令时，动态地生成和修改插桩代码，以便 Frida 能够跟踪执行路径、拦截函数调用和系统调用，并执行用户自定义的操作。其主要功能是确保 Frida 能够透明地监控和控制目标程序的执行流程，为动态逆向分析提供基础支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-x86/gumstalker-x86.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 * needed, if the instrumented block for the not taken branch is immediately
    * adjacent, we can simply fill remainder of the block with NOPs to avoid the
    * additional JMP for that not taken branch of execution too.
@@ -1154,7 +1156,4 @@ gum_exec_block_write_call_invoke_code (GumExecBlock * block,
   if (trust_threshold >= 0 && !can_backpatch_statically)
   {
     gum_exec_block_close_prolog (block, gc, gc->code_writer)
-"""
-
-
 ```

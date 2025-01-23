@@ -126,7 +126,7 @@ runWasm();
 
 这部分 `v8/test/cctest/wasm/test-gc.cc` 源代码的主要功能是 **为 V8 引擎的 WebAssembly 垃圾回收 (GC) 特性提供基础的测试框架和一组核心的测试用例**。它涵盖了结构体的创建、字段访问、空引用处理以及一些基本的引用操作指令的测试。它通过 C++ 代码模拟 WebAssembly 的执行环境，并使用 V8 的内部 API 来构建、编译和运行 WebAssembly 模块，最终验证 GC 相关功能的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-gc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-gc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -134,8 +134,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -910,8 +912,4 @@ WASM_COMPILED_EXEC_TEST(WasmRefEq) {
                                 WASM_I32V(2)),
                             WASM_I32_SHL(WASM_REF_EQ(  // true
                                              WASM_REF_NULL(type_index),
-                           
-"""
-
-
 ```

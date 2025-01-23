@@ -215,7 +215,7 @@ This Python code defines the build logic for Frida components using the Meson bu
 
 总而言之，`frida/subprojects/frida-node/releng/meson/mesonbuild/build.py` 文件的核心功能是**定义 Frida 项目中各种构建目标（可执行文件、静态库、共享库等）的构建逻辑，并严格管理和检查它们之间的链接关系和依赖关系，以确保构建过程的正确性和可靠性**。它通过一系列的检查和处理，防止用户犯常见的链接错误，并处理平台特定的构建需求，为 Frida 的成功编译奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -224,9 +224,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
- raise MesonException(textwrap.dedent('''\
+### 源代码
+```python
+raise MesonException(textwrap.dedent('''\
                         An external library was used in link_with keyword argument, which
                         is reserved for libraries built as part of this project. External
                         libraries must be passed using the dependencies keyword argument
@@ -900,7 +902,4 @@ class Executable(BuildTarget):
         return self.debug_filename
 
     def is_linkable_tar
-"""
-
-
 ```

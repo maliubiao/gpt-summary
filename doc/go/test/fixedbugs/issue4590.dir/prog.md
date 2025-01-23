@@ -228,15 +228,17 @@ pkg2.Counter: 10
 
 这说明了即使名字相同，来自不同包的变量也是相互独立的。 这段测试代码 `prog.go` 就是为了确保这种隔离性按预期工作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4590.dir/prog.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -262,9 +264,4 @@ func main() {
 		panic("pkg1.W != pkg2.W")
 	}
 }
-
-"""
-
-
-
 ```

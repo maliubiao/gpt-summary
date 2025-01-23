@@ -145,7 +145,7 @@ frida -f /path/to/mytest.py -l your_frida_script.js -- incorrect_argument
 
 因此，`frida/subprojects/frida-qml/releng/meson/test cases/common/70 external test program/mytest.py` 这个路径表明，这个脚本是 Frida 项目的测试用例的一部分，用于验证 Frida 的基本功能，特别是与外部程序交互的能力。开发者可能在调试 Frida 自身，或者在开发针对特定目标程序的 Frida 脚本时，会遇到或使用到这样的测试程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/70 external test program/mytest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 
@@ -165,7 +167,4 @@ if sys.argv[1] == 'correct':
     sys.exit(0)
 print('Argument is incorrect:', sys.argv[1])
 sys.exit(1)
-
-"""
-
 ```

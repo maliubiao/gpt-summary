@@ -290,7 +290,7 @@ if (Process.platform === 'linux') {
 
 通过分析 Frida 的输出，你可以了解哪些 `ioctl` 命令被调用，以及调用的顺序和频率，从而深入理解 Android 音频框架与 DVB 音频驱动的交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/dvb/audio.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -301,8 +301,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -367,7 +369,4 @@ typedef struct audio_status {
 #define AUDIO_SET_STREAMTYPE _IO('o', 15)
 #define AUDIO_BILINGUAL_CHANNEL_SELECT _IO('o', 20)
 #endif
-
-"""
-
 ```

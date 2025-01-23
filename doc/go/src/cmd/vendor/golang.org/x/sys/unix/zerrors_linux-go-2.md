@@ -190,7 +190,7 @@ func main() {
 
 作为第 3 部分，结合之前可能的部分（尽管我们没有看到），这个文件（以及可能相关的其他 `zerrors_linux.go` 文件）的功能是 **定义了 Go 语言在 Linux 系统上进行底层操作所需要的大量常量，包括系统调用号、选项、标志位、错误码和信号量。**  这些常量使得 Go 语言能够方便且类型安全地调用 Linux 系统调用，实现各种系统级功能。它构成了 `golang.org/x/sys/unix` 包的基础，并被上层需要直接与 Linux 内核交互的 Go 代码所使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -198,8 +198,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ILL_GET                             = 0x22
 	PR_MCE_KILL_LATE                            = 0x0
 	PR_MCE_KILL_SET                             = 0x1
@@ -1429,10 +1431,4 @@ const (
 	SIGTERM = syscall.Signal(0xf)
 	SIGTRAP = syscall.Signal(0x5)
 )
-
-"""
-
-
-
-
 ```

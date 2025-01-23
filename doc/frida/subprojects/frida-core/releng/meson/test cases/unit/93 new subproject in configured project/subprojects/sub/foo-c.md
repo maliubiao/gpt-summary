@@ -129,7 +129,7 @@ By following these steps, which involve understanding the code, its context with
 
 因此，这个 `foo.c` 文件在实际的 Frida 使用场景中，很可能不是直接被用户操作的对象，而是作为 Frida 内部测试和验证的一部分。用户（开发者）通过运行和调试 Frida 的单元测试，间接地“到达”这里，将其作为调试线索来理解 Frida 的行为和构建系统的运作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/93 new subproject in configured project/subprojects/sub/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,15 +137,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* SPDX-license-identifier: Apache-2.0 */
 /* Copyright © 2021 Intel Corporation */
 
 int func(void) {
     return 1;
 }
-
-"""
-
 ```

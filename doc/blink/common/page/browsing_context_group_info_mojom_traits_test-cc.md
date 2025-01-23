@@ -115,14 +115,16 @@ TEST(BrowsingContextGroupInfoTest, ValidMojoSerialization) {
 
 总而言之，`browsing_context_group_info_mojom_traits_test.cc` 是一个至关重要的低级别测试，它保证了 Chromium 浏览器内部组件之间能够正确地传递关于浏览上下文组的关键信息，这对于 Web 平台的安全性和功能正确性至关重要。 虽然用户和前端开发者不会直接与这个文件交互，但其测试的正确性直接影响着他们编写的 JavaScript, HTML 和 CSS 代码在浏览器中的运行效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/page/browsing_context_group_info_mojom_traits_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ TEST(BrowsingContextGroupInfoTest, ValidMojoSerialization) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -128,15 +128,17 @@ Strategizing complete. I will now generate the response.
 
 总而言之，这个测试文件旨在全面验证 `KeySystemConfigSelector` 在各种实际场景下的正确性和鲁棒性，确保浏览器能够可靠地选择合适的 Media Key System 配置来播放加密媒体内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/key_system_config_selector_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 [0].mime_type = kUnsupportedContainer;
   audio_capabilities[0].codecs = kSupportedAudioCodec;
 
@@ -358,8 +360,4 @@ TEST_F(KeySystemConfigSelectorTest,
 #endif  // BUILDFLAG(IS_WIN)
 
 }  // namespace blink
-
-"""
-
-
 ```

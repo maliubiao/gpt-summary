@@ -49,7 +49,7 @@ Finally, let's summarize the functionality of the code.这是 Frida 动态 instr
 
 由于这是第 1 部分，它的主要功能是搭建针对类 Unix 系统的构建测试基础，并覆盖了共享库、静态库和依赖管理的关键方面。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -58,8 +58,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2022 The Meson development team
 
@@ -795,9 +797,4 @@ class LinuxlikeTests(BasePlatformTests):
             self.assertEqual(want_mode, found_mode,
                              msg=('Expected file %s to have mode %s but found %s instead.' %
                                   (datafile, want_mode, found_mode)))
-
-
-"""
-
-
 ```

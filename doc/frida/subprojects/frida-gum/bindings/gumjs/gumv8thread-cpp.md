@@ -270,7 +270,7 @@ Organize the findings logically based on the prompt's categories: Functionality,
 
 总而言之，`frida/subprojects/frida-gum/bindings/gumjs/gumv8thread.cpp` 文件是 Frida 连接 JavaScript API 和底层线程操作的关键桥梁，它利用了操作系统和硬件提供的调试功能，为逆向工程师提供了强大的动态分析能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8thread.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -278,8 +278,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2024 DaVinci <nstefanclaudel13@gmail.com>
@@ -593,7 +595,4 @@ GUMJS_DEFINE_FUNCTION (gumjs_thread_unset_hardware_watchpoint)
   gum_thread_unset_hardware_watchpoint (thread_id, watchpoint_id, &error);
   _gum_v8_maybe_throw (isolate, &error);
 }
-
-"""
-
 ```

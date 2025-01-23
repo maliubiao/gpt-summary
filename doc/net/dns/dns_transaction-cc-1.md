@@ -123,7 +123,7 @@ The user wants to understand the functionality of the provided C++ code snippet,
 
 总而言之，`net/dns/dns_transaction.cc` 文件的第二部分主要负责 **执行 DNS 查询和探测 DoH 服务器的可用性**。`DnsTransactionImpl` 负责具体的 DNS 查询逻辑，包括选择协议、处理重试和回退；`DnsOverHttpsProbeRunner` 负责在后台探测 DoH 服务器的健康状态；而 `DnsTransactionFactoryImpl` 则负责创建这些类的实例。 这些功能对于浏览器加载网页和进行网络通信至关重要，尽管它们本身是用 C++ 实现的，但它们的操作是由用户的浏览行为和网页上的 JavaScript 代码间接触发的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_transaction.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 esolveContext> context)
       : session_(session), context_(context) {
     DCHECK(session_);
@@ -1002,8 +1004,4 @@ std::unique_ptr<DnsTransactionFactory> DnsTransactionFactory::CreateFactory(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

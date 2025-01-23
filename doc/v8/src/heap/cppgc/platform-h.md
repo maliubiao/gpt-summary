@@ -147,15 +147,17 @@ try {
 
 总而言之，`v8/src/heap/cppgc/platform.h` 定义了处理 V8 引擎底层内存管理中关键的错误情况（内存溢出）的机制，并提供了访问全局内存分配器的接口。虽然 JavaScript 开发者通常不直接与这些 C++ 代码交互，但理解其背后的原理有助于更好地理解 JavaScript 程序的内存行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/platform.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/platform.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ PageAllocator& GetGlobalPageAllocator();
 }  // namespace cppgc::internal
 
 #endif  // V8_HEAP_CPPGC_PLATFORM_H_
-
-"""
-
 ```

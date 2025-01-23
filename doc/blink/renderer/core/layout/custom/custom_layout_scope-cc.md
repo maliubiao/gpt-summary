@@ -88,14 +88,16 @@ By following this process, I was able to provide a comprehensive answer that add
 
 虽然提供的代码片段很小，但 `CustomLayoutScope::current_scope_` 的存在暗示了 `CustomLayoutScope` 在 Blink 渲染引擎中负责跟踪和管理当前自定义布局的执行上下文。它与 CSS 的 `display: layout()` 属性以及 JavaScript 中实现的自定义布局算法紧密相关，共同实现了强大的自定义布局功能。 理解 `CustomLayoutScope` 的作用有助于深入理解 Blink 渲染引擎如何处理 CSS Houdini 的 Layout API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/custom/custom_layout_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -107,7 +109,4 @@ namespace blink {
 CustomLayoutScope* CustomLayoutScope::current_scope_ = nullptr;
 
 }  // namespace blink
-
-"""
-
 ```

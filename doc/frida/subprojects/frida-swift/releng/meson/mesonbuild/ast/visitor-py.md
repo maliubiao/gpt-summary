@@ -142,7 +142,7 @@ This detailed breakdown attempts to mimic a logical process of understanding the
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/mesonbuild/ast/visitor.py` 文件定义了 Frida 中用于遍历和操作抽象语法树的基类，为更高级的代码分析和操作提供了基础，并且是 Frida 理解目标程序代码结构的关键组件，这在动态 instrumentation 和逆向工程中至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/ast/visitor.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -313,7 +315,4 @@ class AstVisitor:
     def visit_ParenthesizedNode(self, node: mparser.ParenthesizedNode) -> None:
         self.visit_default_func(node)
         node.inner.accept(self)
-
-"""
-
 ```

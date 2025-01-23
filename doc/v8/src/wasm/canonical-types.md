@@ -117,11 +117,13 @@ WebAssembly.instantiate(wasmCode).then(module => {
 
 `v8/src/wasm/canonical-types.cc` 中的 `TypeCanonicalizer` 类是 V8 引擎中处理 WebAssembly 类型系统的关键组件。它负责将各种 Wasm 类型定义转换为统一的规范表示，从而提高类型比较效率，支持递归类型，并确保 WebAssembly 与 JavaScript 之间的类型兼容性，使得二者能够安全有效地进行互操作。虽然 JavaScript 开发者不会直接与 `TypeCanonicalizer` 交互，但它的工作是 WebAssembly 功能在 JavaScript 中正确运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/canonical-types.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -559,7 +561,4 @@ bool TypeCanonicalizer::Contains(const CanonicalSig* sig) const {
 #endif
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

@@ -171,15 +171,17 @@ fetch('https://example.com/data.json')
 
 总而言之，`net/socket/tcp_stream_attempt.cc` 文件中的 `TcpStreamAttempt` 类是 Chromium 网络栈中建立 TCP 连接的关键执行者，它负责底层的连接建立逻辑，并与上层的网络请求处理流程紧密协作，最终支持用户在浏览器中访问各种网络资源。 理解它的工作原理有助于分析和解决网络连接相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/tcp_stream_attempt.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ void TcpStreamAttempt::OnTimeout() {
 }
 
 }  // namespace net
-
-"""
-
 ```

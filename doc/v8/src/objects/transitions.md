@@ -138,11 +138,13 @@ Object.preventExtensions(obj2);
 
 `transitions.cc` 是 V8 引擎中一个非常重要的组成部分，它负责管理 JavaScript 对象结构变化的元数据。通过高效地存储和查找这些转换信息，V8 可以优化对象的属性访问、内存分配和垃圾回收，从而提升 JavaScript 代码的执行效率。  它隐藏在 JavaScript 引擎的深处，但其运作机制直接影响着我们编写的每一行 JavaScript 代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/transitions.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1026,7 +1028,4 @@ std::ostream& operator<<(std::ostream& os, SideStepTransition::Kind sidestep) {
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

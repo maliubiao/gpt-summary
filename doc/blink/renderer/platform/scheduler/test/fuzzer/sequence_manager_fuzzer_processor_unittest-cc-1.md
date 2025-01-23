@@ -96,15 +96,17 @@ Here's a breakdown of the thought process to arrive at the answer:
 
 总而言之，这部分测试着重验证了 `SequenceManagerFuzzerProcessor` 处理多线程环境下异步任务调度的能力，特别是跨线程任务投递和线程时钟同步的正确性。这些测试模拟了浏览器渲染引擎中关键的并发场景，对于确保 Blink 引擎在复杂异步操作下的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/test/fuzzer/sequence_manager_fuzzer_processor_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ask_queue_id: 1
         }
        }
@@ -532,8 +534,4 @@ TEST(SequenceManagerFuzzerProcessorTest, CrossThreadPostFromChildThreads) {
 
 }  // namespace sequence_manager
 }  // namespace base
-
-"""
-
-
 ```

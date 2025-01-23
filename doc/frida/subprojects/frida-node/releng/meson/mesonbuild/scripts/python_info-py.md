@@ -171,7 +171,7 @@ A developer might try to build Frida for a specific embedded Linux system with a
 
 In summary, `python_info.py` is a vital utility script within Frida's build system. It acts as a sensor, gathering critical details about the Python environment. This information is then used by the build system to ensure Frida is built correctly for the specific Python configuration, making it a foundational piece for enabling Frida's dynamic instrumentation capabilities, which are heavily used in reverse engineering.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/scripts/python_info.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python
 
 # ignore all lints for this file, since it is run by python2 as well
@@ -302,7 +304,4 @@ print(json.dumps({
   'suffix': suffix,
   'limited_api_suffix': limited_api_suffix,
 }))
-
-"""
-
 ```

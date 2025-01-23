@@ -274,14 +274,16 @@ AdDescriptor descriptor4(adUrl2, noSize);
 
 总而言之，`ad_display_size.cc` 文件定义了关键的数据结构，用于在 Chromium 的 Blink 引擎中处理与兴趣组广告相关的尺寸信息，这些信息最终会影响到广告在网页上的展示方式和效果。开发者在使用这些数据结构时需要注意单位匹配和对可选值的正确处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/ad_display_size.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -353,7 +355,4 @@ bool AdDescriptor::operator!=(const AdDescriptor& other) const {
 AdDescriptor::~AdDescriptor() = default;
 
 }  // namespace blink
-
-"""
-
 ```

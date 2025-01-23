@@ -52,15 +52,17 @@ Here's a breakdown of how to approach this:
 
 总而言之，`blink/renderer/core/layout/map_coordinates_test.cc` 文件是一个全面的测试套件，旨在确保 Blink 渲染引擎在处理各种复杂的 CSS 布局和变换时，能够准确地进行坐标映射。 它涵盖了 2D/3D 变换、滚动、固定定位、书写模式和滚动条等多种场景，保证了浏览器在内部计算和向 JavaScript 提供元素坐标信息时的准确性和一致性。 这对于确保网页的正确渲染和交互至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/map_coordinates_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 div id='child'></div>
       </div>
     </div>
@@ -484,8 +486,4 @@ TEST_F(MapCoordinatesTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

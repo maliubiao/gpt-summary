@@ -158,15 +158,17 @@ std::cout << "ID: " << track->GetId().Utf8().data() << std::endl; // 输出 ID: 
 
 总而言之，`blink/renderer/core/html/track/track_base.cc` 文件是 Blink 渲染引擎中处理媒体轨道的基石，它定义了所有类型媒体轨道共享的核心属性和行为，并为 HTML `<track>` 元素和 JavaScript 的轨道 API 提供了底层的支持。虽然用户不会直接看到或操作这个 C++ 文件，但它在幕后默默地支撑着网页上媒体轨道的正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/track_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc.  All rights reserved.
  *
@@ -221,7 +223,4 @@ void TrackBase::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

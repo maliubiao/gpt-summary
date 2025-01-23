@@ -150,15 +150,17 @@ This iterative process of code analysis, inference, and connecting to web standa
 
 总而言之，`listed_element.cc` 文件是 Blink 引擎中处理表单交互的核心组件，它负责管理表单元素的关联、验证、禁用/只读状态，并与 HTML 结构、JavaScript API 以及 CSS 样式选择器紧密配合，共同实现 Web 表单的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/listed_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -967,7 +969,4 @@ void FormAttributeTargetObserver::IdTargetChanged() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

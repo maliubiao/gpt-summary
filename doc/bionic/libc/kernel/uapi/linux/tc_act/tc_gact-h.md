@@ -238,7 +238,7 @@ if __name__ == '__main__':
 
 **注意:**  实际的 Netlink 消息结构可能更复杂，需要根据具体的 TC 操作和消息类型进行解析。你可能需要查看 Linux 内核的 TC 文档和 `libnl` 的源代码来理解消息的格式。要准确捕获与 GACT 相关的消息，你可能需要更精细的 hook，例如根据 Netlink 消息的子系统 ID 和命令类型进行过滤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tc_act/tc_gact.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -249,8 +249,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -283,7 +285,4 @@ enum {
 };
 #define TCA_GACT_MAX (__TCA_GACT_MAX - 1)
 #endif
-
-"""
-
 ```

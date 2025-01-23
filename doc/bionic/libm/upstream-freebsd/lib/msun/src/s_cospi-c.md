@@ -221,7 +221,7 @@ Dynamic linker (在 Android 中通常是 `linker` 或 `linker64`) 负责在程�
 
 总结来说，`s_cospi.c` 是 Android `libm` 库中一个关键的数学函数实现，它通过精巧的算法和对特殊情况的处理，为 Android 系统和应用程序提供高效且精确的 `cos(π * x)` 计算。 理解其功能和实现逻辑，对于进行底层的 Android 开发和调试非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_cospi.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -231,8 +231,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 2017, 2023 Steven G. Kargl
  * All rights reserved.
@@ -378,7 +380,4 @@ cospi(double x)
 #if LDBL_MANT_DIG == 53
 __weak_reference(cospi, cospil);
 #endif
-
-"""
-
 ```

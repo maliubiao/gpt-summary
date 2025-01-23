@@ -111,12 +111,14 @@ void V8HeapExplorer::ExtractJSObjectReferences(HeapEntry* entry, Tagged<JSObject
 
 总结来说，这部分 C++ 代码是 V8 引擎生成堆快照的核心组成部分，它负责理解 JavaScript 对象的内存布局，并提取对象之间的引用关系，为开发者进行内存分析提供了基础数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/heap-snapshot-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 {
       int idx = scope_info->ContextHeaderLength() + it->index();
       SetContextReference(entry, it->name(), context->get(idx),
@@ -1688,7 +1690,4 @@ class V8_NODISCARD NullContextForSnapshotScope {
 }  // namespace
 
 bool HeapSnapshotGenerator::GenerateSnaps
-"""
-
-
 ```

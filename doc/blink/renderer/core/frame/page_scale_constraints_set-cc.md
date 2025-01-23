@@ -182,14 +182,16 @@ viewportMeta.setAttribute('content', 'initial-scale=0.5');
 
 总之，`page_scale_constraints_set.cc` 是 Blink 引擎中负责管理和计算页面缩放约束的关键模块，它直接关系到开发者如何通过 HTML 和间接地通过 JavaScript 控制页面的缩放行为，并最终影响用户在不同设备上的浏览体验。理解其功能有助于开发者更好地控制页面的视口和缩放，避免常见的错误配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/page_scale_constraints_set.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -486,7 +488,4 @@ void PageScaleConstraintsSet::AdjustForAndroidWebViewQuirks(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -192,7 +192,7 @@ runWasm();
 
 `v8/src/wasm/wasm-opcodes.h` 文件在 V8 引擎的 WebAssembly 实现中扮演着核心角色，它定义了所有 WebAssembly 指令的规范，包括其二进制表示、类型签名和文本格式名称。这对于 V8 正确解析、编译和执行 WebAssembly 代码至关重要。理解这个文件的内容有助于深入了解 WebAssembly 的底层执行机制以及 V8 如何实现对 WebAssembly 的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-opcodes.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-opcodes.h以.tq结尾，那它是个v8 torque源代码，
@@ -200,8 +200,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -736,8 +738,4 @@ V8_EXPORT_PRIVATE bool IsJSCompatibleSignature(const CanonicalSig* sig);
   V(I8x16RelaxedSwizzle, 0xfd100, s_ss, "i8x16.relaxed_swizzle")           \
   V(I32x4RelaxedTruncF32x4S, 0xfd101, s_s, "i32x4.relaxed_trunc_f32x4_s")  \
   V(I32x4RelaxedTruncF32x4U, 0xfd102, s_s, "i32x4.relaxed_trunc_f32x4_u")  \
-  
-"""
-
-
 ```

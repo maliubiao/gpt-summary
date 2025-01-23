@@ -160,15 +160,17 @@ Here's a breakdown of the thought process to arrive at the comprehensive analysi
 
 总而言之，`oes_fbo_render_mipmap.cc` 文件是 Blink 引擎中实现特定 WebGL 扩展的关键部分，它使得 JavaScript 能够利用 GPU 的功能将渲染结果直接写入帧缓冲对象附件的特定 mipmap 层级，从而优化纹理生成和渲染流程。在调试 WebGL 应用中涉及 FBO 和 mipmap 的问题时，这个文件是潜在的关注点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/oes_fbo_render_mipmap.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ const char* OESFboRenderMipmap::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

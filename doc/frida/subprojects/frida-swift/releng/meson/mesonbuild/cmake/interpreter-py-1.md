@@ -170,7 +170,7 @@ mylib_dep = declare_dependency(link_with: mylib) # `mylib` 共享库的依赖声
 
 **该文件的主要功能是将 CMake 构建系统的项目信息转换为 Meson 构建系统可以理解和使用的格式。它通过配置 CMake 构建环境、解析 CMake 生成的数据、分析项目结构和依赖关系，最终生成 Meson 构建规则，从而使得 Frida 的构建系统能够无缝集成和构建基于 CMake 的组件或依赖项。** 换句话说，它是 Frida 构建系统中连接 CMake 和 Meson 这两个构建系统的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/cmake/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 mlog.bold(str(self.conflict_map)))
         mlog.log('  -- working_dir:  ', mlog.bold(str(self.working_dir)))
         mlog.log('  -- depends_raw:  ', mlog.bold(str(self.depends_raw)))
@@ -691,8 +693,4 @@ class CMakeInterpreter:
 
     def target_list(self) -> T.List[str]:
         return list(self.internal_name_map.keys())
-
-"""
-
-
 ```

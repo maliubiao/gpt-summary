@@ -186,7 +186,7 @@ V8 的 CBOR 解析代码 (如 `cbor.cc`) 会将收到的 CBOR 字节流转换为
 
 结合第一部分，这个文件提供了一整套用于解析和初步处理 CBOR 数据的工具，这对于 V8 引擎处理来自 Chrome DevTools Protocol 或其他需要紧凑二进制数据格式的场景至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/cbor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/cbor.cc以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 turn false;
   }
   return true;
@@ -395,8 +397,4 @@ Status AppendString8EntryToCBORMap(span<uint8_t> string8_key,
 }
 }  // namespace cbor
 }  // namespace v8_crdtp
-
-"""
-
-
 ```

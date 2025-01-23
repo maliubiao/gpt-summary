@@ -261,7 +261,7 @@ Done
 
 总而言之，这段测试代码验证了 Go 语言 `net` 包中核心网络连接和监听功能的正确性，确保开发者可以使用这些接口在不同的网络环境下进行可靠的网络编程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/conn_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -269,8 +269,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -335,9 +337,4 @@ func TestConnAndListener(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

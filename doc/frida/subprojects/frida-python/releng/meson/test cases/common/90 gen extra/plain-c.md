@@ -171,7 +171,7 @@ if __name__ == '__main__':
 
 总而言之，`plain.c` 是一个刻意设计的简单 C 文件，用于在 Frida 的测试框架中验证动态 instrumentation 功能。它的简洁性使得它成为测试 hook 和替换机制的理想目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/90 gen extra/plain.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,14 +179,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int bob_mcbob(void);
 
 int main(void) {
     return bob_mcbob();
 }
-
-"""
-
 ```

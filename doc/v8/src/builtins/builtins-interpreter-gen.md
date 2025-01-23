@@ -170,11 +170,13 @@ By following this detailed thought process, breaking down the code into its comp
 
 `builtins-interpreter-gen.cc` 这个文件是 V8 引擎解释器实现的关键组成部分，它生成了用于处理各种 JavaScript 操作的底层机器码入口点。 理解这个文件有助于深入理解 JavaScript 代码在 V8 引擎中是如何被解释和执行的。 它展示了高级语言的特性最终是如何映射到低级的机器指令上的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-interpreter-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ void Builtins::Generate_InterpreterPushArgsThenConstructArrayFunction(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

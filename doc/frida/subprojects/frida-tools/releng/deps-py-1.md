@@ -138,7 +138,7 @@ By following this thought process, systematically analyzing the code, and connec
 
 总而言之，`frida/subprojects/frida-tools/releng/deps.py` 是 Frida 构建系统中一个关键的辅助模块，负责管理依赖项的定义、下载和版本更新，确保 Frida 项目能够使用正确的依赖环境进行构建，这对于逆向工程的工具来说至关重要，因为它直接关系到工具的稳定性和功能完整性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/deps.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,9 +147,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-          ]), flush=True)
+### 源代码
+```python
+]), flush=True)
 
     def _print_status(self, scope: str, *args):
         status = " ".join([str(arg) for arg in args])
@@ -465,8 +467,4 @@ class DependencySpec:
 
 if __name__ == "__main__":
     main()
-
-"""
-
-
 ```

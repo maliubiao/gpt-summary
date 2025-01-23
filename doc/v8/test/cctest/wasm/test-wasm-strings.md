@@ -81,11 +81,13 @@ console.log(musicalSymbol.length); // 输出: 2 (JavaScript 中使用两个 UTF-
 
 `test-wasm-strings.cc` 通过测试 V8 引擎中 WebAssembly 的 UTF-8 解码功能，确保了 WebAssembly 模块能够正确处理字符串数据。测试用例特别关注了广义 UTF-8 解码器对代理对的处理，这与 JavaScript 中使用代理对表示超出 BMP 的字符的方式有关。这个测试保证了 V8 引擎在 WebAssembly 和 JavaScript 之间进行字符串数据交互时的正确性和兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-wasm-strings.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ TEST(GeneralizedUTF8Decode) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

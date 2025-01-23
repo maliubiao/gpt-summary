@@ -142,7 +142,7 @@ By following this structured thinking process, including anticipating potential 
 
 通过以上步骤，用户可以逐步缩小问题范围，最终定位到程序行为不符合预期的地方，并根据分析结果进行修复或调整。对于 Frida 这样的动态插桩工具来说，用户可能会使用 Frida 来 hook `fopen` 或 `fwrite` 等函数，来观察它们的参数和返回值，从而更深入地了解程序的行为，即使没有源代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/36 exe_wrapper behaviour/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main (int argc, char * argv[])
@@ -169,7 +171,4 @@ int main (int argc, char * argv[])
   }
   return 0;
 }
-
-"""
-
 ```

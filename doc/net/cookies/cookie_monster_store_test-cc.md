@@ -113,15 +113,17 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`cookie_monster_store_test.cc` 是一个用于验证 `CookieMonster` 与其持久化存储交互的核心测试文件。它通过提供 mock 对象和辅助函数，允许开发者在各种场景下测试 Cookie 的加载、添加、删除和更新逻辑，从而确保浏览器能够正确地管理 Cookie。 了解这些测试的目的是理解浏览器 Cookie 管理机制的重要一步，这对于调试与 Cookie 相关的网络问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_monster_store_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -367,7 +369,4 @@ std::unique_ptr<CookieMonster> CreateMonsterFromStoreForGC(
 MockSimplePersistentCookieStore::~MockSimplePersistentCookieStore() = default;
 
 }  // namespace net
-
-"""
-
 ```

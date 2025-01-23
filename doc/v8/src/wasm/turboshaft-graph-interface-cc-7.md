@@ -184,7 +184,7 @@ try {
 
 作为 Turboshaft 编译流程的第 8 部分，这个文件主要负责将 WebAssembly 中涉及到基本操作（如加载、存储、算术运算、比较、控制流）以及特定领域操作（如字符串处理）的指令，转换成 Turboshaft 编译器内部的图形表示。这个图形表示是后续优化和代码生成的基础。  这个阶段至关重要，因为它确保了 WebAssembly 的语义被正确地翻译到编译器的中间表示中。 尤其是在字符串处理方面，这个文件提供了连接 Wasm 语义和 V8 内部高性能字符串操作的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/turboshaft-graph-interface.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/turboshaft-graph-interface.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 = V<String>::Cast(NullCheck(str));
     V<WasmStringViewIter> result_value =
         CallBuiltinThroughJumptable<BuiltinCallDescriptor::WasmStringAsIter>(
@@ -966,7 +968,4 @@ Prompt:
         V<Float32> converted_back = __ ChangeUint32ToFloat32(result);
         __ TrapIf(__ Word32Equal(__ Float32Equal(converted_back, truncated), 0),
                   TrapId::kTrapFloatU
-"""
-
-
 ```

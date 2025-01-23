@@ -521,7 +521,7 @@ void InstructionSelectorT<Adapter>::VisitInt64Sub(node_t node) {
     Int64BinopMatcher mright(m.right().node());
     // Check multiply can't be later reduced to addition with shift.
     if (LeftShiftForReducedMultiply
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm64/instruction-selector-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm64/instruction-selector-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -529,8 +529,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e_t node) {
   using namespace turboshaft;  // NOLINT(build/namespaces)
   const ShiftOp& op = Get(node).Cast<ShiftOp>();
@@ -1375,7 +1377,4 @@ void InstructionSelectorT<Adapter>::VisitInt32MulHigh(node_t node) {
 
 template <typename Adapter>
 void InstructionSelectorT<Adapter>::VisitInt64MulHigh(nod
-"""
-
-
 ```

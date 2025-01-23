@@ -138,7 +138,7 @@ Plan:
 
 总而言之，这段代码是 V8 引擎的“工厂”，用于生产各种 JavaScript 运行时所需的堆对象，特别是字符串。它隐藏了底层的内存管理细节，并提供了创建和管理这些对象的一致接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/factory-base.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/factory-base.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (length);
   string->set_length(length);
   string->set_raw_hash_field(String::kEmptyHashField);
@@ -727,8 +729,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

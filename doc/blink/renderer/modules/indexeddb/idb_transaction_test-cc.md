@@ -190,15 +190,17 @@ const request = objectStore.put(largeString, 1);
 
 `idb_transaction_test.cc` 文件本身虽然是测试代码，但它可以作为理解 `IDBTransaction` 类功能和行为的重要参考。当调试与 IndexedDB 相关的 bug 时，查看相关的测试用例可以帮助开发者理解预期的行为，并定位问题所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/idb_transaction_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -667,7 +669,4 @@ TEST_F(IDBTransactionTest, KeyAndValueSizeTest) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

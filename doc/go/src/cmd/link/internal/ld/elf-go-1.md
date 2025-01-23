@@ -135,7 +135,7 @@ func main() {
 
 总而言之，这部分 `elf.go` 代码是 Go 链接器生成 ELF 文件的关键部分，它负责定义和管理 ELF 文件的结构，包括文件头、节头表和程序头表，处理代码和数据的重定位，添加 Go 特有的元数据，并处理动态链接的相关信息，最终将所有这些信息组合成一个符合 ELF 格式的可执行文件或共享库。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/elf.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -144,8 +144,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 edup(elfRelType + sect.Name)
 		}
 	}
@@ -1358,10 +1360,4 @@ func elfadddynsym(ldr *loader.Loader, target *Target, syms *ArchSyms, s loader.S
 		}
 	}
 }
-
-"""
-
-
-
-
 ```

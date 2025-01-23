@@ -208,15 +208,17 @@ If a user reports that a website is not loading quickly on subsequent visits, or
 
 **In summary, `simple_session_cache.cc` provides a basic mechanism for storing and retrieving QUIC session information, primarily for testing purposes. It plays a crucial role in simulating session resumption, a key feature of QUIC that improves connection establishment speed. While it doesn't directly interact with Javascript code, it underpins the network functionality that Javascript relies on for making web requests.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/simple_session_cache.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -297,7 +299,4 @@ void SimpleSessionCache::Clear() { cache_entries_.clear(); }
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

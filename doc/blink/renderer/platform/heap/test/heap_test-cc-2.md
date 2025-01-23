@@ -143,15 +143,17 @@ Now, I can start drafting the summary, including connections to web technologies
 
 这部分代码通过详尽的测试用例，确保 Blink 引擎的堆管理机制能够正确、高效地工作，这对于构建稳定可靠的 Web 浏览器至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/test/heap_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 CT_EQ(64u, weak_set->size());
           SetIteratorCheck(it4, weak_set->end(), 64);
         } else if (collection_number == kWeakOrderedSetIndex) {
@@ -1162,7 +1164,4 @@ class PartObjectWithRef {
 }  // namespace
 
 }  // namespa
-"""
-
-
 ```

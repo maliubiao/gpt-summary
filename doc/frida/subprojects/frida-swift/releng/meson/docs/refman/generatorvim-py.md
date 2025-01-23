@@ -160,7 +160,7 @@ call complete("", 'CompleteMeson')
 
 总而言之，`generatorvim.py` 虽然功能看似简单，但它是 Frida 工具链中提高开发效率的一个重要组成部分，通过为 Vim 提供 Meson 构建脚本的代码补全功能，间接地支持了 Frida 相关的逆向工程和开发工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/docs/refman/generatorvim.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2023 The Meson development team
 from __future__ import annotations
@@ -207,7 +209,4 @@ class GeneratorVim(GeneratorBase):
         self.out_dir.mkdir(parents=True, exist_ok=True)
         out_file = self.out_dir / outname
         out_file.write_text(result, encoding='utf-8')
-
-"""
-
 ```

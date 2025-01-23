@@ -173,15 +173,17 @@ The comment in the prompt is crucial: "If `v8/src/strings/string-builder.cc` end
 
 In summary, `v8/src/strings/string-builder.cc` is a vital part of V8's string manipulation infrastructure, providing optimized ways to build and combine strings, which directly impacts the performance of JavaScript code that performs string operations.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/string-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/strings/string-builder.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -542,7 +544,4 @@ void IncrementalStringBuilder::AppendString(DirectHandle<String> string) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

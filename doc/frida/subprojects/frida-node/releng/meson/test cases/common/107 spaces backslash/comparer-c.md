@@ -108,7 +108,7 @@ By following these steps, we arrive at a comprehensive and informative answer th
 
 总而言之，`comparer.c` 是 Frida 项目中一个非常具体的测试用例，它专注于验证对包含反斜杠的字符串的正确处理。这对于像 Frida 这样需要处理各种平台和文件系统的工具来说至关重要，可以帮助避免因字符串处理不当而导致的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/107 spaces backslash/comparer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "comparer.h"
 
 #ifndef COMPARER_INCLUDED
@@ -134,7 +136,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

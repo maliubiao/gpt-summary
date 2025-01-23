@@ -96,7 +96,7 @@ This iterative process of skimming, focusing on key elements, connecting the dot
 
 这部分代码是 Go 语言编译器中指针活跃性分析的关键组成部分，其主要职责是将分析结果转换为运行时可用的数据结构。它生成了描述函数参数、局部变量和栈上对象的活跃指针信息的位图，以及其他必要的元数据，这些数据对于垃圾回收器的正确运行至关重要。 `emit()` 和 `emitStackObjects()` 是核心函数，负责将内存中的活跃性分析结果持久化到目标文件中，而 `isfat()` 和 `WriteFuncMap()` 则处理一些特定的辅助情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/liveness/plive.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -105,8 +105,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 le
 // offset = offset of (sub-portion of) variable to clobber (in bytes)
 // t = type of sub-portion of v.
@@ -616,10 +618,4 @@ func WriteFuncMap(fn *ir.Func, abiInfo *abi.ABIParamResultInfo) {
 
 	objw.Global(lsym, int32(off), obj.RODATA|obj.LOCAL)
 }
-
-"""
-
-
-
-
 ```

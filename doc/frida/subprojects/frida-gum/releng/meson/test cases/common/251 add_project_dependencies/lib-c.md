@@ -140,7 +140,7 @@ Initially, I might have focused too much on the `ok()` function's internal logic
 
 总而言之，这个 `lib.c` 文件虽然代码很简单，但它在 Frida 的构建过程中扮演着重要的角色，确保了 Frida 能够正确地依赖 `zlib` 库，从而保证了 Frida 的正常运行和功能的完整性。对于用户来说，它通常作为构建过程中的一个幕后测试，只有在遇到构建问题时才会被关注到。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/251 add_project_dependencies/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <zlib.h>
 #include <math.h>
 
@@ -164,7 +166,4 @@ int ok(void) {
         return 0;
     return (int)cos(zero);
 }
-
-"""
-
 ```

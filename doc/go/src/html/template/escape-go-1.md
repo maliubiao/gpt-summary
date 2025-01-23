@@ -115,7 +115,7 @@ func main() {
 
 综合来看，`go/src/html/template/escape.go` 文件的主要功能是 **提供一系列函数，用于对字符串进行上下文相关的转义，以提高在不同场景（如 HTML、JavaScript、URL）中使用这些字符串的安全性**。 它包含了针对 HTML 元素内容、HTML 属性、JavaScript 以及 URL 查询参数等多种上下文的转义函数。  `JSEscaper` 和 `URLQueryEscaper` 这两个函数作为其中的一部分，专门负责 JavaScript 和 URL 查询参数的转义工作，可能是为了提供更便捷的访问方式或在特定场景下使用。 整个文件的目的是帮助开发者避免常见的安全漏洞，如跨站脚本攻击（XSS），通过确保输出的文本在目标上下文中被正确解释。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/html/template/escape.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -124,8 +124,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 s arguments.
 func JSEscaper(args ...any) string {
 	return template.JSEscaper(args...)
@@ -136,10 +138,4 @@ func JSEscaper(args ...any) string {
 func URLQueryEscaper(args ...any) string {
 	return template.URLQueryEscaper(args...)
 }
-
-"""
-
-
-
-
 ```

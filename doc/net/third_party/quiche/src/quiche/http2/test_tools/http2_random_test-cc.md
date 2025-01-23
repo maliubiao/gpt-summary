@@ -115,15 +115,17 @@ Finally, I organize the information logically, addressing each point in the requ
 
 总而言之，`http2_random_test.cc` 是 Chromium 网络栈中用于测试 HTTP/2 相关伪随机数生成功能的重要文件。虽然普通用户不会直接接触到它，但它确保了底层网络协议的正确性和稳定性，间接地影响着用户的网络体验。 对于开发者来说，它是理解和调试网络相关问题的重要资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/test_tools/http2_random_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/test_tools/http2_random.h"
 
 #include <algorithm>
@@ -219,7 +221,4 @@ TEST(Http2RandomTest, SkewedLowFullRange) {
 }  // namespace
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

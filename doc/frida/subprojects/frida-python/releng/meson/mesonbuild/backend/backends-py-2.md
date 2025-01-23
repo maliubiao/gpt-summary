@@ -158,7 +158,7 @@ After analyzing each function, I will synthesize the information to create a sum
 
 总而言之，`backends.py` 的这一部分是 Meson 构建系统后端的核心组成部分，它负责将高级的构建描述转换为底层的构建指令和安装信息，使得构建过程能够顺利进行。它提供了丰富的接口来查询和操作构建目标的属性，这对于理解构建过程、进行逆向分析以及进行底层的系统开发都非常有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 = arg
             for dep in t.depends:
                 assert isinstance(dep, (build.CustomTarget, build.BuildTarget))
@@ -780,7 +782,4 @@ Prompt:
         '''
         Some backends don't support custom compilers. This is a convenience
         method to conve
-"""
-
-
 ```

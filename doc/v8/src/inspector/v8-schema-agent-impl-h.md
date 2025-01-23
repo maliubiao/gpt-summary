@@ -119,15 +119,17 @@ While users don't directly interact with this C++ code, understanding the *conce
 
 In summary, `v8/src/inspector/v8-schema-agent-impl.h` defines a crucial component for the V8 inspector, responsible for advertising the capabilities of the debugging backend to the DevTools frontend through the `Schema` domain of the Chrome DevTools Protocol. This allows the DevTools to dynamically understand what debugging features are available and how to interact with the JavaScript runtime.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-schema-agent-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-schema-agent-impl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -166,7 +168,4 @@ class V8SchemaAgentImpl : public protocol::Schema::Backend {
 }  // namespace v8_inspector
 
 #endif  // V8_INSPECTOR_V8_SCHEMA_AGENT_IMPL_H_
-
-"""
-
 ```

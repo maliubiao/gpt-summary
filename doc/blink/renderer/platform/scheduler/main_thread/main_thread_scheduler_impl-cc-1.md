@@ -120,16 +120,18 @@ Here's a breakdown of how to approach this:
 
 这个代码片段继续完善了 `MainThreadSchedulerImpl` 类的功能，涵盖了虚拟时间控制、更细粒度的调度策略管理、与外部组件的交互（如 PageScheduler 和 V8 引擎）、性能分析和调试支持、以及对页面生命周期事件的响应。它深入到了 Blink 渲染引擎主线程调度的核心逻辑，负责协调各种任务的执行顺序和优先级，以保证页面的流畅性和响应性，并优化资源利用率。 这些功能共同确保了浏览器能够高效地处理 JavaScript、HTML 和 CSS，为用户提供良好的浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/main_thread_scheduler_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- UseCase::kLoading;
+### 源代码
+```cpp
+UseCase::kLoading;
       }
     }
   }
@@ -1343,8 +1345,4 @@ void MainThreadSchedulerImpl::OnWebSchedulingTaskQueuePriorityChanged(
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
-
 ```

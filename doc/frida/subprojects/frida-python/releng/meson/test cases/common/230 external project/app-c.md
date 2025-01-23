@@ -166,7 +166,7 @@ By following these steps, we can systematically analyze the provided C code and 
 
 总而言之，这个 `app.c` 文件虽然简单，但它作为一个测试用例，清晰地展示了如何与外部库交互，并为使用 Frida 进行动态分析提供了一个很好的起点。逆向工程师可以通过这个简单的例子学习如何使用 Frida 来拦截和修改外部库函数的行为，从而深入了解程序的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/230 external project/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,15 +174,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <libfoo.h>
 
 int main(void)
 {
     return call_foo() == 42 ? 0 : 1;
 }
-
-"""
-
 ```

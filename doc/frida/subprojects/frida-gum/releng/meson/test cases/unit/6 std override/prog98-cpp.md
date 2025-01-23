@@ -158,7 +158,7 @@ By following these steps, iterating, and refining the analysis based on the cont
 
 总而言之，`prog98.cpp` 作为一个简单的 C++ 程序，在 Frida 的测试框架中扮演着关键的角色，用于验证 Frida 动态 instrumentation 功能的正确性，特别是对标准库函数的覆盖能力。 理解其功能和上下文有助于我们更好地理解 Frida 的工作原理和在逆向工程中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/6 std override/prog98.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,15 +166,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int main(int argc, char **argv) {
     std::cout << "I am a c++98 test program.\n";
     return 0;
 }
-
-"""
-
 ```

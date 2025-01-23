@@ -208,15 +208,17 @@ example(7);
 
 `v8/test/cctest/compiler/test-jump-threading.cc` 是 V8 编译器中跳转线程化优化功能的单元测试文件。它使用 C++ 编写，通过模拟代码生成和控制流，验证优化器是否能正确地识别和消除冗余的跳转指令，从而提高 JavaScript 代码的执行效率。虽然跳转线程化不是一个直接在 JavaScript 中使用的特性，但它是 V8 优化 JavaScript 代码的关键技术之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-jump-threading.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-jump-threading.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1281,7 +1283,4 @@ TEST(RewireGapJump2) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

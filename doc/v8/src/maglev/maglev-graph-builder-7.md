@@ -150,12 +150,14 @@ Now, construct the response based on these observations and examples.
 
 总而言之，`v8/src/maglev/maglev-graph-builder.cc` 是 Maglev 编译器的核心，负责将 JavaScript 代码转化为可优化的图表示。它通过处理各种 JavaScript 字节码指令，创建相应的图节点，并利用类型反馈等信息进行优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第8部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ister destination = iterator_.GetRegisterOperand(0);
   NodeType old_type;
   if (CheckType(value, NodeType::kJSReceiver, &old_type)) {
@@ -1704,7 +1706,4 @@ MaglevGraphBuilder::BranchResult MaglevGraphBuilder::BuildBranchIfRootConstant(
   // with the checked value. Cache whether we want to swap, since after we've
   // swapped the accumulator isn't the original node anymore.
   BranchBuilder::PatchAccumulatorInBranchScope scope(builder, node, root_index
-"""
-
-
 ```

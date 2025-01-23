@@ -117,15 +117,17 @@ if (navigator.plugins && navigator.plugins['Shockwave Flash']) {
 
 总而言之，`plugin_data_test.cc` 通过单元测试来确保 `PluginData` 类的核心功能（即获取插件列表）能够正常工作，这对于浏览器正确处理包含插件内容的网页至关重要。 虽然现在浏览器中插件的使用越来越少，但理解其背后的机制仍然有助于我们理解浏览器的架构和工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/plugin_data_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -182,7 +184,4 @@ TEST(PluginDataTest, UpdatePluginList) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

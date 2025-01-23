@@ -68,14 +68,16 @@ Let's break down the thought process to arrive at the comprehensive analysis of 
 
 `process_heap.cc` 文件虽然代码简短，但在 Blink 渲染引擎的内存管理中扮演着至关重要的角色。 它负责初始化 C++ 的垃圾回收器，并使其与 JavaScript 引擎 V8 的平台集成，从而确保整个渲染引擎的内存能够被有效地管理，避免内存泄漏，保证程序的稳定运行。 它与 JavaScript, HTML, CSS 的功能紧密相关，因为它们产生的对象最终都需要通过这套机制进行内存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/process_heap.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -91,7 +93,4 @@ void ProcessHeap::Init() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

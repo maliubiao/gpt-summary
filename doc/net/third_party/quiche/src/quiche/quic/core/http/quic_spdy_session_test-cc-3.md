@@ -133,7 +133,7 @@ Okay, the plan is set. I will now process the code snippet and generate the resp
 
 这部分代码主要测试了 `QuicSpdySession` 类在处理 HTTP/3 特有的帧类型和流管理方面的功能，包括优先级更新、未知流类型处理、控制流管理（包括 `SETTINGS` 帧）、QPACK 动态表禁用、头部解码阻塞时的流和会话生命周期管理、处理无效或重复的 HTTP/3 单向流、QPACK 流错误、无效的 `GOAWAY` 帧以及对 `CANCEL_PUSH` 帧的处理。此外，还包含针对 HTTP/2 的 HPACK 错误码测试和对关键接收流关闭的处理，以及 HTTP/3 控制流的连接级流量控制测试。 这些测试用例旨在确保 `QuicSpdySession` 能够正确、健壮地处理各种合法的和非法的 HTTP/3 交互，并能优雅地处理错误情况，保证网络连接的稳定性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 StreamFrame data3(receive_control_stream_id,
                         /* fin = */ false, offset, serialized_priority_update);
   session_->OnStreamFrame(data3);
@@ -1001,7 +1003,4 @@ TEST_P(QuicSpdySessionTestServer,
   }
   // Ensure connection level flow control blockage.
   QuicFlowControllerPeer::SetSendWindowOffset(session_->flow_controller(), 0
-"""
-
-
 ```

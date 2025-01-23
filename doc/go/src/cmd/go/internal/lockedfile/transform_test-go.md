@@ -163,15 +163,17 @@ err := lockedfile.Transform("counter.txt", func(data []byte) ([]byte, error) {
 
 `go/src/cmd/go/internal/lockedfile/transform_test.go` 的主要功能是测试 `lockedfile.Transform` 函数在并发环境下的原子性和数据一致性。它通过模拟多个并发的读写操作，并检查文件内容是否仍然保持预期的连续整数序列来验证其正确性。测试中使用了辅助函数来处理 2 的幂，暗示了 `lockedfile.Transform` 的实现可能与数据块大小有关。对于 `lockedfile.Transform` 的使用者来说，需要注意回调函数的设计，以避免在并发环境下出现问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/lockedfile/transform_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -275,9 +277,4 @@ func TestTransform(t *testing.T) {
 		sem <- true
 	}
 }
-
-"""
-
-
-
 ```

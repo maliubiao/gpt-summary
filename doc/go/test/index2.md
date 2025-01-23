@@ -173,15 +173,17 @@ However, the overall testing process using `go test` *does* involve command-line
 
 In summary, `index2.go` is a crucial part of the Go testing infrastructure for verifying the correct behavior of bounds checking. It programmatically generates code that should trigger errors, and the `go test` tool verifies that these expected errors occur.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/index2.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheckoutput ./index.go
 
 // Copyright 2010 The Go Authors. All rights reserved.
@@ -194,9 +196,4 @@ Prompt:
 package main
 
 const pass = 2
-
-"""
-
-
-
 ```

@@ -193,7 +193,7 @@ func main() {
 
 总结来说，`go/src/runtime/coverage/coverage.go` 提供了一种在运行时获取 Go 程序代码覆盖率数据的机制，这对于分析长时间运行的程序或服务器非常有用。使用者需要注意在构建时使用 `-cover` 标志，并理解各个函数的功能和适用场景。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/coverage/coverage.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,8 +201,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -271,9 +273,4 @@ func WriteCounters(w io.Writer) error {
 func ClearCounters() error {
 	return cfile.ClearCounters()
 }
-
-"""
-
-
-
 ```

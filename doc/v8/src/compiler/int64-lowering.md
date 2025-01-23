@@ -109,11 +109,13 @@ By following this kind of structured analysis, moving from high-level understand
 
 `int64-lowering.cc` 是 V8 编译器中一个关键的组件，它负责弥合 64 位整数操作和 32 位硬件架构之间的差距。这对于在 32 位系统上运行 JavaScript 代码，特别是与 WebAssembly 交互时处理 64 位整数至关重要。虽然 JavaScript 自身的主要数字类型是基于浮点数的，但在与 WebAssembly 或使用 `BigInt` 这样的新特性时，64 位整数的处理变得相关，而这个文件就负责处理这些底层的转换工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/int64-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1270,7 +1272,4 @@ void Int64Lowering::LowerMemoryBaseAndIndex(Node* node) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_32_BIT
-
-"""
-
 ```

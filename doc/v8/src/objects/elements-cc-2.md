@@ -706,7 +706,7 @@ class FastElementsAccessor : public ElementsAccessorBase<Subclass, KindTraits> {
         ++num_used;
         // Bail out if a number dictionary wouldn't be able to save much space.
         if (NumberDictionary::kPreferFast
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/elements.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/elements.cc以.tq结尾，那它是个v8 torque源代码，
@@ -714,8 +714,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
     return dict->NumberOfElements();
   }
@@ -1515,7 +1517,4 @@ class FastElementsAccessor : public ElementsAccessorBase<Subclass, KindTraits> {
   }
 
   static Maybe<uint32_t> P
-"""
-
-
 ```

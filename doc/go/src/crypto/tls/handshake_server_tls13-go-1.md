@@ -207,7 +207,7 @@ func main() {
 
 总而言之，这段代码负责 TLS 1.3 服务器握手中的关键步骤：接收和验证客户端的身份凭证，并最终确认握手完成，为后续的安全通信奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/handshake_server_tls13.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -216,8 +216,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 f it's empty, no CertificateVerify is sent.
 
 	msg, err := c.readHandshake(hs.transcript)
@@ -315,10 +317,4 @@ func (hs *serverHandshakeStateTLS13) readClientFinished() error {
 
 	return nil
 }
-
-"""
-
-
-
-
 ```

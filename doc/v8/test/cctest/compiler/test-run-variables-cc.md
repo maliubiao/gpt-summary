@@ -271,15 +271,17 @@ This structured approach, moving from high-level understanding to detailed analy
 
 总结来说，`v8/test/cctest/compiler/test-run-variables.cc` 通过精心设计的测试用例，确保 V8 编译器能够正确地处理各种 JavaScript 变量相关的操作，这对于保证 JavaScript 代码的正确执行至关重要。 这些测试覆盖了变量的声明、赋值、读取以及在不同上下文中的行为，同时也间接地验证了 V8 引擎对 JavaScript 规范的遵循。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-variables.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-run-variables.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -402,7 +404,4 @@ TEST(SelfReferenceVariable) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

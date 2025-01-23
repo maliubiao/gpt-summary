@@ -216,15 +216,17 @@ func main() {
 
 总而言之，这段测试代码主要验证了将本地文件路径转换为 URL 以及通过 URL 读取文件内容的功能，这在 `go` 命令内部处理本地文件资源时可能会被使用。使用者需要注意正确生成 `file://` URL 并妥善处理可能出现的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/web/file_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -285,9 +287,4 @@ func TestGetNonexistentFile(t *testing.T) {
 		t.Fatalf("GetBytes(%v) = %q, %v; want _, fs.ErrNotExist", u, b, err)
 	}
 }
-
-"""
-
-
-
 ```

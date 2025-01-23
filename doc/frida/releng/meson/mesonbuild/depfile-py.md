@@ -161,7 +161,7 @@ print(all_deps)
 
 总而言之，`frida/releng/meson/mesonbuild/depfile.py` 是 Frida 构建系统中一个关键的组件，负责解析和管理构建依赖关系，确保在依赖项发生变化时能够正确地重新构建 Frida 的各个部分。虽然它本身不是直接进行逆向操作的代码，但对于理解 Frida 的构建过程和内部结构至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/depfile.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 Red Hat, Inc.
 
@@ -253,7 +255,4 @@ class DepFile:
         for dep in target.deps:
             deps.update(self.get_all_dependencies(dep, visited))
         return sorted(deps)
-
-"""
-
 ```

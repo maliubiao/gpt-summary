@@ -120,14 +120,16 @@ By following this methodical approach, we can effectively analyze the C++ code a
 
 总而言之，`resource_load_info_notifier_wrapper.cc` 是 Blink 渲染引擎中负责收集和传递资源加载关键信息的组件，它与网页的各种资源 (HTML, CSS, JavaScript, 图片等) 的加载过程紧密相关，为性能监控、网络分析、安全审计等功能提供了基础数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/resource_load_info_notifier_wrapper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -355,7 +357,4 @@ void ResourceLoadInfoNotifierWrapper::NotifyResourceLoadCanceled(
 }
 
 }  // namespace blink
-
-"""
-
 ```

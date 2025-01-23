@@ -93,11 +93,13 @@ try {
 
 `v8/src/common/assert-scope.cc` 提供了一种精细化的机制来控制 V8 引擎内部的断言。虽然它不直接包含 JavaScript 代码，但它是 V8 引擎开发和调试的重要组成部分，通过提高 V8 的代码质量和稳定性，间接地保障了 JavaScript 代码的正常执行。在开发和调试 V8 本身时，启用这些断言能够帮助开发者快速定位和修复问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/common/assert-scope.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ static_assert(Internals::kDisallowGarbageCollectionSize ==
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

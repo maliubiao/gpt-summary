@@ -146,7 +146,7 @@ Throughout this process, I constantly referred back to the code to ensure my exp
 
 总而言之，`frida/subprojects/frida-core/src/freebsd/binjector-glue.c` 文件是 Frida 在 FreeBSD 平台上实现核心注入功能的关键模块，负责启动和管理目标进程，并将 Frida 的 Agent 代码注入到目标进程中，并建立通信通道，是 Frida 动态插桩技术的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/freebsd/binjector-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 #include "frida-core.h"
 
 #include <dlfcn.h>
@@ -1317,7 +1319,4 @@ frida_inject_instance_emit_payload_code (const FridaInjectParams * params, GumAd
 
   gum_x86_writer_put_breakpoint (&cw);
   gum_x86_wri
-"""
-
-
 ```

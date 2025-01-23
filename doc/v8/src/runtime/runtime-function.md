@@ -151,11 +151,13 @@ Response: Let's break down the thought process for analyzing this C++ code and c
 
 `runtime-function.cc` 中定义的运行时函数是 V8 引擎实现 JavaScript 函数相关特性的基础。虽然开发者不能直接调用这些函数，但 JavaScript 的高级功能，例如获取函数源代码、判断是否是内置函数以及使用 `call` 和 `apply` 等，都依赖于这些底层的运行时函数在幕后工作。这个文件是 V8 引擎内部实现细节的一部分，体现了 JavaScript 引擎如何将 JavaScript 代码转化为可执行的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-function.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ RUNTIME_FUNCTION(Runtime_Call) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

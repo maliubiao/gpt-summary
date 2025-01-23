@@ -157,7 +157,7 @@ By following these steps, we arrive at a comprehensive explanation that addresse
 
 总而言之，`shlib2.c` 提供了一个简单的、可被导出的共享库函数，用于测试和演示共享库的基本概念以及 Frida 等动态插桩工具如何与共享库进行交互。其简洁性使其成为理解更复杂逆向工程场景的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing/32 exe static shared/shlib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -183,7 +185,4 @@ int statlibfunc(void);
 int DLL_PUBLIC shlibfunc2(void) {
     return 24;
 }
-
-"""
-
 ```

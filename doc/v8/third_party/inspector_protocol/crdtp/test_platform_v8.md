@@ -99,11 +99,13 @@ console.log(myString);
 
 **简单来说，这个 C++ 文件中的代码就像一个“翻译器”，在 V8 的 UTF-16 字符串和 CRDP 的 UTF-8 字符串之间进行转换，保证调试器和 JavaScript 引擎能够正确地理解和交换字符串信息。**  在测试环境中，它模拟了这个翻译过程，以便测试 CRDP 相关的代码是否能正确处理字符串编码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/test_platform_v8.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The V8 Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -130,7 +132,4 @@ std::vector<uint16_t> UTF8ToUTF16(span<uint8_t> in) {
 }
 
 }  // namespace v8_crdtp
-
-"""
-
 ```

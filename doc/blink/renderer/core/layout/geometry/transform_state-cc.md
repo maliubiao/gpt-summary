@@ -138,14 +138,16 @@ innerDiv.style.transform = 'rotate(45deg) scale(1.2)';
 
 总而言之，`transform_state.cc` 是 Blink 渲染引擎中处理 CSS 变换的核心部分，它负责管理变换的状态、累积变换效果并最终计算出元素在屏幕上的正确位置和形状。理解其功能有助于我们更好地理解浏览器如何处理 CSS 变换，并避免常见的开发错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/geometry/transform_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Apple Inc.  All rights reserved.
  *
@@ -363,7 +365,4 @@ void TransformState::FlattenWithTransform(const gfx::Transform& t) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -189,7 +189,7 @@ I will now summarize these findings in a concise manner.
 
 总的来说，这部分代码是对 Go 语言 `path/filepath` 包中路径处理核心功能的细致测试，涵盖了获取绝对路径、计算相对路径、提取卷名、解析符号链接以及遍历目录等关键操作，并考虑了不同操作系统下的行为和潜在的错误情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/path/filepath/path_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -198,8 +198,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ) = %q; want %q`, p, want)
 	}
 	t.Logf(`EvalSymlinks("link") = %q`, p)
@@ -739,10 +741,4 @@ func TestEvalSymlinksTooManyLinks(t *testing.T) {
 		t.Fatal("expected error, got nil")
 	}
 }
-
-"""
-
-
-
-
 ```

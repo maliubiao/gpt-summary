@@ -96,14 +96,16 @@ While developers don't directly interact with this C++ file, their actions can t
 
 In summary, `layout_text_control.cc` is a foundational file in Blink for the correct layout and styling of form text controls. It bridges the gap between HTML structure, CSS styling, and the underlying rendering engine, ensuring a consistent and functional user experience. The logic for handling specific font issues highlights the complexities of cross-platform rendering.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/forms/layout_text_control.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /**
  * Copyright (C) 2006, 2007 Apple Inc. All rights reserved.
  *           (C) 2008 Torch Mobile Inc. All rights reserved.
@@ -297,7 +299,4 @@ float GetAvgCharWidth(const ComputedStyle& style) {
 }  // namespace layout_text_control
 
 }  // namespace blink
-
-"""
-
 ```

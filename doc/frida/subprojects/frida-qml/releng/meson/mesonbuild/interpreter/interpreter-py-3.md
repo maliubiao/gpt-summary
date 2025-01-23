@@ -151,7 +151,7 @@ Now, let's connect these functionalities to the specific requirements of the pro
 
 总而言之，这个代码片段是 Frida 构建系统中至关重要的一部分，它负责将用户在 `meson.build` 文件中定义的意图转化为实际的构建操作。它涵盖了构建系统的核心功能，并且在一定程度上与逆向工程的构建流程和涉及到的底层知识相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 =True),
         MULTI_OUTPUT_KW,
         # Cannot use the COMMAND_KW because command is allowed to be empty
@@ -841,7 +843,4 @@ Prompt:
             'input',
             ContainerTypeInfo(list, (mesonlib.File, str)),
             listif
-"""
-
-
 ```

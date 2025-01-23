@@ -199,7 +199,7 @@ print(data)
 
 因此，用户到达 `frida/subprojects/frida-gum/releng/tomlkit/tomlkit/__init__.py` 这个文件的场景，通常是因为**Frida 在处理 TOML 配置文件时遇到了问题，用户为了调试或者深入理解 Frida 的配置机制，而查看了 `tomlkit` 库的源代码**。这表明配置文件可能存在语法错误、文件路径不正确，或者用户对 TOML 的某些特性理解有误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/tomlkit/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit.api import TOMLDocument
 from tomlkit.api import aot
 from tomlkit.api import array
@@ -268,7 +270,4 @@ __all__ = [
     "register_encoder",
     "unregister_encoder",
 ]
-
-"""
-
 ```

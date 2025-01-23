@@ -168,7 +168,7 @@ IR Node (Word64Shr):
 
 这部分代码主要负责 s390 架构下 64 位和 32 位整数的 **位运算**、**算术运算** (特别是带溢出检查的运算)、**字节序反转** 和 **浮点数操作** 的指令选择优化。它尝试识别特定的操作模式，并将其映射到更高效的 s390 机器指令，从而提升 JavaScript 代码在 s390 架构上的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/instruction-selector-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/s390/instruction-selector-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -176,9 +176,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
-    if (mb > 63 - sh) mb = 63 - sh;
+### 源代码
+```cpp
+if (mb > 63 - sh) mb = 63 - sh;
       sh = (64 - sh) & 0x3F;
       if (mb >= me) {
         bool match = false;
@@ -869,8 +871,5 @@ static inline bool TryMatchDoubleConstructFromInsert(
     ([&]() { return TryMatchInt32AddWithOverflow(this, node); }))             \
   V(Word32, Int32MulWithOverflow, kS390_Mul32, MulOperandMode,                \
     ([&]() { return TryMatchInt32MulWithOverflow(this, node); }))             \
-  V(Word32, Word32And, kS390_And32, And32OperandMode, null)            
-"""
-
-
+  V(Word32, Word32And, kS390_And32, And32OperandMode, null)
 ```

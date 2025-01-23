@@ -159,14 +159,16 @@ setTimeout(() => {
 
 `css_scrollbar_color_interpolation_type_test.cc` 文件是 Blink 引擎中确保 CSS 颜色插值功能正确性的重要组成部分。它测试了在不同场景下颜色插值的行为，包括不同的颜色空间和透明度处理，这对于保证网页动画和过渡效果的视觉质量至关重要。理解这些测试背后的逻辑，可以帮助开发者更好地理解浏览器如何处理颜色动画，并避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_scrollbar_color_interpolation_type_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -303,7 +305,4 @@ TEST(CSSScrollbarColorInterpolationTypeTest, Oklab) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

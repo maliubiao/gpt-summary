@@ -78,11 +78,13 @@ console.profileEnd('My Profile'); // 结束 CPU 性能分析
 
 **总结来说，`v8/src/profiler/profile-generator.cc` 是 V8 引擎进行 CPU 性能分析的核心组件，它负责收集、组织和表示 JavaScript 代码执行过程中的关键信息，使得开发者能够理解代码的性能特征。JavaScript 的 `console.profile()` 和 `console.profileEnd()` 方法是触发这个 C++ 文件中功能的入口点。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/profile-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1308,7 +1310,4 @@ void CpuProfilesCollection::UpdateNativeContextAddressForCurrentProfiles(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

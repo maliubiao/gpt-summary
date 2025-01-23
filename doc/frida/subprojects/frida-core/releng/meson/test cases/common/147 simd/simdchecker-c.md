@@ -172,7 +172,7 @@ Finally, organize the information logically, using clear headings and examples. 
 
 总而言之，`simdchecker.c` 是 Frida 内部的一个重要测试组件，用于确保其在处理不同 SIMD 指令集时的正确性，这对于 Frida 作为动态 Instrumentation 工具的可靠性至关重要。用户通常不会直接接触到这个文件，但它的存在保证了 Frida 能够正确地分析和操作使用了 SIMD 指令优化的目标程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/147 simd/simdchecker.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdfuncs.h>
 #include<stdio.h>
 #include<string.h>
@@ -325,7 +327,4 @@ int main(void) {
             blocksize);
     return r;
 }
-
-"""
-
 ```

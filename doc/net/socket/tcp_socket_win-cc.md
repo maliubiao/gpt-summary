@@ -183,7 +183,7 @@ fetch('https://example.com/data')
 
 `net/socket/tcp_socket_win.cc` 文件的主要功能是提供了 Windows 平台上 TCP 套接字的具体实现。它封装了 Windows 的套接字 API，提供了创建、连接、监听、发送和接收数据的接口，并处理了异步操作和错误处理。这个文件是 Chromium 网络栈与底层操作系统进行 TCP 通信的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/tcp_socket_win.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1243,7 +1245,4 @@ void TCPSocketDefaultWin::RetryRead(int rv) {
     // |this| is gone.
     rv = ReadIfReady(core.read_iobuffer_.get(), core.read_buffer_length_,
                      base::B
-"""
-
-
 ```

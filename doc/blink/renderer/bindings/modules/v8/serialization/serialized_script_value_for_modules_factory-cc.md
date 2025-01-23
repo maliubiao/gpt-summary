@@ -178,15 +178,17 @@ Let's break down the thought process for analyzing this C++ file.
 
 总而言之，`serialized_script_value_for_modules_factory.cc` 在 Blink 引擎中扮演着关键的角色，它使得 JavaScript 模块之间以及不同浏览上下文之间能够安全有效地传递复杂的数据结构。理解其功能对于调试与模块加载、跨上下文通信相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/modules/v8/serialization/serialized_script_value_for_modules_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ bool SerializedScriptValueForModulesFactory::ExecutionContextExposesInterface(
 }
 
 }  // namespace blink
-
-"""
-
 ```

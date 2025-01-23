@@ -145,7 +145,7 @@ By following this structured breakdown, we can systematically analyze the provid
 
 总而言之，虽然 `bar.c` 的代码本身非常简单，但它在 Frida 项目的上下文中扮演着重要的角色，特别是作为测试用例来验证构建系统处理复杂场景的能力，而一个稳定可靠的构建系统是开发和维护像 Frida 这样复杂的动态分析工具的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/83 identical target name in subproject/subprojects/foo/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,15 +153,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("I'm a subproject bar.\n");
     return 0;
 }
-
-"""
-
 ```

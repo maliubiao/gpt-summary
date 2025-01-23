@@ -148,14 +148,16 @@ By following this structured approach, even without being an expert in the Blink
 
 总而言之，`paragraph_line_breaker_test.cc` 这个文件对于确保 Chromium Blink 引擎能够正确地在各种 HTML 和 CSS 场景下进行或不进行段落平衡至关重要。它帮助开发者理解哪些因素会影响浏览器的换行行为，并避免常见的布局错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/paragraph_line_breaker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -360,7 +362,4 @@ TEST_F(ParagraphLineBreakerTest, IsDisabledByTabulationCharacters) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -74,11 +74,13 @@ function bar() {
 
 **总结来说，`v8/src/ast/source-range-ast-visitor.cc` 中的 `SourceRangeAstVisitor` 类是 V8 引擎用于处理 JavaScript 代码抽象语法树的工具，它负责识别和调整 AST 节点上的 "延续范围"，可能用于优化或规范化源代码范围信息，以便后续的编译和执行阶段能够更准确地处理代码。 特别地，它还处理了异步函数中由 `await` 引入的特殊情况。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/source-range-ast-visitor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ void SourceRangeAstVisitor::MaybeRemoveContinuationRangeOfAsyncReturn(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

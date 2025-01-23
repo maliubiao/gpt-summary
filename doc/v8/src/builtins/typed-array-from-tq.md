@@ -197,14 +197,16 @@ console.log(resultArr); // Uint8Array [ 3, 6, 9 ]
 
 总而言之，`typed-array-from.tq` 这个 Torque 代码实现了 `TypedArray.from()` 的核心逻辑，包括参数处理、类型检查、迭代器处理、类数组处理、内存分配和元素复制等关键步骤，并针对特定类型的源对象进行了性能优化。理解这段代码有助于深入了解 V8 引擎是如何高效地实现 JavaScript 内置方法的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-from.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -437,7 +439,4 @@ transitioning javascript builtin TypedArrayFrom(
   }
 }
 }
-
-"""
-
 ```

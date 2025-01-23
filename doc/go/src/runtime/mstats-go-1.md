@@ -105,7 +105,7 @@ During the process, I might revisit earlier assumptions or interpretations. For 
 
 **总结：** `accumulate` 方法负责周期性地抓取并累加各种细粒度的 CPU 使用统计数据，这些数据涵盖了 GC、垃圾回收器、空闲状态以及最终推导出的用户代码运行时间。 这些统计信息对于监控和分析 Go 程序的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mstats.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -114,8 +114,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 Stats and adds in the current state of all GC CPU
 // counters.
 //
@@ -170,10 +172,4 @@ func (s *cpuStats) accumulate(now int64, gcMarkPhase bool) {
 	// but that's fine. The overwhelming majority of this time will be actual user time.
 	s.UserTime = s.TotalTime - (s.GCTotalTime + s.ScavengeTotalTime + s.IdleTime)
 }
-
-"""
-
-
-
-
 ```

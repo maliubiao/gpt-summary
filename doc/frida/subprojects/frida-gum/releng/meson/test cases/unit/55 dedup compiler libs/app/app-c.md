@@ -164,7 +164,7 @@ end value = (10 + 2) * 5 = 60
 
 这个 `app.c` 文件本身虽然简单，但它作为 Frida 测试用例的一部分，旨在演示在特定场景下（例如，编译器库的重复数据删除）Frida 的行为和能力。 实际的逆向分析场景会更加复杂，涉及到更多的库、更复杂的逻辑以及可能的代码混淆和保护技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/55 dedup compiler libs/app/app.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <liba.h>
 #include <libb.h>
@@ -187,7 +189,4 @@ main(void)
   printf("end value = %d\n", liba_get());
   return 0;
 }
-
-"""
-
 ```

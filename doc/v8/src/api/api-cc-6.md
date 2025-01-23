@@ -211,7 +211,7 @@ obj.b = 2; // TypeError: Cannot add property b, object is sealed
 
 这是第 **7** 部分，共 **15** 部分，说明这部分代码专注于 V8 API 中与对象和函数操作相关的核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/api/api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -219,8 +219,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 :GetConstructorName() {
   // TODO(v8:12547): Consider adding GetConstructorName(Local<Context>).
   auto self = Utils::OpenHandle(this);
@@ -995,7 +997,4 @@ bool Function::Experimental_IsNopFunction() const {
   auto sfi = i::Cast<i::JSFunction>(*self)->shared();
   i::Isolate* i_isolate = self->GetIsolate();
   i::IsCompiledScope is_compiled_scope(sfi->is_compiled_scope(i_isolate));
-"""
-
-
 ```

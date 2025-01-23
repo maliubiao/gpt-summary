@@ -115,11 +115,13 @@ myInnerFunction(5); // 输出 15
 
 `v8/src/parsing/preparse-data.cc` 是 V8 引擎中负责管理 JavaScript 代码预解析数据的核心组件。 它通过存储关键的作用域和函数信息，使得 V8 能够在初始解析阶段更加高效，从而提升 JavaScript 代码的加载和执行速度。 它通过构建和消费 `PreparseData` 对象来协调这一过程，这些对象包含了优化 JavaScript 解析和编译所需的重要元数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/preparse-data.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -980,7 +982,4 @@ std::unique_ptr<ConsumedPreparseData> ConsumedPreparseData::For(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

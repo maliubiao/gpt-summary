@@ -123,11 +123,13 @@ console.log(obj2.value);
 
 `heap-registry-unittest.cc` 测试了 V8 内部 `cppgc` 垃圾回收器的 `HeapRegistry` 组件的功能，该组件负责跟踪和管理 `Heap` 对象的生命周期。这与 JavaScript 的自动内存管理（垃圾回收）密切相关，尽管 JavaScript 开发者无法直接访问 `HeapRegistry`，但其功能是 V8 管理 JavaScript 对象内存的关键部分。  `HeapRegistry` 帮助 V8 确定哪些堆是活动的，以及如何根据内存地址找到对应的堆，这对于垃圾回收的正确性和效率至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/heap-registry-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ TEST_F(HeapRegistryTest, FindsRightHeapForOnHeapAddress) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

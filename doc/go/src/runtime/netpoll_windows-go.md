@@ -226,7 +226,7 @@ func main() {
 
 总而言之，`go/src/runtime/netpoll_windows.go` 是 Go 语言在 Windows 平台上实现高效并发网络编程的关键组成部分，它利用 Windows 的 IOCP 机制来监听和处理网络事件，使得 Go 程序能够以较小的资源消耗处理大量的并发网络连接。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/netpoll_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -234,8 +234,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -523,9 +525,4 @@ func netpollQueueTimer(delay int64) (signaled bool) {
 	}
 	return signaled
 }
-
-"""
-
-
-
 ```

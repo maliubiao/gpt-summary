@@ -152,15 +152,17 @@ Finally, I organized the information into logical sections (Functionality, JavaS
 
 总而言之，`websocket_transport_client_socket_pool.cc` 是 Chromium 网络栈中负责高效管理 WebSocket 客户端连接的关键组件，它通过连接复用、连接限制和连接排队等机制来优化 WebSocket 连接的性能和资源利用。虽然 JavaScript 代码不直接操作这个类，但其行为受到这个 C++ 组件的底层实现影响。理解这个类的工作原理有助于调试 WebSocket 相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/websocket_transport_client_socket_pool.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -690,7 +692,4 @@ WebSocketTransportClientSocketPool::StalledRequest::StalledRequest(
 WebSocketTransportClientSocketPool::StalledRequest::~StalledRequest() = default;
 
 }  // namespace net
-
-"""
-
 ```

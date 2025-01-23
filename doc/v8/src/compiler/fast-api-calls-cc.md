@@ -192,15 +192,17 @@ const product = myAddon.multiply(10, 4);
 
 `v8/src/compiler/fast-api-calls.cc` 是 V8 编译器中一个关键的组成部分，它通过静态分析 C++ 函数签名并在满足条件时生成优化的调用代码，显著提升了 JavaScript 调用 C++ 代码的性能。理解它的工作原理对于开发高性能的 Node.js 原生模块或嵌入 V8 的应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/fast-api-calls.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/fast-api-calls.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -586,7 +588,4 @@ Node* BuildFastApiCall(Isolate* isolate, Graph* graph,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

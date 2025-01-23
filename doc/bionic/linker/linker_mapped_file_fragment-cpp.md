@@ -262,7 +262,7 @@ sys.stdin.read()
 
 这个 `MappedFileFragment` 类是 Android 动态链接器中一个重要的组成部分，它通过高效地管理内存映射的文件片段，为 Android 应用的加载和运行提供了基础支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_mapped_file_fragment.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -273,8 +273,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -351,7 +353,4 @@ bool MappedFileFragment::Map(int fd, off64_t base_offset, size_t elf_offset, siz
 
   return true;
 }
-
-"""
-
 ```

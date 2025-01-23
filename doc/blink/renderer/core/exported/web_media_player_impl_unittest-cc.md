@@ -122,7 +122,7 @@ By following these steps, we can generate a comprehensive and informative summar
 
 **这是第1部分的功能归纳。**  总结来说，`web_media_player_impl_unittest.cc`  是 `WebMediaPlayerImpl` 类的综合性单元测试，旨在确保这个核心媒体播放组件的正确性和稳定性。 它覆盖了媒体播放的各个方面，并模拟了各种用户操作和潜在的错误场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_media_player_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1019,7 +1021,4 @@ class WebMediaPlayerImplTest
         << "status = " << static_cast<int>(status);
     EXPECT_TRUE(cdm);
     web_cdm_
-"""
-
-
 ```

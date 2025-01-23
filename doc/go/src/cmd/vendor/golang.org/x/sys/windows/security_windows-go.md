@@ -193,15 +193,17 @@ func main() {
 
 总而言之，这段代码是 Go 语言与 Windows 底层安全机制交互的桥梁。开发者需要对 Windows 安全概念和相关的 API 有一定的了解，才能正确有效地使用这些功能。同时，需要注意 Go 语言的内存管理和错误处理机制，避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/security_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1660,9 +1662,4 @@ func ACLFromEntries(explicitEntries []EXPLICIT_ACCESS, mergedACL *ACL) (acl *ACL
 	copy(aclBytes, (*[(1 << 31) - 1]byte)(unsafe.Pointer(winHeapACL))[:len(aclBytes):len(aclBytes)])
 	return (*ACL)(unsafe.Pointer(&aclBytes[0])), nil
 }
-
-"""
-
-
-
 ```

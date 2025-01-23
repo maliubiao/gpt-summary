@@ -76,11 +76,13 @@ console.log(regex2.test("SS"));  // 输出: true
 
 `v8/src/regexp/gen-regexp-special-case.cc` 是一个代码生成器，它的目的是为 V8 引擎的正则表达式功能创建必要的数据结构，特别是用于处理不区分大小写匹配时遇到的特殊 Unicode 字符。它确保了 JavaScript 正则表达式的 `i` 标志能够按照 ECMAScript 规范正确地进行大小写不敏感的匹配，即使在面对复杂的 Unicode 大小写转换规则时也能正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/gen-regexp-special-case.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ int main(int argc, const char** argv) {
 
   return 0;
 }
-
-"""
-
 ```

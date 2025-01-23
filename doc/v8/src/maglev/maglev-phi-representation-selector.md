@@ -126,11 +126,13 @@ add(10, 3.14, true);
 
 `maglev-phi-representation-selector.cc` 是 Maglev 编译器中一个关键的优化组件。它通过智能地选择 Phi 节点的表示形式，特别是通过解标签，显著提高了 JavaScript 代码的执行效率，尤其是在涉及数值运算的场景中。它体现了 V8 如何在动态类型的 JavaScript 环境中进行静态分析和优化，以达到接近静态类型语言的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-phi-representation-selector.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1297,7 +1299,4 @@ void MaglevPhiRepresentationSelector::PreparePhiTaggings(
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

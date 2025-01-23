@@ -151,7 +151,7 @@ This is where we connect the dots. A typical scenario would be:
 
 总而言之，这个 `tester.c` 文件是一个简单的单元测试，用于验证 `get_bob()` 函数的基本功能。在 Frida 的上下文中，它帮助开发者确保 Frida 能够正确处理与 Swift 代码或相关依赖项的交互。当测试失败时，它可以作为调试的起点，帮助开发者定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/88 dep fallback/tester.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 #include"genbob.h"
 #include<string.h>
@@ -175,7 +177,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

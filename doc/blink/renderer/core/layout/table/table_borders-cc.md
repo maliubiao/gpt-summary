@@ -209,14 +209,16 @@ This structured approach, combining code analysis, knowledge of web technologies
 
 `table_borders.cc` 是 Chromium Blink 引擎中负责处理 HTML 表格边框计算的核心组件，尤其专注于 `border-collapse: collapse` 模型的实现。它深入理解 CSS 边框属性和冲突解决规则，并为布局模块提供准确的边框信息，确保网页表格的正确渲染。理解其功能有助于我们更好地理解浏览器如何处理表格边框，并避免在使用 HTML、CSS 和 JavaScript 创建表格时出现常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/table/table_borders.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -852,7 +854,4 @@ void TableBorders::EnsureCellRowFits(wtf_size_t cell_row) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

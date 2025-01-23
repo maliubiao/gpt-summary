@@ -118,13 +118,15 @@ In this example:
 
 **In summary, this file completes the definition of the interface that allows the Turboshaft compiler in V8 to translate WebAssembly bytecode into an optimized intermediate representation, enabling efficient execution of WebAssembly code within the JavaScript engine and facilitating seamless interaction between JavaScript and WebAssembly.** It handles complex scenarios like inlining, exception management, and specific requirements for asm.js, making it a critical component for V8's WebAssembly support.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/turboshaft-graph-interface.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
- can cause the high
+### 源代码
+```
+can cause the high
     // word of what's supposed to be an i32 to be non-zero).
     if (address_type == AddressType::kI32) {
       return __ ChangeUint32ToUintPtr(V<Word32>::Cast(index));
@@ -949,8 +951,4 @@ V8_EXPORT_PRIVATE void BuildTSGraph(
 #include "src/compiler/turboshaft/undef-assembler-macros.inc"
 
 }  // namespace v8::internal::wasm
-
-"""
-
-
 ```

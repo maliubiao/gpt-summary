@@ -147,15 +147,17 @@ recursiveFunction(5);
 
 `v8/src/compiler/js-inlining.h` 定义了 V8 编译器中负责 JavaScript 和 WebAssembly 函数内联的核心组件。它通过操作编译器内部的图表示，将函数调用替换为被调用函数的代码，从而提高代码执行效率。虽然用户不会直接与这个头文件交互，但其背后的机制对 JavaScript 代码的性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-inlining.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-inlining.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,7 +297,4 @@ class JSInliner final : public AdvancedReducer {
 }  // namespace v8
 
 #endif  // V8_COMPILER_JS_INLINING_H_
-
-"""
-
 ```

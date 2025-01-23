@@ -108,11 +108,13 @@ const myString = "Hello, World! 你好，世界！";
 
 `v8/src/tracing/perfetto-utils.cc` 中的 `PerfettoV8String` 类是 V8 引擎内部用于支持 tracing 功能的一个工具。它专注于高效地提取和格式化 V8 内部的字符串数据，以便将其传递给 Perfetto 追踪系统进行记录和分析。它与 JavaScript 的关系在于它处理的是 JavaScript 字符串在 V8 引擎内部的表示形式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tracing/perfetto-utils.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -146,7 +148,4 @@ PerfettoV8String::PerfettoV8String(Tagged<String> string)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

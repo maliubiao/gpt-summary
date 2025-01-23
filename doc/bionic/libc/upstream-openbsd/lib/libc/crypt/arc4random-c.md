@@ -345,7 +345,7 @@ if __name__ == '__main__':
 
 希望以上详细的解释能够帮助你理解 `bionic/libc/upstream-openbsd/lib/libc/crypt/arc4random.c` 的功能、在 Android 中的作用以及如何进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/crypt/arc4random.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -356,8 +356,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: arc4random.c,v 1.58 2022/07/31 13:41:45 tb Exp $	*/
 
 /*
@@ -562,7 +564,4 @@ arc4random_buf(void *buf, size_t n)
 	_ARC4_UNLOCK();
 }
 DEF_WEAK(arc4random_buf);
-
-"""
-
 ```

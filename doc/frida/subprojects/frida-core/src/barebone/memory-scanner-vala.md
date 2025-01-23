@@ -80,7 +80,7 @@ def __lldb_init_module(debugger, internal_dict):
 - **匹配结果**：如果找到匹配的地址，可以进一步分析该地址处的内存内容，以验证匹配的正确性。
 
 通过以上步骤和调试线索，用户可以有效地使用 `memory-scanner.vala` 文件中的功能进行内存扫描和调试。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/barebone/memory-scanner.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -89,8 +89,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaBarebone", gir_version = "1.0")]
 namespace Frida.Barebone {
 	public class MatchPattern {
@@ -272,7 +274,4 @@ namespace Frida.Barebone {
 		data_size = (builder.offset - start_offset) + (max_matches * pointer_size);
 	}
 }
-
-"""
-
 ```

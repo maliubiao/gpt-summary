@@ -147,7 +147,7 @@ console.log(arr.length); // 输出 3
 
 这部分代码的重点是 **安全性和效率**，特别是在考虑沙箱环境时。 它提供了一种结构化的方式来与 V8 的堆内存交互，避免了直接的、可能不安全的指针操作。  它为后续的代码生成步骤提供了可靠的 building blocks。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -155,8 +155,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pObject> object, TNode<IntPtrT> field_offset) {
 #ifdef V8_ENABLE_SANDBOX
   TNode<Uint64T> raw_value = LoadObjectField<Uint64T>(object, field_offset);
@@ -987,7 +989,4 @@ TNode<BoolT> CodeStubAssembler::IsStrong(TNode<HeapObjectReference> value) {
 
 TNode<HeapObject> CodeStubAssembler::GetHeapObjectIfStrong(
     TNode<MaybeObjec
-"""
-
-
 ```

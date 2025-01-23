@@ -104,15 +104,17 @@ Here's a breakdown of the requested analysis:
 
 `blink/renderer/core/frame/local_frame_client_impl.cc` 的第一部分主要负责实现 `LocalFrameClient` 接口的关键功能，该接口是 `LocalFrame` 与外部环境（通常是浏览器进程）进行通信的桥梁。其功能涵盖了框架的生命周期管理（创建、销毁、分离），与 JavaScript 引擎的集成（清理 Window 对象、运行脚本、管理脚本上下文），页面状态和事件的通知（滚动、历史记录），以及导航过程的控制和处理（开始导航、请求处理、加载提交和完成等）。  它为 Blink 渲染引擎中的本地框架提供了一个与浏览器环境交互的核心机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_frame_client_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009, 2012 Google Inc. All rights reserved.
  * Copyright (C) 2011 Apple Inc. All rights reserved.
@@ -868,8 +870,4 @@ void LocalFrameClientImpl::BeginNavigation(
 
   auto* owner = ToCoreFrame(web_frame_)->Owner();
   navigation_info->frame_policy =
-     
-"""
-
-
 ```

@@ -299,7 +299,7 @@ if (Process.arch === 'arm64') {
 
 `hdtoa.c` 是 Android 系统中用于将浮点数转换为十六进制字符串的关键底层组件。它被广泛用于各种场景，从基本的格式化输出到更底层的内存表示。理解其功能和实现细节对于深入理解 Android 系统的运行机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/gdtoa/hdtoa.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -310,8 +310,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: hdtoa.c,v 1.5 2020/05/31 12:27:19 mortimer Exp $	*/
 /*-
  * Copyright (c) 2004, 2005 David Schultz <das@FreeBSD.ORG>
@@ -649,7 +651,4 @@ __hldtoa(long double e, const char *xdigs, int ndigits, int *decpt, int *sign,
 DEF_STRONG(__hldtoa);
 
 #endif	/* (LDBL_MANT_DIG == DBL_MANT_DIG) */
-
-"""
-
 ```

@@ -178,15 +178,17 @@ By following this structured approach, including a deep dive into the code and c
 
 总而言之，`html_canvas_painter.cc` 是 Blink 渲染引擎中一个关键的组件，它将 HTML 的 `<canvas>` 元素、JavaScript 的 Canvas API 操作以及 CSS 的相关样式结合起来，最终将 Canvas 的内容渲染到屏幕上。理解其工作原理有助于诊断和优化与 Canvas 相关的网页性能和显示问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/html_canvas_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -271,7 +273,4 @@ void HTMLCanvasPainter::PaintReplaced(const PaintInfo& paint_info,
 }
 
 }  // namespace blink
-
-"""
-
 ```

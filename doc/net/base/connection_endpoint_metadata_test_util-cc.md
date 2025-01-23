@@ -141,15 +141,17 @@ target_name: is equal to "example.com"
 
 总而言之，`net/base/connection_endpoint_metadata_test_util.cc` 作为一个测试工具，在 Chromium 的开发和调试过程中扮演着重要的角色，帮助开发者确保网络栈的各个组件能够正确地处理连接端点的元数据，从而保证用户能够获得稳定可靠的网络体验。它本身不直接与用户操作交互，而是通过测试来验证底层网络代码的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/connection_endpoint_metadata_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -264,7 +266,4 @@ std::ostream& operator<<(
 }
 
 }  // namespace net
-
-"""
-
 ```

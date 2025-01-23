@@ -149,7 +149,7 @@ Simd256UnpackOp op(input_left, input_right, Simd256UnpackOp::Kind::k32x8Low);
 
 `v8/src/compiler/turboshaft/operations.h` 文件是 V8 引擎 Turboshaft 编译器的蓝图，它详尽地定义了编译器可以执行的各种基本操作。 这些操作是连接 JavaScript 代码和最终机器码的关键桥梁。该文件不仅定义了操作的结构和属性，还涉及了操作的创建、管理和副作用描述，为编译器的优化和代码生成提供了基础。理解这个文件对于深入了解 V8 编译器的内部工作机制至关重要。虽然开发者不会直接编写或修改这些操作，但理解它们有助于更好地理解 JavaScript 代码的性能特性，并避免编写可能导致低效编译的代码。它也体现了编译器设计的模块化和抽象性，将复杂的编译过程分解为一系列可管理的基本操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/operations.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/operations.h以.tq结尾，那它是个v8 torque源代码，
@@ -157,8 +157,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第11部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 }; }
 
   void PrintOptions(std::ostream& os) const;
@@ -571,8 +573,4 @@ TURBOSHAFT_THROWING_OPERATIONS_LIST(THROWING_OP_LOOKS_VALID)
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_OPERATIONS_H_
-
-"""
-
-
 ```

@@ -85,12 +85,14 @@ jirl  ra, r1, #0
 
 `v8/src/codegen/loong64/assembler-loong64.cc` 是 V8 引擎在 LoongArch64 架构上进行代码生成的核心组件。它提供了一组 C++ 接口，允许 V8 将 JavaScript 代码翻译成高效的机器码，从而在 LoongArch64 处理器上执行 JavaScript 程序。这个文件直接关系到 JavaScript 的执行效率和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/loong64/assembler-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2345,7 +2347,4 @@ void Assembler::CheckTrampolinePool() {
       // As we are only going to emit trampoline once, we need to prevent any
       // further emission.
       next_buffer_ch
-"""
-
-
 ```

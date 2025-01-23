@@ -302,7 +302,7 @@ if __name__ == '__main__':
 
 总而言之，`bionic/libc/kernel/uapi/linux/serial_reg.h` 是 Android 系统中与串口硬件交互的基础，它定义了访问和控制串口硬件的常量，被内核驱动程序和一些底层库所使用。理解这个文件对于进行底层系统调试和硬件相关的开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/serial_reg.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -313,8 +313,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -555,7 +557,4 @@ Prompt:
 #define UART_ALTR_EN_TXFIFO_LW 0x01
 #define UART_ALTR_TX_LOW 0x41
 #endif
-
-"""
-
 ```

@@ -109,7 +109,7 @@ cpdef func():
 
 `gen.py` 脚本虽然功能简单，但它是 Frida 构建流程中不可或缺的一部分，用于生成测试 Cython 功能的代码。它间接地与逆向工程相关，因为它确保了 Frida 关键组件的正确构建。理解这个脚本的功能，以及它在 Frida 项目中的位置，可以帮助开发者更好地理解 Frida 的构建过程和内部机制，从而更有效地进行开发、测试和调试。对于逆向工程师来说，了解 Frida 的构建过程有助于更好地理解 Frida 的工作原理，并可能在遇到问题时提供调试思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cython/2 generated sources/libdir/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 
 import argparse
@@ -133,7 +135,4 @@ with open(args.output, 'w') as f:
         cpdef func():
             return "Hello, World!"
         '''))
-
-"""
-
 ```

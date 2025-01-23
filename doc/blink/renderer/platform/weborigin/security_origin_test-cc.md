@@ -84,15 +84,17 @@ Based on this analysis, I can now generate the response.
 
 总而言之，`blink/renderer/platform/weborigin/security_origin_test.cc` (第一部分) 的主要功能是**系统地测试 `blink::SecurityOrigin` 类的核心功能，包括创建、比较、判断是否可以访问、判断是否可以发起请求等**。 这些测试覆盖了同源策略的基本概念，并验证了 `SecurityOrigin` 在处理不同类型的 URL、opaque origin 以及 Origin Access Allow/Block List 时的行为。 这对于确保 Blink 引擎正确地实施 Web 安全模型至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/security_origin_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -884,7 +886,4 @@ TEST_F(SecurityOriginTest, IsSameOriginWith) {
 
   for (const auto& test : tests) {
     SCOPED_TRACE(testing:
-"""
-
-
 ```

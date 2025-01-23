@@ -126,15 +126,17 @@ This detailed breakdown illustrates the process of understanding a complex piece
 
 `v8/src/execution/ppc/frame-constants-ppc.h` 是 V8 引擎在 PPC 架构上管理函数调用栈的关键组成部分。它定义了各种栈帧的结构，使得 V8 能够正确地执行 JavaScript 和 WebAssembly 代码，并在调试时提供必要的信息。 尽管普通 JavaScript 开发者不会直接接触这些常量，但理解它们的作用有助于理解 V8 引擎的底层运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/ppc/frame-constants-ppc.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/ppc/frame-constants-ppc.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ class WasmDebugBreakFrameConstants : public TypedFrameConstants {
 }  // namespace v8
 
 #endif  // V8_EXECUTION_PPC_FRAME_CONSTANTS_PPC_H_
-
-"""
-
 ```

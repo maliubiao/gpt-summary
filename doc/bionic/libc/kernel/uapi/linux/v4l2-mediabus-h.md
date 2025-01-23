@@ -255,7 +255,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/linux/v4l2-mediabus.h` 文件在 Android 的相机子系统中扮演着关键的角色，它定义了用于描述媒体总线视频帧格式的数据结构和枚举。虽然它本身不是可执行代码，但它的定义被 Camera HAL 和内核驱动程序广泛使用，以实现相机硬件的配置和图像数据的传输。理解这个文件的内容有助于理解 Android 相机系统的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/v4l2-mediabus.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,8 +266,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -375,7 +377,4 @@ enum v4l2_mbus_pixelcode {
   V4L2_MBUS_FROM_MEDIA_BUS_FMT(AHSV8888_1X32),
 };
 #endif
-
-"""
-
 ```

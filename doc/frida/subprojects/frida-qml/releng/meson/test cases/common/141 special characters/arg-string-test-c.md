@@ -144,7 +144,7 @@ Here's a breakdown of the thinking process to analyze the C code and address the
 
 因此，`arg-string-test.c` 作为一个 Frida 的测试用例，它的存在是为了确保 Frida 能够可靠地处理包含特殊字符的命令行参数，这对于 Frida 的核心功能至关重要。当与命令行参数相关的 Frida 功能出现问题时，这个测试用例的失败会作为一个重要的调试线索，引导开发者去定位和修复问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/141 special characters/arg-string-test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
@@ -167,7 +169,4 @@ int main(int argc, char **argv) {
   assert(s[0] == argv[1][0]);
   return 0;
 }
-
-"""
-
 ```

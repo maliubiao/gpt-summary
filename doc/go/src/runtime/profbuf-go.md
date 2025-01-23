@@ -224,7 +224,7 @@ const (
 
 `go/src/runtime/profbuf.go` 实现了一个高性能、无锁的环形缓冲区，用于 Go 运行时环境中的性能分析数据收集。它为诸如 CPU 分析和阻塞分析等功能提供了基础的数据缓冲机制，允许并发地写入来自信号处理程序的事件，并由单个读取者消费这些事件。虽然普通开发者不会直接操作 `profbuf`，但理解其功能有助于更好地理解 Go 性能分析的底层原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/profbuf.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -232,8 +232,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -791,9 +793,4 @@ Read:
 
 	return data[:di], tags[:ti], false
 }
-
-"""
-
-
-
 ```

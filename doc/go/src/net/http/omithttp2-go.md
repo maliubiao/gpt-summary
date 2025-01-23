@@ -206,7 +206,7 @@ exit status 2
 
 `omithttp2.go` 是一个用于在特定编译条件下禁用 `net/http` 包内置 HTTP/2 支持的 Go 语言源文件。它利用了 Go 的构建标签特性，并通过设置全局变量和提供 panic 的存根实现来达到禁用 HTTP/2 的目的。理解它的作用有助于在需要禁用 HTTP/2 的特定场景下进行构建，但也需要注意可能带来的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/omithttp2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -214,8 +214,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -295,9 +297,4 @@ type http2noCachedConnError struct{}
 func (http2noCachedConnError) IsHTTP2NoCachedConnError() {}
 
 func (http2noCachedConnError) Error() string { return "http2: no cached connection was available" }
-
-"""
-
-
-
 ```

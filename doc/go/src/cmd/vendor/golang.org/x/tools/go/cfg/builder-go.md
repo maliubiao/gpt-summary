@@ -190,15 +190,17 @@ case 3:
 
 总而言之，这段 `builder.go` 代码是 Go 语言编译器中一个核心的组件，负责将 Go 源代码的结构化表示（AST）转换为更适合进行控制流分析的图结构（CFG）。理解其功能对于进行静态分析、代码优化等底层工具开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/cfg/builder.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -712,9 +714,4 @@ func (b *builder) ifelse(t, f *Block) {
 	b.current.Succs = append(b.current.Succs, t, f)
 	b.current = nil
 }
-
-"""
-
-
-
 ```

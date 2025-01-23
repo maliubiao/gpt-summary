@@ -134,7 +134,7 @@ process(123); // 运行时错误：input.length 会导致 "Cannot read property 
 
 这段代码是 Maglev 编译器的重要组成部分，提供了一组用于生成高效机器码的工具函数。它涵盖了类型检查、字符串操作、异常处理和去优化等关键功能，确保了 V8 能够正确且高效地执行 JavaScript 代码。这些函数隐藏了底层的机器码操作细节，使得 Maglev 编译器的开发者可以更专注于高层次的编译逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-assembler-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-assembler-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -142,8 +142,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ter heap_object, Label* target,
                                           Label::Distance distance) {
   TemporaryRegisterScope temps(this);
@@ -229,8 +231,4 @@ inline void SaveRegisterStateForCall::DefineSafepointWithLazyDeopt(
 }  // namespace v8
 
 #endif  // V8_MAGLEV_MAGLEV_ASSEMBLER_INL_H_
-
-"""
-
-
 ```

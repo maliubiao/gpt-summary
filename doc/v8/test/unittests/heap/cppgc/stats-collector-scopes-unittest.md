@@ -92,11 +92,13 @@ for (let i = 0; i < 50000; i++) {
 
 `stats-collector-scopes-unittest.cc` 是 V8 引擎中一个重要的测试文件，它确保了用于收集垃圾回收统计信息的 tracing scopes 功能的正确性。 虽然 JavaScript 无法直接操作这些底层机制，但 JavaScript 代码的执行会触发垃圾回收，而这些 tracing scopes 记录的统计信息最终会帮助开发者理解和优化 JavaScript 代码的性能。 通过 Chrome DevTools 的 Performance 标签页，我们可以间接地观察到这些底层机制的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/stats-collector-scopes-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -411,7 +413,4 @@ TEST_F(CppgcTracingScopesTest, TestIndividualConcurrentScopes) {
 }  // namespace cppgc
 
 #endif  // CPPGC_IS_STANDALONE
-
-"""
-
 ```

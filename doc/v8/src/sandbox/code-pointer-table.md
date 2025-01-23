@@ -81,11 +81,13 @@ func1 = null;
 
 `v8/src/sandbox/code-pointer-table.cc` 中的 `CodePointerTable::Sweep` 函数是 V8 引擎进行垃圾回收时管理已编译 JavaScript 代码指针的关键组件，尤其在启用指针压缩的情况下。它确保了 V8 能够有效地回收不再使用的代码内存，同时保持对仍然使用的代码的有效引用，从而保证 JavaScript 程序的正常运行。这段 C++ 代码的幕后工作直接影响了 JavaScript 代码的内存管理和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/code-pointer-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -112,7 +114,4 @@ uint32_t CodePointerTable::Sweep(Space* space, Counters* counters) {
 }  // namespace v8
 
 #endif  // V8_COMPRESS_POINTERS
-
-"""
-
 ```

@@ -117,7 +117,7 @@ fetch('https://www.example.com');
 
 这部分 `net/dns/dns_response_unittest.cc` 的代码主要负责测试 `DnsResponse` 类的 **构造和写入 DNS 响应** 的功能。 它涵盖了创建各种类型的 DNS 响应，包括包含不同类型的记录、问题部分以及错误响应代码的情况。 此外，它还测试了写入的 DNS 响应是否可以被正确地解析，确保了 `DnsResponse` 类在构建 DNS 消息方面的正确性。 这些测试对于确保 Chromium 网络栈能够正确地生成和发送 DNS 响应至关重要，这间接地影响了基于浏览器的 JavaScript 应用的网络通信能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_response_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ongName) {
   const char kResponseHeader[] =
       "\x02\x45"   // ID=581
@@ -872,7 +874,4 @@ TEST(DnsResponseWriteTest, WrittenResponseCanBeParsed) {
   // Answer with an A record.
   EXPECT_EQ(answer.name, parsed_record.name);
   EXPECT_EQ(a
-"""
-
-
 ```

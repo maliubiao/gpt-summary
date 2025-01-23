@@ -224,7 +224,7 @@ setTimeout(hook_msgsnd, 0);
 
 尽管 `sys/msg.h` 定义了 System V 消息队列的接口，但由于 Android 的 SELinux 策略，这些功能在 Android 上是不可用的。尝试使用这些函数会导致权限错误。理解这些函数的原理和它们在动态链接中的存在仍然有助于理解 Android 系统的底层机制。 Frida 可以用于观察这些被禁止的函数的行为，尽管它们最终会因权限问题而失败。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/msg.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -235,8 +235,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  * All rights reserved.
@@ -298,7 +300,4 @@ int msgsnd(int __msg_id, const void* _Nonnull __msgbuf_ptr, size_t __size, int _
 
 
 __END_DECLS
-
-"""
-
 ```

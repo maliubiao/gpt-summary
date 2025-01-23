@@ -166,7 +166,7 @@ static int hidden_func(void) {
 
 总而言之，`one.c` 这个文件虽然代码简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 是否能够正确处理和操作 `static` 类型的函数，这对于进行深度的动态逆向分析至关重要。它作为一个测试用例，可以帮助用户理解 Frida 的能力和使用方法，尤其是在处理那些隐藏了实现细节的内部函数时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/131 override options/one.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,12 +174,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 static int hidden_func(void) {
     return 0;
 }
-
-"""
-
 ```

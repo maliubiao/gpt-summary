@@ -87,11 +87,13 @@ try {
 
 `v8/src/diagnostics/unwinding-info-win64.cc` 是 V8 引擎在 Windows 平台上的一个关键组成部分，它确保了操作系统能够理解 V8 生成的机器码的栈结构，从而支持异常处理、调试和性能分析等功能。虽然 JavaScript 开发者通常不需要直接与这个文件交互，但它的正确运行对于 JavaScript 代码在 Windows 上的稳定性和可调试性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/unwinding-info-win64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -732,7 +734,4 @@ void XdataEncoder::onFramePointerAdjustment(int fp_to_saved_caller_fp,
 }  // namespace win64_unwindinfo
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

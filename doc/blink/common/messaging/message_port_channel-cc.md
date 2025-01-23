@@ -194,14 +194,16 @@ std::vector<MessagePortChannel> new_ports = MessagePortChannel::CreateFromHandle
 
 总而言之，`blink/common/messaging/message_port_channel.cc` 文件定义了 Blink 引擎中用于管理消息端口底层句柄的关键类，为 JavaScript 的 `MessagePort` API 提供了底层的实现基础，使得跨源通信、iframe 通信以及 Service Worker 通信成为可能。 理解这个类有助于深入了解浏览器内部的消息传递机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/messaging/message_port_channel.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -289,7 +291,4 @@ MessagePortDescriptor MessagePortChannel::State::TakeHandle() {
 MessagePortChannel::State::~State() = default;
 
 }  // namespace blink
-
-"""
-
 ```

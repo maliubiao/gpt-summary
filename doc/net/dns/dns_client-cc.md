@@ -220,15 +220,17 @@ By following these steps, I could systematically analyze the code, address each 
 
 `net/dns/dns_client.cc` 是 Chromium 网络栈中负责管理 DNS 客户端配置和执行 DNS 查询的关键组件。它处理了安全和不安全 DNS 查询的选择、DNS 配置的更新和管理，以及 DNS 查询的回退逻辑。理解这个文件的功能对于理解 Chromium 的 DNS 解析行为至关重要，尤其是在处理与 DNS 相关的网络问题时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_client.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -570,7 +572,4 @@ std::unique_ptr<DnsClient> DnsClient::CreateClientForTesting(
 }
 
 }  // namespace net
-
-"""
-
 ```

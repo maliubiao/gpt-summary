@@ -132,15 +132,17 @@ if (index < wasmMemory.length) {
 
 `v8/include/v8-wasm-trap-handler-win.h` 是 V8 引擎中一个至关重要的低级组件，专门用于在 Windows 平台上优雅地处理 WebAssembly 代码执行期间发生的内存访问错误，防止程序崩溃，并允许 V8 的更高层机制进行错误处理和报告。它本身不是 Torque 代码，但与运行在 JavaScript 环境中的 WebAssembly 功能紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-wasm-trap-handler-win.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-wasm-trap-handler-win.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ V8_EXPORT bool TryHandleWebAssemblyTrapWindows(EXCEPTION_POINTERS* exception);
 
 }  // namespace v8
 #endif  // V8_WASM_TRAP_HANDLER_WIN_H_
-
-"""
-
 ```

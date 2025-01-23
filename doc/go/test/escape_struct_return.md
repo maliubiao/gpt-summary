@@ -195,15 +195,17 @@ func main() {
 
 在这个例子中，如果开发者没有意识到逃逸分析，可能会认为 `createUser` 返回的 `User` 结构体及其内部的 `Name` 指针都与函数 `createUser` 的栈帧相关联。然而，由于指针被返回，`name` 变量实际上会逃逸到堆上，从而保证 `main` 函数中可以安全地访问 `user1.Name` 和 `user2.Name` 指向的字符串。 理解这一点对于编写安全且高效的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_struct_return.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m -l
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -278,9 +280,4 @@ func tB3() {
 	u := B(spp)
 	println(**u._spp)
 }
-
-"""
-
-
-
 ```

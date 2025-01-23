@@ -73,9 +73,12 @@ This systematic approach, starting with broad strokes and progressively focusing
 
 `parse-decision-unittest.cc` 文件是 V8 引擎中用于测试其在解析 JavaScript 代码时如何决定是进行延迟解析还是立即解析的关键单元测试文件。它通过编写特定的 JavaScript 代码片段并使用辅助函数来检查函数的编译状态，从而验证 V8 的解析优化策略是否正确。这对于保证 V8 引擎的性能和效率至关重要。
 
-Prompt: ```这是目录为v8/test/unittests/parser/parse-decision-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/parser/parse-decision-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,6 +196,4 @@ TEST_F(ParseDecisionTest, CommaFunctionSequence) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

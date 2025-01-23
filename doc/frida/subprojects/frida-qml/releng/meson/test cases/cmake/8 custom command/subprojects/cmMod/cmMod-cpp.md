@@ -164,7 +164,7 @@ Initially, I might have focused too much on the specific strings being manipulat
 
 总而言之，这个 `cmMod.cpp` 文件是一个用于 Frida QML 集成的测试用例，展示了一个简单的 C++ 类及其功能，以及如何在 Frida 的上下文中对其进行操作和测试。对于逆向工程师来说，理解这样的测试用例可以帮助他们更好地掌握 Frida 的使用方法，并将其应用于真实的 QML 应用程序分析中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include "genTest.hpp"
 #include "cpyBase.txt"
@@ -198,7 +200,4 @@ string cmModClass::getStr() const {
 string cmModClass::getOther() const {
   return "Strings:\n - " + getStrCpy() + "\n - " + getStrNext() + "\n - " + getStrCpyTest();
 }
-
-"""
-
 ```

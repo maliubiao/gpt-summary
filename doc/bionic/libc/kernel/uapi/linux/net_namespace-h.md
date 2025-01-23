@@ -265,7 +265,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/linux/net_namespace.h` 定义了用于指代 Linux 网络命名空间的常量。虽然它本身不包含代码实现，但这些常量被 libc 函数和系统调用广泛使用，在 Android 中用于实现应用隔离、VPN 等网络功能。通过理解这些常量的含义，可以更好地理解 Android 的网络架构和相关操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/net_namespace.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -276,8 +276,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -298,7 +300,4 @@ enum {
 };
 #define NETNSA_MAX (__NETNSA_MAX - 1)
 #endif
-
-"""
-
 ```

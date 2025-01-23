@@ -134,15 +134,17 @@ fetch('https://example.com/image.jpg')
 
 总而言之，`nghttp2_data_provider_test.cc` 虽然是一个底层的 C++ 测试文件，但它对于保证 Chromium 网络栈正确处理 HTTP/2 数据至关重要，直接影响着用户在浏览器中使用网络应用的体验。当出现网络相关问题时，理解这些底层的组件及其测试可以帮助开发人员更好地定位和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_data_provider_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/nghttp2_data_provider.h"
 
 #include "quiche/http2/adapter/nghttp2_util.h"
@@ -332,7 +334,4 @@ TEST(VisitorTest, ReadFromZeroLengthSource) {
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

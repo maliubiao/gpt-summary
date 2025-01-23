@@ -209,7 +209,7 @@ meson setup build
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/test cases/native/2 global arg/prog.c` 这个文件是 Frida 构建过程中的一个静态检查点，用于确保构建配置的正确性，防止由于错误的全局参数设置导致构建出错误的 Frida 工具。 它通过 C 预处理器的强大功能，在编译时就捕获潜在的错误，从而提高了 Frida 构建的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/native/2 global arg/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -217,8 +217,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifndef MYTHING
   #error "Global argument not set"
 #endif
@@ -262,7 +264,4 @@ Prompt:
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

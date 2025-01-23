@@ -131,7 +131,7 @@ My thinking process to analyze the provided C++ code snippet goes like this:
 
 作为单元测试套件的一部分，`net/dns/host_resolver_manager_unittest.cc` 这个文件专注于 **验证 `HostResolverManager` 组件在 DNS 解析和缓存方面行为的正确性**。它通过模拟各种 DNS 场景 (包括成功解析、不同类型的错误以及 HTTPS 升级) 来确保 `HostResolverManager` 能够按照预期的方式处理 DNS 查询结果，并正确地更新和使用 DNS 缓存。这对于保证 Chromium 浏览器网络功能的稳定性和性能至关重要。 作为测试套件的倒数第二部分，它可能涵盖了 `HostResolverManager` 的核心 DNS 功能，为后续更高级或特定场景的测试奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第20部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r("host.test", 80), NetworkAnonymizationKey(),
       NetLogWithSource(), std::nullopt, resolve_context_.get()));
 
@@ -855,7 +857,4 @@ TEST_F(HostResolverManagerDnsTest,
 
   // Expect successful address responses to be cached immediately on receipt.
   EXPECT_THAT(resolv
-"""
-
-
 ```

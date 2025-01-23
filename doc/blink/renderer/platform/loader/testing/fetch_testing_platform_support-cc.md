@@ -202,14 +202,16 @@ TEST(MyFetchTest, FetchDataError) {
 
 总而言之，`fetch_testing_platform_support.cc` 提供了一种在隔离且可控的环境中测试 Blink 网络请求逻辑的关键机制，这对于确保 Chromium 的网络功能稳定可靠至关重要。它通过模拟网络行为，使得开发者可以专注于测试核心业务逻辑，而无需担心外部网络环境的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/testing/fetch_testing_platform_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ URLLoaderMockFactory* FetchTestingPlatformSupport::GetURLLoaderMockFactory() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

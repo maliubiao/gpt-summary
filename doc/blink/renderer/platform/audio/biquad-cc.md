@@ -164,14 +164,16 @@ The `dest_p` array would contain the filtered audio samples. Due to the lowpass 
 
 This detailed explanation covers the functionality of the `biquad.cc` file, its connection to web technologies, provides a logical example, and highlights potential usage errors.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/biquad.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -1094,7 +1096,4 @@ double Biquad::TailFrame(int coef_index, double max_frame) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

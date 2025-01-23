@@ -156,15 +156,17 @@ func main() {
 
 总而言之， `go/test/mainsig.go` 的这段代码片段不是一个可执行的程序，而是 Go 编译器测试套件的一部分，用于确保编译器能够正确地检测出 `main` 和 `init` 函数签名方面的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/mainsig.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -178,9 +180,4 @@ func main() int { return 1 } // ERROR "func main must have no arguments and no r
 
 func init(int)  {}           // ERROR "func init must have no arguments and no return values"
 func init() int { return 1 } // ERROR "func init must have no arguments and no return values"
-
-"""
-
-
-
 ```

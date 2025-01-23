@@ -158,7 +158,7 @@ By following these steps, combining code analysis with understanding the context
 
 总而言之，`foo.c` 作为一个简单的 C 源代码文件，其核心功能是定义一个相互调用的函数，但它的真正价值在于作为 Frida 项目测试框架的一部分，用于验证构建系统的特定功能（很可能是 `pkg-config` 的生成）。理解其在 Frida 项目中的位置和角色，能够更好地理解其设计意图和可能涉及的技术细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/44 pkgconfig-gen/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"simple.h"
 
 int answer_to_life_the_universe_and_everything (void);
@@ -175,7 +177,4 @@ int answer_to_life_the_universe_and_everything (void);
 int simple_function(void) {
     return answer_to_life_the_universe_and_everything();
 }
-
-"""
-
 ```

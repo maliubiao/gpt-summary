@@ -140,7 +140,7 @@ Here's a breakdown of the thought process to generate the response:
 
 `blink/renderer/core/editing/selection_controller.cc` 文件的第一部分主要负责处理用户发起的文本选择操作，包括响应鼠标和触摸事件，管理选择状态，以及处理与选择相关的浏览器事件。它与 JavaScript, HTML, CSS 紧密相关，需要遵守 CSS 的 `user-select` 属性，并能通过触发 `selectstart` 事件与 JavaScript 进行交互。 理解这个文件的功能对于调试网页中与文本选择相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/selection_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011 Apple Inc. All rights
  * reserved.
@@ -960,7 +962,4 @@ void SelectionController::SelectClosestMisspellingFromHitTestResult(
         inner_node, SelectionInFlatTree(),
         SetSelectionOptions::Builder()
             .SetGr
-"""
-
-
 ```

@@ -68,7 +68,7 @@ The user is asking for a summary of the functionality of the `XRSession.cc` file
 
 总而言之，`blink/renderer/modules/xr/xr_session.cc` 中的 `XRSession` 类是 WebXR API 在 Blink 渲染引擎中的核心实现，它作为 Web 内容与底层 XR 设备之间的桥梁，负责管理 XR 会话的生命周期、同步设备状态、处理输入事件、管理渲染流程以及提供各种 XR 相关的功能（如姿态追踪、环境理解、命中测试等），最终使得 Web 开发者能够构建沉浸式的 XR 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_session.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -76,8 +76,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (canvas);
 
         // Begin processing input events on the output context's canvas.
@@ -838,8 +840,4 @@ void XRSession::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

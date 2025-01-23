@@ -203,7 +203,7 @@ except Exception as e:
 
 `bionic/libc/kernel/uapi/linux/sunrpc/debug.h` 文件本身不包含可执行代码，而是定义了用于调试 Linux 内核 SunRPC 子系统的常量。虽然 Android 应用不会直接“调用”这个头文件中的内容，但当应用（特别是 NDK 应用）涉及到网络文件系统 (NFS) 或其他可能使用 RPC 的场景时，内核会根据这里定义的调试标志来输出相关的调试信息。通过 Frida hook 系统调用，我们可以间接地观察到这些交互过程，并验证这些调试标志的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/sunrpc/debug.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -214,8 +214,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -248,7 +250,4 @@ enum {
   CTL_MAX_RESVPORT,
 };
 #endif
-
-"""
-
 ```

@@ -153,7 +153,7 @@ Frida 允许逆向工程师在运行时观察和改变程序的逻辑流程和�
 
 总而言之，这个简单的 `add` 函数虽然功能简单，但在 Frida 的上下文中，它可以作为动态 instrumentation 的一个目标，用于测试 Frida 的功能，理解程序行为，甚至用于逆向工程和安全分析。其所在的目录结构和构建系统信息也提供了关于其用途和上下文的重要线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/rust/12 bindgen/src/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // SPDX-license-identifer: Apache-2.0
 // Copyright © 2021 Intel Corporation
 
@@ -171,7 +173,4 @@ Prompt:
 int32_t add(const int32_t first, const int32_t second) {
     return first + second;
 }
-
-"""
-
 ```

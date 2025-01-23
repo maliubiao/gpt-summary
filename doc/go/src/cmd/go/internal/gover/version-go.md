@@ -259,15 +259,17 @@ module myapp
 
 `go/src/cmd/go/internal/gover/version.go` 是 Go 语言模块管理的关键组成部分，它定义了重要的 Go 版本里程碑，并提供了从 `go.mod` 和 `go.work` 文件中提取 Go 版本信息的机制。这使得 `go` 命令能够根据项目的 Go 版本声明来调整其行为，确保了不同 Go 版本间的兼容性和一致性。 用户应该注意在 `go.mod` 和 `go.work` 文件中明确声明 `go` 版本，以避免因默认版本带来的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/gover/version.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -346,9 +348,4 @@ func FromGoWork(wf *modfile.WorkFile) string {
 	}
 	return wf.Go.Version
 }
-
-"""
-
-
-
 ```

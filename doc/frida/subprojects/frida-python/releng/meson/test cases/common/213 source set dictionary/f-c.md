@@ -120,7 +120,7 @@ Finally, organize the thoughts into the requested categories: Functionality, Rev
 
 总而言之，这个简单的 `f.c` 文件虽然代码量不多，但却包含了动态分析和逆向工程中的核心概念，是 Frida 工具进行功能测试的一个典型案例。理解这个文件的功能和背后的原理，对于学习和使用 Frida 进行动态 instrumentation 非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/213 source set dictionary/f.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = (void *)0x1234ABCD;
@@ -137,7 +139,4 @@ void (*p)(void) = (void *)0x1234ABCD;
 void f(void)
 {
 }
-
-"""
-
 ```

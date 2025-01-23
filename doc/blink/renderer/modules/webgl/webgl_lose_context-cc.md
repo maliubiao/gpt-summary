@@ -149,15 +149,17 @@ This iterative process of identifying the core purpose, relating it to web techn
 
 总而言之，`webgl_lose_context.cc` 文件实现了 `WEBGL_lose_context` 扩展，为 Web 开发者提供了一种在代码中模拟 WebGL 上下文丢失和恢复的机制，主要用于测试和开发阶段，以确保应用程序能够优雅地处理上下文丢失的情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_lose_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -225,7 +227,4 @@ const char* WebGLLoseContext::ExtensionName() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

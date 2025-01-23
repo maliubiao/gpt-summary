@@ -174,15 +174,17 @@ By following this structured thought process, breaking down the code into smalle
 
 总而言之，`WebInputMethodControllerImpl.cc` 是 Blink 引擎中至关重要的组件，它使得网页能够接收和处理来自各种输入法的文本输入，从而实现了用户与网页的交互。理解它的功能和与 Web 技术的关系对于开发和调试涉及文本输入的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_input_method_controller_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -463,7 +465,4 @@ WebPlugin* WebInputMethodControllerImpl::FocusedPluginIfInputMethodSupported()
 }
 
 }  // namespace blink
-
-"""
-
 ```

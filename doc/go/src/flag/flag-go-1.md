@@ -127,7 +127,7 @@ func main() {
 
 这部分 `go/src/flag/flag.go` 代码的核心功能是提供了更灵活的定义和处理命令行标志的方式，特别是通过允许用户注册在解析到特定标志时执行的自定义函数。  `Func` 和 `BoolFunc` 使得在解析阶段执行副作用操作或进行更复杂的标志处理成为可能。 它依赖于底层的 `Var` 函数和 `Value` 接口来实现不同类型的标志处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/flag/flag.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -136,8 +136,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ing) error) {
 	f.Var(funcValue(fn), name, usage)
 }
@@ -398,10 +400,4 @@ func (f *FlagSet) Init(name string, errorHandling ErrorHandling) {
 	f.name = name
 	f.errorHandling = errorHandling
 }
-
-"""
-
-
-
-
 ```

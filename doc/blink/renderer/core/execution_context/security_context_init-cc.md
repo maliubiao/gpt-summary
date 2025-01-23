@@ -125,14 +125,16 @@ By following this systematic approach, we can thoroughly analyze the code and pr
 
 总而言之，`security_context_init.cc` 是 Blink 渲染引擎中一个核心的组成部分，它确保了 Web 内容能够按照既定的安全策略运行，防止潜在的安全漏洞和恶意行为。理解这个文件的功能对于理解浏览器如何处理安全策略至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/execution_context/security_context_init.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -442,7 +444,4 @@ void SecurityContextInit::InitDocumentPolicyFrom(const SecurityContext& other) {
       DocumentPolicy::CopyStateFrom(other.GetReportOnlyDocumentPolicy()));
 }
 }  // namespace blink
-
-"""
-
 ```

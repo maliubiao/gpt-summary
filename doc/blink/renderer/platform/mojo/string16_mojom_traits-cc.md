@@ -119,14 +119,16 @@ By following this process, starting with a high-level understanding and then div
 
 `string16_mojom_traits.cc` 是 Blink 引擎中一个关键的底层组件，负责处理字符串在 Mojo IPC 边界的序列化和反序列化。它确保了 UTF-16 编码的字符串可以在 Blink 引擎的不同部分以及 Blink 引擎与浏览器其他进程之间高效且正确地传递，这对于实现现代 Web 功能至关重要。它与 JavaScript, HTML, 和 CSS 的关系体现在它支撑了这些 Web 技术所产生的字符串数据在系统内部的流动和交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mojo/string16_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ bool StructTraits<mojo_base::mojom::BigString16DataView, WTF::String>::Read(
 }
 
 }  // namespace mojo
-
-"""
-
 ```

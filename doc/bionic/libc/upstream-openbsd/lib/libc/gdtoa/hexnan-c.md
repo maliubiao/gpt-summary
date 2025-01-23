@@ -309,7 +309,7 @@ except Exception as e:
 
 这个 Frida 脚本会 hook `libc.so` 中的 `hexnan` 函数，并在函数调用前后打印相关信息，帮助你调试和理解其工作流程。你需要将 `<PID>` 替换为目标应用的进程 ID，或者将 `com.example.myapp` 替换为应用的包名。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/gdtoa/hexnan.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -320,8 +320,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /****************************************************************
 
 The author of this software is David M. Gay.
@@ -472,7 +474,4 @@ hexnan( CONST char **sp, FPI *fpi, ULong *x0)
 		}
 	return STRTOG_NaNbits;
 	}
-
-"""
-
 ```

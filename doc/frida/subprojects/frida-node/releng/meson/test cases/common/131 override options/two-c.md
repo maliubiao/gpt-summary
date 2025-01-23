@@ -181,7 +181,7 @@ int hidden_func() {
 
 通过以上步骤，用户就可以使用这个简单的 `two.c` 文件作为目标，测试 Frida 的函数覆盖功能，并理解其工作原理。这个测试用例简洁明了，非常适合用来演示和学习 Frida 的基本用法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/131 override options/two.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,15 +189,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Requires a Unity build. Otherwise hidden_func is not specified.
  */
 int main(void) {
     return hidden_func();
 }
-
-"""
-
 ```

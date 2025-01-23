@@ -138,7 +138,7 @@ obj2.c = 4; // 再次动态添加属性
 
 该文件是一个全面的 C++ 单元测试，旨在彻底验证 V8 引擎的对象内空闲空间跟踪机制在各种 JavaScript 编程模式和语言特性下的正确性和有效性。它涵盖了内置对象的子类化、类和函数构造、实例字段等多个方面，确保 V8 能够高效地管理对象内存，提升 JavaScript 代码的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-inobject-slack-tracking.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-inobject-slack-tracking.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 new = false;
   TestSubclassFunctionBuiltin();
 }
@@ -615,8 +617,4 @@ TEST(InstanceFieldsArePropertiesFieldsAndConstructorEager) {
 }  // namespace test_inobject_slack_tracking
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

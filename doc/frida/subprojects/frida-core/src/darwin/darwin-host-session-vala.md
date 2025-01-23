@@ -124,7 +124,7 @@ inject_library(1234, "/path/to/library.dylib")
 ### 总结
 
 `darwin-host-session.vala` 文件是 Frida 工具中用于处理 macOS 和 iOS 系统上动态插桩的核心代码。它提供了丰富的功能来管理进程、注入代码、捕获崩溃信息等。通过 LLDB 的 Python 脚本，用户可以复刻其中的一些调试功能。用户在使用过程中可能会遇到权限不足、目标进程崩溃等常见问题，需要确保以正确的权限运行工具，并确保目标进程处于稳定状态。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/darwin/darwin-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class DarwinHostSessionBackend : Object, HostSessionBackend {
 		private DarwinHostSessionProvider local_provider;
@@ -1259,7 +1261,4 @@ namespace Frida {
 
 		private static CrashInfo parse_report (uint pid, string raw_report) {
 			var tokens = raw_report.
-"""
-
-
 ```

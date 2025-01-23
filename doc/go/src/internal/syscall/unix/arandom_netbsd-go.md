@@ -176,7 +176,7 @@ func main() {
 
 总而言之，这段 `arandom_netbsd.go` 文件中的 `Arandom` 函数是 Go 语言在 NetBSD 系统上获取高质量随机数的一个底层实现，它通过 `sysctl` 系统调用与内核交互，读取由内核提供的随机数据。 使用者需要提供一个有效的字节切片来接收这些随机数据，并且应该始终检查函数返回的错误信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/arandom_netbsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -184,8 +184,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -222,9 +224,4 @@ func Arandom(p []byte) error {
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

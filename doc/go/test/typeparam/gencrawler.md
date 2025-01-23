@@ -197,15 +197,17 @@ go test -run GenCrawler  # 假设存在名为 GenCrawler 的测试函数
 
 `go/test/typeparam/gencrawler.go` 是 Go 语言测试工具链的一部分，用于验证当一个私有的泛型类型被导出变量引用时，其方法的可访问性。它不接受直接的命令行参数，而是通过 `go test` 命令作为测试用例执行。 开发者需要理解私有类型的访问规则以及导出变量在这种特定场景下的影响，避免混淆类型的私有性和通过导出变量访问其成员的可能性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/gencrawler.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // rundir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -216,9 +218,4 @@ Prompt:
 // with that type is exported.
 
 package ignored
-
-"""
-
-
-
 ```

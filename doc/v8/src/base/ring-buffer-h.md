@@ -216,15 +216,17 @@ Consider the buffer state from the end of Scenario 1: `elements_ = [40, 50, 60]`
 
 5. **Race Conditions in Concurrent Environments:** If a ring buffer is used in a multithreaded environment without proper synchronization mechanisms (like mutexes or atomic operations), data corruption or unexpected behavior can occur due to concurrent access and modifications of `pos_`, `is_full_`, and `elements_`. This isn't directly shown in the provided code, but it's a common pitfall when using data structures in concurrent contexts.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/ring-buffer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/ring-buffer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -287,7 +289,4 @@ class RingBuffer final {
 }  // namespace v8::base
 
 #endif  // V8_BASE_RING_BUFFER_H_
-
-"""
-
 ```

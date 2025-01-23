@@ -110,7 +110,7 @@ By following these steps, moving from understanding the basic code to connecting
 
 总而言之，这个 `client.c` 文件虽然功能简单，但它在 Frida 的构建和测试过程中扮演着一个重要的角色，用于验证环境依赖是否满足，确保 Frida 能够正确地与 Wayland 客户端进行交互。 对于逆向工程师来说，理解这种简单的环境检查是进行更复杂逆向工作的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/wayland/1 client/client.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "xdg-shell-client-protocol.h"
 
 int main() {
@@ -129,7 +131,4 @@ int main() {
   return 1;
 #endif
 }
-
-"""
-
 ```

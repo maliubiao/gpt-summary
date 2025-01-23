@@ -76,11 +76,13 @@ processIterator();
 
 总而言之，这个 C++ 文件是 V8 引擎实现异步迭代器与同步迭代器互操作性的关键部分，它使得 JavaScript 能够方便地将现有的同步迭代器应用于异步场景中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-async-iterator-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -537,7 +539,4 @@ TF_BUILTIN(AsyncFromSyncIteratorCloseSyncAndRethrow,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

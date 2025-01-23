@@ -181,7 +181,7 @@ This specific part (part 6) of the `manifest.go` file contributes a significant 
 
 Essentially, this part lays the groundwork by defining the fundamental numerical values associated with a vast array of system-level concepts. This allows the Go runtime and tools to interact with the operating system in a consistent and portable way.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/internal/stdlib/manifest.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -189,9 +189,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
-	{"AF_SLOW", Const, 0},
+### 源代码
+```go
+{"AF_SLOW", Const, 0},
 		{"AF_SNA", Const, 0},
 		{"AF_SYSTEM", Const, 0},
 		{"AF_TIPC", Const, 0},
@@ -2301,9 +2303,4 @@ Prompt:
 		{"IPMreqn", Type, 0},
 		{"IPMreqn.Address", Field, 0},
 		{"IPMreqn.If
-"""
-
-
-
-
 ```

@@ -147,7 +147,7 @@ input()
 
 这个 `lib1.c` 文件作为一个简单的测试用例，帮助 Frida 的开发者和用户验证 Frida 在处理共享库及其依赖关系时的正确性，尤其是在涉及到循环依赖这种复杂场景时。对于逆向工程师来说，理解这些测试用例可以帮助他们更好地掌握 Frida 的使用方法和原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/145 recursive linking/circular/lib1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,15 +155,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int get_st2_prop (void);
 int get_st3_prop (void);
 
 int get_st1_value (void) {
   return get_st2_prop () + get_st3_prop ();
 }
-
-"""
-
 ```

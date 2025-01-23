@@ -177,7 +177,7 @@ By following these steps, I can systematically analyze the provided Python scrip
 
 总而言之，`python_info.py` 是 Frida 构建过程中的一个关键环节，它负责收集必要的 Python 环境信息，确保 Frida 的 Python 组件能够正确地构建并与目标应用兼容，这对于 Frida 作为动态插桩工具的功能至关重要，并且与逆向工程实践紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/scripts/python_info.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python
 
 # ignore all lints for this file, since it is run by python2 as well
@@ -308,7 +310,4 @@ print(json.dumps({
   'suffix': suffix,
   'limited_api_suffix': limited_api_suffix,
 }))
-
-"""
-
 ```

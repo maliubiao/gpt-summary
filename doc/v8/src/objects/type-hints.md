@@ -131,11 +131,13 @@ const result3 = str1 + num; // V8 可能使用 STRING_ADD_CONVERT_RIGHT (需要�
 
 `v8/src/objects/type-hints.cc` 文件定义的类型提示是 V8 引擎内部用于优化 JavaScript 代码执行的关键机制。虽然 JavaScript 开发者不能直接控制这些提示，但他们编写的代码的结构和使用的类型会影响 V8 如何推断类型并应用这些提示，从而影响代码的性能。这些提示使得 V8 能够为不同类型的操作和数据生成更高效的机器代码，最终提升 JavaScript 的执行速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/type-hints.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ std::ostream& operator<<(std::ostream& os, const StringAddFlags& flags) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

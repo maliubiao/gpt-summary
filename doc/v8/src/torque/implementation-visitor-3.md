@@ -93,13 +93,15 @@ Handle<JSArray> TorqueGeneratedFactory<Factory>::JSArray_FromElements(
 
 `implementation-visitor.cc` 是 Torque 编译过程中的关键部分，它将高级的 Torque 定义转换为 V8 引擎可以直接使用的 C++ 代码，这些代码是实现 JavaScript 语言特性的基础。它生成的工厂函数用于创建对象，体描述符用于内存管理，验证器用于确保代码正确性，与 CSA 的集成则用于实现高性能的内置函数。因此，这个文件与 JavaScript 的功能有着非常紧密的联系，它生成的代码直接支撑着 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/implementation-visitor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-        "result->init_self_indirect_pointer(factory()->"
+### 源代码
+```
+"result->init_self_indirect_pointer(factory()->"
                             "isolate());\n";
           } else if (!f.index) {
             factory_impl << "  result->TorqueGeneratedClass::set_"
@@ -792,8 +794,4 @@ void ReportAllUnusedMacros() {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
-
 ```

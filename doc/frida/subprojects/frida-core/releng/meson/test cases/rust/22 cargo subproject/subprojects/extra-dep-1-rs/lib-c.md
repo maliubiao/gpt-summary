@@ -129,7 +129,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 总而言之，尽管 `lib.c` 文件本身的功能很简单，但它在 Frida 项目的上下文中扮演着重要的角色，用于测试 Frida 与带有 C 语言依赖的 Rust 代码的互操作性。理解这个简单的例子有助于理解 Frida 更复杂的功能和在逆向工程中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/rust/22 cargo subproject/subprojects/extra-dep-1-rs/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,13 +137,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int extra_func(void)
 {
     return 0;
 }
-
-"""
-
 ```

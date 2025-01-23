@@ -144,7 +144,7 @@ Initially, I might have focused too much on the standard C syntax. Recognizing t
 
 总而言之，`main2.c` 是一个简洁的 C 代码片段，它作为 Frida 动态插桩工具的一个测试用例，演示了如何与外部库进行交互，以及如何使用 Frida 来观察和修改程序的行为。它涉及了动态链接、内存操作、以及程序执行流程等底层概念，并可以用来调试和理解程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/178 bothlibraries/main2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "mylib.h"
 
 DO_IMPORT int func(void);
@@ -163,7 +165,4 @@ DO_IMPORT int retval;
 int main(void) {
     return func() + foo() == retval ? 0 : 1;
 }
-
-"""
-
 ```

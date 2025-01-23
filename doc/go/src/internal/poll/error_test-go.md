@@ -214,7 +214,7 @@ go test -v -run TestReadError ./internal/poll
 
 这段测试代码的目的是确保当遇到特定的底层错误时，Go 的网络或文件 I/O 操作能够正确地报告和处理这些错误，并且提供了一种用于解析和验证嵌套错误的机制。理解这种错误处理模式对于编写健壮的网络和文件操作代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/error_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -222,8 +222,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -275,9 +277,4 @@ func parseReadError(nestedErr error, verify func(error) (string, bool)) error {
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

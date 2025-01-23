@@ -250,7 +250,7 @@ if __name__ == '__main__':
 
 总结来说，`bionic/tests/tgmath_test.c` 是一个用于测试 bionic C 库中类型泛型数学功能的小型单元测试。它对于确保 Android 系统的数学运算正确性至关重要。虽然代码本身很简单，但它涉及到 libc 函数的实现、动态链接过程以及 Android 系统架构的多个方面。通过 Frida 这样的动态分析工具，我们可以深入了解这些底层机制的运行情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/tgmath_test.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -261,8 +261,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -285,7 +287,4 @@ float complex tgmath_h_test_function() {
   float complex z = 1 + 0.5*I;
   return sqrt(z);
 }
-
-"""
-
 ```

@@ -190,7 +190,7 @@ While this Python code doesn't directly interact with the kernel, it touches upo
 
 This section of the `gnome.py` module primarily focuses on **generating introspection data (`.gir` files) and type libraries (`.typelib`) for GNOME libraries using the `gobject-introspection` tools.** It provides the `generate_gir` function to orchestrate this process, handling configuration options, dependency management, and the execution of `g-ir-scanner` and `g-ir-compiler`. It also includes functions for compiling GNOME schemas and handling Yelp documentation, showcasing its role in integrating various aspects of the GNOME development ecosystem within the Meson build system. This functionality is crucial for enabling language bindings and dynamic introspection capabilities, making it highly relevant to reverse engineering efforts using tools like Frida.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 self._gir_has_option('--extra-library'):
             def fix_ldflags(ldflags: T.Iterable[T.Union[str, T.Tuple[str, str]]]) -> OrderedSet[T.Union[str, T.Tuple[str, str]]]:
                 fixed_ldflags: OrderedSet[T.Union[str, T.Tuple[str, str]]] = OrderedSet()
@@ -825,8 +827,4 @@ self._gir_has_option('--extra-library'):
                         m_file = mesonlib.File.from_source_file(state.environment.source_dir, l_subdir, m)
                     except MesonException:
                         m_file = media_files[i]
-             
-"""
-
-
 ```

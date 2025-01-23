@@ -349,7 +349,7 @@ sys.stdin.read()
 
 这个 Frida 示例虽然直接 Hook 了 `malloc` 和 `free`，但如果你想要更精确地观察 `malloc_hooks.cpp` 的行为，你可以尝试 Hook `hooks_malloc` 和 `hooks_free` 这两个函数。你需要找到这些函数的导出符号名称（通常就是函数名），然后在 Frida 脚本中使用相应的名称。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_hooks/malloc_hooks.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -360,8 +360,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -607,7 +609,4 @@ void* hooks_valloc(size_t size) {
   return hooks_memalign(getpagesize(), size);
 }
 #endif
-
-"""
-
 ```

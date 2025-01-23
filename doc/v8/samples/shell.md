@@ -125,11 +125,13 @@ load("script.js");
 
 `v8/samples/shell.cc` 提供了一个最基本的、独立的JavaScript运行环境。它通过V8引擎的C++接口，将JavaScript的执行能力嵌入到一个简单的命令行程序中，并提供了一些基础的I/O和程序控制功能，方便开发者进行简单的JavaScript代码测试和学习。它类似于Node.js的早期形态或者一个精简版的D8调试器。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/samples/shell.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -527,7 +529,4 @@ void ReportException(v8::Isolate* isolate, v8::TryCatch* try_catch) {
     }
   }
 }
-
-"""
-
 ```

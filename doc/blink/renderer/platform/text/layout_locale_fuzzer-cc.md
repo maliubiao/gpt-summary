@@ -112,14 +112,16 @@ Let's break down the thought process for analyzing the provided C++ fuzzer code.
 
 总而言之，`layout_locale_fuzzer.cc` 是一个重要的工具，用于确保 Chromium Blink 引擎在处理不同语言和文化环境下的文本布局时具有鲁棒性和正确性。它通过随机输入来探索代码的边界情况和潜在的错误，从而提高浏览器的稳定性和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/layout_locale_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -170,7 +172,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
   return 0;
 }
-
-"""
-
 ```

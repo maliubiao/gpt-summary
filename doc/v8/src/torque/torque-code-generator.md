@@ -104,11 +104,13 @@ return; // 返回栈顶元素
 
 `torque-code-generator.cc` 文件是 V8 引擎中负责将 Torque 语言编译成可执行代码的关键组件。它通过处理各种 Torque 指令，特别是与栈操作相关的指令，来生成 JavaScript 运行时所需的底层实现。理解这个文件的功能有助于理解 V8 引擎如何执行 JavaScript 代码，以及 Torque 在 V8 内部扮演的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/torque-code-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ void TorqueCodeGenerator::EmitInstruction(
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

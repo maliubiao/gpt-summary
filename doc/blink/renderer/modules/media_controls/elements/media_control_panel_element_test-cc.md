@@ -177,15 +177,17 @@ By following these steps, combining code analysis with an understanding of web t
 
 总而言之，`media_control_panel_element_test.cc` 通过模拟各种状态和事件，确保 `MediaControlPanelElement` 能够按照预期工作，为用户提供流畅和可靠的媒体控件体验。它关注的是 C++ 层的逻辑正确性，但其测试的行为直接关联到用户在网页上看到的 HTML 结构、CSS 动画效果以及 JavaScript 驱动的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_controls/elements/media_control_panel_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -302,7 +304,4 @@ TEST_F(MediaControlPanelElementTest, isConnected) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

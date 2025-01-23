@@ -108,12 +108,14 @@ V8 会调用 `NewJSObjectFromMap` 函数，并使用 `object_function` 的初始
 
 总而言之，这个 C++ 代码文件是 V8 引擎实现 JavaScript 语言特性的幕后功臣。它负责对象的创建和内存管理，使得 JavaScript 代码能够在 V8 引擎中高效地运行。虽然 JavaScript 开发者通常不会直接与这些底层的 C++ 代码交互，但理解它们的功能有助于更深入地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/factory.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ECK(IsCallable(*then));
   auto microtask = NewStructInternal<PromiseResolveThenableJobTask>(
       PROMISE_RESOLVE_THENABLE_JOB_TASK_TYPE, AllocationType::kYoung);
@@ -1635,7 +1637,4 @@ Handle<JSObject> Factory::NewJSObjectFromMap(
          js_obj->HasFastStringWrapperElements() ||
          js_obj->HasFastArgumentsElements() ||
          js_obj->
-"""
-
-
 ```

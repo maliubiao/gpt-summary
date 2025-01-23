@@ -128,11 +128,13 @@ By following these steps, you can systematically analyze the C++ code and genera
 
 `instructions.cc` 文件是 V8 引擎中非常核心的一部分，它定义了 Torque 编译器用来将高级的 Torque 代码转化为可以生成高效 C++ 代码的各种基本操作。 理解这个文件中的指令对于深入了解 V8 引擎的内部工作原理以及 JavaScript 的底层实现至关重要。 它展示了高级的 JavaScript 特性是如何在引擎层面被分解和实现的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/instructions.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -941,7 +943,4 @@ bool CallRuntimeInstruction::IsBlockTerminator() const {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

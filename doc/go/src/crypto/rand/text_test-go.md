@@ -139,7 +139,7 @@ go test
 
 这段代码是 `crypto/rand` 包中 `Text()` 函数的测试用例。它验证了 `Text()` 函数生成指定长度（26）且字符来自 Base32 字符集的随机字符串，并测试了其随机性和字符分布的均匀性。使用者在使用 `rand.Text()` 时需要注意，虽然重复概率较低，但并非绝对唯一。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/rand/text_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -147,8 +147,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -220,9 +222,4 @@ func indexSetTable(t *testing.T, indexSet [26]map[rune]int) {
 		t.Log(line)
 	}
 }
-
-"""
-
-
-
 ```

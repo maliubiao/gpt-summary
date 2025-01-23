@@ -128,7 +128,7 @@ By focusing on these aspects, I can create a comprehensive answer that addresses
 
 通过在 JavaScript 代码中插入断点或者使用浏览器的开发者工具，开发者可以逐步执行代码，观察这些 `getParameter` 方法的返回值，从而定位问题。如果怀疑是 Blink 引擎的实现问题，他们可能会深入到 Blink 的源代码中，查看 `webgl_rendering_context_base.cc` 文件中这些方法的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_rendering_context_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ter
     GL_GREEN_BITS,                        // GetIntParameter
     GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS,  // GetIntParameter
@@ -896,7 +898,4 @@ ScriptValue WebGLRenderingContextBase::getUniform(
     StringBuilder name_builder;
     for (GLint index = 0; index < size; ++index) {
       name_
-"""
-
-
 ```

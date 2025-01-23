@@ -143,7 +143,7 @@ Potential usage errors include providing incorrect buffer sizes or types in "pul
 
 通过查看 JavaScript 代码中 `ReadableStream` 的创建和读取操作，可以追踪到这里 C++ 代码的执行路径。调试时，可以在 C++ 代码中设置断点，观察 `ReadableByteStreamController` 的状态变化以及各个方法的调用顺序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/streams/readable_byte_stream_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 yBufferView>(nullptr);
   // 4. Set controller.[[byobRequest]] to null.
   controller->byob_request_ = nullptr;
@@ -871,7 +873,4 @@ void ReadableByteStreamController::RespondInternal(
       controller->controlled_readable_stream_->state_;
   // 5. If state is "closed",
   if (state == Readable
-"""
-
-
 ```

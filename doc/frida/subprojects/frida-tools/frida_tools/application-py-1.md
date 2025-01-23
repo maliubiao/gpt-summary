@@ -231,7 +231,7 @@ By following this structured approach, breaking down the code into manageable ch
 
 总而言之，这段代码是 Frida 工具接收用户指令、理解用户意图并为后续的动态 instrumentation 过程做准备的关键组成部分。它处理了用户输入的各种形式的目标标识和配置信息，使得 Frida 能够准确地找到并操作目标进程或应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/frida_tools/application.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -240,8 +240,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 "utf-8") as f:
                 new_arg_text = f.read()
         else:
@@ -332,8 +334,4 @@ def parse_aux_option(option: str) -> Tuple[str, Union[str, bool, int]]:
         value = int(raw_value)
 
     return (name, value)
-
-"""
-
-
 ```

@@ -85,12 +85,14 @@ add("hello", "world"); // 假设优化后的代码只针对数字做了优化
 
 总而言之，这部分代码是 V8 引擎中处理代码优化、反优化以及不同执行模式切换的关键组成部分，它保证了 JavaScript 代码在各种情况下的正确执行，并尽可能地提高性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/mips64/builtins-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 alling convention. Callers use
   // EnterExitFrame/LeaveExitFrame so they handle stack restoring and we don't
   // have to do that here. Any caller must drop kCArgsSlotsSize stack space
@@ -612,8 +614,4 @@ void Builtins::Generate_RestartFrameTrampoline(MacroAssembler* masm) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
-
 ```

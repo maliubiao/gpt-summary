@@ -195,7 +195,7 @@ custom_target('check_my_objects',
 
 通过理解 `check_object.py` 的功能和它在构建流程中的位置，开发者可以更有针对性地排查构建问题。 例如，如果构建失败，并且错误信息指向 `check_object.py` 报告某个 `.o` 文件不存在，那么调试的重点就应该放在生成这个 `.o` 文件的编译步骤上，而不是 `check_object.py` 本身。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/216 custom target input extracted objects/check_object.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -222,7 +224,4 @@ if __name__ == '__main__':
             sys.exit(1)
     with open(sys.argv[2], 'wb') as out:
         pass
-
-"""
-
 ```

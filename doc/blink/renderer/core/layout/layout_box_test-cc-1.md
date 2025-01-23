@@ -141,15 +141,17 @@ The primary goal of these tests is to ensure the accuracy and correctness of the
 
 总而言之，这部分测试用例深入地验证了 `LayoutBox` 类在处理各种布局场景时的几何计算和失效机制，确保了 Blink 渲染引擎能够正确地渲染网页内容。这些测试覆盖了 HTML 结构、CSS 样式以及它们在不同书写模式下的组合效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_box_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dation::kYes);
   EXPECT_FALSE(obj->ShouldDoFullPaintInvalidation());
   EXPECT_EQ(obj->PaintInvalidationReasonForPrePaint(),
@@ -935,7 +937,4 @@ TEST_F(LayoutBoxTest, GeometriesWithScrollbarsScrollable) {
   scrollable_area = rtl_vrl->GetScrollableArea();
   EXPECT_EQ(PhysicalOffset(), rtl_vrl->ScrolledContentOffset());
   EXPECT_EQ(gfx::Vector2d(), rtl_vr
-"""
-
-
 ```

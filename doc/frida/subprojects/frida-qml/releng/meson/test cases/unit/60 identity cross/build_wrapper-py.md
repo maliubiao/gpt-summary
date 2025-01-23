@@ -159,7 +159,7 @@ g++ -DEXTERNAL_BUILD -c my_code.cpp -o my_code.o -std=c++11
 
 `build_wrapper.py` 是 Frida 构建系统中的一个小而重要的工具，它封装了底层的编译器调用，并允许 Frida 的构建系统在执行编译命令前添加一些预设的配置（例如定义宏）。虽然用户通常不会直接与之交互，但理解它的功能对于理解 Frida 的构建过程以及调试相关的编译问题至关重要，尤其是在进行涉及外部代码编译或交叉编译的场景下。它与逆向工程的关系在于它参与了构建用于插桩和分析目标程序的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/60 identity cross/build_wrapper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import subprocess, sys, platform
@@ -180,7 +182,4 @@ else:
     cc = 'cc'
 
 subprocess.call([cc, "-DEXTERNAL_BUILD"] + sys.argv[1:])
-
-"""
-
 ```

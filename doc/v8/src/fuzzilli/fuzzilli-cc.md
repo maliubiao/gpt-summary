@@ -154,15 +154,17 @@ fuzzilli("FUZZILLI_CRASH", 3);
 
 `v8/src/fuzzilli/fuzzilli.cc` 是 Fuzzilli 与 V8 引擎交互的关键桥梁。它通过 V8 的扩展机制，允许 Fuzzilli 在 JavaScript 环境中触发各种预定义的崩溃场景和接收反馈信息，从而有效地测试 V8 引擎的健壮性和安全性。 该文件本身是用 C++ 编写的，并非 Torque 代码。 它模拟的崩溃场景直接反映了用户在编程中容易犯的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/fuzzilli/fuzzilli.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/fuzzilli/fuzzilli.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -298,7 +300,4 @@ void FuzzilliExtension::Fuzzilli(const FunctionCallbackInfo<Value>& info) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

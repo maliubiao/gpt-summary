@@ -355,7 +355,7 @@ except Exception as e:
 
 请注意，分析内核接口通常需要 root 权限或者在模拟器环境下进行。并且需要一定的逆向工程知识来理解数据结构的具体含义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/surface_aggregator/cdev.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -366,8 +366,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -431,7 +433,4 @@ struct ssam_cdev_event {
 #define SSAM_CDEV_EVENT_ENABLE _IOW(0xA5, 4, struct ssam_cdev_event_desc)
 #define SSAM_CDEV_EVENT_DISABLE _IOW(0xA5, 5, struct ssam_cdev_event_desc)
 #endif
-
-"""
-
 ```

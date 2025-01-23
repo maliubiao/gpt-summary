@@ -140,15 +140,17 @@ By following this structured analysis, connecting the code to relevant web techn
 
 总而言之，`DraggedIsolatedFileSystem` 是 Chromium Blink 引擎中处理安全拖拽文件操作的关键组件，它在幕后工作，确保网页可以在受限的环境下访问用户拖拽的文件，从而保护用户安全和隐私。它与 JavaScript, HTML, CSS 通过浏览器提供的拖拽 API 进行间接的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/clipboard/dragged_isolated_file_system.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ void DraggedIsolatedFileSystem::PrepareForDataObject(DataObject* data_object) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

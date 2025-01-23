@@ -122,13 +122,15 @@ function caller() {
 
 总而言之，这部分 C++ 代码的核心目标是提升 JavaScript 代码中常见的操作（如属性访问、模块/全局变量访问、特定内置函数调用等）的执行效率，通过在 Maglev 图构建阶段进行优化，减少运行时开销。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共9部分，请归纳一下它的功能
+```
 
-"""
- feedback.name(), access_info, access_mode);
+### 源代码
+```
+feedback.name(), access_info, access_mode);
     } else {
       result = TryBuildPropertyLoad(receiver, lookup_start_object,
                                     feedback.name(), access_info);
@@ -1810,7 +1812,4 @@ ReduceResult MaglevGraphBuilder::TryReduceArrayIteratorPrototypeNext(
   MaglevSubGraphBuilder subgraph(this, 2);
   MaglevSubGraphBuilder::Variable is_done(0);
   MaglevSubGraphBuilder::Variable ret_value(1)
-"""
-
-
 ```

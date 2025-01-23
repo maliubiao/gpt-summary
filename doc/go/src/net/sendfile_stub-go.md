@@ -154,7 +154,7 @@ Sent 13 bytes
 
 总而言之，`go/src/net/sendfile_stub.go` 提供了一个在不支持 `sendfile` 的操作系统上的默认行为，保证了 `net` 包 API 的一致性，但也意味着在这些平台上无法享受到 `sendfile` 带来的性能优势。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/sendfile_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -162,8 +162,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -179,9 +181,4 @@ const supportsSendfile = false
 func sendFile(c *netFD, r io.Reader) (n int64, err error, handled bool) {
 	return 0, nil, false
 }
-
-"""
-
-
-
 ```

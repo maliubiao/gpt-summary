@@ -166,7 +166,7 @@ __ TruncateJSPrimitiveToUntagged(
 
 这部分 `graph-builder.cc` 代码主要负责将与 **类型检查、类型转换和部分内存访问** 相关的 IR 节点转换为 Turboshaft 图中的具体操作。它确保了在编译过程中，能够正确地处理 JavaScript 的动态类型，并在必要时插入运行时类型检查和转换，或者在类型假设不成立时触发反优化。 这部分是 Turboshaft 编译器理解和执行 JavaScript 代码语义的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -174,8 +174,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rOpcode::kObjectIsSafeInteger:
       return __ ObjectIsNumericValue(Map(node->InputAt(0)),
                                      NumericKind::kSafeInteger,
@@ -857,8 +859,5 @@ rOpcode::kObjectIsSafeInteger:
     }
     case IrOpcode::kStoreToObject: {
       Node* object = node->InputAt(0);
-      Node* offset = 
-"""
-
-
+      Node* offset =
 ```

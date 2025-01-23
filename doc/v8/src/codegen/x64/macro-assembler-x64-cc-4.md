@@ -740,7 +740,7 @@ int MacroAssembler::CallCFunction(ExternalReference function, int num_arguments,
 int MacroAssembler::CallCFunction(Register function, int num_arguments,
                                   SetIsolateDataSlots set_isolate_data_slots,
                                   
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/macro-assembler-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/x64/macro-assembler-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -748,8 +748,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eason::kOperandIsASmiAndNotAFunction);
   Push(object);
   LoadMap(object, object);
@@ -1646,7 +1648,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
   // Allocate HandleScope in callee-saved registers.
   // We will need to restore the HandleScope after the call to the API function,
   /
-"""
-
-
 ```

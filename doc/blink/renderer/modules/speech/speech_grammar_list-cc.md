@@ -196,15 +196,17 @@ CSS 负责网页的样式，与 `SpeechGrammarList` 的功能没有直接关系�
 
 总而言之，`speech_grammar_list.cc` 文件是 Blink 引擎中实现语音识别语法列表管理的关键组件，它与 JavaScript 的 Web Speech API 紧密相连，负责存储和管理语音识别器使用的语法信息。理解这个文件的功能有助于理解浏览器如何处理语音识别的语法配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/speech/speech_grammar_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -270,7 +272,4 @@ void SpeechGrammarList::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -105,14 +105,16 @@ Let's break down the thought process for analyzing this C++ code and answering t
 
 总而言之，`character_property_data_generator.cc` 是 Blink 引擎构建过程中的一个关键环节，它生成的数据是正确渲染各种语言文本的基础。对这个文件的修改需要非常谨慎，因为它直接影响到网页的视觉呈现和文本处理的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/character_property_data_generator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -588,7 +590,4 @@ int main(int argc, char** argv) {
 
   return 0;
 }
-
-"""
-
 ```

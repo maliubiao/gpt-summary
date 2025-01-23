@@ -143,7 +143,7 @@ This part of the `document.cc` file lays the groundwork for the `Document` class
 
 In summary, this initial part of `blink/renderer/core/dom/document.cc` is crucial for setting up the fundamental representation of a web document within the Blink engine, making it a cornerstone for all subsequent DOM manipulation, styling, and scripting interactions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -707,7 +709,4 @@ static inline bool IsValidNamePart(UChar32 c) {
     return false;
 
   return true
-"""
-
-
 ```

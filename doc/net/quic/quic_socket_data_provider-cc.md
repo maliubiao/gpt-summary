@@ -146,15 +146,17 @@ data_provider.AddWrite("write_packet", std::move(write_packet), net::OK);
 
 总而言之，`QuicSocketDataProvider` 是一个强大的测试工具，它允许 Chromium 的开发人员在没有真实网络的情况下，对 QUIC 协议的各个方面进行细致的测试和调试。通过预定义期望和模拟网络行为，它可以帮助发现和修复 QUIC 实现中的潜在问题，从而确保 Chromium 浏览器能够稳定可靠地使用 QUIC 协议进行网络通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_socket_data_provider.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -568,7 +570,4 @@ std::string QuicSocketDataProvider::ExpectationList(
 }
 
 }  // namespace net::test
-
-"""
-
 ```

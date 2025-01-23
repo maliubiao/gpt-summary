@@ -144,7 +144,7 @@ This part of the code primarily deals with generating the `XCBuildConfiguration`
 
 This third part of the `xcodebackend.py` script is responsible for the crucial task of generating the **detailed build configurations** for each target in the Xcode project. It translates the high-level build definitions from Meson into the specific settings that Xcode uses to compile and link the project. This includes setting compiler flags, linker flags, include paths, dependency information, and output paths for different build types (Debug, Release). It ensures that Xcode knows how to build each component of the Frida project correctly.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/backend/xcodebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ldPhase')
             phase_dict.add_item('buildActionMask', 2147483647)
             file_arr = PbxArray()
@@ -598,8 +600,4 @@ ldPhase')
 
     def generate_suffix(self, pbxdict: PbxDict) -> None:
         pbxdict.add_item('rootObject', self.project_uid, 'Project object')
-
-"""
-
-
 ```

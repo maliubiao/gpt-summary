@@ -120,7 +120,7 @@ Initially, I might have focused solely on the Python code and thought it had lit
 
 总而言之，虽然 `genh.py` 脚本本身功能简单，但它在 Frida 这样的复杂动态 instrumentation 工具的构建和测试流程中扮演着一个小但重要的角色，用于生成特定的头文件以满足测试或模拟的需求。用户通常不会直接与之交互，而是通过构建系统间接触发其执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/95 custominc/easytogrepfor/genh.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -137,7 +139,4 @@ import sys
 f = open(sys.argv[1], 'w')
 f.write('#define RETURN_VALUE 0')
 f.close()
-
-"""
-
 ```

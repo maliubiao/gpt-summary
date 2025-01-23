@@ -115,14 +115,16 @@ memory/blink/FontCache/ShapeResultCache:
 
 `font_cache_memory_dump_provider.cc` 是 Blink 渲染引擎中一个关键的组成部分，它负责提供字体缓存的内存使用情况报告。虽然它本身不直接涉及 JavaScript, HTML 或 CSS 的语法，但它提供的功能对于理解和优化网页性能，特别是字体相关的性能至关重要。开发者可以通过分析这些内存转储数据，来识别潜在的字体资源使用问题，并采取相应的优化措施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_cache_memory_dump_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -152,7 +154,4 @@ bool FontCacheMemoryDumpProvider::OnMemoryDump(
 }
 
 }  // namespace blink
-
-"""
-
 ```

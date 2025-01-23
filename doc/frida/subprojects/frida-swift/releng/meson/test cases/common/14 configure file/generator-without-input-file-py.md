@@ -140,7 +140,7 @@ By following these steps, I can systematically analyze the Python script, unders
 
 总而言之，`generator-without-input-file.py` 是 Frida 构建过程中的一个小工具，用于生成一个简单的配置文件。它的存在体现了构建系统在管理项目配置和确保代码一致性方面的重要性。理解它的功能可以帮助开发者更好地理解 Frida 的构建流程，并在遇到相关问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/14 configure file/generator-without-input-file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -164,7 +166,4 @@ outputf = Path(sys.argv[1])
 
 with outputf.open('w') as ofile:
     ofile.write("#define ZERO_RESULT 0\n")
-
-"""
-
 ```

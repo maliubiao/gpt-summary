@@ -54,7 +54,7 @@ Response:
 6. **函数返回**：`__x64_sys_open`执行完毕，触发`kretprobe`，记录返回值（文件描述符或错误码）。
 7. **栈验证**：检查调用栈是否匹配预期链式调用（如`a→b→c`），决定是否输出数据。
 8. **用户态展示**：通过`perf_event`输出数据，用户工具解析显示路径、返回值及上下文。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/ksnoop.bpf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -63,8 +63,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* SPDX-License-Identifier: (LGPL-2.1 OR BSD-2-Clause) */
 /* Copyright (c) 2021, Oracle and/or its affiliates. */
 
@@ -525,7 +527,4 @@ int BPF_KRETPROBE(kprobe_return)
 }
 
 char _license[] SEC("license") = "Dual BSD/GPL";
-
-"""
-
 ```

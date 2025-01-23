@@ -92,7 +92,7 @@ Here's my plan:
 
 总而言之，`check_pseudo_has_argument_context_test.cc` 文件的第二部分（连同第一部分）是 Blink 渲染引擎中用于确保 `:has()` 伪类功能正确性和健壮性的重要组成部分。它通过大量的测试用例覆盖了各种可能的 DOM 结构和选择器组合，帮助开发者验证和修复与 `:has()` 相关的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/check_pseudo_has_argument_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -100,8 +100,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 :has(~ .a .b)",
                              {{"div5", /* depth */ 0}});
 
@@ -497,8 +499,4 @@ TEST_F(CheckPseudoHasArgumentContextTest, TestTraversalIteratorCase11) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

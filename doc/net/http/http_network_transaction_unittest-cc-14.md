@@ -117,7 +117,7 @@ fetch('https://server/kids/login.aspx', {
 
 这部分测试用例主要集中在 **`HttpNetworkTransaction` 类处理 NTLM 身份验证的各种场景**，包括成功的身份验证、错误密码的重试、以及在 HTTP/2 和 WebSocket 协议下遇到 NTLM 时的回退机制。它确保了 Chromium 的网络栈能够正确地与需要 NTLM 身份验证的服务器进行交互，即使在面对错误或协议限制时也能做出合理的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -125,9 +125,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第15部分，共34部分，请归纳一下它的功能
+```
 
-"""
- "Host: server\r\n"
+### 源代码
+```cpp
+"Host: server\r\n"
                 "Connection: keep-alive\r\n"
                 "Authorization: NTLM "),
       MockWrite(negotiate_msg.c_str()),
@@ -935,7 +937,4 @@ TEST_P(HttpNetworkTransactionTest, NTLMOverHttp2WithWebsockets) {
   EXPECT_TRUE(HostPortPair::FromURL(initial_request_info.url)
                   .Equals(HostPortPair::FromURL(websocket_request_info.url)));
   websocket_request_info.extra_headers.SetHeader("O
-"""
-
-
 ```

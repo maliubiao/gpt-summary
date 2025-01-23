@@ -150,11 +150,13 @@ function bar(y) {
 
 `jump-threading.cc` 中实现的跳转线程化优化是 V8 引擎为了提升 JavaScript 执行效率而进行的一项重要工作。它通过分析和优化代码的控制流，减少不必要的跳转指令，使得 JavaScript 代码在底层执行时更加高效。虽然开发者无法直接控制这项优化，但编写清晰、简洁的 JavaScript 代码有助于编译器更好地进行这类优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/jump-threading.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -482,7 +484,4 @@ void JumpThreading::ApplyForwarding(Zone* local_zone,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

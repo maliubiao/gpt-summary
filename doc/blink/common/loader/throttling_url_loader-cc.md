@@ -157,14 +157,16 @@ X-Custom-Version: 1.0
 
 总而言之，`throttling_url_loader.cc` 中实现的 `ThrottlingURLLoader` 提供了一个强大的机制来在网络请求的不同阶段插入自定义的逻辑，这对于实现各种功能（例如安全策略、性能优化、实验性特性等）非常有用。然而，不当的使用 throttle 也可能导致各种问题，因此需要谨慎地设计和实现 throttle 的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/loader/throttling_url_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1218,7 +1220,4 @@ ThrottlingURLLoader::ThrottleEntry& ThrottlingURLLoader::ThrottleEntry::
 operator=(ThrottleEntry&& other) = default;
 
 }  // namespace blink
-
-"""
-
 ```

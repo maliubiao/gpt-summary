@@ -151,15 +151,17 @@ During the thought process, I might initially focus too much on the technical de
 
 通过查看调用堆栈，可以追踪到 `BucketFileSystemBuilder::BuildDirectoryTree` 是从哪个 DevTools 模块或内部服务调用的。这可以帮助理解用户操作与代码执行之间的关系。例如，可能涉及到 `FileSystemStorageAgent` 或其他负责在 DevTools 中展示文件系统信息的模块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/file_system_access/bucket_file_system_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -354,7 +356,4 @@ void BucketFileSystemBuilder::OnMojoDisconnect() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

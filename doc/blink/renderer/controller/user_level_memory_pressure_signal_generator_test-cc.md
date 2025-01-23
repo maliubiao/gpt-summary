@@ -120,15 +120,17 @@ By following these steps, combining close reading with an understanding of web d
 
 总而言之，`user_level_memory_pressure_signal_generator_test.cc` 这个测试文件验证了 `UserLevelMemoryPressureSignalGenerator` 在各种场景下的行为，确保它能够根据用户状态和时间正确地生成内存压力信号，从而帮助浏览器更有效地管理内存资源，提升用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/controller/user_level_memory_pressure_signal_generator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -669,7 +671,4 @@ TEST_F(UserLevelMemoryPressureSignalGeneratorTest,
 }
 
 }  // namespace blink::user_level_memory_pressure_signal_generator_test
-
-"""
-
 ```

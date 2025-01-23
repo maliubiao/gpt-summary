@@ -129,15 +129,17 @@ try {
 
 `v8/src/heap/trusted-range.h` 定义了 `TrustedRange` 类，它是 V8 引擎在启用沙箱时用于管理受信任内存区域的关键组件。它负责内存预留，管理进程级别的单例实例，并在沙箱环境下提供额外的安全保障，防止恶意代码破坏关键的堆数据。虽然 JavaScript 开发者不直接使用这个类，但它的存在对于 V8 的安全性和稳定性至关重要，并间接地影响着 JavaScript 代码的执行环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/trusted-range.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/trusted-range.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ class TrustedRange final : public VirtualMemoryCage {
 }  // namespace v8
 
 #endif  // V8_HEAP_TRUSTED_RANGE_H_
-
-"""
-
 ```

@@ -133,7 +133,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 虽然 `func7.c` 代码极其简单，但将其放在 Frida 的测试框架背景下，可以用来演示和验证静态链接功能，并作为逆向工程和动态分析学习的入门示例。  开发者或研究者可能会出于调试 Frida 自身、理解测试策略或学习逆向技术的目的来查看这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/66 static link/lib/func7.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,13 +141,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func7()
 {
   return 1;
 }
-
-"""
-
 ```

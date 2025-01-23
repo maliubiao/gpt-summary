@@ -217,14 +217,16 @@ document.querySelector('.box').style.backgroundColor = 'blue';
 
 总而言之，`paint_controller_debug_data.cc` 是 Blink 渲染引擎中一个非常重要的调试工具，它可以帮助开发者深入了解页面的绘画过程，诊断各种渲染相关的问题。理解其功能和输出对于进行高级 Web 开发和浏览器引擎研究非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_controller_debug_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -363,7 +365,4 @@ void PaintController::ShowDebugDataWithPaintRecords() const {
 }  // namespace blink
 
 #endif  // DCHECK_IS_ON()
-
-"""
-
 ```

@@ -217,15 +217,17 @@ This systematic approach, starting with the file's metadata and then dissecting 
 
 总而言之，`v8/test/cctest/test-js-arm64-variables.cc` 是 V8 引擎在 ARM64 架构上测试 JavaScript 变量处理逻辑的关键组成部分，确保了引擎在不同场景下对变量的正确管理和访问。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-js-arm64-variables.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-js-arm64-variables.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -347,7 +349,4 @@ TEST(lookup_slots) {
 }  // namespace test_js_arm64_variables
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

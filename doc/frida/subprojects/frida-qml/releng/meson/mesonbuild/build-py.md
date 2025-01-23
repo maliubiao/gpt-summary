@@ -151,7 +151,7 @@ By following these steps, I could generate a comprehensive answer that addresses
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/build.py` 的第一部分主要负责定义 Meson 构建系统用于描述和管理软件构建过程的核心数据结构和类。它为后续的构建步骤（如代码编译、链接、安装）提供了必要的信息和框架。它涉及到操作系统底层概念、编译器和链接器的知识，并且其结构设计直接影响着用户如何配置和构建软件项目。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -1014,7 +1016,4 @@ class BuildTarget(Target):
         self.all_compilers = compilers
         self.compilers: OrderedDict[str, Compiler] = OrderedDict()
         s
-"""
-
-
 ```

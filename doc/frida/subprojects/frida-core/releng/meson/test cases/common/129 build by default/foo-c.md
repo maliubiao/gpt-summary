@@ -193,7 +193,7 @@ Essentially, `foo.c` exists as a fundamental building block for testing and veri
 
 通过这些步骤，用户可以逐步了解 Frida 如何附加到进程、如何找到目标函数、以及如何拦截和分析函数调用。 `foo.c` 作为一个简单的例子，可以帮助用户快速上手 Frida 的基本功能，并为调试更复杂的程序打下基础。  文件路径 `frida/subprojects/frida-core/releng/meson/test cases/common/129 build by default/foo.c` 表明这个 `foo.c` 很可能是 Frida 官方测试套件的一部分，用于验证 Frida 的某些核心功能是否正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/129 build by default/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -201,15 +201,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("Existentialism.\n");
     return 0;
 }
-
-"""
-
 ```

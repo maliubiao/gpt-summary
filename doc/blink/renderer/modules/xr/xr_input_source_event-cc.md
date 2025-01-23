@@ -147,15 +147,17 @@ Here's a breakdown of the thought process to analyze the provided C++ code snipp
 
 `XRInputSourceEvent.cc` 中定义的 `XRInputSourceEvent` 类是 WebXR API 中至关重要的组成部分，它在 Blink 引擎内部充当着桥梁的角色，将底层 VR/AR 平台的输入事件传递到 JavaScript 环境，使得 Web 开发者能够构建与虚拟世界进行交互的沉浸式体验。理解其功能和与 Web 技术的关系，对于开发和调试 WebXR 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_input_source_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ void XRInputSourceEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

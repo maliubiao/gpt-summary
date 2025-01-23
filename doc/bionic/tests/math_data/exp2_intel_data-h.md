@@ -242,7 +242,7 @@ libm.so:
 
 总结来说，`bionic/tests/math_data/exp2_intel_data.handroid` 是一个重要的测试数据文件，用于保证 Android 系统中 `exp2` 函数的正确性和精度，它在 Android 的开发和测试流程中扮演着关键角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/exp2_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -253,8 +253,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1597,7 +1599,4 @@ static data_1_1_t<double, double> g_exp2_intel_data[] = {
     -0x1.0p1
   }
 };
-
-"""
-
 ```

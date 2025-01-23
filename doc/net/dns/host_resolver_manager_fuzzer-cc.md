@@ -174,15 +174,17 @@ fetch('https://example.com')
 
 因此，虽然用户不会直接操作这个 fuzzer，但这个 fuzzer 发现的任何问题都可能最终影响到用户的浏览体验。开发人员可以使用 fuzzer 报告的错误信息（例如，导致崩溃的输入数据、代码路径等）来定位和修复 `HostResolverManager` 中的 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -490,7 +492,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
   return 0;
 }
-
-"""
-
 ```

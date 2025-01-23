@@ -183,15 +183,17 @@ go build -tags=cmd_go_bootstrap myproject.go
 
 `telemetrystats_bootstrap.go` 的主要功能是在 `cmd/go` 命令的引导构建阶段提供一个空的 `Increment` 函数，作为遥测统计功能的占位符。这利用了 Go 语言的构建标签功能，允许在不同的构建环境下选择性地编译代码。 一般的 Go 开发者不需要直接关注或修改这段代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/telemetrystats/telemetrystats_bootstrap.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -201,9 +203,4 @@ Prompt:
 package telemetrystats
 
 func Increment() {}
-
-"""
-
-
-
 ```

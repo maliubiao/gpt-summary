@@ -101,14 +101,16 @@ Response: Let's break down the thought process for analyzing the provided C++ co
 
 总之，`frame_visual_properties.cc` 文件定义了一些关键的配置参数，用于优化浏览器处理 frame 移动和用户输入的方式，特别是在涉及动画或动态定位的 `<iframe>` 时。理解这些配置有助于开发者更好地构建流畅且响应迅速的网页，并帮助用户理解在某些情况下页面交互可能存在的延迟或无响应现象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/frame/frame_visual_properties.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ int FrameVisualProperties::MinScreenRectStableTimeMsForIOv2() {
   return s_legacy_min_screen_rect_stable_time_ms;
 }
 }  // namespace blink
-
-"""
-
 ```

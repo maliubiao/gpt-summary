@@ -82,7 +82,7 @@ Let's break down the provided test cases:
 
 总而言之，这部分单元测试深入探讨了在 Chromium 网络栈中，当需要解析主机名并获取服务端口信息时，`HostResolverServiceEndpointRequest` 如何处理并发请求、取消操作以及与旧式 DNS 解析机制的互操作，并验证了请求优先级机制的正确性。理解这些测试用例有助于开发者更好地理解 Chromium 网络栈的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_service_endpoint_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -90,9 +90,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- 443)))));
+### 源代码
+```cpp
+443)))));
 }
 
 TEST_F(HostResolverServiceEndpointRequestTest,
@@ -403,8 +405,4 @@ TEST_F(HostResolverServiceEndpointRequestTest, ChangePriorityBeforeStart) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

@@ -177,14 +177,16 @@ font_unique_name = "Calibri-Bold"
 
 总而言之，`font_unique_name_lookup_win.cc` 在 Chromium 中扮演着关键的角色，它连接了网页对字体的需求和 Windows 操作系统提供的字体资源，确保了网页能够正确地显示文本。理解它的功能有助于理解浏览器如何处理字体加载和渲染，并能帮助开发者避免与字体相关的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/win/font_unique_name_lookup_win.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ void FontUniqueNameLookupWin::Init() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

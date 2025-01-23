@@ -146,7 +146,7 @@ Here's a breakdown of the thought process to generate the summary:
 
 总而言之，这段测试代码覆盖了 `LinkLoader` 类的核心功能，即处理各种 `<link>` 标签的 `rel` 属性，从而优化页面资源的加载和连接过程，提升用户体验。它关注了预连接、预加载、预取以及压缩字典等关键的性能优化技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/link_loader_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 est the cases with a single header
   for (const auto& test_case : cases) {
     auto dummy_page_holder =
@@ -349,8 +351,4 @@ TEST_P(DictionaryLoadFromHeaderTest, LoadDictionaryFromHeader) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

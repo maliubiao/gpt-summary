@@ -132,11 +132,13 @@ console.log(decoded); // 输出: { message: 'Hello', value: 123 }
 
 `v8/src/inspector/string-util.cc` 文件提供了一系列底层的字符串和二进制数据处理工具，这些工具对于 V8 的 inspector 模块至关重要，它负责在 V8 引擎和 Chrome DevTools 之间高效、正确地传递各种类型的数据，从而支撑起强大的 JavaScript 调试功能。它通过 Base64 编码/解码处理二进制数据，通过多种字符串转换函数适配不同的字符串表示，并使用 CBOR 优化了数据传输的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/string-util.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -444,7 +446,4 @@ void ProtocolTypeTraits<Binary>::Serialize(const Binary& value,
 }
 
 }  // namespace v8_crdtp
-
-"""
-
 ```

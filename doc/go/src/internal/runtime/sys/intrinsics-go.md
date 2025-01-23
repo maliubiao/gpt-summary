@@ -302,7 +302,7 @@ func main() {
 
 总结来说，`go/src/internal/runtime/sys/intrinsics.go` 文件定义了一些底层的、平台相关的内在函数，用于支持 Go 运行时的各种核心功能，例如位操作优化、字节序转换、缓存预取以及获取调用栈和闭包信息。普通 Go 开发者通常不需要直接使用这些函数，但了解它们有助于理解 Go 语言的底层实现机制。对于 `GetCallerSP` 和 `GetClosurePtr` 这类函数，由于其底层性和对运行时状态的依赖，使用者需要格外小心，避免不当使用导致程序错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/sys/intrinsics.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -310,8 +310,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -568,9 +570,4 @@ func GetCallerSP() uintptr
 // these functions, which is in
 // cmd/compile/internal/devirtualize/pgo.maybeDevirtualizeFunctionCall.
 func GetClosurePtr() uintptr
-
-"""
-
-
-
 ```

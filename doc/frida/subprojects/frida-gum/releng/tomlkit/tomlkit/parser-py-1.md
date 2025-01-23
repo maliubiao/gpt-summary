@@ -122,7 +122,7 @@ port = 8080
 
 总而言之，`frida/subprojects/frida-gum/releng/tomlkit/tomlkit/parser.py` 代码片段的核心功能是**解析 TOML 格式的配置文件，特别是处理表和数组表结构**。它通过一系列方法，例如 `_parse_table`、`_peek_table` 和 `_parse_aot`，来识别和解析 TOML 文件中的不同元素，并提供错误处理机制。 这对于 Frida 动态插桩工具来说至关重要，因为它允许 Frida 理解和操作目标进程使用的 TOML 配置文件，从而实现更深入的分析和控制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/tomlkit/parser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,9 +131,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    if is_aot and i == len(name_parts) - 2:
+### 源代码
+```python
+if is_aot and i == len(name_parts) - 2:
                     table.raw_append(_name, AoT([child], name=table.name, parsed=True))
                 else:
                     table.raw_append(_name, child)
@@ -285,8 +287,4 @@ Prompt:
                     value = None
 
             return value, extracted
-
-"""
-
-
 ```

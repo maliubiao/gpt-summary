@@ -134,7 +134,7 @@ Now, I need to organize these functionalities into a concise summary, addressing
 
 第二部分主要负责 **请求代理解析** 的核心逻辑，包括处理异步请求、管理 PAC 脚本的生命周期、处理错误和回退、维护坏的代理列表以及响应网络状态变化。它与第一部分共同完成了代理配置的获取、解析和应用，为 Chromium 的网络请求提供了关键的代理决策能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/configured_proxy_resolution_service.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 proxy,
     const NetworkTrafficAnnotationTag& traffic_annotation) {
   ProxyConfig proxy_config;
@@ -807,8 +809,4 @@ void ConfiguredProxyResolutionService::OnDNSChanged() {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

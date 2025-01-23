@@ -122,7 +122,7 @@ Here's a breakdown of the thinking process used to analyze the Python script:
 
 如果在这个过程中出现问题，例如生成的 C 代码编译失败，或者 Hook 没有生效，用户可能会重新检查 `converter.py` 的输入和输出，确保生成的 C 代码是正确的。这也解释了为什么需要理解 `converter.py` 的功能和可能出现的错误，以便进行调试。 例如，如果 Hook 没有生效，用户可能会怀疑是不是函数名写错了，然后会回到查看 `input.txt` 的内容，或者检查 `output.c` 中生成的函数名是否与预期一致。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/182 find override/subdir/converter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -147,7 +149,4 @@ ftempl = '''int %s(void) {
 d = pathlib.Path(ifilename).read_text().split('\n')[0].strip()
 
 pathlib.Path(ofilename).write_text(ftempl % d)
-
-"""
-
 ```

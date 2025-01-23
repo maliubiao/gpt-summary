@@ -89,7 +89,7 @@ The user wants a summary of the functionality of the provided Python code. This 
 
 这部分代码扩展了 `frida` 构建系统中链接器的支持，为更多特定的编译器定义了动态链接器类，这些类封装了与特定链接器交互所需的命令和参数，使得 `frida` 的构建过程能够适配不同的编译环境。它详细描述了各种链接器在处理输出、搜索路径、共享库、调试信息等方面的具体行为，是 `frida` 构建系统能够正确生成可执行文件和共享库的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/linkers/linkers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 hineChoice,
                  *, version: str = 'unknown version'):
         super().__init__(['rlink.exe'], for_machine, '', [],
@@ -771,8 +773,4 @@ class MetrowerksLinkerARM(MetrowerksLinker):
 
 class MetrowerksLinkerEmbeddedPowerPC(MetrowerksLinker):
     id = 'mwldeppc'
-
-"""
-
-
 ```

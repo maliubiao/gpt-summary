@@ -158,7 +158,7 @@ Java.perform(function() {
 
 这个代码片段（Entry 716 到文件末尾）的功能是 **为 Android bionic 库中的 `atan` 函数提供大量的测试数据**。这些数据以浮点数对的形式存在，用于验证 `atan` 函数在各种输入情况下的计算结果是否正确。  这部分数据延续了之前部分的功能，只是涵盖了不同的输入值范围。它并不涉及动态链接器的功能，而是 bionic 库内部测试的一部分，旨在保证数学函数的准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atan_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -170,8 +170,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 },
   { // Entry 716
     0x1.b6add448714dcb8a52cd35a987330f71p-1,
@@ -1624,7 +1626,4 @@ Prompt:
   { // Entry 1078
     -0x1.f5b75f92c80df448f9ad5c0a0d45f554p-3,
     -0x1.000
-"""
-
-
 ```

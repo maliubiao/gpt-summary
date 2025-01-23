@@ -154,7 +154,7 @@ Here's a breakdown of the thinking process to analyze the C code and fulfill the
 
 总而言之，`srcgen.c` 是 Frida 项目测试基础设施的一部分，用于辅助构建和验证 Frida 的功能，特别是涉及到二进制数据处理的方面。开发者通常会通过 Frida 的构建和测试流程来接触到这个文件，而不是直接手动操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/native/3 pipeline/src/srcgen.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<assert.h>
 
@@ -204,7 +206,4 @@ int main(int argc, char **argv) {
     fclose(ofile);
     return 0;
 }
-
-"""
-
 ```

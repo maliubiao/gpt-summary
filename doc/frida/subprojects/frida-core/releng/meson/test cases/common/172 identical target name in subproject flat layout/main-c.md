@@ -123,7 +123,7 @@ This detailed breakdown covers all aspects of the request, moving from a simple 
 
 总而言之，这个 `main.c` 文件是一个构建系统测试用例，用于确保 Frida 的构建流程在处理复杂场景时能够正确工作，从而间接地保障了 Frida 动态插桩功能的可靠性。最终用户不会直接操作这个文件，但它的存在对于 Frida 的质量保证至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/172 identical target name in subproject flat layout/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int meson_test_main_foo(void);
@@ -149,7 +151,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

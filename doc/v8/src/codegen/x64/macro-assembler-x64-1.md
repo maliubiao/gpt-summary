@@ -145,12 +145,14 @@ console.log(obj.x); // 输出 5
 
 这部分 `macro-assembler-x64.cc` 代码是 V8 引擎将 JavaScript 代码转化为高效机器码的关键组成部分。它提供了对 x64 架构特性的抽象，使得编译器能够生成优化的代码，特别是针对 SIMD 运算、整数处理和对象操作等方面。这些底层的 C++ 函数支撑着 JavaScript 语言的各种功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/macro-assembler-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 mp1, lhs, uint8_t{32});
   vpmuludq(tmp1, tmp1, rhs);
   // 2. Multiply high dword of each qword of right with left.
@@ -2060,7 +2062,4 @@ void MacroAssembler::AssertFunction(Register object) {
   ASM_CODE_COMMENT(this);
   testb(object, Immediate(kSmiTagMask));
   Check(not_equal, AbortR
-"""
-
-
 ```

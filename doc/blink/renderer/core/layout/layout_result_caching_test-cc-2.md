@@ -94,15 +94,17 @@ I need to analyze each test case individually to understand what scenario it's t
 
 作为第三部分，这段代码专注于测试布局结果缓存在更复杂的布局场景下的行为，特别是涉及表格结构变化、多列布局中元素偏移和尺寸变化以及新的格式化上下文等情况。 通过这些测试，可以验证 Blink 引擎的布局缓存机制在面对各种复杂的页面结构和样式时，是否能够正确地命中缓存或在必要时进行重新布局，从而保证渲染的效率和正确性。 总体而言，这部分延续了对布局缓存机制的细致和全面的测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_result_caching_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 "test"));
   auto* src = To<LayoutBlock>(GetLayoutObjectByElementId("src"));
 
@@ -512,8 +514,4 @@ TEST_F(LayoutResultCachingTest, MissGridIncorrectIntrinsicSize) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

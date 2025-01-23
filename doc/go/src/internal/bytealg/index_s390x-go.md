@@ -157,7 +157,7 @@ func main() {
 
 总而言之，`go/src/internal/bytealg/index_s390x.go` 是 Go 语言为了在 s390x 架构上优化字节切片查找操作而实现的一个内部组件。它利用了 s390x 的向量扩展指令，并采用了一种混合策略来提高查找效率。普通 Go 开发者无需直接使用这个包，应该通过 `bytes` 和 `strings` 标准库来进行字节和字符串操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/bytealg/index_s390x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -165,8 +165,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -198,9 +200,4 @@ func Cutover(n int) int {
 	// 1 error per 8 characters, plus a few slop to start.
 	return (n + 16) / 8
 }
-
-"""
-
-
-
 ```

@@ -276,15 +276,17 @@ func main() {
 
 在这个错误的示例中，开发者假设字节序始终是小端 (`binary.LittleEndian`)，如果 `example.o` 实际上是大端序的 ELF 文件，那么读取出的 `symNameOffset` 和 `symValue` 将是错误的。正确的做法是从 ELF 头部获取字节序信息并使用相应的 `binary.BigEndian` 或 `binary.LittleEndian`。标准库的 `debug/elf` 包已经处理了这些细节，通常更推荐使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/loadelf/ldelf.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1471,9 +1473,4 @@ func cstring(x []byte) string {
 	}
 	return string(x)
 }
-
-"""
-
-
-
 ```

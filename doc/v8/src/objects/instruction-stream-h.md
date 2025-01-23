@@ -139,15 +139,17 @@ static constexpr int SizeFor(int body_size) {
 
 `v8/src/objects/instruction-stream.h` 定义了 V8 引擎中至关重要的 `InstructionStream` 类，用于存储和管理生成的机器码指令流。理解其结构和功能有助于深入了解 V8 的编译和执行过程。虽然开发者通常不会直接操作这个类，但了解其背后的原理可以帮助更好地理解 V8 的性能特性和内存管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/instruction-stream.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/instruction-stream.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -350,7 +352,4 @@ class InstructionStream : public TrustedObject {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_INSTRUCTION_STREAM_H_
-
-"""
-
 ```

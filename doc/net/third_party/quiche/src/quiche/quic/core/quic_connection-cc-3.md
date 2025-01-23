@@ -168,7 +168,7 @@ By following these steps, I can construct a comprehensive and accurate answer th
 
 这段代码主要负责 **QUIC 连接的接收处理和状态管理**。 它处理接收到的 UDP 数据包，进行解密、验证和解析，并更新连接的统计信息。同时，它也负责管理数据发送的准备工作，包括检查连接状态、处理写阻塞等。 此外，连接ID的管理和路径的管理也是这部分代码的重要职责，确保在网络环境变化时连接能够保持稳定。  可以将其视为 QUIC 连接的核心数据包接收和初步发送管理的枢纽。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 id QuicConnection::OnStreamReset(QuicStreamId id,
                                    QuicRstStreamErrorCode error) {
   if (error == QUIC_STREAM_NO_ERROR) {
@@ -1000,7 +1002,4 @@ QuicTime QuicConnection::CalculatePacketSentTime() {
 
   // Release before |now| is impossible.
   QuicTime next
-"""
-
-
 ```

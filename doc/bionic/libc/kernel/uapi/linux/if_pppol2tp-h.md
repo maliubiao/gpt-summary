@@ -280,7 +280,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，并在 Android 设备上建立 PPPoL2TP VPN 连接，你可以在 Frida 控制台上观察到 Android 系统调用 `setsockopt` 函数来设置 PPPoL2TP 相关选项的过程，从而验证 `if_pppol2tp.h` 中定义的常量是如何被使用的。  你需要根据你的 Android 版本查找 `SOL_PPPOL2TP` 常量的值，因为它可能不是固定的。 你可以使用 `grep SOL_PPPOL2TP /usr/include/linux/sockios.h` (在 Linux 开发环境中) 或在 Android 源码中查找。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_pppol2tp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -291,8 +291,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -347,7 +349,4 @@ enum {
   PPPOL2TP_MSG_DATA = L2TP_MSG_DATA,
 };
 #endif
-
-"""
-
 ```

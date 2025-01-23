@@ -152,7 +152,7 @@ Here's a breakdown of its functionality:
 
 In essence, `winenv.py` is a crucial component for Frida's functionality on Windows, ensuring that Frida can locate and utilize the necessary development tools to perform its dynamic instrumentation tasks effectively. When encountering errors related to compilation, linking, or missing dependencies during Frida usage on Windows, this file is a prime candidate for investigation.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/winenv.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import json
 from operator import attrgetter
 import os
@@ -302,7 +304,4 @@ def detect_msvs_library_path(machine: MachineSpec,
 
 class MissingDependencyError(Exception):
     pass
-
-"""
-
 ```

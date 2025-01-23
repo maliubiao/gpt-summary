@@ -152,15 +152,17 @@ fetch('https://www.example.com/data')
 
 通过查看 `QuicSpdyServerStreamBaseTest.cc` 的测试用例，开发者可以更好地理解在哪些情况下服务器会认为请求无效并重置流。例如，如果用户报告某些网站在 Chrome 上无法加载，但在其他浏览器上可以，并且怀疑是 QUIC 相关的问题，那么查看这个测试文件可以帮助理解 Chrome 的 QUIC 实现对 HTTP 头部的严格要求，并可能找到导致问题的根本原因。  可能是某些网站的服务器发送的头部信息不符合 Chrome 的预期，而 `QuicSpdyServerStreamBaseTest.cc` 正好测试了这些预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_server_stream_base_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -537,7 +539,4 @@ TEST_F(QuicSpdyServerStreamBaseTest, EmptyHeaders) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

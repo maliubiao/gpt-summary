@@ -136,14 +136,16 @@ This test file helps to prevent common errors when working with shared memory an
 
 In summary, `performance_scenarios_unittest.cc` plays a vital role in ensuring the reliability and correctness of the Blink engine's performance tracking mechanisms, which ultimately contribute to a smoother and more responsive web browsing experience for users. It helps developers avoid common pitfalls when working with shared memory and concurrent access to performance-related data.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/performance/performance_scenarios_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ TEST(PerformanceScenariosTest, SharedAtomicRef) {
 }  // namespace
 
 }  // namespace blink::performance_scenarios
-
-"""
-
 ```

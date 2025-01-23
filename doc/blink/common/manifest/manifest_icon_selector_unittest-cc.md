@@ -194,14 +194,16 @@ This test file implicitly highlights common mistakes developers might make when 
 
 In summary, `manifest_icon_selector_unittest.cc` plays a crucial role in ensuring the robustness and correctness of the icon selection logic in Chromium. It directly relates to how web app icons are handled and displayed, impacting the user experience and visual presentation of web applications. By testing various scenarios and edge cases, it helps prevent common developer errors and ensures that the best possible icon is chosen based on the specified criteria.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/manifest/manifest_icon_selector_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -762,7 +764,4 @@ INSTANTIATE_TEST_SUITE_P(All,
                          ::testing::Bool());
 
 }  // namespace blink
-
-"""
-
 ```

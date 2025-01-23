@@ -191,7 +191,7 @@ By following these steps, I was able to generate a comprehensive explanation of 
 
 这段代码是 `net/quic/quic_chromium_client_session.cc` 文件的一部分，主要负责 `QuicChromiumClientSession` 类的**构造、初始化和析构**。它定义了 QUIC 客户端会话的创建过程，接收各种配置参数，创建必要的子对象（如数据包读取器、加密流、日志记录器），并负责在会话结束时清理资源和记录统计信息。它还包含了处理 HTTP/3 GOAWAY 帧和 Accept-CH/Origin 帧的逻辑。虽然不直接与 JavaScript 交互，但它是浏览器网络栈中处理 QUIC 连接的关键组件，为 JavaScript 发起的网络请求提供底层的传输支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_chromium_client_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ssion_alias_key,
     bool require_confirmation,
     bool migrate_session_early_v2,
@@ -1062,8 +1064,5 @@ void QuicChromiumClientSession::OnConnectionClosed(
 
   UMA_HISTOGRAM_COUNTS_1000("Net.QuicSession.NumDefaultPathDegrading",
                             connection()->GetStats().num_path_degrading);
-  if (connection()->GetStats().num_path_degrading > 0) 
-"""
-
-
+  if (connection()->GetStats().num_path_degrading > 0)
 ```

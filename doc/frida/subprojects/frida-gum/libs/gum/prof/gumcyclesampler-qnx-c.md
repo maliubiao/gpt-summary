@@ -114,7 +114,7 @@ Here's how a user might encounter this specific file as a debugging lead:
 
 In summary, `gumcyclesampler-qnx.c` is a crucial component of Frida on QNX, providing the low-level mechanism for measuring CPU cycles, a valuable technique for reverse engineering, performance analysis, and understanding the behavior of software at a fine-grained level. Its implementation relies on QNX-specific system calls and interacts directly with hardware performance counters.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/libs/gum/prof/gumcyclesampler-qnx.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015-2018 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -187,7 +189,4 @@ gum_cycle_sampler_sample (GumSampler * sampler)
 {
   return ClockCycles ();
 }
-
-"""
-
 ```

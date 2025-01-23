@@ -174,7 +174,7 @@ func main() {
 
 总而言之，`NoEscape` 和 `Escape` 是非常底层的工具，需要对 Go 语言的内存模型和逃逸分析有深入的理解才能正确使用。尤其是 `NoEscape`，使用不当会引入严重的内存安全风险。在绝大多数情况下，开发者应该依赖 Go 编译器的自动逃逸分析，而不是手动干预。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/abi/escape.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -182,8 +182,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -217,9 +219,4 @@ func Escape[T any](x T) T {
 	}
 	return x
 }
-
-"""
-
-
-
 ```

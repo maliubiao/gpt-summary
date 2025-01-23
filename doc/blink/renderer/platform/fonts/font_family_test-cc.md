@@ -184,14 +184,16 @@ Let's break down the thought process for analyzing the given C++ test file.
 
 `blink/renderer/platform/fonts/font_family_test.cc` 是一个重要的单元测试文件，它确保了 Blink 引擎中 `FontFamily` 类能够正确地表示和转换为字符串形式的字体族列表。这对于浏览器正确解析和应用 CSS `font-family` 属性至关重要，从而保证网页文本的正常渲染。该测试覆盖了多种场景，包括空列表、单个字体族和链式结构的多个字体族，并通过断言来验证 `ToString()` 方法的正确性。理解这个测试文件有助于开发者更好地理解 Blink 引擎内部的字体处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_family_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -226,7 +228,4 @@ TEST(FontFamilyTest, ToString) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

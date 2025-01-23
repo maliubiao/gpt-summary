@@ -141,7 +141,7 @@ By following this thought process, including contextual understanding, breaking 
 
 因此，这个文件路径和简单的代码很可能是 Frida 项目中用于测试 Java instrumentation 功能的一个最小化的示例。它可以帮助验证 Frida 是否能够成功地附加到 Java 进程，并执行基本的 hook 操作。 调试时，如果 Frida 在更复杂的 Java 应用中出现问题，可以先在这个简单的测试用例上进行验证，排除 Frida 本身的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/java/3 args/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class Simple {
@@ -158,7 +160,4 @@ class Simple {
         System.out.println("Java is working.\n");
     }
 }
-
-"""
-
 ```

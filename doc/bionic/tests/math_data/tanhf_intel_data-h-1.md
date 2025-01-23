@@ -45,7 +45,7 @@ The user is asking for a summary of the functionality of the provided code snipp
 
 由于这是第二部分，我们可以推断第一部分很可能包含了这个数据数组的声明和可能的头部注释。  整个文件的目的是为了进行**单元测试**或**回归测试**，保证 `tanhf` 函数的稳定性和准确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/tanhf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -57,8 +57,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 2cp-3
   },
   { // Entry 379
@@ -802,8 +804,4 @@ Prompt:
     -0.0f
   }
 };
-
-"""
-
-
 ```

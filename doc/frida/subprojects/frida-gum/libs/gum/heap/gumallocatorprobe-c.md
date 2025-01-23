@@ -148,7 +148,7 @@ By following this structured approach, moving from the general purpose to specif
 
 总而言之，`gumallocatorprobe.c` 是 Frida 中一个强大且基础的组件，它为动态内存分析提供了必要的底层支持，并与其他 Frida 模块协同工作，帮助逆向工程师理解程序的内存行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/libs/gum/heap/gumallocatorprobe.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2021 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2008 Christian Berentsen <jc.berentsen@gmail.com>
@@ -1012,7 +1014,4 @@ decide_ignore_from_block_type (ThreadContext * thread_ctx,
 {
   thread_ctx->ignored = (block_type != GUM_DBGCRT_NORMAL_BLOCK);
 }
-
-"""
-
 ```

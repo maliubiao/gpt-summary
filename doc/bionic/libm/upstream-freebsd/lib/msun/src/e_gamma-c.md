@@ -277,7 +277,7 @@ libm.so:
 
 总而言之，`e_gamma.c` 文件虽然简单，但它是 Android 系统中数学运算的重要组成部分，通过 NDK 和 Android Framework 的层层调用，最终实现了伽玛函数对数的计算功能。理解其功能和背后的动态链接机制，对于进行 Native 开发和底层调试非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_gamma.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -287,9 +287,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -318,7 +319,4 @@ gamma(double x)
 {
 	return gamma_r(x,&signgam);
 }
-
-"""
-
 ```

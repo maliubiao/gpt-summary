@@ -198,7 +198,7 @@ This code defines various types of "targets" within the Meson build system. Targ
 
 This Python code defines the data structures and logic for representing different types of build targets within the Meson build system, specifically tailored for the Frida project. It includes targets for running commands, creating aliases, building JAR files (important for Frida's Android components), managing custom build steps, handling configuration data, and managing the installation of files and symbolic links. It also includes structures for test setup and functions for managing build data persistence. These components are fundamental for orchestrating the complex build process of a dynamic instrumentation tool like Frida, which involves compiling native code, building Java components, and packaging everything for different target platforms. The code handles the dependencies between different build steps and provides a structured way to define and execute the build process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,9 +207,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
- = 'run'
+### 源代码
+```python
+= 'run'
 
     def __init__(self, name: str,
                  command: T.Sequence[T.Union[str, File, BuildTargetTypes, programs.ExternalProgram]],
@@ -509,8 +511,4 @@ def save(obj: Build, filename: str) -> None:
             pickle.dump(obj, f)
     finally:
         obj.environment.coredata = cdata
-
-"""
-
-
 ```

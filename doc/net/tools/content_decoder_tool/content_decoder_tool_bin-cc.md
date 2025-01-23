@@ -159,15 +159,17 @@ Let's break down the thought process for analyzing this C++ code snippet and ans
 
 这个工具在排查网络传输中的内容编码问题时非常有用，能够帮助开发者验证服务器返回的压缩数据是否正确，以及浏览器是否能够正确解码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/content_decoder_tool/content_decoder_tool_bin.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ int main(int argc, char* argv[]) {
   return !net::ContentDecoderToolProcessInput(content_encodings, &std::cin,
                                               &std::cout);
 }
-
-"""
-
 ```

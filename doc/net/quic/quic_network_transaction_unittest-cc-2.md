@@ -75,7 +75,7 @@ The code snippet mainly contains various test cases for `QuicNetworkTransaction`
 
 这部分代码主要集中在 `QuicNetworkTransaction` 的各种错误处理和特定场景处理的测试上，包括处理过大的响应头、处理包含多个 `Location` 头的重定向、处理特定的 HTTP 错误码、以及在强制使用 QUIC 但连接失败时的行为。此外，还测试了通过 QUIC 代理进行连接和使用备用服务的能力，以及当备用服务版本不受支持时的处理。 总之，这部分测试旨在确保 `QuicNetworkTransaction` 在各种异常和特殊情况下都能按照预期工作，保证 QUIC 连接的健壮性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -83,9 +83,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共13部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```cpp
+{
   context_.params()->origins_to_force_quic_on.insert(
       HostPortPair::FromString("mail.example.org:443"));
 
@@ -850,7 +852,4 @@ TEST_P(QuicNetworkTransactionTest, UseAlternativeServiceForQuic) {
 
 TEST_P(QuicNetworkTransactionTest, UseIetfAlternativeServiceForQuic) {
   if (vers
-"""
-
-
 ```

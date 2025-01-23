@@ -158,15 +158,17 @@ let w = null;
 
 总而言之，`v8/src/objects/tagged-value-inl.h` 定义了 V8 内部表示 JavaScript 值的关键结构，并提供了指针压缩的抽象。理解这些内部机制有助于更好地理解 JavaScript 的性能特征和潜在的编程陷阱。如果它是 `.tq` 文件，则会包含更高级别的定义，并通过 Torque 编译生成这里的 C++ 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/tagged-value-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/tagged-value-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ Tagged<MaybeObject> TaggedValue::ToMaybeObject(Isolate* isolate,
 }  // namespace v8
 
 #endif  // V8_OBJECTS_TAGGED_VALUE_INL_H_
-
-"""
-
 ```

@@ -91,11 +91,13 @@ console.log(stringRepresentation); // 输出: "[object WebAssembly.Module]"
 
 `builtins-abstract-module-source.cc` 文件负责实现 JavaScript 中与 "Abstract Module Source" 相关的 `@@toStringTag` 行为。 目前，它主要针对 WebAssembly 模块进行了特殊处理，使其在调用 `Object.prototype.toString()` 时返回 `"[object WebAssembly.Module]"`。  对于通用的 "Abstract Module Source"，相关的 Host Hook 逻辑还在开发中。 这段 C++ 代码是 V8 引擎内部实现 JavaScript 语言特性的一个例子。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-abstract-module-source.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -136,7 +138,4 @@ BUILTIN(AbstractModuleSourceToStringTag) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

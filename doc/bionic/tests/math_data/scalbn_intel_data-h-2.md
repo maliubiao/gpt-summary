@@ -45,7 +45,7 @@ Therefore, the core functionality of this file is to provide a set of test cases
 
 `bionic/tests/math_data/scalbn_intel_data.handroid` 文件是 Android Bionic 库中一个关键的测试资源，它通过提供大量预定义的测试用例，用于验证 `scalbn` 函数在 Intel 架构上的正确性，确保 Android 平台的数学计算功能的可靠性。  它本身不执行任何计算或逻辑，而是作为测试框架的输入数据存在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/scalbn_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -57,8 +57,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ffffep-1023,
     (int)119
   },
@@ -398,8 +400,4 @@ ffffep-1023,
     (int)-40000
   }
 };
-
-"""
-
-
 ```

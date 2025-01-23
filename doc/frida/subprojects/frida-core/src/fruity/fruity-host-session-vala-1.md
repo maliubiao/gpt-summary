@@ -103,7 +103,7 @@ if process:
 ### 总结
 
 该文件是Frida工具中与iOS设备交互的核心部分，主要负责会话管理、库文件注入、调试会话管理等功能。通过LLDB调试器和底层系统调用，Frida能够实现对目标进程的动态插桩和调试。用户在使用过程中需要注意会话ID的有效性、连接的稳定性以及库文件的兼容性，以避免常见的错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/fruity-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 _error (e);
 			}
 			var local_session_id = AgentSessionId.generate ();
@@ -1296,7 +1298,4 @@ _error (e);
 					}
 
 					if (val.is_
-"""
-
-
 ```

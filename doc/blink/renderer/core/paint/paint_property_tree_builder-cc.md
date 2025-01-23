@@ -140,7 +140,7 @@ TransformPaintPropertyNode {
 
 代码的第 1 部分主要定义了 `PaintPropertyTreeBuilderFragmentContext` 和 `VisualViewportPaintPropertyTreeBuilder` 类，并初步展示了 `PaintPropertyTreeBuilder` 和 `FragmentPaintPropertyTreeBuilder` 的结构和部分核心功能。其主要职责是为渲染过程准备必要的上下文信息，并处理视口相关的渲染属性更新。 核心目标是开始构建用于组织和优化页面元素渲染属性的树形结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_property_tree_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -916,7 +918,4 @@ void FragmentPaintPropertyTreeBuilder::UpdateStickyTranslation() {
         bool scroll_container_scrolls =
             scroll_container_properties &&
             scroll_container_properties->Scroll() == context_.c
-"""
-
-
 ```

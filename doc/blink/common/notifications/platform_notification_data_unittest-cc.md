@@ -169,14 +169,16 @@ assigned_notification_data.vibration_pattern == {100, 50, 100}
 
 总而言之，`platform_notification_data_unittest.cc` 这个文件专注于确保 `PlatformNotificationData` 对象在赋值操作时的完整性和正确性，这对于保障从 JavaScript 传递到操作系统的信息的准确性至关重要，从而确保用户能够正常接收和与通知进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/notifications/platform_notification_data_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -277,7 +279,4 @@ TEST(PlatformNotificationDataTest, AssignmentOperator) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

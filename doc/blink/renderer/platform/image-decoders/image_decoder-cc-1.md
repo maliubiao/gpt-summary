@@ -267,15 +267,17 @@ bool ImageDecoder::CanReusePreviousFrameBuffer(wtf_size_t) const {
 
 总而言之，这部分 `ImageDecoder` 的代码专注于图像解码过程中的关键步骤，特别是处理图像的元数据（EXIF）和颜色信息（颜色配置文件），以确保图像能在浏览器中正确且一致地显示。它与前端技术通过浏览器渲染引擎的内部机制紧密相连。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/image_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 () if that size overflows
   DCHECK_EQ(frame_memory_usage / decoded_bytes_per_pixel,
             DecodedSize().Area64());
@@ -532,8 +534,4 @@ bool ImageDecoder::CanReusePreviousFrameBuffer(wtf_size_t) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

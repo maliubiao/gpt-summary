@@ -252,7 +252,7 @@ This systematic approach, combining keyword recognition, deductive reasoning, an
 
 总而言之，这段代码是 Go 运行时与 Windows 操作系统交互的核心，它提供了将 Go 代码集成到 Windows 环境的关键机制，包括调用 Windows API 和处理来自 Windows 的回调。理解这段代码对于进行底层的 Windows 系统编程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/syscall_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -260,8 +260,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -789,9 +791,4 @@ func syscall_syscalln(fn, n uintptr, args ...uintptr) (r1, r2, err uintptr) {
 	c = &getg().m.winsyscall
 	return c.r1, c.r2, c.err
 }
-
-"""
-
-
-
 ```

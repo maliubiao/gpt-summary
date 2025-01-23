@@ -120,15 +120,17 @@ By following these steps, I aimed to provide a thorough and helpful answer that 
 
 总而言之，`MediaControlPanelEnclosureElement` 在 Chromium Blink 引擎中扮演着媒体控制面板容器的关键角色，它通过提供一个带有特定 CSS 伪元素的 `<div>` 元素，使得浏览器能够组织和样式化默认的媒体控制组件。了解它的功能有助于开发者理解媒体控制面板的渲染机制，并在调试相关问题时提供有用的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media_controls/elements/media_control_panel_enclosure_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -146,7 +148,4 @@ MediaControlPanelEnclosureElement::MediaControlPanelEnclosureElement(
 }
 
 }  // namespace blink
-
-"""
-
 ```

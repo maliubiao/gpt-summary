@@ -180,15 +180,17 @@ By following this iterative process of understanding, breaking down, connecting,
 
 总而言之，`blink/renderer/core/css/media_list.cc` 是 Blink 引擎中处理 CSS 媒体查询的关键部分，它连接了 CSS 样式、HTML 结构以及 JavaScript 的动态操作，确保样式能够根据不同的设备和环境正确应用。当开发者遇到与媒体查询相关的 bug 或需要深入理解其工作原理时，这个文件是重要的调试入口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/media_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999-2003 Lars Knoll (knoll@kde.org)
  * Copyright (C) 2004, 2006, 2010, 2012 Apple Inc. All rights reserved.
@@ -444,7 +446,4 @@ void MediaList::NotifyMutation() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

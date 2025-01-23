@@ -135,7 +135,7 @@ This iterative process of scanning, deconstructing, relating, identifying, infer
 
 总而言之，`device-monitor-windows.c` 是 Frida 在 Windows 平台上进行设备发现和监控的核心模块，它利用了 Windows 提供的设备管理和网络 API，为 Frida 的动态 instrumentation 功能提供了基础。理解这个文件的功能和实现细节，有助于理解 Frida 的工作原理，并能帮助定位设备连接和发现过程中出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/device-monitor-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-core.h"
 
 #include "../windows/icon-helpers.h"
@@ -722,7 +724,4 @@ frida_try_get_dns_api (void)
 
   return GSIZE_TO_POINTER (api_value - 1);
 }
-
-"""
-
 ```

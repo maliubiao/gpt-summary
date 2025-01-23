@@ -215,7 +215,7 @@ if (Process.arch === 'arm64') {
 
 总而言之，`bionic/libc/kernel/uapi/asm-arm64/asm/mman.handroid` 文件虽然很小，但它定义了 Android 在 ARM64 架构上进行内存管理的关键常量，这些常量直接影响着系统的安全性和稳定性，并被 libc 函数和动态链接器在内存管理操作中使用。理解这个文件有助于深入理解 Android 的底层内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/mman.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -226,8 +226,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -244,7 +246,4 @@ Prompt:
 #undef PKEY_ACCESS_MASK
 #define PKEY_ACCESS_MASK (PKEY_DISABLE_ACCESS | PKEY_DISABLE_WRITE | PKEY_DISABLE_READ | PKEY_DISABLE_EXECUTE)
 #endif
-
-"""
-
 ```

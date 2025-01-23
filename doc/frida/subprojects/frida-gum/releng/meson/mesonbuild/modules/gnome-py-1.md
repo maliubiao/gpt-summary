@@ -153,7 +153,7 @@ By following these steps, a comprehensive analysis of the code snippet can be pe
 
 这部分 `gnome.py` 文件的主要功能是 **自动化生成和编译 GObject Introspection (GIR) 文件和类型库**。它通过调用 `g-ir-scanner` 和 `g-ir-compiler` 工具，并根据构建目标和依赖项的配置，生成必要的构建任务。这对于需要利用 GObject Introspection 进行自省的工具和库非常重要，例如 Frida 自身就需要利用这些信息进行动态分析和代码注入。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 self._gir_has_option('--extra-library'):
             def fix_ldflags(ldflags: T.Iterable[T.Union[str, T.Tuple[str, str]]]) -> OrderedSet[T.Union[str, T.Tuple[str, str]]]:
                 fixed_ldflags: OrderedSet[T.Union[str, T.Tuple[str, str]]] = OrderedSet()
@@ -788,8 +790,4 @@ self._gir_has_option('--extra-library'):
                         m_file = mesonlib.File.from_source_file(state.environment.source_dir, l_subdir, m)
                     except MesonException:
                         m_file = media_files[i]
-             
-"""
-
-
 ```

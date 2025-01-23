@@ -156,7 +156,7 @@ int my_test_function(void) {
 
 总而言之，`genheader.py` 是一个简单的代码生成工具，用于在 Frida 的开发和测试过程中创建基本的 C 头文件。虽然它本身不直接参与逆向操作，但它生成的代码可以作为 Frida 进行动态 instrumentation 的基础或测试目标。理解这个脚本的功能有助于理解 Frida 的构建流程以及它如何利用 C 代码进行底层操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/169 source in dep/generated/genheader.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -183,7 +185,4 @@ int %s(void) {
 funname = open(ifile).readline().strip()
 
 open(ofile, 'w').write(templ % funname)
-
-"""
-
 ```

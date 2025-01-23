@@ -141,7 +141,7 @@ let overflowUint = largeFloat >>> 0; // 结果可能不符合预期
 
 作为整个代码生成器的一部分，这段代码主要负责处理 V8 IR 指令集中的 **算术运算、类型转换、内存访问、原子操作和栈操作** 等核心功能。 它针对 LoongArch 64 位架构的特性，将这些高级指令翻译成可以直接在该架构上执行的汇编代码。  这段代码是 V8 将 JavaScript 代码高效地编译为 LoongArch 机器码的关键组成部分。它体现了编译器后端的重要职责：指令选择和代码生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/code-generator-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/loong64/code-generator-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -149,9 +149,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-     __ movfcsr2gr(output2, FCSR2);
+### 源代码
+```cpp
+__ movfcsr2gr(output2, FCSR2);
         // Check for overflow and NaNs.
         __ And(output2, output2,
                kFCSROverflowCauseMask | kFCSRInvalidOpCauseMask);
@@ -963,8 +965,4 @@ void CodeGenerator::AssembleArchTableSwitch(Instruction* instr) {
   Register scratch = temps.Acquire();
   // The input register may contains dirty data in upper 32 bits, explicitly
   // sign-extend it here.
- 
-"""
-
-
 ```

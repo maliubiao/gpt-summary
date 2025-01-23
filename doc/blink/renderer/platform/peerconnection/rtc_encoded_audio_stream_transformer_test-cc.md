@@ -166,14 +166,16 @@ Let's break down the thought process for analyzing the given C++ test file.
 
 总之，`rtc_encoded_audio_stream_transformer_test.cc` 通过一系列单元测试，详细验证了 `RTCEncodedAudioStreamTransformer` 类的核心功能，确保其在 WebRTC 音频流处理流程中的正确性和可靠性。虽然它本身不直接与前端技术交互，但它为 WebRTC 在浏览器中的实现提供了关键的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_encoded_audio_stream_transformer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -301,7 +303,4 @@ TEST_F(RTCEncodedAudioStreamTransformerTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

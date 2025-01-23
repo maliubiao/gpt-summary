@@ -212,11 +212,13 @@ moveExample();
 
 `builtins-async-disposable-stack.cc` 文件是 V8 引擎中实现 JavaScript `AsyncDisposableStack` 功能的关键部分。它定义了与创建、使用和异步清理资源相关的内置函数，使得 JavaScript 开发者能够更好地管理异步资源的生命周期，避免资源泄漏。 这个特性是 "Explicit Resource Management" 提案的核心组成部分，旨在提供更精细的资源控制能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-async-disposable-stack.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -626,7 +628,4 @@ BUILTIN(AsyncDisposableStackPrototypeMove) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

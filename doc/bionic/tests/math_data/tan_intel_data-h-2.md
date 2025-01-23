@@ -22,7 +22,7 @@ The user is asking for a summary of the functionality of a C source code file. T
 
 这段代码是 Android Bionic 库中用于测试 `tan()` 函数精度的测试数据。它提供了一组预先计算好的输入角度和对应的精确正切值，用于验证 `tan()` 函数的实现是否正确，并确保其在各种输入值下都能产生符合预期的结果。这对于保证 Android 系统底层数学运算的准确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/tan_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -34,8 +34,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 c51cdcbe2p-1,
     0x1.69173f8136c67p-1
   },
@@ -1470,7 +1472,4 @@ c51cdcbe2p-1,
   { // Entry 1078
     -0x1.fffffffffffc69fbbb4dd2f4fc88ffa1p-1,
     -0x1.a
-"""
-
-
 ```

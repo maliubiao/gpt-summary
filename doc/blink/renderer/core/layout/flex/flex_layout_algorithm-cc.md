@@ -234,15 +234,17 @@ By following these steps, we can systematically analyze the code snippet and pro
 
 总而言之，这是 Flexbox 布局计算的起点，它为后续更复杂的尺寸调整和位置计算奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/flex/flex_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1013,7 +1015,4 @@ void FlexLayoutAlgorithm::ConstructAndAppendFlexItems(
           main_size += table_child->ComputeCaptionBlockSize(
               BuildSpaceForIntrinsicBlockSize(*table_child,
                                               max_content_cont
-"""
-
-
 ```

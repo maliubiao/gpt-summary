@@ -244,7 +244,7 @@ if (Process.platform === 'linux') {
 
 `ElfReader::CheckPhdr` 函数是 Android Bionic 动态链接器中的一个关键安全检查点。它验证给定的内存地址是否指向一个有效的、属于已加载内存段的程序头。这有助于防止因访问无效程序头信息而导致的安全漏洞和程序崩溃，确保动态链接过程的稳定性和安全性。它在链接器加载和处理共享库的过程中扮演着重要的验证角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_phdr.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -256,8 +256,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 en trying to access it.
 bool ElfReader::CheckPhdr(ElfW(Addr) loaded) {
   const ElfW(Phdr)* phdr_limit = phdr_table_ + phdr_num_;
@@ -277,8 +279,4 @@ bool ElfReader::CheckPhdr(ElfW(Addr) loaded) {
          name_.c_str(), reinterpret_cast<void*>(loaded));
   return false;
 }
-
-"""
-
-
 ```

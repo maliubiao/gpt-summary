@@ -157,7 +157,7 @@ Interceptor.attach(Module.getExportByName(null, "maain"), { // 注意：函数�
 
 因此，到达 `prog.c` 文件通常是调试 Frida 测试失败过程中的一个步骤，目的是理解测试用例的目标程序，进而理解测试用例本身的目的和失败原因。这个简单的 `prog.c` 在这里扮演的是一个基础的、可控的目标角色，用于测试 Frida 的特定功能（在本例中，可能与文件操作相关的 hook 能力）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/57 subproj filegrab/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,10 +165,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) { return 0; }
-
-"""
-
 ```

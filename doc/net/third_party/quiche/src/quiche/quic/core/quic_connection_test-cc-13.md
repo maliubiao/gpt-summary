@@ -126,7 +126,7 @@ Considering that this is part 14 of 24, this section of the `quic_connection_tes
 
 This part likely builds upon earlier sections that focused on more fundamental aspects of connection setup and packet processing. It delves into the complexities of establishing a secure and reliable QUIC connection, especially in the initial stages where security and network probing are critical.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_connection_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -134,9 +134,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第14部分，共24部分，请归纳一下它的功能
+```
 
-"""
- now packets can be sent.
+### 源代码
+```cpp
+now packets can be sent.
   for (size_t i = 1; i < anti_amplification_factor; ++i) {
     EXPECT_CALL(*send_algorithm_, OnPacketSent(_, _, _, _, _)).Times(1);
     connection_.SendCryptoDataWithString("foo", i * 3);
@@ -888,7 +890,4 @@ TEST_P(QuicConnectionTest, ClientReceivesOriginalConnectionIdWithoutRetry) {
   // parameter fails the handshake when no RETRY packet was received before it.
   QuicConfig received_config;
   QuicConfigPeer::SetNegotiated(&received_confi
-"""
-
-
 ```

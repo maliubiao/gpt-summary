@@ -96,15 +96,17 @@ func main() {
 
 总之，`go/src/cmd/link/internal/arm/l.go` 文件是 Go 语言链接器中针对 ARM 架构的关键组成部分，它定义了影响代码和数据布局的重要常量，并为生成正确的调试信息提供了基础。  虽然开发者通常不需要直接操作这个文件，但理解其背后的概念对于编写高性能和可靠的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/arm/l.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/5l/asm.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/5l/asm.c
 //
@@ -180,9 +182,4 @@ const (
 	dwarfRegSP = 13
 	dwarfRegLR = 14
 )
-
-"""
-
-
-
 ```

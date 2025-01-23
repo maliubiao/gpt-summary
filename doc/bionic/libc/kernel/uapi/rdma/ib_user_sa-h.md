@@ -279,7 +279,7 @@ sys.stdin.read()
 
 `bionic/libc/kernel/uapi/rdma/ib_user_sa.handroid` 是一个定义了 InfiniBand 用户空间服务代理相关数据结构的头文件，用于用户空间程序与内核中的 InfiniBand 驱动进行交互。虽然在典型的移动 Android 设备上不常见，但在某些高性能场景下可能会被使用。用户空间程序通常通过系统调用或 InfiniBand 用户空间库来操作这些数据结构。 Frida 可以用于 hook 相关的库函数，以调试和分析程序与 InfiniBand 驱动的交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/rdma/ib_user_sa.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -290,8 +290,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -337,7 +339,4 @@ struct ib_user_path_rec {
   __u8 preference;
 };
 #endif
-
-"""
-
 ```

@@ -107,7 +107,7 @@ Now, let's address the prompt's specific request for the *second part* of the co
 
 这段代码的核心功能是**负责执行和管理 Frida 测试套件中的单个测试用例，并生成 JUnit XML 格式的测试报告**。它根据不同的测试报告协议 (如 TAP, JUnit) 解析测试结果，处理测试的生命周期，并能应对测试超时和中断等情况。这部分代码是 Frida 测试框架的关键组成部分，确保了 Frida 功能的正确性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/mtest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 (sum(1 for r in test.results if r.result is TestResult.SKIP)),
                 time=str(test.duration),
             )
@@ -893,7 +895,4 @@ class TestHarness:
 
         self.prepare_build()
         self.load_
-"""
-
-
 ```

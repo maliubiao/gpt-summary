@@ -188,15 +188,17 @@ go: GOMODCACHE entry is relative; must be absolute path: "gomodcache".
 
 总而言之，这段代码是 Go 模块缓存的核心实现，负责管理模块在本地的存储、读取和锁定，以提高构建效率和保证模块依赖的一致性。用户通常不需要直接操作这些代码，但理解其功能有助于理解 Go 模块的工作原理和避免一些常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modfetch/cache.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1016,9 +1018,4 @@ func checkCacheDir(ctx context.Context) error {
 	})
 	return statCacheErr
 }
-
-"""
-
-
-
 ```

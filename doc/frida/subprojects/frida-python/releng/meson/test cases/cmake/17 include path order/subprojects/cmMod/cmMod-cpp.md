@@ -201,7 +201,7 @@ Frida 在底层需要与操作系统的进程管理机制交互，例如使用 `
 
 总而言之，虽然 `cmMod.cpp` 本身功能简单，但它在 Frida 的上下文中扮演着测试和示例的角色，可以帮助理解 Frida 的构建过程、Python 绑定以及 C++ 代码的集成。对于逆向工程师来说，理解这样的基础模块有助于更好地利用 Frida 进行更复杂的动态分析和代码注入。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cmake/17 include path order/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -209,8 +209,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -222,7 +224,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

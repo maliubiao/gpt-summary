@@ -160,15 +160,17 @@ Using a pointer (`*Node`) breaks the circular dependency. The `Next` field holds
 
 **In summary, the `issue7525b.go` code snippet is a test case designed to verify that the Go compiler correctly detects and reports errors when encountering self-referential array types within structs. It highlights the requirement for array sizes to be determinable at compile time and serves as a reminder of potential pitfalls when defining recursive data structures.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7525b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2017 The Go Authors. All rights reserved.
@@ -182,9 +184,4 @@ package main
 var y struct { // GC_ERROR "initialization cycle: y refers to itself"
 	d [len(y.d)]int // GCCGO_ERROR "array bound|typechecking loop|invalid array"
 }
-
-"""
-
-
-
 ```

@@ -187,7 +187,7 @@ This part of the `quic_test_packet_maker.cc` file defines the `QuicTestPacketBui
 
 总而言之，`QuicTestPacketBuilder` 虽然不是用户直接操作的代码，但在调试网络连接问题，特别是 QUIC 协议相关的问题时，理解它的功能对于开发者来说至关重要，它可以帮助开发者理解测试用例是如何模拟各种 QUIC 数据包的，从而更好地定位实际代码中的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_test_packet_maker.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 onnectionId();
   header_.source_connection_id_included = quic::CONNECTION_ID_PRESENT;
   header_.reset_flag = false;
@@ -234,8 +236,4 @@ bool QuicTestPacketBuilder::ShouldIncludeVersion() const {
 }
 
 }  // namespace net::test
-
-"""
-
-
 ```

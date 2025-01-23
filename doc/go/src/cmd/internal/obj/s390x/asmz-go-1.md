@@ -99,7 +99,7 @@ prog := &obj.Prog{
 
 这段 `asmz.go` 代码是 Go 语言 s390x 架构后端的核心组成部分，它定义了该架构的指令集，并负责将 Go 汇编代码转换为实际的机器码。它不直接对应用户可见的 Go 语言功能，但它是 Go 语言程序在 s390x 架构上运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/s390x/asmz.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -107,8 +107,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 SS SPACE CONTROL
 	op_IC      uint32 = 0x4300 // FORMAT_RX1        INSERT CHARACTER
 	op_ICM     uint32 = 0xBF00 // FORMAT_RS2        INSERT CHARACTERS UNDER MASK (low)
@@ -1310,10 +1312,4 @@ func (c *ctxtz) asmout(p *obj.Prog, asm *[]byte) {
 			opxy = op_ALG
 		case AADDE:
 			opxy = op_ALCG
-
-"""
-
-
-
-
 ```

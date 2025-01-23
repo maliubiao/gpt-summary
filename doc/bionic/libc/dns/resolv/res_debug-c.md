@@ -71,7 +71,7 @@ This step-by-step approach, starting with broad overviews and then diving into s
 
 在接下来的部分，我们将深入探讨其与 Android 功能的关系，详细解释 libc 函数的实现，以及涉及 dynamic linker 的部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/resolv/res_debug.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -83,8 +83,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: res_debug.c,v 1.13 2012/06/25 22:32:45 abs Exp $	*/
 
 /*
@@ -1300,8 +1302,4 @@ res_nametoclass(const char *buf, int *successp) {
 	result = strtoul(buf + 5, &endptr, 10);
 	if (errno == 0 && *endptr == '\0' && result <= 0xffffU)
 		success = 1;
-
-"""
-
-
 ```

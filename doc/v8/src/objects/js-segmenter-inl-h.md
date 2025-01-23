@@ -210,15 +210,17 @@ inline JSSegmenter::Granularity JSSegmenter::granularity() const {
 
 总而言之，`v8/src/objects/js-segmenter-inl.h` 是 V8 引擎中实现 JavaScript 国际化文本分割功能的核心部分，它利用 ICU 库和 V8 的 Torque 框架来提供高效的文本分割能力。理解这个文件有助于深入了解 V8 引擎的内部工作原理以及 JavaScript 国际化 API 的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-segmenter-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-segmenter-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ inline JSSegmenter::Granularity JSSegmenter::granularity() const {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_SEGMENTER_INL_H_
-
-"""
-
 ```

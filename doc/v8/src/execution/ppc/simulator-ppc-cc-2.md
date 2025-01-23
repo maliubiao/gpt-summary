@@ -215,7 +215,7 @@ if (x < 0) { // 假设本意是 x > 0
 
 这段代码是 `v8/src/execution/ppc/simulator-ppc.cc` 的一部分，负责模拟 PowerPC 架构中**算术运算、逻辑运算、分支控制和基本的内存访问指令**的执行。它是整个 PowerPC 模拟器的核心组成部分，通过解释和执行这些指令，使得 V8 能够在非 PowerPC 平台上运行为 PowerPC 架构编译的 JavaScript 代码。这一部分主要关注各种不同的指令 `case` 分支的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/ppc/simulator-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/ppc/simulator-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -223,8 +223,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t_register(ra);
         if (ra_val < im_val) {
           bf |= 0x80000000;
@@ -1326,7 +1328,4 @@ t_register(ra);
       intptr_t rb_val = get_register(rb);
       intptr_t alu_out = ~(rs_val | rb_val);
       set_register(ra, alu_out
-"""
-
-
 ```

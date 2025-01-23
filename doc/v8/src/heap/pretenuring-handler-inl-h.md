@@ -181,15 +181,17 @@ While developers don't directly interact with the `PretenuringHandler`, certain 
 
 **In summary, `v8/src/heap/pretenuring-handler-inl.h` is a crucial C++ header file defining the core logic for V8's pretenuring mechanism, an optimization that dynamically decides where to allocate objects based on observed allocation patterns to improve garbage collection efficiency. It works transparently to JavaScript developers.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/pretenuring-handler-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/pretenuring-handler-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -339,7 +341,4 @@ Tagged<AllocationMemento> PretenuringHandler::FindAllocationMemento(
 }  // namespace v8::internal
 
 #endif  // V8_HEAP_PRETENURING_HANDLER_INL_H_
-
-"""
-
 ```

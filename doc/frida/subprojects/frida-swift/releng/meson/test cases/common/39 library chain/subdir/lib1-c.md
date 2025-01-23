@@ -157,7 +157,7 @@ collect2: 错误：ld 返回 1
 
 总而言之，`lib1.c` 是一个简单的动态库源代码文件，体现了动态库的基本结构和函数调用关系。理解它的功能和上下文对于逆向分析、调试和理解软件的模块化设计至关重要。而 Frida 这样的动态插桩工具，正是在这样的场景下发挥作用，帮助用户深入理解代码的运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/39 library chain/subdir/lib1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int lib2fun(void);
 int lib3fun(void);
 
@@ -184,7 +186,4 @@ int lib3fun(void);
 int DLL_PUBLIC libfun(void) {
   return lib2fun() + lib3fun();
 }
-
-"""
-
 ```

@@ -185,7 +185,7 @@ func main() {
 
 这段 `mbitmap.go` 代码的核心功能是为 Go 语言的垃圾回收机制提供了 **内存位图管理和指针追踪** 的基础。它定义了不同类型的位图，提供了访问和操作这些位图的方法，并实现了用于遍历对象内部指针的迭代器和写入屏障机制。这些功能共同协作，使得 GC 能够准确地识别和回收不再使用的内存，保证了 Go 程序的内存安全和效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mbitmap.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -194,8 +194,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1146,9 +1148,4 @@ func doubleCheckTypePointersOfType(s *mspan, typ *_type, addr, size uintptr) {
 			tp0, addr0 = tp0.next(addr + size)
 			tp1, addr1 = tp1.next(addr + size)
 			print("runtime: ", hex(addr0), " ", hex(a
-"""
-
-
-
-
 ```

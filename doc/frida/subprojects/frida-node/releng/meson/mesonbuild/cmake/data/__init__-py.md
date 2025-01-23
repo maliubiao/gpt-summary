@@ -108,7 +108,7 @@ By following this structured analysis, considering the context, and carefully ex
 
 虽然 `frida/subprojects/frida-node/releng/meson/mesonbuild/cmake/data/__init__.py` 文件本身功能很简单，只是将目录标记为 Python 包，但它在 `frida-node` 的构建过程中扮演着基础性的角色。它的存在反映了构建系统对项目结构的要求。 真正与逆向方法、底层知识等密切相关的是 Frida 工具本身以及 `frida-node` 提供的 Node.js 绑定。 用户通常不会直接与这个文件交互，但当构建或调试 `frida-node` 时可能会接触到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/cmake/data/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,9 +116,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

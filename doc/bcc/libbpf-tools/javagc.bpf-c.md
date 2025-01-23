@@ -60,7 +60,7 @@ Response:
 - 检查 USDT 探针是否存在：`bpftrace -l 'usdt:/path/to/java:*GC*'`
 - 查看 eBPF 加载状态：`bpftool prog list`
 - 调试输出：在 eBPF 代码中添加 `bpf_printk("GC start: PID=%d", pid)`（需内核 5.2+）。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/javagc.bpf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -69,8 +69,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* SPDX-License-Identifier: (LGPL-2.1 OR BSD-2-Clause) */
 /* Copyright (c) 2022 Chen Tao */
 #include <vmlinux.h>
@@ -151,7 +153,4 @@ int handle_mem_pool_gc_end(struct pt_regs *ctx)
 }
 
 char LICENSE[] SEC("license") = "Dual BSD/GPL";
-
-"""
-
 ```

@@ -209,7 +209,7 @@ func main() {
 
 这部分 `runtime2.go` 代码是 Go 运行时系统的核心组成部分，它定义了用于管理 Goroutine 生命周期、调度、错误处理、内存管理等关键操作的数据结构和常量。理解这些结构有助于深入理解 Go 语言的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/runtime2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -218,8 +218,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 for Ms that have exited.
 	totalRuntimeLockWaitTime atomic.Int64
 }
@@ -657,10 +659,4 @@ func getcallerfp() uintptr {
 	}
 	return fp
 }
-
-"""
-
-
-
-
 ```

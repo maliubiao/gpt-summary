@@ -117,7 +117,7 @@ python gen_generator.py input.txt
 
 总而言之，虽然 `gen_generator.py` 本身功能简单，但在 Frida 这样一个复杂的动态插桩工具的上下文中，它扮演着生成特定测试用例的角色，帮助开发者确保 Frida 能够正确处理各种编译场景，包括使用了预编译头文件的情况。了解这个脚本的功能以及它可能出现的错误，有助于理解 Frida 的测试流程和进行问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/13 pch/generated/gen_generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
@@ -134,7 +136,4 @@ with open(sys.argv[1]) as f:
     content = f.read()
 with open(sys.argv[2], 'w') as f:
     f.write(content)
-
-"""
-
 ```

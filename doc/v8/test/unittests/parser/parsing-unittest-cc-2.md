@@ -127,7 +127,7 @@ a = function() {
 
 这部分 unittests 的核心目标是**详尽地测试 V8 JavaScript 解析器在各种语法规则和约束下的正确性**。 它覆盖了从基本的作用域管理到更高级的语法特性（如数字分隔符、可选链、空值合并运算符和生成器函数），以及严格模式下的各种限制。 这些测试旨在确保解析器能够准确地理解合法的 JavaScript 代码，并能够正确地识别和报告语法错误，从而保证 V8 引擎能够可靠地执行 JavaScript 代码。通过这些细致的测试，可以有效地防止因解析错误而导致的程序崩溃或行为异常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/parsing-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -135,8 +135,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ffixByteLen;
     base::ScopedVector<char> program(kProgramByteSize + 1);
     base::SNPrintF(program, "%s%s%s", source_data[i].outer_prefix,
@@ -982,8 +984,5 @@ TEST_F(ParsingTest, ErrorsNameOfStrictFunction) {
                                    {"\"use strict\"; function * ", ""},
                                    {nullptr, nullptr}};
 
-  const char* 
-"""
-
-
+  const char*
 ```

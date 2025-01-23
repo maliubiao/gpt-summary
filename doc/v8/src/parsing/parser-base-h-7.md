@@ -134,7 +134,7 @@ This是 `v8/src/parsing/parser-base.h` 的一部分代码，它定义了 `Parser
 
 这部分 `v8/src/parsing/parser-base.h` 代码定义了 `ParserBase` 类中用于 **解析各种 JavaScript 语句** 的方法。它负责识别不同的语句类型，提取关键组成部分（例如，条件表达式、循环体、变量声明等），并构建代表这些语句的 AST 节点。 这些方法是 V8 引擎将 JavaScript 源代码转换为可执行代码的关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser-base.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/parser-base.h以.tq结尾，那它是个v8 torque源代码，
@@ -142,8 +142,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 seScopedStatement(labels);
     else_range = SourceRange::ContinuationOf(then_range, end_position());
   } else {
@@ -1080,7 +1082,4 @@ typename ParserBase<Impl>::StatementT ParserBase<Impl>::ParseForAwaitStatement(
   // Parsed for-in loop w/ variable declarations.
   if (!impl()->IsNull(init_block)) {
     init_block->state
-"""
-
-
 ```

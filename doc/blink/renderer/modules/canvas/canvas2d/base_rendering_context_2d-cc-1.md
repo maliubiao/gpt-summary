@@ -164,7 +164,7 @@ Essentially, I moved from a high-level understanding to granular analysis, categ
 
 在调试 Canvas 相关问题时，开发者可以使用浏览器的开发者工具来查看 JavaScript 代码的执行流程，设置断点，以及检查 Canvas 的状态。如果怀疑是 Blink 引擎的问题，则可能需要查看 Blink 的源代码，例如 `base_rendering_context_2d.cc`，来理解内部的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas2d/base_rendering_context_2d.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ion and could vanish any time Oilpan runs a sweep. Normally
   // it's okay for Oilpan to delete GPUTextures, since Dawn maintains its own
   // ownership graph of GPU resources, but in our case, destruction of the
@@ -1113,7 +1115,4 @@ void BaseRenderingContext2D::FillPathImpl(Path2D* dom_path,
         CanvasOps::kFill__Path, dom_path->GetIdentifiableToken(), winding_rule);
   }
   DrawPathInternal(*dom
-"""
-
-
 ```

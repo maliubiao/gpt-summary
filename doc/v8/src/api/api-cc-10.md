@@ -298,7 +298,7 @@ console.log(buffer.wasDetached());
 
 总而言之，这段 `v8/src/api/api.cc` 代码是 V8 引擎暴露给 C++ 嵌入器用于操作 JavaScript 核心对象和 WebAssembly 功能的关键接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/api/api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -306,8 +306,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第11部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ray> v8::Array::New(Isolate* v8_isolate, int length) {
   i::Isolate* i_isolate = reinterpret_cast<i::Isolate*>(v8_isolate);
   API_RCS_SCOPE(i_isolate, Array, New);
@@ -1139,8 +1141,4 @@ Maybe<bool> v8::ArrayBuffer::Detach(v8::Local<v8::Value> key) {
       auto i_key = Utils::OpenHandle(*key);
       constexpr bool kForceForWasmMemory = false;
       i::JSArrayBuffer::Detach(obj, kForceForWasmMemory, i_key).Check();
-  
-"""
-
-
 ```

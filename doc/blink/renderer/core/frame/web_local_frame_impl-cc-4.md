@@ -162,15 +162,17 @@ By iterating through these steps and constantly refining my understanding, I can
 
 这部分 `web_local_frame_impl.cc` 的代码主要负责处理与用户交互、文档加载控制、历史记录管理以及框架内部事件通知相关的底层操作。它提供了与 JavaScript 交互的桥梁，处理触摸事件，控制 HTML 解析流程（主要用于测试），管理浏览器的历史记录，并确保获得焦点的可编辑元素可见。此外，它还通过观察者模式，允许其他 Blink 内部组件监听和响应框架中发生的事件，增强了框架的灵活性和可扩展性。总而言之，这部分代码是 `WebLocalFrameImpl` 实现其核心功能的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_local_frame_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lback(
     base::RepeatingCallback<void(const blink::WebHitTestResult&)> callback) {
   TouchStartEventListener* touch_start_event_listener =
@@ -261,8 +263,4 @@ bool WebLocalFrameImpl::AllowStorageAccessSyncAndNotify(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

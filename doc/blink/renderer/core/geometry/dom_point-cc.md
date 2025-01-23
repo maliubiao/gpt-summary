@@ -214,15 +214,17 @@ const point = new DOMPoint(3.14, 2.71, 1.618, 0.5);
 
 总而言之，`dom_point.cc` 文件虽然只是 `DOMPoint` 类的一个实现文件，但它位于 Web 技术栈的底层，是连接 JavaScript 和浏览器渲染引擎的关键桥梁。理解它的功能有助于理解 Web 平台上与几何和坐标相关的 API 的工作原理，并在遇到相关问题时提供调试思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/geometry/dom_point.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ DOMPoint::DOMPoint(double x, double y, double z, double w)
     : DOMPointReadOnly(x, y, z, w) {}
 
 }  // namespace blink
-
-"""
-
 ```

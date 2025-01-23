@@ -148,14 +148,16 @@ By following this process of understanding the code's purpose, identifying key e
 
 总而言之，`paint_chunker.cc` 文件中的 `PaintChunker` 类是 Blink 渲染引擎中一个关键的组件，它负责将绘制操作组织成优化的单元，以提高渲染效率，并支持诸如点击测试和文本选择等功能。它与 HTML 结构、CSS 样式以及 JavaScript 的动态修改都有着密切的联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_chunker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -495,7 +497,4 @@ void PaintChunker::FinalizeLastChunkProperties() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

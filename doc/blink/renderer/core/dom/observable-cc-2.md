@@ -108,7 +108,7 @@ This is part 3 of a 4-part request, indicating the need to focus on the core log
 
 总而言之，这部分代码是 Chromium Blink 引擎中实现 Observable 模式的核心部分，它定义了各种处理和转换数据流的方式，并与 JavaScript 的异步编程和响应式编程概念紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/observable.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 iber, script_state);
     }
 
@@ -987,7 +989,4 @@ void Observable::SubscribeInternal(
   //      developer-supplied callbacks (aka `observer_union` is non-null). In
   //      this case, no `internal_observer` is passed in, and we instead
   //      co
-"""
-
-
 ```

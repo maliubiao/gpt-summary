@@ -195,15 +195,17 @@ NOOP
 
 `ggen.go` 文件中的这两个函数是 Go 语言编译器后端的一部分，负责将高级的 Go 代码转换为底层的 LoongArch 汇编指令。`zerorange` 用于高效地将内存区域清零，而 `ginsnop` 用于插入空操作指令。这些函数是编译器内部使用的，开发者通常不需要直接调用它们。理解它们的功能可以帮助更好地理解 Go 语言的编译过程和底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/loong64/ggen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -264,9 +266,4 @@ func ginsnop(pp *objw.Progs) *obj.Prog {
 	p := pp.Prog(loong64.ANOOP)
 	return p
 }
-
-"""
-
-
-
 ```

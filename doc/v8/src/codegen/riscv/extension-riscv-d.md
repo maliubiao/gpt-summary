@@ -82,11 +82,13 @@ let isLessThan = (a < b);
 
 `extension-riscv-d.cc` 文件是 V8 引擎在 RISC-V 架构上支持双精度浮点运算的关键组成部分。它将 RISC-V 的底层浮点指令暴露给 V8 的代码生成器，使得 JavaScript 代码中的浮点运算能够高效地在 RISC-V 处理器上执行。 这个文件是连接高级语言 JavaScript 和底层硬件架构的桥梁的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-d.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -252,7 +254,4 @@ void AssemblerRISCVD::fmv_d_x(FPURegister rd, Register rs1) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

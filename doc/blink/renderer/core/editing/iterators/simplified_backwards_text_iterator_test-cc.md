@@ -123,15 +123,17 @@ By following these steps, analyzing the code structure, understanding the test c
 
 `simplified_backwards_text_iterator_test.cc` 文件通过一系列单元测试，详细验证了 `SimplifiedBackwardsTextIterator` 类在各种场景下的反向文本遍历功能。理解这个测试文件的内容，有助于理解 Blink 引擎如何处理 HTML 文本内容，以及如何与 CSS 样式和 Javascript 功能进行交互。 当遇到与文本选择、光标移动、文本编辑或辅助功能相关的问题时，这个文件可以作为调试的起点，帮助开发者理解底层的文本迭代逻辑是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/iterators/simplified_backwards_text_iterator_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -460,7 +462,4 @@ TEST_F(SimplifiedBackwardsTextIteratorTest, TextSecurity) {
 
 }  // namespace simplified_backwards_text_iterator_test
 }  // namespace blink
-
-"""
-
 ```

@@ -108,15 +108,17 @@ By following these steps, we can systematically analyze the code and provide a c
 
 总而言之，`insert_into_text_node_command.cc` 文件中的 `InsertIntoTextNodeCommand` 类是 Blink 渲染引擎处理文本插入操作的核心组件，它确保了文本插入操作的正确执行、支持撤销/重做，并考虑了诸如密码回显和可编辑性等因素。它与 JavaScript、HTML 和 CSS 都有着密切的联系，是 Web 页面编辑功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/insert_into_text_node_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2008 Apple Inc. All rights reserved.
  *
@@ -199,7 +201,4 @@ void InsertIntoTextNodeCommand::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

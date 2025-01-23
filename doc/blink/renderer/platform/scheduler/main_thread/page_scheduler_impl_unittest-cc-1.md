@@ -140,16 +140,18 @@ Here's a breakdown of the thought process to analyze the code and fulfill the us
 
 这段代码主要通过单元测试来验证 `PageSchedulerImpl` 类在处理虚拟时间、后台节流/冻结以及音频状态时的正确性和预期行为。它确保了 Blink 引擎能够按照 Chromium 的策略有效地管理页面资源的调度，尤其是在页面不可见或处于后台时，从而提高整体的浏览器性能和用户体验。这些测试对于理解和调试与 JavaScript 定时器、页面生命周期以及后台任务管理相关的行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/page_scheduler_impl_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- the next task delay
+### 源代码
+```cpp
+the next task delay
   // after each task.
   scheduler_->GetSchedulerHelperForTesting()->SetWorkBatchSizeForTesting(1);
 
@@ -848,8 +850,4 @@ TEST_F(PageSchedulerImplTest, PageFrozenOnlyWhileNotVisible) {
 }  // namespace page_scheduler_impl_unittest
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
-
 ```

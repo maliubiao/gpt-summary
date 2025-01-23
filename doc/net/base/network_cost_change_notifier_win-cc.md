@@ -105,15 +105,17 @@ By following this detailed thought process, we can thoroughly analyze the code a
 
 总而言之，`network_cost_change_notifier_win.cc` 是 Chromium 在 Windows 平台上获取网络连接计量信息的核心组件，它利用 Windows 提供的 API 来监听网络成本变化，并将这些信息传递给 Chromium 的其他部分，从而实现根据网络状况调整行为的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/network_cost_change_notifier_win.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -371,7 +373,4 @@ void NetworkCostChangeNotifierWin::OverrideCoCreateInstanceForTesting(
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -124,7 +124,7 @@ Let's break down the thought process for analyzing the C code snippet and addres
 
 总而言之，虽然 `foo.c` 的代码非常简单，但它在动态分析和逆向工程的上下文中扮演着重要的角色，可以作为观察和控制程序执行流程的关键点。理解其功能和相关的底层概念，能够帮助我们更有效地使用 Frida 这类工具进行调试和逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/260 declare_dependency objects/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,12 +132,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern void bar(void);
 
 void foo(void) { bar(); }
-
-"""
-
 ```

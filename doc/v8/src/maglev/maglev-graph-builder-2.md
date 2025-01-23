@@ -107,12 +107,14 @@ example(myObject, myGlobal, 3);
 - **`arr[1] = x`**: 对应 `BuildStoreFixedArrayElement`。
 
 总而言之，这部分 `MaglevGraphBuilder` 的代码是 Maglev 编译器将高层次的 JavaScript 语义转换为低层次、可执行的图结构的关键组成部分，为后续的优化和代码生成奠定了基础。
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 alueNode* lhs = LoadRegister(0);
   ValueNode* rhs = GetAccumulator();
   SetAccumulator(BuildTaggedEqual(lhs, rhs));
@@ -1735,7 +1737,4 @@ void MaglevGraphBuilder::BuildStoreFixedArrayElement(ValueNode* elements,
   // to the new elements array.
   if (CanElideWriteBarrier(elements, value)) {
     AddNewNo
-"""
-
-
 ```

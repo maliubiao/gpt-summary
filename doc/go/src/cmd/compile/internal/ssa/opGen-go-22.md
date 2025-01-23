@@ -143,7 +143,7 @@ v5 = Store(v1, v4) // 将 v4 的值存储回 v1 (x 的地址)
 
 作为第23部分，并且根据紧接在前面的内容，这段代码主要在定义 MIPS 架构下用于**内存加载操作**的 SSA 操作码，例如 `MOVWUload` (加载无符号字)。结合之前定义的原子操作、算术运算等，这部分继续扩充了 MIPS 架构下可用的 SSA 操作集合，以支持更丰富的 Go 语言特性。 你提供的代码片段结尾处不完整，很可能下一部分会继续定义例如 `MOVBstore`, `MOVWstore` 等内存存储操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/opGen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -152,8 +152,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第23部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ,
 		unsafePoint:     true,
 		reg: regInfo{
@@ -1190,10 +1192,5 @@ Prompt:
 	{
 		name:           "MOVWUload",
 		auxType:        auxSymOff,
-		argLen:  
-"""
-
-
-
-
+		argLen:
 ```

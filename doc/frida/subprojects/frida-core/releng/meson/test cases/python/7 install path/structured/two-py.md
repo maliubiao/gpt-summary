@@ -116,7 +116,7 @@ else:
 
 总而言之，虽然我们没有看到 `two.py` 的实际代码，但根据其文件路径和 Frida 的上下文，可以推断它是一个用于验证 Frida 组件安装路径的自动化测试脚本，对于确保 Frida 的正常功能至关重要，尤其在复杂的安装场景下。  调试此类测试失败可以帮助开发者定位安装过程中的问题，并确保用户能够顺利使用 Frida 进行逆向工程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/python/7 install path/structured/two.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,9 +124,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

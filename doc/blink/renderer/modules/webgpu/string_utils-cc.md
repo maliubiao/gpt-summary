@@ -178,15 +178,17 @@ By following these steps, I could systematically analyze the code and generate a
 
 总而言之，`string_utils.cc` 提供了一些基础的字符串转换和处理功能，以确保 WebGPU API 在 Blink 引擎中的正确实现，并处理潜在的编码问题和特殊字符，以便与底层的图形驱动程序和 JavaScript 环境进行安全可靠的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/string_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ std::string UTF8StringFromUSVStringWithNullReplacedByReplacementCodePoint(
 }
 
 }  // namespace blink
-
-"""
-
 ```

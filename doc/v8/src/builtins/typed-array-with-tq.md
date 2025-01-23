@@ -162,14 +162,16 @@ console.log(newBigIntArray); // 输出: BigInt64Array [ 10n, 2n, 3n ]
 
 总结来说，这段 Torque 代码实现了 `TypedArray.prototype.with` 方法，它通过创建并返回一个新的 typed array 来实现非破坏性的元素替换，并处理了各种类型转换、索引计算和错误情况。理解其不修改原始数组的特性对于避免编程错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array-with.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -262,7 +264,4 @@ transitioning javascript builtin TypedArrayPrototypeWith(
   }
 }
 }
-
-"""
-
 ```

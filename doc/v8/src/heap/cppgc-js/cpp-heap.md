@@ -184,11 +184,13 @@ console.log(wrapper.getValue()); // 输出 100
 
 `cpp-heap.cc` 中实现的 `CppHeap` 是 V8 引擎中管理 C++ 对象内存的关键组件。它与 JavaScript 紧密相关，因为许多 V8 的内部机制和外部扩展都依赖于它来安全有效地管理 C++ 对象的生命周期，这些对象可能与 JavaScript 代码进行交互。  JavaScript 开发者虽然不直接操作 `CppHeap`，但他们的代码行为（例如创建和释放对象引用）会间接地影响 `CppHeap` 的工作方式和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/cpp-heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1507,7 +1509,4 @@ bool CppHeap::IsCurrentThread(int thread_id) const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

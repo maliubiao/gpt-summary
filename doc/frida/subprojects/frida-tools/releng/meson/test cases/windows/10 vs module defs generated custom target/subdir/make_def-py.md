@@ -129,7 +129,7 @@ EXPORTS
 
 `make_def.py` 是一个简单的辅助脚本，用于在 Frida 的测试环境中生成用于 Windows DLL 构建的模块定义文件。它的存在表明 Frida 关注 Windows 平台的兼容性和功能测试，并且在测试过程中需要模拟或验证 DLL 导出定义的处理流程。对于用户来说，接触到这个脚本通常是因为参与了 Frida 的构建、测试或者在调试相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/windows/10 vs module defs generated custom target/subdir/make_def.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,15 +137,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 
 with open(sys.argv[1], 'w') as f:
     print('EXPORTS', file=f)
     print('        somedllfunc', file=f)
-
-"""
-
 ```

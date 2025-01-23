@@ -105,11 +105,13 @@ macro_assembler->F32x4Add(result_reg, lhs_reg, rhs_reg);
 
 `macro-assembler-shared-ia32-x64.cc` 文件是 V8 引擎中一个非常重要的底层组件，它通过提供一个共享的宏汇编器基类，屏蔽了不同 CPU 架构的差异，并为 JavaScript 的高性能执行提供了基础支持，特别是对于 SIMD 相关的操作。JavaScript 开发者虽然不会直接接触到这个文件，但其编写的代码的性能很大程度上依赖于像这样的底层实现的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/shared-ia32-x64/macro-assembler-shared-ia32-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1449,7 +1451,4 @@ void SharedMacroAssemblerBase::F64x2Qfms(XMMRegister dst, XMMRegister src1,
 }  // namespace v8
 
 #undef DCHECK_OPERAND_IS_NOT_REG
-
-"""
-
 ```

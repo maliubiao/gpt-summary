@@ -248,7 +248,7 @@ func main() {
 
 总而言之，`at_sysnum_freebsd.go` 这个文件是 Go 语言 `syscall` 包在 FreeBSD 系统上实现文件系统操作的基础组成部分，它定义了必要的常量和系统调用号，使得 Go 程序员可以使用 `syscall` 包中的函数来执行更精细的文件和目录操作。理解这些底层的细节有助于编写更健壮和高效的 Go 程序。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/at_sysnum_freebsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -256,8 +256,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -280,9 +282,4 @@ const (
 	readlinkatTrap     uintptr = syscall.SYS_READLINKAT
 	mkdiratTrap        uintptr = syscall.SYS_MKDIRAT
 )
-
-"""
-
-
-
 ```

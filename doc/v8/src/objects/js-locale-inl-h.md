@@ -131,15 +131,17 @@ Let's assume a function in V8 that creates a `JSLocale` object from a JavaScript
 
 In summary, `v8/src/objects/js-locale-inl.h` is a crucial internal V8 component that provides the inline implementations for the `JSLocale` object, which serves as the internal representation of JavaScript's `Intl.Locale`. It leverages the ICU library for locale data and is integrated with V8's Torque system for object definition and code generation. Understanding this file helps in comprehending how V8 handles internationalization features at a lower level.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-locale-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-locale-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ ACCESSORS(JSLocale, icu_locale, Tagged<Managed<icu::Locale>>, kIcuLocaleOffset)
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_LOCALE_INL_H_
-
-"""
-
 ```

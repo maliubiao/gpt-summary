@@ -69,9 +69,12 @@ By following these steps, I can systematically analyze the C++ code and generate
 
 这个文件中的代码是 V8 调试工具链的底层 building blocks，旨在帮助开发者和调试器深入了解 V8 运行时的内部机制和数据结构。
 
-Prompt: ```这是目录为v8/tools/debug_helper/debug-helper-internal.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/tools/debug_helper/debug-helper-internal.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -146,6 +149,4 @@ bool TqObject::IsSuperclassOf(const TqObject* other) const {
 }  // namespace debug_helper_internal
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

@@ -180,7 +180,7 @@ go tool pprof -nodefraction=0.01 <profile_file>
 
 总结来说，这段代码是 `pprof` 工具生成性能分析报告的核心组成部分，负责生成各种类型的报告标签和 DOT 格式的调用图，为用户理解性能瓶颈提供了重要的信息支持。它依赖于 `profile.Profile` 数据结构和 `report.Options` 来生成定制化的报告。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/report/report.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -189,8 +189,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ed callgraph in DOT format.
 func printDOT(w io.Writer, rpt *Report) error {
 	g, c := GetDOT(rpt)
@@ -408,10 +410,4 @@ func abs64(i int64) int64 {
 	}
 	return i
 }
-
-"""
-
-
-
-
 ```

@@ -109,11 +109,13 @@ sandboxProxy.getValue();
 
 `v8/src/sandbox/js-dispatch-table.cc` 中定义的 `JSDispatchTable` 是 V8 引擎在沙箱环境中用于安全高效地管理和调度 JavaScript 代码执行的关键内部组件。它维护着一个包含已编译代码元数据的表，使得引擎能够快速找到并执行相应的代码，尤其是在需要进行安全隔离的沙箱环境中。JavaScript 代码本身不会直接操作这个表，但其执行过程会依赖于 `JSDispatchTable` 提供的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/js-dispatch-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ base::LeakyObject<JSDispatchTable> JSDispatchTable::instance_;
 }  // namespace v8
 
 #endif  // V8_ENABLE_SANDBOX
-
-"""
-
 ```

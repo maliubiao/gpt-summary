@@ -1,6 +1,6 @@
 Response:
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/factory.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/factory.cc以.tq结尾，那它是个v8 torque源代码，
@@ -8,8 +8,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 HasDictionaryElements() || js_obj->HasSharedArrayElements());
   return handle(js_obj, isolate());
 }
@@ -795,7 +797,4 @@ Handle<String> Factory::SizeToString(size_t value, bool check_cache) {
     result = HeapNumberToString(NewHeapNumber(double_value), value, cache_mode);
   } else {
     char arr[kNumberToS
-"""
-
-
 ```

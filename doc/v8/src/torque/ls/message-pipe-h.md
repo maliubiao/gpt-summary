@@ -156,15 +156,17 @@ Torque 语言服务器的主要目标是为使用 Torque 编写 V8 代码的开�
 
 总而言之，`v8/src/torque/ls/message-pipe.h` 定义了 Torque 语言服务器进行通信的基础设施，它间接地支撑着与编写 Torque 代码相关的各种开发体验功能。 良好的消息管道设计对于保证语言服务器的稳定性和效率至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/ls/message-pipe.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/ls/message-pipe.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ void WriteMessage(JsonValue message);
 }  // namespace v8
 
 #endif  // V8_TORQUE_LS_MESSAGE_PIPE_H_
-
-"""
-
 ```

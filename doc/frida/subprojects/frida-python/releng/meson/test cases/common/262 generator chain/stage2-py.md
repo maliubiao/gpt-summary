@@ -106,7 +106,7 @@ Finally, the information is organized into clear sections (Functionality, Relati
 
 总而言之，`stage2.py` 作为一个 Frida 构建系统中的小环节，其核心功能是进行简单的文件内容校验和代码生成。它的存在是为了确保 Frida 构建流程的正确性和为后续的测试提供必要的测试目标。 理解它的功能有助于理解 Frida 的构建过程，并在遇到相关构建问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/262 generator chain/stage2.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,15 +114,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 from pathlib import Path
 
 assert(Path(sys.argv[1]).read_text() == 'stage2\n')
 Path(sys.argv[2]).write_text('int main(void){}\n')
-
-"""
-
 ```

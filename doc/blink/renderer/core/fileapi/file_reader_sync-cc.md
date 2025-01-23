@@ -178,14 +178,16 @@ Let's break down the thought process for analyzing the `FileReaderSync.cc` file.
 
 总而言之，`FileReaderSync.cc` 提供了同步读取文件内容的核心功能，但在实际的 Web 开发中应该谨慎使用，因为它会阻塞主线程。 理解其功能以及潜在的使用陷阱对于编写高性能和用户友好的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fileapi/file_reader_sync.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc.  All rights reserved.
  *
@@ -289,7 +291,4 @@ std::optional<FileReaderData> FileReaderSync::Load(
 }
 
 }  // namespace blink
-
-"""
-
 ```

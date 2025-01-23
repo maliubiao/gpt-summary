@@ -173,7 +173,7 @@ My thinking process to answer the request goes like this:
 
 总而言之，提供的代码片段主要测试了 Blink 引擎中 CSS 样式层叠解析器在处理 **自定义属性**、**动画**、**过渡** 和 **`env()` 函数** 以及一些特定 CSS 属性（如 `zoom`、`writing-mode` 等）时的行为和优先级规则。这些测试确保了浏览器能够按照 CSS 规范正确地计算出元素的最终样式，并处理各种复杂的样式组合和交互情况。这是对 CSS 引擎核心功能的细致验证，保证了网页样式的正确渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_cascade_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 de.Add("--y", " var(--x) ");
   cascade.Apply();
   EXPECT_EQ("foo", cascade.ComputedValue("--x"));
@@ -1179,8 +1181,5 @@ TEST_F(StyleCascadeTest, WebkitPerspectiveOriginRevert) {
 
   EXPECT_EQ("30px 20px", cascade.ComputedValue("perspective-origin"));
 
-  // The -webkit-perspective-origin-x/y properties are 
-"""
-
-
+  // The -webkit-perspective-origin-x/y properties are
 ```

@@ -119,7 +119,7 @@ Based on these observations, the summary should focus on the string, symbol, con
 
 这段 `v8/src/heap/factory.cc` 的代码片段是 V8 引擎中负责创建和管理核心堆对象的关键部分，特别是针对字符串、符号和上下文这些在 JavaScript 执行中至关重要的概念。它包含了针对不同场景和优化策略的多种创建方法，并处理了诸如字符串内部化、共享以及外部字符串等高级特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/factory.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/factory.cc以.tq结尾，那它是个v8 torque源代码，
@@ -127,9 +127,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
- a bad character.
+### 源代码
+```cpp
+a bad character.
     decoder.Decode(&t, utf8_data);
     return LookupSingleCharacterStringFromCode(t);
   }
@@ -921,7 +923,4 @@ Handle<PromiseResolveThenableJobTask> Factory::NewPromiseResolveThenableJobTask(
     DirectHandle<JSReceiver> thenable, DirectHandle<JSReceiver> then,
     DirectHandle<Context> context) {
   DCH
-"""
-
-
 ```

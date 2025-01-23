@@ -97,7 +97,7 @@ fetch('https://www.google.com')
 
 总而言之，`net/http/http_stream_factory_job_controller_unittest.cc`（第 4 部分）主要测试了 `HttpStreamFactoryJobController` 类在各种网络连接场景下的行为，包括连接的建立、取消、失败和成功，以及如何处理替代协议和网络状态变化，目的是确保网络栈能够可靠地建立连接并处理各种异常情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_factory_job_controller_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t.
 TEST_P(HttpStreamFactoryJobControllerTest, CancelJobsBeforeBinding) {
   // Use COLD_START to make the alt job pending.
@@ -885,8 +887,4 @@ void HttpStreamFactoryJobControllerTestBase::
 // This test verifies that the alternative service is not marked broken if the
 // alternative job succeeds on the default network after the main job succeeded.
 TEST_P(HttpStreamFactoryJobControllerTest,
-  
-"""
-
-
 ```

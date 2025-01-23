@@ -124,15 +124,17 @@ If a user naively accesses fields in this struct without considering the potenti
 
 **In summary, the `issue6036.go` code is a low-level test case focused on ensuring the Go compiler correctly generates code for accessing data at large memory offsets, a crucial aspect of Go's ability to handle complex data structures on specific architectures.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6036.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compile
 
 //go:build !386 && !arm && !mips && !mipsle && !amd64p32
@@ -178,9 +180,4 @@ type T4 [1<<29 + 1]S
 func F4(t *T4) {
 	t[1<<29].B = 42
 }
-
-"""
-
-
-
 ```

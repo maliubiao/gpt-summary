@@ -185,7 +185,7 @@ While developers don't directly interact with these C++ functions, understanding
 
 This specific part of `v8/src/codegen/code-stub-assembler.h` focuses heavily on **memory management and low-level array manipulation** within the V8 engine. It provides the building blocks for allocating, initializing, copying, and growing various types of arrays (FixedArrays, PropertyArrays, etc.) that are fundamental to V8's internal representation of JavaScript objects and data structures. It also includes functions for basic type conversions between tagged values and primitive types, essential for operating on JavaScript values at a low level. The inclusion of feedback vector manipulation highlights its role in optimizing runtime performance.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -193,9 +193,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
-                       TVariable<Object>& constructor,
+### 源代码
+```c
+TVariable<Object>& constructor,
                                  Label* found_default_base_ctor,
                                  Label* found_something_else);
 
@@ -821,7 +823,4 @@ Prompt:
   TNode<BoolT> JSAnyIsNotPrimitiveMap(TNode<Map> map);
   TNode<BoolT> JSAnyIsNotPrimitive(TNode<HeapObject> object);
   TNode<BoolT> IsJSRegExp(TNode<
-"""
-
-
 ```

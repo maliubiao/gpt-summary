@@ -348,7 +348,7 @@ if (Process.platform === 'android') {
 
 通过观察 Frida 的输出，你可以了解哪些进程调用了 `getmntent`，以及它们读取到的挂载信息是什么，从而调试 Android Framework 或 NDK 中与挂载信息相关的操作。你可以根据需要 hook 其他相关函数，例如 `setmntent` 和 `endmntent`，以更全面地了解其工作流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/mntent_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -359,8 +359,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  *
@@ -438,7 +440,4 @@ TEST(mntent, hasmntopt_no_suffix_match) {
   struct mntent ent = {.mnt_opts = mnt_opts};
   EXPECT_EQ(nullptr, hasmntopt(&ent, "atime"));
 }
-
-"""
-
 ```

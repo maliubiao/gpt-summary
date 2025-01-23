@@ -138,15 +138,17 @@ By following these steps, combining code analysis with domain knowledge of netwo
 
 总而言之，`fuzzed_host_resolver_util.cc` 是 Chromium 网络栈中一个重要的测试工具，它通过模拟各种随机和错误的情况来帮助发现潜在的 bug 和安全漏洞，确保浏览器在面对不稳定的网络环境时依然能够稳定可靠地运行。用户通常不会直接与这个文件交互，但它的存在和运行对最终用户的浏览体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/fuzzed_host_resolver_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -610,7 +612,4 @@ std::unique_ptr<ContextHostResolver> CreateFuzzedContextHostResolver(
 }
 
 }  // namespace net
-
-"""
-
 ```

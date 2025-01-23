@@ -120,7 +120,7 @@ Self-Correction/Refinement during the process:
 
 这些功能是 Frida 实现动态代码插桩和逆向分析的基础，使得用户可以通过 Node.js 脚本方便地与目标设备进行交互并获取实时的进程状态信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/src/device.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Isolate* isolate) {
     return Nan::Undefined();
   }
@@ -191,8 +193,4 @@ bool Device::ShouldStayAliveToEmit(const gchar* name) {
 }
 
 }
-
-"""
-
-
 ```

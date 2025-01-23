@@ -179,15 +179,17 @@ JavaScript 可以监听这个滑块的事件，并根据滑块的值来更新 `B
 
 `blink/renderer/modules/webaudio/biquad_filter_node.cc` 文件是 Blink 引擎中实现 Web Audio API 双二阶滤波器的核心代码。它定义了 `BiquadFilterNode` 类的行为和属性，并通过与 JavaScript 的接口，使得 Web 开发者可以方便地在网页上实现各种音频滤波效果。理解这个文件的功能和实现细节对于调试 Web Audio 应用中的滤波问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/biquad_filter_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011, Google Inc. All rights reserved.
  *
@@ -450,7 +452,4 @@ void BiquadFilterNode::ReportWillBeDestroyed() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

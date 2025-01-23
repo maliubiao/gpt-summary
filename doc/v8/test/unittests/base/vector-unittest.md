@@ -119,11 +119,13 @@ console.log(anotherArray);    // 输出 null
 
 `v8/test/unittests/base/vector-unittest.cc` 这个 C++ 文件是 V8 引擎中用于测试其内部 `base::Vector` 类的重要组成部分。它确保了这个基础数据结构的正确性和可靠性，而 `base::Vector` 在 V8 的许多内部操作中都有使用。虽然 JavaScript 的 `Array` 与 `base::Vector` 在实现细节和特性上有所不同，但它们都扮演着存储和管理数据集合的角色。 理解 `base::Vector` 的功能有助于理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/vector-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ TEST(VectorTest, ConstexprFactories) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

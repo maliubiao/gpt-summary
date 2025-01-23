@@ -152,7 +152,7 @@ Frida 会提示找不到名为 `sub_c` 的进程。
 
 总而言之，尽管 `sub.c` 本身是一个极其简单的程序，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在特定场景下的功能，并帮助开发者调试和发现潜在的问题。它的简单性使得更容易隔离和诊断 Frida 本身的问题，而不是被复杂的应用程序逻辑所迷惑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/58 grab subproj/subprojects/foo/sub.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,15 +160,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
     printf("I am a subproject executable file.\n");
     return 0;
 }
-
-"""
-
 ```

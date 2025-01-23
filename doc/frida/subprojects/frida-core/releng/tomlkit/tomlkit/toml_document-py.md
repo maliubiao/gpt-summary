@@ -141,7 +141,7 @@ log_level = "DEBUG"
 
 总而言之，`frida/subprojects/frida-core/releng/tomlkit/tomlkit/toml_document.py` 中的 `TOMLDocument` 类在 Frida 中扮演着表示和管理 TOML 配置文件的角色，它虽然是高层次的 Python 代码，但其承载的配置信息会间接地影响到 Frida 的底层行为和与目标程序的交互。了解其功能和使用方式对于理解 Frida 的工作原理以及调试 Frida 脚本至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/tomlkit/tomlkit/toml_document.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit.container import Container
 
 
@@ -158,7 +160,4 @@ class TOMLDocument(Container):
     """
     A TOML document.
     """
-
-"""
-
 ```

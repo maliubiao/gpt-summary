@@ -250,7 +250,7 @@ sys.stdin.read()
 
 总而言之，`limits_h.c` 是 Bionic 库的内部测试代码，用于确保 `limits.h` 中定义的系统限制常量是正确的。这些常量在 Android 系统和应用程序开发中至关重要，影响着文件操作、进程管理、线程管理等多个方面。虽然 `limits_h.c` 不会被直接执行，但它保证了 NDK 编译出的应用程序以及 Android Framework 自身的稳定性和一致性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/limits_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -261,8 +261,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -488,7 +490,4 @@ static void limits_h() {
   MACRO(NL_TEXTMAX);
   MACRO(NZERO);
 }
-
-"""
-
 ```

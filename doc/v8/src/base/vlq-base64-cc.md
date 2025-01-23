@@ -209,15 +209,17 @@ Here's a breakdown of its functionality:
 
 In summary, `v8/src/base/vlq-base64.cc` provides the fundamental logic for decoding VLQ Base64 encoded data, which is crucial for the implementation of source maps and other areas where efficient variable-length integer representation is needed within the V8 JavaScript engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/vlq-base64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/vlq-base64.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ int32_t VLQBase64Decode(const char* start, size_t sz, size_t* pos) {
 }
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

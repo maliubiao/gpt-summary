@@ -34,7 +34,7 @@ The user wants to understand the functionality of a Go code snippet from `go/src
 
 在 Go 模块加载过程中，当遇到版本冲突、替换规则不兼容或其他约束条件时，某些模块可能无法被包含在最终的依赖图中。这部分代码就是用于管理这些被排除模块的信息，并帮助用户理解为什么这些模块被排除。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modload/edit.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -43,9 +43,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-		for _, p := range t.requiring[m] {
+### 源代码
+```go
+for _, p := range t.requiring[m] {
 			t.disqualify(p, pruned, dqState{dep: m})
 			// Note that since the pruned graph is a subset of the unpruned graph,
 			// disqualifying p in the pruned graph also disqualifies it in the
@@ -101,10 +103,4 @@ func (t *dqTracker) path(m module.Version, pruning modPruning) (path []module.Ve
 		m = dq.dep
 	}
 }
-
-"""
-
-
-
-
 ```

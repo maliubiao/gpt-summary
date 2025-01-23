@@ -191,7 +191,7 @@ By following these steps, you can systematically analyze the code and address al
 
 这段 `net/http/http_cache_unittest.cc` 的代码片段主要测试了 Chromium 网络栈中 HTTP 缓存对于 **POST、HEAD、PUT、DELETE 和 PATCH 等非 GET 请求** 的处理逻辑，包括它们的缓存特性、对现有缓存的影响（失效机制）以及在各种成功和失败场景下的行为。它确保了缓存能够按照 HTTP 规范和 Chromium 的设计意图正确地工作，从而保证了网络请求的效率和数据的一致性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r<UploadElementReader>> element_readers;
   element_readers.push_back(std::make_unique<UploadBytesElementReader>(
       base::byte_span_from_cstring("hello")));
@@ -1078,7 +1080,4 @@ TEST_F(HttpCacheSimpleGetTest, DontInvalidateOnFailure) {
 
   // Fail the network request.
   ScopedMockTransaction transaction(kSimpleGET_
-"""
-
-
 ```

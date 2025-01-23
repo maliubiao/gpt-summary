@@ -155,14 +155,16 @@ By following this systematic approach, combining code analysis with knowledge of
 
 总而言之，`layout_text_control_multi_line.cc` 是 Blink 渲染引擎中一个关键的布局组件，专门负责处理多行文本输入控件的布局、样式更新和命中测试，它与 HTML、CSS 和 JavaScript 紧密协作，共同实现了网页上可交互的多行文本输入功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/forms/layout_text_control_multi_line.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ bool LayoutTextControlMultiLine::NodeAtPoint(
 }
 
 }  // namespace blink
-
-"""
-
 ```

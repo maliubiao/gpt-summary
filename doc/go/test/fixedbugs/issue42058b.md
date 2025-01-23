@@ -115,15 +115,17 @@ go test -gcflags=-G=3  # 某些情况下可能需要特定的 gcflags
 
 总而言之，`go/test/fixedbugs/issue42058b.go` 是 Go 语言源代码仓库中的一个测试用例，专门用于验证 Go 工具链是否能正确检测出通道元素类型过大的错误。它本身不是一个可直接运行的程序，而是用于测试 Go 语言的编译或静态分析能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue42058b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2020 The Go Authors. All rights reserved.  Use of this
@@ -137,9 +139,4 @@ var c chan [2 << 16]byte // GC_ERROR "channel element type too large"
 func f() {
 	_ = 42
 }
-
-"""
-
-
-
 ```

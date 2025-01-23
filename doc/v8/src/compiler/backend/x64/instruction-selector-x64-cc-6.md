@@ -211,7 +211,7 @@ Atomics.add(view, 0, 5);
 
 因此，`instruction-selector-x64.cc` 作为第 7 部分，是连接高级中间表示和低级机器码的关键桥梁，它决定了如何在 x64 架构上高效地实现 JavaScript 的各种操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/instruction-selector-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/instruction-selector-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -219,9 +219,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共10部分，请归纳一下它的功能
+```
 
-"""
-              case IrOpcode::kInt32MulWithOverflow:
+### 源代码
+```cpp
+case IrOpcode::kInt32MulWithOverflow:
                 cont->OverwriteAndNegateIfEqual(kOverflow);
                 return VisitBinop(this, node, kX64Imul32, cont);
               case IrOpcode::kInt64AddWithOverflow:
@@ -1025,7 +1027,4 @@ VISIT_ATOMIC_BINOP(Xor)
   V(I8x16Eq, IEq, kL8, kV128)                               \
   V(F64x2Ne, FNe, kL64, kV128)                              \
   V(F32x4Ne
-"""
-
-
 ```

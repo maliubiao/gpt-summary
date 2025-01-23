@@ -165,7 +165,7 @@ By following this structured thought process, we arrive at a comprehensive and i
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/test cases/common/55 exe static shared/subdir/shlib.c` 文件是一个用于 Frida 动态插桩工具测试的简单共享库源代码，其主要功能是定义一个返回固定值的函数，用于验证 Frida 在处理共享库时的挂钩能力。它涉及到逆向工程、二进制底层知识以及对操作系统动态链接机制的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/55 exe static shared/subdir/shlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,14 +173,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "exports.h"
 
 int DLL_PUBLIC shlibfunc(void) {
     return 42;
 }
-
-"""
-
 ```

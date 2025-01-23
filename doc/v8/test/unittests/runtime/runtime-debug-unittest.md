@@ -107,11 +107,13 @@ This methodical process of examining the code, identifying core functionality, a
 
 `runtime-debug-unittest.cc` 文件中的测试用例主要验证了 V8 引擎的 `Runtime::GetInternalProperties` 函数在不同场景下的行为，包括访问普通对象、设置了访问限制的对象以及 WebAssembly 对象。这个函数是 V8 内部用于检查对象内部状态的关键工具，虽然 JavaScript 没有直接暴露这个 API，但其功能与开发者工具中查看对象内部属性以及 JavaScript 中用于获取对象元信息的 API (如 `Object.getPrototypeOf()`) 在概念上是相关的。这些测试确保了 V8 的调试功能能够正确地反映 JavaScript 对象的内部状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/runtime/runtime-debug-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ TEST_F(RuntimeTest, WasmTableWithoutInstance) {
 #endif
 
 }  // namespace v8::internal
-
-"""
-
 ```

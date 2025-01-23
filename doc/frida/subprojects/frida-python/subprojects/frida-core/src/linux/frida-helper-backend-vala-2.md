@@ -116,7 +116,7 @@ if memory:
    - 用户结束调试会话，Frida 分离目标进程并释放相关资源。
 
 通过以上步骤，用户可以逐步深入到 Frida 的底层实现，了解其如何与 Linux 内核交互，实现对目标进程的动态插桩和调试。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/linux/frida-helper-backend.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ffset += chunk_size;
 			}
 
@@ -1363,8 +1365,4 @@ ffset += chunk_size;
 		return (size + page_size - 1) & ~(page_size - 1);
 	}
 }
-
-"""
-
-
 ```

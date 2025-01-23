@@ -79,7 +79,7 @@ Now, we can formulate the Chinese response based on these insights. The key is t
 
 在整个编译过程中，这个文件会被调用，当编译器需要将汇编指令编码为机器码时，就会查找这个文件中对应的函数，并根据汇编指令的类型调用相应的函数来获取其机器码表示。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/loong64/asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -88,8 +88,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 a1 << 10
 	case ATRUNCDW:
 		return 0x46a2 << 10
@@ -603,10 +605,4 @@ func vshift(a obj.As) bool {
 	}
 	return false
 }
-
-"""
-
-
-
-
 ```

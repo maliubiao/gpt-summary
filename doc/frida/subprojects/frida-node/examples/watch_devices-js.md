@@ -120,7 +120,7 @@ By following these steps, including the self-correction and refinement, we can a
 
 通过观察脚本的输出，用户可以了解 Frida 是否正确识别了连接的设备，这对于后续的动态分析工作至关重要。如果脚本没有输出预期的设备信息，用户就可以开始排查问题，例如检查 Frida 服务是否运行，USB 驱动是否安装，网络连接是否正常等等。这个脚本本身就是一个很好的调试工具，可以帮助用户验证 Frida 的基本功能是否正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/watch_devices.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const frida = require('..');
 
 let deviceManager = null;
@@ -170,7 +172,4 @@ main()
   .catch(e => {
     console.error(e);
   });
-
-"""
-
 ```

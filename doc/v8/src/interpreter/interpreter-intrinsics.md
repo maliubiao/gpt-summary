@@ -87,11 +87,13 @@ console.log(absoluteValue); // 输出 5
 
 `interpreter-intrinsics.cc` 文件是 V8 解释器中一个重要的组成部分，它负责管理和映射 JavaScript 内建函数到其优化的 C++ 实现。这对于 V8 引擎的性能至关重要，因为它允许引擎以高效的方式执行常用的 JavaScript 操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-intrinsics.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ Runtime::FunctionId IntrinsicsHelper::ToRuntimeId(
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

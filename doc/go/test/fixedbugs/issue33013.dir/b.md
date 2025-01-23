@@ -188,15 +188,17 @@ This code snippet **does not handle any command-line arguments directly**. The `
 
 In summary, this code snippet demonstrates interface usage for flexible service descriptions and deferred function calls for managing side effects (like incrementing a counter). The key takeaway is that the `RS` function, despite its suggestive name, does not return a service instance but performs some background action before returning `nil`.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue33013.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -221,9 +223,4 @@ func RS(svcd *ServiceDesc, server interface{}, qq uint8) *Service {
 	defer func() { q += int(qq) }()
 	return nil
 }
-
-"""
-
-
-
 ```

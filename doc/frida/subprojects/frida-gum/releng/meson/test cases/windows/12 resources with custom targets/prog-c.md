@@ -149,7 +149,7 @@ sys.stdin.read()
 
 总而言之，`prog.c` 作为一个简单的 Windows 程序，其核心功能是加载图标资源。它常被用作 Frida 等动态分析工具的测试目标，方便开发者验证工具在资源处理方面的功能是否正常。通过逆向分析、了解二进制底层知识和考虑常见的编程错误，可以更好地理解这个程序的功能和用途。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/windows/12 resources with custom targets/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<windows.h>
 
 #define MY_ICON 1
@@ -178,7 +180,4 @@ WinMain(
     ((void)nCmdShow);
     return hIcon ? 0 : 1;
 }
-
-"""
-
 ```

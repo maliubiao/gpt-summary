@@ -257,7 +257,7 @@ func main() {
 
 这样可以确保程序能够正确地处理系统调用失败的情况，并提供有用的错误信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/syscall2_solaris.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -265,8 +265,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -312,9 +314,4 @@ import _ "unsafe" // for go:linkname
 //go:linkname libc_syscall libc_syscall
 //go:linkname libc_wait4 libc_wait4
 //go:linkname libc_issetugid libc_issetugid
-
-"""
-
-
-
 ```

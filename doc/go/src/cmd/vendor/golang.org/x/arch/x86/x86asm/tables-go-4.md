@@ -112,7 +112,7 @@ func main() {
 
 作为 `go/src/cmd/vendor/golang.org/x/arch/x86/x86asm/tables.go` 文件的第五部分，这个代码片段定义了一个常量映射表 `anames`，用于存储 x86 汇编指令的助记符。这个映射表的主要功能是将汇编指令的字符串形式映射到其自身，它很可能被用于将指令的内部表示转换为其字符串表示，是 x86 汇编处理相关功能的基础数据。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/x86/x86asm/tables.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -120,10 +120,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
-
-	ICEBP:           "ICEBP",
+### 源代码
+```go
+ICEBP:           "ICEBP",
 	IDIV:            "IDIV",
 	IMUL:            "IMUL",
 	IN:              "IN",
@@ -524,10 +525,4 @@ Prompt:
 	XSETBV:          "XSETBV",
 	XTEST:           "XTEST",
 }
-
-"""
-
-
-
-
 ```

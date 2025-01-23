@@ -133,14 +133,16 @@ ownership_edge from blink_heap/allocated_objects to partition_alloc/partitions
 
 总而言之，`partition_alloc_memory_dump_provider.cc` 是 Blink 引擎中一个重要的底层组件，它为开发者提供了理解和分析内存使用情况的关键手段，这对于性能优化、内存泄漏排查以及理解 Blink 的内部工作原理至关重要。虽然普通前端开发者不直接使用它，但它的存在支撑着整个浏览器的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/instrumentation/partition_alloc_memory_dump_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ PartitionAllocMemoryDumpProvider::PartitionAllocMemoryDumpProvider() = default;
 PartitionAllocMemoryDumpProvider::~PartitionAllocMemoryDumpProvider() = default;
 
 }  // namespace blink
-
-"""
-
 ```

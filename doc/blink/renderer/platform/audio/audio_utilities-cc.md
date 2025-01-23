@@ -158,14 +158,16 @@ Let's break down the thought process for analyzing this C++ audio utility file.
 
 `audio_utilities.cc` 文件提供了一组底层的、通用的音频处理工具函数，这些函数在 Blink 渲染引擎的音频子系统中被广泛使用。它们与 JavaScript (Web Audio API) 和 HTML (`<audio>`, `<video>`) 紧密相关，因为 Web Audio API 暴露的功能和 HTML 媒体元素的能力都依赖于这些底层的音频处理。虽然 CSS 不直接参与音频处理，但音频数据的可视化可能间接地使用到这里的一些转换函数。理解这些工具函数的功能有助于深入了解浏览器如何处理音频。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/audio_utilities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010, Google Inc. All rights reserved.
  *
@@ -370,7 +372,4 @@ const std::string GetDeviceEnumerationForTracing(
 }
 
 }  // namespace blink::audio_utilities
-
-"""
-
 ```

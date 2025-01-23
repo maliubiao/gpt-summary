@@ -123,7 +123,7 @@ Initially, I might have focused too much on what the *Python code itself* does. 
 
 总而言之，`c_function_attributes.py` 文件是 Frida Node.js 绑定构建系统的一个重要组成部分，它定义了 C/C++ 函数属性的“知识”，用于在构建过程中检测编译器能力，确保生成的代码能够在目标平台上正确编译和运行。理解这个文件及其包含的函数属性对于进行 Frida 相关的逆向工程和底层分析是非常有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/compilers/c_function_attributes.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # These functions are based on the following code:
 # https://git.savannah.gnu.org/gitweb/?p=autoconf-archive.git;a=blob_plain;f=m4/ax_gcc_func_attribute.m4,
 # which is licensed under the following terms:
@@ -276,7 +278,4 @@ CXX_FUNC_ATTRIBUTES = {
          '}'
          'int foo(void) __attribute__((ifunc("resolve_foo")));'),
 }
-
-"""
-
 ```

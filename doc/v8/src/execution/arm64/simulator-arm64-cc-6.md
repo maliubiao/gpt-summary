@@ -162,7 +162,7 @@ Without using exclusive load and store instructions (or other synchronization me
 
 This part of the V8 ARM64 simulator focuses on **emulating the execution of NEON instructions and simulating exclusive memory access primitives**. It provides the infrastructure to test and debug the code generation and runtime behavior of V8 on ARM64 architectures, particularly concerning SIMD optimizations and concurrent operations. By accurately mimicking the behavior of these low-level instructions, it ensures the correctness and reliability of the V8 JavaScript engine on ARM64 platforms. This component is vital for developers to validate that the generated ARM64 machine code performs as intended before deploying it on actual hardware.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm64/simulator-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -170,9 +170,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
- break;
+### 源代码
+```cpp
+break;
     case NEON_SLI:
       sli(vf, rd, rn, left_shift);
       break;
@@ -732,8 +734,4 @@ V8_EXPORT_PRIVATE extern bool _v8_internal_Simulator_ExecDebugCommand(
 #undef BRACKETS
 
 #endif  // USE_SIMULATOR
-
-"""
-
-
 ```

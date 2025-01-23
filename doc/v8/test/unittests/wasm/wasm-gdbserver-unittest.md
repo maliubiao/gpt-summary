@@ -50,9 +50,12 @@ Therefore, the main functionality of this file is to **test the components of a 
 
 通过使用 Google Test (gtest) 和 Google Mock (gmock) 框架，这个文件提供了一套全面的单元测试，用于确保 WASM GDB 远程调试服务器的各个组件能够按照预期工作。 其中，`MockTransport` 类用于模拟底层的网络传输层，使得测试可以集中在 `Packet` 和 `Session` 的逻辑上，而无需实际的网络连接。
 
-Prompt: ```这是目录为v8/test/unittests/wasm/wasm-gdbserver-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/wasm/wasm-gdbserver-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -327,6 +330,4 @@ TEST_F(WasmGdbRemoteTest, GdbRemoteSessionGetPacketDisconnectOnReadFailure) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

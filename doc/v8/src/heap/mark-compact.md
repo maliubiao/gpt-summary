@@ -106,12 +106,14 @@ myObject = null;
 
 **总结来说，这部分代码定义了 Mark-Compact 垃圾回收器的核心结构和初步流程，为后续的垃圾回收阶段奠定了基础。它直接影响着 JavaScript 程序的内存管理和性能。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/mark-compact.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1834,8 +1836,5 @@ class EvacuateNewSpaceVisitor final : public EvacuateVisitorBase {
       allocation = AllocateInOldSpace(size, alignment);
       space_allocated_in = OLD_SPACE;
     }
-    bool ok 
-"""
-
-
+    bool ok
 ```

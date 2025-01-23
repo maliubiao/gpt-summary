@@ -121,7 +121,7 @@ A developer might be investigating issues related to:
 
 In essence, this part of the `scrolling_test.cc` file provides a comprehensive suite of tests to ensure the correct and efficient handling of touch and wheel events in various scrolling scenarios within the Blink rendering engine, covering both composited and non-composited content.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/scrolling/scrolling_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ds(), gfx::Size(100, 150));
     EXPECT_EQ(cc::Region(gfx::Rect(0, 0, 100, 150)), region);
   } else {
@@ -1080,7 +1082,4 @@ TEST_P(ScrollingTest, FastNonCompositedScrollHitTest) {
     cc::Region expected_non_fast_region(gfx::Rect(50, 150, 100, 400));
     EXPECT_EQ(RegionFromRects(
                   {// nested-pare
-"""
-
-
 ```

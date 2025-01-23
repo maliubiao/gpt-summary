@@ -184,7 +184,7 @@ python generate_conflicting_stlibs.py --private-dir /tmp/test_libs -o libflob1.a
 
 因此，到达这个脚本的路径通常是：**发现问题 -> 设计测试用例 -> 编写辅助脚本生成测试环境 -> 集成到测试框架 -> 自动化执行测试。** 这个脚本本身就是为了辅助 Frida 的测试和调试而存在的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/209 link custom_i single from multiple/generate_conflicting_stlibs.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import shutil, sys, subprocess, argparse, pathlib
@@ -284,7 +286,4 @@ def generate_lib(outfiles, private_dir, compiler_array):
 if __name__ == '__main__':
     options = parser.parse_args()
     sys.exit(generate_lib(options.o, options.private_dir, options.cmparr))
-
-"""
-
 ```

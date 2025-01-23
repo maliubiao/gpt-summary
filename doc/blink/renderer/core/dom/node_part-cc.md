@@ -155,15 +155,17 @@ Let's imagine a scenario where a web developer is using a JavaScript API that in
 
 In essence, `node_part.cc` is a foundational piece for extending the functionality of DOM nodes within the Blink rendering engine. It provides a structured way to associate additional data and potentially behavior, and it plays a crucial role in how JavaScript interacts with and manipulates the web page structure.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/node_part.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -247,7 +249,4 @@ Document& NodePart::GetDocument() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

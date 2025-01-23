@@ -111,14 +111,16 @@ Finally, organize the information logically, addressing each part of the prompt.
 
 `histogram_test.cc` 文件是 Blink 引擎中用于测试直方图功能的关键组成部分。它验证了时间测量的准确性，特别是通过 `ScopedUsHistogramTimer` 和 `ScopedHighResUsHistogramTimer` 两个类。虽然用户不会直接与此文件交互，但理解其测试的直方图功能对于理解和分析 Blink 引擎的性能至关重要，这与 JavaScript, HTML, CSS 的执行效率密切相关。 编程中需要注意直方图的命名、范围设置、使用场景以及相关辅助类的生命周期管理，以避免错误并获得准确的性能数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/instrumentation/histogram_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ TEST_F(ScopedUsHistogramTimerTest, BasicHighRes) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

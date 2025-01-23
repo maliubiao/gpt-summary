@@ -302,7 +302,7 @@ session.detach()
 
 通过分析 Frida 的输出，你可以了解 Android Framework 是如何使用 `uvcvideo.h` 中定义的结构体和 ioctl 命令来与摄像头驱动程序进行交互的。  你需要根据实际情况调整 Frida 脚本中的 `request` 值和结构体大小。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/uvcvideo.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -313,8 +313,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -376,7 +378,4 @@ struct uvc_meta_buf {
   __u8 buf[];
 } __attribute__((__packed__));
 #endif
-
-"""
-
 ```

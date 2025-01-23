@@ -83,7 +83,7 @@ Response:
 ---
 
 **（第2部分将详细分析执行步骤、LLDB调试示例及代码逻辑推理）**
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/class-model.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -93,8 +93,10 @@ Prompt:
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 const code = `#include <json-glib/json-glib.h>
 #include <string.h>
 
@@ -1366,7 +1368,4 @@ function compileModule (env) {
   const { pointerSize } = Process;
 
   co
-"""
-
-
 ```

@@ -143,15 +143,17 @@ This structured approach, combining code analysis with knowledge of web technolo
 
 总而言之，`blink/renderer/core/svg/svg_view_spec.cc` 是 Blink 引擎中负责处理 SVG 视图规范的关键组件，它确保了 SVG 内容能够根据 `<view>` 元素或 URL 片段的指示进行正确的显示和交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_view_spec.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2010 Rob Buis <buis@kde.org>
  *
@@ -327,7 +329,4 @@ bool SVGViewSpec::ParseViewSpecInternal(const CharType* ptr,
 }
 
 }  // namespace blink
-
-"""
-
 ```

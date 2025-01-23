@@ -113,15 +113,17 @@ Here's a breakdown of the thought process to generate the answer:
 
 总而言之，`text_autosizer_test.cc` 的第 1 部分主要集中在测试 `TextAutosizer` 类的**基本文本自动缩放功能**以及 **`text-size-adjust` CSS 属性** 对自动缩放行为的各种影响，包括启用、禁用、动态修改和处理各种取值情况。此外，它还初步涉及了**辅助功能字体缩放系数**与文本自动缩放的交互。 这个文件的目的是确保 Blink 引擎能够正确地根据各种条件调整网页上的文本大小，提供更好的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/text_autosizer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -858,8 +860,5 @@ TEST_P(TextAutosizerTest, ChangingInheritedClusterTextInsideSuperCluster) {
       "veniam, quis nostrud"
       "    exercitation ullamco laboris nisi ut aliquip ex ea commodo "
       "consequat. Duis aute irure"
-      " 
-"""
-
-
+      "
 ```

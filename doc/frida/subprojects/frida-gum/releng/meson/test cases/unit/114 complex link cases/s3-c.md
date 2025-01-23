@@ -125,7 +125,7 @@ Finally, it's about organizing the thoughts into a clear and structured answer, 
 
 总而言之，`s3.c` 这个简单的文件在 Frida 的测试用例中用于验证 Frida 在处理函数调用和链接方面的能力。在实际逆向工程中，这种简单的函数调用关系是构成复杂程序逻辑的基础，而 Frida 这样的工具可以帮助我们理解和操纵程序的运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/114 complex link cases/s3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,14 +133,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int s2(void);
 
 int s3(void) {
     return s2() + 1;
 }
-
-"""
-
 ```

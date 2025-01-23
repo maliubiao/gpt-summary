@@ -184,15 +184,17 @@ const request = indexedDB.open('myDatabase', 2);
 
 总结来说，`IDBFactoryClient.cc` 是 Blink 渲染引擎中处理 IndexedDB 操作结果的关键组件，它连接了 JavaScript API 和底层的 IndexedDB 实现，负责将后端的操作结果传递给前端 JavaScript 代码。 理解它的功能对于调试 IndexedDB 相关问题至关重要，特别是当怀疑问题出在浏览器引擎层面时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/idb_factory_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -351,7 +353,4 @@ void IDBFactoryClient::UpgradeNeeded(
 }
 
 }  // namespace blink
-
-"""
-
 ```

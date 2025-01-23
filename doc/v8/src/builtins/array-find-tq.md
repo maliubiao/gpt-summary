@@ -177,14 +177,16 @@ console.log(foundWithThisArg); // 输出: 12
 
 这段 Torque 代码是 V8 引擎中 `Array.prototype.find` 方法的高效实现。它考虑了性能优化（`FastArrayFind`）和各种边界情况，并通过延续点处理优化和去优化。理解这段代码有助于深入了解 JavaScript 引擎的内部工作原理以及如何高效地实现标准库方法。用户在使用 `Array.prototype.find` 时，需要注意提供正确的参数类型，理解回调函数的 `this` 指向，避免在回调函数中修改数组，并正确处理返回值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-find.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -333,7 +335,4 @@ transitioning javascript builtin ArrayPrototypeFind(
   }
 }
 }
-
-"""
-
 ```

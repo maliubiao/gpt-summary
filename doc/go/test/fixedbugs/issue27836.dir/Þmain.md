@@ -138,15 +138,17 @@ func Þbar(n int) int {
 
 这段代码的核心目的在于演示 Go 语言的 import 别名功能，它通过导入同一个包两次并使用不同的名称来强调这一特性。 特殊的包名 `Þfoo` 可能与该 issue 的特定测试场景有关，用于测试编译器对包含特殊字符的包名的处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue27836.dir/Þmain.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -164,9 +166,4 @@ func main() {
 	fmt.Printf("Þfoo.Þbar(33) returns %v\n", Þfoo.Þbar(33))
 	fmt.Printf("Þblix.Þbar(33) returns %v\n", Þblix.Þbar(33))
 }
-
-"""
-
-
-
 ```

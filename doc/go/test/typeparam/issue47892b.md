@@ -148,15 +148,17 @@ go test -gcflags='-G=3' ./typeparam  # 可能指定了泛型相关的编译器�
 
 `go/test/typeparam/issue47892b.go` 是 Go 编译器测试套件中用于测试类型参数 (泛型) 功能的一个编译时测试用例，可能与 GitHub issue #47892 相关。它本身不包含可执行代码，而是通过 Go 编译器处理，以验证在特定场景下编译器的行为是否符合预期。 理解其功能需要了解 Go 编译器的测试机制以及类型参数的特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue47892b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compiledir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -164,9 +166,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

@@ -169,15 +169,17 @@ ProxyRulesExpectation expectation = ProxyRulesExpectation::PerScheme(
 
 因此，当开发者在调试代理配置相关的 bug 时，如果怀疑 `ProxyConfig::ProxyRules` 对象的内容不正确，他们可能会查看相关的单元测试，或者编写新的单元测试，使用 `ProxyRulesExpectation` 来验证特定场景下的代理规则是否符合预期。这可以帮助他们缩小问题范围，定位是哪个环节导致了错误的代理配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/proxy_config_service_common_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2009 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -369,7 +371,4 @@ ProxyRulesExpectation ProxyRulesExpectation::PerSchemeWithBypassReversed(
 }
 
 }  // namespace net
-
-"""
-
 ```

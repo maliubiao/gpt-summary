@@ -135,12 +135,14 @@ By providing these `Ref` classes, the V8 compiler can operate on JavaScript obje
 
 总而言之，`v8/src/compiler/heap-refs.cc` 的第二部分延续了第一部分的工作，提供了 V8 编译器用来安全、高效地访问和分析 JavaScript 堆对象的底层基础设施。它通过 `...Ref` 类抽象了堆对象的访问，并处理了并发和优化的复杂性，使得编译器能够更好地理解和优化 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/heap-refs.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 mmutable after initialization.
   return MakeRefAssumeMemoryFence(broker,
                                   Cast<HeapObject>(object()->GetBackPointer()));
@@ -833,8 +835,4 @@ unsigned CodeRef::GetInlinedBytecodeSize() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -89,12 +89,14 @@ function myFunction() {
 
 `value-mirror.cc` 是 V8 引擎中一个关键的组件，它负责将 JavaScript 的运行时状态以结构化的方式呈现给开发者工具。它通过类型判断和递归转换，将复杂的 JavaScript 值转换为 CDP 可以理解和展示的数据格式，从而支持开发者进行有效的调试和检查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/value-mirror.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1792,7 +1794,4 @@ std::vector<PrivatePropertyMirror> ValueMirror::getPrivateProperties(
 
   v8::LocalVector<v8::Value> names(isolate);
   v8::LocalVector<v
-"""
-
-
 ```

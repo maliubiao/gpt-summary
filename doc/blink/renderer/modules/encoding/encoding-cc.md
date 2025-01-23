@@ -138,15 +138,17 @@ Let's break down the thought process for analyzing this `encoding.cc` file and g
 
 总而言之，`encoding.cc` 文件中的 `IsASCIIWhiteSpace` 函数虽然功能简单，但它是 Blink 渲染引擎处理文本的基础组成部分，对于正确解析和渲染 Web 内容至关重要。虽然普通用户不会直接接触到这个文件，但它默默地支撑着我们浏览器的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/encoding/encoding.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ bool IsASCIIWhiteSpace(UChar c) {
 }  // namespace encoding
 
 }  // namespace blink
-
-"""
-
 ```

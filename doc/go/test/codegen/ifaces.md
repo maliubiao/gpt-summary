@@ -171,15 +171,17 @@ func main() {
 
 `go/test/codegen/ifaces.go` 这段代码是 Go 编译器测试套件的一部分，它专注于验证编译器在处理接口和泛型类型转换时是否按照预期生成了高效的代码。通过 `// asmcheck` 指令，它可以精确地断言生成的汇编代码中是否包含或排除了特定的指令，从而确保编译器的优化行为符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/ifaces.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2022 The Go Authors. All rights reserved.
@@ -207,9 +209,4 @@ func ConvToM(x any) I {
 	// arm64:`CALL\truntime.typeAssert`,`LDAR`,`MOVWU`,`MOVD\t\(R.*\)\(R.*\)`
 	return x.(I)
 }
-
-"""
-
-
-
 ```

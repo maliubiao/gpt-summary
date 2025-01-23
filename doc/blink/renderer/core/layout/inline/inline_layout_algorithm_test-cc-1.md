@@ -44,15 +44,17 @@ Here's a breakdown of the task:
     -  在只有一个子元素或只有空元素的情况下的表现。
 
 2. **特定 HTML 结构的布局测试:** 其中一个测试用例 `BoxFragmentInRubyCrash` 专门
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_layout_algorithm_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e.should_trim_start);
   EXPECT_FALSE(empty_before.should_trim_end);
 
@@ -150,8 +152,4 @@ foo
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

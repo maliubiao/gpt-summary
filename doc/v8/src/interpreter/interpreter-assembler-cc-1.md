@@ -200,7 +200,7 @@ recursiveFunction(100000); // 可能导致栈溢出
 
 总而言之，这部分 `InterpreterAssembler` 的代码是 V8 解释器中至关重要的一部分，它提供了构建和处理函数调用、构造器调用以及控制流跳转的基础指令。它还包含了用于性能监控和优化的机制，例如中断预算和栈上替换 (OSR)。理解这部分代码的功能有助于深入了解 V8 解释器的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/interpreter-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -208,8 +208,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t);
   TVARIABLE(AllocationSite, var_site);
   Label return_result(this), try_fast_construct(this), construct_generic(this),
@@ -1077,7 +1079,4 @@ void InterpreterAssembler::ToNumberOrNumeric(Object::Conversion mode) {
       {
         var_result = CAST(object);
         var_t
-"""
-
-
 ```

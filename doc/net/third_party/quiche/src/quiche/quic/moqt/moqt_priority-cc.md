@@ -194,15 +194,17 @@ webtransport::SendOrder updated_send_order =
 * **在关键点设置断点:**  在 `moqt_priority.cc` 中的函数入口和关键计算步骤设置断点，查看变量的值，例如传入的优先级参数和计算出的 `SendOrder` 值。
 * **对比不同流的 `SendOrder` 值:**  确保优先级高的流的 `SendOrder` 值确实比优先级低的流更“高”（根据其位结构）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_priority.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -284,7 +286,4 @@ const webtransport::SendOrder kMoqtProbeStreamSendOrder =
     std::numeric_limits<webtransport::SendOrder>::min();
 
 }  // namespace moqt
-
-"""
-
 ```

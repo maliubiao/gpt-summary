@@ -134,14 +134,16 @@ By following this structured approach, combining code analysis with domain knowl
 
 总而言之， `fake_background_resource_fetch_assets.cc` 是一个关键的测试工具，它允许 Blink 引擎的开发者在隔离且可控的环境中测试与后台资源加载相关的各种场景，确保浏览器能够正确处理 HTML、CSS 和 JavaScript 依赖的外部资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/testing/fake_background_resource_fetch_assets.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ FakeBackgroundResourceFetchAssets::GetLocalFrameToken() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

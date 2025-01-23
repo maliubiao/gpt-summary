@@ -173,14 +173,16 @@ This iterative process of code analysis, dependency identification, connection t
 
 总之，`open_type_cpal_lookup.cc` 提供了一个关键的功能，使得浏览器能够利用 OpenType 字体中定义的颜色调色板，从而实现更丰富的文本渲染和主题支持。理解其功能以及与之相关的 Web 技术概念对于开发出能够充分利用这些特性的网页至关重要。同时，开发者需要注意可能的使用错误，以确保代码的健壮性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/open_type_cpal_lookup.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ Vector<Color> OpenTypeCpalLookup::RetrieveColorRecords(
 }
 
 }  // namespace blink
-
-"""
-
 ```

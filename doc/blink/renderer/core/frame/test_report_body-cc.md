@@ -113,14 +113,16 @@ std::string TestReportBody::message() const {
 
 `blink/renderer/core/frame/test_report_body.cc` 中的 `TestReportBody` 类扮演着一个数据转换的角色，它将 C++ 环境中的测试报告信息转换为易于 JavaScript 使用的 JSON 格式。这体现了 Blink 引擎中 C++ 和 JavaScript 代码协同工作的模式，C++ 负责底层逻辑和数据处理，而 JavaScript 负责前端展示和交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/test_report_body.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -134,7 +136,4 @@ void TestReportBody::BuildJSONValue(V8ObjectBuilder& builder) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

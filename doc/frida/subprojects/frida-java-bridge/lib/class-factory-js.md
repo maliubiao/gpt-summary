@@ -122,7 +122,7 @@ bp.SetScriptCallbackFunction("breakpoint_handler")
 8. **Hook安装**：若类方法被Hook，记录到`_patchedMethods`。  
 9. **实例创建**：用户调用`$new()`时，JNI`AllocObject`创建实例。  
 10. **GC协调**：JS对象释放时通过弱引用回调删除全局引用。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/class-factory.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -132,8 +132,10 @@ Prompt:
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 const Env = require('./env');
 const android = require('./android');
 const jvm = require('./jvm');
@@ -1381,7 +1383,4 @@ Object.defineProperties(Wrapper.prototype, {
 });
 
 function C
-"""
-
-
 ```

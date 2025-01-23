@@ -185,7 +185,7 @@ This script is typically invoked indirectly by CMake during the build process. H
 
 In summary, `cmake_run_ctgt.py` is a utility script that provides a structured way to execute arbitrary commands within the CMake build system of Frida, particularly for tasks related to Swift bindings. While it's not a reverse engineering tool itself, it facilitates the execution of such tools and manages their output, playing a vital role in the overall build process. Understanding its functionality is helpful for debugging build issues and comprehending how Frida's Swift components are built.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/scripts/cmake_run_ctgt.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 from __future__ import annotations
 
@@ -298,7 +300,4 @@ def run(argsv: T.List[str]) -> int:
 
 if __name__ == '__main__':
     sys.exit(run(sys.argv[1:]))
-
-"""
-
 ```

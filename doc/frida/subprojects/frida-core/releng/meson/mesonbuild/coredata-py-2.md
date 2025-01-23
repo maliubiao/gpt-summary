@@ -172,7 +172,7 @@ By following these steps, I can systematically analyze the code and address all 
 
 总而言之，`frida/subprojects/frida-core/releng/meson/mesonbuild/coredata.py` 文件是 Frida 构建系统的核心配置文件，它定义了各种影响 Frida Core 构建方式和最终安装结果的选项，理解它的作用对于调试构建问题和定制 Frida 非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ption(UserBooleanOption, 'Whether to try static linking before shared linking', False)),
     (OptionKey('stdsplit'),        BuiltinOption(UserBooleanOption, 'Split stdout and stderr in test logs', True)),
     (OptionKey('strip'),           BuiltinOption(UserBooleanOption, 'Strip targets on install', False)),
@@ -250,8 +252,4 @@ FORBIDDEN_TARGET_NAMES = frozenset({
     'dist',
     'distcheck',
 })
-
-"""
-
-
 ```

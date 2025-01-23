@@ -141,7 +141,7 @@ Here's a breakdown of the thinking process to analyze the provided Python script
 
 `generator.py` 是一个简单的文件复制脚本，但在 Frida 项目的构建和测试流程中扮演着一个小而重要的角色，很可能用于管理生成的 Cython 代码。它的功能虽然基础，但理解其上下文和潜在的用途对于理解 Frida 的构建过程和测试流程是有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cython/2 generated sources/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 
@@ -163,7 +165,4 @@ args = parser.parse_args()
 
 with open(args.input) as i, open(args.output, 'w') as o:
     o.write(i.read())
-
-"""
-
 ```

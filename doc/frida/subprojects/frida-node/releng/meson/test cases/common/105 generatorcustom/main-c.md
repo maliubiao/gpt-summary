@@ -176,7 +176,7 @@ Value 1 - Value 2 - Value 3 - Value 4
 
 这个简单的 C 程序虽然本身功能不多，但结合其在 Frida 项目中的位置，可以推断出它是用于测试 Frida 动态插桩功能的。逆向工程师可以通过 Frida 动态地观察和修改程序的行为，理解 `res1` 到 `res4` 的来源和作用。理解相关的二进制底层、操作系统原理和常见的编程错误，有助于更好地分析和调试这类程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/105 generatorcustom/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 #include "alltogether.h"
@@ -194,7 +196,4 @@ int main(void) {
     printf("%s - %s - %s - %s\n", res1, res2, res3, res4);
     return 0;
 }
-
-"""
-
 ```

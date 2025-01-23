@@ -114,7 +114,7 @@ Meson 会读取 Frida-QML 的 `meson.build` 文件，解析构建配置，并根
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/meson.py` 是 Frida-QML 子项目使用 Meson 构建系统的入口点，它的核心功能是启动 Meson 的构建过程，为后续的编译、链接等操作奠定基础。理解这个脚本的作用有助于理解 Frida 的构建流程，并在遇到构建问题时进行排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/meson.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
@@ -151,7 +153,4 @@ from mesonbuild import mesonmain
 
 if __name__ == '__main__':
     sys.exit(mesonmain.main())
-
-"""
-
 ```

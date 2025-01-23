@@ -213,7 +213,7 @@ func runtime_SysAlloc(n uintptr) unsafe.Pointer
 
 总而言之，`lfstack.go` 中的代码提供了一个高效的无锁栈实现，但它的使用场景非常特殊，主要用于 Go 运行时内部，并且对内存管理有严格的要求。普通 Go 开发者通常不需要直接使用它，而是使用 Go 标准库中提供的并发安全数据结构，例如 `sync.Mutex` 保护的切片或映射，或者 `sync/atomic` 包提供的原子操作。直接使用无锁数据结构需要非常谨慎，并对并发编程有深入的理解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/lfstack.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -221,8 +221,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -300,9 +302,4 @@ func lfstackPack(node *lfnode, cnt uintptr) uint64 {
 func lfstackUnpack(val uint64) *lfnode {
 	return (*lfnode)(taggedPointer(val).pointer())
 }
-
-"""
-
-
-
 ```

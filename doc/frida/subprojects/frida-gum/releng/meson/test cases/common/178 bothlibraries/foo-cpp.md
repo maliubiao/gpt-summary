@@ -141,7 +141,7 @@ console.log('Calling foo again after hooking, result:', fooFunc());
 
 当调试过程中出现问题时，例如 Hook 没有生效，或者返回值不是预期的值，用户可能会回到 `foo.cpp` 文件，仔细检查代码逻辑，以确保他们的 Frida 脚本与函数的实际行为相符。文件路径 `frida/subprojects/frida-gum/releng/meson/test cases/common/178 bothlibraries/foo.cpp` 表明这是一个 Frida 自身的测试用例，因此开发 Frida 或其组件的人员可能会经常查看这个文件进行测试和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/178 bothlibraries/foo.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <memory>
 #include "mylib.h"
 
@@ -162,7 +164,4 @@ int foo(void) {
     auto bptr = std::make_shared<int>(0);
     return *bptr;
 }
-
-"""
-
 ```

@@ -235,7 +235,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/linux/keyboard.h` 是 Android 系统理解和处理键盘输入的基础，它定义了用户空间可以使用的键盘事件常量，连接了底层的内核事件和上层的 Framework 以及 NDK 应用。 虽然它本身不包含 libc 函数或动态链接逻辑，但它定义的常量在整个键盘输入处理流程中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/keyboard.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -246,8 +246,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -690,7 +692,4 @@ Prompt:
 #define NR_BRL 11
 #define MAX_DIACR 256
 #endif
-
-"""
-
 ```

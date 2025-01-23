@@ -133,14 +133,16 @@ By following these steps, I can systematically analyze the C++ code and provide 
 
 总而言之，`SameBlockWordIterator` 是 Blink 渲染引擎内部一个用于高效遍历同一块级元素内单词的工具，它与 HTML 的块级元素概念紧密相关，并受到 CSS 布局的影响。虽然 JavaScript 代码不能直接访问它，但其功能可能被 Blink 内部的 JavaScript 功能或暴露的 API 所利用。理解其块级边界限制和单词划分规则是正确使用它的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fragment_directive/same_block_word_iterator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -247,7 +249,4 @@ template class CORE_TEMPLATE_EXPORT SameBlockWordIterator<ForwardDirection>;
 template class CORE_TEMPLATE_EXPORT SameBlockWordIterator<BackwardDirection>;
 
 }  // namespace blink
-
-"""
-
 ```

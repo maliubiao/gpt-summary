@@ -184,7 +184,7 @@ Interceptor.attach(Module.findExportByName(null, "open"), {
 
 通过以上分析，我们详细了解了这段简单的 C 代码的功能，以及它与逆向、底层、内核、框架等方面的联系，并探讨了可能的用户错误和调试过程。Frida 作为一种强大的动态插桩工具，可以在理解和调试这类程序时提供非常有价值的帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/26 netcdf/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "netcdf.h"
 
 int main(void)
@@ -208,7 +210,4 @@ if ((ret = nc_close(ncid)))
 
 return 0;
 }
-
-"""
-
 ```

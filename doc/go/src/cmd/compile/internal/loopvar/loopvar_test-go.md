@@ -159,15 +159,17 @@ func main() {
 2. **`-lang` 标志的影响:**  如果使用了 `-lang=go1.21` 编译 Go 1.22+ 的代码，循环变量的行为将回退到 Go 1.21 的行为。这在某些需要保持旧行为的场景下可能有用，但也可能引入混淆。
 3. **调试标志的理解:**  理解 `-d=loopvar` 标志的不同值的含义，可以帮助你更好地控制和理解循环变量的行为，尤其是在调试和迁移代码时。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/loopvar/loopvar_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -551,9 +553,4 @@ func TestLoopVarVersionDisableGoBuild(t *testing.T) {
 		t.Errorf("err=%v == nil", err)
 	}
 }
-
-"""
-
-
-
 ```

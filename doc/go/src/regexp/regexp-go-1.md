@@ -217,7 +217,7 @@ Appended: myregex
 
 总而言之，这段代码为 Go 语言提供了强大的正则表达式匹配和字符串处理能力，尤其在需要查找所有匹配项或根据模式分割字符串的场景下非常有用。 理解各个函数的参数和返回值，以及它们之间的区别，是正确使用这些功能的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/regexp/regexp.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -226,8 +226,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 nc (re *Regexp) FindReaderSubmatchIndex(r io.RuneReader) []int {
 	return re.pad(re.doExecute(r, nil, "", 0, re.prog.NumCap, nil))
 }
@@ -469,10 +471,4 @@ func (re *Regexp) UnmarshalText(text []byte) error {
 	*re = *newRE
 	return nil
 }
-
-"""
-
-
-
-
 ```

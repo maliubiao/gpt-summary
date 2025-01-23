@@ -238,7 +238,7 @@ sys.stdin.read()
 
 `bionic/tests/math_data/exp_intel_data.handroid` 的第二部分延续了第一部分的功能，提供了更多更全面的测试用例，用于验证 Android 系统中 `exp` 函数的正确性。这些数据覆盖了更广泛的输入范围和边界情况，是保证 Android 数学库质量的关键组成部分。虽然这个文件本身不包含可执行代码，但它在 Android 的构建和测试流程中扮演着重要的角色，确保了依赖指数函数的各种应用和框架的稳定运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/exp_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -250,8 +250,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 c3df6p0,
     0x1.fffffffffffffp-7
   },
@@ -760,8 +762,4 @@ c3df6p0,
     -0x1.6232bdd7abcd3p9
   },
 };
-
-"""
-
-
 ```

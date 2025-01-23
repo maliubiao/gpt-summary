@@ -133,11 +133,13 @@ Response: The user wants to understand the functionality of the C++ file `v8/src
 
 总而言之，`v8/src/runtime/runtime-internal.cc` 文件是 V8 引擎的核心组成部分，它定义了许多底层的操作，这些操作支撑着 JavaScript 语言的各种功能和特性。虽然开发者通常不会直接调用这些函数，但理解它们的存在和作用有助于更深入地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-internal.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -901,7 +903,4 @@ RUNTIME_FUNCTION(Runtime_InvalidateDependentCodeForScriptContextSlot) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

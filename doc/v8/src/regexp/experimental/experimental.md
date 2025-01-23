@@ -127,11 +127,13 @@ const result4 = text4.replace(/(\d{3})-(\d{3})-(\d{4})/, '($1) $2-$3'); // 内�
 
 总而言之，`v8/src/regexp/experimental/experimental.cc` 文件实现了 V8 引擎中一个可选的、实验性的正则表达式执行机制，旨在探索和引入新的正则表达式处理技术，并最终影响 JavaScript 中正则表达式的执行效率和能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/experimental/experimental.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -451,7 +453,4 @@ std::optional<int> ExperimentalRegExp::OneshotExec(
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

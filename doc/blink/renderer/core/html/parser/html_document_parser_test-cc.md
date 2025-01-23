@@ -118,14 +118,16 @@ Let's break down the thought process for analyzing the C++ test file and generat
 
 `html_document_parser_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎能够可靠地解析各种各样的 HTML 文档，包括格式良好和包含错误的文档。它的测试覆盖了 HTML 解析的核心功能，并间接地关系到 JavaScript 和 CSS 的处理，因为正确的 HTML 解析是构建完整 Web 页面的基础。通过大量的测试用例，该文件可以帮助开发者发现和修复 `HTMLDocumentParser` 中的 bug，提高浏览器的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_document_parser_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -500,7 +502,4 @@ TEST_F(HTMLDocumentParserProcessImmediatelyTest, FirstChunkDelayedChildFrame) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

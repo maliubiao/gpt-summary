@@ -130,11 +130,13 @@ let myCppWrapper = new MyWrapper(myJsObject);
 
 `cpp-snapshot.cc` 是 V8 引擎中一个关键的组件，它负责生成 C++ 堆的快照，以便开发者能够理解 V8 的内存结构，识别内存泄漏，并进行性能优化。它通过识别 C++ 对象及其与 JavaScript 对象的关联，为分析整个 V8 运行时环境的内存使用情况提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/cpp-snapshot.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1199,7 +1201,4 @@ void CppGraphBuilder::Run(v8::Isolate* isolate, v8::EmbedderGraph* graph,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

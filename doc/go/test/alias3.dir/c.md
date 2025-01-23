@@ -178,15 +178,17 @@ func main() {
 
 `c.go` 的主要目的是测试和演示 Go 语言中类型别名的核心概念，包括在跨包场景下的使用以及与内嵌类型的关系。它通过声明变量并进行赋值操作来验证类型别名的等价性。这段代码本身不涉及复杂的业务逻辑或命令行参数处理，重点在于类型系统的特性展示。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/alias3.dir/c.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -212,9 +214,4 @@ func main() {
 	var c a.Context = b.C
 	var _ b.MyContext = c
 }
-
-"""
-
-
-
 ```

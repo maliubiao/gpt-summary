@@ -86,11 +86,13 @@ registry.register(myObject, myObject.data, weakRef);
 
 虽然实现方式不同，但它们的核心目标是相似的：**在对象生命周期结束时执行必要的清理操作，释放资源，避免内存泄漏或资源泄漏。** C++ 的 `FinalizerTrait` 更偏向于静态编译时的处理，而 JavaScript 的 `FinalizationRegistry` 则提供了更动态的运行时机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/finalizer-trait-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ TEST(FinalizerTrait, FinalizerForCustomFinalizationMethodInBase) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

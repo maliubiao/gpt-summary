@@ -174,7 +174,7 @@ By following this thought process, systematically analyzing the code, and connec
 
 总而言之，`frida/subprojects/frida-clr/releng/meson/mesonbuild/mesondata.py` 是 Frida 构建系统中负责管理数据文件的关键组件。它简化了数据文件的读取和写入操作，确保这些文件在构建过程中正确就位，为 Frida 的各种逆向功能提供必要的资源。虽然普通用户不会直接与之交互，但理解它的功能对于调试 Frida 的构建问题或参与 Frida 的开发是很有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/mesondata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -222,7 +224,4 @@ class DataFile:
         out_file.parent.mkdir(exist_ok=True)
         self.write_once(out_file)
         return out_file
-
-"""
-
 ```

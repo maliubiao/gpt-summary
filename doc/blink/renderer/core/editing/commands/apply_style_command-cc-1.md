@@ -154,7 +154,7 @@ Based on this, the primary function of this part of the code is the detailed log
 
 通过以上步骤，我们可以追踪用户操作是如何一步步地触发到 `apply_style_command.cc` 文件中的代码执行的。在调试过程中，可以在 JavaScript 代码中设置断点，查看 `document.execCommand` 的调用情况，然后在 C++ 代码中设置断点，查看 `ApplyStyleCommand` 的执行过程，以及各个关键函数的参数和返回值，从而定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/apply_style_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
     HTMLElement* embedding_end_element = HighestEmbeddingAncestor(
         end.AnchorNode(), EnclosingBlock(end.AnchorNode()));
@@ -1033,8 +1035,4 @@ bool ApplyStyleCommand::MergeStartWithPreviousIfIdentical(
   }
 
   if (!start_node->IsElementNode())
-   
-"""
-
-
 ```

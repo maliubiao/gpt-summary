@@ -150,7 +150,7 @@ loadModule();
 
 这段代码的核心功能是 **支持 V8 执行 JavaScript 代码，特别是 ES 模块的加载、解析和动态导入**。它实现了 V8 引擎在宿主环境（d8）中处理模块化 JavaScript 代码的关键逻辑，包括查找模块文件、解析模块依赖关系、实例化模块以及执行模块代码。此外，它还支持 Shadow Realms 的创建，为隔离的 JavaScript 执行环境提供了基础。路径规范化的功能确保了模块加载的正确性，而代码缓存的机制则提升了性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/d8/d8.cc以.tq结尾，那它是个v8 torque源代码，
@@ -158,8 +158,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ext> context,
     v8::Local<v8::Promise::Resolver> resolver, v8::Local<v8::Value> result,
     WasmAsyncSuccess success) {
@@ -1014,7 +1016,4 @@ bool Shell::ExecuteModule(Isolate* isolate, const char* file_name) {
       // If the exception has been caught by the promise pipeline, we rethrow
       // here in order to ReportException.
       // TODO(cbruni): Clean this up a
-"""
-
-
 ```

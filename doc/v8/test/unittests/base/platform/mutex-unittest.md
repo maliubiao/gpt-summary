@@ -101,11 +101,13 @@ function readData() {
 
 总而言之，`mutex-unittest.cc` 是 V8 引擎内部用于保证其并发机制正确性的重要组成部分，虽然 JavaScript 开发者通常不需要直接操作互斥锁，但 V8 的正确实现对于 JavaScript 并发模型的稳定运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/platform/mutex-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -462,7 +464,4 @@ V8_FUZZ_TEST(MutexFuzzTest, SharedMutexThreadsP)
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

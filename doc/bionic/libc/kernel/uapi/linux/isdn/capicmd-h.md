@@ -252,7 +252,7 @@ sys.stdin.read()
 
 通过这种方式，你可以使用 Frida 动态地分析 Android 应用与 ISDN 硬件的交互过程，观察发送的 CAPI 命令，并进行调试。 请注意，这需要对目标应用的内部实现有一定的了解，才能确定要 hook 的库和函数名称，以及参数的含义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/isdn/capicmd.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -263,8 +263,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -350,7 +352,4 @@ Prompt:
 #define CAPI_INFO_IND CAPICMD(CAPI_INFO, CAPI_IND)
 #define CAPI_INFO_RESP CAPICMD(CAPI_INFO, CAPI_RESP)
 #endif
-
-"""
-
 ```

@@ -103,11 +103,13 @@ By following these steps, I can systematically analyze the C++ code, understand 
 
 `v8/src/wasm/wasm-opcodes.cc` 文件是 V8 引擎中处理 WebAssembly 操作码和类型信息的核心部分。 `IsJSCompatibleSignature` 函数是连接 WebAssembly 和 JavaScript 的关键桥梁，它定义了哪些 WebAssembly 函数可以安全地被 JavaScript 调用，并确保了类型系统的一致性，避免了潜在的运行时错误。 该文件中的其他部分，如操作符重载和静态常量数组，为 V8 编译和执行 WebAssembly 代码提供了必要的元数据和工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-opcodes.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -170,7 +172,4 @@ constexpr MachineRepresentation StoreType::kMemRep[];
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

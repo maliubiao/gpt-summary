@@ -129,11 +129,13 @@ anotherObject = null; // 使对象符合垃圾回收条件
 
 总而言之，`gc-callbacks-unittest.cc` 这个 C++ 文件是 V8 内部测试 GC 回调机制的单元测试，它验证了 V8 提供的 C++ API 的正确性和功能，这些 API 使得 embedder 可以在垃圾回收周期的关键时刻执行自定义的操作，从而影响 JavaScript 应用的内存管理和性能。虽然 JavaScript 本身没有直接暴露这些 API，但它的垃圾回收行为受到这些底层机制的驱动。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/gc-callbacks-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -301,7 +303,4 @@ TEST_F(GCCallbacksTest, GCCallbacks) {
 
 }  // namespace
 }  // namespace v8
-
-"""
-
 ```

@@ -154,7 +154,7 @@ char func_c(void) {
 
 总结来说，`b.c` 文件定义了一个简单的函数，其核心逻辑是依赖于另一个函数 `func_c` 的返回值，并根据返回值决定程序的执行流程。它展示了共享库的基本概念以及程序退出的机制，同时也为动态插桩和逆向分析提供了目标。理解这个文件的功能需要结合其上下文，即它在整个程序中的作用以及与 `func_c` 的关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/73 shared subproject 2/subprojects/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 char func_c(void);
 
@@ -184,7 +186,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

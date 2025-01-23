@@ -493,7 +493,7 @@ TEST_F(LocalCaretRectBidiTest, InLtrBlockRtlBaseRunAfterFourNestedRuns) {
   const Position position = SetCaretTextToBody(
       "<div dir=ltr><bdo dir=rtl><bdo dir=ltr>jkl<bdo dir=rtl>GHI<bdo "
       "dir=ltr>def<bdo dir=rtl>ABC</bdo></bdo></bdo></bdo>|MNO</b
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/local_caret_rect_bidi_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -501,8 +501,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1240,8 +1242,4 @@ TEST_F(LocalCaretRectBidiTest,
   InsertStyleElement("div {font: 10px/10px Ahem; width: 300px}");
   const Position position = SetCaretTextToBody(
       "<div dir=rtl><bdo dir=ltr><bdo dir=rtl>GHI<bdo dir=ltr>def<bdo "
-   
-"""
-
-
 ```

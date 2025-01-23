@@ -176,7 +176,7 @@ func main() {
 
 总而言之，`defs_darwin_amd64.go` 文件是 Go 语言运行时环境在 macOS AMD64 架构下的基石，它提供了与操作系统交互所需的底层定义，使得 Go 语言能够在 Darwin 系统上正确运行和管理资源。开发者通常不需要直接修改或深入理解这个文件的内容，但了解其作用有助于理解 Go 语言的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_darwin_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -184,8 +184,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // created by cgo -cdefs and then converted to Go
 // cgo -cdefs defs_darwin.go
 
@@ -575,9 +577,4 @@ type machVMSize uint64
 type machVMRegionFlavour int32
 type machVMRegionInfo *int32
 type machMsgTypeNumber uint32
-
-"""
-
-
-
 ```

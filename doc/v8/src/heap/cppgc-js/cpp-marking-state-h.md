@@ -201,15 +201,17 @@ cppMarkingState.MarkAndPush(myCppObject);
 
 总结来说，`v8/src/heap/cppgc-js/cpp-marking-state.h` 定义的 `CppMarkingState` 类是 V8 内部 CppGC 与 JavaScript 堆交互的关键组件，负责在垃圾回收的标记阶段跟踪和管理 C++ 对象的生命周期。理解其功能有助于理解 V8 的垃圾回收机制以及避免一些与内存管理相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/cpp-marking-state.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc-js/cpp-marking-state.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ class CppMarkingState final {
 }  // namespace v8
 
 #endif  // V8_HEAP_CPPGC_JS_CPP_MARKING_STATE_H_
-
-"""
-
 ```

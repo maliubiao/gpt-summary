@@ -132,7 +132,7 @@ By following this thought process, we can move beyond the trivial nature of the 
 
 `simple.c` 作为一个独立的程序来说非常简单，没有任何实际功能。但它在 Frida 的测试框架中扮演着一个重要的角色，用于验证 Frida 在处理最基本、最简单的目标进程时的行为，以及测试 Frida 的错误处理能力和对进程生命周期的管理。 它的简单性使其成为隔离和调试某些 Frida 内部问题的理想测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing/23 rel testdir/simple.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,12 +140,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

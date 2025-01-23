@@ -119,7 +119,7 @@ struct {};
 
 在这种情况下，`badformat.c` 就是一个调试线索，帮助开发者理解 `clang-format` 的行为，并确保 Frida 代码库的格式统一。这个文件本身不是问题的根源，而是用于 *发现* 与代码格式化相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/94 clangformat/src/badformat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,11 +127,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 struct {
 };
-
-"""
-
 ```

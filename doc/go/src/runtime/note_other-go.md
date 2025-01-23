@@ -312,7 +312,7 @@ func main() {
 
 理解 `note` 及其相关函数的工作原理对于理解 Go 运行时系统的并发模型至关重要。 它提供了一种轻量级的、底层的同步机制，用于处理单次事件的通知和等待。在编写涉及到这种底层同步的代码时，务必仔细阅读注释并遵循其使用规则，避免引入潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/note_other.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -320,8 +320,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -355,9 +357,4 @@ type note struct {
 	// while sema-based impl as M* waitm.
 	key uintptr
 }
-
-"""
-
-
-
 ```

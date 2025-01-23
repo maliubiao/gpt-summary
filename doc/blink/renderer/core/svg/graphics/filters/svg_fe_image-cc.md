@@ -242,15 +242,17 @@ JavaScript 可以动态地创建、修改 `<feImage>` 元素及其属性。例�
 
 总而言之，`svg_fe_image.cc` 是 Chromium Blink 引擎中负责实现 SVG `<feImage>` 滤镜原语的关键文件，它处理从外部图像或 SVG 元素获取图像数据，并为后续的滤镜效果提供输入。它与 HTML、CSS 和 JavaScript 都有着密切的联系，共同实现了丰富的网页视觉效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/graphics/filters/svg_fe_image.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005 Rob Buis <buis@kde.org>
@@ -455,7 +457,4 @@ sk_sp<PaintFilter> FEImage::CreateImageFilter() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -106,7 +106,7 @@ var updateIntrinsics = flag.Bool("update", false, "update intrinsics")
 
 作为 `go/src/cmd/compile/internal/ssagen/intrinsics_test.go` 的第二部分，这段代码的核心功能是**测试 Go 编译器针对不同架构实现的内联函数机制的正确性**。 它通过维护一个期望的内联函数列表 (`wantIntrinsics`)，并与编译器实际生成的内联函数进行比对，确保编译器能够按预期为各种架构优化特定的函数调用。 此外，它还提供了一个更新期望列表的机制，方便在修改内联函数实现后同步测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssagen/intrinsics_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -114,8 +114,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 internal/runtime/atomic", "LoadAcquintptr"}:             struct{}{},
 	{"ppc64", "internal/runtime/atomic", "Loadint32"}:                  struct{}{},
 	{"ppc64", "internal/runtime/atomic", "Loadint64"}:                  struct{}{},
@@ -677,10 +679,4 @@ func TestIntrinsicBuilders(t *testing.T) {
 		t.Errorf("No intrinsic for internal/runtime/sys.Bswap64 on arch %v", sys.ArchPPC64)
 	}
 }
-
-"""
-
-
-
-
 ```

@@ -183,7 +183,7 @@ int main() {
 
 `bionic/benchmarks/powf_input.cpp` 文件的主要功能是为 Android Bionic 库中的 `powf` 函数提供了一组具有代表性的、从真实基准测试中提取的输入数据，用于进行性能测试、精度验证和回归测试，以确保 `powf` 函数在 Android 系统中的正确性和高性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/powf_input.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -194,8 +194,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -1178,7 +1180,4 @@ static const std::vector<std::pair<float, float>> powf_input = {
   {0x1.db293ep-1, 0x1.666666p+0},
   {0x1.0f9fdcp+0, 0x1.51eb86p-2},
   {0x1.c22d0ep-2, 0x1.
-"""
-
-
 ```

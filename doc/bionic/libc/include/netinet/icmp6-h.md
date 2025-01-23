@@ -331,7 +331,7 @@ if __name__ == '__main__':
 
 通过这个 Frida Hook 示例，我们可以动态地观察 Android 应用程序在发送 ICMPv6 报文时的行为，验证 `icmp6.h` 中定义的结构体是否被正确使用。你可以根据需要 hook 其他相关的函数或使用不同的 Frida 功能来调试更复杂的情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/netinet/icmp6.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -342,8 +342,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: icmp6.h,v 1.47 2013/07/01 12:43:15 christos Exp $	*/
 /*	$KAME: icmp6.h,v 1.84 2003/04/23 10:26:51 itojun Exp $	*/
 
@@ -860,7 +862,4 @@ struct icmp6_filter {
  */
 
 #endif /* !_NETINET_ICMP6_H_ */
-
-"""
-
 ```

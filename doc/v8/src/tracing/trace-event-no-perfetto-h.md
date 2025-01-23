@@ -436,7 +436,7 @@ By following this structured approach, combining careful reading, pattern recogn
 //   events are considered to match if their category_group, name and id values
 //   all match. |id| must either be a pointer or an integer value up to 64 bits.
 //   If it's a
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tracing/trace-event-no-perfetto.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/tracing/trace-event-no-perfetto.h以.tq结尾，那它是个v8 torque源代码，
@@ -444,8 +444,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -949,7 +951,4 @@ Prompt:
                                    TRACE_EVENT_FLAG_COPY, arg1_name, arg1_val)
 #define TRACE_EVENT_COPY_ASYNC_END2(category_group, name, id, arg1_name, \
                                     arg1_val, arg
-"""
-
-
 ```

@@ -199,7 +199,7 @@ frida -U <your_app_package_name> -l hook_wcwidth.js
 
 这个 Frida 脚本会在 `wcwidth` 函数被调用时打印出传入的宽字符的值（以十六进制显示）以及函数的返回值。 这可以帮助你理解在实际运行过程中，哪些字符被传递给 `wcwidth` 以及它们的宽度是多少。  你可以类似地 Hook 其他 `wchar` 函数来观察它们的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/wchar_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -211,8 +211,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 (0x0300)); // Combining grave.
   EXPECT_EQ(0, wcwidth(0x20dd)); // Combining enclosing circle.
   EXPECT_EQ(0, wcwidth(0x200b)); // Zero width space.
@@ -490,8 +492,4 @@ TEST(wchar, wmemset) {
   ASSERT_EQ(dst, wmemset(dst, L'y', 0));
   ASSERT_EQ(dst[0], wchar_t(0x12345678));
 }
-
-"""
-
-
 ```

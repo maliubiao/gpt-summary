@@ -111,7 +111,7 @@ By following these steps and continuously refining the analysis based on the cod
 
 总而言之，`buildtool.c` 是 Frida 构建过程中的一个小而关键的工具，它通过动态生成简单的 C 代码片段，为 Frida 的功能测试提供了基础。它与逆向工程、二进制底层、操作系统知识都有间接或直接的联系，并且其使用也可能因为编程错误或环境配置问题而导致失败。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/native/10 native subproject/subprojects/buildtool/buildtool.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 const char * gen_main(void);
@@ -130,7 +132,4 @@ int main() {
     printf("{ return 0; }\n");
     return 0;
 }
-
-"""
-
 ```

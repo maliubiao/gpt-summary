@@ -119,14 +119,16 @@ By following this structured thought process, combining code analysis with an un
 
 总而言之，`fragment_directive_utils.cc` 中的 `RemoveSelectorsFromUrl` 函数是一个用于清理 URL 中 Fragment Directives 的实用工具，它通过模仿 JavaScript 的 `history.replaceState()` 来更新浏览器的历史记录，从而提供更好的用户体验，例如在复制或分享链接时去除临时的 Fragment Directives。 然而，开发者需要注意其使用场景，避免在不恰当的时机调用，并注意与 JavaScript 代码的同步。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fragment_directive/fragment_directive_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ void FragmentDirectiveUtils::RemoveSelectorsFromUrl(LocalFrame* frame) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

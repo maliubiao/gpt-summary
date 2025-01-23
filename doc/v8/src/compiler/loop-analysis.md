@@ -69,11 +69,13 @@ console.log(processArray(numbers)); // Output: 15
 
 **In essence, `loop-analysis.cc` provides the necessary information about the structure of loops in JavaScript code that enables the Turbofan compiler to apply various performance optimizations, leading to faster execution of JavaScript applications.** Without this analysis, the compiler would have a much harder time understanding the repetitive nature of loops and applying targeted optimizations.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/loop-analysis.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -846,7 +848,4 @@ void NodeCopier::Insert(Node* original, Node* copy) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

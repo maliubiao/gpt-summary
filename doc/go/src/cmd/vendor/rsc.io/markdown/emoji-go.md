@@ -72,7 +72,7 @@ func main() {
 
 总而言之，这段代码为 markdown 处理提供了 emoji 名称到 emoji 字符的映射，是实现 markdown 中 emoji 支持的基础数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/rsc.io/markdown/emoji.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -81,8 +81,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1188,10 +1190,5 @@ var emoji = map[string]string{
 	"new_moon":                             "\U0001f311",
 	"new_moon_with_face":                   "\U0001f31a",
 	"new_zealand":                          "\U0001f1f3\U0001f1ff",
-	"newspaper":      
-"""
-
-
-
-
+	"newspaper":
 ```

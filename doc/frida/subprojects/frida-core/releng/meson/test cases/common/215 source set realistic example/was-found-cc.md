@@ -207,7 +207,7 @@ Initially, I might have focused too much on the `std::cout` output. However, the
 
 总而言之，`was-found.cc` 作为一个简单的例子，为 Frida 的测试和演示提供了一个明确可识别的目标函数，方便验证 Frida 的函数查找、hook 等核心功能，并帮助开发者理解 Frida 与底层系统交互的原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/215 source set realistic example/was-found.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -215,8 +215,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 
 void some_random_function()
@@ -224,7 +226,4 @@ void some_random_function()
     std::cout << ANSI_START << "huh?"
               << ANSI_END << std::endl;
 }
-
-"""
-
 ```

@@ -100,16 +100,18 @@ I need to identify the functionalities being tested and whether they relate to J
 
 总而言之，`blink/renderer/platform/wtf/decimal_test.cc` 文件的主要功能是 **全面细致地测试 `Decimal` 类的各种功能，确保其在各种场景下都能正确、可靠地工作**。这包括基本的算术运算、比较操作、类型转换以及对特殊值的处理。 这些测试对于保证 Blink 引擎在处理 Javascript 数值运算时的精度和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/decimal_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- kPositive) * Encode(1, 0, kPositive));
+### 源代码
+```cpp
+kPositive) * Encode(1, 0, kPositive));
   EXPECT_EQ(Encode(0, 0, kPositive),
             Encode(1, -1022, kPositive) * Encode(1, -1022, kPositive));
 }
@@ -515,8 +517,4 @@ TEST_F(DecimalTest, ToStringSpecialValues) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

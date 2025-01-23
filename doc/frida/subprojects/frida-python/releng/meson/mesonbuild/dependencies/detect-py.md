@@ -168,7 +168,7 @@ find_external_dependency(
 
 总而言之，`detect.py` 是 Frida 构建系统中负责外部依赖项查找的关键组件，它通过抽象和管理不同的查找策略，确保了 Frida 能够找到其所需的各种库，从而成功构建。理解其功能和工作原理对于调试 Frida 的构建问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/dependencies/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -403,7 +405,4 @@ def _build_external_dependency_list(name: str, env: 'Environment', for_machine: 
         candidates.append(functools.partial(CMakeDependency, name, env, kwargs))
 
     return candidates
-
-"""
-
 ```

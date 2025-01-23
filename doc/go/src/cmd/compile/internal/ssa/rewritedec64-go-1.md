@@ -140,7 +140,7 @@ Response: Let's break down the thought process for analyzing this Go code snippe
 
 `rewritedec64.go` (第二部分) 延续了第一部分的功能，定义了针对 64 位整数操作的特定 SSA 重写规则。这些规则涵盖了加法操作和不同大小的无符号整数到 64 位的零扩展操作。其目的是在编译器的 SSA 优化阶段，将这些操作转换为更精简或更适合后续优化的形式。这些规则是 Go 编译器优化策略的一部分，旨在提升生成代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritedec64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -148,8 +148,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 wValue0(v.Pos, OpXor32, typ.UInt32)
 		v4 := b.NewValue0(v.Pos, OpInt64Lo, typ.UInt32)
 		v4.AddArg(x)
@@ -208,10 +210,4 @@ func rewriteValuedec64_OpZeroExt8to64(v *Value) bool {
 func rewriteBlockdec64(b *Block) bool {
 	return false
 }
-
-"""
-
-
-
-
 ```

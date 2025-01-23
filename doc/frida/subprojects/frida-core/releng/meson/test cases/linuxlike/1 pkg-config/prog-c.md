@@ -109,7 +109,7 @@ By following these steps, combining code analysis with contextual knowledge of F
 
 总而言之，`prog.c` 是一个非常基础但重要的测试用例，用于验证 Frida 在 Linux-like 环境下使用 `pkg-config` 查找库的能力，为 Frida 的动态插桩功能提供基础保障。 它虽然简单，但涉及了程序运行、内存地址、动态链接、构建系统和测试流程等多个方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/linuxlike/1 pkg-config/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<zlib.h>
 
 int main(void) {
@@ -127,7 +129,4 @@ int main(void) {
         return 0;
     return 1;
 }
-
-"""
-
 ```

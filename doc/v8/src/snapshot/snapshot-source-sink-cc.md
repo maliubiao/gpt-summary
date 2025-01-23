@@ -173,15 +173,17 @@ console.timeEnd('startup');
 
 总结来说，`v8/src/snapshot/snapshot-source-sink.cc` 是 V8 内部用于高效地序列化和反序列化堆快照的关键组件，它直接影响了 JavaScript 的启动性能。 用户在手动实现类似功能时需要注意字节序、缓冲区管理、变长编码处理和类型转换等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/snapshot-source-sink.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/snapshot-source-sink.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -237,7 +239,4 @@ int SnapshotByteSource::GetBlob(const uint8_t** data) {
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

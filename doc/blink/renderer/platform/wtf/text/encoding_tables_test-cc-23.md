@@ -113,15 +113,17 @@ By following these steps, we can systematically analyze the code snippet and arr
 
 作为这个系列测试文件的最后一部分，`encoding_tables_test.cc` 的主要功能是**对 Blink 引擎中使用的关键字符编码表进行全面的单元测试，确保其编码和解码的正确性以及内部结构的一致性**。  它涵盖了多种重要的亚洲字符编码，并且通过与预定义的参考表进行比较，保证了字符编码处理的准确性。 这个文件对于保障浏览器正确渲染来自不同编码的网页内容至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/encoding_tables_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第24部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 8D, 0x2ECA, 0x4947, 0x497A, 0x497D, 0x4982, 0x4983,
      0x4985, 0x4986, 0x499F, 0x499B, 0x49B7, 0x49B6, 0x9FBA, 0xE855, 0x4CA3,
      0x4C9F, 0x4CA0, 0x4CA1, 0x4C77, 0x4CA2, 0x4D13, 0x4D14, 0x4D15, 0x4D16,
@@ -197,8 +199,4 @@ TEST(EncodingTables, EnsureGb18030EncodeTable) {
 
 }  // namespace
 }  // namespace WTF
-
-"""
-
-
 ```

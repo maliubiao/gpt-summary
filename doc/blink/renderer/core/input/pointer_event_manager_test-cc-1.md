@@ -90,7 +90,7 @@ By following these steps for each test case, and then synthesizing the informati
 
 总而言之，这个测试文件通过模拟各种用户交互场景，细致地验证了 Blink 引擎中处理指针事件和确定平移动作的逻辑正确性，从而保证了用户在使用触控设备进行网页浏览时的良好体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/input/pointer_event_manager_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 / Pan action to be scroll when element under pointer allows panning but does
   // not allow both swipe to move cursor and stylus writing.
   Element* target = GetDocument().getElementById(AtomicString("target"));
@@ -290,8 +292,4 @@ TEST_F(PanActionPointerEventTest, PanActionSentAcrossFrames) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -72,11 +72,13 @@ Response: The user wants to understand the functionality of the `platform-linux.
 
 总之，`platform-linux.cc` 文件是 V8 引擎在 Linux 平台上运行的基石，它提供了许多与操作系统直接交互的底层功能，这些功能是 V8 执行 JavaScript 代码所必需的。它隐藏了不同操作系统的复杂性，为 V8 的核心功能提供了统一的接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-linux.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -429,7 +431,4 @@ bool OS::RemapPages(const void* address, size_t size, void* new_address,
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

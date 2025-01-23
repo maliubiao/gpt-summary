@@ -143,7 +143,7 @@ int get_stuff() {
 
 总而言之，虽然 `stuff.c` 的代码非常简单，但它在 Frida 项目中扮演着一个重要的角色，用于验证构建系统中 `rpath` 的配置是否正确。它的简单性使其成为一个理想的单元测试目标，能够清晰地验证底层链接器行为。用户接触到这个文件通常是因为他们正在进行与 Frida 构建、测试或底层机制相关的开发或调试工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/10 build_rpath/sub/stuff.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,12 +151,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int get_stuff() {
     return 0;
 }
-
-"""
-
 ```

@@ -240,15 +240,17 @@ While users don't directly interact with this C++ code, the optimizations and li
 
 In summary, `v8/src/regexp/regexp-compiler.h` is a core component in V8 that defines the blueprint for how JavaScript regular expressions are compiled and optimized for efficient execution. It involves complex logic for handling different regex features, applying optimizations, and managing the compilation process. While JavaScript developers don't directly see this code, its functionality and limitations have a direct impact on the behavior and performance of regular expressions in their code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-compiler.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -875,7 +877,4 @@ bool RangeContainsLatin1Equivalents(CharacterRange range);
 }  // namespace v8
 
 #endif  // V8_REGEXP_REGEXP_COMPILER_H_
-
-"""
-
 ```

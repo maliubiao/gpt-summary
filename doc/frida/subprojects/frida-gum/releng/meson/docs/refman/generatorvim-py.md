@@ -184,7 +184,7 @@ let g:frida_builtin_functions = [
 
 总而言之，`generatorvim.py` 是 Frida 项目构建过程中的一个辅助脚本，它通过生成 Vim 配置文件来提升开发者的编码体验，虽然不直接触及底层二进制或内核，但其服务于深入这些领域的 Frida 工具。理解其功能和潜在问题有助于开发者更好地使用和维护 Frida。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/docs/refman/generatorvim.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2023 The Meson development team
 from __future__ import annotations
@@ -231,7 +233,4 @@ class GeneratorVim(GeneratorBase):
         self.out_dir.mkdir(parents=True, exist_ok=True)
         out_file = self.out_dir / outname
         out_file.write_text(result, encoding='utf-8')
-
-"""
-
 ```

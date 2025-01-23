@@ -195,7 +195,7 @@ endif
 
 总而言之，`frida/releng/meson/mesonbuild/interpreter/primitives/dict.py` 文件是 Frida 构建系统内部处理字典类型数据的重要组成部分。虽然它不直接参与目标程序的逆向分析，但理解它的功能对于理解 Frida 的构建过程、进行高级定制和调试是很有帮助的。开发者在编写和调试 Frida 的构建脚本时，可能会因为对字典操作不当而触发这个文件中的代码，从而需要对其进行分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/interpreter/primitives/dict.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 from __future__ import annotations
@@ -293,7 +295,4 @@ class DictHolder(ObjectHolder[T.Dict[str, TYPE_var]], IterableObject):
         if other not in self.held_object:
             raise InvalidArguments(f'Key {other} is not in the dictionary.')
         return self.held_object[other]
-
-"""
-
 ```

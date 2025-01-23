@@ -82,7 +82,7 @@ Let's consider a scenario where a developer is debugging an issue related to how
 
 In summary, while `x11.js` is currently empty, its existence within the project structure strongly suggests its future role as a shim for interacting with the X Window System. Understanding the conventions of Frida, web client architectures, and the purpose of shim layers allows us to infer its intended functionality and potential relevance to reverse engineering, low-level system interaction, and debugging. The "Intentionally left blank" comment is a crucial piece of information that guides our analysis and prevents us from making incorrect assumptions about its current functionality.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/examples/web_client/src/shims/x11.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -90,10 +90,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 // Intentionally left blank.
-
-"""
-
 ```

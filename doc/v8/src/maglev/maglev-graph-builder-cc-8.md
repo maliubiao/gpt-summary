@@ -195,7 +195,7 @@ Maglev 可能会优化 `obj.count++` 假设 `count` 总是数字，但后续赋�
 
 考虑到这是中间部分，可以推断前面部分可能负责解析 JavaScript 代码并生成中间表示（例如 Bytecode 或 Ignition IR），而后续部分则会负责对 Maglev 图进行更深入的分析、优化和最终的代码生成。 `maglev-graph-builder.cc` 是连接前端解析和后端代码生成的重要桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -203,9 +203,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共18部分，请归纳一下它的功能
+```
 
-"""
- feedback.name(), access_info, access_mode);
+### 源代码
+```cpp
+feedback.name(), access_info, access_mode);
     } else {
       result = TryBuildPropertyLoad(receiver, lookup_start_object,
                                     feedback.name(), access_info);
@@ -1055,7 +1057,4 @@ void MaglevGraphBuilder::VisitTypeOf() {
     case TypeOfFeedback::kFunction:
       AddNewNode<CheckDetectableCallable>({value},
                                           GetChe
-"""
-
-
 ```

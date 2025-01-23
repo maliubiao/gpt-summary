@@ -200,15 +200,17 @@ By following this detailed breakdown, which combines code analysis, domain knowl
 
 通过以上步骤，我们可以追踪用户操作如何最终导致执行 `blink/renderer/modules/xr/xr_depth_manager.cc` 中的代码。在调试 WebXR 应用时，查看浏览器的控制台日志、断点调试 JavaScript 代码以及检查 Blink 内部的日志输出 (使用 `DVLOG`) 都是常用的方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_depth_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +326,4 @@ void XRDepthManager::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

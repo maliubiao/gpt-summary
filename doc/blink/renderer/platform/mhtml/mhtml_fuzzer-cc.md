@@ -95,14 +95,16 @@ MHTML (MIME HTML) 是一种将 HTML 文档及其关联资源（如图片、CSS�
 
 `mhtml_fuzzer.cc` 是一个重要的测试工具，用于提高 Chromium Blink 引擎中 MHTML 解析器的健壮性和安全性。它通过向解析器提供各种各样的输入数据，包括可能存在错误的输入，来发现潜在的缺陷。虽然它不直接涉及 JavaScript、HTML 或 CSS 的执行，但由于 MHTML 格式本身包含这些内容，该模糊测试间接地测试了 `MHTMLParser` 处理这些网络技术内容的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mhtml/mhtml_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -137,7 +139,4 @@ int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   return blink::LLVMFuzzerTestOneInput(data, size);
 }
-
-"""
-
 ```

@@ -190,7 +190,7 @@ Here's a breakdown of the thought process to address the request:
 
 总而言之，`compiler.py` 文件在 Meson 构建系统中扮演着与底层编译器交互的关键角色，它提供了一组丰富的接口，允许 Meson 构建系统根据目标环境的编译器特性和能力进行灵活的配置和构建。这对于构建跨平台的软件尤其重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreter/compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,8 +199,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021 Intel Corporation
@@ -875,7 +877,4 @@ class CompilerHolder(ObjectHolder['Compiler']):
 
         # This could be done with a comprehension, but that confuses the type
         # checker, and
-"""
-
-
 ```

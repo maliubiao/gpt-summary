@@ -138,11 +138,13 @@ console.log(getInternalObjectType(internalObject2)); // 可能输出 "MyCustomV8
 
 总结来说，`name-trait-unittest.cc` 这个 C++ 文件测试了 V8 引擎中用于为 C++ 对象命名的核心机制 `NameTrait`，这个机制最终会影响到开发者在使用 V8 调试工具时所看到的内部对象类型信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/name-trait-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -304,7 +306,4 @@ TEST_F(HeapObjectHeaderNameTest, LookupNameThroughGCInfo) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

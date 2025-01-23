@@ -238,7 +238,7 @@ YY YY YY YY  <-- NlMsghdr.Pid
 
 作为第2部分，这段代码的主要功能是**定义了大量的常量，这些常量是 Go 语言程序与 Linux 内核中网络过滤框架 `nftables` 以及其他底层系统功能进行交互时所必需的。**  它为开发者提供了可以直接在 Go 代码中使用的符号化名称，代替了直接使用数字，提高了代码的可读性和可维护性。  虽然它本身不执行任何操作，但它是构建能够控制 Linux 网络行为的 Go 语言程序的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -246,9 +246,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
-            = 0x5
+### 源代码
+```go
+= 0x5
 	NFT_BYTEORDER_NTOH                = 0x0
 	NFT_BYTEORDER_HTON                = 0x1
 	NFTA_BYTEORDER_UNSPEC             = 0x0
@@ -1765,10 +1767,4 @@ const (
 	ETHTOOL_LINK_MODE_20000baseMLD2_Full_BIT                                = 0x15
 	ETHTOOL_LINK_MODE_20000baseKR2_Full_BIT                                 = 0x16
 	ETHTOOL_LINK_MODE_40000baseKR4_Full_BIT                                 = 0x17
-	
-"""
-
-
-
-
 ```

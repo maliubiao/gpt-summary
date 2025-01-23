@@ -178,7 +178,7 @@ By following these steps and considering the context of a build system interpret
 
 到目前为止，我们分析了 `interpreter.py` 文件中关于定义和处理各种构建目标的函数 (如 `vcs_tag`, `custom_target`, `run_target`, `alias_target`, `generator`, `benchmark`, `test`, `install_headers`, `install_man`, `install_emptydir`, `install_symlink`, `structured_sources`, `subdir`, `install_data`, `install_subdir`)。这些函数负责解释 `meson.build` 文件中的指令，进行参数解析和验证，并创建相应的构建对象，最终构建出项目的软件产物。它们是 Meson 构建系统的核心组成部分，将用户友好的构建描述转换为底层构建系统可以执行的指令。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 =True),
         MULTI_OUTPUT_KW,
         # Cannot use the COMMAND_KW because command is allowed to be empty
@@ -868,7 +870,4 @@ Prompt:
             'input',
             ContainerTypeInfo(list, (mesonlib.File, str)),
             listif
-"""
-
-
 ```

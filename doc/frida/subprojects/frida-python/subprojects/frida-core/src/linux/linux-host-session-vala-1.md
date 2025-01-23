@@ -88,7 +88,7 @@ monitor_syscall(1234, 5678)  # 1234 是目标进程的 PID，5678 是目标线�
 ### 总结
 
 `linux-host-session.vala` 文件实现了 Frida 在 Linux 系统上的核心调试功能，包括线程管理、系统调用监控、崩溃信息收集等。通过结合 Linux 内核的底层接口和 Frida 的高级抽象，用户可以方便地进行动态插桩和调试。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/linux/linux-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 essage);
 			}
 			string? name;
@@ -782,8 +784,4 @@ essage);
 	}
 #endif
 }
-
-"""
-
-
 ```

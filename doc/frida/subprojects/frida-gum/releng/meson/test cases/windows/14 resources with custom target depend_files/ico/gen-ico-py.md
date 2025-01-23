@@ -127,7 +127,7 @@ python gen-ico.py input.ico output.ico
 
 总而言之，虽然 `gen-ico.py` 脚本本身很简单，但它在 Frida 项目的特定上下文中发挥着作用，尤其是在与资源处理和构建测试相关的场景中。 其简单性也意味着用户常犯的错误往往集中在命令行参数和文件系统操作上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/windows/14 resources with custom target depend_files/ico/gen-ico.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,15 +135,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 with open(sys.argv[1], 'rb') as infile, open(sys.argv[2], 'wb') as outfile:
     outfile.write(infile.read())
-
-"""
-
 ```

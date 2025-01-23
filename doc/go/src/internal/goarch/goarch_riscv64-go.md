@@ -138,7 +138,7 @@ go build -GOARCH=riscv64 your_program.go
 
 `go/src/internal/goarch/goarch_riscv64.go` 定义了 Go 运行时在 RISCV64 架构上运行所需的一些关键底层常量。这些常量影响着内存管理、函数调用等核心运行时行为。 普通 Go 开发者无需直接关心这些细节，但了解它们有助于理解 Go 如何在不同的硬件架构上工作。 只有在进行底层系统编程或为新架构移植 Go 时，才需要深入理解这些常量的含义。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/goarch/goarch_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -146,8 +146,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -161,9 +163,4 @@ const (
 	_MinFrameSize        = 8
 	_StackAlign          = PtrSize
 )
-
-"""
-
-
-
 ```

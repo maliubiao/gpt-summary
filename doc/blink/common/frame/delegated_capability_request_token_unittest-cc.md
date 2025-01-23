@@ -149,14 +149,16 @@ By following this process, which involves code analysis, contextual understandin
 
 总而言之，`delegated_capability_request_token_unittest.cc` 测试了 Blink 引擎中用于管理临时能力授权的关键组件。虽然开发者不会直接接触这个类，但理解其原理有助于理解 Web 平台中各种权限和能力控制机制的工作方式，并避免相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/frame/delegated_capability_request_token_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -202,7 +204,4 @@ TEST_F(DelegatedCapabilityRequestTokenTest, Basic) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

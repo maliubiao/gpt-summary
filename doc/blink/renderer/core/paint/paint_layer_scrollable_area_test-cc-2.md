@@ -102,7 +102,7 @@ Let's break down the code section by section to identify these aspects:
 
 总而言之，`paint_layer_scrollable_area_test.cc` 文件通过一系列细致的测试用例，确保了 `PaintLayerScrollableArea` 类的功能正确性和稳定性，涵盖了颜色主题、滚动槽、RTL 布局以及主线程滚动等多个关键方面。 这些测试对于保证 Chromium 渲染引擎在处理网页滚动行为时的正确性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_layer_scrollable_area_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 olsNeedPaintInvalidation(root_scrollable_area, true);
 
   // Non root scrollbars should not change.
@@ -455,8 +457,4 @@ TEST_F(PaintLayerScrollableAreaWithWebFrameTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

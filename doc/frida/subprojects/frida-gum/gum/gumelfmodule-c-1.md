@@ -111,7 +111,7 @@ By following these steps, moving from a broad understanding to specific details 
 
 总而言之，`gumelfmodule.c` 是 Frida 工具中一个至关重要的组成部分，它负责将底层的 ELF 二进制数据转化为高层次的、易于理解和操作的信息，为 Frida 的动态插桩功能提供了坚实的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/gumelfmodule.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,9 +120,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                      gpointer user_data)
+### 源代码
+```c
+gpointer user_data)
 {
   guint i;
 
@@ -1375,8 +1377,4 @@ beach:
 }
 
 #endif
-
-"""
-
-
 ```

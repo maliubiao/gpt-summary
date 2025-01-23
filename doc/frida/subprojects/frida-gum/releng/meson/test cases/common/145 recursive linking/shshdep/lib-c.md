@@ -145,7 +145,7 @@ if (Process.platform === 'linux') {
 
 总而言之，到达这个 `lib.c` 文件通常是因为用户（通常是逆向工程师、安全研究员或开发者）在使用 Frida 进行动态分析或调试，并且 `get_shshdep_value` 函数成为了他们分析的焦点。这个文件本身作为一个简单的测试用例，清晰地展示了函数调用和符号导出的基本概念，方便验证 Frida 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/145 recursive linking/shshdep/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "../lib.h"
 
 int get_shnodep_value (void);
@@ -163,7 +165,4 @@ SYMBOL_EXPORT
 int get_shshdep_value (void) {
   return get_shnodep_value ();
 }
-
-"""
-
 ```

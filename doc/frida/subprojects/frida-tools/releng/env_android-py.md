@@ -179,7 +179,7 @@ config["options"]["c_args"] = "c_like_flags + ..."
 
 总而言之，`env_android.py` 扮演着 Frida 在 Android 平台上构建的基石角色，它确保了构建过程能够找到正确的工具链，并使用适合 Android 平台的编译和链接选项，这对于 Frida 这种需要与底层系统交互的动态 instrumentation 工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/env_android.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from configparser import ConfigParser
 from pathlib import Path
 import shlex
@@ -339,7 +341,4 @@ ARCH_LINKER_FLAGS = {
         "-Wl,--fix-cortex-a8",
     ]
 }
-
-"""
-
 ```

@@ -184,7 +184,7 @@ Frida 是一个动态 instrumentation 工具，常用于逆向工程、安全研
 
 总而言之，`test_toml_file.py` 是 `tomlkit` 库质量保证的关键部分，它通过一系列细致的测试用例，验证了库在处理各种 TOML 文件时的正确性和健壮性，特别是对文件内容和行尾符的处理。理解这些测试用例的功能，可以帮助开发者、贡献者和用户更好地理解和使用 `tomlkit` 库。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/tests/test_toml_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 
 from tomlkit.toml_document import TOMLDocument
@@ -301,7 +303,4 @@ def test_default_eol_is_os_linesep(tmpdir):
     linesep = os.linesep.encode()
     with open(toml_path, "rb") as f:
         assert f.read() == b"a = 1" + linesep + b"b = 2" + linesep
-
-"""
-
 ```

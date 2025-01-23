@@ -195,15 +195,17 @@ fetch('https://example.com')
 
 总而言之，`tls_stream_attempt_unittest.cc` 通过各种测试用例，确保 `TlsStreamAttempt` 类在各种场景下都能正确地建立 TLS 连接或处理连接失败的情况，这对于保障 Chromium 浏览器的安全性和网络连接的稳定性至关重要。虽然普通用户不直接操作这个类，但它的正确性直接影响着用户访问 HTTPS 网站的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/tls_stream_attempt_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -760,7 +762,4 @@ TEST_F(TlsStreamAttemptTest, EchRetryFail) {
 }
 
 }  // namespace net
-
-"""
-
 ```

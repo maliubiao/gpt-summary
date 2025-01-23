@@ -236,15 +236,17 @@ function createManyStrings() {
 
 `v8/src/profiler/profile-generator.h` 是 V8 性能分析器的核心组成部分，它定义了用于捕获、组织和表示 JavaScript 代码执行信息的关键数据结构。虽然开发者不会直接操作这些类，但理解它们的功能有助于理解 V8 如何进行性能分析，并更好地利用性能分析工具来优化 JavaScript 代码。它与 JavaScript 的执行息息相关，并能帮助开发者发现常见的性能瓶颈和编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/profile-generator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/profile-generator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -875,7 +877,4 @@ class CpuProfileJSONSerializer {
 }  // namespace v8
 
 #endif  // V8_PROFILER_PROFILE_GENERATOR_H_
-
-"""
-
 ```

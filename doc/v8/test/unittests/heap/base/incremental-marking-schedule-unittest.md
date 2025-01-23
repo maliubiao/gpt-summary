@@ -119,11 +119,13 @@ V8 使用 `IncrementalMarkingSchedule` 来规划小的标记步骤。在 `setInt
 
 总而言之，`incremental-marking-schedule-unittest.cc` 通过一系列的单元测试，确保 `IncrementalMarkingSchedule` 类能够按照预期工作，有效地管理增量标记过程，从而为 JavaScript 应用提供更流畅的性能体验。虽然 JavaScript 开发者不直接使用这个类，但它的正确运行是 V8 引擎实现高效垃圾回收的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/base/incremental-marking-schedule-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ TEST_F(IncrementalMarkingScheduleTest, GetCurrentStepInfo) {
 }
 
 }  // namespace heap::base
-
-"""
-
 ```

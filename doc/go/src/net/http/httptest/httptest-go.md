@@ -223,7 +223,7 @@ func main() {
 
 总结来说，`httptest.NewRequest` 和 `NewRequestWithContext` 是在 Go 语言中进行 HTTP 处理程序单元测试的重要工具，它们允许开发者在不启动实际 HTTP 服务器的情况下，模拟各种 HTTP 请求场景来测试自己的处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/httptest/httptest.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -231,8 +231,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -330,9 +332,4 @@ func NewRequestWithContext(ctx context.Context, method, target string, body io.R
 
 	return req
 }
-
-"""
-
-
-
 ```

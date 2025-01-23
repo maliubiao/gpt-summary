@@ -146,15 +146,17 @@ By following this thought process, combining code analysis with a conceptual und
 
 理解 `edit_command.cc` 的作用以及它在整个编辑流程中的位置，对于调试和理解 Blink 引擎的编辑功能至关重要。它是一个核心的抽象层，连接了用户交互、JavaScript 代码和底层的 DOM 操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/edit_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2006, 2007 Apple, Inc.  All rights reserved.
  *
@@ -247,7 +249,4 @@ void EditCommand::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

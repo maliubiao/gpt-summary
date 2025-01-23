@@ -99,7 +99,7 @@ By following these steps, I arrive at a comprehensive answer that addresses all 
 
 总而言之，这个 `other.c` 文件本身功能简单，但其作为 Frida 项目测试用例的一部分，体现了动态分析、逆向工程以及对操作系统底层机制的理解。它主要用于测试 Frida 工具在特定环境下的行为，而不是作为一个独立的功能模块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/155 subproject dir name collision/other_subdir/custom_subproject_dir/other.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 
 #if defined _WIN32 || defined __CYGWIN__
@@ -128,7 +130,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

@@ -191,14 +191,16 @@ By following these steps,  we can systematically analyze the code and generate a
 
 `compositing_reasons.cc` 文件是 Blink 渲染引擎中一个核心的配置文件，它清晰地定义了浏览器决定创建合成层的各种因素。理解这些原因对于前端开发者来说至关重要，可以帮助他们编写出性能更优的网页，并有效地调试渲染问题。通过合理地使用 CSS 属性和理解浏览器的渲染机制，开发者可以避免不必要的合成，优化页面性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing_reasons.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -365,7 +367,4 @@ String CompositingReason::ToString(CompositingReasons reasons) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

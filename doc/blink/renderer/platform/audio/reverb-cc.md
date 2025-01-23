@@ -170,14 +170,16 @@ Initially, I might have focused too heavily on the mathematical details of the c
 
 总而言之，`blink/renderer/platform/audio/reverb.cc` 是 Chromium 浏览器实现音频混响效果的核心 C++ 代码，它与 Web Audio API 中的 `ConvolverNode` 接口紧密相关，使得 JavaScript 开发者能够在网页上轻松地为音频添加空间感和氛围。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/reverb.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -463,7 +465,4 @@ size_t Reverb::LatencyFrames() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

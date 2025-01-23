@@ -138,7 +138,7 @@ By following this structured thought process, starting with understanding the co
 
 这个过程演示了 Frida 如何与目标进程交互，以及如何利用导出的符号来实施动态 Hook。这个简单的 `foo.cpp` 文件在整个测试流程中起到了一个可控的、容易验证功能的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/178 bothlibraries/foo.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <memory>
 #include "mylib.h"
 
@@ -159,7 +161,4 @@ int foo(void) {
     auto bptr = std::make_shared<int>(0);
     return *bptr;
 }
-
-"""
-
 ```

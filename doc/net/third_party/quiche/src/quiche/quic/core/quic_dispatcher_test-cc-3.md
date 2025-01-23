@@ -114,7 +114,7 @@ Now, I will formulate the response based on these observations.
 
 总结来说，这部分 `QuicDispatcher` 的测试代码主要关注其管理 QUIC 连接的写入能力、处理多连接 ID 以及在连接建立初期缓冲数据包的关键功能。这些功能对于保证 QUIC 连接的可靠性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_dispatcher_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -122,10 +122,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-
-      .WillOnce(
+### 源代码
+```cpp
+.WillOnce(
           Invoke(this, &QuicDispatcherWriteBlockedListTest::BlockConnection2));
   dispatcher_->OnCanWrite();
 
@@ -865,7 +866,4 @@ TEST_P(BufferedPacketStoreTest,
 // Duplicated CHLO shouldn't be buffered.
 TEST_P(BufferedPacketStoreTest, BufferDuplicatedCHLO) {
   for (uint64_t conn_id = 1; conn_id <= kMaxN
-"""
-
-
 ```

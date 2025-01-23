@@ -62,12 +62,14 @@ console.log(anotherNewVector); // 输出: Int32Array [ 10, 1, 2, 3 ]
 
 总而言之，这段 C++ 代码通过单元测试确保 V8 能够正确地生成和使用 RISC-V 向量指令，这是 V8 引擎为了提升 JavaScript 和 WebAssembly 在 RISC-V 架构上的执行效率而进行的关键工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-riscv32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 RISCV_SIMD)) return;                        \
     constexpr uint32_t n = kRvvVLEN / width;                                  \
     CcTest::InitializeVM();                                                   \
@@ -271,8 +273,4 @@ TEST(RISCV_UTEST_WasmRvvS128const) {
 #undef __
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

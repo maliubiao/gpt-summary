@@ -154,15 +154,17 @@ By following these steps, I can generate a comprehensive and accurate answer tha
 
 总而言之，`queuing_strategy_common.cc` 中的 `GetCachedSizeFunction` 是 Blink 引擎中处理 JavaScript Streams API 中自定义 `size` 函数的关键部分，它通过缓存机制提高了性能，并确保了引擎能够正确地获取和使用开发者提供的 JavaScript 代码来管理数据流的队列。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/streams/queuing_strategy_common.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ ScriptValue GetCachedSizeFunction(ScriptState* script_state,
 }
 
 }  // namespace blink
-
-"""
-
 ```

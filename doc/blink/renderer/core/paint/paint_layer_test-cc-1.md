@@ -155,7 +155,7 @@ In essence, this part of the test file aims to ensure the correctness and robust
 
 总而言之，`paint_layer_test.cc` 的这一部分着重于对 Blink 渲染引擎中 `PaintLayer` 对象的各种复杂行为进行细致的测试，确保在各种高级 CSS 布局和用户交互场景下，渲染结果的正确性和性能。这些测试覆盖了从基本的层叠顺序到复杂的 compositing 策略和 hit-test 行为，旨在防止因渲染引擎的 bug 而导致的用户体验问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_layer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rflowControls());
   EXPECT_THAT(LayersPaintingOverlayOverflowControlsAfter(child),
               Pointee(ElementsAre(parent)));
@@ -1047,8 +1049,4 @@ TEST_P(PaintLayerTest, HitTestSVGWithStopNode) {
   EXPECT_EQ(circle, result.InnerNode());
 
   request = HitTestRequest(HitTestRequest::kReadOnly | HitTestRequest::kActive,
-            
-"""
-
-
 ```

@@ -138,7 +138,7 @@ Let's imagine a user is experiencing an issue with a web application where a spe
 
 This first part of `net/server/http_server_unittest.cc` focuses on **establishing the basic testing infrastructure and verifying the fundamental capabilities of the `HttpServer` in handling standard HTTP requests and the initial stages of WebSocket connection upgrades.** It uses a mock client to send requests and a delegate to observe the server's actions, ensuring the server correctly parses request methods, paths, headers, and bodies, and reacts appropriately to malformed requests and WebSocket upgrade attempts.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/server/http_server_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1071,7 +1073,4 @@ TEST_F(HttpServerTest, SendRaw) {
                    TRAFFIC_ANNOTATION_FOR_TESTS);
   server_->SendRaw(request.connection_id, "More Data",
                    TRAF
-"""
-
-
 ```

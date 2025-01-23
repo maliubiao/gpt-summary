@@ -130,7 +130,7 @@ addi sp, sp, -8 // 栈指针向下移动 8 字节 (假设是 64 位架构)
 
 总而言之，`v8/src/codegen/mips64/macro-assembler-mips64.h` 是 V8 引擎中至关重要的组成部分，它提供了一种结构化的方式来生成高效的 MIPS64 机器码，从而使得 V8 能够在该架构上执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/macro-assembler-mips64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/macro-assembler-mips64.h以.tq结尾，那它是个v8 torque源代码，
@@ -138,8 +138,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ize the value else, do nothing.
   void FPUCanonicalizeNaN(const DoubleRegister dst, const DoubleRegister src);
 
@@ -675,8 +677,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 #define ACCESS_MASM(masm) masm->
 
 #endif  // V8_CODEGEN_MIPS64_MACRO_ASSEMBLER_MIPS64_H_
-
-"""
-
-
 ```

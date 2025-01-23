@@ -724,7 +724,7 @@ DirectHandle<String> Object::NoSideEffectsToString(Isolate* isolate,
 MaybeHandle<Number> Object::ConvertToLength(Isolate* isolate,
                                             Handle<Object> input) {
   ASSIGN_RETURN_ON_EXCEPTION(isolate, input, ToNumber(isolate, input
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -732,8 +732,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1612,7 +1614,4 @@ Maybe<bool> Object::Equals(Isolate* isolate, Handle<Object> x,
         x = Oddball::ToNumber(isolate, Cast<Oddball>(x));
       } else {
         return Just(fa
-"""
-
-
 ```

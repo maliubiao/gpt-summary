@@ -148,7 +148,7 @@ By following these steps, combining code analysis with an understanding of the b
 
 总而言之，`minit.py` 是一个方便的工具，用于快速搭建基于 Meson 构建系统的项目。虽然它本身不直接进行逆向操作，但它可以帮助逆向工程师创建测试环境和辅助工具。它也涉及到一些底层的编译和链接知识，以及与操作系统和框架的交互概念。理解这个脚本的功能可以帮助开发者更好地利用 Meson 构建系统，并为进行 Frida 相关的动态分析工作打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/minit.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017 The Meson development team
 
@@ -362,7 +364,4 @@ def run(options: Arguments) -> int:
         if ret.returncode:
             raise SystemExit
     return 0
-
-"""
-
 ```

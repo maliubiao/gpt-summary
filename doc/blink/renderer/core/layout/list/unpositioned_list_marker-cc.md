@@ -74,14 +74,16 @@ By following these steps, we can systematically analyze the source code and gene
 **主要功能:**
 
 1. **管理非定位的列表标记:**  `UnpositionedListMarker` 类专门处理那些不作为列表项内联内容一部分进行布局的
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/list/unpositioned_list_marker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -296,7 +298,4 @@ void UnpositionedListMarker::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

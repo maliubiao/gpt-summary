@@ -190,7 +190,7 @@ void some_function() {
 
 总之，这段代码是 Frida 用于测试和演示 SSSE3 SIMD 指令集功能的一个示例。理解其功能需要对 SIMD 编程、CPU 架构以及 Frida 动态 instrumentation 的原理有一定的了解。它在逆向工程中可以帮助分析使用了 SIMD 指令的程序，并提供了一些关于 CPU 功能检测和内存管理方面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/147 simd/simd_ssse3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -198,8 +198,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -248,7 +250,4 @@ void increment_ssse3(float arr[4]) {
     arr[2] = (float)darr[3];
     arr[3] = (float)darr[2];
 }
-
-"""
-
 ```

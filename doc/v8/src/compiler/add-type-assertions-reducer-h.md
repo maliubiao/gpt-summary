@@ -153,15 +153,17 @@ While this component operates internally, it helps optimize code that might be s
 
 **In summary,** `v8/src/compiler/add-type-assertions-reducer.h` defines a crucial part of V8's compilation pipeline that enhances optimization by adding explicit type information to the intermediate representation of JavaScript code. It helps the compiler make better assumptions about types and generate more efficient machine code, even though JavaScript is a dynamically typed language.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/add-type-assertions-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/add-type-assertions-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -187,7 +189,4 @@ void AddTypeAssertions(JSGraph* jsgraph, Schedule* schedule, Zone* phase_zone);
 }  // namespace v8
 
 #endif  // V8_COMPILER_ADD_TYPE_ASSERTIONS_REDUCER_H_
-
-"""
-
 ```

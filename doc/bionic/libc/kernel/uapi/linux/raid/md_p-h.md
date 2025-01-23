@@ -206,7 +206,7 @@ sys.stdin.read()
 
 这个脚本会 hook `open` 和 `read` 系统调用，并打印出打开的 RAID 设备路径和读取操作的相关信息。你可以根据需要扩展这个脚本来 hook 其他相关的系统调用 (例如 `ioctl`) 并解析读取到的数据，以便更深入地了解用户空间程序与内核 RAID 驱动的交互过程。需要注意的是，监控系统进程可能需要 root 权限。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/raid/md_p.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -217,8 +217,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -455,7 +457,4 @@ struct ppl_header {
   struct ppl_header_entry entries[PPL_HDR_MAX_ENTRIES];
 } __attribute__((__packed__));
 #endif
-
-"""
-
 ```

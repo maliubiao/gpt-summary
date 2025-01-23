@@ -113,7 +113,7 @@ By following these steps, considering the context, and making logical inferences
 
 总之，`prog.py` 脚本本身是一个非常简单的程序，它主要作为 Frida 中 `frida-qml` 子项目的一个测试用例存在，用于验证 Frida 与基于 GObject 的库交互的能力。它与逆向工程的联系在于它可以作为逆向分析的目标，帮助逆向工程师理解 Frida 的 hook 机制和能力。理解这个脚本需要一定的底层知识，包括 GObject Introspection 和构建系统。用户在探索 Frida 源码和测试用例时可能会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/11 gir subproject/gir/prog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,15 +121,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 from gi.repository import MesonSub
 
 if __name__ == "__main__":
     s = MesonSub.Sample.new("Hello, sub/meson/py!")
     s.print_message()
-
-"""
-
 ```

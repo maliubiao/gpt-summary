@@ -165,15 +165,17 @@ function processData(input) {
 
 `v8/src/compiler/wasm-escape-analysis.h` 定义了一个用于优化 WebAssembly 代码的编译器优化器，它通过逃逸分析来消除不必要的原始内存分配。 这项优化可以间接提升 JavaScript 应用的性能，尤其是在与 WebAssembly 模块交互时。 它主要在编译器的内部工作，与用户常见的编程错误的直接联系较少，但其优化的目标是提升程序效率，避免不必要的资源消耗。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-escape-analysis.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/wasm-escape-analysis.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ class WasmEscapeAnalysis final : public AdvancedReducer {
 }  // namespace v8
 
 #endif  // V8_COMPILER_WASM_ESCAPE_ANALYSIS_H_
-
-"""
-
 ```

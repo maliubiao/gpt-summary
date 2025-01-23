@@ -105,7 +105,7 @@ This code is part of the *test suite* for Frida. Therefore, a user wouldn't typi
 
 **In summary,** while seemingly trivial, this `mixer-glue.c` file serves as a simple, predictable component within Frida's test infrastructure. It allows developers to verify that the integration between Frida, QML, and Vala is working correctly in a scenario involving mixed dependencies. Its constant return value simplifies testing and provides a clear baseline for verification. For a reverse engineer, encountering such code could be a clue that they are looking at a simplified or test-related component and need to investigate further to find the actual logic.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/vala/16 mixed dependence/mixer-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,14 +113,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "mixer.h"
 
 guint mixer_get_volume(Mixer *mixer) {
     return 11;
 }
-
-"""
-
 ```

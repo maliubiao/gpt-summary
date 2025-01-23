@@ -229,7 +229,7 @@ setTimeout(function() {
 
 通过这种方式，你可以动态地监控 Android 应用对 `fmax` 函数的调用，从而理解其行为和数据流。这对于调试和分析与数学运算相关的潜在问题非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/fmax_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -240,8 +240,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1335,7 +1337,4 @@ static data_1_2_t<double, double, double> g_fmax_intel_data[] = {
     -0x1.0p-1074
   }
 };
-
-"""
-
 ```

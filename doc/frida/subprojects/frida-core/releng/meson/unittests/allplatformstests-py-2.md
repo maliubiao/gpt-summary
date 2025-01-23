@@ -150,7 +150,7 @@ A developer working on Frida's build system or encountering issues related to di
 
 This part of the `allplatformstests.py` file in Frida's Meson build system focuses on testing the **packaging and dependency management features**. It verifies the correct generation of distribution archives, the proper handling of prebuilt libraries (including locating them via `pkg-config` and CMake), the correct setting of RPATH for relocatable binaries, and the robustness of array-type build options. It ensures that Frida's build process can correctly package the software for distribution and handle various dependency scenarios across different platforms.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,9 +159,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
-        raise SkipTest('thinLTO requires ld.lld, ld.gold, ld64, or lld-link')
+### 源代码
+```python
+raise SkipTest('thinLTO requires ld.lld, ld.gold, ld64, or lld-link')
         elif is_windows():
             raise SkipTest('LTO not (yet) supported by windows clang')
 
@@ -879,8 +881,4 @@ Prompt:
         def get_opt():
             opts = self.introspect('--buildoptions')
             for x in opts:
-          
-"""
-
-
 ```

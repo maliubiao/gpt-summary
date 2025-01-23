@@ -100,11 +100,13 @@ add(5, 2.5); // 整数和浮点数相加
 
 总而言之，`machine-graph-verifier.cc` 在 V8 编译器的优化过程中扮演着至关重要的角色，它通过静态分析机器图的数据类型一致性，保证了最终生成的机器码能够正确且高效地执行 JavaScript 代码。它就像一个严格的“类型检查器”，在编译的底层机器表示层面工作，确保了 JavaScript 动态类型在底层实现中的一致性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-graph-verifier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1200,7 +1202,4 @@ void MachineGraphVerifier::Run(Graph* graph, Schedule const* const schedule,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

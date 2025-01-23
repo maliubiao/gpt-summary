@@ -121,15 +121,17 @@ func calculateComplex(y int) int {
 
 总而言之，`go/test/prove_constant_folding.go` 是 Go 编译器团队用来测试和验证常量折叠优化的一个内部测试文件。它通过特定的代码结构和 `// ERROR` 注释，断言编译器在特定条件下能够识别和证明某些表达式或变量是常量。理解这段代码有助于深入了解 Go 编译器的优化机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/prove_constant_folding.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -d=ssa/prove/debug=2
 
 //go:build amd64
@@ -163,9 +165,4 @@ func f0u(x uint) uint {
 
   return x / 2
 }
-
-"""
-
-
-
 ```

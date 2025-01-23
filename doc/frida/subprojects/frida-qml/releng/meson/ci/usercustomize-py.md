@@ -94,7 +94,7 @@ Here's a breakdown of the thinking process to analyze the provided Python code a
 
 `frida/subprojects/frida-qml/releng/meson/ci/usercustomize.py` 的核心功能是为 Frida QML 组件的 CI 过程启用代码覆盖率测量。它通过标准的 Python 机制在解释器启动时自动执行，帮助开发者评估测试的覆盖程度，从而提高 Frida 自身的代码质量。虽然它不直接参与逆向目标应用程序或与底层系统交互，但它通过确保 Frida 的稳定性和可靠性，间接地支持了 Frida 的核心功能。用户通常不会直接操作这个文件，但当开发 Frida 或排查 CI 构建问题时，理解它的作用是有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/ci/usercustomize.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -102,14 +102,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
 import coverage
 coverage.process_startup()
-
-"""
-
 ```

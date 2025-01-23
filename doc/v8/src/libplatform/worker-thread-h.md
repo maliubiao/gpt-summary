@@ -175,15 +175,17 @@ onmessage = function(event) {
 
 `v8/src/libplatform/worker-thread.h` 定义了一个用于创建和管理后台工作线程的 C++ 类。它是 V8 引擎内部实现并发和异步操作的关键组件，虽然不直接是 JavaScript 代码，但与 JavaScript 中的 Web Workers 等功能有着概念上的联系。理解这类底层的线程管理机制有助于深入理解 JavaScript 运行时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/worker-thread.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/libplatform/worker-thread.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -223,7 +225,4 @@ class V8_PLATFORM_EXPORT WorkerThread : public NON_EXPORTED_BASE(base::Thread) {
 
 
 #endif  // V8_LIBPLATFORM_WORKER_THREAD_H_
-
-"""
-
 ```

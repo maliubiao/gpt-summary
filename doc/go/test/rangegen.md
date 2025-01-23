@@ -121,14 +121,16 @@ func main() {
 
 总而言之，`go/test/rangegen.go` 是一个用于测试 Go 语言 "range over function" 特性的代码生成器。它通过生成各种复杂的 `range` 循环结构，并可以选择性地执行这些生成的代码，来验证该特性的正确性和健壮性。理解其 `long` 模式和代码生成逻辑是理解其工作原理的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/rangegen.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // runoutput -goexperiment rangefunc
 
 // Copyright 2023 The Go Authors. All rights reserved.
@@ -479,9 +481,4 @@ func main() {
 `
 	fmt.Printf("%s\n", code)
 }
-
-"""
-
-
-
 ```

@@ -134,15 +134,17 @@ func example(p *int) int {
 
 总而言之，这段代码是一个精巧的编译器测试用例，用于验证 SSA "tighten" 传递在特定架构和场景下的正确行为，特别是关于接口类型和内存访问操作的优化。它使用了 Go 编译器测试框架的特定指令来声明预期的错误信息，以便自动化地验证编译器的优化行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/tighten.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -d=ssa/tighten/debug=1
 
 //go:build arm64
@@ -165,9 +167,4 @@ func moveValuesWithMemoryArg(len int) {
 		_ = e != ts // ERROR "MOVDload is moved$" "MOVDaddr is moved$"
 	}
 }
-
-"""
-
-
-
 ```

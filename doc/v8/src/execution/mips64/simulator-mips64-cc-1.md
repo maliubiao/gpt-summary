@@ -161,7 +161,7 @@ Here's a breakdown of the thought process to generate the response:
 
 总而言之，这部分代码是 MIPS64 架构模拟器的核心组成部分，专注于提供对浮点数和 MSA 寄存器的底层操作和状态管理，确保在非 MIPS64 平台上能够正确模拟执行针对该架构的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/simulator-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/mips64/simulator-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r::get_double_from_register_pair(int reg) {
   // TODO(plind): bad ABI stuff, refactor or remove.
   DCHECK((reg >= 0) && (reg < kNumSimuRegisters) && ((reg % 2) == 0));
@@ -1092,7 +1094,4 @@ void Simulator::TraceMemWr(int64_t addr, T value) {
         base::SNPrintF(trace_buf_,
                        "    %04" PRIx16 " --> [%08" PRIx64 "]    (%" PRIu64 ")",
                        static_cast<uint16_t>(value)
-"""
-
-
 ```

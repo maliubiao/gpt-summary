@@ -118,7 +118,7 @@ By following these steps, I could thoroughly analyze the provided code snippet a
 
 总而言之，`optinterpreter.py` 在 Frida 的构建系统中扮演着至关重要的角色，它确保用户可以通过 `meson_options.txt` 文件灵活地配置构建选项，并保证这些选项的有效性，最终影响 Frida 的构建结果和功能特性。虽然它不直接参与逆向过程，但它为构建出符合逆向分析需求的 Frida 提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/optinterpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2014 The Meson development team
 
@@ -404,7 +406,4 @@ class OptionInterpreter:
     )
     def feature_parser(self, name: str, description: str, args: T.Tuple[bool, _DEPRECATED_ARGS], kwargs: FeatureArgs) -> coredata.UserOption:
         return coredata.UserFeatureOption(name, description, kwargs['value'], *args)
-
-"""
-
 ```

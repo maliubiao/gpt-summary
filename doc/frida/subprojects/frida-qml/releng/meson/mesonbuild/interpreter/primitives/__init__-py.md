@@ -118,7 +118,7 @@ Users don't typically interact with this specific `__init__.py` file directly. I
 
 In summary, this `__init__.py` file is a foundational component for the Frida build process, defining and exposing the basic building blocks for representing data within the Meson interpreter. While not directly involved in the dynamic instrumentation aspect of Frida, it plays a vital role in setting the stage for its creation. Understanding its function is valuable for those seeking a deeper understanding of Frida's architecture and build process, especially when debugging build-related issues.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreter/primitives/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -157,7 +159,4 @@ from .string import (
     DependencyVariableString, DependencyVariableStringHolder,
     OptionString, OptionStringHolder,
 )
-
-"""
-
 ```

@@ -174,7 +174,7 @@ python generator.py my_component /tmp/output
 
 因此，到达这个脚本的路径通常是一个软件开发和测试的流程，其中自动化测试用于发现构建系统在处理特定情况下的问题。这个脚本本身是问题重现或测试验证的一个环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing/41 custom target outputs not matching install_dirs/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -200,7 +202,4 @@ with open(os.path.join(odir, name + '.c'), 'w') as f:
     f.write('int main(int argc, char *argv[]) { return 0; }')
 with open(os.path.join(odir, name + '.sh'), 'w') as f:
     f.write('#!/bin/bash')
-
-"""
-
 ```

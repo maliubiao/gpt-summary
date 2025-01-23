@@ -165,15 +165,17 @@ func main() {
 
 总而言之，`go/test/slice3err.go` 是 Go 编译器测试套件的一部分，专门用于验证编译器是否能够正确地检测和报告与切片操作，尤其是三索引切片相关的各种错误。它通过预期的错误注释来驱动测试过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/slice3err.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -295,9 +297,4 @@ func f() {
 	_ = slice[11:2:3] // ERROR "invalid slice index|invalid slice indices|inverted slice"
 	_ = slice[11:12:13]
 }
-
-"""
-
-
-
 ```

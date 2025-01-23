@@ -160,15 +160,17 @@ example.net.
 
 通过这些步骤，开发者可以利用 `tld_cleanup.cc` 及其生成的日志文件作为调试线索，诊断和解决与域名和安全策略相关的问题。这个工具保证了 Chrome 对顶级域名的理解是准确的，从而确保了网络浏览的安全性与可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/tld_cleanup/tld_cleanup.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ int main(int argc, const char* argv[]) {
     return 1;
   return 0;
 }
-
-"""
-
 ```

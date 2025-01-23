@@ -210,7 +210,7 @@ func ExpOfSquare(x float64) float64 {
 
 因此，理解 build tag 的作用，并谨慎使用平台特定代码，是避免此类错误的Key。在标准库中，这种平台特定的优化是经过深思熟虑的，对于普通开发者来说，更多的是理解其原理，而不是直接修改或依赖这些内部实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/exp_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -218,8 +218,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -231,9 +233,4 @@ package math
 import "internal/cpu"
 
 var useFMA = cpu.X86.HasAVX && cpu.X86.HasFMA
-
-"""
-
-
-
 ```

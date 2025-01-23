@@ -112,7 +112,7 @@ Let's consider the `compute_parameters_with_absolute_paths` method:
 
 **In summary, `java.py` is a crucial piece of Frida's build system, responsible for configuring and managing the compilation of Java code. While it doesn't directly perform reverse engineering, it's essential for building the components of Frida that enable the dynamic analysis and reverse engineering of Java-based applications and the Android runtime.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/compilers/java.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -235,7 +237,4 @@ class JavaCompiler(BasicLinkerIsCompilerMixin, Compiler):
 
     def get_debug_args(self, is_debug: bool) -> T.List[str]:
         return java_debug_args[is_debug]
-
-"""
-
 ```

@@ -67,12 +67,14 @@ When this JavaScript code is executed on a MIPS64 architecture, the V8 engine wi
 
 Therefore, the functionality tested in this C++ file directly underpins the correct and efficient execution of numerical operations in JavaScript when running on MIPS64 systems.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 le inputsb[kTableLength] = {
         4.8, 5.3,  6.1, -10.0, -8.9, -9.8, 9.8,  9.8,  9.8,  -9.8,  -11.2, -9.8,
         3.0, dnan, 0.0, -0.0,  dnan, dinf, dinf, 42.0, dinf, dminf, dnan};
@@ -2267,7 +2269,4 @@ TEST(CMP_COND_FMT) {
     CHECK_EQ(base::bit_cast<uint64_t>(test.dUne), dTrue);
     CHECK_EQ(base::bit_cast<uint64_t>(test.dNe), dTrue);
     CHECK_EQ(bas
-"""
-
-
 ```

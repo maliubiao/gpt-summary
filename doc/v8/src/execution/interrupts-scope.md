@@ -112,11 +112,13 @@ console.log("Large object created.");
 
 `interrupts-scope.cc` 中定义的 `InterruptsScope` 类是 V8 引擎内部一个重要的机制，用于管理和控制中断的处理时机。它通过创建嵌套的作用域和定义不同的中断处理模式，使得 V8 能够灵活地决定何时处理各种内部中断，例如垃圾回收、定时器触发等，从而保证 JavaScript 代码的正确和高效执行。虽然 JavaScript 开发者不能直接操作这个类，但理解其功能有助于理解 V8 引擎的内部工作原理以及 JavaScript 代码执行背后的复杂性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/interrupts-scope.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -150,7 +152,4 @@ bool InterruptsScope::Intercept(StackGuard::InterruptFlag flag) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

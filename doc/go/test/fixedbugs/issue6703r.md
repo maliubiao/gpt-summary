@@ -143,15 +143,17 @@ func main() {
 
 `issue6703r.go`  作为一个 `errorcheck` 测试用例，专门用于验证 Go 编译器在处理嵌入结构体方法调用与全局变量初始化时，能否正确地检测并报告循环依赖错误。它确保了 Go 语言的静态分析能力，帮助开发者避免在运行时出现难以调试的初始化问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6703r.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -180,9 +182,4 @@ var (
 	e E
 	x = g().m() // ERROR "initialization cycle|depends upon itself" 
 )
-
-"""
-
-
-
 ```

@@ -136,14 +136,16 @@ By following these steps, I could systematically break down the code and underst
 
 `animation_sim_test.cc` 是 Blink 引擎中一个重要的测试文件，用于验证动画功能的正确性，特别是涉及到自定义属性动画时。它通过模拟各种场景来确保动画引擎的稳定性和可靠性，并防止之前修复的 bug 再次出现。虽然开发者不会直接与这个文件交互，但它测试的功能直接关系到开发者在 JavaScript、HTML 和 CSS 中使用的动画特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/animation_sim_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ TEST_F(AnimationSimTest, CustomPropertyBaseComputedStyle) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

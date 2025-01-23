@@ -137,15 +137,17 @@ Imagine a user wants to purchase a "Premium Feature" in a web application:
 
 **As a debugging clue:** If there's an issue with the information displayed on the payment sheet (e.g., incorrect price, missing description) or an error during the purchase flow related to the item details or response status, a developer might investigate this conversion code to ensure the Mojo data is being correctly translated into the JavaScript objects. They might set breakpoints in this unittest code or the actual conversion functions to examine the data flow.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/payments/goods/digital_goods_type_converters_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -302,7 +304,4 @@ TEST(DigitalGoodsTypeConvertersTest, NullMojoPurchaseReferenceToIdl) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

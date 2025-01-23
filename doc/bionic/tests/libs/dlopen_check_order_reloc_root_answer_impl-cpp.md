@@ -249,7 +249,7 @@ sys.stdin.read()
 
 总结来说，`bionic/tests/libs/dlopen_check_order_reloc_root_answer_impl.cpp` 是一个简单的测试辅助文件，用于验证 Android 动态链接器在处理重定位顺序时的行为。它通过返回一个预定义的常量值，方便测试代码进行断言和验证。理解这个文件有助于我们深入了解 Android Bionic 库中动态链接器的实现和测试机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlopen_check_order_reloc_root_answer_impl.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -260,8 +260,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -281,7 +283,4 @@ Prompt:
 extern "C" int check_order_reloc_root_get_answer_impl() {
   return __ANSWER;
 }
-
-"""
-
 ```

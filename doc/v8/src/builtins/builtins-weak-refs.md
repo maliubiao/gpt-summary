@@ -107,11 +107,13 @@ console.log(`使用原始值 token 取消注册是否成功: ${unregisterResultP
 
 `builtins-weak-refs.cc` 文件中的 `FinalizationRegistryUnregister` 函数是 V8 引擎中实现 JavaScript `FinalizationRegistry.prototype.unregister()` 方法的关键部分。它负责接收 JavaScript 层的调用，进行必要的参数验证，然后调用内部逻辑来取消对特定对象的垃圾回收监听，从而阻止与之关联的清理回调被触发。 这使得开发者能够在 JavaScript 中灵活地管理对象的生命周期和清理操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-weak-refs.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -151,7 +153,4 @@ BUILTIN(FinalizationRegistryUnregister) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

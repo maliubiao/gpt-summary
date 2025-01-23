@@ -75,9 +75,12 @@ Response: Let's break down the thought process to understand the functionality o
 
 该文件使用了 Google Test 框架来进行单元测试，并利用了 V8 内部的 API 来访问和检查根对象及其内存属性。  宏定义如 `CHECK_IN_RO_SPACE` 和 `CHECK_NOT_IN_RO_SPACE` 简化了测试代码的编写。
 
-Prompt: ```这是目录为v8/test/unittests/objects/roots-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/objects/roots-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -203,6 +206,4 @@ TEST_F(RootsTest, TestHeapNumberList) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

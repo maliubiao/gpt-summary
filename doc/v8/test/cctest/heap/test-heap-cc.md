@@ -178,7 +178,7 @@ TEST(HeapMaps) {
 
 这部分代码（`v8/test/cctest/heap/test-heap.cc` 的开头部分）主要关注 V8 堆的基础结构和基本对象的测试。它验证了核心 `Map` 对象的正确性，测试了基本堆对象的创建和类型，以及一些关键的初始化流程。这些测试是确保 V8 堆功能正常运行的基石，为后续更复杂的堆功能测试奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/heap/test-heap.cc以.tq结尾，那它是个v8 torque源代码，
@@ -186,8 +186,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1061,7 +1063,4 @@ TEST(JSArray) {
 
   v8::HandleScope sc(CcTest::isolate());
   Handle<String> name = fact
-"""
-
-
 ```

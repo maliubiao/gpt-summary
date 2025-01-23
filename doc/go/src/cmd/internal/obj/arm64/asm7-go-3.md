@@ -204,7 +204,7 @@ func main() {
 
 作为 `go/src/cmd/internal/obj/arm64/asm7.go` 的一部分，这段代码是 Go 编译器针对 ARM64 架构生成本地机器码的关键组成部分。它根据 Go 编译器内部的指令表示，详细地计算并编码出 ARM64 处理器能够执行的二进制指令。这部分代码涵盖了分支指令、常量加载、位字段操作、Load/Store 指令以及向量操作等多种指令类型的编码生成逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/arm64/asm7.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -212,8 +212,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 S:
 			fp = 1
 			w = 0 /* 32-bit SIMD/FP */
@@ -702,10 +704,4 @@ func (c *ctxt7) encRegShiftOrExt(p *obj.Prog, a *obj.Addr, r int16) uint32 {
 func pack(q uint32, arngA, arngB uint8) uint32 {
 	return uint32(q)<<16 | uint32(arngA)<<8 | uint32(arngB)
 }
-
-"""
-
-
-
-
 ```

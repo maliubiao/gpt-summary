@@ -197,15 +197,17 @@ While this specific test isn't something a typical user would write directly, he
 
 In summary, `issue27695b.go` is a specific test case designed to ensure the robustness of Go's runtime and reflection mechanism by verifying that the garbage collector doesn't prematurely access potentially invalid data in function return value slots when using reflection. It highlights a low-level detail of Go's memory management and its interaction with reflection.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue27695b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -270,9 +272,4 @@ func main() {
 	e := reflect.ValueOf(&T{}).Method(0).Interface().(func() *byte)
 	f(e)
 }
-
-"""
-
-
-
 ```

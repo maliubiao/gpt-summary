@@ -198,11 +198,13 @@ task4.execute(); // 不会执行
 
 `cancelable-task.cc` 文件为 V8 引擎提供了底层的任务取消机制。虽然用户通常不会直接操作这些类，但它们是 V8 实现诸如 JavaScript 中异步操作取消等功能的基础。在 JavaScript 中，`AbortController` 提供了类似的高级抽象，允许开发者控制异步操作的生命周期。V8 的这个 C++ 文件就是构建这些高级特性的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tasks/cancelable-task.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -337,7 +339,4 @@ CancelableIdleTask::CancelableIdleTask(CancelableTaskManager* manager)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

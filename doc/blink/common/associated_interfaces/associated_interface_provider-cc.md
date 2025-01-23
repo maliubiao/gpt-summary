@@ -118,14 +118,16 @@ Response: My thought process to answer the request about `associated_interface_p
 
 总而言之，`associated_interface_provider.cc` 提供了一个关键的基础设施，用于在 Blink 引擎的各个组件之间建立结构化的、类型安全的通信通道，这对于实现各种 Web 功能至关重要。理解它的工作原理有助于理解 Blink 内部的架构和跨进程通信机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/associated_interfaces/associated_interface_provider.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -244,7 +246,4 @@ AssociatedInterfaceProvider::GetEmptyAssociatedInterfaceProvider() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

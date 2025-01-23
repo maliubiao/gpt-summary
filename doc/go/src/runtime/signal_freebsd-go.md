@@ -270,7 +270,7 @@ func main() {
 
 总结来说，`go/src/runtime/signal_freebsd.go` 中的 `sigtable` 定义了 Go 运行时在 FreeBSD 系统上如何处理各种操作系统信号，包括是否通知用户代码、是否终止进程或抛出 panic 等。开发者可以通过 `os/signal` 包与这些底层机制进行交互，实现自定义的信号处理逻辑。理解 `sigtable` 的作用有助于更深入地理解 Go 语言的信号处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_freebsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -278,8 +278,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -321,9 +323,4 @@ var sigtable = [...]sigTabT{
 	/* 31 */ {_SigNotify, "SIGUSR2: user-defined signal 2"},
 	/* 32 */ {_SigNotify, "SIGTHR: reserved"},
 }
-
-"""
-
-
-
 ```

@@ -140,7 +140,7 @@ func GenerateRandomData(size int) ([]byte, error) {
 
 总而言之，`go/src/crypto/internal/fips140deps/fipsdeps.go` 的核心作用是为 FIPS 模块提供一个稳定且受控的内部 API 访问层，以确保 FIPS 模块的长期兼容性和可靠性。 它利用 Go 语言的包机制来实现封装和隔离。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140deps/fipsdeps.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -148,8 +148,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -159,9 +161,4 @@ Prompt:
 // for a number of future versions, APIs exposed by crypto/internal/fips140deps/...
 // must not be changed until the modules that use them are no longer supported.
 package fipsdeps
-
-"""
-
-
-
 ```

@@ -114,14 +114,16 @@ While this is a test file and not directly used by developers, understanding wha
 
 In summary, `blink_schemeful_site_test.cc` plays a vital role in ensuring the correctness of the `BlinkSchemefulSite` class, which is fundamental to the security model of web browsers and directly impacts how JavaScript, HTML, and CSS interactions are governed by policies like the Same-Origin Policy.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/network/blink_schemeful_site_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ TEST(BlinkSchemefulSiteTest, IsOpaque) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

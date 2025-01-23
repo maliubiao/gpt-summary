@@ -172,11 +172,13 @@ numbers.push(3); // This call internally uses the Torque-defined implementation.
 
 **In summary, `types.cc` is a foundational file for the Torque language within V8. It defines the type system that underpins the structured and type-safe definition of JavaScript's built-in features, ensuring the correct and efficient implementation of the JavaScript language within the V8 engine.** The types defined here are not directly accessible from JavaScript but are crucial for V8's internal workings and how it represents and manipulates JavaScript values.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/types.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1631,7 +1633,4 @@ std::string Type::GetDebugType() const {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

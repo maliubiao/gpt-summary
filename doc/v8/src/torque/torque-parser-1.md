@@ -101,12 +101,14 @@ switch (true) {
 
 这部分 `torque-parser.cc` 代码是 Torque 语言解析器的核心组成部分，它定义了如何将 Torque 代码转换成内部的 AST 表示。 `MakeTypeswitchStatement` 函数就是一个很好的例子，展示了 Torque 如何提供类似于 JavaScript 中类型检查和分支的功能，并通过脱糖转换成更底层的控制流结构。 总体来说，这个文件是 V8 引擎使用 Torque 语言进行内部开发的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/torque-parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 TypeswitchCase>>();
   CurrentSourcePosition::Scope matched_input_current_source_position(
       child_results->matched_input().pos);
@@ -1391,8 +1393,4 @@ void ParseTorque(const std::string& input) {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
-
 ```

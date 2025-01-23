@@ -99,7 +99,7 @@ By following these steps, we can systematically analyze the provided code snippe
 
 总而言之，`bob.c` 是一个简单的 C 代码片段，用于测试与函数调用和可能的链接器脚本行为相关的特性。它通过定义一个明显的 "隐藏" 函数来模拟逆向工程中可能遇到的场景，并为 Frida 的开发者提供了一个验证其动态 instrumentation 功能的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/linuxlike/3 linker script/bob.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 
 int hiddenFunction(void) {
@@ -118,7 +120,4 @@ int hiddenFunction(void) {
 int bobMcBob(void) {
     return hiddenFunction();
 }
-
-"""
-
 ```

@@ -139,15 +139,17 @@ var X Exported = &implementation{}
 
 `go/test/interface/private.dir/prog.go` 这个程序是一个负面测试用例，它刻意编写了会导致编译错误的代码，以验证Go语言的非导出成员的访问控制机制是否按预期工作。它强调了非导出方法的包内私有性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/interface/private.dir/prog.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -181,9 +183,4 @@ func main() {
 
 	x = px				// ERROR "private"
 }
-
-"""
-
-
-
 ```

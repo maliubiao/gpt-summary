@@ -158,7 +158,7 @@ By following this structured approach, I can systematically analyze the code sni
 
 这段代码是 Frida 构建系统中定义构建目标的核心部分，负责处理构建目标的各种属性和依赖关系。它涉及到二进制文件的处理、链接过程的管理、平台特定的设置（如 PIC/PIE），并提供了一些机制来捕获用户在使用构建系统时可能出现的错误。理解这段代码的功能对于理解 Frida 的构建过程以及排查构建错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 elf.objects: T.List[ObjectTypes] = []
         self.structured_sources = structured_sources
         self.external_deps: T.List[dependencies.Dependency] = []
@@ -831,8 +833,4 @@ elf.objects: T.List[ObjectTypes] = []
         for t in targets:
             if not isinstance(t, (Target, CustomTargetIndex)):
                 if isinstance(t, dependencies.ExternalLibrary):
-                   
-"""
-
-
 ```

@@ -185,7 +185,7 @@ func main() {
 
 `go/src/runtime/os_openbsd_syscall.go` 中的这段代码是 Go 运行时在 OpenBSD 和 MIPS64 架构上创建新的操作系统线程的关键组成部分。它封装了底层的 `tfork` 系统调用，并处理了线程创建过程中的必要步骤，包括栈初始化、参数设置和信号处理。理解这段代码有助于理解 Go 语言并发模型的底层实现以及可能遇到的资源限制问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_openbsd_syscall.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -193,8 +193,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -246,9 +248,4 @@ func newosproc(mp *m) {
 		throw("runtime.newosproc")
 	}
 }
-
-"""
-
-
-
 ```

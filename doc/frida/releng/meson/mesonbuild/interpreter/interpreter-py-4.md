@@ -159,7 +159,7 @@ Now I will proceed with generating the detailed answer based on these points.
 
 `interpreter.py` 文件（尤其是提供的代码片段）的核心功能是**提供 Meson 构建系统中用于配置构建过程的各种高级接口**。它允许用户通过 `meson.build` 文件声明如何生成配置文件、管理包含目录、设置测试环境、添加编译和链接参数以及处理项目依赖。这个文件是 Meson 解释器的关键组成部分，负责将用户在 `meson.build` 文件中定义的构建意图转化为具体的构建步骤。它处理了与操作系统底层、编译器和链接器交互的复杂性，为用户提供了一个更抽象和易用的构建配置方式。从逆向工程的角度来看，它使得 Frida 能够灵活地配置其构建过程，适应不同的目标平台和需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 y=True,
             default=[],
         ),
@@ -750,7 +752,4 @@ y=True,
             raise InterpreterException('Target name must not consist only of whitespace.')
         if has_path_sep(name):
             pathseg = os.path.join(self
-"""
-
-
 ```

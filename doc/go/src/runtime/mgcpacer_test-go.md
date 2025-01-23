@@ -153,7 +153,7 @@ func main() {
 
 这部分代码定义了一系列集成测试，用于验证 Go 运行时环境中的 GC 调步器 (pacer) 的功能。 它通过模拟不同的内存分配、扫描、增长模式以及配置参数（如 `GOGC` 和内存限制），来检查调步器是否能够根据预期调整垃圾回收行为，例如维持目标 GC 利用率，并对各种运行条件做出合理响应。  它使用 `gcExecTest` 结构体来定义测试用例，并使用 `checker` 函数来断言每个测试周期后的 GC 行为是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mgcpacer_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -162,8 +162,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -971,9 +973,4 @@ func (e *gcExecTest) check(t *testing.T, results []gcCycleResult) {
 	default:
 		if results[n-1].cycle != results[n-2].cycle+1 {
 			t.E
-"""
-
-
-
-
 ```

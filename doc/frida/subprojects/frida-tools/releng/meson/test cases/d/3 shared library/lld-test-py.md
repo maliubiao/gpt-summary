@@ -145,7 +145,7 @@ Here's a breakdown of the thinking process to analyze the Python script and answ
 
 这个测试用例是 Frida 开发流程中自动化测试的一部分，旨在确保 Frida 工具的正确性和稳定性，特别是涉及到与底层系统和共享库交互的功能。当用户在使用 Frida 过程中遇到与共享库加载相关的问题时，开发者可能会参考这类测试用例来定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/d/3 shared library/lld-test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import argparse
@@ -175,7 +177,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

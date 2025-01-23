@@ -144,15 +144,17 @@ int GetAddressMismatch(const IPEndPoint& a, const IPEndPoint& b);
 
 总之，`quic_address_mismatch_test.cc` 虽然是底层的 C++ 测试代码，但它验证了 QUIC 协议中关键的地址匹配逻辑，这直接影响着基于 QUIC 的网络连接的稳定性和安全性，最终也会影响到用户通过 JavaScript 发起的网络请求的体验。理解这个文件的作用有助于开发人员在排查 QUIC 相关网络问题时提供有价值的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_address_mismatch_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -250,7 +252,4 @@ TEST(QuicAddressMismatchTest, GetAddressMismatch) {
 }
 
 }  // namespace net::test
-
-"""
-
 ```

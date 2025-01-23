@@ -220,7 +220,7 @@ Here's a breakdown of the code's functionalities:
 
 总而言之，这份代码片段专注于测试 `Document` 类的各种功能，涵盖了 DOM 操作、CSS 样式处理、JavaScript API 支持、页面生命周期管理以及与浏览器底层服务的交互。这些测试用例确保了 Blink 引擎的 `Document` 类能够正确地处理各种场景，为网页的正常渲染和功能运行提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -228,8 +228,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 UpdatedCharacterDataRecords()[1]->node_);
   EXPECT_EQ(3u, observer.UpdatedCharacterDataRecords()[1]->offset_);
   EXPECT_EQ(4u, observer.UpdatedCharacterDataRecords()[1]->old_length_);
@@ -1028,8 +1030,4 @@ TEST_F(DocumentTest, HasRedemptionRecordOperationError) {
   document.GetFrame()->GetBrowserInterfaceBroker().SetBinderForTesting(
       network::mojom::blink::TrustTokenQueryAnswerer::Name_,
       WTF::BindRepeating(&MockTrustTokenQueryAnswerer::Bind,
-                        
-"""
-
-
 ```

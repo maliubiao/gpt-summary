@@ -309,7 +309,7 @@ Interceptor.attach(Module.findExportByName(null, "ioctl"), {
 
 总而言之，`bionic/libc/kernel/uapi/linux/packet_diag.handroid` 定义了用于查询 Linux 内核中 packet socket 诊断信息的结构体和常量。虽然 Android Framework 和 NDK 通常不会直接使用它，但其底层的网络实现或一些特定的网络工具可能会间接利用这些接口。使用 Frida 可以帮助我们观察和理解这些底层的交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/packet_diag.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -320,8 +320,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -394,7 +396,4 @@ struct packet_diag_ring {
   __u32 pdr_features;
 };
 #endif
-
-"""
-
 ```

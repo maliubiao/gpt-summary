@@ -196,15 +196,17 @@ panic: FAIL
 
 总结来说，这段代码的核心在于展示了如何在泛型函数中安全地断言接口类型到具体的泛型类型，并且强调了类型参数一致性和对象身份的重要性。使用者需要确保传递给 `B` 函数的接口变量确实是指向正确类型参数的 `G` 结构体的指针。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue54302.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -225,9 +227,4 @@ func B[T any](iface interface{ M(T) }) {
 type G[T any] struct{}
 
 func (*G[T]) M(T) {}
-
-"""
-
-
-
 ```

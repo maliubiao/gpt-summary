@@ -198,7 +198,7 @@ sys.stdin.read()
 
 总结来说，`atan2_intel_data.handroid` 文件是 bionic 库中用于测试 `atan2` 函数实现的一组测试数据，涵盖了各种输入场景，以确保该函数在 Android 系统中的正确性和精度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atan2_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -210,8 +210,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 x1.921fb54442d18469898cc51701b839a2p-1,
     0x1.0p9,
     0x1.0p9
@@ -1758,7 +1760,4 @@ x1.921fb54442d18469898cc51701b839a2p-1,
   },
   { // Entry 597
     0x1.ffffffffffffeff555555555555655
-"""
-
-
 ```

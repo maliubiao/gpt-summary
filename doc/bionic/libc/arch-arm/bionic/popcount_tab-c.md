@@ -217,7 +217,7 @@ if (Process.arch === 'arm') {
 
 当你操作应用，触发一些需要计算 popcount 的操作时，Frida 控制台上会打印出 `__builtin_popcount` 函数的输入和输出，从而间接地让你观察到 `__popcount_tab` 的作用。注意，并非所有对 popcount 的调用都会直接使用这个表，编译器可能会根据具体情况选择最优的实现方式。这个 hook 只是一个观察 `popcount` 相关操作的入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/arch-arm/bionic/popcount_tab.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -228,8 +228,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -272,7 +274,4 @@ const unsigned char __popcount_tab[256] = {
   3, 4, 4, 5, 4, 5, 5, 6, 4, 5, 5, 6, 5, 6, 6, 7, 3, 4, 4, 5, 4, 5, 5, 6, 4, 5,
   5, 6, 5, 6, 6, 7, 4, 5, 5, 6, 5, 6, 6, 7, 5, 6, 6, 7, 6, 7, 7, 8
 };
-
-"""
-
 ```

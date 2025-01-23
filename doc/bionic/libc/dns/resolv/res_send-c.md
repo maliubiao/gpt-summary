@@ -69,7 +69,7 @@ Here's a breakdown of the steps to generate the summary:
 
 在接下来的第 2 部分中，很可能会包含 `send_dg` 函数的剩余部分，以及错误处理、调试输出等相关的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/resolv/res_send.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -81,8 +81,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: res_send.c,v 1.9 2006/01/24 17:41:25 christos Exp $	*/
 
 /*
@@ -1258,7 +1260,4 @@ retry:
 	}
 	if (n < 0) {
 		Perror(statp, st
-"""
-
-
 ```

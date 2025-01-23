@@ -167,7 +167,7 @@ Goroutine 7 在 CPU 上运行
 
 `os_illumos.go` 这个文件是 Go 运行时在 Illumos 系统上获取 CPU 资源信息的核心部分。它利用 Illumos 的资源控制机制，通过 Cgo 与底层 C 库交互，获取 CPU 容量限制和可用的 CPU 核心数，并将这些信息提供给 Go 的调度器，以实现更有效的资源管理和 Goroutine 调度。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_illumos.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -175,8 +175,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -309,9 +311,4 @@ func rctlblk_get_value(buf unsafe.Pointer) uint64 {
 func rctlblk_size() uintptr {
 	return sysvicall0(&libc_rctlblk_size)
 }
-
-"""
-
-
-
 ```

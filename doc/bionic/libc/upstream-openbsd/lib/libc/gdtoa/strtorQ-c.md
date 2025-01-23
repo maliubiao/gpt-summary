@@ -244,7 +244,7 @@ if (Process.arch === 'arm64') { // 假设目标是 64 位 ARM 设备
 
 要 hook 存储结果的内存，你需要更复杂的 Frida 脚本，可能需要在 `onLeave` 中读取 `args[3]` 指向的内存。由于 `__int128` 的大小和表示可能因架构而异，你需要小心处理内存读取。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/gdtoa/strtorQ.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -255,8 +255,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /****************************************************************
 
 The author of this software is David M. Gay.
@@ -377,7 +379,4 @@ strtorQ(CONST char *s, char **sp, int rounding, void *L)
 	ULtoQ((ULong*)L, bits, exp, k);
 	return k;
 	}
-
-"""
-
 ```

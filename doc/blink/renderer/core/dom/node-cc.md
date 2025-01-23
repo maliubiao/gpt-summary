@@ -137,7 +137,7 @@ By following this thought process, I can systematically analyze the code, extrac
 
 总而言之，`blink/renderer/core/dom/node.cc` 的第一部分主要定义了 `Node` 类，这个核心类是 Blink 渲染引擎中表示 DOM 结构的基础。它负责维护 DOM 树的基本结构，提供操作 DOM 树的通用方法，并为事件处理和与渲染引擎其他组件的交互提供了基础。它定义了所有 DOM 节点共有的属性和行为，是理解 Blink DOM 实现的关键入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -958,7 +960,4 @@ Node* Node::replaceChild(Node* new_child,
   auto* this_node = DynamicTo<ContainerNode>(this);
   if (this_node)
     return this_node->ReplaceChild(new_child, o
-"""
-
-
 ```

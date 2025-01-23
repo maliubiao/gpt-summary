@@ -290,7 +290,7 @@ if (Process.platform === 'android') {
 
 总而言之，`b_tgamma.c` 文件是 Android 系统中提供标准 Gamma 函数计算的关键组件，它通过精巧的算法和对不同输入范围的特殊处理，保证了计算的精度和效率。理解其实现细节有助于开发者更好地利用这个函数，并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/bsdsrc/b_tgamma.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -301,8 +301,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-3-Clause
  *
@@ -699,7 +701,4 @@ tgamma(double x)
 #if (LDBL_MANT_DIG == 53)
 __weak_reference(tgamma, tgammal);
 #endif
-
-"""
-
 ```

@@ -210,15 +210,17 @@ func Test5(p *int) {
 
 总结来说，这段 `main.go` 代码是一个针对特定 Go 语言 bug 的测试驱动程序，通过调用 `a` 包中不同的函数并传递不同类型的参数（包括 `nil`），来验证 bug 是否已得到修复。它本身不处理命令行参数，其主要目的是执行预定义的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue5755.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -242,9 +244,4 @@ func main() {
 	a.TestBar()
 	a.IsBaz(nil)
 }
-
-"""
-
-
-
 ```

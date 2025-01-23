@@ -145,15 +145,17 @@ var builtins = [...]struct{ name string; abi int }{
 
 `mkbuiltin.go` 是一个代码生成工具，它从 Go 编译器内部的 `runtime.go` 文件中提取内置函数和变量的信息，并生成 `builtinlist.go` 文件，供 Go 编译器的其他部分使用。它的存在是为了维护一个关于内置项的权威列表，确保编译器能够正确处理这些特殊的语言构造。 手动修改生成的文件是错误的做法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/goobj/mkbuiltin.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -314,9 +316,4 @@ var fextras = [...]extra{
 	{"morestackc", 0},       // asm function, ABI0
 	{"morestack_noctxt", 0}, // asm function, ABI0
 }
-
-"""
-
-
-
 ```

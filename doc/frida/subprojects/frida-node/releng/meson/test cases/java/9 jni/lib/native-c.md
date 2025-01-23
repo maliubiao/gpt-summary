@@ -161,7 +161,7 @@ By following this structured thought process, combined with knowledge of JNI and
 
 虽然 `native.c` 的代码非常简单，但它展示了 JNI 库的基本结构和生命周期。它在 Frida 的测试框架中用于验证 JNI 的基础功能。理解这样的基础代码是进行更复杂的 JNI 逆向分析和动态插桩的前提。作为调试线索，它可以帮助理解 native 库的加载和卸载过程，以及在哪些关键点可以进行 Hook 和监控。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/java/9 jni/lib/native.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <jni.h>
 
 JNIEXPORT jint JNICALL
@@ -182,7 +184,4 @@ JNI_OnLoad(JavaVM *vm, void *reserved)
 JNIEXPORT void JNICALL
 JNI_OnUnload(JavaVM *vm, void *reserved)
 {}
-
-"""
-
 ```

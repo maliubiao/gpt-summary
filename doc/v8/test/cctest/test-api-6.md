@@ -184,12 +184,14 @@ console.log(myObj(42)); // 实际上会调用 C++ 中设置的 CallAsFunctionHan
 
 总而言之，这部分测试代码是 V8 引擎开发过程中的重要组成部分，它确保了 V8 的 C++ API 能够正确地实现和支持 JavaScript 的各种语言特性。 作为第7部分，它很可能建立在之前部分介绍的基础 API 功能之上，并为后续更复杂的测试场景奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第7部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ance(context.local())
                        .ToLocalChecked();
   CHECK(context->Global()
@@ -1927,8 +1929,4 @@ v8::Intercepted ShouldThrowOnErrorDeleter(
   CHECK(context->Global()
             ->Set(isolate->GetCurrentContext(), v8_str("should_throw_deleter"),
                   should_throw_on_error_value)
-           
-"""
-
-
 ```

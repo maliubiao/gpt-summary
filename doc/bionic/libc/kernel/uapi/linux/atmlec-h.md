@@ -264,7 +264,7 @@ if (Process.platform === 'linux') {
 
 总结来说，`atmlec.h` 定义了与 Linux 内核中 ATM LANE 驱动交互的接口。虽然在现代 Android 中直接使用的场景不多，但它仍然是 Bionic 的一部分，可能用于兼容性或特定的硬件平台。理解其内容有助于分析底层系统与 ATM 设备的交互过程。 使用 Frida 可以方便地 hook 和调试与这些接口相关的系统调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/atmlec.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -351,7 +353,4 @@ struct atmlec_ioc {
   unsigned char receive;
 };
 #endif
-
-"""
-
 ```

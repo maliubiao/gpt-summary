@@ -199,7 +199,7 @@ func main() {
 
 请注意，这只是 `ssa.go` 文件的一部分，完整的 SSA 代码生成器会涉及更多的功能和更复杂的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssagen/ssa.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -207,8 +207,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 r.LogicalExpr)
 		mid := s.f.NewBlock(ssa.BlockPlain)
 		s.stmtList(cond.Init())
@@ -2161,9 +2163,4 @@ func (s *state) dottype1(pos src.XPos, src, dst *types.Type, iface, source, targ
 				s.vars[hashVar] = hash
 				// Load mask from cache.
 				mask := s.newValue2(s
-"""
-
-
-
-
 ```

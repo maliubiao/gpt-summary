@@ -209,7 +209,7 @@ int main() {
 
 总而言之，`gumstalker-x86.c` 的第一部分为 Frida 的 Stalker 组件在 x86 架构上奠定了基础，定义了核心的数据结构和接口，并处理了与操作系统交互的一些基本操作。它是理解 Stalker 工作原理的关键入口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-x86/gumstalker-x86.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -218,8 +218,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2009-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2010-2013 Karl Trygve Kalleberg <karltk@boblycat.org>
@@ -1217,7 +1219,4 @@ gum_stalker_init (GumStalker * self)
       if (mbi.Protect == PAGE_EXECUTE_READ ||
           mbi.Protect == PAGE_EXECUTE_READWRITE ||
           mbi.Protect == PAGE_EXECUTE_WRITECOPY
-"""
-
-
 ```

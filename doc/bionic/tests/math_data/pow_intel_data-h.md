@@ -190,7 +190,7 @@ sys.stdin.read()
 
 总而言之，`bionic/tests/math_data/pow_intel_data.handroid` 文件是一个关键的测试数据文件，用于验证 Android 系统 bionic 库中 `pow` 函数实现的正确性。它通过提供一系列预定义的底数、指数和期望返回值，帮助确保 Android 平台的数学运算功能可靠且符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/pow_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -202,8 +202,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1499,7 +1501,4 @@ static data_1_2_t<double, double, double> g_pow_intel_data[] = {
   },
   { // Entry 319
     0x1.0100601001p0
-"""
-
-
 ```

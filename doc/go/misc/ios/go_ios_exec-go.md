@@ -189,15 +189,17 @@ go_ios_exec: xcrun simctl install booted "/tmp/go_ios_exec_.../gotest.app": exit
 
 或者类似的 `xcrun` 错误信息，指示无法与模拟器通信。  用户需要先使用 Xcode 或 `xcrun simctl boot` 命令启动一个 iOS 模拟器。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/misc/ios/go_ios_exec.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -564,9 +566,4 @@ const resourceRules = `<?xml version="1.0" encoding="UTF-8"?>
 </dict>
 </plist>
 `
-
-"""
-
-
-
 ```

@@ -140,7 +140,7 @@ This final part of the `net/quic/quic_session_pool_test.cc` file focuses on veri
 
 作为整个测试套件的最后一部分，`net/quic/quic_session_pool_test.cc` 完整地测试了 `QuicSessionPool` 类的各项核心功能和边界情况。它覆盖了从基本的连接错误处理到更高级的特性，如 DNS 别名、HTTPS ALPN 协商和 ECH 集成。这部分测试旨在确保 `QuicSessionPool` 能够稳定、高效、安全地管理 QUIC 会话，并与 Chromium 网络栈的其他组件正确协作，为用户提供可靠的网络体验。完成这部分测试，意味着对 `QuicSessionPool` 的功能进行了全面的验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第20部分，共20部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s(&verify_details);
 
   MockQuicData socket_data(version_);
@@ -866,8 +868,4 @@ TEST_P(QuicSessionPoolTest, CreateSessionAttempt) {
 }
 
 }  // namespace net::test
-
-"""
-
-
 ```

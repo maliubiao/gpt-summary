@@ -190,7 +190,7 @@ if (Process.platform === 'linux') {
 
 这个 hook 示例可以帮助我们调试 Android 中与 AutoFS 相关的操作，例如查看哪个进程在尝试挂载文件系统，挂载的路径是什么，以及使用的文件系统类型和挂载选项。这对于理解 Android 如何利用 Linux 内核的 AutoFS 特性非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/auto_fs4.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -201,8 +201,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -213,7 +215,4 @@ Prompt:
 #define _UAPI_LINUX_AUTO_FS4_H
 #include <linux/auto_fs.h>
 #endif
-
-"""
-
 ```

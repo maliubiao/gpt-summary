@@ -174,15 +174,17 @@ fetch('https://example.com/data', {
 
 总而言之，`HttpStreamPool::Job` 是 Chromium 网络栈中一个关键的组件，负责管理单个连接尝试的生命周期。理解其功能和工作原理对于调试网络相关的错误至关重要。通过 NetLog 和相关的错误信息，开发者可以追踪用户操作如何一步步地触发 `HttpStreamPool::Job` 的执行，并最终诊断连接问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_pool_job.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -339,7 +341,4 @@ void HttpStreamPool::Job::OnNeedsClientAuth(SSLCertRequestInfo* cert_info) {
 }
 
 }  // namespace net
-
-"""
-
 ```

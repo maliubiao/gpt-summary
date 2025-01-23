@@ -154,12 +154,14 @@ try {
 
 总而言之，文件 `v8/test/cctest/test-api.cc` 的第 6 部分专注于测试 V8 JavaScript 引擎 C++ API 的关键功能，这些功能直接支撑着 JavaScript 语言的语义和行为，包括字符串处理、异常处理、安全模型、上下文管理以及对象属性访问等方面。这些测试确保了 V8 引擎在 C++ 层面实现的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 [5] -= 2;"  // Here the surrogate pairs match up.
       "var a2 = [];"
       "var b2 = [];"
@@ -2039,7 +2041,4 @@ THREADED_TEST(ShadowObject) {
   Local<Value> o = t->GetFunction(context.local())
                        .ToLocalChecked()
                        ->NewInst
-"""
-
-
 ```

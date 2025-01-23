@@ -84,11 +84,13 @@ myObject = null; // 现在 myObject 不再引用之前创建的对象
 
 `unified-heap-marking-state.cc` 是 V8 引擎垃圾回收机制的核心组成部分，它负责管理标记阶段的状态，从而确保 JavaScript 程序的内存能够有效地管理和回收，避免内存泄漏，并保持程序的稳定性和性能。它根据垃圾回收的类型来调整标记策略，优化垃圾回收过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc-js/unified-heap-marking-state.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -122,7 +124,4 @@ void UnifiedHeapMarkingState::Update(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

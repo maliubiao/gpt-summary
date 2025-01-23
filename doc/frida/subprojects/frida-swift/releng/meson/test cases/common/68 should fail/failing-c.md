@@ -87,7 +87,7 @@ By following these steps, the comprehensive explanation accurately captures the 
 
 总而言之，`failing.c` 作为一个非常简单的程序，其存在的意义不在于自身的功能有多复杂，而在于它是Frida测试框架中一个至关重要的组成部分，用于验证Frida在处理目标程序异常退出时的行为是否正确可靠。它帮助确保Frida能够在各种实际场景下都能正常工作，包括那些目标程序可能会失败的情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/68 should fail/failing.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -95,12 +95,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 1;
 }
-
-"""
-
 ```

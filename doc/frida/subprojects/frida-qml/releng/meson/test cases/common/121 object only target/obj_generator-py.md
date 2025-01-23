@@ -166,7 +166,7 @@ python obj_generator.py cl test.cpp test.obj
 
 如果开发者在 Frida 的测试过程中遇到与目标文件生成相关的错误，他们可能会查看 `obj_generator.py` 的源代码，以了解它是如何构建编译命令的，以及是否存在配置或参数传递的问题。  例如，如果测试在特定的平台上失败，开发者可能会检查脚本中针对该平台的处理逻辑。  此外，查看 `obj_generator.py` 的调用方式（通过查看相关的 Meson 构建文件或测试脚本）也可以帮助理解问题的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/121 object only target/obj_generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # Mimic a binary that generates an object file (e.g. windres).
@@ -196,7 +198,4 @@ if __name__ == '__main__':
     else:
         cmd = [compiler, '-c', ifile, '-o', ofile]
     sys.exit(subprocess.call(cmd))
-
-"""
-
 ```

@@ -193,15 +193,17 @@ Here's how user actions can lead to this code being executed, providing debuggin
 
 By understanding these user actions and how they interact with the `SimpleIndex`, developers can better diagnose caching-related issues and understand the flow of execution within the Chromium network stack. Debugging would involve looking at the calls to `SimpleIndex` methods, the values of its member variables, and the interactions with `SimpleIndexFile` and the `delegate_`.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/simple/simple_index.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -843,7 +845,4 @@ void SimpleIndex::WriteToDisk(IndexWriteToDiskReason reason) {
 }
 
 }  // namespace disk_cache
-
-"""
-
 ```

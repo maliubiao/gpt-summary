@@ -132,7 +132,7 @@ This section of the `ImageCapture` code focuses on the core functionalities of s
 
 **这是第3部分，共4部分，所以此部分主要关注 `ImageCapture` 对象的核心功能实现，包括设置照片属性、抓取帧以及管理媒体轨道约束和能力。它处理了来自 JavaScript 的请求，并与底层的媒体服务进行交互，以实现图像捕获的功能。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/imagecapture/image_capture.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -140,9 +140,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
- should be using a mojo::StructTraits instead.
+### 源代码
+```cpp
+should be using a mojo::StructTraits instead.
   auto settings = media::mojom::blink::PhotoSettings::New();
 
   settings->has_height = photo_settings->hasImageHeight();
@@ -871,7 +873,4 @@ void ImageCapture::ApplyMediaTrackConstraintSetToSettings(
     bool has_setting = false;
     bool setting;
     effective_ca
-"""
-
-
 ```

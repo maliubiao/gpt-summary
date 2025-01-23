@@ -173,7 +173,7 @@ WebAssembly.instantiateStreaming(fetch('my_wasm_module.wasm'))
 
 总而言之，`LiftoffAssembler` 是 V8 中 Liftoff 编译器的 **指令生成引擎**，它将 WebAssembly 的操作转化为能够在目标机器上执行的实际机器代码，并负责管理寄存器、栈帧和函数调用等底层细节。它的高效性和正确性对于 WebAssembly 代码在 V8 中的快速启动至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/liftoff-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -181,8 +181,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 egister slots until all registers are free.
   if (!cache_state_.used_registers.is_empty()) {
     for (auto* slot = cache_state_.stack_state.end() - 1;; --slot) {
@@ -574,8 +576,4 @@ bool CompatibleStackSlotTypes(ValueKind a, ValueKind b) {
 #endif
 
 }  // namespace v8::internal::wasm
-
-"""
-
-
 ```

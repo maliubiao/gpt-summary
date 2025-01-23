@@ -128,7 +128,7 @@ Failed to load library: libtestlib.so: cannot open shared object file: No such f
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/test cases/common/161 not-found dependency/testlib.c` 很可能是一个用于测试 Frida 如何处理目标程序缺失依赖项的测试辅助文件，它本身并不执行复杂的功能，而是作为一个“不存在的依赖”的代表，用于触发 Frida 的错误处理机制。理解这种测试用例可以帮助开发者确保 Frida 在各种异常情况下都能稳定可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/161 not-found dependency/testlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,9 +136,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

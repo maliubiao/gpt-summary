@@ -177,14 +177,16 @@ By following this structured approach, I could systematically analyze the code, 
 
 总而言之，`font_selector.cc` 在 Blink 渲染引擎中扮演着至关重要的角色，它负责将抽象的字体描述转化为具体的字体选择，并确保在各种情况下都能为用户呈现可读的文本。它与 CSS 的联系最为直接，同时也受到用户设置和 JavaScript 的间接影响。理解其工作原理对于前端开发者编写高质量、兼容性强的网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_selector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -298,7 +300,4 @@ FontFallbackMap& FontSelector::GetFontFallbackMap() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

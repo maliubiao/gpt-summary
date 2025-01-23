@@ -178,7 +178,7 @@ Finally, by combining the understanding of individual functions and their relati
 
 因此，当用户报告编译或链接错误，并且怀疑是构建系统生成了错误的命令时，开发者可能会需要深入到 `ninjabackend.py` 这样的文件中，分析其如何根据 `meson.build` 的描述生成底层的构建指令。代码中的注释，特别是关于特定平台和编译器的注意事项，可以提供宝贵的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -187,8 +187,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 file called foo.pdb. So will a static library
         # foo.lib, which clobbers both foo.pdb _and_ the dll file's
         # export library called foo.lib (by default, currently we name
@@ -807,7 +809,4 @@ file called foo.pdb. So will a static library
 
         prelinker = target.get_prelinker()
         cmd = prelinker.exelist
-"""
-
-
 ```

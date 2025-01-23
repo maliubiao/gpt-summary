@@ -207,15 +207,17 @@ This iterative process of code analysis, connecting concepts, generating example
 
 理解 `SQLiteTransaction` 的功能和与 JavaScript API 的交互，可以帮助开发者更好地理解 Web SQL Database 的工作原理，并有效地调试相关的错误。请注意，Web SQL Database 已经被 W3C 废弃，推荐使用更现代的 IndexedDB API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/sqlite/sqlite_transaction.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Apple Computer, Inc.  All rights reserved.
  *
@@ -309,7 +311,4 @@ bool SQLiteTransaction::WasRolledBackBySqlite() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

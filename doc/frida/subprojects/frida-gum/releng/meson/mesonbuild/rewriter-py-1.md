@@ -70,7 +70,7 @@ I need to break down the code's operations and relate them to reverse engineerin
 
 总而言之，`rewriter.py` 脚本的第二部分负责**执行对 Meson 构建文件 `meson.build` 的实际物理修改**。它接收描述修改操作的指令，读取和解析目标文件，定位需要修改的位置，生成新的代码片段，并最终将修改后的内容写回文件。这使得对 Frida Gum 的构建配置进行自动化和程序化的修改成为可能，这对于逆向工程师在定制 Frida 环境时非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/rewriter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -79,8 +79,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ['operation'] == 'target_add':
             if target is not None:
                 mlog.error('Can not add target', mlog.bold(cmd['target']), 'because it already exists', *self.on_error())
@@ -349,8 +351,4 @@ def run(options):
         raise e
     finally:
         mlog.set_verbose()
-
-"""
-
-
 ```

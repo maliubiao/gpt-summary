@@ -103,9 +103,12 @@ console.log(arr[2]);     // 输出 undefined (因为长度被截断了)
 
 `array-list-unittest.cc` 这个 C++ 文件通过单元测试确保了 V8 引擎内部 `ArrayList` 类的正确性，而 `ArrayList` 类是 JavaScript 数组在 V8 底层的一种重要实现方式。 因此，这个 C++ 文件的工作直接关系到 JavaScript 数组的功能是否正常运行。 上面的 JavaScript 代码示例展示了 JavaScript 中数组的常见操作，这些操作在 V8 内部很可能就涉及到对 `ArrayList` 类的操作。
 
-Prompt: ```这是目录为v8/test/unittests/objects/array-list-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/objects/array-list-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -149,6 +152,4 @@ TEST_F(ArrayListTest, ArrayList) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

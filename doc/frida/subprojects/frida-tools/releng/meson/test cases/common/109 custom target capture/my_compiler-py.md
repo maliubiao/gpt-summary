@@ -123,7 +123,7 @@ Here's a breakdown of the thinking process to analyze the Python script and gene
 
 总而言之，`my_compiler.py` 作为一个简单的测试工具，帮助验证 Frida 核心功能的正确性，特别是其与目标进程交互和数据捕获的能力。 它通过模拟一个简单的“编译器”行为，使得测试逻辑更加清晰可控。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/109 custom target capture/my_compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -147,7 +149,4 @@ if __name__ == '__main__':
         print('Malformed input')
         sys.exit(1)
     print('This is a binary output file.')
-
-"""
-
 ```

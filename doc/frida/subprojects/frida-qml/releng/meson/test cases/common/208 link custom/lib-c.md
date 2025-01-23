@@ -189,7 +189,7 @@ Initially, I might have focused too much on what the *defined* code does. The ke
 
 到达查看 `frida/subprojects/frida-qml/releng/meson/test cases/common/208 link custom/lib.c` 这个特定文件的步骤可能是：开发者在调试一个更复杂的 Frida 测试用例时，发现与动态链接和函数调用有关的问题，而这个简单的 `lib.c` 文件是相关测试用例的一部分，可以帮助他们理解问题的根本原因。例如，他们可能在测试 Frida 对 QML 应用程序中 Native 代码的 hook 能力时遇到了困难，而这个简单的例子可以帮助他们隔离和理解 Native 函数的 hook 机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/208 link custom/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void flob(void);
 
 int foo(void)
@@ -206,7 +208,4 @@ int foo(void)
   flob();
   return 0;
 }
-
-"""
-
 ```

@@ -114,11 +114,13 @@ console.log("垃圾回收可能已经发生");
 
 `test-mark-compact.cc` 文件对于确保 V8 引擎的稳定性和性能至关重要。它通过各种测试用例验证了标记-清除垃圾回收器的正确性，而这直接影响了 JavaScript 程序的内存管理效率和避免内存泄漏的能力。虽然 JavaScript 开发者不能直接操作这些底层的垃圾回收机制，但理解其原理有助于编写更高效的 JavaScript 代码，例如避免创建不必要的临时对象，从而减轻垃圾回收器的压力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-mark-compact.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -494,7 +496,4 @@ TEST(Regress5829) {
 }  // namespace heap
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

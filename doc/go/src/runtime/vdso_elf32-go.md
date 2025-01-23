@@ -120,7 +120,7 @@ func main() {
 
 `go/src/runtime/vdso_elf32.go` 这部分代码是 Go 运行时系统为了在 32 位 Linux 系统上利用 vDSO 机制优化系统调用性能而定义的基础数据结构。它描述了 ELF 文件的各个组成部分，使得 Go 运行时可以解析 vDSO，找到并调用其中的内核函数，从而提高程序的运行效率。普通 Go 开发者无需直接关心这些底层的实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/vdso_elf32.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -128,8 +128,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -209,9 +211,4 @@ type elfVerdaux struct {
 	vda_name uint32 /* Version or dependency names */
 	vda_next uint32 /* Offset in bytes to next verdaux entry */
 }
-
-"""
-
-
-
 ```

@@ -125,7 +125,7 @@ Here's a breakdown of the thinking process used to analyze the Java code and gen
 
 因此，`TextPrinter.java` 文件本身很可能不是用户直接操作的对象，而是作为被 Frida 动态分析的目标的一部分。用户编写和执行 Frida 脚本来与这个类进行交互，从而达到调试、分析或修改程序行为的目的。 这个特定的文件路径和包名暗示它是 Frida 自身测试框架的一部分，用于验证 Frida 对 Java 代码进行操作的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/java/6 codegen/com/mesonbuild/TextPrinter.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class TextPrinter {
@@ -149,7 +151,4 @@ class TextPrinter {
         System.out.println(msg);
     }
 }
-
-"""
-
 ```

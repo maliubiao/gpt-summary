@@ -95,11 +95,13 @@ console.log(result2); // 输出 -58
 
 `earley-parser-unittest.cc` 文件通过定义一个简单的算术表达式语法并使用 Earley Parser 进行解析，来测试 Torque 语言解析器的功能。 这与 JavaScript 引擎解析 JavaScript 代码的原理类似，都涉及到语法分析和表达式求值，遵循相同的运算符优先级和结合性规则。 这个单元测试确保了 Torque 语言的解析器能够正确理解和处理算术表达式，这对于 V8 引擎正确执行用 Torque 编写的内置函数至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/torque/earley-parser-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -187,7 +189,4 @@ TEST(EarleyParser, SimpleArithmetic) {
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

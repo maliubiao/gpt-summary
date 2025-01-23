@@ -637,7 +637,7 @@ TEST_P(HttpNetworkTransactionTest, ClientAuthCertCache_Direct_FalseStart) {
 
   // [ssl_]data4 is the data for the SSL handshake once the TLSv1 connection
   // falls back to SSLv3. It has the same behaviour as [
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -645,8 +645,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第24部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 >());
   data.set_connect_data(mock_connect);
   session_deps_.socket_factory->AddSocketDataProvider(&data);
@@ -1417,7 +1419,4 @@ TEST_P(HttpNetworkTransactionTest, ClientAuthCertCache_Proxy_Fail) {
         ASSERT_THAT(rv, IsError(ERR_IO_PENDING));
 
         // Complete the SSL handshake,
-"""
-
-
 ```

@@ -224,7 +224,7 @@ check_order_dlsym_get_answer returned: 123
 
 `dlopen_check_order_dlsym_answer.cpp` 是一个用于测试 Android 动态链接器行为的简单测试文件。它通过提供返回预定义宏值的函数，帮助验证 `dlopen` 和 `dlsym` 在处理符号查找顺序时的正确性。理解其功能有助于理解 Android 系统中动态链接的工作原理以及如何避免相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlopen_check_order_dlsym_answer.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -235,8 +235,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -262,7 +264,4 @@ extern "C" int check_order_dlsym_get_answer2() {
   return __ANSWER2;
 }
 #endif
-
-"""
-
 ```

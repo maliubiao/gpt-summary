@@ -156,15 +156,17 @@ v8.measureMemory().then(memoryInfo => {
 
 `v8/src/heap/memory-measurement.cc` 是 V8 引擎中一个关键的组件，它提供了测量和报告 JavaScript 堆内存使用情况的功能。它通过 `MeasureMemoryDelegate` 和 `MemoryMeasurementResultBuilder` 等类来管理测量过程和格式化结果，并将最终的测量数据通过 Promise 返回给 JavaScript 环境。理解这个文件的功能有助于理解 V8 如何进行内存管理和为开发者提供内存使用情况的洞察。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/memory-measurement.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/memory-measurement.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -561,7 +563,4 @@ void NativeContextStats::IncrementExternalSize(Address context, Tagged<Map> map,
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

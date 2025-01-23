@@ -118,7 +118,7 @@ protected override async string perform_operation () throws Error, IOError {
 - **错误捕获**：在 `do_perform_operation` 方法中捕获错误，分析错误原因。
 
 通过这些步骤，开发者可以更好地理解 `async-task.vala` 的工作原理，并在调试过程中快速定位问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/async-task.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 internal abstract class Frida.AsyncTask<T> : Object {
 	private MainLoop loop;
 	private bool completed;
@@ -194,7 +196,4 @@ internal abstract class Frida.AsyncTask<T> : Object {
 	[CCode (cname = "frida_get_main_context")]
 	private extern static unowned MainContext get_main_context ();
 }
-
-"""
-
 ```

@@ -184,15 +184,17 @@ func main() {
 
 `go/test/alias3.dir/b.go` 的核心作用是演示 Go 语言的类型别名特性。它通过引入其他包、定义和使用别名，展示了如何在 Go 语言中为现有类型赋予新的名称，并在函数、变量和结构体方法中使用这些别名。 理解类型别名的概念以及点导入的潜在风险对于编写清晰、可维护的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/alias3.dir/b.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -219,9 +221,4 @@ func (S) M2() Context             { return Default }
 
 var _ a.I1 = S{}
 var _ a.I2 = S{}
-
-"""
-
-
-
 ```

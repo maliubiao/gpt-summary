@@ -192,7 +192,7 @@ let result = add(5, 10);
 
 `v8/src/codegen/ppc/macro-assembler-ppc.h` 是 V8 引擎在 PPC 架构上生成高效机器码的关键组件。它提供了一组用于操作寄存器、内存、控制流、调用函数以及与垃圾回收器交互的底层接口。理解其功能对于深入了解 V8 的代码生成过程和性能优化至关重要。开发者通常不会直接编写 `MacroAssembler` 代码，而是通过更高级的抽象（如 CodeStubAssembler 或 TurboFan）来利用其功能。直接使用 `MacroAssembler` 容易出错，需要对 PPC 架构和 V8 的内部机制有深入的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/macro-assembler-ppc.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/macro-assembler-ppc.h以.tq结尾，那它是个v8 torque源代码，
@@ -200,8 +200,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 er src1,
                          Simd128Register src2, Simd128Register src3);
   void V128AnyTrue(Register dst, Simd128Register src, Register scratch1,
@@ -600,8 +602,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 }  // namespace v8
 
 #endif  // V8_CODEGEN_PPC_MACRO_ASSEMBLER_PPC_H_
-
-"""
-
-
 ```

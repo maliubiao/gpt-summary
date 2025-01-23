@@ -64,7 +64,7 @@ The user wants to understand the functionality of the Python script `linuxlikete
 
 这部分 `linuxliketests.py` 文件专注于验证 Frida Python 绑定在 Linux 类系统上的构建和链接行为的正确性。它测试了各种链接场景、编译器选项、依赖管理、安装过程中的符号处理等关键方面，这些都与最终 Frida 工具的稳定性和功能性息息相关。这些测试覆盖了二进制底层和 Linux 系统构建的相关知识，并通过断言来验证 Meson 构建系统的逻辑推理是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/unittests/linuxliketests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -73,8 +73,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 lf):
         testdir = os.path.join(self.unit_test_dir, '51 ldflagdedup')
         if is_cygwin() or is_osx():
@@ -453,8 +455,4 @@ lf):
         self.assertIn('build t9-e1: c_LINKER t9-e1.p/main.c.o | libt9-s1.a libt9-s2.a libt9-s3.a\n', content)
         self.assertIn('build t12-e1: c_LINKER t12-e1.p/main.c.o | libt12-s1.a libt12-s2.a libt12-s3.a\n', content)
         self.assertIn('build t13-e1: c_LINKER t13-e1.p/main.c.o | libt12-s1.a libt13-s3.a\n', content)
-
-"""
-
-
 ```

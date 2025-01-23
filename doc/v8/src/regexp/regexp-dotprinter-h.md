@@ -162,15 +162,17 @@ digraph RegExp {
 
 `v8/src/regexp/regexp-dotprinter.h` 定义了一个用于将 V8 内部正则表达式表示转换为 dot 格式的工具类。这对于 V8 开发者理解和调试正则表达式引擎至关重要。虽然普通 JavaScript 开发者不会直接使用它，但理解其背后的概念有助于编写更有效和准确的正则表达式，避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-dotprinter.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-dotprinter.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ class DotPrinter final : public AllStatic {
 }  // namespace v8
 
 #endif  // V8_REGEXP_REGEXP_DOTPRINTER_H_
-
-"""
-
 ```

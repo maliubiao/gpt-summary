@@ -236,7 +236,7 @@ if (Process.platform === 'android') {
 
 `abort()` 函数是 Android 系统中处理致命错误的兜底机制。理解其工作原理，以及如何通过 Frida 等工具进行调试，对于 Android 开发者来说至关重要，可以帮助他们定位和解决应用程序中的严重问题，提高应用程序的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/abort.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -247,8 +247,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 1985 Regents of the University of California.
  * All rights reserved.
@@ -306,7 +308,4 @@ void abort() {
   // If we get this far, just exit.
   _exit(127);
 }
-
-"""
-
 ```

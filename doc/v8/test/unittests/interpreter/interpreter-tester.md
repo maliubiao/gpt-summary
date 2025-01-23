@@ -159,11 +159,13 @@ function f(a, b) {
 
 `interpreter-tester.cc` 中定义的 `InterpreterTester` 类是一个关键的测试工具，它允许 V8 开发者以编程方式与 JavaScript 解释器进行交互，验证解释器在执行各种 JavaScript 代码时的行为是否正确。它通过提供执行代码、捕获结果（包括异常）以及辅助构建测试用例的功能，极大地简化了 V8 解释器的单元测试编写过程。 虽然我们不能直接在 JavaScript 中使用 `InterpreterTester`，但它背后测试的正是我们编写和执行的 JavaScript 代码的解释过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/interpreter-tester.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ const char InterpreterTester::kFunctionName[] = "f";
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

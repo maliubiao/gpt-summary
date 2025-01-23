@@ -162,7 +162,7 @@ Arg1: 123 Arg2: hello Kwarg1: false
 
 **Debugging Clue:** If a developer encounters an error during the `meson` configuration stage, and the error message involves terms like "invalid arguments," "type mismatch," or refers to specific decorators (e.g., mentions a function expecting a string), it's a strong indication that the logic defined in this `__init__.py` file and its related modules (like `decorators.py` and `exceptions.py`) is involved in detecting and reporting that error. Examining the specific error message and the relevant lines in the `meson.build` file can help pinpoint the exact cause of the problem.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/interpreterbase/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -298,7 +300,4 @@ from .helpers import (
 )
 from .interpreterbase import InterpreterBase
 from .operator import MesonOperator
-
-"""
-
 ```

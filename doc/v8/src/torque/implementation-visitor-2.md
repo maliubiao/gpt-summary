@@ -149,12 +149,14 @@ let theValue = obj.getValue(); // JavaScript 代码
 
 这部分 `ImplementationVisitor.cc` 的核心职责是将高级的 Torque 代码转换为 V8 能够理解和执行的低级代码。它处理了函数调用、方法调用、内置函数调用等关键的语言结构，并开始生成与 V8 内部对象模型和运行时机制紧密相关的 C++ 代码，例如内置函数的接口描述符和类的定义。这些生成的 C++ 代码最终支撑着 JavaScript 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/implementation-visitor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ) return scope.Yield(ref.heap_slice());
     }
     ReportError("Unable to create a heap reference.");
@@ -1832,8 +1834,4 @@ void ImplementationVisitor::GenerateClassDefinitions(
           if (f.name_and_type.name == "map") continue;
           if (f.name_and_type.name == "self_indirect_pointer") {
             factory_impl << "  "
-                    
-"""
-
-
 ```

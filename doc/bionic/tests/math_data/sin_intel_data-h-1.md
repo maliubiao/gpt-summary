@@ -139,7 +139,7 @@ By following this structured thought process, including analyzing the content, m
 
 这段代码片段是 `libm.so` 中 `sin` 函数实现的关键数据部分，通过存储预先计算的输入输出值来优化 `sin` 函数的计算效率，这直接影响到 Android 系统中各种依赖三角函数的功能的性能。它是 Android 底层数学库的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sin_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -151,8 +151,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 6cfa3721p-5,
     -0x1.95361b8f7697dp-5
   },
@@ -1586,7 +1588,4 @@ Prompt:
   },
   { // Entry 711
     -0x1.4b75ba096fa54
-"""
-
-
 ```

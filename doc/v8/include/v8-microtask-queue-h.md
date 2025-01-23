@@ -187,15 +187,17 @@ queue->PerformCheckpoint(isolate);
 
 总而言之，`v8/include/v8-microtask-queue.h` 定义了 V8 引擎中管理和执行微任务的核心接口，这直接关系到 JavaScript 中 Promise、`queueMicrotask` 和 `async/await` 等异步编程特性的实现和行为。理解这个头文件中的概念对于深入理解 V8 引擎和 JavaScript 的异步机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-microtask-queue.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-microtask-queue.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -348,7 +350,4 @@ class V8_EXPORT V8_NODISCARD MicrotasksScope {
 }  // namespace v8
 
 #endif  // INCLUDE_V8_MICROTASKS_QUEUE_H_
-
-"""
-
 ```

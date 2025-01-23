@@ -165,15 +165,17 @@ func main() {
 
 总而言之，`dead.go` 中的 `updateDead` 函数是一个针对特定情况的死代码检测器，它通过分析 `if` 和 `switch` 语句的常量条件来识别不可达的代码块。它的主要目的是辅助 `shift` 代码分析，以便跳过这些死代码，从而提高分析效率和准确性。使用者需要注意其局限性，特别是对于非整数类型的 `switch` 语句的处理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/analysis/passes/shift/dead.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -275,9 +277,4 @@ func updateDead(info *types.Info, dead map[ast.Node]bool, node ast.Node) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

@@ -101,7 +101,7 @@ By following these steps and iteratively refining the explanation, we arrive at 
 
 虽然 `program.py` 本身是一个非常简单的脚本，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 能够正确地获取目标程序的可执行文件路径。它的存在暗示了 Frida 在逆向分析中需要与操作系统底层进行交互，以获取必要的进程信息。用户遇到这个文件通常是因为他们正在深入了解或调试 Frida 的内部机制和测试流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/97 find program path/program.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,12 +109,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print("Found")
-
-"""
-
 ```

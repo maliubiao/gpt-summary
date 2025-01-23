@@ -125,7 +125,7 @@ While `deoptimizer.cc` itself doesn't directly expose user-facing errors, certai
 
 The `v8/src/deoptimizer/deoptimizer.cc` file implements the core logic for **deoptimizing JavaScript and WebAssembly code** within the V8 engine. It provides the mechanisms to identify code that needs to be deoptimized, locate its active instances on the stack, replace the program counter to redirect execution to the deoptimizer, and reconstruct the pre-optimization stack frame to allow execution to resume in a less optimized state. This process is crucial for maintaining the correctness of JavaScript execution when runtime conditions invalidate optimization assumptions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/deoptimizer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/deoptimizer/deoptimizer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -133,8 +133,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -995,7 +997,4 @@ void Deoptimizer::TraceMarkForDeoptimization(Isolate* isolate,
     ShortPrint(code, scope.file());
     PrintF(scope.file(), " (");
     ShortPr
-"""
-
-
 ```

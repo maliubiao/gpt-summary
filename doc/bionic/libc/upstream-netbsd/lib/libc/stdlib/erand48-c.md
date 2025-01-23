@@ -258,7 +258,7 @@ Frida: Hooked erand48
 
 这个示例展示了如何使用 Frida Hook 来动态地观察 `erand48` 函数的调用过程，包括传入的种子值和返回的随机数，这对于理解代码行为和调试非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/lib/libc/stdlib/erand48.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -269,8 +269,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: erand48.c,v 1.9 2006/03/22 20:52:16 drochner Exp $	*/
 
 /*
@@ -313,7 +315,4 @@ erand48(unsigned short xseed[3])
 	       ldexp((double) xseed[1], -32) +
 	       ldexp((double) xseed[2], -16);
 }
-
-"""
-
 ```

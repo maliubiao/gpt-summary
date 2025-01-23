@@ -209,15 +209,17 @@ This iterative process of inspecting, analyzing, connecting the dots, and refini
 
 总而言之，`platform-unittest.cc` 是一个关键的测试文件，用于确保 V8 的平台抽象层在不同操作系统上的正确性和一致性，这对于 V8 的跨平台能力至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/platform/platform-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/base/platform/platform-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -536,7 +538,4 @@ TEST_F(PlatformTest, StackAlignment) {
 }  // namespace
 
 }  // namespace v8
-
-"""
-
 ```

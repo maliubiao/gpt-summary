@@ -93,7 +93,7 @@ This step-by-step process of understanding the context, scanning for key element
 
 **简而言之，这个头文件是用户空间驱动程序与 Habanlabs 硬件加速器进行通信和控制的“蓝图”，涵盖了设备初始化、命令提交、内存管理、同步以及状态查询等核心功能。**  由于它是 DRM 子系统的一部分，它遵循了 DRM 的通用模型，允许应用程序通过文件描述符与内核驱动程序交互，然后驱动程序负责与硬件进行通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/drm/habanalabs_accel.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -105,8 +105,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -1277,7 +1279,4 @@ struct hl_debug_params_stm {
 struct hl_debug_params_bmon {
   __u64 start_addr0;
   __u64 addr_mask0
-"""
-
-
 ```

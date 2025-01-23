@@ -509,7 +509,7 @@ TEST_F(DisasmX64Test, DisasmX64CheckOutput) {
   COMPARE("48c1e206             REX.W shlq rdx, 6", shlq(rdx, Immediate(6)));
   COMPARE("d1648764             shll [rdi+rax*4+0x64], 1",
           shll(Operand(rdi, ra
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-x64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-x64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -517,8 +517,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -1279,7 +1281,4 @@ TEST_F(DisasmX64Test, DisasmX64CheckOutput) {
           cmovq(greater_equal, rax, Operand(rdx, 1)));
   COMPARE("480f4e4202           REX.W cmovleq rax,[rdx+0x2]",
           cmovq(less_equal,
-"""
-
-
 ```

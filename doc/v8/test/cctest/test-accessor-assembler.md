@@ -73,11 +73,13 @@ console.log(obj.a); // 第二次访问
 
 **简单来说，`AccessorAssembler` 和 `StubCache` 共同作用，使得 V8 引擎在多次访问同一个对象的相同属性时，能够通过缓存机制大幅提升性能。`test-accessor-assembler.cc` 这个测试文件就是用来确保 `AccessorAssembler` 能够正确地生成与 `StubCache` 交互的代码。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-accessor-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -336,7 +338,4 @@ TEST(TryProbeStubCache) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

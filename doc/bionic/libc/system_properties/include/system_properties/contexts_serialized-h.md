@@ -313,7 +313,7 @@ if (Process.arch === 'arm64') {
 
 总结来说，`ContextsSerialized` 类在 Android 系统属性机制中扮演着核心角色，负责加载、管理和提供对序列化属性数据的访问。它通过底层的 libc 函数与文件系统交互，并被上层的 Android Framework 和 NDK 通过 Bionic 库提供的 API 进行调用。理解这个类的功能对于深入了解 Android 系统的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/system_properties/include/system_properties/contexts_serialized.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -324,8 +324,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -391,7 +393,4 @@ class ContextsSerialized : public Contexts {
   size_t context_nodes_mmap_size_ = 0;
   prop_area* serial_prop_area_ = nullptr;
 };
-
-"""
-
 ```

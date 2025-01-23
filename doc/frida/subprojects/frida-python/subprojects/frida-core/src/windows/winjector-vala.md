@@ -84,7 +84,7 @@ def __lldb_init_module(debugger, dict):
 3. **异常捕获**：捕获并处理可能抛出的 `Error` 或 `IOError` 异常，定位问题根源。
 
 通过这些步骤和调试工具，用户可以逐步排查和解决注入过程中遇到的问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/windows/winjector.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -93,8 +93,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class Winjector : Object, Injector {
 		public WindowsHelper helper {
@@ -305,7 +307,4 @@ namespace Frida {
 		}
 	}
 }
-
-"""
-
 ```

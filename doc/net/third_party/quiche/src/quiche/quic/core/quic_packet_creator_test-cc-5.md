@@ -121,7 +121,7 @@ By mentally stepping through the logic of each test case, I can better articulat
 
 作为系列解释的最后一部分，`net/third_party/quiche/src/quiche/quic/core/quic_packet_creator_test.cc` 的主要功能是**全面地、细致地测试 `QuicPacketCreator` 类的各项核心功能，确保其能够正确地将 QUIC 帧组装成符合协议规范的数据包，并能妥善处理各种边界情况和不同的连接场景**。它涵盖了连接ID的管理、数据包大小的控制、填充的处理以及在不同对端地址上下文中的行为。 通过这些测试，可以保证 `QuicPacketCreator` 的稳定性和可靠性，从而间接地保障了基于 QUIC 协议的上层应用（如浏览器中的 HTTP/3）的正常运行。 这个测试文件是保证 QUIC 协议实现质量的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_packet_creator_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 TRUE(creator_.HasPendingRetransmittableFrames());
 
   // Failed to send messages which cannot fit into one packet.
@@ -330,8 +332,4 @@ TEST_F(QuicPacketCreatorMultiplePacketsTest,
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

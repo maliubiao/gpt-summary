@@ -153,7 +153,7 @@ for (let i = 0; i < str.length; i++) {
 
 这些功能是 JavaScript 引擎正确处理各种语言字符和文本的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/unicode.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/strings/unicode.cc以.tq结尾，那它是个v8 torque源代码，
@@ -161,8 +161,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -824,8 +826,5 @@ static const int32_t kID_StartTable0[434] = {
     1073745586, 3763,       3773,       1073745600, 3780,       3782,
     1073745628, 3807,       3840,       1073745728, 3911,       1073745737,
     3948,       1073745800, 3980,       1073745920, 4138,       4159,
-    1073746000, 4181,       1073746010, 4189,       4193, 
-"""
-
-
+    1073746000, 4181,       1073746010, 4189,       4193,
 ```

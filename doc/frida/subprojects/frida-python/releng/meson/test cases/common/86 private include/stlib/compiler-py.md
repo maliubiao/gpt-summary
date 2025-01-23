@@ -123,7 +123,7 @@ By following these steps, breaking down the problem into smaller parts, and cons
 
 `compiler.py` 是 Frida 构建系统中一个用于生成简单 C 代码的辅助脚本。它的功能虽然简单，但在 Frida 的开发和测试流程中起着作用，为动态 instrumentation 提供了基础的目标代码。它与逆向工程的关联在于它可以生成被 Frida hook 的代码，也涉及到一些底层编译和文件操作的知识。用户通常不会直接运行它，但在开发、构建和调试 Frida 的过程中可能会间接地接触到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/86 private include/stlib/compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys, os
@@ -165,7 +167,4 @@ with open(cfile, 'w') as f:
     f.write(c_code)
 with open(hfile, 'w') as f:
     f.write(h_code)
-
-"""
-
 ```

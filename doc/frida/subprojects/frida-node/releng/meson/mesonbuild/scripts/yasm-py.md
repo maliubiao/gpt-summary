@@ -180,7 +180,7 @@ args = ['--depfile', 'output.d', 'input.asm', '-f', 'elf32', '-o', 'output.o']
 
 因此，用户通常是通过 Frida 的构建系统间接地接触到这个脚本的。当遇到与汇编编译相关的构建问题时，他们可能会作为调试线索来查看和分析 `yasm.py` 的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/scripts/yasm.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import argparse
@@ -214,7 +216,4 @@ def run(args: T.List[str]) -> int:
         f.write(ret.stdout)
 
     return 0
-
-"""
-
 ```

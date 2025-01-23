@@ -226,15 +226,17 @@ Let's break down the thought process for analyzing the `css_property_test.cc` fi
 
 总而言之，`css_property_test.cc` 是 Blink 引擎中一个至关重要的测试文件，它确保了 CSS 属性的各种功能按照规范正确运行，从而保证了 Web 页面的正常渲染和用户体验。对于 Web 开发者来说，理解这些测试背后的原理，可以帮助他们更好地理解 CSS 的工作方式，并避免一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/css_property_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -732,7 +734,4 @@ TEST_F(CSSPropertyTest, AnchorSizeInsetsMarginsDisabled) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

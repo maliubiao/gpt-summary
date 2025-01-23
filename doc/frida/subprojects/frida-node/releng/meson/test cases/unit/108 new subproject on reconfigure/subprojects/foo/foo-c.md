@@ -134,7 +134,7 @@ Initially, one might be tempted to overthink the functionality of `foo.c`. The k
 
 虽然 `foo.c` 的代码本身非常简单，但它在 Frida 的构建和测试流程中扮演着重要的角色。  它很可能是一个用于测试新子项目集成的占位符。  在更实际的逆向场景中，类似的函数可能会包含需要被分析和修改的代码。  理解这个简单文件的上下文可以帮助我们更好地理解 Frida 的内部工作原理和软件开发流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/108 new subproject on reconfigure/subprojects/foo/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,11 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void foo(void);
 void foo(void) {}
-
-"""
-
 ```

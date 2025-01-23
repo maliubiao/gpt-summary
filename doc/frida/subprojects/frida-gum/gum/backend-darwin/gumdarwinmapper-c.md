@@ -144,7 +144,7 @@ While users don't directly interact with this low-level code, incorrect usage of
 
 In summary, the `gumdarwinmapper.c` file in Frida is responsible for the essential task of **dynamically loading and mapping Mach-O dynamic libraries into the memory space of a target process on Darwin-based systems**. It handles dependency resolution, memory allocation using Mach kernel APIs, and the complex processes of relocation and binding, preparing the dylib for execution and enabling Frida's dynamic instrumentation capabilities. It's a low-level component deeply involved with the binary format and operating system kernel.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-darwin/gumdarwinmapper.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2023 Fabian Freyer <fabian.freyer@physik.tu-berlin.de>
@@ -1132,7 +1134,4 @@ gum_darwin_mapper_resolve (GumDarwinMapper * self,
 
 static GumAddress
 gum_d
-"""
-
-
 ```

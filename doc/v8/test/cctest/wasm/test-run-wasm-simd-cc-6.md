@@ -125,7 +125,7 @@ for (let i = 0; i < 32; i++) {
 
 这些测试确保了 V8 能够有效地利用现代 CPU 的 SIMD 扩展 (如 AVX2) 来提升 WebAssembly 代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-simd.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-run-wasm-simd.cc以.tq结尾，那它是个v8 torque源代码，
@@ -133,8 +133,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 res::IsSupported(AVX2)) return;
   WasmRunner<int8_t> r(TestExecutionTier::kTurbofan);
   int8_t* memory = r.builder().AddMemoryElems<int8_t>(40);
@@ -945,8 +947,4 @@ TEST(RunWasmTurbofan_ForcePackLoadExtend) {
                           WASM_SIMD_UNOP(kExprS128Not, WASM_SIMD_LOAD_OP_OFFSET(
                                                            kExprS128Load32x2S,
                                                            WASM_ZERO, 40)),
- 
-"""
-
-
 ```

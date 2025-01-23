@@ -272,7 +272,7 @@ func main() {
 
 这段代码是 `encoding/json` 包中非常重要的组成部分，为 Go 语言提供了高效且灵活的 JSON 数据流处理能力。理解其工作原理和使用方式对于编写处理 JSON 数据的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/json/stream.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -280,8 +280,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -794,9 +796,4 @@ func (dec *Decoder) peek() (byte, error) {
 func (dec *Decoder) InputOffset() int64 {
 	return dec.scanned + int64(dec.scanp)
 }
-
-"""
-
-
-
 ```

@@ -137,7 +137,7 @@ targetSlice := []byte("go")
 
 总结来说，这段 `internal/bytealg/index_ppc64x.go` 代码是 Go 语言标准库为了在 `ppc64` 架构上提供高效的字节查找功能而实现的优化代码，它利用了 CPU 特性并采用了混合搜索策略。虽然普通用户不会直接使用它，但它的存在提升了在 `ppc64` 架构下使用 `bytes` 和 `strings` 包进行字符串/字节操作的性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/bytealg/index_ppc64x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -145,8 +145,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -173,9 +175,4 @@ func Cutover(n int) int {
 	// 1 error per 8 characters, plus a few slop to start.
 	return (n + 16) / 8
 }
-
-"""
-
-
-
 ```

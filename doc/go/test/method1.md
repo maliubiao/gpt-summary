@@ -116,15 +116,17 @@ This specific code snippet doesn't process command-line arguments directly. Its 
 
 **In summary, the `go/test/method1.go` code snippet is a test case designed to ensure the Go compiler correctly identifies and reports errors when functions or methods with the same name are redeclared with different parameter types within the same scope. It demonstrates Go's lack of function overloading based solely on parameter type differences.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/method1.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -149,9 +151,4 @@ func f(int, float64) {} // ERROR "redeclared|redefinition"
 
 func g(a int, b string) // GCCGO_ERROR "previous"
 func g(a int, c string) // ERROR "redeclared|redefinition"
-
-"""
-
-
-
 ```

@@ -89,7 +89,7 @@ The code appears to be a core component of a testing framework. It defines how i
 
 总而言之，`frida/subprojects/frida-core/releng/meson/mesonbuild/mtest.py` 的这部分代码专注于将 Frida 测试框架的测试结果转换成标准的 JUnit XML 报告。这使得 Frida 的测试结果可以被各种持续集成工具方便地集成和分析，为开发者提供清晰的测试状态和失败信息，从而提高开发效率和代码质量。它通过结构化的 XML 格式，详细记录了每个测试用例的执行状态、耗时以及输出信息，为问题排查提供了重要的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/mtest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,8 +98,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 (sum(1 for r in test.results if r.result is TestResult.SKIP)),
                 time=str(test.duration),
             )
@@ -875,7 +877,4 @@ class TestHarness:
 
         self.prepare_build()
         self.load_
-"""
-
-
 ```

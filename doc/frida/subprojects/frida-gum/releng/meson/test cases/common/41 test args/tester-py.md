@@ -135,7 +135,7 @@ By following this structured analysis and iterative refinement, I can generate a
 
 `tester.py` 是 Frida 测试框架中的一个简单但重要的测试脚本。它用于验证 Frida 在特定测试场景下对环境变量和命令行参数的处理是否正确。 虽然它本身不执行逆向操作，但它确保了 Frida 核心功能的可靠性，这对于使用 Frida 进行有效的动态逆向至关重要。 理解这类测试脚本可以帮助开发者更好地理解 Frida 的内部工作原理和依赖项，并为调试 Frida 的问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/41 test args/tester.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -156,7 +158,4 @@ assert os.environ['TEST_LIST_FLATTENING'] == '1'
 with open(sys.argv[1]) as f:
     if f.read() != 'contents\n':
         sys.exit(1)
-
-"""
-
 ```

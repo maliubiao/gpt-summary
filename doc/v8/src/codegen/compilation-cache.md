@@ -68,11 +68,13 @@ regex.test("abbbc"); // 第二次匹配，可能会从正则表达式编译缓�
 
 `compilation-cache.cc` 文件是 V8 引擎中一个关键的性能优化组件。它通过缓存已编译的 JavaScript 代码，显著减少了重复编译的开销，从而提升了 JavaScript 代码的执行速度。虽然 JavaScript 开发人员通常不需要直接与编译缓存交互，但了解它的存在和工作原理有助于理解 V8 如何优化 JavaScript 执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/compilation-cache.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -463,7 +465,4 @@ void CompilationCache::DisableScriptAndEval() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

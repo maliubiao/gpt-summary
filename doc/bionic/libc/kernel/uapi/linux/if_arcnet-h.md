@@ -251,7 +251,7 @@ sys.stdin.read()
 
 通过这个 Frida hook 示例，我们可以在应用程序调用 `sendto` 发送数据时，截获调用并检查发送的数据，从而调试与 ARCnet 相关的网络操作。需要注意的是，这个示例假设我们知道目标进程可能发送 ARCnet 数据包，并且简化了对地址族等的判断。在实际调试中，可能需要更复杂的逻辑来判断是否是 ARCnet 数据包。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_arcnet.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -262,8 +262,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -333,7 +335,4 @@ struct archdr {
   } soft;
 };
 #endif
-
-"""
-
 ```

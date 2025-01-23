@@ -77,7 +77,7 @@ By following these steps, I can systematically analyze the header file and gener
 
 **由于这是第1部分，主要关注功能的归纳，更详细的解释将在第2部分展开。**  因此，这里不详细解释 libc 函数的实现、dynamic linker 的功能、逻辑推理、常见错误以及 Android framework/NDK 的调用路径和 Frida Hook 示例。这些将在后续的部分进行阐述。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/drm/i915_drm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -89,8 +89,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -1024,8 +1026,4 @@ struct drm_i915_query_topology_info {
   __u16 max_subslices;
   __u16 max_eus_per_subslice;
   __u16 subslice_offset;
-
-"""
-
-
 ```

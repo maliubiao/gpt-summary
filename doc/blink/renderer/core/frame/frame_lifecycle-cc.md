@@ -99,14 +99,16 @@ By following this systematic approach, we can effectively analyze the given code
 
 总而言之，`FrameLifecycle` 类是 Blink 渲染引擎中管理 Frame 生命周期状态的关键组件，它与 HTML 结构和 JavaScript 的动态操作紧密相关，并确保 Frame 在生命周期的各个阶段能够被正确处理。  其内部的断言机制有助于在开发阶段发现潜在的逻辑错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/frame_lifecycle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -136,7 +138,4 @@ void FrameLifecycle::AdvanceTo(State state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

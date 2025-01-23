@@ -235,7 +235,7 @@ func (hs *clientHandshakeStateTLS13) establishHandshakeKeys() error {
 
 总而言之，这段代码实现了 TLS 1.3 客户端握手的核心逻辑，涉及到消息的发送和接收、密钥协商、身份验证等关键步骤。使用者需要理解 TLS 握手的流程和 `tls.Config` 的配置选项，才能正确地使用 `crypto/tls` 包建立安全的 TLS 连接。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/handshake_client_tls13.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -243,8 +243,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1148,9 +1150,4 @@ func (c *Conn) handleNewSessionTicket(msg *newSessionTicketMsgTLS13) error {
 
 	return nil
 }
-
-"""
-
-
-
 ```

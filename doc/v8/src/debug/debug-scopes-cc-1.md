@@ -234,7 +234,7 @@ outer(3);
 
 `v8/src/debug/debug-scopes.cc` 实现了 V8 调试器的核心功能，用于在程序暂停时检查和修改 JavaScript 代码中不同作用域内的变量。它通过 `ScopeIterator` 类遍历作用域链，根据变量的不同位置采取相应的访问策略。此外，它还包含了优化调试器性能的机制，例如收集局部变量的黑名单。这段代码是连接 V8 引擎内部执行状态和外部调试工具的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-scopes.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/debug-scopes.cc以.tq结尾，那它是个v8 torque源代码，
@@ -242,9 +242,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-        // Get the variable from the suspended generator.
+### 源代码
+```cpp
+// Get the variable from the suspended generator.
           DCHECK(!generator_.is_null());
           Tagged<FixedArray> parameters_and_registers =
               generator_->parameters_and_registers();
@@ -709,8 +711,4 @@ void ScopeIterator::MaybeCollectAndStoreLocalBlocklists() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

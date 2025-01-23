@@ -226,7 +226,7 @@ func main() {
 
 这段代码的主要功能是**全面测试 `archive/tar` 包中 `Writer` 类型的功能，验证其能否正确地创建符合 tar 格式规范的归档文件，并能处理各种边界情况和错误场景。** 它通过定义一系列的测试用例，模拟不同的写入操作和 tar 文件结构，并将生成的输出与预期的结果进行比较，从而确保 `tar.Writer` 的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/archive/tar/writer_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -235,8 +235,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1398,9 +1400,4 @@ func TestFileWriter(t *testing.T) {
 		},
 	}, {
 		maker: makeSparse{makeReg{5, "abcde"}, sparseHoles{{2, 3}
-"""
-
-
-
-
 ```

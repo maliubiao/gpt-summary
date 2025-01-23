@@ -92,7 +92,7 @@ By following this thought process, we can comprehensively address the prompt, an
 
 总而言之，`prog.c` 是 Frida 构建系统中的一个简单但重要的测试用例，用于验证构建配置的正确性。它展示了配置信息如何在编译时影响程序的行为，并为 Frida 的开发者提供了一种确保构建系统按预期工作的机制。理解这样的测试用例有助于深入理解 Frida 的构建流程和测试策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/99 postconf/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,14 +100,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"generated.h"
 
 int main(void) {
     return THE_NUMBER != 9;
 }
-
-"""
-
 ```

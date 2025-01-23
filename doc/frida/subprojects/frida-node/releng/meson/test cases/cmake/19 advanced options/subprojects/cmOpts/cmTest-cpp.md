@@ -126,7 +126,7 @@ By following these steps, we can create a comprehensive analysis of the code sni
 
 总而言之，`cmTest.cpp` 是 Frida 构建系统的一个测试用例，用于确保高级构建选项被正确处理。它通过预处理器指令来验证编译环境的配置，并在构建错误时提供明确的调试线索。虽然它不直接执行逆向操作，但保证了 Frida 构建的正确性，从而间接地影响了 Frida 在逆向分析中的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/19 advanced options/subprojects/cmOpts/cmTest.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmTest.hpp"
 
 #if __cplusplus < 201103L
@@ -161,7 +163,4 @@ Prompt:
 int getTestInt() {
   return MESON_MAGIC_INT;
 }
-
-"""
-
 ```

@@ -184,15 +184,17 @@ By following this structured approach, combining code analysis with an understan
 
 总之，`v8/src/builtins/builtins-object-gen.h` 是 V8 内部用于生成 `Object` 相关内置函数代码的关键头文件，它定义了操作属性描述符和对象内部结构的工具方法，直接支撑了 JavaScript 中 `Object` 对象的各种功能。理解这些内部机制有助于更深入地理解 JavaScript 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-object-gen.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-object-gen.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ class ObjectBuiltinsAssembler : public CodeStubAssembler {
 }  // namespace v8
 
 #endif  // V8_BUILTINS_BUILTINS_OBJECT_GEN_H_
-
-"""
-
 ```

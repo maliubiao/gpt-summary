@@ -197,15 +197,17 @@ func main() {
 
 `go/src/cmd/vendor/golang.org/x/sys/unix/syscall_hurd_386.go` 定义了在 Hurd 操作系统 386 架构下操作终端所需的基本常量和数据结构。 它通常与其他 `syscall` 包的函数一起使用，允许 Go 程序与底层的终端驱动进行交互，例如获取终端大小和属性。 使用者需要注意平台依赖性、`ioctl` 调用的正确性以及对终端属性的深入理解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_hurd_386.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -234,9 +236,4 @@ type Termios struct {
 	Ispeed int32
 	Ospeed int32
 }
-
-"""
-
-
-
 ```

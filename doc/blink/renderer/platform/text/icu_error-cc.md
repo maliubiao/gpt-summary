@@ -109,14 +109,16 @@ ICU 是一个强大的国际化库，被 Blink 引擎广泛用于处理文本相
 
 `icu_error.cc` 是 Blink 引擎中一个关键的错误处理模块，专门用于处理 ICU 库返回的特定错误。它通过区分内存分配失败和其他类型的错误，并采取不同的应对措施（例如 OOM 崩溃或断言失败），来保证浏览器的稳定性和尽早发现潜在的编程错误。虽然用户不会直接与这个文件交互，但它处理的错误类型直接影响到浏览器处理文本的能力，从而间接地影响了 JavaScript, HTML 和 CSS 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/icu_error.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -149,7 +151,4 @@ void ICUError::HandleFailure() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -123,15 +123,17 @@ By following this methodical process, I could dissect the provided code snippet 
 
 `PropertyTreeManager` 的核心功能是作为 Blink 渲染引擎和 Chromium Compositor 之间的桥梁，负责将 Blink 内部的渲染属性转换为 Compositor 可以理解和使用的格式，并管理合成相关的逻辑。它通过维护和同步属性树，确保渲染效果的正确性和性能。它与 JavaScript, HTML, CSS 紧密相关，因为这些技术定义了页面的结构、样式和交互行为，最终都会通过 `PropertyTreeManager` 反映到渲染流水线中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/property_tree_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -920,7 +922,4 @@ int PropertyTreeManager::SwitchToEffectNodeWithSynthesizedClip(
   //
   // The following cc property trees and layers will be generated:
   // E0 <+- E1 <-- E_C1_1 <-- E
-"""
-
-
 ```

@@ -172,7 +172,7 @@ endif
 
 `frida/subprojects/frida-node/releng/meson/docs/theme/extra/prism_components/prism-meson.js` 文件虽然本身是一个简单的 JavaScript 定义，但它在 Frida 项目中扮演着重要的角色，通过提供 Meson 代码的语法高亮，提升了代码的可读性和可理解性。这对于逆向工程师理解 Frida 的构建过程、分析相关的底层知识以及调试文档显示问题都非常有帮助。  它反映了 Frida 项目对清晰文档和良好开发者体验的重视。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/docs/theme/extra/prism_components/prism-meson.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 Prism.languages.meson= {
 	'triple-quoted-string': {
 		'pattern': /'''[\s\S]*?'''/,
@@ -198,6 +200,4 @@ Prism.languages.meson= {
 	'punctuation': /[(),[\]]/
 	// TODO: Handle ternary ?:
 };
-"""
-
 ```

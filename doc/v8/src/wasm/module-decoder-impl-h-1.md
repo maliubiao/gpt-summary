@@ -203,7 +203,7 @@ WebAssembly.instantiate(wasmBytes)
 
 这段代码是 WebAssembly 模块解码器实现的一部分，专注于**解析和提取模块中定义的函数、表、内存、全局变量、导出项、起始函数、元素段**等核心结构信息。它负责读取 WebAssembly 字节码中这些部分的描述，并将其转换为 V8 引擎内部表示，以便后续的验证、编译和执行。此外，它还处理了名称段、源映射 URL 段、外部调试信息段以及一些性能优化相关的提示信息段。这段代码的核心目标是理解 WebAssembly 模块的静态结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-decoder-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-decoder-impl.h以.tq结尾，那它是个v8 torque源代码，
@@ -211,8 +211,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 t("functions count", v8_flags.max_wasm_functions);
     DCHECK_EQ(module_->functions.size(), module_->num_imported_functions);
     uint32_t total_function_count =
@@ -1022,7 +1024,4 @@ t("functions count", v8_flags.max_wasm_functions);
       // calculation before. Even without the globals section the calculation
       // is needed because globals can also be defined in the import section.
       Calcul
-"""
-
-
 ```

@@ -210,15 +210,17 @@ By following this thought process, breaking down the code, and considering the u
 
 总而言之，`css_counter_value.cc` 是 Blink 渲染引擎中处理 CSS 计数器功能的核心组件，它负责存储和管理计数器的相关信息，并在渲染过程中生成其 CSS 文本表示。理解这个文件的功能有助于我们更好地理解 CSS 计数器的工作原理以及在调试相关问题时提供思路。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_counter_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -274,7 +276,4 @@ void CSSCounterValue::TraceAfterDispatch(blink::Visitor* visitor) const {
 }  // namespace cssvalue
 
 }  // namespace blink
-
-"""
-
 ```

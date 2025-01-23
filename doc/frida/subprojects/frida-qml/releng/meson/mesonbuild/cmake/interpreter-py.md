@@ -110,7 +110,7 @@ print(converter_target.compile_opts['cpp']) # 可能包含 '-DDEBUG'
 
 `frida/subprojects/frida-qml/releng/meson/mesonbuild/cmake/interpreter.py` 文件的主要功能是**作为 Frida 工具链中解析和理解 CMake 构建系统项目的核心组件**。它负责从 CMake 项目中提取构建信息，并将其转换为 Meson 构建系统可以使用的形式。这使得 Frida 能够处理基于 CMake 构建的目标，进行动态插桩和分析。这个文件对于理解 Frida 如何与使用 CMake 构建的软件进行交互至关重要，也为逆向工程师提供了关于目标软件构建过程的重要信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/cmake/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -878,8 +880,5 @@ class ConverterCustomTarget:
         mlog.log('Custom Target', mlog.bold(self.name), f'({self.cmake_name})')
         mlog.log('  -- command:      ', mlog.bold(str(self.command)))
         mlog.log('  -- outputs:      ', mlog.bold(str(self.outputs)))
-        mlog.log('  -- conflict_map: ', 
-"""
-
-
+        mlog.log('  -- conflict_map: ',
 ```

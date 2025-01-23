@@ -189,14 +189,16 @@ updated_worklet_job_map = {
 
 In summary, `paint_worklet_paint_dispatcher.cc` is a crucial component in Blink's rendering pipeline for enabling and managing CSS Paint Worklets. It acts as a bridge between the declarative nature of CSS and the imperative drawing logic defined in JavaScript, ensuring efficient and correct rendering of custom paint effects.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint_worklet_paint_dispatcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -366,7 +368,4 @@ PaintWorkletPaintDispatcher::GetCompositorTaskRunner() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

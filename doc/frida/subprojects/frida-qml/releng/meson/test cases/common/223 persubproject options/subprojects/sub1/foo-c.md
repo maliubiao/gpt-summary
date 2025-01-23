@@ -143,7 +143,7 @@ By following this detailed breakdown, we can fully understand the purpose and co
 
 总而言之，`foo.c` 虽然代码简单，但在 Frida 的构建和测试流程中扮演着重要的角色，它验证了构建系统的关键功能，确保了子项目能够拥有独立的构建配置。理解这样的测试用例有助于深入了解 Frida 的构建机制，对于解决构建问题和理解 Frida 的整体架构非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/223 persubproject options/subprojects/sub1/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo(void);
 
 int foo(void) {
@@ -161,7 +163,4 @@ int foo(void) {
   int x;
   return 0;
 }
-
-"""
-
 ```

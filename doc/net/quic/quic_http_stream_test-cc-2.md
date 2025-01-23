@@ -64,7 +64,7 @@ The user wants to understand the functionality of the provided C++ code snippet 
 
 总而言之，`net/quic/quic_http_stream_test.cc` 是一个至关重要的测试文件，用于确保 Chromium 网络栈中 `QuicHttpStream` 类的正确性和可靠性，涵盖了各种正常的和异常的场景。 开发者可以通过阅读和运行这些测试用例来理解 `QuicHttpStream` 的工作原理，并在遇到问题时作为调试的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_http_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -72,8 +72,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ame_length +
                                  strlen(kResponseBody) + header2.length()),
             stream_->GetTotalReceivedBytes());
@@ -634,8 +636,4 @@ TEST_P(QuicHttpStreamTest, GetAcceptChViaAlps) {
 }
 
 }  // namespace net::test
-
-"""
-
-
 ```

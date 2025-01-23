@@ -175,15 +175,17 @@ console.log(globalThis.myVariable); // 输出: 10
 
 `v8/src/snapshot/context-deserializer.cc` 是 V8 引擎中负责反序列化 `Context` 对象的核心组件。 它读取序列化的数据，并根据这些数据重建一个可用的 JavaScript 执行环境。 这涉及到恢复全局对象、内置对象、嵌入器自定义数据以及 API 包装器对象的状态。理解这个文件的功能对于深入了解 V8 的启动过程和快照机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/context-deserializer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/context-deserializer.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -351,7 +353,4 @@ void ContextDeserializer::DeserializeApiWrapperFields(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

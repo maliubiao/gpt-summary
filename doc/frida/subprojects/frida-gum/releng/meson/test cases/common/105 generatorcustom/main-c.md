@@ -150,7 +150,7 @@ Here's a breakdown of the thinking process to arrive at the detailed analysis of
 
 总而言之，这个 `main.c` 文件是一个简单的 C 程序，用于打印四个字符串。在 Frida 的上下文中，它很可能是一个用于测试代码生成器功能的测试用例。 逆向工程师可以利用 Frida 动态地修改和观察这个程序的行为。理解这个文件的功能有助于理解 Frida 测试框架的运作方式，并为调试 Frida 相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/105 generatorcustom/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 #include "alltogether.h"
@@ -168,7 +170,4 @@ int main(void) {
     printf("%s - %s - %s - %s\n", res1, res2, res3, res4);
     return 0;
 }
-
-"""
-
 ```

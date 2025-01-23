@@ -146,7 +146,7 @@ std::string getStr() {
 
 因此，到达 `main.cpp` 这个文件的用户通常处于一个需要在 Frida 上下文中使用自定义 C++ 代码的阶段，而这个脚本提供了一种快速生成基础 C++ 代码的方式。  在调试 Frida 脚本或相关流程时，检查这个代码生成器的输入和输出，确保生成的代码符合预期，是排查问题的一个环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cmake/4 code gen/subprojects/cmCodeGen/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <fstream>
 
@@ -177,7 +179,4 @@ std::string getStr() {
 
   return 0;
 }
-
-"""
-
 ```

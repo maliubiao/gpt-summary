@@ -159,7 +159,7 @@ By following these steps, you can effectively analyze and understand the functio
 
 总而言之，`blink/renderer/modules/webaudio/audio_context.cc` 文件的第一部分代码主要负责实现 `AudioContext` 对象的创建、生命周期管理、音频图的构建基础（目的地节点），以及提供创建各种音频源的入口。它处理了与 JavaScript API 的绑定，并与 Blink 引擎的其他模块（如媒体元素、媒体流、权限管理）集成，同时关注性能和用户体验，例如通过延迟提示和处理自动播放策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1020,7 +1022,4 @@ bool AudioContext::HasPendingActivity() const {
   // on.  However, they can be resumed at any time, so we don't want contexts
   // going away prematurely.
   return ((ContextState() != V8AudioConte
-"""
-
-
 ```

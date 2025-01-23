@@ -168,7 +168,7 @@ By following these steps, combining initial understanding with careful analysis 
 
 总而言之，这个文件是 Frida 项目中用于测试 SSE4.1 指令集支持和相关功能的单元测试代码。通过分析这个文件，可以了解 Frida 如何进行 CPU 特性检测，以及如何使用 SIMD 指令进行特定的数据处理。对于逆向工程师和 Frida 用户来说，理解这类测试用例代码有助于深入了解目标程序的行为和 Frida 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/147 simd/simd_sse41.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -218,7 +220,4 @@ void increment_sse41(float arr[4]) {
     arr[2] = (float)darr[3];
     arr[3] = (float)darr[2];
 }
-
-"""
-
 ```

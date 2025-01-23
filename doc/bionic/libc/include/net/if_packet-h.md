@@ -337,7 +337,7 @@ socket(17, 3, 0)
 
 请注意，直接使用 packet socket 的 Android 应用程序通常需要 root 权限或特定的系统权限才能运行。在调试这类应用程序时，需要确保设备已 root，或者应用程序运行在具有相应权限的环境中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/net/if_packet.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -348,10 +348,9 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #include <linux/if_packet.h>
-
-"""
-
 ```

@@ -159,14 +159,16 @@ By following this structured approach, I can effectively analyze the C++ test fi
 
 总而言之，`list_interpolation_functions_test.cc` 这个文件通过各种单元测试，确保了 Blink 引擎在处理列表类型动画时的正确性和鲁棒性，这对于实现平滑流畅的 Web 动画效果至关重要。理解这个文件的功能有助于开发者理解浏览器动画机制的底层实现，并避免在使用 CSS 动画或 Web Animations API 时犯一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/list_interpolation_functions_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -629,7 +631,4 @@ TEST(ListInterpolationFunctionsTest, BuilderModifyListWithOneItem) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

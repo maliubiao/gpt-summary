@@ -103,7 +103,7 @@ Let's assume a test scenario where Frida attempts to hook the `round1_a` functio
 
 In summary, `file1.c` is a deliberately simple C code file designed to test Frida's interaction with prelinked binaries. It provides a basic structure for function calls that allows developers to verify Frida's core functionalities like function hooking and its ability to handle prelinking optimizations. Understanding its simplicity and purpose is crucial for comprehending its role within the larger Frida project and its relevance to reverse engineering concepts.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/86 prelinking/file1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<public_header.h>
 #include<private_header.h>
 
@@ -127,7 +129,4 @@ int round1_a() {
 int round2_a() {
     return round2_b();
 }
-
-"""
-
 ```

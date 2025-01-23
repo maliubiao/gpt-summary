@@ -303,14 +303,16 @@ request.SetCacheMode(blink::mojom::FetchCacheMode::kNoStore);
 
 总而言之，`WebURLRequest` 类是 Blink 引擎中构建和配置网络请求的关键，理解其各种属性和方法对于理解浏览器如何发起和处理网络请求至关重要。正确使用 `WebURLRequest` 可以避免很多常见的网络请求错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_url_request.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -833,7 +835,4 @@ std::optional<base::UnguessableToken> WebURLRequest::WebBundleToken() const {
 WebURLRequest::WebURLRequest(ResourceRequest& r) : resource_request_(&r) {}
 
 }  // namespace blink
-
-"""
-
 ```

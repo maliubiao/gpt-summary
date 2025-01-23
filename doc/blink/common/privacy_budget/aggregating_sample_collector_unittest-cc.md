@@ -188,14 +188,16 @@ navigator.credentials.get({
 
 总而言之，`aggregating_sample_collector_unittest.cc` 通过一系列单元测试，详细验证了 `AggregatingSampleCollector` 类的各种功能和边界条件，确保其能够正确地收集、聚合和报告隐私预算相关的样本数据。理解这些测试用例有助于开发者正确使用 `AggregatingSampleCollector`，并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/aggregating_sample_collector_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -587,7 +589,4 @@ TEST_F(AggregatingSampleCollectorTest, InvalidSourceId) {
   EXPECT_EQ(0u, recorder()->entries_count());
 }
 }  // namespace blink
-
-"""
-
 ```

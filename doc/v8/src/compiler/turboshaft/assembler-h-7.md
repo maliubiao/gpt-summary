@@ -242,7 +242,7 @@ destination_block:
 
 总而言之，`Assembler` 就像一个低级代码生成器，它接收高级的编译指令，并将它们转化为 Turboshaft 虚拟机可以理解和执行的中间表示形式，是连接前端 JavaScript 解析和后端代码生成的重要桥梁。它通过提供结构化的方法来创建和连接操作，帮助编译器工程师高效且正确地构建程序的中间表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -250,8 +250,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ates projections to tuples and returns the
   // corresponding tuple input instead. We do this at the top of the stack to
   // avoid passing this Projection around needlessly. This is in particular
@@ -586,8 +588,4 @@ class TSAssembler : public Assembler<reducer_list<Reducers..., TSReducerBase>> {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_ASSEMBLER_H_
-
-"""
-
-
 ```

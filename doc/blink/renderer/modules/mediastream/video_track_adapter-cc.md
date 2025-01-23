@@ -147,7 +147,7 @@ By following these steps, the detailed summary provided in the example can be ge
 
 在第 1 部分的代码中，`VideoTrackAdapter` 的主要功能是**充当视频源和视频轨道消费者之间的中间层，负责根据配置对接收到的视频帧进行适配，包括帧率控制、分辨率调整和纵横比控制，并管理帧的传递和静音状态的检测。** 它通过 `VideoFrameResolutionAdapter` 内部类来处理具体的帧处理逻辑。它与 JavaScript 的 `getUserMedia` 和 `MediaStreamTrack` API 紧密相关，通过这些 API 接收配置信息并向下游传递处理后的视频流。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/video_track_adapter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -936,7 +938,4 @@ bool VideoTrackAdapter::CalculateDesiredSize(
     }
   } else if (width > media::limits::kMaxDimension ||
              height > media::limits::kMaxDimension)
-"""
-
-
 ```

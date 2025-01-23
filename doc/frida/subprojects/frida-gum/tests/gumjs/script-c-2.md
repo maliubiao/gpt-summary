@@ -154,7 +154,7 @@ By following these steps and considering the self-correction points, I can gener
 
 `frida/subprojects/frida-gum/tests/gumjs/script.c` 文件的第 3 部分主要**测试 Frida Gum 引擎提供的用于 JavaScript 与 Native 代码交互的核心功能**，包括：**调用 Native 函数 (支持可变参数和特定调用约定)、创建 Native 回调 (支持特定调用约定和准确的调用栈回溯)、调用系统函数、以及对内存地址和文件描述符的操作**。 此外，它也测试了 Frida 的**异常处理机制**以及对 `NativeFunction` 和 `NativeCallback` 的**内存管理**。 这些测试用例旨在确保 Frida 作为动态 instrumentation 工具的关键功能能够稳定可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/gumjs/script.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ing(NULL);"
       "} catch (e) {"
       "  send(e.type);"
@@ -1286,7 +1288,4 @@ TESTCASE (array_buffer_can_wrap_memory_region)
   guint8 val[2] = { 13, 37 };
 
   COMPILE_AND_LOAD_SCR
-"""
-
-
 ```

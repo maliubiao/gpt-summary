@@ -94,14 +94,16 @@ By following these steps, combining code analysis with an understanding of web t
 
 `svg_layout_support_test.cc` 这个文件通过一个具体的测试用例，验证了 `SVGLayoutSupport::FindClosestLayoutSVGText` 函数的正确性。这个函数在 Blink 渲染引擎内部用于辅助处理 SVG 布局相关的任务，与 HTML 结构、CSS 样式以及 JavaScript 动态操作都有着密切的联系。理解这类测试用例有助于我们深入了解浏览器引擎的工作原理以及如何正确地使用相关的 API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/svg_layout_support_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -136,7 +138,4 @@ TEST_F(SVGLayoutSupportTest, FindClosestLayoutSVGText) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

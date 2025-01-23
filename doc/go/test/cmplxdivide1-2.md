@@ -163,7 +163,7 @@ go test -run Division go/test/cmplxdivide1.go
 
 这段代码定义了一系列结构体，每个结构体代表一个复数除法运算的测试用例。每个测试用例包含了被除数、除数和预期的结果。这个数组被设计用于测试 Go 语言中 `complex128` 类型的除法运算的正确性，特别是针对各种边界条件和特殊数值。 这是 `cmplxdivide1.go` 文件的一部分，专门用于复数除法运算的测试。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/cmplxdivide1.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -171,8 +171,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 plex(2, -zero), complex(nan, nan), complex(nan, nan)},
 	{complex(2, -zero), complex(nan, inf), complex(-zero, -zero)},
 	{complex(2, -zero), complex(nan, -inf), complex(zero, zero)},
@@ -1276,9 +1278,4 @@ plex(2, -zero), complex(nan, nan), complex(nan, nan)},
 	{complex(inf, -1), complex(zero, -zero), complex(inf, -inf)},
 	{complex(inf, -1), complex(zero, 1), complex(nan, -inf)},
 	{compl
-"""
-
-
-
-
 ```

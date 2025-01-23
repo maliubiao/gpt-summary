@@ -139,7 +139,7 @@ hook_function  "interestingFunction"
 
 `exceptions.py` 文件是 `tomlkit` 库的关键组成部分，它定义了在 TOML 解析和操作过程中可能出现的各种错误情况。虽然它本身不涉及底层的二进制或内核操作，但它在逆向工程中扮演着重要的角色，帮助逆向工程师处理配置文件相关的错误，从而顺利地进行后续的分析和调试工作。这些异常类型为开发者提供了清晰的错误指示，使得他们能够快速定位和修复 TOML 文件中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/tomlkit/tomlkit/exceptions.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from typing import Collection
@@ -376,7 +378,4 @@ class InvalidStringError(ValueError, TOMLKitError):
             f"Invalid string: {delimiter}{repr_}{delimiter}. "
             f"The character sequences {invalid_sequences} are invalid."
         )
-
-"""
-
 ```

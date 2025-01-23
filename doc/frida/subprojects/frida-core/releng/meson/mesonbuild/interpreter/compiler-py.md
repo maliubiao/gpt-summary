@@ -142,7 +142,7 @@ This systematic approach, starting with a high-level understanding and progressi
 
 `compiler.py` 文件的主要功能是为 Frida 的构建系统提供了一个 **抽象层来与目标环境的编译器进行交互**。它允许 Frida 在构建过程中 **探测目标环境的编译能力**，包括检查头文件、函数、类型、成员变量的存在性以及进行代码的编译和链接测试。这些信息对于 Frida **动态地适应不同的目标环境** 并确保其功能的正常运行至关重要。它充当了 Frida 构建系统和底层编译器之间的桥梁，使得 Frida 能够根据目标环境的特性做出智能的构建决策。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/interpreter/compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021 Intel Corporation
@@ -827,7 +829,4 @@ class CompilerHolder(ObjectHolder['Compiler']):
 
         # This could be done with a comprehension, but that confuses the type
         # checker, and
-"""
-
-
 ```

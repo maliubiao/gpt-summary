@@ -131,15 +131,17 @@ I'll structure the response by addressing each point in the request. For the fun
 
 这部分 `main_thread_event_queue_unittest.cc` 文件的主要功能是 **全面测试 `MainThreadEventQueue` 类的核心事件管理和调度逻辑**，包括不同类型事件的排队、阻塞和非阻塞处理、与 RAF 的交互、低延迟模式以及在特定场景下（如 fling 期间）的事件处理行为。它通过模拟各种输入场景和断言输出来验证 `MainThreadEventQueue` 是否按照预期工作，确保浏览器能够正确且高效地处理用户输入。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/input/main_thread_event_queue_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1688,8 +1690,4 @@ TEST_F(MainThreadEventQueueTest,
           ReceivedCallback(CallbackReceivedState::kCalledAfterHandleEvent,
                            false, 2),
           ReceivedCallback(CallbackReceivedState::kCalledAfterHandleEvent, true,
-    
-"""
-
-
 ```

@@ -219,15 +219,17 @@ Received: Hello
 
 `blink/renderer/modules/websockets/websocket_stream.cc` 是 Chromium Blink 引擎中实现 `WebSocketStream` API 的核心文件。它负责管理 WebSocket 连接的生命周期，处理数据的发送和接收，并与 JavaScript 的 Streams API 进行集成。理解这个文件的功能对于深入了解浏览器如何处理 WebSocket 连接以及如何调试相关的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/websockets/websocket_stream.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -977,7 +979,4 @@ WebSocketCloseInfo* WebSocketStream::MakeCloseInfo(uint16_t close_code,
 }
 
 }  // namespace blink
-
-"""
-
 ```

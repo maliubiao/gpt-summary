@@ -215,15 +215,17 @@ go build -gcflags="-l" main.go   # 禁用内联，观察对逃逸分析的影响
 
 `go/src/cmd/compile/internal/escape/graph.go` 是 Go 语言编译器逃逸分析的核心组成部分，它负责构建和维护数据流图，用于跟踪变量的赋值和使用，最终决定变量的分配位置。理解逃逸分析的原理对于编写高效的 Go 代码至关重要，但开发者通常不需要直接操作此文件。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/escape/graph.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -600,9 +602,4 @@ func Fmt(n ir.Node) string {
 
 	return text
 }
-
-"""
-
-
-
 ```

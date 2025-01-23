@@ -97,12 +97,14 @@ Let's consider how to illustrate the relationship with JavaScript using examples
 
 总而言之，这部分 C++ 代码是 V8 引擎实现 JavaScript 字符串功能的核心组成部分，它提供了高性能的底层操作，确保 JavaScript 字符串操作的效率和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-string-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 riptor::kFrom);
   auto to = UncheckedParameter<IntPtrT>(Descriptor::kTo);
 
@@ -570,8 +572,4 @@ TNode<String> StringBuiltinsAssembler::SubString(TNode<String> string,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

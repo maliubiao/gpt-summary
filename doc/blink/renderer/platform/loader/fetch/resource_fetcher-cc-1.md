@@ -102,15 +102,17 @@ The request specifies this is part 2 of 5, so I should focus on summarizing the 
 
 总而言之，这段代码展示了 `ResourceFetcher` 如何在 Blink 渲染引擎中扮演着资源加载管理者的角色，它与 HTML、CSS 和 JavaScript 的资源加载行为紧密相关，并通过缓存、优先级调整和策略控制来优化网页的加载性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_fetcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ost &&
       context_->DoesLCPPHaveLcpElementLocatorHintData()) {
     new_priority = priority_so_far;
@@ -924,7 +926,4 @@ Resource* ResourceFetcher::RequestResource(FetchParameters& params,
                    std::move(params.MutableResourceRequest().MutableBody()),
                    load_blocking_policy, params.GetRenderBlockingBehavior())) {
       resource->F
-"""
-
-
 ```

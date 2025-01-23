@@ -195,7 +195,7 @@ test cases/
 
 总而言之，`dircondenser.py` 是一个用于维护 Frida QML 模块测试用例目录结构的小工具，它通过自动重命名和更新相关文件，确保了测试用例的组织性和一致性，这对于软件开发和质量保证至关重要，也间接支持了逆向工程中对软件行为的验证工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/tools/dircondenser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
@@ -285,7 +287,4 @@ if __name__ == '__main__':
         raise SystemExit('This script takes no arguments.')
     for d in glob('test cases/*'):
         condense(d)
-
-"""
-
 ```

@@ -128,15 +128,17 @@ By following this systematic approach, breaking down the code into smaller piece
 
 总而言之，`cert_issuer_source_aia.cc` 是 Chromium 网络栈中一个重要的安全组件，负责在证书链构建过程中动态获取缺失的颁发者证书，确保 HTTPS 连接的安全性。虽然它不直接涉及 JavaScript 代码，但它的功能是 Web 应用安全的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/internal/cert_issuer_source_aia.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -351,7 +353,4 @@ void CertIssuerSourceAia::AsyncGetIssuersOf(const bssl::ParsedCertificate* cert,
 }
 
 }  // namespace net
-
-"""
-
 ```

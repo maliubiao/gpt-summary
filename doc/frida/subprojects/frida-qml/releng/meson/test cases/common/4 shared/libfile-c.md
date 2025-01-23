@@ -173,7 +173,7 @@ if __name__ == '__main__':
 
 这个步骤说明了从编写简单的 C 代码到使用 Frida 进行动态分析的完整流程，也展示了 `libfile.c` 文件在这个流程中的作用——提供一个简单的、可预测的目标函数，用于测试和演示 Frida 的基本功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/4 shared/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -197,7 +199,4 @@ Prompt:
 int DLL_PUBLIC libfunc(void) {
     return 3;
 }
-
-"""
-
 ```

@@ -173,7 +173,7 @@ func (s *Scalar) Bytes() []byte {
 
 这段 Go 代码片段是 `crypto/internal/fips140test` 包中用于测试 Edwards25519 实现的内存分配行为的测试用例。它使用了 Go 语言的测试框架和内部的加密测试工具，旨在验证在 FIPS 140 模式下，特定的 Edwards25519 操作（如创建点、标量和点加法）不会导致堆内存分配。这对于满足 FIPS 140 的安全要求至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140test/edwards25519_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -181,8 +181,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -209,9 +211,4 @@ func TestEdwards25519Allocations(t *testing.T) {
 		t.Errorf("expected zero allocations, got %0.1v", allocs)
 	}
 }
-
-"""
-
-
-
 ```

@@ -222,15 +222,17 @@ This thought process, moving from the general purpose of the file to the specifi
 
 总而言之，`paint_worklet_style_property_map_test.cc` 是一个关键的测试文件，用于确保 Blink 引擎中处理 Paint Worklet 样式属性的核心组件 `PaintWorkletStylePropertyMap` 的功能正确可靠。它涵盖了自定义属性、跨线程通信以及对不支持类型的处理等关键方面，为开发者使用 CSS Paint API 提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/paint_worklet_style_property_map_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -475,7 +477,4 @@ TEST_F(PaintWorkletStylePropertyMapTest, UnsupportedCrossThreadData) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

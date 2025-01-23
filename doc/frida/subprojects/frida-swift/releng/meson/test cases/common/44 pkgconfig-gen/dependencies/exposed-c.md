@@ -184,7 +184,7 @@ By following these steps, moving from the simple code to its broader context wit
 
 总而言之，尽管 `exposed_function` 本身功能非常简单，但在 Frida 的上下文中，它作为一个基础的测试用例，可以帮助理解动态插桩的基本原理、底层操作以及用户可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/44 pkgconfig-gen/dependencies/exposed.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,12 +192,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int exposed_function(void) {
     return 42;
 }
-
-"""
-
 ```

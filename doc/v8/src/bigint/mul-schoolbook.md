@@ -110,11 +110,13 @@ console.log(product);
 
 `mul-schoolbook.cc` 文件实现了 V8 引擎中 `BigInt` 乘法运算的基础算法。虽然 JavaScript 开发者不需要直接与这个 C++ 代码交互，但它却是 `BigInt` 功能得以实现的关键底层代码。当你使用 JavaScript 的 `BigInt` 进行乘法运算时，V8 引擎就在幕后使用像 `MultiplySchoolbook` 这样的算法来确保计算的正确性和精度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/mul-schoolbook.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ void ProcessorImpl::MultiplySchoolbook(RWDigits Z, Digits X, Digits Y) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

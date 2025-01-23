@@ -107,7 +107,7 @@ console.log(result2); // 输出: null
 
 这部分代码主要集中在测试 **V8 引擎中 `NativeRegExpMacroAssembler` 的各种指令和功能**。它通过构建不同的正则表达式匹配场景，例如回溯、反向引用（区分大小写和不区分大小写）、起始位置匹配、寄存器操作和栈溢出等，来验证 `NativeRegExpMacroAssembler` 的正确性和健壮性。此外，还包含了对 `RegExpBytecodeGenerator` 的基本测试。这些测试是 V8 引擎保证其正则表达式功能正确高效的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/regexp/regexp-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/regexp/regexp-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -115,8 +115,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 egExpTest, MacroAssemblerNativeBacktrack) {
   ContextInitializer initializer;
   Factory* factory = i_isolate()->factory();
@@ -1019,7 +1021,4 @@ TEST_F(RegExpTestWithContext, UseCountRegExp) {
   CHECK_EQ(
       3,
       resultReT
-"""
-
-
 ```

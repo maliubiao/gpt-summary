@@ -149,11 +149,13 @@ runWasm();
 
 `multi.cc` 演示了如何使用 C++ WebAssembly API 与 WebAssembly 模块进行交互，特别是如何为 WebAssembly 模块提供外部函数（导入）。这与 JavaScript 中使用 `WebAssembly` API 加载、编译、实例化 WebAssembly 模块并提供导入的方式是对应的。 核心概念是 WebAssembly 模块可以调用宿主环境提供的函数，从而实现跨语言的功能扩展。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/example/multi.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -271,8 +273,4 @@ int main(int argc, const char* argv[]) {
   std::cout << "Done." << std::endl;
   return 0;
 }
-
-
-"""
-
 ```

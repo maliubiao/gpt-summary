@@ -184,15 +184,17 @@ modifyObject();
 
 总而言之，`v8/include/cppgc/internal/atomic-entry-flag.h` 定义了一个用于快速原子性检查代码作用域可能被进入的标志，主要用于 V8 内部，尤其是在垃圾回收等需要考虑并发的场景中。开发者需要理解其假阳性的可能性，并正确配对使用 `Enter()` 和 `Exit()` 方法，避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/cppgc/internal/atomic-entry-flag.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/cppgc/internal/atomic-entry-flag.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ class AtomicEntryFlag final {
 }  // namespace cppgc
 
 #endif  // INCLUDE_CPPGC_INTERNAL_ATOMIC_ENTRY_FLAG_H_
-
-"""
-
 ```

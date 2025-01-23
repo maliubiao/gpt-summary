@@ -194,7 +194,7 @@ By following this systematic thought process, covering the code's functionality,
 
 通过这些步骤，用户（开发者或逆向工程师）可能会来到 `main.cpp` 这个源代码文件，分析其功能，理解其与 NetCDF 库的交互，以及它在更复杂的系统中的作用。这个简单的示例可以作为理解更复杂的 NetCDF 应用的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/26 netcdf/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -202,8 +202,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "netcdf.h"
 
@@ -219,7 +221,4 @@ if ((ret = nc_close(ncid)))
 
 return EXIT_SUCCESS;
 }
-
-"""
-
 ```

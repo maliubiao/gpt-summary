@@ -177,15 +177,17 @@ const myParagraphs = document.querySelectorAll('p.important');
 
 总而言之，`blink/renderer/core/exported/web_element_collection.cc` 文件是 Blink 引擎中一个重要的组成部分，它连接了 JavaScript 对 DOM 元素集合的操作和 Blink 内部的 DOM 表示。理解它的功能和特性对于开发高性能、无 Bug 的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_element_collection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  * Copyright (C) 2014 Samsung Electronics. All rights reserved.
@@ -259,7 +261,4 @@ WebElement WebElementCollection::FirstItem() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

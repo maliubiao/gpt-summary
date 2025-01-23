@@ -169,15 +169,17 @@ Here's a plan to address this request:
 
 总而言之，`attribution_src_loader.cc` 的主要功能是 **作为 Blink 引擎中处理网页端 Attribution Reporting API 的核心组件，负责解析 HTML 中的 `attribution-src` 属性和 JavaScript API 的调用，发起网络请求获取归因注册信息，并与浏览器进程通信完成归因来源和触发器的注册。** 它确保了归因注册的正确性和安全性，并集成了 DevTools 来帮助开发者调试相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/attribution_src_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1014,7 +1016,4 @@ void AttributionSrcLoader::RegisterAttributionHeaders(
   // for redirect chain, or not create the client at all.
   auto* client = MakeGarbageCollected<ResourceClient>(
       this, registration_eligibility, SourceType::kEvent, std::move(
-"""
-
-
 ```

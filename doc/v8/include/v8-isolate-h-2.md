@@ -228,7 +228,7 @@ MaybeLocal<T> Isolate::GetDataFromSnapshotOnce(size_t index) {
 
 总而言之，这部分代码突出了 `Isolate` 作为 V8 核心隔离单元的特性，并提供了与嵌入器交互和管理其内部状态的关键接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-isolate.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-isolate.h以.tq结尾，那它是个v8 torque源代码，
@@ -236,10 +236,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-   */
+### 源代码
+```c
+*/
   std::string GetDefaultLocale();
 
   Isolate() = delete;
@@ -290,8 +291,4 @@ MaybeLocal<T> Isolate::GetDataFromSnapshotOnce(size_t index) {
 }  // namespace v8
 
 #endif  // INCLUDE_V8_ISOLATE_H_
-
-"""
-
-
 ```

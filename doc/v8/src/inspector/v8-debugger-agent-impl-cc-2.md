@@ -126,7 +126,7 @@ myFunction();
 
 总的来说，`v8/src/inspector/v8-debugger-agent-impl.cc` 的这部分代码主要负责实现 V8 调试器的**高级控制和信息获取功能**。它允许用户在调试过程中更深入地干预程序的执行，例如修改返回值、管理黑盒代码、查看异步调用栈等。这些功能极大地提升了 JavaScript 代码的调试效率和能力，帮助开发者更快速地定位和解决复杂的问题。它与前两部分一起，构成了 V8 调试器代理的核心实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-debugger-agent-impl.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-debugger-agent-impl.cc以.tq结尾，那它是个v8 torque源代码，
@@ -134,8 +134,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 aught()) {
     return Response::InternalError();
   }
@@ -866,8 +868,4 @@ void V8DebuggerAgentImpl::stop() {
   m_enableState = kStopping;
 }
 }  // namespace v8_inspector
-
-"""
-
-
 ```

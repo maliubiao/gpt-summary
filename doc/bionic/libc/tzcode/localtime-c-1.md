@@ -189,7 +189,7 @@ session.detach()
 
 总而言之，这段代码片段的核心功能是**解析 POSIX 风格的 TZ 字符串，从中提取标准时间和夏令时的定义，并将其存储在 `state` 结构体中，以便后续的时间转换函数能够使用这些规则将 UTC 时间转换为本地时间。** 它专注于 TZ 字符串的语法解析和数据提取，是 Bionic libc 处理时区信息的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/tzcode/localtime.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -201,9 +201,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- from UT.
+### 源代码
+```c
+from UT.
     */
     return value + rulep->r_time + offset;
 }
@@ -1549,7 +1551,4 @@ posix2time_z(struct state *sp, time_t t)
 			--x;
 			y = x - leapcorr(sp, x);
 		} while (y > t);
-"""
-
-
 ```

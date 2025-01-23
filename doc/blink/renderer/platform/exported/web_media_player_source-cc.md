@@ -146,14 +146,16 @@ Here's a thinking process to arrive at the explanation of `web_media_player_sour
 
 总而言之，`blink::WebMediaPlayerSource` 是 Blink 引擎中一个核心的类，它在内部管理着媒体播放器的来源信息，为处理不同类型的媒体源提供了一个统一的接口。 理解这个类有助于理解 Blink 引擎如何处理 Web 页面中的媒体内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_media_player_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ WebMediaStream WebMediaPlayerSource::GetAsMediaStream() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -296,7 +296,7 @@ func main() {
 
 这部分 `api_test.go` 的主要功能是 **全面测试 `types2` 包中核心的类型系统功能，包括类型选择、错误处理、字段和方法查找、类型转换、类型赋值、类型恒等、接口实现以及泛型实例化等关键方面。** 这些测试确保了 `types2` 包的正确性和健壮性，为 Go 语言编译器的准确类型检查提供了基础保障。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types2/api_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -305,8 +305,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 main.A, int)", "->[0 0]"},
 		"(*A).f":        {"method expr (*main.A) f(*main.A, int)", "->[0 0]"},
 		"B.f":           {"method expr (main.B) f(main.B, int)", ".[0]"},
@@ -1452,10 +1454,4 @@ func TestFileVersions(t *testing.T) {
 		{"go1.21", "go1.19", "go1.21"},  // file version specified below minimum of 1.21
 		{"go1.21", "go1.20", "go1.21"},  // file version specified below minimum of 1.21
 		{"go1.21", "go1.21", "go1.21"},  // file version specified at 1.21
-	
-"""
-
-
-
-
 ```

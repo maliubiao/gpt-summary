@@ -105,12 +105,14 @@ The `VisitTruncateInt64ToInt32` function in the C++ code is responsible for gene
 
 **In summary, this part of the code is a critical component of the V8 JavaScript engine's optimizing compiler for the RISC-V64 architecture. It maps JavaScript's underlying operations to the specific assembly instructions required to execute them efficiently on this processor architecture.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-selector-riscv64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 chineRepresentation::kWord8:
           opcode = load_rep.IsUnsigned() ? kRiscvLbu : kRiscvLb;
           break;
@@ -1766,7 +1768,4 @@ void InstructionSelectorT<TurbofanAdapter>::VisitWord64AtomicExchange(
   AtomicOpParameters params = AtomicOpParametersOf(node->op());
   if (params.type() == MachineType::Uint8()) {
     opcode = kAtomicExchangeU
-"""
-
-
 ```

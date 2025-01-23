@@ -224,15 +224,17 @@ By following this structured thought process, iteratively refining the understan
 
 * **图形调试工具:** 使用专门的图形调试工具 (如 RenderDoc, apitrace) 可以捕获 WebGL 的 API 调用，并逐帧分析渲染过程，查看传递给 OpenGL ES 的具体参数和状态。 这对于理解 `basevertex` 和 `baseinstance` 如何影响最终的绘制非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_draw_instanced_base_vertex_base_instance.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 Google Inc. All rights reserved.
  *
@@ -334,7 +336,4 @@ void WebGLDrawInstancedBaseVertexBaseInstance::
 }
 
 }  // namespace blink
-
-"""
-
 ```

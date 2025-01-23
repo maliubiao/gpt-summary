@@ -196,7 +196,7 @@ By following this structured approach, combining code analysis with an understan
 
 因此，用户查看 `frida/subprojects/frida-core/releng/meson/test cases/python/3 cython/libdir/storer.c` 的源代码，很可能是因为他们在进行与 Frida 和 C 代码集成的相关开发或测试，并且遇到了需要深入了解 C 代码实现细节的问题。这个文件作为一个简单的示例，是很好的调试起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/python/3 cython/libdir/storer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"storer.h"
 #include<stdlib.h>
 
@@ -230,7 +232,4 @@ int storer_get_value(Storer *s) {
 void storer_set_value(Storer *s, int v) {
     s->value = v;
 }
-
-"""
-
 ```

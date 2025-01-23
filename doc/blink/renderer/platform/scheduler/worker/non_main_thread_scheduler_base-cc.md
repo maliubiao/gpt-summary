@@ -252,14 +252,16 @@ base::TimeTicks time = non_main_thread_scheduler->MonotonicallyIncreasingVirtual
 
 总而言之，`non_main_thread_scheduler_base.cc` 定义了一个关键的组件，用于在 Blink 渲染引擎的辅助线程上管理任务的执行，这对于实现诸如 Web Workers 和 Service Workers 等功能至关重要，并直接影响到 Web 应用程序的性能和用户体验。理解其功能和正确使用方式对于开发高性能的 Web 应用程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/worker/non_main_thread_scheduler_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -317,7 +319,4 @@ NonMainThreadSchedulerBase::GetOnTaskCompletionCallbacks() {
 }
 
 }  // namespace blink::scheduler
-
-"""
-
 ```

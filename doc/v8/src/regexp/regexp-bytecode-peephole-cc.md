@@ -119,7 +119,7 @@ While users don't directly write or modify this bytecode, understanding the conc
 
 The `v8/src/regexp/regexp-bytecode-peephole.cc` file implements a peephole optimizer for V8's regular expression bytecode. It identifies inefficient sequences of bytecode instructions based on predefined patterns and replaces them with more efficient equivalents. This process involves defining these optimizable sequences, checking conditions for their applicability, and carefully mapping arguments and adjusting jump targets to ensure the optimized bytecode functions correctly. This optimization directly contributes to the performance of regular expressions in JavaScript.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-bytecode-peephole.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-bytecode-peephole.cc以.tq结尾，那它是个v8 torque源代码，
@@ -127,8 +127,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -921,7 +923,4 @@ void RegExpBytecodePeephole::EmitOptimization(
     // Jumps to the sequence we preserved need absolute fixup as they could
     // occur before or after the sequence.
     SetJumpDestinationFixup(pc() - preserve_
-"""
-
-
 ```

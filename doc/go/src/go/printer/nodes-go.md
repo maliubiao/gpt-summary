@@ -117,7 +117,7 @@ func main() {
 
 这段 `nodes.go` 代码的主要功能是 **将 Go 语言抽象语法树 (AST) 的一部分节点（主要是表达式、基础类型和函数相关的节点）转换成格式化的源代码文本**。 它包含了处理换行、空白、注释以及各种Go语言语法结构（如标识符列表、表达式列表、参数列表、函数签名等）的逻辑。  它专注于将 AST 结构转化为符合 Go 语言风格规范的字符串表示。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/printer/nodes.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -126,8 +126,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1317,9 +1319,4 @@ func (p *printer) expr(x ast.Expr) {
 // Extra line breaks between statements in the source are respected but at most one
 // empty line is printed between statements.
 func (p *printer) stmtList(list []ast.Stmt, nindent int, nextI
-"""
-
-
-
-
 ```

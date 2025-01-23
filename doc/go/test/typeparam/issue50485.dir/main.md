@@ -144,15 +144,17 @@ func OrdOption[T any](given Given[T]) OrdOption[T] {
 
 总而言之，这段代码简洁地演示了 Go 语言泛型的基本用法，特别是如何实例化泛型类型并将其作为参数传递给其他函数。其核心功能依赖于 `a` 包的具体实现。 结合其在 `go/test/typeparam/issue50485.dir/` 路径下，可以判断它是 Go 语言泛型特性测试的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue50485.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 package main
 
 import (
@@ -162,9 +164,4 @@ import (
 func main() {
 	_ = a.OrdOption(a.Given[int]())
 }
-
-"""
-
-
-
 ```

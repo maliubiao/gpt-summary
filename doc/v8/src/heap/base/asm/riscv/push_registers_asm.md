@@ -107,11 +107,13 @@ outerFunction();
 
 `PushAllRegistersAndIterateStack` 是 V8 引擎中一个关键的底层函数，它通过汇编语言高效地将寄存器值保存到栈上，并允许其他 V8 组件（主要是垃圾回收器）安全地遍历栈内存，进行保守的栈扫描，从而确保 JavaScript 程序的内存安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/asm/riscv/push_registers_asm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ asm(".global PushAllRegistersAndIterateStack             \n"
     ".size PushAllRegistersAndIterateStack, "
     ".Lfunc_end0-PushAllRegistersAndIterateStack         \n");
 #endif
-
-"""
-
 ```

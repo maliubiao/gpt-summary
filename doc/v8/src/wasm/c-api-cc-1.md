@@ -169,7 +169,7 @@ console.log(result);
 
 这段代码是 WebAssembly C API 的核心实现部分，它提供了在 C++ 中创建、管理和执行 WebAssembly 代码的关键接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/c-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/c-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -177,8 +177,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 stance), func_index, func_offset, module_offset)));
 }
 
@@ -1080,7 +1082,4 @@ auto Global::get() const -> Val {
       v8::Isolate::Scope isolate_scope(store->isolate());
       i::Handle<i::Object> result = v8_global->GetRef();
       if (IsWasmFuncR
-"""
-
-
 ```

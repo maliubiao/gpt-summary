@@ -50,9 +50,12 @@ By following this step-by-step analysis, focusing on the key components and thei
 
 **总结来说，这个 `benchmark_main.cc` 文件是 cppgc 性能测试的“启动器”，它负责设置 cppgc 的运行环境（包括堆），然后利用 Google Benchmark 框架执行预定义的性能测试用例，并在测试完成后清理环境。  核心的测试逻辑可能位于 `benchmark_utils.h` 或其他相关的基准测试文件中。**
 
-Prompt: ```这是目录为v8/test/benchmarks/cpp/cppgc/benchmark_main.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/benchmarks/cpp/cppgc/benchmark_main.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -74,6 +77,4 @@ int main(int argc, char** argv) {
   cppgc::internal::testing::BenchmarkWithHeap::ShutdownProcess();
   return 0;
 }
-
-"""
 ```

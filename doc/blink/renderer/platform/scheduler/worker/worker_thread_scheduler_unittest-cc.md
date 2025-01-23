@@ -124,14 +124,16 @@ By following this structured approach, breaking down the code into smaller piece
 
 总而言之，`worker_thread_scheduler_unittest.cc` 通过各种测试用例，全面地验证了 `WorkerThreadScheduler` 的任务调度、延迟执行、空闲处理以及性能监控等核心功能，确保了 Worker 线程能够高效可靠地执行各种任务，从而支持 Web Worker 和 Service Worker 等重要特性在 Blink 引擎中的正确运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/worker/worker_thread_scheduler_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -724,7 +726,4 @@ TEST_F(WorkerThreadSchedulerWithProxyTest, UkmTaskRecording) {
 }  // namespace worker_thread_scheduler_unittest
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

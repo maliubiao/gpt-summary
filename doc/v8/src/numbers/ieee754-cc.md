@@ -142,15 +142,17 @@ console.log(Math.pow(2, NaN));  // 输出 NaN (对应代码中的处理)
 
 `v8/src/numbers/ieee754.cc` 中的代码片段展示了 V8 如何实现幂运算，并考虑了 IEEE 754 标准中的特殊情况。它直接关联到 JavaScript 的 `Math.pow()` 方法，理解这段代码有助于理解 JavaScript 中幂运算的行为和潜在的陷阱。 开发者在使用 `Math.pow()` 时需要注意 NaN 的处理、1 的无限次幂等特殊情况，并意识到浮点数运算可能带来的精度问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/numbers/ieee754.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/numbers/ieee754.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ double pow(double x, double y) {
 }
 
 }  // namespace v8::internal::math
-
-"""
-
 ```

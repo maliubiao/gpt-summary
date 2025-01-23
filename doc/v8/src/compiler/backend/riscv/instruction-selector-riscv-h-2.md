@@ -125,7 +125,7 @@ vmv.v.v output, v4              // 将结果移动到输出寄存器
 
 这个代码片段是 V8 编译器中 RISC-V 后端指令选择器的一部分，专注于将 SIMD 相关的 IR 节点转换为高效的 RISC-V 向量指令。它涵盖了浮点和整数 SIMD 的比较、类型转换、算术运算（包括点积和平均值）、洗牌以及位掩码等操作，是实现 JavaScript SIMD API 在 RISC-V 架构上高性能执行的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-selector-riscv.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/instruction-selector-riscv.h以.tq结尾，那它是个v8 torque源代码，
@@ -133,8 +133,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 cratchReg);
     this->Emit(kRiscvVmv, NaN, g.UseImmediate(0x7FC00000), g.UseImmediate(E32),
                g.UseImmediate(m1));
@@ -783,8 +785,4 @@ void InstructionSelectorT<Adapter>::VisitSetStackPointer(node_t node) {
 }  // namespace v8
 
 #endif  // V8_COMPILER_BACKEND_RISCV_INSTRUCTION_SELECTOR_RISCV_H_
-
-"""
-
-
 ```

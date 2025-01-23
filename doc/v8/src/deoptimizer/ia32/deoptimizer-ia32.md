@@ -111,11 +111,13 @@ calculate(5, 10);
 
 `deoptimizer-ia32.cc` 文件是 V8 引擎在 32 位 Intel 架构上进行代码反优化的核心组件。它负责保存寄存器状态、构建帧信息以及（可能通过其他机制）修改代码执行流程，以便从优化的代码平滑回退到非优化的状态，从而保证 JavaScript 代码的正确执行，尤其是在类型变化或需要调试等场景下。 开发者虽然不直接操作它，但它的存在和功能对于 V8 引擎的性能和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/ia32/deoptimizer-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -173,7 +175,4 @@ void FrameDescription::SetPc(intptr_t pc) { pc_ = pc; }
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_IA32
-
-"""
-
 ```

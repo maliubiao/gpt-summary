@@ -199,7 +199,7 @@ zip = "10001"
 
 总而言之，`frida/subprojects/frida-core/releng/tomlkit/tomlkit/container.py` 中的 `Container` 类是 Frida 动态插桩工具中处理 TOML 配置文件的核心组件，它提供了存储、操作和序列化 TOML 数据的能力，这对于逆向工程师分析和修改目标应用的配置信息至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/tomlkit/tomlkit/container.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import copy
@@ -1084,7 +1086,4 @@ def ends_with_whitespace(it: Any) -> bool:
     return (
         isinstance(it, Table) and isinstance(it.value._previous_item(), Whitespace)
     ) or (isinstance(it, AoT) and len(it) > 0 and isinstance(it[-1], Whitespace))
-
-"""
-
 ```

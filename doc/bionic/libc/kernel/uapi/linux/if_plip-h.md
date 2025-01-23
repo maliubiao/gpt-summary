@@ -271,7 +271,7 @@ if (ioctlPtr) {
 
 `bionic/libc/kernel/uapi/linux/if_plip.h` 定义了与 Linux PLIP 网络协议相关的用户空间 API。尽管它包含在 Android Bionic 中，但在现代 Android 设备上的实际应用非常有限。理解其功能有助于理解 Android 对底层 Linux 内核 API 的继承以及网络编程的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_plip.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -282,8 +282,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -302,7 +304,4 @@ struct plipconf {
 #define PLIP_GET_TIMEOUT 0x1
 #define PLIP_SET_TIMEOUT 0x2
 #endif
-
-"""
-
 ```

@@ -151,7 +151,7 @@ Frida 是一个动态插桩工具，常用于逆向工程、安全研究和动�
 
 总而言之，`cytest.py` 是 Frida 中一个基础但重要的单元测试，它验证了用 Cython 实现的 `Storer` 类的基本功能，并为开发者提供了一个检查类型安全性和基本逻辑的示例。虽然它本身很简单，但它代表了 Frida 内部组件测试的一个缩影，并为理解 Frida 的底层实现和调试提供了线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cython/1 basic/cytest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from storer import Storer
@@ -180,7 +182,4 @@ try:
     raise SystemExit('Using wrong argument type did not fail.')
 except TypeError:
     pass
-
-"""
-
 ```

@@ -155,7 +155,7 @@ This step-by-step process helps ensure all aspects of the request are addressed 
 
 总而言之，`gui_app_tester.py` 是 Frida 项目中用于自动化测试 Windows GUI 应用程序支持的一个小而重要的工具，它通过直接分析 PE 文件头部的子系统信息来验证应用程序的类型。 理解其功能有助于理解 Frida 如何与 Windows 应用程序交互，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/windows/16 gui app/gui_app_tester.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -184,7 +186,4 @@ actual = pefile.PE(executable).dump_dict()['OPTIONAL_HEADER']['Subsystem']['Valu
 
 print('subsystem expected: %d, actual: %d' % (expected, actual))
 sys.exit(0 if (expected == actual) else 1)
-
-"""
-
 ```

@@ -504,7 +504,7 @@ WASM_EXEC_TEST(I32x4DotI8x16I7x16AddS) {
         r.Call(x, y & 0x7F, z);
         for (int i = 0; i < 4; i++) {
           CHECK_EQ(expected, LANE(g, i
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-relaxed-simd.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-run-wasm-relaxed-simd.cc以.tq结尾，那它是个v8 torque源代码，
@@ -512,8 +512,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1312,7 +1314,4 @@ TEST(RunWasm_I32x8DotI8x32I7x32AddS) {
 TEST(RunWasm_I16x16DotI8x32I7x32S) {
   if (!CpuFeatures::IsSupported(AVX2)) return;
   EXPERIMENTAL_FLAG_SCOPE(reve
-"""
-
-
 ```

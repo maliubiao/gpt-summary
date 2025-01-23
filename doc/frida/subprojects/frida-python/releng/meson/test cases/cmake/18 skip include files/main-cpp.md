@@ -91,7 +91,7 @@ By following this structured approach, considering the context, and iteratively 
 
 `frida/subprojects/frida-python/releng/meson/test cases/cmake/18 skip include files/main.cpp` 这个文件本身的功能非常简单，但它的存在是为了测试 Frida 构建系统的健壮性，特别是当构建配置中可能存在“跳过包含文件”的情况。这与逆向工程密切相关，因为 Frida 是一个逆向工具，其稳定性和可靠性至关重要。这个测试用例间接地涉及了二进制底层、操作系统以及构建系统的相关知识，并帮助开发者避免一些常见的配置错误。用户通过浏览 Frida 源代码或进行构建操作可能会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cmake/18 skip include files/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -99,8 +99,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 
@@ -111,7 +113,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

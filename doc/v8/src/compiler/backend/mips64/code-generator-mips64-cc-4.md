@@ -99,7 +99,7 @@ console.log(result_arr); // 输出类似 [7, 3, 8, 4]
 
 作为代码生成器的第 5 部分，这段代码专注于 **MIPS64 架构下 SIMD 指令集的代码生成以及条件分支的实现**。它负责将 V8 编译器后端产生的中间表示（例如 `Instruction` 对象）转换为实际的 MIPS MSA 指令，以便在 MIPS64 处理器上执行 SIMD 操作，并根据不同的条件生成正确的控制流。  考虑到这是 6 部分中的第 5 部分，可以推测前面的部分可能处理了更基础的指令生成、寄存器分配等，而最后一部分可能涉及代码的最终输出、跳转表的生成或其他收尾工作。这段代码是 V8 编译器后端针对特定架构进行优化的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/code-generator-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/mips64/code-generator-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -107,8 +107,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 gister(0),
                       src1 = i.InputSimd128Register(1);
       // src1 = [7, 6, 5, 4], src0 = [3, 2, 1, 0]
@@ -952,7 +954,4 @@ void CodeGenerator::AssembleConstructFrame() {
 
   for (int spill_slot : frame()->tagged_slots()) {
     FrameOffset offset = frame
-"""
-
-
 ```

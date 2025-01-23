@@ -85,7 +85,7 @@ By following this structured thought process, combining code analysis with conte
 
 总而言之，这个简单的 C 代码文件是 Frida 测试框架的一部分，用于演示 Frida 加载和与外部模块交互的能力。它是逆向工程师使用 Frida 进行动态分析的基础之一，涉及到操作系统底层、二进制文件结构和 Frida 的工作原理等知识。用户在构建和调试 Frida 扩展模块时，可能会查看这个文件以排除错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/python/4 custom target depends extmodule/ext/lib/meson-tachyonlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -93,8 +93,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _MSC_VER
 __declspec(dllexport)
 #endif
@@ -103,7 +105,4 @@ tachyon_phaser_command (void)
 {
     return "shoot";
 }
-
-"""
-
 ```

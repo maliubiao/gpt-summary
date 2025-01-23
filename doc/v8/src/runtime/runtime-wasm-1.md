@@ -94,12 +94,14 @@ console.log(lengthInUtf8); // 输出 6 (因为 "你好" UTF-8 编码占 6 个字
 
 总而言之，这部分 `runtime-wasm.cc` 代码是 V8 WebAssembly 引擎处理字符串的核心，它使得 WebAssembly 代码能够高效地创建、操作字符串并与 JavaScript 环境中的字符串进行互操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-wasm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 deunits * 2, mem_size)) {
     return ThrowWasmError(isolate, MessageTemplate::kWasmTrapMemOutOfBounds);
   }
@@ -630,8 +632,4 @@ RUNTIME_FUNCTION(Runtime_WasmStringHash) {
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

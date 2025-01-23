@@ -150,7 +150,7 @@ func main() {
 
 `go/src/runtime/security_nonunix.go` 这段代码是 Go 语言运行时中关于安全模式在非 Unix 系统上的一个空实现。它表明在这些系统上，Go 的这个安全模式默认是禁用的或者没有特定的行为。开发者需要了解这一点，避免在非 Unix 系统上错误地依赖 `runtime.secure()` 的功能。 真正的安全模式实现很可能位于 `security_unix.go` 或其他平台相关的代码中。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/security_nonunix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -158,8 +158,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -173,9 +175,4 @@ func isSecureMode() bool {
 }
 
 func secure() {}
-
-"""
-
-
-
 ```

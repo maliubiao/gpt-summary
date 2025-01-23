@@ -207,7 +207,7 @@ Here's a breakdown of the specific functionalities demonstrated in this part:
 
 The first part of `v8/src/codegen/arm/macro-assembler-arm.cc` lays the groundwork for generating ARM assembly code in V8. It provides fundamental building blocks for managing registers, accessing memory, controlling program flow (jumps and calls), and interacting with V8's internal structures and the garbage collector. It handles the essential tasks needed to translate higher-level operations into executable machine instructions for the ARM architecture.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm/macro-assembler-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm/macro-assembler-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -215,8 +215,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1179,7 +1181,4 @@ void MacroAssembler::VFPCanonicalizeNaN(const DwVfpRegister dst,
                                         const DwVfpRegister src,
                                         const Condition cond) {
   // Subtracting 0.0 preserves all inputs except for sig
-"""
-
-
 ```

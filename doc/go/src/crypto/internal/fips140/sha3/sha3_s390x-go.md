@@ -165,7 +165,7 @@ func main() {
 
 总而言之，`sha3_s390x.go` 是 Go 标准库中为了在 IBM z Systems 平台上实现高性能 SHA-3 和 SHAKE 算法而设计的底层优化代码。普通 Go 开发者通常不需要直接与此文件交互，而是通过 `crypto/sha3` 包的高级 API 来使用 SHA-3 和 SHAKE 功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/sha3/sha3_s390x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -173,8 +173,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -371,9 +373,4 @@ func (d *Digest) function() code {
 		panic("invalid rate")
 	}
 }
-
-"""
-
-
-
 ```

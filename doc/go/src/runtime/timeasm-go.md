@@ -128,7 +128,7 @@ func main() {
 
 `go/src/runtime/timeasm.go` 中的这段代码是 Go 语言为了提高在特定平台（Windows 和 Linux/amd64）上获取当前时间性能而做的优化。它通过汇编语言实现了 `time.now` 函数，并在构建时根据平台和构建标签进行选择性编译。普通 Go 开发者应该使用标准库 `time` 包的接口，而无需关心底层的汇编实现细节。 理解构建标签的概念可以帮助开发者在特定场景下（例如测试）切换不同的实现方式。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/timeasm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -136,8 +136,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -152,9 +154,4 @@ import _ "unsafe"
 
 //go:linkname time_now time.now
 func time_now() (sec int64, nsec int32, mono int64)
-
-"""
-
-
-
 ```

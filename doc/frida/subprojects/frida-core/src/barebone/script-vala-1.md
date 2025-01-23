@@ -101,7 +101,7 @@ def __lldb_init_module(debugger, internal_dict):
 - **调试器操作失败**：如果调试器操作（如继续执行、设置断点）失败，可以检查调试器状态和目标进程的状态，确保调试会话正常。
 
 通过以上分析，可以更好地理解该文件的功能和使用场景，并在调试过程中快速定位和解决问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/barebone/script.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 rn QuickJS.Exception;
 			if (size == 0 || size > 0x7fffffff) {
 				script->throw_js_error ("invalid size");
@@ -1107,7 +1109,4 @@ rn QuickJS.Exception;
 		}
 
 		private static Q
-"""
-
-
 ```

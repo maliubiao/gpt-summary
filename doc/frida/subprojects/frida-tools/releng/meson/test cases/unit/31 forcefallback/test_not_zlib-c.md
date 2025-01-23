@@ -115,7 +115,7 @@ By following this structured thought process, analyzing the code in context, and
 
 总而言之，`test_not_zlib.c` 是 Frida 项目中一个重要的单元测试用例，它用于验证当系统中没有或故意不使用 zlib 库时，Frida 相关的机制是否能正常工作。这对于确保 Frida 在各种环境下的稳定性和可靠性至关重要，尤其是在逆向分析中，目标程序可能使用各种各样的定制实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/31 forcefallback/test_not_zlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <notzlib.h>
 
 int main (int ac, char **av)
@@ -133,7 +135,4 @@ int main (int ac, char **av)
     return 1;
   return 0;
 }
-
-"""
-
 ```

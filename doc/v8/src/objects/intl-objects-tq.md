@@ -176,15 +176,17 @@ console.log(str1.localeCompare(str3, 'en', { sensitivity: 'base' })); // 明确�
 
 总之，`v8/src/objects/intl-objects.tq` 文件是 V8 引擎中实现高效本地化字符串比较的关键部分，它通过 Torque 语言定义了快速路径的算法和数据结构，直接影响着 JavaScript 中 `String.prototype.localeCompare()` 的性能和行为。理解这个文件的内容有助于深入了解 V8 如何处理国际化相关的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/intl-objects.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/intl-objects.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ transitioning builtin StringFastLocaleCompare(
     return Call(context, localeCompareFn, left, right, locales);
   }
 }
-
-"""
-
 ```

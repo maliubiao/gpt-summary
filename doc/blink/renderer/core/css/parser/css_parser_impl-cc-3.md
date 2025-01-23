@@ -136,7 +136,7 @@ By following these steps, I can generate a comprehensive and informative descrip
 
 总而言之，这部分代码是 Chromium Blink 引擎中 CSS 解析器的核心组成部分，负责将 CSS 文本转化为浏览器可以理解和应用的内部结构，是实现网页样式渲染的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_parser_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -144,9 +144,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- sizeof(LChar) : sizeof(UChar);
+### 源代码
+```cpp
+sizeof(LChar) : sizeof(UChar);
   auto text_bytes = base::as_chars(
       text.RawByteSpan().subspan(offset * char_size, length * char_size));
   return memchr(text_bytes.data(), '{', text_bytes.size()) != nullptr;
@@ -821,8 +823,4 @@ CSSParserMode CSSParserImpl::GetMode() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

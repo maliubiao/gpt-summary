@@ -169,7 +169,7 @@ Interceptor.replace(Module.findExportByName(null, "sleep"), new NativeFunction(p
 
 作为调试线索，这个简单的 `threads.cpp` 文件提供了一个可控的测试环境，用于验证 Frida 在 WASM 环境下处理多线程的正确性。如果 Frida 在这个简单的测试用例上出现问题，那么更复杂的 WASM 应用也可能存在问题，这为开发者提供了清晰的调试方向。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/wasm/2 threads/threads.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <unistd.h>
 #include <iostream>
 #include <thread>
@@ -192,7 +194,4 @@ int main(void) {
     t.join();
     std::cout << "After thread" << std::endl;
 }
-
-"""
-
 ```

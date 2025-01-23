@@ -170,7 +170,7 @@ Essentially, this section takes the information about what *should* be highlight
 
 总而言之，`HighlightPainter` 是 Blink 引擎中负责实现网页视觉反馈的重要组成部分，它将抽象的高亮需求转化为具体的像素绘制操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/highlight_painter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 {}, {}};
   PaintOneSpellingGrammarDecoration(type, text, paint_start_offset,
                                     paint_end_offset, originating_style_,
@@ -772,8 +774,4 @@ void HighlightPainter::PaintTextForCompositionMarker(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

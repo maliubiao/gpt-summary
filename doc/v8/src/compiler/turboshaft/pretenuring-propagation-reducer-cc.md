@@ -175,15 +175,17 @@ storeObject(anotherObject);
 
 总而言之，`v8/src/compiler/turboshaft/pretenuring-propagation-reducer.cc` 是 Turboshaft 编译器中一个重要的优化组件，它通过分析对象的存储关系，预测对象的生命周期，并将可能长期存活的对象预先分配到老年代，从而提高 JavaScript 应用程序的性能。理解其工作原理可以帮助开发者写出更高效的代码，尽管开发者不能直接干预其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/pretenuring-propagation-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/pretenuring-propagation-reducer.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -334,7 +336,4 @@ void PretenuringPropagationAnalyzer::Run() {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

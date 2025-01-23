@@ -162,7 +162,7 @@ if __name__ == '__main__':
 9. **测试执行:** 编译成功后，会执行生成的可执行文件。此时，`main` 函数会被调用，并执行 `return rOne();`。
 
 总而言之，这个简单的 `main.c` 文件在 Frida 动态插桩工具的上下文中，主要作为测试 Frida 对基本 C 函数调用进行 Hook 功能的用例。它的简单性使得测试能够专注于 Frida 本身的行为，而不是复杂的应用逻辑。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/218 include_dir dot/src/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,14 +170,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "rone.h"
 
 int main(void) {
     return rOne();
 }
-
-"""
-
 ```

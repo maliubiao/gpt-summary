@@ -144,7 +144,7 @@ const zero = SIMD.int32x4(0, 0, 0, 0);
 
 作为第六部分，这段代码主要集中在 **MIPS64 架构下 SIMD 指令的选择和实现**。它涵盖了多种 SIMD 数据类型和操作，包括算术运算、逻辑运算、比较运算、车道操作、类型转换以及常量加载等。这部分代码是 V8 引擎支持高性能 SIMD 操作的关键组成部分，尤其对于那些编译到 WebAssembly 的 SIMD 代码来说至关重要。它定义了如何将通用的 SIMD 中间表示转换为特定的 MIPS64 机器指令，从而利用 MIPS64 硬件提供的 SIMD 能力来提升 JavaScript 和 WebAssembly 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/mips64/instruction-selector-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/mips64/instruction-selector-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -152,8 +152,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 I8x16SConvertI16x8, kMips64I8x16SConvertI16x8)       \
   V(I8x16UConvertI16x8, kMips64I8x16UConvertI16x8)       \
   V(S128And, kMips64S128And)                             \
@@ -649,8 +651,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

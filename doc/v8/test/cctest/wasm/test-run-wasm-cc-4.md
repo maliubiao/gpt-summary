@@ -171,7 +171,7 @@ let unsignedRightShift = e >>> 1n; // 无符号右移，结果会很大
 
 总体而言，`v8/test/cctest/wasm/test-run-wasm.cc` 是 V8 团队用于保证 WebAssembly 功能正确性和稳定性的重要组成部分。它通过细致的测试覆盖了各种操作和边界情况，确保了 JavaScript 开发者可以安全可靠地使用 WebAssembly 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/wasm/test-run-wasm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -179,8 +179,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 smI64, base::ArrayVector(kSome64BitInputs),
       kExprI64ShrU, [](int64_t lhs, int64_t rhs, bool* trap) {
         return static_cast<uint64_t>(lhs) >> (rhs & 63);
@@ -230,8 +232,4 @@ WASM_EXEC_TEST(I64RemUOnDifferentRegisters) {
 #undef RET_I8
 
 }  // namespace v8::internal::wasm
-
-"""
-
-
 ```

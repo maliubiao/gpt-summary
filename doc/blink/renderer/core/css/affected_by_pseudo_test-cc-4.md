@@ -650,7 +650,7 @@ TEST_F(AffectedByPseudoTest, AffectedByHasAfterInsertion4) {
        {kSiblingsAffectedByHasForSiblingDescendantRelationship, false}});
 
   start
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/affected_by_pseudo_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -658,8 +658,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 </div>
       <div id=div22></div>
     </div>
@@ -1387,8 +1389,4 @@ TEST_F(AffectedByPseudoTest, AffectedByHasAfterInsertion4) {
   CheckAffectedByFlagsForHas(
       "div231", {{kAffectedBySubjectHas, false},
                  {kAffectedByNonSubjectHas, false},
-         
-"""
-
-
 ```

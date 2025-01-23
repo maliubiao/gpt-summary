@@ -214,7 +214,7 @@ sys.stdin.read()
 
 这个 Frida 示例展示了如何监控 `libc` 中特定函数的调用，从而了解 Android 系统或应用如何一步步地使用到这些底层的 `ctype` 功能。通过这种方式，你可以调试和分析应用的行为，并验证你的理解是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/gen/ctype_.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -225,8 +225,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: ctype_.c,v 1.13 2024/02/04 13:03:18 jca Exp $ */
 /*
  * Copyright (c) 1989 The Regents of the University of California.
@@ -316,7 +318,4 @@ const char *_ctype_ = _C_ctype_;
 #if 0
 DEF_STRONG(_ctype_);
 #endif
-
-"""
-
 ```

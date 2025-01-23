@@ -156,15 +156,17 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
 总而言之，`ContextMenuAllowedScope` 提供了一种细粒度的控制机制，用于管理 Blink 渲染引擎中上下文菜单的显示权限。这在浏览器内部的各种复杂场景下（例如，拖放操作、特定模式下的交互等）非常有用，以确保上下文菜单在合适的时机出现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/input/context_menu_allowed_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -191,7 +193,4 @@ bool ContextMenuAllowedScope::IsContextMenuAllowed() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

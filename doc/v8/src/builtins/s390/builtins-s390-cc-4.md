@@ -171,7 +171,7 @@ By following these steps – understanding the context, scanning for clues, anal
 
 `v8/src/builtins/s390/builtins-s390.cc` 是 V8 引擎中针对 s390 架构的关键组成部分，它通过汇编代码高效地实现了多种内置函数，这些函数支撑着 JavaScript 的核心功能，包括类型转换、与原生代码的交互（通过 API 回调和 getter）、以及优化和反优化执行流程。 这个文件是保证 V8 引擎在 s390 架构上高性能运行的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/s390/builtins-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/s390/builtins-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -179,8 +179,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pe hard_abort(masm);  // Avoid calls to Abort.
 
   // Immediate values for this stub fit in instructions, so it's safe to use ip.
@@ -838,8 +840,4 @@ void Builtins::Generate_RestartFrameTrampoline(MacroAssembler* masm) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_S390X
-
-"""
-
-
 ```

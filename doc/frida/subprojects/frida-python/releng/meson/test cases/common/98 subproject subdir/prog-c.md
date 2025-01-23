@@ -191,7 +191,7 @@ By following these steps and iterating on the initial thoughts, we can arrive at
 
 `prog.c` 是一个非常简单的 C 程序，其核心功能是调用另一个名为 `sub` 的函数。尽管简单，它仍然可以作为逆向分析、动态 instrumentation 和理解底层系统概念的良好示例。其在 Frida 项目中的位置表明它是一个用于测试特定功能的测试用例。理解这个文件的功能和上下文有助于理解 Frida 的工作原理和进行相关的调试工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/98 subproject subdir/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,14 +199,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <sub.h>
 
 int main(void) {
     return sub();
 }
-
-"""
-
 ```

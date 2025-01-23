@@ -235,15 +235,17 @@ Accept-Encoding: gzip, deflate, br, zstd
 
 总而言之，`net/http/http_request_headers.cc` 定义的 `HttpRequestHeaders` 类是 Chromium 网络栈中管理 HTTP 请求头的核心组件，它连接了 JavaScript 发起的网络请求和底层的网络传输实现。理解其功能和使用方式对于调试网络问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_request_headers.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -570,7 +572,4 @@ void HttpRequestHeaders::SetHeaderInternal(std::string_view key,
 }
 
 }  // namespace net
-
-"""
-
 ```

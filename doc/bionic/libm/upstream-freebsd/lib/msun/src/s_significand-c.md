@@ -234,7 +234,7 @@ libm.so:
 
 总而言之，`s_significand.c` 中定义的 `significand` 函数是一个基础的数学工具，用于提取浮点数的尾数部分。它通过调用 `scalb` 和 `ilogb` 实现其功能，并且作为 `libm` 的一部分，被 Android 系统和应用程序广泛使用。动态链接器负责在程序运行时将对 `significand` 的调用链接到 `libm.so` 中正确的实现。理解这些概念有助于进行 Android 平台的开发和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_significand.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -244,8 +244,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -271,7 +273,4 @@ significand(double x)
 {
 	return scalb(x,(double) -ilogb(x));
 }
-
-"""
-
 ```

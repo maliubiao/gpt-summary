@@ -174,7 +174,7 @@ Here's a plan:
 
 通过在这些 C++ 方法中设置断点，或者使用日志输出 (`DVLOG`)，开发者可以追踪 WebTransport 连接的状态和数据流，从而进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webtransport/web_transport.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tion_state)) {
     return EmptyPromise();
   }
@@ -956,8 +958,4 @@ WebTransportConnectionStats* WebTransport::ConvertStatsFromMojom(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

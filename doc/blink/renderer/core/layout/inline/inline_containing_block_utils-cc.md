@@ -159,14 +159,16 @@ By following this detailed thought process, combining code analysis with knowled
 
 总而言之，`inline_containing_block_utils.cc` 是 Chromium Blink 渲染引擎中一个关键的组件，负责处理内联元素在复杂布局场景下的几何信息计算，这对于正确渲染网页至关重要。虽然开发者不会直接接触它，但理解其背后的原理有助于更好地理解 CSS 布局模型，避免常见的布局错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_containing_block_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -386,7 +388,4 @@ void InlineContainingBlockUtils::ComputeInlineContainerGeometryForFragmentainer(
 }
 
 }  // namespace blink
-
-"""
-
 ```

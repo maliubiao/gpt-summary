@@ -161,7 +161,7 @@ Initially, I might have focused too much on the technical details of Python. But
 
 总而言之，`genrelnotes.py` 是 Frida-Python 项目中用于自动化生成发布说明的辅助脚本，它通过读取预先编写的片段文件和更新站点地图，简化了发布流程，并确保了发布信息的完整性和一致性。 虽然它本身不涉及底层的逆向操作，但它是 Frida 发布过程中的重要一环，而 Frida 本身是一个强大的逆向工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/docs/genrelnotes.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
@@ -265,7 +267,4 @@ if __name__ == '__main__':
         generate(relnotes, to_version, args.source_dir, args.output_dir)
     elif args.input_sitemap != args.output_sitemap:
         shutil.copyfile(args.input_sitemap, args.output_sitemap)
-
-"""
-
 ```

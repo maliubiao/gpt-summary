@@ -122,11 +122,13 @@ JavaScript 本身无法直接访问 `counters.cc` 中定义的这些底层计数
 
 `v8/src/logging/counters.cc` 是 V8 引擎内部一个关键的组成部分，负责收集和管理各种性能指标。 虽然 JavaScript 代码不能直接操作这些 C++ 级别的计数器，但这些计数器的数据会影响 V8 的运行行为，并通过 Performance API 和开发者工具等方式间接地暴露给 JavaScript 开发者，帮助他们理解和优化 JavaScript 代码的性能。  `counters.cc` 的功能为 V8 的自监控和性能分析提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/counters.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -405,7 +407,4 @@ void CountersVisitor::Visit(StatsCounter* counter, const char* caption) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

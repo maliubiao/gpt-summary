@@ -147,14 +147,16 @@ By following these steps, one can systematically analyze the code and generate a
 
 总而言之，`paint_under_invalidation_checker.cc` 是 Chromium 渲染引擎中一个重要的调试和验证工具，它通过在绘制过程中进行细致的比较，来确保缓存机制的正确性，防止因错误地重用旧的绘制结果而导致的视觉错误。虽然普通用户或前端开发者不会直接使用它，但理解其功能有助于更好地理解浏览器渲染的复杂性，并避免可能导致渲染错误的编程实践。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_under_invalidation_checker.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -422,7 +424,4 @@ DisplayItemList& PaintUnderInvalidationChecker::NewDisplayItemList() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

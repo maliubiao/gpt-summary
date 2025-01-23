@@ -237,14 +237,16 @@ By following this systematic approach, breaking down the problem into smaller, m
 
 总而言之，`pointer_event_factory.cc` 是 Blink 引擎中一个至关重要的组件，它负责将底层的指针输入转化为 Web 标准的 `PointerEvent`，使得 Web 开发者能够以统一的方式处理来自不同输入设备的事件。理解它的功能对于深入了解浏览器事件处理机制和开发跨设备兼容的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/pointer_event_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1027,7 +1029,4 @@ PointerId PointerEventFactory::GetNextAvailablePointerid() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -136,15 +136,17 @@ By following these steps, I can systematically analyze the test file and extract
 
 总而言之，`html_form_element_test.cc` 是一个至关重要的测试文件，用于确保 Blink 引擎中 `HTMLFormElement` 类的核心功能（特别是关于表单控件列表的管理）的正确性和健壮性。它直接关联到 HTML 表单的结构和行为，并间接影响到 JavaScript 与表单的交互以及 CSS 样式的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_form_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -733,7 +735,4 @@ TEST_F(HTMLFormElementSimTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

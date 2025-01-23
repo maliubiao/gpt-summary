@@ -176,7 +176,7 @@ Te: trailers
 
 这个测试文件的第1部分主要关注 `ReverseProxy` 的基本转发、请求头处理和一些基础的错误处理场景。 后续部分可能会涉及更高级的功能，例如负载均衡、会话保持等。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/httputil/reverseproxy_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -185,8 +185,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1296,9 +1298,4 @@ func TestClonesRequestHeaders(t *testing.T) {
 	log.SetOutput(io.Discard)
 	defer log.SetOutput(os.Stderr)
 	req, _ := http.NewRequest("GET", "http://foo.tld/
-"""
-
-
-
-
 ```

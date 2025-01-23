@@ -179,15 +179,17 @@ By following these steps and engaging in a process of analysis, connection, and 
 
 总而言之，`document_rule_predicate.cc` 是 Blink 引擎中处理导航推测规则中链接匹配逻辑的关键部分，它负责将 JSON 定义的规则转换为 C++ 对象，并根据定义的条件判断页面上的链接是否符合推测的条件。理解这个文件的工作原理对于调试和优化基于推测规则的性能提升至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/speculation_rules/document_rule_predicate.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -837,7 +839,4 @@ HeapVector<Member<StyleRule>> DocumentRulePredicate::GetStyleRulesForTesting()
 void DocumentRulePredicate::Trace(Visitor*) const {}
 
 }  // namespace blink
-
-"""
-
 ```

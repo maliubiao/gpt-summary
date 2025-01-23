@@ -136,7 +136,7 @@ func TestSomething(t *testing.T) {
 
 这段代码（作为 `go/build/build.go` 的一部分）的主要功能是**在 Go 语言的构建过程中，负责扫描和分析目录中的源代码文件，提取关键的构建信息（如导入、embed、构建约束等），并根据文件的类型和构建条件将其归类到 `Package` 对象的不同字段中**。它为后续的编译、链接等构建步骤提供了必要的基础数据，并且支持 Go 语言的包管理、构建约束、Cgo 互操作、测试以及资源嵌入等核心功能。它不直接处理命令行参数，而是利用上层传递的构建上下文信息来完成文件分析和归类的工作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/build/build.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -145,8 +145,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 or _, imp := range info.imports {
 			if imp.path == "C" {
 				if isTest {
@@ -1231,10 +1233,4 @@ func IsLocalImport(path string) bool {
 func ArchChar(goarch string) (string, error) {
 	return "?", errors.New("architecture letter no longer used")
 }
-
-"""
-
-
-
-
 ```

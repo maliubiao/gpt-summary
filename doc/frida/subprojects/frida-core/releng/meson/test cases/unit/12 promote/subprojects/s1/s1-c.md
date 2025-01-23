@@ -144,7 +144,7 @@ By following this thought process, starting with the basics and progressively la
 
 总而言之，`s1.c` 这个简单的 C 文件本身的功能有限，但它作为 Frida 的测试目标，可以用来演示和验证 Frida 的各种动态 instrumentation 功能，并涉及到逆向工程、二进制底层知识以及操作系统层面的概念。用户通过编译运行这个程序，并使用 Frida 进行操作，可以深入了解程序的运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/12 promote/subprojects/s1/s1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,15 +152,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func();
 int func2();
 
 int main(int argc, char **argv) {
     return func() + func2();
 }
-
-"""
-
 ```

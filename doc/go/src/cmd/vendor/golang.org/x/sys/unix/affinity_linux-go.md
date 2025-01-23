@@ -236,15 +236,17 @@ set.Set(10) // CPU 编号超出范围
 
 在这种情况下，`cpuBitsIndex(10)` 会返回一个超出 `CPUSet` 数组索引的数字，`set.Set(10)` 中的 `if i < len(s)` 条件会阻止越界访问，所以不会发生程序崩溃。但是，CPU 10 并不会被添加到 CPU 集合中，这可能不是使用者的预期行为。使用者可能会错误地认为已经将进程绑定到了 CPU 10。更好的做法是在调用 `Set` 之前或之后进行更明确的 CPU 编号有效性检查。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/affinity_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -331,9 +333,4 @@ func (s *CPUSet) Count() int {
 	}
 	return c
 }
-
-"""
-
-
-
 ```

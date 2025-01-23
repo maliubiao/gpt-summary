@@ -292,7 +292,7 @@ sys.stdin.read()
 
 总结来说，`getdomainname` 是一个用于获取系统域名的底层函数，虽然在 Android 中的直接使用不多，但仍然作为 Bionic 的一部分存在，以提供 POSIX 兼容性。理解其功能和潜在的使用错误对于进行底层的系统编程和调试是有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/getdomainname.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -303,8 +303,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -354,7 +356,4 @@ int getdomainname(char* name, size_t len) {
   strncpy(name, uts.domainname, len);
   return 0;
 }
-
-"""
-
 ```

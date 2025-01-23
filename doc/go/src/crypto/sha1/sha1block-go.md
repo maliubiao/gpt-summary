@@ -250,7 +250,7 @@ const ChunkSize = 64
 
 总而言之，这段代码是 Go 语言 `crypto/sha1` 包中实现 SHA-1 哈希算法中核心数据块处理的关键部分。用户通常通过更高级别的 API 与该功能交互，而无需直接调用 `blockGeneric` 函数。需要注意的是 SHA-1 的安全缺陷，在新的安全敏感应用中应避免使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/sha1/sha1block.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -258,8 +258,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -343,9 +345,4 @@ func blockGeneric(dig *digest, p []byte) {
 
 	dig.h[0], dig.h[1], dig.h[2], dig.h[3], dig.h[4] = h0, h1, h2, h3, h4
 }
-
-"""
-
-
-
 ```

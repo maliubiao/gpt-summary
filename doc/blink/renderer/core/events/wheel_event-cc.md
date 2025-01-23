@@ -134,14 +134,16 @@ By following this systematic approach, we can thoroughly analyze the given C++ c
 
 总而言之，`wheel_event.cc` 是 Blink 渲染引擎中连接底层系统滚轮事件和 JavaScript `wheel` 事件的关键桥梁，它负责数据的转换、事件对象的创建以及一些错误处理和兼容性工作。理解它的功能有助于开发者更好地理解和处理网页中的鼠标滚轮交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/wheel_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2001 Peter Kelly (pmk@post.com)
  * Copyright (C) 2001 Tobias Anton (anton@stud.fbi.fh-darmstadt.de)
@@ -325,7 +327,4 @@ void WheelEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

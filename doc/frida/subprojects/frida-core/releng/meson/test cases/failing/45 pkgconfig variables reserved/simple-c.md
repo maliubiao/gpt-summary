@@ -116,7 +116,7 @@ Finally, organize the thoughts into a clear and structured answer, addressing ea
 
 总而言之，虽然 `simple.c` 本身的功能非常简单，但在 Frida 这样的动态 instrumentation 工具的上下文中，它可以作为测试 Frida 功能、理解底层系统机制以及进行逆向工程的起点。它在 Frida 的测试框架中作为一个失败的用例存在，很可能是为了暴露和修复与构建系统配置相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/45 pkgconfig variables reserved/simple.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,14 +124,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"simple.h"
 
 int simple_function() {
     return 42;
 }
-
-"""
-
 ```

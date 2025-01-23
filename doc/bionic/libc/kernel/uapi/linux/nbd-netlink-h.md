@@ -275,7 +275,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，你可以观察到应用程序发送到 NBD Netlink 接口的消息内容，从而调试应用程序与内核 NBD 驱动的交互过程。你需要将 `com.example.mynbdapp` 替换为你想要调试的实际应用程序的包名或进程名。 确保你的 Android 设备上运行着 Frida Server。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/nbd-netlink.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -286,8 +286,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -350,7 +352,4 @@ enum {
 };
 #define NBD_CMD_MAX (__NBD_CMD_MAX - 1)
 #endif
-
-"""
-
 ```

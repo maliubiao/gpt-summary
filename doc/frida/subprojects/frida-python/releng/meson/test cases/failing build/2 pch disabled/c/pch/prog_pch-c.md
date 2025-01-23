@@ -123,7 +123,7 @@ compilation terminated.
 
 总而言之，`prog_pch.c` 是 Frida 构建系统中的一个小而关键的组成部分，它通过故意触发构建失败，来确保在特定条件下（非 MSVC 编译器，禁用 PCH），不会错误地编译代码，从而保证 Frida 工具的质量和跨平台兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/failing build/2 pch disabled/c/pch/prog_pch.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,14 +131,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if !defined(_MSC_VER)
 #error "This file is only for use with MSVC."
 #endif
 
 #include "prog.h"
-
-"""
-
 ```

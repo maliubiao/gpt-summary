@@ -109,11 +109,13 @@ console.log(largeArray.length);
 
 `test-concurrent-marking.cc` 是 V8 引擎内部的测试文件，用于验证并发标记垃圾回收机制的正确性和健壮性。 虽然 JavaScript 开发者无法直接操作这些底层机制，但并发标记的正确运行直接保证了 JavaScript 程序的性能和稳定性，尤其是在处理大量对象和复杂的生命周期管理时。 这些 C++ 测试确保了 V8 引擎在并发标记方面的实现符合预期，从而让 JavaScript 开发者能够更放心地进行开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/heap/test-concurrent-marking.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ UNINITIALIZED_TEST(ConcurrentMarkingStoppedOnTeardown) {
 }
 
 }  // namespace v8::internal::heap
-
-"""
-
 ```

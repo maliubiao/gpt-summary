@@ -134,7 +134,7 @@ python3 gen_header.py frida/subprojects/frida-gum/releng/meson/test cases/rust/1
 
 总而言之，`gen_header.py` 脚本虽然功能简单，但在 Frida 的开发和测试流程中扮演着一个重要的辅助角色，确保了生成的 C/C++ 绑定头文件能够正确地被测试代码使用，从而验证 Frida 对不同目标代码的交互能力。它间接地服务于逆向分析，通过提供必要的头文件信息，为理解和操作目标二进制程序奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/rust/12 bindgen/src/gen_header.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-license-Identifier: Apache-2.0
 # Copyright © 2021-2023 Intel Corporation
@@ -163,7 +165,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-"""
-
 ```

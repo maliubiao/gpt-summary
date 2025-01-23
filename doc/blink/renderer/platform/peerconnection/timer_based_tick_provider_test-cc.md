@@ -106,14 +106,16 @@ By following this systematic approach, we can effectively analyze the C++ test f
 
 `timer_based_tick_provider_test.cc` 是一个关键的测试文件，用于确保 Blink 引擎中 `TimerBasedTickProvider` 类的正确性。该类为 WebRTC 提供了一个基于定时器的调度机制，虽然不直接与 JavaScript, HTML, CSS 交互，但其稳定运行对于依赖 WebRTC 的 Web 应用的功能和性能至关重要。理解其工作原理有助于开发者更好地理解 WebRTC 的内部机制和潜在的时间相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/timer_based_tick_provider_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ TEST_F(TimerBasedTickProviderTest, MultipleTickProvidersAreAligned) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

@@ -94,11 +94,13 @@ obj2 = null; // obj2 也不再指向该堆对象
 
 `ConservativeStackVisitor` 是 V8 引擎中负责保守地扫描堆栈以查找指向堆对象的指针的关键组件。它在垃圾回收过程中起着至关重要的作用，帮助垃圾回收器识别仍然被程序引用的对象，从而实现 JavaScript 的自动内存管理。虽然 JavaScript 开发者不能直接操作它，但理解其背后的原理有助于理解 JavaScript 的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/conservative-stack-visitor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ void ConservativeStackVisitor::VisitConservativelyIfPointer(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

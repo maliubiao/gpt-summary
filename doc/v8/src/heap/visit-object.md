@@ -109,11 +109,13 @@ console.log(obj instanceof Object); // true
 
 总而言之，`v8/src/heap/visit-object.cc` 是 V8 引擎中用于访问和遍历堆对象的底层基础设施，它为垃圾回收、对象检查和类型判断等关键的 JavaScript 功能提供了必要的支持。它通过 `ObjectVisitorForwarder` 实现了访问逻辑的解耦，并提供了不同的入口函数以满足不同的访问需求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/visit-object.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ void VisitObjectBody(LocalIsolate* isolate, Tagged<HeapObject> object,
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

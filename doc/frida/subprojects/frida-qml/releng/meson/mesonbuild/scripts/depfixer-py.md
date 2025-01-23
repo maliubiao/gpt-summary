@@ -178,7 +178,7 @@ If a user encounters issues related to library loading after installing Frida, `
 
 By examining the source code of `depfixer.py` and understanding its role in the Frida build process, developers can troubleshoot issues related to dynamic linking and library dependencies after installing Frida. They might need to modify the script or the Meson build configuration to address specific deployment scenarios or platform requirements.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/scripts/depfixer.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2016 The Meson development team
 
@@ -683,7 +685,4 @@ def fix_rpath(fname: str, rpath_dirs_to_remove: T.Set[bytes], new_rpath: T.Union
         if isinstance(new_rpath, bytes):
             new_rpath = new_rpath.decode('utf8')
         fix_darwin(fname, new_rpath, final_path, install_name_mappings)
-
-"""
-
 ```

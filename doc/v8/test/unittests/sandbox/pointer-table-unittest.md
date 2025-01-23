@@ -105,11 +105,13 @@ let obj3 = externalData3;
 
 总而言之，C++ 的单元测试代码直接测试了 V8 内部管理外部指针的关键机制 `ExternalPointerTable` 的压缩功能，这对于理解 JavaScript 如何安全有效地与外部 C++ 代码交互至关重要。 JavaScript 代码虽然无法直接触及 `ExternalPointerTable`，但其创建和释放持有外部数据的对象行为会触发 `ExternalPointerTable` 的管理和优化过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/sandbox/pointer-table-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -209,7 +211,4 @@ TEST_F(PointerTableTest, ExternalPointerTableCompaction) {
 }  // namespace v8
 
 #endif  // V8_ENABLE_SANDBOX
-
-"""
-
 ```

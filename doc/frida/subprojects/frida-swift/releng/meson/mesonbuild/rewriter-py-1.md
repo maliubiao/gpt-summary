@@ -191,7 +191,7 @@ my_app = executable('my_app', my_app_sources)
 
 希望以上归纳和解释能够帮助你理解 `rewriter.py` 的功能以及它在 Frida 和逆向工程中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/rewriter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ['operation'] == 'target_add':
             if target is not None:
                 mlog.error('Can not add target', mlog.bold(cmd['target']), 'because it already exists', *self.on_error())
@@ -470,8 +472,4 @@ def run(options):
         raise e
     finally:
         mlog.set_verbose()
-
-"""
-
-
 ```

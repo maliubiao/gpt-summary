@@ -139,15 +139,17 @@ go tool cover -mode=set -o merged.out counter1.out counter2.out  # 假设 counte
 
 总而言之，`metamerge.go` 是 Go 覆盖率工具链中负责元数据合并的关键组件，它处理了不同场景下的元数据组合，并与计数器数据的合并协同工作，为用户提供了强大的覆盖率数据聚合能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/covdata/metamerge.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -573,9 +575,4 @@ func (mm *metaMerge) visitFunc(pkgIdx uint32, fnIdx uint32, fd *coverage.FuncDes
 		mm.p.ctab[fnIdx] = gfp
 	}
 }
-
-"""
-
-
-
 ```

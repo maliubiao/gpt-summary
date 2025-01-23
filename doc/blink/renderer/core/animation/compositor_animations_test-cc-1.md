@@ -82,15 +82,17 @@ Here's a breakdown of the code's functionality:
 
 这部分测试代码的主要功能是 **验证 Blink 渲染引擎是否能够正确地判断和执行可以转移到合成器线程的 CSS 动画，并针对各种 CSS 属性、时间参数、以及特殊场景（如 CSS Paint API 和强制降低动画效果）进行细致的测试，确保动画性能和用户体验。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/compositor_animations_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ator::CSSPaintImageGeneratorCreateFunction>
       scoped_create_function(
           CSSPaintImageGenerator::GetCreateFunctionForTesting(),
@@ -780,7 +782,4 @@ TEST_P(AnimationCompositorAnimationsTest,
   keyframe_animation_effect2_ =
       MakeGarbageCollected<StringKeyframeEffectModel>(*keyframe_vector2_);
   EXPECT_EQ(CanStartEffectOnCompositor(timing_, *keyframe_animation_effec
-"""
-
-
 ```

@@ -146,7 +146,7 @@ By following this detailed breakdown and considering the context within Frida an
 
 总而言之，`my_compiler2.py` 作为一个简单的 Python 脚本，其主要目的是在 Frida 的测试环境中模拟一个处理 "二进制输出" 文件的步骤，用于验证 Frida 在处理类似场景时的功能。 它虽然不直接进行逆向，但其设计思路与理解编译流程和二进制文件特性密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/50 custom target chain/my_compiler2.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -171,7 +173,4 @@ if __name__ == '__main__':
         sys.exit(1)
     with open(sys.argv[2], 'w') as ofile:
         ofile.write('This is a different binary output file.\n')
-
-"""
-
 ```

@@ -99,15 +99,17 @@ This test file for `geometry_mapper_test.cc` focuses on verifying the correctnes
 
 `geometry_mapper_test.cc` (第 1 部分) 的主要功能是全面测试 Blink 渲染引擎中 `GeometryMapper` 类的核心几何映射和计算能力。它涵盖了坐标空间转换、视觉矩形计算、裁剪处理、变换应用以及重叠判断等关键功能，这些功能直接支撑着网页元素的渲染和视觉效果的呈现。测试用例覆盖了各种变换、裁剪的组合场景，旨在确保 `GeometryMapper` 在处理由 HTML 和 CSS 定义的视觉效果时能够准确无误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/geometry_mapper_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -890,7 +892,4 @@ TEST_P(GeometryMapperTest,
   expected_clip.Intersect(clip1->LayoutClipRect());
   EXPECT_FALSE(expected_clip.IsTight());
   expected_clip_has
-"""
-
-
 ```

@@ -100,14 +100,16 @@ Let's break down the thought process for analyzing the `resource_client.cc` file
 
 总而言之，`resource_client.cc` 文件中的 `ResourceClient` 类是 Blink 引擎中一个关键的基础组件，它负责管理资源加载的上下文，并将资源的生产者（加载器）和消费者（渲染器、脚本引擎等）连接起来，确保各种 Web 资源能够被正确地加载和使用。虽然它不直接操作 JavaScript, HTML 或 CSS 代码，但它是实现这些技术功能的基础设施之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
     Copyright (C) 1998 Lars Knoll (knoll@mpi-hd.mpg.de)
     Copyright (C) 2001 Dirk Mueller <mueller@kde.org>
@@ -172,7 +174,4 @@ void ResourceClient::Prefinalize() {
 }
 
 }  //  namespace blink
-
-"""
-
 ```

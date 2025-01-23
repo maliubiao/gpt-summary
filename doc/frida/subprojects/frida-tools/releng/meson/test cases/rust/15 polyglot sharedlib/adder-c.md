@@ -147,7 +147,7 @@ Initially, I might focus too much on the C code itself and forget the crucial co
 
 总而言之，`adder.c` 提供了一个创建和操作简单 `adder` 对象的接口，但其核心的加法逻辑被委托给了 Rust 代码，这体现了跨语言编程的场景，并且为逆向分析提供了有趣的切入点，尤其是在使用 Frida 这样的动态插桩工具时。理解这段 C 代码的功能和它与底层系统、以及其他语言的交互，对于有效地进行逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/rust/15 polyglot sharedlib/adder.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<adder.h>
 #include<stdlib.h>
 
@@ -181,7 +183,4 @@ int adder_add(adder *a, int number)
 void adder_destroy(adder *a) {
     free(a);
 }
-
-"""
-
 ```

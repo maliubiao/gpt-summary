@@ -105,12 +105,14 @@ handleOperation();
 
 总而言之，这部分 `code-assembler.cc` 代码实现了构建控制流图和处理异常的关键机制，这些机制是 V8 引擎将 JavaScript 代码高效编译为机器码的基础。通过标签和变量合并，代码装配器能够处理复杂的控制流结构，并确保在不同执行路径上变量状态的正确性。异常处理机制则允许生成处理运行时错误的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/code-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 awMachineLabel(); }
 
 void CodeAssemblerLabel::MergeVariables() {
@@ -359,8 +361,4 @@ ScopedExceptionHandler::~ScopedExceptionHandler() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

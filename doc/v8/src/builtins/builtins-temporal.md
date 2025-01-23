@@ -135,11 +135,13 @@ const nowDateTime = Temporal.Now.plainDateTime('iso8601');
 
 `builtins-temporal.cc` 文件是 V8 引擎中 `Temporal` API 的核心实现部分，它将 JavaScript 中对 `Temporal` 对象的各种操作转化为底层的 C++ 代码执行，从而使 JavaScript 能够高效地处理日期、时间和时区相关的复杂逻辑。  该文件通过大量的宏定义来简化和组织代码，清晰地映射了 JavaScript `Temporal` API 的各种特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-temporal.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -885,7 +887,4 @@ TEMPORAL_ZONED_DATE_TIME_GET_BY_FORWARD_TIME_ZONE_AND_CALENDAR(EraYear)
 #endif  // V8_INTL_SUPPORT
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -118,7 +118,7 @@ fetch('https://example.com/data')
 
 总而言之，这段代码是 Chromium 网络栈中处理 HTTP 连接建立和初始化阶段的核心部分，它与 JavaScript 发起的网络请求紧密相关，并通过一系列状态管理来确保网络事务的正确执行。理解这段代码的功能对于调试网络问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ed on a retry after 421 Misdirected Request
   // is received. Alternative Services are also disabled in this case (though
   // they can also be disabled when retrying after a QUIC error).
@@ -992,7 +994,4 @@ int HttpNetworkTransaction::HandleSSLClientAuthError(int error) {
     bool server_using_tls = IsSecureRequest();
     bool proxy_using_tls = proxy_info_.AnyProxyInChain(
         [](const ProxyServer& s) { return s
-"""
-
-
 ```

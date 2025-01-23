@@ -161,7 +161,7 @@ By following these steps, I can thoroughly analyze the code and address all aspe
 
 `ninjabackend.py` 的这个部分主要负责将 Meson 定义的单个源文件的编译任务转换为 Ninja 可以理解的构建规则。它处理了各种编译选项、依赖关系、预编译头以及特定编译器的差异，是 Frida 构建流程中至关重要的一个环节。对于逆向工程师而言，理解这部分代码有助于理解 Frida 的构建过程，并在需要修改或调试 Frida 源代码时提供帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 file called foo.pdb. So will a static library
         # foo.lib, which clobbers both foo.pdb _and_ the dll file's
         # export library called foo.lib (by default, currently we name
@@ -790,7 +792,4 @@ file called foo.pdb. So will a static library
 
         prelinker = target.get_prelinker()
         cmd = prelinker.exelist
-"""
-
-
 ```

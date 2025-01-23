@@ -221,15 +221,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`serial_port_underlying_sink.cc` 是 Web Serial API 中至关重要的底层组件，它桥接了 JavaScript 的数据操作和操作系统底层的串行通信机制，负责高效、可靠地将数据从网页发送到外部设备。 理解它的功能和交互方式对于调试 Web Serial API 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/serial/serial_port_underlying_sink.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -506,7 +508,4 @@ void SerialPortUnderlyingSink::Dispose() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -108,15 +108,17 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 可以预期后续部分会继续完善词法分析器的功能，例如处理更复杂的实体引用、CDATA 部分、DOCTYPE 声明、以及更精细的错误处理和恢复机制。这部分代码奠定了 HTML 解析的第一步，将原始的 HTML 文本转化为结构化的 tokens 序列，为后续的 DOM 树构建做好准备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_tokenizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All Rights Reserved.
  * Copyright (C) 2009 Torch Mobile, Inc. http://www.torchmobile.com/
@@ -1005,7 +1007,4 @@ bool HTMLTokenizer::NextTokenImpl(SegmentedString& source) {
         token_.AppendToAttributeName(ToLowerCaseIfAlpha(cc));
         if (!input_stream_preprocessor_.AdvancePastNonNewline(source, cc))
           return HaveBuf
-"""
-
-
 ```

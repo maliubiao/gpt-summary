@@ -167,15 +167,17 @@ This iterative process of scanning, analyzing, connecting, and inferring allows 
 
 总而言之，`offscreen_canvas_rendering_context_2d.cc` 是 Chromium Blink 引擎中实现 `OffscreenCanvas` 2D 渲染的核心组件，它负责处理 JavaScript 的绘图指令，与底层图形库交互，并管理 Canvas 的状态。理解这个文件有助于深入理解 Web 平台的 2D 图形渲染机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/offscreencanvas2d/offscreen_canvas_rendering_context_2d.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -657,7 +659,4 @@ int OffscreenCanvasRenderingContext2D::LayerCount() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

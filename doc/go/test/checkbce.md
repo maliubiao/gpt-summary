@@ -148,14 +148,16 @@ func main() {
 
 总而言之，`go/test/checkbce.go` 是 Go 编译器开发团队用来测试和验证边界检查消除功能是否正常工作的关键测试文件。它通过特定的代码结构和注释来断言编译器在不同场景下的 BCE 行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/checkbce.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -d=ssa/check_bce/debug=3
 
 //go:build amd64 && !gcflags_noopt
@@ -340,9 +342,4 @@ func useSlice(a []int) {
 
 func main() {
 }
-
-"""
-
-
-
 ```

@@ -165,15 +165,17 @@ String SharedStorageWorkletNavigator::GetAcceptLanguages() {
 
 `blink/renderer/modules/shared_storage/shared_storage_worklet_navigator.cc` 文件定义了 `SharedStorageWorkletNavigator` 类，旨在为 Shared Storage Worklet 提供类似 `navigator` 对象的功能。然而，目前 `GetAcceptLanguages()` 方法的 `NOTREACHED()` 实现表明，在 Worklet 的上下文中，获取 `accept-language` 头部信息的功能尚未实现或不适用。这可以作为调试的线索，当在 Worklet 环境中遇到与语言相关的 `navigator` 属性访问问题时，可以考虑是否是因为这个原因导致的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/shared_storage/shared_storage_worklet_navigator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ String SharedStorageWorkletNavigator::GetAcceptLanguages() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

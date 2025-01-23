@@ -196,15 +196,17 @@ By following these steps, including the iterative process of understanding, conn
 
 总而言之，`offline_audio_completion_event.cc` 文件是 Blink 引擎中实现离线音频渲染完成事件的关键部分，它连接了底层的音频处理逻辑和上层的 JavaScript Web Audio API，使得 JavaScript 能够获取并处理离线渲染的音频结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/offline_audio_completion_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011, Google Inc. All rights reserved.
  *
@@ -278,7 +280,4 @@ void OfflineAudioCompletionEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -192,14 +192,16 @@ By following these steps, combining code analysis with an understanding of the b
 
 总而言之，`blink/renderer/platform/image-decoders/png/png_image_reader.cc` 是 Blink 渲染引擎中至关重要的一个组件，它负责将 PNG 这种常见的图像格式转化为浏览器可以理解的像素数据，是网页上显示 PNG 图片的基础。理解它的功能有助于我们更好地理解浏览器如何处理图像，以及在遇到 PNG 图片显示问题时如何进行排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/png/png_image_reader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Apple Computer, Inc.
  * Copyright (C) Research In Motion Limited 2009-2010. All rights reserved.
@@ -1031,7 +1033,4 @@ bool PNGImageReader::ParseFrameInfo(const png_byte* data) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

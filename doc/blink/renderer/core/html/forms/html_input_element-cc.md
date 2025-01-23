@@ -96,15 +96,17 @@ By following this structured analysis, I was able to extract the essential infor
 
 总的来说，这部分代码是 `HTMLInputElement` 的地基，为后续处理各种 `type` 属性的特定行为奠定了基础。它连接了 HTML 结构、JavaScript 交互和 CSS 样式，是 Blink 引擎渲染和处理 `<input>` 元素不可或缺的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_input_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -957,7 +959,4 @@ void HTMLInputElement::ParseAttribute(
   } else if (name == html_names::kTypeAttr) {
     if (params.reason != AttributeModificationReason::kByParser &&
         params.o
-"""
-
-
 ```

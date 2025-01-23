@@ -154,14 +154,16 @@ By following these steps, and iterating through the analysis, I can arrive at a 
 
 `OriginAccessEntry` 是 Blink 渲染引擎中用于表示允许跨域访问的来源条目的核心类。它与 CORS 机制紧密相关，虽然前端开发者不直接操作它，但其背后的逻辑直接影响着 JavaScript 发起的跨域请求以及 HTML 和 CSS 资源的跨域加载。理解其功能有助于理解浏览器如何实施同源策略和 CORS 机制，从而避免常见的跨域问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/weborigin/origin_access_entry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -244,7 +246,4 @@ String OriginAccessEntry::registrable_domain() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

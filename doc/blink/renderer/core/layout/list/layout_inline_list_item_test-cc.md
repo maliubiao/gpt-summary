@@ -118,14 +118,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 `layout_inline_list_item_test.cc` 是一个关键的测试文件，用于确保 Chromium Blink 引擎能够正确处理 `display: inline list-item` 这种布局模式。 它通过模拟特定的 HTML 和 CSS 场景，验证了内部布局机制 (`OffsetMapping`) 的稳定性和正确性，防止了可能导致布局错误、JavaScript 行为异常或开发者工具显示错误的 bug 的回归。  它虽然不直接涉及用户编写的 JavaScript 代码，但它保证了浏览器渲染引擎的正确性，从而间接地保障了用户体验和 Web 开发的效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/list/layout_inline_list_item_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ li { display: inline list-item; }
 }
 
 }  // namespace blink
-
-"""
-
 ```

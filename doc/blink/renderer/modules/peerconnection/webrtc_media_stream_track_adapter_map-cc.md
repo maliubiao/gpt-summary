@@ -160,15 +160,17 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 作为调试线索，当你在 Blink 引擎中遇到与 WebRTC 媒体流轨道管理相关的问题时，可以关注这个文件。例如，如果你发现某个本地或远程轨道没有被正确处理，或者生命周期管理存在问题，可以检查 `WebRtcMediaStreamTrackAdapterMap` 的状态，查看是否正确创建和维护了适配器。日志记录和断点可以帮助你追踪适配器的创建、访问和销毁过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/webrtc_media_stream_track_adapter_map.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -386,7 +388,4 @@ size_t WebRtcMediaStreamTrackAdapterMap::GetRemoteTrackCount() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

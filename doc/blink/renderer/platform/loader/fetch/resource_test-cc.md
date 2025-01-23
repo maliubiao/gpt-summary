@@ -126,14 +126,16 @@ By iteratively analyzing the code and refining the understanding, we arrive at a
 
 总而言之，`resource_test.cc` 文件通过各种测试用例，确保 `Resource` 类能够正确地处理资源加载、缓存、重验证、重定向等复杂场景，这对于保证 Chromium 浏览器的性能和正确性至关重要。这些测试直接或间接地与浏览器如何加载和处理 HTML、CSS 和 JavaScript 资源息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -715,7 +717,4 @@ TEST_F(ResourceTest, GarbageCollection) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

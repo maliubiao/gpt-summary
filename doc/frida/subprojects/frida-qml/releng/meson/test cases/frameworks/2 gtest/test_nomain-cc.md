@@ -144,7 +144,7 @@ Equality is broken. Mass panic!
 
 总而言之，`test_nomain.cc` 虽然代码简单，但在 Frida 的构建和测试流程中扮演着至关重要的角色，用于验证测试框架本身是否健康，为更复杂的 instrumentation 功能的测试奠定基础。  如果这个测试失败，通常预示着非常基础的问题，需要检查构建环境、工具链或甚至硬件是否存在故障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/2 gtest/test_nomain.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<gtest/gtest.h>
 
 TEST(basic_test, eq_works) {
@@ -168,7 +170,4 @@ int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }
-
-"""
-
 ```

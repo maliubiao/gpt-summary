@@ -150,11 +150,13 @@ console.log(myList); // LinkedList { head: null, tail: null, length: 0 }
 
 `threaded-list-unittest.cc` 是 V8 引擎中用于测试线程安全链表实现的单元测试文件。虽然 JavaScript 没有直接对应的类，但链表是计算机科学中一种基础的数据结构，V8 内部可能使用它来管理各种运行时数据。上面的 JavaScript 示例展示了链表的基本概念和一些常见的操作，与 C++ 代码中测试的功能概念上是类似的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/threaded-list-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -512,7 +514,4 @@ TEST_F(ThreadedListTest, RemoveAt) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

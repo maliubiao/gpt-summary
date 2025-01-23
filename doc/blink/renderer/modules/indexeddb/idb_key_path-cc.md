@@ -137,15 +137,17 @@ const objectStore2 = db.createObjectStore("products", { keyPath: ["manufacturer"
 
 总而言之，`idb_key_path.cc` 是 Chromium Blink 引擎中处理 IndexedDB 键路径的关键组件，负责确保键路径的格式正确，从而保证 IndexedDB API 的正确使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/indexeddb/idb_key_path.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -337,7 +339,4 @@ bool IDBKeyPath::operator==(const IDBKeyPath& other) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

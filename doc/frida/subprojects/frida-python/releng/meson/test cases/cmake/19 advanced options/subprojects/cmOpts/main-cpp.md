@@ -161,7 +161,7 @@ if (Process.platform === 'linux') {
 
 `frida/subprojects/frida-python/releng/meson/test cases/cmake/19 advanced options/subprojects/cmOpts/main.cpp` 这个文件是一个非常简单的 C++ 程序，其主要目的是作为 Frida 项目中 Python 绑定的一个测试用例。它演示了如何使用一个简单的 C++ 类，并验证了 Frida 的构建系统能够正确地编译和链接这个库。虽然代码本身没有进行复杂的逆向操作，但它所处的环境和目的使其与逆向工程紧密相关，并且可以作为 Frida 进行动态插桩的目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cmake/19 advanced options/subprojects/cmOpts/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "cmMod.hpp"
 
@@ -181,7 +183,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

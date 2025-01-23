@@ -146,15 +146,17 @@ By following these steps, we can systematically analyze the code and extract the
 
 **简而言之，这个单元测试文件是 Chromium 网络栈开发人员保证内容解码功能正确性的重要工具。用户通常不会直接接触它，但其背后的功能直接影响用户浏览网页的体验。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/content_decoder_tool/content_decoder_tool_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ TEST_F(ContentDecoderToolTest, TestBrotli) {
 }
 
 }  // namespace net
-
-"""
-
 ```

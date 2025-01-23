@@ -134,14 +134,16 @@ By following this structured approach, one can effectively analyze a source code
 
 总而言之，`LayoutSVGBlock` 是 Blink 渲染引擎中处理 SVG 布局的关键组件，它深入参与了 HTML 结构的解析、CSS 样式的应用以及 JavaScript 对 SVG 的动态操作。 理解其功能有助于开发者更好地掌握 SVG 的渲染机制，并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/layout_svg_block.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Apple Computer, Inc.
  * Copyright (C) 2007 Nikolas Zimmermann <zimmermann@kde.org>
@@ -357,7 +359,4 @@ bool LayoutSVGBlock::MapToVisualRectInAncestorSpaceInternal(
 }
 
 }  // namespace blink
-
-"""
-
 ```

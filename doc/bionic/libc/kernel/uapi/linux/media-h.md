@@ -339,7 +339,7 @@ Frida 脚本会 hook `ioctl` 系统调用，并在控制台上打印出与媒体
 
 `bionic/libc/kernel/uapi/linux/media.h` 是 Android 访问底层媒体设备功能的重要接口，它定义了与内核媒体驱动交互的数据结构和 `ioctl` 命令。Android Framework 和 NDK 都通过调用标准的 libc 函数（如 `open` 和 `ioctl`）并使用这个头文件中定义的接口来实现对摄像头、视频解码器等媒体设备的操作。使用 Frida 可以方便地观察和调试这些底层的交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/media.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -350,8 +350,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -573,7 +575,4 @@ struct media_v2_topology {
 #define MEDIA_INTF_T_ALSA_TIMER (MEDIA_INTF_T_ALSA_BASE + 7)
 #define MEDIA_API_VERSION ((0U << 16) | (1U << 8) | 0U)
 #endif
-
-"""
-
 ```

@@ -113,7 +113,7 @@ fetch('https://example.com/image.png')
 
 总而言之，`net/http/http_cache_unittest.cc` 的第一部分主要关注 `HttpCache` 类的基础功能测试，包括缓存的创建、简单 GET 请求的缓存和读取、以及连接回调机制的验证。它通过使用 mock 对象模拟网络交互，为后续更复杂的缓存策略和场景测试奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共17部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1073,7 +1075,4 @@ TEST_F(HttpCacheSimpleGetTest, ConnectedCallbackOnCacheHit) {
 }
 
 // This test verifies that when the callback passed to Se
-"""
-
-
 ```

@@ -150,7 +150,7 @@ By following these steps, we can dissect the provided code and connect it meanin
 
 总而言之，`my_compiler.py` 虽然简单，但在 Frida 的上下文中扮演着重要的角色，它展示了如何通过自定义脚本扩展构建系统的功能，而这种能力在逆向工程中处理各种数据转换和预处理任务时非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/50 custom target chain/my_compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -175,7 +177,4 @@ if __name__ == '__main__':
         sys.exit(1)
     with open(sys.argv[2], 'w') as ofile:
         ofile.write('This is a binary output file.\n')
-
-"""
-
 ```

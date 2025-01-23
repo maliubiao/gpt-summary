@@ -198,7 +198,7 @@ func main() {
 
 总而言之，`ZeroValSize` 常量是 Go 运行时系统内部用于高效实现零值初始化的一个细节，它定义了一个预先分配的零值内存块的大小。理解这一点有助于更好地理解 Go 语言的内存管理和变量初始化机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/abi/runtime.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -206,8 +206,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -216,9 +218,4 @@ package abi
 
 // ZeroValSize is the size in bytes of runtime.zeroVal.
 const ZeroValSize = 1024
-
-"""
-
-
-
 ```

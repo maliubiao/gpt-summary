@@ -171,7 +171,7 @@ func main() {
 
 `go/src/net/ipsock_test.go` 主要用于测试 `net` 包中处理 IP 地址列表的功能，包括过滤、排序和划分。它验证了在不同场景下，`net` 包如何处理 IPv4 和 IPv6 地址，以及如何根据用户提供的条件选择合适的地址。理解这些测试用例可以帮助开发者更好地理解 `net` 包的地址处理机制，并避免在实际应用中犯类似的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/ipsock_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -179,8 +179,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -463,9 +465,4 @@ func TestAddrListPartition(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

@@ -212,7 +212,7 @@ By following these steps, combining code analysis with an understanding of JavaS
 
 总而言之，`v8/src/runtime/runtime-regexp.cc` 代码片段是 V8 引擎中处理正则表达式相关操作的关键部分，它实现了 JavaScript 中 `RegExp` 对象和字符串方法的底层逻辑，涉及到匹配、替换和分割等核心功能。理解这段代码的功能有助于深入了解 JavaScript 正则表达式的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-regexp.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/runtime/runtime-regexp.cc以.tq结尾，那它是个v8 torque源代码，
@@ -220,8 +220,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 :STRING_SPLIT_SUBSTRINGS);
     }
   }
@@ -1102,7 +1104,4 @@ RUNTIME_FUNCTION(Runtime_RegExpSplit) {
     Handle<Object> result;
     ASSIGN_RETURN_FAILURE_ON_EXCEPTION(
         is
-"""
-
-
 ```

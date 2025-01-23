@@ -119,7 +119,7 @@ WasmFunctionBuilder* WasmModuleBuilder::AddFunction(const FunctionSig* sig) {
 
 `v8/src/wasm/wasm-module-builder.cc` 提供了一个底层的 C++ 接口，用于程序化地构建 WebAssembly 模块的各种组件。它允许 V8 内部或其他需要动态生成 WebAssembly 代码的工具和测试使用。它不是一个用户直接使用的公共 API，但理解其功能有助于理解 WebAssembly 模块的结构以及 V8 是如何处理 WebAssembly 的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-module-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-module-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -127,8 +127,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1025,8 +1027,5 @@ void WasmModuleBuilder::WriteTo(ZoneBuffer* buffer) const {
                       ? kExprRefFunc
                       : kExprRefNull;
         bool needs_function_offset =
-            segment.indexing_mode 
-"""
-
-
+            segment.indexing_mode
 ```

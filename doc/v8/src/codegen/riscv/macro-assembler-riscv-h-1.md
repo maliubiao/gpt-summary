@@ -228,7 +228,7 @@ ret          // 返回
 
 `v8/src/codegen/riscv/macro-assembler-riscv.h` 的第二部分继续提供了构建 RISC-V 机器码所需的核心工具，涵盖了位操作、浮点运算、内存访问、控制流、类型转换以及 V8 特有的功能（如根表访问和垃圾回收支持）。 开发者可以使用这些宏来高效地生成针对 RISC-V 架构优化的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/macro-assembler-riscv.h以.tq结尾，那它是个v8 torque源代码，
@@ -236,8 +236,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ed in rt
   void ExtractBits(Register rt, Register rs, uint16_t pos, uint16_t size,
                    bool sign_extend = false);
@@ -1007,7 +1009,4 @@ ed in rt
                       Register actual_parameter_count, InvokeType type);
 
   // ---- Ins
-"""
-
-
 ```

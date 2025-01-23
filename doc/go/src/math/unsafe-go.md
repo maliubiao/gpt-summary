@@ -142,7 +142,7 @@ func main() {
 
 `//go:linkname` 是一个编译器指令，用于将当前包中的符号链接到其他包中的（通常是私有的）符号。在这个例子中，`Float32bits` 虽然是导出的，但它被广泛使用的包（例如 `gitee.com/quant1x/num`）通过 `linkname` 链接到了。这意味着修改 `Float32bits` 的签名或移除它可能会破坏这些依赖它的包。这解释了注释中强调不要移除或更改类型签名的原因。这通常用于 Go 内部实现或为了兼容性而采取的措施。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/math/unsafe.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -150,8 +150,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -193,9 +195,4 @@ func Float64bits(f float64) uint64 { return *(*uint64)(unsafe.Pointer(&f)) }
 // and the result in the same bit position.
 // Float64frombits(Float64bits(x)) == x.
 func Float64frombits(b uint64) float64 { return *(*float64)(unsafe.Pointer(&b)) }
-
-"""
-
-
-
 ```

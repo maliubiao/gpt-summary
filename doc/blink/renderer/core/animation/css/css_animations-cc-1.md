@@ -107,16 +107,18 @@ By following this process, I can generate a comprehensive and accurate summary t
 
 这部分代码专注于 **CSS动画Timeline的生命周期管理**，特别是 **Timeline的创建、更新和查找**。它解析CSS样式中的Timeline定义，并根据样式变化计算出需要对Timeline进行的变更。这种精细化的管理使得浏览器能够高效地处理各种基于CSS Timeline的动画，并确保动画能够正确地绑定到其指定的时间轴上。这部分是整个CSS动画机制中至关重要的一环，它连接了CSS样式定义和底层的动画执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css/css_animations.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
-      : (*insets)[std::min(index_, insets->size() - 1)];
+### 源代码
+```cpp
+: (*insets)[std::min(index_, insets->size() - 1)];
 
       return std::make_tuple(name, axis, inset);
     }
@@ -1012,7 +1014,4 @@ void CSSAnimations::CalculateAnimationUpdate(
     flag = true;
 
   if (anima
-"""
-
-
 ```

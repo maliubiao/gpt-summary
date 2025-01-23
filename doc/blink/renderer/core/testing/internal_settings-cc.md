@@ -188,15 +188,17 @@ By following this structured approach, combining code analysis with an understan
 
 `blink/renderer/core/testing/internal_settings.cc` 是一个用于 **测试和调试 Blink 渲染引擎** 的关键文件。它提供了一组方法，允许程序化地修改影响网页渲染和行为的内部设置。虽然普通用户不会直接接触到这些代码，但它在确保 Blink 引擎的稳定性和正确性方面发挥着重要作用。理解这个文件的功能有助于理解 Blink 引擎的内部工作原理，并为开发和调试 Blink 相关的功能提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/internal_settings.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  * Copyright (C) 2013 Apple Inc. All rights reserved.
@@ -536,7 +538,4 @@ void InternalSettings::setPreferCompositingToLCDTextEnabled(bool enabled) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

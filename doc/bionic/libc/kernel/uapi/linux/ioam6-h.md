@@ -288,7 +288,7 @@ if __name__ == '__main__':
 
 总结来说，`bionic/libc/kernel/uapi/linux/ioam6.h` 定义了用于 IOAM6 的数据结构，虽然 Android 开发者不会直接使用它，但内核对这些结构的使用是 Android 网络功能的基础之一。 通过 Frida 等工具，我们可以间接地观察到这些底层的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ioam6.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -299,8 +299,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -352,7 +354,4 @@ struct ioam6_trace_hdr {
   __u8 data[];
 } __attribute__((packed));
 #endif
-
-"""
-
 ```

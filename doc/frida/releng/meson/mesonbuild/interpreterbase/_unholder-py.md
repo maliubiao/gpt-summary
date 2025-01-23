@@ -149,7 +149,7 @@ script.load()
 
 `_unholder.py` 中的 `_unholder` 函数是 Frida 构建系统 Meson 的一个内部工具函数，用于从不同类型的包装对象中提取实际的值，并进行类型检查。 它在处理来自目标进程的数据、构建系统内部对象以及确保类型安全方面发挥着作用。 用户通常不会直接调用这个函数，但理解它的功能有助于理解 Frida 内部的工作机制以及在遇到相关错误时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/interpreterbase/_unholder.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -184,7 +186,4 @@ def _unholder(obj: InterpreterObject) -> TYPE_var:
     elif isinstance(obj, InterpreterObject):
         raise InvalidArguments(f'Argument {obj} of type {type(obj).__name__} cannot be passed to a method or function')
     raise MesonBugException(f'Unknown object {obj} of type {type(obj).__name__} in the parameters.')
-
-"""
-
 ```

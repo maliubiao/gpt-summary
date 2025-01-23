@@ -123,7 +123,7 @@ The `instruction-selector-adapter.h` file defines the `InstructionSelectorAdapte
 
 `instruction-selector-adapter.h` defines a crucial adapter class that provides a simplified and type-safe interface for the instruction selection phase to interact with the Turboshaft graph. It offers various "View" classes for accessing specific operation details and numerous helper methods for inspecting the graph's structure and node properties. This infrastructure is essential for the V8 compiler's ability to generate efficient machine code from JavaScript, even though it doesn't directly interact with user-level JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/instruction-selector-adapter.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/instruction-selector-adapter.h以.tq结尾，那它是个v8 torque源代码，
@@ -131,8 +131,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 D256_REVEC
     const turboshaft::Simd256LoadTransformOp* load_transform256_ = nullptr;
 #endif  // V8_ENABLE_WASM_SIMD256_REVEC
@@ -598,8 +600,4 @@ D256_REVEC
 }  // namespace v8::internal::compiler
 
 #endif  // V8_COMPILER_BACKEND_INSTRUCTION_SELECTOR_ADAPTER_H_
-
-"""
-
-
 ```

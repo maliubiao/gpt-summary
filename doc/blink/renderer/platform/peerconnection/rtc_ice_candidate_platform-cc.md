@@ -158,14 +158,16 @@ By following these steps and continuously refining the analysis, a comprehensive
 
 总而言之，`rtc_ice_candidate_platform.cc` 文件在 Blink 渲染引擎中扮演着解析、存储和提供访问 ICE 候选者信息的关键角色，是 WebRTC 功能实现的基础组成部分，虽然不直接与前端技术交互，但其功能直接影响着 JavaScript 中 `RTCPeerConnection` API 的行为和数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_ice_candidate_platform.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -271,7 +273,4 @@ void RTCIceCandidatePlatform::PopulateFields(bool use_username_from_candidate) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

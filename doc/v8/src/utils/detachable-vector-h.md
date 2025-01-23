@@ -212,15 +212,17 @@ vec2.free();
 
 `v8/src/utils/detachable-vector.h` 定义了一个具有特殊内存管理功能的动态数组，允许在 V8 引擎内部更灵活地处理内存，特别是在 C++ 和 JavaScript 之间共享数据时。`detach()` 和 `free()` 方法提供了对底层存储的细粒度控制，但也需要开发者仔细管理内存生命周期，避免常见的编程错误。如果文件以 `.tq` 结尾，则意味着它是用 V8 的 Torque 语言编写的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/detachable-vector.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/utils/detachable-vector.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -325,7 +327,4 @@ class DetachableVector : public DetachableVectorBase {
 }  // namespace v8
 
 #endif  // V8_UTILS_DETACHABLE_VECTOR_H_
-
-"""
-
 ```

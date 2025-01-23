@@ -147,14 +147,16 @@ By following these steps, combining code analysis with understanding the broader
 
 `NavigatorBase.cc` 是 Blink 引擎中一个重要的组成部分，它负责实现 JavaScript 中 `navigator` 对象的核心功能。理解它的作用以及与 Web 技术的关系，有助于我们更好地理解浏览器的工作原理，并编写更健壮和兼容的 Web 应用。同时，也需要注意避免常见的与 `navigator` 对象使用相关的错误，特别是考虑到用户代理缩减等新策略的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/execution_context/navigator_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -256,7 +258,4 @@ UserAgentMetadata NavigatorBase::GetUserAgentMetadata() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

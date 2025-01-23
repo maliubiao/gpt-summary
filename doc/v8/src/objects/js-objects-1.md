@@ -174,12 +174,14 @@ To illustrate the connection with JavaScript, I will use examples that directly 
     ```
 
 总而言之，这部分 C++ 代码是 V8 引擎中处理 JavaScript 对象属性的核心部分，其功能与 JavaScript 中用于操作对象属性的内置方法和语法密切相关。它直接影响着 JavaScript 代码在 V8 引擎中的执行方式和效率。
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 >get())) {
         RETURN_FAILURE(
             isolate, GetShouldThrow(isolate, should_throw),
@@ -1832,7 +1834,4 @@ void MigrateFastToSlow(Isolate* isolate, DirectHandle<JSObject> object,
     ord_dictionary = isolate->factory()->NewSwissNameDictionary(property_count);
   } else {
     dictionary = isolate->factory()->NewNameDictionary(
-"""
-
-
 ```

@@ -116,7 +116,7 @@ if __name__ == "__main__":
 4. **调试与排查**：如果出现问题，用户可以通过 LLDB 或其他调试工具排查问题，检查线程状态和调用栈。
 
 通过这些步骤，用户可以逐步排查问题，找到导致线程挂起或恢复异常的根源。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/payload/thread-suspend-monitor.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 #if DARWIN
 	public class ThreadSuspendMonitor : Object {
@@ -271,7 +273,4 @@ namespace Frida {
 	}
 #endif
 }
-
-"""
-
 ```

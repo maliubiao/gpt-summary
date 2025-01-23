@@ -145,14 +145,16 @@ Let's break down the thought process to analyze the provided C++ code snippet an
 
 总而言之，`web_encrypted_media_client.cc` 定义了 Blink 引擎处理加密媒体的核心抽象接口，它连接了上层的 JavaScript EME API 和底层的平台或 CDM 实现。 理解其功能有助于理解 Chromium 如何支持受保护的内容播放。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_encrypted_media_client.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -164,7 +166,4 @@ namespace blink {
 WebEncryptedMediaClient::~WebEncryptedMediaClient() = default;
 
 }  // namespace blink
-
-"""
-
 ```

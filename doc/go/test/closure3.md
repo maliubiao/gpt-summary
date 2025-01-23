@@ -172,15 +172,17 @@ Since `closure3.go` is a compiler test, ordinary users don't directly interact w
 
 **In summary, `go/test/closure3.go` is a specialized test case within the Go compiler's testing framework. It focuses on verifying the correctness of function inlining when dealing with closures, particularly in various corner cases. The command-line arguments are specific to the testing environment and control the compiler's inlining behavior and output for analysis.**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/closure3.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheckandrundir -0 -m -d=inlfuncswithclosures=1
 
 //go:build !goexperiment.newinliner
@@ -193,9 +195,4 @@ Prompt:
 // that are expected to be inlined
 
 package ignored
-
-"""
-
-
-
 ```

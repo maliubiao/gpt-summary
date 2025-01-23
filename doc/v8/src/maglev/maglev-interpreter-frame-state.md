@@ -74,11 +74,13 @@ function bar(arr) {
 
 总而言之，`v8/src/maglev/maglev-interpreter-frame-state.cc` 中的代码是 Maglev 编译器理解和优化 JavaScript 代码的关键，它通过精确地跟踪和合并程序执行状态，为后续的优化步骤提供了必要的信息。  它并不直接对应于 JavaScript 的某个特定功能，而是服务于 JavaScript 代码的高效编译和执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-interpreter-frame-state.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1461,7 +1463,4 @@ void MergePointInterpreterFrameState::ReducePhiPredecessorCount(unsigned num) {
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

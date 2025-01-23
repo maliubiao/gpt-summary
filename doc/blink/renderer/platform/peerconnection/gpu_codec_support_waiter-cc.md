@@ -105,14 +105,16 @@ By following this structured approach, we can effectively analyze the provided C
 
 总而言之，`gpu_codec_support_waiter.cc` 在 Chromium 的 WebRTC 实现中扮演着关键的角色，它确保了在进行音视频通信之前，能够准确地获取 GPU 的编解码能力信息，从而优化性能和用户体验。它虽然不直接与 JavaScript, HTML, CSS 交互，但为基于这些技术构建的 WebRTC 应用提供了必要的底层支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/gpu_codec_support_waiter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -219,7 +221,4 @@ bool GpuCodecSupportWaiter::IsEncoderSupportKnown() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

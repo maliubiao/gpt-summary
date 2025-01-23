@@ -245,7 +245,7 @@ if (Process.platform === 'android') {
 
 通过这些步骤，你可以深入了解 `personality()` 函数在 Android 系统中的使用方式和影响。记住，修改进程的 personality 是一项底层操作，应该谨慎使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/personality.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -256,8 +256,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 The Android Open Source Project
  * All rights reserved.
@@ -307,7 +309,4 @@ __BEGIN_DECLS
 int personality(unsigned int __persona);
 
 __END_DECLS
-
-"""
-
 ```

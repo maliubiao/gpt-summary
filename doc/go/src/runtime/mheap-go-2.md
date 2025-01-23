@@ -268,7 +268,7 @@ Response:
 
 这部分 `mheap.go` 代码的核心功能是**提供 Go 语言运行时管理特殊对象（带有终结器、清理器、弱指针等）的底层机制，并为堆内存的性能分析提供支持**。它与 Go 的垃圾回收器紧密配合，确保在对象生命周期结束时能够执行必要的清理操作，并为开发者提供了在不阻止垃圾回收的情况下引用对象的手段。此外，它还为 `pprof` 等工具提供了收集堆内存使用信息的接口。 这些机制共同构成了 Go 语言内存管理和资源清理的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mheap.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -277,8 +277,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ap_.specialfinalizeralloc.alloc())
 	unlock(&mheap_.speciallock)
 	s.special.kind = _KindSpecialFinalizer
@@ -884,10 +886,4 @@ func newArenaMayUnlock() *gcBitsArena {
 	}
 	return result
 }
-
-"""
-
-
-
-
 ```

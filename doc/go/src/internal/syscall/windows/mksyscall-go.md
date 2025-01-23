@@ -120,7 +120,7 @@ func CreateFile(lpFileName *uint16, dwDesiredAccess uint32, dwShareMode uint32, 
 
 `go/src/internal/syscall/windows/mksyscall.go` 本身不实现具体的功能，而是通过 `go generate` 指令触发并配置了一个名为 `mksyscall_windows.go` 的代码生成工具。这个工具读取指定的输入文件，解析其中的信息，并生成包含Windows系统调用绑定的 Go 代码到 `zsyscall_windows.go` 文件中。这是一种常见的自动化代码生成模式，用于简化和维护与外部系统（如操作系统API）的接口。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/windows/mksyscall.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -128,8 +128,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -139,9 +141,4 @@ Prompt:
 package windows
 
 //go:generate go run ../../../syscall/mksyscall_windows.go -output zsyscall_windows.go syscall_windows.go security_windows.go psapi_windows.go symlink_windows.go version_windows.go
-
-"""
-
-
-
 ```

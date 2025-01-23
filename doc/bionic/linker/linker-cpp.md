@@ -263,7 +263,7 @@ sys.stdin.read()
 
 总而言之，`bionic/linker/linker.cpp` 的第一部分奠定了 Android 动态链接器的基础，定义了关键的数据结构和辅助函数，为后续的库加载、链接和符号解析等核心功能提供了必要的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -1357,7 +1359,4 @@ static int open_library(android_namespace_t* ns,
 }
 
 int open_execut
-"""
-
-
 ```

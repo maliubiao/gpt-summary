@@ -168,15 +168,17 @@ func processUintptr(p uintptr) {
 
 总而言之，这段测试代码的核心在于验证 Go 语言的 GC 能否正确地跟踪和管理通过 `uintptr` 传递的潜在指针，尤其是在 `//go:uintptrescapes` 指令存在的情况下，确保对象不会被过早回收。这对于编写与底层系统或 C 代码交互的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue24491b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -223,9 +225,4 @@ func after() int {
 func main() {
 	_ = before(uintptr(setup())) + after()
 }
-
-"""
-
-
-
 ```

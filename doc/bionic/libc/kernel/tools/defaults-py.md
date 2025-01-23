@@ -264,7 +264,7 @@ if __name__ == '__main__':
 
 通过 Frida Hook，你可以观察清理工具是如何读取 `defaults.py` 的内容，以及如何根据其中的配置来处理内核头文件的。 这可以帮助你理解 `defaults.py` 在 Bionic 构建过程中的实际作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/tools/defaults.pyandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```python
 # All the defaults used to generate the cleaned-up uapi headers for bionic.
 
 # the list of include directories that belong to the kernel
@@ -435,7 +437,4 @@ kernel_known_generic_statics = set(
           # Contact opensource-licensing@ before adding to this set.
         ]
     )
-
-"""
-
 ```

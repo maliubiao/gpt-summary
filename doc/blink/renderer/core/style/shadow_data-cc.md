@@ -163,14 +163,16 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`shadow_data.cc` 文件在 Chromium Blink 引擎中扮演着关键的角色，它负责管理和计算阴影的各种属性，确保浏览器能够正确地渲染 CSS 中定义的阴影效果。 理解这个文件的功能有助于深入了解浏览器渲染机制以及 CSS 阴影属性的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/shadow_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Antti Koivisto (koivisto@kde.org)
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009 Apple Inc. All rights
@@ -218,7 +220,4 @@ gfx::OutsetsF ShadowData::RectOutsets() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

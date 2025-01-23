@@ -137,7 +137,7 @@ V8 的代码生成器会使用 `WasmFloat32ToNumberDescriptor` 来了解如何�
 
 总而言之，`v8/src/codegen/interface-descriptors.h` 是 V8 代码生成过程中的关键组成部分，它确保了引擎内部函数调用的类型安全和正确性，同时也为 JavaScript 的各种功能（特别是与 WebAssembly 和 BigInt 相关的）提供了底层的接口定义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/interface-descriptors.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/interface-descriptors.h以.tq结尾，那它是个v8 torque源代码，
@@ -145,10 +145,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-
-  INTERNAL_DESCRIPTOR()
+### 源代码
+```c
+INTERNAL_DESCRIPTOR()
   DEFINE_PARAMETERS_NO_CONTEXT(kValue)
   DEFINE_RESULT_AND_PARAMETER_TYPES(MachineType::AnyTagged(),  // result
                                     MachineType::Float32())    // value
@@ -495,8 +496,4 @@ INTERFACE_DESCRIPTOR_LIST(DEF_KEY)
 }  // namespace v8
 
 #endif  // V8_CODEGEN_INTERFACE_DESCRIPTORS_H_
-
-"""
-
-
 ```

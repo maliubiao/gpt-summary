@@ -155,7 +155,7 @@ JavaScript 的 `Number()`、`String()`、`Boolean()` 等构造函数以及一些
 
 这段 `v8/src/api/api.cc` 的代码是 V8 引擎 C++ API 的核心组成部分，它提供了与 JavaScript 运行时的错误处理、堆栈跟踪、数据交换（JSON）、数据持久化（序列化/反序列化）以及类型系统交互的关键接口。这些接口使得 C++ 代码能够深入地与 V8 引擎集成，并对 JavaScript 代码的执行进行更精细的控制和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/api/api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -163,10 +163,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共15部分，请归纳一下它的功能
+```
 
-"""
-
-  RETURN_ESCAPED(
+### 源代码
+```cpp
+RETURN_ESCAPED(
       Utils::ToLocal(i::direct_handle(self->GetSource(), i_isolate)));
 }
 
@@ -1097,7 +1098,4 @@ void v8::Set::CheckCast(Value* that) {
 
 void v8::Promise::CheckCast(Value* that) {
   Utils::ApiCheck(that->IsPromise(), "v8
-"""
-
-
 ```

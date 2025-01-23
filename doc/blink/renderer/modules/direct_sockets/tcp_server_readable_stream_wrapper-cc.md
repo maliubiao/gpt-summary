@@ -180,15 +180,17 @@ By following this systematic approach, we can effectively analyze the C++ code a
 
 通过以上分析，我们可以了解 `tcp_server_readable_stream_wrapper.cc` 文件在 Chromium Blink 引擎中扮演的角色，以及它如何与 JavaScript 的 Direct Sockets API 协同工作。 理解这些有助于我们开发和调试使用 Direct Sockets API 的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/direct_sockets/tcp_server_readable_stream_wrapper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -307,7 +309,4 @@ void TCPServerReadableStreamWrapper::OnAccept(
 }
 
 }  // namespace blink
-
-"""
-
 ```

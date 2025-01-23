@@ -204,7 +204,7 @@ I should now synthesize this information into a concise summary.
 
 通过分析这些用户操作和对应的代码执行路径，可以帮助开发者理解代码的执行逻辑，排查问题。例如，如果在调整浏览器主题后页面样式没有正确更新，可以检查 `SettingsChanged` 中 `ChangeType::kColorScheme` 的处理逻辑是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/page.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -212,8 +212,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 cycle_state_->visibility;
 }
 
@@ -960,8 +962,4 @@ static_assert(kTenFrames < kMaxNumberOfFrames,
               "Reduced frame limit for testing should actually be lower");
 
 }  // namespace blink
-
-"""
-
-
 ```

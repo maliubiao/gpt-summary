@@ -149,7 +149,7 @@ shnodep was 0 instead of 1
 
 总而言之，这个 `main.c` 文件是一个用于测试 Frida 及其 Python 绑定在处理具有复杂依赖关系的共享库时链接行为是否正确的测试用例，它对于确保 Frida 的稳定性和功能正确性至关重要。  它涵盖了逆向工程中常见的动态链接概念，并涉及到操作系统底层的一些知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/145 recursive linking/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 #include "lib.h"
@@ -205,7 +207,4 @@ int main(void) {
   }
   return 0;
 }
-
-"""
-
 ```

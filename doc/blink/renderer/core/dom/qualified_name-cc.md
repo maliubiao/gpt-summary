@@ -143,15 +143,17 @@ By following these steps, you can systematically analyze the code and generate a
 
 在 Blink 的调试环境中，可以在 `QualifiedName` 的构造函数、缓存查找函数 (`GetQualifiedNameCache().AddWithTranslator`) 等关键位置设置断点，观察 `QualifiedName` 对象的创建和缓存过程，以及各个组成部分的值，从而帮助定位问题。例如，可以检查创建 `SVGRectElement` 时，传递给 `QualifiedName` 构造函数的参数是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/qualified_name.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2006, 2009 Apple Inc. All rights reserved.
  *
@@ -312,7 +314,4 @@ std::ostream& operator<<(std::ostream& ostream, const QualifiedName& qname) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

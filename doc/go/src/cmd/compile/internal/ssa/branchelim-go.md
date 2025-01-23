@@ -215,15 +215,17 @@ func main() {
 
 `go/src/cmd/compile/internal/ssa/branchelim.go` 中的代码实现了 SSA 中间表示的一个重要优化 pass，它通过识别简单的条件分支结构并将其转换为条件选择指令来提高代码效率。理解其工作原理有助于开发者编写出更容易被编译器优化的代码，尽管开发者通常不会直接配置或调用这个 pass。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/branchelim.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -694,9 +696,4 @@ func isPtrArithmetic(op Op) bool {
 		return false
 	}
 }
-
-"""
-
-
-
 ```

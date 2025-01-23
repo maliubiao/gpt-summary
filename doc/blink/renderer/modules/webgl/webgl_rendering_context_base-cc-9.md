@@ -154,7 +154,7 @@ This part of `webgl_rendering_context_base.cc` primarily focuses on **input vali
 
 作为 `webgl_rendering_context_base.cc` 文件的倒数第二个部分，这部分代码的核心功能是 **对 WebGL API 的参数进行严格的校验和错误处理**。它确保了传递给 WebGL 函数的参数符合规范，防止了潜在的崩溃和错误行为，并提供了错误报告机制，帮助开发者调试 WebGL 应用。 考虑到它在整个文件中的位置，可以推断出后续的部分可能包含与资源清理、上下文销毁或其他最终处理相关的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_rendering_context_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第10部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 on_name,
                       "width, height or depth < 0");
     return false;
@@ -1126,7 +1128,4 @@ void WebGLRenderingContextBase::TextureUnitState::Trace(
   visitor->Trace(texture_video_image_binding_);
   visitor->Trace(texture_external_oes_binding_);
   visitor->Trace(texture_rectangle_arb
-"""
-
-
 ```

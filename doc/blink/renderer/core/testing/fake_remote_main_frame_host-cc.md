@@ -99,15 +99,17 @@ By following these steps, I could provide a comprehensive and accurate answer to
 
 `fake_remote_main_frame_host.cc` 是一个用于测试的模拟对象，它简化了与浏览器进程的交互，允许开发者在隔离的环境中验证渲染进程中与主框架相关的逻辑。它与 JavaScript, HTML 和 CSS 的关系在于，它模拟的接口在真实场景中负责处理与这些 Web 技术相关的操作。理解这个文件的作用对于理解 Chromium 渲染引擎的测试策略和多进程架构至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/fake_remote_main_frame_host.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -135,7 +137,4 @@ void FakeRemoteMainFrameHost::UpdateTargetURL(
 void FakeRemoteMainFrameHost::RouteCloseEvent() {}
 
 }  // namespace blink
-
-"""
-
 ```

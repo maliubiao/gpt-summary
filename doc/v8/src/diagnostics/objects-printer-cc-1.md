@@ -138,7 +138,7 @@ Here's a breakdown of how to approach this:
 
 作为 `v8/src/diagnostics/objects-printer.cc` 的一部分，这段代码片段的核心功能是**提供了一系列用于打印 V8 堆中各种对象类型详细信息的函数**。  它专注于格式化输出对象的内部结构、属性和状态，包括数组、哈希表、上下文、函数信息、反馈向量等。这些打印功能是 V8 内部调试和诊断的重要组成部分，可以帮助开发者和 V8 工程师理解对象在内存中的布局和状态。 这部分代码主要关注基本的数据结构和对象类型的打印逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/objects-printer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/objects-printer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ices());
   }
   os << "\n - nof slack descriptors: " << number_of_slack_descriptors();
@@ -1093,7 +1095,4 @@ void JSCollectionIterator::JSCollectionIteratorPrint(std::ostream& os,
 }
 
 void JSSetIterator::JS
-"""
-
-
 ```

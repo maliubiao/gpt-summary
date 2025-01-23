@@ -153,14 +153,16 @@ V8 Isolate 是 V8 JavaScript 引擎中的一个独立执行环境。每个 Isola
 
 `v8_per_isolate_data.cc` 中定义的 `V8PerIsolateData` 类是 Blink 引擎中连接 JavaScript (通过 V8) 和浏览器内部实现的桥梁。它负责管理 V8 Isolate 的生命周期、缓存关键数据结构（如模板和字符串）、管理正则表达式上下文，以及提供与垃圾回收和崩溃报告集成的能力。理解 `V8PerIsolateData` 的功能有助于深入理解 Blink 如何执行 JavaScript 并与网页内容 (HTML, CSS) 进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/v8_per_isolate_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -612,7 +614,4 @@ void AddHistogramSample(void* hist, int sample) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

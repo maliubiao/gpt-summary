@@ -181,7 +181,7 @@ func main() {
 
 总而言之，这段 `goarch_arm64.go` 文件定义了 Go 语言在 ARM64 架构下运行所需要的一些关键底层参数，这些参数对于保证程序的正确执行和性能至关重要。  普通 Go 开发者无需直接操作这些常量，但了解它们背后的含义有助于更深入地理解 Go 语言的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/goarch/goarch_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -189,8 +189,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -204,9 +206,4 @@ const (
 	_MinFrameSize        = 8
 	_StackAlign          = 16
 )
-
-"""
-
-
-
 ```

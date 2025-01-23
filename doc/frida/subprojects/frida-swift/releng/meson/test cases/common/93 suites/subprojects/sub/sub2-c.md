@@ -202,7 +202,7 @@ By following these steps, the comprehensive analysis presented in the initial go
 
 总而言之，虽然 `sub2.c` 本身是一个非常简单的 C 程序，但它在 Frida 的测试环境中扮演着重要的角色，是验证 Frida 动态插桩能力、构建系统以及与其他组件（如 Frida-Swift）交互的基础测试用例。理解这个文件的功能和上下文，可以帮助我们更好地理解 Frida 的工作原理和进行问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/93 suites/subprojects/sub/sub2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -210,15 +210,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("I am test sub2.\n");
     return 0;
 }
-
-"""
-
 ```

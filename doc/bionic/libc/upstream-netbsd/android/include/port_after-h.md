@@ -240,7 +240,7 @@ if (Process.platform === 'android') {
 
 `port_after.handroid` 是 Bionic libc 中一个重要的移植适配文件，它包含了从 NetBSD 移植到 Android 后进行的平台特定调整。理解其作用需要结合具体的代码内容，但根据其命名和位置，我们可以推断其主要功能是进行常量、宏定义、类型定义、函数声明的适配，以及禁用或修改 NetBSD 特有的功能。通过 Frida Hook 这样的工具，我们可以动态地观察 libc 函数的行为，从而推断 `port_after.handroid` 可能产生的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/android/include/port_after.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -251,9 +251,9 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

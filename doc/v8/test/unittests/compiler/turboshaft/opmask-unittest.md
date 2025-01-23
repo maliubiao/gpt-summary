@@ -99,11 +99,13 @@ This iterative process of code analysis, hypothesis formation, example construct
 
 `opmask-unittest.cc` 通过创建一个简化的 "操作" 模型和相应的掩码，来测试 V8 Turboshaft 编译器中 `Opmask` 机制的基本功能。  虽然它不直接处理 JavaScript 代码，但它验证了编译器用于高效分析和处理 JavaScript 代码的核心基础设施的正确性。  `Opmask` 使得编译器能够快速地识别和操作特定类型的操作，从而进行各种优化和代码生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/turboshaft/opmask-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ TEST_F(OpmaskTest, PartialMask) {
 #undef FIELD
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

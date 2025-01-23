@@ -130,12 +130,14 @@ Response: The user wants to understand the functionality of the C++ code snippet
 
 总而言之，这个代码片段是 V8 引擎实现 JavaScript 正则表达式中高级 Unicode 特性的关键部分，确保了 JavaScript 开发者能够利用最新的 Unicode 标准进行更精确和强大的文本匹配。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 property_value_name, long_name) == 0) return true;
   }
   return false;
@@ -1466,8 +1468,4 @@ template bool RegExpParser::VerifyRegExpSyntax<base::uc16>(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

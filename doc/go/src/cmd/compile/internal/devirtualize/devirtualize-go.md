@@ -217,15 +217,17 @@ func main() {
 
 `go/src/cmd/compile/internal/devirtualize/devirtualize.go` 中的 `StaticCall` 函数实现了静态接口方法调用的去虚化优化。它通过在编译时分析接口变量的类型，尽可能将接口调用替换为对具体类型方法的直接调用，从而提升程序性能。 理解其原理有助于开发者编写出更易于编译器优化的 Go 代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/devirtualize/devirtualize.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -366,9 +368,4 @@ func StaticCall(call *ir.CallExpr) {
 	// Desugar OCALLMETH, if we created one (#57309).
 	typecheck.FixMethodCall(call)
 }
-
-"""
-
-
-
 ```

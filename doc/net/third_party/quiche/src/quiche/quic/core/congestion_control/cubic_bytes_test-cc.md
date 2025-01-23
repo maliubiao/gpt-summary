@@ -149,15 +149,17 @@ This systematic approach, moving from the general to the specific, helps in thor
 
 总而言之，`cubic_bytes_test.cc` 是 Chromium 网络栈中一个至关重要的测试文件，它确保了 CUBIC 字节模式拥塞控制算法的正确性，这对于保证 QUIC 连接的稳定性和性能至关重要。虽然 JavaScript 代码不会直接执行它，但 CUBIC 算法的行为会间接地影响用户的网络体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/congestion_control/cubic_bytes_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2015 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -546,7 +548,4 @@ TEST_F(CubicBytesTest, BelowOrigin) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

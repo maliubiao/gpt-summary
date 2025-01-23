@@ -124,14 +124,16 @@ Finally, organizing the information into clear sections (Functionality, Relation
 
 总而言之，`LinkResource` 是 Blink 引擎中处理 HTML `<link>` 元素的核心组件，它负责判断资源是否应该加载、获取资源信息（如字符编码）以及关联到正确的浏览上下文。理解其功能有助于开发者更好地理解浏览器如何处理外部资源，并避免一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/link_resource.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -208,7 +210,4 @@ void LinkResource::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

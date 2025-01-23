@@ -199,14 +199,16 @@ By following this thought process, I could systematically analyze the code and p
 
 总而言之，`blink/renderer/core/html/html_area_element.cc` 文件是 Blink 渲染引擎中实现 `<area>` 标签核心功能的重要组成部分，负责解析属性、计算热区几何形状、判断点击事件位置以及处理焦点等。它与 HTML 结构、JavaScript 交互以及 CSS 布局都有着密切的联系。理解这个文件的功能有助于我们更好地理解浏览器如何处理图像映射。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_area_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -473,7 +475,4 @@ void HTMLAreaElement::UpdateSelectionOnFocus(
 }
 
 }  // namespace blink
-
-"""
-
 ```

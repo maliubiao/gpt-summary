@@ -76,11 +76,13 @@ test(true);
 
 总结来说， `test-verify-type.cc` 这个测试文件深入 V8 引擎的内部，检验了编译器如何处理显式的类型提示，以及这些提示如何在编译的不同阶段被转化为更底层的操作，最终确保了基于类型信息的优化的正确性。虽然 `%VerifyType` 不是标准的 JavaScript 语法，但它反映了 V8 引擎在幕后进行类型推断和优化的重要机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-verify-type.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ TEST(TestVerifyType) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

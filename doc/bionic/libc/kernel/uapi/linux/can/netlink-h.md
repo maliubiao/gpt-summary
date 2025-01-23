@@ -323,7 +323,7 @@ Interceptor.attach(Module.findExportByName(null, "sendto"), {
 
 这个详细的解释涵盖了 `bionic/libc/kernel/uapi/linux/can/netlink.h` 文件的功能、与 Android 的关系、动态链接、使用错误、以及如何使用 Frida 进行调试。希望对您有所帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/can/netlink.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -334,8 +334,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -449,7 +451,4 @@ enum {
 };
 #define CAN_TERMINATION_DISABLED 0
 #endif
-
-"""
-
 ```

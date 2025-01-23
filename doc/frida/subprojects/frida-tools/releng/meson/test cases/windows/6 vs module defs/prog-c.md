@@ -175,7 +175,7 @@ Interceptor.attach(Module.findExportByName(null, "somedllfunc"), {
 
 总而言之，`prog.c` 是一个用于测试 Frida 在 Windows 环境下处理动态链接库和函数调用的简单但具有代表性的测试用例。它简洁地展示了如何依赖外部 DLL 函数，并为 Frida 提供了进行 hook 和分析的目标。 开发者通过查看这个文件，可以了解 Frida 如何在这种场景下工作，并可以利用它进行调试和逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/windows/6 vs module defs/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,14 +183,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int somedllfunc(void);
 
 int main(void) {
     return somedllfunc() == 42 ? 0 : 1;
 }
-
-"""
-
 ```

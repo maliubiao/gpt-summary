@@ -223,15 +223,17 @@ This iterative process of scanning, analyzing methods, identifying connections, 
 
 总而言之，`BackgroundFetchIconLoader` 是 Blink 渲染引擎中负责高效加载和选择后台抓取图标的关键组件，它连接了 JavaScript API 和底层的图片加载机制，确保用户能够看到清晰合适的后台任务图标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/background_fetch/background_fetch_icon_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -372,7 +374,4 @@ void BackgroundFetchIconLoader::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

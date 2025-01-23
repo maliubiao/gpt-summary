@@ -133,11 +133,13 @@ const date = new Date();
 
 `test-verifiers.cc` 文件是 V8 内部测试框架的一部分，专门用于验证 Torque 生成的类型验证器的正确性。它通过模拟类型违规的场景来确保 V8 的内部数据结构符合预期，从而保证 JavaScript 运行时的稳定性和安全性。虽然 JavaScript 开发者通常不会直接遇到这些内部错误，但这些验证器是 V8 确保自身正确运行的重要机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-verifiers.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -325,7 +327,4 @@ TEST_PAIR(TestWrongNumber) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

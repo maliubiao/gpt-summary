@@ -216,7 +216,7 @@ func main() {
 
 这段测试代码非常详尽地覆盖了 Go 运行时追踪的各种功能和边界情况，确保了 `internal/trace` 包的正确性和稳定性。理解这些测试用例有助于我们更好地理解 Go 语言的追踪机制以及如何有效地使用它。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/trace_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -224,8 +224,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -886,9 +888,4 @@ func testTraceProg(t *testing.T, progName string, extra func(t *testing.T, trace
 		runTest(t, false, "traceallocfree=1")
 	})
 }
-
-"""
-
-
-
 ```

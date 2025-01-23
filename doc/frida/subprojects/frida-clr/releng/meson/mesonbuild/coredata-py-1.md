@@ -188,7 +188,7 @@ By following these steps, I can thoroughly analyze the code and generate a compr
 
 `coredata.py` 文件的这部分主要负责 Meson 构建系统中核心配置选项的管理。它定义、读取、设置、验证和持久化各种构建选项，包括内置选项、项目选项和编译器选项。它还处理了与命令行参数的交互，并支持交叉编译等高级功能。理解这个文件对于理解 Meson 构建系统的运作方式以及如何配置 Frida 的构建至关重要，尤其是在进行逆向工程、需要针对特定目标平台构建 Frida 时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 values
         for key, opt in BUILTIN_OPTIONS.items():
             self.add_builtin_option(self.options, key.evolve(subproject=subproject), opt)
@@ -902,7 +904,4 @@ BUILTIN_CORE_OPTIONS: T.Dict['OptionKey', 'BuiltinOption'] = OrderedDict([
     (OptionKey('layout'),          BuiltinOption(UserComboOption, 'Build directory layout', 'mirror', choices=['mirror', 'flat'])),
     (OptionKey('optimization'),    BuiltinOption(UserComboOption, 'Optimization level', '0', choices=['plain', '0', 'g', '1', '2', '3', 's'])),
     (OptionKey('prefer_static'),   BuiltinO
-"""
-
-
 ```

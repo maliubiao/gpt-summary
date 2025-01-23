@@ -202,7 +202,7 @@ exit status 2
 
 总而言之，`flag.TextVar` 提供了一种强大且灵活的方式来处理需要自定义文本解析的命令行参数，但也需要使用者理解目标类型的解析逻辑以及错误处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/flag/example_textvar_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -210,8 +210,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -247,9 +249,4 @@ func ExampleTextVar() {
 	//     	IP address to parse (default 192.168.0.100)
 	// {ip: <nil>}
 }
-
-"""
-
-
-
 ```

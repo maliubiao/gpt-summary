@@ -127,7 +127,7 @@ void do_nasty(char *buf) {
 
 总而言之，`buggy.c` 是一个精心设计的简单程序，用于演示内存管理错误和环境变量的使用，并作为 Frida 动态 instrumentation 工具的测试用例，以验证其在处理存在 bug 的目标程序时的能力。它为逆向工程师、安全研究人员和 Frida 开发者提供了一个可控的环境来研究和调试相关的技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/2 testsetups/buggy.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -151,7 +153,4 @@ int main(int argc, char **argv) {
     free(ten);
     return 0;
 }
-
-"""
-
 ```

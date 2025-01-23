@@ -152,15 +152,17 @@ Let's break down the thought process for analyzing this `InnerHtmlAgent.cc` file
 
 总而言之，`InnerHtmlAgent` 在 Blink 引擎中扮演着重要的角色，负责提供获取 HTML 内容的能力，这与 JavaScript 的 DOM 操作、浏览器提供的各种功能以及开发者工具都有着密切的联系。它的存在使得 Blink 引擎能够响应获取 HTML 内容的需求，无论是来自页面自身的脚本，还是来自浏览器或其他进程的请求。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/content_extraction/inner_html_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -223,7 +225,4 @@ void InnerHtmlAgent::GetInnerHtml(GetInnerHtmlCallback callback) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

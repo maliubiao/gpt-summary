@@ -38,12 +38,14 @@ console.log(myObject.interceptedProperty); // 输出仍然可能是 100，取决
 
 **总结来说，这个C++文件是用来测试V8引擎的属性访问拦截器机制是否正常工作，确保C++代码能够按照预期地干预和自定义JavaScript对象的属性访问行为。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-interceptors.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1873,8 +1875,4 @@ THREADED_TEST(EmptyInterceptorDoesNotShadowReadOnlyProperty) {
   CheckInterceptorIC(EmptyInterceptorGetter,
                      HasICQuery<Local<Name>, v8::internal::ABSENT>,
                      "'use strict';"
-                  
-"""
-
-
 ```

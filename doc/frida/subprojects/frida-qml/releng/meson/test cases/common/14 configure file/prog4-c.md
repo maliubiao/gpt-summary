@@ -151,7 +151,7 @@ By following these steps, I can systematically analyze the code and address all 
 
 `prog4.c` 本身是一个非常简单的 C 程序，其核心功能是返回两个宏定义的和。然而，它作为 Frida 测试套件的一部分，其目的是为了验证 Frida 在处理依赖于配置的程序时的能力。分析这个文件涉及到对 C 语言、编译原理、操作系统底层知识以及 Frida 动态 instrumentation 原理的理解。用户通常会在开发、调试 Frida 或理解其测试机制的过程中接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/14 configure file/prog4.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,15 +159,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <config4a.h>
 #include <config4b.h>
 
 int main(void) {
     return RESULTA + RESULTB;
 }
-
-"""
-
 ```

@@ -146,7 +146,7 @@ Here's a breakdown of the thought process:
 
 到目前为止，我们了解到 `v8/src/codegen/interface-descriptors.h` 文件是 V8 代码生成部分的关键组成，它定义了描述 V8 内部函数调用规范的接口描述符。这些描述符与 JavaScript 的各种操作（属性访问、函数调用、对象创建等）紧密相关，指导着 V8 如何生成高效的机器码来执行这些操作。虽然这个文件本身不是 Torque 源代码，但它描述的接口与 Torque 定义的内置函数息息相关。理解这些描述符有助于深入了解 V8 引擎的内部工作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/interface-descriptors.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/interface-descriptors.h以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ype::AnyTagged(), MachineType::AnyTagged())
   DECLARE_DESCRIPTOR(GetIteratorStackParameterDescriptor)
 
@@ -988,7 +990,4 @@ class RunMicrotasksDescriptor final
 class WasmFloat32ToNumberDescriptor final
     : public StaticCallInterfaceDescriptor<WasmFloat32ToNumberDescriptor> {
  public:
-"""
-
-
 ```

@@ -124,15 +124,17 @@ const result = wasmExportedFunction(); // result 在 JavaScript 中会被表示�
 
 总而言之，`v8/src/compiler/wasm-call-descriptors.cc` 这个文件在 V8 编译 WebAssembly 代码时扮演着重要的角色，它定义了如何调用 V8 内部的函数来处理特定任务，特别是涉及 BigInt 类型与 WebAssembly 交互时的类型转换和调用约定。理解这些底层机制可以帮助开发者更好地理解 JavaScript 和 WebAssembly 之间的互操作性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-call-descriptors.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/wasm-call-descriptors.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -178,7 +180,4 @@ compiler::CallDescriptor* WasmCallDescriptors::GetLoweredCallDescriptor(
 #endif  // V8_TARGET_ARCH_32_BIT
 
 }  // namespace v8::internal::compiler
-
-"""
-
 ```

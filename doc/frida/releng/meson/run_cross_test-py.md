@@ -200,7 +200,7 @@ By following these steps, the detailed and comprehensive analysis provided earli
 
 总而言之，`frida/releng/meson/run_cross_test.py` 是 Frida 项目自动化测试流程中的一个关键组件，它专注于验证 Frida 在各种目标架构上的构建和运行能力，对于确保 Frida 的跨平台兼容性和功能正确性至关重要，同时也为逆向工程师提供了可靠的工具基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/run_cross_test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -208,8 +208,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2016 The Meson development team
@@ -261,7 +263,4 @@ def main():
 if __name__ == '__main__':
     print('Meson build system', meson_version, 'Cross Tests')
     raise SystemExit(main())
-
-"""
-
 ```

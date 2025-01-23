@@ -292,7 +292,7 @@ except KeyboardInterrupt:
 
 通过更深入的 Frida Hook，你甚至可以尝试 Hook 内核中的 NILFS2 文件系统驱动函数，但这通常需要 root 权限和对内核符号的了解，难度较高。这个简单的 `openat` Hook 可以帮助你了解用户空间程序如何通过系统调用与 NILFS2 文件系统进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/nilfs2_ondisk.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -303,8 +303,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -581,7 +583,4 @@ struct nilfs_sufile_header {
 };
 #define NILFS_SUFILE_FIRST_SEGMENT_USAGE_OFFSET ((sizeof(struct nilfs_sufile_header) + sizeof(struct nilfs_segment_usage) - 1) / sizeof(struct nilfs_segment_usage))
 #endif
-
-"""
-
 ```

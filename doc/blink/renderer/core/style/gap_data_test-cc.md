@@ -129,14 +129,16 @@ This iterative process of scanning, deducing, connecting to prior knowledge, and
 
 `gap_data_test.cc` 文件通过单元测试确保了 `GapData` 类在处理不同类型的间距数据时，其相等性比较的逻辑是正确的。这对于保证 Blink 渲染引擎正确解析和应用 CSS `gap` 属性至关重要，从而确保网页布局的正确性。虽然开发者不会直接使用 `GapData` 类，但理解其背后的逻辑有助于更好地理解 CSS `gap` 属性的工作原理，并避免在使用 CSS 和 JavaScript 进行样式操作时出现错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/gap_data_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ TEST(GapDataTest, GapDataEquivalence) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

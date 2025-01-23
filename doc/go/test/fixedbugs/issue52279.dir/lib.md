@@ -220,15 +220,17 @@ This code snippet doesn't directly involve processing command-line arguments. It
 
 In summary, this code defines a generic map type and a custom enumeration type with a string representation. The `Flip` method, while declared, is currently unimplemented and would be a point of confusion for users expecting it to reverse the map. The use of generics and the `String()` method on `MyType` are standard Go practices for creating reusable and well-formatted code. The `//go:noinline` directive on `Flip` hints at some specific optimization or debugging consideration during its development.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue52279.dir/lib.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 package lib
 
 type FMap[K comparable, V comparable] map[K]V
@@ -252,9 +254,4 @@ var typeStrs = FMap[MyType, string]{
 func (self MyType) String() string {
 	return typeStrs[self]
 }
-
-"""
-
-
-
 ```

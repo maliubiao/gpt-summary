@@ -132,13 +132,15 @@ This code is crucial for V8's ability to execute JavaScript. It directly transla
 
 总而言之，这部分 `compiler.cc` 代码是 V8 引擎编译 JavaScript 代码的核心组成部分，它直接决定了 JavaScript 代码如何被解析、优化并最终执行。从最简单的 `eval` 到复杂的模块加载和运行时优化，都离不开这部分代码的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-                              isolate, &is_compiled_scope);
+### 源代码
+```
+isolate, &is_compiled_scope);
 }
 
 // static
@@ -1579,8 +1581,4 @@ void ScriptStreamingData::Release() { task.reset(); }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

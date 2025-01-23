@@ -153,7 +153,7 @@ console.log(result); // 输出 5
 
 `v8/src/compiler/js-call-reducer.cc` 的第 1 部分主要定义了一个基础的框架和工具类 `JSCallReducerAssembler`，用于简化和优化 JavaScript 函数调用。它提供了一系列辅助方法，用于进行类型检查、构建控制流、操作中间表示，并针对一些核心的 JavaScript API（如 `Math`, `String.prototype`）和数组原型方法提供了初步的优化能力。此外，它还涉及对 `Promise` 构造函数和快速 API 调用的优化处理。 这个部分建立了进行后续更复杂优化的基础结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-call-reducer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -161,8 +161,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1007,7 +1009,4 @@ TNode<Object> JSCallReducerAssembler::JSCall3(
                            p.speculation_mode(),
                            CallFeedbackRelation::kUnrelated),
         fun
-"""
-
-
 ```

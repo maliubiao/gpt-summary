@@ -97,7 +97,7 @@ Let's break down the thought process for analyzing this simple C code snippet an
 
 `prog.c` 这个文件虽然代码简单，但在 Frida 的构建过程中扮演着重要的角色，它通过编译时断言来验证构建环境的正确性，特别是对于 GLib 库的依赖。这对于确保 Frida 工具的正确性和稳定性至关重要，也体现了软件构建过程中进行早期错误检测的重要性。对于逆向工程师来说，理解这种编译时的检查机制，有助于他们更好地理解和调试复杂的软件项目。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/linuxlike/6 subdir include order/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,8 +105,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <glib.h>
 
 #ifndef MESON_OUR_GLIB
@@ -114,7 +116,4 @@ Prompt:
 #endif
 
 int main(void) { return 0; }
-
-"""
-
 ```

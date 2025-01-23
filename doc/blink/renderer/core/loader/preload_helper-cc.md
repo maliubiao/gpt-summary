@@ -110,7 +110,7 @@ Based on the included headers, `preload_helper.cc` likely provides the following
 
 In summary, based on the included headers, the `preload_helper.cc` file in Chromium Blink is responsible for **handling resource preloading and related network optimizations**. This involves parsing and interpreting `<link>` tags (both in HTML and HTTP headers), evaluating media queries, managing fetch priorities, supporting module preloading, facilitating DNS prefetching and preconnecting, handling subresource integrity, interacting with the network layer, logging preload activity, and potentially utilizing idle browser time for certain tasks. It plays a crucial role in improving page load performance by proactively fetching resources that the browser anticipates needing in the future.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/preload_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -870,9 +872,4 @@ void PreloadHelper::PrefetchIfNeeded(const LinkLoadParameters& params,
     // TODO(domfarolino): Implement more privacy-preserving prefetch changes.
     // See crbug.com/988956.
   }
-
-  
-"""
-
-
 ```

@@ -138,11 +138,13 @@ V8 编译这个函数后生成的字节码可能包含以下类型的指令，�
 
 `BytecodeArrayIterator` 是 V8 引擎内部一个核心的组件，它充当了字节码数组的游标和解析器。  它的存在使得 V8 能够有效地遍历和执行编译后的 JavaScript 代码，是理解 V8 引擎执行流程的关键部分。它并不直接暴露给 JavaScript 开发者，而是 V8 内部实现的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-array-iterator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -544,7 +546,4 @@ void JumpTableTargetOffsets::iterator::UpdateAndAdvanceToValid() {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

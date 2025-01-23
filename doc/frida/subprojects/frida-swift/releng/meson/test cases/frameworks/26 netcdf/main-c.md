@@ -195,7 +195,7 @@ if __name__ == '__main__':
 
 因此，查看 `main.c` 文件的源代码是调试过程中的一个环节，目的是为了理解程序如何使用 NetCDF 库，并为编写有效的 Frida 脚本提供基础。通过 Hook 这些关键函数，可以动态地观察程序的行为，从而找到问题的根源或完成逆向分析的任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/26 netcdf/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "netcdf.h"
 
 int main(void)
@@ -219,7 +221,4 @@ if ((ret = nc_close(ncid)))
 
 return 0;
 }
-
-"""
-
 ```

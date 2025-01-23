@@ -141,7 +141,7 @@ func main() {
 
 总而言之，`go/src/runtime/vdso_linux_loong64.go` 是 Go 运行时为了在 LoongArch 64 位 Linux 系统上提高性能而进行的一项底层优化。它利用了 VDSO 机制来加速关键系统调用，对于最终用户来说是透明的，但对提升 Go 程序的整体性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/vdso_linux_loong64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -149,8 +149,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -179,9 +181,4 @@ var (
 	vdsoClockgettimeSym uintptr
 	vdsoGetrandomSym    uintptr
 )
-
-"""
-
-
-
 ```

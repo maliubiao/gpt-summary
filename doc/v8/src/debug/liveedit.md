@@ -173,11 +173,13 @@ myInner(); // 希望能输出 "Hi"
 
 `liveedit.cc` 是 V8 引擎实现 JavaScript 热重载的核心 C++ 代码。它通过比较代码差异、映射和更新函数信息、处理代码位置映射等一系列操作，使得开发者能够在不中断程序运行的情况下修改代码并立即生效，极大地提高了开发效率。它与 JavaScript 的关系是底层实现与上层语言特性的关系，JavaScript 的热重载功能依赖于 `liveedit.cc` 中复杂的 C++ 逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/liveedit.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1293,7 +1295,4 @@ int LiveEdit::TranslatePosition(const std::vector<SourceChangeRange>& diffs,
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

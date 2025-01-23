@@ -122,14 +122,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`highlight_registry_test.cc` 这个文件通过单元测试来确保 Blink 引擎的 `HighlightRegistry` 能够正确地管理和维护页面上的高亮效果，这对于实现诸如文本选择、代码高亮、阅读模式等功能至关重要，并直接影响着 Web 开发者通过 JavaScript 和 CSS 与这些功能进行交互的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/highlight/highlight_registry_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -392,7 +394,4 @@ TEST_F(HighlightRegistryTest, ValidateMarkers) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

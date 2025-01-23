@@ -107,7 +107,7 @@ The primary goal of this code is to generate debugging information in a format t
 
 总而言之，`v8/src/diagnostics/gdb-jit.cc` 的第一部分主要负责构建用于 GDB 调试 V8 JIT 代码的基础框架和数据结构。它定义了如何以平台特定的格式（Mach-O 或 ELF）组织调试信息，并提供了用于写入这些信息的工具类。核心目标是生成准确的 DWARF 调试信息和符号表，使得 GDB 能够理解 V8 动态生成的机器码，并将它们映射回原始的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/gdb-jit.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/gdb-jit.cc以.tq结尾，那它是个v8 torque源代码，
@@ -115,8 +115,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1280,8 +1282,4 @@ class DebugInfoSection : public DebugSection {
       }
 
       w->WriteULEB128(0);  // Terminate the sub program.
-  
-"""
-
-
 ```

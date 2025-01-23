@@ -109,7 +109,7 @@ By going through these steps, I can build a comprehensive understanding of the f
 
 总而言之，`frida/subprojects/frida-node/releng/meson/unittests/allplatformstests.py` 文件定义了一系列关键的单元测试，用于验证 Meson 构建系统在各种平台上的核心功能。 虽然它不是直接进行 Frida 逆向操作的代码，但它确保了 Frida 项目的构建基础是可靠的，从而间接地支持了逆向工程师使用 Frida。 这些测试覆盖了构建配置、文件处理、依赖管理和测试执行等方面，有助于发现 Meson 的潜在问题，并确保用户能够正确地构建和使用 Frida。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -860,8 +862,4 @@ class AllPlatformTests(BasePlatformTests):
                           self._run, self.mtest_command + ['--setup=valgrind'])
         with open(os.path.join(self.logdir, 'testlog-valgrind.txt'), encoding='utf-8') as f:
             vg_log = f.read()
-
-"""
-
-
 ```

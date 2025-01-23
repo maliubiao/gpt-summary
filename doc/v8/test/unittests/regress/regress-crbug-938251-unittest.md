@@ -73,11 +73,13 @@ try {
 
 C++ 单元测试 `regress-crbug-938251-unittest.cc` 的目的是验证 V8 引擎在内部处理非法数组长度时的正确性。它确保当尝试在内部创建负长度的 `FixedDoubleArray` 时，会触发一个特定的错误，这个错误对应于 JavaScript 在尝试创建非法长度数组时抛出的 `RangeError`。 这个测试确保了 V8 引擎对于非法数组大小的处理是健壮和一致的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/regress/regress-crbug-938251-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -98,7 +100,4 @@ TEST_F(NewFixedDoubleArrayTest, ThrowOnNegativeLength) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

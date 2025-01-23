@@ -153,7 +153,7 @@ SSLExtraCertChainPolicyPara: {AuthType:1 Checks:2 ServerName:example.com Size:10
 
 考虑到这是第 8 部分，并且总共有 9 部分，可以推测整个 `manifest.go` 文件可能按照字母顺序或其他某种逻辑组织了标准库中所有公共标识符的元数据信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/internal/stdlib/manifest.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -161,8 +161,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第8部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 N", Const, 0},
 		{"SO_ACCEPTFILTER", Const, 0},
 		{"SO_ATTACH_FILTER", Const, 0},
@@ -2207,9 +2209,4 @@ N", Const, 0},
 		{"CoverBlock.Line1", Field, 2},
 		{"CoverBlock.Stmts", Field, 2},
 		{"C
-"""
-
-
-
-
 ```

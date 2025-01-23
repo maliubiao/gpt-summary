@@ -104,15 +104,17 @@ Self-Correction/Refinement during the process:
 
 在调试与域名相关的问题时，例如 Cookie 没有按预期设置或网站安全策略出现异常，开发者可能需要深入 Chromium 的网络栈代码，这时就可能会接触到像 `lookup_string_in_fixed_set_unittest.cc` 这样的测试文件，以理解底层是如何处理域名信息的。 通过查看这些测试用例，可以了解哪些域名被认为是 eTLD，以及查找逻辑是如何工作的，从而帮助定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/lookup_string_in_fixed_set_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -365,7 +367,4 @@ TEST(LookupStringInFixedSetTest, Dafsa6EnumerateLanguage) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

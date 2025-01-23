@@ -158,15 +158,17 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 总之，`VideoEncoderBuffer` 虽然是 Blink 内部的实现细节，但它在 WebCodecs API 的视频编码流程中扮演着重要的角色。理解其功能有助于开发者理解 WebCodecs 的底层工作原理，并在遇到问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/video_encoder_buffer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ void VideoEncoderBuffer::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

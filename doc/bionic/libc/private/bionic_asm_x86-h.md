@@ -259,7 +259,7 @@ sys.stdin.read()
 
 `bionic_asm_x86.handroid` 这个头文件虽然小巧，但它在 Android 的动态链接机制中扮演着至关重要的角色。它定义的宏使得 Bionic libc 能够生成位置无关的代码，从而支持共享库的灵活加载和链接，这是 Android 系统高效运行的关键组成部分。理解这个文件及其相关的概念，有助于深入理解 Android 系统的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_asm_x86.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,8 +270,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: asm.h,v 1.40 2011/06/16 13:16:20 joerg Exp $	*/
 
 /*-
@@ -323,7 +325,4 @@ Prompt:
 #define PIC_GOTOFF(x)	x@GOTOFF(%ebx)
 
 #define __bionic_asm_align 16
-
-"""
-
 ```

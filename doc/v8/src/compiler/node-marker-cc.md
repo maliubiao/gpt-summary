@@ -124,15 +124,17 @@ NodeMarkerBase marker(graph_ptr, 0);
 
 另一个潜在的（但不太可能是用户直接造成的）错误是 **整数溢出** 导致 `mark_max_` 小于 `mark_min_`。这通常发生在 `graph->mark_max_` 接近其最大值时，加上 `num_states` 后发生溢出。虽然这不是直接的用户代码错误，但它提示了在设计和使用标记系统时需要考虑数值范围的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/node-marker.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/node-marker.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -154,7 +156,4 @@ NodeMarkerBase::NodeMarkerBase(Graph* graph, uint32_t num_states)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

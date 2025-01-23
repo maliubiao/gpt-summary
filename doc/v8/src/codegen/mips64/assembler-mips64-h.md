@@ -158,7 +158,7 @@ jr    ra          // 返回
 
 总而言之，`v8/src/codegen/mips64/assembler-mips64.h` 文件的核心功能是定义了用于生成 MIPS64 架构机器码的 `Assembler` 类及其相关的操作数类型。它是 V8 引擎将 JavaScript 代码转化为可在 MIPS64 处理器上执行的机器码的关键组成部分。它提供了操作 MIPS64 指令集所需的各种方法，并处理代码布局和重定位等底层细节。如果文件以 `.tq` 结尾，则表明它是用 Torque 语言编写的，用于定义 V8 的内部函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/assembler-mips64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/assembler-mips64.h以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) 1994-2006 Sun Microsystems Inc.
 // All Rights Reserved.
 //
@@ -960,7 +962,4 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBase {
   void cvt_s_d(FPURegister fd, FPURegister fs);
 
   void
-"""
-
-
 ```

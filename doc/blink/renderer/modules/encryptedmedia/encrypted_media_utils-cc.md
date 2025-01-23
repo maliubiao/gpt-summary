@@ -134,15 +134,17 @@ This iterative process, starting with a high-level understanding and then drilli
 
 在 Chromium 源代码中进行调试时，可以在 `encrypted_media_utils.cc` 文件中的转换函数入口处设置断点。当网页尝试播放加密媒体时，如果这些函数被调用，断点会被触发，可以检查传入的字符串值和转换结果，从而了解数据是如何在 JavaScript 和 Blink 内部之间转换的。此外，也可以查看 `ReportUsage` 函数的调用，了解 EME 使用情况的统计上报逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/encryptedmedia/encrypted_media_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -332,7 +334,4 @@ void EncryptedMediaUtils::ReportUsage(EmeApiType api_type,
 }
 
 }  // namespace blink
-
-"""
-
 ```

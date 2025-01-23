@@ -180,14 +180,16 @@ By following this thought process, combining code analysis with a deeper underst
 
 总而言之，`blink/renderer/platform/wtf/hash_set_test.cc` 是确保 `WTF::HashSet` 这个关键数据结构在 Blink 引擎中稳定可靠运行的重要组成部分，虽然它不直接暴露给 JavaScript, HTML 或 CSS 开发者，但其正确性直接影响着这些上层技术的性能和功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/hash_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Apple Inc. All rights reserved.
  *
@@ -685,7 +687,4 @@ static_assert(!IsTraceable<HashSet<int>>::value,
 }  // anonymous namespace
 
 }  // namespace WTF
-
-"""
-
 ```

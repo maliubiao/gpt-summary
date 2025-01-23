@@ -127,7 +127,7 @@ By systematically analyzing the code, the file path, and the broader context of 
 
 `bad.py` 文件本身是一个非常简单的文件，但它在 Frida 的测试框架中扮演着重要的角色。它作为一个负面示例，用于验证构建系统是否正确地排除了不应该安装的文件。它的存在和作用体现了软件开发中测试的重要性，特别是对于像 Frida 这样涉及到系统底层和安全性的工具。普通用户不会直接使用或接触到这个文件，但它的正确性直接关系到 Frida 的最终质量和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/252 install data structured/pysrc/bad.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,10 +135,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''mod.bad should not be installed'''
-
-"""
-
 ```

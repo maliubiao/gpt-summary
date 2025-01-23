@@ -198,15 +198,17 @@ for (let i = 0; i < 500000; i++) {
 
 `v8/src/heap/incremental-marking.h` 定义了 V8 引擎中至关重要的增量标记机制。它通过将垃圾回收的标记阶段分解为小步骤，显著减少了垃圾回收对 JavaScript 应用造成的停顿，提升了用户体验。虽然开发者不能直接控制增量标记，但理解其原理以及避免导致频繁垃圾回收的编程模式仍然是很重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/incremental-marking.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/incremental-marking.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -435,7 +437,4 @@ class V8_EXPORT_PRIVATE IncrementalMarking final {
 }  // namespace v8
 
 #endif  // V8_HEAP_INCREMENTAL_MARKING_H_
-
-"""
-
 ```

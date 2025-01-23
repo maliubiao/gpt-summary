@@ -174,7 +174,7 @@ Initially, I might have focused too much on what the C code *does* directly. How
 
 `prog.c` 作为一个非常简单的 C 程序，其主要功能是调用一个外部函数。在 Frida 的上下文中，它常被用作测试目标，用于验证 Frida 在处理函数调用、外部依赖等方面的能力。理解它的功能有助于理解 Frida 的工作原理和调试相关的 Frida 脚本或 Frida 本身的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/260 declare_dependency objects/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,12 +182,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern void foo(void);
 
 int main(void) { foo(); }
-
-"""
-
 ```

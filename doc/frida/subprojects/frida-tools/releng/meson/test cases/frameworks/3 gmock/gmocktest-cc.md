@@ -131,7 +131,7 @@ By following these steps, we can systematically analyze the code, connect it to 
 
 总而言之，`gmocktest.cc` 虽然是一个简单的单元测试用例，但它体现了 Frida 项目中使用的重要测试方法，并且可以作为理解 Frida 如何确保代码质量的一个入口点。对于想要深入了解 Frida 或者参与 Frida 开发的人来说，理解这类测试用例是非常有益的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/3 gmock/gmocktest.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<gtest/gtest.h>
 #include<gmock/gmock.h>
 
@@ -168,7 +170,4 @@ TEST(counttest, once) {
 
     EXPECT_EQ(f.getValue(), 42) << "Got wrong value";
 }
-
-"""
-
 ```

@@ -204,7 +204,7 @@ Essentially, I followed a top-down approach, starting with a broad overview and 
 
 这部分 `code-stub-assembler.h` 文件定义了 `CodeStubAssembler` 的核心功能，提供了用于在 V8 引擎的底层代码中**加载和存储各种 V8 堆对象的数据**的方法。它涵盖了数组、对象属性、函数信息、上下文、以及其他 V8 内部数据结构的访问和修改，并区分了安全操作和非安全操作，为性能关键的代码提供了更精细的控制。理解这部分代码的功能对于深入了解 V8 引擎的内部工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -212,8 +212,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ional_offset);
   }
 
@@ -886,8 +888,4 @@ ional_offset);
   TNode<Object> GetConstructor(TNode<Map> map);
 
   void FindNonDefaultConstructor(TNode<JSFunction> this_function,
-          
-"""
-
-
 ```

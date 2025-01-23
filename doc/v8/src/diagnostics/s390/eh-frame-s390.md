@@ -118,11 +118,13 @@ try {
 
 `eh-frame-s390.cc` 负责为 s390 架构生成描述函数调用栈结构的元数据 (eh_frame)。虽然 JavaScript 代码本身不直接操作 eh_frame，但 V8 引擎在处理 JavaScript 异常时会依赖这些信息来进行栈展开，从而找到合适的异常处理程序 (`catch` 块)。这个文件是 V8 引擎实现 JavaScript 异常处理机制的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/s390/eh-frame-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -186,7 +188,4 @@ const char* EhFrameDisassembler::DwarfRegisterCodeToString(int code) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

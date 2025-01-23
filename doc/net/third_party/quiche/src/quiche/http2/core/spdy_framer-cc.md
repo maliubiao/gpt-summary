@@ -110,7 +110,7 @@ fetch('https://example.com/data')
 
 `net/third_party/quiche/src/quiche/http2/core/spdy_framer.cc` 的核心功能是 **将 HTTP/2 协议的各种帧结构转换为可以在网络上传输的二进制字节流**。它负责帧的序列化，集成了 HPACK 压缩，处理帧分片，并为上层网络栈提供创建帧序列的接口。虽然 JavaScript 不直接调用该文件，但其网络请求过程依赖于 `spdy_framer.cc` 生成符合 HTTP/2 协议的帧数据。理解该文件的功能对于调试 HTTP/2 相关的网络问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/core/spdy_framer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1017,7 +1019,4 @@ class FlagsSerializationVisitor : public SpdyFrameVisitor {
   //     CONTINUATION frames.
   void VisitHeaders(const SpdyHeadersIR& headers) override {
     flags_ = HEAD
-"""
-
-
 ```

@@ -642,15 +642,17 @@ Filter* FilterEffectBuilder::BuildReferenceFilter(
 7. **与 Compositor 集成:**  `BuildFilterOperations` 方法用于生成 `CompositorFilterOperations` 对象，这是 Chromium 的合成器（Compositor）使用的滤镜表示。这使得滤镜效果可以在 GPU 上高效地执行。
 
 8. **处理坐标空间和单位:**  构造函数接收 `reference_box`，`viewport` 和 `zoom` 等参数，用于处理
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/filter_effect_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Apple Inc. All rights reserved.
  * Copyright (C) 2013 Google Inc. All rights reserved.
@@ -1208,7 +1210,4 @@ Filter* FilterEffectBuilder::BuildReferenceFilter(
 }
 
 }  // namespace blink
-
-"""
-
 ```

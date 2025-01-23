@@ -206,7 +206,7 @@ frida-agent: libfrida-gum.so.17.0.0
 
 `frida/subprojects/frida-gum/releng/meson/mesonbuild/depfile.py` 是 Frida 构建系统中一个关键的辅助脚本，负责解析依赖文件并构建内部的依赖关系图。它在理解 Frida 的模块组成、构建过程以及潜在的依赖问题方面扮演着重要的角色。虽然用户通常不会直接调用它，但理解其功能对于 Frida 的开发者和高级用户在构建、调试和分析 Frida 时非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/depfile.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -214,8 +214,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 Red Hat, Inc.
 
@@ -298,7 +300,4 @@ class DepFile:
         for dep in target.deps:
             deps.update(self.get_all_dependencies(dep, visited))
         return sorted(deps)
-
-"""
-
 ```

@@ -140,15 +140,17 @@ main starts
 
 总而言之，这段简单的代码展示了 Go 语言中包初始化机制的核心功能，即在包加载时自动执行 `init` 函数。虽然简单，但它是构建复杂 Go 程序的重要基础。理解 `init` 函数的行为对于避免潜在的初始化顺序问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue31636.dir/a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -158,9 +160,4 @@ package a
 func init() {
 	println("a")
 }
-
-"""
-
-
-
 ```

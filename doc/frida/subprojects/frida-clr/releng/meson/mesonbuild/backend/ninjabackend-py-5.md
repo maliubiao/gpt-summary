@@ -197,7 +197,7 @@ NinjaBuildElement(
 
 如果用户在构建过程中遇到问题，例如链接错误，可以检查生成的 `build.ninja` 文件中对应目标的构建规则，查看编译器和链接器的参数是否正确，以及依赖关系是否正确处理。这可以帮助定位问题是由 Meson 的配置错误引起的，还是由 `ninjabackend.py` 生成的构建规则错误引起的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -206,8 +206,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 [:]
         cmd += prelinker.get_prelink_args(prelink_name, obj_list)
 
@@ -660,8 +662,4 @@ def _scan_fortran_file_deps(src: Path, srcdir: Path, dirname: Path, tdeps, compi
                     mod_name = compiler.module_name_to_filename(ancestor_child)
                     mod_files.append(str(dirname / mod_name))
     return mod_files
-
-"""
-
-
 ```

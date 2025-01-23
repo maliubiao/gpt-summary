@@ -171,15 +171,17 @@ fcntl 系统调用编号: 72  // 这是一个示例值
 
 `go/src/cmd/vendor/golang.org/x/sys/unix/fcntl_linux_32bit.go` 这段代码通过在 32位 Linux 系统上将用于文件锁操作的底层系统调用设置为 `SYS_FCNTL64`，确保了 Go 语言在这些平台上文件锁功能的正确实现。  开发者通常不需要直接关注这个底层细节，而是应该使用 Go 标准库提供的更高级别的文件操作和锁机制。 理解这段代码有助于理解 Go 语言如何处理平台差异，并为开发者在进行底层系统调用时提供了一些警示。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/fcntl_linux_32bit.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -193,9 +195,4 @@ func init() {
 	// Flock_t type is SYS_FCNTL64, not SYS_FCNTL.
 	fcntl64Syscall = SYS_FCNTL64
 }
-
-"""
-
-
-
 ```

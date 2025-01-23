@@ -204,7 +204,7 @@ This iterative process of scanning, deducing, exemplifying, and refining helps i
 
 这段代码是 `go/src/crypto/rsa/rsa_test.go` 文件的一部分，专注于 **测试 RSA 算法的 OAEP 加密功能，并且特别关注了当 RSA 密钥的素数因子 p 小于 q 时的特定情况。** 它通过定义包含预先计算好的明文、标签和密文的测试用例，以及加载特定的 RSA 密钥来进行测试。此外，它还展示了如何使用环境变量 (`GODEBUG`) 来影响 RSA 的测试行为，并考虑了不同底层加密库实现 (`boring`) 的情况。 总体而言，这部分代码旨在确保 Go 语言 `crypto/rsa` 包中 OAEP 加密实现的正确性和健壮性，并覆盖了一些特定的边界情况。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/rsa/rsa_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -213,8 +213,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 4b, 0xaa, 0xd3, 0x0f, 0x74, 0x6d, 0xc9, 0x16,
 					0xdf, 0x24, 0xd4, 0xe3, 0xc2, 0x45, 0x1f, 0xff, 0x59,
 					0xa6, 0x42, 0x3e, 0xb0, 0xe1, 0xd0, 0x2d, 0x4f, 0xe6,
@@ -312,10 +314,4 @@ v/Ow5T0q5gIJAiEAyS4RaI9YG8EWx/2w0T67ZUVAw8eOMB6BIUg0Xcu+3okCIBOs
 	}
 	testEverything(t, k)
 }
-
-"""
-
-
-
-
 ```

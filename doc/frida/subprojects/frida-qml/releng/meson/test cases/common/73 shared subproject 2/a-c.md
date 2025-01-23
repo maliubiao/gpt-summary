@@ -155,7 +155,7 @@ Initially, I might have focused too much on the C code itself. However, the file
 
 通过查看这样的简单测试用例，用户可以隔离问题，排除一些复杂的因素，从而更好地理解 Frida 的行为和他们正在调试的目标程序。例如，如果在这个简单的测试用例上 Frida 的 Hook 功能都无法正常工作，那么问题很可能出在 Frida 的安装或配置上，而不是目标程序本身。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/73 shared subproject 2/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<assert.h>
 char func_b(void);
 char func_c(void);
@@ -178,7 +180,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

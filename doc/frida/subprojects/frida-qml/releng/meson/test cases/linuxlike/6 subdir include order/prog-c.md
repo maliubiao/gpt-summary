@@ -124,7 +124,7 @@ By following this thought process, considering the context, and making logical i
 
 开发者可以通过检查相关的 `meson.build` 文件，查看 `MESON_OUR_GLIB` 是在哪里定义的以及定义的条件，来进一步排查问题。  也可以检查 Meson 的构建日志，查看编译器的调用参数和错误信息，以便更精确地定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/linuxlike/6 subdir include order/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <glib.h>
 
 #ifndef MESON_OUR_GLIB
@@ -141,7 +143,4 @@ Prompt:
 #endif
 
 int main(void) { return 0; }
-
-"""
-
 ```

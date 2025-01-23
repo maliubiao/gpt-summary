@@ -100,14 +100,16 @@ By following these steps, I can systematically analyze the code and generate a c
 
 总而言之，`heap_mojo_remote_test.cc` 是一个关键的测试文件，它确保了 `HeapMojoRemote` 这个用于管理 Mojo 连接的重要工具在 Blink 引擎中能够可靠地工作，从而间接地保证了基于 Mojo 的各种浏览器功能的稳定性和资源效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mojo/heap_mojo_remote_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -309,7 +311,4 @@ TEST_F(HeapMojoRemoteMoveWithoutContextObserverTest, MoveSemantics) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

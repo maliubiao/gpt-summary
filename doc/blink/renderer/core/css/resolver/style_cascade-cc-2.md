@@ -175,7 +175,7 @@ This section of `StyleCascade` primarily focuses on:
 
 **In summary, this part of `StyleCascade` is crucial for handling dynamic CSS values provided by custom properties, attribute values, and the `appearance` property, ensuring that the correct styles are applied to elements based on these dynamic sources.** It plays a vital role in the cascade and inheritance of styles, particularly when dealing with modern CSS features.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_cascade.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nContext{},
                            /* stop_type */ kEOFToken, fallback)) {
       return false;
@@ -358,8 +360,4 @@ void StyleCascade::MaybeUseCountRevert(const CSSValue& value) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

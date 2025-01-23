@@ -153,14 +153,16 @@ By following these steps, I can systematically analyze the code, understand its 
 
 总而言之，`font_cache_skia_win.cc` 是 Blink 引擎在 Windows 平台上进行字体管理和渲染的关键组成部分。它负责高效地查找、创建和回退字体，确保网页文本能够正确、美观地显示。 理解其功能有助于开发者更好地理解浏览器如何处理字体，并避免常见的字体相关问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/win/font_cache_skia_win.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007 Apple Computer, Inc.
  * Copyright (c) 2006, 2007, 2008, 2009, 2012 Google Inc. All rights reserved.
@@ -698,7 +700,4 @@ const FontPlatformData* FontCache::CreateFontPlatformData(
 }
 
 }  // namespace blink
-
-"""
-
 ```

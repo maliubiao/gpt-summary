@@ -99,14 +99,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`external_date_time_chooser_test.cc` 文件是 Blink 引擎中保证日期/时间选择器功能正确性的重要组成部分，它通过各种测试用例覆盖了 `ExternalDateTimeChooser` 类的不同使用场景，并特别关注了之前出现过的 bug，确保了 Chromium 浏览器在处理 HTML 日期/时间输入时的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/external_date_time_chooser_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ TEST_F(ExternalDateTimeChooserTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

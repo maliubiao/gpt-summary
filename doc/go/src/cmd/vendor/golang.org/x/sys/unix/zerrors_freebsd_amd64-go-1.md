@@ -54,7 +54,7 @@ Here's a breakdown of the thought process to address the user's request:
 
 总而言之，这个文件是 Go 语言在 FreeBSD AMD64 平台上进行底层系统编程的基础，它通过定义清晰的常量，使得开发者能够更方便、更安全地与操作系统进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_freebsd_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -62,8 +62,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 OOPT                      = 0x8
 	TCP_NOPUSH                     = 0x4
 	TCP_PCAP_IN                    = 0x1000
@@ -475,10 +477,4 @@ var signalList = [...]struct {
 	{32, "SIGTHR", "unknown signal"},
 	{33, "SIGLIBRT", "unknown signal"},
 }
-
-"""
-
-
-
-
 ```

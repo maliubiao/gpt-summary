@@ -173,14 +173,16 @@ Blob {
 
 总而言之，`ShapeResultBloberizer` 是 Blink 渲染引擎中一个关键的组件，它负责将文本塑形的结果转换成可用于高效绘制的数据结构，是连接文本内容、样式和最终屏幕显示的重要桥梁。 虽然 Web 开发者通常不会直接操作它，但了解其功能有助于理解浏览器渲染文本的底层过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/shape_result_bloberizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -823,7 +825,4 @@ float ShapeResultBloberizer::FillFastHorizontalGlyphs(const ShapeResult* result,
 }
 
 }  // namespace blink
-
-"""
-
 ```

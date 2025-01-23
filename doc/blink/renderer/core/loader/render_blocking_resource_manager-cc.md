@@ -217,15 +217,17 @@ This systematic approach, moving from a high-level understanding to detailed cod
 
 总而言之，`RenderBlockingResourceManager` 是 Blink 引擎中负责优化首次渲染体验的关键组件，它通过管理字体预加载、`<link rel="expect">`、样式表和脚本等资源，尽可能地在必要资源准备就绪后立即渲染页面，避免不必要的白屏等待。理解其工作原理对于前端开发者优化页面加载性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/render_blocking_resource_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -566,7 +568,4 @@ void RenderBlockingResourceManager::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

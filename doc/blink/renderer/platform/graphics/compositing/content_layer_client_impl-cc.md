@@ -103,14 +103,16 @@ The user wants to understand the functionality of the `content_layer_client_impl
 
 `ContentLayerClientImpl` 是 Blink 渲染引擎中一个关键的桥梁，它连接了高层次的绘制指令（Paint Chunks）和底层的合成图层 (`cc::PictureLayer`)。它负责将网页内容的视觉表示转换为合成器可以高效处理和渲染的格式。理解它的功能有助于理解 Chromium 的渲染流水线，并能帮助开发者避免一些常见的渲染错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/content_layer_client_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -318,7 +320,4 @@ size_t ContentLayerClientImpl::ApproximateUnsharedMemoryUsage() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

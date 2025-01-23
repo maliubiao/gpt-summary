@@ -80,7 +80,7 @@ Now, I'll map these functionalities to the user's requests.
 
 总而言之，`ninjabackend.py` 的这一部分是 Frida 构建流程中至关重要的一环，它负责将高级的构建目标描述转化为 Ninja 构建系统可以执行的底层指令，涵盖了多种编程语言的编译和链接过程，并且需要对操作系统底层机制和各种编程语言的构建工具链有深入的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -89,9 +89,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
-         elem.add_item('DESC', f'Compiling resource {rel_sourcefile}')
+### 源代码
+```python
+elem.add_item('DESC', f'Compiling resource {rel_sourcefile}')
                 self.add_build(elem)
                 deps.append(ofilename)
                 a = '-resource:' + ofilename
@@ -722,8 +724,4 @@ Prompt:
                                        self.environment.get_build_dir(),
                                        target_slashname_workaround_dir,
                                        self.determine_rpath_dirs(target),
-                  
-"""
-
-
 ```

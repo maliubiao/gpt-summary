@@ -141,7 +141,7 @@ int func() {
 
 这个 `main.c` 文件本身是一个非常小的测试用例，它的目的是在一个受控的环境下，验证 Frida 是否能够正确地识别和操作动态链接的函数。在实际的 Frida 使用场景中，用户会使用 Frida 的 JavaScript API 来注入到目标进程，并利用 `Interceptor.attach()` 等方法来 Hook 目标程序中（包括共享库中）的函数，从而实现动态分析、修改程序行为等目的。这个简单的 `main.c` 文件是 Frida 功能测试的基础组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/30 shared_mod linking/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_IMPORT __declspec(dllimport)
 #else
@@ -162,7 +164,4 @@ int DLL_IMPORT func();
 int main(int argc, char **arg) {
     return func();
 }
-
-"""
-
 ```

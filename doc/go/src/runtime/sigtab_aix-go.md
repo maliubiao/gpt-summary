@@ -172,7 +172,7 @@ func main() {
 
 总之，`go/src/runtime/sigtab_aix.go` 是 Go 运行时在 AIX 操作系统上进行信号处理的关键配置，它定义了不同信号的默认行为，并与 Go 语言提供的 `os/signal` 包协同工作，允许开发者自定义信号处理逻辑。理解这个文件的作用有助于开发者更好地理解和处理 Go 程序的信号机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/sigtab_aix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -180,8 +180,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -446,9 +448,4 @@ var sigtable = [...]sigTabT{
 	254:         {_SigNotify, "signal 254"},
 	255:         {_SigNotify, "signal 255"},
 }
-
-"""
-
-
-
 ```

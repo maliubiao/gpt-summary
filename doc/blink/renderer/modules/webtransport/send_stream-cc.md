@@ -194,15 +194,17 @@ By following these steps, combining code analysis with knowledge of web platform
 
 总而言之，`blink/renderer/modules/webtransport/send_stream.cc` 文件是 WebTransport 发送流功能在 Blink 渲染引擎中的关键实现，它连接了 JavaScript API 和底层的网络传输机制。理解这个文件对于调试和理解 WebTransport 的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webtransport/send_stream.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ void SendStream::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

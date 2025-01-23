@@ -142,15 +142,17 @@ This iterative process of understanding the code, connecting it to the bigger pi
 
 总而言之，`selection_bounds_recorder.cc` 是 Blink 渲染引擎中一个关键的组件，它负责将抽象的文本选择信息转换为具体的视觉边界，确保用户在浏览器中进行文本选择时能够看到正确的反馈。 它深深地依赖于 HTML 结构和 CSS 样式，并响应用户的 JavaScript 操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/selection_bounds_recorder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -378,7 +380,4 @@ bool SelectionBoundsRecorder::IsVisible(const LayoutObject& rect_layout_object,
 }
 
 }  // namespace blink
-
-"""
-
 ```

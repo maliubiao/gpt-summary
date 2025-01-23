@@ -133,14 +133,16 @@ FencedFrameConfigDataView {
 
 总而言之，`redacted_fenced_frame_config_mojom_traits.cc` 是 Chromium 浏览器中负责围栏帧配置和属性在不同进程间可靠且安全传递的关键组件，它通过 Mojo Traits 机制实现了 C++ 数据结构和 Mojo 数据视图之间的桥梁。虽然不直接编写 JavaScript, HTML 或 CSS，但它处理的数据直接影响这些技术的功能和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/fenced_frame/redacted_fenced_frame_config_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -662,7 +664,4 @@ bool StructTraits<blink::mojom::FencedFramePropertiesDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

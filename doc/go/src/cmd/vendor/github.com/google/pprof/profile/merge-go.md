@@ -169,7 +169,7 @@ Error merging profiles: incompatible sample types [{Type:cpu Unit:nanoseconds}] 
 
 为了避免这个错误，需要确保所有待合并的 Profile 具有相同的采样类型和周期类型，或者在使用 `pprof` 工具时，使用适当的选项来转换或调整 Profile 的数据，使其兼容。 `CompatibilizeSampleTypes` 函数就是为了解决这类问题而设计的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/profile/merge.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -177,8 +177,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -853,9 +855,4 @@ func searchValueType(vts []*ValueType, s string) int {
 	}
 	return -1
 }
-
-"""
-
-
-
 ```

@@ -186,7 +186,7 @@ Here's how a user interacting with Frida might encounter these exceptions:
 
 In summary, the `exceptions.py` file provides a robust mechanism for handling errors during TOML parsing within the `tomlkit` library, which is a valuable tool for Frida when dealing with configuration files and data structures in the TOML format. Understanding these exceptions is crucial for debugging Frida scripts that interact with TOML data.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/tomlkit/tomlkit/exceptions.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 from typing import Collection
@@ -423,7 +425,4 @@ class InvalidStringError(ValueError, TOMLKitError):
             f"Invalid string: {delimiter}{repr_}{delimiter}. "
             f"The character sequences {invalid_sequences} are invalid."
         )
-
-"""
-
 ```

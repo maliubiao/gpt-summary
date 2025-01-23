@@ -162,15 +162,17 @@ This iterative process of scanning, detailing, connecting, reasoning, and antici
 
 总结来说，虽然普通用户不会直接操作 `memory_info.cc`，但他们在使用浏览器和网页的过程中产生的行为（例如加载大量资源、执行复杂的 JavaScript 代码）会间接地影响 JavaScript 堆内存的使用，而 `memory_info.cc` 负责提供这些内存使用情况的报告。开发者在进行性能分析、调试内存问题或开发新的浏览器特性时，可能会更深入地研究这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/memory_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -356,7 +358,4 @@ void MemoryInfo::SetTickClockForTestingForCurrentThread(
 }
 
 }  // namespace blink
-
-"""
-
 ```

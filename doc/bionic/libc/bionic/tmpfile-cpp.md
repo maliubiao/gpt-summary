@@ -310,7 +310,7 @@ session.detach()
 
 这个 Frida 脚本提供了基本的 hook 功能，你可以根据需要扩展它，例如读取或修改参数，或者在 `tmpfile` 创建的文件中写入数据等。请注意，hook 系统库函数需要 root 权限或在可调试的应用上进行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/tmpfile.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -321,8 +321,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*-
  * Copyright (c) 1990, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -461,7 +463,4 @@ char* tmpnam(char* s) {
   snprintf(s, L_tmpnam, "%s/tmpnam.XXXXXXXXXX", __get_TMPDIR());
   return mktemp(s);
 }
-
-"""
-
 ```

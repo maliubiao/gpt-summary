@@ -160,11 +160,13 @@ try {
 
 `startup-errors.cc` 这个 C++ 测试文件验证了 V8 引擎在处理 WebAssembly 模块实例化过程中出现的错误行为是否符合预期。它模拟了各种错误场景，并断言引擎能够正确地识别和报告这些错误。这直接保证了 JavaScript 中 `WebAssembly` API 在处理这些错误时的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/wasm-api-tests/startup-errors.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ TEST_F(WasmCapiTest, StartupErrors) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

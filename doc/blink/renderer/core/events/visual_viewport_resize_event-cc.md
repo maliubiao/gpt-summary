@@ -166,14 +166,16 @@ By following these steps, I can systematically analyze the code and generate a c
 
 总而言之， `blink/renderer/core/events/visual_viewport_resize_event.cc` 文件在 Blink 引擎中扮演着关键的角色，它定义了可视视口大小改变时触发的底层事件，为 JavaScript 提供了感知和响应视口变化的能力，并间接影响着 HTML 页面的布局和 CSS 媒体查询的应用。理解其功能有助于我们更好地理解浏览器的工作原理，并避免在前端开发中犯一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/visual_viewport_resize_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ void VisualViewportResizeEvent::DoneDispatchingEventAtCurrentTarget() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

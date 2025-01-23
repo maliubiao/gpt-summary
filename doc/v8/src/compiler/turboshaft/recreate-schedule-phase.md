@@ -83,11 +83,13 @@ for (let i = 0; i < 1000; i++) {
 
 `recreate-schedule-phase.cc` 文件定义了一个关键的编译阶段，它负责将 Turboshaft 编译器的结果转换成 Turbofan 编译器可以理解的格式，从而使得 V8 能够对 JavaScript 代码进行更深入的优化，最终提升 JavaScript 的执行性能。它在 V8 的优化编译流程中扮演着至关重要的桥梁作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/recreate-schedule-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -118,7 +120,4 @@ RecreateScheduleResult RecreateSchedulePhase::Run(
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

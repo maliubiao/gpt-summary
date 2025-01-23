@@ -149,7 +149,7 @@ const jsString = "hello";
 
 希望这个更全面的解释能够帮助你理解 `v8/src/objects/fixed-array.h` 的功能！
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/fixed-array.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/fixed-array.h以.tq结尾，那它是个v8 torque源代码，
@@ -157,8 +157,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 return memcmp(this->begin() + sizeof(T) * offset, buffer,
                   length * sizeof(T)) == 0;
   }
@@ -201,8 +203,4 @@ class TrustedPodArray : public PodArrayBase<T, TrustedByteArray> {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_FIXED_ARRAY_H_
-
-"""
-
-
 ```

@@ -301,7 +301,7 @@ sys.stdin.read()
 
 请注意，直接操作底层硬件接口在现代 Android 应用开发中非常少见，通常会通过更高层次的 Android API 或 HAL 进行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/atm_idt77105.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -312,8 +312,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -334,7 +336,4 @@ struct idt77105_stats {
 #define IDT77105_GETSTAT _IOW('a', ATMIOC_PHYPRV + 2, struct atmif_sioc)
 #define IDT77105_GETSTATZ _IOW('a', ATMIOC_PHYPRV + 3, struct atmif_sioc)
 #endif
-
-"""
-
 ```

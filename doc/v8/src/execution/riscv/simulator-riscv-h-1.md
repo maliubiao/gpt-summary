@@ -108,7 +108,7 @@ Here's a breakdown of the code and a plan to generate the summary:
 
 总而言之，这部分代码是 RISC-V 模拟器的核心实现，负责指令的解码、执行、状态维护以及调试和监控功能，使得 V8 能够在非 RISC-V 平台上运行和测试针对 RISC-V 架构的代码。它模拟了 RISC-V 处理器的关键行为，包括浮点运算、异常处理和内存同步机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/riscv/simulator-riscv.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/riscv/simulator-riscv.h以.tq结尾，那它是个v8 torque源代码，
@@ -116,8 +116,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 N
     if (std::isnan(alu_out) || std::isnan(src1) || std::isnan(src2) ||
         std::isnan(dst)) {
@@ -459,8 +461,4 @@ N
 
 #endif  // defined(USE_SIMULATOR)
 #endif  // V8_EXECUTION_RISCV_SIMULATOR_RISCV_H_
-
-"""
-
-
 ```

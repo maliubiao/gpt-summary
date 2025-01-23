@@ -177,15 +177,17 @@ special'chars
 
 总而言之，这段测试代码的核心在于验证 `PrintEnv` 函数在处理各种可能的环境变量值时，能否生成在目标操作系统下正确执行的 shell 脚本代码，以达到设置或打印环境变量的目的。它体现了对平台差异和特殊字符处理的关注。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/envcmd/env_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -279,9 +281,4 @@ func FuzzPrintEnvEscape(f *testing.F) {
 		}
 	})
 }
-
-"""
-
-
-
 ```

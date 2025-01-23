@@ -136,7 +136,7 @@ std_test.go:28: stdPkgs is out of date: regenerate with 'go generate'
 
 这段代码的主要作用是自动化地确保 `go/doc/comment` 包中维护的标准库列表是最新的，这对于像文档生成、代码分析等依赖于标准库信息的工具来说至关重要。它通过执行 `go list std` 命令来获取权威的当前标准库列表，并与本地维护的列表进行比较，从而保证数据的一致性。开发者需要通过 `go generate` 命令来更新 `stdPkgs` 变量，以保持其与实际标准库的同步。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/doc/comment/std_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -144,8 +144,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -180,9 +182,4 @@ func TestStd(t *testing.T) {
 		t.Errorf("stdPkgs is out of date: regenerate with 'go generate'\n%s", diff.Diff("stdPkgs", []byte(have), "want", []byte(want)))
 	}
 }
-
-"""
-
-
-
 ```

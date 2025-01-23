@@ -120,14 +120,16 @@ Let's break down the thought process to analyze the provided C++ code and fulfil
 
 总而言之，`media_stream_mojom_traits_unittest.cc` 通过测试 `blink::mojom::TrackControls` 的序列化和反序列化，确保了在浏览器内部处理媒体流请求时，能够正确地传递和处理与设备选择相关的约束条件，这对于 `getUserMedia` 和 `getDisplayMedia` 等 Web API 的正确运作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/mediastream/media_stream_mojom_traits_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ TEST(MediaStreamMojomTraitsTest, TrackControlsSerialization_OtherStreamTypes) {
     }
   }
 }
-
-"""
-
 ```

@@ -98,7 +98,7 @@ Now, I will go through each functionality and see if it relates to reverse engin
 
 这段代码主要负责测试 Meson 构建系统在处理各种构建选项、子项目管理、错误和警告信息以及命令行参数时的正确性。它涵盖了选项的设置、内省、动态变化，子项目的提升，错误和警告信息的定位，以及对用户常见错误的使用场景进行验证。这是 Frida 构建系统测试套件的一部分，旨在确保 Frida 在不同平台上的可靠构建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,9 +107,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
-      if x.get('name') == 'list':
+### 源代码
+```python
+if x.get('name') == 'list':
                     return x
             raise Exception(opts)
 
@@ -788,7 +790,4 @@ Prompt:
         # Subprojects warn correctly
         self.assertRegex(out, r"foo\| .*WARNING: Project targets '>=0.40'.*'0.44.0': disabler")
         self.assertRegex(out, r"baz\
-"""
-
-
 ```

@@ -102,7 +102,7 @@ The user wants a summary of the `composite_edit_command.cc` file in the Chromium
 
 `CompositeEditCommand` 在 Blink 渲染引擎中扮演着**组织和协调复杂编辑操作**的关键角色。它允许将多个独立的编辑步骤组合成一个原子性的、可撤销的操作，并负责管理这些操作的执行顺序、选区状态更新、样式处理以及事件触发。它是实现富文本编辑功能的基础架构，确保了编辑操作的一致性和可靠性，并为撤销/重做功能提供了必要的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/composite_edit_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ep::From(destination_selection.AsSelection()));
   ReplaceSelectionCommand::CommandOptions options =
       ReplaceSelectionCommand::kSelectReplacement |
@@ -646,8 +648,4 @@ void CompositeEditCommand::AppliedEditing() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

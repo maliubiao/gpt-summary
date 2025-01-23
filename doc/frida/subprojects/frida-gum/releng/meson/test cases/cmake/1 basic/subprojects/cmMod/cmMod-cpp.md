@@ -122,7 +122,7 @@ Initially, I might have focused too heavily on the direct functionality of the `
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/test cases/cmake/1 basic/subprojects/cmMod/cmMod.cpp` 文件是 Frida 构建系统的一个基础测试用例，用于验证 CMake 子项目在 Meson 构建环境下的集成是否正常。虽然它本身的功能很简单，但它在确保 Frida 工具链的正确性和可靠性方面起着重要的作用，这对于 Frida 的用户和开发者来说都是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cmake/1 basic/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -147,7 +149,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

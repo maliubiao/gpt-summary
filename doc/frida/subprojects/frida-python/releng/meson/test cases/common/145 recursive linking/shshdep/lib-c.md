@@ -114,7 +114,7 @@ Here's a thinking process to arrive at the explanation of the C code:
 
 总而言之，这个简单的 `lib.c` 文件虽然功能单一，但它体现了共享库的基本概念、动态链接、函数导出以及模块间的依赖关系。在逆向工程和软件开发中，理解这些概念至关重要。 Frida 的测试用例包含这样的代码，正是为了验证其在处理动态链接场景下的插桩能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/145 recursive linking/shshdep/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "../lib.h"
 
 int get_shnodep_value (void);
@@ -132,7 +134,4 @@ SYMBOL_EXPORT
 int get_shshdep_value (void) {
   return get_shnodep_value ();
 }
-
-"""
-
 ```

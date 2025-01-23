@@ -149,7 +149,7 @@ Hello
 
 总而言之，这个 `main.cpp` 文件虽然简单，但它是 Frida 构建系统测试套件的一部分，用于验证构建过程中的基本功能，确保 Frida 能够成功构建并最终用于其核心功能：动态 instrumentation 和逆向工程。 开发者会因为构建问题而接触到这个文件，并通过分析其内容和构建配置来定位和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/13 system includes/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 
@@ -169,7 +171,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

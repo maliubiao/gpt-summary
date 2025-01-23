@@ -94,7 +94,7 @@ By following this structured thought process, focusing on the context provided b
 
 虽然 `frida/subprojects/frida-core/releng/meson/test cases/failing/87 pch source different folder/src/pch.c` 文件本身是空的，但它在 Frida 的构建系统中扮演着一个测试用例的角色，用于检验当 PCH 源文件不存在或为空时，构建系统是否能正确处理。这反映了 Frida 开发者对构建过程严谨性的要求，以及对各种可能出现的问题的预判和测试。这个特定的测试用例与编译优化、构建系统配置以及潜在的构建失败有关，间接地影响到 Frida 的开发和使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/87 pch source different folder/src/pch.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -102,9 +102,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

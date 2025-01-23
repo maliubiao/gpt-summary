@@ -162,15 +162,17 @@ By following these steps, I arrive at the comprehensive explanation provided in 
 
 这部分 `css_animations.cc` 文件的主要功能是**解析 CSS 动画的定义并将其转换为浏览器内部可以处理的数据结构**。它负责从 `@keyframes` 规则中提取关键帧信息，并根据 `animation-*` 属性创建和管理 `CSSAnimation` 对象。此外，它还包含了计算动画时间和进度的关键逻辑，为后续的动画执行奠定了基础。这部分代码是 Blink 引擎中实现 CSS 动画的核心组件之一，直接关系到网页中 CSS 动画的正确渲染和 JavaScript 对动画的控制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css/css_animations.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -914,8 +916,4 @@ class SpecifiedTimelines {
       const TimelineInset& inset =
           (!insets || insets->empty())
               ? TimelineInset()
-        
-"""
-
-
 ```

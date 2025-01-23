@@ -69,9 +69,12 @@ By following these steps, I can systematically analyze the code and arrive at a 
 
 **总结一下，这个文件的核心目的是通过基准测试来衡量 `cppgc` 库在分配小对象和大对象时的性能。它通过循环分配对象并禁用垃圾回收来隔离分配操作的性能，并记录分配的字节数。这有助于开发者了解 `cppgc` 的内存分配效率。**
 
-Prompt: ```这是目录为v8/test/benchmarks/cpp/cppgc/allocation_perf.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/benchmarks/cpp/cppgc/allocation_perf.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -127,6 +130,4 @@ BENCHMARK_F(Allocate, Large)(benchmark::State& st) {
 }  // namespace
 }  // namespace internal
 }  // namespace cppgc
-
-"""
 ```

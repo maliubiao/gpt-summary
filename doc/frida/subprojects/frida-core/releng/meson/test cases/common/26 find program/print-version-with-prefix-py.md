@@ -145,7 +145,7 @@ Frida 可以用来拦截这个命令的执行或者模拟这个命令的返回�
 
 虽然 `print-version-with-prefix.py` 本身是一个非常简单的脚本，但它在 Frida 的上下文中作为一个测试用例，用于验证 Frida 处理带有特定命令行参数的程序的能力。这涉及到对命令行参数的解析、进程的启动和可能的拦截。理解这个脚本的功能有助于理解 Frida 如何被测试，以及在逆向工程中获取目标程序版本信息的一种常见方法。  当 Frida 的开发者或用户遇到相关问题时，这个测试用例可以作为一个调试和理解问题的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/26 find program/print-version-with-prefix.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -163,7 +165,4 @@ if len(sys.argv) != 2 or sys.argv[1] != '--version':
     exit(1)
 
 print('Version: 1.0')
-
-"""
-
 ```

@@ -196,14 +196,16 @@ By following this structured approach and thinking about the connections between
 
 总之，`graphics_context_test.cc` 是 Blink 渲染引擎中一个至关重要的测试文件，它确保了核心绘图功能的正确性和稳定性，这直接关系到网页在浏览器中的正确渲染。 理解它的功能有助于开发者更好地理解浏览器的工作原理以及如何避免常见的绘图错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/graphics_context_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -452,7 +454,4 @@ TEST_F(GraphicsContextDarkModeTest, InvertLightnessPlusContrast) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

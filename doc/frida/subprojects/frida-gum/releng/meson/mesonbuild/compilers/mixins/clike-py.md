@@ -158,7 +158,7 @@ A developer working on Frida might step into this code while debugging issues re
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/mesonbuild/compilers/mixins/clike.py` 文件定义了 Meson 构建系统中用于处理 C 和 C++ 编译器的基础功能。它负责管理和生成传递给编译器的参数，并提供了一系列检查编译器环境和能力的方法。这些功能对于确保 Frida-gum 能够正确地编译和链接代码至关重要。对于逆向工程师而言，理解这些功能有助于理解目标软件的编译过程，并辅助进行静态和动态分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/compilers/mixins/clike.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2023 The Meson development team
 
@@ -896,8 +898,4 @@ class CLikeCompiler(Compiler):
         main = '''
         int main(void) {{
           return {func} ();
-    
-"""
-
-
 ```

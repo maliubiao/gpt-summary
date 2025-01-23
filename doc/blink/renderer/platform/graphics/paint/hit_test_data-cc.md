@@ -94,14 +94,16 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
 总而言之，`blink/renderer/platform/graphics/paint/hit_test_data.cc` 文件中的 `HitTestData` 类是 Blink 渲染引擎中用于管理和传递点击测试相关信息的核心组件，它在浏览器正确处理用户交互事件方面起着至关重要的作用，并且与 Web 开发中使用的 HTML、CSS 和 JavaScript 功能密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/hit_test_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -181,7 +183,4 @@ std::ostream& operator<<(std::ostream& os, const HitTestData* data) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -166,15 +166,17 @@ While `dla.h` aims to *mitigate* these errors, understanding common mistakes is 
 
 `v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/dla.h` is a C header file defining foundational macros for double-length floating-point arithmetic. While JavaScript developers don't directly interact with this file, the techniques it represents are crucial for ensuring the accuracy of numerical computations within the V8 engine, helping to mitigate common floating-point errors. The `CN` macro is a key component in algorithms that split double-precision numbers to represent them with higher precision.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/dla.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/dla.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 /*
  * IBM Accurate Mathematical Library
  * Copyright (C) 2001-2022 Free Software Foundation, Inc.
@@ -213,7 +215,4 @@ Prompt:
 /* CN = 1+2**27 = '41a0000002000000' IEEE double format.  Use it to split a
    double for better accuracy.  */
 #define  CN   134217729.0
-
-"""
-
 ```

@@ -121,23 +121,21 @@ UsedInPageReload("loading='lazy'", true);
 
 `UsedInPageReload("loading='lazy'", true);` 这个测试用例的功能是验证 Blink 引擎在页面重新加载时，对于设置了 `loading='lazy'` 属性的框架元素（很可能是 `<iframe>`），其懒加载行为是否能够正确保持和触发。 它确保了页面重新加载不会导致这些元素的懒加载状态丢失，并且 `LazyLoadFrameObserver` 能够在这种场景下正常工作。 这补充了 Part 1 可能涵盖的基础懒加载功能的测试，专注于页面重新加载这个特定的生命周期事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/lazy_load_frame_observer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 UsedInPageReload("loading='lazy'", true);
 }
 
 }  // namespace
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -82,7 +82,7 @@ This step-by-step process ensures that all aspects of the prompt are addressed c
 
 总而言之，这个 `prog.c` 文件是一个非常小的但很重要的测试用例，用于在 Frida 的构建过程中验证 GLib 库的配置是否正确，从而确保最终构建出的 Frida 工具能够正常运行。用户一般不会直接操作这个文件，但当构建 Frida 遇到问题时，这个文件可能会作为调试线索被提及。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/linuxlike/6 subdir include order/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -90,8 +90,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <glib.h>
 
 #ifndef MESON_OUR_GLIB
@@ -99,7 +101,4 @@ Prompt:
 #endif
 
 int main(void) { return 0; }
-
-"""
-
 ```

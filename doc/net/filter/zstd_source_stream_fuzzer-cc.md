@@ -128,15 +128,17 @@ By following this systematic approach, we can dissect the provided C++ code, und
 
 总而言之，`net/filter/zstd_source_stream_fuzzer.cc` 是一个用于确保 Chromium 网络栈中 Zstd 解压缩功能安全可靠的关键工具，它通过自动化地测试各种输入场景来帮助发现潜在的 bug。虽然最终用户和普通开发者不会直接接触这个文件，但它所测试的代码直接影响着用户浏览体验，特别是在访问使用 Zstd 压缩的网站时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/filter/zstd_source_stream_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
   return 0;
 }
-
-"""
-
 ```

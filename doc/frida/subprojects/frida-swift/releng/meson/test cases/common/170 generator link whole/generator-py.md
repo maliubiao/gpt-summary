@@ -177,7 +177,7 @@ Initially, I might have focused too much on the specific task of returning the f
 
 因此，当开发者遇到与这个脚本相关的问题时（例如生成的代码不正确），他可以通过查看 Meson 的构建日志，了解脚本是如何被调用的，以及传递了哪些参数。这可以帮助定位问题是出在脚本本身，还是 Meson 的配置上。 开发者也可能手动运行这个脚本进行测试，提供特定的输入来观察输出结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/170 generator link whole/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -217,7 +219,4 @@ int {name}(void) {{
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

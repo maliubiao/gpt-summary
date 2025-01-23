@@ -161,14 +161,16 @@ This structured approach, moving from a high-level understanding to detailed ana
 
 `css_preload_scanner.cc` 是 Blink 引擎中一个重要的性能优化组件，它通过在 HTML 解析早期快速扫描 CSS 内容，提前发现并请求加载 `@import` 引入的外部样式表，从而减少页面的首次渲染时间，提升用户体验。虽然它不是一个完整的 CSS 解析器，但其针对 `@import` 规则的快速处理能力，对于提高页面加载速度至关重要。理解其功能和限制，有助于开发者编写更优化的前端代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/css_preload_scanner.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008, 2010 Apple Inc. All Rights Reserved.
  * Copyright (C) 2009 Torch Mobile, Inc. http://www.torchmobile.com/
@@ -504,7 +506,4 @@ void CSSPreloadScanner::EmitRule(const SegmentedString& source) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -168,7 +168,7 @@ Here's a breakdown of how I'll approach this:
 
 作为构建可访问性树和提供辅助技术所需信息的关键环节，`AXNodeObject::Description` 函数负责确定一个 `AXNodeObject` 的可访问描述。它是整个可访问性计算流程中的一个重要组成部分，确保了网页内容的含义能够被不同能力的用户理解和使用。 这部分代码专注于从多种来源（包括 ARIA 属性、原生 HTML 属性和特定的 HTML 元素）收集并确定最合适的描述信息，为最终呈现给辅助技术的可访问性信息奠定了基础。 可以推测，其他部分可能涉及可访问性名称的计算、角色确定、事件处理以及与操作系统辅助功能 API 的交互等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_node_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ription = DatetimeAncestor()->Description(
         datetime_ancestor_name_from, description_from, description_objects);
     if (!result.empty() && !ancestor_description.empty())
@@ -1037,7 +1039,4 @@ AXObject* AXNodeObject::NextOnLine() const {
     // current one is inert or aria-hidden.
     // We don't necessarily want to keep searching in the case of any ignored
     // node, because we anticipate t
-"""
-
-
 ```

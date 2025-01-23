@@ -102,7 +102,7 @@ Let's break down the thought process to arrive at the detailed analysis of that 
 
 总而言之，这个简单的 `lib.c` 文件虽然没有复杂的代码逻辑，但它在 Frida 的测试和开发流程中扮演着重要的角色，用于验证错误处理机制，提醒开发者潜在问题，并确保即使在某些特定情况下，Frida 仍然可以正常构建和运行。 它反映了开发者对软件质量和用户体验的关注。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/265 default_options dict/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,10 +110,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #warning Make sure this is not fatal
-
-"""
-
 ```

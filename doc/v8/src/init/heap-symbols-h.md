@@ -119,7 +119,7 @@ console.log(arr.toString()); // 输出 "1,2,3"
 
 `v8/src/init/heap-symbols.h` 是 V8 引擎初始化过程中至关重要的一个头文件。它定义了一系列预先分配在堆上的内部化字符串常量。这些字符串涵盖了 JavaScript 语言的核心概念，包括内置对象、属性名、方法名等。通过使用内部化字符串，V8 引擎能够优化字符串的存储和比较，从而提升性能。该文件通过不同的宏对内部化字符串进行分类管理，以满足不同初始化阶段的需求。虽然它本身不包含执行逻辑，但其定义的内容是 V8 引擎解析和执行 JavaScript 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/heap-symbols.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/init/heap-symbols.h以.tq结尾，那它是个v8 torque源代码，
@@ -127,8 +127,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -569,8 +571,5 @@ Prompt:
   V(_, Symbol_match_all_string, "Symbol.matchAll")                            \
   V(_, Symbol_replace_string, "Symbol.replace")                               \
   V(_, symbol_species_string, "[Symbol.species]")                             \
-  V(_, Symbol_species_string, "Symbol.species")    
-"""
-
-
+  V(_, Symbol_species_string, "Symbol.species")
 ```

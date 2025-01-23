@@ -89,7 +89,7 @@ Here's a breakdown of the thought process to generate the response:
 
 这个文件的功能是 **全面地测试 Frida 构建系统中机器描述文件处理逻辑的正确性和健壮性**。它通过模拟各种场景和配置，验证 Meson 如何加载、解析和应用机器描述文件中的信息，包括目录设置、构建选项以及与环境变量的交互。这些测试对于确保 Frida 能够正确地配置交叉编译和本地编译环境至关重要，从而保证 Frida 能够在各种目标平台上成功构建和运行。 简而言之，它是 Frida 构建系统质量保证的重要组成部分，专注于机器描述文件相关的核心功能测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/unittests/machinefiletests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -98,9 +98,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-         name = os.path.basename(f.name)
+### 源代码
+```python
+name = os.path.basename(f.name)
 
             with mock.patch.dict(os.environ, {'XDG_DATA_HOME': d}):
                 self.init(testdir, extra_args=['--cross-file=' + name], inprocess=True)
@@ -320,8 +322,4 @@ Prompt:
                 break
         else:
             self.fail('Did not find expected option.')
-
-"""
-
-
 ```

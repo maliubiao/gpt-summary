@@ -280,7 +280,7 @@ AssertionError: root.objects.NativePointer: DIFF: {'name'}
 
 总而言之，`jsonvalidator.py` 是 Frida 开发流程中一个重要的质量保证工具，它通过验证 API 文档的正确性，间接地帮助用户避免因错误的文档而导致的使用问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/docs/jsonvalidator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -288,8 +288,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # SPDX-License-Identifier: Apache-2.0
@@ -486,7 +488,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     raise SystemExit(main())
-
-"""
-
 ```

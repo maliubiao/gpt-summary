@@ -96,12 +96,14 @@ console.log(duration.toString()); // 输出从 now 到 anotherInstant 的时间�
 
 总而言之，这个 C++ 文件是 V8 引擎中实现 `Temporal.Instant` 对象核心功能的关键部分，它将 JavaScript 中对 `Temporal.Instant` 的操作转化为底层的 C++ 代码执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第13部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ate, ns, increment_ns,
                                             rounding_mode);
 }
@@ -835,8 +837,4 @@ MaybeHandle<JSTemporalInstant> BuiltinTimeZoneGetInstantForCompatible(
 
 }  // namespace temporal
 }  // namespace v8::internal
-
-"""
-
-
 ```

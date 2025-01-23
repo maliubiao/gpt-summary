@@ -152,11 +152,13 @@ console.log(result); // 输出: 8
 
 `v8/src/compiler/c-linkage.cc` 是 V8 引擎中一个非常底层的组件，它定义了 JavaScript 引擎如何与 C/C++ 代码交互的规则。 它通过生成 `CallDescriptor` 对象，确保在 JavaScript 调用 C/C++ 函数时，参数能够正确地传递，返回值能够正确地接收，并且寄存器的使用符合目标架构的调用约定。 这对于实现 Node.js 的 native addons 和 V8 引擎自身的内部功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/c-linkage.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -521,7 +523,4 @@ CallDescriptor* Linkage::GetSimplifiedCDescriptor(Zone* zone,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

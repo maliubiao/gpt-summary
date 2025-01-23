@@ -109,7 +109,7 @@ The final step involves organizing the thoughts into a clear and structured answ
 
 `badformat.cpp` 文件本身的代码非常简单，但它的存在和位置揭示了 Frida 项目在构建和测试方面的一些重要考虑：确保代码格式化工具的正确配置，并且能够处理那些故意不符合格式规范的文件，这对于维护项目的代码质量和一致性至关重要。它虽然不直接参与逆向过程，但作为 Frida 工具链的一部分，间接地支持了 Frida 的核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/94 clangformat/not-included/badformat.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,11 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 class {
 };
-
-"""
-
 ```

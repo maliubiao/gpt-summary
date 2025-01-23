@@ -87,11 +87,13 @@ console.log('执行结束。');
 
 `etw-isolate-load-script-data-win.cc` 是 V8 引擎在 Windows 平台上使用 ETW 进行诊断的关键组成部分，它专注于跟踪和记录 JavaScript 脚本的加载信息，为性能分析和调试工具提供底层数据支持。 它不直接执行 JavaScript 代码，而是响应 JavaScript 代码执行过程中发生的脚本加载事件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/etw-isolate-load-script-data-win.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -400,7 +402,4 @@ base::LazyInstance<FilterDataType>::type etw_filter_payload =
 }  // namespace ETWJITInterface
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

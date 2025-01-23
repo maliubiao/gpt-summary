@@ -114,11 +114,13 @@ if (isMemoryValid(addressOfObject)) {
 
 `handler-outside-simulator.cc` 文件中的代码定义了在非模拟器环境下 V8 用于安全探测内存的底层机制。它通过汇编语言实现，尝试读取指定地址的字节，如果读取失败则触发硬件陷阱。这种机制对于 V8 的内存管理、安全性和错误处理至关重要，虽然 JavaScript 代码本身不会直接调用这些函数，但它们为 JavaScript 的可靠运行提供了基础保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/trap-handler/handler-outside-simulator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ asm(".att_syntax                                                \n"
     "  ret                                                      \n");
 
 #endif
-
-"""
-
 ```

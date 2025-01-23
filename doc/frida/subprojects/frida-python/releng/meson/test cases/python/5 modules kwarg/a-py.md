@@ -72,7 +72,7 @@ Frida 是一个动态 instrumentation 工具，广泛应用于软件逆向工程
 
 虽然 `a.py` 文件本身是空的，它在其所属的 Frida 测试框架中扮演着一个角色，可能是用于测试 Frida Python 绑定在处理模块相关操作时，对于空模块文件的行为。这与逆向工程的工具特性相关，涉及到对底层操作和潜在用户错误的考虑。 开发者通过构建和运行测试流程来到达这个文件，并以此来验证 Frida 的功能和健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/python/5 modules kwarg/a.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -80,9 +80,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

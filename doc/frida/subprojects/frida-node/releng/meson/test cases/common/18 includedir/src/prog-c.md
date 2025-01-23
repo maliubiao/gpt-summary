@@ -162,7 +162,7 @@ Finally, I organize the information into a clear and structured response, addres
 
 总而言之，`frida/subprojects/frida-node/releng/meson/test cases/common/18 includedir/src/prog.c` 这个文件虽然简单，但在 Frida 的测试和开发流程中扮演着重要的角色。 它是动态 instrumentation 的一个基本目标，可以用来验证 Frida 的核心功能，并作为学习 Frida 的一个简单示例。 逆向工程师可以通过理解这个文件的作用，更好地理解 Frida 的工作原理，并将其应用于更复杂的场景中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/18 includedir/src/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,14 +170,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "func.h"
 
 int main(void) {
     return func();
 }
-
-"""
-
 ```

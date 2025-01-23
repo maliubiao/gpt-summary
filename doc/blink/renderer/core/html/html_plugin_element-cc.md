@@ -81,15 +81,17 @@ The user wants a summary of the functionalities of the `HTMLPlugInElement` class
 
 总而言之，这部分代码为浏览器处理 HTML 中嵌入的插件奠定了基础，是 Blink 引擎中处理外部内容的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_plugin_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /**
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -915,8 +917,4 @@ void HTMLPlugInElement::DispatchErrorEvent() {
 bool HTMLPlugInElement::AllowedToLoadObject(const KURL& url,
                                             const String& mime_type) {
   if (url.IsEmpty() && mime_type.empty())
-   
-"""
-
-
 ```

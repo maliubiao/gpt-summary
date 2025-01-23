@@ -129,15 +129,17 @@ v7 = ...
 
 `rewriteValueAMD64latelower.go` 是 Go 编译器中一个关键的优化组件，它通过识别特定的 AMD64 指令模式并应用重写规则来提升生成代码的效率，尤其是在支持新指令集的架构上。它不直接对应用户的 Go 语言功能，而是在编译的幕后工作，以确保生成的机器码尽可能高效。用户可以通过设置环境变量或编译器标志间接影响其行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteAMD64latelower.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Code generated from _gen/AMD64latelower.rules using 'go generate'; DO NOT EDIT.
 
 package ssa
@@ -323,9 +325,4 @@ func rewriteValueAMD64latelower_OpAMD64SHRQ(v *Value) bool {
 func rewriteBlockAMD64latelower(b *Block) bool {
 	return false
 }
-
-"""
-
-
-
 ```

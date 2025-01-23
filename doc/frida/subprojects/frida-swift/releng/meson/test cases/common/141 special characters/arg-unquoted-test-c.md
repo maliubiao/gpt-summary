@@ -144,7 +144,7 @@ This iterative process of reading, analyzing, correcting assumptions, and connec
 
 `arg-unquoted-test.c` 是 Frida 的一个测试文件，用于验证程序在接收未被引号包裹的命令行参数时，能否正确地将参数的第一个字符与预定义的字符进行比较。这个测试涉及了命令行参数处理、宏定义、字符串操作以及断言等 C 语言基础知识，并与操作系统如何传递命令行参数等底层概念相关。理解这类测试用例有助于理解 Frida 的内部工作机制以及程序在处理命令行参数时可能遇到的各种情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/141 special characters/arg-unquoted-test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
@@ -172,7 +174,4 @@ int main(int argc, char **argv) {
   // Otherwise we'd test that as well
   return 0;
 }
-
-"""
-
 ```

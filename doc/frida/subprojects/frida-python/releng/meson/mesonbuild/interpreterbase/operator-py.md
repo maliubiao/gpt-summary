@@ -105,7 +105,7 @@ Here's a breakdown of the thinking process to generate the explanation of the `o
 
 `operator.py` 文件在 Frida 项目中定义了 Meson 构建系统使用的操作符。虽然它本身不直接参与 Frida 的运行时插桩功能，但它是 Frida 构建过程中的一个重要组成部分。理解这个文件有助于理解 Frida 的构建方式，这在高级逆向分析、Frida 的开发和调试过程中可能是有用的。用户通常不会直接操作这个文件，但当涉及到 Frida 的构建过程或构建问题的调试时，可能会间接地接触到它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/interpreterbase/operator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 
 from enum import Enum
@@ -147,7 +149,4 @@ class MesonOperator(Enum):
     IN = 'in'
     NOT_IN = 'not in'
     INDEX = '[]'
-
-"""
-
 ```

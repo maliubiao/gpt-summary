@@ -149,7 +149,7 @@ func main() {
 
 这是 `go/src/cmd/vendor/golang.org/x/sys/windows/types_windows.go` 文件的第 1 部分，它的主要功能是为 Go 语言在 Windows 平台上进行系统编程提供基础的类型和常量定义。它充当了 Go 代码和 Windows API 之间的桥梁，使得 Go 开发者可以使用 Go 语言调用底层的 Windows 功能。这些定义是 `syscall` 包在 Windows 上的实现基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/types_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -157,8 +157,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2272,9 +2274,4 @@ type IpAdapterAnycastAddress struct {
 	Flags   uint32
 	Next    *IpAdapterAnycastAddress
 	Addre
-"""
-
-
-
-
 ```

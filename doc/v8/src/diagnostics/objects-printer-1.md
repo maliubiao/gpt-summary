@@ -91,12 +91,14 @@ JSObject body size: 4
 
 总而言之，`objects-printer.cc` 中的这段代码是 V8 引擎内部调试工具的关键组成部分，它提供了将 V8 内部对象状态转化为可读文本的能力，帮助开发者理解 JavaScript 代码在引擎底层的运行方式和对象结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/objects-printer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 SetIteratorPrint(std::ostream& os) {
   JSCollectionIteratorPrint(os, "JSSetIterator");
 }
@@ -1941,8 +1943,4 @@ void Map::MapPrint(std::ostream& os) {
     os << "\n - unused property fields: " << UnusedPropertyFields();
   }
   os << "\n - elements kind: " << ElementsKindToString(elements_kind());
-  
-"""
-
-
 ```

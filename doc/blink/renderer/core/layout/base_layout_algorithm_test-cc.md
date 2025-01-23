@@ -115,14 +115,16 @@ By following these steps, combining code analysis with domain knowledge (web ren
 
 总而言之，`base_layout_algorithm_test.cc` 是一个为 Blink 引擎的布局算法提供测试基础架构的关键文件，它通过模拟不同的场景和条件，帮助开发者确保布局引擎的正确性和稳定性，最终保证网页在浏览器中的正确渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/base_layout_algorithm_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ ConstraintSpace ConstructBlockLayoutTestConstraintSpace(
 }
 
 }  // namespace blink
-
-"""
-
 ```

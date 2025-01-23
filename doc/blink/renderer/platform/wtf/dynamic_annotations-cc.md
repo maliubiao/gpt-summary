@@ -136,14 +136,16 @@ void ThreadB() {
 
 `dynamic_annotations.cc` 虽然不直接参与 Web 内容的呈现，但它是 Blink 引擎进行并发安全分析的重要基础设施。通过与 TSan 等工具的集成，它可以帮助开发者识别和管理并发问题，从而提高引擎的稳定性和可靠性，最终保障 JavaScript、HTML 和 CSS 能够在一个健康的环境中运行。 谨慎地使用这些 annotation 是非常重要的，以避免掩盖真正的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/dynamic_annotations.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -202,7 +204,4 @@ void WTFAnnotateBenignRaceSized(const char*,
 
 #endif  // defined(DYNAMIC_ANNOTATIONS_ENABLED) &&
         // !defined(DYNAMIC_ANNOTATIONS_EXTERNAL_IMPL)
-
-"""
-
 ```

@@ -147,11 +147,13 @@ This systematic approach, moving from code analysis to conceptual understanding 
 
 总之，`mutable-page-metadata.cc` 文件定义的 `MutablePageMetadata` 类是 V8 引擎堆内存管理的关键组成部分。它存储和管理着页面的各种动态信息，这些信息对于垃圾回收、对象分配和代码执行等至关重要，最终直接影响 JavaScript 代码的运行效率和内存管理。虽然 JavaScript 开发者通常不需要直接与这些 C++ 概念打交道，但理解它们有助于更深入地了解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/mutable-page-metadata.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -381,7 +383,4 @@ int MutablePageMetadata::ComputeFreeListsLength() {
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

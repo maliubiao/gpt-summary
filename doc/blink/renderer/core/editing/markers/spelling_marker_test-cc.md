@@ -127,15 +127,17 @@ Let's break down the thought process to analyze the provided C++ test file.
 
 总而言之，`spelling_marker_test.cc` 是 Blink 引擎中一个重要的测试文件，它通过单元测试确保了 `SpellingMarker` 类的基本功能正确无误，从而为最终用户提供可靠的拼写检查体验奠定了基础。虽然用户不会直接与这个文件交互，但它的存在对于保证 Blink 引擎的质量至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/markers/spelling_marker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ TEST_F(SpellingMarkerTest, ConstructorAndGetters) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

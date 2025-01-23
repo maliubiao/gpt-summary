@@ -131,15 +131,17 @@ function processData(type) {
 
 总结来说，`v8/src/snapshot/shared-heap-serializer.h` 定义的 `SharedHeapSerializer` 类是 V8 启动优化中的一个关键组件，负责将共享堆中的对象序列化到快照中，从而提高启动速度和降低内存消耗。虽然 JavaScript 开发者不会直接操作这个类，但了解其功能有助于理解 V8 的内部工作原理和性能优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/shared-heap-serializer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/shared-heap-serializer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ class V8_EXPORT_PRIVATE SharedHeapSerializer : public RootsSerializer {
 }  // namespace v8
 
 #endif  // V8_SNAPSHOT_SHARED_HEAP_SERIALIZER_H_
-
-"""
-
 ```

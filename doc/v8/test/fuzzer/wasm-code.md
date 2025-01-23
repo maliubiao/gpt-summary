@@ -115,11 +115,13 @@ async function runWasm(wasmBytes) {
 
 `v8/test/fuzzer/wasm-code.cc` 这个文件定义了一个 Wasm 代码模糊测试器，它的核心思想是将随机的字节数据注入到 Wasm 函数的代码段中，然后通过 V8 引擎尝试加载和执行这些生成的 Wasm 模块。这是一种有效的技术，用于发现 V8 引擎在处理各种各样的 Wasm 代码（包括恶意或格式错误的 Wasm 代码）时可能存在的缺陷和漏洞，从而提高 V8 引擎的健壮性和安全性。 该文件与 JavaScript 的关系在于，它直接测试了 JavaScript 引擎执行 WebAssembly 代码的能力和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/wasm-code.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
 ```

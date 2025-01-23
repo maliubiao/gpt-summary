@@ -193,15 +193,17 @@ Throughout this process, I constantly refer back to the code to ensure my interp
 
 通过理解 `SVGFECompositeElement` 的功能和它在 Blink 渲染流程中的作用，开发者可以更好地理解和调试与 SVG 滤镜相关的渲染问题。 检查网络请求，查看控制台错误信息，以及使用开发者工具的元素面板查看元素的属性都是有用的调试手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_fe_composite_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2006 Rob Buis <buis@kde.org>
@@ -371,7 +373,4 @@ void SVGFECompositeElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

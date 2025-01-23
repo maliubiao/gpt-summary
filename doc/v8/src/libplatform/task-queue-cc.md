@@ -186,15 +186,17 @@ console.log("End");
 
 总而言之，`v8/src/libplatform/task-queue.cc` 提供了一个核心的线程安全异步任务管理机制，这对于 V8 引擎实现 JavaScript 的异步特性至关重要。 理解它的工作原理有助于理解 V8 如何处理诸如 `setTimeout`、Promises 和异步 I/O 等操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/task-queue.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/libplatform/task-queue.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ void TaskQueue::BlockUntilQueueEmptyForTesting() {
 
 }  // namespace platform
 }  // namespace v8
-
-"""
-
 ```

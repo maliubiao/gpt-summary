@@ -166,7 +166,7 @@ delete obj.b;
 
 这段 `v8/src/objects/js-objects.cc` 的代码是 V8 引擎中处理 JavaScript 对象属性删除和定义的核心部分。它实现了 JavaScript 语言规范中关于属性操作的关键语义，并考虑了各种复杂情况，例如原型链、拦截器以及不同类型的 JavaScript 对象。理解这部分代码有助于深入了解 JavaScript 引擎的工作原理以及如何高效地操作 JavaScript 对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -174,8 +174,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tOrCreateIdentityHash(Isolate* isolate) {
   DisallowGarbageCollection no_gc;
 
@@ -969,7 +971,4 @@ Maybe<bool> JSReceiver::ValidateAndApplyPropertyDescriptor(
       // current.[[Get]]) is false, return false.
       if (desc->has_get() &&
           !Object::SameValue(*desc->get(), *current-
-"""
-
-
 ```

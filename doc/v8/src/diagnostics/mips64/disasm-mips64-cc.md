@@ -121,7 +121,7 @@ let result = add(5, 10);
 
 总而言之，`v8/src/diagnostics/mips64/disasm-mips64.cc` 的主要功能是 **将 MIPS64 架构的机器码指令转换为人类可读的汇编语言表示形式**，以便开发者能够分析和理解 V8 引擎生成的底层代码。它支持多种 MIPS64 指令类型和操作数格式，并依赖于 `NameConverter` 来提供更具描述性的输出。 它的存在是为了帮助进行调试、性能分析和理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/mips64/disasm-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/mips64/disasm-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -129,8 +129,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1118,7 +1120,4 @@ int Decoder::FormatOption(Instruction* instr, const char* format) {
             }
             case '3': {  // 'bp3
               DCHECK(STRING_STA
-"""
-
-
 ```

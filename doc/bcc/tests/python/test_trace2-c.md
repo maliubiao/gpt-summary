@@ -81,7 +81,7 @@ Response:
 
 ### 总结
 此程序通过统计内核调度事件中不同任务的触发次数，展示eBPF基础能力。实际应用中需扩展指针解析（如从`task_struct`提取PID），并谨慎选择Hook点和内存访问方式。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/tests/python/test_trace2.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -90,8 +90,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) PLUMgrid, Inc.
 // Licensed under the Apache License, Version 2.0 (the "License")
 #include <linux/ptrace.h>
@@ -108,7 +110,4 @@ int count_sched(struct pt_regs *ctx) {
   }
   return 0;
 }
-
-"""
-
 ```

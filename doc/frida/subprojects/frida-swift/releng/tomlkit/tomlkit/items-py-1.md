@@ -192,7 +192,7 @@ This code defines the core data structures for representing and manipulating TOM
 
 总而言之，`frida/subprojects/frida-swift/releng/tomlkit/tomlkit/items.py` 的这一部分定义了 `tomlkit` 库中用于表示各种 TOML 数据类型的核心类，并提供了操作这些数据结构的必要方法。这些类负责存储数据本身以及相关的格式信息（如空格、逗号、注释），使得 `tomlkit` 能够解析、修改和生成符合 TOML 规范的文档。在 Frida 动态插桩的上下文中，这些类对于读取、分析和修改目标应用程序的 TOML 配置文件至关重要，从而实现对目标程序行为的动态控制和干预。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/tomlkit/tomlkit/items.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -201,8 +201,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 "
                 new_values.append(it)
                 data_values.append(it.value)
@@ -890,8 +892,4 @@ class Null(Item):
 
     def _getstate(self, protocol=3) -> tuple:
         return ()
-
-"""
-
-
 ```

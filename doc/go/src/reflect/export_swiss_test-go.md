@@ -173,7 +173,7 @@ go build -tags=goexperiment.swissmap your_program.go
 
 总而言之，`go/src/reflect/export_swiss_test.go` 中的 `MapGroupOf` 函数是 Go 语言 `swissmap` 实验性特性的一部分，用于获取给定键值类型的组合在 `swissmap` 内部所属的 "group" 的类型信息。使用者需要注意该功能是实验性的，并且需要通过构建标签显式启用才能使用。同时，需要理解返回的 `reflect.Type` 的含义，避免不恰当的使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/export_swiss_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -181,8 +181,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -195,9 +197,4 @@ func MapGroupOf(x, y Type) Type {
 	grp, _ := groupAndSlotOf(x, y)
 	return grp
 }
-
-"""
-
-
-
 ```

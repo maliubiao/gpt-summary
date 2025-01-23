@@ -170,15 +170,17 @@ By following these steps, you can effectively analyze a complex source code file
 
 总而言之，`blink/renderer/core/dom/scripted_animation_controller.cc` 是 Blink 引擎中一个至关重要的组件，它负责协调和同步与 JavaScript 脚本相关的动画和定时任务，确保 Web 页面的动画和动态效果能够平滑高效地运行。 了解它的工作原理有助于开发者更好地理解浏览器的渲染机制，并避免常见的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/scripted_animation_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All Rights Reserved.
  *
@@ -436,7 +438,4 @@ LocalDOMWindow* ScriptedAnimationController::GetWindow() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -255,15 +255,17 @@ By following these steps, systematically analyzing the code, and using domain kn
 
 总而言之，这段代码是 Go 语言为了在 AIX ppc64 平台上提供系统调用接口而实现的底层代码，它为 Go 的标准库提供了基础的功能支撑。开发者通常不需要直接操作这些代码，而是通过更高级别的包来间接使用这些功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_aix_ppc64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -347,9 +349,4 @@ func Stat(path string, statptr *Stat_t) error {
 	fixStatTimFields(statptr)
 	return nil
 }
-
-"""
-
-
-
 ```

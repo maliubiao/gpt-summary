@@ -86,12 +86,14 @@ function apiFunction() {
 
 这部分 `macro-assembler-mips64.cc` 代码是 MIPS64 架构下 V8 引擎代码生成器的核心组成部分，它实现了 JavaScript 函数调用、优化代码管理、与 C++ API 的交互以及必要的运行时调用机制，是 V8 引擎执行 JavaScript 代码的关键基础设施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/macro-assembler-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 tion_object, JSFunction::kCodeOffset));
   CallCodeObject(code, kJSEntrypointTag);
 #endif
@@ -471,8 +473,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 #undef __
 
 #endif  // V8_TARGET_ARCH_MIPS64
-
-"""
-
-
 ```

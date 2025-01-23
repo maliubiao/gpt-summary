@@ -181,7 +181,7 @@ frida_target = library('frida', 'frida.c', dependencies: dwarf_dep)
 
 总而言之，`external_project.py` 是 Frida 构建系统中一个关键的模块，它使得 Frida 可以灵活地集成和管理外部的软件组件，这对于一个复杂的工具如 Frida 来说是非常重要的。理解这个模块的功能有助于理解 Frida 的构建过程，并在遇到与外部依赖相关的构建问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/modules/external_project.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2020 The Meson development team
 
@@ -497,7 +499,4 @@ class ExternalProjectModule(ExtensionModule):
 
 def initialize(interp: 'Interpreter') -> ExternalProjectModule:
     return ExternalProjectModule(interp)
-
-"""
-
 ```

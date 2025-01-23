@@ -360,7 +360,7 @@ Android Framework Java 代码 (例如 ServiceManager.java)
 
 总而言之，`hsearch_r.c` 提供了 Android 系统中可重入的哈希表操作功能，无论是使用 NDK 开发的 Native 代码，还是 Android Framework 的 C/C++ 组件，都可以通过调用标准 C 库函数来使用这个功能。动态链接器本身也依赖哈希表的概念来实现高效的符号查找，虽然它可能使用自己的内部实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-freebsd/lib/libc/stdlib/hsearch_r.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -371,8 +371,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 2015 Nuxi, https://nuxi.nl/
  *
@@ -523,7 +525,4 @@ hsearch_r(ENTRY item, ACTION action, ENTRY **retval, struct hsearch_data *htab)
 	*retval = entry;
 	return (1);
 }
-
-"""
-
 ```

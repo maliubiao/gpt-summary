@@ -145,7 +145,7 @@ Initially, I might focus too much on the script's direct functionality. It's cru
 
 总而言之，虽然 `myinstall.py` 自身的功能很简单，但它在 Frida 项目的构建和测试流程中扮演着一个必要的角色，并且其行为与底层的操作系统和文件系统操作紧密相关。理解这个脚本的功能可以帮助理解 Frida 的安装过程，并在遇到安装问题时提供调试方向。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/53 install script/src/myinstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -169,7 +171,4 @@ if not os.path.exists(dirname):
 
 with open(os.path.join(dirname, sys.argv[2] + '.in'), 'w') as f:
     f.write('')
-
-"""
-
 ```

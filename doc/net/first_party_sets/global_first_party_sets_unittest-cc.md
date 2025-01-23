@@ -120,7 +120,7 @@ The goal for Part 1 is to summarize the core functionality of the file.
 
 总而言之，`net/first_party_sets/global_first_party_sets_unittest.cc` 文件的第一部分主要负责测试 `GlobalFirstPartySets` 类的基本功能，包括对象的创建、条目的查找、判空以及手动指定集合的应用等核心操作。这些测试覆盖了各种正常和异常情况，旨在确保该类能够正确地管理和查询第一方集合的数据，为 Chromium 浏览器中与 FPS 相关的其他功能提供可靠的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/first_party_sets/global_first_party_sets_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -968,7 +970,4 @@ TEST_F(
 }
 
 TEST_F(PopulatedGlobalFirstPartySetsTest, ComputeM
-"""
-
-
 ```

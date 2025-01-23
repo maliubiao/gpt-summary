@@ -94,16 +94,18 @@ Let's break down the thought process for analyzing this code snippet and answeri
 
 总而言之，`blink/renderer/platform/wtf/text/encoding_tables_test.cc` 的这一部分是 Blink 引擎字符编码测试的关键组成部分，它通过大量的预定义数据来验证编码转换功能的正确性，直接影响着浏览器处理网页文本的准确性，与 JavaScript, HTML, CSS 的文本渲染息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/encoding_tables_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第14部分，共24部分，请归纳一下它的功能
+```
 
-"""
- 0xC100},
+### 源代码
+```cpp
+0xC100},
     {11314, 0xC104}, {11315, 0xC108}, {11316, 0xC110}, {11317, 0xC115},
     {11318, 0xC11C}, {11319, 0xC11D}, {11320, 0xC11E}, {11321, 0xC11F},
     {11322, 0xC120}, {11323, 0xC123}, {11324, 0xC124}, {11325, 0xC126},
@@ -559,7 +561,4 @@ Prompt:
     {13404, 0xD46F}, {13405, 0xD478}, {13406, 0xD479}, {13407, 0xD47C},
     {13408, 0xD47F}, {13409, 0xD480}, {13410, 0xD482}, {13411, 0xD488},
     {13412, 0xD489}, {13413, 0xD48B}, {13414, 0xD48D}, {13415, 0xD494}
-"""
-
-
 ```

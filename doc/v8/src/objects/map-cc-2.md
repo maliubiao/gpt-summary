@@ -191,7 +191,7 @@ Object.setPrototypeOf(child, parent); // 设置 child 的原型为 parent
 
 总而言之，第 3 部分集中于 `Map` 对象在属性变化时如何进行转换和更新，这是 V8 引擎在保证 JavaScript 对象灵活性和性能之间取得平衡的关键机制。它涉及了查找现有转换、创建新转换、管理属性描述符以及处理潜在的性能瓶颈（如属性数量过多）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/map.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/map.cc以.tq结尾，那它是个v8 torque源代码，
@@ -199,8 +199,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 sition_symbol);
   if (!maybe_transition.is_null()) {
     return maybe_transition.ToHandleChecked();
@@ -999,8 +1001,4 @@ MaybeHandle<Map> NormalizedMapCache::Get(Isolate* isolate,
   }
   return handle(normalized_map, isolate);
 }
-
-"""
-
-
 ```

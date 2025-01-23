@@ -147,15 +147,17 @@ a.ref = b;
 
 `v8/src/heap/marking-barrier.cc` 是 V8 引擎垃圾回收机制中至关重要的组成部分，它负责在标记阶段记录对象之间的引用关系，确保垃圾回收器能够正确识别和回收不再使用的内存。虽然 JavaScript 开发者不会直接操作这个文件中的代码，但理解其功能有助于理解 JavaScript 的内存管理和避免常见的内存泄漏问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/marking-barrier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/marking-barrier.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -643,7 +645,4 @@ bool MarkingBarrier::IsMarked(const Tagged<HeapObject> value) const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

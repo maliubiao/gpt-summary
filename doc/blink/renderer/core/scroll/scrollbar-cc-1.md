@@ -137,7 +137,7 @@ My thought process for analyzing the provided code snippet and generating the re
 
 这部分代码主要负责提供 `Scrollbar` 对象的**视觉和上下文信息**，用于渲染和交互。它查询并返回滚动条的颜色、透明度、所属的颜色方案、关联的布局信息，以及判断其是否可见和应该绘制。这些信息是 Blink 渲染引擎在绘制和管理滚动条时所必需的。 与第一部分相比，这部分更侧重于滚动条的**呈现状态**，而不是其内部的逻辑和事件处理（这可能是第一部分的内容）。它将滚动条的渲染属性与 CSS 样式、浏览器设置（如颜色方案和强制颜色模式）以及用户的交互行为联系起来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scroll/scrollbar.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nst {
   if (style_source_) {
     return style_source_->StyleRef().ScrollbarThumbColorResolved();
@@ -218,8 +220,4 @@ bool Scrollbar::InForcedColorsMode() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -174,7 +174,7 @@ python stage1.py input.txt output.txt
 
 总结来说，`stage1.py` 是 Frida 测试套件中一个简单的文件操作脚本，用于验证 Frida 或其相关组件在特定场景下的行为。它通过断言输入文件的内容并生成一个输出文件来模拟或验证某种状态转换或数据生成过程。理解这个脚本的功能需要结合 Frida 的上下文以及它在测试流程中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/262 generator chain/stage1.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,15 +182,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 import sys
 from pathlib import Path
 
 assert(Path(sys.argv[1]).read_text() == 'stage1\n')
 Path(sys.argv[2]).write_text('stage2\n')
-
-"""
-
 ```

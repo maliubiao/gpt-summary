@@ -273,7 +273,7 @@ Interceptor.attach(Module.findExportByName(null, "ioctl"), {
 
 这个Frida脚本会hook `write`, `open`, 和 `ioctl` 系统调用。当程序调用这些函数时，`onEnter` 函数会被执行，我们可以检查传递给这些函数的参数，例如文件描述符、写入的数据、ioctl 命令等，从而观察与 FunctionFS 的交互过程。 通过分析输出，可以了解哪些描述符被写入，哪些ioctl命令被调用，以及与FunctionFS交互的顺序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/usb/functionfs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -284,8 +284,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -408,7 +410,4 @@ struct usb_functionfs_event {
 #define FUNCTIONFS_DMABUF_DETACH _IOW('g', 132, int)
 #define FUNCTIONFS_DMABUF_TRANSFER _IOW('g', 133, struct usb_ffs_dmabuf_transfer_req)
 #endif
-
-"""
-
 ```

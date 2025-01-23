@@ -159,7 +159,7 @@ WARNING: Project targets '0.54.0' but uses feature introduced in '0.57.0': the_n
 
 这些检查机制旨在帮助开发者保持项目配置与 Meson 版本的兼容性，避免使用可能导致未来构建失败的特性，并促进代码的维护性。它们通过在 Meson 配置阶段发出警告或通知来引导用户遵循最佳实践。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/interpreterbase/decorators.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 n f'Project specifies a minimum meson_version \'{tv}\' but uses features which were added in newer versions:'
 
     @staticmethod
@@ -290,8 +292,4 @@ class FeatureNewKwargs(FeatureCheckKwargsBase):
 
 class FeatureDeprecatedKwargs(FeatureCheckKwargsBase):
     feature_check_class = FeatureDeprecated
-
-"""
-
-
 ```

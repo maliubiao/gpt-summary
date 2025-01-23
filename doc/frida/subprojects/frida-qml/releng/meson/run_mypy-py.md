@@ -167,7 +167,7 @@ mypy >=0.812 is required, older versions report spurious errors
 
 总而言之，`run_mypy.py` 是 Frida 项目中用于保证代码质量的重要工具，它通过执行静态类型检查来提高代码的可读性、可维护性和可靠性，间接地支持了 Frida 的逆向工程能力。虽然它本身不直接涉及底层操作，但被检查的代码很多都与操作系统、内核、编译器等底层技术息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/run_mypy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from pathlib import Path
@@ -339,7 +341,4 @@ def main() -> int:
 
 if __name__ == '__main__':
     sys.exit(main())
-
-"""
-
 ```

@@ -133,7 +133,7 @@ I will now formulate the response based on these observations.
 
 总而言之，这部分测试代码通过模拟各种实际网页可能出现的布局场景，确保 `MobileFriendlinessChecker` 能够准确地识别出影响移动用户体验的问题，为开发者提供有价值的反馈，并最终提升移动网页的质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/mobile_metrics/mobile_friendliness_checker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -141,10 +141,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-  </body>
+### 源代码
+```cpp
+</body>
 </html>
 )HTML");
   ExpectUkm(ukm,
@@ -623,8 +624,4 @@ TEST_F(MobileFriendlinessCheckerTest, IFrameSmallTextRatio) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -185,7 +185,7 @@ console.log(obj instanceof MyClass); // 结果为 false，但用户可能误以�
 
 `v8/src/maglev/maglev-graph-builder.h` 定义了 `MaglevGraphBuilder` 类，它是 V8 中 Maglev 编译器的一个关键组件，负责将 JavaScript 字节码转换为 Maglev 图形表示。这个类提供了构建各种节点、处理控制流、管理状态以及支持多种优化的功能，为后续的 Maglev 编译阶段奠定了基础。它深入参与了 JavaScript 代码的执行流程，并将 JavaScript 的各种语法结构和语义转化为可供编译器优化的中间表示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-builder.h以.tq结尾，那它是个v8 torque源代码，
@@ -193,8 +193,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ryHasInstance(ValueNode* object,
                                                compiler::JSObjectRef callable,
                                                ValueNode* callable_node);
@@ -926,8 +928,4 @@ ryHasInstance(ValueNode* object,
 }  // namespace v8
 
 #endif  // V8_MAGLEV_MAGLEV_GRAPH_BUILDER_H_
-
-"""
-
-
 ```

@@ -139,7 +139,7 @@ Here's a breakdown of the thought process to answer the request:
 
 总之，这段代码片段的功能是测试 `VideoTrackAdapter` 正确地将编码后的视频帧分发给多个视频轨道的机制，这对于确保 WebRTC 和其他依赖视频流的应用的稳定性和正确性至关重要。它强调了线程安全和异步处理在视频处理中的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/video_track_adapter_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
     WebHeap::CollectAllGarbageForTesting();
   }
@@ -223,8 +225,4 @@ TEST_F(VideoTrackAdapterEncodedTest, DeliverEncodedVideoFrame) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

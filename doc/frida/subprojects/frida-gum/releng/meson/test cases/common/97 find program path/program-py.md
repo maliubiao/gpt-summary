@@ -120,7 +120,7 @@ frida my_app  # 假设用户想附加到名为 "my_app" 的程序
 
 因此，`program.py` 作为一个简单的测试目标，为 Frida 开发者提供了一个验证和调试 "查找程序路径" 功能的手段。它的存在不是为了给最终用户直接使用，而是为了确保 Frida 这个逆向工具的核心功能能够可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/97 find program path/program.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,12 +128,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print("Found")
-
-"""
-
 ```

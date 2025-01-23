@@ -305,7 +305,7 @@ demangler --format=gnu-v3 _Z3fooi
 
 结合第一部分（虽然我们没有看到），可以推测 `demangle.go` 完整的目的是提供一个 **C++ mangled name 的 demangler 库**，能够将编译器编码后的符号名称转换回人类可读的 C++ 声明形式。  `st.verbose` 字段暗示了它可能支持不同的输出详细程度。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/ianlancetaylor/demangle/demangle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -314,8 +314,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 isDigit(st.str[2]) {
 		st.advance(2)
 		// We don't include the scope count in the demangled string.
@@ -1466,10 +1468,4 @@ func (st *state) findArgumentPack(a AST) *ArgumentPack {
 	})
 	return ret
 }
-
-"""
-
-
-
-
 ```

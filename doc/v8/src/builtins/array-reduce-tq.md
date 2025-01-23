@@ -235,14 +235,16 @@ console.log(sumEmptyWithInitial); // 输出: 0
 
 总而言之，这段 Torque 代码是 V8 引擎中 `Array.prototype.reduce` 方法的高效实现，它考虑了优化的可能性，并处理了各种边界情况，包括用户可能犯的常见错误。理解这段代码有助于深入了解 JavaScript 内置方法的工作原理以及 V8 引擎的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-reduce.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -434,7 +436,4 @@ transitioning javascript builtin ArrayReduce(
   }
 }
 }
-
-"""
-
 ```

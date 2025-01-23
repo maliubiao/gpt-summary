@@ -141,11 +141,13 @@ observer_manager->StartObserving(variable_proxy_node, new TypeTrackingObserver()
 
 `v8/src/compiler/node-observer.cc` 中定义的 `NodeObserver` 机制是 V8 编译器内部用于监控和响应 IR 图中节点变化的关键组件。它帮助不同的编译阶段协同工作，并能实现诸如优化失效和重新优化等重要功能，从而确保 JavaScript 代码的高效执行。虽然 JavaScript 开发者不能直接使用这个 API，但它的存在直接影响了 JavaScript 代码的性能表现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/node-observer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ void ObserveNodeManager::OnNodeChanged(const char* reducer_name,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

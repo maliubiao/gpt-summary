@@ -243,7 +243,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/android/scsi/scsi/scsi_status.handroid` 是一个连接 Android 用户空间和 Linux 内核的桥梁，它定义了 SCSI 状态代码，使得 Android 系统能够理解底层存储设备的反馈。虽然它本身不包含可执行代码，但其定义的常量在整个 Android 存储子系统中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/android/scsi/scsi/scsi_status.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -254,8 +254,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -267,7 +269,4 @@ Prompt:
 #include <linux/types.h>
 #include <scsi/scsi_proto.h>
 #endif
-
-"""
-
 ```

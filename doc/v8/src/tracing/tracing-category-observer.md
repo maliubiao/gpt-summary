@@ -94,11 +94,13 @@ By following this structured approach, combining code analysis with domain knowl
 
 `tracing-category-observer.cc` 负责监听外部的追踪配置，并将这些配置同步到 V8 引擎的内部标志中。这使得 V8 的各个组件能够根据当前启用的追踪类别，决定是否生成追踪数据，从而支持开发者进行性能分析和调试。虽然 JavaScript 代码本身不能直接操作这个文件中的代码，但 JavaScript 开发者通过使用追踪工具间接地影响了它的行为，并利用它提供的追踪信息来理解和优化他们的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tracing/tracing-category-observer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -203,7 +205,4 @@ void TracingCategoryObserver::OnTraceDisabled() {
 
 }  // namespace tracing
 }  // namespace v8
-
-"""
-
 ```

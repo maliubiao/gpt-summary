@@ -199,11 +199,13 @@ counter(); // 输出 2  (闭包记住了 count 变量)
 
 总而言之，`v8/src/runtime/runtime-scopes.cc` 文件是 V8 引擎中负责管理 JavaScript 代码作用域和变量声明的关键组成部分，它通过 C++ 代码实现了 JavaScript 语言中与作用域相关的各种运行时行为。 这些运行时函数在 JavaScript 执行过程中被虚拟机调用，确保了 JavaScript 代码能够正确地访问和操作变量，并维护了不同作用域的隔离。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-scopes.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1260,7 +1262,4 @@ RUNTIME_FUNCTION(Runtime_StoreGlobalNoHoleCheckForReplLetOrConst) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

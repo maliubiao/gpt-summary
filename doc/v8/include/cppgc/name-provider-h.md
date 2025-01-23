@@ -155,15 +155,17 @@ let myObject = {};
 
 总而言之，`v8/include/cppgc/name-provider.h` 定义了一个用于为 `cppgc` 管理的对象提供人类可读名称的接口，这对于 V8 的内部运作和开发者工具都非常重要。 实现该接口时需要特别注意字符串的生命周期管理和避免在 `GetHumanReadableName()` 中进行堆操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/cppgc/name-provider.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/cppgc/name-provider.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -239,7 +241,4 @@ class V8_EXPORT NameProvider {
 }  // namespace cppgc
 
 #endif  // INCLUDE_CPPGC_NAME_PROVIDER_H_
-
-"""
-
 ```

@@ -101,7 +101,7 @@ png_data: <Bytes object containing the PNG data>
 4. **关闭连接**：用户调用 `close` 方法，关闭与 SpringBoard 服务的连接。
 
 通过这些步骤，用户可以逐步调试和验证 `SpringboardServicesClient` 类的功能。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/springboard-services.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class SpringboardServicesClient : Object, AsyncInitable {
@@ -215,7 +217,4 @@ namespace Frida.Fruity {
 		}
 	}
 }
-
-"""
-
 ```

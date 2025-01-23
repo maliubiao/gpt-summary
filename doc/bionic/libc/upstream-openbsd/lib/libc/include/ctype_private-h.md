@@ -263,7 +263,7 @@ if (Process.platform === 'android') {
 
 总结来说，`ctype_private.h` 定义了 `libc` 内部使用的字符类型信息表，这些表是实现标准 C 库字符处理功能的基础，并在 Android 系统和 NDK 开发中被广泛使用。开发者应该使用公共的 `ctype.h` 函数，而不是直接操作这些私有变量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/include/ctype_private.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -274,8 +274,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* $OpenBSD: ctype_private.h,v 1.2 2015/08/27 04:37:09 guenther Exp $ */
 /* Written by Marc Espie, public domain */
 #define CTYPE_NUM_CHARS       256
@@ -285,7 +287,4 @@ extern const char _C_ctype_[];
 extern const short _C_toupper_[];
 extern const short _C_tolower_[];
 __END_HIDDEN_DECLS
-
-"""
-
 ```

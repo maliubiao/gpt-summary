@@ -133,15 +133,17 @@ By following this kind of structured analysis, and iteratively refining understa
 
 总而言之，`remote_playback_test.cc` 是一个关键的测试文件，用于确保 Chromium Blink 引擎中 `RemotePlayback` 接口的正确性和稳定性。它涵盖了各种正常和异常情况，并为开发者提供了理解该接口工作原理的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/remoteplayback/remote_playback_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -601,7 +603,4 @@ TEST_F(RemotePlaybackTest, GetAvailabilityUrl) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

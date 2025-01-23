@@ -140,7 +140,7 @@ extern "C" void MyPPCFunction(v8::Local<v8::String> str) {
 
 这个文件为 V8 在 PPC 架构上生成正确高效的机器码提供了基础。它不是 Torque 代码，但与 JavaScript 的执行息息相关，因为它是将 JavaScript 代码转换为机器码的关键组成部分。理解其中的 ABI 约定对于编写与 V8 互操作的本地代码至关重要，否则容易引发编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/constants-ppc.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/constants-ppc.h以.tq结尾，那它是个v8 torque源代码，
@@ -148,8 +148,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -724,7 +726,4 @@ using Instr = uint32_t;
   /* VSX Scalar Reciprocal Square Root Estimate Double-Precision */          \
   V(xsrsqrtedp, XSRSQRTEDP, 0xF0000128)                                      \
   /* VSX Scalar Test for software Square Root Double-Precis
-"""
-
-
 ```

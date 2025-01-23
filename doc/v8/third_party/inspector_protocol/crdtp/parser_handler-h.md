@@ -228,15 +228,17 @@ fakeJSONParser(jsonInput, myHandler);
 
 总之，`v8/third_party/inspector_protocol/crdtp/parser_handler.h` 定义了一个关键的接口，用于处理来自流式解析器的事件，这对于 V8 引擎解析和处理各种数据格式（尤其是与 CRDTP 相关的格式）至关重要。理解其功能有助于开发者更好地理解 V8 内部的数据处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/parser_handler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/parser_handler.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ class ParserHandler {
 }  // namespace v8_crdtp
 
 #endif  // V8_CRDTP_PARSER_HANDLER_H_
-
-"""
-
 ```

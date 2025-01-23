@@ -175,14 +175,16 @@ auto font = blink::test::CreateTestFont(
 
 总而言之，`font_test_helpers.cc` 提供了一套强大的工具，用于在 Blink 渲染引擎的单元测试中模拟和控制字体行为，从而确保字体相关功能的正确性和稳定性。理解其功能和限制对于编写有效的字体相关测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/font_test_helpers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -369,7 +371,4 @@ ScopedTestFontPrewarmer::~ScopedTestFontPrewarmer() {
 
 }  // namespace test
 }  // namespace blink
-
-"""
-
 ```

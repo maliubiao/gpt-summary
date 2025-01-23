@@ -177,15 +177,17 @@ B2 -> B4 (Exit)
 
 `v8/src/compiler/turboshaft/analyzer-iterator.h` 定义的 `AnalyzerIterator` 类是 V8 编译器 Turboshaft 中用于高效遍历控制流图的关键组件，特别针对循环结构进行了优化，以提高编译效率和最终生成的机器代码的性能。 它不直接暴露给 JavaScript 开发者，但其优化工作直接影响着 JavaScript 代码的执行速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/analyzer-iterator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/analyzer-iterator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -320,7 +322,4 @@ class V8_EXPORT_PRIVATE AnalyzerIterator {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_ANALYZER_ITERATOR_H_
-
-"""
-
 ```

@@ -225,15 +225,17 @@ By following these steps, I can systematically analyze the C++ source code and e
 
 总而言之，`media_stream.cc` 是 Chromium Blink 引擎中 `MediaStream` API 的核心实现，负责管理媒体流的生命周期、包含的轨道以及相关的事件，是 WebRTC 功能的基础组成部分。理解其功能有助于理解 WebRTC 在浏览器中的工作原理，并为调试相关的 Web 应用提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  * Copyright (C) 2011, 2012 Ericsson AB. All rights reserved.
@@ -835,7 +837,4 @@ MediaStream* ToMediaStream(MediaStreamDescriptor* descriptor) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

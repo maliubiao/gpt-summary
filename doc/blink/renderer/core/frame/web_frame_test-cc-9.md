@@ -94,15 +94,17 @@ Considering this is part 10 of 19, it likely focuses on a specific set of relate
 
 这部分 `web_frame_test.cc` 主要测试了 **WebFrame 的拼写检查功能**以及与 **新窗口打开和初始文档访问相关的行为**。此外，还涵盖了 **滚动事件的处理，重定向时的 Cookie 策略，以及后退和重新加载操作的缓存机制**。这些测试确保了 WebFrame 在处理文本编辑、窗口交互、页面导航和资源加载等方面的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第10部分，共19部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 GetDocument();
   Element* element = document->getElementById(AtomicString("data"));
 
@@ -930,8 +932,4 @@ class TestCachePolicyWebFrameClient
     child_clients_.push_back(std::move(child));
     return CreateLocalChild(*Frame(), scope, child_ptr,
                             std::move(policy_container_bind_params),
-    
-"""
-
-
 ```

@@ -79,12 +79,14 @@ const first = product.x;
 
 第 3 部分的 `code-generator-x64.cc` 主要负责将涉及到栈操作和 SIMD 浮点及整数运算的中间代码指令转换为 x64 架构的汇编指令，这使得 V8 能够高效地执行 JavaScript 中涉及这些操作的代码。 它是代码生成过程中的一个重要环节，专注于特定类型的指令转换。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/code-generator-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 _decrement
       // contains any extra padding and adjust the stack before the pushq.
       if (HasAddressingMode(instr)) {
@@ -2164,8 +2166,4 @@ _decrement
       break;
     }
     case kX64I64x2UConvertI32x4Low: {
-   
-"""
-
-
 ```

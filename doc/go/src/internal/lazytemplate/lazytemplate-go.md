@@ -199,7 +199,7 @@ func New(name, text string) *Template {
 
 总而言之，`lazytemplate` 包通过延迟解析模板的方式，在某些场景下可以优化程序的启动性能，特别是在存在大量模板但并非所有模板都会立即使用的情况下。然而，这种延迟解析也意味着模板错误可能会被推迟到运行时才被发现，使用者需要对此有所了解并采取相应的预防措施。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/lazytemplate/lazytemplate.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -207,8 +207,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -261,9 +263,4 @@ func New(name, text string) *Template {
 	}
 	return lt
 }
-
-"""
-
-
-
 ```

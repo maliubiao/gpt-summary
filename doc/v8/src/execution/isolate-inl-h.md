@@ -447,15 +447,17 @@ NATIVE_CONTEXT_FIELDS(NATIVE_CONTEXT_FIELD_ACCESSOR)
 
 总而言之，`v8/src/execution/isolate-inl.h` 定义了 V8 引擎核心组件 `Isolate` 的一些关键操作，这些操作直接支撑着 JavaScript 代码的执行、异常处理和上下文管理。 理解这些底层机制有助于更深入地理解 JavaScript 运行时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/isolate-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -700,7 +702,4 @@ NATIVE_CONTEXT_FIELDS(NATIVE_CONTEXT_FIELD_ACCESSOR)
 }  // namespace v8
 
 #endif  // V8_EXECUTION_ISOLATE_INL_H_
-
-"""
-
 ```

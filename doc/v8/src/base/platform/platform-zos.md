@@ -136,11 +136,13 @@ console.log("指定时区格式化:", zosFormatter.format(date));
 
 `platform-zos.cc` 文件是 V8 引擎在 z/OS 操作系统上的桥梁，它提供了操作系统级别的服务，使得 V8 能够在该平台上运行 JavaScript 代码。它封装了 z/OS 特有的系统调用和行为，为 V8 的上层代码提供了一致的接口。尽管 JavaScript 代码本身不直接调用这些函数，但其执行结果深深依赖于这些底层实现的正确性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/platform-zos.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -376,7 +378,4 @@ PosixMemoryMappedFile::~PosixMemoryMappedFile() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

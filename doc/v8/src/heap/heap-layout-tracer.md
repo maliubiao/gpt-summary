@@ -145,11 +145,13 @@ After GC:1,collector_name:Scavenger
 
 `heap-layout-tracer.cc` 是 V8 内部用于 **调试和监控** 堆内存布局的工具。它通过在垃圾回收的关键时刻记录堆的状态，帮助 V8 开发者理解内存管理的行为，这间接地影响了 JavaScript 代码的执行效率和内存使用。  虽然 JavaScript 开发者通常不需要直接与这个文件交互，但理解其功能有助于更深入地了解 JavaScript 引擎的内部运作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-layout-tracer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ void HeapLayoutTracer::PrintHeapLayout(std::ostream& os, Heap* heap) {
 }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

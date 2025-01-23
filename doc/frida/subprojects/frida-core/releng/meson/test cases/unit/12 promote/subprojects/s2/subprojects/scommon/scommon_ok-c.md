@@ -140,7 +140,7 @@ Here's a breakdown of the thinking process used to analyze the provided C code a
 
 总而言之，`scommon_ok.c` 是一个非常基础的测试用例，用于验证 Frida 的基本 hook 功能。 它的简单性使其成为测试框架稳定性和功能正确性的理想选择。 开发者不太可能在实际的逆向工程任务中直接遇到这个文件，除非他们正在开发或调试 Frida 自身。 逆向工程师更多的是关注目标应用程序的复杂代码，而不是 Frida 的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/12 promote/subprojects/s2/subprojects/scommon/scommon_ok.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,12 +148,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func() {
     return 42;
 }
-
-"""
-
 ```

@@ -248,7 +248,7 @@ All Goroutines finished
 
 这段 `proc.go` 的第一部分主要 **介绍了 Goroutine 调度器的基本概念和设计思想**，定义了核心的数据结构 (G, M, P)，并着重阐述了 **工作线程的停放与唤醒机制**，特别是 "spinning" 状态的处理方式。它为理解 Go 语言的并发模型和调度策略奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/proc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -257,8 +257,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1318,9 +1320,4 @@ func ready(gp *g, traceskip int, next bool) {
 	runqput(mp.p.ptr(), gp, next)
 	wakep()
 	releasem
-"""
-
-
-
-
 ```

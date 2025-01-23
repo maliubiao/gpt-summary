@@ -107,7 +107,7 @@ process = target.LaunchSimple(None, None, os.getcwd())
    - Frida 根据 `on_enter` 方法的处理结果，决定是否挂起进程或继续执行。
 
 通过以上步骤，用户可以逐步跟踪 `SpawnMonitor` 类的执行过程，并通过调试工具分析其行为。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/lib/payload/spawn-monitor.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class SpawnMonitor : Object, Gum.InvocationListener {
 		public weak SpawnHandler handler {
@@ -576,7 +578,4 @@ namespace Frida {
 		public abstract async void acknowledge_spawn (HostChildInfo * info, SpawnStartState start_state);
 	}
 }
-
-"""
-
 ```

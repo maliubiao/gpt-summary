@@ -198,15 +198,17 @@ This iterative process of understanding the code structure, deciphering the test
 
 通过查看网络日志和开发者工具的 Cookie 信息，开发者可以观察到 Cookie 的状态以及任何相关的警告或排除原因。 这可能会引导开发者查看 Chromium 的源代码，例如 `net/cookies/cookie_inclusion_status.cc` 和 `net/cookies/cookie_inclusion_status.h`，以更深入地理解 Cookie 处理的内部机制以及导致特定状态的原因。  单元测试文件 `cookie_inclusion_status_unittest.cc` 则提供了关于 `CookieInclusionStatus` 类如何工作的具体示例和验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_inclusion_status_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -621,7 +623,4 @@ TEST(CookieInclusionStatusTest, ExcludedByUserPreferencesOrTPCD) {
 }
 
 }  // namespace net
-
-"""
-
 ```

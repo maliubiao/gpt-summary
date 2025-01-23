@@ -217,7 +217,7 @@ except AttributeError:
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/mesonbuild/ast/__init__.py` 文件虽然自身代码简单，但它定义了一个关键模块的入口点，暴露了 Frida 用于处理 Meson 构建系统抽象语法树的各种工具，这对于理解目标软件的构建过程，从而更好地进行逆向工程和动态分析至关重要。用户通常会在需要深入了解目标软件构建细节或调试 Frida 自身与 Meson 构建处理相关的代码时，接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/ast/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -225,8 +225,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -250,7 +252,4 @@ from .introspection import IntrospectionInterpreter, BUILD_TARGET_FUNCTIONS
 from .visitor import AstVisitor
 from .postprocess import AstConditionLevel, AstIDGenerator, AstIndentationGenerator
 from .printer import AstPrinter, AstJSONPrinter
-
-"""
-
 ```

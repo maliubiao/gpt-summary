@@ -121,11 +121,13 @@ loadAndRunWasm();
 
 **总结来说，`JumpTableAssembler` 就像一个幕后工程师，负责搭建 WebAssembly 函数调用所需的“高速公路”，确保函数能够被快速且正确地调用。Lazy Compile 机制通过初始的“绕行”到编译流程，实现了按需编译，优化了程序的启动时间和执行性能。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/jump-table-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -991,7 +993,4 @@ void JumpTableAssembler::SkipUntil(int offset) {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

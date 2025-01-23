@@ -132,7 +132,7 @@ By following these steps, the comprehensive analysis covering functionality, rev
 
 总而言之，`main2.c` 作为一个 Frida 的测试用例，其目的是验证 Frida 在处理依赖于多个动态库的程序时的动态 Instrumentation 能力。它通过一个简单的逻辑判断来验证 Frida 是否能够正确地访问和操作其他库中的符号。对于逆向工程师来说，理解这种测试用例的结构和目的，有助于更好地利用 Frida 进行动态分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/178 bothlibraries/main2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "mylib.h"
 
 DO_IMPORT int func(void);
@@ -151,7 +153,4 @@ DO_IMPORT int retval;
 int main(void) {
     return func() + foo() == retval ? 0 : 1;
 }
-
-"""
-
 ```

@@ -113,14 +113,16 @@ This iterative process of skimming, analyzing, connecting to web technologies, r
 
 `xr_webgl_drawing_buffer.cc` 文件在 Chromium Blink 引擎中扮演着关键角色，负责管理 WebXR 应用中 WebGL 渲染的目标和相关的 GPU 资源。它与 JavaScript WebGL API 和 HTML `<canvas>` 元素紧密相关，并需要与 compositor 进行同步以正确显示渲染结果。理解其功能和潜在的错误有助于开发者构建稳定可靠的 WebXR 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/xr_webgl_drawing_buffer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -837,7 +839,4 @@ void XRWebGLDrawingBuffer::MailboxReleased(
 }
 
 }  // namespace blink
-
-"""
-
 ```

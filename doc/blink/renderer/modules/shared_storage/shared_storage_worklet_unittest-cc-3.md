@@ -114,7 +114,7 @@ To reach this code during debugging, a typical scenario would involve:
 
 This section of the test suite comprehensively verifies the core functionalities of the `sharedStorage` API within a Shared Storage Worklet, focusing on asynchronous operations like iterating through entries, keys, and values, retrieving the remaining budget, and accessing the context. It also tests the availability and basic functionality of standard JavaScript APIs like `crypto` and text encoding/decoding within the worklet environment. Furthermore, it ensures proper handling of errors and the conditional availability of features based on their respective feature flags, particularly focusing on the Private Aggregation API.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/shared_storage/shared_storage_worklet_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 esult add_module_result = AddModule(/*script_content=*/R"(
       class TestClass {
         async run() {
@@ -1079,7 +1081,4 @@ TEST_F(SharedStoragePrivateAggregationTest,
 
   EXPECT_TRUE(run_result.success);
   EXP
-"""
-
-
 ```

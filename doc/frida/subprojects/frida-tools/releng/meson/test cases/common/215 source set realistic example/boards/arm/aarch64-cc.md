@@ -111,7 +111,7 @@ Here's a breakdown of the thinking process to analyze the provided C++ code snip
 
 总之，`aarch64.cc` 这个文件虽然代码简单，但它代表了 Frida 工具链中为特定目标平台进行初始化的一个环节。它的存在体现了 Frida 的跨平台特性，以及在不同架构上进行动态 instrumentation 时需要考虑的平台差异。理解这个文件有助于理解 Frida 的内部工作原理，尤其是在针对 ARM 64 位架构进行逆向工程时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/215 source set realistic example/boards/arm/aarch64.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "common.h"
 #include <iostream>
 
@@ -129,7 +131,4 @@ void initialize_target()
     std::cout << ANSI_START << "some " << THE_TARGET
               << " initialization" << ANSI_END << std::endl;
 }
-
-"""
-
 ```

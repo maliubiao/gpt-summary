@@ -77,7 +77,7 @@ The user is asking for a summary of the functionality of the provided C++ code s
 
 总的来说，这部分代码的核心功能是将可访问性树中的抽象位置 (`AXPosition`) 映射到 DOM 树中具体的节点和偏移量 (`Position`)。这对于辅助技术理解和操作网页内容至关重要。该代码考虑了 ARIA 属性、CSS 样式对可访问性树的影响，并提供了处理文本偏移量的机制。 开发者在使用 Accessibility API 时，或者在浏览器内部处理可访问性事件时，会间接地使用到这些功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_position.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -85,8 +85,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 n.container_object_->GetClosestNode();
   DCHECK(container_node) << "AX positions that are valid DOM positions should "
                             "always be connected to their DOM nodes.";
@@ -444,8 +446,4 @@ std::ostream& operator<<(std::ostream& ostream, const AXPosition& position) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

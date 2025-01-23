@@ -133,7 +133,7 @@ You decide to go inside.
 
 总而言之，`patron.c` 作为一个 Frida 的单元测试用例，其核心功能是模拟一个简单的程序流程，并提供一个可以被 Frida hook 的函数入口 (`alexandria_visit()`)。它的价值在于作为 Frida 功能测试和演示的基础，而不是作为一个复杂的应用程序。通过分析这个简单的程序，可以帮助理解 Frida 如何与目标进程进行交互，以及动态分析的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/17 prebuilt shared/patron.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<alexandria.h>
 #include<stdio.h>
 
@@ -152,7 +154,4 @@ int main(int argc, char **argv) {
     alexandria_visit();
     return 0;
 }
-
-"""
-
 ```

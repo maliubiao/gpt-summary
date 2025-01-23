@@ -143,15 +143,17 @@ By following this thought process, systematically analyzing the code, and consid
 - **断点调试 `ReportingNetworkChangeObserver`:**  在 `ReportingNetworkChangeObserver` 的相关代码中设置断点，例如在接收网络变化通知和执行缓存清理逻辑的地方，可以帮助理解代码的执行流程和变量状态。
 - **查看 Reporting 缓存内容:**  在网络状态变化前后，查看 Reporting 缓存的内容 (可能需要使用 Chromium 的内部机制或调试工具) 可以确认缓存是否被正确地清除或保留。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_network_change_observer_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -294,7 +296,4 @@ TEST_F(ReportingNetworkChangeObserverTest, ClearReportsAndClients) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
 ```

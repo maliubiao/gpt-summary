@@ -87,7 +87,7 @@ Here's a breakdown of the thinking process used to analyze the provided C code a
 
 虽然 `b.c` 的源代码非常简单，但它在 Frida 项目的测试框架中扮演着重要的角色。  它很可能被设计用来验证编译器在特定条件下（与字符串除法相关）的行为，特别是确保在没有相关操作时不会发出不必要的警告。  理解这样的测试用例需要结合其上下文，包括 Frida 的目标、构建系统和可能的预期行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/warning/1 version for string div/a/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -95,12 +95,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void)
 {
 }
-
-"""
-
 ```

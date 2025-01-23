@@ -704,7 +704,7 @@ Host: example.com\r\n
 2. **编程错误导致 `UploadDataStream` 状态不正确:** 如果程序员在使用 `UploadDataStream` 时没有正确处理其状态（例如，在发送前就标记为 EOF），`HttpStreamParser` 可能会发送空的请求体，或者进入错误的状态。
 
 3. **网络连接问题:** 底层的 `StreamSocket` 可能会遇到连接中断或其他网络错误。`HttpStreamParser` 需要正确处理 `stream_socket_->Write` 返回的错误码。例如，如果连接在发送请求的过程中被重
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_parser.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -712,8 +712,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1602,7 +1604,4 @@ int HttpStreamParser::HandleReadHeaderResult(int result) {
       end_offset = read_buf_->offset();
     } else {
       // The response is apparently using HTTP
-"""
-
-
 ```

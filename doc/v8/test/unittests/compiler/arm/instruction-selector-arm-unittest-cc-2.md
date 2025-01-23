@@ -87,7 +87,7 @@ console.log(test(-0.5, 5, 10)); // 输出 15
 
 这部分代码主要关注 **浮点数算术运算** 和 **标志位设置指令** 的指令选择测试。它验证了在 ARM 架构下，V8 编译器能够正确地将 JavaScript 中的浮点数运算和需要设置处理器标志位的操作转换为高效的 ARM 指令，并能进行一些优化，例如将乘法和加/减法组合成融合指令，以及在特定情况下将算术/逻辑运算与比较操作合并。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/arm/instruction-selector-arm-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/arm/instruction-selector-arm-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -95,8 +95,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
 }
 
@@ -922,7 +924,4 @@ TEST_F(InstructionSelectorTest, Int32ModWithParametersForSUDIV) {
   EXPECT_EQ(kArmSub, s[2]->arch_opcode());
   ASSERT_EQ(1U, s[2]->OutputCount());
   ASSE
-"""
-
-
 ```

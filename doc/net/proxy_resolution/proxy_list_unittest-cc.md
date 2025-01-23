@@ -164,15 +164,17 @@ Let's break down the thought process for analyzing the C++ unittest file `proxy_
 
 因此，`proxy_list_unittest.cc` 中测试的 `ProxyList` 类的功能是网络栈中处理代理配置的核心部分，涉及到用户通过各种方式配置代理，以及 Chromium 如何根据这些配置选择和重试代理服务器。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/proxy_list_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2006-2008 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -708,7 +710,4 @@ TEST(ProxyListTest, NonIpProtectionMultiProxyChainToValue) {
 }  // anonymous namespace
 
 }  // namespace net
-
-"""
-
 ```

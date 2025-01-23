@@ -284,7 +284,7 @@ if (funcAddress) {
 
 通过结合这些 Frida Hook 技巧，你可以更深入地了解 Android 系统中 CFI 的工作原理，以及动态链接器如何使用 `CFIShadow.handroid` 中定义的结构和常量来实现控制流的完整性检查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/CFIShadow.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -295,8 +295,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -387,7 +389,4 @@ class CFIShadow {
 };
 
 #endif  // CFI_SHADOW_H
-
-"""
-
 ```

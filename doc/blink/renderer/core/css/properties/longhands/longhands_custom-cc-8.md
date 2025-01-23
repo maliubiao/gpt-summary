@@ -184,7 +184,7 @@ The user wants a summary of the functionality of the provided C++ code file. I n
 
 **作为调试线索:**  如果开发者发现某个元素的 `perspective` 或 `rotate` 效果没有生效，或者 JavaScript 通过 `getComputedStyle` 获取到的值不正确，那么就可以怀疑是在 CSS 解析或样式计算阶段出现了问题。`longhands_custom.cc` 文件中的代码就是这些阶段的关键执行部分。通过查看这个文件中的代码，可以了解特定属性是如何被解析和处理的，从而帮助定位问题。例如，如果解析逻辑有误，或者计算样式获取逻辑不正确，都会导致最终的渲染结果与预期不符。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/longhands/longhands_custom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 :kNone) {
     return css_parsing_utils::ConsumeIdent(stream);
   }
@@ -1112,7 +1114,4 @@ const CSSValue* ScrollPaddingBlockEnd::ParseSingleValue(
 }
 
 const CSSValu
-"""
-
-
 ```

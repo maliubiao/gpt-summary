@@ -101,11 +101,13 @@ try {
 
 `CombinedHeapObjectIterator` 是 V8 引擎内部用于遍历所有堆对象的机制，它优先遍历只读堆。只读堆存储着 JavaScript 运行的基础设施，例如内置对象原型和构造函数。理解这一点有助于我们理解 JavaScript 对象的本质以及 V8 如何有效地管理内存和提升性能。 虽然我们不能直接在 JavaScript 中使用 `CombinedHeapObjectIterator`，但我们可以通过观察 JavaScript 的行为来理解只读堆中对象的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/combined-heap.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -131,7 +133,4 @@ Tagged<HeapObject> CombinedHeapObjectIterator::Next() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

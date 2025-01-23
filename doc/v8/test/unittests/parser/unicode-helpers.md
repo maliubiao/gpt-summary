@@ -68,9 +68,12 @@ This step-by-step approach, focusing on understanding the purpose, dependencies,
 
 这些辅助函数很可能在 V8 引擎的解析器单元测试中被使用，以验证解析器在处理不同 Unicode 字符和编码时的正确性，例如计算字符串的长度、处理代理对等。 它可以帮助测试在解析 JavaScript 代码时正确处理 Unicode 字符的不同表示形式。
 
-Prompt: ```这是目录为v8/test/unittests/parser/unicode-helpers.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/parser/unicode-helpers.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -103,6 +106,4 @@ int Utf8LengthHelper(const char* s) {
   length += Ucs2CharLength(tmp);
   return length;
 }
-
-"""
 ```

@@ -182,15 +182,17 @@ GO386=softfloat go build ...
 
 总而言之，`go/src/cmd/compile/internal/x86/galign.go` 是 Go 编译器中负责 x86 架构特定初始化的关键部分，特别是它通过 `GO386` 环境变量来配置浮点运算模式，这直接影响了生成的代码的执行方式和性能。理解这个文件的作用有助于我们更好地理解 Go 编译器的工作原理以及如何针对特定的 x86 环境进行编译配置。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/x86/galign.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -230,9 +232,4 @@ func Init(arch *ssagen.ArchInfo) {
 
 	arch.SSAMarkMoves = ssaMarkMoves
 }
-
-"""
-
-
-
 ```

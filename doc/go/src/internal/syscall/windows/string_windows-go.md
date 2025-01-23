@@ -224,7 +224,7 @@ func main() {
 
 在这个例子中，错误的做法直接将 `NTUnicodeString` 结构体的指针传递给了 API，而 API 期望的是指向 UTF-16 字符串数据的指针。 正确的做法是使用 `ntString.Buffer` 来获取 UTF-16 字符串数据的指针。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/windows/string_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -232,8 +232,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -266,9 +268,4 @@ func NewNTUnicodeString(s string) (*NTUnicodeString, error) {
 		Buffer:        &s16[0],
 	}, nil
 }
-
-"""
-
-
-
 ```

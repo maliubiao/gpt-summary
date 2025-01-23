@@ -121,15 +121,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`module_record_resolver_impl_test.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎能够正确地解析和加载 JavaScript 模块，这是现代 Web 开发中不可或缺的一部分。它通过模拟各种场景来验证模块解析器的功能，并为开发者提供了理解模块加载机制的窗口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/script/module_record_resolver_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ TEST_F(ModuleRecordResolverImplTest, RegisterResolveSuccess) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

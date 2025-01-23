@@ -185,15 +185,17 @@ func main() {
 
 总而言之，这段代码的核心在于提供了一个方便且平台特定的方式来调用 `uname` 系统调用，获取底层的操作系统信息。使用者需要注意错误处理和正确理解返回的数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/osinfo/os_syscall.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -211,9 +213,4 @@ type utsname = syscall.Utsname
 func uname(buf *utsname) error {
 	return syscall.Uname(buf)
 }
-
-"""
-
-
-
 ```

@@ -115,7 +115,7 @@ This detailed breakdown combines code analysis, contextual understanding (Frida,
 
 这个简单的 `alert()` 可以作为调试的起点。在实际的逆向工程中，用户可能会将 `alert()` 替换为更复杂的逻辑，例如记录函数参数、修改返回值、甚至跳转到其他代码地址，以便更深入地理解和控制程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/wasm/3 jslib/somefuncs.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,15 +123,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 mergeInto(LibraryManager.library, {
     sample_function__sig: 'v',
     sample_function: function() {
         alert("Something happened!");
     },
 });
-
-"""
-
 ```

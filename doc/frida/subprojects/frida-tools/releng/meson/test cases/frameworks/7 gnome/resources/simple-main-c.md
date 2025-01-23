@@ -149,7 +149,7 @@ Here's a breakdown of the thought process to analyze the C code and address the 
 
 总而言之，`simple-main.c` 是一个简单的但关键的测试用例，用于验证 Frida 是否能够正确地监控和操作基于 GLib 资源管理机制的应用程序。它涵盖了资源加载、内容验证等基本操作，并与逆向工程、底层系统知识以及常见的编程错误紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/7 gnome/resources/simple-main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 #include<gio/gio.h>
@@ -186,7 +188,4 @@ int main(int argc, char **argv) {
     g_bytes_unref(data);
     return 0;
 }
-
-"""
-
 ```

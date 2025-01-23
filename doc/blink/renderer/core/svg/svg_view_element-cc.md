@@ -169,15 +169,17 @@ By following these steps, iteratively analyzing the code and relating it to web 
 
 总而言之，`blink/renderer/core/svg/svg_view_element.cc` 是 Blink 引擎中处理 SVG `<view>` 元素的核心部分，负责解析和管理其关键属性，并与 HTML、JavaScript 和 CSS 交互，以实现 SVG 视口的定义和导航功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_view_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2008 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2007 Rob Buis <buis@kde.org>
@@ -241,7 +243,4 @@ void SVGViewElement::SynchronizeAllSVGAttributes() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -68,12 +68,14 @@ instance.publicValue = 100;             // 调用 setter
 
 `accessor-assembler.cc` 是 V8 引擎中负责生成高效的属性访问代码的关键组成部分。它通过使用汇编指令和内联缓存的反馈信息，显著提升了 JavaScript 代码中属性访问的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/accessor-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1763,7 +1765,4 @@ void AccessorAssembler::CheckFieldType(TNode<DescriptorArray> descriptors,
     TNode<MaybeObject> field_type =
         LoadFieldTypeByKeyIndex(descriptors, name_index);
     const Address kAnyType
-"""
-
-
 ```

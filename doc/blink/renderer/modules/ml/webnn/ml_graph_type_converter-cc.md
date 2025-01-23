@@ -84,7 +84,7 @@ By following these steps, we can arrive at a comprehensive and accurate summary 
 
 这个文件的第一部分主要负责 **将 Blink 引擎中对 WebNN 操作数和相关属性的内部表示 (例如数据类型、枚举值) 转换为可以跨进程通信的 Mojo 消息格式**。它定义了各种转换函数，用于处理不同类型的 WebNN 数据和配置。这为后续将完整的 WebNN 图结构转换为 Mojo 消息奠定了基础。 这部分重点在于基础数据类型和枚举类型的转换，以及 `MLOperand` 的初步转换。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ml/webnn/ml_graph_type_converter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -92,8 +92,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -876,7 +878,4 @@ OperationPtr CreateDequantizeLinearOperation(
       GetOperatorInputId(dequantize_linear, operand_to_id_map, 1);
   dequantize_linear_mojo->zero_point_operand_id =
       GetOperatorI
-"""
-
-
 ```

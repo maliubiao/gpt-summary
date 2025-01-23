@@ -220,7 +220,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 `bionic/linker/ld_android.cpp` 在你提供的代码片段中是一个特殊的桩文件，用于在某些构建配置下替代真正的动态链接器实现。它通过将所有关键的动态链接器函数重定向到一个会触发程序崩溃的错误处理函数来实现。理解这一点对于调试在特定 Android 构建环境中遇到的动态链接问题至关重要。  虽然它没有实现具体的 libc 功能或动态链接过程，但它涉及的函数名称指明了动态链接器在 Android 系统中的核心作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/ld_android.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -231,8 +231,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -295,7 +297,4 @@ __strong_alias(__loader_android_set_16kb_appcompat_mode, __internal_linker_error
 __strong_alias(__loader_dl_unwind_find_exidx, __internal_linker_error);
 #endif
 __strong_alias(rtld_db_dlactivity, __internal_linker_error);
-
-"""
-
 ```

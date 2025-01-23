@@ -124,15 +124,17 @@ console.log(globalThis.answer); // 输出: undefined (外部无法直接访问 S
 
 总而言之，`v8/src/objects/js-shadow-realm-inl.h` 文件是 V8 引擎中实现 JavaScript `ShadowRealm` 功能的关键部分，它包含了 `JSShadowRealm` 对象的内联方法实现，并与 Torque 生成的代码以及 V8 的内存管理机制紧密相关。理解 `ShadowRealm` 的隔离特性对于避免常见的编程错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-shadow-realm-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-shadow-realm-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ TQ_OBJECT_CONSTRUCTORS_IMPL(JSShadowRealm)
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_SHADOW_REALM_INL_H_
-
-"""
-
 ```

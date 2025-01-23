@@ -182,7 +182,7 @@ Frida 本身就是一个强大的动态插桩工具，广泛应用于逆向工�
 
 `run_cross_test.py` 是 Frida Python 绑定交叉编译测试的关键脚本。它通过包装 `run_project_tests.py`，并利用交叉编译配置文件，实现了在主机上构建并测试针对不同目标平台的功能。理解其功能和工作原理，有助于开发人员确保 Frida 在各种环境下的稳定性和可靠性，这对于使用 Frida 进行跨平台逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/run_cross_test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2016 The Meson development team
@@ -243,7 +245,4 @@ def main():
 if __name__ == '__main__':
     print('Meson build system', meson_version, 'Cross Tests')
     raise SystemExit(main())
-
-"""
-
 ```

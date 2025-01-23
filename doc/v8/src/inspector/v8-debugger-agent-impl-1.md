@@ -95,12 +95,14 @@ Based on the code, it seems to handle:
 
 总之，这部分代码是 V8 调试器代理的核心组成部分，它将底层的 V8 引擎调试能力暴露给 Chrome DevTools 和其他调试客户端，从而实现了强大的 JavaScript 调试功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-debugger-agent-impl.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 aught()) {
     return Response::InternalError();
   }
@@ -831,8 +833,4 @@ void V8DebuggerAgentImpl::stop() {
   m_enableState = kStopping;
 }
 }  // namespace v8_inspector
-
-"""
-
-
 ```

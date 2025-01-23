@@ -321,7 +321,7 @@ if __name__ == '__main__':
 
 `bionic/libc/kernel/uapi/misc/cxl.handroid/cxl.h` 定义了与 CXL 设备交互的底层接口。虽然 CXL 目前在主流 Android 设备上不常见，但理解这个头文件有助于理解 Android 系统如何与硬件加速器进行交互，以及如何使用底层的系统调用和驱动程序接口。 使用 Frida 可以有效地调试和分析涉及这些接口的应用程序行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/misc/cxl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -332,8 +332,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -445,7 +447,4 @@ struct cxl_event {
   };
 };
 #endif
-
-"""
-
 ```

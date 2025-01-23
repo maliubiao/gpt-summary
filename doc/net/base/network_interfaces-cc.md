@@ -170,15 +170,17 @@ By following these steps, combining code analysis with knowledge of browser arch
 
 总而言之，`net/base/network_interfaces.cc` 是 Chromium 网络栈中一个基础且重要的文件，它定义了表示网络接口信息的通用结构，并提供了获取主机名的实用函数。尽管 JavaScript 代码不能直接访问它，但它为浏览器内部的各种网络功能（包括 `navigator.connection` 和 WebRTC）提供了必要的数据基础。 理解这个文件的功能有助于理解 Chromium 如何处理网络连接和相关信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/network_interfaces.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -243,7 +245,4 @@ std::string GetHostName() {
 }
 
 }  // namespace net
-
-"""
-
 ```

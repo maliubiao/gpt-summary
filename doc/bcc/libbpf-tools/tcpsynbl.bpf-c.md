@@ -58,7 +58,7 @@ Response:
 2. **验证权限**：使用`strace`跟踪`bpf()`系统调用错误。
 3. **内核日志**：`dmesg`查看是否有`failed to attach kprobe`等错误。
 4. **动态输出**：在用户态工具中打印哈希表内容，确认数据更新。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/tcpsynbl.bpf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -67,8 +67,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // SPDX-License-Identifier: GPL-2.0
 // Copyright (c) 2021 Yaqi Chen
 #include <vmlinux.h>
@@ -135,7 +137,4 @@ int BPF_PROG(tcp_v6_syn_recv, struct sock *sk)
 }
 
 char LICENSE[] SEC("license") = "Dual BSD/GPL";
-
-"""
-
 ```

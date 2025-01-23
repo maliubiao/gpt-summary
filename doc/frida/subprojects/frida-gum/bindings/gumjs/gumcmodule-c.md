@@ -210,7 +210,7 @@ void init() {
 
 总结来说，`gumcmodule.c` 的核心功能是**为 Frida 提供了一种动态编译和加载 C 代码到目标进程的能力**。它抽象了不同编译工具链的细节，并提供了管理已加载 C 代码模块的接口，使得 Frida 能够执行更底层、更复杂的插桩任务。这个文件是 Frida 实现强大动态分析能力的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumcmodule.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -219,8 +219,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2019-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -1500,7 +1502,4 @@ gum_gcc_cmodule_find_symbol_by_name (GumCModule * cm,
   ctx.name = name;
   ctx.address = NULL;
   gum_cmodul
-"""
-
-
 ```

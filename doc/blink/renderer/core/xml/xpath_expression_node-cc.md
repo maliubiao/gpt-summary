@@ -158,15 +158,17 @@ By following these steps, combining code analysis with knowledge of browser arch
 
 总而言之，`xpath_expression_node.cc` 是 Blink 引擎中 XPath 功能的核心，它定义了用于表示和评估 XPath 表达式的基本结构和上下文信息，直接影响着 JavaScript 通过 XPath 操作 DOM 以及某些 CSS 功能的实现。 理解这个文件的作用有助于深入了解 Web 浏览器的内部工作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/xml/xpath_expression_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright 2005 Frerich Raabe <raabe@kde.org>
  * Copyright (C) 2006 Apple Computer, Inc.
@@ -221,7 +223,4 @@ void Expression::Trace(Visitor* visitor) const {
 
 }  // namespace xpath
 }  // namespace blink
-
-"""
-
 ```

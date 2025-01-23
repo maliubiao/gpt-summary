@@ -206,15 +206,17 @@ While users typically don't interact directly with `WeakArrayList` in their Java
 
 In summary, `v8/test/unittests/objects/weakarraylist-unittest.cc` tests the internal workings of a V8 data structure designed to efficiently manage collections of potentially garbage-collected objects, a concept directly related to JavaScript's weak references. Understanding this internal mechanism provides a deeper insight into how V8 handles memory management and the lifecycle of JavaScript objects.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/objects/weakarraylist-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/objects/weakarraylist-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ TEST_F(WeakArrayListTest, OutOfPlaceCompact) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

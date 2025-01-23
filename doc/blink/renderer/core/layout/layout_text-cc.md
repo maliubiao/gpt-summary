@@ -103,15 +103,17 @@ The `layout_text.cc` file is responsible for managing the layout and rendering o
 
 `blink/renderer/core/layout/layout_text.cc` 文件的第一部分定义了 `LayoutText` 类，它是 Blink 渲染引擎中负责文本内容布局和渲染的核心组件。它处理文本内容的存储、CSS 样式的应用（包括文本转换和安全处理）、参与 inline 布局过程，并与选择、编辑和辅助功能等模块进行交互。代码中也体现了向新的布局引擎 LayoutNG 迁移的趋势。 该文件是连接 HTML 文本内容、CSS 样式以及最终屏幕渲染的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_text.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999 Lars Knoll (knoll@kde.org)
  * (C) 2000 Dirk Mueller (mueller@kde.org)
@@ -971,8 +973,5 @@ static inline bool IsInlineFlowOrEmptyText(const LayoutObject* o) {
   if (o->IsLayoutInline())
     return true;
   if (!o->IsText())
-    return 
-"""
-
-
+    return
 ```

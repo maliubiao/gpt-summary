@@ -301,7 +301,7 @@ sys.stdin.read()
 
 这个简单的 `ns_hidden_child_public.cpp` 文件虽然代码量很少，但它触及了 Android 系统中非常重要的动态链接和符号可见性概念。理解这些概念对于开发 Android Native 代码和进行系统分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/ns_hidden_child_public.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -312,8 +312,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2020 The Android Open Source Project
  * All rights reserved.
@@ -347,7 +349,4 @@ extern "C" void internal_function();
 extern "C" void public_function() {
   internal_function();
 }
-
-"""
-
 ```

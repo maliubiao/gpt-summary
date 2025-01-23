@@ -57,12 +57,14 @@ let result = add(5, 10);
 
 `InterpreterAssembler` 是 V8 解释器 Ignition 的核心构建块，它提供了一组用于生成机器代码指令的高级抽象，使得 V8 能够高效地执行 Javascript 字节码。它处理了与解释器执行环境的底层交互，使得解释器代码的编写更加简洁和可维护。 上述的 Javascript 示例展示了 `InterpreterAssembler` 在执行简单的函数调用和算术运算时可能扮演的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1755,7 +1757,4 @@ void InterpreterAssembler::ToNumberOrNumeric(Object::Conversion mode) {
       {
         var_result = CAST(object);
         var_t
-"""
-
-
 ```

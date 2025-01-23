@@ -114,11 +114,13 @@ console.log(timestamp2); // 输出 NaN，表示解析失败
 
 `v8/src/date/dateparser.cc` 是 V8 引擎中至关重要的一个文件，它实现了 JavaScript 中 `Date` 对象解析日期和时间字符串的核心逻辑。它的功能直接影响了 JavaScript 如何理解和处理各种日期和时间格式，使得开发者可以使用灵活的方式创建和操作日期对象。 理解这个文件的功能有助于更深入地理解 JavaScript 日期处理的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/date/dateparser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -319,7 +321,4 @@ int DateParser::ReadMilliseconds(DateToken token) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

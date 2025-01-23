@@ -151,7 +151,7 @@ name = "second"
 
 `frida/subprojects/frida-swift/releng/tomlkit/tomlkit/parser.py` 文件的这段代码是 Frida 使用的 TOML 解析器的一部分，专注于解析 TOML 格式的表和数组表。它能够识别表头，创建相应的表结构，并处理数组表的语法。这个解析器的功能对于 Frida 读取和理解配置文件至关重要，而配置文件的内容会直接影响 Frida 对目标进程的动态 instrumentation 行为。理解这段代码有助于理解 Frida 如何处理配置信息，以及在配置错误时可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/tomlkit/tomlkit/parser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -160,9 +160,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    if is_aot and i == len(name_parts) - 2:
+### 源代码
+```python
+if is_aot and i == len(name_parts) - 2:
                     table.raw_append(_name, AoT([child], name=table.name, parsed=True))
                 else:
                     table.raw_append(_name, child)
@@ -314,8 +316,4 @@ Prompt:
                     value = None
 
             return value, extracted
-
-"""
-
-
 ```

@@ -99,14 +99,16 @@ By following this kind of structured analysis, you can effectively understand th
 
 总而言之，`harfbuzz_shaper_fuzzer.cc` 是一个关键的工具，用于确保 Chromium 浏览器能够正确且安全地渲染各种各样的文本内容，即使面对异常或恶意的输入。它通过模拟真实的渲染环境，并对文本塑形过程进行大量的随机或构造性测试，来发现潜在的 bug 和安全漏洞。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/harfbuzz_shaper_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   return blink::LLVMFuzzerTestOneInput(data, size);
 }
-
-"""
-
 ```

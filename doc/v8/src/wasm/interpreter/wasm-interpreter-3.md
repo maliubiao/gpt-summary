@@ -121,12 +121,14 @@ Similarly, the **GC operations** in the C++ code are used when WebAssembly code 
 
 **In summary, this part of the `wasm-interpreter.cc` file is crucial for executing SIMD instructions efficiently and managing memory (including objects and arrays) within the WebAssembly environment provided by the V8 JavaScript engine.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 effective_index = offset + index;
 
   if (V8_UNLIKELY(effective_index < index ||
@@ -1734,7 +1736,4 @@ INSTRUCTION_HANDLER_FUNC s2s_RefI31(const uint8_t* code, uint32_t* sp,
   uint32_t value = pop<int32_t>(sp, code, wasm_runtime);
 
   // Trunc
-"""
-
-
 ```

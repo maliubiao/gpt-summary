@@ -230,7 +230,7 @@ if __name__ == '__main__':
 
 `bionic/libc/kernel/uapi/asm-arm64/asm/param.handroid` 文件虽然简单，但定义了 Android ARM64 系统中一个关键的内存管理参数 `EXEC_PAGESIZE`。理解它的作用对于进行底层开发、性能优化以及调试内存相关问题至关重要。它影响着内存映射、程序加载以及许多 libc 函数的实现。避免硬编码页大小，并注意页对齐是开发中需要注意的关键点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/param.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -241,8 +241,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -254,7 +256,4 @@ Prompt:
 #define EXEC_PAGESIZE 65536
 #include <asm-generic/param.h>
 #endif
-
-"""
-
 ```

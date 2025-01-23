@@ -153,7 +153,7 @@ By following these steps, we can systematically analyze the code snippet and add
 
 总而言之，`frida/subprojects/frida-core/releng/meson/test cases/cmake/2 advanced/subprojects/cmMod/lib/cmMod.cpp` 是 Frida 构建系统中的一个测试用例，用于验证基本的 C++ 模块构建和与第三方库 (zlib) 以及可选框架 (Core Foundation) 的集成。它可以作为学习 Frida 内部机制、调试构建问题以及理解动态分析方法的一个入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/2 advanced/subprojects/cmMod/lib/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 #include <zlib.h>
 #include "config.h"
@@ -189,7 +191,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

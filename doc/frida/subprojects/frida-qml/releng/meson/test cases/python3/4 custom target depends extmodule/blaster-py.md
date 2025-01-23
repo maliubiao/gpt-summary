@@ -129,7 +129,7 @@ By following these steps, combining code analysis with contextual understanding 
 
 总而言之，`blaster.py` 是 Frida `frida-qml` 组件的一个测试脚本，用于验证其依赖的外部模块 `tachyon` 的特定功能。它通过调用 `tachyon.phaserize('shoot')` 并检查其返回值来判断该功能是否按预期工作。如果测试失败，它可以帮助开发者定位问题所在，可能是 `tachyon` 模块的 bug，也可能是 Frida 本身的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/python3/4 custom target depends extmodule/blaster.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -174,7 +176,4 @@ if not isinstance(result, int):
 if result != 1:
     print(f'Returned result {result} is not 1.')
     sys.exit(1)
-
-"""
-
 ```

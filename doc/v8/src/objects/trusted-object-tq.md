@@ -133,15 +133,17 @@ safeFetch('https://example.com/data.json')
 
 `v8/src/objects/trusted-object.tq` 定义了 V8 内部用于处理“受信任对象”的基础结构。这些对象很可能与 V8 的安全机制有关，用于封装和管理来自可能不受信任来源的数据或对象。`ExposedTrustedObject` 在启用了沙箱的情况下会包含一个额外的指针成员，暗示了沙箱环境下对这些对象的特殊处理。 虽然 JavaScript 开发者通常不会直接操作这些内部对象，但理解它们的存在有助于理解 V8 如何保障 JavaScript 代码的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/trusted-object.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/trusted-object.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -155,7 +157,4 @@ extern class TrustedObject extends HeapObject {}
 extern class ExposedTrustedObject extends TrustedObject {
   @if(V8_ENABLE_SANDBOX) self_indirect_pointer: TrustedPointer;
 }
-
-"""
-
 ```

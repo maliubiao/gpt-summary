@@ -289,7 +289,7 @@ sys.stdin.read()
 
 通过使用 Frida 这样的动态分析工具，可以深入了解 Android 系统如何与内核的 regulator 子系统交互，并监控 regulator 事件的发生。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/regulator/regulator.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -300,8 +300,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -349,7 +351,4 @@ enum {
 #define REG_GENL_VERSION 0x01
 #define REG_GENL_MCAST_GROUP_NAME "reg_mc_group"
 #endif
-
-"""
-
 ```

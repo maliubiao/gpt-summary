@@ -258,7 +258,7 @@ Considering the second part instruction, the primary function of this snippet is
 
 这段代码是 `v8/src/wasm/wrappers.cc` 的一部分，专注于实现构建 WebAssembly 和 JavaScript 之间互操作桥梁（wrappers）所需的各种底层操作和逻辑。它提供了用于类型转换、函数调用管理、堆栈切换、Promise 处理以及安全内存访问等关键功能。这些功能共同使得 JavaScript 代码能够无缝地调用 WebAssembly 代码，反之亦然，从而实现混合编程。这段代码是 V8 引擎中 WebAssembly 支持的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wrappers.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wrappers.cc以.tq结尾，那它是个v8 torque源代码，
@@ -266,8 +266,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eturn_count(), kV8MaxWasmFunctionReturns);
     size_t return_count = sig_->return_count();
     if (return_count == 0) {
@@ -847,8 +849,4 @@ void BuildWasmWrapper(compiler::turboshaft::PipelineData* data,
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
-
 ```

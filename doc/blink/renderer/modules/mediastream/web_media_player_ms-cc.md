@@ -129,7 +129,7 @@ Based on the provided code snippet, which primarily deals with handling media st
 
 `WebMediaPlayerMS` 是 Chromium Blink 引擎中用于播放 `MediaStream` 类型媒体的核心组件。它负责管理 `MediaStream` 的加载、解码、渲染和状态，协调音频和视频轨道的播放，并与合成器交互以将视频内容显示在页面上。它还处理 `MediaStream` 的动态变化，例如轨道的添加和移除。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/web_media_player_ms.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1016,7 +1018,4 @@ void WebMediaPlayerMS::Pause() {
     watch_time_reporter_->OnPaused();
 
   delegate_->DidPause(delegate_id_, /* reached_e
-"""
-
-
 ```

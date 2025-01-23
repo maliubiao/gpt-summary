@@ -264,14 +264,16 @@ By following this kind of thought process, breaking down the code into smaller p
 
 总而言之，`blink/renderer/platform/graphics/filters/fe_blend.cc` 是 Blink 引擎中实现 SVG `<feBlend>` 滤镜的关键代码，它负责执行各种图像混合操作，并且与 CSS 的 `filter`, `mix-blend-mode`, 和 `background-blend-mode` 属性有着密切的联系。理解它的功能有助于开发者更好地利用 Web 技术创建丰富的视觉效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/fe_blend.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005 Rob Buis <buis@kde.org>
@@ -340,7 +342,4 @@ StringBuilder& FEBlend::ExternalRepresentation(StringBuilder& ts,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -197,7 +197,7 @@ let result = multiply(5, 3);
 
 `v8/src/compiler/js-operator.h` 是 V8 编译器中至关重要的头文件，它定义了用于表示各种 JavaScript 操作的基础接口。它充当了编译器理解和优化 JavaScript 代码的关键桥梁，将 JavaScript 的语言特性映射到编译器内部的操作表示。了解这个文件有助于理解 V8 编译器如何处理 JavaScript 代码的各个方面，从基本的算术运算到复杂的对象和函数操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-operator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-operator.h以.tq结尾，那它是个v8 torque源代码，
@@ -205,8 +205,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ;
   const Operator* BitwiseAnd(FeedbackSource const& feedback);
   const Operator* ShiftLeft(FeedbackSource const& feedback);
@@ -1089,8 +1091,4 @@ class JSFindNonDefaultConstructorOrConstructNode final
 }  // namespace v8
 
 #endif  // V8_COMPILER_JS_OPERATOR_H_
-
-"""
-
-
 ```

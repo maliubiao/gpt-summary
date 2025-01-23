@@ -157,7 +157,7 @@ fetch('https://example.com')
 
 这个文件的主要功能是 **全面地测试 `TransportConnectJob` 类的连接建立逻辑和错误处理机制**。它通过模拟各种网络场景和条件，验证 `TransportConnectJob` 在 DNS 解析、TCP 连接、超时处理、IPv6 回退、DNS 别名以及与 `HostResolverEndpointResult` 交互等方面的行为是否符合预期。这些测试确保了 Chromium 网络栈在建立传输层连接时的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/transport_connect_job_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -893,7 +895,4 @@ TEST_F(TransportConnectJobTest, NoAlpnProtocols) {
 }
 
 // Test that, given multiple `HostResolverEndpointResult`
-"""
-
-
 ```

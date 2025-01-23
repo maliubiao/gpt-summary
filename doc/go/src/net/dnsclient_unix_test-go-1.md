@@ -105,7 +105,7 @@ Let's break down the thought process for analyzing this Go code snippet.
 
 总而言之，这段代码是 Go 语言 `net` 包中 DNS 客户端实现的关键测试部分，它确保了 DNS 解析器在各种复杂和异常情况下都能按照预期工作，并且能够防御潜在的安全风险。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/dnsclient_unix_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -114,8 +114,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 solveWhich: func(quest dnsmessage.Question) resolveWhichEnum {
 				if quest.Name.String() == searchY && quest.Type == dnsmessage.TypeAAAA {
 					return resolveTimeout
@@ -1266,9 +1268,4 @@ func TestLongDNSNames(t *testing.T) {
 		{req: longDNSPrefix[:255-len(longDNSsuffix)] + longDNSsuffix, fail: true},
 		{req: longDNSPrefix[:254-len(longDNSsuffix)] + longDNSsuffix},
 		{req: longDNSPrefix[:253-len(longDNSs
-"""
-
-
-
-
 ```

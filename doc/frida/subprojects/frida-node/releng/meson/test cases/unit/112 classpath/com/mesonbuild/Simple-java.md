@@ -161,7 +161,7 @@ By following this detailed thought process, connecting the simple Java code to t
 
 总而言之，`Simple.java` 虽然代码简单，但它在 Frida 的测试体系中扮演着验证 Java 环境连通性的基础角色。理解它的作用有助于理解 Frida 如何与 Java 虚拟机交互，并为更复杂的动态插桩应用奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/112 classpath/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class Simple {
@@ -178,7 +180,4 @@ class Simple {
         System.out.println("Java is working.\n");
     }
 }
-
-"""
-
 ```

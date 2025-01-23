@@ -120,15 +120,17 @@ myFunction(5, 10);
 
 `v8/src/execution/ia32/frame-constants-ia32.cc` 是 V8 引擎在 IA32 架构上管理函数调用栈帧的关键组成部分。它定义了用于定位栈帧、上下文以及计算栈帧大小的常量和方法，为 JavaScript 代码的执行提供了底层的支持。虽然用户通常不会直接与这个文件交互，但理解其背后的概念对于理解 JavaScript 的执行模型和排查某些类型的错误非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/ia32/frame-constants-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/ia32/frame-constants-ia32.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -168,7 +170,4 @@ intptr_t MaglevFrame::StackGuardFrameSize(int register_input_count) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_IA32
-
-"""
-
 ```

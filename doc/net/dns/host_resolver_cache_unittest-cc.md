@@ -124,7 +124,7 @@ By following these steps, I can systematically analyze the C++ code and generate
 
 `net/dns/host_resolver_cache_unittest.cc` 的第一部分主要集中在 **验证 `HostResolverCache` 类存储和检索各种类型 DNS 记录（包括 A、AAAA、HTTPS、别名和错误信息）的基本功能**。它通过一系列单元测试，确保缓存能够正确地处理不同类型的 DNS 结果，并能根据精确的键值（主机名、查询类型、来源、安全连接）进行匹配。 此外，它也初步验证了缓存更新和替换的机制，为后续测试更复杂的缓存策略和时间相关特性奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -828,8 +830,4 @@ TEST_F(HostResolverCacheTest, WildcardUpdateCanReplaceSpecifics) {
   EXPECT_THAT(cache.Lookup(kName, anonymization_key, DnsQueryType::AAAA),
               Pointee(ExpectHostResolverInternalAliasResult(
                   kName, DnsQueryType::UNSPECIFIED,
-                  
-"""
-
-
 ```

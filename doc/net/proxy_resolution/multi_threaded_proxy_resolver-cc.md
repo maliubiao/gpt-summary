@@ -207,15 +207,17 @@ proxy_list_.Get() = "PROXY proxy.company.com:3128"
 
 通过以上步骤，可以追踪代理解析的过程，识别潜在的瓶颈或错误，并最终定位到 `MultiThreadedProxyResolver.cc` 中的相关代码。 NetLog 是一个非常有用的工具，可以帮助理解异步操作的执行顺序和时间消耗。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/multi_threaded_proxy_resolver.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -844,7 +846,4 @@ void MultiThreadedProxyResolverFactory::RemoveJob(
 }
 
 }  // namespace net
-
-"""
-
 ```

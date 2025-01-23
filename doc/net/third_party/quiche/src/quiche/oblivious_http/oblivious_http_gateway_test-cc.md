@@ -170,15 +170,17 @@ OHTTP 协议的目标是提高网络请求的隐私性。在客户端（通常�
 * **使用网络抓包工具 (如 Wireshark)：**  捕获客户端和网关之间的网络流量，检查 OHTTP 请求和响应的详细内容。
 * **对比测试向量：** 使用测试文件中提供的测试向量，在本地环境中运行测试，验证 `ObliviousHttpGateway` 的基本解封装功能是否正常。如果本地测试失败，则可能是代码实现存在问题。如果本地测试通过，但生产环境失败，则可能是配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/oblivious_http/oblivious_http_gateway_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/oblivious_http/oblivious_http_gateway.h"
 
 #include <stdint.h>
@@ -430,7 +432,4 @@ TEST(ObliviousHttpGateway, TestWithMultipleThreads) {
 }
 }  // namespace
 }  // namespace quiche
-
-"""
-
 ```

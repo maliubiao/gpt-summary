@@ -255,7 +255,7 @@ sys.stdin.read()
 
 请记住，调试底层系统组件需要一定的专业知识，并且不同的 Android 版本和硬件可能有所差异。 理解 DRM 的工作原理和相关的 ioctl 命令对于有效地进行调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/drm/drm_sarea.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,8 +266,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -316,7 +318,4 @@ typedef struct drm_sarea drm_sarea_t;
 }
 #endif
 #endif
-
-"""
-
 ```

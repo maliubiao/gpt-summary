@@ -255,7 +255,7 @@ session.detach()
 
 总结来说，`bionic/libc/kernel/uapi/asm-riscv/asm/param.handroid` 虽然内容简单，但它在 Android 系统中扮演着重要的基础角色，为用户空间提供了访问关键系统参数的入口，并影响着许多核心功能，特别是时间管理和进程调度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-riscv/asm/param.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -266,8 +266,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -275,7 +277,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/param.h>
-
-"""
-
 ```

@@ -215,7 +215,7 @@ func main() {
 
 这段代码定义了 `Transport` 结构体及其相关的辅助结构体和方法，是 Go 语言 `net/http` 包中负责执行实际 HTTP 请求的核心组件。它抽象了底层的网络连接管理、请求发送和响应接收的细节，并提供了丰富的配置选项来满足不同的需求，例如代理设置、超时控制、连接池管理和协议协商。 它是 `http.Client` 实现高层 HTTP 功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/transport.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -224,8 +224,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1177,9 +1179,4 @@ func (t *Transport) CancelRequest(req *Request) {
 
 //
 // Private implementation past this poi
-"""
-
-
-
-
 ```

@@ -84,11 +84,13 @@ console.log(wasmInstance.exports.add()); // 执行导出的函数
 
 `local-decl-encoder.cc` 是 V8 引擎中负责 WebAssembly 本地变量声明编码的关键组件。虽然 JavaScript 开发者不会直接操作它，但当我们使用 `WebAssembly.Module` 加载和编译 WebAssembly 代码时，V8 引擎会在幕后使用这个组件来处理本地变量的声明，从而正确地执行 WebAssembly 代码。JavaScript 示例展示了包含本地变量声明的 WebAssembly 模块，V8 引擎在加载和执行该模块时会用到类似 `local-decl-encoder.cc` 中实现的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/local-decl-encoder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ size_t LocalDeclEncoder::Size() const {
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

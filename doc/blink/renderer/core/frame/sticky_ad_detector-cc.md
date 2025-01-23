@@ -157,14 +157,16 @@ This iterative process of examining the code, understanding its purpose, tracing
 
 总而言之，`sticky_ad_detector.cc` 是 Chromium Blink 引擎中一个重要的组件，它通过结合布局信息、样式属性和命中测试，来识别网页上的大型粘性广告，为浏览器后续的处理提供了依据。理解其工作原理有助于开发者更好地理解浏览器如何识别和处理网页上的广告行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/sticky_ad_detector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -318,7 +320,4 @@ void StickyAdDetector::OnLargeStickyAdDetected(
 }
 
 }  // namespace blink
-
-"""
-
 ```

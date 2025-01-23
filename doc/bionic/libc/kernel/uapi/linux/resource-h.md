@@ -284,7 +284,7 @@ session.detach()
 
 这个 Frida 示例演示了如何跟踪 Bionic 库中的函数调用，从而深入了解 Android Framework 和 NDK 如何与底层的 Linux 内核功能交互。你可以根据需要修改脚本来 hook 其他相关的函数，例如 `setrlimit` 或 `getrusage`。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/resource.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -295,8 +295,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -347,7 +349,4 @@ struct rlimit64 {
 #define MLOCK_LIMIT (8 * 1024 * 1024)
 #include <asm/resource.h>
 #endif
-
-"""
-
 ```

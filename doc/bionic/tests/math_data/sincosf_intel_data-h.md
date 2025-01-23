@@ -53,7 +53,7 @@ By following this systematic approach, I can generate a comprehensive and accura
 * **如何使用这些数据进行测试和调试。**
 * **Frida Hook 的应用场景。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sincosf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -65,8 +65,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1312,7 +1314,4 @@ static data_2_1_t<float, float, float> g_sincosf_intel_data[] = {
   { // Entry 245
     0x1.6b3920d8117828928fe10ac70ba69e76p-1,
     0x1.68d9ad29736c1704caea6a2db6e71
-"""
-
-
 ```

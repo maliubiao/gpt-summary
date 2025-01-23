@@ -123,7 +123,7 @@ This file is directly related to reverse engineering because Frida is a dynamic 
 
 **Debugging Scenario:** If a user reports that the Frida build is not using colored output even though they set `b_colorout=always`, a debugger or logging within the `get_colorout_args` method in `clang.py` could be used to verify that the method is being called and returning the correct flag. Similarly, if there are issues with LTO, one could inspect the calls to `get_lto_compile_args` and `get_lto_link_args` to see which flags are being generated and if the linker compatibility checks are passing.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/mixins/clang.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019-2022 The meson development team
 
@@ -303,7 +305,4 @@ class ClangCompiler(GnuLikeCompiler):
                 raise mesonlib.MesonException('clang support for LTO threads requires clang >=4.0')
             args.append(f'-flto-jobs={threads}')
         return args
-
-"""
-
 ```

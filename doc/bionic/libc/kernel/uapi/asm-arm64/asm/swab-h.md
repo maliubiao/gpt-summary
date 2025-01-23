@@ -194,7 +194,7 @@ sys.stdin.read()
 
 这个 Frida 示例提供了一种动态调试和观察字节交换操作的方式，可以帮助理解数据是如何被转换的。 请注意，为了成功 hook `libc.so` 中的函数，目标应用需要是可调试的或者你的设备需要 root 权限。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/swab.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -205,8 +205,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -214,7 +216,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/swab.h>
-
-"""
-
 ```

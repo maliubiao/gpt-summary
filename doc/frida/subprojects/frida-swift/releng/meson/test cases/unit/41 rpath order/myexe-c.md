@@ -126,7 +126,7 @@ sys.stdin.read()
 
 总而言之，虽然 `myexe.c` 的代码非常简洁，但在 Frida 动态 instrumentation 的上下文中，它作为一个简单的测试目标，能够帮助开发者验证和调试与系统底层、动态链接等复杂概念相关的行为。尤其在 `rpath order` 这个目录下，它的存在很可能就是为了测试 Frida 在处理动态链接库路径时的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/41 rpath order/myexe.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,12 +134,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
   return 0;
 }
-
-"""
-
 ```

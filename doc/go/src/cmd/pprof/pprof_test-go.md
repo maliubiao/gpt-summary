@@ -196,15 +196,17 @@ cmd = testenv.Command(t, pprofPath(t), "-disasm", "main.main", cpuExe, profile)
 
 这段测试代码通过模拟 `pprof` 命令的运行并检查其行为，有效地验证了 `pprof` 命令的各项功能，并确保其在不同平台上的兼容性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/pprof/pprof_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -318,9 +320,4 @@ func TestDisasm(t *testing.T) {
 		t.Errorf("pprof -disasm got %s want contains %q", sout, want)
 	}
 }
-
-"""
-
-
-
 ```

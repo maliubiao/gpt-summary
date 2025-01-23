@@ -243,7 +243,7 @@ if __name__ == "__main__":
 
 总结来说，`bionic/libc/kernel/uapi/linux/netfilter/xt_cgroup.h` 定义了用于在用户空间和内核之间传递 cgroup 相关信息的结构体，这对于 Android 基于 cgroup 进行网络流量控制至关重要。虽然它本身不包含 libc 函数的实现，但其定义的数据结构被广泛用于与网络相关的系统调用和操作中。 通过 Frida 等工具，可以 hook 相关的函数调用来观察这些结构体的使用情况，从而理解 Android 如何一步步地利用 `xt_cgroup` 来实现各种网络策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_cgroup.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -254,8 +254,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -292,7 +294,4 @@ struct xt_cgroup_info_v2 {
   void * priv __attribute__((aligned(8)));
 };
 #endif
-
-"""
-
 ```

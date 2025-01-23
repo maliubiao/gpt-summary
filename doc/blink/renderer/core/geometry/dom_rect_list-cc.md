@@ -166,15 +166,17 @@ CSS 样式控制了元素的大小、位置、边距、边框等，这些属性�
 
 总之，`dom_rect_list.cc` 作为一个底层的实现文件，通常不会被直接调试，但理解它的功能有助于理解 `getClientRects()` 等 Web API 的行为，并在复杂的布局问题调试中提供线索。 开发者通常会先在高层次的 JavaScript 和 CSS 层面进行调试，只有在怀疑渲染引擎本身存在问题时，才会深入到 Blink 的 C++ 代码中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/geometry/dom_rect_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Apple Inc. All Rights Reserved.
  *
@@ -230,7 +232,4 @@ void DOMRectList::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

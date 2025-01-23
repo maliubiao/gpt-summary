@@ -176,7 +176,7 @@ Interceptor.attach(Module.findExportByName(null, "flobb"), { // 注意 "flobb" �
 
 这个简单的 `prog.c` 文件虽然功能简单，但作为 Frida 测试用例，它可以用来验证 Frida 在处理边界情况（如未定义函数）时的能力，并帮助开发者理解 Frida 的工作原理和可能的局限性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/208 link custom/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,15 +184,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void flob(void);
 
 int main(void) {
     flob();
     return 0;
 }
-
-"""
-
 ```

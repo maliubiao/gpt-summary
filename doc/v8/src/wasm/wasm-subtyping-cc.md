@@ -249,15 +249,17 @@ exports.processSuper(subInstance); // 这是允许的，因为 Sub 是 Super 的
 
 理解 `v8/src/wasm/wasm-subtyping.cc` 中实现的子类型规则对于避免这些常见的编程错误至关重要，特别是在进行复杂的 Wasm 类型定义和 JavaScript 与 Wasm 的互操作时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-subtyping.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-subtyping.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1117,7 +1119,4 @@ bool IsSameTypeHierarchy(HeapType type1, HeapType type2,
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

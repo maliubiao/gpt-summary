@@ -107,11 +107,13 @@ myObject = null; // 使 myObject 成为垃圾回收的候选者
 
 总之，`v8/src/heap/memory-chunk.cc` 中定义的 `MemoryChunk` 类是 V8 引擎管理堆内存的关键组成部分，它抽象了堆中的内存块，并提供了管理这些内存块状态和属性的机制，这些机制直接支持了 JavaScript 对象的内存分配和垃圾回收过程。JavaScript 开发者虽然不直接操作 `MemoryChunk`，但其背后的工作原理直接影响着 JavaScript 程序的性能和内存使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/memory-chunk.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -406,7 +408,4 @@ bool MemoryChunk::SandboxSafeInReadOnlySpace() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

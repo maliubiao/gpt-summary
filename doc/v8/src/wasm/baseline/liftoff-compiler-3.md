@@ -73,12 +73,14 @@ console.log(ia[0]); // 输出 10 (如果当前值为 5，则更新为 10)
 
 作为第4部分，这个文件专注于 WebAssembly 中与性能密切相关的 SIMD 向量指令和原子指令的编译，使得 JavaScript 能够利用这些底层硬件加速功能，提高 WebAssembly 代码的执行效率，尤其是在处理多媒体、图形计算和并发任务时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 inOp<kS128, kS128>(
             &LiftoffAssembler::emit_i16x8_extmul_high_i8x16_s);
       case wasm::kExprI16x8ExtMulHighI8x16U:
@@ -1551,8 +1553,5 @@ inOp<kS128, kS128>(
   // Same as {PopIndexToVarState}, but can take a VarState in the middle of the
   // stack without popping it.
   // For 64-bit values on 32-bit systems, the resulting VarState will contain a
-  // single register whose value will be 
-"""
-
-
+  // single register whose value will be
 ```

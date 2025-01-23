@@ -152,14 +152,16 @@ Let's consider the `WillCreateAcceleratedImagesFromVideoFrame` function:
 
 In summary, `video_frame_image_util.cc` is a crucial piece of the Blink rendering engine responsible for efficiently converting video frames into renderable images, handling transformations, and leveraging GPU acceleration when possible. It directly supports the display of video content within web pages and interacts closely with JavaScript and the HTML canvas API. Understanding its functionalities is important for comprehending how video is rendered in Chromium-based browsers.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/video_frame_image_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -516,7 +518,4 @@ std::unique_ptr<CanvasResourceProvider> CreateResourceProviderForVideoFrame(
 }
 
 }  // namespace blink
-
-"""
-
 ```

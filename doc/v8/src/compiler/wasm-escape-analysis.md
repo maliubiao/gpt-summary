@@ -130,11 +130,13 @@ console.log(sum);
 
 `v8/src/compiler/wasm-escape-analysis.cc` 实现了 WebAssembly 代码的逃逸分析，主要目标是消除不必要的内存分配，尤其是在分配的内存仅用于立即存储到其他对象并且没有被直接访问的情况下。这是一种重要的编译器优化，可以提高 WebAssembly 代码在 V8 引擎中的执行效率，从而间接地提升 JavaScript 中使用 WebAssembly 的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-escape-analysis.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ Reduction WasmEscapeAnalysis::ReduceAllocateRaw(Node* node) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

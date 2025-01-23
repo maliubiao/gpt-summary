@@ -102,7 +102,7 @@ runWasm();
 
 `v8/src/wasm/graph-builder-interface.cc` 的第一部分主要定义了 `WasmGraphBuildingInterface` 类及其相关的辅助结构 (`SsaEnv`, `Control`)。  它确立了将解码后的 Wasm 指令转换为 V8 TurboFan 编译器图结构的基础框架，并实现了对一些基本 Wasm 指令 (如常量、局部变量操作、控制流初步) 的处理。 这部分代码负责维护编译过程中的状态信息，并与底层的图构建器进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/graph-builder-interface.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/graph-builder-interface.cc以.tq结尾，那它是个v8 torque源代码，
@@ -110,8 +110,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -938,8 +940,5 @@ class WasmGraphBuildingInterface {
         decoder->detected_->add_imported_strings();
         break;
       }
-      case 
-"""
-
-
+      case
 ```

@@ -199,7 +199,7 @@ Based on this analysis, I can now formulate the summary.
 
 总而言之，这段代码实现了 `Range` 接口的核心功能，包括在文档中选择区域、插入/提取内容、获取文本表示、进行各种边界调整以及获取渲染相关的几何信息。它在 JavaScript 操作 DOM 时扮演着关键角色，使得开发者能够精确地操作和查询文档的特定部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/range.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 node itself.");
     return;
   }
@@ -1130,7 +1132,4 @@ void Range::UpdateSelectionIfAddedToSelection() {
                          SetSelectionOptions::Builder()
                              .SetShouldCloseTyping(true)
                              .
-"""
-
-
 ```

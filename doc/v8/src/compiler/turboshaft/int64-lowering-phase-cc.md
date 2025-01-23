@@ -126,15 +126,17 @@ console.log(largeNumber + 1); // 结果可能因架构而异，或在 V8 内部�
 
 总而言之，`v8/src/compiler/turboshaft/int64-lowering-phase.cc` 是 V8 编译器的一个关键组件，用于确保在 32 位架构上能够正确且有效地执行涉及到 64 位整数的计算。它通过将 64 位操作分解成 32 位操作序列来实现这一点。虽然用户不会直接与这个阶段的代码交互，但理解它的功能有助于理解 JavaScript 引擎的内部工作原理以及跨平台性能的差异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/int64-lowering-phase.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/int64-lowering-phase.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ void Int64LoweringPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

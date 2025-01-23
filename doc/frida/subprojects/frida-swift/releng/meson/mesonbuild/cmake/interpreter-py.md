@@ -119,7 +119,7 @@ Here's a typical scenario:
 
 The `interpreter.py` file is the **bridge between CMake and Meson** in the Frida build system. It **parses CMake project definitions**, **extracts relevant build information**, **translates CMake concepts into Meson equivalents**, and **manages dependencies**. This allows Meson to understand and build the CMake-based components of Frida. It plays a crucial role in ensuring a successful and consistent build process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/cmake/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -887,8 +889,5 @@ class ConverterCustomTarget:
         mlog.log('Custom Target', mlog.bold(self.name), f'({self.cmake_name})')
         mlog.log('  -- command:      ', mlog.bold(str(self.command)))
         mlog.log('  -- outputs:      ', mlog.bold(str(self.outputs)))
-        mlog.log('  -- conflict_map: ', 
-"""
-
-
+        mlog.log('  -- conflict_map: ',
 ```

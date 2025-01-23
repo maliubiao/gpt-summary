@@ -147,14 +147,16 @@ By following these steps, we can systematically analyze the C++ test file and un
 
 总而言之，`stats_collecting_decoder_test.cc` 通过一系列单元测试，验证了 `StatsCollectingDecoder` 收集视频解码统计信息的功能，这对于理解和优化 WebRTC 的性能至关重要，虽然它与前端技术没有直接代码交互，但其结果会影响到用户在网页上体验到的音视频质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/stats_collecting_decoder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -491,7 +493,4 @@ TEST_F(StatsCollectingDecoderTest, NoCollectionAfter40000Frames) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

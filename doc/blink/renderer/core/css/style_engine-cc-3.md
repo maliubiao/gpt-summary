@@ -188,7 +188,7 @@ Based on this, I can address each of the user's points and then summarize the fu
 
 总而言之，`style_engine.cc` 中的这段代码是 Blink 渲染引擎处理 CSS 样式变更的核心部分，尤其关注用户自定义样式以及各种高级 CSS 特性的实现和管理。 开发者理解这段代码的逻辑，有助于诊断和解决与样式渲染相关的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_engine.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -196,9 +196,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-      if (is_user_style != other.is_user_style) {
+### 源代码
+```cpp
+if (is_user_style != other.is_user_style) {
         return is_user_style;
       }
       return layer_order < other.layer_order;
@@ -1086,7 +1088,4 @@ void StyleEngine::UpdateStyleAndLayoutTreeForContainer(
 
   ContainerQueryEvaluator::Change query_change =
       container.EnsureContainerQueryEvaluator().SizeCon
-"""
-
-
 ```

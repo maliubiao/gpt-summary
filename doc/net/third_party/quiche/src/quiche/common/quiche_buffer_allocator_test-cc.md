@@ -125,15 +125,17 @@ fetch('https://example.com/large_file.bin')
 
 通过分析这个测试文件，开发者可以更好地理解 `QuicheBuffer` 的功能、限制以及可能导致错误的用法，从而帮助他们诊断和修复网络栈中的问题。 这些测试用例也为开发者提供了示例，展示了如何正确地使用 `QuicheBuffer` 类。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/quiche_buffer_allocator_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ TEST(QuicheBuffer, CopyFromIovecTooManyBytesRequested) {
 }  // anonymous namespace
 }  // namespace test
 }  // namespace quiche
-
-"""
-
 ```

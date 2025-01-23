@@ -119,7 +119,7 @@ func main() {
 
 `go/src/internal/syscall/unix/siginfo_linux_other.go` 中定义的 `siErrnoCode` 结构体是 Go 语言内部实现信号处理机制的一部分，用于存储与信号相关的错误码和代码信息。它很可能用于解析和表示从操作系统内核接收到的 `siginfo_t` 结构体中的信息。 普通用户代码不应该直接使用它，而应该使用 `os/signal` 包提供的更高级别的 API 来处理信号。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/siginfo_linux_other.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -127,8 +127,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -141,9 +143,4 @@ type siErrnoCode struct {
 	Errno int32
 	Code  int32
 }
-
-"""
-
-
-
 ```

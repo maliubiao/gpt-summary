@@ -304,7 +304,7 @@ if (Process.platform === 'android') {
 
 这个 Frida 脚本会拦截对 `logbf` 函数的调用，并在函数调用前后打印出参数和返回值，从而帮助你理解 `logbf` 在实际运行中的行为。你可以根据需要修改脚本，例如修改返回值、打印调用栈等，进行更深入的调试分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_logbf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -315,8 +315,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* s_logbf.c -- float version of s_logb.c.
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
  */
@@ -354,7 +356,4 @@ logbf(float x)
 	} else
 		return (float) ((ix>>23)-127);
 }
-
-"""
-
 ```

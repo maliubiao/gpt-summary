@@ -132,15 +132,17 @@ Decoded Instruction: ADDI
 
 这段代码是构建 PPC64 工具链（例如汇编器、反汇编器、调试器）的重要组成部分，它提供了将二进制机器码转换为结构化数据的能力，为后续的分析和处理奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/ppc64/ppc64asm/decode.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors.  All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -408,9 +410,4 @@ func Decode(src []byte, ord binary.ByteOrder) (inst Inst, err error) {
 	}
 	return inst, nil
 }
-
-"""
-
-
-
 ```

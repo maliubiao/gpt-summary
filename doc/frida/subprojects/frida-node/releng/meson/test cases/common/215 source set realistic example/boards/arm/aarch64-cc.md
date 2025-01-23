@@ -132,7 +132,7 @@ Here's a breakdown of the thinking process to analyze the provided C++ code snip
 
 通过 "some MyMobileDevice initialization"，开发者可以确定测试是在针对 "MyMobileDevice" 的 ARM64 环境下进行的。如果他们原本期望测试在另一个设备或模拟器上运行，这就提供了一个重要的调试线索，表明测试环境配置可能存在问题。或者，如果他们知道某些初始化步骤在 "MyMobileDevice" 上与其他设备不同，这个信息也可以帮助他们分析失败的原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/215 source set realistic example/boards/arm/aarch64.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "common.h"
 #include <iostream>
 
@@ -150,7 +152,4 @@ void initialize_target()
     std::cout << ANSI_START << "some " << THE_TARGET
               << " initialization" << ANSI_END << std::endl;
 }
-
-"""
-
 ```

@@ -203,15 +203,17 @@ func main() {
 
 总而言之，这段代码实现了一个基于二叉搜索树的泛型有序 Map，提供了创建、插入、查找和迭代等基本操作。使用者需要注意正确使用 `_New` 和 `_NewOrdered`，并确保提供的比较函数的正确性，以及避免修改已作为键的可变类型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/orderedmap.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -498,9 +500,4 @@ func (r *_Receiver[Elem]) Next(ctx context.Context) (v Elem, ok bool) {
 func (r *_Receiver[Elem]) finalize() {
 	close(r.done)
 }
-
-"""
-
-
-
 ```

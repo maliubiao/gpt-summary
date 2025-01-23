@@ -142,14 +142,16 @@ By following these steps, I can systematically analyze the code and generate a c
 
 总而言之，`heap_test_utilities.cc` 提供了一组强大的工具，帮助开发者在 Blink 中测试与垃圾回收相关的各种场景，确保内存管理的正确性和效率，从而保障 Web 平台运行的稳定性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/heap_test_utilities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -264,7 +266,4 @@ void ConcurrentMarkingTestDriver::FinishGC() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

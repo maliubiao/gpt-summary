@@ -153,15 +153,17 @@ This systematic approach helps in dissecting the code and understanding its role
 
 总而言之，`net/http/http_response_info_unittest.cc` 这个文件对于保证 Chromium 网络栈中 HTTP 响应信息处理的正确性至关重要，它通过详尽的测试覆盖了 `HttpResponseInfo` 类的各种功能，特别是其序列化和反序列化机制，这直接关系到浏览器的缓存、安全和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_response_info_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -483,7 +485,4 @@ TEST_F(HttpResponseInfoTest, DidUseSharedDictionary) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

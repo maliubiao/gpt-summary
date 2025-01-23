@@ -129,7 +129,7 @@ By following this systematic approach, we can thoroughly analyze the provided C 
 
 总而言之，这个 `lib.c` 文件是一个为了测试 Frida Python 绑定处理内部 C 依赖而创建的简单示例。它展示了如何通过宏定义在编译时配置库的行为，以及 Frida 如何在运行时观察和分析这种行为。对于逆向工程师来说，理解这种动态库的结构和行为是使用 Frida 进行动态分析的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/rust/16 internal c dependencies/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,15 +137,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include "lib.h"
 
 void c_func(void) {
     printf("This is a " MODE " C library\n");
 }
-
-"""
-
 ```

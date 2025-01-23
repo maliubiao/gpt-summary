@@ -98,12 +98,14 @@ console.log(callMultiply(15)); // 更有可能通过快速 API 调用
 
 总而言之，这个代码文件的第 17 部分深入测试了 V8 引擎中一些高级和重要的功能，特别是快速 API 调用及其与 WebAssembly 的集成，以及 V8 的性能监控能力。这些功能对于构建高性能的 JavaScript 应用和嵌入 V8 引擎的项目至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第17部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 > receiver, T arg,
                         v8::FastApiCallbackOptions& options) {
     ReturnValueChecker<T>* receiver_ptr =
@@ -1660,7 +1662,4 @@ void SetupCodeLike(LocalContext* env, const char* name,
                    v8::Local<v8::FunctionTemplate> to_string,
                    bool is_code_like) {
   // Setup a JS construct
-"""
-
-
 ```

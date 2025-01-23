@@ -144,14 +144,16 @@ if (navigator.deviceMemory) {
 
 总之，`approximated_device_memory.cc` 是 Chromium Blink 引擎中一个关键的文件，它负责估算设备内存大小，并将这个信息通过 Device Memory API 暴露给 JavaScript，使得网页开发者可以根据设备的内存情况来优化用户体验。理解其工作原理和潜在的误用有助于开发更健壮和用户友好的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/device_memory/approximated_device_memory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ void ApproximatedDeviceMemory::SetPhysicalMemoryMBForTesting(
 }
 
 }  // namespace blink
-
-"""
-
 ```

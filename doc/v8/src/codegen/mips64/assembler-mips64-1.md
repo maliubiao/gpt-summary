@@ -128,12 +128,14 @@ This code is crucial for the V8 JavaScript engine. When V8 compiles JavaScript c
 
 In essence, this file is a fundamental part of V8's code generation pipeline for MIPS64. It provides the low-level building blocks that allow the engine to execute JavaScript code efficiently on that architecture. The functions in this file act as a high-level interface to the raw MIPS64 assembly instructions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/assembler-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ister(SPECIAL, zero_reg, rt, rd, sa & 0x1F, SRA);
 }
 
@@ -2124,7 +2126,4 @@ void Assembler::CheckTrampolinePool() {
     }
   } else {
     // Number of branches t
-"""
-
-
 ```

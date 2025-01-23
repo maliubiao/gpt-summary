@@ -130,15 +130,17 @@ func f(ch chan int) bool {
 
 这段代码的核心目的是展示一个 Go 语言的编译错误，即在 `select` 语句的 `case` 子句中，不能将 channel 接收操作的多个返回值都赋值给空白标识符。  它强调了空白标识符在接收 channel 数据时的正确使用方式。  理解这个错误有助于开发者避免在实际编程中犯类似的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7998.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compile
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -162,9 +164,4 @@ func f(ch chan int) bool {
 	}
 	return false
 }
-
-"""
-
-
-
 ```

@@ -156,7 +156,7 @@ Here's a breakdown of how to approach the request:
 
 总而言之，`ninjabackend.py` 是 Meson 构建系统与 Ninja 构建工具之间的桥梁，它将开发者友好的 Meson 构建描述转化为高效的 Ninja 构建指令，从而驱动 Frida 项目的实际构建过程。它深入涉及到二进制底层知识、操作系统特性（如动态链接、符号链接），并且需要处理各种构建场景和用户配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 [:]
         cmd += prelinker.get_prelink_args(prelink_name, obj_list)
 
@@ -619,8 +621,4 @@ def _scan_fortran_file_deps(src: Path, srcdir: Path, dirname: Path, tdeps, compi
                     mod_name = compiler.module_name_to_filename(ancestor_child)
                     mod_files.append(str(dirname / mod_name))
     return mod_files
-
-"""
-
-
 ```

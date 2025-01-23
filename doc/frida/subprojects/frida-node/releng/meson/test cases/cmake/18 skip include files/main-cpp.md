@@ -102,7 +102,7 @@ The final step is to organize the thoughts into a clear and structured answer, u
 
 总而言之，这个 `main.cpp` 文件本身是一个非常简单的 C++ 程序，但其存在的上下文（Frida-Node 的测试用例）赋予了它更深层的意义，暗示了它被用来测试 Frida 在特定构建场景下的行为，这与逆向工程中需要处理各种复杂的二进制程序密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/18 skip include files/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 
@@ -122,7 +124,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

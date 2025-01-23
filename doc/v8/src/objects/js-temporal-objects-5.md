@@ -166,12 +166,14 @@ console.log(localeString); // 输出符合中文本地化习惯的 Duration 字�
 
 总而言之，这个 C++ 代码文件是 `Temporal.Duration` 对象在 V8 引擎中的底层实现，它定义了 Duration 对象的各种行为和计算逻辑，这些逻辑直接被 JavaScript 中的 `Temporal.Duration` API 调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 >months()),
                                  Object::NumberValue(duration->weeks()),
                                  Object::NumberValue(duration->days())},
@@ -1581,7 +1583,4 @@ Maybe<DurationRecordWithRemainder> RoundDuration(Isolate* isolate,
       ASSIGN_RETURN_ON_EXCEPTION_VALUE(
           isolate, years_months_weeks_later,
           CalendarDateAdd
-"""
-
-
 ```

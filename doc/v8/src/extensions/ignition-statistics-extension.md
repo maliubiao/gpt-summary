@@ -106,11 +106,13 @@ console.log(updatedDispatchCounters);
 
 `ignition-statistics-extension.cc` 通过暴露 V8 内部的 Ignition 解释器指令分发计数器，为 JavaScript 开发者提供了一种了解 JavaScript 代码在底层是如何被执行的机制。这对于性能分析和理解 V8 的内部工作原理很有帮助。然而，需要注意的是，这些内部统计信息的格式和内容可能会随着 V8 的版本更新而变化，因此不应该在生产环境中依赖特定的输出格式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/extensions/ignition-statistics-extension.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -151,7 +153,4 @@ void IgnitionStatisticsExtension::GetIgnitionDispatchCounters(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

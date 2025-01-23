@@ -161,7 +161,7 @@ Finally, I organize the analyzed information into a clear and structured answer,
 
 总而言之，`manualinclude.cpp` 这个测试用例旨在演示Frida如何与需要手动包含MOC生成文件的Qt代码进行交互，它为理解更复杂的Qt应用程序的逆向分析提供了基础。用户可以通过分析和修改这个测试用例，学习如何使用Frida来观察和理解Qt应用程序的内部工作机制，特别是信号与槽的使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/4 qt/manualinclude.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"manualinclude.h"
 #include <mocdep.h>
 #include<QCoreApplication>
@@ -198,7 +200,4 @@ int main(int argc, char **argv) {
 }
 
 #include"manualinclude.moc"
-
-"""
-
 ```

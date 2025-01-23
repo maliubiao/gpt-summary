@@ -114,15 +114,17 @@ By following this thought process, I can systematically analyze the C++ test cod
 
 这部分 `response_body_loader_test.cc` 文件的主要功能是 **全面测试 `ResponseBodyLoader` 类的核心加载流程、控制方法（中止、暂停、恢复）以及数据导出功能（导出为 DataPipe 和 BytesConsumer）**。  此外，它还涵盖了与浏览器 BackForwardCache 交互的特定场景。通过这些测试用例，可以确保 `ResponseBodyLoader` 能够可靠地处理各种网络响应和用户操作，为浏览器正确加载网页资源提供保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/response_body_loader_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1018,7 +1020,4 @@ TEST_F(ResponseBodyLoaderTest, AbortAfterBytesConsumerIsDrainedIsNotified) {
       MakeResponseBodyLoader(*original_consumer, *client, task_runner);
 
   BytesConsumer& consumer = body_load
-"""
-
-
 ```

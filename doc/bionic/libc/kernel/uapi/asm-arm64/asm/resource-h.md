@@ -308,7 +308,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/asm-arm64/asm/resource.handroid` 虽然只是一个定义头文件，但它是 Android 系统资源管理的重要组成部分，通过与 libc 函数和内核交互，实现了对进程资源使用的限制和控制。理解它的作用有助于开发者更好地理解 Android 系统的底层机制，并避免常见的资源管理错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm64/asm/resource.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -319,8 +319,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -328,7 +330,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/resource.h>
-
-"""
-
 ```

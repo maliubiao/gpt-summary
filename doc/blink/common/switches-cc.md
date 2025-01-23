@@ -143,14 +143,16 @@ This iterative process of understanding, categorizing, analyzing, exemplifying, 
 
 理解这些命令行开关的功能对于开发者进行底层调试、性能调优和实验性特性测试非常有帮助。但是，普通用户通常不需要直接操作这些开关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/switches.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -345,7 +347,4 @@ const char kWebAudioBypassOutputBufferingOptOut[] =
 
 }  // namespace switches
 }  // namespace blink
-
-"""
-
 ```

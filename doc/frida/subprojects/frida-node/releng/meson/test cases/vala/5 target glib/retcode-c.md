@@ -135,7 +135,7 @@ By following these steps, we can provide a comprehensive answer that addresses a
 
 总而言之，这个简单的 `get_ret_code` 函数虽然代码量很少，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 的动态插桩功能，特别是对于涉及 Vala 和 GLib 的场景。它也体现了逆向工程中常见的返回值控制和桩代码的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/vala/5 target glib/retcode.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,14 +143,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void *
 get_ret_code (void)
 {
   return (void *) (int) 42;
 }
-
-"""
-
 ```

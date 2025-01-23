@@ -169,14 +169,16 @@ By following this structured approach, you can effectively analyze and explain t
 
 总而言之，`layout_svg_filter_primitive.cc` 是 Blink 渲染引擎中一个关键的组件，它负责管理 SVG 滤镜原始元素的布局和渲染，并处理与 CSS 样式变化相关的更新，尤其需要关注 `currentColor` 关键字的影响。理解它的功能有助于开发者更好地使用和调试 SVG 滤镜效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/layout_svg_filter_primitive.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 University of Szeged
  * Copyright (C) 2010 Zoltan Herczeg
@@ -278,7 +280,4 @@ SVGLayoutResult LayoutSVGFilterPrimitive::UpdateSVGLayout(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -123,7 +123,7 @@ process = target.LaunchSimple(None, None, os.getcwd())
 
 - 如果用户遇到连接问题，可以通过 LLDB 调试 `PortableCoreDeviceUsbTransport` 和 `PortableUsbTunnel` 类的相关方法，查看 USB 设备的状态、NCM 连接的建立过程以及隧道连接的打开过程。
 - 通过查看日志和调试信息，可以定位问题所在，例如 USB 设备未正确连接、NCM 模式切换失败或网络接口未准备好等。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/device-monitor.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ice_request;
 		private Promise<LibUSB.Device>? modeswitch_request;
 		private Promise<Tunnel?>? tunnel_request;
@@ -916,8 +918,4 @@ ice_request;
 		cancellable.set_error_if_cancelled ();
 	}
 }
-
-"""
-
-
 ```

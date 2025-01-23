@@ -163,15 +163,17 @@ func main() {
 
 `go/test/nilcheck.go` 这个文件通过各种测试用例，验证了 Go 编译器在必要的地方会自动插入这些 nil 检查，从而提高程序的健壮性。 但开发者仍然需要理解 nil 指针的风险，并在可能的情况下进行显式的 nil 检查，特别是在处理外部数据或者可能返回 nil 的函数时。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/nilcheck.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -N -d=nil
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -362,9 +364,4 @@ func f5(m map[string]struct{}) bool {
 	_, ok := tmp1, tmp2
 	return ok
 }
-
-"""
-
-
-
 ```

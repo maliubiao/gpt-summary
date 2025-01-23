@@ -127,7 +127,7 @@ Memory at 0x1000: efbeadde
 ### 总结
 
 `BareboneScript` 类是 Frida 动态插桩工具的核心部分，负责与底层操作系统、调试器和 JavaScript 引擎的交互。它提供了丰富的功能，允许用户通过 JavaScript 代码直接操作目标进程的内存、寄存器、线程等，并支持设置断点、拦截函数调用等高级调试功能。通过 LLDB 的 Python 脚本，用户可以复刻部分功能，如内存读取和断点设置。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/barebone/script.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	private class BareboneScript : Object {
 		public signal void message (string json, Bytes? data);
@@ -1106,7 +1108,4 @@ namespace Frida {
 			uint size;
 			if (!script->unparse_uint (argv[0], out size))
 				retu
-"""
-
-
 ```

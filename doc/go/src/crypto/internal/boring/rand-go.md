@@ -140,7 +140,7 @@ func main() {
 
 这段代码的核心功能是在特定条件下提供一个基于 BoringSSL 的加密安全随机数读取器。它通过实现 `io.Reader` 接口，可以方便地被 Go 标准库中的函数使用，例如 `io.ReadFull`。使用者需要注意其构建约束和避免直接导入 `internal` 包，以确保代码的正确性和可维护性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/boring/rand.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -148,8 +148,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -174,9 +176,4 @@ func (randReader) Read(b []byte) (int, error) {
 }
 
 const RandReader = randReader(0)
-
-"""
-
-
-
 ```

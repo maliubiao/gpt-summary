@@ -126,7 +126,7 @@ Let's break down the thought process for analyzing the provided Python script `c
 
 总而言之，这个 `copyfile.py` 脚本虽然简单，但在 Frida 的测试框架中扮演着验证基本文件复制功能的重要角色。理解其功能、潜在的错误和背后的操作系统知识，有助于开发人员更好地理解 Frida 的工作原理和进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/41 test args/copyfile.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,15 +134,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 import shutil
 
 shutil.copyfile(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

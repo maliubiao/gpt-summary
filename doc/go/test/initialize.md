@@ -176,11 +176,13 @@ func main() {
 
 `go/test/initialize.go` 的核心功能是细致地测试 Go 语言中各种包级别变量的初始化方式及其行为。 它通过声明和初始化不同类型的变量，并使用反射进行深度比较，来验证 Go 语言的初始化机制的正确性。 该代码本身并不处理命令行参数，但Go 语言提供了 `os` 和 `flag` 包来处理命令行输入。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/initialize.go的go语言实现的一部分， 请归纳一下它的功能, 　如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 如果涉及命令行参数的具体处理，请详细介绍一下
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -286,9 +288,4 @@ func main() {
 		fmt.Println("BUG: test/initialize")
 	}
 }
-
-"""
-
-
-
 ```

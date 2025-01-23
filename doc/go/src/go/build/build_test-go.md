@@ -399,7 +399,7 @@ GOOS=linux GOARCH=amd64 go build  # 设置 GOOS 和 GOARCH
 
 总而言之，`go/src/go/build/build_test.go` 是一个非常全面的测试文件，覆盖了 `go/build` 包的各种核心功能，确保 `go` 命令能够正确地理解和处理 Go 源代码的结构和构建约束。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/build/build_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -407,8 +407,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1239,9 +1241,4 @@ func TestDirectives(t *testing.T) {
 	check("XTestDirectives", p.XTestDirectives,
 		`[{"//go:xtest1" "testdata/directives/c_test.go:1:1"} {"//go:xtest2" "testdata/directives/d_test.go:1:1"} {"//go:xtest3" "testdata/directives/d_test.go:2:1"}]`)
 }
-
-"""
-
-
-
 ```

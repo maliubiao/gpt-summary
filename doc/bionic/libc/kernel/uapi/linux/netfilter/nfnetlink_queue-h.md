@@ -286,7 +286,7 @@ if (nfqSetVerdictPtr) {
 
 无论是通过 NDK 还是 Android Framework，与 Netfilter 队列的交互最终都会涉及使用 Netlink 协议，而 `nfnetlink_queue.h` 定义了用户空间和内核空间之间通信所使用的核心数据结构。  NDK 路径通常更直接，开发者可以更底层地控制 Netlink 通信。 Framework 路径则提供了更高级的抽象，隐藏了底层的 Netlink 细节，但最终的实现仍然依赖于这些底层的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/nfnetlink_queue.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -297,8 +297,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -409,7 +411,4 @@ enum nfqnl_attr_config {
 #define NFQA_SKB_GSO (1 << 1)
 #define NFQA_SKB_CSUM_NOTVERIFIED (1 << 2)
 #endif
-
-"""
-
 ```

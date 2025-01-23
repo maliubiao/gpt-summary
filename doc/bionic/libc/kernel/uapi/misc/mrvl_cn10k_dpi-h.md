@@ -359,7 +359,7 @@ session.detach()
 
 通过运行这个 Frida 脚本，你可以观察到目标应用程序在调用 `ioctl` 时传递的参数，从而了解它如何配置 DPI 硬件。你需要将 `com.example.dpiapp` 替换为你想要分析的应用程序的包名。同时，确保你的 Android 设备已连接并通过 USB 调试授权。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/misc/mrvl_cn10k_dpi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -370,8 +370,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -398,7 +400,4 @@ struct dpi_engine_cfg {
 #define DPI_MPS_MRRS_CFG _IOW(DPI_MAGIC_NUM, 1, struct dpi_mps_mrrs_cfg)
 #define DPI_ENGINE_CFG _IOW(DPI_MAGIC_NUM, 2, struct dpi_engine_cfg)
 #endif
-
-"""
-
 ```

@@ -172,7 +172,7 @@ By following this structured thought process, considering the context, and refin
 
 总而言之，`echo.py` 作为一个非常基础的脚本，在 Frida 的测试框架中扮演着一个简单、可预测的目标进程的角色，用于测试 Frida 的各种功能，例如进程启动、参数传递、标准输入/输出捕获等。它的简单性使得测试更加聚焦于 Frida 本身的功能，而不会被复杂的业务逻辑所干扰。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/150 reserved targets/runtarget/echo.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,15 +180,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 if len(sys.argv) > 1:
     print(sys.argv[1])
-
-"""
-
 ```

@@ -109,14 +109,16 @@ By following these steps, I can thoroughly analyze the provided code snippet and
 
 总而言之，`history_util.cc` 中的 `CanChangeToUrlForHistoryApi` 函数是浏览器引擎中一个关键的安全和规范性检查点，它确保了 JavaScript 的 History API 在修改 URL 时遵循既定的规则，保护用户安全并维护预期的浏览行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/history_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ bool CanChangeToUrlForHistoryApi(const KURL& url,
 }
 
 }  // namespace blink
-
-"""
-
 ```

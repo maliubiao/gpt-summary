@@ -62,7 +62,7 @@ Response:
 2. **映射表操作**：通过 `bpf(BPF_MAP_UPDATE_ELEM)` 初始化 `pem_port` 或 `br1_mac`。
 3. **流量触发**：当数据包经过 `eth0` 时，内核触发 `pem` 函数，可通过 `bpftool prog trace` 捕获执行流。
 4. **错误排查**：若尾调用失败，检查 `jump` 数组和 `skb->cb` 字段；若重定向失败，验证目标接口索引是否存在。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/tests/python/test_brb.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -71,8 +71,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // Copyright (c) PLUMgrid, Inc.
 // Licensed under the Apache License, Version 2.0 (the "License")
 #include <bcc/proto.h>
@@ -299,7 +301,4 @@ int br1(struct __sk_buff *skb) {
 int br2(struct __sk_buff *skb) {
     return br_common(skb, 2);
 }
-
-"""
-
 ```

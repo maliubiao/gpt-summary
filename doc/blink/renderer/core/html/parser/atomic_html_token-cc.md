@@ -139,14 +139,16 @@ By following this structured approach, you can effectively analyze and explain t
 
 总而言之，`AtomicHTMLToken.cc` 文件定义了一个核心的数据结构，用于表示 HTML 解析过程中的基本单元。它的正确实现和使用对于构建准确的 DOM 树至关重要，而 DOM 树又是 CSS 样式应用和 JavaScript 操作的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/atomic_html_token.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -207,7 +209,4 @@ void AtomicHTMLToken::Show() const {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

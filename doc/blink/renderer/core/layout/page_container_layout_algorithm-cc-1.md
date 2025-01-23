@@ -83,15 +83,17 @@ By following this systematic process, I can dissect the code, understand its pur
 
 总的来说，这部分 `PageContainerLayoutAlgorithm` 的代码负责处理页面容器边缘元素的布局细节，特别是如何计算和应用它们的边距。它确保了位于页面边缘的元素能够根据 CSS 样式和可用空间被正确地定位和渲染。  其核心在于对 `auto` 边距的智能解析以及处理布局过程中可能出现的空间约束冲突。这对于实现精确的页面布局至关重要，尤其是在处理像页眉、页脚或固定定位元素等场景时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/page_container_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ain_axis_sizes[SecondResolvee].IsAuto()) {
     // Second has auto size.
     *second_main_axis_size = available_main_axis_size - *first_main_axis_size;
@@ -223,8 +225,4 @@ PhysicalBoxStrut PageContainerLayoutAlgorithm::ResolveMargins(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

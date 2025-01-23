@@ -220,15 +220,17 @@ console.log(equalArrayBuffers(buffer1, buffer3));      // true (类似于 SpanEq
 
 总而言之，`v8/third_party/inspector_protocol/crdtp/span.cc` 提供了一些基础的比较操作，用于处理在 CRDP 通信中可能出现的字节序列和字符序列。这些函数的设计考虑了效率和安全性，避免了一些常见的编程错误。了解这些函数的行为有助于理解 V8 引擎如何处理调试协议中的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/span.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/span.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ bool SpanEquals(span<char> x, span<char> y) noexcept {
 }
 
 }  // namespace v8_crdtp
-
-"""
-
 ```

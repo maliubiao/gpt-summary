@@ -108,7 +108,7 @@ fetch('https://example.com/data')
 
 总而言之，`net/third_party/quiche/src/quiche/quic/core/quic_framer_test.cc` 的这个部分是 QUIC 协议实现中非常重要的单元测试，它确保了 `QuicFramer` 能够正确地构建各种控制帧的数据包，为 QUIC 连接的稳定性和可靠性提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共16部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 IETF error code INTERNAL_ERROR = 0x01 corresponding to
     // QuicErrorCode::QUIC_INTERNAL_ERROR = 0x01.
     kVarInt62OneByte + 0x01,
@@ -1143,7 +1145,4 @@ TEST_P(QuicFramerTest, BuildPublicResetPacketWithEndpointId) {
   // The tag value map in CryptoHandshakeMessage is a std::map, so the two tags
   // in the packet, kRNON and kEPID, have unspecified ordering w.r.t each other.
   //
-"""
-
-
 ```

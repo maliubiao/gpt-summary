@@ -230,7 +230,7 @@ Data\r\n
 
 总而言之，`balsa_frame_test.cc` 是确保 `BalsaFrame` 类作为 HTTP 消息解析器的核心组件能够可靠、正确地工作的重要保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/balsa/balsa_frame_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -238,8 +238,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ));
   EXPECT_EQ(message_body.size(),
             balsa_frame_.ProcessInput(message.data() + message_headers.size(),
@@ -1177,7 +1179,4 @@ TEST_F(HTTPBalsaFrameTest, AcceptUnknownTransferEncodingToken) {
   HttpValidationPolicy http_validation_policy;
   http_validation_policy.validate_transfer_encoding = false;
   balsa_frame_.set_http_validation_policy(http_va
-"""
-
-
 ```

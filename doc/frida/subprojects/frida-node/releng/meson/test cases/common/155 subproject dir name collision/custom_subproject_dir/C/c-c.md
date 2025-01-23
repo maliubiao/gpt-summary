@@ -132,7 +132,7 @@ Initially, I might have focused solely on the simplicity of the C code. However,
 
 总而言之，这个简单的 `c.c` 文件在 Frida 动态插桩的上下文中扮演着一个基础但重要的角色。它是被插桩的目标代码的一部分，可以作为逆向分析的起点和测试 Frida 功能的用例。 它的简单性使得它非常适合用于演示和学习 Frida 的基本用法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/155 subproject dir name collision/custom_subproject_dir/C/c.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -156,7 +158,4 @@ Prompt:
 char DLL_PUBLIC func_c(void) {
     return 'c';
 }
-
-"""
-
 ```

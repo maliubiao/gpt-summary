@@ -54,11 +54,13 @@ for (let i = 0; i < 10000; i++) {
 
 总而言之，`v8/src/maglev/maglev-compiler.cc` 文件实现了 V8 引擎中 Maglev 编译器的核心逻辑，负责将 JavaScript 代码编译成高效的机器码，是 V8 优化 JavaScript 执行性能的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -339,7 +341,4 @@ MaybeHandle<Code> MaglevCompiler::GenerateCode(
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

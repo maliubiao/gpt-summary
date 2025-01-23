@@ -155,15 +155,17 @@ myFunction();
 
 这些只是 `vtuneapi.cc` 提供的一些基本功能，V8 引擎内部会根据其自身的运行逻辑和需要，在不同的代码路径中使用这些 API 来生成性能事件，供 VTune 进行分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/third_party/vtune/vtuneapi.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/third_party/vtune/vtuneapi.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 #include "vtuneapi.h"
 #ifdef _MSC_VER  // for msvc
 #include <cstdlib>
@@ -247,7 +249,4 @@ bool VTuneDomain::beginTask(const char* task_name) {
 }
 
 void VTuneDomain::endTask() { __itt_task_end(domain_); }
-
-"""
-
 ```

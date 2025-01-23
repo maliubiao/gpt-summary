@@ -141,13 +141,15 @@ try {
 
 总而言之，这个代码片段是 V8 引擎中负责管理 JavaScript 对象的核心部分，它实现了原型继承、属性访问、数组优化以及错误处理等关键功能，保证了 JavaScript 代码的正确执行和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- } else {
+### 源代码
+```
+} else {
           new_map->SetConstructor(object_function);
         }
       }
@@ -1101,8 +1103,4 @@ Handle<String> JSMessageObject::GetSourceLine() const {
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

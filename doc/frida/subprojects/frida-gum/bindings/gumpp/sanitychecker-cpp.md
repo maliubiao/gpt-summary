@@ -148,7 +148,7 @@ Backtrace:
 
 `frida/subprojects/frida-gum/bindings/gumpp/sanitychecker.cpp` 文件实现了 Frida 中用于内存安全检查的核心功能。它通过与底层内存管理机制交互，能够检测多种常见的内存错误，是逆向工程师和安全研究人员进行动态分析和漏洞挖掘的强大助手。理解其工作原理以及可能的使用错误，可以更有效地利用 Frida 进行逆向工程工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumpp/sanitychecker.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "gumpp.hpp"
 
 #include "podwrapper.hpp"
@@ -230,7 +232,4 @@ namespace Gum
   extern "C" SanityChecker * SanityChecker_new (void) { return new SanityCheckerImpl (0); }
   extern "C" SanityChecker * SanityChecker_new_with_heap_api (const HeapApi * api)  { return new SanityCheckerImpl (api); }
 }
-
-"""
-
 ```

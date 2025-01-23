@@ -226,7 +226,7 @@ Android 的动态链接器 (`/system/bin/linker64` 或 `/system/bin/linker`) 负
 
 总而言之，`ccoshl.c` 定义的 `ccoshl` 函数是 Android 底层数学库 `libm` 中用于计算复数双曲余弦的重要组成部分，它为各种需要复数运算的 Android 应用和系统组件提供了基础能力。理解其功能、实现以及与动态链接的关系，有助于我们更好地理解 Android 系统的底层运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-netbsd/lib/libm/complex/ccoshl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -236,8 +236,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* $NetBSD: ccoshl.c,v 1.1 2014/10/10 00:48:18 christos Exp $ */
 
 /*-
@@ -284,7 +286,4 @@ ccoshl(long double complex z)
 	w = coshl(x) * cosl(y) + (sinhl(x) * sinl(y)) * I;
 	return w;
 }
-
-"""
-
 ```

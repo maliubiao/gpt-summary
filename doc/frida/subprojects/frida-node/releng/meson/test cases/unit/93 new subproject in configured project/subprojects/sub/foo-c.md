@@ -176,7 +176,7 @@ int func(void) {
 
 尽管 `foo.c` 代码非常简单，但在 Frida 的上下文中，它仍然可以作为逆向分析的起点和测试用例。它的存在是为了验证 Frida Node 在添加新的子项目时，基本的代码编译和链接流程是否正确。开发者通过构建和运行测试用例来确保 Frida 的各个组件能够正常工作。如果测试失败，查看 `foo.c` 可以帮助开发者理解问题的根源，例如编译错误、链接问题或者 Frida 的 hook 机制是否能够正确处理这个简单的函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/93 new subproject in configured project/subprojects/sub/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,15 +184,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* SPDX-license-identifier: Apache-2.0 */
 /* Copyright © 2021 Intel Corporation */
 
 int func(void) {
     return 1;
 }
-
-"""
-
 ```

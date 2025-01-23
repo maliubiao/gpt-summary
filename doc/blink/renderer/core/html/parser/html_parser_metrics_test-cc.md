@@ -138,14 +138,16 @@ Finally, organize the collected information into a clear and structured explanat
 
 总而言之，`html_parser_metrics_test.cc` 通过各种测试用例，确保 `HTMLParserMetrics` 类能够准确地收集和报告 HTML 解析过程中的关键性能指标，这对于理解和优化 Blink 引擎的渲染性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_parser_metrics_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -451,7 +453,4 @@ TEST_F(HTMLMetricsTest, UkmStoresValuesCorrectly) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

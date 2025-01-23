@@ -89,7 +89,7 @@ Here's a breakdown of how to address each point in the request:
 
 这部分 `web_view_test.cc` 代码主要集中在测试 `WebView` 在**渲染、用户交互和文本输入处理**方面的核心功能。它验证了设备仿真对样式的影响，用户点击事件的准确识别，`WebView` 根据内容自动调整大小的能力，以及对不同类型和属性的 HTML 输入元素的正确处理，特别是与输入法相关的交互。这些测试确保了 `WebView` 能够正确地呈现网页内容，响应用户操作，并提供可靠的文本输入功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_view_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -97,8 +97,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 bileLayoutThemeForTest mobile_layout_theme_enabled(true);
     LayoutTheme::GetTheme().SetCustomFocusRingColor(custom_color);
   }
@@ -875,7 +877,4 @@ TEST_F(WebViewTest, CommitTextForNewCaretPositions) {
   EXPECT_EQ("gcadefbhi", info.value.Utf8());
   EXPECT_EQ(0, info.selection_start);
   EXPECT_EQ(0, inf
-"""
-
-
 ```

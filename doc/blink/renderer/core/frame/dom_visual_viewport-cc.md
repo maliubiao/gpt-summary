@@ -214,14 +214,16 @@ Let's break down the thought process for analyzing the provided C++ code and gen
 
 总而言之，`blink/renderer/core/frame/dom_visual_viewport.cc` 这个文件是 Blink 引擎中实现 JavaScript `VisualViewport` API 的核心部分，它负责提供关于用户可见的页面区域的关键信息，并处理与 HTML 结构、CSS 样式以及用户交互相关的逻辑。理解这个文件的功能有助于深入理解浏览器如何管理和暴露视口信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/dom_visual_viewport.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 Google Inc. All rights reserved.
  *
@@ -419,7 +421,4 @@ double DOMVisualViewport::scale() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

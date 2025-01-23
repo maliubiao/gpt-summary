@@ -120,7 +120,7 @@ func main() {
 
 总之，`go/src/runtime/defs_linux_amd64.go` 是 Go 运行时在 Linux AMD64 架构上与操作系统进行交互的蓝图，它定义了关键的常量和数据结构，支撑着 Go 语言的许多核心功能。理解它的作用有助于更深入地理解 Go 语言的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_linux_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -128,8 +128,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // created by cgo -cdefs and then converted to Go
 // cgo -cdefs defs_linux.go defs1_linux.go
 
@@ -419,9 +421,4 @@ type sockaddr_un struct {
 	family uint16
 	path   [108]byte
 }
-
-"""
-
-
-
 ```

@@ -130,7 +130,7 @@ dict.set_value("key1", new NSNumber.from_integer(42));
 3. **类型不匹配**：在反序列化时，如果类型不匹配，可以检查二进制数据中的类型信息，确保与预期类型一致。
 
 通过这些调试线索，用户可以逐步定位问题并修复代码中的错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/keyed-archive.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class NSObject {
@@ -861,7 +863,4 @@ namespace Frida.Fruity {
 		}
 	}
 }
-
-"""
-
 ```

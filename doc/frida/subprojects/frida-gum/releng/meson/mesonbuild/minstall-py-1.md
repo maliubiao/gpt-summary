@@ -78,7 +78,7 @@ The user wants to understand the functionality of the provided Python code snipp
 
 总而言之，这段代码是 Frida 安装过程中的核心部分，负责将构建好的 Frida Gum 组件部署到系统中，并进行必要的处理以确保其能够正常运行。 理解这段代码的功能有助于理解 Frida 的部署方式以及在逆向工程中的一些相关概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/minstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -87,8 +87,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 tname = os.path.join(outdir, os.path.basename(fname))
             final_path = os.path.join(d.prefix, t.outdir, os.path.basename(fname))
             should_strip = t.strip or (t.can_strip and self.options.strip)
@@ -223,8 +225,4 @@ def run(opts: 'ArgumentType') -> int:
         else:
             installer.do_install(datafilename)
     return 0
-
-"""
-
-
 ```

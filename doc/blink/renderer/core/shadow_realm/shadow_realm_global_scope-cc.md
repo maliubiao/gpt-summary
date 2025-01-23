@@ -177,15 +177,17 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 总而言之，`ShadowRealmGlobalScope.cc` 是 Blink 引擎中实现 JavaScript Shadow Realms 隔离特性的核心部分，它负责创建和管理隔离的 JavaScript 执行环境，限制对外部作用域的访问，从而提高代码的安全性和模块化。理解这个类的工作原理对于理解和调试涉及 Shadow Realms 的 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/shadow_realm/shadow_realm_global_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +326,4 @@ void ShadowRealmGlobalScope::AddConsoleMessageImpl(ConsoleMessage* message,
 }
 
 }  // namespace blink
-
-"""
-
 ```

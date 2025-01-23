@@ -289,13 +289,15 @@ Here's a breakdown of the functionalities tested:
 
 **In summary, this part of the `test-api.cc` file thoroughly tests various core functionalities of the V8 C++ API, focusing on how C++ code interacts with JavaScript execution, memory management, and concurrency, as well as how to handle errors and gather debugging information.** The threaded tests and fuzzing highlight the robustness of the API under concurrent conditions. The presence of specific tests like `Regress54` suggests that this section also addresses previously identified bugs or edge cases.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第8部分，共18部分，请归纳一下它的功能
+```
 
-"""
- .FromJust());
+### 源代码
+```
+.FromJust());
   return v8::Intercepted::kYes;
 }
 
@@ -2086,7 +2088,4 @@ static void CheckTryCatchSourceInfo(v8::Local<v8::Script> script,
 THREADED_TEST(TryCatchSourceInfo) {
   LocalContext context;
   v8::Isolate* isolate
-"""
-
-
 ```

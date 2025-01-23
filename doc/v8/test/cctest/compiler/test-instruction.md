@@ -95,11 +95,13 @@ console.log(result); // 输出 15
 
 总而言之，`v8/test/cctest/compiler/test-instruction.cc` 是 V8 内部用于确保其 JavaScript 编译器核心组件之一（`Instruction` 类）正常工作的关键测试文件。它间接地保证了 JavaScript 代码能够被高效地编译和执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-instruction.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -435,7 +437,4 @@ TEST(InstructionOperands) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

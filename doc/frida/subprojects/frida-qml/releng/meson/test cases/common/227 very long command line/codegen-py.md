@@ -142,7 +142,7 @@ int func42(void) { return 42; }
 
 当测试失败时，开发者会查看测试日志、Frida 脚本的输出，甚至可能需要回到 `codegen.py` 生成的 C 代码，以及编译过程，来排查问题。  `codegen.py` 在这个流程中扮演了一个快速生成可控测试目标的角色，方便进行单元测试或集成测试。这个脚本本身可能不会直接被最终用户执行，而是作为 Frida 开发和测试流程中的一个工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/227 very long command line/codegen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -159,7 +161,4 @@ from pathlib import Path
 
 Path(sys.argv[2]).write_text(
     'int func{n}(void) {{ return {n}; }}'.format(n=sys.argv[1]))
-
-"""
-
 ```

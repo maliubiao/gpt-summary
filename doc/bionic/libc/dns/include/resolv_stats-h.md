@@ -273,7 +273,7 @@ if (Process.platform === 'android') {
 
 这个 Frida 脚本只是一个简单的示例。你可以根据需要 hook 其他函数，或者读取和修改函数的参数和返回值，以进行更深入的调试和分析。记住，调试系统级别的组件可能需要 root 权限，并需要谨慎操作，以避免影响系统稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/include/resolv_stats.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -284,8 +284,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -370,7 +372,4 @@ android_net_res_stats_get_usable_servers(const struct __res_params* params,
 __END_DECLS
 
 #endif  // _RES_STATS_H
-
-"""
-
 ```

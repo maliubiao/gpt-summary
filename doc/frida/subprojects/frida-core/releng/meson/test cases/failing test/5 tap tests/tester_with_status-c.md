@@ -129,7 +129,7 @@ By following these steps, the comprehensive and contextualized answer is generat
 
 总而言之，`tester_with_status.c` 是 Frida 测试套件中一个简单但重要的组成部分，它通过模拟一个失败的测试场景，来验证 Frida 测试框架的正确性和可靠性，从而间接地保障了 Frida 作为逆向工具的质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing test/5 tap tests/tester_with_status.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -147,7 +149,4 @@ int main(int argc, char **argv) {
     puts("not ok 1 - some test");
     return 2;
 }
-
-"""
-
 ```

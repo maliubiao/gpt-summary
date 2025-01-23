@@ -152,7 +152,7 @@ func main() {
 
 在 Plan 9 系统上，`filepath.EvalSymlinks` 的实现主要是为了保持接口的一致性，它执行路径的有效性检查和清理，但由于 Plan 9 本身没有符号链接，因此它不会进行符号链接的解析。 开发者在使用 `filepath.EvalSymlinks` 时需要注意其在不同操作系统上的行为差异。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/path/filepath/symlink_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -160,8 +160,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -189,9 +191,4 @@ func evalSymlinks(path string) (string, error) {
 	}
 	return Clean(path), nil
 }
-
-"""
-
-
-
 ```

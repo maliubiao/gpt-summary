@@ -281,15 +281,17 @@ By following this process, I can systematically analyze the provided code snippe
 
 总而言之，这段 `closure.go` 的代码是 Go 编译器中至关重要的一部分，它负责将高级的闭包和方法值概念转换为更底层的表示，以便后续的编译阶段能够更好地处理和生成机器码。理解其功能有助于我们更深入地了解 Go 语言的实现机制，并避免在使用闭包时犯一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/walk/closure.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -519,9 +521,4 @@ func methodValueWrapper(dot *ir.SelectorExpr) *ir.Name {
 	base.FatalfAt(dot.Pos(), "missing wrapper for %v", meth)
 	panic("unreachable")
 }
-
-"""
-
-
-
 ```

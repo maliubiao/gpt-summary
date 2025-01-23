@@ -106,7 +106,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 `test-host-session.vala` 文件通过模拟不同的场景来测试 Frida 的核心功能，包括进程创建、脚本注入、消息传递等。通过这些测试，Frida 能够确保其在不同平台和设备上的稳定性和正确性。用户在使用 Frida 时，可以通过调试器（如 LLDB）复现这些功能，并验证目标进程的行为。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/test-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 UTPUT_HANDLE = -11;
 					const winAbi = (Process.pointerSize === 4) ? 'stdcall' : 'win64';
 					const GetStdHandle = new NativeFunction(Module.getExportByName('kernel32.dll', 'GetStdHandle'), 'pointer', ['int'], winAbi);
@@ -1041,8 +1043,4 @@ UTPUT_HANDLE = -11;
 		}
 	}
 }
-
-"""
-
-
 ```

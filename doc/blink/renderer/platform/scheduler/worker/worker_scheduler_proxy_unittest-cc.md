@@ -101,14 +101,16 @@ By following this structured analysis and refining initial thoughts, we arrive a
 
 `worker_scheduler_proxy_unittest.cc` 的主要功能是 **系统地测试 `WorkerSchedulerProxy` 类在各种场景下的行为，包括但不限于处理页面可见性变化和应对各种关闭顺序。**  这些测试对于确保 Blink 引擎中 worker 线程的调度和生命周期管理的正确性和稳定性至关重要。它间接地关系到 JavaScript Web Worker 的行为，因为 `WorkerSchedulerProxy` 负责将主线程的调度决策传递给 worker 线程，从而影响 worker 的执行。这些测试也防止了由于不正确的资源管理导致的常见编程错误，例如在 worker 线程仍在运行时就销毁了相关的调度器，从而导致崩溃。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/worker/worker_scheduler_proxy_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -349,7 +351,4 @@ TEST_F(WorkerSchedulerProxyTest, ThreadDestroyed) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

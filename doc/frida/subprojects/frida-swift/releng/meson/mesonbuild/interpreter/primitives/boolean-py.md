@@ -198,7 +198,7 @@ else:
 
 例如，如果用户在构建时遇到了一个奇怪的错误，提示与某个布尔选项的判断有关，他们可能会查看 Meson 的日志，追踪到相关的构建脚本和变量。如果怀疑问题出在 Meson 如何处理布尔值上，那么查看 `boolean.py` 的代码就能了解到 `BooleanHolder` 的实现细节，例如 `to_int_method` 和 `to_string_method` 的行为，以及支持的逻辑操作符，从而帮助定位问题。理解 `InvalidArguments` 异常的来源也能帮助用户避免在 Meson 脚本中错误地使用 `to_string_method`。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/interpreter/primitives/boolean.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -206,8 +206,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # Copyright 2021 The Meson development team
 # SPDX-license-identifier: Apache-2.0
 from __future__ import annotations
@@ -260,7 +262,4 @@ class BooleanHolder(ObjectHolder[bool]):
         if any(x is not None for x in args) and not all(x is not None for x in args):
             raise InvalidArguments('bool.to_string() must have either no arguments or exactly two string arguments that signify what values to return for true and false.')
         return true_str if self.held_object else false_str
-
-"""
-
 ```

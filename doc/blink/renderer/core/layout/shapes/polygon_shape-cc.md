@@ -147,14 +147,16 @@ div {
 
 总而言之，`polygon_shape.cc` 是 Blink 渲染引擎中实现 CSS Shapes 规范的关键组成部分，负责将 CSS 中定义的多边形转化为实际的布局影响，使得网页内容能够以更灵活的方式呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/shapes/polygon_shape.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Adobe Systems Incorporated. All rights reserved.
  *
@@ -336,7 +338,4 @@ void PolygonShape::BuildDisplayPaths(DisplayPaths& paths) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

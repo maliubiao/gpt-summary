@@ -156,7 +156,7 @@ Showing nodes accounting for 15ns,  100% of 15ns total
 
 总而言之，这段代码是 `pprof` 工具中非常关键的一部分，它负责将底层的性能数据转换成用户可以理解的各种报告形式，帮助开发者分析和优化程序的性能。理解其功能和配置选项对于有效使用 `pprof` 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/report/report.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -164,8 +164,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -1525,9 +1527,4 @@ func abs64(i int64) int64 {
 	}
 	return i
 }
-
-"""
-
-
-
 ```

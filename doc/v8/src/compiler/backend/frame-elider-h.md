@@ -180,15 +180,17 @@ console.log(factorial(10)); // 正常情况
 
 `v8/src/compiler/backend/frame-elider.h` 定义的 `FrameElider` 类是 V8 编译器后端的一个关键组件，负责优化栈帧的创建和销毁。它通过分析程序的控制流和指令序列，决定哪些指令块真正需要栈帧，从而提高 JavaScript 代码的执行效率。它与 JavaScript 的函数调用密切相关，并且其优化效果会受到用户编写代码的模式的影响，例如深层递归可能会抵消部分优化效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/frame-elider.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/frame-elider.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ class FrameElider {
 }  // namespace v8
 
 #endif  // V8_COMPILER_BACKEND_FRAME_ELIDER_H_
-
-"""
-
 ```

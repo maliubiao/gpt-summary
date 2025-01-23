@@ -126,7 +126,7 @@ if __name__ == "__main__":
    - 用户确认调试完成后，调试器会自动分离进程。
 
 通过这些步骤，用户可以复现 Frida 的部分调试功能，并理解 Frida 如何与目标进程进行交互。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/tests/test-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ;
 				var session = yield device.attach (process.id, options);
 				var detached_handler = session.detached.connect ((reason, crash) => {
@@ -1233,8 +1235,4 @@ Prompt:
 						const methInner = NSBundle['- initWithURL:'];
 						Interceptor.attach(meth.implementation, {
 						  onEnter(args) {
-				
-"""
-
-
 ```

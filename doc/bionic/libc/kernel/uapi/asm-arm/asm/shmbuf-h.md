@@ -212,7 +212,7 @@ if (Process.arch === 'arm') {
 
 `bionic/libc/kernel/uapi/asm-arm/asm/shmbuf.handroid` 本身是一个非常小的文件，它的主要作用是为 ARM 架构引入通用的共享缓冲区定义。共享缓冲区是 Android 中重要的 IPC 机制，被广泛用于图形系统、媒体框架等组件中。理解其原理对于进行 Android 底层开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm/asm/shmbuf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -223,8 +223,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -232,7 +234,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/shmbuf.h>
-
-"""
-
 ```

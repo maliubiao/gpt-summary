@@ -132,11 +132,13 @@ By following this structured approach, moving from a broad overview to specific 
 
 `backing-store.cc` 文件是 V8 引擎中管理内存缓冲区的关键组成部分，它直接支撑着 JavaScript 中 `ArrayBuffer`、`SharedArrayBuffer` 和 WebAssembly `Memory` 的功能。它处理了内存的分配、释放、调整大小以及与 WebAssembly 特性（如保护页和共享内存）的集成。理解 `BackingStore` 的工作原理有助于深入理解 JavaScript 中二进制数据处理和 WebAssembly 的内存模型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/backing-store.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1014,7 +1016,4 @@ void GlobalBackingStoreRegistry::UpdateSharedWasmMemoryObjects(
 }  // namespace v8::internal
 
 #undef TRACE_BS
-
-"""
-
 ```

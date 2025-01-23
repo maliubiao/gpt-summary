@@ -120,11 +120,13 @@ try {
 
 `ls-json-unittest.cc` 是一个 C++ 文件，用于测试 V8 引擎中 Torque 语言服务器使用的 JSON 解析器的功能。它确保解析器能够正确地处理各种 JSON 数据类型和结构，并能在遇到错误时进行适当的报告。  它所测试的 JSON 格式和概念与 JavaScript 中的 JSON 完全一致，因此可以通过 JavaScript 的 `JSON.parse()` 方法来演示其对应的功能。这个 C++ 文件是 V8 引擎内部实现细节的一部分，而 JavaScript 开发者则通过 `JSON` 对象来使用 JSON 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/torque/ls-json-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -249,7 +251,4 @@ TEST(LanguageServerJson, LexerError) {
 }  // namespace torque
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

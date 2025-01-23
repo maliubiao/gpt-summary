@@ -95,11 +95,13 @@ console.timeEnd("intensiveTask");
 
 `profiler-stats.cc` 中的 `ProfilerStats` 类是 V8 引擎内部性能分析机制的关键组成部分，用于收集和统计分析过程中的各种内部事件。 虽然 JavaScript 开发者不能直接操作它，但其收集的统计信息反映了 JavaScript 代码执行时性能分析器的状态，并间接地影响着性能分析的结果和准确性。 了解这些内部机制有助于更深入地理解 V8 引擎的性能分析工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/profiler-stats.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -155,7 +157,4 @@ const char* ProfilerStats::ReasonToString(Reason reason) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

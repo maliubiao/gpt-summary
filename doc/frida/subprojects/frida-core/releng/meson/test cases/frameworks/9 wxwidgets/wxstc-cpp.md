@@ -135,7 +135,7 @@ this: 0xXXXXXXXXXXXX  //  相同的内存地址
 
 作为调试线索，如果 Frida 在处理 `wxStyledTextCtrl` 对象的创建或销毁时出现问题，开发者可以检查这个测试用例，确认 Frida 是否能够正确 hook 相关的函数，获取到正确的上下文信息。  这个简单的测试用例提供了一个最小化的环境来隔离和调试 Frida 与 wxWidgets 交互的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/9 wxwidgets/wxstc.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,15 +143,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <wx/stc/stc.h>
 
 int main(void) {
     wxStyledTextCtrl *canvas = new wxStyledTextCtrl();
     delete canvas;
 }
-
-"""
-
 ```

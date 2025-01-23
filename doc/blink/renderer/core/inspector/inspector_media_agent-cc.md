@@ -140,14 +140,16 @@ video.play();
 
 `InspectorMediaAgent` 是 Blink 引擎中一个关键的组件，它充当媒体播放器和 Chrome 开发者工具之间的桥梁，使开发者能够深入了解网页中媒体播放器的状态和行为，从而更有效地进行调试和优化。它通过监听媒体播放器的各种事件和状态变化，并将这些信息以标准化的格式发送到 DevTools 前端，为开发者提供强大的媒体调试能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_media_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -347,7 +349,4 @@ void InspectorMediaAgent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

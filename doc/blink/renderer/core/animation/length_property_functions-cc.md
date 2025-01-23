@@ -162,14 +162,16 @@ By following this step-by-step approach, combining code analysis with knowledge 
 
 `length_property_functions.cc`  是 Blink 渲染引擎中一个关键的组成部分，它专注于处理 CSS 长度相关的属性。它提供了查询属性长度值范围、判断是否可以动画关键字、获取关键字对应的像素值以及获取和设置属性长度值的功能。这些功能直接服务于 CSS 样式计算、动画和过渡效果的实现，最终影响着网页在浏览器中的呈现方式。虽然开发者通常通过 CSS 和 JavaScript 与这些属性交互，但背后的实现机制就包含像这样的 C++ 代码。理解这些底层实现有助于更深入地理解浏览器的工作原理和 CSS 属性的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/length_property_functions.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -757,7 +759,4 @@ bool LengthPropertyFunctions::SetLength(const CSSProperty& property,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -131,7 +131,7 @@ func main() {
 
 这段代码的核心功能是 **定义了 Go 语言 `unicode` 包用于表示和访问 Unicode 字符集（基于脚本）和字符属性的数据结构和常量。** 它声明了大量的 Unicode 脚本常量，并提供了一个 `Properties` map，用于将 Unicode 属性名称映射到包含相应字符范围的 `RangeTable`。  这是 `unicode` 包实现字符分类和属性查询的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/unicode/tables.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -140,9 +140,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
-       // Chakma is the set of Unicode characters in script Chakma.
+### 源代码
+```go
+// Chakma is the set of Unicode characters in script Chakma.
 	Cham                   = _Cham                   // Cham is the set of Unicode characters in script Cham.
 	Cherokee               = _Cherokee               // Cherokee is the set of Unicode characters in script Cherokee.
 	Chorasmian             = _Chorasmian             // Chorasmian is the set of Unicode characters in script Chorasmian.
@@ -969,10 +971,5 @@ var _Other_ID_Continue = &RangeTable{
 	},
 }
 
-var _Other_ID_Start = 
-"""
-
-
-
-
+var _Other_ID_Start =
 ```

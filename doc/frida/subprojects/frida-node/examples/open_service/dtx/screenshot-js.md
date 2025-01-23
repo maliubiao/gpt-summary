@@ -137,7 +137,7 @@ Here's a breakdown of the thinking process to generate the analysis of the `scre
 
 总而言之，`screenshot.js` 是一个利用 Frida 强大的动态 instrumentation 能力，通过调用 iOS 系统服务来截取屏幕快照的实用脚本，它在移动应用逆向分析中扮演着重要的角色。理解其背后的原理和潜在问题对于有效使用 Frida 进行调试和分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/open_service/dtx/screenshot.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const frida = require('../../..');
 const fs = require('fs');
 
@@ -168,7 +170,4 @@ main()
   .catch(e => {
     console.error(e);
   });
-
-"""
-
 ```

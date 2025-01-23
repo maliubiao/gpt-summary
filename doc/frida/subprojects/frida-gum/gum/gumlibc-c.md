@@ -185,7 +185,7 @@ By following these steps, we can systematically analyze the `gumlibc.c` code and
 
 总而言之，`gumlibc.c` 文件提供了一组基本的、内部使用的内存操作函数，这些函数是 Frida 动态插桩功能的基础，在修改目标进程内存、注入代码等方面发挥着关键作用。理解这些函数的功能和潜在的使用错误，有助于更好地使用 Frida 进行逆向工程和安全分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/gumlibc.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -255,7 +257,4 @@ gum_memmove (gpointer dst,
 }
 
 #endif
-
-"""
-
 ```

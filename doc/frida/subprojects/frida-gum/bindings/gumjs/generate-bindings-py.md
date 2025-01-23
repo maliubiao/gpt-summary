@@ -135,7 +135,7 @@ By following this structured analysis, moving from high-level understanding to d
 
 总的来说，这个脚本是 Frida 工具链中至关重要的一部分，它负责将底层的 C/C++ 代码接口桥接到 JavaScript 环境，使得逆向工程师可以使用高级语言方便地进行动态代码分析和操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/generate-bindings.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import unicode_literals, print_function
 import codecs
 import os
@@ -1157,7 +1159,4 @@ static void
 
 static void
 {wrapper_funct
-"""
-
-
 ```

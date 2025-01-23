@@ -111,11 +111,13 @@ measureMemory();
 
 `v8/src/heap/memory-measurement.cc` 是 V8 引擎中负责实现内存测量功能的核心 C++ 代码。它响应来自 JavaScript 的内存测量请求，协调垃圾回收，收集内存使用数据，并最终将结果以结构化的 JavaScript 对象的形式返回给 JavaScript 环境，使得开发者能够了解其 JavaScript 代码的内存消耗情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/memory-measurement.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -512,7 +514,4 @@ void NativeContextStats::IncrementExternalSize(Address context, Tagged<Map> map,
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

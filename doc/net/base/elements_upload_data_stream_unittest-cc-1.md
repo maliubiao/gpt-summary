@@ -161,7 +161,7 @@ fetch('/upload', {
 
 如果在网络请求的调试过程中发现与数据分段上传、或者 `FormData` 处理相关的错误，开发者可能会深入到 `net/base/elements_upload_data_stream_unittest.cc` 这样的单元测试文件中，查看其测试用例，以理解 `ElementsUploadDataStream` 的预期行为和可能存在的问题。 通过断点调试或者日志输出，可以追踪数据是如何被读取和处理的，从而定位问题所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/elements_upload_data_stream_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 f2.size(), read_callback2.callback()));
   EXPECT_EQ(static_cast<int>(buf2.size()), read_callback2.WaitForResult());
   EXPECT_EQ(expected_data, buf2);
@@ -181,8 +183,4 @@ f2.size(), read_callback2.callback()));
 }
 
 }  // namespace net
-
-"""
-
-
 ```

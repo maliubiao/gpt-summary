@@ -217,7 +217,7 @@ Let's break down the thought process for analyzing this C code snippet within th
 
 总而言之，这个 `generated-main.c` 文件虽然简单，但它清晰地展示了如何使用 GNOME 的资源加载 API，并作为一个理想的测试目标，可以帮助 Frida 开发者验证其动态分析能力是否能够正确地观察和操纵这类程序的行为。对于逆向工程师来说，它也是一个很好的学习案例，可以用来练习使用 Frida 等工具来理解程序的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/7 gnome/resources/generated-main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -225,8 +225,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 #include<gio/gio.h>
@@ -253,7 +255,4 @@ int main(int argc, char **argv) {
     g_bytes_unref(data);
     return 0;
 }
-
-"""
-
 ```

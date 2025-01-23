@@ -139,7 +139,7 @@ By following these steps, the comprehensive and informative answer provided earl
 
 总而言之，尽管 `native.c` 文件本身的代码非常简单，但它在Frida与Java交互的过程中扮演着至关重要的角色，是连接Frida的native层和目标Java应用的桥梁。理解其功能有助于理解Frida的工作原理，并为调试相关问题提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/java/9 jni/lib/native.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <jni.h>
 
 JNIEXPORT jint JNICALL
@@ -160,7 +162,4 @@ JNI_OnLoad(JavaVM *vm, void *reserved)
 JNIEXPORT void JNICALL
 JNI_OnUnload(JavaVM *vm, void *reserved)
 {}
-
-"""
-
 ```

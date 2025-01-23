@@ -120,7 +120,7 @@ By following these steps, we can systematically understand the purpose and funct
 
 总而言之，这部分代码是 `Http2FrameDecoder` 错误处理能力的重要测试，确保了网络栈在面对格式错误的 HTTP/2 帧时能够安全可靠地运行，从而保证用户在 JavaScript 层面上的网络体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/decoder/http2_frame_decoder_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Http2FrameType::GOAWAY, 0, 0);
   EXPECT_TRUE(DecodePayloadExpectingFrameSizeError(kFrameData, header));
 }
@@ -277,8 +279,4 @@ TEST_F(Http2FrameDecoderTest, WindowUpdateTooLong) {
 }  // namespace
 }  // namespace test
 }  // namespace http2
-
-"""
-
-
 ```

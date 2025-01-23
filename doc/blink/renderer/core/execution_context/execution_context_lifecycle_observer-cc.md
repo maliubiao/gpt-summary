@@ -119,14 +119,16 @@ This detailed thought process, from initial code scanning to generating concrete
 
 `execution_context_lifecycle_observer.cc` 中定义的类是 Blink 引擎中用于管理 JavaScript 执行环境生命周期的重要组成部分。它帮助跟踪 `ExecutionContext` 的创建和销毁，确保资源得到有效管理，并有助于防止因访问已销毁环境而导致的错误。 理解它的作用有助于理解 Blink 如何高效地处理网页中的 JavaScript 代码和相关的资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/execution_context/execution_context_lifecycle_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ void ExecutionContextLifecycleObserver::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

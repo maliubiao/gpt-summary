@@ -111,14 +111,16 @@ By following these steps, we can systematically analyze the code and extract mea
 
 总而言之，`dark_mode_lab_color_space_test.cc` 这个文件通过单元测试确保了 Blink 引擎在处理暗黑模式下的颜色转换逻辑的正确性，这对于保证网页在不同用户偏好下的良好视觉体验至关重要。它与前端技术紧密相关，影响着 CSS 颜色渲染和 JavaScript 操作颜色的结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/dark_mode_lab_color_space_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 #include "third_party/blink/renderer/platform/graphics/dark_mode_lab_color_space.h"
 #include "testing/gtest/include/gtest/gtest.h"
 
@@ -188,7 +190,4 @@ TEST_F(DarkModeLABColorSpaceTest, LABTranslation) {
 }  // namespace lab
 
 }  // namespace blink
-
-"""
-
 ```

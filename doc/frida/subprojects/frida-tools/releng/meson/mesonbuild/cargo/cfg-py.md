@@ -143,7 +143,7 @@ This code directly interacts with concepts related to cross-compilation and plat
 
 In summary, `cfg.py` is a crucial bridge between Rust's build configuration system (Cargo) and Frida's build system (Meson). It ensures that platform-specific requirements and conditional compilation directives defined in the Rust code are correctly understood and applied during the Frida build process, which is fundamental for creating a versatile dynamic instrumentation tool.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/cargo/cfg.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2022-2023 Intel Corporation
 
@@ -427,7 +429,4 @@ def _(ir: All, build: builder.Builder) -> mparser.BaseNode:
     for a in args:
         cur = build.and_(ir_to_meson(a, build), cur)
     return cur
-
-"""
-
 ```

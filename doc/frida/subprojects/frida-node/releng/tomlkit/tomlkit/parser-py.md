@@ -257,7 +257,7 @@ This parser is designed to be robust against syntax errors. Here are some exampl
 
 The first part of `tomlkit/parser.py` provides the foundational logic for parsing TOML documents. It handles the initial scanning and tokenization of the input string, recognizing basic elements like whitespace, comments, keys, and initiating the parsing of various value types (strings, numbers, booleans, arrays, inline tables) and table headers. It sets the stage for the subsequent parts of the parsing process, which will build the complete hierarchical representation of the TOML data.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/tomlkit/tomlkit/parser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -266,8 +266,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import datetime
@@ -1256,9 +1258,4 @@ class Parser:
                         else None,
                     ),
                 )
-
-            
-"""
-
-
 ```

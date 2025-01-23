@@ -155,7 +155,7 @@ Initially, I might have focused too much on the specific Vala code itself. Howev
 
 总而言之，`write_wrapper.py` 是一个辅助脚本，用于自动化生成简单的 Vala 代码片段，这在 Frida 的开发和测试过程中可能会用到，特别是在涉及到需要用 Vala 编写 Instrumentation 代码的场景下。它本身不进行逆向操作，但其生成的代码是 Frida 动态 Instrumentation 流程中的一个环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/vala/8 generated sources/src/write_wrapper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -177,7 +179,4 @@ void print_wrapper(string arg) {
 
 with open(sys.argv[1], 'w') as f:
     f.write(contents)
-
-"""
-
 ```

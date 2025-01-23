@@ -71,12 +71,14 @@ add(3, 4); // 后续调用，V8 可以利用反馈向量的信息进行优化
 
 总而言之，`macro-assembler-riscv.cc` 是 V8 引擎中至关重要的一个文件，它提供了在 RISC-V 架构上执行 JavaScript 代码所需的底层机器码生成能力，并负责处理与 JavaScript 运行时环境的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 o_drop_on_return * kSystemPointerSize));
     }
     __ CalcScaledAddress(sp, sp, argc_reg, kSystemPointerSizeLog2);
@@ -141,8 +143,4 @@ void MacroAssembler::LoadFeedbackVector(Register dst, Register closure,
 #undef __
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

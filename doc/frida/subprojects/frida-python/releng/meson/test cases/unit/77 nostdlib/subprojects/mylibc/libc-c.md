@@ -108,7 +108,7 @@ By following this structured thought process, combining code analysis with conte
 
 这个 `libc.c` 文件是为了在 `frida` 的特定测试场景下提供最基础的 C 库功能而存在的。它直接使用了 Linux 系统调用，体现了底层编程的思想。对于逆向工程师来说，理解这种简单的 `libc` 实现有助于理解程序与操作系统之间的交互方式，以及在没有标准库支持的环境下程序如何进行基本操作。在调试过程中，如果涉及到 `nostdlib` 环境下的 Frida 测试，那么很可能就会涉及到这个文件中的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/77 nostdlib/subprojects/mylibc/libc.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Do not use this as the basis of your own libc.
  * The code is probably suboptimal or wonky, as I
  * had no prior experience with this, but instead
@@ -153,7 +155,4 @@ int simple_strlen(const char *str) {
   }
   return len;
 }
-
-"""
-
 ```

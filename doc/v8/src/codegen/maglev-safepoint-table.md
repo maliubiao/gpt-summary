@@ -150,11 +150,13 @@ add(5, "hello");
 
 **In essence, `maglev-safepoint-table.cc` is a foundational piece of V8's infrastructure that enables efficient garbage collection and robust deoptimization, both of which are crucial for the performance and correctness of JavaScript execution.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/maglev-safepoint-table.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -409,7 +411,4 @@ void MaglevSafepointTableBuilder::Emit(Assembler* assembler, int stack_slots) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

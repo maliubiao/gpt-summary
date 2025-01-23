@@ -129,7 +129,7 @@ Plan:
 
 这部分代码主要负责 **HTTP 服务器属性的设置、清除、获取以及加载和合并来自持久化存储的数据。** 它详细实现了如何管理服务器的备用服务信息、网络统计信息以及与 QUIC 相关的属性，并处理了 canonical host 的逻辑。  其核心目标是维护一个关于服务器连接特性的本地缓存，以便浏览器能够更智能、更高效地建立网络连接。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_server_properties.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 etwork_anonymization_key);
     // Don't bother moving to front when erasing information.
     auto it = server_info_map_.Peek(
@@ -598,8 +600,4 @@ void HttpServerProperties::WriteProperties(base::OnceClosure callback) const {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

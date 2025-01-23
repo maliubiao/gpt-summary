@@ -284,7 +284,7 @@ sys.stdin.read()
 
 这个示例展示了如何使用 Frida Hook 动态地观察和分析动态链接器的行为，特别是与 API 兼容性相关的警告信息。你可以根据需要修改 Hook 的目标函数和处理逻辑，以调试其他链接器相关的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_globals.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -295,8 +295,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -367,7 +369,4 @@ void DL_WARN_documented_change(int api_level, const char* doc_fragment, const ch
                                get_application_target_sdk_version());
   DL_WARN("%s", result.c_str());
 }
-
-"""
-
 ```

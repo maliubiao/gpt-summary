@@ -119,11 +119,13 @@ main();
 
 `v8/src/heap/evacuation-allocator.cc` 文件定义了 `EvacuationAllocator` 类，它是 V8 引擎垃圾回收机制中负责对象疏散的关键组件。它在 GC 过程中分配和释放内存，并将存活对象移动到新的区域，以实现内存整理和高效管理。虽然 JavaScript 开发者不直接操作它，但它的高效运作直接影响着 JavaScript 程序的性能和内存使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/evacuation-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ void EvacuationAllocator::Finalize() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

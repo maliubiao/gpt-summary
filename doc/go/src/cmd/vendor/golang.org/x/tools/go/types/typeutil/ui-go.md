@@ -195,15 +195,17 @@ MyMethod
 
 总结来说，`IntuitiveMethodSet` 是一个工具函数，旨在为用户界面提供更符合直觉的类型方法信息，它考虑了 Go 语言中方法调用的可寻址性和自动解引用特性，并优先展示类型自身定义的方法。这有助于用户更好地理解和使用 Go 语言的类型系统。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/types/typeutil/ui.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -257,9 +259,4 @@ func IntuitiveMethodSet(T types.Type, msets *MethodSetCache) []*types.Selection 
 	}
 	return result
 }
-
-"""
-
-
-
 ```

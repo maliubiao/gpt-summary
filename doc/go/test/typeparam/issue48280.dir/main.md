@@ -134,15 +134,17 @@ type S[T int | string] struct { // 定义了一个带有类型参数约束的结
 
 总而言之，这段简单的 `main.go` 代码片段在一个关于 Go 语言泛型的上下文中，其主要作用是测试或演示泛型类型的实例化。它的成功运行（或编译失败及其错误信息）是其主要的 "输出"。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue48280.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -154,9 +156,4 @@ import "./a"
 func main() {
 	_ = a.S{}
 }
-
-"""
-
-
-
 ```

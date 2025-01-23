@@ -122,15 +122,17 @@ By following this iterative process of analyzing the code, connecting it to web 
 
 总而言之，`child_frame_disconnector.cc` 是 Blink 引擎中负责安全且正确地断开 HTML 子框架连接的关键组件，它与 HTML 结构和 JavaScript 的动态操作紧密相关，并在页面导航和 DOM 操作等用户行为下发挥作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/child_frame_disconnector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -229,7 +231,4 @@ static unsigned CheckConnectedSubframeCountIsConsistent(Node& node) {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

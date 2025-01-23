@@ -229,7 +229,7 @@ Java.perform(function () {
 
 总而言之，`gumv8script.cpp` 是 Frida 中一个至关重要的组件，它将 V8 JavaScript 引擎集成到 Frida 框架中，并负责管理和执行用户提供的 JavaScript 代码，从而实现 Frida 的各种动态插桩功能。理解其功能对于深入理解 Frida 的工作原理和进行高级调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8script.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -238,8 +238,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2013 Karl Trygve Kalleberg <karltk@boblycat.org>
@@ -1249,9 +1251,4 @@ gum_normalize_module_name (const gchar * base_name,
 
       if (new_end > result)
         new_end--;
-
-
-"""
-
-
 ```

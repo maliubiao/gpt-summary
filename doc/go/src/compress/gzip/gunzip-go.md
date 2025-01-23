@@ -278,7 +278,7 @@ func main() {
 
 总而言之，`go/src/compress/gzip/gunzip.go` 提供了 Go 语言中解压缩 gzip 文件的核心功能，它负责读取 gzip 文件头、解压缩数据并验证数据完整性。开发者可以使用这个包来实现读取和处理 gzip 压缩文件的应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/compress/gzip/gunzip.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -286,8 +286,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -578,9 +580,4 @@ func (z *Reader) Read(p []byte) (n int, err error) {
 // In order for the GZIP checksum to be verified, the reader must be
 // fully consumed until the [io.EOF].
 func (z *Reader) Close() error { return z.decompressor.Close() }
-
-"""
-
-
-
 ```

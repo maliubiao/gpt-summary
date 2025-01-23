@@ -157,7 +157,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 总而言之，`source6.c` 作为一个非常简单的 C 源代码文件，其功能本身并不复杂。但结合 Frida 动态插桩工具的上下文，它可以作为理解 Frida 如何工作、进行逆向分析以及进行底层系统交互的起点。用户到达这里通常是出于开发、学习或调试的目的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/121 object only target/objdir/source6.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,12 +165,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func6_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

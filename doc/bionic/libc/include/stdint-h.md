@@ -307,7 +307,7 @@ if (Java.available) {
 
 通过这种方式，虽然我们不能直接 hook `stdint.h`，但可以通过 hook 使用了其中定义的类型的函数来观察和调试相关的数据流和程序行为。这有助于理解 Android Framework 和 NDK 代码如何使用这些基本的整数类型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/stdint.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -318,8 +318,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -550,7 +552,4 @@ typedef int64_t       intmax_t;
 #endif
 
 #endif /* _STDINT_H */
-
-"""
-
 ```

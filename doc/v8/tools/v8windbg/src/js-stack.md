@@ -64,9 +64,12 @@ Essentially, this code bridges the gap between the raw V8 JavaScript call stack 
 
 **总结来说，`js-stack.cc` 文件的核心目的是为了方便 V8 开发者在 WinDbg 中调试 JavaScript 代码时，能够清晰地查看和分析 JavaScript 的调用堆栈信息。** 它通过 WinDbg 的数据模型接口，将 V8 引擎的 JavaScript 堆栈信息暴露出来，使得开发者可以使用 WinDbg 的命令和功能来检查堆栈帧的内容，例如函数名、脚本位置等，从而更好地理解 JavaScript 代码的执行流程和定位问题。
 
-Prompt: ```这是目录为v8/tools/v8windbg/src/js-stack.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/tools/v8windbg/src/js-stack.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -307,6 +310,4 @@ IFACEMETHODIMP StackFrames::GetIterator(IModelObject* context_object,
   *iterator = sp_memory_iterator.Detach();
   return S_OK;
 }
-
-"""
 ```

@@ -142,7 +142,7 @@ By following these steps, the generated summary accurately reflects the function
 
 总而言之，提供的第二部分代码延续了第一部分的思路，专注于测试 Blink 引擎中处理复杂文本和编辑操作的关键实用工具函数。它深入测试了在各种 Unicode 场景下字形簇边界判断的正确性，以及在退格键操作时光标位置回退的准确性。此外，还包含了一些针对特定 HTML 元素属性和渲染状态的测试。这些测试对于确保 Blink 引擎能够正确处理各种语言和字符，并提供一致和可靠的文本编辑体验至关重要。 这部分代码通过详尽的测试用例，力求覆盖各种边界情况和潜在的错误，从而保证了浏览器在文本编辑功能上的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/editing_utilities_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eBoundaryOf(*node, 17));
 
   // GB8c: Break if there is an odd number of regional indicator symbols before.
@@ -584,8 +586,4 @@ TEST_F(EditingUtilitiesTest, IsRenderedAsNonInlineTableImageOrHR) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -165,7 +165,7 @@ By following this detailed thought process, we can systematically analyze the co
 
 总而言之，这段 C 代码是 Frida 框架中用于测试或支持 AVX2 指令集功能的一个组件，它与逆向工程的关系在于，当被逆向的目标程序使用了 SIMD 指令时，逆向工程师可能会通过 Frida 间接地接触到这类代码，以理解 Frida 如何处理这些指令或作为调试的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/147 simd/simd_avx2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,8 +173,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 #include<stdint.h>
@@ -217,7 +219,4 @@ void increment_avx2(float arr[4]) {
     arr[2] = (float)darr[2];
     arr[3] = (float)darr[3];
 }
-
-"""
-
 ```

@@ -152,14 +152,16 @@ By following this breakdown, we can arrive at a comprehensive and accurate expla
 
 总而言之，`WebThreadSafeData` 是 Blink 引擎中一个基础且重要的工具，它简化了在多线程环境中安全地共享只读数据的任务，这对于渲染引擎处理复杂的 Web 内容至关重要。 它与 JavaScript, HTML, CSS 的交互是间接的，但为这些技术背后数据的安全高效处理提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_thread_safe_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -249,7 +251,4 @@ WebThreadSafeData& WebThreadSafeData::operator=(scoped_refptr<RawData> data) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -166,15 +166,17 @@ By following this systematic deconstruction and reasoning process, combined with
 
 总而言之，`net/quic/platform/impl/quic_test_flags_utils.cc` 提供了一种机制，用于在 QUIC 的单元测试中隔离标志的影响，确保测试的可靠性和可重复性。当开发者遇到与 QUIC 行为相关的意外情况时，这个文件提供的工具可以帮助他们诊断问题，特别是当问题涉及到 QUIC 标志的意外修改时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/platform/impl/quic_test_flags_utils.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ QuicFlagChecker::QuicFlagChecker() {
 #undef DEFINE_QUICHE_PROTOCOL_FLAG_SINGLE_VALUE
 #undef QUICHE_PROTOCOL_FLAG_CHECK
 }
-
-"""
-
 ```

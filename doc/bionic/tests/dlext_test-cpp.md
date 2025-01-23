@@ -121,7 +121,7 @@ Essentially, I approached it like reverse-engineering the purpose of the test fi
 
 在接下来的部分，预计会涉及到更多关于 RELRO 共享、命名空间等更高级的动态链接特性测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/dlext_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -133,8 +133,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1022,7 +1024,4 @@ TEST(dlext, ns_smoke) {
   ASSERT_TRUE(ns_get_public_extern_string2 != nullptr) << dlerror();
 
   EXPECT_STREQ("This string is from pub
-"""
-
-
 ```

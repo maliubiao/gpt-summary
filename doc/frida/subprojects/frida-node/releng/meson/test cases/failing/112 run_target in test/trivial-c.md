@@ -135,7 +135,7 @@ printf called with argument: Trivial test is working.
 
 开发者需要进一步查看与 "112 run_target" 相关的测试脚本和日志，才能确定导致测试失败的真正原因。 `trivial.c` 只是测试目标，它本身的功能非常简单且可靠。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/112 run_target in test/trivial.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,15 +143,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("Trivial test is working.\n");
     return 0;
 }
-
-"""
-
 ```

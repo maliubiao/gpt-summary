@@ -113,7 +113,7 @@ add(5, 3);
 
 这段代码片段是 V8 引擎中负责**识别和管理不同类型调用栈帧**的关键部分。它定义了各种栈帧类型，并提供了基于程序计数器、帧指针和代码对象等信息来确定当前栈帧类型的方法。这项功能对于 V8 的调试、性能分析和垃圾回收等核心操作至关重要，并且直接关系到 JavaScript 代码的执行流程和错误处理。它区分了 JavaScript 函数的不同优化级别（解释执行、TurboFan 优化等）以及与 C++ 代码的交互方式（内置函数、API 调用等）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/frames.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/frames.cc以.tq结尾，那它是个v8 torque源代码，
@@ -121,8 +121,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 } else if (code->is_turbofanned()) {
     // TODO(bmeurer): We treat frames for BUILTIN Code objects as
     // OptimizedJSFrame for now (all the builtins with JavaScript linkage are
@@ -999,7 +1001,4 @@ void WasmFrame::Iterate(RootVisitor* v) const {
   //  |   Type Marker           |                                        |
   //  |- - - - - - - - - - - - -|                              frame_header_size
   //  |
-"""
-
-
 ```

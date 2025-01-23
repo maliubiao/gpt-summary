@@ -199,15 +199,17 @@ go test -gcflags='-m -l' go/test/escape_struct_return.go
 
 总而言之，这段代码是 Go 语言标准库或测试套件的一部分，用于验证编译器在处理函数返回包含指针的结构体时的逃逸分析功能是否正确。理解这段代码需要对 Go 语言的指针、结构体和逃逸分析有深入的了解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_struct_return.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -m -l
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -282,9 +284,4 @@ func tB3() {
 	u := B(spp)
 	println(**u._spp)
 }
-
-"""
-
-
-
 ```

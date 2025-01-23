@@ -210,15 +210,17 @@ Callback executed!
 
 总而言之，这段代码提供了一个基本的结构，用于存储和管理一个简单的回调函数。使用者需要负责正确地设置和触发这个回调。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue44732.dir/foo/foo.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -232,9 +234,4 @@ type Foo struct {
 func NewFoo() *Foo {
 	return &Foo{updatecb: nil}
 }
-
-"""
-
-
-
 ```

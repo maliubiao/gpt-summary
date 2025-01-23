@@ -148,7 +148,7 @@ Finally, the information needs to be presented clearly and logically, following 
 
 总而言之，`func19.c` 虽然代码简单，但它可以作为理解程序执行流程、函数间依赖关系以及使用动态插桩工具进行逆向分析的一个很好的起点。它涉及到二进制、操作系统、框架以及用户使用工具时的各种细节和潜在错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/66 static link/lib/func19.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func17();
 int func18();
 
@@ -165,7 +167,4 @@ int func19()
 {
   return func17() + func18();
 }
-
-"""
-
 ```

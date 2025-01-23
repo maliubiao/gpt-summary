@@ -170,14 +170,16 @@ blink::ArchiveResource resource(
 
 总而言之，`ArchiveResource` 是 Blink 引擎中处理 MHTML 归档的关键组件，它封装了单个资源的信息，使得 Blink 可以正确地加载和处理 MHTML 文件中的各种类型的 Web 资源，包括 HTML、CSS 和 JavaScript。 正确地创建和使用 `ArchiveResource` 对象对于确保 MHTML 文件的正确解析和渲染至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mhtml/archive_resource.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008, 2010 Apple Inc. All rights reserved.
  *
@@ -226,7 +228,4 @@ ArchiveResource::ArchiveResource(scoped_refptr<SharedBuffer> data,
 ArchiveResource::~ArchiveResource() = default;
 
 }  // namespace blink
-
-"""
-
 ```

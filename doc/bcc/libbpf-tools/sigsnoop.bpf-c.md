@@ -61,7 +61,7 @@ Response:
 3. **系统调用退出**：返回用户空间前触发 `sys_exit_kill` → `kill_exit` 记录返回值。
 4. **信号生成路径**：若信号在内核生成（如段错误），触发 `signal_generate` → `sig_trace` 直接记录。
 5. **调试断点**：可在 `probe_entry` 或 `probe_exit` 插入调试逻辑，检查 `values` 映射中的临时数据。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/sigsnoop.bpf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -70,8 +70,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // SPDX-License-Identifier: (LGPL-2.1 OR BSD-2-Clause)
 /* Copyright (c) 2021~2022 Hengqi Chen */
 #include <vmlinux.h>
@@ -226,7 +228,4 @@ int sig_trace(struct trace_event_raw_signal_generate *ctx)
 }
 
 char LICENSE[] SEC("license") = "Dual BSD/GPL";
-
-"""
-
 ```

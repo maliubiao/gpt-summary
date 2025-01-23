@@ -59,9 +59,12 @@ This systematic approach of analyzing the file's name, includes, function struct
 
 文件中注释提到的 "Expanded macro BENCHMARK_MAIN() to allow per-process setup."  说明这个文件是对 Google Benchmark 库提供的 `BENCHMARK_MAIN()` 宏的扩展实现，以便在运行基准测试之前和之后执行 V8 特有的进程级别的初始化和清理操作。 这使得 V8 的基准测试能够更好地管理其运行环境。
 
-Prompt: ```这是目录为v8/test/benchmarks/cpp/benchmark-main.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/benchmarks/cpp/benchmark-main.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -86,6 +89,4 @@ int main(int argc, char** argv) {
   v8::benchmarking::BenchmarkWithIsolate::ShutdownProcess();
   return 0;
 }
-
-"""
 ```

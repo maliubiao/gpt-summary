@@ -147,7 +147,7 @@ By following this structured thinking process, we can systematically analyze the
 
 因此，当用户在构建 Frida 的过程中遇到与 Apple 平台相关的构建错误时，他们可能会查看 `env_apple.py` 的源代码来理解构建环境的初始化过程，并根据脚本中的逻辑和错误处理来排查问题。脚本中的 `print` 语句（如果存在）或者异常信息会成为用户调试的重要线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/env_apple.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from configparser import ConfigParser
 from pathlib import Path
 import shlex
@@ -333,7 +335,4 @@ APPLE_BINARIES = [
     ("codesign",          "codesign"),
     ("lipo",              "lipo"),
 ]
-
-"""
-
 ```

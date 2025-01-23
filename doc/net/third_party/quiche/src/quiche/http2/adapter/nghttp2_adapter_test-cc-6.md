@@ -141,7 +141,7 @@ OnCloseStream(1, Http2ErrorCode::INTERNAL_ERROR)
 
 作为 `nghttp2_adapter_test.cc` 的第 7 部分，这组测试专注于验证 `NgHttp2Adapter` 作为 HTTP/2 **服务器端** 在接收到客户端请求时，对于各种错误和异常情况的处理逻辑。它确保了当客户端发送不符合规范或服务器无法处理的请求时，适配器能够正确地报告错误、终止连接或流，并保持自身的稳定性。这对于保障 Chromium 网络栈的健壮性和与各种不良客户端行为的互操作性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/nghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -149,9 +149,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共11部分，请归纳一下它的功能
+```
 
-"""
- = NgHttp2Adapter::CreateServerAdapter(visitor);
+### 源代码
+```cpp
+= NgHttp2Adapter::CreateServerAdapter(visitor);
 
   const std::string frames = TestFrameSequence()
                                  .ClientPreface()
@@ -877,7 +879,4 @@ TEST_P(NgHttp2AdapterDataTest, ServerSubmitResponseWithResetFromClient) {
   const std::string reset =
       TestFrameSequence().RstStream(1, Http2ErrorCode::CANCEL).Serialize();
   EXPECT_CALL(visitor,
-"""
-
-
 ```

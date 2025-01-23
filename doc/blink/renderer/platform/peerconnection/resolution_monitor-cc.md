@@ -131,14 +131,16 @@ This code is generally internal to the browser. Users and web developers don't d
 
 In summary, `resolution_monitor.cc` is a crucial internal component of the Chromium browser that enables it to understand the resolution of video streams in WebRTC connections. While not directly manipulated by web developers, its correct functioning is essential for the smooth operation of video-based web applications.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/resolution_monitor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -438,7 +440,4 @@ std::unique_ptr<ResolutionMonitor> ResolutionMonitor::Create(
 }
 
 }  // namespace blink
-
-"""
-
 ```

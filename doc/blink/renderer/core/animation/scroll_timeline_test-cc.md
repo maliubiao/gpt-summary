@@ -58,15 +58,17 @@ The user wants to understand the functionality of the `scroll_timeline_test.cc` 
 
 总体来说，`scroll_timeline_test.cc` 文件的这部分着重测试了 `ScrollTimeline` 的基本功能、生命周期管理、与滚动行为的联动，以及在不同场景下的正确性。这对于确保 Web Animations API 中 `ScrollTimeline` 功能的稳定性和可靠性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/scroll_timeline_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -901,7 +903,4 @@ TEST_F(ScrollTimelineTest, WeakViewTimelines) {
     Animation* animation = CreateTestAnimation(
         MakeGarbageCollected<TestViewTimeline>(&GetDocument(), element));
     ani
-"""
-
-
 ```

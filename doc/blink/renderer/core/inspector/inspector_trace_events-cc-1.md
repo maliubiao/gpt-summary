@@ -118,17 +118,17 @@ Imagine JavaScript code executes `fetch('https://example.com/image.png')`.
 
 This part of the `inspector_trace_events.cc` file focuses on defining and implementing functions that generate trace events related to **layout, network requests, resource loading, JavaScript timers and callbacks, script execution, and painting**. These functions meticulously gather relevant data about each event and format it into structured dictionaries and arrays for use by the Chromium Inspector's tracing system. This data is crucial for developers to understand the performance characteristics and internal workings of web pages within the Blink rendering engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_trace_events.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-
+### 源代码
+```cpp
 static void SetGeneratingNodeInfo(
     perfetto::TracedDictionary& dict,
     const LayoutObject* layout_object,
@@ -928,8 +928,4 @@ void inspector_update_counters_event::Data(perfetto::TracedValue context,
 }
 
 void inspector_invalidate_layout_event::Data(perfetto::TracedValue context,
-           
-"""
-
-
 ```

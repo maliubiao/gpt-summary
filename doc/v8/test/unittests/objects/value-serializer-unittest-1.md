@@ -95,12 +95,14 @@ console.log(deserializedObject.regexp.flags); // 'gi'
 
 这部分测试全面地验证了 V8 引擎中 `ValueSerializer` 和 `ValueDeserializer` 组件对于 JavaScript 中常用复杂数据类型（正则表达式、Map、Set、ArrayBuffer）的序列化和反序列化功能的正确性和健壮性。它涵盖了正常情况、边界情况、错误情况以及对未来版本和旧版本的兼容性测试，确保了数据在序列化和反序列化过程中的完整性和一致性。 尤其关注了 Map 和 Set 的元素顺序以及在序列化过程中 getter 方法可能带来的影响，这对于保证 JavaScript 程序的行为至关重要。对于 ArrayBuffer，还特别测试了其在跨上下文传输时的特殊处理。
 
-Prompt: ```这是目录为v8/test/unittests/objects/value-serializer-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/objects/value-serializer-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-        ASSERT_TRUE(value->IsRegExp());
+### 源代码
+```
+ASSERT_TRUE(value->IsRegExp());
         ExpectScriptTrue("result.toString() === '/Qu\\xe9bec/i'");
       });
 }
@@ -1716,6 +1718,4 @@ class ValueSerializerTestWithWasm : public ValueSerializerTest {
     auto enabled_features =
         i::wasm::WasmEnabledFeatures::FromIsolate(i_isolate());
     i::MaybeHandle<i::J
-"""
-
 ```

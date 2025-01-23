@@ -181,7 +181,7 @@ By following this structured thought process and incorporating self-correction, 
 
 总而言之，这个测试用例旨在确保 Frida 工具在处理与动态链接相关的场景时能够正确工作，并帮助开发者理解和调试动态链接相关的问题。理解这个测试用例的功能和背后的原理，对于进行逆向分析、理解程序加载过程以及排查动态链接问题都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/linuxlike/11 runpath rpath ldlibrarypath/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int some_symbol (void);
@@ -202,7 +204,4 @@ int main (void) {
   fprintf (stderr, "ret was %i instead of 1\n", ret);
   return -1;
 }
-
-"""
-
 ```

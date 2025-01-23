@@ -174,11 +174,13 @@ func TestMyAppExitCode(t *testing.T) {
 
 总而言之，这段 `exitcode_test.go` 代码是为实现一种通过在输出流中嵌入特定格式的字符串来传递程序退出码的机制提供测试和基础框架。这种机制在某些特定环境下，例如 Android 平台，可能是一种有效且非侵入式的获取子进程退出状态的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为go/misc/go_android_exec/exitcode_test.go的go语言实现的一部分， 请归纳一下它的功能, 　如果你能推理出它是什么go语言功能的实现，请用go代码举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -255,9 +257,4 @@ func TestExitCodeMissing(t *testing.T) {
 	wantErr = regexp.MustCompile("^bad exit code: .* value out of range")
 	check("exitcode=999999999999999999999999")
 }
-
-"""
-
-
-
 ```

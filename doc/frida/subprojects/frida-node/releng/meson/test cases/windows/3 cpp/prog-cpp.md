@@ -106,7 +106,7 @@ Interceptor.attach(Module.getExportByName(null, "main"), {
 
 总而言之，尽管 `prog.cpp` 代码本身极其简单，但它在Frida的测试框架中扮演着重要的角色，用于验证Frida在Windows平台上的基本Instrumentation能力，并作为调试和问题排查的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/windows/3 cpp/prog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<windows.h>
 
 class Foo;
@@ -123,7 +125,4 @@ class Foo;
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

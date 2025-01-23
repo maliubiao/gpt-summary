@@ -247,15 +247,17 @@ go tool compile -maymorestack=mypackage.mymorestack mypackage/myfile.go
 
 `go/src/cmd/internal/obj/mips/obj0.go` 是 Go 编译器中 MIPS 架构汇编器的核心部分，负责指令和函数的预处理，包括常量转换、跳转目标处理、栈帧管理、栈溢出检测和可选的指令调度。理解这个文件的功能有助于深入了解 Go 的底层实现以及 MIPS 架构的特性。  用户在使用 Go 进行开发时，通常不需要直接与这个文件交互，但了解其背后的机制可以帮助避免一些潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/mips/obj0.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // cmd/9l/noop.c, cmd/9l/pass.c, cmd/9l/span.c from Vita Nuova.
 //
 //	Copyright © 1994-1999 Lucent Technologies Inc.  All rights reserved.
@@ -1792,9 +1794,4 @@ var Linkmipsle = obj.LinkArch{
 	Progedit:       progedit,
 	DWARFRegisters: MIPSDWARFRegisters,
 }
-
-"""
-
-
-
 ```

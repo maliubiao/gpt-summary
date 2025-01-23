@@ -260,7 +260,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 通过以上分析，我们可以看到 `memset_explicit.cpp` 虽然代码量不多，但它在 Android 系统中扮演着重要的角色，尤其是在安全相关的内存操作方面。它通过内联汇编的方式确保了内存清除操作的可靠性，防止了编译器优化可能带来的安全隐患。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/memset_explicit.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -271,8 +271,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2022 The Android Open Source Project
  * All rights reserved.
@@ -309,7 +311,4 @@ void* memset_explicit(void* __dst, int __ch, size_t __n) {
   __asm__ __volatile__("" : : "r"(__dst) : "memory");
   return result;
 }
-
-"""
-
 ```

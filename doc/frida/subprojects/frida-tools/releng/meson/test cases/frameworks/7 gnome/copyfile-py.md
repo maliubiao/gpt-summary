@@ -143,7 +143,7 @@ By following this structured thinking process, combining understanding the code 
 
 `copyfile.py` 脚本虽然功能简单，但在 Frida 的测试环境中扮演着重要的角色，用于准备测试环境、复制必要的测试文件。了解它的功能和可能的错误场景，可以帮助开发人员更好地理解 Frida 的测试流程，并在遇到问题时更有效地进行调试。它体现了在动态分析工具的开发和测试过程中，基础的文件操作仍然是不可或缺的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/7 gnome/copyfile.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,15 +151,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 import shutil
 
 shutil.copy(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

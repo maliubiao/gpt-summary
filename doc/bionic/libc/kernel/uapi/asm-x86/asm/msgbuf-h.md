@@ -293,7 +293,7 @@ Java/Kotlin 代码 (Framework Service) -->  (可能经过 AIDL/Binder) --> Nativ
 
 总而言之，`bionic/libc/kernel/uapi/asm-x86/asm/msgbuf.handroid` 这个头文件是 Android 底层与 Linux 内核消息队列机制交互的基石之一，它定义了关键的数据结构，供 Bionic libc 中实现消息队列相关功能的函数使用。虽然应用开发者通常不直接操作这个头文件，但理解其作用有助于深入了解 Android 的底层运作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/msgbuf.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -304,8 +304,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -333,7 +335,4 @@ struct msqid64_ds {
 };
 #endif
 #endif
-
-"""
-
 ```

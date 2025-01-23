@@ -127,11 +127,13 @@ os.umask(old_umask); // 恢复之前的 umask
 
 `d8-posix.cc` 文件是 `d8` 工具与操作系统交互的关键桥梁，它通过封装 POSIX 系统调用，为 JavaScript 提供了执行系统级任务的能力，这在编写脚本、进行系统管理或测试时非常有用。它体现了 V8 引擎为了提供更全面的功能而与底层操作系统进行集成的设计思想。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/d8/d8-posix.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2009 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -896,7 +898,4 @@ void Shell::AddOSMethods(Isolate* isolate, Local<ObjectTemplate> os_templ) {
 }
 
 }  // namespace v8
-
-"""
-
 ```

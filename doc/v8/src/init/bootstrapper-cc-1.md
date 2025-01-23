@@ -165,7 +165,7 @@ proxy.a; // 会触发 handler.get
 
 总而言之，这段代码是 V8 引擎启动和初始化过程中的关键部分，它奠定了 JavaScript 运行时的基础结构。了解其功能有助于更深入地理解 JavaScript 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/init/bootstrapper.cc以.tq结尾，那它是个v8 torque源代码，
@@ -173,8 +173,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ring("() {}");
   DirectHandle<Script> script = factory()->NewScript(source);
   script->set_type(Script::Type::kNative);
@@ -892,8 +894,5 @@ void Genesis::HookUpGlobalObject(Handle<JSGlobalObject> global_object) {
 
 // See https://tc39.es/ecma262/#sec-ordinarycreatefromconstructor for details
 // about intrinsicDefaultProto concept. In short it's about using proper
-// prototype object from constructor's realm when 
-"""
-
-
+// prototype object from constructor's realm when
 ```

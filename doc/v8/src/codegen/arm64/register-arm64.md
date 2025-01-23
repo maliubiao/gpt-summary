@@ -132,11 +132,13 @@ console.log(c); // 输出 Float32Array [ 6, 8, 10, 12 ]
 
 **总结来说，`register-arm64.cc` 负责定义 ARM64 架构下向量数据的组织方式，并提供工具函数来操作这些格式，这对于 V8 引擎高效地执行 JavaScript 中涉及数值计算和并行处理的代码至关重要。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/register-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -447,7 +449,4 @@ uint64_t MaxUintFromFormat(VectorFormat vform) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_ARM64
-
-"""
-
 ```

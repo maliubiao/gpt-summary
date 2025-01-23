@@ -131,14 +131,16 @@ const blob = new Blob(['world'], { type: 'text/plain' });
 
 总而言之，`blob_data_test.cc` 是一个关键的测试文件，用于确保 Blink 引擎中 Blob 功能的正确性和稳定性。它涵盖了创建、属性验证和注册等核心流程，并间接关系到 Web 开发者在 JavaScript、HTML 和 CSS 中使用 Blob API 的行为。通过各种测试用例，它可以帮助发现潜在的 bug 和使用错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/blob/blob_data_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -563,7 +565,4 @@ TEST_F(BlobDataHandleTest, CreateFromManyMergedBytes) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

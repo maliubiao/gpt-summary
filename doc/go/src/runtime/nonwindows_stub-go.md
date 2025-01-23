@@ -169,7 +169,7 @@ func main() {
 
 `go/src/runtime/nonwindows_stub.go` 扮演着一个关键的角色，它确保了 Go 运行时环境在非 Windows 系统上的平稳运行，通过提供空实现或默认行为来适配那些在 Windows 上有特定实现的功能，从而保证了 Go 语言的跨平台能力。理解这种平台适配的思想对于深入理解 Go 运行时的机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/nonwindows_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -177,8 +177,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -207,9 +209,4 @@ func enableWER() {}
 // but it is used in non-OS-specific parts of the runtime.
 // Define it as an empty struct to avoid wasting stack space.
 type winlibcall struct{}
-
-"""
-
-
-
 ```

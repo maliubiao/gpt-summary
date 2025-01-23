@@ -132,15 +132,17 @@ By following this structured approach, I was able to effectively analyze the cod
 
 总而言之，`sim_compositor.cc` 是一个重要的测试工具，它允许开发者在不依赖真实 GPU 环境的情况下，对 Blink 的合成器进行细致的控制和验证，确保渲染流程的正确性。它与 JavaScript、HTML 和 CSS 的关系体现在它模拟的是渲染流程的最终阶段，这个阶段的输入是前面各个阶段处理后的结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/sim/sim_compositor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ cc::LayerTreeHost* SimCompositor::LayerTreeHost() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

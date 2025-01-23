@@ -135,7 +135,7 @@ console.log(result); // 输出 [6, 8, 10, 12]
 
 作为第 6 部分，这个代码片段专注于模拟 ARM64 架构中**NEON 和 Advanced SIMD 扩展的指令执行**。它涵盖了向量和标量的算术运算、逻辑运算、数据移动、加载存储以及立即数加载等多种 NEON 指令类型。这部分代码是 V8 引擎模拟 ARM64 架构处理器行为的关键组成部分，使得 V8 能够在非 ARM64 平台上运行和测试，并为在 ARM64 平台上执行 JavaScript 代码提供底层的指令执行能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm64/simulator-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -143,8 +143,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tVectorFormat(nfd.FPFormatMap());
 
       switch (instr->Mask(NEONByIndexedElementFPMask)) {
@@ -1221,8 +1223,4 @@ void Simulator::VisitNEONShiftImmediate(Instruction* instr) {
   switch (instr->Mask(NEONShiftImmediateMask)) {
     case NEON_SHL:
       shl(vf, rd, rn, left_shift);
-     
-"""
-
-
 ```

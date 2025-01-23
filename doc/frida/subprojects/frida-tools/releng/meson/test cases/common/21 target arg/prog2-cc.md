@@ -93,7 +93,7 @@ Initially, I might have focused too much on the runtime behavior of the code. Ho
 
 总而言之，`prog2.cc` 作为一个简单的测试用例，其目的是在 Frida 的构建过程中验证目标参数处理机制的正确性，防止因错误的构建配置导致的问题。它通过编译时的错误检测来实现这一目标，间接地涉及到二进制编译、构建系统以及对不同目标平台的支持等底层概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/21 target arg/prog2.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #ifdef CTHING
 #error "Local C argument set in wrong target"
 #endif
@@ -116,7 +118,4 @@ extern "C" int func();
 int main(void) {
     return func();
 }
-
-"""
-
 ```

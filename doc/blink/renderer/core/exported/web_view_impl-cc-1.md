@@ -119,7 +119,7 @@ Let's break down the code section by section to address these points:
 
 总的来说，这个代码片段是 `WebViewImpl` 中处理用户交互和程序控制的页面显示特性（如缩放、高亮）、管理页面行为（如弹出窗口）以及响应环境变化（如语言设置）的关键部分。它连接了浏览器提供的用户界面事件和偏好设置与 Blink 引擎的渲染和布局逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_view_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ScrollType::kProgrammatic);
       }
 
@@ -977,7 +979,4 @@ void WebView::ApplyWebPreferences(const web_pref::WebPreferences& prefs,
   settings->SetDefaultFixedFontSize(prefs.default_fixed_font_size);
   settings->SetMinimumFontSize(prefs.minimum_font_size);
   settings->SetMinimumLogicalFont
-"""
-
-
 ```

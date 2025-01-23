@@ -127,15 +127,17 @@ While you don't directly interact with `TaggedImpl` in typical JavaScript progra
 
 If the file extension were `.tq`, it would indicate that the file contains **Torque** source code. Torque is V8's domain-specific language used for generating highly optimized C++ code, particularly for object manipulation and runtime functions. In that case, the file would contain Torque syntax defining the logic for tagged value operations, and the C++ code we see here would likely be *generated* from that Torque code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/tagged-impl-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/tagged-impl-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -401,7 +403,4 @@ Tagged<Object> TaggedImpl<kRefType, StorageType>::GetHeapObjectOrSmi(
 }  // namespace v8
 
 #endif  // V8_OBJECTS_TAGGED_IMPL_INL_H_
-
-"""
-
 ```

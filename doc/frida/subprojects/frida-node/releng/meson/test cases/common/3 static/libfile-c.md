@@ -142,7 +142,7 @@ Let's break down the thought process for analyzing this seemingly simple C code 
 
 总而言之，尽管 `libfunc` 本身非常简单，但它在 Frida 的测试和学习环境中扮演着重要的角色，可以用来演示和验证 Frida 的核心功能，并为更复杂的逆向分析奠定基础。它作为一个简单的目标，使得用户可以专注于 Frida 工具本身的操作和行为，而不是被复杂的业务逻辑分散注意力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/3 static/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,12 +150,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int libfunc(void) {
     return 3;
 }
-
-"""
-
 ```

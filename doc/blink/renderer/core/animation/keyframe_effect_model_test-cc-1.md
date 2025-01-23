@@ -115,15 +115,17 @@ By following these steps and continuously refining the understanding based on th
 
 总而言之，这个测试文件的第二部分专注于验证 `KeyframeEffectModel` 与合成器的交互，以及对各种 CSS 属性的处理能力，确保动画数据能正确地传递到渲染流水线中，并能处理各种可能出现的场景和用户错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/keyframe_effect_model_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 apshotUpdateBasic) {
   StringKeyframeVector keyframes =
       KeyframesAtZeroAndOne(CSSPropertyID::kOpacity, "0", "1");
@@ -481,8 +483,4 @@ TEST_F(AnimationKeyframeEffectModel, BackgroundShorthandStaticProperties) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

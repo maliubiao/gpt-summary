@@ -272,7 +272,7 @@ if (Process.platform === 'android') {
 
 `bionic/libc/bionic/inotify_init.cpp` 虽然代码很简单，但它是在 Android 系统中使用 `inotify` 文件系统监控机制的关键入口点。理解它的功能以及它在 Android 系统中的使用方式，对于进行底层开发和调试非常有帮助。通过 Frida Hook 可以方便地监控和分析相关调用，从而深入理解 Android 系统的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/inotify_init.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -283,8 +283,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  * All rights reserved.
@@ -318,7 +320,4 @@ Prompt:
 int inotify_init() {
   return inotify_init1(0);
 }
-
-"""
-
 ```

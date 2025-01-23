@@ -294,7 +294,7 @@ except KeyboardInterrupt:
 
 通过这个 Frida 脚本，你可以监控你的 Android 应用在与 Nouveau 驱动交互时，何时以及如何分配 GEM 对象，从而帮助你调试图形相关的 issues。你可以根据需要修改脚本来 hook 其他的 ioctl 命令和读取更多的参数信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/drm/nouveau_drm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -305,8 +305,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -564,7 +566,4 @@ struct drm_nouveau_svm_bind {
 }
 #endif
 #endif
-
-"""
-
 ```

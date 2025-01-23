@@ -113,15 +113,17 @@ By following these steps, I can systematically analyze the code and provide a co
 
 总而言之，`css_parser_fast_paths_test.cc` 是确保 Chromium Blink 引擎能够高效且正确地解析常见 CSS 属性值的关键组成部分，它直接影响着网页的渲染性能和视觉呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_parser_fast_paths_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -625,7 +627,4 @@ TEST(CSSParserFastPathsTest, InternalColorsOnlyAllowedInUaMode) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -185,16 +185,17 @@ czero_nez s2, s0, s1
 
 虽然开发者不会直接编写使用 `czero_eqz` 或 `czero_nez` 的代码，但理解这些底层指令所代表的比较操作，以及 V8 如何利用它们来编译 JavaScript 代码，可以帮助开发者更好地理解 JavaScript 中条件判断的本质，从而避免与条件判断相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-zicond.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/extension-riscv-zicond.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
-
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +219,4 @@ void AssemblerRISCVZicond::czero_nez(Register rd, Register rs1, Register rs2) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

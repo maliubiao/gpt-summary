@@ -164,7 +164,7 @@ This structured approach helps ensure that all the requirements of the prompt ar
 
 总而言之，`foobar.c` 作为一个 Frida 项目的测试用例，其目的是为了创建一个简单的 C 源代码文件，以便用于测试 Frida 在特定场景下的功能，例如动态插桩和覆盖可执行文件。其文件路径本身就提供了丰富的上下文信息，帮助开发人员理解其用途和在整个项目中的位置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/native/9 override with exe/subprojects/sub/foobar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include <stdio.h>
 
@@ -187,7 +189,4 @@ int main(int argc, char* argv[]) {
   assert(r == 0);
   return 0;
 }
-
-"""
-
 ```

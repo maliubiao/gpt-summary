@@ -122,7 +122,7 @@ Frida 会发出一个警告信息，该警告信息应该包含以下内容：
 
 总结来说，`b.c` 很可能是一个用于测试 Frida Node.js 绑定警告位置功能的简单 C 代码文件。它可以帮助开发者理解 Frida 在报告警告时如何关联到具体的代码位置，这对于逆向工程和动态分析非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/22 warning location/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,9 +130,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

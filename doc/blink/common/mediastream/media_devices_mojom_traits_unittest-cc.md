@@ -127,14 +127,16 @@ EXPECT_THAT(output.availability, testing::Optional(availability));
 
 `media_devices_mojom_traits_unittest.cc` 是一个关键的单元测试，它确保了 Chromium Blink 引擎中用于表示媒体设备信息的 C++ 结构体能够通过 Mojo 正确地进行跨进程传递。这对于 Web 平台上依赖媒体设备信息的功能（例如 `navigator.mediaDevices.enumerateDevices()` 和 `getUserMedia()`）的正常运行至关重要。它间接地影响了 JavaScript 开发者获取和使用媒体设备信息的能力，并保证了这些信息在浏览器内部处理和传递过程中的一致性和完整性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/mediastream/media_devices_mojom_traits_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -174,7 +176,4 @@ TEST(MediaDevicesMojomTraitsTest, Serialization) {
   EXPECT_EQ(output.video_facing, video_facing);
   EXPECT_THAT(output.availability, testing::Optional(availability));
 }
-
-"""
-
 ```

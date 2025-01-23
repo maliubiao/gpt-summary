@@ -83,16 +83,18 @@ The user wants a summary of the functionality of the `InlineCursor` class in the
 
 总而言之，`InlineCursor` 是 Blink 引擎中一个复杂但至关重要的类，它提供了在内联布局结构中精细化定位和遍历的能力，这对于文本渲染、光标定位、选区处理等核心浏览器功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_cursor.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-      // |LayoutInline| used to be culled.
+### 源代码
+```cpp
+// |LayoutInline| used to be culled.
       }
       DCHECK(child_item.GetLayoutObject()->IsLayoutInline()) << child_item;
       break;
@@ -1076,8 +1078,4 @@ void InlineCursor::CheckValid(const InlineCursorPosition& position) const {
 #endif
 
 }  // namespace blink
-
-"""
-
-
 ```

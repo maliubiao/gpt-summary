@@ -686,7 +686,7 @@ class V8_EXPORT_PRIVATE Bytecodes final : public AllStatic {
     static_assert(static_cast<int>(OperandScale::kQuadruple) == 4 &&
                   OperandScale::kLast == OperandScale::kQuadruple);
     int scale_index = static_cast<int>(operand_scale) >> 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecodes.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecodes.h以.tq结尾，那它是个v8 torque源代码，
@@ -694,10 +694,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-  V(ForInEnumerate, ImplicitRegisterUse::kWriteAccumulator, OperandType::kReg) \
+### 源代码
+```c
+V(ForInEnumerate, ImplicitRegisterUse::kWriteAccumulator, OperandType::kReg) \
   V(ForInPrepare, ImplicitRegisterUse::kReadAndClobberAccumulator,             \
     OperandType::kRegOutTriple, OperandType::kIdx)                             \
   V(ForInNext, ImplicitRegisterUse::kWriteAccumulator, OperandType::kReg,      \
@@ -1404,8 +1405,4 @@ V8_EXPORT_PRIVATE std::ostream& operator<<(std::ostream& os,
 }  // namespace v8
 
 #endif  // V8_INTERPRETER_BYTECODES_H_
-
-"""
-
-
 ```

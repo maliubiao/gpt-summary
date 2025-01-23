@@ -100,11 +100,13 @@ add("hello", "world");
 
 总而言之，`deoptimizer-ppc.cc` 是 V8 引擎在 PowerPC 架构上实现反优化功能的核心组件，它确保了即使在优化假设失效的情况下，JavaScript 代码仍然能够正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/ppc/deoptimizer-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -170,7 +172,4 @@ void FrameDescription::SetPc(intptr_t pc) { pc_ = pc; }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

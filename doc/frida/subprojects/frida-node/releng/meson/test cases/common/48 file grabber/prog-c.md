@@ -96,7 +96,7 @@ By following these steps, we arrive at a comprehensive understanding of the prov
 
 总而言之，`prog.c` 作为一个非常简洁的 C 代码片段，其主要价值在于作为动态 Instrumentation 工具 Frida 的一个测试目标。它模拟了程序执行的基本流程，并通过未定义的函数调用为 Frida 的 hook 能力提供了测试点。 它可以用来演示和验证 Frida 如何在运行时修改程序行为，这对于逆向工程、安全分析和动态调试等领域至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/48 file grabber/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int funca(void);
 int funcb(void);
 int funcc(void);
@@ -113,7 +115,4 @@ int funcc(void);
 int main(void) {
     return funca() + funcb() + funcc();
 }
-
-"""
-
 ```

@@ -161,7 +161,7 @@ def __lldb_init_module(debugger, internal_dict):
    - 用户可以通过 Frida 提供的 API 或控制服务器与目标进程进行交互，监控和修改进程行为。
 
 通过以上步骤，用户可以逐步到达 `gadget.vala` 中的各个功能模块，实现动态插桩和调试。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/gadget/gadget.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 namespace Frida.Gadget {
 	private class Config : Object, Json.Serializable {
 		public Object interaction {
@@ -1520,7 +1522,4 @@ namespace Frida.Gadget {
 
 		private async void load () throws Error {
 			load_in_pro
-"""
-
-
 ```

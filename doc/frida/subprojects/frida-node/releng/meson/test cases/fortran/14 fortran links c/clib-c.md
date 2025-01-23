@@ -141,7 +141,7 @@ Here's a breakdown of the thinking process to analyze the C code and answer the 
 
 因此，`clib.c` 作为一个简单的 C 语言库，其存在是为了在一个更复杂的测试场景中演示 Fortran 和 C 的互操作性，并可以作为 Frida 进行动态分析和调试的目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/fortran/14 fortran links c/clib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 void hello(void){
@@ -158,7 +160,4 @@ void hello(void){
   printf("hello from C\n");
 
 }
-
-"""
-
 ```

@@ -245,7 +245,7 @@ go build -ldflags "-extldflags -L/path/to/c/lib" -gcflags "-I/path/to/c/include"
 
 总而言之，`go/src/runtime/cgo/callbacks.go` 文件定义了 Go 语言与 C 代码进行回调的核心机制，允许 C 代码在需要时调用 Go 代码，实现了双向的互操作性，是 CGo 功能的基础。理解其功能对于进行复杂的 CGo 编程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/cgo/callbacks.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -253,8 +253,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -407,9 +409,4 @@ var _cgo_yield unsafe.Pointer
 //go:linkname _cgo_getstackbound _cgo_getstackbound
 var x_cgo_getstackbound byte
 var _cgo_getstackbound = &x_cgo_getstackbound
-
-"""
-
-
-
 ```

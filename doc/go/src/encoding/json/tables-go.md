@@ -321,7 +321,7 @@ func main() {
 
 总而言之，`tables.go` 中的 `safeSet` 和 `htmlSafeSet` 是 `encoding/json` 包实现 JSON 字符串编码时用于确定字符是否需要转义的关键内部数据结构，`htmlSafeSet` 提供了额外的安全性，防止在 HTML 上下文中使用 JSON 时出现安全问题。 理解它们的用途有助于避免在处理 JSON 数据时犯错。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/json/tables.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -329,8 +329,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -549,9 +551,4 @@ var htmlSafeSet = [utf8.RuneSelf]bool{
 	'~':      true,
 	'\u007f': true,
 }
-
-"""
-
-
-
 ```

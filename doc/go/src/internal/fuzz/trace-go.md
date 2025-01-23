@@ -114,7 +114,7 @@ fuzz.libfuzzerTraceCmp1(data[0], 65, getCurrentPC()) // getCurrentPC() 是一个
 
 总而言之，`go/src/internal/fuzz/trace.go` 提供了一组接口，用于在 Go 语言的内置模糊测试过程中跟踪比较操作。它通过 `//go:linkname` 连接到 `runtime` 包中的实际实现，使得模糊测试引擎能够收集代码执行信息，从而更有效地发现潜在的 Bug。普通使用者不需要直接操作这个文件中的代码，但理解其作用有助于更好地理解 Go 语言的模糊测试机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/fuzz/trace.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -122,8 +122,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -159,9 +161,4 @@ func libfuzzerTraceConstCmp8(arg0, arg1 uint64, fakePC uint) {}
 
 func libfuzzerHookStrCmp(arg0, arg1 string, fakePC uint)    {}
 func libfuzzerHookEqualFold(arg0, arg1 string, fakePC uint) {}
-
-"""
-
-
-
 ```

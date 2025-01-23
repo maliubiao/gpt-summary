@@ -84,11 +84,13 @@ console.log(sum);
 
 `opcodes.cc` 文件在 V8 编译器的内部运作中扮演着至关重要的角色，它定义了编译器用来表示和操作 JavaScript 代码的底层指令集。理解这个文件有助于深入了解 JavaScript 代码是如何被 V8 编译和执行的。 虽然 JavaScript 开发者不会直接编写这些操作码，但它们是连接高级 JavaScript 代码和底层机器执行的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/opcodes.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -131,7 +133,4 @@ std::ostream& operator<<(std::ostream& os, IrOpcode::Value opcode) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

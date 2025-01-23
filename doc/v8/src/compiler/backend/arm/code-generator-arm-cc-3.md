@@ -509,7 +509,7 @@ Register(), i.InputSimd128Register(0),
       DCHECK(dst == i.InputSimd128Register(0));
       __ vmov(dst.high(), src1.low());         // dst = [0, 1, 2, 3, 8, ... 11]
       __ vzip(Neon16, dst.low(), dst.high());  // dst = [0, 8, 1, 9, ... 11
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/code-generator-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm/code-generator-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -517,8 +517,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Register(), i.InputSimd128Register(0),
                      i.InputRegister(2), NeonS16, i.InputInt8(1));
       break;
@@ -1388,7 +1390,4 @@ Register(), i.InputSimd128Register(0),
       __ sxth(i.OutputRegister(0), i.OutputRegister(0));
       break;
     case kAtomicCompareEx
-"""
-
-
 ```

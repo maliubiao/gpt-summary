@@ -124,14 +124,16 @@ By following this systematic approach – understanding the context, analyzing t
 
 总而言之，`paint_chunk_subset.cc` 提供了一种将 Blink 引擎内部的绘制数据以结构化的 JSON 格式导出的机制，这对于调试、分析和理解浏览器的渲染过程非常有用。它间接地与 JavaScript 和前端技术相关联，主要体现在这些技术可以消费和展示由该代码生成的 JSON 数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_chunk_subset.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ std::ostream& operator<<(std::ostream& os, const PaintChunkSubset& subset) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

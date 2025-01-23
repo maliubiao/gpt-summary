@@ -119,15 +119,17 @@ By following this process, which involves understanding the code's purpose, diss
 
 此外，如果一个安全漏洞报告指出 Chromium 在处理特定的恶意 SVG 路径时存在问题，开发人员也会查看这个 fuzzer 来了解是否已经覆盖了该漏洞，或者需要添加新的测试用例来防止类似问题再次发生。模糊测试的结果通常会作为测试用例添加到 Chromium 的测试套件中，以确保未来的代码更改不会引入新的回归。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_path_parser_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   blink::svg_path_parser::ParsePath(source, null_consumer);
   return 0;
 }
-
-"""
-
 ```

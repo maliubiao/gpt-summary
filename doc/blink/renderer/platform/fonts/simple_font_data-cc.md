@@ -180,14 +180,16 @@ By following this systematic approach, I could effectively analyze the provided 
 
 希望以上分析能够帮助你理解 `simple_font_data.cc` 文件的功能及其与前端技术的关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/simple_font_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2008, 2010 Apple Inc. All rights reserved.
  * Copyright (C) 2006 Alexey Proskuryakov
@@ -694,7 +696,4 @@ float SimpleFontData::WidthForGlyph(Glyph glyph) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

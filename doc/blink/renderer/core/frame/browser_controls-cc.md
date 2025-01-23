@@ -123,14 +123,16 @@ This iterative process of scanning, analyzing, connecting, and exemplifying allo
 
 总而言之，`browser_controls.cc` 是 Blink 渲染引擎中一个关键的组件，负责管理浏览器 UI 元素与网页内容之间的交互，确保网页内容能够正确地布局和显示，同时与浏览器的用户界面保持同步。开发者需要理解其工作原理，以避免在开发过程中出现与浏览器控件相关的布局和行为问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/browser_controls.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ float BrowserControls::BottomMinShownRatio() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

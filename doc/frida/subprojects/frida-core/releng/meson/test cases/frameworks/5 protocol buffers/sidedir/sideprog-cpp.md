@@ -95,7 +95,7 @@ By following this structured thinking process, incorporating domain knowledge (r
 
 总而言之，这个 `sideprog.cpp` 文件是一个简单的 protobuf 使用示例，它虽然功能简单，但为理解 Frida 如何处理 protobuf 以及在逆向工程中如何运用 protobuf 提供了基础。通过分析这个文件，我们可以了解 protobuf 的基本操作，并将其与逆向分析、底层知识和常见的编程错误联系起来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/5 protocol buffers/sidedir/sideprog.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"com/mesonbuild/simple.pb.h"
 #include"com/mesonbuild/subsite/complex.pb.h"
 
@@ -121,7 +123,4 @@ int main(int argc, char **argv) {
     google::protobuf::ShutdownProtobufLibrary();
     return 0;
 }
-
-"""
-
 ```

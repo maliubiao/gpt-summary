@@ -173,7 +173,7 @@ By systematically addressing each part of the request and connecting it to the p
 
 `f.c` 作为一个 Frida 测试用例，其简洁性使其成为测试函数指针相关功能的理想选择。它展示了函数指针的声明和初始化，以及一个空函数的定义。在逆向分析中，对函数指针的理解和操作是至关重要的，而 Frida 这样的工具可以帮助逆向工程师动态地分析和修改程序的行为。理解这样的简单测试用例，有助于更好地理解 Frida 的工作原理以及在实际逆向场景中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/212 source set configuration_data/f.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = (void *)0x12AB34CD;
@@ -190,7 +192,4 @@ void (*p)(void) = (void *)0x12AB34CD;
 void f(void)
 {
 }
-
-"""
-
 ```

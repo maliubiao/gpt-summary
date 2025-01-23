@@ -214,7 +214,7 @@ remainderl(long double x, long double y)
 
 `e_remainderl.c` 文件定义了用于计算 `long double` 类型浮点数余数的 `remainderl` 函数，它是 Android 系统数学库的重要组成部分。虽然其实现简单地调用了 `remquol`，但理解其功能、与其他 Android 组件的联系以及可能的错误使用场景对于 Android 开发和调试至关重要。 理解 dynamic linker 的工作原理有助于理解 Android 系统中库的加载和符号解析过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_remainderl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -224,8 +224,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -263,7 +265,4 @@ remainderl(long double x, long double y)
 
 	return (remquol(x, y, &quo));
 }
-
-"""
-
 ```

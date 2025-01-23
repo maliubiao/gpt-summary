@@ -134,15 +134,17 @@ By following these steps, I can systematically analyze the provided code snippet
 
 总而言之，`empty_clients.cc` 提供了一种在不需要或无法使用完整浏览器功能时，提供默认行为的方式。这在测试、headless 浏览器以及某些嵌入式场景中非常有用，但也可能因为配置错误而导致用户交互功能失效。 理解这个文件的作用对于调试 Blink 引擎的行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/empty_clients.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Eric Seidel <eric@webkit.org>
  * Copyright (C) 2008, 2009, 2012 Apple Inc. All rights reserved.
@@ -341,7 +343,4 @@ EmptyLocalFrameClient::CreateServiceWorkerProvider() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

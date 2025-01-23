@@ -120,15 +120,17 @@ if (depthInfo) {
 
 `xr_webgl_depth_information.cc` 的目的是在 Blink 引擎中封装 WebXR 的深度信息，并提供 WebGL 深度纹理的访问接口。目前提供的 `texture` 方法返回 `nullptr`，可能表示功能尚未完全实现。用户通过与 WebXR 网站的交互，触发 Javascript 调用 WebXR API 请求深度信息，最终可能导致这段 C++ 代码被执行。如果 Javascript 期望获取有效的深度纹理，当前的实现会导致错误。在实际开发中，这个文件会包含更多逻辑来管理和提供实际的 WebGL 深度纹理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_webgl_depth_information.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -143,7 +145,4 @@ WebGLTexture* XRWebGLDepthInformation::texture(
 }
 
 }  // namespace blink
-
-"""
-
 ```

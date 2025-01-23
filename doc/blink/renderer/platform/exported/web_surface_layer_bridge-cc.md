@@ -80,14 +80,16 @@ This iterative process of scanning, inferring, connecting, hypothesizing, and re
 
 `WebSurfaceLayerBridge` 是 Blink 渲染引擎中一个重要的内部组件，它作为连接上层渲染逻辑和底层图形合成的关键桥梁。它负责创建和管理渲染图层，而这些图层是实现高性能渲染和复杂视觉效果的基础。虽然开发者不会直接操作它，但理解其功能有助于更好地理解浏览器渲染原理，并避免一些常见的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_surface_layer_bridge.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -112,7 +114,4 @@ std::unique_ptr<WebSurfaceLayerBridge> WebSurfaceLayerBridge::Create(
 WebSurfaceLayerBridge::~WebSurfaceLayerBridge() = default;
 
 }  // namespace blink
-
-"""
-
 ```

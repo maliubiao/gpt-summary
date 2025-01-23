@@ -143,7 +143,7 @@ By following this structured thinking process, breaking down the request into sm
 
 `libB.c` 自身是一个功能非常简单的 C 代码文件，主要用于作为 Frida 框架中测试静态库剥离功能的组成部分。尽管简单，它也能作为逆向工程的入门目标，并涉及到一些底层系统和二进制的知识。 用户在开发、测试或逆向分析与静态库相关的场景时，可能会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/65 static archive stripping/lib/libB.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,14 +151,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <libB.h>
 
 static int libB_func_impl(void) { return 0; }
 
 int libB_func(void) { return libB_func_impl(); }
-
-"""
-
 ```

@@ -90,12 +90,14 @@ Response: The user wants a summary of the C++ code in `v8/src/codegen/code-stub-
 
 **总结来说，这个代码片段提供了 V8 引擎中处理数组和数值类型的核心低级操作。它是 JavaScript 引擎高效运行的关键组成部分，使得 JavaScript 能够进行各种数组操作和数值计算。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ts
   // protector is invalid. This function should be renamed to reflect its uses.
 
@@ -1658,7 +1660,4 @@ TNode<Float16RawBitsT> CodeStubAssembler::TruncateFloat64ToFloat16(
   // See Float64Ceil for the reason there is a branch for the static constant
   // (PGO profiles).
   Branch(UniqueInt32Constant(IsT
-"""
-
-
 ```

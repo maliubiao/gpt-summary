@@ -182,15 +182,17 @@ go test -gcflags='-m -l' ./go/test/escape_reflect.go
 
 总而言之，`go/test/escape_reflect.go` 是 Go 语言编译器的自我测试，专注于验证反射操作的逃逸分析行为是否符合预期。它通过大量的测试用例覆盖了 `reflect.Value` 的各种方法和不同数据类型，确保编译器能够正确地进行逃逸分析，从而优化内存分配。理解这段代码有助于开发者更深入地理解 Go 语言的逃逸分析机制，并避免在使用反射时犯一些常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_reflect.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -m -l
 
 // Copyright 2022 The Go Authors. All rights reserved.
@@ -653,9 +655,4 @@ func append2(s, x []int) []int { // ERROR "leaking param: s$" "x does not escape
 	rv := reflect.AppendSlice(sv, xv)
 	return rv.Interface().([]int)
 }
-
-"""
-
-
-
 ```

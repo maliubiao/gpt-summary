@@ -242,15 +242,17 @@ bool ViewTransition::IsGeneratingPseudo(
 
 总而言之，这个文件是 Blink 引擎中实现视图过渡核心逻辑的关键部分，它连接了 JavaScript API、HTML 结构和 CSS 样式，使得开发者能够创建流畅且有吸引力的页面过渡效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/view_transition/view_transition.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ze();
 }
 
@@ -359,8 +361,4 @@ bool ViewTransition::IsGeneratingPseudo(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

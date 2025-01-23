@@ -155,7 +155,7 @@ By following this thought process, including initial observation, connecting to 
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/test cases/unit/88 multiple envvars/prog.c` 这个文件是一个简单的单元测试，用于验证 Frida 的构建系统是否正确地设置了编译器的标志。它的主要作用是在编译时进行检查，以确保后续的编译和链接过程能够顺利进行。它与逆向方法的关系在于它是 Frida 工具构建过程中的一个环节，确保了构建出的工具的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/88 multiple envvars/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 #ifndef CPPFLAG
@@ -183,7 +185,4 @@ int main(int argc, char **argv) {
     printf("%d %s\n", argc, argv[0]);
     return 0;
 }
-
-"""
-
 ```

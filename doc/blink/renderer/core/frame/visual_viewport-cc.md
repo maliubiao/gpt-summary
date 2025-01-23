@@ -134,15 +134,17 @@ By following these steps, I can arrive at the comprehensive and well-structured 
 
 总而言之，`blink/renderer/core/frame/visual_viewport.cc` 文件定义的 `VisualViewport` 类是 Blink 渲染引擎中至关重要的组件，它负责**管理用户在屏幕上实际看到的网页内容区域的大小、位置和缩放，并将其状态同步到渲染流程和 JavaScript 环境中**。它处理用户的交互 (如 pinch-to-zoom 和滚动)，并与浏览器的其他组件紧密协作，确保网页内容能够正确地呈现和交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/visual_viewport.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -1013,7 +1015,4 @@ ScrollOffset VisualViewport::MaximumScrollOffsetAtScale(float scale) const {
 }
 
 gfx::Point VisualViewport::Clam
-"""
-
-
 ```

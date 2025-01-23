@@ -171,7 +171,7 @@ Essentially, the process involves:
 
 总而言之，`func16.c` 虽然是一个非常简单的代码片段，但在 Frida 的上下文中，它可以作为一个基本的观察点，帮助逆向工程师理解程序的执行流程、函数间的调用关系，并进行动态分析。其涉及到静态链接、函数调用约定等底层知识，同时也容易出现用户因配置或脚本错误导致 hook 失败的情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/66 static link/lib/func16.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,15 +179,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func15();
 
 int func16()
 {
   return func15() + 1;
 }
-
-"""
-
 ```

@@ -170,15 +170,17 @@ console.log(num.toPrecision(5)); // 输出: "0.12346"
 
 理解 `v8/src/base/numbers/bignum-dtoa.h` 的功能对于深入了解 V8 引擎如何处理数字到字符串的转换至关重要。 它揭示了底层实现的效率和灵活性，并与开发者在 JavaScript 中使用的常见数字格式化方法紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/bignum-dtoa.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/numbers/bignum-dtoa.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2010 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -241,7 +243,4 @@ V8_BASE_EXPORT void BignumDtoa(double v, BignumDtoaMode mode,
 }  // namespace v8
 
 #endif  // V8_BASE_NUMBERS_BIGNUM_DTOA_H_
-
-"""
-
 ```

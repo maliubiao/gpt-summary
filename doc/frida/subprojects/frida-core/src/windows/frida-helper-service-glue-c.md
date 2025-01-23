@@ -148,7 +148,7 @@ This structured approach, starting with a high-level understanding and then divi
 
 总而言之，`frida-helper-service-glue.c` 是 Frida 在 Windows 平台上管理辅助服务进程的核心代码，理解其功能对于调试 Frida 连接问题和深入理解 Frida 的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/windows/frida-helper-service-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-helper-service-glue.h"
 
 #include <windows.h>
@@ -891,7 +893,4 @@ frida_rmtree (GFile * file)
 
   g_file_delete (file, NULL, NULL);
 }
-
-"""
-
 ```

@@ -174,15 +174,17 @@ base::TimeDelta average_render_time = frame_timer_.TakeAverageMicroseconds();
 
 总而言之，`AverageTimer` 是 Blink 渲染引擎中用于性能度量的一个小工具，它通过简单的启动、停止和计算平均值的操作，帮助开发者分析和优化与 Web 技术相关的操作的性能，尤其是在 WebXR 这样的需要高性能的应用场景中。开发者通常会在性能调试的过程中接触到这样的底层工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/average_timer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ base::TimeDelta AverageTimer::TakeAverageMicroseconds() {
   return average;
 }
 }  // namespace blink
-
-"""
-
 ```

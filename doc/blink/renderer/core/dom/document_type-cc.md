@@ -191,15 +191,17 @@ system_id_: "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
 
 希望以上分析能够帮助你理解 `blink/renderer/core/dom/document_type.cc` 文件的功能以及它在 Blink 引擎中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -273,7 +275,4 @@ void DocumentType::RemovedFrom(ContainerNode& insertion_point) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

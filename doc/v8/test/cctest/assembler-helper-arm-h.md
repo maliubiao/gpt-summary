@@ -138,15 +138,17 @@ auto generated_code = AssembleCode<F_ii>(
 
 总而言之，`v8/test/cctest/assembler-helper-arm.h` 是 V8 内部用于简化 ARM 汇编代码生成以进行测试的工具，它与 JavaScript 的执行密切相关，因为它用于测试 V8 如何将 JavaScript 代码编译成高效的机器码并在 ARM 架构上运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/assembler-helper-arm.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/assembler-helper-arm.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ GeneratedCode<Signature> AssembleCode(
 }  // namespace v8
 
 #endif  // V8_CCTEST_ASSEMBLER_HELPER_ARM_H_
-
-"""
-
 ```

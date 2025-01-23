@@ -131,7 +131,7 @@ The presence of this script in the testing framework suggests a typical workflow
 
 **In summary,** while `checker.py` is a simple file reader, its purpose within the Frida testing framework is crucial for validating the results of dynamic instrumentation and reverse engineering efforts. It acts as a verification step, often examining the binary output of Frida's interactions with target processes. Debugging failures involving this script would involve tracing back the steps that led to the creation of the file it's trying to read.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/92 test workdir/subdir/checker.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,14 +139,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 data = open(sys.argv[1], 'rb').read()
-
-"""
-
 ```

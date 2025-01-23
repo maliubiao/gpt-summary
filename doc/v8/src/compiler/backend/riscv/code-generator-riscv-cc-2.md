@@ -158,7 +158,7 @@ Atomics.add(new Int32Array(new SharedArrayBuffer(4)), 0, 1); // 原子操作
 
 这段代码是 V8 引擎中 RISC-V 架构代码生成器的核心部分，负责将高级的中间表示指令转换为底层的 RISC-V 汇编指令。它涵盖了各种算术运算、类型转换、内存访问和原子操作，是 JavaScript 代码在 RISC-V 架构上高效执行的关键组成部分。 这部分代码的正确性和效率直接影响着 JavaScript 程序的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/code-generator-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/code-generator-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -166,8 +166,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 imm, kScratchReg, kScratchReg2);
       }
     } break;
@@ -997,8 +999,4 @@ imm, kScratchReg, kScratchReg2);
   case kAtomic##op##Word32:                                                \
     __ AddWord(i.TempRegister(0), i.InputRegister(0), i.InputRegister(1)); \
     __ amoinst32(true, true, i.OutputRegister(0), i.TempRegister(0),       \
-           
-"""
-
-
 ```

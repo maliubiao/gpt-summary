@@ -163,7 +163,7 @@ echo $? # 输出 1，表示上一个命令执行失败
 
 **因此，用户并不会直接键入命令来执行这个脚本。它是 Frida 测试流程中的一个组件，用于自动化测试 Frida 的功能。**  当测试失败时，开发者可能会查看测试日志，从而找到这个脚本的执行记录，以此作为调试线索，了解 Frida 在尝试获取版本信息时发生了什么问题。例如，如果 Frida 期望的版本信息格式是带有 "Version: " 前缀的，而一个实际程序没有这个前缀，那么相关的测试用例就会失败，而这个脚本就扮演着提供预期格式版本信息的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/26 find program/print-version-with-prefix.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -181,7 +183,4 @@ if len(sys.argv) != 2 or sys.argv[1] != '--version':
     exit(1)
 
 print('Version: 1.0')
-
-"""
-
 ```

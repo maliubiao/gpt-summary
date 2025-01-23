@@ -134,14 +134,16 @@ screen_info.display_color_spaces.SetOutputColorSpace(gfx::ColorSpace::CreateDisp
 
 总而言之，`color_space_gamut.cc` 在 Chromium 中扮演着关键的角色，它负责识别显示器的色彩能力，为浏览器进行准确的颜色渲染提供了基础，从而影响了 Web 内容在用户屏幕上的最终呈现效果。虽然它本身是用 C++ 编写的，但其结果直接关系到 JavaScript、HTML 和 CSS 的功能和表现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/color_space_gamut.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -226,7 +228,4 @@ ColorSpaceGamut GetColorSpaceGamut(const skcms_ICCProfile* color_profile) {
 }  // namespace color_space_utilities
 
 }  // namespace blink
-
-"""
-
 ```

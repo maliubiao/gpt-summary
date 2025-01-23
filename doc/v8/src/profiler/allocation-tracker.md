@@ -111,11 +111,13 @@ processData();
 
 `allocation-tracker.cc` 是 V8 引擎中一个关键的组件，它默默地监控着 JavaScript 代码的内存分配行为，并将这些信息组织起来，为性能分析和内存泄漏检测工具提供了基础数据。它通过捕获调用栈，记录函数信息，并构建追踪树的方式，实现了对 JavaScript 堆内存分配的细粒度追踪。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/allocation-tracker.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -436,7 +438,4 @@ unsigned AllocationTracker::functionInfoIndexForVMState(StateTag state) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

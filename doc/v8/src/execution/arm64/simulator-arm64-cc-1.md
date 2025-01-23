@@ -1,6 +1,6 @@
 Response:
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm64/simulator-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -8,9 +8,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
- ", 0x%016" PRIx64 ", 0x%016" PRIx64 ", 0x%016" PRIx64,
+### 源代码
+```cpp
+", 0x%016" PRIx64 ", 0x%016" PRIx64 ", 0x%016" PRIx64,
           arg0, arg1, arg2, arg3);
       double result = target(arg0, arg1, arg2, arg3);
       TraceSim("Returned: %f\n", result);
@@ -1027,7 +1029,4 @@ void Simulator::VisitAddSubExtended(Instruction* instr) {
   Extend ext = static_cast<Extend>(instr->ExtendMode());
   unsigned left_shift = instr->ImmExtendShift();
   if (instr->Six
-"""
-
-
 ```

@@ -182,7 +182,7 @@ By applying this thought process to each test method, I can generate a comprehen
 
 作为第 7 部分，也是最后一部分，可以推断出 Frida 的构建系统测试被拆分成了多个文件，这个文件专注于测试那些需要跨平台验证的功能和更高级的 Meson 特性。  这意味着之前的 6 个部分可能涵盖了更基础的构建测试或者特定平台相关的测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 DCXXFLAG'}
         srcdir = os.path.join(self.unit_test_dir, '88 multiple envvars')
         self.init(srcdir, override_envvars=envs)
@@ -929,8 +931,4 @@ DCXXFLAG'}
             # The first supported std should be selected
             self.setconf('-Dcpp_std=c++11,gnu++11,vc++11')
             self.assertEqual(self.getconf('cpp_std'), 'c++11')
-
-"""
-
-
 ```

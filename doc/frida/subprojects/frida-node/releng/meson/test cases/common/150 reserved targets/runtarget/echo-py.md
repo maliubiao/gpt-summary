@@ -164,7 +164,7 @@ if __name__ == '__main__':
 
 总而言之，`echo.py` 作为一个极其简单的脚本，其价值在于它作为 Frida 测试框架中的一个基本构建块，用于验证和演示 Frida 的核心功能，例如进程启动、参数传递和数据交换，这些都是逆向工程中至关重要的环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/150 reserved targets/runtarget/echo.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,15 +172,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 if len(sys.argv) > 1:
     print(sys.argv[1])
-
-"""
-
 ```

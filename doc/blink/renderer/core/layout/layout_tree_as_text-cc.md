@@ -202,14 +202,16 @@ layer at (0,0)
 
 总之，`blink/renderer/core/layout/layout_tree_as_text.cc` 是一个强大的内部工具，用于理解 Blink 渲染引擎的布局和渲染过程。它可以帮助开发者深入了解 HTML、CSS 和 JavaScript 如何影响页面的最终呈现，并有效地进行调试和性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_tree_as_text.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2006, 2007 Apple Inc. All rights reserved.
  *
@@ -993,7 +995,4 @@ String MarkerTextForListItem(Element* element) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

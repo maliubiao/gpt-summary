@@ -166,7 +166,7 @@ meson setup build -Dbuildtype=release -Dstrip=true
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/mesonbuild/coredata.py` 是 Frida 构建系统的核心配置文件之一，它定义了用户可以调整的各种构建选项，这些选项直接影响最终生成的可执行文件和库的特性，与逆向分析、二进制底层、操作系统知识等都有着密切的联系。理解这个文件的内容对于构建和调试 Frida 乃至理解其内部构建机制都至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ption(UserBooleanOption, 'Whether to try static linking before shared linking', False)),
     (OptionKey('stdsplit'),        BuiltinOption(UserBooleanOption, 'Split stdout and stderr in test logs', True)),
     (OptionKey('strip'),           BuiltinOption(UserBooleanOption, 'Strip targets on install', False)),
@@ -244,8 +246,4 @@ FORBIDDEN_TARGET_NAMES = frozenset({
     'dist',
     'distcheck',
 })
-
-"""
-
-
 ```

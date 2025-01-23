@@ -151,15 +151,17 @@ Go function called.
 
 `go/src/cmd/internal/archive/testdata/mycgo/go2.go` 文件定义了一个简单的 Go 函数 `go2`，它打印字符串 "go2"。  它很可能是 Go 归档工具中用于测试 CGo 功能的一个辅助文件。 它本身不处理命令行参数，也不是一个独立的程序。使用者需要理解 CGo 的上下文以及 Go 包的概念才能正确理解其作用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/archive/testdata/mycgo/go2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -171,9 +173,4 @@ import "fmt"
 func go2() {
 	fmt.Println("go2")
 }
-
-"""
-
-
-
 ```

@@ -175,15 +175,17 @@ func main() {
 
 这段 `escape_calls.go` 代码是一个很好的学习和测试 Go 语言逃逸分析的例子，通过阅读和理解其中的注释和代码，可以更深入地了解 Go 编译器的行为以及如何编写更高效的 Go 代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_calls.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m -l
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -245,9 +247,4 @@ func strmin(a, b, c string) string { // ERROR "leaking param: a to result ~r0 le
 func strmax(a, b, c string) string { // ERROR "leaking param: a to result ~r0 level=0" "leaking param: b to result ~r0 level=0" "leaking param: c to result ~r0 level=0"
 	return max(a, b, c)
 }
-
-"""
-
-
-
 ```

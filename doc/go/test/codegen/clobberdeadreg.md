@@ -205,15 +205,17 @@ go test -gcflags=-clobberdeadreg go/test/codegen/clobberdeadreg.go
 
 因此，使用者需要仔细理解 `-clobberdeadreg` 的具体行为，参考类似的测试用例和官方文档，避免做出错误的假设。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/clobberdeadreg.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck -gcflags=-clobberdeadreg
 
 //go:build amd64
@@ -247,9 +249,4 @@ func StackArgsCall([10]int) {}
 //go:noinline
 //go:registerparams
 func RegArgsCall(int, int, int, S) {}
-
-"""
-
-
-
 ```

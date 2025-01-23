@@ -137,15 +137,17 @@ error = "biddingLogicURL must have the same origin as the InterestGroup owner an
 
 **作为调试线索，当开发者遇到 `navigator.joinAdInterestGroup()` 调用失败时，应该检查浏览器的开发者工具的 Console 面板，查看是否有与兴趣组验证相关的错误消息。**  这些错误消息通常会指出哪个字段有问题以及具体的问题是什么，从而帮助开发者定位并修复错误。例如，如果看到 "owner origin must be HTTPS." 的错误，开发者就知道需要将 `owner` 属性的值更改为 HTTPS 来源的 URL。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ad_auction/validate_blink_interest_group.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -674,7 +676,4 @@ bool ValidateBlinkInterestGroup(const mojom::blink::InterestGroup& group,
 }
 
 }  // namespace blink
-
-"""
-
 ```

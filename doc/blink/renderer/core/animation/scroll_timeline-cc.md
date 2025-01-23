@@ -191,14 +191,16 @@ const animation = target.animate(
 
 `scroll_timeline.cc` 文件是 Blink 引擎中实现基于滚动驱动动画的核心组件。它负责创建、配置和管理滚动时间轴，并将滚动位置映射到动画的播放进度。理解这个文件的功能对于理解浏览器如何实现 Web Animations API 的滚动时间轴特性至关重要。它与 JavaScript、HTML 和 CSS 紧密相关，使得开发者能够创建丰富的基于滚动的交互体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/scroll_timeline.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -488,7 +490,4 @@ std::optional<double> ScrollTimeline::GetMaximumScrollPosition() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

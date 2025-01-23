@@ -204,7 +204,7 @@ function baz(a, b) {
 
 总而言之，`v8/src/builtins/x64/builtins-x64.cc` 文件定义了 x64 架构下 V8 虚拟机中处理 JavaScript 函数执行入口和执行层级切换的关键内建函数。它负责决定一个函数是在解释器中执行还是在 Baseline 编译后的代码中执行，并且处理了从解释器到 Baseline 代码的动态切换（OSR）以及函数重启等场景。这些内建函数是 V8 执行 JavaScript 代码、进行性能优化的基础构建块。它们确保了代码能够根据其执行频率和特性，在不同的优化层级之间平滑过渡，从而提高整体的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/x64/builtins-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/x64/builtins-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -212,8 +212,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // interpreter frame into a baseline frame and continues execution in baseline
 // code. Otherwise execution continues with bytecode.
 void Generate_BaselineOrInterpreterEntry(MacroAssembler* masm,
@@ -430,8 +432,4 @@ void Builtins::Generate_RestartFrameTrampoline(MacroAssembler* masm) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_X64
-
-"""
-
-
 ```

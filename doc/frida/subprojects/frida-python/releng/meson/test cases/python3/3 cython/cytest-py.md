@@ -170,7 +170,7 @@ void get_memory_value(uintptr_t address, size_t size, void* out_value) {
 
 总而言之，`cytest.py` 是 Frida 项目中一个非常小的但很重要的单元测试，它专注于验证 Cython 扩展模块 `Storer` 的基本功能，确保了 Frida Python 绑定的可靠性，这对于使用 Frida 进行动态 instrumentation 和逆向分析的工程师来说至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/python3/3 cython/cytest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from storer import Storer
@@ -203,7 +205,4 @@ try:
     sys.exit(1)
 except TypeError:
     pass
-
-"""
-
 ```

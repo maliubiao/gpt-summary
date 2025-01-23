@@ -67,15 +67,17 @@ The user wants a summary of the provided C++ code for a test file in the Chromiu
 
 总而言之，这个测试文件通过大量的单元测试，细致地验证了 Blink 渲染引擎在各种复杂的 CSS 布局场景下，计算和映射元素可视矩形的正确性，这对于确保网页的正确渲染至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/visual_rect_mapping_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 position: absolute; top: 0px; left: 0px;
         clip: rect(0px, 200px, 200px, 0px)'>
       <div id='target' style='width: 400px; height: 400px'></div>
@@ -696,8 +698,4 @@ TEST_P(VisualRectMappingTest, IgnoreFilters) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

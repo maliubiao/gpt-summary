@@ -92,14 +92,16 @@ By following these steps and iteratively refining the understanding, we arrive a
 
 `layout_iframe.cc` 文件中的 `LayoutIFrame` 类是 Blink 渲染引擎中处理 `<iframe>` 元素布局的核心组件。它负责计算 `<iframe>` 的尺寸和位置，并响应 HTML、CSS 和 JavaScript 的变化。理解它的功能有助于理解浏览器如何渲染和管理嵌入的外部内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_iframe.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Apple Inc. All rights reserved.
  *
@@ -135,7 +137,4 @@ LayoutIFrame::LayoutIFrame(HTMLFrameOwnerElement* element)
     : LayoutEmbeddedContent(element) {}
 
 }  // namespace blink
-
-"""
-
 ```

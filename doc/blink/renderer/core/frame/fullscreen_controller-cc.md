@@ -98,14 +98,16 @@ The user wants to understand the functionality of the `fullscreen_controller.cc`
 
 总而言之，`fullscreen_controller.cc` 是 Blink 引擎中实现和管理网页全屏功能的核心组件，它负责接收请求、协调状态变化并与浏览器进程进行通信，从而实现用户在网页上进入和退出全屏模式的功能。理解这个文件的工作原理有助于开发者更好地理解和使用 JavaScript 全屏 API。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/fullscreen_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -465,7 +467,4 @@ void FullscreenController::UpdatePageScaleConstraints(bool reset_constraints) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

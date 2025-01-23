@@ -149,11 +149,13 @@ console.log(signedAddOverflow(2147483647, 1)); // 输出 true (接近 32 位有�
 
 `bits-unittest.cc` 文件是 V8 引擎中一个重要的测试文件，用于确保其底层的位操作工具函数的正确性。 这些函数虽然在 JavaScript 中不可直接使用，但对于 V8 引擎的性能和内部实现至关重要，影响着 JavaScript 代码的执行效率、内存管理和对 WebAssembly 等低级语言的支持。 JavaScript 开发者可以通过位运算符进行一些基本的位操作，但 V8 引擎内部使用了更高级和优化的位操作技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/bits-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -529,7 +531,4 @@ TEST(Bits, UnsignedMod32) {
 }  // namespace bits
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

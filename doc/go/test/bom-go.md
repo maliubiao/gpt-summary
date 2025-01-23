@@ -169,15 +169,17 @@ File (after BOM removal) starts with a copyright notice.
 
 `go/test/bom.go` 代码片段是一个用于测试 Go 语言对带有 BOM 的源文件处理能力的测试用例。  在实际开发中，开发者需要注意处理可能存在的 BOM 字符，以避免在字符串处理和文件解析时出现意外错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/bom.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // runoutput
 
 // Copyright 2011 The Go Authors. All rights reserved.
@@ -204,9 +206,4 @@ package main
 func main() {
 }
 `
-
-"""
-
-
-
 ```

@@ -148,7 +148,7 @@ By following these steps, analyzing the code snippet, and connecting it to the b
 
 因此，用户（Frida 开发者）的操作是为了更新或构建 Frida 的文档，而 `generatorbase.py` 文件在这个过程中扮演着定义文档生成流程和提供通用工具的关键角色。当调试文档生成过程中的问题时，理解 `GeneratorBase` 的功能和其子类的实现逻辑是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/docs/refman/generatorbase.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -224,7 +226,4 @@ class GeneratorBase(metaclass=ABCMeta):
 
     def extract_returned_by_module(self, module: Object) -> T.List[Object]:
         return [x for x in self.objects if x.obj_type == ObjectType.RETURNED and x.defined_by_module is module]
-
-"""
-
 ```

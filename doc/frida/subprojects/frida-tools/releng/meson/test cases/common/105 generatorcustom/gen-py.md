@@ -153,7 +153,7 @@ By following these steps, the comprehensive analysis of the provided Python scri
 
 `gen.py` 是一个简单的代码生成脚本，用于生成包含字符串常量的 C 代码片段。它在 Frida 工具的构建过程中扮演着辅助角色，帮助自动化生成一些必要的配置信息。虽然脚本本身逻辑简单，但它生成的代码片段会在逆向工程、二进制层面以及 Frida 工具的内部运作中被使用。理解这个脚本的功能可以帮助开发者更好地理解 Frida 工具的构建流程和内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/105 generatorcustom/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -161,8 +161,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -176,7 +178,4 @@ with open(ifile) as f:
 templ = 'const char %s[] = "%s";\n'
 with open(ofile, 'w') as f:
     f.write(templ % (resname, resname))
-
-"""
-
 ```

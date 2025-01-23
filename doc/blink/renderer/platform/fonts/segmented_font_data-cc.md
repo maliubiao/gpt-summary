@@ -214,14 +214,16 @@ By following this structured approach, I can systematically analyze the code and
 
 2. **缺少必要的字体文件:**
    - **错误:**  开发者在 `@font-face` 中定义了 `unicode-range`，但是
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/segmented_font_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008, 2009 Apple Inc. All rights reserved.
  *
@@ -315,7 +317,4 @@ bool SegmentedFontData::ShouldSkipDrawing() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

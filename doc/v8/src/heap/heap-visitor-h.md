@@ -190,15 +190,17 @@ class SizeCalculatorVisitor : public HeapVisitor<SizeCalculatorVisitor> {
 
 总而言之，`v8/src/heap/heap-visitor.h` 定义了 V8 引擎中用于高效、结构化地访问和操作堆内存对象的关键框架，它是 V8 诸多核心功能（如垃圾回收、快照、调试等）的基础。虽然 JavaScript 开发者通常不直接使用这个头文件中的类，但理解其背后的概念有助于更好地理解 V8 的工作原理和优化 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/heap-visitor.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/heap-visitor.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -599,7 +601,4 @@ Tagged<Object> VisitWeakList(Heap* heap, Tagged<Object> list,
 }  // namespace v8
 
 #endif  // V8_HEAP_HEAP_VISITOR_H_
-
-"""
-
 ```

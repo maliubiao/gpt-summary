@@ -110,16 +110,18 @@ Finally, for the overall summarization requested in this part 2, I will focus on
 
 总而言之，这部分 `scroll_anchor_test.cc` 文件中的测试用例主要负责验证 Blink 引擎的滚动锚定功能在各种场景下的正确性和鲁棒性。这些场景包括：正常的锚点恢复、涉及匿名块的删除操作、与 CSS 动画的协同、动态多列布局、与 "在页面中查找" 功能的交互，以及涉及 SVG 元素的特定情况。这些测试旨在防止由于页面内容的动态变化而导致的滚动位置意外跳动，并确保在各种复杂情况下引擎不会崩溃。它们覆盖了与 JavaScript DOM 操作、HTML 结构和 CSS 样式密切相关的滚动锚定功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/scroll_anchor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  GetScrollAnchor(LayoutViewport()).RestoreAnchor(serialized_anchor));
+### 源代码
+```cpp
+GetScrollAnchor(LayoutViewport()).RestoreAnchor(serialized_anchor));
   EXPECT_EQ(LayoutViewport()->ScrollOffsetInt().y(), 100);
 }
 
@@ -491,8 +493,4 @@ TEST_F(ScrollAnchorPageTest, SvgRelativeBoundsCrashAfterClearLayoutResults) {
   // Pass if no crashes.
 }
 }
-
-"""
-
-
 ```

@@ -150,15 +150,17 @@ This systematic approach allows me to break down the code, understand its purpos
 
 总而言之，`node_rare_data.cc` 文件是为了优化内存使用，将不常用的节点数据与核心的 `Node` 对象分离。它包含了处理各种高级 DOM 特性和优化技术所需的信息，例如 `MutationObserver`、扁平树迭代、动态 `NodeList`、`ScrollTimeline` 和实验性的 DOM Parts API。理解这个文件的作用对于深入理解 Blink 引擎如何管理和操作 DOM 树至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/node_rare_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -322,7 +324,4 @@ static_assert(
     "kNumberOfDynamicRestyleFlags must match.");
 
 }  // namespace blink
-
-"""
-
 ```

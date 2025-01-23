@@ -117,7 +117,7 @@ Imagine a developer is trying to build Frida's Node.js bindings and encounters a
 
 In summary, this `__init__.py` file is a foundational component of Frida's build system, responsible for managing and detecting linkers, which are essential tools for creating the final Frida binaries used in reverse engineering tasks. Understanding its functionality is crucial for troubleshooting build issues related to linking.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/linkers/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 
@@ -147,7 +149,4 @@ __all__ = [
     'guess_win_linker',
     'guess_nix_linker',
 ]
-
-"""
-
 ```

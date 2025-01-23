@@ -185,14 +185,16 @@ GapDataList<StyleColor> list4(std::move(vec2));
 
 总而言之，`gap_data_list_test.cc` 是 Blink 引擎中用于确保 `GapDataList` 类正确工作的关键部分，该类很可能在内部用于处理 CSS 的 `gap` 相关属性，从而影响网页的布局和渲染。 理解这类测试文件有助于我们更好地理解浏览器引擎的内部工作机制以及如何正确使用相关的 Web 技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/gap_data_list_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ TEST(GapDataListTest, GapDataListEquivalence) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

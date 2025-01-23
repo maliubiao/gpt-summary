@@ -126,7 +126,7 @@ fetch('http://example.test/image.png').then(response => {
 
 总而言之，这部分代码提供了强大的模拟 DNS 解析功能，用于在 Chromium 的测试环境中模拟各种网络场景，包括成功的解析、失败、超时、缓存行为以及 MDNS 交互。它允许开发者在不依赖真实 DNS 服务器的情况下，测试网络栈的各个组件和依赖 DNS 解析的上层逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/mock_host_resolver.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ess_result);
   }
 }
@@ -847,8 +849,4 @@ void ScopedDefaultHostResolverProc::Init(HostResolverProc* proc) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

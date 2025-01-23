@@ -189,14 +189,16 @@ This iterative process of reading, inferring, connecting, and refining helps to 
 
 总而言之，`transition_keyframe.cc` 文件是 Blink 渲染引擎中实现 CSS Transition 动画的核心部分，它负责存储和管理过渡的关键帧数据，并提供进行插值计算的能力。它与 CSS 属性、HTML 元素以及 JavaScript 的交互共同构成了 Web 页面的动态效果。理解其功能有助于我们更好地理解浏览器如何处理 CSS 过渡，并避免在开发过程中常犯的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/transition_keyframe.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -301,7 +303,4 @@ void TransitionKeyframe::PropertySpecificKeyframe::Trace(
 }
 
 }  // namespace blink
-
-"""
-
 ```

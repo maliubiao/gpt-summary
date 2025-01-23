@@ -237,7 +237,7 @@ go tool trace trace.out
 
 这段代码是 Go 运行时跟踪分析的核心部分，它将原始的跟踪事件转化为更易于理解和分析的摘要信息，帮助开发者理解程序的执行行为和性能瓶颈。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/summary.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -245,8 +245,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -915,9 +917,4 @@ func IsSystemGoroutine(entryFn string) bool {
 	// Also, locked g in extra M (with empty entryFn) is system goroutine.
 	return entryFn == "" || entryFn != "runtime.main" && strings.HasPrefix(entryFn, "runtime.")
 }
-
-"""
-
-
-
 ```

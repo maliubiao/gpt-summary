@@ -200,15 +200,17 @@ While JavaScript developers don't directly interact with `BytecodeNode` objects,
 
 In summary, `v8/src/interpreter/bytecode-node.cc` defines the fundamental structure for representing individual instructions in V8's bytecode. It's a key component of the interpreter and plays a vital role in the efficient execution of JavaScript code. While JavaScript developers don't directly manipulate these objects, understanding their purpose helps in comprehending how V8 works under the hood.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-node.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-node.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ std::ostream& operator<<(std::ostream& os, const BytecodeNode& node) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

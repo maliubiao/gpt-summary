@@ -138,7 +138,7 @@ This detailed breakdown illustrates the kind of thinking involved in analyzing c
 
 作为第 2 部分，这段代码的核心功能是**执行已定义的子项目任务并汇总执行结果**。  它假定子项目的定义和待执行的任务已经在之前的步骤（很可能是第 1 部分）中设置好。 这部分专注于高效地并行运行这些任务，并提供基本的错误报告机制，以便用户了解哪些子项目执行失败，从而为后续的调试提供线索。  它强调了并行执行的效率和错误聚合报告的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/msubprojects.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 er(logger, r, wrap, dirname, options)
         task = loop.run_in_executor(executor, runner.run)
         tasks.append(task)
@@ -164,8 +166,4 @@ er(logger, r, wrap, dirname, options)
         m += ', '.join(failures)
         mlog.warning(m)
     return len(failures)
-
-"""
-
-
 ```

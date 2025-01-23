@@ -158,15 +158,17 @@ objects = null;
 
 `v8/src/heap/cppgc/caged-heap.cc` 实现了 V8 中 cppgc 的笼式堆功能，旨在提高内存安全性和支持指针压缩。它通过预留和管理一块隔离的内存区域来工作，影响着 JavaScript 对象的分配和垃圾回收。虽然它不能完全消除所有类型的编程错误，但它可以帮助限制某些内存错误的影响范围。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/caged-heap.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/caged-heap.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +326,4 @@ void CagedHeap::CommitAgeTable(PageAllocator& platform_allocator) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

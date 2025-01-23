@@ -173,15 +173,17 @@ console.log(andResult); // 输出: 255n
 
 总而言之，`v8/src/builtins/builtins-bigint-gen.h` 文件是 V8 引擎中处理 `BigInt` 类型核心功能的基础设施，它通过 `CodeStubAssembler` 提供了操作 `BigInt` 对象的低级接口，并调用了底层的 C++ 实现来完成各种运算。理解这个文件有助于深入了解 JavaScript `BigInt` 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-bigint-gen.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-bigint-gen.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -465,7 +467,4 @@ class BigIntBuiltinsAssembler : public CodeStubAssembler {
 }  // namespace internal
 }  // namespace v8
 #endif  // V8_BUILTINS_BUILTINS_BIGINT_GEN_H_
-
-"""
-
 ```

@@ -131,14 +131,16 @@ This methodical approach, focusing on understanding the purpose of each componen
 
 总而言之，`instrumented_simulcast_adapter.cc` 的核心作用是为 WebRTC 的 Simulcast 功能提供可观测性和监控能力，这对于调试、性能分析和优化视频通信至关重要。它通过包装底层的编码器工厂和编码器实例来实现这一目标，并将状态信息传递给观察者。虽然它本身是 C++ 代码，但它的功能直接影响着 Web 开发者使用 JavaScript WebRTC API 构建的视频应用的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/instrumented_simulcast_adapter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -264,7 +266,4 @@ InstrumentedSimulcastAdapter::InstrumentedSimulcastAdapter(
       primary_factory_adapter_(std::move(primary_factory_adapter)),
       secondary_factory_adapter_(std::move(secondary_factory_adapter)) {}
 }  // namespace blink
-
-"""
-
 ```

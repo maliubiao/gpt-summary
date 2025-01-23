@@ -181,15 +181,17 @@ absl::Span<const Header> input_span(my_headers);
 
 通过这样的调试过程，可以逐步定位到与 HTTP 头处理相关的代码，例如 `oghttp2_util.cc`，并分析问题的原因。 这个文件作为一个小的工具函数集合，在整个网络栈的 HTTP 头处理流程中扮演着一个关键的转换角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/oghttp2_util.h"
 
 namespace http2 {
@@ -207,7 +209,4 @@ quiche::HttpHeaderBlock ToHeaderBlock(absl::Span<const Header> headers) {
 
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

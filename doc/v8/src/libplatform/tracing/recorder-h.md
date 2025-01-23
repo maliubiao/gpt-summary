@@ -156,15 +156,17 @@ setTimeout(() => {
 
 总而言之，`v8/src/libplatform/tracing/recorder.h` 定义了一个重要的基类，用于将 V8 引擎内部的事件导出到操作系统级别的跟踪机制中，为系统级的性能分析提供了基础。正确理解其启用条件和平台依赖性对于有效使用 V8 的系统级跟踪功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/libplatform/tracing/recorder.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/libplatform/tracing/recorder.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ class V8_PLATFORM_EXPORT Recorder {
 #endif
 
 #endif  // V8_LIBPLATFORM_TRACING_RECORDER_H_
-
-"""
-
 ```

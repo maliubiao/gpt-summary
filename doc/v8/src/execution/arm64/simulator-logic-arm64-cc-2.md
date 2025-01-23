@@ -225,7 +225,7 @@ LogicVRegister Simulator::AbsDiff(VectorFormat vform, LogicVRegister dst,
 
 这些功能是模拟器为了准确地模拟 ARM64 架构上的向量逻辑运算指令而提供的基础构建块。它们共同构成了 V8 引擎在模拟执行 ARM64 代码时的核心逻辑运算能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-logic-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm64/simulator-logic-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -233,8 +233,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 );
 }
 
@@ -1140,7 +1142,4 @@ LogicVRegister Simulator::sqdmull(VectorFormat vform, LogicVRegister dst,
 LogicVRegister Simulator::sqdmull2(VectorFormat vform, LogicVRegister dst,
                                    const LogicVRegister& src1,
                                    const LogicVRe
-"""
-
-
 ```

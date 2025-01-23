@@ -112,7 +112,7 @@ This systematic approach allows us to extract meaningful information even from a
 
 总而言之，这个简单的C代码文件在Frida的上下文中扮演着一个测试桩的角色，用于验证Frida加载外部模块和调用函数的能力，同时也为理解Frida如何与底层系统交互提供了一个简单的示例。它的简单性使得更容易隔离和调试与模块加载和函数调用相关的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/python3/4 custom target depends extmodule/ext/lib/meson-tachyonlib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _MSC_VER
 __declspec(dllexport)
 #endif
@@ -130,7 +132,4 @@ tachyon_phaser_command (void)
 {
     return "shoot";
 }
-
-"""
-
 ```

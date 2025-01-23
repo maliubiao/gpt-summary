@@ -130,7 +130,7 @@ This detailed breakdown systematically analyzes the code, connects it to relevan
 
 总而言之，`gumcyclesampler-freebsd.c` 是 Frida 在 FreeBSD 平台上实现 CPU 周期采样的核心代码。它通过系统调用获取底层的 CPU 周期计数，为逆向工程师和安全研究人员提供了一种强大的性能分析手段，帮助他们理解程序执行的细节和性能特征。理解这段代码需要一定的 C 语言基础，以及对操作系统底层原理和 Frida 框架的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/libs/gum/prof/gumcyclesampler-freebsd.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -207,7 +209,4 @@ gum_cycle_sampler_sample (GumSampler * sampler)
 
   return (t.tv_sec * G_GUINT64_CONSTANT (1000000000)) + t.tv_nsec;
 }
-
-"""
-
 ```

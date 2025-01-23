@@ -151,14 +151,16 @@ By following these steps, you can systematically analyze the code and produce a 
 
 总而言之，`ResourceLoadScheduler` 是 Blink 引擎中一个至关重要的组件，它通过智能地管理资源加载请求，帮助提升网页性能和用户体验。理解它的工作原理和相关配置，可以帮助开发者避免常见的性能问题，并更好地优化网页的加载过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_load_scheduler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -624,7 +626,4 @@ void ResourceLoadScheduler::SetClockForTesting(const base::Clock* clock) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

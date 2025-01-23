@@ -133,7 +133,7 @@ Frida 是一个强大的动态插桩工具，广泛应用于逆向工程、安�
 
 总而言之，`frida/subprojects/frida-node/releng/meson/test cases/failing/87 pch source different folder/src/pch.c` 文件本身的功能是定义一个预编译头文件，而这个特定的测试用例旨在验证当预编译头文件的源文件位于非预期目录时，构建系统是否能够正确处理，从而暴露潜在的构建配置错误或文件路径问题。这与确保 Frida 工具链能够正确构建并运行密切相关，间接影响着逆向分析的效率和成功率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/87 pch source different folder/src/pch.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,9 +141,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

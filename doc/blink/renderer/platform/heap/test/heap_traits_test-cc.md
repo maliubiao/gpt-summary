@@ -104,14 +104,16 @@ This methodical approach, starting with the big picture and drilling down into t
 
 虽然这个测试文件本身不直接涉及到 JavaScript, HTML, 或 CSS 的代码，但它所测试的底层机制是构建这些高级特性的基础。Blink 引擎需要可靠的垃圾回收机制来管理 JavaScript 对象、DOM 节点、CSS 样式规则等复杂的数据结构。 这些类型特性确保了在 C++ 层面，这些对象的生命周期能够被正确地管理，避免内存泄漏和悬挂指针等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/test/heap_traits_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -237,7 +239,4 @@ static_assert(
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

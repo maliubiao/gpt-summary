@@ -327,7 +327,7 @@ if (Process.arch === 'arm64') {
 
 这个 Frida 示例可以帮助你动态地观察 `malloc_debug` 在内存分配过程中是如何工作的，以及如何利用其添加的元数据进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/malloc_debug.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -338,8 +338,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -406,7 +408,4 @@ constexpr size_t FREE_TRACK_MEM_BUFFER_SIZE = 4096;
 extern const MallocDispatch* g_dispatch;
 
 void BacktraceAndLog();
-
-"""
-
 ```

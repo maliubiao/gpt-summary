@@ -130,7 +130,7 @@ myFunction("world"); // 输出 "包含 hello" (错误)
 
 `v8/src/compiler/turbofan-typer.cc` 是 V8 编译器 Turbofan 的一个关键组件，其核心职责是进行 **类型推断**，特别是针对 JavaScript 的内置函数调用和特定操作。它通过一个庞大的 `switch` 语句，将内置函数的标识符映射到精确的 V8 内部类型表示。这为 Turbofan 编译器的后续优化和代码生成提供了必要的类型信息，使得 V8 能够更高效地执行 JavaScript 代码。它处理了 JavaScript 中各种基本数据类型以及 Promise、Async 函数和迭代器等高级特性。虽然不直接处理用户代码错误，但其产生的类型信息是 V8 进行类型分析和潜在错误检测的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turbofan-typer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turbofan-typer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -138,8 +138,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 iltin::kMathCbrt:
     case Builtin::kMathCos:
     case Builtin::kMathExpm1:
@@ -1012,8 +1014,4 @@ Type Typer::Visitor::TypeJSGetIterator(Node* node) { return Type::Any(); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

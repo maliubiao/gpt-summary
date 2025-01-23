@@ -166,7 +166,7 @@ int funcc(void) { return 0; }
 
 总而言之，尽管 `subc.c` 中的 `funcc` 函数本身非常简单，但在 Frida 的上下文中，它作为一个可以被 hook 和分析的目标，可以用于测试和演示 Frida 的功能，并帮助开发者理解动态 instrumentation 的基本原理。它也可能作为更复杂测试用例中的一个组成部分，用于验证文件访问等相关功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/48 file grabber/subdir/subc.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,10 +174,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int funcc(void) { return 0; }
-
-"""
-
 ```

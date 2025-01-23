@@ -148,15 +148,17 @@ By following this systematic approach, I can comprehensively analyze the C++ tes
 
 `quic_default_client_test.cc` 是 Chromium QUIC 客户端实现的关键测试文件，它专注于验证 `QuicDefaultClient` 的资源管理能力，特别是对网络 socket 的管理。 这对于确保浏览器的稳定性和避免资源泄漏至关重要。虽然它不直接包含 JavaScript 代码，但它所测试的组件是 JavaScript 发起的 QUIC 网络请求的基础。 测试的失败可以作为调试的线索，帮助开发者定位和修复 `QuicDefaultClient` 中的资源管理问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/tools/quic_default_client_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -304,7 +306,4 @@ TEST_F(QuicDefaultClientTest, CreateAndCleanUpUDPSockets) {
 }  // namespace quic
 
 #endif  // defined(__linux__)
-
-"""
-
 ```

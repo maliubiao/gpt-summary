@@ -153,14 +153,16 @@ By following these steps and incorporating self-correction, the detailed and acc
 
 `blink/renderer/core/html/media/remote_playback_controller.cc` 文件定义了 `RemotePlaybackController` 类，它是 Blink 引擎中负责管理 HTML5 媒体元素远程播放的核心组件。它通过 Supplement 机制扩展了 `HTMLMediaElement` 的功能，并为 JavaScript 提供了访问和控制远程播放的接口 (`HTMLMediaElement.remote`)。虽然它本身是用 C++ 实现的，但它与 JavaScript、HTML 密切相关，并间接影响 CSS 的渲染。理解其功能和使用方式对于开发涉及媒体远程播放的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/remote_playback_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ void RemotePlaybackController::ProvideTo(HTMLMediaElement& element,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -266,7 +266,7 @@ sys.stdin.read()
 
 总结来说，`mbstate_t` 是 Bionic libc 中一个关键的类型，用于处理多字节字符转换的状态。虽然其内部结构是隐藏的，但它在 Android 系统的国际化和本地化支持中扮演着重要的角色，被各种 libc 函数使用，并且可以通过 Frida 等工具进行调试观察。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/mbstate_t.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -277,8 +277,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -326,7 +328,4 @@ typedef struct {
   unsigned char __reserved[4];
 #endif
 } mbstate_t;
-
-"""
-
 ```

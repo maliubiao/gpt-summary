@@ -232,15 +232,17 @@ func main() {
 
 总而言之，`go/src/cmd/vendor/golang.org/x/arch/loong64/loong64asm/plan9x.go` 提供了将 LoongArch64 机器指令转换为 Plan 9 汇编语法的功能，这对于理解和调试底层代码至关重要。正确使用 `symname` 函数并了解 Plan 9 汇编语法是避免常见错误的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/loong64/loong64asm/plan9x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -782,9 +784,4 @@ var plan9OpMap = map[Op]string{
 	FSTX_S:       "MOVF",
 	FSTX_D:       "MOVD",
 }
-
-"""
-
-
-
 ```

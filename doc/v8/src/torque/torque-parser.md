@@ -124,12 +124,14 @@ macro Builtin::ArrayPush<T>(implicit context: NativeContext, receiver: JSAny, ..
 
 `torque-parser.cc` 是 V8 引擎中至关重要的一个组件，它负责理解 V8 使用的内部 DSL (Torque)，并将 Torque 代码转化为 V8 可以理解和执行的结构，从而支持 JavaScript 内置功能的实现。它就像一个翻译器，将 Torque 语言翻译成 V8 引擎的“母语”。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/torque-parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1787,7 +1789,4 @@ std::optional<ParseResult> MakeTypeswitchStatement(
     ParseResultIterator* child_results) {
   auto expression = child_results->NextAs<Expression*>();
   auto cases = child_results->NextAs<std::vector<
-"""
-
-
 ```

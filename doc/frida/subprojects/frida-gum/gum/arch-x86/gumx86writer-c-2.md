@@ -182,7 +182,7 @@ Now, structure the response based on the initial requirements.
 
 总而言之，`gumx86writer.c` 的这部分代码是 Frida 实现动态代码生成和修改的关键，它提供了丰富的接口来构建各种 x86 指令序列，使得 Frida 能够灵活地对目标进程进行插桩和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/arch-x86/gumx86writer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 _reg (self, right_reg, &right);
 
   if (self->target_cpu == GUM_CPU_IA32)
@@ -973,8 +975,4 @@ gum_get_jcc_opcode (x86_insn instruction_id)
       return 0xe3;
   }
 }
-
-"""
-
-
 ```

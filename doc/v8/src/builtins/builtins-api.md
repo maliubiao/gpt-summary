@@ -167,11 +167,13 @@ console.log(result); // 输出 "Object called as function"
 
 `v8/src/builtins/builtins-api.cc` 是 V8 引擎中至关重要的一个文件，它实现了连接 JavaScript 和 C++ API 功能的桥梁。 它处理了 API 函数和对象的调用、构造、兼容性检查和访问控制等关键任务，使得开发者可以使用 C++ 扩展 JavaScript 的能力。 几乎所有涉及到 V8 API 的 JavaScript 代码都会在底层触发这个文件中的逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -445,7 +447,4 @@ BUILTIN(HandleApiCallAsConstructorDelegate) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

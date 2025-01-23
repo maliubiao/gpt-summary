@@ -170,7 +170,7 @@ By following this structured approach, combining understanding the file's contex
 
 总而言之，这个 `__init__.py` 文件是 Frida 构建系统中 Meson 解释器模块的入口，负责组织和导出关键的类和函数，这些类和函数用于解析构建描述文件并管理构建过程中的各种对象和信息。理解它的作用有助于理解 Frida 的构建流程，并在遇到构建问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/interpreter/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-license-identifier: Apache-2.0
 # Copyright 2012-2021 The Meson development team
 # Copyright © 2021-2023 Intel Corporation
@@ -227,7 +229,4 @@ from .primitives import (
     IntegerHolder,
     StringHolder,
 )
-
-"""
-
 ```

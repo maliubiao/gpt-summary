@@ -147,7 +147,7 @@ By following these steps, we can systematically analyze the context and purpose 
 
 总而言之，即使没有看到 `test.py` 的具体代码，根据其文件路径和 Frida 的上下文，我们可以推断出它是一个用于验证 Frida-QML 组件安装路径的测试文件，对于确保 Frida 作为逆向工具的可用性至关重要，并涉及到操作系统、二进制底层和构建系统等多个方面的知识。它也是一个重要的调试工具，可以帮助开发者发现安装过程中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/python/7 install path/test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,9 +155,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

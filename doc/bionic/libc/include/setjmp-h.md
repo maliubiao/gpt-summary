@@ -333,7 +333,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "siglongjmp"), {
 
 `setjmp.handroid` 定义了 C 语言中实现非本地跳转的关键机制。它在 Android 系统中用于错误处理、某些库的内部实现，并在理解程序控制流方面发挥着重要作用。虽然直接使用 `setjmp`/`longjmp` 容易出错，但理解其原理对于分析底层代码和调试问题非常有帮助。 通过 Frida 可以方便地观察和分析这些函数的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/setjmp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -344,8 +344,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: setjmp.h,v 1.5 2005/12/13 00:35:22 millert Exp $	*/
 /*	$NetBSD: setjmp.h,v 1.11 1994/12/20 10:35:44 cgd Exp $	*/
 
@@ -478,7 +480,4 @@ int sigsetjmp(sigjmp_buf __env, int __save_signal_mask) __returns_twice;
 __noreturn void siglongjmp(sigjmp_buf __env, int __value);
 
 __END_DECLS
-
-"""
-
 ```

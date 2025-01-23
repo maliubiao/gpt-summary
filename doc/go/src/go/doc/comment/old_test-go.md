@@ -185,7 +185,7 @@ By following these steps, combining code analysis with logical deduction and att
 
 总而言之，`old_test.go` 这个文件通过一系列的测试用例，验证了旧版本 `go/doc` 工具在处理代码注释时，识别旧式标题和自动提取 URL 的逻辑是否正确。这对于理解和维护 `go/doc` 工具的历史行为非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/doc/comment/old_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -193,8 +193,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -275,9 +277,4 @@ func TestAutoURL(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

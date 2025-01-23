@@ -84,9 +84,12 @@ Response: Let's break down the thought process for analyzing this C++ code and s
 
 **总结来说，`factory-unittest.cc` 旨在全面测试 `Factory::CodeBuilder` 类的代码对象构建功能，包括正常情况下的构建和在内存资源受限情况下的行为，确保其能够正确地创建代码对象并优雅地处理内存分配失败的情况。**
 
-Prompt: ```这是目录为v8/test/unittests/codegen/factory-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/codegen/factory-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,6 +195,4 @@ TEST_F(FactoryCodeBuilderOOMTest, Factory_CodeBuilder_TryBuildOOM) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

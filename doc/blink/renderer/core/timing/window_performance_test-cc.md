@@ -64,7 +64,7 @@ The user wants a summary of the functionality of the provided C++ code file. I n
 
 总而言之，`blink/renderer/core/timing/window_performance_test.cc` 的主要功能是**对 Blink 引擎中负责管理窗口性能指标的 `WindowPerformance` 类进行全面的单元测试**。它通过模拟各种场景，包括 JavaScript API 调用、浏览器事件触发、页面生命周期变化等，来验证 `WindowPerformance` 类及其相关组件（如 `PerformanceTiming`, `PerformanceEventTiming`）的功能是否正确，确保 Blink 引擎能够准确地收集和报告 web 页面的性能数据，为 web 开发者提供可靠的性能分析基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/window_performance_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -72,8 +72,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -792,7 +794,4 @@ TEST_F(WindowPerformanceTest, HoldingDownAKey) {
 
   // Third Keydown
   keydown_timestamp = GetTimeS
-"""
-
-
 ```

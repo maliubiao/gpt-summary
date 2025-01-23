@@ -329,7 +329,7 @@ if (Process.platform === 'android') {
 
 这个文件虽然简单，但它是 Android 系统处理时间和日期本地化的基础之一。理解它的作用有助于我们更好地理解 Android 的国际化和本地化机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/locale/_def_time.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -340,8 +340,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: _def_time.c,v 1.6 2016/05/23 00:05:15 guenther Exp $ */
 /*
  * Written by J.T. Conklin <jtc@netbsd.org>.
@@ -378,7 +380,4 @@ const _TimeLocale _DefaultTimeLocale =
 };
 
 const _TimeLocale *_CurrentTimeLocale = &_DefaultTimeLocale;
-
-"""
-
 ```

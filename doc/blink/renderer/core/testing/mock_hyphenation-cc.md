@@ -148,15 +148,17 @@ By following this structured thought process, we can generate a comprehensive an
 
 总而言之，`blink/renderer/core/testing/mock_hyphenation.cc` 是 Blink 引擎为了方便测试而提供的断字功能的简化模拟，它通过简单的字符串匹配规则来模拟查找断字点的行为。虽然用户不会直接接触到它，但理解其功能和局限性对于参与 Blink 开发和调试的工程师来说是很重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/mock_hyphenation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ wtf_size_t MockHyphenation::LastHyphenLocation(const StringView& text,
 }
 
 }  // namespace blink
-
-"""
-
 ```

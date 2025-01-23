@@ -230,15 +230,17 @@ console.log(obj.x); // 第二次访问 obj.x
 
 `v8/src/compiler/processed-feedback.h` 定义了 V8 编译器用于接收和处理运行时反馈信息的关键数据结构。这些反馈信息帮助编译器更好地理解 JavaScript 代码的动态行为，从而进行更有效的优化。理解这些反馈类型以及它们与 JavaScript 运行时的关系，有助于我们编写更易于 V8 优化的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/processed-feedback.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/processed-feedback.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -526,7 +528,4 @@ class ForInFeedback
 }  // namespace v8
 
 #endif  // V8_COMPILER_PROCESSED_FEEDBACK_H_
-
-"""
-
 ```

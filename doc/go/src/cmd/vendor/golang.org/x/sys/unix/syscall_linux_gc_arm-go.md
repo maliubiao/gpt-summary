@@ -161,15 +161,17 @@ func main() {
 
 理解这些细节对于正确使用底层的系统调用封装至关重要。在实际开发中，通常会使用 Go 标准库中更高级的文件操作函数，例如 `os.File.Seek`，这些函数会处理一些底层的细节和错误情况，使代码更易于编写和维护。 然而，理解像 `unix.Seek` 这样的底层实现，有助于深入理解文件 I/O 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_linux_gc_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -183,9 +185,4 @@ import "syscall"
 // Underlying system call writes to newoffset via pointer.
 // Implemented in assembly to avoid allocation.
 func seek(fd int, offset int64, whence int) (newoffset int64, err syscall.Errno)
-
-"""
-
-
-
 ```

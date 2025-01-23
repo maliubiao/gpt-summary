@@ -153,15 +153,17 @@ var someValue = a.GetValue() // 假设 a 包中有一个 GetValue 函数
 
 总而言之，`b.go` 的这段代码通过在 `b` 包初始化时调用 `a.F()`，主要用于确保 `a` 包在 `b` 包之前完成初始化，并执行 `F()` 函数的副作用。这在测试 package 的依赖关系和初始化顺序时非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue44355.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.  Use of this
 // source code is governed by a BSD-style license that can be found in
 // the LICENSE file.
@@ -171,9 +173,4 @@ package b
 import "./a"
 
 var _ = a.F()
-
-"""
-
-
-
 ```

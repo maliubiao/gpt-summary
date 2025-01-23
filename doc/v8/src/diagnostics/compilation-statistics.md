@@ -151,11 +151,13 @@ for (let i = 0; i < 10000; i++) {
 
 总而言之，`compilation-statistics.cc` 是 V8 引擎内部用于监控自身编译性能的关键组件，它通过收集和记录编译过程中的各种指标，帮助开发者理解和优化 JavaScript 代码的执行效率。虽然 JavaScript 代码不能直接操作它，但 JavaScript 代码的结构和复杂性会直接影响它记录的统计数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/compilation-statistics.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -357,7 +359,4 @@ std::ostream& operator<<(std::ostream& os, const AsPrintableStatistics& ps) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

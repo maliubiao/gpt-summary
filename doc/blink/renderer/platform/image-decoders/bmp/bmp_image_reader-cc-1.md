@@ -162,15 +162,17 @@ img.src = 'image.bmp';
 
 这个类考虑了 BMP 格式的多种变体，包括不同的颜色深度、压缩方式和调色板，并提供了一定的错误处理机制。它与 HTML、CSS 和 JavaScript 的图像显示功能紧密相关，是 Web 平台上展示 BMP 图片的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/bmp/bmp_image_reader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Uint8(1);
     const bool is_past_end_of_image = PastEndOfImage(0);
     if ((count || (code != 1)) && is_past_end_of_image) {
@@ -446,8 +448,4 @@ void BMPImageReader::ColorCorrectCurrentRow() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

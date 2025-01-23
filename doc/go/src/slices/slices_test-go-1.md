@@ -219,7 +219,7 @@ func main() {
 
 总的来说，这部分测试代码覆盖了 `slices` 包中 `Repeat` 和 `Clone` 函数的常见用法和边界情况，确保了这些函数在各种场景下的正确性和健壮性。 `TestIssue68488` 尤其关注了切片复制可能带来的内存管理问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/slices/slices_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -228,8 +228,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 t/4-3))},
 		{x: make([]struct{}, math.MaxInt/5-4), count: 5, want: make([]struct{}, 5*(math.MaxInt/5-4))},
 		{x: make([]struct{}, math.MaxInt/6-5), count: 6, want: make([]struct{}, 6*(math.MaxInt/6-5))},
@@ -268,10 +270,4 @@ func TestIssue68488(t *testing.T) {
 		t.Error("clone keeps alive s due to array overlap")
 	}
 }
-
-"""
-
-
-
-
 ```

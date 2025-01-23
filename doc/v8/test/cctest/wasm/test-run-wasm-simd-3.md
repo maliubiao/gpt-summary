@@ -80,12 +80,14 @@ console.log(shuffled);
 
 这个 JavaScript 例子展示了如何使用 `Uint8x16` 和 `extractLane` 来模拟 C++ 代码中 `WASM_SIMD_I8x16_SHUFFLE_OP` 的部分功能。 实际的 WebAssembly SIMD 指令可以通过更简洁和高效的方式实现跨向量的 shuffle。 重要的是理解，这个 C++ 文件中的测试确保了当 WebAssembly 代码在 JavaScript 引擎中运行时，这些 SIMD 操作能够按照预期工作并得到有效的优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/wasm/test-run-wasm-simd.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 res::IsSupported(AVX2)) return;
   WasmRunner<int8_t> r(TestExecutionTier::kTurbofan);
   int8_t* memory = r.builder().AddMemoryElems<int8_t>(40);
@@ -1584,8 +1586,4 @@ TEST(RunWasmTurbofan_I8x32UConvertI16x16) {
         r.builder().WriteMemory(&memory[j], values[i + j]);                    \
       }                                                                        \
       r.Call(0, 16);                                                           \
-                                                              
-"""
-
-
 ```

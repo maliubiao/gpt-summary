@@ -129,11 +129,13 @@ main();
 
 `etw-isolate-capture-state-monitor-win-unittest.cc` 文件测试的 `EtwIsolateCaptureStateMonitor` 类是一个用于在 Windows 平台上监控和等待特定数量的 V8 隔离区完成状态捕获的同步机制。虽然它本身是 C++ 代码，但其解决的问题与 JavaScript 中等待多个异步操作完成的概念类似。在 JavaScript 中，可以使用 `Promise.all()` 或类似的模式来实现类似的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/diagnostics/etw-isolate-capture-state-monitor-win-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ TEST(EtwIsolateCaptureStateMonitorTest, DontBlockOnZeroIsolateCount) {
 }  // namespace ETWJITInterface
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

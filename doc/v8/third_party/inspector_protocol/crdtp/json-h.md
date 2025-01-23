@@ -159,15 +159,17 @@ When dealing with JSON, developers often make these mistakes, which the code in 
 
 In summary, `v8/third_party/inspector_protocol/crdtp/json.h` provides low-level building blocks for efficient JSON handling within V8, particularly for communication within the Chrome DevTools Protocol. It offers streaming encoding and parsing, as well as conversion to and from CBOR. While not a Torque file itself, it's a crucial component in V8's ability to interact with JavaScript and external tools using the ubiquitous JSON format.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/json.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/json.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ Status ConvertJSONToCBOR(span<uint16_t> json, std::vector<uint8_t>* cbor);
 }  // namespace v8_crdtp
 
 #endif  // V8_CRDTP_JSON_H_
-
-"""
-
 ```

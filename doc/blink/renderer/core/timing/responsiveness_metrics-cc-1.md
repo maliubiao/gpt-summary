@@ -135,7 +135,7 @@ By following these steps, I could break down the code into manageable parts, und
 
 这部分代码主要负责 **完成用户交互事件性能数据的收集和最终处理**。它专注于处理在特定时机（例如上下文菜单显示前，或者一段时间后没有其他相关事件）刷新和上报键盘和指针事件的数据。  其核心目标是确保即使在复杂的交互场景下，也能准确地记录用户操作的性能指标，并将这些数据用于 UKM 和 tracing，以便进行性能分析和优化。 特别地，它处理了未完成的指针交互，并将模拟的键盘点击事件与原始的键盘事件关联起来，力求更精确地反映用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/responsiveness_metrics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -143,10 +143,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-  // Windows keyboard could have a contextmenu key and trigger keydown
+### 源代码
+```cpp
+// Windows keyboard could have a contextmenu key and trigger keydown
   // followed by contextmenu when pressed. (crbug.com/1428603)
   FlushKeydown();
 }
@@ -278,8 +279,4 @@ bool ResponsivenessMetrics::TryHandleKeyboardEventSimulatedClick(
   return true;
 }
 }  // namespace blink
-
-"""
-
-
 ```

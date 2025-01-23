@@ -177,7 +177,7 @@ fetch('module.wasm')
 
 该文件是 V8 执行 WebAssembly 代码的基础，确保了 JavaScript 环境能够有效地加载、实例化和执行 WebAssembly 模块。它通过精心设计的并发机制和状态管理，实现了高效且可靠的 WebAssembly 编译流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -185,8 +185,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lEvents)) {
     callbacks_.emplace_back(std::move(callback));
   }
@@ -651,8 +653,4 @@ WasmCode* CompileImportWrapperForTest(Isolate* isolate,
 #undef TRACE_COMPILE
 #undef TRACE_STREAMING
 #undef TRACE_LAZY
-
-"""
-
-
 ```

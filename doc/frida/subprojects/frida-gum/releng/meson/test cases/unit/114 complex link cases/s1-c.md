@@ -146,7 +146,7 @@ Initially, one might focus too much on the simplicity of the C code itself. The 
 
 总而言之，`s1.c` 自身是一个非常简单的 C 文件，但在 Frida 的上下文中，它作为一个基本的测试用例，对于验证 Frida 的核心功能（如代码注入、Hook 和处理复杂链接）至关重要。它为 Frida 的开发和测试提供了一个可控的、最小化的验证环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/114 complex link cases/s1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,12 +154,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int s1(void) {
     return 1;
 }
-
-"""
-
 ```

@@ -130,15 +130,17 @@ func main() {
 
 总而言之，`go/test/fixedbugs/issue4162.go` 这个代码片段是一个简单的编译时测试，用于验证 Go 编译器是否成功实现了允许在类型转换表达式中使用尾随逗号的语法特性。这个特性提高了语言的灵活性和一致性，特别是在处理代码生成或手动编写包含大量类型转换的代码时，允许尾随逗号可以减少因忘记或遗漏逗号而导致的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue4162.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compile
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -156,9 +158,4 @@ var (
 	_ = chan int(nil,) // was syntax error: unexpected comma
 	_ = (func())(nil,) // was syntax error: unexpected comma
 )
-
-"""
-
-
-
 ```

@@ -106,14 +106,16 @@ This systematic approach helps in dissecting the code and understanding its purp
 
 总而言之，`text_encoding_registry.cc` 是 Blink 引擎处理文本编码的关键基础设施，它负责维护编码名称的映射关系，并提供创建实际编解码器对象的机制，这对于正确显示来自不同来源的文本至关重要。理解其功能有助于开发者避免常见的字符编码错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_encoding_registry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2011 Apple Inc. All rights reserved.
  * Copyright (C) 2007-2009 Torch Mobile, Inc.
@@ -394,7 +396,4 @@ void DumpTextEncodingNameMap() {
 #endif
 
 }  // namespace WTF
-
-"""
-
 ```

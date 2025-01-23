@@ -111,15 +111,17 @@ By following these steps, combining code analysis with an understanding of the b
 
 总而言之，`net/ssl/ssl_platform_key_nss_unittest.cc` 是 Chromium 网络栈中至关重要的一个测试文件，它确保了浏览器能够正确地从系统的密钥存储中获取 SSL 客户端认证所需的私钥，这对于实现安全的 HTTPS 通信至关重要。虽然普通用户不会直接与这个文件交互，但它的正确性直接影响到用户浏览需要客户端证书认证的网站的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ssl/ssl_platform_key_nss_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ INSTANTIATE_TEST_SUITE_P(All,
                          TestKeyToString);
 
 }  // namespace net
-
-"""
-
 ```

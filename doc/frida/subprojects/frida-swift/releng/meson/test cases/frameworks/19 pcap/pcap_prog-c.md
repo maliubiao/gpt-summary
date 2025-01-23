@@ -178,7 +178,7 @@ By following these steps, breaking down the code into its components, considerin
 
 `pcap_prog.c` 是一个简单的但重要的测试程序，用于验证基本的网络数据包捕获功能。它展示了如何使用 `libpcap` 库来初始化一个捕获会话，并突出了在进行网络相关的逆向工程或开发时需要考虑的一些关键因素，例如权限和平台差异。对于正在开发或调试 Frida 网络相关功能的用户来说，理解这个简单的程序可以作为深入理解更复杂机制的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/19 pcap/pcap_prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <pcap/pcap.h>
 
 int
@@ -203,7 +205,4 @@ main()
     pcap_t *p = pcap_create(source, errbuf);
     return p == NULL;
 }
-
-"""
-
 ```

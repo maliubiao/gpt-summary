@@ -194,15 +194,17 @@ While developers don't directly interact with the `transitions.h` code, their Ja
 
 In summary, `v8/src/objects/transitions.h` is a fundamental piece of V8 responsible for managing how JavaScript object shapes evolve. Understanding its purpose helps in appreciating how V8 optimizes property access and manages dynamic object structures, even though developers don't directly interact with this code. Good JavaScript coding practices often implicitly align with helping V8 manage transitions efficiently.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/transitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/transitions.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -681,7 +683,4 @@ class TransitionArray : public WeakFixedArray {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_TRANSITIONS_H_
-
-"""
-
 ```

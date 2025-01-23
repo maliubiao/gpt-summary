@@ -164,7 +164,7 @@ If a user reports that their memory allocation hooks are not working, a Frida de
 
 In summary, `gumheapapi.c` is a fundamental component of Frida that enables memory-related dynamic instrumentation by dynamically discovering the addresses of heap allocation functions within a target process. It handles platform differences and relies on understanding binary structures and operating system concepts. Understanding its functionality is crucial for both using and debugging Frida's memory instrumentation capabilities.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/gumheapapi.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -317,7 +319,4 @@ gum_heap_api_list_get_nth (const GumHeapApiList * self,
 {
   return &g_array_index (self, GumHeapApi, n);
 }
-
-"""
-
 ```

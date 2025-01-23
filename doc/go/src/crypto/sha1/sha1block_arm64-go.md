@@ -152,7 +152,7 @@ func main() {
 
 总而言之，这段 `sha1block_arm64.go` 文件是 Go 语言 `crypto/sha1` 包针对 ARM64 架构进行性能优化的一个组成部分，它利用汇编语言和硬件加速来提高 SHA1 哈希计算的速度。使用者应该通过标准库提供的 API 来使用 SHA1 功能，而无需直接操作这些底层的优化实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/sha1/sha1block_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -160,8 +160,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -190,9 +192,4 @@ func block(dig *digest, p []byte) {
 		sha1block(h, p, k)
 	}
 }
-
-"""
-
-
-
 ```

@@ -131,15 +131,17 @@ fetch('https://example.com/data')
 
 总而言之，`quiche_default_proof_providers_impl.cc` 是 Chromium QUIC 实现中负责安全连接建立的关键组件，它提供了默认的证书验证和身份证明机制，直接影响着基于 QUIC 的网络连接的安全性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/overrides/quiche_platform_impl/quiche_default_proof_providers_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -239,7 +241,4 @@ std::unique_ptr<quic::ProofSource> CreateDefaultProofSourceImpl() {
 }
 
 }  // namespace quiche
-
-"""
-
 ```

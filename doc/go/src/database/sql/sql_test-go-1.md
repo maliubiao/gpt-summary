@@ -98,7 +98,7 @@ By following these steps and iteratively refining the summary, a comprehensive a
 
 **总结来说，这部分代码主要关注于 `database/sql` 包在更复杂和边缘场景下的行为，包括错误处理、并发控制、连接管理和与 `context` 包的集成。它通过大量的测试用例，力求保证 `database/sql` 包的健壮性和可靠性。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/database/sql/sql_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -107,8 +107,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 err = stmt.Close(); err != nil {
 		t.Fatal(err)
 	}
@@ -2346,10 +2348,4 @@ func TestIssue69728(t *testing.T) {
 		t.Errorf("not equal; v1 = %v, v2 = %v", v1, v2)
 	}
 }
-
-"""
-
-
-
-
 ```

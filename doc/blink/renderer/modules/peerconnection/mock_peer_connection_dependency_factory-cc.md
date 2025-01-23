@@ -150,15 +150,17 @@ local_stream->AddTrack(audio_track);
 
 总而言之，`mock_peer_connection_dependency_factory.cc` 是一个关键的测试辅助文件，它通过提供可控的模拟对象，使得 WebRTC 相关的代码更容易进行单元测试和集成测试，而无需依赖真实的硬件和网络环境。理解其功能对于进行 Chromium Blink 引擎中 WebRTC 模块的开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/mock_peer_connection_dependency_factory.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -583,7 +585,4 @@ void MockPeerConnectionDependencyFactory::SetFailToCreateSessionDescription(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -155,7 +155,7 @@ This systematic approach, combining code analysis with domain knowledge, allows 
 
 总而言之，`rust.py` 文件是 Frida 构建系统中处理 Rust 代码的关键部分，它通过封装常用的 Rust 构建工具，简化了 Frida 中 Rust 组件的开发和集成过程。它与逆向工程紧密相关，因为 Frida 经常使用 Rust 来实现高性能和安全的组件，并且需要与 C/C++ 编写的目标进程进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/modules/rust.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright © 2020-2024 Intel Corporation
 
@@ -520,7 +522,4 @@ class RustModule(ExtensionModule):
 
 def initialize(interp: Interpreter) -> RustModule:
     return RustModule(interp)
-
-"""
-
 ```

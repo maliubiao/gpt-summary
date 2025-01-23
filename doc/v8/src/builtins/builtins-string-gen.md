@@ -71,12 +71,14 @@ The functions in this file are the underlying implementations of several common 
 
 **In summary, this part of `builtins-string-gen.cc` provides the foundational, performance-critical implementations for various core string operations and comparisons within the V8 JavaScript engine.** It handles different string representations and encodings to ensure efficiency.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-string-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1718,7 +1720,4 @@ TF_BUILTIN(StringPrototypeSplit, StringBuiltinsAssembler) {
 TF_BUILTIN(StringSubstring, StringBuiltinsAssembler) {
   auto string = Parameter<String>(Descriptor::kString);
   auto from = UncheckedParameter<IntPtrT>(Desc
-"""
-
-
 ```

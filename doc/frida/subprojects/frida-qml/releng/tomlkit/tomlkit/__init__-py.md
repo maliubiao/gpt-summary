@@ -244,7 +244,7 @@ version = 16.0
 
 总而言之，`frida/subprojects/frida-qml/releng/tomlkit/tomlkit/__init__.py` 文件定义了 `tomlkit` 包的公共 API，它为 Frida 及其相关组件提供了处理 TOML 配置文件的能力，这在逆向工程和动态分析中非常有用，可以帮助理解目标程序的配置和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/tomlkit/tomlkit/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -252,8 +252,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit.api import TOMLDocument
 from tomlkit.api import aot
 from tomlkit.api import array
@@ -313,7 +315,4 @@ __all__ = [
     "register_encoder",
     "unregister_encoder",
 ]
-
-"""
-
 ```

@@ -209,15 +209,17 @@ By following this structured approach, the analysis becomes more systematic and 
 
 总而言之，`packet_number_indexed_queue_test.cc` 是确保 `PacketNumberIndexedQueue` 类功能正确性和健壮性的关键组成部分，它通过各种测试用例覆盖了该类的核心功能和边界情况，为 QUIC 协议栈的稳定运行提供了保障。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/packet_number_indexed_queue_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -423,7 +425,4 @@ TEST_F(PacketNumberIndexedQueueTest, ConstGetter) {
 
 }  // namespace
 }  // namespace quic::test
-
-"""
-
 ```

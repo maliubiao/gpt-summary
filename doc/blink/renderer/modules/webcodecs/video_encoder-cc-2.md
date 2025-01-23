@@ -206,7 +206,7 @@ Buffers() only supported with manual scalability mode.");
 
 `Buffers()` 方法是 `blink::VideoEncoder` 类中用于获取帧参考缓冲区的一个接口。它强制要求视频编码器运行在 "手动可伸缩模式" 下才能成功返回缓冲区。这表明帧参考缓冲区的管理与视频编码器的可伸缩性策略紧密相关。如果在非手动可伸缩模式下调用，该方法会记录错误信息并返回空值，以此来避免潜在的错误使用或不一致状态。  这部分代码体现了 WebCodecs API 底层实现中对于特定功能的约束和错误处理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/video_encoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -214,8 +214,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Buffers() only supported with manual scalability mode.");
     return {};
   }
@@ -224,8 +226,4 @@ Buffers() only supported with manual scalability mode.");
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -110,14 +110,16 @@ Finally, I organized the information into clear sections based on the prompt's r
 
 `masonry_layout_algorithm.cc` 文件是 Chromium Blink 引擎中实现 CSS Masonry Layout 算法的关键部分。它负责解析 CSS 属性，计算轨道尺寸，并最终确定元素在 Masonry 布局中的位置。虽然部分功能（如自动重复计算和完整的布局逻辑）还在开发中，但其核心目标是为开发者提供一种灵活的方式来创建瀑布流式的布局效果。 理解这个文件的功能有助于我们更好地理解浏览器如何渲染网页，以及如何更有效地使用 CSS Masonry Layout。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/masonry/masonry_layout_algorithm.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be found
 // in the LICENSE file.
@@ -193,7 +195,4 @@ MinMaxSizesResult MasonryLayoutAlgorithm::ComputeMinMaxSizes(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -140,14 +140,16 @@ By following these steps, combining code analysis with an understanding of web t
 
 总之，`date_input_type.cc` 文件是 Blink 引擎中处理 HTML 日期输入的核心组件，它负责日期值的解析、验证、格式化以及与 HTML 属性和 JavaScript API 的交互。理解其功能有助于开发者更好地利用 `<input type="date">` 元素并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/date_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -286,7 +288,4 @@ String DateInputType::AriaLabelForPickerIndicator() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

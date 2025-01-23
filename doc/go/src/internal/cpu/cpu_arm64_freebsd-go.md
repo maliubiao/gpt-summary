@@ -182,7 +182,7 @@ func main() {
 
 `go/src/internal/cpu/cpu_arm64_freebsd.go` 中的 `osInit` 函数是 Go 运行时在 FreeBSD ARM64 平台上进行 CPU 特性检测的关键部分。它通过读取和解析特定的 ARM64 系统寄存器来确定 CPU 的能力，并将这些信息用于后续的程序优化和执行。普通开发者不应该直接使用这个包，而是应该依赖 Go 运行时自动处理 CPU 特性检测和优化。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/cpu/cpu_arm64_freebsd.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -190,8 +190,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -207,9 +209,4 @@ func osInit() {
 
 	parseARM64SystemRegisters(isar0, prf0)
 }
-
-"""
-
-
-
 ```

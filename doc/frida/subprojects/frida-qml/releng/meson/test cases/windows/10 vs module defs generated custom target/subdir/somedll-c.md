@@ -183,7 +183,7 @@ if (baseAddress) {
 
 总结来说，`somedll.c` 提供了一个非常基础但重要的构建块，用于测试 Frida 的功能，并作为逆向工程学习的起点。它展示了如何通过动态插桩来观察和理解程序行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/windows/10 vs module defs generated custom target/subdir/somedll.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,12 +191,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int somedllfunc(void) {
     return 42;
 }
-
-"""
-
 ```

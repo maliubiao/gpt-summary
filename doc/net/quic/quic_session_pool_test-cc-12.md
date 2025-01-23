@@ -110,7 +110,7 @@ Strategizing complete. I will now generate the response based on the outlined po
 
 这段代码片段集中测试了 **在各种写错误场景下，`QuicSessionPool` 如何处理连接迁移，特别是涉及到不同类型的请求（可迁移和不可迁移）以及不同的网络状态时**。它旨在验证连接迁移机制的健壮性和正确性，确保在网络环境不稳定时，QUIC 连接能够尽可能地保持连接，或者在无法保持时能够优雅地处理。这部分测试对于保证 QUIC 连接的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第13部分，共20部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 n_new_path);
   // Increment packet number to account for packet write error on the old
   // path. Also save the packet in client_maker_ for constructing the
@@ -834,7 +836,4 @@ void QuicSessionPoolTest::TestMigrationOnMultipleWriteErrors(
   socket_data1.ExpectAllReadDataConsumed();
   socket_data1.ExpectAllWriteDataConsumed();
   failed_quic_data2.Ex
-"""
-
-
 ```

@@ -233,7 +233,7 @@ City pointers are different: true
 
 总而言之，这段代码实现了一个精细的克隆机制，专门针对值类型中包含的字符串进行深度复制，这通常是出于内存管理和垃圾回收优化的考虑。使用者需要理解其克隆的范围，避免对其行为产生错误的预期。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/unique/clone.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -241,8 +241,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -332,9 +334,4 @@ func buildArrayCloneSeq(typ *abi.Type, seq *cloneSeq, baseOffset uintptr) {
 		offset = (offset + align - 1) &^ (align - 1)
 	}
 }
-
-"""
-
-
-
 ```

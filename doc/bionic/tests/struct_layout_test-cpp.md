@@ -273,7 +273,7 @@ sys.stdin.read()
 
 这个测试文件 `bionic/tests/struct_layout_test.cpp` 虽然看起来简单，但对于保证 Android 系统的稳定性和兼容性至关重要。它通过自动化测试来防止由于 bionic 库内部数据结构布局的意外变化而导致的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/struct_layout_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -284,8 +284,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2020 The Android Open Source Project
  *
@@ -452,7 +454,4 @@ TEST(struct_layout, sizes_offsets) {
   GTEST_SKIP() << "bionic-only test";
 #endif
 }
-
-"""
-
 ```

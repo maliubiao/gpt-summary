@@ -154,7 +154,7 @@ gcc -I/path/to/python/include -I/path/to/frida/include -fPIC -c _frida.c -o lib/
 
 这段代码的核心功能是**将编译器的概念转化为实际可执行的编译命令**。它充当了 Meson 构建系统和底层编译器之间的桥梁，负责根据给定的编译目标和编译器信息，生成详细的编译指令，以便将源代码编译成可执行文件或库。这对于 Frida 这样的动态 instrumentation 工具至关重要，因为它需要被编译成可执行的组件才能发挥作用。这段代码的处理逻辑确保了 Frida 的 Python 绑定能够根据不同的平台和编译器进行正确的编译。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 rt a Compiler to a Generator.
         '''
         exelist = compiler.get_exelist()
@@ -189,8 +191,4 @@ rt a Compiler to a Generator.
         all_sources = T.cast('_ALL_SOURCES_TYPE', target.sources) + T.cast('_ALL_SOURCES_TYPE', target.generated)
         return self.compiler_to_generator(target, target.compiler, all_sources,
                                           target.output_templ, target.depends)
-
-"""
-
-
 ```

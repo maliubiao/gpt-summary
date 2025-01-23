@@ -125,11 +125,13 @@ function example3(condition1, condition2) {
 
 `v8/src/compiler/branch-elimination.cc` 是 V8 编译器中至关重要的一个优化 pass，它通过静态分析控制流图，识别并消除冗余的分支。这直接影响到生成的机器码的效率，使得 JavaScript 代码在 V8 引擎中运行得更快。虽然开发者编写 JavaScript 代码时不会直接与这个文件交互，但理解其背后的原理有助于编写出更容易被引擎优化的代码。例如，避免不必要的条件判断，或者利用常量值可以帮助 V8 进行更好的分支消除。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/branch-elimination.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -534,7 +536,4 @@ template bool DefaultConstruct<bool>(Zone* zone);
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

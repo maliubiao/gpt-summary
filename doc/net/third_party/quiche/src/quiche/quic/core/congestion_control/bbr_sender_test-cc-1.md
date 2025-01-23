@@ -146,7 +146,7 @@ fetch('https://example.com/largefile')
 
 总之，开发者通常会从宏观的性能问题出发，逐步深入到具体的代码实现和测试用例，以定位和解决问题。 这段测试代码提供了理解 BBR 算法在各种场景下行为的重要线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/congestion_control/bbr_sender_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 interval = QuicTime::Delta::FromMilliseconds(300);
   for (int i = 0; i < 2; i++) {
     SendBursts(5, target_bandwidth * burst_interval, burst_interval);
@@ -704,8 +706,4 @@ TEST_F(BbrSenderTest, EnableOvershootingDetection) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

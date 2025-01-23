@@ -191,15 +191,17 @@ fetch('https://example.com/data')
 
 总而言之，`OgHttp2Adapter` 是 Chromium 网络栈中处理 HTTP/2 协议的关键组件，它将底层的 HTTP/2 会话管理抽象出来，为上层网络代码提供了一个易于使用的接口。虽然 JavaScript 代码不直接与之交互，但所有通过 HTTP/2 发起的网络请求都依赖于这个组件的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_adapter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/oghttp2_adapter.h"
 
 #include <memory>
@@ -383,7 +385,4 @@ OgHttp2Adapter::OgHttp2Adapter(Http2VisitorInterface& visitor, Options options)
 
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

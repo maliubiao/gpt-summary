@@ -179,7 +179,7 @@ out = &Element{l0: 100, l1: 200, l2: 300, l3: 400, l4: 500}
 
 总而言之，这段代码是 Edwards25519 曲线有限域运算的关键部分，通过生成高效的汇编代码来提升性能，尤其在需要满足 FIPS 140 标准的场景下。使用者通常通过 Go 语言接口间接使用这些优化的实现。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/edwards25519/field/_asm/fe_amd64_asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -187,8 +187,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright (c) 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -483,9 +485,4 @@ func mustAddr(c Component) Op {
 	}
 	return b.Addr
 }
-
-"""
-
-
-
 ```

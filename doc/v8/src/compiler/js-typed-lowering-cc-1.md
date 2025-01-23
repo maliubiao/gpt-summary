@@ -435,7 +435,7 @@ Let's start by analyzing each function individually.
 
 总而言之，这段代码片段是 V8 编译器中类型推断和优化的核心部分，它针对 JavaScript 中常见的操作（如加法、比较、类型转换、属性访问等）进行基于类型的优化，将其转换为更底层的、更高效的中间表示形式，以便后续的编译和执行。这有助于提高 JavaScript 代码的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-typed-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-typed-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -443,8 +443,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 CodeFactory::StringAdd(isolate(), flags);
     auto call_descriptor = Linkage::GetStubCallDescriptor(
         graph()->zone(), callable.descriptor(),
@@ -1261,7 +1263,4 @@ Reduction JSTypedLowering::ReduceJSLoadScriptContext(Node* node) {
     context = gasm.LoadField<Context>(
         AccessBuilder::ForContextSlotKnownPointer(Context::PREVIOUS_INDEX),
         con
-"""
-
-
 ```

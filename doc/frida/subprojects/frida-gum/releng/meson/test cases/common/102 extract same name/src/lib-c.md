@@ -115,7 +115,7 @@ By following this structured thinking process, the answer effectively addresses 
 
 尽管 `lib.c` 中的 `func2` 函数非常简单，但它可以作为理解动态 instrumentation 工具 Frida 的工作原理、逆向工程的基本概念以及程序在操作系统底层运行方式的一个入门示例。它也展示了在调试过程中，即使是简单的函数也可能成为分析的起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/102 extract same name/src/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,12 +123,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2(void) {
     return 42;
 }
-
-"""
-
 ```

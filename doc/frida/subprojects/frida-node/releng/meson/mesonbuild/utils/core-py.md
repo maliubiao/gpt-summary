@@ -218,7 +218,7 @@ If the user had mistakenly tried to `env_set` and then `env_unset` `MY_VAR` with
 
 In summary, `core.py` provides fundamental building blocks for managing the execution of external processes within the Frida build system. Its classes and exception handling are crucial for ensuring the correct and controlled execution of build steps and for providing useful debugging information to developers. Its connection to environment variables makes it particularly relevant for reverse engineering scenarios where controlling the target process's environment is often necessary.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/utils/core.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -226,8 +226,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2022 The Meson development team
 
@@ -394,7 +396,4 @@ class ExecutableSerialisation:
         self.skip_if_destdir = False
         self.subproject = T.cast('SubProject', '')  # avoid circular import
         self.dry_run = False
-
-"""
-
 ```

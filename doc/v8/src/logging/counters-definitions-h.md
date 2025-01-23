@@ -190,15 +190,17 @@ OnUncaughtException(currentContext->counters);
 
 总而言之，`v8/src/logging/counters-definitions.h` 提供了一个观察 V8 引擎内部运行状态的窗口。理解这些计数器的含义可以帮助开发者更好地理解 JavaScript 代码的执行过程，并避免一些常见的性能陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/counters-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/logging/counters-definitions.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -601,7 +603,4 @@ namespace internal {
 }  // namespace v8
 
 #endif  // V8_LOGGING_COUNTERS_DEFINITIONS_H_
-
-"""
-
 ```

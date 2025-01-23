@@ -141,11 +141,13 @@ console.log(result);
 
 `memory-reducer-unittest.cc` 通过模拟各种事件和验证状态转换，确保 V8 引擎的 `MemoryReducer` 组件能够按照预期工作，从而保障 JavaScript 代码在不同内存压力下的稳定性和性能。它是一个幕后英雄，默默地管理着 JavaScript 运行时的内存，避免内存泄漏和性能下降。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/memory-reducer-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -456,7 +458,4 @@ TEST(MemoryReducer, FromRunToWait) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

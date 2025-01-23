@@ -96,7 +96,7 @@ Args: [Value_for_a, Value_for_b]
 
 `rewriteValueLOONG64.go` 的这一部分是 Go 编译器中针对 LOONG64 架构进行代码生成优化的关键环节。它负责将通用的中间表示转换为可以直接在 LOONG64 处理器上执行的指令。 这涉及到大量的模式匹配和指令选择，确保生成的代码既正确又高效。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteLOONG64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -104,8 +104,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Code generated from _gen/LOONG64.rules using 'go generate'; DO NOT EDIT.
 
 package ssa
@@ -2804,9 +2806,4 @@ func rewriteValueLOONG64_OpLOONG64MOVBstorezero(v *Value) bool {
 		v.AuxInt = int32ToAuxInt(off1 + int32(off2))
 		v.Aux = symToAux(sym)
 		v.AddArg
-"""
-
-
-
-
 ```

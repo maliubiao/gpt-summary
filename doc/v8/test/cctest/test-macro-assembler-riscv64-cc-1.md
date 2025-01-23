@@ -184,7 +184,7 @@ CHECK_EQ(i < j, GenAndRunTest<int32_t>(i, fn_1));
 
 这部分 `v8/test/cctest/test-macro-assembler-riscv64.cc` 代码的主要功能是 **对 V8 引擎中 RISC-V 64 位架构的 `MacroAssembler` 类进行全面的单元测试**。它验证了 `MacroAssembler` 生成的 RISC-V 汇编代码对于各种操作 (包括未对齐的内存访问、浮点数运算、整数比较、位操作、数据移动和反优化) 的正确性。这些测试对于确保 V8 引擎在 RISC-V 64 位平台上能够正确、高效地执行 JavaScript 代码至关重要。通过覆盖各种输入和边界情况，这些测试有助于发现和修复 `MacroAssembler` 实现中的潜在错误，从而提高 V8 引擎的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-macro-assembler-riscv64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-macro-assembler-riscv64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 sd(t0, MemOperand(a0, out_offset));
   };
 
@@ -880,8 +882,4 @@ TEST(AddWithImm) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

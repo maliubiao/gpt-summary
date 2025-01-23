@@ -197,7 +197,7 @@ func ExampleTestRetryRequestsOnError() {
 
 这段代码主要用于测试 `net/http.Transport` 的以下功能：**连接超时处理（包括 TLS 握手超时），服务端主动关闭连接的处理，连接复用机制，请求重试机制（针对特定错误），请求体和响应头的处理细节，以及自定义连接建立过程的接口。** 它是 `net/http` 包中客户端 HTTP 请求处理核心组件 `Transport` 的健壮性和正确性的重要保障。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/transport_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -206,8 +206,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 rl.Error)
 	if !ok {
 		t.Errorf("expected url.Error; got %#v", err)
@@ -1371,9 +1373,4 @@ func TestTransportAutomaticHTTP2(t *testing.T) {
 }
 
 func T
-"""
-
-
-
-
 ```

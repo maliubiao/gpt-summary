@@ -129,14 +129,16 @@ This iterative process of reading the code, identifying functionalities, connect
 
 `font_palette_test.cc` 是一个至关重要的测试文件，用于确保 Chromium Blink 引擎中字体调色板功能的正确实现。它测试了调色板的创建、混合、比较以及字符串表示等关键方面，并间接地关联到开发者在 HTML、CSS 和 JavaScript 中使用字体调色板的方式。理解这些测试用例可以帮助开发者更好地理解字体调色板的工作原理，并避免常见的错误用法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_palette_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ TEST(FontPaletteTest, ComputeEndpointPercentagesFromNormalized) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

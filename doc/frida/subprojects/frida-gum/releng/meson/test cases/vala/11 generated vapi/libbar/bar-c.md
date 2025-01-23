@@ -136,7 +136,7 @@ if (ObjC.available) {
 
 因此，这个 `bar.c` 文件很可能是 Frida 开发过程中的一个中间产物，用于测试和验证 Frida 的核心功能。通过查看这个文件，可以深入了解 Vala 代码如何被转换成 C 代码，以及 Frida 如何 hook 和控制这些代码的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/vala/11 generated vapi/libbar/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "bar.h"
 #include "foo.h"
 
@@ -175,7 +177,4 @@ int bar_bar_return_success(void)
 {
   return foo_foo_return_success();
 }
-
-"""
-
 ```

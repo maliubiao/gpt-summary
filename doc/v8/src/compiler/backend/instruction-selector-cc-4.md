@@ -154,7 +154,7 @@ let result = a & b; // 位与运算
 
 总结来说，`instruction-selector.cc` 是 V8 编译器后端至关重要的一部分，它弥合了平台无关的中间表示和平台相关的机器指令之间的 gap。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/instruction-selector.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/instruction-selector.cc以.tq结尾，那它是个v8 torque源代码，
@@ -162,8 +162,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 turn MarkAsWord32(node), VisitWord32Shr(node);
     case IrOpcode::kWord32Sar:
       return MarkAsWord32(node), VisitWord32Sar(node);
@@ -882,7 +884,4 @@ turn MarkAsWord32(node), VisitWord32Shr(node);
       return MarkAsSimd128(node), VisitI16x8Sub(node);
     case IrOpcode::kI16x8SubSatS:
       return
-"""
-
-
 ```

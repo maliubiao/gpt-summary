@@ -296,7 +296,7 @@ if (Process.platform === 'linux') {
 
 总结来说，`bionic/libc/kernel/uapi/linux/dvb/net.handroid` 这个头文件是 Android 系统中用于支持 DVB 功能的关键组成部分，它定义了用户空间程序与内核 DVB 驱动程序交互的接口。理解这个头文件的内容对于分析和调试 Android 设备上的 DVB 相关功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/dvb/net.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -307,8 +307,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -335,7 +337,4 @@ struct __dvb_net_if_old {
 #define __NET_ADD_IF_OLD _IOWR('o', 52, struct __dvb_net_if_old)
 #define __NET_GET_IF_OLD _IOWR('o', 54, struct __dvb_net_if_old)
 #endif
-
-"""
-
 ```

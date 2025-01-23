@@ -164,7 +164,7 @@ console.log(splattedValue); // 输出一个 v128，其所有字节都是 0xAA
 
 总而言之，这个代码文件的核心是为 WebAssembly 的 SIMD 操作提供高效且跨架构的汇编代码实现，并考虑了不同的 CPU 特性和潜在的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/shared-ia32-x64/macro-assembler-shared-ia32-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/shared-ia32-x64/macro-assembler-shared-ia32-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -172,8 +172,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t after masking it.
 
   // See I64x2ShrS with constant shift for explanation of this algorithm.
@@ -450,8 +452,4 @@ void SharedMacroAssemblerBase::F64x2Qfms(XMMRegister dst, XMMRegister src1,
 }  // namespace v8
 
 #undef DCHECK_OPERAND_IS_NOT_REG
-
-"""
-
-
 ```

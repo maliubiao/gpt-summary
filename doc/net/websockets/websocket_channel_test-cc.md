@@ -109,7 +109,7 @@ By following these steps, we can arrive at a comprehensive summary that addresse
 
 总而言之，`net/websockets/websocket_channel_test.cc` 的第一部分主要定义了用于测试 `WebSocketChannel` 类的基础框架和工具，包括 Mock 和 Fake 对象、辅助结构和宏。它为后续的测试用例的编写奠定了基础，旨在全面验证 `WebSocketChannel` 在各种 WebSocket 操作场景下的正确性和健壮性。它与 JavaScript `WebSocket` API 的功能紧密相关，因为它测试了 JavaScript API 底层的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_channel_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -968,7 +970,4 @@ class WebSocketChannelTest : public TestWithTaskEnvironment {
   // This implementation returns a newly-created fake. Subclasses may return a
   // mock instead.
   virtual std::unique_ptr<WebSocketEventInterface> CreateEventInterface
-"""
-
-
 ```

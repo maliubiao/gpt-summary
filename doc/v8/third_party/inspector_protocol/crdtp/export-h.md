@@ -99,22 +99,21 @@ By following these steps and incorporating self-correction, a comprehensive and 
 
 `v8/third_party/inspector_protocol/crdtp/export.h` 的主要作用是一个 **空的占位符**，明确表示 V8 在其与 CRDTP 的集成中，选择 **不通过这个文件导出任何符号**。它的存在反映了 V8 内部的设计决策，并间接支持了 JavaScript 的调试和检查功能。普通用户无需直接关注或修改此文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/export.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/export.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 // This file is V8 specific. It's not rolled from the upstream project.
 // CRDTP doesn't export symbols from V8, so it's empty.
-
-"""
-
 ```

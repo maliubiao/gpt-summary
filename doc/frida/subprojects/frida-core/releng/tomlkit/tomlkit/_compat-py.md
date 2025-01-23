@@ -168,7 +168,7 @@ if __name__ == '__main__':
 
 总而言之，`frida/subprojects/frida-core/releng/tomlkit/tomlkit/_compat.py` 文件中的 `decode` 函数是 Frida 生态系统中处理字节串到字符串转换的一个实用工具，它考虑了多种常见的编码方式，并具有一定的容错能力，这对于逆向工程中处理来自不同来源的、可能编码不一致的数据非常有用。 它在 `tomlkit` 库中用于确保配置文件的字符串内容能够被正确解析，同时也可能被 Frida 的其他部分或用户脚本用于处理目标进程的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/tomlkit/tomlkit/_compat.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import contextlib
@@ -200,7 +202,4 @@ def decode(string: Any, encodings: list[str] | None = None):
             return string.decode(encoding)
 
     return string.decode(encodings[0], errors="ignore")
-
-"""
-
 ```

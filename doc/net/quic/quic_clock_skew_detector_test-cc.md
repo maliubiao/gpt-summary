@@ -119,15 +119,17 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总之，`net/quic/quic_clock_skew_detector_test.cc` 是一个关键的测试文件，用于确保 Chromium 的 QUIC 协议栈能够有效地检测到时钟偏差，从而保证网络连接的稳定性和可靠性，最终提升用户的网络体验。虽然用户不会直接接触到这段代码，但它在幕后默默地保障着基于 QUIC 的网络通信的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_clock_skew_detector_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ TEST_F(QuicClockSkewDetectorTest, LargeOffsetThenSmallOffset) {
 
 }  // namespace
 }  // namespace net::test
-
-"""
-
 ```

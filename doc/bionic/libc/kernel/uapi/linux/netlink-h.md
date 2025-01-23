@@ -306,7 +306,7 @@ setTimeout(hook_netlink_send, 0);
 
 通过 Hook 不同的函数（例如 `socket`, `bind`, `recvfrom`）和解析 Netlink 消息的内容，可以深入了解 Android Framework 和 NDK 是如何使用 Netlink 与内核进行通信的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netlink.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -317,8 +317,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -510,7 +512,4 @@ enum netlink_policy_type_attr {
   NL_POLICY_TYPE_ATTR_MAX = __NL_POLICY_TYPE_ATTR_MAX - 1
 };
 #endif
-
-"""
-
 ```

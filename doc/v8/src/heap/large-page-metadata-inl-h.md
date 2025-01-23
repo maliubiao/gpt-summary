@@ -125,15 +125,17 @@ const largeTypedArray = new Uint8Array(10 * 1024 * 1024); // 10MB 的 TypedArray
 
 总而言之，`v8/src/heap/large-page-metadata-inl.h` 提供了一个用于获取大页元数据的便捷接口，这对于 V8 内部管理大型对象的内存至关重要，并间接影响着 JavaScript 程序的性能和内存使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/large-page-metadata-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/large-page-metadata-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ LargePageMetadata* LargePageMetadata::FromHeapObject(Tagged<HeapObject> o) {
 }  // namespace v8
 
 #endif  // V8_HEAP_LARGE_PAGE_METADATA_INL_H_
-
-"""
-
 ```

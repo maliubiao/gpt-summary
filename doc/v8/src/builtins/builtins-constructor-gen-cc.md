@@ -211,15 +211,17 @@ This code relates to several common JavaScript programming errors:
 
 In summary, `v8/src/builtins/builtins-constructor-gen.cc` is a crucial part of V8 that implements the core semantics and performance optimizations for JavaScript's constructor calls and object/literal creation mechanisms. It bridges the gap between the JavaScript language syntax and the underlying C++ implementation of the V8 engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-constructor-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-constructor-gen.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -989,7 +991,4 @@ void ConstructorBuiltinsAssembler::CopyMutableHeapNumbersInObject(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

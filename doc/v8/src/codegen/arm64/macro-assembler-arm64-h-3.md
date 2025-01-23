@@ -182,7 +182,7 @@ masm.Add(dst, src1, src2);
 
 `v8/src/codegen/arm64/macro-assembler-arm64.h` 是 V8 引擎在 ARM64 架构上进行代码生成的核心组件。它提供了一组丰富的接口，用于生成各种 ARM64 指令，并抽象了底层的汇编细节。它包含了用于调试、优化、处理分支、内存访问以及与运行时环境交互的功能。 `InstructionAccurateScope` 和 `UseScratchRegisterScope` 等辅助类提高了代码生成过程的可靠性和效率。 开发者使用此类可以构建高效且正确的 JavaScript 执行代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/macro-assembler-arm64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/macro-assembler-arm64.h以.tq结尾，那它是个v8 torque源代码，
@@ -190,8 +190,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 o_check = ReadOnlyCheck::kInline,
       SlotDescriptor slot = SlotDescriptor::ForDirectPointerSlot());
 
@@ -503,8 +505,4 @@ void CallApiFunctionAndReturn(MacroAssembler* masm, bool with_profiling,
 #define ACCESS_MASM(masm) masm->
 
 #endif  // V8_CODEGEN_ARM64_MACRO_ASSEMBLER_ARM64_H_
-
-"""
-
-
 ```

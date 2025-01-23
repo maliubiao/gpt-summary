@@ -135,7 +135,7 @@ func TestCoverMain(t *testing.T) {
 
 `go/src/cmd/cover/export_test.go`  通过定义一个导出的 `Main` 函数，使得其他包（主要是测试包）能够间接地执行 `cmd/cover` 命令的 `main` 函数。这为 `cmd/cover` 命令的集成测试提供了便利，允许在代码层面启动和控制覆盖率分析流程。然而，开发者需要理解其用途，避免直接运行该文件，并在测试中注意模拟正确的运行环境。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/cover/export_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -143,8 +143,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -152,9 +154,4 @@ Prompt:
 package main
 
 func Main() { main() }
-
-"""
-
-
-
 ```

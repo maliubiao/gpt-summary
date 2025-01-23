@@ -160,7 +160,7 @@ func main() {
 
 这段代码定义了 `reflect` 包在 RISC-V 64 位架构下处理 `float32` 类型与寄存器之间转换的底层接口。 它体现了 Go 语言为了实现跨平台能力，需要在不同架构上进行特定实现的机制。 理解这些底层细节有助于更深入地理解 Go 语言的运行时和反射机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/reflect/stubs_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,8 +168,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -178,9 +180,4 @@ package reflect
 
 func archFloat32FromReg(reg uint64) float32
 func archFloat32ToReg(val float32) uint64
-
-"""
-
-
-
 ```

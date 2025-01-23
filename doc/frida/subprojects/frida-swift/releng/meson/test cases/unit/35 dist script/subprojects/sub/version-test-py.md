@@ -147,7 +147,7 @@ By following these steps, we arrive at a comprehensive explanation that covers t
 
 `version-test.py` 是一个非常简单的测试脚本，用于验证构建或测试环境的配置是否符合预期（即以 "release" 模式运行）。虽然它本身不涉及复杂的逆向或底层技术，但它的存在和用途反映了 Frida 作为一个复杂的动态 instrumentation 工具的构建和测试需求，以及与底层系统和二进制操作的关联。当这个脚本失败时，它可以作为一个有用的调试线索，帮助开发者定位构建或测试流程中的配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/35 dist script/subprojects/sub/version-test.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,14 +155,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from sys import argv
 
 assert argv[1] == 'release'
-
-"""
-
 ```

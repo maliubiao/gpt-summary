@@ -198,12 +198,14 @@ Based on these observations, I can formulate a summary and provide relevant Java
 
 总而言之，这段 C++ 代码是 V8 引擎中至关重要的一部分，它将开发者编写的 JavaScript 代码翻译成机器可以执行的低级指令。理解这段代码的功能有助于深入了解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 lose(generator);
   // }
   //
@@ -1880,7 +1882,4 @@ void BytecodeGenerator::BuildClassLiteral(ClassLiteral* expr, Register name) {
     builder()
         ->MoveRegister(class_constructor, args[0])
         .CallPrope
-"""
-
-
 ```

@@ -131,15 +131,17 @@ Before submitting the answer, re-read the request and the drafted response to en
 
 总结来说，`transport_security_state_static_fuzzer.cc` 是一个用于测试 Chromium 网络栈中关键安全机制的工具，它的目的是通过输入各种各样的字符串来发现 `TransportSecurityState` 类在处理静态 HSTS 和 PKP 策略时可能存在的错误和漏洞，从而提高浏览器的安全性和稳定性。 虽然普通用户不直接接触它，但它的作用对用户浏览器的安全行为有着重要的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/transport_security_state_static_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
   return 0;
 }
-
-"""
-
 ```

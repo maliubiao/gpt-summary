@@ -119,7 +119,7 @@ func main() {
 
 `seccomp_unsupported.go` 中的 `DisableGetrandom` 函数是在不支持禁用 `getrandom` 的系统上提供的一个占位符实现。它始终返回一个错误，表明该操作在该环境下不适用。这体现了 Go 标准库在处理底层系统特性时的平台兼容性和灵活性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/sysrand/internal/seccomp/seccomp_unsupported.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -127,8 +127,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -142,9 +144,4 @@ import "errors"
 func DisableGetrandom() error {
 	return errors.New("disabling getrandom is not supported on this system")
 }
-
-"""
-
-
-
 ```

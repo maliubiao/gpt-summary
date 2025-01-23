@@ -172,14 +172,16 @@ By following these steps, iteratively refining the understanding, and connecting
 
 总而言之，`code_cache_fetcher.cc` 是 Blink 引擎中一个关键的性能优化组件，专注于加速 JavaScript 和 WebAssembly 代码的加载。它通过精细的逻辑判断来决定何时获取和使用缓存的代码，并需要与其他浏览器组件（如 `CodeCacheHost` 和网络层）以及 Service Worker 等功能协同工作。理解其工作原理有助于开发者更好地优化 Web 应用的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/code_cache_fetcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -399,7 +401,4 @@ void CodeCacheFetcher::ClearCodeCacheEntryIfPresent() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

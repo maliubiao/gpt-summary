@@ -151,15 +151,17 @@ const domQuad = DOMQuad.create({x: 10, y: 20}, {x: 110, y: 15}, {x: 120, y: 110}
 
 总而言之，`dom_quad.cc` 定义的 `DOMQuad` 类在 Chromium Blink 渲染引擎中扮演着关键角色，用于精确表示和处理非矩形元素的几何信息，并且与 JavaScript 和 CSS 的功能紧密相关，使得开发者能够处理更复杂的视觉效果和布局。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/geometry/dom_quad.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -289,7 +291,4 @@ ScriptValue DOMQuad::toJSONForBinding(ScriptState* script_state) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

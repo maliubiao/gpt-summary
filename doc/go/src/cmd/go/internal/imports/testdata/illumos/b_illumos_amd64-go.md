@@ -136,21 +136,18 @@ func connectToDatabase() interface{} {
 
 `go/src/cmd/go/internal/imports/testdata/illumos/b_illumos_amd64.go` 这个文件是 Go 工具链测试数据的一部分，用于测试在特定操作系统和架构下，通过 blank import 触发包的 `init` 函数的机制。它利用了 Go 语言的条件编译和 `init` 函数的特性。使用者需要理解 blank import 的作用，避免因其副作用而产生非预期的行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/imports/testdata/illumos/b_illumos_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 package illumos
 
 import _ "b"
-
-"""
-
-
-
 ```

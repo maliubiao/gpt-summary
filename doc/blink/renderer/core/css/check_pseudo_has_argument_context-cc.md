@@ -158,15 +158,17 @@ div:has(> div > div > div > p.important) {
 
 `check_pseudo_has_argument_context.cc` 是 Blink 引擎中一个关键的文件，它负责分析 CSS `:has()` 伪类选择器的参数，并为后续的 DOM 遍历和选择器匹配提供必要的上下文信息。理解这个文件的功能有助于开发者理解 `:has()` 的工作原理，并能更好地调试与 `:has()` 相关的样式问题和性能瓶颈。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/check_pseudo_has_argument_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -687,7 +689,4 @@ void CheckPseudoHasArgumentTraversalIterator::operator++() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

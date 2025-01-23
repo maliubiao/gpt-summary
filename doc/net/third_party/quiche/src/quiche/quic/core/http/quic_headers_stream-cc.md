@@ -177,15 +177,17 @@ CompressedHeaderInfo(headers_stream_offset=100, full_length=200, ack_listener=..
 
 总而言之，`QuicHeadersStream` 是 QUIC 协议中负责可靠传输 HTTP 头部信息的关键组件，它与 `QuicSpdySession` 协同工作，确保浏览器能够正确地发送和接收 HTTP 请求和响应的头部信息。 虽然 JavaScript 不直接操作它，但其功能是支撑基于 QUIC 的网络通信的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_headers_stream.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -352,7 +354,4 @@ void QuicHeadersStream::OnStreamReset(const QuicRstStreamFrame& /*frame*/) {
 }
 
 }  // namespace quic
-
-"""
-
 ```

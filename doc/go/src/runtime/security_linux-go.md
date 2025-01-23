@@ -142,7 +142,7 @@ Go 运行时可能通过检查 `sysauxv` 中与这些安全机制相关的标志
 
 这段 `go/src/runtime/security_linux.go` 代码是 Go 运行时环境在 Linux 平台上用于检测和报告安全模式状态的基础设施。它通过读取 Linux 内核提供的 `sysauxv` 信息来确定安全模式，并提供了一个供运行时内部使用的查询接口。用户代码可以通过 `runtime.isSecureMode()` 来了解当前的安全模式状态，但无法直接控制安全模式的开启或关闭。安全模式的具体含义和影响取决于 Go 运行时的实现以及所集成的底层 Linux 安全机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/security_linux.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -150,8 +150,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -167,9 +169,4 @@ func initSecureMode() {
 func isSecureMode() bool {
 	return secureMode
 }
-
-"""
-
-
-
 ```

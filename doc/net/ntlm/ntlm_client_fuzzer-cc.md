@@ -129,15 +129,17 @@ Let's break down the thought process for analyzing the provided C++ fuzzer code.
 
 总而言之，`net/ntlm/ntlm_client_fuzzer.cc` 是 Chromium 网络栈中一个至关重要的安全工具，它通过自动化地测试 NTLM 客户端的各种输入场景，提高了浏览器处理 Windows 身份验证的稳定性和安全性。虽然用户不会直接与此代码交互，但它的存在确保了当用户访问需要 NTLM 认证的网站时，浏览器能够安全可靠地完成身份验证过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ntlm/ntlm_client_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
       net::ntlm::test::kClientChallenge, base::make_span(challenge_msg_bytes));
   return 0;
 }
-
-"""
-
 ```

@@ -105,15 +105,17 @@ Fuzzer 的核心输出并不是特定的解析结果，而是 **是否发生了�
 
 `net/cookies/cookie_util_parsing_fuzzer.cc` 是一个用于测试 Chromium 网络栈中 Cookie 解析功能的工具。它通过生成随机的 Cookie 字符串并进行解析，来发现潜在的 bug 和安全漏洞，从而提高代码的健壮性和可靠性。 虽然它不直接涉及用户操作，但其测试的解析逻辑是浏览器处理 Cookie 的核心部分，对 Web 应用的功能和安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_util_parsing_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -145,7 +147,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
   return 0;
 }
-
-"""
-
 ```

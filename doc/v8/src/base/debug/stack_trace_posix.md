@@ -108,11 +108,13 @@ try {
 
 `v8/src/base/debug/stack_trace_posix.cc` 为 V8 引擎在 POSIX 系统上提供了获取和处理 C++ 调用栈的关键能力。这个能力对于 JavaScript 的错误报告、调试工具（如 Chrome DevTools）以及性能分析都至关重要。尽管开发者通常在 JavaScript 层面与堆栈信息交互，但底层的 C++ 代码（如这个文件）是实现这些功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/debug/stack_trace_posix.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -577,7 +579,4 @@ char* itoa_r(intptr_t i, char* buf, size_t sz, int base, size_t padding) {
 }  // namespace debug
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

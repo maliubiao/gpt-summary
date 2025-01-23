@@ -238,15 +238,17 @@ if exec:mytool {
 
 总而言之，`scripttest` 包是为了简化 Go 语言中涉及脚本的集成测试的编写和管理，它提供了一组默认的命令和条件，以及一个方便的 `Run` 函数来执行脚本并报告测试结果。 理解其工作原理和 `CachedExec` 的特性对于避免潜在的错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/script/scripttest/scripttest.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -390,9 +392,4 @@ func CachedExec() script.Cond {
 			return err == nil, nil
 		})
 }
-
-"""
-
-
-
 ```

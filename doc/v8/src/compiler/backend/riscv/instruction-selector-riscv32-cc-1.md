@@ -146,7 +146,7 @@ lw    a0, 0(t0)     // 从 t0 指向的地址加载一个字到寄存器 a0 (假
 
 总而言之，`v8/src/compiler/backend/riscv/instruction-selector-riscv32.cc` 的第二部分代码实现了将 V8 内部的特定操作（如函数调用参数准备、非对齐内存访问、比较、原子操作和带溢出检查的运算）转换为相应的 RISC-V 32 位机器指令的关键逻辑。它是 V8 引擎将 JavaScript 代码高效编译为目标架构机器码的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-selector-riscv32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/riscv/instruction-selector-riscv32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ode, InstructionCode opcode) {
   RiscvOperandGeneratorT<Adapter> g(this);
   Emit(opcode, g.DefineAsFixed(node, fa0),
@@ -963,8 +965,4 @@ void InstructionSelectorT<Adapter>::VisitWord32AtomicBinaryOperation(
     } else if (atomic_op.memory_rep == MemoryRepresentation::Uint16()) {
       opcode = uint16_op;
     } else if (atomic_op.memory_rep == MemoryRepresentation::Int32() ||
-               
-"""
-
-
 ```

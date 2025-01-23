@@ -123,7 +123,7 @@ GOARCH=ppc64le go build myprogram.go
 
 `goarch_ppc64le.go` 文件定义了 Go 语言在 `ppc64le` 架构上运行所需的关键底层参数，包括内存页大小、程序计数器步进单位、最小栈帧大小和栈对齐要求。这些常量由 Go 编译器和运行时使用，确保 Go 程序在该架构上能够正确有效地执行。普通 Go 开发者不应该直接修改这些文件，而是依赖 Go 工具链根据目标架构自动选择合适的配置。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/goarch/goarch_ppc64le.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -131,8 +131,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -146,9 +148,4 @@ const (
 	_MinFrameSize        = 32
 	_StackAlign          = 16
 )
-
-"""
-
-
-
 ```

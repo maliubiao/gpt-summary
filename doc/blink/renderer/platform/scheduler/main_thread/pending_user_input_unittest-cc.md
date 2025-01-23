@@ -112,14 +112,16 @@ By following this structured thought process, one can effectively analyze a C++ 
 
 总而言之，`pending_user_input_unittest.cc` 通过一系列的测试用例，确保了 `PendingUserInput` 能够正确地管理和跟踪用户输入事件，这对于构建流畅和响应迅速的 Web 应用至关重要。它间接地保障了 JavaScript 事件处理的正确性，HTML 元素交互的响应，以及 CSS 状态更新的及时性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/pending_user_input_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ TEST_F(PendingUserInputMonitorTest, EventDetection) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

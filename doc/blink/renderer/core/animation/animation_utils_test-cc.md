@@ -119,14 +119,16 @@ Let's break down the thought process for analyzing this C++ test file.
 
 总而言之，`animation_utils_test.cc` 文件通过一系列细致的测试用例，确保了 Blink 引擎在处理动画相关任务时的正确性和可靠性，这直接关系到 Web 开发者使用 CSS 动画和 Web Animations API 的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/animation_utils_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,7 +297,4 @@ TEST_F(AnimationUtilsTest, ForEachInterpolatedPropertyValueWithContainerQuery) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -179,15 +179,17 @@ example(); // 这将抛出一个 ReferenceError
 
 总而言之，`v8/src/objects/bytecode-array.tq` 文件定义了 V8 引擎中表示 JavaScript 函数字节码的关键数据结构，它对于理解 V8 如何执行 JavaScript 代码至关重要。虽然开发者通常不会直接操作这些底层结构，但理解它们有助于理解 JavaScript 代码的执行原理和一些常见错误的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/bytecode-array.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/bytecode-array.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ extern class BytecodeWrapper extends Struct {
 
 extern class Code extends ExposedTrustedObject;
 extern class CodeWrapper extends Struct;
-
-"""
-
 ```

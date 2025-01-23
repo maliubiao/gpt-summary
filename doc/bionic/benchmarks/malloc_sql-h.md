@@ -120,7 +120,7 @@ By following these steps, we arrive at a clear and accurate summary of the file'
 
 请记住，这只是对代码片段的初步分析。要获得更深入的理解，需要查看完整的代码和相关的测试工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/malloc_sql.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
 这是第1部分，共374部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -1552,7 +1554,4 @@ static MallocEntry g_sql_entries[] = {
   {FREE, 185, 0, 0},
   {FREE, 187, 0, 0},
   {MALLOC
-"""
-
-
 ```

@@ -179,15 +179,17 @@ Finally, organize the information logically, addressing each part of the prompt.
 
 总而言之，`quic_types.cc` 文件虽然不直接与用户的 JavaScript 代码交互，但它是 QUIC 协议实现的基础，定义了关键的数据类型和辅助功能，为 QUIC 连接的建立、数据传输和错误处理提供了基础，并为调试和日志记录提供了便利。当用户遇到网络问题，特别是与使用了 QUIC 协议的网站交互时，这个文件中的定义会直接影响到问题的根本原因和调试过程中的信息呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_types.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -683,7 +685,4 @@ bool operator==(const QuicSSLConfig& lhs, const QuicSSLConfig& rhs) {
 #undef RETURN_STRING_LITERAL  // undef for jumbo builds
 
 }  // namespace quic
-
-"""
-
 ```

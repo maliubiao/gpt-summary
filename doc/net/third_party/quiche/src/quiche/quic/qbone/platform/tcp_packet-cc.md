@@ -180,15 +180,17 @@ TCP Header:
 
 通过分析网络请求的生命周期，以及可能导致连接重置的各种原因，可以定位到 `CreateTcpResetPacket` 可能被调用的场景，从而为调试网络连接问题提供线索。例如，使用 Wireshark 等网络抓包工具可以捕获实际的网络数据包，验证是否真的收到了 RST 数据包，以及 RST 数据包的内容是否与 `CreateTcpResetPacket` 的逻辑一致。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/qbone/platform/tcp_packet.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -318,7 +320,4 @@ void CreateTcpResetPacket(
 }
 
 }  // namespace quic
-
-"""
-
 ```

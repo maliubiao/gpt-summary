@@ -175,11 +175,13 @@ garbageCollect(tracker);
 
 `marking-progress-tracker-unittest.cc` 文件测试了 V8 引擎内部用于管理垃圾回收标记进度的 `MarkingProgressTracker` 类。这个类帮助 V8 将标记任务分解成更小的单元，以便更有效地执行垃圾回收。虽然 JavaScript 开发者无法直接操作这个类，但它对 JavaScript 的性能和内存管理至关重要。 上面的 JavaScript 例子旨在用更易理解的方式展示 `MarkingProgressTracker` 背后的核心思想。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/marking-progress-tracker-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -267,7 +269,4 @@ TEST(MarkingProgressTrackerDeathTest, GetNextChunkToMarkIncrementOOBs) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

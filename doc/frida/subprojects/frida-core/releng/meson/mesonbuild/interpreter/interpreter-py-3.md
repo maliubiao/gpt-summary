@@ -146,7 +146,7 @@ By following this detailed analysis, I can address all aspects of the user's req
 
 总而言之，这个 `interpreter.py` 文件的这一部分是 Meson 构建系统的核心组成部分，它定义了用于描述软件构建过程的关键函数，并为 Frida 这样的复杂工具的构建提供了基础。理解这些函数的功能对于理解 Frida 的构建方式以及进行相关的调试和定制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/interpreter/interpreter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 =True),
         MULTI_OUTPUT_KW,
         # Cannot use the COMMAND_KW because command is allowed to be empty
@@ -836,7 +838,4 @@ Prompt:
             'input',
             ContainerTypeInfo(list, (mesonlib.File, str)),
             listif
-"""
-
-
 ```

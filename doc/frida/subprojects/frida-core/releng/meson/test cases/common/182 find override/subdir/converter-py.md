@@ -199,7 +199,7 @@ During the process, I might have initially focused too much on the technical det
 
 总而言之，`converter.py` 虽小，但在 Frida 的测试环境中扮演着一个重要的角色，它简化了生成用于动态 instrumentation 的简单 C 代码的过程，是理解 Frida 测试框架和动态代码替换技术的一个入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/182 find override/subdir/converter.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -224,7 +226,4 @@ ftempl = '''int %s(void) {
 d = pathlib.Path(ifilename).read_text().split('\n')[0].strip()
 
 pathlib.Path(ofilename).write_text(ftempl % d)
-
-"""
-
 ```

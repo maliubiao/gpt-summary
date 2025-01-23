@@ -137,14 +137,16 @@ PaintChunk chunk2(0, 1, client2, id2, properties);
 
 总而言之，`paint_chunk_test.cc` 是 Blink 渲染引擎中一个关键的测试文件，它确保了 `PaintChunk` 类的匹配逻辑正确无误，这对于保证渲染性能和正确性至关重要。 开发者通过编写和维护这些测试用例，可以有效地预防和发现引擎内部的潜在错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_chunk_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ TEST(PaintChunkTest, IdNotMatchesJustCreated) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

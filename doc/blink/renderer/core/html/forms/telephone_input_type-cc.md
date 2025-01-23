@@ -118,14 +118,16 @@ This methodical approach helps ensure all aspects of the request are addressed a
 
 总而言之， `telephone_input_type.cc` 文件是 Blink 渲染引擎中处理 HTML `<input type="tel">` 元素的幕后功臣，它负责记录该元素的使用情况，并为浏览器正确渲染和处理电话号码输入框奠定基础。 虽然它本身是用 C++ 编写的，但其功能直接影响着 HTML 结构的解析和 JavaScript 与 DOM 的交互，最终影响着用户在网页上填写电话号码的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/telephone_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -169,7 +171,4 @@ void TelephoneInputType::CountUsage() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

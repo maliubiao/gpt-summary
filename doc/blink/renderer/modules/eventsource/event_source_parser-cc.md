@@ -201,15 +201,17 @@ Let's break down the thought process for analyzing this C++ code.
 
 总而言之，`EventSourceParser` 是浏览器处理服务器推送事件的关键桥梁，它将底层的字节流转换成 JavaScript 可以理解和操作的结构化数据。理解其工作原理对于调试 SSE 相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/eventsource/event_source_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -341,7 +343,4 @@ void EventSourceParser::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

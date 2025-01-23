@@ -127,15 +127,17 @@ This systematic approach, combining code analysis, understanding testing framewo
 
 作为调试线索，当开发者发现滚动条的渲染出现问题（例如按钮大小不正确、重绘不及时、外观与预期不符）时，他们可能会查看类似 `scrollbar_theme_aura_test.cc` 这样的测试文件，来了解预期的行为是什么，以及哪些因素可能会影响滚动条的渲染。通过运行这些测试，开发者可以验证他们的代码修改是否引入了新的问题，或者帮助他们理解现有的问题是如何产生的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scroll/scrollbar_theme_aura_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -566,7 +568,4 @@ INSTANTIATE_TEST_SUITE_P(All,
                          ::testing::Values(1.f, 1.25f, 1.5f, 1.75f, 2.f));
 
 }  // namespace blink
-
-"""
-
 ```

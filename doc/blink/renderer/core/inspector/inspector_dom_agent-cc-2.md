@@ -61,15 +61,17 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 这部分 `InspectorDOMAgent` 的代码主要负责将 Blink 引擎内部的 DOM 结构转换为开发者工具前端可以理解和展示的格式。它通过遍历 DOM 树，提取节点信息、属性、子节点、Shadow DOM 内容等，并将这些信息构建成符合 Chrome DevTools Protocol 规范的对象，从而使得开发者可以通过浏览器内置的开发者工具来检查和调试网页的 DOM 结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_dom_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s();
 }
 
@@ -1040,7 +1042,4 @@ protocol::Response InspectorDOMAgent::scrollIntoViewIfNeeded(
     rect_to_scroll.SetX(rect_to_scroll.X() + LayoutUnit(rect->getX()));
     rect_to_scroll.SetY(rect_to_scroll.Y() + LayoutUnit(rect->getY()));
     rec
-"""
-
-
 ```

@@ -155,14 +155,16 @@ By following these steps, I can systematically analyze the code, understand its 
 
 总而言之，`smoothness_helper.cc` 是 Chromium 中一个关键的组件，它负责监控媒体播放的流畅度，并通过机器学习来学习和预测相关的模式。它与前端技术通过影响用户体验和提供可用于前端逻辑判断的底层信息而间接关联。理解其工作原理对于开发高质量的 Web 媒体应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/smoothness_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -404,7 +406,4 @@ base::TimeDelta SmoothnessHelper::SegmentSizeForTesting() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

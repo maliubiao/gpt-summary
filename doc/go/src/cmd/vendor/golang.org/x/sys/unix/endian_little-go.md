@@ -168,15 +168,17 @@ System is indeed big-endian (based on direct memory inspection).
 
 总而言之，`endian_little.go` 的核心作用是为小端架构的系统明确地声明字节序，这是 Go 语言进行跨平台开发时处理底层数据表示的关键机制之一。开发者应该理解字节序的概念，并使用 Go 提供的标准库来安全地处理二进制数据。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/endian_little.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -186,9 +188,4 @@ Prompt:
 package unix
 
 const isBigEndian = false
-
-"""
-
-
-
 ```

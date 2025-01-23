@@ -155,15 +155,17 @@ another_foo.AppendSerialized(&initial_data);
 
 总而言之，`v8/third_party/inspector_protocol/crdtp/serializable_test.cc` 的主要功能是测试 `Serializable` 接口及其实现，以确保数据可以正确地序列化为字节流，这对于 V8 内部组件之间以及 V8 与外部工具（如开发者工具）的数据交换至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/serializable_test.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/serializable_test.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ TEST(SerializableTest, YieldsContents) {
   EXPECT_THAT(foo.Serialize(), testing::ElementsAre(1, 2, 3));
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

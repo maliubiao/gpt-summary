@@ -98,7 +98,7 @@ The user wants to understand the functionality of the Python script `allplatform
 
 总而言之，`allplatformstests.py` 是 Frida 项目中至关重要的一个测试文件，它确保了 Frida 的构建系统在各种情况下都能可靠地工作，这对于 Frida 自身的开发和用户的使用都是非常重要的。虽然它不是直接的逆向工具，但它保证了 Frida 能够被正确地构建出来，为后续的逆向分析工作奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 | .*WARNING: Project targets '!=0.40'.*'0.44.0': disabler")
         # Subproject has a new-enough meson_version, no warning
         self.assertNotRegex(out, "WARNING: Project targets.*Python")
@@ -849,8 +851,5 @@ Prompt:
             i['filename'] = [os.path.relpath(x, self.builddir) for x in i['filename']]
             for k in ('install_filename', 'dependencies', 'win_subsystem'):
                 if k in i:
-                    del 
-"""
-
-
+                    del
 ```

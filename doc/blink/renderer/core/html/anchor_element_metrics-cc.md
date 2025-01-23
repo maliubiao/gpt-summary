@@ -177,14 +177,16 @@ By following this thought process, I can generate a comprehensive and accurate a
 
 总之，`anchor_element_metrics.cc` 是 Blink 引擎中一个重要的组成部分，它通过收集关于锚元素的各种信息，为浏览器优化和用户行为分析提供了基础数据。它与 HTML、CSS 紧密相关，并且其收集的指标可以被 JavaScript 或后端系统用于实现更高级的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/anchor_element_metrics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -469,7 +471,4 @@ mojom::blink::AnchorElementMetricsPtr CreateAnchorElementMetrics(
 }
 
 }  // namespace blink
-
-"""
-
 ```

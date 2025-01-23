@@ -115,14 +115,16 @@ By following these steps, breaking down the code, and connecting it to the broad
 
 总而言之，`service_worker_status_code.cc` 文件虽然是一个底层的 C++ 实现，但它提供的错误码信息对于理解 Service Worker 的工作原理，调试 Service Worker 相关问题，以及最终构建可靠的 Web 应用至关重要。开发者可以通过查看浏览器提供的错误信息（这些信息通常基于这些状态码生成）来诊断 Service Worker 的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/service_worker/service_worker_status_code.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ const char* ServiceWorkerStatusToString(ServiceWorkerStatusCode status) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

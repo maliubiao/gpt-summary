@@ -159,15 +159,17 @@ By following these steps, iterating through the code, and considering the broade
 
 总而言之，`css_global_rule_set.cc` 是 Blink 渲染引擎中一个关键的组件，它负责维护和更新应用于整个文档的全局 CSS 规则，并且与 HTML 的 `<speculation-rules>` 元素和 JavaScript 的 `CSSSelectorWatch` API 有着密切的联系。理解它的功能有助于深入了解 Blink 的样式系统和一些高级特性（如预渲染）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_global_rule_set.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ void CSSGlobalRuleSet::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -149,7 +149,7 @@ Frida 可以用来验证这个假设。通过 Hook `func12` 并记录其返回�
 
 总而言之，虽然 `func12.c` 本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在静态链接场景下的 Hook 能力。理解这个文件的功能，结合 Frida 的使用，可以帮助逆向工程师更有效地分析和调试复杂的二进制程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/66 static link/lib/func12.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func10();
 int func11();
 
@@ -166,7 +168,4 @@ int func12()
 {
   return func10() + func11();
 }
-
-"""
-
 ```

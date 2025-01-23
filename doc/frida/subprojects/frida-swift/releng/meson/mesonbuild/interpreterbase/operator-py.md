@@ -148,7 +148,7 @@ endif
 
 总而言之，`frida/subprojects/frida-swift/releng/meson/mesonbuild/interpreterbase/operator.py` 文件是 Frida 构建系统内部的一个关键组成部分，定义了 Meson 构建脚本中可以使用的操作符，虽然它不直接参与运行时插桩，但对于 Frida 的构建过程至关重要。理解这个文件有助于理解 Frida 的构建流程和排查构建相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/interpreterbase/operator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,8 +156,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 
 from enum import Enum
@@ -190,7 +192,4 @@ class MesonOperator(Enum):
     IN = 'in'
     NOT_IN = 'not in'
     INDEX = '[]'
-
-"""
-
 ```

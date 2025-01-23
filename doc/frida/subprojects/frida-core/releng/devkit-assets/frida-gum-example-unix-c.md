@@ -213,7 +213,7 @@ By following these steps, we can systematically analyze the Frida example code a
 
 总而言之，这个示例代码提供了一个学习 Frida Gum 的良好起点，演示了如何进行基本的函数 Hook 和参数获取。通过分析这个示例，用户可以深入理解 Frida 的工作原理，并将其应用于更复杂的逆向工程和安全分析任务中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/devkit-assets/frida-gum-example-unix.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -221,8 +221,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-gum.h"
 
 #include <fcntl.h>
@@ -345,7 +347,4 @@ static void
 example_listener_init (ExampleListener * self)
 {
 }
-
-"""
-
 ```

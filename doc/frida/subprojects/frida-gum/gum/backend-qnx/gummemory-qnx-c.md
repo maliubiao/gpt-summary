@@ -218,7 +218,7 @@ By following this structured approach, we can systematically analyze the C code 
 
 因此，用户的这些高层操作最终会转化为对 `gummemory-qnx.c` 中函数的调用，以实现内存的读取、写入和保护属性修改。在调试 Frida 脚本时，如果遇到内存相关的错误，例如无法写入内存，就可以检查 `gummemory-qnx.c` 中的逻辑，查看是否是因为目标内存不可写或者其他原因导致操作失败。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/backend-qnx/gummemory-qnx.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -226,8 +226,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015-2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -528,7 +530,4 @@ _gum_page_protection_from_posix (const gint flags)
 
   return prot;
 }
-
-"""
-
 ```

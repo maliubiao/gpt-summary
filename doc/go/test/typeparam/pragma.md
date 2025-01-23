@@ -147,15 +147,17 @@ This systematic approach, focusing on the key elements of the code (especially t
 
 这段代码是一个针对 Go 语言编译器行为的测试用例，它验证了 `//go:noinline` 编译器指令在泛型函数中的正确传递和生效，确保了被标记为不可内联的泛型函数，其实例化版本也不会被内联。 这对于需要精确控制性能或调试特定场景的开发者来说非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/pragma.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -175,9 +177,4 @@ func f[T any](x T) T {
 func main() { // ERROR "can inline main"
 	println(f(5))
 }
-
-"""
-
-
-
 ```

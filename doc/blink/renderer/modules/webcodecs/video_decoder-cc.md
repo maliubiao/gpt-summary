@@ -160,15 +160,17 @@ By following these steps, combining code analysis with an understanding of the W
 
 总而言之，`blink/renderer/modules/webcodecs/video_decoder.cc` 文件是 WebCodecs `VideoDecoder` API 在 Chromium Blink 引擎中的核心实现，负责处理视频解码的配置、数据输入、解码执行和结果输出，并与 JavaScript 和底层的媒体管道进行交互。 理解这个文件有助于深入了解 WebCodecs API 的工作原理和排查相关的解码问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/video_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -871,7 +873,4 @@ const AtomicString& VideoDecoder::InterfaceName() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

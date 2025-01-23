@@ -154,7 +154,7 @@ function add(a, b) {
 
 这部分代码主要定义了 `BytecodeGraphBuilder::Environment` 类，该类负责维护将字节码转换为图的过程中所需的各种状态信息，并提供了合并、复制、以及为循环和 OSR 做准备等操作。同时，展示了 `BytecodeGraphBuilder` 类中与环境管理和基本图节点创建相关的一些辅助方法。  其核心功能是为后续的图优化和代码生成奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/bytecode-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/bytecode-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -162,8 +162,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ulator_base_ - values_index));
   }
   for (int i = 0; i < node->op()->ValueOutputCount(); i++) {
@@ -983,7 +985,4 @@ void BytecodeGraphBuilder::VisitLdaGlobal() {
   uint32_t feedback_slot_index = bytecode_iterator().GetIndexOperand(1);
   Node* node =
       BuildLo
-"""
-
-
 ```

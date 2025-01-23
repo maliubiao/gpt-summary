@@ -288,7 +288,7 @@ function inet_ntoa(ip) {
 
 这个 Frida 脚本会 Hook `socket` 和 `connect` 系统调用。当检测到创建或连接到 `AF_PPPOX` 地址族的套接字时，它会打印出相关的参数，包括 `sockaddr_pppox` 结构体中的内容，帮助开发者理解 Android 系统如何使用这些底层的 PPPoX 结构体。你可以根据需要 Hook 其他相关的系统调用 (例如 `bind`, `sendto`, `recvfrom`, `ioctl`) 来进一步调试 PPPoX 的使用过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_pppox.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -299,8 +299,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -402,7 +404,4 @@ struct pppoe_hdr {
 } __attribute__((__packed__));
 #define PPPOE_SES_HLEN 8
 #endif
-
-"""
-
 ```

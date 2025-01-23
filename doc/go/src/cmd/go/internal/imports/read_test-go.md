@@ -254,15 +254,17 @@ func main() {
 
 总而言之，`read_test.go` 文件通过各种测试用例验证了 `imports` 包中的 `ReadImports` 和 `ReadComments` 函数的正确性，这些函数是 `go` 命令在解析 Go 源代码时用于提取 `package` 和 `import` 声明以及文件头部注释的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/imports/read_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -517,9 +519,4 @@ func TestReadFailuresIgnored(t *testing.T) {
 	}
 	testRead(t, tests, func(r io.Reader) ([]byte, error) { return ReadImports(r, false, nil) })
 }
-
-"""
-
-
-
 ```

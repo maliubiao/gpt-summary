@@ -216,15 +216,17 @@ message.set_tag(0xFEEDC0DE);
 
 总而言之，`crypto_framer_test.cc` 文件通过一系列单元测试，确保了 `CryptoFramer` 类能够正确地处理 QUIC 握手消息的序列化和反序列化，这对于保障 QUIC 连接的正常建立和安全性至关重要。 虽然 JavaScript 不直接调用这些 C++ 代码，但这些底层机制支撑着基于 Web 的应用程序的安全通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/crypto_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -667,7 +669,4 @@ TEST(CryptoFramerTest, ProcessInputZeroLength) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

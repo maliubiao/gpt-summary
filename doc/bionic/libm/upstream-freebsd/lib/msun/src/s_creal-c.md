@@ -249,7 +249,7 @@ int main() {
 
 总而言之，`s_creal.c` 中定义的 `creal` 函数虽然简单，却是 Android 系统中进行复数运算的基础组成部分，为 NDK 开发和 Framework 层的某些底层操作提供了必要的支持。它的实现依赖于 C 语言的复数类型和隐式类型转换机制，并通过 Dynamic Linker 在运行时被加载和绑定到调用它的程序中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_creal.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -259,8 +259,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -296,7 +298,4 @@ creal(double complex z)
 {
 	return z;
 }
-
-"""
-
 ```

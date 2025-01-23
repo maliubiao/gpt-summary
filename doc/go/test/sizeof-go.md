@@ -175,15 +175,17 @@ Offset of Example.C: 16 bytes
 
 这段 `sizeof.go` 的代码是一个很好的例子，用来测试和验证 Go 语言 `unsafe` 包中关于内存布局的关键功能。理解这些功能对于进行一些底层的编程，例如与 C 代码互操作、实现自定义的数据结构等非常重要。但同时也要注意 `unsafe` 包的风险，谨慎使用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/sizeof.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2011 The Go Authors. All rights reserved.
@@ -342,9 +344,4 @@ func testNotEmbedded() {
 		panic("unsafe.Offsetof(p.P.C) != 8")
 	}
 }
-
-"""
-
-
-
 ```

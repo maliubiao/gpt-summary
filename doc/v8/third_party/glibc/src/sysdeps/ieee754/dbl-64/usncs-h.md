@@ -154,15 +154,17 @@ The constants in `usncs.h` likely correspond to more sophisticated and accurate 
 
 In summary, `v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/usncs.h` is a crucial header file providing the foundational numerical constants for implementing accurate and efficient sine and cosine functions for double-precision floating-point numbers within the V8 JavaScript engine. It demonstrates the low-level mathematical underpinnings of common JavaScript functions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/usncs.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/glibc/src/sysdeps/ieee754/dbl-64/usncs.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 /*
  * IBM Accurate Mathematical Library
  * Copyright (C) 2001-2022 Free Software Foundation, Inc.
@@ -210,7 +212,4 @@ static const double hpinv = 0x1.45F306DC9C883p-1; /*  0.63661977236758138     */
 static const double toint = 0x1.8000000000000p52; /*  6755399441055744        */
 
 #endif
-
-"""
-
 ```

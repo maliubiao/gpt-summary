@@ -155,15 +155,17 @@ Essentially, my process involved understanding the code's purpose, dissecting it
 
 总而言之，`convolver_node_test.cc` 是 Blink 引擎中用于确保 Web Audio API 中 `ConvolverNode` 功能正确性和稳定性的一个重要组成部分。它模拟了 JavaScript 中对 `ConvolverNode` 的操作，并验证了底层 C++ 实现的逻辑，特别是关于资源管理和线程安全方面。理解这些测试用例有助于开发者更好地理解 Web Audio API 的工作原理，并排查与之相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/convolver_node_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ TEST(ConvolverNodeTest, ReverbLifetime) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

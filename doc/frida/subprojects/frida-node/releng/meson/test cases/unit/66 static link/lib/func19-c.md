@@ -155,7 +155,7 @@ Initially, I might focus heavily on the direct relationship with the kernel. How
 
 总而言之，`func19.c` 虽然代码简单，但它体现了程序设计的基本原则，并且在逆向工程、底层系统理解以及软件开发和调试过程中都有其重要的意义。 结合文件路径，我们可以推断出这是 Frida 项目中用于测试静态链接场景的一个简单的 C 函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/66 static link/lib/func19.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func17();
 int func18();
 
@@ -172,7 +174,4 @@ int func19()
 {
   return func17() + func18();
 }
-
-"""
-
 ```

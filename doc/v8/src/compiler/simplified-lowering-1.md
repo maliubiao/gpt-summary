@@ -426,13 +426,15 @@ accessArray(myArray, 5); // 抛出错误，边界检查会发现越界
 
 这部分 `simplified-lowering.cc` 的代码是 V8 引擎中至关重要的一部分，它负责将高级的 JavaScript 操作转换为底层的机器指令，并且通过类型反馈和静态分析进行优化，从而提高 JavaScript 代码的执行效率。它针对不同的数据类型和操作场景选择最合适的机器指令，是 V8 引擎性能优化的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
-    if (BothInputsAre(node, Type::Unsigned32OrMinusZeroOrNaN()) &&
+### 源代码
+```
+if (BothInputsAre(node, Type::Unsigned32OrMinusZeroOrNaN()) &&
         (truncation.IsUsedAsWord32() ||
          NodeProperties::GetType(node).Is(Type::Unsigned32()))) {
       // => unsigned Uint32Mod
@@ -1900,7 +1902,4 @@ Prompt:
             // observed), we can do a simple floating point comparison here.
             if (lhs_type.Is(Type::OrderedNumber()) &&
                 rhs_type.Is(truncation.Ide
-"""
-
-
 ```

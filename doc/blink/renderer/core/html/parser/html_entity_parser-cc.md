@@ -152,14 +152,16 @@ This systematic approach, starting from a high-level understanding and progressi
 
 总而言之，`html_entity_parser.cc` 在浏览器渲染引擎中扮演着至关重要的角色，它确保了 HTML 文档中的实体引用能够被正确地解释和显示，从而保证了网页内容的正确呈现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_entity_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All Rights Reserved.
  * Copyright (C) 2009 Torch Mobile, Inc. http://www.torchmobile.com/
@@ -450,7 +452,4 @@ std::optional<DecodedHTMLEntity> DecodeNamedEntity(std::string_view name) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

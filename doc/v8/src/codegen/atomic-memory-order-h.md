@@ -166,15 +166,17 @@ console.log(Atomics.load(view2, 0)); // 预期输出 1
 
 理解 `AtomicMemoryOrder` 这样的底层概念有助于开发者更深入地理解并发编程的挑战，即使在高级语言如 JavaScript 中，这些概念的影子仍然存在。V8 引擎通过这样的机制来保证在必要时提供正确的并发语义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/atomic-memory-order.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/atomic-memory-order.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ inline std::ostream& operator<<(std::ostream& os, AtomicMemoryOrder order) {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_ATOMIC_MEMORY_ORDER_H_
-
-"""
-
 ```

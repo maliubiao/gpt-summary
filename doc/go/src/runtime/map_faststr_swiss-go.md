@@ -203,7 +203,7 @@ func GetValueFast(m map[string]int, key string) unsafe.Pointer {
 
 `go/src/runtime/map_faststr_swiss.go` 是 Go 语言运行时环境中针对键为字符串的 map 和 Swiss Table 实现的关键优化部分。它提供了快速的查找、赋值和删除操作。虽然这些函数是内部实现细节，用户代码不应直接调用它们，但了解它们的存在有助于理解 Go map 的性能优化机制。启用 `goexperiment.swissmap` 构建标记可以激活这部分代码。直接使用 `//go:linkname` 访问这些内部函数是危险且不推荐的做法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/map_faststr_swiss.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -211,8 +211,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -257,9 +259,4 @@ func mapassign_faststr(t *abi.SwissMapType, m *maps.Map, s string) unsafe.Pointe
 
 //go:linkname mapdelete_faststr
 func mapdelete_faststr(t *abi.SwissMapType, m *maps.Map, ky string)
-
-"""
-
-
-
 ```

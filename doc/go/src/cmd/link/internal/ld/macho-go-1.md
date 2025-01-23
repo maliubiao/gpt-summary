@@ -136,7 +136,7 @@ go build main.go
 
 总而言之，这段 `macho.go` 代码片段在 Go 语言链接器中扮演着至关重要的角色，它负责将 Go 代码编译的中间产物转化为最终可以在 Apple 平台上运行的 Mach-O 格式二进制文件，并处理与动态链接和代码签名相关的复杂细节。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/macho.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -145,8 +145,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 .Write(ldr.Data(s1))
 		ctxt.Out.Write(ldr.Data(s2))
 		ctxt.Out.Write(ldr.Data(s3))
@@ -541,10 +543,4 @@ func machoCodeSign(ctxt *Link, fname string) error {
 	err = f.Truncate(sigOff + sz)
 	return err
 }
-
-"""
-
-
-
-
 ```

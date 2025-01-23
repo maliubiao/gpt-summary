@@ -73,11 +73,13 @@ console.log(preciseString); // 输出 "123.46"
 
 **总结来说，`fast-dtoa-unittest.cc` 文件测试了 V8 引擎中将 JavaScript 的 `Number` 类型转换为字符串的关键底层算法，确保了在各种情况下都能得到正确且高效的字符串表示。** 这对于 JavaScript 程序的正确性和性能都至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/fast-dtoa-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2006-2008 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -368,7 +370,4 @@ TEST_F(FastDtoaTest, FastDtoaGayPrecision) {
 }  // namespace test_fast_dtoa
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

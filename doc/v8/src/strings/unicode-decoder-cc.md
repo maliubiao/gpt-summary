@@ -190,15 +190,17 @@ console.log(emoji.codePointAt(0)); // 输出: 128512 (完整的 Unicode 代码�
 
 `v8/src/strings/unicode-decoder.cc` 的存在和正确实现对于 V8 引擎正确处理和表示 Javascript 字符串至关重要，因为它负责将外部的 UTF-8 数据转换为 Javascript 内部使用的 UTF-16 格式。理解其功能有助于我们更好地理解 Javascript 引擎的工作原理以及避免常见的字符串处理错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/unicode-decoder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/strings/unicode-decoder.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -400,7 +402,4 @@ DEFINE_UNICODE_DECODER(StrictUtf8Decoder);
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

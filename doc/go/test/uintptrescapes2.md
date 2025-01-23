@@ -186,15 +186,17 @@ go tool compile -o /dev/null -gcflags="-m -live" go/test/uintptrescapes2.go
 
 总之，这个代码片段是 Go 编译器开发和测试基础设施的一部分，用于验证编译器在处理 `uintptr` 时的逃逸分析和活跃性分析是否正确。普通 Go 开发者不需要直接使用 `//go:uintptrescapes`，但应该理解 `uintptr` 和 `unsafe.Pointer` 的使用场景和潜在风险。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/uintptrescapes2.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -l -m -live
 
 // Copyright 2016 The Go Authors. All rights reserved.
@@ -260,9 +262,4 @@ func TestM2() {
 	var v int                                  // ERROR "moved to heap"
 	t.M2(0, 1, uintptr(unsafe.Pointer(&v)), 2) // ERROR "live at call to newobject: .?autotmp" "live at call to T.M2: .?autotmp"  "escapes to heap" "stack object .autotmp_[0-9]+ unsafe.Pointer$"
 }
-
-"""
-
-
-
 ```

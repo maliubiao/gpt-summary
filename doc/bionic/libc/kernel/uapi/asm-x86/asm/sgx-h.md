@@ -274,7 +274,7 @@ Interceptor.attach(Module.getExportByName(null, "ioctl"), {
 
 通过 Frida Hook，你可以动态地观察应用程序与内核中 SGX 功能的交互过程，深入理解其工作原理，并排查问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/sgx.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -285,8 +285,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -359,7 +361,4 @@ struct sgx_enclave_run {
 };
 typedef int(* vdso_sgx_enter_enclave_t) (unsigned long rdi, unsigned long rsi, unsigned long rdx, unsigned int function, unsigned long r8, unsigned long r9, struct sgx_enclave_run * run);
 #endif
-
-"""
-
 ```

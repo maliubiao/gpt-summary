@@ -286,7 +286,7 @@ sys.stdin.read()
 
 这个分析涵盖了 `bionic/libc/include/sys/cachectl.handroid` 文件的功能、与 Android 的关系、实现原理、动态链接、使用示例、常见错误以及如何使用 Frida 进行调试。希望这些信息能帮助你理解这个底层系统级头文件的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/cachectl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -297,8 +297,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -358,7 +360,4 @@ int __riscv_flush_icache(void* _Nullable __start, void* _Nullable __end, unsigne
 #endif
 
 __END_DECLS
-
-"""
-
 ```

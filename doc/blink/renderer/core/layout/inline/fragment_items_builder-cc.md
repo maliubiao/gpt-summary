@@ -160,14 +160,16 @@ Let's break down the thought process for analyzing the `fragment_items_builder.c
 
 总而言之，`fragment_items_builder.cc` 是 Blink 渲染引擎中负责构建内联布局片段信息的关键组件，它将 HTML 结构和 CSS 样式转化为可用于渲染的中间表示。虽然前端开发者不会直接操作它，但了解其功能有助于更深入地理解浏览器的布局机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/fragment_items_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -636,7 +638,4 @@ std::optional<PhysicalSize> FragmentItemsBuilder::ToFragmentItems(
 }
 
 }  // namespace blink
-
-"""
-
 ```

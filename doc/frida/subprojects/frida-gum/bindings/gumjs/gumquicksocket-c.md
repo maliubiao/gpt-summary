@@ -242,7 +242,7 @@ This iterative process of scanning, identifying, connecting, inferring, and cons
 
 总而言之，`gumquicksocket.c` 是 Frida 中一个关键的模块，它桥接了 JavaScript 和底层的 Socket API，为逆向工程师提供了强大的网络交互能力，并涉及到操作系统底层、内核、框架等多个层面的知识。理解其功能和实现原理，对于有效地使用 Frida 进行动态分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquicksocket.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -250,8 +250,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -1268,7 +1270,4 @@ gum_quick_socket_address_new (JSContext * ctx,
 
   return obj;
 }
-
-"""
-
 ```

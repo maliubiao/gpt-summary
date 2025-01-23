@@ -172,7 +172,7 @@ func main() {
 
 总之，`go/src/runtime/defs_linux_s390x.go` 是 Go 语言在 Linux s390x 平台上运行的基础，它定义了与操作系统交互所需的常量和数据结构，支撑着 Go 语言的各种核心功能。普通 Go 开发者不需要直接操作这个文件，但理解其作用有助于更好地理解 Go 语言的底层运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_linux_s390x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -180,8 +180,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -374,9 +376,4 @@ type ucontext struct {
 	uc_mcontext sigcontext
 	uc_sigmask  uint64
 }
-
-"""
-
-
-
 ```

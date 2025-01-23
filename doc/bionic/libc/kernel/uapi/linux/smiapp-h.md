@@ -285,7 +285,7 @@ sys.stdin.read()
 
 通过使用 Frida，你可以动态地观察 Android Framework 或 NDK 代码如何调用 `ioctl` 并使用 `linux/smiapp.h` 中定义的常量，从而更好地理解系统的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/smiapp.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -296,8 +296,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -312,7 +314,4 @@ Prompt:
 #define V4L2_SMIAPP_TEST_PATTERN_MODE_COLOUR_BARS_GREY 3
 #define V4L2_SMIAPP_TEST_PATTERN_MODE_PN9 4
 #endif
-
-"""
-
 ```

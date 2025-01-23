@@ -185,7 +185,7 @@ By following these steps, we can move from a basic understanding of the C++ code
 
 总而言之，这个 `main.cpp` 文件是 Frida-Node 项目中的一个测试用例，用于验证特定构建配置下的某些功能。理解其功能和背后的原理有助于理解 Frida 的测试框架以及 Frida 如何与 native 代码交互。 逆向工程师可以借鉴这种测试用例的设计思路，来编写针对目标程序的测试和验证脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/cmake/19 advanced options/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 #include <cmTest.hpp>
@@ -213,7 +215,4 @@ int main(void) {
   }
   return 0;
 }
-
-"""
-
 ```

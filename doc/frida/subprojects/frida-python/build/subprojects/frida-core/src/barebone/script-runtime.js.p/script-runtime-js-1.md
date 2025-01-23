@@ -123,7 +123,7 @@ equals(a, b) = False
 4. **调试与错误处理**：如果用户遇到未实现的功能或类型错误，可以通过调试工具（如LLDB）进行调试，查看具体的错误信息并修正代码。
 
 通过以上步骤，用户可以逐步使用和调试这段代码，实现64位无符号整数的各种操作。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/build/subprojects/frida-core/src/barebone/script-runtime.js.p/script-runtime.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -133,10 +133,9 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```javascript
 Int(t);e<0n&&(e=r-(-e-1n)),this.$v=e}}add(t){return new BUInt64(this.$v+h(t))}sub(t){return new BUInt64(this.$v-h(t))}and(t){return new BUInt64(this.$v&h(t))}or(t){return new BUInt64(this.$v|h(t))}xor(t){return new BUInt64(this.$v^h(t))}shr(t){return new BUInt64(this.$v>>h(t))}shl(t){return new BUInt64(this.$v<<h(t))}not(){return new BUInt64(~this.$v)}compare(t){const r=this.$v,e=h(t);return r===e?0:r<e?-1:1}equals(t){return 0===this.compare(t)}toNumber(){return Number(this.$v)}toString(t){return this.$v.toString(t)}toJSON(){return this.$v.toString()}valueOf(){return Number(this.$v)}}function h(t){return"object"==typeof t?"$v"in t?t.$v:t.handle.$v:BigInt(t)}function u(){throw new Error("Not yet implemented by the barebone backend")}
-"""
-
-
 ```

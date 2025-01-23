@@ -130,11 +130,13 @@ clearTimeout(timeoutId); // 类似于取消一个延时任务
 
 `cancelable-tasks-unittest.cc` 文件测试了 V8 引擎中用于管理可取消任务的 C++ 组件。虽然具体实现语言不同，但其核心概念与 JavaScript 中处理可取消的异步操作非常相似。JavaScript 的 `AbortController` 和 `AbortSignal` 提供了一种机制来实现类似的功能，允许在异步操作完成之前取消它们。 该 C++ 文件中的测试用例帮助确保 V8 引擎能够正确地创建、执行和取消任务，这对于实现高性能和可控的 JavaScript 运行时至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/tasks/cancelable-tasks-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -402,7 +404,4 @@ TEST_F(CancelableTaskManagerTest, ThreadedMultipleTasksStartedTryAbortAll) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

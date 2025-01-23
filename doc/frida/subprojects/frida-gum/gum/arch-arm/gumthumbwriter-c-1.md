@@ -95,7 +95,7 @@ The user wants a functional summary of the provided C code snippet, which is par
 
 总而言之，`gumthumbwriter.c` 文件的核心功能是提供了一组底层的 C 函数，用于方便且正确地生成 ARM Thumb 指令序列，并将其写入到内存中。它是 Frida 实现动态代码插桩的关键组成部分，为高级 API 提供了底层的指令编码能力。通过这些函数，Frida 能够在运行时修改目标进程的代码，实现诸如 hook 函数、修改程序行为、跟踪执行流程等逆向分析和动态 instrumentation 的目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/arch-arm/gumthumbwriter.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 um_thumb_writer_put_it_al (self);
   }
 
@@ -678,8 +680,4 @@ gum_instruction_is_t1_load (guint16 instruction)
 {
   return (instruction & 0xf800) == 0x4800;
 }
-
-"""
-
-
 ```

@@ -181,15 +181,17 @@ HTML 定义了使用这些 CSS 样式的元素。当浏览器解析 HTML 和 CSS
 
 总而言之，`document_paint_definition.cc` 文件在 Blink 渲染引擎中扮演着关键的角色，它负责管理和维护 CSS Paint API 中定义的自定义绘制函数的元数据，确保浏览器能够正确地理解和执行这些自定义绘制逻辑。它连接了 JavaScript 中定义的绘制逻辑和 CSS 中的使用方式，使得开发者能够扩展浏览器的渲染能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/csspaint/document_paint_definition.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ bool DocumentPaintDefinition::RegisterAdditionalPaintDefinition(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -110,11 +110,13 @@ binding.trace('E', 'v8-cat', 'myEvent', 123, { detail: 'some info' });
 
 `test-trace-event.cc` 文件是 V8 引擎中 tracing 功能的关键测试文件，它通过模拟 tracing 环境和 JavaScript 调用来确保 tracing 机制的正确性和稳定性。它直接验证了 V8 暴露给 JavaScript 的 tracing API 的行为。 理解这个文件有助于理解 V8 引擎是如何实现 tracing 功能以及 JavaScript 代码如何与这些底层机制进行交互的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-trace-event.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -478,7 +480,4 @@ TEST_WITH_PLATFORM(BuiltinsTrace, MockTracingPlatform) {
     CHECK_EQ(1, platform.GetTraceObject(1)->num_args);
   }
 }
-
-"""
-
 ```

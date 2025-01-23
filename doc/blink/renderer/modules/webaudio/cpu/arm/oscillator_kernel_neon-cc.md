@@ -175,15 +175,17 @@ This iterative process of skimming, identifying, analyzing, connecting, and refi
 
 因此，当开发者需要调试与 Web Audio 振荡器相关的问题，例如性能问题（需要检查 NEON 优化是否有效）或波形生成错误（需要检查波表查找和插值逻辑）时，就有可能需要查看 `oscillator_kernel_neon.cc` 这个文件。他们可能会使用 Chromium 的开发者工具进行性能分析，或者在 C++ 代码中设置断点来检查变量的值和程序的执行流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/cpu/arm/oscillator_kernel_neon.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -441,7 +443,4 @@ double OscillatorHandler::ProcessARateVectorKernel(
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

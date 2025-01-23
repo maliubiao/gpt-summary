@@ -163,7 +163,7 @@ Initially, I might focus solely on the C code. However, the request emphasizes t
 
 `shstmain.c` 是一个用于测试 Frida 在处理特定动态链接情况下的能力的简单 C 程序。它通过调用一个外部定义的函数并检查其返回值来验证链接的正确性。理解这个测试用例的功能和上下文有助于理解 Frida 的工作原理以及动态链接在软件开发和逆向工程中的重要性。对于 Frida 的用户和开发者来说，了解这些测试用例可以帮助他们更好地使用和维护 Frida 工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/145 recursive linking/edge-cases/shstmain.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 #include "../lib.h"
@@ -189,7 +191,4 @@ int main(void) {
   }
   return 0;
 }
-
-"""
-
 ```

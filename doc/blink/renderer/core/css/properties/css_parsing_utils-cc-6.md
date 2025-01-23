@@ -192,7 +192,7 @@ This specific part of the `css_parsing_utils.cc` file focuses on parsing **font-
 
 总而言之，这部分代码是 Blink 引擎中负责理解和处理 CSS 字体和 Grid 布局语法的核心组成部分，它连接了 CSS 文本和浏览器内部的样式表示，使得浏览器能够正确地渲染网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/css_parsing_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lue = ConsumeFamilyName(stream);
     if (parsed_value) {
       list->Append(*parsed_value);
@@ -1161,8 +1163,4 @@ CSSValue* ConsumeGridTemplatesRowsOrColumns(CSSParserTokenStream& stream,
 bool ConsumeGridItemPositionShorthand(bool important,
                                       CSSParserTokenStream& stream,
                                       const CSSParserContext& context,
-           
-"""
-
-
 ```

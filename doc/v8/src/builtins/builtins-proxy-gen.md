@@ -145,11 +145,13 @@ revoke(); // 撤销 Proxy
 
 `builtins-proxy-gen.cc` 文件是 V8 引擎中实现 JavaScript `Proxy` 核心功能的关键部分。它负责 Proxy 对象的创建、撤销以及各种操作的拦截和处理，并确保这些操作符合 JavaScript 规范。通过 CodeStubAssembler，它生成高效的机器码来提升 Proxy 对象的性能。JavaScript 代码中的 `Proxy` API 的所有行为，都可以在这个 C++ 文件中找到对应的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-proxy-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -584,7 +586,4 @@ void ProxiesCodeStubAssembler::CheckDeleteTrapResult(TNode<Context> context,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -116,12 +116,14 @@ console.log(roundedTime.toString()); // 10:00:00
 
 总而言之，这部分 C++ 代码是 V8 引擎中实现 `Temporal` API 中 `PlainMonthDay`, `PlainYearMonth` 和 `PlainTime` 对象核心功能的关键组成部分。它处理了对象的创建、转换、比较、算术运算、修改以及与其他 `Temporal` 类型的交互，使得 JavaScript 开发者能够在代码中使用这些强大的日期和时间抽象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-temporal-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第10部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 angeError* exception.
     THROW_NEW_ERROR_RETURN_VALUE(isolate,
                                  NEW_TEMPORAL_INVALID_ARG_RANGE_ERROR(),
@@ -1574,7 +1576,4 @@ MaybeHandle<JSTemporalPlainTime> JSTemporalPlainTime::From(
     // item.[[ISOSecond]], item.[[ISOMillisecond]], item.[[ISOMicrosecond]],
     // item.[[ISONanosecond]]).
     auto item = Cas
-"""
-
-
 ```

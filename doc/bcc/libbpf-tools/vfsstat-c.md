@@ -95,7 +95,7 @@ TIME     :  READ/s WRITE/s FSYNC/s OPEN/s CREATE/s UNLINK/s MKDIR/s RMDIR/s
 - 使用`strace -e bpf`查看BPF系统调用是否成功。  
 - 通过`bpftool prog list`确认BPF程序已加载。  
 - 检查`dmesg`输出，确认是否有内核BPF验证失败日志。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/vfsstat.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // SPDX-License-Identifier: GPL-2.0
 // Copyright (c) 2020 Anton Protopopov
 //
@@ -329,7 +331,4 @@ cleanup:
 
 	return err != 0;
 }
-
-"""
-
 ```

@@ -155,15 +155,17 @@ myFunction();
 
 总而言之，`v8/src/heap/code-stats.cc` 是 V8 内部用于监控和分析代码相关内存使用情况的关键组件，它为 V8 团队提供了宝贵的数据，用于性能分析和优化。虽然它不直接处理用户代码错误，但其记录的信息可以帮助开发者识别潜在的内存效率问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/code-stats.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/code-stats.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -285,7 +287,4 @@ void CodeStatistics::ResetCodeStatistics(Isolate* isolate) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

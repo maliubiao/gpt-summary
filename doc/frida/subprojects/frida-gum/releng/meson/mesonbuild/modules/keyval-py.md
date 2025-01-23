@@ -181,7 +181,7 @@ print(config)
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/mesonbuild/modules/keyval.py` 这个文件是 Frida 构建系统的一个辅助模块，用于加载简单的键值对配置文件，以便在构建过程中进行配置。它间接与逆向相关，因为配置会影响 Frida 本身的功能。了解这个模块的工作方式可以帮助理解 Frida 的构建过程，并在遇到配置相关问题时提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/modules/keyval.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017, 2019 The Meson development team
 
@@ -256,7 +258,4 @@ class KeyvalModule(ExtensionModule):
 
 def initialize(interp: 'Interpreter') -> KeyvalModule:
     return KeyvalModule(interp)
-
-"""
-
 ```

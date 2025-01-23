@@ -103,7 +103,7 @@ Initially, I might have focused too much on what the *code does at runtime*. How
 
 总而言之，`frida/subprojects/frida-python/releng/meson/test cases/wayland/1 client/client.c` 这个文件虽然代码量很少，但它在 Frida 的构建过程中扮演着重要的角色，用于验证构建环境是否满足编译与 Wayland 应用程序交互所需的依赖条件。它的失败通常是用户缺少必要开发包的直接体现，为用户提供了一个明确的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/wayland/1 client/client.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "xdg-shell-client-protocol.h"
 
 int main() {
@@ -122,7 +124,4 @@ int main() {
   return 1;
 #endif
 }
-
-"""
-
 ```

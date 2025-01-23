@@ -161,15 +161,17 @@ To: {Type: obj.TYPE_REG, Reg: REG_R3}
 
 `go/src/cmd/internal/obj/ppc64/obj9.go` 是 Go 语言编译器中针对 PowerPC 64 位架构的关键组成部分，负责将 Go 代码转换为高效的机器码，并处理与特定操作系统（如 AIX）和链接模式相关的细节。它涉及到指令优化、函数调用约定、栈管理等核心功能，是 Go 语言编译过程中的重要一环。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/ppc64/obj9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // cmd/9l/noop.c, cmd/9l/pass.c, cmd/9l/span.c from Vita Nuova.
 //
 //	Copyright © 1994-1999 Lucent Technologies Inc.  All rights reserved.
@@ -1776,9 +1778,4 @@ var Linkppc64le = obj.LinkArch{
 	UnaryDst:       unaryDst,
 	DWARFRegisters: PPC64DWARFRegisters,
 }
-
-"""
-
-
-
 ```

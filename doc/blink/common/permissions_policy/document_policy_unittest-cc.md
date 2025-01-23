@@ -179,14 +179,16 @@ By following this thought process, combining code analysis with domain knowledge
 
 总而言之，`document_policy_unittest.cc` 通过一系列单元测试来验证 `blink::DocumentPolicy` 类的核心功能，特别是策略状态的合并。虽然它本身是 C++ 代码，但它测试的逻辑直接关系到 Web 开发者如何通过配置文档策略来影响其 Web 应用的行为，涉及到 JavaScript、HTML 和 CSS 等 Web 技术。理解这些测试有助于确保浏览器引擎能够正确地解析和应用文档策略，从而增强 Web 应用的安全性和功能控制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/permissions_policy/document_policy_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ TEST_F(DocumentPolicyTest, MergeFeatureState) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

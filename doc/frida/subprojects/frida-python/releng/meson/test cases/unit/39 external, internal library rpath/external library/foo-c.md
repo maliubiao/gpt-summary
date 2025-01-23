@@ -137,7 +137,7 @@ Java.perform(function () {
 
 因此，用户（Frida 的开发者或者使用者）可能通过运行 Frida 的单元测试框架或者编写自己的 Frida 脚本来与这个 `foo.c` 生成的库进行交互，从而触发对 `foo_system_value` 函数的拦截和分析。 这个文件在 Frida 的代码库中，主要是为了测试 Frida 自身的功能，特别是与外部库和 RPATH 相关的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/39 external, internal library rpath/external library/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,13 +145,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo_system_value (void)
 {
     return 42;
 }
-
-"""
-
 ```

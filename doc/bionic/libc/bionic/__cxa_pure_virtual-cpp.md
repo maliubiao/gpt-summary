@@ -267,7 +267,7 @@ sys.stdin.read()
 
 `__cxa_pure_virtual.cpp` 定义的 `__cxa_pure_virtual` 函数是 Android Bionic 中处理 C++ 纯虚函数调用错误的机制。理解其功能和触发场景对于 NDK 开发者来说至关重要，可以帮助他们避免和调试相关的运行时错误。通过 Frida 这样的动态调试工具，可以方便地观察和分析该函数的调用过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/__cxa_pure_virtual.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -278,8 +278,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  *
@@ -301,7 +303,4 @@ Prompt:
 extern "C" void __cxa_pure_virtual() {
   async_safe_fatal("Pure virtual function called. Are you calling virtual methods from a destructor?");
 }
-
-"""
-
 ```

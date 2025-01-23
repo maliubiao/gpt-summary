@@ -127,7 +127,7 @@ fetch('module.wasm')
 
 `v8/src/wasm/module-decoder-impl.h` 的第 1 部分定义了 `ModuleDecoderImpl` 类及其辅助结构，负责 WebAssembly 模块的**基本结构解析和头部验证**。它包含了处理模块头部（魔数、版本）和遍历模块段的逻辑，并初步识别各个段的类型。  这为后续各个具体段的详细解码奠定了基础。 这部分还定义了一些辅助函数和宏，用于字符串处理、错误报告和调试追踪等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-decoder-impl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-decoder-impl.h以.tq结尾，那它是个v8 torque源代码，
@@ -135,8 +135,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -984,7 +986,4 @@ class ModuleDecoderImpl : public Decoder {
   void DecodeFunctionSection() {
     uint32_t functions_count =
         consume_coun
-"""
-
-
 ```

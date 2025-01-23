@@ -93,7 +93,7 @@ def __lldb_init_module(debugger, internal_dict):
 ### 总结
 
 该文件主要负责将 Variant 类型的数据转换为 Fruity 协议所需的格式，并进行类型检查与错误处理。它不直接涉及二进制底层或 Linux 内核操作，但作为 Frida 工具的一部分，其功能在动态插桩和进程调试中起到了关键作用。通过 LLDB 调试工具，用户可以验证该模块的正确性，并排查潜在的类型或数据结构错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/fruity-host-session.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 of_type (VariantType.VARDICT)) {
 						builder.begin_dictionary ();
 						add_vardict_values (val, builder);
@@ -185,8 +187,4 @@ of_type (VariantType.VARDICT)) {
 		}
 	}
 }
-
-"""
-
-
 ```

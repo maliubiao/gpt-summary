@@ -277,7 +277,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 希望以上详细的解释能够帮助你理解 `bionic/libc/bionic/assert.cpp` 文件的功能和在 Android 系统中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/assert.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -288,8 +288,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*	$OpenBSD: assert.c,v 1.8 2005/08/08 08:05:33 espie Exp $ */
 /*-
  * Copyright (c) 1992, 1993
@@ -331,7 +333,4 @@ void __assert(const char* file, int line, const char* failed_expression) {
 void __assert2(const char* file, int line, const char* function, const char* failed_expression) {
   async_safe_fatal("%s:%d: %s: assertion \"%s\" failed", file, line, function, failed_expression);
 }
-
-"""
-
 ```

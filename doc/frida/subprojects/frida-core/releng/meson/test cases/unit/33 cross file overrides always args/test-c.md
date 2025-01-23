@@ -115,7 +115,7 @@ This detailed breakdown covers the various aspects of the code, its purpose with
 
 总而言之，这个简单的 C 代码文件是 Frida 构建系统中的一个重要的编译时检查，用于确保在特定的构建环境下，关于文件偏移量的处理方式符合预期，这对于 Frida 作为一款跨平台动态插桩工具的正确性和兼容性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/33 cross file overrides always args/test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifdef _FILE_OFFSET_BITS
   #error "_FILE_OFFSET_BITS should not be set"
 #endif
@@ -133,7 +135,4 @@ int main(int argc, char *argv[])
 {
   return 0;
 }
-
-"""
-
 ```

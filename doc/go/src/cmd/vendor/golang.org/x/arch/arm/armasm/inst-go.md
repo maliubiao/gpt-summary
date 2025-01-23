@@ -144,15 +144,17 @@ func main() {
 
 总而言之，这段代码是构建ARM汇编处理工具的基础，它定义了表示ARM指令及其组成部分的数据模型。它本身不执行任何实际的汇编或反汇编操作，而是为这些操作提供了结构化的数据表示。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/arm/armasm/inst.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors.  All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -591,9 +593,4 @@ func (m Mem) String() string {
 	}
 	return fmt.Sprintf("[%s Mode(%d) %s]", R, int(m.Mode), X)
 }
-
-"""
-
-
-
 ```

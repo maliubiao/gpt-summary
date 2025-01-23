@@ -195,7 +195,7 @@ main();
 
 通过查看 `service.cc` 的源码，用户可以更深入地了解 Frida 服务交互的底层机制，从而更好地诊断和解决问题。例如，如果用户发现 `Runtime::ValueToVariant` 无法正确转换某个特定的 JavaScript 对象，他们就知道问题可能出在参数序列化上。或者，如果用户没有收到预期的信号，他们可能会查看 `ShouldStayAliveToEmit` 和 `EnsureUsageMonitorCreated`，了解服务生命周期管理是否影响了信号的传递。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/src/service.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "service.h"
 
 #include "operation.h"
@@ -429,7 +431,4 @@ void Service::EnsureUsageMonitorCreated() {
 }
 
 }
-
-"""
-
 ```

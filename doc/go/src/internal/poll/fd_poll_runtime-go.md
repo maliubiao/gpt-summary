@@ -233,7 +233,7 @@ func main() {
 
 总结来说，这段 `fd_poll_runtime.go` 是 Go 语言网络编程中至关重要的底层组件，它负责与操作系统提供的 I/O 多路复用机制交互，为 Go 的高效并发网络编程提供了基础。理解这段代码的功能有助于深入理解 Go 的网络模型。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/fd_poll_runtime.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -241,8 +241,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -422,9 +424,4 @@ func setDeadlineImpl(fd *FD, t time.Time, mode int) error {
 func IsPollDescriptor(fd uintptr) bool {
 	return runtime_isPollServerDescriptor(fd)
 }
-
-"""
-
-
-
 ```

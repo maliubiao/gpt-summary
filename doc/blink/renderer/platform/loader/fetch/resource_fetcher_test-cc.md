@@ -106,15 +106,17 @@ Here's a breakdown of how to approach the request:
 
 总而言之，这部分代码定义了针对 `ResourceFetcher` 核心功能的单元测试，涵盖了资源请求的生命周期、缓存机制、特定资源类型处理以及资源请求的观察。这些测试对于确保 Blink 引擎能够高效、正确地加载网络资源至关重要，并间接地关系到网页的性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_fetcher_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Google Inc. All rights reserved.
  *
@@ -863,7 +865,4 @@ class ScopedMockRedirectRequester {
   }
 
   void RegisterFin
-"""
-
-
 ```

@@ -124,7 +124,7 @@ This structured approach, starting from basic code understanding and progressive
 
 总而言之，`prog.cc` 这个简单的程序是 Frida 项目中一个精心设计的单元测试用例，用于验证在特定构建配置下，生成的可执行文件的 RPATH 设置是否正确，这对于确保 Frida 能够正常工作至关重要，尤其是在动态逆向分析的场景下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/89 pkgconfig build rpath order/prog.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <string>
 #include <iostream>
 
@@ -142,7 +144,4 @@ int main(int argc, char **argv) {
     delete s;
     return 0;
 }
-
-"""
-
 ```

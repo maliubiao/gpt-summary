@@ -107,7 +107,7 @@ Let's break down the thought process for analyzing this seemingly simple C++ fil
 
 总而言之，这个简单的 `main.cc` 文件虽然代码量不大，但在 Frida 项目中扮演着重要的角色，它用于验证构建系统在处理混合语言和预编译头文件时的正确性，这对于 Frida 作为一个强大的动态Instrumentation 工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/13 pch/mixed/main.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 extern "C" int cfunc();
 
 void func(void) {
@@ -127,7 +129,4 @@ void func(void) {
 int main(void) {
     return cfunc();
 }
-
-"""
-
 ```

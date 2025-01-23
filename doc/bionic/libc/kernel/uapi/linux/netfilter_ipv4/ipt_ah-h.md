@@ -240,7 +240,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/linux/netfilter_ipv4/ipt_ah.h` 是 Android 系统用于在内核层面处理 IPsec AH 协议相关网络过滤规则的关键头文件。虽然应用开发者不会直接使用它，但它是 Android 实现安全网络连接功能的基础。理解它的作用有助于深入理解 Android 的网络安全架构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter_ipv4/ipt_ah.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -251,8 +251,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -269,7 +271,4 @@ struct ipt_ah {
 #define IPT_AH_INV_SPI 0x01
 #define IPT_AH_INV_MASK 0x01
 #endif
-
-"""
-
 ```

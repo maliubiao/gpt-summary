@@ -154,7 +154,7 @@ string result = myMod.getStr();
 
 总而言之，`cmMod.cpp` 是 Frida 项目中一个简单的 C++ 类，用于测试在特定构建场景下 Frida 的依赖项处理能力。虽然它的功能很基础，但它在确保 Frida 稳定性和正确性方面发挥着重要作用，并且间接地涉及到逆向工程、二进制底层以及操作系统相关的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cmake/27 dependency fallback/subprojects/cmMod/cmMod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 using namespace std;
@@ -179,7 +181,4 @@ cmModClass::cmModClass(string foo) {
 string cmModClass::getStr() const {
   return str;
 }
-
-"""
-
 ```

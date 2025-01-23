@@ -102,7 +102,7 @@ Here's a plan to address the user's request:
 
 总而言之，这个文件的核心职责是将 Blink 内部的样式表示形式转换为外部可以理解和使用的 CSS 值对象，是连接内部样式计算和外部接口（如 JavaScript API 和渲染过程）的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/computed_style_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ->CSSValueFromComputedStyle(
             style, layout_object, allow_visited_style, value_phase);
         DCHECK(value);
@@ -481,8 +483,4 @@ CSSValue* ComputedStyleUtils::ValueForPositionTryFallbacks(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

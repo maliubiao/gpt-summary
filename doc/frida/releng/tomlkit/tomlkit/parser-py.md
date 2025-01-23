@@ -155,7 +155,7 @@ By considering these points, I can construct a comprehensive answer that address
 
 `frida/releng/tomlkit/tomlkit/parser.py` 的第一部分代码定义了一个 TOML 解析器，负责将 TOML 格式的文本数据转换成 Python 可以操作的数据结构。它能够处理 TOML 规范中定义的各种元素和数据类型，是 Frida 工具中用于读取和理解配置文件的重要组成部分。这个解析器与逆向工程相关，因为它允许 Frida 分析目标应用程序的配置；虽然不直接涉及底层操作，但其应用场景与操作系统和框架息息相关；通过假设输入可以预测其输出；并能捕获用户常见的语法错误。用户通过 Frida 脚本或 Frida 内部机制触发 TOML 解析过程，当解析出错时，这段代码成为调试的重要线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/tomlkit/tomlkit/parser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import datetime
@@ -1154,9 +1156,4 @@ class Parser:
                         else None,
                     ),
                 )
-
-            
-"""
-
-
 ```

@@ -176,11 +176,13 @@ label3:
 
 `branch-condition-duplicator.cc` 通过复制 "廉价" 且被多个分支使用的条件计算节点，减少了重复计算，提高了 V8 编译后的代码执行效率。 这是一种底层的编译器优化，虽然 JavaScript 开发者不能直接干预，但理解其原理有助于编写出更有利于编译器优化的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/branch-condition-duplicator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -289,7 +291,4 @@ void BranchConditionDuplicator::Reduce() { ProcessGraph(); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

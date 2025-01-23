@@ -123,7 +123,7 @@ myInnerFunc();
 
 这部分代码 (`v8/src/profiler/heap-snapshot-generator.cc` 的一部分) 的核心功能是 V8 堆快照生成过程中的 **对象引用提取**。它针对多种 V8 内部对象类型，根据它们的内部结构，识别并记录它们所引用的其他堆对象。这是构建堆快照图结构的关键步骤，为后续的堆分析和性能诊断提供了基础数据。通过分析这些引用关系，可以理解对象之间的依赖，识别内存泄漏，并优化 JavaScript 代码的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/heap-snapshot-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/profiler/heap-snapshot-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -131,8 +131,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 {
       int idx = scope_info->ContextHeaderLength() + it->index();
       SetContextReference(entry, it->name(), context->get(idx),
@@ -864,8 +866,4 @@ void V8HeapExplorer::ExtractWasmInstanceObjectReferences(
   // The static assertions verify that we do not miss any fields here when we
   // update the class definition.
   ASSERT_FIRST_FIELD(WasmInstanceObject, TrustedData);
-
-"""
-
-
 ```

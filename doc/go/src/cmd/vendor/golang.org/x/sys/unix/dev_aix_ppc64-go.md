@@ -149,15 +149,17 @@ This specific code snippet doesn't directly handle command-line arguments. It pr
 
 In summary, this Go code provides a platform-specific way to work with device numbers on AIX ppc64 systems, encapsulating the specific bit layout and constants required for this operating system. Understanding the `DEVNO64` constant is crucial for correctly constructing device numbers on AIX.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/dev_aix_ppc64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -186,9 +188,4 @@ func Mkdev(major, minor uint32) uint64 {
 	DEVNO64 = 0x8000000000000000
 	return ((uint64(major) << 32) | (uint64(minor) & 0x00000000FFFFFFFF) | DEVNO64)
 }
-
-"""
-
-
-
 ```

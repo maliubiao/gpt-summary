@@ -155,7 +155,7 @@ By following these steps and iteratively refining the understanding, we arrive a
 
 `exe.c` 文件虽然代码量很少，但在 Frida 项目的构建和测试中扮演着重要的角色。它通过简单的预处理指令验证了构建系统是否正确地处理了子项目参数，这对于确保 Frida 作为一个复杂工具的正确构建至关重要。理解这种类型的测试用例有助于深入理解软件构建过程以及编译时检查的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/115 subproject project arguments/exe.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #ifndef PROJECT_OPTION
 #error
 #endif
@@ -192,7 +194,4 @@ Prompt:
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

@@ -124,15 +124,17 @@ By following this step-by-step analysis, considering the purpose of unit tests, 
 
 总而言之，`net/cert/cert_database_unittest.cc` 文件是 Chromium 网络栈中一个重要的测试文件，它确保了证书数据库的通知机制的正确性，这对于保证网络安全和用户体验至关重要。理解这个文件的功能和测试用例可以帮助开发者更好地理解 Chromium 的证书管理机制，并排查相关的网络问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/cert_database_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -227,7 +229,4 @@ TEST(CertDatabaseTest, Notifications) {
 }
 
 }  // namespace net
-
-"""
-
 ```

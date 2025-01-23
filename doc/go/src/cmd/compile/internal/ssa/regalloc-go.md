@@ -136,7 +136,7 @@ b3:
 
 这段 `regalloc.go` 代码是 Go 语言编译器中实现线性扫描寄存器分配的核心部分。 它负责将中间表示形式的程序变量分配到目标机器的物理寄存器，并在寄存器不足时处理值的溢出和恢复，同时处理控制流合并点处的寄存器状态同步。 它的目标是高效地利用有限的寄存器资源，生成高性能的目标代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/regalloc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -144,8 +144,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -2251,9 +2253,4 @@ func (s *regAllocState) placeSpills() {
 			// place the spill here (after the phis).
 			if len(b.Preds) == 1 {
 				for _, e := range s.endRegs[b.Preds[0].b
-"""
-
-
-
-
 ```

@@ -221,15 +221,17 @@ GPU 将会执行三次 `glDrawArrays`:
 
 总而言之，`webgl_multi_draw.cc` 是 Chromium 中实现 WebGL 多重绘制扩展的关键文件，它通过调用底层的 OpenGL ES 函数，为 JavaScript 开发者提供了更高效的批量渲染能力。理解其功能和可能出现的错误，有助于开发和调试高性能的 WebGL 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_multi_draw.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -393,7 +395,4 @@ void WebGLMultiDraw::multiDrawElementsInstancedImpl(
 }
 
 }  // namespace blink
-
-"""
-
 ```

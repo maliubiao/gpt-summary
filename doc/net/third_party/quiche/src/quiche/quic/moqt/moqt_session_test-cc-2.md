@@ -188,7 +188,7 @@ MOQT 协议旨在为 Web 应用程序提供高效可靠的媒体传输能力。�
 
 总而言之，这部分测试聚焦于 `MoqtSession` 在管理多个并发订阅和处理优先级时的流管理和调度逻辑，这对于构建高效且用户体验良好的实时 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 dObject{FullSequence(2, 0), MoqtObjectStatus::kNormal,
                                  127, MemSliceFromString("deadbeef")}));
   EXPECT_CALL(*track, GetCachedObject(FullSequence(2, 1)))
@@ -397,8 +399,4 @@ TEST_F(MoqtSessionTest, SubscribeUpdateClosesSubscription) {
 }  // namespace test
 
 }  // namespace moqt
-
-"""
-
-
 ```

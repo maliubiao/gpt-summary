@@ -142,15 +142,17 @@ obj1.z = 7;
 
 `v8/src/objects/heap-object.tq` 文件是 V8 内部对象模型的核心部分，它定义了所有堆分配对象的通用结构，并通过 `map` 成员与 JavaScript 对象的“形状”概念紧密相连。理解 `HeapObject` 和 `Map` 的关系对于理解 V8 的优化机制以及避免常见的性能陷阱至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/heap-object.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/heap-object.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ Prompt:
 extern class HeapObject extends StrongTagged {
   const map: Map;
 }
-
-"""
-
 ```

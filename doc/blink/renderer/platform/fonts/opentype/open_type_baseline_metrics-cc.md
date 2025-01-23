@@ -162,14 +162,16 @@ This code is crucial for the correct rendering of text on web pages, making it i
 
 In summary, `open_type_baseline_metrics.cc` is a fundamental piece of the Blink rendering engine responsible for bridging the gap between OpenType font data and the layout and rendering of text on web pages. It ensures that text is positioned correctly based on the font's design and the applied CSS styles.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/open_type_baseline_metrics.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -242,7 +244,4 @@ std::optional<float> OpenTypeBaselineMetrics::OpenTypeIdeographicBaseline() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -174,15 +174,17 @@ console.log(Math.floor(Math.random() * 10)); // 生成一个 0 到 9 之间的�
 
 总而言之，`v8/src/base/utils/random-number-generator.cc` 是 V8 引擎中负责生成伪随机数的关键组件，它提供了多种生成不同类型随机数的方法，并考虑了跨平台兼容性和可定制性。了解其功能对于理解 JavaScript 中 `Math.random()` 的工作原理以及避免常见的随机数使用错误非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/utils/random-number-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/utils/random-number-generator.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -421,7 +423,4 @@ uint64_t RandomNumberGenerator::MurmurHash3(uint64_t h) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

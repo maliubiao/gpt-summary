@@ -127,7 +127,7 @@ console.log(z); // ReferenceError: z is not defined
 
 这部分代码主要负责 **`PPCDebugger` 类的实现**，提供了在 PPC 模拟器中进行交互式调试的功能。它允许用户检查和修改模拟器的状态，单步执行指令，设置断点等，是模拟器不可或缺的调试工具。它也包含了 `Simulator` 类的一些基础方法和定义，为整个模拟器的框架奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/ppc/simulator-ppc.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/ppc/simulator-ppc.cc以.tq结尾，那它是个v8 torque源代码，
@@ -135,8 +135,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1013,7 +1015,4 @@ uintptr_t Simulator::StackLimit(uintptr_t c_limit) const {
   // The simulator uses a separate JS stack. If we have exhausted the C stack,
   // we also drop down the JS limit to reflect the exhaustion on the JS stack.
   if (bas
-"""
-
-
 ```

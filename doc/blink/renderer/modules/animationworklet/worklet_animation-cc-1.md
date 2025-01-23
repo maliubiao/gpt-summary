@@ -125,7 +125,7 @@ By following these steps, I can provide a comprehensive and informative answer t
 
 `WorkletAnimation::Trace` 方法的主要功能是为垃圾回收器提供关于 `WorkletAnimation` 对象及其相关子对象（`cts_` 和 `timeline_`）的生命周期信息。它确保了这些对象在被使用时不会被错误地回收，是 Blink 渲染引擎内存管理的关键组成部分。虽然这段代码没有直接处理动画逻辑，但它对于确保 Animation Worklet 功能的稳定运行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/animationworklet/worklet_animation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -133,16 +133,14 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 cts_);
   visitor->Trace(timeline_);
   WorkletAnimationBase::Trace(visitor);
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

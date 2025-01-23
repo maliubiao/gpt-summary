@@ -170,7 +170,7 @@ func main() {
 
 这段代码的核心功能是实现 TLS 客户端握手的第一阶段，即生成并发送 `ClientHello` 消息，并处理与会话恢复相关的逻辑。它负责根据客户端配置构建初始的握手消息，以便与服务器协商加密参数并建立安全连接。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/handshake_client.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -179,8 +179,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1243,10 +1245,5 @@ func (hs *clientHandshakeState) sendFinished(out []byte) error {
 	return nil
 }
 
-// defaultMaxRSAKeySize is the maximum RSA key size in bits that we 
-"""
-
-
-
-
+// defaultMaxRSAKeySize is the maximum RSA key size in bits that we
 ```

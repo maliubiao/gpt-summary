@@ -118,7 +118,7 @@ Here's a thinking process to arrive at the explanation of `prog7.c`:
 
 总而言之，`prog7.c` 虽然是一个很小的程序，但在 Frida 的构建过程中扮演着重要的角色，用于确保构建配置的正确性，这对于保证 Frida 自身功能的正常运行以及为逆向工程师提供可靠的工具至关重要。 它的失败通常指示着构建环境或配置存在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/14 configure file/prog7.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -126,8 +126,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <string.h>
 #include <config7.h>
 
@@ -138,7 +140,4 @@ int main(void) {
         || strcmp(MESSAGE4, "\\${var1}")
         || strcmp(MESSAGE5, "\\ ${ ${ \\${ \\${");
 }
-
-"""
-
 ```

@@ -166,15 +166,17 @@ auto sum_result = v8::internal::debug_helper_internal::TorqueDebugMacroShims::Co
 
 总而言之，`v8/tools/debug_helper/debug-macro-shims.h` 是 V8 调试基础设施的关键组成部分，它为 Torque 生成的调试代码提供了必要的底层支持，使得开发者能够有效地调试 V8 的内部实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/debug_helper/debug-macro-shims.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/debug_helper/debug-macro-shims.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -303,7 +305,4 @@ inline intptr_t ConstexprIntegerLiteralToIntptr(d::MemoryAccessor accessor,
 }  // namespace v8
 
 #endif  // V8_TORQUE_DEBUG_MACRO_SHIMS_H_
-
-"""
-
 ```

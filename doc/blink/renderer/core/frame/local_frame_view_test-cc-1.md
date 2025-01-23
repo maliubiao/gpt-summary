@@ -99,15 +99,17 @@ Let's break down the thought process for analyzing this code snippet and fulfill
 
 整个 `local_frame_view_test.cc` 文件（包括这部分）旨在全面测试 `LocalFrameView` 类的各种功能和状态，特别是在涉及到页面生命周期、渲染过程、以及与预渲染等高级特性的交互时。 这部分专注于测试预渲染激活前的绘制状态，验证了特定特性对优化预渲染性能的影响。 通过这些测试，Blink 引擎的开发者可以确保 `LocalFrameView` 在各种场景下的行为正确可靠，从而为用户提供更流畅、更快速的网页浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_frame_view_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::test::WithFeatureOverride,
                                     public SimTest {
  public:
@@ -146,8 +148,4 @@ TEST_P(PrerenderLocalFrameViewTest, DryRunPaintBeforePrerenderActivation) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

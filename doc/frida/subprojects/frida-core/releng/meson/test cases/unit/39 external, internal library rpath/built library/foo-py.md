@@ -135,7 +135,7 @@ rpath 是一个重要的概念，它告诉操作系统在运行时到哪些路�
 
 尽管 `foo.py` 文件本身是空的，但它在 Frida 的构建和测试体系中扮演着重要的角色。它标志着需要进行与外部和内部库 rpath 配置相关的单元测试。理解 rpath 的概念对于理解 Frida 的工作原理以及进行逆向工程至关重要，因为它直接关系到程序的库加载行为。对于 Frida 的开发者来说，维护和扩展这样的测试用例是确保 Frida 构建质量的重要环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/39 external, internal library rpath/built library/foo.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,9 +143,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

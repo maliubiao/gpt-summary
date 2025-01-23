@@ -46,9 +46,12 @@ By following this structured approach, I can systematically analyze the code and
 
 **总结来说，`benchmark-utils.cc` 旨在为 C++ 基准测试提供一个方便的工具类，用于安全可靠地初始化和关闭 V8 引擎的运行环境，确保每个基准测试都在一个干净且可控的环境中执行。** 这避免了不同基准测试之间的状态干扰，并简化了 V8 引擎在 C++ 基准测试中的使用。
 
-Prompt: ```这是目录为v8/test/benchmarks/cpp/benchmark-utils.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/benchmarks/cpp/benchmark-utils.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -97,6 +100,4 @@ void BenchmarkWithIsolate::ShutdownProcess() {
 }
 
 }  // namespace v8::benchmarking
-
-"""
 ```

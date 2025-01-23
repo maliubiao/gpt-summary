@@ -109,14 +109,16 @@ By following these steps, combining code analysis, logical deduction, and knowle
 
 `icu_fold_case_util_unittest.cc` 这个文件通过测试 `IcuFoldCase` 函数，确保了 Chromium 浏览器引擎在处理文本和字体相关的任务时，能够进行准确且国际化的大小写不敏感比较。这对于提供良好的用户体验，特别是对于多语言环境下的应用至关重要。虽然开发者不直接使用 `IcuFoldCase`，但理解其功能和背后的原理有助于避免与大小写敏感性相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/font_unique_name_lookup/icu_fold_case_util_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -138,7 +140,4 @@ TEST(IcuFoldCaseUtilTest, FoldingExamples) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

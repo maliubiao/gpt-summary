@@ -98,7 +98,7 @@ By following this structured approach, deconstructing the prompt, analyzing the 
 
 `cpyTest.cpp` 自身功能简单，主要用于生成一个固定的字符串。但它在 Frida 的测试框架中扮演着重要的角色，用于验证构建系统的正确性和子项目之间的集成。理解其背后的逻辑，可以帮助开发者更好地理解 Frida 的构建流程和测试方法，并为调试相关问题提供线索。它间接地与逆向方法、二进制底层、操作系统知识等相关联，因为它生成的字符串可能会被用于更复杂的 Frida 功能的测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/8 custom command/subprojects/cmMod/cpyTest.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cpyTest.hpp"
 #include "cpyTest2.hpp"
 #include "cpyTest3.hpp"
@@ -117,7 +119,4 @@ Prompt:
 std::string getStrCpyTest() {
   return CPY_TEST_STR_2 CPY_TEST_STR_3 CPY_TEST_STR_4 CPY_TEST_STR_5;
 }
-
-"""
-
 ```

@@ -150,7 +150,7 @@ The code is a series of C++ unit tests for the `HttpProxyConnectJob` class in Ch
 
 这部分单元测试主要关注 `HttpProxyConnectJob` 在建立 HTTP 代理隧道连接过程中可能遇到的各种**错误场景和超时情况**，包括 SSL 证书错误、连接意外关闭、无效的 HTTP 响应、客户端 SSL 认证、重定向处理、以及不同阶段的连接超时 (特别是涉及代理认证的超时)。此外，还包含了对 **QUIC 代理连接**的初步测试。这些测试旨在确保 `HttpProxyConnectJob` 能够正确处理这些异常情况，并返回相应的错误码，从而保证浏览器网络请求的稳定性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_proxy_connect_job_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Y_INVALID);
     if (GetParam() == SPDY) {
       InitializeSpdySsl(&ssl_data);
@@ -996,7 +998,4 @@ TEST_F(HttpProxyConnectQuicJobTest, RequestQuicProxy) {
   // Create params for a single-hop QUIC proxy. This consists of an
   // HttpProxySocketParams, an SSLSocketParams from which a few values are used,
   // and a TransportSocketParams which is totally unused but
-"""
-
-
 ```

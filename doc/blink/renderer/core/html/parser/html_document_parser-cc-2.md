@@ -98,15 +98,17 @@ My thinking process for analyzing the provided code snippet and generating the r
 
 这段代码着重于 HTML 文档解析过程中的 **优化和控制**。它不是核心的 Tokenizer 或 DOM 构建逻辑，而是处理解析完成后的任务（后台扫描），优化资源加载（预加载），以及根据特定条件动态调整解析器的行为（Tokenizer 执行节奏、时间预算检查、是否允许预加载）。其核心目标是在保证解析正确性的前提下，尽可能提升页面加载性能和用户体验。它体现了 Blink 引擎在 HTML 解析上的精细化管理和对性能的持续优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_document_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nnerThread()->GetTaskRunner());
     }
 
@@ -282,8 +284,4 @@ bool HTMLDocumentParser::AllowPreloading() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

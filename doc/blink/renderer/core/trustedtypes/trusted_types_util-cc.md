@@ -145,14 +145,16 @@ Trusted Types 主要关注如何安全地处理可能被解释为 HTML、JavaScr
 
 `trusted_types_util.cc` 文件是 Blink 引擎中实现和强制执行 Trusted Types 安全特性的关键组成部分。它通过一系列检查和处理函数，确保只有受信任的 HTML、JavaScript 和 URL 才能被赋值给敏感的 DOM 属性，从而帮助开发者防范 DOM XSS 攻击。理解这个文件中的功能对于理解 Trusted Types 的工作原理以及如何正确使用它来提高 Web 应用的安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/trustedtypes/trusted_types_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -817,7 +819,4 @@ String GetTrustedTypesLiteral(const ScriptValue& script_value,
 }
 
 }  // namespace blink
-
-"""
-
 ```

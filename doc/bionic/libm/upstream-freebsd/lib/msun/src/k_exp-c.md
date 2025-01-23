@@ -259,7 +259,7 @@ extern "C" int main(int argc, char** argv) {
 
 通过以上分析和调试方法，可以深入理解 `bionic/libm/upstream-freebsd/lib/msun/src/k_exp.c` 的功能以及它在 Android 系统中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/k_exp.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -269,8 +269,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -379,7 +381,4 @@ __ldexp_cexp(double complex z, int expt)
 	return (CMPLX(c * exp_x * scale1 * scale2,
 	    s * exp_x * scale1 * scale2));
 }
-
-"""
-
 ```

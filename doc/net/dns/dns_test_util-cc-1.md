@@ -161,7 +161,7 @@ Having analyzed each component, I can now summarize the functionality of this se
 
 这部分代码为 Chromium 的网络栈测试提供了强大的 DNS 解析模拟能力。`MockHostResolverProc` 允许开发者精确控制 DNS 解析的结果，模拟各种网络场景，并方便地观察和验证 DNS 解析请求。通过添加针对不同地址族和别名的规则，以及模拟异步解析过程和并发控制，可以进行更全面和真实的单元测试，确保网络相关功能的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/dns_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 name};
   }
   int rv = ParseAddressList(ip_list, &result.endpoints());
@@ -233,8 +235,4 @@ bool MockHostResolverProc::HasBlockedRequests() const {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

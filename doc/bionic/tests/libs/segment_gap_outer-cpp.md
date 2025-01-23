@@ -276,7 +276,7 @@ sys.stdin.read()
 
 总结来说，`bionic/tests/libs/segment_gap_outer.cpp` 是一个测试 Android 动态链接器高级功能的单元测试，它演示了如何通过 `android_dlopen_ext` 来请求在加载共享库时预留特定的内存区域，这在某些需要精细控制内存布局的场景下非常有用。理解这个测试代码有助于深入理解 Android 系统底层的动态链接机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/segment_gap_outer.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -287,8 +287,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 #include <android/dlext.h>
 #include <dlfcn.h>
 #include <stdlib.h>
@@ -315,7 +317,4 @@ extern "C" void* get_inner() {
 
   return dlsym(handle, "inner");
 }
-
-"""
-
 ```

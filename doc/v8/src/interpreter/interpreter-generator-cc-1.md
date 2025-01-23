@@ -196,7 +196,7 @@ Considering this is part 2 of 4, it likely focuses on a specific set of bytecode
 
 这部分代码是 V8 解释器实现的核心组成部分，它将高级的 JavaScript 语义转换为底层的机器操作。理解这部分代码有助于深入了解 JavaScript 的执行原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/interpreter-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -204,8 +204,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ontext::EXTENSION_INDEX));
 
   Label if_export(this), if_import(this), end(this);
@@ -1139,7 +1141,4 @@ class InterpreterCompareOpAssembler : public InterpreterAssembler {
     {
       TNode<UintPtrT> slot_index = BytecodeOperandIdx(1);
       TNode<HeapObject> maybe_feedback_
-"""
-
-
 ```

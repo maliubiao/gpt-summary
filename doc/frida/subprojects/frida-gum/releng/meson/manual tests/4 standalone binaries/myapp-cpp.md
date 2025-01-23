@@ -140,7 +140,7 @@ By following these steps, including the self-correction, we arrive at a comprehe
 
 总而言之，这个简单的 SDL 应用程序是 Frida 进行动态插桩和测试的良好示例。它可以用来演示如何 hook 函数、观察程序行为以及理解程序与底层系统之间的交互。通过分析这个程序的源代码，可以学习到 SDL 库的使用、基本的图形编程概念以及逆向工程的一些基本方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/manual tests/4 standalone binaries/myapp.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<SDL.h>
 #include<memory>
 #include<iostream>
@@ -189,7 +191,4 @@ int main(void) {
 
   return 0;
 }
-
-"""
-
 ```

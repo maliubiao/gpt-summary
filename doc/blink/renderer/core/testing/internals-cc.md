@@ -111,7 +111,7 @@ By following these steps, I could analyze the code snippet effectively and gener
 
 总而言之，`blink/renderer/core/testing/internals.cc` 文件的第一部分定义了 `Internals` 类，它是一个**测试工具集**，允许 Blink 开发者通过 C++ 代码直接访问和操纵 Blink 引擎的内部状态，以便编写更强大、更精细的单元测试和集成测试。它提供了访问 DOM、CSS 样式、帧结构、运行时设置等内部信息的接口，并包含一些用于辅助测试的工具函数，例如重置页面状态和创建测试用的 Stream 对象。这个文件是 Blink 引擎开发和质量保证的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/internals.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  * Copyright (C) 2013 Apple Inc. All rights reserved.
@@ -894,8 +896,4 @@ unsigned Internals::styleForElementCount(
     ExceptionState& exception_state) const {
   if (!document_) {
     exception_state.ThrowDOMException(DOMExceptionCode::kInvalidAccessError,
-      
-"""
-
-
 ```

@@ -205,15 +205,17 @@ By following this iterative process of scanning, categorizing, relating to conce
 
 `WebSettingsImpl.cc` 是 Blink 渲染引擎配置的核心枢纽，它连接了外部环境和内部渲染机制。理解其功能和与 Web 技术的关系，对于调试网页渲染问题以及理解浏览器的工作原理至关重要。当你遇到与网页显示、JavaScript 行为、CSS 样式等相关的 bug 时，可以考虑检查相关的设置项是否被正确配置，并根据上述调试线索来定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_settings_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -1026,7 +1028,4 @@ void WebSettingsImpl::
 }
 
 }  // namespace blink
-
-"""
-
 ```

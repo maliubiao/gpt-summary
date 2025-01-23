@@ -98,7 +98,7 @@ Here's a breakdown of how to approach this:
 
 这部分代码主要测试了 `OgHttp2Adapter` 在客户端模式下处理服务端发送的 GOAWAY 帧、101 响应以及 `INITIAL_WINDOW_SIZE` 设置的能力，并验证了客户端是否能够正确地遵守 `MAX_CONCURRENT_STREAMS` 的限制。 这些测试确保了客户端在接收到服务端的控制帧时，能够做出符合 HTTP/2 协议规范的反应，保证了网络连接的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 D_HEADERS_FLAG));
   EXPECT_CALL(visitor, OnFrameSent(HEADERS, stream_id1, _,
                                    END_STREAM_FLAG | END_HEADERS_FLAG, 0));
@@ -904,7 +906,4 @@ TEST(OgHttp2AdapterTest, InvalidInitialWindowSetting) {
 
   const int64_t initial_result = adapter->ProcessBytes(initial_frames);
   EXPECT_EQ(in
-"""
-
-
 ```

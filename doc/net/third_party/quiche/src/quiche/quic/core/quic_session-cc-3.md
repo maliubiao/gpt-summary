@@ -143,7 +143,7 @@ By following this multi-stage process, I could dissect the provided code snippet
 
 总结来说，`QuicSession.cc` (的最后一部分) 负责 QUIC 会话中关键的可靠性、数据传输和资源管理功能，它是 QUIC 协议在 Chromium 网络栈中的核心实现之一，直接影响着基于 HTTP/3 的 Web 应用的性能和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ta as possible.
     return std::numeric_limits<QuicByteCount>::max();
   }
@@ -535,8 +537,4 @@ void QuicSession::OnStreamCountReset() {
 
 #undef ENDPOINT  // undef for jumbo builds
 }  // namespace quic
-
-"""
-
-
 ```

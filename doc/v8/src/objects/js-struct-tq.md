@@ -159,15 +159,17 @@ setTimeout(() => {
 
 `v8/src/objects/js-struct.tq` 定义了 V8 内部用于表示必须分配在共享内存空间中的 JavaScript 结构体类型 `JSSharedStruct`。这与 JavaScript 中 `SharedArrayBuffer` 等共享内存机制密切相关。虽然 JavaScript 开发者不会直接操作 `JSSharedStruct`，但理解其背后的概念有助于理解 V8 如何管理共享内存以及避免相关的并发编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-struct.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-struct.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ Prompt:
 extern class AlwaysSharedSpaceJSObject extends JSObject {}
 
 extern class JSSharedStruct extends AlwaysSharedSpaceJSObject {}
-
-"""
-
 ```

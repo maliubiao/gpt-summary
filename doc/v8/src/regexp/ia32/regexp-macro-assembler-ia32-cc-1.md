@@ -118,7 +118,7 @@ console.log("Non-global match:", matchNonGlobal);
 
 这段代码是 V8 JavaScript 引擎中用于 IA-32 架构的正则表达式宏汇编器的一部分，**负责处理正则表达式成功匹配后的收尾工作，特别是对于全局匹配，它会更新状态并准备进行下一次匹配。对于非全局匹配，它会设置成功返回值。此外，它还处理回溯、抢占、堆栈溢出和异常等情况，并最终生成可执行的机器码。** 它的核心作用是确保正则表达式匹配过程的正确性和高效性，并与 JavaScript 的执行环境进行必要的交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/ia32/regexp-macro-assembler-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/ia32/regexp-macro-assembler-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -126,8 +126,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d(ebp, kInputStartOffset));
       if (mode_ == UC16) {
         __ lea(ecx, Operand(ecx, edx, times_2, 0));
@@ -631,8 +633,4 @@ void RegExpMacroAssemblerIA32::LoadCurrentCharacterUnchecked(int cp_offset,
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_IA32
-
-"""
-
-
 ```

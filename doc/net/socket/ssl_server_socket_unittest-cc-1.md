@@ -104,7 +104,7 @@ Here's a breakdown of the thought process to generate the response:
 
 总而言之，`ssl_server_socket_unittest.cc` 的这部分主要关注 `SSLServerSocket` 在各种握手场景下的健壮性，尤其是在处理错误输入、特定配置以及连接生命周期管理方面的正确性，同时也覆盖了数据传输和密钥导出的核心功能。 它可以作为理解和调试 Chromium 网络栈中 SSL 服务器端行为的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/ssl_server_socket_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -112,8 +112,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 pected.
   EXPECT_TRUE(client_cert->IsIssuedByEncoded(request_info2->cert_authorities));
 
@@ -694,8 +696,4 @@ TEST_F(SSLServerSocketTest, CancelReadIfReady) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

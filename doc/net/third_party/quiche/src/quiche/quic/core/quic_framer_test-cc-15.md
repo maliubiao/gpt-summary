@@ -107,7 +107,7 @@ My thinking process to analyze the provided C++ code snippet and fulfill the req
 
 作为整个 `quic_framer_test.cc` 文件的最后一部分，这部分测试主要关注 `QuicFramer` 在处理密钥更新这一关键安全特性时的正确性和鲁棒性。它涵盖了正常更新流程、错误情况处理以及与其他协议特性的交互（如短报头解析和 ECN 报告）。这表明在整个 QUIC 数据包处理流程中，密钥更新是一个复杂且重要的环节，需要进行全面的测试以保证网络连接的安全性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -115,8 +115,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第16部分，共16部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t_);
   EXPECT_EQ(2, visitor_.decrypted_first_packet_in_key_phase_count_);
 }
@@ -603,8 +605,4 @@ TEST_P(QuicFramerTest, ReportEcnCountsIfPresent) {
 }  // namespace
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

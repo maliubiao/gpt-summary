@@ -165,7 +165,7 @@ Deserialized ALPN Protocols: [h2 http/1.1]
 
 这段 `handshake_messages.go` 代码的主要功能是定义 TLS 握手过程中关键消息的结构体，并提供将这些结构体序列化和反序列化为字节流的能力。它是 `crypto/tls` 包实现 TLS 协议的核心组成部分，为建立安全的 TLS 连接奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/tls/handshake_messages.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -174,8 +174,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1281,9 +1283,4 @@ func (m *encryptedExtensionsMsg) unmarshal(data []byte) bool {
 }
 
 typ
-"""
-
-
-
-
 ```

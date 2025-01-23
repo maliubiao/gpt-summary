@@ -18,7 +18,7 @@ Let's summarize this understanding.
 
 因此，总的来说，这段代码的功能是**提供 `tanh` 函数的测试用例数据**。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/tanh_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -30,8 +30,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ,
     0x1.286bca1af286bp100
   },
@@ -1474,8 +1476,4 @@ Prompt:
   { // Entry 713
     -0x1.85efab514f393ea02c27fc50b2cbbe65p-1,
     -0x1.fffffffffffffp-1
-
-"""
-
-
 ```

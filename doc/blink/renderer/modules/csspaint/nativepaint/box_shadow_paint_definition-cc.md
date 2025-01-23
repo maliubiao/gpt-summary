@@ -176,15 +176,17 @@ During the process, I noticed the prominent `TODO` comments. This was crucial. I
 
 总而言之，`box_shadow_paint_definition.cc` 的目标是成为 Blink 中使用 Paint Worklet 技术自定义绘制 `box-shadow` 的核心组件，但目前主要的绘制逻辑尚未实现。它提供了与 Paint Worklet 集成、动画支持以及与 CSS `box-shadow` 属性关联的框架。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/csspaint/nativepaint/box_shadow_paint_definition.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -240,7 +242,4 @@ void BoxShadowPaintDefinition::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -151,7 +151,7 @@ By following this structured approach, combining code analysis with contextual u
 
 总而言之，`write_wrapper.py` 是 Frida 项目中用于生成简单 Vala 源代码的一个辅助脚本，它在 Frida 对 Vala 程序进行动态插桩测试和开发中扮演着角色。 它的功能虽然简单，但在自动化测试流程中起着关键作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/vala/8 generated sources/src/write_wrapper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -173,7 +175,4 @@ void print_wrapper(string arg) {
 
 with open(sys.argv[1], 'w') as f:
     f.write(contents)
-
-"""
-
 ```

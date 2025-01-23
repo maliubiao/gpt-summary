@@ -211,15 +211,17 @@ value = "max-age=1000; includeSubDomains=true"
 
 通过以上步骤，开发者可以确定 HSTS 头部是否正确配置，以及浏览器是否正确解析了该头部，从而帮助诊断用户遇到的问题。`net/http/http_security_headers.cc` 文件在这个过程中扮演着关键的角色，负责将服务器发送的文本信息转换为浏览器可以理解和使用的内部状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_security_headers.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -361,7 +363,4 @@ bool ParseHSTSHeader(std::string_view value,
 }
 
 }  // namespace net
-
-"""
-
 ```

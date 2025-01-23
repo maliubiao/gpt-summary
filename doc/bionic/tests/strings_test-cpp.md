@@ -266,7 +266,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 这个测试文件虽然小，但它验证了 Android 系统中非常基础且重要的字符串处理函数的功能，这些函数在系统的各个层面都有着广泛的应用。理解这些函数的功能和实现方式对于 Android 开发和系统分析都是很有帮助的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/strings_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -277,8 +277,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  *
@@ -390,7 +392,4 @@ TEST(STRINGS_TEST, strncasecmp_l) {
   ASSERT_GT(strncasecmp_l("hello2", "hello1", 6, l), 0);
   freelocale(l);
 }
-
-"""
-
 ```

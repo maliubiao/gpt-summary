@@ -186,15 +186,17 @@ writer.write(new Blob(["Hello, world!"], { type: 'text/plain' }));
 
 总而言之，`dom_file_system_sync.cc` 文件是 Blink 引擎中实现同步文件系统 API 的核心，它负责处理 JavaScript 同步的文件系统操作请求，并与浏览器进程进行通信，完成文件的创建、写入等操作。 了解这个文件的功能有助于理解浏览器如何处理同步的文件系统访问，并帮助开发者避免在主线程中使用同步 API 等潜在的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/filesystem/dom_file_system_sync.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -385,7 +387,4 @@ void DOMFileSystemSync::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

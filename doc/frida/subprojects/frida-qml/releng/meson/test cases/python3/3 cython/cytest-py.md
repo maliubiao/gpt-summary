@@ -125,7 +125,7 @@ During the process, I might realize I've made an assumption that isn't explicitl
 
 总而言之，`cytest.py` 虽然是一个简单的测试脚本，但它验证了 Frida 中 Cython 模块的基本功能，这些功能是 Frida 进行动态 Instrumentation 和逆向分析的基础。它也反映了用户在使用 Frida 时需要注意的一些常见问题，例如类型错误和内存操作的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/python3/3 cython/cytest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from storer import Storer
@@ -158,7 +160,4 @@ try:
     sys.exit(1)
 except TypeError:
     pass
-
-"""
-
 ```

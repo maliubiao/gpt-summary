@@ -121,7 +121,7 @@ const regex4 = /[^abc]+/; // 匹配一个或多个非 'a', 'b', 'c' 的字符
 
 总而言之，`v8/src/regexp/regexp-compiler-tonode.cc` 文件在 V8 引擎的正则表达式编译过程中扮演着关键角色。它负责将正则表达式中的量词结构转换为可执行的节点图，并提供了一组用于高效操作字符范围的工具函数。这些功能对于 JavaScript 正则表达式的正确编译和高效执行至关重要。您提供的代码片段主要展示了字符范围操作的实用工具以及量词的节点转换逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-compiler-tonode.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-compiler-tonode.cc以.tq结尾，那它是个v8 torque源代码，
@@ -129,9 +129,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- int n = character_ranges->length();
+### 源代码
+```cpp
+int n = character_ranges->length();
   base::uc32 max = character_ranges->at(0).to();
   int i = 1;
   while (i < n) {
@@ -522,8 +524,4 @@ RegExpNode* RegExpQuantifier::ToNode(int min, int max, bool is_greedy,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

@@ -95,7 +95,7 @@ Essentially, I'm applying a combination of code reading, domain knowledge (QUIC)
 
 **总结来说，这部分代码专注于验证 QUIC 协议中服务端传输参数的解析和序列化逻辑的正确性、健壮性和灵活性，包括处理各种类型的参数、应对错误情况以及支持会话恢复。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/transport_parameters_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ue
       // initial_max_stream_data_uni
       0x07,  // parameter id
@@ -540,8 +542,4 @@ TEST_F(TransportParametersTicketSerializationTest,
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
-
 ```

@@ -168,7 +168,7 @@ By following these steps, I was able to break down the complex code into managea
 
 总而言之，`machinefiletests.py` 文件的主要功能是**对 Frida 构建系统中处理 Meson 机器文件（Native files 和 Cross files）的逻辑进行全面的单元测试**。它测试了 Meson 能否正确解析、应用和处理各种配置信息，包括程序路径、编译器、构建选项等。这些测试对于确保 Frida 的构建系统能够灵活地适应不同的构建需求和目标平台至关重要，并且有助于防止用户在使用自定义配置时遇到问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/unittests/machinefiletests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2021 The Meson development team
 
@@ -929,8 +931,4 @@ class CrossFileTests(BasePlatformTests):
             os.makedirs(dir_)
             with tempfile.NamedTemporaryFile('w', dir=dir_, delete=False, encoding='utf-8') as f:
                 f.write(cross_content)
-   
-"""
-
-
 ```

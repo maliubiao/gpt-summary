@@ -254,7 +254,7 @@ array_item._reindex() # 重新建立索引
 
 总而言之，`frida/subprojects/frida-core/releng/tomlkit/tomlkit/items.py` 定义了 `tomlkit` 库用于表示和操作 TOML 数据结构的核心类，它使得 Frida 能够方便地解析、修改和生成 TOML 配置文件，这在动态逆向工程中是一个非常有用的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/tomlkit/tomlkit/items.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -263,8 +263,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 "
                 new_values.append(it)
                 data_values.append(it.value)
@@ -952,8 +954,4 @@ class Null(Item):
 
     def _getstate(self, protocol=3) -> tuple:
         return ()
-
-"""
-
-
 ```

@@ -88,7 +88,7 @@ A typical Frida user wouldn't directly interact with this file during normal usa
 
 While the `frida/releng/meson/mesonbuild/templates/__init__.py` file is currently empty, its existence signifies the presence of a Python package intended to hold template files. These templates are crucial for Frida's build process and likely play a role in generating code and configurations related to Frida's core functionalities, including those used for reverse engineering, interacting with the binary level, and engaging with the Linux and Android systems. A user would typically encounter this file while developing or debugging the Frida build process, rather than during normal Frida usage.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/templates/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -96,9 +96,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

@@ -126,7 +126,7 @@ By following these steps, we can dissect the provided information, even though i
 
 总而言之， `scommon_broken.c` 文件本身的功能非常简单，就是通过编译错误来阻止其被使用。但它的存在揭示了项目构建过程中的一些重要概念，并且当用户遇到与此相关的构建错误时，需要深入理解构建系统和代码组织结构才能找到问题的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/12 promote/subprojects/s1/subprojects/scommon/scommon_broken.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,10 +134,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #error This file must not be used. The other scommon one should be instead.
-
-"""
-
 ```

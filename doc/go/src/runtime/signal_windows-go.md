@@ -213,7 +213,7 @@ exit status 2
 
 `runtime/signal_windows.go` 是 Go 运行时在 Windows 上进行底层错误处理的关键部分，它负责将 Windows 的异常转换为 Go 的 panic，并提供了阻止错误对话框和控制崩溃行为的功能。理解这段代码有助于更深入地理解 Go 在 Windows 上的运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -221,8 +221,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -705,9 +707,4 @@ func dieFromException(info *exceptionrecord, r *context) {
 
 // gsignalStack is unused on Windows.
 type gsignalStack struct{}
-
-"""
-
-
-
 ```

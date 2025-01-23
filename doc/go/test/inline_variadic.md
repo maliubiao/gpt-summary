@@ -147,15 +147,17 @@ func main() {
 
 在这个例子中，即使 `processItems` 函数可能在某些情况下被内联，但循环内部的 `fmt.Printf` 和 `time.Sleep` 等操作本身可能不会被内联，并且变参 `items` 的装箱操作（因为是 `interface{}`) 也会带来一定的开销。开发者不能仅仅因为 `processItems` 是一个小函数就期望完全的零开销。  内联只是一种优化手段，并不能解决所有性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/inline_variadic.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m
 
 // Copyright 2016 The Go Authors. All rights reserved.
@@ -175,9 +177,4 @@ func f() string { // ERROR "can inline f"
 	x := head("hello", "world") // ERROR "inlining call to head" "\.\.\. argument does not escape"
 	return x
 }
-
-"""
-
-
-
 ```

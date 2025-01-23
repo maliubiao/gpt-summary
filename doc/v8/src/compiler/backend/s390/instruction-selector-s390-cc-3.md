@@ -151,7 +151,7 @@ The instruction selector needs to correctly translate these JavaScript operation
 
 This specific part of `instruction-selector-s390.cc` focuses on the implementation details of selecting S390 instructions for a range of core arithmetic, logical, comparison, and type conversion operations on 32-bit and 64-bit integer and floating-point values. It includes logic for handling overflow conditions and optimizations for specific patterns, like comparisons with zero. This code is crucial for translating the platform-independent intermediate representation of JavaScript code into efficient, architecture-specific machine code for S390 processors.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/instruction-selector-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/s390/instruction-selector-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -159,9 +159,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
-       \
+### 源代码
+```cpp
+\
   V(Word32, Word32Or, kS390_Or32, Or32OperandMode, null)                      \
   V(Word32, Word32Sar, kS390_ShiftRightArith32, Shift32OperandMode,           \
     [&]() { return TryMatchSignExtInt16OrInt8FromWord32Sar(this, node); })
@@ -893,8 +895,4 @@ void InstructionSelectorT<Adapter>::VisitWordCompareZero(
                                           OperandMode::kNone, cont);
               case IrOpcode::kInt64AbsWithOverflow:
                 cont->OverwriteAndNegateIfEqual(kOverflow);
-          
-"""
-
-
 ```

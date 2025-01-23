@@ -101,11 +101,13 @@ console.log(result);
 
 `bytecode-operands.cc` 文件是 V8 引擎内部表示和处理字节码指令操作数的关键组成部分。 它定义了操作数的各种属性（类型、大小、寄存器使用方式），并提供了将这些内部表示转换为人类可读字符串的方法，这对于理解和调试 V8 的字节码执行过程至关重要。 虽然我们无法直接在 JavaScript 代码中看到这些枚举类型，但 JavaScript 代码的执行最终会落实到对这些不同类型的字节码操作数的操作上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-operands.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ std::ostream& operator<<(std::ostream& os, const OperandType& operand_type) {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -188,7 +188,7 @@ console.log(popcnt(0b101101)); // 输出: 4
 
 总而言之，这个文件通过单元测试的方式，确保了 V8 引擎在 LoongArch 64 位架构上进行底层操作的正确性和稳定性，这些底层操作是支撑 JavaScript 高效执行的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-macro-assembler-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-macro-assembler-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -196,8 +196,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lder(isolate, desc, CodeKind::FOR_TESTING).Build();
   auto f = GeneratedCode<FV>::FromCode(isolate, *code);
   uint64_t res = reinterpret_cast<uint64_t>(f.Call(dest, source, pos, 0, 0));
@@ -301,8 +303,4 @@ TEST(DeoptExitSizeIsFixed) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

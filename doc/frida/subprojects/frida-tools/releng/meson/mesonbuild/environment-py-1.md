@@ -85,7 +85,7 @@ The user wants a summary of the functionality of the Python code provided. I nee
 
 当遇到构建问题时，开发者可能会查看 Meson 的日志文件，这些日志会包含与 `Environment` 对象相关的配置信息。如果怀疑是环境配置问题，开发者可能会检查环境变量、机器配置文件，并调试 `environment.py` 相关的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/environment.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -94,9 +94,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                       env_opts[key].extend(p_list)
+### 源代码
+```python
+env_opts[key].extend(p_list)
                     else:
                         key = OptionKey.from_string(keyname).evolve(machine=for_machine)
                         if evar in compilers.compilers.CFLAGS_MAPPING.values():
@@ -334,8 +336,4 @@ Prompt:
 
     def has_exe_wrapper(self) -> bool:
         return self.exe_wrapper and self.exe_wrapper.found()
-
-"""
-
-
 ```

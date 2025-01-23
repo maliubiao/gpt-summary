@@ -175,7 +175,7 @@ Initially, I might have focused too much on the simplicity of the C code itself.
 
 这个简单的例子是 Frida 测试用例的一部分，旨在验证 Frida 对只包含对象代码的目标进行操作的能力。 调试线索会涉及到查看 Frida 脚本的执行情况、目标进程的日志以及 Frida 自身的错误信息，来确定 hook 是否成功，以及函数调用是否按预期发生。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/121 object only target/source.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,12 +183,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func1_in_obj(void) {
     return 0;
 }
-
-"""
-
 ```

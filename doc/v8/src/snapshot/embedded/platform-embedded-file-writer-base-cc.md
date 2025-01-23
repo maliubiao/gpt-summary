@@ -169,15 +169,17 @@ console.log("Hello from snapshot!"); // 甚至可以包含预先执行的代码�
 
 `platform-embedded-file-writer-base.cc` 是 V8 嵌入式快照功能的核心组成部分，负责将快照数据以平台特定的格式写入文件。虽然开发者通常不会直接修改这个文件，但理解其功能有助于理解 V8 的启动过程和嵌入式快照的工作原理，并能帮助排查与快照相关的配置问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -383,7 +385,4 @@ std::unique_ptr<PlatformEmbeddedFileWriterBase> NewPlatformEmbeddedFileWriter(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

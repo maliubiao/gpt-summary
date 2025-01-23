@@ -218,7 +218,7 @@ console.log("Frida script attached to hook ioctl for FireWire devices.");
 
 通过 Frida Hook，你可以动态地观察 Android Framework 或 NDK 如何使用这些底层的 FireWire 接口与内核驱动进行交互，从而更好地理解音频系统的运作流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/sound/firewire.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -229,8 +229,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -386,7 +388,4 @@ struct snd_firewire_motu_command_dsp_meter {
   float data[SNDRV_FIREWIRE_MOTU_COMMAND_DSP_METER_COUNT];
 };
 #endif
-
-"""
-
 ```

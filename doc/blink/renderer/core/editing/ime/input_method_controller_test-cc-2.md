@@ -102,7 +102,7 @@ By following these steps, we can effectively analyze the C++ test code and provi
 
 这部分测试代码专注于验证 `InputMethodController` 在处理 IME 输入事件（特别是 composition 和 commit）时的核心逻辑，以及它与浏览器事件系统和文档模型 (Document Markers) 的正确交互。它确保了当用户通过 IME 输入时，相关的 JavaScript 事件能够被正确触发和携带正确的数据，同时保证了文档内容和标记的正确更新。这些测试覆盖了各种输入场景，包括插入、删除、替换文本，以及焦点变化等情况，旨在提高 Blink 引擎在处理 IME 输入时的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/ime/input_method_controller_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 EQ("compositionend.data:hello;", GetDocument().title());
 }
 
@@ -915,7 +917,4 @@ TEST_F(InputMethodControllerTest, ContentDependentMarker_Deletions) {
   EphemeralRange marker_range = PlainTextRange(0, 5).CreateRange(*div);
   GetDocument().Markers().AddTextMatchMarker(
       marker_range, TextMatchMarker::MatchStatus
-"""
-
-
 ```

@@ -66,11 +66,13 @@ safeFunction(); // V8 引擎会确保返回地址的完整性，防止被 attack
 
 `v8/test/unittests/execution/pointer-auth-arm64-unittest.cc` 文件通过单元测试来验证 V8 引擎在 ARM64 架构上实现的指针认证功能的正确性和有效性，这是 V8 引擎为了提高 JavaScript 代码执行安全性的重要底层机制。虽然 JavaScript 开发者通常不需要直接接触这些底层细节，但指针认证等安全机制确保了 JavaScript 代码在 V8 引擎中的安全可靠执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/execution/pointer-auth-arm64-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -305,7 +307,4 @@ TEST_F(PointerAuthArm64Test, SimulatorAddAndStripPAC) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

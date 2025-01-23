@@ -127,15 +127,17 @@ By following these steps, the detailed and comprehensive explanation can be cons
 
 `v8_page_popup_controller_binding.cc` 是 Blink 渲染引擎中负责将 C++ 的页面弹出窗口控制器 (`PagePopupController`) 暴露给 JavaScript 环境的关键文件。它通过 V8 提供的绑定机制，使得 JavaScript 可以访问这个控制器对象，尽管具体的控制逻辑可能在其他 C++ 类中实现。它与 HTML 和 CSS 的关系是间接的，主要体现在 `PagePopupController` 管理的弹出窗口与 HTML 元素的行为以及 CSS 样式有关。 理解这个文件的作用有助于理解 Blink 内部 JavaScript 和 C++ 代码如何协同工作，以及在调试与页面弹出窗口相关的行为时提供一定的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/v8_page_popup_controller_binding.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ void V8PagePopupControllerBinding::InstallPagePopupController(
 }
 
 }  // namespace blink
-
-"""
-
 ```

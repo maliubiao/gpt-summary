@@ -212,14 +212,16 @@ p::first-letter {
 
 总而言之，`style_initial_letter.cc` 文件中的 `StyleInitialLetter` 类是 Blink 渲染引擎中处理 CSS `initial-letter` 属性的核心组件，负责存储和管理该属性的各种可能的值，并在渲染过程中发挥作用。 理解这个类有助于深入了解浏览器如何解析和应用 CSS 样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/style_initial_letter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -277,7 +279,4 @@ StyleInitialLetter StyleInitialLetter::Raise(float size) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

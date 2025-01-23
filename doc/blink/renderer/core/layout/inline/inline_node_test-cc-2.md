@@ -92,21 +92,19 @@ By following these steps, I can generate a comprehensive explanation of the prov
 
 `CreateAndLayoutInlineItems` 这样的辅助函数被用于简化测试用例的创建，方便地模拟内联元素的生成和布局过程，并验证布局结果的正确性。 这些测试确保了 Blink 引擎能够准确地将 HTML 和 CSS 中描述的内联元素布局到屏幕上，为用户提供一致和预期的网页渲染效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_node_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 r, items, spacing));
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

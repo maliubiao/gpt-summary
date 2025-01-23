@@ -151,11 +151,13 @@ V8 引擎会根据 `StatsCollector` 收集的统计信息以及其他因素来�
 
 **总结来说，`stats-collector.cc` 是 CppGC 的核心组成部分，负责监控和记录 C++ 堆的内存使用和垃圾回收行为，而这些行为直接受到 JavaScript 代码执行的影响。虽然 JavaScript 代码不能直接控制 `stats-collector.cc`，但 JavaScript 的内存分配模式和对象生命周期会直接反映在其收集的统计数据中。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/stats-collector.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -559,7 +561,4 @@ void StatsCollector::RecordHistogramSample(ScopeId scope_id_,
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

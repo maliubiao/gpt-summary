@@ -332,7 +332,7 @@ if (Process.platform === 'android') {
 
 请注意，这只是一个基本的示例，实际调试可能需要更复杂的 Frida 脚本和对 Android 系统内部机制的深入了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/platform/bionic/fdtrack.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -343,8 +343,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -427,7 +429,4 @@ bool android_fdtrack_set_enabled(bool new_value) __INTRODUCED_IN(30);
 void android_fdtrack_set_globally_enabled(bool new_value) __INTRODUCED_IN(31);
 
 __END_DECLS
-
-"""
-
 ```

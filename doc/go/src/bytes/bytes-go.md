@@ -75,7 +75,7 @@ Here's a plan:
 
 总而言之，这段代码提供了对字节切片进行各种操作的功能，包括比较、查找、分割、连接、替换、大小写转换、修剪等等，并且考虑了 UTF-8 编码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/bytes/bytes.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -84,8 +84,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1374,10 +1376,5 @@ hasUnicode:
 		}
 
 		// General case. SimpleFold(x) returns the next equivalent rune > x
-		// or wraps around 
-"""
-
-
-
-
+		// or wraps around
 ```

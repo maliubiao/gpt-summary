@@ -301,7 +301,7 @@ sys.stdin.read()
 
 希望以上详细的分析能够帮助你理解 `bionic/libc/stdio/vfwprintf.cpp` 的功能和实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/stdio/vfwprintf.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -312,8 +312,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*	$OpenBSD: vfwprintf.c,v 1.15 2015/12/28 22:08:18 mmcc Exp $ */
 /*-
  * Copyright (c) 1990 The Regents of the University of California.
@@ -1028,7 +1030,4 @@ finish:
   }
   return (ret);
 }
-
-"""
-
 ```

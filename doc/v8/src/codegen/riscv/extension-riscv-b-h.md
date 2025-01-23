@@ -190,15 +190,17 @@ let setBitCount = countSetBits(c); // 4
 
 了解 V8 如何使用这些底层的 RISC-V "B" 扩展指令，可以帮助开发者更好地理解 JavaScript 引擎的工作原理，并在某些性能敏感的场景下编写更优的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-b.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/extension-riscv-b.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ class AssemblerRISCVB : public AssemblerRiscvBase {
 }  // namespace internal
 }  // namespace v8
 #endif  // V8_CODEGEN_RISCV_EXTENSION_RISCV_B_H_
-
-"""
-
 ```

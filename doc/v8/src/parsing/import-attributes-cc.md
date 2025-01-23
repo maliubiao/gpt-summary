@@ -144,15 +144,17 @@ In this case, V8 would parse the import attributes correctly. However, the modul
 
 `v8/src/parsing/import-attributes.cc` plays a small but important role in V8's parsing process by providing a way to compare the keys of import attributes used in dynamic `import()` statements. While it's a C++ file, it directly supports a JavaScript language feature and helps ensure the correct handling of module loading with additional metadata. Common programming errors related to this feature often involve typos or incorrect values in the import attribute object in JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/import-attributes.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/import-attributes.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -171,7 +173,4 @@ bool ImportAttributesKeyComparer::operator()(const AstRawString* lhs,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

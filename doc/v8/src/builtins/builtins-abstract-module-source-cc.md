@@ -180,15 +180,17 @@ if (typeString === '[object AbstractModuleSource]') {
 
 `v8/src/builtins/builtins-abstract-module-source.cc` 文件定义了 `AbstractModuleSource.prototype@@toStringTag` 这个内置函数的行为。目前，它主要针对 `WebAssembly.Module` 对象返回 `"WebAssembly.Module"`，对于其他抽象模块源则返回 `undefined`，这反映了 V8 正在进行的 ES 模块功能实现工作。用户需要注意这一点，避免在使用 `Object.prototype.toString.call()` 时产生错误的假设。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-abstract-module-source.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-abstract-module-source.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -229,7 +231,4 @@ BUILTIN(AbstractModuleSourceToStringTag) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -177,7 +177,7 @@ if (Process.platform === 'linux') {
 
 `nomod.cpp` 是 Frida 的一个简单的 C++ 测试用例，用于验证 Frida 在处理使用了 `boost::any` 类型的代码时的基本能力。它展示了 `boost::any` 的基本用法，并为 Frida 开发者提供了一个基础的测试场景，以确保 Frida 能够正确地与这类代码进行交互，即使不进行任何修改。对于 Frida 的用户来说，分析这类测试用例可以帮助理解 Frida 的工作原理以及如何将其应用于更复杂的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/1 boost/nomod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -185,8 +185,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<boost/any.hpp>
 #include<iostream>
 
@@ -205,7 +207,4 @@ int main(int argc, char **argv) {
         return 1;
     }
 }
-
-"""
-
 ```

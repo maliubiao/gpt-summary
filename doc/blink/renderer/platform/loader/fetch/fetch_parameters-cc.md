@@ -156,14 +156,16 @@ let fetchParameters = convertRequestToFetchParameters(request);
 
 总而言之，`fetch_parameters.cc` 文件是 Blink 渲染引擎中处理网络请求配置的核心部分，它连接了 JavaScript API、HTML 标签属性和底层的网络请求机制，确保浏览器能够按照开发者和页面的指示正确地获取资源。理解其功能有助于更好地理解浏览器的工作原理以及如何避免常见的 Web 开发错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/fetch_parameters.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google, Inc. All rights reserved.
  *
@@ -292,7 +294,4 @@ void FetchParameters::SetModuleScript() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

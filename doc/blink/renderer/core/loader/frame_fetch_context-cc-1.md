@@ -197,7 +197,7 @@ Now I can synthesize this information into a comprehensive summary addressing th
 
 在调试过程中，可以通过断点设置在这些关键函数上，查看请求的头部信息、URL 变化、CSP 策略等，来追踪资源加载的流程和问题。例如，如果发现图片加载失败，可以检查是否是因为 CSP 阻止了请求，或者客户端提示设置不正确导致服务器返回了错误的资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/frame_fetch_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 g(String::Number(dpr)));
   }
 
@@ -735,8 +737,4 @@ void FrameFetchContext::UpdateSubresourceLoadMetrics(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

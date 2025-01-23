@@ -164,7 +164,7 @@ int round2_c() {
 
 总而言之，`file2.c` 作为一个简单的测试用例，其核心目的是验证 Frida 在处理预链接环境下的函数 hook 功能是否正常。它涉及了逆向工程中常用的动态插桩技术，并且与操作系统底层的二进制、动态链接和符号解析等概念密切相关。理解这个文件的功能需要结合其所在的上下文，特别是“预链接”这一关键词。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/86 prelinking/file2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<private_header.h>
 
 int round1_b() {
@@ -183,7 +185,4 @@ int round1_b() {
 int round2_b() {
     return round2_c();
 }
-
-"""
-
 ```

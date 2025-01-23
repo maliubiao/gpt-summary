@@ -267,7 +267,7 @@ if (Process.platform === 'android') {
 
 总而言之，`bionic/tests/math_data/atan2_intel_data.handroid` 这个文件是 Android Bionic 库中用于测试 `atan2` 函数正确性的测试数据集合。 它包含了各种各样的输入组合及其对应的预期输出，用于确保 Android 平台的数学运算的精度和可靠性。 尽管它本身不涉及动态链接器的直接操作，但它服务于 `libc.so` 中会被动态链接的 `atan2` 函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atan2_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -279,8 +279,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ry 886
     0x1.0000000000000800000000000040p-1022,
     0x1.0p2,
@@ -1182,8 +1184,4 @@ ry 886
     -0x1.fffffffffffffp1023
   }
 };
-
-"""
-
-
 ```

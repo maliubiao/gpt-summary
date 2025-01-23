@@ -75,15 +75,17 @@ The user wants me to analyze the provided C++ code snippet from the Chromium Bli
 
 `inline_node.cc` 文件的这一部分的核心功能是为块级元素中的内联内容准备必要的布局数据，包括收集内联元素、分段文本、进行文本塑形以及将这些信息组织到 `InlineNodeData` 结构中。这个过程是 Blink 渲染引擎进行后续内联布局计算的关键基础。它与 HTML 结构和 CSS 样式密切相关，并对 JavaScript 引起的 DOM 变化做出响应。 该代码也体现了对性能的关注，通过尝试重用之前的文本塑形结果来优化布局过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -906,7 +908,4 @@ class InlineNodeDataEditor final {
     if (end_offset == safe_start_offset)
       return InlineItem(item, start_offset, end_offset, nullptr);
     // To handle kerning, e.g
-"""
-
-
 ```

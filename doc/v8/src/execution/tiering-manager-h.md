@@ -191,15 +191,17 @@ While you don't directly interact with `TieringManager`, certain JavaScript codi
 
 In summary, `v8/src/execution/tiering-manager.h` defines the heart of V8's dynamic optimization system. It's a crucial component that monitors function execution and makes decisions about when and how to apply different optimization techniques to ensure JavaScript code runs as efficiently as possible. While invisible to the average JavaScript developer, its work is fundamental to V8's performance.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/tiering-manager.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/tiering-manager.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -273,7 +275,4 @@ class TieringManager {
 }  // namespace v8
 
 #endif  // V8_EXECUTION_TIERING_MANAGER_H_
-
-"""
-
 ```

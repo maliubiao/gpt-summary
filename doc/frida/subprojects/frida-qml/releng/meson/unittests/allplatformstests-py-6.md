@@ -134,7 +134,7 @@ If any of these steps fail, a developer working on Frida might add or modify tes
 
 In essence, `allplatformstests.py` is a comprehensive suite of unit tests designed to ensure the Frida QML component can be built correctly across various platforms and configurations using the Meson build system. It covers a wide range of build features, from basic compilation to advanced installation procedures and language integrations. Its primary purpose is to guarantee the reliability and correctness of the Frida QML build process, which is a crucial foundation for users and developers of the Frida dynamic instrumentation toolkit.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 DCXXFLAG'}
         srcdir = os.path.join(self.unit_test_dir, '88 multiple envvars')
         self.init(srcdir, override_envvars=envs)
@@ -881,8 +883,4 @@ DCXXFLAG'}
             # The first supported std should be selected
             self.setconf('-Dcpp_std=c++11,gnu++11,vc++11')
             self.assertEqual(self.getconf('cpp_std'), 'c++11')
-
-"""
-
-
 ```

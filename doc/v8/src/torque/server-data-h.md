@@ -176,15 +176,17 @@ definitions_map_ = {
 
 总而言之，`v8/src/torque/server-data.h` 定义了一个关键的数据结构，用于在 V8 的 Torque 编译过程中收集和组织源代码的定义和符号信息，这些信息对于支持语言服务器协议以及提供代码导航和错误检测等功能至关重要。虽然它本身是 C++ 代码，但它处理的是 Torque 语言的信息，而 Torque 语言最终会生成用于实现 JavaScript 功能的 C++ 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/server-data.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/server-data.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -258,7 +260,4 @@ class LanguageServerData : public base::ContextualClass<LanguageServerData> {
 }  // namespace v8::internal::torque
 
 #endif  // V8_TORQUE_SERVER_DATA_H_
-
-"""
-
 ```

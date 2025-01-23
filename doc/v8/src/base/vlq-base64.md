@@ -113,11 +113,13 @@ function add(n,r){return n+r}console.log(add(1,2));
 
 `v8/src/base/vlq-base64.cc` 文件中的代码提供了在 V8 引擎内部使用的 VLQBase64 解码功能。这个功能对于 V8 处理和理解 Source Maps 至关重要，使得开发者在调试压缩后的 JavaScript 代码时能够方便地定位到原始代码的位置。虽然 JavaScript 自身没有直接的 VLQBase64 解码 API，但这个编码格式在前端开发中扮演着重要的角色，特别是在涉及到代码构建和调试时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/vlq-base64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ int32_t VLQBase64Decode(const char* start, size_t sz, size_t* pos) {
 }
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

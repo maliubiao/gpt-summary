@@ -113,7 +113,7 @@ The user wants a summary of the functionality of the Python code provided, speci
 
 总而言之，`BuildTarget` 类是 Meson 构建系统中描述和管理构建目标的核心组件，它汇集了构建目标的所有关键信息，并提供了处理这些信息的逻辑。理解它的功能对于理解 Meson 的工作原理以及调试构建问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -122,8 +122,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 elf.objects: T.List[ObjectTypes] = []
         self.structured_sources = structured_sources
         self.external_deps: T.List[dependencies.Dependency] = []
@@ -786,8 +788,4 @@ elf.objects: T.List[ObjectTypes] = []
         for t in targets:
             if not isinstance(t, (Target, CustomTargetIndex)):
                 if isinstance(t, dependencies.ExternalLibrary):
-                   
-"""
-
-
 ```

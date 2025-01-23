@@ -143,14 +143,16 @@ Navigation API 是一个 JavaScript API，旨在为 Web 开发者提供更精细
 
 这些测试确保了 Navigation API 的实现符合规范，并且能够正确地与 JavaScript 和浏览器的其他组件协同工作。它们也间接地揭示了一些用户和开发者在使用 Navigation API 时可能遇到的陷阱和需要注意的地方。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/navigation_api/navigation_api_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -389,7 +391,4 @@ TEST_F(NavigationApiTest, InformAboutCanceledNavigationAfterPurgeMemory) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -169,7 +169,7 @@ Initially, I might have just stated the code converts buffer sizes to seconds. H
 
 总而言之，`GetMinMaxBufferSizesInSeconds` 函数在 Chromium 的音频处理流程中扮演着单位转换的角色，它将内部表示的音频缓冲区大小转换为更易于理解和使用的秒，为后续的音频处理和控制提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_audio.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 the microseconds decimal place.
   return std::make_tuple(
       base::Microseconds(
@@ -194,8 +196,4 @@ the microseconds decimal place.
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

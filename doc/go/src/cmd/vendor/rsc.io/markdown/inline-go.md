@@ -157,7 +157,7 @@ This is <em>italic</em> and <strong>bold</strong>. Here is some <code>code</code
 
 这段 `inline.go` 文件是 `rsc.io/markdown` 库中负责解析 Markdown 行内语法的核心部分。它通过定义 `Inline` 接口和各种实现了该接口的结构体，将 Markdown 文本结构化表示，并提供了将其渲染成不同格式的能力。理解其功能和潜在的错误点，有助于更好地使用和调试 Markdown 解析器。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/rsc.io/markdown/inline.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -165,8 +165,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1126,9 +1128,4 @@ func (x *Emoji) printMarkdown(buf *bytes.Buffer) {
 func (x *Emoji) PrintText(buf *bytes.Buffer) {
 	htmlEscaper.WriteString(buf, x.Text)
 }
-
-"""
-
-
-
 ```

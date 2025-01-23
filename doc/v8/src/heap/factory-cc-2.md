@@ -113,7 +113,7 @@ By following these steps, iteratively analyzing the code, and keeping the user's
 
 作为第 3 部分，这段代码专注于对象创建的具体实现细节，与其他部分（可能涉及对象布局、垃圾回收、代码生成等）共同构成了 V8 堆管理和对象生命周期的完整图景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/factory.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/factory.cc以.tq结尾，那它是个v8 torque源代码，
@@ -121,8 +121,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ECK(IsCallable(*then));
   auto microtask = NewStructInternal<PromiseResolveThenableJobTask>(
       PROMISE_RESOLVE_THENABLE_JOB_TASK_TYPE, AllocationType::kYoung);
@@ -866,7 +868,4 @@ Tagged<Map> Factory::InitializeMap(Tagged<Map> map, InstanceType type,
   // Must be called only after |instance_type| and |instance_size| are set.
   map->set_visitor_id(Map::GetVisitorId(map));
   DCHECK(
-"""
-
-
 ```

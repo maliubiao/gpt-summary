@@ -93,7 +93,7 @@ By following this structured approach, combining reading, analysis, and example 
 
 总的来说，这段代码提供了用于在 Go 程序中方便地处理 IP 地址和网络前缀的基础设施。它考虑了 IPv4 和 IPv6 的不同，提供了多种格式的表示和序列化方式，并实现了常见的网络操作，例如判断 IP 归属和前缀重叠。这对于网络编程、安全分析以及任何需要处理 IP 地址和网络范围的 Go 应用程序来说都是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/netip/netip.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -102,8 +102,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 string {
 	var b []byte
 	switch p.ip.z {
@@ -536,10 +538,4 @@ func (p Prefix) String() string {
 	}
 	return p.ip.String() + "/" + itoa.Itoa(p.Bits())
 }
-
-"""
-
-
-
-
 ```

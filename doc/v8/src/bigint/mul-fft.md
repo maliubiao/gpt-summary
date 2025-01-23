@@ -130,11 +130,13 @@ console.log(product); // 输出 bigIntA 和 bigIntB 的乘积
 
 `mul-fft.cc` 文件是 V8 引擎中用于高效计算 `BigInt` 乘法的关键组成部分。它实现了 Schönhage-Strassen FFT 算法，并通过精心的参数选择和优化，显著提升了 JavaScript 中大整数乘法的性能。对于开发者来说，这些都是在幕后发生的，他们只需要使用 JavaScript 的 `*` 运算符即可，引擎会自动选择最优的算法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/mul-fft.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -924,7 +926,4 @@ void ProcessorImpl::MultiplyFFT(RWDigits Z, Digits X, Digits Y) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

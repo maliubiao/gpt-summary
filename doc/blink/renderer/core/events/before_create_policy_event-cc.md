@@ -131,14 +131,16 @@ Let's break down the thought process to analyze the provided C++ code snippet fo
 
 总而言之，`BeforeCreatePolicyEvent` 提供了一个在策略创建前进行干预的机会，允许 JavaScript 代码根据即将创建的策略名称来决定是否允许其创建。这在实现精细化的权限控制、安全策略管理或实验性功能控制方面可能非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/before_create_policy_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ void BeforeCreatePolicyEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

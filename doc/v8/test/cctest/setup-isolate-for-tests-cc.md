@@ -164,15 +164,17 @@ const doubledNumbers = numbers.map(num => num * 2);
 
 `v8/test/cctest/setup-isolate-for-tests.cc` 是一个用于在 V8 单元测试中快速设置隔离环境的 C++ 文件。它允许条件性地初始化堆和编译内置函数，以满足不同测试场景的需求。虽然普通 JavaScript 开发者不会直接接触它，但理解其背后的概念有助于更好地理解 JavaScript 的运行原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/setup-isolate-for-tests.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/setup-isolate-for-tests.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ void SetupIsolateDelegateForTests::SetupBuiltins(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

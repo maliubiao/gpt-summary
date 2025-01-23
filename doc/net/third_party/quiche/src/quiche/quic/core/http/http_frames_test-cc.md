@@ -123,15 +123,17 @@ Let's break down the thought process to analyze the given C++ test file.
 
 总而言之，`http_frames_test.cc` 虽然不是用户直接接触的代码，但它是确保 Chromium 浏览器 HTTP/3 功能正确性和稳定性的关键组成部分。当用户遇到与 HTTP/3 相关的问题时，这个文件及其测试用例可以为开发人员提供重要的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/http_frames_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2020 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -219,7 +221,4 @@ TEST(HttpFramesTest, AcceptChFrame) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

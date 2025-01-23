@@ -92,7 +92,7 @@ Let's break down the thought process to answer the request about the `broken.c` 
 
 `broken.c` 文件本身并不复杂，但它在 Frida 的测试框架中扮演着重要的角色。它作为一个故意引入的编译错误，用于验证 Frida 的构建系统（特别是处理子项目构建的部分）是否能够正确地检测和报告错误。这对于保证 Frida 工具链的健壮性，以及帮助用户在开发自己的 Frida 模块时能够及时发现和解决编译问题至关重要。  它是一个反例，用来测试构建系统的负面路径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/198 broken subproject/subprojects/broken/broken.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -100,10 +100,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #error This must not compile
-
-"""
-
 ```

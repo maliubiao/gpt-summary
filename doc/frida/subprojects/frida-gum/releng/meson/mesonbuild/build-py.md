@@ -83,7 +83,7 @@ Here's a breakdown of the thought process:
 
 `frida/subprojects/frida-gum/releng/meson/mesonbuild/build.py` 文件是 Frida Gum 库的 Meson 构建系统的核心组成部分，其主要功能是**定义 Frida Gum 库的编译、链接和安装过程**。它详细描述了构建目标、源代码、依赖关系、编译和链接选项，以及安装规则。该文件对于理解 Frida Gum 的构建流程、进行定制开发以及排查构建问题至关重要。 它体现了构建系统如何处理不同平台、架构的编译需求，以及如何将底层的二进制代码组织成可执行的库文件，这与逆向工程中对二进制代码的理解和操作密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -92,8 +92,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -946,7 +948,4 @@ class BuildTarget(Target):
         self.all_compilers = compilers
         self.compilers: OrderedDict[str, Compiler] = OrderedDict()
         s
-"""
-
-
 ```

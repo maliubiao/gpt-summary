@@ -83,15 +83,17 @@ Potential usage errors might involve incorrect assumptions about when a new chun
 
 本部分代码主要测试了 `PaintChunker` 类在处理包含不透明信息的显示项以及命中测试数据时，如何正确地划分绘制块，并准确地记录每个绘制块中已知的完全不透明的矩形区域。这些测试覆盖了不同的场景，包括单独的不透明项、与命中测试区域的结合、以及与透明项的混合，旨在确保 `PaintChunker` 能够有效地优化渲染过程，例如通过跳过绘制已完全被不透明内容覆盖的区域。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/paint_chunker_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lient3, TestChunkerOpaqueDisplayItem(client3.Id(), DisplayItemType(4),
                                             gfx::Rect(50, 50, 100, 100)));
 
@@ -237,8 +239,4 @@ TEST_F(PaintChunkerTest, ChunkBoundsAndKnownToBeOpaqueMixedOpaquenessItems) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
-
 ```

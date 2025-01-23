@@ -140,15 +140,17 @@ This systematic approach, starting with high-level scanning and progressing to d
 
 总而言之，`webgl_image_conversion.cc` 的这部分代码主要负责 **理解和初步处理 WebGL 接收到的各种图像数据格式**。它通过 `GetDataFormat` 函数确定数据的内部表示，并提供了一些基础的数值裁剪和缩放功能。它还包含了用于将单精度浮点数转换为半精度浮点数的优化代码（通过查找表实现）。这部分是 WebGL 图像处理流程的早期阶段，为后续的纹理上传和 GPU 渲染做准备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/webgl_image_conversion.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -827,7 +829,4 @@ const uint32_t g_mantissa_table[2048] = {
     0x38148000, 0x3814a000, 0x3814c000, 0x3814e000, 0x38150000, 0x38152000,
     0x38154000, 0x38156000, 0x38158000, 0x3815a000, 0x3815c000, 0x3815e000,
     0x38160000, 0x38162000, 0x38164
-"""
-
-
 ```

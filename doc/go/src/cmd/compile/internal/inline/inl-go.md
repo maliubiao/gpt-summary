@@ -186,15 +186,17 @@ func main() {
 
 总而言之，`go/src/cmd/compile/internal/inline/inl.go` 是 Go 编译器中实现函数内联优化的核心组件之一，它负责分析函数并做出内联决策，从而提升程序的性能。理解其工作原理和相关的命令行参数对于编写高性能的 Go 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/inline/inl.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1483,9 +1485,4 @@ func analyzeFuncProps(fn *ir.Func, p *pgoir.Profile) {
 	}
 	inlheur.AnalyzeFunc(fn, canInline, budgetForFunc, inlineMaxBudget)
 }
-
-"""
-
-
-
 ```

@@ -158,7 +158,7 @@ needs_object_holder(custom_lib)
 
 总结来说，`_unholder.py` 是 Frida 构建系统内部的一个关键实用函数，负责确保传递给解释器内部函数的参数类型正确。虽然普通 Frida 用户不会直接与之交互，但理解其功能有助于理解 Frida 的构建过程和内部机制。构建脚本中的错误可能会导致 `_unholder` 抛出异常，从而为开发者提供调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/interpreterbase/_unholder.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -193,7 +195,4 @@ def _unholder(obj: InterpreterObject) -> TYPE_var:
     elif isinstance(obj, InterpreterObject):
         raise InvalidArguments(f'Argument {obj} of type {type(obj).__name__} cannot be passed to a method or function')
     raise MesonBugException(f'Unknown object {obj} of type {type(obj).__name__} in the parameters.')
-
-"""
-
 ```

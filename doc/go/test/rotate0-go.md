@@ -184,15 +184,17 @@ go run rotate0.go -mode 1
 
 `go/test/rotate0.go` 的核心功能是生成用于测试位旋转操作的代码。它通过常量 `mode` 来控制生成的测试用例类型。`// runoutput ./rotate.go` 指示了它与 `rotate.go` 的协作方式，即通过比较它们的标准输出来进行测试。理解 `mode` 常量的作用以及 `rotate0.go` 和 `rotate.go` 之间的依赖关系是正确使用和维护这些测试文件的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/rotate0.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // runoutput ./rotate.go
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -205,9 +207,4 @@ Prompt:
 package main
 
 const mode = 0
-
-"""
-
-
-
 ```

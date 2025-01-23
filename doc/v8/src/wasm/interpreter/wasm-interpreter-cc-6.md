@@ -172,7 +172,7 @@ try {
 
 这个代码片段是 WebAssembly 解释器中实现 **SIMD 操作** 和部分 **GC 相关操作** 的核心部分。它定义了各种指令的处理函数，负责执行 SIMD 向量的加载、存储、算术运算、位运算、类型转换、数据打包、选择、点积、混洗和规约等操作。此外，它还处理了 WebAssembly 的异常抛出和重新抛出机制，以及与引用类型相关的空值检查和类型转换分支指令。  这部分是解释器实现 WebAssembly 强大并行计算能力和安全内存管理的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter.cc以.tq结尾，那它是个v8 torque源代码，
@@ -180,8 +180,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 effective_index = offset + index;
 
   if (V8_UNLIKELY(effective_index < index ||
@@ -912,7 +914,4 @@ INSTRUCTION_HANDLER_FUNC s2s_BranchOnCast(const uint8_t* code, uint32_t* sp,
   if (!DoRefCast(ref, ref_type, target_type, null_succeeds, wasm_runtime)) {
     // If condition is not true, jump to the 'false' branch.
     code += (no_branch_offset - kCodeOffsetSize)
-"""
-
-
 ```

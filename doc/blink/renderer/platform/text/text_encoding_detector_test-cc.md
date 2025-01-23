@@ -159,14 +159,16 @@ By following this structured approach, combining code analysis with an understan
 
 总之，`text_encoding_detector_test.cc` 这个文件通过一系列的测试用例，确保了 Blink 引擎能够有效地进行字符编码的自动检测，这对于正确渲染网页内容至关重要，并直接影响到 JavaScript 代码对文本的处理和 CSS 样式的正确显示。开发者应当理解编码的重要性，并避免常见的编码设置错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/text_encoding_detector_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -287,7 +289,4 @@ TEST(TextEncodingDetectorTest, RespectUTF8DetectionForFileResource) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

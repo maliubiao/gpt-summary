@@ -146,7 +146,7 @@ This iterative process of understanding the core request, analyzing the code, br
 
 这个简单的例子展示了 Frida 在动态分析和逆向工程中的基本应用，以及它与底层系统知识的联系。在实际的逆向工作中，目标程序会远比这个复杂，但 Frida 的核心原理和使用方法是相似的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/linuxlike/7 library versions/exe.orig.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -154,8 +154,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int myFunc (void);
 
 int main(void)
@@ -164,7 +166,4 @@ int main(void)
     return 0;
   return 1;
 }
-
-"""
-
 ```

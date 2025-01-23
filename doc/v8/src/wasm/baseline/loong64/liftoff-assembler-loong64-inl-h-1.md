@@ -133,7 +133,7 @@ Here's a breakdown of how to approach this:
 
 总而言之，这部分代码是 Liftoff 编译器在 LoongArch64 架构上生成高效、正确的 WebAssembly 代码的关键组成部分，涵盖了原子操作、栈管理、寄存器操作以及各种指令的生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/loong64/liftoff-assembler-loong64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/loong64/liftoff-assembler-loong64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -141,8 +141,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 def ASSEMBLE_ATOMIC_BINOP_EXT
 #undef ATOMIC_BINOP_CASE
 
@@ -1020,7 +1022,4 @@ bool LiftoffAssembler::emit_type_conversion(WasmOpcode opcode,
       mov(dst.gp(), zero_reg);
       MacroAssembler::Move(kScratchDoubleReg, static_cast<float>(0.0));
       CompareF32
-"""
-
-
 ```

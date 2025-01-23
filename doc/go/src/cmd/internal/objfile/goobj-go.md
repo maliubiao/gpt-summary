@@ -267,15 +267,17 @@ PC ... is in main.go:10, function: &{Sym:0x...}
 
 `go/src/cmd/internal/objfile/goobj.go` 是 Go 语言工具链中负责解析和读取 Go 对象文件的关键组件。它为链接器、调试器和其他分析工具提供了必要的信息，使得这些工具能够理解和处理编译后的 Go 代码。 普通 Go 开发者不需要直接使用这个包，而是通过 `go build`, `go run`, `go test` 等命令间接地使用其功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/objfile/goobj.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -618,9 +620,4 @@ func (f *goobjFile) loadAddress() (uint64, error) {
 func (f *goobjFile) dwarf() (*dwarf.Data, error) {
 	return nil, errors.New("no DWARF data in go object file")
 }
-
-"""
-
-
-
 ```

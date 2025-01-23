@@ -127,7 +127,7 @@ By following these steps, even for a seemingly trivial code snippet, a detailed 
 
 尽管 `slib2.c` 中的 `func2` 函数本身非常简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 动态插桩能力的基础功能。通过分析这个简单的例子，我们可以理解 Frida 如何与目标进程交互，涉及哪些底层的操作系统和架构知识，以及用户在使用 Frida 时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/272 unity/slib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,12 +135,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2(void) {
     return 2;
 }
-
-"""
-
 ```

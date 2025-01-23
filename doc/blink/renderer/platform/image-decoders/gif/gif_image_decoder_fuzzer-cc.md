@@ -166,14 +166,16 @@ By following these steps, breaking down the code, and connecting the dots to web
 
 `gif_image_decoder_fuzzer.cc` 是 Blink 引擎中用于测试 GIF 图片解码器鲁棒性和安全性的重要工具。它通过生成并输入各种可能的（包括恶意的和错误的）GIF 数据，来发现解码器中潜在的漏洞和错误，从而提高浏览器的稳定性和安全性。虽然其直接操作的是底层的 C++ 代码，但其目标是确保浏览器能够安全可靠地处理网页上常见的 GIF 图像资源，这直接关系到用户的浏览体验和安全。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/gif/gif_image_decoder_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -219,7 +221,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -206,7 +206,7 @@ msgfmt --de -d po --template frida.pot -o frida.mo
 
 总而言之，`msgfmthelper.py` 是 Frida 构建流程中负责本地化资源编译的一个小而关键的工具，它通过包装 `msgfmt` 命令，简化了构建系统中生成 `.mo` 文件的过程。它本身不涉及直接的逆向操作，但确保了 Frida 工具能够以用户期望的语言显示信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/scripts/msgfmthelper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -214,8 +214,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -245,7 +247,4 @@ def run(args: T.List[str]) -> int:
     return subprocess.call([options.msgfmt, '--' + options.type, '-d', options.podir,
                             '--template', options.input,  '-o', options.output] + options.args,
                            env=env)
-
-"""
-
 ```

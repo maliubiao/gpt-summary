@@ -222,7 +222,7 @@ Interceptor.attach(Module.getExportByName(null, "ioctl"), {
 
 总结来说，`bionic/libc/include/net/route.handroid` 是 Android Bionic 库中定义网络路由相关数据结构的关键头文件，它连接了用户空间程序和Linux内核的网络路由功能。理解它的作用对于进行底层网络编程和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/net/route.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -233,8 +233,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  * All rights reserved.
@@ -270,7 +272,4 @@ Prompt:
 #include <linux/route.h>
 #include <linux/in6.h>
 #include <linux/ipv6_route.h>
-
-"""
-
 ```

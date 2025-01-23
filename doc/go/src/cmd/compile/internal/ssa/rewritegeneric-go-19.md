@@ -132,7 +132,7 @@ func main() {
 
 作为 `rewritegeneric.go` 文件的一部分，这第 20 部分专注于 **优化 32位、64位和8位整数的循环左移操作**。 它通过定义一系列的匹配模式和重写规则，识别并简化常见的循环左移表达式，例如移位量是常数倍数、与运算掩码、加法或减法常数等情况。  这些优化有助于提升生成代码的效率，是 Go 编译器进行代码优化的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritegeneric.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -141,9 +141,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第20部分，共26部分，请归纳一下它的功能
+```
 
-"""
-			v0.AddArg(y)
+### 源代码
+```go
+v0.AddArg(y)
 			v.AddArg2(x, v0)
 			return true
 		}
@@ -1756,9 +1758,4 @@ func rewriteValuegeneric_OpRsh16Ux64(v *Value) bool {
 		}
 		c := auxIntToInt64(i_1.AuxInt)
 		if v_1.
-"""
-
-
-
-
 ```

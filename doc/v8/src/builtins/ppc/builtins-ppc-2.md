@@ -104,13 +104,15 @@ Many of these functions are deeply intertwined with the internal workings of V8 
 
 总而言之，`v8/src/builtins/ppc/builtins-ppc.cc` 的第 3 部分包含了在 PPC 架构上实现 JavaScript 核心功能的底层代码。这些 built-in 函数是 V8 引擎的关键组成部分，它们使得 JavaScript 代码能够在特定的硬件平台上高效地运行，并提供了 JavaScript 与底层系统交互的桥梁。虽然开发者通常不会直接与这些 C++ 代码交互，但它们的存在和正确性对于 JavaScript 引擎的性能和功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ppc/builtins-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
- bits, 32 uncoded bits),
+### 源代码
+```
+bits, 32 uncoded bits),
   // the result is 0.
   // Compare exponent with 84 (compare exponent - 1 with 83).
   __ cmpi(scratch, Operand(83));
@@ -739,8 +741,4 @@ void Builtins::Generate_RestartFrameTrampoline(MacroAssembler* masm) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_PPC64
-
-"""
-
-
 ```

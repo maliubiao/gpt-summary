@@ -160,7 +160,7 @@ By following these steps and continually refining the understanding based on the
 
 总而言之，`tester.c` 作为一个测试用例，它的存在是为了确保 frida 在特定场景下的功能正确性。用户（通常是开发者）通过运行 frida 的测试套件来间接地执行它，并在测试失败时将其作为调试的入口点，以定位和解决代码中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/88 dep fallback/tester.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 #include"genbob.h"
 #include<string.h>
@@ -184,7 +186,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

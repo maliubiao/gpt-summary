@@ -239,7 +239,7 @@ Android 的动态链接器是 `linker` (通常位于 `/system/bin/linker64` 或 
 
 `e_remainder.c` 文件实现了 C 标准库的 `remainder` 函数，用于计算精确的浮点数余数。它在 Android 的各种场景中都有可能被使用，尤其是在需要精确数学计算的底层库和 NDK 应用中。理解其实现细节和与动态链接器的关系，对于进行 Android 平台的底层开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_remainder.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -249,9 +249,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
+### 源代码
+```c
 /*
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -326,7 +327,4 @@ remainder(double x, double p)
 #if LDBL_MANT_DIG == 53
 __weak_reference(remainder, remainderl);
 #endif
-
-"""
-
 ```

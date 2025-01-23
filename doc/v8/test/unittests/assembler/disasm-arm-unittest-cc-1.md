@@ -109,7 +109,7 @@ COMPARE(vadd(Neon8, q0, q1, q2), "f2020844       vadd.i8 q0, q1, q2");
 
 这段代码覆盖了大量的 ARM 和 NEON 指令，确保 V8 能够正确地反汇编其自身生成的机器码，这对于理解、调试和优化 V8 引擎至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-arm-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-arm-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -117,9 +117,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-      vstr d16, [r0 + 4*0]");
+### 源代码
+```cpp
+vstr d16, [r0 + 4*0]");
       COMPARE(vstr(d17, r1, 4),
               "edc11b01       vstr d17, [r1 + 4*1]");
       COMPARE(vstr(d31, r10, 1020),
@@ -846,7 +848,4 @@ TEST_F(DisasmArmTest, LoadStore) {
     COMPARE(pld(MemOperand(ip, 64)),
             "f5dcf040       pld [ip, #+64]");
     COMPARE(pld(
-"""
-
-
 ```

@@ -187,7 +187,7 @@ By following this thought process, breaking down the code into smaller parts, co
 
 总而言之，`AXRelationCache` 的主要功能是 **高效地缓存和管理 Chromium Blink 引擎中 DOM 元素之间的可访问性关系**。它通过监听 DOM 变化并解析 ARIA 属性和 HTML 属性来维护这些关系，并提供机制来验证关系的有效性，从而确保辅助技术能够正确理解和呈现网页内容。 这是实现 Web 内容可访问性的一个关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_relation_cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1059,7 +1061,4 @@ void AXRelationCache::UpdateAriaOwnsWithCleanLayout(AXObject* owner,
     TreeScope& scope = element->GetTreeScope();
     SpaceSplitString owned_id_vector(
         AXObject::AriaAttribute(*element, ht
-"""
-
-
 ```

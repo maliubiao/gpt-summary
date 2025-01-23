@@ -131,7 +131,7 @@ By following these steps, breaking down the code, and actively thinking about th
 
 `_utils.py` 文件虽然不大，但包含了一些在 TOML 处理中非常重要的基础功能。在 Frida 动态 instrumentation 的场景下，理解这些工具函数的作用可以帮助逆向工程师更深入地了解目标程序的配置加载、数据序列化以及日期时间处理逻辑。通过 hook 这些函数，可以动态地观察程序的行为，收集关键信息，从而辅助逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/tomlkit/tomlkit/_utils.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,8 +139,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import re
@@ -299,7 +301,4 @@ def merge_dicts(d1: dict, d2: dict) -> dict:
             merge_dicts(d1[k], v)
         else:
             d1[k] = d2[k]
-
-"""
-
 ```

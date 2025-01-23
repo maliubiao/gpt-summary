@@ -104,7 +104,7 @@ Now, let's map these to the prompt's requirements.
 
 总而言之，这部分代码是 Frida 构建系统中使用 Meson 进行构建配置的核心组成部分，负责管理不同构建目标之间的链接关系，处理语言相关的链接细节，并提供了代码生成的能力，确保最终生成的可执行文件和库能够正确链接和运行。它对构建过程的正确性至关重要，并包含了许多针对常见用户错误的检查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -113,9 +113,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
- raise MesonException(textwrap.dedent('''\
+### 源代码
+```python
+raise MesonException(textwrap.dedent('''\
                         An external library was used in link_with keyword argument, which
                         is reserved for libraries built as part of this project. External
                         libraries must be passed using the dependencies keyword argument
@@ -789,7 +791,4 @@ class Executable(BuildTarget):
         return self.debug_filename
 
     def is_linkable_tar
-"""
-
-
 ```

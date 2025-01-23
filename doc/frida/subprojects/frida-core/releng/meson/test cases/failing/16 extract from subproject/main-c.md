@@ -172,7 +172,7 @@ Frida 可以用来验证这些假设，或者在不知道 `sub_lib_method` 具�
 
 总而言之，这个简单的 `main.c` 文件在 Frida 的上下文中，主要用于测试 Frida 在处理跨模块函数调用时的能力，特别是当这些模块属于不同的编译单元（子项目）时。它作为一个“失败”的测试用例，暗示了在某些情况下，Frida 可能无法正确地 hook 或处理这类场景，为 Frida 的开发和改进提供了线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/16 extract from subproject/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,14 +180,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int sub_lib_method(void);
 
 int main(void) {
     return 1337 - sub_lib_method();
 }
-
-"""
-
 ```

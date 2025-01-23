@@ -176,15 +176,17 @@ func main() {
 
 总而言之，这段代码是 Go 链接器为 RISC-V 64位架构量身定制的关键组成部分，负责将编译后的代码片段组装成可执行的程序，并处理动态链接和架构特定的指令编码等细节。理解这段代码有助于深入了解 Go 语言的底层编译和链接过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/riscv64/asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -902,9 +904,4 @@ func genCallTramp(arch *sys.Arch, linkmode ld.LinkMode, ldr *loader.Loader, tram
 	r.SetSym(target)
 	r.SetAdd(offset)
 }
-
-"""
-
-
-
 ```

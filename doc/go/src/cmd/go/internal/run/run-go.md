@@ -166,15 +166,17 @@ Arguments: [arg1 arg2]
 
 总而言之，`go/src/cmd/go/internal/run/run.go` 是 `go run` 命令的核心实现，它负责编译 Go 代码、处理命令行参数以及执行生成的可执行文件，并对模块模式和交叉编译等场景提供了支持。理解其功能有助于更有效地使用 `go run` 命令。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/run/run.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -387,9 +389,4 @@ func buildRunProgram(b *work.Builder, ctx context.Context, a *work.Action) error
 	base.RunStdin(cmdline)
 	return nil
 }
-
-"""
-
-
-
 ```

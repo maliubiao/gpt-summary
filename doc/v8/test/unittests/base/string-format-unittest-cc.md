@@ -141,15 +141,17 @@ auto message = FormattedString{} << "Value: " << 123 << ", Size: " << size_t{456
 
 总而言之，`v8/test/unittests/base/string-format-unittest.cc` 通过一系列单元测试验证了 `v8::base::FormattedString` 类的功能，该类旨在提供一种安全且类型感知的字符串格式化机制，以避免传统的 C 风格字符串格式化中常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/string-format-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/base/string-format-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -255,7 +257,4 @@ TEST(FormattedStringTest, Uint32AndUint64) {
 }
 
 }  // namespace v8::base
-
-"""
-
 ```

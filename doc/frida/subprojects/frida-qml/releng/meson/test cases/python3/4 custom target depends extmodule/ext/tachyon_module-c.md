@@ -196,7 +196,7 @@ print(f"Testing command '{command_to_test}': {result}")
 
 总而言之，`tachyon_module.c` 是一个用于测试 Frida 与 Python C 扩展模块交互的简单示例。在实际的逆向工程中，用户可能会创建更复杂的 C 扩展模块来实现更精细的 Native 代码逻辑，用于辅助分析目标应用程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/python3/4 custom target depends extmodule/ext/tachyon_module.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
   Copyright 2016 The Meson development team
 
@@ -257,7 +259,4 @@ static struct PyModuleDef tachyonmodule = {
 PyMODINIT_FUNC PyInit_tachyon(void) {
     return PyModule_Create(&tachyonmodule);
 }
-
-"""
-
 ```

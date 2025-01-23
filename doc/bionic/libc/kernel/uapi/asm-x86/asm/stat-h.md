@@ -291,7 +291,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/kernel/uapi/asm-x86/asm/stat.handroid` 文件是定义文件状态信息结构体的关键头文件，它不包含函数实现，但其定义的结构体被 `libc.so` 中的 `stat` 系列函数使用，并最终通过系统调用与 Linux 内核交互，为 Android 的文件操作提供基础支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/stat.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -302,8 +302,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -406,7 +408,4 @@ struct __old_kernel_stat {
 #endif
 };
 #endif
-
-"""
-
 ```

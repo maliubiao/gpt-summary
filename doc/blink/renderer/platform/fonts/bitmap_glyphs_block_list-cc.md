@@ -151,14 +151,16 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`bitmap_glyphs_block_list.cc` 虽然是一个小文件，但它在 Chromium 的文本渲染流程中扮演着重要的角色，确保了特定字体在网页上的正确和一致显示。它通过黑名单机制，避免了某些字体内嵌位图字形可能导致的渲染问题，从而提升了用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/bitmap_glyphs_block_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ bool BitmapGlyphsBlockList::ShouldAvoidEmbeddedBitmapsForTypeface(
 }
 
 }  // namespace blink
-
-"""
-
 ```

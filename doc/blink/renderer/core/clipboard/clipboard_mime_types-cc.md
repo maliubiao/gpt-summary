@@ -160,15 +160,17 @@ By following these steps, combining code inspection with knowledge of browser ar
 
 总而言之，`clipboard_mime_types.cc` 虽然只是一个简单的常量定义文件，但它在 Chromium Blink 引擎的剪贴板操作中扮演着基础性的角色，确保了不同类型的数据能够被正确地识别和处理。对于前端开发者来说，理解 MIME 类型及其在剪贴板操作中的作用，有助于更好地利用 JavaScript Clipboard API 并处理与复制粘贴相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/clipboard/clipboard_mime_types.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2010 Google Inc. All rights reserved.
  *
@@ -216,7 +218,4 @@ const char kMimeTypeFiles[] = "Files";
 const char kMimeTypeImagePng[] = "image/png";
 
 }  // namespace blink
-
-"""
-
 ```

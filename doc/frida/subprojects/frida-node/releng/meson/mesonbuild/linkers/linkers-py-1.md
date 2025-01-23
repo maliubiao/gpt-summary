@@ -97,7 +97,7 @@ To provide a comprehensive answer, I need to:
 
 如果构建过程出现链接错误，开发者可能会查看 Meson 的输出，其中会包含执行的链接命令。通过分析这些命令，并结合 `linkers.py` 文件中定义的链接器参数，开发者可以定位问题所在，例如错误的库路径或链接参数。  开发者也可能需要阅读 `meson` 的文档以了解如何配置链接器相关的选项。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/linkers/linkers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 hineChoice,
                  *, version: str = 'unknown version'):
         super().__init__(['rlink.exe'], for_machine, '', [],
@@ -779,8 +781,4 @@ class MetrowerksLinkerARM(MetrowerksLinker):
 
 class MetrowerksLinkerEmbeddedPowerPC(MetrowerksLinker):
     id = 'mwldeppc'
-
-"""
-
-
 ```

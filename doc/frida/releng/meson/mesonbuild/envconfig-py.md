@@ -119,7 +119,7 @@ Essentially, I approached the task by: understanding the high-level purpose, dis
 
 总而言之，`envconfig.py` 是 Frida (通过 Meson 构建系统) 的一个核心模块，负责收集和组织构建环境信息，它与逆向工程、底层系统知识、用户配置和调试都有着密切的联系。理解这个文件的功能有助于深入理解 Frida 的构建过程，并在遇到构建问题时提供有价值的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/envconfig.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2016 The Meson development team
 
@@ -609,7 +611,4 @@ class CMakeVariables:
 
     def get_variables(self) -> T.Dict[str, T.List[str]]:
         return self.variables
-
-"""
-
 ```

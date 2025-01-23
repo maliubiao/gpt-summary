@@ -143,7 +143,7 @@ By following this thought process – starting with the overall context, analyzi
 
 尽管 `main.c` 的代码非常简单，但在 Frida 的上下文中，它扮演着测试 Frida 动态 instrumentation 功能的重要角色，特别是针对预编译的静态库。它涉及到逆向工程中的动态分析技术，并触及了二进制底层、操作系统等方面的知识。理解这样的测试用例可以帮助开发者和用户更好地理解 Frida 的工作原理和使用方法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/16 prebuilt static/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<best.h>
 
@@ -160,7 +162,4 @@ int main(int argc, char **argv) {
     printf("%s\n", msg());
     return 0;
 }
-
-"""
-
 ```

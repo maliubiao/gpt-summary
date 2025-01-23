@@ -201,7 +201,7 @@ p1.z = 5; // 改变了 p1 的形状，可能影响到对 `Point` 对象的优化
 
 总的来说，这段代码是 Maglev 代码生成器中至关重要的一部分，它负责保证生成的代码在控制流跳转时的正确性，并通过延迟处理和反优化机制来提升性能和保证程序的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-code-generator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-code-generator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -209,8 +209,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e);
     masm()->set_allow_call(false);
     masm()->set_allow_deferred_call(false);
@@ -1022,8 +1024,4 @@ class MaglevFrameTranslationBuilder {
             while (i < reg.index()) {
               translation_array_builder_->StoreOptimizedOut();
               i++;
-          
-"""
-
-
 ```

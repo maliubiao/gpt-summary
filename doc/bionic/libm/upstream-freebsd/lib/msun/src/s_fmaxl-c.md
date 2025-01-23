@@ -265,7 +265,7 @@ libm.so:
 
 总而言之，`s_fmaxl.c` 文件实现了 `long double` 类型的最大值函数，它是 Android 系统中进行高精度浮点数计算的基础组件之一，被 Framework 和 NDK 应用程序广泛使用。理解其实现原理对于调试和优化相关代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_fmaxl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -275,8 +275,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -331,7 +333,4 @@ fmaxl(long double x, long double y)
 
 	return (x > y ? x : y);
 }
-
-"""
-
 ```

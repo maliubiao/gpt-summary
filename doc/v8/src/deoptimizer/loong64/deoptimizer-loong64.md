@@ -85,11 +85,13 @@ add("hello", "world");
 
 `deoptimizer-loong64.cc` 文件是 V8 引擎在 LoongArch64 架构上实现反优化的关键组成部分，它定义了架构特定的机制来保存和恢复执行状态，以便在优化假设失效时安全地回退到未优化的代码执行，从而保证 JavaScript 代码的正确运行。 尽管这个 C++ 文件处理的是底层细节，但它直接支持了 V8 引擎的动态优化能力，使得 JavaScript 代码能够在运行时根据实际情况进行优化和反优化，以达到性能和正确性的平衡。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/loong64/deoptimizer-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -144,7 +146,4 @@ void FrameDescription::SetPc(intptr_t pc) { pc_ = pc; }
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

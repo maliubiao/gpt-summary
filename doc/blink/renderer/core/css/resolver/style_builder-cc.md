@@ -161,15 +161,17 @@ By following these steps, I can break down the provided code snippet and provide
 
 总而言之，`style_builder.cc` 在 Blink 渲染引擎中扮演着至关重要的角色，它负责将 CSS 的声明性规则转化为浏览器可以理解和渲染的元素样式，是连接 CSS、HTML 和 JavaScript 的关键桥梁。 理解其工作原理对于调试 CSS 相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
@@ -306,7 +308,4 @@ void StyleBuilder::ApplyPhysicalProperty(const CSSProperty& property,
 }
 
 }  // namespace blink
-
-"""
-
 ```

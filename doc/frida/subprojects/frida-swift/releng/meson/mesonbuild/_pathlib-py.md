@@ -121,7 +121,7 @@ While this specific file isn't directly involved in the active process of revers
 
 **In essence, this `_pathlib.py` file is a testament to the complexities of cross-platform software development, where even standard library functions can have platform-specific bugs that need to be carefully worked around to ensure consistent and reliable behavior.** It's a small but important piece in ensuring the smooth functioning of Frida on Windows.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/_pathlib.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -194,7 +196,4 @@ else:
         'PosixPath',
         'WindowsPath',
     ]
-
-"""
-
 ```

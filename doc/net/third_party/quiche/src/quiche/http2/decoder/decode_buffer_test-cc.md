@@ -150,15 +150,17 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`decode_buffer_test.cc` 是保证 Chromium 网络栈中 HTTP/2 解码器正确性的重要组成部分。它通过各种测试用例覆盖了 `DecodeBuffer` 类的关键功能和潜在的错误场景，为开发者提供了信心，确保网络数据能够被可靠地解析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/decoder/decode_buffer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -362,7 +364,4 @@ TEST(DecodeBufferSubsetDeathTest, BaseCursorAdvanced) {
 }  // namespace
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

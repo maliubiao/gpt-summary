@@ -27,10 +27,13 @@ This C++ code continues to test the functionality of the Wasm module decoder, sp
 
 In summary, this part of the `module-decoder-unittest.cc` file focuses on verifying the correct decoding and basic validation of various advanced features and sections within a WebAssembly module, ensuring the parser can handle different combinations and error conditions.
 
-Prompt: ```这是目录为v8/test/unittests/wasm/module-decoder-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/wasm/module-decoder-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 entry count
               TABLE_INDEX0, WASM_INIT_EXPR_I32V_1(0),
               1,     // elements count
@@ -1678,7 +1681,4 @@ TEST_F(WasmModuleVerifyTest, PassiveElementSegment) {
       // sig#0 -----------------------------------------------------------------
       TYPE_SECTION_ONE_SIG_VOID_VOID,
       // funcs -----------------------------------------------------------------
-      
-"""
-
 ```

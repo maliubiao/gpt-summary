@@ -98,11 +98,13 @@ greet("World");
 
 `ConstantArrayBuilder` 是 V8 引擎中一个关键的组件，它负责高效地管理 JavaScript 代码中使用的常量。通过去重存储和分片管理，它优化了内存使用，并通过字节码引用常量的方式提高了代码的执行效率。这使得 V8 能够更快速、更有效地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/constant-array-builder.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -541,7 +543,4 @@ template Handle<Object> ConstantArrayBuilder::Entry::ToHandle(
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

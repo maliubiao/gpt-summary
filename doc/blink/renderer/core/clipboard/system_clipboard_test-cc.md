@@ -191,15 +191,17 @@ By following these steps, you can effectively analyze the given C++ test file an
 
 总而言之，`system_clipboard_test.cc` 文件通过一系列单元测试，确保了 `SystemClipboard` 类作为 Blink 引擎与操作系统剪贴板的桥梁，能够正确地读取各种格式的剪贴板数据，并且在各种情况下（例如，快照、断开连接）都能表现出预期的行为，从而保证了 Web 平台的剪贴板功能的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/clipboard/system_clipboard_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -715,7 +717,4 @@ TEST_F(SystemClipboardTest, SequenceNumberWithUnboundClipboardHost) {
   EXPECT_NE(sequence_number_after_write, sequence_number_after_reset);
 }
 }  // namespace blink
-
-"""
-
 ```

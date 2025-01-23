@@ -124,7 +124,7 @@ ARCH: mips64 (或 mips64le)
 
 这段 `vdso_linux_mips64x.go` 代码的核心功能是利用 Linux 系统上的 VDSO 机制来优化 MIPS64 或 MIPS64 Little-Endian 架构上的 `clock_gettime` 系统调用。通过预先查找和验证 VDSO 中的符号，并在运行时直接调用，可以避免陷入内核，提高获取时间的效率，从而提升 Go 程序的整体性能。这对于那些频繁需要获取系统时间的应用程序来说尤其重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/vdso_linux_mips64x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -132,8 +132,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -161,9 +163,4 @@ var vdsoSymbolKeys = []vdsoSymbolKey{
 var (
 	vdsoClockgettimeSym uintptr = 0
 )
-
-"""
-
-
-
 ```

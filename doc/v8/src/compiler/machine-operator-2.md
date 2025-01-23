@@ -73,14 +73,15 @@ JavaScript 的函数调用栈和局部变量管理依赖于底层的栈操作。
 
 总而言之，`machine-operator.cc` 的这一部分定义了 V8 编译器将 JavaScript 代码转换为机器码时使用的各种低级操作。它为实现 JavaScript 的并发特性（如 `Atomics`）和高性能计算能力（如 SIMD，主要体现在 WebAssembly 中）提供了基础。虽然 JavaScript 开发者通常不需要直接接触这些底层的操作符，但它们是 V8 引擎高效执行 JavaScript 代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-operator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-
-      && params.kind() == MemoryAccessKind::k##Kind) {      \
+### 源代码
+```
+&& params.kind() == MemoryAccessKind::k##Kind) {      \
     return &cache_.kWord64AtomicExchange##kType##Kind;      \
   }
 #define OP(kType)             \
@@ -305,8 +306,4 @@ const Operator* MachineOperatorBuilder::SetStackPointer() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

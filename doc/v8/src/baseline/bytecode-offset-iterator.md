@@ -111,11 +111,13 @@ Return      // Return the value in the accumulator
 
 `BytecodeOffsetIterator` 是 V8 引擎内部用于遍历和映射 JavaScript 函数字节码的关键组件。它提供了一种结构化的方式来访问字节码指令及其相关的程序计数器信息，这对于理解、分析和优化 JavaScript 代码的执行至关重要。虽然 JavaScript 开发者不能直接使用这个 C++ 类，但它在 V8 的底层实现中扮演着重要的角色，并影响着我们与 JavaScript 引擎交互的方式（例如，通过调试器）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/bytecode-offset-iterator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ void BytecodeOffsetIterator::UpdatePointers() {
 }  // namespace baseline
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

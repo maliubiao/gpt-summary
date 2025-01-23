@@ -208,15 +208,17 @@ func main() {
 
 `go/src/cmd/vendor/golang.org/x/sys/windows/types_windows_amd64.go` 文件定义了用于在 64 位 Windows 系统上进行底层系统编程的关键数据结构。这些结构体是 Go 语言与 Windows API 交互的基础，用于实现网络编程、进程管理等功能。理解这些结构体的作用对于进行 Windows 平台相关的 Go 开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/windows/types_windows_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -251,9 +253,4 @@ type JOBOBJECT_BASIC_LIMIT_INFORMATION struct {
 	PriorityClass           uint32
 	SchedulingClass         uint32
 }
-
-"""
-
-
-
 ```

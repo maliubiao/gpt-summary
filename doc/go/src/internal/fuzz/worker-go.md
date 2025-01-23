@@ -189,7 +189,7 @@ resp := fuzzResponse{
 
 这段 `worker.go` 代码的核心功能是 **作为 `go test -fuzz` 功能中的 worker 进程管理器，负责启动、控制和与执行模糊测试任务的 worker 子进程进行通信，并将测试结果反馈给协调器。** 它定义了 worker 的结构、生命周期管理、通信协议以及执行模糊测试和最小化的逻辑框架。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/fuzz/worker.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -198,8 +198,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1196,9 +1198,4 @@ func (wc *workerClient) minimize(ctx context.Context, entryIn CorpusEntry, args 
 		return CorpusEntry{}, minimizeResponse{}, errSharedMemClosed
 	}
 	defer f
-"""
-
-
-
-
 ```

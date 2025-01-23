@@ -97,11 +97,13 @@ console.log(process.versions.v8);
 
 `v8/src/utils/version.cc` 文件是 V8 引擎的核心组成部分，负责维护和提供 V8 自身的版本信息。这些信息对于识别 V8 的版本、了解其特性和修复情况至关重要。JavaScript 运行时环境通过各种方式将这些版本信息暴露给开发者，以便他们了解自己代码运行的引擎版本，从而进行兼容性判断、功能支持检查等操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/version.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -163,7 +165,4 @@ void Version::GetSONAME(base::Vector<char> str) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

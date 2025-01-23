@@ -131,15 +131,17 @@ go tool compile -p my_package -asmhdr my_package.h my_package.go
 
 这段 `export.go` 代码是 Go 编译器中生成汇编头文件的关键部分。它通过解析 Go 源代码中的常量和结构体定义，并将这些信息以 `#define` 宏的形式输出到指定的文件中，从而为汇编代码与 Go 代码的互操作提供了必要的桥梁。 理解 `-asmhdr` 标志的作用和生成文件的内容对于需要进行汇编编程的 Go 开发者至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/gc/export.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -191,9 +193,4 @@ func dumpasmhdr() {
 
 	b.Close()
 }
-
-"""
-
-
-
 ```

@@ -198,7 +198,7 @@ sys.stdin.read()
 
 **运行此 Frida 脚本后，当目标应用调用 `acosh` 函数时，Frida 控制台将打印出 `acosh` 函数的输入参数和返回值，从而帮助调试和理解函数的行为。**  在 Bionic 库的测试过程中，虽然通常不会直接使用 Frida，但可以用来验证测试数据是否覆盖了各种边界情况和特殊值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/acosh_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -209,8 +209,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1169,7 +1171,4 @@ static data_1_1_t<double, double> g_acosh_intel_data[] = {
     0x1.0p0
   }
 };
-
-"""
-
 ```

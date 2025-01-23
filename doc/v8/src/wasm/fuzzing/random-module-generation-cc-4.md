@@ -634,7 +634,7 @@ class ModuleGen {
                               : module_range_->get<uint8_t>() % kMaxTableSize;
       uint32_t max_size =
           module_range_->get<uint8_t>() % (kMaxTableSize - min_size
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/fuzzing/random-module-generation.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/fuzzing/random-module-generation.cc以.tq结尾，那它是个v8 torque源代码，
@@ -642,9 +642,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
- + emit_i31ref + fallback_to_eqref);
+### 源代码
+```cpp
++ emit_i31ref + fallback_to_eqref);
         // Try generating one of the alternatives
         // and continue to the rest of the methods in case it fails.
         if (random >= num_types + emit_i31ref) {
@@ -1418,7 +1420,4 @@ WasmInitExpr GenerateInitExpr(Zone* zone, DataRange& range,
             int num_globals = builder->NumGlobals();
             int start_index = range.get<uint8_t>() % num_globals;
             for (int
-"""
-
-
 ```

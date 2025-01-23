@@ -210,7 +210,7 @@ Returns the sum of a and b.
 
 3. **直接操作字符串而不是使用结构化表示:**  一些用户可能会尝试使用字符串操作来修改文档注释，而不是利用 `comment` 包提供的 `Doc`、`Block` 等结构化表示。 这可能会导致代码更复杂且容易出错。 推荐先将文档注释解析为 `Doc` 对象，再进行操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/doc/comment/doc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -218,8 +218,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -256,9 +258,4 @@ See the documentation for [Doc], [Block], [Text] for an overview
 and links to additional types.
 */
 package comment
-
-"""
-
-
-
 ```

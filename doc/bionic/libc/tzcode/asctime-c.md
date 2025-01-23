@@ -399,7 +399,7 @@ if (Process.platform === 'android') {
 
 通过 Frida hook，你可以动态地观察这些时间格式化函数的调用情况，帮助你理解 Android 系统或应用程序中时间处理的流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/tzcode/asctime.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -410,8 +410,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /* asctime and asctime_r a la POSIX and ISO C, except pad years before 1000.  */
 
 /*
@@ -543,7 +545,4 @@ ctime(const time_t *timep)
 {
   return ctime_r(timep, buf_ctime);
 }
-
-"""
-
 ```

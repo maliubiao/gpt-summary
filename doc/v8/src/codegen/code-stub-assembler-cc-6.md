@@ -186,7 +186,7 @@ By following this structured approach, combining high-level understanding with d
 
 如果 `v8/src/codegen/code-stub-assembler.cc` 以 `.tq` 结尾，那它将是 V8 的 Torque 源代码。Torque 是一种用于 V8 的领域特定语言，用于定义运行时函数的实现。然而，当前文件以 `.cc` 结尾，表明它是 C++ 源代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ts
   // protector is invalid. This function should be renamed to reflect its uses.
 
@@ -957,7 +959,4 @@ void CodeStubAssembler::CopyElements(ElementsKind kind,
   TNode<IntPtrT> source_data_ptr =
       IntPtrAdd(src_elements_intptr, src_offset_start);
   TNo
-"""
-
-
 ```

@@ -82,7 +82,7 @@ By following these steps, I was able to systematically break down the code, unde
 
 总而言之，`cached_storage_area_test.cc` 的第二部分专注于测试 `CachedStorageArea` 类对字符串编码的处理以及在特殊环境下的鲁棒性，这对于确保 Web Storage API 的正确性和可靠性至关重要。 这些测试覆盖了与 Javascript 代码直接交互的关键功能点，并考虑了用户可能遇到的常见问题和浏览器内部的复杂场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/storage/cached_storage_area_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -90,8 +90,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ear.
   observer->AllDeleted(true, kRemoteSource);
   EXPECT_EQ(kValue2, cached_area_->GetItem(kKey));
@@ -242,8 +244,4 @@ TEST_F(CachedStorageAreaTest, RecoveryWhenNoLocalDOMWindowPresent) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

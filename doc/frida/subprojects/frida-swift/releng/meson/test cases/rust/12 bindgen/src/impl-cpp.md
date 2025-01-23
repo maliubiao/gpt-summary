@@ -156,7 +156,7 @@ Finally, the information needs to be organized logically to address all parts of
 
 通过查看这个简单的 `impl.cpp` 文件，用户可以理解 `MyClass` 的基本功能，这有助于他们理解 Frida 如何与底层的 C++ 代码交互，以及可能出现问题的地方。例如，如果他们发现 Swift 代码调用了一个 C++ 方法但返回值不正确，他们可能会怀疑是绑定过程中出现了错误，或者 C++ 代码的实现本身存在问题。 这个 `impl.cpp` 文件作为一个简单的测试用例，可以帮助开发者验证 Frida 的 C++/Swift 互操作功能是否正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/rust/12 bindgen/src/impl.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "header.hpp"
 
 MyClass::MyClass() : val{7} {};
@@ -173,7 +175,4 @@ MyClass::MyClass() : val{7} {};
 int MyClass::method() const {
     return val;
 }
-
-"""
-
 ```

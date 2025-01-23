@@ -215,15 +215,17 @@ MySpecificTest                     XXX ns         YYY ns            5
 
 总而言之，`v8/test/benchmarks/cpp/benchmark-main.cc` 是一个关键的入口点，用于启动 V8 引擎的 C++ 基准测试，它依赖于 Google Benchmark 框架，并为性能分析提供了基础。虽然它不直接执行 JavaScript 代码，但它所测试的内容直接影响着 JavaScript 的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/benchmarks/cpp/benchmark-main.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/benchmarks/cpp/benchmark-main.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ int main(int argc, char** argv) {
   v8::benchmarking::BenchmarkWithIsolate::ShutdownProcess();
   return 0;
 }
-
-"""
-
 ```

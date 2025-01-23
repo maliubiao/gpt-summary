@@ -147,14 +147,16 @@ By following this structured approach, one can effectively analyze and understan
 
 总而言之，`new_session_cdm_result_promise.cc` 文件中的 `NewSessionCdmResultPromise` 类是 Blink 引擎中处理 CDM 新会话创建异步结果的关键组件，它连接了底层的 CDM 操作和上层的 JavaScript EME API，并负责监控性能和处理错误。 理解其功能有助于理解 Chromium 中加密媒体的实现机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/media/new_session_cdm_result_promise.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ void NewSessionCdmResultPromise::reject(CdmPromise::Exception exception_code,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -162,14 +162,16 @@ Let's break down the thought process for analyzing the `mhtml_archive_test.cc` f
 
 总而言之，`mhtml_archive_test.cc` 通过各种测试用例，全面地验证了 `blink::MHTMLArchive` 类的功能，确保其能够正确地生成和加载 MHTML 文档，并且能够处理各种边界情况和错误情况，对于保证 Chromium 浏览器正确处理 MHTML 格式的网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/mhtml_archive_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 Google Inc. All rights reserved.
  *
@@ -613,7 +615,4 @@ TEST_F(MHTMLArchiveTest, InvalidMHTML) {
 }  // namespace test
 
 }  // namespace blink
-
-"""
-
 ```

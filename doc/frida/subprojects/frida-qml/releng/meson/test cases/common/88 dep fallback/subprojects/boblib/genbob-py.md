@@ -120,7 +120,7 @@ By following this systematic approach, we can analyze even a simple script in th
 
 总而言之，虽然 `genbob.py` 脚本本身非常简单，但它在 Frida 的测试框架中扮演着一个基础但必要的角色，用于模拟文件系统状态，为更复杂的动态插桩测试提供前提条件。理解这个脚本的功能可以帮助开发者更好地理解 Frida 的测试流程和潜在的问题原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/88 dep fallback/subprojects/boblib/genbob.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,15 +128,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 
 with open(sys.argv[1], 'w') as f:
     f.write('')
-
-"""
-
 ```

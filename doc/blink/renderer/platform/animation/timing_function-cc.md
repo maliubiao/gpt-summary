@@ -119,14 +119,16 @@ Self-Correction Example During the Process: Initially, I might have overlooked t
 
 总而言之，`timing_function.cc` 文件是 Blink 引擎实现动画时间函数的关键部分，它连接了 CSS 声明、JavaScript 动画控制和底层的渲染机制，使得开发者可以通过简单的语法实现丰富的动画效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/animation/timing_function.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -436,7 +438,4 @@ bool operator!=(const TimingFunction& lhs, const TimingFunction& rhs) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

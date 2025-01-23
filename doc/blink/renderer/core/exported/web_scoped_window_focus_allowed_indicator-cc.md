@@ -181,15 +181,17 @@ By following this structured approach, breaking down the problem, and continuous
 
 总而言之，`WebScopedWindowFocusAllowedIndicator` 是 Blink 内部用来管理窗口焦点操作权限的关键机制。它确保了在用户期望或允许的情况下，焦点操作可以正常进行，同时防止了潜在的滥用和不良用户体验。理解它的功能有助于深入了解浏览器如何处理与用户交互和窗口管理相关的复杂问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_scoped_window_focus_allowed_indicator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -242,7 +244,4 @@ WebScopedWindowFocusAllowedIndicator::~WebScopedWindowFocusAllowedIndicator() =
     default;
 
 }  // namespace blink
-
-"""
-
 ```

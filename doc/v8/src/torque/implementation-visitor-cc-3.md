@@ -104,7 +104,7 @@ myArray.push(4); // 这里会调用 V8 内部的 ArrayPush Builtin
 
 这部分 `ImplementationVisitor` 的代码主要负责**将 Torque 语法中的函数调用和数据访问操作转换为底层的代码指令**。它处理了各种类型的调用 (Builtin, Macro, Runtime Function, Function Pointer) 和数据访问方式 (变量, 堆对象, 位域)，并进行了必要的类型检查和转换。 这是 Torque 编译器将高级语言转换为低级代码的关键步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/implementation-visitor.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/implementation-visitor.cc以.tq结尾，那它是个v8 torque源代码，
@@ -112,9 +112,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
-       GetOrCreateSpecialization(SpecializationKey<GenericCallable>{
+### 源代码
+```cpp
+GetOrCreateSpecialization(SpecializationKey<GenericCallable>{
             generic, TypeVisitor::ComputeTypeVector(expr->generic_arguments)});
     if (Builtin* builtin = Builtin::DynamicCast(specialization)) {
       DCHECK(!builtin->IsExternal());
@@ -875,7 +877,4 @@ VisitResult ImplementationVisitor::Visit(CallExpression* expr,
       LocationReference ref = GetLocationReference(loc_expr);
       if (ref.IsHeapReference()) return scope.Yield(ref.heap_reference());
       if (ref.IsHeapSlice()
-"""
-
-
 ```

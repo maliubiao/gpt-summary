@@ -138,7 +138,7 @@ This structured approach allows for a comprehensive analysis, connecting the see
 
 总而言之，`cross_pkgconfig.py` 是 Frida 构建系统中一个重要的辅助工具，用于解决交叉编译时依赖查找的问题。理解它的功能和工作原理，对于调试 Frida 的构建过程以及理解 Frida 如何与目标平台的 native 代码交互至关重要，尤其是在进行逆向工程或开发 Frida 模块时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/45 native dep pkgconfig var/cross_pkgconfig.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -160,7 +162,4 @@ environ['PKG_CONFIG_LIBDIR'] = os.path.join(
 
 sys.exit(
     subprocess.run(['pkg-config'] + sys.argv[1:], env=environ).returncode)
-
-"""
-
 ```

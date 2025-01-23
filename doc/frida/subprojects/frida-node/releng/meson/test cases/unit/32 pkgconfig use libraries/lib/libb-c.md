@@ -206,7 +206,7 @@ libb_func returned.
 
 总而言之，这段简单的 C 代码虽然功能不多，但它体现了动态链接库的基本概念和函数调用的过程，这在逆向工程和动态分析中是至关重要的。通过分析这样的代码，我们可以更好地理解程序是如何组织和执行的，并为使用 Frida 等工具进行更复杂的分析打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/32 pkgconfig use libraries/lib/libb.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -214,14 +214,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void liba_func();
 
 void libb_func() {
     liba_func();
 }
-
-"""
-
 ```

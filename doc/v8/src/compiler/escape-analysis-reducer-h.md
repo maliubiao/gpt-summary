@@ -137,15 +137,17 @@ In this example, even though `point` is initially created within `createAndStore
 
 **In summary, `v8/src/compiler/escape-analysis-reducer.h` defines a crucial component in the V8 compiler that leverages the results of escape analysis to perform significant performance optimizations on JavaScript code by transforming the compiler's internal representation.** It aims to reduce heap allocations and simplify object representations for objects that are proven to have limited lifespans.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/escape-analysis-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/escape-analysis-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ class V8_EXPORT_PRIVATE EscapeAnalysisReducer final
 }  // namespace v8
 
 #endif  // V8_COMPILER_ESCAPE_ANALYSIS_REDUCER_H_
-
-"""
-
 ```

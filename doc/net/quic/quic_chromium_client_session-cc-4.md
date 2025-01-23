@@ -136,7 +136,7 @@ Essentially, I approached the code like a detective examining clues. I started w
 
 作为 `net/quic/quic_chromium_client_session.cc` 文件的最后一部分，这段代码主要负责 **处理 QUIC 客户端连接的复杂场景，特别是网络变化时的连接迁移，并提供会话信息和错误处理机制。它还集成了 WebSocket over QUIC 的功能，并管理着 QUIC 会话的生命周期。**  其核心目标是在网络环境变化时，尽可能地保持连接的稳定性和用户体验的连续性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_chromium_client_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 efault, the platform
       // is dropping WiFi.
       base::TimeTicks now = tick_clock_->NowTicks();
@@ -755,8 +757,4 @@ QuicChromiumClientSession::CreateWebSocketQuicStreamAdapter(
 #endif  // BUILDFLAG(ENABLE_WEBSOCKETS)
 
 }  // namespace net
-
-"""
-
-
 ```

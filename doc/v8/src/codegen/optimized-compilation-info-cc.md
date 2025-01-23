@@ -158,15 +158,17 @@ By following this process, focusing on the code structure, keywords, and the ove
 
    了解 `OptimizedCompilationInfo` 的作用有助于理解 V8 如何进行代码优化，以及哪些编程模式可能会阻碍优化，从而编写出性能更好的 JavaScript 代码。虽然开发者不直接操作这个类，但其背后的原理与日常编程息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/optimized-compilation-info.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/optimized-compilation-info.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -434,7 +436,4 @@ OptimizedCompilationInfo::InlinedFunctionHolder::InlinedFunctionHolder(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

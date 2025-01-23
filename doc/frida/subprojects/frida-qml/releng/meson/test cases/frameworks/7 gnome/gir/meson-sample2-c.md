@@ -156,7 +156,7 @@ By following this structured approach, combining code analysis with knowledge of
 
 这个简单的示例是 Frida 测试框架的一部分，其主要目的是验证 Frida 的基本功能，例如 attach 到进程、查找符号、进行函数 hook 等。在更复杂的实际应用中，这些基本的构建块会被用来分析更复杂的程序行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/7 gnome/gir/meson-sample2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample2.h"
 
 struct _MesonSample2
@@ -211,7 +213,4 @@ meson_sample2_print_message (MesonSample2 *self)
 {
   g_print ("Message: Hello\n");
 }
-
-"""
-
 ```

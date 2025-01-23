@@ -137,7 +137,7 @@ Here's a breakdown of the thinking process to analyze the C code snippet and add
 
 总而言之，`clib2.c` 文件虽然简单，但在 Frida 动态分析的上下文中，它可以作为理解程序行为、定位问题和进行逆向分析的关键入口点。用户通过 Frida 提供的工具和接口，可以深入到这个函数的层面，观察其运行状态，并结合源代码进行更精确的分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/rust/12 bindgen/dependencies/clib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,14 +145,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "internal_dep.h"
 
 int64_t add64(const int64_t first, const int64_t second) {
     return first + second;
 }
-
-"""
-
 ```

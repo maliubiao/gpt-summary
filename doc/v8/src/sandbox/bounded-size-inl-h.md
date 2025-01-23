@@ -151,15 +151,17 @@ console.log(arr.length); // 输出 5
 
 `v8/src/sandbox/bounded-size-inl.h` 定义了用于在 V8 沙箱环境中安全地处理有大小限制的字段的内联函数。它通过条件编译来处理沙箱启用和未启用的情况，并在启用沙箱时使用位移操作来编码和解码大小信息，以增强安全性。这些函数是 V8 引擎内部实现的一部分，用于管理内存和对象的大小，间接地影响 JavaScript 代码的执行和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/bounded-size-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/bounded-size-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ V8_INLINE void WriteBoundedSizeField(Address field_address, size_t value) {
 }  // namespace v8::internal
 
 #endif  // V8_SANDBOX_BOUNDED_SIZE_INL_H_
-
-"""
-
 ```

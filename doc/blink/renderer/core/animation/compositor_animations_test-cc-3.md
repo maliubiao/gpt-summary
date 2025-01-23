@@ -116,16 +116,18 @@ Here's a breakdown of what this specific part of the code does:
 
 总而言之，`compositor_animations_test.cc` (作为最后一部分) 是一个细致而全面的测试套件，用于确保 Chromium Blink 引擎能够有效地将各种类型的动画转移到合成器线程，从而提供流畅的用户体验，并能正确处理各种边界情况和潜在的错误用法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/compositor_animations_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- the transform node entirely should also produce false.
+### 源代码
+```cpp
+the transform node entirely should also produce false.
   properties.ClearTransform();
   EXPECT_TRUE(
       CheckCanStartElementOnCompositor(*element, *keyframe_animation_effect2_) &
@@ -864,8 +866,4 @@ TEST_P(AnimationCompositorAnimationsTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

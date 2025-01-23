@@ -128,15 +128,17 @@ By following these steps, combining code analysis with an understanding of the b
 
 `fake_resource_listener.cc` 是一个用于测试 WebRTC 资源管理功能的关键组件。它通过模拟资源监听器的行为，使得开发者可以在隔离的环境中验证相关逻辑的正确性，而无需依赖真实的系统资源监控。它与 JavaScript WebRTC API 有间接关系，因为它是底层实现的测试工具。理解它的功能对于调试和理解 Chromium 中 WebRTC 的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/testing/fake_resource_listener.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -164,7 +166,4 @@ void FakeResourceListener::OnResourceUsageStateMeasured(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -105,11 +105,13 @@ try {
 
 `v8/src/diagnostics/ppc/unwinder-ppc.cc` 中的代码是 V8 引擎在 PPC 架构上实现栈回溯的关键部分。它不直接与 JavaScript 代码互动，但它的功能是支撑 JavaScript 的错误处理、性能分析和调试等重要特性的基础。  JavaScript 开发者通过查看错误堆栈跟踪等信息，间接地受益于这些底层实现的细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/ppc/unwinder-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -121,7 +123,4 @@ struct RegisterState;
 void GetCalleeSavedRegistersFromEntryFrame(void* fp,
                                            RegisterState* register_state) {}
 }  // namespace v8
-
-"""
-
 ```

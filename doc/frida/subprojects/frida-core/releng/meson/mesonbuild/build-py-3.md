@@ -94,7 +94,7 @@ Finally, I need to synthesize this information into a concise summary of the fil
 
 总而言之，这个代码片段是 Frida 构建系统核心的一部分，它定义了如何将源代码编译和链接成不同类型的二进制文件（可执行文件、静态库、共享库），并考虑了跨平台构建的复杂性，包括不同操作系统的命名约定、版本控制以及特定的语言特性。它也包含了对用户常见错误的预防机制，并通过清晰的错误信息帮助用户进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 get(self):
         return self.is_linkwithable
 
@@ -869,7 +871,4 @@ class CompileTarget(BuildTarget):
 class RunTarget(Target, CommandBase):
 
     typename
-"""
-
-
 ```

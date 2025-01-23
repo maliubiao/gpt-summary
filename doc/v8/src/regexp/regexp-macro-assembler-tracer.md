@@ -112,11 +112,13 @@ label[BBBBBBBB]: (Bind)
 
 `regexp-macro-assembler-tracer.cc` 文件定义了一个用于跟踪和调试 V8 引擎中正则表达式宏汇编器操作的类。 它通过打印详细的日志信息，帮助开发者理解正则表达式的编译和执行过程。 虽然它不是 JavaScript 运行时直接使用的组件，但对于 V8 引擎的开发和维护至关重要，并间接影响着 JavaScript 正则表达式的性能和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-macro-assembler-tracer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -597,7 +599,4 @@ Handle<HeapObject> RegExpMacroAssemblerTracer::GetCode(Handle<String> source,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -175,7 +175,7 @@ console.log(heapStatistics.total_available_size);
 
 作为第 6 部分，`v8/src/execution/isolate.cc` 的主要功能是 **定义和实现了 V8 引擎中核心的 `v8::Isolate` 类，负责创建、管理和清理独立的 JavaScript 执行环境。**  这包括了 `Isolate` 的内存布局定义、生命周期管理（初始化和清理）、资源管理、与外部 C++ 代码的交互（例如异常传播）、性能优化（如短内置调用）以及与嵌入式代码 blob 的处理。  它确保了 V8 能够提供隔离且高效的 JavaScript 执行环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/isolate.cc以.tq结尾，那它是个v8 torque源代码，
@@ -183,8 +183,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 :kIsolateCageBaseOffset);
   CHECK_EQ(static_cast<int>(
                OFFSET_OF(Isolate, isolate_data_.long_task_stats_counter_)),
@@ -1098,8 +1100,5 @@ void Isolate::MaybeRemapEmbeddedBuiltinsIntoCodeRange() {
   CHECK_NE(embedded_blob_code_size_, 0);
 
   DCHECK_NOT_NULL(heap_.code_range_);
-  embedded_blob_code_ = 
-"""
-
-
+  embedded_blob_code_ =
 ```

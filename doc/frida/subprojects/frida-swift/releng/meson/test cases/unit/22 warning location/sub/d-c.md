@@ -151,7 +151,7 @@ d_function (int a, int b)
 
 通过分析这些信息，用户可以进一步调查目标应用程序的逻辑，找到导致 `a` 大于 `b` 的原因，并进行修复或理解其背后的设计意图。 这个 `d.c` 文件在 Frida 的测试框架中扮演着验证警告信息报告准确性的角色，确保 Frida 能够正确地定位和显示目标程序运行时产生的警告信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/22 warning location/sub/d.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,9 +159,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

@@ -285,7 +285,7 @@ sys.stdin.read()
 
 请注意，实际的包含关系和调用链可能更复杂，涉及到多个头文件和库。这个例子旨在说明如何使用 Frida 观察与 `posix_types.h` 中定义的类型相关的函数调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-riscv/asm/posix_types.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -296,8 +296,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -305,7 +307,4 @@ Prompt:
  * for more information.
  */
 #include <asm-generic/posix_types.h>
-
-"""
-
 ```

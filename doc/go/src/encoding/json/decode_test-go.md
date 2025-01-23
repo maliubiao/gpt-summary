@@ -195,7 +195,7 @@ go test -v -run TestUnmarshal/basic_types
 
 总而言之，`go/src/encoding/json/decode_test.go` 文件的主要功能是 **全面测试 Go 语言 `encoding/json` 包中 `Unmarshal` 函数的正确性和健壮性**。 它通过大量的测试用例覆盖了各种数据类型、结构体标签、自定义反序列化、错误处理和解码器选项，确保 `Unmarshal` 函数能够可靠地将 JSON 数据解码为 Go 语言的数据结构。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/json/decode_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -204,8 +204,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1372,9 +1374,4 @@ func TestMarshalEmbeds(t *testing.T) {
 		t.Fatalf("Marshal error: %v", err)
 	}
 	want := "{\"Level0\":1,\"Level1b\":2,\"Level1c\":3,\"Level1a\":5,\"LEVEL1B\":6,\"e\":{\"Level1a\":8,\"Level1b\":9,\"Level1c\":10,\"Level1d\":11,\"
-"""
-
-
-
-
 ```

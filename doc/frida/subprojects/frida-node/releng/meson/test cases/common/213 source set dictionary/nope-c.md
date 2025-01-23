@@ -131,7 +131,7 @@ By following these steps, breaking down the code, and connecting it to the broad
 
 总而言之，虽然 `nope.c` 文件非常简单，但它体现了函数指针在底层编程和动态插桩中的基本概念。在 Frida 的上下文中，它可能被用作测试 Hook 机制或表示一个尚未建立连接的 Hook 点。理解这种简单的结构对于调试更复杂的 Frida 脚本和理解动态插桩的原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/213 source set dictionary/nope.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,12 +139,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "all.h"
 
 void (*p)(void) = undefined;
-
-"""
-
 ```

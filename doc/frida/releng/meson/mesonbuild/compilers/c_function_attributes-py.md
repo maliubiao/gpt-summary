@@ -126,7 +126,7 @@ Let's break down the thought process for analyzing this Python code snippet.
 
 `frida/releng/meson/mesonbuild/compilers/c_function_attributes.py` 文件是 Frida 构建系统的重要组成部分，它定义了 Frida 关注的 C 和 C++ 函数属性及其用法。虽然普通用户不会直接操作它，但理解这些属性对于有效地使用 Frida 进行逆向分析至关重要。这些属性直接影响生成的二进制代码，与逆向方法、二进制底层知识、操作系统特性以及编译器行为都密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/c_function_attributes.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # These functions are based on the following code:
 # https://git.savannah.gnu.org/gitweb/?p=autoconf-archive.git;a=blob_plain;f=m4/ax_gcc_func_attribute.m4,
 # which is licensed under the following terms:
@@ -279,7 +281,4 @@ CXX_FUNC_ATTRIBUTES = {
          '}'
          'int foo(void) __attribute__((ifunc("resolve_foo")));'),
 }
-
-"""
-
 ```

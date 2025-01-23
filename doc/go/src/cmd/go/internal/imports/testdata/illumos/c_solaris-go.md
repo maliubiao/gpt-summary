@@ -160,21 +160,18 @@ compilation terminated.
 
 总而言之，`go/src/cmd/go/internal/imports/testdata/illumos/c_solaris.go`  是一个内部测试文件，用于确保 Go 工具链在 Illumos/Solaris 系统上正确处理与 C 代码的交互。用户编写类似的代码时需要注意构建标签、C 语言开发环境的配置以及 `cgo` 的使用规范。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/imports/testdata/illumos/c_solaris.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 package illumos
 
 import _ "c"
-
-"""
-
-
-
 ```

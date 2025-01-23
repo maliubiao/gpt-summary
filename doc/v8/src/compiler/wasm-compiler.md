@@ -83,12 +83,14 @@ console.log(result); // 输出: 15
 
 简而言之，`v8/src/compiler/wasm-compiler.cc` 的第一部分是 WebAssembly 代码进入 V8 执行流水线的入口之一，负责将 WebAssembly 的指令翻译成 V8 优化编译器能够理解和处理的图结构，从而实现 WebAssembly 代码在 JavaScript 环境中的高效执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1941,7 +1943,4 @@ wasm::WasmOpcode NeOp(const MachineType& ty) {
       return wasm::kExprF32Ne;
     case MachineRepresentation::kFloat64:
       return wasm::kExprF6
-"""
-
-
 ```

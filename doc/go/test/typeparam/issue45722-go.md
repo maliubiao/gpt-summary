@@ -230,15 +230,17 @@ func main() {
 
 这段代码片段展示了一种利用泛型和 `panic`/`recover` 进行错误处理的模式，但在实际应用中需要谨慎使用，并根据具体的错误类型和处理需求选择合适的错误处理方式。 显式的错误返回值通常是更清晰和可控的选择。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/issue45722.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -273,9 +275,4 @@ func main() {
 	defer handle(func(e error) { log.Fatalln(e) })
 	_ = try(fmt.Print(""))
 }
-
-"""
-
-
-
 ```

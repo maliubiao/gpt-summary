@@ -253,7 +253,7 @@ if (Process.platform === 'android') {
 
 `bionic/libc/bionic/reboot.cpp` 文件虽然代码量不多，但它连接了用户空间的请求和底层的内核重启机制。理解它的功能和实现方式对于理解 Android 系统的启动和关闭过程至关重要。  通过 Frida 这样的工具，我们可以动态地观察和调试这个过程，帮助我们更好地理解系统行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/reboot.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -264,8 +264,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -302,7 +304,4 @@ extern "C" int __reboot(int, int, int, void*);
 int reboot(int mode) {
   return __reboot(LINUX_REBOOT_MAGIC1, LINUX_REBOOT_MAGIC2, mode, nullptr);
 }
-
-"""
-
 ```

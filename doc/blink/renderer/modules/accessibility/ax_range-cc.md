@@ -174,15 +174,17 @@ Let's break down the thought process to analyze the `ax_range.cc` file.
 
 总而言之，`ax_range.cc` 中定义的 `AXRange` 类是 Blink 渲染引擎中用于表示可访问性树中连续内容范围的关键组件，它为浏览器实现可访问性功能提供了基础。虽然它本身是 C++ 代码，但它与 HTML 结构、CSS 样式以及 JavaScript 通过可访问性 API 进行的交互密切相关。 理解 `AXRange` 的功能和使用场景对于调试与可访问性相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/accessibility/ax_range.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ std::ostream& operator<<(std::ostream& ostream, const AXRange& range) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

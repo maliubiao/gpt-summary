@@ -127,14 +127,16 @@ This systematic approach allows for a comprehensive understanding of the `Segmen
 
 总而言之，`SegmentedString` 是 Blink 引擎中用于高效管理和操作文本内容的重要工具，它在 HTML、CSS 和 JavaScript 的解析、处理以及错误报告等多个方面发挥着关键作用。理解其功能和使用注意事项有助于开发者更好地理解 Blink 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/segmented_string.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
     Copyright (C) 2004, 2005, 2006, 2007, 2008 Apple Inc. All rights reserved.
 
@@ -348,7 +350,4 @@ void SegmentedString::SetCurrentPosition(OrdinalNumber line,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -72,7 +72,7 @@ Based on this, I can summarize the main functionalities of this code segment.
 
 总结来说，这部分代码是 fuzzing 框架中负责与 worker 进程交互的关键组件，它实现了用例的最小化、模糊测试的启动和结果处理，并提供了一些辅助功能来确保通信的可靠性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/fuzz/worker.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -81,8 +81,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 unc() { wc.memMu <- mem }()
 	mem.header().count = 0
 	inp, err := corpusEntryData(entryIn)
@@ -283,10 +285,4 @@ func (cr *contextReader) Read(b []byte) (int, error) {
 		return n, err
 	}
 }
-
-"""
-
-
-
-
 ```

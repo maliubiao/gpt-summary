@@ -115,14 +115,16 @@ This systematic approach, moving from understanding the core purpose to analyzin
 
 `run_segmenter.cc` 负责将文本分割成具有相同渲染属性的片段，这是文本整形过程的关键一步。它考虑了文本的脚本、符号特性以及排版方向，为后续的字形选择、定位等操作奠定了基础。理解其工作原理有助于理解浏览器如何处理不同语言和排版方式的文本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/run_segmenter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ bool RunSegmenter::Consume(RunSegmenterRange* next_range) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

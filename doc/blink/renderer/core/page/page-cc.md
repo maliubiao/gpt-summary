@@ -150,7 +150,7 @@ By following this process of code analysis, categorization, targeted response to
 
 `blink/renderer/core/page/page.cc` (第一部分) 主要实现了 `Page` 类的核心功能，该类是 Blink 渲染引擎中代表浏览器标签页或窗口的关键抽象。它负责管理页面的生命周期、Frame 结构、渲染属性（如视口、缩放）、用户交互处理、与浏览器进程的集成、以及与 JavaScript 和 CSS 的基本交互。此外，它还提供了调试和检查的基础设施，并管理着一些页面级别的设置和偏好。总而言之，`Page` 类是构建和管理网页内容的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/page.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013 Apple Inc. All
  * Rights Reserved.
@@ -1007,7 +1009,4 @@ void Page::SetVisibilityState(
 
 mojom::blink::PageVisibilityState Page::GetVisibilityState() const {
   return life
-"""
-
-
 ```

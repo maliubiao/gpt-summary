@@ -89,11 +89,13 @@ console.log(Atomics.load(view, 0)); // 输出: 10
 
 总而言之，`v8/src/runtime/runtime-atomics.cc` 是 V8 引擎中实现 JavaScript `Atomics` 核心功能的关键部分，它通过平台相关的原子操作和数据类型转换，使得在 JavaScript 中进行多线程编程成为可能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-atomics.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -826,7 +828,4 @@ RUNTIME_FUNCTION(Runtime_AtomicsCompareExchangeSharedStructOrArray) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

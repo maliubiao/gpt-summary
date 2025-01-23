@@ -124,15 +124,17 @@ If a main program imports both `f` and `c`, the order of initialization of `b` r
 
 In the specific case of `f.go`, the most direct effect is simply ensuring that `b` is initialized and `b.F2()` is called as part of the import process of `f`. The discarding of the return value emphasizes the side effect rather than the returned data. This pattern is often used in test cases to verify that certain initialization or setup steps are being executed correctly.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue49016.dir/f.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -142,9 +144,4 @@ package f
 import "./b"
 
 var _ = b.F2()
-
-"""
-
-
-
 ```

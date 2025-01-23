@@ -222,15 +222,17 @@ File Table: [/path/to/myfile.go /path/to/anotherfile.go]
 
 总而言之，`go/src/cmd/internal/src/xpos.go` 提供了一种高效的方式来表示 Go 语言源代码的位置信息，是 Go 语言工具链中一个底层的关键组件，主要服务于编译、调试等功能。使用者在使用相关 API 时需要理解 `XPos` 和 `PosTable` 的关系，以及一些特定方法的限制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/src/xpos.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -414,9 +416,4 @@ func (t *PosTable) FileTable() []string {
 	}
 	return fileLUT
 }
-
-"""
-
-
-
 ```

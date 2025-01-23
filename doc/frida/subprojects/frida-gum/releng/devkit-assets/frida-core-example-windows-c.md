@@ -172,7 +172,7 @@ This step-by-step breakdown, starting from a high-level overview and progressive
 
 这个示例代码提供了一个使用 Frida Core API 的基础框架，用户可以根据自己的需求修改 JavaScript 代码来 hook 不同的 API 或执行更复杂的分析任务。 这个 C 代码本身作为一个“粘合层”，负责 Frida 的初始化、进程附加、脚本加载和消息传递等底层操作，而具体的插桩逻辑则由注入的 JavaScript 代码实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/devkit-assets/frida-core-example-windows.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * To build, set up your Release configuration like this:
  *
@@ -379,7 +381,4 @@ stop (gpointer user_data)
 
   return FALSE;
 }
-
-"""
-
 ```

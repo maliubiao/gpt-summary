@@ -116,7 +116,7 @@ if (Process.arch === 'linux') {
 
 总而言之，`fake-gthread.c` 是 Frida 测试框架中的一个辅助文件，用于模拟 `gthread` 库的一部分功能，以便在受控的环境中测试 Frida 的 hook 机制和对库依赖的处理能力。它本身的功能非常简单，但其存在反映了 Frida 在进行动态插桩时需要考虑的底层细节和复杂的依赖关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/22 gir link order/fake-gthread/fake-gthread.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,15 +124,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "fake-gthread.h"
 
 int fake_gthread_fake_function (void)
 {
   return 7;
 }
-
-"""
-
 ```

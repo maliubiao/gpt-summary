@@ -170,7 +170,7 @@ if (Process.platform === 'android') {
 
 Part 2 的代码片段，以及整个 `ldexp_intel_data.handroid` 文件，其主要功能是 **提供了一系列预定义的输入和期望输出，用于测试 Android Bionic C 库中 `ldexp` 函数在特定平台（Intel 架构）上的正确性。** 它是 Bionic 库的质量保证体系的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/ldexp_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -182,8 +182,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 -1,
     (int)-7
   },
@@ -2259,7 +2261,4 @@ Prompt:
   },
   { // Entry 796
     0x1.ffffffffffffe0p-
-"""
-
-
 ```

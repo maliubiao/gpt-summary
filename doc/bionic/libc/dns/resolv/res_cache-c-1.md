@@ -240,7 +240,7 @@ if (Process.platform === 'android') {
 
 这个 Frida 脚本会 hook `_resolv_cache_lookup` 函数，并在函数调用时打印出 `netid`、查询数据包内容、查询长度、应答缓冲区大小等信息，以及函数的返回值。你可以根据需要修改脚本来查看应答缓冲区的内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/resolv/res_cache.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -252,8 +252,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ntry_free( Entry*  e )
 {
     /* everything is allocated in a single memory block */
@@ -1328,7 +1330,4 @@ static void
 _res_cache_clear_stats_locked(struct resolv_cache_info* cache_info) {
     if (cache_info) {
         for (int i = 0 ; i < MAXNS ; ++i) {
-"""
-
-
 ```

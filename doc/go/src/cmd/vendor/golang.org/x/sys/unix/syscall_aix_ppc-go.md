@@ -234,15 +234,17 @@ func main() {
 
 例如，在使用 `Msghdr` 的 `SetControllen` 方法时，如果传入一个很大的整数，转换为 `uint32` 后可能会变成一个很小的数，导致后续使用这个 `Msghdr` 结构时分配的控制缓冲区大小不足。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/syscall_aix_ppc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -295,9 +297,4 @@ func Lstat(path string, stat *Stat_t) error {
 func Stat(path string, statptr *Stat_t) error {
 	return stat(path, statptr)
 }
-
-"""
-
-
-
 ```

@@ -255,7 +255,7 @@ Android 的动态链接器 (`/system/bin/linker64` 或 `/system/bin/linker`) 负
 
 总而言之，`bionic/benchmarks/inttypes_benchmark.cpp` 这个文件虽然只是一个简单的性能测试工具，但它涉及到了 Android 系统底层的 C 运行时库的关键功能，这些功能在 Android 的各个层面都有广泛的应用。理解这些函数的原理和使用方式对于 Android 开发和调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/inttypes_benchmark.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -265,8 +265,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -290,7 +292,4 @@ Prompt:
 
 BIONIC_TRIVIAL_BENCHMARK(BM_inttypes_strtoimax, strtoimax(" -123", nullptr, 0));
 BIONIC_TRIVIAL_BENCHMARK(BM_inttypes_strtoumax, strtoumax(" -123", nullptr, 0));
-
-"""
-
 ```

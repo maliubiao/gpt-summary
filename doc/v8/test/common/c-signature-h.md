@@ -155,15 +155,17 @@ When integrating C++ with JavaScript, especially through native extensions, comm
 
 In summary, `v8/test/common/c-signature.h` provides foundational tools within V8 to define and reason about the signatures of C functions, which is essential for enabling seamless and safe interoperability between JavaScript and C++ code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/common/c-signature.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/common/c-signature.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -309,7 +311,4 @@ using CSignature_o_oo = CSignatureOf<Object, Object, Object>;
 }  // namespace v8
 
 #endif  // V8_COMMON_C_SIGNATURE_H_
-
-"""
-
 ```

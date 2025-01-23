@@ -100,12 +100,14 @@ error.cause = new Error('Root cause');
 
 总结来说，`ValueDeserializer` 是 V8 引擎中至关重要的组件，它使得 JavaScript 对象能够被安全地序列化和反序列化，从而支持诸如数据持久化、跨上下文通信等功能。这段代码展示了它如何根据序列化数据中的标签和信息，一步步地重建各种 JavaScript 对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/value-serializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ecurse.
   STACK_CHECK(isolate_, MaybeHandle<JSArray>());
 
@@ -1089,8 +1091,4 @@ ValueDeserializer::ReadObjectUsingEntireBufferForLegacyFormat() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

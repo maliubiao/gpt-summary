@@ -121,7 +121,7 @@ By following these steps, I was able to systematically analyze the provided code
 
 它的目标是通过优化这些常见情况的解析路径，来提升整体 CSS 解析的性能。它依赖于一个预先定义的、需要手动维护的属性和值列表。对于不在此列表中的属性或更复杂的 CSS 值，解析器会回退到更通用的、可能更慢的解析逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/parser/css_parser_fast_paths.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 = CSSValueID::kSidewaysLr) {
           return true;
         }
@@ -699,8 +701,4 @@ CSSValue* CSSParserFastPaths::MaybeParseValue(CSSPropertyID property_id,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

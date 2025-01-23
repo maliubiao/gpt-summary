@@ -113,7 +113,7 @@ By following these steps, we can systematically analyze the code snippet and pro
 
 这部分代码主要负责定义和提供对 V8 引擎在代码生成和执行过程中需要访问的外部资源的引用。这些资源涵盖了常量、CPU 特性、C++ 函数 (包括 V8 内部和标准库函数) 以及引擎内部数据结构的地址。通过 `ExternalReference` 机制，V8 的代码生成器能够有效地访问这些外部资源，从而实现 JavaScript 的各种核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/external-reference.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/external-reference.cc以.tq结尾，那它是个v8 torque源代码，
@@ -121,8 +121,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tant));
 }
 
@@ -921,8 +923,4 @@ ExternalReference ExternalReference::atomic_pair_exchange_function() {
 
 static uint64_t atomic_pair_compare_exchange(intptr_t address,
                                              int old_value_low,
-                 
-"""
-
-
 ```

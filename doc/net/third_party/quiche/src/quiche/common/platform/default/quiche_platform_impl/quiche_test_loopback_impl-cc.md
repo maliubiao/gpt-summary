@@ -106,15 +106,17 @@ This iterative process of analysis, connection to JavaScript concepts, generatio
 
 **简而言之，`quiche_test_loopback_impl.cc` 是 Chromium QUIC 库在测试和本地开发环境中用于获取本地回环 IP 地址的关键组件。它通过提供不同的获取环回地址的函数，方便了各种本地网络连接场景的模拟和测试。虽然 JavaScript 代码本身不会直接操作这个文件，但当 JavaScript 应用进行网络操作，尤其是在测试环境下与本地服务交互时，这个文件中的代码会在底层发挥作用。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/platform/default/quiche_platform_impl/quiche_test_loopback_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -147,7 +149,4 @@ quic::QuicIpAddress TestLoopbackImpl(int index) {
 }
 
 }  // namespace quiche
-
-"""
-
 ```

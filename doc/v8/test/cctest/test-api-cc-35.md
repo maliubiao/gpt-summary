@@ -167,7 +167,7 @@ Promise.resolve().then(() => thenable).then(() => {
 
 作为测试套件的最后一部分，这段代码主要专注于验证 V8 API 中关于在异步操作中保持 C++ 端数据的能力（`ContinuationPreservedEmbedderData`），以及对包含类定义的包装函数的编译和执行的正确性。  它确保了 V8 能够可靠地在 Promise、微任务和 Thenable 对象等异步机制中传递和访问特定的 embedder 数据。 此外，它还测试了 V8 在代码编译和优化方面的健壮性，即使在字节码被刷新后，包装的函数和其包含的类定义仍然能正常工作。 这部分测试对于确保 V8 在处理复杂的异步场景和代码编译生命周期中的正确性和稳定性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,8 +175,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第36部分，共36部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 aredAndRestored) {
   LocalContext context;
   v8::Isolate* isolate = context->GetIsolate();
@@ -332,8 +334,4 @@ TEST(WrappedFunctionWithClass) {
   maybe_instance = the_class->NewInstance(context, 0, nullptr);
   CHECK(!maybe_instance.IsEmpty());
 }
-
-"""
-
-
 ```

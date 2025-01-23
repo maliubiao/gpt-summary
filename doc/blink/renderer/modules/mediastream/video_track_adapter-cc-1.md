@@ -124,7 +124,7 @@ The user wants a summary of the functionality of the provided C++ code snippet, 
 
 总而言之，`VideoTrackAdapter` 的这部分代码继续扮演着关键的中间层角色，负责管理视频帧的格式、监控视频流的状态、动态地管理连接的轨道，并将帧数据有效地分发给下游的消费者，确保 Web 应用能够正确地处理和展示视频内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/video_track_adapter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -132,9 +132,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- {
+### 源代码
+```cpp
+{
     return false;
   }
 
@@ -300,8 +302,4 @@ void VideoTrackAdapter::CheckFramesReceivedOnVideoTaskRunner() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

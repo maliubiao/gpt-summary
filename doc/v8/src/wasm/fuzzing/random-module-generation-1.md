@@ -136,12 +136,14 @@ WebAssembly.instantiateStreaming(fetch('your_wasm_module.wasm'), importObject)
 
 这部分 C++ 代码是 WebAssembly 模糊测试工具的一部分，其核心功能是随机生成包含引用类型操作和调用 JavaScript 字符串操作函数的 WebAssembly 代码。这对于测试 WebAssembly 引擎在处理引用类型和与 JavaScript 互操作时的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/fuzzing/random-module-generation.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 rate<wanted_kind>(data);
     }
   }
@@ -1590,7 +1592,4 @@ rate<wanted_kind>(data);
         constexpr uint8_t fallback_to_eqref = 1;
         uint8_t random = data->get<uint8_t>() %
                          (num_types
-"""
-
-
 ```

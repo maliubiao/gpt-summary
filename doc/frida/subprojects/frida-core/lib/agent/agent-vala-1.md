@@ -108,7 +108,7 @@ process.Continue()
 ### 总结
 
 `agent.vala` 文件是 Frida 代理的核心部分，负责管理连接、会话、消息处理以及模拟环境的支持。通过 LLDB 调试工具，用户可以深入观察这些功能的执行过程，排查潜在的问题。用户在使用过程中需要注意正确关闭连接和处理异常，以避免资源泄漏和程序崩溃。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/agent/agent.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 (GLib.Error e) {
 				throw new Error.TRANSPORT ("%s", e.message);
 			}
@@ -641,8 +643,4 @@ Prompt:
 		});
 	}
 }
-
-"""
-
-
 ```

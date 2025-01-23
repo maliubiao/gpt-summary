@@ -253,7 +253,7 @@ sys.stdin.read()
 
 总结来说，`bionic/libc/include/memory.handroid` 本身的功能有限，主要是为了向后兼容而存在，它通过包含 `<string.h>` 提供了对标准 C 字符串处理函数的访问。这些函数是 Android 系统和应用程序开发的基础，涉及到内存管理、字符串操作等核心功能，并且在运行时由 dynamic linker 进行加载和链接。 理解这些概念对于进行 Android 底层开发、安全分析和性能优化至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/memory.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -264,8 +264,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #pragma once
 
 /**
@@ -276,7 +278,4 @@ Prompt:
  */
 
 #include <string.h>
-
-"""
-
 ```

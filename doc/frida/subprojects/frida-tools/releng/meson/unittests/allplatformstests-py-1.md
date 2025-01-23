@@ -177,7 +177,7 @@ Here's a breakdown of the code and its functionalities:
 
 这段代码是 Frida 构建系统中测试执行框架的关键测试文件，它系统地验证了测试环境配置、测试套件选择、构建过程和编译相关的各种功能。其目的是确保 Frida 的构建系统能够正确地构建和测试代码，为 Frida 的可靠性和功能性提供保障。这对于像 Frida 这样的动态分析工具至关重要，因为其正确性直接影响到逆向工程师分析目标程序的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,9 +186,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
-        self.assertNotIn('TEST_ENV is set', basic_log)
+### 源代码
+```python
+self.assertNotIn('TEST_ENV is set', basic_log)
         self.assertNotIn('Memcheck', basic_log)
         self.assertIn('TEST_ENV is set', vg_log)
         self.assertIn('Memcheck', vg_log)
@@ -834,8 +836,4 @@ Prompt:
         if cc.get_id() != 'clang':
             raise SkipTest('Only clang currently supports thinLTO')
         if cc.linker.id not in {'ld.lld', 'ld.gold', 'ld64', 'lld-link'}:
-    
-"""
-
-
 ```

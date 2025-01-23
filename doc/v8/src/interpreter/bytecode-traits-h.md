@@ -235,15 +235,17 @@ While developers typically don't directly modify this header file during applica
 
 In summary, `v8/src/interpreter/bytecode-traits.h` is a crucial header file for the V8 interpreter, defining the structure and properties of bytecode instructions, enabling the interpreter to correctly decode and execute JavaScript code. It uses C++ templates and macros to achieve this in a type-safe and efficient manner.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/bytecode-traits.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/bytecode-traits.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -361,7 +363,4 @@ struct BytecodeTraits<implicit_register_use> {
 }  // namespace v8
 
 #endif  // V8_INTERPRETER_BYTECODE_TRAITS_H_
-
-"""
-
 ```

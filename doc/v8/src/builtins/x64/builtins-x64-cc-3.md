@@ -168,7 +168,7 @@ Here's a breakdown of the code and how to address each point:
 
 `v8/src/builtins/x64/builtins-x64.cc` 是 V8 引擎中负责在 x64 架构下实现核心 JavaScript 功能的关键部分。它包含了处理函数调用、对象构造、代码优化和 WebAssembly 支持的底层汇编代码实现。这些内置函数的正确实现直接关系到 JavaScript 代码的执行效率和语言特性的正确性。作为 7 个部分中的第 4 部分，它很可能专注于这些核心的、与代码执行流程紧密相关的内置函数的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/x64/builtins-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/x64/builtins-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -176,8 +176,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t e -------------
   //  -- rax : the number of arguments
   //  -- rdi : the function to call (checked to be a JSFunction)
@@ -1065,7 +1067,4 @@ void LoadTargetJumpBuffer(MacroAssembler* masm, Register target_continuation,
       target_jmpbuf,
       FieldOperand(target_continuation, WasmContinuationObject::kJmpbufOffset),
       kW
-"""
-
-
 ```

@@ -177,15 +177,17 @@ func main() {
 
 `go/src/cmd/compile/internal/ir/val.go` 文件是 Go 编译器内部处理常量的核心部分。它提供了用于识别、提取、转换和验证常量值的函数，确保了 Go 语言常量功能的正确性和类型安全性。虽然开发者不会直接使用这些函数，但理解其功能有助于更好地理解 Go 语言常量的行为和避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ir/val.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -293,9 +295,4 @@ func StringVal(n Node) string {
 	}
 	return constant.StringVal(n.Val())
 }
-
-"""
-
-
-
 ```

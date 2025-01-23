@@ -197,7 +197,7 @@ Meson 执行编译操作，尝试构建名为 `my_custom_target` 的目标。如
 
 通过这些步骤，用户可以追踪构建过程，理解 `meson_make.py` 在其中的作用，并利用它提供的接口来执行不同的构建操作，以便定位和解决构建问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson_make.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import argparse
 import os
 from pathlib import Path
@@ -338,7 +340,4 @@ def distclean(sourcedir: Path, builddir: Path):
             shutil.rmtree(item)
         except:
             pass
-
-"""
-
 ```

@@ -170,14 +170,16 @@ q {
 
 总而言之，`blink/renderer/core/layout/layout_quote.cc` 文件的核心职责是为 HTML 的 `<q>` 标签提供正确的视觉呈现，包括添加、管理和渲染引号，并与 CSS 样式规则紧密协作，处理嵌套和本地化等复杂情况。理解这个文件的功能有助于开发者更好地掌握 `<q>` 标签的行为，并避免常见的错误用法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_quote.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /**
  * Copyright (C) 2011 Nokia Inc.  All rights reserved.
  * Copyright (C) 2012 Google Inc. All rights reserved.
@@ -333,7 +335,4 @@ scoped_refptr<const QuotesData> LayoutQuote::GetQuotesData() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

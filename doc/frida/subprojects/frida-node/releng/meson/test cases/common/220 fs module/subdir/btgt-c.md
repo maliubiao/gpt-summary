@@ -97,7 +97,7 @@ By following this process of contextual analysis and addressing each part of the
 
 总而言之，`btgt.c` 作为一个极其简单的 C 语言文件，其意义在于它在 Frida 测试框架中的角色。它是一个成功的占位符，用于验证基本测试流程的健康性，并在更复杂的测试用例出现问题时，作为一个基准进行参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/220 fs module/subdir/btgt.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -105,14 +105,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int
 main(void)
 {
     return 0;
 }
-
-"""
-
 ```

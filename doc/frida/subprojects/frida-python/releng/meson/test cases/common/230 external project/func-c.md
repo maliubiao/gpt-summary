@@ -117,7 +117,7 @@ Here's a thinking process to arrive at the analysis of the provided C code snipp
 
 尽管 `func.c` 中的 `func` 函数非常简单，但在 Frida 的测试框架中，它作为一个基本的测试目标，用于验证 Frida 的核心功能，例如加载外部项目、符号查找和函数 Hook。通过分析这样一个简单的函数，可以帮助理解 Frida 如何与目标进程进行交互，以及在逆向工程中如何利用 Frida 来分析和修改程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/230 external project/func.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,15 +125,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "func.h"
 
 int func(void)
 {
     return 1;
 }
-
-"""
-
 ```

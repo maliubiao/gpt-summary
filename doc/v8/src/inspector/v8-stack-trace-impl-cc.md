@@ -237,15 +237,17 @@ a();
 
 总而言之，`v8/src/inspector/v8-stack-trace-impl.cc` 是 V8 引擎中至关重要的组成部分，它为 JavaScript 的错误处理、调试和性能分析等功能提供了基础的堆栈跟踪能力。理解它的功能有助于开发者更好地理解 JavaScript 的执行机制和调试过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-stack-trace-impl.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-stack-trace-impl.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 //
 // Use of this source code is governed by a BSD-style license that can be
@@ -719,7 +721,4 @@ std::weak_ptr<AsyncStackTrace> AsyncStackTrace::parent() const {
 bool AsyncStackTrace::isEmpty() const { return m_frames.empty(); }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

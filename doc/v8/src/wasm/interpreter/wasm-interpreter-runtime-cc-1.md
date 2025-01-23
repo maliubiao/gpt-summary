@@ -117,7 +117,7 @@ try {
 
 这部分代码是 WebAssembly 解释器运行时的核心组成部分，主要负责处理 WebAssembly 代码执行过程中的异常、支持原子操作、管理函数调用栈和参数传递（包括引用类型），并提供尾调用优化等功能。它还负责 WebAssembly 与 JavaScript 之间的互操作，特别是异常的传递和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter-runtime.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter-runtime.cc以.tq结尾，那它是个v8 torque源代码，
@@ -125,9 +125,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
-    isolate_->is_catchable_by_wasm(isolate_->exception());
+### 源代码
+```cpp
+isolate_->is_catchable_by_wasm(isolate_->exception());
   if (catchable) {
     HandleScope scope(isolate_);
     Handle<Object> exception = handle(isolate_->exception(), isolate_);
@@ -934,7 +936,4 @@ void WasmInterpreterRuntime::ExecuteFunction(const uint8_t*& code,
 
   // This HandleScope is used for all handles created in instruction handlers.
   // W
-"""
-
-
 ```

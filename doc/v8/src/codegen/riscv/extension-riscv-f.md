@@ -104,11 +104,13 @@ let int_val = parseInt(a);
 
 简单来说，`extension-riscv-f.cc` 就像一个工具箱，里面包含了各种用于生成 RISC-V F 扩展指令的工具，V8 引擎在编译 JavaScript 代码时会根据需要从中选择合适的工具来构建最终的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/extension-riscv-f.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ void AssemblerRISCVF::fcvt_s_lu(FPURegister rd, Register rs1,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

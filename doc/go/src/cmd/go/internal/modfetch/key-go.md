@@ -164,15 +164,17 @@ func main() {
 
 总而言之， `go/src/cmd/go/internal/modfetch/key.go` 中的 `knownGOSUMDB` 变量是 Go 模块安全机制的关键组成部分，它存储了官方 GOSUMDB 服务器的信任信息，用于确保模块下载的安全性。理解其作用有助于用户更好地配置和使用 Go 模块系统。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modfetch/key.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -182,9 +184,4 @@ package modfetch
 var knownGOSUMDB = map[string]string{
 	"sum.golang.org": "sum.golang.org+033de0ae+Ac4zctda0e5eza+HJyk9SxEdh+s3Ux18htTTAD8OuAn8",
 }
-
-"""
-
-
-
 ```

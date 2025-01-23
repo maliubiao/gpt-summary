@@ -79,15 +79,17 @@ Let's formulate the examples, input/output, and potential errors based on this a
 
 这部分代码专注于测试 `blink::Color` 类在颜色空间转换、处理缺失颜色分量以及参数替换方面的功能。这些测试确保了 Blink 引擎能够准确地处理不同色彩空间的颜色，并且能够以合理的方式处理不完整的颜色信息。这些功能是浏览器正确渲染网页颜色，并支持各种高级图形效果的基础。通过详尽的测试，可以减少因颜色处理错误而导致的视觉渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/color_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 enerated " << color_test.color.param0_ << " "
         << color_test.color.param1_ << " " << color_test.color.param2_ << " "
         << color_test.color.alpha_ << " and it was expecting "
@@ -329,8 +331,4 @@ TEST(BlinkColor, SubstituteMissingParameters) {
   }
 }
 }  // namespace blink
-
-"""
-
-
 ```

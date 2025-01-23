@@ -119,7 +119,7 @@ Essentially, the process involves understanding the code, its context within the
 
 **总而言之，这个 `main.cpp` 文件虽然代码简单，但在 Frida 项目中扮演着重要的角色，用于验证 Windows 平台上非调试版本的构建配置是否正确，这对于确保 Frida 的稳定性和可靠性至关重要。它与逆向工程中关于调试和发布构建的概念紧密相关，并作为 Frida 整体构建和测试流程的一部分，间接地涉及到二进制底层和操作系统内核等知识。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/windows/17 msvc ndebug/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 int main() {
 #ifdef NDEBUG
     // NDEBUG is defined
@@ -138,6 +140,4 @@ int main() {
     return 1;
 #endif
 }
-"""
-
 ```

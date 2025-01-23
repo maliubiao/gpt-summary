@@ -186,7 +186,7 @@ Frida 可以验证这个逻辑，例如通过 hook `meson_sample_print_message` 
 
 总而言之，`meson-sample.c` 是一个用于测试 Frida 与 GObject 框架集成能力的简单但有代表性的示例。它涵盖了 GObject 的基本概念，并为 Frida 的开发和测试提供了有价值的基准。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/7 gnome/gir/meson-sample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample.h"
 
 struct _MesonSample
@@ -317,7 +319,4 @@ meson_sample_print_message (MesonSample *self, MesonDep1 *dep1, MesonDep2 *dep2)
   samedep = meson_dep1_just_return_it (dep1, dep2);
   g_print ("Message: %s\n", meson_dep2_return_message (samedep));
 }
-
-"""
-
 ```

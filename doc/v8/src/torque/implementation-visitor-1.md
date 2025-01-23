@@ -55,12 +55,14 @@ v8::Object* date_object = AllocateFromNew(sizeof(v8::Date), date_map, false, fal
 
 总而言之，这部分 `implementation-visitor.cc` 的核心功能是将 Torque 代码转换为 V8 引擎能够执行的 C++ 代码，是连接 Torque 语言和 JavaScript 执行的桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/implementation-visitor.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 lass_type,
                 " cannot be allocated with new (it's used for testing)");
   }
@@ -1627,7 +1629,4 @@ VisitResult ImplementationVisitor::Visit(CallExpression* expr,
       LocationReference ref = GetLocationReference(loc_expr);
       if (ref.IsHeapReference()) return scope.Yield(ref.heap_reference());
       if (ref.IsHeapSlice()
-"""
-
-
 ```

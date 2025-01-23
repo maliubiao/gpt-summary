@@ -140,15 +140,17 @@ This detailed thought process, involving code analysis, contextual understanding
 
 总而言之，`RtcEncodedVideoReceiverSinkOptimizer` 是 Blink 渲染引擎中负责优化接收到的编码视频数据处理的关键组件，它通过创建一个优化的底层 sink，并与转换器协同工作，来提高 WebRTC 视频接收的效率和性能。虽然开发者通常不直接操作它，但理解其功能有助于理解 WebRTC 视频处理的内部机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_encoded_video_receiver_sink_optimizer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ RtcEncodedVideoReceiverSinkOptimizer::PerformInProcessOptimization(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -160,7 +160,7 @@ func main() {
 
 作为 `rewriteAMD64.go` 的第 20 部分，这段代码专注于 **优化 AMD64 架构下 `OpMove` 指令** 的重写规则。它根据内存复制的大小，将其分解为更精细的 load 和 store 指令序列，或者利用硬件指令 (`REPMOVSQ`) 或运行时优化的复制例程 (`DUFFCOPY`) 来提升性能。 这部分工作是编译器后端代码生成和优化的关键步骤，旨在提高最终生成的可执行文件的效率。在整个编译流程中，这部分处于 SSA 中间表示优化阶段，为后续的汇编代码生成做准备。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteAMD64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -169,8 +169,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第20部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 .Pos, OpAMD64MOVWload, typ.UInt16)
 		v2.AddArg2(src, mem)
 		v1.AddArg3(dst, v2, mem)
@@ -1587,9 +1589,4 @@ func rewriteValueAMD64_OpRsh64Ux8(v *Value) bool {
 	return false
 }
 func rewriteValueAMD64_OpRsh64x16(v *
-"""
-
-
-
-
 ```

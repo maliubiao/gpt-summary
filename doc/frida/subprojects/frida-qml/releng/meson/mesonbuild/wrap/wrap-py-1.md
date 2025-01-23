@@ -182,7 +182,7 @@ By following this structured approach, breaking down the code into smaller piece
 
 总而言之，`wrap.py` 脚本在 Frida 的构建过程中扮演着重要的角色，负责管理外部依赖，确保构建过程的可靠性和可重复性。理解其功能有助于我们排查构建过程中遇到的与依赖项相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/wrap/wrap.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,9 +191,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- bool = True) -> None:
+### 源代码
+```python
+bool = True) -> None:
         if what + '_hash' not in self.wrap.values and not hash_required:
             return
         expected = self.wrap.get(what + '_hash').lower()
@@ -318,8 +320,4 @@ Prompt:
                         os.chmod(dst_file, stat.S_IWUSR)
                         os.remove(dst_file)
                 shutil.copy2(src_file, dst_dir)
-
-"""
-
-
 ```

@@ -111,11 +111,13 @@ console.log(result); // 输出 30
 
 `OptimizingCompileDispatcher` 是 V8 引擎中实现并发优化编译的关键组件。它在后台默默地工作，负责调度 JavaScript 函数的优化，使得 JavaScript 代码能够以更高的性能运行，而这一切对于 JavaScript 开发者来说是无感知的。  它体现了 V8 引擎在运行时进行动态优化的能力，是提升 JavaScript 性能的重要手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler-dispatcher/optimizing-compile-dispatcher.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -373,7 +375,4 @@ OptimizingCompileDispatcher::OptimizingCompileDispatcher(Isolate* isolate)
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

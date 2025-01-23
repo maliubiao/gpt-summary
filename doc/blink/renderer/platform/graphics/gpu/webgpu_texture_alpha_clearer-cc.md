@@ -85,14 +85,16 @@ By following these steps, the comprehensive explanation provided in the initial 
 
 总而言之，`WebGPUTextureAlphaClearer` 是 Blink 渲染引擎内部的一个实用工具，用于确保 WebGPU 纹理的 alpha 通道处于已知的、完全不透明的状态，这对于某些渲染场景是必要的。尽管开发者不会直接在 JavaScript 中调用这个类，但它的功能会影响 WebGPU 应用的行为和最终渲染结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gpu/webgpu_texture_alpha_clearer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ void WebGPUTextureAlphaClearer::ClearAlpha(const wgpu::Texture& texture) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

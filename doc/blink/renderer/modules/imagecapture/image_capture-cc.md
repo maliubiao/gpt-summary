@@ -134,7 +134,7 @@ My thought process to answer the request about `image_capture.cc` goes through t
 
 在调试时，开发者可能会在 JavaScript 代码中设置断点，观察 `ImageCapture` 对象的创建和方法调用。如果发现 `takePhoto()` 等方法没有按预期工作，就可以深入到 Blink 渲染引擎的源代码中，例如 `image_capture.cc`，查看其内部逻辑，设置 C++ 断点，分析变量值，以找出问题所在。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/imagecapture/image_capture.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -970,7 +972,4 @@ bool CheckValueConstraint(const MediaSettingsRange* effective_capability,
                           const V8UnionConstrainDoubleRangeOrDouble* constraint,
                           MediaTrackConstraintSetType constraint_set_type) {
   if (!IsValueConstraint(
-"""
-
-
 ```

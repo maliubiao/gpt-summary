@@ -100,7 +100,7 @@ COMPARE(fadd_d(w13, w2, w29), "783d135b       fadd.d  w13, w2, w29");
 
 作为总共 4 个部分中的第 3 部分，这段代码主要关注于 **验证 V8 引擎在 MIPS64 架构下反汇编器对浮点运算指令和 MSA 指令的解析准确性**。它通过一系列预定义的指令和其期望的反汇编结果进行对比测试，确保反汇编器能够正确地将机器码转换回人类可读的汇编代码。 这对于 V8 的开发、调试和性能分析至关重要，因为它直接关系到 V8 是否能正确理解和表示其生成的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/assembler/disasm-mips64-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/assembler/disasm-mips64-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -108,8 +108,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 fexupr.d  w5, w2");
     COMPARE(ffint_s_w(w20, w29), "7b3ced1e       ffint_s.w  w20, w29");
     COMPARE(ffint_s_d(w12, w15), "7b3d7b1e       ffint_s.d  w12, w15");
@@ -581,7 +583,4 @@ TEST_F(DisasmMips64Test, MSA_BIT) {
     COMPARE(srlri_b(w18, w3, 0), "79f01c8a       srlri.b  w18, w3, 0");
     COMPARE(srlri_h(w1, w2, 3), "79e3104a       srlri.h  w1, w2, 3");
     COMPARE(srlri_w(w11, w22, 2
-"""
-
-
 ```

@@ -278,7 +278,7 @@ if (Process.platform === 'android') {
 
 通过运行这个 Frida 脚本，你可以观察到 Android 系统中何时何地调用了 `strncmp` 函数，并查看其参数和返回值，从而帮助理解 Android 框架或 NDK 如何一步步地到达这个 libc 函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/string/strncmp.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -289,8 +289,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: strncmp.c,v 1.9 2015/08/31 02:53:57 guenther Exp $	*/
 
 /*
@@ -339,7 +341,4 @@ strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 DEF_STRONG(strncmp);
-
-"""
-
 ```

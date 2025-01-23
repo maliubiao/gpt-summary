@@ -137,15 +137,17 @@ go/test/import5.go:23:2: import path must be a string
 
 总而言之，`go/test/import5.go` 是 Go 语言测试基础设施的一个组成部分，它专注于验证编译器对 `import` 语句语法的强制执行，特别是确保 import 路径必须是字符串字面量。  它通过预期的编译错误信息来进行测试。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/import5.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -173,9 +175,4 @@ import 42    // ERROR "import path must be a string"
 import 'a'   // ERROR "import path must be a string"
 import 3.14  // ERROR "import path must be a string"
 import 0.25i // ERROR "import path must be a string"
-
-"""
-
-
-
 ```

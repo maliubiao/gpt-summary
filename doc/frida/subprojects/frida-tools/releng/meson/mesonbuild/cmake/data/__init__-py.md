@@ -133,7 +133,7 @@ A typical user *running* Frida won't directly interact with these build system f
 
 In summary, while the `__init__.py` file itself might be simple, its presence within the `data` directory plays a crucial role in organizing the data and Python modules used by the Meson build system to generate the necessary CMake configuration for building Frida. It's an integral part of the build infrastructure that ultimately leads to the creation of the Frida tool used for dynamic instrumentation and reverse engineering.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/cmake/data/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,9 +141,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```python
 
 ```

@@ -159,7 +159,7 @@ let expected = i | j; // 在 JavaScript 中执行按位或
 
 总而言之，这部分测试代码专注于验证 V8 编译器在生成和执行各种基本的整数和浮点数机器操作时的正确性，确保 JavaScript 代码能够在底层得到正确的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-run-machops.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-run-machops.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,8 +167,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ) {
       FOR_INT32_INPUTS(j) {
         int32_t expected = (i | j) != 0 ? constant : 0 - constant;
@@ -1272,7 +1274,4 @@ TEST(RunFloat32SubImm1) {
 TEST(RunFloat32SubImm2) {
   FOR_FLOAT32_INPUTS(i) {
     BufferedRawMachineAssemblerTester<float> m
-"""
-
-
 ```

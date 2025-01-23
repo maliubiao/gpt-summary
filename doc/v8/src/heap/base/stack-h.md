@@ -188,15 +188,17 @@ class MyVisitor : public heap::base::StackVisitor {
 
 `v8/src/heap/base/stack.h` 定义的 `Stack` 类是 V8 引擎中一个关键的内部组件，用于抽象和管理程序执行时的调用栈。它为垃圾回收、错误处理和调试等核心功能提供了基础支持。虽然 JavaScript 开发者不会直接使用这个类，但理解其功能有助于理解 V8 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/stack.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/base/stack.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -410,7 +412,4 @@ class V8_EXPORT_PRIVATE Stack final {
 }  // namespace heap::base
 
 #endif  // V8_HEAP_BASE_STACK_H_
-
-"""
-
 ```

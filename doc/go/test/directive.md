@@ -157,15 +157,17 @@ func main() {
 
 总而言之，`go/test/directive.go` 作为一个测试文件，其核心功能是验证Go编译器对编译器指令放置位置的错误检测能力。它通过 `errorcheck` 机制，期望编译器在特定的错误位置产生预定义的错误信息，从而确保编译器的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/directive.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -223,9 +225,4 @@ func f() {
 	//go:noinline // ERROR "misplaced compiler directive"
 	type T int
 }
-
-"""
-
-
-
 ```

@@ -147,7 +147,7 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`simd_sse3.c` 是 Frida 工具中一个专门用于测试和演示 SSE3 指令集功能的代码片段，它的存在是为了确保 Frida 能够正确地处理目标进程中使用了这类指令的代码，对于逆向工程师理解 Frida 的工作原理和排查相关问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/147 simd/simd_sse3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdconfig.h>
 #include<simdfuncs.h>
 
@@ -195,7 +197,4 @@ void increment_sse3(float arr[4]) {
     arr[2] = (float)darr[3];
     arr[3] = (float)darr[2];
 }
-
-"""
-
 ```

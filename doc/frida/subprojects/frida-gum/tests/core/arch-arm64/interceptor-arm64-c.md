@@ -182,7 +182,7 @@ By following these steps, breaking down the code into manageable parts, and conn
 
 总而言之，`interceptor-arm64.c` 是 Frida 内部用于测试其在 ARM64 架构下拦截功能，特别是对链接寄存器 (LR) 处理的正确性的一个单元测试文件。它涉及到动态分析、代码注入、ARM64 汇编、内存管理等多个底层技术，对于理解 Frida 的工作原理和进行更深入的逆向分析非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm64/interceptor-arm64.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2019-2020 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -335,7 +337,4 @@ gum_emit_lr_func (gpointer mem,
 
   gum_arm64_writer_clear (&aw);
 }
-
-"""
-
 ```

@@ -199,12 +199,14 @@ Now I need to generate JavaScript examples for the relevant points.
 
 总而言之，这部分代码主要关注 V8 引擎的执行环境管理，包括异常处理、上下文管理、线程管理、特定功能的启用以及与宿主环境的交互，还有一些关于 WebAssembly 的支持性功能。这些功能对于 V8 引擎的稳定运行和与 JavaScript 代码的正确交互至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 alse;
     }
     // The register it stores to will be assumed to be our promise
@@ -1991,8 +1993,5 @@ void Isolate::MaybeRemapEmbeddedBuiltinsIntoCodeRange() {
   CHECK_NE(embedded_blob_code_size_, 0);
 
   DCHECK_NOT_NULL(heap_.code_range_);
-  embedded_blob_code_ = 
-"""
-
-
+  embedded_blob_code_ =
 ```

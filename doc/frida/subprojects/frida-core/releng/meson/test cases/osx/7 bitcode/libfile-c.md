@@ -139,7 +139,7 @@ By following this thought process, considering the context, and refining the ana
 
 总而言之，`frida/subprojects/frida-core/releng/meson/test cases/osx/7 bitcode/libfile.c` 这个文件虽然代码简单，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在特定平台和编译配置下 hook C 函数的能力。对于 Frida 的开发者和用户来说，它都是一个有用的参考和调试对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/osx/7 bitcode/libfile.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -147,14 +147,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "vis.h"
 
 int EXPORT_PUBLIC libfunc(void) {
     return 3;
 }
-
-"""
-
 ```

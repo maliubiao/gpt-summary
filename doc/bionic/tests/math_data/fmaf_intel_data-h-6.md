@@ -261,7 +261,7 @@ sys.stdin.read()
 
 `bionic/tests/math_data/fmaf_intel_data.handroid` 是 Android Bionic 库中用于测试 `fmaf` 函数在 Intel 平台上的正确性的数据文件。它包含了大量的测试用例，涵盖了各种输入组合，旨在验证 `fmaf` 实现的精度和对特殊值的处理。理解这个文件的功能有助于我们更好地理解 Android 系统中数学库的测试方法，以及 `fmaf` 函数在 NDK 开发中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/fmaf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -273,8 +273,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ,
   { // Entry 2100
     -HUGE_VALF,
@@ -1495,8 +1497,4 @@ Prompt:
     -0.0f
   }
 };
-
-"""
-
-
 ```

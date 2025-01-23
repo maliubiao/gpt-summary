@@ -126,7 +126,7 @@ By following this iterative process of decomposition, analysis, connection to we
 
 这段代码是 Chromium Blink 引擎中负责查找功能的核心部分，特别是关于如何将找到的文本匹配项呈现给用户，包括高亮显示、滚动到可视区域以及在安卓平台上的特殊缩放处理。它与 JavaScript、HTML 和 CSS 紧密相关，共同实现了浏览器中的 "在页面中查找" 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/finder/text_finder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -134,8 +134,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t()->FrameWidgetImpl()->ZoomToFindInPageRect(
         active_match_rect);
   }
@@ -297,8 +299,4 @@ void TextFinder::IncreaseMarkerVersion() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

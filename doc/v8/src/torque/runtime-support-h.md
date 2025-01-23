@@ -179,15 +179,17 @@ CastToUnderlyingTypeIfEnum(num)  // 返回 int(10)
 
 总而言之， `v8/src/torque/runtime-support.h` 提供了一些底层的类型处理工具，主要用于 V8 内部的 Torque 代码和 C++ 代码，以方便处理枚举类型。虽然它与 JavaScript 没有直接的语法上的联系，但它所提供的功能是 V8 实现某些 JavaScript 特性的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/runtime-support.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/runtime-support.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -219,7 +221,4 @@ UnderlyingTypeIfEnum<T> CastToUnderlyingTypeIfEnum(T x) {
 }
 
 #endif  // V8_TORQUE_RUNTIME_SUPPORT_H_
-
-"""
-
 ```

@@ -72,12 +72,14 @@ console.log(result);
 
 总而言之，`v8/src/wasm/wasm-code-manager.cc` 的第一部分构建了 V8 引擎中 WebAssembly 代码管理的基础设施，为后续的编译、加载、执行和垃圾回收等操作提供了必要的支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-code-manager.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1683,7 +1685,4 @@ NativeModule::SnapshotCodeTable() const {
   }
   std::vector<WellKnownImport> import_statuses(module_->num_imported_functions);
   for (uint32_t i = 0; i < module_->num
-"""
-
-
 ```

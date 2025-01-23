@@ -136,7 +136,7 @@ By following these steps, which involve understanding the code itself, its conte
 
 因此，这个脚本通常不会被用户直接手动运行，而是在 Frida 的构建和测试流程中作为自动化的一部分被调用。它的存在是为了简化创建具有特定退出行为的测试程序的过程，方便 Frida 开发者进行功能验证和回归测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/273 customtarget exe for test/generate.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,8 +144,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -160,7 +162,4 @@ for i, a in enumerate(sys.argv[1:]):
     with open(a, 'w') as f:
         print(program.format(i), file=f)
     os.chmod(a, 0o755)
-
-"""
-
 ```

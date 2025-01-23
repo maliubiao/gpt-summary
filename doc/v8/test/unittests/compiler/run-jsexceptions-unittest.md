@@ -167,11 +167,13 @@ console.log(testCatch()); // 输出 "-A-B-"
 
 `run-jsexceptions-unittest.cc` 文件是 V8 引擎中负责测试 JavaScript 异常处理功能正确性的单元测试集合。它涵盖了 `throw`、`try`、`catch`、`finally` 等关键的异常处理语句的各种使用场景，并验证了在优化和反优化的情况下这些机制是否仍然能够正常工作。 这些测试保证了 V8 引擎能够按照 JavaScript 规范正确地处理异常，从而保证了 JavaScript 代码的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/run-jsexceptions-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -441,7 +443,4 @@ TEST_F(RunJSExceptionsTest, DeoptFinallyReThrow) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

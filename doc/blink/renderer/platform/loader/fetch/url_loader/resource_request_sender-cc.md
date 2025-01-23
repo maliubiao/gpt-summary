@@ -154,14 +154,16 @@ By following this breakdown, starting with the high-level purpose and gradually 
 
 总而言之，`resource_request_sender.cc` 是 Blink 引擎中一个至关重要的文件，它负责实际的网络资源请求的发送和管理，直接影响着网页的加载和渲染过程，并与 JavaScript、HTML 和 CSS 的加载紧密相关。 开发者在使用 Web 技术时，很多行为最终都会通过这个组件与底层的网络交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/resource_request_sender.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -908,7 +910,4 @@ void ResourceRequestSender::MaybeRunPendingTasks() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

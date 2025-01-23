@@ -116,7 +116,7 @@ The user wants a summary of the provided C++ code snippet from Chromium's networ
 
 作为 21 个部分中的第 15 部分，这段代码着重于测试 `HostResolverManager` 中相对高级和复杂的 DNS 查询功能，特别是与服务发现相关的 SRV 和 HTTPS 记录查询。它验证了在各种网络配置和请求场景下，`HostResolverManager` 是否能够正确地发起 DNS 查询，处理响应，并返回预期的结果，包括错误处理和 HTTPS 升级的强制执行。 这部分测试确保了 Chromium 能够利用 DNS 记录提供的服务发现机制来优化网络连接，特别是对于 HTTPS 连接的安全性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第15部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s_protocol::kTypeSRV, false /* secure */,
       MockDnsClientRule::Result(BuildTestDnsResponse(
           "host", dns_protocol::kTypeSRV,
@@ -853,7 +855,4 @@ TEST_F(HostResolverManagerDnsTest, HttpsInAddressQueryWithoutAddresses) {
   EXPECT_THAT(response.request()->GetTextResults(),
               AnyOf(nullptr, Pointee(IsEmpty())));
   EXPECT_THAT(response.request()->GetHos
-"""
-
-
 ```

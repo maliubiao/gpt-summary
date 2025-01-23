@@ -99,11 +99,13 @@ outerFunction();
 
 `sampling-heap-profiler.cc` 文件是 V8 引擎中用于进行高效堆内存分析的关键组件。它通过采样技术，降低了性能开销，并提供了 JavaScript 开发者理解内存分配行为的重要工具，帮助他们识别内存泄漏和优化内存使用。JavaScript 开发者通过 DevTools 或 Node.js 的 Profiler API 与其间接交互，利用其提供的分析结果来改进代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/sampling-heap-profiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -424,7 +426,4 @@ SamplingHeapProfiler::BuildSamples() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

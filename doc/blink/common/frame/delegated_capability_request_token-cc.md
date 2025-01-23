@@ -140,14 +140,16 @@ By following these steps, we can effectively analyze the C++ code and provide a 
 
 总而言之，`DelegatedCapabilityRequestToken` 提供了一种在 Blink 引擎内部管理临时性、一次性授权的机制，这有助于提高安全性和控制对特定功能的访问。虽然它不直接暴露给 JavaScript 等前端技术，但它在幕后支撑着浏览器的许多安全和权限相关的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/frame/delegated_capability_request_token.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ bool DelegatedCapabilityRequestToken::ConsumeIfActive() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -94,11 +94,13 @@ console.log(add(5, 10)); // 执行优化后的代码
 
 `v8/src/codegen/riscv/cpu-riscv.cc` 文件中的 `CpuFeatures::FlushICache` 函数是 V8 引擎在 RISC-V 架构上用于维护指令缓存一致性的关键底层操作。  它确保了当 V8 动态生成或优化代码后，CPU 能够执行最新的指令，这对于 JavaScript 的动态性和性能至关重要。 虽然 JavaScript 开发者不能直接调用这个函数，但 V8 引擎会在执行某些 JavaScript 代码时，根据需要自动调用它。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/cpu-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -131,7 +133,4 @@ void CpuFeatures::FlushICache(void* start, size_t size) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

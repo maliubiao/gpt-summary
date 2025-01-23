@@ -231,15 +231,17 @@ This detailed breakdown allows for a comprehensive understanding of the code and
 
 `sql_transaction.cc` 是 Blink 引擎中 WebDatabase API 的关键组成部分，负责管理 SQL 事务的生命周期，与 JavaScript 进行交互，并与后端数据库进行通信。理解其功能和工作流程对于调试 WebDatabase 相关的问题至关重要。 通过分析代码、理解其与 JavaScript 的关系、掌握常见的使用错误以及利用调试线索，可以更有效地定位和解决问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/sql_transaction.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2007, 2008, 2013 Apple Inc. All rights reserved.
  *
@@ -649,7 +651,4 @@ SQLTransaction::OnErrorCallback* SQLTransaction::ReleaseErrorCallback() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

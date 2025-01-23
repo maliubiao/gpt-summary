@@ -161,7 +161,7 @@ This step-by-step process, focusing on understanding the code's purpose and how 
 
 这段代码虽然简单，但它是理解动态分析和 Frida 工作原理的良好起点。通过对这段代码进行操作，用户可以学习如何使用 Frida hook 函数、查看和修改返回值，并逐步掌握动态逆向分析的基本技能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/77 extract from nested subdir/tst/first/exe_first.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,14 +169,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int first(void);
 
 int main(void) {
     return first() - 1001;
 }
-
-"""
-
 ```

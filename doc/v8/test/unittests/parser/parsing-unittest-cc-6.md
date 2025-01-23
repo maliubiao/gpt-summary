@@ -243,7 +243,7 @@ const obj2 = {
 
 总而言之，`v8/test/unittests/parser/parsing-unittest.cc` 的第 7 部分是一个关键的测试集，用于验证 V8 的 JavaScript 解析器在处理 `super` 关键字和类相关的各种语法结构时的正确性，包括合法的语法和各种常见的错误用法。这确保了 V8 能够准确地理解和执行符合 JavaScript 规范的代码，并能及时地报告语法错误，帮助开发者避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/parser/parsing-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/parser/parsing-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -251,8 +251,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共15部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ompile_state;
     i::ReusableUnoptimizedCompileState reusable_state(isolate);
     i::UnoptimizedCompileFlags flags =
@@ -1224,8 +1226,4 @@ TEST_F(ParsingTest, PrivateMembersNestedInObjectLiteralsNoErrors) {
   // clang-format off
   const char* context_data[][2] = {{"({", "})"},
                                    {"'use strict'; ({", "});"},
-                                  
-"""
-
-
 ```

@@ -115,7 +115,7 @@ let result = add(5, 10);
 
 `v8/src/codegen/mips64/macro-assembler-mips64.cc` 的主要功能是提供一个用于生成 MIPS64 汇编代码的高级接口，它是 V8 引擎将 JavaScript 代码编译成可执行机器码的关键组成部分。它封装了寄存器管理、栈帧操作、内存访问、分支控制以及垃圾回收所需的写屏障等功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/macro-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/mips64/macro-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -123,8 +123,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1283,7 +1285,4 @@ void MacroAssembler::Ulw(Register rd, const MemOperand& rs) {
       lwl(rd, MemOperand(source.rm(), source.offset() + kMipsLwlOffset));
     } else {
       UseScra
-"""
-
-
 ```

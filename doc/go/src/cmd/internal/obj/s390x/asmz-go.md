@@ -128,7 +128,7 @@ TEXT    "".add(SB), NOSPLIT, $0-24
 
 总而言之，`go/src/cmd/internal/obj/s390x/asmz.go` 是 Go 编译器中负责将 s390x 架构的汇编指令转换为机器码的关键组成部分，它定义了指令集、操作数类型，并实现了指令编码和布局的功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/s390x/asmz.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -136,8 +136,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Based on cmd/internal/obj/ppc64/asm9.go.
 //
 //    Copyright © 1994-1999 Lucent Technologies Inc.  All rights reserved.
@@ -1996,9 +1998,4 @@ const (
 	op_HER     uint32 = 0x3400 // FORMAT_RR         HALVE (short HFP)
 	op_HSCH    uint32 = 0xB231 // FORMAT_S          HALT SUBCHANNEL
 	op_IAC     uint32 = 0xB224 // FORMAT_RRE        INSERT ADDRE
-"""
-
-
-
-
 ```

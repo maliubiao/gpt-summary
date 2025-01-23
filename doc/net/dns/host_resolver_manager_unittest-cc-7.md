@@ -144,7 +144,7 @@ This iterative process of scanning, categorizing, analyzing, and synthesizing in
 
 总而言之，这个测试文件非常重要，因为它验证了 `HostResolverManager` 这一关键网络组件在各种场景下的正确性和健壮性，确保浏览器能够可靠地将域名解析为 IP 地址，从而实现正常的网络访问。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -152,9 +152,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共21部分，请归纳一下它的功能
+```
 
-"""
-     testing::Pointee(testing::ElementsAre(ExpectEndpointResult(
+### 源代码
+```cpp
+testing::Pointee(testing::ElementsAre(ExpectEndpointResult(
                   testing::ElementsAre(CreateExpected("192.168.1.101", 80))))));
 }
 
@@ -862,7 +864,4 @@ TEST_F(HostResolverManagerDnsTest, DeleteWithActiveTransactions) {
         std::make_unique<ResolveHostResponseHelper>(resolver_->CreateRequest(
             HostPortPair(hostname, 80), NetworkAnonymizationKey(),
             NetLogWith
-"""
-
-
 ```

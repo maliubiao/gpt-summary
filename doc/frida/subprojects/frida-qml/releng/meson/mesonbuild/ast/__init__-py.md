@@ -157,7 +157,7 @@ install_files(frida_module, install_dir: install_pydir / 'my_package')
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/ast/__init__.py` 是 Frida 构建系统中负责解析和处理 Meson 构建文件 AST 的一个关键组件。它对于理解 Frida 的构建过程、进行构建调试以及开发 Frida 扩展都非常重要，尽管普通 Frida 用户不会直接与其交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/ast/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -190,7 +192,4 @@ from .introspection import IntrospectionInterpreter, BUILD_TARGET_FUNCTIONS
 from .visitor import AstVisitor
 from .postprocess import AstConditionLevel, AstIDGenerator, AstIndentationGenerator
 from .printer import AstPrinter, AstJSONPrinter
-
-"""
-
 ```

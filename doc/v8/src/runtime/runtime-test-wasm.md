@@ -163,11 +163,13 @@ console.log("Wasm array:", wasmArray);
 
 `v8/src/runtime/runtime-test-wasm.cc` 文件是 V8 内部用于测试和调试 WebAssembly 功能的关键组成部分。它提供了一系列底层的运行时函数，允许 V8 开发人员和测试框架更精细地控制 Wasm 的行为，并深入了解其内部状态。虽然普通 JavaScript 代码通常不能直接调用这些函数，但它们对于确保 V8 中 Wasm 功能的正确性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-test-wasm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1253,7 +1255,4 @@ RUNTIME_FUNCTION(Runtime_WasmGenerateRandomModule) {
 #endif  // V8_WASM_RANDOM_FUZZERS
 
 }  // namespace v8::internal
-
-"""
-
 ```

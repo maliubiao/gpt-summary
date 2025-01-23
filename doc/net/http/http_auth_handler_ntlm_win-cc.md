@@ -141,15 +141,17 @@ This systematic approach of breaking down the code, considering different perspe
 
 总而言之，`net/http/http_auth_handler_ntlm_win.cc` 是 Chromium 处理 Windows 环境下 NTLM 认证的关键组件，它负责生成和解析 NTLM 认证消息，并与操作系统的安全接口交互，以实现安全的身份验证。 它的工作对于用户访问需要 NTLM 认证的内部网资源至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_auth_handler_ntlm_win.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ HttpAuth::AuthorizationResult HttpAuthHandlerNTLM::ParseChallenge(
 }
 
 }  // namespace net
-
-"""
-
 ```

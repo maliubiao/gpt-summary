@@ -122,12 +122,14 @@ Here's a breakdown of the code's functionality:
 
 总而言之，这个测试文件的目的是确保 V8 的 CSA 功能正常工作，并且生成的代码能够正确地实现 JavaScript 的各种语言特性和内置功能，从而保证 JavaScript 代码的正确执行和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-code-stub-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 emblerTester asm_tester(isolate, JSParameterCount(kNumParams));
   CodeStubAssembler m(asm_tester.state());
 
@@ -1798,7 +1800,4 @@ TEST(NumberMinMax) {
            V8_INFINITY);
   CHECK(std::isnan(ft_max.CallChecked<HeapNumber>(nan, double_a)->value()));
   CHECK(std::isnan(ft_max.CallChecked<HeapNumber>(double_a, nan)->va
-"""
-
-
 ```

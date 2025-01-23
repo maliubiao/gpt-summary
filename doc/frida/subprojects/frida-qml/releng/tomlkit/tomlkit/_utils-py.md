@@ -199,7 +199,7 @@ Alternatively:
 
 In the case of `merge_dicts`, a user might be programmatically merging configuration settings from different sources. If there are conflicts or unexpected data structures, debugging might lead them to examine how `merge_dicts` is behaving. They might step through the code or add print statements to understand how the dictionaries are being combined.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/tomlkit/tomlkit/_utils.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import re
@@ -367,7 +369,4 @@ def merge_dicts(d1: dict, d2: dict) -> dict:
             merge_dicts(d1[k], v)
         else:
             d1[k] = d2[k]
-
-"""
-
 ```

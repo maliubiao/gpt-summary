@@ -106,11 +106,13 @@ During the process, I might have initially overlooked the significance of `Nativ
 
 这个 C++ 文件中的运行时函数是 V8 引擎实现 `ShadowRealm` 功能的关键组成部分。它们处理了在 `ShadowRealm` 中创建包装函数、导入模块值以及抛出特定错误等核心操作。这些底层机制使得 JavaScript 的 `ShadowRealm` 能够提供一个安全且隔离的执行环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/runtime/runtime-shadow-realm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ RUNTIME_FUNCTION(Runtime_ShadowRealmThrow) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

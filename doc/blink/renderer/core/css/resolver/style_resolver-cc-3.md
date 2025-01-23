@@ -147,7 +147,7 @@ Here's a breakdown of the code's functionality:
 
 总而言之，这部分 `StyleResolver` 的代码是 Blink 引擎中处理 CSS 动画、过渡、锚点定位以及优化样式计算的关键组成部分。它确保了 CSS 样式能够正确地应用到 HTML 元素上，并提供了性能优化的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/resolver/style_resolver.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 les_to_include) {
   return PseudoCSSRulesForElement(element, kPseudoIdNone, g_null_atom,
                                   rules_to_include);
@@ -989,7 +991,4 @@ void StyleResolver::PropagateStyleToViewport() {
       if (viewport_style.VisitedDependentColor(
               GetCSSPropertyInternalForcedBackgroundColor()) !=
           internal_forced_background_co
-"""
-
-
 ```

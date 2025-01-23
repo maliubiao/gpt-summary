@@ -167,7 +167,7 @@ test2 = TestSerialisation(name='test_memory_rw', suite=['frida:core'])
 
 当开发者需要调试测试框架本身的问题，或者需要了解某个测试用例是如何被执行的，他们可能会逐步查看 `mesonbuild.mtest.py` 的代码，从 `run()` 函数开始，逐步跟踪到测试用例的获取、执行和结果处理的各个环节，以便理解整个测试流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/mtest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 metadata()
 
         ss = set()
@@ -773,8 +775,4 @@ def run_with_args(args: T.List[str]) -> int:
     add_arguments(parser)
     options = parser.parse_args(args)
     return run(options)
-
-"""
-
-
 ```

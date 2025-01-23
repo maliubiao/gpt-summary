@@ -169,15 +169,17 @@ A developer might end up looking at this code for various reasons during debuggi
 
 In essence, any situation where a developer needs to understand how CSS styles are applied to an HTML element, how JavaScript interacts with those styles, or needs to debug issues related to rendering or performance might lead them to explore the code within `css_property_value_set.cc`.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_property_value_set.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * (C) 1999-2003 Lars Knoll (knoll@kde.org)
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2012, 2013 Apple Inc.
@@ -1022,7 +1024,4 @@ void CSSPropertyValueSet::ShowStyle() {
 void CSSLazyPropertyParser::Trace(Visitor* visitor) const {}
 
 }  // namespace blink
-
-"""
-
 ```

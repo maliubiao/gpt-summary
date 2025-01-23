@@ -161,12 +161,14 @@ console.log(min, max); // Output: 1, 8
 
 In summary, `v8/src/compiler/js-call-reducer.cc` (specifically this part) plays a vital role in making JavaScript execution faster by intelligently transforming and simplifying common JavaScript function calls at compile time. It leverages type information and object structure to bypass the overhead of generic call mechanisms and directly perform the intended operations more efficiently.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-call-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ForCollectionKind(collection_kind);
   MapInference inference(broker(), receiver, effect);
   if (!inference.HaveMaps() || !inference.AllOfInstanceTypesAre(type)) {
@@ -1207,8 +1209,4 @@ SimplifiedOperatorBuilder* JSCallReducer::simplified() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

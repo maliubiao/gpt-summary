@@ -168,14 +168,16 @@ This detailed thought process, combining code analysis, keyword identification, 
 
 `stack_util.cc` 是 Blink 引擎中一个底层的实用工具文件，用于获取线程栈的相关信息。虽然它不直接参与 JavaScript、HTML 或 CSS 的处理，但为引擎的正常运行和调试提供了基础支持，尤其在处理与栈空间相关的错误（如栈溢出）时非常有用。理解其功能可以帮助开发者更好地理解 Blink 引擎的内部机制，并避免一些常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/stack_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -398,7 +400,4 @@ size_t ThreadStackSize() {
 }  // namespace internal
 
 }  // namespace WTF
-
-"""
-
 ```

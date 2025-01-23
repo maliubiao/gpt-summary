@@ -198,15 +198,17 @@ By following these steps, we can systematically analyze the C++ test file and ex
 
 总而言之，`paint_worklet_global_scope_test.cc` 这个文件是 Blink 引擎内部用于确保 CSS Paint API 的 `registerPaint()` 函数能够正常工作的重要测试，它直接关联着 Web 开发者使用的 JavaScript 和 CSS 功能。通过理解这个测试文件的作用，可以更好地理解 CSS Paint API 的底层实现和可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/csspaint/paint_worklet_global_scope_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -326,7 +328,4 @@ TEST_F(PaintWorkletGlobalScopeTest, BasicParsing) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

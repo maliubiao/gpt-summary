@@ -172,7 +172,7 @@ func main() {
 
 总而言之，这段代码片段是 Go 语言 `runtime/pprof` 包中关于 CPU 性能剖析功能的测试代码。它通过各种测试用例，验证了 CPU 性能剖析在不同场景下的正确性和可靠性，包括单线程、多线程、涉及内联函数、递归函数以及与其他运行时机制交互的情况。 这段代码为确保 Go 语言的 CPU 性能剖析功能能够准确地帮助开发者定位性能瓶颈起着至关重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/pprof/pprof_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -181,8 +181,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1426,9 +1428,4 @@ func blockInfrequentLong(rate int) {
 //
 //go:linkname blockevent runtime.blockevent
 func blockevent(cycles int
-"""
-
-
-
-
 ```

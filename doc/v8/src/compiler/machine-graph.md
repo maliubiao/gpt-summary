@@ -98,11 +98,13 @@ Math.sqrt(9); // 调用内置的 Math.sqrt 函数
 
 `machine-graph.cc` 文件在 V8 编译器的中间表示阶段扮演着关键角色，它负责创建和管理机器图中表示常量值的节点。  这些常量节点是编译过程中的基本构建块，用于表示 JavaScript 代码中的字面量、内置对象和函数的引用等。 通过高效的常量缓存机制，它有助于优化编译性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/machine-graph.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -234,7 +236,4 @@ Node* MachineGraph::ExternalConstant(Runtime::FunctionId function_id) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

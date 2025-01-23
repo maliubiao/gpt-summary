@@ -161,7 +161,7 @@ This methodical approach, starting with the high-level goal and progressively di
 
 此外，如果用户使用了自定义的构建环境或工具链，检查传递给 `winenv.py` 的 `toolchain_prefix` 参数是否正确也是一个重要的调试步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/winenv.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,8 +169,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import json
 from operator import attrgetter
 import os
@@ -311,7 +313,4 @@ def detect_msvs_library_path(machine: MachineSpec,
 
 class MissingDependencyError(Exception):
     pass
-
-"""
-
 ```

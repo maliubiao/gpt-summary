@@ -78,7 +78,7 @@ The user wants a summary of the provided C++ code snippet from `v8/src/objects/b
 
 这段 `v8/src/objects/backing-store.cc` 代码片段负责管理 V8 引擎中 `BackingStore` 对象在多个 Isolate 之间的共享，特别是为了支持 WebAssembly 的共享内存功能。它跟踪哪些 Isolate 正在使用同一个 `BackingStore`，并在共享内存增长时通知和更新相关的对象，确保多个 Isolate 能够正确地访问和操作共享内存。 这对于实现高效的跨 Isolate 或跨 worker 线程的内存共享至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/backing-store.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/backing-store.cc以.tq结尾，那它是个v8 torque源代码，
@@ -86,9 +86,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- = std::find(isolates.begin(), isolates.end(), isolate);
+### 源代码
+```cpp
+= std::find(isolates.begin(), isolates.end(), isolate);
     if (isolates_it != isolates.end()) {
       *isolates_it = isolates.back();
       isolates.pop_back();
@@ -175,8 +177,4 @@ void GlobalBackingStoreRegistry::UpdateSharedWasmMemoryObjects(
 }  // namespace v8::internal
 
 #undef TRACE_BS
-
-"""
-
-
 ```

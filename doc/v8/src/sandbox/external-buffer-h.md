@@ -168,15 +168,17 @@ wasmView[0] = 100;
 
 总而言之，`v8/src/sandbox/external-buffer.h` 提供了一个关键的机制，用于在 V8 的沙箱环境中安全有效地管理对外部内存的访问，这对于与原生代码集成、处理大型数据或在 WebAssembly 等场景中至关重要。 理解其功能有助于理解 V8 如何与外部世界交互并保证其安全性和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/sandbox/external-buffer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/sandbox/external-buffer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ V8_INLINE std::pair<Address, size_t> ReadExternalBufferField(
 }  // namespace v8
 
 #endif  // V8_SANDBOX_EXTERNAL_BUFFER_H_
-
-"""
-
 ```

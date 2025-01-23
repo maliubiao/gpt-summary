@@ -305,7 +305,7 @@ sys.stdin.read()
 
 请注意，这只是一个基本的 Hook 示例。实际调试中可能需要更复杂的 Hook 逻辑来解析 DNS 响应报文，或者 Hook 其他相关的 DNS 解析函数。此外，某些应用可能会使用反 Hook 技术，需要采取相应的绕过措施。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/include/resolv_private.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -316,8 +316,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: resolv.h,v 1.31 2005/12/26 19:01:47 perry Exp $	*/
 
 /*
@@ -836,7 +838,4 @@ int ns_name_map(ns_nname_ct, size_t, ns_namemap_t, int);
 int ns_name_labels(ns_nname_ct, size_t);
 
 __END_DECLS
-
-"""
-
 ```

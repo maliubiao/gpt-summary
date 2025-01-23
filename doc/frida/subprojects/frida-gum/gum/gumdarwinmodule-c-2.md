@@ -172,7 +172,7 @@ By following these steps and focusing on the key aspects of the code, I can gene
 
 这部分代码主要负责 **解析和操作 Mach-O 文件的导出符号表 (exports trie)**。它提供了查找特定导出符号和遍历所有导出符号的功能，这对于 Frida 实现动态 instrumentation 至关重要，因为它允许 Frida 找到需要在运行时进行拦截和修改的函数地址。此外，它还包含了一些辅助函数，用于处理 CPU 类型和指针大小等架构相关的信息，确保 Frida 能够在不同的 Darwin 设备上正确运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/gumdarwinmodule.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -181,8 +181,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 if (allow_any_cpu)
   {
     gboolean is_supported = canonical_cpu_type != GUM_CPU_INVALID;
@@ -922,8 +924,4 @@ gum_pointer_size_from_cpu_type (GumDarwinCpuType cpu_type)
 }
 
 #endif
-
-"""
-
-
 ```

@@ -144,15 +144,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`mathml_element.cc` 文件是 Blink 渲染引擎中处理 MathML 元素的核心，它负责将 MathML 的属性转换为 CSS 样式，处理事件，并提供 MathML 元素的基本行为。它连接了 HTML、CSS 和 JavaScript，使得浏览器能够正确地渲染和交互包含数学公式的网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/mathml/mathml_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -328,7 +330,4 @@ std::optional<Length> MathMLElement::AddMathLengthToComputedStyle(
 }
 
 }  // namespace blink
-
-"""
-
 ```

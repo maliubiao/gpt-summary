@@ -178,7 +178,7 @@ retval(void) {
 
 总而言之，`writec.py` 是 Frida 测试框架中一个辅助脚本，用于快速生成简单的 C 代码文件，作为 Frida 进行动态插桩和测试的目标。它本身不执行逆向操作，但为逆向测试提供了必要的环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/vala/10 mixed sources/c/writec.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -200,7 +202,4 @@ retval(void) {
 
 with open(sys.argv[1], 'w') as f:
     f.write(c)
-
-"""
-
 ```

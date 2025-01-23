@@ -114,7 +114,7 @@ I need to address the following points:
 
 作为构建过程中的核心环节，`ninjabackend.py` (在第 5 部分) 主要负责**将 Meson 对单个源文件的编译描述转化为 Ninja 的具体编译指令**。这包括确定编译器、编译参数（包含目录、宏定义、调试信息）、预编译头文件的处理等。它确保了每个源文件能够被正确地编译成目标文件，为后续的链接过程奠定基础。 这部分集中在**代码编译**的细节生成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/backend/ninjabackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,8 +123,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 file called foo.pdb. So will a static library
         # foo.lib, which clobbers both foo.pdb _and_ the dll file's
         # export library called foo.lib (by default, currently we name
@@ -743,7 +745,4 @@ file called foo.pdb. So will a static library
 
         prelinker = target.get_prelinker()
         cmd = prelinker.exelist
-"""
-
-
 ```

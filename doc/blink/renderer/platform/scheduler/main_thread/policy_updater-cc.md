@@ -113,14 +113,16 @@ Response: Let's break down the thought process for analyzing the `policy_updater
 
 总而言之，`PolicyUpdater` 是 Blink 内部用于管理主线程调度策略更新的关键组件，它通过延迟更新和层级更新的方式，确保策略能够正确且高效地应用到渲染引擎的各个部分，最终影响着 JavaScript 的执行、HTML 的解析和 CSS 的渲染过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/policy_updater.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -177,7 +179,4 @@ void PolicyUpdater::UpdateAgentGroupPolicy(
 }
 
 }  // namespace blink::scheduler
-
-"""
-
 ```

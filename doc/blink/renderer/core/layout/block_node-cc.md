@@ -122,15 +122,17 @@ My thinking process to answer the request goes like this:
 
 `block_node.cc` 的主要功能是定义了 `BlockNode` 类，它是 Blink 渲染引擎中处理块级元素布局的核心组件。它负责协调布局过程，选择合适的布局算法（如 Flexbox, Grid, Table 等），并利用布局缓存来优化性能。该文件是连接 HTML 结构和 CSS 样式的关键桥梁，决定了块级元素在页面上的最终呈现方式。它涉及到处理各种复杂的布局场景，包括分片、滚动条、CSS Shapes 和容器查询等特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/block_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -857,8 +859,5 @@ const LayoutResult* BlockNode::LayoutRepeatableRoot(
     DCHECK(!result->GetPhysicalFragment().GetBreakToken());
   } else {
     // We're repeating. Create a shallow clone of the first result. Once we're
-    // at the last fragment, we'll actually create 
-"""
-
-
+    // at the last fragment, we'll actually create
 ```

@@ -346,7 +346,7 @@ Section Headers (描述各个 section 的信息)
 
 总而言之，`bionic/libm/fenv-arm64.c` 是 Android 底层浮点环境管理的关键组成部分，它直接与 ARM64 处理器的硬件特性交互，并为 Android 应用程序和框架提供了标准的浮点控制接口。理解其功能和实现细节对于开发高性能、精确的数值计算应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/fenv-arm64.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -356,8 +356,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 2004 David Schultz <das@FreeBSD.ORG>
  * All rights reserved.
@@ -506,7 +508,4 @@ int fedisableexcept(int mask __unused) {
 int fegetexcept(void) {
   return 0;
 }
-
-"""
-
 ```

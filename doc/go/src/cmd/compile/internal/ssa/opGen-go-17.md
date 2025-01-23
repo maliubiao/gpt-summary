@@ -190,7 +190,7 @@ Store [v3 [address of y]]
 
 **总结来说，`opGen.go` 是 Go 编译器中非常核心的文件，它定义了编译器进行代码转换和优化的基本词汇表，即 SSA 中间表示的操作码。 这个片段作为最后一部分，完成了操作码到其元数据的映射定义，是整个 `opGen.go` 功能的收尾工作。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/opGen.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -198,9 +198,11 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第18部分，共18部分，请归纳一下它的功能
+```
 
-"""
-  true,
+### 源代码
+```go
+true,
 	},
 	{
 		name:      "SB",
@@ -1791,10 +1793,4 @@ var fp64RegMaskWasm = regMask(281470681743360)
 var specialRegMaskWasm = regMask(0)
 var framepointerRegWasm = int8(-1)
 var linkRegWasm = int8(-1)
-
-"""
-
-
-
-
 ```

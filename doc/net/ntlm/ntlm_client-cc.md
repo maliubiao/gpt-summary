@@ -228,15 +228,17 @@ Initially, I might oversimplify the JavaScript interaction. I'd need to refine m
 
 总而言之，`net/ntlm/ntlm_client.cc` 是 Chromium 中处理 NTLM 客户端认证的核心 C++ 代码，它负责生成和处理 NTLM 协议的消息，使得浏览器能够与需要 NTLM 认证的服务器进行身份验证。虽然 JavaScript 不直接调用它，但它是浏览器实现 NTLM 认证的关键组成部分，用户通过浏览器访问需要 NTLM 认证的网站时，会间接地触发这里的代码执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/ntlm/ntlm_client.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -640,7 +642,4 @@ size_t NtlmClient::GetNtlmResponseLength(size_t updated_target_info_len) const {
 }
 
 }  // namespace net::ntlm
-
-"""
-
 ```

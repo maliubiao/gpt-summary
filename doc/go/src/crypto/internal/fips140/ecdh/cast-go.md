@@ -191,7 +191,7 @@ want := []byte{
 
 这段 `cast.go` 文件的核心作用是执行 ECDH 算法的 FIPS 140 自检，确保其在 FIPS 环境下的正确运行。它使用了预定义的测试向量，通过 `fips140.CAST` 函数注册并执行测试，并将计算结果与预期结果进行比较，以验证算法实现的正确性。 这段代码是 Go 语言为了满足 FIPS 140 标准而进行的内部测试实现的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/ecdh/cast.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -199,8 +199,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -253,9 +255,4 @@ var fipsSelfTest = sync.OnceFunc(func() {
 		return nil
 	})
 })
-
-"""
-
-
-
 ```

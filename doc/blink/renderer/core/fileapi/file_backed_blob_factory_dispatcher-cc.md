@@ -187,15 +187,16 @@ By following these steps, combining code analysis with knowledge of web platform
 
 总而言之，`FileBackedBlobFactoryDispatcher` 是 Blink 渲染引擎中一个重要的基础设施组件，它负责在不同的执行上下文中管理和提供创建基于文件的 `Blob` 对象的能力，这对于实现 Web 平台的文件 API 功能至关重要。理解其功能有助于我们更好地理解浏览器如何处理文件数据以及如何避免在使用相关 API 时出现错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fileapi/file_backed_blob_factory_dispatcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
-
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -324,7 +325,4 @@ const char FileBackedBlobFactoryDispatcher::kSupplementName[] =
     "FileBackedBlobFactoryDispatcher";
 
 }  // namespace blink
-
-"""
-
 ```

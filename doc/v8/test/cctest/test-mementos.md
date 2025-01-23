@@ -117,11 +117,13 @@ console.log("对象已被设置为 null，等待垃圾回收");
 
 `test-mementos.cc` 文件是 V8 引擎的内部测试，用于验证其在处理潜在的内存损坏情况下的鲁棒性，特别是在涉及到 `AllocationMemento` 这种内部数据结构时。虽然 JavaScript 开发者不直接接触这些细节，但这些测试对于确保 V8 引擎的稳定性和可靠性至关重要，最终保障了 JavaScript 应用的稳定运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-mementos.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -214,7 +216,4 @@ TEST(BadMementoAfterTopForceMinorGC) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

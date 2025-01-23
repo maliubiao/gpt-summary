@@ -232,15 +232,17 @@ console.log(regex.test(str2)); // 输出: false
 
 这些错误通常需要在汇编级别进行调试，并且需要对目标架构的指令集和 V8 的内部机制有深入的了解。对于普通的 JavaScript 开发者来说，这些细节通常是抽象的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/ppc/regexp-macro-assembler-ppc.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/ppc/regexp-macro-assembler-ppc.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -488,7 +490,4 @@ const RegList kRegExpCalleeSaved = {r25, r26, r27, r28, r29, r30, fp};
 }  // namespace v8
 
 #endif  // V8_REGEXP_PPC_REGEXP_MACRO_ASSEMBLER_PPC_H_
-
-"""
-
 ```

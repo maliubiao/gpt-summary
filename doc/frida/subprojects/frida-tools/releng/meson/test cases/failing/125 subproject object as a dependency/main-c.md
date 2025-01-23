@@ -98,7 +98,7 @@ By following this structured approach, combining close reading of the prompt wit
 
 虽然 `main.c` 的代码非常简单，但它在 Frida 构建系统的测试框架中扮演着重要的角色。它作为一个最小的子项目示例，用于验证 Meson 构建系统处理子项目依赖关系的能力。这个特定的测试用例被设计成失败的，目的是检查构建系统在遇到相关问题时是否能正确报告错误，这对于确保 Frida 的稳定性和正确性至关重要。开发者通过分析这个测试用例及其构建配置，可以发现并修复 Frida 构建系统中的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/125 subproject object as a dependency/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -106,10 +106,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0; }
-
-"""
-
 ```

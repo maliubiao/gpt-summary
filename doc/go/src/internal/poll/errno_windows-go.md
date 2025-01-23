@@ -128,7 +128,7 @@ func main() {
 
 这段 `errno_windows.go` 代码的核心功能是在 Windows 平台上优化 Go 语言底层 I/O 操作中错误码的处理，特别是针对异步操作中常见的 `ERROR_IO_PENDING` 错误，通过预先分配错误值来提高性能，减少内存分配。它属于 Go 语言标准库的内部实现，为上层的网络库和其他底层功能提供支持。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/errno_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -136,8 +136,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -169,9 +171,4 @@ func errnoErr(e syscall.Errno) error {
 	// all.bat?)
 	return e
 }
-
-"""
-
-
-
 ```

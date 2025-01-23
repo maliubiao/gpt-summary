@@ -156,14 +156,16 @@ By following these steps, I can systematically analyze the code and generate a c
 
 总而言之，`blink/renderer/platform/fonts/font_family.cc` 这个文件在 Chromium Blink 引擎中扮演着至关重要的角色，它负责表示和操作字体家族信息，直接关联着 CSS 的 `font-family` 属性以及 JavaScript 对字体样式的操作，确保浏览器能够正确地渲染网页上的文本。理解其功能有助于开发者更好地理解浏览器如何处理字体，并避免常见的字体相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/font_family.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2008 Apple Inc. All rights reserved.
  *
@@ -240,7 +242,4 @@ String FontFamily::ToString() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

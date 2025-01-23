@@ -198,15 +198,17 @@ This structured approach, starting with a general understanding and progressivel
 
 总而言之，这段代码通过一系列的测试用例，详细地验证了Go语言中切片到数组及其指针的转换规则，并涵盖了常见的边界情况和错误场景。它对于理解Go语言类型转换机制以及避免相关错误非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/convert4.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -315,9 +317,4 @@ func init() {
 		panic("zs0 should not be nil")
 	}
 }
-
-"""
-
-
-
 ```

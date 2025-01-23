@@ -130,14 +130,16 @@ This specific C++ file doesn't directly involve user interaction or common progr
 
 **In summary,** while `drag_operation.cc` is a small file, it plays a crucial role in maintaining the integrity of the drag-and-drop functionality within the Chromium browser by ensuring consistent definitions of drag operation types between different layers of the codebase. This consistency is essential for the smooth and predictable operation of drag-and-drop as exposed through JavaScript, HTML, and the browser's user interface.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/page/drag_operation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ STATIC_ASSERT_ENUM(kDragOperationLink, DragOperation::kLink);
 STATIC_ASSERT_ENUM(kDragOperationMove, DragOperation::kMove);
 
 }  // namespace blink
-
-"""
-
 ```

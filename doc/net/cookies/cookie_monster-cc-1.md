@@ -166,7 +166,7 @@ By following this process, we can arrive at a comprehensive summary that address
 
 这部分 `CookieMonster` 代码的核心功能在于**管理 Cookie 的生命周期，特别是删除和加载 Cookie，并确保 Cookie 数据在内存中的一致性**。 它处理了从持久化存储加载 Cookie，根据不同条件删除 Cookie，以及在设置新 Cookie 前进行必要的检查和清理工作。 同时，它也负责维护内部数据结构的一致性，防止重复 Cookie 的存在。 此外，还包含了对 partitioned Cookie 的处理。这些功能共同支撑了浏览器网络栈中 Cookie 的核心管理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_monster.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -174,9 +174,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
-                         delegate_treats_url_as_trustworthy});
+### 源代码
+```cpp
+delegate_treats_url_as_trustworthy});
 }
 
 void CookieMonster::DeleteCanonicalCookie(const CanonicalCookie& cookie,
@@ -1012,7 +1014,4 @@ CookieMonster::InternalInsertPartitionedCookie(
   size_t n_bytes = NameValueSizeBytes(*cc);
   num_partitioned_cookies_bytes_ += n_bytes;
   bytes_per_cookie_partition_[partition_key]
-"""
-
-
 ```

@@ -95,11 +95,13 @@ console.log(obj.x); // 这里会触发 LoadIC，并且由于定义了 getter，�
 
 `builtins-handler-gen.cc` 是 V8 引擎中一个非常核心的文件，它负责生成用于高效处理各种 JavaScript 操作的底层代码。它通过使用 `CodeStubAssembler` 和处理不同的对象类型、元素类型和执行场景，直接影响着 JavaScript 代码的执行效率和行为。 开发者编写的 JavaScript 代码，在引擎的执行过程中，会频繁地调用这里生成的 built-in 函数。理解这个文件的功能有助于更深入地理解 V8 引擎的内部工作原理和性能优化机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-handler-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -582,7 +584,4 @@ TF_BUILTIN(HasIndexedInterceptorIC, CodeStubAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

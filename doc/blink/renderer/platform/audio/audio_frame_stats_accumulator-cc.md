@@ -183,14 +183,16 @@ My thought process to answer the request goes like this:
 
 理解 `AudioFrameStatsAccumulator` 的功能有助于理解 Blink 引擎如何监控和管理音频性能，这对于开发高性能的 Web 音频应用至关重要。虽然开发者通常不会直接操作这个类，但了解其背后的工作原理可以帮助他们更好地理解 Web Audio API 的行为和性能特点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/audio/audio_frame_stats_accumulator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -272,7 +274,4 @@ void AudioFrameStatsAccumulator::MergeLatencyExtremes(
 }
 
 }  // namespace blink
-
-"""
-
 ```

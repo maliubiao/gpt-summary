@@ -160,7 +160,7 @@ char func_c(void) {
 
 总结来说，这个简单的 `b.c` 文件虽然功能不多，但它体现了动态链接、条件控制、错误处理等基本的编程概念，并且可以作为 Frida 动态插桩的目标进行逆向分析和调试。它在 Frida 的测试框架中扮演着验证特定功能是否正常工作的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/75 custom subproject dir/custom_subproject_dir/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,8 +168,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 char func_c(void);
 
@@ -190,7 +192,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

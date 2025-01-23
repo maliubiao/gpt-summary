@@ -155,14 +155,16 @@ By following these steps, you can systematically analyze the code and generate a
 
 总而言之，`blink/common/input/web_touch_event.cc` 文件是 Blink 引擎中处理触摸事件的关键组成部分，它负责接收、封装、处理和优化触摸输入信息，并将这些信息传递给渲染引擎和 JavaScript 环境，从而支持网页的触摸交互功能。理解其功能对于理解浏览器如何处理触摸事件至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/input/web_touch_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -305,7 +307,4 @@ bool WebTouchEvent::IsTouchSequenceEnd() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

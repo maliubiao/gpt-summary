@@ -80,11 +80,13 @@ for (let i = 0; i < 10000; i++) {
 
 `turbofan-disabled.cc` 就像一个“安全阀”，在 Turbofan 被故意关闭的情况下，防止 V8 内部组件意外地调用 Turbofan 的功能，并通过抛出错误来明确指示 Turbofan 的状态。  这确保了当开发者选择禁用 Turbofan 时，V8 的行为是可控的，并且不会出现因缺少 Turbofan 而导致的运行时错误。  最终的结果是，虽然 JavaScript 代码仍然可以执行，但它不会享受到 Turbofan 提供的性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turbofan-disabled.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -110,7 +112,4 @@ std::unique_ptr<TurbofanCompilationJob> NewCompilationJob(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

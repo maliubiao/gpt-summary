@@ -123,7 +123,7 @@ By following these steps, starting with understanding the context and progressiv
 
 `nomod.cpp` 虽然代码简单，但它是 Frida 测试套件中一个重要的基础测试用例，用于验证 Frida 在不进行修改的情况下，能够正确处理使用了 `boost::any` 类型的 C++ 代码。它间接地涉及到对底层二进制、操作系统原理和 C++ 内存模型的理解，并且有助于确保 Frida 作为动态Instrumentation工具的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/1 boost/nomod.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<boost/any.hpp>
 #include<iostream>
 
@@ -151,7 +153,4 @@ int main(int argc, char **argv) {
         return 1;
     }
 }
-
-"""
-
 ```

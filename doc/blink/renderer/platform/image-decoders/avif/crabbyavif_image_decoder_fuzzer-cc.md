@@ -122,14 +122,16 @@ By following this systematic approach, I can thoroughly analyze the code and pro
 
 总而言之，`crabbyavif_image_decoder_fuzzer.cc` 是 Chromium 浏览器为了保证其 AVIF 图片解码功能的健壮性和安全性而进行的重要测试工作的一部分。它可以帮助开发者发现并修复潜在的漏洞，从而为用户提供更稳定、更安全的浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/avif/crabbyavif_image_decoder_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

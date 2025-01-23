@@ -119,12 +119,14 @@ const a = wasmModule.exports.simd_function(); // wasm 的 SIMD 函数可能会�
 
 这段C++代码是V8引擎将JavaScript代码高效地执行在RISC-V架构上的关键组成部分。它负责将抽象的计算操作转化为底层的机器指令，涵盖了JavaScript中常见的算术运算、类型转换、内存访问以及一些高级特性（如原子操作和SIMD）。理解这段代码的功能有助于深入了解JavaScript引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/code-generator-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 imm, kScratchReg, kScratchReg2);
       }
     } break;
@@ -1822,8 +1824,4 @@ imm, kScratchReg, kScratchReg2);
       __ VU.set(kScratchReg, E64, m1);
       __ vzext_vf2(i.OutputSimd128Register(), kSimd128ScratchReg);
       break;
-  
-"""
-
-
 ```

@@ -184,7 +184,7 @@ By following this structured approach, I can systematically analyze the C++ code
 
 第 4 部分的 `v8/src/codegen/code-stub-assembler.cc` 提供了 `CodeStubAssembler` 类中用于处理弱引用、各种类型的数组操作（包括 Typed Arrays 和 Fixed Arrays）、BigInt 操作以及与 JavaScript 执行上下文和作用域相关的底层工具函数。这些函数是 V8 生成高效代码桩的关键组成部分，直接支持着 JavaScript 语言的各种特性和运行时行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 t> value, Label* if_not_strong) {
   GotoIfNot(IsStrong(value), if_not_strong);
   return CAST(value);
@@ -1027,7 +1029,4 @@ TNode<Map> CodeStubAssembler::LoadCachedMap(TNode<NativeContext> native_context,
   TNode<MaybeObject> value =
       LoadWeakFixedArrayElement(cache, number_of_properties, 0);
   TNode<Map> result = CAST(GetH
-"""
-
-
 ```

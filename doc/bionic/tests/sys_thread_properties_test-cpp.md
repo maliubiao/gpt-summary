@@ -491,7 +491,7 @@ sys.stdin.read()
 
 通过 Frida hook，可以深入了解 Android Framework 和 NDK 如何一步步调用到 Bionic 的底层实现，以及 Bionic 如何处理线程属性和相关操作。记住，hook 系统级别的函数可能需要 root 权限或在模拟器上进行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/sys_thread_properties_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -502,8 +502,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2020 The Android Open Source Project
  *
@@ -546,7 +548,4 @@ TEST(thread_properties_test, thread_exit_cb) {
   eth.Run([&]() { execve(helper.c_str(), eth.GetArgs(), eth.GetEnv()); }, 0, expected_out);
 #endif
 }
-
-"""
-
 ```

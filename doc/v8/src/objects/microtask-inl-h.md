@@ -183,15 +183,17 @@ inline CallbackTask::CallbackTask(Isolate* isolate, Handle<JSFunction> callback,
 
 `v8/src/objects/microtask-inl.h` 是 V8 引擎中关键的头文件，它定义了微任务对象的内联实现。它与 JavaScript 中 Promise、MutationObserver 和 `queueMicrotask` 等异步特性紧密相关。 理解微任务的执行机制对于编写健壮和高性能的 JavaScript 代码至关重要。 尽管该文件本身不是 Torque 代码，但它依赖于 Torque 生成的代码来完成对象的构造。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/microtask-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/microtask-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ TQ_OBJECT_CONSTRUCTORS_IMPL(CallableTask)
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_MICROTASK_INL_H_
-
-"""
-
 ```

@@ -176,15 +176,16 @@ By following this systematic thought process, breaking down the code, and thinki
 
 总而言之，`blink/renderer/platform/graphics/image_orientation.cc` 这个文件是 Blink 渲染引擎中处理图像方向的关键组件，它通过仿射变换来实现不同方向的图像渲染，并与 CSS 的 `image-orientation` 属性以及 HTML `<img>` 元素的渲染密切相关。理解其背后的逻辑有助于开发者更好地掌握网页图像的显示和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/image_orientation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
-
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -273,7 +274,4 @@ AffineTransform ImageOrientation::TransformToDefault(
 }
 
 }  // namespace blink
-
-"""
-
 ```

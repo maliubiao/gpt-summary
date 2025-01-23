@@ -183,7 +183,7 @@ The answer is: 42
 
 总而言之，`appB.c` 自身是一个非常简单的程序，但它作为 Frida 测试套件的一部分，旨在测试 Frida 对依赖静态库的二进制文件进行动态插桩的能力。分析这个文件需要理解 C 语言基础、链接原理、动态插桩技术以及操作系统层面的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/unit/65 static archive stripping/app/appB.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,13 +191,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 #include <libB.h>
 
 int main(void) { printf("The answer is: %d\n", libB_func()); }
-
-"""
-
 ```

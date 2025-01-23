@@ -182,15 +182,17 @@ enum class ModuleType {
 
 总而言之，`module_script_creation_params.cc` 文件中的 `ModuleTypeToString` 函数虽然简单，但在 Blink 引擎处理不同类型模块的过程中扮演着辅助角色，主要用于提供可读的模块类型信息，方便内部调试和错误报告。 用户或编程错误通常不会直接与这个文件交互，而是通过影响模块加载和处理流程，间接地涉及到这里。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/modulescript/module_script_creation_params.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ String ModuleScriptCreationParams::ModuleTypeToString(
 }
 
 }  // namespace blink
-
-"""
-
 ```

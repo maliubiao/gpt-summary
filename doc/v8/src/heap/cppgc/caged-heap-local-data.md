@@ -107,11 +107,13 @@ objWithProperty.data = "modified";
 
 `v8/src/heap/cppgc/caged-heap-local-data.cc` 文件中的 `AgeTable` 类是 V8 垃圾回收机制的核心组件，它负责跟踪堆内存区域的年龄，支持分代垃圾回收策略。虽然 JavaScript 开发者无法直接操作 `AgeTable`，但其功能直接影响了 JavaScript 程序的性能和内存管理。 通过理解 `AgeTable` 的作用，我们可以更好地理解 V8 如何高效地管理 JavaScript 程序的内存。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/caged-heap-local-data.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ void AgeTable::ResetForTesting() {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

@@ -287,7 +287,7 @@ sys.stdin.read()
 
 希望以上详细的解释能够帮助你理解这个代码片段的功能以及它在 Android 系统中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/fmaf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -299,8 +299,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 9,
     -HUGE_VALF,
     0.0f
@@ -2573,7 +2575,4 @@ Prompt:
     -HUGE_VALF,
     0x1.fffffcp-127
   }
-"""
-
-
 ```

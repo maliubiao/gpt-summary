@@ -96,11 +96,13 @@ runWasm();
 
 `v8/src/compiler/wasm-js-lowering.cc` 的作用是将 WebAssembly 特有的错误处理机制 (陷阱) 桥接到 JavaScript 的异常处理机制上。  它确保当 WebAssembly 代码发生错误时，JavaScript 代码能够捕获并处理这些错误，从而实现 WebAssembly 和 JavaScript 环境的良好集成。  `kTrapIf` 和 `kTrapUnless` 节点是实现这种转换的关键所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-js-lowering.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ Reduction WasmJSLowering::Reduce(Node* node) {
 }
 
 }  // namespace v8::internal::compiler
-
-"""
-
 ```

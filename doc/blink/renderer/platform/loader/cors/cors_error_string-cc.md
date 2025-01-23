@@ -68,14 +68,16 @@ CORS 是一个浏览器安全特性，用于限制一个源 (origin) 的文档�
       .catch(error => console.error(error));
     ```
     如果 `api.example.com` 的服务器没有返回包含请求来源的 `Access-Control-Allow-Origin` 头部，控制台中可能会显示类似以下的错误消息（由 `GetErrorStringFor
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/cors/cors_error_string.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -559,7 +561,4 @@ String GetErrorStringForConsoleMessage(const network::CorsErrorStatus& status,
 }  // namespace cors
 
 }  // namespace blink
-
-"""
-
 ```

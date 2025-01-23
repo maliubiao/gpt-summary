@@ -201,15 +201,17 @@ cc::DisplayItemList {
 
 `blink/renderer/platform/graphics/compositing/paint_chunks_to_cc_layer.cc` 文件在 Chromium Blink 渲染引擎中扮演着至关重要的角色，它负责将高层次的绘制指令转换为可以直接在 GPU 上执行的低层次指令。这个过程涉及到精细的状态管理和对各种绘制属性的处理，直接影响着网页的渲染性能和视觉效果。理解这个文件的功能有助于理解浏览器渲染流程的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/paint_chunks_to_cc_layer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1054,9 +1056,4 @@ ScrollTranslationAction ConversionContext<Result>::SwitchToTransform(
   if (auto action = ComputeScrollTranslationAction(target_transform)) {
     return action;
   }
-
- 
-"""
-
-
 ```

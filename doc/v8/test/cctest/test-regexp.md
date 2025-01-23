@@ -100,11 +100,13 @@ regex.exec(subject);
 
 总而言之，`v8/test/cctest/test-regexp.cc` 文件通过 C++ 单元测试，深入地验证了 V8 引擎在处理正则表达式时，特别是在执行被中断的复杂场景下的正确性和稳定性，这直接保障了 JavaScript 中正则表达式功能的可靠性。 开发者通过编写这样的底层测试，确保 V8 引擎的各个方面都能够健壮地运行，即使在面临各种中断和系统事件时也能正常工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-regexp.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -453,7 +455,4 @@ TEST(InterruptAndTransitionSubjectFromTwoByteToOneByte) {
       Cast<i::IrRegExpData>(regexp->data(i_isolate));
   CHECK(data->has_latin1_bytecode());
 }
-
-"""
-
 ```

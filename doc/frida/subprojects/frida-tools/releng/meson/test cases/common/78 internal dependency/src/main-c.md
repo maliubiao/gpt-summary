@@ -156,7 +156,7 @@ By following these steps and iteratively refining the analysis, we arrive at a c
 
 因此，`main.c` 作为一个测试用例，其存在是为了验证 Frida 的功能。当测试出现问题时，开发者会查阅源代码来辅助调试。  文件路径 `frida/subprojects/frida-tools/releng/meson/test cases/common/78 internal dependency/src/main.c`  清晰地表明了这是一个 Frida 项目内部的测试用例，用于回归测试和验证相关功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/78 internal dependency/src/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<proj1.h>
 
@@ -176,7 +178,4 @@ int main(void) {
     proj1_func3();
     return 0;
 }
-
-"""
-
 ```

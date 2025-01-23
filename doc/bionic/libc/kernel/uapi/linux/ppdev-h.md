@@ -330,7 +330,7 @@ sys.stdin.read()
 
 通过这些 Frida hook 示例，你可以跟踪程序执行流程，观察何时以及如何调用与并行端口相关的操作。你需要根据具体的 Android 版本和硬件来确定相关的 HAL 模块和函数名称。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ppdev.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -341,8 +341,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -389,7 +391,4 @@ struct ppdev_frob_struct {
 #define PP_W91284PIC (1 << 4)
 #define PP_FLAGMASK (PP_FASTWRITE | PP_FASTREAD | PP_W91284PIC)
 #endif
-
-"""
-
 ```

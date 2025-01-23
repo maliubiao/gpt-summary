@@ -167,14 +167,16 @@ Visitor 模式常用于处理不同类型的对象，而无需在外部进行类
 
 总而言之，`multi_token_unittest.cc` 通过一系列的单元测试，确保 `MultiToken` 能够正确地存储、访问、比较和操作不同类型的 token，这对于 Blink 引擎中处理各种语法结构的 token 化表示至关重要。虽然 `MultiToken` 是一个底层的 C++ 工具，但它在解析和处理 JavaScript, HTML, 和 CSS 等 Web 技术时扮演着基础性的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/tokens/multi_token_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -357,7 +359,4 @@ TEST(MultiTokenTest, CompatibleAssignment) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

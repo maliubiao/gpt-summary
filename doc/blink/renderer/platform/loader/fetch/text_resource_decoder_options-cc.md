@@ -143,14 +143,16 @@ This iterative process of exploring the code, connecting it to relevant concepts
 
 总而言之，`text_resource_decoder_options.cc` 定义的 `TextResourceDecoderOptions` 类是 Blink 引擎处理文本资源编码的关键配置中心，它直接影响了 Web 内容的正确解析和渲染，与 JavaScript、HTML 和 CSS 的功能息息相关。理解其功能对于排查网页乱码等编码问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/text_resource_decoder_options.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ TextResourceDecoderOptions::TextResourceDecoderOptions(
 }
 
 }  // namespace blink
-
-"""
-
 ```

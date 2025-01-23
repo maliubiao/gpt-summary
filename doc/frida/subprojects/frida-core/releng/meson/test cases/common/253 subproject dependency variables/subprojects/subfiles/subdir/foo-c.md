@@ -126,7 +126,7 @@ By following this process, the analysis moves from simply describing the code to
 
 总而言之，虽然 `foo.c` 代码本身很简单，但它在 Frida 的构建和测试框架中扮演着重要的角色，用于验证构建系统处理子项目依赖变量的能力。理解其作用需要结合其所在的目录结构和 Frida 的整体构建流程。对于普通用户而言，一般不会直接接触到这个文件，但对于 Frida 的开发者来说，它是理解和调试构建系统的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/253 subproject dependency variables/subprojects/subfiles/subdir/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -134,10 +134,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0; }
-
-"""
-
 ```

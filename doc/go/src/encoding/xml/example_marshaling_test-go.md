@@ -194,7 +194,7 @@ Animals: [Gopher Unknown Zebra]
 
    **示例错误:**  假设 `MarshalXML` 中 `Gopher` 被编码为数字 `1`，而 `UnmarshalXML` 期望的是字符串 "gopher"。那么编组后的 XML 将包含 `<animal>1</animal>`，这无法被 `UnmarshalXML` 正确解析为 `Gopher`。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/encoding/xml/example_marshaling_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -202,8 +202,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -288,9 +290,4 @@ func Example_customMarshalXML() {
 	// * Zebras:  2
 	// * Unknown: 3
 }
-
-"""
-
-
-
 ```

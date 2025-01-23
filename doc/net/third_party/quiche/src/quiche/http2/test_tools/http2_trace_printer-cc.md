@@ -167,15 +167,17 @@ By following these steps, combining code analysis with an understanding of the b
 
 `net/third_party/quiche/src/quiche/http2/test_tools/http2_trace_printer.cc` 是 Chromium 网络栈中一个至关重要的调试工具，用于捕获和记录 HTTP/2 通信的细节。虽然它本身是 C++ 代码，但它可以帮助开发者理解由 JavaScript 发起的 HTTP/2 请求的底层行为，并诊断网络问题。通过查看其输出的跟踪信息，开发者可以验证请求和响应的格式、连接的建立过程以及潜在的协议错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/test_tools/http2_trace_printer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/test_tools/http2_trace_printer.h"
 
 #include <algorithm>
@@ -237,7 +239,4 @@ void Http2TracePrinter::ProcessInput(absl::string_view bytes) {
 
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

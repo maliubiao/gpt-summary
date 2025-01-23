@@ -127,7 +127,7 @@ Here's a breakdown of the thinking process to generate the explanation:
 
 总而言之，`frida/subprojects/frida-python/releng/meson/test cases/common/181 same target name flat layout/main.c` 是 Frida 构建系统的一个简单测试用例，用于验证 Meson 在处理具有相同名称但在不同子项目中的目标文件时的正确性。它通过调用来自不同“目标”的函数并检查它们的返回值来实现这一点。虽然它本身不涉及直接的逆向操作，但它是确保 Frida 构建和集成环境正常工作的关键部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/181 same target name flat layout/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int meson_test_main_foo(void);
@@ -153,7 +155,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

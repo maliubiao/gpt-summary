@@ -185,15 +185,17 @@ go test -gcflags="-N -l -d=append,slice" go/test/sliceopt.go
 
 这段代码片段是 Go 语言标准库中用于测试编译器优化的一部分，它通过断言编译器行为来确保优化的正确性。理解这些测试用例有助于更深入地理解 Go 语言中切片和 `append` 的工作原理以及编译器的优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/sliceopt.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -d=append,slice
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -226,9 +228,4 @@ func s1(x **[]int, xs **string, i, j int) {
 	zs = (**xs)[0:] // ERROR "slice: omit slice operation$"
 	println(zs)
 }
-
-"""
-
-
-
 ```

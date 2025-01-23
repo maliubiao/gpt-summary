@@ -150,7 +150,7 @@ I need to explain these functionalities, connect them to JavaScript, HTML, and C
 
 总的来说，`authentication_credentials_container.cc` 文件实现了 Credential Management API 的核心功能，允许网页安全地与用户的凭据进行交互。它处理了获取、存储和创建不同类型的凭据的复杂逻辑，并确保符合安全性和用户体验的最佳实践。 这个文件是浏览器凭据管理功能在渲染引擎中的关键实现部分，连接了 JavaScript API 和底层的凭据管理系统。它通过各种检查和流程，保障了用户凭据的安全性和隐私。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/credentialmanagement/authentication_credentials_container.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 s missing in 'options.publicKey'."));
       return promise;
     }
@@ -881,8 +883,4 @@ void AuthenticationCredentialsContainer::GetForIdentity(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

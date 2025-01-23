@@ -131,11 +131,13 @@ myObject = null;
 
 `v8/src/heap/cppgc/memory.cc` 文件定义了底层的内存操作接口，用于管理 V8 垃圾回收器 `cppgc` 的内存。 它的核心功能是控制内存区域的可访问性，这对于内存安全和调试至关重要。  当 JavaScript 对象不再使用时，这个文件中的函数会被用来标记相应的内存为不可访问，从而防止程序出现悬挂指针等内存错误。虽然 JavaScript 开发者无法直接操作这些函数，但理解它们背后的机制有助于理解 V8 如何管理内存以及保证 JavaScript 程序的安全性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/memory.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -229,7 +231,4 @@ void CheckMemoryIsInaccessible(const void* address, size_t size) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

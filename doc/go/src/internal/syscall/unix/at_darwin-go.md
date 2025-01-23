@@ -284,7 +284,7 @@ func main() {
 
 总而言之，这段代码是 Go 语言中与底层操作系统交互的关键部分，它通过 C 语言互操作来调用 Darwin 系统的 `readlinkat` 和 `mkdirat` 系统调用，为 Go 开发者提供了更灵活的文件系统操作能力。理解这些底层机制对于编写健壮且高效的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/at_darwin.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -292,8 +292,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -354,9 +356,4 @@ func Mkdirat(dirfd int, path string, mode uint32) error {
 	}
 	return nil
 }
-
-"""
-
-
-
 ```

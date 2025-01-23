@@ -178,7 +178,7 @@ Let's break down the thought process to analyze this C code for Frida.
 
 总而言之，`arm64writer.c` 虽然是 Frida 的内部测试代码，但它展示了 Frida 如何在底层生成 ARM64 机器码来实现动态 instrumentation 的功能。理解它的功能可以帮助逆向工程师更好地理解 Frida 的工作原理，并更有效地使用 Frida 进行调试和分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-arm64/arm64writer.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014-2023 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C) 2023 Håvard Sørbø <havard@hsorbo.no>
@@ -645,7 +647,4 @@ TESTCASE (cmp_reg_reg)
   gum_arm64_writer_put_cmp_reg_reg (&fixture->aw, ARM64_REG_X3, ARM64_REG_X5);
   assert_output_n_equals (0, 0xeb05007f);
 }
-
-"""
-
 ```

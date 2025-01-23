@@ -111,11 +111,13 @@ try {
 
 因此，尽管我们无法直接在 JavaScript 中操作 `g_abort_mode`，理解它的作用有助于理解 V8 引擎的错误处理机制，以及某些 JavaScript 代码错误可能导致的后果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/abort-mode.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -129,7 +131,4 @@ AbortMode g_abort_mode = AbortMode::kDefault;
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

@@ -151,7 +151,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "pthread_create"), {
 
 总而言之，这个 `main.cpp` 文件虽然简单，但它可以作为 Frida 进行动态分析的一个很好的起点，用于测试 Frida 的基本功能，或者作为逆向工程师理解异步操作和并发行为的一个示例。其简洁性也使得学习和调试更加容易。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/cmake/16 threads/subprojects/cmMod/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cmMod.hpp"
 
 #include <cstdlib>
@@ -170,7 +172,4 @@ int main() {
   cc.asyncIncrement();
   return cc.getNum() == 1 ? EXIT_SUCCESS : EXIT_FAILURE;
 }
-
-"""
-
 ```

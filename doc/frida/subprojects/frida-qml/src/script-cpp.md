@@ -196,7 +196,7 @@ By following this structured approach, analyzing each part of the code, and conn
 
 总而言之，`script.cpp` 文件是 Frida-QML 项目中管理 Frida 脚本的核心组件，它连接了 QML 用户界面和 Frida 的底层功能，使得用户可以通过 QML 界面方便地进行动态插桩操作。理解这个文件的功能和背后的原理对于调试 Frida-QML 应用以及进行更深入的逆向分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/src/script.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "script.h"
 
 #include <QJsonObject>
@@ -463,7 +465,4 @@ void ScriptInstance::onMessage(QJsonObject object, QVariant data)
 
     Q_EMIT message(object, data);
 }
-
-"""
-
 ```

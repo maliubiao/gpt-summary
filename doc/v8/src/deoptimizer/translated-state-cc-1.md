@@ -178,7 +178,7 @@ In summary, this part of `v8/src/deoptimizer/translated-state.cc` focuses on:
 
 Essentially, this code is responsible for the initial steps of reconstructing the call stack and its associated data when the V8 engine needs to fall back from optimized code. It lays the groundwork for the subsequent steps of transferring control and data to the less-optimized version of the code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/translated-state.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/deoptimizer/translated-state.cc以.tq结尾，那它是个v8 torque源代码，
@@ -186,8 +186,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 xpr int kTheContext = 1;
       static constexpr int kTheAccumulator = 1;
       return height() + parameter_count + kTheContext + kTheFunction +
@@ -957,7 +959,4 @@ int TranslatedState::CreateNextTranslatedValue(
 
     case TranslationOpcode::UINT32_STACK_SLOT: {
       int slot
-"""
-
-
 ```

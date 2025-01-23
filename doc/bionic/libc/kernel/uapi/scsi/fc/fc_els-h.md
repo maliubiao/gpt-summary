@@ -221,7 +221,7 @@ Interceptor.attach(Module.findExportByName(null, "write"), {
 
 `bionic/libc/kernel/uapi/scsi/fc/fc_els.handroid` 是一个定义光纤通道链路服务协议相关常量、枚举和数据结构的头文件，主要用于 Android 系统中与光纤通道设备进行交互的底层驱动程序或服务。普通 Android 应用程序通常不会直接使用它。可以通过 Frida Hook 监控系统调用来调试涉及这些数据结构的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/scsi/fc/fc_els.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -232,8 +232,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -940,7 +942,4 @@ struct fc_els_edc_resp {
   struct fc_tlv_desc desc[];
 };
 #endif
-
-"""
-
 ```

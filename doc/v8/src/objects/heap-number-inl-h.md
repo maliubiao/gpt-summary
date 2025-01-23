@@ -158,15 +158,17 @@ let num4 = Infinity;
 
 总而言之，`v8/src/objects/heap-number-inl.h` 提供了一种高效的方式来访问和操作 V8 内部用于表示 JavaScript 数字的 `HeapNumber` 对象的数值。它与 JavaScript 的 `Number` 类型密切相关，并且其实现细节会影响 JavaScript 中数值运算的行为和精度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/heap-number-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/heap-number-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ void HeapNumber::set_value_as_bits(uint64_t bits) {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_HEAP_NUMBER_INL_H_
-
-"""
-
 ```

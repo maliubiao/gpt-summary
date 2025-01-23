@@ -145,7 +145,7 @@ MarkTypeUsedInInterface(myIntType, currentFuncSym)
 
 这部分 `reflect.go` 代码是 Go 编译器中负责生成反射和运行时所需元数据的关键组成部分。它细致地处理了类型信息的比较、GC 元数据的生成、方法包装器的创建以及类型在接口中的使用标记等重要任务，确保了 Go 程序的反射机制和垃圾回收能够正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/reflectdata/reflect.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -154,9 +154,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-	}
+### 源代码
+```go
+}
 
 	// emit type for func(error) string,
 	// which is the type of an auto-generated wrapper.
@@ -469,10 +471,4 @@ func deref(t *types.Type) *types.Type {
 	}
 	return t
 }
-
-"""
-
-
-
-
 ```

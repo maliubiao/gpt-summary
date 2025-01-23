@@ -179,7 +179,7 @@ This final part of `quic_framer.cc` focuses on two crucial aspects of QUIC commu
 
 In the context of the entire `quic_framer.cc` file, these functions are part of the overall process of receiving, interpreting, and reacting to incoming QUIC packets, which is fundamental to the operation of the QUIC protocol within the Chromium network stack.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_framer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -187,9 +187,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共9部分，请归纳一下它的功能
+```
 
-"""
- byte";
+### 源代码
+```cpp
+byte";
     return false;
   }
   if ((type_byte & 0x80) == 0) {
@@ -270,8 +272,4 @@ void MaybeExtractQuicErrorCode(QuicConnectionCloseFrame* frame) {
 
 #undef ENDPOINT  // undef for jumbo builds
 }  // namespace quic
-
-"""
-
-
 ```

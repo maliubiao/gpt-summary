@@ -106,7 +106,7 @@ The concluding summary focuses on the overarching purpose of the code within the
 
 总的来说，这是构成 P-384 椭圆曲线密码学实现的关键底层组件，专注于性能和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/nistec/fiat/p384_fiat64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -115,8 +115,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 00)
 	var x11 uint64
 	var x12 uint64
@@ -1026,10 +1028,4 @@ func p384FromBytes(out1 *[6]uint64, arg1 *[48]uint8) {
 	out1[4] = x83
 	out1[5] = x90
 }
-
-"""
-
-
-
-
 ```

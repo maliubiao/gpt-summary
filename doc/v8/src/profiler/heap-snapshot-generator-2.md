@@ -164,12 +164,14 @@ console.timeEnd('heap-snapshot');
 
 总而言之，这部分代码是 V8 引擎中负责生成和序列化 JavaScript 堆快照的关键组成部分，它直接支撑了开发者工具中强大的内存分析功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/profiler/heap-snapshot-generator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 hot() {
   v8::base::ElapsedTimer timer;
   timer.Start();
@@ -769,8 +771,4 @@ void HeapSnapshotJSONSerializer::SerializeLocations() {
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

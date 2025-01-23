@@ -133,15 +133,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 `blink/renderer/extensions/webview/android.cc` 中定义的 `Android` 类是 Blink 引擎为 Android WebView 提供扩展能力的关键入口点。它允许在 JavaScript 执行上下文中获取到对应的 `WebViewAndroid` 实例，从而使得 JavaScript 代码可以通过 WebView 提供的扩展 API 与底层的 Android WebView 功能进行交互。理解这个文件的功能有助于理解 Blink 引擎如何与 Android 平台的 WebView 集成，以及如何调试与 WebView 扩展相关的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/extensions/webview/android.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -162,7 +164,4 @@ void Android::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -83,7 +83,7 @@ multiply(5, undefined); // 结果为 NaN，可能不是预期行为
 
 提供的代码片段主要负责 **验证特定 IR 操作码的输入和输出类型**。它通过 `switch` 语句和一系列 `CheckValueInputIs` 和 `CheckTypeIs` 调用，强制执行 V8 编译器中定义的类型规则，以确保生成的代码的类型安全性。这有助于在编译时捕获潜在的类型错误，提高代码的健壮性和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/verifier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/verifier.cc以.tq结尾，那它是个v8 torque源代码，
@@ -91,8 +91,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
       CheckTypeIs(node, Type::OtherObject());
       break;
@@ -954,7 +956,4 @@ Prompt:
     case IrOpcode::kStoreIndirectPointer:
     case IrOpcode::kStackSlot:
     case IrOpcode::k
-"""
-
-
 ```

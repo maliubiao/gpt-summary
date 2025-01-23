@@ -172,7 +172,7 @@ By following these steps, a comprehensive and accurate summary of the provided c
 
 总而言之，这段代码是 QUIC 协议中非常核心的组件，负责可靠地发送数据，处理网络拥塞，并确保连接的稳定性和性能。它的行为直接影响着用户在使用基于 QUIC 的网络应用时的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_sent_packet_manager.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -180,9 +180,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
-   << "Unknown retransmission mode " << GetRetransmissionMode();
+### 源代码
+```cpp
+<< "Unknown retransmission mode " << GetRetransmissionMode();
   return GetRetransmissionMode();
 }
 
@@ -980,8 +982,5 @@ QuicSentPacketManager::GetNConsecutiveRetransmissionTimeoutDelay(
 }
 
 bool QuicSentPacketManager::PeerCompletedAddressValidation() const {
-  if 
-"""
-
-
+  if
 ```

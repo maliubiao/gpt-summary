@@ -166,7 +166,7 @@ Imagine a developer or tester working on Frida's Python bindings:
 
 This detailed breakdown illustrates how this seemingly simple C code snippet plays a specific role in testing and ensuring the functionality of a powerful dynamic instrumentation tool like Frida, especially when dealing with the complexities of linking and code modularity.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/13 pch/linkwhole/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -174,8 +174,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 void func1();
@@ -185,7 +187,4 @@ int main(int argc, char **argv) {
     func1();
     return 0;
 }
-
-"""
-
 ```

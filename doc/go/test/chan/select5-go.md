@@ -166,15 +166,17 @@ go run select5.go > select5_test.go
 
 `go/test/chan/select5.go` 是一个巧妙的测试代码生成器，它利用模板和遍历所有可能选择路径的方式，系统地生成各种 `select` 语句的测试用例，旨在全面测试 Go 语言中 `select` 语句的各种行为，特别是与 channel 操作相关的方面。使用者需要理解其作为代码生成器的本质，以及如何运行生成的测试代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/chan/select5.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // runoutput
 
 // Copyright 2011 The Go Authors. All rights reserved.
@@ -656,9 +658,4 @@ func next() bool {
 	cp = 0
 	return true
 }
-
-"""
-
-
-
 ```

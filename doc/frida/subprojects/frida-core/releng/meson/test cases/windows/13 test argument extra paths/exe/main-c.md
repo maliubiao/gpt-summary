@@ -163,7 +163,7 @@ Frida 可以用来跟踪这些系统调用，例如在 Linux 上可以使用 `st
 
 总而言之，虽然 `main.c` 本身非常简单，但它在 Frida 这样的动态插桩工具的上下文中扮演着重要的角色，是测试和理解 Frida 功能的基础。其背后的底层知识、逆向分析方法以及可能的错误都与实际的软件开发和安全研究紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/windows/13 test argument extra paths/exe/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,14 +171,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <foo.h>
 
 int main(void) {
   return foo_process();
 }
-
-"""
-
 ```

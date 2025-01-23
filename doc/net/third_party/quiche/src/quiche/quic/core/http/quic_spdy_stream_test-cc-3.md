@@ -135,7 +135,7 @@ Considering this is part 4 of 5, it's likely focusing on more advanced or specif
 
 作为第五部分的前一部分，这部分代码深入测试了 `QuicSpdyStream` 在处理 HTTP/3 特有的帧类型、处理帧序列错误、与 QPACK 的交互、以及对 WebTransport 和 HTTP Datagram 的支持等方面的复杂逻辑和错误处理机制。它确保了 `QuicSpdyStream` 在各种异常和正常情况下都能正确地管理 HTTP/3 流的状态和数据传输。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -143,9 +143,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
-          ConnectionCloseBehavior::SEND_CONNECTION_CLOSE_PACKET));
+### 源代码
+```cpp
+ConnectionCloseBehavior::SEND_CONNECTION_CLOSE_PACKET));
 
   // Deliver second dynamic table entry to decoder
   // to trigger decoding of trailing header block.
@@ -1008,7 +1010,4 @@ TEST_P(QuicSpdyStreamTest, SendHttpDatagramWithoutLocalSupport) {
   std::string http_datagram_payload = {1, 2, 3, 4, 5, 6};
   EXPECT_QUIC_BUG(stream_->SendHttp3Datagram(http_datagram_payload),
                   "Cannot send HTTP
-"""
-
-
 ```

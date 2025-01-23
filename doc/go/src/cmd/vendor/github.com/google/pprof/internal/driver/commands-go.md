@@ -133,7 +133,7 @@ Include samples matching focus_regex, and exclude ignore_regex.
 
 总而言之，这段代码是 `pprof` 工具的核心组成部分，负责定义和管理命令，并为每个命令关联了生成和可视化报告所需的各种属性和处理逻辑。理解这段代码有助于深入了解 `pprof` 的工作原理和如何扩展其功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/driver/commands.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -141,8 +141,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -604,9 +606,4 @@ func stringToBool(s string) (bool, error) {
 		return false, fmt.Errorf(`illegal value "%s" for bool variable`, s)
 	}
 }
-
-"""
-
-
-
 ```

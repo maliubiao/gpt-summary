@@ -186,7 +186,7 @@ b3:
 
 作为 `rewriteARM64.go` 的第 19 部分，这段代码专注于 **优化各种条件跳转指令**。它通过模式匹配，将涉及到 `CMPconst` 或 `CMPWconst` 指令，并且比较对象是特定逻辑或算术运算结果的跳转块，转换为更直接的 `TST`, `CMN` 或基于标志位直接跳转的指令。这种优化能够减少指令数量，提高代码执行效率。代码中针对 `BlockARM64LE`, `BlockARM64LEnoov`, `BlockARM64LT`, `BlockARM64LTnoov`, `BlockARM64NE`, `BlockARM64NZ` 等不同类型的条件跳转块进行了细致的优化。这部分是整个 ARM64 代码生成优化的重要组成部分，旨在生成更精简、更快速的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,9 +195,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第19部分，共20部分，请归纳一下它的功能
+```
 
-"""
- = symToAux(makeJumpTableSym(b))
+### 源代码
+```go
+= symToAux(makeJumpTableSym(b))
 			v1 := b.NewValue0(b.Pos, OpSB, typ.Uintptr)
 			v0.AddArg(v1)
 			b.resetWithControl2(BlockARM64JUMPTABLE, idx, v0)
@@ -1519,9 +1521,4 @@ Prompt:
 		for b.Controls[0].Op == OpARM64ANDconst {
 			v_0 := b.Controls[0]
 			c := auxIntT
-"""
-
-
-
-
 ```

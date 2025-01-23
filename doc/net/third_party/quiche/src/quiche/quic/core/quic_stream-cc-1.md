@@ -133,7 +133,7 @@ QUIC 协议本身是网络传输层协议，与 JavaScript 的直接功能关系
 
 在调试 QUIC 连接问题时，例如数据发送延迟、连接断开等，可以查看 `net/third_party/quiche/src/quiche/quic/core/quic_stream.cc` 中的日志 (QUIC_DVLOG) 和断点，来跟踪数据在 `QuicStream` 中的流转过程，以及流控状态、确认状态等，从而定位问题的原因。例如，可以查看 `WriteBufferedData` 是否因为流控窗口为 0 而无法发送数据，或者查看 `OnStreamFrameLost` 是否频繁发生。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_stream.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 endingFrame(id(), error);
   } else {
     QUICHE_DCHECK_EQ(QUIC_STREAM_NO_ERROR, error.internal_code());
@@ -732,8 +734,4 @@ QuicByteCount QuicStream::CalculateSendWindowSize() const {
 }
 
 }  // namespace quic
-
-"""
-
-
 ```

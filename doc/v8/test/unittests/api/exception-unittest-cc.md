@@ -299,15 +299,17 @@ By following these steps, iterating through the code, and focusing on the *testi
 
 总而言之，`v8/test/unittests/api/exception-unittest.cc` 通过各种测试用例，全面地验证了 V8 C++ API 中异常处理机制的正确性和健壮性，涵盖了与 JavaScript 异常交互的各种场景，并间接地反映了用户在编写 JavaScript 代码时可能遇到的常见错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/exception-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/api/exception-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -578,7 +580,4 @@ TEST_F(APIExceptionTest, TryCatchFinallyStoresMessageUsingTryCatchHandler) {
 
 }  // namespace
 }  // namespace v8
-
-"""
-
 ```

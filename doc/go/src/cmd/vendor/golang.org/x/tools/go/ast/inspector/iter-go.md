@@ -200,15 +200,17 @@ inspect.PreorderSeq()(func(n ast.Node) bool {
 
 理解 `inspector` 包提供的这些迭代器功能对于开发 Go 语言相关的工具至关重要，它提供了一种结构化的方式来理解和操作 Go 代码的语法结构。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/tools/go/ast/inspector/iter.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -294,9 +296,4 @@ func All[N interface {
 		}
 	}
 }
-
-"""
-
-
-
 ```

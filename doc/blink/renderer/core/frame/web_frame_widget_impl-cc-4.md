@@ -79,16 +79,18 @@ The summary should include:
 
 这部分 `WebFrameWidgetImpl` 的代码主要集中在**渲染层管理、交换链时间同步以及输入法和键盘事件的处理**上。它负责将底层的渲染机制与上层的输入事件和 JavaScript API 连接起来，确保页面的正确显示和用户交互的流畅进行。 具体来说，它处理了如何设置和更新渲染层，如何精确地测量渲染性能，以及如何响应用户的文本输入和键盘操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/web_frame_widget_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
- layer) {
+### 源代码
+```cpp
+layer) {
   if (!View()->does_composite()) {
     DCHECK(ForMainFrame());
     DCHECK(!layer);
@@ -973,7 +975,4 @@ WebFrameWidgetImpl::GetImeTextSpansInfo(
         rect);
 
     ime_text_spans_info.push_back(ui::mojo
-"""
-
-
 ```

@@ -259,7 +259,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/kernel/uapi/linux/matroxfb.handroid` 定义了与 Linux 内核中 Matrox 显卡驱动交互的接口，主要用于控制显示输出模式和连接。虽然在现代 Android 设备上不常见，但理解其功能有助于理解 Android 底层的硬件交互机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/matroxfb.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -270,8 +270,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -309,7 +311,4 @@ enum matroxfb_ctrl_id {
   MATROXFB_CID_LAST
 };
 #endif
-
-"""
-
 ```

@@ -234,15 +234,17 @@ func main() {
 
 这段代码是 Go 工具链中非常重要的一部分，它实现了通过解析 HTML 元数据来发现远程代码仓库的能力，使得 `go get` 命令可以处理自定义的导入路径，这对于构建具有唯一域名或使用非标准代码托管平台的 Go 包至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/vcs/discovery.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -340,9 +342,4 @@ func attrValue(attrs []xml.Attr, name string) string {
 	}
 	return ""
 }
-
-"""
-
-
-
 ```

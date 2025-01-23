@@ -149,7 +149,7 @@ print(loaded_manual.modules["frida"]["functions"]["attach"]["description"])
 
 总而言之，`generatorpickle.py` 扮演着将 Frida Python API 的结构化信息转换为持久化二进制文件的角色，这个文件随后可以被用于生成用户友好的参考文档，或者被其他工具解析使用，从而方便逆向工程师使用 Frida 进行工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/docs/refman/generatorpickle.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -174,7 +176,4 @@ class GeneratorPickle(GeneratorBase):
 
     def generate(self) -> None:
         self.out.write_bytes(pickle.dumps(self.manual))
-
-"""
-
 ```

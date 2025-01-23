@@ -106,7 +106,7 @@ Initially, I might just list the methods and their names. However, that wouldn't
 
 总而言之，这部分代码是 Frida 使用的 Meson 构建系统中，用于抽象和简化与不同编译器交互的核心部分，它允许构建脚本编写者以统一的方式查询和利用编译器的各种特性，保证了构建过程的跨平台兼容性和灵活性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/interpreter/compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -115,9 +115,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- having it check this seems valuable
+### 源代码
+```python
+having it check this seems valuable
         has_header_kwargs: 'HeaderKW' = {
             'required': required,
             'args': kwargs['header_args'],
@@ -344,8 +346,4 @@ Prompt:
         # other targets, list outputs, etc.
         private_dir = os.path.relpath(self.interpreter.backend.get_target_private_dir(tg), self.interpreter.subdir)
         return [build.CustomTargetIndex(tg, os.path.join(private_dir, o)) for o in tg.outputs]
-
-"""
-
-
 ```

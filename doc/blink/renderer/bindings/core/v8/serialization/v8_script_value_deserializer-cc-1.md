@@ -171,7 +171,7 @@ By following these steps, we can systematically analyze the code snippet, unders
 
 这段代码是 Chromium Blink 引擎中负责将序列化的 JavaScript 值重新构建为 JavaScript 对象的关键部分。它处理多种类型的对象，包括 DOM 对象、WebAssembly 模块和 `SharedArrayBuffer` 等。 代码中还包含了对目标执行上下文是否支持特定 JavaScript 接口的检查，这对于确保跨环境数据传输的正确性至关重要。 `ReconstructDOMObject` 函数专注于重建 DOM 对象，而 `GetWasmModuleFromId` 和 `GetSharedArrayBufferFromId` 则分别负责反序列化 WebAssembly 模块和共享数组缓冲区。 `ExecutionContextExposesInterface` 提供了一种机制来避免在不支持所需接口的环境中尝试反序列化，从而提高稳定性和避免错误。 总之，这段代码是实现 JavaScript 数据持久化、跨上下文通信等功能的基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/serialization/v8_script_value_deserializer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 f (!wrappable) {
     exception_state.ThrowDOMException(DOMExceptionCode::kDataCloneError,
                                       "Unable to deserialize cloned data.");
@@ -318,8 +320,4 @@ bool V8ScriptValueDeserializer::ExecutionContextExposesInterface(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

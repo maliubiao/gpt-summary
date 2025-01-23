@@ -164,7 +164,7 @@ func main() {
 
 `go/src/internal/coverage/cfile/hooks.go` 中的 `InitHook` 函数是 Go 语言代码覆盖率功能的核心入口点，负责根据程序类型注册不同的退出钩子来处理覆盖率的元数据和计数器数据。它的设计考虑了普通程序和测试二进制文件的不同生命周期和覆盖率处理方式。使用者通常不需要直接调用或关心这个函数，它是由编译器和 `go test` 命令自动管理的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/coverage/cfile/hooks.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -172,8 +172,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -212,9 +214,4 @@ func InitHook(istest bool) {
 		emitMetaData()
 	}
 }
-
-"""
-
-
-
 ```

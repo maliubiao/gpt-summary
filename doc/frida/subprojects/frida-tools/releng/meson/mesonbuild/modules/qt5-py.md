@@ -129,7 +129,7 @@ Frida 本身是一个强大的动态 instrumentation 工具，常用于逆向工
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/mesonbuild/modules/qt5.py` 这个文件虽然代码量不大，但在 Frida 工具的构建过程中扮演着关键的角色，它负责提供 Qt 5 的支持，从而使得构建出的 Frida 工具能够与 Qt 应用程序进行交互，为逆向工程提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/modules/qt5.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015 The Meson development team
 
@@ -162,7 +164,4 @@ class Qt5Module(QtBaseModule):
 
 def initialize(interp: Interpreter) -> Qt5Module:
     return Qt5Module(interp)
-
-"""
-
 ```

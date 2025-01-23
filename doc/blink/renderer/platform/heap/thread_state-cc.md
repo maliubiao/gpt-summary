@@ -147,14 +147,16 @@ This iterative process of scanning, analyzing, connecting, illustrating, and ref
 
 `thread_state.cc` 中定义的 `ThreadState` 类是 Blink 渲染引擎中管理线程特定内存的关键组件。它负责 C++ 堆的管理，并与 V8 引擎紧密集成，共同管理 JavaScript 对象和其对应的 C++ 对象的生命周期。理解 `ThreadState` 的功能有助于理解 Blink 的内存管理机制，并避免常见的内存泄漏问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/heap/thread_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -430,7 +432,4 @@ const char* ThreadState::CopyNameForHeapSnapshot(const char* name) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

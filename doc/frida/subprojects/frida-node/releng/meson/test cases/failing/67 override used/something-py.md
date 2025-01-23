@@ -135,7 +135,7 @@ Initially, I might have focused too much on what the Python script *itself* does
 
 总而言之，虽然 `something.py` 本身功能简单，但它在 Frida 测试框架中的位置和上下文表明它是用于测试 Frida 的覆盖功能在特定（失败）场景下的行为。 开发者会通过运行测试、查看失败报告、检查源代码等步骤到达这里，以理解和解决潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing/67 override used/something.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,12 +143,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('Doing something.')
-
-"""
-
 ```

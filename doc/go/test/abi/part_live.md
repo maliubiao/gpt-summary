@@ -135,15 +135,17 @@ While users are unlikely to write code exactly like this (with deliberate memory
 
 `go/test/abi/part_live.go` is a carefully crafted test case for the Go runtime and compiler. It uses low-level memory manipulation and explicit garbage collection calls to probe the boundaries of the garbage collector's liveness analysis, particularly in scenarios involving potential partial liveness and register allocation. It's designed to ensure that the Go runtime correctly handles these complex situations and prevents crashes or memory corruption. It doesn't represent typical user code but is crucial for the robustness of the Go language itself.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/abi/part_live.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -192,9 +194,4 @@ func escape(s []int) {
 	g = s
 }
 var g []int
-
-"""
-
-
-
 ```

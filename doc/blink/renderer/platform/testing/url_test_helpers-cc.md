@@ -127,14 +127,16 @@ By following these steps, we can systematically analyze the C++ file and provide
 
 `url_test_helpers.cc` 是 Blink 引擎测试框架中一个非常重要的组成部分，它通过提供 URL 模拟功能，使得对涉及网络请求的代码进行单元测试变得更加容易、可靠和高效。正确使用这些辅助函数能够帮助开发者编写出高质量的 Web 应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/url_test_helpers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -257,7 +259,4 @@ void ServeAsynchronousRequests() {
 
 }  // namespace url_test_helpers
 }  // namespace blink
-
-"""
-
 ```

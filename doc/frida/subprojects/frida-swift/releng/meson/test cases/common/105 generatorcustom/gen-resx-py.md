@@ -113,7 +113,7 @@ Here's a breakdown of the thinking process to analyze the Python script and answ
 
 尽管 `gen-resx.py` 自身功能简单，但在 Frida 的上下文中，它是构建和测试 Frida 对 Swift 代码支持的重要组成部分。它用于生成简单的测试资源，帮助开发者验证 Frida 在动态 instrumentation 过程中与 Swift 代码和底层系统的交互是否正确。 作为调试线索，开发者可能会在调查测试失败或检查测试环境配置时接触到这个脚本。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/105 generatorcustom/gen-resx.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -132,7 +134,4 @@ num = sys.argv[2]
 
 with open(ofile, 'w') as f:
     f.write(f'res{num}\n')
-
-"""
-
 ```

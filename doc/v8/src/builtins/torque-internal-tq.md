@@ -158,14 +158,16 @@ const subSlice = Subslice<int32>(originalSlice, 2, 5) otherwise OutOfBoundsLabel
 
 `v8/src/builtins/torque-internal.tq` 文件定义了 V8 内部用于处理内存切片、引用和进行底层操作的关键工具。它为 Torque 编写的 built-in 函数提供了基础的数据结构和操作方法，最终支撑了 JavaScript 的各种语言特性。虽然用户不会直接编写 Torque 代码，但理解这些底层的概念有助于理解 JavaScript 引擎的工作原理以及可能出现的性能问题和错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/torque-internal.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -596,7 +598,4 @@ IteratorSequence<T: type, FirstIterator: type, SecondIterator: type>(
     IteratorSequence<T, FirstIterator, SecondIterator> {
   return IteratorSequence<T>{first, second};
 }
-
-"""
-
 ```

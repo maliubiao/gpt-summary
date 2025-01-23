@@ -160,15 +160,17 @@ By following this systematic approach, combining code analysis with knowledge of
 
 总而言之，`blink/renderer/core/dom/static_range.cc` 负责实现 Blink 引擎中 `StaticRange` 的核心功能，它与 JavaScript 的 `StaticRange` API 紧密关联，用于表示文档中的一个不可变的范围。理解这个文件的功能有助于理解浏览器如何处理文档范围以及 JavaScript 如何与之交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/static_range.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -268,7 +270,4 @@ void StaticRange::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

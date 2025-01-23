@@ -113,7 +113,7 @@ Finally, the information needs to be organized logically, covering all the point
 
 总而言之，虽然 `simple.c` 代码本身非常简单，但结合其所在的上下文（Frida 的测试用例），它在逆向工程、二进制底层、操作系统等方面都有一定的关联性，并且可以作为理解 Frida 工作原理的一个基础起点。  它之所以出现在 "failing" 目录下，很可能是作为测试 Frida 处理预期失败场景的一个用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/failing/23 rel testdir/simple.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,12 +121,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

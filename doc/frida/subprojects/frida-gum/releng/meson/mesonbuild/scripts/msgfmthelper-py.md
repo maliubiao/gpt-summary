@@ -149,7 +149,7 @@ Here's a breakdown of the thinking process to analyze the Python script and answ
 
 总而言之，`msgfmthelper.py` 是 Frida 构建过程中一个关键的辅助脚本，负责将翻译文件编译成二进制格式。理解其功能和使用方法对于排查 Frida 构建过程中与本地化相关的问题至关重要。用户通常不会直接与之交互，但当构建过程出错时，它是需要关注的一个环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/scripts/msgfmthelper.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016 The Meson development team
 
@@ -188,7 +190,4 @@ def run(args: T.List[str]) -> int:
     return subprocess.call([options.msgfmt, '--' + options.type, '-d', options.podir,
                             '--template', options.input,  '-o', options.output] + options.args,
                            env=env)
-
-"""
-
 ```

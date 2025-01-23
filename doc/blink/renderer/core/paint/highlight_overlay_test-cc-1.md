@@ -59,7 +59,7 @@ To fulfill the user's request, I need to:
 
 **总结来说，这部分代码通过一系列精细的测试用例，确保了 `HighlightOverlay::ComputeParts` 函数能够正确地将各种高亮信息转换为可用于渲染的 `HighlightPart` 列表，覆盖了不同高亮场景下的边界情况和异常情况。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/highlight_overlay_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -67,8 +67,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 {HighlightLayerType::kCustom, 1, {6,14}, foo_color},
                                {HighlightLayerType::kCustom, 2, {10,19}, foo_color},
                                {HighlightLayerType::kSpelling, 3, {10,14}, spelling_color}},
@@ -288,8 +290,4 @@ Prompt:
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

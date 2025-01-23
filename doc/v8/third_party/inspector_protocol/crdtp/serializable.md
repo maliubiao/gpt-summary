@@ -142,11 +142,13 @@ console.log(serializedBytes); // 输出: [ 1, 2, 3 ]
 
 总而言之，`serializable.cc` 定义了一个用于序列化数据的 C++ 抽象接口和一种简单的实现方式，其核心思想与 JavaScript 中数据序列化的概念是相通的。虽然具体的实现细节不同（字节向量 vs. 字符串/对象），但目标都是将数据转换为一种可以被存储或传输的形式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/serializable.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -186,7 +188,4 @@ std::unique_ptr<Serializable> Serializable::From(std::vector<uint8_t> bytes) {
   return std::make_unique<PreSerialized>(std::move(bytes));
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

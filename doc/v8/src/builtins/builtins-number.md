@@ -105,11 +105,13 @@ console.log(precisionStr); // 输出 "123.5"
 
 总而言之，`builtins-number.cc` 文件是 V8 引擎中实现 JavaScript `Number.prototype` 格式化方法的核心部分，它直接影响着 JavaScript 中数字到字符串的转换行为，并确保了类型检查和错误处理与 JavaScript 规范一致。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-number.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -303,7 +305,4 @@ BUILTIN(NumberPrototypeToPrecision) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

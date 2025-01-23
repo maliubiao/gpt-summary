@@ -159,15 +159,17 @@ console.log(germanStrings); // 输出：[ 'Apfel', 'Äpfel', 'äpfel' ] (区分�
 
 总而言之，`v8/src/init/icu_util.h` 是 V8 引擎中一个关键的头文件，负责加载和初始化 ICU 库，这对于 V8 提供全面的国际化支持至关重要。理解其功能有助于诊断和解决与 JavaScript 国际化相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/icu_util.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/init/icu_util.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ bool InitializeICUDefaultLocation(const char* exec_path,
 }  // namespace v8
 
 #endif  // V8_INIT_ICU_UTIL_H_
-
-"""
-
 ```

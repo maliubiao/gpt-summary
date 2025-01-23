@@ -215,7 +215,7 @@ FuncPCABIInternal(funcVar): 0x10a0bc0
 
 总而言之，`go/src/internal/abi/funcpc.go` 定义的这两个函数提供了获取函数入口地址的底层能力，但在使用时需要理解其对调用惯例和函数引用的限制，并特别注意插件场景下的潜在问题。它们是 Go 语言运行时和编译器实现某些高级特性的基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/abi/funcpc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -223,8 +223,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -256,9 +258,4 @@ func FuncPCABI0(f interface{}) uintptr
 //
 // Implemented as a compile intrinsic.
 func FuncPCABIInternal(f interface{}) uintptr
-
-"""
-
-
-
 ```

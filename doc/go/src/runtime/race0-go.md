@@ -168,7 +168,7 @@ panic: race
 
 `go/src/runtime/race0.go` 提供的是 Go 语言竞态检测功能的 **禁用版本**。  它定义了一系列竞态检测相关的函数，但这些函数在没有启用竞态检测时只会抛出 panic。  它的主要作用是在不进行竞态检测时，提供一套统一的 API 接口，并避免额外的性能开销。 开发者需要理解，只有在使用 `-race` 标志编译和运行程序时，Go 的竞态检测器才会真正发挥作用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/race0.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -176,8 +176,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -222,9 +224,4 @@ func racefree(p unsafe.Pointer, sz uintptr)                                 { th
 func racegostart(pc uintptr) uintptr                                        { throw("race"); return 0 }
 func racegoend()                                                            { throw("race") }
 func racectxend(racectx uintptr)                                            { throw("race") }
-
-"""
-
-
-
 ```

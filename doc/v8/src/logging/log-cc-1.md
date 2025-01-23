@@ -119,7 +119,7 @@ add(1, 2);
 
 `v8/src/logging/log.cc` 的这部分代码主要负责在 V8 虚拟机运行时记录各种关键事件，包括 JIT 代码的创建和移动、字节码的移动、代码优化和反优化、WebAssembly 代码的创建、CPU 性能采样数据等等。这些日志信息对于理解 V8 的内部工作原理、进行性能分析、调试和诊断问题至关重要。 它通过 `JitLogger` 和 `V8FileLogger` 等类实现，利用线程和同步机制来高效地收集和记录事件信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/logging/log.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/logging/log.cc以.tq结尾，那它是个v8 torque源代码，
@@ -127,8 +127,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 st<v8::Isolate*>(isolate_);
 
   if (!code->IsAnonymous()) {  // Skip for WasmCode::Kind::kWasmToJsWrapper.
@@ -1050,7 +1052,4 @@ void AppendFunctionMessage(LogFile::MessageBuilder& msg, const char* reason,
   msg << V8FileLogger::kNext << time << V8FileLogger::kNext;
 }
 }  // n
-"""
-
-
 ```

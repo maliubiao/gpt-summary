@@ -93,7 +93,7 @@ By following this structured thought process, focusing on the core concepts, and
 
 这段 `assembler-ppc.h` 中的代码片段是 V8 引擎 PowerPC 代码生成器的重要组成部分，它提供了生成条件跳转和一些基本运算指令的能力。这些指令是 V8 将 JavaScript 代码转化为可在 PowerPC 架构上执行的机器码的关键构建块。开发者在使用 `Assembler` 时需要准确理解 PowerPC 指令集的细节以及条件码的含义，以避免生成错误的机器码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/assembler-ppc.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/assembler-ppc.h以.tq结尾，那它是个v8 torque源代码，
@@ -101,8 +101,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 R_EQ));
         break;
       case gt:
@@ -888,8 +890,4 @@ class V8_EXPORT_PRIVATE V8_NODISCARD UseScratchRegisterScope {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_PPC_ASSEMBLER_PPC_H_
-
-"""
-
-
 ```

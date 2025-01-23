@@ -334,12 +334,14 @@ void Isolate::SetAllowCodeGenerationFromStringsCallback(
 
 void Isolate::AttachCppHeap(CppHeap* cpp_heap) {
   i::Isolate* i_isolate = reinterpret_cast<i::Isol
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ate*>(this);
   i_isolate->heap()->AttachCppHeap(cpp_heap);
 }
@@ -2025,8 +2027,5 @@ const char* CodeEvent::GetComment() {
 }
 
 uintptr_t CodeEvent::GetPreviousCodeStartAddress() {
-  return 
-"""
-
-
+  return
 ```

@@ -305,7 +305,7 @@ my_library.so:
 
 `fd_setsize.handroid` 文件虽然简单，但它包含的头文件定义了 Android 系统中重要的 I/O 多路复用机制。理解 `select` 和相关概念对于理解 Android 底层的工作原理至关重要。  通过 Frida 这样的工具，我们可以动态地观察和调试这些底层系统调用的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/android/include/fd_setsize.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -316,10 +316,9 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #include <sys/select.h>
-
-"""
-
 ```

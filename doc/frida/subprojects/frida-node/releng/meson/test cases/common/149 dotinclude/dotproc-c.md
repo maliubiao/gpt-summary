@@ -143,7 +143,7 @@ Eventually I got printed.
 
 总而言之，`dotproc.c` 看起来是一个用于测试特定编译环境配置的小型 C 程序，它通过强制包含一个自定义的 `stdio.h` 来验证某些预处理或构建步骤是否正确执行。这在构建系统、测试框架或需要对标准库进行修改或包装的场景中很常见，也与逆向工程中 hook 技术的一些基本思想相符。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/149 dotinclude/dotproc.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"stdio.h"
 
 #ifndef WRAPPER_INCLUDED
@@ -163,7 +165,4 @@ int main(void) {
     printf("Eventually I got printed.\n");
     return 0;
 }
-
-"""
-
 ```

@@ -213,7 +213,7 @@ myObject.b = 2;
 
 `v8/src/ic/keyed-store-generic.cc` 是 V8 引擎中处理通用键值存储操作的关键组成部分。它负责处理 JavaScript 中给对象属性赋值的各种情况，包括快速属性和字典属性的存储、原型链的查找、访问器属性的处理以及只读属性的检查。该文件中的代码是 V8 优化属性访问和操作的基础，确保了 JavaScript 代码中属性赋值操作的正确性和性能。当内联缓存未能提供优化路径时，这里的通用逻辑就成为了保障属性赋值操作的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/keyed-store-generic.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ic/keyed-store-generic.cc以.tq结尾，那它是个v8 torque源代码，
@@ -221,8 +221,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ), &next_proto);
         TNode<Uint32T> details = Unsigned(LoadAndUntagToWord32ObjectField(
             property_cell, PropertyCell::kPropertyDetailsRawOffset));
@@ -799,8 +801,4 @@ void KeyedStoreGenericAssembler::StoreProperty(TNode<Context> context,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

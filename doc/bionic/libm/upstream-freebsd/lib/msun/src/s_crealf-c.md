@@ -235,7 +235,7 @@ libm.so:
 
 总而言之，`s_crealf.c` 虽然代码简单，但在 Android 系统中扮演着重要的角色，为各种需要处理复数的应用和系统组件提供了基础的数学功能支持。理解其功能和在 Android 系统中的位置，有助于进行更深入的开发和调试工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_crealf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -245,8 +245,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * SPDX-License-Identifier: BSD-2-Clause
  *
@@ -282,7 +284,4 @@ crealf(float complex z)
 {
 	return z;
 }
-
-"""
-
 ```

@@ -118,11 +118,13 @@ if (len > 0) {
 
 `graph-assembler.cc` 中定义的 `GraphAssembler` 和 `JSGraphAssembler` 是 V8 编译器中至关重要的组件，它们提供了构建和操作中间表示图的工具。`GraphAssembler` 提供了底层的机器操作抽象，而 `JSGraphAssembler` 则在此基础上构建了更高级别的 JavaScript 语义抽象，使得编译器能够将 JavaScript 代码转化为可执行的机器码。JavaScript 代码的每一个操作，例如变量访问、函数调用、算术运算等，都会在编译过程中被转化为 `JSGraphAssembler` 构建的图中的一个或多个节点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/graph-assembler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1445,7 +1447,4 @@ Operator const* JSGraphAssembler::PlainPrimitiveToNumberOperator() {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

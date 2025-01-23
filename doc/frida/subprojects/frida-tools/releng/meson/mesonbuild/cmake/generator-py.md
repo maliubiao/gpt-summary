@@ -138,7 +138,7 @@ trace_data = {
 
 作为调试线索，如果用户在使用 Frida 时遇到与库路径、依赖项或构建配置相关的问题，并且目标项目使用了 CMake，那么查看 `generator.py` 文件可能会帮助理解 Frida 如何处理这些信息。例如，如果 Frida 找不到某个库，可能是因为该库的路径是通过一个 Frida 未能正确解析的生成器表达式定义的。此时，可以检查 `supported` 字典，看看是否缺少对特定生成器表达式的支持，或者检查 `trace` 数据是否包含了足够的信息来解析表达式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/cmake/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -334,7 +336,4 @@ def parse_generator_expressions(
         i += 1
 
     return out
-
-"""
-
 ```

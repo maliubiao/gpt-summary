@@ -171,7 +171,7 @@ println(fmt.Sprintf("Original jump instruction now jumps to: 0x%X", trampolineSt
 
 由于代码没有涉及到具体的命令行参数处理，因此无法详细介绍。 这是一个代码片段，上下文是 Go 链接器的内部实现，通常不涉及直接的命令行参数处理，链接器的参数由 `go build` 或 `go link` 命令传递。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ppc64/asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -180,8 +180,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 . Instead we delay it
 			// until after the 'address' phase of the linker is
 			// complete. We do this via Addaddrplus, which creates
@@ -1143,10 +1145,4 @@ func ensureglinkresolver(ctxt *ld.Link, ldr *loader.Loader) *loader.SymbolBuilde
 
 	return glink
 }
-
-"""
-
-
-
-
 ```

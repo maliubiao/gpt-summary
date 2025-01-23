@@ -162,7 +162,7 @@ mov r2, eax      ; 假设 r2 映射到某个寄存器，将结果存入
 
 总的来说，这部分代码是 IA-32 代码生成器的基础结构，定义了操作数转换、栈帧处理、尾调用支持以及代码生成的核心框架。它为后续 `AssembleArchInstruction` 函数中针对各种具体 IR 指令的代码生成提供了必要的工具和基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/code-generator-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ia32/code-generator-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -170,8 +170,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -966,7 +968,4 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleArchInstruction(
       DCHECK(IsAligned(bytes, kSystemPointerSize));
       DCHECK_EQ(0, frame_access_state()->sp_delta());
       fra
-"""
-
-
 ```

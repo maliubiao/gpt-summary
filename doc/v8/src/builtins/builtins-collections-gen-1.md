@@ -222,12 +222,14 @@ Response: The user wants me to summarize the functionality of the provided C++ c
 
 这部分代码实现了 JavaScript 中 `Map` 和 `Set` 集合类型的大部分原型方法，包括添加、删除、查找、遍历元素以及获取大小等操作。同时，它也实现了 `WeakMap` 和 `WeakSet` 的构造函数和基本操作。这些 C++ 代码为 JavaScript 开发者使用的 `Map` 和 `Set` 提供了底层的实现支撑，保证了这些数据结构的性能和功能。 文件中还包含了一些用于哈希表操作和优化的辅助函数，例如扩容、收缩和查找等。这些底层的实现细节对 JavaScript 开发者是透明的，但对于理解 V8 引擎如何高效地管理集合数据至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-collections-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 o to runtime to compute the hash code.
     entry_start_position_or_hash = SmiUntag(CallGetOrCreateHashRaw(CAST(key)));
     Goto(&add_entry);
@@ -1620,8 +1622,4 @@ TF_BUILTIN(WeakSetPrototypeHas, WeakCollectionsBuiltinsAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

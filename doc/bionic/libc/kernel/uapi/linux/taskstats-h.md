@@ -338,7 +338,7 @@ if __name__ == '__main__':
 
 这个 Frida 示例提供了一个基本的框架，你可以根据需要进行扩展，以更详细地分析 Android 系统如何使用 `taskstats`。记住，内核交互的细节可能比较复杂，需要对 Netlink 协议和 `taskstats` 的内部机制有一定的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/taskstats.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -349,8 +349,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -451,7 +453,4 @@ enum {
 #define TASKSTATS_GENL_NAME "TASKSTATS"
 #define TASKSTATS_GENL_VERSION 0x1
 #endif
-
-"""
-
 ```

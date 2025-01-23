@@ -185,7 +185,7 @@ This is part 1 of 2, so the focus should be on summarizing the functionality cov
 
 `blink/renderer/modules/webtransport/web_transport.cc` 文件的主要功能是实现了 WebTransport API 的核心逻辑，用于在 Web 页面和服务器之间建立双向的、多路复用的连接。它处理了 WebTransport 连接的创建和初始化、数据报的发送和接收，以及单向和双向流的创建和管理。该文件通过与 JavaScript API 的绑定，使得 Web 开发者可以使用 WebTransport 技术进行实时的、低延迟的网络通信。 其核心在于管理与网络服务的 Mojo 连接，并利用 ReadableStream 和 WritableStream API 将网络数据流暴露给 JavaScript。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webtransport/web_transport.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1045,7 +1047,4 @@ ScriptPromise<BidirectionalStream> WebTransport::createBidirectionalStream(
   mojo::ScopedDataPipeConsumerHandle incoming_consumer;
   if (!CreateStreamDataPipe(&incoming_producer, &incoming_consumer,
                             excep
-"""
-
-
 ```

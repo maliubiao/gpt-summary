@@ -163,15 +163,17 @@ If you are investigating issues related to WebSocket connection establishment fa
 
 In summary, `websocket_endpoint_lock_manager_unittest.cc` tests the critical functionality of the `WebSocketEndpointLockManager`, which is essential for managing concurrent WebSocket connection attempts in Chromium and ensuring a stable and predictable experience for web applications using WebSockets.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/websocket_endpoint_lock_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -461,7 +463,4 @@ TEST_F(WebSocketEndpointLockManagerTest, UnlockEndpointIsDelayed) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

@@ -363,7 +363,7 @@ if (Process.platform === 'android') {
 
 通过 Frida hook，你可以动态地观察和分析 Android 系统中 `symlink` 函数的使用情况，这对于理解系统行为、调试问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/symlink.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -374,8 +374,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 The Android Open Source Project
  * All rights reserved.
@@ -410,7 +412,4 @@ Prompt:
 int symlink(const char* old_path, const char* new_path) {
   return symlinkat(old_path, AT_FDCWD, new_path);
 }
-
-"""
-
 ```

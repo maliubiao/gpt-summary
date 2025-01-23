@@ -163,7 +163,7 @@ Here's a breakdown of the thinking process used to analyze the C code and addres
 
 这个 `prog.c` 文件作为一个简单的测试用例，为 Frida 框架的开发者提供了一种验证其插桩静态库和共享库函数能力的方式。同时，它也为学习 Frida 和动态逆向技术的人提供了一个入门示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/failing/32 exe static shared/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int shlibfunc2();
 int statlibfunc();
 
@@ -183,7 +185,4 @@ int main(int argc, char **argv) {
         return 1;
     return 0;
 }
-
-"""
-
 ```

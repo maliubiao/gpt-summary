@@ -142,7 +142,7 @@ Here's a breakdown of the thinking process to generate the detailed analysis of 
 
 总而言之，`TOMLDocument` 类是 `tomlkit` 库中表示 TOML 文档的核心结构，它为 Frida 工具提供了读取、操作 TOML 配置文件的能力，这在逆向工程中对于理解和修改目标程序的行为至关重要。 虽然它本身不涉及底层操作，但它处理的数据可能与操作系统、内核或应用程序的内部机制相关。调试过程中遇到 TOML 解析问题时，查看 `toml_document.py` 文件的源代码可以帮助理解问题所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/tomlkit/tomlkit/toml_document.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -150,8 +150,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit.container import Container
 
 
@@ -159,7 +161,4 @@ class TOMLDocument(Container):
     """
     A TOML document.
     """
-
-"""
-
 ```

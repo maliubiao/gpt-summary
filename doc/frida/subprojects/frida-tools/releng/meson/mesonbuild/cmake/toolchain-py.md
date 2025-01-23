@@ -183,7 +183,7 @@ A user's interaction reaches this code during the build process of Frida (or a p
 
 If a user encounters errors during the CMake configuration step, they might investigate the generated `CMakeMesonToolchainFile.cmake` in the build directory. By examining its contents, and then tracing back to the logic in `toolchain.py`, developers can understand how the toolchain file was generated and identify potential issues in the configuration process, such as incorrect compiler paths or missing system information. Looking at the Meson configuration options and the target machine definition becomes crucial in this debugging process.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/cmake/toolchain.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2020 The Meson development team
 
@@ -441,7 +443,4 @@ class CMakeToolchain:
             vars = vars_by_file.setdefault(file_name, {})
             vars[f'CMAKE_{lang_cmake}_COMPILER_FORCED'] = ['1']
             self.cmakestate.update(lang, vars)
-
-"""
-
 ```

@@ -182,15 +182,17 @@ By following this kind of detailed analysis, breaking down the code into smaller
 
 总而言之，`address_info.cc` 虽然不直接与 JavaScript 交互，但它是浏览器网络功能的基石，负责将主机名解析为 IP 地址，为 JavaScript 发起的各种网络请求提供必要的基础。 理解它的功能有助于诊断和解决网络连接问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/address_info.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -414,7 +416,4 @@ std::unique_ptr<addrinfo, FreeAddrInfoFunc> AddrInfoGetter::getaddrinfo(
 }
 
 }  // namespace net
-
-"""
-
 ```

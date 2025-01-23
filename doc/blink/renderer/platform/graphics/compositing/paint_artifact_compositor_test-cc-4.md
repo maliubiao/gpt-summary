@@ -68,15 +68,17 @@ Strategizing complete. I will now generate the response by following the identif
 
 总而言之，这部分测试旨在确保 `PaintArtifactCompositor` 能够正确高效地处理各种涉及合成裁剪的场景，尤其是在处理圆角和 `clip-path` 这两个常见的 CSS 属性时。它涵盖了从最基本的情况到更复杂的情况，包括性能优化（如裁剪的重用）和不同渲染机制的选择（如 Shader 圆角 vs. 遮罩层）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/paint_artifact_compositor_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 _P(PaintArtifactCompositorTest,
        SynthesizedClipShaderBasedBorderRadiusNotSupported2) {
   // This tests the simplest case that a single layer needs to be clipped
@@ -831,7 +833,4 @@ TEST_P(PaintArtifactCompositorTest, SynthesizedClipMultipleNonBackdropEffects) {
   // This tests the case that multiple non-backdrop effects can share the
   // synthesized mask.
   FloatRoundedRect rrect(gfx::RectF(50, 50, 300, 200),
-"""
-
-
 ```

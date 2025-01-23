@@ -168,15 +168,17 @@ window.performance.getEntriesByType("resource").forEach(entry => {
 
 **简而言之，当开发者需要理解 QUIC 连接的延迟特性、调试拥塞控制算法、排查网络性能问题或者验证协议一致性时，就可能会深入到 `net/third_party/quiche/src/quiche/quic/core/congestion_control/rtt_stats.cc` 这个文件进行代码分析和调试。** 他们可能会通过浏览器开发者工具、QUIC 内部日志、网络模拟工具以及单步调试等手段逐步深入到这个文件的具体代码中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/congestion_control/rtt_stats.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -321,7 +323,4 @@ void RttStats::CloneFrom(const RttStats& stats) {
 }
 
 }  // namespace quic
-
-"""
-
 ```

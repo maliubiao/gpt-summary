@@ -210,7 +210,7 @@ Message: Hello Frida! processed by dep2
 
 总而言之，这个 `meson-sample.c` 文件虽然简单，但它展示了使用 GLib 的应用程序的基本结构，以及 Frida 可以如何通过 hooking 函数和访问对象属性来进行动态分析。它是 Frida 测试框架的一部分，用于验证 Frida 在处理这类 GObject 时的功能是否正常。用户通过了解这些测试用例，可以更好地掌握 Frida 的使用技巧，并应用于更复杂的逆向场景中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/7 gnome/gir/meson-sample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -218,8 +218,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample.h"
 
 struct _MesonSample
@@ -341,7 +343,4 @@ meson_sample_print_message (MesonSample *self, MesonDep1 *dep1, MesonDep2 *dep2)
   samedep = meson_dep1_just_return_it (dep1, dep2);
   g_print ("Message: %s\n", meson_dep2_return_message (samedep));
 }
-
-"""
-
 ```

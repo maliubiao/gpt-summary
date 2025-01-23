@@ -178,15 +178,17 @@ QualifiedName QualifiedName::Parse(std::string qualified_name) {
 
 总而言之，`v8/src/torque/declarable.cc` 是 V8 引擎中一个核心的文件，它定义了 Torque 语言中用于描述和管理各种可声明实体的结构。虽然普通 JavaScript 开发者不会直接接触到这个文件，但它在 V8 如何实现 JavaScript 功能方面起着至关重要的作用。 编写正确的 Torque 代码对于构建和维护 V8 引擎至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/torque/declarable.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/torque/declarable.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -383,7 +385,4 @@ const Type* TypeAlias::Resolve() const {
 }
 
 }  // namespace v8::internal::torque
-
-"""
-
 ```

@@ -116,7 +116,7 @@ By following this structured approach, combining code analysis with knowledge of
 
 这部分代码 (第 8 部分) 的主要功能是 **定义了大量与尺寸、视觉效果、定位、以及内外边距相关的 CSS 长属性的解析和计算逻辑**。它负责将 CSS 样式表中的声明转换为内部表示，并从计算后的样式信息中提取这些属性的最终值，为浏览器的渲染引擎提供必要的样式信息。 这部分涵盖了布局相关的属性 (例如 `max-height`, `min-width`, `padding`) 以及视觉效果属性 (例如 `opacity`, `object-fit`)，在元素的最终呈现中扮演着重要的角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/properties/longhands/longhands_custom.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -124,9 +124,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共13部分，请归纳一下它的功能
+```
 
-"""
- LayoutObject*,
+### 源代码
+```cpp
+LayoutObject*,
     bool allow_visited_style,
     CSSValuePhase value_phase) const {
   const Length& max_height = style.MaxHeight();
@@ -1017,7 +1019,4 @@ const CSSValue* ViewTransitionName::ParseSingleValue(
     const CSSParserContext& context,
     const CSSParserLocalContext&) const {
   if (stream.Peek().Id() == CSSValueID:
-"""
-
-
 ```

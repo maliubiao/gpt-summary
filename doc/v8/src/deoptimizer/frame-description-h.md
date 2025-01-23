@@ -194,15 +194,17 @@ processItem({ value: 5 });
 
 **In summary, `v8/src/deoptimizer/frame-description.h` is a fundamental part of V8's deoptimization mechanism. It defines the structures necessary to capture and represent the execution state of functions at the moment of deoptimization, enabling a smooth transition back to less optimized code when necessary. While not directly visible to JavaScript developers, understanding its role helps in appreciating how V8 manages optimization and deals with dynamic typing.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/frame-description.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/deoptimizer/frame-description.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -486,7 +488,4 @@ class FrameDescription {
 }  // namespace v8
 
 #endif  // V8_DEOPTIMIZER_FRAME_DESCRIPTION_H_
-
-"""
-
 ```

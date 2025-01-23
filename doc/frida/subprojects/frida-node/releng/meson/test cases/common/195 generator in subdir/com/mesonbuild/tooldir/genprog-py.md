@@ -195,7 +195,7 @@ calculateSum
 
 总而言之，`genprog.py` 是 Frida 构建和测试流程中的一个辅助工具，用于自动化生成 C 代码的框架，这些代码作为 Frida Node.js 绑定的一部分，可能在后续的 Frida 脚本中被使用，特别是在与底层二进制、Linux/Android 系统交互时。理解其功能和使用场景有助于开发者调试 Frida 相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/195 generator in subdir/com/mesonbuild/tooldir/genprog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, sys, argparse
@@ -251,7 +253,4 @@ for i, ifile_name in enumerate(ifiles):
     os.makedirs(os.path.split(ofile_bases[i])[0], exist_ok=True)
     open(h_out, 'w').write(h_templ % (proto_name))
     open(c_out, 'w').write(c_templ % (proto_name, proto_name))
-
-"""
-
 ```

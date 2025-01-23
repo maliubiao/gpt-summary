@@ -122,7 +122,7 @@ Here's a breakdown of the thinking process to analyze the C code and address the
 
 虽然 `trivial.c` 本身功能非常简单，但它在 Frida 的测试框架中扮演着重要的角色，可以作为 Frida 功能测试的基础，也可以作为逆向工程和动态分析的入门示例。理解这样的简单代码及其在整个系统中的位置，有助于我们更好地理解和使用更复杂的工具如 Frida。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/190 install_mode/trivial.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,15 +130,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("Trivial test is working.\n");
     return 0;
 }
-
-"""
-
 ```

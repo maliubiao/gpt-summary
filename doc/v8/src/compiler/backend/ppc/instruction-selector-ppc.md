@@ -66,12 +66,14 @@ if (x > 5) {
 
 总结来说，`instruction-selector-ppc.cc` 是 V8 引擎中一个关键的组成部分，它确保了 JavaScript 代码可以在 PowerPC 架构上高效地执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ppc/instruction-selector-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1783,7 +1785,4 @@ void InstructionSelectorT<Adapter>::VisitWord64ReverseBytes(node_t node) {
         node_t base = load.base();
         node_t offset = load.index();
         bool is_
-"""
-
-
 ```

@@ -311,7 +311,7 @@ By following this systematic approach, analyzing the code, breaking down the req
 
 这个 Frida 示例展示了如何动态地观察 Bionic 库内部的行为，帮助理解 Android Framework/NDK 与底层库的交互。请注意，你需要将 `<package_name>` 替换为实际的应用程序包名，并将 `libtest_rtld_next.so` 替换为包含测试代码的共享库的实际名称（如果它被编译成一个单独的库）。在实际的 Android 系统中，这段测试代码通常不会作为一个独立的库加载，而是作为 Bionic 库自身的一部分进行测试。因此，你可能需要修改 Frida 脚本来 hook Bionic 库 (`libc.so`) 中的相关符号。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/check_rtld_next_from_library.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -322,8 +322,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 The Android Open Source Project
  *
@@ -359,9 +361,4 @@ extern "C" int __attribute__((weak)) fclose(FILE*) {
 extern "C" void* get_libc_fclose_ptr() {
   return g_libc_fclose_ptr;
 }
-
-
-
-"""
-
 ```

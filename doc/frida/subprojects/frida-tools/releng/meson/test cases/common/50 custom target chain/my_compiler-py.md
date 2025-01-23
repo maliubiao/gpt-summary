@@ -120,7 +120,7 @@ FAILED: frida/subprojects/frida-tools/releng/meson/test cases/common/50 custom t
 
 总而言之，`my_compiler.py` 虽然功能简单，但在 Frida 的测试框架中扮演着重要的角色，用于验证构建系统中自定义目标链的正确性。它帮助开发者确保 Frida 能够按照预期的方式构建，最终为逆向工程师提供可靠的工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/50 custom target chain/my_compiler.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -145,7 +147,4 @@ if __name__ == '__main__':
         sys.exit(1)
     with open(sys.argv[2], 'w') as ofile:
         ofile.write('This is a binary output file.\n')
-
-"""
-
 ```

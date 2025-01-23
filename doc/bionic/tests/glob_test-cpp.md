@@ -287,7 +287,7 @@ sys.stdin.read()
 
 通过 Frida hook，你可以实时观察 `glob` 函数的调用情况，验证你的假设，并调试与文件路径匹配相关的问题。你需要根据目标架构 (ARM, ARM64, etc.) 调整 Frida 脚本中访问 `glob_t` 结构体成员的方式 (例如寄存器和偏移量)。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/glob_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -298,8 +298,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -581,7 +583,4 @@ TEST(glob, glob_globbing_rsc) {
   GTEST_SKIP() << "musl doesn't support GLOB_ALTDIRFUNC";
 #endif
 }
-
-"""
-
 ```

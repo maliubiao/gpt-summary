@@ -188,15 +188,17 @@ net::ServiceEndpoint endpoint(ipv4s, ipv6s, metadata);
 
 总而言之，`net/dns/public/host_resolver_results.cc` 虽然代码量不多，但它定义了 Chromium 网络栈中表示域名解析结果的关键数据结构，这些结构在内部组件间传递信息，最终影响着用户发起的网络请求能否成功建立连接。理解这些数据结构对于调试网络相关的问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/public/host_resolver_results.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -255,7 +257,4 @@ base::Value::Dict ServiceEndpoint::ToValue() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

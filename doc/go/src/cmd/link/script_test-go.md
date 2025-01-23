@@ -168,15 +168,17 @@ ok      cmd/link        0.123s
 
 `go/src/cmd/link/script_test.go` 文件是 `cmd/link` 工具的集成测试入口，它利用基于脚本的方式来验证链接器的各种功能。通过替换实际的链接器并运行预定义的脚本，可以有效地进行回归测试和功能验证。 理解 `-fixreadme` 标志的作用以及 `testLinker` 变量的重要性对于正确运行和维护这些测试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/script_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -219,9 +221,4 @@ func TestScript(t *testing.T) {
 	}
 	scripttest.RunToolScriptTest(t, repls, "testdata/script", *fixReadme)
 }
-
-"""
-
-
-
 ```

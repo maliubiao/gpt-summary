@@ -227,7 +227,7 @@ go run main.go -password "mysecretpassword" -salt "72616e646f6d73616c7476616c756
 
 这段 Go 代码提供了一个符合 FIPS 140 标准的 PBKDF2 实现。使用者需要注意提供足够长度的盐值和请求符合标准的密钥长度，以确保安全性和合规性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/pbkdf2/pbkdf2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -235,8 +235,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -306,9 +308,4 @@ func setServiceIndicator(salt []byte, keyLength int) {
 
 	fips140.RecordApproved()
 }
-
-"""
-
-
-
 ```

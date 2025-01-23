@@ -210,15 +210,17 @@ v8::MaybeLocal<v8::Value> CallFailingJavaScriptFunction(v8::Isolate* isolate, v8
 
 理解和正确使用这些宏对于编写健壮可靠的 V8 嵌入代码至关重要。它们强制执行了 V8 API 的使用规范，并帮助开发者避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api-macros.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/api/api-macros.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -331,7 +333,4 @@ Prompt:
   if (has_exception) return Nothing<T>();
 
 #define RETURN_ESCAPED(value) return handle_scope.Escape(value);
-
-"""
-
 ```

@@ -65,12 +65,14 @@ I should also check if any of these operations have direct relevance to JavaScri
 
 总而言之，虽然开发者通常不会直接在 JavaScript 代码中编写这些底层的原子或 SIMD 指令，但 `instruction-selector-riscv64.cc` 文件中定义的功能是 V8 能够高效执行使用 `SharedArrayBuffer` 和 `Atomics` API 的并发 JavaScript 代码，以及执行利用 SIMD 指令的 WebAssembly 代码的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/riscv/instruction-selector-riscv64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 int8;
   } else if (params.type() == MachineType::Uint16()) {
     opcode = kAtomicExchangeUint16;
@@ -414,8 +416,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

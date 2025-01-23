@@ -111,12 +111,14 @@ console.log(rangeParts);
 
 总而言之，这段代码是 V8 引擎中 `Intl.NumberFormat` 功能的核心实现部分，它负责将 JavaScript 中的数值按照指定的 locale 和选项进行格式化，并支持将格式化后的结果分解为更细粒度的组成部分，这与 JavaScript 的 `format` 和 `formatToParts` 方法直接相关。它也处理了数值范围的格式化。该代码严重依赖 ICU 库来完成实际的国际化处理工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-number-format.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 atContent flat = string->GetFlatContent(no_gc);
     if (flat.IsOneByte()) {
       whitespace_offsets = FindLeadingAndTrailingWhiteSpaceOrLineTerminator(
@@ -665,8 +667,4 @@ const std::set<std::string>& JSNumberFormat::GetAvailableLocales() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

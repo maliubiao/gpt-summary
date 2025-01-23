@@ -229,15 +229,17 @@ func main() {
 
 编译器会通过 `mono.go` 中的机制检测到这些循环依赖，并报错提示用户修改代码。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types2/mono.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -576,9 +578,4 @@ func (w *monoGraph) addEdge(dst, src, weight int, pos syntax.Pos, typ Type) {
 		typ: typ,
 	})
 }
-
-"""
-
-
-
 ```

@@ -152,15 +152,17 @@ This iterative and multi-faceted approach, combining code inspection, conceptual
 
 总而言之，`net/cert/internal/trust_store_mac_unittest.cc` 文件通过一系列单元测试，确保了 Chromium 在 macOS 系统上正确地管理和验证数字证书，这对于保障用户的网络安全至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/internal/trust_store_mac_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -592,7 +594,4 @@ INSTANTIATE_TEST_SUITE_P(
     });
 
 }  // namespace net
-
-"""
-
 ```

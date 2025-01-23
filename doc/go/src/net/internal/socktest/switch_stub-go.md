@@ -187,7 +187,7 @@ Family: <nil>, Type: <nil>, Protocol: <nil>
 
 使用者如果没有注意到 `//go:build plan9` 的构建约束，可能会感到困惑，为什么在某些平台上这些函数没有按预期工作。 这突显了理解构建标签重要性，以及在跨平台开发时需要注意不同平台的差异。 `socktest` 包的设计者通过这种方式，为不同的操作系统提供了特定的测试辅助功能，而不需要在主代码中进行大量的平台判断。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/internal/socktest/switch_stub.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -213,9 +215,4 @@ func familyString(family int) string { return "<nil>" }
 func typeString(sotype int) string { return "<nil>" }
 
 func protocolString(proto int) string { return "<nil>" }
-
-"""
-
-
-
 ```

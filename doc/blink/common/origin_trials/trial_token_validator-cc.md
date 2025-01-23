@@ -199,14 +199,16 @@ The function would return a `TrialTokenResult` with:
 
 In summary, `trial_token_validator.cc` is a critical component for the security and controlled rollout of experimental web features in Chromium. It ensures that only authorized origins can access these features within the defined timeframes and under the configured policies.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/origin_trials/trial_token_validator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -642,7 +644,4 @@ bool TrialTokenValidator::IsTrialPossibleOnOrigin(const GURL& url) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

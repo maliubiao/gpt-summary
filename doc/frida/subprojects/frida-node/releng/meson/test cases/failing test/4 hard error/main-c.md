@@ -103,7 +103,7 @@ Here's a breakdown of the thinking process to analyze the provided C code snippe
 
 虽然 `main.c` 的代码非常简单，但在 Frida 动态 instrumentation 的上下文中，它可以作为一个测试用例，用于验证 Frida 如何处理程序返回非零值的情况。其非零的返回值 `99` 被故意设计成一个“错误代码”，用于触发或测试 Frida 相关的错误处理逻辑。用户通过运行 Frida 测试，观察到这个测试用例的失败，从而可以深入了解 Frida 在处理这类场景时的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/failing test/4 hard error/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -111,12 +111,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 99;
 }
-
-"""
-
 ```

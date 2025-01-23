@@ -368,7 +368,7 @@ if (lock_addr) {
 
 **注意**: 上面的 Frida 示例需要根据目标架构和编译器的具体实现进行调整，例如 `this` 指针的位置和成员变量的偏移量。通常需要通过调试信息或反汇编来确定这些细节。由于 `bionic_lock.handroid` 是私有 API，直接 hook 可能会比较困难，因为符号可能不会被导出，或者名称可能会被混淆。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/bionic_lock.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -379,8 +379,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2015 The Android Open Source Project
  * All rights reserved.
@@ -480,7 +482,4 @@ class LockGuard {
  private:
   Lock& lock_;
 };
-
-"""
-
 ```

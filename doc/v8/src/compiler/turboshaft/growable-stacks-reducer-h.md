@@ -143,15 +143,17 @@ wasmInstance.exports.recursiveFunction(10000); // 可能会成功，因为栈可
 
 `v8/src/compiler/turboshaft/growable-stacks-reducer.h` 定义的 `GrowableStacksReducer` 是 Turboshaft 编译器中一个关键组件，负责处理 WebAssembly 可增长栈的编译逻辑。它通过插入栈溢出检查和调整函数返回时的栈帧管理，为 WebAssembly 提供了动态扩展栈的能力，从而支持更复杂的应用场景。虽然它直接作用于 WebAssembly 编译，但最终会影响 JavaScript 中使用 WebAssembly 的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/growable-stacks-reducer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/growable-stacks-reducer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -287,7 +289,4 @@ class GrowableStacksReducer : public Next {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_GROWABLE_STACKS_REDUCER_H_
-
-"""
-
 ```

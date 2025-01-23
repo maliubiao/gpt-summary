@@ -105,15 +105,17 @@ GPUMemoryHeapInfo gpu_heap_info(info);
 
 因此，虽然用户不会直接操作 `gpu_memory_heap_info.cc` 中的代码，但他们的操作 (打开网页，运行 WebGPU 应用) 会触发浏览器执行相关的 WebGPU 功能，从而间接地使用到这个文件所定义的类来管理和表示 GPU 内存信息。 在调试 WebGPU 应用时，理解 `GPUMemoryHeapInfo` 的作用可以帮助开发者更好地理解 GPU 内存管理，并定位潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_memory_heap_info.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -134,7 +136,4 @@ uint32_t GPUMemoryHeapInfo::properties() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -115,15 +115,17 @@ cc::RestoreOp();
 
 总而言之，`blink/renderer/platform/graphics/compositing/paint_chunks_to_cc_layer_test.cc` 的第一部分专注于测试将 Blink 渲染流水线中的中间表示 `PaintChunk` 转换为 Chromium Compositor 可以使用的绘制指令 `cc::PaintRecord` 的核心逻辑，并且覆盖了多种与 CSS 属性密切相关的渲染场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/paint_chunks_to_cc_layer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -844,8 +846,4 @@ TEST_P(PaintChunksToCcLayerTest, CombineClipsWithRoundedRects) {
                   PaintOpIs<cc::SaveOp>(),
                   PaintOpEq<cc::ClipRRectOp>(SkRRect(small_rounded_rect),
                                              SkClipOp::kIntersect,
-                             
-"""
-
-
 ```

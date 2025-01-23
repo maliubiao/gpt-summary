@@ -144,14 +144,16 @@ monthInput.addEventListener('input', () => {
 
 `month_input_type.cc` 文件是 Blink 引擎中处理 `<input type="month">` 元素的核心逻辑实现。它负责解析、验证、格式化月份值，并与 JavaScript 和 HTML 属性进行交互，确保了该输入类型的功能正常运行和符合 Web 标准。它还涉及到无障碍方面的考虑。 开发者通常不需要直接修改这个文件，而是通过 HTML 属性和 JavaScript API 来与 "month" 类型的输入框进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/month_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -325,7 +327,4 @@ String MonthInputType::AriaLabelForPickerIndicator() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

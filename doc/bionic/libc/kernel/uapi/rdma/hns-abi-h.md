@@ -337,7 +337,7 @@ if __name__ == '__main__':
 
 总而言之，`bionic/libc/kernel/uapi/rdma/hns-abi.handroid` 定义了 Android 用户空间程序与内核 `hns` RDMA 子系统交互的接口，主要用于高性能网络通信。虽然普通应用开发者不直接使用，但它可能被 Android 系统的底层服务或特定厂商的 HAL 实现所采用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/rdma/hns-abi.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -348,8 +348,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -458,7 +460,4 @@ struct hns_roce_ib_create_ah_resp {
   __u8 tc_mode;
 };
 #endif
-
-"""
-
 ```

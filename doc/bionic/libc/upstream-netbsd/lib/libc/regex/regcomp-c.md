@@ -182,7 +182,7 @@ frida -U <PID> # 如果应用已经在运行
 
 `bionic/libc/upstream-netbsd/lib/libc/regex/regcomp.c` 文件的主要功能是将正则表达式字符串编译成一种内部表示形式，以便后续的匹配操作。它支持基本的和扩展的正则表达式语法，并处理各种正则表达式元素。这个功能是 Android 系统中许多文本处理功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/lib/libc/regex/regcomp.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -194,8 +194,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: regcomp.c,v 1.47 2022/12/21 17:44:15 wiz Exp $	*/
 
 /*-
@@ -1545,8 +1547,4 @@ p_b_eclass(struct parse *p, cset *cs)
 }
 
 /*
- 
-"""
-
-
 ```

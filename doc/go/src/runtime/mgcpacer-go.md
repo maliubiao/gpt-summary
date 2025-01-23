@@ -149,7 +149,7 @@ func main() {
 
 `go/src/runtime/mgcpacer.go` 代码的这一部分主要定义了 **垃圾回收步调控制器** 的数据结构和相关的配置常量。它描述了 GC pacer 的 **状态 (通过 `gcControllerState` 结构体)** 和一些 **基本的配置参数 (通过常量)**。 这些定义为后续的 GC 步调算法的实现奠定了基础，这些算法会利用这些状态和参数来动态地决定何时触发 GC 以及分配多少资源用于标记工作。 核心目标是 **在保证程序性能的前提下，有效地管理内存使用**。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mgcpacer.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -158,8 +158,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -938,9 +940,4 @@ func (c *gcControllerState) findRunnableGCWorker(pp *p, now int64) (*g, int64) {
 		// If gcMarkDone bails out without completing the mark phase,
 		// it will always do so with queued global work. Thus, that P
 		// will be immediately eligible to re-run the wo
-"""
-
-
-
-
 ```

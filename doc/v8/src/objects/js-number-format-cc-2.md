@@ -123,7 +123,7 @@ This C++ code implements the core number formatting functionality of JavaScript'
 
 The code snippet you provided is written in **C++**, not Torque. If `v8/src/objects/js-number-format.cc` had a `.tq` extension, it would indeed be a V8 Torque source file. Torque is a domain-specific language used within V8 for implementing built-in JavaScript functions and objects in a more type-safe and performance-oriented way than pure C++. However, based on the content you've provided, this file is standard C++.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-number-format.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-number-format.cc以.tq结尾，那它是个v8 torque源代码，
@@ -131,8 +131,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 atContent flat = string->GetFlatContent(no_gc);
     if (flat.IsOneByte()) {
       whitespace_offsets = FindLeadingAndTrailingWhiteSpaceOrLineTerminator(
@@ -681,8 +683,4 @@ const std::set<std::string>& JSNumberFormat::GetAvailableLocales() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

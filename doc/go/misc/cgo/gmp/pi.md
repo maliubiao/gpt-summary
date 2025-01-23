@@ -94,11 +94,13 @@ func main() {
 
 总而言之，这段代码巧妙地利用了高精度整数运算来逐步生成 π 的数字，展示了 Go 语言在处理需要高精度计算的场景下的能力。虽然位于 `cgo` 目录下，但其核心实现依赖于 Go 标准库的 `math/big` 包。
 
-Prompt: 
+### 提示词
 ```
 这是目录为go/misc/cgo/gmp/pi.go的go语言实现的一部分， 请归纳一下它的功能, 　如果你能推理出它是什么go语言功能的实现，请用go代码举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -172,9 +174,4 @@ func main() {
 
 	fmt.Printf("\n%d calls; bit sizes: %d %d %d\n", runtime.NumCgoCall(), numer.Len(), accum.Len(), denom.Len())
 }
-
-"""
-
-
-
 ```

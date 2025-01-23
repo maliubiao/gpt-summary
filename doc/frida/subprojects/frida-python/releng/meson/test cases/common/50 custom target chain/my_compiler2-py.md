@@ -154,7 +154,7 @@ Initially, I might focus too much on the "compiler" part and think of actual cod
 
 总而言之，`my_compiler2.py` 虽然是一个简单的脚本，但在 Frida 的构建系统中扮演着重要的测试和验证角色，用于确保构建过程中的某些中间产物符合预期。 它的失败可以帮助开发者定位构建过程中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/50 custom target chain/my_compiler2.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -179,7 +181,4 @@ if __name__ == '__main__':
         sys.exit(1)
     with open(sys.argv[2], 'w') as ofile:
         ofile.write('This is a different binary output file.\n')
-
-"""
-
 ```

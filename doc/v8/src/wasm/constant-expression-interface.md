@@ -174,11 +174,13 @@ console.log(constantObjectFromWasm.data); // 输出 "hello from js"
 
 `constant-expression-interface.cc` 文件是 V8 引擎中处理 WebAssembly 常量表达式的关键部分，它负责在编译时计算这些表达式的值。它通过特定的方法处理不同类型的常量、操作以及与 JavaScript 的互操作。  与 JavaScript 的主要联系在于处理 WebAssembly 引用类型和 JavaScript 对象之间的转换，这对于实现 WebAssembly 和 JavaScript 的无缝集成至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/constant-expression-interface.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -586,7 +588,4 @@ ConstantExpressionInterface::GetTrustedInstanceDataForTypeIndex(
 }  // namespace wasm
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

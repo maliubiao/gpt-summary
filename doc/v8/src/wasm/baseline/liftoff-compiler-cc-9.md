@@ -145,7 +145,7 @@ try {
 
 第 10 部分的 `liftoff-compiler.cc` 代码专注于实现 WebAssembly 中与数组创建和初始化、i31 类型值的转换和提取，以及关键的引用类型操作（包括类型检查和类型转换）相关的指令的快速编译。此外，它还包含了处理 WebAssembly 字符串创建和测量的逻辑。这些功能的实现是 Liftoff 编译器支持 WebAssembly 核心特性和与 JavaScript 互操作的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/liftoff-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -153,9 +153,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第10部分，共13部分，请归纳一下它的功能
+```
 
-"""
- LiftoffRegister is_element_reg =
+### 源代码
+```cpp
+LiftoffRegister is_element_reg =
         pinned.set(__ GetUnusedRegister(kGpReg, pinned));
     LoadSmi(is_element_reg,
             array_imm.array_type->element_type().is_reference());
@@ -960,8 +962,4 @@ Prompt:
                     string_var,
                 },
                 decoder->position());
- 
-"""
-
-
 ```

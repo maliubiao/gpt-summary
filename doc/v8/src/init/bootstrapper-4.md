@@ -80,13 +80,15 @@ console.log(oddSum); // 输出: 9
 
 这段 C++ 代码是 V8 引擎初始化 JavaScript 运行环境的关键部分，它负责构建和配置许多重要的内置对象和功能，使得 JavaScript 代码能够使用迭代器、集合、Promise 等现代语言特性。 尤其是关于迭代器帮助器的部分，它为 JavaScript 开发者提供了更方便和强大的数据处理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/bootstrapper.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
-      wrap_for_valid_iterator_prototype);
+### 源代码
+```
+wrap_for_valid_iterator_prototype);
   valid_iterator_wrapper_map->SetConstructor(*iterator_function);
   native_context()->set_valid_iterator_wrapper_map(*valid_iterator_wrapper_map);
   LOG(isolate(), MapDetails(*valid_iterator_wrapper_map));
@@ -1577,8 +1579,4 @@ Genesis::Genesis(Isolate* isolate,
     if (Snapshot::NewContextFromSnapshot(isolate, global_proxy,
                                          context_snapshot_index,
                                          embedder_fields_deserializer)
-      
-"""
-
-
 ```

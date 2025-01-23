@@ -103,7 +103,7 @@ Confidence Score: 5/5
 
 这个文件的主要功能是提供了一套全面的单元测试，用于验证 Chromium 中 QUIC 客户端会话 (`QuicSpdyClientSession`) 的核心行为和功能是否符合预期。它涵盖了连接建立、流管理、错误处理、QUIC 协议的关键机制（如流控制、GOAWAY、RST_STREAM）以及 HTTP/3 特性的测试。这些测试对于确保 QUIC 客户端的稳定性和正确性至关重要，进而保障基于 QUIC 协议的网络应用的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/http/quic_spdy_client_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -873,7 +875,4 @@ TEST_P(QuicSpdyClientSessionTest, ZeroRttRejectReducesStreamLimitTooMuch) {
         *connection_,
         CloseConnection(QUIC_INTERNAL_ERROR,
                         "Server rejected 0-RTT,
-"""
-
-
 ```

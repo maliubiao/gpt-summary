@@ -257,7 +257,7 @@ Interceptor.attach(Module.findExportByName(null, "ioctl"), {
 
 请注意，实际的 `ioctl` 命令代码和数据结构可能非常复杂，需要深入研究相关的驱动程序和 Android 源代码才能完全理解其含义。这个文件 `bionic/libc/kernel/uapi/linux/ioctl.handroid` 的作用是为用户空间提供访问这些底层 `ioctl` 命令的入口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ioctl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -268,8 +268,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -280,7 +282,4 @@ Prompt:
 #define _LINUX_IOCTL_H
 #include <asm/ioctl.h>
 #endif
-
-"""
-
 ```

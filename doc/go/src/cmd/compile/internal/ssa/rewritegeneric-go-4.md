@@ -1,6 +1,6 @@
 Response:
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritegeneric.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -8,8 +8,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第5部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 dd8, typ.UInt8)
 					v2 := b.NewValue0(v.Pos, OpMul8, typ.UInt8)
 					v3 := b.NewValue0(v.Pos, OpConst8, typ.UInt8)
@@ -3061,10 +3063,5 @@ func rewriteValuegeneric_OpLess64(v *Value) bool {
 	// cond: isNonNegative(x)
 	// result: (Neq64 (Const64 <t> [0]) x)
 	for {
-		if v_0.Op 
-"""
-
-
-
-
+		if v_0.Op
 ```

@@ -146,7 +146,7 @@ function add(x, y) {
 
 总而言之，`v8/src/builtins/s390/builtins-s390.cc` 的这部分代码是 s390 架构下 V8 引擎中用于处理 JavaScript 代码入口的关键组件。 它负责搭建 JavaScript 执行所需的栈环境，处理潜在的异常，并将控制权转移到实际的 JavaScript 代码执行逻辑。 它是 V8 引擎能够执行 JavaScript 代码的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/s390/builtins-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/s390/builtins-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -154,8 +154,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 __ StoreU64(r0, MemOperand(ip));
   __ push(r9);
 
@@ -1020,7 +1022,4 @@ void Builtins::Generate_InterpreterPushArgsThenConstructImpl(
   __ push(r0);
 
   if (mode == InterpreterPushArgsMode::kWithFi
-"""
-
-
 ```

@@ -185,7 +185,7 @@ python check_file.py file_c.txt file_d.txt
 
 总而言之，`check_file.py` 是一个用于确保文件完整性和一致性的实用工具，在软件构建、测试和逆向工程等领域都有其应用价值。它通过比较文件的元数据（主要是修改时间）和内容，帮助开发者及时发现问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/14 configure file/check_file.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -229,7 +231,4 @@ elif len(sys.argv) == 3:
         raise RuntimeError(f'{f1!r} != {f2!r}')
 else:
     raise AssertionError
-
-"""
-
 ```

@@ -216,7 +216,7 @@ go run your_program.go input.txt output.txt
 
 总而言之，这段代码是 Go 语言为了实现跨平台系统调用功能，在特定 Linux 架构下定义系统调用号的关键组成部分。开发者通常不会直接修改这些文件，而是通过 `syscall` 包提供的更高级的接口来使用这些底层的系统调用。 理解这些常量的作用有助于理解 Go 语言如何与操作系统进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/syscall/unix/sysnum_linux_generic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -224,8 +224,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -245,9 +247,4 @@ const (
 	pidfdOpenTrap       uintptr = 434
 	openat2Trap         uintptr = 437
 )
-
-"""
-
-
-
 ```

@@ -218,15 +218,17 @@ inline ::testing::Matcher<int> IsPositive() {
 
 In summary, `v8/testing/gmock/include/gmock/gmock-matchers.h` is a fundamental component for writing expressive and effective unit tests in V8 using the Google Mock framework. It provides a library of pre-built matchers that simplify assertions and improve test readability. While a `.tq` extension would indicate a Torque source file, this header is C++ and plays a vital role in testing the C++ implementation of V8's JavaScript engine.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/testing/gmock/include/gmock/gmock-matchers.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/testing/gmock/include/gmock/gmock-matchers.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -237,7 +239,4 @@ Prompt:
 // third_party/googletest.
 
 #include "third_party/googletest/src/googlemock/include/gmock/gmock-matchers.h"
-
-"""
-
 ```

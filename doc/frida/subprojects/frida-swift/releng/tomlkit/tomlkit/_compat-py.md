@@ -113,7 +113,7 @@ How would a user's actions lead to this code being executed?
 
 In essence, this `_compat.py` file is a utility tucked away within the Frida ecosystem, designed to handle a common problem in software development and reverse engineering: dealing with potentially unknown or varied text encodings. Users might not directly call this function in their scripts, but its presence is crucial for the smooth and reliable operation of Frida and its related libraries when handling textual data from target processes.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/tomlkit/tomlkit/_compat.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,8 +121,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from __future__ import annotations
 
 import contextlib
@@ -145,7 +147,4 @@ def decode(string: Any, encodings: list[str] | None = None):
             return string.decode(encoding)
 
     return string.decode(encodings[0], errors="ignore")
-
-"""
-
 ```

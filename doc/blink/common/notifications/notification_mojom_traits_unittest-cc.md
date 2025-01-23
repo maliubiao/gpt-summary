@@ -108,14 +108,16 @@ By following this breakdown, we can thoroughly understand the purpose and detail
 
 `notification_mojom_traits_unittest.cc` 是一个至关重要的测试文件，它确保了 Blink 引擎中通知相关的 Mojo 接口能够正确地处理通知数据的序列化和反序列化。这对于保证 Web Notifications API 的稳定性和可靠性至关重要，并间接地影响了网页开发者使用 JavaScript 创建通知时的行为和效果。 通过测试各种正常和异常情况，该文件有助于防止潜在的编程错误和用户错误，并确保通知功能符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/notifications/notification_mojom_traits_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -372,7 +374,4 @@ TEST(NotificationStructTraitsTest, NotificationResourcesRoundtrip) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

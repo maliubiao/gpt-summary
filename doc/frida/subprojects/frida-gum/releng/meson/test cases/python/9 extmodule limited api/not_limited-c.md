@@ -157,7 +157,7 @@ not_limited.not_limited(my_list)
 
 `not_limited.c` 文件是 Frida 测试框架中的一个关键组成部分，它通过显式调用在限制性 API 下不可用的 Python C API 函数，来验证 Frida 在不需要限制性 API 时能否正常工作。这对于 Frida 能够深入分析和操作 Python 进程至关重要，也涉及到了二进制链接、操作系统、内核以及 Python C API 等多方面的知识。 用户通常不会直接接触这个文件，但它是保证 Frida 功能正确性的重要一环。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/python/9 extmodule limited api/not_limited.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <Python.h>
 #include <stdio.h>
 
@@ -226,7 +228,4 @@ static struct PyModuleDef not_limited_module = {
 PyMODINIT_FUNC PyInit_not_limited(void) {
     return PyModule_Create(&not_limited_module);
 }
-
-"""
-
 ```

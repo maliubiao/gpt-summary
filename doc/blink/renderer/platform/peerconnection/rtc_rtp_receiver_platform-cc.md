@@ -115,14 +115,16 @@ By following these steps, I can construct a comprehensive and informative answer
 
 总而言之，`rtc_rtp_receiver_platform.cc` 在 Blink 引擎中扮演着接收和初步处理 WebRTC RTP 数据流的重要角色，它是 WebRTC 功能实现的关键底层组件之一，虽然不直接与 JavaScript, HTML, CSS 代码交互，但为这些上层技术提供了坚实的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/rtc_rtp_receiver_platform.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -134,7 +136,4 @@ namespace blink {
 RTCRtpReceiverPlatform::~RTCRtpReceiverPlatform() = default;
 
 }  // namespace blink
-
-"""
-
 ```

@@ -199,15 +199,17 @@ go run embed1.go
 
 总而言之，这段代码通过简单的类型定义和赋值操作，清晰地演示了 Go 语言中接口嵌入的工作方式和类型兼容性规则。它是 Go 语言测试套件的一部分，用于确保编译器正确实现了接口嵌入的特性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/interface/embed1.dir/embed1.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -251,9 +253,4 @@ func main() {
 	pj = pi
 	_ = pj
 }
-
-"""
-
-
-
 ```

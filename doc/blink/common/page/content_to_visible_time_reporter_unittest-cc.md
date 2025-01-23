@@ -124,14 +124,16 @@ This detailed breakdown, moving from the general purpose to specific code elemen
 
 总而言之，`blink/common/page/content_to_visible_time_reporter_unittest.cc` 这个文件通过各种测试用例，确保 `ContentToVisibleTimeReporter` 能够准确地记录页面内容变为可见的时间，这对于监控和优化 Chromium 的性能至关重要。理解其功能和测试场景，有助于开发者在使用和维护相关代码时避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/page/content_to_visible_time_reporter_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -489,7 +491,4 @@ TEST_P(ContentToVisibleTimeReporterTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

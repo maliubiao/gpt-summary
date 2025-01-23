@@ -319,7 +319,7 @@ Interceptor.attach(Module.findExportByName(null, "ioctl"), {
 
 通过 Frida Hook，你可以观察到哪些进程在调用与 RAID 相关的 `ioctl` 系统调用，以及传递的参数，从而调试和理解 Android 系统与 RAID 子系统的交互。然而，正如前面提到的，这种直接的交互在典型的 Android Framework 中并不常见。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/raid/md_u.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -330,8 +330,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -414,7 +416,4 @@ typedef struct mdu_param_s {
   int max_fault;
 } mdu_param_t;
 #endif
-
-"""
-
 ```

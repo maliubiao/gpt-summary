@@ -137,7 +137,7 @@ By following these steps, we can thoroughly analyze the script and provide a com
 
 总而言之，`createpkg.py` 是 Frida 构建过程中用于生成 macOS 安装包的关键脚本，它整合了 Python 打包、系统工具调用和安装包描述文件生成等多个步骤。理解其功能有助于开发者和打包者排除构建过程中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/packaging/createpkg.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017-2021 The Meson development team
@@ -258,7 +260,4 @@ if __name__ == '__main__':
     pg.build_dist()
     pg.build_package()
     pg.remove_tempfiles()
-
-"""
-
 ```

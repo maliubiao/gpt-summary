@@ -126,12 +126,14 @@ By following these steps, I can arrive at the desired summary and JavaScript exa
 
 总而言之，这部分代码是 V8 引擎将 JavaScript 代码转换为可在 PPC 架构上执行的机器码的关键组成部分，涵盖了各种基本的和高级的计算和数据处理操作。理解这部分代码有助于深入了解 JavaScript 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ppc/instruction-selector-ppc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 atomic = load.is_atomic();
         Emit(kPPC_LoadByteRev64 | AddressingModeField::encode(kMode_MRR),
              g.DefineAsRegister(node), g.UseRegister(base),
@@ -1847,7 +1849,4 @@ void VisitAtomicBinaryOperation(InstructionSelectorT<Adapter>* selector,
     } else if (atomic_op.memory_rep == MemoryRepresentation::Int64()) {
       opcode = int64_op;
     } else if (atomic_op.memory_rep == Memor
-"""
-
-
 ```

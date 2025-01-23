@@ -102,14 +102,16 @@ By following these steps, combining code analysis with knowledge of web browser 
 
 总而言之，`blink/renderer/platform/scheduler/common/process_state.cc` 文件是 Blink 渲染引擎中一个重要的基础设施组件，它提供了全局的进程状态信息，并帮助调度器做出更明智的决策，从而影响 web 页面在不同场景下的性能和资源使用。它与 JavaScript, HTML, CSS 的关系是间接的，通过影响调度器的行为来影响这些技术的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/process_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -137,7 +139,4 @@ ProcessState* ProcessState::Get() {
 }  // namespace internal
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

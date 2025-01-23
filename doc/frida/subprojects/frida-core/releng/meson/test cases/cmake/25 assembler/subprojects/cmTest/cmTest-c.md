@@ -96,7 +96,7 @@ By following these steps, I can break down the request, analyze the code, and co
 
 总而言之，`cmTest.c` 是 Frida 内部测试基础设施的一部分，用于验证 Frida 的核心功能，特别是与内存访问和代码执行相关的能力。开发者在进行 Frida 的开发、测试和调试时可能会接触到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/25 assembler/subprojects/cmTest/cmTest.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdint.h>
 
 extern const int32_t cmTestArea;
@@ -114,7 +116,4 @@ int32_t cmTestFunc(void)
 {
     return cmTestArea;
 }
-
-"""
-
 ```

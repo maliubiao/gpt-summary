@@ -112,7 +112,7 @@ func main() {
 
 作为 `go/src/cmd/internal/obj/x86/avx_optabs.go` 文件的第八部分，这段代码的核心功能是**为Go编译器提供AVX指令集的查找表，定义了大量AVX指令在不同扩展和特性下的具体操作码编码**。这使得编译器能够在编译Go代码时，识别潜在的向量化机会，并生成高效的AVX机器码，从而提升程序的执行性能，尤其是在处理大量数据时。  考虑到这是第8部分，整个 `avx_optabs.go` 文件很可能包含了针对x86架构更广泛的AVX指令定义。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/x86/avx_optabs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -121,8 +121,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第8部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 vex0F38 | evexW0, evexN16 | evexBcstN4 | evexZeroingEnabled, 0x46,
 		avxEscape | evex256 | evex66 | evex0F38 | evexW0, evexN32 | evexBcstN4 | evexZeroingEnabled, 0x46,
 		avxEscape | evex512 | evex66 | evex0F38 | evexW0, evexN64 | evexBcstN4 | evexZeroingEnabled, 0x46,
@@ -648,9 +650,4 @@ vex0F38 | evexW0, evexN16 | evexBcstN4 | evexZeroingEnabled, 0x46,
 	{as: AVSUBPS, ytab: _yvaddpd, prefix: Pavx, op: opBytes{
 		avxEscape | vex128 | vex0F | vexW0, 0x5C,
 		avxEscape | vex256 | ve
-"""
-
-
-
-
 ```

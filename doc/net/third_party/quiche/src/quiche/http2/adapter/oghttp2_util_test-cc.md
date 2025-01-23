@@ -208,15 +208,17 @@ quiche::HttpHeaderBlock block = {
 
 总而言之，`oghttp2_util_test.cc` 这个文件虽然是测试代码，但它揭示了 Chromium 网络栈中 HTTP/2 头部信息处理的关键环节，与 JavaScript 发起的网络请求息息相关。理解它的功能有助于理解浏览器如何将高层的网络请求转化为底层的 HTTP/2 通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_util_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/oghttp2_util.h"
 
 #include <utility>
@@ -300,7 +302,4 @@ TEST(ToHeaderBlock, RepeatedResponseHeaderNames) {
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

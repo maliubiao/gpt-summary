@@ -195,7 +195,7 @@ executable('my_hook', 'my_hook.cpp')
 
 作为第 4 部分的总结，`frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/vs2010backend.py` 文件的主要功能是 **将 Meson 构建系统的配置转换为 Visual Studio 2010 可以理解的项目文件**。它负责生成 `.vcxproj` 和 `.vcxproj.filters` 文件，这些文件定义了如何编译 frida-clr 的 C++ 代码，以及如何组织项目结构。这个脚本是 frida 在 Windows 平台上构建过程的关键组成部分，使得开发者可以使用 Visual Studio 来编译、测试和安装 frida。它还支持生成用于重新配置、运行测试和安装的辅助项目，并提供了一种轻量级的 `gen_lite` 模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/backend/vs2010backend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -204,8 +204,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 , inc_cl)
                         self.add_additional_options(lang, inc_cl, file_args)
                         self.add_preprocessor_defines(lang, inc_cl, file_defines)
@@ -563,8 +565,4 @@ Prompt:
 
     def generate_lang_standard_info(self, file_args: T.Dict[str, CompilerArgs], clconf: ET.Element) -> None:
         pass
-
-"""
-
-
 ```

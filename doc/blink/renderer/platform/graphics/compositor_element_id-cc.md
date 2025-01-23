@@ -145,14 +145,16 @@ By following this structured approach, you can effectively analyze code snippets
 
 总而言之，`compositor_element_id.cc` 文件定义了一套用于在 Blink 渲染引擎的合成器中唯一标识元素的机制。 它通过 `CompositorElementId` 类型和相关的工厂函数，将高级的 Web 技术与底层的渲染过程连接起来，使得引擎能够有效地追踪和管理各种图形元素。 正确使用这些 ID 对于保证渲染的正确性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositor_element_id.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -226,7 +228,4 @@ DOMNodeId DOMNodeIdFromCompositorElementId(CompositorElementId element_id) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

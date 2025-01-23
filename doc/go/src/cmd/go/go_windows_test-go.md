@@ -118,15 +118,17 @@ go build \other_file.go
 
 **总结这段测试用例的关键点：** 它专注于测试 `go build` 在 Windows 下处理以 `\` 开头的路径时，能够正确区分根目录下的绝对路径和当前工作目录下的相对路径，并避免错误地拼接路径。 这有助于确保 `go build` 的行为在不同路径格式下的一致性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/go_windows_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -177,9 +179,4 @@ func TestAbsolutePath(t *testing.T) {
 		t.Fatalf("wrong output found: %v %v", err, string(output))
 	}
 }
-
-"""
-
-
-
 ```

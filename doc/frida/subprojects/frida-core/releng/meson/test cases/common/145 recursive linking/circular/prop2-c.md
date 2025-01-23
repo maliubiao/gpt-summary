@@ -160,7 +160,7 @@ Frida 的一个重要功能是能够注入到正在运行的进程中，并拦�
 
 总而言之，`frida/subprojects/frida-core/releng/meson/test cases/common/145 recursive linking/circular/prop2.c` 虽然自身是一个非常简单的函数，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 在处理复杂动态链接场景下的能力。对于逆向工程师来说，理解这类测试用例有助于更深入地理解 Frida 的工作原理和动态链接的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/145 recursive linking/circular/prop2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,12 +168,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int get_st2_prop (void) {
   return 2;
 }
-
-"""
-
 ```

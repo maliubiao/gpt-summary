@@ -216,7 +216,7 @@ Interceptor.attach(Module.findExportByName(null, "problematic_function"), {
 
 总而言之，`extralib.cpp` 文件是一个简单的 Boost.Log 使用示例，在 Frida 的上下文中，它很可能被用作测试或演示 Frida 如何与使用了 Boost.Log 库的程序进行交互。理解这个文件的功能可以帮助 Frida 用户更好地理解目标应用程序的日志记录机制，并为进行动态分析和逆向工程提供基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/1 boost/extralib.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -224,8 +224,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define _XOPEN_SOURCE 500
 
 #include <iostream>
@@ -253,7 +255,4 @@ int main(int argc, char **argv) {
   BOOST_LOG_TRIVIAL(trace) << "SOMETHING";
   return 0;
 }
-
-"""
-
 ```

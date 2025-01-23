@@ -147,15 +147,17 @@ fetch('https://example.com/data')
 
 总而言之，`net/quic/mock_encrypter.cc` 提供了一个简化的、非安全的加密器实现，主要用于 QUIC 协议的开发、测试和调试，以便在不涉及复杂加密算法的情况下验证其他协议逻辑。它与 JavaScript 的关系是间接的，主要体现在浏览器内部网络栈的实现中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/mock_encrypter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -248,7 +250,4 @@ std::string_view MockEncrypter::GetNoncePrefix() const {
 }
 
 }  // namespace net
-
-"""
-
 ```

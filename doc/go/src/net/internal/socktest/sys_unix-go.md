@@ -124,7 +124,7 @@ func main() {
 
 `go/src/net/internal/socktest/sys_unix.go` 文件是 Go 语言 `net` 包中用于单元测试的关键组件。它通过 `Switch` 结构体和过滤器机制，允许开发者模拟和控制底层 socket 系统调用的行为，从而编写出更健壮的网络相关的测试用例。使用者需要注意正确地设置和清理 mock 环境，避免影响其他测试或生产代码的运行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/internal/socktest/sys_unix.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -132,8 +132,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -327,9 +329,4 @@ func (sw *Switch) GetsockoptInt(s, level, opt int) (soerr int, err error) {
 	}
 	return soerr, nil
 }
-
-"""
-
-
-
 ```

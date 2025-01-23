@@ -168,7 +168,7 @@ func main() {
 
 总而言之，`go/src/strings/search_test.go`  是 `strings` 包中用于测试字符串查找功能的测试文件，主要测试了基本的字符串查找 (`StringFind`) 和更高级的字符串查找算法（很可能是 Boyer-Moore）的预处理步骤 (`DumpTables`)。通过这些测试，可以确保 `strings` 包提供的字符串查找功能的正确性和效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strings/search_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -176,8 +176,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2012 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -268,9 +270,4 @@ func TestFinderCreation(t *testing.T) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

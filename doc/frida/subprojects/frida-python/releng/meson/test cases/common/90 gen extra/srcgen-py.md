@@ -230,7 +230,7 @@ This step-by-step thought process, including generating hypotheses and self-corr
 
 总而言之，`srcgen.py` 是一个简单的代码生成工具，虽然功能单一，但在 Frida 的开发和测试流程中扮演着辅助性的角色。它通过读取输入并根据模板生成C代码，方便了快速创建简单的测试桩代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/90 gen extra/srcgen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -238,8 +238,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -267,7 +269,4 @@ if options.upper:
 
 with open(options.output, 'w') as f:
     f.write(c_templ % funcname)
-
-"""
-
 ```

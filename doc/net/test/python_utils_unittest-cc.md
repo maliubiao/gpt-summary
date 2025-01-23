@@ -124,15 +124,17 @@ Let's break down the thought process for analyzing the C++ test code.
 
 总而言之，`net/test/python_utils_unittest.cc` 是一个重要的测试文件，它确保了 Chromium 网络栈中用于与 Python 交互的工具函数的正确性。 虽然它不直接操作 JavaScript，但它所测试的功能在 Chromium 的构建、测试和一些后台任务中起着关键作用，最终可能会影响到包括 JavaScript 在内的整个浏览器的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/test/python_utils_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -182,7 +184,4 @@ TEST(PythonUtils, Python3RunTime) {
   base::TrimWhitespaceASCII(output, base::TRIM_TRAILING, &output);
   EXPECT_EQ(input, output);
 }
-
-"""
-
 ```

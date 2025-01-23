@@ -193,7 +193,7 @@ go build myprogram.go
 
 这个 `bisect` 包的核心思想是提供一种灵活的方式，让程序能够根据外部的 `bisect` 工具的指示，动态地调整其行为，从而辅助开发者定位引入问题的代码变更。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/bisect/bisect.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -201,8 +201,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -981,9 +983,4 @@ func (d *dedup) seenLossy(h uint64) bool {
 	atomic.StoreUint64(&cache[uint(ch)%uint(len(cache))], h)
 	return false
 }
-
-"""
-
-
-
 ```

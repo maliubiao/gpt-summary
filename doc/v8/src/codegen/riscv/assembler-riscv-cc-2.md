@@ -161,7 +161,7 @@ ret             # 返回
 
 总而言之，`v8/src/codegen/riscv/assembler-riscv.cc` 是 V8 引擎中 RISC-V 架构的核心汇编器，它提供了生成、修改和管理 RISC-V 机器码指令以及相关数据结构（如常量池）的功能。它是将 JavaScript 代码转化为可执行机器码的关键组件，并包含了优化立即数加载的策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/assembler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/assembler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ) {
   if (!is_buffer_growth_blocked()) {
     CheckBuffer();
@@ -649,8 +651,4 @@ RegList Assembler::DefaultTmpList() { return {t3, t5}; }
 DoubleRegList Assembler::DefaultFPTmpList() { return {kScratchDoubleReg}; }
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

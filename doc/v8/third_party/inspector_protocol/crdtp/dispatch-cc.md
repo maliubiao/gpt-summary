@@ -197,15 +197,17 @@ While developers don't directly interact with this C++ code, they can make error
 
 In summary, `v8/third_party/inspector_protocol/crdtp/dispatch.cc` is a fundamental piece of V8's debugging infrastructure. It acts as the message router and dispatcher for the Chrome DevTools Protocol, enabling communication between the developer tools and the JavaScript engine. It handles the low-level details of parsing and routing messages, allowing other parts of V8 to focus on implementing the actual debugging functionality.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/dispatch.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/dispatch.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -790,7 +792,4 @@ void UberDispatcher::WireBackend(
 }
 
 }  // namespace v8_crdtp
-
-"""
-
 ```

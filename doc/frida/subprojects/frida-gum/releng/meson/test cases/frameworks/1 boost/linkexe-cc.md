@@ -138,7 +138,7 @@ Essentially, the process involves understanding the code, connecting it to the t
 
 总而言之，`linkexe.cc` 作为一个 Frida 的测试用例，它的存在是为了验证 Frida 动态 instrumentation 工具与使用 Boost 库的程序交互的能力，尤其是在线程和互斥锁方面。它可以作为逆向分析的目标，也为理解 Frida 的工作原理和调试相关问题提供了线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/1 boost/linkexe.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define _XOPEN_SOURCE 500
 
 #include<boost/thread.hpp>
@@ -166,7 +168,4 @@ int main(int argc, char **argv) {
     thr.join();
     return 0;
 }
-
-"""
-
 ```

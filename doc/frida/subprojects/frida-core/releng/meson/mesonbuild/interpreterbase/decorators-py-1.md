@@ -101,7 +101,7 @@ This is the second part of the explanation, so I need to synthesize the informat
 
 总而言之，这一部分代码定义了用于在 Frida 项目的 Meson 构建过程中进行功能特性检查的装饰器，帮助开发者遵循最佳实践，避免使用过时或有问题的 API，确保代码的兼容性和稳定性。虽然它不直接参与逆向工程的执行，但了解其作用有助于理解目标软件的构建过程和潜在的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/interpreterbase/decorators.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 n f'Project specifies a minimum meson_version \'{tv}\' but uses features which were added in newer versions:'
 
     @staticmethod
@@ -232,8 +234,4 @@ class FeatureNewKwargs(FeatureCheckKwargsBase):
 
 class FeatureDeprecatedKwargs(FeatureCheckKwargsBase):
     feature_check_class = FeatureDeprecated
-
-"""
-
-
 ```

@@ -175,7 +175,7 @@ mock_host_resolver()->AddRule("api.example.com", "127.0.0.1");
 
 `MockHostResolverBase` 的主要功能是提供一个可编程和可控的 DNS 解析器模拟器，用于 Chromium 网络栈的单元测试和集成测试。它允许开发者定义主机名到 IP 地址的映射规则，模拟成功的和失败的 DNS 解析场景，并控制异步解析的行为。这使得在不依赖真实 DNS 服务器的情况下，可以可靠地测试网络相关的代码逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/mock_host_resolver.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1174,7 +1176,4 @@ void MockHostResolverBase::TriggerMdnsListeners(
   for (MdnsListenerImpl* listener : listeners_) {
     if (listener->host() == host && listener->query_type() == query_type)
       listener->TriggerAddressResult(update_type, addr
-"""
-
-
 ```

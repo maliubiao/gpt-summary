@@ -184,7 +184,7 @@ This detailed breakdown demonstrates the process of analyzing and understanding 
 
 `rewritedec64.go` 的第 3 部分主要定义了针对 64 位整数类型在 SSA 中间表示上的 **值级别重写规则**。这些规则覆盖了比较操作（相等、小于等于、小于）、位运算（与常量 -1 异或）以及零扩展操作。其目的是通过将某些 64 位操作转换为等价但可能更优化的操作序列，来提升编译效率和最终生成代码的性能。这些重写规则是 Go 编译器优化管道中的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritedec64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -193,8 +193,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 wValue0(v.Pos, OpXor32, typ.UInt32)
 		v4 := b.NewValue0(v.Pos, OpInt64Lo, typ.UInt32)
 		v4.AddArg(x)
@@ -253,10 +255,4 @@ func rewriteValuedec64_OpZeroExt8to64(v *Value) bool {
 func rewriteBlockdec64(b *Block) bool {
 	return false
 }
-
-"""
-
-
-
-
 ```

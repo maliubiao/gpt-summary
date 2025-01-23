@@ -170,7 +170,7 @@ By following these steps, moving from a high-level understanding to detailed ana
 
 总而言之，这个脚本虽然简单，但在 Frida 的构建和测试流程中起着关键的环境检查作用，确保了后续依赖 Meson introspection 的操作能够顺利进行。理解其功能有助于排查 Frida 构建或测试过程中遇到的与环境配置相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/139 mesonintrospect from scripts/check_env.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -208,7 +210,4 @@ if not os.path.isfile(some_executable):
 
 if do_print:
     print(some_executable, end='')
-
-"""
-
 ```

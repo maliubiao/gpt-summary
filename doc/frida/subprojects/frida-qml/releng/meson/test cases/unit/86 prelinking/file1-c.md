@@ -162,7 +162,7 @@ Interceptor.attach(ptr("0x12345678"), { // 假设的地址
 
 总而言之，`file1.c` 是 Frida 为了测试其在处理预链接二进制文件时的 instrumentation 能力而设计的一个简单的单元测试用例。它模拟了一个基本的函数调用关系，方便测试 Frida 的 hook 功能在预链接环境下的正确性。对于逆向工程师来说，理解这样的测试用例可以帮助他们更好地掌握 Frida 的使用，并理解预链接对动态分析的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/86 prelinking/file1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -170,8 +170,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<public_header.h>
 #include<private_header.h>
 
@@ -186,7 +188,4 @@ int round1_a() {
 int round2_a() {
     return round2_b();
 }
-
-"""
-
 ```

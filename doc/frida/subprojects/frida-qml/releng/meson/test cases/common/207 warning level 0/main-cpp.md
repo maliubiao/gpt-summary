@@ -181,7 +181,7 @@ frida -n demo -l your_script.js
 
 总而言之，这个 `main.cpp` 文件虽然简单，但在 Frida 的测试体系中扮演着重要的角色，它可以作为验证 Frida 基本功能的基准测试目标。它的简单性使得开发者可以更容易地理解和调试与 Frida 相关的底层问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/207 warning level 0/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,8 +189,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 
 #define PROJECT_NAME "demo"
@@ -203,7 +205,4 @@ int main(int argc, char **argv) {
     std::cout << "This is project " << PROJECT_NAME << ".\n";
     return 0;
 }
-
-"""
-
 ```

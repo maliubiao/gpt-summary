@@ -131,14 +131,16 @@ By following this thought process, which involves code analysis, deduction based
 
 总而言之，`transferable_message.cc` 定义的 `TransferableMessage` 类是 Blink 中用于跨上下文传递数据的关键结构，特别是对于像 `ArrayBuffer` 这样的可转移对象。 它简化了在不同线程或进程之间安全高效地共享数据的过程，这对于构建复杂的 Web 应用（特别是那些使用 Worker 或 iframe 的应用）至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/messaging/transferable_message.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ TransferableMessage& TransferableMessage::operator=(TransferableMessage&&) =
 TransferableMessage::~TransferableMessage() = default;
 
 }  // namespace blink
-
-"""
-
 ```

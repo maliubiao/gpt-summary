@@ -79,11 +79,13 @@ for (let i = 0; i < 1000000; i++) {
 
 总结来说，`v8/src/heap/cppgc/heap-base.cc` 中定义的 `HeapBase` 类是 V8 引擎 `cppgc` 垃圾回收器的基石，它负责管理 C++ 堆的生命周期、内存分配、垃圾回收协调等关键任务，对 JavaScript 运行时的性能和内存管理有着至关重要的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/heap-base.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -451,7 +453,4 @@ ClassNameAsHeapObjectNameScope::~ClassNameAsHeapObjectNameScope() {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

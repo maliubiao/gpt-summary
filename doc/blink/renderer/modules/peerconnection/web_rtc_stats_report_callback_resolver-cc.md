@@ -138,15 +138,17 @@ Let's break down the thought process for analyzing this code snippet and generat
 
 总而言之，`WebRTCStatsReportCallbackResolver.cc` 虽然是底层的 C++ 代码，但它是 WebRTC JavaScript API 和浏览器底层实现之间的关键桥梁，负责将底层的统计数据转换为 JavaScript 可以使用的格式。理解它的功能有助于调试 WebRTC 相关的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/web_rtc_stats_report_callback_resolver.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "third_party/blink/renderer/modules/peerconnection/web_rtc_stats_report_callback_resolver.h"
 
 #include "third_party/blink/renderer/bindings/core/v8/script_promise_resolver.h"
@@ -163,7 +165,4 @@ void WebRTCStatsReportCallbackResolver(
 }
 
 }  // namespace blink
-
-"""
-
 ```

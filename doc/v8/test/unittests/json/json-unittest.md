@@ -117,11 +117,13 @@ try {
 
 **总结来说，`json-unittest.cc` 通过生成各种有效的 JSON 字符串，并使用 V8 引擎的内部 JSON 解析器进行解析，来验证 V8 的 JSON 解析功能是否正确可靠。这直接关系到 JavaScript 中 `JSON.parse()` 方法的正确性，因为 V8 是 Chrome 浏览器和 Node.js 等 JavaScript 运行环境的核心。**  这个测试文件确保了当 JavaScript 代码调用 `JSON.parse()` 时，在各种合法的 JSON 输入下都能得到预期的结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/json/json-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ V8_FUZZ_TEST_F(JSONTest, ParseValidJsonP)
 
 }  // namespace
 }  // namespace v8
-
-"""
-
 ```

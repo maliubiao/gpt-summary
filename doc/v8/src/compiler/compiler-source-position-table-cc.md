@@ -267,15 +267,17 @@ ReferenceError: c is not defined
 
 `v8/src/compiler/compiler-source-position-table.cc` 是 V8 编译器中一个核心组件，负责记录和管理源代码位置信息，这对于提供有意义的错误报告、支持调试和性能分析至关重要。它通过 `Decorator` 模式自动化地将源代码位置与编译器的中间表示节点关联起来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/compiler-source-position-table.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/compiler-source-position-table.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -359,7 +361,4 @@ void SourcePositionTable::PrintJson(std::ostream& os) const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

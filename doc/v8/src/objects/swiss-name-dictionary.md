@@ -112,11 +112,13 @@ for (let key in myObject) {
 
 `SwissNameDictionary` 是 V8 引擎用于高效存储和管理 JavaScript 对象属性的关键内部组件。它使用了优化的哈希表结构，并考虑了 JavaScript 对象的动态性和属性的各种特性。虽然 JavaScript 开发者无法直接操作它，但它的性能和设计直接影响着 JavaScript 对象的访问速度和内存使用效率。  选择 Swiss Table 这种现代哈希表实现，体现了 V8 引擎对性能的持续优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/swiss-name-dictionary.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -441,7 +443,4 @@ constexpr int SwissNameDictionary::kGroupWidth;
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -18,7 +18,7 @@ Response: The user wants to understand the functionality of the Go code in `go/s
 
 由于这是一个代码生成的文件，它本身不包含可执行的逻辑来实现 `go` 命令的功能。实际的功能实现在 `go` 命令的其他源文件中。`alldocs.go` 只是作为文档的载体，方便用户通过 `go help` 命令获取信息。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/alldocs.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -26,8 +26,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1563,9 +1565,4 @@ Prompt:
 //
 // The replace directive has the same syntax as the replace directive in a
 // go.mod file and takes precedence over replaces in go.mod files.  It
-"""
-
-
-
-
 ```

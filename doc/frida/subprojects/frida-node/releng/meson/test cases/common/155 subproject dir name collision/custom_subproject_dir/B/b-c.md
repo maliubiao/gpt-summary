@@ -124,7 +124,7 @@ Interceptor.attach(Module.findExportByName(null, "func_c"), {
 
 `b.c` 中的 `func_b` 函数是一个简单的条件退出逻辑，其行为依赖于另一个函数 `func_c` 的返回值。在 Frida 的上下文中，这个文件很可能是一个用于演示或测试 Frida 功能的示例。理解这段代码的功能以及相关的底层知识，对于逆向工程师使用 Frida 进行动态分析至关重要。当程序出现意外退出并返回特定的退出码时，这段代码成为了一个重要的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/155 subproject dir name collision/custom_subproject_dir/B/b.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 char func_c(void);
 
@@ -154,7 +156,4 @@ char DLL_PUBLIC func_b(void) {
     }
     return 'b';
 }
-
-"""
-
 ```

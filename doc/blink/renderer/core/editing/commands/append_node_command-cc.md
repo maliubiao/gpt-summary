@@ -164,15 +164,17 @@ Initially, I might have focused too heavily on the technical C++ aspects. Howeve
 
 总而言之，`append_node_command.cc` 中定义的 `AppendNodeCommand` 类是 Blink 引擎中负责安全、可撤销地向 DOM 树添加节点的核心组件，它与用户的交互、JavaScript 代码的执行以及页面的最终呈现都息息相关。理解它的功能对于调试和理解 Blink 引擎的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/append_node_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2006, 2008 Apple Inc. All rights reserved.
  *
@@ -235,7 +237,4 @@ void AppendNodeCommand::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -278,7 +278,7 @@ objects = [
 
 总而言之，`generatorjson.py` 虽然是一个相对简单的 Python 脚本，但在 Frida 的开发和文档维护流程中扮演着关键的角色，它确保了 Frida 用户能够获得准确、结构化的 API 参考信息，这对于高效地使用 Frida 进行动态插桩和逆向工程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/docs/refman/generatorjson.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -286,8 +286,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 from __future__ import annotations
@@ -403,7 +405,4 @@ class GeneratorJSON(GeneratorBase):
         }
 
         self.out.write_text(json.dumps(data), encoding='utf-8')
-
-"""
-
 ```

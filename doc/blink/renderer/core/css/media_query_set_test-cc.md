@@ -150,15 +150,17 @@ By following these steps, I aimed to provide a comprehensive and informative ans
 
 总而言之，`media_query_set_test.cc` 是确保 Blink 引擎能正确理解和处理 CSS 媒体查询的关键组成部分，它帮助开发者避免因浏览器解析错误而导致样式应用异常的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/media_query_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -562,7 +564,4 @@ TEST(MediaQuerySetTest, GeneralEnclosed) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -262,7 +262,7 @@ Process.enumerateModules().forEach(function (m) {
 
 **注意:**  直接操作控制台的权限在现代 Android 上可能受到限制，并且许多图形相关的操作不会使用这些底层的控制台接口。Frida hook 主要用于观察底层的系统调用行为，帮助理解代码的执行流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/kd.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -273,8 +273,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -427,7 +429,4 @@ struct console_font {
 #define KD_FONT_OP_GET_TALL 5
 #define KD_FONT_FLAG_DONT_RECALC 1
 #endif
-
-"""
-
 ```

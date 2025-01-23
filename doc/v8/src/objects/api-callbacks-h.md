@@ -226,15 +226,17 @@ console.log(proxy.name); // 输出 "尝试访问属性: name" 和 undefined (因
 
 总而言之，`v8/src/objects/api-callbacks.h` 定义了 V8 引擎与外部 C++ 代码交互的关键接口，理解这些结构对于开发 V8 扩展或嵌入 V8 是至关重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/api-callbacks.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/api-callbacks.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -362,7 +364,4 @@ class InterceptorInfo
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_API_CALLBACKS_H_
-
-"""
-
 ```

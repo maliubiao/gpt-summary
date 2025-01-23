@@ -186,7 +186,7 @@ void LiftoffAssembler::emit_i32x4_eq(LiftoffRegister dst, LiftoffRegister lhs,
 
 作为第 6 部分（共 6 部分），这个代码片段主要集中在 `LiftoffAssembler` 类的 SIMD 操作实现，特别是针对 ARM 架构。它定义了如何将 WebAssembly 的 SIMD 指令转换为底层的 ARM Neon 指令。此外，它还涵盖了一些其他的底层操作，例如栈管理和特定的条件设置。结合之前的几个部分，这个文件为 Liftoff 编译器在 ARM 架构上生成高效的 WebAssembly 代码提供了关键的基础设施。  整个 `liftoff-assembler-arm-inl.h` 文件是 Liftoff 编译器在 ARM 架构上实现 WebAssembly 功能的核心组成部分之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/arm/liftoff-assembler-arm-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/arm/liftoff-assembler-arm-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 r::emit_i64x2_ge_s(LiftoffRegister dst, LiftoffRegister lhs,
                                        LiftoffRegister rhs) {
   I64x2GeS(liftoff::GetSimd128Register(dst), liftoff::GetSimd128Register(lhs),
@@ -1026,8 +1028,4 @@ void LiftoffStackSlots::Construct(int param_slots) {
 }  // namespace v8::internal::wasm
 
 #endif  // V8_WASM_BASELINE_ARM_LIFTOFF_ASSEMBLER_ARM_INL_H_
-
-"""
-
-
 ```

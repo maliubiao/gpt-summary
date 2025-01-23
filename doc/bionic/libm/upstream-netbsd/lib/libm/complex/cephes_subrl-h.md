@@ -225,7 +225,7 @@ By following this structured approach, I was able to generate a comprehensive an
 
 总而言之，`cephes_subrl.h` 定义了 Android Bionic `libm` 中用于实现复杂数运算的一些底层构建块。理解这些辅助函数的功能以及它们在 `libm` 中的角色，可以帮助我们更好地理解 Android 系统中数学运算的实现细节，并在进行相关开发和调试时提供有价值的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-netbsd/lib/libm/complex/cephes_subrl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -235,8 +235,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* $NetBSD: cephes_subrl.h,v 1.1 2014/10/10 00:48:18 christos Exp $ */
 
 void _cchshl(long double, long double *, long double *);
@@ -245,8 +247,4 @@ long double _ctansl(long double complex);
 
 #define	M_PIL	3.14159265358979323846264338327950280e+00L
 #define	M_PI_2L	1.57079632679489661923132169163975140e+00L
-
-
-"""
-
 ```

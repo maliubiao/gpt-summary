@@ -238,15 +238,17 @@ go run rotate3.go -mode 1
 
 `go/test/rotate3.go` 是一个测试用例生成器，它生成用于测试位旋转功能的Go代码。  `const mode` 常量（或可能的命令行参数）控制着生成的测试用例类型。使用者需要理解它的角色是生成代码，而不是直接执行位旋转操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/rotate3.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // runoutput ./rotate.go
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -259,9 +261,4 @@ Prompt:
 package main
 
 const mode = 3
-
-"""
-
-
-
 ```

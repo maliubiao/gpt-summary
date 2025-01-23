@@ -83,14 +83,16 @@ Let's break down the thought process for analyzing the given C++ test file.
 
 总而言之，`text_codec_test.cc` 文件通过测试 `TextCodec` 类的特定功能，确保了 Blink 引擎能够正确处理不同场景下的字符编码问题，这对于 Web 内容的正确渲染和安全性至关重要。它反映了在 Web 开发中，理解和正确处理字符编码是避免各种显示错误和安全漏洞的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/text_codec_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2016 Google Inc. All rights reserved.
  *
@@ -149,7 +151,4 @@ TEST(TextCodec, CSSEntityEncoding) {
 
 }  // anonymous namespace
 }  // namespace WTF
-
-"""
-
 ```

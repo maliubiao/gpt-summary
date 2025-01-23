@@ -174,12 +174,14 @@ WebAssembly.instantiateStreaming(fetch('module.wasm'), importObject)
 
 总而言之，这部分代码是 V8 WebAssembly 解释器的核心组成部分，负责处理引用类型、类型转换以及与 JavaScript 的互操作，并提供了重要的调试和追踪能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 ate high bit.
   Tagged<Smi> smi(Internals::IntToSmi(value & 0x7fffffff));
   push<WasmRef>(sp, code, wasm_runtime,
@@ -1954,7 +1956,4 @@ void WasmBytecodeGenerator::DecodeAtomicOp(WasmOpcode opcode,
       break;
 
 #define ATOMIC_BINOP(name, Type,
-"""
-
-
 ```

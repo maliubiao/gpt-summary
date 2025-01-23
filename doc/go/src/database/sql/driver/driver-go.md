@@ -339,7 +339,7 @@ func main() {
 
 总而言之，`go/src/database/sql/driver/driver.go` 定义了 Go 语言访问各种 SQL 数据库的桥梁，它通过接口规范了数据库驱动的行为，使得上层的 `database/sql` 包能够以统一的方式操作不同的数据库。 理解这些接口的功能和正确实现方式对于开发高质量的 Go 数据库驱动至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/database/sql/driver/driver.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -347,8 +347,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -902,9 +904,4 @@ func (noRows) LastInsertId() (int64, error) {
 func (noRows) RowsAffected() (int64, error) {
 	return 0, errors.New("no RowsAffected available after DDL statement")
 }
-
-"""
-
-
-
 ```

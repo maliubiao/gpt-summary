@@ -178,7 +178,7 @@ y/z.go (内容: "y/z.go\n")
 
 这段代码是 `go/src/cmd/go/internal/fsys/fsys_test.go` 文件的一部分，专门用于测试 `fsys` 包的文件系统 overlay 功能。它通过模拟不同的绑定场景，包括单层绑定、多层绑定、绑定覆盖等，来验证 `Bind`、`ReadFile` 和 `ReadDir` 等核心功能在 overlay 场景下的正确性。此外，它还测试了通过 JSON 配置 overlay 的功能，并重点测试了各种错误的 JSON 配置，以确保 `fsys` 包能够正确处理这些错误情况。 这部分测试代码对于保证 `fsys` 包的稳定性和可靠性至关重要，因为它涉及到 Go 工具链中对文件系统操作的重要抽象层。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/fsys/fsys_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -187,8 +187,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ", "y/")
 	testReadDir(t, "mtpt/x/y", "z.go")
 	testReadFile(t, "mtpt/x/y/z.go", "replaced/x/y/z.go\n")
@@ -271,10 +273,4 @@ func testReadDir(t *testing.T, name string, want ...string) {
 		t.Errorf("ReadDir(%q) = %q, %v, want %q, nil", name, names, err, want)
 	}
 }
-
-"""
-
-
-
-
 ```

@@ -101,7 +101,7 @@ By following these steps and continuously refining the approach, a comprehensive
 
 在接下来的部分中，我们将详细分析文件中的具体测试用例，了解其测试的具体函数和功能，以及与 Android 的关联。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/unistd_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -113,8 +113,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 The Android Open Source Project
  *
@@ -1201,7 +1203,4 @@ TEST(UNISTD_TEST, sysconf) {
   VERIFY_SYSCONF_POSIX_VERSION(_SC_THREAD_PROCESS_SHARED);
   VERIFY_SYSCONF_UNSUPPORTED(_SC_THREAD_SPORADIC_SERVER);
   VERIFY_SYSCONF_POSIX_VERSION(_SC_TIMEOUT
-"""
-
-
 ```

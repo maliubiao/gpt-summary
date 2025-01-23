@@ -175,15 +175,17 @@ eval("console.log('dynamic code')");
 
 `v8/src/tracing/code-data-source.cc` 是 V8 引擎中一个关键的组件，它负责将 V8 内部的 JavaScript 代码结构信息以结构化的方式导出到 Perfetto 追踪系统。这些数据对于理解 V8 的运行机制、进行性能分析和调试至关重要。虽然开发者不会直接修改这个文件，但通过分析它产生的数据，可以帮助他们识别和修复 JavaScript 代码中的性能问题和潜在的错误模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tracing/code-data-source.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/tracing/code-data-source.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -464,7 +466,4 @@ void CodeDataSource::OnStop(const StopArgs&) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

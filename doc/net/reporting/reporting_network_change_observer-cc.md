@@ -135,15 +135,17 @@ By following these steps,  I systematically analyze the code, connect it to rela
 
 总而言之，`reporting_network_change_observer.cc` 这个文件是 Chromium 网络栈中负责在网络状态变化时管理 Reporting 模块数据的关键组件，它通过监听网络变化并根据预定义的策略来决定是否持久化报告和客户端信息，这直接影响到浏览器中相关 JavaScript API 的行为和数据收集的可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_network_change_observer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ ReportingNetworkChangeObserver::Create(ReportingContext* context) {
 ReportingNetworkChangeObserver::~ReportingNetworkChangeObserver() = default;
 
 }  // namespace net
-
-"""
-
 ```

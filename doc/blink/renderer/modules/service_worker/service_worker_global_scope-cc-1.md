@@ -138,7 +138,7 @@ By following these steps, I can effectively analyze the code and generate a comp
 
 总的来说，这部分代码延续了 Service Worker 全局执行环境的核心功能，专注于事件处理、网络请求拦截和响应、以及与其他 Web API 的集成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/service_worker/service_worker_global_scope.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -146,9 +146,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
- std::move(error));
+### 源代码
+```cpp
+std::move(error));
 }
 
 void ServiceWorkerGlobalScope::OnNavigationPreloadComplete(
@@ -941,8 +943,4 @@ void ServiceWorkerGlobalScope::DispatchExtendableMessageEventInternal(
             std::move(msg.message), origin, ports, source, observer);
       } else {
         observer = MakeGarbageCollected<WaitUntilObserver>(
-    
-"""
-
-
 ```

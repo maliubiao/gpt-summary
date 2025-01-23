@@ -157,14 +157,16 @@ By following these steps, I could systematically analyze the C++ code and genera
 
 总而言之，`color_correction_test_utils.cc` 提供了一套精细的工具，用于确保 Blink 引擎在处理颜色相关的操作时能够保持准确性和一致性。理解这些工具的功能及其与 Web 技术的关系，对于理解浏览器如何渲染网页至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/color_correction_test_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -491,7 +493,4 @@ bool ColorCorrectionTestUtils::MatchSkImages(sk_sp<SkImage> src_image,
 }
 
 }  // namespace blink
-
-"""
-
 ```

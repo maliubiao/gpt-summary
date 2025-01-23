@@ -197,7 +197,7 @@ Function call backtrace:
 
 总而言之，`frida/subprojects/frida-gum/bindings/gumpp/backtracer.cpp` 文件是 Frida 中实现函数调用栈回溯功能的核心 C++ 代码，它封装了 Gum 库提供的底层能力，并提供了易于使用的 C++ 接口供上层（如 JavaScript 绑定）调用，从而让逆向工程师能够在运行时动态地分析程序的执行流程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumpp/backtracer.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "gumpp.hpp"
 
 #include "objectwrapper.hpp"
@@ -259,7 +261,4 @@ namespace Gum
     return new BacktracerImpl (handle);
   }
 }
-
-"""
-
 ```

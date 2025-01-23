@@ -156,7 +156,7 @@ Here's a thinking process to arrive at the analysis of the provided C++ code:
 
 总而言之，虽然 `virtio.cc` 文件中的代码非常简洁，但它在 Frida 工具的上下文中扮演着代表 VirtIO 设备的抽象角色，并且为将来实现与虚拟化设备交互的功能奠定了基础。 理解这个文件的作用需要一定的底层知识，特别是关于 VirtIO 协议和虚拟化技术的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/215 source set realistic example/devices/virtio.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,15 +164,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include "common.h"
 #include "virtio.h"
 
 void VirtioDevice::some_virtio_thing() {
 }
-
-"""
-
 ```

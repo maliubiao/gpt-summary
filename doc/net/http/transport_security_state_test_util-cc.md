@@ -167,15 +167,17 @@ fetch('http://example.com/api')
 
 总而言之，`transport_security_state_test_util.cc` 是 Chromium 网络栈测试框架中一个重要的组成部分，它为 HSTS 和 HPKP 相关的测试提供了灵活且可控的环境。开发者通常不会直接与用户交互，但他们会利用这个工具来保证网络安全特性的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/transport_security_state_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -251,7 +253,4 @@ ScopedTransportSecurityStateSource::~ScopedTransportSecurityStateSource() {
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -195,15 +195,17 @@ func main() {
 
 `b.go` 是一个用于测试 Go 编译器处理匿名结构体和提升方法时类型导出功能的测试用例。它通过声明一系列带有不同方法值表达式的变量来触发编译器的类型检查。理解这个测试用例有助于深入理解 Go 语言的匿名结构体和方法提升特性。普通开发者在使用这些特性时，需要注意提升方法的使用方式，将其视为外层结构体自身的方法来调用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue43479.dir/b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -242,9 +244,4 @@ var O = X.Dir
 var P = (*T).M
 var Q = T.M
 var R = X.M
-
-"""
-
-
-
 ```

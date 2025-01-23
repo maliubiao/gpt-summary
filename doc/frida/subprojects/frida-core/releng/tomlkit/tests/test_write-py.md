@@ -121,7 +121,7 @@ TOML 格式常用于配置文件。在逆向工程中，我们经常需要分析
 
 总而言之，`test_write.py` 文件虽然是一个测试文件，但它揭示了 `tomlkit` 库在序列化 TOML 数据时的关键功能和需要处理的细节，这些细节对于确保 `frida` 等工具能够正确地处理配置文件至关重要，并且与逆向工程中对程序配置的分析和修改密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/tomlkit/tests/test_write.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 from tomlkit import dumps
 from tomlkit import loads
 
@@ -168,7 +170,4 @@ c = 1
 """
     assert dumps(doc) == expected
     assert loads(expected) == doc
-
-"""
-
 ```

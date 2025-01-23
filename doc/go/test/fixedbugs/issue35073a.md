@@ -234,15 +234,17 @@ While the provided code itself is designed to test a feature, let's illustrate c
 
 **In summary, the code snippet tests the interaction between reflection's pointer access methods and the `-d=checkptr` compiler flag, ensuring that valid uses of reflection to obtain unsafe pointers are not incorrectly flagged as errors by the static analysis.** The `checkptr` mechanism is a valuable tool for enhancing memory safety when dealing with `unsafe` operations in Go.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue35073a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run -gcflags=-d=checkptr
 
 // Copyright 2020 The Go Authors. All rights reserved.
@@ -266,9 +268,4 @@ func main() {
 	_ = unsafe.Pointer(reflect.ValueOf(&n).Elem().UnsafeAddr())
 	_ = unsafe.Pointer(reflect.ValueOf(&m).Elem().Pointer())
 }
-
-"""
-
-
-
 ```

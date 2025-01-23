@@ -275,7 +275,7 @@ if (Process.platform === 'android') {
 
 希望以上归纳和解释对您有所帮助！
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/pthread_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -287,8 +287,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 The Android Open Source Project
  *
@@ -1308,7 +1310,4 @@ TEST(pthread, pthread_rwlock_reader_wakeup_writer_timedwait_monotonic_np) {
       [&](pthread_rwlock_t* lock) { return pthread_rwlock_timedwrlock_monotonic_np(lock, &ts); });
 #else   // __BIONIC__
   GTEST_SKIP() << "pthread_
-"""
-
-
 ```

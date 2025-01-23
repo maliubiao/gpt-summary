@@ -96,7 +96,7 @@ By following these steps, I arrived at the comprehensive explanation provided in
 
 `trivial.cc` 虽然代码简单，但在 Frida 的构建过程中扮演着重要的角色，用于验证 C++ 编译环境的有效性。它的成功编译是 Frida 能够正常构建和运行的基础。对于用户来说，遇到与此文件相关的错误通常意味着需要检查其系统上的 C++ 编译器配置。这对于后续使用 Frida 进行逆向分析至关重要，因为 Frida 本身依赖于 C++ 编译环境，并且经常需要与 C++ 编写的目标程序进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/5 compiler detection/trivial.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -104,15 +104,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int main(int argc, char **argv) {
   std::cout << "C++ seems to be working." << std::endl;
   return 0;
 }
-
-"""
-
 ```

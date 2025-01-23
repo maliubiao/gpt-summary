@@ -98,7 +98,7 @@ Here's a plan to address the request:
 
 这部分代码（第3部分）的核心功能是 **定义和管理 Frida 项目中各种构建目标的链接过程，并实施各种规则和检查以确保链接的正确性和兼容性**。它处理了内部库和外部库的链接，检查了链接目标的类型和属性，并考虑了跨平台和跨语言链接的特殊情况，为最终生成可用的 Frida 库和工具奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,9 +107,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
- raise MesonException(textwrap.dedent('''\
+### 源代码
+```python
+raise MesonException(textwrap.dedent('''\
                         An external library was used in link_with keyword argument, which
                         is reserved for libraries built as part of this project. External
                         libraries must be passed using the dependencies keyword argument
@@ -783,7 +785,4 @@ class Executable(BuildTarget):
         return self.debug_filename
 
     def is_linkable_tar
-"""
-
-
 ```

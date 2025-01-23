@@ -127,7 +127,7 @@ using vec = boost::fusion::vector<int, std::string>;
 
 总而言之，`main.cpp` 是 Frida 项目中一个用于测试特定功能的 C++ 源代码文件，它演示了如何使用 Boost Fusion 库，并且其存在与 Frida 的构建、测试以及对目标程序进行动态分析等多个方面都有关联。理解这类测试用例有助于深入理解 Frida 的工作原理和可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/1 boost/partial_dep/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /* Copyright © 2018 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -164,7 +166,4 @@ int main(void) {
 
     return 0;
 }
-
-"""
-
 ```

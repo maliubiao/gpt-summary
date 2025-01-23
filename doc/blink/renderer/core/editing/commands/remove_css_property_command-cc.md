@@ -128,15 +128,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，`RemoveCSSPropertyCommand` 是 Blink 引擎中一个负责移除 HTML 元素内联 CSS 属性的关键组件，它与 JavaScript 的 DOM 操作紧密相关，并为浏览器的各种编辑功能提供底层支持。理解其功能和触发方式有助于调试和理解浏览器内部的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/remove_css_property_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2005, 2008 Apple Inc. All rights reserved.
  *
@@ -214,7 +216,4 @@ void RemoveCSSPropertyCommand::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

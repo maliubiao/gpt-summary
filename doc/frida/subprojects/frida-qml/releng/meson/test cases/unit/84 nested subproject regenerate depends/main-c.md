@@ -124,7 +124,7 @@ Initially, I might have focused too much on the C code itself. The key insight w
 
 总而言之，虽然这个 `main.c` 文件本身非常简单，但它在 Frida 的构建和测试流程中扮演着验证依赖处理功能的重要角色。它帮助确保 Frida 能够正确地处理各种复杂的依赖关系，从而为用户提供稳定可靠的动态 instrumentation 功能。用户遇到的与依赖加载或符号查找相关的问题，可能会间接地指向与此类测试用例相关的底层实现问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/84 nested subproject regenerate depends/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,12 +132,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

@@ -184,14 +184,16 @@ This systematic approach allows for a comprehensive understanding of the `script
 
 总而言之，`blink/renderer/platform/bindings/script_regexp.cc` 文件是 Blink 引擎中用于处理 JavaScript 正则表达式的关键组件，它通过封装 V8 的正则表达式功能，为 Blink 提供了安全且高效的正则表达式操作能力。理解其功能有助于理解浏览器如何执行 JavaScript 中与正则表达式相关的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/script_regexp.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2008, 2009 Apple Inc. All rights reserved.
  * Copyright (C) 2008 Collabora Ltd.
@@ -360,7 +362,4 @@ void ScriptRegexp::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

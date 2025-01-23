@@ -163,15 +163,17 @@ ws.onerror = (error) => {
 * **使用 `chrome://net-export/` 抓取网络日志:**  可以获取更详细的网络层面的信息，包括 WebSocket 握手的详细过程。
 * **如果问题涉及到 Chromium 自身的实现:** 开发者可能会需要查看 Chromium 的源代码，例如这个 `websocket_stream_create_test_base.cc` 文件所在的目录，来理解连接过程中的具体逻辑和可能的错误点。通过分析测试用例，可以了解在各种情况下，代码的预期行为是什么，从而帮助定位生产环境中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_stream_create_test_base.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -335,7 +337,4 @@ std::vector<std::string> WebSocketStreamCreateTestBase::NoSubProtocols() {
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -112,11 +112,13 @@ console.log(...array);
 
 `iterator-unittest.cc` 测试了 V8 引擎中用于表示迭代器范围的 `iterator_range` 类。 虽然这是 C++ 代码，但其核心概念（遍历序列）与 JavaScript 中的可迭代对象和迭代器密切相关。理解 `iterator_range` 的功能有助于理解 V8 引擎是如何处理内部数据结构的遍历的，这对于理解 JavaScript 的底层实现也有一定的帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/iterator-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ TEST(IteratorTest, IteratorTypeDeduction) {
 }
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

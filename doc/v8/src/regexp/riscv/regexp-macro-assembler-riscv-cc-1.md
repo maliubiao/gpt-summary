@@ -694,7 +694,7 @@ while ((match = regex.exec(text)) !== null) {
 当匹配到 `"abbc"` 时，`success_label_` 部分的代码会执行以下操作：
 
 - `num_saved_registers_` 将是 2 (因为有一个捕
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/riscv/regexp-macro-assembler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/riscv/regexp-macro-assembler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -702,10 +702,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-      // Fill saved registers with initial value = start offset - 1.
+### 源代码
+```cpp
+// Fill saved registers with initial value = start offset - 1.
       if (num_saved_registers_ > 8) {
         // Address of register 0.
         __ AddWord(a1, frame_pointer(), Operand(kRegisterZeroOffset));
@@ -1298,8 +1299,4 @@ void RegExpMacroAssemblerRISCV::CallCFunctionFromIrregexpCode(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

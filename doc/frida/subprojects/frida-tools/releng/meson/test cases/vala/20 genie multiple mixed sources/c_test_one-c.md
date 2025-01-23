@@ -159,7 +159,7 @@ console.log("Process ID from C code:", getProcessId());
 
 `c_test_one.c` 作为一个非常基础的 C 语言文件，其自身的功能很简单，主要用于验证 Frida 项目中 C 语言环境的基本可用性。然而，把它放在 Frida 的上下文中，它就与逆向工程、底层系统知识、测试框架等概念紧密相连。查看这个文件的用户通常是 Frida 的开发者、贡献者或者遇到与 C 语言相关的构建或测试问题的研究人员。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/vala/20 genie multiple mixed sources/c_test_one.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,14 +167,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <glib.h>
 
 gboolean c_test_one_is_true (void) {
     return TRUE;
 }
-
-"""
-
 ```

@@ -124,7 +124,7 @@ The user wants a summary of the functionality of the provided C++ code snippet f
 
 总而言之，这部分 `ImageLoader` 代码的核心职责是管理图像资源的加载、解码和与渲染引擎的集成，以及与 JavaScript API 和事件系统的交互。它确保图像能够正确、高效地加载并显示在网页上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/image_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tTaskRunner(TaskType::kDOMManipulation),
       FROM_HERE,
       WTF::BindOnce(&ImageLoader::DispatchPendingLoadEvent,
@@ -355,8 +357,4 @@ void ImageLoader::DecodeRequest::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

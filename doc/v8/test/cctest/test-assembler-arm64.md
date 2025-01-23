@@ -133,12 +133,14 @@ end_if:
 
 `v8/test/cctest/test-assembler-arm64.cc` 的第1部分是V8引擎中ARM64汇编器测试的基础部分，它通过定义测试框架和提供针对基本汇编指令的单元测试，来保障V8引擎在ARM64架构上生成正确且高效的机器码，从而直接影响JavaScript代码的执行性能和正确性。 开发者编写的每一个JavaScript功能，最终都依赖于这些底层的汇编指令的正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -2709,7 +2711,4 @@ TEST(branch_type) {
   RUN();
 
   CHECK_EQUAL_64(0x0,
-"""
-
-
 ```

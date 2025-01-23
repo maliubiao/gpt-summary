@@ -144,14 +144,16 @@ Let's break down the thought process for analyzing the provided C++ code for `IC
 
 总而言之，`ico_image_decoder.cc` 是 Chromium 渲染引擎中一个关键的组件，它使得浏览器能够理解和显示 Windows 平台常见的图标和光标文件，直接影响了网页的视觉呈现和用户交互体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/ico/ico_image_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2008 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -521,7 +523,4 @@ ICOImageDecoder::ImageType ICOImageDecoder::ImageTypeAtIndex(wtf_size_t index) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

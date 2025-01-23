@@ -194,7 +194,7 @@ func TestTransportResponseHeaderTimeoutExample(t *testing.T) {
 
 这部分 `transport_test.go` 代码主要集中在测试 `http.Transport` 在处理各种超时场景和请求取消时的正确性和健壮性。它覆盖了多种取消请求的方式，并验证了在不同阶段取消请求的行为和错误处理。此外，它还测试了与连接管理、错误处理以及其他 HTTP 协议特性相关的边缘情况。理解这部分测试用例有助于开发者更好地理解 `http.Transport` 的工作原理以及如何避免在使用 HTTP 客户端时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/transport_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -203,8 +203,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 e connc <- conn:
 		default:
 		}
@@ -1399,9 +1401,4 @@ func TestTransportTLSHandshakeTimeout(t *testing.T) {
 		return
 	}
 	ue, ok := err.(*u
-"""
-
-
-
-
 ```

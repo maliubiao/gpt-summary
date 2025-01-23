@@ -283,7 +283,7 @@ sys.stdin.read()
 
 运行此 Frida 脚本后，当目标应用调用 `SHA1Update` 函数时，Frida 会拦截该调用，执行 `onEnter` 函数，并在控制台上打印出 `SHA1Update` 的上下文指针、输入数据（十六进制）和长度。这可以帮助开发者调试和理解 Android Framework 或 NDK 应用如何使用 Bionic libc 的 SHA-1 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/android/include/sys/sha1.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -294,8 +294,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: sha1.h,v 1.13 2005/12/26 18:41:36 perry Exp $	*/
 
 /*
@@ -327,7 +329,4 @@ void	SHA1Final(u_char[SHA1_DIGEST_LENGTH], SHA1_CTX *);
 __END_DECLS
 
 #endif /* _SYS_SHA1_H_ */
-
-"""
-
 ```

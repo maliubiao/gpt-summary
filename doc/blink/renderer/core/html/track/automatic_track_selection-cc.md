@@ -201,15 +201,17 @@ By following these steps, you can systematically analyze the code, understand it
 
 总而言之，`automatic_track_selection.cc` 是 Blink 引擎中一个关键的组成部分，它负责在用户与包含文本轨道的媒体内容交互时，根据用户的偏好和轨道自身的属性，智能化地选择和激活合适的文本轨道，从而提供更好的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/automatic_track_selection.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -430,7 +432,4 @@ void AutomaticTrackSelection::Perform(TextTrackList& text_tracks) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

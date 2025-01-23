@@ -144,7 +144,7 @@ Here's a plan to summarize the functionality:
 
 总的来说，这段 `api_test.go` 代码片段是 `types2` 包功能测试的一部分，它系统地测试了类型检查器在处理各种 Go 语言结构和概念时的正确性，包括选择器、常量、方法查找、类型转换、类型恒等、泛型、接口、别名、复合字面量、作用域、导入、错误处理和 Go 版本控制等方面。这些测试用例确保了 `types2` 包的 API 能够按照预期工作，为 Go 编译器的类型检查功能提供了可靠的保障。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/types2/api_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -152,8 +152,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 main.A, int)", "->[0 0]"},
 		"(*A).f":        {"method expr (*main.A) f(*main.A, int)", "->[0 0]"},
 		"B.f":           {"method expr (main.B) f(main.B, int)", ".[0]"},
@@ -1481,10 +1483,4 @@ func TestVersionWithoutPos(t *testing.T) {
 		t.Errorf("check error was %q, want substring %q", got, want)
 	}
 }
-
-"""
-
-
-
-
 ```

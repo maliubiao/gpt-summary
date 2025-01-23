@@ -129,14 +129,16 @@ Origin Trials 的目的是让开发者能够测试新的 Web 平台功能，这�
 
 总而言之，`v8_interface_bridge_base.cc` 中的 `FeatureSelector` 类虽然代码量不多，但在 Blink 引擎中扮演着重要的角色，它控制着哪些实验性的 Web 平台功能可以被启用，从而影响 JavaScript、HTML 和 CSS 的行为和可用性。它的正确使用对于确保 Origin Trials 功能的正常运作至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/v8_interface_bridge_base.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -158,7 +160,4 @@ V8InterfaceBridgeBase::FeatureSelector::FeatureSelector(
 
 }  // namespace bindings
 }  // namespace blink
-
-"""
-
 ```

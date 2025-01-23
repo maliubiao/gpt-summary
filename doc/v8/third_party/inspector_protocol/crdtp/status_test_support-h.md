@@ -120,15 +120,17 @@ console.log("代码继续执行，但断点没有生效");
 
 总而言之，`v8/third_party/inspector_protocol/crdtp/status_test_support.h` 是一个用于 V8 CRDTP 模块的测试辅助工具，它通过 `gtest` 匹配器简化了 `Status` 对象的断言，提高了测试的可读性和错误信息的丰富程度，最终有助于确保 V8 调试功能的正确性。虽然它本身是 C++ 代码，但其目的是为了测试与 JavaScript 调试协议相关的 C++ 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/status_test_support.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/status_test_support.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -161,7 +163,4 @@ testing::Matcher<Status> StatusIs(Error error, size_t pos);
 }  // namespace v8_crdtp
 
 #endif  // V8_CRDTP_STATUS_TEST_SUPPORT_H_
-
-"""
-
 ```

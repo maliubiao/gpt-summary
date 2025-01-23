@@ -133,15 +133,17 @@ class MyTestConnectionListener : public EmbeddedTestServerConnectionListener {
 
 总而言之，`embedded_test_server_connection_listener.cc` 提供了一个灵活的机制，允许开发者在嵌入式测试服务器完成连接处理后注入自定义的逻辑，这对于测试复杂的网络交互场景非常有用。 它通过提供一个虚函数作为扩展点来实现这一点，鼓励开发者通过继承来添加特定的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/test/embedded_test_server/embedded_test_server_connection_listener.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ void EmbeddedTestServerConnectionListener::OnResponseCompletedSuccessfully(
     std::unique_ptr<StreamSocket> socket) {}
 
 }  // namespace net::test_server
-
-"""
-
 ```

@@ -158,14 +158,16 @@ By following these steps and engaging in this kind of detailed analysis, I can a
 
 总而言之，`hyphenation.cc` 文件是 Blink 渲染引擎中负责实现文本断字功能的核心组件，它与 CSS 的 `hyphens` 属性和 HTML 的 `lang` 属性密切相关，确保了网页文本在不同语言和排版需求下能够合理地进行断行显示。虽然 JavaScript 不直接操作这个文件，但可以通过操作 DOM 间接地触发其功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/hyphenation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -237,7 +239,4 @@ Vector<wtf_size_t, 8> Hyphenation::HyphenLocations(
 }
 
 }  // namespace blink
-
-"""
-
 ```

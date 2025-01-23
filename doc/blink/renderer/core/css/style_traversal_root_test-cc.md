@@ -167,15 +167,17 @@ Finally, we organize the findings into a clear and structured answer, addressing
 
 总而言之，`style_traversal_root_test.cc` 是 Blink 引擎中用于确保 `StyleTraversalRoot` 类正确性和健壮性的重要组成部分。它通过模拟各种场景来验证该类在处理样式更新时的逻辑，并间接地反映了 CSS 样式计算与 HTML DOM 结构和 JavaScript 交互的方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_traversal_root_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -394,7 +396,4 @@ TEST_F(StyleTraversalRootTest, Update_CommonRoot_FlatTree) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

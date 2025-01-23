@@ -154,15 +154,17 @@ By following these steps, you can effectively analyze and explain the functional
 
 通过以上步骤，可以追踪模块脚本的加载过程，并定位可能出现的问题。例如，如果网络请求失败，问题可能出在网络连接或服务器配置上；如果 MIME 类型错误，则需要检查服务器的配置；如果 CORS 出现问题，需要检查服务器的 CORS 头信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/modulescript/document_module_script_fetcher.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -279,7 +281,4 @@ void DocumentModuleScriptFetcher::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

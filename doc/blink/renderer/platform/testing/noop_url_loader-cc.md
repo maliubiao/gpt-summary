@@ -117,14 +117,16 @@ loader.LoadSynchronously(std::move(request), /* ... 其他参数 ... */ &respons
 
 `NoopURLLoader` 是一个专门为测试目的设计的 URL 加载器，它的核心功能是模拟资源加载，但不进行实际的网络请求。它对于隔离网络依赖、快速测试 Blink 渲染引擎的其他部分非常有用。然而，在实际的浏览器代码中使用或错误地期望其执行网络操作会导致严重的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/testing/noop_url_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -166,7 +168,4 @@ void NoopURLLoader::LoadAsynchronously(
     URLLoaderClient*) {}
 
 }  // namespace blink
-
-"""
-
 ```

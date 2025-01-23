@@ -98,7 +98,7 @@ Here's a breakdown of the code's functionalities:
 
 这段代码主要关注 V8 引擎中字符串的底层实现和功能测试，涵盖了字符串的性能、不同类型的字符串（特别是外部字符串）的处理、字符编码的转换、以及一些可能导致错误或性能问题的边界情况。 这些测试旨在确保 V8 能够高效且正确地处理各种字符串操作，并对潜在的 Bug 进行回归测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-strings.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-strings.cc以.tq结尾，那它是个v8 torque源代码，
@@ -106,8 +106,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 CompileRun("'\\u0255\\u0254\\u0253'.repeat(1E6)").As<v8::String>();
   v8::Local<v8::String> two_byte_string =
       CompileRun("'\\u2255\\u2254\\u2253'.repeat(1E6)").As<v8::String>();
@@ -983,8 +985,4 @@ TEST(ExternalStringIndexOf) {
                .FromJust());
   CHECK_EQ(1, CompileRun("external.indexOf('', 1)")
                   ->Int32Value(context.local())
-             
-"""
-
-
 ```

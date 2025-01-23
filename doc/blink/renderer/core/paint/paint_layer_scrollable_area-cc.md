@@ -93,7 +93,7 @@ The user wants a summary of the functionality of the `paint_layer_scrollable_are
 
 总而言之，`blink/renderer/core/paint/paint_layer_scrollable_area.cc` 是 Blink 渲染引擎中一个核心的文件，负责管理网页中可滚动区域的各种行为和属性，并与 HTML、CSS 和 JavaScript 的滚动相关功能紧密相连。理解其功能有助于开发者更好地理解浏览器如何处理滚动，并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/paint_layer_scrollable_area.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2009, 2010, 2011, 2012 Apple Inc. All rights
  * reserved.
@@ -889,7 +891,4 @@ void PaintLayerScrollableArea::ScrollbarFrameRectChanged() {
     // problems, see https://crbug.com/1377634. Note that we do not have
     // automated test case for this, so if you when modifying this code, please
     // verify that the test cases on the bug do no
-"""
-
-
 ```

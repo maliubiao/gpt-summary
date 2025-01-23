@@ -156,14 +156,16 @@ By following these steps, including self-correction, I can arrive at a comprehen
 
 总而言之，`region_capture_crop_id_test.cc` 确保了 Chromium Blink 引擎中 UUID 和 Token 之间转换的正确性，这对于实现屏幕区域捕获等功能至关重要，并且间接地与 Web 开发中使用的 JavaScript, HTML 和 CSS 技术相关联。 该测试通过定义明确的输入输出和随机测试来验证转换函数的可靠性，并帮助开发者避免因不正确的类型使用而导致的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/region_capture_crop_id_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ TEST(RegionCaptureCropIdTest, RandomRoundTripConversion) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

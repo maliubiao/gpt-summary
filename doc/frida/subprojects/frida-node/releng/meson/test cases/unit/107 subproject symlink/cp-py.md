@@ -191,7 +191,7 @@ By following these steps of understanding, analyzing, connecting concepts, and s
 
 `cp.py` 是一个非常基础的文件复制工具，但在软件开发和逆向工程中都有着广泛的应用。在 Frida 的测试框架中，它很可能被用作一个辅助工具，用于创建、复制测试文件，以验证 Frida 相关功能在各种场景下的正确性，特别是涉及到子项目和符号链接的情况。 用户到达这里可能是为了理解 Frida 的测试机制，或者调试与文件操作相关的 Frida 功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/107 subproject symlink/cp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -199,15 +199,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from sys import argv
 from shutil import copy
 
 copy(argv[1], argv[2])
-
-"""
-
 ```

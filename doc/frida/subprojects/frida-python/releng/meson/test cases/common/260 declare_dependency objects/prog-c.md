@@ -145,7 +145,7 @@ Java.perform(function() {
 
 在这个过程中，`prog.c` 文件本身只是一个静态的源代码文件，它的价值在于作为 Frida 动态分析的目标。通过 Frida，用户可以观察到当 `prog` 运行到调用 `foo()` 时的各种动态行为，即使 `foo()` 的具体实现是未知的。  `frida/subprojects/frida-python/releng/meson/test cases/common/260 declare_dependency objects/` 这样的路径结构也进一步印证了这是一个测试用例，用于验证 Frida 的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/260 declare_dependency objects/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,12 +153,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern void foo(void);
 
 int main(void) { foo(); }
-
-"""
-
 ```

@@ -167,7 +167,7 @@ Finally, I organize the information into clear sections as requested in the prom
 
 总而言之，`frida/subprojects/frida-gum/tests/heap/pagepool.c` 这个文件通过一系列细致的测试用例，验证了 `GumPagePool` 内存池的各项功能，为 Frida 动态插桩的稳定性和可靠性提供了保障。理解这些测试用例及其背后的原理，对于 Frida 的开发者和高级用户来说，是深入理解 Frida 内部机制的重要途径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/heap/pagepool.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,8 +175,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008-2010 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -391,7 +393,4 @@ TESTCASE (alloc_and_fill_full_cycle)
 
   memset (p, 0, buffer_size);
 }
-
-"""
-
 ```

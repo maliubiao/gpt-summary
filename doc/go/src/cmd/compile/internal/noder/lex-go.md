@@ -197,15 +197,17 @@ func main() {
 
 总而言之，这段 `lex.go` 代码是 Go 编译器中一个重要的组成部分，它负责识别和解析源代码中的编译器指令，特别是那些用于指导 Cgo 交互的指令，确保编译器能够按照开发者的意图正确地编译和链接代码。理解其功能有助于开发者更好地使用 Go 语言的特性，尤其是与 C 代码进行互操作时。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/noder/lex.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -390,9 +392,4 @@ func pragmaFields(s string) []string {
 	}
 	return a
 }
-
-"""
-
-
-
 ```

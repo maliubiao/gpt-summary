@@ -180,15 +180,17 @@ add(5, 3);
 
 总之，`v8/src/execution/thread-local-top.cc` 是 V8 引擎中一个至关重要的文件，它负责管理每个执行线程的私有数据，这些数据对于 JavaScript 代码的正确执行至关重要，并且与 JavaScript 的许多核心功能紧密相关。理解其作用有助于理解 V8 的内部工作原理以及可能导致用户编程错误的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/thread-local-top.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/thread-local-top.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -265,7 +267,4 @@ void ThreadLocalTop::StoreCurrentStackPosition() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

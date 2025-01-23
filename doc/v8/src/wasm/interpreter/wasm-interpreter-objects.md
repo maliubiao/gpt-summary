@@ -96,11 +96,13 @@ WebAssembly.instantiateStreaming(fetch('module.wasm'))
 
 `wasm-interpreter-objects.cc` 文件是 V8 引擎中 WebAssembly 解释器实现的关键部分。它定义了用于管理解释器状态、执行 WebAssembly 代码以及获取解释器运行时信息的对象和方法。虽然 JavaScript 开发者通常不会直接操作这些 C++ 对象，但当他们执行 WebAssembly 代码时，尤其是在不使用或无法使用 JIT 编译的情况下，这个文件中的代码会在幕后发挥关键作用。它确保了 WebAssembly 代码能够在 V8 引擎中正确执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter-objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -198,7 +200,4 @@ int WasmInterpreterObject::GetFunctionIndex(Tagged<Tuple2> interpreter_object,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

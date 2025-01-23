@@ -130,7 +130,7 @@ Here's a breakdown of the thought process to generate the response:
 
 总之，这段代码是 Blink 引擎中用于测试 CSS 环境变量功能的关键部分，它验证了环境变量的解析和高效的样式更新机制，确保了浏览器能够正确且高效地处理依赖于环境信息的样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_environment_variables_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -138,9 +138,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-                   UADefinedVariable::kTitlebarAreaWidth,
+### 源代码
+```cpp
+UADefinedVariable::kTitlebarAreaWidth,
                                   /*feature_context=*/nullptr),
                               {});
   EXPECT_TRUE(data);
@@ -182,8 +184,4 @@ TEST_F(StyleEnvironmentVariablesTest, TargetedInvalidation) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

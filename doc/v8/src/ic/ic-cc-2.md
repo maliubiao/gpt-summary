@@ -258,7 +258,7 @@ typedArray[0] = 100;
 
 总而言之，这部分代码是 V8 引擎实现高效属性赋值的核心组成部分，它直接影响了 JavaScript 代码的性能和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ic/ic.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ic/ic.cc以.tq结尾，那它是个v8 torque源代码，
@@ -266,8 +266,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Look up in script context table.
   Handle<String> str_name = Cast<String>(name);
   Handle<JSGlobalObject> global = isolate()->global_object();
@@ -1019,7 +1021,4 @@ void KeyedStoreIC::StoreElementPolymorphicHandlers(
   std::vector<Handle<Map>> receiver_maps;
   receiver_maps.reserve(receiver_maps_and_handlers->size());
   f
-"""
-
-
 ```

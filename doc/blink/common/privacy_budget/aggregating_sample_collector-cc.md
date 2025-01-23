@@ -200,14 +200,16 @@ By following these steps, you can effectively analyze the provided C++ code and 
 
 总而言之，`AggregatingSampleCollector` 是 Blink 引擎中一个关键的组件，用于支持隐私预算研究，它通过收集、聚合和上报标识性样本来帮助评估不同浏览器功能对用户隐私的影响。理解其功能和限制对于正确地集成和使用它是非常重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/aggregating_sample_collector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -472,7 +474,4 @@ bool AggregatingSampleCollector::AddNewUnsentSampleToKnownSource(
 }
 
 }  // namespace blink
-
-"""
-
 ```

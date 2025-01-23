@@ -173,15 +173,17 @@ console.log("Original frame closed");
 
 通过这些调试手段，可以深入了解 `VideoFrameHandle` 的生命周期和资源管理，从而定位和解决 WebCodecs 应用中可能出现的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/video_frame_handle.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -385,7 +387,4 @@ void VideoFrameHandle::NotifyExpiredLocked() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

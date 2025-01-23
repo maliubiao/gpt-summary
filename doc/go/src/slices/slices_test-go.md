@@ -173,7 +173,7 @@ true
 
 这部分代码的主要功能是为 Go 语言标准库的 `slices` 包中的多个切片操作函数提供全面的单元测试。它通过定义各种测试用例，包括正常情况、边界情况以及使用自定义比较函数的情况，来验证这些函数的正确性。这些测试覆盖了切片的比较、查找、修改（插入、删除、替换）、复制、去重和容量管理等核心功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/slices/slices_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -182,8 +182,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1611,9 +1613,4 @@ func TestRepeat(t *testing.T) {
 		{x: make([]struct{}, math.MaxInt/2-1), count: 2, want: make([]struct{}, 2*(math.MaxInt/2-1))},
 		{x: make([]struct{}, math.MaxInt/3-2), count: 3, want: make([]struct{}, 3*(math.MaxInt/3-2))},
 		{x: make([]struct{}, math.MaxInt/4-3), count: 4, want: make([]struct{}, 4*(math.MaxIn
-"""
-
-
-
-
 ```

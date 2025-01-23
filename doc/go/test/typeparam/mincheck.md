@@ -173,15 +173,17 @@ go test -run=Mincheck ./go/test/typeparam
 
 总而言之，`go/test/typeparam/mincheck.go` 是 Go 语言泛型功能的一个编译器错误检查测试文件。它包含了一些故意编写错误的 Go 代码，用于验证 Go 编译器在处理泛型相关错误时是否能够正确地报告错误信息。这种类型的测试对于确保 Go 语言的编译器能够准确地诊断和提示用户代码中的泛型错误至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/typeparam/mincheck.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheckdir
 
 // Copyright 2021 The Go Authors. All rights reserved.
@@ -189,9 +191,4 @@ Prompt:
 // license that can be found in the LICENSE file.
 
 package ignored
-
-"""
-
-
-
 ```

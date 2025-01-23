@@ -86,14 +86,16 @@ Let's break down the thought process to analyze the provided C++ code for `inlin
 
 `inline_text_auto_space_test.cc` 文件通过一系列的单元测试，确保了 Blink 引擎中负责行内文本自动空格功能的 `InlineTextAutoSpace` 类能够按照预期工作。它覆盖了各种 HTML 结构、字符组合以及 CSS 属性的影响，帮助开发者避免因为自动空格功能而产生意外的渲染结果。理解这个测试文件的内容，可以帮助我们更好地理解浏览器是如何处理文本间距的，以及如何通过 CSS 来控制这种行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_text_auto_space_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -247,7 +249,4 @@ TEST_P(HtmlTest, Apply) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

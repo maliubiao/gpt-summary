@@ -206,15 +206,17 @@ This systematic approach allows me to dissect the code, understand its purpose w
 
 总而言之，`go/test/codegen/maps.go` 这个文件是 Go 编译器测试套件的一部分，用于确保编译器能够正确地优化 map 类型的操作，从而提高程序的性能。它通过断言生成的汇编代码来验证编译器的优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/maps.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -421,9 +423,4 @@ func MapLiteralSizing(x int) (map[int]int, map[int]int) {
 	}
 	return m, n
 }
-
-"""
-
-
-
 ```

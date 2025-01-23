@@ -180,7 +180,7 @@ Initially, I might focus solely on the Java code. However, realizing the context
 
 因此，到达 `TextPrinter.java` 这个文件的路径和内容，是 Frida 开发和测试过程中的一个环节，用于验证 Frida 在 Java 环境下的基本代码注入和执行能力。这是一个典型的自底向上的开发和测试过程，从最基本的功能开始验证，逐步构建更复杂的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/java/6 codegen/com/mesonbuild/TextPrinter.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class TextPrinter {
@@ -204,7 +206,4 @@ class TextPrinter {
         System.out.println(msg);
     }
 }
-
-"""
-
 ```

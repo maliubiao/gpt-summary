@@ -180,7 +180,7 @@ By following these steps, you can systematically analyze a code snippet and extr
 
 总而言之，`clike.py` 文件在 Frida 的构建过程中扮演着重要的角色，它通过一系列的编译时检查，确保 Frida 能够正确地针对不同的 C-like 语言环境进行编译和运行，这对于 Frida 作为跨平台动态插桩工具至关重要。它与逆向工程密切相关，因为它帮助 Frida 理解和操作目标进程的底层细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/compilers/mixins/clike.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -189,9 +189,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    }}'''
+### 源代码
+```python
+}}'''
         return head, main
 
     @staticmethod
@@ -794,8 +796,4 @@ Prompt:
             self.preprocessor.mode = 'PREPROCESSOR'
             self.modes.append(self.preprocessor)
         return self.preprocessor
-
-"""
-
-
 ```

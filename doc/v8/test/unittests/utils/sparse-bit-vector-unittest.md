@@ -119,11 +119,13 @@ console.log("移除 2 后的元素:", myVector.toArray()); // 输出: [0, 4]
 
 `sparse-bit-vector-unittest.cc` 文件验证了 C++ 中 `SparseBitVector` 类的核心功能，该类用于高效地存储和操作稀疏的非负整数集合。  虽然 JavaScript 没有直接对应的 `SparseBitVector` 实现，但 `Set` 对象在概念上提供了类似的功能，用于管理唯一值的集合。在需要高性能和处理大量稀疏索引的场景下，像 V8 这样的引擎会选择使用更底层的、优化的数据结构如 `SparseBitVector`。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/utils/sparse-bit-vector-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ TEST_F(SparseBitVectorTest, Remove) {
 }
 
 }  // namespace v8::internal
-
-"""
-
 ```

@@ -144,15 +144,17 @@ GOOS=js GOARCH=wasm go build -o main.wasm your_package_name.go
 
 总而言之，这段代码片段是 Go 语言 Wasm 支持中关于函数导出的一个测试用例，它验证了 `//go:wasmexport` 指令的正确使用和错误诊断机制。理解这段代码有助于开发者正确地使用 Go 语言将函数导出到 WebAssembly 模块。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/wasmexport.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2024 The Go Authors. All rights reserved.
@@ -172,9 +174,4 @@ type S int32
 
 //go:wasmexport M
 func (S) M() {} // ERROR "cannot use //go:wasmexport on a method"
-
-"""
-
-
-
 ```

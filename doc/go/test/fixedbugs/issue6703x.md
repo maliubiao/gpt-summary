@@ -175,15 +175,17 @@ func main() {
 
 总而言之，这段代码是 Go 编译器用来测试其初始化循环依赖检测能力的一个小巧的例子。它强调了在全局变量初始化阶段，特别是涉及指针和方法调用时，需要注意潜在的初始化顺序问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue6703x.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -205,9 +207,4 @@ var (
 	p *T
 	x = p.pm() // ERROR "initialization cycle|depends upon itself"
 )
-
-"""
-
-
-
 ```

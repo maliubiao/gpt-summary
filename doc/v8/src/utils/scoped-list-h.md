@@ -184,15 +184,17 @@ int main() {
 
 `v8/src/utils/scoped-list.h` 定义的 `ScopedList` 是 V8 内部用于高效管理临时列表的工具类。它通过作用域生命周期和重用底层 `std::vector` 的方式，减少了内存分配和释放的开销。理解其作用域特性对于避免潜在的编程错误至关重要。虽然它不是直接暴露给 JavaScript 的，但它在 V8 引擎执行 JavaScript 代码的过程中发挥着重要的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/scoped-list.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/utils/scoped-list.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -313,7 +315,4 @@ using ScopedPtrList = ScopedList<T*, void*>;
 }  // namespace v8
 
 #endif  // V8_UTILS_SCOPED_LIST_H_
-
-"""
-
 ```

@@ -143,14 +143,16 @@ By following this systematic approach, covering the different aspects of the cod
 
 总而言之，`DecodingImageGenerator` 是 Blink 渲染引擎中一个关键的图像处理模块，它负责将各种格式的图像数据解码成 Skia 可以使用的像素信息，最终使得图像能够在浏览器中正确显示。虽然开发者不直接调用它，但理解其功能有助于理解浏览器如何处理图像以及相关错误的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/decoding_image_generator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -475,7 +477,4 @@ DecodingImageGenerator::GetMetadataForDecodeAcceleration() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

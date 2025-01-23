@@ -118,15 +118,17 @@ rotateRight(0b1100110011001100, 4) = 0b1100110011001100
 
 `go/test/rotate2.go` 的主要功能是生成一个名为 `rotate.go` 的 Go 程序，用于测试位旋转操作。 `const mode = 2` 可能用于控制生成的测试用例类型。使用者需要理解这是一个代码生成器，并通过编译和运行生成的 `rotate.go` 文件来执行测试。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/rotate2.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // runoutput ./rotate.go
 
 // Copyright 2013 The Go Authors. All rights reserved.
@@ -139,9 +141,4 @@ Prompt:
 package main
 
 const mode = 2
-
-"""
-
-
-
 ```

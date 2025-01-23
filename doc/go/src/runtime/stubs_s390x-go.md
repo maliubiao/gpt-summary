@@ -179,7 +179,7 @@ Frame pointer returned from innerFunc in outerFunc: 0x0
 
 理解这些底层机制有助于更深入地理解 Go 语言的并发模型和运行时原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/stubs_s390x.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -187,8 +187,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -202,9 +204,4 @@ func save_g()
 // getfp returns the frame pointer register of its caller or 0 if not implemented.
 // TODO: Make this a compiler intrinsic
 func getfp() uintptr { return 0 }
-
-"""
-
-
-
 ```

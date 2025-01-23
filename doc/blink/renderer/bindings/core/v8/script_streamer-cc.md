@@ -132,7 +132,7 @@ By following these steps, I can generate a comprehensive yet concise summary of 
 
 `blink/renderer/bindings/core/v8/script_streamer.cc` 的核心功能是**实现 JavaScript 代码的流式加载和解析，通过与 V8 引擎的紧密协作，利用 Mojo 数据管道高效地将 JavaScript 代码分块地传递给 V8 进行后台编译，从而显著提升页面加载性能。** 它负责管理数据流、处理不同类型的脚本、集成编译提示，并提供错误处理和性能监控机制。它的存在是为了优化用户访问网页时 JavaScript 的加载体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/core/v8/script_streamer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -980,8 +982,4 @@ void ResourceScriptStreamer::OnDataPipeReadable(
                                    NotStreamingReason::kErrorOccurred);
       return;
   }
- 
-"""
-
-
 ```

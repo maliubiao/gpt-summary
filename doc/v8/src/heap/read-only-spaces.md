@@ -127,11 +127,13 @@ console.log(myObject.anotherProperty);
 
 `v8/src/heap/read-only-spaces.cc` 文件定义了 V8 引擎中用于管理只读内存空间的关键组件。这个只读空间存储了 JavaScript 引擎的核心数据，特别是内置对象的原型，这保证了 JavaScript 语言基础的稳定性和安全性。尝试修改这些只读数据在 JavaScript 中是不允许的。 通过使用快照，V8 可以快速加载这些只读数据，从而提升启动速度。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/read-only-spaces.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -722,7 +724,4 @@ void ReadOnlySpace::FinalizeSpaceForDeserialization() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

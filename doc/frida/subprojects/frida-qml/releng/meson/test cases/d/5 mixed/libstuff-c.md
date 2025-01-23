@@ -187,7 +187,7 @@ if (printLibraryStringAddress) {
 
 这个简单的 `libstuff.c` 文件虽然功能简单，但作为 Frida 动态插桩的测试用例，可以帮助用户理解 Frida 的基本工作原理和使用方法，并为分析更复杂的程序打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/d/5 mixed/libstuff.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -215,7 +217,4 @@ int DLL_PUBLIC printLibraryString(const char *str)
     printf("C library says: %s", str);
     return 3;
 }
-
-"""
-
 ```

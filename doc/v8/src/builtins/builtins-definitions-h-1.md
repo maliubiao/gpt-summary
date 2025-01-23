@@ -166,7 +166,7 @@ console.warn("This is a warning.");
 
 这段代码是V8引擎的核心组成部分，它声明了大量用于实现JavaScript语言功能的内置函数。通过这些声明，V8能够将JavaScript代码高效地转换为机器码并执行。这段代码涵盖了各种内置对象和方法，为开发者提供了丰富的API来构建复杂的JavaScript应用。尽管是定义文件，我们仍然可以从中推断出函数的功能和潜在的使用场景，以及用户可能遇到的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-definitions.h以.tq结尾，那它是个v8 torque源代码，
@@ -174,9 +174,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
-                                      \
+### 源代码
+```c
+\
   TFC(ArraySingleArgumentConstructor_Holey_DisableAllocationSites,             \
       ArraySingleArgumentConstructor)                                          \
   TFC(ArraySingleArgumentConstructor_PackedDouble_DisableAllocationSites,      \
@@ -582,7 +584,4 @@ Prompt:
   TFC(DivideSmi_Baseline, BinarySmiOp_Baseline)                                \
   TFC(Modulus_Baseline, BinaryOp_Baseline)                                     \
   TF
-"""
-
-
 ```

@@ -48,7 +48,7 @@ Think about how developers or users might misuse the networking features being t
 * **Authentication Issues:** Incorrect usernames or passwords for proxy or server authentication.
 * **Network Connectivity Problems:**  Basic issues like no internet connection or firewall blocking.
 * **Server-Side Errors
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -56,8 +56,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ) {
   HttpRequestInfo request;
   request.method = "GET";
@@ -869,7 +871,4 @@ TEST_P(HttpNetworkTransactionTest, HttpProxyLoadTimingWithPacTwoRequests) {
 
   TestCompletionCallback callback2;
   auto t
-"""
-
-
 ```

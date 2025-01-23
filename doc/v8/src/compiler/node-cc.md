@@ -129,15 +129,17 @@ processData(largeData);
 
 总而言之，`v8/src/compiler/node.cc` 是 V8 编译器中至关重要的一个文件，它定义了表示程序操作和值的基本单元，并提供了管理这些单元之间关系的关键功能。理解其功能有助于深入了解 V8 编译器的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/node.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/node.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -649,7 +651,4 @@ V8_DONT_STRIP_SYMBOL
 V8_EXPORT_PRIVATE extern void _v8_internal_Node_Print(void* object) {
   reinterpret_cast<i::compiler::Node*>(object)->Print();
 }
-
-"""
-
 ```

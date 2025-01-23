@@ -115,7 +115,7 @@ This detailed breakdown illustrates a systematic approach to understanding unfam
 
 这段代码是 `internal/trace` 包中用于测试和分析垃圾回收性能的关键部分，特别是关于 Mutator Utilization 的计算。它使用了模拟数据和真实的 trace 数据来验证 MMU 和 MUD 计算的正确性，并对比了不同实现方式的性能。理解这段代码有助于理解 Go 运行时如何监控和分析 GC 行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/gc_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -123,8 +123,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -320,9 +322,4 @@ func mmuSlow(util []trace.MutatorUtil, window time.Duration) (mmu float64) {
 	update()
 	return
 }
-
-"""
-
-
-
 ```

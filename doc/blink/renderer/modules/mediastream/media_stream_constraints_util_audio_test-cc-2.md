@@ -111,7 +111,7 @@ Essentially, this part thoroughly tests the logic that decides which audio sourc
 
 总而言之，这部分代码通过一系列详尽的测试用例，验证了 Blink 引擎在处理音频媒体流约束时的正确性和健壮性。它涵盖了各种音频处理约束、浏览器特定的约束、设备选择逻辑以及与采样率和延迟相关的约束。这些测试确保了当网站通过 `getUserMedia` API 请求音频访问并指定各种约束条件时，Blink 引擎能够正确地选择合适的音频源和参数，从而提供预期的音频体验。它也帮助开发者排查与音频约束处理相关的潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_audio_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 raint_factory_.Reset();
       (constraint_factory_.basic().*kAudioProcessingConstraints[i])
           .SetIdeal(false);
@@ -401,8 +403,4 @@ INSTANTIATE_TEST_SUITE_P(
                      testing::Values(ChromeWideAecExperiment::kDisabled)));
 #endif
 }  // namespace blink
-
-"""
-
-
 ```

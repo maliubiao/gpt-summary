@@ -111,15 +111,17 @@ func main() {
 
 `go/test/codegen/zerosize.go` 通过创建一个零大小的 channel 和一个指针变量，并利用汇编检查指令，来验证 Go 编译器是否能正确地将它们分配到不同的栈空间，防止它们意外地共享同一个内存地址。这体现了 Go 语言在内存管理方面的严谨性，确保了程序的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/codegen/zerosize.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // asmcheck
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -145,9 +147,4 @@ func zeroSize() {
 
 //go:noinline
 func g(**int, int, int, int, int, int) {}
-
-"""
-
-
-
 ```

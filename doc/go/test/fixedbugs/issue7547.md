@@ -150,15 +150,17 @@ func getNilNestedMapPtr() *map[string]map[string]interface{} {
 
 总而言之，`go/test/fixedbugs/issue7547.go`  这段代码片段的主要目的是作为 Go 语言编译器的一个测试用例，用于验证编译器在处理指向嵌套 map 的指针声明时的正确性。它本身不执行任何复杂的业务逻辑，但其存在表明了 Go 语言开发团队对编译器细节的高度关注和严谨的测试态度。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7547.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compile
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -176,9 +178,4 @@ func f() map[string]interface{} {
 func main() {
 	f()
 }
-
-"""
-
-
-
 ```

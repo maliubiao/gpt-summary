@@ -142,14 +142,16 @@ By following this detailed thought process, I can generate a comprehensive and a
 
 总而言之，`webrtc_util.cc` 提供了一组底层的实用工具，用于处理 WebRTC 相关的媒体格式和时间信息，为 Blink 引擎正确处理 WebRTC 音视频流奠定了基础。它通过解析和转换关键数据，使得 JavaScript 中发起的 WebRTC 连接能够顺利进行，并在 HTML 页面上正确渲染媒体内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/peerconnection/webrtc_util.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ std::optional<media::VideoCodecProfile> WebRTCFormatToCodecProfile(
   return std::nullopt;
 }
 }  // namespace blink
-
-"""
-
 ```

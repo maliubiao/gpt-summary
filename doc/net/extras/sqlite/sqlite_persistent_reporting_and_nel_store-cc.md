@@ -96,7 +96,7 @@ policy.last_used = base::Time::Now();
 
 这部分代码定义了一个用于持久化存储 NEL 策略和 Reporting API 配置信息的组件。它使用 SQLite 数据库作为存储介质，提供了异步的增删改查操作，并考虑了 NetworkAnonymizationKey 的处理。核心是 `SQLitePersistentReportingAndNelStore::Backend` 类，它负责数据库的管理和操作。代码也定义了数据库的 schema 和迁移逻辑，并使用了批量处理来优化数据库写入性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/extras/sqlite/sqlite_persistent_reporting_and_nel_store.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -923,7 +925,4 @@ void SQLitePersistentReportingAndNelStore::Backend::DoCommit() {
     reporting_endpoint_pending_ops_.swap(reporting_endpoint_ops);
     reporting_endpoint_group_pending_ops_.swap(reporting_endpoint_group_ops);
     // TODO(chlily): swap out pending operations queue for Re
-"""
-
-
 ```

@@ -244,15 +244,17 @@ func main() {
 
 总结来说，`go/src/cmd/link/internal/arm64/asm.go` 文件是 Go 语言链接器中处理 ARM64 架构汇编指令和重定位的核心部分，它负责生成启动代码、处理各种类型的重定位、生成不同目标文件格式的重定位信息，以及处理动态链接和长跳转等复杂场景。理解其功能对于深入了解 Go 语言的链接过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/arm64/asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Inferno utils/5l/asm.c
 // https://bitbucket.org/inferno-os/inferno-os/src/master/utils/5l/asm.c
 //
@@ -1676,9 +1678,4 @@ func gentrampgot(ctxt *ld.Link, ldr *loader.Loader, tramp *loader.SymbolBuilder,
 	r.SetSiz(8)
 	r.SetSym(target)
 }
-
-"""
-
-
-
 ```

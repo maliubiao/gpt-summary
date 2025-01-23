@@ -227,7 +227,7 @@ sys.stdin.read()
 
 总结来说，`bionic/tests/scsi_sg_test.cpp` 虽然代码很简单，但它验证了与底层硬件交互的关键头文件的可用性，这对于理解 Android 的存储架构和驱动程序接口至关重要。 要深入理解其在 Android 系统中的作用，需要结合对 Android Framework、Native 服务、Bionic 库以及 Linux 内核的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/scsi_sg_test.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -238,8 +238,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -259,7 +261,4 @@ Prompt:
 // This test is just "does it compile?" because the scsi headers come from a special set.
 #include <sys/types.h>
 #include <scsi/sg.h>
-
-"""
-
 ```

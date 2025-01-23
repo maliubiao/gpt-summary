@@ -170,7 +170,7 @@ Interceptor.attach(Module.findExportByName(null, "func2"), {
 
 总而言之，尽管 `file.c` 中的 `func2` 函数非常简单，但它在 Frida 的测试框架中扮演着一个基础的角色，用于验证 Frida 的核心功能，例如函数拦截和返回值修改。对于学习 Frida 和进行逆向工程的用户来说，理解这样简单的例子是至关重要的，它可以帮助他们构建更复杂的 Frida 脚本来分析和操作更复杂的程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/47 same file name/d2/file.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,10 +178,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2(void) { return 42; }
-
-"""
-
 ```

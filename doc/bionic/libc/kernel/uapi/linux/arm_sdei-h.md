@@ -251,7 +251,7 @@ sys.stdin.read() # 保持脚本运行
 
 通过这种方式，你可以逐步跟踪 Android Framework 的请求，查看 Native 代码如何使用 SDEI 与内核交互，并分析传递的参数，从而深入了解 SDEI 在 Android 系统中的使用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/arm_sdei.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -262,8 +262,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -324,7 +326,4 @@ Prompt:
 #define SDEI_EVENT_PRIORITY_NORMAL 0
 #define SDEI_EVENT_PRIORITY_CRITICAL 1
 #endif
-
-"""
-
 ```

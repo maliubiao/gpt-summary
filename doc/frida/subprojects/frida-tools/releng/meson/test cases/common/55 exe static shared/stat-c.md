@@ -159,7 +159,7 @@ By following this detailed thought process, anticipating potential ambiguities, 
 
 总而言之，这个简单的 `stat.c` 文件虽然功能不多，但它涵盖了动态链接、函数调用、符号导出等重要的编程和逆向工程概念。理解这样的基础代码片段是进行更复杂的软件分析和逆向工程的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/55 exe static shared/stat.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "subdir/exports.h"
 
 int shlibfunc(void);
@@ -176,7 +178,4 @@ int shlibfunc(void);
 int DLL_PUBLIC statlibfunc(void) {
     return shlibfunc();
 }
-
-"""
-
 ```

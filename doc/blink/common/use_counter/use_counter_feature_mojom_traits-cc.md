@@ -123,14 +123,16 @@ bool success = StructTraits<blink::mojom::UseCounterFeatureDataView, blink::UseC
 
 `blink/common/use_counter/use_counter_feature_mojom_traits.cc` 负责定义 Mojo Trait，用于安全地序列化和反序列化 `blink::UseCounterFeature` 对象，并确保某些特定的保留特性不会被通过 Mojo 接口传递。这对于 Blink 引擎内部不同进程之间的通信，以及维护数据的一致性和安全性至关重要。它直接关联着对 JavaScript、HTML 和 CSS 特性的使用情况的追踪和统计。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/use_counter/use_counter_feature_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -181,7 +183,4 @@ bool StructTraits<
 }
 
 }  // namespace mojo
-
-"""
-
 ```

@@ -207,15 +207,17 @@ Let's consider a few scenarios and how user actions might lead to this code bein
 
 In summary, `net/android/network_library.cc` is a vital component of Chromium on Android, acting as the crucial link between Chromium's network logic and the underlying Android system's networking capabilities. It handles a wide range of tasks, from certificate verification and network policy enforcement to retrieving network information and managing socket connections. While it doesn't directly interact with JavaScript, its functions are essential for enabling the network functionality that JavaScript code relies upon. Understanding this bridge is crucial for debugging network-related issues in Chromium-based applications on Android.
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/android/network_library.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -565,7 +567,4 @@ NET_EXPORT_PRIVATE int GetAddrInfoForNetwork(handles::NetworkHandle network,
 }
 
 }  // namespace net::android
-
-"""
-
 ```

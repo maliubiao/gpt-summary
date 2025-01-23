@@ -185,7 +185,7 @@ int func(void) {
 
 总而言之，这个简单的 `func.c` 文件在 Frida 的上下文中扮演着重要的角色，它是测试 Frida 动态 instrumentation 功能的基础组件，帮助开发者验证和确保 Frida 的核心功能正常工作。虽然代码本身很简单，但其背后的原理和应用却涉及到很多底层技术和逆向工程的知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/7 mixed/func.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,13 +193,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func(void) {
     int class = 0;
     return class;
 }
-
-"""
-
 ```

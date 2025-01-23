@@ -95,7 +95,7 @@ Now, I need to elaborate on the relationships with web technologies, provide exa
 
 这部分 `cache.cc` 代码主要负责实现 `Cache` 接口提供的各种操作，允许 JavaScript 代码通过 Service Workers 或网页中的脚本来管理浏览器的缓存。它处理了查找、添加和删除缓存条目的核心逻辑，并与底层的存储机制进行交互。 这些功能是构建离线 Web 应用和优化网络性能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/cache_storage/cache.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 >Trace(cache_remote_);
   ScriptWrappable::Trace(visitor);
 }
@@ -526,8 +528,4 @@ ScriptPromise<IDLSequence<Request>> Cache::KeysImpl(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -372,7 +372,7 @@ sys.stdin.read()
 
 运行此 Frida 脚本后，当目标应用执行 `open` 或 `fcntl` 系统调用时，你将会在 Frida 的输出中看到相关的参数信息，从而可以调试和理解这些步骤。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-generic/fcntl.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -383,8 +383,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -520,7 +522,4 @@ struct f_owner_ex {
 #ifndef HAVE_ARCH_STRUCT_FLOCK
 #endif
 #endif
-
-"""
-
 ```

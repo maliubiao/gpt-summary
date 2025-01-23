@@ -169,7 +169,7 @@ Message: 42
 
 总而言之，`meson-sample.c` 是 Frida-gum 框架的一个简单测试用例，用于验证与 GObject 相关的特性。它可以作为学习 Frida 动态 instrumentation 技术以及理解 GLib/GObject 框架的一个起点。它也可能在 Frida 开发和调试过程中被开发人员接触到。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/frameworks/22 gir link order/meson-sample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample.h"
 
 #include "get-prgname.h"
@@ -227,7 +229,4 @@ meson_sample_print_message (MesonSample *self)
   g_print ("Message: %s\n", get_prgname_get_name ());
   g_print ("Message: %d\n", fake_gthread_fake_function ());
 }
-
-"""
-
 ```

@@ -149,15 +149,17 @@ int main() {
 
 `net/third_party/quiche/src/quiche/quic/test_tools/rtt_stats_peer.cc` 是一个专门用于测试目的的工具，它允许开发者绕过正常的 RTT 测量机制，直接设置 QUIC 连接的 RTT 统计信息。这对于模拟各种网络延迟场景、调试 QUIC 协议的特定行为非常有帮助。普通用户不会直接接触到这个文件，它主要用于 Chromium 开发者进行底层网络协议的测试和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/rtt_stats_peer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ void RttStatsPeer::SetMinRtt(RttStats* rtt_stats, QuicTime::Delta rtt_ms) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

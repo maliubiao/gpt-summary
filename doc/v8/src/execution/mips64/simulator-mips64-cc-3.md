@@ -158,7 +158,7 @@ if (a < b) { // 对应 C++ 中的 C_OLT_D 等比较指令
 
 作为整个模拟器的第 4 部分，这段代码主要负责 **MIPS64 架构浮点运算指令的模拟**。它实现了各种单精度和双精度浮点运算、类型转换、比较以及舍入操作的逻辑。这部分是 V8 引擎能够在 MIPS64 平台上执行 JavaScript 代码的关键组成部分，因为它模拟了 JavaScript 中浮点数运算在目标架构上的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/mips64/simulator-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/mips64/simulator-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -166,9 +166,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共9部分，请归纳一下它的功能
+```
 
-"""
-   *result = a;
+### 源代码
+```cpp
+*result = a;
   } else if (b == a) {
     // Handle -0.0 == 0.0 case.
     // std::signbit() returns int 0 or 1 so subtracting MaxMinKind::kMax
@@ -1228,7 +1230,4 @@ void Simulator::DecodeTypeRegisterCOP1() {
     case CTC1: {
       // At the moment only FCSR is supported.
       DCHECK_EQ(fs_reg(), kFCSRRegist
-"""
-
-
 ```

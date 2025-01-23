@@ -177,14 +177,16 @@ By following this structured approach, breaking down the code into smaller, mana
 
 总而言之，`shape_result_spacing.cc` 中定义的 `ShapeResultSpacing` 类是 Blink 渲染引擎中负责精确控制文本字符和词之间视觉间距的关键组件，它与 CSS 属性紧密相关，并通过 JavaScript 的动态修改影响最终的页面呈现。理解其功能有助于开发者更好地掌握网页排版和性能优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/shaping/shape_result_spacing.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -366,7 +368,4 @@ template class ShapeResultSpacing<TextRun>;
 template class ShapeResultSpacing<String>;
 
 }  // namespace blink
-
-"""
-
 ```

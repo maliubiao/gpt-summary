@@ -148,14 +148,16 @@ console.log(new Set().isSupersetOf(setA)); // 输出: false (空集不包含 set
 
 总而言之，这段 Torque 代码高效地实现了 JavaScript 的 `Set.prototype.isSupersetOf` 方法，并针对不同的输入类型进行了优化，体现了 V8 引擎在性能方面的考虑。理解这段代码有助于深入了解 JavaScript Set 的内部实现和优化策略。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/set-is-superset-of.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ transitioning javascript builtin SetPrototypeIsSupersetOf(
   unreachable;
 }
 }
-
-"""
-
 ```

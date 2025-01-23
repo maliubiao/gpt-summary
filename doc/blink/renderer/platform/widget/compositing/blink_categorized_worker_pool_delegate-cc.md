@@ -116,14 +116,16 @@ By following these steps, we can effectively analyze the code and provide a comp
 
 `blink_categorized_worker_pool_delegate.cc` 是 Blink 引擎中一个重要的组件，它负责在特定平台上管理工作线程的优先级。通过将这些线程设置为后台类型，可以帮助提升主线程的性能，从而改善用户体验。虽然它不直接处理 JavaScript、HTML 或 CSS 代码，但它影响着这些技术背后线程的运行方式，尤其是在涉及异步任务和并行处理时。 理解其功能有助于开发者更好地理解 Chromium 的底层工作原理以及如何优化 Web 应用的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/compositing/blink_categorized_worker_pool_delegate.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ void BlinkCategorizedWorkerPoolDelegate::NotifyThreadWillRun(
 }
 
 }  // namespace blink
-
-"""
-
 ```

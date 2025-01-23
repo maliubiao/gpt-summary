@@ -139,15 +139,17 @@ By following this breakdown and iterative refinement, we arrive at the comprehen
 
 总之，`SpdyNoOpVisitor` 的存在通常意味着“不做任何操作”，在调试时遇到它，需要仔细分析为什么在当前场景下选择了这样一个空操作的 Visitor，从而找到问题的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/core/spdy_no_op_visitor.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ bool SpdyNoOpVisitor::OnUnknownFrame(SpdyStreamId /*stream_id*/,
 }
 
 }  // namespace spdy
-
-"""
-
 ```

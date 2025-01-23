@@ -120,7 +120,7 @@ Now I can formulate the response based on this analysis.
 
 这部分代码主要负责将构建好的单个文件或目录从构建目录复制到最终的安装目标位置。它根据文件类型执行不同的复制操作，并根据配置决定是否剥离二进制文件的符号以及修复其 RPATH。  `rebuild_all` 函数提供了在安装前重新构建项目的能力，而 `run` 函数是整个安装过程的入口点。  总而言之，这部分代码是 Frida 安装流程中具体的文件安装和处理执行者。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/minstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 tname = os.path.join(outdir, os.path.basename(fname))
             final_path = os.path.join(d.prefix, t.outdir, os.path.basename(fname))
             should_strip = t.strip or (t.can_strip and self.options.strip)
@@ -265,8 +267,4 @@ def run(opts: 'ArgumentType') -> int:
         else:
             installer.do_install(datafilename)
     return 0
-
-"""
-
-
 ```

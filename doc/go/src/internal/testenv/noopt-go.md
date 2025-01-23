@@ -106,7 +106,7 @@ func TestWithoutOptimization(t *testing.T) {
 
 `go/src/internal/testenv/noopt.go` 中的 `OptimizationOff` 函数是 Go 内部测试框架的一部分，用于判断编译时是否禁用了优化。它通过 Go 的构建标签机制实现，只有在编译或测试时指定了 `-tags=noopt` 才会返回 `true`。 使用者需要注意正确使用构建标签来达到禁用优化的目的，否则可能会导致测试行为与预期不符。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/testenv/noopt.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -114,8 +114,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -128,9 +130,4 @@ package testenv
 func OptimizationOff() bool {
 	return true
 }
-
-"""
-
-
-
 ```

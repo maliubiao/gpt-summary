@@ -114,15 +114,17 @@ Let's break down each of these points based on the provided code:
 
 `visual_rect_mapping_test.cc` 的第一部分集中测试了 Blink 渲染引擎中布局对象将自身局部矩形映射到祖先元素坐标系的能力。它通过构建各种 HTML 结构和应用不同的 CSS 属性，模拟了复杂的布局场景，并验证了 `MapToVisualRectInAncestorSpace` 方法在这些场景下的正确性。这对于确保浏览器能够准确地计算元素在页面上的视觉位置至关重要，并为 JavaScript 提供的各种位置相关的 API 奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/visual_rect_mapping_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -887,7 +889,4 @@ TEST_P(VisualRectMappingTest,
 TEST_P(VisualRectMappingTest, CSSClip) {
   SetBodyInnerHTML(R"HTML(
     <div id='container' style='
-"""
-
-
 ```

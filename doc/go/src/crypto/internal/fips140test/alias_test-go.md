@@ -219,7 +219,7 @@ go test -run Aliasing ./go/src/crypto/internal/fips140test
 
 总而言之，`alias_test.go` 这个文件通过精心设计的测试用例，确保了 `crypto/internal/fips140/alias` 包中的 `AnyOverlap` 和 `InexactOverlap` 函数能够准确判断字节切片之间的内存重叠关系，这对于需要进行内存安全操作的底层代码来说至关重要。由于它属于 `fips140` 包，很可能用于实现符合 FIPS 140 标准的加密算法，这些算法对内存安全有严格的要求。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140test/alias_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -227,8 +227,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -278,9 +280,4 @@ func TestAliasing(t *testing.T) {
 		testAliasing(t, i, tt.y, tt.x, tt.anyOverlap, tt.inexactOverlap)
 	}
 }
-
-"""
-
-
-
 ```

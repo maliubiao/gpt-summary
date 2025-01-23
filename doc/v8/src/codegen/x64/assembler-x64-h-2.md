@@ -122,7 +122,7 @@ console.log(result); // 输出 [6, 8, 10, 12]
 
 `v8/src/codegen/x64/assembler-x64.h` 的第 3 部分主要定义了 `Assembler` 类在 x64 架构下生成 **SIMD 指令** 的方法，包括 SSE、AVX、AVX2、FMA 和 BMI 等指令集。这些指令允许 V8 高效地执行向量化操作，例如对浮点数和整数数组进行并行计算、数据重排和位操作，从而提升 JavaScript 代码的执行性能。 此外，它还包含了一些控制流和内存操作相关的指令，以及用于代码大小跟踪的辅助方法。 这部分是 V8 代码生成器中实现高性能数值计算和数据处理的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/assembler-x64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/x64/assembler-x64.h以.tq结尾，那它是个v8 torque源代码，
@@ -130,8 +130,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ndingMode mode);
   void roundsd(XMMRegister dst, Operand src, RoundingMode mode);
   void roundps(XMMRegister dst, XMMRegister src, RoundingMode mode);
@@ -913,7 +915,4 @@ ndingMode mode);
   }
 
   // Record a deoptimization reason that can be used by a log o
-"""
-
-
 ```

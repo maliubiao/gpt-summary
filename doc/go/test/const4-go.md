@@ -254,15 +254,17 @@ This specific Go code doesn't process any command-line arguments. It's a self-co
 
 In summary, this Go code snippet serves as a test case to ensure the correct behavior of the `len` and `cap` functions in various scenarios involving constants and non-constants, especially related to arrays, maps, slices, function calls, and channel operations. It highlights the distinction between compile-time and runtime evaluation of these built-in functions.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/const4.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2011 The Go Authors. All rights reserved.
@@ -345,9 +347,4 @@ func main() {
 		panic("fail")
 	}
 }
-
-"""
-
-
-
 ```

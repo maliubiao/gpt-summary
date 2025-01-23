@@ -172,15 +172,17 @@ console.log(strings); // 输出 ["你好", "世界", "你好世界"] (排序结�
 
 理解 `v8/src/init/icu_util.cc` 的功能对于那些需要 V8 的国际化特性的开发者来说至关重要，尤其是在将 V8 嵌入到其他应用中时，需要正确配置 ICU 数据才能确保国际化功能的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/init/icu_util.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/init/icu_util.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ bool InitializeICU(const char* icu_data_file) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

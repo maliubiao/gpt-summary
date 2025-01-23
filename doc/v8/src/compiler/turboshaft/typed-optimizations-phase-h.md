@@ -156,15 +156,17 @@ Add [Input1: a, Input2: b]               // 执行加法操作
 
 `v8/src/compiler/turboshaft/typed-optimizations-phase.h` 定义了 Turboshaft 编译器中一个重要的阶段，它通过分析和利用类型信息来优化生成的机器代码，从而提高 JavaScript 代码的执行效率。它与 JavaScript 的性能息息相关，并且其优化策略会受到 JavaScript 代码中类型使用方式的影响。虽然它本身不直接报告编程错误，但其工作原理与理解 JavaScript 的动态类型特性以及避免类型相关的性能陷阱密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/typed-optimizations-phase.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/typed-optimizations-phase.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ struct TypedOptimizationsPhase {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_TYPED_OPTIMIZATIONS_PHASE_H_
-
-"""
-
 ```

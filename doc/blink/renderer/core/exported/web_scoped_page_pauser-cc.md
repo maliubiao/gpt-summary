@@ -153,15 +153,17 @@ By following this structured thinking process, combining code analysis with an u
 
 `web_scoped_page_pauser.cc` 提供了一个方便且安全的方式来暂停和恢复 Web 页面的执行。它的行为受到 Feature Flags 的影响，并且与 JavaScript, HTML 和 CSS 的运行息息相关。理解其功能和使用场景对于调试 Chromium 渲染引擎的行为至关重要。当遇到页面意外暂停或行为异常时，可以考虑是否涉及到 `WebScopedPagePauser` 的使用，并检查相关的 Feature Flags 和调用堆栈。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_scoped_page_pauser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ WebScopedPagePauser::WebScopedPagePauser(WebLocalFrameImpl& frame) {
 WebScopedPagePauser::~WebScopedPagePauser() = default;
 
 }  // namespace blink
-
-"""
-
 ```

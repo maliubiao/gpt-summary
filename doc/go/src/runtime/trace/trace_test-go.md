@@ -179,7 +179,7 @@ func main() {
    * `trace.Start/Stop` 是在程序内部控制追踪的开始和结束。
    * 这段测试代码中，会首先检查是否设置了 `-test.trace`，如果设置了，就会跳过当前的测试，因为这两种方式可能会相互干扰。  使用者容易混淆这两种方式，认为设置了 `-test.trace` 就无需在代码中使用 `trace.Start/Stop`，反之亦然。 实际上，它们的应用场景不同。`-test.trace` 用于测试，而 `trace.Start/Stop` 用于生产环境的程序分析。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/trace/trace_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -187,8 +187,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -250,9 +252,4 @@ func saveTrace(t *testing.T, buf *bytes.Buffer, name string) {
 		t.Errorf("failed to write trace file: %s", err)
 	}
 }
-
-"""
-
-
-
 ```

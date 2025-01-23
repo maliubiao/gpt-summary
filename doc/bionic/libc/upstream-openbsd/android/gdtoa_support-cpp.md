@@ -226,7 +226,7 @@ if (dtoa_locks_addr) {
 
 总而言之，`bionic/libc/upstream-openbsd/android/gdtoa_support.cpp` 虽然代码简单，但它在 Android 的 C 库中扮演着重要的角色，为浮点数到字符串的转换提供了必要的线程安全保障，这对于保证多线程 Android 应用程序的稳定性和正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/android/gdtoa_support.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -237,8 +237,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -258,7 +260,4 @@ Prompt:
 #include <pthread.h>
 
 __LIBC_HIDDEN__ pthread_mutex_t __dtoa_locks[] = { PTHREAD_MUTEX_INITIALIZER, PTHREAD_MUTEX_INITIALIZER };
-
-"""
-
 ```

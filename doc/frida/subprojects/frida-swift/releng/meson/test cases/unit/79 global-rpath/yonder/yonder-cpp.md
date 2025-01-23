@@ -119,7 +119,7 @@ Finally, the information needs to be organized clearly, using headings and bulle
 
 总而言之，`yonder.cpp` 自身是一个非常简单的函数，但在 Frida 的上下文中，它作为一个测试用例，用于验证 Frida 在处理与动态链接和全局 RPATH 相关的场景时的正确性。对于逆向工程师来说，理解这类测试用例有助于深入了解 Frida 的工作原理，并更好地利用 Frida 进行动态分析和程序调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/79 global-rpath/yonder/yonder.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,12 +127,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "yonder.h"
 
 char *yonder(void) { return "AB54 6BR"; }
-
-"""
-
 ```

@@ -168,11 +168,13 @@ inspector.setResourceNamePrefix("fuzzer://");
 
 `inspector-fuzzer.cc` 文件通过提供 C++ 扩展，增强了 JavaScript 环境的功能，使其能够模拟和控制 V8 Inspector 的行为。这对于 V8 引擎的内部测试和发现潜在问题至关重要。在正常的 JavaScript 开发中，我们不会直接使用这些 `utils` 和 `inspector` 对象，它们是为特定的模糊测试环境设计的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/inspector-fuzzer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -815,7 +817,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   v8::internal::FuzzInspector(data, size);
   return 0;
 }
-
-"""
-
 ```

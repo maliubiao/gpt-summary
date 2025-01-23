@@ -82,7 +82,7 @@ By following these steps, we can analyze even a seemingly simple piece of code a
 
 虽然 `main.c` 文件本身非常简单，但结合其所在的项目和目录结构，我们可以判断它是一个 Frida 项目中用于测试依赖管理功能的失败测试用例。它的存在是为了确保 Frida 的构建系统能够正确处理子项目依赖，并在出现问题时能够检测到并报告出来。普通用户不会直接操作这个文件，但它是 Frida 开发和测试流程中重要的组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing/125 subproject object as a dependency/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -90,10 +90,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) { return 0; }
-
-"""
-
 ```

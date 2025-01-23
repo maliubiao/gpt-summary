@@ -180,15 +180,17 @@ The `GarbageCollectionFullCycle` event recorded would contain these calculated v
 
 In summary, `v8/include/v8-metrics.h` is a critical header file in V8 that defines the structure for collecting and reporting various performance metrics related to garbage collection and WebAssembly. It provides the foundation for understanding and optimizing the performance of the V8 JavaScript engine and applications running on it.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-metrics.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-metrics.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -467,7 +469,4 @@ struct V8_EXPORT LongTaskStats {
 }  // namespace v8
 
 #endif  // V8_METRICS_H_
-
-"""
-
 ```

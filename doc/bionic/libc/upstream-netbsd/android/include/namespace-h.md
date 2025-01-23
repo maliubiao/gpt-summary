@@ -233,7 +233,7 @@ sys.stdin.read()
 
 总结来说，`namespace.handroid` 中的这两个函数虽然简单，但对于 bionic libc 的 DNS 解析性能和线程安全至关重要。它们通过控制内部状态来影响 DNS 查询在多线程环境中的行为。由于是隐藏的 API，普通开发者不应该直接使用它们，其影响主要体现在 `libc.so` 内部的实现中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-netbsd/android/include/namespace.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -244,8 +244,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2012 The Android Open Source Project
  *
@@ -266,7 +268,4 @@ Prompt:
 
 __LIBC_HIDDEN__ int __res_enable_mt(void);
 __LIBC_HIDDEN__ int __res_disable_mt(void);
-
-"""
-
 ```

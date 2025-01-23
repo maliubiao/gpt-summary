@@ -137,7 +137,7 @@ Interceptor.attach(Module.findExportByName(null, "func"), {
 
 因此，这个 `a.c` 文件是 Frida 进行动态 hook 的一个潜在目标，用户的逆向分析流程会引导他们使用 Frida 来操作这个函数，以便理解其行为或修改其功能。这个文件本身简单，但它代表了动态链接库中可被动态插桩的函数的基本结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/46 subproject subproject/subprojects/a/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2(void);
 
 #if defined _WIN32 || defined __CYGWIN__
@@ -161,7 +163,4 @@ int func2(void);
 #endif
 
 int DLL_PUBLIC func(void) { return func2(); }
-
-"""
-
 ```

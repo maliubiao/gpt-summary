@@ -120,7 +120,7 @@ By following these steps and refining the approach, I can provide a comprehensiv
 
 这个解释器通过执行这些字节码来模拟正则表达式的匹配过程，从而在 JavaScript 中实现强大的模式匹配功能。它直接影响了 JavaScript 中 `String.prototype.match()`, `String.prototype.search()`, `String.prototype.replace()`, `String.prototype.replaceAll()`, 和 `RegExp.prototype.test()` 等方法的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-interpreter.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-interpreter.cc以.tq结尾，那它是个v8 torque源代码，
@@ -128,8 +128,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 TCH();
     }
     BYTECODE(SKIP_UNTIL_CHAR) {
@@ -419,8 +421,4 @@ int IrregexpInterpreter::MatchForCallFromRuntime(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

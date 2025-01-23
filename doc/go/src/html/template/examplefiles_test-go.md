@@ -293,7 +293,7 @@ Finally, I'd organize the information in a clear and logical manner, using the p
 
 总而言之，这段代码是 `html/template` 包的测试用例，它通过创建和操作临时文件，演示了如何使用 `template.ParseGlob` 和 `template.ParseFiles` 加载模板文件，如何使用 `templates.Parse` 添加额外的模板定义，以及如何使用 `templates.Clone` 创建独立的模板集合以实现模板的共享和复用。这些示例对于理解 `html/template` 包的基本用法和高级特性非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/html/template/examplefiles_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -301,8 +301,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -528,9 +530,4 @@ func ExampleTemplate_share() {
 	// T0 (second version) invokes T1: (T1 invokes T2: (T2, version B))
 	// T0 (first version) invokes T1: (T1 invokes T2: (T2, version A))
 }
-
-"""
-
-
-
 ```

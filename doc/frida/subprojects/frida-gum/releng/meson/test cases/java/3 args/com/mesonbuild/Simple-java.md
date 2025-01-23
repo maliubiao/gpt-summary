@@ -111,7 +111,7 @@ By following these steps and refining the approach, a comprehensive and accurate
 
 总而言之，尽管 `Simple.java` 本身非常简单，但它在 Frida 的测试和验证环境中扮演着重要的角色，帮助开发者确保 Frida 能够正确地与 Java 程序交互。 逆向工程师也可以借鉴这种简单的例子来学习和测试 Frida 的基本用法。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/java/3 args/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class Simple {
@@ -128,7 +130,4 @@ class Simple {
         System.out.println("Java is working.\n");
     }
 }
-
-"""
-
 ```

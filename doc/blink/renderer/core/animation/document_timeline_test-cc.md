@@ -154,14 +154,16 @@ Here's a breakdown of the thought process to answer the user's request:
 
 总而言之，`document_timeline_test.cc` 通过各种测试用例，确保 `DocumentTimeline` 类能够正确管理动画的时间，并且其行为与 Web Animations API 的规范一致。这些测试覆盖了时间轴的基本功能、播放控制、播放速率的影响以及在不同场景下的行为，有助于发现和修复潜在的 bug，并确保 Blink 引擎中动画功能的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/document_timeline_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Google Inc. All rights reserved.
  *
@@ -649,7 +651,4 @@ TEST_F(AnimationDocumentTimelineRealTimeTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

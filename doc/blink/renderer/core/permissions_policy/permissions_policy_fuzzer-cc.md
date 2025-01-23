@@ -146,15 +146,17 @@ Permissions Policy 是一项 Web 平台的安全特性，允许网站控制哪�
 
 总而言之，`permissions_policy_fuzzer.cc` 作为一个内部测试工具，通过模拟各种可能的 Permissions-Policy 头部内容，来确保 Blink 引擎的 Permissions Policy 解析器能够健壮地处理各种输入，从而提高浏览器的安全性和稳定性。 用户通常不会直接接触到这个文件，但其测试结果会间接地影响用户浏览网页的体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/permissions_policy/permissions_policy_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
       origin.get(), logger, logger);
   return 0;
 }
-
-"""
-
 ```

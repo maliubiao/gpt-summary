@@ -125,11 +125,13 @@ This systematic approach, from understanding the basic structure to analyzing in
 
 `builtins-bigint-gen.cc` 文件定义了一些底层的、与架构相关的内置函数，用于高效地在 JavaScript 的 `BigInt` 对象和底层的整数表示之间进行转换。这些函数是 V8 引擎实现 `BigInt` 功能的关键组成部分，虽然不能直接在 JavaScript 中调用，但它们支持了 `BigInt` 在 JavaScript 中的各种操作。它们确保了 `BigInt` 可以与底层的 C++ 代码和硬件架构有效地交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-bigint-gen.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ TF_BUILTIN(I32PairToBigInt, CodeStubAssembler) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -213,7 +213,7 @@ This specific snippet of `gumquickcore.c` primarily focuses on:
 
 Essentially, this section of `gumquickcore.c` lays the groundwork for Frida's dynamic instrumentation capabilities by providing the environment and tools necessary for executing and interacting with JavaScript code within a target process. It bridges the gap between the native world of the target application and the dynamic analysis capabilities offered by Frida's JavaScript API.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickcore.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -222,9 +222,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
- = JS_NULL;
+### 源代码
+```c
+= JS_NULL;
   self->weak_map_ctor = JS_NULL;
   self->weak_map_get_method = JS_NULL;
   self->weak_map_set_method = JS_NULL;
@@ -1616,7 +1618,4 @@ GUMJS_DEFINE_FUNCTION (gumjs_native_pointer_is_null)
       lhs_ptr = self->value; \
       \
       if (!_gum_quick_args_parse (args, "p~
-"""
-
-
 ```

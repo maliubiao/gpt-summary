@@ -242,7 +242,7 @@ Here's a breakdown of the thought process to generate the answer:
 
 作为 36 个部分中的第 17 部分，这个代码片段主要关注于 **V8 C++ API 中与脚本编译、异常处理、对象属性操作（包括枚举和访问控制）、跨上下文交互以及对象生命周期管理相关的测试**。它深入测试了 V8 引擎在处理不同类型的 JavaScript 代码和对象时的行为，确保 API 的正确性和稳定性。  考虑到它是测试套件的一部分，可以推断之前的部分可能涉及更基础的 API 测试，而后续的部分可能会涵盖更高级或特定的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -250,9 +250,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第17部分，共36部分，请归纳一下它的功能
+```
 
-"""
- = context->GetIsolate();
+### 源代码
+```cpp
+= context->GetIsolate();
   v8::HandleScope scope(isolate);
   v8::Local<v8::String> source = v8_str(
       "function Foo() {\n"
@@ -1076,7 +1078,4 @@ THREADED_TEST(MorphCompositeStringTest) {
         v8::base::Vector<const uint16_t>(two_byte_string, strlen(c_string)));
 
     Local<String> lhs(v8::Utils::
-"""
-
-
 ```

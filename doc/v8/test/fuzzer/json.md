@@ -112,11 +112,13 @@ try {
 
 `v8/test/fuzzer/json.cc` 是一个用于测试 V8 引擎 JSON 解析器鲁棒性的模糊测试工具。它通过向解析器提供各种各样的输入（包括合法的和非法的 JSON 结构）来发现潜在的 bug 和安全漏洞。它与 JavaScript 的 `JSON.parse()` 方法直接相关，因为它的目标是确保 JavaScript 环境中 JSON 解析的正确性和稳定性。 模糊测试工具会尝试各种边界情况、意外输入和恶意构造的字符串，就像上面的 JavaScript 示例中展示的一些场景，以确保解析器能够优雅地处理这些情况，而不会崩溃或产生错误的结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/json.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -160,7 +162,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
       v8::Isolate::kFullGarbageCollection);
   return 0;
 }
-
-"""
-
 ```

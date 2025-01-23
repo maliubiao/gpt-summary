@@ -176,15 +176,17 @@ By following these steps, I can effectively analyze the provided C++ header file
 
 总而言之，`v8/test/unittests/heap/cppgc/test-platform.h` 是一个用于测试 V8 垃圾回收器的重要工具，它允许开发者在受控的环境下验证垃圾回收的行为。虽然它不是直接的 JavaScript 代码，但它对于确保 JavaScript 内存管理的正确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/test-platform.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/heap/cppgc/test-platform.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ class TestPlatform : public DefaultPlatform {
 }  // namespace cppgc
 
 #endif  // V8_UNITTESTS_HEAP_CPPGC_TEST_PLATFORM_H_
-
-"""
-
 ```

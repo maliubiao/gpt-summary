@@ -106,12 +106,14 @@ Based on this analysis, the main function seems to be providing the foundational
 
 总之，`objects.cc` 的第一部分是 V8 引擎中关于 JavaScript 对象的核心实现，它为 JavaScript 语言中涉及对象的基本操作和类型转换提供了底层的 C++ 支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1812,7 +1814,4 @@ MaybeHandle<Object> Object::ArraySpeciesConstructor(
           JSReceiver::GetProperty(isolate, Cast<JSReceiver>(constructor),
                                   isolate->factory()->species_symbol()));
       if (IsNull(*constructor, isola
-"""
-
-
 ```

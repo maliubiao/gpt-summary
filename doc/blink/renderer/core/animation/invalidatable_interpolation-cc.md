@@ -244,14 +244,16 @@ By following this structured approach, you can systematically analyze the code a
 
 总之，`invalidatable_interpolation.cc` 在 Blink 引擎中扮演着至关重要的角色，负责处理 CSS 动画和过渡中属性值的平滑过渡效果，并采取缓存等优化措施来提高性能。理解其工作原理有助于开发者更好地理解和调试 Web 页面的动画效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/invalidatable_interpolation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -550,7 +552,4 @@ void InvalidatableInterpolation::ApplyStack(
 }
 
 }  // namespace blink
-
-"""
-
 ```

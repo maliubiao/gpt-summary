@@ -106,11 +106,13 @@ loadAndInstantiateWasmGC();
 
 `v8/test/fuzzer/wasm-compile-wasmgc.cc` 是 V8 引擎测试框架的一部分，专门用于模糊测试 WebAssembly 编译器的 WasmGC 支持。它通过生成随机的、包含 WasmGC 特性的 WebAssembly 模块，并让 V8 尝试编译它们，来发现潜在的编译错误或崩溃。这直接关系到 JavaScript，因为 JavaScript 是加载和执行这些 WebAssembly 模块的环境，而 V8 引擎负责编译过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/wasm-compile-wasmgc.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -144,7 +146,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
 ```

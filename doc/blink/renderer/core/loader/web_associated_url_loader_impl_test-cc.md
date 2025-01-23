@@ -178,15 +178,17 @@ Here's a breakdown of the thought process to answer the user's request:
 
 总而言之，`blink/renderer/core/loader/web_associated_url_loader_impl_test.cc` 是一个至关重要的测试文件，它确保了 `WebAssociatedURLLoaderImpl` 这个核心组件能够正确、安全地处理各种资源加载场景，特别是与 Web 安全模型 (如同源策略和 CORS) 相关的场景，这直接影响着 JavaScript、HTML 和 CSS 资源的加载和网页的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/web_associated_url_loader_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -807,7 +809,4 @@ TEST_F(WebAssociatedURLLoaderTest, BypassAccessCheckForLocalURL) {
 
 #undef MAYBE_UntrustedCheckHeaders
 }  // namespace blink
-
-"""
-
 ```

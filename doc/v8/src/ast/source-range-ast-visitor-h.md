@@ -172,15 +172,17 @@ FunctionLiteral (range: 10-50)
 
 `SourceRangeAstVisitor` 是 V8 引擎中一个重要的组件，负责优化 AST 节点关联的源代码范围信息。它的主要目标是去除冗余的范围，提高调试和错误报告的精度，从而提升开发者的体验。虽然它不直接处理用户的编程错误，但它为更准确地报告这些错误提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/ast/source-range-ast-visitor.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/ast/source-range-ast-visitor.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -235,7 +237,4 @@ class SourceRangeAstVisitor final
 }  // namespace v8
 
 #endif  // V8_AST_SOURCE_RANGE_AST_VISITOR_H_
-
-"""
-
 ```

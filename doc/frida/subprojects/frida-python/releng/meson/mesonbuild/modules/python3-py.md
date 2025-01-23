@@ -124,7 +124,7 @@ This step-by-step breakdown allows for a comprehensive understanding of the code
 
 总而言之，`frida/subprojects/frida-python/releng/meson/mesonbuild/modules/python3.py` 文件是 Frida 项目使用 Meson 构建系统来构建 Python 扩展模块的关键组成部分。它封装了与 Python 3 相关的构建逻辑，并提供了一些方便的方法来获取 Python 环境信息。理解这个文件的功能对于理解 Frida 的构建过程以及如何开发和调试 Frida 相关的 Python 扩展至关重要，尤其是在进行逆向工程或与底层系统交互时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/modules/python3.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2017 The Meson development team
 
@@ -219,7 +221,4 @@ class Python3Module(ExtensionModule):
 
 def initialize(*args, **kwargs):
     return Python3Module(*args, **kwargs)
-
-"""
-
 ```

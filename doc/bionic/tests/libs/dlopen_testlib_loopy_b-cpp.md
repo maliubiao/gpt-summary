@@ -335,7 +335,7 @@ if (Process.arch === 'android') {
 
 总结来说，`bionic/tests/libs/dlopen_testlib_loopy_b.cpp` 是 Android Bionic 库中用于测试动态链接特定场景的一个简单测试文件，它通过定义一个简单的函数来辅助验证动态链接器的正确性，尤其是在处理循环依赖等复杂情况时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlopen_testlib_loopy_b.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -346,8 +346,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -369,7 +371,4 @@ Prompt:
 extern "C" bool dlopen_test_loopy_function_impl() {
   return false;
 }
-
-"""
-
 ```

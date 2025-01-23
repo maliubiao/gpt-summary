@@ -127,7 +127,7 @@ By following these steps, breaking down the code into smaller parts, and conside
 
 总而言之，`frida/subprojects/frida-core/src/darwin/policyd-server.c` 是 Frida 在 macOS/iOS 上用于处理策略相关操作的关键组件，它通过 Mach 消息机制与 Frida 客户端通信，提供了一种动态修改进程策略的能力，这对于 Frida 的动态 instrumentation 功能至关重要。理解这段代码需要对 Mach 消息传递、系统安全策略以及 Frida 的工作原理有深入的了解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/darwin/policyd-server.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -135,8 +135,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * IDENTIFICATION:
  * stub generated Sat Feb  6 00:36:17 2021
@@ -369,7 +371,4 @@ mig_external mig_routine_t frida_policyd_server_routine
 
 	return frida_policyd_subsystem.routine[msgh_id].stub_routine;
 }
-
-"""
-
 ```

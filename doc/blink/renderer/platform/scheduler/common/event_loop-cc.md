@@ -148,14 +148,16 @@ By following these steps, combining code analysis with knowledge of web browser 
 
 总而言之，`blink/renderer/platform/scheduler/common/event_loop.cc` 文件定义了 Blink 渲染引擎中处理异步操作和 JavaScript 执行的核心机制，它与 JavaScript 的 Promise、async/await 等特性紧密相关，并对 Web 页面的交互性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/event_loop.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -295,7 +297,4 @@ void EventLoop::RunEndOfCheckpointTasks(v8::Isolate* isolate, void* data) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

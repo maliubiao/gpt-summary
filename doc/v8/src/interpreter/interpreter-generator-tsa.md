@@ -116,11 +116,13 @@ console.log(negateBits(5)); // 输出 -6
 
 `v8/src/interpreter/interpreter-generator-tsa.cc` 是 V8 引擎中一个关键的文件，它负责生成 Ignition 解释器执行 bytecode 指令所需的低级代码。  它通过宏和模板机制，将通用的 bytecode 处理逻辑与特定指令的执行细节分离，提高了代码的可维护性和可读性。 这个文件直接关系到 JavaScript 代码的执行效率和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-generator-tsa.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -472,7 +474,4 @@ IGNITION_HANDLER_TS(BitwiseNot, NumberBuiltinsBytecodeHandlerAssembler) {
 #include "src/compiler/turboshaft/undef-assembler-macros.inc"
 
 }  // namespace v8::internal::interpreter
-
-"""
-
 ```

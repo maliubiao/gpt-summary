@@ -95,7 +95,7 @@ websocket.onclose = function(event) {
 
 当开发者在调试 WebSocket 连接问题时，了解这些底层的网络交互和测试用例可以帮助他们更好地理解问题发生的原因，例如是握手失败、认证问题、网络问题还是服务器错误。他们可以使用 Chromium 的网络日志工具 (chrome://net-export/) 来查看详细的网络交互过程，并与这些测试用例中模拟的情况进行对比。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 er works for Basic auth will also work for
 // Digest. There's just one test here, to confirm that it works at all.
 TEST_P(WebSocketStreamCreateDigestAuthTest, DigestPasswordInUrl) {
@@ -343,8 +345,4 @@ TEST_P(WebSocketStreamCreateTest, HandleConnectionCloseInFirstSegment) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
-
 ```

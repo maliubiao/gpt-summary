@@ -188,7 +188,7 @@ Throughout this process, I would review my understanding and look for inconsiste
 
 `WindowPerformance` 类是 Blink 渲染引擎中负责收集和报告关键网页性能指标的核心组件。它监控用户交互事件的时序、首次输入延迟、长动画帧、元素渲染和加载时间、布局偏移、页面可见性状态以及软导航等信息。这些数据通过 JavaScript 的 Performance API 暴露给开发者，并用于 Chromium 开发者工具的性能分析。`WindowPerformance` 的主要职责是提供精确的性能数据，帮助开发者理解和优化网页的用户体验。它通过与事件处理机制、渲染流程以及 JavaScript 引擎的集成来实现其功能。提供的代码片段主要关注事件时序的处理和报告，以及与其他性能指标监控功能的集成点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/timing/window_performance.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -196,8 +196,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ools.timeline", "EventPresentation", scope,
             last_event_reporting_info->presentation_time.value(), flowid);
       }
@@ -693,8 +695,4 @@ bool WindowPerformance::IsAutoscrollActive() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

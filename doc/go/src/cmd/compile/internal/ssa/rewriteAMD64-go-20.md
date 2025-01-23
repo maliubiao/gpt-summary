@@ -215,7 +215,7 @@ SARQ  %cl, a
 
 这段 `rewriteAMD64.go` 代码（的第 21 部分）的核心功能是针对 AMD64 架构优化 Go 语言的右移操作以及一些特定的复合操作和内存操作。它根据操作数的类型、大小以及特定的条件，将通用的 SSA 操作符转换为更高效的 AMD64 汇编指令序列，并包含针对 Spectre 漏洞的缓解措施。 它是 Go 编译器后端优化的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteAMD64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -224,8 +224,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第21部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 Value) bool {
 	v_1 := v.Args[1]
 	v_0 := v.Args[0]
@@ -1578,9 +1580,4 @@ func rewriteValueAMD64_OpZero(v *Value) bool {
 		v.reset(OpAMD64MOVLstoreconst)
 		v.AuxInt = valAndOffToAuxInt(makeValAndOff(0, 8))
 		v0 :
-"""
-
-
-
-
 ```

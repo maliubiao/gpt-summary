@@ -215,7 +215,7 @@ if __name__ == '__main__':
 
 总结来说，`empty_android_ids.handroid` 文件本身的功能是定义一个空的 Android ID 列表，并且明确声明用于 host 环境。它不涉及 libc 函数的实现或 dynamic linker 的功能。 它的存在暗示了 Android 系统中存在 Android ID 管理的概念，但在实际的 Android 设备运行时环境中，更有可能使用包含实际 ID 映射的类似文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/empty_android_ids.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -226,8 +226,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -267,7 +269,4 @@ struct android_id_info {
 static const struct android_id_info android_ids[] = {};
 
 #define android_id_count 0
-
-"""
-
 ```

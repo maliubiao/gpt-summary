@@ -131,7 +131,7 @@ Interceptor.attach(fooAddress, {
 
 尽管 `lib.c` 中的 `foo` 函数非常简单，但在 Frida 的上下文中，它可以作为测试、逆向分析和理解底层概念的良好起点。它的简单性使得开发者可以专注于 Frida 工具本身的使用和调试，而不会被复杂的业务逻辑所干扰。这个文件在 Frida 的测试用例目录中，很可能就是为了这个目的而存在的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/native/11 native dependency/subprojects/made up/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -139,10 +139,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo(void) { return 1; }
-
-"""
-
 ```

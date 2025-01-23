@@ -141,15 +141,17 @@ Here's a breakdown of its functionalities:
 
 In summary, `v8/src/baseline/baseline-batch-compiler.h` defines a crucial component for optimizing the initial compilation phase in V8. It improves startup performance by processing JavaScript functions in groups rather than individually.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/baseline/baseline-batch-compiler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/baseline/baseline-batch-compiler.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -236,7 +238,4 @@ class BaselineBatchCompiler {
 }  // namespace v8
 
 #endif  // V8_BASELINE_BASELINE_BATCH_COMPILER_H_
-
-"""
-
 ```

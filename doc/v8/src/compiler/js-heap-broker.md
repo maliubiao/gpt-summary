@@ -139,11 +139,13 @@ console.log(first);
 
 虽然 JavaScript 开发者无法直接操作 `JSHeapBroker`，但它的工作对于 JavaScript 代码的执行效率至关重要。  `JSHeapBroker` 默默地在幕后工作，收集信息并将其提供给编译器，使得 V8 能够对 JavaScript 代码进行各种优化，从而提高应用程序的性能。 它就像一个默默无闻的助手，帮助 V8 引擎更智能地运行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-heap-broker.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1158,7 +1160,4 @@ TemplateObjectFeedback const& ProcessedFeedback::AsTemplateObject() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

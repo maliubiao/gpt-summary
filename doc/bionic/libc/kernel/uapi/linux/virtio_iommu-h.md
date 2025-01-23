@@ -296,7 +296,7 @@ if __name__ == '__main__':
 
 这个详细的解释涵盖了 Virtio IOMMU 头文件的功能、与 Android 的关系、可能的用法、常见错误以及如何使用 Frida 进行调试。记住，这是一个内核 UAPI 头文件，它的主要用途是定义内核与用户空间交互的接口，而不是实现具体的 `libc` 函数或与 dynamic linker 直接相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/virtio_iommu.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -307,8 +307,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -438,7 +440,4 @@ struct virtio_iommu_fault {
   __le64 address;
 };
 #endif
-
-"""
-
 ```

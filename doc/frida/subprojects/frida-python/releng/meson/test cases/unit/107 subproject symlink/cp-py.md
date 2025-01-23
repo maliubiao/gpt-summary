@@ -119,7 +119,7 @@ Here's a breakdown of the thinking process to analyze the provided Python script
 
 总而言之，`cp.py` 作为一个简单的文件复制工具，在 Frida 的测试框架中扮演着验证文件系统操作相关功能是否正常的角色。虽然其代码本身很简单，但它涉及到操作系统底层的文件操作概念，并且容易出现用户使用错误。在调试过程中，理解其功能和可能出现的错误场景是定位问题的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/107 subproject symlink/cp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,15 +127,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from sys import argv
 from shutil import copy
 
 copy(argv[1], argv[2])
-
-"""
-
 ```

@@ -92,7 +92,7 @@ B0 (entry) -> B1 -> B2 -> B3 (exit)
 
 这部分 `v8/src/compiler/scheduler.cc` 的代码主要负责为后续的代码生成阶段准备优化的基本块顺序和节点放置方案。它通过计算特殊的 RPO、循环信息和支配树来理解代码的结构，然后利用早调度和晚调度算法来确定每个节点的最佳执行位置，以提高代码的执行效率。它是 V8 编译器中至关重要的一个环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/scheduler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/scheduler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -100,8 +100,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ack_depth, succ, kBlockUnvisited2);
             if (HasLoopNumber(succ)) {
               // Push the inner loop onto the loop stack.
@@ -969,7 +971,4 @@ class ScheduleLateNodeVisitor {
         DCHECK(IrOpcode::IsMergeOpcode(merge->opcode()));
         Node* input = NodeProperties::GetControlInput(merge, edge.index());
         return FindPredecessorBlock(
-"""
-
-
 ```

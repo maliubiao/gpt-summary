@@ -140,7 +140,7 @@ Frida 本身就是一个动态插桩工具，广泛应用于逆向工程。这�
 
 总而言之，`frida/releng/meson/mesonbuild/dependencies/dev.py` 是 Frida 项目构建系统的核心组成部分，负责处理各种开发依赖项的查找、配置和管理，这对于保证 Frida 能够在不同的平台上顺利构建至关重要，并且其中涉及到的很多技术和知识点都与逆向工程密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/dependencies/dev.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2019 The Meson development team
 
@@ -857,7 +859,4 @@ packages['zlib'] = zlib_factory = DependencyFactory(
     cmake_name='ZLIB',
     system_class=ZlibSystemDependency,
 )
-
-"""
-
 ```

@@ -342,7 +342,7 @@ if (Process.arch === 'arm64' || Process.arch === 'arm') {
 
 总结来说，`pthread_internal.handroid` 是 Bionic libc 中线程管理的核心头文件，它定义了线程的内部表示和相关的管理函数声明，为 `pthread` 标准 API 的实现提供了基础。理解这个文件的内容对于深入理解 Android 的线程机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/pthread_internal.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -353,8 +353,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -640,7 +642,4 @@ __LIBC_HIDDEN__ bool __pthread_internal_remap_stack_with_mte();
 extern "C" bool android_run_on_all_threads(bool (*func)(void*), void* arg);
 
 extern pthread_rwlock_t g_thread_creation_lock;
-
-"""
-
 ```

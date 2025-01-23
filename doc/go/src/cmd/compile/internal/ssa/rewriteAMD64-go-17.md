@@ -130,7 +130,7 @@ v3 (被重写) = v5
 
 这部分 `rewriteAMD64.go` 代码的核心功能是针对 AMD64 架构，优化 Go 语言中关于 **边界检查 (数组/切片索引) 和 nil 指针检查** 的操作。它通过将抽象的 SSA 操作替换为更底层的、高效的 AMD64 汇编指令来实现性能提升。  这种架构特定的优化是 Go 编译器能够生成高性能机器码的关键环节之一。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteAMD64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -139,8 +139,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第18部分，共23部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 )
 		return true
 	}
@@ -1769,9 +1771,4 @@ func rewriteValueAMD64_OpIsSliceInBounds(v *Value) bool {
 	// match: (IsSliceInBounds idx len)
 	// result: (SETBE (CMPQ idx len))
 	f
-"""
-
-
-
-
 ```

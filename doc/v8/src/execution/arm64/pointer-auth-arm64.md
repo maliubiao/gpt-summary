@@ -130,11 +130,13 @@ if (authenticatePAC(tamperedPointer, authenticationContext, SECRET_KEY)) {
 
 在 V8 引擎中，`pointer-auth-arm64.cc` 中的 C++ 代码实现了这个过程的更复杂和安全的版本，以保护引擎的内部状态，从而间接地确保了 JavaScript 代码的安全性。  它防止了攻击者通过修改V8内部指针来执行恶意代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/pointer-auth-arm64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -407,7 +409,4 @@ uint64_t Simulator::StripPAC(uint64_t ptr, PointerType type) {
 }  // namespace v8
 
 #endif  // USE_SIMULATOR
-
-"""
-
 ```

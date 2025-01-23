@@ -211,7 +211,7 @@ func main() {
 
 总而言之，`unicode/utf16` 包提供了一套完整的工具，用于在 Go 语言中安全可靠地处理 UTF-16 编码。使用者应该理解 `rune` 和 `uint16` 的区别，并正确使用库提供的编码和解码函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/unicode/utf16/utf16.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -219,8 +219,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -365,9 +367,4 @@ func decode(s []uint16, buf []rune) []rune {
 	}
 	return buf
 }
-
-"""
-
-
-
 ```

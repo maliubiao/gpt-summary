@@ -348,7 +348,7 @@ if (Process.platform === 'android') {
 
 通过这些 Frida Hook 示例，你可以深入了解 Android Framework 和 NDK 是如何一步步调用到 `syslog` 以及底层的日志写入函数的，从而更好地理解 Android 的日志机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/syslog.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -359,8 +359,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -610,7 +612,4 @@ void syslog(int __priority, const char* _Nonnull __fmt, ...) __printflike(2, 3);
 void vsyslog(int __priority, const char* _Nonnull __fmt, va_list __args) __printflike(2, 0);
 
 __END_DECLS
-
-"""
-
 ```

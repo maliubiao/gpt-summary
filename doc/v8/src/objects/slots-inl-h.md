@@ -155,15 +155,17 @@ slot.store(newValue);
 
 总而言之，`v8/src/objects/slots-inl.h` 定义了 V8 引擎中对象属性访问和修改的关键底层机制。它提供了不同类型的槽和原子操作，以支持高效且线程安全的对象操作，这是 JavaScript 运行时环境的基础。虽然开发者通常不会直接操作这些槽，但了解它们的工作原理有助于理解 V8 的内部运作和一些潜在的错误场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/slots-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/slots-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -654,7 +656,4 @@ inline void MemsetPointer(FullObjectSlot start, Tagged<Object> value,
 }  // namespace v8
 
 #endif  // V8_OBJECTS_SLOTS_INL_H_
-
-"""
-
 ```

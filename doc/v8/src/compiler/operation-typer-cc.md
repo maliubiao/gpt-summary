@@ -699,7 +699,7 @@ Type OperationTyper::NumberAdd(Type lhs, Type rhs) {
   }
   if (rhs.Maybe(Type::MinusZero())) {
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/operation-typer.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/operation-typer.cc以.tq结尾，那它是个v8 torque源代码，
@@ -707,8 +707,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1645,8 +1647,4 @@ Type OperationTyper::NumberBitwiseAnd(Type lhs, Type rhs) {
     max = std::min(max, rmax);
   }
   return Type::Range(min, max, zone());
-
-"""
-
-
 ```

@@ -129,7 +129,7 @@ Finally, organize the information logically, starting with a high-level summary 
 
 通过查看这个文件，用户可以理解 Frida 如何处理跨库的函数调用以及符号导出，从而帮助他们调试自己的 Frida 脚本或理解 Frida 的内部工作原理。这个文件作为一个简单的示例，演示了在动态链接的场景下，一个库如何调用另一个库的函数，并且这个过程可以被 Frida 这样的工具拦截和修改。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/145 recursive linking/shstdep/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,8 +137,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "../lib.h"
 
 int get_stnodep_value (void);
@@ -147,7 +149,4 @@ SYMBOL_EXPORT
 int get_shstdep_value (void) {
   return get_stnodep_value ();
 }
-
-"""
-
 ```

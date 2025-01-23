@@ -108,7 +108,7 @@ fetch('https://example.com')
 
 总而言之，`cert_verify_proc_builtin_unittest.cc` 的主要功能是 **全面测试 `CertVerifyProcBuiltin` 类的证书验证逻辑，确保其在各种场景下都能正确、安全地执行证书验证，从而保障用户的网络安全。** 它通过模拟各种证书链、配置和网络环境，验证了 `CertVerifyProcBuiltin` 的核心功能和与其他组件的交互。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/cert_verify_proc_builtin_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -945,7 +947,4 @@ TEST_F(CertVerifyProcBuiltinTest,
   // days before now as the current time to cause checks to fail with
   // UNABLE_TO_CHECK_REVOCATION, which then should be retried with the system
   // time a
-"""
-
-
 ```

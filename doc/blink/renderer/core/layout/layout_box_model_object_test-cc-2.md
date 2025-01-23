@@ -114,15 +114,17 @@ I'll structure the answer by summarizing these functionalities and then providin
 
 这部分测试代码通过模拟这些场景，确保 Blink 引擎在处理 `position: sticky` 属性时能够正确处理各种情况，避免潜在的 bug 和不一致的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/layout_box_model_object_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 le_area, sticky));
 
   GetElementById("parent")->remove();
@@ -245,8 +247,4 @@ TEST_P(LayoutBoxModelObjectTest,
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

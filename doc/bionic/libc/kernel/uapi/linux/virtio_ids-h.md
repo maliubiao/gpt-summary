@@ -260,7 +260,7 @@ frida -U -f <package_name_or_pid> -l your_frida_script.js --no-pause
 
 总结来说，`virtio_ids.h` 是一个定义 VirtIO 设备和传输标识符的重要头文件，它在 Android 系统底层的虚拟化和硬件交互中扮演着关键角色。虽然普通 Android 应用开发者不会直接使用它，但理解其作用有助于理解 Android 系统底层的运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/virtio_ids.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -271,8 +271,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -328,7 +330,4 @@ Prompt:
 #define VIRTIO_TRANS_ID_RNG 0x1005
 #define VIRTIO_TRANS_ID_9P 0x1009
 #endif
-
-"""
-
 ```

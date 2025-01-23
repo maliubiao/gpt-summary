@@ -172,7 +172,7 @@ if (Process.platform === 'linux') {
 
 因此，到达 `btgt.c` 的源代码通常是开发者在调试 Frida 测试用例时的一个步骤，目的是理解测试环境和目标进程的简单性。这个简单的目标进程确保了测试的隔离性，排除了目标进程自身复杂行为带来的干扰，专注于测试 Frida 文件系统模块的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/220 fs module/btgt.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,14 +180,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int
 main(void)
 {
     return 0;
 }
-
-"""
-
 ```

@@ -66,9 +66,12 @@ This step-by-step approach, focusing on the structure and components of the unit
 
 这些测试对于确保 V8 引擎的日志记录功能正常工作，并提供准确的性能监控和调试信息至关重要。
 
-Prompt: ```这是目录为v8/test/unittests/logging/counters-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/test/unittests/logging/counters-unittest.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -296,6 +299,4 @@ TEST_F(SnapshotNativeCounterTest, WriteBarrier) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

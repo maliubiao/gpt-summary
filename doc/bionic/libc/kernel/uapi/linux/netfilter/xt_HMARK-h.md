@@ -236,7 +236,7 @@ except Exception as e:
 
 要更深入地调试 `xt_HMARK` 模块本身，可能需要在内核层面进行 hook，但这通常更复杂，可能需要 root 权限和对内核调试有更深入的了解。可以考虑使用 `kprobe` 或 `tracepoints` 进行内核级别的跟踪。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/netfilter/xt_HMARK.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -247,8 +247,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -301,7 +303,4 @@ struct xt_hmark_info {
   __u32 hoffset;
 };
 #endif
-
-"""
-
 ```

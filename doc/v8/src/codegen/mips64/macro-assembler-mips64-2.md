@@ -115,13 +115,15 @@ arr.push(1);
 
 总之，这部分 `macro-assembler-mips64.cc` 代码是 V8 引擎将高级的 JavaScript 代码转化为底层机器码的关键组件，它提供了构建各种控制流、函数调用和基本操作所需的汇编指令生成能力，是理解 V8 引擎执行原理的重要部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/mips64/macro-assembler-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-                 RootRegisterOffsetForExternalReferenceTableEntry(
+### 源代码
+```
+RootRegisterOffsetForExternalReferenceTableEntry(
                                    isolate(), reference)));
         return MemOperand(scratch, 0);
       }
@@ -2105,7 +2107,4 @@ void MacroAssembler::CallJSFunction(Register function_object) {
   Call(code);
 #else
   Ld(code, FieldMemOperand(func
-"""
-
-
 ```

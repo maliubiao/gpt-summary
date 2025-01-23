@@ -111,14 +111,16 @@ The user wants to understand the functionality of the `string_builder_test.cc` f
 
 总而言之， `string_builder_test.cc` 文件是确保 `StringBuilder` 类正确可靠的关键组成部分，而 `StringBuilder` 类本身在 Blink 引擎中扮演着高效字符串构建的重要角色，与 Web 前端技术息息相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/string_builder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  * Copyright (C) 2013 Apple Inc. All rights reserved.
@@ -632,7 +634,4 @@ TEST(StringBuilderTest, DoesAppendCauseOverflow) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

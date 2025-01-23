@@ -144,7 +144,7 @@ The code snippet is a C++ unit test for `HttpNetworkTransaction`, a core class i
 
 作为系列测试的第 7 部分，这段代码深入测试了 `HttpNetworkTransaction` 在 **代理身份验证** 方面的核心功能，特别是针对 **HTTPS 连接和 CONNECT 隧道** 的场景。它验证了身份验证流程的正确性，凭据缓存的机制，以及对各种错误情况的处理。可以推断，前面的部分可能测试了更基础的 HTTP 请求处理，而后面的部分可能会涉及更复杂的功能，例如 HTTP/2, QUIC, 或更高级的缓存策略等。 这部分专注于代理交互，是网络栈中一个重要的组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -152,8 +152,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共34部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nection: keep-alive\r\n"
                 "User-Agent: test-ua\r\n"
                 "Proxy-Authorization: Basic Zm9vOmJhcg==\r\n\r\n"),
@@ -922,7 +924,4 @@ TEST_P(HttpNetworkTransactionTest,
 // site.
 TEST_P(HttpNetworkTransactionTest,
        AuthAllowsDefaultCredentialsTunnelConnectionClosesBeforeBody
-"""
-
-
 ```

@@ -138,7 +138,7 @@ let result = add(5, 10);
 
 `v8/src/interpreter/interpreter-assembler.cc` (或可能的 `.tq` 版本)  是 V8 解释器中至关重要的组件，它提供了一种生成和管理执行 JavaScript 字节码的机器码的方法。它负责维护解释器的核心状态（如寄存器、累加器、上下文等），并提供了访问和操作这些状态的接口。  它的功能直接关联到 JavaScript 代码的执行，例如变量的读取和写入、算术运算以及函数调用。  开发过程中可能涉及与寄存器、操作数、帧指针、累加器和上下文管理相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/interpreter-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -146,8 +146,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -974,7 +976,4 @@ TNode<Object> InterpreterAssembler::Construct(
     TNode<HeapObject> maybe_feedback_vector) {
   DCHECK(Bytecodes::MakesCallAlongCriticalPath(bytecode_));
   TVARIABLE(Object, var_resul
-"""
-
-
 ```

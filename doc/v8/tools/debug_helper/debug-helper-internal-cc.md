@@ -172,15 +172,17 @@ arr2[1000] = 5; // 这是一个稀疏数组，引擎可能需要特殊处理
 
 总结来说，`v8/tools/debug_helper/debug-helper-internal.cc` 提供了一组底层的工具函数，用于辅助 V8 的调试和分析，特别是涉及到内存管理（如指针压缩）和对象属性（如数组类型）等方面。虽然普通 JavaScript 开发者不会直接使用这些 API，但理解其背后的概念有助于更好地理解 V8 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/debug_helper/debug-helper-internal.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/debug_helper/debug-helper-internal.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -255,7 +257,4 @@ bool TqObject::IsSuperclassOf(const TqObject* other) const {
 }  // namespace debug_helper_internal
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

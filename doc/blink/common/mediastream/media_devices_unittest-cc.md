@@ -169,14 +169,16 @@ EXPECT_EQ(blink::mojom::FacingMode::ENVIRONMENT, device_info.video_facing);
 
 总而言之，`media_devices_unittest.cc` 文件是 Blink 引擎中保证媒体设备信息处理正确性的重要组成部分，它通过单元测试确保了底层 C++ 代码能够准确地将设备信息传递给上层的 JavaScript API，从而使 Web 开发者能够可靠地访问和控制用户的媒体设备。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/mediastream/media_devices_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -211,7 +213,4 @@ TEST(MediaDevicesTest, MediaDeviceInfoFromVideoDescriptor) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

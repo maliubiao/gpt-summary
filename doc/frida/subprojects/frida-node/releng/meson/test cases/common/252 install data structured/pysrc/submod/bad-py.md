@@ -117,7 +117,7 @@ This detailed thought process, starting from the simple code and expanding outwa
 
 总而言之，`frida/subprojects/frida-node/releng/meson/test cases/common/252 install data structured/pysrc/submod/bad.py` 这个文件虽然简单，但它在保证 Frida 构建过程的正确性和完整性方面扮演着重要的角色，特别是在验证排除特定文件安装的机制上。它主要服务于开发和测试阶段，帮助确保最终用户获得的 Frida 安装包是干净且符合预期的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/252 install data structured/pysrc/submod/bad.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,10 +125,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 '''mod.submod.bad should not be installed'''
-
-"""
-
 ```

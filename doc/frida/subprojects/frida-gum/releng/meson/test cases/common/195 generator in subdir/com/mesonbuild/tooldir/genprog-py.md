@@ -203,7 +203,7 @@ By following these steps, iteratively analyzing the code, and consciously addres
 
 总而言之，`genprog.py` 是 Frida 构建过程中的一个辅助工具，用于快速生成简单的 C 代码框架，这些框架可以作为后续更复杂的操作（例如 hooking）的基础。用户通常不会直接与之交互，但了解其功能有助于理解 Frida 的构建流程和代码组织结构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/195 generator in subdir/com/mesonbuild/tooldir/genprog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -211,8 +211,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, sys, argparse
@@ -259,7 +261,4 @@ for i, ifile_name in enumerate(ifiles):
     os.makedirs(os.path.split(ofile_bases[i])[0], exist_ok=True)
     open(h_out, 'w').write(h_templ % (proto_name))
     open(c_out, 'w').write(c_templ % (proto_name, proto_name))
-
-"""
-
 ```

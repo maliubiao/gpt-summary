@@ -124,14 +124,16 @@ By following this plan, I can generate a comprehensive and accurate answer that 
 
 理解 `media_fragment_uri_parser.cc` 的功能对于开发需要处理媒体片段的 Web 应用至关重要，它可以帮助开发者正确地构造包含媒体片段信息的 URL，并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/media/media_fragment_uri_parser.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011, 2012 Apple Inc. All rights reserved.
  *
@@ -514,7 +516,4 @@ bool MediaFragmentURIParser::ParseNPTTime(std::string_view time_string,
 }
 
 }  // namespace blink
-
-"""
-
 ```

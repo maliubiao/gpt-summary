@@ -182,15 +182,17 @@ By following this structured approach, analyzing the header file becomes a syste
 
 `v8/src/compiler/js-native-context-specialization.h` 定义的 `JSNativeContextSpecialization` 类是 V8 编译器中一个至关重要的优化阶段。它利用 Native Context 的信息和类型反馈来特化 JavaScript 代码，提高执行效率。理解它的功能有助于我们更好地理解 V8 的编译原理以及如何编写更易于优化的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-native-context-specialization.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-native-context-specialization.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -491,7 +493,4 @@ DEFINE_OPERATORS_FOR_FLAGS(JSNativeContextSpecialization::Flags)
 }  // namespace v8
 
 #endif  // V8_COMPILER_JS_NATIVE_CONTEXT_SPECIALIZATION_H_
-
-"""
-
 ```

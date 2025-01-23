@@ -146,15 +146,17 @@ By following this structured approach, I could systematically analyze the C++ co
 
 总而言之，`permission_utils.cc` 是 Blink 引擎中处理权限请求和状态转换的关键工具集，它充当了 JavaScript Permissions API 和底层权限管理服务之间的桥梁。 理解这个文件的功能有助于深入了解 Chromium 的权限管理机制，并为调试权限相关的问题提供有力的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/permissions/permission_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -593,7 +595,4 @@ PermissionDescriptorPtr ParsePermissionDescriptor(
 }
 
 }  // namespace blink
-
-"""
-
 ```

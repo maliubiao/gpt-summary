@@ -214,7 +214,7 @@ By following this systematic approach, analyzing the code structure, function si
 
 通过以上步骤，用户可以逐步追踪代码的执行流程，从 JavaScript 代码到 Frida 的 C++ 绑定层，最终定位到 `gumv8checksum.cpp` 文件中的具体代码，从而理解问题的根源并进行修复。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumv8checksum.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -222,8 +222,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2022 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -518,7 +520,4 @@ invalid_type:
   _gum_v8_throw_ascii_literal (isolate, "unsupported checksum type");
   return FALSE;
 }
-
-"""
-
 ```

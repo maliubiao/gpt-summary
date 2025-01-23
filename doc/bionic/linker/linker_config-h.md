@@ -256,7 +256,7 @@ sys.stdin.read()
 
 这个 `linker_config.handroid` 文件是 Android 动态链接器实现命名空间隔离等关键功能的基础，它定义了配置的结构，但具体的加载和应用逻辑在动态链接器的其他源文件中实现。 理解这个文件对于深入理解 Android 的动态链接机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/linker/linker_config.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -267,8 +267,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -457,7 +459,4 @@ class Config {
 
   DISALLOW_COPY_AND_ASSIGN(Config);
 };
-
-"""
-
 ```

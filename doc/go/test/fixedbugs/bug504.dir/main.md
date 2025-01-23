@@ -113,15 +113,17 @@ int c_variable = 12345;
 
 总之，这段代码片段简洁地展示了 Go 语言访问其他包变量的能力，并很有可能涉及到 `cgo` 这一强大的特性，用于与 C 代码进行集成。理解 `cgo` 的工作原理和潜在的配置问题是避免错误的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/bug504.dir/main.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -133,9 +135,4 @@ import "./c"
 func main() {
 	println(c.V)
 }
-
-"""
-
-
-
 ```

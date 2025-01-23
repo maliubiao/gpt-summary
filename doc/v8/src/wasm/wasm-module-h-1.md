@@ -433,7 +433,7 @@ console.log(exports); // 依赖于 C++ 侧的 GetExports 函数
 
 `v8/src/wasm/wasm-module.h` 是 V8 中 WebAssembly 支持的关键组成部分。它定义了表示 WebAssembly 模块的核心数据结构，并提供了用于访问、查询和操作模块信息的各种函数。这个头文件在 V8 将 WebAssembly 集成到 JavaScript 运行时环境中起着至关重要的作用，它负责模块的内部表示，以及与 JavaScript 交互的接口。它不是 Torque 文件，并且其功能直接支持了 JavaScript 中 `WebAssembly` 相关的 API。理解这个头文件对于深入了解 V8 的 WebAssembly 实现至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-module.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-module.h以.tq结尾，那它是个v8 torque源代码，
@@ -441,8 +441,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 m_declared_functions + 7) / 8;
     for (size_t i = 0; i < num_words; ++i) {
       validated_functions[i].store(0xff, std::memory_order_relaxed);
@@ -646,8 +648,4 @@ int NumFeedbackSlots(const WasmModule* module, int func_index);
 }  // namespace v8::internal::wasm
 
 #endif  // V8_WASM_WASM_MODULE_H_
-
-"""
-
-
 ```

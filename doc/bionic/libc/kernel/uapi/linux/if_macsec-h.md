@@ -305,7 +305,7 @@ sys.stdin.read()
 
 总结来说，虽然 Framework 和 NDK 不会直接操作这个头文件，但底层的系统服务在配置 MACsec 时会间接地使用到它，通过 Netlink 接口与内核交互。Frida 可以用来 Hook 相关的系统调用或库函数，以观察和调试这些交互过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/if_macsec.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -316,8 +316,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -480,7 +482,4 @@ enum macsec_secy_stats_attr {
   MACSEC_SECY_STATS_ATTR_MAX = __MACSEC_SECY_STATS_ATTR_END - 1,
 };
 #endif
-
-"""
-
 ```

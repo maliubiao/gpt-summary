@@ -93,11 +93,13 @@ loadAndRunWasm();
 
 `CodeSpaceWriteScope` 是 V8 内部用于安全管理对 WebAssembly 代码空间写入权限的关键组件。它通过 RAII 模式，确保在需要时获得写入权限，并在操作完成后自动释放，从而保证了 V8 内部操作的安全性。虽然 JavaScript 开发者不会直接接触到这个类，但它在 JavaScript 加载和执行 WebAssembly 代码的过程中发挥着重要的底层作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/code-space-access.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -112,7 +114,4 @@ CodeSpaceWriteScope::CodeSpaceWriteScope()
     : rwx_write_scope_("For wasm::CodeSpaceWriteScope.") {}
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

@@ -114,7 +114,7 @@ Processed event: {EventType:UserTaskEnd Timestamp:150 GoroutineID:1}
 
 总而言之，这段代码是 Go 追踪功能中负责事件排序和一致性验证的关键部分，它通过维护程序状态和执行各种检查来确保追踪数据的准确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/trace/order.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -123,8 +123,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ue.push(extra)
 	}
 	o.queue.push(Event{table: evt, ctx: curCtx, base: *ev})
@@ -748,10 +750,4 @@ func makeEvent(table *evTable, ctx schedCtx, typ event.Type, time Time, args ...
 	copy(ev.base.args[:], args)
 	return ev
 }
-
-"""
-
-
-
-
 ```

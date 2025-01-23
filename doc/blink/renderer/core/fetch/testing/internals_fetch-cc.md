@@ -144,15 +144,17 @@ TEST_F(MyFetchTest, RedirectChain) {
 
 总而言之，`internals_fetch.cc` 是 Blink 引擎内部用于测试 `fetch` 功能的工具，它提供了一种方式来访问 `Response` 对象内部的 URL 列表，这对于验证 `fetch` 请求和重定向的处理逻辑至关重要。它不直接参与到网页的运行中，而是服务于 Blink 引擎的开发和测试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/fetch/testing/internals_fetch.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ Vector<String> InternalsFetch::getInternalResponseURLList(Internals& internals,
 }
 
 }  // namespace blink
-
-"""
-
 ```

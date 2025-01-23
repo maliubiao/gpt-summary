@@ -178,7 +178,7 @@ MesonSample *sample = meson_sample_new("A valid message");
 
 总而言之，这个 `meson-sample.c` 文件是一个用于测试目的的简单示例，它展示了如何在 C 代码中使用 GLib/GObject 框架，并在 Frida 的上下文中被用于验证 Frida 与这类代码的交互能力。对于逆向工程师来说，理解这样的示例代码有助于他们掌握如何使用 Frida 来动态分析基于 GLib/GObject 的应用程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/34 gir static lib/statichelper/meson-sample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample.h"
 
 typedef struct _MesonSamplePrivate
@@ -314,7 +316,4 @@ meson_sample_print_message (MesonSample *self)
 
   g_print ("Message: %s\n", priv->msg);
 }
-
-"""
-
 ```

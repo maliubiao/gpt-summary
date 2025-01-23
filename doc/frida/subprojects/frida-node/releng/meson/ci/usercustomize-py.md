@@ -160,7 +160,7 @@ Initially, one might focus too much on the direct actions of the Python script. 
 
 `frida/subprojects/frida-node/releng/meson/ci/usercustomize.py` 文件虽然代码量很少，但在 Frida Node.js 的开发和 CI 流程中扮演着重要的角色，负责在 Python 环境启动时初始化代码覆盖率收集。 这对于保证代码质量、理解代码执行路径以及辅助逆向分析都具有重要的意义。 普通用户一般不会直接接触到这个文件，它主要是服务于开发人员和 CI 系统。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/ci/usercustomize.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -168,14 +168,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
 import coverage
 coverage.process_startup()
-
-"""
-
 ```

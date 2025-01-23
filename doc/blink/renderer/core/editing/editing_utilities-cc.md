@@ -154,7 +154,7 @@ My thought process to answer the request about `editing_utilities.cc` goes like 
 
 总而言之，`blink/renderer/core/editing/editing_utilities.cc` 的第 1 部分主要提供了 **关于判断和操作文档中可编辑区域和文本光标的基础工具函数**。这些函数是 Blink 引擎处理用户编辑行为的核心组成部分，与 HTML 的可编辑属性、CSS 的样式控制以及 JavaScript 的编辑 API 紧密相关。它们负责确定哪些内容可以编辑，以及如何在可编辑内容中移动和定位光标，为更高级的编辑功能提供了基础支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/editing_utilities.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007 Apple Inc. All rights reserved.
  *
@@ -987,7 +989,4 @@ bool IsEnclosingBlock(const Node* node) {
 // TODO(yosin) Deploy this in all of the places where |enclosingBlockFlow()| and
 // |enclosingBlockFlowOrTableElement()| are used.
 // TODO(yosin) Callers of |Node| version of
-"""
-
-
 ```

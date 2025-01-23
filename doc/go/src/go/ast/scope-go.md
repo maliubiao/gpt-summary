@@ -148,7 +148,7 @@ scope 0xc000010080 {
 
 总而言之，`go/src/go/ast/scope.go` 提供了一种用于表示和管理词法作用域和符号表的基础结构，是 Go 语言编译器前端的关键组成部分，但其主要作用是支持语法分析，而非完整的语义分析。开发者应该遵循 `Deprecated` 注释的建议，使用 `go/types` 包进行更准确的类型检查和语义分析。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/ast/scope.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -156,8 +156,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -329,9 +331,4 @@ var objKindStrings = [...]string{
 }
 
 func (kind ObjKind) String() string { return objKindStrings[kind] }
-
-"""
-
-
-
 ```

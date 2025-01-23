@@ -134,7 +134,7 @@ func main() {
 
 这段 Go 代码是一个用于生成 SHA512 算法 AMD64 汇编实现的程序。它是 Go 标准库 `crypto/sha512` 包性能优化的关键部分。开发者通常不需要直接与这段代码交互，而是通过上层的 Go API 使用 SHA512 功能。理解这段代码的功能需要对 Go 代码生成、汇编语言和 SHA512 算法有深入的了解。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/sha512/_asm/sha512block_amd64_asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -142,8 +142,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1754,9 +1756,4 @@ func MASK_YMM_LO_DATA() Mem {
 	DATA(0x18, U64(0xFFFFFFFFFFFFFFFF))
 	return MASK_YMM_LO
 }
-
-"""
-
-
-
 ```

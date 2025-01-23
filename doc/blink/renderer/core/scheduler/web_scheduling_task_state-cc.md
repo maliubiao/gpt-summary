@@ -170,14 +170,16 @@ setTimeout(() => {
 
 总而言之，`web_scheduling_task_state.cc` 中定义的 `WebSchedulingTaskState` 类是 Blink 渲染引擎中用于管理 Web 任务的关键组成部分，它通过关联取消信号和优先级信息，帮助浏览器更有效地调度和执行各种与 JavaScript, HTML 和 CSS 相关的操作，提升用户体验。理解其作用有助于开发者编写更健壮和性能更优的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/scheduler/web_scheduling_task_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -219,7 +221,4 @@ WebSchedulingTaskState::GetTaskAttributionInfo() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

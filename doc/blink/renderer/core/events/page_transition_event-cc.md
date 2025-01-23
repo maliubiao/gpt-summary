@@ -128,14 +128,16 @@ Let's break down the thought process for analyzing this C++ source code and gene
 
 总而言之，`blink/renderer/core/events/page_transition_event.cc` 文件是 Blink 引擎中实现页面过渡事件的关键部分，它定义了 `PageTransitionEvent` 类并负责创建和管理这些事件对象，使得 JavaScript 能够感知和处理页面加载和卸载的不同阶段。理解其功能和与 Web 技术的关系对于开发出更健壮、用户体验更好的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/page_transition_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Apple Inc. All rights reserved.
  *
@@ -200,7 +202,4 @@ void PageTransitionEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

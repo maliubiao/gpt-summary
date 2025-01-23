@@ -98,15 +98,17 @@ Let's break down the thought process to analyze the provided C++ code for a Blin
 
 总而言之，`canvas_fuzzer.cc` 是一个重要的工具，用于确保 Chromium Blink 引擎在处理与 HTML Canvas 相关的各种输入和操作时，能够保持稳定性和安全性。它通过自动化地生成和注入各种可能的 HTML 结构，帮助开发者发现隐藏的 bug 和漏洞，从而提高 Web 浏览器的质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/canvas/canvas_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   return blink::LLVMFuzzerTestOneInput(data, size);
 }
-
-"""
-
 ```

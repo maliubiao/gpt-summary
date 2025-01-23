@@ -186,7 +186,7 @@ By following these steps, I can systematically analyze the code and generate a c
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/mesonbuild/build.py` 的这个代码片段是 Frida 项目构建系统的核心组成部分，负责定义各种构建目标的类型、属性和构建方式。它深入涉及到二进制文件的底层结构、不同操作系统的构建约定以及编程语言的特定构建需求。理解这些类的功能对于理解 Frida 的构建过程、进行问题排查以及进行定制化开发至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/build.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -195,8 +195,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 get(self):
         return self.is_linkwithable
 
@@ -961,7 +963,4 @@ class CompileTarget(BuildTarget):
 class RunTarget(Target, CommandBase):
 
     typename
-"""
-
-
 ```

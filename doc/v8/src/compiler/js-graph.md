@@ -120,11 +120,13 @@ const arr = new Array(5);
 
 总而言之，`v8/src/compiler/js-graph.cc` 是 V8 编译器中一个至关重要的组成部分，它负责将 JavaScript 代码中的常量和一些内部操作表示成图结构中的节点，为后续的优化和代码生成阶段奠定基础。它直接影响了 V8 引擎执行 JavaScript 代码的效率和性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-graph.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -424,7 +426,4 @@ DEFINE_GETTER(ExternalObjectMapConstant, Map,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

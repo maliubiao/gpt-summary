@@ -105,16 +105,18 @@ Planning complete. Proceeding with response generation.
 
 这部分代码的核心功能是提供一个高效且线程安全的机制来获取用于单词断行的 ICU 迭代器。它利用预定义的 ICU 规则来创建迭代器，并缓存迭代器实例以提高性能。这个函数是 Blink 渲染引擎中处理文本断行的关键组件，确保了网页文本能够根据不同语言的规则正确地进行换行显示。它隐藏了 ICU 库的复杂性，为 Blink 的其他模块提供了一个简单易用的接口来执行单词断行操作.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/text_break_iterator_icu.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-      // Oriya Sign Virama
+### 源代码
+```cpp
+// Oriya Sign Virama
       "$Ori1    = [\\u0B15-\\u0B39];"          // Oriya Letter Ka,...,Ha
       "$Tel0    = [\\u0C05-\\u0C39];"          // Telugu Letter A,...,Ha
       "$TelV    = \\u0C4D;"                    // Telugu Sign Virama
@@ -190,8 +192,4 @@ Prompt:
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

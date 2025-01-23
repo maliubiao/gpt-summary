@@ -261,7 +261,7 @@ printf("Mantissa Low: %u\n", d_val.bits.manl);  // 输出: ... (尾数低位)
 
 总而言之，`bionic/libm/fpmath.handroid` 虽然只是一个头文件，但它是 Android 平台浮点数运算的基础，定义了浮点数的底层表示方式，为 `libm` 库中的数学函数提供了必要的数据结构支持。理解这个文件有助于深入理解 Android 如何处理浮点数以及如何调试相关的程序。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/fpmath.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -271,8 +271,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 2003 Mike Barcroft <mike@FreeBSD.org>
  * Copyright (c) 2002 David Schultz <das@FreeBSD.ORG>
@@ -366,7 +368,4 @@ union IEEEl2bits {
 } while(0)
 
 #endif // __LP64__
-
-"""
-
 ```

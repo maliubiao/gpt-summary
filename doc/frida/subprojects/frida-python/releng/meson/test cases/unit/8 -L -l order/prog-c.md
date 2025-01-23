@@ -155,7 +155,7 @@ Initially, one might focus too much on trying to find complex logic within the `
 
 因此，到达这个源代码文件的路径通常是 **Frida 的开发者或贡献者在进行单元测试和调试的过程中**。  这个简单的 `prog.c` 文件是为了提供一个干净、可控的目标进程，用于验证 Frida 的特定功能（例如，在特定的链接配置下是否能正常 attach 和 hook）。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/8 -L -l order/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,14 +163,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(int argc, char **argv) {
   return 0;
 }
-
-"""
-
 ```

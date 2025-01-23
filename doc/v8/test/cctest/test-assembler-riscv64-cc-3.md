@@ -167,7 +167,7 @@ console.log(vectorSum);
 
 这部分 `test-assembler-riscv64.cc` 文件的主要功能是 **全面测试 V8 的 RISC-V 64 位汇编器中关于浮点数和向量运算指令的生成和执行的正确性**。它覆盖了基本的浮点算术运算、宽度扩展运算、融合乘加运算以及整数类型的转换和扩展指令。通过大量的参数化测试，验证了这些指令在不同输入场景下的行为是否符合 RISC-V 的规范。这对于确保 V8 在 RISC-V 架构上正确高效地执行 JavaScript 的浮点数和 SIMD 相关代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-riscv64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-riscv64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -175,8 +175,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 0; i < 4; i++) {                                      \
           CHECK_FLOAT_EQ(UseCanonicalNan<float>(expect_res), result[i]);   \
           result[i] = 0.0;                                                 \
@@ -695,8 +697,4 @@ UTEST_RVV_VI_VIE_FORM_WITH_RES(vsext_vf2, int64_t, 64, 32, ARRAY(int32_t),
 UTEST_RVV_VI_VIE_FORM_WITH_RES(vsext_vf4, int64_t, 64, 16, ARRAY(int16_t),
                                static_cast<int64_t>(dst[i]))
 UTEST_RVV_VI_VIE_FORM_WITH_RES(vsext_vf8, int64_t, 64, 8, ARRAY(int8_t),
-                        
-"""
-
-
 ```

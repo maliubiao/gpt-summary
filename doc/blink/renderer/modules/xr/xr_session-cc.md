@@ -130,7 +130,7 @@ Based on the first part of the code, the primary function of `xr_session.cc` is 
 
 在提供的代码片段中，`XRSession` 类主要负责 XR 会话的创建和初始化，包括设置会话模式、环境混合模式、交互模式、启用特性等。它还处理了部分状态管理，例如通过 `UpdateViews` 方法更新视图信息。此外，代码还定义了一些辅助函数和常量，用于错误处理和特性映射。总而言之，第一部分主要关注会话的建立和基本属性的配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_session.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -978,8 +980,5 @@ int XRSession::requestAnimationFrame(V8XRFrameRequestCallback* callback) {
   TRACE_EVENT0("gpu", __func__);
   // Don't allow any new frame requests once the session is ended.
   if (ended_)
-    return 
-"""
-
-
+    return
 ```

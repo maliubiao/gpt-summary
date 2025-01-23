@@ -265,7 +265,7 @@ sys.stdin.read()
 
 由于 `fvwrite.h` 只是一个重定向，我们无法直接从这个文件获取 `fvwrite` 的具体实现细节。要深入了解 `fvwrite` 的功能，需要查看 `local.h` 以及相关的 `.c` 源文件。然而，通过对 `fvwrite` 上层函数的分析和 Frida hook，我们可以理解其在 Android 系统中的作用以及调用路径。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/upstream-openbsd/lib/libc/stdio/fvwrite.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -276,8 +276,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$OpenBSD: fvwrite.h,v 1.7 2015/08/27 04:37:09 guenther Exp $	*/
 
 /*-
@@ -313,7 +315,4 @@ Prompt:
  */
 
 /* Moved to "local.h". */
-
-"""
-
 ```

@@ -143,7 +143,7 @@ This structured approach allows me to break down the task, analyze the code effe
 
 总而言之，`x509_util_unittest.cc` 是 Chromium 网络栈安全性的重要组成部分，它通过自动化测试来保证证书处理和通道绑定等关键功能的正确性，从而间接地保障用户的 Web 安全体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/x509_util_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -700,7 +702,4 @@ TEST(X509UtilTest, CreateChannelBindings_SHA512) {
       0x65, 0x6e, 0x64, 0x2d, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x3a, 0x2c,
       0x33, 0xc9, 0xee, 0x30, 0xa1, 0x99, 0xdc, 0x19, 0x48, 0x0a, 0xec,
       0xc5, 0x1d, 0x94, 0x
-"""
-
-
 ```

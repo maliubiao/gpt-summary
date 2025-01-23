@@ -173,7 +173,7 @@ ADD X2, X0, X1 // 将 X0 和 X1 的值相加，结果存储到 X2
 
 总而言之，`v8/src/execution/arm64/simulator-arm64.cc` 的主要功能是 **为 V8 引擎提供一个软件实现的 ARM64 指令执行环境，用于在非 ARM64 平台上模拟执行 ARM64 代码，并提供调试和分析能力。** 它是 V8 引擎跨平台开发和测试的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/arm64/simulator-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/arm64/simulator-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -181,8 +181,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1092,7 +1094,4 @@ void Simulator::DoRuntimeCall(Instruction* instr) {
       TraceSim(
           "Arguments: "
           "0x%016" PRIx64
-"""
-
-
 ```

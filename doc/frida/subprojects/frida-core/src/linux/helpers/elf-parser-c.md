@@ -172,7 +172,7 @@ During the process, I might have initially focused too much on the low-level det
 
 例如，用户可能在 Frida 脚本中使用了 `Module.findExportByName()` 函数，该函数内部就可能调用了 `elf-parser.c` 中的函数来查找导出的符号。如果 `Module.findExportByName()` 返回 `null`，那么可以怀疑是 `elf-parser.c` 在解析 ELF 文件时没有找到对应的符号，可能是符号名错误，或者 ELF 文件本身存在问题。通过查看 Frida 的源码或者附加调试器到 Frida 进程，可以跟踪到 `elf-parser.c` 中的具体函数执行情况，从而定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/linux/helpers/elf-parser.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,8 +180,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "elf-parser.h"
 
 static const ElfW(Phdr) * frida_find_program_header_by_type (const ElfW(Ehdr) * ehdr, ElfW(Word) type);
@@ -427,7 +429,4 @@ frida_compute_elf_region_upper_bound (const ElfW(Ehdr) * ehdr, ElfW(Addr) addres
 
   return 0;
 }
-
-"""
-
 ```

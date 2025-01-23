@@ -173,15 +173,17 @@ This structured thought process, starting with the high-level goal and progressi
 
 总而言之，`net/http/http_auth_handler_basic_fuzzer.cc` 是 Chromium 用来提高其网络栈安全性和健壮性的一个工具，它通过模拟各种可能的 Basic 认证挑战，来测试 `HttpAuthHandlerBasic` 类的处理能力，确保即使面对恶意或格式错误的输入，浏览器也能安全稳定地运行。虽然用户不会直接接触到这个 fuzzer，但它的作用是保障用户在使用 Basic 认证的网站时的安全和体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_auth_handler_basic_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -220,7 +222,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
       host_resolver.get(), &basic);
   return 0;
 }
-
-"""
-
 ```

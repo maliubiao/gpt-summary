@@ -181,15 +181,17 @@ By following this structured thought process, moving from a broad overview to sp
 
 `color_test.cc` 文件的第 1 部分主要集中在测试 `blink::Color` 类的**颜色混合 (`ColorMix`)** 和**颜色插值 (`ColorInterpolation`)** 的核心功能，以及 **Hue 插值** 和 **转换为 Skia 颜色格式的验证**。这些测试覆盖了在同一颜色空间和不同颜色空间下进行颜色操作的关键逻辑，并间接验证了颜色空间转换的正确性。 这些功能与 CSS 的 `color-mix()` 函数、颜色动画和过渡、以及对各种颜色空间的支持密切相关。文件中也包含了对带有 "none" 值的颜色处理的测试用例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/color_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2022, Google Inc. All rights reserved.
  *
@@ -856,7 +858,4 @@ TEST(BlinkColor, Unpremultiply) {
     EXPECT_NEAR(color_test.color.param2_, color_test.color_expected.param2_,
                 0.001f)
         << "Unpremultiplying g
-"""
-
-
 ```

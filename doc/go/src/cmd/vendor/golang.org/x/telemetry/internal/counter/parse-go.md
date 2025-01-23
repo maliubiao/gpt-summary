@@ -230,15 +230,17 @@ func main() {
 
 总而言之，`go/src/cmd/vendor/golang.org/x/telemetry/internal/counter/parse.go` 中的 `Parse` 函数是 telemetry 库内部用于解析持久化计数器数据的关键组件，它负责读取文件、校验格式、解析元数据和计数器值，并将这些信息加载到内存中的 `File` 结构体中供后续使用。 使用者需要确保提供正确的文件路径和符合预期格式的计数器数据文件。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/telemetry/internal/counter/parse.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -321,9 +323,4 @@ func Parse(filename string, data []byte) (*File, error) {
 	}
 	return f, nil
 }
-
-"""
-
-
-
 ```

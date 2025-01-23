@@ -98,7 +98,7 @@ By following these steps, I could systematically analyze the code and provide a 
 
 总而言之，`InsertListCommand` 负责处理用户在网页上创建和修改列表的操作，它是连接用户界面交互、JavaScript 命令和底层 DOM 操作的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/insert_list_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2010 Apple Inc. All rights reserved.
  *
@@ -850,7 +852,4 @@ void InsertListCommand::MoveParagraphOverPositionIntoEmptyListItem(
       EnclosingBlock(start.DeepEquivalent().AnchorNode());
   Node* const outer_block = HighestEnclosingNodeOfType(
       start.DeepEquivalent(), &IsInlineElement, kCannotCrossEd
-"""
-
-
 ```

@@ -153,7 +153,7 @@ This iterative process of code scanning, identifying key concepts, relating them
 
 这段 `gumelfmodule.c` 文件的第一部分主要负责 **ELF 文件的加载、初步解析和基本信息的提取**。它定义了 `GumElfModule` 对象，提供了创建和加载 ELF 模块的方法，并解析了 ELF 文件的头部和程序头部，为后续更深入的分析（例如节区、符号表、重定位等）奠定了基础。它处理了从不同来源加载 ELF 文件的情况，并初步管理了相关的内存资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/gum/gumelfmodule.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2010-2024 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  * Copyright (C)      2019 Jon Wilson <jonwilson@zepler.net>
@@ -1334,8 +1336,4 @@ gum_elf_module_get_file_data (GumElfModule * self,
 void
 gum_elf_module_enumerate_segments (GumElfModule * self,
                                    GumFoundElfSegmentFunc func,
-             
-"""
-
-
 ```

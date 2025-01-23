@@ -147,7 +147,7 @@ By following these steps and refining the understanding as we go, we can arrive 
 
 尽管这个脚本非常简单，但它在软件开发和测试流程中扮演着重要的角色，尤其是在像 Frida 这样复杂的动态插桩工具的开发过程中。它可以帮助确保文件系统操作的正确性，并作为自动化测试的一部分来提高软件的可靠性。在逆向工程中，虽然用户不会直接运行它，但理解其背后的原理有助于我们更好地理解 Frida 工具的内部工作机制以及如何进行有效的环境检查和问题排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/51 run target/check_exists.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -164,7 +166,4 @@ import sys
 
 if not os.path.isfile(sys.argv[1]):
     raise Exception("Couldn't find {!r}".format(sys.argv[1]))
-
-"""
-
 ```

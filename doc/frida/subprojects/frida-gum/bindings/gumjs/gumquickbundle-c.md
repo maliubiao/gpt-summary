@@ -154,7 +154,7 @@ By following these steps, including careful code examination and systematic mapp
 
 总而言之，`gumquickbundle.c` 是 Frida Gum 运行时环境的关键组成部分，它负责高效地加载和执行预编译的 JavaScript 代码，为 Frida 强大的动态 instrumentation 功能提供了基础。理解其工作原理有助于深入了解 Frida 的内部机制，并在遇到相关问题时进行有效调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickbundle.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2020 Ole André Vadla Ravnås <oleavr@nowsecure.com>
  *
@@ -196,7 +198,4 @@ gum_quick_bundle_load (const GumQuickRuntimeModule * modules,
     JS_FreeValue (ctx, result);
   }
 }
-
-"""
-
 ```

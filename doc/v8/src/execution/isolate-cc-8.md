@@ -283,7 +283,7 @@ By following this systematic approach, combining code analysis with an understan
 
 作为系列的最后一部分，`v8/src/execution/isolate.cc` 文件是 V8 引擎中 **`Isolate` 核心功能的蓝图和实现**。它定义了 `Isolate` 的生命周期管理、资源分配、与 JavaScript 语言特性的集成（如 Promise 和微任务）、调试支持、性能优化以及与其他 V8 子系统的交互。  `Isolate` 是 V8 运行时的基石，这个文件中的代码是确保 JavaScript 代码能够安全、高效地执行的关键。它像一个操作系统的内核一样，管理着 V8 实例的各种核心服务和状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/isolate.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/isolate.cc以.tq结尾，那它是个v8 torque源代码，
@@ -291,8 +291,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第9部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 value());
   if (HasAsyncEventDelegate()) {
     if (promise->has_async_task_id()) {
@@ -1015,8 +1017,4 @@ void Isolate::InitializeBuiltinJSDispatchTable() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

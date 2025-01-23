@@ -82,7 +82,7 @@ Here's a breakdown of how to address the request:
 
 总而言之，`quic_session_test.cc` 是确保 `QuicSession` 类功能正确性的关键组成部分，它通过大量的测试用例覆盖了 `QuicSession` 的各种功能和场景，为 QUIC 协议的稳定性和可靠性提供了保障。虽然它本身不是 JavaScript 代码，但其测试的功能直接支撑着基于 QUIC 协议的 Web 应用的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_session_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -90,8 +90,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -930,8 +932,4 @@ TEST_P(QuicSessionTestServer, IsClosedUnidirectionalStreamPeerCreated) {
   CheckClosedStreams();
   // Close one, but make sure the other is still not closed
   CloseStream(stream3->id());
- 
-"""
-
-
 ```

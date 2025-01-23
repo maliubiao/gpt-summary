@@ -159,11 +159,13 @@ runWasm();
 
 `v8/test/fuzzer/wasm-deopt.cc` 这个 C++ 文件是一个专门用于测试 V8 引擎在处理 WebAssembly 代码时反优化机制的模糊测试工具。它通过生成各种各样的 Wasm 模块，并强制 V8 对其进行优化和多次执行，来检测与反优化相关的潜在 bug。 虽然我们不能直接在 JavaScript 中控制反优化，但理解其背后的原理有助于我们编写更健壮和性能更优的 WebAssembly 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/fuzzer/wasm-deopt.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -519,7 +521,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace v8::internal::wasm::fuzzing
-
-"""
-
 ```

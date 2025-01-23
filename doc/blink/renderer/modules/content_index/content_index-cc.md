@@ -260,15 +260,17 @@ This detailed breakdown illustrates how to approach analyzing source code, conne
 
 总而言之，`content_index.cc` 文件是 Chromium 中 `ContentIndex` API 的核心实现，它连接了 JavaScript API 和浏览器底层的 Content Index 服务，负责管理和验证待索引的内容，并处理图标加载等操作。 理解这个文件的功能对于调试和理解 Web 应用如何使用 `ContentIndex` API 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/content_index/content_index.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -583,7 +585,4 @@ mojom::blink::ContentIndexService* ContentIndex::GetService() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

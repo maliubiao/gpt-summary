@@ -173,7 +173,7 @@ This part of the `builtins-ia32.cc` file focuses on several low-level operations
 
 These built-ins are crucial for performance and the correct interaction between JavaScript and the underlying system and native extensions. The use of assembly language allows for fine-grained control and optimization for the specific architecture.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/ia32/builtins-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/ia32/builtins-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -181,8 +181,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , kReturnRegister0);
   Register tmp = new_fp;
   __ mov(tmp,
@@ -1082,7 +1084,4 @@ void Generate_DeoptimizationEntry(MacroAssembler* masm,
   Label pop_loop_header;
   __ jmp(&pop_loop_header);
   La
-"""
-
-
 ```

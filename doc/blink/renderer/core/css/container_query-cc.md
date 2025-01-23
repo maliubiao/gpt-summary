@@ -178,15 +178,17 @@ By following these steps, iteratively refining the understanding, and focusing o
 
 总而言之，`container_query.cc` 文件是 Blink 渲染引擎中处理 CSS 容器查询的核心部分，它负责存储和表示容器查询的信息，为后续的样式计算和应用提供了基础。理解这个文件有助于理解浏览器如何解析和应用容器查询，从而帮助开发者更好地使用和调试这项 CSS 特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/container_query.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ ContainerQuery* ContainerQuery::CopyWithParent(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -318,7 +318,7 @@ sys.stdin.read()
 
 通过 Frida hook，你可以实时观察动态链接器的行为以及你的测试代码的执行情况，从而更好地理解 `DT_NODELETE` 的作用和测试代码的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/dlopen_nodelete_dt_flags_1.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -329,8 +329,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -361,7 +363,4 @@ static void __attribute__((destructor)) unload_guard() {
     *unload_flag_ptr = true;
   }
 }
-
-"""
-
 ```

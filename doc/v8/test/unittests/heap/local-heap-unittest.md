@@ -117,11 +117,13 @@ onmessage = function(event) {
 
 `v8/test/unittests/heap/local-heap-unittest.cc` 这个文件测试了 V8 引擎中 `LocalHeap` 类的核心功能，包括线程本地堆的创建、管理以及与垃圾回收机制的集成。这对于 V8 引擎正确地在多线程环境下执行 JavaScript 代码至关重要，例如在 Web Workers 的场景中，每个 worker 都需要有自己的独立堆来管理其 JavaScript 对象的生命周期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/local-heap-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -310,7 +312,4 @@ TEST_F(LocalHeapTest, GCEpilogue) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

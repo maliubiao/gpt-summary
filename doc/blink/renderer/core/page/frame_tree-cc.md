@@ -156,15 +156,17 @@ By following these steps, including the self-correction, we can arrive at a comp
 
 总而言之，`blink/renderer/core/page/frame_tree.cc` 是 Blink 渲染引擎中管理页面框架结构的关键部分，它与 HTML 的框架元素、CSS 的布局以及 JavaScript 的框架操作紧密相关，确保了浏览器能够正确地呈现和管理包含多个框架的网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/frame_tree.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) Research In Motion Limited 2010. All rights reserved.
  * Copyright (C) 2006 Apple Computer, Inc.
@@ -610,7 +612,4 @@ void ShowFrameTree(const blink::Frame* frame) {
 }
 
 #endif  // DCHECK_IS_ON()
-
-"""
-
 ```

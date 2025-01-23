@@ -224,7 +224,7 @@ v4 = OpSelect0 v3
 
 这部分 `rewriteLOONG64.go` 的主要功能是定义了一系列**SSA 重写规则**，用于将 Go 语言的通用操作转换为更底层的、针对 **LOONG64 架构优化的指令序列**。  它涵盖了位计数、循环移位、算术和逻辑右移以及从多返回值函数中选择特定返回值的优化。 这些规则旨在提升在 LOONG64 架构上运行的 Go 程序的性能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteLOONG64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -233,8 +233,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 PopCount16(v *Value) bool {
 	v_0 := v.Args[0]
 	b := v.Block
@@ -1421,9 +1423,4 @@ func rewriteValueLOONG64_OpSelectN(v *Value) bool {
 			break
 		}
 		sz := auxIntToInt64
-"""
-
-
-
-
 ```

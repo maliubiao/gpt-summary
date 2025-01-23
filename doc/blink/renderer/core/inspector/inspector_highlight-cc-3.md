@@ -144,15 +144,17 @@ By following these steps, we arrive at a comprehensive understanding of the code
 
 这段代码是 Chromium Blink 引擎中负责 Inspector 元素高亮显示功能的核心组成部分，它定义了各种网页元素和布局结构在开发者工具中进行可视化的默认样式和配置。这些默认值确保了开发者能够直观地理解网页的布局结构，并有助于调试 CSS 样式问题。它与 HTML、CSS 紧密相关，因为高亮显示的目标是 HTML 元素，而高亮的方式和呈现效果则取决于元素的 CSS 样式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_highlight.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 std::make_unique<InspectorFlexContainerHighlightConfig>(
           InspectorHighlight::DefaultFlexContainerConfig());
   config.flex_item_highlight_config =
@@ -237,8 +239,4 @@ BoxStyle InspectorHighlight::DefaultBoxStyle() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -216,15 +216,17 @@ go tool asm -arch=arm64 input.s output.o
 
 理解这些数据结构及其关系对于编写和理解处理 ARM64 汇编代码的 Go 程序至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/arch/arm64/arm64asm/inst.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1355,9 +1357,4 @@ var sysInstsAttrs = map[sysInstFields]sysInstAttrs{
 	sysInstFields{3, 7, 12, 1}: {sys_DC, "CVAP", true},
 	sysInstFields{3, 7, 13, 1}: {sys_DC, "CVADP", true},
 }
-
-"""
-
-
-
 ```

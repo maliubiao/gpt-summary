@@ -139,7 +139,7 @@ console.log(notANumber * 1); // 输出 NaN (Not a Number)
 
 `v8/src/codegen/code-stub-assembler.h` 文件是 V8 引擎中 CodeStubAssembler 的重要组成部分，它提供了一组底层的、用于类型检查、类型转换、内存操作和数据结构访问的 C++ 辅助函数。 这些函数是 V8 将 JavaScript 代码编译成高效机器码的关键工具，直接支持着 JavaScript 的动态类型、类型转换、以及对象和数据结构的操作。  它不是 Torque 源代码，而是 Torque 生成的 C++ 代码所使用的基础库。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.h以.tq结尾，那它是个v8 torque源代码，
@@ -147,8 +147,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 HeapObject> object);
   TNode<BoolT> IsJSTypedArrayInstanceType(TNode<Int32T> instance_type);
   TNode<BoolT> IsJSTypedArrayMap(TNode<Map> map);
@@ -856,7 +858,4 @@ HeapObject> object);
       ExpectedReceiverMode expected_receiver_mode = kExpectingAnyReceiver);
   void TryGetOwnProperty(
       TNode<Context> context, TNode
-"""
-
-
 ```

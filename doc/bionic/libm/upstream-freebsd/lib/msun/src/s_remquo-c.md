@@ -217,7 +217,7 @@ int main() {
 
 总而言之，`s_remquo.c` 是 Android 系统中一个基础且重要的数学函数实现，它通过底层的位操作来高效地计算浮点余数和部分商，并被 Android 的各种组件和应用程序所使用。理解其实现原理有助于进行更深入的 Android 系统和应用开发。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_remquo.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -227,8 +227,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*-
  * ====================================================
  * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
@@ -384,7 +386,4 @@ fixup:
 #if LDBL_MANT_DIG == 53
 __weak_reference(remquo, remquol);
 #endif
-
-"""
-
 ```

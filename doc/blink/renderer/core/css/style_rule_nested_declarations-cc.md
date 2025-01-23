@@ -119,15 +119,17 @@ Self-Correction/Refinement during the process:
 
 总而言之，`style_rule_nested_declarations.cc` 中的 `ReplaceSelectorList` 函数是 Blink 渲染引擎中处理动态 CSS 更新的一个关键环节，尤其是在处理嵌套样式规则的选择器变更时。它确保了在选择器改变的情况下，样式规则的其他属性能够被正确地保留。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/style_rule_nested_declarations.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -144,7 +146,4 @@ void StyleRuleNestedDeclarations::ReplaceSelectorList(
 }
 
 }  // namespace blink
-
-"""
-
 ```

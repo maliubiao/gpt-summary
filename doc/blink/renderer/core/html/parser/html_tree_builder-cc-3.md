@@ -118,15 +118,17 @@ By following this detailed thought process, I can ensure I address each part of 
 
 作为系列的一部分，这段代码片段主要展示了 `HTMLTreeBuilder` 在特定解析状态下（例如在表格内部处理文本，以及在 `<head>` 标签内部处理开始标签）和处理 Foreign Content 时的核心逻辑。它体现了 `HTMLTreeBuilder` 如何根据不同的上下文和遇到的 Token 类型来逐步构建和完善 DOM 树。它也展示了错误处理和对特定 HTML 标签的特殊处理机制。总体而言，这段代码是 `HTMLTreeBuilder` 实现其核心功能的一部分，即根据 HTML 语法规则将 Token 流转换为结构化的 DOM 树。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_tree_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
   frameset_ok_ = true;
 }
@@ -456,8 +458,4 @@ const char* HTMLTreeBuilder::ToString(HTMLTreeBuilder::InsertionMode mode) {
 #endif
 
 }  // namespace blink
-
-"""
-
-
 ```

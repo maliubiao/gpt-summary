@@ -165,14 +165,16 @@ By following these steps, I arrived at the comprehensive analysis provided in th
 
 总而言之，`web_media_stream_source.cc` 是 Blink 引擎中一个关键的组件，它将底层的媒体流源能力暴露给 Web 平台，使得 JavaScript 可以访问和控制用户的摄像头、麦克风和屏幕共享等设备。理解它的功能有助于理解 WebRTC 和 Media Streams API 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/mediastream/web_media_stream_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -275,7 +277,4 @@ WebPlatformMediaStreamSource* WebMediaStreamSource::GetPlatformSource() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

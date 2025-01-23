@@ -168,7 +168,7 @@ This detailed breakdown covers all the requested aspects and demonstrates a thor
 
 总而言之，`spawn-monitor-glue.c` 是 Frida 在 Windows 平台上实现新进程监控的关键组成部分，它提供了与进程环境和线程控制相关的底层功能，为 Frida 更高层次的 API 和用户脚本提供了基础。理解这段代码有助于深入理解 Frida 的工作原理以及进行更高级的动态逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/lib/payload/spawn-monitor-glue.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "frida-payload.h"
 
 #ifdef HAVE_WINDOWS
@@ -273,7 +275,4 @@ frida_ansi_string_to_utf8 (const gchar * str_ansi, gint length)
 }
 
 #endif
-
-"""
-
 ```

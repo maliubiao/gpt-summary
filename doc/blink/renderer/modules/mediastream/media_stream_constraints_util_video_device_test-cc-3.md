@@ -124,7 +124,7 @@ The user wants to understand the functionality of a Chromium Blink engine source
 
 **总结来说，这部分测试代码的核心功能是验证当 JavaScript 代码通过 `getUserMedia()` 的 `advanced` 约束请求特定的视频设备能力时，Blink 引擎能否正确地选择最合适的设备和设置，并处理高级约束之间可能存在的冲突。** 它通过大量的测试用例覆盖了各种约束组合，确保了 WebRTC API 在处理复杂视频约束时的稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_video_device_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -132,8 +132,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 kTrackAdapterSettingsEqualsFrameRate(result, 10.0);
 
   constraint_factory_.basic().width.SetIdeal(2000);
@@ -899,7 +901,4 @@ TEST_F(MediaStreamConstraintsUtilVideoDeviceTest,
 }
 
 TEST_F(MediaStreamConstraintsUtilVideoDe
-"""
-
-
 ```

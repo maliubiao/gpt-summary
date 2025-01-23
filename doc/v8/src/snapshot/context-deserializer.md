@@ -162,11 +162,13 @@ myObject.someMethod();
 
 `context-deserializer.cc` 是 V8 启动过程中一个至关重要的组件，它通过反序列化操作来快速恢复 JavaScript 执行环境的状态。 其中，处理嵌入器字段和 API 包装器字段的功能，使得 V8 能够与外部环境和自定义扩展进行无缝集成，确保了在恢复上下文后，这些外部组件也能恢复其与 JavaScript 对象的相关状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/snapshot/context-deserializer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -334,7 +336,4 @@ void ContextDeserializer::DeserializeApiWrapperFields(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

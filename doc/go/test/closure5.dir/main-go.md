@@ -134,15 +134,17 @@ func G() func() func() bool {
 
 这段代码是一个精简的测试用例，用于验证 Go 编译器在处理嵌套闭包时的正确性，尤其是在闭包可能被内联的情况下。它通过连续调用返回函数的机制来触发特定的闭包行为，并检查最终的返回值是否符合预期。理解闭包的变量捕获和函数调用的顺序是正确理解这段代码的关键。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/closure5.dir/main.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -158,9 +160,4 @@ func main() {
 		panic("FAIL")
 	}
 }
-
-"""
-
-
-
 ```

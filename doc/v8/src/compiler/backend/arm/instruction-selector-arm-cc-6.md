@@ -143,7 +143,7 @@ VCVT.U32.F32  Rd, Rn  // 将 Rn 寄存器中的 float32 转换为 unsigned int32
 
 因此，`instruction-selector-arm.cc` 是 V8 编译器后端中至关重要的组成部分，它直接影响着在 ARM 设备上运行的 JavaScript 代码的性能和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm/instruction-selector-arm.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm/instruction-selector-arm.cc以.tq结尾，那它是个v8 torque源代码，
@@ -151,9 +151,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
- this->Get(node);
+### 源代码
+```cpp
+this->Get(node);
     InstructionCode opcode = kArmVcvtU32F32;
     if (op.Is<Opmask::kTruncateFloat32ToUint32OverflowToMin>()) {
       opcode |= MiscField::encode(true);
@@ -223,8 +225,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE)
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

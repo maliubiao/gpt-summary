@@ -143,7 +143,7 @@ By following this structured approach and constantly refining the analysis, we c
 
 虽然 `func9.c` 中的代码非常简单，但它体现了函数调用的基本原理，并且在逆向工程中是一个重要的基础单元。通过 Frida 这样的工具，可以动态地观察和修改它的行为，从而帮助理解更复杂的程序逻辑。文件路径中的 "static link" 也暗示了链接方式，这在二进制分析中是一个重要的细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/66 static link/lib/func9.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,15 +151,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func8();
 
 int func9()
 {
   return func8() + 1;
 }
-
-"""
-
 ```

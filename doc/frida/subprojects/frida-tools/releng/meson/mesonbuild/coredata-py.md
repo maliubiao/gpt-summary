@@ -101,7 +101,7 @@ Frida 是一个动态仪器工具，用于在运行时检查和修改应用程�
 
 总而言之，`frida/subprojects/frida-tools/releng/meson/mesonbuild/coredata.py` 的这部分代码是 Frida 构建系统的核心，它定义了各种用于配置构建过程的数据结构和类，包括用户可配置的选项、依赖缓存和核心数据容器。它负责解析用户提供的配置信息、验证选项值、加载配置文件，并为后续的构建步骤提供必要的上下文和设置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -110,8 +110,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2024 The Meson development team
 # Copyright © 2023-2024 Intel Corporation
@@ -875,8 +877,5 @@ class CoreData:
         return value.as_posix()
 
     def init_builtins(self, subproject: str) -> None:
-        # Create builtin options with default 
-"""
-
-
+        # Create builtin options with default
 ```

@@ -150,7 +150,7 @@ By following these steps, systematically examining the code, and thinking about 
 
 希望以上归纳总结能够更清晰地阐述 `net/dns/host_cache_unittest.cc` 的功能及其与 JavaScript 的关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_cache_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -158,8 +158,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ::Time() + kTtl3, HostResolverInternalResult::Source::kDns,
       "endpoint.test"));
 
@@ -409,8 +411,4 @@ TEST(HostCacheTest, ConvertFromInternalMergedNodata) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

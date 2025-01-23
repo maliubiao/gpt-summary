@@ -125,15 +125,17 @@ Finally, the information needs to be organized clearly, addressing each part of 
 
 总之，`stats_unittest.cc` 是一个用于测试 Chromium 磁盘缓存统计功能的单元测试文件。它虽然不直接与 JavaScript 交互，但其测试的组件对 JavaScript 的性能有间接影响。理解这个文件可以帮助开发人员理解缓存统计的运作方式，并在调试缓存相关问题时提供线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/blockfile/stats_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -218,7 +220,4 @@ TEST(DiskCacheStatsTest, SaveRestore) {
   EXPECT_EQ(11, stats->GetCounter(disk_cache::Stats::CREATE_ERROR));
   EXPECT_EQ(13, stats->GetCounter(disk_cache::Stats::DOOM_ENTRY));
 }
-
-"""
-
 ```

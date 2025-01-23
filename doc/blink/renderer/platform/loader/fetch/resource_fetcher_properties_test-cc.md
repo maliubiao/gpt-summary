@@ -130,14 +130,16 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`resource_fetcher_properties_test.cc` 文件通过测试 `DetachableResourceFetcherProperties` 类的 `Detach()` 方法，揭示了资源获取器在分离时的状态变化。理解这些变化对于理解浏览器如何管理资源加载以及 Service Worker 等高级特性的行为至关重要。虽然开发者不会直接操作这些底层对象，但了解其原理有助于调试和理解与资源加载相关的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/resource_fetcher_properties_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -264,7 +266,4 @@ TEST_F(DetachableResourceFetcherPropertiesTest, DetachWithNonDefaultValues) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

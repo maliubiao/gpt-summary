@@ -343,7 +343,7 @@ Interceptor.attach(Module.findExportByName(null, "sendto"), {
 
 **注意:**  这个 Frida 示例只是一个起点。 实际解析 Netlink 消息的结构和属性需要更深入的理解 Netlink 协议和 `ethtool` 的消息格式，可能需要使用 `libnl` 库的结构定义来进行解析。 你可能需要 hook 更多的函数 (例如 `recvfrom`) 来查看内核的响应。 此外，找到负责发送这些 Netlink 消息的具体进程可能需要一些逆向工程的技巧。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/ethtool_netlink.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -354,8 +354,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -1129,7 +1131,4 @@ enum {
 #define ETHTOOL_GENL_VERSION 1
 #define ETHTOOL_MCGRP_MONITOR_NAME "monitor"
 #endif
-
-"""
-
 ```

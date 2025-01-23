@@ -148,14 +148,16 @@ A `Vector<OpenTypeMathStretchData::GlyphVariantRecord>` containing glyph IDs of 
 
 In summary, `open_type_math_support.cc` is a crucial piece of the puzzle for enabling proper mathematical typesetting in web browsers. It bridges the gap between the high-level description of mathematical content in HTML and the low-level font data required to render it visually. Understanding its functionality helps in comprehending how browsers handle and display mathematical expressions on the web.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/open_type_math_support.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -415,7 +417,4 @@ OpenTypeMathSupport::GetGlyphPartRecords(
 }
 
 }  // namespace blink
-
-"""
-
 ```

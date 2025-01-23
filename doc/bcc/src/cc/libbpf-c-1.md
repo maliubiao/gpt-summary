@@ -114,7 +114,7 @@ Response:
    - 通过`perf_event_open`关联tracepoint ID
 5. 内核执行`perf_event_open`系统调用（`__NR_perf_event_open=298`）
 6. 内核创建`perf_event`结构体并与BPF程序绑定
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/src/cc/libbpf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -124,8 +124,10 @@ Prompt:
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 probe' PMU") allows
  * creating [k,u]probe with perf_event_open, which makes it easier to clean up
  * the [k,u]probe. This function tries to create pfd with the perf_kprobe PMU.
@@ -930,8 +932,4 @@ int bcc_check_bpffs_path(const char *path) {
 
   return err;
 }
-
-"""
-
-
 ```

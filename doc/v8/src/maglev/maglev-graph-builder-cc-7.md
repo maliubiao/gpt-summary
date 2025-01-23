@@ -178,7 +178,7 @@ typedArr[2] = 20;              // 存储 TypedArray 元素
 
 总而言之，`v8/src/maglev/maglev-graph-builder.cc` 的第 8 部分专注于构建 Maglev 编译器中处理 JavaScript **数组和对象元素访问**的核心逻辑。它针对不同类型的数组（普通数组和 TypedArray）、不同的访问模式（加载和存储）以及可能遇到的多态情况进行了优化和代码生成。这部分代码的目标是生成高效的中间表示，以便后续的优化和代码生成阶段能够生成高性能的机器码来执行 JavaScript 数组和对象操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -186,9 +186,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共18部分，请归纳一下它的功能
+```
 
-"""
- rhs;
+### 源代码
+```cpp
+rhs;
     case AssertCondition::kGreaterThan:
       return lhs > rhs;
     case AssertCondition::kGreaterThanEqual:
@@ -981,8 +983,4 @@ ReduceResult MaglevGraphBuilder::TryBuildPolymorphicPropertyAccess(
     ReduceResult result;
     if (is_any_store) {
       result = TryBuildPropertyStore(receiver, lookup_start_object,
-                                    
-"""
-
-
 ```

@@ -186,7 +186,7 @@ func main() {
 
 总而言之，这段代码是 Go 编译器实现 range-over-function 功能的关键部分，它负责生成执行循环体的闭包，并添加必要的运行时检查和控制逻辑，确保 range-over-function 能够按照预期工作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/rangefunc/rewrite.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -195,8 +195,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 yClosures[bodyFunc] = true
 	setPos(bodyFunc, start)
 
@@ -582,10 +584,4 @@ func setPos(x syntax.Node, pos syntax.Pos) {
 		return true
 	})
 }
-
-"""
-
-
-
-
 ```

@@ -93,7 +93,7 @@ This step-by-step approach allows for a thorough analysis of the script, ensurin
 
 总而言之，`build_website.py` 是一个自动化工具，用于维护 Frida 官方网站的文档。它涉及到 Git 操作、构建系统调用、文件操作等，并间接地与逆向工程、底层系统知识相关联，因为它维护的文档是逆向工程师的重要参考资料。脚本中的硬编码路径和对外部工具的依赖是潜在的错误点。 开发者在遇到问题时，会通过查看脚本代码和执行日志来追踪问题根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/tools/build_website.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os, subprocess, shutil
@@ -154,7 +156,4 @@ def update() -> None:
 
 if __name__ == '__main__':
     update()
-
-"""
-
 ```

@@ -144,7 +144,7 @@ V8 的指令选择器会识别出 `TryMatchMulWithDup` 模式，并生成 `kArm6
 
 总而言之，`v8/src/compiler/backend/arm64/instruction-selector-arm64.cc` 的这一部分（第10部分）主要负责 **将 V8 内部的 SIMD 操作表示转换为高效的 ARM64 机器指令**。它包含了针对不同 SIMD 操作（如移位、二元运算、乘法、加法、减法、比较、规约等）的指令选择逻辑，并包含了一些针对特定模式的优化（如 `Mul with Dup` 和 `Add with Shift Right` 等）。这段代码是 V8 支持高性能 JavaScript 和 WebAssembly SIMD 功能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/arm64/instruction-selector-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/arm64/instruction-selector-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -152,8 +152,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第10部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 D_SHIFT_OP_LIST(SIMD_VISIT_SHIFT_OP)
 #undef SIMD_VISIT_SHIFT_OP
 #undef SIMD_SHIFT_OP_LIST
@@ -865,7 +867,4 @@ void InstructionSelectorT<Adapter>::VisitI8x16RelaxedLaneSelect(node_t node) {
 
 template <typename Adapter>
 vo
-"""
-
-
 ```

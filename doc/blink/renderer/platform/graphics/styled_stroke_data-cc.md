@@ -179,14 +179,16 @@ By following this thought process, I can systematically analyze the C++ code and
 
 总而言之，`styled_stroke_data.cc` 是 Blink 渲染引擎中一个关键的组成部分，它负责实现 CSS 中带样式描边的渲染逻辑，涉及到复杂的几何计算和与 Skia 图形库的交互。理解其功能有助于开发者更好地理解和控制网页元素的边框渲染效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/styled_stroke_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (C) 2013 Google Inc. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -365,7 +367,4 @@ bool StyledStrokeData::StrokeIsDashed(float width, StrokeStyle style) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

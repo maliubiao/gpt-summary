@@ -88,11 +88,13 @@ targetObject = null; // 解除对 targetObject 的引用，使其成为垃圾回
 
 `v8/src/heap/cppgc/prefinalizer-handler.cc` 中的 `PreFinalizerHandler` 类是 V8 引擎中用于管理 C++ 对象的预终结器的核心组件。它提供了一种机制，允许在对象被垃圾回收之前执行自定义的清理或通知操作。这个功能在 JavaScript 中通过 `FinalizationRegistry` API 暴露出来，允许 JavaScript 开发者注册在对象即将被回收时需要执行的回调函数。  C++ 的 `PreFinalizerHandler` 可以看作是 `FinalizationRegistry` 在 V8 引擎 C++ 层面的底层实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/prefinalizer-handler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ void PreFinalizerHandler::NotifyAllocationInPrefinalizer(size_t size) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

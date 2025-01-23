@@ -343,7 +343,7 @@ sys.stdin.read()
 
 通过这些 Frida Hook 示例，你可以更深入地了解在 Android 系统中，当 Native 代码尝试调用共享库中的函数时，动态链接器是如何工作的，以及当符号缺失时会发生什么。这有助于验证 `ndk_missing_symbols.py` 脚本的分析结果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/tools/ndk_missing_symbols.pyandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -354,8 +354,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 #
 # Copyright (C) 2015 The Android Open Source Project
@@ -404,7 +406,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-"""
-
 ```

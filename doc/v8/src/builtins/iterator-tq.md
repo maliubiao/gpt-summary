@@ -218,14 +218,16 @@ for (const item of myIterable) {
 
 总而言之，`v8/src/builtins/iterator.tq` 文件是 V8 引擎中实现 JavaScript 迭代器协议和相关功能的关键组成部分，它定义了底层的操作和辅助函数，使得 JavaScript 能够高效且正确地处理各种迭代场景。理解这个文件的内容有助于深入了解 JavaScript 迭代器的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/iterator.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -608,7 +610,4 @@ transitioning javascript builtin AsyncIteratorPrototypeAsyncDispose(
   }
 }
 }  // namespace iterator
-
-"""
-
 ```

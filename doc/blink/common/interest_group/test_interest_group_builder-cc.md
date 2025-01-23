@@ -164,14 +164,16 @@ InterestGroup group = builder.Build();
 
 总而言之，`test_interest_group_builder.cc` 是一个用于测试的工具类，它通过提供便捷的 `InterestGroup` 对象创建方式，帮助开发者编写更清晰、更易于维护的 Blink 引擎相关测试代码，特别是针对 Privacy Sandbox 和 Protected Audience API 功能的测试。它间接地与 JavaScript, HTML, CSS 相关，因为它创建的对象模拟了通过这些 Web 技术交互产生的兴趣组数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/interest_group/test_interest_group_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -371,7 +373,4 @@ TestInterestGroupBuilder::SetAggregationCoordinatorOrigin(
 }
 
 }  // namespace blink
-
-"""
-
 ```

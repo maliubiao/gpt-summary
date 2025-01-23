@@ -328,7 +328,7 @@ if (Process.arch === 'arm64') {
 
 `bionic/libc/kernel/uapi/asm-generic/ucontext.handroid` 定义了用户态上下文结构体 `ucontext`，它是实现用户级线程、信号处理等高级功能的基础。虽然它本身只是一个数据结构定义，但配合 libc 提供的相关函数，可以实现用户态的上下文切换和状态保存恢复。理解 `ucontext` 的结构和相关函数对于深入理解 Android 系统底层的运行机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-generic/ucontext.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -339,8 +339,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -357,7 +359,4 @@ struct ucontext {
   sigset_t uc_sigmask;
 };
 #endif
-
-"""
-
 ```

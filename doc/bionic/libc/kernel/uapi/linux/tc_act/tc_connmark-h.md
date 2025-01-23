@@ -269,7 +269,7 @@ if __name__ == '__main__':
 
 总而言之，`tc_connmark.handroid` 头文件是 Android 网络流量管理的重要组成部分，它定义了与内核 `CONNMARK` 动作交互的接口，允许 Android 系统和用户空间程序标记网络连接并基于这些标记应用各种网络策略。理解这个头文件有助于深入了解 Android 的网络架构。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tc_act/tc_connmark.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -280,8 +280,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -305,7 +307,4 @@ enum {
 };
 #define TCA_CONNMARK_MAX (__TCA_CONNMARK_MAX - 1)
 #endif
-
-"""
-
 ```

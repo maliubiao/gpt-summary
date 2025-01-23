@@ -139,15 +139,17 @@ Essentially, my process involved understanding the code's purpose within the lar
 
 总而言之，`webgl_shader_precision_format.cc` 文件定义了一个用于封装 WebGL 着色器精度信息的简单数据结构，它在 Blink 引擎内部被使用，为 JavaScript 中查询精度信息提供了基础，并间接地影响着最终的 WebGL 渲染效果。 开发者通常不会直接操作这个类，但理解它的作用有助于诊断和解决与 WebGL 精度相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgl/webgl_shader_precision_format.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2012, Google Inc. All rights reserved.
  *
@@ -196,7 +198,4 @@ WebGLShaderPrecisionFormat::WebGLShaderPrecisionFormat(GLint range_min,
     : range_min_(range_min), range_max_(range_max), precision_(precision) {}
 
 }  // namespace blink
-
-"""
-
 ```

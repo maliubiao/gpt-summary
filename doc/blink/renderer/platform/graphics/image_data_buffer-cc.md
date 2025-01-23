@@ -179,14 +179,16 @@ By following these steps, we can systematically analyze the code, understand its
 
 总而言之，`ImageDataBuffer` 是 Blink 引擎中处理图像像素数据的核心类，它连接了底层的图形库和上层的 Web 技术，使得 JavaScript 能够操作和表示图像数据，并将图像数据嵌入到 HTML 和 CSS 中。 理解其功能和使用方式对于开发和调试与图像相关的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/image_data_buffer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2008, Google Inc. All rights reserved.
  * Copyright (C) 2009 Dirk Schulze <krit@webkit.org>
@@ -368,7 +370,4 @@ String ImageDataBuffer::ToDataURL(const ImageEncodingMimeType mime_type,
 }
 
 }  // namespace blink
-
-"""
-
 ```

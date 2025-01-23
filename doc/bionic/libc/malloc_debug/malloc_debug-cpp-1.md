@@ -79,7 +79,7 @@ By following this process, we can create a comprehensive and accurate summary of
 
 **总结来说，`malloc_debug.cpp` 提供了一套强大的内存调试工具，允许开发者深入了解 Android 应用程序的内存使用情况，并有效地诊断和解决内存相关的问题。它通过拦截和增强标准的内存分配操作，提供了细粒度的控制和丰富的诊断信息。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/malloc_debug.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -91,9 +91,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    MallocXmlElem(fd, "size").Contents("%zu", list[i].size);
+### 源代码
+```cpp
+MallocXmlElem(fd, "size").Contents("%zu", list[i].size);
     MallocXmlElem(fd, "total").Contents("%zu", total);
     alloc_num++;
   }
@@ -265,8 +267,4 @@ void debug_dump_heap(const char* file_name) {
   write_dump(fd);
   close(fd);
 }
-
-"""
-
-
 ```

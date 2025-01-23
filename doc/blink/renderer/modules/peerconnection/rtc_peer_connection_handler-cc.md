@@ -176,7 +176,7 @@ By following this systematic approach, I could effectively dissect the provided 
 
 `rtc_peer_connection_handler.cc` 的第一部分主要负责 `RTCPeerConnection` 的初始化、关闭、SDP 的创建和设置，以及 ICE 候选者的处理。它建立了 JavaScript `RTCPeerConnection` API 与底层 WebRTC 库之间的桥梁，是实现 WebRTC 功能的核心组件之一。它还负责处理一些基本的错误情况，并将状态变化通知给 JavaScript 层。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_peer_connection_handler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1007,7 +1009,4 @@ bool RTCPeerConnectionHandler::Initialize(
   configuration_.crypto_options->srtp.enable_encrypted_rtp_header_extensions =
       base::FeatureList::IsEnabled(kWebRtcEncryptedRtpHeaderExtensions);
   configuration_.enable
-"""
-
-
 ```

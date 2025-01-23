@@ -108,7 +108,7 @@ The user wants to understand the functionality of the given C++ source code file
 
 总而言之，`scrolling_test.cc` 的第一部分主要负责搭建测试框架，提供加载网页内容和访问 Blink 内部组件的工具，并包含了一系列测试用例，用于验证 Blink 引擎在处理各种滚动场景时的正确性和性能，涵盖了默认滚动行为、CSS 属性的影响以及 Javascript 事件处理器的交互。 它可以作为理解 Blink 滚动机制、排查滚动相关问题的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/page/scrolling/scrolling_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -116,8 +116,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -988,7 +990,4 @@ TEST_P(ScrollingTest, touchActionOnScrollingElement) {
           TouchAction::kPanY | TouchAction::kInternalNotWritable);
   if (RuntimeEnabledFeatures::HitTestOpaquenessEnabled()) {
     EXPECT_EQ(scrolling_contents_layer->boun
-"""
-
-
 ```

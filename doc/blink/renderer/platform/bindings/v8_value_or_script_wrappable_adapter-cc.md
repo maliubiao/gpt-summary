@@ -136,14 +136,16 @@ By following this systematic thought process, the comprehensive and informative 
 
 总而言之，`V8ValueOrScriptWrappableAdapter` 是 Blink 引擎中用于在 C++ 和 JavaScript 之间传递值的关键组件，它简化了将 C++ 对象转换为 JavaScript 可用对象的过程，并提供了一种统一的接口来处理不同类型的 V8 值来源。理解它的功能有助于理解 Blink 引擎的内部架构以及 JavaScript 如何与底层 C++ 代码进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/v8_value_or_script_wrappable_adapter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -169,7 +171,4 @@ v8::Local<v8::Value> V8ValueOrScriptWrappableAdapter::V8Value(
 
 }  // namespace bindings
 }  // namespace blink
-
-"""
-
 ```

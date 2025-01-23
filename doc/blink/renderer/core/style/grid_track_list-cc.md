@@ -145,14 +145,16 @@ By following these steps, a comprehensive and accurate analysis of the C++ code 
 
 总而言之，`blink/renderer/core/style/grid_track_list.cc` 是 Blink 引擎中处理 CSS Grid 布局核心概念的重要组成部分，它负责解析和管理网格的行和列轨道信息，为后续的布局计算提供基础数据。它与 CSS Grid 规范紧密相关，并且在浏览器渲染网页时发挥着关键作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/grid_track_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -375,7 +377,4 @@ bool NGGridTrackList::operator==(const NGGridTrackList& other) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

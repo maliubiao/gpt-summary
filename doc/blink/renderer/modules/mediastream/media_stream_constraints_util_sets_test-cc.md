@@ -79,7 +79,7 @@ Finally, I need to think about how a user's actions might lead to this code bein
 
 总而言之，`media_stream_constraints_util_sets_test.cc` 的第 1 部分为 `ResolutionSet` 类的核心功能提供了坚实的单元测试基础，确保了媒体流约束在 Blink 引擎中能够被正确地解析和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_constraints_util_sets_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -87,8 +87,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -983,7 +985,4 @@ TEST_F(MediaStreamConstraintsUtilSetsTest, ResolutionVertices) {
     EXPECT_EQ(2U, vertices.size());
     VerticesContain(vertices, Point(50 / kAspectRatio, 50));
     VerticesContain(vertices, P
-"""
-
-
 ```

@@ -132,14 +132,16 @@ Initially, I might have focused too much on the low-level C++ details. The promp
 
 `css_highlight_registry.cc` 文件虽然代码量不大，但在 Blink 渲染引擎中扮演着关键角色，它提供了访问和管理 CSS 自定义高亮注册表的入口点，使得 JavaScript 能够与 CSS 的高亮功能进行交互，从而实现动态地为页面特定文本范围应用自定义样式。开发者通常不会直接操作这个类，而是通过更高级别的 JavaScript API (如 `CSS.highlights`) 来使用其背后的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/highlight/css_highlight_registry.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -156,7 +158,4 @@ HighlightRegistry* CSSHighlightRegistry::highlights(ScriptState* script_state) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

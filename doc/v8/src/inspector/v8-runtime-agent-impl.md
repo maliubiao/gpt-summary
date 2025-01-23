@@ -123,11 +123,13 @@ By following these steps, the detailed and informative summary provided in the i
 
 总而言之，`v8-runtime-agent-impl.cc` 是 V8 Inspector 中至关重要的一个文件，它充当了 Chrome DevTools 前端和 V8 JavaScript 运行时之间的桥梁，实现了远程控制和观察 JavaScript 运行时的核心功能，使得开发者可以使用 DevTools 进行高效的调试和性能分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-runtime-agent-impl.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 /*
  * Copyright (C) 2011 Google Inc. All rights reserved.
  *
@@ -1288,7 +1290,4 @@ bool V8RuntimeAgentImpl::reportMessage(V8ConsoleMessage* message,
   return m_inspector->hasConsoleMessageStorage(m_session->contextGroupId());
 }
 }  // namespace v8_inspector
-
-"""
-
 ```

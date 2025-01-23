@@ -188,7 +188,7 @@ MOVB $256, AL
 
 总结来说，`asm6.go` 的这部分代码是 x86 汇编器的核心，负责将汇编指令翻译成机器码，并处理各种细节，例如操作数编码、重定位、特殊指令和前缀等。理解它的功能有助于深入理解 Go 语言的编译和执行过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/x86/asm6.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -197,8 +197,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 om, &rel)
 				l := int(v >> 32)
 				if l == 0 && rel.Siz != 8 {
@@ -912,10 +914,4 @@ func unpackOps4(p *obj.Prog) (arg0, arg1, arg2, dst *obj.Addr) {
 func unpackOps5(p *obj.Prog) (arg0, arg1, arg2, arg3, dst *obj.Addr) {
 	return &p.From, &p.RestArgs[0].Addr, &p.RestArgs[1].Addr, &p.RestArgs[2].Addr, &p.To
 }
-
-"""
-
-
-
-
 ```

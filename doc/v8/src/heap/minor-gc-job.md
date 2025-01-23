@@ -107,11 +107,13 @@ for (let i = 0; i < 100000; i++) {
 
 `minor-gc-job.cc` 是 V8 引擎中负责高效管理 JavaScript 对象生命周期的关键组成部分。它通过后台任务的方式，在合适的时机触发对年轻代的垃圾回收，释放不再使用的内存，从而避免内存溢出，并保持 JavaScript 应用程序的运行性能。  次要 GC 的触发时机和执行过程对 JavaScript 程序的性能有着直接的影响，频繁但快速的次要 GC 可以有效地减少程序运行时的停顿。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/minor-gc-job.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -214,7 +216,4 @@ void MinorGCJob::Task::RunInternal() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

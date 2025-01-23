@@ -198,15 +198,17 @@ This structured approach, moving from understanding the code's structure to infe
 
 总而言之，`CSSPropertySourceData` 存储的 CSS 属性的来源信息是浏览器开发者工具进行样式调试的重要数据来源，它帮助开发者理解样式的来源、优先级以及是否存在语法错误等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/css_property_source_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2010 Google Inc. All rights reserved.
  *
@@ -262,7 +264,4 @@ CSSPropertySourceData::CSSPropertySourceData(
     const CSSPropertySourceData& other) = default;
 
 }  // namespace blink
-
-"""
-
 ```

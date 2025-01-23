@@ -130,15 +130,17 @@ while ((match = regex.exec(text)) !== null) {
 
 `v8/src/regexp/regexp-macro-assembler-tracer.h` 定义的 `RegExpMacroAssemblerTracer` 类是一个用于调试和分析 V8 正则表达式编译过程的强大工具。它通过记录宏汇编器的操作，帮助开发者深入理解正则表达式引擎的工作原理，排查错误，并进行性能分析。它本身是 C++ 代码，用于 V8 引擎的内部实现，但其功能直接服务于 JavaScript 的正则表达式功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-macro-assembler-tracer.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-macro-assembler-tracer.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2008 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -238,7 +240,4 @@ class RegExpMacroAssemblerTracer: public RegExpMacroAssembler {
 }  // namespace v8
 
 #endif  // V8_REGEXP_REGEXP_MACRO_ASSEMBLER_TRACER_H_
-
-"""
-
 ```

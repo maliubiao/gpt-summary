@@ -128,7 +128,7 @@ meson.build:3:0: ERROR: Unknown function "add_libary". Did you mean "add_library
 
 至于 `SubdirDoneRequest`, `ContinueRequest`, 和 `BreakRequest`，它们通常不是由用户的直接错误操作触发的，而是 Meson 解释器内部控制流程的机制。用户不太可能直接导致这些异常的抛出，除非他们正在开发或调试 Meson 本身。 这些异常更多的是在 Meson 解释器内部的控制流逻辑中使用，例如在处理子项目、循环结构时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/interpreterbase/exceptions.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -160,7 +162,4 @@ class ContinueRequest(BaseException):
 
 class BreakRequest(BaseException):
     pass
-
-"""
-
 ```

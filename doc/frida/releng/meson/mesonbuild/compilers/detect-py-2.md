@@ -147,7 +147,7 @@ The primary goal of this code is to extract compiler version information from pr
 
 这个代码片段是 frida 动态 instrumentation 工具中用于**检测编译器版本**的关键组成部分。它通过解析编译器预处理器输出中的宏定义来识别编译器的类型和版本。这对于 frida 了解目标进程的编译环境至关重要，因为它直接影响到生成的二进制代码的结构、ABI 和运行时行为。通过准确地识别编译器版本，frida 可以更好地进行代码注入、hook 和其他 instrumentation 操作，提高其稳定性和有效性。这个功能与逆向工程紧密相关，因为它帮助理解目标二进制的构建方式，同时也涉及到操作系统底层、编译器原理以及 ABI 兼容性等知识。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/detect.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -156,9 +156,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-    if not line:
+### 源代码
+```python
+if not line:
             continue
         d, *rest = line.split(' ', 2)
         if d != '#define':
@@ -183,8 +185,4 @@ def _get_lcc_version_from_defines(defines: T.Dict[str, str]) -> str:
     major = generation_and_major[1:]
     minor = defines.get('__LCC_MINOR__', '0')
     return dot.join((generation, major, minor))
-
-"""
-
-
 ```

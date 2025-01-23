@@ -105,7 +105,7 @@ Therefore, the main function of this file is to test the `TextFinder` class, ver
 
 这部分代码主要定义了 `TextFinderTest` 和 `TextFinderSimTest` 两个测试类，并包含了一系列针对 `TextFinder` 类的单元测试。这些测试用例涵盖了 `TextFinder` 类的基本文本查找、在复杂文档结构中查找、与页面布局交互、异步查找和高亮显示以及 `beforematch` 事件处理等核心功能。总而言之，**这部分代码的功能是验证 `TextFinder` 类的核心文本查找逻辑的正确性和健壮性。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/finder/text_finder_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -113,8 +113,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -905,7 +907,4 @@ TEST_F(TextFinderSimTest, BeforeMatchExpandedHiddenMatchableUkm) {
       entries[0], "BeforematchExpandedHiddenMatchable"));
   EXPECT_TRUE(ukm::TestUkmRecorder::EntryHasMetric(
       entries[1], "BeforematchExpandedHiddenMatc
-"""
-
-
 ```

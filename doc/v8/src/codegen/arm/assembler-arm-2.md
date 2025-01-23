@@ -56,12 +56,14 @@ vadd.f32 q0, q1, q2  // 将 q1 和 q2 寄存器中的浮点数向量相加，结
 
 总而言之，这个C++代码文件是V8引擎生成高性能ARM机器码的关键组成部分，它直接支持了JavaScript在ARM架构上利用硬件加速进行浮点和SIMD运算，从而提升了JavaScript应用的执行效率，尤其是在处理大量数据时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm/assembler-arm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 | dst.code() * B12 | 0xA * B8 | B4);
 }
 
@@ -1956,8 +1958,4 @@ LoadStoreLaneParams::LoadStoreLaneParams(MachineRepresentation rep,
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_ARM
-
-"""
-
-
 ```

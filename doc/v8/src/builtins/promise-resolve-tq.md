@@ -142,14 +142,16 @@ p2.then(value => console.log(value)); // 输出 20，因为 Promise.resolve 识�
 
 `v8/src/builtins/promise-resolve.tq` 中的代码是 V8 引擎实现 `Promise.resolve()` 这一核心 Promise 功能的关键部分。它通过区分不同的输入情况，采取不同的优化策略，并遵循 Promise 规范处理 thenable 对象，最终创建一个 resolved 的 Promise。理解这段代码有助于深入理解 JavaScript Promise 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/promise-resolve.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -339,7 +341,4 @@ transitioning builtin ResolvePromise(
   }
 }
 }
-
-"""
-
 ```

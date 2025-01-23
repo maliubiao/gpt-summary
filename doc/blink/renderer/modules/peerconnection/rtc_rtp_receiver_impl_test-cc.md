@@ -185,15 +185,17 @@ By following this thought process, combining code analysis with knowledge of Web
 
 总而言之，`rtc_rtp_receiver_impl_test.cc` 这个 C++ 测试文件验证了 Blink 引擎中负责处理接收到的 WebRTC 媒体流的关键组件的功能，而这些功能直接支撑着 JavaScript WebRTC API 的行为。用户在浏览器中使用 WebRTC 功能时，其背后的实现就涉及到这些 C++ 代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/peerconnection/rtc_rtp_receiver_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -376,7 +378,4 @@ TEST_F(RTCRtpReceiverImplTest, CreateReceiverWithInsertableStreams) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

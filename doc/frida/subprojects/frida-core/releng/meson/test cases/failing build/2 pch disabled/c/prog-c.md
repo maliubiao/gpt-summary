@@ -106,7 +106,7 @@ By following this detailed thought process, incorporating the crucial context of
 
 总而言之，这个简单的 C 代码文件在 Frida 项目中扮演着一个重要的角色，它作为一个测试用例，验证了在特定构建配置下（禁用 PCH）编译过程的预期行为，同时也反映了一些与逆向工程、底层系统和常见编程错误相关的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/failing build/2 pch disabled/c/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // No includes here, they need to come from the PCH
 
 void func() {
@@ -125,7 +127,4 @@ void func() {
 int main(int argc, char **argv) {
     return 0;
 }
-
-"""
-
 ```

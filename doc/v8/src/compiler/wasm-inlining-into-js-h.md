@@ -153,15 +153,17 @@ const result = wasm_add(5, 3);
 
 总结来说，`v8/src/compiler/wasm-inlining-into-js.h` 定义了 V8 编译器中负责将特定的、小型 WebAssembly 函数内联到 JavaScript 代码中的组件。这是一个性能优化手段，旨在减少跨语言调用的开销。理解其功能有助于开发者更好地理解 V8 如何执行 WebAssembly 代码，并避免一些与 WebAssembly 和 JavaScript 互操作相关的误解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/wasm-inlining-into-js.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/wasm-inlining-into-js.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ class WasmIntoJSInliner {
 }  // namespace v8::internal
 
 #endif  // V8_COMPILER_WASM_INLINING_INTO_JS_H_
-
-"""
-
 ```

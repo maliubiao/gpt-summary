@@ -180,15 +180,17 @@ This file's functionality is generally hidden from direct user interaction. Howe
 
 In summary, `v8/src/maglev/x64/maglev-assembler-x64.cc` is a vital piece of V8's Maglev compiler, responsible for generating efficient x64 assembly code for common JavaScript operations related to object allocation, string manipulation, and number conversions. It's not a Torque file but a core C++ component. While users don't interact with it directly, its functionality underpins the execution of JavaScript code and can indirectly influence how certain programming errors manifest.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/x64/maglev-assembler-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/x64/maglev-assembler-x64.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -780,7 +782,4 @@ void MaglevAssembler::MaybeEmitDeoptBuiltinsCall(size_t eager_deopt_count,
 }  // namespace maglev
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

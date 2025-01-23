@@ -219,7 +219,7 @@ func createSocketForDial(network string, family string) (syscall.Handle, error) 
 
 总而言之，这段代码是 Go 语言 `net` 包在 Windows 平台上实现网络功能的基础。它提供了创建 socket 和获取监听队列长度限制的能力，并处理了 Windows 特有的一些标志位。理解这些底层机制有助于更好地理解和使用 Go 的网络库。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/sock_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -227,8 +227,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -256,9 +258,4 @@ func sysSocket(family, sotype, proto int) (syscall.Handle, error) {
 	}
 	return s, nil
 }
-
-"""
-
-
-
 ```

@@ -334,7 +334,7 @@ except Exception as e:
 
 这个 Frida 脚本会 hook `libc.so` 中的 `sigprocmask` 和 `sigprocmask64` 函数，并在函数调用时打印出 `how` 参数、`new_set` 和 `old_set` 指针的值，以及函数的返回值。通过分析这些信息，你可以了解应用程序是如何使用 `sigprocmask` 来管理信号掩码的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/sigprocmask.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -345,8 +345,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -425,7 +427,4 @@ int sigprocmask(int how,
   return rc;
 }
 #endif
-
-"""
-
 ```

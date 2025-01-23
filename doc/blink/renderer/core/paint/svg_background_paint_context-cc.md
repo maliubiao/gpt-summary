@@ -115,15 +115,17 @@ By following these steps, we can systematically analyze the code snippet and pro
 
 总而言之，`SVGBackgroundPaintContext` 是 Blink 渲染引擎中负责 SVG 背景绘制的关键模块，它根据布局对象和样式信息，计算出绘制背景所需的几何信息，确保 SVG 背景能够按照 CSS 规则正确渲染。 理解这个类的工作原理有助于开发者更好地调试和理解 SVG 背景相关的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/svg_background_paint_context.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -165,7 +167,4 @@ const ComputedStyle& SVGBackgroundPaintContext::Style() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

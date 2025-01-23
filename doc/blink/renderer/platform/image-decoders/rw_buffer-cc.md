@@ -122,14 +122,16 @@ By following this process, systematically examining the code, and relating it to
 
 总而言之，`rw_buffer.cc` 中定义的 `RWBuffer` 是 Blink 渲染引擎中用于高效管理和访问数据的底层工具，尤其在处理流式数据（如图像解码）时非常有用。它通过提供只读快照，支持在多线程环境中安全地共享数据。 理解其内存管理和线程安全特性对于正确使用它至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/rw_buffer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -473,7 +475,4 @@ void RWBuffer::Validate() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

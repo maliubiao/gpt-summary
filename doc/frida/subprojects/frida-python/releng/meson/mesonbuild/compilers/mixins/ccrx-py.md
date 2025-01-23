@@ -20,7 +20,7 @@ Next, I'd skim the code for key elements:
 * **`id = 'ccrx'`:** This clearly identifies the compiler this mixin is for.
 * **`__init__`:**  The constructor. It enforces cross-compilation. It also sets up the `can_compile_suffixes` and `warn_args`.
 * **Methods:**  A series of `get_...` methods (like `get_pic_args`, `get_pch_suffix`, `get_optimization_args`, `get_debug_args`), and methods like `thread_flags`, `get_coverage_args`, etc. These strongly suggest this code is responsible for providing compiler-specific flags and configurations to the
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/compilers/mixins/ccrx.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -28,8 +28,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2019 The Meson development team
 
@@ -143,7 +145,4 @@ class CcrxCompiler(Compiler):
                 parameter_list[idx] = i[:9] + os.path.normpath(os.path.join(build_dir, i[9:]))
 
         return parameter_list
-
-"""
-
 ```

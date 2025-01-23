@@ -125,14 +125,16 @@ By following this systematic approach, even with limited prior knowledge of the 
 
 总而言之，`heap_mojo_remote_set_test.cc` 通过一系列的单元测试，确保 `HeapMojoRemoteSet` 能够正确、安全地管理 Mojo 远程接口的集合，并与 Blink 的垃圾回收机制良好地集成，这对于构建稳定可靠的 Chromium 渲染引擎至关重要。虽然它不直接处理 JavaScript, HTML 或 CSS，但它为这些技术所依赖的底层通信机制提供了坚实的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mojo/heap_mojo_remote_set_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -339,7 +341,4 @@ TEST_F(HeapMojoRemoteSetGCWithContextObserverTest, AddSeveralRemoteSet) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

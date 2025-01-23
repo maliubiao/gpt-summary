@@ -101,15 +101,17 @@ Here's a breakdown of the thinking process used to generate the response:
 
 通过以上分析，可以理解 `QuicHandshakeDoneFrame` 在 QUIC 协议中的作用，以及在网络请求过程中它所处的环节。虽然 JavaScript 不直接操作这个类，但用户通过 JavaScript 发起的网络请求最终会依赖于这个底层的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/frames/quic_handshake_done_frame.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2020 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -136,7 +138,4 @@ std::ostream& operator<<(std::ostream& os,
 }
 
 }  // namespace quic
-
-"""
-
 ```

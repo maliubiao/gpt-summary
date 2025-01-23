@@ -217,7 +217,7 @@ Dynamic Linker (在 Android 中主要是 `linker64` 或 `linker`) 负责在程�
 
 总而言之，`bionic/benchmarks/unistd_benchmark.cpp` 是 Android Bionic 库的一部分，用于确保其提供的核心系统接口函数的性能。理解这个文件的功能和相关函数的实现原理，有助于我们更好地理解 Android 系统的底层运作机制，并进行更高效的开发和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/benchmarks/unistd_benchmark.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -227,8 +227,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -298,7 +300,4 @@ void BM_unistd_fork_call(benchmark::State& state) {
   }
 }
 BIONIC_BENCHMARK(BM_unistd_fork_call);
-
-"""
-
 ```

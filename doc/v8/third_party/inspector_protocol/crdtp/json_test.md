@@ -129,11 +129,13 @@ console.log(parsedSurrogate);
 **总结:**
 
 `json_test.cc` 文件是 V8 项目中用于测试 JSON 编解码功能的重要组成部分。它确保了 V8 引擎能够正确地将 C++ 数据结构序列化为 JSON 字符串，并将 JSON 字符串反序列化为 C++ 数据结构。这直接关系到 JavaScript 中 `JSON.stringify()` 和 `JSON.parse()` 方法的正确性和可靠性，因为 V8 是这些 JavaScript 功能的底层实现。
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/json_test.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -888,7 +890,4 @@ TYPED_TEST(ConvertJSONToCBORTest, RoundTripValidJson16) {
 }
 }  // namespace json
 }  // namespace v8_crdtp
-
-"""
-
 ```

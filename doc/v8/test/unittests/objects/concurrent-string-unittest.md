@@ -96,9 +96,12 @@ accessString(); // 主线程访问字符串
 
 **总结来说， `concurrent-string-unittest.cc` 确保了 V8 在多线程环境下对字符串对象的管理是安全可靠的，尤其是在字符串内部表示发生变化时，从而保证了 JavaScript 程序的稳定运行。**
 
-Prompt: ```这是目录为v8/test/unittests/objects/concurrent-string-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+### 提示词
+```这是目录为v8/test/unittests/objects/concurrent-string-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -416,6 +419,4 @@ TEST_F(ConcurrentStringTest, InspectTwoByteExternalizing_ThinString) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
 ```

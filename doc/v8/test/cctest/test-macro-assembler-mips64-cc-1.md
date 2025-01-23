@@ -123,7 +123,7 @@ console.log(Math.max(-0.7, 0.5)); // 输出 0.5
 
 这部分 `test-macro-assembler-mips64.cc` 代码是 V8 引擎测试框架的关键组成部分，它专注于验证 MIPS64 架构下 `MacroAssembler` 类生成机器码的正确性，特别是在处理未对齐内存访问和浮点数最小值/最大值运算等复杂操作时。这些测试确保了 V8 引擎在 MIPS64 架构上能够可靠地执行 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-macro-assembler-mips64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-macro-assembler-mips64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -131,9 +131,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- __ Move(dst, fnan);
+### 源代码
+```cpp
+__ Move(dst, fnan);
     __ Branch(back);
   };
 
@@ -915,8 +917,4 @@ TEST(DeoptExitSizeIsFixed) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

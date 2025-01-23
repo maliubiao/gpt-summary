@@ -172,15 +172,17 @@ console.log(smallNumber.toString());  // "1e-16"
 
 总而言之，`v8/src/base/numbers/diy-fp.cc` 中 `DiyFp` 类的实现是 V8 引擎为了提高数值运算和转换的精度而采用的一种技术手段。虽然 JavaScript 开发者不会直接使用它，但它在幕后默默地支撑着 JavaScript 中精确的数值处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/diy-fp.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/numbers/diy-fp.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -217,7 +219,4 @@ void DiyFp::Multiply(const DiyFp& other) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

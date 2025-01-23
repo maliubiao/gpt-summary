@@ -182,7 +182,7 @@ By following these steps, I can generate a detailed and accurate analysis of the
 
 总而言之，`dummy.c` 是一个为 Frida 测试而设计的简单 Windows GUI 应用程序，它本身的功能有限，但作为 Frida 的目标，它可以用来演示 Frida 的各种动态 instrumentation 功能，例如 hook API 调用、修改程序行为等，这些都是逆向分析中常用的技术。其简单性使得开发者可以专注于 Frida 的使用，而不用被复杂的应用程序逻辑所困扰。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/windows/16 gui app/dummy.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,9 +190,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

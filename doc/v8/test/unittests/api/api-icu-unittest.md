@@ -106,11 +106,13 @@ console.log(number.toLocaleString()); // 输出类似: "10,000.3"
 
 `api-icu-unittest.cc` 通过 C++ 代码模拟 ICU 区域设置的变更，并验证 V8 是否能够正确地将这些变更反映到 JavaScript 的 `Intl` API 中，确保 JavaScript 开发者可以使用 `Intl` API 获取与当前环境一致的国际化格式化结果。这保证了 JavaScript 程序在不同的语言和文化环境下能够正确地显示日期、时间和数字等信息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/api-icu-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ TEST_F(ApiIcuTest, LocaleConfigurationChangeNotification) {
 }
 
 #endif  // V8_INTL_SUPPORT
-
-"""
-
 ```

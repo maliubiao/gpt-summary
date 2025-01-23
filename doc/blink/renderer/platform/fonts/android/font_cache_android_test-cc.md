@@ -174,14 +174,16 @@ By following these steps, I can systematically analyze the code and generate a c
 
 `font_cache_android_test.cc` 中的测试用例可以帮助开发者和 Chromium 引擎的开发者避免这些错误，确保在 Android 平台上能够正确地进行字体选择和渲染。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/android/font_cache_android_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -318,7 +320,4 @@ TEST(FontCacheAndroid, GenericFamilyNameForScript) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

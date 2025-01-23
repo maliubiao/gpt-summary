@@ -137,15 +137,17 @@ By following this detailed breakdown and incorporating corrections, we arrive at
 
 总而言之，`crash_cache.cc` 是一个幕后英雄，它通过模拟各种缓存崩溃场景，帮助 Chromium 团队确保磁盘缓存的健壮性和可靠性，从而间接地提升了用户的浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/crash_cache/crash_cache.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -552,7 +554,4 @@ int main(int argc, const char* argv[]) {
 
   return SlaveCode(path, action);
 }
-
-"""
-
 ```

@@ -160,15 +160,17 @@ oldGenerationObject.child = youngGenerationObject;
 
 总结来说，`v8/src/heap/cppgc/remembered-set.h` 定义的 `OldToNewRememberedSet` 类是 V8 中用于高效管理跨代引用的关键组件，它确保了垃圾回收的正确性和性能。虽然 JavaScript 开发者不直接使用它，但理解其功能有助于理解 V8 的内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/remembered-set.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/remembered-set.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -263,7 +265,4 @@ class V8_EXPORT_PRIVATE OldToNewRememberedSet final {
 #endif  // defined(CPPGC_YOUNG_GENERATION)
 
 #endif  // V8_HEAP_CPPGC_REMEMBERED_SET_H_
-
-"""
-
 ```

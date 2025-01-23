@@ -263,7 +263,7 @@ for (let key in obj) {
 
 总而言之，这部分代码展示了 `CodeStubAssembler` 在 V8 代码生成过程中扮演的关键角色，它封装了许多底层的操作和优化策略，使得 V8 能够高效地执行 JavaScript 代码。它连接了高级的 JavaScript 概念（如数组、Promise、函数）与底层的机器码生成过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -271,9 +271,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第21部分，共23部分，请归纳一下它的功能
+```
 
-"""
-       (PACKED_NONEXTENSIBLE_ELEMENTS | 1));
+### 源代码
+```cpp
+(PACKED_NONEXTENSIBLE_ELEMENTS | 1));
   static_assert(HOLEY_SEALED_ELEMENTS == (PACKED_SEALED_ELEMENTS | 1));
   static_assert(HOLEY_FROZEN_ELEMENTS == (PACKED_FROZEN_ELEMENTS | 1));
   return IsSetWord32(elements_kind, 1);
@@ -1093,7 +1095,4 @@ void PrototypeCheckAssembler::CheckAndBranch(TNode<HeapObject> prototype,
       // Finally, check whether the actual value equals the expected value.
       TNode<Uint32T> details =
           Desc
-"""
-
-
 ```

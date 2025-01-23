@@ -82,14 +82,16 @@ CompositorThread 本身不直接执行 JavaScript, HTML 或 CSS 的解析和执�
 
 `blink/renderer/platform/scheduler/worker/compositor_thread.cc` 定义的 `CompositorThread` 类是 Blink 渲染引擎中至关重要的组成部分。它负责管理独立的合成线程，高效地将渲染层组合成最终的屏幕图像。虽然它不直接处理 JavaScript, HTML 或 CSS 的解析，但它是展示这些技术成果的关键，并负责提供流畅的用户体验，尤其是在处理动画和滚动等视觉效果时。理解 CompositorThread 的工作原理有助于开发者编写更高效的网页，避免不必要的性能瓶颈。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/worker/compositor_thread.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -115,7 +117,4 @@ CompositorThread::CreateNonMainThreadScheduler(
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

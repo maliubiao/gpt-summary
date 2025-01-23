@@ -252,7 +252,7 @@ sys.stdin.read()
 
 通过这个 Frida hook，你可以观察到何时以及如何调用 `__libc_current_sigrtmin()`，并验证其返回值。这有助于理解 Android 系统或应用程序在信号处理方面的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/__libc_current_sigrtmin.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -263,8 +263,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  * All rights reserved.
@@ -300,7 +302,4 @@ Prompt:
 int __libc_current_sigrtmin() {
   return __SIGRTMIN + __SIGRT_RESERVED;
 }
-
-"""
-
 ```

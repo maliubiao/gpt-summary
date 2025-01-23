@@ -222,15 +222,17 @@ This detailed thinking process helps in dissecting the code, understanding its p
 
 总而言之，`date_time_chooser_impl.cc` 是 Blink 渲染引擎中实现日期和时间选择器功能的核心 C++ 代码，它负责生成选择器的 HTML 结构、引入 CSS 样式、加载 JavaScript 交互逻辑，并将用户的选择传递回网页。它在 Web 技术栈中扮演着连接底层 C++ 逻辑和前端用户界面的重要角色。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/date_time_chooser_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -532,7 +534,4 @@ void DateTimeChooserImpl::AdjustSettings(Settings& popup_settings) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

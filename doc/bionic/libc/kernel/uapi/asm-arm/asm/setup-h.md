@@ -211,7 +211,7 @@ except Exception as e:
 
 请注意，在启动早期阶段进行 Hook 调试通常比较复杂，需要对 Android 启动流程和底层技术有深入的了解。 上述 Frida 示例提供了一个相对简单的方式来间接观察启动参数的影响。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-arm/asm/setup.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -222,8 +222,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -340,7 +342,4 @@ struct tagtable {
 #define tag_size(type) ((sizeof(struct tag_header) + sizeof(struct type)) >> 2)
 #define for_each_tag(t,base) for(t = base; t->hdr.size; t = tag_next(t))
 #endif
-
-"""
-
 ```

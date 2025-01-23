@@ -191,7 +191,7 @@ stopProfiling('performance_issue');
 
 这部分 `v8/test/cctest/test-cpu-profiler.cc` 代码全面测试了 V8 引擎 CPU 性能分析器的核心功能，包括跨语言调用、函数内联、跨脚本分析、空闲时间记录、函数详细信息收集、与优化/反优化机制的交互以及基本的性能分析流程，旨在确保性能分析器能够准确可靠地为开发者提供性能分析数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-cpu-profiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-cpu-profiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -199,8 +199,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 de->GetChildrenCount());
   GetChild(env, start_node, "CallCollectSample");
 
@@ -1125,7 +1127,4 @@ TEST(DeoptAtFirstLevelInlinedSource) {
   v8::HandleScope scope(CcTest::isolate());
   v8::Local<v8::Context> env = CcTest::NewContext({PROFILER_EXTENSION_ID});
   v8::C
-"""
-
-
 ```

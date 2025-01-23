@@ -165,15 +165,17 @@ Here's a breakdown of the thought process used to analyze the provided code snip
 
 总而言之，`credentials_container.cc` 文件是 Chromium 浏览器中负责管理用户凭据的关键组件，它作为 JavaScript Credential Management API 的底层实现，协调着凭据的获取、存储和用户交互等操作。理解它的功能和与 Web API 的关系，对于开发使用凭据管理功能的 Web 应用以及进行相关问题的调试至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/credentialmanagement/credentials_container.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -187,7 +189,4 @@ void CredentialsContainer::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

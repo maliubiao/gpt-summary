@@ -129,7 +129,7 @@ While users don't directly write this assembler code, understanding these tests 
 
 This part of `v8/test/cctest/test-assembler-loong64.cc` focuses on unit-testing various LoongArch64 assembler instructions within V8. It covers conditional branches, subroutine calls, PC-relative addressing, indirect jumps, and a wide array of floating-point arithmetic, comparison, and conversion instructions. These tests are essential for ensuring the correctness of V8's code generation for the LoongArch64 architecture, which directly impacts the correct execution of JavaScript code on those processors.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -137,8 +137,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 off
   struct TestCaseBnez tc[] = {
     // value, offset, expected_res
@@ -1181,7 +1183,4 @@ TEST(FFINT) {
   CHECK_EQ(test.ffint_s_l_out, static_cast<float>(test.ffint_s_l_in));
   CHECK_EQ(test.ffint_d_w_out, static_cast<double>(test.ffint_d_w_in));
   CHECK_EQ(test.ffint_d_l_out, static_cast<double>(te
-"""
-
-
 ```

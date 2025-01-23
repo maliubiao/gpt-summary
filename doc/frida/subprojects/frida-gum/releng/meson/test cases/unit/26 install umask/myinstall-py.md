@@ -171,7 +171,7 @@ By following this structured thinking process, we can effectively analyze the sc
 
 总而言之，这个看似简单的 Python 脚本是 Frida 构建和安装过程中的一个环节，它的功能是执行基本的文件系统操作，为 Frida 的其他组件提供必要的目录结构和文件。理解这个脚本的功能以及它在构建过程中的位置，对于调试 Frida 的安装问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/26 install umask/myinstall.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,8 +179,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -198,7 +200,4 @@ except FileExistsError:
 
 with open(os.path.join(dirname, sys.argv[2]), 'w') as f:
     f.write('')
-
-"""
-
 ```

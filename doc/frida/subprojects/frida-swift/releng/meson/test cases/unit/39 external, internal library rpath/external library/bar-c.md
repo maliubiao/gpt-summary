@@ -210,7 +210,7 @@ The final step is to organize the thoughts logically, using clear headings and e
 
 总而言之，`bar.c` 虽然简单，但它很好地展示了程序对外部依赖的管理，以及在逆向工程和动态分析中，如何利用 Frida 来观察和操控程序的行为，特别是处理未定义的符号和动态链接的情况。这个文件可以作为一个测试用例，验证 Frida 在处理这类场景时的能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/39 external, internal library rpath/external library/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -218,15 +218,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int some_undefined_func (void);
 
 int bar_system_value (void)
 {
   return some_undefined_func ();
 }
-
-"""
-
 ```

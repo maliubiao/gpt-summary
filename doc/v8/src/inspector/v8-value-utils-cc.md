@@ -137,15 +137,17 @@ myArray[5] = true; // 会在索引 1 到 4 之间创建空槽
 
 `v8/src/inspector/v8-value-utils.cc` 提供了一组底层的 C++ 工具函数，用于在 V8 引擎内部安全地操作 JavaScript 对象和数组的属性。它与 JavaScript 功能紧密相关，因为它直接操作 JavaScript 的运行时表示。理解这些工具函数的功能有助于理解 JavaScript 中对象和数组操作的底层机制和潜在错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-value-utils.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/inspector/v8-value-utils.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -179,7 +181,4 @@ v8::Maybe<bool> createDataProperty(v8::Local<v8::Context> context,
   return array->CreateDataProperty(context, index, value);
 }
 }  // namespace v8_inspector
-
-"""
-
 ```

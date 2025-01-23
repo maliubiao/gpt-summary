@@ -278,7 +278,7 @@ sys.stdin.read()
 
 运行此 Frida 脚本后，当目标应用调用 `if_nameindex` 函数时，你将在 Frida 控制台中看到函数的调用信息以及返回的网络接口列表。这可以帮助你调试 Android Framework 或 NDK 中与网络接口相关的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/net_if_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -289,8 +289,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -335,7 +337,4 @@ static void net_if_h() {
   FUNCTION(if_nameindex, struct if_nameindex* (*f)(void));
   FUNCTION(if_nametoindex, unsigned (*f)(const char*));
 }
-
-"""
-
 ```

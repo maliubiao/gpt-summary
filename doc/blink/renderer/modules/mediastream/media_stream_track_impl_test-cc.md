@@ -199,7 +199,7 @@ EXPECT_EQ(platform_source_ptr->max_requested_height(), 480);
 
 这个测试文件主要负责验证 `MediaStreamTrackImpl` 类中与**生命周期管理 (停止)**、**状态管理 (静音)** 和**基本操作 (克隆)** 相关的核心功能是否按照预期工作。它确保了这些基本操作的正确性和稳定性，为更复杂的媒体流处理功能奠定了基础。在第2部分中，很可能会继续测试 `MediaStreamTrackImpl` 的其他方面，例如事件处理、数据处理等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/mediastream/media_stream_track_impl_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -207,8 +207,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -929,7 +931,4 @@ TEST_F(MediaStreamTrackImplTest, ApplyConstraintsUpdatesMinFps) {
                              apply_constraints_promise);
   tester.WaitUntilSettled();
   EXPECT_TRUE(tester.IsFulf
-"""
-
-
 ```

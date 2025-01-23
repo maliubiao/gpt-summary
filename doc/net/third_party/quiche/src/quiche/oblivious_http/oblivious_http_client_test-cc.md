@@ -181,15 +181,17 @@ By following this structured approach, we can systematically analyze the test fi
 
 `oblivious_http_client_test.cc` 文件中的测试用例可以作为参考，帮助理解 `ObliviousHttpClient` 的正确使用方式和预期行为，从而辅助调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/oblivious_http/oblivious_http_client_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/oblivious_http/oblivious_http_client.h"
 
 #include <stdint.h>
@@ -446,7 +448,4 @@ TEST(ObliviousHttpClient, TestWithMultipleThreads) {
 }
 
 }  // namespace quiche
-
-"""
-
 ```

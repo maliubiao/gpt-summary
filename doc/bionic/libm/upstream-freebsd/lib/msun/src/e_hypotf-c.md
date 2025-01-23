@@ -264,7 +264,7 @@ int main() {
 
 通过以上分析，我们详细了解了 `bionic/libm/upstream-freebsd/lib/msun/src/e_hypotf.c` 文件的功能、与 Android 的关系、相关 libc 函数的实现、Dynamic Linker 的工作原理、逻辑推理、常见错误以及调试线索。 这有助于理解 Android 系统底层数学运算的实现和工作方式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/e_hypotf.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -274,8 +274,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* e_hypotf.c -- float version of e_hypot.c.
  * Conversion to float by Ian Lance Taylor, Cygnus Support, ian@cygnus.com.
  */
@@ -356,7 +358,4 @@ hypotf(float x, float y)
 	    return t1*w;
 	} else return w;
 }
-
-"""
-
 ```

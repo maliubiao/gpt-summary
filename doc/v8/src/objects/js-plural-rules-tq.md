@@ -175,15 +175,17 @@ console.log(pluralRulesWithOptions.select(5)); // 输出: "many"
 
 总而言之，`v8/src/objects/js-plural-rules.tq` 定义了 V8 中 `Intl.PluralRules` 对象的内部结构，并依赖 ICU 库来实现实际的复数规则逻辑。 开发者应该使用 JavaScript 的 `Intl.PluralRules` API 来处理本地化的复数形式，避免手动硬编码规则，以确保应用程序的正确性和可维护性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-plural-rules.tq的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-plural-rules.tq以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -202,7 +204,4 @@ extern class JSPluralRules extends JSObject {
   icu_number_formatter:
       Foreign;  // Managed<icu::number::LocalizedNumberFormatter>
 }
-
-"""
-
 ```

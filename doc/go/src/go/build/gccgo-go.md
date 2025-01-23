@@ -134,7 +134,7 @@ go build -compiler=gccgo mypackage
 
 `go/src/go/build/gccgo.go` 文件是 Go 构建工具链中用于支持 `gccgo` 编译器的关键组成部分。它通过 `getToolDir()` 函数来确定 `gccgo` 工具链的安装位置，这对于 `go build` 命令正确调用 `gccgo` 编译器至关重要。代码中的 `//go:build gccgo` 构建约束确保了这段代码只在 `gccgo` 编译环境下生效。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/build/gccgo.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -142,8 +142,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -158,9 +160,4 @@ import "runtime"
 func getToolDir() string {
 	return envOr("GCCGOTOOLDIR", runtime.GCCGOTOOLDIR)
 }
-
-"""
-
-
-
 ```

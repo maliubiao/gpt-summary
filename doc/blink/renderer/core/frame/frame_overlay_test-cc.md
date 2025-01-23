@@ -101,14 +101,16 @@ By following this thought process, I can systematically analyze the C++ code and
 
 总而言之，`frame_overlay_test.cc` 是一个关键的测试文件，用于确保 `FrameOverlay` 这一核心渲染组件的正确性和稳定性。它涵盖了从基本的绘制到与浏览器高级特性（如加速合成和设备模拟）的集成测试。这些测试对于确保最终用户在各种场景下都能获得一致且正确的网页体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/frame_overlay_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -264,7 +266,4 @@ TEST_P(FrameOverlayTest, DeviceEmulationScale) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

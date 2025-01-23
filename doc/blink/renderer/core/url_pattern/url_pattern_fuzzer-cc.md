@@ -140,15 +140,17 @@ Chromium 的开发者可能会检查 `URLPattern` 相关的代码，包括这个
 
 总而言之，`url_pattern_fuzzer.cc` 是一个幕后英雄，它通过自动化地测试 `URLPattern` 类的各种边界情况，帮助确保 Chrome 浏览器的稳定性和安全性，并间接地提升用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/url_pattern/url_pattern_fuzzer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -183,7 +185,4 @@ int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   return blink::LLVMFuzzerTestOneInput(data, size);
 }
-
-"""
-
 ```

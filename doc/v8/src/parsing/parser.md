@@ -68,12 +68,14 @@ console.log(greet("World"));
 
 **简而言之，`parser.cc` 的功能是将人类可读的 JavaScript 代码转换成 V8 引擎可以理解和执行的结构化表示 (AST)。**  如果解析过程中出现语法错误，例如缺少分号或者使用了错误的关键字，`parser.cc` 会检测到并报告错误，阻止代码的执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/parser.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1768,7 +1770,4 @@ const AstRawString* Parser::NextInternalNamespaceExportName() {
   std::string s(prefix);
   s.append(std::to_string(number_of_named_namespace_exports_++));
   return ast_value_factory()->GetOneByteString(s.c_str()
-"""
-
-
 ```

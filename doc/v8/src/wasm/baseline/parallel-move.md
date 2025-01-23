@@ -125,11 +125,13 @@ WebAssembly.instantiate(wasmCode)
 
 虽然 JavaScript 开发者不会直接与 `parallel-move.cc` 交互，但这个文件中的代码对于 **WebAssembly 代码在 JavaScript 环境中高效执行至关重要**。它通过优化数据的并行移动，提升了 WebAssembly 代码的性能。  `ParallelMove` 就像一个幕后英雄，默默地处理着 WebAssembly 执行过程中的数据搬运工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/parallel-move.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -234,7 +236,4 @@ void ParallelMove::ExecuteLoads() {
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

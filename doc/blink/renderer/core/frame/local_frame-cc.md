@@ -95,15 +95,17 @@ Here's a breakdown of the steps:
 
 这个代码片段主要负责 `LocalFrame` 类的**初始化、基本属性管理和核心导航流程的初步处理**。它定义了 `LocalFrame` 的创建过程，关联了重要的子组件（如视图和加载器），并包含了处理基本导航请求的逻辑，特别是关于是否应该替换当前历史记录项的初步判断。 此外，它还涉及到与 JavaScript 执行环境和页面渲染视图的关联。 这部分代码是 `LocalFrame` 核心功能的基础，为后续的文档加载、脚本执行和页面渲染等操作奠定了基础。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1998, 1999 Torben Weis <weis@kde.org>
  *                     1999 Lars Knoll <knoll@kde.org>
@@ -765,7 +767,4 @@ bool LocalFrame::NavigationShouldReplaceCurrentHistoryEntry(
   // navigations), and anchor clicks.
   if (request.GetClientNavigationReason() == ClientNavigationReason::kNone ||
       request.GetClientNavigationReaso
-"""
-
-
 ```

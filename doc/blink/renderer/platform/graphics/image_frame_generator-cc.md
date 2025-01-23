@@ -184,14 +184,16 @@ By following this systematic process, I can extract the relevant information fro
 
 总而言之，`image_frame_generator.cc` 是 Blink 渲染引擎中负责将各种图像格式的原始数据转化为可渲染图像帧的关键组件，它连接了 Web 内容中声明的图像资源和浏览器底层的图形处理能力。它的正确性和效率直接影响着网页的加载速度和用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/image_frame_generator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -559,7 +561,4 @@ ImageFrameGenerator::ClientAutoLock::~ClientAutoLock() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

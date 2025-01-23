@@ -154,7 +154,7 @@ By following this thought process, iterating through the code, and connecting it
 
 总而言之，这个 `subprog.py` 脚本是一个用于测试 Frida 基本功能的 Python 脚本。它依赖于一个名为 `gluonator` 的自定义模块，该模块封装了与 Frida 动态 Instrumentation 相关的操作。脚本通过检查 `gluonator.gluoninate()` 的返回值来判断测试是否成功。用户在进行 Frida 开发、测试或调试时可能会接触到这个脚本。理解其功能有助于排查 Frida 相关的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/python3/1 basic/subdir/subprog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 # In order to run this program, PYTHONPATH must be set to
@@ -176,7 +178,4 @@ print('Running mainprog from subdir.')
 
 if gluonator.gluoninate() != 42:
     sys.exit(1)
-
-"""
-
 ```

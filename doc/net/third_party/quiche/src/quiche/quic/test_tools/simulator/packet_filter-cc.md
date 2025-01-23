@@ -223,15 +223,17 @@ By following this iterative process of understanding, brainstorming, and refinin
 
 通过以上步骤，用户逐步深入到 `PacketFilter` 的代码，以理解其行为并解决网络问题。`packet_filter.cc` 文件本身定义了 `PacketFilter` 的基本框架，而具体的过滤逻辑则需要在其子类中实现，这也是调试的重点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/simulator/packet_filter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ void PacketFilter::SetTxPort(ConstrainedPortInterface* port) {
 
 }  // namespace simulator
 }  // namespace quic
-
-"""
-
 ```

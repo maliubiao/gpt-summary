@@ -157,7 +157,7 @@ function attachAndHook(pid) {
 
 总而言之，`a.c` 这个文件虽然简单，但它在一个更大的 Frida 测试环境中扮演着验证共享子项目机制的角色。它依赖于其他模块提供的功能，并通过简单的逻辑判断来验证这些功能是否按预期工作。对于逆向工程师来说，这样的结构提供了一个理想的场景来练习使用 Frida 进行动态分析，理解程序执行流程和函数行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/73 shared subproject 2/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<assert.h>
 char func_b(void);
 char func_c(void);
@@ -180,7 +182,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

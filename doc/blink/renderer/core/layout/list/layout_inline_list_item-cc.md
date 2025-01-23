@@ -210,14 +210,16 @@ By following this structured approach, we can effectively analyze the C++ code a
 
 总而言之，`layout_inline_list_item.cc` 文件是 Blink 渲染引擎中一个关键的组成部分，它专注于处理行内布局的列表项，并确保其标记、序号以及样式能够正确渲染和更新，从而支持 HTML 和 CSS 中定义的列表功能。它与 JavaScript 的交互主要体现在响应由 JavaScript 引起的 DOM 和样式变化。理解其功能有助于开发者更好地掌握浏览器如何渲染列表，并避免一些常见的布局错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/list/layout_inline_list_item.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -334,7 +336,4 @@ void LayoutInlineListItem::SubtreeDidChange() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

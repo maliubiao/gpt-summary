@@ -126,11 +126,13 @@ function example(x) {
 
 `graph.cc` 是 Turboshaft 编译器中定义和操作程序中间表示的核心部分。它使用图结构来表示 JavaScript 代码的控制流和数据流，为后续的编译器优化提供了基础。通过 `PrintDominatorTree` 和 `operator<<` 等功能，开发者可以更好地理解和调试编译器的内部工作原理。 JavaScript 代码的执行会被编译成这种图结构，从而被 V8 引擎高效地执行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/graph.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ std::ostream& operator<<(std::ostream& os, const Block::Kind& kind) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

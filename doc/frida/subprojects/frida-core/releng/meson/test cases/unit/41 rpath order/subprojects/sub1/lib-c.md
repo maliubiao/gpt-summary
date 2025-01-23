@@ -136,7 +136,7 @@ void hello_from_sub1() {
 
 即使没有看到 `lib.c` 的具体代码，我们也能根据其路径和上下文推断出它是一个用于测试 Frida 动态链接库 `rpath` 顺序的简单库。它与逆向工程中理解动态链接库加载机制密切相关，涉及到二进制底层、操作系统内核和框架的知识。对于 Frida 开发者来说，理解这个文件的作用以及相关的测试用例，有助于确保 Frida 在处理动态链接库时的正确性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/41 rpath order/subprojects/sub1/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,9 +144,9 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
-"""
+### 源代码
+```c
 
 ```

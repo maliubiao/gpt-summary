@@ -135,15 +135,17 @@ Let's break down the thought process for analyzing the provided C++ test file.
 
 总而言之，`lifetime_tracking_test.cc` 是一个至关重要的测试文件，它确保了 QUIC 库中用于跟踪对象生命周期的核心机制能够正常工作，并且为开发者理解和调试与对象生命周期相关的 bug 提供了重要的参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/common/lifetime_tracking_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/common/lifetime_tracking.h"
 
 #include <memory>
@@ -339,7 +341,4 @@ INSTANTIATE_TEST_SUITE_P(Tests, LifetimeTrackingTest,
 
 }  // namespace test
 }  // namespace quiche
-
-"""
-
 ```

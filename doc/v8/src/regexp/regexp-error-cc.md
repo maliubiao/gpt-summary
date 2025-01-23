@@ -158,15 +158,17 @@ const char* const kRegExpErrorStrings[] = {
 
 总结来说，`v8/src/regexp/regexp-error.cc` 是 V8 引擎中负责存储和提供正则表达式错误消息的关键组件，它直接影响着 JavaScript 中正则表达式错误报告的内容。 开发者在编写 JavaScript 正则表达式时出现的语法错误，最终会通过这个文件提供的错误消息反馈给用户。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-error.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-error.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ const char* RegExpErrorString(RegExpError error) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

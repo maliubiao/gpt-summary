@@ -134,11 +134,13 @@ addPossiblyNumbers("5", "10"); // 如果 a 和 b 是字符串，则会执行字�
 
 `typed-optimization.cc` 文件中的代码是 V8 引擎为了提升 JavaScript 代码性能而进行的关键优化步骤。 它通过深入分析类型信息，消除了许多不必要的运行时检查和转换，使得生成的机器码更加高效。 这些优化对于提供流畅的 JavaScript 执行体验至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/typed-optimization.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1082,7 +1084,4 @@ SimplifiedOperatorBuilder* TypedOptimization::simplified() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

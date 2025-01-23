@@ -84,13 +84,15 @@ const wasmInstance = new WebAssembly.Instance(wasmModule);
 
 总而言之，这部分代码是 Liftoff 编译器将 WebAssembly 高级指令转换为底层机器码指令的关键组成部分，它直接影响着 WebAssembly 代码在 V8 引擎中的执行效率和正确性，并且通过调用内置函数等方式与 JavaScript 环境进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
- JSTag.
+### 源代码
+```
+JSTag.
       LiftoffRegister undefined =
           pinned.set(__ GetUnusedRegister(kGpReg, pinned));
       __ LoadFullPointer(
@@ -1586,7 +1588,4 @@ Prompt:
     LiftoffRegister true_value = __ PopToRegister(pinned);
     LiftoffRegister dst = __ GetUnusedRegister(true_value.reg_class(),
                                                {true_val
-"""
-
-
 ```

@@ -113,15 +113,17 @@ fetch('https://example.com/data')
 
 总而言之，`hpack_whole_entry_buffer_test.cc` 文件通过各种测试用例，确保了 `HpackWholeEntryBuffer` 类在 HPACK 解码过程中能够正确地缓冲数据、处理各种类型的头部条目，并且能够有效地检测和报告常见的解码错误，从而保证了浏览器能够正确地解析 HTTP/2 的头部信息，最终保障用户能够正常访问网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/hpack/decoder/hpack_whole_entry_buffer_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -339,7 +341,4 @@ TEST_F(HpackWholeEntryBufferTest, ValueHuffmanError) {
 }  // namespace
 }  // namespace test
 }  // namespace http2
-
-"""
-
 ```

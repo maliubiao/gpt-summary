@@ -184,7 +184,7 @@ When working with assemblers, common errors include:
 
 This specific part of the `assembler-arm64.cc` file focuses heavily on providing the building blocks for generating **floating-point and NEON (SIMD) instructions** for the ARM64 architecture. It includes functions for moving data, performing arithmetic, comparisons, conversions, and logical operations on floating-point numbers and vectors. It also includes functions for emitting memory barrier instructions to ensure proper memory ordering. The code is crucial for V8's ability to efficiently execute JavaScript code on ARM64 processors by generating optimized native machine code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/arm64/assembler-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/arm64/assembler-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -192,8 +192,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 type));
 }
 
@@ -1067,7 +1069,4 @@ void Assembler::uqxtn2(const VRegister& vd, const VRegister& vn) {
 void Assembler::not_(const VRegister& vd, const VRegister& vn) {
   DCHECK(AreSameFormat(vd, vn));
   DCHECK(vd.Is8B(
-"""
-
-
 ```

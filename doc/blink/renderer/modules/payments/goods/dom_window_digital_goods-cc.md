@@ -198,15 +198,17 @@ Let's break down the thought process for analyzing this Chromium source code fil
 
 总而言之，`dom_window_digital_goods.cc` 是连接网页 JavaScript 代码和底层数字商品服务的关键桥梁，它负责安全地暴露 API，并处理异步操作和错误情况。理解其功能和交互流程对于开发和调试相关的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/payments/goods/dom_window_digital_goods.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -347,7 +349,4 @@ DOMWindowDigitalGoods* DOMWindowDigitalGoods::FromState(
 }
 
 }  // namespace blink
-
-"""
-
 ```

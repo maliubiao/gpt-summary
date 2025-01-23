@@ -120,7 +120,7 @@ Here's a breakdown of the thinking process to generate the comprehensive analysi
 
 `addertest.c` 虽然是一个简单的程序，但它有效地测试了 `adder` 共享库的基本功能，并为 Frida 提供了验证其与共享库交互能力的用例。对于逆向工程师、Frida 开发者以及任何想要理解动态库测试和 Frida 内部机制的人来说，这个文件都是一个很好的起点。它涉及到共享库加载、函数调用约定、内存管理等底层概念，也展示了常见的编程错误和调试场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/rust/15 polyglot sharedlib/addertest.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdlib.h>
 #include<adder.h>
 
@@ -142,7 +144,4 @@ int main(int argc, char **argv) {
     adder_destroy(a);
     return 0;
 }
-
-"""
-
 ```

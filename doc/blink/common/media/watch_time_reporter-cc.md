@@ -168,14 +168,16 @@ This detailed thought process, moving from a high-level understanding to a more 
 
 总而言之，`blink/common/media/watch_time_reporter.cc` 是一个复杂但关键的组件，用于精确地跟踪媒体播放时长，并为 Chromium 的媒体指标收集提供基础数据。它通过监听各种播放事件和状态变化，以及与 Javascript 和 HTML 的交互，来实现其功能。正确地使用和理解这个组件对于准确地分析用户媒体消费行为至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/media/watch_time_reporter.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -882,7 +884,4 @@ media::WatchTimeKey WatchTimeReporter::GetDisplayTypeKey(
 #undef DISPLAY_TYPE_KEY
 
 }  // namespace blink
-
-"""
-
 ```

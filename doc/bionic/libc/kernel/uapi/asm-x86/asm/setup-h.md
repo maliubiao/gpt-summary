@@ -184,7 +184,7 @@ Interceptor.attach(Module.findExportByName(null, "open"), {
 
 `bionic/libc/kernel/uapi/asm-x86/asm/setup.handroid` 文件虽然本身内容可能不多，但在 Android 系统中扮演着重要的角色。它是 Bionic C 库与 Linux 内核交互的桥梁的一部分，定义了用户空间程序与内核通信所需的架构特定信息。了解这类文件的作用有助于理解 Android 系统调用的工作原理和底层机制。 由于它是自动生成的，我们不应该直接修改它，而是关注影响其生成的源头配置。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-x86/asm/setup.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -195,15 +195,14 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
  * See https://android.googlesource.com/platform/bionic/+/master/libc/kernel/
  * for more information.
  */
-
-"""
-
 ```

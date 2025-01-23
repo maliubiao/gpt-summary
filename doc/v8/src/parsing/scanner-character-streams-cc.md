@@ -80,7 +80,7 @@ Here's a breakdown of the code's function and how to address each of the user's 
 
 该文件定义了多种字符流实现，为 V8 引擎的词法分析器提供了读取不同来源（堆上字符串、外部字符串、外部数据流等）源代码字符数据的统一接口。它抽象了底层数据存储的细节，使得词法分析器可以专注于字符的读取和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/scanner-character-streams.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/scanner-character-streams.cc以.tq结尾，那它是个v8 torque源代码，
@@ -88,8 +88,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -991,7 +993,4 @@ Utf16CharacterStream* ScannerStream::For(Isolate* isolate, Handle<String> data,
     return new RelocatingCharacterStream(
         isolate, static_cast<size_t>(start_pos), Cast<SeqTwoByteString>(data),
         start_offset, stati
-"""
-
-
 ```

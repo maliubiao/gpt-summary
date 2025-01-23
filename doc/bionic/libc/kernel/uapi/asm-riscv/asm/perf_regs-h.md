@@ -189,7 +189,7 @@ if (Process.arch === 'riscv64') {
 
 总结来说，`bionic/libc/kernel/uapi/asm-riscv/asm/perf_regs.handroid` 头文件在 Android 的 RISC-V 架构上定义了用于性能监控的寄存器常量，这些常量被底层的性能分析工具和内核子系统使用，帮助开发者和系统分析程序了解应用程序的性能行为。虽然它本身不包含 libc 函数或直接参与动态链接，但它是 Android 性能监控生态系统中一个重要的组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/asm-riscv/asm/perf_regs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -200,8 +200,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -246,7 +248,4 @@ enum perf_event_riscv_regs {
   PERF_REG_RISCV_MAX,
 };
 #endif
-
-"""
-
 ```

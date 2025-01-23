@@ -238,7 +238,7 @@ with (obj) {
 
 总而言之，这段代码是 V8 解释器单元测试套件的一部分，它专注于测试各种核心 JavaScript 语言特性的解释执行是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/interpreter/interpreter-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/interpreter/interpreter-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -246,8 +246,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ngstream script_os;
     script_os << "function " << InterpreterTester::function_name() << "(a) {\n";
     script_os << "  " << filler;
@@ -1107,7 +1109,4 @@ void CheckStringEqual(const char* expected_ptr, const char* actual_ptr) {
   CHECK_NOT_NULL(expected_ptr);
   CHECK_NOT_NULL(actual_ptr);
   std::string expected(ex
-"""
-
-
 ```

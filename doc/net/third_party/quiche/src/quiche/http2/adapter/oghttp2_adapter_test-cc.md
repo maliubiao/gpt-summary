@@ -640,7 +640,7 @@ TEST(OgHttp2AdapterTest, ClientSetsRemoteMaxStreamOption) {
       adapter->SubmitRequest(headers, nullptr, true, nullptr);
   const int32_t stream_id4 =
       
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/oghttp2_adapter_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -648,8 +648,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/oghttp2_adapter.h"
 
 #include <cstdint>
@@ -1457,8 +1459,4 @@ TEST(OgHttp2AdapterTest, AckOfSettingInitialWindowSizeAffectsWindow) {
   testing::InSequence s;
 
   const std::vector<Header> headers =
-
-"""
-
-
 ```

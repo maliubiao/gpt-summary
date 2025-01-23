@@ -183,7 +183,7 @@ inss = []*instruction{&instruction{as: AADDI, rd: 11, rs1: 10, imm: 0}}
 
 这段代码是 Go 编译器 RISC-V 后端的核心组成部分，负责将抽象的汇编指令转化为具体的机器码，为 Go 程序在 RISC-V 架构上的运行奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/obj/riscv/obj.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -192,8 +192,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 mes
 		// 	MOV $1, X10
 		// 	SLLI $63, X10, X10
@@ -798,10 +800,4 @@ var LinkRISCV64 = obj.LinkArch{
 	UnaryDst:       unaryDst,
 	DWARFRegisters: RISCV64DWARFRegisters,
 }
-
-"""
-
-
-
-
 ```

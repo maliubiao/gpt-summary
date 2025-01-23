@@ -111,14 +111,16 @@ This step-by-step approach, starting with a high-level understanding and then di
     document.getElementById('myDiv').style.backgroundImage = 'radial-gradient(red, green)';
 
     // 在 Canvas 中使用渐
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/gradient.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2007, 2008, 2010 Apple Inc. All rights reserved.
  * Copyright (C) 2007 Alp Toker <alp@atoker.com>
@@ -649,7 +651,4 @@ scoped_refptr<Gradient> Gradient::CreateConic(
 }
 
 }  // namespace blink
-
-"""
-
 ```

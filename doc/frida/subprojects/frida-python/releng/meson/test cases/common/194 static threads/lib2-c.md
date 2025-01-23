@@ -228,7 +228,7 @@ void *f(void) {
 
 总之，`lib2.c` 作为一个非常简单的 C 代码文件，其主要功能是作为 Frida 动态插桩测试用例的一部分，用于验证 Frida hook 函数调用和观察返回值的能力。它涉及到了动态逆向、二进制底层、操作系统和框架的相关知识。理解其在 Frida 测试框架中的作用，可以帮助我们更好地理解 Frida 的工作原理和动态逆向的基本概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/194 static threads/lib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -236,14 +236,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern void *f(void);
 
 void *g(void) {
   return f();
 }
-
-"""
-
 ```

@@ -212,15 +212,17 @@ bool IsReturn() const { return type_ == DEBUG_BREAK_SLOT_AT_RETURN; }
 
 **In summary, `v8/src/debug/debug.h` is a crucial header file in the V8 engine that lays the groundwork for all the debugging features developers use when working with JavaScript. It defines the data structures and interfaces necessary for setting breakpoints, stepping through code, inspecting the call stack, and handling debugging events.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/debug/debug.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1045,7 +1047,4 @@ class SuppressDebug {
 }  // namespace v8
 
 #endif  // V8_DEBUG_DEBUG_H_
-
-"""
-
 ```

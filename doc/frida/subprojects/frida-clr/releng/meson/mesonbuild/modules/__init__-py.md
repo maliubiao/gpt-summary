@@ -137,7 +137,7 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`frida/subprojects/frida-clr/releng/meson/mesonbuild/modules/__init__.py` 文件是 Frida 构建系统中 Meson 模块定义的核心文件，它定义了模块的基础结构和一些通用的工具函数，为 Frida 的构建过程提供了必要的支持。虽然它不直接参与逆向操作，但它提供的功能间接地与逆向方法相关，并反映了对二进制底层、操作系统和框架的知识需求。理解这个文件的功能有助于理解 Frida 的构建过程和排查相关的构建错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/modules/__init__.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -417,7 +419,4 @@ class TypelibTarget(build.CustomTarget):
 
 class VapiTarget(build.CustomTarget):
     pass
-
-"""
-
 ```

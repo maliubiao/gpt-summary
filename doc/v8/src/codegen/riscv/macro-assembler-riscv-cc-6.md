@@ -147,7 +147,7 @@ By following these steps, a comprehensive summary addressing all the points in t
 
 `v8/src/codegen/riscv/macro-assembler-riscv.cc` 的第七部分是 RISC-V 宏汇编器的核心组成部分，它提供了用于 WebAssembly 支持、向量操作、带溢出检查的算术运算、运行时调用、调试、对象类型处理和栈帧管理等关键功能。这些功能是 V8 引擎在 RISC-V 架构上执行 JavaScript 和 WebAssembly 代码的基础。虽然 JavaScript 开发者通常不直接接触这些底层代码，但理解其功能有助于理解 JavaScript 引擎的内部工作原理以及可能出现的性能瓶颈和错误类型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/riscv/macro-assembler-riscv.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/riscv/macro-assembler-riscv.cc以.tq结尾，那它是个v8 torque源代码，
@@ -155,8 +155,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eg, 1);
   li(kScratchReg, vals[0]);
   vmv_sx(dst, kScratchReg);
@@ -1082,7 +1084,4 @@ void MacroAssembler::AssertConstructor(Register object) {
           Operand(zero_reg));
 
     LoadMap(sc
-"""
-
-
 ```

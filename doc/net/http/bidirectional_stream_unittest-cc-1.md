@@ -189,7 +189,7 @@ fetch('/data-stream', {
 
 这部分代码主要集中测试了 `BidirectionalStream` 组件在各种数据传输和生命周期管理场景下的正确性和健壮性。它涵盖了数据交错发送和接收、小数据块的合并优化、异步读取的完成、数据缓冲机制、HTTP 尾部的处理，以及在不同阶段删除流的安全性。此外，还测试了对协议错误的识别和处理，以及对备用服务头部的支持。总而言之，这部分测试旨在确保 `BidirectionalStream` 能够可靠高效地处理 HTTP/2 双向数据流。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/bidirectional_stream_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -197,8 +197,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ogEventPhase::NONE);
   EXPECT_EQ(NetLogSourceType::BIDIRECTIONAL_STREAM, entries[index].source.type);
   // Received bytes for synchronous read.
@@ -1016,8 +1018,4 @@ TEST_F(BidirectionalStreamTest, TestHonorAlternativeServiceHeader) {
       quic::AlpnForVersion(DefaultSupportedQuicVersions().front());
   alt_svc_header_value.append("=\"www.example.org:443\"");
   const char* const kExtraResponseHeaders[] = {"alt-svc",
-                  
-"""
-
-
 ```

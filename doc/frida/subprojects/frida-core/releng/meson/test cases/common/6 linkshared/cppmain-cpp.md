@@ -113,7 +113,7 @@ int cppfunc() {
 
 总而言之，`cppmain.cpp` 作为一个简单的 Frida 测试用例，虽然代码量很少，但却涵盖了动态链接、共享库交互等重要的系统级概念，并且直接关联到 Frida 作为动态逆向工具的应用场景。理解这个测试用例有助于理解 Frida 的基本工作原理以及在逆向分析中的作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/6 linkshared/cppmain.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -121,14 +121,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "cpplib.h"
 
 int main(void) {
     return cppfunc() != 42;
 }
-
-"""
-
 ```

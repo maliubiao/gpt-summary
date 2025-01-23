@@ -103,7 +103,7 @@ Now, let's formulate the answers based on these observations.
 
 这段 `visible_units_test.cc` 代码的主要功能是**全面测试 Blink 引擎中用于处理网页上可见文本单元和光标定位的核心逻辑。** 它涵盖了判断不同位置的视觉可见性、获取文档起始位置、处理特殊字符和不可见元素对光标的影响、以及计算选区范围等关键功能。通过这些测试，可以确保用户在网页上进行文本编辑和光标操作时，其行为符合预期，并且各种复杂的 HTML 结构和 CSS 样式不会导致光标定位或选区计算的错误。 这些测试对于保证 Chromium 浏览器的文本编辑和用户交互的质量至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/visible_units_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -111,8 +111,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 PECT_TRUE(RendersInDifferentPosition(Position::LastPositionInNode(*one),
                                          Position(two, 0)))
       << "two doesn't have layout object";
@@ -469,8 +471,4 @@ TEST_F(VisibleUnitsTest, FirstRectForRangeVerticalWrap) {
 
 }  // namespace visible_units_test
 }  // namespace blink
-
-"""
-
-
 ```

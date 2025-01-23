@@ -109,7 +109,7 @@ Here's a breakdown of the thinking process used to analyze the provided C code s
 
 因此，开发者到达 `bar.c` 的源代码，通常是为了理解和调试 Frida 在处理具有外部库依赖的场景下的行为，特别是涉及到 RPATH 设置时。这个文件是测试 Frida 功能的一个关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/39 external, internal library rpath/built library/bar.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -117,8 +117,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo_system_value (void);
 int faa_system_value (void);
 
@@ -126,7 +128,4 @@ int bar_built_value (int in)
 {
     return faa_system_value() + foo_system_value() + in;
 }
-
-"""
-
 ```

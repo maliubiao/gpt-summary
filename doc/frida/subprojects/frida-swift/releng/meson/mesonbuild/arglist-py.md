@@ -174,7 +174,7 @@ Let's assume a user is trying to build Frida from source. Here's a possible path
 
 In essence, a user interacting with the Frida build process indirectly triggers the execution of this code as part of Meson's process of generating the correct compiler and linker commands for building the software. When things go wrong, understanding the role of `CompilerArgs` can be crucial for debugging build issues.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/arglist.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -182,8 +182,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2020 The Meson development team
 # Copyright © 2020-2023 Intel Corporation
@@ -505,7 +507,4 @@ class CompilerArgs(T.MutableSequence[str]):
     def __repr__(self) -> str:
         self.flush_pre_post()
         return f'CompilerArgs({self.compiler!r}, {self._container!r})'
-
-"""
-
 ```

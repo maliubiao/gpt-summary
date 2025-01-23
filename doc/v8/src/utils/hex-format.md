@@ -109,11 +109,13 @@ console.log(hexString); // 输出: "0aff0010"
 
 `v8/src/utils/hex-format.cc` 中的 `FormatBytesToHex` 函数是 V8 引擎内部用于将字节数组转换为十六进制字符串的实用工具。虽然 JavaScript 没有直接调用它的接口，但 JavaScript 开发者可以使用类似的方法（如上面的示例）来实现相同的功能，这在处理二进制数据时非常常见。V8 引擎内部使用这个 C++ 函数可能是为了其自身的调试、日志记录或其他需要十六进制表示的内部操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/utils/hex-format.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -144,7 +146,4 @@ void FormatBytesToHex(char* formatted, size_t size_of_formatted,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

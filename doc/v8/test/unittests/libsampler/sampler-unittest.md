@@ -130,11 +130,13 @@ This systematic approach helps break down a potentially complex file into manage
 
 `sampler-unittest.cc` 是 V8 引擎中用于验证其内部采样机制的 C++ 单元测试。它通过模拟 JavaScript 代码的执行和 native 方法的调用，来测试采样器能否准确地收集堆栈信息，并区分 JavaScript 和外部代码的执行状态。虽然 JavaScript 代码本身不能直接操作 V8 的 `Sampler` 类，但这些测试确保了 V8 提供的性能分析工具能够基于可靠的采样数据工作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/libsampler/sampler-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -353,7 +355,4 @@ TEST_F(SamplerTest, AtomicGuard_GetBlockingSuccess) {
 
 }  // namespace sampler
 }  // namespace v8
-
-"""
-
 ```

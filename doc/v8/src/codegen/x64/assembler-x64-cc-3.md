@@ -133,7 +133,7 @@ VEX.NDS.128.66.0F38.W0 18 /r
 
 总结来说，这段代码是 V8 引擎中一个关键的低级组件，负责将 JavaScript 代码高效地翻译成 x64 机器码，尤其侧重于利用现代 CPU 的 SIMD 和位操作能力来提升性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/assembler-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/x64/assembler-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -141,9 +141,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-            \
+### 源代码
+```cpp
+\
     emit_vex_prefix(dst, xmm0, src, k##length, k66, k0F38, kW0);          \
     emit(0x##opcode);                                                     \
     emit_sse_operand(dst, src);                                           \
@@ -1229,8 +1231,4 @@ bool RelocInfo::IsInConstantPool() { return false; }
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_X64
-
-"""
-
-
 ```

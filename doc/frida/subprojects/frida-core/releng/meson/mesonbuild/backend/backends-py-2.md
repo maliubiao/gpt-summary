@@ -127,7 +127,7 @@ The user wants a summary of the functionality of the Python code provided. I nee
 
 这个文件的主要功能是 **定义和处理 Frida 构建过程中的各种构建目标，并生成用于安装的数据**。它负责理解 Meson 构建系统的描述，将其转化为具体的构建命令，并规划好最终的安装布局。这部分代码是 Frida 构建系统的核心组成部分，确保了 Frida 的各个组件能够被正确地构建和安装到目标系统上。它涉及到对各种文件类型、依赖关系、构建命令和安装路径的处理，是连接构建描述和实际构建/安装操作的关键桥梁。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 = arg
             for dep in t.depends:
                 assert isinstance(dep, (build.CustomTarget, build.BuildTarget))
@@ -749,7 +751,4 @@ Prompt:
         '''
         Some backends don't support custom compilers. This is a convenience
         method to conve
-"""
-
-
 ```

@@ -163,15 +163,17 @@ By following this systematic approach, combining code analysis with an understan
 
 总而言之，`ResourceLoadObserverForFrame.cc` 中的 `ResourceLoadObserverForFrame` 类是 Blink 引擎中一个非常核心的组件，它负责监控和记录帧内资源的加载过程，并将这些信息传递给其他模块，用于性能分析、开发者工具集成、安全策略执行等重要功能。理解这个类的工作原理对于调试网页加载问题以及深入理解浏览器的工作方式至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/loader/resource_load_observer_for_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -551,7 +553,4 @@ void ResourceLoadObserverForFrame::CountUsage(WebFeature feature) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

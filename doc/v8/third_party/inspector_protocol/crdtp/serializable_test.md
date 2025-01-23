@@ -84,11 +84,13 @@ console.log(content); // 输出: [1, 2, 3]
 
 `serializable_test.cc` 文件测试了 C++ 中用于将对象序列化为字节流的机制。在 Chrome DevTools Protocol 的上下文中，这种机制至关重要，因为它允许 C++ 后端将内部状态或事件表示为可以通过网络发送的数据，而 JavaScript 前端可以接收并反序列化这些数据，从而实现开发者工具与浏览器之间的通信和交互。 `Serializable` 接口提供了一种统一的方式来处理不同 C++ 对象的序列化过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/serializable_test.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -129,7 +131,4 @@ TEST(SerializableTest, YieldsContents) {
   EXPECT_THAT(foo.Serialize(), testing::ElementsAre(1, 2, 3));
 }
 }  // namespace v8_crdtp
-
-"""
-
 ```

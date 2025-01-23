@@ -149,7 +149,7 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，这个简单的 Frida 脚本演示了如何使用 Frida 与 iOS 设备上的系统服务进行交互，并获取有价值的设备信息，这对于逆向工程、安全分析和移动应用开发等领域都非常有用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/examples/open_service/dtx/deviceinfo.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const frida = require('../../..');
 const util = require('util');
 
@@ -178,7 +180,4 @@ main()
   .catch(e => {
     console.error(e);
   });
-
-"""
-
 ```

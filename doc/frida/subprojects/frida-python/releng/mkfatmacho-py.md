@@ -168,7 +168,7 @@ sys.argv = ["mkfatmacho.py", "fat_arm64e.o", "arm64e_old.o", "arm64e_new.o"]
 * **逐步调试脚本:**  可以使用 Python 的调试器（如 `pdb`）逐步执行脚本，查看变量的值，特别是偏移量的计算和文件读写操作，以确定问题所在。
 * **对比生成的 FAT Mach-O 文件结构:**  如果生成的 FAT 文件有问题，可以使用十六进制编辑器或 Mach-O 文件查看工具（如 `otool -f`）来检查其头部信息和切片分布，与预期进行对比。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/mkfatmacho.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -176,8 +176,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import os
@@ -232,7 +234,4 @@ if __name__ == '__main__':
     output_path = sys.argv[1]
     input_paths = sys.argv[2:]
     make_fat_macho(output_path, input_paths)
-
-"""
-
 ```

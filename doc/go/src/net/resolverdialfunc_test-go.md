@@ -214,7 +214,7 @@ func (m *mockConn) Write(b []byte) (n int, err error) {
 
 总而言之，这段测试代码展示了 Go 语言网络库的强大灵活性，允许开发者自定义 DNS 连接的建立方式，这在测试和特殊场景下非常有用。但是，自定义 `Dial` 函数需要仔细地实现 `net.Conn` 接口和处理 DNS 消息，以避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/resolverdialfunc_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -222,8 +222,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -549,9 +551,4 @@ func mapRCode(err error) dnsmessage.RCode {
 		return dnsmessage.RCodeServerFailure
 	}
 }
-
-"""
-
-
-
 ```

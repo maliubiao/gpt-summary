@@ -139,15 +139,17 @@ This systematic approach, starting with the big picture and then diving into the
 
 通过以上步骤，开发者可以逐步缩小问题范围，最终定位到是否是 `LoadBalancerDecoder` 导致的连接问题。例如，如果客户端发送的连接 ID 格式不正确，或者服务器端无法使用配置的密钥成功解密，那么问题可能就出在 `LoadBalancerDecoder` 或相关的配置上。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/load_balancer/load_balancer_decoder_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2022 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -407,7 +409,4 @@ TEST_F(LoadBalancerDecoderTest, OnePassIgnoreAdditionalBytes) {
 }  // namespace test
 
 }  // namespace quic
-
-"""
-
 ```

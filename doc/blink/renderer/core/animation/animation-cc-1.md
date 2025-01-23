@@ -62,16 +62,18 @@ Animation 类的这部分代码主要负责管理动画的播放状态、时间�
 15. **播放动画 (play, PlayInternal):**  实现了开始或恢复动画播放的逻辑，包括处理自动回放 (`auto_rewind`) 和管理 Promise 对象。对于反向播放且目标效果持续时间为无限长的动画，会抛出异常。
 """
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/animation.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
-  // Since pseudo elements are compared by their originating element,
+### 源代码
+```cpp
+// Since pseudo elements are compared by their originating element,
         // they sort before their children.
         return originating_element1->compareDocumentPosition(
                    originating_element2) &
@@ -878,7 +880,4 @@ void Animation::PlayInternal(AutoRewind auto_rewind,
 
   // 8. If seek time is resolved,
   //      * If has finite t
-"""
-
-
 ```

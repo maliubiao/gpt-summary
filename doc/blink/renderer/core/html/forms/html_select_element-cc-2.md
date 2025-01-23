@@ -139,7 +139,7 @@ Essentially, I approach this as reverse engineering and knowledge synthesis. I u
 
 这段代码是 `HTMLSelectElement` 类中处理与自定义选中内容元素 `<selectedcontent>` 和自动填充预览功能的核心逻辑。它负责管理 `<selectedcontent>` 元素的关联、更新其内容以反映 `<select>` 元素的选中状态，并确保自动填充预览在视觉上与原始 `<select>` 元素保持一致。 这部分代码是 Blink 渲染引擎实现 `<select>` 元素高级特性的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/html_select_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -147,8 +147,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ontent);
   selectedcontent->CloneContentsFromOptionElement(nullptr);
 }
@@ -267,8 +269,4 @@ void HTMLSelectElement::UpdateAllSelectedcontents() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

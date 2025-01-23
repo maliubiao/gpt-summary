@@ -155,15 +155,17 @@ func main() {
 
 这个测试用例的关键在于验证编译器内联分析的正确性，而不是演示 `//go:noinline` 的用法。 `//go:noinline` 在这里的作用是提供一个清晰的、不变的原因，使得 `main` 函数不被内联，从而可以更清晰地观察到 `Foo` 和 `Bar` 的内联行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue24651b.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 //errorcheck -0 -m -m
 
 // Copyright 2018 The Go Authors. All rights reserved.
@@ -188,9 +190,4 @@ func main() { // ERROR "cannot inline main: marked go:noinline$"
 	println("Foo(", x, ")=", Foo(x)) // ERROR "inlining call to Foo"
 	println("Bar(", x, ")=", Bar(x)) // ERROR "inlining call to Bar"
 }
-
-"""
-
-
-
 ```

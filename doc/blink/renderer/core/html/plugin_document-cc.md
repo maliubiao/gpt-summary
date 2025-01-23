@@ -172,14 +172,16 @@ By following this thought process, I can generate a comprehensive and accurate a
 
 总而言之，`plugin_document.cc` 文件在 Chromium 中扮演着桥梁的角色，它负责在网页和浏览器插件之间建立连接，使得浏览器能够展示各种类型的插件内容。它与 HTML 通过 `<embed>` 元素紧密关联，通过 CSS 控制插件的基本样式，并且为插件与 JavaScript 的交互提供了基础。理解这个文件的功能对于理解浏览器如何处理插件至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/plugin_document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006, 2008 Apple Inc. All rights reserved.
  *
@@ -403,7 +405,4 @@ void PluginDocument::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -92,7 +92,7 @@ typedef unsigned int size_t;
 
 请注意，这个脚本的主要作用是 *解析* 和 *理解* 预处理指令，而不是像 `gcc` 或 `clang` 的预处理器那样直接执行宏替换和条件编译。它更像是一个分析工具，用于理解代码中的预处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/tools/cpp.pyandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -104,8 +104,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 """A glorified C pre-processor parser."""
 
@@ -1033,7 +1035,4 @@ class CppExprTest(unittest.TestCase):
     def test_cpp_expr_string(self):
         self.assertEqual(self.get_expr_string("0"), "0")
         self.assertE
-"""
-
-
 ```

@@ -210,15 +210,17 @@ By following this structured approach, combining code analysis with an understan
 
 总而言之，`blink/renderer/modules/webcodecs/audio_decoder.cc` 是 WebCodecs API 中音频解码器的桥梁，它连接了 JavaScript API 和底层的媒体处理框架，负责配置、解码和输出音频数据，并在发生错误时提供反馈。 理解这个文件的功能对于调试 WebCodecs 相关的音频问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/audio_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -567,7 +569,4 @@ const AtomicString& AudioDecoder::InterfaceName() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -142,15 +142,17 @@ readData();
 
 总而言之，`udp_readable_stream_wrapper_unittest.cc` 是一个关键的测试文件，用于确保 Blink 引擎中将 UDP socket 数据转换为 JavaScript 可读流的功能能够正确可靠地工作。它模拟了各种场景，包括正常的数据接收、空数据、错误情况以及流的取消，以保证代码的健壮性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/direct_sockets/udp_readable_stream_wrapper_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -481,7 +483,4 @@ TEST(UDPReadableStreamWrapperTest, ReadRejectsOnError) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
 ```

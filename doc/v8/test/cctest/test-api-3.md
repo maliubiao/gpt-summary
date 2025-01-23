@@ -171,12 +171,14 @@ try {
 
 总而言之，这个 C++ 文件是 V8 引擎测试套件的一部分，专门用来验证 V8 提供的 C++ API 在处理异常、数组、函数、对象和类型等核心 JavaScript 特性时的正确性和稳定性。这些测试确保了 C++ 代码能够有效地与 JavaScript 代码进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第4部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 EQ(0, strcmp("exception", *exception_value));
   CHECK(context->GetIsolate()->HasPendingException());
   try_catch.Reset();
@@ -1926,7 +1928,4 @@ THREADED_TEST(SetterOnly) {
   v8::Isolate* isolate = CcTest::isolate();
   v8::HandleScope scope(isolate);
   Loc
-"""
-
-
 ```

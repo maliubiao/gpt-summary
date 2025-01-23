@@ -143,7 +143,7 @@ This structured approach ensures all aspects of the prompt are addressed compreh
 
 总而言之，`hook-mesonbuild.py` 这个脚本是确保基于 Meson 构建的 Frida-QML 组件能够被正确打包的关键环节。理解它的功能和原理，有助于排查打包和运行时可能出现的问题，并能间接地了解 Frida-QML 项目的依赖关系和构建过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/packaging/hook-mesonbuild.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!hint/python3
 
 """
@@ -213,7 +215,4 @@ hiddenimports += [
     # needed for gtk's find_program() scripts
     'filecmp',
 ]
-
-"""
-
 ```

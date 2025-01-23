@@ -132,7 +132,7 @@ int64 的地址: 0xc00000a004, 是否按 4 字节对齐: true
 
 这段代码是 Go 运行时环境针对 MIPS 小端架构的关键配置，定义了内存管理、程序计数器步进、栈帧大小和栈对齐方式等底层参数。这些参数保证了 Go 程序在 MIPS 小端架构上能够正确、高效地运行。普通 Go 开发者无需直接操作这些常量，但了解它们有助于理解 Go 语言在不同架构上的适配机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/goarch/goarch_mipsle.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -140,8 +140,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -155,9 +157,4 @@ const (
 	_MinFrameSize        = 4
 	_StackAlign          = PtrSize
 )
-
-"""
-
-
-
 ```

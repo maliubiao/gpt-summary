@@ -134,15 +134,17 @@ fetch('https://example.com')
 
 总而言之，`platform_trust_store.cc` 虽然自身只是定义了一个简单的数据结构，但它是 Chromium 网络栈中关键的组成部分，负责管理和提供受信任的根证书，这对于保证 HTTPS 连接的安全性至关重要，并间接地影响着 JavaScript 发起的网络请求的成功与否。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cert/internal/platform_trust_store.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -166,7 +168,4 @@ PlatformTrustStore::CertWithTrust& PlatformTrustStore::CertWithTrust::operator=(
     CertWithTrust&& other) = default;
 
 }  // namespace net
-
-"""
-
 ```

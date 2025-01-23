@@ -161,14 +161,16 @@ Finally, organize the findings into a clear and structured response, addressing 
 
 `dom_traversal_utils.cc` 提供了一组精确控制 DOM 遍历的工具函数，特别是在处理 Shadow DOM 时，允许区分是否需要包含 User-Agent Shadow Tree。这对于 Chromium 的 Inspector 等内部模块至关重要，能够帮助开发者更准确地理解和调试 Web 页面的结构和样式。理解 `include_user_agent_shadow_tree` 参数的作用是正确使用这些工具函数的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/dom_traversal_utils.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 #include "third_party/blink/renderer/core/inspector/dom_traversal_utils.h"
 
 #include "third_party/blink/renderer/core/dom/flat_tree_traversal.h"
@@ -209,7 +211,4 @@ Node* NextSibling(const Node& node, bool include_user_agent_shadow_tree) {
 
 }  // namespace dom_traversal_utils
 }  // namespace blink
-
-"""
-
 ```

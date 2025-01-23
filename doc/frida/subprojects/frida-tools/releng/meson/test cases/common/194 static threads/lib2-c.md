@@ -155,7 +155,7 @@ This detailed breakdown covers the various aspects of the prompt and shows the l
 
 总之，这段简单的 C 代码片段虽然功能不多，但它体现了逆向分析中常见的间接调用模式，并且涉及到许多底层概念和常见的编程错误。理解这段代码需要结合动态分析工具 Frida 和对操作系统及编程语言的基础知识的掌握。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/194 static threads/lib2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,14 +163,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 extern void *f(void);
 
 void *g(void) {
   return f();
 }
-
-"""
-
 ```

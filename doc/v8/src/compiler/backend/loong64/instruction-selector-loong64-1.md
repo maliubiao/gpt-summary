@@ -79,12 +79,14 @@ Atomics.store(arr, 0, 42); // 对应 VisitAtomicStore
 ```
 
 总而言之，这部分代码是 V8 引擎将 JavaScript 代码转换为可在 LoongArch64 架构上执行的机器码的关键组成部分，它负责选择最合适的机器指令来实现 JavaScript 的各种数值操作。
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/loong64/instruction-selector-loong64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 atcher leftInput(left), rightInput(right);
       if (leftInput.right().Is(32) && rightInput.right().Is(32)) {
         // Combine untagging shifts with Mulh_d.
@@ -1846,7 +1848,4 @@ void InstructionSelectorT<TurboshaftAdapter>::VisitWordCompareZero(
               default:
                 UNREACHABLE();
             }
-"""
-
-
 ```

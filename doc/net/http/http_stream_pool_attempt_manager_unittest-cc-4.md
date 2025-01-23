@@ -116,7 +116,7 @@ Here's a breakdown of the thought process to address the request:
 
 总而言之，这部分代码专注于测试 `HttpStreamPoolAttemptManager` 在处理延迟的连接尝试，特别是针对 QUIC 协议时的行为。它验证了在 QUIC 连接延迟后成功和失败的场景下，`HttpStreamPoolAttemptManager` 是否能按照预期工作，例如在 QUIC 失败时能否正确回退到 TCP。这对于保证网络连接的稳定性和性能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_pool_attempt_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第5部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 requester_b.set_destination(kDestinationB).RequestStream(pool());
   RunUntilIdle();
   EXPECT_THAT(requester_b.result(), Optional(IsOk()));
@@ -971,7 +973,4 @@ TEST_F(HttpStreamPoolAttemptManagerTest, DelayStreamAttemptQuicOk) {
 
 TEST_F(HttpStreamPoolAttemptManagerTest, DelayStreamAttemptQuicFail) {
   constexpr base::TimeDelta kDela
-"""
-
-
 ```

@@ -127,11 +127,13 @@ if (y === false) { // V8 会优化为 !y
 
 `typed-optimization-unittest.cc` 文件通过单元测试确保了 V8 引擎在进行类型优化时的正确性。这些优化直接影响 JavaScript 代码的执行效率，使得 V8 能够更高效地处理各种类型转换和比较操作，从而提升整体的 JavaScript 性能。理解这些测试用例有助于深入了解 V8 引擎的内部工作原理以及其如何优化动态类型的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/typed-optimization-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -257,7 +259,4 @@ TEST_F(TypedOptimizationTest, ReferenceEqualWithBooleanFalseConstant) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

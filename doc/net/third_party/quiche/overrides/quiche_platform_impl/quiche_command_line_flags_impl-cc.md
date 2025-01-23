@@ -170,15 +170,17 @@ By following this systematic approach, combining code analysis with an understan
 
 通过以上步骤，开发者可以利用 `quiche_command_line_flags_impl.cc` 中实现的命令行标志解析功能来调试 QUIC 相关的问题，并调整 QUIC 的行为以达到预期的效果。当开发者怀疑某个特定的 QUIC 功能或参数导致问题时，他们可能会深入到这个文件的代码中，了解标志是如何被注册、解析和应用的，从而更好地理解问题的根源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/overrides/quiche_platform_impl/quiche_command_line_flags_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -434,7 +436,4 @@ QuicheParseCommandLineFlagsResult::~QuicheParseCommandLineFlagsResult() =
     default;
 
 }  // namespace quiche
-
-"""
-
 ```

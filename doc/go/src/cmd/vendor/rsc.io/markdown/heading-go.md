@@ -424,7 +424,7 @@ Markdown Output:
 
 总而言之，这段代码是 `rsc.io/markdown` 库中用于处理 Markdown 标题的核心部分，负责解析不同风格的标题，并将其渲染成 HTML 或 Markdown。它展示了 Go 语言在处理文本和构建解析器方面的能力。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/rsc.io/markdown/heading.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -432,8 +432,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -595,9 +597,4 @@ func (s *line) trimSetext(n *int) bool {
 	}
 	return false
 }
-
-"""
-
-
-
 ```

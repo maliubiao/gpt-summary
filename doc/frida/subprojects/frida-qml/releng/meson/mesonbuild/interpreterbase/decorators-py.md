@@ -111,7 +111,7 @@ My thinking process to analyze the provided Python code snippet went through the
 
 该文件的主要功能是为 Meson 构建系统中 Frida QML 模块的解释器函数提供**声明式的参数校验、类型检查和功能特性管理机制**。通过定义一系列装饰器，该文件能够确保 Frida QML 模块的函数在构建过程中接收到正确类型的参数，并能够跟踪和报告新功能和废弃功能的使用情况，从而提高代码的健壮性和可维护性，并帮助用户避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/interpreterbase/decorators.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2021 The Meson development team
 
@@ -809,7 +811,4 @@ class FeatureNew(FeatureCheckBase):
     @staticmethod
     def get_warning_str_prefix(tv: str) -> str:
         retur
-"""
-
-
 ```

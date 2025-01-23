@@ -123,7 +123,7 @@ go test -v ./crypto/sha1
 
 这段测试代码非常精妙，它利用了操作系统底层的内存管理机制来测试 `sha1.Sum` 函数的健壮性。它通过创建受保护的内存区域，并让 `sha1.Sum` 处理紧邻该区域的数据，来验证该函数是否能正确处理边界情况，避免越界读取的漏洞。这体现了 Go 语言在安全性方面的重视，通过细致的测试来确保标准库的稳定性和安全性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/sha1/issue15617_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -131,8 +131,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -160,9 +162,4 @@ func TestOutOfBoundsRead(t *testing.T) {
 		sha1.Sum(data[pageSize-i : pageSize])
 	}
 }
-
-"""
-
-
-
 ```

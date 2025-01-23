@@ -135,13 +135,15 @@ This C++ code is a crucial part of the V8 engine that directly enables the execu
 
 In summary, this part of `code-generator-ia32.cc` is responsible for translating higher-level operations and control flow structures in the V8 engine's intermediate representation into the actual IA32 assembly instructions that the processor will execute. It's a fundamental component that bridges the gap between JavaScript code and the underlying hardware.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/code-generator-ia32.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-   \
+### 源代码
+```
+\
   case kAtomic##op##Int8: {                        \
     ASSEMBLE_ATOMIC_BINOP(inst, mov_b, cmpxchg_b); \
     __ movsx_b(eax, eax);                          \
@@ -1165,8 +1167,4 @@ void CodeGenerator::AssembleJumpTable(base::Vector<Label*> targets) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

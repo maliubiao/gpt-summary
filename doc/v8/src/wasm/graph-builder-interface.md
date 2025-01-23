@@ -69,12 +69,14 @@ const wasmInstance = new WebAssembly.Instance(wasmModule, importObject);
 
 `v8/src/wasm/graph-builder-interface.cc` 的第 1 部分主要定义了 `WasmGraphBuildingInterface` 接口及其相关的辅助结构（如 `SsaEnv` 和 `Control`）。这个接口是 WebAssembly 代码编译到 V8 内部图表示的关键组件。它负责接收 WebAssembly 字节码的解码信息，并逐步构建出可以被 V8 编译器进一步优化和执行的图结构。 这一部分代码着重于定义构建过程的基础框架和状态管理，为后续处理各种 WebAssembly 指令打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/graph-builder-interface.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1661,7 +1663,4 @@ class WasmGraphBuildingInterface {
 
   void StructGet(FullDecoder* decoder, const Value& struct_object,
                  const FieldI
-"""
-
-
 ```

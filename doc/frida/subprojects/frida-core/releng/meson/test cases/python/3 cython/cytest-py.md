@@ -99,7 +99,7 @@ Here's a breakdown of the thinking process to analyze the Python code snippet:
 
 **总而言之，`cytest.py` 是 Frida 中用于测试 `Storer` 模块功能的一个单元测试。虽然它本身是一个简单的 Python 脚本，但它所测试的模块很可能与 Frida 的核心功能和底层实现密切相关，涉及到 Cython、二进制数据处理，甚至可能间接涉及到操作系统内核和目标平台框架的概念。理解这样的测试用例有助于开发者和高级用户更好地理解 Frida 的工作原理和内部机制。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/python/3 cython/cytest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 from storer import Storer
@@ -128,7 +130,4 @@ try:
     raise SystemExit('Using wrong argument type did not fail.')
 except TypeError:
     pass
-
-"""
-
 ```

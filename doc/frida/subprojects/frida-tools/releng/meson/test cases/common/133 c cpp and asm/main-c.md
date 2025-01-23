@@ -140,7 +140,7 @@ This structured thought process, starting with basic code analysis and then buil
 
 作为调试线索，当用户在使用 Frida 时遇到问题，例如 hook 失败，查看这些简单的测试用例可以帮助用户理解 Frida 的基本工作流程，排除一些基础性的错误，例如目标进程是否真的加载了目标库，符号名是否正确等等。这些简单的测试用例就像 Frida 的 "Hello, World!" 程序，用于验证工具的基本功能是否正常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/133 c cpp and asm/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int get_retval(void);
@@ -158,7 +160,4 @@ int main(void) {
   printf("C seems to be working.\n");
   return get_retval();
 }
-
-"""
-
 ```

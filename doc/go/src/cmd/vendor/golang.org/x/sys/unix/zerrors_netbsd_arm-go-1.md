@@ -225,7 +225,7 @@ This Go code snippet serves as a crucial component for low-level system interact
 
 In essence, this file bridges the gap between the generic Go `syscall` interface and the specific error and signal representations used by the NetBSD operating system on ARM processors. It ensures that Go programs can interact with the operating system in a correct and platform-aware manner.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_netbsd_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -233,8 +233,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 NOTDIR         = syscall.Errno(0x14)
 	ENOTEMPTY       = syscall.Errno(0x42)
 	ENOTSOCK        = syscall.Errno(0x26)
@@ -451,10 +453,4 @@ var signalList = [...]struct {
 	{31, "SIGUSR2", "user defined signal 2"},
 	{32, "SIGPWR", "power fail/restart"},
 }
-
-"""
-
-
-
-
 ```

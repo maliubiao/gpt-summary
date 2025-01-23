@@ -65,12 +65,14 @@ console.log(assemblyCode);
 
 总结来说，这个 C++ 文件是 V8 引擎在 RISC-V 架构上进行底层代码分析和调试的重要组成部分，虽然不能直接从 JavaScript 调用，但其功能支撑着 V8 在 RISC-V 平台上的运行和调试能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/riscv/disasm-riscv.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -2272,7 +2274,4 @@ void Decoder::DecodeRvvIVV(Instruction* instr) {
     case RO_V_VADC_VV:
       if (!instr->RvvVM()) {
         Format(instr, "vadc.vvm  'vd, 'vs2, '
-"""
-
-
 ```

@@ -151,7 +151,7 @@ By following these steps and refining the analysis iteratively, we can arrive at
 
 总而言之，`net/websockets/websocket_channel_test.cc` 的这第四部分主要测试了 `WebSocketChannel` 在接收数据时，特别是处理 UTF-8 文本帧时的正确性和健壮性，以及在连接关闭和超时场景下的行为，确保了 Chromium 的 WebSocket 实现能够可靠地与服务端进行通信。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_channel_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -159,8 +159,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 e EventInterface as well.
 
 // If invalid UTF-8 is received in a Text frame, the connection is failed.
@@ -611,8 +613,4 @@ TEST_F(WebSocketChannelStreamTimeoutTest, ConnectionCloseTimesOut) {
 
 }  // namespace
 }  // namespace net
-
-"""
-
-
 ```

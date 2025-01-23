@@ -134,7 +134,7 @@ Here's a breakdown of the file's responsibilities based on the included headers 
 
 `blink/renderer/core/svg/svg_element.cc` 文件的第一部分定义了 `SVGElement` 类的核心结构和功能，它是 Blink 渲染引擎中处理 SVG 元素的基础。它负责管理 SVG 元素的属性、样式、动画，并与 DOM 和 JavaScript 进行交互。该文件是理解 Blink 如何渲染和处理 SVG 内容的关键入口点之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/svg_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008 Nikolas Zimmermann
  * <zimmermann@kde.org>
@@ -975,7 +977,4 @@ void SVGElement::CollectStyleForPresentationAttribute(
     return;
   }
   if (name.Matches(xml_names::kLa
-"""
-
-
 ```

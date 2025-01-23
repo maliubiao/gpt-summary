@@ -145,7 +145,7 @@ By following this structured approach, I was able to systematically analyze the 
 
 总而言之，`ui.py` 文件在 Frida 的构建过程中扮演着关键的角色，它负责识别和配置构建 UI 相关功能的必要条件。理解这个文件的功能有助于理解 Frida 如何处理外部依赖，并为调试构建问题提供线索，尤其是在涉及到 UI 功能时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/dependencies/ui.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2017 The Meson development team
 
@@ -436,7 +438,4 @@ packages['vulkan'] = vulkan_factory = DependencyFactory(
     [DependencyMethods.PKGCONFIG, DependencyMethods.SYSTEM],
     system_class=VulkanDependencySystem,
 )
-
-"""
-
 ```

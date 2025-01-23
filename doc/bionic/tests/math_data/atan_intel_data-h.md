@@ -186,7 +186,7 @@ By following these steps, I can systematically analyze the code snippet and gene
 
 `bionic/tests/math_data/atan_intel_data.handroid` 文件包含了用于测试 Android Bionic 库中 `atan` (反正切) 函数实现的数据。它是一个静态数组，存储了 `atan` 函数的输入值以及对应的预期输出值，主要用于单元测试和验证 `atan` 函数在 Intel 架构上的正确性。这个文件本身不包含 `atan` 的实现，也不直接涉及动态链接，但它是保证 Android 底层数学库质量的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atan_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -198,8 +198,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1643,7 +1645,4 @@ static data_1_1_t<double, double> g_atan_intel_data[] = {
   },
   { // Entry 356
     -0x1.6af659752a8e90
-"""
-
-
 ```

@@ -159,7 +159,7 @@ By following this thought process, which involves understanding the code, connec
 
 **这个 `main.c` 文件作为一个测试用例，它的存在是为了验证 Frida 在特定场景下的行为是否正确。当开发者或逆向工程师在使用 Frida 遇到与依赖处理相关的问题时，查看类似的测试用例可以帮助他们理解 Frida 的工作原理，并找到解决问题的方法。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/183 partial dependency/declare_dependency/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,8 +167,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2018 Intel Corporation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -194,7 +196,4 @@ int main(void) {
         return 1;
     }
 }
-
-"""
-
 ```

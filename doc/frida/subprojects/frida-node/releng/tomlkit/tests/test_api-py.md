@@ -214,7 +214,7 @@ input()
 
 总而言之，`test_api.py` 是 `tomlkit` 库的核心测试文件，它全面地验证了库的解析、生成以及错误处理能力，对于确保 Frida 在处理 TOML 配置文件时的稳定性和正确性至关重要。 开发者可以通过查看这个文件来了解 `tomlkit` 的功能和使用方法，并作为调试和问题排查的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/tomlkit/tests/test_api.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -222,8 +222,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import io
 import json
 import os
@@ -691,7 +693,4 @@ def test_parse_empty_quoted_table_name():
     parsed = loads(content)
     assert parsed == {"": {"x": 1}}
     assert dumps(parsed) == content
-
-"""
-
 ```

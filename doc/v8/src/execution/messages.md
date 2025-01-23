@@ -142,11 +142,13 @@ By following these steps, you can systematically analyze a complex C++ file and 
 
 总而言之，`messages.cc` 是 V8 引擎中处理 JavaScript 运行时消息和错误的核心组件，它连接了 JavaScript 层的错误和异常与 V8 引擎的内部实现，并提供了丰富的机制来创建、格式化、报告和自定义这些消息。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/messages.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1381,7 +1383,4 @@ MaybeHandle<Object> ErrorUtils::CaptureStackTrace(Isolate* isolate,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

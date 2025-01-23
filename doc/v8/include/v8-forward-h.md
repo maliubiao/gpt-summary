@@ -178,15 +178,17 @@ int main() {
 
 总结来说，`v8/include/v8-forward.h` 是 V8 重要的优化手段，通过提供前向声明来管理编译依赖，加速编译过程，并避免循环依赖问题。它声明的类型直接关联到 JavaScript 的概念，是 V8 引擎内部表示 JavaScript 值的基石。开发者需要理解前向声明的含义，并在需要访问类型具体定义时包含相应的完整头文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-forward.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-forward.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ class WasmModuleObject;
 }  // namespace v8
 
 #endif  // INCLUDE_V8_FORWARD_H_
-
-"""
-
 ```

@@ -124,7 +124,7 @@ Here's a breakdown of the thinking process:
 
 该 Python 源代码文件是 Frida 项目中 Meson 构建系统关于 C++ 编译器的核心配置文件。它定义了各种 C++ 编译器的抽象接口和具体实现，负责处理编译器特定的选项和参数，并提供获取编译和链接参数的方法。它的主要目标是确保 Frida 的 C++ 代码能够使用正确的编译器和配置进行编译，为 Frida 的动态 instrumentation 功能提供基础支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/cpp.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -133,8 +133,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -887,7 +889,4 @@ class VisualStudioLikeCPPCompilerMixin(CompilerMixinBase):
             args.append('/GR-')
 
         permissive, ver = self.VC_VERSION_MAP[
-"""
-
-
 ```

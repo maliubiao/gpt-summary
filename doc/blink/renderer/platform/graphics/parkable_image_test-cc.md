@@ -115,14 +115,16 @@ By following these steps and being open to refining initial assumptions, a compr
 
 总而言之，`parkable_image_test.cc` 是一个非常重要的测试文件，它确保了 `ParkableImage` 类的正确性和可靠性，而 `ParkableImage` 类在 Chromium 渲染引擎中扮演着优化内存使用的关键角色，间接地支持了各种 Web 技术的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/parkable_image_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1190,7 +1192,4 @@ TEST_F(ParkableImageWithLimitedDiskCapacityTest, ParkWithLimitedDiskCapacity) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

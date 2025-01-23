@@ -116,7 +116,7 @@ By following these steps, including breaking down the code, connecting it to the
 
 虽然 `tester.c` 的代码非常简洁，但它在 Frida 的上下文中扮演着重要的角色，用于测试 Frida 的依赖回退机制。理解这个测试用例的功能和背后的原理，可以帮助我们更好地理解 Frida 的工作方式以及在逆向工程中可能遇到的依赖问题。对于 Frida 的开发者来说，这样的测试用例是保证代码质量和功能稳定性的重要手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/88 dep fallback/tester.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -124,8 +124,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"bob.h"
 #include"genbob.h"
 #include<string.h>
@@ -140,7 +142,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

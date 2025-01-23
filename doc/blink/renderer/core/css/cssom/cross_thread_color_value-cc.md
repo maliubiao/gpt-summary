@@ -151,15 +151,17 @@ To reach this code during debugging, the following steps might occur:
 
 `CrossThreadColorValue` 是 Blink 渲染引擎中处理跨线程颜色传递的一个关键机制。它作为一个中间表示，确保了在不同线程之间传递颜色信息时的安全性和正确性。虽然开发者通常不会直接操作这个类，但理解它的作用有助于调试与样式和跨线程通信相关的问题。当你在调试中遇到 `CSSUnsupportedColor` 时，可以考虑是否存在跨线程的颜色传递，并检查相关的异步操作和线程交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/css/cssom/cross_thread_color_value.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -188,7 +190,4 @@ std::unique_ptr<CrossThreadStyleValue> CrossThreadColorValue::IsolatedCopy()
 }
 
 }  // namespace blink
-
-"""
-
 ```

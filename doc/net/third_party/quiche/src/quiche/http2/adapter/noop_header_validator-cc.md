@@ -154,15 +154,17 @@ Finally, I organize the information logically under the requested headings: Func
 
 总而言之，`NoopHeaderValidator` 的主要目的是 **简化或跳过 HTTP/2 头部校验**。它在某些特定的场景下可能有用，例如测试环境或当已知头部是可靠的时候，但需要谨慎使用，避免在需要严格校验的场景下引入问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/noop_header_validator.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/noop_header_validator.h"
 
 #include <string>
@@ -187,7 +189,4 @@ bool NoopHeaderValidator::FinishHeaderBlock(HeaderType /* type */) {
 
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

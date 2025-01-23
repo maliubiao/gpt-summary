@@ -223,7 +223,7 @@ By following these steps, combining code analysis with contextual awareness and 
 
 总而言之，`simple-main.c` 提供了一个清晰且简洁的示例，演示了 GNOME 框架中资源加载的基本流程和验证方法。它在逆向分析、理解底层机制以及调试资源相关问题时都很有价值。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/frameworks/7 gnome/resources/simple-main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -231,8 +231,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 #include<gio/gio.h>
@@ -260,7 +262,4 @@ int main(int argc, char **argv) {
     g_bytes_unref(data);
     return 0;
 }
-
-"""
-
 ```

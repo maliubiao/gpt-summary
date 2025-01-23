@@ -148,7 +148,7 @@ By following these steps, a comprehensive and informative response can be genera
 
 作为整个系列的一部分，`gum_quick_core_teardown` 函数在 Frida-Gum 的 JavaScript 绑定层的生命周期结束时扮演着至关重要的角色，负责**清理和释放用于高效访问内部数据结构的预定义字符串资源**，确保资源的正确回收，避免内存泄漏，并为下一次的 Frida 使用提供干净的环境。 这体现了 Frida 框架在资源管理方面的严谨性，保证了其稳定性和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/gumquickcore.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,9 +157,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
- (access);
+### 源代码
+```c
+(access);
   GUM_TEARDOWN_ATOM (address);
   GUM_TEARDOWN_ATOM (autoClose);
   GUM_TEARDOWN_ATOM (base);
@@ -224,8 +226,4 @@ Prompt:
 
 #undef GUM_TEARDOWN_ATOM
 }
-
-"""
-
-
 ```

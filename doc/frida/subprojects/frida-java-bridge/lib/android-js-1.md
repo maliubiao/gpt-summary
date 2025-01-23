@@ -95,7 +95,7 @@ Enter your debugger command(s). Type 'DONE' to end.
 8. 调用`ArtMethod::GetOatQuickMethodHeader`钩子
 9. 处理GC并发复制阶段的回调
 10. 最终执行替换后的Native代码
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/android.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -105,9 +105,11 @@ Prompt:
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
- } = prevInsn;
+### 源代码
+```javascript
+} = prevInsn;
 
   if ((mnemonic === 'cmp' && prevMnemonic === 'ldr') || (mnemonic === 'bl' && prevMnemonic === 'str')) {
     return prevInsn.operands[1].value.disp;
@@ -1292,8 +1294,4 @@ const artGetOatQuickMethodHeaderInlinedCopyHandler = {
           'e0 03 1f aa', // mov x0, xzr
           ':',
           /* 00 */ 'fc ff ff',
-      
-"""
-
-
 ```

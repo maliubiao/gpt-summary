@@ -119,15 +119,17 @@ By following these steps, I can dissect the C++ code, understand its role in the
 
 总而言之，`dom_window_storage_controller.cc` 在 Blink 引擎中扮演着重要的角色，它通过管理与 DOM Window 相关的存储事件监听，使得跨窗口/标签页的 `localStorage` 和 `sessionStorage` 事件能够正常工作，为 Web 应用提供了重要的跨上下文通信能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/storage/dom_window_storage_controller.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ void DOMWindowStorageController::DidAddEventListener(
 }
 
 }  // namespace blink
-
-"""
-
 ```

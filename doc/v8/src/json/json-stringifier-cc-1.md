@@ -174,7 +174,7 @@ console.log(JSON.stringify({ key: JSON.rawJSON('"raw json string"') }));
 
 这段 `v8/src/json/json-stringifier.cc` 代码是 V8 引擎中 `JSON.stringify()` 方法的关键实现，负责将 JavaScript 对象转换为 JSON 字符串。它通过类型分发、针对不同类型的优化序列化策略、循环引用检测、以及对特殊类型的处理，实现了 JavaScript 中 `JSON.stringify()` 的核心功能。它还支持格式化输出和 `replacer` 函数，并处理了用户常见的与 JSON 序列化相关的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/json/json-stringifier.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/json/json-stringifier.cc以.tq结尾，那它是个v8 torque源代码，
@@ -182,11 +182,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-
-
-  InstanceType instance_type =
+### 源代码
+```cpp
+InstanceType instance_type =
       Cast<HeapObject>(*object)->map(cage_base)->instance_type();
   switch (instance_type) {
     case HEAP_NUMBER_TYPE:
@@ -1024,8 +1024,4 @@ void JsonStringifier::ChangeEncoding() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

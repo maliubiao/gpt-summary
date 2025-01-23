@@ -98,14 +98,16 @@ Here's a thinking process to arrive at the explanation of the `web_content_decry
 
 虽然 `web_content_decryption_module_access.cc` 文件本身代码很简单，但它背后的 `WebContentDecryptionModuleAccess` 接口在 Blink 渲染引擎中扮演着重要的角色，负责管理对内容解密模块的访问，是实现 Web 平台上受保护内容播放的关键组件，并直接影响到 JavaScript EME API 的使用和 HTML `<video>` 元素的媒体播放。  理解这个接口的功能有助于理解浏览器如何处理 DRM 内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_content_decryption_module_access.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -117,7 +119,4 @@ namespace blink {
 WebContentDecryptionModuleAccess::~WebContentDecryptionModuleAccess() = default;
 
 }  // namespace blink
-
-"""
-
 ```

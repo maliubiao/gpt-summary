@@ -194,15 +194,17 @@ func createValue() int {
 
 `escape_map.go` 中的测试用例正是帮助 Go 语言开发者和编译器开发者理解和验证这些逃逸行为，确保编译器能够做出正确的优化决策。  编写代码时，应该注意避免返回指向局部变量的指针，或者将局部变量的地址存储到可能逃逸到堆上的数据结构中，除非这是明确需要的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_map.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck -0 -m -l
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -310,9 +312,4 @@ func map9() *int {
 	m := map[*int]*int{&i: &j} // ERROR "map\[\*int\]\*int{...} does not escape"
 	return m[nil]
 }
-
-"""
-
-
-
 ```

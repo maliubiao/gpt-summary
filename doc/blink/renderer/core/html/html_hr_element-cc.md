@@ -117,14 +117,16 @@ This systematic approach allows for a comprehensive analysis of the code and ful
 
 总而言之，`html_hr_element.cc` 文件在 Blink 引擎中扮演着关键的角色，它不仅定义了 `<hr>` 元素的基本行为，还负责处理遗留的表现属性，以确保即使在旧的代码中也能正确渲染 `<hr>` 元素。同时，它也处理了 `<hr>` 元素在特定上下文（如 `<select>` 元素内部）的特殊情况。开发者应该理解这个文件背后的逻辑，以便更好地使用和调试与 `<hr>` 元素相关的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_hr_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -279,7 +281,4 @@ void HTMLHRElement::RemovedFrom(ContainerNode& insertion_point) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

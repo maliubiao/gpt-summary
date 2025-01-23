@@ -224,7 +224,7 @@ Essentially, I used a combination of code reading, pattern recognition, understa
 
 总的来说，这部分 `builtins-loong64.cc` 代码实现了 V8 引擎在 LoongArch64 架构上处理 JavaScript 代码执行、函数调用和对象构造的关键底层机制。它涵盖了解释器的入口和控制，去优化后的返回处理，栈上替换优化，以及核心的 JavaScript 函数调用和构造相关的内置函数的实现，包括 `apply`、`call`、`Reflect` API 和可变参数的处理。 这些都是 V8 引擎执行 JavaScript 代码的基础构建块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/loong64/builtins-loong64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/loong64/builtins-loong64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -232,9 +232,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
-  __ Alsl_d(a1, a7, kInterpreterDispatchTableRegister, kSystemPointerSizeLog2,
+### 源代码
+```cpp
+__ Alsl_d(a1, a7, kInterpreterDispatchTableRegister, kSystemPointerSizeLog2,
             t7);
   __ Ld_d(kJavaScriptCallCodeStartRegister, MemOperand(a1, 0));
   __ Jump(kJavaScriptCallCodeStartRegister);
@@ -1125,7 +1127,4 @@ void Builtins::Generate_ConstructFunction(MacroAssembler* masm) {
   // -----------------------------------
   __ AssertConstructor(a1);
   __ AssertF
-"""
-
-
 ```

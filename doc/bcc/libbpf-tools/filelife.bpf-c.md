@@ -79,7 +79,7 @@ Response:
 - 使用 `bpftrace` 打印 `dentry` 地址和参数偏移。
 - 检查 `start` 映射中是否存在目标 `dentry` 条目。
 - 验证 `renamedata_has_old_mnt_userns_field()` 的判断逻辑是否符合当前内核版本。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/filelife.bpf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -88,8 +88,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // SPDX-License-Identifier: GPL-2.0
 // Copyright (c) 2020 Wenbo Zhang
 #include <vmlinux.h>
@@ -250,7 +252,4 @@ int BPF_KRETPROBE(vfs_unlink_ret)
 }
 
 char LICENSE[] SEC("license") = "GPL";
-
-"""
-
 ```

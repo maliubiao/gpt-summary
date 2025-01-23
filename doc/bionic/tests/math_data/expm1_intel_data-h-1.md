@@ -20,7 +20,7 @@ Therefore, the core task is to synthesize the information extracted in part 1 to
 
 通过使用这些预先计算好的输入和输出，测试框架可以自动验证 `bionic` 库中 `expm1` 函数的实现是否符合预期，从而确保其在不同场景下的正确性和精度。  这个数据文件是单元测试的一部分，用于保证 Android 系统底层数学库的质量和稳定性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/expm1_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -32,9 +32,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-  0x1.e7bdb90ab26bdf555eaf19da7f043f2cp1,
+### 源代码
+```c
+0x1.e7bdb90ab26bdf555eaf19da7f043f2cp1,
     0x1.921fb54442d18p0
   },
   { // Entry 363
@@ -138,8 +140,4 @@ Prompt:
     0x1.62e42fefa39f0p9
   }
 };
-
-"""
-
-
 ```

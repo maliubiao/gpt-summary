@@ -160,7 +160,7 @@ func fallbackFloatCalculation() {
 
 `cpu_arm.go` 这段代码是 Go 语言运行时用于在 ARM 架构上检测 CPU 功能的关键部分。它通过读取操作系统提供的硬件能力信息来确定 CPU 支持的特性，并将这些信息存储起来供 Go 运行时和用户代码使用，以便进行性能优化和功能适配。使用者需要理解这些信息的初始化时机和不可变性，避免产生误用。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/cpu/cpu_arm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,8 +168,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -218,9 +220,4 @@ func isV7(s string) bool {
 	}
 	return s >= "v7" // will be something like v5, v7, v8, v8l
 }
-
-"""
-
-
-
 ```

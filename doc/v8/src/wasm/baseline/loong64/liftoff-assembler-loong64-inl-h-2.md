@@ -186,7 +186,7 @@ runWasm();
 
 总而言之，这部分代码是 Liftoff 编译器生成 LoongArch64 架构机器码的关键组成部分，专注于数值类型转换、基本控制流和条件操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/loong64/liftoff-assembler-loong64-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/loong64/liftoff-assembler-loong64-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 (src.fp(), kScratchDoubleReg, CULE);
       BranchTrueShortF(&isnan_or_lessthan_or_equal_zero);
       Ftintrz_uw_s(dst.gp(), src.fp(), kScratchDoubleReg);
@@ -1100,7 +1102,4 @@ void LiftoffAssembler::emit_i32x4_max_s(LiftoffRegister dst,
 
 void LiftoffAssembler::emit_i32x4_max_u(LiftoffRegister dst,
                                         Liftoff
-"""
-
-
 ```

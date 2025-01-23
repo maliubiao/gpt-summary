@@ -193,7 +193,7 @@ createLotsOfObjects(); // 执行后，这些对象可能不再被引用，需要
 
 第二部分的代码主要实现了 `Sweeper::SweeperImpl` 类，该类负责执行 cppgc 垃圾回收器的清理（sweeping）阶段。它管理清理任务的启动、执行和完成，并处理不同类型的清理（增量、并发）。此外，它还负责在内存分配时触发清理，以尽可能地重用空闲内存。该部分代码与 JavaScript 的垃圾回收功能紧密相关，负责回收不再使用的 C++ 对象所占用的内存，类似于 JavaScript 垃圾回收器回收不再使用的 JavaScript 对象。 代码中还包含了用于测试和观察清理过程的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/cppgc/sweeper.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/cppgc/sweeper.cc以.tq结尾，那它是个v8 torque源代码，
@@ -201,8 +201,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 :From(page)->ObjectHeader();
       DCHECK_IMPLIES(page->marked_bytes() == 0, !header->IsMarked());
       DCHECK_IMPLIES(page->marked_bytes() != 0, header->IsMarked());
@@ -956,8 +958,4 @@ Sweeper::SweepingOnMutatorThreadObserver::~SweepingOnMutatorThreadObserver() {
 }
 
 }  // namespace cppgc::internal
-
-"""
-
-
 ```

@@ -96,7 +96,7 @@ Let's break down the thought process to arrive at the detailed analysis of the p
 
 总而言之，这段 `InsertListCommand::ApplyForSingleRange` 方法的关键功能是将用户选中的内容转换成一个列表项，并将其放置在一个新的列表元素中。它处理了移动内容、清理残留节点以及设置后续编辑状态等复杂细节，同时也暴露出了一些潜在的 bug 和需要注意的边界情况。这段代码是浏览器编辑功能核心逻辑的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/insert_list_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -104,8 +104,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 itingBoundary,
       constraining_ancestor);
   MoveParagraphWithClones(
@@ -142,8 +144,4 @@ void InsertListCommand::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

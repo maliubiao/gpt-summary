@@ -205,7 +205,7 @@ function test(a) {
 
 `v8/src/maglev/maglev-interpreter-frame-state.h` 定义了 Maglev 编译器中用于表示和合并解释器帧状态的核心数据结构，特别是在控制流汇合点。它负责管理 Phi 节点、前驱基本块信息、虚拟对象和循环相关信息，确保在编译器优化过程中能够正确处理不同控制流路径带来的状态变化，为生成高效的机器码奠定基础。它直接支持 JavaScript 中诸如 `if-else`、循环和 `try-catch` 等控制流结构的处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-interpreter-frame-state.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-interpreter-frame-state.h以.tq结尾，那它是个v8 torque源代码，
@@ -213,8 +213,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 basic block with this state.
   KnownNodeAspects* TakeKnownNodeAspects() {
     DCHECK_NOT_NULL(known_node_aspects_);
@@ -510,8 +512,4 @@ void InterpreterFrameState::CopyFrom(const MaglevCompilationUnit& info,
 }  // namespace v8
 
 #endif  // V8_MAGLEV_MAGLEV_INTERPRETER_FRAME_STATE_H_
-
-"""
-
-
 ```

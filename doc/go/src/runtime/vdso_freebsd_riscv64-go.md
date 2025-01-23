@@ -165,7 +165,7 @@ func main() {
 
 总结来说，这段 `vdso_freebsd_riscv64.go` 文件是 Go 语言为了在 FreeBSD RISC-V 64 位架构上高效获取时间而设计的底层实现，它利用了 VDSO 机制和特定的硬件指令（如 `rdtime`）来提升性能。 普通开发者无需关心其具体实现细节，只需要使用 `time` 包等高级接口即可。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/vdso_freebsd_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -173,8 +173,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -196,9 +198,4 @@ func (th *vdsoTimehands) getTimecounter() (uint32, bool) {
 		return 0, false
 	}
 }
-
-"""
-
-
-
 ```

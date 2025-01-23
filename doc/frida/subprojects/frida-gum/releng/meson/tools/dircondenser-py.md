@@ -140,7 +140,7 @@ By following these steps, breaking down the code's functionality, and relating i
 
 总而言之，`dircondenser.py` 是一个用于维护Frida测试用例目录命名规范的小工具，它通过自动化重命名和更新引用的过程，确保测试用例的组织结构清晰有序，这对于项目的可维护性和测试的可靠性都至关重要。 理解其功能和潜在的错误场景，有助于开发者在遇到相关问题时进行调试和排查。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/tools/dircondenser.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -148,8 +148,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2018 The Meson development team
@@ -230,7 +232,4 @@ if __name__ == '__main__':
         raise SystemExit('This script takes no arguments.')
     for d in glob('test cases/*'):
         condense(d)
-
-"""
-
 ```

@@ -217,7 +217,7 @@ sys.stdin.read()
 
 总而言之，这个代码片段的主要功能是**提供全面的测试数据，用于验证 Android bionic 库中 `hypotf` 函数的实现质量。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/hypotf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -229,9 +229,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- // Entry 341
+### 源代码
+```c
+// Entry 341
     0x1.74334e1b667aa723bef8bd9997e318dbp0,
     0x1.0b2502p0,
     -0x1.032a74p0
@@ -882,8 +884,4 @@ Prompt:
     -0x1.80p3
   }
 };
-
-"""
-
-
 ```

@@ -148,7 +148,7 @@ Liftoff 编译器会生成类似于这样的机器码，尽管它可能包含更
 
 总而言之，`liftoff-compiler.cc` 是 V8 引擎中 WebAssembly 执行管线的一个关键组件，负责快速生成可执行的机器码，为 WebAssembly 代码的执行奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/liftoff-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/liftoff-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -156,8 +156,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第13部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d).
   // Set by the first opcode, reset by the second.
   WasmOpcode outstanding_op_ = kNoOutstandingOp;
@@ -378,8 +380,4 @@ std::unique_ptr<DebugSideTable> GenerateLiftoffDebugSideTable(
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
-
 ```

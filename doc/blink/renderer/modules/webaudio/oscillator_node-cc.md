@@ -159,15 +159,17 @@ By following this detailed thought process, we can systematically analyze the C+
 
 总而言之，`oscillator_node.cc` 文件是 Web Audio API 中 `OscillatorNode` 功能的核心实现，它负责音频信号的生成和参数控制，并与 JavaScript 层紧密配合，为网页提供生成各种音调的基础能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/oscillator_node.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012, Google Inc. All rights reserved.
  *
@@ -332,7 +334,4 @@ void OscillatorNode::ReportWillBeDestroyed() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

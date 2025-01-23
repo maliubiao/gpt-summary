@@ -269,15 +269,17 @@ The fallback implementation of `CountPopulation` uses a divide-and-conquer appro
 
 In summary, `v8/src/base/bits.h` is a foundational header file in the V8 JavaScript engine, providing essential low-level bit manipulation utilities that are crucial for its performance and correct operation. It is a C++ header file, not a Torque file. Its functionalities are closely related to how JavaScript engines handle numbers and perform bitwise operations internally.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/bits.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/bits.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -775,7 +777,4 @@ V8_BASE_EXPORT constexpr int BitWidth(T x) {
 }  // namespace v8
 
 #endif  // V8_BASE_BITS_H_
-
-"""
-
 ```

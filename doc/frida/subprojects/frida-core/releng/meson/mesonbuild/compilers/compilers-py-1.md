@@ -97,7 +97,7 @@ Relating these functionalities to reverse engineering, binary level, OS concepts
 
 总而言之，这部分代码深入到了编译器操作的细节，提供了对各种编译器特性和构建过程的抽象和控制，使得 Frida 项目能够更灵活和可靠地在不同的平台上使用不同的编译器进行构建。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/compilers/compilers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -106,8 +106,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 sion only matters if running results; '.exe' is
         # guaranteed to be executable on every platform.
         if mode == CompileCheckMode.LINK:
@@ -728,8 +730,4 @@ def get_global_options(lang: str,
     opts: 'KeyedOptionDictType' = {argkey: cargs, largkey: largs}
 
     return opts
-
-"""
-
-
 ```

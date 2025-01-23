@@ -186,7 +186,7 @@ Expected 25, got 24
 
 总而言之，`arg-string-test.c` 是一个精心设计的简单测试用例，用于验证 `frida` 在处理带有特殊字符的命令行参数时的正确性，这对于保证 `frida` 的稳定性和可靠性至关重要。它揭示了动态分析工具背后涉及的底层操作系统机制，并为开发者提供了一个重要的调试线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/141 special characters/arg-string-test.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -194,8 +194,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
@@ -209,7 +211,4 @@ int main(int argc, char **argv) {
   assert(s[0] == argv[1][0]);
   return 0;
 }
-
-"""
-
 ```

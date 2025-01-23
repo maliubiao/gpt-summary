@@ -218,7 +218,7 @@ sys.stdin.read()
 
 总而言之，`bionic/libc/include/sys/unistd.handroid` 只是一个历史遗留的头文件，它通过包含 `<unistd.h>` 提供了标准的 POSIX 系统调用接口，这些接口在 Android 系统和应用的开发中被广泛使用。理解 `<unistd.h>` 中函数的实现和使用方式对于深入理解 Android 平台的底层机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/unistd.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -229,8 +229,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 #pragma once
 
 /**
@@ -241,7 +243,4 @@ Prompt:
  */
 
 #include <unistd.h>
-
-"""
-
 ```

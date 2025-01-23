@@ -144,7 +144,7 @@ b3:
 
 `rewriteARM.go` 的第 15 部分专注于 **优化 ARM 架构下基于比较结果的条件分支指令**。它通过模式匹配和替换，将通用的比较操作和运算组合转换为更高效的 ARM 指令，例如使用 `CMN`、`TST`、`TEQ` 等指令来替代 `CMPconst [0]` 加运算的组合，以及利用 ARM 的条件码特性来简化跳转逻辑。这有助于提升 Go 程序在 ARM 架构上的执行效率。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -153,8 +153,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第15部分，共16部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 f l.Op != OpARMADDshiftRLreg {
 				break
 			}
@@ -1502,9 +1504,4 @@ f l.Op != OpARMADDshiftRLreg {
 			return true
 		}
 		// match:
-"""
-
-
-
-
 ```

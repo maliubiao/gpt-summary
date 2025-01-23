@@ -170,15 +170,17 @@ While users don't directly interact with this header, understanding its purpose 
 
 By encapsulating memory management behind this platform abstraction layer, V8 can ensure consistent and correct memory operations across different operating systems, shielding JavaScript developers from the complexities and potential errors of manual memory management.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/memory.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/base/platform/memory.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -346,7 +348,4 @@ V8_NODISCARD AllocationResult<T*> AllocateAtLeast(size_t n) {
 #undef V8_HAS_MALLOC_USABLE_SIZE
 
 #endif  // V8_BASE_PLATFORM_MEMORY_H_
-
-"""
-
 ```

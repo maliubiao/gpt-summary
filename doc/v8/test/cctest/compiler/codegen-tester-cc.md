@@ -127,15 +127,17 @@ Let's break down the thought process for analyzing the provided C++ code snippet
 
 `v8/test/cctest/compiler/codegen-tester.cc` 是一个关键的测试文件，用于确保 V8 编译器能够针对不同输入形状的 32 位整数二元运算生成正确高效的机器码。这直接关系到 JavaScript 代码的性能和正确性。它通过模拟不同的操作数来源（参数、加载、常量）来覆盖各种可能的代码生成路径，并使用断言来验证生成的代码是否符合预期。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/codegen-tester.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/codegen-tester.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -231,7 +233,4 @@ void Int32BinopInputShapeTester::RunRight(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

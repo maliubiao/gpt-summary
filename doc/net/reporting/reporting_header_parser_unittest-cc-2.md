@@ -93,7 +93,7 @@ navigator.sendBeacon("https://example.com/data", { "error": "Something went wron
 
 这部分代码主要集中测试了在已经存在 Reporting API 配置的情况下，如何通过新的 `Reporting-Endpoints` 头部来**删除已有的配置**（通过 `max-age=0` 或无效的 JSON 格式），以及**处理超出配额的 Endpoint 数量**，并开始测试新的**结构化 `Reporting-Endpoints` 头部**的解析和处理。它验证了在各种边缘情况下，Reporting API 的配置管理逻辑的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/reporting/reporting_header_parser_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 o> endpoints2 = {{kEndpoint2_}};
   std::string header1 =
       ConstructHeaderGroupString(MakeEndpointGroup(kGroup1_, endpoints1)) +
@@ -676,8 +678,4 @@ INSTANTIATE_TEST_SUITE_P(ReportingHeaderParserStoreTest,
 
 }  // namespace
 }  // namespace net
-
-"""
-
-
 ```

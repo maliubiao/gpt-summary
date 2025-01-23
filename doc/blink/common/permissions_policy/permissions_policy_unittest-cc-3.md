@@ -152,15 +152,17 @@ Here's a breakdown of the thought process to address the request:
 
 总而言之，第 4 部分深入测试了 Permissions Policy 在更复杂的场景下的行为，特别是涉及到子资源请求和嵌套 frame 时，Policy 是如何生效和继承的，并对未来的 Policy 行为进行了验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/permissions_policy/permissions_policy_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 tureEnabledForSubresourceRequest(
         mojom::PermissionsPolicyFeature::kSharedStorage, origin_a_,
         request_without_any_opt_in));
@@ -847,7 +849,4 @@ TEST_F(PermissionsPolicyTest, ProposedTestDisallowedCrossOriginChildPolicy) {
 }
 
 T
-"""
-
-
 ```

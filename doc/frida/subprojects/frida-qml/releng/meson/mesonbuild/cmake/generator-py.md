@@ -169,7 +169,7 @@ Frida 的构建系统（使用 Meson）在处理这个依赖时，会读取 `myl
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/cmake/generator.py` 这个文件在 Frida 的构建流程中负责解析 CMake 生成器表达式，确保 Frida 的构建系统能够正确理解和处理依赖的 CMake 项目的配置信息，这对于构建一个功能完善的 Frida 动态插桩工具至关重要。虽然用户不会直接操作这个文件，但理解其功能有助于在遇到与 CMake 依赖相关的构建问题时进行调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/cmake/generator.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -365,7 +367,4 @@ def parse_generator_expressions(
         i += 1
 
     return out
-
-"""
-
 ```

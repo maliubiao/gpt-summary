@@ -132,11 +132,13 @@ const slice3 = arr.slice(-2);      // 从倒数第二个元素开始切片
 
 `builtin-jump-table-info-x64.cc` 文件提供的工具类是V8引擎中用于管理内置函数跳转表信息的底层基础设施。它通过提供创建和访问跳转表的能力，帮助V8引擎在执行内置JavaScript函数时实现高效的分支跳转，从而提升JavaScript代码的执行性能。  虽然JavaScript开发者无法直接操作这些跳转表，但它们是V8引擎实现高性能的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/x64/builtin-jump-table-info-x64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -201,7 +203,4 @@ bool BuiltinJumpTableInfoIterator::HasCurrent() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

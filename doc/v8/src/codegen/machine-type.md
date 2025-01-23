@@ -146,11 +146,13 @@ let isReady = true;
 
 `v8/src/codegen/machine-type.cc` 文件是 V8 代码生成器的基础，它定义了虚拟机在底层操作数据的方式。理解这个文件有助于理解 V8 如何高效地表示和处理 JavaScript 的各种数据类型，以及进行底层的代码优化。它提供了一个抽象层，使得 V8 的其他部分可以以类型安全和有效的方式处理数据，而无需关心具体的硬件细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/machine-type.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -266,7 +268,4 @@ std::ostream& operator<<(std::ostream& os, MachineType type) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

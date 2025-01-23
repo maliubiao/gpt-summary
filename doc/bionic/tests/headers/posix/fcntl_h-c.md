@@ -256,7 +256,7 @@ if (Process.platform === 'android') {
 
 这个测试文件本身并不会被 Frida 直接 hook，因为它只是一个测试工具。你 hook 的是 Bionic 库中实际实现 `open` 和 `fcntl` 等函数的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/headers/posix/fcntl_h.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -267,8 +267,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2017 The Android Open Source Project
  * All rights reserved.
@@ -393,7 +395,4 @@ static void fcntl_h() {
   FUNCTION(posix_fadvise, int (*f)(int, off_t, off_t, int));
   FUNCTION(posix_fallocate, int (*f)(int, off_t, off_t));
 }
-
-"""
-
 ```

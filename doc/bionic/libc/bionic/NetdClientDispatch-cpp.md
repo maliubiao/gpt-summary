@@ -211,7 +211,7 @@ if (Process.platform === 'android') {
 
 总而言之，`NetdClientDispatch.cpp` 在 Android 的网络架构中扮演着一个关键的分发角色，它允许系统灵活地管理和控制网络相关的系统调用，并与 `netd` 守护进程协同工作，实现复杂的网络功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/NetdClientDispatch.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -222,8 +222,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -298,7 +300,4 @@ ssize_t sendto(int fd, const void* buf, size_t n, int flags,
 int socket(int domain, int type, int protocol) {
   return FDTRACK_CREATE(__netdClientDispatch.socket(domain, type, protocol));
 }
-
-"""
-
 ```

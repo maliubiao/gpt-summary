@@ -217,15 +217,17 @@ func main() {
 
 总而言之，这段代码提供了一种在 Go 工具链内部收集遥测数据的便捷方式，它封装了底层的计数器逻辑，并提供了一些特定于处理命令行 Flag 的功能。使用者需要理解其初始化流程、计数器命名规则以及与 `flag` 包的集成方式，才能正确地使用并分析收集到的数据。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/telemetry/counter/counter.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -288,9 +290,4 @@ func CountFlagValue(prefix string, flagSet flag.FlagSet, flagName string) {
 		}
 	})
 }
-
-"""
-
-
-
 ```

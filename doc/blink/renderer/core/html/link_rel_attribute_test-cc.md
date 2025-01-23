@@ -129,14 +129,16 @@ This test file helps prevent errors by ensuring the browser correctly interprets
 
 In summary, `link_rel_attribute_test.cc` is a crucial piece of the Blink rendering engine's testing infrastructure. It ensures the correct and consistent interpretation of the HTML `rel` attribute, which is fundamental for how web pages are styled, linked, and how browsers optimize resource loading. It helps prevent errors related to the parsing of this attribute and contributes to a more robust and predictable web platform.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/link_rel_attribute_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2013, Google Inc. All rights reserved.
  *
@@ -306,7 +308,4 @@ TEST(LinkRelAttributeTest, Constructor) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

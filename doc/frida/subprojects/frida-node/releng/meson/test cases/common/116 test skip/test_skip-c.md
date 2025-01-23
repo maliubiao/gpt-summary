@@ -130,7 +130,7 @@ Let's break down the thought process for analyzing this very simple C file in th
 
 总而言之，尽管 `test_skip.c` 自身的功能非常简单，但它在 Frida 的测试框架中扮演着特定的角色，用于验证测试跳过机制的正确性。理解它的存在和预期行为有助于理解 Frida 测试框架的工作原理，并在调试测试问题时提供有价值的线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/116 test skip/test_skip.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,12 +138,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 77;
 }
-
-"""
-
 ```

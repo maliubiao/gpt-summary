@@ -156,7 +156,7 @@ echo 'interrupt' > /srv/proc/进程号/note
 
 假设你在 Linux 系统上编写了一个程序，监听 `syscall.SIGTERM` 信号以优雅地关闭服务。当你在 Plan 9 上运行相同的代码，并尝试发送一个类似终止进程的 note（例如 "kill"），你的程序可能不会按照预期响应，因为 Plan 9 上可能没有一个完全对应的 `syscall.SIGTERM`。`signal_plan9.go` 会将 "kill" note 映射到 `_SigKill`，这会导致程序直接终止，而不是执行你预期的优雅关闭流程。因此，在进行跨平台开发时，需要特别注意信号处理的平台差异性，或者使用更高级的抽象，避免直接依赖 `syscall` 包中的平台特定常量。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -164,8 +164,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2011 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -223,9 +225,4 @@ var sigtable = [...]sigTabT{
 	// Aborts can be handled if desired, otherwise they cause a stack trace.
 	{_SigNotify + _SigThrow, "abort"},
 }
-
-"""
-
-
-
 ```

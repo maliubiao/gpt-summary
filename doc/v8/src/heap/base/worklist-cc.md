@@ -160,15 +160,17 @@ WorklistBase::EnforcePredictableOrder(); // 线程 2 修改了全局状态
 
 `v8/src/heap/base/worklist.cc` 提供了一个简单但重要的基础框架，用于管理 V8 内部的待处理任务。它通过 `predictable_order_` 提供了对处理顺序的控制，并使用哨兵简化了内部实现。理解工作列表的概念对于理解 V8 的许多核心功能（如垃圾回收）至关重要。虽然这段代码本身很简单，但它引出了与并发编程和共享状态管理相关的常见问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/worklist.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/base/worklist.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ SegmentBase* SegmentBase::GetSentinelSegmentAddress() {
 
 }  // namespace internal
 }  // namespace heap::base
-
-"""
-
 ```

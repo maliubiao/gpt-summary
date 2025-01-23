@@ -131,7 +131,7 @@ ok 3 Test case 3
 
 总而言之，`frida/subprojects/frida-qml/releng/meson/mesonbuild/mtest.py` 的核心功能是作为 Frida 项目的测试执行器。它负责发现、执行和报告测试用例的结果。它支持多种配置选项，能够处理不同格式的测试输出，并生成多种格式的报告。它的存在对于保证 Frida 工具的质量和可靠性至关重要，尤其是在像 Frida 这样的动态 Instrumentation 工具领域，其正确性直接关系到逆向分析、安全研究等工作的准确性。 它与逆向方法紧密相关，通过自动化测试验证 Frida 的核心功能是否按预期工作。同时，它的运行也涉及到对底层二进制、操作系统 (Linux/Android) 以及相关框架的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/mtest.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -140,8 +140,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2016-2017 The Meson development team
 
@@ -975,7 +977,4 @@ class JunitBuilder(TestLogger):
                 failures=str(sum(1 for r in test.results if r.result in
                                  {TestResult.FAIL, TestResult.UNEXPECTEDPASS, TestResult.TIMEOUT})),
                 skipped=str
-"""
-
-
 ```

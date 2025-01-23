@@ -174,7 +174,7 @@ func main() {
 
 作为 `rewriteARM64.go` 的第 18 部分，这段代码继续执行针对 ARM64 架构的控制流优化。它专注于识别和转换 `EQ` (等于), `GE` (大于等于), `GT` (大于) 以及通用的 `If` 类型的控制流块，尝试将它们的控制条件替换为更有效率的 ARM64 指令序列，例如使用 `TST` 替换比较零的 `AND` 操作，使用 `CMN` 替换比较零的 `ADD` 操作，以及根据 `FlagConstant` 的值直接决定跳转方向。此外，它也开始处理 `JumpTable` 块，为 `switch` 语句生成跳转表相关的代码。总的来说，这一部分致力于提高 ARM64 架构下编译后代码的执行效率，特别是针对条件分支和比较操作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewriteARM64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -183,8 +183,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第18部分，共20部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ]
 			if !(x.Uses == 1) {
 				break
@@ -1503,9 +1505,4 @@ Prompt:
 			idx := b.Controls[0]
 			v0 := b.NewValue0(b.Pos, OpARM64MOVDaddr, typ.Uintptr)
 			v0.Aux
-"""
-
-
-
-
 ```

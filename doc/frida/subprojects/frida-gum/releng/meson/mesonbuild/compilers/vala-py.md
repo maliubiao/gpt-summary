@@ -154,7 +154,7 @@ By following this structured approach and continuously refining the analysis, I 
 
 总而言之，`vala.py` 文件是 Frida 构建系统中处理 Vala 语言的关键组件，它封装了与 `valac` 编译器交互的细节，并提供了生成编译参数、查找库、进行健全性检查等功能，确保 Vala 代码能够被正确地编译和链接到 Frida 中。 理解这个文件的功能对于调试与 Vala 相关的 Frida 构建问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/compilers/vala.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -285,7 +287,4 @@ class ValaCompiler(Compiler):
 
     def thread_link_flags(self, env: 'Environment') -> T.List[str]:
         return []
-
-"""
-
 ```

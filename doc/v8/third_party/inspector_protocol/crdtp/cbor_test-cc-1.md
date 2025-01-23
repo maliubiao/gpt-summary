@@ -161,7 +161,7 @@ The tests themselves highlight many common errors when dealing with binary forma
 
 This code file (`v8/third_party/inspector_protocol/crdtp/cbor_test.cc`) thoroughly tests the CBOR encoding and decoding functionality used within V8's DevTools protocol. It verifies the correct conversion between JSON and CBOR, robustly handles various CBOR data types and structures, and meticulously checks for a wide range of potential error conditions during the parsing process. Furthermore, it tests a mechanism for efficiently appending data to existing CBOR maps. The tests ensure the reliability and correctness of the CBOR implementation within the V8 engine, which is crucial for efficient communication and data representation in the DevTools.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/inspector_protocol/crdtp/cbor_test.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/third_party/inspector_protocol/crdtp/cbor_test.cc以.tq结尾，那它是个v8 torque源代码，
@@ -169,8 +169,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 xamples = {
       // Tests that after closing a nested objects, additional key/value pairs
       // are considered.
@@ -841,8 +843,4 @@ TEST(AppendString8EntryToMapTest, InvalidEnvelope_Error) {
 }
 }  // namespace cbor
 }  // namespace v8_crdtp
-
-"""
-
-
 ```

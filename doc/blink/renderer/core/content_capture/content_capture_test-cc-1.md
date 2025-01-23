@@ -63,7 +63,7 @@ Therefore, the main functionality is to test the `ContentCapture` feature of Bli
 
 总而言之，这个测试文件的主要目的是为了保证 Blink 引擎的 Content Capture 功能的正确性和可靠性，特别是在处理复杂的页面结构和动态内容变化时。它通过模拟各种场景来帮助开发者理解和验证内容捕获机制的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/content_capture/content_capture_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -71,8 +71,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 )
         ->SetContentCaptureClient(&child_client_);
     auto* child_frame_element = To<HTMLIFrameElement>(
@@ -377,8 +379,4 @@ TEST_F(ContentCaptureSimTest, UserActivatedDelay) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

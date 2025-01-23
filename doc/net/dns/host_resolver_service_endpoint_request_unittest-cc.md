@@ -106,7 +106,7 @@ fetch('https://example.com')
 
 总结来说，作为第一部分，这个文件主要 **定义了一些辅助类和测试基础设施，用于创建和管理 `HostResolver::ServiceEndpointRequest` 对象，并提供了用于进行各种单元测试的基本框架**。它包含了 `Requester` 和 `LegacyRequester` 辅助类，以及 `HostResolverServiceEndpointRequestTest` 测试 fixture，并定义了一些基础的测试用例，例如测试域名不存在和超时的场景。它为后续更复杂的测试场景奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_service_endpoint_request_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -114,8 +114,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -981,7 +983,4 @@ TEST_F(HostResolverServiceEndpointRequestTest,
               ElementsAre(ExpectServiceEndpoint(
                   ElementsAre(MakeIPEndPoint("127.0.0.1", 443)),
                   ElementsAre(MakeIPEndPoint("::1",
-"""
-
-
 ```

@@ -148,7 +148,7 @@ for (const key of arr.keys()) {
 
 这段代码是 V8 引擎中 `Array.prototype.includes` 和 `Array.prototype.indexOf` 方法以及数组迭代器功能的底层实现。它针对不同类型的数组存储方式进行了优化，以提高查找和遍历性能。代码中包含了处理不同数据类型（如数字、字符串、`NaN`、`undefined` 等）的比较逻辑，并体现了 V8 引擎对性能的追求，例如使用 SIMD 指令进行加速。 此外，它也实现了数组迭代器的核心功能，为 JavaScript 中使用 `for...of` 循环遍历数组提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-array-gen.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-array-gen.cc以.tq结尾，那它是个v8 torque源代码，
@@ -156,8 +156,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 urn_not_found);
     TNode<Object> element_k =
         UnsafeLoadFixedArrayElement(elements, index_var.value());
@@ -969,7 +971,4 @@ void ArrayBuiltinsAssembler::CreateArrayDispatchSingleArgument(
       // Make elements kind holey and update elements kind in the type info.
       var_elements_kind = Word32Or(var_elements_kind.value(), Int32Constant(1));
       StoreOb
-"""
-
-
 ```

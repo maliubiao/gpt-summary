@@ -211,15 +211,17 @@ deopt_literals = [
 
 `v8/src/wasm/wasm-deopt-data.cc` 是 V8 中处理 WebAssembly 代码去优化数据的关键组成部分。它负责构建和序列化在去优化过程中所需的信息，使得 V8 能够安全地将执行从优化后的 Wasm 代码回滚到未优化的版本。虽然开发者通常不直接操作这个文件，但理解其功能有助于更好地理解 V8 的优化和去优化机制，并避免编写可能导致频繁去优化的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-deopt-data.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-deopt-data.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -290,7 +292,4 @@ base::OwnedVector<uint8_t> WasmDeoptDataProcessor::Serialize(
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

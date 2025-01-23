@@ -126,15 +126,17 @@ By following these steps, I can break down the provided code snippet and constru
 
 总而言之，`blink/renderer/modules/ai/ai.cc` 是 Blink 引擎中 AI 功能的核心入口点，它负责管理各种 AI 功能的工厂，并与浏览器进程中的 AI 服务进行通信，最终将 AI 能力暴露给 JavaScript 开发者使用。 调试时，需要从用户操作开始，逐步追踪 JavaScript 调用如何映射到 C++ 代码，并利用 Chromium 提供的调试工具来定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/ai/ai.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -232,7 +234,4 @@ AITranslatorFactory* AI::translator() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

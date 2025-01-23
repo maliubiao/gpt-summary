@@ -123,7 +123,7 @@ By following these steps, I can move from a basic understanding of the filename 
 
 `blink/renderer/core/dom/element.cc` 的第一部分主要负责定义 `Element` 类的基础结构和核心功能，使其能够作为 DOM 树中的基本构建块，并与 HTML 结构、CSS 样式和 JavaScript 脚本进行交互。它为元素的属性管理、样式应用、事件处理、焦点控制、Shadow DOM 支持和可访问性提供了基础机制。理解 `Element` 类的功能是理解 Blink 渲染引擎如何处理网页内容的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1999 Lars Knoll (knoll@kde.org)
  *           (C) 1999 Antti Koivisto (koivisto@kde.org)
@@ -813,7 +815,4 @@ bool Element::IsFocusableStyle(UpdateBehavior update_behavior) const {
     DCHECK(canvas);
     if (LayoutObject* layout_object = canvas->GetLayoutObject()) {
       return layout_object->IsC
-"""
-
-
 ```

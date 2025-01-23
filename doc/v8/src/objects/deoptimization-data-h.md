@@ -180,15 +180,17 @@ While JavaScript developers don't directly interact with these C++ structures, t
 
 In summary, `v8/src/objects/deoptimization-data.h` is a crucial header file defining the data structures that underpin V8's deoptimization mechanism, allowing the engine to gracefully recover from situations where aggressive optimizations are no longer valid. It's a core component for ensuring the reliability and correctness of JavaScript execution.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/deoptimization-data.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/deoptimization-data.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -570,7 +572,4 @@ class DeoptimizationData : public ProtectedFixedArray {
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_DEOPTIMIZATION_DATA_H_
-
-"""
-
 ```

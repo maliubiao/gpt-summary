@@ -94,7 +94,7 @@ This部分代码主要定义了一个名为 `Compiler` 的抽象基类，它是�
 **归纳功能 (第2部分):**
 
 总而言之，`Compiler` 抽象基类及其相关方法在 Frida 的构建系统中扮演着核心角色，它抽象了不同编程语言编译器的差异，提供了一套统一的接口来执行编译和链接操作，并管理各种编译器选项。它与逆向工程紧密相关，因为编译是生成目标二进制文件的必要步骤，而编译选项会影响后续的逆向分析工作。 代码中对二进制底层、操作系统特性（如共享库、PIC/PIE）的考虑，使其能够处理复杂的软件构建场景。同时，它也考虑了性能优化（如编译缓存）和用户可能遇到的常见错误。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/mesonbuild/compilers/compilers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 sion only matters if running results; '.exe' is
         # guaranteed to be executable on every platform.
         if mode == CompileCheckMode.LINK:
@@ -725,8 +727,4 @@ def get_global_options(lang: str,
     opts: 'KeyedOptionDictType' = {argkey: cargs, largkey: largs}
 
     return opts
-
-"""
-
-
 ```

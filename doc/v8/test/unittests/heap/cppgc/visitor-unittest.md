@@ -113,11 +113,13 @@ registry.register(anotherObject, "anotherObject");
 
 `visitor-unittest.cc` 这个 C++ 文件是 V8 引擎 `cppgc` 组件的关键测试文件，它验证了垃圾回收器在遍历和标记对象时的核心机制的正确性。这些机制直接影响了 JavaScript 的内存管理，例如对象的可达性判断、弱引用的处理以及对象回收时的清理操作。虽然 C++ 的实现细节与 JavaScript 不同，但其背后的原理和要解决的问题是相似的。 JavaScript 的弱引用和弱回调机制可以看作是对 C++ `cppgc` 中类似概念的高级抽象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/visitor-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -617,7 +619,4 @@ TEST_F(VisitorTest, DispatchMultipleInlinedObjectsWithClearedVtable) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

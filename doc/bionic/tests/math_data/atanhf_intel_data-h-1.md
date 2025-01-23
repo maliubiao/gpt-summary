@@ -165,7 +165,7 @@ session.detach()
 
 总而言之，`atanhf_intel_data.handroid` 文件是一个关键的测试数据文件，它通过提供大量的输入和期望输出的配对，用于验证 Android Bionic 库中 `atanhf` 函数的实现是否正确和可靠。它是 Bionic 库质量保证过程中的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/atanhf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -177,9 +177,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- -0x1.000002p-6
+### 源代码
+```c
+-0x1.000002p-6
   },
   { // Entry 378
     0x1.0001545884919d3b03f04f2aec3aad64p-7,
@@ -742,8 +744,4 @@ Prompt:
     -0.0f
   }
 };
-
-"""
-
-
 ```

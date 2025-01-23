@@ -183,15 +183,17 @@ fetch('/data')
 
 总而言之，`net/third_party/quiche/src/quiche/http2/adapter/test_utils_test.cc` 是一个非常重要的测试文件，它通过测试 `EqualsFrames` 这个核心的测试工具，保障了 Chromium 网络栈中 HTTP/2 适配器处理帧序列的正确性，这对于保证浏览器与服务器之间的可靠通信至关重要，并间接地影响着 JavaScript 发起的网络请求的质量。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/test_utils_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/test_utils.h"
 
 #include <optional>
@@ -319,7 +321,4 @@ TEST(EqualsFrames, MultipleFrames) {
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

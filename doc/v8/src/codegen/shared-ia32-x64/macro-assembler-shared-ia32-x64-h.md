@@ -144,7 +144,7 @@ let result = multiplyAdd(2.5, 3.0, 1.5);
 
 总而言之，`v8/src/codegen/shared-ia32-x64/macro-assembler-shared-ia32-x64.h` 的第 1 部分定义了 V8 引擎在 IA-32 和 x64 架构上生成机器码的基础设施，专注于提供共享的汇编操作，并通过宏和模板根据 CPU 特性选择最优指令，尤其在浮点运算和 SIMD 指令方面。它旨在简化代码生成器的开发，并提高生成的机器码的效率。 它还体现了在底层编程中需要考虑的寄存器别名等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/shared-ia32-x64/macro-assembler-shared-ia32-x64.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/shared-ia32-x64/macro-assembler-shared-ia32-x64.h以.tq结尾，那它是个v8 torque源代码，
@@ -152,8 +152,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -975,7 +977,4 @@ class V8_EXPORT_PRIVATE SharedMacroAssembler : public SharedMacroAssemblerBase {
       maxpd(dst, scratch);
       minpd(dst, ExternalReferenceAsOperand(
                      ExternalReference::address_of_wasm_uint32_max_as_
-"""
-
-
 ```

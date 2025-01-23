@@ -169,7 +169,7 @@ com.example.targetapp - 123 - abcdefg - true
 
 总而言之，这个 `main.c` 文件虽然简单，但它是 Frida 工具链测试框架的一部分，用于验证动态代码生成的功能。它的存在揭示了 Frida 在运行时操作目标进程的能力，并与逆向工程、二进制分析以及操作系统底层知识紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/105 generatorcustom/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 #include "alltogether.h"
@@ -187,7 +189,4 @@ int main(void) {
     printf("%s - %s - %s - %s\n", res1, res2, res3, res4);
     return 0;
 }
-
-"""
-
 ```

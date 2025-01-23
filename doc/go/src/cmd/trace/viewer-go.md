@@ -320,15 +320,17 @@ go tool trace my_trace_file.out
 
 这段 `viewer.go` 的代码是 `cmd/trace` 工具的关键组成部分，负责将内部的 trace 数据转换为 viewer 可以理解和展示的格式。它使用了 Go 语言的结构体、枚举、类型转换和控制流语句来实现数据转换和状态映射的功能。虽然普通开发者不会直接调用这些函数，但理解其功能有助于更好地理解 `go tool trace` 的工作原理和分析 trace 数据。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/trace/viewer.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -383,9 +385,4 @@ func viewerGState(state trace.GoState, inMarkAssist bool) traceviewer.GState {
 func viewerTime(t time.Duration) float64 {
 	return float64(t) / float64(time.Microsecond)
 }
-
-"""
-
-
-
 ```

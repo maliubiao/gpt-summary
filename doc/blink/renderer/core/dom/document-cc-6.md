@@ -143,7 +143,7 @@ My thinking process for analyzing the provided code snippet went something like 
 
 这部分 `document.cc` 代码主要负责了文档的克隆机制和对元素尺寸变化以及媒体查询的处理。它提供了核心的功能，使得浏览器能够复制文档结构，响应元素的尺寸变化，并根据不同的视口特征应用不同的 CSS 样式。这些功能是构建动态和响应式网页的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/document.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共11部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ntext_)
     return nullptr;
   Document* clone = CloneDocumentWithoutChildren();
@@ -1047,7 +1049,4 @@ void Document::EnqueueOverscrollEventForNode(Node* target,
                                              double delta_y) {
   // Mimic bubbling behavior of scroll event for consistency.
   overscroll_accumulated_
-"""
-
-
 ```

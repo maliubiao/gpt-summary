@@ -445,7 +445,7 @@ if __name__ == "__main__":
 
 通过这种方式，你可以观察到应用程序在设置终端属性时的参数，从而理解其行为。你可以修改脚本来 hook 其他 `termios` 函数，或者读取 `termios` 结构体的更多成员，以进行更深入的调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/bits/termios_inlines.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -456,8 +456,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2016 The Android Open Source Project
  * All rights reserved.
@@ -587,7 +589,4 @@ __BIONIC_TERMIOS_INLINE int tcsetattr(int fd, int optional_actions, const struct
 __END_DECLS
 
 #endif
-
-"""
-
 ```

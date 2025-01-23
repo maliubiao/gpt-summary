@@ -116,15 +116,17 @@ By following these steps, I can systematically analyze the C++ code and provide 
 
 它与 HTML 结构和 CSS 样式紧密相关，是 Blink 引擎渲染内联内容的关键组成部分。理解这部分代码的功能有助于深入了解浏览器如何将 HTML 和 CSS 转化为用户可见的网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/inline_box_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 st];
     LayoutUnit line_right_offset = last_child.rect.offset.inline_offset -
                                    last_child.margin_line_left +
@@ -683,8 +685,4 @@ void InlineBoxState::CheckSame(const InlineBoxState& other) const {
 #endif
 
 }  // namespace blink
-
-"""
-
-
 ```

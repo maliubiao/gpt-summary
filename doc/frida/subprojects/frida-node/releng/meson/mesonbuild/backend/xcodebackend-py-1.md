@@ -150,7 +150,7 @@ By following this process, I could systematically analyze the code, identify its
 
 这部分 `xcodebackend.py` 文件的核心功能是详细地构建 Xcode 工程文件 (`.xcodeproj`) 的内部结构，主要通过生成和组织各种 `PBX` 对象来实现。它负责定义项目的构建样式、文件引用、构建阶段、组结构和构建目标，包括可执行文件、静态库、动态库以及自定义目标。这部分代码深入到了 Xcode 工程文件的底层细节，将 Meson 的构建抽象转化为 Xcode 可以理解的工程描述。理解这部分代码有助于理解 Frida-node 如何利用 Meson 构建系统生成适用于 Xcode 的工程文件，从而进行 macOS 或 iOS 平台的开发和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/mesonbuild/backend/xcodebackend.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,9 +159,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
- gets removed. Maybe we can remove this part.
+### 源代码
+```python
+gets removed. Maybe we can remove this part.
         for name, idval in self.buildstylemap.items():
             styledict = PbxDict()
             objects_dict.add_item(idval, styledict, name)
@@ -788,7 +790,4 @@ Prompt:
             t = self.build_targets[name]
             objects_dict.add_item(t.buildphasemap[name], phase_dict, 'Sources')
             phase_dict.add_item('isa', 'PBXSourcesBui
-"""
-
-
 ```

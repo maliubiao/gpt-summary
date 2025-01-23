@@ -226,7 +226,7 @@ go test -run ValuesInfo go/src/go/types/api_test.go
 
 这部分 `go/src/go/types/api_test.go` 代码的主要功能是**测试 `go/types` 包的 API，用于验证类型检查器是否能够正确地识别和记录 Go 语言代码中各种表达式的类型和常量值。**  它通过构造不同的 Go 源代码片段，然后利用 `go/types` 包进行类型检查，并断言检查结果（存储在 `Info` 结构体中）与预期一致，从而确保 `go/types` 包的正确性。 这部分代码重点测试了常量求值、变量类型推断、类型转换、复合字面量、泛型以及其他语言特性的类型信息提取功能。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/types/api_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -235,8 +235,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -939,9 +941,4 @@ type T[P any] []P
 		},
 		{`package reverse2b; func f(func(int, string)) {}; func g[P, Q any](P, Q) {}; func _() { f(g) }`,
 			[]testInst{{`g`, []string{`int`, `string`}, `func
-"""
-
-
-
-
 ```

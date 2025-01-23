@@ -147,14 +147,16 @@ By following this thought process, combining code analysis with knowledge of bro
 
 总而言之，`pod_red_black_tree_test.cc` 是一个确保 `PODRedBlackTree` 类正确性的关键文件。虽然用户不会直接接触这个类，但它作为 Blink 引擎的基础数据结构，在幕后支持着许多与 JavaScript, HTML 和 CSS 相关的功能。理解其功能和测试方法有助于理解 Blink 引擎的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/pod_red_black_tree_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -351,7 +353,4 @@ TEST(PODRedBlackTreeTest, RandomDeletionAndInsertionRegressionTest1) {
 }
 
 }  // namespace WTF
-
-"""
-
 ```

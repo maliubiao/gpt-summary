@@ -169,7 +169,7 @@ base::SingleThreadTaskRunner* Database::GetDatabaseTaskRunner() const {
 
 总而言之，这个代码片段是 Web SQL 数据库功能实现的关键部分，它处理了事务、SQL 执行、错误处理、安全管理以及线程间的通信和同步，使得 JavaScript 能够安全可靠地操作客户端的数据库。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webdatabase/database.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 aseTaskRunner()->PostTask(
           FROM_HERE, WTF::BindOnce(&CallTransactionErrorCallback,
                                    WrapPersistent(transaction_error_callback),
@@ -254,8 +256,4 @@ base::SingleThreadTaskRunner* Database::GetDatabaseTaskRunner() const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

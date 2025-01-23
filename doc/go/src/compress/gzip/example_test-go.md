@@ -161,7 +161,7 @@ Content of file B.
 
 例如，如果 `ExampleReader_Multistream` 中的循环没有 `zw.Reset(&buf)`，那么生成的 `buf` 将不是两个独立的 gzip 流，而可能是一个损坏的 gzip 文件，导致解压失败或得到意料之外的结果。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/compress/gzip/example_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -169,8 +169,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2016 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -389,9 +391,4 @@ func Example_compressingReader() {
 
 	// Output: the data to be compressed
 }
-
-"""
-
-
-
 ```

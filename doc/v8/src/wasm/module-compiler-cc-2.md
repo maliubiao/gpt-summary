@@ -226,7 +226,7 @@ console.log(length); // 输出: 5
 
 作为 WebAssembly 编译流程的第三部分，`v8/src/wasm/module-compiler.cc` 的这段代码主要负责 **编译任务的管理和优化**。它接收需要编译的 WebAssembly 函数，根据优先级和类型反馈信息进行处理，并将编译任务添加到队列中。此外，它还处理测试场景下的强制编译，并负责记录模块中使用的 WebAssembly 特性。一个重要的功能是验证和设置内置的导入函数，这使得 WebAssembly 能够与 JavaScript 环境进行互操作。总而言之，这部分代码是 V8 WebAssembly 引擎中负责高效、正确编译 WebAssembly 代码的关键组件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/module-compiler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/module-compiler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -234,11 +234,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共6部分，请归纳一下它的功能
+```
 
-"""
-
-
-  // Before adding the tier-up unit or increasing priority, process type
+### 源代码
+```cpp
+// Before adding the tier-up unit or increasing priority, process type
   // feedback for best code generation.
   if (v8_flags.wasm_inlining) {
     // TODO(jkummerow): we could have collisions here if different instances
@@ -951,7 +951,4 @@ std::shared_ptr<NativeModule> GetOrCompileNewNativeModule(
   if (base::TimeTicks::IsHighResolution()) {
     wasm_compile_module_time_scope.emplace(SELECT_WASM_COUNTER(
         isol
-"""
-
-
 ```

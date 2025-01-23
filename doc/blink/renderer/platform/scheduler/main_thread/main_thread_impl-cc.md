@@ -138,14 +138,16 @@ By following these steps, I arrive at the well-structured and informative answer
 
 总而言之，`main_thread_impl.cc` 是 Blink 引擎中主线程管理的关键组成部分，它为 JavaScript 执行、DOM 操作、CSS 处理等核心 Web 技术提供了运行的基础平台。理解其功能有助于理解浏览器渲染引擎的工作原理和避免一些常见的性能问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/main_thread/main_thread_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -190,7 +192,4 @@ base::TimeTicks MainThreadImpl::CurrentTaskStartTime() const {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

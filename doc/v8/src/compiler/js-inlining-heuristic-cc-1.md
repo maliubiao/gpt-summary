@@ -164,7 +164,7 @@ console.log(processData(data));
 
 这是 V8 编译器中负责 JavaScript 函数内联优化的一个重要组成部分。具体来说，这段代码的核心功能是 **决定当存在多个可以内联的函数调用点时，应该以何种顺序进行内联**。它通过 `ChooseInliningOrder` 函数实现，该函数利用启发式规则（基于调用频率和目标函数大小）对候选的内联操作进行评分和排序，以选择最有益的内联顺序。`PrintCandidates` 函数则提供了查看当前内联候选信息的途径，用于调试和分析。这段代码的目标是提高 JavaScript 代码的执行效率，减少函数调用开销。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-inlining-heuristic.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-inlining-heuristic.cc以.tq结尾，那它是个v8 torque源代码，
@@ -172,8 +172,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 >id() > right.node->id();
       }
     } else {
@@ -246,8 +248,4 @@ SimplifiedOperatorBuilder* JSInliningHeuristic::simplified() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

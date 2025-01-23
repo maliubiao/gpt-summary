@@ -105,7 +105,7 @@ Here's a plan to address the user's request:
 
 总之，`ClikeCompilerMixin` 是 Meson 构建系统中一个核心组件，它负责抽象不同 C-like 编译器的差异，并提供用于执行各种编译时检查的关键功能，从而确保构建过程的正确性。用户通过 Meson 的高级 API 间接地使用这些功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/mesonbuild/compilers/mixins/clike.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -114,9 +114,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    }}'''
+### 源代码
+```python
+}}'''
         return head, main
 
     @staticmethod
@@ -719,8 +721,4 @@ Prompt:
             self.preprocessor.mode = 'PREPROCESSOR'
             self.modes.append(self.preprocessor)
         return self.preprocessor
-
-"""
-
-
 ```

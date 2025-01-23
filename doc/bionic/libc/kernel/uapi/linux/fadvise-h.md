@@ -227,7 +227,7 @@ setTimeout(hook_posix_fadvise, 0);
 
 这个 Frida Hook 示例可以帮助你理解 Android Framework 或 NDK 中的哪些组件在何时调用了 `posix_fadvise`，以及它们传递的参数是什么，从而更深入地了解 Android 系统的文件 I/O 优化机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/fadvise.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -238,8 +238,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -260,7 +262,4 @@ Prompt:
 #define POSIX_FADV_NOREUSE 5
 #endif
 #endif
-
-"""
-
 ```

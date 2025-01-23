@@ -121,7 +121,7 @@ By following these steps, we arrive at the provided comprehensive answer that ad
 
 `net/device_bound_sessions/registration_fetcher_unittest.cc` 的第二部分主要用于测试 `RegistrationFetcher` 类中异步创建设备绑定会话注册令牌的功能。它通过模拟成功和失败的密钥服务场景，验证了令牌创建逻辑的正确性。这部分测试确保了在不同的密钥服务状态下，令牌创建功能能够按照预期工作，对于保证设备绑定会话功能的稳定性和可靠性至关重要。虽然不直接涉及 JavaScript 代码，但它测试的功能是实现 Web 应用中设备绑定认证流程的关键环节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/device_bound_sessions/registration_fetcher_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -129,8 +129,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 re(SessionParams::Scope::Specification(
                   SessionParams::Scope::Specification::Type::kInclude,
                   "trusted.example.com", "/only_trusted_path")));
@@ -189,8 +191,4 @@ TEST_F(RegistrationTokenHelperTest, CreateFail) {
 }  // namespace
 
 }  // namespace net::device_bound_sessions
-
-"""
-
-
 ```

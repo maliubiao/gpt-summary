@@ -94,7 +94,7 @@ Here's a breakdown of the thinking process to arrive at the comprehensive explan
 
 总而言之，`generatorpickle.py` 虽然代码简洁，但它在 Frida 的文档生成流程中扮演着关键的角色，负责将结构化的文档数据以二进制格式保存，以便后续的工具能够读取和使用。它的存在暗示着 Frida 的文档生成过程是模块化的，并且可能涉及到对代码或运行时信息的分析和提取。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/docs/refman/generatorpickle.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -102,8 +102,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -119,7 +121,4 @@ class GeneratorPickle(GeneratorBase):
 
     def generate(self) -> None:
         self.out.write_bytes(pickle.dumps(self.manual))
-
-"""
-
 ```

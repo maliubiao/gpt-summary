@@ -452,7 +452,7 @@ enum class RegList : uint32_t {};
 
 #define PPC_VX_OPCODE_C_FORM_LIST(V)       \
   /* Vector Unpack Low Signed
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/ppc/constants-ppc.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/ppc/constants-ppc.h以.tq结尾，那它是个v8 torque源代码，
@@ -460,10 +460,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
-
-  /* Vector Pack Signed Halfword Signed Saturate */        \
+### 源代码
+```c
+/* Vector Pack Signed Halfword Signed Saturate */        \
   V(vpkshss, VPKSHSS, 0x1000018E)                          \
   /* Vector Pack Signed Halfword Unsigned Saturate */      \
   V(vpkshus, VPKSHUS, 0x1000010E)                          \
@@ -1242,8 +1243,4 @@ static constexpr int kLrDwarfCode = 65;  // return-address(lr)
 static constexpr int kSpDwarfCode = 1;   // stack-pointer (sp)
 
 #endif  // V8_CODEGEN_PPC_CONSTANTS_PPC_H_
-
-"""
-
-
 ```

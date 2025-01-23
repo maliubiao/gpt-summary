@@ -141,7 +141,7 @@ Now, I need to connect these functions to web technologies, provide examples, co
 
 **调试线索:**  如果开发者需要在 C++ 层调试与 Worklet 交互相关的 Shared Storage 功能，他们可能会在 `SharedStorage::createWorklet`, `SharedStorage::run`, `SharedStorage::selectURL` 等方法中设置断点，以观察 Worklet 的创建过程、参数传递以及执行结果。他们还可以检查 `shared_storage_worklet_` 成员变量的状态，以了解当前是否关联了 Worklet。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/shared_storage/shared_storage.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -149,9 +149,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-          }
+### 源代码
+```cpp
+}
               return;
             }
 
@@ -290,8 +292,4 @@ SharedStorage::CreateIterationSource(
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

@@ -122,15 +122,17 @@ Let's break down the thought process for analyzing this C++ code snippet.
 
 `v8/src/objects/visitors.cc` 是 V8 引擎中一个关键的组成部分，它定义了用于访问和遍历 V8 堆中对象和编译后代码的访问器。 这些访问器是 V8 引擎进行垃圾回收、代码管理和优化的基础。 尽管用户无法直接在 JavaScript 中操作这些底层机制，但理解它们的工作原理有助于更好地理解 JavaScript 引擎的运行方式以及一些潜在的性能问题和错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/visitors.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/visitors.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -172,7 +174,4 @@ void ObjectVisitor::VisitRelocInfo(Tagged<InstructionStream> host,
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

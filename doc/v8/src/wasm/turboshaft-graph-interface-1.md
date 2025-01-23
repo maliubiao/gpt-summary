@@ -118,12 +118,14 @@ console.log(value); // 输出 100
 
 总而言之，这部分代码是 WebAssembly 和 JavaScript 引擎之间交互的关键桥梁，它将 WebAssembly 的指令转换为可以在 V8 引擎中执行的 Turboshaft IR，并且在许多情况下，会委托给 JavaScript 的内置功能来完成具体的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/turboshaft-graph-interface.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 else {
       Label<Word64> done(&asm_);
 
@@ -1646,7 +1648,4 @@ else {
   case kExpr##kind:                                                           \
     result->op =                                                              \
         __ Simd128Binop(V<compiler::turboshaft::Simd128>::Cast(args[0].op
-"""
-
-
 ```

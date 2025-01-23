@@ -97,12 +97,14 @@ console.log(result); // 输出 30
 
 总而言之，`v8/test/unittests/compiler/node-matchers-unittest.cc` 的第 1 部分主要功能是**测试 V8 编译器中用于识别 32 位和 64 位内存寻址模式的 matcher 类是否能正确地从不同的节点结构中提取出基址、索引、比例因子和位移信息**。这对于编译器进行高效的内存访问优化至关重要，从而提升 JavaScript 代码的执行性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/node-matchers-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1754,7 +1756,4 @@ TEST_F(NodeMatcherTest, ScaledWithOffset64Matcher) {
   BaseWithIndexAndDisplacement64Matcher match90(
       graph()->NewNode(a_op, b0, temp));
   CheckBaseW
-"""
-
-
 ```

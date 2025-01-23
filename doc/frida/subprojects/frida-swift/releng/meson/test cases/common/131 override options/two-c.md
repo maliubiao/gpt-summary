@@ -172,7 +172,7 @@ By following this thought process, starting with understanding the code and its 
 
 总而言之，这个简单的 C 代码片段是 Frida 动态 instrumentation 工具的一个测试用例，用于演示如何覆盖函数调用。它涉及到逆向工程中常见的 Hooking 技术，并依赖于对二进制底层、操作系统以及相关框架的理解。分析这个文件及其上下文可以帮助理解 Frida 的工作原理以及如何在实际逆向分析中应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/131 override options/two.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,15 +180,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /*
  * Requires a Unity build. Otherwise hidden_func is not specified.
  */
 int main(void) {
     return hidden_func();
 }
-
-"""
-
 ```

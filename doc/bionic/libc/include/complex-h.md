@@ -284,7 +284,7 @@ if (Process.arch === "arm64" || Process.arch === "arm") {
 
 请注意，这只是一个简单的示例。对于更复杂的复数函数，可能需要更仔细地处理参数和返回值，并考虑不同的数据类型 (`float complex`, `long double complex`)。 另外，实际的内存布局可能需要根据具体的架构和编译器进行调整。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/complex.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -295,8 +295,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*-
  * Copyright (c) 2001-2011 The FreeBSD Project.
  * All rights reserved.
@@ -567,7 +569,4 @@ long double creall(long double complex __z) __INTRODUCED_IN(23);
 __END_DECLS
 
 #endif
-
-"""
-
 ```

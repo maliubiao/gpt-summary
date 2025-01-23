@@ -159,14 +159,16 @@ This systematic approach, starting with the overall goal and drilling down into 
 
 总而言之，`layers_as_json.cc` 是一个用于理解 Blink 渲染引擎内部合成层机制的强大工具。虽然普通开发者不会直接使用它，但理解其功能和输出可以帮助他们编写更高效的 Web 代码，并更好地诊断渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/layers_as_json.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -356,7 +358,4 @@ std::unique_ptr<JSONObject> LayersAsJSON::Finalize() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

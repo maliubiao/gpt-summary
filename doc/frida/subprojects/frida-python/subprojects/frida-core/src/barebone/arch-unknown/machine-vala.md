@@ -98,7 +98,7 @@ load_call_frame(thread)
 3. **函数调用**：通过 `invoke` 方法调用的函数可以作为调试线索，帮助用户理解目标进程的函数调用链。
 
 通过这些功能和方法，用户可以深入理解目标进程的底层状态，并进行有效的调试和分析。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/barebone/arch-unknown/machine.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -107,8 +107,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaBarebone", gir_version = "1.0")]
 namespace Frida.Barebone {
 	public class UnknownMachine : Object, Machine {
@@ -224,7 +226,4 @@ namespace Frida.Barebone {
 		}
 	}
 }
-
-"""
-
 ```

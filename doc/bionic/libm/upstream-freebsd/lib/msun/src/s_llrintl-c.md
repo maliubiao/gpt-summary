@@ -234,7 +234,7 @@ Section Headers
 
 通过以上分析，我们可以清晰地了解 `s_llrintl.c` 文件的功能、它在 Android 系统中的作用以及如何进行调试。记住，`s_llrintl.c` 本身只是一个“配置”文件，实际的实现逻辑在 `s_lrint.c` 中，理解这一点对于深入分析至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libm/upstream-freebsd/lib/msun/src/s_llrintl.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -244,15 +244,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #define type		long double
 #define	roundit		rintl
 #define dtype		long long
 #define	fn		llrintl
 
 #include "s_lrint.c"
-
-"""
-
 ```

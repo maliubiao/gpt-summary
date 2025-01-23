@@ -281,15 +281,17 @@ go run your_program.go --raw
 
 总而言之，这段代码是 `golang.org/x/term` 包在 Windows 平台上的核心组件，用于实现底层的终端控制功能，为构建交互式命令行应用程序提供了基础。正确理解和使用这些功能可以提升用户体验，但也需要注意潜在的错误和平台兼容性问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/term/term_windows.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -370,9 +372,4 @@ func readPassword(fd int) ([]byte, error) {
 	defer f.Close()
 	return readPasswordLine(f)
 }
-
-"""
-
-
-
 ```

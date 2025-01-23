@@ -108,11 +108,13 @@ garbageCollectorStackScan(currentStack, processPotentialObject);
 
 The `push_registers_asm.cc` file is a fundamental piece of V8's infrastructure for garbage collection on z/OS. It's a low-level mechanism that ensures the garbage collector can accurately examine the stack and identify live JavaScript objects, enabling automatic memory management in the JavaScript environment. You don't interact with it directly in JavaScript, but its correct functioning is crucial for the performance and stability of your JavaScript code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/base/asm/zos/push_registers_asm.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -150,7 +152,4 @@ extern "C" void PushAllRegistersAndIterateStack(const Stack* sp,
 }
 }  // namespace base
 }  // namespace heap
-
-"""
-
 ```

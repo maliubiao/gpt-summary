@@ -147,7 +147,7 @@ Here's a breakdown of the code's actions and my plan:
 
 因此，用户尝试访问 HTTPS 网站的操作是整个流程的起点，而这段代码 (`ProcessClientHelloAfterCalculateSharedKeys`) 是服务端处理 `ClientHello` 消息的关键步骤之一，发生在获取证明信息和计算共享密钥之后。 调试时，如果发现连接建立失败，可以检查这段代码的执行情况，例如查看日志输出，确认密钥派生、`ServerHello` 构建等环节是否正常。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/quic_crypto_server_config.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 usKeyExchange* key_exchange =
       configs.requested->key_exchanges[key_exchange_index].get();
   std::string* initial_premaster_secret =
@@ -982,7 +984,4 @@ QuicCryptoServerConfig::ParseConfigProtobuf(
     }
 
     con
-"""
-
-
 ```

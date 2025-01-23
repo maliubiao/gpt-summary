@@ -153,14 +153,16 @@ Initially, I might have focused too much on the technical details of the C++ cod
 
 总而言之，`histogram.cc` 文件提供了一个关键的基础设施，用于在 Blink 引擎中收集和分析性能及行为数据。这些数据对于理解 Web 页面的运行状况和进行性能优化至关重要，并与 JavaScript, HTML, CSS 的执行过程紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/instrumentation/histogram.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -200,7 +202,4 @@ void CustomCountHistogram::CountMicroseconds(base::TimeDelta delta) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -100,7 +100,7 @@ paddw xmm0, [eax + 4]
 
 作为代码生成器的第四部分，这段代码专门负责处理 SIMD 相关的指令生成。它涵盖了多种 SIMD 操作，包括算术运算、位运算、比较运算、数据转换、数据重排等，并针对 IA-32 架构的不同 SIMD 指令集（SSE、SSE4.1、AVX）生成相应的汇编代码。其核心目标是将 V8 的高级中间表示转换为可以在 IA-32 处理器上高效执行的机器码，从而加速 JavaScript 中涉及向量化计算的部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/ia32/code-generator-ia32.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/ia32/code-generator-ia32.cc以.tq结尾，那它是个v8 torque源代码，
@@ -108,8 +108,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 asm(), SSE4_1);
       XMMRegister dst = i.OutputSimd128Register();
       Operand src = i.InputOperand(1);
@@ -1083,8 +1085,5 @@ asm(), SSE4_1);
       frame_access_state()->IncreaseSPDelta(-1);
       break;
     }
-#define ATOMIC_BINOP_CASE(op, inst)             
-"""
-
-
+#define ATOMIC_BINOP_CASE(op, inst)
 ```

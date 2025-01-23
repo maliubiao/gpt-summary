@@ -181,11 +181,13 @@ accessGlobal();
 
 `v8/src/debug/debug-scopes.cc` 是 V8 引擎中负责处理 JavaScript 代码调试时作用域信息的关键组件。它通过 `ScopeIterator` 类提供了遍历、访问和修改作用域内变量的能力，使得开发者能够有效地调试 JavaScript 代码。它与我们在浏览器开发者工具或 Node.js 调试器中看到的 "Scope" 面板的功能紧密相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/debug/debug-scopes.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1559,7 +1561,4 @@ void ScopeIterator::MaybeCollectAndStoreLocalBlocklists() const {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

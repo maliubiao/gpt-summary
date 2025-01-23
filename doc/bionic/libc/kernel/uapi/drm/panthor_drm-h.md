@@ -269,7 +269,7 @@ Interceptor.attach(Module.findExportByName(null, "ioctl"), {
 
 通过这种方式，你可以跟踪 Android Framework 或 NDK 如何一步步调用到 Panthor DRM 驱动程序的 IOCTL 接口，并观察传递的参数。这对于理解图形栈的运作机制和调试图形相关问题非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/drm/panthor_drm.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -280,8 +280,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -522,7 +524,4 @@ struct drm_panthor_tiler_heap_destroy {
 }
 #endif
 #endif
-
-"""
-
 ```

@@ -200,7 +200,7 @@ func main() {
 
 `go/src/runtime/signal_darwin_amd64.go` 中提供的代码是 Go 运行时系统处理信号的关键组成部分，它提供了访问和操作处理器上下文的能力，使得 Go 能够实现 `panic/recover` 机制和用户态信号处理。 开发者通常不需要直接与这段代码交互，但了解其功能有助于理解 Go 语言的底层工作原理。 尝试在用户代码中直接操作信号上下文是复杂且容易出错的。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/signal_darwin_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -208,8 +208,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -306,9 +308,4 @@ func (c *sigctxt) fixsigcode(sig uint32) {
 		}
 	}
 }
-
-"""
-
-
-
 ```

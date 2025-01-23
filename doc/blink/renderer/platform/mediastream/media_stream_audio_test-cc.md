@@ -219,14 +219,16 @@ navigator.mediaDevices.getUserMedia({ audio: true })
 
 总而言之，`media_stream_audio_test.cc` 是一个关键的测试文件，用于确保 Chromium Blink 引擎中音频流功能的正确性和稳定性，这些功能直接支撑着 Web 平台上各种音频相关的应用场景。理解这个文件的功能有助于理解 Web MediaStream API 的底层实现和行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/mediastream/media_stream_audio_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -775,7 +777,4 @@ TEST(MediaStreamAudioTestStandalone, GetAudioFrameStats) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

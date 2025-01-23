@@ -131,11 +131,13 @@ By following this thought process, combining code analysis with domain knowledge
 
 `BlockInstrumentationPhase` 是 V8 Turboshaft 编译器中一个重要的阶段，它负责在编译后的代码中插入用于监控和分析的指令。虽然 JavaScript 开发者不能直接操作这个阶段，但他们可以通过使用 `console.time`、`performance.now()`、代码覆盖率工具和浏览器开发者工具的性能分析功能来观察和利用插桩带来的好处，从而更好地理解和优化 JavaScript 代码的性能和行为。  `BlockInstrumentationPhase` 在幕后默默地工作，为这些高层工具和分析提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/block-instrumentation-phase.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -154,7 +156,4 @@ void BlockInstrumentationPhase::Run(PipelineData* data, Zone* temp_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

@@ -169,11 +169,13 @@ function runWasmLogic() {
 
 `threads.cc` 这个 C++ 代码示例的核心功能是演示如何在 V8 引擎中使用 WebAssembly 的线程功能，它通过创建多个 C++ 线程，并在每个线程中实例化并运行同一个共享的 WebAssembly 模块，同时展示了 C++ 代码如何通过导入的函数与 WebAssembly 代码进行交互，并使用互斥锁进行线程同步。  在 JavaScript 中，虽然没有直接的操作系统级别的线程概念，但可以通过 Web Workers 和 SharedArrayBuffer 等机制来实现类似的多线程并行处理，并与具有线程能力的 WebAssembly 模块进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/third_party/wasm-api/example/threads.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 #include <iostream>
 #include <fstream>
 #include <thread>
@@ -298,7 +300,4 @@ int main(int argc, const char *argv[]) {
 
   return 0;
 }
-
-"""
-
 ```

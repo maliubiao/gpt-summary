@@ -149,7 +149,7 @@ fetch('https://example.com/data')
 
 这部分代码主要负责 QUIC 流的**接收和管理**，包括接收数据帧、进行流量控制、处理流的终止信号（FIN 和 RST）、管理流的读取状态，以及为后续处理提供已排序的接收数据。 `PendingStream` 用于管理尚未完全建立的接收流。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_stream.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1081,7 +1083,4 @@ void QuicStream::MaybeSendStopSending(QuicResetStreamError error) {
 
   if (session()->version().UsesHttp3()) {
     session()->MaybeSendStopS
-"""
-
-
 ```

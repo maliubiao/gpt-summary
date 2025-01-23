@@ -124,11 +124,13 @@ greeting = null;
 
 总而言之，`hello-world.cc` 演示了如何在 C++ 中使用 `cppgc` 进行垃圾回收，这与 JavaScript 引擎为了避免内存泄漏而自动回收不再使用的对象的功能在概念上是相似的。  `cppgc` 使得 C++ 能够像 JavaScript 那样拥有一定的自动内存管理能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/samples/cppgc/hello-world.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -206,7 +208,4 @@ int main(int argc, char* argv[]) {
   cppgc::ShutdownProcess();
   return 0;
 }
-
-"""
-
 ```

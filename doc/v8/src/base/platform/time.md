@@ -138,11 +138,13 @@ console.log("Another JavaScript Date:", anotherDate);
 
 `v8/src/base/platform/time.cc` 是 V8 引擎中一个至关重要的底层文件，它提供了跨平台的、精确的时间管理功能。它通过抽象操作系统差异，使得 V8 的其他组件以及最终的 JavaScript 代码可以方便地获取和操作时间。  与 JavaScript 的关系主要体现在 `Time` 类提供的与 JavaScript 时间戳的相互转换，以及 `TimeTicks` 类为 `performance` API 提供高精度时间测量能力。  理解这个文件有助于深入了解 V8 引擎如何处理时间相关的操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/platform/time.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2013 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1072,7 +1074,4 @@ double ThreadTicks::TSCTicksPerSecond() {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

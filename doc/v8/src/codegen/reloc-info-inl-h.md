@@ -218,15 +218,17 @@ console.log(obj2.ref.value);
 
 总而言之，`v8/src/codegen/reloc-info-inl.h` 是 V8 引擎中一个非常底层的组件，负责管理代码中的引用关系，确保在垃圾回收等内存管理操作后，代码仍然能够正确地访问内存中的对象。理解其功能有助于理解 V8 的代码生成和内存管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/reloc-info-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/reloc-info-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -269,7 +271,4 @@ RelocIteratorBase<RelocInfoT>::RelocIteratorBase(RelocInfoT reloc_info,
 }  // namespace v8
 
 #endif  // V8_CODEGEN_RELOC_INFO_INL_H_
-
-"""
-
 ```

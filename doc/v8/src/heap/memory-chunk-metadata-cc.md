@@ -150,15 +150,17 @@ let myString = "This is a string";
 
 `v8/src/heap/memory-chunk-metadata.cc` 中定义的 `MemoryChunkMetadata` 类是 V8 堆内存管理的关键组成部分，负责存储和管理关于内存块的元数据。它与 JavaScript 的内存分配息息相关，虽然用户无法直接操作它，但理解其功能有助于理解 V8 的底层工作原理以及与内存相关的常见编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/memory-chunk-metadata.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/memory-chunk-metadata.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ void MemoryChunkMetadata::SynchronizedHeapStore() {
 #endif
 
 }  // namespace v8::internal
-
-"""
-
 ```

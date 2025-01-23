@@ -81,7 +81,7 @@ Essentially, the process is a combination of code analysis, contextual understan
 
 简而言之，这个 `host.c` 文件虽然代码简单，但在 Frida 的构建和测试流程中起着验证构建配置的关键作用，而构建配置对于像 Frida 这样的动态 instrumentation 工具来说至关重要。它的存在是为了确保 Frida 在不同的构建条件下能够正确地包含或排除特定的资源或功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/105 generatorcustom/host.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -89,8 +89,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "res1-cpp.h"
 
 int main(void) {
@@ -100,7 +102,4 @@ int main(void) {
         return 1;
     #endif
 }
-
-"""
-
 ```

@@ -201,7 +201,7 @@ rp.ServeHTTP(w, req)
 
 总而言之，这部分测试覆盖了 `ReverseProxy` 的更复杂和细致的功能，确保了其在各种场景下的稳定性和正确性，特别是涉及到 WebSocket、1xx 响应和请求/响应修改等高级用法。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/httputil/reverseproxy_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -210,8 +210,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 ", nil)
 	req.RemoteAddr = "1.2.3.4:56789"
 	rp := &ReverseProxy{
@@ -1037,10 +1039,4 @@ func (rw *testResponseWriter) Write(p []byte) (int, error) {
 	}
 	return len(p), nil
 }
-
-"""
-
-
-
-
 ```

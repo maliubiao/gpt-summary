@@ -93,7 +93,7 @@ I need to summarize the core purpose of `PreparePlay`, paying attention to how i
 
 总结来说，这段代码是 `WebRtcAudioRenderer` 中至关重要的一部分，它负责根据音频源和输出设备的需求，配置音频播放的参数和必要的重采样机制，确保 WebRTC 音频能够正确流畅地播放出来。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webrtc/webrtc_audio_renderer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -101,8 +101,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 L_LAYOUT_STEREO;
   }
   const int sink_frames_per_buffer = media::AudioLatency::GetRtcBufferSize(
@@ -160,8 +162,4 @@ void WebRtcAudioRenderer::SendLogMessage(const WTF::String& message) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

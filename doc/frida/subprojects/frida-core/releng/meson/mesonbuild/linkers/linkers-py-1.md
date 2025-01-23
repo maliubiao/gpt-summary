@@ -121,7 +121,7 @@ Here's a breakdown of its functionalities, relating them to reverse engineering,
 
 This second part of `linkers.py` continues to define a comprehensive set of Python classes that abstract the complexities of various dynamic linkers used in different compiler toolchains and operating systems. These classes provide a consistent interface for the Meson build system to generate platform-specific linker commands, ensuring that Frida and its components are built correctly across diverse environments. This abstraction is crucial for managing the build process and simplifying the interaction with the underlying linking tools.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/linkers/linkers.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 hineChoice,
                  *, version: str = 'unknown version'):
         super().__init__(['rlink.exe'], for_machine, '', [],
@@ -803,8 +805,4 @@ class MetrowerksLinkerARM(MetrowerksLinker):
 
 class MetrowerksLinkerEmbeddedPowerPC(MetrowerksLinker):
     id = 'mwldeppc'
-
-"""
-
-
 ```

@@ -169,15 +169,17 @@ panic: runtime error: comparing uncomparable type map[string]int
 
 总而言之，这段代码通过精心设计的测试用例，清晰地展示了Go语言中接口值比较的限制以及运行时错误检测机制。它提醒开发者在处理接口值时，需要特别注意底层类型的可比较性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/interface/noeq.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // run
 
 // Copyright 2011 The Go Authors. All rights reserved.
@@ -218,9 +220,4 @@ func shouldPanic(f func()) {
 	}()
 	f()
 }
-
-"""
-
-
-
 ```

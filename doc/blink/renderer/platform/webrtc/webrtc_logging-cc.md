@@ -141,14 +141,16 @@ class MyWebRtcComponent {
 
 总之，`webrtc_logging.cc` 提供了一套结构化的 WebRTC 日志记录机制，方便 Blink 引擎的开发者追踪 WebRTC 的运行状态和调试问题。虽然它不直接与 JavaScript, HTML, CSS 交互，但其记录的日志对于理解和调试基于 WebRTC 的 Web 应用至关重要。开发者需要注意正确使用其提供的初始化和日志函数，避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/webrtc/webrtc_logging.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ void BLINK_PLATFORM_EXPORT WebRtcLog(const char* prefix,
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -163,7 +163,7 @@ got [{...} {...} ...], want [{...} {...} ...]
 
 这段代码的核心功能是测试 `zstd` 包中 FSE 编码所使用的预定义表格的生成是否符合预期。它通过比较程序生成的表格和硬编码的预定义表格来实现验证。这确保了 `zstd` 压缩算法中 FSE 编码部分的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/zstd/fse_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -171,8 +171,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -262,9 +264,4 @@ func TestPredefinedTables(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

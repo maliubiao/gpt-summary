@@ -177,7 +177,7 @@ TEST_F(WasmModuleVerifyTest, ElementSectionInitExternRefTableWithFuncRef) {
 
 在这个例子中，`table 0` 被声明为 `externref` 类型，但是 Element Section 尝试用 `FUNC_INDEX(0)` (本质上是一个 `funcref`) 来初始化它，这将导致解码器报错，因为 `funcref` 不是 `externref` 的子类型。这是一个用户在手动创建 WASM 模块时容易犯的类型不匹配的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/wasm/module-decoder-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/wasm/module-decoder-unittest.cc以.tq结尾，那它是个v8 torque源代码，
@@ -185,8 +185,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 entry count
               TABLE_INDEX0, WASM_INIT_EXPR_I32V_1(0),
               1,     // elements count
@@ -908,8 +910,5 @@ TEST_F(WasmSignatureDecodeTest, Ok_i_tt) {
   WASM_FEATURE_SCOPE(exnref);
   for (size_t i = 0; i < arraysize(kValueTypes); i++) {
     ValueTypePair p0_type = kValueTypes[i];
-    for (size_t j = 0; j < 
-"""
-
-
+    for (size_t j = 0; j <
 ```

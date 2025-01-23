@@ -142,7 +142,7 @@ func main() {
 
 `crypto/internal/fips140/nistec` 包是 Go 标准库中用于实现符合 NIST 标准的椭圆曲线密码学算法的底层核心组件。它注重性能和安全性，使用了优化的算术运算并避免了堆内存分配。使用者应该通过 `crypto/ecdsa` 或 `crypto/elliptic` 等公开 API 来使用椭圆曲线功能，而不是直接依赖这个内部包。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/nistec/nistec.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -150,8 +150,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -169,9 +171,4 @@ package nistec
 import _ "crypto/internal/fips140/check"
 
 //go:generate go run generate.go
-
-"""
-
-
-
 ```

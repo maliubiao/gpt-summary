@@ -132,14 +132,16 @@ Response:
 
 `trust_token_attribute_parsing_test.cc` 文件是 Blink 引擎中非常重要的一个测试文件，它确保了 Trust Token 功能的关键部分——参数解析——能够正确可靠地工作。 这对于保证 Trust Token 功能的稳定性和安全性至关重要，并直接影响到使用 Trust Token 的网页的正常运行。 该测试覆盖了各种合法的和非法的输入情况，帮助开发者避免在使用 Trust Token 时常犯的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/trust_token_attribute_parsing_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -403,7 +405,4 @@ TEST(TrustTokenAttributeParsing, NonHttpNonHttpsIssuer) {
 }
 
 }  // namespace blink::internal
-
-"""
-
 ```

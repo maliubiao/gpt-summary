@@ -159,7 +159,7 @@ By following these steps, we can systematically analyze the provided C code snip
 
 总而言之，`func8.c` 虽然代码简单，但在动态插桩和逆向工程的上下文中，它可以作为一个观察点，帮助理解程序的执行流程和内部状态。通过 Frida 等工具，逆向工程师可以动态地分析和修改 `func8` 的行为，从而揭示程序的更多秘密。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/66 static link/lib/func8.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -167,15 +167,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func7();
 
 int func8()
 {
   return func7() + 1;
 }
-
-"""
-
 ```

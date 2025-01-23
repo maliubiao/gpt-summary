@@ -79,7 +79,7 @@ Response:
 8. **API 绑定**：`getApi` 被赋值为对应模块的实现。  
 9. **外部调用入口**：用户通过 `Java.use` 等 API 发起调用。  
 10. **Native 层交互**：最终通过 `frida-java-bridge` 的 C++ 代码与 JNI 通信。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-java-bridge/lib/api.js的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -88,8 +88,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明调用链如何一步步的到达这里，作为调试线索，建议10步，
 请用中文回复。
+```
 
-"""
+### 源代码
+```javascript
 let { getApi, getAndroidVersion } = require('./android');
 try {
   getAndroidVersion();
@@ -97,7 +99,4 @@ try {
   getApi = require('./jvm').getApi;
 }
 module.exports = getApi;
-
-"""
-
 ```

@@ -211,7 +211,7 @@ The function will return a `MemOperand` representing the memory address calculat
 
 The header file `v8/src/wasm/baseline/ppc/liftoff-assembler-ppc-inl.h` is a core component of V8's Liftoff compiler for WebAssembly on the PowerPC architecture. It provides the building blocks for generating low-level PPC machine code. This includes defining the stack frame layout, providing functions for memory access (loads, stores, atomics), managing function calls, interacting with the V8 runtime, and handling tagged pointers. It enables the efficient execution of WebAssembly code within the V8 JavaScript engine. This part focuses primarily on the foundational aspects of code generation and memory management within the Liftoff assembler for PPC.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/ppc/liftoff-assembler-ppc-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/ppc/liftoff-assembler-ppc-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -219,8 +219,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1071,7 +1073,4 @@ void LiftoffAssembler::AtomicExchange(Register dst_addr, Register offset_reg,
 }
 
 void L
-"""
-
-
 ```

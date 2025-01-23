@@ -166,7 +166,7 @@ Hash of {ID:1 Name:example}: 某个 uint64 值 (取决于具体的 seed 和 map 
 
 `go/src/hash/maphash/maphash_runtime.go` 是 Go 运行时环境中用于哈希功能的底层实现。它提供了高效的字节切片、字符串以及可比较类型的哈希函数，并与 Go 运行时的随机数生成器集成。这段代码是 Go 语言 `map` 类型高效运行的关键组成部分。普通开发者通常不会直接使用这些函数，而是使用 `hash/maphash` 包中更高级别的 API。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/hash/maphash/maphash_runtime.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -174,8 +174,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -246,9 +248,4 @@ func comparableHash[T comparable](v T, seed Seed) uint64 {
 func writeComparable[T comparable](h *Hash, v T) {
 	h.state.s = comparableHash(v, h.state)
 }
-
-"""
-
-
-
 ```

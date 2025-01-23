@@ -147,15 +147,17 @@ Let's break down the thought process for analyzing the C++ fuzzer code and gener
 
 总之，`certificate_view_der_fuzzer.cc` 作为一个模糊测试文件，其直接目的是通过随机输入测试证书解析和私钥加载代码的健壮性，从而提高 Chromium 网络栈的安全性。虽然用户不会直接与之交互，但它在幕后默默地保障着用户浏览器的安全。开发者可能会在调试与证书处理相关的错误或进行安全分析时关注到这个文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/certificate_view_der_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -176,7 +178,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
   quic::CertificatePrivateKey::LoadFromDer(input);
   return 0;
 }
-
-"""
-
 ```

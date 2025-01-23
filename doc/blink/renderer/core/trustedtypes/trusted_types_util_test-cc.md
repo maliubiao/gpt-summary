@@ -158,14 +158,16 @@ Trusted Types 是一项 Web 安全功能，旨在防止基于 DOM 的跨站脚�
 
 总之，`trusted_types_util_test.cc` 文件通过测试关键的实用工具函数，确保 Blink 引擎能够正确地强制执行 Trusted Types 策略，从而帮助开发者避免常见的 DOM XSS 漏洞。它验证了在启用 Trusted Types 后，直接使用普通字符串进行某些敏感的 DOM 操作会被阻止，并期望开发者使用 `TrustedHTML`、`TrustedScript` 和 `TrustedScriptURL` 等受信任的类型。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/trustedtypes/trusted_types_util_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -292,7 +294,4 @@ TEST(TrustedTypesUtilTest, TrustedTypesCheckForScriptURL_String) {
   TrustedTypesCheckForScriptURLThrows("A string");
 }
 }  // namespace blink
-
-"""
-
 ```

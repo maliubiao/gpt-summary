@@ -142,15 +142,17 @@ func fPhi(a, b string) string {
 
 这段 `fuse.go` 代码片段是 Go 编译器 `ssa/late_fuse` 优化 Pass 的一个测试用例，用于验证编译器能否识别并优化特定的逻辑表达式模式，并期望编译器在调试模式下输出特定的 "Redirect" 信息。 它不代表一个独立的 Go 语言功能，而是 Go 编译器内部工作的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fuse.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -d=ssa/late_fuse/debug=1
 
 //go:build (amd64 && !gcflags_noopt) || (arm64 && !gcflags_noopt)
@@ -342,9 +344,4 @@ func fPhi(a, b string) string {
 
 func main() {
 }
-
-"""
-
-
-
 ```

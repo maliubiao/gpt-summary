@@ -169,15 +169,17 @@ By following this structured thought process, combining code analysis with an un
 
 总而言之，`Aes256GcmEncrypter.cc` 文件是 Chromium QUIC 实现中负责使用 AES-256-GCM 算法进行数据加密的关键组件。它虽然不直接与 JavaScript 交互，但其提供的加密功能是保障基于 HTTPS 的 Web 通信安全的重要基石。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/aes_256_gcm_encrypter.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -205,7 +207,4 @@ Aes256GcmEncrypter::Aes256GcmEncrypter()
 Aes256GcmEncrypter::~Aes256GcmEncrypter() {}
 
 }  // namespace quic
-
-"""
-
 ```

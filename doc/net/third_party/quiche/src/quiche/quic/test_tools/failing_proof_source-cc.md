@@ -156,15 +156,17 @@ fetch('https://example.com')
 
 总而言之，`FailingProofSource` 是一个专门用于测试的组件，它通过模拟 TLS 证明过程中的失败情况，帮助开发者验证 QUIC 实现的健壮性和错误处理能力。用户通常不会直接遇到它，但其行为会导致用户在访问使用它的服务器时遇到连接问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/failing_proof_source.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ void FailingProofSource::ComputeTlsSignature(
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

@@ -156,7 +156,7 @@ Interceptor.attach(get_x_address, {
 
 总而言之，虽然 `ef.cpp` 的代码非常简单，但它在 Frida 的测试框架中扮演着重要的角色，可以用来验证 Frida 的基本功能，并帮助开发者理解动态库加载、符号导出、内存布局等底层概念，这些都是进行动态逆向分析的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/89 default library/ef.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -164,8 +164,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include"ef.h"
 
 DLL_PUBLIC Ef::Ef() : x(99) {
@@ -174,7 +176,4 @@ DLL_PUBLIC Ef::Ef() : x(99) {
 int DLL_PUBLIC Ef::get_x() const {
     return x;
 }
-
-"""
-
 ```

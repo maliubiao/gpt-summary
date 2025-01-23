@@ -182,14 +182,16 @@ myPromise
 
 总而言之，`v8/src/builtins/promise-finally.tq` 代码实现了 `Promise.prototype.finally` 的核心机制，确保了回调函数的执行，并正确地处理了各种情况，包括成功、失败以及 `finally` 回调函数自身的行为。理解这段代码有助于深入理解 JavaScript Promise 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/promise-finally.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -417,7 +419,4 @@ extern macro PromiseThenFinallySharedFunConstant(): SharedFunctionInfo;
 extern macro PromiseThrowerFinallySharedFunConstant(): SharedFunctionInfo;
 extern macro PromiseValueThunkFinallySharedFunConstant(): SharedFunctionInfo;
 }
-
-"""
-
 ```

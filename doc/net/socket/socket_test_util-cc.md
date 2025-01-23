@@ -141,7 +141,7 @@ Essentially, this section provides the building blocks for creating controlled, 
 
 总而言之，`net/socket/socket_test_util.cc` 的前半部分提供了一套强大的工具，用于在 Chromium 网络栈的单元测试中精确地模拟各种 socket 行为，包括 TCP 和 SSL 连接，以及数据的读取和写入。这些工具使得开发者可以编写可靠且高效的单元测试，而无需依赖真实的、不可控的网络环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/socket/socket_test_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -149,8 +149,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1092,7 +1094,4 @@ std::unique_ptr<SSLClientSocket> MockClientSocketFactory::CreateSSLClientSocket(
     if (next_ssl_data->expected_client_cert && client_cert) {
       EXPECT_TRUE(next_ssl_data->expected_client_cert->EqualsIncludingChain(
           client_
-"""
-
-
 ```

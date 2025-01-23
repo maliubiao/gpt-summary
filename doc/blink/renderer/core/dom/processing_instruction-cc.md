@@ -158,15 +158,17 @@ This step-by-step approach, starting with the overall purpose and then drilling 
 
 总而言之，`blink/renderer/core/dom/processing_instruction.cc` 是 Blink 引擎中处理文档中 Processing Instruction 节点的核心组件，特别是在加载和管理外部 CSS 和 XSLT 样式表方面起着至关重要的作用。理解其功能有助于开发者调试与样式表引入相关的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/processing_instruction.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2000 Peter Kelly (pmk@post.com)
  * Copyright (C) 2006, 2008, 2009 Apple Inc. All rights reserved.
@@ -471,7 +473,4 @@ void ProcessingInstruction::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

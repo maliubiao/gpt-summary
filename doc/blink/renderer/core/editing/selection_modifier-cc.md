@@ -200,7 +200,7 @@ By following this iterative process of exploring the code, connecting it to web 
 
 这个 `selection_modifier.cc` 文件的第一部分主要定义了 `SelectionModifier` 类及其核心的修改选择范围的功能。它提供了基于不同文本粒度和方向移动及扩展选择的方法，并初步考虑了文本方向性。  核心目标是根据用户的输入或程序的要求，精确地调整当前文档中的文本选择范围。这部分代码是浏览器处理文本选择操作的核心逻辑之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/selection_modifier.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -208,8 +208,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010 Apple Inc. All rights
  * reserved.
@@ -979,7 +981,4 @@ static bool IsBoundary(TextGranularity granularity) {
 VisiblePositionInFlatTree SelectionModifier::ComputeModifyPosition(
     SelectionModifyAlteration alter,
     SelectionModifyDirecti
-"""
-
-
 ```

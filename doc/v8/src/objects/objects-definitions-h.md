@@ -143,15 +143,17 @@ const result = parts.join("");
 
 总而言之，`v8/src/objects/objects-definitions.h` 是 V8 引擎的核心组成部分，它定义了 V8 堆中各种对象的类型，为 V8 的内存管理、类型检查和对象操作提供了基础。虽然普通 JavaScript 开发者不会直接与之交互，但理解其内容有助于更深入地理解 JavaScript 的运行机制和 V8 的内部实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects-definitions.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/objects-definitions.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -392,7 +394,4 @@ namespace internal {
 }  // namespace v8
 
 #endif  // V8_OBJECTS_OBJECTS_DEFINITIONS_H_
-
-"""
-
 ```

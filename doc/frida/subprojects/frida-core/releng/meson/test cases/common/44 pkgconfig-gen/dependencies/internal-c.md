@@ -91,7 +91,7 @@ Here's a breakdown of the thinking process used to analyze the C code snippet an
 
 尽管 `internal.c` 中的 `internal_function` 非常简单，但它在 Frida 的内部测试和支撑基础设施中可能扮演着角色。它展示了即使是最简单的代码片段，在复杂的软件系统中也可能具有一定的意义。对于逆向工程师而言，理解工具的内部机制有助于更有效地使用和调试工具。对于 Frida 的开发者而言，这样的测试函数可以帮助确保代码的稳定性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/44 pkgconfig-gen/dependencies/internal.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -99,12 +99,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int internal_function(void) {
     return 42;
 }
-
-"""
-
 ```

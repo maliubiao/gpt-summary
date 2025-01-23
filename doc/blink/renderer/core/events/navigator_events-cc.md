@@ -193,14 +193,16 @@ Finally, the information needs to be organized clearly, with headings and bullet
 
 总而言之，`navigator_events.cc` 这个文件（目前看来）的核心功能是提供 `navigator.maxTouchPoints` 属性的底层实现，这个属性在 JavaScript 中用于查询设备支持的最大触摸点数量，开发者可以利用这个信息来优化用户体验，但需要注意其可靠性和兼容性，并结合其他技术进行更全面的触摸支持判断和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/events/navigator_events.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -246,7 +248,4 @@ int32_t NavigatorEvents::maxTouchPoints(Navigator& navigator) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

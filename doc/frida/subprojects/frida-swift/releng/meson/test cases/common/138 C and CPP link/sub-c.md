@@ -155,7 +155,7 @@ By following these steps, I can generate a comprehensive and accurate answer tha
 
 虽然 `sub.c` 的功能非常基础，但它在 Frida 的测试框架中扮演着重要的角色，用于验证 Frida 动态插桩 C/C++ 代码的能力。它涉及到逆向工程的基本概念，如 hooking 和修改程序行为，并与二进制底层、操作系统进程模型和动态链接等知识相关。理解这样的简单示例有助于用户更好地理解 Frida 的工作原理和如何使用 Frida 进行更复杂的逆向分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/138 C and CPP link/sub.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Copyright © 2017 Dylan Baker
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -184,7 +186,4 @@ Prompt:
 float a_half(void) {
     return .5;
 }
-
-"""
-
 ```

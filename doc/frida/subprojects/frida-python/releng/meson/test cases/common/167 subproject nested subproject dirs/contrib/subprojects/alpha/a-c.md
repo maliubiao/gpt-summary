@@ -117,7 +117,7 @@ By following these steps, I can systematically analyze the code snippet, connect
 
 `a.c` 文件定义了一个简单的导出函数 `func`，它调用了另一个未定义的函数 `func2`。这段代码本身并不复杂，但它展示了动态链接库的基本结构和导出函数的概念，这对于理解 Frida 的工作原理以及进行逆向工程至关重要。理解代码中的预处理宏和条件编译，有助于理解跨平台开发的常见做法。在调试过程中，理解代码的功能和依赖关系是找到问题的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/167 subproject nested subproject dirs/contrib/subprojects/alpha/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int func2(void);
 
 #if defined _WIN32 || defined __CYGWIN__
@@ -141,7 +143,4 @@ int func2(void);
 #endif
 
 int DLL_PUBLIC func(void) { return func2(); }
-
-"""
-
 ```

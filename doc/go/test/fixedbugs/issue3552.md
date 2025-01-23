@@ -148,15 +148,17 @@ func main() {
 
 `go/test/fixedbugs/issue3552.go` 是一个 Go 编译器测试文件，专门用于验证编译器在处理跨包内联包含内建函数调用的场景时是否能正确工作，修复了 Issue 3552 中报告的 bug。 用户通常不会直接运行或操作这个文件，它主要服务于 Go 编译器的开发和测试过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue3552.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // compiledir
 
 // Copyright 2011 The Go Authors. All rights reserved.
@@ -167,9 +169,4 @@ Prompt:
 // referencing embedded builtins.
 
 package ignored
-
-"""
-
-
-
 ```

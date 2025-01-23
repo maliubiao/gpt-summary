@@ -662,7 +662,7 @@ void MarkCompactCollector::UpdatePointersInClientHeap(Isolate* client) {
     WritableJitPage jit_page = ThreadIsolation::LookupWritableJitPage(
         page->area_start(), page->area_size());
     const auto typed_slot_count = RememberedSet<OLD_TO_SHARED>::IterateTyped
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/mark-compact.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/mark-compact.cc以.tq结尾，那它是个v8 torque源代码，
@@ -670,8 +670,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eap()->tracer()),
         trace_id_(reinterpret_cast<uint64_t>(this) ^
                   tracer_->CurrentEpoch(GCTracer::Scope::MC_EVACUATE)) {}
@@ -1483,8 +1485,4 @@ size_t MarkCompactCollector::PostProcessAbortedEvacuationCandidates() {
 void MarkCompactCollector::ReleaseEvacuationCandidates() {
   for (PageMetadata* p : old_space_evacuation_pages_) {
     if (!p->Chunk()->IsEvacuationCandidate()) continue;
-   
-"""
-
-
 ```

@@ -169,7 +169,7 @@ if (Java.available) {
 
 总而言之，`hello.c` 虽然功能简单，但作为 Frida 的测试用例，它提供了一个清晰且易于理解的目标，帮助用户学习和验证 Frida 的基本功能，并为更复杂的逆向工程任务打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/wasm/1 basic/hello.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,15 +177,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main() {
   printf("Hello World\n");
   return 0;
 }
-
-"""
-
 ```

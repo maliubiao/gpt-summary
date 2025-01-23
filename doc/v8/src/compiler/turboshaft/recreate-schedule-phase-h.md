@@ -162,15 +162,17 @@ Here are some examples of user programming errors where the correct scheduling b
 
 **In summary, `v8/src/compiler/turboshaft/recreate-schedule-phase.h` defines a crucial stage in the Turboshaft compiler responsible for establishing the order of operations for efficient and correct execution of JavaScript code. It takes an intermediate representation of the code and generates a concrete execution schedule, considering factors like register allocation and dependencies.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/recreate-schedule-phase.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/recreate-schedule-phase.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -199,7 +201,4 @@ struct RecreateSchedulePhase {
 }  // namespace v8::internal::compiler::turboshaft
 
 #endif  // V8_COMPILER_TURBOSHAFT_RECREATE_SCHEDULE_PHASE_H_
-
-"""
-
 ```

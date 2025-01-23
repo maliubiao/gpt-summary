@@ -178,14 +178,16 @@ console.log(result); // 输出 15
 
 总而言之，`v8/src/builtins/wasm-to-js.tq` 中的 `WasmToJSWrapper` 是 V8 引擎中一个至关重要的组件，它使得 WebAssembly 代码能够安全有效地调用 JavaScript 代码，从而实现了 Wasm 与 Web 平台的集成。 理解其功能有助于开发者更好地理解 Wasm 和 JavaScript 的互操作性，并避免常见的编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/wasm-to-js.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -504,7 +506,4 @@ transitioning macro WasmToJSWrapper(data: WasmImportData): WasmToJSResult {
   return wasmToJSResult;
 }
 }  // namespace wasm
-
-"""
-
 ```

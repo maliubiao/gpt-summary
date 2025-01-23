@@ -134,7 +134,7 @@ By following this thought process, we can move from a simple C++ file to a compr
 
 总而言之，虽然这个 `unit_test.cpp` 文件本身很简单，但它是 Frida 项目质量保证体系中的一环。它的存在是为了确保 Frida 的基础功能正常工作，从而为更复杂的逆向操作提供可靠的基础。用户直接操作到这个文件的场景通常是与开发、调试或深入学习 Frida 相关的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/1 boost/unit_test.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,8 +142,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define BOOST_TEST_MODULE "MesonTest"
 #define BOOST_TEST_MAIN
 #include <boost/test/unit_test.hpp>
@@ -153,7 +155,4 @@ BOOST_AUTO_TEST_CASE(m_test) {
     BOOST_CHECK(true);
     BOOST_CHECK_EQUAL(x, 4);
 }
-
-"""
-
 ```

@@ -73,9 +73,12 @@ This systematic approach helps to move from a raw code file to a meaningful and 
 
 这些工具函数主要围绕着将 V8 相关的概念（如属性、方法、基本数据类型）映射到 WinDbg 的数据模型表示，从而允许调试人员在 WinDbg 中检查和操作 V8 引擎的内部状态。
 Error: Invalid operation: The `response.text` quick accessor requires the response to contain a valid `Part`, but none were returned. The candidate's [finish_reason](https://ai.google.dev/api/generate-content#finishreason) is 1.
-Prompt: ```这是目录为v8/tools/v8windbg/base/utilities.cc的一个c++源代码文件， 请归纳一下它的功能
+### 提示词
+```这是目录为v8/tools/v8windbg/base/utilities.cc的一个c++源代码文件， 请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -331,6 +334,4 @@ HRESULT GetCurrentThread(WRL::ComPtr<IDebugHostContext>& sp_host_context,
       sp_curr_process->GetKeyValue(L"Threads", &sp_threads, nullptr));
   return GetModelAtIndex(sp_threads, sp_boxed_context, p_current_thread);
 }
-
-"""
 ```

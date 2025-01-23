@@ -218,7 +218,7 @@ Go 的 `net` 包和其他需要进行高效 I/O 操作的包，可能会使用 `
 
 总而言之，`go/src/runtime/defs_openbsd_riscv64.go` 是 Go runtime 在 OpenBSD RISC-V 64 位平台上运行的基础，它定义了与操作系统交互所需的关键常量和数据结构，是 Go 语言能够在该平台上正常运行和提供各种功能的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/defs_openbsd_riscv64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -226,8 +226,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2023 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -405,9 +407,4 @@ type pthreadcond uintptr
 type pthreadcondattr uintptr
 type pthreadmutex uintptr
 type pthreadmutexattr uintptr
-
-"""
-
-
-
 ```

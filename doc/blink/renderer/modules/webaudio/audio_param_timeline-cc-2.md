@@ -192,7 +192,7 @@ Let's consider the `ProcessSetTarget` function as an example.
 
 总而言之，这个代码片段是 Web Audio API 中音频参数自动化功能的核心实现部分，它负责根据用户在 JavaScript 中设置的自动化事件，在音频渲染过程中精确地计算出参数的取值，从而实现各种动态的音频效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webaudio/audio_param_timeline.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -200,8 +200,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 te;
   auto fill_to_end_frame = current_state.fill_to_end_frame;
   auto* event = current_state.event.get();
@@ -581,8 +583,4 @@ void AudioParamTimeline::RemoveOldEvents(wtf_size_t event_count) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

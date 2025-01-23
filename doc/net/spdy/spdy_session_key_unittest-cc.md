@@ -155,15 +155,17 @@ Let's break down the thought process for analyzing the `spdy_session_key_unittes
 
 通过查看 `net/spdy/spdy_session_key_unittest.cc` 文件，开发者可以了解 `SpdySessionKey` 的哪些属性被用来判断连接是否可以复用，从而更好地理解和调试连接复用相关的问题。他们可以查看测试用例，了解在哪些情况下 `SpdySessionKey` 会被认为相等或不等，从而缩小问题范围。例如，如果连接意外地没有被复用，开发者可以检查上述提到的各个属性，看看是否有任何差异导致了 `SpdySessionKey` 的不匹配。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session_key_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -328,7 +330,4 @@ TEST(SpdySessionKeyTest, Set) {
 }  // namespace
 
 }  // namespace net
-
-"""
-
 ```

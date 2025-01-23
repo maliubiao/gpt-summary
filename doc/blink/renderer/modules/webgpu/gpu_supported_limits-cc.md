@@ -258,15 +258,17 @@ Vector<std::pair<String, uint64_t>> requested_limits_error = {
 
 总而言之，`blink/renderer/modules/webgpu/gpu_supported_limits.cc` 是 WebGPU 实现中至关重要的一个文件，它负责管理和提供设备支持的各种限制信息，直接影响着 WebGPU 应用的开发和运行。理解它的功能对于开发健壮的 WebGPU 应用以及进行相关的调试工作都非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_supported_limits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -421,7 +423,4 @@ unsigned GPUSupportedLimits::maxSubgroupSize() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -429,7 +429,7 @@ if (Process.platform === 'android') {
 
 这个 Frida 脚本可以帮助你理解 `getopt_long` 在 Android 系统中的使用方式，以及传递给它的参数。你需要根据实际情况调整 `long_options` 的解析部分，因为结构体的布局可能因 Android 版本和架构而异。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/getopt.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -440,8 +440,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: getopt.h,v 1.4 2000/07/07 10:43:54 ad Exp $	*/
 /*	$FreeBSD$ */
 
@@ -532,7 +534,4 @@ extern int optreset;
 #endif
 
 __END_DECLS
-
-"""
-
 ```

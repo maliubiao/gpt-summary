@@ -196,15 +196,17 @@ Uncaught (in promise) DOMException: GPUValidationError: Buffer size must be grea
 
 总而言之，`gpu_validation_error.cc` 文件虽然是 C++ 代码，但它在 WebGPU 的错误处理机制中扮演着关键角色，它定义了用于表示用户在使用 WebGPU API 时由于不当操作而产生的验证错误的类。理解它的作用有助于开发者更好地调试和修复 WebGPU 相关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webgpu/gpu_validation_error.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ GPUValidationError::GPUValidationError(const String& message)
     : GPUError(message) {}
 
 }  // namespace blink
-
-"""
-
 ```

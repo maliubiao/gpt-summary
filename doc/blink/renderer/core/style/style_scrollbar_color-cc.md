@@ -131,14 +131,16 @@ This systematic approach helps in dissecting the code, understanding its purpose
 
 `style_scrollbar_color.cc` 文件中定义的 `StyleScrollbarColor` 类是 Blink 渲染引擎中负责存储和管理滚动条颜色信息的核心组件。它与 CSS 的 `scrollbar-color` 属性紧密相关，并通过 Blink 引擎影响着 HTML 元素的渲染。理解这个类及其与 Web 技术的关系，有助于开发者更好地理解浏览器如何处理滚动条样式，并避免常见的样式错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/style/style_scrollbar_color.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ StyleScrollbarColor::StyleScrollbarColor(StyleColor thumbColor,
     : thumb_color_(thumbColor), track_color_(trackColor) {}
 
 }  // namespace blink
-
-"""
-
 ```

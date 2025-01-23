@@ -109,11 +109,13 @@ console.log(result);
 
 `interpreter.cc` 是 V8 解释器的核心，负责将 JavaScript 代码转换为可执行的字节码，并维护执行这些字节码所需的关键数据结构（如分发表）。它是 V8 执行 JavaScript 代码流程中的关键一步，为后续的优化编译提供了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -543,7 +545,4 @@ Handle<JSObject> Interpreter::GetDispatchCountersObject() {
 }  // namespace interpreter
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -184,15 +184,17 @@ func urlFromFilePath(filePath string) (*url.URL, error) {
 
 总而言之，这个测试文件主要用于保证 `cmd/go` 工具内部的 URL 和文件路径转换功能的正确性。它测试了两个核心的转换函数，并通过一系列的测试用例来覆盖不同的输入和预期输出，包括错误处理的情况。理解这些功能有助于理解 Go 工具内部如何处理资源定位和管理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/web/url_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2019 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -270,9 +272,4 @@ func TestURLFromFilePath(t *testing.T) {
 		})
 	}
 }
-
-"""
-
-
-
 ```

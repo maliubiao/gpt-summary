@@ -128,7 +128,7 @@ const typedArray = new Uint8Array(10);
 
 作为第三部分，此代码片段主要关注 **更具体和复杂的堆对象引用类型的实现**，例如 `JSTypedArrayRef`, `JSPrimitiveWrapperRef`, `MapRef`, `StringRef`, `ContextRef`, `NativeContextRef`, `ObjectRef`, `JSObjectRef`, `JSArrayRef`, `SourceTextModuleRef` 等。它提供了这些特定对象类型的访问器方法，允许编译器获取关于这些对象更详细的信息，例如 TypedArray 的长度和数据指针，Map 的稳定性，字符串的类型，Context 的作用域信息等等。这些更细粒度的引用类型和访问方法为编译器提供了构建更精确的对象模型和执行更有效的优化的基础。  这些方法通常包含 `CHECK(!is_on_heap())` 或内存栅栏操作，表明它们在设计时考虑了并发安全和数据一致性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/heap-refs.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/heap-refs.cc以.tq结尾，那它是个v8 torque源代码，
@@ -136,8 +136,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 mmutable after initialization.
   return MakeRefAssumeMemoryFence(broker,
                                   Cast<HeapObject>(object()->GetBackPointer()));
@@ -830,8 +832,4 @@ unsigned CodeRef::GetInlinedBytecodeSize() const {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

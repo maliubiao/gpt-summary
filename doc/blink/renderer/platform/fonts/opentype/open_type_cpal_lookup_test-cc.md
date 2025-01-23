@@ -201,14 +201,16 @@ By following these steps – understanding the file's purpose, examining the cod
 
 总而言之，`open_type_cpal_lookup_test.cc` 文件通过一系列单元测试，确保 Blink 引擎能够正确地解析和使用 OpenType 字体中的 CPAL 表，从而为 Web 开发者提供更丰富的字体样式控制能力，例如根据主题显示不同的字体颜色。这对于实现更好的用户体验，特别是支持深色模式等功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/open_type_cpal_lookup_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -315,7 +317,4 @@ TEST_F(OpenTypeCpalLookupTest, RetrieveColorRecordsFromNonExistingPalette) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

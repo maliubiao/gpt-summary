@@ -176,15 +176,17 @@ By following these steps, we can systematically understand the functionality, re
 
 总而言之，`blink/renderer/controller/oom_intervention_impl.cc` 是一个重要的安全阀，它在渲染进程面临内存压力时主动采取措施，避免进程崩溃，保证用户的浏览体验。它与 JavaScript、HTML、CSS 的交互体现在其干预策略上，通过控制这些技术相关的资源来缓解内存压力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/controller/oom_intervention_impl.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -363,7 +365,4 @@ void OomInterventionImpl::TriggerGC() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

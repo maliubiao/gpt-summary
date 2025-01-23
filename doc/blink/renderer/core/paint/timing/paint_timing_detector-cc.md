@@ -170,15 +170,17 @@ Essentially, I performed a code review with a focus on understanding the *what*,
 
 总而言之，`paint_timing_detector.cc` 是 Chromium Blink 引擎中一个至关重要的组件，它默默地监控着页面的渲染过程，记录关键的性能指标，为开发者优化网页性能提供了重要的数据支持。理解它的工作原理有助于我们更好地理解浏览器的渲染过程和性能指标的含义。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/timing/paint_timing_detector.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -779,7 +781,4 @@ void PaintTimingDetector::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -206,15 +206,17 @@ if (someCondition === True) { // 没有必要，直接用 true 即可
 
 总结来说，`v8/src/roots/roots-inl.h` 定义了 V8 引擎中核心的只读对象及其访问方式，这些对象是 V8 实现 JavaScript 语言特性的基础。理解这些概念有助于更深入地了解 V8 的工作原理，并间接地避免一些可能影响性能的编程模式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/roots/roots-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/roots/roots-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -384,7 +386,4 @@ bool ReadOnlyRoots::is_initialized(RootIndex root_index) const {
 }  // namespace v8
 
 #endif  // V8_ROOTS_ROOTS_INL_H_
-
-"""
-
 ```

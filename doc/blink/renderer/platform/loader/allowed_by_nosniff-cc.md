@@ -115,14 +115,16 @@ By following this structured approach, one can effectively analyze the source co
 
 总而言之，`allowed_by_nosniff.cc` 文件在 Chromium 中扮演着重要的安全角色，它通过强制执行 `X-Content-Type-Options: nosniff` 策略，防止 MIME 类型嗅探攻击，确保浏览器按照服务器指定的类型来处理资源，从而提高了 Web 应用的安全性。对于开发者来说，理解这个机制并正确配置服务器的 MIME 类型和 `X-Content-Type-Options` 头部至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/allowed_by_nosniff.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -380,7 +382,4 @@ bool AllowedByNosniff::MimeTypeAsXMLExternalEntity(
 }
 
 }  // namespace blink
-
-"""
-
 ```

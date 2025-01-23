@@ -155,7 +155,7 @@ By following these steps, systematically analyzing the code, and considering the
 
 **因此，第 8 部分主要聚焦于 `SpdyNetworkTransaction` 中关于流量控制的关键功能，特别是对 `WINDOW_UPDATE` 和 `SETTINGS` 帧的处理，以及在流量控制阻塞情况下的恢复机制。**  它确保了在 SPDY/HTTP/2 连接中，数据能够可靠且有效地传输，避免发送方或接收方被过多的数据淹没。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -163,8 +163,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第8部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ect.
   helper.ResetTrans();
 }
@@ -938,8 +940,4 @@ TEST_P(SpdyNetworkTransactionTest, FlowControlNegativeSendWindowSize) {
           (initial_window_size % kBufferSize != 0)) {
         writes.push_back(CreateMockWrite(body3, i++));
       } else if (k == num_frames_in_one_upload_buffer - 1 &&
-          
-"""
-
-
 ```

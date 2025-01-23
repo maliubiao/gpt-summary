@@ -122,7 +122,7 @@ By following these steps, the goal is to produce a comprehensive and easy-to-und
 
 总而言之，`permissions_policy_test.cc` 的这部分代码继续深入测试了 Permissions Policy 和 Feature Policy 的解析和处理逻辑，特别是关注了 reporting endpoints、重复声明的处理、两种策略之间的交互以及对解析后 Policy 对象的修改操作。这些测试对于确保 Chromium Blink 引擎能够正确、安全地执行 Web 平台的策略机制至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/permissions_policy/permissions_policy_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -130,9 +130,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-      {
+### 源代码
+```cpp
+{
             /* test_name */ "ReportingEndpointsInsideAndOutsideList",
             /* feature_policy_string */ NOT_APPLICABLE,
             /* permissions_policy_string */
@@ -851,8 +853,4 @@ TEST_P(FeaturePolicyVisibilityTest, VerifyIsolated) {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

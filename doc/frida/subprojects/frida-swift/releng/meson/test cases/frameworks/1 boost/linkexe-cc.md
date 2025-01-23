@@ -180,7 +180,7 @@ g++ linkexe.cc -o linkexe -lboost_thread
 
 总而言之，`linkexe.cc` 作为一个简单的集成测试用例，其目的是验证 Frida 能否正确地处理使用了 Boost.Thread 库的程序。它可以作为逆向分析的目标，涉及到操作系统底层、内核以及框架的知识，并且在开发和测试过程中可能会遇到各种用户或编程错误。 通过分析这个文件，可以帮助理解 Frida 的工作原理以及如何使用 Frida 进行动态分析和调试。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/1 boost/linkexe.cc的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -188,8 +188,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define _XOPEN_SOURCE 500
 
 #include<boost/thread.hpp>
@@ -208,7 +210,4 @@ int main(int argc, char **argv) {
     thr.join();
     return 0;
 }
-
-"""
-
 ```

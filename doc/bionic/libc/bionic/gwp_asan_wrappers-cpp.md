@@ -310,7 +310,7 @@ sys.stdin.read()
 
 `bionic/libc/bionic/gwp_asan_wrappers.cpp` 文件是 Android GWP-ASan 功能的核心组成部分，它通过包装标准的 `libc` 内存分配函数，实现了对部分内存分配的监控和保护，从而帮助开发者检测和预防内存安全问题，提高了 Android 系统的稳定性和安全性。通过 Frida 等工具，我们可以方便地调试和分析 GWP-ASan 的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/bionic/gwp_asan_wrappers.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -321,8 +321,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2020 The Android Open Source Project
  * All rights reserved.
@@ -836,7 +838,4 @@ bool EnableGwpAsan(const android_mallopt_gwp_asan_options_t& options) {
       [&](libc_globals* globals) { ret_value = MaybeInitGwpAsan(globals, options); });
   return ret_value;
 }
-
-"""
-
 ```

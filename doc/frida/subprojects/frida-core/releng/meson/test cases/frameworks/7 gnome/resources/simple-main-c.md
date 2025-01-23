@@ -182,7 +182,7 @@ Finally, I organize the collected information into the requested categories: fun
 
 通过以上步骤，用户（通常是开发者在调试阶段）可以逐步定位到 `simple-main.c` 文件中的特定代码行，并分析资源加载和校验过程中的问题。 Frida 这样的工具可以在不重新编译程序的情况下动态地观察和修改程序的行为，提供更灵活的调试手段。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/7 gnome/resources/simple-main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 #include<string.h>
 #include<gio/gio.h>
@@ -219,7 +221,4 @@ int main(int argc, char **argv) {
     g_bytes_unref(data);
     return 0;
 }
-
-"""
-
 ```

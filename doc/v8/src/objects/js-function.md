@@ -195,11 +195,13 @@ console.log(multiplyByFive(3)); // 输出 15
 
 `v8/src/objects/js-function.cc` 文件是 V8 引擎中关于 JavaScript 函数对象的核心实现。它负责函数的代码管理、优化、属性维护、原型链构建以及与 V8 内部优化机制的集成。理解这个文件的功能有助于深入了解 V8 如何执行和优化 JavaScript 代码。文件中定义的 C++ 类和方法直接支持了 JavaScript 中我们日常使用的函数特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-function.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1715,7 +1717,4 @@ void JSFunction::ClearAllTypeFeedbackInfoForTesting() {
 }  // namespace v8::internal
 
 #include "src/objects/object-macros-undef.h"
-
-"""
-
 ```

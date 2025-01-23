@@ -176,7 +176,7 @@ Hello, Frida!
 
 总而言之，`python_module.cpp` 是 Frida 开发过程中的一个基础测试单元，用于验证 Boost.Python 绑定功能是否按预期工作。它虽然简单，但体现了 Frida 将 C++ 代码暴露给 Python 以实现动态插桩的核心思想。 当遇到与 Python 模块加载、C++ 对象交互相关的问题时，查看这类测试用例可以帮助开发者理解 Frida 的工作原理，并定位问题所在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/frameworks/1 boost/python_module.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
 #include <boost/python.hpp>
@@ -208,7 +210,4 @@ BOOST_PYTHON_MODULE(MOD_NAME)
         .def("version", &World::version)
     ;
 }
-
-"""
-
 ```

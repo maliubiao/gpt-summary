@@ -116,7 +116,7 @@ void test_sequence(void *h) {
 - **超时检查**：如果测试未在预期时间内完成，检查 `timeout_id` 是否被正确设置和移除。
 
 通过以上步骤和调试方法，用户可以有效地使用 `AsyncHarness` 类进行异步测试，并排查可能的问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/tests/async-harness.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -125,8 +125,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida.Test {
 	public class AsyncHarness : Object {
 		public delegate void TestSequenceFunc (void * h);
@@ -192,7 +194,4 @@ namespace Frida.Test {
 		}
 	}
 }
-
-"""
-
 ```

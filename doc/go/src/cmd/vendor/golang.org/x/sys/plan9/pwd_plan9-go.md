@@ -215,15 +215,17 @@ func main() {
 
 总而言之，这段 `pwd_plan9.go` 代码片段提供了在 Plan 9 操作系统上管理进程工作目录的基础功能。理解其工作原理和潜在的错误点对于编写健壮的跨平台 Go 程序非常重要，尤其是在涉及到文件系统操作时。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/plan9/pwd_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -247,9 +249,4 @@ func Getwd() (wd string, err error) {
 func Chdir(path string) error {
 	return chdir(path)
 }
-
-"""
-
-
-
 ```

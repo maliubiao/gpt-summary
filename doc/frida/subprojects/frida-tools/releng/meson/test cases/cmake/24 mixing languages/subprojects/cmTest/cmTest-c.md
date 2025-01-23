@@ -145,7 +145,7 @@ Leaving foo, return value: 84
 
 总而言之，`cmTest.c` 虽然简单，但它在一个特定的上下文（Frida 的测试用例）中扮演着重要的角色，用于验证构建系统的正确性，并为演示动态分析技术提供了一个基础示例。其简洁性也使得分析其功能和与逆向工程的关联更加容易理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/cmake/24 mixing languages/subprojects/cmTest/cmTest.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "cmTest.h"
 #include <stdio.h>
 
@@ -168,7 +170,4 @@ int doStuff(void) {
   printf("Hello World\n");
   return foo(42);
 }
-
-"""
-
 ```

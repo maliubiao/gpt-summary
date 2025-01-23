@@ -153,15 +153,17 @@ By following this structured approach of understanding the purpose, deconstructi
 
 总而言之，`mathml_operator_element.cc` 是 Blink 引擎中处理 MathML 运算符的核心，它负责解析、管理和应用运算符的各种属性，从而确保 MathML 公式能够正确地渲染和显示。它与 HTML 通过标签和属性紧密相连，与 JavaScript 通过 DOM 操作互动，并受到 CSS 样式的影响。理解这个文件的功能对于调试 MathML 渲染问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/mathml/mathml_operator_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -472,7 +474,4 @@ double MathMLOperatorElement::DefaultTrailingSpace() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

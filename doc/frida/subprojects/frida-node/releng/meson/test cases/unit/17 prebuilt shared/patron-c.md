@@ -207,7 +207,7 @@ By following these steps and iteratively refining the analysis, we arrive at a c
 
 `patron.c` 作为一个简单的测试程序，其主要作用是提供一个可以被 Frida 动态分析的目标。它演示了调用外部库函数的基本场景，可以用来测试 Frida 的 hook 功能，系统调用跟踪，以及内存观察等能力。  这个文件路径揭示了它很可能是在 Frida 的 Node.js 绑定项目的 release engineering 过程中，作为单元测试用例存在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/unit/17 prebuilt shared/patron.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -215,8 +215,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<alexandria.h>
 #include<stdio.h>
 
@@ -226,7 +228,4 @@ int main(int argc, char **argv) {
     alexandria_visit();
     return 0;
 }
-
-"""
-
 ```

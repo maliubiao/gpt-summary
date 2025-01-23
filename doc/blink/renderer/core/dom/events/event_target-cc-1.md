@@ -306,7 +306,7 @@ By following this systematic approach, I can thoroughly analyze the code snippet
 
 这部分 `event_target.cc` 代码是 Blink 引擎中事件处理机制的核心组成部分，负责移除事件监听器和触发事件。它与 JavaScript 的事件 API 紧密相连，并处理由 HTML 结构和 CSS 样式变化引发的事件。理解这部分代码有助于深入了解浏览器如何响应用户交互和页面状态变化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/dom/events/event_target.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -314,8 +314,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 n removeEventListener(event_type, event_listener, /*use_capture=*/false);
 }
 
@@ -729,8 +731,4 @@ void EventTarget::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

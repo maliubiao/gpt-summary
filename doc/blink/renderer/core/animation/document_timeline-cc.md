@@ -221,14 +221,16 @@ By following this structured approach, breaking down the code, and considering t
 
 总而言之，`document_timeline.cc` 中定义的 `DocumentTimeline` 类是 Blink 引擎中管理动画时间流逝的核心，它连接了 JavaScript 的 Web Animations API、HTML 文档结构以及 CSS 动画和过渡效果，确保了 Web 页面上动画的协调和流畅运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/document_timeline.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2013 Google Inc. All rights reserved.
  *
@@ -459,7 +461,4 @@ void DocumentTimeline::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

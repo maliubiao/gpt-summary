@@ -184,7 +184,7 @@ sys.stdin.read()
 
 总而言之，这个简单的 `main.c` 文件是 Frida 测试套件中的一个基础测试用例，用于验证 Frida 对外部函数调用的处理能力。它通过一个简单的平方计算示例，展示了动态插桩技术在逆向工程和调试中的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/127 generated assembly/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -192,8 +192,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 #if defined(_WIN32) || defined(__CYGWIN__)
@@ -210,7 +212,4 @@ int main(void)
   }
   return 0;
 }
-
-"""
-
 ```

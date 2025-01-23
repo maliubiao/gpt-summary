@@ -48,15 +48,17 @@ The user wants a summary of the functionality of the provided C++ code. I need t
 
 `blink/renderer/platform/image-decoders/png/png_image_decoder.cc` 文件的主要功能是解码 PNG 格式的图像数据，并处理与颜色管理、HDR元数据、Exif 元数据以及隔行扫描相关的特性。它是 Blink 引擎中渲染 PNG 图像的关键组成部分，直接影响到在 HTML 页面和通过 JavaScript Canvas API 使用 PNG 图像的能力。 代码具备一定的错误处理和安全机制，以应对潜在的输入错误和恶意攻击。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/png/png_image_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2006 Apple Computer, Inc.
  * Copyright (C) Research In Motion Limited 2009-2010. All rights reserved.
@@ -970,8 +972,5 @@ void PNGImageDecoder::RowAvailable(unsigned char* row_buffer,
       // written to the ImageFrame.
       // TODO: Apply the xform to the RGB pixels, skipping second pass over
       // data.
-      if (ColorProfileTransform* xform = 
-"""
-
-
+      if (ColorProfileTransform* xform =
 ```

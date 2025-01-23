@@ -209,7 +209,7 @@ console.log(joinedString);
 
 总的来说，这部分代码是 V8 引擎中对象系统的重要组成部分，为 JavaScript 语言中灵活的对象模型提供了底层的 C++ 实现。它处理了对象属性的元信息、代理机制以及与性能相关的优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -217,8 +217,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 eneric name, this can only add private data properties.
   if (!PropertyDescriptor::IsDataDescriptor(desc) ||
       desc->ToAttributes() != DONT_ENUM) {
@@ -1064,7 +1066,4 @@ void Oddball::Initialize(Isolate* isolate, DirectHandle<Oddball> oddball,
                          const char* type_of, uint8_t kind) {
   DirectHandle<String> internalized_to_string =
       isolate->factory()->Interna
-"""
-
-
 ```

@@ -112,11 +112,13 @@ V8 的逃逸分析器会识别出 `point1` 和 `point2` 对象**不会逃逸** `
 
 `v8/src/compiler/escape-analysis.cc` 文件实现了 V8 引擎中用于分析对象逃逸行为的关键编译器优化。通过识别未逃逸的对象，编译器可以应用栈上分配、标量替换等优化，显著提高 JavaScript 代码的执行效率并降低垃圾回收的压力。 这项技术对于编写高性能的 JavaScript 应用至关重要，尽管开发者通常不需要直接操作或感知其存在。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/escape-analysis.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1061,7 +1063,4 @@ VirtualObject::VirtualObject(VariableTracker* var_states, VirtualObject::Id id,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

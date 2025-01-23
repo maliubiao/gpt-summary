@@ -224,15 +224,17 @@ inline bool WasmInterpreterRuntime::BoundsCheckMemRange(
 
 理解 `wasm-interpreter-runtime-inl.h` 中的功能对于深入了解 V8 如何执行 WebAssembly 代码至关重要。它揭示了内存管理、全局变量访问、引用类型处理等关键操作的底层实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/interpreter/wasm-interpreter-runtime-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/interpreter/wasm-interpreter-runtime-inl.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -398,7 +400,4 @@ inline WasmInterpreterThread::State InterpreterHandle::ContinueExecution(
 }  // namespace v8
 
 #endif  // V8_WASM_INTERPRETER_WASM_INTERPRETER_RUNTIME_INL_H_
-
-"""
-
 ```

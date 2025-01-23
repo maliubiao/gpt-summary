@@ -95,7 +95,7 @@ The user wants to understand the functionality of the Python code provided, whic
 
 总而言之，`dev.py` 文件是 Frida 构建系统的关键组成部分，负责处理各种开发依赖项的查找、配置和管理，确保 Frida 能够成功编译和链接。它涉及到操作系统、编译器、链接器以及各种开发库的底层知识，对于理解 Frida 的构建过程至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/mesonbuild/dependencies/dev.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -103,8 +103,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2019 The Meson development team
 
@@ -812,7 +814,4 @@ packages['zlib'] = zlib_factory = DependencyFactory(
     cmake_name='ZLIB',
     system_class=ZlibSystemDependency,
 )
-
-"""
-
 ```

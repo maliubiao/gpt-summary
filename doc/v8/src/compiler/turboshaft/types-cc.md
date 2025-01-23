@@ -202,15 +202,17 @@ let myArray = [1, 2, "hello"];
 
 The code you provided ends with `.cc`, which signifies a C++ source file. If a file in V8's codebase ends with `.tq`, it indicates a **Torque** source file. Torque is a domain-specific language used within V8 to define built-in functions and runtime code in a more structured and type-safe way compared to raw C++. The provided file is **not** a Torque file.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/types.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/turboshaft/types.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -927,7 +929,4 @@ template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE) FloatType<32>;
 template class EXPORT_TEMPLATE_DEFINE(V8_EXPORT_PRIVATE) FloatType<64>;
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

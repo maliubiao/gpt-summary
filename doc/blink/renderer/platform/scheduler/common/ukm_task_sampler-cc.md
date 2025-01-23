@@ -141,14 +141,16 @@ This structured approach ensures that all aspects of the request are addressed c
 
 总而言之，`UkmTaskSampler` 是 Blink 渲染引擎中一个用于控制 UKM 任务采样的关键组件，它间接地与 JavaScript, HTML, CSS 的处理过程相关，因为它决定了是否为执行这些操作相关的任务收集性能数据。理解其工作原理对于分析 Chromium 的性能数据至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/ukm_task_sampler.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -202,7 +204,4 @@ void UkmTaskSampler::SetUkmTaskSamplingRate(double rate) {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

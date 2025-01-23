@@ -115,14 +115,16 @@ By following this systematic approach, breaking down the code into manageable pa
 
 总而言之，`IdentifiableTokenBuilder` 是一个用于生成隐私保护令牌的关键组件，它通过分块和链式哈希处理输入数据。理解其工作原理对于在 Blink 引擎中正确使用和调试相关功能至关重要。虽然它本身是 C++ 代码，但其生成的令牌可能会被上层的 JavaScript API 或 Web 标准所使用，以实现各种与隐私相关的特性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/privacy_budget/identifiable_token_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -275,7 +277,4 @@ IdentifiableTokenBuilder::ByteSpan IdentifiableTokenBuilder::GetPartialBlock()
 }
 
 }  // namespace blink
-
-"""
-
 ```

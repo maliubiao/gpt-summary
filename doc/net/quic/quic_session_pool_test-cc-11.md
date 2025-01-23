@@ -135,7 +135,7 @@ By following these steps, I was able to dissect the C++ code snippet, understand
 
 总而言之，`net/quic/quic_session_pool_test.cc` 是一个关键的测试文件，用于确保 Chromium 的 QUIC 连接管理组件 `QuicSessionPool` 能够可靠地工作，特别是在网络环境发生变化时能够平滑地进行连接迁移，从而提供更好的用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/quic/quic_session_pool_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第12部分，共20部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 Session(factory_.get(), session));
   EXPECT_TRUE(HasActiveSession(kDefaultDestination));
   EXPECT_EQ(1u, session->GetNumActiveStreams());
@@ -875,7 +877,4 @@ void QuicSessionPoolTest::TestMigrationOnWriteErrorWithMultipleRequests(
   quic::QuicConnectionId cid_on_new_path =
       quic::test::TestConnectionId(12345678);
   client_maker_.set_connection_id(cid_o
-"""
-
-
 ```

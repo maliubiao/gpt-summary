@@ -228,7 +228,7 @@ sys.stdin.read()
 
 这个测试文件 `elftls_dynamic.cpp` 是 Bionic 动态链接器 TLS 功能测试的重要组成部分，它通过各种场景验证了 TLS 变量在动态加载的共享对象中的正确行为。理解这个文件的功能有助于深入理解 Android 底层的动态链接和线程管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/libs/elftls_dynamic.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -239,8 +239,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2019 The Android Open Source Project
  * All rights reserved.
@@ -326,7 +328,4 @@ __attribute__((weak)) extern "C" __thread int missing_weak_dyn_tls;
 extern "C" int* missing_weak_dyn_tls_addr() {
   return &missing_weak_dyn_tls;
 }
-
-"""
-
 ```

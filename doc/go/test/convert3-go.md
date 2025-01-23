@@ -183,15 +183,17 @@ func main() {
 
 `go/test/convert3.go` 这个文件通过一系列合法的和非法的类型转换示例，用于测试 Go 编译器的类型检查能力。它不是一个可以直接运行的程序，而是作为 `go test` 工具的输入，验证编译器是否能够正确地识别并报告预期的类型转换错误。使用者需要注意 Go 语言中类型转换的规则，特别是自定义类型之间的转换需要显式进行。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/convert3.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -221,9 +223,4 @@ type J []int
 var h H
 var j1 J = h // ERROR "compat|illegal|cannot"
 var j2 = J(h)
-
-"""
-
-
-
 ```

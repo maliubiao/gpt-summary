@@ -164,15 +164,17 @@ This iterative process of reading, inferring, connecting, exemplifying, and orga
 
 因此，要调试与 `XRTransientInputHitTestResult` 相关的 WebXR 问题，可以从用户的交互行为（按钮按下）开始，逐步跟踪 JavaScript 代码中 `requestTransientInputHitTest()` 的调用，然后查看浏览器底层如何处理这个请求，最终关注 Blink 渲染引擎如何封装和返回命中测试结果。可以使用浏览器的开发者工具（例如 Chrome 的 DevTools）来断点调试 JavaScript 代码，并查看 WebXR API 的调用和返回值。对于更底层的调试，可能需要查看 Chromium 的日志或进行更深入的代码分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_transient_input_hit_test_result.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -215,7 +217,4 @@ void XRTransientInputHitTestResult::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

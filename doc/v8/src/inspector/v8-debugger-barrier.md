@@ -92,11 +92,13 @@ myFunction();
 
 `V8DebuggerBarrier` 是 V8 引擎内部用于支持 JavaScript 调试的基础设施。 它允许 V8 在特定代码执行点暂停，并在适当的时候通知调试器恢复执行。  JavaScript 开发者不需要直接与它交互，但他们的调试行为依赖于这种底层的机制。  它就像幕后的工作者，确保调试功能的正常运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/inspector/v8-debugger-barrier.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -116,7 +118,4 @@ V8DebuggerBarrier::~V8DebuggerBarrier() {
 }
 
 }  // namespace v8_inspector
-
-"""
-
 ```

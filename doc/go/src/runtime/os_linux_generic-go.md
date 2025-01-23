@@ -174,7 +174,7 @@ func main() {
 
 在这个例子中，直接使用数字 `2` 来添加信号到 `sigset` 是不推荐的，因为信号编号可能不是固定的。另外，在使用 `os/signal` 包时，如果使用 `signal.Notify` 捕获信号后，忘记使用 `signal.Stop` 停止信号转发，可能会导致一些意外的行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os_linux_generic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -182,8 +182,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -221,9 +223,4 @@ func sigdelset(mask *sigset, i int) {
 func sigfillset(mask *uint64) {
 	*mask = ^uint64(0)
 }
-
-"""
-
-
-
 ```

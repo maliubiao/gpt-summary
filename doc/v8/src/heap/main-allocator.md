@@ -77,11 +77,13 @@ let num = new Number(5);
 
 **总结来说，`v8/src/heap/main-allocator.cc` 中定义的 `MainAllocator` 类是 V8 引擎进行核心内存分配的模块，它负责在堆上为 JavaScript 对象和其他内部数据结构分配原始内存。 每当你执行 JavaScript 代码并创建对象时，`MainAllocator` 都在幕后默默地工作。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/main-allocator.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1033,7 +1035,4 @@ void PagedSpaceAllocatorPolicy::FreeLinearAllocationAreaUnsynchronized() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

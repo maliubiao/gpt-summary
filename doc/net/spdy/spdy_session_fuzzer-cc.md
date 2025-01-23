@@ -155,15 +155,17 @@ fetch('https://spdy-enabled-server.example.com/data')
 
 总而言之，`net/spdy/spdy_session_fuzzer.cc` 是一个用于自动化测试 Chromium SPDY 会话实现的关键工具，它通过生成随机输入来发现潜在的错误和漏洞，从而提高网络栈的稳定性和安全性。 虽然它不直接与 JavaScript 交互，但它保证了浏览器在处理基于 SPDY 的网络请求时的正确性，这直接影响到用户的浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_session_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -338,7 +340,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
   return 0;
 }
-
-"""
-
 ```

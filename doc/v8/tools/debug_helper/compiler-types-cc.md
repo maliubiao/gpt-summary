@@ -144,15 +144,17 @@ console.log(getTypeName(7));                    // 输出 "Unknown" (假设没�
 
 总之，`v8/tools/debug_helper/compiler-types.cc` 是 V8 内部的一个辅助文件，用于在调试编译器时提供 Bitset 类型的名称信息，这间接地与 JavaScript 的类型系统和性能优化有关。理解其功能有助于更深入地了解 V8 的内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/tools/debug_helper/compiler-types.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/tools/debug_helper/compiler-types.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -184,7 +186,4 @@ V8_DEBUG_HELPER_EXPORT const char* _v8_debug_helper_BitsetName(
   }
 }
 }
-
-"""
-
 ```

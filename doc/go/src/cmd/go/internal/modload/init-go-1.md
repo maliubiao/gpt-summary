@@ -183,7 +183,7 @@ Now, let's prepare the code examples, command-line details, and potential pitfal
 
 这些功能是 Go Modules 工作流程中至关重要的组成部分，它们共同保障了依赖管理的可靠性和构建结果的一致性。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/modload/init.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -191,8 +191,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 t bumped to a different version, but that's
 			// a lot of work for marginal benefit. Instead, fail the command: if users
 			// want to run concurrent commands, they need to start with a complete,
@@ -416,10 +418,4 @@ func CheckGodebug(verb, k, v string) error {
 	}
 	return fmt.Errorf("unknown %s %q", verb, k)
 }
-
-"""
-
-
-
-
 ```

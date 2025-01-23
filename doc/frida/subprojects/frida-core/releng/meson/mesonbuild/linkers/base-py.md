@@ -163,7 +163,7 @@ While this specific file is part of the internal workings of the build system, u
 
 In summary, while end-users of Frida won't directly interact with this Python file, it plays a crucial role in Frida's build system. Understanding its purpose and the concepts it represents (linkers, response files, standard arguments) can be valuable for developers working on Frida itself or for those trying to debug complex build issues related to linking. It serves as an abstraction layer that helps Meson manage the complexities of different linker implementations across various platforms.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/linkers/base.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,8 +171,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2023 The Meson development team
 
@@ -212,7 +214,4 @@ class ArLikeLinker:
 
     def rsp_file_syntax(self) -> RSPFileSyntax:
         return RSPFileSyntax.GCC
-
-"""
-
 ```

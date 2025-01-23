@@ -174,7 +174,7 @@ This detailed thinking process covers the core aspects of understanding the code
 
 `frida/subprojects/frida-python/releng/meson/mesonbuild/coredata.py` 文件的第三部分主要定义了 Frida 项目中用于构建过程的**更多内置配置选项**。这些选项涵盖了静态链接偏好、测试日志处理、符号去除、编译优化（Unity 构建）、编译器警告级别控制、依赖项处理、Python 模块的编译和安装位置等多个方面。通过这些选项，用户可以细粒度地定制 Frida 的构建过程，以适应不同的需求和环境。这些选项的设计考虑了跨平台构建、Python 集成以及对最终生成物的一些特性控制（如是否去除符号），这对于 Frida 这样的复杂项目至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/mesonbuild/coredata.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 ption(UserBooleanOption, 'Whether to try static linking before shared linking', False)),
     (OptionKey('stdsplit'),        BuiltinOption(UserBooleanOption, 'Split stdout and stderr in test logs', True)),
     (OptionKey('strip'),           BuiltinOption(UserBooleanOption, 'Strip targets on install', False)),
@@ -252,8 +254,4 @@ FORBIDDEN_TARGET_NAMES = frozenset({
     'dist',
     'distcheck',
 })
-
-"""
-
-
 ```

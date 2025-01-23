@@ -138,7 +138,7 @@ Let's break down the thought process for analyzing this C code snippet within th
 
 通过这样的步骤，用户可以利用 Frida 对未定义或需要运行时修改的函数进行动态分析和操作。这个简单的 `prog.c` 文件是理解 Frida 工作原理和进行动态逆向的良好起点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/common/208 link custom/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,15 +146,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void flob(void);
 
 int main(void) {
     flob();
     return 0;
 }
-
-"""
-
 ```

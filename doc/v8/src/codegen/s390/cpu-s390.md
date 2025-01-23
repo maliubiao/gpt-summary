@@ -93,11 +93,13 @@ dynamicFunction();
 
 `v8/src/codegen/s390/cpu-s390.cc` 文件定义了 s390 架构特有的 CPU 相关操作。目前，它只包含一个空的 `FlushICache` 函数。尽管该函数在 s390 上不执行任何操作，但它反映了指令缓存刷新在动态代码生成场景下的重要性，以及 s390 架构如何通过其强大的内存模型简化了这一过程，使得 V8 不需要显式地进行指令缓存刷新。  JavaScript 中使用 `eval()` 或 `Function()` 构造函数会导致动态生成代码，这在其他架构上可能需要显式地刷新指令缓存，但在 s390 上是自动处理的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/s390/cpu-s390.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -122,7 +124,4 @@ void CpuFeatures::FlushICache(void* buffer, size_t size) {
 }  // namespace v8
 
 #endif  // V8_TARGET_ARCH_S390X
-
-"""
-
 ```

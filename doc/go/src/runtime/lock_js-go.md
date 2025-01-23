@@ -224,7 +224,7 @@ Goroutine 1: 接收到通知！
 
 总而言之，`go/src/runtime/lock_js.go` 是 Go 语言在 JavaScript/WebAssembly 环境下实现同步机制和与 JavaScript 环境交互的核心部分，它针对单线程环境进行了优化，并依赖于 JavaScript 的事件循环来实现异步操作和超时机制。理解其工作原理对于开发在 WebAssembly 上运行的 Go 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/lock_js.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -232,8 +232,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2018 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -545,9 +547,4 @@ var eventHandler func() bool
 func setEventHandler(fn func() bool) {
 	eventHandler = fn
 }
-
-"""
-
-
-
 ```

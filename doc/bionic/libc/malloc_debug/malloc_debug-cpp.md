@@ -105,7 +105,7 @@ if (Process.arch === "arm64" || Process.arch === "arm") {
 
 总而言之，`bionic/libc/malloc_debug/malloc_debug.cpp` 的第一部分定义了内存调试框架的核心结构和入口点，通过包装标准的内存分配函数，并利用各种调试选项和辅助数据结构，为开发者提供了强大的内存错误检测和分析能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/malloc_debug/malloc_debug.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -117,8 +117,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 The Android Open Source Project
  * All rights reserved.
@@ -1194,8 +1196,4 @@ int debug_malloc_info(int options, FILE* fp) {
       i++;
       total++;
     }
-
-"""
-
-
 ```

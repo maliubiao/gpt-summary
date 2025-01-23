@@ -101,7 +101,7 @@ By following these steps, iteratively refining the analysis, and focusing on the
 
 当逆向工程师或者开发者看到这段代码时，如果遇到编译错误，可以立即明白问题在于 `FOO` 或 `BAR` 宏没有被定义。这为他们提供了明确的调试线索，让他们知道需要在编译时设置这些宏。  对于使用 Frida 的场景，如果目标程序有类似的编译时检查，逆向工程师可以考虑在运行时使用 Frida 来绕过这些检查，而不是修改编译过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/9 d dedup/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 #ifndef FOO
@@ -125,7 +127,4 @@ int main(int argc, char **argv) {
     printf("All is well.\n");
     return 0;
 }
-
-"""
-
 ```

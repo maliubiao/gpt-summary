@@ -160,7 +160,7 @@ go tool pprof myapp
 
 `elfBuildID` 函数是 Go `runtime/pprof` 包中一个关键的组成部分，负责从 ELF 文件中提取 GNU Build ID。这个 ID 用于在性能分析过程中唯一标识二进制文件，确保性能数据能够准确地映射回源代码，尤其是在处理多个版本的二进制文件时。虽然开发者通常不会直接调用它，但了解其功能有助于理解 Go 性能分析工具链的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/pprof/elf.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -168,8 +168,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -279,9 +281,4 @@ func elfBuildID(file string) (string, error) {
 	}
 	return "", errNoBuildID
 }
-
-"""
-
-
-
 ```

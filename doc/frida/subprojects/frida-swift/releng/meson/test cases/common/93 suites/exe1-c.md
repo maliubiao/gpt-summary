@@ -165,7 +165,7 @@ Frida 会抛出一个错误，指示找不到名为 `wrong_process_name` 的进�
 
 总而言之，`exe1.c` 作为一个极其简单的 C 程序，在 Frida 的测试框架中扮演着一个基础但重要的角色，用于验证和测试动态 instrumentation 工具的基本功能。它本身的功能很简单，但其存在是为了服务于更复杂的逆向工程和动态分析任务。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/common/93 suites/exe1.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -173,15 +173,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
     printf("I am test exe1.\n");
     return 0;
 }
-
-"""
-
 ```

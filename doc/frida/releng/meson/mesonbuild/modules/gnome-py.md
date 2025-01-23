@@ -77,7 +77,7 @@ gnome.compile_resources(
 
 `frida/releng/meson/mesonbuild/modules/gnome.py` 的主要功能是为 Frida 的构建过程提供与 GNOME/GLib 组件集成的能力。它封装了各种 GNOME 构建工具，例如用于编译资源、生成 GObject 自省信息和处理文档的工具。虽然它本身不直接参与 Frida 的运行时动态分析，但它生成的工件（如 `.gir` 文件和编译后的资源）可以为逆向分析提供有价值的信息。该模块旨在简化 GNOME/GLib 组件在 Frida 构建系统中的集成和管理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/modules/gnome.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -86,8 +86,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2015-2016 The Meson development team
 
@@ -811,8 +813,5 @@ class GnomeModule(ExtensionModule):
                 mlog.log(f'dependency {dep!r} not handled to build gir files')
                 continue
 
-        if use_gir_args and 
-"""
-
-
+        if use_gir_args and
 ```

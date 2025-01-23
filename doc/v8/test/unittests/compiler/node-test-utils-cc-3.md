@@ -111,7 +111,7 @@ console.log(obj.b); // 属性 'b' 不存在
 
 作为本系列的第 4 部分，这段 `node-test-utils.cc` 代码展示了 V8 编译器的测试基础设施中用于断言生成的中间表示（IR）结构的关键工具。它提供了一组方便的函数（通过宏定义简化创建），允许测试编写者针对特定的节点类型和属性编写精确的匹配器。这些匹配器是确保编译器正确地将 JavaScript 代码转换为高效机器代码的重要组成部分，并有助于检测编译器在处理各种 JavaScript 构造时可能出现的错误。通过这些工具，开发者可以有效地验证编译器的行为，保证 V8 的质量和可靠性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/compiler/node-test-utils.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/compiler/node-test-utils.cc以.tq结尾，那它是个v8 torque源代码，
@@ -119,8 +119,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ggedSigned(
     const Matcher<Node*>& input_matcher) {
   return MakeMatcher(
@@ -135,8 +137,4 @@ ggedSigned(
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

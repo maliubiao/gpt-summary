@@ -80,14 +80,16 @@ Response: Here's a thinking process to arrive at the explanation of `supplementa
 
 `blink/renderer/platform/supplementable.cc`  是一个技术性的解决方案，用于确保 C++ 模板类在 Blink 引擎中正确链接。它本身不直接处理 JavaScript、HTML 或 CSS，但为其他处理这些技术的组件提供了基础设施。对于开发者而言，理解其存在的意义，避免误删或忽略，是避免链接错误的关键。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/supplementable.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -101,7 +103,4 @@ Prompt:
 // when constructor/destructor's address is required.
 // i.e. error LNK2005: "public: virtual __cdecl
 // blink::SupplementTracing<0>::~SupplementTracing<0>(void)"
-
-"""
-
 ```

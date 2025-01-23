@@ -106,15 +106,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 总而言之，这个特定的代码片段是 Blink 字符编码测试框架的重要组成部分，它通过提供详尽的映射数据，确保 Blink 引擎能够正确地处理各种字符编码，从而保证 Web 页面的正常显示和功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/encoding_tables_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第15部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ,
     {13416, 0xD4A9}, {13417, 0xD4CC}, {13418, 0xD4D0}, {13419, 0xD4D4},
     {13420, 0xD4DC}, {13421, 0xD4DF}, {13422, 0xD4E8}, {13423, 0xD4EC},
@@ -572,7 +574,4 @@ Prompt:
     {17242, 0x80DA}, {17243, 0x88F4}, {17244, 0x88F5}, {17245, 0x8919},
     {17246, 0x8CE0}, {17247, 0x8F29}, {17248, 0x914D}, {17249, 0x966A},
     {1
-"""
-
-
 ```

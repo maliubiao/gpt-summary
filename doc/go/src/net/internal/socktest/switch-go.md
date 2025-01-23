@@ -158,7 +158,7 @@ func TestConnectFailure(t *testing.T) {
 
 总之，`go/src/net/internal/socktest/switch.go` 提供了一种强大的机制来测试网络相关的代码，但需要仔细理解其工作原理和正确的使用方法，才能有效地进行测试并避免潜在的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/internal/socktest/switch.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -166,8 +166,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2015 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -337,9 +339,4 @@ func (sw *Switch) Set(t FilterType, f Filter) {
 	sw.fltab[t] = f
 	sw.fmu.Unlock()
 }
-
-"""
-
-
-
 ```

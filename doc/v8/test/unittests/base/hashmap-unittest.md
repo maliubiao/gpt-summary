@@ -118,11 +118,13 @@ console.log(mySetLikeMap.size); // 0
 
 `hashmap-unittest.cc` 文件是 V8 引擎中哈希表实现的单元测试，它验证了哈希表的核心功能。由于 JavaScript 的 `Object` 和 `Map` 在底层依赖于哈希表，因此这个 C++ 文件测试的功能直接关系到 JavaScript 引擎的性能和正确性。 理解这个 C++ 文件的功能有助于理解 JavaScript 中对象和 Map 的底层工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/base/hashmap-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2008 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -297,7 +299,4 @@ TEST_F(HashmapTest, HashSet) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

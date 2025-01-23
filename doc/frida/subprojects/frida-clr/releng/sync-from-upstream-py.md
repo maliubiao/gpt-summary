@@ -169,7 +169,7 @@ By following this detailed thought process, moving from high-level understanding
 
 作为调试线索，如果用户报告了与Frida功能相关的问题，而该功能依赖于某个第三方库，那么可以查看该库的同步状态和本地patches。检查 `.frida-sync-` 文件可以了解上次同步的时间和状态。如果同步过程中出现错误，相关的错误信息会提供调试的起点。例如，如果用户报告 `quickjs` 相关的功能异常，可以检查 `quickjs` 的同步状态，查看是否有cherry-pick错误，或者本地patches是否与最新的上游代码不兼容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/sync-from-upstream.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -177,8 +177,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 import os
 from pathlib import Path
 import re
@@ -364,7 +366,4 @@ class UnknownUpstreamError(Exception):
 
 if __name__ == '__main__':
     sync(os.path.abspath(sys.argv[1]))
-
-"""
-
 ```

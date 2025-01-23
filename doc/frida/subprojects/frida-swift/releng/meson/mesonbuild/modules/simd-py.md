@@ -183,7 +183,7 @@ Compiler supports neon: NO
 
 **Debugging Scenario:** If a user reports issues with Frida's performance on a specific device, and you suspect it might be related to SIMD optimizations, tracing the build process and examining the output of the `simd.py` module (e.g., the Meson log showing which instruction sets were detected and the resulting static libraries) can provide valuable clues about whether the expected SIMD optimizations were actually enabled during the build. You might also inspect the generated `build.ninja` files to see the exact compiler flags used for each SIMD variant.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/mesonbuild/modules/simd.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -191,8 +191,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2017 The Meson development team
 
@@ -307,7 +309,4 @@ class SimdModule(ExtensionModule):
 
 def initialize(interp: Interpreter) -> SimdModule:
     return SimdModule(interp)
-
-"""
-
 ```

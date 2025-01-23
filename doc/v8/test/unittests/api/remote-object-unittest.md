@@ -176,11 +176,13 @@ onmessage = function(event) {
 
 这个 C++ 测试文件旨在验证 V8 引擎内部处理不同隔离的 JavaScript 执行环境（例如不同的 Isolate 或类似 Web Workers/IFrames 的场景）中对象的能力。它测试了当对象存在于“远程”上下文时，V8 API 的行为是否符合预期，例如创建上下文为空、类型仍然是 `object`，以及是否能正确进行类型检查等。这些测试确保了 V8 引擎能够安全且正确地管理和操作跨越不同执行边界的对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/api/remote-object-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -286,7 +288,4 @@ TEST_F(RemoteObjectTest, TypeOfRemoteObject) {
 
 }  // namespace remote_object_unittest
 }  // namespace v8
-
-"""
-
 ```

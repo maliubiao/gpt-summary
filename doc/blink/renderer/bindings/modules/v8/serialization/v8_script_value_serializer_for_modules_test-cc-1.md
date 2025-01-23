@@ -111,7 +111,7 @@ This代码片段主要的功能是**测试在Chromium的模块环境中使用`V8
 
 这部分代码的功能是**详细测试了在 Chromium 的模块环境下，`V8ScriptValueSerializerForModules` 对各种类型的加密密钥 (`CryptoKey`) 和特定 DOM 对象 (`DOMFileSystem`, `VideoFrame`) 进行序列化和反序列化的正确性**。 它涵盖了密钥的创建、导出、导入、签名、验证、密钥推导等操作的序列化和反序列化，以及有效和无效数据情况的处理。 对于 `DOMFileSystem` 和 `VideoFrame`，它测试了基本属性的保持以及对象转移的机制。 这些测试确保了在模块环境中使用结构化克隆或消息传递传递这些对象时，其状态和功能能够得到正确的保留和恢复。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/bindings/modules/v8/serialization/v8_script_value_serializer_for_modules_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -119,8 +119,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 sAreArray(key_raw));
 
   // Check that one can verify a message signed by the other.
@@ -806,7 +808,4 @@ TEST(V8ScriptValueSerializerForModulesTest, ClosedVideoFrameThrows) {
   auto* blink_frame = MakeGarbageCollected<VideoFrame>(
       media_frame, scope.GetExecutionContext());
   blink_frame-
-"""
-
-
 ```

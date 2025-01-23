@@ -147,7 +147,7 @@ Initially, I might have focused too much on the simple functionality of the C++ 
 
 这个 `main.cpp` 文件本身是一个非常简单的 C++ 程序，但它的价值在于作为 Frida 构建系统的一个测试用例，专门用于验证在特定子项目隔离场景下，构建系统是否能够正确处理依赖关系。它的存在帮助 Frida 的开发者确保构建系统的健壮性，从而间接支持 Frida 在逆向工程、二进制分析以及与底层系统交互等方面的功能。 开发人员通常会通过分析构建日志和理解构建系统的配置来定位到这个测试用例，以解决构建失败的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/failing build/3 cmake subproject isolation/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -155,8 +155,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <iostream>
 #include <cmMod.hpp>
 
@@ -167,7 +169,4 @@ int main(void) {
   cout << obj.getStr() << endl;
   return 0;
 }
-
-"""
-
 ```

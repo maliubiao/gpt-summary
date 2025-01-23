@@ -144,14 +144,16 @@ Here's a breakdown of the thought process:
 
 总而言之，`week_input_type.cc` 是 Chromium Blink 引擎中处理 HTML week 输入框的核心组件，它负责解析、验证、格式化用户输入，并确保其符合 week 类型的规范，同时与 JavaScript 和 HTML 紧密协作，共同实现网页上的 week 选择功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/forms/week_input_type.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Google Inc. All rights reserved.
  *
@@ -281,7 +283,4 @@ String WeekInputType::AriaLabelForPickerIndicator() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

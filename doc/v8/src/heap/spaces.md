@@ -119,11 +119,13 @@ const largeArray = new Array(1000000).fill(0);
 
 `v8/src/heap/spaces.cc` 定义了 V8 堆内存的基本组织结构，负责管理不同类型的内存空间，并为对象的分配和垃圾回收提供了基础。虽然 JavaScript 开发者无需直接操作这些概念，但理解它们有助于理解 V8 如何高效地管理内存，从而更好地理解 JavaScript 的性能特性。这个文件是 V8 引擎内存管理的核心组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/spaces.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -192,7 +194,4 @@ Space* SpaceIterator::Next() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

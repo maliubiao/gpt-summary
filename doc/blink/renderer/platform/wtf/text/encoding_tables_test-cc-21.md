@@ -84,15 +84,17 @@ This iterative process of analyzing the code, connecting it to broader concepts,
 
 作为 `encoding_tables_test.cc` 的一部分，这段代码主要功能是 **提供大量的测试数据**，用于验证 Blink 引擎中字符编码转换功能的正确性。 考虑到这是该测试文件的第 22 部分，可以推断出整个文件可能包含针对多种不同字符编码的测试用例，或者针对特定编码的不同范围和边缘情况的测试。 这一部分可能专注于测试某个特定复杂或常用的字符编码的映射关系。 确保这些映射关系的正确性对于浏览器正确渲染网页、处理 JavaScript 字符串以及解析 CSS 至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/encoding_tables_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第22部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 AEA, 0x8AEB, 0x8AEC, 0x8AED, 0x8AEE, 0x8AEF, 0x8AF0, 0x8AF1,
      0x8AF2, 0x8AF3, 0x8AF4, 0x8AF5, 0x8AF6, 0x8AF7, 0x8AF8, 0x8AF9, 0x8AFA,
      0x8AFB, 0x8AFC, 0x8AFD, 0x8AFE, 0x8AFF, 0x8B00, 0x8B01, 0x8B02, 0x8B03,
@@ -519,7 +521,4 @@ AEA, 0x8AEB, 0x8AEC, 0x8AED, 0x8AEE, 0x8AEF, 0x8AF0, 0x8AF1,
      0x95D8, 0x95D9, 0x95DA, 0x95DB, 0x95DC, 0x95DD, 0x95DE, 0x95DF, 0x95E0,
      0x95E1, 0x95E2, 0x95E3, 0x95E4, 0x95E5, 0x95E6, 0x95E7, 0x95EC, 0x95FF,
      0x9607, 0x9613, 0x9618, 0x961B, 0x961E, 0x9620, 0x9623
-"""
-
-
 ```

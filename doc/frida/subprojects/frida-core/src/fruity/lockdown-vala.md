@@ -109,7 +109,7 @@ def __lldb_init_module(debugger, internal_dict):
 - **错误处理**：在 `error_from_service` 和 `error_from_plist` 方法中添加日志输出，观察错误的具体原因。
 
 通过这些调试手段，可以更好地理解 `LockdownClient` 的工作机制，并快速定位和解决用户遇到的问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/src/fruity/lockdown.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -118,8 +118,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 [CCode (gir_namespace = "FridaFruity", gir_version = "1.0")]
 namespace Frida.Fruity {
 	public class LockdownClient : Object {
@@ -405,7 +407,4 @@ namespace Frida.Fruity {
 		PROTOCOL
 	}
 }
-
-"""
-
 ```

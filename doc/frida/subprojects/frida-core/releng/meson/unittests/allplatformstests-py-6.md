@@ -122,7 +122,7 @@ As the final part of a multi-part exploration of this file, we can summarize its
 
 This `allplatformstests.py` file serves as the **comprehensive integration test suite for the Frida Core build process, utilizing the Meson build system.** It ensures the reliability and correctness of the core Frida library across various platforms by verifying a wide range of build configurations, installation procedures, and interactions with the underlying operating system and build tools. Its purpose is to catch potential errors and inconsistencies in the build process, guaranteeing that users and developers can build and install Frida Core correctly, which is fundamental for its dynamic instrumentation capabilities. It plays a crucial role in maintaining the quality and cross-platform compatibility of the Frida project.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/unittests/allplatformstests.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -131,8 +131,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 DCXXFLAG'}
         srcdir = os.path.join(self.unit_test_dir, '88 multiple envvars')
         self.init(srcdir, override_envvars=envs)
@@ -869,8 +871,4 @@ DCXXFLAG'}
             # The first supported std should be selected
             self.setconf('-Dcpp_std=c++11,gnu++11,vc++11')
             self.assertEqual(self.getconf('cpp_std'), 'c++11')
-
-"""
-
-
 ```

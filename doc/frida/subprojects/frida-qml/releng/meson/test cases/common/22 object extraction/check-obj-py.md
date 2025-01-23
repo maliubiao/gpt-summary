@@ -185,7 +185,7 @@ python check-obj.py ninja unexpected_output.o
 
 总而言之，`check-obj.py` 是一个简单的但重要的实用工具，用于在 Frida 的构建过程中确保关键的编译产物被正确生成。它依赖于构建系统的输出信息 (`compile_commands.json`) 来进行验证，这体现了现代软件开发中构建系统和自动化测试的重要性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/22 object extraction/check-obj.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -193,8 +193,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #! /usr/bin/env python3
 
 import json
@@ -216,7 +218,4 @@ for obj in sys.argv[2:]:
     if sys.argv[1] == 'ninja' and obj not in output:
         sys.exit(1)
     print('Verified', obj)
-
-"""
-
 ```

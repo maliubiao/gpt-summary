@@ -154,7 +154,7 @@ By iteratively considering the context, deconstructing the code, and connecting 
 
 尽管 `other.py` 本身的代码非常简单，但它在 Frida 的测试体系中扮演着重要的角色，用于验证覆盖机制在特定场景下的行为。它的存在揭示了 Frida 底层操作的复杂性，涉及到二进制、操作系统和进程管理的知识。理解这种测试用例有助于我们更好地理解 Frida 的工作原理，以及在使用 Frida 进行逆向分析时可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/failing/67 override used/other.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,12 +162,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 print('Doing something else.')
-
-"""
-
 ```

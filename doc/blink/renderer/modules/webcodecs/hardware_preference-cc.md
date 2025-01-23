@@ -172,15 +172,17 @@ By following these steps, which involve careful reading, deduction, connecting c
 
 总而言之，`hardware_preference.cc` 文件虽然是底层的 C++ 代码，但它直接支持了 WebCodecs API 中 `hardwarePreference` 选项的功能，从而允许 JavaScript 开发者在网页上控制音视频编解码的硬件加速偏好。用户通过与网页的交互，触发 JavaScript 代码的执行，最终导致这个 C++ 文件的相关函数被调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/hardware_preference.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -216,7 +218,4 @@ String HardwarePreferenceToString(HardwarePreference hw_pref) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

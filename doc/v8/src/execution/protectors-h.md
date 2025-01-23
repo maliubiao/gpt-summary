@@ -171,15 +171,17 @@ globalThis.Array = function() { return {}; };
 
 总之，`v8/src/execution/protectors.h` 定义了 V8 引擎用于优化 JavaScript 执行的关键保护机制。避免修改内置对象是编写高性能且可维护的 JavaScript 代码的重要原则。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/execution/protectors.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/execution/protectors.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2019 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -294,7 +296,4 @@ class Protectors : public AllStatic {
 }  // namespace v8
 
 #endif  // V8_EXECUTION_PROTECTORS_H_
-
-"""
-
 ```

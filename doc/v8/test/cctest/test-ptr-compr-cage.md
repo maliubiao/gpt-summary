@@ -105,11 +105,13 @@ This systematic approach, moving from the overall purpose to detailed analysis a
 const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
 
 if (
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-ptr-compr-cage.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -280,7 +282,4 @@ UNINITIALIZED_TEST(SharedPtrComprCageImpliesSharedReadOnlyHeap) {
 }  // namespace v8
 
 #endif  // V8_COMPRESS_POINTERS
-
-"""
-
 ```

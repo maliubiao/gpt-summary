@@ -123,11 +123,13 @@ let derivedInstance = new Derived("world");
 
 `gc-info-unittest.cc` 这个文件测试的是 V8 引擎内部 C++ 垃圾回收机制的关键组件。虽然 JavaScript 开发者无法直接触及这些概念，但它们直接影响着 JavaScript 对象的内存管理和生命周期，确保 JavaScript 代码能够安全高效地运行。`GCInfo` 和 `GCInfoTable` 提供了一种结构化的方式来存储和访问 C++ 对象的垃圾回收元数据，而 `GCInfoTrait` 和 `GCInfoFolding` 则是为了提高效率和减少内存占用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/gc-info-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -412,7 +414,4 @@ static_assert(std::is_same<typename internal::GCInfoFolding<
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

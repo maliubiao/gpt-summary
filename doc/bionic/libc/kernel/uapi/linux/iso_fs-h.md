@@ -215,7 +215,7 @@ setImmediate(main);
 
 这个 `iso_fs.h` 头文件虽然不包含可执行代码，但它是 Android 内核处理 ISO 9660 文件系统的基础，定义了内核理解 ISO 镜像的“语言”。用户空间的应用程序和框架通过系统调用与内核交互，最终依赖于这些底层的结构体定义来正确访问 ISO 镜像中的数据。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/iso_fs.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -226,8 +226,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -370,7 +372,4 @@ struct iso_directory_record {
 #define ISOFS_BUFFER_SIZE(INODE) ((INODE)->i_sb->s_blocksize)
 #define ISOFS_BUFFER_BITS(INODE) ((INODE)->i_sb->s_blocksize_bits)
 #endif
-
-"""
-
 ```

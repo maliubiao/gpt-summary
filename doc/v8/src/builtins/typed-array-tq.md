@@ -176,14 +176,16 @@ Here's a breakdown of its key functionalities:
 
 In summary, this Torque file lays the foundational groundwork for the efficient and correct implementation of JavaScript Typed Arrays in V8. It defines the different element types, provides utilities for calculating sizes and checking alignment, and sets up the mechanisms for accessing and manipulating the underlying memory, while also addressing potential issues like detached buffers.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/typed-array.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -513,7 +515,4 @@ builtin StoreTypedElementJSAny<T : type extends ElementsKind>(
   return kStoreSucceded;
 }
 }
-
-"""
-
 ```

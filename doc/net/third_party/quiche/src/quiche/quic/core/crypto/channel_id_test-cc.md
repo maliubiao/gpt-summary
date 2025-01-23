@@ -139,15 +139,17 @@ Channel ID 是一种用于在 TLS 握手期间向服务器提供匿名客户端�
 
 总而言之，`channel_id_test.cc` 是确保 Channel ID 功能正确性和安全性的重要组成部分。通过详尽的测试用例，它可以帮助开发者理解和验证 Channel ID 的实现，并排查潜在的问题。虽然用户通常不会直接接触到这个文件，但它背后的逻辑直接影响着用户在使用 Chrome 浏览器访问网站时的隐私和安全体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/crypto/channel_id_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -433,7 +435,4 @@ TEST_F(ChannelIDTest, VerifyKnownAnswerTest) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

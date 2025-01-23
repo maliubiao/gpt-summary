@@ -175,7 +175,7 @@ func main() {
 
 总而言之，`go/src/strconv/quote_test.go` 这个文件通过大量的测试用例，细致地验证了 `strconv` 包中与字符串和 rune 的引用和反引用功能是否正确可靠。 这对于确保 `strconv` 包在处理字符串表示时的准确性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/strconv/quote_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -183,8 +183,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2009 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -569,9 +571,4 @@ func BenchmarkUnquoteHard(b *testing.B) {
 		Unquote(`"\x47ive me a \x72ock, \x70aper and \x73cissors and \x49 will move the world."`)
 	}
 }
-
-"""
-
-
-
 ```

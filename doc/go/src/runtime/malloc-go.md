@@ -194,7 +194,7 @@ func main() {
 
 提供的代码片段是 Go 语言运行时内存分配器的核心部分，它定义了内存分配的基本结构、小对象和大对象的分配流程、内存回收机制、虚拟内存布局以及相关的常量和初始化过程。它负责 Go 程序中动态内存的申请和管理，是 Go 语言高效内存管理的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/malloc.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -203,8 +203,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1038,9 +1040,4 @@ mapped:
 // aligned to align bytes. It may reserve either n or n+align bytes,
 // so it returns the size that was reserved.
 func sysReserveAligned(v unsafe.Pointer, size, align uintptr) (unsa
-"""
-
-
-
-
 ```

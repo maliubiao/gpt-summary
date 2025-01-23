@@ -219,14 +219,16 @@ By following this structured approach, exploring the code's purpose, its interac
 
 总而言之，`hyphenation_apple.cc` 是 Blink 引擎在 Apple 平台上实现文本断字的关键组件，它通过调用 Apple 的 Core Foundation 框架，根据指定的语言规则，为网页提供自动断字的功能，这直接受到 HTML 的 `lang` 属性和 CSS 的 `hyphens` 属性的影响。理解其功能有助于开发者更好地控制网页文本的排版和可读性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/text/apple/hyphenation_apple.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -323,7 +325,4 @@ scoped_refptr<Hyphenation> Hyphenation::PlatformGetHyphenation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

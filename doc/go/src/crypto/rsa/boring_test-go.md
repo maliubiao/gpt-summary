@@ -259,7 +259,7 @@ RSA 签名验证的核心是将签名数据（视为一个大整数）的 `E` �
 
 `go/src/crypto/rsa/boring_test.go` 文件是 `crypto/rsa` 包在启用 `boringcrypto` 构建标签时的测试集，它专注于验证 BoringSSL 作为底层实现时，RSA 密钥生成、ASN.1 编码和签名验证等功能的正确性，并特别关注了一些与底层实现细节相关的行为差异。理解这些测试可以帮助开发者更好地理解 `boringcrypto` 实现的特点和潜在的陷阱。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/rsa/boring_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -267,8 +267,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -419,9 +421,4 @@ func fromHex(hexStr string) []byte {
 	}
 	return s
 }
-
-"""
-
-
-
 ```

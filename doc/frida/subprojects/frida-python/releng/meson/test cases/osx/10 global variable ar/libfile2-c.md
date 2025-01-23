@@ -204,7 +204,7 @@ l2_func finished, l2 value is now: 77
 
 `libfile2.c` 的源代码在这种情况下就成为了调试的一个关键参考点，帮助用户理解目标程序的基本结构和预期行为，从而更好地编写和调整 Frida 脚本。这个简单的例子展示了 Frida 如何用于观察和理解程序的基本构建块，而更复杂的程序则会涉及更多复杂的逻辑和交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/osx/10 global variable ar/libfile2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -212,8 +212,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 // Source: https://lists.gnu.org/archive/html/libtool/2002-07/msg00025.html
 
 int l2;
@@ -221,7 +223,4 @@ void l2_func(void)
 {
   l2 = 77;
 }
-
-"""
-
 ```

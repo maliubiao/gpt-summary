@@ -67,11 +67,13 @@ This systematic approach helps to dissect the C++ code, identify its purpose, an
 async function loadWasm() {
   const response = await fetch('my_module.wasm');
   const buffer = await response.array
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/function-compiler.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -366,7 +368,4 @@ Handle<Code> JSToWasmWrapperCompilationUnit::CompileJSToWasmWrapper(
 }
 
 }  // namespace v8::internal::wasm
-
-"""
-
 ```

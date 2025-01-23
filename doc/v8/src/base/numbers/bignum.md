@@ -102,11 +102,13 @@ console.log(product); // 输出 9007199254740991000n
 
 `v8/src/base/numbers/bignum.cc` 文件中的 `Bignum` 类是 V8 引擎用于处理任意精度整数的关键组件。它提供了存储、初始化、算术运算、位操作和比较等功能，使得 V8 能够精确地处理 JavaScript 中超出标准 `Number` 类型范围的整数，而 JavaScript 的 `BigInt` 类型在很大程度上借鉴了这种思想。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/base/numbers/bignum.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -824,7 +826,4 @@ void Bignum::SubtractTimes(const Bignum& other, int factor) {
 
 }  // namespace base
 }  // namespace v8
-
-"""
-
 ```

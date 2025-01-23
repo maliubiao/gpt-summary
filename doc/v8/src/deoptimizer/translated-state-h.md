@@ -152,15 +152,17 @@ add(1, {}); //  加法运算会调用对象的 toString() 方法，也可能触�
 
 `v8/src/deoptimizer/translated-state.h` 定义的类是 V8 引擎反优化机制的关键组成部分。它们负责捕获、表示和转换程序状态，确保在优化假设失效时，JavaScript 代码能够安全地回退到未优化状态继续执行。理解这些类的功能有助于深入了解 V8 的内部工作原理以及优化和反优化过程。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/deoptimizer/translated-state.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/deoptimizer/translated-state.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -750,7 +752,4 @@ const int kNoWasmReturnKind = -1;
 }  // namespace v8
 
 #endif  // V8_DEOPTIMIZER_TRANSLATED_STATE_H_
-
-"""
-
 ```

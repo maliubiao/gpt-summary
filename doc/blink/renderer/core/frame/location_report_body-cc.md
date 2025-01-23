@@ -114,14 +114,16 @@ Let's break down the thought process for analyzing this C++ code snippet and gen
 
 总的来说，`LocationReportBody` 是 Blink 引擎中用于管理和表示代码位置信息的核心组件，它在 JavaScript 错误报告、开发者工具以及浏览器扩展等方面发挥着重要作用，帮助开发者定位和调试问题。普通 web 开发者虽然不会直接操作这个类，但会间接地通过浏览器提供的错误信息和调试工具受益于它的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/location_report_body.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -189,7 +191,4 @@ bool LocationReportBody::IsExtensionSource() const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

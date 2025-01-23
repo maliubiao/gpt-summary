@@ -206,7 +206,7 @@ dataView.getInt32(5); // RangeError: Offset is outside the bounds of the DataVie
 
 总而言之，`v8/src/maglev/maglev-graph-builder.cc` 的第 11 部分专注于将 JavaScript 中与数组迭代、字符串操作、DataView 操作和基本的函数调用及数组修改相关的内置函数和原型方法转换为 Maglev 图中的高效表示。它通过检查操作数的类型、处理不同的元素类型和场景，并调用相应的内置函数来实现优化。这部分代码是 Maglev 编译器进行性能优化的关键组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -214,8 +214,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第11部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ;
   RETURN_IF_ABORT(subgraph.Branch(
       {&is_done, &ret_value},
@@ -1001,7 +1003,4 @@ ReduceResult MaglevGraphBuilder::TryReduceArrayPrototypePop(
 
     if (IsHoleyElementsKind(kind)) {
       value = AddN
-"""
-
-
 ```

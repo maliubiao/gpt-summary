@@ -197,7 +197,7 @@ int val1(void) { return 5; }
 
 这个路径表明 `val2.c` 是 Frida 项目自身的一部分，用于单元测试。因此，开发者可能是在研究 Frida 的内部机制，或者在调试与 Frida 相关的测试用例时遇到了问题，需要查看测试代码的具体实现。他们可能在执行 Frida 的测试套件，或者在研究 Frida 的构建系统 (Meson) 和包配置 (pkgconfig) 如何工作时，深入到这个测试用例的源代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/74 pkgconfig prefixes/val2/val2.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,13 +205,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "val1.h"
 #include "val2.h"
 
 int val2(void) { return val1() + 2; }
-
-"""
-
 ```

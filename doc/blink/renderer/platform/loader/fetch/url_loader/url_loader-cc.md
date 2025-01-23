@@ -161,14 +161,16 @@ By following these steps, I can construct a comprehensive and accurate answer to
 
 总而言之，`blink/renderer/platform/loader/fetch/url_loader/url_loader.cc` 文件中的 `URLLoader` 类是 Blink 渲染引擎中至关重要的网络请求管理中心，它负责着网页上各种资源的加载工作，并与 JavaScript, HTML, CSS 的功能息息相关。 理解其工作原理有助于我们更好地理解浏览器如何获取和渲染网页内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/loader/fetch/url_loader/url_loader.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -743,7 +745,4 @@ void URLLoader::SetBackgroundResponseProcessorFactory(
 }
 
 }  // namespace blink
-
-"""
-
 ```

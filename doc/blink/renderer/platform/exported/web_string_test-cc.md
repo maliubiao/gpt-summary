@@ -141,14 +141,16 @@ Finally, the information needs to be organized clearly, using headings and bulle
 
 `web_string_test.cc` 是一个关键的测试文件，它确保了 Blink 引擎中核心的字符串处理类 `WebString` 能够正确地进行 UTF-8 编码和解码，特别是对于复杂的 Unicode 字符和错误情况的处理。这对于保证网页内容的正确显示和数据的完整性至关重要，并且与 JavaScript, HTML, 和 CSS 的处理都有着紧密的联系。 它通过逻辑推理和覆盖各种边界情况来验证代码的正确性，从而帮助避免潜在的用户或编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/exported/web_string_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -196,7 +198,4 @@ TEST(WebStringTest, UTF8ConversionRoundTrip) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

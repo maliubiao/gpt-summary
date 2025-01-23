@@ -143,7 +143,7 @@ retry_label:
 
 这个代码片段定义了 Liftoff 编译器在 IA-32 架构下生成 WebAssembly 代码所需的底层汇编指令，特别是针对原子操作和基本的整数运算。它直接关联着 JavaScript 中 WebAssembly 模块的执行性能和多线程能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/baseline/ia32/liftoff-assembler-ia32-inl.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/baseline/ia32/liftoff-assembler-ia32-inl.h以.tq结尾，那它是个v8 torque源代码，
@@ -151,9 +151,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共6部分，请归纳一下它的功能
+```
 
-"""
-    case StoreType::kI64Store8: {
+### 源代码
+```c
+case StoreType::kI64Store8: {
       __ xor_(eax, eax);
       __ mov_b(eax, dst_op);
       break;
@@ -1106,8 +1108,5 @@ inline void Emit64BitShiftOperation(
     LiftoffAssembler* assm, LiftoffRegister dst, LiftoffRegister src,
     Register amount, void (MacroAssembler::*emit_shift)(Register, Register)) {
   // Temporary registers cannot overlap with {dst}.
-  LiftoffRegList 
-"""
-
-
+  LiftoffRegList
 ```

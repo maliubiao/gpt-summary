@@ -166,15 +166,17 @@ console.log(result);
 
 `v8/src/compiler/zone-stats.cc` 是 V8 编译器中一个关键的组件，用于跟踪和管理内存区域的分配和释放。它通过 `ZoneStats` 和 `StatsScope` 类提供了详细的内存使用统计信息，帮助 V8 开发人员理解编译器的内存行为，发现潜在的性能问题和内存泄漏，并进行优化。虽然它不是直接用 JavaScript 编写的，但它对于 V8 如何高效地编译和执行 JavaScript 代码至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/zone-stats.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/zone-stats.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -289,7 +291,4 @@ void ZoneStats::ReturnZone(Zone* zone) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

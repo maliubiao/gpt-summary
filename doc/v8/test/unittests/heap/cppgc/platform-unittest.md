@@ -84,11 +84,13 @@ try {
 
 总而言之，`v8/test/unittests/heap/cppgc/platform-unittest.cc` 测试的是 V8 底层 C++ 内存管理在遇到致命错误时的处理机制，这直接影响到 JavaScript 代码运行时的稳定性和可靠性。 当 JavaScript 代码导致内存分配失败时，V8 的这些底层机制会介入，决定程序的最终命运。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/platform-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -135,7 +137,4 @@ TEST(FatalOutOfMemoryHandlerDeathTest, CustomHandlerWithHeapState) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

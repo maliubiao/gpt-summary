@@ -121,11 +121,13 @@ console.log(compare(15, 5)); // 输出 false
 
 `TypeNarrowingReducer` 是 V8 编译器中一个重要的优化组件，它通过静态分析代码结构和已有的类型信息，尽可能地推断出更精确的变量和表达式类型。这种类型缩小技术能够帮助编译器生成更高效的机器码，从而提升 JavaScript 代码的执行性能。它与 JavaScript 的类型系统密切相关，尤其是在处理类型检查、数值运算和逻辑运算时发挥着关键作用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/type-narrowing-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -212,7 +214,4 @@ Zone* TypeNarrowingReducer::zone() const { return graph()->zone(); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -112,7 +112,7 @@ Here's a breakdown of the thinking process to analyze the Python script and addr
 
 总而言之，`gen.py` 是一个简单的代码生成脚本，用于在 Frida 的 Cython 测试环境中创建基础的 Cython 代码文件。虽然它本身不是逆向工具，但它生成的代码可以作为 Frida 进行动态分析的基础组件，并涉及到编译、二进制执行以及与操作系统底层交互的概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/cython/2 generated sources/libdir/gen.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 
 import argparse
@@ -136,7 +138,4 @@ with open(args.output, 'w') as f:
         cpdef func():
             return "Hello, World!"
         '''))
-
-"""
-
 ```

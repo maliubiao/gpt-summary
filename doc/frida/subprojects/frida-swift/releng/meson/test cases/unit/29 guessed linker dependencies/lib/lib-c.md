@@ -164,7 +164,7 @@ if (Process.platform === 'linux' || Process.platform === 'android') {
 
 总而言之，`lib.c` 是一个为了测试 Frida 功能而设计的非常基础的动态链接库，其核心功能是提供可被 Frida hook 的函数，用于验证 Frida 在不同平台和编译配置下的行为。它本身不涉及复杂的业务逻辑，而是作为动态 instrumentation 的一个简单目标。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/29 guessed linker dependencies/lib/lib.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32
   #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -194,7 +196,4 @@ void DLL_PUBLIC libb_func() {
 }
 
 #endif
-
-"""
-
 ```

@@ -94,14 +94,16 @@ By following these steps, I can systematically analyze the C++ code and generate
 `MemoryManagedPaintCanvas` 位于渲染引擎的底层，直接为浏览器将 HTML、CSS 和 JavaScript 转化为屏幕上的像素提供支持。它与以下方面密切相关：
 
 * **HTML `<canvas>` 元素:** 当 JavaScript 代码在 `<canvas>` 元素上执行绘制操作时，Blink 引擎内部会使用类似 `MemoryManagedPaintCanvas` 的类来执行这些绘制命令。例如，当 JavaScript 调用 `canvasContext.drawImage()` 时，最终会调用 `MemoryManagedPaintCanvas::drawImage` 方法。
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/memory_managed_paint_canvas.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ bool MemoryManagedPaintCanvas::IsCachingImage(
 }
 
 }  // namespace blink
-
-"""
-
 ```

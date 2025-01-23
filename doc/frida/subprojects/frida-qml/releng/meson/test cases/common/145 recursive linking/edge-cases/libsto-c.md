@@ -138,7 +138,7 @@ This step-by-step approach, combining code analysis, domain knowledge (Frida, re
 
 总而言之，`libsto.c` 是一个简单的示例，用于测试 Frida 在处理共享库函数导出和依赖关系时的能力，尤其是在涉及递归链接等复杂场景时。它本身的功能很简单，但其存在的目的是为了验证 Frida 框架在特定情况下的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/145 recursive linking/edge-cases/libsto.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "../lib.h"
 
 int get_builto_value (void);
@@ -156,7 +158,4 @@ SYMBOL_EXPORT
 int get_stodep_value (void) {
   return get_builto_value ();
 }
-
-"""
-
 ```

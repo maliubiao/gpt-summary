@@ -164,7 +164,7 @@ func main() {
 
 总而言之，这段 Go 代码是 P-256 椭圆曲线密码学库中用于计算模逆的关键组成部分，它通过优化的平方和乘法序列高效地实现了这一运算，并特殊处理了零元素的情况。使用者需要理解模逆的数学概念和 `P256Element` 类型的用法，以避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/crypto/internal/fips140/nistec/fiat/p256_invert.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -172,8 +172,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2021 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -258,9 +260,4 @@ func (e *P256Element) Invert(x *P256Element) *P256Element {
 
 	return e.Set(z)
 }
-
-"""
-
-
-
 ```

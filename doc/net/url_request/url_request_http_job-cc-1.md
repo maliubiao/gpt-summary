@@ -152,7 +152,7 @@ The answer should be structured around the core functionalities listed above, pr
 
 总而言之，这段代码在 Chromium 网络栈中扮演着至关重要的角色，它负责处理 HTTP 响应中与 Cookie 和安全相关的关键逻辑，并与浏览器的其他组件（如 CookieStore，TransportSecurityState，NetworkDelegate）进行交互，确保用户能够安全有效地浏览网页。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/url_request/url_request_http_job.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -160,8 +160,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 me cookie_request_schemes;
 
       switch (cookie_scheme) {
@@ -1042,7 +1044,4 @@ bool URLRequestHttpJob::ShouldFixMismatchedContentLength(int rv) const {
   // Some servers send the body compressed, but specify the content length as
   // the uncompressed size. Although this violates the HTTP spec we want to
   // support it (as IE and FireFox do), but *only* for an ex
-"""
-
-
 ```

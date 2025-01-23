@@ -129,7 +129,7 @@ By following these steps, the generated summary accurately reflects the function
 
 总而言之，`frida/releng/meson/mesonbuild/compilers/cuda.py` 文件定义了 Frida 用于处理 CUDA 代码编译的关键组件，它负责与底层的 `nvcc` 编译器交互，并提供了一系列方法来管理编译选项、执行健全性检查，从而为 Frida 对 CUDA 应用程序进行动态 Instrumentation 提供了基础支持。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/compilers/cuda.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2017 The Meson development team
 
@@ -763,7 +765,4 @@ class CudaCompiler(Compiler):
         #include <{header}>
         using {symbol};
         int main(vo
-"""
-
-
 ```

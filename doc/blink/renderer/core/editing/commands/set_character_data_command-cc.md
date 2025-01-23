@@ -188,15 +188,17 @@ By following these steps, the detailed and comprehensive explanation provided ea
 
 总而言之，`SetCharacterDataCommand.cc` 中定义的类是 Blink 引擎处理文本节点内容修改的核心组件之一，它连接了用户操作、JavaScript 代码和底层的 DOM 树操作，并提供了撤销机制。理解它的功能对于调试 Blink 渲染引擎中的文本编辑相关问题至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/editing/commands/set_character_data_command.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -270,7 +272,4 @@ void SetCharacterDataCommand::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

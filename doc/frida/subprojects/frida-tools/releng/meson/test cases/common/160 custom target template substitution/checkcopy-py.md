@@ -133,7 +133,7 @@ Let's break down the thought process to analyze the provided Python script.
 
 通过以上分析，我们可以看到 `checkcopy.py` 虽然功能简单，但在 Frida 的构建流程中扮演着确保文件正确复制的角色。它的行为依赖于构建系统的正确配置和参数传递。理解其功能和可能出现的错误，有助于调试与 Frida 构建相关的 Issues。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/160 custom target template substitution/checkcopy.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -141,8 +141,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
@@ -152,7 +154,4 @@ if '@INPUT1@' in sys.argv[1]:
     shutil.copyfile(sys.argv[2], sys.argv[3])
 else:
     sys.exit('String @INPUT1@ not found in "{}"'.format(sys.argv[1]))
-
-"""
-
 ```

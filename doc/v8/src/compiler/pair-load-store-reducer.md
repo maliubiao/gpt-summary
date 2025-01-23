@@ -105,11 +105,13 @@ const obj = { a: 1, b: 2 };
 
 `PairLoadStoreReducer` 是 V8 编译器中的一个优化组件，它通过识别并合并相邻的存储操作来提高性能。这种优化对 JavaScript 开发者是透明的，但它有助于 V8 更高效地执行 JavaScript 代码，尤其是在处理数组、类型化数组或连续的对象属性赋值时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/pair-load-store-reducer.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2023 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -204,7 +206,4 @@ Reduction PairLoadStoreReducer::Reduce(Node* cur) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -488,7 +488,7 @@ TEST(load_store_q) {
   uintptr_t dst_base = reinterpret_cast<uintptr_t>(dst);
 
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-assembler-arm64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-assembler-arm64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -496,9 +496,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共15部分，请归纳一下它的功能
+```
 
-"""
- x0);
+### 源代码
+```cpp
+x0);
 }
 
 TEST(ldr_str_offset) {
@@ -1546,8 +1548,5 @@ TEST(neon_ld2_lane_postindex) {
 
   RUN();
 
-  CHECK_EQUAL_128(0x00020406080A0C0E, 0x10121416181A1C1E, 
-"""
-
-
+  CHECK_EQUAL_128(0x00020406080A0C0E, 0x10121416181A1C1E,
 ```

@@ -225,7 +225,7 @@ input() # 防止脚本立即退出
 
 `bionic/libc/kernel/uapi/linux/param.h` 是一个重要的头文件，它为 Android 用户空间代码提供了访问 Linux 内核定义的系统参数的桥梁。虽然它本身不包含函数实现或直接处理动态链接，但它定义的常量被 Bionic libc 和运行在 Android 上的程序广泛使用，影响着系统的各种行为。 理解它的作用有助于深入理解 Android 系统的底层运作机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/param.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -236,8 +236,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -248,7 +250,4 @@ Prompt:
 #define _LINUX_PARAM_H
 #include <asm/param.h>
 #endif
-
-"""
-
 ```

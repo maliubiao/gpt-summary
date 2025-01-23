@@ -184,15 +184,17 @@ example(15);
 
 总结来说，`v8/src/compiler/control-equivalence.h` 定义的 `ControlEquivalence` 类是 V8 编译器中用于分析和理解 JavaScript 代码控制流的关键组件。它通过将控制节点划分为等价类，为后续的程序结构分析和代码优化提供了基础。虽然它不直接检测用户代码中的错误，但其分析结果可以帮助编译器识别潜在的性能问题和死代码等。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/control-equivalence.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/control-equivalence.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -377,7 +379,4 @@ class V8_EXPORT_PRIVATE ControlEquivalence final
 }  // namespace v8
 
 #endif  // V8_COMPILER_CONTROL_EQUIVALENCE_H_
-
-"""
-
 ```

@@ -146,14 +146,16 @@ By following these steps, we can systematically analyze the provided code snippe
 
 总而言之，`blink_ax_event_intent_test.cc` 文件通过测试 `BlinkAXEventIntent` 类的基本功能（主要是相等性判断），确保了这个关键的可访问性相关的类能够正确地工作，为 Blink 引擎中更复杂的辅助功能实现奠定了基础。理解 `BlinkAXEventIntent` 的作用有助于开发者更好地理解和实现可访问的 Web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/accessibility/blink_ax_event_intent_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -222,7 +224,4 @@ TEST(BlinkAXEventIntentTest, EqualityWithDeletedValue) {
 
 }  // namespace test
 }  // namespace blink
-
-"""
-
 ```

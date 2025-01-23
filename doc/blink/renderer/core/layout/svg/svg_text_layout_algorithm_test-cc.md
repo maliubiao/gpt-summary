@@ -97,14 +97,16 @@ My thinking process to analyze the C++ test file went like this:
 
 总的来说，这个测试文件的目的是通过模拟各种场景和潜在的错误用法，来确保 Blink 引擎在处理 SVG 文本布局时的稳定性和正确性，从而提升用户体验并减少 Web 开发中可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/svg_text_layout_algorithm_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -175,7 +177,4 @@ TEST_F(SvgTextLayoutAlgorithmTest, ControlCharCrash) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

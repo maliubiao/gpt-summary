@@ -287,7 +287,7 @@ if __name__ == '__main__':
 
 这个脚本会 hook `ioctl` 系统调用，并打印出调用的文件描述符、请求代码以及一些可能的 HSI 相关信息。你需要根据具体的 `ioctl` 请求代码和数据结构来扩展脚本，以便更详细地解析参数。你需要根据你的 Android 版本和内核配置来确定实际的 `ioctl` 命令值。可以使用 `adb shell` 进入设备，找到对应的 HAL 进程，并使用 `lsof` 命令查看其打开的文件，来辅助判断哪些文件描述符可能与 HSI 设备相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/hsi/hsi_char.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -298,8 +298,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -340,7 +342,4 @@ struct hsc_tx_config {
   __u32 arb_mode;
 };
 #endif
-
-"""
-
 ```

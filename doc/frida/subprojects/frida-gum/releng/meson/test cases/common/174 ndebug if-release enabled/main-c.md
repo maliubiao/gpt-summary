@@ -158,7 +158,7 @@ By following these steps, I can break down the seemingly simple code snippet and
 
 总而言之，这个看似简单的测试用例实际上是为了验证 Frida 工具在特定编译配置下的基本行为，特别是关于断言的处理，这对于确保工具在不同环境下都能正确运行至关重要。它也反映了在软件开发中，尤其是在涉及到底层系统和编译优化的工具中，理解编译配置及其对代码行为的影响是非常重要的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/174 ndebug if-release enabled/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -166,8 +166,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <assert.h>
 #include <stdlib.h>
 
@@ -183,7 +185,4 @@ int main(void) {
     assert(meson_test_set_side_effect());
     return meson_test_side_effect;
 }
-
-"""
-
 ```

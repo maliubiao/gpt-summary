@@ -165,13 +165,15 @@ WebAssembly.instantiateStreaming(fetch('module.wasm'), importObject)
 
 `BodyGen` 类是 WebAssembly 代码生成的核心组件，负责根据随机数据生成各种有效的 WebAssembly 指令序列，从而构建出功能各异的 WebAssembly 函数体。它还处理了与 JavaScript 环境的互操作性，特别是当启用了 Wasm GC 功能时，可以通过导入的 "wasm:js-string" 模块来操作 JavaScript 字符串。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/fuzzing/random-module-generation.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
- + emit_i31ref + fallback_to_eqref);
+### 源代码
+```
++ emit_i31ref + fallback_to_eqref);
         // Try generating one of the alternatives
         // and continue to the rest of the methods in case it fails.
         if (random >= num_types + emit_i31ref) {
@@ -1722,7 +1724,4 @@ base::Vector<uint8_t> GenerateWasmModuleForDeopt(
   // Create main function body.
   {
     uint32_t de
-"""
-
-
 ```

@@ -143,14 +143,16 @@ This iterative process of scanning, identifying key elements, understanding the 
 
 总而言之，`animation_time_delta.cc` 文件定义了一个核心的时间差类型，用于 Blink 内部处理动画相关的时间信息，并提供了一组方便的操作符。虽然普通 Web 开发者不会直接接触它，但它对于理解 Blink 如何处理 Web 页面的动画至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/animation_time_delta.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ std::ostream& operator<<(std::ostream& os, const AnimationTimeDelta& time) {
 #endif
 
 }  // namespace blink
-
-"""
-
 ```

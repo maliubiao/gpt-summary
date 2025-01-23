@@ -217,7 +217,7 @@ func main() {
 
 `go/src/runtime/os2_plan9.go` 文件定义了 Go 运行时在 Plan 9 操作系统上进行底层操作所需的常量和数据结构。它涵盖了文件操作、进程创建、信号处理和线程状态管理等方面，是 Go 运行时与 Plan 9 内核交互的基础。普通 Go 开发者不需要直接操作这些常量，但了解它们可以帮助理解 Go 程序在 Plan 9 上的行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/os2_plan9.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -225,8 +225,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -301,9 +303,4 @@ const (
 	_SIGPROF   = 0 // dummy value defined for badsignal
 	_SIGQUIT   = 0 // dummy value defined for sighandler
 )
-
-"""
-
-
-
 ```

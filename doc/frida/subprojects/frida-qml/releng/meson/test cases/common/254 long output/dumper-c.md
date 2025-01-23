@@ -112,7 +112,7 @@ Here's a breakdown of the thinking process to arrive at the explanation of the C
 
 `dumper.c` 是一个简单的 C 程序，其核心功能是产生大量的输出到标准输出和标准错误流。它主要用于 Frida 的测试用例中，用来模拟目标程序产生大量输出的情况，以测试 Frida 或相关组件在处理大量输出时的稳定性和性能。了解其功能有助于理解 Frida 测试框架的工作原理，以及在逆向分析中处理目标程序输出的相关概念和潜在问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/254 long output/dumper.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main(void)
@@ -138,8 +140,4 @@ int main(void)
 
     return 0;
 }
-
-
-"""
-
 ```

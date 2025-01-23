@@ -212,7 +212,7 @@ setImmediate(hook_erspan_processing);
 
 `bionic/libc/kernel/uapi/linux/erspan.h` 定义了 ERSPAN 协议的元数据结构，用于内核和用户空间程序之间传递 ERSPAN 相关信息。虽然普通的 Android 应用开发不会直接使用它，但在网络监控、调试等底层场景中可能会涉及到。理解这个头文件的内容有助于分析和调试与 ERSPAN 协议相关的网络问题。记住，这个文件只定义了数据结构，不包含任何 libc 函数的实现，与 dynamic linker 的工作也没有直接关系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/erspan.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -223,8 +223,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -256,7 +258,4 @@ struct erspan_metadata {
   } u;
 };
 #endif
-
-"""
-
 ```

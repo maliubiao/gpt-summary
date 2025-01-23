@@ -128,7 +128,7 @@ def __lldb_init_module(debugger, internal_dict):
 - **错误捕获**：捕获并分析协议错误和网络连接问题，确保通信的稳定性。
 
 通过以上步骤，用户可以逐步调试和分析配对和隧道连接的实现逻辑，确保功能的正确性和稳定性。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/fruity/xpc.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -138,8 +138,10 @@ Prompt:
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 );
 				var baze = new BigNumber ();
 				BigNumber.sub (baze, remote_pubkey, val);
@@ -1320,7 +1322,4 @@ Prompt:
 		public static async QuicTunnelConnection open (InetSocketAddress address, NetworkStack netstack, TunnelKey local_keypair,
 				TunnelKey remote_pubkey, Cancellable? cancellable = null) throws Error, IOError {
 			var connection = new QuicTunnelConnection (address, netst
-"""
-
-
 ```

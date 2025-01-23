@@ -157,7 +157,7 @@ By following this structured approach, I could systematically analyze the code a
 
 总而言之，`net/cookies/cookie_util.cc` 是 Chromium 中处理 Cookie 安全性和行为的关键组成部分，特别是关于 SameSite 策略的实现。它提供了丰富的函数来在各种场景下精确地计算和管理 Cookie 的上下文。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/cookie_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -165,8 +165,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 uests initiated by extensions,
   //   which need to behave as though they are made by the document itself,
   //   but appear like cross-site ones.
@@ -468,8 +470,4 @@ void AddOrRemoveStorageAccessApiOverride(
 }
 
 }  // namespace net::cookie_util
-
-"""
-
-
 ```

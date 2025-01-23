@@ -139,7 +139,7 @@ b:  c3                   ret
 
 这部分代码主要负责定义了 x64 指令集的各种结构和查找表，为后续实现指令的解码和格式化输出奠定了基础。它描述了指令的构成要素，例如操作数的类型、指令的助记符以及不同指令类型的分类。这部分是 x64 反汇编器的静态数据部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/diagnostics/x64/disasm-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/diagnostics/x64/disasm-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -147,8 +147,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2011 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1118,8 +1120,4 @@ int DisassemblerX64::AVXInstruction(uint8_t* data) {
         if (rex_w()) {
           switch (opcode) {
             FMA_SD_INSTRUCTION_LIST(DECLARE_FMA_DISASM)
- 
-"""
-
-
 ```

@@ -168,14 +168,16 @@ Finally, organize the information logically, grouping related functionalities an
 
 总而言之，`DocumentResourceCoordinator` 是 Blink 引擎中一个重要的基础设施组件，它默默地收集和传递着关于网页资源使用和状态的关键信息，为浏览器进行全局的性能管理和优化提供了必要的依据。它与 Web 开发的三大核心技术 JavaScript, HTML, 和 CSS 紧密相关，其监控的事件和状态直接反映了这些技术的执行和渲染情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/instrumentation/resource_coordinator/document_resource_coordinator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -276,7 +278,4 @@ void DocumentResourceCoordinator::OnWebMemoryMeasurementRequested(
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -125,7 +125,7 @@ Section Headers
 
 这个源代码文件 `log1p_intel_data.handroid` 的主要功能是**为 Android 平台上的 bionic 库提供一组用于测试 `log1p` 数学函数在 Intel 架构下的精确性的测试用例数据。**  它定义了一个静态数组，包含了 `log1p` 函数的输入值和对应的预期输出值，用于验证 bionic 库中 `log1p` 函数的实现是否正确。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/log1p_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -137,8 +137,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1595,7 +1597,4 @@ static data_1_1_t<double, double> g_log1p_intel_data[] = {
   { // Entry 359
     0x1.ffffffffffffbfffffffffffffffffffp-1023,
     0x1.
-"""
-
-
 ```

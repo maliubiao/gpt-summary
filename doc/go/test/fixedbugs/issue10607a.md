@@ -173,15 +173,17 @@ go build -o issue10607a -ldflags="-buildid=\x12\x34\x56\x78" go/test/fixedbugs/i
 
 总而言之，`issue10607a.go` 是一个测试工具，用于验证 Go 编译器 `-B` (或 `-buildid`) 选项是否正确地将预期的 Build ID 嵌入到生成的可执行文件中。它通过读取自身的可执行文件并解析其 ELF 结构来完成这个验证过程。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue10607a.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // skip
 
 // Copyright 2015 The Go Authors. All rights reserved.
@@ -263,9 +265,4 @@ func main() {
 		os.Exit(1)
 	}
 }
-
-"""
-
-
-
 ```

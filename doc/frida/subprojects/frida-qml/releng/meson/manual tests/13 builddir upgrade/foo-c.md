@@ -101,7 +101,7 @@ By following this thought process, starting with understanding the request, anal
 
 虽然 `foo.c` 本身非常简单，但在 Frida 项目的上下文中，它是构建目录升级测试的一个关键组成部分。它可以作为逆向工程的目标进行演示，并涉及到操作系统、二进制和编译的基础知识。它的简单性使其成为验证构建过程正确性的理想选择。开发者通过查看此类测试的源代码，可以了解特定测试的目的和预期行为，从而帮助他们调试构建或升级过程中的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/manual tests/13 builddir upgrade/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -109,15 +109,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdio.h>
 
 int main() {
     printf("Hello world!\n");
     return 0;
 }
-
-"""
-
 ```

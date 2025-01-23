@@ -78,7 +78,7 @@ Latency histogram (microseconds):
 1. **时间戳一致性**：检查 `starts` 映射中 PID 是否与退出时的 PID 匹配。
 2. **单位转换**：验证 `units` 值（0=纳秒, 1=微秒, 2=毫秒）。
 3. **直方图溢出**：确保 `slot >= MAX_SLOTS` 时回落到最后一个槽位。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/libbpf-tools/funclatency.bpf.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -87,8 +87,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 // SPDX-License-Identifier: GPL-2.0
 /* Copyright (c) 2021 Google LLC. */
 #include "vmlinux.h"
@@ -196,7 +198,4 @@ int BPF_KRETPROBE(dummy_kretprobe)
 }
 
 char LICENSE[] SEC("license") = "GPL";
-
-"""
-
 ```

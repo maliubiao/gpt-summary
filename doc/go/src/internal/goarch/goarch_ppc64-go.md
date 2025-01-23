@@ -148,7 +148,7 @@ GOOS=linux GOARCH=ppc64 go build myprogram.go
 
 `go/src/internal/goarch/goarch_ppc64.go` 文件定义了 Go 语言在 `ppc64` 架构下运行所需的关键常量。这些常量由 Go 编译器和运行时环境使用，以确保程序能够在该架构上正确、高效地执行。它体现了 Go 语言平台独立性的设计理念，通过架构特定的配置来适配不同的硬件平台。用户通常不需要直接修改这些文件，但理解其作用有助于更深入地理解 Go 语言的底层机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/goarch/goarch_ppc64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -156,8 +156,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -171,9 +173,4 @@ const (
 	_MinFrameSize        = 32
 	_StackAlign          = 16
 )
-
-"""
-
-
-
 ```

@@ -185,7 +185,7 @@ console.log(sum); // 输出 15
 
 总而言之，这段代码是 V8 引擎为了提升 JavaScript 与 C++ 互操作性能而设计的一部分。它提供了一种机制来构建可以被 V8 快速调用的 C++ 函数描述符，并且着重于安全高效地将 JavaScript 数组数据转换为 C++ 可用的格式。 `TryToCopyAndConvertArrayToCppBuffer` 是一个关键的工具，它通过类型安全的复制和转换，帮助开发者避免常见的内存错误和类型错误。该部分代码的核心目标是优化跨语言边界的数据传递，特别是针对数值类型数组。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/include/v8-fast-api-calls.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/include/v8-fast-api-calls.h以.tq结尾，那它是个v8 torque源代码，
@@ -193,8 +193,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ctionInfo::Int64Representation::kNumber) {
     return internal::CFunctionBuilder().Fn(func).Build();
   }
@@ -252,8 +254,4 @@ TryToCopyAndConvertArrayToCppBuffer<CTypeInfoBuilder<double>::Build().GetId(),
 }  // namespace v8
 
 #endif  // INCLUDE_V8_FAST_API_CALLS_H_
-
-"""
-
-
 ```

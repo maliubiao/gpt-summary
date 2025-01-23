@@ -156,15 +156,17 @@ By following these steps, the comprehensive and accurate analysis of the provide
 
 总而言之，`XrExitFullscreenObserver` 是 Blink 引擎中处理 WebXR 全屏退出逻辑的关键组件，它桥接了 WebXR API 和浏览器的全屏机制，确保用户可以顺利地退出沉浸式体验。 理解它的工作原理有助于调试与 WebXR 全屏相关的各种问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/xr/xr_exit_fullscreen_observer.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -225,7 +227,4 @@ void XrExitFullscreenObserver::Trace(Visitor* visitor) const {
   NativeEventListener::Trace(visitor);
 }
 }  // namespace blink
-
-"""
-
 ```

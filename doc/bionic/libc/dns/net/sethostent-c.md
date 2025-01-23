@@ -267,7 +267,7 @@ if (Process.platform === 'android') {
 
 通过这些分析和示例，你可以更深入地理解 `bionic/libc/dns/net/sethostent.c` 文件在 Android 系统中的作用和实现细节。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/dns/net/sethostent.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -278,8 +278,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*	$NetBSD: sethostent.c,v 1.20 2014/03/17 13:24:23 christos Exp $	*/
 
 /*
@@ -564,7 +566,4 @@ _hf_gethtbyaddr(void *rv, void *cb_data, va_list ap)
 	}
 	return NS_SUCCESS;
 }
-
-"""
-
 ```

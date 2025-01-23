@@ -172,15 +172,17 @@ By following these steps, a comprehensive and accurate answer can be constructed
 
 总而言之，`spki_hash.cc` 是 Chromium 网络栈中一个关键的实用工具，用于处理 SPKI 的哈希值，这在多种网络安全机制中扮演着重要角色。虽然用户不会直接调用它，但用户的网络行为会间接地触发其执行，尤其是在涉及到安全连接和资源完整性验证的场景中。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/tools/transport_security_state_generator/spki_hash.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -227,7 +229,4 @@ void SPKIHash::CalculateFromBytes(const uint8_t* input, size_t input_length) {
 }
 
 }  // namespace net::transport_security_state
-
-"""
-
 ```

@@ -80,7 +80,7 @@ Finally, I need to provide a concise summary for Part 1.
 
 作为第 1 部分，该文件主要负责 **构建系统后端的抽象和实现**，它定义了用于生成各种构建系统所需构建文件的基础架构和通用功能。它充当一个中心枢纽，根据用户选择的构建系统，提供相应的后端实现，并管理构建目标的各种属性和操作。 核心功能是为不同的构建系统（Ninja, Visual Studio, Xcode 等）提供统一的接口来生成底层的构建描述文件。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -89,8 +89,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2012-2016 The Meson development team
 
@@ -840,8 +842,4 @@ class Backend:
             if runpath_match:
                 for dir in runpath_match.group(1).split(':'):
                     # The symbols arg is an rpath if the path is a directory
-                   
-"""
-
-
 ```

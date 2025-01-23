@@ -182,7 +182,7 @@ Based on the individual test analysis, the functionality of this part of the tes
 
 总的来说，`net/spdy/spdy_network_transaction_unittest.cc` 的这部分旨在确保 `SpdyNetworkTransaction` 在涉及代理、连接错误、身份验证以及基本 HTTP/2 协议一致性方面能够可靠地工作，从而为 Chromium 的网络功能提供坚实的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/spdy/spdy_network_transaction_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第7部分，共12部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 LConfig.
   ssl_provider1->next_protos_expected_in_ssl_config =
       NextProtoVector{kProtoHTTP11};
@@ -978,7 +980,4 @@ TEST_P(SpdyNetworkTransactionTest, OutOfOrderHeaders) {
   // reference to a stack allocated request, which has a short lifetime,
   // and is accessed during the transaction destruction. We need to delete
   // the transaction while the request is still a valid obj
-"""
-
-
 ```

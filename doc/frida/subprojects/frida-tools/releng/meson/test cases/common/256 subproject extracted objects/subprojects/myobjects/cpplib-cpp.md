@@ -145,7 +145,7 @@ extern "C" int DLL_PUBLIC cppfunc(void) {
 
 尽管 `cpplib.cpp` 代码非常简单，但它体现了动态链接库的基本概念，并且是理解 Frida 等动态 instrumentation 工具如何与目标程序交互的一个很好的起点。在逆向工程中，理解 DLL/SO 的加载、符号导出以及函数调用约定至关重要。这个简单的例子可以帮助逆向工程师建立这些基础知识，并为分析更复杂的库打下基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/256 subproject extracted objects/subprojects/myobjects/cpplib.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,15 +153,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #define BUILDING_DLL
 #include "cpplib.h"
 
 extern "C" int DLL_PUBLIC cppfunc(void) {
     return 42;
 }
-
-"""
-
 ```

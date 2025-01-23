@@ -89,14 +89,16 @@ The user is asking for an analysis of the provided C++ code file `pending_layer_
 
 总的来说，`pending_layer_test.cc` 文件详细测试了 `PendingLayer` 类的合并行为，涵盖了边界计算、变换处理、稀疏图层判断、不透明度信息维护以及文本渲染优化等方面，这些都与浏览器如何高效地渲染网页内容息息相关，并且与 HTML 结构、CSS 样式以及 JavaScript 的动态操作紧密联系。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/compositing/pending_layer_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -625,7 +627,4 @@ TEST_P(PendingLayerTextOpaquenessTest, UnitedClippedToOpaque) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

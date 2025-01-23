@@ -120,7 +120,7 @@ Object.preventExtensions(obj); // 阻止对象扩展，V8 会创建一个带有 
 
 总而言之，`v8/src/objects/map-updater.cc` 中的代码是 V8 引擎管理 JavaScript 对象结构和属性的关键部分。它负责在对象发生结构性变化时创建和更新 Map 对象，确保 V8 能够高效地访问和操作对象的属性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/map-updater.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/map-updater.cc以.tq结尾，那它是个v8 torque源代码，
@@ -128,8 +128,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d_nof_;
   Handle<DescriptorArray> new_descriptors =
       DescriptorArray::Allocate(isolate_, old_nof_, new_slack);
@@ -678,8 +680,4 @@ void MapUpdater::GeneralizeField(Isolate* isolate, DirectHandle<Map> map,
 }
 
 }  // namespace v8::internal
-
-"""
-
-
 ```

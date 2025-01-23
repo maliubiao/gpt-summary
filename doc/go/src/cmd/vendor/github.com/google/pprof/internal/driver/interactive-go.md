@@ -250,7 +250,7 @@ func main() {
 
 总而言之，这段代码是 `pprof` 工具交互式界面的核心实现，它负责接收用户命令、解析命令参数、管理配置选项，并最终调用相应的函数来生成性能分析报告，为用户提供灵活的交互式分析体验。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/github.com/google/pprof/internal/driver/interactive.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -258,8 +258,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2014 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -682,9 +684,4 @@ func functionNames(p *profile.Profile) []string {
 	}
 	return fns
 }
-
-"""
-
-
-
 ```

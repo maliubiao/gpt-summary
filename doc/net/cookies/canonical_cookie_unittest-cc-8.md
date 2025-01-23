@@ -128,7 +128,7 @@ Set-Cookie: mycookie=value; SameSite=Strict; Secure
 
 这个 `canonical_cookie_unittest.cc` 文件作为整个测试套件的最后一部分，其功能是**全面且细致地测试 `CanonicalCookie` 类的各种行为和逻辑**。它覆盖了 Cookie 的关键属性 (SameSite, Secure, HttpOnly)、不同的访问上下文 (同站、跨站)、以及一些特定的场景 (例如重定向降级、Cookie 大小限制、隐藏前缀等)。通过这些测试，可以确保 `CanonicalCookie` 类在处理 HTTP Cookie 时的正确性和可靠性，这对于保障 Web 安全和用户体验至关重要。 这些测试也为开发者提供了关于如何正确使用和理解 Cookie 行为的重要参考。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/cookies/canonical_cookie_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -136,8 +136,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第9部分，共9部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 chesCookieAccessResult(_, _, _, true));
           EXPECT_THAT(
               cookie->IsSetPermittedInContext(
@@ -668,8 +670,4 @@ TEST(CanonicalCookieTest, IsSecure) {
 }
 
 }  // namespace net
-
-"""
-
-
 ```

@@ -168,14 +168,16 @@ By following these steps, systematically analyzing the code, and making connecti
 
 总而言之，`inspector_page_agent_unittest.cc` 文件通过单元测试确保了 Blink 引擎中负责页面重新加载时脚本注入功能的 `InspectorPageAgent::PageReloadScriptInjection` 类能够正确地管理和提供待注入的 JavaScript 代码。虽然它不直接涉及编写 JavaScript、HTML 或 CSS，但其测试的功能是与这些 Web 技术紧密相关的，并且对开发者在使用 DevTools 进行调试和代码注入时至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_page_agent_unittest.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -233,7 +235,4 @@ TEST_F(PageReloadScriptInjectionTest, ChecksLoaderId) {
   injection_.PromoteToLoadOnce();
   ASSERT_TRUE(injection_.GetScriptForInjection(url2).empty());
 }
-
-"""
-
 ```

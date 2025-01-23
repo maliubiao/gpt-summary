@@ -164,7 +164,7 @@ websocket.onclose = () => {
 
 例如，如果用户尝试连接到一个返回 200 状态码的 WebSocket 服务器，浏览器开发者工具的网络选项卡可能会显示该请求失败，并带有 "Error during WebSocket handshake: Unexpected response code: 200" 这样的错误信息，这对应了 `InvalidStatusCode` 测试用例模拟的场景. 开发者可以检查服务器的配置和响应头来排查问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_stream_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -172,8 +172,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 == BASIC_HANDSHAKE_STREAM) {
     EXPECT_EQ(
         1,
@@ -995,7 +997,4 @@ TEST_P(WebSocketStreamCreateBasicAuthTest, OnAuthRequiredSetAuth) {
 
 // Digest auth has the same connection semantics as Basic auth, so we can
 // generally assume that whatev
-"""
-
-
 ```

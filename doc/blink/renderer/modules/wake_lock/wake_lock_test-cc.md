@@ -215,15 +215,17 @@ This iterative process of code analysis, concept connection, example creation, a
 
 总而言之，`wake_lock_test.cc` 是一个关键的调试工具，它可以帮助开发者理解 Wake Lock API 的工作原理，验证其在各种场景下的正确性，并定位潜在的 bug。 用户遇到的问题，最终可能会引导开发者深入研究这些测试代码，以找出根本原因。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/wake_lock/wake_lock_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -460,7 +462,4 @@ TEST(WakeLockTest, PageVisibilityHiddenBeforeLockAcquisition) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

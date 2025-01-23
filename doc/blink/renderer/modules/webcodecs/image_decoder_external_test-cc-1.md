@@ -101,7 +101,7 @@ Here's a breakdown of the steps to generate the summary:
 
 如果开发者在上述任何一个步骤中遇到问题，例如解码失败，他们可能会查看浏览器控制台的错误信息，并尝试使用调试工具来跟踪代码执行流程。这些单元测试 (`ImageDecoderExternalTest.cc`) 就为 Blink 引擎的开发者提供了一种验证 `ImageDecoderExternal` 在各种情况下的行为是否符合预期的手段，从而帮助他们排查和修复 bug。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/image_decoder_external_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -109,8 +109,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ));
   ASSERT_FALSE(v8_scope.GetExceptionState().HadException());
 
@@ -323,8 +325,4 @@ TEST_F(ImageDecoderTest, TransferBuffer) {
 }  // namespace
 
 }  // namespace blink
-
-"""
-
-
 ```

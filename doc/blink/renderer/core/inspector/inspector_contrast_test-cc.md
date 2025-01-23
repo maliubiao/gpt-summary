@@ -133,14 +133,16 @@ EXPECT_EQ(1.0f, fg_opacity); // 预期前景色不透明度为 1.0
 
 总而言之，`inspector_contrast_test.cc` 是一个重要的测试文件，它确保了 Blink 引擎中负责对比度计算的功能的正确性，这对于实现可访问性检查和开发者工具的功能至关重要。它通过模拟各种 HTML 和 CSS 场景来验证 `InspectorContrast` 类的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_contrast_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -356,7 +358,4 @@ TEST_F(InspectorContrastTest, GetContrastMultipleNodes) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

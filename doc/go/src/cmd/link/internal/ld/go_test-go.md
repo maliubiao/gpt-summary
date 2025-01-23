@@ -212,15 +212,17 @@ This command would build `myprogram` as an executable that dynamically links aga
 
 In summary, the provided Go test code focuses on verifying the `dedupLibraries` function within the Go linker. This function plays a crucial role in managing shared library dependencies, especially when using CGO, and exhibits platform-specific behavior, particularly on OpenBSD where it appears to prioritize specific versions of shared libraries. Understanding these nuances is essential for Go developers working with C interoperability and dynamic linking.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/link/internal/ld/go_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -337,9 +339,4 @@ func main() {}`
 		t.Fatal(err)
 	}
 }
-
-"""
-
-
-
 ```

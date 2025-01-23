@@ -139,15 +139,17 @@ While this specific code is for testing the Go runtime, the concept of slicing c
 
 **In summary, `go/test/gcstring.go` aims to ensure that Go's garbage collector correctly handles empty slices created at the boundary of string allocations and doesn't mistakenly garbage collect related objects that are still in use.** The multiple calls to `runtime.GC()` and the use of a finalizer are techniques to aggressively test the garbage collector under various conditions.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/gcstring.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // run
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -195,10 +197,4 @@ func setup() {
 	
 	things = append(things, Ts...)
 }
-
-
-"""
-
-
-
 ```

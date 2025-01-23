@@ -192,7 +192,7 @@ noProxy=localhost, 127.0.0.1
 
 这部分代码的核心功能是**针对 KDE 桌面环境，通过监听 `kioslaverc` 文件的变化，动态地读取和解析用户的代理配置，并将其转换为 Chromium 能够理解的 `ProxyConfig` 对象**。它使用了 `inotify` 机制来高效地监控配置文件的更改，并通过延迟执行来避免频繁的配置更新带来的性能开销。同时，它也包含了从系统设置中获取和解析代理配置的核心逻辑，并提供了将配置变更通知给其他组件的机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/proxy_resolution/proxy_config_service_linux.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -200,9 +200,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
- kioslaverc could occur in any order, but some affect
+### 源代码
+```cpp
+kioslaverc could occur in any order, but some affect
   // others. Rather than read the whole file in and then query them in an
   // order that allows us to handle that, we read the settings in whatever
   // order they occur and do any necessary tweaking after we finish.
@@ -847,8 +849,4 @@ ProxyConfigServiceLinux::GetLatestProxyConfig(
 }
 
 }  // namespace net
-
-"""
-
-
 ```

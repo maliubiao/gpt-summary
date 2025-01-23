@@ -151,7 +151,7 @@ By following this thought process, moving from understanding the code to connect
 
 这个简单的 `foo.c` 文件成为了一个**最小可复现的例子**，用于排除 Frida 环境或基本操作方面的问题，从而帮助用户缩小调试范围，定位更复杂问题的原因。通过先在这个简单程序上测试 Frida 的基本功能，可以排除很多与目标程序自身复杂性无关的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/14 testsetup selection/subprojects/foo/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -159,12 +159,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(void) {
     return 0;
 }
-
-"""
-
 ```

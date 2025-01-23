@@ -212,15 +212,17 @@ func main() {
 
 这个例子展示了开发者可能会犯的错误：**只生成了签名数据，但没有将其正确地添加到 Mach-O 文件结构中**。操作系统无法识别这样的签名，应用程序可能无法运行或被安全机制阻止。正确的做法是依赖 `go` 工具链在构建过程中完成签名，或者使用 Apple 的 `codesign` 工具进行正式签名。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/internal/codesign/codesign.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2020 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -488,9 +490,4 @@ func Sign(out []byte, data io.Reader, id string, codeSize, textOff, textSize int
 		outp = puts(outp, b[:])
 	}
 }
-
-"""
-
-
-
 ```

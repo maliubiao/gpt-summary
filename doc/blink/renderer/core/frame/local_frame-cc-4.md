@@ -168,15 +168,17 @@ By following this structured approach, I can systematically break down the code 
 
 总的来说，这个代码片段主要集中在 `LocalFrame` 的安全性和与浏览器其他部分（如浏览器进程、开发者工具）的集成，以及一些核心的功能实现，例如页面加载完成通知、Favicon 管理、媒体操作、下载管理和跨域消息传递。 它也处理了一些与用户交互相关的功能，如焦点管理和剪贴板访问。 这部分代码是 `LocalFrame` 类功能实现的重要组成部分，负责维护框架的基本行为和与其他组件的协作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/frame/local_frame.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第5部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ityContext()->GetSecurityOrigin();
 
   // Check if this frame is same-origin with the top-level or is in
@@ -1057,8 +1059,4 @@ void LocalFrame::AllowStorageAccessAndNotify(
   if (WebContentSettingsClient* content_settings_client =
           GetContentSettingsClient()) {
     content_settings_client->AllowStorageAccess(storage_type,
-       
-"""
-
-
 ```

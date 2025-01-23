@@ -120,7 +120,7 @@ By analyzing these examples, I can generate a comprehensive and accurate summary
 
 总而言之，这部分测试代码深入验证了 Blink 引擎中 Compositing 机制的各个方面，确保了在各种场景下（包括 CSS 属性变化、用户交互、Iframe 处理等）Compositing 行为的正确性和性能。它们是理解和调试 Chromium 渲染引擎 Compositing 功能的重要资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/paint/compositing/compositing_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -128,8 +128,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第3部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 lLifecyclePhasesExceptPaint();
   EXPECT_TRUE(outer_transform_node->transform_changed);
   EXPECT_FALSE(inner_transform_node->transform_changed);
@@ -1006,7 +1008,4 @@ TEST_P(CompositingSimTest, ImplSideScaleSkipsCommit) {
   }
 
   // The tran
-"""
-
-
 ```

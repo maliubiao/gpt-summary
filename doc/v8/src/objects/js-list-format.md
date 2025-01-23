@@ -109,11 +109,13 @@ console.log(parts);
 
 `v8/src/objects/js-list-format.cc` 文件是 V8 引擎中实现 `Intl.ListFormat` JavaScript API 的关键 C++ 代码。它利用 ICU 库提供的国际化功能，根据指定的语言环境和选项，将字符串数组格式化成符合当地语言习惯的列表字符串，并提供了获取已解析选项和分段信息的功能。 这使得 JavaScript 开发者能够轻松地在他们的应用程序中处理本地化的列表显示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-list-format.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -421,7 +423,4 @@ const std::set<std::string>& JSListFormat::GetAvailableLocales() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

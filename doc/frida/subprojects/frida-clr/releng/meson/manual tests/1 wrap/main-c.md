@@ -197,7 +197,7 @@ if (ObjC.available) {
 
 总而言之，这个简单的 `main.c` 文件是 Frida 项目中一个精心设计的测试用例，用于验证 Frida 是否能够正确 hook 对原生 SQLite 库的调用，尤其是在与 .NET 环境交互的场景下。它的简洁性使得开发者可以专注于验证 Frida 的核心功能，而不会被复杂的业务逻辑所干扰。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/meson/manual tests/1 wrap/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<sqlite3.h>
 #include<stdio.h>
 
@@ -219,7 +221,4 @@ int main(void) {
     sqlite3_close(db);
     return 0;
 }
-
-"""
-
 ```

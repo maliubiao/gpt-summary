@@ -112,7 +112,7 @@ Here's a breakdown of the thinking process used to analyze the provided C code s
 
 `meson-sample.c` 是 Frida 项目中一个简单的 GObject 类型定义，主要用于内部测试。它虽然没有直接进行逆向操作，但作为 Frida 的组成部分，与逆向工程息息相关。理解其背后的 GObject 机制、可能涉及的底层知识，以及其在 Frida 测试框架中的作用，有助于深入理解 Frida 的工作原理和进行更有效的逆向分析。 记住 `meson_sample_print_message` 函数目前是空的，这是一个关键的观察点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/frameworks/28 gir link order 2/meson-sample.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -120,8 +120,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "meson-sample.h"
 
 struct _MesonSample {
@@ -164,7 +166,4 @@ meson_sample_print_message (MesonSample *self)
 {
   g_return_if_fail (MESON_IS_SAMPLE (self));
 }
-
-"""
-
 ```

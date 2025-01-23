@@ -186,14 +186,16 @@ By following these steps, we can systematically analyze the source code and extr
 
 总而言之，`LayoutSVGPath.cc` 是 Blink 渲染引擎中一个至关重要的组件，它负责将 SVG 路径和相关元素的描述转化为实际的图形布局，并处理与 CSS 样式和 SVG marker 相关的复杂逻辑。理解它的功能有助于开发者更好地理解浏览器如何渲染 SVG，并避免常见的错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/layout_svg_path.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2004, 2005, 2007 Nikolas Zimmermann <zimmermann@kde.org>
  * Copyright (C) 2004, 2005, 2008 Rob Buis <buis@kde.org>
@@ -363,7 +365,4 @@ void LayoutSVGPath::UpdateMarkerBounds() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

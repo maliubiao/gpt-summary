@@ -158,15 +158,17 @@ DATA_FRAME (type=DATA, flags=0x01 (END_STREAM), stream_identifier=0x00000001, le
 
 总而言之，`test_frame_sequence.cc` 是 Chromium 网络栈中一个重要的测试工具，它允许开发者以编程方式精确地控制 HTTP/2 帧的生成，用于单元测试、集成测试以及调试各种与 HTTP/2 协议相关的场景。它虽然不直接与 JavaScript 交互，但为浏览器中 JavaScript 发起的 HTTP/2 请求提供了底层的构建和验证机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/http2/adapter/test_frame_sequence.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "quiche/http2/adapter/test_frame_sequence.h"
 
 #include <memory>
@@ -359,7 +361,4 @@ std::string TestFrameSequence::Serialize() {
 }  // namespace test
 }  // namespace adapter
 }  // namespace http2
-
-"""
-
 ```

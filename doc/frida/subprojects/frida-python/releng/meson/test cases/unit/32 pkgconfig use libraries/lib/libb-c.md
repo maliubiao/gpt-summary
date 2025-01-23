@@ -157,7 +157,7 @@ Hello from liba!
 
 总而言之，这个简单的 `libb.c` 文件在一个关于 Frida 如何处理库依赖的单元测试中扮演着关键角色。它虽然简单，但触及了逆向工程、底层系统知识以及常见的编程错误等多个方面。通过分析这样的代码，Frida 的开发者可以确保其工具能够正确地处理各种库依赖关系，为用户提供可靠的动态 instrumentation 能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/32 pkgconfig use libraries/lib/libb.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -165,14 +165,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 void liba_func();
 
 void libb_func() {
     liba_func();
 }
-
-"""
-
 ```

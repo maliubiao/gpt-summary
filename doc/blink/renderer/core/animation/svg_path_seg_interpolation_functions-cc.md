@@ -165,14 +165,16 @@ This structured approach, starting with a high-level understanding and progressi
 
 总而言之，`svg_path_seg_interpolation_functions.cc` 是 Blink 渲染引擎中一个关键的组成部分，它负责实现 SVG 路径动画的核心逻辑，确保动画的平滑性和正确性。它与 HTML、CSS 和 JavaScript 紧密结合，共同实现了丰富的 Web 图形效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/svg_path_seg_interpolation_functions.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -568,7 +570,4 @@ PathSegmentData SVGPathSegInterpolationFunctions::ConsumeInterpolablePathSeg(
 }
 
 }  // namespace blink
-
-"""
-
 ```

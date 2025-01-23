@@ -710,7 +710,7 @@ UNINITIALIZED_TEST(ClassFieldsWithBindings) {
           "};"
           "function testConstBinding() {"
           "  class Derived extends ClassWithConst {"
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-serialize.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-serialize.cc以.tq结尾，那它是个v8 torque源代码，
@@ -718,8 +718,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第7部分，共8部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 s.add(1);"
           "s.add(globalThis);");
       ExpectInt32("m.get('b')", 2);
@@ -1644,7 +1646,4 @@ TEST(CachedUnboundScriptHostDefinedOption) {
   {
     DisallowCompilation no_compile_expected(i_isolate);
     v8::ScriptCompiler::Sou
-"""
-
-
 ```

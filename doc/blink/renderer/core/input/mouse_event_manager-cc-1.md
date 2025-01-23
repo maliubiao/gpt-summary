@@ -209,7 +209,7 @@ By following these steps, iterating, and refining the analysis, we can arrive at
 
 总而言之，这个代码片段是 Chromium Blink 引擎中处理鼠标拖拽的核心部分，它连接了底层的鼠标事件和上层的 JavaScript 拖拽 API，负责判断何时启动拖拽、收集拖拽数据、以及触发相应的事件。理解这部分代码的功能对于调试与拖拽相关的 bug 以及深入理解浏览器的工作原理至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/input/mouse_event_manager.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
@@ -217,9 +217,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
-    WebInputEvent::Modifiers::kIsCompatibilityEventForTouch,
+### 源代码
+```cpp
+WebInputEvent::Modifiers::kIsCompatibilityEventForTouch,
       base::TimeTicks::Now());
   HitTestRequest request(HitTestRequest::kReadOnly);
   MouseEventWithHitTestResults mev =
@@ -674,8 +676,4 @@ bool MouseEventManager::MouseDownMayStartDrag() {
 }
 
 }  // namespace blink
-
-"""
-
-
 ```

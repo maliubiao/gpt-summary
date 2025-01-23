@@ -69,7 +69,7 @@ By following this structured thought process and focusing on the key information
 * **Android Framework/NDK 到达此处的步骤:**  可以描述 Android 编译系统如何使用这些测试数据，以及开发者如何通过 NDK 间接使用到 `asinhf` 函数。
 * **Frida Hook 示例:** 可以提供使用 Frida hook `asinhf` 函数的示例，以观察其行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/asinhf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -81,8 +81,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1642,7 +1644,4 @@ static data_1_1_t<float, float> g_asinhf_intel_data[] = {
   },
   { // Entry 385
     -0x1.3bc04ee951032b4f7509b3
-"""
-
-
 ```

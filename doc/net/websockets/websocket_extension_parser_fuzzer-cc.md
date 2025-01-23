@@ -128,15 +128,17 @@ Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
 
 总而言之，`websocket_extension_parser_fuzzer.cc` 这个文件本身并不直接参与用户的日常操作，而是作为 Chromium 浏览器开发过程中的一个重要组成部分，用于确保 WebSocket 扩展解析器的健壮性和安全性，从而间接地保障用户的网络体验。当开发者需要调试与 WebSocket 扩展解析相关的错误或漏洞时，他们可能会查看这个模糊测试器的代码和测试结果，以获取线索。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/websockets/websocket_extension_parser_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -153,7 +155,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 
   return 0;
 }
-
-"""
-
 ```

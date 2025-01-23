@@ -135,7 +135,7 @@ By following these steps, and constantly referring back to the prompt's requirem
 
 总而言之，`frida/subprojects/frida-gum/releng/meson/docs/refman/main.py` 是 Frida 项目中一个关键的文档生成工具，它连接了描述 Frida 功能的元数据和最终呈现给用户的各种格式的文档。理解这个脚本的功能有助于开发者理解 Frida 的文档构建流程，并能在遇到问题时进行调试。 对于逆向工程师来说，虽然他们不直接运行这个脚本，但脚本生成的文档是他们学习和使用 Frida 的重要资源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/docs/refman/main.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -143,8 +143,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2021 The Meson development team
 
@@ -224,7 +226,4 @@ def main() -> int:
 
     generator.generate()
     return 0
-
-"""
-
 ```

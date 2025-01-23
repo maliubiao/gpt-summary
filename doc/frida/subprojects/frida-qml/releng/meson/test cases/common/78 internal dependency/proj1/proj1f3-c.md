@@ -164,7 +164,7 @@ Java.perform(function() {
 
 尽管 `proj1_func3.c` 文件中的代码非常简单，但在 Frida 动态插桩和逆向工程的背景下，它可以作为理解函数 hook、分析二进制行为、以及理解程序执行流程的一个基本示例。它也涉及到一些操作系统和底层编程的概念，例如共享库、系统调用和函数调用约定。通过 Frida，用户可以动态地观察和修改这个简单函数的行为，从而为更复杂的逆向分析奠定基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/78 internal dependency/proj1/proj1f3.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -172,15 +172,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<proj1.h>
 #include<stdio.h>
 
 void proj1_func3(void) {
     printf("In proj1_func3.\n");
 }
-
-"""
-
 ```

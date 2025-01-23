@@ -142,15 +142,17 @@ By following these steps, we can systematically analyze the code and generate a 
 
 总而言之，`fake_proof_source_handle.cc` 是 Chromium QUIC 测试框架中的一个关键组件，它允许开发人员以可控的方式模拟证书和签名相关的操作，从而方便进行各种测试和调试工作。虽然普通用户不会直接接触到这个文件，但它的正确性和可靠性对于确保 QUIC 连接的安全性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/test_tools/fake_proof_source_handle.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2021 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -401,7 +403,4 @@ void FakeProofSourceHandle::ComputeSignatureOperation::Run() {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

@@ -178,15 +178,17 @@ createPoints();
 
 `v8/src/objects/allocation-site.h` 定义了 V8 内部用于跟踪对象分配和进行性能优化的关键数据结构。它涉及到预先驻留决策、类型反馈、嵌套对象字面量处理以及与垃圾回收器的交互。理解 `AllocationSite` 的作用有助于我们理解 V8 如何在底层优化 JavaScript 代码的执行。虽然 JavaScript 开发者不能直接操作这些结构，但编写符合 V8 优化器期望的代码风格（例如，创建形状一致的对象）可以间接地提高性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/allocation-site.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/allocation-site.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -379,7 +381,4 @@ class AllocationMemento
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_ALLOCATION_SITE_H_
-
-"""
-
 ```

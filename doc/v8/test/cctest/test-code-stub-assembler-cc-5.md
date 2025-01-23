@@ -145,7 +145,7 @@ JavaScript 也没有直接的“高位乘法”的概念，因为 JavaScript 的
 
 这段代码是 `v8/test/cctest/test-code-stub-assembler.cc` 的最后一部分，专注于测试 `CodeStubAssembler` 提供的**位操作**（统计置位位数、统计尾部零）和**指针大小整数的算术运算**（带溢出检测的乘法、高位乘法）。这些测试确保了 V8 在底层进行高效和正确的数值计算，这对于 JavaScript 引擎的性能和正确性至关重要。这段代码覆盖了有符号和无符号整数，以及常量折叠等优化场景。通过这些测试，可以验证 `CodeStubAssembler` 生成的机器码在处理这些操作时的正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-code-stub-assembler.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-code-stub-assembler.cc以.tq结尾，那它是个v8 torque源代码，
@@ -153,8 +153,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第6部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 2 = test_case.first;
     uint64_t value64 = (static_cast<uint64_t>(value32) << 32) | value32;
     int expected_pop32 = test_case.second;
@@ -353,8 +355,4 @@ TEST(IntPtrMulWithOverflow) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

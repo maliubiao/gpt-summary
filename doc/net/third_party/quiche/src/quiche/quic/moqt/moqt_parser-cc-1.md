@@ -170,7 +170,7 @@ Strategizing complete. I will now proceed with generating the response.
 
 总而言之，`net/third_party/quiche/src/quiche/quic/moqt/moqt_parser.cc` 文件的主要功能是实现 MoQT 协议的解析逻辑，包括解析控制消息（如 `SUBSCRIBE` 请求中的参数）和数据消息（如媒体对象）。它是 Chromium 网络栈中处理 MoQT 协议的关键组件，确保了媒体数据能够按照 MoQT 协议的规范进行传输和处理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/moqt/moqt_parser.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 AUTHORIZATION_INFO parameter appears twice");
           return false;
         }
@@ -395,8 +397,4 @@ absl::string_view MoqtDataParser::ProcessDataInner(absl::string_view data) {
 }
 
 }  // namespace moqt
-
-"""
-
-
 ```

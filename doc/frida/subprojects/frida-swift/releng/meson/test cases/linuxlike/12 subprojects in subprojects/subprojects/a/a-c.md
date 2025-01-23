@@ -172,7 +172,7 @@ Frida 是一个强大的动态 instrumentation 工具，常用于逆向工程、
 
 总而言之，尽管 `a.c` 的代码非常简单，但它在 Frida 的上下文中具有重要的意义，它可以用来测试 Frida 的核心功能，并作为调试 Frida 本身或使用 Frida 进行逆向工程的线索。 理解这类简单的测试用例有助于深入了解 Frida 的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/linuxlike/12 subprojects in subprojects/subprojects/a/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -180,14 +180,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "c.h"
 
 int a_fun(void) {
     return c_fun();
 }
-
-"""
-
 ```

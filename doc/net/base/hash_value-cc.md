@@ -177,15 +177,17 @@ This iterative process of understanding, identifying, connecting, and refining h
 
 因此，当你在调试网络请求、资源加载失败或 CSP 违规等问题时，如果涉及到哈希值的校验，就可能会涉及到 `net/base/hash_value.cc` 中的代码执行。你可以关注开发者工具中的安全面板或网络面板中的相关错误信息，这些信息可能包含与哈希值比较相关的提示。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/base/hash_value.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2012 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -346,7 +348,4 @@ bool IsAnySHA256HashInSortedArray(base::span<const HashValue> hashes,
 }
 
 }  // namespace net
-
-"""
-
 ```

@@ -149,7 +149,7 @@ if (ObjC.available) {
 
 总而言之，这个简单的插件示例在 Frida 动态 instrumentation 的场景下，可以作为一个很好的目标，用来学习和实践 hook 函数、观察和修改程序行为的技术。即使功能很简单，它也涉及到操作系统、动态链接、内存布局等底层概念。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/frameworks/4 qt/plugin/plugin.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -157,8 +157,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "plugin.h"
 #include <QFile>
 
@@ -171,6 +173,4 @@ QString plugin1::getResource()
 #if QT_VERSION < 0x050000
     Q_EXPORT_PLUGIN2(Plugin1, plugin1)
 #endif
-"""
-
 ```

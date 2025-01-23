@@ -186,7 +186,7 @@ While functionally correct, creating a new anonymous function inside `map` for e
 
 The `v8/src/objects/shared-function-info.h` header defines the `SharedFunctionInfo` class, which is a fundamental component in V8's architecture. It acts as a central repository for metadata about JavaScript functions that can be shared across multiple instances of the same function. This shared information includes the function's name, source code location, compilation status, optimization details, scope information, and more. It plays a critical role in memory efficiency and the overall performance of JavaScript execution in V8. The file itself is a C++ header, but it relies on Torque to generate parts of its implementation, highlighting the use of V8's internal tools for performance optimization.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/shared-function-info.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/shared-function-info.h以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1000,9 +1002,4 @@ class SharedFunctionInfo
 #ifdef VERIFY_HEAP
   void SharedFunctionInfoVerify(ReadOnlyRoots roots);
 #endif
-
-  
-"""
-
-
 ```

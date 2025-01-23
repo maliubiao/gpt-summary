@@ -158,11 +158,13 @@ createAndAccessObject(false);
 
 `node-properties.cc` 文件是 V8 编译器内部基础设施的关键部分，它提供了一组用于理解和操作 JavaScript 代码编译后产生的中间表示的工具。这些工具使得编译器能够进行各种分析和优化，从而提升 JavaScript 代码的执行效率。虽然开发者通常不会直接接触到这些 C++ 代码，但理解其背后的原理有助于理解 V8 引擎是如何高效执行 JavaScript 代码的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/node-properties.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -840,7 +842,4 @@ bool NodeProperties::Equals(Node* a, Node* b) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

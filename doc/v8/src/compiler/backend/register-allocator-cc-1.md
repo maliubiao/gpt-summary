@@ -143,7 +143,7 @@ function add(a, b) {
 
 `v8/src/compiler/backend/register-allocator.cc` 的第 2 部分主要负责**管理虚拟寄存器的生命周期（`LiveRange`），处理寄存器溢出（`SpillRange`），维护寄存器分配的全局数据（`RegisterAllocationData`），并构建寄存器分配的约束条件（`ConstraintBuilder`）**。它定义了用于表示和操作寄存器生命周期、溢出信息以及分配约束的关键数据结构和算法。这部分代码是 V8 寄存器分配器的核心组成部分，为后续的寄存器分配算法提供了基础的数据结构和操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/register-allocator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/register-allocator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -151,8 +151,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 sition %d\n", vreg(),
         use_pos->pos().value());
   // Since we `ProcessInstructions` in reverse, the `use_pos` is almost always
@@ -978,7 +980,4 @@ void ConstraintBuilder::MeetConstraintsBefore(int instr_index) {
       if (second->HasReferenceMap()) {
         RegisterAllocationData::DelayedReference delayed_reference = {
             second->reference_map()
-"""
-
-
 ```

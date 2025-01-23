@@ -171,7 +171,7 @@ By following this structured thought process, starting with understanding the co
 
 虽然 `copyfile.py` 本身是一个非常基础的文件复制工具，但在 Frida 的上下文中，它扮演着重要的辅助角色，用于管理测试过程中涉及到的文件，尤其是在涉及编译、代码生成和底层二进制操作的测试场景中。理解这个脚本的功能有助于理解 Frida 测试流程中的文件管理部分，以及逆向工程中一些基础的文件操作实践。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/126 generated llvm ir/copyfile.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -179,15 +179,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 #!/usr/bin/env python3
 
 import sys
 import shutil
 
 shutil.copyfile(sys.argv[1], sys.argv[2])
-
-"""
-
 ```

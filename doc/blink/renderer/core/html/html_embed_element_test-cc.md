@@ -150,14 +150,16 @@ Based on the analysis, the initial description can be expanded with more specifi
 
 总之，`html_embed_element_test.cc` 文件通过单元测试的方式，细致地检验了 `<embed>` 元素在各种场景下的行为，特别是与 `<object>` 元素配合时的后备机制，以及与渲染引擎布局过程的交互。这有助于确保 Blink 引擎能够正确且稳定地处理 HTML 中的 `<embed>` 元素。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_embed_element_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -261,7 +263,4 @@ TEST_F(HTMLEmbedElementTest, NotEnforceLayoutImageType) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

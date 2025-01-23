@@ -243,7 +243,7 @@ v8::Local<v8::Context> context = v8::Context::New(isolate);
 
 这部分 `v8/src/api/api.cc` 源代码定义了 V8 C++ API 中用于**核心内存管理 (使用 Handles)**、**管理 JavaScript 执行上下文 (Contexts)** 以及**创建 JavaScript 对象和函数的蓝图 (Templates, FunctionTemplates, ObjectTemplates)** 的关键类和方法。这些是嵌入 V8 引擎并与其交互的基础构建块，允许 C++ 代码创建和操作 JavaScript 对象、函数和执行环境。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/api/api.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/api/api.cc以.tq结尾，那它是个v8 torque源代码，
@@ -251,9 +251,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共15部分，请归纳一下它的功能
+```
 
-"""
-   "Internal field out of bounds");
+### 源代码
+```cpp
+"Internal field out of bounds");
 }
 
 }  // namespace api_internal
@@ -1026,7 +1028,4 @@ void Template::SetIntrinsicDataProperty(Local<Name> name, Intrinsic intrinsic,
   ENTER_V8_NO_SCRIPT_NO_EXCEPTION(i_isolate);
   i::HandleScope scope(i_isolate);
   i::ApiNatives::AddDataProperty(i_isolate, templ, Utils::OpenH
-"""
-
-
 ```

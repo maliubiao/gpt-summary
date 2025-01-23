@@ -167,7 +167,7 @@ echo $?  # 如果 THE_NUMBER != 9，则输出 1；如果 THE_NUMBER == 9，则�
 
 总而言之，`prog.c` 作为一个简单的测试用例，其目的是验证 Frida 工具链在构建或配置后，相关的宏定义是否符合预期。它利用了 C 语言的基本特性，并通过程序的退出状态码来指示测试结果。在逆向工程和调试 Frida 工具链的过程中，理解这类简单的测试用例有助于开发者和用户定位问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-node/releng/meson/test cases/common/99 postconf/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -175,14 +175,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include"generated.h"
 
 int main(void) {
     return THE_NUMBER != 9;
 }
-
-"""
-
 ```

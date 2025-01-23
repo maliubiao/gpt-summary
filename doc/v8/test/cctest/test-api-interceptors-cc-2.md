@@ -156,7 +156,7 @@ console.log(Object.getOwnPropertyDescriptor(obj, 'y'));
 
 这部分 `test-api-interceptors.cc` 主要关注于测试 V8 引擎 API 拦截器的各种核心功能，特别是它们与原型链、只读属性、Symbol 以及 `Object.defineProperty` 的交互。通过这些测试，可以确保 V8 的拦截器机制能够按照预期工作，并为开发者提供灵活的 JavaScript 行为定制能力。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-api-interceptors.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-api-interceptors.cc以.tq结尾，那它是个v8 torque源代码，
@@ -164,9 +164,11 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共8部分，请归纳一下它的功能
+```
 
-"""
-   "let p = {};"
+### 源代码
+```cpp
+"let p = {};"
                      "Object.defineProperty(p, 'x', "
                      "                      {value: 153, writable: false});"
                      "o.__proto__ = p;"
@@ -1054,7 +1056,4 @@ THREADED_TEST(PropertyDescriptorCallback) {
     const char* code =
         "obj.x = 17; "
         "var desc = Object.getOwnPro
-"""
-
-
 ```

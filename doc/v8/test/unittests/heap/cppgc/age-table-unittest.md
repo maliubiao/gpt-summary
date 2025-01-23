@@ -105,11 +105,13 @@ console.log(longLivedObject);
 
 `age-table-unittest.cc` 测试的是 V8 引擎 cppgc 中的 `AgeTable` 类，该类负责跟踪堆内存区域的年龄。这对于高效的垃圾回收至关重要，而垃圾回收又是 JavaScript 性能和内存管理的基础。虽然 JavaScript 开发者不能直接操作 `AgeTable`，但它的存在和功能直接影响着 JavaScript 程序的执行效率和内存使用情况。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/age-table-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -336,7 +338,4 @@ TEST_F(AgeTableTest, AgeTableSize) {
 }
 
 }  // namespace cppgc::internal
-
-"""
-
 ```

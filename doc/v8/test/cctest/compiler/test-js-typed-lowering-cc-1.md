@@ -145,7 +145,7 @@ function compareNumbers(x, y) {
 
 总而言之，这个测试文件是 V8 编译器质量保证的重要组成部分，它通过编写针对性的测试用例，确保编译器能够正确且高效地处理各种 JavaScript 代码结构，尤其是在涉及到类型信息时。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/compiler/test-js-typed-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/compiler/test-js-typed-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -153,8 +153,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 common.NumberConstant(1));
 
           for (int l = 0; l < 2; l++) {
@@ -264,8 +266,4 @@ TEST(Int32Comparisons) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

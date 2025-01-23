@@ -131,14 +131,16 @@ Essentially, my approach is to: understand the code -> break down its functional
 
 总而言之，`scheduler_helper.cc` 提供了一个关键的抽象层，用于管理 Blink 渲染引擎中的任务调度，它与 JavaScript、HTML 和 CSS 的执行息息相关。理解其功能和正确的使用方式对于开发和维护 Blink 引擎至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/scheduler/common/scheduler_helper.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -313,7 +315,4 @@ bool SchedulerHelper::HasCPUTimingForEachTask() const {
 
 }  // namespace scheduler
 }  // namespace blink
-
-"""
-
 ```

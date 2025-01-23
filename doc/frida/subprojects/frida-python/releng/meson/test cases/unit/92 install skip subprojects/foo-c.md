@@ -115,7 +115,7 @@ By following this structured approach, even a seemingly trivial piece of code ca
 
 尽管 `foo.c` 代码本身非常简单，但它在 Frida 项目的测试框架中扮演着一个角色，用于验证安装过程中跳过子项目的功能是否正常工作。这对于确保 Frida 的正确安装和后续的逆向分析工作至关重要。它涉及到构建系统、安装路径、二进制文件处理等底层知识，并能帮助预防用户在使用 Frida 构建和安装时可能遇到的错误。 用户不会直接操作这个文件，但它作为测试用例，是 Frida 开发和维护过程中不可或缺的一部分。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/92 install skip subprojects/foo.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -123,13 +123,12 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int main(int argc, char *argv[])
 {
   return 0;
 }
-
-"""
-
 ```

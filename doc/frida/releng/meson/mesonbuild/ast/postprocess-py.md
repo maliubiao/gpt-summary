@@ -195,7 +195,7 @@ The user's interaction leading to this code being executed would typically invol
 
 In summary, while this code doesn't directly touch the binaries being instrumented, it's a fundamental part of Frida's build system, responsible for structuring and annotating the build scripts that define how Frida itself is built. Understanding its functionality is key to understanding Frida's internal mechanics and troubleshooting build-related issues.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/releng/meson/mesonbuild/ast/postprocess.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -203,8 +203,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2019 The Meson development team
 
@@ -314,7 +316,4 @@ class AstConditionLevel(AstVisitor):
         node.condition.accept(self)
         node.block.accept(self)
         self.condition_level -= 1
-
-"""
-
 ```

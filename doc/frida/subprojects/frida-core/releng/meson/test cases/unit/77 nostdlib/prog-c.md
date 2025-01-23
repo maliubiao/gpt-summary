@@ -145,7 +145,7 @@ The final step is organizing the thoughts into a clear and structured response, 
 
 因此，这个 `prog.c` 文件很可能是 Frida 框架的一个内部测试用例，用于验证其在特定环境下的功能。开发者通过一系列步骤创建、编译和测试了这个文件，并在出现问题时进行调试。这个简单的例子也揭示了在没有标准库支持的情况下进行基本操作的底层原理和可能遇到的问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/unit/77 nostdlib/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -153,16 +153,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
-
+### 源代码
+```c
 #include<stdio.h>
 
 int main(void) {
   const char *message = "Hello without stdlib.\n";
   return simple_print(message, simple_strlen(message));
 }
-
-"""
-
 ```

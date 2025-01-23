@@ -159,7 +159,7 @@ RegExpAlternative {
 
 总而言之，`v8/src/regexp/regexp-parser.cc` 文件是 V8 引擎中至关重要的组成部分，负责将开发者编写的正则表达式字符串转化为引擎可以理解和操作的内部数据结构（AST）。它实现了正则表达式的语法分析逻辑，并负责识别和报告语法错误。这个解析器的正确性和效率直接影响到 JavaScript 中正则表达式的性能和可靠性。它为后续的正则表达式编译和执行阶段奠定了基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/regexp/regexp-parser.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/regexp/regexp-parser.cc以.tq结尾，那它是个v8 torque源代码，
@@ -167,8 +167,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1125,8 +1127,5 @@ RegExpTree* RegExpParserImpl<CharT>::ParseDisjunction() {
           RegExpCapture* capture = GetCapture(capture_index);
           capture->set_body(body);
           body = capture;
-        } else if (group_type == GROUPING) 
-"""
-
-
+        } else if (group_type == GROUPING)
 ```

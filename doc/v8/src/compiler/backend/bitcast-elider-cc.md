@@ -199,15 +199,17 @@ function process(x) {
 
 `v8/src/compiler/backend/bitcast-elider.cc` 是 V8 编译器后端的一个重要组成部分，它通过消除冗余的位转换操作来提高代码的执行效率。它针对特定的位转换模式进行优化，并在图遍历的过程中进行替换。虽然 JavaScript 开发者不会直接操作位转换，但理解其背后的优化机制有助于理解 V8 如何提升 JavaScript 的性能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/bitcast-elider.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/bitcast-elider.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -309,7 +311,4 @@ void BitcastElider::Reduce() { ProcessGraph(); }
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

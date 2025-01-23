@@ -142,7 +142,7 @@ console.log("你好");
 
 `v8/src/parsing/scanner-character-streams.cc` 模块的核心功能是**为 V8 引擎的 JavaScript 源代码扫描器提供不同类型的字符输入流**。 它作为一个工厂，根据源代码的来源（内存测试数据或外部流）和编码方式（UTF-8, UTF-16, Latin-1, Windows-1252），创建并返回合适的 `Utf16CharacterStream` 对象。  这样做的目的是为了高效且正确地读取和解码 JavaScript 源代码，为后续的词法分析和语法分析阶段做好准备。  这个模块屏蔽了不同输入源和编码的复杂性，为扫描器提供了一个统一的 UTF-16 字符流接口。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/parsing/scanner-character-streams.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/parsing/scanner-character-streams.cc以.tq结尾，那它是个v8 torque源代码，
@@ -150,8 +150,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 c_cast<size_t>(end_pos));
   } else {
     UNREACHABLE();
@@ -217,8 +219,4 @@ Utf16CharacterStream* ScannerStream::For(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

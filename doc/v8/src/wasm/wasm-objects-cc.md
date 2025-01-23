@@ -160,7 +160,7 @@ WebAssembly.instantiate(wasmBytes)
 
 `v8/src/wasm/wasm-objects.cc` 的这部分代码主要负责定义和实现 V8 引擎中用于表示 WebAssembly 模块、表和挂起操作的 JavaScript 对象。它提供了创建、初始化、管理和操作这些对象的核心功能，使得 JavaScript 能够与 WebAssembly 代码进行交互。该文件处理了诸如获取模块和函数名称、表元素的设置和获取、表的大小调整以及更新间接调用分发表等关键操作。 这些对象是 WebAssembly 与 JavaScript 交互的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-objects.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-objects.cc以.tq结尾，那它是个v8 torque源代码，
@@ -168,8 +168,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -957,7 +959,4 @@ void SetInstanceMemory(Tagged<WasmTrustedInstanceData> trusted_instance_data,
   bool use_trap_handler = memory.bounds_checks == wasm::kTrapHandler;
   // Asm.js does not use trap handling.
   CHECK_IM
-"""
-
-
 ```

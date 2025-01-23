@@ -304,7 +304,7 @@ sys.stdin.read()
 
 `bionic/libc/include/sys/sysmacros.h` 定义了用于操作设备号的基本宏。它们在 Android 系统中被广泛使用，从用户空间的应用程序到内核驱动程序，都可能涉及到设备号的处理。理解这些宏的功能和实现对于理解 Android 底层的设备管理至关重要。虽然 `sysmacros.h` 本身不直接涉及 dynamic linker，但使用这些宏的库会被 dynamic linker 加载和链接。使用 Frida 可以帮助我们动态地分析这些宏在运行时的使用情况，但需要选择合适的 hook 点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/sys/sysmacros.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -315,8 +315,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -368,7 +370,4 @@ Prompt:
 /** Extracts the minor part of a device number. */
 #define minor(__dev) \
   ((unsigned) ((((__dev) >> 12) & 0xffffff00) | ((__dev) & 0xff)))
-
-"""
-
 ```

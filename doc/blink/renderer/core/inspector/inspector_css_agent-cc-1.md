@@ -143,15 +143,17 @@ Here's a breakdown of the code's functionality:
 
 总而言之，第 2 部分的 `InspectorCSSAgent` 代码专注于**收集、管理和提供 CSS 样式信息**，以便开发者工具能够向用户展示页面的样式结构和应用情况。它处理了样式表的生命周期管理，允许查询特定节点的详细样式信息，并支持模拟伪类状态和获取媒体查询等高级功能。这部分代码是开发者工具中 "Elements" 面板 "Styles" 部分的核心数据来源。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/inspector/inspector_css_agent.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 d(false);
   return protocol::Response::Success();
 }
@@ -1024,7 +1026,4 @@ CSSKeyframesRule* InspectorCSSAgent::FindCSSOMWrapperForKeyframesRule(
     Element* element,
     StyleRuleKeyframes* keyframes_style_rule) {
   Document& document = element->
-"""
-
-
 ```

@@ -111,15 +111,17 @@ go vet -composites=false mypackage # 检查 mypackage，禁用 composites 检查
 
 总而言之，这段代码是 Go 语言为了测试其与汇编语言混合编程功能而设计的测试用例，它声明了两个需要在汇编层面实现的函数，并作为 `go vet` 工具的输入进行静态分析。使用者需要理解类型匹配、调用约定以及链接机制，才能正确地使用 Go 语言的汇编接口。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vet/testdata/asm/asm.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // Copyright 2010 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -131,9 +133,4 @@ package testdata
 func arg1(x int8, y uint8)
 
 func cpx(x complex64, y complex128)
-
-"""
-
-
-
 ```

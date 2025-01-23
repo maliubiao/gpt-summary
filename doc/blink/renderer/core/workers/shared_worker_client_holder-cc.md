@@ -162,14 +162,16 @@ myWorker.port.postMessage('Hello from main page!');
 
 总而言之，`blink/renderer/core/workers/shared_worker_client_holder.cc` 是 Blink 引擎中负责管理共享工作线程客户端连接的关键组件，它在幕后处理了 JavaScript `SharedWorker` API 的连接建立和信息传递，并受到安全策略和浏览器机制的约束。理解其功能有助于开发者更好地理解和调试共享工作线程相关的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/shared_worker_client_holder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -314,7 +316,4 @@ void SharedWorkerClientHolder::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

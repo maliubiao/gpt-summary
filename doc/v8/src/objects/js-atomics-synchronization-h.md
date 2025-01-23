@@ -642,15 +642,17 @@ mutex.unlock();
 1. `JSAtomicsMutex::Lock` 尝试获取锁时，如果发现锁已被其他线程持有，或者存在等待者，则进入慢速路径。
 2. **假设锁已被持有**，当前线程需要进入等待队列。
 3. `JSAtomicsMutex::LockSlowPath` 会尝试获取等待
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/js-atomics-synchronization.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/js-atomics-synchronization.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1108,7 +1110,4 @@ class JSAtomicsCondition
 #include "src/objects/object-macros-undef.h"
 
 #endif  // V8_OBJECTS_JS_ATOMICS_SYNCHRONIZATION_H_
-
-"""
-
 ```

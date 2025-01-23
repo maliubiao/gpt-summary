@@ -28,7 +28,7 @@ The code snippet is a C++-like representation of a data array. Each element in t
 
 这段代码是 Android bionic 库中用于测试 `sin` 函数正确性的关键组成部分。它定义了一系列输入值及其对应的预期输出值，帮助开发者验证 `sin` 函数的实现是否准确可靠。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/sin_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -40,8 +40,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第4部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 67082f337c5daf5ffc56e2p-1,
     -0x1.594317acc4efap-1
   },
@@ -1468,8 +1470,4 @@ Prompt:
   { // Entry 1425
     0x1.0000000000000fffffffffffffffffffp-1022,
     0x1.0000000000001p-1022
-  
-"""
-
-
 ```

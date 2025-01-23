@@ -256,7 +256,7 @@ crypto.encrypt.implementation = function(data) {
 
 总结来说，`frida/subprojects/frida-gum/bindings/gumjs/runtime/console.js` 文件为 Frida 脚本提供了基本的日志输出和计数功能，是逆向工程师在动态分析目标程序时不可或缺的工具。它虽然是用 JavaScript 实现的，但其背后的消息传递机制涉及到与底层操作系统和 Frida 架构的交互。理解其功能和工作原理，有助于更有效地使用 Frida 进行逆向工程和安全分析。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/bindings/gumjs/runtime/console.js的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -264,8 +264,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```javascript
 const hexdump = require('./hexdump');
 
 class Console {
@@ -334,7 +336,4 @@ function parseLogArgument(value) {
 
   return value;
 }
-
-"""
-
 ```

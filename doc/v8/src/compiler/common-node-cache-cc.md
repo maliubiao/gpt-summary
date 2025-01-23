@@ -145,15 +145,17 @@ console.log(num1 === num2); // 输出: true (对于原始类型，值相等则�
 
 总而言之，`v8/src/compiler/common-node-cache.cc` 中定义的 `CommonNodeCache` 类是 V8 编译器中一个重要的组件，它通过缓存表示常量的节点来提高编译效率和减少内存使用。 它与 JavaScript 的关系在于，它处理了 JavaScript 代码中常量的表示和优化。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/common-node-cache.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/common-node-cache.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -194,7 +196,4 @@ void CommonNodeCache::GetCachedNodes(ZoneVector<Node*>* nodes) {
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

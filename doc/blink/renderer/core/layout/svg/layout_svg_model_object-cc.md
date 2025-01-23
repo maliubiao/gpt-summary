@@ -144,14 +144,16 @@ By following these steps, I can dissect the C++ code and generate a comprehensiv
 
 总而言之，`LayoutSVGModelObject` 在 Blink 渲染引擎中扮演着至关重要的角色，它将 SVG 元素从抽象的标记语言转化为浏览器可以渲染的图形，并且与 HTML、CSS 和 JavaScript 紧密协作，共同构建丰富的网页内容。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/svg/layout_svg_model_object.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (c) 2009, Google Inc. All rights reserved.
  *
@@ -356,7 +358,4 @@ void LayoutSVGModelObject::WillBeRemovedFromTree() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

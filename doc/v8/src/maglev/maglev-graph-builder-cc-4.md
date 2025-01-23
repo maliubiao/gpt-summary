@@ -131,7 +131,7 @@ By following these steps, I can generate a comprehensive and accurate summary of
 
 它通过检查操作数类型、利用类型反馈信息以及处理不同的全局变量存储策略，来高效地构建 Maglev 图，为后续的优化和代码生成奠定基础。这部分是 Maglev 编译器将 JavaScript 代码转换为可执行形式的关键步骤之一。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/maglev/maglev-graph-builder.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/maglev/maglev-graph-builder.cc以.tq结尾，那它是个v8 torque源代码，
@@ -139,8 +139,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共18部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 alueNode* lhs = LoadRegister(0);
   ValueNode* rhs = GetAccumulator();
   SetAccumulator(BuildTaggedEqual(lhs, rhs));
@@ -961,8 +963,5 @@ NodeType StaticTypeForNode(compiler::JSHeapBroker* broker,
 
 bool MaglevGraphBuilder::CheckStaticType(ValueNode* node, NodeType type,
                                          NodeType* current_type) {
-  NodeType 
-"""
-
-
+  NodeType
 ```

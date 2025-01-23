@@ -250,7 +250,7 @@ __libc_sysinfo 的值为: 0xffffffff81000000  // 这里的值会根据实际情�
 
 总结来说，`__libc_init_sysinfo.cpp` 是 Android Bionic libc 中一个非常早期的初始化文件，它的核心作用是建立一个快速的系统调用入口点，这对于 Android 的性能至关重要。它依赖于内核提供的辅助向量，并且在动态链接过程的早期被调用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/arch-x86/bionic/__libc_init_sysinfo.cppandroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -261,8 +261,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 The Android Open Source Project
  * All rights reserved.
@@ -306,7 +308,4 @@ __LIBC_HIDDEN__ void __libc_init_sysinfo() {
 __LIBC_HIDDEN__ extern "C" void* __kernel_syscall() {
   return __libc_sysinfo;
 }
-
-"""
-
 ```

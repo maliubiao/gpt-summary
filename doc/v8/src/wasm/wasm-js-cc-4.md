@@ -186,7 +186,7 @@ console.log(globalVar.value); // 输出修改后的值
 
 总而言之，`v8/src/wasm/wasm-js.cc` 是 V8 实现 WebAssembly 支持的关键组成部分，它使得 WebAssembly 代码能够无缝地运行在 JavaScript 宿主环境中，并与 JavaScript 代码进行交互。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/wasm/wasm-js.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/wasm/wasm-js.cc以.tq结尾，那它是个v8 torque源代码，
@@ -194,8 +194,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第5部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 or, WASM_TABLE_OBJECT_TYPE,
                          WasmTableObject::kHeaderSize, "WebAssembly.Table");
     native_context->set_wasm_table_constructor(*table_constructor);
@@ -601,8 +603,4 @@ std::unique_ptr<WasmStreaming> StartStreamingForTesting(
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
-
 ```

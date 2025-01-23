@@ -245,15 +245,17 @@ By following these steps, iterating through the code, and thinking about the con
 
 因此，几乎所有与 QUIC 协议相关的网络操作，从连接建立到数据传输再到连接关闭，都有可能间接地调用到 `quic_utils.cc` 中提供的实用函数。在调试 QUIC 相关问题时，理解这些工具函数的功能非常有帮助。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_utils.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2012 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -901,7 +903,4 @@ std::string RawSha256(absl::string_view input) {
 
 #undef RETURN_STRING_LITERAL  // undef for jumbo builds
 }  // namespace quic
-
-"""
-
 ```

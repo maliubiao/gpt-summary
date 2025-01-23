@@ -147,15 +147,17 @@ The primary mistake this test targets is **passing arguments of the wrong type t
 
 **In summary, `go/test/fixedbugs/issue7129.go` is a test case that confirms the Go compiler's ability to correctly identify and report type mismatches during function calls, specifically focusing on the incorrect usage of boolean values where integers are expected.** It helps ensure the robustness of Go's static typing system.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/fixedbugs/issue7129.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2014 The Go Authors. All rights reserved.
@@ -177,9 +179,4 @@ func main() {
 	f(true)       // ERROR "in argument to f|incompatible type|cannot convert"
 	h(true, true) // ERROR "in argument to h|incompatible type|cannot convert"
 }
-
-"""
-
-
-
 ```

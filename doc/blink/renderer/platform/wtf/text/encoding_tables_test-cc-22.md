@@ -70,15 +70,17 @@ While this file tests the *internal workings* of Blink, it helps prevent user an
 
 As part 23 of 24, this specific section of the `encoding_tables_test.cc` file likely focuses on **testing a particular range or set of Unicode code points** within Blink's encoding infrastructure. It contributes to the overall goal of ensuring the correctness and reliability of Blink's text encoding capabilities. Given the large number of code points listed, it's probable that this part is dedicated to testing a significant block of characters, potentially from a specific script or a range of less common characters. The presence of this test suite is crucial for maintaining accurate and consistent text rendering across different languages and platforms in the Chromium browser.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/text/encoding_tables_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第23部分，共24部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 , 0x9624, 0x9625,
      0x9626, 0x9627, 0x9628, 0x9629, 0x962B, 0x962C, 0x962D, 0x962F, 0x9630,
      0x9637, 0x9638, 0x9639, 0x963A, 0x963E, 0x9641, 0x9643, 0x964A, 0x964E,
@@ -506,7 +508,4 @@ Prompt:
      0x2EAA, 0x4056, 0x415F, 0x2EAE, 0x4337, 0x2EB3, 0x2EB6, 0x2EB7, 0xE83B,
      0x43B1, 0x43AC, 0x2EBB, 0x43DD, 0x44D6, 0x4661, 0x464C, 0x9FB9, 0x4723,
      0x4729, 0x477C, 0x47
-"""
-
-
 ```

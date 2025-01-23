@@ -257,7 +257,7 @@ f(obj2); // 输出 1，然后输出 1
 
 总而言之，这些测试确保了 V8 的惰性属性机制能够高效地延迟属性值的计算，并且在不同的对象实例和优化场景下都能正确运行，这对于提升 JavaScript 代码的性能和内存使用至关重要，尤其是在需要按需计算属性值的情况下。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/cctest/test-accessors.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/cctest/test-accessors.cc以.tq结尾，那它是个v8 torque源代码，
@@ -265,8 +265,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 HandleScope scope(isolate);
   v8::Local<v8::Object> obj = v8::Object::New(isolate);
   CHECK(env->Global()->Set(env.local(), v8_str("obj"), obj).FromJust());
@@ -319,8 +321,4 @@ TEST(ObjectTemplateSetLazyPropertySurvivesIC) {
   f->Call(context, context->Global(), 1, &obj).ToLocalChecked();
   CHECK_EQ(getter_call_count, 2);
 }
-
-"""
-
-
 ```

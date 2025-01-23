@@ -119,7 +119,7 @@ This thought process combines code analysis, contextual understanding (Frida's r
 
 这个 `a.c` 文件是一个用于 Frida 功能测试的简单但有效的例子。它展示了程序基于条件判断终止的基本机制，并为测试 Frida 的动态代码修改和观察能力提供了基础。通过分析这个文件，可以更好地理解 Frida 如何与目标进程交互，以及在逆向工程中如何利用动态 instrumentation 技术来分析和控制程序的行为。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/common/213 source set dictionary/a.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -127,8 +127,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <stdlib.h>
 #include "all.h"
 
@@ -137,7 +139,4 @@ int main(void)
     if (p) abort();
     f();
 }
-
-"""
-
 ```

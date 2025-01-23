@@ -137,7 +137,7 @@ Initially, I might have focused too much on what the *specific* code does in iso
 
 总而言之，`qtinterface.cpp` 虽然代码量不多，但它作为 Frida 中测试 Qt 集成的用例，体现了 Frida 如何利用 Qt 的元对象系统来理解和操作运行时的 Qt 对象，这对于逆向分析基于 Qt 框架的应用程序至关重要。它涉及到对二进制底层、操作系统机制以及 Qt 框架内部原理的理解。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/frameworks/4 qt/qtinterface.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -145,8 +145,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include <QGraphicsLayout>
 
 class Foo : public QGraphicsLayout
@@ -155,7 +157,4 @@ class Foo : public QGraphicsLayout
 };
 
 #include "qtinterface.moc"
-
-"""
-
 ```

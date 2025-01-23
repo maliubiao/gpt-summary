@@ -71,7 +71,7 @@ By following this process, I can systematically break down the request and gener
 
 **请等待第 2 部分，其中将详细解释以上各个方面。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/nextafter_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -83,8 +83,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
@@ -1956,7 +1958,4 @@ static data_1_2_t<double, double, double> g_nextafter_intel_data[] = {
     -0x1.ffffffffffffc0p-1023,
     -0x1.ffffffffffffep-1023,
     0x
-"""
-
-
 ```

@@ -175,7 +175,7 @@ By following these steps, combining a top-down understanding with detailed code 
 
 `mlog.py` 是 Frida 构建系统中一个关键的日志模块，负责记录构建过程中的各种信息，包括通知、警告、错误等。它提供了灵活的配置选项，支持彩色输出、多目的地输出和一次性记录等功能。虽然它不是直接用于逆向的工具，但其记录的日志信息对于理解 Frida 的构建过程、排查构建问题以及间接地理解 Frida 的内部工作原理至关重要，这与逆向分析密切相关。理解用户如何操作 Frida 的构建流程，可以帮助我们更好地利用 `mlog.py` 提供的日志信息进行调试和问题定位。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/mesonbuild/mlog.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -183,8 +183,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2013-2014 The Meson development team
 
@@ -727,7 +729,4 @@ def code_line(text: str, line: str, colno: int) -> str:
     :return: A formatted string of the text, line, and a caret
     """
     return f'{text}\n{line}\n{" " * colno}^'
-
-"""
-
 ```

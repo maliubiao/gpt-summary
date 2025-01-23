@@ -76,7 +76,7 @@ Looking at the code, it covers several test cases related to HTTP transport beha
 
 这段代码主要集中在测试 `net/http.Transport` 的各种边缘情况和错误处理机制。它覆盖了从基本的请求响应处理，到更复杂的连接管理、超时控制、协议切换以及并发安全等多个方面。 通过这些细致的测试，可以确保 `net/http.Transport` 在各种网络环境和异常情况下都能稳定可靠地工作。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/net/http/transport_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -85,8 +85,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第6部分，共7部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 00, 0x00, 0x00, 0xff, 0xff, 0x00, 0x00,
 	0x00, 0xff, 0xff, 0x00, 0x17, 0x00, 0xe8, 0xff,
 	0x42, 0x88, 0x21, 0xc4, 0x00, 0x00, 0x00, 0x00,
@@ -1293,9 +1295,4 @@ func testCancelRequestWhenSharingConnection(t *testing.T, mode testMode) {
 	case err := <-reqerrc:
 		t.Fatalf("request 1: got err %v, want nil", err)
 	case
-"""
-
-
-
-
 ```

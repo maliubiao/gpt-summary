@@ -108,16 +108,18 @@ By following these steps, the detailed and informative answer addressing all asp
 
 总而言之，这段代码是 `HTMLTreeBuilder` 类中处理 HTML 结束标签的核心逻辑，它根据当前的解析状态和遇到的具体标签，负责维护 DOM 树的结构，并在遇到不符合规范的 HTML 时进行错误处理，以尽可能地构建一个合理的 DOM 树供浏览器使用。它确保了 HTML 的基本结构正确性，这对于后续的 CSS 样式应用和 JavaScript 代码执行至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/parser/html_tree_builder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
-    // 13.
+### 源代码
+```cpp
+// 13.
     tree_.Reparent(furthest_block, new_item);
     // 14.
     tree_.ActiveFormattingElements()->SwapTo(formatting_element, new_item,
@@ -1156,7 +1158,4 @@ void HTMLTreeBuilder::DefaultForInHeadNoscript() {
 void HTMLTreeBuilder::DefaultForAfterHead() {
   AtomicHTMLToken start_body(HTMLToken::kStartTag, HTMLTag::kBody);
   ProcessStartTag(&start_body)
-"""
-
-
 ```

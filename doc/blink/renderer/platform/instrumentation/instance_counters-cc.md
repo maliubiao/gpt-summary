@@ -157,14 +157,16 @@ By following these steps, systematically analyzing the code, and making informed
 
 `instance_counters.cc` 提供了一个核心的监控机制，用于跟踪 Blink 渲染引擎中各种对象实例的数量。这对于性能分析、内存泄漏检测以及理解引擎内部行为非常重要。它与 JavaScript, HTML, CSS 的关系体现在它跟踪的对象正是用于渲染和处理这些 Web 技术的基础构建块。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/instrumentation/instance_counters.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2012 Google Inc. All rights reserved.
  *
@@ -215,7 +217,4 @@ int InstanceCounters::CounterValue(CounterType type) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -188,7 +188,7 @@ uint32_t UnCanonicalizeCharacter(uint32_t code_point) {
 
 作为第 4 部分，我们分析的这段代码片段主要揭示了 `v8/src/strings/unicode.cc` 文件中 **用于存储静态 Unicode 相关数据的部分**。 具体来说，我们看到了用于加速 Unicode 属性查找的缓存数据 (`kUnicodeCacheLookupData`) 以及用于支持 ECMA-262 定义的非规范化操作的数据 (`kEcma262UnCanonicalizeTable0`)。 这些数据表是 V8 引擎正确高效地处理 JavaScript 字符串的基础。  接下来的部分可能会涉及使用这些数据的具体函数实现或更复杂的 Unicode 处理逻辑。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/strings/unicode.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/strings/unicode.cc以.tq结尾，那它是个v8 torque源代码，
@@ -196,8 +196,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第4部分，共6部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 inel}},
                                                 {{393, 598, kSentinel}},
                                                 {{394, 599, kSentinel}},
@@ -639,8 +641,4 @@ static const int32_t kEcma262UnCanonicalizeTable0[2010] = {
     254,        25,   255,        29,   256,        33,   257,        33,
     258,        37,   259,        37,   260,        41,   261,        41,
     262,        45,   263,        45,   264,        49,   265,        49,
- 
-"""
-
-
 ```

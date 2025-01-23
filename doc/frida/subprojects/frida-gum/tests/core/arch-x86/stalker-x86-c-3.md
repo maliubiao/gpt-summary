@@ -133,7 +133,7 @@ By following these steps, moving from a broad overview to detailed analysis, and
 
 总而言之，`stalker-x86.c` 通过一系列全面的测试用例，验证了 Frida Stalker 组件在 x86 架构下的各种核心功能，确保其能够可靠地进行代码追踪、修改和在运行时进行动态 instrumentation。这些功能是 Frida 作为动态逆向工程工具的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/tests/core/arch-x86/stalker-x86.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -142,9 +142,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
-    prefetch_backpatch_tranform, NULL, NULL);
+### 源代码
+```c
+prefetch_backpatch_tranform, NULL, NULL);
 
   fork_addr = GSIZE_TO_POINTER (gum_module_find_export_by_name (NULL, "fork"));
   interceptor = gum_interceptor_obtain ();
@@ -725,8 +727,4 @@ sleeping_dummy (gpointer data)
 
   return NULL;
 }
-
-"""
-
-
 ```

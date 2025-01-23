@@ -138,11 +138,13 @@ v3: Add v2, 1 : Int32
 
 `decompression-optimization.cc` 在 V8 Turboshaft 编译器中扮演着关键角色，它通过智能地分析和优化值的表示方式，尽可能地推迟解压缩操作，从而减少内存占用，提高缓存局部性，并最终提升 JavaScript 代码的执行效率。这是一种典型的编译器优化技术，旨在提高性能，而对 JavaScript 开发者是透明的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/turboshaft/decompression-optimization.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2022 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -401,7 +403,4 @@ void RunDecompressionOptimization(Graph& graph, Zone* phase_zone) {
 }
 
 }  // namespace v8::internal::compiler::turboshaft
-
-"""
-
 ```

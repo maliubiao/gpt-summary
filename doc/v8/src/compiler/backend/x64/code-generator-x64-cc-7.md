@@ -147,7 +147,7 @@ Atomics.compareExchange(int32Array, 0, 0, 10); // 如果索引 0 的值为 0，�
 
 这段代码是 `v8/src/compiler/backend/x64/code-generator-x64.cc` 文件的一部分，专门负责将高级的 SIMD 操作和原子操作转换为底层的 x64 汇编指令。它处理了各种 SIMD 数据的重排、加载、存储、位操作、类型转换、融合运算以及原子内存访问，是 V8 引擎实现高性能 JavaScript 执行的关键组成部分，特别是对于涉及 WebAssembly SIMD 和 SharedArrayBuffer 的代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/x64/code-generator-x64.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/x64/code-generator-x64.cc以.tq结尾，那它是个v8 torque源代码，
@@ -155,8 +155,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第8部分，共10部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 nputAt(1)->IsSimd128Register()) {
           XMMRegister src1 = i.InputSimd128Register(1);
           if (src1 != dst) __ Movdqa(dst, src1);
@@ -1041,7 +1043,4 @@ constexpr Condition FlagsConditionToCondition(FlagsCondition condition) {
 }  // namespace
 
 // Assembl
-"""
-
-
 ```

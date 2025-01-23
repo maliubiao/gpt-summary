@@ -143,7 +143,7 @@ func main() {
 
 `go/src/runtime/mgclimit.go` 实现了一个精巧的机制，用于动态地限制Go垃圾回收器的CPU使用率，以防止GC过度占用资源，影响应用程序的性能。它通过漏桶模型来平滑GC的CPU使用，允许短暂的峰值，并在GC CPU使用率过高时进行干预，从而保持系统的整体稳定性和响应性。 开发者无需直接操作此代码，Go运行时会自动管理其行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/runtime/mgclimit.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -151,8 +151,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -638,9 +640,4 @@ func (e *limiterEvent) stop(typ limiterEventType, now int64) {
 		throw("limiterEvent.stop: invalid limiter event type found")
 	}
 }
-
-"""
-
-
-
 ```

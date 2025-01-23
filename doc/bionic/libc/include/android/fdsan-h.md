@@ -322,7 +322,7 @@ sys.stdin.read()
 
 通过运行这个 Frida 脚本，你可以在应用程序调用 `android_fdsan_close_with_tag` 时看到相应的日志输出，从而调试 fdsan 的工作流程和文件描述符的管理过程。你可以修改脚本来 hook 其他 fdsan 函数或相关的 `open`、`close` 等系统调用，以更深入地了解 Android 的文件描述符管理机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/include/android/fdsan.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -333,8 +333,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2018 The Android Open Source Project
  * All rights reserved.
@@ -559,7 +561,4 @@ enum android_fdsan_error_level android_fdsan_set_error_level_from_property(enum 
 #endif /* __BIONIC_AVAILABILITY_GUARD(30) */
 
 __END_DECLS
-
-"""
-
 ```

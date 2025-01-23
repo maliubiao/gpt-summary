@@ -162,15 +162,17 @@ p1.z = 5; // Adding a property changes the structure of p1
 
 In summary, `v8/src/codegen/tnode.h` is a crucial part of V8's compilation process, providing a system for statically typing intermediate values. This enables better code generation, optimization, and error detection within the compiler, ultimately contributing to the performance of JavaScript execution. While JavaScript developers don't directly use these types, understanding the underlying concepts can help them write more performant code.
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/tnode.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/codegen/tnode.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2015 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -596,7 +598,4 @@ class SloppyTNode : public TNode<T> {
 }  // namespace v8
 
 #endif  // V8_CODEGEN_TNODE_H_
-
-"""
-
 ```

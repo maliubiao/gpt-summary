@@ -110,14 +110,16 @@ By following this structured approach, combining high-level overview with detail
 
 总而言之，`html_table_element.cc` 文件是 Blink 渲染引擎中关于 HTML 表格的核心实现，它负责表格元素的创建、属性解析、子元素管理，并提供了与 JavaScript 和 CSS 交互的基础。理解这个文件有助于深入了解浏览器如何处理和渲染 HTML 表格。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/html_table_element.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 1997 Martin Jones (mjones@kde.org)
  *           (C) 1997 Torben Weis (weis@kde.org)
@@ -778,7 +780,4 @@ void HTMLTableElement::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

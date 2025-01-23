@@ -202,7 +202,7 @@ func main() {
 
 `go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_netbsd_amd64.go` 是 Go 语言 `syscall` 包中特定于 `netbsd` 操作系统和 `amd64` 架构的一部分，它定义了大量的操作系统错误码常量和信号常量，并提供了它们到名称和描述的映射。这使得 Go 程序能够更方便、更清晰地与底层的 NetBSD 系统进行交互，处理系统调用返回的错误和接收到的信号。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_netbsd_amd64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -210,8 +210,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 )
 	ENOEXEC         = syscall.Errno(0x8)
 	ENOLCK          = syscall.Errno(0x4d)
@@ -441,10 +443,4 @@ var signalList = [...]struct {
 	{31, "SIGUSR2", "user defined signal 2"},
 	{32, "SIGPWR", "power fail/restart"},
 }
-
-"""
-
-
-
-
 ```

@@ -172,15 +172,17 @@ console.log(sum); // 输出 8
 
 `v8/src/interpreter/interpreter-intrinsics-generator.h` 是 V8 解释器中一个关键的组成部分，它负责生成调用内建函数的代码，这对于 V8 高效执行 JavaScript 代码至关重要。理解其作用有助于理解 V8 的内部机制以及如何编写更高效的 JavaScript 代码。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/interpreter/interpreter-intrinsics-generator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/interpreter/interpreter-intrinsics-generator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2017 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -208,7 +210,4 @@ extern TNode<Object> GenerateInvokeIntrinsic(
 }  // namespace v8
 
 #endif  // V8_INTERPRETER_INTERPRETER_INTRINSICS_GENERATOR_H_
-
-"""
-
 ```

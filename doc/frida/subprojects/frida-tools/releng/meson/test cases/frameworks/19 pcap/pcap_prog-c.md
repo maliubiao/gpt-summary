@@ -176,7 +176,7 @@ By following these steps, we can comprehensively analyze the code, understand it
 
 因此，当调试与 `Frida` 网络捕获功能相关的问题时，查看这个测试用例可以帮助理解 `Frida` 如何尝试初始化网络捕获，以及可能遇到的常见错误情况（例如权限问题、接口不存在等）。如果测试失败，错误信息可能会指向 `pcap_create` 的失败，开发者可以进一步检查运行环境的配置和权限。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-tools/releng/meson/test cases/frameworks/19 pcap/pcap_prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -184,8 +184,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include <pcap/pcap.h>
 
 int
@@ -201,7 +203,4 @@ main()
     pcap_t *p = pcap_create(source, errbuf);
     return p == NULL;
 }
-
-"""
-
 ```

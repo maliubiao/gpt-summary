@@ -197,7 +197,7 @@ swig -go -cgo -intgosize 64 -module example -o /tmp/objdir/example_wrap.c -outdi
 
 这部分代码主要负责 Go 语言与 C/C++ 代码通过 SWIG 进行交互的构建过程中的关键步骤。它确保了 SWIG 工具的正确版本被使用，并将必要的配置信息（如目标平台 `int` 类型的大小）传递给 SWIG。它还处理了执行外部命令时的常见问题，例如命令行长度限制，并对生成的文件进行管理，以避免命名冲突。 总体而言，这部分代码是 Go 构建工具链中处理 C/C++ 互操作性的重要组成部分。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/work/exec.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -206,9 +206,11 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第4部分，共4部分，请归纳一下它的功能
+```
 
-"""
- number; hope for the best.
+### 源代码
+```go
+number; hope for the best.
 		return nil
 	}
 
@@ -518,10 +520,4 @@ func encodeArg(arg string) string {
 	}
 	return b.String()
 }
-
-"""
-
-
-
-
 ```

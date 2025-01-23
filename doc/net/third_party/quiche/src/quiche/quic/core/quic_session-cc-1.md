@@ -302,7 +302,7 @@ This part of the `QuicSession::cc` file focuses on the core mechanisms for **sen
 
 通过分析用户操作和相关的代码执行路径，结合日志信息，可以更有效地定位网络问题的根源。例如，如果在用户提交表单时，发现 `WritevData()` 因为加密未建立而被阻止，那么问题可能出在握手阶段。如果发现是因为流量控制阻塞，则需要检查两端的流量控制窗口状态。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_session.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -310,8 +310,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 ding_retransmission_.empty()) {
     return true;
   }
@@ -1119,7 +1121,4 @@ void QuicSession::OnNewStreamOutgoingBidirectionalFlowControlWindow(
     }
     QUIC_DVLOG(1) << ENDPOINT << "Informing outgoing bidirectional stream "
                   << id << " of new stream flow control win
-"""
-
-
 ```

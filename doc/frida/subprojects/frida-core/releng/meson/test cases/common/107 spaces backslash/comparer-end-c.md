@@ -122,7 +122,7 @@ By following this structured approach, considering the context, exploring potent
 
 总而言之，`comparer-end.c` 是 Frida 确保自身代码质量的一个小而重要的测试环节，它专注于验证特定情况下字符串中反斜杠的处理是否正确，这对于 Frida 作为一个需要深入目标进程内部的动态分析工具至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/107 spaces backslash/comparer-end.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -130,8 +130,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include "comparer.h"
 
 #ifndef COMPARER_INCLUDED
@@ -148,7 +150,4 @@ int main(void) {
     }
     return 0;
 }
-
-"""
-
 ```

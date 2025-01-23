@@ -196,15 +196,17 @@ console.log(receiver._x); // 输出: 15 (receiver 的 _x 也被修改，因为 s
 
 总而言之，`v8/src/builtins/builtins-reflect.cc` 负责实现 `Reflect` 对象在 JavaScript 中的行为，提供了对对象操作更底层的控制和内省能力，并避免了在某些操作失败时抛出异常，而是返回布尔值。理解这些 built-in 函数的实现有助于更深入地理解 JavaScript 引擎的工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/builtins-reflect.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/builtins/builtins-reflect.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -306,7 +308,4 @@ BUILTIN(ReflectSet) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -147,14 +147,16 @@ This systematic approach allows for a comprehensive understanding of the test fi
 
 总而言之，`line_info_list_test.cc` 通过一系列测试用例验证了 `LineInfoList` 类的核心功能，特别是其获取和管理行信息的能力，这对于 Blink 渲染引擎正确地进行文本布局至关重要。理解这些测试用例有助于理解 `LineInfoList` 的设计和使用场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/layout/inline/line_info_list_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -210,7 +212,4 @@ TEST_F(LineInfoListTest, Get) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

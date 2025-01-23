@@ -140,15 +140,17 @@ Essentially, my process involved dissecting the code, understanding its purpose 
 
 总而言之，`web_render_theme.cc` 提供了一个外部可配置的接口，用于影响 Blink 渲染引擎的一些全局视觉主题属性，这些属性直接影响着 HTML 元素的渲染和 CSS 样式的应用。理解这个文件对于调试与渲染主题相关的 Bug 以及理解 Blink 引擎的架构非常重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/exported/web_render_theme.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2010 Joel Stanley. All rights reserved.
  *
@@ -219,7 +221,4 @@ void ColorSchemeChanged() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

@@ -218,7 +218,7 @@ func main() {
 
 `go/src/internal/poll/export_windows_test.go` 文件的主要目的是为了在 Windows 平台上测试 `internal/poll` 包的内部行为。它通过导出内部变量和方法，使得测试代码能够检查和断言 `internal/poll` 的状态，例如判断文件描述符是否被网络轮询器管理。  普通开发者不应该直接使用 `internal` 包，以避免潜在的兼容性和维护问题。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/poll/export_windows_test.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -226,8 +226,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -245,9 +247,4 @@ var (
 func (fd *FD) IsPartOfNetpoll() bool {
 	return fd.pd.runtimeCtx != 0
 }
-
-"""
-
-
-
 ```

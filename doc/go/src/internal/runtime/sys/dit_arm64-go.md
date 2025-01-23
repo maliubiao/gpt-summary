@@ -218,7 +218,7 @@ DIT 未启用，比较耗时: 可能是另一个时长，并且可能与比较�
 
 请注意，`internal` 包中的代码通常被认为是 Go 语言运行时的内部实现细节，不建议直接在用户代码中使用。这里举例只是为了说明其可能的功能。实际的 Go 标准库可能会在更高的抽象层次上使用这些底层的 DIT 控制函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/internal/runtime/sys/dit_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -226,8 +226,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2024 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -245,9 +247,4 @@ var DITSupported = cpu.ARM64.HasDIT
 func EnableDIT() bool
 func DITEnabled() bool
 func DisableDIT()
-
-"""
-
-
-
 ```

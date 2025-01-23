@@ -170,7 +170,7 @@ By following this systematic breakdown, connecting the specific code to the broa
 
 总而言之，即使是一个非常简单的 Java 程序，也可以作为学习和测试 Frida 动态分析能力的良好起点，帮助理解 Frida 的基本工作原理和使用方法。通过对这个简单程序的分析，可以逐渐掌握使用 Frida 进行更复杂 Java 应用逆向工程的技术。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/releng/meson/test cases/unit/112 classpath/com/mesonbuild/Simple.java的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -178,8 +178,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```java
 package com.mesonbuild;
 
 class Simple {
@@ -187,7 +189,4 @@ class Simple {
         System.out.println("Java is working.\n");
     }
 }
-
-"""
-
 ```

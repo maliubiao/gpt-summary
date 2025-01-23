@@ -182,7 +182,7 @@ Extension error: Could not import extension sphinx.ext.autodoc (exception: No mo
 
 总之，`conf.py` 文件是 Sphinx 文档生成工具的核心配置文件，它定义了如何读取源代码、使用哪些扩展、以及如何呈现最终的文档。虽然它本身不直接参与二进制逆向或底层操作，但其生成的文档对于理解相关库的功能和用法至关重要，这在逆向工程中可能是一个有用的参考资料。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-clr/releng/tomlkit/docs/conf.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -190,8 +190,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```python
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -252,7 +254,4 @@ html_theme = "furo"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = []
-
-"""
-
 ```

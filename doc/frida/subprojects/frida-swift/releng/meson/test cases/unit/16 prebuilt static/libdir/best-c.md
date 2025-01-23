@@ -136,7 +136,7 @@ Interceptor.attach(Module.findExportByName("libbest.so", "msg"), { // 假设编�
 
 总而言之，`best.c` 文件本身的功能非常简单，但它的存在是为了作为 Frida 功能的单元测试用例。通过这个简单的例子，开发者可以验证 Frida 是否能够正确地与静态链接的 C 代码进行交互，这对于 Frida 的稳定性和正确性至关重要。它也为理解 Frida 如何与底层系统交互提供了一个简洁的入口点。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-swift/releng/meson/test cases/unit/16 prebuilt static/libdir/best.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -144,12 +144,11 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 const char *msg() {
     return "I am the best.";
 }
-
-"""
-
 ```

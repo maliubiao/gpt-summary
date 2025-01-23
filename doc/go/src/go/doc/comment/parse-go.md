@@ -123,7 +123,7 @@ Doc{
 
 这段 `parse.go` 代码的核心功能是 **将 Go 语言的文档注释字符串转换成一个结构化的、易于程序处理的 `Doc` 对象**。它能够识别和解析注释中的各种元素，包括文本段落、标题、代码块、列表以及各种类型的链接，为后续的文档生成和处理提供基础数据。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/go/doc/comment/parse.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -132,8 +132,10 @@ Prompt:
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Copyright 2022 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -1323,9 +1325,4 @@ func isIdentASCII(c byte) bool {
 	// mask is a 128-bit bitmap with 1s for allowed bytes,
 	// so that the byte c can be tested with a shift and an and.
 	// If c > 128
-"""
-
-
-
-
 ```

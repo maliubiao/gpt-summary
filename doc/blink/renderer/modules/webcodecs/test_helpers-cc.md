@@ -136,15 +136,17 @@ By following these steps, combining code analysis with knowledge of web technolo
 
 `blink/renderer/modules/webcodecs/test_helpers.cc` 是一个测试辅助文件，提供了方便的函数用于创建测试数据（如 `ArrayBuffer`）和配置（如解密配置）。它主要服务于 Chromium 的开发者，用于编写和调试 WebCodecs 模块的功能，与用户的直接操作关系不大。 理解这些辅助函数的功能可以帮助开发者更好地理解 WebCodecs 模块的测试和内部工作原理。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/webcodecs/test_helpers.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -186,7 +188,4 @@ std::unique_ptr<media::DecryptConfig> CreateTestDecryptConfig(
 }
 
 }  // namespace blink
-
-"""
-
 ```

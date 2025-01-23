@@ -192,15 +192,17 @@ externalObject = null; // 取消引用，使得对象符合垃圾回收的条件
 
 总而言之，`v8/src/objects/managed.cc` 是 V8 引擎中一个关键的组成部分，它为 JavaScript 与 C++ 的互操作提供了安全可靠的机制，并确保了在垃圾回收过程中外部资源的正确清理。理解其功能对于编写高效且内存安全的 V8 扩展至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/objects/managed.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/objects/managed.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -245,7 +247,4 @@ void ManagedObjectFinalizer(const v8::WeakCallbackInfo<void>& data) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

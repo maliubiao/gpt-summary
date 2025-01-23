@@ -199,15 +199,17 @@ IndexGenerator generator(10);
 
 总结来说，`v8/src/heap/index-generator.h` 中定义的 `IndexGenerator` 类是 V8 内部用于支持并行处理的一种机制，特别是在堆管理等领域。它通过线程安全的方式生成起始索引，帮助将大的任务分解为小的、可并行执行的子任务。用户在编写自己的并行代码时需要注意数据同步、避免死锁以及正确处理范围划分等问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/heap/index-generator.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/heap/index-generator.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -246,7 +248,4 @@ class V8_EXPORT_PRIVATE IndexGenerator {
 }  // namespace v8
 
 #endif  // V8_HEAP_INDEX_GENERATOR_H_
-
-"""
-
 ```

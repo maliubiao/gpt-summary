@@ -134,14 +134,16 @@ console.log(arrB); // 输出: [5]  创建了一个包含一个元素 5 的数组
 
 这段 Torque 代码精确地实现了 `Array.of()` 的 ECMA 标准，确保了在 V8 引擎中 `Array.of()` 能够按照预期工作，并避免了与 `Array` 构造函数在处理单个数字参数时的混淆。它考虑了子类化的场景，并使用了优化的内部方法来创建和填充数组。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/array-of.tq的一个v8 torque源代码， 请归纳一下它的功能, 
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -203,7 +205,4 @@ transitioning javascript builtin ArrayOf(
   return a;
 }
 }
-
-"""
-
 ```

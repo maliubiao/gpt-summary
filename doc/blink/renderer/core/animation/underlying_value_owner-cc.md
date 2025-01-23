@@ -211,14 +211,16 @@ This iterative process of reading, inferring, analyzing, and connecting helps to
 
 总而言之，`UnderlyingValueOwner` 是 Blink 渲染引擎动画机制中一个核心的、底层的工具类，它专注于高效、安全地管理动画属性的值，并与更上层的 JavaScript、HTML 和 CSS 动画功能紧密相关。理解它的功能有助于理解浏览器如何实现流畅的动画效果。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/underlying_value_owner.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -312,7 +314,4 @@ InterpolationValue& UnderlyingValueOwner::MutableValue() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

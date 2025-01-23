@@ -138,7 +138,7 @@ This detailed breakdown illustrates how to approach the analysis of a seemingly 
 
 总而言之，这个简单的 `c.c` 文件主要用于 Frida 的内部测试，展示了如何创建一个包含可导出 C 函数的共享库，并考虑了跨平台兼容性。在逆向工程中，理解这种基础的共享库结构和符号导出机制是非常重要的，因为我们经常需要与各种动态链接库打交道。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/common/75 custom subproject dir/custom_subproject_dir/C/c.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -146,8 +146,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #if defined _WIN32 || defined __CYGWIN__
 #define DLL_PUBLIC __declspec(dllexport)
 #else
@@ -162,7 +164,4 @@ Prompt:
 char DLL_PUBLIC func_c(void) {
     return 'c';
 }
-
-"""
-
 ```

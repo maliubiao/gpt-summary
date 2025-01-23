@@ -275,7 +275,7 @@ if (get_elf_note_addr) {
 
 请注意，由于这些是私有函数，它们的符号可能不会直接导出，或者名称可能会被修改。你可能需要使用更高级的 Frida 技术来查找它们的地址，例如基于 pattern scanning 或解析符号表。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/private/elf_note.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -286,8 +286,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (C) 2024 The Android Open Source Project
  * All rights reserved.
@@ -330,7 +332,4 @@ bool __get_elf_note(unsigned note_type, const char* note_name, const ElfW(Addr) 
 bool __find_elf_note(unsigned int note_type, const char* note_name, const ElfW(Phdr)* phdr_start,
                      size_t phdr_ct, const ElfW(Nhdr)** note_hdr, const char** note_desc,
                      const ElfW(Addr) load_bias);
-
-"""
-
 ```

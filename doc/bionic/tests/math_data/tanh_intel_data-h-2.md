@@ -72,7 +72,7 @@ By following this thought process, moving from understanding the basic content t
 
 希望以上归纳能够清晰地解释 `tanh_intel_data.handroid` 文件的功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/tanh_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -84,9 +84,11 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第3部分，共3部分，请归纳一下它的功能
+```
 
-"""
-  },
+### 源代码
+```c
+},
   { // Entry 714
     0x1.4fc441fa6d6d6195ca63f8eb92d312a4p-1,
     0x1.921fb54442d18p-1
@@ -152,8 +154,4 @@ Prompt:
     -0.0
   }
 };
-
-"""
-
-
 ```

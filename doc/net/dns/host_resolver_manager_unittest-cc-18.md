@@ -145,7 +145,7 @@ The final summary will emphasize the comprehensive nature of these unit tests in
 
 总体来说，这部分测试旨在确保 `HostResolverManager` 在各种复杂和特殊的情况下，仍然能够正确、高效地进行 DNS 解析，并提供必要的安全和性能优化。它是对 `HostResolverManager` 组件功能更深入、更细致的验证。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/host_resolver_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -153,8 +153,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第19部分，共21部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 llopt,
       resolve_context_.get()));
   RunUntilIdle();
@@ -905,7 +907,4 @@ TEST_F(HostResolverManagerDnsTest, SortFailureWithHostCache) {
 
   ResolveHostResponseHelper response(resolver_->CreateRequest(
       HostPortPai
-"""
-
-
 ```

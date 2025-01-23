@@ -30,7 +30,7 @@ The user is asking for a summary of the functionality of the provided C code sni
 
 **总结来说，这段代码的功能是为 Android Bionic 库中的 `coshf` 函数提供了一系列输入和期望输出的配对，用于进行单元测试，以确保该函数在各种输入情况下都能正确地计算出双曲余弦值。**
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/tests/math_data/coshf_intel_data.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -42,8 +42,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第2部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 ba1ddad8p7,
     0x1.62e42cp2
   },
@@ -924,8 +926,4 @@ ba1ddad8p7,
     -0x1.65a9fap6
   }
 };
-
-"""
-
-
 ```

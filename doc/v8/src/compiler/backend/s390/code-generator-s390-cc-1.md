@@ -148,7 +148,7 @@ Atomics.compareExchange(view, 0, 10, 15); // 原子地比较 view[0] 的值是�
 
 总而言之，这部分 `code-generator-s390.cc` 代码的核心功能是为 V8 引擎在 S390 架构上执行原子操作提供底层的汇编代码生成支持，这对于实现 JavaScript 的并发特性至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/backend/s390/code-generator-s390.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/backend/s390/code-generator-s390.cc以.tq结尾，那它是个v8 torque源代码，
@@ -156,8 +156,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第2部分，共5部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 .InputRegister(1);                                  \
     Register output = i.OutputRegister();                                     \
     Register addr = kScratchReg;                                              \
@@ -838,7 +840,4 @@ CodeGenerator::CodeGenResult CodeGenerator::AssembleArchInstruction(
       if (ShouldApplyOffsetToStackCheck(instr, &offset)) {
         lhs_register = i.TempRegister(0);
         __ SubS64(
-"""
-
-
 ```

@@ -172,15 +172,17 @@ Let's imagine a scenario where a web developer is debugging a feature where some
 
 In summary, `wait_for_event.cc` provides a fundamental building block for synchronizing operations within the Blink rendering engine based on the occurrence of specific DOM events. It's a crucial piece for implementing tests and potentially other features that require pausing execution until an event is dispatched. While not directly manipulated by JavaScript, its functionality underpins how the browser handles events and enables more complex interactions.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/testing/wait_for_event.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2019 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -228,7 +230,4 @@ void WaitForEvent::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

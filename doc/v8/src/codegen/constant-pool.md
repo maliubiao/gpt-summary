@@ -139,11 +139,13 @@ Here are a few ways JavaScript code can lead to entries in the constant pool:
 
 **In essence, the `constant-pool.cc` file plays a crucial role in optimizing the generated machine code for JavaScript execution by efficiently managing and accessing constant values. It helps reduce code size and potentially improve performance by making constant access faster.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/codegen/constant-pool.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2018 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -860,7 +862,4 @@ void ConstantPool::MaybeCheck() {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

@@ -177,14 +177,16 @@ spotlight.SetLimitingConeAngle(45.0f);
 
 总之，`blink/renderer/platform/graphics/filters/spot_light_source.cc` 文件定义了一个核心的聚光灯光源类，用于支持 Blink 引擎中的图形渲染，特别是 CSS 滤镜效果。理解其功能和属性对于理解浏览器如何实现光照效果至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/filters/spot_light_source.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Alex Mathews <possessedpenguinbob@gmail.com>
  * Copyright (C) 2004, 2005, 2006, 2007 Nikolas Zimmermann <zimmermann@kde.org>
@@ -263,7 +265,4 @@ StringBuilder& SpotLightSource::ExternalRepresentation(
 }
 
 }  // namespace blink
-
-"""
-
 ```

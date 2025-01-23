@@ -146,15 +146,17 @@ By following these steps, I can systematically analyze the code and generate a c
 
 总而言之，`paint_worklet_id_generator.cc` 虽然是一个小文件，但在 Blink 引擎中扮演着重要的角色，它负责为 CSS Paint Worklet 提供唯一的身份标识，使得浏览器能够正确地管理和使用这些强大的自定义绘制功能。用户虽然不能直接操作这个 ID，但其背后的机制直接影响着网页的渲染效果和功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/csspaint/paint_worklet_id_generator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -180,7 +182,4 @@ int PaintWorkletIdGenerator::NextId() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

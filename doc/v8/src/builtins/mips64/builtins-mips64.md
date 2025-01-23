@@ -99,12 +99,14 @@ Response: The user wants to understand the functionality of the provided C++ cod
 
 总而言之，`v8/src/builtins/mips64/builtins-mips64.cc` 文件是V8引擎在MIPS64架构上执行JavaScript代码的核心组成部分，它实现了许多底层的操作，使得JavaScript代码能够在特定的硬件架构上运行。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/builtins/mips64/builtins-mips64.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```
 // Copyright 2012 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -1867,9 +1869,4 @@ void Builtins::Generate_InterpreterEnterAtNextBytecode(MacroAssembler* masm) {
   AdvanceBytecodeOffsetOrReturn(masm, kInterpreterBytecodeArrayRegister,
                                 kInterpreterBytecodeOffsetRegister, a1, a2, a3,
                                 a4, &if_return);
-
-
-"""
-
-
 ```

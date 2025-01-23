@@ -64,15 +64,17 @@ The user wants a summary of the functionality of the `avif_image_decoder.cc` fil
 
 总而言之，`avif_image_decoder.cc` 的主要职责是作为 Chromium 中解码 AVIF 图像的核心组件。它负责与底层的 `libavif` 库交互，解析 AVIF 数据，提取图像元数据，管理帧缓冲区（对于动画），处理颜色空间信息，并在解码过程中进行错误处理。它的成功运作对于在网页上正确显示 AVIF 图像至关重要，并直接影响到用户浏览网页的体验。它通过 Blink 引擎与 HTML、CSS 和 JavaScript 等 Web 技术紧密结合，使得开发者能够方便地在网页中使用 AVIF 这种高效的图像格式。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/image-decoders/avif/avif_image_decoder.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
 这是第1部分，共2部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -923,7 +925,4 @@ bool AVIFImageDecoder::UpdateDemuxer() {
     // present, use it instead of the CICP color description.
     if (container->icc.size) {
       std::unique_ptr<Col
-"""
-
-
 ```

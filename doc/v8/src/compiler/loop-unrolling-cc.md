@@ -210,15 +210,17 @@ function processArrayManuallyUnrolledBad(arr) {
 
 总结来说，`v8/src/compiler/loop-unrolling.cc` 实现了 V8 编译器中重要的循环展开优化，通过复制和连接循环体来减少循环开销，提高 JavaScript 代码的执行效率。这个过程对 JavaScript 开发者是透明的，由编译器自动完成。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/loop-unrolling.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/loop-unrolling.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -430,7 +432,4 @@ void UnrollLoop(Node* loop_node, ZoneUnorderedSet<Node*>* loop, uint32_t depth,
 }  // namespace compiler
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

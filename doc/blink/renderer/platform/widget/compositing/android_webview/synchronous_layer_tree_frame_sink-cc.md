@@ -119,14 +119,16 @@ By following these steps and continuously refining the understanding, we can arr
 
 总而言之，`synchronous_layer_tree_frame_sink.cc` 文件是 Android WebView 中实现同步渲染的关键组件，它接收来自 Blink 渲染器的输出，并负责将其转化为 Android 系统可以绘制的内容。它与 JavaScript, HTML, CSS 的关系在于它是这些技术最终渲染结果的呈现者。理解其工作原理和潜在的错误使用场景对于开发高性能的 Android WebView 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/widget/compositing/android_webview/synchronous_layer_tree_frame_sink.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2013 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -790,7 +792,4 @@ void SynchronousLayerTreeFrameSink::SetBeginFrameSourcePaused(bool paused) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

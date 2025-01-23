@@ -127,14 +127,16 @@ During the process, I might refine my initial thoughts. For example, I might ini
 
 `parent_execution_context_task_runners.cc` 是 Blink 渲染引擎中一个重要的组件，它负责管理父执行上下文中不同类型任务的执行器，为 JavaScript, HTML, 和 CSS 功能的正常运行提供了底层的线程管理和任务调度机制。 虽然 Web 开发者不会直接操作这个文件，但理解其背后的原理有助于更好地理解浏览器的工作方式，并避免一些常见的异步编程错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/workers/parent_execution_context_task_runners.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -185,7 +187,4 @@ void ParentExecutionContextTaskRunners::ContextDestroyed() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

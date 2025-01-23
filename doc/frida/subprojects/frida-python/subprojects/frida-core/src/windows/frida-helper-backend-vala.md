@@ -142,7 +142,7 @@ def __lldb_init_module(debugger, internal_dict):
 - **调试点**：可以在 `inject_library_file` 方法的开始和结束处设置断点，观察注入过程的状态变化。
 
 通过以上步骤和调试线索，用户可以逐步跟踪代码执行过程，定位并解决问题。
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-python/subprojects/frida-core/src/windows/frida-helper-backend.vala的frida Dynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果涉及到二进制底层，linux内核，请做出对应的举例说明，
@@ -151,8 +151,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```
 namespace Frida {
 	public class WindowsHelperBackend : Object, WindowsHelper {
 		public PrivilegeLevel level {
@@ -391,7 +393,4 @@ namespace Frida {
 		public extern Source create (void * handle, bool owns_handle);
 	}
 }
-
-"""
-
 ```

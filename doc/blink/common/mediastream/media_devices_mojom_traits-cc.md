@@ -116,14 +116,16 @@ Initially, I might have focused too much on the low-level C++ details. I need to
 
 总而言之，`blink/common/mediastream/media_devices_mojom_traits.cc` 是 Chromium Blink 引擎中一个幕后英雄，它确保了关于媒体设备的信息能够高效且可靠地在不同的进程之间传递，从而支持了各种与媒体相关的 Web API 功能。它本身不直接与前端技术交互，但其功能是实现这些前端功能的基础。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/mediastream/media_devices_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -159,7 +161,4 @@ bool StructTraits<blink::mojom::MediaDeviceInfoDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

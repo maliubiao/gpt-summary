@@ -129,15 +129,17 @@ async function loadImage() {
 
 `net/disk_cache/mock/mock_entry_impl.cc` 是 Chromium 中用于测试磁盘缓存功能的关键组件。它通过提供一个可控的、简化的缓存条目模拟，使得开发者可以更方便、更可靠地测试与缓存相关的代码逻辑，包括那些最终影响 JavaScript 在浏览器中行为的逻辑。普通用户不会直接与这个文件交互，但它的存在保障了浏览器缓存功能的稳定性和正确性，从而间接提升了用户的浏览体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/disk_cache/mock/mock_entry_impl.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2022 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -150,7 +152,4 @@ EntryMock::EntryMock() = default;
 EntryMock::~EntryMock() = default;
 
 }  // namespace disk_cache
-
-"""
-
 ```

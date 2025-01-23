@@ -84,11 +84,13 @@ console.log(rightShiftResult); // 输出: 15432098626543209862654320986n
 
 虽然文件名暗示了除法相关的辅助功能，但提供的代码片段主要实现了 BigInt 的复制和位移操作。这些操作是 JavaScript 中 `BigInt` 类型位移运算符的基础实现，确保了 JavaScript 能够正确地处理任意大整数的位运算。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/bigint/div-helpers.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -157,7 +159,4 @@ void RightShift(RWDigits Z, Digits X, int shift) {
 
 }  // namespace bigint
 }  // namespace v8
-
-"""
-
 ```

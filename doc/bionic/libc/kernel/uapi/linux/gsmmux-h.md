@@ -283,7 +283,7 @@ sys.stdin.read()
 通过运行这个 Frida 脚本，你可以在 Android 设备上观察到 `com.android.phone` (或 `rild`) 进程调用 `ioctl` 系统调用时，哪些调用与 GSM 多路复用相关，以及传递了哪些参数。这有助于理解 Android Framework 如何与底层的 GSM 多路复用驱动程序进行交互。
 
 请注意，具体的进程名称和 `ioctl` 请求码范围可能因 Android 版本和设备而异，你需要根据实际情况进行调整。
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/gsmmux.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -294,8 +294,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -356,7 +358,4 @@ struct gsm_dlci_config {
 #define GSMIOC_GETCONF_DLCI _IOWR('G', 7, struct gsm_dlci_config)
 #define GSMIOC_SETCONF_DLCI _IOW('G', 8, struct gsm_dlci_config)
 #endif
-
-"""
-
 ```

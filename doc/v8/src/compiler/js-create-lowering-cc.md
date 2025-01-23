@@ -190,7 +190,7 @@ v8/src/compiler/js-create-lowering.cc 的功能:
 
 `v8/src/compiler/js-create-lowering.cc` 的主要功能是 **作为 V8 编译器的一部分，将高级的 JavaScript 对象创建操作转换为更底层的、更容易优化的表示形式。** 它针对各种不同的对象创建场景（普通对象、数组、函数、Promise 等）提供了专门的处理逻辑，以便后续的编译器阶段能够生成高效的目标代码。 这个文件是连接 JavaScript 语义和底层机器表示的关键桥梁。
 ```
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/js-create-lowering.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/js-create-lowering.cc以.tq结尾，那它是个v8 torque源代码，
@@ -198,8 +198,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2016 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -903,7 +905,4 @@ Reduction JSCreateLowering::ReduceJSCreateArray(Node* node) {
   } else if (arity <= JSArray::kInitialMaxFastElementArray) {
     // Gather the values to store into the newly created array.
     bool values_all_smis = true, values_all_numbers = tr
-"""
-
-
 ```

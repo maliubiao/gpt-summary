@@ -160,14 +160,16 @@ By following these steps, combining code analysis, web technology knowledge, and
 
 总而言之，`UserActivationState.cc` 是 Blink 引擎中一个关键的组件，它管理着用户交互产生的激活状态，并对许多 Web API 和功能的行为产生重要影响。理解其工作原理对于开发出符合用户期望且安全的 Web 应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/frame/user_activation_state.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -290,7 +292,4 @@ UserActivationNotificationType UserActivationState::EffectiveNotificationType()
 }
 
 }  // namespace blink
-
-"""
-
 ```

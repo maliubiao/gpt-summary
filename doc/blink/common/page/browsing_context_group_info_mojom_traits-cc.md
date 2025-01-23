@@ -131,14 +131,16 @@ Organize the information logically with clear headings and bullet points. Start 
 
 `browsing_context_group_info_mojom_traits.cc` 是 Chromium Blink 引擎中一个关键的底层文件，它负责处理 `BrowsingContextGroupInfo` 结构体在 Mojo 消息传递中的序列化和反序列化。虽然 Web 开发者不直接操作这个文件，但它所处理的数据和概念与浏览器的安全模型、跨域策略以及一些 Web API 的行为密切相关。理解它的功能有助于更深入地理解浏览器的工作原理和潜在的安全机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/common/page/browsing_context_group_info_mojom_traits.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2023 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -167,7 +169,4 @@ bool StructTraits<blink::mojom::BrowsingContextGroupInfoDataView,
 }
 
 }  // namespace mojo
-
-"""
-
 ```

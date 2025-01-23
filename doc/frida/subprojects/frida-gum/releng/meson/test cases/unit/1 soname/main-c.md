@@ -163,7 +163,7 @@ Frida 需要在这些步骤中的某个环节介入，才能实现 hook。
 
 总而言之，这个看似简单的 `main.c` 文件实际上是 Frida 项目中一个精心设计的单元测试用例，它专注于验证 Frida 在处理带有 soname 的共享库时的核心功能，这对于 Frida 在动态逆向分析领域的应用至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/unit/1 soname/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -171,14 +171,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int versioned_func (void);
 
 int main (void) {
   return versioned_func();
 }
-
-"""
-
 ```

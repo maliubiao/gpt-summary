@@ -175,15 +175,17 @@ This detailed thought process ensures that all aspects of the prompt are address
 
 总而言之，`net/third_party/mozilla_win/cert/win_util.cc` 是 Chromium 网络栈中一个关键的组成部分，它负责桥接 Chromium 与 Windows 系统底层的证书管理机制，确保浏览器能够信任各种来源的证书，从而支持安全的网络通信。 理解其功能有助于排查与证书相关的网络连接问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/mozilla_win/cert/win_util.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * NSS utility functions
  *
@@ -224,7 +226,4 @@ void GatherEnterpriseCertsForLocation(HCERTSTORE cert_store,
 }
 
 }  // namespace net
-
-"""
-
 ```

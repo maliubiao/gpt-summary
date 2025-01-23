@@ -180,14 +180,16 @@ void OnMessageReceived(scoped_refptr<MyData> received_data) {
 
 In summary, `cross_thread_copier.cc` defines a crucial mechanism in Blink for safely transferring data between threads, particularly for objects that require careful lifetime management like reference-counted objects. It plays a vital supporting role in enabling multi-threaded web technologies like web workers by preventing common pitfalls associated with cross-thread data sharing.
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/wtf/cross_thread_copier.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2009 Google Inc. All rights reserved.
  *
@@ -266,7 +268,4 @@ static_assert(
     "std::unique_ptr test");
 
 }  // namespace WTF
-
-"""
-
 ```

@@ -154,7 +154,7 @@ By following this detailed thought process, which involves analyzing the code, c
 
 总而言之，这段简单的 `main.c` 文件在 Frida 的测试框架中扮演着一个用于验证特定功能（如头文件包含顺序）的角色。开发人员会通过构建、运行和调试这个测试用例来确保 Frida 的相关功能正常工作。同时，它也是一个很好的示例，展示了在逆向工程中如何分析未知函数的行为，以及 Frida 作为一个动态分析工具的用途。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/common/130 include order/sub4/main.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -162,8 +162,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 /* Use the <> include notation to force searching in include directories */
 #include <main.h>
 
@@ -172,7 +174,4 @@ int main(void) {
     return 0;
   return 1;
 }
-
-"""
-
 ```

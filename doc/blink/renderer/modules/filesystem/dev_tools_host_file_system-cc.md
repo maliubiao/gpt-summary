@@ -162,15 +162,17 @@ By following these steps, combining code analysis with reasoning about the conte
 
 总而言之，`dev_tools_host_file_system.cc` 是 Blink 引擎中一个关键的组件，它为开发者工具提供了操作隔离文件系统的能力，这对于实现诸如工作区、本地覆盖等高级调试功能至关重要。 它的功能虽然不直接操作网页内容，但通过 DevTools 的媒介，深刻影响着开发者如何理解、调试和修改 web 应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/filesystem/dev_tools_host_file_system.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -213,7 +215,4 @@ void DevToolsHostFileSystem::upgradeDraggedFileSystemPermissions(
 }
 
 }  // namespace blink
-
-"""
-
 ```

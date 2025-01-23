@@ -124,11 +124,13 @@ Initially, I might have focused too much on trying to find direct JavaScript equ
 
 总而言之，`testing-unittest.cc` 这个 C++ 文件虽然没有直接的 JavaScript 代码，但它通过单元测试确保了 V8 引擎的垃圾回收机制（`cppgc`）在各种场景下都能正确工作，这直接关系到 JavaScript 程序的性能和内存管理。`cppgc::testing` 提供的工具使得 V8 开发者能够有效地测试垃圾回收器的边界情况和特定行为，例如在嵌入式环境中的表现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/testing-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -193,7 +195,4 @@ TEST_F(TestingTest, StandaloneTestingHeap) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

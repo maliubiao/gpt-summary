@@ -207,15 +207,17 @@ console.log(packetBuffer.findByInterval(25));  // 输出 null，因为没有覆�
 
 总而言之，`net/third_party/quiche/src/quiche/quic/core/quic_interval_deque_test.cc` 文件通过各种测试用例，全面地验证了 `QuicIntervalDeque` 类的功能和健壮性，确保其在 QUIC 协议栈中能够正确地管理和访问带有间隔信息的数据。理解这个测试文件有助于理解 `QuicIntervalDeque` 的工作原理以及可能出现的错误场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/third_party/quiche/src/quiche/quic/core/quic_interval_deque_test.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright (c) 2019 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -616,7 +618,4 @@ TEST_F(QuicIntervalDequeTest, IteratorMethods) {
 
 }  // namespace test
 }  // namespace quic
-
-"""
-
 ```

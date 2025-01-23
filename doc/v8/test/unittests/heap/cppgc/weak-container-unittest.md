@@ -119,11 +119,13 @@ map = null; // 解除强引用
 
 `weak-container-unittest.cc` 这个 C++ 文件主要测试了 `cppgc` 库中处理弱引用的核心机制。这些机制是实现 JavaScript 中 `WeakRef` 和 `FinalizationRegistry` 等功能的基础，确保了在 JavaScript 中使用弱引用时，对象的生命周期能够被正确管理，并在对象即将被回收时能够执行相应的清理操作。该测试涵盖了不同类型的对象（可追踪与不可追踪）以及不同的垃圾回收模式（精确与保守），以确保弱容器机制的健壮性和正确性。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/weak-container-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2020 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -314,7 +316,4 @@ TEST_F(WeakContainerTest, WeakContainerWeakCallbackCalled) {
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

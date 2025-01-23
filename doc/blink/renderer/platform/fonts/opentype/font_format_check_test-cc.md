@@ -171,14 +171,16 @@ This systematic approach, combining code analysis, keyword recognition, understa
 
 总而言之，`font_format_check_test.cc` 通过测试 `FontFormatCheck` 类的功能，确保了 Chromium Blink 引擎能够正确识别和处理不同类型的 OpenType 字体，特别是彩色字体（COLR），这对于 Web 开发者使用彩色字体并在浏览器中正确显示至关重要。它帮助避免了由于字体格式识别错误而导致的渲染问题。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/fonts/opentype/font_format_check_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -224,7 +226,4 @@ TEST_F(FontFormatCheckTest, COLRV0) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

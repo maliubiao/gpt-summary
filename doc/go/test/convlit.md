@@ -176,15 +176,17 @@ This specific code snippet (`convlit.go`) is **not designed to be run directly w
 
 In summary, `go/test/convlit.go` is a crucial part of Go's testing infrastructure, ensuring that the compiler correctly enforces type conversion rules, especially when dealing with constant literals, thus contributing to the language's type safety and robustness.
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/convlit.go的go语言实现的一部分， 请归纳一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果介绍代码逻辑，则建议带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```
 // errorcheck
 
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -259,9 +261,4 @@ var _ = Tbyte("abc") // ok
 // implicit is still not
 var _ Trune = "abc" // ERROR "cannot use|incompatible|invalid|cannot convert"
 var _ Tbyte = "abc" // ERROR "cannot use|incompatible|invalid|cannot convert"
-
-"""
-
-
-
 ```

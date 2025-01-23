@@ -109,11 +109,13 @@ console.log('常驻内存大小 (rss):', memoryUsage.rss);
 
 `heap-statistics-collector-unittest.cc` 是 V8 引擎内部用于测试其 C++ 垃圾回收器内存统计功能的单元测试文件。虽然它是 C++ 代码，但它所测试的功能直接关系到 JavaScript 的内存管理，并且在 JavaScript 中可以通过 `process.memoryUsage()` 等 API 来观察到一些类似的统计信息。这个测试确保了 V8 引擎能够准确地跟踪和报告 JavaScript 堆的内存使用情况，这对于性能分析、内存泄漏检测等方面至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/heap/cppgc/heap-statistics-collector-unittest.cc的一个c++源代码文件， 请归纳一下它的功能, 如果它与javascript的功能有关系，请用javascript举例说明
+```
 
-"""
+### 源代码
+```
 // Copyright 2021 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -340,7 +342,4 @@ TEST_F(HeapStatisticsCollectorTest,
 
 }  // namespace internal
 }  // namespace cppgc
-
-"""
-
 ```

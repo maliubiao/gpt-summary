@@ -197,7 +197,7 @@ vmovupd [rax], ymm1  ; 将 ymm1 寄存器中的数据存储回内存地址 rax �
 
 总之，`simd_avx.c` 文件是Frida为了利用SIMD指令集进行性能优化而编写的一个示例或测试用例。它可以帮助理解Frida的内部实现，以及在逆向分析中使用SIMD指令的应用。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/common/147 simd/simd_avx.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -205,8 +205,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 #include<simdheader.h>
 
 #ifndef I_CAN_HAZ_SIMD
@@ -256,7 +258,4 @@ void increment_avx(float arr[4]) {
     arr[2] = (float)darr[2];
     arr[3] = (float)darr[3];
 }
-
-"""
-
 ```

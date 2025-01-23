@@ -93,7 +93,7 @@ struct bcc_zip_entry {
 ```
 
 此代码通过精确解析ZIP结构实现高效文件访问，是BCC工具链中处理嵌入式资源的关键模块。
-Prompt: 
+### 提示词
 ```
 这是目录为bcc/src/cc/bcc_zip.cbcc BPF Compiler Collection的源代码文件， BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples. It makes use of extended BPF (Berkeley Packet Filters), formally known as eBPF,
 请列举一下它的功能, 给出执行顺序(不是行号顺序), 建议分10步,
@@ -102,8 +102,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明syscall是如何一步步的到达这里，作为调试线索，
 请用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * Copyright (c) Meta Platforms, Inc. and affiliates.
  *
@@ -517,7 +519,4 @@ struct bcc_zip_archive* bcc_zip_archive_open_and_find(
 
   return archive;
 }
-
-"""
-
 ```

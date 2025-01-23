@@ -192,14 +192,16 @@ Finally, I organize the information into the requested categories: functionality
 
 5. **使用错误的直方图名称:**  在注册直方图时使用错误的名称可能导致数据被错误地关联到不同的累加器，或者根本不被关联到任何累加器，从而影响数据的分析结果。例如，本意是记录后台编译时间，却使用了前台编译的名称。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/bindings/v8_histogram_accumulator.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2024 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -284,7 +286,4 @@ V8HistogramAccumulator::V8HistogramAccumulator() {
 }
 
 }  // namespace blink
-
-"""
-
 ```

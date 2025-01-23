@@ -165,15 +165,17 @@ size_t size = sizeof(data);
 
 通过模糊测试，开发者可以在发布软件之前发现并修复潜在的漏洞，提高 Chrome 浏览器的稳定性和安全性。 `https_record_rdata_fuzzer.cc` 就是这样一个用于自动化发现漏洞的工具。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/dns/https_record_rdata_fuzzer.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2020 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -260,7 +262,4 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
 }
 
 }  // namespace net
-
-"""
-
 ```

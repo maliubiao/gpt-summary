@@ -182,15 +182,17 @@ By following these steps, systematically analyzing the code, and connecting it t
 
 总而言之，`TextTrackCueList.cc` 中定义的 `TextTrackCueList` 类是 Blink 渲染引擎中处理文本轨道提示的核心组件，它负责管理提示的存储、顺序和状态，并与 HTML `<track>` 元素和 JavaScript `TextTrack` API 紧密协作，最终实现网页上字幕、描述等文本信息的显示功能。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/html/track/text_track_cue_list.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 如果能说明用户操作是如何一步步的到达这里，就更棒了。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2011 Google Inc.  All rights reserved.
  *
@@ -339,7 +341,4 @@ void TextTrackCueList::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

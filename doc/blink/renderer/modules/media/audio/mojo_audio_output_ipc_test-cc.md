@@ -165,15 +165,17 @@ By following these steps, you can systematically analyze the given C++ test file
 
 总而言之，`mojo_audio_output_ipc_test.cc` 是一个至关重要的测试文件，它确保了 Blink 渲染引擎中音频输出的关键组件 `MojoAudioOutputIPC` 的功能正确可靠，这对于保证 Web 应用程序的音频播放功能至关重要。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/modules/media/audio/mojo_audio_output_ipc_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2017 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -828,7 +830,4 @@ TEST(MojoAudioOutputIPC, SetVolume_SetsVolume) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

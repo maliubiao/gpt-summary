@@ -301,7 +301,7 @@ func main() {
 
 这段代码提供了对 Go 语言切片进行排序和判断是否排序的核心功能。它通过反射实现了对任意类型切片的支持，并通过用户提供的比较函数来定义排序规则。`Slice` 提供非稳定排序，而 `SliceStable` 提供稳定排序。`SliceIsSorted` 用于检查切片是否已排序。使用者需要注意正确定义满足严格弱排序的比较函数，避免在比较函数中修改切片，并确保传递给这些函数的参数是切片类型。 随着 Go 版本的更新，建议使用 `slices` 包中更符合人体工程学且可能更高效的函数。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/sort/slice.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -309,8 +309,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 请用中文回答。
+```
 
-"""
+### 源代码
+```go
 // Copyright 2017 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
@@ -372,9 +374,4 @@ func SliceIsSorted(x any, less func(i, j int) bool) bool {
 	}
 	return true
 }
-
-"""
-
-
-
 ```

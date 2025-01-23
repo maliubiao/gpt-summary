@@ -179,14 +179,16 @@ By following these steps, I can generate a comprehensive and informative explana
 
 总而言之，`css_transition_data.cc` 在 Blink 渲染引擎中扮演着核心角色，它负责存储和管理 CSS `transition` 属性的数据，为实现流畅的 Web 动画效果提供了基础。它与 CSS 样式解析、HTML 元素渲染以及 JavaScript 的动态交互密切相关。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css/css_transition_data.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -219,7 +221,4 @@ Timing CSSTransitionData::ConvertToTiming(size_t index) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

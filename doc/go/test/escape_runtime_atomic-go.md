@@ -195,15 +195,17 @@ go test -gcflags='-m -l' ./escape_runtime_atomic.go
 
 `go/test/escape_runtime_atomic.go` 是 Go 编译器测试套件的一部分，专门用于测试编译器在处理 `internal/runtime/atomic` 包中的原子操作时的逃逸分析能力。它通过 `// errorcheck` 指令来断言编译器应该产生的逃逸分析结果，确保编译器能够正确地识别哪些变量需要分配到堆上。 普通 Go 开发者不需要直接使用或修改这个文件，但理解其作用有助于理解 Go 编译器的优化机制。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/test/escape_runtime_atomic.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 // errorcheck -0 -m -l
 
 // Copyright 2019 The Go Authors. All rights reserved.
@@ -237,9 +239,4 @@ func Casp1() {
 	var y int     // ERROR "moved to heap: y"
 	atomic.Casp1(&ptr, unsafe.Pointer(x), unsafe.Pointer(&y))
 }
-
-"""
-
-
-
 ```

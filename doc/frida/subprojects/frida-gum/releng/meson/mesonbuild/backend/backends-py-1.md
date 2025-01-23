@@ -128,7 +128,7 @@ A user's actions leading to the execution of this code would involve the typical
 
 This section of `backends.py` in Frida's build system is responsible for the crucial task of **translating high-level build instructions into concrete compiler and linker commands, managing library paths (RPATHs), handling dependencies, and generating definitions for tests and installation.** It bridges the gap between the user's build specification and the low-level tools that create the final software artifacts. Its correct operation is fundamental for successful software builds.
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/mesonbuild/backend/backends.py的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -137,9 +137,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第2部分，共4部分，请归纳一下它的功能
+```
 
-"""
- if Path(dir).is_dir():
+### 源代码
+```python
+if Path(dir).is_dir():
                         dirs.add(dir)
             symbols_match = symbols_regex.match(arg)
             if symbols_match:
@@ -803,8 +805,5 @@ Prompt:
             for arg in t.cmd_args:
                 if not isinstance(arg, (build.CustomTarget, build.BuildTarget)):
                     continue
-                result[arg.get_id()] 
-"""
-
-
+                result[arg.get_id()]
 ```

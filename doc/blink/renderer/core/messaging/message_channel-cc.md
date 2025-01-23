@@ -184,15 +184,17 @@ By following these steps, one can systematically analyze the code snippet and pr
 
 如果在这些步骤中发现问题，例如端口没有正确传递，或者消息没有被正确触发，那么你可能需要深入到 Blink 引擎的源代码中查看 `message_channel.cc` 和 `message_port.cc` 的实现，以理解消息传递的内部机制，从而找到问题的根源。例如，你可以检查 `Entangle` 方法是如何建立连接的，以及消息是如何在两个 `MessagePort` 之间路由的。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/messaging/message_channel.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 /*
  * Copyright (C) 2008 Apple Inc. All Rights Reserved.
  *
@@ -242,7 +244,4 @@ void MessageChannel::Trace(Visitor* visitor) const {
 }
 
 }  // namespace blink
-
-"""
-
 ```

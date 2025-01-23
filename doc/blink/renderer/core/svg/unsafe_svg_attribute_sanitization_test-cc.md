@@ -140,15 +140,17 @@ Finally, I would organize the information logically, starting with the high-leve
 
 `unsafe_svg_attribute_sanitization_test.cc` 是 Blink 引擎中至关重要的一个测试文件，它专注于保障用户安全，防止恶意 JavaScript 代码通过 SVG 属性注入到网页中。它通过模拟用户粘贴 SVG 内容的行为，并针对不同的 SVG 元素和属性进行测试，确保了 Blink 的清理机制能够有效地防御潜在的 XSS 攻击。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/svg/unsafe_svg_attribute_sanitization_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -528,7 +530,4 @@ TEST(UnsafeSVGAttributeSanitizationTest,
 }
 
 }  // namespace blink
-
-"""
-
 ```

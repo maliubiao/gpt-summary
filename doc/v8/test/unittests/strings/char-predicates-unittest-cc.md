@@ -155,15 +155,17 @@ let variable_name = "value";
 
 总而言之，`v8/test/unittests/strings/char-predicates-unittest.cc` 是一个重要的测试文件，它确保了 V8 引擎能够准确地判断字符的属性，这对于正确解析和执行 JavaScript 代码至关重要。理解这些字符判断规则有助于开发者避免一些常见的编程错误，并更好地处理各种字符编码和 Unicode 相关的场景。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/test/unittests/strings/char-predicates-unittest.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/test/unittests/strings/char-predicates-unittest.cc以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2014 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -354,7 +356,4 @@ TEST(CharPredicatesTest, SupplementaryPlaneIdentifiers) {
 
 }  // namespace internal
 }  // namespace v8
-
-"""
-
 ```

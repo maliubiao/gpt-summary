@@ -205,7 +205,7 @@ if (Process.platform === 'linux' || Process.platform === 'android') {
 
 总而言之，`libB.cpp` 文件定义了一个简单的字符串返回函数，但在 Frida 的动态分析上下文中，它可以作为信息收集、行为追踪和修改的入口点，并涉及到对操作系统底层机制的理解。其真正的行为取决于 `getGenStr()` 函数的实现。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-core/releng/meson/test cases/cmake/15 object library advanced/subprojects/cmObjLib/libB.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -213,15 +213,14 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include "libB.hpp"
 #include "libC.hpp"
 
 std::string getZlibVers(void) {
   return getGenStr();
 }
-
-"""
-
 ```

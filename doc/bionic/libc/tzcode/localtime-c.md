@@ -55,7 +55,7 @@ Given this is "Part 1 of 3", the focus should be on the core functionalities, la
 * 常见的用户或编程错误，以及如何避免这些错误。
 * Android Framework 或 NDK 如何逐步调用到 `localtime.c`，以及使用 Frida 进行调试的示例。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/tzcode/localtime.candroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -67,8 +67,10 @@ Prompt:
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
 这是第1部分，共3部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```c
 /* Convert timestamp from time_t to struct tm.  */
 
 /*
@@ -1206,7 +1208,4 @@ transtime(const int year, register const struct rule *const rulep,
     ** question. To get the year-relative time of the specified local
     ** time on that day, add the transition time and the current offset
     **
-"""
-
-
 ```

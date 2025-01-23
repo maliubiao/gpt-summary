@@ -203,7 +203,7 @@ Here's a breakdown of the thought process to address the request:
 
 `v8/src/compiler/simplified-operator.cc` 是 V8 编译器中至关重要的一个组件，它定义了创建各种底层操作的机制，这些操作构成了 JavaScript 和 WebAssembly 代码在 V8 内部表示和执行的基础。它提供了一组丰富的操作符，涵盖了类型转换、内存访问、控制流、算术运算等，为后续的优化和代码生成阶段提供了必要的抽象和信息。这段代码并没有直接实现这些操作的逻辑，而是定义了如何创建表示这些操作的对象。
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/compiler/simplified-operator.cc的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/compiler/simplified-operator.cc以.tq结尾，那它是个v8 torque源代码，
@@ -211,8 +211,10 @@ Prompt:
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
 这是第3部分，共4部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```cpp
 rite | Operator::kNoThrow | Operator::kIdempotent,
       "WasmTypeCastAbstract", 1, 1, 1, 1, 1, 1, config);
 }
@@ -981,8 +983,5 @@ const Operator* SimplifiedOperatorBuilder::FastApiCall(
 // static
 int FastApiCallNode::FastCallArgumentCount(Node* node) {
   FastApiCallParameters p = FastApiCallParametersOf(node->op());
-  const CFunctionInfo* signature 
-"""
-
-
+  const CFunctionInfo* signature
 ```

@@ -162,15 +162,17 @@ While this header file itself doesn't directly expose programming errors to Java
 
 **In summary, `v8/src/tracing/code-data-source.h` defines a crucial component of V8's tracing infrastructure, responsible for efficiently collecting metadata about the code being executed, which is essential for performance analysis, debugging, and understanding the behavior of JavaScript applications within the V8 environment.**
 
-Prompt: 
+### 提示词
 ```
 这是目录为v8/src/tracing/code-data-source.h的一个v8源代码， 请列举一下它的功能, 
 如果v8/src/tracing/code-data-source.h以.tq结尾，那它是个v8 torque源代码，
 如果它与javascript的功能有关系，请用javascript举例说明,
 如果有代码逻辑推理，请给出假设输入与输出，
 如果涉及用户常见的编程错误，请举例说明
+```
 
-"""
+### 源代码
+```c
 // Copyright 2024 the V8 project authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -327,7 +329,4 @@ PERFETTO_DECLARE_DATA_SOURCE_STATIC_MEMBERS(v8::internal::CodeDataSource,
                                             v8::internal::CodeDataSourceTraits);
 
 #endif  // V8_TRACING_CODE_DATA_SOURCE_H_
-
-"""
-
 ```

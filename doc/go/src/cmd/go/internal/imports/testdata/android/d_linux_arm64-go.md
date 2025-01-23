@@ -184,21 +184,18 @@ package mypackage
 
 总结来说，`go/src/cmd/go/internal/imports/testdata/android/d_linux_arm64.go`  是一个用于测试 Go 语言 import 机制在特定平台下的行为的测试数据文件，它主要用于验证 `go` 命令在处理带有 build tags 的 import 语句时的逻辑是否正确。它演示了 Go 语言的条件编译功能，允许开发者为不同的操作系统和架构提供不同的代码实现或行为。
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/go/internal/imports/testdata/android/d_linux_arm64.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
 如果涉及代码推理，需要带上假设的输入与输出，
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
+```
 
-"""
+### 源代码
+```go
 package android
 
 import _ "d"
-
-"""
-
-
-
 ```

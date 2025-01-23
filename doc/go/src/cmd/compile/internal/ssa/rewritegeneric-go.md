@@ -111,7 +111,7 @@ func main() {
 
 作为 13 个部分中的第一部分，`go/src/cmd/compile/internal/ssa/rewritegeneric.go` 的这一段代码定义了 **`rewriteValuegeneric` 函数，它是针对通用类型 SSA 操作进行优化的入口点和调度器。** 它通过一个大的 `switch` 语句，根据不同的 SSA 操作码，将重写任务分发到相应的特定处理函数中。  可以推断，后续的 12 个部分很可能包含了 `rewriteValuegeneric_OpXXX` 函数的具体实现，分别负责处理各种不同的 SSA 操作的重写规则，从而实现更广泛的 SSA 优化。总而言之，**这部分代码是 Go 编译器 SSA 优化中处理通用操作重写规则的核心框架。**
 
-Prompt: 
+### 提示词
 ```
 这是路径为go/src/cmd/compile/internal/ssa/rewritegeneric.go的go语言实现的一部分， 请列举一下它的功能, 　
 如果你能推理出它是什么go语言功能的实现，请用go代码举例说明, 
@@ -119,8 +119,10 @@ Prompt:
 如果涉及命令行参数的具体处理，请详细介绍一下，
 如果有哪些使用者易犯错的点，请举例说明，没有则不必说明，
 这是第1部分，共13部分，请归纳一下它的功能
+```
 
-"""
+### 源代码
+```go
 // Code generated from _gen/generic.rules using 'go generate'; DO NOT EDIT.
 
 package ssa
@@ -2850,9 +2852,4 @@ func rewriteValuegeneric_OpAdd8(v *Value) bool {
 			_ = right_1.Args[1]
 			right_1_0 := right_1.Args[0]
 			if right_1_0.Op != OpConst64 || auxIntToInt64(right_1_0.AuxInt) != 8 || y != right_1.Args[1] || !((shiftIsBounded(left) || shiftIsBounded(right)
-"""
-
-
-
-
 ```

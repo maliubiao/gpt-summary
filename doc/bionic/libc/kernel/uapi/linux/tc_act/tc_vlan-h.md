@@ -317,7 +317,7 @@ Interceptor.attach(Module.findExportByName("libc.so", "ioctl"), {
 
 **注意:** 实际的 `ioctl` 操作码和 `ifreq` 结构体的布局可能会更复杂，需要根据 Android 系统的具体实现进行调整。可能需要查看 Android 源码来确定正确的操作码和结构体偏移。此外，更现代的 Android 版本可能更多地使用 Netlink socket 来配置 traffic control，因此可能需要 hook Netlink 相关的函数。
 
-Prompt: 
+### 提示词
 ```
 这是目录为bionic/libc/kernel/uapi/linux/tc_act/tc_vlan.handroid bionic的源代码文件，bionic is Android's C library, math library, and dynamic linker. 
 请列举一下它的功能,
@@ -328,8 +328,10 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明android framework or ndk是如何一步步的到达这里，给出frida hook示例调试这些步骤。
 用中文回复。
+```
 
-"""
+### 源代码
+```c
 /*
  * This file is auto-generated. Modifications will be lost.
  *
@@ -362,7 +364,4 @@ enum {
 };
 #define TCA_VLAN_MAX (__TCA_VLAN_MAX - 1)
 #endif
-
-"""
-
 ```

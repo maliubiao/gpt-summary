@@ -161,14 +161,16 @@ By following this systematic approach, we can dissect the C++ code and understan
 
 `css_interpolation_types_map_test.cc` 文件通过单元测试确保了 `CSSInterpolationTypesMap` 类在管理 CSS 属性插值类型时的正确行为，特别是针对自定义属性和不同的文档/注册表上下文。理解这些测试有助于开发者避免在使用 CSS 动画和过渡，特别是涉及到自定义属性时，可能遇到的潜在错误。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/core/animation/css_interpolation_types_map_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2021 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -221,7 +223,4 @@ TEST(CSSInterpolationTypesMapTest, RegisteredCustomProperty) {
 }
 
 }  // namespace blink
-
-"""
-
 ```

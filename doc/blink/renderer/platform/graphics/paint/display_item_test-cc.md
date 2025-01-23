@@ -98,14 +98,16 @@ This systematic approach, moving from understanding the immediate context to con
 
 `display_item_test.cc` 是 Blink 渲染引擎中用于测试 `DisplayItem` 类的单元测试文件。`DisplayItem` 是渲染过程中的核心概念，它记录了绘制操作的信息。虽然不直接与 JavaScript, HTML, CSS 代码交互，但它是将这些 Web 技术转化为屏幕像素的关键桥梁。 理解 `DisplayItem` 的概念有助于开发者更好地理解浏览器渲染原理，并避免一些可能导致性能问题的开发实践。
 
-Prompt: 
+### 提示词
 ```
 这是目录为blink/renderer/platform/graphics/paint/display_item_test.cc的chromium blink引擎源代码文件， 请列举一下它的功能, 
 如果它与javascript, html, css的功能有关系，请做出对应的举例说明，
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明
+```
 
-"""
+### 源代码
+```cpp
 // Copyright 2015 The Chromium Authors
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
@@ -135,7 +137,4 @@ TEST(DisplayItemTest, AllZeroIsTombstone) {
 
 }  // namespace
 }  // namespace blink
-
-"""
-
 ```

@@ -161,7 +161,7 @@ Here's a thinking process to arrive at the analysis of the provided C code:
 
 总而言之，这个简单的 `prog.c` 文件本身功能有限，但它是 Frida 动态 instrumentation 工具测试框架中的一个关键组成部分，用于验证 Frida 的核心功能，并作为学习和调试 Frida 的一个起点。逆向工程师可以利用 Frida 的强大功能，动态地修改和分析这个程序的行为，深入理解其运行机制。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-qml/releng/meson/test cases/unit/7 run installed/prog.c的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -169,14 +169,13 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```c
 int foo();
 
 int main(int argc, char **argv) {
     return foo();
 }
-
-"""
-
 ```

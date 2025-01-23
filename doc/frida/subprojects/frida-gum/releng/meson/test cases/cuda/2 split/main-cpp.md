@@ -178,7 +178,7 @@ int do_cuda_stuff(int size) {
 
 因此，到达 `main.cpp` 这个文件，通常是开发者或逆向工程师为了测试 Frida 对 CUDA 程序的支持能力，或者调试特定的 CUDA 代码行为而进行的步骤。这个简单的 `main.cpp` 作为测试程序的入口，方便了 Frida 的介入和操作。
 
-Prompt: 
+### 提示词
 ```
 这是目录为frida/subprojects/frida-gum/releng/meson/test cases/cuda/2 split/main.cpp的fridaDynamic instrumentation tool的源代码文件， 请列举一下它的功能, 
 如果它与逆向的方法有关系，请做出对应的举例说明，
@@ -186,8 +186,10 @@ Prompt:
 如果做了逻辑推理，请给出假设输入与输出,
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
+```
 
-"""
+### 源代码
+```cpp
 #include<iostream>
 
 int do_cuda_stuff(void);
@@ -195,7 +197,4 @@ int do_cuda_stuff(void);
 int main(void) {
   return do_cuda_stuff();
 }
-
-"""
-
 ```

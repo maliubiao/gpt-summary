@@ -118,7 +118,7 @@ By following these steps, the detailed and informative answer can be generated.
 
 这部分测试主要关注 `HttpStreamPoolAttemptManager` 在处理 **SPDY (HTTP/2) 连接的优化**方面的功能，包括 **IP 地址匹配的会话重用、预连接以及防止过度并发连接尝试的节流机制**。同时也涉及到一些 **HTTP/1.1 的预连接场景**。这些功能旨在提高网络连接的效率和性能，从而提升用户体验。
 
-Prompt: 
+### 提示词
 ```
 这是目录为net/http/http_stream_pool_attempt_manager_unittest.cc的chromium 网络栈的源代码文件， 请列举一下它的功能, 
 如果它与javascript的功能有关系，请做出对应的举例说明，
@@ -126,9 +126,11 @@ Prompt:
 如果涉及用户或者编程常见的使用错误，请举例说明,
 说明用户操作是如何一步步的到达这里，作为调试线索。
 这是第4部分，共7部分，请归纳一下它的功能
+```
 
-"""
- Finish the service endpoint resolution. It should create a new SPDY
+### 源代码
+```cpp
+Finish the service endpoint resolution. It should create a new SPDY
   // session.
   endpoint_request->CallOnServiceEndpointRequestFinished(OK);
   requester_b.WaitForResult();
@@ -951,8 +953,4 @@ TEST_F(HttpStreamPoolAttemptManagerTest, FailingIsNotStalled) {
   EXPECT_THAT(requester_a.result(), Optional(IsError(ERR_CONNECTION_RESET)));
 
   StreamRequester requester_b;
-  
-"""
-
-
 ```
